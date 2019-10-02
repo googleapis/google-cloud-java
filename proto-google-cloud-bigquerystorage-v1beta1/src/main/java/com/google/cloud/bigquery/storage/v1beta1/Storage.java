@@ -4870,7 +4870,9 @@ public final class Storage {
      * Required. Reference to the table to read.
      * </pre>
      *
-     * <code>.google.cloud.bigquery.storage.v1beta1.TableReference table_reference = 1;</code>
+     * <code>
+     * .google.cloud.bigquery.storage.v1beta1.TableReference table_reference = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     boolean hasTableReference();
     /**
@@ -4880,7 +4882,9 @@ public final class Storage {
      * Required. Reference to the table to read.
      * </pre>
      *
-     * <code>.google.cloud.bigquery.storage.v1beta1.TableReference table_reference = 1;</code>
+     * <code>
+     * .google.cloud.bigquery.storage.v1beta1.TableReference table_reference = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     com.google.cloud.bigquery.storage.v1beta1.TableReferenceProto.TableReference
         getTableReference();
@@ -4891,7 +4895,9 @@ public final class Storage {
      * Required. Reference to the table to read.
      * </pre>
      *
-     * <code>.google.cloud.bigquery.storage.v1beta1.TableReference table_reference = 1;</code>
+     * <code>
+     * .google.cloud.bigquery.storage.v1beta1.TableReference table_reference = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     com.google.cloud.bigquery.storage.v1beta1.TableReferenceProto.TableReferenceOrBuilder
         getTableReferenceOrBuilder();
@@ -4905,7 +4911,7 @@ public final class Storage {
      * be billed for usage.
      * </pre>
      *
-     * <code>string parent = 6;</code>
+     * <code>string parent = 6 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     java.lang.String getParent();
     /**
@@ -4917,7 +4923,7 @@ public final class Storage {
      * be billed for usage.
      * </pre>
      *
-     * <code>string parent = 6;</code>
+     * <code>string parent = 6 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     com.google.protobuf.ByteString getParentBytes();
 
@@ -4925,7 +4931,7 @@ public final class Storage {
      *
      *
      * <pre>
-     * Optional. Any modifiers to the Table (e.g. snapshot timestamp).
+     * Any modifiers to the Table (e.g. snapshot timestamp).
      * </pre>
      *
      * <code>.google.cloud.bigquery.storage.v1beta1.TableModifiers table_modifiers = 2;</code>
@@ -4935,7 +4941,7 @@ public final class Storage {
      *
      *
      * <pre>
-     * Optional. Any modifiers to the Table (e.g. snapshot timestamp).
+     * Any modifiers to the Table (e.g. snapshot timestamp).
      * </pre>
      *
      * <code>.google.cloud.bigquery.storage.v1beta1.TableModifiers table_modifiers = 2;</code>
@@ -4946,7 +4952,7 @@ public final class Storage {
      *
      *
      * <pre>
-     * Optional. Any modifiers to the Table (e.g. snapshot timestamp).
+     * Any modifiers to the Table (e.g. snapshot timestamp).
      * </pre>
      *
      * <code>.google.cloud.bigquery.storage.v1beta1.TableModifiers table_modifiers = 2;</code>
@@ -4958,7 +4964,7 @@ public final class Storage {
      *
      *
      * <pre>
-     * Optional. Initial number of streams. If unset or 0, we will
+     * Initial number of streams. If unset or 0, we will
      * provide a value of streams so as to produce reasonable throughput. Must be
      * non-negative. The number of streams may be lower than the requested number,
      * depending on the amount parallelism that is reasonable for the table and
@@ -4974,7 +4980,7 @@ public final class Storage {
      *
      *
      * <pre>
-     * Optional. Read options for this session (e.g. column selection, filters).
+     * Read options for this session (e.g. column selection, filters).
      * </pre>
      *
      * <code>.google.cloud.bigquery.storage.v1beta1.TableReadOptions read_options = 4;</code>
@@ -4984,7 +4990,7 @@ public final class Storage {
      *
      *
      * <pre>
-     * Optional. Read options for this session (e.g. column selection, filters).
+     * Read options for this session (e.g. column selection, filters).
      * </pre>
      *
      * <code>.google.cloud.bigquery.storage.v1beta1.TableReadOptions read_options = 4;</code>
@@ -4994,7 +5000,7 @@ public final class Storage {
      *
      *
      * <pre>
-     * Optional. Read options for this session (e.g. column selection, filters).
+     * Read options for this session (e.g. column selection, filters).
      * </pre>
      *
      * <code>.google.cloud.bigquery.storage.v1beta1.TableReadOptions read_options = 4;</code>
@@ -5224,7 +5230,9 @@ public final class Storage {
      * Required. Reference to the table to read.
      * </pre>
      *
-     * <code>.google.cloud.bigquery.storage.v1beta1.TableReference table_reference = 1;</code>
+     * <code>
+     * .google.cloud.bigquery.storage.v1beta1.TableReference table_reference = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public boolean hasTableReference() {
       return tableReference_ != null;
@@ -5236,7 +5244,9 @@ public final class Storage {
      * Required. Reference to the table to read.
      * </pre>
      *
-     * <code>.google.cloud.bigquery.storage.v1beta1.TableReference table_reference = 1;</code>
+     * <code>
+     * .google.cloud.bigquery.storage.v1beta1.TableReference table_reference = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public com.google.cloud.bigquery.storage.v1beta1.TableReferenceProto.TableReference
         getTableReference() {
@@ -5252,7 +5262,9 @@ public final class Storage {
      * Required. Reference to the table to read.
      * </pre>
      *
-     * <code>.google.cloud.bigquery.storage.v1beta1.TableReference table_reference = 1;</code>
+     * <code>
+     * .google.cloud.bigquery.storage.v1beta1.TableReference table_reference = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public com.google.cloud.bigquery.storage.v1beta1.TableReferenceProto.TableReferenceOrBuilder
         getTableReferenceOrBuilder() {
@@ -5270,7 +5282,7 @@ public final class Storage {
      * be billed for usage.
      * </pre>
      *
-     * <code>string parent = 6;</code>
+     * <code>string parent = 6 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public java.lang.String getParent() {
       java.lang.Object ref = parent_;
@@ -5292,7 +5304,7 @@ public final class Storage {
      * be billed for usage.
      * </pre>
      *
-     * <code>string parent = 6;</code>
+     * <code>string parent = 6 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public com.google.protobuf.ByteString getParentBytes() {
       java.lang.Object ref = parent_;
@@ -5313,7 +5325,7 @@ public final class Storage {
      *
      *
      * <pre>
-     * Optional. Any modifiers to the Table (e.g. snapshot timestamp).
+     * Any modifiers to the Table (e.g. snapshot timestamp).
      * </pre>
      *
      * <code>.google.cloud.bigquery.storage.v1beta1.TableModifiers table_modifiers = 2;</code>
@@ -5325,7 +5337,7 @@ public final class Storage {
      *
      *
      * <pre>
-     * Optional. Any modifiers to the Table (e.g. snapshot timestamp).
+     * Any modifiers to the Table (e.g. snapshot timestamp).
      * </pre>
      *
      * <code>.google.cloud.bigquery.storage.v1beta1.TableModifiers table_modifiers = 2;</code>
@@ -5341,7 +5353,7 @@ public final class Storage {
      *
      *
      * <pre>
-     * Optional. Any modifiers to the Table (e.g. snapshot timestamp).
+     * Any modifiers to the Table (e.g. snapshot timestamp).
      * </pre>
      *
      * <code>.google.cloud.bigquery.storage.v1beta1.TableModifiers table_modifiers = 2;</code>
@@ -5357,7 +5369,7 @@ public final class Storage {
      *
      *
      * <pre>
-     * Optional. Initial number of streams. If unset or 0, we will
+     * Initial number of streams. If unset or 0, we will
      * provide a value of streams so as to produce reasonable throughput. Must be
      * non-negative. The number of streams may be lower than the requested number,
      * depending on the amount parallelism that is reasonable for the table and
@@ -5377,7 +5389,7 @@ public final class Storage {
      *
      *
      * <pre>
-     * Optional. Read options for this session (e.g. column selection, filters).
+     * Read options for this session (e.g. column selection, filters).
      * </pre>
      *
      * <code>.google.cloud.bigquery.storage.v1beta1.TableReadOptions read_options = 4;</code>
@@ -5389,7 +5401,7 @@ public final class Storage {
      *
      *
      * <pre>
-     * Optional. Read options for this session (e.g. column selection, filters).
+     * Read options for this session (e.g. column selection, filters).
      * </pre>
      *
      * <code>.google.cloud.bigquery.storage.v1beta1.TableReadOptions read_options = 4;</code>
@@ -5404,7 +5416,7 @@ public final class Storage {
      *
      *
      * <pre>
-     * Optional. Read options for this session (e.g. column selection, filters).
+     * Read options for this session (e.g. column selection, filters).
      * </pre>
      *
      * <code>.google.cloud.bigquery.storage.v1beta1.TableReadOptions read_options = 4;</code>
@@ -5978,7 +5990,9 @@ public final class Storage {
        * Required. Reference to the table to read.
        * </pre>
        *
-       * <code>.google.cloud.bigquery.storage.v1beta1.TableReference table_reference = 1;</code>
+       * <code>
+       * .google.cloud.bigquery.storage.v1beta1.TableReference table_reference = 1 [(.google.api.field_behavior) = REQUIRED];
+       * </code>
        */
       public boolean hasTableReference() {
         return tableReferenceBuilder_ != null || tableReference_ != null;
@@ -5990,7 +6004,9 @@ public final class Storage {
        * Required. Reference to the table to read.
        * </pre>
        *
-       * <code>.google.cloud.bigquery.storage.v1beta1.TableReference table_reference = 1;</code>
+       * <code>
+       * .google.cloud.bigquery.storage.v1beta1.TableReference table_reference = 1 [(.google.api.field_behavior) = REQUIRED];
+       * </code>
        */
       public com.google.cloud.bigquery.storage.v1beta1.TableReferenceProto.TableReference
           getTableReference() {
@@ -6010,7 +6026,9 @@ public final class Storage {
        * Required. Reference to the table to read.
        * </pre>
        *
-       * <code>.google.cloud.bigquery.storage.v1beta1.TableReference table_reference = 1;</code>
+       * <code>
+       * .google.cloud.bigquery.storage.v1beta1.TableReference table_reference = 1 [(.google.api.field_behavior) = REQUIRED];
+       * </code>
        */
       public Builder setTableReference(
           com.google.cloud.bigquery.storage.v1beta1.TableReferenceProto.TableReference value) {
@@ -6033,7 +6051,9 @@ public final class Storage {
        * Required. Reference to the table to read.
        * </pre>
        *
-       * <code>.google.cloud.bigquery.storage.v1beta1.TableReference table_reference = 1;</code>
+       * <code>
+       * .google.cloud.bigquery.storage.v1beta1.TableReference table_reference = 1 [(.google.api.field_behavior) = REQUIRED];
+       * </code>
        */
       public Builder setTableReference(
           com.google.cloud.bigquery.storage.v1beta1.TableReferenceProto.TableReference.Builder
@@ -6054,7 +6074,9 @@ public final class Storage {
        * Required. Reference to the table to read.
        * </pre>
        *
-       * <code>.google.cloud.bigquery.storage.v1beta1.TableReference table_reference = 1;</code>
+       * <code>
+       * .google.cloud.bigquery.storage.v1beta1.TableReference table_reference = 1 [(.google.api.field_behavior) = REQUIRED];
+       * </code>
        */
       public Builder mergeTableReference(
           com.google.cloud.bigquery.storage.v1beta1.TableReferenceProto.TableReference value) {
@@ -6082,7 +6104,9 @@ public final class Storage {
        * Required. Reference to the table to read.
        * </pre>
        *
-       * <code>.google.cloud.bigquery.storage.v1beta1.TableReference table_reference = 1;</code>
+       * <code>
+       * .google.cloud.bigquery.storage.v1beta1.TableReference table_reference = 1 [(.google.api.field_behavior) = REQUIRED];
+       * </code>
        */
       public Builder clearTableReference() {
         if (tableReferenceBuilder_ == null) {
@@ -6102,7 +6126,9 @@ public final class Storage {
        * Required. Reference to the table to read.
        * </pre>
        *
-       * <code>.google.cloud.bigquery.storage.v1beta1.TableReference table_reference = 1;</code>
+       * <code>
+       * .google.cloud.bigquery.storage.v1beta1.TableReference table_reference = 1 [(.google.api.field_behavior) = REQUIRED];
+       * </code>
        */
       public com.google.cloud.bigquery.storage.v1beta1.TableReferenceProto.TableReference.Builder
           getTableReferenceBuilder() {
@@ -6117,7 +6143,9 @@ public final class Storage {
        * Required. Reference to the table to read.
        * </pre>
        *
-       * <code>.google.cloud.bigquery.storage.v1beta1.TableReference table_reference = 1;</code>
+       * <code>
+       * .google.cloud.bigquery.storage.v1beta1.TableReference table_reference = 1 [(.google.api.field_behavior) = REQUIRED];
+       * </code>
        */
       public com.google.cloud.bigquery.storage.v1beta1.TableReferenceProto.TableReferenceOrBuilder
           getTableReferenceOrBuilder() {
@@ -6137,7 +6165,9 @@ public final class Storage {
        * Required. Reference to the table to read.
        * </pre>
        *
-       * <code>.google.cloud.bigquery.storage.v1beta1.TableReference table_reference = 1;</code>
+       * <code>
+       * .google.cloud.bigquery.storage.v1beta1.TableReference table_reference = 1 [(.google.api.field_behavior) = REQUIRED];
+       * </code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
               com.google.cloud.bigquery.storage.v1beta1.TableReferenceProto.TableReference,
@@ -6168,7 +6198,7 @@ public final class Storage {
        * be billed for usage.
        * </pre>
        *
-       * <code>string parent = 6;</code>
+       * <code>string parent = 6 [(.google.api.field_behavior) = REQUIRED];</code>
        */
       public java.lang.String getParent() {
         java.lang.Object ref = parent_;
@@ -6190,7 +6220,7 @@ public final class Storage {
        * be billed for usage.
        * </pre>
        *
-       * <code>string parent = 6;</code>
+       * <code>string parent = 6 [(.google.api.field_behavior) = REQUIRED];</code>
        */
       public com.google.protobuf.ByteString getParentBytes() {
         java.lang.Object ref = parent_;
@@ -6212,7 +6242,7 @@ public final class Storage {
        * be billed for usage.
        * </pre>
        *
-       * <code>string parent = 6;</code>
+       * <code>string parent = 6 [(.google.api.field_behavior) = REQUIRED];</code>
        */
       public Builder setParent(java.lang.String value) {
         if (value == null) {
@@ -6232,7 +6262,7 @@ public final class Storage {
        * be billed for usage.
        * </pre>
        *
-       * <code>string parent = 6;</code>
+       * <code>string parent = 6 [(.google.api.field_behavior) = REQUIRED];</code>
        */
       public Builder clearParent() {
 
@@ -6249,7 +6279,7 @@ public final class Storage {
        * be billed for usage.
        * </pre>
        *
-       * <code>string parent = 6;</code>
+       * <code>string parent = 6 [(.google.api.field_behavior) = REQUIRED];</code>
        */
       public Builder setParentBytes(com.google.protobuf.ByteString value) {
         if (value == null) {
@@ -6273,7 +6303,7 @@ public final class Storage {
        *
        *
        * <pre>
-       * Optional. Any modifiers to the Table (e.g. snapshot timestamp).
+       * Any modifiers to the Table (e.g. snapshot timestamp).
        * </pre>
        *
        * <code>.google.cloud.bigquery.storage.v1beta1.TableModifiers table_modifiers = 2;</code>
@@ -6285,7 +6315,7 @@ public final class Storage {
        *
        *
        * <pre>
-       * Optional. Any modifiers to the Table (e.g. snapshot timestamp).
+       * Any modifiers to the Table (e.g. snapshot timestamp).
        * </pre>
        *
        * <code>.google.cloud.bigquery.storage.v1beta1.TableModifiers table_modifiers = 2;</code>
@@ -6305,7 +6335,7 @@ public final class Storage {
        *
        *
        * <pre>
-       * Optional. Any modifiers to the Table (e.g. snapshot timestamp).
+       * Any modifiers to the Table (e.g. snapshot timestamp).
        * </pre>
        *
        * <code>.google.cloud.bigquery.storage.v1beta1.TableModifiers table_modifiers = 2;</code>
@@ -6328,7 +6358,7 @@ public final class Storage {
        *
        *
        * <pre>
-       * Optional. Any modifiers to the Table (e.g. snapshot timestamp).
+       * Any modifiers to the Table (e.g. snapshot timestamp).
        * </pre>
        *
        * <code>.google.cloud.bigquery.storage.v1beta1.TableModifiers table_modifiers = 2;</code>
@@ -6349,7 +6379,7 @@ public final class Storage {
        *
        *
        * <pre>
-       * Optional. Any modifiers to the Table (e.g. snapshot timestamp).
+       * Any modifiers to the Table (e.g. snapshot timestamp).
        * </pre>
        *
        * <code>.google.cloud.bigquery.storage.v1beta1.TableModifiers table_modifiers = 2;</code>
@@ -6377,7 +6407,7 @@ public final class Storage {
        *
        *
        * <pre>
-       * Optional. Any modifiers to the Table (e.g. snapshot timestamp).
+       * Any modifiers to the Table (e.g. snapshot timestamp).
        * </pre>
        *
        * <code>.google.cloud.bigquery.storage.v1beta1.TableModifiers table_modifiers = 2;</code>
@@ -6397,7 +6427,7 @@ public final class Storage {
        *
        *
        * <pre>
-       * Optional. Any modifiers to the Table (e.g. snapshot timestamp).
+       * Any modifiers to the Table (e.g. snapshot timestamp).
        * </pre>
        *
        * <code>.google.cloud.bigquery.storage.v1beta1.TableModifiers table_modifiers = 2;</code>
@@ -6412,7 +6442,7 @@ public final class Storage {
        *
        *
        * <pre>
-       * Optional. Any modifiers to the Table (e.g. snapshot timestamp).
+       * Any modifiers to the Table (e.g. snapshot timestamp).
        * </pre>
        *
        * <code>.google.cloud.bigquery.storage.v1beta1.TableModifiers table_modifiers = 2;</code>
@@ -6432,7 +6462,7 @@ public final class Storage {
        *
        *
        * <pre>
-       * Optional. Any modifiers to the Table (e.g. snapshot timestamp).
+       * Any modifiers to the Table (e.g. snapshot timestamp).
        * </pre>
        *
        * <code>.google.cloud.bigquery.storage.v1beta1.TableModifiers table_modifiers = 2;</code>
@@ -6461,7 +6491,7 @@ public final class Storage {
        *
        *
        * <pre>
-       * Optional. Initial number of streams. If unset or 0, we will
+       * Initial number of streams. If unset or 0, we will
        * provide a value of streams so as to produce reasonable throughput. Must be
        * non-negative. The number of streams may be lower than the requested number,
        * depending on the amount parallelism that is reasonable for the table and
@@ -6478,7 +6508,7 @@ public final class Storage {
        *
        *
        * <pre>
-       * Optional. Initial number of streams. If unset or 0, we will
+       * Initial number of streams. If unset or 0, we will
        * provide a value of streams so as to produce reasonable throughput. Must be
        * non-negative. The number of streams may be lower than the requested number,
        * depending on the amount parallelism that is reasonable for the table and
@@ -6498,7 +6528,7 @@ public final class Storage {
        *
        *
        * <pre>
-       * Optional. Initial number of streams. If unset or 0, we will
+       * Initial number of streams. If unset or 0, we will
        * provide a value of streams so as to produce reasonable throughput. Must be
        * non-negative. The number of streams may be lower than the requested number,
        * depending on the amount parallelism that is reasonable for the table and
@@ -6525,7 +6555,7 @@ public final class Storage {
        *
        *
        * <pre>
-       * Optional. Read options for this session (e.g. column selection, filters).
+       * Read options for this session (e.g. column selection, filters).
        * </pre>
        *
        * <code>.google.cloud.bigquery.storage.v1beta1.TableReadOptions read_options = 4;</code>
@@ -6537,7 +6567,7 @@ public final class Storage {
        *
        *
        * <pre>
-       * Optional. Read options for this session (e.g. column selection, filters).
+       * Read options for this session (e.g. column selection, filters).
        * </pre>
        *
        * <code>.google.cloud.bigquery.storage.v1beta1.TableReadOptions read_options = 4;</code>
@@ -6557,7 +6587,7 @@ public final class Storage {
        *
        *
        * <pre>
-       * Optional. Read options for this session (e.g. column selection, filters).
+       * Read options for this session (e.g. column selection, filters).
        * </pre>
        *
        * <code>.google.cloud.bigquery.storage.v1beta1.TableReadOptions read_options = 4;</code>
@@ -6580,7 +6610,7 @@ public final class Storage {
        *
        *
        * <pre>
-       * Optional. Read options for this session (e.g. column selection, filters).
+       * Read options for this session (e.g. column selection, filters).
        * </pre>
        *
        * <code>.google.cloud.bigquery.storage.v1beta1.TableReadOptions read_options = 4;</code>
@@ -6601,7 +6631,7 @@ public final class Storage {
        *
        *
        * <pre>
-       * Optional. Read options for this session (e.g. column selection, filters).
+       * Read options for this session (e.g. column selection, filters).
        * </pre>
        *
        * <code>.google.cloud.bigquery.storage.v1beta1.TableReadOptions read_options = 4;</code>
@@ -6629,7 +6659,7 @@ public final class Storage {
        *
        *
        * <pre>
-       * Optional. Read options for this session (e.g. column selection, filters).
+       * Read options for this session (e.g. column selection, filters).
        * </pre>
        *
        * <code>.google.cloud.bigquery.storage.v1beta1.TableReadOptions read_options = 4;</code>
@@ -6649,7 +6679,7 @@ public final class Storage {
        *
        *
        * <pre>
-       * Optional. Read options for this session (e.g. column selection, filters).
+       * Read options for this session (e.g. column selection, filters).
        * </pre>
        *
        * <code>.google.cloud.bigquery.storage.v1beta1.TableReadOptions read_options = 4;</code>
@@ -6664,7 +6694,7 @@ public final class Storage {
        *
        *
        * <pre>
-       * Optional. Read options for this session (e.g. column selection, filters).
+       * Read options for this session (e.g. column selection, filters).
        * </pre>
        *
        * <code>.google.cloud.bigquery.storage.v1beta1.TableReadOptions read_options = 4;</code>
@@ -6684,7 +6714,7 @@ public final class Storage {
        *
        *
        * <pre>
-       * Optional. Read options for this session (e.g. column selection, filters).
+       * Read options for this session (e.g. column selection, filters).
        * </pre>
        *
        * <code>.google.cloud.bigquery.storage.v1beta1.TableReadOptions read_options = 4;</code>
@@ -6940,7 +6970,9 @@ public final class Storage {
      * Requesting a larger offset is undefined.
      * </pre>
      *
-     * <code>.google.cloud.bigquery.storage.v1beta1.StreamPosition read_position = 1;</code>
+     * <code>
+     * .google.cloud.bigquery.storage.v1beta1.StreamPosition read_position = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     boolean hasReadPosition();
     /**
@@ -6952,7 +6984,9 @@ public final class Storage {
      * Requesting a larger offset is undefined.
      * </pre>
      *
-     * <code>.google.cloud.bigquery.storage.v1beta1.StreamPosition read_position = 1;</code>
+     * <code>
+     * .google.cloud.bigquery.storage.v1beta1.StreamPosition read_position = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     com.google.cloud.bigquery.storage.v1beta1.Storage.StreamPosition getReadPosition();
     /**
@@ -6964,7 +6998,9 @@ public final class Storage {
      * Requesting a larger offset is undefined.
      * </pre>
      *
-     * <code>.google.cloud.bigquery.storage.v1beta1.StreamPosition read_position = 1;</code>
+     * <code>
+     * .google.cloud.bigquery.storage.v1beta1.StreamPosition read_position = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     com.google.cloud.bigquery.storage.v1beta1.Storage.StreamPositionOrBuilder
         getReadPositionOrBuilder();
@@ -7077,7 +7113,9 @@ public final class Storage {
      * Requesting a larger offset is undefined.
      * </pre>
      *
-     * <code>.google.cloud.bigquery.storage.v1beta1.StreamPosition read_position = 1;</code>
+     * <code>
+     * .google.cloud.bigquery.storage.v1beta1.StreamPosition read_position = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public boolean hasReadPosition() {
       return readPosition_ != null;
@@ -7091,7 +7129,9 @@ public final class Storage {
      * Requesting a larger offset is undefined.
      * </pre>
      *
-     * <code>.google.cloud.bigquery.storage.v1beta1.StreamPosition read_position = 1;</code>
+     * <code>
+     * .google.cloud.bigquery.storage.v1beta1.StreamPosition read_position = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public com.google.cloud.bigquery.storage.v1beta1.Storage.StreamPosition getReadPosition() {
       return readPosition_ == null
@@ -7107,7 +7147,9 @@ public final class Storage {
      * Requesting a larger offset is undefined.
      * </pre>
      *
-     * <code>.google.cloud.bigquery.storage.v1beta1.StreamPosition read_position = 1;</code>
+     * <code>
+     * .google.cloud.bigquery.storage.v1beta1.StreamPosition read_position = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public com.google.cloud.bigquery.storage.v1beta1.Storage.StreamPositionOrBuilder
         getReadPositionOrBuilder() {
@@ -7472,7 +7514,9 @@ public final class Storage {
        * Requesting a larger offset is undefined.
        * </pre>
        *
-       * <code>.google.cloud.bigquery.storage.v1beta1.StreamPosition read_position = 1;</code>
+       * <code>
+       * .google.cloud.bigquery.storage.v1beta1.StreamPosition read_position = 1 [(.google.api.field_behavior) = REQUIRED];
+       * </code>
        */
       public boolean hasReadPosition() {
         return readPositionBuilder_ != null || readPosition_ != null;
@@ -7486,7 +7530,9 @@ public final class Storage {
        * Requesting a larger offset is undefined.
        * </pre>
        *
-       * <code>.google.cloud.bigquery.storage.v1beta1.StreamPosition read_position = 1;</code>
+       * <code>
+       * .google.cloud.bigquery.storage.v1beta1.StreamPosition read_position = 1 [(.google.api.field_behavior) = REQUIRED];
+       * </code>
        */
       public com.google.cloud.bigquery.storage.v1beta1.Storage.StreamPosition getReadPosition() {
         if (readPositionBuilder_ == null) {
@@ -7507,7 +7553,9 @@ public final class Storage {
        * Requesting a larger offset is undefined.
        * </pre>
        *
-       * <code>.google.cloud.bigquery.storage.v1beta1.StreamPosition read_position = 1;</code>
+       * <code>
+       * .google.cloud.bigquery.storage.v1beta1.StreamPosition read_position = 1 [(.google.api.field_behavior) = REQUIRED];
+       * </code>
        */
       public Builder setReadPosition(
           com.google.cloud.bigquery.storage.v1beta1.Storage.StreamPosition value) {
@@ -7532,7 +7580,9 @@ public final class Storage {
        * Requesting a larger offset is undefined.
        * </pre>
        *
-       * <code>.google.cloud.bigquery.storage.v1beta1.StreamPosition read_position = 1;</code>
+       * <code>
+       * .google.cloud.bigquery.storage.v1beta1.StreamPosition read_position = 1 [(.google.api.field_behavior) = REQUIRED];
+       * </code>
        */
       public Builder setReadPosition(
           com.google.cloud.bigquery.storage.v1beta1.Storage.StreamPosition.Builder
@@ -7555,7 +7605,9 @@ public final class Storage {
        * Requesting a larger offset is undefined.
        * </pre>
        *
-       * <code>.google.cloud.bigquery.storage.v1beta1.StreamPosition read_position = 1;</code>
+       * <code>
+       * .google.cloud.bigquery.storage.v1beta1.StreamPosition read_position = 1 [(.google.api.field_behavior) = REQUIRED];
+       * </code>
        */
       public Builder mergeReadPosition(
           com.google.cloud.bigquery.storage.v1beta1.Storage.StreamPosition value) {
@@ -7585,7 +7637,9 @@ public final class Storage {
        * Requesting a larger offset is undefined.
        * </pre>
        *
-       * <code>.google.cloud.bigquery.storage.v1beta1.StreamPosition read_position = 1;</code>
+       * <code>
+       * .google.cloud.bigquery.storage.v1beta1.StreamPosition read_position = 1 [(.google.api.field_behavior) = REQUIRED];
+       * </code>
        */
       public Builder clearReadPosition() {
         if (readPositionBuilder_ == null) {
@@ -7607,7 +7661,9 @@ public final class Storage {
        * Requesting a larger offset is undefined.
        * </pre>
        *
-       * <code>.google.cloud.bigquery.storage.v1beta1.StreamPosition read_position = 1;</code>
+       * <code>
+       * .google.cloud.bigquery.storage.v1beta1.StreamPosition read_position = 1 [(.google.api.field_behavior) = REQUIRED];
+       * </code>
        */
       public com.google.cloud.bigquery.storage.v1beta1.Storage.StreamPosition.Builder
           getReadPositionBuilder() {
@@ -7624,7 +7680,9 @@ public final class Storage {
        * Requesting a larger offset is undefined.
        * </pre>
        *
-       * <code>.google.cloud.bigquery.storage.v1beta1.StreamPosition read_position = 1;</code>
+       * <code>
+       * .google.cloud.bigquery.storage.v1beta1.StreamPosition read_position = 1 [(.google.api.field_behavior) = REQUIRED];
+       * </code>
        */
       public com.google.cloud.bigquery.storage.v1beta1.Storage.StreamPositionOrBuilder
           getReadPositionOrBuilder() {
@@ -7646,7 +7704,9 @@ public final class Storage {
        * Requesting a larger offset is undefined.
        * </pre>
        *
-       * <code>.google.cloud.bigquery.storage.v1beta1.StreamPosition read_position = 1;</code>
+       * <code>
+       * .google.cloud.bigquery.storage.v1beta1.StreamPosition read_position = 1 [(.google.api.field_behavior) = REQUIRED];
+       * </code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
               com.google.cloud.bigquery.storage.v1beta1.Storage.StreamPosition,
@@ -7758,6 +7818,43 @@ public final class Storage {
      *
      *
      * <pre>
+     * Represents the progress of the current stream.
+     * Note: This value is under development and should not be used. Use
+     * `fraction_consumed` instead.
+     * </pre>
+     *
+     * <code>.google.cloud.bigquery.storage.v1beta1.Progress progress = 4;</code>
+     */
+    boolean hasProgress();
+    /**
+     *
+     *
+     * <pre>
+     * Represents the progress of the current stream.
+     * Note: This value is under development and should not be used. Use
+     * `fraction_consumed` instead.
+     * </pre>
+     *
+     * <code>.google.cloud.bigquery.storage.v1beta1.Progress progress = 4;</code>
+     */
+    com.google.cloud.bigquery.storage.v1beta1.Storage.Progress getProgress();
+    /**
+     *
+     *
+     * <pre>
+     * Represents the progress of the current stream.
+     * Note: This value is under development and should not be used. Use
+     * `fraction_consumed` instead.
+     * </pre>
+     *
+     * <code>.google.cloud.bigquery.storage.v1beta1.Progress progress = 4;</code>
+     */
+    com.google.cloud.bigquery.storage.v1beta1.Storage.ProgressOrBuilder getProgressOrBuilder();
+
+    /**
+     *
+     *
+     * <pre>
      * Whether this stream can be split. For sessions that use the LIQUID sharding
      * strategy, this value is always false. For BALANCED sessions, this value is
      * false when enough data have been read such that no more splits are possible
@@ -7827,6 +7924,24 @@ public final class Storage {
             case 24:
               {
                 isSplittable_ = input.readBool();
+                break;
+              }
+            case 34:
+              {
+                com.google.cloud.bigquery.storage.v1beta1.Storage.Progress.Builder subBuilder =
+                    null;
+                if (progress_ != null) {
+                  subBuilder = progress_.toBuilder();
+                }
+                progress_ =
+                    input.readMessage(
+                        com.google.cloud.bigquery.storage.v1beta1.Storage.Progress.parser(),
+                        extensionRegistry);
+                if (subBuilder != null) {
+                  subBuilder.mergeFrom(progress_);
+                  progress_ = subBuilder.buildPartial();
+                }
+
                 break;
               }
             default:
@@ -7900,6 +8015,54 @@ public final class Storage {
       return fractionConsumed_;
     }
 
+    public static final int PROGRESS_FIELD_NUMBER = 4;
+    private com.google.cloud.bigquery.storage.v1beta1.Storage.Progress progress_;
+    /**
+     *
+     *
+     * <pre>
+     * Represents the progress of the current stream.
+     * Note: This value is under development and should not be used. Use
+     * `fraction_consumed` instead.
+     * </pre>
+     *
+     * <code>.google.cloud.bigquery.storage.v1beta1.Progress progress = 4;</code>
+     */
+    public boolean hasProgress() {
+      return progress_ != null;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Represents the progress of the current stream.
+     * Note: This value is under development and should not be used. Use
+     * `fraction_consumed` instead.
+     * </pre>
+     *
+     * <code>.google.cloud.bigquery.storage.v1beta1.Progress progress = 4;</code>
+     */
+    public com.google.cloud.bigquery.storage.v1beta1.Storage.Progress getProgress() {
+      return progress_ == null
+          ? com.google.cloud.bigquery.storage.v1beta1.Storage.Progress.getDefaultInstance()
+          : progress_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Represents the progress of the current stream.
+     * Note: This value is under development and should not be used. Use
+     * `fraction_consumed` instead.
+     * </pre>
+     *
+     * <code>.google.cloud.bigquery.storage.v1beta1.Progress progress = 4;</code>
+     */
+    public com.google.cloud.bigquery.storage.v1beta1.Storage.ProgressOrBuilder
+        getProgressOrBuilder() {
+      return getProgress();
+    }
+
     public static final int IS_SPLITTABLE_FIELD_NUMBER = 3;
     private boolean isSplittable_;
     /**
@@ -7942,6 +8105,9 @@ public final class Storage {
       if (isSplittable_ != false) {
         output.writeBool(3, isSplittable_);
       }
+      if (progress_ != null) {
+        output.writeMessage(4, getProgress());
+      }
       unknownFields.writeTo(output);
     }
 
@@ -7959,6 +8125,9 @@ public final class Storage {
       }
       if (isSplittable_ != false) {
         size += com.google.protobuf.CodedOutputStream.computeBoolSize(3, isSplittable_);
+      }
+      if (progress_ != null) {
+        size += com.google.protobuf.CodedOutputStream.computeMessageSize(4, getProgress());
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -7979,6 +8148,10 @@ public final class Storage {
       if (getEstimatedRowCount() != other.getEstimatedRowCount()) return false;
       if (java.lang.Float.floatToIntBits(getFractionConsumed())
           != java.lang.Float.floatToIntBits(other.getFractionConsumed())) return false;
+      if (hasProgress() != other.hasProgress()) return false;
+      if (hasProgress()) {
+        if (!getProgress().equals(other.getProgress())) return false;
+      }
       if (getIsSplittable() != other.getIsSplittable()) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
@@ -7995,6 +8168,10 @@ public final class Storage {
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(getEstimatedRowCount());
       hash = (37 * hash) + FRACTION_CONSUMED_FIELD_NUMBER;
       hash = (53 * hash) + java.lang.Float.floatToIntBits(getFractionConsumed());
+      if (hasProgress()) {
+        hash = (37 * hash) + PROGRESS_FIELD_NUMBER;
+        hash = (53 * hash) + getProgress().hashCode();
+      }
       hash = (37 * hash) + IS_SPLITTABLE_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getIsSplittable());
       hash = (29 * hash) + unknownFields.hashCode();
@@ -8149,6 +8326,12 @@ public final class Storage {
 
         fractionConsumed_ = 0F;
 
+        if (progressBuilder_ == null) {
+          progress_ = null;
+        } else {
+          progress_ = null;
+          progressBuilder_ = null;
+        }
         isSplittable_ = false;
 
         return this;
@@ -8181,6 +8364,11 @@ public final class Storage {
             new com.google.cloud.bigquery.storage.v1beta1.Storage.StreamStatus(this);
         result.estimatedRowCount_ = estimatedRowCount_;
         result.fractionConsumed_ = fractionConsumed_;
+        if (progressBuilder_ == null) {
+          result.progress_ = progress_;
+        } else {
+          result.progress_ = progressBuilder_.build();
+        }
         result.isSplittable_ = isSplittable_;
         onBuilt();
         return result;
@@ -8241,6 +8429,9 @@ public final class Storage {
         }
         if (other.getFractionConsumed() != 0F) {
           setFractionConsumed(other.getFractionConsumed());
+        }
+        if (other.hasProgress()) {
+          mergeProgress(other.getProgress());
         }
         if (other.getIsSplittable() != false) {
           setIsSplittable(other.getIsSplittable());
@@ -8385,6 +8576,209 @@ public final class Storage {
         return this;
       }
 
+      private com.google.cloud.bigquery.storage.v1beta1.Storage.Progress progress_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.cloud.bigquery.storage.v1beta1.Storage.Progress,
+              com.google.cloud.bigquery.storage.v1beta1.Storage.Progress.Builder,
+              com.google.cloud.bigquery.storage.v1beta1.Storage.ProgressOrBuilder>
+          progressBuilder_;
+      /**
+       *
+       *
+       * <pre>
+       * Represents the progress of the current stream.
+       * Note: This value is under development and should not be used. Use
+       * `fraction_consumed` instead.
+       * </pre>
+       *
+       * <code>.google.cloud.bigquery.storage.v1beta1.Progress progress = 4;</code>
+       */
+      public boolean hasProgress() {
+        return progressBuilder_ != null || progress_ != null;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Represents the progress of the current stream.
+       * Note: This value is under development and should not be used. Use
+       * `fraction_consumed` instead.
+       * </pre>
+       *
+       * <code>.google.cloud.bigquery.storage.v1beta1.Progress progress = 4;</code>
+       */
+      public com.google.cloud.bigquery.storage.v1beta1.Storage.Progress getProgress() {
+        if (progressBuilder_ == null) {
+          return progress_ == null
+              ? com.google.cloud.bigquery.storage.v1beta1.Storage.Progress.getDefaultInstance()
+              : progress_;
+        } else {
+          return progressBuilder_.getMessage();
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Represents the progress of the current stream.
+       * Note: This value is under development and should not be used. Use
+       * `fraction_consumed` instead.
+       * </pre>
+       *
+       * <code>.google.cloud.bigquery.storage.v1beta1.Progress progress = 4;</code>
+       */
+      public Builder setProgress(com.google.cloud.bigquery.storage.v1beta1.Storage.Progress value) {
+        if (progressBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          progress_ = value;
+          onChanged();
+        } else {
+          progressBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Represents the progress of the current stream.
+       * Note: This value is under development and should not be used. Use
+       * `fraction_consumed` instead.
+       * </pre>
+       *
+       * <code>.google.cloud.bigquery.storage.v1beta1.Progress progress = 4;</code>
+       */
+      public Builder setProgress(
+          com.google.cloud.bigquery.storage.v1beta1.Storage.Progress.Builder builderForValue) {
+        if (progressBuilder_ == null) {
+          progress_ = builderForValue.build();
+          onChanged();
+        } else {
+          progressBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Represents the progress of the current stream.
+       * Note: This value is under development and should not be used. Use
+       * `fraction_consumed` instead.
+       * </pre>
+       *
+       * <code>.google.cloud.bigquery.storage.v1beta1.Progress progress = 4;</code>
+       */
+      public Builder mergeProgress(
+          com.google.cloud.bigquery.storage.v1beta1.Storage.Progress value) {
+        if (progressBuilder_ == null) {
+          if (progress_ != null) {
+            progress_ =
+                com.google.cloud.bigquery.storage.v1beta1.Storage.Progress.newBuilder(progress_)
+                    .mergeFrom(value)
+                    .buildPartial();
+          } else {
+            progress_ = value;
+          }
+          onChanged();
+        } else {
+          progressBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Represents the progress of the current stream.
+       * Note: This value is under development and should not be used. Use
+       * `fraction_consumed` instead.
+       * </pre>
+       *
+       * <code>.google.cloud.bigquery.storage.v1beta1.Progress progress = 4;</code>
+       */
+      public Builder clearProgress() {
+        if (progressBuilder_ == null) {
+          progress_ = null;
+          onChanged();
+        } else {
+          progress_ = null;
+          progressBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Represents the progress of the current stream.
+       * Note: This value is under development and should not be used. Use
+       * `fraction_consumed` instead.
+       * </pre>
+       *
+       * <code>.google.cloud.bigquery.storage.v1beta1.Progress progress = 4;</code>
+       */
+      public com.google.cloud.bigquery.storage.v1beta1.Storage.Progress.Builder
+          getProgressBuilder() {
+
+        onChanged();
+        return getProgressFieldBuilder().getBuilder();
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Represents the progress of the current stream.
+       * Note: This value is under development and should not be used. Use
+       * `fraction_consumed` instead.
+       * </pre>
+       *
+       * <code>.google.cloud.bigquery.storage.v1beta1.Progress progress = 4;</code>
+       */
+      public com.google.cloud.bigquery.storage.v1beta1.Storage.ProgressOrBuilder
+          getProgressOrBuilder() {
+        if (progressBuilder_ != null) {
+          return progressBuilder_.getMessageOrBuilder();
+        } else {
+          return progress_ == null
+              ? com.google.cloud.bigquery.storage.v1beta1.Storage.Progress.getDefaultInstance()
+              : progress_;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Represents the progress of the current stream.
+       * Note: This value is under development and should not be used. Use
+       * `fraction_consumed` instead.
+       * </pre>
+       *
+       * <code>.google.cloud.bigquery.storage.v1beta1.Progress progress = 4;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.cloud.bigquery.storage.v1beta1.Storage.Progress,
+              com.google.cloud.bigquery.storage.v1beta1.Storage.Progress.Builder,
+              com.google.cloud.bigquery.storage.v1beta1.Storage.ProgressOrBuilder>
+          getProgressFieldBuilder() {
+        if (progressBuilder_ == null) {
+          progressBuilder_ =
+              new com.google.protobuf.SingleFieldBuilderV3<
+                  com.google.cloud.bigquery.storage.v1beta1.Storage.Progress,
+                  com.google.cloud.bigquery.storage.v1beta1.Storage.Progress.Builder,
+                  com.google.cloud.bigquery.storage.v1beta1.Storage.ProgressOrBuilder>(
+                  getProgress(), getParentForChildren(), isClean());
+          progress_ = null;
+        }
+        return progressBuilder_;
+      }
+
       private boolean isSplittable_;
       /**
        *
@@ -8492,6 +8886,663 @@ public final class Storage {
     @java.lang.Override
     public com.google.cloud.bigquery.storage.v1beta1.Storage.StreamStatus
         getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+  }
+
+  public interface ProgressOrBuilder
+      extends
+      // @@protoc_insertion_point(interface_extends:google.cloud.bigquery.storage.v1beta1.Progress)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     *
+     *
+     * <pre>
+     * The fraction of rows assigned to the stream that have been processed by the
+     * server so far, not including the rows in the current response message.
+     * This value, along with `at_response_end`, can be used to interpolate the
+     * progress made as the rows in the message are being processed using the
+     * following formula: `at_response_start + (at_response_end -
+     * at_response_start) * rows_processed_from_response / rows_in_response`.
+     * Note that if a filter is provided, the `at_response_end` value of the
+     * previous response may not necessarily be equal to the `at_response_start`
+     * value of the current response.
+     * </pre>
+     *
+     * <code>float at_response_start = 1;</code>
+     */
+    float getAtResponseStart();
+
+    /**
+     *
+     *
+     * <pre>
+     * Similar to `at_response_start`, except that this value includes the rows in
+     * the current response.
+     * </pre>
+     *
+     * <code>float at_response_end = 2;</code>
+     */
+    float getAtResponseEnd();
+  }
+  /** Protobuf type {@code google.cloud.bigquery.storage.v1beta1.Progress} */
+  public static final class Progress extends com.google.protobuf.GeneratedMessageV3
+      implements
+      // @@protoc_insertion_point(message_implements:google.cloud.bigquery.storage.v1beta1.Progress)
+      ProgressOrBuilder {
+    private static final long serialVersionUID = 0L;
+    // Use Progress.newBuilder() to construct.
+    private Progress(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+
+    private Progress() {}
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
+      return this.unknownFields;
+    }
+
+    private Progress(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 13:
+              {
+                atResponseStart_ = input.readFloat();
+                break;
+              }
+            case 21:
+              {
+                atResponseEnd_ = input.readFloat();
+                break;
+              }
+            default:
+              {
+                if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
+                  done = true;
+                }
+                break;
+              }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.cloud.bigquery.storage.v1beta1.Storage
+          .internal_static_google_cloud_bigquery_storage_v1beta1_Progress_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.google.cloud.bigquery.storage.v1beta1.Storage
+          .internal_static_google_cloud_bigquery_storage_v1beta1_Progress_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.google.cloud.bigquery.storage.v1beta1.Storage.Progress.class,
+              com.google.cloud.bigquery.storage.v1beta1.Storage.Progress.Builder.class);
+    }
+
+    public static final int AT_RESPONSE_START_FIELD_NUMBER = 1;
+    private float atResponseStart_;
+    /**
+     *
+     *
+     * <pre>
+     * The fraction of rows assigned to the stream that have been processed by the
+     * server so far, not including the rows in the current response message.
+     * This value, along with `at_response_end`, can be used to interpolate the
+     * progress made as the rows in the message are being processed using the
+     * following formula: `at_response_start + (at_response_end -
+     * at_response_start) * rows_processed_from_response / rows_in_response`.
+     * Note that if a filter is provided, the `at_response_end` value of the
+     * previous response may not necessarily be equal to the `at_response_start`
+     * value of the current response.
+     * </pre>
+     *
+     * <code>float at_response_start = 1;</code>
+     */
+    public float getAtResponseStart() {
+      return atResponseStart_;
+    }
+
+    public static final int AT_RESPONSE_END_FIELD_NUMBER = 2;
+    private float atResponseEnd_;
+    /**
+     *
+     *
+     * <pre>
+     * Similar to `at_response_start`, except that this value includes the rows in
+     * the current response.
+     * </pre>
+     *
+     * <code>float at_response_end = 2;</code>
+     */
+    public float getAtResponseEnd() {
+      return atResponseEnd_;
+    }
+
+    private byte memoizedIsInitialized = -1;
+
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+      if (atResponseStart_ != 0F) {
+        output.writeFloat(1, atResponseStart_);
+      }
+      if (atResponseEnd_ != 0F) {
+        output.writeFloat(2, atResponseEnd_);
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (atResponseStart_ != 0F) {
+        size += com.google.protobuf.CodedOutputStream.computeFloatSize(1, atResponseStart_);
+      }
+      if (atResponseEnd_ != 0F) {
+        size += com.google.protobuf.CodedOutputStream.computeFloatSize(2, atResponseEnd_);
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+        return true;
+      }
+      if (!(obj instanceof com.google.cloud.bigquery.storage.v1beta1.Storage.Progress)) {
+        return super.equals(obj);
+      }
+      com.google.cloud.bigquery.storage.v1beta1.Storage.Progress other =
+          (com.google.cloud.bigquery.storage.v1beta1.Storage.Progress) obj;
+
+      if (java.lang.Float.floatToIntBits(getAtResponseStart())
+          != java.lang.Float.floatToIntBits(other.getAtResponseStart())) return false;
+      if (java.lang.Float.floatToIntBits(getAtResponseEnd())
+          != java.lang.Float.floatToIntBits(other.getAtResponseEnd())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + AT_RESPONSE_START_FIELD_NUMBER;
+      hash = (53 * hash) + java.lang.Float.floatToIntBits(getAtResponseStart());
+      hash = (37 * hash) + AT_RESPONSE_END_FIELD_NUMBER;
+      hash = (53 * hash) + java.lang.Float.floatToIntBits(getAtResponseEnd());
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.google.cloud.bigquery.storage.v1beta1.Storage.Progress parseFrom(
+        java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.bigquery.storage.v1beta1.Storage.Progress parseFrom(
+        java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.bigquery.storage.v1beta1.Storage.Progress parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.bigquery.storage.v1beta1.Storage.Progress parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.bigquery.storage.v1beta1.Storage.Progress parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.bigquery.storage.v1beta1.Storage.Progress parseFrom(
+        byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.bigquery.storage.v1beta1.Storage.Progress parseFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.bigquery.storage.v1beta1.Storage.Progress parseFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.bigquery.storage.v1beta1.Storage.Progress parseDelimitedFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.bigquery.storage.v1beta1.Storage.Progress parseDelimitedFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.bigquery.storage.v1beta1.Storage.Progress parseFrom(
+        com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.bigquery.storage.v1beta1.Storage.Progress parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() {
+      return newBuilder();
+    }
+
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+
+    public static Builder newBuilder(
+        com.google.cloud.bigquery.storage.v1beta1.Storage.Progress prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /** Protobuf type {@code google.cloud.bigquery.storage.v1beta1.Progress} */
+    public static final class Builder
+        extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+        implements
+        // @@protoc_insertion_point(builder_implements:google.cloud.bigquery.storage.v1beta1.Progress)
+        com.google.cloud.bigquery.storage.v1beta1.Storage.ProgressOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.cloud.bigquery.storage.v1beta1.Storage
+            .internal_static_google_cloud_bigquery_storage_v1beta1_Progress_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.cloud.bigquery.storage.v1beta1.Storage
+            .internal_static_google_cloud_bigquery_storage_v1beta1_Progress_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.cloud.bigquery.storage.v1beta1.Storage.Progress.class,
+                com.google.cloud.bigquery.storage.v1beta1.Storage.Progress.Builder.class);
+      }
+
+      // Construct using com.google.cloud.bigquery.storage.v1beta1.Storage.Progress.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
+      }
+
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        atResponseStart_ = 0F;
+
+        atResponseEnd_ = 0F;
+
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+        return com.google.cloud.bigquery.storage.v1beta1.Storage
+            .internal_static_google_cloud_bigquery_storage_v1beta1_Progress_descriptor;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.bigquery.storage.v1beta1.Storage.Progress
+          getDefaultInstanceForType() {
+        return com.google.cloud.bigquery.storage.v1beta1.Storage.Progress.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.google.cloud.bigquery.storage.v1beta1.Storage.Progress build() {
+        com.google.cloud.bigquery.storage.v1beta1.Storage.Progress result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.bigquery.storage.v1beta1.Storage.Progress buildPartial() {
+        com.google.cloud.bigquery.storage.v1beta1.Storage.Progress result =
+            new com.google.cloud.bigquery.storage.v1beta1.Storage.Progress(this);
+        result.atResponseStart_ = atResponseStart_;
+        result.atResponseEnd_ = atResponseEnd_;
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.setField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+
+      @java.lang.Override
+      public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index,
+          java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.google.cloud.bigquery.storage.v1beta1.Storage.Progress) {
+          return mergeFrom((com.google.cloud.bigquery.storage.v1beta1.Storage.Progress) other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.google.cloud.bigquery.storage.v1beta1.Storage.Progress other) {
+        if (other
+            == com.google.cloud.bigquery.storage.v1beta1.Storage.Progress.getDefaultInstance())
+          return this;
+        if (other.getAtResponseStart() != 0F) {
+          setAtResponseStart(other.getAtResponseStart());
+        }
+        if (other.getAtResponseEnd() != 0F) {
+          setAtResponseEnd(other.getAtResponseEnd());
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        com.google.cloud.bigquery.storage.v1beta1.Storage.Progress parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage =
+              (com.google.cloud.bigquery.storage.v1beta1.Storage.Progress) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      private float atResponseStart_;
+      /**
+       *
+       *
+       * <pre>
+       * The fraction of rows assigned to the stream that have been processed by the
+       * server so far, not including the rows in the current response message.
+       * This value, along with `at_response_end`, can be used to interpolate the
+       * progress made as the rows in the message are being processed using the
+       * following formula: `at_response_start + (at_response_end -
+       * at_response_start) * rows_processed_from_response / rows_in_response`.
+       * Note that if a filter is provided, the `at_response_end` value of the
+       * previous response may not necessarily be equal to the `at_response_start`
+       * value of the current response.
+       * </pre>
+       *
+       * <code>float at_response_start = 1;</code>
+       */
+      public float getAtResponseStart() {
+        return atResponseStart_;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The fraction of rows assigned to the stream that have been processed by the
+       * server so far, not including the rows in the current response message.
+       * This value, along with `at_response_end`, can be used to interpolate the
+       * progress made as the rows in the message are being processed using the
+       * following formula: `at_response_start + (at_response_end -
+       * at_response_start) * rows_processed_from_response / rows_in_response`.
+       * Note that if a filter is provided, the `at_response_end` value of the
+       * previous response may not necessarily be equal to the `at_response_start`
+       * value of the current response.
+       * </pre>
+       *
+       * <code>float at_response_start = 1;</code>
+       */
+      public Builder setAtResponseStart(float value) {
+
+        atResponseStart_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The fraction of rows assigned to the stream that have been processed by the
+       * server so far, not including the rows in the current response message.
+       * This value, along with `at_response_end`, can be used to interpolate the
+       * progress made as the rows in the message are being processed using the
+       * following formula: `at_response_start + (at_response_end -
+       * at_response_start) * rows_processed_from_response / rows_in_response`.
+       * Note that if a filter is provided, the `at_response_end` value of the
+       * previous response may not necessarily be equal to the `at_response_start`
+       * value of the current response.
+       * </pre>
+       *
+       * <code>float at_response_start = 1;</code>
+       */
+      public Builder clearAtResponseStart() {
+
+        atResponseStart_ = 0F;
+        onChanged();
+        return this;
+      }
+
+      private float atResponseEnd_;
+      /**
+       *
+       *
+       * <pre>
+       * Similar to `at_response_start`, except that this value includes the rows in
+       * the current response.
+       * </pre>
+       *
+       * <code>float at_response_end = 2;</code>
+       */
+      public float getAtResponseEnd() {
+        return atResponseEnd_;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Similar to `at_response_start`, except that this value includes the rows in
+       * the current response.
+       * </pre>
+       *
+       * <code>float at_response_end = 2;</code>
+       */
+      public Builder setAtResponseEnd(float value) {
+
+        atResponseEnd_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Similar to `at_response_start`, except that this value includes the rows in
+       * the current response.
+       * </pre>
+       *
+       * <code>float at_response_end = 2;</code>
+       */
+      public Builder clearAtResponseEnd() {
+
+        atResponseEnd_ = 0F;
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+      // @@protoc_insertion_point(builder_scope:google.cloud.bigquery.storage.v1beta1.Progress)
+    }
+
+    // @@protoc_insertion_point(class_scope:google.cloud.bigquery.storage.v1beta1.Progress)
+    private static final com.google.cloud.bigquery.storage.v1beta1.Storage.Progress
+        DEFAULT_INSTANCE;
+
+    static {
+      DEFAULT_INSTANCE = new com.google.cloud.bigquery.storage.v1beta1.Storage.Progress();
+    }
+
+    public static com.google.cloud.bigquery.storage.v1beta1.Storage.Progress getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<Progress> PARSER =
+        new com.google.protobuf.AbstractParser<Progress>() {
+          @java.lang.Override
+          public Progress parsePartialFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+            return new Progress(input, extensionRegistry);
+          }
+        };
+
+    public static com.google.protobuf.Parser<Progress> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<Progress> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.cloud.bigquery.storage.v1beta1.Storage.Progress getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
   }
@@ -11015,7 +12066,9 @@ public final class Storage {
      * CreateReadSession. Only the name field needs to be set.
      * </pre>
      *
-     * <code>.google.cloud.bigquery.storage.v1beta1.ReadSession session = 1;</code>
+     * <code>
+     * .google.cloud.bigquery.storage.v1beta1.ReadSession session = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     boolean hasSession();
     /**
@@ -11026,7 +12079,9 @@ public final class Storage {
      * CreateReadSession. Only the name field needs to be set.
      * </pre>
      *
-     * <code>.google.cloud.bigquery.storage.v1beta1.ReadSession session = 1;</code>
+     * <code>
+     * .google.cloud.bigquery.storage.v1beta1.ReadSession session = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     com.google.cloud.bigquery.storage.v1beta1.Storage.ReadSession getSession();
     /**
@@ -11037,7 +12092,9 @@ public final class Storage {
      * CreateReadSession. Only the name field needs to be set.
      * </pre>
      *
-     * <code>.google.cloud.bigquery.storage.v1beta1.ReadSession session = 1;</code>
+     * <code>
+     * .google.cloud.bigquery.storage.v1beta1.ReadSession session = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     com.google.cloud.bigquery.storage.v1beta1.Storage.ReadSessionOrBuilder getSessionOrBuilder();
 
@@ -11050,7 +12107,7 @@ public final class Storage {
      * for more information.
      * </pre>
      *
-     * <code>int32 requested_streams = 2;</code>
+     * <code>int32 requested_streams = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     int getRequestedStreams();
   }
@@ -11172,7 +12229,9 @@ public final class Storage {
      * CreateReadSession. Only the name field needs to be set.
      * </pre>
      *
-     * <code>.google.cloud.bigquery.storage.v1beta1.ReadSession session = 1;</code>
+     * <code>
+     * .google.cloud.bigquery.storage.v1beta1.ReadSession session = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public boolean hasSession() {
       return session_ != null;
@@ -11185,7 +12244,9 @@ public final class Storage {
      * CreateReadSession. Only the name field needs to be set.
      * </pre>
      *
-     * <code>.google.cloud.bigquery.storage.v1beta1.ReadSession session = 1;</code>
+     * <code>
+     * .google.cloud.bigquery.storage.v1beta1.ReadSession session = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public com.google.cloud.bigquery.storage.v1beta1.Storage.ReadSession getSession() {
       return session_ == null
@@ -11200,7 +12261,9 @@ public final class Storage {
      * CreateReadSession. Only the name field needs to be set.
      * </pre>
      *
-     * <code>.google.cloud.bigquery.storage.v1beta1.ReadSession session = 1;</code>
+     * <code>
+     * .google.cloud.bigquery.storage.v1beta1.ReadSession session = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public com.google.cloud.bigquery.storage.v1beta1.Storage.ReadSessionOrBuilder
         getSessionOrBuilder() {
@@ -11218,7 +12281,7 @@ public final class Storage {
      * for more information.
      * </pre>
      *
-     * <code>int32 requested_streams = 2;</code>
+     * <code>int32 requested_streams = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public int getRequestedStreams() {
       return requestedStreams_;
@@ -11635,7 +12698,9 @@ public final class Storage {
        * CreateReadSession. Only the name field needs to be set.
        * </pre>
        *
-       * <code>.google.cloud.bigquery.storage.v1beta1.ReadSession session = 1;</code>
+       * <code>
+       * .google.cloud.bigquery.storage.v1beta1.ReadSession session = 1 [(.google.api.field_behavior) = REQUIRED];
+       * </code>
        */
       public boolean hasSession() {
         return sessionBuilder_ != null || session_ != null;
@@ -11648,7 +12713,9 @@ public final class Storage {
        * CreateReadSession. Only the name field needs to be set.
        * </pre>
        *
-       * <code>.google.cloud.bigquery.storage.v1beta1.ReadSession session = 1;</code>
+       * <code>
+       * .google.cloud.bigquery.storage.v1beta1.ReadSession session = 1 [(.google.api.field_behavior) = REQUIRED];
+       * </code>
        */
       public com.google.cloud.bigquery.storage.v1beta1.Storage.ReadSession getSession() {
         if (sessionBuilder_ == null) {
@@ -11667,7 +12734,9 @@ public final class Storage {
        * CreateReadSession. Only the name field needs to be set.
        * </pre>
        *
-       * <code>.google.cloud.bigquery.storage.v1beta1.ReadSession session = 1;</code>
+       * <code>
+       * .google.cloud.bigquery.storage.v1beta1.ReadSession session = 1 [(.google.api.field_behavior) = REQUIRED];
+       * </code>
        */
       public Builder setSession(
           com.google.cloud.bigquery.storage.v1beta1.Storage.ReadSession value) {
@@ -11691,7 +12760,9 @@ public final class Storage {
        * CreateReadSession. Only the name field needs to be set.
        * </pre>
        *
-       * <code>.google.cloud.bigquery.storage.v1beta1.ReadSession session = 1;</code>
+       * <code>
+       * .google.cloud.bigquery.storage.v1beta1.ReadSession session = 1 [(.google.api.field_behavior) = REQUIRED];
+       * </code>
        */
       public Builder setSession(
           com.google.cloud.bigquery.storage.v1beta1.Storage.ReadSession.Builder builderForValue) {
@@ -11712,7 +12783,9 @@ public final class Storage {
        * CreateReadSession. Only the name field needs to be set.
        * </pre>
        *
-       * <code>.google.cloud.bigquery.storage.v1beta1.ReadSession session = 1;</code>
+       * <code>
+       * .google.cloud.bigquery.storage.v1beta1.ReadSession session = 1 [(.google.api.field_behavior) = REQUIRED];
+       * </code>
        */
       public Builder mergeSession(
           com.google.cloud.bigquery.storage.v1beta1.Storage.ReadSession value) {
@@ -11740,7 +12813,9 @@ public final class Storage {
        * CreateReadSession. Only the name field needs to be set.
        * </pre>
        *
-       * <code>.google.cloud.bigquery.storage.v1beta1.ReadSession session = 1;</code>
+       * <code>
+       * .google.cloud.bigquery.storage.v1beta1.ReadSession session = 1 [(.google.api.field_behavior) = REQUIRED];
+       * </code>
        */
       public Builder clearSession() {
         if (sessionBuilder_ == null) {
@@ -11761,7 +12836,9 @@ public final class Storage {
        * CreateReadSession. Only the name field needs to be set.
        * </pre>
        *
-       * <code>.google.cloud.bigquery.storage.v1beta1.ReadSession session = 1;</code>
+       * <code>
+       * .google.cloud.bigquery.storage.v1beta1.ReadSession session = 1 [(.google.api.field_behavior) = REQUIRED];
+       * </code>
        */
       public com.google.cloud.bigquery.storage.v1beta1.Storage.ReadSession.Builder
           getSessionBuilder() {
@@ -11777,7 +12854,9 @@ public final class Storage {
        * CreateReadSession. Only the name field needs to be set.
        * </pre>
        *
-       * <code>.google.cloud.bigquery.storage.v1beta1.ReadSession session = 1;</code>
+       * <code>
+       * .google.cloud.bigquery.storage.v1beta1.ReadSession session = 1 [(.google.api.field_behavior) = REQUIRED];
+       * </code>
        */
       public com.google.cloud.bigquery.storage.v1beta1.Storage.ReadSessionOrBuilder
           getSessionOrBuilder() {
@@ -11797,7 +12876,9 @@ public final class Storage {
        * CreateReadSession. Only the name field needs to be set.
        * </pre>
        *
-       * <code>.google.cloud.bigquery.storage.v1beta1.ReadSession session = 1;</code>
+       * <code>
+       * .google.cloud.bigquery.storage.v1beta1.ReadSession session = 1 [(.google.api.field_behavior) = REQUIRED];
+       * </code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
               com.google.cloud.bigquery.storage.v1beta1.Storage.ReadSession,
@@ -11826,7 +12907,7 @@ public final class Storage {
        * for more information.
        * </pre>
        *
-       * <code>int32 requested_streams = 2;</code>
+       * <code>int32 requested_streams = 2 [(.google.api.field_behavior) = REQUIRED];</code>
        */
       public int getRequestedStreams() {
         return requestedStreams_;
@@ -11840,7 +12921,7 @@ public final class Storage {
        * for more information.
        * </pre>
        *
-       * <code>int32 requested_streams = 2;</code>
+       * <code>int32 requested_streams = 2 [(.google.api.field_behavior) = REQUIRED];</code>
        */
       public Builder setRequestedStreams(int value) {
 
@@ -11857,7 +12938,7 @@ public final class Storage {
        * for more information.
        * </pre>
        *
-       * <code>int32 requested_streams = 2;</code>
+       * <code>int32 requested_streams = 2 [(.google.api.field_behavior) = REQUIRED];</code>
        */
       public Builder clearRequestedStreams() {
 
@@ -15793,6 +16874,10 @@ public final class Storage {
   private static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_bigquery_storage_v1beta1_StreamStatus_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_bigquery_storage_v1beta1_Progress_descriptor;
+  private static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_bigquery_storage_v1beta1_Progress_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_cloud_bigquery_storage_v1beta1_ThrottleStatus_descriptor;
   private static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_bigquery_storage_v1beta1_ThrottleStatus_fieldAccessorTable;
@@ -15832,110 +16917,125 @@ public final class Storage {
       "\n3google/cloud/bigquery/storage/v1beta1/"
           + "storage.proto\022%google.cloud.bigquery.sto"
           + "rage.v1beta1\032\034google/api/annotations.pro"
-          + "to\0321google/cloud/bigquery/storage/v1beta"
-          + "1/arrow.proto\0320google/cloud/bigquery/sto"
-          + "rage/v1beta1/avro.proto\0328google/cloud/bi"
-          + "gquery/storage/v1beta1/read_options.prot"
-          + "o\032;google/cloud/bigquery/storage/v1beta1"
-          + "/table_reference.proto\032\033google/protobuf/"
-          + "empty.proto\032\037google/protobuf/timestamp.p"
-          + "roto\032\027google/api/client.proto\"\026\n\006Stream\022"
-          + "\014\n\004name\030\001 \001(\t\"_\n\016StreamPosition\022=\n\006strea"
-          + "m\030\001 \001(\0132-.google.cloud.bigquery.storage."
-          + "v1beta1.Stream\022\016\n\006offset\030\002 \001(\003\"\240\004\n\013ReadS"
-          + "ession\022\014\n\004name\030\001 \001(\t\022/\n\013expire_time\030\002 \001("
-          + "\0132\032.google.protobuf.Timestamp\022H\n\013avro_sc"
-          + "hema\030\005 \001(\01321.google.cloud.bigquery.stora"
-          + "ge.v1beta1.AvroSchemaH\000\022J\n\014arrow_schema\030"
-          + "\006 \001(\01322.google.cloud.bigquery.storage.v1"
-          + "beta1.ArrowSchemaH\000\022>\n\007streams\030\004 \003(\0132-.g"
-          + "oogle.cloud.bigquery.storage.v1beta1.Str"
-          + "eam\022N\n\017table_reference\030\007 \001(\01325.google.cl"
-          + "oud.bigquery.storage.v1beta1.TableRefere"
-          + "nce\022N\n\017table_modifiers\030\010 \001(\01325.google.cl"
-          + "oud.bigquery.storage.v1beta1.TableModifi"
-          + "ers\022R\n\021sharding_strategy\030\t \001(\01627.google."
-          + "cloud.bigquery.storage.v1beta1.ShardingS"
-          + "trategyB\010\n\006schema\"\313\003\n\030CreateReadSessionR"
-          + "equest\022N\n\017table_reference\030\001 \001(\01325.google"
-          + ".cloud.bigquery.storage.v1beta1.TableRef"
-          + "erence\022\016\n\006parent\030\006 \001(\t\022N\n\017table_modifier"
-          + "s\030\002 \001(\01325.google.cloud.bigquery.storage."
-          + "v1beta1.TableModifiers\022\031\n\021requested_stre"
-          + "ams\030\003 \001(\005\022M\n\014read_options\030\004 \001(\01327.google"
-          + ".cloud.bigquery.storage.v1beta1.TableRea"
-          + "dOptions\022A\n\006format\030\005 \001(\01621.google.cloud."
-          + "bigquery.storage.v1beta1.DataFormat\022R\n\021s"
-          + "harding_strategy\030\007 \001(\01627.google.cloud.bi"
-          + "gquery.storage.v1beta1.ShardingStrategy\""
-          + "_\n\017ReadRowsRequest\022L\n\rread_position\030\001 \001("
-          + "\01325.google.cloud.bigquery.storage.v1beta"
-          + "1.StreamPosition\"]\n\014StreamStatus\022\033\n\023esti"
-          + "mated_row_count\030\001 \001(\003\022\031\n\021fraction_consum"
-          + "ed\030\002 \001(\002\022\025\n\ris_splittable\030\003 \001(\010\"*\n\016Throt"
-          + "tleStatus\022\030\n\020throttle_percent\030\001 \001(\005\"\337\002\n\020"
-          + "ReadRowsResponse\022D\n\tavro_rows\030\003 \001(\0132/.go"
-          + "ogle.cloud.bigquery.storage.v1beta1.Avro"
-          + "RowsH\000\022U\n\022arrow_record_batch\030\004 \001(\01327.goo"
-          + "gle.cloud.bigquery.storage.v1beta1.Arrow"
-          + "RecordBatchH\000\022\021\n\trow_count\030\006 \001(\003\022C\n\006stat"
-          + "us\030\002 \001(\01323.google.cloud.bigquery.storage"
-          + ".v1beta1.StreamStatus\022N\n\017throttle_status"
-          + "\030\005 \001(\01325.google.cloud.bigquery.storage.v"
-          + "1beta1.ThrottleStatusB\006\n\004rows\"\206\001\n$BatchC"
-          + "reateReadSessionStreamsRequest\022C\n\007sessio"
-          + "n\030\001 \001(\01322.google.cloud.bigquery.storage."
-          + "v1beta1.ReadSession\022\031\n\021requested_streams"
-          + "\030\002 \001(\005\"g\n%BatchCreateReadSessionStreamsR"
-          + "esponse\022>\n\007streams\030\001 \003(\0132-.google.cloud."
-          + "bigquery.storage.v1beta1.Stream\"V\n\025Final"
-          + "izeStreamRequest\022=\n\006stream\030\002 \001(\0132-.googl"
-          + "e.cloud.bigquery.storage.v1beta1.Stream\""
-          + "r\n\026SplitReadStreamRequest\022F\n\017original_st"
-          + "ream\030\001 \001(\0132-.google.cloud.bigquery.stora"
-          + "ge.v1beta1.Stream\022\020\n\010fraction\030\002 \001(\002\"\251\001\n\027"
-          + "SplitReadStreamResponse\022E\n\016primary_strea"
-          + "m\030\001 \001(\0132-.google.cloud.bigquery.storage."
-          + "v1beta1.Stream\022G\n\020remainder_stream\030\002 \001(\013"
-          + "2-.google.cloud.bigquery.storage.v1beta1"
-          + ".Stream*>\n\nDataFormat\022\033\n\027DATA_FORMAT_UNS"
-          + "PECIFIED\020\000\022\010\n\004AVRO\020\001\022\t\n\005ARROW\020\003*O\n\020Shard"
-          + "ingStrategy\022!\n\035SHARDING_STRATEGY_UNSPECI"
-          + "FIED\020\000\022\n\n\006LIQUID\020\001\022\014\n\010BALANCED\020\0022\304\t\n\017Big"
-          + "QueryStorage\022\207\002\n\021CreateReadSession\022?.goo"
-          + "gle.cloud.bigquery.storage.v1beta1.Creat"
-          + "eReadSessionRequest\0322.google.cloud.bigqu"
-          + "ery.storage.v1beta1.ReadSession\"}\202\323\344\223\002w\""
-          + "0/v1beta1/{table_reference.project_id=pr"
-          + "ojects/*}:\001*Z@\";/v1beta1/{table_referenc"
-          + "e.dataset_id=projects/*/datasets/*}:\001*\022\300"
-          + "\001\n\010ReadRows\0226.google.cloud.bigquery.stor"
-          + "age.v1beta1.ReadRowsRequest\0327.google.clo"
-          + "ud.bigquery.storage.v1beta1.ReadRowsResp"
-          + "onse\"A\202\323\344\223\002;\0229/v1beta1/{read_position.st"
-          + "ream.name=projects/*/streams/*}0\001\022\364\001\n\035Ba"
-          + "tchCreateReadSessionStreams\022K.google.clo"
-          + "ud.bigquery.storage.v1beta1.BatchCreateR"
-          + "eadSessionStreamsRequest\032L.google.cloud."
-          + "bigquery.storage.v1beta1.BatchCreateRead"
-          + "SessionStreamsResponse\"8\202\323\344\223\0022\"-/v1beta1"
-          + "/{session.name=projects/*/sessions/*}:\001*"
-          + "\022\236\001\n\016FinalizeStream\022<.google.cloud.bigqu"
-          + "ery.storage.v1beta1.FinalizeStreamReques"
-          + "t\032\026.google.protobuf.Empty\"6\202\323\344\223\0020\"+/v1be"
-          + "ta1/{stream.name=projects/*/streams/*}:\001"
-          + "*\022\316\001\n\017SplitReadStream\022=.google.cloud.big"
-          + "query.storage.v1beta1.SplitReadStreamReq"
-          + "uest\032>.google.cloud.bigquery.storage.v1b"
-          + "eta1.SplitReadStreamResponse\"<\202\323\344\223\0026\0224/v"
-          + "1beta1/{original_stream.name=projects/*/"
-          + "streams/*}\032{\312A\036bigquerystorage.googleapi"
-          + "s.com\322AWhttps://www.googleapis.com/auth/"
-          + "bigquery,https://www.googleapis.com/auth"
-          + "/cloud-platformBy\n)com.google.cloud.bigq"
-          + "uery.storage.v1beta1ZLgoogle.golang.org/"
-          + "genproto/googleapis/cloud/bigquery/stora"
-          + "ge/v1beta1;storageb\006proto3"
+          + "to\032\027google/api/client.proto\032\037google/api/"
+          + "field_behavior.proto\032\031google/api/resourc"
+          + "e.proto\0321google/cloud/bigquery/storage/v"
+          + "1beta1/arrow.proto\0320google/cloud/bigquer"
+          + "y/storage/v1beta1/avro.proto\0328google/clo"
+          + "ud/bigquery/storage/v1beta1/read_options"
+          + ".proto\032;google/cloud/bigquery/storage/v1"
+          + "beta1/table_reference.proto\032\033google/prot"
+          + "obuf/empty.proto\032\037google/protobuf/timest"
+          + "amp.proto\"|\n\006Stream\022\014\n\004name\030\001 \001(\t:d\352Aa\n%"
+          + "bigquerystorage.googleapis.com/Stream\0228p"
+          + "rojects/{project}/locations/{location}/s"
+          + "treams/{stream}\"_\n\016StreamPosition\022=\n\006str"
+          + "eam\030\001 \001(\0132-.google.cloud.bigquery.storag"
+          + "e.v1beta1.Stream\022\016\n\006offset\030\002 \001(\003\"\215\005\n\013Rea"
+          + "dSession\022\014\n\004name\030\001 \001(\t\022/\n\013expire_time\030\002 "
+          + "\001(\0132\032.google.protobuf.Timestamp\022H\n\013avro_"
+          + "schema\030\005 \001(\01321.google.cloud.bigquery.sto"
+          + "rage.v1beta1.AvroSchemaH\000\022J\n\014arrow_schem"
+          + "a\030\006 \001(\01322.google.cloud.bigquery.storage."
+          + "v1beta1.ArrowSchemaH\000\022>\n\007streams\030\004 \003(\0132-"
+          + ".google.cloud.bigquery.storage.v1beta1.S"
+          + "tream\022N\n\017table_reference\030\007 \001(\01325.google."
+          + "cloud.bigquery.storage.v1beta1.TableRefe"
+          + "rence\022N\n\017table_modifiers\030\010 \001(\01325.google."
+          + "cloud.bigquery.storage.v1beta1.TableModi"
+          + "fiers\022R\n\021sharding_strategy\030\t \001(\01627.googl"
+          + "e.cloud.bigquery.storage.v1beta1.Shardin"
+          + "gStrategy:k\352Ah\n*bigquerystorage.googleap"
+          + "is.com/ReadSession\022:projects/{project}/l"
+          + "ocations/{location}/sessions/{session}B\010"
+          + "\n\006schema\"\325\003\n\030CreateReadSessionRequest\022S\n"
+          + "\017table_reference\030\001 \001(\01325.google.cloud.bi"
+          + "gquery.storage.v1beta1.TableReferenceB\003\340"
+          + "A\002\022\023\n\006parent\030\006 \001(\tB\003\340A\002\022N\n\017table_modifie"
+          + "rs\030\002 \001(\01325.google.cloud.bigquery.storage"
+          + ".v1beta1.TableModifiers\022\031\n\021requested_str"
+          + "eams\030\003 \001(\005\022M\n\014read_options\030\004 \001(\01327.googl"
+          + "e.cloud.bigquery.storage.v1beta1.TableRe"
+          + "adOptions\022A\n\006format\030\005 \001(\01621.google.cloud"
+          + ".bigquery.storage.v1beta1.DataFormat\022R\n\021"
+          + "sharding_strategy\030\007 \001(\01627.google.cloud.b"
+          + "igquery.storage.v1beta1.ShardingStrategy"
+          + "\"d\n\017ReadRowsRequest\022Q\n\rread_position\030\001 \001"
+          + "(\01325.google.cloud.bigquery.storage.v1bet"
+          + "a1.StreamPositionB\003\340A\002\"\240\001\n\014StreamStatus\022"
+          + "\033\n\023estimated_row_count\030\001 \001(\003\022\031\n\021fraction"
+          + "_consumed\030\002 \001(\002\022A\n\010progress\030\004 \001(\0132/.goog"
+          + "le.cloud.bigquery.storage.v1beta1.Progre"
+          + "ss\022\025\n\ris_splittable\030\003 \001(\010\">\n\010Progress\022\031\n"
+          + "\021at_response_start\030\001 \001(\002\022\027\n\017at_response_"
+          + "end\030\002 \001(\002\"*\n\016ThrottleStatus\022\030\n\020throttle_"
+          + "percent\030\001 \001(\005\"\337\002\n\020ReadRowsResponse\022D\n\tav"
+          + "ro_rows\030\003 \001(\0132/.google.cloud.bigquery.st"
+          + "orage.v1beta1.AvroRowsH\000\022U\n\022arrow_record"
+          + "_batch\030\004 \001(\01327.google.cloud.bigquery.sto"
+          + "rage.v1beta1.ArrowRecordBatchH\000\022\021\n\trow_c"
+          + "ount\030\006 \001(\003\022C\n\006status\030\002 \001(\01323.google.clou"
+          + "d.bigquery.storage.v1beta1.StreamStatus\022"
+          + "N\n\017throttle_status\030\005 \001(\01325.google.cloud."
+          + "bigquery.storage.v1beta1.ThrottleStatusB"
+          + "\006\n\004rows\"\220\001\n$BatchCreateReadSessionStream"
+          + "sRequest\022H\n\007session\030\001 \001(\01322.google.cloud"
+          + ".bigquery.storage.v1beta1.ReadSessionB\003\340"
+          + "A\002\022\036\n\021requested_streams\030\002 \001(\005B\003\340A\002\"g\n%Ba"
+          + "tchCreateReadSessionStreamsResponse\022>\n\007s"
+          + "treams\030\001 \003(\0132-.google.cloud.bigquery.sto"
+          + "rage.v1beta1.Stream\"V\n\025FinalizeStreamReq"
+          + "uest\022=\n\006stream\030\002 \001(\0132-.google.cloud.bigq"
+          + "uery.storage.v1beta1.Stream\"r\n\026SplitRead"
+          + "StreamRequest\022F\n\017original_stream\030\001 \001(\0132-"
+          + ".google.cloud.bigquery.storage.v1beta1.S"
+          + "tream\022\020\n\010fraction\030\002 \001(\002\"\251\001\n\027SplitReadStr"
+          + "eamResponse\022E\n\016primary_stream\030\001 \001(\0132-.go"
+          + "ogle.cloud.bigquery.storage.v1beta1.Stre"
+          + "am\022G\n\020remainder_stream\030\002 \001(\0132-.google.cl"
+          + "oud.bigquery.storage.v1beta1.Stream*>\n\nD"
+          + "ataFormat\022\033\n\027DATA_FORMAT_UNSPECIFIED\020\000\022\010"
+          + "\n\004AVRO\020\001\022\t\n\005ARROW\020\003*O\n\020ShardingStrategy\022"
+          + "!\n\035SHARDING_STRATEGY_UNSPECIFIED\020\000\022\n\n\006LI"
+          + "QUID\020\001\022\014\n\010BALANCED\020\0022\353\n\n\017BigQueryStorage"
+          + "\022\263\002\n\021CreateReadSession\022?.google.cloud.bi"
+          + "gquery.storage.v1beta1.CreateReadSession"
+          + "Request\0322.google.cloud.bigquery.storage."
+          + "v1beta1.ReadSession\"\250\001\202\323\344\223\002w\"0/v1beta1/{"
+          + "table_reference.project_id=projects/*}:\001"
+          + "*Z@\";/v1beta1/{table_reference.dataset_i"
+          + "d=projects/*/datasets/*}:\001*\332A(table_refe"
+          + "rence,parent,requested_streams\022\320\001\n\010ReadR"
+          + "ows\0226.google.cloud.bigquery.storage.v1be"
+          + "ta1.ReadRowsRequest\0327.google.cloud.bigqu"
+          + "ery.storage.v1beta1.ReadRowsResponse\"Q\202\323"
+          + "\344\223\002;\0229/v1beta1/{read_position.stream.nam"
+          + "e=projects/*/streams/*}\332A\rread_position0"
+          + "\001\022\220\002\n\035BatchCreateReadSessionStreams\022K.go"
+          + "ogle.cloud.bigquery.storage.v1beta1.Batc"
+          + "hCreateReadSessionStreamsRequest\032L.googl"
+          + "e.cloud.bigquery.storage.v1beta1.BatchCr"
+          + "eateReadSessionStreamsResponse\"T\202\323\344\223\0022\"-"
+          + "/v1beta1/{session.name=projects/*/sessio"
+          + "ns/*}:\001*\332A\031session,requested_streams\022\247\001\n"
+          + "\016FinalizeStream\022<.google.cloud.bigquery."
+          + "storage.v1beta1.FinalizeStreamRequest\032\026."
+          + "google.protobuf.Empty\"?\202\323\344\223\0020\"+/v1beta1/"
+          + "{stream.name=projects/*/streams/*}:\001*\332A\006"
+          + "stream\022\340\001\n\017SplitReadStream\022=.google.clou"
+          + "d.bigquery.storage.v1beta1.SplitReadStre"
+          + "amRequest\032>.google.cloud.bigquery.storag"
+          + "e.v1beta1.SplitReadStreamResponse\"N\202\323\344\223\002"
+          + "6\0224/v1beta1/{original_stream.name=projec"
+          + "ts/*/streams/*}\332A\017original_stream\032\256\001\312A\036b"
+          + "igquerystorage.googleapis.com\322A\211\001https:/"
+          + "/www.googleapis.com/auth/bigquery,https:"
+          + "//www.googleapis.com/auth/bigquery.reado"
+          + "nly,https://www.googleapis.com/auth/clou"
+          + "d-platformBy\n)com.google.cloud.bigquery."
+          + "storage.v1beta1ZLgoogle.golang.org/genpr"
+          + "oto/googleapis/cloud/bigquery/storage/v1"
+          + "beta1;storageb\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner() {
@@ -15949,13 +17049,15 @@ public final class Storage {
         descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
           com.google.api.AnnotationsProto.getDescriptor(),
+          com.google.api.ClientProto.getDescriptor(),
+          com.google.api.FieldBehaviorProto.getDescriptor(),
+          com.google.api.ResourceProto.getDescriptor(),
           com.google.cloud.bigquery.storage.v1beta1.ArrowProto.getDescriptor(),
           com.google.cloud.bigquery.storage.v1beta1.AvroProto.getDescriptor(),
           com.google.cloud.bigquery.storage.v1beta1.ReadOptions.getDescriptor(),
           com.google.cloud.bigquery.storage.v1beta1.TableReferenceProto.getDescriptor(),
           com.google.protobuf.EmptyProto.getDescriptor(),
           com.google.protobuf.TimestampProto.getDescriptor(),
-          com.google.api.ClientProto.getDescriptor(),
         },
         assigner);
     internal_static_google_cloud_bigquery_storage_v1beta1_Stream_descriptor =
@@ -16018,10 +17120,18 @@ public final class Storage {
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_bigquery_storage_v1beta1_StreamStatus_descriptor,
             new java.lang.String[] {
-              "EstimatedRowCount", "FractionConsumed", "IsSplittable",
+              "EstimatedRowCount", "FractionConsumed", "Progress", "IsSplittable",
+            });
+    internal_static_google_cloud_bigquery_storage_v1beta1_Progress_descriptor =
+        getDescriptor().getMessageTypes().get(6);
+    internal_static_google_cloud_bigquery_storage_v1beta1_Progress_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_bigquery_storage_v1beta1_Progress_descriptor,
+            new java.lang.String[] {
+              "AtResponseStart", "AtResponseEnd",
             });
     internal_static_google_cloud_bigquery_storage_v1beta1_ThrottleStatus_descriptor =
-        getDescriptor().getMessageTypes().get(6);
+        getDescriptor().getMessageTypes().get(7);
     internal_static_google_cloud_bigquery_storage_v1beta1_ThrottleStatus_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_bigquery_storage_v1beta1_ThrottleStatus_descriptor,
@@ -16029,7 +17139,7 @@ public final class Storage {
               "ThrottlePercent",
             });
     internal_static_google_cloud_bigquery_storage_v1beta1_ReadRowsResponse_descriptor =
-        getDescriptor().getMessageTypes().get(7);
+        getDescriptor().getMessageTypes().get(8);
     internal_static_google_cloud_bigquery_storage_v1beta1_ReadRowsResponse_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_bigquery_storage_v1beta1_ReadRowsResponse_descriptor,
@@ -16037,7 +17147,7 @@ public final class Storage {
               "AvroRows", "ArrowRecordBatch", "RowCount", "Status", "ThrottleStatus", "Rows",
             });
     internal_static_google_cloud_bigquery_storage_v1beta1_BatchCreateReadSessionStreamsRequest_descriptor =
-        getDescriptor().getMessageTypes().get(8);
+        getDescriptor().getMessageTypes().get(9);
     internal_static_google_cloud_bigquery_storage_v1beta1_BatchCreateReadSessionStreamsRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_bigquery_storage_v1beta1_BatchCreateReadSessionStreamsRequest_descriptor,
@@ -16045,7 +17155,7 @@ public final class Storage {
               "Session", "RequestedStreams",
             });
     internal_static_google_cloud_bigquery_storage_v1beta1_BatchCreateReadSessionStreamsResponse_descriptor =
-        getDescriptor().getMessageTypes().get(9);
+        getDescriptor().getMessageTypes().get(10);
     internal_static_google_cloud_bigquery_storage_v1beta1_BatchCreateReadSessionStreamsResponse_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_bigquery_storage_v1beta1_BatchCreateReadSessionStreamsResponse_descriptor,
@@ -16053,7 +17163,7 @@ public final class Storage {
               "Streams",
             });
     internal_static_google_cloud_bigquery_storage_v1beta1_FinalizeStreamRequest_descriptor =
-        getDescriptor().getMessageTypes().get(10);
+        getDescriptor().getMessageTypes().get(11);
     internal_static_google_cloud_bigquery_storage_v1beta1_FinalizeStreamRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_bigquery_storage_v1beta1_FinalizeStreamRequest_descriptor,
@@ -16061,7 +17171,7 @@ public final class Storage {
               "Stream",
             });
     internal_static_google_cloud_bigquery_storage_v1beta1_SplitReadStreamRequest_descriptor =
-        getDescriptor().getMessageTypes().get(11);
+        getDescriptor().getMessageTypes().get(12);
     internal_static_google_cloud_bigquery_storage_v1beta1_SplitReadStreamRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_bigquery_storage_v1beta1_SplitReadStreamRequest_descriptor,
@@ -16069,7 +17179,7 @@ public final class Storage {
               "OriginalStream", "Fraction",
             });
     internal_static_google_cloud_bigquery_storage_v1beta1_SplitReadStreamResponse_descriptor =
-        getDescriptor().getMessageTypes().get(12);
+        getDescriptor().getMessageTypes().get(13);
     internal_static_google_cloud_bigquery_storage_v1beta1_SplitReadStreamResponse_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_bigquery_storage_v1beta1_SplitReadStreamResponse_descriptor,
@@ -16079,18 +17189,23 @@ public final class Storage {
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();
     registry.add(com.google.api.ClientProto.defaultHost);
+    registry.add(com.google.api.FieldBehaviorProto.fieldBehavior);
     registry.add(com.google.api.AnnotationsProto.http);
+    registry.add(com.google.api.ClientProto.methodSignature);
     registry.add(com.google.api.ClientProto.oauthScopes);
+    registry.add(com.google.api.ResourceProto.resource);
     com.google.protobuf.Descriptors.FileDescriptor.internalUpdateFileDescriptor(
         descriptor, registry);
     com.google.api.AnnotationsProto.getDescriptor();
+    com.google.api.ClientProto.getDescriptor();
+    com.google.api.FieldBehaviorProto.getDescriptor();
+    com.google.api.ResourceProto.getDescriptor();
     com.google.cloud.bigquery.storage.v1beta1.ArrowProto.getDescriptor();
     com.google.cloud.bigquery.storage.v1beta1.AvroProto.getDescriptor();
     com.google.cloud.bigquery.storage.v1beta1.ReadOptions.getDescriptor();
     com.google.cloud.bigquery.storage.v1beta1.TableReferenceProto.getDescriptor();
     com.google.protobuf.EmptyProto.getDescriptor();
     com.google.protobuf.TimestampProto.getDescriptor();
-    com.google.api.ClientProto.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)
