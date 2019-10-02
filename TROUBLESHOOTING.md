@@ -125,8 +125,9 @@ as every server environment is different.
 ### Resolving the conflict
 
 There are different strategies to resolve conflicts, but you must understand the root cause of the conflicts, e.g.:
-- If you have the control over the dependency tree, runtime classpath, and you have the option to upgrade offending dependencies (e.g., upgrading Guava version), then this is the easiest route.
-- If you don't have control over the dependency tree, nor runtime classpath, 
+- If you have control over the dependency tree and you have the option to upgrade
+  offending dependencies (e.g., upgrading Guava version), then this is the easiest route.
+- If you don't have control over the dependency tree 
   or changing dependency versions causes other failures, 
   consider [shading dependencies](https://maven.apache.org/plugins/maven-shade-plugin/)
   that conflict with `google-cloud-java`.
