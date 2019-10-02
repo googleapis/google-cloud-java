@@ -39,7 +39,10 @@ If you are using `google-cloud-java` packages prior to version 0.35.0, then cons
 
 The `grpc-netty-shaded` dependency avoids conflicts with other `netty` dependencies that may also be in the classpath.
 
-If you are using `google-cloud-java` version 0.35.0 or above, then it already uses `grpc-netty-shaded`. If you are still running into `ALPN` related problems, please see [gRPC Troubleshooting guide](https://github.com/grpc/grpc-java/blob/master/SECURITY.md#troubleshooting) for other causes.
+If you are using `google-cloud-java` version 0.35.0 or above, then it already uses `grpc-netty-shaded`.
+If you are still running into `ALPN` related problems, please see
+[gRPC Troubleshooting guide](https://github.com/grpc/grpc-java/blob/master/SECURITY.md#troubleshooting)
+for other causes.
 
 ## ClassNotFoundException, NoSuchMethodError, NoClassDefFoundError
 
@@ -78,38 +81,55 @@ might  be introducing conflicting JARs into your runtime classpath. A typical ca
 is that Hadoop, Spark, or other server software that your application runs on
 has conflicting versions `netty`, `guava`, or `protobuf-java` JARs in the classpath.
 
-### Detecting the conflict early during build
+### Detecting conflicts during build
 
-To detect dependency version conflicts early, use the [Enforcer Plugin](https://maven.apache.org/enforcer/maven-enforcer-plugin/index.html) in your Maven configuration to enforce dependency convergence:
+To detect dependency linkage errors at compile time, add the 
+[Linkage Checker Enforcer Rule](https://github.com/GoogleCloudPlatform/cloud-opensource-java/tree/master/enforcer-rules)
+in your pom.xml:
 
 ```
-<plugin>
-  <groupId>org.apache.maven.plugins</groupId>
-  <artifactId>maven-enforcer-plugin</artifactId>
-  <version>...</version>
-  <executions>
-    <execution>
-      <id>enforce</id>
-      <configuration>
-        <rules>
-<dependencyConvergence/>
-        </rules>
-      </configuration>
-      <goals>
-        <goal>enforce</goal>
-      </goals>
-    </execution>
-  </executions>
-</plugin>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-enforcer-plugin</artifactId>
+        <version>3.0.0-M2</version>
+        <dependencies>
+          <dependency>
+            <groupId>com.google.cloud.tools</groupId>
+            <artifactId>linkage-checker-enforcer-rules</artifactId>
+            <version>1.0.0</version>
+          </dependency>
+        </dependencies>
+        <executions>
+          <execution>
+            <id>enforce-linkage-checker</id>
+            <!-- Important! Should run after compile -->
+            <phase>verify</phase>
+            <goals>
+              <goal>enforce</goal>
+            </goals>
+            <configuration>
+              <rules>
+                <LinkageCheckerRule
+                    implementation="com.google.cloud.tools.dependencies.enforcer.LinkageCheckerRule"/>
+              </rules>
+            </configuration>
+          </execution>
+        </executions>
+      </plugin>
 ```
 
-There is no way to detect runtime classpath conflicts though. You'll need to be fully aware of which JARs/classes are included in the runtime classpath as every server environment is different.
+There is no way to detect runtime classpath conflicts though. You need to be fully
+aware of which JARs/classes are included in the runtime classpath
+as every server environment is different.
 
 ### Resolving the conflict
 
 There are different strategies to resolve conflicts, but you must understand the root cause of the conflicts, e.g.:
 - If you have the control over the dependency tree, runtime classpath, and you have the option to upgrade offending dependencies (e.g., upgrading Guava version), then this is the easiest route.
-- If you don't have control over the dependency tree, nor runtime classpath, or changing dependency versions causes other failures, then you should consider [shading dependencies](https://maven.apache.org/plugins/maven-shade-plugin/) of `google-cloud-java`.
+- If you don't have control over the dependency tree, nor runtime classpath, 
+  or changing dependency versions causes other failures, 
+  consider [shading dependencies](https://maven.apache.org/plugins/maven-shade-plugin/)
+  that conflict with `google-cloud-java`.
 
 For example, to shade `guava` and `protobuf-java`:
 
