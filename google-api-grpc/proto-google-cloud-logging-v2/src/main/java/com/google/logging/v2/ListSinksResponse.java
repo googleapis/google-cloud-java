@@ -176,7 +176,7 @@ public final class ListSinksResponse extends com.google.protobuf.GeneratedMessag
    *
    * <pre>
    * If there might be more results than appear in this response, then
-   * `nextPageToken` is included.  To get the next set of results, call the same
+   * `nextPageToken` is included. To get the next set of results, call the same
    * method again using the value of `nextPageToken` as `pageToken`.
    * </pre>
    *
@@ -198,7 +198,7 @@ public final class ListSinksResponse extends com.google.protobuf.GeneratedMessag
    *
    * <pre>
    * If there might be more results than appear in this response, then
-   * `nextPageToken` is included.  To get the next set of results, call the same
+   * `nextPageToken` is included. To get the next set of results, call the same
    * method again using the value of `nextPageToken` as `pageToken`.
    * </pre>
    *
@@ -941,7 +941,7 @@ public final class ListSinksResponse extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * If there might be more results than appear in this response, then
-     * `nextPageToken` is included.  To get the next set of results, call the same
+     * `nextPageToken` is included. To get the next set of results, call the same
      * method again using the value of `nextPageToken` as `pageToken`.
      * </pre>
      *
@@ -963,7 +963,7 @@ public final class ListSinksResponse extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * If there might be more results than appear in this response, then
-     * `nextPageToken` is included.  To get the next set of results, call the same
+     * `nextPageToken` is included. To get the next set of results, call the same
      * method again using the value of `nextPageToken` as `pageToken`.
      * </pre>
      *
@@ -985,7 +985,7 @@ public final class ListSinksResponse extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * If there might be more results than appear in this response, then
-     * `nextPageToken` is included.  To get the next set of results, call the same
+     * `nextPageToken` is included. To get the next set of results, call the same
      * method again using the value of `nextPageToken` as `pageToken`.
      * </pre>
      *
@@ -1005,7 +1005,7 @@ public final class ListSinksResponse extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * If there might be more results than appear in this response, then
-     * `nextPageToken` is included.  To get the next set of results, call the same
+     * `nextPageToken` is included. To get the next set of results, call the same
      * method again using the value of `nextPageToken` as `pageToken`.
      * </pre>
      *
@@ -1022,7 +1022,7 @@ public final class ListSinksResponse extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * If there might be more results than appear in this response, then
-     * `nextPageToken` is included.  To get the next set of results, call the same
+     * `nextPageToken` is included. To get the next set of results, call the same
      * method again using the value of `nextPageToken` as `pageToken`.
      * </pre>
      *
