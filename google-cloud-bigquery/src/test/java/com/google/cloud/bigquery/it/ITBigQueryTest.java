@@ -1581,6 +1581,32 @@ public class ITBigQueryTest {
   }
 
   @Test
+  public void testExtractJobWithLabels() throws InterruptedException, TimeoutException {
+    String tableName = "test_export_job_table_label";
+    Map<String, String> labels = ImmutableMap.of("test_job_name", "test_export_job");
+    TableId destinationTable = TableId.of(DATASET, tableName);
+    LoadJobConfiguration configuration =
+        LoadJobConfiguration.newBuilder(destinationTable, "gs://" + BUCKET + "/" + LOAD_FILE)
+            .setSchema(SIMPLE_SCHEMA)
+            .build();
+    Job remoteLoadJob = bigquery.create(JobInfo.of(configuration));
+    remoteLoadJob = remoteLoadJob.waitFor();
+    assertNull(remoteLoadJob.getStatus().getError());
+
+    ExtractJobConfiguration extractConfiguration =
+        ExtractJobConfiguration.newBuilder(destinationTable, "gs://" + BUCKET + "/" + EXTRACT_FILE)
+            .setLabels(labels)
+            .setPrintHeader(false)
+            .build();
+    Job remoteExtractJob = bigquery.create(JobInfo.of(extractConfiguration));
+    remoteExtractJob = remoteExtractJob.waitFor();
+    assertNull(remoteExtractJob.getStatus().getError());
+    ExtractJobConfiguration extractJobConfiguration = remoteExtractJob.getConfiguration();
+    assertEquals(labels, extractJobConfiguration.getLabels());
+    assertTrue(bigquery.delete(destinationTable));
+  }
+
+  @Test
   public void testCancelJob() throws InterruptedException, TimeoutException {
     String destinationTableName = "test_cancel_query_job_table";
     String query = "SELECT TimestampField, StringField, BooleanField FROM " + TABLE_ID.getTable();
