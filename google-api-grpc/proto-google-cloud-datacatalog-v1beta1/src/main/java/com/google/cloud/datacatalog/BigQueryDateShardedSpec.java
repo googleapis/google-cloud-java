@@ -7,7 +7,7 @@ package com.google.cloud.datacatalog;
  *
  *
  * <pre>
- * Spec for a group of BigQuery tables with name pattern [prefix]YYYYMMDD.
+ * Spec for a group of BigQuery tables with name pattern `[prefix]YYYYMMDD`.
  * Context:
  * https://cloud.google.com/bigquery/docs/partitioned-tables#partitioning_versus_sharding
  * </pre>
@@ -113,12 +113,13 @@ public final class BigQueryDateShardedSpec extends com.google.protobuf.Generated
    *
    * <pre>
    * Output only. The Data Catalog resource name of the dataset entry the
-   * current table belongs to, e.g.
-   * projects/{project_id}/locations/{location}/entrygroups/{entry_group_id}
-   * /entries/{entry_id}
+   * current table belongs to, for example,
+   * `projects/{project_id}/locations/{location}/entrygroups/{entry_group_id}/entries/{entry_id}`.
    * </pre>
    *
-   * <code>string dataset = 1;</code>
+   * <code>
+   * string dataset = 1 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+   * </code>
    */
   public java.lang.String getDataset() {
     java.lang.Object ref = dataset_;
@@ -136,12 +137,13 @@ public final class BigQueryDateShardedSpec extends com.google.protobuf.Generated
    *
    * <pre>
    * Output only. The Data Catalog resource name of the dataset entry the
-   * current table belongs to, e.g.
-   * projects/{project_id}/locations/{location}/entrygroups/{entry_group_id}
-   * /entries/{entry_id}
+   * current table belongs to, for example,
+   * `projects/{project_id}/locations/{location}/entrygroups/{entry_group_id}/entries/{entry_id}`.
    * </pre>
    *
-   * <code>string dataset = 1;</code>
+   * <code>
+   * string dataset = 1 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+   * </code>
    */
   public com.google.protobuf.ByteString getDatasetBytes() {
     java.lang.Object ref = dataset_;
@@ -162,8 +164,8 @@ public final class BigQueryDateShardedSpec extends com.google.protobuf.Generated
    *
    * <pre>
    * Output only. The table name prefix of the shards. The name of any given
-   * shard is [table_prefix]YYYYMMDD, e.g. for shard MyTable20180101, the
-   * table_prefix is "MyTable"
+   * shard is `[table_prefix]YYYYMMDD`, for example, for shard
+   * `MyTable20180101`, the `table_prefix` is `MyTable`.
    * </pre>
    *
    * <code>string table_prefix = 2;</code>
@@ -184,8 +186,8 @@ public final class BigQueryDateShardedSpec extends com.google.protobuf.Generated
    *
    * <pre>
    * Output only. The table name prefix of the shards. The name of any given
-   * shard is [table_prefix]YYYYMMDD, e.g. for shard MyTable20180101, the
-   * table_prefix is "MyTable"
+   * shard is `[table_prefix]YYYYMMDD`, for example, for shard
+   * `MyTable20180101`, the `table_prefix` is `MyTable`.
    * </pre>
    *
    * <code>string table_prefix = 2;</code>
@@ -398,7 +400,7 @@ public final class BigQueryDateShardedSpec extends com.google.protobuf.Generated
    *
    *
    * <pre>
-   * Spec for a group of BigQuery tables with name pattern [prefix]YYYYMMDD.
+   * Spec for a group of BigQuery tables with name pattern `[prefix]YYYYMMDD`.
    * Context:
    * https://cloud.google.com/bigquery/docs/partitioned-tables#partitioning_versus_sharding
    * </pre>
@@ -574,12 +576,13 @@ public final class BigQueryDateShardedSpec extends com.google.protobuf.Generated
      *
      * <pre>
      * Output only. The Data Catalog resource name of the dataset entry the
-     * current table belongs to, e.g.
-     * projects/{project_id}/locations/{location}/entrygroups/{entry_group_id}
-     * /entries/{entry_id}
+     * current table belongs to, for example,
+     * `projects/{project_id}/locations/{location}/entrygroups/{entry_group_id}/entries/{entry_id}`.
      * </pre>
      *
-     * <code>string dataset = 1;</code>
+     * <code>
+     * string dataset = 1 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+     * </code>
      */
     public java.lang.String getDataset() {
       java.lang.Object ref = dataset_;
@@ -597,12 +600,13 @@ public final class BigQueryDateShardedSpec extends com.google.protobuf.Generated
      *
      * <pre>
      * Output only. The Data Catalog resource name of the dataset entry the
-     * current table belongs to, e.g.
-     * projects/{project_id}/locations/{location}/entrygroups/{entry_group_id}
-     * /entries/{entry_id}
+     * current table belongs to, for example,
+     * `projects/{project_id}/locations/{location}/entrygroups/{entry_group_id}/entries/{entry_id}`.
      * </pre>
      *
-     * <code>string dataset = 1;</code>
+     * <code>
+     * string dataset = 1 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+     * </code>
      */
     public com.google.protobuf.ByteString getDatasetBytes() {
       java.lang.Object ref = dataset_;
@@ -620,12 +624,13 @@ public final class BigQueryDateShardedSpec extends com.google.protobuf.Generated
      *
      * <pre>
      * Output only. The Data Catalog resource name of the dataset entry the
-     * current table belongs to, e.g.
-     * projects/{project_id}/locations/{location}/entrygroups/{entry_group_id}
-     * /entries/{entry_id}
+     * current table belongs to, for example,
+     * `projects/{project_id}/locations/{location}/entrygroups/{entry_group_id}/entries/{entry_id}`.
      * </pre>
      *
-     * <code>string dataset = 1;</code>
+     * <code>
+     * string dataset = 1 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+     * </code>
      */
     public Builder setDataset(java.lang.String value) {
       if (value == null) {
@@ -641,12 +646,13 @@ public final class BigQueryDateShardedSpec extends com.google.protobuf.Generated
      *
      * <pre>
      * Output only. The Data Catalog resource name of the dataset entry the
-     * current table belongs to, e.g.
-     * projects/{project_id}/locations/{location}/entrygroups/{entry_group_id}
-     * /entries/{entry_id}
+     * current table belongs to, for example,
+     * `projects/{project_id}/locations/{location}/entrygroups/{entry_group_id}/entries/{entry_id}`.
      * </pre>
      *
-     * <code>string dataset = 1;</code>
+     * <code>
+     * string dataset = 1 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+     * </code>
      */
     public Builder clearDataset() {
 
@@ -659,12 +665,13 @@ public final class BigQueryDateShardedSpec extends com.google.protobuf.Generated
      *
      * <pre>
      * Output only. The Data Catalog resource name of the dataset entry the
-     * current table belongs to, e.g.
-     * projects/{project_id}/locations/{location}/entrygroups/{entry_group_id}
-     * /entries/{entry_id}
+     * current table belongs to, for example,
+     * `projects/{project_id}/locations/{location}/entrygroups/{entry_group_id}/entries/{entry_id}`.
      * </pre>
      *
-     * <code>string dataset = 1;</code>
+     * <code>
+     * string dataset = 1 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+     * </code>
      */
     public Builder setDatasetBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -683,8 +690,8 @@ public final class BigQueryDateShardedSpec extends com.google.protobuf.Generated
      *
      * <pre>
      * Output only. The table name prefix of the shards. The name of any given
-     * shard is [table_prefix]YYYYMMDD, e.g. for shard MyTable20180101, the
-     * table_prefix is "MyTable"
+     * shard is `[table_prefix]YYYYMMDD`, for example, for shard
+     * `MyTable20180101`, the `table_prefix` is `MyTable`.
      * </pre>
      *
      * <code>string table_prefix = 2;</code>
@@ -705,8 +712,8 @@ public final class BigQueryDateShardedSpec extends com.google.protobuf.Generated
      *
      * <pre>
      * Output only. The table name prefix of the shards. The name of any given
-     * shard is [table_prefix]YYYYMMDD, e.g. for shard MyTable20180101, the
-     * table_prefix is "MyTable"
+     * shard is `[table_prefix]YYYYMMDD`, for example, for shard
+     * `MyTable20180101`, the `table_prefix` is `MyTable`.
      * </pre>
      *
      * <code>string table_prefix = 2;</code>
@@ -727,8 +734,8 @@ public final class BigQueryDateShardedSpec extends com.google.protobuf.Generated
      *
      * <pre>
      * Output only. The table name prefix of the shards. The name of any given
-     * shard is [table_prefix]YYYYMMDD, e.g. for shard MyTable20180101, the
-     * table_prefix is "MyTable"
+     * shard is `[table_prefix]YYYYMMDD`, for example, for shard
+     * `MyTable20180101`, the `table_prefix` is `MyTable`.
      * </pre>
      *
      * <code>string table_prefix = 2;</code>
@@ -747,8 +754,8 @@ public final class BigQueryDateShardedSpec extends com.google.protobuf.Generated
      *
      * <pre>
      * Output only. The table name prefix of the shards. The name of any given
-     * shard is [table_prefix]YYYYMMDD, e.g. for shard MyTable20180101, the
-     * table_prefix is "MyTable"
+     * shard is `[table_prefix]YYYYMMDD`, for example, for shard
+     * `MyTable20180101`, the `table_prefix` is `MyTable`.
      * </pre>
      *
      * <code>string table_prefix = 2;</code>
@@ -764,8 +771,8 @@ public final class BigQueryDateShardedSpec extends com.google.protobuf.Generated
      *
      * <pre>
      * Output only. The table name prefix of the shards. The name of any given
-     * shard is [table_prefix]YYYYMMDD, e.g. for shard MyTable20180101, the
-     * table_prefix is "MyTable"
+     * shard is `[table_prefix]YYYYMMDD`, for example, for shard
+     * `MyTable20180101`, the `table_prefix` is `MyTable`.
      * </pre>
      *
      * <code>string table_prefix = 2;</code>

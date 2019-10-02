@@ -1322,6 +1322,7 @@ public interface ProfileQueryOrBuilder
    *
    *
    * <pre>
+   * Deprecated. Use availability_filters instead.
    * The candidate availability filter which filters based on availability
    * signals.
    * Signal 1: Number of days since most recent job application.  See
@@ -1338,14 +1339,16 @@ public interface ProfileQueryOrBuilder
    * </pre>
    *
    * <code>
-   * .google.cloud.talent.v4beta1.CandidateAvailabilityFilter candidate_availability_filter = 16;
+   * .google.cloud.talent.v4beta1.CandidateAvailabilityFilter candidate_availability_filter = 16 [deprecated = true];
    * </code>
    */
+  @java.lang.Deprecated
   boolean hasCandidateAvailabilityFilter();
   /**
    *
    *
    * <pre>
+   * Deprecated. Use availability_filters instead.
    * The candidate availability filter which filters based on availability
    * signals.
    * Signal 1: Number of days since most recent job application.  See
@@ -1362,14 +1365,16 @@ public interface ProfileQueryOrBuilder
    * </pre>
    *
    * <code>
-   * .google.cloud.talent.v4beta1.CandidateAvailabilityFilter candidate_availability_filter = 16;
+   * .google.cloud.talent.v4beta1.CandidateAvailabilityFilter candidate_availability_filter = 16 [deprecated = true];
    * </code>
    */
+  @java.lang.Deprecated
   com.google.cloud.talent.v4beta1.CandidateAvailabilityFilter getCandidateAvailabilityFilter();
   /**
    *
    *
    * <pre>
+   * Deprecated. Use availability_filters instead.
    * The candidate availability filter which filters based on availability
    * signals.
    * Signal 1: Number of days since most recent job application.  See
@@ -1386,11 +1391,135 @@ public interface ProfileQueryOrBuilder
    * </pre>
    *
    * <code>
-   * .google.cloud.talent.v4beta1.CandidateAvailabilityFilter candidate_availability_filter = 16;
+   * .google.cloud.talent.v4beta1.CandidateAvailabilityFilter candidate_availability_filter = 16 [deprecated = true];
    * </code>
    */
+  @java.lang.Deprecated
   com.google.cloud.talent.v4beta1.CandidateAvailabilityFilterOrBuilder
       getCandidateAvailabilityFilterOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * The availability filter which filters based on
+   * [Profile.availability_signals][google.cloud.talent.v4beta1.Profile.availability_signals].
+   * The availability filter helps a recruiter understand if a
+   * specific candidate is likely to be actively seeking new job opportunities
+   * based on an aggregated set of signals.  Specifically, the intent is NOT to
+   * indicate the candidate's potential qualification / interest / close ability
+   * for a specific job.
+   * There can be at most one
+   * [AvailabilityFilter][google.cloud.talent.v4beta1.AvailabilityFilter] per
+   * [signal_type][google.cloud.talent.v4beta1.AvailabilityFilter.signal_type].
+   * If there are multiple
+   * [AvailabilityFilter][google.cloud.talent.v4beta1.AvailabilityFilter] for a
+   * [signal_type][google.cloud.talent.v4beta1.AvailabilityFilter.signal_type],
+   * an error is thrown.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.talent.v4beta1.AvailabilityFilter availability_filters = 18;
+   * </code>
+   */
+  java.util.List<com.google.cloud.talent.v4beta1.AvailabilityFilter> getAvailabilityFiltersList();
+  /**
+   *
+   *
+   * <pre>
+   * The availability filter which filters based on
+   * [Profile.availability_signals][google.cloud.talent.v4beta1.Profile.availability_signals].
+   * The availability filter helps a recruiter understand if a
+   * specific candidate is likely to be actively seeking new job opportunities
+   * based on an aggregated set of signals.  Specifically, the intent is NOT to
+   * indicate the candidate's potential qualification / interest / close ability
+   * for a specific job.
+   * There can be at most one
+   * [AvailabilityFilter][google.cloud.talent.v4beta1.AvailabilityFilter] per
+   * [signal_type][google.cloud.talent.v4beta1.AvailabilityFilter.signal_type].
+   * If there are multiple
+   * [AvailabilityFilter][google.cloud.talent.v4beta1.AvailabilityFilter] for a
+   * [signal_type][google.cloud.talent.v4beta1.AvailabilityFilter.signal_type],
+   * an error is thrown.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.talent.v4beta1.AvailabilityFilter availability_filters = 18;
+   * </code>
+   */
+  com.google.cloud.talent.v4beta1.AvailabilityFilter getAvailabilityFilters(int index);
+  /**
+   *
+   *
+   * <pre>
+   * The availability filter which filters based on
+   * [Profile.availability_signals][google.cloud.talent.v4beta1.Profile.availability_signals].
+   * The availability filter helps a recruiter understand if a
+   * specific candidate is likely to be actively seeking new job opportunities
+   * based on an aggregated set of signals.  Specifically, the intent is NOT to
+   * indicate the candidate's potential qualification / interest / close ability
+   * for a specific job.
+   * There can be at most one
+   * [AvailabilityFilter][google.cloud.talent.v4beta1.AvailabilityFilter] per
+   * [signal_type][google.cloud.talent.v4beta1.AvailabilityFilter.signal_type].
+   * If there are multiple
+   * [AvailabilityFilter][google.cloud.talent.v4beta1.AvailabilityFilter] for a
+   * [signal_type][google.cloud.talent.v4beta1.AvailabilityFilter.signal_type],
+   * an error is thrown.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.talent.v4beta1.AvailabilityFilter availability_filters = 18;
+   * </code>
+   */
+  int getAvailabilityFiltersCount();
+  /**
+   *
+   *
+   * <pre>
+   * The availability filter which filters based on
+   * [Profile.availability_signals][google.cloud.talent.v4beta1.Profile.availability_signals].
+   * The availability filter helps a recruiter understand if a
+   * specific candidate is likely to be actively seeking new job opportunities
+   * based on an aggregated set of signals.  Specifically, the intent is NOT to
+   * indicate the candidate's potential qualification / interest / close ability
+   * for a specific job.
+   * There can be at most one
+   * [AvailabilityFilter][google.cloud.talent.v4beta1.AvailabilityFilter] per
+   * [signal_type][google.cloud.talent.v4beta1.AvailabilityFilter.signal_type].
+   * If there are multiple
+   * [AvailabilityFilter][google.cloud.talent.v4beta1.AvailabilityFilter] for a
+   * [signal_type][google.cloud.talent.v4beta1.AvailabilityFilter.signal_type],
+   * an error is thrown.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.talent.v4beta1.AvailabilityFilter availability_filters = 18;
+   * </code>
+   */
+  java.util.List<? extends com.google.cloud.talent.v4beta1.AvailabilityFilterOrBuilder>
+      getAvailabilityFiltersOrBuilderList();
+  /**
+   *
+   *
+   * <pre>
+   * The availability filter which filters based on
+   * [Profile.availability_signals][google.cloud.talent.v4beta1.Profile.availability_signals].
+   * The availability filter helps a recruiter understand if a
+   * specific candidate is likely to be actively seeking new job opportunities
+   * based on an aggregated set of signals.  Specifically, the intent is NOT to
+   * indicate the candidate's potential qualification / interest / close ability
+   * for a specific job.
+   * There can be at most one
+   * [AvailabilityFilter][google.cloud.talent.v4beta1.AvailabilityFilter] per
+   * [signal_type][google.cloud.talent.v4beta1.AvailabilityFilter.signal_type].
+   * If there are multiple
+   * [AvailabilityFilter][google.cloud.talent.v4beta1.AvailabilityFilter] for a
+   * [signal_type][google.cloud.talent.v4beta1.AvailabilityFilter.signal_type],
+   * an error is thrown.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.talent.v4beta1.AvailabilityFilter availability_filters = 18;
+   * </code>
+   */
+  com.google.cloud.talent.v4beta1.AvailabilityFilterOrBuilder getAvailabilityFiltersOrBuilder(
+      int index);
 
   /**
    *

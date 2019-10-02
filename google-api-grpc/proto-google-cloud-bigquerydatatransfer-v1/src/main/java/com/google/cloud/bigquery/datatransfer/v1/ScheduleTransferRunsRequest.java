@@ -127,11 +127,13 @@ public final class ScheduleTransferRunsRequest extends com.google.protobuf.Gener
    *
    *
    * <pre>
-   * Transfer configuration name in the form:
+   * Required. Transfer configuration name in the form:
    * `projects/{project_id}/transferConfigs/{config_id}`.
    * </pre>
    *
-   * <code>string parent = 1;</code>
+   * <code>
+   * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    */
   public java.lang.String getParent() {
     java.lang.Object ref = parent_;
@@ -148,11 +150,13 @@ public final class ScheduleTransferRunsRequest extends com.google.protobuf.Gener
    *
    *
    * <pre>
-   * Transfer configuration name in the form:
+   * Required. Transfer configuration name in the form:
    * `projects/{project_id}/transferConfigs/{config_id}`.
    * </pre>
    *
-   * <code>string parent = 1;</code>
+   * <code>
+   * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    */
   public com.google.protobuf.ByteString getParentBytes() {
     java.lang.Object ref = parent_;
@@ -172,11 +176,12 @@ public final class ScheduleTransferRunsRequest extends com.google.protobuf.Gener
    *
    *
    * <pre>
-   * Start time of the range of transfer runs. For example,
+   * Required. Start time of the range of transfer runs. For example,
    * `"2017-05-25T00:00:00+00:00"`.
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp start_time = 2;</code>
+   * <code>.google.protobuf.Timestamp start_time = 2 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   public boolean hasStartTime() {
     return startTime_ != null;
@@ -185,11 +190,12 @@ public final class ScheduleTransferRunsRequest extends com.google.protobuf.Gener
    *
    *
    * <pre>
-   * Start time of the range of transfer runs. For example,
+   * Required. Start time of the range of transfer runs. For example,
    * `"2017-05-25T00:00:00+00:00"`.
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp start_time = 2;</code>
+   * <code>.google.protobuf.Timestamp start_time = 2 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   public com.google.protobuf.Timestamp getStartTime() {
     return startTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : startTime_;
@@ -198,11 +204,12 @@ public final class ScheduleTransferRunsRequest extends com.google.protobuf.Gener
    *
    *
    * <pre>
-   * Start time of the range of transfer runs. For example,
+   * Required. Start time of the range of transfer runs. For example,
    * `"2017-05-25T00:00:00+00:00"`.
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp start_time = 2;</code>
+   * <code>.google.protobuf.Timestamp start_time = 2 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   public com.google.protobuf.TimestampOrBuilder getStartTimeOrBuilder() {
     return getStartTime();
@@ -214,11 +221,11 @@ public final class ScheduleTransferRunsRequest extends com.google.protobuf.Gener
    *
    *
    * <pre>
-   * End time of the range of transfer runs. For example,
+   * Required. End time of the range of transfer runs. For example,
    * `"2017-05-30T00:00:00+00:00"`.
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp end_time = 3;</code>
+   * <code>.google.protobuf.Timestamp end_time = 3 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   public boolean hasEndTime() {
     return endTime_ != null;
@@ -227,11 +234,11 @@ public final class ScheduleTransferRunsRequest extends com.google.protobuf.Gener
    *
    *
    * <pre>
-   * End time of the range of transfer runs. For example,
+   * Required. End time of the range of transfer runs. For example,
    * `"2017-05-30T00:00:00+00:00"`.
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp end_time = 3;</code>
+   * <code>.google.protobuf.Timestamp end_time = 3 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   public com.google.protobuf.Timestamp getEndTime() {
     return endTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : endTime_;
@@ -240,11 +247,11 @@ public final class ScheduleTransferRunsRequest extends com.google.protobuf.Gener
    *
    *
    * <pre>
-   * End time of the range of transfer runs. For example,
+   * Required. End time of the range of transfer runs. For example,
    * `"2017-05-30T00:00:00+00:00"`.
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp end_time = 3;</code>
+   * <code>.google.protobuf.Timestamp end_time = 3 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   public com.google.protobuf.TimestampOrBuilder getEndTimeOrBuilder() {
     return getEndTime();
@@ -638,11 +645,13 @@ public final class ScheduleTransferRunsRequest extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * Transfer configuration name in the form:
+     * Required. Transfer configuration name in the form:
      * `projects/{project_id}/transferConfigs/{config_id}`.
      * </pre>
      *
-     * <code>string parent = 1;</code>
+     * <code>
+     * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      */
     public java.lang.String getParent() {
       java.lang.Object ref = parent_;
@@ -659,11 +668,13 @@ public final class ScheduleTransferRunsRequest extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * Transfer configuration name in the form:
+     * Required. Transfer configuration name in the form:
      * `projects/{project_id}/transferConfigs/{config_id}`.
      * </pre>
      *
-     * <code>string parent = 1;</code>
+     * <code>
+     * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      */
     public com.google.protobuf.ByteString getParentBytes() {
       java.lang.Object ref = parent_;
@@ -680,11 +691,13 @@ public final class ScheduleTransferRunsRequest extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * Transfer configuration name in the form:
+     * Required. Transfer configuration name in the form:
      * `projects/{project_id}/transferConfigs/{config_id}`.
      * </pre>
      *
-     * <code>string parent = 1;</code>
+     * <code>
+     * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      */
     public Builder setParent(java.lang.String value) {
       if (value == null) {
@@ -699,11 +712,13 @@ public final class ScheduleTransferRunsRequest extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * Transfer configuration name in the form:
+     * Required. Transfer configuration name in the form:
      * `projects/{project_id}/transferConfigs/{config_id}`.
      * </pre>
      *
-     * <code>string parent = 1;</code>
+     * <code>
+     * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      */
     public Builder clearParent() {
 
@@ -715,11 +730,13 @@ public final class ScheduleTransferRunsRequest extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * Transfer configuration name in the form:
+     * Required. Transfer configuration name in the form:
      * `projects/{project_id}/transferConfigs/{config_id}`.
      * </pre>
      *
-     * <code>string parent = 1;</code>
+     * <code>
+     * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      */
     public Builder setParentBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -742,11 +759,12 @@ public final class ScheduleTransferRunsRequest extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * Start time of the range of transfer runs. For example,
+     * Required. Start time of the range of transfer runs. For example,
      * `"2017-05-25T00:00:00+00:00"`.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp start_time = 2;</code>
+     * <code>.google.protobuf.Timestamp start_time = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public boolean hasStartTime() {
       return startTimeBuilder_ != null || startTime_ != null;
@@ -755,11 +773,12 @@ public final class ScheduleTransferRunsRequest extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * Start time of the range of transfer runs. For example,
+     * Required. Start time of the range of transfer runs. For example,
      * `"2017-05-25T00:00:00+00:00"`.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp start_time = 2;</code>
+     * <code>.google.protobuf.Timestamp start_time = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public com.google.protobuf.Timestamp getStartTime() {
       if (startTimeBuilder_ == null) {
@@ -772,11 +791,12 @@ public final class ScheduleTransferRunsRequest extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * Start time of the range of transfer runs. For example,
+     * Required. Start time of the range of transfer runs. For example,
      * `"2017-05-25T00:00:00+00:00"`.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp start_time = 2;</code>
+     * <code>.google.protobuf.Timestamp start_time = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder setStartTime(com.google.protobuf.Timestamp value) {
       if (startTimeBuilder_ == null) {
@@ -795,11 +815,12 @@ public final class ScheduleTransferRunsRequest extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * Start time of the range of transfer runs. For example,
+     * Required. Start time of the range of transfer runs. For example,
      * `"2017-05-25T00:00:00+00:00"`.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp start_time = 2;</code>
+     * <code>.google.protobuf.Timestamp start_time = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder setStartTime(com.google.protobuf.Timestamp.Builder builderForValue) {
       if (startTimeBuilder_ == null) {
@@ -815,11 +836,12 @@ public final class ScheduleTransferRunsRequest extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * Start time of the range of transfer runs. For example,
+     * Required. Start time of the range of transfer runs. For example,
      * `"2017-05-25T00:00:00+00:00"`.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp start_time = 2;</code>
+     * <code>.google.protobuf.Timestamp start_time = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder mergeStartTime(com.google.protobuf.Timestamp value) {
       if (startTimeBuilder_ == null) {
@@ -840,11 +862,12 @@ public final class ScheduleTransferRunsRequest extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * Start time of the range of transfer runs. For example,
+     * Required. Start time of the range of transfer runs. For example,
      * `"2017-05-25T00:00:00+00:00"`.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp start_time = 2;</code>
+     * <code>.google.protobuf.Timestamp start_time = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder clearStartTime() {
       if (startTimeBuilder_ == null) {
@@ -861,11 +884,12 @@ public final class ScheduleTransferRunsRequest extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * Start time of the range of transfer runs. For example,
+     * Required. Start time of the range of transfer runs. For example,
      * `"2017-05-25T00:00:00+00:00"`.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp start_time = 2;</code>
+     * <code>.google.protobuf.Timestamp start_time = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public com.google.protobuf.Timestamp.Builder getStartTimeBuilder() {
 
@@ -876,11 +900,12 @@ public final class ScheduleTransferRunsRequest extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * Start time of the range of transfer runs. For example,
+     * Required. Start time of the range of transfer runs. For example,
      * `"2017-05-25T00:00:00+00:00"`.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp start_time = 2;</code>
+     * <code>.google.protobuf.Timestamp start_time = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public com.google.protobuf.TimestampOrBuilder getStartTimeOrBuilder() {
       if (startTimeBuilder_ != null) {
@@ -893,11 +918,12 @@ public final class ScheduleTransferRunsRequest extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * Start time of the range of transfer runs. For example,
+     * Required. Start time of the range of transfer runs. For example,
      * `"2017-05-25T00:00:00+00:00"`.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp start_time = 2;</code>
+     * <code>.google.protobuf.Timestamp start_time = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.protobuf.Timestamp,
@@ -926,11 +952,12 @@ public final class ScheduleTransferRunsRequest extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * End time of the range of transfer runs. For example,
+     * Required. End time of the range of transfer runs. For example,
      * `"2017-05-30T00:00:00+00:00"`.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp end_time = 3;</code>
+     * <code>.google.protobuf.Timestamp end_time = 3 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public boolean hasEndTime() {
       return endTimeBuilder_ != null || endTime_ != null;
@@ -939,11 +966,12 @@ public final class ScheduleTransferRunsRequest extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * End time of the range of transfer runs. For example,
+     * Required. End time of the range of transfer runs. For example,
      * `"2017-05-30T00:00:00+00:00"`.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp end_time = 3;</code>
+     * <code>.google.protobuf.Timestamp end_time = 3 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public com.google.protobuf.Timestamp getEndTime() {
       if (endTimeBuilder_ == null) {
@@ -956,11 +984,12 @@ public final class ScheduleTransferRunsRequest extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * End time of the range of transfer runs. For example,
+     * Required. End time of the range of transfer runs. For example,
      * `"2017-05-30T00:00:00+00:00"`.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp end_time = 3;</code>
+     * <code>.google.protobuf.Timestamp end_time = 3 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder setEndTime(com.google.protobuf.Timestamp value) {
       if (endTimeBuilder_ == null) {
@@ -979,11 +1008,12 @@ public final class ScheduleTransferRunsRequest extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * End time of the range of transfer runs. For example,
+     * Required. End time of the range of transfer runs. For example,
      * `"2017-05-30T00:00:00+00:00"`.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp end_time = 3;</code>
+     * <code>.google.protobuf.Timestamp end_time = 3 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder setEndTime(com.google.protobuf.Timestamp.Builder builderForValue) {
       if (endTimeBuilder_ == null) {
@@ -999,11 +1029,12 @@ public final class ScheduleTransferRunsRequest extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * End time of the range of transfer runs. For example,
+     * Required. End time of the range of transfer runs. For example,
      * `"2017-05-30T00:00:00+00:00"`.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp end_time = 3;</code>
+     * <code>.google.protobuf.Timestamp end_time = 3 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder mergeEndTime(com.google.protobuf.Timestamp value) {
       if (endTimeBuilder_ == null) {
@@ -1024,11 +1055,12 @@ public final class ScheduleTransferRunsRequest extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * End time of the range of transfer runs. For example,
+     * Required. End time of the range of transfer runs. For example,
      * `"2017-05-30T00:00:00+00:00"`.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp end_time = 3;</code>
+     * <code>.google.protobuf.Timestamp end_time = 3 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder clearEndTime() {
       if (endTimeBuilder_ == null) {
@@ -1045,11 +1077,12 @@ public final class ScheduleTransferRunsRequest extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * End time of the range of transfer runs. For example,
+     * Required. End time of the range of transfer runs. For example,
      * `"2017-05-30T00:00:00+00:00"`.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp end_time = 3;</code>
+     * <code>.google.protobuf.Timestamp end_time = 3 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public com.google.protobuf.Timestamp.Builder getEndTimeBuilder() {
 
@@ -1060,11 +1093,12 @@ public final class ScheduleTransferRunsRequest extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * End time of the range of transfer runs. For example,
+     * Required. End time of the range of transfer runs. For example,
      * `"2017-05-30T00:00:00+00:00"`.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp end_time = 3;</code>
+     * <code>.google.protobuf.Timestamp end_time = 3 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public com.google.protobuf.TimestampOrBuilder getEndTimeOrBuilder() {
       if (endTimeBuilder_ != null) {
@@ -1077,11 +1111,12 @@ public final class ScheduleTransferRunsRequest extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * End time of the range of transfer runs. For example,
+     * Required. End time of the range of transfer runs. For example,
      * `"2017-05-30T00:00:00+00:00"`.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp end_time = 3;</code>
+     * <code>.google.protobuf.Timestamp end_time = 3 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.protobuf.Timestamp,

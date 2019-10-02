@@ -15,7 +15,9 @@ public interface ListTransferRunsResponseOrBuilder
    * Output only. The stored pipeline transfer runs.
    * </pre>
    *
-   * <code>repeated .google.cloud.bigquery.datatransfer.v1.TransferRun transfer_runs = 1;</code>
+   * <code>
+   * repeated .google.cloud.bigquery.datatransfer.v1.TransferRun transfer_runs = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    */
   java.util.List<com.google.cloud.bigquery.datatransfer.v1.TransferRun> getTransferRunsList();
   /**
@@ -25,7 +27,9 @@ public interface ListTransferRunsResponseOrBuilder
    * Output only. The stored pipeline transfer runs.
    * </pre>
    *
-   * <code>repeated .google.cloud.bigquery.datatransfer.v1.TransferRun transfer_runs = 1;</code>
+   * <code>
+   * repeated .google.cloud.bigquery.datatransfer.v1.TransferRun transfer_runs = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    */
   com.google.cloud.bigquery.datatransfer.v1.TransferRun getTransferRuns(int index);
   /**
@@ -35,7 +39,9 @@ public interface ListTransferRunsResponseOrBuilder
    * Output only. The stored pipeline transfer runs.
    * </pre>
    *
-   * <code>repeated .google.cloud.bigquery.datatransfer.v1.TransferRun transfer_runs = 1;</code>
+   * <code>
+   * repeated .google.cloud.bigquery.datatransfer.v1.TransferRun transfer_runs = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    */
   int getTransferRunsCount();
   /**
@@ -45,7 +51,9 @@ public interface ListTransferRunsResponseOrBuilder
    * Output only. The stored pipeline transfer runs.
    * </pre>
    *
-   * <code>repeated .google.cloud.bigquery.datatransfer.v1.TransferRun transfer_runs = 1;</code>
+   * <code>
+   * repeated .google.cloud.bigquery.datatransfer.v1.TransferRun transfer_runs = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    */
   java.util.List<? extends com.google.cloud.bigquery.datatransfer.v1.TransferRunOrBuilder>
       getTransferRunsOrBuilderList();
@@ -56,7 +64,9 @@ public interface ListTransferRunsResponseOrBuilder
    * Output only. The stored pipeline transfer runs.
    * </pre>
    *
-   * <code>repeated .google.cloud.bigquery.datatransfer.v1.TransferRun transfer_runs = 1;</code>
+   * <code>
+   * repeated .google.cloud.bigquery.datatransfer.v1.TransferRun transfer_runs = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    */
   com.google.cloud.bigquery.datatransfer.v1.TransferRunOrBuilder getTransferRunsOrBuilder(
       int index);
@@ -71,7 +81,7 @@ public interface ListTransferRunsResponseOrBuilder
    * to request the next page of list results.
    * </pre>
    *
-   * <code>string next_page_token = 2;</code>
+   * <code>string next_page_token = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    */
   java.lang.String getNextPageToken();
   /**
@@ -84,7 +94,7 @@ public interface ListTransferRunsResponseOrBuilder
    * to request the next page of list results.
    * </pre>
    *
-   * <code>string next_page_token = 2;</code>
+   * <code>string next_page_token = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    */
   com.google.protobuf.ByteString getNextPageTokenBytes();
 }

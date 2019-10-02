@@ -252,6 +252,140 @@ public interface ProfileOrBuilder
    *
    *
    * <pre>
+   * The timestamp when the profile was last updated as a result of a direct or
+   * indirect action by a candidate.
+   * These actions include:
+   * * Direct actions such as the candidate submitting a new resume as part of a
+   * job application to the agency, using a self-service tool such as a website
+   * to update their profile, and so on.
+   * * Indirect actions by the candidate such as uploading a resume to a job
+   * board that is collected by the agency through a feed, providing a resume to
+   * a recruiter who then uploads it into the ATS, and so on.
+   * * Updates made to the candidate's profile by the recruiter as a result of
+   * interacting with the candidate (for example adding a skill or work
+   * preference, and so on). Changes to
+   * [recruiting_notes][google.cloud.talent.v4beta1.Profile.recruiting_notes]
+   * are specifically excluded from this action type.
+   * Note:
+   * [candidate_update_time][google.cloud.talent.v4beta1.Profile.candidate_update_time]
+   * must be greater than or equal to
+   * [resume_update_time][google.cloud.talent.v4beta1.Profile.resume_update_time]
+   * or an error is thrown.
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp candidate_update_time = 67;</code>
+   */
+  boolean hasCandidateUpdateTime();
+  /**
+   *
+   *
+   * <pre>
+   * The timestamp when the profile was last updated as a result of a direct or
+   * indirect action by a candidate.
+   * These actions include:
+   * * Direct actions such as the candidate submitting a new resume as part of a
+   * job application to the agency, using a self-service tool such as a website
+   * to update their profile, and so on.
+   * * Indirect actions by the candidate such as uploading a resume to a job
+   * board that is collected by the agency through a feed, providing a resume to
+   * a recruiter who then uploads it into the ATS, and so on.
+   * * Updates made to the candidate's profile by the recruiter as a result of
+   * interacting with the candidate (for example adding a skill or work
+   * preference, and so on). Changes to
+   * [recruiting_notes][google.cloud.talent.v4beta1.Profile.recruiting_notes]
+   * are specifically excluded from this action type.
+   * Note:
+   * [candidate_update_time][google.cloud.talent.v4beta1.Profile.candidate_update_time]
+   * must be greater than or equal to
+   * [resume_update_time][google.cloud.talent.v4beta1.Profile.resume_update_time]
+   * or an error is thrown.
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp candidate_update_time = 67;</code>
+   */
+  com.google.protobuf.Timestamp getCandidateUpdateTime();
+  /**
+   *
+   *
+   * <pre>
+   * The timestamp when the profile was last updated as a result of a direct or
+   * indirect action by a candidate.
+   * These actions include:
+   * * Direct actions such as the candidate submitting a new resume as part of a
+   * job application to the agency, using a self-service tool such as a website
+   * to update their profile, and so on.
+   * * Indirect actions by the candidate such as uploading a resume to a job
+   * board that is collected by the agency through a feed, providing a resume to
+   * a recruiter who then uploads it into the ATS, and so on.
+   * * Updates made to the candidate's profile by the recruiter as a result of
+   * interacting with the candidate (for example adding a skill or work
+   * preference, and so on). Changes to
+   * [recruiting_notes][google.cloud.talent.v4beta1.Profile.recruiting_notes]
+   * are specifically excluded from this action type.
+   * Note:
+   * [candidate_update_time][google.cloud.talent.v4beta1.Profile.candidate_update_time]
+   * must be greater than or equal to
+   * [resume_update_time][google.cloud.talent.v4beta1.Profile.resume_update_time]
+   * or an error is thrown.
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp candidate_update_time = 67;</code>
+   */
+  com.google.protobuf.TimestampOrBuilder getCandidateUpdateTimeOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * The timestamp when the candidate's resume was added or updated on the
+   * candidate's profile. Whether that resume was directly uploaded by a
+   * candidate, pulled from a 3rd party job board feed, added by a recruiter,
+   * and so on.
+   * If this field is updated, it's expected that
+   * [resume][google.cloud.talent.v4beta1.Profile.resume] is provided in the
+   * create or update calls.
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp resume_update_time = 68;</code>
+   */
+  boolean hasResumeUpdateTime();
+  /**
+   *
+   *
+   * <pre>
+   * The timestamp when the candidate's resume was added or updated on the
+   * candidate's profile. Whether that resume was directly uploaded by a
+   * candidate, pulled from a 3rd party job board feed, added by a recruiter,
+   * and so on.
+   * If this field is updated, it's expected that
+   * [resume][google.cloud.talent.v4beta1.Profile.resume] is provided in the
+   * create or update calls.
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp resume_update_time = 68;</code>
+   */
+  com.google.protobuf.Timestamp getResumeUpdateTime();
+  /**
+   *
+   *
+   * <pre>
+   * The timestamp when the candidate's resume was added or updated on the
+   * candidate's profile. Whether that resume was directly uploaded by a
+   * candidate, pulled from a 3rd party job board feed, added by a recruiter,
+   * and so on.
+   * If this field is updated, it's expected that
+   * [resume][google.cloud.talent.v4beta1.Profile.resume] is provided in the
+   * create or update calls.
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp resume_update_time = 68;</code>
+   */
+  com.google.protobuf.TimestampOrBuilder getResumeUpdateTimeOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * The resume representing this profile.
    * </pre>
    *
@@ -1271,40 +1405,40 @@ public interface ProfileOrBuilder
    *
    *
    * <pre>
-   * The resource names of the candidate's applications.
+   * Output only. The resource names of the candidate's applications.
    * </pre>
    *
-   * <code>repeated string applications = 47;</code>
+   * <code>repeated string applications = 47 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    */
   java.util.List<java.lang.String> getApplicationsList();
   /**
    *
    *
    * <pre>
-   * The resource names of the candidate's applications.
+   * Output only. The resource names of the candidate's applications.
    * </pre>
    *
-   * <code>repeated string applications = 47;</code>
+   * <code>repeated string applications = 47 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    */
   int getApplicationsCount();
   /**
    *
    *
    * <pre>
-   * The resource names of the candidate's applications.
+   * Output only. The resource names of the candidate's applications.
    * </pre>
    *
-   * <code>repeated string applications = 47;</code>
+   * <code>repeated string applications = 47 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    */
   java.lang.String getApplications(int index);
   /**
    *
    *
    * <pre>
-   * The resource names of the candidate's applications.
+   * Output only. The resource names of the candidate's applications.
    * </pre>
    *
-   * <code>repeated string applications = 47;</code>
+   * <code>repeated string applications = 47 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    */
   com.google.protobuf.ByteString getApplicationsBytes(int index);
 
@@ -1312,40 +1446,40 @@ public interface ProfileOrBuilder
    *
    *
    * <pre>
-   * The resource names of the candidate's assignments.
+   * Output only. The resource names of the candidate's assignments.
    * </pre>
    *
-   * <code>repeated string assignments = 48;</code>
+   * <code>repeated string assignments = 48 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    */
   java.util.List<java.lang.String> getAssignmentsList();
   /**
    *
    *
    * <pre>
-   * The resource names of the candidate's assignments.
+   * Output only. The resource names of the candidate's assignments.
    * </pre>
    *
-   * <code>repeated string assignments = 48;</code>
+   * <code>repeated string assignments = 48 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    */
   int getAssignmentsCount();
   /**
    *
    *
    * <pre>
-   * The resource names of the candidate's assignments.
+   * Output only. The resource names of the candidate's assignments.
    * </pre>
    *
-   * <code>repeated string assignments = 48;</code>
+   * <code>repeated string assignments = 48 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    */
   java.lang.String getAssignments(int index);
   /**
    *
    *
    * <pre>
-   * The resource names of the candidate's assignments.
+   * Output only. The resource names of the candidate's assignments.
    * </pre>
    *
-   * <code>repeated string assignments = 48;</code>
+   * <code>repeated string assignments = 48 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    */
   com.google.protobuf.ByteString getAssignmentsBytes(int index);
 
@@ -1523,6 +1657,69 @@ public interface ProfileOrBuilder
    * <code>string keyword_snippet = 28 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    */
   com.google.protobuf.ByteString getKeywordSnippetBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Candidate's availability signals.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.talent.v4beta1.AvailabilitySignal availability_signals = 70 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  java.util.List<com.google.cloud.talent.v4beta1.AvailabilitySignal> getAvailabilitySignalsList();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Candidate's availability signals.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.talent.v4beta1.AvailabilitySignal availability_signals = 70 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  com.google.cloud.talent.v4beta1.AvailabilitySignal getAvailabilitySignals(int index);
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Candidate's availability signals.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.talent.v4beta1.AvailabilitySignal availability_signals = 70 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  int getAvailabilitySignalsCount();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Candidate's availability signals.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.talent.v4beta1.AvailabilitySignal availability_signals = 70 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  java.util.List<? extends com.google.cloud.talent.v4beta1.AvailabilitySignalOrBuilder>
+      getAvailabilitySignalsOrBuilderList();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Candidate's availability signals.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.talent.v4beta1.AvailabilitySignal availability_signals = 70 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  com.google.cloud.talent.v4beta1.AvailabilitySignalOrBuilder getAvailabilitySignalsOrBuilder(
+      int index);
 
   /**
    *

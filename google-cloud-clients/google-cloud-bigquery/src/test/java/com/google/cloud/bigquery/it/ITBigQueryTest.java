@@ -279,6 +279,7 @@ public class ITBigQueryTest {
   public static void beforeClass() throws InterruptedException, TimeoutException {
     RemoteBigQueryHelper bigqueryHelper = RemoteBigQueryHelper.create();
     RemoteStorageHelper storageHelper = RemoteStorageHelper.create();
+    Map<String, String> labels = ImmutableMap.of("test-job-name", "test-load-job");
     bigquery = bigqueryHelper.getOptions().getService();
     storage = storageHelper.getOptions().getService();
     storage.create(BucketInfo.of(BUCKET));
@@ -302,10 +303,13 @@ public class ITBigQueryTest {
                 TABLE_ID, "gs://" + BUCKET + "/" + JSON_LOAD_FILE, FormatOptions.json())
             .setCreateDisposition(JobInfo.CreateDisposition.CREATE_IF_NEEDED)
             .setSchema(TABLE_SCHEMA)
+            .setLabels(labels)
             .build();
     Job job = bigquery.create(JobInfo.of(configuration));
     job = job.waitFor();
     assertNull(job.getStatus().getError());
+    LoadJobConfiguration loadJobConfiguration = job.getConfiguration();
+    assertEquals(labels, loadJobConfiguration.getLabels());
   }
 
   @AfterClass
@@ -1477,6 +1481,30 @@ public class ITBigQueryTest {
   }
 
   @Test
+  public void testCopyJobWithLabels() throws InterruptedException {
+    String sourceTableName = "test_copy_job_source_table_label";
+    String destinationTableName = "test_copy_job_destination_table_label";
+    Map<String, String> labels = ImmutableMap.of("test_job_name", "test_copy_job");
+    TableId sourceTable = TableId.of(DATASET, sourceTableName);
+    StandardTableDefinition tableDefinition = StandardTableDefinition.of(TABLE_SCHEMA);
+    TableInfo tableInfo = TableInfo.of(sourceTable, tableDefinition);
+    Table createdTable = bigquery.create(tableInfo);
+    assertNotNull(createdTable);
+    TableId destinationTable = TableId.of(DATASET, destinationTableName);
+    CopyJobConfiguration configuration =
+        CopyJobConfiguration.newBuilder(destinationTable, sourceTable).setLabels(labels).build();
+    Job remoteJob = bigquery.create(JobInfo.of(configuration));
+    remoteJob = remoteJob.waitFor();
+    assertNull(remoteJob.getStatus().getError());
+    CopyJobConfiguration copyJobConfiguration = remoteJob.getConfiguration();
+    assertEquals(labels, copyJobConfiguration.getLabels());
+    Table remoteTable = bigquery.getTable(DATASET, destinationTableName);
+    assertNotNull(remoteTable);
+    assertTrue(createdTable.delete());
+    assertTrue(remoteTable.delete());
+  }
+
+  @Test
   public void testQueryJob() throws InterruptedException, TimeoutException {
     String tableName = "test_query_job_table";
     String query = "SELECT TimestampField, StringField, BooleanField FROM " + TABLE_ID.getTable();
@@ -1533,13 +1561,17 @@ public class ITBigQueryTest {
   public void testExtractJob() throws InterruptedException, TimeoutException {
     String tableName = "test_export_job_table";
     TableId destinationTable = TableId.of(DATASET, tableName);
+    Map<String, String> labels = ImmutableMap.of("test-job-name", "test-load-extract-job");
     LoadJobConfiguration configuration =
         LoadJobConfiguration.newBuilder(destinationTable, "gs://" + BUCKET + "/" + LOAD_FILE)
             .setSchema(SIMPLE_SCHEMA)
+            .setLabels(labels)
             .build();
     Job remoteLoadJob = bigquery.create(JobInfo.of(configuration));
     remoteLoadJob = remoteLoadJob.waitFor();
     assertNull(remoteLoadJob.getStatus().getError());
+    LoadJobConfiguration loadJobConfiguration = remoteLoadJob.getConfiguration();
+    assertEquals(labels, loadJobConfiguration.getLabels());
 
     ExtractJobConfiguration extractConfiguration =
         ExtractJobConfiguration.newBuilder(destinationTable, "gs://" + BUCKET + "/" + EXTRACT_FILE)
@@ -1553,6 +1585,32 @@ public class ITBigQueryTest {
         new String(storage.readAllBytes(BUCKET, EXTRACT_FILE), StandardCharsets.UTF_8);
     assertEquals(
         Sets.newHashSet(CSV_CONTENT.split("\n")), Sets.newHashSet(extractedCsv.split("\n")));
+    assertTrue(bigquery.delete(destinationTable));
+  }
+
+  @Test
+  public void testExtractJobWithLabels() throws InterruptedException, TimeoutException {
+    String tableName = "test_export_job_table_label";
+    Map<String, String> labels = ImmutableMap.of("test_job_name", "test_export_job");
+    TableId destinationTable = TableId.of(DATASET, tableName);
+    LoadJobConfiguration configuration =
+        LoadJobConfiguration.newBuilder(destinationTable, "gs://" + BUCKET + "/" + LOAD_FILE)
+            .setSchema(SIMPLE_SCHEMA)
+            .build();
+    Job remoteLoadJob = bigquery.create(JobInfo.of(configuration));
+    remoteLoadJob = remoteLoadJob.waitFor();
+    assertNull(remoteLoadJob.getStatus().getError());
+
+    ExtractJobConfiguration extractConfiguration =
+        ExtractJobConfiguration.newBuilder(destinationTable, "gs://" + BUCKET + "/" + EXTRACT_FILE)
+            .setLabels(labels)
+            .setPrintHeader(false)
+            .build();
+    Job remoteExtractJob = bigquery.create(JobInfo.of(extractConfiguration));
+    remoteExtractJob = remoteExtractJob.waitFor();
+    assertNull(remoteExtractJob.getStatus().getError());
+    ExtractJobConfiguration extractJobConfiguration = remoteExtractJob.getConfiguration();
+    assertEquals(labels, extractJobConfiguration.getLabels());
     assertTrue(bigquery.delete(destinationTable));
   }
 

@@ -16,7 +16,9 @@ public interface ReportPhishingRequestOrBuilder
    * in the format "projects/{project_number}".
    * </pre>
    *
-   * <code>string parent = 1;</code>
+   * <code>
+   * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    */
   java.lang.String getParent();
   /**
@@ -27,7 +29,9 @@ public interface ReportPhishingRequestOrBuilder
    * in the format "projects/{project_number}".
    * </pre>
    *
-   * <code>string parent = 1;</code>
+   * <code>
+   * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    */
   com.google.protobuf.ByteString getParentBytes();
 
@@ -35,20 +39,20 @@ public interface ReportPhishingRequestOrBuilder
    *
    *
    * <pre>
-   * The URI that is being reported for phishing content to be analyzed.
+   * Required. The URI that is being reported for phishing content to be analyzed.
    * </pre>
    *
-   * <code>string uri = 2;</code>
+   * <code>string uri = 2 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   java.lang.String getUri();
   /**
    *
    *
    * <pre>
-   * The URI that is being reported for phishing content to be analyzed.
+   * Required. The URI that is being reported for phishing content to be analyzed.
    * </pre>
    *
-   * <code>string uri = 2;</code>
+   * <code>string uri = 2 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   com.google.protobuf.ByteString getUriBytes();
 }

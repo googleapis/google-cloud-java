@@ -27,13 +27,13 @@ public final class CrawledUrlProto {
     java.lang.String[] descriptorData = {
       "\n9google/cloud/websecurityscanner/v1alph"
           + "a/crawled_url.proto\022\'google.cloud.websec"
-          + "urityscanner.v1alpha\032\034google/api/annotat"
-          + "ions.proto\"<\n\nCrawledUrl\022\023\n\013http_method\030"
-          + "\001 \001(\t\022\013\n\003url\030\002 \001(\t\022\014\n\004body\030\003 \001(\tB\233\001\n+com"
-          + ".google.cloud.websecurityscanner.v1alpha"
-          + "B\017CrawledUrlProtoP\001ZYgoogle.golang.org/g"
-          + "enproto/googleapis/cloud/websecurityscan"
-          + "ner/v1alpha;websecurityscannerb\006proto3"
+          + "urityscanner.v1alpha\"<\n\nCrawledUrl\022\023\n\013ht"
+          + "tp_method\030\001 \001(\t\022\013\n\003url\030\002 \001(\t\022\014\n\004body\030\003 \001"
+          + "(\tB\233\001\n+com.google.cloud.websecurityscann"
+          + "er.v1alphaB\017CrawledUrlProtoP\001ZYgoogle.go"
+          + "lang.org/genproto/googleapis/cloud/webse"
+          + "curityscanner/v1alpha;websecurityscanner"
+          + "b\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner() {
@@ -44,11 +44,7 @@ public final class CrawledUrlProto {
           }
         };
     com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
-        descriptorData,
-        new com.google.protobuf.Descriptors.FileDescriptor[] {
-          com.google.api.AnnotationsProto.getDescriptor(),
-        },
-        assigner);
+        descriptorData, new com.google.protobuf.Descriptors.FileDescriptor[] {}, assigner);
     internal_static_google_cloud_websecurityscanner_v1alpha_CrawledUrl_descriptor =
         getDescriptor().getMessageTypes().get(0);
     internal_static_google_cloud_websecurityscanner_v1alpha_CrawledUrl_fieldAccessorTable =
@@ -57,7 +53,6 @@ public final class CrawledUrlProto {
             new java.lang.String[] {
               "HttpMethod", "Url", "Body",
             });
-    com.google.api.AnnotationsProto.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

@@ -97,10 +97,10 @@ public final class ViewSpec extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. The query that defines the table view.
+   * Required. Output only. The query that defines the table view.
    * </pre>
    *
-   * <code>string view_query = 1;</code>
+   * <code>string view_query = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   public java.lang.String getViewQuery() {
     java.lang.Object ref = viewQuery_;
@@ -117,10 +117,10 @@ public final class ViewSpec extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. The query that defines the table view.
+   * Required. Output only. The query that defines the table view.
    * </pre>
    *
-   * <code>string view_query = 1;</code>
+   * <code>string view_query = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   public com.google.protobuf.ByteString getViewQueryBytes() {
     java.lang.Object ref = viewQuery_;
@@ -453,10 +453,10 @@ public final class ViewSpec extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The query that defines the table view.
+     * Required. Output only. The query that defines the table view.
      * </pre>
      *
-     * <code>string view_query = 1;</code>
+     * <code>string view_query = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public java.lang.String getViewQuery() {
       java.lang.Object ref = viewQuery_;
@@ -473,10 +473,10 @@ public final class ViewSpec extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The query that defines the table view.
+     * Required. Output only. The query that defines the table view.
      * </pre>
      *
-     * <code>string view_query = 1;</code>
+     * <code>string view_query = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public com.google.protobuf.ByteString getViewQueryBytes() {
       java.lang.Object ref = viewQuery_;
@@ -493,10 +493,10 @@ public final class ViewSpec extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The query that defines the table view.
+     * Required. Output only. The query that defines the table view.
      * </pre>
      *
-     * <code>string view_query = 1;</code>
+     * <code>string view_query = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder setViewQuery(java.lang.String value) {
       if (value == null) {
@@ -511,10 +511,10 @@ public final class ViewSpec extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The query that defines the table view.
+     * Required. Output only. The query that defines the table view.
      * </pre>
      *
-     * <code>string view_query = 1;</code>
+     * <code>string view_query = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder clearViewQuery() {
 
@@ -526,10 +526,10 @@ public final class ViewSpec extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The query that defines the table view.
+     * Required. Output only. The query that defines the table view.
      * </pre>
      *
-     * <code>string view_query = 1;</code>
+     * <code>string view_query = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder setViewQueryBytes(com.google.protobuf.ByteString value) {
       if (value == null) {

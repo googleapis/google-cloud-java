@@ -237,10 +237,14 @@ public final class CommonProto {
           + "\014INTERMEDIATE\020\003\022\014\n\010ADVANCED\020\004\022\n\n\006EXPERT\020"
           + "\005*f\n\007Outcome\022\027\n\023OUTCOME_UNSPECIFIED\020\000\022\014\n"
           + "\010POSITIVE\020\001\022\013\n\007NEUTRAL\020\002\022\014\n\010NEGATIVE\020\003\022\031"
-          + "\n\025OUTCOME_NOT_AVAILABLE\020\004By\n\037com.google."
-          + "cloud.talent.v4beta1B\013CommonProtoP\001ZAgoo"
-          + "gle.golang.org/genproto/googleapis/cloud"
-          + "/talent/v4beta1;talent\242\002\003CTSb\006proto3"
+          + "\n\025OUTCOME_NOT_AVAILABLE\020\004*\227\001\n\026Availabili"
+          + "tySignalType\022(\n$AVAILABILITY_SIGNAL_TYPE"
+          + "_UNSPECIFIED\020\000\022\023\n\017JOB_APPLICATION\020\001\022\021\n\rR"
+          + "ESUME_UPDATE\020\002\022\024\n\020CANDIDATE_UPDATE\020\003\022\025\n\021"
+          + "CLIENT_SUBMISSION\020\004By\n\037com.google.cloud."
+          + "talent.v4beta1B\013CommonProtoP\001ZAgoogle.go"
+          + "lang.org/genproto/googleapis/cloud/talen"
+          + "t/v4beta1;talent\242\002\003CTSb\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner() {

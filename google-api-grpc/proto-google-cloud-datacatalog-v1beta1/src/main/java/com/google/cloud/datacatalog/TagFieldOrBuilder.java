@@ -15,7 +15,7 @@ public interface TagFieldOrBuilder
    * Output only. The display name of this field.
    * </pre>
    *
-   * <code>string display_name = 1;</code>
+   * <code>string display_name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    */
   java.lang.String getDisplayName();
   /**
@@ -25,7 +25,7 @@ public interface TagFieldOrBuilder
    * Output only. The display name of this field.
    * </pre>
    *
-   * <code>string display_name = 1;</code>
+   * <code>string display_name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    */
   com.google.protobuf.ByteString getDisplayNameBytes();
 

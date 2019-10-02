@@ -12,22 +12,26 @@ public interface CheckValidCredsRequestOrBuilder
    *
    *
    * <pre>
-   * The data source in the form:
+   * Required. The data source in the form:
    * `projects/{project_id}/dataSources/{data_source_id}`
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>
+   * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    */
   java.lang.String getName();
   /**
    *
    *
    * <pre>
-   * The data source in the form:
+   * Required. The data source in the form:
    * `projects/{project_id}/dataSources/{data_source_id}`
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>
+   * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    */
   com.google.protobuf.ByteString getNameBytes();
 }

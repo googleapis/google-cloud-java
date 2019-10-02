@@ -141,12 +141,12 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
      * <pre>
      * Data Catalog tries to automatically choose the right corpus of data to
      * search through. You can ensure an organization is included by adding it
-     * to "include_org_ids". You can ensure a project's org is included with
-     * "include_project_ids". You must specify at least one organization
-     * using "include_org_ids" or "include_project_ids" in all search requests.
+     * to `include_org_ids`. You can ensure a project's org is included with
+     * `include_project_ids`. You must specify at least one organization
+     * using `include_org_ids` or `include_project_ids` in all search requests.
      * List of organization IDs to search within. To find your organization ID,
      * follow instructions in
-     * https://cloud.google.com/resource-manager/docs/creating-managing-organization
+     * https://cloud.google.com/resource-manager/docs/creating-managing-organization.
      * </pre>
      *
      * <code>repeated string include_org_ids = 2;</code>
@@ -158,12 +158,12 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
      * <pre>
      * Data Catalog tries to automatically choose the right corpus of data to
      * search through. You can ensure an organization is included by adding it
-     * to "include_org_ids". You can ensure a project's org is included with
-     * "include_project_ids". You must specify at least one organization
-     * using "include_org_ids" or "include_project_ids" in all search requests.
+     * to `include_org_ids`. You can ensure a project's org is included with
+     * `include_project_ids`. You must specify at least one organization
+     * using `include_org_ids` or `include_project_ids` in all search requests.
      * List of organization IDs to search within. To find your organization ID,
      * follow instructions in
-     * https://cloud.google.com/resource-manager/docs/creating-managing-organization
+     * https://cloud.google.com/resource-manager/docs/creating-managing-organization.
      * </pre>
      *
      * <code>repeated string include_org_ids = 2;</code>
@@ -175,12 +175,12 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
      * <pre>
      * Data Catalog tries to automatically choose the right corpus of data to
      * search through. You can ensure an organization is included by adding it
-     * to "include_org_ids". You can ensure a project's org is included with
-     * "include_project_ids". You must specify at least one organization
-     * using "include_org_ids" or "include_project_ids" in all search requests.
+     * to `include_org_ids`. You can ensure a project's org is included with
+     * `include_project_ids`. You must specify at least one organization
+     * using `include_org_ids` or `include_project_ids` in all search requests.
      * List of organization IDs to search within. To find your organization ID,
      * follow instructions in
-     * https://cloud.google.com/resource-manager/docs/creating-managing-organization
+     * https://cloud.google.com/resource-manager/docs/creating-managing-organization.
      * </pre>
      *
      * <code>repeated string include_org_ids = 2;</code>
@@ -192,12 +192,12 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
      * <pre>
      * Data Catalog tries to automatically choose the right corpus of data to
      * search through. You can ensure an organization is included by adding it
-     * to "include_org_ids". You can ensure a project's org is included with
-     * "include_project_ids". You must specify at least one organization
-     * using "include_org_ids" or "include_project_ids" in all search requests.
+     * to `include_org_ids`. You can ensure a project's org is included with
+     * `include_project_ids`. You must specify at least one organization
+     * using `include_org_ids` or `include_project_ids` in all search requests.
      * List of organization IDs to search within. To find your organization ID,
      * follow instructions in
-     * https://cloud.google.com/resource-manager/docs/creating-managing-organization
+     * https://cloud.google.com/resource-manager/docs/creating-managing-organization.
      * </pre>
      *
      * <code>repeated string include_org_ids = 2;</code>
@@ -210,7 +210,7 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
      * <pre>
      * List of project IDs to search within. To learn more about the
      * distinction between project names/IDs/numbers, go to
-     * https://cloud.google.com/docs/overview/#projects
+     * https://cloud.google.com/docs/overview/#projects.
      * </pre>
      *
      * <code>repeated string include_project_ids = 3;</code>
@@ -222,7 +222,7 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
      * <pre>
      * List of project IDs to search within. To learn more about the
      * distinction between project names/IDs/numbers, go to
-     * https://cloud.google.com/docs/overview/#projects
+     * https://cloud.google.com/docs/overview/#projects.
      * </pre>
      *
      * <code>repeated string include_project_ids = 3;</code>
@@ -234,7 +234,7 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
      * <pre>
      * List of project IDs to search within. To learn more about the
      * distinction between project names/IDs/numbers, go to
-     * https://cloud.google.com/docs/overview/#projects
+     * https://cloud.google.com/docs/overview/#projects.
      * </pre>
      *
      * <code>repeated string include_project_ids = 3;</code>
@@ -246,7 +246,7 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
      * <pre>
      * List of project IDs to search within. To learn more about the
      * distinction between project names/IDs/numbers, go to
-     * https://cloud.google.com/docs/overview/#projects
+     * https://cloud.google.com/docs/overview/#projects.
      * </pre>
      *
      * <code>repeated string include_project_ids = 3;</code>
@@ -257,7 +257,7 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * If true, include Google Cloud Platform (GCP) public datasets in the
+     * If `true`, include Google Cloud Platform (GCP) public datasets in the
      * search results. Info on GCP public datasets is available at
      * https://cloud.google.com/public-datasets/. By default, GCP public
      * datasets are excluded.
@@ -381,12 +381,12 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
      * <pre>
      * Data Catalog tries to automatically choose the right corpus of data to
      * search through. You can ensure an organization is included by adding it
-     * to "include_org_ids". You can ensure a project's org is included with
-     * "include_project_ids". You must specify at least one organization
-     * using "include_org_ids" or "include_project_ids" in all search requests.
+     * to `include_org_ids`. You can ensure a project's org is included with
+     * `include_project_ids`. You must specify at least one organization
+     * using `include_org_ids` or `include_project_ids` in all search requests.
      * List of organization IDs to search within. To find your organization ID,
      * follow instructions in
-     * https://cloud.google.com/resource-manager/docs/creating-managing-organization
+     * https://cloud.google.com/resource-manager/docs/creating-managing-organization.
      * </pre>
      *
      * <code>repeated string include_org_ids = 2;</code>
@@ -400,12 +400,12 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
      * <pre>
      * Data Catalog tries to automatically choose the right corpus of data to
      * search through. You can ensure an organization is included by adding it
-     * to "include_org_ids". You can ensure a project's org is included with
-     * "include_project_ids". You must specify at least one organization
-     * using "include_org_ids" or "include_project_ids" in all search requests.
+     * to `include_org_ids`. You can ensure a project's org is included with
+     * `include_project_ids`. You must specify at least one organization
+     * using `include_org_ids` or `include_project_ids` in all search requests.
      * List of organization IDs to search within. To find your organization ID,
      * follow instructions in
-     * https://cloud.google.com/resource-manager/docs/creating-managing-organization
+     * https://cloud.google.com/resource-manager/docs/creating-managing-organization.
      * </pre>
      *
      * <code>repeated string include_org_ids = 2;</code>
@@ -419,12 +419,12 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
      * <pre>
      * Data Catalog tries to automatically choose the right corpus of data to
      * search through. You can ensure an organization is included by adding it
-     * to "include_org_ids". You can ensure a project's org is included with
-     * "include_project_ids". You must specify at least one organization
-     * using "include_org_ids" or "include_project_ids" in all search requests.
+     * to `include_org_ids`. You can ensure a project's org is included with
+     * `include_project_ids`. You must specify at least one organization
+     * using `include_org_ids` or `include_project_ids` in all search requests.
      * List of organization IDs to search within. To find your organization ID,
      * follow instructions in
-     * https://cloud.google.com/resource-manager/docs/creating-managing-organization
+     * https://cloud.google.com/resource-manager/docs/creating-managing-organization.
      * </pre>
      *
      * <code>repeated string include_org_ids = 2;</code>
@@ -438,12 +438,12 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
      * <pre>
      * Data Catalog tries to automatically choose the right corpus of data to
      * search through. You can ensure an organization is included by adding it
-     * to "include_org_ids". You can ensure a project's org is included with
-     * "include_project_ids". You must specify at least one organization
-     * using "include_org_ids" or "include_project_ids" in all search requests.
+     * to `include_org_ids`. You can ensure a project's org is included with
+     * `include_project_ids`. You must specify at least one organization
+     * using `include_org_ids` or `include_project_ids` in all search requests.
      * List of organization IDs to search within. To find your organization ID,
      * follow instructions in
-     * https://cloud.google.com/resource-manager/docs/creating-managing-organization
+     * https://cloud.google.com/resource-manager/docs/creating-managing-organization.
      * </pre>
      *
      * <code>repeated string include_org_ids = 2;</code>
@@ -460,7 +460,7 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
      * <pre>
      * List of project IDs to search within. To learn more about the
      * distinction between project names/IDs/numbers, go to
-     * https://cloud.google.com/docs/overview/#projects
+     * https://cloud.google.com/docs/overview/#projects.
      * </pre>
      *
      * <code>repeated string include_project_ids = 3;</code>
@@ -474,7 +474,7 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
      * <pre>
      * List of project IDs to search within. To learn more about the
      * distinction between project names/IDs/numbers, go to
-     * https://cloud.google.com/docs/overview/#projects
+     * https://cloud.google.com/docs/overview/#projects.
      * </pre>
      *
      * <code>repeated string include_project_ids = 3;</code>
@@ -488,7 +488,7 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
      * <pre>
      * List of project IDs to search within. To learn more about the
      * distinction between project names/IDs/numbers, go to
-     * https://cloud.google.com/docs/overview/#projects
+     * https://cloud.google.com/docs/overview/#projects.
      * </pre>
      *
      * <code>repeated string include_project_ids = 3;</code>
@@ -502,7 +502,7 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
      * <pre>
      * List of project IDs to search within. To learn more about the
      * distinction between project names/IDs/numbers, go to
-     * https://cloud.google.com/docs/overview/#projects
+     * https://cloud.google.com/docs/overview/#projects.
      * </pre>
      *
      * <code>repeated string include_project_ids = 3;</code>
@@ -517,7 +517,7 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * If true, include Google Cloud Platform (GCP) public datasets in the
+     * If `true`, include Google Cloud Platform (GCP) public datasets in the
      * search results. Info on GCP public datasets is available at
      * https://cloud.google.com/public-datasets/. By default, GCP public
      * datasets are excluded.
@@ -929,12 +929,12 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
        * <pre>
        * Data Catalog tries to automatically choose the right corpus of data to
        * search through. You can ensure an organization is included by adding it
-       * to "include_org_ids". You can ensure a project's org is included with
-       * "include_project_ids". You must specify at least one organization
-       * using "include_org_ids" or "include_project_ids" in all search requests.
+       * to `include_org_ids`. You can ensure a project's org is included with
+       * `include_project_ids`. You must specify at least one organization
+       * using `include_org_ids` or `include_project_ids` in all search requests.
        * List of organization IDs to search within. To find your organization ID,
        * follow instructions in
-       * https://cloud.google.com/resource-manager/docs/creating-managing-organization
+       * https://cloud.google.com/resource-manager/docs/creating-managing-organization.
        * </pre>
        *
        * <code>repeated string include_org_ids = 2;</code>
@@ -948,12 +948,12 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
        * <pre>
        * Data Catalog tries to automatically choose the right corpus of data to
        * search through. You can ensure an organization is included by adding it
-       * to "include_org_ids". You can ensure a project's org is included with
-       * "include_project_ids". You must specify at least one organization
-       * using "include_org_ids" or "include_project_ids" in all search requests.
+       * to `include_org_ids`. You can ensure a project's org is included with
+       * `include_project_ids`. You must specify at least one organization
+       * using `include_org_ids` or `include_project_ids` in all search requests.
        * List of organization IDs to search within. To find your organization ID,
        * follow instructions in
-       * https://cloud.google.com/resource-manager/docs/creating-managing-organization
+       * https://cloud.google.com/resource-manager/docs/creating-managing-organization.
        * </pre>
        *
        * <code>repeated string include_org_ids = 2;</code>
@@ -967,12 +967,12 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
        * <pre>
        * Data Catalog tries to automatically choose the right corpus of data to
        * search through. You can ensure an organization is included by adding it
-       * to "include_org_ids". You can ensure a project's org is included with
-       * "include_project_ids". You must specify at least one organization
-       * using "include_org_ids" or "include_project_ids" in all search requests.
+       * to `include_org_ids`. You can ensure a project's org is included with
+       * `include_project_ids`. You must specify at least one organization
+       * using `include_org_ids` or `include_project_ids` in all search requests.
        * List of organization IDs to search within. To find your organization ID,
        * follow instructions in
-       * https://cloud.google.com/resource-manager/docs/creating-managing-organization
+       * https://cloud.google.com/resource-manager/docs/creating-managing-organization.
        * </pre>
        *
        * <code>repeated string include_org_ids = 2;</code>
@@ -986,12 +986,12 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
        * <pre>
        * Data Catalog tries to automatically choose the right corpus of data to
        * search through. You can ensure an organization is included by adding it
-       * to "include_org_ids". You can ensure a project's org is included with
-       * "include_project_ids". You must specify at least one organization
-       * using "include_org_ids" or "include_project_ids" in all search requests.
+       * to `include_org_ids`. You can ensure a project's org is included with
+       * `include_project_ids`. You must specify at least one organization
+       * using `include_org_ids` or `include_project_ids` in all search requests.
        * List of organization IDs to search within. To find your organization ID,
        * follow instructions in
-       * https://cloud.google.com/resource-manager/docs/creating-managing-organization
+       * https://cloud.google.com/resource-manager/docs/creating-managing-organization.
        * </pre>
        *
        * <code>repeated string include_org_ids = 2;</code>
@@ -1005,12 +1005,12 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
        * <pre>
        * Data Catalog tries to automatically choose the right corpus of data to
        * search through. You can ensure an organization is included by adding it
-       * to "include_org_ids". You can ensure a project's org is included with
-       * "include_project_ids". You must specify at least one organization
-       * using "include_org_ids" or "include_project_ids" in all search requests.
+       * to `include_org_ids`. You can ensure a project's org is included with
+       * `include_project_ids`. You must specify at least one organization
+       * using `include_org_ids` or `include_project_ids` in all search requests.
        * List of organization IDs to search within. To find your organization ID,
        * follow instructions in
-       * https://cloud.google.com/resource-manager/docs/creating-managing-organization
+       * https://cloud.google.com/resource-manager/docs/creating-managing-organization.
        * </pre>
        *
        * <code>repeated string include_org_ids = 2;</code>
@@ -1030,12 +1030,12 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
        * <pre>
        * Data Catalog tries to automatically choose the right corpus of data to
        * search through. You can ensure an organization is included by adding it
-       * to "include_org_ids". You can ensure a project's org is included with
-       * "include_project_ids". You must specify at least one organization
-       * using "include_org_ids" or "include_project_ids" in all search requests.
+       * to `include_org_ids`. You can ensure a project's org is included with
+       * `include_project_ids`. You must specify at least one organization
+       * using `include_org_ids` or `include_project_ids` in all search requests.
        * List of organization IDs to search within. To find your organization ID,
        * follow instructions in
-       * https://cloud.google.com/resource-manager/docs/creating-managing-organization
+       * https://cloud.google.com/resource-manager/docs/creating-managing-organization.
        * </pre>
        *
        * <code>repeated string include_org_ids = 2;</code>
@@ -1055,12 +1055,12 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
        * <pre>
        * Data Catalog tries to automatically choose the right corpus of data to
        * search through. You can ensure an organization is included by adding it
-       * to "include_org_ids". You can ensure a project's org is included with
-       * "include_project_ids". You must specify at least one organization
-       * using "include_org_ids" or "include_project_ids" in all search requests.
+       * to `include_org_ids`. You can ensure a project's org is included with
+       * `include_project_ids`. You must specify at least one organization
+       * using `include_org_ids` or `include_project_ids` in all search requests.
        * List of organization IDs to search within. To find your organization ID,
        * follow instructions in
-       * https://cloud.google.com/resource-manager/docs/creating-managing-organization
+       * https://cloud.google.com/resource-manager/docs/creating-managing-organization.
        * </pre>
        *
        * <code>repeated string include_org_ids = 2;</code>
@@ -1077,12 +1077,12 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
        * <pre>
        * Data Catalog tries to automatically choose the right corpus of data to
        * search through. You can ensure an organization is included by adding it
-       * to "include_org_ids". You can ensure a project's org is included with
-       * "include_project_ids". You must specify at least one organization
-       * using "include_org_ids" or "include_project_ids" in all search requests.
+       * to `include_org_ids`. You can ensure a project's org is included with
+       * `include_project_ids`. You must specify at least one organization
+       * using `include_org_ids` or `include_project_ids` in all search requests.
        * List of organization IDs to search within. To find your organization ID,
        * follow instructions in
-       * https://cloud.google.com/resource-manager/docs/creating-managing-organization
+       * https://cloud.google.com/resource-manager/docs/creating-managing-organization.
        * </pre>
        *
        * <code>repeated string include_org_ids = 2;</code>
@@ -1099,12 +1099,12 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
        * <pre>
        * Data Catalog tries to automatically choose the right corpus of data to
        * search through. You can ensure an organization is included by adding it
-       * to "include_org_ids". You can ensure a project's org is included with
-       * "include_project_ids". You must specify at least one organization
-       * using "include_org_ids" or "include_project_ids" in all search requests.
+       * to `include_org_ids`. You can ensure a project's org is included with
+       * `include_project_ids`. You must specify at least one organization
+       * using `include_org_ids` or `include_project_ids` in all search requests.
        * List of organization IDs to search within. To find your organization ID,
        * follow instructions in
-       * https://cloud.google.com/resource-manager/docs/creating-managing-organization
+       * https://cloud.google.com/resource-manager/docs/creating-managing-organization.
        * </pre>
        *
        * <code>repeated string include_org_ids = 2;</code>
@@ -1135,7 +1135,7 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
        * <pre>
        * List of project IDs to search within. To learn more about the
        * distinction between project names/IDs/numbers, go to
-       * https://cloud.google.com/docs/overview/#projects
+       * https://cloud.google.com/docs/overview/#projects.
        * </pre>
        *
        * <code>repeated string include_project_ids = 3;</code>
@@ -1149,7 +1149,7 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
        * <pre>
        * List of project IDs to search within. To learn more about the
        * distinction between project names/IDs/numbers, go to
-       * https://cloud.google.com/docs/overview/#projects
+       * https://cloud.google.com/docs/overview/#projects.
        * </pre>
        *
        * <code>repeated string include_project_ids = 3;</code>
@@ -1163,7 +1163,7 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
        * <pre>
        * List of project IDs to search within. To learn more about the
        * distinction between project names/IDs/numbers, go to
-       * https://cloud.google.com/docs/overview/#projects
+       * https://cloud.google.com/docs/overview/#projects.
        * </pre>
        *
        * <code>repeated string include_project_ids = 3;</code>
@@ -1177,7 +1177,7 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
        * <pre>
        * List of project IDs to search within. To learn more about the
        * distinction between project names/IDs/numbers, go to
-       * https://cloud.google.com/docs/overview/#projects
+       * https://cloud.google.com/docs/overview/#projects.
        * </pre>
        *
        * <code>repeated string include_project_ids = 3;</code>
@@ -1191,7 +1191,7 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
        * <pre>
        * List of project IDs to search within. To learn more about the
        * distinction between project names/IDs/numbers, go to
-       * https://cloud.google.com/docs/overview/#projects
+       * https://cloud.google.com/docs/overview/#projects.
        * </pre>
        *
        * <code>repeated string include_project_ids = 3;</code>
@@ -1211,7 +1211,7 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
        * <pre>
        * List of project IDs to search within. To learn more about the
        * distinction between project names/IDs/numbers, go to
-       * https://cloud.google.com/docs/overview/#projects
+       * https://cloud.google.com/docs/overview/#projects.
        * </pre>
        *
        * <code>repeated string include_project_ids = 3;</code>
@@ -1231,7 +1231,7 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
        * <pre>
        * List of project IDs to search within. To learn more about the
        * distinction between project names/IDs/numbers, go to
-       * https://cloud.google.com/docs/overview/#projects
+       * https://cloud.google.com/docs/overview/#projects.
        * </pre>
        *
        * <code>repeated string include_project_ids = 3;</code>
@@ -1248,7 +1248,7 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
        * <pre>
        * List of project IDs to search within. To learn more about the
        * distinction between project names/IDs/numbers, go to
-       * https://cloud.google.com/docs/overview/#projects
+       * https://cloud.google.com/docs/overview/#projects.
        * </pre>
        *
        * <code>repeated string include_project_ids = 3;</code>
@@ -1265,7 +1265,7 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
        * <pre>
        * List of project IDs to search within. To learn more about the
        * distinction between project names/IDs/numbers, go to
-       * https://cloud.google.com/docs/overview/#projects
+       * https://cloud.google.com/docs/overview/#projects.
        * </pre>
        *
        * <code>repeated string include_project_ids = 3;</code>
@@ -1286,7 +1286,7 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
        *
        *
        * <pre>
-       * If true, include Google Cloud Platform (GCP) public datasets in the
+       * If `true`, include Google Cloud Platform (GCP) public datasets in the
        * search results. Info on GCP public datasets is available at
        * https://cloud.google.com/public-datasets/. By default, GCP public
        * datasets are excluded.
@@ -1301,7 +1301,7 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
        *
        *
        * <pre>
-       * If true, include Google Cloud Platform (GCP) public datasets in the
+       * If `true`, include Google Cloud Platform (GCP) public datasets in the
        * search results. Info on GCP public datasets is available at
        * https://cloud.google.com/public-datasets/. By default, GCP public
        * datasets are excluded.
@@ -1319,7 +1319,7 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
        *
        *
        * <pre>
-       * If true, include Google Cloud Platform (GCP) public datasets in the
+       * If `true`, include Google Cloud Platform (GCP) public datasets in the
        * search results. Info on GCP public datasets is available at
        * https://cloud.google.com/public-datasets/. By default, GCP public
        * datasets are excluded.
@@ -1395,7 +1395,9 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
    * Required. The scope of this search request.
    * </pre>
    *
-   * <code>.google.cloud.datacatalog.v1beta1.SearchCatalogRequest.Scope scope = 6;</code>
+   * <code>
+   * .google.cloud.datacatalog.v1beta1.SearchCatalogRequest.Scope scope = 6 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   public boolean hasScope() {
     return scope_ != null;
@@ -1407,7 +1409,9 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
    * Required. The scope of this search request.
    * </pre>
    *
-   * <code>.google.cloud.datacatalog.v1beta1.SearchCatalogRequest.Scope scope = 6;</code>
+   * <code>
+   * .google.cloud.datacatalog.v1beta1.SearchCatalogRequest.Scope scope = 6 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   public com.google.cloud.datacatalog.SearchCatalogRequest.Scope getScope() {
     return scope_ == null
@@ -1421,7 +1425,9 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
    * Required. The scope of this search request.
    * </pre>
    *
-   * <code>.google.cloud.datacatalog.v1beta1.SearchCatalogRequest.Scope scope = 6;</code>
+   * <code>
+   * .google.cloud.datacatalog.v1beta1.SearchCatalogRequest.Scope scope = 6 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   public com.google.cloud.datacatalog.SearchCatalogRequest.ScopeOrBuilder getScopeOrBuilder() {
     return getScope();
@@ -1444,7 +1450,7 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
    * Syntax](/data-catalog/docs/how-to/search-reference) for more information.
    * </pre>
    *
-   * <code>string query = 1;</code>
+   * <code>string query = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   public java.lang.String getQuery() {
     java.lang.Object ref = query_;
@@ -1472,7 +1478,7 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
    * Syntax](/data-catalog/docs/how-to/search-reference) for more information.
    * </pre>
    *
-   * <code>string query = 1;</code>
+   * <code>string query = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   public com.google.protobuf.ByteString getQueryBytes() {
     java.lang.Object ref = query_;
@@ -1509,11 +1515,11 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
    *
    * <pre>
    * Optional pagination token returned in an earlier
-   * [SearchCatalogResponse.next_page_token][google.cloud.datacatalog.v1beta1.DataCatalog.SearchCatalogResponse.next_page_token];
+   * [SearchCatalogResponse.next_page_token][google.cloud.datacatalog.v1beta1.SearchCatalogResponse.next_page_token], which
    * indicates that this is a continuation of a prior
-   * [SearchCatalog][google.cloud.datacatalog.v1beta1.DataCatalog.SearchCatalog]
-   * call, and that the system should return the next page of data. If empty
-   * then the first page is returned.
+   * [SearchCatalogRequest][google.cloud.datacatalog.v1beta1.DataCatalog.SearchCatalog]
+   * call, and that the system should return the next page of data. If empty,
+   * the first page is returned.
    * </pre>
    *
    * <code>string page_token = 3;</code>
@@ -1534,11 +1540,11 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
    *
    * <pre>
    * Optional pagination token returned in an earlier
-   * [SearchCatalogResponse.next_page_token][google.cloud.datacatalog.v1beta1.DataCatalog.SearchCatalogResponse.next_page_token];
+   * [SearchCatalogResponse.next_page_token][google.cloud.datacatalog.v1beta1.SearchCatalogResponse.next_page_token], which
    * indicates that this is a continuation of a prior
-   * [SearchCatalog][google.cloud.datacatalog.v1beta1.DataCatalog.SearchCatalog]
-   * call, and that the system should return the next page of data. If empty
-   * then the first page is returned.
+   * [SearchCatalogRequest][google.cloud.datacatalog.v1beta1.DataCatalog.SearchCatalog]
+   * call, and that the system should return the next page of data. If empty,
+   * the first page is returned.
    * </pre>
    *
    * <code>string page_token = 3;</code>
@@ -1563,13 +1569,12 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
    * <pre>
    * Specifies the ordering of results, currently supported case-sensitive
    * choices are:
-   * &lt;ul&gt;
-   *   &lt;li&gt; relevance &lt;/li&gt;
-   *   &lt;li&gt; last_access_timestamp [asc|desc], defaults to descending if not
-   *   specified, &lt;/li&gt;
-   *   &lt;li&gt; last_modified_timestamp [asc|desc], defaults to descending if not
-   *   specified. &lt;/li&gt;
-   * &lt;/ul&gt;
+   *   * `relevance`, only supports desecending
+   *   * `last_access_timestamp [asc|desc]`, defaults to descending if not
+   *     specified
+   *   * `last_modified_timestamp [asc|desc]`, defaults to descending if not
+   *     specified
+   * If not specified, defaults to `relevance` descending.
    * </pre>
    *
    * <code>string order_by = 5;</code>
@@ -1591,13 +1596,12 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
    * <pre>
    * Specifies the ordering of results, currently supported case-sensitive
    * choices are:
-   * &lt;ul&gt;
-   *   &lt;li&gt; relevance &lt;/li&gt;
-   *   &lt;li&gt; last_access_timestamp [asc|desc], defaults to descending if not
-   *   specified, &lt;/li&gt;
-   *   &lt;li&gt; last_modified_timestamp [asc|desc], defaults to descending if not
-   *   specified. &lt;/li&gt;
-   * &lt;/ul&gt;
+   *   * `relevance`, only supports desecending
+   *   * `last_access_timestamp [asc|desc]`, defaults to descending if not
+   *     specified
+   *   * `last_modified_timestamp [asc|desc]`, defaults to descending if not
+   *     specified
+   * If not specified, defaults to `relevance` descending.
    * </pre>
    *
    * <code>string order_by = 5;</code>
@@ -2021,7 +2025,9 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
      * Required. The scope of this search request.
      * </pre>
      *
-     * <code>.google.cloud.datacatalog.v1beta1.SearchCatalogRequest.Scope scope = 6;</code>
+     * <code>
+     * .google.cloud.datacatalog.v1beta1.SearchCatalogRequest.Scope scope = 6 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public boolean hasScope() {
       return scopeBuilder_ != null || scope_ != null;
@@ -2033,7 +2039,9 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
      * Required. The scope of this search request.
      * </pre>
      *
-     * <code>.google.cloud.datacatalog.v1beta1.SearchCatalogRequest.Scope scope = 6;</code>
+     * <code>
+     * .google.cloud.datacatalog.v1beta1.SearchCatalogRequest.Scope scope = 6 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public com.google.cloud.datacatalog.SearchCatalogRequest.Scope getScope() {
       if (scopeBuilder_ == null) {
@@ -2051,7 +2059,9 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
      * Required. The scope of this search request.
      * </pre>
      *
-     * <code>.google.cloud.datacatalog.v1beta1.SearchCatalogRequest.Scope scope = 6;</code>
+     * <code>
+     * .google.cloud.datacatalog.v1beta1.SearchCatalogRequest.Scope scope = 6 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder setScope(com.google.cloud.datacatalog.SearchCatalogRequest.Scope value) {
       if (scopeBuilder_ == null) {
@@ -2073,7 +2083,9 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
      * Required. The scope of this search request.
      * </pre>
      *
-     * <code>.google.cloud.datacatalog.v1beta1.SearchCatalogRequest.Scope scope = 6;</code>
+     * <code>
+     * .google.cloud.datacatalog.v1beta1.SearchCatalogRequest.Scope scope = 6 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder setScope(
         com.google.cloud.datacatalog.SearchCatalogRequest.Scope.Builder builderForValue) {
@@ -2093,7 +2105,9 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
      * Required. The scope of this search request.
      * </pre>
      *
-     * <code>.google.cloud.datacatalog.v1beta1.SearchCatalogRequest.Scope scope = 6;</code>
+     * <code>
+     * .google.cloud.datacatalog.v1beta1.SearchCatalogRequest.Scope scope = 6 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder mergeScope(com.google.cloud.datacatalog.SearchCatalogRequest.Scope value) {
       if (scopeBuilder_ == null) {
@@ -2119,7 +2133,9 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
      * Required. The scope of this search request.
      * </pre>
      *
-     * <code>.google.cloud.datacatalog.v1beta1.SearchCatalogRequest.Scope scope = 6;</code>
+     * <code>
+     * .google.cloud.datacatalog.v1beta1.SearchCatalogRequest.Scope scope = 6 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder clearScope() {
       if (scopeBuilder_ == null) {
@@ -2139,7 +2155,9 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
      * Required. The scope of this search request.
      * </pre>
      *
-     * <code>.google.cloud.datacatalog.v1beta1.SearchCatalogRequest.Scope scope = 6;</code>
+     * <code>
+     * .google.cloud.datacatalog.v1beta1.SearchCatalogRequest.Scope scope = 6 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public com.google.cloud.datacatalog.SearchCatalogRequest.Scope.Builder getScopeBuilder() {
 
@@ -2153,7 +2171,9 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
      * Required. The scope of this search request.
      * </pre>
      *
-     * <code>.google.cloud.datacatalog.v1beta1.SearchCatalogRequest.Scope scope = 6;</code>
+     * <code>
+     * .google.cloud.datacatalog.v1beta1.SearchCatalogRequest.Scope scope = 6 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public com.google.cloud.datacatalog.SearchCatalogRequest.ScopeOrBuilder getScopeOrBuilder() {
       if (scopeBuilder_ != null) {
@@ -2171,7 +2191,9 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
      * Required. The scope of this search request.
      * </pre>
      *
-     * <code>.google.cloud.datacatalog.v1beta1.SearchCatalogRequest.Scope scope = 6;</code>
+     * <code>
+     * .google.cloud.datacatalog.v1beta1.SearchCatalogRequest.Scope scope = 6 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.datacatalog.SearchCatalogRequest.Scope,
@@ -2206,7 +2228,7 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
      * Syntax](/data-catalog/docs/how-to/search-reference) for more information.
      * </pre>
      *
-     * <code>string query = 1;</code>
+     * <code>string query = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public java.lang.String getQuery() {
       java.lang.Object ref = query_;
@@ -2234,7 +2256,7 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
      * Syntax](/data-catalog/docs/how-to/search-reference) for more information.
      * </pre>
      *
-     * <code>string query = 1;</code>
+     * <code>string query = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public com.google.protobuf.ByteString getQueryBytes() {
       java.lang.Object ref = query_;
@@ -2262,7 +2284,7 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
      * Syntax](/data-catalog/docs/how-to/search-reference) for more information.
      * </pre>
      *
-     * <code>string query = 1;</code>
+     * <code>string query = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder setQuery(java.lang.String value) {
       if (value == null) {
@@ -2288,7 +2310,7 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
      * Syntax](/data-catalog/docs/how-to/search-reference) for more information.
      * </pre>
      *
-     * <code>string query = 1;</code>
+     * <code>string query = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder clearQuery() {
 
@@ -2311,7 +2333,7 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
      * Syntax](/data-catalog/docs/how-to/search-reference) for more information.
      * </pre>
      *
-     * <code>string query = 1;</code>
+     * <code>string query = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder setQueryBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -2377,11 +2399,11 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * Optional pagination token returned in an earlier
-     * [SearchCatalogResponse.next_page_token][google.cloud.datacatalog.v1beta1.DataCatalog.SearchCatalogResponse.next_page_token];
+     * [SearchCatalogResponse.next_page_token][google.cloud.datacatalog.v1beta1.SearchCatalogResponse.next_page_token], which
      * indicates that this is a continuation of a prior
-     * [SearchCatalog][google.cloud.datacatalog.v1beta1.DataCatalog.SearchCatalog]
-     * call, and that the system should return the next page of data. If empty
-     * then the first page is returned.
+     * [SearchCatalogRequest][google.cloud.datacatalog.v1beta1.DataCatalog.SearchCatalog]
+     * call, and that the system should return the next page of data. If empty,
+     * the first page is returned.
      * </pre>
      *
      * <code>string page_token = 3;</code>
@@ -2402,11 +2424,11 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * Optional pagination token returned in an earlier
-     * [SearchCatalogResponse.next_page_token][google.cloud.datacatalog.v1beta1.DataCatalog.SearchCatalogResponse.next_page_token];
+     * [SearchCatalogResponse.next_page_token][google.cloud.datacatalog.v1beta1.SearchCatalogResponse.next_page_token], which
      * indicates that this is a continuation of a prior
-     * [SearchCatalog][google.cloud.datacatalog.v1beta1.DataCatalog.SearchCatalog]
-     * call, and that the system should return the next page of data. If empty
-     * then the first page is returned.
+     * [SearchCatalogRequest][google.cloud.datacatalog.v1beta1.DataCatalog.SearchCatalog]
+     * call, and that the system should return the next page of data. If empty,
+     * the first page is returned.
      * </pre>
      *
      * <code>string page_token = 3;</code>
@@ -2427,11 +2449,11 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * Optional pagination token returned in an earlier
-     * [SearchCatalogResponse.next_page_token][google.cloud.datacatalog.v1beta1.DataCatalog.SearchCatalogResponse.next_page_token];
+     * [SearchCatalogResponse.next_page_token][google.cloud.datacatalog.v1beta1.SearchCatalogResponse.next_page_token], which
      * indicates that this is a continuation of a prior
-     * [SearchCatalog][google.cloud.datacatalog.v1beta1.DataCatalog.SearchCatalog]
-     * call, and that the system should return the next page of data. If empty
-     * then the first page is returned.
+     * [SearchCatalogRequest][google.cloud.datacatalog.v1beta1.DataCatalog.SearchCatalog]
+     * call, and that the system should return the next page of data. If empty,
+     * the first page is returned.
      * </pre>
      *
      * <code>string page_token = 3;</code>
@@ -2450,11 +2472,11 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * Optional pagination token returned in an earlier
-     * [SearchCatalogResponse.next_page_token][google.cloud.datacatalog.v1beta1.DataCatalog.SearchCatalogResponse.next_page_token];
+     * [SearchCatalogResponse.next_page_token][google.cloud.datacatalog.v1beta1.SearchCatalogResponse.next_page_token], which
      * indicates that this is a continuation of a prior
-     * [SearchCatalog][google.cloud.datacatalog.v1beta1.DataCatalog.SearchCatalog]
-     * call, and that the system should return the next page of data. If empty
-     * then the first page is returned.
+     * [SearchCatalogRequest][google.cloud.datacatalog.v1beta1.DataCatalog.SearchCatalog]
+     * call, and that the system should return the next page of data. If empty,
+     * the first page is returned.
      * </pre>
      *
      * <code>string page_token = 3;</code>
@@ -2470,11 +2492,11 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * Optional pagination token returned in an earlier
-     * [SearchCatalogResponse.next_page_token][google.cloud.datacatalog.v1beta1.DataCatalog.SearchCatalogResponse.next_page_token];
+     * [SearchCatalogResponse.next_page_token][google.cloud.datacatalog.v1beta1.SearchCatalogResponse.next_page_token], which
      * indicates that this is a continuation of a prior
-     * [SearchCatalog][google.cloud.datacatalog.v1beta1.DataCatalog.SearchCatalog]
-     * call, and that the system should return the next page of data. If empty
-     * then the first page is returned.
+     * [SearchCatalogRequest][google.cloud.datacatalog.v1beta1.DataCatalog.SearchCatalog]
+     * call, and that the system should return the next page of data. If empty,
+     * the first page is returned.
      * </pre>
      *
      * <code>string page_token = 3;</code>
@@ -2497,13 +2519,12 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
      * <pre>
      * Specifies the ordering of results, currently supported case-sensitive
      * choices are:
-     * &lt;ul&gt;
-     *   &lt;li&gt; relevance &lt;/li&gt;
-     *   &lt;li&gt; last_access_timestamp [asc|desc], defaults to descending if not
-     *   specified, &lt;/li&gt;
-     *   &lt;li&gt; last_modified_timestamp [asc|desc], defaults to descending if not
-     *   specified. &lt;/li&gt;
-     * &lt;/ul&gt;
+     *   * `relevance`, only supports desecending
+     *   * `last_access_timestamp [asc|desc]`, defaults to descending if not
+     *     specified
+     *   * `last_modified_timestamp [asc|desc]`, defaults to descending if not
+     *     specified
+     * If not specified, defaults to `relevance` descending.
      * </pre>
      *
      * <code>string order_by = 5;</code>
@@ -2525,13 +2546,12 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
      * <pre>
      * Specifies the ordering of results, currently supported case-sensitive
      * choices are:
-     * &lt;ul&gt;
-     *   &lt;li&gt; relevance &lt;/li&gt;
-     *   &lt;li&gt; last_access_timestamp [asc|desc], defaults to descending if not
-     *   specified, &lt;/li&gt;
-     *   &lt;li&gt; last_modified_timestamp [asc|desc], defaults to descending if not
-     *   specified. &lt;/li&gt;
-     * &lt;/ul&gt;
+     *   * `relevance`, only supports desecending
+     *   * `last_access_timestamp [asc|desc]`, defaults to descending if not
+     *     specified
+     *   * `last_modified_timestamp [asc|desc]`, defaults to descending if not
+     *     specified
+     * If not specified, defaults to `relevance` descending.
      * </pre>
      *
      * <code>string order_by = 5;</code>
@@ -2553,13 +2573,12 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
      * <pre>
      * Specifies the ordering of results, currently supported case-sensitive
      * choices are:
-     * &lt;ul&gt;
-     *   &lt;li&gt; relevance &lt;/li&gt;
-     *   &lt;li&gt; last_access_timestamp [asc|desc], defaults to descending if not
-     *   specified, &lt;/li&gt;
-     *   &lt;li&gt; last_modified_timestamp [asc|desc], defaults to descending if not
-     *   specified. &lt;/li&gt;
-     * &lt;/ul&gt;
+     *   * `relevance`, only supports desecending
+     *   * `last_access_timestamp [asc|desc]`, defaults to descending if not
+     *     specified
+     *   * `last_modified_timestamp [asc|desc]`, defaults to descending if not
+     *     specified
+     * If not specified, defaults to `relevance` descending.
      * </pre>
      *
      * <code>string order_by = 5;</code>
@@ -2579,13 +2598,12 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
      * <pre>
      * Specifies the ordering of results, currently supported case-sensitive
      * choices are:
-     * &lt;ul&gt;
-     *   &lt;li&gt; relevance &lt;/li&gt;
-     *   &lt;li&gt; last_access_timestamp [asc|desc], defaults to descending if not
-     *   specified, &lt;/li&gt;
-     *   &lt;li&gt; last_modified_timestamp [asc|desc], defaults to descending if not
-     *   specified. &lt;/li&gt;
-     * &lt;/ul&gt;
+     *   * `relevance`, only supports desecending
+     *   * `last_access_timestamp [asc|desc]`, defaults to descending if not
+     *     specified
+     *   * `last_modified_timestamp [asc|desc]`, defaults to descending if not
+     *     specified
+     * If not specified, defaults to `relevance` descending.
      * </pre>
      *
      * <code>string order_by = 5;</code>
@@ -2602,13 +2620,12 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
      * <pre>
      * Specifies the ordering of results, currently supported case-sensitive
      * choices are:
-     * &lt;ul&gt;
-     *   &lt;li&gt; relevance &lt;/li&gt;
-     *   &lt;li&gt; last_access_timestamp [asc|desc], defaults to descending if not
-     *   specified, &lt;/li&gt;
-     *   &lt;li&gt; last_modified_timestamp [asc|desc], defaults to descending if not
-     *   specified. &lt;/li&gt;
-     * &lt;/ul&gt;
+     *   * `relevance`, only supports desecending
+     *   * `last_access_timestamp [asc|desc]`, defaults to descending if not
+     *     specified
+     *   * `last_modified_timestamp [asc|desc]`, defaults to descending if not
+     *     specified
+     * If not specified, defaults to `relevance` descending.
      * </pre>
      *
      * <code>string order_by = 5;</code>
