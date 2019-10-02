@@ -17,7 +17,9 @@ public interface FailoverInstanceRequestOrBuilder
    * where `location_id` refers to a GCP region.
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>
+   * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    */
   java.lang.String getName();
   /**
@@ -29,7 +31,9 @@ public interface FailoverInstanceRequestOrBuilder
    * where `location_id` refers to a GCP region.
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>
+   * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    */
   com.google.protobuf.ByteString getNameBytes();
 
@@ -42,7 +46,7 @@ public interface FailoverInstanceRequestOrBuilder
    * </pre>
    *
    * <code>
-   * .google.cloud.redis.v1.FailoverInstanceRequest.DataProtectionMode data_protection_mode = 2;
+   * .google.cloud.redis.v1.FailoverInstanceRequest.DataProtectionMode data_protection_mode = 2 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    */
   int getDataProtectionModeValue();
@@ -55,7 +59,7 @@ public interface FailoverInstanceRequestOrBuilder
    * </pre>
    *
    * <code>
-   * .google.cloud.redis.v1.FailoverInstanceRequest.DataProtectionMode data_protection_mode = 2;
+   * .google.cloud.redis.v1.FailoverInstanceRequest.DataProtectionMode data_protection_mode = 2 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    */
   com.google.cloud.redis.v1.FailoverInstanceRequest.DataProtectionMode getDataProtectionMode();

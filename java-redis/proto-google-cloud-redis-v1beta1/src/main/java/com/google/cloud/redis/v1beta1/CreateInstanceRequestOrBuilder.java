@@ -17,7 +17,9 @@ public interface CreateInstanceRequestOrBuilder
    * where `location_id` refers to a GCP region.
    * </pre>
    *
-   * <code>string parent = 1;</code>
+   * <code>
+   * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    */
   java.lang.String getParent();
   /**
@@ -29,7 +31,9 @@ public interface CreateInstanceRequestOrBuilder
    * where `location_id` refers to a GCP region.
    * </pre>
    *
-   * <code>string parent = 1;</code>
+   * <code>
+   * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    */
   com.google.protobuf.ByteString getParentBytes();
 
@@ -46,7 +50,7 @@ public interface CreateInstanceRequestOrBuilder
    * * Must be unique within the customer project / location
    * </pre>
    *
-   * <code>string instance_id = 2;</code>
+   * <code>string instance_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   java.lang.String getInstanceId();
   /**
@@ -62,7 +66,7 @@ public interface CreateInstanceRequestOrBuilder
    * * Must be unique within the customer project / location
    * </pre>
    *
-   * <code>string instance_id = 2;</code>
+   * <code>string instance_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   com.google.protobuf.ByteString getInstanceIdBytes();
 
@@ -73,7 +77,9 @@ public interface CreateInstanceRequestOrBuilder
    * Required. A Redis [Instance] resource
    * </pre>
    *
-   * <code>.google.cloud.redis.v1beta1.Instance instance = 3;</code>
+   * <code>
+   * .google.cloud.redis.v1beta1.Instance instance = 3 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   boolean hasInstance();
   /**
@@ -83,7 +89,9 @@ public interface CreateInstanceRequestOrBuilder
    * Required. A Redis [Instance] resource
    * </pre>
    *
-   * <code>.google.cloud.redis.v1beta1.Instance instance = 3;</code>
+   * <code>
+   * .google.cloud.redis.v1beta1.Instance instance = 3 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   com.google.cloud.redis.v1beta1.Instance getInstance();
   /**
@@ -93,7 +101,9 @@ public interface CreateInstanceRequestOrBuilder
    * Required. A Redis [Instance] resource
    * </pre>
    *
-   * <code>.google.cloud.redis.v1beta1.Instance instance = 3;</code>
+   * <code>
+   * .google.cloud.redis.v1beta1.Instance instance = 3 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   com.google.cloud.redis.v1beta1.InstanceOrBuilder getInstanceOrBuilder();
 }

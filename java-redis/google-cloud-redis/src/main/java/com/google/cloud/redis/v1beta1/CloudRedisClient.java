@@ -185,267 +185,6 @@ public class CloudRedisClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Lists all Redis instances owned by a project in either the specified location (region) or all
-   * locations.
-   *
-   * <p>The location should have the following format: &#42;
-   * `projects/{project_id}/locations/{location_id}`
-   *
-   * <p>If `location_id` is specified as `-` (wildcard), then all regions available to the project
-   * are queried, and the results are aggregated.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (CloudRedisClient cloudRedisClient = CloudRedisClient.create()) {
-   *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
-   *   for (Instance element : cloudRedisClient.listInstances(parent).iterateAll()) {
-   *     // doThingsWith(element);
-   *   }
-   * }
-   * </code></pre>
-   *
-   * @param parent Required. The resource name of the instance location using the form:
-   *     `projects/{project_id}/locations/{location_id}` where `location_id` refers to a GCP region.
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  public final ListInstancesPagedResponse listInstances(LocationName parent) {
-    ListInstancesRequest request =
-        ListInstancesRequest.newBuilder()
-            .setParent(parent == null ? null : parent.toString())
-            .build();
-    return listInstances(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Lists all Redis instances owned by a project in either the specified location (region) or all
-   * locations.
-   *
-   * <p>The location should have the following format: &#42;
-   * `projects/{project_id}/locations/{location_id}`
-   *
-   * <p>If `location_id` is specified as `-` (wildcard), then all regions available to the project
-   * are queried, and the results are aggregated.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (CloudRedisClient cloudRedisClient = CloudRedisClient.create()) {
-   *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
-   *   for (Instance element : cloudRedisClient.listInstances(parent.toString()).iterateAll()) {
-   *     // doThingsWith(element);
-   *   }
-   * }
-   * </code></pre>
-   *
-   * @param parent Required. The resource name of the instance location using the form:
-   *     `projects/{project_id}/locations/{location_id}` where `location_id` refers to a GCP region.
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  public final ListInstancesPagedResponse listInstances(String parent) {
-    ListInstancesRequest request = ListInstancesRequest.newBuilder().setParent(parent).build();
-    return listInstances(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Lists all Redis instances owned by a project in either the specified location (region) or all
-   * locations.
-   *
-   * <p>The location should have the following format: &#42;
-   * `projects/{project_id}/locations/{location_id}`
-   *
-   * <p>If `location_id` is specified as `-` (wildcard), then all regions available to the project
-   * are queried, and the results are aggregated.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (CloudRedisClient cloudRedisClient = CloudRedisClient.create()) {
-   *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
-   *   ListInstancesRequest request = ListInstancesRequest.newBuilder()
-   *     .setParent(parent.toString())
-   *     .build();
-   *   for (Instance element : cloudRedisClient.listInstances(request).iterateAll()) {
-   *     // doThingsWith(element);
-   *   }
-   * }
-   * </code></pre>
-   *
-   * @param request The request object containing all of the parameters for the API call.
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  public final ListInstancesPagedResponse listInstances(ListInstancesRequest request) {
-    return listInstancesPagedCallable().call(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Lists all Redis instances owned by a project in either the specified location (region) or all
-   * locations.
-   *
-   * <p>The location should have the following format: &#42;
-   * `projects/{project_id}/locations/{location_id}`
-   *
-   * <p>If `location_id` is specified as `-` (wildcard), then all regions available to the project
-   * are queried, and the results are aggregated.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (CloudRedisClient cloudRedisClient = CloudRedisClient.create()) {
-   *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
-   *   ListInstancesRequest request = ListInstancesRequest.newBuilder()
-   *     .setParent(parent.toString())
-   *     .build();
-   *   ApiFuture&lt;ListInstancesPagedResponse&gt; future = cloudRedisClient.listInstancesPagedCallable().futureCall(request);
-   *   // Do something
-   *   for (Instance element : future.get().iterateAll()) {
-   *     // doThingsWith(element);
-   *   }
-   * }
-   * </code></pre>
-   */
-  public final UnaryCallable<ListInstancesRequest, ListInstancesPagedResponse>
-      listInstancesPagedCallable() {
-    return stub.listInstancesPagedCallable();
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Lists all Redis instances owned by a project in either the specified location (region) or all
-   * locations.
-   *
-   * <p>The location should have the following format: &#42;
-   * `projects/{project_id}/locations/{location_id}`
-   *
-   * <p>If `location_id` is specified as `-` (wildcard), then all regions available to the project
-   * are queried, and the results are aggregated.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (CloudRedisClient cloudRedisClient = CloudRedisClient.create()) {
-   *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
-   *   ListInstancesRequest request = ListInstancesRequest.newBuilder()
-   *     .setParent(parent.toString())
-   *     .build();
-   *   while (true) {
-   *     ListInstancesResponse response = cloudRedisClient.listInstancesCallable().call(request);
-   *     for (Instance element : response.getInstancesList()) {
-   *       // doThingsWith(element);
-   *     }
-   *     String nextPageToken = response.getNextPageToken();
-   *     if (!Strings.isNullOrEmpty(nextPageToken)) {
-   *       request = request.toBuilder().setPageToken(nextPageToken).build();
-   *     } else {
-   *       break;
-   *     }
-   *   }
-   * }
-   * </code></pre>
-   */
-  public final UnaryCallable<ListInstancesRequest, ListInstancesResponse> listInstancesCallable() {
-    return stub.listInstancesCallable();
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Gets the details of a specific Redis instance.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (CloudRedisClient cloudRedisClient = CloudRedisClient.create()) {
-   *   InstanceName name = InstanceName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]");
-   *   Instance response = cloudRedisClient.getInstance(name);
-   * }
-   * </code></pre>
-   *
-   * @param name Required. Redis instance resource name using the form:
-   *     `projects/{project_id}/locations/{location_id}/instances/{instance_id}` where `location_id`
-   *     refers to a GCP region.
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  public final Instance getInstance(InstanceName name) {
-
-    GetInstanceRequest request =
-        GetInstanceRequest.newBuilder().setName(name == null ? null : name.toString()).build();
-    return getInstance(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Gets the details of a specific Redis instance.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (CloudRedisClient cloudRedisClient = CloudRedisClient.create()) {
-   *   InstanceName name = InstanceName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]");
-   *   Instance response = cloudRedisClient.getInstance(name.toString());
-   * }
-   * </code></pre>
-   *
-   * @param name Required. Redis instance resource name using the form:
-   *     `projects/{project_id}/locations/{location_id}/instances/{instance_id}` where `location_id`
-   *     refers to a GCP region.
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  public final Instance getInstance(String name) {
-
-    GetInstanceRequest request = GetInstanceRequest.newBuilder().setName(name).build();
-    return getInstance(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Gets the details of a specific Redis instance.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (CloudRedisClient cloudRedisClient = CloudRedisClient.create()) {
-   *   InstanceName name = InstanceName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]");
-   *   GetInstanceRequest request = GetInstanceRequest.newBuilder()
-   *     .setName(name.toString())
-   *     .build();
-   *   Instance response = cloudRedisClient.getInstance(request);
-   * }
-   * </code></pre>
-   *
-   * @param request The request object containing all of the parameters for the API call.
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  public final Instance getInstance(GetInstanceRequest request) {
-    return getInstanceCallable().call(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Gets the details of a specific Redis instance.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (CloudRedisClient cloudRedisClient = CloudRedisClient.create()) {
-   *   InstanceName name = InstanceName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]");
-   *   GetInstanceRequest request = GetInstanceRequest.newBuilder()
-   *     .setName(name.toString())
-   *     .build();
-   *   ApiFuture&lt;Instance&gt; future = cloudRedisClient.getInstanceCallable().futureCall(request);
-   *   // Do something
-   *   Instance response = future.get();
-   * }
-   * </code></pre>
-   */
-  public final UnaryCallable<GetInstanceRequest, Instance> getInstanceCallable() {
-    return stub.getInstanceCallable();
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
    * Creates a Redis instance based on the specified tier and memory size.
    *
    * <p>By default, the instance is accessible from the project's [default
@@ -851,6 +590,267 @@ public class CloudRedisClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
+   * Lists all Redis instances owned by a project in either the specified location (region) or all
+   * locations.
+   *
+   * <p>The location should have the following format: &#42;
+   * `projects/{project_id}/locations/{location_id}`
+   *
+   * <p>If `location_id` is specified as `-` (wildcard), then all regions available to the project
+   * are queried, and the results are aggregated.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (CloudRedisClient cloudRedisClient = CloudRedisClient.create()) {
+   *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+   *   for (Instance element : cloudRedisClient.listInstances(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * </code></pre>
+   *
+   * @param parent Required. The resource name of the instance location using the form:
+   *     `projects/{project_id}/locations/{location_id}` where `location_id` refers to a GCP region.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListInstancesPagedResponse listInstances(LocationName parent) {
+    ListInstancesRequest request =
+        ListInstancesRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .build();
+    return listInstances(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Lists all Redis instances owned by a project in either the specified location (region) or all
+   * locations.
+   *
+   * <p>The location should have the following format: &#42;
+   * `projects/{project_id}/locations/{location_id}`
+   *
+   * <p>If `location_id` is specified as `-` (wildcard), then all regions available to the project
+   * are queried, and the results are aggregated.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (CloudRedisClient cloudRedisClient = CloudRedisClient.create()) {
+   *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+   *   for (Instance element : cloudRedisClient.listInstances(parent.toString()).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * </code></pre>
+   *
+   * @param parent Required. The resource name of the instance location using the form:
+   *     `projects/{project_id}/locations/{location_id}` where `location_id` refers to a GCP region.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListInstancesPagedResponse listInstances(String parent) {
+    ListInstancesRequest request = ListInstancesRequest.newBuilder().setParent(parent).build();
+    return listInstances(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Lists all Redis instances owned by a project in either the specified location (region) or all
+   * locations.
+   *
+   * <p>The location should have the following format: &#42;
+   * `projects/{project_id}/locations/{location_id}`
+   *
+   * <p>If `location_id` is specified as `-` (wildcard), then all regions available to the project
+   * are queried, and the results are aggregated.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (CloudRedisClient cloudRedisClient = CloudRedisClient.create()) {
+   *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+   *   ListInstancesRequest request = ListInstancesRequest.newBuilder()
+   *     .setParent(parent.toString())
+   *     .build();
+   *   for (Instance element : cloudRedisClient.listInstances(request).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * </code></pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListInstancesPagedResponse listInstances(ListInstancesRequest request) {
+    return listInstancesPagedCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Lists all Redis instances owned by a project in either the specified location (region) or all
+   * locations.
+   *
+   * <p>The location should have the following format: &#42;
+   * `projects/{project_id}/locations/{location_id}`
+   *
+   * <p>If `location_id` is specified as `-` (wildcard), then all regions available to the project
+   * are queried, and the results are aggregated.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (CloudRedisClient cloudRedisClient = CloudRedisClient.create()) {
+   *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+   *   ListInstancesRequest request = ListInstancesRequest.newBuilder()
+   *     .setParent(parent.toString())
+   *     .build();
+   *   ApiFuture&lt;ListInstancesPagedResponse&gt; future = cloudRedisClient.listInstancesPagedCallable().futureCall(request);
+   *   // Do something
+   *   for (Instance element : future.get().iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * </code></pre>
+   */
+  public final UnaryCallable<ListInstancesRequest, ListInstancesPagedResponse>
+      listInstancesPagedCallable() {
+    return stub.listInstancesPagedCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Lists all Redis instances owned by a project in either the specified location (region) or all
+   * locations.
+   *
+   * <p>The location should have the following format: &#42;
+   * `projects/{project_id}/locations/{location_id}`
+   *
+   * <p>If `location_id` is specified as `-` (wildcard), then all regions available to the project
+   * are queried, and the results are aggregated.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (CloudRedisClient cloudRedisClient = CloudRedisClient.create()) {
+   *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+   *   ListInstancesRequest request = ListInstancesRequest.newBuilder()
+   *     .setParent(parent.toString())
+   *     .build();
+   *   while (true) {
+   *     ListInstancesResponse response = cloudRedisClient.listInstancesCallable().call(request);
+   *     for (Instance element : response.getInstancesList()) {
+   *       // doThingsWith(element);
+   *     }
+   *     String nextPageToken = response.getNextPageToken();
+   *     if (!Strings.isNullOrEmpty(nextPageToken)) {
+   *       request = request.toBuilder().setPageToken(nextPageToken).build();
+   *     } else {
+   *       break;
+   *     }
+   *   }
+   * }
+   * </code></pre>
+   */
+  public final UnaryCallable<ListInstancesRequest, ListInstancesResponse> listInstancesCallable() {
+    return stub.listInstancesCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Gets the details of a specific Redis instance.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (CloudRedisClient cloudRedisClient = CloudRedisClient.create()) {
+   *   InstanceName name = InstanceName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]");
+   *   Instance response = cloudRedisClient.getInstance(name);
+   * }
+   * </code></pre>
+   *
+   * @param name Required. Redis instance resource name using the form:
+   *     `projects/{project_id}/locations/{location_id}/instances/{instance_id}` where `location_id`
+   *     refers to a GCP region.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final Instance getInstance(InstanceName name) {
+
+    GetInstanceRequest request =
+        GetInstanceRequest.newBuilder().setName(name == null ? null : name.toString()).build();
+    return getInstance(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Gets the details of a specific Redis instance.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (CloudRedisClient cloudRedisClient = CloudRedisClient.create()) {
+   *   InstanceName name = InstanceName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]");
+   *   Instance response = cloudRedisClient.getInstance(name.toString());
+   * }
+   * </code></pre>
+   *
+   * @param name Required. Redis instance resource name using the form:
+   *     `projects/{project_id}/locations/{location_id}/instances/{instance_id}` where `location_id`
+   *     refers to a GCP region.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final Instance getInstance(String name) {
+
+    GetInstanceRequest request = GetInstanceRequest.newBuilder().setName(name).build();
+    return getInstance(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Gets the details of a specific Redis instance.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (CloudRedisClient cloudRedisClient = CloudRedisClient.create()) {
+   *   InstanceName name = InstanceName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]");
+   *   GetInstanceRequest request = GetInstanceRequest.newBuilder()
+   *     .setName(name.toString())
+   *     .build();
+   *   Instance response = cloudRedisClient.getInstance(request);
+   * }
+   * </code></pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final Instance getInstance(GetInstanceRequest request) {
+    return getInstanceCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Gets the details of a specific Redis instance.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (CloudRedisClient cloudRedisClient = CloudRedisClient.create()) {
+   *   InstanceName name = InstanceName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]");
+   *   GetInstanceRequest request = GetInstanceRequest.newBuilder()
+   *     .setName(name.toString())
+   *     .build();
+   *   ApiFuture&lt;Instance&gt; future = cloudRedisClient.getInstanceCallable().futureCall(request);
+   *   // Do something
+   *   Instance response = future.get();
+   * }
+   * </code></pre>
+   */
+  public final UnaryCallable<GetInstanceRequest, Instance> getInstanceCallable() {
+    return stub.getInstanceCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
    * Import a Redis RDB snapshot file from Cloud Storage into a Redis instance.
    *
    * <p>Redis may stop serving during this operation. Instance state will be IMPORTING for entire
@@ -863,9 +863,9 @@ public class CloudRedisClient implements BackgroundResource {
    *
    * <pre><code>
    * try (CloudRedisClient cloudRedisClient = CloudRedisClient.create()) {
-   *   String formattedName = InstanceName.format("[PROJECT]", "[LOCATION]", "[INSTANCE]");
+   *   String name = "";
    *   InputConfig inputConfig = InputConfig.newBuilder().build();
-   *   Instance response = cloudRedisClient.importInstanceAsync(formattedName, inputConfig).get();
+   *   Instance response = cloudRedisClient.importInstanceAsync(name, inputConfig).get();
    * }
    * </code></pre>
    *
@@ -899,10 +899,10 @@ public class CloudRedisClient implements BackgroundResource {
    *
    * <pre><code>
    * try (CloudRedisClient cloudRedisClient = CloudRedisClient.create()) {
-   *   String formattedName = InstanceName.format("[PROJECT]", "[LOCATION]", "[INSTANCE]");
+   *   String name = "";
    *   InputConfig inputConfig = InputConfig.newBuilder().build();
    *   ImportInstanceRequest request = ImportInstanceRequest.newBuilder()
-   *     .setName(formattedName)
+   *     .setName(name)
    *     .setInputConfig(inputConfig)
    *     .build();
    *   Instance response = cloudRedisClient.importInstanceAsync(request).get();
@@ -932,10 +932,10 @@ public class CloudRedisClient implements BackgroundResource {
    *
    * <pre><code>
    * try (CloudRedisClient cloudRedisClient = CloudRedisClient.create()) {
-   *   String formattedName = InstanceName.format("[PROJECT]", "[LOCATION]", "[INSTANCE]");
+   *   String name = "";
    *   InputConfig inputConfig = InputConfig.newBuilder().build();
    *   ImportInstanceRequest request = ImportInstanceRequest.newBuilder()
-   *     .setName(formattedName)
+   *     .setName(name)
    *     .setInputConfig(inputConfig)
    *     .build();
    *   OperationFuture&lt;Instance, Any&gt; future = cloudRedisClient.importInstanceOperationCallable().futureCall(request);
@@ -964,10 +964,10 @@ public class CloudRedisClient implements BackgroundResource {
    *
    * <pre><code>
    * try (CloudRedisClient cloudRedisClient = CloudRedisClient.create()) {
-   *   String formattedName = InstanceName.format("[PROJECT]", "[LOCATION]", "[INSTANCE]");
+   *   String name = "";
    *   InputConfig inputConfig = InputConfig.newBuilder().build();
    *   ImportInstanceRequest request = ImportInstanceRequest.newBuilder()
-   *     .setName(formattedName)
+   *     .setName(name)
    *     .setInputConfig(inputConfig)
    *     .build();
    *   ApiFuture&lt;Operation&gt; future = cloudRedisClient.importInstanceCallable().futureCall(request);
@@ -993,9 +993,9 @@ public class CloudRedisClient implements BackgroundResource {
    *
    * <pre><code>
    * try (CloudRedisClient cloudRedisClient = CloudRedisClient.create()) {
-   *   String formattedName = InstanceName.format("[PROJECT]", "[LOCATION]", "[INSTANCE]");
+   *   String name = "";
    *   OutputConfig outputConfig = OutputConfig.newBuilder().build();
-   *   Instance response = cloudRedisClient.exportInstanceAsync(formattedName, outputConfig).get();
+   *   Instance response = cloudRedisClient.exportInstanceAsync(name, outputConfig).get();
    * }
    * </code></pre>
    *
@@ -1028,10 +1028,10 @@ public class CloudRedisClient implements BackgroundResource {
    *
    * <pre><code>
    * try (CloudRedisClient cloudRedisClient = CloudRedisClient.create()) {
-   *   String formattedName = InstanceName.format("[PROJECT]", "[LOCATION]", "[INSTANCE]");
+   *   String name = "";
    *   OutputConfig outputConfig = OutputConfig.newBuilder().build();
    *   ExportInstanceRequest request = ExportInstanceRequest.newBuilder()
-   *     .setName(formattedName)
+   *     .setName(name)
    *     .setOutputConfig(outputConfig)
    *     .build();
    *   Instance response = cloudRedisClient.exportInstanceAsync(request).get();
@@ -1060,10 +1060,10 @@ public class CloudRedisClient implements BackgroundResource {
    *
    * <pre><code>
    * try (CloudRedisClient cloudRedisClient = CloudRedisClient.create()) {
-   *   String formattedName = InstanceName.format("[PROJECT]", "[LOCATION]", "[INSTANCE]");
+   *   String name = "";
    *   OutputConfig outputConfig = OutputConfig.newBuilder().build();
    *   ExportInstanceRequest request = ExportInstanceRequest.newBuilder()
-   *     .setName(formattedName)
+   *     .setName(name)
    *     .setOutputConfig(outputConfig)
    *     .build();
    *   OperationFuture&lt;Instance, Any&gt; future = cloudRedisClient.exportInstanceOperationCallable().futureCall(request);
@@ -1091,10 +1091,10 @@ public class CloudRedisClient implements BackgroundResource {
    *
    * <pre><code>
    * try (CloudRedisClient cloudRedisClient = CloudRedisClient.create()) {
-   *   String formattedName = InstanceName.format("[PROJECT]", "[LOCATION]", "[INSTANCE]");
+   *   String name = "";
    *   OutputConfig outputConfig = OutputConfig.newBuilder().build();
    *   ExportInstanceRequest request = ExportInstanceRequest.newBuilder()
-   *     .setName(formattedName)
+   *     .setName(name)
    *     .setOutputConfig(outputConfig)
    *     .build();
    *   ApiFuture&lt;Operation&gt; future = cloudRedisClient.exportInstanceCallable().futureCall(request);
@@ -1116,9 +1116,44 @@ public class CloudRedisClient implements BackgroundResource {
    *
    * <pre><code>
    * try (CloudRedisClient cloudRedisClient = CloudRedisClient.create()) {
-   *   String formattedName = InstanceName.format("[PROJECT]", "[LOCATION]", "[INSTANCE]");
+   *   InstanceName name = InstanceName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]");
    *   FailoverInstanceRequest.DataProtectionMode dataProtectionMode = FailoverInstanceRequest.DataProtectionMode.DATA_PROTECTION_MODE_UNSPECIFIED;
-   *   Instance response = cloudRedisClient.failoverInstanceAsync(formattedName, dataProtectionMode).get();
+   *   Instance response = cloudRedisClient.failoverInstanceAsync(name, dataProtectionMode).get();
+   * }
+   * </code></pre>
+   *
+   * @param name Required. Redis instance resource name using the form:
+   *     `projects/{project_id}/locations/{location_id}/instances/{instance_id}` where `location_id`
+   *     refers to a GCP region.
+   * @param dataProtectionMode Optional. Available data protection modes that the user can choose.
+   *     If it's unspecified, data protection mode will be LIMITED_DATA_LOSS by default.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  @BetaApi(
+      "The surface for long-running operations is not stable yet and may change in the future.")
+  public final OperationFuture<Instance, Any> failoverInstanceAsync(
+      InstanceName name, FailoverInstanceRequest.DataProtectionMode dataProtectionMode) {
+
+    FailoverInstanceRequest request =
+        FailoverInstanceRequest.newBuilder()
+            .setName(name == null ? null : name.toString())
+            .setDataProtectionMode(dataProtectionMode)
+            .build();
+    return failoverInstanceAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Initiates a failover of the master node to current replica node for a specific STANDARD tier
+   * Cloud Memorystore for Redis instance.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (CloudRedisClient cloudRedisClient = CloudRedisClient.create()) {
+   *   InstanceName name = InstanceName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]");
+   *   FailoverInstanceRequest.DataProtectionMode dataProtectionMode = FailoverInstanceRequest.DataProtectionMode.DATA_PROTECTION_MODE_UNSPECIFIED;
+   *   Instance response = cloudRedisClient.failoverInstanceAsync(name.toString(), dataProtectionMode).get();
    * }
    * </code></pre>
    *
@@ -1151,11 +1186,9 @@ public class CloudRedisClient implements BackgroundResource {
    *
    * <pre><code>
    * try (CloudRedisClient cloudRedisClient = CloudRedisClient.create()) {
-   *   String formattedName = InstanceName.format("[PROJECT]", "[LOCATION]", "[INSTANCE]");
-   *   FailoverInstanceRequest.DataProtectionMode dataProtectionMode = FailoverInstanceRequest.DataProtectionMode.DATA_PROTECTION_MODE_UNSPECIFIED;
+   *   InstanceName name = InstanceName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]");
    *   FailoverInstanceRequest request = FailoverInstanceRequest.newBuilder()
-   *     .setName(formattedName)
-   *     .setDataProtectionMode(dataProtectionMode)
+   *     .setName(name.toString())
    *     .build();
    *   Instance response = cloudRedisClient.failoverInstanceAsync(request).get();
    * }
@@ -1180,11 +1213,9 @@ public class CloudRedisClient implements BackgroundResource {
    *
    * <pre><code>
    * try (CloudRedisClient cloudRedisClient = CloudRedisClient.create()) {
-   *   String formattedName = InstanceName.format("[PROJECT]", "[LOCATION]", "[INSTANCE]");
-   *   FailoverInstanceRequest.DataProtectionMode dataProtectionMode = FailoverInstanceRequest.DataProtectionMode.DATA_PROTECTION_MODE_UNSPECIFIED;
+   *   InstanceName name = InstanceName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]");
    *   FailoverInstanceRequest request = FailoverInstanceRequest.newBuilder()
-   *     .setName(formattedName)
-   *     .setDataProtectionMode(dataProtectionMode)
+   *     .setName(name.toString())
    *     .build();
    *   OperationFuture&lt;Instance, Any&gt; future = cloudRedisClient.failoverInstanceOperationCallable().futureCall(request);
    *   // Do something
@@ -1207,11 +1238,9 @@ public class CloudRedisClient implements BackgroundResource {
    *
    * <pre><code>
    * try (CloudRedisClient cloudRedisClient = CloudRedisClient.create()) {
-   *   String formattedName = InstanceName.format("[PROJECT]", "[LOCATION]", "[INSTANCE]");
-   *   FailoverInstanceRequest.DataProtectionMode dataProtectionMode = FailoverInstanceRequest.DataProtectionMode.DATA_PROTECTION_MODE_UNSPECIFIED;
+   *   InstanceName name = InstanceName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]");
    *   FailoverInstanceRequest request = FailoverInstanceRequest.newBuilder()
-   *     .setName(formattedName)
-   *     .setDataProtectionMode(dataProtectionMode)
+   *     .setName(name.toString())
    *     .build();
    *   ApiFuture&lt;Operation&gt; future = cloudRedisClient.failoverInstanceCallable().futureCall(request);
    *   // Do something
