@@ -324,8 +324,8 @@ public class LoggingClient implements BackgroundResource {
    *     method.
    *     <p>Log entries with timestamps that are more than the [logs retention
    *     period](/logging/quota-policy) in the past or more than 24 hours in the future will not be
-   *     available when calling `entries.list`. However, those log entries can still be exported
-   *     with [LogSinks](/logging/docs/api/tasks/exporting-logs).
+   *     available when calling `entries.list`. However, those log entries can still be [exported
+   *     with LogSinks](/logging/docs/api/tasks/exporting-logs).
    *     <p>To improve throughput and to avoid exceeding the [quota limit](/logging/quota-policy)
    *     for calls to `entries.write`, you should try to include several log entries in this list,
    *     rather than calling this method for each individual log entry.
@@ -398,8 +398,8 @@ public class LoggingClient implements BackgroundResource {
    *     method.
    *     <p>Log entries with timestamps that are more than the [logs retention
    *     period](/logging/quota-policy) in the past or more than 24 hours in the future will not be
-   *     available when calling `entries.list`. However, those log entries can still be exported
-   *     with [LogSinks](/logging/docs/api/tasks/exporting-logs).
+   *     available when calling `entries.list`. However, those log entries can still be [exported
+   *     with LogSinks](/logging/docs/api/tasks/exporting-logs).
    *     <p>To improve throughput and to avoid exceeding the [quota limit](/logging/quota-policy)
    *     for calls to `entries.write`, you should try to include several log entries in this list,
    *     rather than calling this method for each individual log entry.
@@ -475,8 +475,9 @@ public class LoggingClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Lists log entries. Use this method to retrieve log entries from Logging. For ways to export log
-   * entries, see [Exporting Logs](/logging/docs/export).
+   * Lists log entries. Use this method to retrieve log entries that originated from a
+   * project/folder/organization/billing account. For ways to export log entries, see [Exporting
+   * Logs](/logging/docs/export).
    *
    * <p>Sample code:
    *
@@ -522,8 +523,9 @@ public class LoggingClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Lists log entries. Use this method to retrieve log entries from Logging. For ways to export log
-   * entries, see [Exporting Logs](/logging/docs/export).
+   * Lists log entries. Use this method to retrieve log entries that originated from a
+   * project/folder/organization/billing account. For ways to export log entries, see [Exporting
+   * Logs](/logging/docs/export).
    *
    * <p>Sample code:
    *
@@ -548,8 +550,9 @@ public class LoggingClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Lists log entries. Use this method to retrieve log entries from Logging. For ways to export log
-   * entries, see [Exporting Logs](/logging/docs/export).
+   * Lists log entries. Use this method to retrieve log entries that originated from a
+   * project/folder/organization/billing account. For ways to export log entries, see [Exporting
+   * Logs](/logging/docs/export).
    *
    * <p>Sample code:
    *
@@ -574,8 +577,9 @@ public class LoggingClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Lists log entries. Use this method to retrieve log entries from Logging. For ways to export log
-   * entries, see [Exporting Logs](/logging/docs/export).
+   * Lists log entries. Use this method to retrieve log entries that originated from a
+   * project/folder/organization/billing account. For ways to export log entries, see [Exporting
+   * Logs](/logging/docs/export).
    *
    * <p>Sample code:
    *

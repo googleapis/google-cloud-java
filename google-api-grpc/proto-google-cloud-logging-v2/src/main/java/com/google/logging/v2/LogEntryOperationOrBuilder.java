@@ -12,8 +12,8 @@ public interface LogEntryOperationOrBuilder
    *
    *
    * <pre>
-   * Optional. An arbitrary operation identifier. Log entries with the
-   * same identifier are assumed to be part of the same operation.
+   * Optional. An arbitrary operation identifier. Log entries with the same
+   * identifier are assumed to be part of the same operation.
    * </pre>
    *
    * <code>string id = 1;</code>
@@ -23,8 +23,8 @@ public interface LogEntryOperationOrBuilder
    *
    *
    * <pre>
-   * Optional. An arbitrary operation identifier. Log entries with the
-   * same identifier are assumed to be part of the same operation.
+   * Optional. An arbitrary operation identifier. Log entries with the same
+   * identifier are assumed to be part of the same operation.
    * </pre>
    *
    * <code>string id = 1;</code>
@@ -35,8 +35,8 @@ public interface LogEntryOperationOrBuilder
    *
    *
    * <pre>
-   * Optional. An arbitrary producer identifier. The combination of
-   * `id` and `producer` must be globally unique.  Examples for `producer`:
+   * Optional. An arbitrary producer identifier. The combination of `id` and
+   * `producer` must be globally unique. Examples for `producer`:
    * `"MyDivision.MyBigCompany.com"`, `"github.com/MyProject/MyApplication"`.
    * </pre>
    *
@@ -47,8 +47,8 @@ public interface LogEntryOperationOrBuilder
    *
    *
    * <pre>
-   * Optional. An arbitrary producer identifier. The combination of
-   * `id` and `producer` must be globally unique.  Examples for `producer`:
+   * Optional. An arbitrary producer identifier. The combination of `id` and
+   * `producer` must be globally unique. Examples for `producer`:
    * `"MyDivision.MyBigCompany.com"`, `"github.com/MyProject/MyApplication"`.
    * </pre>
    *
