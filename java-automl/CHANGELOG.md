@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.113.0](https://www.github.com/googleapis/java-automl/compare/v0.112.0...v0.113.0) (2019-10-02)
+
+
+### Features
+
+* add bom ([#16](https://www.github.com/googleapis/java-automl/issues/16)) ([545f25d](https://www.github.com/googleapis/java-automl/commit/545f25d))
+
 ## [0.112.0](https://www.github.com/googleapis/java-automl/compare/0.111.0...v0.112.0) (2019-09-30)
 
 
