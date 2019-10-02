@@ -163,8 +163,7 @@ public final class CreateInstanceRequest {
     CreateClusterRequest developmentCluster =
         CreateClusterRequest.of("ignored-instance-id", clusterId)
             .setZone(zone)
-            .setStorageType(storageType)
-            .setServeNodes(0);
+            .setStorageType(storageType);
     clusterRequests.add(developmentCluster);
 
     return this;
