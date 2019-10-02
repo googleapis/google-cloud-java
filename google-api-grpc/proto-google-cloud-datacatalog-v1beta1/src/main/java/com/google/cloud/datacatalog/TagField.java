@@ -824,7 +824,7 @@ public final class TagField extends com.google.protobuf.GeneratedMessageV3
    * Output only. The display name of this field.
    * </pre>
    *
-   * <code>string display_name = 1;</code>
+   * <code>string display_name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    */
   public java.lang.String getDisplayName() {
     java.lang.Object ref = displayName_;
@@ -844,7 +844,7 @@ public final class TagField extends com.google.protobuf.GeneratedMessageV3
    * Output only. The display name of this field.
    * </pre>
    *
-   * <code>string display_name = 1;</code>
+   * <code>string display_name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    */
   public com.google.protobuf.ByteString getDisplayNameBytes() {
     java.lang.Object ref = displayName_;
@@ -1517,7 +1517,7 @@ public final class TagField extends com.google.protobuf.GeneratedMessageV3
      * Output only. The display name of this field.
      * </pre>
      *
-     * <code>string display_name = 1;</code>
+     * <code>string display_name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     public java.lang.String getDisplayName() {
       java.lang.Object ref = displayName_;
@@ -1537,7 +1537,7 @@ public final class TagField extends com.google.protobuf.GeneratedMessageV3
      * Output only. The display name of this field.
      * </pre>
      *
-     * <code>string display_name = 1;</code>
+     * <code>string display_name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     public com.google.protobuf.ByteString getDisplayNameBytes() {
       java.lang.Object ref = displayName_;
@@ -1557,7 +1557,7 @@ public final class TagField extends com.google.protobuf.GeneratedMessageV3
      * Output only. The display name of this field.
      * </pre>
      *
-     * <code>string display_name = 1;</code>
+     * <code>string display_name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     public Builder setDisplayName(java.lang.String value) {
       if (value == null) {
@@ -1575,7 +1575,7 @@ public final class TagField extends com.google.protobuf.GeneratedMessageV3
      * Output only. The display name of this field.
      * </pre>
      *
-     * <code>string display_name = 1;</code>
+     * <code>string display_name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     public Builder clearDisplayName() {
 
@@ -1590,7 +1590,7 @@ public final class TagField extends com.google.protobuf.GeneratedMessageV3
      * Output only. The display name of this field.
      * </pre>
      *
-     * <code>string display_name = 1;</code>
+     * <code>string display_name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     public Builder setDisplayNameBytes(com.google.protobuf.ByteString value) {
       if (value == null) {

@@ -13,12 +13,15 @@ public interface CreateTagTemplateRequestOrBuilder
    *
    * <pre>
    * Required. The name of the project and the location this template is in.
-   * Example: "projects/{project_id}/locations/{location}". Note that this
+   * Example:
+   * * projects/{project_id}/locations/{location}
    * TagTemplate and its child resources may not actually be stored in the
    * location in this name.
    * </pre>
    *
-   * <code>string parent = 1;</code>
+   * <code>
+   * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    */
   java.lang.String getParent();
   /**
@@ -26,12 +29,15 @@ public interface CreateTagTemplateRequestOrBuilder
    *
    * <pre>
    * Required. The name of the project and the location this template is in.
-   * Example: "projects/{project_id}/locations/{location}". Note that this
+   * Example:
+   * * projects/{project_id}/locations/{location}
    * TagTemplate and its child resources may not actually be stored in the
    * location in this name.
    * </pre>
    *
-   * <code>string parent = 1;</code>
+   * <code>
+   * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    */
   com.google.protobuf.ByteString getParentBytes();
 
@@ -42,7 +48,7 @@ public interface CreateTagTemplateRequestOrBuilder
    * Required. The id of the tag template to create.
    * </pre>
    *
-   * <code>string tag_template_id = 3;</code>
+   * <code>string tag_template_id = 3 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   java.lang.String getTagTemplateId();
   /**
@@ -52,7 +58,7 @@ public interface CreateTagTemplateRequestOrBuilder
    * Required. The id of the tag template to create.
    * </pre>
    *
-   * <code>string tag_template_id = 3;</code>
+   * <code>string tag_template_id = 3 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   com.google.protobuf.ByteString getTagTemplateIdBytes();
 
@@ -63,7 +69,9 @@ public interface CreateTagTemplateRequestOrBuilder
    * Required. The tag template to create.
    * </pre>
    *
-   * <code>.google.cloud.datacatalog.v1beta1.TagTemplate tag_template = 2;</code>
+   * <code>
+   * .google.cloud.datacatalog.v1beta1.TagTemplate tag_template = 2 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   boolean hasTagTemplate();
   /**
@@ -73,7 +81,9 @@ public interface CreateTagTemplateRequestOrBuilder
    * Required. The tag template to create.
    * </pre>
    *
-   * <code>.google.cloud.datacatalog.v1beta1.TagTemplate tag_template = 2;</code>
+   * <code>
+   * .google.cloud.datacatalog.v1beta1.TagTemplate tag_template = 2 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   com.google.cloud.datacatalog.TagTemplate getTagTemplate();
   /**
@@ -83,7 +93,9 @@ public interface CreateTagTemplateRequestOrBuilder
    * Required. The tag template to create.
    * </pre>
    *
-   * <code>.google.cloud.datacatalog.v1beta1.TagTemplate tag_template = 2;</code>
+   * <code>
+   * .google.cloud.datacatalog.v1beta1.TagTemplate tag_template = 2 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   com.google.cloud.datacatalog.TagTemplateOrBuilder getTagTemplateOrBuilder();
 }

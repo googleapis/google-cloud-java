@@ -21,13 +21,19 @@ import static com.google.cloud.datacatalog.v1beta1.DataCatalogClient.SearchCatal
 import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.rpc.UnaryCallable;
+import com.google.cloud.datacatalog.CreateEntryGroupRequest;
+import com.google.cloud.datacatalog.CreateEntryRequest;
 import com.google.cloud.datacatalog.CreateTagRequest;
 import com.google.cloud.datacatalog.CreateTagTemplateFieldRequest;
 import com.google.cloud.datacatalog.CreateTagTemplateRequest;
+import com.google.cloud.datacatalog.DeleteEntryGroupRequest;
+import com.google.cloud.datacatalog.DeleteEntryRequest;
 import com.google.cloud.datacatalog.DeleteTagRequest;
 import com.google.cloud.datacatalog.DeleteTagTemplateFieldRequest;
 import com.google.cloud.datacatalog.DeleteTagTemplateRequest;
 import com.google.cloud.datacatalog.Entry;
+import com.google.cloud.datacatalog.EntryGroup;
+import com.google.cloud.datacatalog.GetEntryGroupRequest;
 import com.google.cloud.datacatalog.GetEntryRequest;
 import com.google.cloud.datacatalog.GetTagTemplateRequest;
 import com.google.cloud.datacatalog.ListTagsRequest;
@@ -70,8 +76,28 @@ public abstract class DataCatalogStub implements BackgroundResource {
     throw new UnsupportedOperationException("Not implemented: searchCatalogCallable()");
   }
 
+  public UnaryCallable<CreateEntryGroupRequest, EntryGroup> createEntryGroupCallable() {
+    throw new UnsupportedOperationException("Not implemented: createEntryGroupCallable()");
+  }
+
+  public UnaryCallable<GetEntryGroupRequest, EntryGroup> getEntryGroupCallable() {
+    throw new UnsupportedOperationException("Not implemented: getEntryGroupCallable()");
+  }
+
+  public UnaryCallable<DeleteEntryGroupRequest, Empty> deleteEntryGroupCallable() {
+    throw new UnsupportedOperationException("Not implemented: deleteEntryGroupCallable()");
+  }
+
+  public UnaryCallable<CreateEntryRequest, Entry> createEntryCallable() {
+    throw new UnsupportedOperationException("Not implemented: createEntryCallable()");
+  }
+
   public UnaryCallable<UpdateEntryRequest, Entry> updateEntryCallable() {
     throw new UnsupportedOperationException("Not implemented: updateEntryCallable()");
+  }
+
+  public UnaryCallable<DeleteEntryRequest, Empty> deleteEntryCallable() {
+    throw new UnsupportedOperationException("Not implemented: deleteEntryCallable()");
   }
 
   public UnaryCallable<GetEntryRequest, Entry> getEntryCallable() {

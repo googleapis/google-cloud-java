@@ -106,11 +106,13 @@ public final class RenameTagTemplateFieldRequest extends com.google.protobuf.Gen
    *
    *
    * <pre>
-   * Required. The name of the tag template. For example,
-   * "projects/{project_id}/locations/{location}/tagTemplates/{tag_template_id}/fields/{tag_template_field_id}".
+   * Required. The name of the tag template. Example:
+   * * projects/{project_id}/locations/{location}/tagTemplates/{tag_template_id}/fields/{tag_template_field_id}
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>
+   * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    */
   public java.lang.String getName() {
     java.lang.Object ref = name_;
@@ -127,11 +129,13 @@ public final class RenameTagTemplateFieldRequest extends com.google.protobuf.Gen
    *
    *
    * <pre>
-   * Required. The name of the tag template. For example,
-   * "projects/{project_id}/locations/{location}/tagTemplates/{tag_template_id}/fields/{tag_template_field_id}".
+   * Required. The name of the tag template. Example:
+   * * projects/{project_id}/locations/{location}/tagTemplates/{tag_template_id}/fields/{tag_template_field_id}
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>
+   * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    */
   public com.google.protobuf.ByteString getNameBytes() {
     java.lang.Object ref = name_;
@@ -152,10 +156,10 @@ public final class RenameTagTemplateFieldRequest extends com.google.protobuf.Gen
    *
    * <pre>
    * Required. The new ID of this tag template field. For example,
-   * "my_new_field".
+   * `my_new_field`.
    * </pre>
    *
-   * <code>string new_tag_template_field_id = 2;</code>
+   * <code>string new_tag_template_field_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   public java.lang.String getNewTagTemplateFieldId() {
     java.lang.Object ref = newTagTemplateFieldId_;
@@ -173,10 +177,10 @@ public final class RenameTagTemplateFieldRequest extends com.google.protobuf.Gen
    *
    * <pre>
    * Required. The new ID of this tag template field. For example,
-   * "my_new_field".
+   * `my_new_field`.
    * </pre>
    *
-   * <code>string new_tag_template_field_id = 2;</code>
+   * <code>string new_tag_template_field_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   public com.google.protobuf.ByteString getNewTagTemplateFieldIdBytes() {
     java.lang.Object ref = newTagTemplateFieldId_;
@@ -531,11 +535,13 @@ public final class RenameTagTemplateFieldRequest extends com.google.protobuf.Gen
      *
      *
      * <pre>
-     * Required. The name of the tag template. For example,
-     * "projects/{project_id}/locations/{location}/tagTemplates/{tag_template_id}/fields/{tag_template_field_id}".
+     * Required. The name of the tag template. Example:
+     * * projects/{project_id}/locations/{location}/tagTemplates/{tag_template_id}/fields/{tag_template_field_id}
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>
+     * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      */
     public java.lang.String getName() {
       java.lang.Object ref = name_;
@@ -552,11 +558,13 @@ public final class RenameTagTemplateFieldRequest extends com.google.protobuf.Gen
      *
      *
      * <pre>
-     * Required. The name of the tag template. For example,
-     * "projects/{project_id}/locations/{location}/tagTemplates/{tag_template_id}/fields/{tag_template_field_id}".
+     * Required. The name of the tag template. Example:
+     * * projects/{project_id}/locations/{location}/tagTemplates/{tag_template_id}/fields/{tag_template_field_id}
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>
+     * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      */
     public com.google.protobuf.ByteString getNameBytes() {
       java.lang.Object ref = name_;
@@ -573,11 +581,13 @@ public final class RenameTagTemplateFieldRequest extends com.google.protobuf.Gen
      *
      *
      * <pre>
-     * Required. The name of the tag template. For example,
-     * "projects/{project_id}/locations/{location}/tagTemplates/{tag_template_id}/fields/{tag_template_field_id}".
+     * Required. The name of the tag template. Example:
+     * * projects/{project_id}/locations/{location}/tagTemplates/{tag_template_id}/fields/{tag_template_field_id}
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>
+     * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      */
     public Builder setName(java.lang.String value) {
       if (value == null) {
@@ -592,11 +602,13 @@ public final class RenameTagTemplateFieldRequest extends com.google.protobuf.Gen
      *
      *
      * <pre>
-     * Required. The name of the tag template. For example,
-     * "projects/{project_id}/locations/{location}/tagTemplates/{tag_template_id}/fields/{tag_template_field_id}".
+     * Required. The name of the tag template. Example:
+     * * projects/{project_id}/locations/{location}/tagTemplates/{tag_template_id}/fields/{tag_template_field_id}
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>
+     * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      */
     public Builder clearName() {
 
@@ -608,11 +620,13 @@ public final class RenameTagTemplateFieldRequest extends com.google.protobuf.Gen
      *
      *
      * <pre>
-     * Required. The name of the tag template. For example,
-     * "projects/{project_id}/locations/{location}/tagTemplates/{tag_template_id}/fields/{tag_template_field_id}".
+     * Required. The name of the tag template. Example:
+     * * projects/{project_id}/locations/{location}/tagTemplates/{tag_template_id}/fields/{tag_template_field_id}
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>
+     * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      */
     public Builder setNameBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -631,10 +645,10 @@ public final class RenameTagTemplateFieldRequest extends com.google.protobuf.Gen
      *
      * <pre>
      * Required. The new ID of this tag template field. For example,
-     * "my_new_field".
+     * `my_new_field`.
      * </pre>
      *
-     * <code>string new_tag_template_field_id = 2;</code>
+     * <code>string new_tag_template_field_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public java.lang.String getNewTagTemplateFieldId() {
       java.lang.Object ref = newTagTemplateFieldId_;
@@ -652,10 +666,10 @@ public final class RenameTagTemplateFieldRequest extends com.google.protobuf.Gen
      *
      * <pre>
      * Required. The new ID of this tag template field. For example,
-     * "my_new_field".
+     * `my_new_field`.
      * </pre>
      *
-     * <code>string new_tag_template_field_id = 2;</code>
+     * <code>string new_tag_template_field_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public com.google.protobuf.ByteString getNewTagTemplateFieldIdBytes() {
       java.lang.Object ref = newTagTemplateFieldId_;
@@ -673,10 +687,10 @@ public final class RenameTagTemplateFieldRequest extends com.google.protobuf.Gen
      *
      * <pre>
      * Required. The new ID of this tag template field. For example,
-     * "my_new_field".
+     * `my_new_field`.
      * </pre>
      *
-     * <code>string new_tag_template_field_id = 2;</code>
+     * <code>string new_tag_template_field_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder setNewTagTemplateFieldId(java.lang.String value) {
       if (value == null) {
@@ -692,10 +706,10 @@ public final class RenameTagTemplateFieldRequest extends com.google.protobuf.Gen
      *
      * <pre>
      * Required. The new ID of this tag template field. For example,
-     * "my_new_field".
+     * `my_new_field`.
      * </pre>
      *
-     * <code>string new_tag_template_field_id = 2;</code>
+     * <code>string new_tag_template_field_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder clearNewTagTemplateFieldId() {
 
@@ -708,10 +722,10 @@ public final class RenameTagTemplateFieldRequest extends com.google.protobuf.Gen
      *
      * <pre>
      * Required. The new ID of this tag template field. For example,
-     * "my_new_field".
+     * `my_new_field`.
      * </pre>
      *
-     * <code>string new_tag_template_field_id = 2;</code>
+     * <code>string new_tag_template_field_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder setNewTagTemplateFieldIdBytes(com.google.protobuf.ByteString value) {
       if (value == null) {

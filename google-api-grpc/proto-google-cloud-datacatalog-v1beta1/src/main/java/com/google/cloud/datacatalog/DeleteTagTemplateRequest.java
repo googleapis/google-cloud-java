@@ -103,11 +103,13 @@ public final class DeleteTagTemplateRequest extends com.google.protobuf.Generate
    *
    *
    * <pre>
-   * Required. The name of the tag template to delete. For example,
-   * "projects/{project_id}/locations/{location}/tagTemplates/{tag_template_id}".
+   * Required. The name of the tag template to delete. Example:
+   * * projects/{project_id}/locations/{location}/tagTemplates/{tag_template_id}
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>
+   * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    */
   public java.lang.String getName() {
     java.lang.Object ref = name_;
@@ -124,11 +126,13 @@ public final class DeleteTagTemplateRequest extends com.google.protobuf.Generate
    *
    *
    * <pre>
-   * Required. The name of the tag template to delete. For example,
-   * "projects/{project_id}/locations/{location}/tagTemplates/{tag_template_id}".
+   * Required. The name of the tag template to delete. Example:
+   * * projects/{project_id}/locations/{location}/tagTemplates/{tag_template_id}
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>
+   * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    */
   public com.google.protobuf.ByteString getNameBytes() {
     java.lang.Object ref = name_;
@@ -148,12 +152,12 @@ public final class DeleteTagTemplateRequest extends com.google.protobuf.Generate
    *
    *
    * <pre>
-   * Required. Currently, this field must always be set to &lt;code&gt;true&lt;/code&gt;.
+   * Required. Currently, this field must always be set to `true`.
    * This confirms the deletion of any possible tags using this template.
-   * &lt;code&gt;force = false&lt;/code&gt; will be supported in the future.
+   * `force = false` will be supported in the future.
    * </pre>
    *
-   * <code>bool force = 2;</code>
+   * <code>bool force = 2 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   public boolean getForce() {
     return force_;
@@ -499,11 +503,13 @@ public final class DeleteTagTemplateRequest extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * Required. The name of the tag template to delete. For example,
-     * "projects/{project_id}/locations/{location}/tagTemplates/{tag_template_id}".
+     * Required. The name of the tag template to delete. Example:
+     * * projects/{project_id}/locations/{location}/tagTemplates/{tag_template_id}
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>
+     * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      */
     public java.lang.String getName() {
       java.lang.Object ref = name_;
@@ -520,11 +526,13 @@ public final class DeleteTagTemplateRequest extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * Required. The name of the tag template to delete. For example,
-     * "projects/{project_id}/locations/{location}/tagTemplates/{tag_template_id}".
+     * Required. The name of the tag template to delete. Example:
+     * * projects/{project_id}/locations/{location}/tagTemplates/{tag_template_id}
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>
+     * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      */
     public com.google.protobuf.ByteString getNameBytes() {
       java.lang.Object ref = name_;
@@ -541,11 +549,13 @@ public final class DeleteTagTemplateRequest extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * Required. The name of the tag template to delete. For example,
-     * "projects/{project_id}/locations/{location}/tagTemplates/{tag_template_id}".
+     * Required. The name of the tag template to delete. Example:
+     * * projects/{project_id}/locations/{location}/tagTemplates/{tag_template_id}
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>
+     * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      */
     public Builder setName(java.lang.String value) {
       if (value == null) {
@@ -560,11 +570,13 @@ public final class DeleteTagTemplateRequest extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * Required. The name of the tag template to delete. For example,
-     * "projects/{project_id}/locations/{location}/tagTemplates/{tag_template_id}".
+     * Required. The name of the tag template to delete. Example:
+     * * projects/{project_id}/locations/{location}/tagTemplates/{tag_template_id}
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>
+     * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      */
     public Builder clearName() {
 
@@ -576,11 +588,13 @@ public final class DeleteTagTemplateRequest extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * Required. The name of the tag template to delete. For example,
-     * "projects/{project_id}/locations/{location}/tagTemplates/{tag_template_id}".
+     * Required. The name of the tag template to delete. Example:
+     * * projects/{project_id}/locations/{location}/tagTemplates/{tag_template_id}
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>
+     * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      */
     public Builder setNameBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -598,12 +612,12 @@ public final class DeleteTagTemplateRequest extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * Required. Currently, this field must always be set to &lt;code&gt;true&lt;/code&gt;.
+     * Required. Currently, this field must always be set to `true`.
      * This confirms the deletion of any possible tags using this template.
-     * &lt;code&gt;force = false&lt;/code&gt; will be supported in the future.
+     * `force = false` will be supported in the future.
      * </pre>
      *
-     * <code>bool force = 2;</code>
+     * <code>bool force = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public boolean getForce() {
       return force_;
@@ -612,12 +626,12 @@ public final class DeleteTagTemplateRequest extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * Required. Currently, this field must always be set to &lt;code&gt;true&lt;/code&gt;.
+     * Required. Currently, this field must always be set to `true`.
      * This confirms the deletion of any possible tags using this template.
-     * &lt;code&gt;force = false&lt;/code&gt; will be supported in the future.
+     * `force = false` will be supported in the future.
      * </pre>
      *
-     * <code>bool force = 2;</code>
+     * <code>bool force = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder setForce(boolean value) {
 
@@ -629,12 +643,12 @@ public final class DeleteTagTemplateRequest extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * Required. Currently, this field must always be set to &lt;code&gt;true&lt;/code&gt;.
+     * Required. Currently, this field must always be set to `true`.
      * This confirms the deletion of any possible tags using this template.
-     * &lt;code&gt;force = false&lt;/code&gt; will be supported in the future.
+     * `force = false` will be supported in the future.
      * </pre>
      *
-     * <code>bool force = 2;</code>
+     * <code>bool force = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder clearForce() {
 

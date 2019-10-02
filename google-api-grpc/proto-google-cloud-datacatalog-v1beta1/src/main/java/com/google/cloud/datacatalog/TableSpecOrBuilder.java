@@ -12,30 +12,32 @@ public interface TableSpecOrBuilder
    *
    *
    * <pre>
-   * Output only. If the table is a dated shard, i.e. with name pattern
-   * [prefix]YYYYMMDD, grouped_entry is the Data Catalog resource name of the
-   * date sharded grouped entry, e.g.
-   * projects/{project_id}/locations/{location}/entrygroups/{entry_group_id}
-   * /entries/{entry_id}.
-   * Otherwise, grouped_entry will be empty.
+   * Output only. If the table is a dated shard, i.e., with name pattern
+   * `[prefix]YYYYMMDD`, `grouped_entry` is the Data Catalog resource name of
+   * the date sharded grouped entry, for example,
+   * `projects/{project_id}/locations/{location}/entrygroups/{entry_group_id}/entries/{entry_id}`.
+   * Otherwise, `grouped_entry` is empty.
    * </pre>
    *
-   * <code>string grouped_entry = 1;</code>
+   * <code>
+   * string grouped_entry = 1 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+   * </code>
    */
   java.lang.String getGroupedEntry();
   /**
    *
    *
    * <pre>
-   * Output only. If the table is a dated shard, i.e. with name pattern
-   * [prefix]YYYYMMDD, grouped_entry is the Data Catalog resource name of the
-   * date sharded grouped entry, e.g.
-   * projects/{project_id}/locations/{location}/entrygroups/{entry_group_id}
-   * /entries/{entry_id}.
-   * Otherwise, grouped_entry will be empty.
+   * Output only. If the table is a dated shard, i.e., with name pattern
+   * `[prefix]YYYYMMDD`, `grouped_entry` is the Data Catalog resource name of
+   * the date sharded grouped entry, for example,
+   * `projects/{project_id}/locations/{location}/entrygroups/{entry_group_id}/entries/{entry_id}`.
+   * Otherwise, `grouped_entry` is empty.
    * </pre>
    *
-   * <code>string grouped_entry = 1;</code>
+   * <code>
+   * string grouped_entry = 1 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+   * </code>
    */
   com.google.protobuf.ByteString getGroupedEntryBytes();
 }

@@ -12,22 +12,26 @@ public interface DeleteTagRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The name of the tag to delete. For example,
-   * "projects/{project_id}/locations/{location}/entryGroups/{entry_group_id}/entries/{entry_id}/tags/{tag_id}".
+   * Required. The name of the tag to delete. Example:
+   * * projects/{project_id}/locations/{location}/entryGroups/{entry_group_id}/entries/{entry_id}/tags/{tag_id}
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>
+   * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    */
   java.lang.String getName();
   /**
    *
    *
    * <pre>
-   * Required. The name of the tag to delete. For example,
-   * "projects/{project_id}/locations/{location}/entryGroups/{entry_group_id}/entries/{entry_id}/tags/{tag_id}".
+   * Required. The name of the tag to delete. Example:
+   * * projects/{project_id}/locations/{location}/entryGroups/{entry_group_id}/entries/{entry_id}/tags/{tag_id}
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>
+   * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    */
   com.google.protobuf.ByteString getNameBytes();
 }
