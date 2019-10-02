@@ -13,7 +13,6 @@ Java idiomatic client for [Google Translation][cloud-translate].
 Quickstart
 ----------
 
-[//]: # ({x-version-update-start:google-cloud-translate:released})
 If you are using Maven, add this to your pom.xml file
 ```xml
 <dependency>
@@ -30,7 +29,6 @@ If you are using SBT, add this to your dependencies
 ```Scala
 libraryDependencies += "com.google.cloud" % "google-cloud-translate" % "1.93.0"
 ```
-[//]: # ({x-version-update-end})
 
 Example Application
 -------------------
