@@ -18,7 +18,9 @@ public interface LocationMetadataOrBuilder
    * creating a Redis instance.
    * </pre>
    *
-   * <code>map&lt;string, .google.cloud.redis.v1.ZoneMetadata&gt; available_zones = 1;</code>
+   * <code>
+   * map&lt;string, .google.cloud.redis.v1.ZoneMetadata&gt; available_zones = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    */
   int getAvailableZonesCount();
   /**
@@ -31,7 +33,9 @@ public interface LocationMetadataOrBuilder
    * creating a Redis instance.
    * </pre>
    *
-   * <code>map&lt;string, .google.cloud.redis.v1.ZoneMetadata&gt; available_zones = 1;</code>
+   * <code>
+   * map&lt;string, .google.cloud.redis.v1.ZoneMetadata&gt; available_zones = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    */
   boolean containsAvailableZones(java.lang.String key);
   /** Use {@link #getAvailableZonesMap()} instead. */
@@ -47,7 +51,9 @@ public interface LocationMetadataOrBuilder
    * creating a Redis instance.
    * </pre>
    *
-   * <code>map&lt;string, .google.cloud.redis.v1.ZoneMetadata&gt; available_zones = 1;</code>
+   * <code>
+   * map&lt;string, .google.cloud.redis.v1.ZoneMetadata&gt; available_zones = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    */
   java.util.Map<java.lang.String, com.google.cloud.redis.v1.ZoneMetadata> getAvailableZonesMap();
   /**
@@ -60,7 +66,9 @@ public interface LocationMetadataOrBuilder
    * creating a Redis instance.
    * </pre>
    *
-   * <code>map&lt;string, .google.cloud.redis.v1.ZoneMetadata&gt; available_zones = 1;</code>
+   * <code>
+   * map&lt;string, .google.cloud.redis.v1.ZoneMetadata&gt; available_zones = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    */
   com.google.cloud.redis.v1.ZoneMetadata getAvailableZonesOrDefault(
       java.lang.String key, com.google.cloud.redis.v1.ZoneMetadata defaultValue);
@@ -74,7 +82,9 @@ public interface LocationMetadataOrBuilder
    * creating a Redis instance.
    * </pre>
    *
-   * <code>map&lt;string, .google.cloud.redis.v1.ZoneMetadata&gt; available_zones = 1;</code>
+   * <code>
+   * map&lt;string, .google.cloud.redis.v1.ZoneMetadata&gt; available_zones = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    */
   com.google.cloud.redis.v1.ZoneMetadata getAvailableZonesOrThrow(java.lang.String key);
 }

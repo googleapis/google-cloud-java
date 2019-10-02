@@ -83,122 +83,8 @@ public class CloudRedisClientTest {
 
   @Test
   @SuppressWarnings("all")
-  public void listInstancesTest() {
-    String nextPageToken = "";
-    Instance instancesElement = Instance.newBuilder().build();
-    List<Instance> instances = Arrays.asList(instancesElement);
-    ListInstancesResponse expectedResponse =
-        ListInstancesResponse.newBuilder()
-            .setNextPageToken(nextPageToken)
-            .addAllInstances(instances)
-            .build();
-    mockCloudRedis.addResponse(expectedResponse);
-
-    LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
-
-    ListInstancesPagedResponse pagedListResponse = client.listInstances(parent);
-
-    List<Instance> resources = Lists.newArrayList(pagedListResponse.iterateAll());
-    Assert.assertEquals(1, resources.size());
-    Assert.assertEquals(expectedResponse.getInstancesList().get(0), resources.get(0));
-
-    List<AbstractMessage> actualRequests = mockCloudRedis.getRequests();
-    Assert.assertEquals(1, actualRequests.size());
-    ListInstancesRequest actualRequest = (ListInstancesRequest) actualRequests.get(0);
-
-    Assert.assertEquals(parent, LocationName.parse(actualRequest.getParent()));
-    Assert.assertTrue(
-        channelProvider.isHeaderSent(
-            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
-            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
-  }
-
-  @Test
-  @SuppressWarnings("all")
-  public void listInstancesExceptionTest() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
-    mockCloudRedis.addException(exception);
-
-    try {
-      LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
-
-      client.listInstances(parent);
-      Assert.fail("No exception raised");
-    } catch (InvalidArgumentException e) {
-      // Expected exception
-    }
-  }
-
-  @Test
-  @SuppressWarnings("all")
-  public void getInstanceTest() {
-    String name2 = "name2-1052831874";
-    String displayName = "displayName1615086568";
-    String locationId = "locationId552319461";
-    String alternativeLocationId = "alternativeLocationId-718920621";
-    String redisVersion = "redisVersion-685310444";
-    String reservedIpRange = "reservedIpRange-1082940580";
-    String host = "host3208616";
-    int port = 3446913;
-    String currentLocationId = "currentLocationId1312712735";
-    String statusMessage = "statusMessage-239442758";
-    int memorySizeGb = 34199707;
-    String authorizedNetwork = "authorizedNetwork-1733809270";
-    String persistenceIamIdentity = "persistenceIamIdentity1061944584";
-    Instance expectedResponse =
-        Instance.newBuilder()
-            .setName(name2)
-            .setDisplayName(displayName)
-            .setLocationId(locationId)
-            .setAlternativeLocationId(alternativeLocationId)
-            .setRedisVersion(redisVersion)
-            .setReservedIpRange(reservedIpRange)
-            .setHost(host)
-            .setPort(port)
-            .setCurrentLocationId(currentLocationId)
-            .setStatusMessage(statusMessage)
-            .setMemorySizeGb(memorySizeGb)
-            .setAuthorizedNetwork(authorizedNetwork)
-            .setPersistenceIamIdentity(persistenceIamIdentity)
-            .build();
-    mockCloudRedis.addResponse(expectedResponse);
-
-    InstanceName name = InstanceName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]");
-
-    Instance actualResponse = client.getInstance(name);
-    Assert.assertEquals(expectedResponse, actualResponse);
-
-    List<AbstractMessage> actualRequests = mockCloudRedis.getRequests();
-    Assert.assertEquals(1, actualRequests.size());
-    GetInstanceRequest actualRequest = (GetInstanceRequest) actualRequests.get(0);
-
-    Assert.assertEquals(name, InstanceName.parse(actualRequest.getName()));
-    Assert.assertTrue(
-        channelProvider.isHeaderSent(
-            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
-            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
-  }
-
-  @Test
-  @SuppressWarnings("all")
-  public void getInstanceExceptionTest() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
-    mockCloudRedis.addException(exception);
-
-    try {
-      InstanceName name = InstanceName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]");
-
-      client.getInstance(name);
-      Assert.fail("No exception raised");
-    } catch (InvalidArgumentException e) {
-      // Expected exception
-    }
-  }
-
-  @Test
-  @SuppressWarnings("all")
   public void createInstanceTest() throws Exception {
-    String name = "name3373707";
+    InstanceName name = InstanceName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]");
     String displayName = "displayName1615086568";
     String locationId = "locationId552319461";
     String alternativeLocationId = "alternativeLocationId-718920621";
@@ -213,7 +99,7 @@ public class CloudRedisClientTest {
     String persistenceIamIdentity = "persistenceIamIdentity1061944584";
     Instance expectedResponse =
         Instance.newBuilder()
-            .setName(name)
+            .setName(name.toString())
             .setDisplayName(displayName)
             .setLocationId(locationId)
             .setAlternativeLocationId(alternativeLocationId)
@@ -282,7 +168,7 @@ public class CloudRedisClientTest {
   @Test
   @SuppressWarnings("all")
   public void updateInstanceTest() throws Exception {
-    String name = "name3373707";
+    InstanceName name = InstanceName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]");
     String displayName2 = "displayName21615000987";
     String locationId = "locationId552319461";
     String alternativeLocationId = "alternativeLocationId-718920621";
@@ -297,7 +183,7 @@ public class CloudRedisClientTest {
     String persistenceIamIdentity = "persistenceIamIdentity1061944584";
     Instance expectedResponse =
         Instance.newBuilder()
-            .setName(name)
+            .setName(name.toString())
             .setDisplayName(displayName2)
             .setLocationId(locationId)
             .setAlternativeLocationId(alternativeLocationId)
@@ -370,8 +256,56 @@ public class CloudRedisClientTest {
 
   @Test
   @SuppressWarnings("all")
-  public void importInstanceTest() throws Exception {
-    String name2 = "name2-1052831874";
+  public void listInstancesTest() {
+    String nextPageToken = "";
+    Instance instancesElement = Instance.newBuilder().build();
+    List<Instance> instances = Arrays.asList(instancesElement);
+    ListInstancesResponse expectedResponse =
+        ListInstancesResponse.newBuilder()
+            .setNextPageToken(nextPageToken)
+            .addAllInstances(instances)
+            .build();
+    mockCloudRedis.addResponse(expectedResponse);
+
+    LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+
+    ListInstancesPagedResponse pagedListResponse = client.listInstances(parent);
+
+    List<Instance> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getInstancesList().get(0), resources.get(0));
+
+    List<AbstractMessage> actualRequests = mockCloudRedis.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ListInstancesRequest actualRequest = (ListInstancesRequest) actualRequests.get(0);
+
+    Assert.assertEquals(parent, LocationName.parse(actualRequest.getParent()));
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  @SuppressWarnings("all")
+  public void listInstancesExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
+    mockCloudRedis.addException(exception);
+
+    try {
+      LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+
+      client.listInstances(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception
+    }
+  }
+
+  @Test
+  @SuppressWarnings("all")
+  public void getInstanceTest() {
+    InstanceName name2 = InstanceName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]");
     String displayName = "displayName1615086568";
     String locationId = "locationId552319461";
     String alternativeLocationId = "alternativeLocationId-718920621";
@@ -386,7 +320,73 @@ public class CloudRedisClientTest {
     String persistenceIamIdentity = "persistenceIamIdentity1061944584";
     Instance expectedResponse =
         Instance.newBuilder()
-            .setName(name2)
+            .setName(name2.toString())
+            .setDisplayName(displayName)
+            .setLocationId(locationId)
+            .setAlternativeLocationId(alternativeLocationId)
+            .setRedisVersion(redisVersion)
+            .setReservedIpRange(reservedIpRange)
+            .setHost(host)
+            .setPort(port)
+            .setCurrentLocationId(currentLocationId)
+            .setStatusMessage(statusMessage)
+            .setMemorySizeGb(memorySizeGb)
+            .setAuthorizedNetwork(authorizedNetwork)
+            .setPersistenceIamIdentity(persistenceIamIdentity)
+            .build();
+    mockCloudRedis.addResponse(expectedResponse);
+
+    InstanceName name = InstanceName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]");
+
+    Instance actualResponse = client.getInstance(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockCloudRedis.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    GetInstanceRequest actualRequest = (GetInstanceRequest) actualRequests.get(0);
+
+    Assert.assertEquals(name, InstanceName.parse(actualRequest.getName()));
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  @SuppressWarnings("all")
+  public void getInstanceExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
+    mockCloudRedis.addException(exception);
+
+    try {
+      InstanceName name = InstanceName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]");
+
+      client.getInstance(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception
+    }
+  }
+
+  @Test
+  @SuppressWarnings("all")
+  public void importInstanceTest() throws Exception {
+    InstanceName name2 = InstanceName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]");
+    String displayName = "displayName1615086568";
+    String locationId = "locationId552319461";
+    String alternativeLocationId = "alternativeLocationId-718920621";
+    String redisVersion = "redisVersion-685310444";
+    String reservedIpRange = "reservedIpRange-1082940580";
+    String host = "host3208616";
+    int port = 3446913;
+    String currentLocationId = "currentLocationId1312712735";
+    String statusMessage = "statusMessage-239442758";
+    int memorySizeGb = 34199707;
+    String authorizedNetwork = "authorizedNetwork-1733809270";
+    String persistenceIamIdentity = "persistenceIamIdentity1061944584";
+    Instance expectedResponse =
+        Instance.newBuilder()
+            .setName(name2.toString())
             .setDisplayName(displayName)
             .setLocationId(locationId)
             .setAlternativeLocationId(alternativeLocationId)
@@ -408,17 +408,17 @@ public class CloudRedisClientTest {
             .build();
     mockCloudRedis.addResponse(resultOperation);
 
-    String formattedName = InstanceName.format("[PROJECT]", "[LOCATION]", "[INSTANCE]");
+    String name = "name3373707";
     InputConfig inputConfig = InputConfig.newBuilder().build();
 
-    Instance actualResponse = client.importInstanceAsync(formattedName, inputConfig).get();
+    Instance actualResponse = client.importInstanceAsync(name, inputConfig).get();
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<AbstractMessage> actualRequests = mockCloudRedis.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     ImportInstanceRequest actualRequest = (ImportInstanceRequest) actualRequests.get(0);
 
-    Assert.assertEquals(formattedName, actualRequest.getName());
+    Assert.assertEquals(name, actualRequest.getName());
     Assert.assertEquals(inputConfig, actualRequest.getInputConfig());
     Assert.assertTrue(
         channelProvider.isHeaderSent(
@@ -433,10 +433,10 @@ public class CloudRedisClientTest {
     mockCloudRedis.addException(exception);
 
     try {
-      String formattedName = InstanceName.format("[PROJECT]", "[LOCATION]", "[INSTANCE]");
+      String name = "name3373707";
       InputConfig inputConfig = InputConfig.newBuilder().build();
 
-      client.importInstanceAsync(formattedName, inputConfig).get();
+      client.importInstanceAsync(name, inputConfig).get();
       Assert.fail("No exception raised");
     } catch (ExecutionException e) {
       Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
@@ -448,7 +448,7 @@ public class CloudRedisClientTest {
   @Test
   @SuppressWarnings("all")
   public void exportInstanceTest() throws Exception {
-    String name2 = "name2-1052831874";
+    InstanceName name2 = InstanceName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]");
     String displayName = "displayName1615086568";
     String locationId = "locationId552319461";
     String alternativeLocationId = "alternativeLocationId-718920621";
@@ -463,7 +463,7 @@ public class CloudRedisClientTest {
     String persistenceIamIdentity = "persistenceIamIdentity1061944584";
     Instance expectedResponse =
         Instance.newBuilder()
-            .setName(name2)
+            .setName(name2.toString())
             .setDisplayName(displayName)
             .setLocationId(locationId)
             .setAlternativeLocationId(alternativeLocationId)
@@ -485,17 +485,17 @@ public class CloudRedisClientTest {
             .build();
     mockCloudRedis.addResponse(resultOperation);
 
-    String formattedName = InstanceName.format("[PROJECT]", "[LOCATION]", "[INSTANCE]");
+    String name = "name3373707";
     OutputConfig outputConfig = OutputConfig.newBuilder().build();
 
-    Instance actualResponse = client.exportInstanceAsync(formattedName, outputConfig).get();
+    Instance actualResponse = client.exportInstanceAsync(name, outputConfig).get();
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<AbstractMessage> actualRequests = mockCloudRedis.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     ExportInstanceRequest actualRequest = (ExportInstanceRequest) actualRequests.get(0);
 
-    Assert.assertEquals(formattedName, actualRequest.getName());
+    Assert.assertEquals(name, actualRequest.getName());
     Assert.assertEquals(outputConfig, actualRequest.getOutputConfig());
     Assert.assertTrue(
         channelProvider.isHeaderSent(
@@ -510,10 +510,10 @@ public class CloudRedisClientTest {
     mockCloudRedis.addException(exception);
 
     try {
-      String formattedName = InstanceName.format("[PROJECT]", "[LOCATION]", "[INSTANCE]");
+      String name = "name3373707";
       OutputConfig outputConfig = OutputConfig.newBuilder().build();
 
-      client.exportInstanceAsync(formattedName, outputConfig).get();
+      client.exportInstanceAsync(name, outputConfig).get();
       Assert.fail("No exception raised");
     } catch (ExecutionException e) {
       Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
@@ -525,7 +525,7 @@ public class CloudRedisClientTest {
   @Test
   @SuppressWarnings("all")
   public void failoverInstanceTest() throws Exception {
-    String name2 = "name2-1052831874";
+    InstanceName name2 = InstanceName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]");
     String displayName = "displayName1615086568";
     String locationId = "locationId552319461";
     String alternativeLocationId = "alternativeLocationId-718920621";
@@ -540,7 +540,7 @@ public class CloudRedisClientTest {
     String persistenceIamIdentity = "persistenceIamIdentity1061944584";
     Instance expectedResponse =
         Instance.newBuilder()
-            .setName(name2)
+            .setName(name2.toString())
             .setDisplayName(displayName)
             .setLocationId(locationId)
             .setAlternativeLocationId(alternativeLocationId)
@@ -562,18 +562,18 @@ public class CloudRedisClientTest {
             .build();
     mockCloudRedis.addResponse(resultOperation);
 
-    String formattedName = InstanceName.format("[PROJECT]", "[LOCATION]", "[INSTANCE]");
+    InstanceName name = InstanceName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]");
     FailoverInstanceRequest.DataProtectionMode dataProtectionMode =
         FailoverInstanceRequest.DataProtectionMode.DATA_PROTECTION_MODE_UNSPECIFIED;
 
-    Instance actualResponse = client.failoverInstanceAsync(formattedName, dataProtectionMode).get();
+    Instance actualResponse = client.failoverInstanceAsync(name, dataProtectionMode).get();
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<AbstractMessage> actualRequests = mockCloudRedis.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     FailoverInstanceRequest actualRequest = (FailoverInstanceRequest) actualRequests.get(0);
 
-    Assert.assertEquals(formattedName, actualRequest.getName());
+    Assert.assertEquals(name, InstanceName.parse(actualRequest.getName()));
     Assert.assertEquals(dataProtectionMode, actualRequest.getDataProtectionMode());
     Assert.assertTrue(
         channelProvider.isHeaderSent(
@@ -588,11 +588,11 @@ public class CloudRedisClientTest {
     mockCloudRedis.addException(exception);
 
     try {
-      String formattedName = InstanceName.format("[PROJECT]", "[LOCATION]", "[INSTANCE]");
+      InstanceName name = InstanceName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]");
       FailoverInstanceRequest.DataProtectionMode dataProtectionMode =
           FailoverInstanceRequest.DataProtectionMode.DATA_PROTECTION_MODE_UNSPECIFIED;
 
-      client.failoverInstanceAsync(formattedName, dataProtectionMode).get();
+      client.failoverInstanceAsync(name, dataProtectionMode).get();
       Assert.fail("No exception raised");
     } catch (ExecutionException e) {
       Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
