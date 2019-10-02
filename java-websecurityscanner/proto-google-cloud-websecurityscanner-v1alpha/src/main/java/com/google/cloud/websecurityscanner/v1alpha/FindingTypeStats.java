@@ -103,7 +103,6 @@ public final class FindingTypeStats extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Output only.
    * The finding type associated with the stats.
    * </pre>
    *
@@ -116,7 +115,6 @@ public final class FindingTypeStats extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Output only.
    * The finding type associated with the stats.
    * </pre>
    *
@@ -137,7 +135,6 @@ public final class FindingTypeStats extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Output only.
    * The count of findings belonging to this finding type.
    * </pre>
    *
@@ -492,7 +489,6 @@ public final class FindingTypeStats extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only.
      * The finding type associated with the stats.
      * </pre>
      *
@@ -505,7 +501,6 @@ public final class FindingTypeStats extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only.
      * The finding type associated with the stats.
      * </pre>
      *
@@ -520,7 +515,6 @@ public final class FindingTypeStats extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only.
      * The finding type associated with the stats.
      * </pre>
      *
@@ -538,7 +532,6 @@ public final class FindingTypeStats extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only.
      * The finding type associated with the stats.
      * </pre>
      *
@@ -558,7 +551,6 @@ public final class FindingTypeStats extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only.
      * The finding type associated with the stats.
      * </pre>
      *
@@ -576,7 +568,6 @@ public final class FindingTypeStats extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only.
      * The count of findings belonging to this finding type.
      * </pre>
      *
@@ -589,7 +580,6 @@ public final class FindingTypeStats extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only.
      * The count of findings belonging to this finding type.
      * </pre>
      *
@@ -605,7 +595,6 @@ public final class FindingTypeStats extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only.
      * The count of findings belonging to this finding type.
      * </pre>
      *

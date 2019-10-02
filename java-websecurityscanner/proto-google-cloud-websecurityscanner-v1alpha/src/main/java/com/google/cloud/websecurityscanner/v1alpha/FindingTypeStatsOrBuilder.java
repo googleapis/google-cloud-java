@@ -12,7 +12,6 @@ public interface FindingTypeStatsOrBuilder
    *
    *
    * <pre>
-   * Output only.
    * The finding type associated with the stats.
    * </pre>
    *
@@ -23,7 +22,6 @@ public interface FindingTypeStatsOrBuilder
    *
    *
    * <pre>
-   * Output only.
    * The finding type associated with the stats.
    * </pre>
    *
@@ -35,7 +33,6 @@ public interface FindingTypeStatsOrBuilder
    *
    *
    * <pre>
-   * Output only.
    * The count of findings belonging to this finding type.
    * </pre>
    *
