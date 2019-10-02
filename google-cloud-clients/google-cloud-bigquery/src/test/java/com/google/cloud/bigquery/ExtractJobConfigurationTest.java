@@ -21,7 +21,9 @@ import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertNull;
 
 import com.google.common.collect.ImmutableList;
+import com.google.common.collect.ImmutableMap;
 import java.util.List;
+import java.util.Map;
 import org.junit.Test;
 
 public class ExtractJobConfigurationTest {
@@ -37,12 +39,15 @@ public class ExtractJobConfigurationTest {
   private static final Boolean PRINT_HEADER = true;
   private static final String COMPRESSION = "GZIP";
   private static final Boolean USEAVROLOGICALTYPES = true;
+  private static final Map<String, String> LABELS =
+      ImmutableMap.of("test-job-name", "test-extract-job");
   private static final ExtractJobConfiguration EXTRACT_CONFIGURATION =
       ExtractJobConfiguration.newBuilder(TABLE_ID, DESTINATION_URIS)
           .setPrintHeader(PRINT_HEADER)
           .setFieldDelimiter(FIELD_DELIMITER)
           .setCompression(COMPRESSION)
           .setFormat(FORMAT)
+          .setLabels(LABELS)
           .build();
   private static final ExtractJobConfiguration EXTRACT_CONFIGURATION_ONE_URI =
       ExtractJobConfiguration.newBuilder(TABLE_ID, DESTINATION_URI)
@@ -50,6 +55,7 @@ public class ExtractJobConfigurationTest {
           .setFieldDelimiter(FIELD_DELIMITER)
           .setCompression(COMPRESSION)
           .setFormat(FORMAT)
+          .setLabels(LABELS)
           .build();
   private static final ExtractJobConfiguration EXTRACT_CONFIGURATION_AVRO =
       ExtractJobConfiguration.newBuilder(TABLE_ID, DESTINATION_URI)
@@ -58,6 +64,7 @@ public class ExtractJobConfigurationTest {
           .setCompression(COMPRESSION)
           .setFormat(AVRO_FORMAT)
           .setUseAvroLogicalTypes(USEAVROLOGICALTYPES)
+          .setLabels(LABELS)
           .build();
 
   @Test
@@ -113,6 +120,7 @@ public class ExtractJobConfigurationTest {
     assertEquals(COMPRESSION, EXTRACT_CONFIGURATION.getCompression());
     assertEquals(PRINT_HEADER, EXTRACT_CONFIGURATION.printHeader());
     assertEquals(FORMAT, EXTRACT_CONFIGURATION.getFormat());
+    assertEquals(LABELS, EXTRACT_CONFIGURATION.getLabels());
     assertEquals(TABLE_ID, EXTRACT_CONFIGURATION_ONE_URI.getSourceTable());
     assertEquals(
         ImmutableList.of(DESTINATION_URI), EXTRACT_CONFIGURATION_ONE_URI.getDestinationUris());
@@ -120,6 +128,7 @@ public class ExtractJobConfigurationTest {
     assertEquals(COMPRESSION, EXTRACT_CONFIGURATION_ONE_URI.getCompression());
     assertEquals(PRINT_HEADER, EXTRACT_CONFIGURATION_ONE_URI.printHeader());
     assertEquals(FORMAT, EXTRACT_CONFIGURATION_ONE_URI.getFormat());
+    assertEquals(LABELS, EXTRACT_CONFIGURATION_ONE_URI.getLabels());
     assertEquals(
         ImmutableList.of(DESTINATION_URI), EXTRACT_CONFIGURATION_AVRO.getDestinationUris());
     assertEquals(FIELD_DELIMITER, EXTRACT_CONFIGURATION_AVRO.getFieldDelimiter());
@@ -127,6 +136,7 @@ public class ExtractJobConfigurationTest {
     assertEquals(PRINT_HEADER, EXTRACT_CONFIGURATION_AVRO.printHeader());
     assertEquals(AVRO_FORMAT, EXTRACT_CONFIGURATION_AVRO.getFormat());
     assertEquals(USEAVROLOGICALTYPES, EXTRACT_CONFIGURATION_AVRO.getUseAvroLogicalTypes());
+    assertEquals(LABELS, EXTRACT_CONFIGURATION_AVRO.getLabels());
   }
 
   @Test
@@ -135,6 +145,7 @@ public class ExtractJobConfigurationTest {
     assertNull(EXTRACT_CONFIGURATION.toPb().getCopy());
     assertNull(EXTRACT_CONFIGURATION.toPb().getLoad());
     assertNull(EXTRACT_CONFIGURATION.toPb().getQuery());
+    assertNotNull(EXTRACT_CONFIGURATION.toPb().getLabels());
     compareExtractJobConfiguration(
         EXTRACT_CONFIGURATION, ExtractJobConfiguration.fromPb(EXTRACT_CONFIGURATION.toPb()));
     compareExtractJobConfiguration(
@@ -182,5 +193,6 @@ public class ExtractJobConfigurationTest {
     assertEquals(expected.printHeader(), value.printHeader());
     assertEquals(expected.getFieldDelimiter(), value.getFieldDelimiter());
     assertEquals(expected.getFormat(), value.getFormat());
+    assertEquals(expected.getLabels(), value.getLabels());
   }
 }
