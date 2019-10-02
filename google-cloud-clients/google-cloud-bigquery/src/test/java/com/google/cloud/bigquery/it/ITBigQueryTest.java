@@ -1477,6 +1477,30 @@ public class ITBigQueryTest {
   }
 
   @Test
+  public void testCopyJobWithLabels() throws InterruptedException {
+    String sourceTableName = "test_copy_job_source_table_label";
+    String destinationTableName = "test_copy_job_destination_table_label";
+    Map<String, String> labels = ImmutableMap.of("test_job_name", "test_copy_job");
+    TableId sourceTable = TableId.of(DATASET, sourceTableName);
+    StandardTableDefinition tableDefinition = StandardTableDefinition.of(TABLE_SCHEMA);
+    TableInfo tableInfo = TableInfo.of(sourceTable, tableDefinition);
+    Table createdTable = bigquery.create(tableInfo);
+    assertNotNull(createdTable);
+    TableId destinationTable = TableId.of(DATASET, destinationTableName);
+    CopyJobConfiguration configuration =
+        CopyJobConfiguration.newBuilder(destinationTable, sourceTable).setLabels(labels).build();
+    Job remoteJob = bigquery.create(JobInfo.of(configuration));
+    remoteJob = remoteJob.waitFor();
+    assertNull(remoteJob.getStatus().getError());
+    CopyJobConfiguration copyJobConfiguration = remoteJob.getConfiguration();
+    assertEquals(labels, copyJobConfiguration.getLabels());
+    Table remoteTable = bigquery.getTable(DATASET, destinationTableName);
+    assertNotNull(remoteTable);
+    assertTrue(createdTable.delete());
+    assertTrue(remoteTable.delete());
+  }
+
+  @Test
   public void testQueryJob() throws InterruptedException, TimeoutException {
     String tableName = "test_query_job_table";
     String query = "SELECT TimestampField, StringField, BooleanField FROM " + TABLE_ID.getTable();
