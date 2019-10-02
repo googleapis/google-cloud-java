@@ -100,7 +100,7 @@ public final class GcsSource extends com.google.protobuf.GeneratedMessageV3
    * Required. Source data URI. For example, `gs://my_bucket/my_object`.
    * </pre>
    *
-   * <code>string input_uri = 1;</code>
+   * <code>string input_uri = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   public java.lang.String getInputUri() {
     java.lang.Object ref = inputUri_;
@@ -120,7 +120,7 @@ public final class GcsSource extends com.google.protobuf.GeneratedMessageV3
    * Required. Source data URI. For example, `gs://my_bucket/my_object`.
    * </pre>
    *
-   * <code>string input_uri = 1;</code>
+   * <code>string input_uri = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   public com.google.protobuf.ByteString getInputUriBytes() {
     java.lang.Object ref = inputUri_;
@@ -458,7 +458,7 @@ public final class GcsSource extends com.google.protobuf.GeneratedMessageV3
      * Required. Source data URI. For example, `gs://my_bucket/my_object`.
      * </pre>
      *
-     * <code>string input_uri = 1;</code>
+     * <code>string input_uri = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public java.lang.String getInputUri() {
       java.lang.Object ref = inputUri_;
@@ -478,7 +478,7 @@ public final class GcsSource extends com.google.protobuf.GeneratedMessageV3
      * Required. Source data URI. For example, `gs://my_bucket/my_object`.
      * </pre>
      *
-     * <code>string input_uri = 1;</code>
+     * <code>string input_uri = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public com.google.protobuf.ByteString getInputUriBytes() {
       java.lang.Object ref = inputUri_;
@@ -498,7 +498,7 @@ public final class GcsSource extends com.google.protobuf.GeneratedMessageV3
      * Required. Source data URI. For example, `gs://my_bucket/my_object`.
      * </pre>
      *
-     * <code>string input_uri = 1;</code>
+     * <code>string input_uri = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder setInputUri(java.lang.String value) {
       if (value == null) {
@@ -516,7 +516,7 @@ public final class GcsSource extends com.google.protobuf.GeneratedMessageV3
      * Required. Source data URI. For example, `gs://my_bucket/my_object`.
      * </pre>
      *
-     * <code>string input_uri = 1;</code>
+     * <code>string input_uri = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder clearInputUri() {
 
@@ -531,7 +531,7 @@ public final class GcsSource extends com.google.protobuf.GeneratedMessageV3
      * Required. Source data URI. For example, `gs://my_bucket/my_object`.
      * </pre>
      *
-     * <code>string input_uri = 1;</code>
+     * <code>string input_uri = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder setInputUriBytes(com.google.protobuf.ByteString value) {
       if (value == null) {

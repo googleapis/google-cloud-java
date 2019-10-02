@@ -16,7 +16,7 @@ public interface TranslateTextGlossaryConfigOrBuilder
    * this format: projects/&#42;&#47;locations/&#42;&#47;glossaries/&#42;
    * </pre>
    *
-   * <code>string glossary = 1;</code>
+   * <code>string glossary = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   java.lang.String getGlossary();
   /**
@@ -27,7 +27,7 @@ public interface TranslateTextGlossaryConfigOrBuilder
    * this format: projects/&#42;&#47;locations/&#42;&#47;glossaries/&#42;
    * </pre>
    *
-   * <code>string glossary = 1;</code>
+   * <code>string glossary = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   com.google.protobuf.ByteString getGlossaryBytes();
 
@@ -39,7 +39,7 @@ public interface TranslateTextGlossaryConfigOrBuilder
    * Default value is false if missing.
    * </pre>
    *
-   * <code>bool ignore_case = 2;</code>
+   * <code>bool ignore_case = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   boolean getIgnoreCase();
 }

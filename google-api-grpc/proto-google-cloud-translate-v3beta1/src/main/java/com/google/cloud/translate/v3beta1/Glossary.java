@@ -1836,7 +1836,7 @@ public final class Glossary extends com.google.protobuf.GeneratedMessageV3
    * `projects/{project-id}/locations/{location-id}/glossaries/{glossary-id}`.
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   public java.lang.String getName() {
     java.lang.Object ref = name_;
@@ -1857,7 +1857,7 @@ public final class Glossary extends com.google.protobuf.GeneratedMessageV3
    * `projects/{project-id}/locations/{location-id}/glossaries/{glossary-id}`.
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   public com.google.protobuf.ByteString getNameBytes() {
     java.lang.Object ref = name_;
@@ -2017,7 +2017,7 @@ public final class Glossary extends com.google.protobuf.GeneratedMessageV3
    * Output only. The number of entries defined in the glossary.
    * </pre>
    *
-   * <code>int32 entry_count = 6;</code>
+   * <code>int32 entry_count = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    */
   public int getEntryCount() {
     return entryCount_;
@@ -2032,7 +2032,8 @@ public final class Glossary extends com.google.protobuf.GeneratedMessageV3
    * Output only. When CreateGlossary was called.
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp submit_time = 7;</code>
+   * <code>.google.protobuf.Timestamp submit_time = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    */
   public boolean hasSubmitTime() {
     return submitTime_ != null;
@@ -2044,7 +2045,8 @@ public final class Glossary extends com.google.protobuf.GeneratedMessageV3
    * Output only. When CreateGlossary was called.
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp submit_time = 7;</code>
+   * <code>.google.protobuf.Timestamp submit_time = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    */
   public com.google.protobuf.Timestamp getSubmitTime() {
     return submitTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : submitTime_;
@@ -2056,7 +2058,8 @@ public final class Glossary extends com.google.protobuf.GeneratedMessageV3
    * Output only. When CreateGlossary was called.
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp submit_time = 7;</code>
+   * <code>.google.protobuf.Timestamp submit_time = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    */
   public com.google.protobuf.TimestampOrBuilder getSubmitTimeOrBuilder() {
     return getSubmitTime();
@@ -2071,7 +2074,8 @@ public final class Glossary extends com.google.protobuf.GeneratedMessageV3
    * Output only. When the glossary creation was finished.
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp end_time = 8;</code>
+   * <code>.google.protobuf.Timestamp end_time = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    */
   public boolean hasEndTime() {
     return endTime_ != null;
@@ -2083,7 +2087,8 @@ public final class Glossary extends com.google.protobuf.GeneratedMessageV3
    * Output only. When the glossary creation was finished.
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp end_time = 8;</code>
+   * <code>.google.protobuf.Timestamp end_time = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    */
   public com.google.protobuf.Timestamp getEndTime() {
     return endTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : endTime_;
@@ -2095,7 +2100,8 @@ public final class Glossary extends com.google.protobuf.GeneratedMessageV3
    * Output only. When the glossary creation was finished.
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp end_time = 8;</code>
+   * <code>.google.protobuf.Timestamp end_time = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    */
   public com.google.protobuf.TimestampOrBuilder getEndTimeOrBuilder() {
     return getEndTime();
@@ -2613,7 +2619,7 @@ public final class Glossary extends com.google.protobuf.GeneratedMessageV3
      * `projects/{project-id}/locations/{location-id}/glossaries/{glossary-id}`.
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public java.lang.String getName() {
       java.lang.Object ref = name_;
@@ -2634,7 +2640,7 @@ public final class Glossary extends com.google.protobuf.GeneratedMessageV3
      * `projects/{project-id}/locations/{location-id}/glossaries/{glossary-id}`.
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public com.google.protobuf.ByteString getNameBytes() {
       java.lang.Object ref = name_;
@@ -2655,7 +2661,7 @@ public final class Glossary extends com.google.protobuf.GeneratedMessageV3
      * `projects/{project-id}/locations/{location-id}/glossaries/{glossary-id}`.
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder setName(java.lang.String value) {
       if (value == null) {
@@ -2674,7 +2680,7 @@ public final class Glossary extends com.google.protobuf.GeneratedMessageV3
      * `projects/{project-id}/locations/{location-id}/glossaries/{glossary-id}`.
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder clearName() {
 
@@ -2690,7 +2696,7 @@ public final class Glossary extends com.google.protobuf.GeneratedMessageV3
      * `projects/{project-id}/locations/{location-id}/glossaries/{glossary-id}`.
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder setNameBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -3330,7 +3336,7 @@ public final class Glossary extends com.google.protobuf.GeneratedMessageV3
      * Output only. The number of entries defined in the glossary.
      * </pre>
      *
-     * <code>int32 entry_count = 6;</code>
+     * <code>int32 entry_count = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     public int getEntryCount() {
       return entryCount_;
@@ -3342,7 +3348,7 @@ public final class Glossary extends com.google.protobuf.GeneratedMessageV3
      * Output only. The number of entries defined in the glossary.
      * </pre>
      *
-     * <code>int32 entry_count = 6;</code>
+     * <code>int32 entry_count = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     public Builder setEntryCount(int value) {
 
@@ -3357,7 +3363,7 @@ public final class Glossary extends com.google.protobuf.GeneratedMessageV3
      * Output only. The number of entries defined in the glossary.
      * </pre>
      *
-     * <code>int32 entry_count = 6;</code>
+     * <code>int32 entry_count = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     public Builder clearEntryCount() {
 
@@ -3379,7 +3385,9 @@ public final class Glossary extends com.google.protobuf.GeneratedMessageV3
      * Output only. When CreateGlossary was called.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp submit_time = 7;</code>
+     * <code>
+     * .google.protobuf.Timestamp submit_time = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public boolean hasSubmitTime() {
       return submitTimeBuilder_ != null || submitTime_ != null;
@@ -3391,7 +3399,9 @@ public final class Glossary extends com.google.protobuf.GeneratedMessageV3
      * Output only. When CreateGlossary was called.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp submit_time = 7;</code>
+     * <code>
+     * .google.protobuf.Timestamp submit_time = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public com.google.protobuf.Timestamp getSubmitTime() {
       if (submitTimeBuilder_ == null) {
@@ -3409,7 +3419,9 @@ public final class Glossary extends com.google.protobuf.GeneratedMessageV3
      * Output only. When CreateGlossary was called.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp submit_time = 7;</code>
+     * <code>
+     * .google.protobuf.Timestamp submit_time = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public Builder setSubmitTime(com.google.protobuf.Timestamp value) {
       if (submitTimeBuilder_ == null) {
@@ -3431,7 +3443,9 @@ public final class Glossary extends com.google.protobuf.GeneratedMessageV3
      * Output only. When CreateGlossary was called.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp submit_time = 7;</code>
+     * <code>
+     * .google.protobuf.Timestamp submit_time = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public Builder setSubmitTime(com.google.protobuf.Timestamp.Builder builderForValue) {
       if (submitTimeBuilder_ == null) {
@@ -3450,7 +3464,9 @@ public final class Glossary extends com.google.protobuf.GeneratedMessageV3
      * Output only. When CreateGlossary was called.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp submit_time = 7;</code>
+     * <code>
+     * .google.protobuf.Timestamp submit_time = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public Builder mergeSubmitTime(com.google.protobuf.Timestamp value) {
       if (submitTimeBuilder_ == null) {
@@ -3474,7 +3490,9 @@ public final class Glossary extends com.google.protobuf.GeneratedMessageV3
      * Output only. When CreateGlossary was called.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp submit_time = 7;</code>
+     * <code>
+     * .google.protobuf.Timestamp submit_time = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public Builder clearSubmitTime() {
       if (submitTimeBuilder_ == null) {
@@ -3494,7 +3512,9 @@ public final class Glossary extends com.google.protobuf.GeneratedMessageV3
      * Output only. When CreateGlossary was called.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp submit_time = 7;</code>
+     * <code>
+     * .google.protobuf.Timestamp submit_time = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public com.google.protobuf.Timestamp.Builder getSubmitTimeBuilder() {
 
@@ -3508,7 +3528,9 @@ public final class Glossary extends com.google.protobuf.GeneratedMessageV3
      * Output only. When CreateGlossary was called.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp submit_time = 7;</code>
+     * <code>
+     * .google.protobuf.Timestamp submit_time = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public com.google.protobuf.TimestampOrBuilder getSubmitTimeOrBuilder() {
       if (submitTimeBuilder_ != null) {
@@ -3526,7 +3548,9 @@ public final class Glossary extends com.google.protobuf.GeneratedMessageV3
      * Output only. When CreateGlossary was called.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp submit_time = 7;</code>
+     * <code>
+     * .google.protobuf.Timestamp submit_time = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.protobuf.Timestamp,
@@ -3558,7 +3582,8 @@ public final class Glossary extends com.google.protobuf.GeneratedMessageV3
      * Output only. When the glossary creation was finished.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp end_time = 8;</code>
+     * <code>.google.protobuf.Timestamp end_time = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public boolean hasEndTime() {
       return endTimeBuilder_ != null || endTime_ != null;
@@ -3570,7 +3595,8 @@ public final class Glossary extends com.google.protobuf.GeneratedMessageV3
      * Output only. When the glossary creation was finished.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp end_time = 8;</code>
+     * <code>.google.protobuf.Timestamp end_time = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public com.google.protobuf.Timestamp getEndTime() {
       if (endTimeBuilder_ == null) {
@@ -3586,7 +3612,8 @@ public final class Glossary extends com.google.protobuf.GeneratedMessageV3
      * Output only. When the glossary creation was finished.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp end_time = 8;</code>
+     * <code>.google.protobuf.Timestamp end_time = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public Builder setEndTime(com.google.protobuf.Timestamp value) {
       if (endTimeBuilder_ == null) {
@@ -3608,7 +3635,8 @@ public final class Glossary extends com.google.protobuf.GeneratedMessageV3
      * Output only. When the glossary creation was finished.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp end_time = 8;</code>
+     * <code>.google.protobuf.Timestamp end_time = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public Builder setEndTime(com.google.protobuf.Timestamp.Builder builderForValue) {
       if (endTimeBuilder_ == null) {
@@ -3627,7 +3655,8 @@ public final class Glossary extends com.google.protobuf.GeneratedMessageV3
      * Output only. When the glossary creation was finished.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp end_time = 8;</code>
+     * <code>.google.protobuf.Timestamp end_time = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public Builder mergeEndTime(com.google.protobuf.Timestamp value) {
       if (endTimeBuilder_ == null) {
@@ -3651,7 +3680,8 @@ public final class Glossary extends com.google.protobuf.GeneratedMessageV3
      * Output only. When the glossary creation was finished.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp end_time = 8;</code>
+     * <code>.google.protobuf.Timestamp end_time = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public Builder clearEndTime() {
       if (endTimeBuilder_ == null) {
@@ -3671,7 +3701,8 @@ public final class Glossary extends com.google.protobuf.GeneratedMessageV3
      * Output only. When the glossary creation was finished.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp end_time = 8;</code>
+     * <code>.google.protobuf.Timestamp end_time = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public com.google.protobuf.Timestamp.Builder getEndTimeBuilder() {
 
@@ -3685,7 +3716,8 @@ public final class Glossary extends com.google.protobuf.GeneratedMessageV3
      * Output only. When the glossary creation was finished.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp end_time = 8;</code>
+     * <code>.google.protobuf.Timestamp end_time = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public com.google.protobuf.TimestampOrBuilder getEndTimeOrBuilder() {
       if (endTimeBuilder_ != null) {
@@ -3701,7 +3733,8 @@ public final class Glossary extends com.google.protobuf.GeneratedMessageV3
      * Output only. When the glossary creation was finished.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp end_time = 8;</code>
+     * <code>.google.protobuf.Timestamp end_time = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.protobuf.Timestamp,

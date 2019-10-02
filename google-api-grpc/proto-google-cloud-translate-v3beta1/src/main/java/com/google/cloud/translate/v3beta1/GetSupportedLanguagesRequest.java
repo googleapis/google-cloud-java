@@ -113,14 +113,20 @@ public final class GetSupportedLanguagesRequest extends com.google.protobuf.Gene
    *
    *
    * <pre>
-   * Required. Location to make a regional or global call.
-   * Format: `projects/{project-id}/locations/{location-id}`.
-   * For global calls, use `projects/{project-id}/locations/global`.
+   * Required. Project or location to make a call. Must refer to a caller's
+   * project.
+   * Format: `projects/{project-id}` or
+   * `projects/{project-id}/locations/{location-id}`.
+   * For global calls, use `projects/{project-id}/locations/global` or
+   * `projects/{project-id}`.
+   * Non-global location is required for AutoML models.
    * Only models within the same region (have same location-id) can be used,
    * otherwise an INVALID_ARGUMENT (400) error is returned.
    * </pre>
    *
-   * <code>string parent = 3;</code>
+   * <code>
+   * string parent = 3 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    */
   public java.lang.String getParent() {
     java.lang.Object ref = parent_;
@@ -137,14 +143,20 @@ public final class GetSupportedLanguagesRequest extends com.google.protobuf.Gene
    *
    *
    * <pre>
-   * Required. Location to make a regional or global call.
-   * Format: `projects/{project-id}/locations/{location-id}`.
-   * For global calls, use `projects/{project-id}/locations/global`.
+   * Required. Project or location to make a call. Must refer to a caller's
+   * project.
+   * Format: `projects/{project-id}` or
+   * `projects/{project-id}/locations/{location-id}`.
+   * For global calls, use `projects/{project-id}/locations/global` or
+   * `projects/{project-id}`.
+   * Non-global location is required for AutoML models.
    * Only models within the same region (have same location-id) can be used,
    * otherwise an INVALID_ARGUMENT (400) error is returned.
    * </pre>
    *
-   * <code>string parent = 3;</code>
+   * <code>
+   * string parent = 3 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    */
   public com.google.protobuf.ByteString getParentBytes() {
     java.lang.Object ref = parent_;
@@ -169,7 +181,7 @@ public final class GetSupportedLanguagesRequest extends com.google.protobuf.Gene
    * in a response.
    * </pre>
    *
-   * <code>string display_language_code = 1;</code>
+   * <code>string display_language_code = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   public java.lang.String getDisplayLanguageCode() {
     java.lang.Object ref = displayLanguageCode_;
@@ -191,7 +203,7 @@ public final class GetSupportedLanguagesRequest extends com.google.protobuf.Gene
    * in a response.
    * </pre>
    *
-   * <code>string display_language_code = 1;</code>
+   * <code>string display_language_code = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   public com.google.protobuf.ByteString getDisplayLanguageCodeBytes() {
     java.lang.Object ref = displayLanguageCode_;
@@ -222,7 +234,7 @@ public final class GetSupportedLanguagesRequest extends com.google.protobuf.Gene
    * If missing, we get supported languages of Google general base (PBMT) model.
    * </pre>
    *
-   * <code>string model = 2;</code>
+   * <code>string model = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   public java.lang.String getModel() {
     java.lang.Object ref = model_;
@@ -250,7 +262,7 @@ public final class GetSupportedLanguagesRequest extends com.google.protobuf.Gene
    * If missing, we get supported languages of Google general base (PBMT) model.
    * </pre>
    *
-   * <code>string model = 2;</code>
+   * <code>string model = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   public com.google.protobuf.ByteString getModelBytes() {
     java.lang.Object ref = model_;
@@ -624,14 +636,20 @@ public final class GetSupportedLanguagesRequest extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * Required. Location to make a regional or global call.
-     * Format: `projects/{project-id}/locations/{location-id}`.
-     * For global calls, use `projects/{project-id}/locations/global`.
+     * Required. Project or location to make a call. Must refer to a caller's
+     * project.
+     * Format: `projects/{project-id}` or
+     * `projects/{project-id}/locations/{location-id}`.
+     * For global calls, use `projects/{project-id}/locations/global` or
+     * `projects/{project-id}`.
+     * Non-global location is required for AutoML models.
      * Only models within the same region (have same location-id) can be used,
      * otherwise an INVALID_ARGUMENT (400) error is returned.
      * </pre>
      *
-     * <code>string parent = 3;</code>
+     * <code>
+     * string parent = 3 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      */
     public java.lang.String getParent() {
       java.lang.Object ref = parent_;
@@ -648,14 +666,20 @@ public final class GetSupportedLanguagesRequest extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * Required. Location to make a regional or global call.
-     * Format: `projects/{project-id}/locations/{location-id}`.
-     * For global calls, use `projects/{project-id}/locations/global`.
+     * Required. Project or location to make a call. Must refer to a caller's
+     * project.
+     * Format: `projects/{project-id}` or
+     * `projects/{project-id}/locations/{location-id}`.
+     * For global calls, use `projects/{project-id}/locations/global` or
+     * `projects/{project-id}`.
+     * Non-global location is required for AutoML models.
      * Only models within the same region (have same location-id) can be used,
      * otherwise an INVALID_ARGUMENT (400) error is returned.
      * </pre>
      *
-     * <code>string parent = 3;</code>
+     * <code>
+     * string parent = 3 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      */
     public com.google.protobuf.ByteString getParentBytes() {
       java.lang.Object ref = parent_;
@@ -672,14 +696,20 @@ public final class GetSupportedLanguagesRequest extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * Required. Location to make a regional or global call.
-     * Format: `projects/{project-id}/locations/{location-id}`.
-     * For global calls, use `projects/{project-id}/locations/global`.
+     * Required. Project or location to make a call. Must refer to a caller's
+     * project.
+     * Format: `projects/{project-id}` or
+     * `projects/{project-id}/locations/{location-id}`.
+     * For global calls, use `projects/{project-id}/locations/global` or
+     * `projects/{project-id}`.
+     * Non-global location is required for AutoML models.
      * Only models within the same region (have same location-id) can be used,
      * otherwise an INVALID_ARGUMENT (400) error is returned.
      * </pre>
      *
-     * <code>string parent = 3;</code>
+     * <code>
+     * string parent = 3 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      */
     public Builder setParent(java.lang.String value) {
       if (value == null) {
@@ -694,14 +724,20 @@ public final class GetSupportedLanguagesRequest extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * Required. Location to make a regional or global call.
-     * Format: `projects/{project-id}/locations/{location-id}`.
-     * For global calls, use `projects/{project-id}/locations/global`.
+     * Required. Project or location to make a call. Must refer to a caller's
+     * project.
+     * Format: `projects/{project-id}` or
+     * `projects/{project-id}/locations/{location-id}`.
+     * For global calls, use `projects/{project-id}/locations/global` or
+     * `projects/{project-id}`.
+     * Non-global location is required for AutoML models.
      * Only models within the same region (have same location-id) can be used,
      * otherwise an INVALID_ARGUMENT (400) error is returned.
      * </pre>
      *
-     * <code>string parent = 3;</code>
+     * <code>
+     * string parent = 3 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      */
     public Builder clearParent() {
 
@@ -713,14 +749,20 @@ public final class GetSupportedLanguagesRequest extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * Required. Location to make a regional or global call.
-     * Format: `projects/{project-id}/locations/{location-id}`.
-     * For global calls, use `projects/{project-id}/locations/global`.
+     * Required. Project or location to make a call. Must refer to a caller's
+     * project.
+     * Format: `projects/{project-id}` or
+     * `projects/{project-id}/locations/{location-id}`.
+     * For global calls, use `projects/{project-id}/locations/global` or
+     * `projects/{project-id}`.
+     * Non-global location is required for AutoML models.
      * Only models within the same region (have same location-id) can be used,
      * otherwise an INVALID_ARGUMENT (400) error is returned.
      * </pre>
      *
-     * <code>string parent = 3;</code>
+     * <code>
+     * string parent = 3 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      */
     public Builder setParentBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -743,7 +785,7 @@ public final class GetSupportedLanguagesRequest extends com.google.protobuf.Gene
      * in a response.
      * </pre>
      *
-     * <code>string display_language_code = 1;</code>
+     * <code>string display_language_code = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public java.lang.String getDisplayLanguageCode() {
       java.lang.Object ref = displayLanguageCode_;
@@ -765,7 +807,7 @@ public final class GetSupportedLanguagesRequest extends com.google.protobuf.Gene
      * in a response.
      * </pre>
      *
-     * <code>string display_language_code = 1;</code>
+     * <code>string display_language_code = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public com.google.protobuf.ByteString getDisplayLanguageCodeBytes() {
       java.lang.Object ref = displayLanguageCode_;
@@ -787,7 +829,7 @@ public final class GetSupportedLanguagesRequest extends com.google.protobuf.Gene
      * in a response.
      * </pre>
      *
-     * <code>string display_language_code = 1;</code>
+     * <code>string display_language_code = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public Builder setDisplayLanguageCode(java.lang.String value) {
       if (value == null) {
@@ -807,7 +849,7 @@ public final class GetSupportedLanguagesRequest extends com.google.protobuf.Gene
      * in a response.
      * </pre>
      *
-     * <code>string display_language_code = 1;</code>
+     * <code>string display_language_code = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public Builder clearDisplayLanguageCode() {
 
@@ -824,7 +866,7 @@ public final class GetSupportedLanguagesRequest extends com.google.protobuf.Gene
      * in a response.
      * </pre>
      *
-     * <code>string display_language_code = 1;</code>
+     * <code>string display_language_code = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public Builder setDisplayLanguageCodeBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -853,7 +895,7 @@ public final class GetSupportedLanguagesRequest extends com.google.protobuf.Gene
      * If missing, we get supported languages of Google general base (PBMT) model.
      * </pre>
      *
-     * <code>string model = 2;</code>
+     * <code>string model = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public java.lang.String getModel() {
       java.lang.Object ref = model_;
@@ -881,7 +923,7 @@ public final class GetSupportedLanguagesRequest extends com.google.protobuf.Gene
      * If missing, we get supported languages of Google general base (PBMT) model.
      * </pre>
      *
-     * <code>string model = 2;</code>
+     * <code>string model = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public com.google.protobuf.ByteString getModelBytes() {
       java.lang.Object ref = model_;
@@ -909,7 +951,7 @@ public final class GetSupportedLanguagesRequest extends com.google.protobuf.Gene
      * If missing, we get supported languages of Google general base (PBMT) model.
      * </pre>
      *
-     * <code>string model = 2;</code>
+     * <code>string model = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public Builder setModel(java.lang.String value) {
       if (value == null) {
@@ -935,7 +977,7 @@ public final class GetSupportedLanguagesRequest extends com.google.protobuf.Gene
      * If missing, we get supported languages of Google general base (PBMT) model.
      * </pre>
      *
-     * <code>string model = 2;</code>
+     * <code>string model = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public Builder clearModel() {
 
@@ -958,7 +1000,7 @@ public final class GetSupportedLanguagesRequest extends com.google.protobuf.Gene
      * If missing, we get supported languages of Google general base (PBMT) model.
      * </pre>
      *
-     * <code>string model = 2;</code>
+     * <code>string model = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public Builder setModelBytes(com.google.protobuf.ByteString value) {
       if (value == null) {

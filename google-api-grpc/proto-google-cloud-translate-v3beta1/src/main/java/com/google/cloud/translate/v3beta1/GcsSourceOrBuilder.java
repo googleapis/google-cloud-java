@@ -15,7 +15,7 @@ public interface GcsSourceOrBuilder
    * Required. Source data URI. For example, `gs://my_bucket/my_object`.
    * </pre>
    *
-   * <code>string input_uri = 1;</code>
+   * <code>string input_uri = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   java.lang.String getInputUri();
   /**
@@ -25,7 +25,7 @@ public interface GcsSourceOrBuilder
    * Required. Source data URI. For example, `gs://my_bucket/my_object`.
    * </pre>
    *
-   * <code>string input_uri = 1;</code>
+   * <code>string input_uri = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   com.google.protobuf.ByteString getInputUriBytes();
 }

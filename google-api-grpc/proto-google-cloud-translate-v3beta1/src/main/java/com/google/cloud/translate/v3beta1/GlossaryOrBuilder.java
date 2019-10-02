@@ -16,7 +16,7 @@ public interface GlossaryOrBuilder
    * `projects/{project-id}/locations/{location-id}/glossaries/{glossary-id}`.
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   java.lang.String getName();
   /**
@@ -27,7 +27,7 @@ public interface GlossaryOrBuilder
    * `projects/{project-id}/locations/{location-id}/glossaries/{glossary-id}`.
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   com.google.protobuf.ByteString getNameBytes();
 
@@ -138,7 +138,7 @@ public interface GlossaryOrBuilder
    * Output only. The number of entries defined in the glossary.
    * </pre>
    *
-   * <code>int32 entry_count = 6;</code>
+   * <code>int32 entry_count = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    */
   int getEntryCount();
 
@@ -149,7 +149,8 @@ public interface GlossaryOrBuilder
    * Output only. When CreateGlossary was called.
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp submit_time = 7;</code>
+   * <code>.google.protobuf.Timestamp submit_time = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    */
   boolean hasSubmitTime();
   /**
@@ -159,7 +160,8 @@ public interface GlossaryOrBuilder
    * Output only. When CreateGlossary was called.
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp submit_time = 7;</code>
+   * <code>.google.protobuf.Timestamp submit_time = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    */
   com.google.protobuf.Timestamp getSubmitTime();
   /**
@@ -169,7 +171,8 @@ public interface GlossaryOrBuilder
    * Output only. When CreateGlossary was called.
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp submit_time = 7;</code>
+   * <code>.google.protobuf.Timestamp submit_time = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    */
   com.google.protobuf.TimestampOrBuilder getSubmitTimeOrBuilder();
 
@@ -180,7 +183,8 @@ public interface GlossaryOrBuilder
    * Output only. When the glossary creation was finished.
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp end_time = 8;</code>
+   * <code>.google.protobuf.Timestamp end_time = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    */
   boolean hasEndTime();
   /**
@@ -190,7 +194,8 @@ public interface GlossaryOrBuilder
    * Output only. When the glossary creation was finished.
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp end_time = 8;</code>
+   * <code>.google.protobuf.Timestamp end_time = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    */
   com.google.protobuf.Timestamp getEndTime();
   /**
@@ -200,7 +205,8 @@ public interface GlossaryOrBuilder
    * Output only. When the glossary creation was finished.
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp end_time = 8;</code>
+   * <code>.google.protobuf.Timestamp end_time = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    */
   com.google.protobuf.TimestampOrBuilder getEndTimeOrBuilder();
 

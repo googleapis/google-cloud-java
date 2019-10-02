@@ -15,7 +15,9 @@ public interface ListGlossariesRequestOrBuilder
    * Required. The name of the project from which to list all of the glossaries.
    * </pre>
    *
-   * <code>string parent = 1;</code>
+   * <code>
+   * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    */
   java.lang.String getParent();
   /**
@@ -25,7 +27,9 @@ public interface ListGlossariesRequestOrBuilder
    * Required. The name of the project from which to list all of the glossaries.
    * </pre>
    *
-   * <code>string parent = 1;</code>
+   * <code>
+   * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    */
   com.google.protobuf.ByteString getParentBytes();
 
@@ -37,7 +41,7 @@ public interface ListGlossariesRequestOrBuilder
    * requested. If unspecified, the server picks an appropriate default.
    * </pre>
    *
-   * <code>int32 page_size = 2;</code>
+   * <code>int32 page_size = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   int getPageSize();
 
@@ -51,7 +55,7 @@ public interface ListGlossariesRequestOrBuilder
    * The first page is returned if `page_token`is empty or missing.
    * </pre>
    *
-   * <code>string page_token = 3;</code>
+   * <code>string page_token = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   java.lang.String getPageToken();
   /**
@@ -64,7 +68,7 @@ public interface ListGlossariesRequestOrBuilder
    * The first page is returned if `page_token`is empty or missing.
    * </pre>
    *
-   * <code>string page_token = 3;</code>
+   * <code>string page_token = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   com.google.protobuf.ByteString getPageTokenBytes();
 
@@ -77,7 +81,7 @@ public interface ListGlossariesRequestOrBuilder
    * If missing, no filtering is performed.
    * </pre>
    *
-   * <code>string filter = 4;</code>
+   * <code>string filter = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   java.lang.String getFilter();
   /**
@@ -89,7 +93,7 @@ public interface ListGlossariesRequestOrBuilder
    * If missing, no filtering is performed.
    * </pre>
    *
-   * <code>string filter = 4;</code>
+   * <code>string filter = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   com.google.protobuf.ByteString getFilterBytes();
 }

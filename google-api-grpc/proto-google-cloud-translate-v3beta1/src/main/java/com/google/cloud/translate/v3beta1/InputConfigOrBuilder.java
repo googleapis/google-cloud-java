@@ -18,7 +18,7 @@ public interface InputConfigOrBuilder
    * For `.txt`, this field must be "text/plain" or empty.
    * </pre>
    *
-   * <code>string mime_type = 1;</code>
+   * <code>string mime_type = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   java.lang.String getMimeType();
   /**
@@ -31,7 +31,7 @@ public interface InputConfigOrBuilder
    * For `.txt`, this field must be "text/plain" or empty.
    * </pre>
    *
-   * <code>string mime_type = 1;</code>
+   * <code>string mime_type = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   com.google.protobuf.ByteString getMimeTypeBytes();
 
