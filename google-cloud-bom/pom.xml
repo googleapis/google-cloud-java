@@ -231,18 +231,10 @@
       </dependency>
       <dependency>
         <groupId>com.google.cloud</groupId>
-        <artifactId>google-cloud-automl</artifactId>
-        <version>0.111.0-beta</version>
-      </dependency>
-      <dependency>
-        <groupId>com.google.api.grpc</groupId>
-        <artifactId>proto-google-cloud-automl-v1beta1</artifactId>
-        <version>0.76.0</version>
-      </dependency>
-      <dependency>
-        <groupId>com.google.api.grpc</groupId>
-        <artifactId>grpc-google-cloud-automl-v1beta1</artifactId>
-        <version>0.76.0</version>
+        <artifactId>google-cloud-automl-bom</artifactId>
+        <version>0.113.0</version>
+        <type>pom</type>
+        <scope>import</scope>
       </dependency>
       <dependency>
         <groupId>com.google.cloud</groupId>
