@@ -23,8 +23,10 @@ import com.google.cloud.bigquery.JobInfo.SchemaUpdateOption;
 import com.google.cloud.bigquery.JobInfo.WriteDisposition;
 import com.google.cloud.bigquery.TimePartitioning.Type;
 import com.google.common.collect.ImmutableList;
+import com.google.common.collect.ImmutableMap;
 import java.nio.charset.StandardCharsets;
 import java.util.List;
+import java.util.Map;
 import org.junit.Test;
 
 public class LoadJobConfigurationTest {
@@ -58,6 +60,8 @@ public class LoadJobConfigurationTest {
   private static final TimePartitioning TIME_PARTITIONING = TimePartitioning.of(Type.DAY);
   private static final Clustering CLUSTERING =
       Clustering.newBuilder().setFields(ImmutableList.of("Foo", "Bar")).build();
+  private static final Map<String, String> LABELS =
+      ImmutableMap.of("test-job-name", "test-load-job");
   private static final LoadJobConfiguration LOAD_CONFIGURATION_CSV =
       LoadJobConfiguration.newBuilder(TABLE_ID, SOURCE_URIS)
           .setCreateDisposition(CREATE_DISPOSITION)
@@ -71,6 +75,7 @@ public class LoadJobConfigurationTest {
           .setDestinationEncryptionConfiguration(JOB_ENCRYPTION_CONFIGURATION)
           .setTimePartitioning(TIME_PARTITIONING)
           .setClustering(CLUSTERING)
+          .setLabels(LABELS)
           .build();
   private static final DatastoreBackupOptions BACKUP_OPTIONS =
       DatastoreBackupOptions.newBuilder()
@@ -86,6 +91,7 @@ public class LoadJobConfigurationTest {
           .setSchema(TABLE_SCHEMA)
           .setSchemaUpdateOptions(SCHEMA_UPDATE_OPTIONS)
           .setAutodetect(AUTODETECT)
+          .setLabels(LABELS)
           .build();
   private static final LoadJobConfiguration LOAD_CONFIGURATION_AVRO =
       LoadJobConfiguration.newBuilder(TABLE_ID, SOURCE_URIS)
@@ -101,6 +107,7 @@ public class LoadJobConfigurationTest {
           .setTimePartitioning(TIME_PARTITIONING)
           .setClustering(CLUSTERING)
           .setUseAvroLogicalTypes(USERAVROLOGICALTYPES)
+          .setLabels(LABELS)
           .build();
 
   @Test
@@ -216,5 +223,6 @@ public class LoadJobConfigurationTest {
     assertEquals(expected.getTimePartitioning(), value.getTimePartitioning());
     assertEquals(expected.getClustering(), value.getClustering());
     assertEquals(expected.getUseAvroLogicalTypes(), value.getUseAvroLogicalTypes());
+    assertEquals(expected.getLabels(), value.getLabels());
   }
 }

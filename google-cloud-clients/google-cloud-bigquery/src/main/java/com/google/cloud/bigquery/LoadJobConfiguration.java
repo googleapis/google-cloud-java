@@ -24,6 +24,7 @@ import com.google.common.base.Strings;
 import com.google.common.collect.ImmutableList;
 import com.google.common.primitives.Ints;
 import java.util.List;
+import java.util.Map;
 import java.util.Objects;
 
 /**
@@ -50,6 +51,7 @@ public final class LoadJobConfiguration extends JobConfiguration implements Load
   private final TimePartitioning timePartitioning;
   private final Clustering clustering;
   private final Boolean useAvroLogicalTypes;
+  private final Map<String, String> labels;
 
   public static final class Builder extends JobConfiguration.Builder<LoadJobConfiguration, Builder>
       implements LoadConfiguration.Builder {
@@ -70,6 +72,7 @@ public final class LoadJobConfiguration extends JobConfiguration implements Load
     private TimePartitioning timePartitioning;
     private Clustering clustering;
     private Boolean useAvroLogicalTypes;
+    private Map<String, String> labels;
 
     private Builder() {
       super(Type.LOAD);
@@ -93,6 +96,7 @@ public final class LoadJobConfiguration extends JobConfiguration implements Load
       this.timePartitioning = loadConfiguration.timePartitioning;
       this.clustering = loadConfiguration.clustering;
       this.useAvroLogicalTypes = loadConfiguration.useAvroLogicalTypes;
+      this.labels = loadConfiguration.labels;
     }
 
     private Builder(com.google.api.services.bigquery.model.JobConfiguration configurationPb) {
@@ -165,6 +169,9 @@ public final class LoadJobConfiguration extends JobConfiguration implements Load
             new EncryptionConfiguration.Builder(
                     loadConfigurationPb.getDestinationEncryptionConfiguration())
                 .build();
+      }
+      if (configurationPb.getLabels() != null) {
+        this.labels = configurationPb.getLabels();
       }
     }
 
@@ -263,6 +270,20 @@ public final class LoadJobConfiguration extends JobConfiguration implements Load
       return this;
     }
 
+    /**
+     * The labels associated with this job. You can use these to organize and group your jobs. Label
+     * keys and values can be no longer than 63 characters, can only contain lowercase letters,
+     * numeric characters, underscores and dashes. International characters are allowed. Label
+     * values are optional. Label keys must start with a letter and each label in the list must have
+     * a different key.
+     *
+     * @param labels labels or {@code null} for none
+     */
+    public Builder setLabels(Map<String, String> labels) {
+      this.labels = labels;
+      return this;
+    }
+
     @Override
     public LoadJobConfiguration build() {
       return new LoadJobConfiguration(this);
@@ -286,6 +307,7 @@ public final class LoadJobConfiguration extends JobConfiguration implements Load
     this.timePartitioning = builder.timePartitioning;
     this.clustering = builder.clustering;
     this.useAvroLogicalTypes = builder.useAvroLogicalTypes;
+    this.labels = builder.labels;
   }
 
   @Override
@@ -378,6 +400,11 @@ public final class LoadJobConfiguration extends JobConfiguration implements Load
     return schemaUpdateOptions;
   }
 
+  /** Returns the labels associated with this job */
+  public Map<String, String> getLabels() {
+    return labels;
+  }
+
   @Override
   public Builder toBuilder() {
     return new Builder(this);
@@ -400,7 +427,8 @@ public final class LoadJobConfiguration extends JobConfiguration implements Load
         .add("autodetect", autodetect)
         .add("timePartitioning", timePartitioning)
         .add("clustering", clustering)
-        .add("useAvroLogicalTypes", useAvroLogicalTypes);
+        .add("useAvroLogicalTypes", useAvroLogicalTypes)
+        .add("labels", labels);
   }
 
   @Override
@@ -425,6 +453,8 @@ public final class LoadJobConfiguration extends JobConfiguration implements Load
   @Override
   com.google.api.services.bigquery.model.JobConfiguration toPb() {
     JobConfigurationLoad loadConfigurationPb = new JobConfigurationLoad();
+    com.google.api.services.bigquery.model.JobConfiguration jobConfiguration =
+        new com.google.api.services.bigquery.model.JobConfiguration();
     loadConfigurationPb.setDestinationTable(destinationTable.toPb());
     if (createDisposition != null) {
       loadConfigurationPb.setCreateDisposition(createDisposition.toString());
@@ -482,8 +512,11 @@ public final class LoadJobConfiguration extends JobConfiguration implements Load
       loadConfigurationPb.setClustering(clustering.toPb());
     }
     loadConfigurationPb.setUseAvroLogicalTypes(useAvroLogicalTypes);
-    return new com.google.api.services.bigquery.model.JobConfiguration()
-        .setLoad(loadConfigurationPb);
+    if (labels != null) {
+      jobConfiguration.setLabels(labels);
+    }
+    jobConfiguration.setLoad(loadConfigurationPb);
+    return jobConfiguration;
   }
 
   /**
