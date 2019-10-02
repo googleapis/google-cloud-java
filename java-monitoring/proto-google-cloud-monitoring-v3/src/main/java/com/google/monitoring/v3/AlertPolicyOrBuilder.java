@@ -329,6 +329,40 @@ public interface AlertPolicyOrBuilder
    *
    *
    * <pre>
+   * Read-only description of how the alert policy is invalid. OK if the alert
+   * policy is valid. If not OK, the alert policy will not generate incidents.
+   * </pre>
+   *
+   * <code>.google.rpc.Status validity = 18;</code>
+   */
+  boolean hasValidity();
+  /**
+   *
+   *
+   * <pre>
+   * Read-only description of how the alert policy is invalid. OK if the alert
+   * policy is valid. If not OK, the alert policy will not generate incidents.
+   * </pre>
+   *
+   * <code>.google.rpc.Status validity = 18;</code>
+   */
+  com.google.rpc.Status getValidity();
+  /**
+   *
+   *
+   * <pre>
+   * Read-only description of how the alert policy is invalid. OK if the alert
+   * policy is valid. If not OK, the alert policy will not generate incidents.
+   * </pre>
+   *
+   * <code>.google.rpc.Status validity = 18;</code>
+   */
+  com.google.rpc.StatusOrBuilder getValidityOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * Identifies the notification channels to which notifications should be sent
    * when incidents are opened or closed or when new violations occur on
    * an already opened incident. Each element of this array corresponds to

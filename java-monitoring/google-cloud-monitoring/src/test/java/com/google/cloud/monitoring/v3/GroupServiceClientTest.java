@@ -16,6 +16,7 @@
 package com.google.cloud.monitoring.v3;
 
 import static com.google.cloud.monitoring.v3.GroupServiceClient.ListGroupMembersPagedResponse;
+import static com.google.cloud.monitoring.v3.GroupServiceClient.ListGroupsPagedResponse;
 
 import com.google.api.MonitoredResource;
 import com.google.api.gax.core.NoCredentialsProvider;
@@ -33,6 +34,8 @@ import com.google.monitoring.v3.Group;
 import com.google.monitoring.v3.GroupName;
 import com.google.monitoring.v3.ListGroupMembersRequest;
 import com.google.monitoring.v3.ListGroupMembersResponse;
+import com.google.monitoring.v3.ListGroupsRequest;
+import com.google.monitoring.v3.ListGroupsResponse;
 import com.google.monitoring.v3.ProjectName;
 import com.google.monitoring.v3.UpdateGroupRequest;
 import com.google.protobuf.AbstractMessage;
@@ -99,6 +102,51 @@ public class GroupServiceClientTest {
   @After
   public void tearDown() throws Exception {
     client.close();
+  }
+
+  @Test
+  @SuppressWarnings("all")
+  public void listGroupsTest() {
+    String nextPageToken = "";
+    Group groupElement = Group.newBuilder().build();
+    List<Group> group = Arrays.asList(groupElement);
+    ListGroupsResponse expectedResponse =
+        ListGroupsResponse.newBuilder().setNextPageToken(nextPageToken).addAllGroup(group).build();
+    mockGroupService.addResponse(expectedResponse);
+
+    ProjectName name = ProjectName.of("[PROJECT]");
+
+    ListGroupsPagedResponse pagedListResponse = client.listGroups(name);
+
+    List<Group> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getGroupList().get(0), resources.get(0));
+
+    List<AbstractMessage> actualRequests = mockGroupService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ListGroupsRequest actualRequest = (ListGroupsRequest) actualRequests.get(0);
+
+    Assert.assertEquals(name, ProjectName.parse(actualRequest.getName()));
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  @SuppressWarnings("all")
+  public void listGroupsExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
+    mockGroupService.addException(exception);
+
+    try {
+      ProjectName name = ProjectName.of("[PROJECT]");
+
+      client.listGroups(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception
+    }
   }
 
   @Test

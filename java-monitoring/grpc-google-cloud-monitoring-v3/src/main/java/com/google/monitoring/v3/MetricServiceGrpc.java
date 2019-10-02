@@ -520,8 +520,7 @@ public final class MetricServiceGrpc {
      *
      *
      * <pre>
-     * Lists monitored resource descriptors that match a filter. This method does
-     * not require a Stackdriver account.
+     * Lists monitored resource descriptors that match a filter. This method does not require a Stackdriver account.
      * </pre>
      */
     public void listMonitoredResourceDescriptors(
@@ -537,8 +536,7 @@ public final class MetricServiceGrpc {
      *
      *
      * <pre>
-     * Gets a single monitored resource descriptor. This method does not require a
-     * Stackdriver account.
+     * Gets a single monitored resource descriptor. This method does not require a Stackdriver account.
      * </pre>
      */
     public void getMonitoredResourceDescriptor(
@@ -552,8 +550,7 @@ public final class MetricServiceGrpc {
      *
      *
      * <pre>
-     * Lists metric descriptors that match a filter. This method does not require
-     * a Stackdriver account.
+     * Lists metric descriptors that match a filter. This method does not require a Stackdriver account.
      * </pre>
      */
     public void listMetricDescriptors(
@@ -567,8 +564,7 @@ public final class MetricServiceGrpc {
      *
      *
      * <pre>
-     * Gets a single metric descriptor. This method does not require a Stackdriver
-     * account.
+     * Gets a single metric descriptor. This method does not require a Stackdriver account.
      * </pre>
      */
     public void getMetricDescriptor(
@@ -610,8 +606,7 @@ public final class MetricServiceGrpc {
      *
      *
      * <pre>
-     * Lists time series that match a filter. This method does not require a
-     * Stackdriver account.
+     * Lists time series that match a filter. This method does not require a Stackdriver account.
      * </pre>
      */
     public void listTimeSeries(
@@ -722,8 +717,7 @@ public final class MetricServiceGrpc {
      *
      *
      * <pre>
-     * Lists monitored resource descriptors that match a filter. This method does
-     * not require a Stackdriver account.
+     * Lists monitored resource descriptors that match a filter. This method does not require a Stackdriver account.
      * </pre>
      */
     public void listMonitoredResourceDescriptors(
@@ -741,8 +735,7 @@ public final class MetricServiceGrpc {
      *
      *
      * <pre>
-     * Gets a single monitored resource descriptor. This method does not require a
-     * Stackdriver account.
+     * Gets a single monitored resource descriptor. This method does not require a Stackdriver account.
      * </pre>
      */
     public void getMonitoredResourceDescriptor(
@@ -758,8 +751,7 @@ public final class MetricServiceGrpc {
      *
      *
      * <pre>
-     * Lists metric descriptors that match a filter. This method does not require
-     * a Stackdriver account.
+     * Lists metric descriptors that match a filter. This method does not require a Stackdriver account.
      * </pre>
      */
     public void listMetricDescriptors(
@@ -776,8 +768,7 @@ public final class MetricServiceGrpc {
      *
      *
      * <pre>
-     * Gets a single metric descriptor. This method does not require a Stackdriver
-     * account.
+     * Gets a single metric descriptor. This method does not require a Stackdriver account.
      * </pre>
      */
     public void getMetricDescriptor(
@@ -828,8 +819,7 @@ public final class MetricServiceGrpc {
      *
      *
      * <pre>
-     * Lists time series that match a filter. This method does not require a
-     * Stackdriver account.
+     * Lists time series that match a filter. This method does not require a Stackdriver account.
      * </pre>
      */
     public void listTimeSeries(
@@ -890,8 +880,7 @@ public final class MetricServiceGrpc {
      *
      *
      * <pre>
-     * Lists monitored resource descriptors that match a filter. This method does
-     * not require a Stackdriver account.
+     * Lists monitored resource descriptors that match a filter. This method does not require a Stackdriver account.
      * </pre>
      */
     public com.google.monitoring.v3.ListMonitoredResourceDescriptorsResponse
@@ -908,8 +897,7 @@ public final class MetricServiceGrpc {
      *
      *
      * <pre>
-     * Gets a single monitored resource descriptor. This method does not require a
-     * Stackdriver account.
+     * Gets a single monitored resource descriptor. This method does not require a Stackdriver account.
      * </pre>
      */
     public com.google.api.MonitoredResourceDescriptor getMonitoredResourceDescriptor(
@@ -922,8 +910,7 @@ public final class MetricServiceGrpc {
      *
      *
      * <pre>
-     * Lists metric descriptors that match a filter. This method does not require
-     * a Stackdriver account.
+     * Lists metric descriptors that match a filter. This method does not require a Stackdriver account.
      * </pre>
      */
     public com.google.monitoring.v3.ListMetricDescriptorsResponse listMetricDescriptors(
@@ -936,8 +923,7 @@ public final class MetricServiceGrpc {
      *
      *
      * <pre>
-     * Gets a single metric descriptor. This method does not require a Stackdriver
-     * account.
+     * Gets a single metric descriptor. This method does not require a Stackdriver account.
      * </pre>
      */
     public com.google.api.MetricDescriptor getMetricDescriptor(
@@ -979,8 +965,7 @@ public final class MetricServiceGrpc {
      *
      *
      * <pre>
-     * Lists time series that match a filter. This method does not require a
-     * Stackdriver account.
+     * Lists time series that match a filter. This method does not require a Stackdriver account.
      * </pre>
      */
     public com.google.monitoring.v3.ListTimeSeriesResponse listTimeSeries(
@@ -1034,8 +1019,7 @@ public final class MetricServiceGrpc {
      *
      *
      * <pre>
-     * Lists monitored resource descriptors that match a filter. This method does
-     * not require a Stackdriver account.
+     * Lists monitored resource descriptors that match a filter. This method does not require a Stackdriver account.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<
@@ -1051,8 +1035,7 @@ public final class MetricServiceGrpc {
      *
      *
      * <pre>
-     * Gets a single monitored resource descriptor. This method does not require a
-     * Stackdriver account.
+     * Gets a single monitored resource descriptor. This method does not require a Stackdriver account.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<
@@ -1068,8 +1051,7 @@ public final class MetricServiceGrpc {
      *
      *
      * <pre>
-     * Lists metric descriptors that match a filter. This method does not require
-     * a Stackdriver account.
+     * Lists metric descriptors that match a filter. This method does not require a Stackdriver account.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<
@@ -1083,8 +1065,7 @@ public final class MetricServiceGrpc {
      *
      *
      * <pre>
-     * Gets a single metric descriptor. This method does not require a Stackdriver
-     * account.
+     * Gets a single metric descriptor. This method does not require a Stackdriver account.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.api.MetricDescriptor>
@@ -1126,8 +1107,7 @@ public final class MetricServiceGrpc {
      *
      *
      * <pre>
-     * Lists time series that match a filter. This method does not require a
-     * Stackdriver account.
+     * Lists time series that match a filter. This method does not require a Stackdriver account.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<
