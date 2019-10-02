@@ -21,12 +21,14 @@ sourceCompatibility = '1.8'
 def grpcVersion = '1.21.1'
 def protobufVersion = '3.8.0'
 def protocVersion = '3.5.1-1'
+def spannerVersion = '1.35.0'
 
 dependencies {
     compile "io.grpc:grpc-api:${grpcVersion}"
     compile "io.grpc:grpc-netty-shaded:${grpcVersion}"
     compile "com.google.protobuf:protobuf-java:${protobufVersion}"
     compile "com.google.protobuf:protobuf-java-util:${protobufVersion}"
+    compile "com.google.cloud:google-cloud-spanner:${spannerVersion}"
 
     testCompile "com.google.auth:google-auth-library-credentials:0.13.0"
     testCompile "com.google.cloud:google-cloud-spanner:1.33.0"

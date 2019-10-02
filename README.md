@@ -105,7 +105,7 @@ Run Spanner load test:
 Run Spanner benchmark tests:
 
 ```sh
-./gradlew spannerBenchmark --args="--gcp=true --thread=3 --rpc=100"
+./gradlew spannerBenchmark --args="--gcp=true --thread=3 --rpc=100 --spanner_client=false"
 ```
 
 ## Code Format

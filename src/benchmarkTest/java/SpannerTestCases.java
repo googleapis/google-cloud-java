@@ -58,8 +58,8 @@ import java.util.concurrent.TimeUnit;
 import java.util.logging.Logger;
 
 /**
- * Record the performance of both GcpManagedChannel and ManagedChannel when doing SpannerGrpc
- * operations.
+ * Benchmark for SpannerGrpc operations with two different channels: GrpcGcpManagedChannel(uss
+ * channel pool) and ManagedChannel.
  */
 final class SpannerTestCases {
 
@@ -75,7 +75,17 @@ final class SpannerTestCases {
   private static final int MAX_SIZE_PER_COLUMN = 2621440;
   private static final int NUM_WARMUP = 10;
 
-  private SpannerTestCases() {}
+  private final boolean isGrpcGcp;
+  private final int payload;
+  private final int numOfRpcs;
+  private final int numOfThreads;
+
+  SpannerTestCases(boolean isGrpcGcp, int payload, int numOfRpcs, int numOfThreads) {
+    this.isGrpcGcp = isGrpcGcp;
+    this.payload = payload;
+    this.numOfRpcs = numOfRpcs;
+    this.numOfThreads = numOfThreads;
+  }
 
   private static GoogleCredentials getCreds() {
     GoogleCredentials creds;
@@ -89,7 +99,7 @@ final class SpannerTestCases {
     return creds;
   }
 
-  private static ManagedChannel getChannel(boolean isGrpcGcp) {
+  private ManagedChannel getChannel() {
     ManagedChannelBuilder builder = ManagedChannelBuilder.forAddress(SPANNER_TARGET, 443);
     if (isGrpcGcp) {
       File configFile =
@@ -111,11 +121,11 @@ final class SpannerTestCases {
     return SpannerGrpc.newStub(channel).withCallCredentials(MoreCallCredentials.from(creds));
   }
 
-  static void prepareTestData(boolean isGrpcGcp, int payload) throws InterruptedException {
-    ManagedChannel channel = getChannel(isGrpcGcp);
+  void prepareTestData() throws InterruptedException {
+    ManagedChannel channel = getChannel();
     SpannerBlockingStub stub = getBlockingStub(channel);
 
-    // Because of max data size, we need to seperate into different rows.
+    // Because of max data size, we need to separate into different rows.
     int columnBytes = Integer.min(payload, MAX_SIZE_PER_COLUMN);
     int rows = (payload - 1) / columnBytes + 1;
     char[] charArray = new char[columnBytes];
@@ -184,10 +194,9 @@ final class SpannerTestCases {
     channel.shutdown().awaitTermination(5, TimeUnit.SECONDS);
   }
 
-  static void testListSessions(boolean isGrpcGcp, int numOfRpcs, int numOfThreads)
-      throws InterruptedException {
+  void testListSessions() throws InterruptedException {
     System.out.println("\nTestListSessions");
-    ManagedChannel channel = getChannel(isGrpcGcp);
+    ManagedChannel channel = getChannel();
     SpannerBlockingStub stub = getBlockingStub(channel);
     ListSessionsRequest request = ListSessionsRequest.newBuilder().setDatabase(DATABASE).build();
 
@@ -198,15 +207,14 @@ final class SpannerTestCases {
     BlockingCall<ListSessionsRequest, ListSessionsResponse> blockingCall =
         (ListSessionsRequest req) -> stub.listSessions(req);
     Func func = (List<Long> result) -> doBlockingCalls(result, numOfRpcs, request, blockingCall);
-    runTest(channel, func, numOfRpcs, numOfThreads);
+    runTest(channel, func);
 
     channel.shutdown().awaitTermination(5, TimeUnit.SECONDS);
   }
 
-  static void testListSessionsAsync(boolean isGrpcGcp, int numOfRpcs, int numOfThreads)
-      throws InterruptedException {
+  void testListSessionsAsync() throws InterruptedException {
     System.out.println("\nTestListSessionsAsync");
-    ManagedChannel channel = getChannel(isGrpcGcp);
+    ManagedChannel channel = getChannel();
     SpannerStub stub = getStub(channel);
     ListSessionsRequest request = ListSessionsRequest.newBuilder().setDatabase(DATABASE).build();
 
@@ -219,15 +227,14 @@ final class SpannerTestCases {
         (ListSessionsRequest req, AsyncResponseObserver<ListSessionsResponse> resp) ->
             stub.listSessions(req, resp);
     Func func = (List<Long> result) -> doAsyncCalls(result, numOfRpcs, request, asyncCall);
-    runTest(channel, func, numOfRpcs, numOfThreads);
+    runTest(channel, func);
 
     channel.shutdown().awaitTermination(5, TimeUnit.SECONDS);
   }
 
-  static void testExecuteSql(boolean isGrpcGcp, int numOfRpcs, int numOfThreads)
-      throws InterruptedException {
+  void testExecuteSql() throws InterruptedException {
     System.out.println("\nTestExecuteSql");
-    ManagedChannel channel = getChannel(isGrpcGcp);
+    ManagedChannel channel = getChannel();
     SpannerBlockingStub stub = getBlockingStub(channel);
     Session session =
         stub.createSession(CreateSessionRequest.newBuilder().setDatabase(DATABASE).build());
@@ -240,16 +247,15 @@ final class SpannerTestCases {
 
     BlockingCall<ExecuteSqlRequest, ResultSet> blockingCall =
         (ExecuteSqlRequest req) -> stub.executeSql(req);
-    doTestBlocking(channel, request, numOfRpcs, numOfThreads, blockingCall);
+    doTestBlocking(channel, request, blockingCall);
 
     stub.deleteSession(DeleteSessionRequest.newBuilder().setName(session.getName()).build());
     channel.shutdown().awaitTermination(5, TimeUnit.SECONDS);
   }
 
-  static void testExecuteSqlAsync(boolean isGrpcGcp, int numOfRpcs, int numOfThreads)
-      throws InterruptedException {
+  void testExecuteSqlAsync() throws InterruptedException {
     System.out.println("\nTestExecuteSqlAsync");
-    ManagedChannel channel = getChannel(isGrpcGcp);
+    ManagedChannel channel = getChannel();
     SpannerStub stub = getStub(channel);
     AsyncResponseObserver<Session> sessionObs = new AsyncResponseObserver<>();
     stub.createSession(CreateSessionRequest.newBuilder().setDatabase(DATABASE).build(), sessionObs);
@@ -263,15 +269,14 @@ final class SpannerTestCases {
     AsyncCall<ExecuteSqlRequest, ResultSet> asyncCall =
         (ExecuteSqlRequest req, AsyncResponseObserver<ResultSet> resp) ->
             stub.executeSql(req, resp);
-    doTestAsync(channel, request, numOfRpcs, numOfThreads, asyncCall);
+    doTestAsync(channel, request, asyncCall);
 
     deleteAndCloseAsync(stub, channel, sessionObs.get().getName());
   }
 
-  static void testPartitionQuery(boolean isGrpcGcp, int numOfRpcs, int numOfThreads)
-      throws InterruptedException {
+  void testPartitionQuery() throws InterruptedException {
     System.out.println("\nTestPartitionQuery");
-    ManagedChannel channel = getChannel(isGrpcGcp);
+    ManagedChannel channel = getChannel();
     SpannerBlockingStub stub = getBlockingStub(channel);
     Session session =
         stub.createSession(CreateSessionRequest.newBuilder().setDatabase(DATABASE).build());
@@ -290,16 +295,15 @@ final class SpannerTestCases {
 
     BlockingCall<PartitionQueryRequest, PartitionResponse> blockingCall =
         (PartitionQueryRequest req) -> stub.partitionQuery(req);
-    doTestBlocking(channel, request, numOfRpcs, numOfThreads, blockingCall);
+    doTestBlocking(channel, request, blockingCall);
 
     stub.deleteSession(DeleteSessionRequest.newBuilder().setName(session.getName()).build());
     channel.shutdown().awaitTermination(5, TimeUnit.SECONDS);
   }
 
-  static void testPartitionQueryAsync(boolean isGrpcGcp, int numOfRpcs, int numOfThreads)
-      throws InterruptedException {
+  void testPartitionQueryAsync() throws InterruptedException {
     System.out.println("\nTestPartitionQueryAsync");
-    ManagedChannel channel = getChannel(isGrpcGcp);
+    ManagedChannel channel = getChannel();
     SpannerStub stub = getStub(channel);
     AsyncResponseObserver<Session> sessionObs = new AsyncResponseObserver<>();
     stub.createSession(CreateSessionRequest.newBuilder().setDatabase(DATABASE).build(), sessionObs);
@@ -319,15 +323,14 @@ final class SpannerTestCases {
     AsyncCall<PartitionQueryRequest, PartitionResponse> asyncCall =
         (PartitionQueryRequest req, AsyncResponseObserver<PartitionResponse> resp) ->
             stub.partitionQuery(req, resp);
-    doTestAsync(channel, request, numOfRpcs, numOfThreads, asyncCall);
+    doTestAsync(channel, request, asyncCall);
 
     deleteAndCloseAsync(stub, channel, sessionObs.get().getName());
   }
 
-  static void testRead(boolean isGrpcGcp, int numOfRpcs, int numOfThreads)
-      throws InterruptedException {
+  void testRead() throws InterruptedException {
     System.out.println("\nTestRead");
-    ManagedChannel channel = getChannel(isGrpcGcp);
+    ManagedChannel channel = getChannel();
     SpannerBlockingStub stub = getBlockingStub(channel);
     Session session =
         stub.createSession(CreateSessionRequest.newBuilder().setDatabase(DATABASE).build());
@@ -343,16 +346,15 @@ final class SpannerTestCases {
             .build();
 
     BlockingCall<ReadRequest, ResultSet> blockingCall = (ReadRequest req) -> stub.read(req);
-    doTestBlocking(channel, request, numOfRpcs, numOfThreads, blockingCall);
+    doTestBlocking(channel, request, blockingCall);
 
     stub.deleteSession(DeleteSessionRequest.newBuilder().setName(session.getName()).build());
     channel.shutdown().awaitTermination(5, TimeUnit.SECONDS);
   }
 
-  static void testReadAsync(boolean isGrpcGcp, int numOfRpcs, int numOfThreads)
-      throws InterruptedException {
+  void testReadAsync() throws InterruptedException {
     System.out.println("\nTestReadAsync");
-    ManagedChannel channel = getChannel(isGrpcGcp);
+    ManagedChannel channel = getChannel();
     SpannerStub stub = getStub(channel);
     AsyncResponseObserver<Session> sessionObs = new AsyncResponseObserver<>();
     stub.createSession(CreateSessionRequest.newBuilder().setDatabase(DATABASE).build(), sessionObs);
@@ -369,15 +371,14 @@ final class SpannerTestCases {
 
     AsyncCall<ReadRequest, ResultSet> asyncCall =
         (ReadRequest req, AsyncResponseObserver<ResultSet> resp) -> stub.read(req, resp);
-    doTestAsync(channel, request, numOfRpcs, numOfThreads, asyncCall);
+    doTestAsync(channel, request, asyncCall);
 
     deleteAndCloseAsync(stub, channel, sessionObs.get().getName());
   }
 
-  static void testMaxConcurrentStream(boolean isGrpcGcp, int numOfRpcs)
-      throws InterruptedException {
+  void testMaxConcurrentStream() throws InterruptedException {
     System.out.println("\nTestMaxConcurrentStream");
-    ManagedChannel channel = getChannel(isGrpcGcp);
+    ManagedChannel channel = getChannel();
     SpannerBlockingStub stub = getBlockingStub(channel);
     Session session =
         stub.createSession(CreateSessionRequest.newBuilder().setDatabase(DATABASE).build());
@@ -403,18 +404,23 @@ final class SpannerTestCases {
     }
     System.out.println(
         String.format(
-            "Started %d ExecuteStreamingSql calls with average time %d ms",
-            numOfRpcs, (System.currentTimeMillis() - start) / numOfRpcs));
+            "Started %d ExecuteStreamingSql calls in %dms",
+            numOfRpcs, System.currentTimeMillis() - start));
 
     // Start another rpc call using a new thread.
     Thread t = new Thread(() -> listSessionsSingleCall(stub));
     t.start();
 
+    System.out.println("I'm sleeping and will wake up after 2000ms zzzZZZZ.");
+    Thread.sleep(2000);
+    System.out.println("Good morning!");
+
     // Free one call.
     while (responses.get(0).hasNext()) {
       responses.get(0).next();
     }
-    System.out.println("Freed one call.");
+    System.out.println(
+        String.format("Freed one call in %dms.", System.currentTimeMillis() - start));
 
     // Free all the calls.
     for (int i = 1; i < responses.size(); i++) {
@@ -423,15 +429,15 @@ final class SpannerTestCases {
         iter.next();
       }
     }
-    System.out.println("Freed all the calls.");
+    System.out.println(
+        String.format("Freed %d call(s) in %dms.", numOfRpcs, System.currentTimeMillis() - start));
 
     t.join();
     stub.deleteSession(DeleteSessionRequest.newBuilder().setName(session.getName()).build());
     channel.shutdown().awaitTermination(5, TimeUnit.SECONDS);
   }
 
-  private static void runTest(ManagedChannel channel, Func func, int numOfRpcs, int numOfThreads)
-      throws InterruptedException {
+  private void runTest(ManagedChannel channel, Func func) throws InterruptedException {
     List<Long> result = new CopyOnWriteArrayList<>();
     List<Thread> threads = new ArrayList<>();
     if (numOfThreads > 1) {
@@ -484,12 +490,8 @@ final class SpannerTestCases {
             numOfRpcs * numOfThreads / (double) dur));
   }
 
-  private static <ReqT, RespT> void doTestBlocking(
-      ManagedChannel channel,
-      ReqT request,
-      int numOfRpcs,
-      int numOfThreads,
-      BlockingCall<ReqT, RespT> blockingCall)
+  private <ReqT, RespT> void doTestBlocking(
+      ManagedChannel channel, ReqT request, BlockingCall<ReqT, RespT> blockingCall)
       throws InterruptedException {
     // Do the warm up.
     doBlockingCalls(null, NUM_WARMUP, request, blockingCall);
@@ -498,15 +500,11 @@ final class SpannerTestCases {
     Func func = (List<Long> result) -> doBlockingCalls(result, numOfRpcs, request, blockingCall);
 
     // Will need to run in different threads.
-    runTest(channel, func, numOfRpcs, numOfThreads);
+    runTest(channel, func);
   }
 
-  private static <ReqT, RespT> void doTestAsync(
-      ManagedChannel channel,
-      ReqT request,
-      int numOfRpcs,
-      int numOfThreads,
-      AsyncCall<ReqT, RespT> asyncCall)
+  private <ReqT, RespT> void doTestAsync(
+      ManagedChannel channel, ReqT request, AsyncCall<ReqT, RespT> asyncCall)
       throws InterruptedException {
     // Do the warm up.
     doAsyncCalls(null, NUM_WARMUP, request, asyncCall);
@@ -515,10 +513,10 @@ final class SpannerTestCases {
     Func func = (List<Long> result) -> doAsyncCalls(result, numOfRpcs, request, asyncCall);
 
     // Will need to run in different threads.
-    runTest(channel, func, numOfRpcs, numOfThreads);
+    runTest(channel, func);
   }
 
-  private static <ReqT, RespT> void doBlockingCalls(
+  private <ReqT, RespT> void doBlockingCalls(
       List<Long> result, int iters, ReqT request, BlockingCall blockingCall) {
     for (int i = 0; i < iters; i++) {
       long start = System.currentTimeMillis();
@@ -530,7 +528,7 @@ final class SpannerTestCases {
     }
   }
 
-  private static <ReqT, RespT> void doAsyncCalls(
+  private <ReqT, RespT> void doAsyncCalls(
       List<Long> result, int iters, ReqT request, AsyncCall asyncCall) {
     List<AsyncResponseObserver<RespT>> responses = new ArrayList<>();
     for (int i = 0; i < iters; i++) {
@@ -549,7 +547,7 @@ final class SpannerTestCases {
     stub.listSessions(request);
     System.out.println(
         String.format(
-            "Finish executing listSessions in %d ms", System.currentTimeMillis() - start));
+            "Finished executing listSessions in %d ms", System.currentTimeMillis() - start));
   }
 
   private static void deleteAndCloseAsync(SpannerStub stub, ManagedChannel channel, String name)

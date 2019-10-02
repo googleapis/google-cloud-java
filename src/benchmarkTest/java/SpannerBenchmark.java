@@ -24,8 +24,8 @@ public final class SpannerBenchmark {
   private SpannerBenchmark() {}
 
   private static int[] parseArgs(String[] args) {
-    // {number of rpcs, number of threads, payload bytes, isGrpcgcp}
-    int[] vars = new int[] {100, 1, 4096000, 1};
+    // {number of rpcs, number of threads, payload bytes, isGrpcgcp, isSpannerClient}
+    int[] vars = new int[] {100, 1, 4096000, 1, 1};
     boolean usage = false;
     for (String arg : args) {
       if (!arg.startsWith("--")) {
@@ -47,6 +47,10 @@ public final class SpannerBenchmark {
       if (key.equals("gcp")) {
         if (parts[1].equals("false")) {
           vars[3] = 0;
+        }
+      } else if (key.equals("spanner_client")) {
+        if (parts[1].equals("false")) {
+          vars[4] = 0;
         }
       } else {
         int value = Integer.parseInt(parts[1]);
@@ -76,7 +80,7 @@ public final class SpannerBenchmark {
     return vars;
   }
 
-  public static void main(String[] args) throws InterruptedException {
+  public static void main(String[] args) throws Exception {
     int[] vars = parseArgs(args);
     logger.info(
         String.format(
@@ -84,17 +88,30 @@ public final class SpannerBenchmark {
                 + "Number of Rpcs: %d\n"
                 + "Number of thhreads:%d\n"
                 + "Payload bytes:%d\n"
-                + "GcpManagedChannel:%b",
-            vars[0], vars[1], vars[2], vars[3] == 1));
-    SpannerTestCases.prepareTestData(vars[3] == 1, vars[2]);
-    SpannerTestCases.testListSessions(vars[3] == 1, vars[0], vars[1]);
-    SpannerTestCases.testListSessionsAsync(vars[3] == 1, vars[0], vars[1]);
-    SpannerTestCases.testExecuteSql(vars[3] == 1, vars[0], vars[1]);
-    SpannerTestCases.testExecuteSqlAsync(vars[3] == 1, vars[0], vars[1]);
-    SpannerTestCases.testPartitionQuery(vars[3] == 1, vars[0], vars[1]);
-    SpannerTestCases.testPartitionQueryAsync(vars[3] == 1, vars[0], vars[1]);
-    SpannerTestCases.testRead(vars[3] == 1, vars[0], vars[1]);
-    SpannerTestCases.testReadAsync(vars[3] == 1, vars[0], vars[1]);
-    SpannerTestCases.testMaxConcurrentStream(vars[3] == 1, vars[0]);
+                + "GcpManagedChannel:%b\n"
+                + "Use Spanner Client API:%b",
+            vars[0], vars[1], vars[2], vars[3] == 1, vars[4] == 1));
+    if (vars[4] == 1) {
+      SpannerClientTestCases testCases =
+          new SpannerClientTestCases(vars[3] == 1, vars[2], vars[0], vars[1]);
+      testCases.prepareTestData();
+      testCases.testListSessions();
+      testCases.testExecuteSql();
+      testCases.testPartitionQuery();
+      testCases.testRead();
+      testCases.testMaxConcurrentStream();
+    } else {
+      SpannerTestCases testCases = new SpannerTestCases(vars[3] == 1, vars[2], vars[0], vars[1]);
+      testCases.prepareTestData();
+      testCases.testListSessions();
+      testCases.testListSessionsAsync();
+      testCases.testExecuteSql();
+      testCases.testExecuteSqlAsync();
+      testCases.testPartitionQuery();
+      testCases.testPartitionQueryAsync();
+      testCases.testRead();
+      testCases.testReadAsync();
+      testCases.testMaxConcurrentStream();
+    }
   }
 }
