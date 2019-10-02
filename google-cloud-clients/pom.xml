@@ -169,7 +169,7 @@
     <!-- make sure to update the opencensus version in google-cloud-clients/google-cloud-bigtable/README -->
     <opencensus.version>0.24.0</opencensus.version>
     <!-- make sure to keep version in sync with google-http-client -->
-    <apache.httpclient.version>4.5.5</apache.httpclient.version>
+    <apache.httpclient.version>4.5.10</apache.httpclient.version>
     <!-- test dependency versions -->
     <easymock.version>3.6</easymock.version>
     <objenesis.version>2.6</objenesis.version>
