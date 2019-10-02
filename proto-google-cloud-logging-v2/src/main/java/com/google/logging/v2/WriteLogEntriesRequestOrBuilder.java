@@ -186,8 +186,8 @@ public interface WriteLogEntriesRequestOrBuilder
    * Log entries with timestamps that are more than the
    * [logs retention period](/logging/quota-policy) in the past or more than
    * 24 hours in the future will not be available when calling `entries.list`.
-   * However, those log entries can still be exported with
-   * [LogSinks](/logging/docs/api/tasks/exporting-logs).
+   * However, those log entries can still be
+   * [exported with LogSinks](/logging/docs/api/tasks/exporting-logs).
    * To improve throughput and to avoid exceeding the
    * [quota limit](/logging/quota-policy) for calls to `entries.write`,
    * you should try to include several log entries in this list,
@@ -215,8 +215,8 @@ public interface WriteLogEntriesRequestOrBuilder
    * Log entries with timestamps that are more than the
    * [logs retention period](/logging/quota-policy) in the past or more than
    * 24 hours in the future will not be available when calling `entries.list`.
-   * However, those log entries can still be exported with
-   * [LogSinks](/logging/docs/api/tasks/exporting-logs).
+   * However, those log entries can still be
+   * [exported with LogSinks](/logging/docs/api/tasks/exporting-logs).
    * To improve throughput and to avoid exceeding the
    * [quota limit](/logging/quota-policy) for calls to `entries.write`,
    * you should try to include several log entries in this list,
@@ -244,8 +244,8 @@ public interface WriteLogEntriesRequestOrBuilder
    * Log entries with timestamps that are more than the
    * [logs retention period](/logging/quota-policy) in the past or more than
    * 24 hours in the future will not be available when calling `entries.list`.
-   * However, those log entries can still be exported with
-   * [LogSinks](/logging/docs/api/tasks/exporting-logs).
+   * However, those log entries can still be
+   * [exported with LogSinks](/logging/docs/api/tasks/exporting-logs).
    * To improve throughput and to avoid exceeding the
    * [quota limit](/logging/quota-policy) for calls to `entries.write`,
    * you should try to include several log entries in this list,
@@ -273,8 +273,8 @@ public interface WriteLogEntriesRequestOrBuilder
    * Log entries with timestamps that are more than the
    * [logs retention period](/logging/quota-policy) in the past or more than
    * 24 hours in the future will not be available when calling `entries.list`.
-   * However, those log entries can still be exported with
-   * [LogSinks](/logging/docs/api/tasks/exporting-logs).
+   * However, those log entries can still be
+   * [exported with LogSinks](/logging/docs/api/tasks/exporting-logs).
    * To improve throughput and to avoid exceeding the
    * [quota limit](/logging/quota-policy) for calls to `entries.write`,
    * you should try to include several log entries in this list,
@@ -302,8 +302,8 @@ public interface WriteLogEntriesRequestOrBuilder
    * Log entries with timestamps that are more than the
    * [logs retention period](/logging/quota-policy) in the past or more than
    * 24 hours in the future will not be available when calling `entries.list`.
-   * However, those log entries can still be exported with
-   * [LogSinks](/logging/docs/api/tasks/exporting-logs).
+   * However, those log entries can still be
+   * [exported with LogSinks](/logging/docs/api/tasks/exporting-logs).
    * To improve throughput and to avoid exceeding the
    * [quota limit](/logging/quota-policy) for calls to `entries.write`,
    * you should try to include several log entries in this list,
