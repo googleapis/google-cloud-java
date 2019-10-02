@@ -26,13 +26,19 @@ import com.google.api.gax.grpc.GrpcStubCallableFactory;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.RequestParamsExtractor;
 import com.google.api.gax.rpc.UnaryCallable;
+import com.google.cloud.datacatalog.CreateEntryGroupRequest;
+import com.google.cloud.datacatalog.CreateEntryRequest;
 import com.google.cloud.datacatalog.CreateTagRequest;
 import com.google.cloud.datacatalog.CreateTagTemplateFieldRequest;
 import com.google.cloud.datacatalog.CreateTagTemplateRequest;
+import com.google.cloud.datacatalog.DeleteEntryGroupRequest;
+import com.google.cloud.datacatalog.DeleteEntryRequest;
 import com.google.cloud.datacatalog.DeleteTagRequest;
 import com.google.cloud.datacatalog.DeleteTagTemplateFieldRequest;
 import com.google.cloud.datacatalog.DeleteTagTemplateRequest;
 import com.google.cloud.datacatalog.Entry;
+import com.google.cloud.datacatalog.EntryGroup;
+import com.google.cloud.datacatalog.GetEntryGroupRequest;
 import com.google.cloud.datacatalog.GetEntryRequest;
 import com.google.cloud.datacatalog.GetTagTemplateRequest;
 import com.google.cloud.datacatalog.ListTagsRequest;
@@ -82,12 +88,53 @@ public class GrpcDataCatalogStub extends DataCatalogStub {
               .setResponseMarshaller(
                   ProtoUtils.marshaller(SearchCatalogResponse.getDefaultInstance()))
               .build();
+  private static final MethodDescriptor<CreateEntryGroupRequest, EntryGroup>
+      createEntryGroupMethodDescriptor =
+          MethodDescriptor.<CreateEntryGroupRequest, EntryGroup>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.datacatalog.v1beta1.DataCatalog/CreateEntryGroup")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(CreateEntryGroupRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(EntryGroup.getDefaultInstance()))
+              .build();
+  private static final MethodDescriptor<GetEntryGroupRequest, EntryGroup>
+      getEntryGroupMethodDescriptor =
+          MethodDescriptor.<GetEntryGroupRequest, EntryGroup>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.datacatalog.v1beta1.DataCatalog/GetEntryGroup")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(GetEntryGroupRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(EntryGroup.getDefaultInstance()))
+              .build();
+  private static final MethodDescriptor<DeleteEntryGroupRequest, Empty>
+      deleteEntryGroupMethodDescriptor =
+          MethodDescriptor.<DeleteEntryGroupRequest, Empty>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.datacatalog.v1beta1.DataCatalog/DeleteEntryGroup")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(DeleteEntryGroupRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+              .build();
+  private static final MethodDescriptor<CreateEntryRequest, Entry> createEntryMethodDescriptor =
+      MethodDescriptor.<CreateEntryRequest, Entry>newBuilder()
+          .setType(MethodDescriptor.MethodType.UNARY)
+          .setFullMethodName("google.cloud.datacatalog.v1beta1.DataCatalog/CreateEntry")
+          .setRequestMarshaller(ProtoUtils.marshaller(CreateEntryRequest.getDefaultInstance()))
+          .setResponseMarshaller(ProtoUtils.marshaller(Entry.getDefaultInstance()))
+          .build();
   private static final MethodDescriptor<UpdateEntryRequest, Entry> updateEntryMethodDescriptor =
       MethodDescriptor.<UpdateEntryRequest, Entry>newBuilder()
           .setType(MethodDescriptor.MethodType.UNARY)
           .setFullMethodName("google.cloud.datacatalog.v1beta1.DataCatalog/UpdateEntry")
           .setRequestMarshaller(ProtoUtils.marshaller(UpdateEntryRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Entry.getDefaultInstance()))
+          .build();
+  private static final MethodDescriptor<DeleteEntryRequest, Empty> deleteEntryMethodDescriptor =
+      MethodDescriptor.<DeleteEntryRequest, Empty>newBuilder()
+          .setType(MethodDescriptor.MethodType.UNARY)
+          .setFullMethodName("google.cloud.datacatalog.v1beta1.DataCatalog/DeleteEntry")
+          .setRequestMarshaller(ProtoUtils.marshaller(DeleteEntryRequest.getDefaultInstance()))
+          .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
           .build();
   private static final MethodDescriptor<GetEntryRequest, Entry> getEntryMethodDescriptor =
       MethodDescriptor.<GetEntryRequest, Entry>newBuilder()
@@ -238,7 +285,12 @@ public class GrpcDataCatalogStub extends DataCatalogStub {
   private final UnaryCallable<SearchCatalogRequest, SearchCatalogResponse> searchCatalogCallable;
   private final UnaryCallable<SearchCatalogRequest, SearchCatalogPagedResponse>
       searchCatalogPagedCallable;
+  private final UnaryCallable<CreateEntryGroupRequest, EntryGroup> createEntryGroupCallable;
+  private final UnaryCallable<GetEntryGroupRequest, EntryGroup> getEntryGroupCallable;
+  private final UnaryCallable<DeleteEntryGroupRequest, Empty> deleteEntryGroupCallable;
+  private final UnaryCallable<CreateEntryRequest, Entry> createEntryCallable;
   private final UnaryCallable<UpdateEntryRequest, Entry> updateEntryCallable;
+  private final UnaryCallable<DeleteEntryRequest, Empty> deleteEntryCallable;
   private final UnaryCallable<GetEntryRequest, Entry> getEntryCallable;
   private final UnaryCallable<LookupEntryRequest, Entry> lookupEntryCallable;
   private final UnaryCallable<CreateTagTemplateRequest, TagTemplate> createTagTemplateCallable;
@@ -305,6 +357,58 @@ public class GrpcDataCatalogStub extends DataCatalogStub {
         GrpcCallSettings.<SearchCatalogRequest, SearchCatalogResponse>newBuilder()
             .setMethodDescriptor(searchCatalogMethodDescriptor)
             .build();
+    GrpcCallSettings<CreateEntryGroupRequest, EntryGroup> createEntryGroupTransportSettings =
+        GrpcCallSettings.<CreateEntryGroupRequest, EntryGroup>newBuilder()
+            .setMethodDescriptor(createEntryGroupMethodDescriptor)
+            .setParamsExtractor(
+                new RequestParamsExtractor<CreateEntryGroupRequest>() {
+                  @Override
+                  public Map<String, String> extract(CreateEntryGroupRequest request) {
+                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                    params.put("parent", String.valueOf(request.getParent()));
+                    return params.build();
+                  }
+                })
+            .build();
+    GrpcCallSettings<GetEntryGroupRequest, EntryGroup> getEntryGroupTransportSettings =
+        GrpcCallSettings.<GetEntryGroupRequest, EntryGroup>newBuilder()
+            .setMethodDescriptor(getEntryGroupMethodDescriptor)
+            .setParamsExtractor(
+                new RequestParamsExtractor<GetEntryGroupRequest>() {
+                  @Override
+                  public Map<String, String> extract(GetEntryGroupRequest request) {
+                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                    params.put("name", String.valueOf(request.getName()));
+                    return params.build();
+                  }
+                })
+            .build();
+    GrpcCallSettings<DeleteEntryGroupRequest, Empty> deleteEntryGroupTransportSettings =
+        GrpcCallSettings.<DeleteEntryGroupRequest, Empty>newBuilder()
+            .setMethodDescriptor(deleteEntryGroupMethodDescriptor)
+            .setParamsExtractor(
+                new RequestParamsExtractor<DeleteEntryGroupRequest>() {
+                  @Override
+                  public Map<String, String> extract(DeleteEntryGroupRequest request) {
+                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                    params.put("name", String.valueOf(request.getName()));
+                    return params.build();
+                  }
+                })
+            .build();
+    GrpcCallSettings<CreateEntryRequest, Entry> createEntryTransportSettings =
+        GrpcCallSettings.<CreateEntryRequest, Entry>newBuilder()
+            .setMethodDescriptor(createEntryMethodDescriptor)
+            .setParamsExtractor(
+                new RequestParamsExtractor<CreateEntryRequest>() {
+                  @Override
+                  public Map<String, String> extract(CreateEntryRequest request) {
+                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                    params.put("parent", String.valueOf(request.getParent()));
+                    return params.build();
+                  }
+                })
+            .build();
     GrpcCallSettings<UpdateEntryRequest, Entry> updateEntryTransportSettings =
         GrpcCallSettings.<UpdateEntryRequest, Entry>newBuilder()
             .setMethodDescriptor(updateEntryMethodDescriptor)
@@ -314,6 +418,19 @@ public class GrpcDataCatalogStub extends DataCatalogStub {
                   public Map<String, String> extract(UpdateEntryRequest request) {
                     ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
                     params.put("entry.name", String.valueOf(request.getEntry().getName()));
+                    return params.build();
+                  }
+                })
+            .build();
+    GrpcCallSettings<DeleteEntryRequest, Empty> deleteEntryTransportSettings =
+        GrpcCallSettings.<DeleteEntryRequest, Empty>newBuilder()
+            .setMethodDescriptor(deleteEntryMethodDescriptor)
+            .setParamsExtractor(
+                new RequestParamsExtractor<DeleteEntryRequest>() {
+                  @Override
+                  public Map<String, String> extract(DeleteEntryRequest request) {
+                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                    params.put("name", String.valueOf(request.getName()));
                     return params.build();
                   }
                 })
@@ -542,9 +659,24 @@ public class GrpcDataCatalogStub extends DataCatalogStub {
     this.searchCatalogPagedCallable =
         callableFactory.createPagedCallable(
             searchCatalogTransportSettings, settings.searchCatalogSettings(), clientContext);
+    this.createEntryGroupCallable =
+        callableFactory.createUnaryCallable(
+            createEntryGroupTransportSettings, settings.createEntryGroupSettings(), clientContext);
+    this.getEntryGroupCallable =
+        callableFactory.createUnaryCallable(
+            getEntryGroupTransportSettings, settings.getEntryGroupSettings(), clientContext);
+    this.deleteEntryGroupCallable =
+        callableFactory.createUnaryCallable(
+            deleteEntryGroupTransportSettings, settings.deleteEntryGroupSettings(), clientContext);
+    this.createEntryCallable =
+        callableFactory.createUnaryCallable(
+            createEntryTransportSettings, settings.createEntrySettings(), clientContext);
     this.updateEntryCallable =
         callableFactory.createUnaryCallable(
             updateEntryTransportSettings, settings.updateEntrySettings(), clientContext);
+    this.deleteEntryCallable =
+        callableFactory.createUnaryCallable(
+            deleteEntryTransportSettings, settings.deleteEntrySettings(), clientContext);
     this.getEntryCallable =
         callableFactory.createUnaryCallable(
             getEntryTransportSettings, settings.getEntrySettings(), clientContext);
@@ -628,8 +760,28 @@ public class GrpcDataCatalogStub extends DataCatalogStub {
     return searchCatalogCallable;
   }
 
+  public UnaryCallable<CreateEntryGroupRequest, EntryGroup> createEntryGroupCallable() {
+    return createEntryGroupCallable;
+  }
+
+  public UnaryCallable<GetEntryGroupRequest, EntryGroup> getEntryGroupCallable() {
+    return getEntryGroupCallable;
+  }
+
+  public UnaryCallable<DeleteEntryGroupRequest, Empty> deleteEntryGroupCallable() {
+    return deleteEntryGroupCallable;
+  }
+
+  public UnaryCallable<CreateEntryRequest, Entry> createEntryCallable() {
+    return createEntryCallable;
+  }
+
   public UnaryCallable<UpdateEntryRequest, Entry> updateEntryCallable() {
     return updateEntryCallable;
+  }
+
+  public UnaryCallable<DeleteEntryRequest, Empty> deleteEntryCallable() {
+    return deleteEntryCallable;
   }
 
   public UnaryCallable<GetEntryRequest, Entry> getEntryCallable() {

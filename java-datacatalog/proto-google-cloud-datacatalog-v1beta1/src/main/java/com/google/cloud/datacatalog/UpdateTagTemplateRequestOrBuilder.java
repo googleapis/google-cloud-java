@@ -15,7 +15,9 @@ public interface UpdateTagTemplateRequestOrBuilder
    * Required. The template to update.
    * </pre>
    *
-   * <code>.google.cloud.datacatalog.v1beta1.TagTemplate tag_template = 1;</code>
+   * <code>
+   * .google.cloud.datacatalog.v1beta1.TagTemplate tag_template = 1 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   boolean hasTagTemplate();
   /**
@@ -25,7 +27,9 @@ public interface UpdateTagTemplateRequestOrBuilder
    * Required. The template to update.
    * </pre>
    *
-   * <code>.google.cloud.datacatalog.v1beta1.TagTemplate tag_template = 1;</code>
+   * <code>
+   * .google.cloud.datacatalog.v1beta1.TagTemplate tag_template = 1 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   com.google.cloud.datacatalog.TagTemplate getTagTemplate();
   /**
@@ -35,7 +39,9 @@ public interface UpdateTagTemplateRequestOrBuilder
    * Required. The template to update.
    * </pre>
    *
-   * <code>.google.cloud.datacatalog.v1beta1.TagTemplate tag_template = 1;</code>
+   * <code>
+   * .google.cloud.datacatalog.v1beta1.TagTemplate tag_template = 1 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   com.google.cloud.datacatalog.TagTemplateOrBuilder getTagTemplateOrBuilder();
 
@@ -45,8 +51,8 @@ public interface UpdateTagTemplateRequestOrBuilder
    * <pre>
    * Optional. The field mask specifies the parts of the template to overwrite.
    * Allowed fields:
-   *   * display_name
-   * If update_mask is omitted, all of the allowed fields above will be updated.
+   *   * `display_name`
+   * If absent or empty, all of the allowed fields above will be updated.
    * </pre>
    *
    * <code>.google.protobuf.FieldMask update_mask = 2;</code>
@@ -58,8 +64,8 @@ public interface UpdateTagTemplateRequestOrBuilder
    * <pre>
    * Optional. The field mask specifies the parts of the template to overwrite.
    * Allowed fields:
-   *   * display_name
-   * If update_mask is omitted, all of the allowed fields above will be updated.
+   *   * `display_name`
+   * If absent or empty, all of the allowed fields above will be updated.
    * </pre>
    *
    * <code>.google.protobuf.FieldMask update_mask = 2;</code>
@@ -71,8 +77,8 @@ public interface UpdateTagTemplateRequestOrBuilder
    * <pre>
    * Optional. The field mask specifies the parts of the template to overwrite.
    * Allowed fields:
-   *   * display_name
-   * If update_mask is omitted, all of the allowed fields above will be updated.
+   *   * `display_name`
+   * If absent or empty, all of the allowed fields above will be updated.
    * </pre>
    *
    * <code>.google.protobuf.FieldMask update_mask = 2;</code>

@@ -16,14 +16,20 @@
 package com.google.cloud.datacatalog.v1beta1;
 
 import com.google.api.core.BetaApi;
+import com.google.cloud.datacatalog.CreateEntryGroupRequest;
+import com.google.cloud.datacatalog.CreateEntryRequest;
 import com.google.cloud.datacatalog.CreateTagRequest;
 import com.google.cloud.datacatalog.CreateTagTemplateFieldRequest;
 import com.google.cloud.datacatalog.CreateTagTemplateRequest;
 import com.google.cloud.datacatalog.DataCatalogGrpc.DataCatalogImplBase;
+import com.google.cloud.datacatalog.DeleteEntryGroupRequest;
+import com.google.cloud.datacatalog.DeleteEntryRequest;
 import com.google.cloud.datacatalog.DeleteTagRequest;
 import com.google.cloud.datacatalog.DeleteTagTemplateFieldRequest;
 import com.google.cloud.datacatalog.DeleteTagTemplateRequest;
 import com.google.cloud.datacatalog.Entry;
+import com.google.cloud.datacatalog.EntryGroup;
+import com.google.cloud.datacatalog.GetEntryGroupRequest;
 import com.google.cloud.datacatalog.GetEntryRequest;
 import com.google.cloud.datacatalog.GetTagTemplateRequest;
 import com.google.cloud.datacatalog.ListTagsRequest;
@@ -100,11 +106,84 @@ public class MockDataCatalogImpl extends DataCatalogImplBase {
   }
 
   @Override
+  public void createEntryGroup(
+      CreateEntryGroupRequest request, StreamObserver<EntryGroup> responseObserver) {
+    Object response = responses.remove();
+    if (response instanceof EntryGroup) {
+      requests.add(request);
+      responseObserver.onNext((EntryGroup) response);
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError((Exception) response);
+    } else {
+      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+    }
+  }
+
+  @Override
+  public void getEntryGroup(
+      GetEntryGroupRequest request, StreamObserver<EntryGroup> responseObserver) {
+    Object response = responses.remove();
+    if (response instanceof EntryGroup) {
+      requests.add(request);
+      responseObserver.onNext((EntryGroup) response);
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError((Exception) response);
+    } else {
+      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+    }
+  }
+
+  @Override
+  public void deleteEntryGroup(
+      DeleteEntryGroupRequest request, StreamObserver<Empty> responseObserver) {
+    Object response = responses.remove();
+    if (response instanceof Empty) {
+      requests.add(request);
+      responseObserver.onNext((Empty) response);
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError((Exception) response);
+    } else {
+      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+    }
+  }
+
+  @Override
+  public void createEntry(CreateEntryRequest request, StreamObserver<Entry> responseObserver) {
+    Object response = responses.remove();
+    if (response instanceof Entry) {
+      requests.add(request);
+      responseObserver.onNext((Entry) response);
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError((Exception) response);
+    } else {
+      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+    }
+  }
+
+  @Override
   public void updateEntry(UpdateEntryRequest request, StreamObserver<Entry> responseObserver) {
     Object response = responses.remove();
     if (response instanceof Entry) {
       requests.add(request);
       responseObserver.onNext((Entry) response);
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError((Exception) response);
+    } else {
+      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+    }
+  }
+
+  @Override
+  public void deleteEntry(DeleteEntryRequest request, StreamObserver<Empty> responseObserver) {
+    Object response = responses.remove();
+    if (response instanceof Empty) {
+      requests.add(request);
+      responseObserver.onNext((Empty) response);
       responseObserver.onCompleted();
     } else if (response instanceof Exception) {
       responseObserver.onError((Exception) response);

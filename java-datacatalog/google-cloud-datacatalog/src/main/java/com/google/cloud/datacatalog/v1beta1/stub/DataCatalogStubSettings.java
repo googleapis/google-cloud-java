@@ -40,13 +40,19 @@ import com.google.api.gax.rpc.StubSettings;
 import com.google.api.gax.rpc.TransportChannelProvider;
 import com.google.api.gax.rpc.UnaryCallSettings;
 import com.google.api.gax.rpc.UnaryCallable;
+import com.google.cloud.datacatalog.CreateEntryGroupRequest;
+import com.google.cloud.datacatalog.CreateEntryRequest;
 import com.google.cloud.datacatalog.CreateTagRequest;
 import com.google.cloud.datacatalog.CreateTagTemplateFieldRequest;
 import com.google.cloud.datacatalog.CreateTagTemplateRequest;
+import com.google.cloud.datacatalog.DeleteEntryGroupRequest;
+import com.google.cloud.datacatalog.DeleteEntryRequest;
 import com.google.cloud.datacatalog.DeleteTagRequest;
 import com.google.cloud.datacatalog.DeleteTagTemplateFieldRequest;
 import com.google.cloud.datacatalog.DeleteTagTemplateRequest;
 import com.google.cloud.datacatalog.Entry;
+import com.google.cloud.datacatalog.EntryGroup;
+import com.google.cloud.datacatalog.GetEntryGroupRequest;
 import com.google.cloud.datacatalog.GetEntryRequest;
 import com.google.cloud.datacatalog.GetTagTemplateRequest;
 import com.google.cloud.datacatalog.ListTagsRequest;
@@ -93,13 +99,13 @@ import org.threeten.bp.Duration;
  * <p>The builder of this class is recursive, so contained classes are themselves builders. When
  * build() is called, the tree of builders is called to create the complete settings object.
  *
- * <p>For example, to set the total timeout of updateEntry to 30 seconds:
+ * <p>For example, to set the total timeout of createEntryGroup to 30 seconds:
  *
  * <pre>
  * <code>
  * DataCatalogStubSettings.Builder dataCatalogSettingsBuilder =
  *     DataCatalogStubSettings.newBuilder();
- * dataCatalogSettingsBuilder.updateEntrySettings().getRetrySettings().toBuilder()
+ * dataCatalogSettingsBuilder.createEntryGroupSettings().getRetrySettings().toBuilder()
  *     .setTotalTimeout(Duration.ofSeconds(30));
  * DataCatalogStubSettings dataCatalogSettings = dataCatalogSettingsBuilder.build();
  * </code>
@@ -115,7 +121,12 @@ public class DataCatalogStubSettings extends StubSettings<DataCatalogStubSetting
   private final PagedCallSettings<
           SearchCatalogRequest, SearchCatalogResponse, SearchCatalogPagedResponse>
       searchCatalogSettings;
+  private final UnaryCallSettings<CreateEntryGroupRequest, EntryGroup> createEntryGroupSettings;
+  private final UnaryCallSettings<GetEntryGroupRequest, EntryGroup> getEntryGroupSettings;
+  private final UnaryCallSettings<DeleteEntryGroupRequest, Empty> deleteEntryGroupSettings;
+  private final UnaryCallSettings<CreateEntryRequest, Entry> createEntrySettings;
   private final UnaryCallSettings<UpdateEntryRequest, Entry> updateEntrySettings;
+  private final UnaryCallSettings<DeleteEntryRequest, Empty> deleteEntrySettings;
   private final UnaryCallSettings<GetEntryRequest, Entry> getEntrySettings;
   private final UnaryCallSettings<LookupEntryRequest, Entry> lookupEntrySettings;
   private final UnaryCallSettings<CreateTagTemplateRequest, TagTemplate> createTagTemplateSettings;
@@ -146,9 +157,34 @@ public class DataCatalogStubSettings extends StubSettings<DataCatalogStubSetting
     return searchCatalogSettings;
   }
 
+  /** Returns the object with the settings used for calls to createEntryGroup. */
+  public UnaryCallSettings<CreateEntryGroupRequest, EntryGroup> createEntryGroupSettings() {
+    return createEntryGroupSettings;
+  }
+
+  /** Returns the object with the settings used for calls to getEntryGroup. */
+  public UnaryCallSettings<GetEntryGroupRequest, EntryGroup> getEntryGroupSettings() {
+    return getEntryGroupSettings;
+  }
+
+  /** Returns the object with the settings used for calls to deleteEntryGroup. */
+  public UnaryCallSettings<DeleteEntryGroupRequest, Empty> deleteEntryGroupSettings() {
+    return deleteEntryGroupSettings;
+  }
+
+  /** Returns the object with the settings used for calls to createEntry. */
+  public UnaryCallSettings<CreateEntryRequest, Entry> createEntrySettings() {
+    return createEntrySettings;
+  }
+
   /** Returns the object with the settings used for calls to updateEntry. */
   public UnaryCallSettings<UpdateEntryRequest, Entry> updateEntrySettings() {
     return updateEntrySettings;
+  }
+
+  /** Returns the object with the settings used for calls to deleteEntry. */
+  public UnaryCallSettings<DeleteEntryRequest, Empty> deleteEntrySettings() {
+    return deleteEntrySettings;
   }
 
   /** Returns the object with the settings used for calls to getEntry. */
@@ -311,7 +347,12 @@ public class DataCatalogStubSettings extends StubSettings<DataCatalogStubSetting
     super(settingsBuilder);
 
     searchCatalogSettings = settingsBuilder.searchCatalogSettings().build();
+    createEntryGroupSettings = settingsBuilder.createEntryGroupSettings().build();
+    getEntryGroupSettings = settingsBuilder.getEntryGroupSettings().build();
+    deleteEntryGroupSettings = settingsBuilder.deleteEntryGroupSettings().build();
+    createEntrySettings = settingsBuilder.createEntrySettings().build();
     updateEntrySettings = settingsBuilder.updateEntrySettings().build();
+    deleteEntrySettings = settingsBuilder.deleteEntrySettings().build();
     getEntrySettings = settingsBuilder.getEntrySettings().build();
     lookupEntrySettings = settingsBuilder.lookupEntrySettings().build();
     createTagTemplateSettings = settingsBuilder.createTagTemplateSettings().build();
@@ -446,7 +487,14 @@ public class DataCatalogStubSettings extends StubSettings<DataCatalogStubSetting
     private final PagedCallSettings.Builder<
             SearchCatalogRequest, SearchCatalogResponse, SearchCatalogPagedResponse>
         searchCatalogSettings;
+    private final UnaryCallSettings.Builder<CreateEntryGroupRequest, EntryGroup>
+        createEntryGroupSettings;
+    private final UnaryCallSettings.Builder<GetEntryGroupRequest, EntryGroup> getEntryGroupSettings;
+    private final UnaryCallSettings.Builder<DeleteEntryGroupRequest, Empty>
+        deleteEntryGroupSettings;
+    private final UnaryCallSettings.Builder<CreateEntryRequest, Entry> createEntrySettings;
     private final UnaryCallSettings.Builder<UpdateEntryRequest, Entry> updateEntrySettings;
+    private final UnaryCallSettings.Builder<DeleteEntryRequest, Empty> deleteEntrySettings;
     private final UnaryCallSettings.Builder<GetEntryRequest, Entry> getEntrySettings;
     private final UnaryCallSettings.Builder<LookupEntryRequest, Entry> lookupEntrySettings;
     private final UnaryCallSettings.Builder<CreateTagTemplateRequest, TagTemplate>
@@ -519,7 +567,17 @@ public class DataCatalogStubSettings extends StubSettings<DataCatalogStubSetting
 
       searchCatalogSettings = PagedCallSettings.newBuilder(SEARCH_CATALOG_PAGE_STR_FACT);
 
+      createEntryGroupSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+
+      getEntryGroupSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+
+      deleteEntryGroupSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+
+      createEntrySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+
       updateEntrySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+
+      deleteEntrySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
       getEntrySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
@@ -558,7 +616,12 @@ public class DataCatalogStubSettings extends StubSettings<DataCatalogStubSetting
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
               searchCatalogSettings,
+              createEntryGroupSettings,
+              getEntryGroupSettings,
+              deleteEntryGroupSettings,
+              createEntrySettings,
               updateEntrySettings,
+              deleteEntrySettings,
               getEntrySettings,
               lookupEntrySettings,
               createTagTemplateSettings,
@@ -597,8 +660,33 @@ public class DataCatalogStubSettings extends StubSettings<DataCatalogStubSetting
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
 
       builder
+          .createEntryGroupSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
+
+      builder
+          .getEntryGroupSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
+
+      builder
+          .deleteEntryGroupSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
+
+      builder
+          .createEntrySettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
+
+      builder
           .updateEntrySettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
+
+      builder
+          .deleteEntrySettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
 
       builder
@@ -693,7 +781,12 @@ public class DataCatalogStubSettings extends StubSettings<DataCatalogStubSetting
       super(settings);
 
       searchCatalogSettings = settings.searchCatalogSettings.toBuilder();
+      createEntryGroupSettings = settings.createEntryGroupSettings.toBuilder();
+      getEntryGroupSettings = settings.getEntryGroupSettings.toBuilder();
+      deleteEntryGroupSettings = settings.deleteEntryGroupSettings.toBuilder();
+      createEntrySettings = settings.createEntrySettings.toBuilder();
       updateEntrySettings = settings.updateEntrySettings.toBuilder();
+      deleteEntrySettings = settings.deleteEntrySettings.toBuilder();
       getEntrySettings = settings.getEntrySettings.toBuilder();
       lookupEntrySettings = settings.lookupEntrySettings.toBuilder();
       createTagTemplateSettings = settings.createTagTemplateSettings.toBuilder();
@@ -715,7 +808,12 @@ public class DataCatalogStubSettings extends StubSettings<DataCatalogStubSetting
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
               searchCatalogSettings,
+              createEntryGroupSettings,
+              getEntryGroupSettings,
+              deleteEntryGroupSettings,
+              createEntrySettings,
               updateEntrySettings,
+              deleteEntrySettings,
               getEntrySettings,
               lookupEntrySettings,
               createTagTemplateSettings,
@@ -758,9 +856,35 @@ public class DataCatalogStubSettings extends StubSettings<DataCatalogStubSetting
       return searchCatalogSettings;
     }
 
+    /** Returns the builder for the settings used for calls to createEntryGroup. */
+    public UnaryCallSettings.Builder<CreateEntryGroupRequest, EntryGroup>
+        createEntryGroupSettings() {
+      return createEntryGroupSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to getEntryGroup. */
+    public UnaryCallSettings.Builder<GetEntryGroupRequest, EntryGroup> getEntryGroupSettings() {
+      return getEntryGroupSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to deleteEntryGroup. */
+    public UnaryCallSettings.Builder<DeleteEntryGroupRequest, Empty> deleteEntryGroupSettings() {
+      return deleteEntryGroupSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to createEntry. */
+    public UnaryCallSettings.Builder<CreateEntryRequest, Entry> createEntrySettings() {
+      return createEntrySettings;
+    }
+
     /** Returns the builder for the settings used for calls to updateEntry. */
     public UnaryCallSettings.Builder<UpdateEntryRequest, Entry> updateEntrySettings() {
       return updateEntrySettings;
+    }
+
+    /** Returns the builder for the settings used for calls to deleteEntry. */
+    public UnaryCallSettings.Builder<DeleteEntryRequest, Empty> deleteEntrySettings() {
+      return deleteEntrySettings;
     }
 
     /** Returns the builder for the settings used for calls to getEntry. */

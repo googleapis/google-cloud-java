@@ -15,7 +15,8 @@ public interface UpdateTagRequestOrBuilder
    * Required. The updated tag.
    * </pre>
    *
-   * <code>.google.cloud.datacatalog.v1beta1.Tag tag = 1;</code>
+   * <code>.google.cloud.datacatalog.v1beta1.Tag tag = 1 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   boolean hasTag();
   /**
@@ -25,7 +26,8 @@ public interface UpdateTagRequestOrBuilder
    * Required. The updated tag.
    * </pre>
    *
-   * <code>.google.cloud.datacatalog.v1beta1.Tag tag = 1;</code>
+   * <code>.google.cloud.datacatalog.v1beta1.Tag tag = 1 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   com.google.cloud.datacatalog.Tag getTag();
   /**
@@ -35,7 +37,8 @@ public interface UpdateTagRequestOrBuilder
    * Required. The updated tag.
    * </pre>
    *
-   * <code>.google.cloud.datacatalog.v1beta1.Tag tag = 1;</code>
+   * <code>.google.cloud.datacatalog.v1beta1.Tag tag = 1 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   com.google.cloud.datacatalog.TagOrBuilder getTagOrBuilder();
 
@@ -43,7 +46,7 @@ public interface UpdateTagRequestOrBuilder
    *
    *
    * <pre>
-   * Optional. The fields to update on the Tag.  If absent or empty, all
+   * Optional. The fields to update on the Tag. If absent or empty, all
    * modifiable fields are updated. Currently the only modifiable field is the
    * field `fields`.
    * </pre>
@@ -55,7 +58,7 @@ public interface UpdateTagRequestOrBuilder
    *
    *
    * <pre>
-   * Optional. The fields to update on the Tag.  If absent or empty, all
+   * Optional. The fields to update on the Tag. If absent or empty, all
    * modifiable fields are updated. Currently the only modifiable field is the
    * field `fields`.
    * </pre>
@@ -67,7 +70,7 @@ public interface UpdateTagRequestOrBuilder
    *
    *
    * <pre>
-   * Optional. The fields to update on the Tag.  If absent or empty, all
+   * Optional. The fields to update on the Tag. If absent or empty, all
    * modifiable fields are updated. Currently the only modifiable field is the
    * field `fields`.
    * </pre>

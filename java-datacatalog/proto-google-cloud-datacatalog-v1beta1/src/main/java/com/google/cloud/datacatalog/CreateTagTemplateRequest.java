@@ -123,12 +123,15 @@ public final class CreateTagTemplateRequest extends com.google.protobuf.Generate
    *
    * <pre>
    * Required. The name of the project and the location this template is in.
-   * Example: "projects/{project_id}/locations/{location}". Note that this
+   * Example:
+   * * projects/{project_id}/locations/{location}
    * TagTemplate and its child resources may not actually be stored in the
    * location in this name.
    * </pre>
    *
-   * <code>string parent = 1;</code>
+   * <code>
+   * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    */
   public java.lang.String getParent() {
     java.lang.Object ref = parent_;
@@ -146,12 +149,15 @@ public final class CreateTagTemplateRequest extends com.google.protobuf.Generate
    *
    * <pre>
    * Required. The name of the project and the location this template is in.
-   * Example: "projects/{project_id}/locations/{location}". Note that this
+   * Example:
+   * * projects/{project_id}/locations/{location}
    * TagTemplate and its child resources may not actually be stored in the
    * location in this name.
    * </pre>
    *
-   * <code>string parent = 1;</code>
+   * <code>
+   * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    */
   public com.google.protobuf.ByteString getParentBytes() {
     java.lang.Object ref = parent_;
@@ -174,7 +180,7 @@ public final class CreateTagTemplateRequest extends com.google.protobuf.Generate
    * Required. The id of the tag template to create.
    * </pre>
    *
-   * <code>string tag_template_id = 3;</code>
+   * <code>string tag_template_id = 3 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   public java.lang.String getTagTemplateId() {
     java.lang.Object ref = tagTemplateId_;
@@ -194,7 +200,7 @@ public final class CreateTagTemplateRequest extends com.google.protobuf.Generate
    * Required. The id of the tag template to create.
    * </pre>
    *
-   * <code>string tag_template_id = 3;</code>
+   * <code>string tag_template_id = 3 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   public com.google.protobuf.ByteString getTagTemplateIdBytes() {
     java.lang.Object ref = tagTemplateId_;
@@ -217,7 +223,9 @@ public final class CreateTagTemplateRequest extends com.google.protobuf.Generate
    * Required. The tag template to create.
    * </pre>
    *
-   * <code>.google.cloud.datacatalog.v1beta1.TagTemplate tag_template = 2;</code>
+   * <code>
+   * .google.cloud.datacatalog.v1beta1.TagTemplate tag_template = 2 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   public boolean hasTagTemplate() {
     return tagTemplate_ != null;
@@ -229,7 +237,9 @@ public final class CreateTagTemplateRequest extends com.google.protobuf.Generate
    * Required. The tag template to create.
    * </pre>
    *
-   * <code>.google.cloud.datacatalog.v1beta1.TagTemplate tag_template = 2;</code>
+   * <code>
+   * .google.cloud.datacatalog.v1beta1.TagTemplate tag_template = 2 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   public com.google.cloud.datacatalog.TagTemplate getTagTemplate() {
     return tagTemplate_ == null
@@ -243,7 +253,9 @@ public final class CreateTagTemplateRequest extends com.google.protobuf.Generate
    * Required. The tag template to create.
    * </pre>
    *
-   * <code>.google.cloud.datacatalog.v1beta1.TagTemplate tag_template = 2;</code>
+   * <code>
+   * .google.cloud.datacatalog.v1beta1.TagTemplate tag_template = 2 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   public com.google.cloud.datacatalog.TagTemplateOrBuilder getTagTemplateOrBuilder() {
     return getTagTemplate();
@@ -619,12 +631,15 @@ public final class CreateTagTemplateRequest extends com.google.protobuf.Generate
      *
      * <pre>
      * Required. The name of the project and the location this template is in.
-     * Example: "projects/{project_id}/locations/{location}". Note that this
+     * Example:
+     * * projects/{project_id}/locations/{location}
      * TagTemplate and its child resources may not actually be stored in the
      * location in this name.
      * </pre>
      *
-     * <code>string parent = 1;</code>
+     * <code>
+     * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      */
     public java.lang.String getParent() {
       java.lang.Object ref = parent_;
@@ -642,12 +657,15 @@ public final class CreateTagTemplateRequest extends com.google.protobuf.Generate
      *
      * <pre>
      * Required. The name of the project and the location this template is in.
-     * Example: "projects/{project_id}/locations/{location}". Note that this
+     * Example:
+     * * projects/{project_id}/locations/{location}
      * TagTemplate and its child resources may not actually be stored in the
      * location in this name.
      * </pre>
      *
-     * <code>string parent = 1;</code>
+     * <code>
+     * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      */
     public com.google.protobuf.ByteString getParentBytes() {
       java.lang.Object ref = parent_;
@@ -665,12 +683,15 @@ public final class CreateTagTemplateRequest extends com.google.protobuf.Generate
      *
      * <pre>
      * Required. The name of the project and the location this template is in.
-     * Example: "projects/{project_id}/locations/{location}". Note that this
+     * Example:
+     * * projects/{project_id}/locations/{location}
      * TagTemplate and its child resources may not actually be stored in the
      * location in this name.
      * </pre>
      *
-     * <code>string parent = 1;</code>
+     * <code>
+     * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      */
     public Builder setParent(java.lang.String value) {
       if (value == null) {
@@ -686,12 +707,15 @@ public final class CreateTagTemplateRequest extends com.google.protobuf.Generate
      *
      * <pre>
      * Required. The name of the project and the location this template is in.
-     * Example: "projects/{project_id}/locations/{location}". Note that this
+     * Example:
+     * * projects/{project_id}/locations/{location}
      * TagTemplate and its child resources may not actually be stored in the
      * location in this name.
      * </pre>
      *
-     * <code>string parent = 1;</code>
+     * <code>
+     * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      */
     public Builder clearParent() {
 
@@ -704,12 +728,15 @@ public final class CreateTagTemplateRequest extends com.google.protobuf.Generate
      *
      * <pre>
      * Required. The name of the project and the location this template is in.
-     * Example: "projects/{project_id}/locations/{location}". Note that this
+     * Example:
+     * * projects/{project_id}/locations/{location}
      * TagTemplate and its child resources may not actually be stored in the
      * location in this name.
      * </pre>
      *
-     * <code>string parent = 1;</code>
+     * <code>
+     * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      */
     public Builder setParentBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -730,7 +757,7 @@ public final class CreateTagTemplateRequest extends com.google.protobuf.Generate
      * Required. The id of the tag template to create.
      * </pre>
      *
-     * <code>string tag_template_id = 3;</code>
+     * <code>string tag_template_id = 3 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public java.lang.String getTagTemplateId() {
       java.lang.Object ref = tagTemplateId_;
@@ -750,7 +777,7 @@ public final class CreateTagTemplateRequest extends com.google.protobuf.Generate
      * Required. The id of the tag template to create.
      * </pre>
      *
-     * <code>string tag_template_id = 3;</code>
+     * <code>string tag_template_id = 3 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public com.google.protobuf.ByteString getTagTemplateIdBytes() {
       java.lang.Object ref = tagTemplateId_;
@@ -770,7 +797,7 @@ public final class CreateTagTemplateRequest extends com.google.protobuf.Generate
      * Required. The id of the tag template to create.
      * </pre>
      *
-     * <code>string tag_template_id = 3;</code>
+     * <code>string tag_template_id = 3 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder setTagTemplateId(java.lang.String value) {
       if (value == null) {
@@ -788,7 +815,7 @@ public final class CreateTagTemplateRequest extends com.google.protobuf.Generate
      * Required. The id of the tag template to create.
      * </pre>
      *
-     * <code>string tag_template_id = 3;</code>
+     * <code>string tag_template_id = 3 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder clearTagTemplateId() {
 
@@ -803,7 +830,7 @@ public final class CreateTagTemplateRequest extends com.google.protobuf.Generate
      * Required. The id of the tag template to create.
      * </pre>
      *
-     * <code>string tag_template_id = 3;</code>
+     * <code>string tag_template_id = 3 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder setTagTemplateIdBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -829,7 +856,9 @@ public final class CreateTagTemplateRequest extends com.google.protobuf.Generate
      * Required. The tag template to create.
      * </pre>
      *
-     * <code>.google.cloud.datacatalog.v1beta1.TagTemplate tag_template = 2;</code>
+     * <code>
+     * .google.cloud.datacatalog.v1beta1.TagTemplate tag_template = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public boolean hasTagTemplate() {
       return tagTemplateBuilder_ != null || tagTemplate_ != null;
@@ -841,7 +870,9 @@ public final class CreateTagTemplateRequest extends com.google.protobuf.Generate
      * Required. The tag template to create.
      * </pre>
      *
-     * <code>.google.cloud.datacatalog.v1beta1.TagTemplate tag_template = 2;</code>
+     * <code>
+     * .google.cloud.datacatalog.v1beta1.TagTemplate tag_template = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public com.google.cloud.datacatalog.TagTemplate getTagTemplate() {
       if (tagTemplateBuilder_ == null) {
@@ -859,7 +890,9 @@ public final class CreateTagTemplateRequest extends com.google.protobuf.Generate
      * Required. The tag template to create.
      * </pre>
      *
-     * <code>.google.cloud.datacatalog.v1beta1.TagTemplate tag_template = 2;</code>
+     * <code>
+     * .google.cloud.datacatalog.v1beta1.TagTemplate tag_template = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder setTagTemplate(com.google.cloud.datacatalog.TagTemplate value) {
       if (tagTemplateBuilder_ == null) {
@@ -881,7 +914,9 @@ public final class CreateTagTemplateRequest extends com.google.protobuf.Generate
      * Required. The tag template to create.
      * </pre>
      *
-     * <code>.google.cloud.datacatalog.v1beta1.TagTemplate tag_template = 2;</code>
+     * <code>
+     * .google.cloud.datacatalog.v1beta1.TagTemplate tag_template = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder setTagTemplate(
         com.google.cloud.datacatalog.TagTemplate.Builder builderForValue) {
@@ -901,7 +936,9 @@ public final class CreateTagTemplateRequest extends com.google.protobuf.Generate
      * Required. The tag template to create.
      * </pre>
      *
-     * <code>.google.cloud.datacatalog.v1beta1.TagTemplate tag_template = 2;</code>
+     * <code>
+     * .google.cloud.datacatalog.v1beta1.TagTemplate tag_template = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder mergeTagTemplate(com.google.cloud.datacatalog.TagTemplate value) {
       if (tagTemplateBuilder_ == null) {
@@ -927,7 +964,9 @@ public final class CreateTagTemplateRequest extends com.google.protobuf.Generate
      * Required. The tag template to create.
      * </pre>
      *
-     * <code>.google.cloud.datacatalog.v1beta1.TagTemplate tag_template = 2;</code>
+     * <code>
+     * .google.cloud.datacatalog.v1beta1.TagTemplate tag_template = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder clearTagTemplate() {
       if (tagTemplateBuilder_ == null) {
@@ -947,7 +986,9 @@ public final class CreateTagTemplateRequest extends com.google.protobuf.Generate
      * Required. The tag template to create.
      * </pre>
      *
-     * <code>.google.cloud.datacatalog.v1beta1.TagTemplate tag_template = 2;</code>
+     * <code>
+     * .google.cloud.datacatalog.v1beta1.TagTemplate tag_template = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public com.google.cloud.datacatalog.TagTemplate.Builder getTagTemplateBuilder() {
 
@@ -961,7 +1002,9 @@ public final class CreateTagTemplateRequest extends com.google.protobuf.Generate
      * Required. The tag template to create.
      * </pre>
      *
-     * <code>.google.cloud.datacatalog.v1beta1.TagTemplate tag_template = 2;</code>
+     * <code>
+     * .google.cloud.datacatalog.v1beta1.TagTemplate tag_template = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public com.google.cloud.datacatalog.TagTemplateOrBuilder getTagTemplateOrBuilder() {
       if (tagTemplateBuilder_ != null) {
@@ -979,7 +1022,9 @@ public final class CreateTagTemplateRequest extends com.google.protobuf.Generate
      * Required. The tag template to create.
      * </pre>
      *
-     * <code>.google.cloud.datacatalog.v1beta1.TagTemplate tag_template = 2;</code>
+     * <code>
+     * .google.cloud.datacatalog.v1beta1.TagTemplate tag_template = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.datacatalog.TagTemplate,
