@@ -111,7 +111,6 @@ public class CreateClusterRequestTest {
                 "cluster1",
                 com.google.bigtable.admin.v2.Cluster.newBuilder()
                     .setLocation("projects/my-project/locations/us-east1-c")
-                    .setServeNodes(0)
                     .setDefaultStorageType(com.google.bigtable.admin.v2.StorageType.SSD)
                     .build())
             .build();
