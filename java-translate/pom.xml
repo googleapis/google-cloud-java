@@ -236,6 +236,7 @@
     <module>grpc-google-cloud-translate-v3beta1</module>
     <module>grpc-google-cloud-translate-v3</module>
     <module>google-cloud-translate</module>
+    <module>google-cloud-translate-bom</module>
   </modules>
 
   <reporting>
