@@ -114,6 +114,23 @@ import javax.annotation.Nullable;
  *
  * BigtableDataClient client = BigtableDataClient.create(settings.build());
  * }</pre>
+ *
+ * <p>Each read or write operation in this client is built around the callables in the form of
+ * synchronized or asynchronized operation. It can also be achieved by directly using callable.
+ *
+ * <pre>{@code
+ * // For example
+ * BigtableDataClient client = BigtableDataClient.create("[PROJECT]", "[INSTANCE]");
+ *
+ * RowMutation mutation = RowMutation.create("[TABLE]", "[ROW KEY]")
+ *   .setCell("[FAMILY NAME]", "[QUALIFIER]", "[VALUE]");
+ *
+ * // This would be equivalent to client.mutateRows(mutation);
+ * client.mutateRowCallable().call(mutation);
+ *
+ * // This would be equivalent to client.mutateRowsAsync(mutation);
+ * client.mutateRowCallable().futureCall(mutation);
+ * }</pre>
  */
 public class BigtableDataClient implements AutoCloseable {
   private final EnhancedBigtableStub stub;
