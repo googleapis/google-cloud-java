@@ -12,22 +12,22 @@ public interface EventOrBuilder
    *
    *
    * <pre>
-   * The user response token provided by the reCAPTCHA client-side integration
+   * Required. The user response token provided by the reCAPTCHA client-side integration
    * on your site.
    * </pre>
    *
-   * <code>string token = 1;</code>
+   * <code>string token = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   java.lang.String getToken();
   /**
    *
    *
    * <pre>
-   * The user response token provided by the reCAPTCHA client-side integration
+   * Required. The user response token provided by the reCAPTCHA client-side integration
    * on your site.
    * </pre>
    *
-   * <code>string token = 1;</code>
+   * <code>string token = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   com.google.protobuf.ByteString getTokenBytes();
 
@@ -35,22 +35,22 @@ public interface EventOrBuilder
    *
    *
    * <pre>
-   * The site key that was used to invoke reCAPTCHA on your site and generate
+   * Required. The site key that was used to invoke reCAPTCHA on your site and generate
    * the token.
    * </pre>
    *
-   * <code>string site_key = 2;</code>
+   * <code>string site_key = 2 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   java.lang.String getSiteKey();
   /**
    *
    *
    * <pre>
-   * The site key that was used to invoke reCAPTCHA on your site and generate
+   * Required. The site key that was used to invoke reCAPTCHA on your site and generate
    * the token.
    * </pre>
    *
-   * <code>string site_key = 2;</code>
+   * <code>string site_key = 2 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   com.google.protobuf.ByteString getSiteKeyBytes();
 }
