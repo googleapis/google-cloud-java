@@ -193,6 +193,7 @@
     <module>grpc-google-cloud-automl-v1beta1</module>
     <module>grpc-google-cloud-automl-v1</module>
     <module>google-cloud-automl</module>
+    <module>google-cloud-automl-bom</module>
   </modules>
 
   <reporting>
