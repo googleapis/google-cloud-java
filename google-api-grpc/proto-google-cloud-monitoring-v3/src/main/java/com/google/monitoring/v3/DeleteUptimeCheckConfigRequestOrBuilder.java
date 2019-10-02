@@ -12,7 +12,7 @@ public interface DeleteUptimeCheckConfigRequestOrBuilder
    *
    *
    * <pre>
-   * The uptime check configuration to delete. The format
+   * The Uptime check configuration to delete. The format
    *   is `projects/[PROJECT_ID]/uptimeCheckConfigs/[UPTIME_CHECK_ID]`.
    * </pre>
    *
@@ -23,7 +23,7 @@ public interface DeleteUptimeCheckConfigRequestOrBuilder
    *
    *
    * <pre>
-   * The uptime check configuration to delete. The format
+   * The Uptime check configuration to delete. The format
    *   is `projects/[PROJECT_ID]/uptimeCheckConfigs/[UPTIME_CHECK_ID]`.
    * </pre>
    *

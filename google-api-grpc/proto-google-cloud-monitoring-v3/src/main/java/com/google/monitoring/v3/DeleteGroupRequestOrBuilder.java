@@ -30,4 +30,17 @@ public interface DeleteGroupRequestOrBuilder
    * <code>string name = 3;</code>
    */
   com.google.protobuf.ByteString getNameBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * If this field is true, then the request means to delete a group with all
+   * its descendants. Otherwise, the request means to delete a group only when
+   * it has no descendants. The default value is false.
+   * </pre>
+   *
+   * <code>bool recursive = 4;</code>
+   */
+  boolean getRecursive();
 }

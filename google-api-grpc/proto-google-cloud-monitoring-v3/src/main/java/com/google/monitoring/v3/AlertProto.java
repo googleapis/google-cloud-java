@@ -50,56 +50,57 @@ public final class AlertProto {
   static {
     java.lang.String[] descriptorData = {
       "\n google/monitoring/v3/alert.proto\022\024goog"
-          + "le.monitoring.v3\032\034google/api/annotations"
-          + ".proto\032!google/monitoring/v3/common.prot"
-          + "o\032*google/monitoring/v3/mutation_record."
-          + "proto\032\036google/protobuf/duration.proto\032\036g"
-          + "oogle/protobuf/wrappers.proto\"\335\014\n\013AlertP"
-          + "olicy\022\014\n\004name\030\001 \001(\t\022\024\n\014display_name\030\002 \001("
-          + "\t\022F\n\rdocumentation\030\r \001(\0132/.google.monito"
-          + "ring.v3.AlertPolicy.Documentation\022F\n\013use"
-          + "r_labels\030\020 \003(\01321.google.monitoring.v3.Al"
-          + "ertPolicy.UserLabelsEntry\022?\n\nconditions\030"
-          + "\014 \003(\0132+.google.monitoring.v3.AlertPolicy"
-          + ".Condition\022I\n\010combiner\030\006 \001(\01627.google.mo"
-          + "nitoring.v3.AlertPolicy.ConditionCombine"
-          + "rType\022+\n\007enabled\030\021 \001(\0132\032.google.protobuf"
-          + ".BoolValue\022\035\n\025notification_channels\030\016 \003("
-          + "\t\022=\n\017creation_record\030\n \001(\0132$.google.moni"
-          + "toring.v3.MutationRecord\022=\n\017mutation_rec"
-          + "ord\030\013 \001(\0132$.google.monitoring.v3.Mutatio"
-          + "nRecord\0323\n\rDocumentation\022\017\n\007content\030\001 \001("
-          + "\t\022\021\n\tmime_type\030\002 \001(\t\032\370\006\n\tCondition\022\014\n\004na"
-          + "me\030\014 \001(\t\022\024\n\014display_name\030\006 \001(\t\022Z\n\023condit"
-          + "ion_threshold\030\001 \001(\0132;.google.monitoring."
-          + "v3.AlertPolicy.Condition.MetricThreshold"
-          + "H\000\022U\n\020condition_absent\030\002 \001(\01329.google.mo"
-          + "nitoring.v3.AlertPolicy.Condition.Metric"
-          + "AbsenceH\000\0325\n\007Trigger\022\017\n\005count\030\001 \001(\005H\000\022\021\n"
-          + "\007percent\030\002 \001(\001H\000B\006\n\004type\032\201\003\n\017MetricThres"
-          + "hold\022\016\n\006filter\030\002 \001(\t\0227\n\014aggregations\030\010 \003"
-          + "(\0132!.google.monitoring.v3.Aggregation\022\032\n"
-          + "\022denominator_filter\030\t \001(\t\022C\n\030denominator"
-          + "_aggregations\030\n \003(\0132!.google.monitoring."
-          + "v3.Aggregation\0228\n\ncomparison\030\004 \001(\0162$.goo"
-          + "gle.monitoring.v3.ComparisonType\022\027\n\017thre"
-          + "shold_value\030\005 \001(\001\022+\n\010duration\030\006 \001(\0132\031.go"
-          + "ogle.protobuf.Duration\022D\n\007trigger\030\007 \001(\0132"
-          + "3.google.monitoring.v3.AlertPolicy.Condi"
-          + "tion.Trigger\032\313\001\n\rMetricAbsence\022\016\n\006filter"
-          + "\030\001 \001(\t\0227\n\014aggregations\030\005 \003(\0132!.google.mo"
-          + "nitoring.v3.Aggregation\022+\n\010duration\030\002 \001("
-          + "\0132\031.google.protobuf.Duration\022D\n\007trigger\030"
-          + "\003 \001(\01323.google.monitoring.v3.AlertPolicy"
-          + ".Condition.TriggerB\013\n\tcondition\0321\n\017UserL"
-          + "abelsEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\002"
-          + "8\001\"a\n\025ConditionCombinerType\022\027\n\023COMBINE_U"
-          + "NSPECIFIED\020\000\022\007\n\003AND\020\001\022\006\n\002OR\020\002\022\036\n\032AND_WIT"
-          + "H_MATCHING_RESOURCE\020\003B\242\001\n\030com.google.mon"
-          + "itoring.v3B\nAlertProtoP\001Z>google.golang."
-          + "org/genproto/googleapis/monitoring/v3;mo"
-          + "nitoring\252\002\032Google.Cloud.Monitoring.V3\312\002\032"
-          + "Google\\Cloud\\Monitoring\\V3b\006proto3"
+          + "le.monitoring.v3\032!google/monitoring/v3/c"
+          + "ommon.proto\032*google/monitoring/v3/mutati"
+          + "on_record.proto\032\036google/protobuf/duratio"
+          + "n.proto\032\036google/protobuf/wrappers.proto\032"
+          + "\027google/rpc/status.proto\"\203\r\n\013AlertPolicy"
+          + "\022\014\n\004name\030\001 \001(\t\022\024\n\014display_name\030\002 \001(\t\022F\n\r"
+          + "documentation\030\r \001(\0132/.google.monitoring."
+          + "v3.AlertPolicy.Documentation\022F\n\013user_lab"
+          + "els\030\020 \003(\01321.google.monitoring.v3.AlertPo"
+          + "licy.UserLabelsEntry\022?\n\nconditions\030\014 \003(\013"
+          + "2+.google.monitoring.v3.AlertPolicy.Cond"
+          + "ition\022I\n\010combiner\030\006 \001(\01627.google.monitor"
+          + "ing.v3.AlertPolicy.ConditionCombinerType"
+          + "\022+\n\007enabled\030\021 \001(\0132\032.google.protobuf.Bool"
+          + "Value\022$\n\010validity\030\022 \001(\0132\022.google.rpc.Sta"
+          + "tus\022\035\n\025notification_channels\030\016 \003(\t\022=\n\017cr"
+          + "eation_record\030\n \001(\0132$.google.monitoring."
+          + "v3.MutationRecord\022=\n\017mutation_record\030\013 \001"
+          + "(\0132$.google.monitoring.v3.MutationRecord"
+          + "\0323\n\rDocumentation\022\017\n\007content\030\001 \001(\t\022\021\n\tmi"
+          + "me_type\030\002 \001(\t\032\370\006\n\tCondition\022\014\n\004name\030\014 \001("
+          + "\t\022\024\n\014display_name\030\006 \001(\t\022Z\n\023condition_thr"
+          + "eshold\030\001 \001(\0132;.google.monitoring.v3.Aler"
+          + "tPolicy.Condition.MetricThresholdH\000\022U\n\020c"
+          + "ondition_absent\030\002 \001(\01329.google.monitorin"
+          + "g.v3.AlertPolicy.Condition.MetricAbsence"
+          + "H\000\0325\n\007Trigger\022\017\n\005count\030\001 \001(\005H\000\022\021\n\007percen"
+          + "t\030\002 \001(\001H\000B\006\n\004type\032\201\003\n\017MetricThreshold\022\016\n"
+          + "\006filter\030\002 \001(\t\0227\n\014aggregations\030\010 \003(\0132!.go"
+          + "ogle.monitoring.v3.Aggregation\022\032\n\022denomi"
+          + "nator_filter\030\t \001(\t\022C\n\030denominator_aggreg"
+          + "ations\030\n \003(\0132!.google.monitoring.v3.Aggr"
+          + "egation\0228\n\ncomparison\030\004 \001(\0162$.google.mon"
+          + "itoring.v3.ComparisonType\022\027\n\017threshold_v"
+          + "alue\030\005 \001(\001\022+\n\010duration\030\006 \001(\0132\031.google.pr"
+          + "otobuf.Duration\022D\n\007trigger\030\007 \001(\01323.googl"
+          + "e.monitoring.v3.AlertPolicy.Condition.Tr"
+          + "igger\032\313\001\n\rMetricAbsence\022\016\n\006filter\030\001 \001(\t\022"
+          + "7\n\014aggregations\030\005 \003(\0132!.google.monitorin"
+          + "g.v3.Aggregation\022+\n\010duration\030\002 \001(\0132\031.goo"
+          + "gle.protobuf.Duration\022D\n\007trigger\030\003 \001(\01323"
+          + ".google.monitoring.v3.AlertPolicy.Condit"
+          + "ion.TriggerB\013\n\tcondition\0321\n\017UserLabelsEn"
+          + "try\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\"a\n\025C"
+          + "onditionCombinerType\022\027\n\023COMBINE_UNSPECIF"
+          + "IED\020\000\022\007\n\003AND\020\001\022\006\n\002OR\020\002\022\036\n\032AND_WITH_MATCH"
+          + "ING_RESOURCE\020\003B\242\001\n\030com.google.monitoring"
+          + ".v3B\nAlertProtoP\001Z>google.golang.org/gen"
+          + "proto/googleapis/monitoring/v3;monitorin"
+          + "g\252\002\032Google.Cloud.Monitoring.V3\312\002\032Google\\"
+          + "Cloud\\Monitoring\\V3b\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner() {
@@ -112,11 +113,11 @@ public final class AlertProto {
     com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
         descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
-          com.google.api.AnnotationsProto.getDescriptor(),
           com.google.monitoring.v3.CommonProto.getDescriptor(),
           com.google.monitoring.v3.MutationRecordProto.getDescriptor(),
           com.google.protobuf.DurationProto.getDescriptor(),
           com.google.protobuf.WrappersProto.getDescriptor(),
+          com.google.rpc.StatusProto.getDescriptor(),
         },
         assigner);
     internal_static_google_monitoring_v3_AlertPolicy_descriptor =
@@ -132,6 +133,7 @@ public final class AlertProto {
               "Conditions",
               "Combiner",
               "Enabled",
+              "Validity",
               "NotificationChannels",
               "CreationRecord",
               "MutationRecord",
@@ -197,11 +199,11 @@ public final class AlertProto {
             new java.lang.String[] {
               "Key", "Value",
             });
-    com.google.api.AnnotationsProto.getDescriptor();
     com.google.monitoring.v3.CommonProto.getDescriptor();
     com.google.monitoring.v3.MutationRecordProto.getDescriptor();
     com.google.protobuf.DurationProto.getDescriptor();
     com.google.protobuf.WrappersProto.getDescriptor();
+    com.google.rpc.StatusProto.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

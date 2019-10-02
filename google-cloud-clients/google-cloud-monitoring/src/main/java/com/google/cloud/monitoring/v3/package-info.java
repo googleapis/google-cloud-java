@@ -98,7 +98,7 @@
  * ======================== UptimeCheckServiceClient ========================
  *
  * <p>Service Description: The UptimeCheckService API is used to manage (list, create, delete, edit)
- * uptime check configurations in the Stackdriver Monitoring product. An uptime check is a piece of
+ * Uptime check configurations in the Stackdriver Monitoring product. An Uptime check is a piece of
  * configuration that determines which resources and services to monitor for availability. These
  * configurations can also be configured interactively by navigating to the [Cloud Console]
  * (http://console.cloud.google.com), selecting the appropriate project, clicking on "Monitoring" on
