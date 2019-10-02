@@ -586,12 +586,12 @@
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>proto-google-cloud-translate-v3beta1</artifactId>
-        <version>0.76.1-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-translate-v3beta1:current} -->
+        <version>0.76.0</version>
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>grpc-google-cloud-translate-v3beta1</artifactId>
-        <version>0.76.1-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-translate-v3beta1:current} -->
+        <version>0.76.0</version>
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>

@@ -58,7 +58,6 @@ google-cloud-talent:0.28.0-beta:0.28.1-beta-SNAPSHOT
 google-cloud-tasks:1.20.0:1.20.1-SNAPSHOT
 google-cloud-testing:0.111.0-alpha:0.111.1-alpha-SNAPSHOT
 google-cloud-texttospeech:0.111.0-beta:0.111.1-beta-SNAPSHOT
-google-cloud-translate:1.93.0:1.93.1-SNAPSHOT
 google-cloud-util:0.111.0-alpha:0.111.1-alpha-SNAPSHOT
 google-cloud-video-intelligence:0.111.0-beta:0.111.1-beta-SNAPSHOT
 google-cloud-vision:1.93.0:1.93.1-SNAPSHOT
@@ -113,7 +112,6 @@ grpc-google-cloud-tasks-v2beta2:0.76.0:0.76.1-SNAPSHOT
 grpc-google-cloud-tasks-v2beta3:0.76.0:0.76.1-SNAPSHOT
 grpc-google-cloud-texttospeech-v1:0.76.0:0.76.1-SNAPSHOT
 grpc-google-cloud-texttospeech-v1beta1:0.76.0:0.76.1-SNAPSHOT
-grpc-google-cloud-translate-v3beta1:0.76.0:0.76.1-SNAPSHOT
 grpc-google-cloud-video-intelligence-v1:0.76.0:0.76.1-SNAPSHOT
 grpc-google-cloud-video-intelligence-v1beta1:0.76.0:0.76.1-SNAPSHOT
 grpc-google-cloud-video-intelligence-v1beta2:0.76.0:0.76.1-SNAPSHOT
@@ -177,7 +175,6 @@ proto-google-cloud-tasks-v2beta2:0.76.0:0.76.1-SNAPSHOT
 proto-google-cloud-tasks-v2beta3:0.76.0:0.76.1-SNAPSHOT
 proto-google-cloud-texttospeech-v1:0.76.0:0.76.1-SNAPSHOT
 proto-google-cloud-texttospeech-v1beta1:0.76.0:0.76.1-SNAPSHOT
-proto-google-cloud-translate-v3beta1:0.76.0:0.76.1-SNAPSHOT
 proto-google-cloud-video-intelligence-v1:0.76.0:0.76.1-SNAPSHOT
 proto-google-cloud-video-intelligence-v1beta1:0.76.0:0.76.1-SNAPSHOT
 proto-google-cloud-video-intelligence-v1beta2:0.76.0:0.76.1-SNAPSHOT
