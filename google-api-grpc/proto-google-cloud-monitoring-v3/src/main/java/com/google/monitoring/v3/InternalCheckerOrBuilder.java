@@ -3,6 +3,7 @@
 
 package com.google.monitoring.v3;
 
+@java.lang.Deprecated
 public interface InternalCheckerOrBuilder
     extends
     // @@protoc_insertion_point(interface_extends:google.monitoring.v3.InternalChecker)
@@ -14,8 +15,8 @@ public interface InternalCheckerOrBuilder
    * <pre>
    * A unique resource name for this InternalChecker. The format is:
    *   `projects/[PROJECT_ID]/internalCheckers/[INTERNAL_CHECKER_ID]`.
-   * PROJECT_ID is the stackdriver workspace project for the
-   * uptime check config associated with the internal checker.
+   * `[PROJECT_ID]` is the Stackdriver Workspace project for the
+   * Uptime check config associated with the internal checker.
    * </pre>
    *
    * <code>string name = 1;</code>
@@ -27,8 +28,8 @@ public interface InternalCheckerOrBuilder
    * <pre>
    * A unique resource name for this InternalChecker. The format is:
    *   `projects/[PROJECT_ID]/internalCheckers/[INTERNAL_CHECKER_ID]`.
-   * PROJECT_ID is the stackdriver workspace project for the
-   * uptime check config associated with the internal checker.
+   * `[PROJECT_ID]` is the Stackdriver Workspace project for the
+   * Uptime check config associated with the internal checker.
    * </pre>
    *
    * <code>string name = 1;</code>
@@ -87,8 +88,8 @@ public interface InternalCheckerOrBuilder
    *
    *
    * <pre>
-   * The GCP zone the uptime check should egress from. Only respected for
-   * internal uptime checks, where internal_network is specified.
+   * The GCP zone the Uptime check should egress from. Only respected for
+   * internal Uptime checks, where internal_network is specified.
    * </pre>
    *
    * <code>string gcp_zone = 4;</code>
@@ -98,8 +99,8 @@ public interface InternalCheckerOrBuilder
    *
    *
    * <pre>
-   * The GCP zone the uptime check should egress from. Only respected for
-   * internal uptime checks, where internal_network is specified.
+   * The GCP zone the Uptime check should egress from. Only respected for
+   * internal Uptime checks, where internal_network is specified.
    * </pre>
    *
    * <code>string gcp_zone = 4;</code>
@@ -110,8 +111,8 @@ public interface InternalCheckerOrBuilder
    *
    *
    * <pre>
-   * The GCP project_id where the internal checker lives. Not necessary
-   * the same as the workspace project.
+   * The GCP project ID where the internal checker lives. Not necessary
+   * the same as the Workspace project.
    * </pre>
    *
    * <code>string peer_project_id = 6;</code>
@@ -121,11 +122,32 @@ public interface InternalCheckerOrBuilder
    *
    *
    * <pre>
-   * The GCP project_id where the internal checker lives. Not necessary
-   * the same as the workspace project.
+   * The GCP project ID where the internal checker lives. Not necessary
+   * the same as the Workspace project.
    * </pre>
    *
    * <code>string peer_project_id = 6;</code>
    */
   com.google.protobuf.ByteString getPeerProjectIdBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * The current operational state of the internal checker.
+   * </pre>
+   *
+   * <code>.google.monitoring.v3.InternalChecker.State state = 7;</code>
+   */
+  int getStateValue();
+  /**
+   *
+   *
+   * <pre>
+   * The current operational state of the internal checker.
+   * </pre>
+   *
+   * <code>.google.monitoring.v3.InternalChecker.State state = 7;</code>
+   */
+  com.google.monitoring.v3.InternalChecker.State getState();
 }

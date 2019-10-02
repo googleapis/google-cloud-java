@@ -12,7 +12,7 @@ import static io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall;
  *
  * <pre>
  * The UptimeCheckService API is used to manage (list, create, delete, edit)
- * uptime check configurations in the Stackdriver Monitoring product. An uptime
+ * Uptime check configurations in the Stackdriver Monitoring product. An Uptime
  * check is a piece of configuration that determines which resources and
  * services to monitor for availability. These configurations can also be
  * configured interactively by navigating to the [Cloud Console]
@@ -414,7 +414,7 @@ public final class UptimeCheckServiceGrpc {
    *
    * <pre>
    * The UptimeCheckService API is used to manage (list, create, delete, edit)
-   * uptime check configurations in the Stackdriver Monitoring product. An uptime
+   * Uptime check configurations in the Stackdriver Monitoring product. An Uptime
    * check is a piece of configuration that determines which resources and
    * services to monitor for availability. These configurations can also be
    * configured interactively by navigating to the [Cloud Console]
@@ -429,8 +429,8 @@ public final class UptimeCheckServiceGrpc {
      *
      *
      * <pre>
-     * Lists the existing valid uptime check configurations for the project,
-     * leaving out any invalid configurations.
+     * Lists the existing valid Uptime check configurations for the project
+     * (leaving out any invalid configurations).
      * </pre>
      */
     public void listUptimeCheckConfigs(
@@ -444,7 +444,7 @@ public final class UptimeCheckServiceGrpc {
      *
      *
      * <pre>
-     * Gets a single uptime check configuration.
+     * Gets a single Uptime check configuration.
      * </pre>
      */
     public void getUptimeCheckConfig(
@@ -457,7 +457,7 @@ public final class UptimeCheckServiceGrpc {
      *
      *
      * <pre>
-     * Creates a new uptime check configuration.
+     * Creates a new Uptime check configuration.
      * </pre>
      */
     public void createUptimeCheckConfig(
@@ -470,9 +470,9 @@ public final class UptimeCheckServiceGrpc {
      *
      *
      * <pre>
-     * Updates an uptime check configuration. You can either replace the entire
+     * Updates an Uptime check configuration. You can either replace the entire
      * configuration with a new one or replace only certain fields in the current
-     * configuration by specifying the fields to be updated via `"updateMask"`.
+     * configuration by specifying the fields to be updated via `updateMask`.
      * Returns the updated configuration.
      * </pre>
      */
@@ -486,8 +486,8 @@ public final class UptimeCheckServiceGrpc {
      *
      *
      * <pre>
-     * Deletes an uptime check configuration. Note that this method will fail
-     * if the uptime check configuration is referenced by an alert policy or
+     * Deletes an Uptime check configuration. Note that this method will fail
+     * if the Uptime check configuration is referenced by an alert policy or
      * other dependent configs that would be rendered invalid by the deletion.
      * </pre>
      */
@@ -501,7 +501,7 @@ public final class UptimeCheckServiceGrpc {
      *
      *
      * <pre>
-     * Returns the list of IPs that checkers run from
+     * Returns the list of IP addresses that checkers run from
      * </pre>
      */
     public void listUptimeCheckIps(
@@ -564,7 +564,7 @@ public final class UptimeCheckServiceGrpc {
    *
    * <pre>
    * The UptimeCheckService API is used to manage (list, create, delete, edit)
-   * uptime check configurations in the Stackdriver Monitoring product. An uptime
+   * Uptime check configurations in the Stackdriver Monitoring product. An Uptime
    * check is a piece of configuration that determines which resources and
    * services to monitor for availability. These configurations can also be
    * configured interactively by navigating to the [Cloud Console]
@@ -593,8 +593,8 @@ public final class UptimeCheckServiceGrpc {
      *
      *
      * <pre>
-     * Lists the existing valid uptime check configurations for the project,
-     * leaving out any invalid configurations.
+     * Lists the existing valid Uptime check configurations for the project
+     * (leaving out any invalid configurations).
      * </pre>
      */
     public void listUptimeCheckConfigs(
@@ -611,7 +611,7 @@ public final class UptimeCheckServiceGrpc {
      *
      *
      * <pre>
-     * Gets a single uptime check configuration.
+     * Gets a single Uptime check configuration.
      * </pre>
      */
     public void getUptimeCheckConfig(
@@ -627,7 +627,7 @@ public final class UptimeCheckServiceGrpc {
      *
      *
      * <pre>
-     * Creates a new uptime check configuration.
+     * Creates a new Uptime check configuration.
      * </pre>
      */
     public void createUptimeCheckConfig(
@@ -643,9 +643,9 @@ public final class UptimeCheckServiceGrpc {
      *
      *
      * <pre>
-     * Updates an uptime check configuration. You can either replace the entire
+     * Updates an Uptime check configuration. You can either replace the entire
      * configuration with a new one or replace only certain fields in the current
-     * configuration by specifying the fields to be updated via `"updateMask"`.
+     * configuration by specifying the fields to be updated via `updateMask`.
      * Returns the updated configuration.
      * </pre>
      */
@@ -662,8 +662,8 @@ public final class UptimeCheckServiceGrpc {
      *
      *
      * <pre>
-     * Deletes an uptime check configuration. Note that this method will fail
-     * if the uptime check configuration is referenced by an alert policy or
+     * Deletes an Uptime check configuration. Note that this method will fail
+     * if the Uptime check configuration is referenced by an alert policy or
      * other dependent configs that would be rendered invalid by the deletion.
      * </pre>
      */
@@ -680,7 +680,7 @@ public final class UptimeCheckServiceGrpc {
      *
      *
      * <pre>
-     * Returns the list of IPs that checkers run from
+     * Returns the list of IP addresses that checkers run from
      * </pre>
      */
     public void listUptimeCheckIps(
@@ -699,7 +699,7 @@ public final class UptimeCheckServiceGrpc {
    *
    * <pre>
    * The UptimeCheckService API is used to manage (list, create, delete, edit)
-   * uptime check configurations in the Stackdriver Monitoring product. An uptime
+   * Uptime check configurations in the Stackdriver Monitoring product. An Uptime
    * check is a piece of configuration that determines which resources and
    * services to monitor for availability. These configurations can also be
    * configured interactively by navigating to the [Cloud Console]
@@ -729,8 +729,8 @@ public final class UptimeCheckServiceGrpc {
      *
      *
      * <pre>
-     * Lists the existing valid uptime check configurations for the project,
-     * leaving out any invalid configurations.
+     * Lists the existing valid Uptime check configurations for the project
+     * (leaving out any invalid configurations).
      * </pre>
      */
     public com.google.monitoring.v3.ListUptimeCheckConfigsResponse listUptimeCheckConfigs(
@@ -743,7 +743,7 @@ public final class UptimeCheckServiceGrpc {
      *
      *
      * <pre>
-     * Gets a single uptime check configuration.
+     * Gets a single Uptime check configuration.
      * </pre>
      */
     public com.google.monitoring.v3.UptimeCheckConfig getUptimeCheckConfig(
@@ -756,7 +756,7 @@ public final class UptimeCheckServiceGrpc {
      *
      *
      * <pre>
-     * Creates a new uptime check configuration.
+     * Creates a new Uptime check configuration.
      * </pre>
      */
     public com.google.monitoring.v3.UptimeCheckConfig createUptimeCheckConfig(
@@ -769,9 +769,9 @@ public final class UptimeCheckServiceGrpc {
      *
      *
      * <pre>
-     * Updates an uptime check configuration. You can either replace the entire
+     * Updates an Uptime check configuration. You can either replace the entire
      * configuration with a new one or replace only certain fields in the current
-     * configuration by specifying the fields to be updated via `"updateMask"`.
+     * configuration by specifying the fields to be updated via `updateMask`.
      * Returns the updated configuration.
      * </pre>
      */
@@ -785,8 +785,8 @@ public final class UptimeCheckServiceGrpc {
      *
      *
      * <pre>
-     * Deletes an uptime check configuration. Note that this method will fail
-     * if the uptime check configuration is referenced by an alert policy or
+     * Deletes an Uptime check configuration. Note that this method will fail
+     * if the Uptime check configuration is referenced by an alert policy or
      * other dependent configs that would be rendered invalid by the deletion.
      * </pre>
      */
@@ -800,7 +800,7 @@ public final class UptimeCheckServiceGrpc {
      *
      *
      * <pre>
-     * Returns the list of IPs that checkers run from
+     * Returns the list of IP addresses that checkers run from
      * </pre>
      */
     public com.google.monitoring.v3.ListUptimeCheckIpsResponse listUptimeCheckIps(
@@ -815,7 +815,7 @@ public final class UptimeCheckServiceGrpc {
    *
    * <pre>
    * The UptimeCheckService API is used to manage (list, create, delete, edit)
-   * uptime check configurations in the Stackdriver Monitoring product. An uptime
+   * Uptime check configurations in the Stackdriver Monitoring product. An Uptime
    * check is a piece of configuration that determines which resources and
    * services to monitor for availability. These configurations can also be
    * configured interactively by navigating to the [Cloud Console]
@@ -844,8 +844,8 @@ public final class UptimeCheckServiceGrpc {
      *
      *
      * <pre>
-     * Lists the existing valid uptime check configurations for the project,
-     * leaving out any invalid configurations.
+     * Lists the existing valid Uptime check configurations for the project
+     * (leaving out any invalid configurations).
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<
@@ -859,7 +859,7 @@ public final class UptimeCheckServiceGrpc {
      *
      *
      * <pre>
-     * Gets a single uptime check configuration.
+     * Gets a single Uptime check configuration.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<
@@ -873,7 +873,7 @@ public final class UptimeCheckServiceGrpc {
      *
      *
      * <pre>
-     * Creates a new uptime check configuration.
+     * Creates a new Uptime check configuration.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<
@@ -888,9 +888,9 @@ public final class UptimeCheckServiceGrpc {
      *
      *
      * <pre>
-     * Updates an uptime check configuration. You can either replace the entire
+     * Updates an Uptime check configuration. You can either replace the entire
      * configuration with a new one or replace only certain fields in the current
-     * configuration by specifying the fields to be updated via `"updateMask"`.
+     * configuration by specifying the fields to be updated via `updateMask`.
      * Returns the updated configuration.
      * </pre>
      */
@@ -906,8 +906,8 @@ public final class UptimeCheckServiceGrpc {
      *
      *
      * <pre>
-     * Deletes an uptime check configuration. Note that this method will fail
-     * if the uptime check configuration is referenced by an alert policy or
+     * Deletes an Uptime check configuration. Note that this method will fail
+     * if the Uptime check configuration is referenced by an alert policy or
      * other dependent configs that would be rendered invalid by the deletion.
      * </pre>
      */
@@ -922,7 +922,7 @@ public final class UptimeCheckServiceGrpc {
      *
      *
      * <pre>
-     * Returns the list of IPs that checkers run from
+     * Returns the list of IP addresses that checkers run from
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<

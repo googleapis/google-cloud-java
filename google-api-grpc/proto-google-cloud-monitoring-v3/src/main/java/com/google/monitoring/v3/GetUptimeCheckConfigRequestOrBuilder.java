@@ -12,7 +12,7 @@ public interface GetUptimeCheckConfigRequestOrBuilder
    *
    *
    * <pre>
-   * The uptime check configuration to retrieve. The format
+   * The Uptime check configuration to retrieve. The format
    *   is `projects/[PROJECT_ID]/uptimeCheckConfigs/[UPTIME_CHECK_ID]`.
    * </pre>
    *
@@ -23,7 +23,7 @@ public interface GetUptimeCheckConfigRequestOrBuilder
    *
    *
    * <pre>
-   * The uptime check configuration to retrieve. The format
+   * The Uptime check configuration to retrieve. The format
    *   is `projects/[PROJECT_ID]/uptimeCheckConfigs/[UPTIME_CHECK_ID]`.
    * </pre>
    *

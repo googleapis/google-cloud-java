@@ -7,7 +7,7 @@ package com.google.monitoring.v3;
  *
  *
  * <pre>
- * The regions from which an uptime check can be run.
+ * The regions from which an Uptime check can be run.
  * </pre>
  *
  * Protobuf enum {@code google.monitoring.v3.UptimeCheckRegion}
@@ -17,7 +17,7 @@ public enum UptimeCheckRegion implements com.google.protobuf.ProtocolMessageEnum
    *
    *
    * <pre>
-   * Default value if no region is specified. Will result in uptime checks
+   * Default value if no region is specified. Will result in Uptime checks
    * running from all regions.
    * </pre>
    *
@@ -73,7 +73,7 @@ public enum UptimeCheckRegion implements com.google.protobuf.ProtocolMessageEnum
    *
    *
    * <pre>
-   * Default value if no region is specified. Will result in uptime checks
+   * Default value if no region is specified. Will result in Uptime checks
    * running from all regions.
    * </pre>
    *
