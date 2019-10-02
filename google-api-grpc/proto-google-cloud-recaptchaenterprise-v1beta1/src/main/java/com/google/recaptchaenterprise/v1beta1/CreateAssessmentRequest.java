@@ -118,7 +118,9 @@ public final class CreateAssessmentRequest extends com.google.protobuf.Generated
    * in the format "projects/{project_number}".
    * </pre>
    *
-   * <code>string parent = 1;</code>
+   * <code>
+   * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    */
   public java.lang.String getParent() {
     java.lang.Object ref = parent_;
@@ -139,7 +141,9 @@ public final class CreateAssessmentRequest extends com.google.protobuf.Generated
    * in the format "projects/{project_number}".
    * </pre>
    *
-   * <code>string parent = 1;</code>
+   * <code>
+   * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    */
   public com.google.protobuf.ByteString getParentBytes() {
     java.lang.Object ref = parent_;
@@ -159,10 +163,12 @@ public final class CreateAssessmentRequest extends com.google.protobuf.Generated
    *
    *
    * <pre>
-   * The asessment details.
+   * Required. The assessment details.
    * </pre>
    *
-   * <code>.google.cloud.recaptchaenterprise.v1beta1.Assessment assessment = 2;</code>
+   * <code>
+   * .google.cloud.recaptchaenterprise.v1beta1.Assessment assessment = 2 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   public boolean hasAssessment() {
     return assessment_ != null;
@@ -171,10 +177,12 @@ public final class CreateAssessmentRequest extends com.google.protobuf.Generated
    *
    *
    * <pre>
-   * The asessment details.
+   * Required. The assessment details.
    * </pre>
    *
-   * <code>.google.cloud.recaptchaenterprise.v1beta1.Assessment assessment = 2;</code>
+   * <code>
+   * .google.cloud.recaptchaenterprise.v1beta1.Assessment assessment = 2 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   public com.google.recaptchaenterprise.v1beta1.Assessment getAssessment() {
     return assessment_ == null
@@ -185,10 +193,12 @@ public final class CreateAssessmentRequest extends com.google.protobuf.Generated
    *
    *
    * <pre>
-   * The asessment details.
+   * Required. The assessment details.
    * </pre>
    *
-   * <code>.google.cloud.recaptchaenterprise.v1beta1.Assessment assessment = 2;</code>
+   * <code>
+   * .google.cloud.recaptchaenterprise.v1beta1.Assessment assessment = 2 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   public com.google.recaptchaenterprise.v1beta1.AssessmentOrBuilder getAssessmentOrBuilder() {
     return getAssessment();
@@ -553,7 +563,9 @@ public final class CreateAssessmentRequest extends com.google.protobuf.Generated
      * in the format "projects/{project_number}".
      * </pre>
      *
-     * <code>string parent = 1;</code>
+     * <code>
+     * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      */
     public java.lang.String getParent() {
       java.lang.Object ref = parent_;
@@ -574,7 +586,9 @@ public final class CreateAssessmentRequest extends com.google.protobuf.Generated
      * in the format "projects/{project_number}".
      * </pre>
      *
-     * <code>string parent = 1;</code>
+     * <code>
+     * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      */
     public com.google.protobuf.ByteString getParentBytes() {
       java.lang.Object ref = parent_;
@@ -595,7 +609,9 @@ public final class CreateAssessmentRequest extends com.google.protobuf.Generated
      * in the format "projects/{project_number}".
      * </pre>
      *
-     * <code>string parent = 1;</code>
+     * <code>
+     * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      */
     public Builder setParent(java.lang.String value) {
       if (value == null) {
@@ -614,7 +630,9 @@ public final class CreateAssessmentRequest extends com.google.protobuf.Generated
      * in the format "projects/{project_number}".
      * </pre>
      *
-     * <code>string parent = 1;</code>
+     * <code>
+     * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      */
     public Builder clearParent() {
 
@@ -630,7 +648,9 @@ public final class CreateAssessmentRequest extends com.google.protobuf.Generated
      * in the format "projects/{project_number}".
      * </pre>
      *
-     * <code>string parent = 1;</code>
+     * <code>
+     * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      */
     public Builder setParentBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -653,10 +673,12 @@ public final class CreateAssessmentRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * The asessment details.
+     * Required. The assessment details.
      * </pre>
      *
-     * <code>.google.cloud.recaptchaenterprise.v1beta1.Assessment assessment = 2;</code>
+     * <code>
+     * .google.cloud.recaptchaenterprise.v1beta1.Assessment assessment = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public boolean hasAssessment() {
       return assessmentBuilder_ != null || assessment_ != null;
@@ -665,10 +687,12 @@ public final class CreateAssessmentRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * The asessment details.
+     * Required. The assessment details.
      * </pre>
      *
-     * <code>.google.cloud.recaptchaenterprise.v1beta1.Assessment assessment = 2;</code>
+     * <code>
+     * .google.cloud.recaptchaenterprise.v1beta1.Assessment assessment = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public com.google.recaptchaenterprise.v1beta1.Assessment getAssessment() {
       if (assessmentBuilder_ == null) {
@@ -683,10 +707,12 @@ public final class CreateAssessmentRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * The asessment details.
+     * Required. The assessment details.
      * </pre>
      *
-     * <code>.google.cloud.recaptchaenterprise.v1beta1.Assessment assessment = 2;</code>
+     * <code>
+     * .google.cloud.recaptchaenterprise.v1beta1.Assessment assessment = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder setAssessment(com.google.recaptchaenterprise.v1beta1.Assessment value) {
       if (assessmentBuilder_ == null) {
@@ -705,10 +731,12 @@ public final class CreateAssessmentRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * The asessment details.
+     * Required. The assessment details.
      * </pre>
      *
-     * <code>.google.cloud.recaptchaenterprise.v1beta1.Assessment assessment = 2;</code>
+     * <code>
+     * .google.cloud.recaptchaenterprise.v1beta1.Assessment assessment = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder setAssessment(
         com.google.recaptchaenterprise.v1beta1.Assessment.Builder builderForValue) {
@@ -725,10 +753,12 @@ public final class CreateAssessmentRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * The asessment details.
+     * Required. The assessment details.
      * </pre>
      *
-     * <code>.google.cloud.recaptchaenterprise.v1beta1.Assessment assessment = 2;</code>
+     * <code>
+     * .google.cloud.recaptchaenterprise.v1beta1.Assessment assessment = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder mergeAssessment(com.google.recaptchaenterprise.v1beta1.Assessment value) {
       if (assessmentBuilder_ == null) {
@@ -751,10 +781,12 @@ public final class CreateAssessmentRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * The asessment details.
+     * Required. The assessment details.
      * </pre>
      *
-     * <code>.google.cloud.recaptchaenterprise.v1beta1.Assessment assessment = 2;</code>
+     * <code>
+     * .google.cloud.recaptchaenterprise.v1beta1.Assessment assessment = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder clearAssessment() {
       if (assessmentBuilder_ == null) {
@@ -771,10 +803,12 @@ public final class CreateAssessmentRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * The asessment details.
+     * Required. The assessment details.
      * </pre>
      *
-     * <code>.google.cloud.recaptchaenterprise.v1beta1.Assessment assessment = 2;</code>
+     * <code>
+     * .google.cloud.recaptchaenterprise.v1beta1.Assessment assessment = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public com.google.recaptchaenterprise.v1beta1.Assessment.Builder getAssessmentBuilder() {
 
@@ -785,10 +819,12 @@ public final class CreateAssessmentRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * The asessment details.
+     * Required. The assessment details.
      * </pre>
      *
-     * <code>.google.cloud.recaptchaenterprise.v1beta1.Assessment assessment = 2;</code>
+     * <code>
+     * .google.cloud.recaptchaenterprise.v1beta1.Assessment assessment = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public com.google.recaptchaenterprise.v1beta1.AssessmentOrBuilder getAssessmentOrBuilder() {
       if (assessmentBuilder_ != null) {
@@ -803,10 +839,12 @@ public final class CreateAssessmentRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * The asessment details.
+     * Required. The assessment details.
      * </pre>
      *
-     * <code>.google.cloud.recaptchaenterprise.v1beta1.Assessment assessment = 2;</code>
+     * <code>
+     * .google.cloud.recaptchaenterprise.v1beta1.Assessment assessment = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.recaptchaenterprise.v1beta1.Assessment,
