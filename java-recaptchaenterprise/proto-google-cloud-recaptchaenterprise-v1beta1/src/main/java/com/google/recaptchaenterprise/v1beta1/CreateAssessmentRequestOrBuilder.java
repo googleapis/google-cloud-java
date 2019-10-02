@@ -16,7 +16,9 @@ public interface CreateAssessmentRequestOrBuilder
    * in the format "projects/{project_number}".
    * </pre>
    *
-   * <code>string parent = 1;</code>
+   * <code>
+   * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    */
   java.lang.String getParent();
   /**
@@ -27,7 +29,9 @@ public interface CreateAssessmentRequestOrBuilder
    * in the format "projects/{project_number}".
    * </pre>
    *
-   * <code>string parent = 1;</code>
+   * <code>
+   * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    */
   com.google.protobuf.ByteString getParentBytes();
 
@@ -35,30 +39,36 @@ public interface CreateAssessmentRequestOrBuilder
    *
    *
    * <pre>
-   * The asessment details.
+   * Required. The assessment details.
    * </pre>
    *
-   * <code>.google.cloud.recaptchaenterprise.v1beta1.Assessment assessment = 2;</code>
+   * <code>
+   * .google.cloud.recaptchaenterprise.v1beta1.Assessment assessment = 2 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   boolean hasAssessment();
   /**
    *
    *
    * <pre>
-   * The asessment details.
+   * Required. The assessment details.
    * </pre>
    *
-   * <code>.google.cloud.recaptchaenterprise.v1beta1.Assessment assessment = 2;</code>
+   * <code>
+   * .google.cloud.recaptchaenterprise.v1beta1.Assessment assessment = 2 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   com.google.recaptchaenterprise.v1beta1.Assessment getAssessment();
   /**
    *
    *
    * <pre>
-   * The asessment details.
+   * Required. The assessment details.
    * </pre>
    *
-   * <code>.google.cloud.recaptchaenterprise.v1beta1.Assessment assessment = 2;</code>
+   * <code>
+   * .google.cloud.recaptchaenterprise.v1beta1.Assessment assessment = 2 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   com.google.recaptchaenterprise.v1beta1.AssessmentOrBuilder getAssessmentOrBuilder();
 }

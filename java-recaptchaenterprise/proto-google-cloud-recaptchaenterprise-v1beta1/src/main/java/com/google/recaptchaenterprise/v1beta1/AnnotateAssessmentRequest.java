@@ -257,7 +257,9 @@ public final class AnnotateAssessmentRequest extends com.google.protobuf.Generat
    * "projects/{project_number}/assessments/{assessment_id}".
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>
+   * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    */
   public java.lang.String getName() {
     java.lang.Object ref = name_;
@@ -278,7 +280,9 @@ public final class AnnotateAssessmentRequest extends com.google.protobuf.Generat
    * "projects/{project_number}/assessments/{assessment_id}".
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>
+   * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    */
   public com.google.protobuf.ByteString getNameBytes() {
     java.lang.Object ref = name_;
@@ -298,11 +302,11 @@ public final class AnnotateAssessmentRequest extends com.google.protobuf.Generat
    *
    *
    * <pre>
-   * The annotation that will be assigned to the Event.
+   * Required. The annotation that will be assigned to the Event.
    * </pre>
    *
    * <code>
-   * .google.cloud.recaptchaenterprise.v1beta1.AnnotateAssessmentRequest.Annotation annotation = 2;
+   * .google.cloud.recaptchaenterprise.v1beta1.AnnotateAssessmentRequest.Annotation annotation = 2 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    */
   public int getAnnotationValue() {
@@ -312,11 +316,11 @@ public final class AnnotateAssessmentRequest extends com.google.protobuf.Generat
    *
    *
    * <pre>
-   * The annotation that will be assigned to the Event.
+   * Required. The annotation that will be assigned to the Event.
    * </pre>
    *
    * <code>
-   * .google.cloud.recaptchaenterprise.v1beta1.AnnotateAssessmentRequest.Annotation annotation = 2;
+   * .google.cloud.recaptchaenterprise.v1beta1.AnnotateAssessmentRequest.Annotation annotation = 2 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    */
   public com.google.recaptchaenterprise.v1beta1.AnnotateAssessmentRequest.Annotation
@@ -683,7 +687,9 @@ public final class AnnotateAssessmentRequest extends com.google.protobuf.Generat
      * "projects/{project_number}/assessments/{assessment_id}".
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>
+     * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      */
     public java.lang.String getName() {
       java.lang.Object ref = name_;
@@ -704,7 +710,9 @@ public final class AnnotateAssessmentRequest extends com.google.protobuf.Generat
      * "projects/{project_number}/assessments/{assessment_id}".
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>
+     * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      */
     public com.google.protobuf.ByteString getNameBytes() {
       java.lang.Object ref = name_;
@@ -725,7 +733,9 @@ public final class AnnotateAssessmentRequest extends com.google.protobuf.Generat
      * "projects/{project_number}/assessments/{assessment_id}".
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>
+     * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      */
     public Builder setName(java.lang.String value) {
       if (value == null) {
@@ -744,7 +754,9 @@ public final class AnnotateAssessmentRequest extends com.google.protobuf.Generat
      * "projects/{project_number}/assessments/{assessment_id}".
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>
+     * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      */
     public Builder clearName() {
 
@@ -760,7 +772,9 @@ public final class AnnotateAssessmentRequest extends com.google.protobuf.Generat
      * "projects/{project_number}/assessments/{assessment_id}".
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>
+     * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      */
     public Builder setNameBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -778,11 +792,11 @@ public final class AnnotateAssessmentRequest extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * The annotation that will be assigned to the Event.
+     * Required. The annotation that will be assigned to the Event.
      * </pre>
      *
      * <code>
-     * .google.cloud.recaptchaenterprise.v1beta1.AnnotateAssessmentRequest.Annotation annotation = 2;
+     * .google.cloud.recaptchaenterprise.v1beta1.AnnotateAssessmentRequest.Annotation annotation = 2 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public int getAnnotationValue() {
@@ -792,11 +806,11 @@ public final class AnnotateAssessmentRequest extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * The annotation that will be assigned to the Event.
+     * Required. The annotation that will be assigned to the Event.
      * </pre>
      *
      * <code>
-     * .google.cloud.recaptchaenterprise.v1beta1.AnnotateAssessmentRequest.Annotation annotation = 2;
+     * .google.cloud.recaptchaenterprise.v1beta1.AnnotateAssessmentRequest.Annotation annotation = 2 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public Builder setAnnotationValue(int value) {
@@ -808,11 +822,11 @@ public final class AnnotateAssessmentRequest extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * The annotation that will be assigned to the Event.
+     * Required. The annotation that will be assigned to the Event.
      * </pre>
      *
      * <code>
-     * .google.cloud.recaptchaenterprise.v1beta1.AnnotateAssessmentRequest.Annotation annotation = 2;
+     * .google.cloud.recaptchaenterprise.v1beta1.AnnotateAssessmentRequest.Annotation annotation = 2 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public com.google.recaptchaenterprise.v1beta1.AnnotateAssessmentRequest.Annotation
@@ -829,11 +843,11 @@ public final class AnnotateAssessmentRequest extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * The annotation that will be assigned to the Event.
+     * Required. The annotation that will be assigned to the Event.
      * </pre>
      *
      * <code>
-     * .google.cloud.recaptchaenterprise.v1beta1.AnnotateAssessmentRequest.Annotation annotation = 2;
+     * .google.cloud.recaptchaenterprise.v1beta1.AnnotateAssessmentRequest.Annotation annotation = 2 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public Builder setAnnotation(
@@ -850,11 +864,11 @@ public final class AnnotateAssessmentRequest extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * The annotation that will be assigned to the Event.
+     * Required. The annotation that will be assigned to the Event.
      * </pre>
      *
      * <code>
-     * .google.cloud.recaptchaenterprise.v1beta1.AnnotateAssessmentRequest.Annotation annotation = 2;
+     * .google.cloud.recaptchaenterprise.v1beta1.AnnotateAssessmentRequest.Annotation annotation = 2 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public Builder clearAnnotation() {
