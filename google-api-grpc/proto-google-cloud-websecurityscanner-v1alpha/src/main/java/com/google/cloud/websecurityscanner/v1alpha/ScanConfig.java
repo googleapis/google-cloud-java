@@ -8,6 +8,7 @@ package com.google.cloud.websecurityscanner.v1alpha;
  *
  * <pre>
  * A ScanConfig resource contains the configurations to launch a scan.
+ * next id: 12
  * </pre>
  *
  * Protobuf type {@code google.cloud.websecurityscanner.v1alpha.ScanConfig}
@@ -161,6 +162,23 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
                 targetPlatforms_.add(rawValue);
               }
               input.popLimit(oldLimit);
+              break;
+            }
+          case 90:
+            {
+              com.google.cloud.websecurityscanner.v1alpha.ScanRun.Builder subBuilder = null;
+              if (latestRun_ != null) {
+                subBuilder = latestRun_.toBuilder();
+              }
+              latestRun_ =
+                  input.readMessage(
+                      com.google.cloud.websecurityscanner.v1alpha.ScanRun.parser(),
+                      extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(latestRun_);
+                latestRun_ = subBuilder.buildPartial();
+              }
+
               break;
             }
           default:
@@ -752,22 +770,20 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Required.
-       * The user name of the Google account.
+       * Required. The user name of the Google account.
        * </pre>
        *
-       * <code>string username = 1;</code>
+       * <code>string username = 1 [(.google.api.field_behavior) = REQUIRED];</code>
        */
       java.lang.String getUsername();
       /**
        *
        *
        * <pre>
-       * Required.
-       * The user name of the Google account.
+       * Required. The user name of the Google account.
        * </pre>
        *
-       * <code>string username = 1;</code>
+       * <code>string username = 1 [(.google.api.field_behavior) = REQUIRED];</code>
        */
       com.google.protobuf.ByteString getUsernameBytes();
 
@@ -775,26 +791,26 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Input only.
-       * Required.
-       * The password of the Google account. The credential is stored encrypted
-       * and not returned in any response.
+       * Required. Input only. The password of the Google account. The credential is stored encrypted
+       * and not returned in any response nor included in audit logs.
        * </pre>
        *
-       * <code>string password = 2;</code>
+       * <code>
+       * string password = 2 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = INPUT_ONLY];
+       * </code>
        */
       java.lang.String getPassword();
       /**
        *
        *
        * <pre>
-       * Input only.
-       * Required.
-       * The password of the Google account. The credential is stored encrypted
-       * and not returned in any response.
+       * Required. Input only. The password of the Google account. The credential is stored encrypted
+       * and not returned in any response nor included in audit logs.
        * </pre>
        *
-       * <code>string password = 2;</code>
+       * <code>
+       * string password = 2 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = INPUT_ONLY];
+       * </code>
        */
       com.google.protobuf.ByteString getPasswordBytes();
     }
@@ -904,11 +920,10 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Required.
-       * The user name of the Google account.
+       * Required. The user name of the Google account.
        * </pre>
        *
-       * <code>string username = 1;</code>
+       * <code>string username = 1 [(.google.api.field_behavior) = REQUIRED];</code>
        */
       public java.lang.String getUsername() {
         java.lang.Object ref = username_;
@@ -925,11 +940,10 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Required.
-       * The user name of the Google account.
+       * Required. The user name of the Google account.
        * </pre>
        *
-       * <code>string username = 1;</code>
+       * <code>string username = 1 [(.google.api.field_behavior) = REQUIRED];</code>
        */
       public com.google.protobuf.ByteString getUsernameBytes() {
         java.lang.Object ref = username_;
@@ -949,13 +963,13 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Input only.
-       * Required.
-       * The password of the Google account. The credential is stored encrypted
-       * and not returned in any response.
+       * Required. Input only. The password of the Google account. The credential is stored encrypted
+       * and not returned in any response nor included in audit logs.
        * </pre>
        *
-       * <code>string password = 2;</code>
+       * <code>
+       * string password = 2 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = INPUT_ONLY];
+       * </code>
        */
       public java.lang.String getPassword() {
         java.lang.Object ref = password_;
@@ -972,13 +986,13 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Input only.
-       * Required.
-       * The password of the Google account. The credential is stored encrypted
-       * and not returned in any response.
+       * Required. Input only. The password of the Google account. The credential is stored encrypted
+       * and not returned in any response nor included in audit logs.
        * </pre>
        *
-       * <code>string password = 2;</code>
+       * <code>
+       * string password = 2 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = INPUT_ONLY];
+       * </code>
        */
       public com.google.protobuf.ByteString getPasswordBytes() {
         java.lang.Object ref = password_;
@@ -1383,11 +1397,10 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * Required.
-         * The user name of the Google account.
+         * Required. The user name of the Google account.
          * </pre>
          *
-         * <code>string username = 1;</code>
+         * <code>string username = 1 [(.google.api.field_behavior) = REQUIRED];</code>
          */
         public java.lang.String getUsername() {
           java.lang.Object ref = username_;
@@ -1404,11 +1417,10 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * Required.
-         * The user name of the Google account.
+         * Required. The user name of the Google account.
          * </pre>
          *
-         * <code>string username = 1;</code>
+         * <code>string username = 1 [(.google.api.field_behavior) = REQUIRED];</code>
          */
         public com.google.protobuf.ByteString getUsernameBytes() {
           java.lang.Object ref = username_;
@@ -1425,11 +1437,10 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * Required.
-         * The user name of the Google account.
+         * Required. The user name of the Google account.
          * </pre>
          *
-         * <code>string username = 1;</code>
+         * <code>string username = 1 [(.google.api.field_behavior) = REQUIRED];</code>
          */
         public Builder setUsername(java.lang.String value) {
           if (value == null) {
@@ -1444,11 +1455,10 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * Required.
-         * The user name of the Google account.
+         * Required. The user name of the Google account.
          * </pre>
          *
-         * <code>string username = 1;</code>
+         * <code>string username = 1 [(.google.api.field_behavior) = REQUIRED];</code>
          */
         public Builder clearUsername() {
 
@@ -1460,11 +1470,10 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * Required.
-         * The user name of the Google account.
+         * Required. The user name of the Google account.
          * </pre>
          *
-         * <code>string username = 1;</code>
+         * <code>string username = 1 [(.google.api.field_behavior) = REQUIRED];</code>
          */
         public Builder setUsernameBytes(com.google.protobuf.ByteString value) {
           if (value == null) {
@@ -1482,13 +1491,13 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * Input only.
-         * Required.
-         * The password of the Google account. The credential is stored encrypted
-         * and not returned in any response.
+         * Required. Input only. The password of the Google account. The credential is stored encrypted
+         * and not returned in any response nor included in audit logs.
          * </pre>
          *
-         * <code>string password = 2;</code>
+         * <code>
+         * string password = 2 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = INPUT_ONLY];
+         * </code>
          */
         public java.lang.String getPassword() {
           java.lang.Object ref = password_;
@@ -1505,13 +1514,13 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * Input only.
-         * Required.
-         * The password of the Google account. The credential is stored encrypted
-         * and not returned in any response.
+         * Required. Input only. The password of the Google account. The credential is stored encrypted
+         * and not returned in any response nor included in audit logs.
          * </pre>
          *
-         * <code>string password = 2;</code>
+         * <code>
+         * string password = 2 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = INPUT_ONLY];
+         * </code>
          */
         public com.google.protobuf.ByteString getPasswordBytes() {
           java.lang.Object ref = password_;
@@ -1528,13 +1537,13 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * Input only.
-         * Required.
-         * The password of the Google account. The credential is stored encrypted
-         * and not returned in any response.
+         * Required. Input only. The password of the Google account. The credential is stored encrypted
+         * and not returned in any response nor included in audit logs.
          * </pre>
          *
-         * <code>string password = 2;</code>
+         * <code>
+         * string password = 2 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = INPUT_ONLY];
+         * </code>
          */
         public Builder setPassword(java.lang.String value) {
           if (value == null) {
@@ -1549,13 +1558,13 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * Input only.
-         * Required.
-         * The password of the Google account. The credential is stored encrypted
-         * and not returned in any response.
+         * Required. Input only. The password of the Google account. The credential is stored encrypted
+         * and not returned in any response nor included in audit logs.
          * </pre>
          *
-         * <code>string password = 2;</code>
+         * <code>
+         * string password = 2 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = INPUT_ONLY];
+         * </code>
          */
         public Builder clearPassword() {
 
@@ -1567,13 +1576,13 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * Input only.
-         * Required.
-         * The password of the Google account. The credential is stored encrypted
-         * and not returned in any response.
+         * Required. Input only. The password of the Google account. The credential is stored encrypted
+         * and not returned in any response nor included in audit logs.
          * </pre>
          *
-         * <code>string password = 2;</code>
+         * <code>
+         * string password = 2 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = INPUT_ONLY];
+         * </code>
          */
         public Builder setPasswordBytes(com.google.protobuf.ByteString value) {
           if (value == null) {
@@ -1654,22 +1663,20 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Required.
-       * The user name of the custom account.
+       * Required. The user name of the custom account.
        * </pre>
        *
-       * <code>string username = 1;</code>
+       * <code>string username = 1 [(.google.api.field_behavior) = REQUIRED];</code>
        */
       java.lang.String getUsername();
       /**
        *
        *
        * <pre>
-       * Required.
-       * The user name of the custom account.
+       * Required. The user name of the custom account.
        * </pre>
        *
-       * <code>string username = 1;</code>
+       * <code>string username = 1 [(.google.api.field_behavior) = REQUIRED];</code>
        */
       com.google.protobuf.ByteString getUsernameBytes();
 
@@ -1677,26 +1684,26 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Input only.
-       * Required.
-       * The password of the custom account. The credential is stored encrypted
-       * and not returned in any response.
+       * Required. Input only. The password of the custom account. The credential is stored encrypted
+       * and not returned in any response nor included in audit logs.
        * </pre>
        *
-       * <code>string password = 2;</code>
+       * <code>
+       * string password = 2 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = INPUT_ONLY];
+       * </code>
        */
       java.lang.String getPassword();
       /**
        *
        *
        * <pre>
-       * Input only.
-       * Required.
-       * The password of the custom account. The credential is stored encrypted
-       * and not returned in any response.
+       * Required. Input only. The password of the custom account. The credential is stored encrypted
+       * and not returned in any response nor included in audit logs.
        * </pre>
        *
-       * <code>string password = 2;</code>
+       * <code>
+       * string password = 2 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = INPUT_ONLY];
+       * </code>
        */
       com.google.protobuf.ByteString getPasswordBytes();
 
@@ -1704,22 +1711,20 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Required.
-       * The login form URL of the website.
+       * Required. The login form URL of the website.
        * </pre>
        *
-       * <code>string login_url = 3;</code>
+       * <code>string login_url = 3 [(.google.api.field_behavior) = REQUIRED];</code>
        */
       java.lang.String getLoginUrl();
       /**
        *
        *
        * <pre>
-       * Required.
-       * The login form URL of the website.
+       * Required. The login form URL of the website.
        * </pre>
        *
-       * <code>string login_url = 3;</code>
+       * <code>string login_url = 3 [(.google.api.field_behavior) = REQUIRED];</code>
        */
       com.google.protobuf.ByteString getLoginUrlBytes();
     }
@@ -1837,11 +1842,10 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Required.
-       * The user name of the custom account.
+       * Required. The user name of the custom account.
        * </pre>
        *
-       * <code>string username = 1;</code>
+       * <code>string username = 1 [(.google.api.field_behavior) = REQUIRED];</code>
        */
       public java.lang.String getUsername() {
         java.lang.Object ref = username_;
@@ -1858,11 +1862,10 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Required.
-       * The user name of the custom account.
+       * Required. The user name of the custom account.
        * </pre>
        *
-       * <code>string username = 1;</code>
+       * <code>string username = 1 [(.google.api.field_behavior) = REQUIRED];</code>
        */
       public com.google.protobuf.ByteString getUsernameBytes() {
         java.lang.Object ref = username_;
@@ -1882,13 +1885,13 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Input only.
-       * Required.
-       * The password of the custom account. The credential is stored encrypted
-       * and not returned in any response.
+       * Required. Input only. The password of the custom account. The credential is stored encrypted
+       * and not returned in any response nor included in audit logs.
        * </pre>
        *
-       * <code>string password = 2;</code>
+       * <code>
+       * string password = 2 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = INPUT_ONLY];
+       * </code>
        */
       public java.lang.String getPassword() {
         java.lang.Object ref = password_;
@@ -1905,13 +1908,13 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Input only.
-       * Required.
-       * The password of the custom account. The credential is stored encrypted
-       * and not returned in any response.
+       * Required. Input only. The password of the custom account. The credential is stored encrypted
+       * and not returned in any response nor included in audit logs.
        * </pre>
        *
-       * <code>string password = 2;</code>
+       * <code>
+       * string password = 2 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = INPUT_ONLY];
+       * </code>
        */
       public com.google.protobuf.ByteString getPasswordBytes() {
         java.lang.Object ref = password_;
@@ -1931,11 +1934,10 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Required.
-       * The login form URL of the website.
+       * Required. The login form URL of the website.
        * </pre>
        *
-       * <code>string login_url = 3;</code>
+       * <code>string login_url = 3 [(.google.api.field_behavior) = REQUIRED];</code>
        */
       public java.lang.String getLoginUrl() {
         java.lang.Object ref = loginUrl_;
@@ -1952,11 +1954,10 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Required.
-       * The login form URL of the website.
+       * Required. The login form URL of the website.
        * </pre>
        *
-       * <code>string login_url = 3;</code>
+       * <code>string login_url = 3 [(.google.api.field_behavior) = REQUIRED];</code>
        */
       public com.google.protobuf.ByteString getLoginUrlBytes() {
         java.lang.Object ref = loginUrl_;
@@ -2377,11 +2378,10 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * Required.
-         * The user name of the custom account.
+         * Required. The user name of the custom account.
          * </pre>
          *
-         * <code>string username = 1;</code>
+         * <code>string username = 1 [(.google.api.field_behavior) = REQUIRED];</code>
          */
         public java.lang.String getUsername() {
           java.lang.Object ref = username_;
@@ -2398,11 +2398,10 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * Required.
-         * The user name of the custom account.
+         * Required. The user name of the custom account.
          * </pre>
          *
-         * <code>string username = 1;</code>
+         * <code>string username = 1 [(.google.api.field_behavior) = REQUIRED];</code>
          */
         public com.google.protobuf.ByteString getUsernameBytes() {
           java.lang.Object ref = username_;
@@ -2419,11 +2418,10 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * Required.
-         * The user name of the custom account.
+         * Required. The user name of the custom account.
          * </pre>
          *
-         * <code>string username = 1;</code>
+         * <code>string username = 1 [(.google.api.field_behavior) = REQUIRED];</code>
          */
         public Builder setUsername(java.lang.String value) {
           if (value == null) {
@@ -2438,11 +2436,10 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * Required.
-         * The user name of the custom account.
+         * Required. The user name of the custom account.
          * </pre>
          *
-         * <code>string username = 1;</code>
+         * <code>string username = 1 [(.google.api.field_behavior) = REQUIRED];</code>
          */
         public Builder clearUsername() {
 
@@ -2454,11 +2451,10 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * Required.
-         * The user name of the custom account.
+         * Required. The user name of the custom account.
          * </pre>
          *
-         * <code>string username = 1;</code>
+         * <code>string username = 1 [(.google.api.field_behavior) = REQUIRED];</code>
          */
         public Builder setUsernameBytes(com.google.protobuf.ByteString value) {
           if (value == null) {
@@ -2476,13 +2472,13 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * Input only.
-         * Required.
-         * The password of the custom account. The credential is stored encrypted
-         * and not returned in any response.
+         * Required. Input only. The password of the custom account. The credential is stored encrypted
+         * and not returned in any response nor included in audit logs.
          * </pre>
          *
-         * <code>string password = 2;</code>
+         * <code>
+         * string password = 2 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = INPUT_ONLY];
+         * </code>
          */
         public java.lang.String getPassword() {
           java.lang.Object ref = password_;
@@ -2499,13 +2495,13 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * Input only.
-         * Required.
-         * The password of the custom account. The credential is stored encrypted
-         * and not returned in any response.
+         * Required. Input only. The password of the custom account. The credential is stored encrypted
+         * and not returned in any response nor included in audit logs.
          * </pre>
          *
-         * <code>string password = 2;</code>
+         * <code>
+         * string password = 2 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = INPUT_ONLY];
+         * </code>
          */
         public com.google.protobuf.ByteString getPasswordBytes() {
           java.lang.Object ref = password_;
@@ -2522,13 +2518,13 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * Input only.
-         * Required.
-         * The password of the custom account. The credential is stored encrypted
-         * and not returned in any response.
+         * Required. Input only. The password of the custom account. The credential is stored encrypted
+         * and not returned in any response nor included in audit logs.
          * </pre>
          *
-         * <code>string password = 2;</code>
+         * <code>
+         * string password = 2 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = INPUT_ONLY];
+         * </code>
          */
         public Builder setPassword(java.lang.String value) {
           if (value == null) {
@@ -2543,13 +2539,13 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * Input only.
-         * Required.
-         * The password of the custom account. The credential is stored encrypted
-         * and not returned in any response.
+         * Required. Input only. The password of the custom account. The credential is stored encrypted
+         * and not returned in any response nor included in audit logs.
          * </pre>
          *
-         * <code>string password = 2;</code>
+         * <code>
+         * string password = 2 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = INPUT_ONLY];
+         * </code>
          */
         public Builder clearPassword() {
 
@@ -2561,13 +2557,13 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * Input only.
-         * Required.
-         * The password of the custom account. The credential is stored encrypted
-         * and not returned in any response.
+         * Required. Input only. The password of the custom account. The credential is stored encrypted
+         * and not returned in any response nor included in audit logs.
          * </pre>
          *
-         * <code>string password = 2;</code>
+         * <code>
+         * string password = 2 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = INPUT_ONLY];
+         * </code>
          */
         public Builder setPasswordBytes(com.google.protobuf.ByteString value) {
           if (value == null) {
@@ -2585,11 +2581,10 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * Required.
-         * The login form URL of the website.
+         * Required. The login form URL of the website.
          * </pre>
          *
-         * <code>string login_url = 3;</code>
+         * <code>string login_url = 3 [(.google.api.field_behavior) = REQUIRED];</code>
          */
         public java.lang.String getLoginUrl() {
           java.lang.Object ref = loginUrl_;
@@ -2606,11 +2601,10 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * Required.
-         * The login form URL of the website.
+         * Required. The login form URL of the website.
          * </pre>
          *
-         * <code>string login_url = 3;</code>
+         * <code>string login_url = 3 [(.google.api.field_behavior) = REQUIRED];</code>
          */
         public com.google.protobuf.ByteString getLoginUrlBytes() {
           java.lang.Object ref = loginUrl_;
@@ -2627,11 +2621,10 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * Required.
-         * The login form URL of the website.
+         * Required. The login form URL of the website.
          * </pre>
          *
-         * <code>string login_url = 3;</code>
+         * <code>string login_url = 3 [(.google.api.field_behavior) = REQUIRED];</code>
          */
         public Builder setLoginUrl(java.lang.String value) {
           if (value == null) {
@@ -2646,11 +2639,10 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * Required.
-         * The login form URL of the website.
+         * Required. The login form URL of the website.
          * </pre>
          *
-         * <code>string login_url = 3;</code>
+         * <code>string login_url = 3 [(.google.api.field_behavior) = REQUIRED];</code>
          */
         public Builder clearLoginUrl() {
 
@@ -2662,11 +2654,10 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * Required.
-         * The login form URL of the website.
+         * Required. The login form URL of the website.
          * </pre>
          *
-         * <code>string login_url = 3;</code>
+         * <code>string login_url = 3 [(.google.api.field_behavior) = REQUIRED];</code>
          */
         public Builder setLoginUrlBytes(com.google.protobuf.ByteString value) {
           if (value == null) {
@@ -3921,11 +3912,10 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required.
-     * The duration of time between executions in days.
+     * Required. The duration of time between executions in days.
      * </pre>
      *
-     * <code>int32 interval_duration_days = 2;</code>
+     * <code>int32 interval_duration_days = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     int getIntervalDurationDays();
   }
@@ -4084,11 +4074,10 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required.
-     * The duration of time between executions in days.
+     * Required. The duration of time between executions in days.
      * </pre>
      *
-     * <code>int32 interval_duration_days = 2;</code>
+     * <code>int32 interval_duration_days = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public int getIntervalDurationDays() {
       return intervalDurationDays_;
@@ -4663,11 +4652,10 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Required.
-       * The duration of time between executions in days.
+       * Required. The duration of time between executions in days.
        * </pre>
        *
-       * <code>int32 interval_duration_days = 2;</code>
+       * <code>int32 interval_duration_days = 2 [(.google.api.field_behavior) = REQUIRED];</code>
        */
       public int getIntervalDurationDays() {
         return intervalDurationDays_;
@@ -4676,11 +4664,10 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Required.
-       * The duration of time between executions in days.
+       * Required. The duration of time between executions in days.
        * </pre>
        *
-       * <code>int32 interval_duration_days = 2;</code>
+       * <code>int32 interval_duration_days = 2 [(.google.api.field_behavior) = REQUIRED];</code>
        */
       public Builder setIntervalDurationDays(int value) {
 
@@ -4692,11 +4679,10 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Required.
-       * The duration of time between executions in days.
+       * Required. The duration of time between executions in days.
        * </pre>
        *
-       * <code>int32 interval_duration_days = 2;</code>
+       * <code>int32 interval_duration_days = 2 [(.google.api.field_behavior) = REQUIRED];</code>
        */
       public Builder clearIntervalDurationDays() {
 
@@ -4814,11 +4800,10 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Required.
-   * The user provided display name of the ScanConfig.
+   * Required. The user provided display name of the ScanConfig.
    * </pre>
    *
-   * <code>string display_name = 2;</code>
+   * <code>string display_name = 2 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   public java.lang.String getDisplayName() {
     java.lang.Object ref = displayName_;
@@ -4835,11 +4820,10 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Required.
-   * The user provided display name of the ScanConfig.
+   * Required. The user provided display name of the ScanConfig.
    * </pre>
    *
-   * <code>string display_name = 2;</code>
+   * <code>string display_name = 2 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   public com.google.protobuf.ByteString getDisplayNameBytes() {
     java.lang.Object ref = displayName_;
@@ -4877,11 +4861,10 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Required.
-   * The starting URLs from which the scanner finds site pages.
+   * Required. The starting URLs from which the scanner finds site pages.
    * </pre>
    *
-   * <code>repeated string starting_urls = 4;</code>
+   * <code>repeated string starting_urls = 4 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   public com.google.protobuf.ProtocolStringList getStartingUrlsList() {
     return startingUrls_;
@@ -4890,11 +4873,10 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Required.
-   * The starting URLs from which the scanner finds site pages.
+   * Required. The starting URLs from which the scanner finds site pages.
    * </pre>
    *
-   * <code>repeated string starting_urls = 4;</code>
+   * <code>repeated string starting_urls = 4 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   public int getStartingUrlsCount() {
     return startingUrls_.size();
@@ -4903,11 +4885,10 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Required.
-   * The starting URLs from which the scanner finds site pages.
+   * Required. The starting URLs from which the scanner finds site pages.
    * </pre>
    *
-   * <code>repeated string starting_urls = 4;</code>
+   * <code>repeated string starting_urls = 4 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   public java.lang.String getStartingUrls(int index) {
     return startingUrls_.get(index);
@@ -4916,11 +4897,10 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Required.
-   * The starting URLs from which the scanner finds site pages.
+   * Required. The starting URLs from which the scanner finds site pages.
    * </pre>
    *
-   * <code>repeated string starting_urls = 4;</code>
+   * <code>repeated string starting_urls = 4 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   public com.google.protobuf.ByteString getStartingUrlsBytes(int index) {
     return startingUrls_.getByteString(index);
@@ -5205,6 +5185,47 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
 
   private int targetPlatformsMemoizedSerializedSize;
 
+  public static final int LATEST_RUN_FIELD_NUMBER = 11;
+  private com.google.cloud.websecurityscanner.v1alpha.ScanRun latestRun_;
+  /**
+   *
+   *
+   * <pre>
+   * Latest ScanRun if available.
+   * </pre>
+   *
+   * <code>.google.cloud.websecurityscanner.v1alpha.ScanRun latest_run = 11;</code>
+   */
+  public boolean hasLatestRun() {
+    return latestRun_ != null;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Latest ScanRun if available.
+   * </pre>
+   *
+   * <code>.google.cloud.websecurityscanner.v1alpha.ScanRun latest_run = 11;</code>
+   */
+  public com.google.cloud.websecurityscanner.v1alpha.ScanRun getLatestRun() {
+    return latestRun_ == null
+        ? com.google.cloud.websecurityscanner.v1alpha.ScanRun.getDefaultInstance()
+        : latestRun_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Latest ScanRun if available.
+   * </pre>
+   *
+   * <code>.google.cloud.websecurityscanner.v1alpha.ScanRun latest_run = 11;</code>
+   */
+  public com.google.cloud.websecurityscanner.v1alpha.ScanRunOrBuilder getLatestRunOrBuilder() {
+    return getLatestRun();
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -5252,6 +5273,9 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
     }
     for (int i = 0; i < targetPlatforms_.size(); i++) {
       output.writeEnumNoTag(targetPlatforms_.get(i));
+    }
+    if (latestRun_ != null) {
+      output.writeMessage(11, getLatestRun());
     }
     unknownFields.writeTo(output);
   }
@@ -5311,6 +5335,9 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
       }
       targetPlatformsMemoizedSerializedSize = dataSize;
     }
+    if (latestRun_ != null) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(11, getLatestRun());
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -5342,6 +5369,10 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
       if (!getSchedule().equals(other.getSchedule())) return false;
     }
     if (!targetPlatforms_.equals(other.targetPlatforms_)) return false;
+    if (hasLatestRun() != other.hasLatestRun()) return false;
+    if (hasLatestRun()) {
+      if (!getLatestRun().equals(other.getLatestRun())) return false;
+    }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -5380,6 +5411,10 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
     if (getTargetPlatformsCount() > 0) {
       hash = (37 * hash) + TARGET_PLATFORMS_FIELD_NUMBER;
       hash = (53 * hash) + targetPlatforms_.hashCode();
+    }
+    if (hasLatestRun()) {
+      hash = (37 * hash) + LATEST_RUN_FIELD_NUMBER;
+      hash = (53 * hash) + getLatestRun().hashCode();
     }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
@@ -5487,6 +5522,7 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * A ScanConfig resource contains the configurations to launch a scan.
+   * next id: 12
    * </pre>
    *
    * Protobuf type {@code google.cloud.websecurityscanner.v1alpha.ScanConfig}
@@ -5553,6 +5589,12 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
       }
       targetPlatforms_ = java.util.Collections.emptyList();
       bitField0_ = (bitField0_ & ~0x00000100);
+      if (latestRunBuilder_ == null) {
+        latestRun_ = null;
+      } else {
+        latestRun_ = null;
+        latestRunBuilder_ = null;
+      }
       return this;
     }
 
@@ -5611,6 +5653,11 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
         bitField0_ = (bitField0_ & ~0x00000100);
       }
       result.targetPlatforms_ = targetPlatforms_;
+      if (latestRunBuilder_ == null) {
+        result.latestRun_ = latestRun_;
+      } else {
+        result.latestRun_ = latestRunBuilder_.build();
+      }
       result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
@@ -5711,6 +5758,9 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
           targetPlatforms_.addAll(other.targetPlatforms_);
         }
         onChanged();
+      }
+      if (other.hasLatestRun()) {
+        mergeLatestRun(other.getLatestRun());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -5853,11 +5903,10 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required.
-     * The user provided display name of the ScanConfig.
+     * Required. The user provided display name of the ScanConfig.
      * </pre>
      *
-     * <code>string display_name = 2;</code>
+     * <code>string display_name = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public java.lang.String getDisplayName() {
       java.lang.Object ref = displayName_;
@@ -5874,11 +5923,10 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required.
-     * The user provided display name of the ScanConfig.
+     * Required. The user provided display name of the ScanConfig.
      * </pre>
      *
-     * <code>string display_name = 2;</code>
+     * <code>string display_name = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public com.google.protobuf.ByteString getDisplayNameBytes() {
       java.lang.Object ref = displayName_;
@@ -5895,11 +5943,10 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required.
-     * The user provided display name of the ScanConfig.
+     * Required. The user provided display name of the ScanConfig.
      * </pre>
      *
-     * <code>string display_name = 2;</code>
+     * <code>string display_name = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder setDisplayName(java.lang.String value) {
       if (value == null) {
@@ -5914,11 +5961,10 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required.
-     * The user provided display name of the ScanConfig.
+     * Required. The user provided display name of the ScanConfig.
      * </pre>
      *
-     * <code>string display_name = 2;</code>
+     * <code>string display_name = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder clearDisplayName() {
 
@@ -5930,11 +5976,10 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required.
-     * The user provided display name of the ScanConfig.
+     * Required. The user provided display name of the ScanConfig.
      * </pre>
      *
-     * <code>string display_name = 2;</code>
+     * <code>string display_name = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder setDisplayNameBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -6013,11 +6058,10 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required.
-     * The starting URLs from which the scanner finds site pages.
+     * Required. The starting URLs from which the scanner finds site pages.
      * </pre>
      *
-     * <code>repeated string starting_urls = 4;</code>
+     * <code>repeated string starting_urls = 4 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public com.google.protobuf.ProtocolStringList getStartingUrlsList() {
       return startingUrls_.getUnmodifiableView();
@@ -6026,11 +6070,10 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required.
-     * The starting URLs from which the scanner finds site pages.
+     * Required. The starting URLs from which the scanner finds site pages.
      * </pre>
      *
-     * <code>repeated string starting_urls = 4;</code>
+     * <code>repeated string starting_urls = 4 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public int getStartingUrlsCount() {
       return startingUrls_.size();
@@ -6039,11 +6082,10 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required.
-     * The starting URLs from which the scanner finds site pages.
+     * Required. The starting URLs from which the scanner finds site pages.
      * </pre>
      *
-     * <code>repeated string starting_urls = 4;</code>
+     * <code>repeated string starting_urls = 4 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public java.lang.String getStartingUrls(int index) {
       return startingUrls_.get(index);
@@ -6052,11 +6094,10 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required.
-     * The starting URLs from which the scanner finds site pages.
+     * Required. The starting URLs from which the scanner finds site pages.
      * </pre>
      *
-     * <code>repeated string starting_urls = 4;</code>
+     * <code>repeated string starting_urls = 4 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public com.google.protobuf.ByteString getStartingUrlsBytes(int index) {
       return startingUrls_.getByteString(index);
@@ -6065,11 +6106,10 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required.
-     * The starting URLs from which the scanner finds site pages.
+     * Required. The starting URLs from which the scanner finds site pages.
      * </pre>
      *
-     * <code>repeated string starting_urls = 4;</code>
+     * <code>repeated string starting_urls = 4 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder setStartingUrls(int index, java.lang.String value) {
       if (value == null) {
@@ -6084,11 +6124,10 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required.
-     * The starting URLs from which the scanner finds site pages.
+     * Required. The starting URLs from which the scanner finds site pages.
      * </pre>
      *
-     * <code>repeated string starting_urls = 4;</code>
+     * <code>repeated string starting_urls = 4 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder addStartingUrls(java.lang.String value) {
       if (value == null) {
@@ -6103,11 +6142,10 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required.
-     * The starting URLs from which the scanner finds site pages.
+     * Required. The starting URLs from which the scanner finds site pages.
      * </pre>
      *
-     * <code>repeated string starting_urls = 4;</code>
+     * <code>repeated string starting_urls = 4 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder addAllStartingUrls(java.lang.Iterable<java.lang.String> values) {
       ensureStartingUrlsIsMutable();
@@ -6119,11 +6157,10 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required.
-     * The starting URLs from which the scanner finds site pages.
+     * Required. The starting URLs from which the scanner finds site pages.
      * </pre>
      *
-     * <code>repeated string starting_urls = 4;</code>
+     * <code>repeated string starting_urls = 4 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder clearStartingUrls() {
       startingUrls_ = com.google.protobuf.LazyStringArrayList.EMPTY;
@@ -6135,11 +6172,10 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required.
-     * The starting URLs from which the scanner finds site pages.
+     * Required. The starting URLs from which the scanner finds site pages.
      * </pre>
      *
-     * <code>repeated string starting_urls = 4;</code>
+     * <code>repeated string starting_urls = 4 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder addStartingUrlsBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -7005,6 +7041,188 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
       }
       onChanged();
       return this;
+    }
+
+    private com.google.cloud.websecurityscanner.v1alpha.ScanRun latestRun_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.websecurityscanner.v1alpha.ScanRun,
+            com.google.cloud.websecurityscanner.v1alpha.ScanRun.Builder,
+            com.google.cloud.websecurityscanner.v1alpha.ScanRunOrBuilder>
+        latestRunBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Latest ScanRun if available.
+     * </pre>
+     *
+     * <code>.google.cloud.websecurityscanner.v1alpha.ScanRun latest_run = 11;</code>
+     */
+    public boolean hasLatestRun() {
+      return latestRunBuilder_ != null || latestRun_ != null;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Latest ScanRun if available.
+     * </pre>
+     *
+     * <code>.google.cloud.websecurityscanner.v1alpha.ScanRun latest_run = 11;</code>
+     */
+    public com.google.cloud.websecurityscanner.v1alpha.ScanRun getLatestRun() {
+      if (latestRunBuilder_ == null) {
+        return latestRun_ == null
+            ? com.google.cloud.websecurityscanner.v1alpha.ScanRun.getDefaultInstance()
+            : latestRun_;
+      } else {
+        return latestRunBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Latest ScanRun if available.
+     * </pre>
+     *
+     * <code>.google.cloud.websecurityscanner.v1alpha.ScanRun latest_run = 11;</code>
+     */
+    public Builder setLatestRun(com.google.cloud.websecurityscanner.v1alpha.ScanRun value) {
+      if (latestRunBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        latestRun_ = value;
+        onChanged();
+      } else {
+        latestRunBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Latest ScanRun if available.
+     * </pre>
+     *
+     * <code>.google.cloud.websecurityscanner.v1alpha.ScanRun latest_run = 11;</code>
+     */
+    public Builder setLatestRun(
+        com.google.cloud.websecurityscanner.v1alpha.ScanRun.Builder builderForValue) {
+      if (latestRunBuilder_ == null) {
+        latestRun_ = builderForValue.build();
+        onChanged();
+      } else {
+        latestRunBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Latest ScanRun if available.
+     * </pre>
+     *
+     * <code>.google.cloud.websecurityscanner.v1alpha.ScanRun latest_run = 11;</code>
+     */
+    public Builder mergeLatestRun(com.google.cloud.websecurityscanner.v1alpha.ScanRun value) {
+      if (latestRunBuilder_ == null) {
+        if (latestRun_ != null) {
+          latestRun_ =
+              com.google.cloud.websecurityscanner.v1alpha.ScanRun.newBuilder(latestRun_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          latestRun_ = value;
+        }
+        onChanged();
+      } else {
+        latestRunBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Latest ScanRun if available.
+     * </pre>
+     *
+     * <code>.google.cloud.websecurityscanner.v1alpha.ScanRun latest_run = 11;</code>
+     */
+    public Builder clearLatestRun() {
+      if (latestRunBuilder_ == null) {
+        latestRun_ = null;
+        onChanged();
+      } else {
+        latestRun_ = null;
+        latestRunBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Latest ScanRun if available.
+     * </pre>
+     *
+     * <code>.google.cloud.websecurityscanner.v1alpha.ScanRun latest_run = 11;</code>
+     */
+    public com.google.cloud.websecurityscanner.v1alpha.ScanRun.Builder getLatestRunBuilder() {
+
+      onChanged();
+      return getLatestRunFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Latest ScanRun if available.
+     * </pre>
+     *
+     * <code>.google.cloud.websecurityscanner.v1alpha.ScanRun latest_run = 11;</code>
+     */
+    public com.google.cloud.websecurityscanner.v1alpha.ScanRunOrBuilder getLatestRunOrBuilder() {
+      if (latestRunBuilder_ != null) {
+        return latestRunBuilder_.getMessageOrBuilder();
+      } else {
+        return latestRun_ == null
+            ? com.google.cloud.websecurityscanner.v1alpha.ScanRun.getDefaultInstance()
+            : latestRun_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Latest ScanRun if available.
+     * </pre>
+     *
+     * <code>.google.cloud.websecurityscanner.v1alpha.ScanRun latest_run = 11;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.websecurityscanner.v1alpha.ScanRun,
+            com.google.cloud.websecurityscanner.v1alpha.ScanRun.Builder,
+            com.google.cloud.websecurityscanner.v1alpha.ScanRunOrBuilder>
+        getLatestRunFieldBuilder() {
+      if (latestRunBuilder_ == null) {
+        latestRunBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.websecurityscanner.v1alpha.ScanRun,
+                com.google.cloud.websecurityscanner.v1alpha.ScanRun.Builder,
+                com.google.cloud.websecurityscanner.v1alpha.ScanRunOrBuilder>(
+                getLatestRun(), getParentForChildren(), isClean());
+        latestRun_ = null;
+      }
+      return latestRunBuilder_;
     }
 
     @java.lang.Override

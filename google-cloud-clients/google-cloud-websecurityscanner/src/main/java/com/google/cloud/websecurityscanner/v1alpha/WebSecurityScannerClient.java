@@ -1314,8 +1314,9 @@ public class WebSecurityScannerClient implements BackgroundResource {
    *
    * @param parent Required. The parent resource name, which should be a scan run resource name in
    *     the format 'projects/{projectId}/scanConfigs/{scanConfigId}/scanRuns/{scanRunId}'.
-   * @param filter The filter expression. The expression must be in the format: &lt;field&gt;
-   *     &lt;operator&gt; &lt;value&gt;. Supported field: 'finding_type'. Supported operator: '='.
+   * @param filter Required. The filter expression. The expression must be in the format:
+   *     &lt;field&gt; &lt;operator&gt; &lt;value&gt;. Supported field: 'finding_type'. Supported
+   *     operator: '='.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListFindingsPagedResponse listFindings(ScanRunName parent, String filter) {
@@ -1345,8 +1346,9 @@ public class WebSecurityScannerClient implements BackgroundResource {
    *
    * @param parent Required. The parent resource name, which should be a scan run resource name in
    *     the format 'projects/{projectId}/scanConfigs/{scanConfigId}/scanRuns/{scanRunId}'.
-   * @param filter The filter expression. The expression must be in the format: &lt;field&gt;
-   *     &lt;operator&gt; &lt;value&gt;. Supported field: 'finding_type'. Supported operator: '='.
+   * @param filter Required. The filter expression. The expression must be in the format:
+   *     &lt;field&gt; &lt;operator&gt; &lt;value&gt;. Supported field: 'finding_type'. Supported
+   *     operator: '='.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListFindingsPagedResponse listFindings(String parent, String filter) {

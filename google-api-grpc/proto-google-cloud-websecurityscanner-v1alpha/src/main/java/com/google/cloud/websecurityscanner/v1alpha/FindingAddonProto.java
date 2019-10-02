@@ -25,6 +25,14 @@ public final class FindingAddonProto {
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_websecurityscanner_v1alpha_VulnerableParameters_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_websecurityscanner_v1alpha_VulnerableHeaders_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_websecurityscanner_v1alpha_VulnerableHeaders_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_websecurityscanner_v1alpha_VulnerableHeaders_Header_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_websecurityscanner_v1alpha_VulnerableHeaders_Header_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_cloud_websecurityscanner_v1alpha_Xss_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_websecurityscanner_v1alpha_Xss_fieldAccessorTable;
@@ -39,18 +47,23 @@ public final class FindingAddonProto {
     java.lang.String[] descriptorData = {
       "\n;google/cloud/websecurityscanner/v1alph"
           + "a/finding_addon.proto\022\'google.cloud.webs"
-          + "ecurityscanner.v1alpha\032\034google/api/annot"
-          + "ations.proto\"Q\n\017OutdatedLibrary\022\024\n\014libra"
-          + "ry_name\030\001 \001(\t\022\017\n\007version\030\002 \001(\t\022\027\n\017learn_"
-          + "more_urls\030\003 \003(\t\"?\n\021ViolatingResource\022\024\n\014"
-          + "content_type\030\001 \001(\t\022\024\n\014resource_url\030\002 \001(\t"
-          + "\"/\n\024VulnerableParameters\022\027\n\017parameter_na"
-          + "mes\030\001 \003(\t\"2\n\003Xss\022\024\n\014stack_traces\030\001 \003(\t\022\025"
-          + "\n\rerror_message\030\002 \001(\tB\235\001\n+com.google.clo"
-          + "ud.websecurityscanner.v1alphaB\021FindingAd"
-          + "donProtoP\001ZYgoogle.golang.org/genproto/g"
-          + "oogleapis/cloud/websecurityscanner/v1alp"
-          + "ha;websecurityscannerb\006proto3"
+          + "ecurityscanner.v1alpha\"Q\n\017OutdatedLibrar"
+          + "y\022\024\n\014library_name\030\001 \001(\t\022\017\n\007version\030\002 \001(\t"
+          + "\022\027\n\017learn_more_urls\030\003 \003(\t\"?\n\021ViolatingRe"
+          + "source\022\024\n\014content_type\030\001 \001(\t\022\024\n\014resource"
+          + "_url\030\002 \001(\t\"/\n\024VulnerableParameters\022\027\n\017pa"
+          + "rameter_names\030\001 \003(\t\"\352\001\n\021VulnerableHeader"
+          + "s\022R\n\007headers\030\001 \003(\0132A.google.cloud.websec"
+          + "urityscanner.v1alpha.VulnerableHeaders.H"
+          + "eader\022Z\n\017missing_headers\030\002 \003(\0132A.google."
+          + "cloud.websecurityscanner.v1alpha.Vulnera"
+          + "bleHeaders.Header\032%\n\006Header\022\014\n\004name\030\001 \001("
+          + "\t\022\r\n\005value\030\002 \001(\t\"2\n\003Xss\022\024\n\014stack_traces\030"
+          + "\001 \003(\t\022\025\n\rerror_message\030\002 \001(\tB\235\001\n+com.goo"
+          + "gle.cloud.websecurityscanner.v1alphaB\021Fi"
+          + "ndingAddonProtoP\001ZYgoogle.golang.org/gen"
+          + "proto/googleapis/cloud/websecurityscanne"
+          + "r/v1alpha;websecurityscannerb\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner() {
@@ -61,11 +74,7 @@ public final class FindingAddonProto {
           }
         };
     com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
-        descriptorData,
-        new com.google.protobuf.Descriptors.FileDescriptor[] {
-          com.google.api.AnnotationsProto.getDescriptor(),
-        },
-        assigner);
+        descriptorData, new com.google.protobuf.Descriptors.FileDescriptor[] {}, assigner);
     internal_static_google_cloud_websecurityscanner_v1alpha_OutdatedLibrary_descriptor =
         getDescriptor().getMessageTypes().get(0);
     internal_static_google_cloud_websecurityscanner_v1alpha_OutdatedLibrary_fieldAccessorTable =
@@ -90,15 +99,32 @@ public final class FindingAddonProto {
             new java.lang.String[] {
               "ParameterNames",
             });
-    internal_static_google_cloud_websecurityscanner_v1alpha_Xss_descriptor =
+    internal_static_google_cloud_websecurityscanner_v1alpha_VulnerableHeaders_descriptor =
         getDescriptor().getMessageTypes().get(3);
+    internal_static_google_cloud_websecurityscanner_v1alpha_VulnerableHeaders_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_websecurityscanner_v1alpha_VulnerableHeaders_descriptor,
+            new java.lang.String[] {
+              "Headers", "MissingHeaders",
+            });
+    internal_static_google_cloud_websecurityscanner_v1alpha_VulnerableHeaders_Header_descriptor =
+        internal_static_google_cloud_websecurityscanner_v1alpha_VulnerableHeaders_descriptor
+            .getNestedTypes()
+            .get(0);
+    internal_static_google_cloud_websecurityscanner_v1alpha_VulnerableHeaders_Header_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_websecurityscanner_v1alpha_VulnerableHeaders_Header_descriptor,
+            new java.lang.String[] {
+              "Name", "Value",
+            });
+    internal_static_google_cloud_websecurityscanner_v1alpha_Xss_descriptor =
+        getDescriptor().getMessageTypes().get(4);
     internal_static_google_cloud_websecurityscanner_v1alpha_Xss_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_websecurityscanner_v1alpha_Xss_descriptor,
             new java.lang.String[] {
               "StackTraces", "ErrorMessage",
             });
-    com.google.api.AnnotationsProto.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

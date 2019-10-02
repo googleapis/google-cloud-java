@@ -27,32 +27,41 @@ public final class FindingProto {
     java.lang.String[] descriptorData = {
       "\n5google/cloud/websecurityscanner/v1alph"
           + "a/finding.proto\022\'google.cloud.websecurit"
-          + "yscanner.v1alpha\032\034google/api/annotations"
-          + ".proto\032;google/cloud/websecurityscanner/"
-          + "v1alpha/finding_addon.proto\"\365\005\n\007Finding\022"
-          + "\014\n\004name\030\001 \001(\t\022R\n\014finding_type\030\002 \001(\0162<.go"
-          + "ogle.cloud.websecurityscanner.v1alpha.Fi"
-          + "nding.FindingType\022\023\n\013http_method\030\003 \001(\t\022\022"
-          + "\n\nfuzzed_url\030\004 \001(\t\022\014\n\004body\030\005 \001(\t\022\023\n\013desc"
-          + "ription\030\006 \001(\t\022\030\n\020reproduction_url\030\007 \001(\t\022"
-          + "\021\n\tframe_url\030\010 \001(\t\022\021\n\tfinal_url\030\t \001(\t\022\023\n"
-          + "\013tracking_id\030\n \001(\t\022R\n\020outdated_library\030\013"
-          + " \001(\01328.google.cloud.websecurityscanner.v"
-          + "1alpha.OutdatedLibrary\022V\n\022violating_reso"
-          + "urce\030\014 \001(\0132:.google.cloud.websecuritysca"
-          + "nner.v1alpha.ViolatingResource\022\\\n\025vulner"
-          + "able_parameters\030\r \001(\0132=.google.cloud.web"
-          + "securityscanner.v1alpha.VulnerableParame"
-          + "ters\0229\n\003xss\030\016 \001(\0132,.google.cloud.websecu"
-          + "rityscanner.v1alpha.Xss\"\241\001\n\013FindingType\022"
-          + "\034\n\030FINDING_TYPE_UNSPECIFIED\020\000\022\021\n\rMIXED_C"
-          + "ONTENT\020\001\022\024\n\020OUTDATED_LIBRARY\020\002\022\021\n\rROSETT"
-          + "A_FLASH\020\005\022\020\n\014XSS_CALLBACK\020\003\022\r\n\tXSS_ERROR"
-          + "\020\004\022\027\n\023CLEAR_TEXT_PASSWORD\020\006B\230\001\n+com.goog"
-          + "le.cloud.websecurityscanner.v1alphaB\014Fin"
-          + "dingProtoP\001ZYgoogle.golang.org/genproto/"
-          + "googleapis/cloud/websecurityscanner/v1al"
-          + "pha;websecurityscannerb\006proto3"
+          + "yscanner.v1alpha\032\031google/api/resource.pr"
+          + "oto\032;google/cloud/websecurityscanner/v1a"
+          + "lpha/finding_addon.proto\"\351\010\n\007Finding\022\014\n\004"
+          + "name\030\001 \001(\t\022R\n\014finding_type\030\002 \001(\0162<.googl"
+          + "e.cloud.websecurityscanner.v1alpha.Findi"
+          + "ng.FindingType\022\023\n\013http_method\030\003 \001(\t\022\022\n\nf"
+          + "uzzed_url\030\004 \001(\t\022\014\n\004body\030\005 \001(\t\022\023\n\013descrip"
+          + "tion\030\006 \001(\t\022\030\n\020reproduction_url\030\007 \001(\t\022\021\n\t"
+          + "frame_url\030\010 \001(\t\022\021\n\tfinal_url\030\t \001(\t\022\023\n\013tr"
+          + "acking_id\030\n \001(\t\022R\n\020outdated_library\030\013 \001("
+          + "\01328.google.cloud.websecurityscanner.v1al"
+          + "pha.OutdatedLibrary\022V\n\022violating_resourc"
+          + "e\030\014 \001(\0132:.google.cloud.websecurityscanne"
+          + "r.v1alpha.ViolatingResource\022V\n\022vulnerabl"
+          + "e_headers\030\017 \001(\0132:.google.cloud.websecuri"
+          + "tyscanner.v1alpha.VulnerableHeaders\022\\\n\025v"
+          + "ulnerable_parameters\030\r \001(\0132=.google.clou"
+          + "d.websecurityscanner.v1alpha.VulnerableP"
+          + "arameters\0229\n\003xss\030\016 \001(\0132,.google.cloud.we"
+          + "bsecurityscanner.v1alpha.Xss\"\266\002\n\013Finding"
+          + "Type\022\034\n\030FINDING_TYPE_UNSPECIFIED\020\000\022\021\n\rMI"
+          + "XED_CONTENT\020\001\022\024\n\020OUTDATED_LIBRARY\020\002\022\021\n\rR"
+          + "OSETTA_FLASH\020\005\022\020\n\014XSS_CALLBACK\020\003\022\r\n\tXSS_"
+          + "ERROR\020\004\022\027\n\023CLEAR_TEXT_PASSWORD\020\006\022\030\n\024INVA"
+          + "LID_CONTENT_TYPE\020\007\022\030\n\024XSS_ANGULAR_CALLBA"
+          + "CK\020\010\022\022\n\016INVALID_HEADER\020\t\022#\n\037MISSPELLED_S"
+          + "ECURITY_HEADER_NAME\020\n\022&\n\"MISMATCHING_SEC"
+          + "URITY_HEADER_VALUES\020\013:\204\001\352A\200\001\n)websecurit"
+          + "yscanner.googleapis.com/Finding\022Sproject"
+          + "s/{project}/scanConfigs/{scan_config}/sc"
+          + "anRuns/{scan_run}/findings/{finding}B\230\001\n"
+          + "+com.google.cloud.websecurityscanner.v1a"
+          + "lphaB\014FindingProtoP\001ZYgoogle.golang.org/"
+          + "genproto/googleapis/cloud/websecuritysca"
+          + "nner/v1alpha;websecurityscannerb\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner() {
@@ -65,7 +74,7 @@ public final class FindingProto {
     com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
         descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
-          com.google.api.AnnotationsProto.getDescriptor(),
+          com.google.api.ResourceProto.getDescriptor(),
           com.google.cloud.websecurityscanner.v1alpha.FindingAddonProto.getDescriptor(),
         },
         assigner);
@@ -87,10 +96,16 @@ public final class FindingProto {
               "TrackingId",
               "OutdatedLibrary",
               "ViolatingResource",
+              "VulnerableHeaders",
               "VulnerableParameters",
               "Xss",
             });
-    com.google.api.AnnotationsProto.getDescriptor();
+    com.google.protobuf.ExtensionRegistry registry =
+        com.google.protobuf.ExtensionRegistry.newInstance();
+    registry.add(com.google.api.ResourceProto.resource);
+    com.google.protobuf.Descriptors.FileDescriptor.internalUpdateFileDescriptor(
+        descriptor, registry);
+    com.google.api.ResourceProto.getDescriptor();
     com.google.cloud.websecurityscanner.v1alpha.FindingAddonProto.getDescriptor();
   }
 

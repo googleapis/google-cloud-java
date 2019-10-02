@@ -115,8 +115,7 @@ public final class CrawledUrl extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only.
-   * The http method of the request that was used to visit the URL, in
+   * Output only. The http method of the request that was used to visit the URL, in
    * uppercase.
    * </pre>
    *
@@ -137,8 +136,7 @@ public final class CrawledUrl extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only.
-   * The http method of the request that was used to visit the URL, in
+   * Output only. The http method of the request that was used to visit the URL, in
    * uppercase.
    * </pre>
    *
@@ -162,8 +160,7 @@ public final class CrawledUrl extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only.
-   * The URL that was crawled.
+   * Output only. The URL that was crawled.
    * </pre>
    *
    * <code>string url = 2;</code>
@@ -183,8 +180,7 @@ public final class CrawledUrl extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only.
-   * The URL that was crawled.
+   * Output only. The URL that was crawled.
    * </pre>
    *
    * <code>string url = 2;</code>
@@ -207,8 +203,7 @@ public final class CrawledUrl extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only.
-   * The body of the request that was used to visit the URL.
+   * Output only. The body of the request that was used to visit the URL.
    * </pre>
    *
    * <code>string body = 3;</code>
@@ -228,8 +223,7 @@ public final class CrawledUrl extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only.
-   * The body of the request that was used to visit the URL.
+   * Output only. The body of the request that was used to visit the URL.
    * </pre>
    *
    * <code>string body = 3;</code>
@@ -604,8 +598,7 @@ public final class CrawledUrl extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only.
-     * The http method of the request that was used to visit the URL, in
+     * Output only. The http method of the request that was used to visit the URL, in
      * uppercase.
      * </pre>
      *
@@ -626,8 +619,7 @@ public final class CrawledUrl extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only.
-     * The http method of the request that was used to visit the URL, in
+     * Output only. The http method of the request that was used to visit the URL, in
      * uppercase.
      * </pre>
      *
@@ -648,8 +640,7 @@ public final class CrawledUrl extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only.
-     * The http method of the request that was used to visit the URL, in
+     * Output only. The http method of the request that was used to visit the URL, in
      * uppercase.
      * </pre>
      *
@@ -668,8 +659,7 @@ public final class CrawledUrl extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only.
-     * The http method of the request that was used to visit the URL, in
+     * Output only. The http method of the request that was used to visit the URL, in
      * uppercase.
      * </pre>
      *
@@ -685,8 +675,7 @@ public final class CrawledUrl extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only.
-     * The http method of the request that was used to visit the URL, in
+     * Output only. The http method of the request that was used to visit the URL, in
      * uppercase.
      * </pre>
      *
@@ -708,8 +697,7 @@ public final class CrawledUrl extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only.
-     * The URL that was crawled.
+     * Output only. The URL that was crawled.
      * </pre>
      *
      * <code>string url = 2;</code>
@@ -729,8 +717,7 @@ public final class CrawledUrl extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only.
-     * The URL that was crawled.
+     * Output only. The URL that was crawled.
      * </pre>
      *
      * <code>string url = 2;</code>
@@ -750,8 +737,7 @@ public final class CrawledUrl extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only.
-     * The URL that was crawled.
+     * Output only. The URL that was crawled.
      * </pre>
      *
      * <code>string url = 2;</code>
@@ -769,8 +755,7 @@ public final class CrawledUrl extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only.
-     * The URL that was crawled.
+     * Output only. The URL that was crawled.
      * </pre>
      *
      * <code>string url = 2;</code>
@@ -785,8 +770,7 @@ public final class CrawledUrl extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only.
-     * The URL that was crawled.
+     * Output only. The URL that was crawled.
      * </pre>
      *
      * <code>string url = 2;</code>
@@ -807,8 +791,7 @@ public final class CrawledUrl extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only.
-     * The body of the request that was used to visit the URL.
+     * Output only. The body of the request that was used to visit the URL.
      * </pre>
      *
      * <code>string body = 3;</code>
@@ -828,8 +811,7 @@ public final class CrawledUrl extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only.
-     * The body of the request that was used to visit the URL.
+     * Output only. The body of the request that was used to visit the URL.
      * </pre>
      *
      * <code>string body = 3;</code>
@@ -849,8 +831,7 @@ public final class CrawledUrl extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only.
-     * The body of the request that was used to visit the URL.
+     * Output only. The body of the request that was used to visit the URL.
      * </pre>
      *
      * <code>string body = 3;</code>
@@ -868,8 +849,7 @@ public final class CrawledUrl extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only.
-     * The body of the request that was used to visit the URL.
+     * Output only. The body of the request that was used to visit the URL.
      * </pre>
      *
      * <code>string body = 3;</code>
@@ -884,8 +864,7 @@ public final class CrawledUrl extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only.
-     * The body of the request that was used to visit the URL.
+     * Output only. The body of the request that was used to visit the URL.
      * </pre>
      *
      * <code>string body = 3;</code>
