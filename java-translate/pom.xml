@@ -89,8 +89,18 @@
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
+        <artifactId>proto-google-cloud-translate-v3</artifactId>
+        <version>0.76.1-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-translate-v3:current} -->
+      </dependency>
+      <dependency>
+        <groupId>com.google.api.grpc</groupId>
         <artifactId>grpc-google-cloud-translate-v3beta1</artifactId>
         <version>0.76.1-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-translate-v3beta1:current} -->
+      </dependency>
+      <dependency>
+        <groupId>com.google.api.grpc</groupId>
+        <artifactId>grpc-google-cloud-translate-v3</artifactId>
+        <version>0.76.1-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-translate-v3:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.cloud</groupId>
@@ -222,7 +232,9 @@
 
   <modules>
     <module>proto-google-cloud-translate-v3beta1</module>
+    <module>proto-google-cloud-translate-v3</module>
     <module>grpc-google-cloud-translate-v3beta1</module>
+    <module>grpc-google-cloud-translate-v3</module>
     <module>google-cloud-translate</module>
   </modules>
 

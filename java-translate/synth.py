@@ -21,7 +21,7 @@ import synthtool.languages.java as java
 gapic = gcp.GAPICGenerator()
 
 service = 'translate'
-versions = ['v3beta1']
+versions = ['v3beta1', 'v3']
 config_pattern = '/google/cloud/translate/artman_translate_{version}.yaml'
 
 for version in versions:

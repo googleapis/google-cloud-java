@@ -1,5 +1,5 @@
 {
-  "updateTime": "2019-10-01T21:50:19.303013Z",
+  "updateTime": "2019-10-01T23:07:24.196170Z",
   "sources": [
     {
       "generator": {
@@ -33,6 +33,16 @@
         "language": "java",
         "generator": "gapic",
         "config": "google/cloud/translate/artman_translate_v3beta1.yaml"
+      }
+    },
+    {
+      "client": {
+        "source": "googleapis",
+        "apiName": "translate",
+        "apiVersion": "v3",
+        "language": "java",
+        "generator": "gapic",
+        "config": "google/cloud/translate/artman_translate_v3.yaml"
       }
     }
   ]
