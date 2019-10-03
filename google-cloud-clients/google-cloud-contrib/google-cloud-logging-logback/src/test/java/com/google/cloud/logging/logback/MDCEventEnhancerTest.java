@@ -17,105 +17,32 @@
 package com.google.cloud.logging.logback;
 
 import static com.google.common.truth.Truth.assertThat;
-import static org.easymock.EasyMock.anyObject;
-import static org.easymock.EasyMock.capture;
-import static org.easymock.EasyMock.expectLastCall;
-import static org.easymock.EasyMock.replay;
-import static org.easymock.EasyMock.verify;
 
-import ch.qos.logback.classic.Level;
 import ch.qos.logback.classic.spi.LoggingEvent;
-import com.google.cloud.Timestamp;
 import com.google.cloud.logging.LogEntry;
-import com.google.cloud.logging.Logging;
-import com.google.cloud.logging.Logging.WriteOption;
-import com.google.cloud.logging.Severity;
-import java.util.Map;
-import org.easymock.Capture;
-import org.easymock.EasyMock;
-import org.easymock.EasyMockRunner;
+import com.google.cloud.logging.Payload.StringPayload;
+import java.util.Collections;
 import org.junit.Before;
 import org.junit.Test;
-import org.junit.runner.RunWith;
-import org.slf4j.MDC;
 
-@RunWith(EasyMockRunner.class)
 public class MDCEventEnhancerTest {
-  private final String projectId = "test-project";
-  private final String filteredMVCEventEnhancerClassName =
-      FilteredMVCEventEnhancer.class.getCanonicalName();
-  private Logging logging;
-  private LoggingAppender loggingAppender;
-
-  class TestLoggingAppender extends LoggingAppender {
-    @Override
-    String getProjectId() {
-      return projectId;
-    }
-
-    @Override
-    Logging getLogging() {
-      return logging;
-    }
-  }
+  private MDCEventEnhancer classUnderTest;
 
   @Before
   public void setUp() {
-    logging = EasyMock.createStrictMock(Logging.class);
-    loggingAppender = new TestLoggingAppender();
+    classUnderTest = new MDCEventEnhancer();
   }
 
   @Test
-  public void testDefaultMDCEventEnhancer() {
-    MDC.put("mdc1", "value1");
-    MDC.put("mdc2", null);
-    MDC.put("mdc3", "value3");
-    logging.setFlushSeverity(Severity.ERROR);
-    Capture<Iterable<LogEntry>> capturedArgument = Capture.newInstance();
-    logging.write(capture(capturedArgument), (WriteOption) anyObject(), (WriteOption) anyObject());
-    expectLastCall().once();
-    replay(logging);
-    Timestamp timestamp = Timestamp.ofTimeSecondsAndNanos(100000, 0);
-    LoggingEvent loggingEvent = createLoggingEvent(Level.INFO, timestamp.getSeconds());
-    loggingAppender.start();
-    loggingAppender.doAppend(loggingEvent);
-    verify(logging);
-    MDC.remove("mdc1");
-    MDC.remove("mdc3");
-    Map<String, String> capturedArgumentMap =
-        capturedArgument.getValue().iterator().next().getLabels();
-    assertThat(capturedArgumentMap.get("mdc1")).isEqualTo("value1");
-    assertThat(capturedArgumentMap.get("mdc2")).isNull();
-    assertThat(capturedArgumentMap.get("mdc3")).isEqualTo("value3");
-  }
-
-  @Test
-  public void testCustomMDCEventEnhancer() {
-    MDC.put("foo", "foo");
-    MDC.put("bar", "bar");
-    logging.setFlushSeverity(Severity.ERROR);
-    Capture<Iterable<LogEntry>> capturedArgument = Capture.newInstance();
-    logging.write(capture(capturedArgument), (WriteOption) anyObject(), (WriteOption) anyObject());
-    expectLastCall().once();
-    replay(logging);
-    Timestamp timestamp = Timestamp.ofTimeSecondsAndNanos(100000, 0);
-    LoggingEvent loggingEvent = createLoggingEvent(Level.INFO, timestamp.getSeconds());
-    loggingAppender.addLoggingEventEnhancer(filteredMVCEventEnhancerClassName);
-    loggingAppender.start();
-    loggingAppender.doAppend(loggingEvent);
-    verify(logging);
-    Map<String, String> capturedArgumentMap =
-        capturedArgument.getValue().iterator().next().getLabels();
-    assertThat(capturedArgumentMap.get("foo")).isEqualTo("foo");
-    assertThat(capturedArgumentMap.get("bar")).isNull();
-  }
-
-  private LoggingEvent createLoggingEvent(Level level, long timestamp) {
+  public void testEnhanceLogEntry() {
     LoggingEvent loggingEvent = new LoggingEvent();
     loggingEvent.setMessage("this is a test");
-    loggingEvent.setLevel(level);
-    loggingEvent.setTimeStamp(timestamp);
-    loggingEvent.setLoggerName(this.getClass().getName());
-    return loggingEvent;
+    loggingEvent.setMDCPropertyMap(Collections.singletonMap("foo", "bar"));
+    LogEntry.Builder builder = LogEntry.newBuilder(StringPayload.of("this is a test"));
+
+    classUnderTest.enhanceLogEntry(builder, loggingEvent);
+    LogEntry logEntry = builder.build();
+
+    assertThat(logEntry.getLabels().get("foo")).isEqualTo("bar");
   }
 }

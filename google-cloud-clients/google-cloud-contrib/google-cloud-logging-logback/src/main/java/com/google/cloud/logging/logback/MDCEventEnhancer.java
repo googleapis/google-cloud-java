@@ -23,28 +23,18 @@ import java.util.Map;
 /**
  * MDCEventEnhancer takes values found in the MDC property map and adds them as labels to the {@link
  * LogEntry}. This {@link LoggingEventEnhancer} is turned on by default. If you wish to filter which
- * MDC values get added as labels to your {@link LogEntry}, extend this class and override {@link
- * MDCEventEnhancer#labelFilter(Map.Entry)} accordingly. The default behavior is to add all entries
- * as labels.
+ * MDC values get added as labels to your {@link LogEntry}, implement a {@link LoggingEventEnhancer}
+ * and add its classpath to your {@code logback.xml}. If any {@link LoggingEventEnhancer} is added
+ * this class is no longer registered.
  */
-public class MDCEventEnhancer implements LoggingEventEnhancer {
+final class MDCEventEnhancer implements LoggingEventEnhancer {
 
   @Override
   public final void enhanceLogEntry(LogEntry.Builder builder, ILoggingEvent e) {
     for (Map.Entry<String, String> entry : e.getMDCPropertyMap().entrySet()) {
-      if (null != entry.getKey() && null != entry.getValue() && labelFilter(entry)) {
+      if (null != entry.getKey() && null != entry.getValue()) {
         builder.addLabel(entry.getKey(), entry.getValue());
       }
     }
-  }
-
-  /**
-   * Filters MDC key value pairs.
-   *
-   * @param entry is a key value pair pulled from the MDC.
-   * @return whether {@code entry} should be added to the {@link LogEntry}
-   */
-  public boolean labelFilter(Map.Entry<String, String> entry) {
-    return true;
   }
 }
