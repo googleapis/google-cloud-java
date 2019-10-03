@@ -31,10 +31,15 @@ for version in versions:
       config_path=config_pattern.format(version=version),
       artman_output_name='')
 
-  s.copy(library / f'gapic-google-cloud-{service}-{version}/src', 'src')
-  s.copy(library / f'grpc-google-cloud-{service}-{version}/src', f'../../google-api-grpc/grpc-google-cloud-{service}-{version}/src')
-  s.copy(library / f'proto-google-cloud-{service}-{version}/src', f'../../google-api-grpc/proto-google-cloud-{service}-{version}/src')
+  s.copy(library / f'gapic-google-cloud-{service}-{version}/src', f'google-cloud-{service}/src')
+  s.copy(library / f'grpc-google-cloud-{service}-{version}/src', f'grpc-google-cloud-{service}-{version}/src')
+  s.copy(library / f'proto-google-cloud-{service}-{version}/src', f'proto-google-cloud-{service}-{version}/src')
 
-  java.format_code('./src')
-  java.format_code(f'../../google-api-grpc/grpc-google-cloud-{service}-{version}/src')
-  java.format_code(f'../../google-api-grpc/proto-google-cloud-{service}-{version}/src')
+  java.format_code(f'google-cloud-{service}/src')
+  java.format_code(f'grpc-google-cloud-{service}-{version}/src')
+  java.format_code(f'proto-google-cloud-{service}-{version}/src')
+
+common_templates = gcp.CommonTemplates()
+templates = common_templates.java_library()
+s.copy(templates, excludes=[
+])
