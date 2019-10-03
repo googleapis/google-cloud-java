@@ -296,7 +296,7 @@ public final class GqlQuery<V> extends Query<V> {
      *
      * @param name of the binding
      */
-    public Builder<V> setBinding(String name) {
+    public Builder<V> setNullBinding(String name) {
       namedBindings.put(name, toBinding(NullValue.MARSHALLER, new ArrayList()));
       return this;
     }

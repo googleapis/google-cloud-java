@@ -1137,10 +1137,10 @@ public class DatastoreTest {
   }
 
   @Test
-  public void testGqlQueryWithBinding() {
+  public void testGqlQueryWithNullBinding() {
     Query<Entity> query =
         Query.newGqlQueryBuilder(ResultType.ENTITY, "select * from " + KIND1)
-            .setBinding("name")
+            .setNullBinding("name")
             .build();
     Iterator<Entity> results = datastore.run(query);
     assertTrue(results.hasNext());
@@ -1149,7 +1149,7 @@ public class DatastoreTest {
 
     Query<Entity> gqlQuery =
         Query.newGqlQueryBuilder(ResultType.ENTITY, "select * from " + KIND1)
-            .setBinding("name")
+            .setNullBinding("name")
             .build();
     Iterator<Entity> queryResults = datastore.run(gqlQuery);
     int count = 0;
