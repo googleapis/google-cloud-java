@@ -49,8 +49,8 @@ import org.slf4j.MDC;
 @RunWith(EasyMockRunner.class)
 public class LoggingAppenderTest {
   private final String projectId = "test-project";
-  private final Logging logging = EasyMock.createStrictMock(Logging.class);
-  private LoggingAppender loggingAppender = new TestLoggingAppender();
+  private Logging logging;
+  private LoggingAppender loggingAppender;
 
   class TestLoggingAppender extends LoggingAppender {
     @Override
@@ -65,7 +65,10 @@ public class LoggingAppenderTest {
   }
 
   @Before
-  public void setUp() {}
+  public void setUp() {
+    logging = EasyMock.createStrictMock(Logging.class);
+    loggingAppender = new TestLoggingAppender();
+  }
 
   private final WriteOption[] defaultWriteOptions =
       new WriteOption[] {
