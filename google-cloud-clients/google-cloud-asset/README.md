@@ -16,7 +16,6 @@ Java idiomatic client for [Cloud Asset][cloud-asset].
 Quickstart
 ----------
 
-[//]: # ({x-version-update-start:google-cloud-asset:released})
 If you are using Maven, add this to your pom.xml file
 ```xml
 <dependency>
@@ -33,7 +32,6 @@ If you are using SBT, add this to your dependencies
 ```Scala
 libraryDependencies += "com.google.cloud" % "google-cloud-asset" % "0.114.0-beta"
 ```
-[//]: # ({x-version-update-end})
 
 Authentication
 --------------
