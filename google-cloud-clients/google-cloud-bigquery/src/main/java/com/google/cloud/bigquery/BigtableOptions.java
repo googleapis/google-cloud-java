@@ -40,7 +40,7 @@ public class BigtableOptions extends FormatOptions {
     return columnFamilies;
   }
 
-  static final class Builder {
+  public static final class Builder {
 
     private Boolean ignoreUnspecifiedColumnFamilies;
     private Boolean readRowkeyAsString;
@@ -59,7 +59,7 @@ public class BigtableOptions extends FormatOptions {
      * not exposed in the table schema. Otherwise, they are read with BYTES type values. The default
      * value is false.
      */
-    Builder setIgnoreUnspecifiedColumnFamilies(Boolean ignoreUnspecifiedColumnFamilies) {
+    public Builder setIgnoreUnspecifiedColumnFamilies(Boolean ignoreUnspecifiedColumnFamilies) {
       this.ignoreUnspecifiedColumnFamilies = ignoreUnspecifiedColumnFamilies;
       return this;
     }
@@ -69,7 +69,7 @@ public class BigtableOptions extends FormatOptions {
      * string. Otherwise they are read with BYTES type values and users need to manually cast them
      * with CAST if necessary. The default value is false.
      */
-    Builder setReadRowkeyAsString(Boolean readRowkeyAsString) {
+    public Builder setReadRowkeyAsString(Boolean readRowkeyAsString) {
       this.readRowkeyAsString = readRowkeyAsString;
       return this;
     }
@@ -83,7 +83,7 @@ public class BigtableOptions extends FormatOptions {
      * schema and their values are read as BYTES. During a query only the column families referenced
      * in that query are read from Bigtable.
      */
-    Builder setColumnFamilies(List<BigtableColumnFamily> columnFamilies) {
+    public Builder setColumnFamilies(List<BigtableColumnFamily> columnFamilies) {
       this.columnFamilies = columnFamilies;
       return this;
     }
@@ -91,6 +91,11 @@ public class BigtableOptions extends FormatOptions {
     BigtableOptions build() {
       return new BigtableOptions(this);
     }
+  }
+
+  /** Returns a builder for the {@link BigtableOptions} object. */
+  public Builder toBuilder() {
+    return new Builder(this);
   }
 
   BigtableOptions(Builder builder) {
