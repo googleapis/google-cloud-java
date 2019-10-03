@@ -15,284 +15,186 @@
  */
 
 import com.google.api.core.ApiFunction;
-import com.google.api.gax.core.FixedCredentialsProvider;
 import com.google.api.gax.grpc.InstantiatingGrpcChannelProvider;
-import com.google.auth.oauth2.GoogleCredentials;
-import com.google.cloud.spanner.v1.SpannerClient;
-import com.google.cloud.spanner.v1.SpannerClient.ListSessionsPagedResponse;
-import com.google.cloud.spanner.v1.SpannerSettings;
-import com.google.common.collect.ImmutableList;
+import com.google.cloud.spanner.DatabaseClient;
+import com.google.cloud.spanner.DatabaseId;
+import com.google.cloud.spanner.KeySet;
+import com.google.cloud.spanner.Mutation;
+import com.google.cloud.spanner.ResultSet;
+import com.google.cloud.spanner.Spanner;
+import com.google.cloud.spanner.SpannerOptions;
 import com.google.grpc.gcp.GcpManagedChannelBuilder;
-import com.google.protobuf.ListValue;
-import com.google.protobuf.Value;
-import com.google.spanner.v1.BeginTransactionRequest;
-import com.google.spanner.v1.CommitRequest;
-import com.google.spanner.v1.CreateSessionRequest;
-import com.google.spanner.v1.DeleteSessionRequest;
-import com.google.spanner.v1.ExecuteSqlRequest;
-import com.google.spanner.v1.KeySet;
-import com.google.spanner.v1.ListSessionsRequest;
-import com.google.spanner.v1.Mutation;
-import com.google.spanner.v1.PartialResultSet;
-import com.google.spanner.v1.PartitionQueryRequest;
-import com.google.spanner.v1.PartitionResponse;
-import com.google.spanner.v1.ReadRequest;
-import com.google.spanner.v1.ResultSet;
-import com.google.spanner.v1.Session;
-import com.google.spanner.v1.Transaction;
-import com.google.spanner.v1.TransactionOptions;
-import com.google.spanner.v1.TransactionSelector;
 import io.grpc.ManagedChannelBuilder;
 import java.io.File;
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
-import java.util.Iterator;
 import java.util.List;
 import java.util.concurrent.CopyOnWriteArrayList;
-import java.util.concurrent.TimeUnit;
 import java.util.logging.Logger;
 
 /**
- * Benchmark for the Spanner client with two different implementations of channel pool: <1> Channel
- * pool by com.google.api.gax.grpc. <2> Channel pool by grpc-gcp-java.
+ * Record the performance of both GcpManagedChannel and ManagedChannel when doing SpannerGrpc
+ * operations.
  */
 final class SpannerClientTestCases {
 
   private static final Logger logger = Logger.getLogger(SpannerTestCases.class.getName());
 
-  private static final String SPANNER_TARGET = "spanner.googleapis.com";
-  private static final String DATABASE =
-      "projects/cloudprober-test/instances/test-instance/databases/test-db";
+  // project: grpc-prober-testing, use default credentials.
+  private static final String INSTANCE_ID = "test-instance";
+  private static final String DATABASE_ID = "test-db";
   private static final String LARGE_TABLE = "large_table";
-  private static final String TABLE = "jenny";
-  private static final String OAUTH_SCOPE = "https://www.googleapis.com/auth/cloud-platform";
+  private static final String TABLE = "users";
   private static final String API_FILE = "spannertest.json";
   private static final int MAX_SIZE_PER_COLUMN = 2621440;
   private static final int NUM_WARMUP = 10;
 
   // This should be the same as channelpool-maxsize in the ApiConfig JSON file.
-  private static final int DEFAULT_CHANNEL_POOL = 2;
+  private static final int DEFAULT_CHANNEL_POOL = 4;
 
   private final boolean isGrpcGcp;
-  private final int payload;
   private final int numOfRpcs;
   private final int numOfThreads;
 
+  private final SpannerOptions spannerOptions;
+  private final String colContent;
+
   SpannerClientTestCases(boolean isGrpcGcp, int payload, int numOfRpcs, int numOfThreads) {
     this.isGrpcGcp = isGrpcGcp;
-    this.payload = payload;
     this.numOfRpcs = numOfRpcs;
     this.numOfThreads = numOfThreads;
-  }
 
-  void prepareTestData() throws InterruptedException {
+    InstantiatingGrpcChannelProvider.Builder channelBuilder =
+        InstantiatingGrpcChannelProvider.newBuilder().setPoolSize(DEFAULT_CHANNEL_POOL);
+    if (isGrpcGcp) {
+      File configFile =
+          new File(SpannerTestCases.class.getClassLoader().getResource(API_FILE).getFile());
+      ApiFunction<ManagedChannelBuilder, ManagedChannelBuilder> apiFunction =
+          (ManagedChannelBuilder builder) ->
+              (GcpManagedChannelBuilder.forDelegateBuilder(builder)
+                  .withApiConfigJsonFile(configFile));
+      channelBuilder = channelBuilder.setPoolSize(1).setChannelConfigurator(apiFunction);
+    }
+    this.spannerOptions =
+        SpannerOptions.newBuilder().setChannelProvider(channelBuilder.build()).build();
+
     int columnBytes = Integer.min(payload, MAX_SIZE_PER_COLUMN);
-    int rows = (payload - 1) / columnBytes + 1;
+    if (payload > columnBytes) {
+      throw new IllegalStateException(
+          "Payload in SpannerClient mode cannot be larger than + " + MAX_SIZE_PER_COLUMN);
+    }
     char[] charArray = new char[columnBytes];
     Arrays.fill(charArray, 'z');
-    String colContent = new String(charArray);
-    SpannerClient client = getClient();
-    Session session =
-        client.createSession(CreateSessionRequest.newBuilder().setDatabase(DATABASE).build());
-    long start = System.currentTimeMillis();
+    this.colContent = new String(charArray);
+  }
 
-    // Clean the existing data.
-    BeginTransactionRequest request =
-        BeginTransactionRequest.newBuilder()
-            .setSession(session.getName())
-            .setOptions(
-                TransactionOptions.newBuilder()
-                    .setReadWrite(TransactionOptions.ReadWrite.getDefaultInstance())
-                    .build())
-            .build();
-    Transaction txn = client.beginTransaction(request);
-    client.commit(
-        CommitRequest.newBuilder()
-            .addMutations(
-                Mutation.newBuilder()
-                    .setDelete(
-                        Mutation.Delete.newBuilder()
-                            .setTable(LARGE_TABLE)
-                            .setKeySet(KeySet.newBuilder().setAll(true).build())
-                            .build())
-                    .build())
-            .setSession(session.getName())
-            .setTransactionId(txn.getId())
-            .build());
-    System.out.println(
-        String.format(
-            "\nDeleted the previous large_table in %d ms.", System.currentTimeMillis() - start));
+  private DatabaseClient getDbClient(Spanner spanner) {
+    return spanner.getDatabaseClient(
+        DatabaseId.of(spannerOptions.getProjectId(), INSTANCE_ID, DATABASE_ID));
+  }
 
-    // Add the payload data.
-    start = System.currentTimeMillis();
-    for (int i = 0; i < rows; i++) {
-      txn = client.beginTransaction(request);
-      client.commit(
-          CommitRequest.newBuilder()
-              .addMutations(
-                  Mutation.newBuilder()
-                      .setInsertOrUpdate(
-                          Mutation.Write.newBuilder()
-                              .addColumns("id")
-                              .addColumns("data")
-                              .addValues(
-                                  ListValue.newBuilder()
-                                      .addValues(Value.newBuilder().setStringValue("payload" + i))
-                                      .addValues(Value.newBuilder().setStringValue(colContent))
-                                      .build())
-                              .setTable(LARGE_TABLE)
-                              .build())
-                      .build())
-              .setSession(session.getName())
-              .setTransactionId(txn.getId())
-              .build());
+  public void prepareTestData() throws InterruptedException {
+    Spanner spanner = spannerOptions.getService();
+    DatabaseClient db = getDbClient(spanner);
+
+    try {
+      long start = System.currentTimeMillis();
+      // Clean the existing data.
+      List<Mutation> deletes = new ArrayList<>();
+      deletes.add(Mutation.delete(LARGE_TABLE, KeySet.all()));
+      db.write(deletes);
+      System.out.println(
+          String.format(
+              "\nDeleted the previous large_table in %d ms.", System.currentTimeMillis() - start));
+
+      List<Mutation> mutations = new ArrayList<>();
+      for (int j = 1; j <= numOfThreads; j++) {
+        for (int k = 1; k <= numOfRpcs; k++) {
+          mutations.add(
+              Mutation.newInsertBuilder(LARGE_TABLE)
+                  .set("id")
+                  .to("SpannerClient-rpc" + k + "thread" + j)
+                  .set("data")
+                  .to(colContent)
+                  .build());
+        }
+      }
+      start = System.currentTimeMillis();
+      db.write(mutations);
+      System.out.println(
+          String.format(
+              "\nLarge test table generated in %d ms.", System.currentTimeMillis() - start));
+    } finally {
+      spanner.close();
     }
-    System.out.println(
-        String.format(
-            "Successfully added ColumnBytes: %d, Rows: %d to large_table in %d ms.",
-            columnBytes, rows, System.currentTimeMillis() - start));
-    cleanUpClient(client, session.getName());
   }
 
-  void testListSessions() throws InterruptedException {
-    System.out.println("\nTestListSessions");
-    SpannerClient client = getClient();
-    ListSessionsRequest request = ListSessionsRequest.newBuilder().setDatabase(DATABASE).build();
-    for (int i = 0; i < NUM_WARMUP; i++) {
-      client.listSessions(request);
+  public void testUpdateData() throws InterruptedException {
+    Spanner spanner = spannerOptions.getService();
+    DatabaseClient db = getDbClient(spanner);
+    System.out.println("\nTestUpdateData");
+    try {
+      // Warm ups.
+      updateDataOneThread(db, 1, null);
+      Func func = (int thread, List<Long> result) -> updateDataOneThread(db, thread, result);
+      runTest(func);
+    } finally {
+      spanner.close();
     }
-
-    // for (Session element : spannerClient.listSessions(request).iterateAll())
-    RpcCall<ListSessionsRequest, ListSessionsPagedResponse> rpcCall =
-        (ListSessionsRequest req) -> client.listSessions(req);
-    doTestBlocking(request, rpcCall);
-    client.shutdown();
-    client.awaitTermination(5, TimeUnit.SECONDS);
   }
 
-  void testExecuteSql() throws InterruptedException {
-    System.out.println("\nTestExecuteSql");
-    SpannerClient client = getClient();
-    Session session =
-        client.createSession(CreateSessionRequest.newBuilder().setDatabase(DATABASE).build());
-
-    ExecuteSqlRequest request =
-        ExecuteSqlRequest.newBuilder()
-            .setSession(session.getName())
-            .setSql("select * FROM " + TABLE)
-            .build();
-
-    RpcCall<ExecuteSqlRequest, ResultSet> rpcCall =
-        (ExecuteSqlRequest req) -> client.executeSql(req);
-    doTestBlocking(request, rpcCall);
-    cleanUpClient(client, session.getName());
-  }
-
-  void testPartitionQuery() throws InterruptedException {
-    System.out.println("\nTestPartitionQuery");
-    SpannerClient client = getClient();
-    Session session =
-        client.createSession(CreateSessionRequest.newBuilder().setDatabase(DATABASE).build());
-
-    TransactionOptions options =
-        TransactionOptions.newBuilder()
-            .setReadOnly(TransactionOptions.ReadOnly.getDefaultInstance())
-            .build();
-    TransactionSelector selector = TransactionSelector.newBuilder().setBegin(options).build();
-    PartitionQueryRequest request =
-        PartitionQueryRequest.newBuilder()
-            .setSession(session.getName())
-            .setSql("select * FROM " + LARGE_TABLE)
-            .setTransaction(selector)
-            .build();
-
-    RpcCall<PartitionQueryRequest, PartitionResponse> rpcCall =
-        (PartitionQueryRequest req) -> client.partitionQuery(req);
-    doTestBlocking(request, rpcCall);
-    cleanUpClient(client, session.getName());
-  }
-
-  void testRead() throws InterruptedException {
+  public void testRead() throws InterruptedException {
+    Spanner spanner = spannerOptions.getService();
+    DatabaseClient db = getDbClient(spanner);
     System.out.println("\nTestRead");
-    SpannerClient client = getClient();
-    Session session =
-        client.createSession(CreateSessionRequest.newBuilder().setDatabase(DATABASE).build());
-
-    ReadRequest request =
-        ReadRequest.newBuilder()
-            .setSession(session.getName())
-            .setTable(TABLE)
-            .setKeySet(KeySet.newBuilder().setAll(true).build())
-            .addColumns("users")
-            .addColumns("firstname")
-            .addColumns("lastname")
-            .build();
-
-    RpcCall<ReadRequest, ResultSet> rpcCall = (ReadRequest req) -> client.read(req);
-    doTestBlocking(request, rpcCall);
-    cleanUpClient(client, session.getName());
+    try {
+      // Warm ups.
+      readOneThread(db, 1, null);
+      Func func = (int thread, List<Long> result) -> readOneThread(db, thread, result);
+      runTest(func);
+    } finally {
+      spanner.close();
+    }
   }
 
-  void testMaxConcurrentStream() throws InterruptedException {
-    System.out.println("\nTestMaxConcurrentStream");
-    SpannerClient client = getClient();
-    Session session =
-        client.createSession(CreateSessionRequest.newBuilder().setDatabase(DATABASE).build());
-
-    // Warm up.
-    ExecuteSqlRequest request =
-        ExecuteSqlRequest.newBuilder()
-            .setSession(session.getName())
-            .setSql("select * FROM " + LARGE_TABLE)
-            .build();
-    for (int i = 0; i < NUM_WARMUP; i++) {
-      Iterator<PartialResultSet> iter =
-          client.executeStreamingSqlCallable().call(request).iterator();
-      while (iter.hasNext()) {
-        iter.next();
-      }
-    }
-
-    // Start concurrent rpc calls.
-    List<Iterator<PartialResultSet>> responses = new ArrayList<>();
-    long start = System.currentTimeMillis();
+  public void readOneThread(DatabaseClient db, int thread, List<Long> result) {
     for (int i = 0; i < numOfRpcs; i++) {
-      responses.add(client.executeStreamingSqlCallable().call(request).iterator());
-    }
-    System.out.println(
-        String.format(
-            "Started %d ExecuteStreamingSql calls in %d ms",
-            numOfRpcs, System.currentTimeMillis() - start));
-
-    // Start another rpc call using a new thread.
-    Thread t = new Thread(() -> listSessionsSingleCall(client));
-    t.start();
-
-    System.out.println("I'm sleeping and will wake up after 2000ms zzzZZZZ.");
-    Thread.sleep(2000);
-    System.out.println("Good morning!");
-
-    // Free one call.
-    while (responses.get(0).hasNext()) {
-      responses.get(0).next();
-    }
-    System.out.println(
-        String.format("Freed one call in %dms.", System.currentTimeMillis() - start));
-
-    // Free all the calls.
-    for (int i = 1; i < responses.size(); i++) {
-      Iterator<PartialResultSet> iter = responses.get(i);
-      while (iter.hasNext()) {
-        iter.next();
+      int lineCount = 0;
+      long start = System.currentTimeMillis();
+      try (ResultSet resultSet =
+          db.singleUse().read(LARGE_TABLE, KeySet.all(), Arrays.asList("id", "data", "rpc"))) {
+        while (resultSet.next()) {
+          lineCount++;
+        }
+      }
+      if (result != null) {
+        result.add(System.currentTimeMillis() - start);
+      }
+      if (lineCount != numOfRpcs * numOfThreads) {
+        System.out.println("WARNING: Imcomplete data.");
       }
     }
-    System.out.println(
-        String.format("Freed %d call(s) in %dms.", numOfRpcs, System.currentTimeMillis() - start));
+  }
 
-    t.join();
-    cleanUpClient(client, session.getName());
+  private void updateDataOneThread(DatabaseClient db, int thread, List<Long> result) {
+    for (int i = 1; i <= numOfRpcs; i++) {
+      List<Mutation> mutations = new ArrayList<>();
+      mutations.add(
+          Mutation.newUpdateBuilder("LARGE_TABLE")
+              .set("id")
+              .to("SpannerClient-rpc" + i + "thread" + thread)
+              .set("data")
+              .to(colContent)
+              .set("rpc")
+              .to(i)
+              .build());
+      long start = System.currentTimeMillis();
+      db.write(mutations);
+      if (result != null) {
+        result.add(System.currentTimeMillis() - start);
+      }
+    }
   }
 
   private void runTest(Func func) throws InterruptedException {
@@ -300,7 +202,8 @@ final class SpannerClientTestCases {
     List<Thread> threads = new ArrayList<>();
     if (numOfThreads > 1) {
       for (int t = 0; t < numOfThreads; t++) {
-        threads.add(new Thread(() -> func.operate(result)));
+        final int threadNum = t + 1;
+        threads.add(new Thread(() -> func.operate(threadNum, result)));
       }
     }
     long start = System.currentTimeMillis();
@@ -309,7 +212,7 @@ final class SpannerClientTestCases {
         t.start();
       }
     } else {
-      func.operate(result);
+      func.operate(1, result);
     }
 
     for (Thread t : threads) {
@@ -347,96 +250,7 @@ final class SpannerClientTestCases {
             numOfRpcs * numOfThreads / (double) dur));
   }
 
-  /**
-   * Start a test. It has three steps: <1> Do warm-up calls. <2> Construct the target function. <3>
-   * Run the target function with multiple threads,
-   */
-  private <ReqT, RespT> void doTestBlocking(ReqT request, RpcCall<ReqT, RespT> rpcCall)
-      throws InterruptedException {
-    // Do the warm up.
-    doRpcCalls(null, NUM_WARMUP, request, rpcCall);
-
-    // Run the actual benchmark.
-    Func func = (List<Long> result) -> doRpcCalls(result, numOfRpcs, request, rpcCall);
-
-    // Will need to run in different threads.
-    runTest(func);
-  }
-
-  /** Do the actual RPC calls. */
-  private static <ReqT, RespT> void doRpcCalls(
-      List<Long> result, int iters, ReqT request, RpcCall rpcCall) {
-    for (int i = 0; i < iters; i++) {
-      long start = System.currentTimeMillis();
-      rpcCall.call(request);
-      long dur = System.currentTimeMillis() - start;
-      if (result != null) {
-        result.add(dur);
-      }
-    }
-  }
-
-  private static void listSessionsSingleCall(SpannerClient client) {
-    ListSessionsRequest request = ListSessionsRequest.newBuilder().setDatabase(DATABASE).build();
-    long start = System.currentTimeMillis();
-    client.listSessionsCallable().call(request);
-    System.out.println(
-        String.format(
-            "Finished executing listSessions in %d ms", System.currentTimeMillis() - start));
-  }
-
-  private SpannerClient getClient() {
-    // Set up credentials.
-    GoogleCredentials creds;
-    try {
-      creds = GoogleCredentials.getApplicationDefault();
-    } catch (Exception e) {
-      return null;
-    }
-    ImmutableList<String> requiredScopes = ImmutableList.of(OAUTH_SCOPE);
-    creds = creds.createScoped(requiredScopes);
-    FixedCredentialsProvider provider = FixedCredentialsProvider.create(creds);
-
-    // Set up the Spanner client.
-    InstantiatingGrpcChannelProvider.Builder channelBuilder =
-        InstantiatingGrpcChannelProvider.newBuilder().setPoolSize(DEFAULT_CHANNEL_POOL);
-
-    if (isGrpcGcp) {
-      File configFile =
-          new File(SpannerTestCases.class.getClassLoader().getResource(API_FILE).getFile());
-      ApiFunction<ManagedChannelBuilder, ManagedChannelBuilder> apiFunction =
-          (ManagedChannelBuilder builder) ->
-              (GcpManagedChannelBuilder.forDelegateBuilder(builder)
-                  .withApiConfigJsonFile(configFile));
-      channelBuilder = channelBuilder.setPoolSize(1).setChannelConfigurator(apiFunction);
-    }
-
-    SpannerClient client = null;
-    try {
-      SpannerSettings.Builder spannerSettingsBuilder = SpannerSettings.newBuilder();
-      spannerSettingsBuilder
-          .getStubSettingsBuilder()
-          .setTransportChannelProvider(channelBuilder.build())
-          .setCredentialsProvider(provider);
-
-      client = SpannerClient.create(spannerSettingsBuilder.build());
-    } catch (IOException e) {
-      System.out.println("Failed to create the client.");
-    }
-    return client;
-  }
-
-  private static void cleanUpClient(SpannerClient client, String name) throws InterruptedException {
-    client.deleteSession(DeleteSessionRequest.newBuilder().setName(name).build());
-    client.shutdown();
-    client.awaitTermination(5, TimeUnit.SECONDS);
-  }
-
   private interface Func {
-    void operate(List<Long> result);
-  }
-
-  private interface RpcCall<ReqT, RespT> {
-    RespT call(ReqT request);
+    void operate(int thread, List<Long> result);
   }
 }
