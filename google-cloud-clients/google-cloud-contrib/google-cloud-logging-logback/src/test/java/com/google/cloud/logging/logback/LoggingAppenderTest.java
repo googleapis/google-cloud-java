@@ -296,9 +296,8 @@ public class LoggingAppenderTest {
     loggingAppender.addLoggingEventEnhancer(CustomLoggingEventEnhancer2.class.getName());
     loggingAppender.start();
     loggingAppender.doAppend(loggingEvent);
-
     verify(logging);
-
+    MDC.remove("mdc1");
     Map<String, String> capturedArgumentMap =
         capturedArgument.getValue().iterator().next().getLabels();
     assertThat(capturedArgumentMap.get("mdc1")).isNull();
