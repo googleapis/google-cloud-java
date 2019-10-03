@@ -47,6 +47,7 @@ import com.google.cloud.spanner.admin.instance.v1.stub.GrpcInstanceAdminStub;
 import com.google.cloud.spanner.admin.instance.v1.stub.InstanceAdminStub;
 import com.google.cloud.spanner.v1.stub.GrpcSpannerStub;
 import com.google.cloud.spanner.v1.stub.SpannerStub;
+import com.google.common.annotations.VisibleForTesting;
 import com.google.common.base.MoreObjects;
 import com.google.common.base.Preconditions;
 import com.google.common.util.concurrent.ThreadFactoryBuilder;
@@ -621,7 +622,8 @@ public class GapicSpannerRpc implements SpannerRpc {
     }
   }
 
-  private GrpcCallContext newCallContext(@Nullable Map<Option, ?> options, String resource) {
+  @VisibleForTesting
+  GrpcCallContext newCallContext(@Nullable Map<Option, ?> options, String resource) {
     return newCallContext(options, resource, null);
   }
 

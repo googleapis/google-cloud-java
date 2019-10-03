@@ -37,6 +37,7 @@ import com.google.cloud.spanner.SpannerOptions.CallCredentialsProvider;
 import com.google.cloud.spanner.Statement;
 import com.google.cloud.spanner.admin.database.v1.MockDatabaseAdminImpl;
 import com.google.cloud.spanner.admin.instance.v1.MockInstanceAdminImpl;
+import com.google.cloud.spanner.spi.v1.SpannerRpc.Option;
 import com.google.common.base.Stopwatch;
 import com.google.protobuf.ListValue;
 import com.google.spanner.admin.database.v1.Database;
@@ -63,9 +64,10 @@ import io.grpc.auth.MoreCallCredentials;
 import io.grpc.netty.shaded.io.grpc.netty.NettyServerBuilder;
 import java.io.IOException;
 import java.net.InetSocketAddress;
-import java.sql.Date;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.concurrent.TimeUnit;
 import java.util.regex.Pattern;
 import org.junit.After;
@@ -107,11 +109,25 @@ public class GapicSpannerRpcTest {
           .build();
   private static final String STATIC_OAUTH_TOKEN = "STATIC_TEST_OAUTH_TOKEN";
   private static final String VARIABLE_OAUTH_TOKEN = "VARIABLE_TEST_OAUTH_TOKEN";
+  private static final OAuth2Credentials STATIC_CREDENTIALS =
+      OAuth2Credentials.create(
+          new AccessToken(
+              STATIC_OAUTH_TOKEN,
+              new java.util.Date(
+                  System.currentTimeMillis() + TimeUnit.MILLISECONDS.convert(1L, TimeUnit.DAYS))));
+  private static final OAuth2Credentials VARIABLE_CREDENTIALS =
+      OAuth2Credentials.create(
+          new AccessToken(
+              VARIABLE_OAUTH_TOKEN,
+              new java.util.Date(
+                  System.currentTimeMillis() + TimeUnit.MILLISECONDS.convert(1L, TimeUnit.DAYS))));
+
   private MockSpannerServiceImpl mockSpanner;
   private MockInstanceAdminImpl mockInstanceAdmin;
   private MockDatabaseAdminImpl mockDatabaseAdmin;
   private Server server;
   private InetSocketAddress address;
+  private final Map<SpannerRpc.Option, Object> optionsMap = new HashMap<>();
 
   @Before
   public void startServer() throws IOException {
@@ -144,6 +160,7 @@ public class GapicSpannerRpcTest {
                 })
             .build()
             .start();
+    optionsMap.put(Option.CHANNEL_HINT, Long.valueOf(1L));
   }
 
   @After
@@ -260,6 +277,55 @@ public class GapicSpannerRpcTest {
     assertThat(getNumberOfThreadsWithName(SPANNER_THREAD_NAME, true), is(equalTo(0)));
   }
 
+  @Test
+  public void testCallCredentialsProviderPreferenceAboveCredentials() {
+    SpannerOptions options =
+        SpannerOptions.newBuilder()
+            .setCredentials(STATIC_CREDENTIALS)
+            .setCallCredentialsProvider(
+                new CallCredentialsProvider() {
+                  @Override
+                  public CallCredentials getCallCredentials() {
+                    return MoreCallCredentials.from(VARIABLE_CREDENTIALS);
+                  }
+                })
+            .build();
+    GapicSpannerRpc rpc = new GapicSpannerRpc(options);
+    // GoogleAuthLibraryCallCredentials doesn't implement equals, so we can only check for the
+    // existence.
+    assertThat(rpc.newCallContext(optionsMap, "/some/resource").getCallOptions().getCredentials())
+        .isNotNull();
+    rpc.shutdown();
+  }
+
+  @Test
+  public void testCallCredentialsProviderReturnsNull() {
+    SpannerOptions options =
+        SpannerOptions.newBuilder()
+            .setCredentials(STATIC_CREDENTIALS)
+            .setCallCredentialsProvider(
+                new CallCredentialsProvider() {
+                  @Override
+                  public CallCredentials getCallCredentials() {
+                    return null;
+                  }
+                })
+            .build();
+    GapicSpannerRpc rpc = new GapicSpannerRpc(options);
+    assertThat(rpc.newCallContext(optionsMap, "/some/resource").getCallOptions().getCredentials())
+        .isNull();
+    rpc.shutdown();
+  }
+
+  @Test
+  public void testNoCallCredentials() {
+    SpannerOptions options = SpannerOptions.newBuilder().setCredentials(STATIC_CREDENTIALS).build();
+    GapicSpannerRpc rpc = new GapicSpannerRpc(options);
+    assertThat(rpc.newCallContext(optionsMap, "/some/resource").getCallOptions().getCredentials())
+        .isNull();
+    rpc.shutdown();
+  }
+
   @SuppressWarnings("rawtypes")
   private SpannerOptions createSpannerOptions() {
     String endpoint = address.getHostString() + ":" + server.getPort();
@@ -276,26 +342,14 @@ public class GapicSpannerRpcTest {
             })
         .setHost("http://" + endpoint)
         // Set static credentials that will return the static OAuth test token.
-        .setCredentials(
-            OAuth2Credentials.create(
-                new AccessToken(
-                    STATIC_OAUTH_TOKEN,
-                    new Date(
-                        System.currentTimeMillis()
-                            + TimeUnit.MILLISECONDS.convert(1L, TimeUnit.DAYS)))))
+        .setCredentials(STATIC_CREDENTIALS)
         // Also set a CallCredentialsProvider. These credentials should take precedence above
         // the static credentials.
         .setCallCredentialsProvider(
             new CallCredentialsProvider() {
               @Override
               public CallCredentials getCallCredentials() {
-                return MoreCallCredentials.from(
-                    OAuth2Credentials.create(
-                        new AccessToken(
-                            VARIABLE_OAUTH_TOKEN,
-                            new Date(
-                                System.currentTimeMillis()
-                                    + TimeUnit.MILLISECONDS.convert(1L, TimeUnit.DAYS)))));
+                return MoreCallCredentials.from(VARIABLE_CREDENTIALS);
               }
             })
         .build();
