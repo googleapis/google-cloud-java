@@ -36,7 +36,7 @@ import javax.annotation.Nonnull;
  *   <dt>Development
  *   <dd>A low-cost instance for development and testing, with performance limited to the equivalent
  *       of a 1-node cluster. Development instances only support a single 1 node cluster. At any
- *       point this can be upgraded to production instance.
+ *       point this can be upgraded to a production instance.
  * </dl>
  *
  * When creating an Instance, you must create at least one cluster in it.
@@ -124,11 +124,11 @@ public final class CreateInstanceRequest {
    * <p>All new instances must have at least one cluster. DEVELOPMENT instances must have exactly
    * one cluster.
    *
-   * @param clusterId The name of the cluster.
-   * @param zone The zone where the cluster will be created.
-   * @param serveNodes The number of nodes that cluster will contain. DEVELOPMENT instance clusters
+   * @param clusterId the name of the cluster.
+   * @param zone the zone where the cluster will be created.
+   * @param serveNodes the number of nodes that cluster will contain. DEVELOPMENT instance clusters
    *     must have exactly one node.
-   * @param storageType The type of storage used by this cluster to serve its parent instance's
+   * @param storageType the type of storage used by this cluster to serve its parent instance's
    *     tables.
    */
   @SuppressWarnings("WeakerAccess")
@@ -152,9 +152,9 @@ public final class CreateInstanceRequest {
    *
    * <p>This instance will have exactly one node cluster.
    *
-   * @param clusterId The name of the cluster.
-   * @param zone The zone where the cluster will be created.
-   * @param storageType The type of storage used by this cluster to serve its parent instance's
+   * @param clusterId the name of the cluster.
+   * @param zone the zone where the cluster will be created.
+   * @param storageType the type of storage used by this cluster to serve its parent instance's
    *     tables.
    */
   @SuppressWarnings("WeakerAccess")
