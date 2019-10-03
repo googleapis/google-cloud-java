@@ -372,7 +372,7 @@
       <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-core-http</artifactId>
-        <version>1.90.0</version>
+        <version>1.91.2</version>
       </dependency>
       <dependency>
         <groupId>com.google.cloud</groupId>
