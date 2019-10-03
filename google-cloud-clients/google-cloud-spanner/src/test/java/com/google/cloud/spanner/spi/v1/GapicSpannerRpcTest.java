@@ -16,12 +16,14 @@
 
 package com.google.cloud.spanner.spi.v1;
 
+import static com.google.common.truth.Truth.assertThat;
 import static org.hamcrest.CoreMatchers.equalTo;
 import static org.hamcrest.CoreMatchers.is;
 import static org.junit.Assert.assertThat;
 
 import com.google.api.core.ApiFunction;
-import com.google.cloud.NoCredentials;
+import com.google.auth.oauth2.AccessToken;
+import com.google.auth.oauth2.OAuth2Credentials;
 import com.google.cloud.spanner.DatabaseAdminClient;
 import com.google.cloud.spanner.DatabaseClient;
 import com.google.cloud.spanner.DatabaseId;
@@ -31,6 +33,7 @@ import com.google.cloud.spanner.MockSpannerServiceImpl.StatementResult;
 import com.google.cloud.spanner.ResultSet;
 import com.google.cloud.spanner.Spanner;
 import com.google.cloud.spanner.SpannerOptions;
+import com.google.cloud.spanner.SpannerOptions.CallCredentialsProvider;
 import com.google.cloud.spanner.Statement;
 import com.google.cloud.spanner.admin.database.v1.MockDatabaseAdminImpl;
 import com.google.cloud.spanner.admin.instance.v1.MockInstanceAdminImpl;
@@ -45,11 +48,22 @@ import com.google.spanner.v1.ResultSetMetadata;
 import com.google.spanner.v1.StructType;
 import com.google.spanner.v1.StructType.Field;
 import com.google.spanner.v1.TypeCode;
+import io.grpc.CallCredentials;
+import io.grpc.Context;
+import io.grpc.Contexts;
 import io.grpc.ManagedChannelBuilder;
+import io.grpc.Metadata;
+import io.grpc.Metadata.Key;
 import io.grpc.Server;
+import io.grpc.ServerCall;
+import io.grpc.ServerCall.Listener;
+import io.grpc.ServerCallHandler;
+import io.grpc.ServerInterceptor;
+import io.grpc.auth.MoreCallCredentials;
 import io.grpc.netty.shaded.io.grpc.netty.NettyServerBuilder;
 import java.io.IOException;
 import java.net.InetSocketAddress;
+import java.sql.Date;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
@@ -91,6 +105,8 @@ public class GapicSpannerRpcTest {
                   .build())
           .setMetadata(SELECT1AND2_METADATA)
           .build();
+  private static final String STATIC_OAUTH_TOKEN = "STATIC_TEST_OAUTH_TOKEN";
+  private static final String VARIABLE_OAUTH_TOKEN = "VARIABLE_TEST_OAUTH_TOKEN";
   private MockSpannerServiceImpl mockSpanner;
   private MockInstanceAdminImpl mockInstanceAdmin;
   private MockDatabaseAdminImpl mockDatabaseAdmin;
@@ -111,6 +127,21 @@ public class GapicSpannerRpcTest {
             .addService(mockSpanner)
             .addService(mockInstanceAdmin)
             .addService(mockDatabaseAdmin)
+            // Add a server interceptor that will check that we receive the variable OAuth token
+            // from the CallCredentials, and not the one set as static credentials.
+            .intercept(
+                new ServerInterceptor() {
+                  @Override
+                  public <ReqT, RespT> Listener<ReqT> interceptCall(
+                      ServerCall<ReqT, RespT> call,
+                      Metadata headers,
+                      ServerCallHandler<ReqT, RespT> next) {
+                    String auth =
+                        headers.get(Key.of("authorization", Metadata.ASCII_STRING_MARSHALLER));
+                    assertThat(auth).isEqualTo("Bearer " + VARIABLE_OAUTH_TOKEN);
+                    return Contexts.interceptCall(Context.current(), call, headers, next);
+                  }
+                })
             .build()
             .start();
   }
@@ -244,7 +275,29 @@ public class GapicSpannerRpcTest {
               }
             })
         .setHost("http://" + endpoint)
-        .setCredentials(NoCredentials.getInstance())
+        // Set static credentials that will return the static OAuth test token.
+        .setCredentials(
+            OAuth2Credentials.create(
+                new AccessToken(
+                    STATIC_OAUTH_TOKEN,
+                    new Date(
+                        System.currentTimeMillis()
+                            + TimeUnit.MILLISECONDS.convert(1L, TimeUnit.DAYS)))))
+        // Also set a CallCredentialsProvider. These credentials should take precedence above
+        // the static credentials.
+        .setCallCredentialsProvider(
+            new CallCredentialsProvider() {
+              @Override
+              public CallCredentials getCallCredentials() {
+                return MoreCallCredentials.from(
+                    OAuth2Credentials.create(
+                        new AccessToken(
+                            VARIABLE_OAUTH_TOKEN,
+                            new Date(
+                                System.currentTimeMillis()
+                                    + TimeUnit.MILLISECONDS.convert(1L, TimeUnit.DAYS)))));
+              }
+            })
         .build();
   }
 

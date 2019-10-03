@@ -40,6 +40,7 @@ import com.google.cloud.grpc.GrpcTransportOptions;
 import com.google.cloud.spanner.SpannerException;
 import com.google.cloud.spanner.SpannerExceptionFactory;
 import com.google.cloud.spanner.SpannerOptions;
+import com.google.cloud.spanner.SpannerOptions.CallCredentialsProvider;
 import com.google.cloud.spanner.admin.database.v1.stub.DatabaseAdminStub;
 import com.google.cloud.spanner.admin.database.v1.stub.GrpcDatabaseAdminStub;
 import com.google.cloud.spanner.admin.instance.v1.stub.GrpcInstanceAdminStub;
@@ -94,6 +95,7 @@ import com.google.spanner.v1.ResultSet;
 import com.google.spanner.v1.RollbackRequest;
 import com.google.spanner.v1.Session;
 import com.google.spanner.v1.Transaction;
+import io.grpc.CallCredentials;
 import io.grpc.Context;
 import java.util.LinkedList;
 import java.util.List;
@@ -166,6 +168,7 @@ public class GapicSpannerRpc implements SpannerRpc {
   private final String projectId;
   private final String projectName;
   private final SpannerMetadataProvider metadataProvider;
+  private final CallCredentialsProvider callCredentialsProvider;
   private final Duration waitTimeout =
       systemProperty(PROPERTY_TIMEOUT_SECONDS, DEFAULT_TIMEOUT_SECONDS);
   private final Duration idleTimeout =
@@ -201,6 +204,7 @@ public class GapicSpannerRpc implements SpannerRpc {
         SpannerMetadataProvider.create(
             mergedHeaderProvider.getHeaders(),
             internalHeaderProviderBuilder.getResourceHeaderKey());
+    this.callCredentialsProvider = options.getCallCredentialsProvider();
 
     // Create a managed executor provider.
     this.executorProvider =
@@ -630,6 +634,13 @@ public class GapicSpannerRpc implements SpannerRpc {
     context = context.withExtraHeaders(metadataProvider.newExtraHeaders(resource, projectName));
     if (timeout != null) {
       context = context.withTimeout(timeout);
+    }
+    if (callCredentialsProvider != null) {
+      CallCredentials callCredentials = callCredentialsProvider.getCallCredentials();
+      if (callCredentials != null) {
+        context =
+            context.withCallOptions(context.getCallOptions().withCallCredentials(callCredentials));
+      }
     }
     return context.withStreamWaitTimeout(waitTimeout).withStreamIdleTimeout(idleTimeout);
   }

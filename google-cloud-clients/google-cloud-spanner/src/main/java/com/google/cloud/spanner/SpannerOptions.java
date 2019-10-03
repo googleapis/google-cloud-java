@@ -20,6 +20,7 @@ import com.google.api.core.ApiFunction;
 import com.google.api.gax.grpc.GrpcInterceptorProvider;
 import com.google.api.gax.retrying.RetrySettings;
 import com.google.api.gax.rpc.TransportChannelProvider;
+import com.google.auth.Credentials;
 import com.google.cloud.ServiceDefaults;
 import com.google.cloud.ServiceOptions;
 import com.google.cloud.ServiceRpc;
@@ -37,6 +38,7 @@ import com.google.cloud.spanner.v1.stub.SpannerStubSettings;
 import com.google.common.base.Preconditions;
 import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.ImmutableSet;
+import io.grpc.CallCredentials;
 import io.grpc.ManagedChannelBuilder;
 import java.io.IOException;
 import java.net.MalformedURLException;
@@ -72,6 +74,16 @@ public class SpannerOptions extends ServiceOptions<Spanner, SpannerOptions> {
   private final InstanceAdminStubSettings instanceAdminStubSettings;
   private final DatabaseAdminStubSettings databaseAdminStubSettings;
   private final Duration partitionedDmlTimeout;
+  private final CallCredentialsProvider callCredentialsProvider;
+
+  /**
+   * Interface that can be used to provide {@link CallCredentials} instead of {@link Credentials} to
+   * {@link SpannerOptions}.
+   */
+  public static interface CallCredentialsProvider {
+    /** Return the {@link CallCredentials} to use for a gRPC call. */
+    CallCredentials getCallCredentials();
+  }
 
   /** Default implementation of {@code SpannerFactory}. */
   private static class DefaultSpannerFactory implements SpannerFactory {
@@ -119,6 +131,7 @@ public class SpannerOptions extends ServiceOptions<Spanner, SpannerOptions> {
       throw SpannerExceptionFactory.newSpannerException(e);
     }
     partitionedDmlTimeout = builder.partitionedDmlTimeout;
+    callCredentialsProvider = builder.callCredentialsProvider;
   }
 
   /** Builder for {@link SpannerOptions} instances. */
@@ -150,6 +163,7 @@ public class SpannerOptions extends ServiceOptions<Spanner, SpannerOptions> {
     private DatabaseAdminStubSettings.Builder databaseAdminStubSettingsBuilder =
         DatabaseAdminStubSettings.newBuilder();
     private Duration partitionedDmlTimeout = Duration.ofHours(2L);
+    private CallCredentialsProvider callCredentialsProvider;
 
     private Builder() {}
 
@@ -163,6 +177,7 @@ public class SpannerOptions extends ServiceOptions<Spanner, SpannerOptions> {
       this.instanceAdminStubSettingsBuilder = options.instanceAdminStubSettings.toBuilder();
       this.databaseAdminStubSettingsBuilder = options.databaseAdminStubSettings.toBuilder();
       this.partitionedDmlTimeout = options.partitionedDmlTimeout;
+      this.callCredentialsProvider = options.callCredentialsProvider;
       this.channelProvider = options.channelProvider;
       this.channelConfigurator = options.channelConfigurator;
       this.interceptorProvider = options.interceptorProvider;
@@ -355,6 +370,17 @@ public class SpannerOptions extends ServiceOptions<Spanner, SpannerOptions> {
     }
 
     /**
+     * Sets a {@link CallCredentialsProvider} that can deliver {@link CallCredentials} to use on a
+     * per-gRPC basis. Any credentials returned by this {@link CallCredentialsProvider} will have
+     * preference above any {@link Credentials} that may have been set on the {@link SpannerOptions}
+     * instance.
+     */
+    public Builder setCallCredentialsProvider(CallCredentialsProvider callCredentialsProvider) {
+      this.callCredentialsProvider = callCredentialsProvider;
+      return this;
+    }
+
+    /**
      * Specifying this will allow the client to prefetch up to {@code prefetchChunks} {@code
      * PartialResultSet} chunks for each read and query. The data size of each chunk depends on the
      * server implementation but a good rule of thumb is that each chunk will be up to 1 MiB. Larger
@@ -424,6 +450,10 @@ public class SpannerOptions extends ServiceOptions<Spanner, SpannerOptions> {
 
   public Duration getPartitionedDmlTimeout() {
     return partitionedDmlTimeout;
+  }
+
+  public CallCredentialsProvider getCallCredentialsProvider() {
+    return callCredentialsProvider;
   }
 
   public int getPrefetchChunks() {
