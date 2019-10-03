@@ -92,8 +92,10 @@ public class SessionPoolStressTest extends BaseSessionPoolTest {
     mockSpanner = mock(SpannerImpl.class);
     spannerOptions = mock(SpannerOptions.class);
     when(spannerOptions.getNumChannels()).thenReturn(4);
+    SessionClient sessionClient = mock(SessionClient.class);
+    when(mockSpanner.getSessionClient(db)).thenReturn(sessionClient);
     when(mockSpanner.getOptions()).thenReturn(spannerOptions);
-    when(mockSpanner.createSession(db))
+    when(sessionClient.createSession())
         .thenAnswer(
             new Answer<Session>() {
 
@@ -115,7 +117,7 @@ public class SessionPoolStressTest extends BaseSessionPoolTest {
             new Answer<Void>() {
               @Override
               public Void answer(InvocationOnMock invocation) throws Throwable {
-                int sessionCount = invocation.getArgumentAt(1, Integer.class);
+                int sessionCount = invocation.getArgumentAt(0, Integer.class);
                 for (int s = 0; s < sessionCount; s++) {
                   synchronized (lock) {
                     SessionImpl session = mockSession();
@@ -126,16 +128,15 @@ public class SessionPoolStressTest extends BaseSessionPoolTest {
                       maxAliveSessions = sessions.size();
                     }
                     SessionConsumerImpl consumer =
-                        invocation.getArgumentAt(2, SessionConsumerImpl.class);
+                        invocation.getArgumentAt(1, SessionConsumerImpl.class);
                     consumer.onSessionReady(session);
                   }
                 }
                 return null;
               }
             })
-        .when(mockSpanner)
-        .asyncBatchCreateSessions(
-            Mockito.eq(db), Mockito.anyInt(), Mockito.any(SessionConsumer.class));
+        .when(sessionClient)
+        .asyncBatchCreateSessions(Mockito.anyInt(), Mockito.any(SessionConsumer.class));
   }
 
   private void setupSession(final Session session) {
@@ -255,7 +256,8 @@ public class SessionPoolStressTest extends BaseSessionPoolTest {
       builder.setFailIfPoolExhausted();
     }
     pool =
-        SessionPool.createPool(builder.build(), new TestExecutorFactory(), db, mockSpanner, clock);
+        SessionPool.createPool(
+            builder.build(), new TestExecutorFactory(), mockSpanner.getSessionClient(db), clock);
     for (int i = 0; i < concurrentThreads; i++) {
       new Thread(
               new Runnable() {
@@ -307,6 +309,7 @@ public class SessionPoolStressTest extends BaseSessionPoolTest {
     synchronized (lock) {
       assertThat(maxAliveSessions).isAtMost(maxSessions);
     }
+    stopMaintenance.set(true);
     pool.closeAsync().get();
     Exception e = getFailedError();
     if (e != null) {

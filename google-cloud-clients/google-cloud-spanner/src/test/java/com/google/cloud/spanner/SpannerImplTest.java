@@ -28,8 +28,10 @@ import com.google.cloud.NoCredentials;
 import com.google.cloud.ServiceRpc;
 import com.google.cloud.grpc.GrpcTransportOptions;
 import com.google.cloud.spanner.spi.v1.SpannerRpc;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
+import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -56,7 +58,13 @@ public class SpannerImplTest {
     when(spannerOptions.getPrefetchChunks()).thenReturn(1);
     when(spannerOptions.getRetrySettings()).thenReturn(RetrySettings.newBuilder().build());
     when(spannerOptions.getClock()).thenReturn(NanoClock.getDefaultClock());
+    when(spannerOptions.getSessionLabels()).thenReturn(Collections.<String, String>emptyMap());
     impl = new SpannerImpl(rpc, spannerOptions);
+  }
+
+  @After
+  public void teardown() {
+    impl.close();
   }
 
   @Test
@@ -70,7 +78,7 @@ public class SpannerImplTest {
     Mockito.when(spannerOptions.getTransportOptions())
         .thenReturn(GrpcTransportOptions.newBuilder().build());
     Mockito.when(spannerOptions.getSessionPoolOptions())
-        .thenReturn(SessionPoolOptions.newBuilder().build());
+        .thenReturn(SessionPoolOptions.newBuilder().setMinSessions(0).build());
 
     DatabaseClient databaseClient = impl.getDatabaseClient(db);
 

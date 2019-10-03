@@ -23,6 +23,7 @@ import com.google.common.base.Preconditions;
 public class SessionPoolOptions {
   // Default number of channels * 100.
   private static final int DEFAULT_MAX_SESSIONS = 400;
+  private static final int DEFAULT_MIN_SESSIONS = 100;
   private static final ActionOnExhaustion DEFAULT_ACTION = ActionOnExhaustion.BLOCK;
   private final int minSessions;
   private final int maxSessions;
@@ -98,7 +99,7 @@ public class SessionPoolOptions {
 
   /** Builder for creating SessionPoolOptions. */
   public static class Builder {
-    private int minSessions;
+    private int minSessions = DEFAULT_MIN_SESSIONS;
     private int maxSessions = DEFAULT_MAX_SESSIONS;
     private int maxIdleSessions;
     private float writeSessionsFraction = 0.2f;
@@ -109,7 +110,7 @@ public class SessionPoolOptions {
 
     /**
      * Minimum number of sessions that this pool will always maintain. These will be created eagerly
-     * in parallel. Defaults to 0.
+     * in parallel. Defaults to 100.
      */
     public Builder setMinSessions(int minSessions) {
       this.minSessions = minSessions;

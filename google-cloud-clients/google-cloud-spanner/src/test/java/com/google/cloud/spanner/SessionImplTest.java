@@ -43,6 +43,7 @@ import com.google.spanner.v1.Transaction;
 import java.text.ParseException;
 import java.util.Arrays;
 import java.util.Calendar;
+import java.util.Collections;
 import java.util.GregorianCalendar;
 import java.util.Map;
 import java.util.TimeZone;
@@ -81,6 +82,7 @@ public class SessionImplTest {
     when(spannerOptions.getPrefetchChunks()).thenReturn(1);
     when(spannerOptions.getRetrySettings()).thenReturn(RetrySettings.newBuilder().build());
     when(spannerOptions.getClock()).thenReturn(NanoClock.getDefaultClock());
+    when(spannerOptions.getSessionLabels()).thenReturn(Collections.<String, String>emptyMap());
     GrpcTransportOptions transportOptions = mock(GrpcTransportOptions.class);
     when(transportOptions.getExecutorFactory()).thenReturn(mock(ExecutorFactory.class));
     when(spannerOptions.getTransportOptions()).thenReturn(transportOptions);
@@ -108,7 +110,7 @@ public class SessionImplTest {
             .build();
     Mockito.when(rpc.commit(Mockito.any(CommitRequest.class), Mockito.any(Map.class)))
         .thenReturn(commitResponse);
-    session = spanner.createSession(db);
+    session = spanner.getSessionClient(db).createSession();
     // We expect the same options, "options", on all calls on "session".
     options = optionsCaptor.getValue();
   }

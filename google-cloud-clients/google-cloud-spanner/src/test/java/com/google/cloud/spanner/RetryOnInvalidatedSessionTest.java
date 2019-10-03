@@ -16,10 +16,7 @@
 
 package com.google.cloud.spanner;
 
-import static org.hamcrest.CoreMatchers.equalTo;
-import static org.hamcrest.CoreMatchers.is;
-import static org.hamcrest.CoreMatchers.notNullValue;
-import static org.junit.Assert.assertThat;
+import static com.google.common.truth.Truth.assertThat;
 import static org.junit.Assert.fail;
 
 import com.google.api.gax.core.NoCredentialsProvider;
@@ -44,9 +41,6 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collection;
 import java.util.List;
-import java.util.concurrent.Callable;
-import java.util.concurrent.ExecutorService;
-import java.util.concurrent.Executors;
 import java.util.concurrent.TimeUnit;
 import org.junit.After;
 import org.junit.AfterClass;
@@ -140,7 +134,7 @@ public class RetryOnInvalidatedSessionTest {
   private static final Statement UPDATE_STATEMENT =
       Statement.of("UPDATE FOO SET BAR=1 WHERE BAZ=2");
   private static final long UPDATE_COUNT = 1L;
-  private static final int MAX_SESSIONS = 10;
+  //  private static final int MAX_SESSIONS = 10;
   private static final float WRITE_SESSIONS_FRACTION = 0.5f;
   private static MockSpannerServiceImpl mockSpanner;
   private static Server server;
@@ -188,9 +182,7 @@ public class RetryOnInvalidatedSessionTest {
   public void setUp() throws IOException {
     mockSpanner.reset();
     SessionPoolOptions.Builder builder =
-        SessionPoolOptions.newBuilder()
-            .setMaxSessions(MAX_SESSIONS)
-            .setWriteSessionsFraction(WRITE_SESSIONS_FRACTION);
+        SessionPoolOptions.newBuilder().setWriteSessionsFraction(WRITE_SESSIONS_FRACTION);
     if (failOnInvalidatedSession) {
       builder.setFailIfSessionNotFound();
     }
@@ -210,40 +202,8 @@ public class RetryOnInvalidatedSessionTest {
     spanner.close();
   }
 
-  private static void initReadOnlySessionPool() {
-    // Do a simple query in order to make sure there is one read-only session in the pool.
-    try (ReadContext context = client.singleUse()) {
-      try (ResultSet rs = context.executeQuery(SELECT1AND2)) {
-        while (rs.next()) {
-          // do nothing.
-        }
-      }
-    }
-  }
-
   private static void initReadWriteSessionPool() throws InterruptedException {
-    // Do enough queries to ensure that a read/write session will be prepared.
-    ExecutorService service = Executors.newFixedThreadPool(MAX_SESSIONS);
-    for (int i = 0; i < MAX_SESSIONS; i++) {
-      service.submit(
-          new Callable<Void>() {
-            @Override
-            public Void call() throws Exception {
-              try (ReadContext context = client.singleUse()) {
-                try (ResultSet rs = context.executeQuery(SELECT1AND2)) {
-                  while (rs.next()) {
-                    // Make sure the transactions are actually running simultaneously to ensure that
-                    // there are multiple sessions being created.
-                    Thread.sleep(20L);
-                  }
-                }
-              }
-              return null;
-            }
-          });
-    }
-    service.shutdown();
-    service.awaitTermination(10L, TimeUnit.SECONDS);
+    // Wait for at least one read/write session to be ready.
     Stopwatch watch = Stopwatch.createStarted();
     while (((DatabaseClientImpl) client).pool.getNumberOfAvailableWritePreparedSessions() == 0) {
       if (watch.elapsed(TimeUnit.MILLISECONDS) > 1000L) {
@@ -254,6 +214,20 @@ public class RetryOnInvalidatedSessionTest {
   }
 
   private static void invalidateSessionPool() throws InterruptedException {
+    invalidateSessionPool(client, spanner.getOptions().getSessionPoolOptions().getMinSessions());
+  }
+
+  private static void invalidateSessionPool(DatabaseClient client, int minSessions)
+      throws InterruptedException {
+    // Wait for all sessions to have been created, and then delete them.
+    Stopwatch watch = Stopwatch.createStarted();
+    while (((DatabaseClientImpl) client).pool.totalSessions() < minSessions) {
+      if (watch.elapsed(TimeUnit.MILLISECONDS) > 1000L) {
+        fail("MinSessions not created");
+      }
+      Thread.sleep(5L);
+    }
+
     ListSessionsPagedResponse response =
         spannerClient.listSessions("projects/[PROJECT]/instances/[INSTANCE]/databases/[DATABASE]");
     for (com.google.spanner.v1.Session session : response.iterateAll()) {
@@ -266,7 +240,6 @@ public class RetryOnInvalidatedSessionTest {
     if (failOnInvalidatedSession) {
       expected.expect(SessionNotFoundException.class);
     }
-    initReadOnlySessionPool();
     invalidateSessionPool();
     // This call will receive an invalidated session that will be replaced on the first call to
     // rs.next().
@@ -278,7 +251,7 @@ public class RetryOnInvalidatedSessionTest {
         }
       }
     }
-    assertThat(count, is(equalTo(2)));
+    assertThat(count).isEqualTo(2);
   }
 
   @Test
@@ -286,7 +259,6 @@ public class RetryOnInvalidatedSessionTest {
     if (failOnInvalidatedSession) {
       expected.expect(SessionNotFoundException.class);
     }
-    initReadOnlySessionPool();
     invalidateSessionPool();
     int count = 0;
     try (ReadContext context = client.singleUse()) {
@@ -295,7 +267,7 @@ public class RetryOnInvalidatedSessionTest {
           count++;
         }
       }
-      assertThat(count, is(equalTo(2)));
+      assertThat(count).isEqualTo(2);
     }
   }
 
@@ -304,7 +276,6 @@ public class RetryOnInvalidatedSessionTest {
     if (failOnInvalidatedSession) {
       expected.expect(SessionNotFoundException.class);
     }
-    initReadOnlySessionPool();
     invalidateSessionPool();
     int count = 0;
     try (ReadContext context = client.singleUse()) {
@@ -314,7 +285,7 @@ public class RetryOnInvalidatedSessionTest {
           count++;
         }
       }
-      assertThat(count, is(equalTo(2)));
+      assertThat(count).isEqualTo(2);
     }
   }
 
@@ -323,13 +294,11 @@ public class RetryOnInvalidatedSessionTest {
     if (failOnInvalidatedSession) {
       expected.expect(SessionNotFoundException.class);
     }
-    initReadOnlySessionPool();
     invalidateSessionPool();
     try (ReadContext context = client.singleUse()) {
       Struct row = context.readRow("FOO", Key.of(), Arrays.asList("BAR"));
-      assertThat(row.getLong(0), is(equalTo(1L)));
+      assertThat(row.getLong(0)).isEqualTo(1L);
     }
-    ;
   }
 
   @Test
@@ -337,13 +306,11 @@ public class RetryOnInvalidatedSessionTest {
     if (failOnInvalidatedSession) {
       expected.expect(SessionNotFoundException.class);
     }
-    initReadOnlySessionPool();
     invalidateSessionPool();
     try (ReadContext context = client.singleUse()) {
       Struct row = context.readRowUsingIndex("FOO", "IDX", Key.of(), Arrays.asList("BAR"));
-      assertThat(row.getLong(0), is(equalTo(1L)));
+      assertThat(row.getLong(0)).isEqualTo(1L);
     }
-    ;
   }
 
   @Test
@@ -351,7 +318,6 @@ public class RetryOnInvalidatedSessionTest {
     if (failOnInvalidatedSession) {
       expected.expect(SessionNotFoundException.class);
     }
-    initReadOnlySessionPool();
     invalidateSessionPool();
     int count = 0;
     try (ReadContext context = client.singleUseReadOnlyTransaction()) {
@@ -361,7 +327,7 @@ public class RetryOnInvalidatedSessionTest {
         }
       }
     }
-    assertThat(count, is(equalTo(2)));
+    assertThat(count).isEqualTo(2);
   }
 
   @Test
@@ -369,7 +335,6 @@ public class RetryOnInvalidatedSessionTest {
     if (failOnInvalidatedSession) {
       expected.expect(SessionNotFoundException.class);
     }
-    initReadOnlySessionPool();
     invalidateSessionPool();
     int count = 0;
     try (ReadContext context = client.singleUseReadOnlyTransaction()) {
@@ -378,7 +343,7 @@ public class RetryOnInvalidatedSessionTest {
           count++;
         }
       }
-      assertThat(count, is(equalTo(2)));
+      assertThat(count).isEqualTo(2);
     }
   }
 
@@ -387,7 +352,6 @@ public class RetryOnInvalidatedSessionTest {
     if (failOnInvalidatedSession) {
       expected.expect(SessionNotFoundException.class);
     }
-    initReadOnlySessionPool();
     invalidateSessionPool();
     int count = 0;
     try (ReadContext context = client.singleUseReadOnlyTransaction()) {
@@ -397,7 +361,7 @@ public class RetryOnInvalidatedSessionTest {
           count++;
         }
       }
-      assertThat(count, is(equalTo(2)));
+      assertThat(count).isEqualTo(2);
     }
   }
 
@@ -406,13 +370,11 @@ public class RetryOnInvalidatedSessionTest {
     if (failOnInvalidatedSession) {
       expected.expect(SessionNotFoundException.class);
     }
-    initReadOnlySessionPool();
     invalidateSessionPool();
     try (ReadContext context = client.singleUseReadOnlyTransaction()) {
       Struct row = context.readRow("FOO", Key.of(), Arrays.asList("BAR"));
-      assertThat(row.getLong(0), is(equalTo(1L)));
+      assertThat(row.getLong(0)).isEqualTo(1L);
     }
-    ;
   }
 
   @Test
@@ -420,13 +382,11 @@ public class RetryOnInvalidatedSessionTest {
     if (failOnInvalidatedSession) {
       expected.expect(SessionNotFoundException.class);
     }
-    initReadOnlySessionPool();
     invalidateSessionPool();
     try (ReadContext context = client.singleUseReadOnlyTransaction()) {
       Struct row = context.readRowUsingIndex("FOO", "IDX", Key.of(), Arrays.asList("BAR"));
-      assertThat(row.getLong(0), is(equalTo(1L)));
+      assertThat(row.getLong(0)).isEqualTo(1L);
     }
-    ;
   }
 
   @Test
@@ -434,7 +394,6 @@ public class RetryOnInvalidatedSessionTest {
     if (failOnInvalidatedSession) {
       expected.expect(SessionNotFoundException.class);
     }
-    initReadOnlySessionPool();
     invalidateSessionPool();
     int count = 0;
     try (ReadContext context = client.readOnlyTransaction()) {
@@ -443,7 +402,7 @@ public class RetryOnInvalidatedSessionTest {
           count++;
         }
       }
-      assertThat(count, is(equalTo(2)));
+      assertThat(count).isEqualTo(2);
     }
   }
 
@@ -452,7 +411,6 @@ public class RetryOnInvalidatedSessionTest {
     if (failOnInvalidatedSession) {
       expected.expect(SessionNotFoundException.class);
     }
-    initReadOnlySessionPool();
     invalidateSessionPool();
     int count = 0;
     try (ReadContext context = client.readOnlyTransaction()) {
@@ -461,7 +419,7 @@ public class RetryOnInvalidatedSessionTest {
           count++;
         }
       }
-      assertThat(count, is(equalTo(2)));
+      assertThat(count).isEqualTo(2);
     }
   }
 
@@ -470,7 +428,6 @@ public class RetryOnInvalidatedSessionTest {
     if (failOnInvalidatedSession) {
       expected.expect(SessionNotFoundException.class);
     }
-    initReadOnlySessionPool();
     invalidateSessionPool();
     int count = 0;
     try (ReadContext context = client.readOnlyTransaction()) {
@@ -480,7 +437,7 @@ public class RetryOnInvalidatedSessionTest {
           count++;
         }
       }
-      assertThat(count, is(equalTo(2)));
+      assertThat(count).isEqualTo(2);
     }
   }
 
@@ -489,13 +446,11 @@ public class RetryOnInvalidatedSessionTest {
     if (failOnInvalidatedSession) {
       expected.expect(SessionNotFoundException.class);
     }
-    initReadOnlySessionPool();
     invalidateSessionPool();
     try (ReadContext context = client.readOnlyTransaction()) {
       Struct row = context.readRow("FOO", Key.of(), Arrays.asList("BAR"));
-      assertThat(row.getLong(0), is(equalTo(1L)));
+      assertThat(row.getLong(0)).isEqualTo(1L);
     }
-    ;
   }
 
   @Test
@@ -503,13 +458,11 @@ public class RetryOnInvalidatedSessionTest {
     if (failOnInvalidatedSession) {
       expected.expect(SessionNotFoundException.class);
     }
-    initReadOnlySessionPool();
     invalidateSessionPool();
     try (ReadContext context = client.readOnlyTransaction()) {
       Struct row = context.readRowUsingIndex("FOO", "IDX", Key.of(), Arrays.asList("BAR"));
-      assertThat(row.getLong(0), is(equalTo(1L)));
+      assertThat(row.getLong(0)).isEqualTo(1L);
     }
-    ;
   }
 
   @Test(expected = SessionNotFoundException.class)
@@ -521,7 +474,7 @@ public class RetryOnInvalidatedSessionTest {
           count++;
         }
       }
-      assertThat(count, is(equalTo(2)));
+      assertThat(count).isEqualTo(2);
       // Invalidate the session pool while in a transaction. This is not recoverable.
       invalidateSessionPool();
       try (ResultSet rs = context.executeQuery(SELECT1AND2)) {
@@ -541,7 +494,7 @@ public class RetryOnInvalidatedSessionTest {
           count++;
         }
       }
-      assertThat(count, is(equalTo(2)));
+      assertThat(count).isEqualTo(2);
       invalidateSessionPool();
       try (ResultSet rs = context.read("FOO", KeySet.all(), Arrays.asList("BAR"))) {
         while (rs.next()) {
@@ -561,7 +514,7 @@ public class RetryOnInvalidatedSessionTest {
           count++;
         }
       }
-      assertThat(count, is(equalTo(2)));
+      assertThat(count).isEqualTo(2);
       invalidateSessionPool();
       try (ResultSet rs =
           context.readUsingIndex("FOO", "IDX", KeySet.all(), Arrays.asList("BAR"))) {
@@ -576,22 +529,20 @@ public class RetryOnInvalidatedSessionTest {
   public void readOnlyTransactionReadRowNonRecoverable() throws InterruptedException {
     try (ReadContext context = client.readOnlyTransaction()) {
       Struct row = context.readRow("FOO", Key.of(), Arrays.asList("BAR"));
-      assertThat(row.getLong(0), is(equalTo(1L)));
+      assertThat(row.getLong(0)).isEqualTo(1L);
       invalidateSessionPool();
       row = context.readRow("FOO", Key.of(), Arrays.asList("BAR"));
     }
-    ;
   }
 
   @Test(expected = SessionNotFoundException.class)
   public void readOnlyTransactionReadRowUsingIndexNonRecoverable() throws InterruptedException {
     try (ReadContext context = client.readOnlyTransaction()) {
       Struct row = context.readRowUsingIndex("FOO", "IDX", Key.of(), Arrays.asList("BAR"));
-      assertThat(row.getLong(0), is(equalTo(1L)));
+      assertThat(row.getLong(0)).isEqualTo(1L);
       invalidateSessionPool();
       row = context.readRowUsingIndex("FOO", "IDX", Key.of(), Arrays.asList("BAR"));
     }
-    ;
   }
 
   /**
@@ -601,8 +552,23 @@ public class RetryOnInvalidatedSessionTest {
    */
   @Test
   public void readWriteTransactionReadOnlySessionInPool() throws InterruptedException {
-    initReadOnlySessionPool();
-    invalidateSessionPool();
+    // Create a session pool with only read sessions.
+    SessionPoolOptions.Builder builder =
+        SessionPoolOptions.newBuilder().setWriteSessionsFraction(0.0f);
+    if (failOnInvalidatedSession) {
+      builder.setFailIfSessionNotFound();
+    }
+    Spanner spanner =
+        SpannerOptions.newBuilder()
+            .setProjectId("[PROJECT]")
+            .setChannelProvider(channelProvider)
+            .setSessionPoolOption(builder.build())
+            .setCredentials(NoCredentials.getInstance())
+            .build()
+            .getService();
+    DatabaseClient client =
+        spanner.getDatabaseClient(DatabaseId.of("[PROJECT]", "[INSTANCE]", "[DATABASE]"));
+    invalidateSessionPool(client, spanner.getOptions().getSessionPoolOptions().getMinSessions());
     TransactionRunner runner = client.readWriteTransaction();
     int count =
         runner.run(
@@ -618,7 +584,7 @@ public class RetryOnInvalidatedSessionTest {
                 return count;
               }
             });
-    assertThat(count, is(equalTo(2)));
+    assertThat(count).isEqualTo(2);
   }
 
   @Test
@@ -643,7 +609,7 @@ public class RetryOnInvalidatedSessionTest {
                 return count;
               }
             });
-    assertThat(count, is(equalTo(2)));
+    assertThat(count).isEqualTo(2);
   }
 
   @Test
@@ -668,7 +634,7 @@ public class RetryOnInvalidatedSessionTest {
                 return count;
               }
             });
-    assertThat(count, is(equalTo(2)));
+    assertThat(count).isEqualTo(2);
   }
 
   @Test
@@ -694,7 +660,7 @@ public class RetryOnInvalidatedSessionTest {
                 return count;
               }
             });
-    assertThat(count, is(equalTo(2)));
+    assertThat(count).isEqualTo(2);
   }
 
   @Test
@@ -713,7 +679,7 @@ public class RetryOnInvalidatedSessionTest {
                 return transaction.readRow("FOO", Key.of(), Arrays.asList("BAR"));
               }
             });
-    assertThat(row.getLong(0), is(equalTo(1L)));
+    assertThat(row.getLong(0)).isEqualTo(1L);
   }
 
   @Test
@@ -732,7 +698,7 @@ public class RetryOnInvalidatedSessionTest {
                 return transaction.readRowUsingIndex("FOO", "IDX", Key.of(), Arrays.asList("BAR"));
               }
             });
-    assertThat(row.getLong(0), is(equalTo(1L)));
+    assertThat(row.getLong(0)).isEqualTo(1L);
   }
 
   @Test
@@ -751,7 +717,7 @@ public class RetryOnInvalidatedSessionTest {
                 return transaction.executeUpdate(UPDATE_STATEMENT);
               }
             });
-    assertThat(count, is(equalTo(UPDATE_COUNT)));
+    assertThat(count).isEqualTo(UPDATE_COUNT);
   }
 
   @Test
@@ -770,8 +736,8 @@ public class RetryOnInvalidatedSessionTest {
                 return transaction.batchUpdate(Arrays.asList(UPDATE_STATEMENT));
               }
             });
-    assertThat(count.length, is(equalTo(1)));
-    assertThat(count[0], is(equalTo(UPDATE_COUNT)));
+    assertThat(count.length).isEqualTo(1);
+    assertThat(count[0]).isEqualTo(UPDATE_COUNT);
   }
 
   @Test
@@ -790,7 +756,7 @@ public class RetryOnInvalidatedSessionTest {
             return null;
           }
         });
-    assertThat(runner.getCommitTimestamp(), is(notNullValue()));
+    assertThat(runner.getCommitTimestamp()).isNotNull();
   }
 
   @Test
@@ -813,7 +779,7 @@ public class RetryOnInvalidatedSessionTest {
                     count++;
                   }
                 }
-                assertThat(count, is(equalTo(2)));
+                assertThat(count).isEqualTo(2);
                 if (attempt == 1) {
                   invalidateSessionPool();
                 }
@@ -825,7 +791,7 @@ public class RetryOnInvalidatedSessionTest {
                 return attempt;
               }
             });
-    assertThat(attempts, is(equalTo(2)));
+    assertThat(attempts).isGreaterThan(1);
   }
 
   @Test
@@ -848,7 +814,7 @@ public class RetryOnInvalidatedSessionTest {
                     count++;
                   }
                 }
-                assertThat(count, is(equalTo(2)));
+                assertThat(count).isEqualTo(2);
                 if (attempt == 1) {
                   invalidateSessionPool();
                 }
@@ -860,7 +826,7 @@ public class RetryOnInvalidatedSessionTest {
                 return attempt;
               }
             });
-    assertThat(attempts, is(equalTo(2)));
+    assertThat(attempts).isGreaterThan(1);
   }
 
   @Test
@@ -885,7 +851,7 @@ public class RetryOnInvalidatedSessionTest {
                     count++;
                   }
                 }
-                assertThat(count, is(equalTo(2)));
+                assertThat(count).isEqualTo(2);
                 if (attempt == 1) {
                   invalidateSessionPool();
                 }
@@ -898,7 +864,7 @@ public class RetryOnInvalidatedSessionTest {
                 return attempt;
               }
             });
-    assertThat(attempts, is(equalTo(2)));
+    assertThat(attempts).isGreaterThan(1);
   }
 
   @Test
@@ -917,7 +883,7 @@ public class RetryOnInvalidatedSessionTest {
               public Integer run(TransactionContext transaction) throws Exception {
                 attempt++;
                 Struct row = transaction.readRow("FOO", Key.of(), Arrays.asList("BAR"));
-                assertThat(row.getLong(0), is(equalTo(1L)));
+                assertThat(row.getLong(0)).isEqualTo(1L);
                 if (attempt == 1) {
                   invalidateSessionPool();
                 }
@@ -925,7 +891,7 @@ public class RetryOnInvalidatedSessionTest {
                 return attempt;
               }
             });
-    assertThat(attempts, is(equalTo(2)));
+    assertThat(attempts).isGreaterThan(1);
   }
 
   @Test
@@ -945,7 +911,7 @@ public class RetryOnInvalidatedSessionTest {
                 attempt++;
                 Struct row =
                     transaction.readRowUsingIndex("FOO", "IDX", Key.of(), Arrays.asList("BAR"));
-                assertThat(row.getLong(0), is(equalTo(1L)));
+                assertThat(row.getLong(0)).isEqualTo(1L);
                 if (attempt == 1) {
                   invalidateSessionPool();
                 }
@@ -953,7 +919,7 @@ public class RetryOnInvalidatedSessionTest {
                 return attempt;
               }
             });
-    assertThat(attempts, is(equalTo(2)));
+    assertThat(attempts).isGreaterThan(1);
   }
 
   /**
@@ -964,8 +930,23 @@ public class RetryOnInvalidatedSessionTest {
   @SuppressWarnings("resource")
   @Test
   public void transactionManagerReadOnlySessionInPool() throws InterruptedException {
-    initReadOnlySessionPool();
-    invalidateSessionPool();
+    // Create a session pool with only read sessions.
+    SessionPoolOptions.Builder builder =
+        SessionPoolOptions.newBuilder().setWriteSessionsFraction(0.0f);
+    if (failOnInvalidatedSession) {
+      builder.setFailIfSessionNotFound();
+    }
+    Spanner spanner =
+        SpannerOptions.newBuilder()
+            .setProjectId("[PROJECT]")
+            .setChannelProvider(channelProvider)
+            .setSessionPoolOption(builder.build())
+            .setCredentials(NoCredentials.getInstance())
+            .build()
+            .getService();
+    DatabaseClient client =
+        spanner.getDatabaseClient(DatabaseId.of("[PROJECT]", "[INSTANCE]", "[DATABASE]"));
+    invalidateSessionPool(client, spanner.getOptions().getSessionPoolOptions().getMinSessions());
     int count = 0;
     try (TransactionManager manager = client.transactionManager()) {
       TransactionContext transaction = manager.begin();
@@ -984,7 +965,7 @@ public class RetryOnInvalidatedSessionTest {
         }
       }
     }
-    assertThat(count, is(equalTo(2)));
+    assertThat(count).isEqualTo(2);
   }
 
   @SuppressWarnings("resource")
@@ -1013,7 +994,7 @@ public class RetryOnInvalidatedSessionTest {
         }
       }
     }
-    assertThat(count, is(equalTo(2)));
+    assertThat(count).isEqualTo(2);
   }
 
   @SuppressWarnings("resource")
@@ -1042,7 +1023,7 @@ public class RetryOnInvalidatedSessionTest {
         }
       }
     }
-    assertThat(count, is(equalTo(2)));
+    assertThat(count).isEqualTo(2);
   }
 
   @SuppressWarnings("resource")
@@ -1072,7 +1053,7 @@ public class RetryOnInvalidatedSessionTest {
         }
       }
     }
-    assertThat(count, is(equalTo(2)));
+    assertThat(count).isEqualTo(2);
   }
 
   @SuppressWarnings("resource")
@@ -1097,7 +1078,7 @@ public class RetryOnInvalidatedSessionTest {
         }
       }
     }
-    assertThat(row.getLong(0), is(equalTo(1L)));
+    assertThat(row.getLong(0)).isEqualTo(1L);
   }
 
   @SuppressWarnings("resource")
@@ -1122,7 +1103,7 @@ public class RetryOnInvalidatedSessionTest {
         }
       }
     }
-    assertThat(row.getLong(0), is(equalTo(1L)));
+    assertThat(row.getLong(0)).isEqualTo(1L);
   }
 
   @SuppressWarnings("resource")
@@ -1147,7 +1128,7 @@ public class RetryOnInvalidatedSessionTest {
         }
       }
     }
-    assertThat(count, is(equalTo(UPDATE_COUNT)));
+    assertThat(count).isEqualTo(UPDATE_COUNT);
   }
 
   @SuppressWarnings("resource")
@@ -1172,8 +1153,8 @@ public class RetryOnInvalidatedSessionTest {
         }
       }
     }
-    assertThat(count.length, is(equalTo(1)));
-    assertThat(count[0], is(equalTo(UPDATE_COUNT)));
+    assertThat(count.length).isEqualTo(1);
+    assertThat(count[0]).isEqualTo(UPDATE_COUNT);
   }
 
   @SuppressWarnings("resource")
@@ -1196,7 +1177,7 @@ public class RetryOnInvalidatedSessionTest {
           transaction = manager.resetForRetry();
         }
       }
-      assertThat(manager.getCommitTimestamp(), is(notNullValue()));
+      assertThat(manager.getCommitTimestamp()).isNotNull();
     }
   }
 
@@ -1218,7 +1199,7 @@ public class RetryOnInvalidatedSessionTest {
               count++;
             }
           }
-          assertThat(count, is(equalTo(2)));
+          assertThat(count).isEqualTo(2);
           if (attempts == 1) {
             invalidateSessionPool();
           }
@@ -1235,7 +1216,7 @@ public class RetryOnInvalidatedSessionTest {
         }
       }
     }
-    assertThat(attempts, is(equalTo(2)));
+    assertThat(attempts).isGreaterThan(1);
   }
 
   @SuppressWarnings("resource")
@@ -1256,7 +1237,7 @@ public class RetryOnInvalidatedSessionTest {
               count++;
             }
           }
-          assertThat(count, is(equalTo(2)));
+          assertThat(count).isEqualTo(2);
           if (attempts == 1) {
             invalidateSessionPool();
           }
@@ -1273,7 +1254,7 @@ public class RetryOnInvalidatedSessionTest {
         }
       }
     }
-    assertThat(attempts, is(equalTo(2)));
+    assertThat(attempts).isGreaterThan(1);
   }
 
   @SuppressWarnings("resource")
@@ -1296,7 +1277,7 @@ public class RetryOnInvalidatedSessionTest {
               count++;
             }
           }
-          assertThat(count, is(equalTo(2)));
+          assertThat(count).isEqualTo(2);
           if (attempts == 1) {
             invalidateSessionPool();
           }
@@ -1314,7 +1295,7 @@ public class RetryOnInvalidatedSessionTest {
         }
       }
     }
-    assertThat(attempts, is(equalTo(2)));
+    assertThat(attempts).isGreaterThan(1);
   }
 
   @SuppressWarnings("resource")
@@ -1330,7 +1311,7 @@ public class RetryOnInvalidatedSessionTest {
         attempts++;
         try {
           Struct row = transaction.readRow("FOO", Key.of(), Arrays.asList("BAR"));
-          assertThat(row.getLong(0), is(equalTo(1L)));
+          assertThat(row.getLong(0)).isEqualTo(1L);
           if (attempts == 1) {
             invalidateSessionPool();
           }
@@ -1343,7 +1324,7 @@ public class RetryOnInvalidatedSessionTest {
         }
       }
     }
-    assertThat(attempts, is(equalTo(2)));
+    assertThat(attempts).isGreaterThan(1);
   }
 
   @SuppressWarnings("resource")
@@ -1360,7 +1341,7 @@ public class RetryOnInvalidatedSessionTest {
         attempts++;
         try {
           Struct row = transaction.readRowUsingIndex("FOO", "IDX", Key.of(), Arrays.asList("BAR"));
-          assertThat(row.getLong(0), is(equalTo(1L)));
+          assertThat(row.getLong(0)).isEqualTo(1L);
           if (attempts == 1) {
             invalidateSessionPool();
           }
@@ -1373,7 +1354,7 @@ public class RetryOnInvalidatedSessionTest {
         }
       }
     }
-    assertThat(attempts, is(equalTo(2)));
+    assertThat(attempts).isGreaterThan(1);
   }
 
   @Test
@@ -1383,7 +1364,7 @@ public class RetryOnInvalidatedSessionTest {
     }
     initReadWriteSessionPool();
     invalidateSessionPool();
-    assertThat(client.executePartitionedUpdate(UPDATE_STATEMENT), is(equalTo(UPDATE_COUNT)));
+    assertThat(client.executePartitionedUpdate(UPDATE_STATEMENT)).isEqualTo(UPDATE_COUNT);
   }
 
   @Test
@@ -1394,7 +1375,7 @@ public class RetryOnInvalidatedSessionTest {
     initReadWriteSessionPool();
     invalidateSessionPool();
     Timestamp timestamp = client.write(Arrays.asList(Mutation.delete("FOO", KeySet.all())));
-    assertThat(timestamp, is(notNullValue()));
+    assertThat(timestamp).isNotNull();
   }
 
   @Test
@@ -1406,6 +1387,6 @@ public class RetryOnInvalidatedSessionTest {
     invalidateSessionPool();
     Timestamp timestamp =
         client.writeAtLeastOnce(Arrays.asList(Mutation.delete("FOO", KeySet.all())));
-    assertThat(timestamp, is(notNullValue()));
+    assertThat(timestamp).isNotNull();
   }
 }
