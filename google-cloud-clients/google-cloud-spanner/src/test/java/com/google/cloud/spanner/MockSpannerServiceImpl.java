@@ -1415,7 +1415,7 @@ public class MockSpannerServiceImpl extends SpannerImplBase implements MockGrpcS
 
   private void ensureMostRecentTransaction(Session session, ByteString transactionId) {
     AtomicLong counter = transactionCounters.get(session.getName());
-    if (counter != null) {
+    if (transactionId != null && transactionId.toStringUtf8() != null && counter != null) {
       int index = transactionId.toStringUtf8().lastIndexOf('/');
       if (index > -1) {
         long id = Long.valueOf(transactionId.toStringUtf8().substring(index + 1));
