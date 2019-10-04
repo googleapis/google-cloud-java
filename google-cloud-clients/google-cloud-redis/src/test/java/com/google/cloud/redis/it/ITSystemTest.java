@@ -63,7 +63,6 @@ public class ITSystemTest {
     InstanceName name = InstanceName.of(projectId, LOCATION, INSTANCE);
     client.deleteInstanceAsync(name);
     log.info("redis instance deleted successfully.");
-
     client.close();
   }
 
