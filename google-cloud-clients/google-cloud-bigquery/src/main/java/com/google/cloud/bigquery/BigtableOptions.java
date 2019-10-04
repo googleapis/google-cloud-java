@@ -88,7 +88,7 @@ public class BigtableOptions extends FormatOptions {
       return this;
     }
 
-    BigtableOptions build() {
+    public BigtableOptions build() {
       return new BigtableOptions(this);
     }
   }
