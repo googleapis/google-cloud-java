@@ -328,6 +328,8 @@ public class JdbcGrpcErrorTest {
     }
   }
 
+  @Ignore(
+      "This can only be guaranteed with MinSessions=0. Re-enable when MinSessions is configurable for JDBC.")
   @Test
   public void autocommitCreateSession() throws SQLException {
     expected.expect(testExceptionMatcher);
@@ -338,6 +340,8 @@ public class JdbcGrpcErrorTest {
     }
   }
 
+  @Ignore(
+      "This can only be guaranteed with MinSessions=0. Re-enable when MinSessions is configurable for JDBC.")
   @Test
   public void transactionalCreateSession() throws SQLException {
     expected.expect(testExceptionMatcher);
@@ -349,6 +353,8 @@ public class JdbcGrpcErrorTest {
     }
   }
 
+  @Ignore(
+      "This can only be guaranteed with MinSessions=0. Re-enable when MinSessions is configurable for JDBC.")
   @Test
   public void readOnlyCreateSession() throws SQLException {
     expected.expect(testExceptionMatcher);

@@ -1390,6 +1390,7 @@ public class MockSpannerServiceImpl extends SpannerImplBase implements MockGrpcS
   }
 
   private void simulateAbort(Session session, ByteString transactionId) {
+    ensureMostRecentTransaction(session, transactionId);
     if (isReadWriteTransaction(transactionId)) {
       if (abortNextStatement.getAndSet(false) || abortProbability > random.nextDouble()) {
         rollbackTransaction(transactionId);
@@ -1409,6 +1410,26 @@ public class MockSpannerServiceImpl extends SpannerImplBase implements MockGrpcS
                     "Transaction with id %s has been aborted", transactionId.toStringUtf8()))
             .asRuntimeException(trailers);
       }
+    }
+  }
+
+  private void ensureMostRecentTransaction(Session session, ByteString transactionId) {
+    AtomicLong counter = transactionCounters.get(session.getName());
+    if(counter == null) {
+      throw Status.FAILED_PRECONDITION
+      .withDescription(
+          String.format(
+              "No transaction counter found for session %s.", session.getName()))
+      .asRuntimeException();
+    }
+    int index = transactionId.toStringUtf8().lastIndexOf('/');
+    long id = Long.valueOf(transactionId.toStringUtf8().substring(index+1));
+    if(id != counter.get()) {
+      throw Status.FAILED_PRECONDITION
+      .withDescription(
+          String.format(
+              "This transaction has been invalidated by a later transaction in the same session.", session.getName()))
+      .asRuntimeException();
     }
   }
 
