@@ -134,7 +134,6 @@ public class RetryOnInvalidatedSessionTest {
   private static final Statement UPDATE_STATEMENT =
       Statement.of("UPDATE FOO SET BAR=1 WHERE BAZ=2");
   private static final long UPDATE_COUNT = 1L;
-  //  private static final int MAX_SESSIONS = 10;
   private static final float WRITE_SESSIONS_FRACTION = 0.5f;
   private static MockSpannerServiceImpl mockSpanner;
   private static Server server;
