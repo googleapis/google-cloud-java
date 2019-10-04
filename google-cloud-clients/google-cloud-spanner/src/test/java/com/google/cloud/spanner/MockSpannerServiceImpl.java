@@ -1415,21 +1415,19 @@ public class MockSpannerServiceImpl extends SpannerImplBase implements MockGrpcS
 
   private void ensureMostRecentTransaction(Session session, ByteString transactionId) {
     AtomicLong counter = transactionCounters.get(session.getName());
-    if(counter == null) {
-      throw Status.FAILED_PRECONDITION
-      .withDescription(
-          String.format(
-              "No transaction counter found for session %s.", session.getName()))
-      .asRuntimeException();
-    }
-    int index = transactionId.toStringUtf8().lastIndexOf('/');
-    long id = Long.valueOf(transactionId.toStringUtf8().substring(index+1));
-    if(id != counter.get()) {
-      throw Status.FAILED_PRECONDITION
-      .withDescription(
-          String.format(
-              "This transaction has been invalidated by a later transaction in the same session.", session.getName()))
-      .asRuntimeException();
+    if (counter != null) {
+      int index = transactionId.toStringUtf8().lastIndexOf('/');
+      if (index > -1) {
+        long id = Long.valueOf(transactionId.toStringUtf8().substring(index + 1));
+        if (id != counter.get()) {
+          throw Status.FAILED_PRECONDITION
+              .withDescription(
+                  String.format(
+                      "This transaction has been invalidated by a later transaction in the same session.",
+                      session.getName()))
+              .asRuntimeException();
+        }
+      }
     }
   }
 
