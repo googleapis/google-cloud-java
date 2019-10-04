@@ -74,6 +74,9 @@ import javax.annotation.Nullable;
  *   <li>A "callable" method, like `readRowsCallable()`. This type of method takes no parameters and
  *       returns an immutable API callable object, which can be used to initiate calls to the
  *       service.
+ *   <li>Each read or write operation in this client is built around the callables in the form of
+ *       synchronized or asynchronized operation. These operation can also be achieved by directly
+ *       using callables.
  * </ol>
  *
  * <p>All RPC related errors are represented as subclasses of {@link
@@ -113,23 +116,6 @@ import javax.annotation.Nullable;
  *     .setEndpoint(myEndpoint).build();
  *
  * BigtableDataClient client = BigtableDataClient.create(settings.build());
- * }</pre>
- *
- * <p>Each read or write operation in this client is built around the callables in the form of
- * synchronized or asynchronized operation. It can also be achieved by directly using callable.
- *
- * <pre>{@code
- * // For example
- * BigtableDataClient client = BigtableDataClient.create("[PROJECT]", "[INSTANCE]");
- *
- * RowMutation mutation = RowMutation.create("[TABLE]", "[ROW KEY]")
- *   .setCell("[FAMILY NAME]", "[QUALIFIER]", "[VALUE]");
- *
- * // This would be equivalent to client.mutateRows(mutation);
- * client.mutateRowCallable().call(mutation);
- *
- * // This would be equivalent to client.mutateRowsAsync(mutation);
- * client.mutateRowCallable().futureCall(mutation);
  * }</pre>
  */
 public class BigtableDataClient implements AutoCloseable {
