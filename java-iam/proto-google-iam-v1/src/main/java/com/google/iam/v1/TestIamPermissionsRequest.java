@@ -24,7 +24,7 @@ private static final long serialVersionUID = 0L;
     permissions_ = com.google.protobuf.LazyStringArrayList.EMPTY;
   }
 
-  @java.lang.Override
+  @Override
   public final com.google.protobuf.UnknownFieldSet
   getUnknownFields() {
     return this.unknownFields;
@@ -35,7 +35,7 @@ private static final long serialVersionUID = 0L;
       throws com.google.protobuf.InvalidProtocolBufferException {
     this();
     if (extensionRegistry == null) {
-      throw new java.lang.NullPointerException();
+      throw new NullPointerException();
     }
     int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
@@ -48,26 +48,26 @@ private static final long serialVersionUID = 0L;
           case 0:
             done = true;
             break;
-          default: {
-            if (!parseUnknownFieldProto3(
-                input, unknownFields, extensionRegistry, tag)) {
-              done = true;
-            }
-            break;
-          }
           case 10: {
-            java.lang.String s = input.readStringRequireUtf8();
+            String s = input.readStringRequireUtf8();
 
             resource_ = s;
             break;
           }
           case 18: {
-            java.lang.String s = input.readStringRequireUtf8();
-            if (!((mutable_bitField0_ & 0x00000002) == 0x00000002)) {
+            String s = input.readStringRequireUtf8();
+            if (!((mutable_bitField0_ & 0x00000002) != 0)) {
               permissions_ = new com.google.protobuf.LazyStringArrayList();
               mutable_bitField0_ |= 0x00000002;
             }
             permissions_.add(s);
+            break;
+          }
+          default: {
+            if (!parseUnknownField(
+                input, unknownFields, extensionRegistry, tag)) {
+              done = true;
+            }
             break;
           }
         }
@@ -78,7 +78,7 @@ private static final long serialVersionUID = 0L;
       throw new com.google.protobuf.InvalidProtocolBufferException(
           e).setUnfinishedMessage(this);
     } finally {
-      if (((mutable_bitField0_ & 0x00000002) == 0x00000002)) {
+      if (((mutable_bitField0_ & 0x00000002) != 0)) {
         permissions_ = permissions_.getUnmodifiableView();
       }
       this.unknownFields = unknownFields.build();
@@ -87,36 +87,36 @@ private static final long serialVersionUID = 0L;
   }
   public static final com.google.protobuf.Descriptors.Descriptor
       getDescriptor() {
-    return com.google.iam.v1.IamPolicyProto.internal_static_google_iam_v1_TestIamPermissionsRequest_descriptor;
+    return IamPolicyProto.internal_static_google_iam_v1_TestIamPermissionsRequest_descriptor;
   }
 
-  protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+  @Override
+  protected FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return com.google.iam.v1.IamPolicyProto.internal_static_google_iam_v1_TestIamPermissionsRequest_fieldAccessorTable
+    return IamPolicyProto.internal_static_google_iam_v1_TestIamPermissionsRequest_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-            com.google.iam.v1.TestIamPermissionsRequest.class, com.google.iam.v1.TestIamPermissionsRequest.Builder.class);
+            TestIamPermissionsRequest.class, Builder.class);
   }
 
   private int bitField0_;
   public static final int RESOURCE_FIELD_NUMBER = 1;
-  private volatile java.lang.Object resource_;
+  private volatile Object resource_;
   /**
    * <pre>
    * REQUIRED: The resource for which the policy detail is being requested.
-   * `resource` is usually specified as a path. For example, a Project
-   * resource is specified as `projects/{project}`.
+   * See the operation documentation for the appropriate value for this field.
    * </pre>
    *
    * <code>string resource = 1;</code>
    */
-  public java.lang.String getResource() {
-    java.lang.Object ref = resource_;
-    if (ref instanceof java.lang.String) {
-      return (java.lang.String) ref;
+  public String getResource() {
+    Object ref = resource_;
+    if (ref instanceof String) {
+      return (String) ref;
     } else {
       com.google.protobuf.ByteString bs = 
           (com.google.protobuf.ByteString) ref;
-      java.lang.String s = bs.toStringUtf8();
+      String s = bs.toStringUtf8();
       resource_ = s;
       return s;
     }
@@ -124,19 +124,18 @@ private static final long serialVersionUID = 0L;
   /**
    * <pre>
    * REQUIRED: The resource for which the policy detail is being requested.
-   * `resource` is usually specified as a path. For example, a Project
-   * resource is specified as `projects/{project}`.
+   * See the operation documentation for the appropriate value for this field.
    * </pre>
    *
    * <code>string resource = 1;</code>
    */
   public com.google.protobuf.ByteString
       getResourceBytes() {
-    java.lang.Object ref = resource_;
-    if (ref instanceof java.lang.String) {
+    Object ref = resource_;
+    if (ref instanceof String) {
       com.google.protobuf.ByteString b = 
           com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
+              (String) ref);
       resource_ = b;
       return b;
     } else {
@@ -183,7 +182,7 @@ private static final long serialVersionUID = 0L;
    *
    * <code>repeated string permissions = 2;</code>
    */
-  public java.lang.String getPermissions(int index) {
+  public String getPermissions(int index) {
     return permissions_.get(index);
   }
   /**
@@ -202,6 +201,7 @@ private static final long serialVersionUID = 0L;
   }
 
   private byte memoizedIsInitialized = -1;
+  @Override
   public final boolean isInitialized() {
     byte isInitialized = memoizedIsInitialized;
     if (isInitialized == 1) return true;
@@ -211,6 +211,7 @@ private static final long serialVersionUID = 0L;
     return true;
   }
 
+  @Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
     if (!getResourceBytes().isEmpty()) {
@@ -222,6 +223,7 @@ private static final long serialVersionUID = 0L;
     unknownFields.writeTo(output);
   }
 
+  @Override
   public int getSerializedSize() {
     int size = memoizedSize;
     if (size != -1) return size;
@@ -243,26 +245,25 @@ private static final long serialVersionUID = 0L;
     return size;
   }
 
-  @java.lang.Override
-  public boolean equals(final java.lang.Object obj) {
+  @Override
+  public boolean equals(final Object obj) {
     if (obj == this) {
      return true;
     }
-    if (!(obj instanceof com.google.iam.v1.TestIamPermissionsRequest)) {
+    if (!(obj instanceof TestIamPermissionsRequest)) {
       return super.equals(obj);
     }
-    com.google.iam.v1.TestIamPermissionsRequest other = (com.google.iam.v1.TestIamPermissionsRequest) obj;
+    TestIamPermissionsRequest other = (TestIamPermissionsRequest) obj;
 
-    boolean result = true;
-    result = result && getResource()
-        .equals(other.getResource());
-    result = result && getPermissionsList()
-        .equals(other.getPermissionsList());
-    result = result && unknownFields.equals(other.unknownFields);
-    return result;
+    if (!getResource()
+        .equals(other.getResource())) return false;
+    if (!getPermissionsList()
+        .equals(other.getPermissionsList())) return false;
+    if (!unknownFields.equals(other.unknownFields)) return false;
+    return true;
   }
 
-  @java.lang.Override
+  @Override
   public int hashCode() {
     if (memoizedHashCode != 0) {
       return memoizedHashCode;
@@ -280,69 +281,69 @@ private static final long serialVersionUID = 0L;
     return hash;
   }
 
-  public static com.google.iam.v1.TestIamPermissionsRequest parseFrom(
+  public static TestIamPermissionsRequest parseFrom(
       java.nio.ByteBuffer data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static com.google.iam.v1.TestIamPermissionsRequest parseFrom(
+  public static TestIamPermissionsRequest parseFrom(
       java.nio.ByteBuffer data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static com.google.iam.v1.TestIamPermissionsRequest parseFrom(
+  public static TestIamPermissionsRequest parseFrom(
       com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static com.google.iam.v1.TestIamPermissionsRequest parseFrom(
+  public static TestIamPermissionsRequest parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static com.google.iam.v1.TestIamPermissionsRequest parseFrom(byte[] data)
+  public static TestIamPermissionsRequest parseFrom(byte[] data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static com.google.iam.v1.TestIamPermissionsRequest parseFrom(
+  public static TestIamPermissionsRequest parseFrom(
       byte[] data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static com.google.iam.v1.TestIamPermissionsRequest parseFrom(java.io.InputStream input)
+  public static TestIamPermissionsRequest parseFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input);
   }
-  public static com.google.iam.v1.TestIamPermissionsRequest parseFrom(
+  public static TestIamPermissionsRequest parseFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input, extensionRegistry);
   }
-  public static com.google.iam.v1.TestIamPermissionsRequest parseDelimitedFrom(java.io.InputStream input)
+  public static TestIamPermissionsRequest parseDelimitedFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseDelimitedWithIOException(PARSER, input);
   }
-  public static com.google.iam.v1.TestIamPermissionsRequest parseDelimitedFrom(
+  public static TestIamPermissionsRequest parseDelimitedFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
   }
-  public static com.google.iam.v1.TestIamPermissionsRequest parseFrom(
+  public static TestIamPermissionsRequest parseFrom(
       com.google.protobuf.CodedInputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input);
   }
-  public static com.google.iam.v1.TestIamPermissionsRequest parseFrom(
+  public static TestIamPermissionsRequest parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
@@ -350,21 +351,23 @@ private static final long serialVersionUID = 0L;
         .parseWithIOException(PARSER, input, extensionRegistry);
   }
 
+  @Override
   public Builder newBuilderForType() { return newBuilder(); }
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
-  public static Builder newBuilder(com.google.iam.v1.TestIamPermissionsRequest prototype) {
+  public static Builder newBuilder(TestIamPermissionsRequest prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
+  @Override
   public Builder toBuilder() {
     return this == DEFAULT_INSTANCE
         ? new Builder() : new Builder().mergeFrom(this);
   }
 
-  @java.lang.Override
+  @Override
   protected Builder newBuilderForType(
-      com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      BuilderParent parent) {
     Builder builder = new Builder(parent);
     return builder;
   }
@@ -381,14 +384,15 @@ private static final long serialVersionUID = 0L;
       com.google.iam.v1.TestIamPermissionsRequestOrBuilder {
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return com.google.iam.v1.IamPolicyProto.internal_static_google_iam_v1_TestIamPermissionsRequest_descriptor;
+      return IamPolicyProto.internal_static_google_iam_v1_TestIamPermissionsRequest_descriptor;
     }
 
-    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+    @Override
+    protected FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.google.iam.v1.IamPolicyProto.internal_static_google_iam_v1_TestIamPermissionsRequest_fieldAccessorTable
+      return IamPolicyProto.internal_static_google_iam_v1_TestIamPermissionsRequest_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.google.iam.v1.TestIamPermissionsRequest.class, com.google.iam.v1.TestIamPermissionsRequest.Builder.class);
+              TestIamPermissionsRequest.class, Builder.class);
     }
 
     // Construct using com.google.iam.v1.TestIamPermissionsRequest.newBuilder()
@@ -397,7 +401,7 @@ private static final long serialVersionUID = 0L;
     }
 
     private Builder(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        BuilderParent parent) {
       super(parent);
       maybeForceBuilderInitialization();
     }
@@ -406,6 +410,7 @@ private static final long serialVersionUID = 0L;
               .alwaysUseFieldBuilders) {
       }
     }
+    @Override
     public Builder clear() {
       super.clear();
       resource_ = "";
@@ -415,29 +420,33 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
+    @Override
     public com.google.protobuf.Descriptors.Descriptor
         getDescriptorForType() {
-      return com.google.iam.v1.IamPolicyProto.internal_static_google_iam_v1_TestIamPermissionsRequest_descriptor;
+      return IamPolicyProto.internal_static_google_iam_v1_TestIamPermissionsRequest_descriptor;
     }
 
-    public com.google.iam.v1.TestIamPermissionsRequest getDefaultInstanceForType() {
-      return com.google.iam.v1.TestIamPermissionsRequest.getDefaultInstance();
+    @Override
+    public TestIamPermissionsRequest getDefaultInstanceForType() {
+      return TestIamPermissionsRequest.getDefaultInstance();
     }
 
-    public com.google.iam.v1.TestIamPermissionsRequest build() {
-      com.google.iam.v1.TestIamPermissionsRequest result = buildPartial();
+    @Override
+    public TestIamPermissionsRequest build() {
+      TestIamPermissionsRequest result = buildPartial();
       if (!result.isInitialized()) {
         throw newUninitializedMessageException(result);
       }
       return result;
     }
 
-    public com.google.iam.v1.TestIamPermissionsRequest buildPartial() {
-      com.google.iam.v1.TestIamPermissionsRequest result = new com.google.iam.v1.TestIamPermissionsRequest(this);
+    @Override
+    public TestIamPermissionsRequest buildPartial() {
+      TestIamPermissionsRequest result = new TestIamPermissionsRequest(this);
       int from_bitField0_ = bitField0_;
       int to_bitField0_ = 0;
       result.resource_ = resource_;
-      if (((bitField0_ & 0x00000002) == 0x00000002)) {
+      if (((bitField0_ & 0x00000002) != 0)) {
         permissions_ = permissions_.getUnmodifiableView();
         bitField0_ = (bitField0_ & ~0x00000002);
       }
@@ -447,43 +456,50 @@ private static final long serialVersionUID = 0L;
       return result;
     }
 
+    @Override
     public Builder clone() {
-      return (Builder) super.clone();
+      return super.clone();
     }
+    @Override
     public Builder setField(
         com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
-      return (Builder) super.setField(field, value);
+        Object value) {
+      return super.setField(field, value);
     }
+    @Override
     public Builder clearField(
         com.google.protobuf.Descriptors.FieldDescriptor field) {
-      return (Builder) super.clearField(field);
+      return super.clearField(field);
     }
+    @Override
     public Builder clearOneof(
         com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-      return (Builder) super.clearOneof(oneof);
+      return super.clearOneof(oneof);
     }
+    @Override
     public Builder setRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field,
-        int index, java.lang.Object value) {
-      return (Builder) super.setRepeatedField(field, index, value);
+        int index, Object value) {
+      return super.setRepeatedField(field, index, value);
     }
+    @Override
     public Builder addRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
-      return (Builder) super.addRepeatedField(field, value);
+        Object value) {
+      return super.addRepeatedField(field, value);
     }
+    @Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
-      if (other instanceof com.google.iam.v1.TestIamPermissionsRequest) {
-        return mergeFrom((com.google.iam.v1.TestIamPermissionsRequest)other);
+      if (other instanceof TestIamPermissionsRequest) {
+        return mergeFrom((TestIamPermissionsRequest)other);
       } else {
         super.mergeFrom(other);
         return this;
       }
     }
 
-    public Builder mergeFrom(com.google.iam.v1.TestIamPermissionsRequest other) {
-      if (other == com.google.iam.v1.TestIamPermissionsRequest.getDefaultInstance()) return this;
+    public Builder mergeFrom(TestIamPermissionsRequest other) {
+      if (other == TestIamPermissionsRequest.getDefaultInstance()) return this;
       if (!other.getResource().isEmpty()) {
         resource_ = other.resource_;
         onChanged();
@@ -503,19 +519,21 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
+    @Override
     public final boolean isInitialized() {
       return true;
     }
 
+    @Override
     public Builder mergeFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      com.google.iam.v1.TestIamPermissionsRequest parsedMessage = null;
+      TestIamPermissionsRequest parsedMessage = null;
       try {
         parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage = (com.google.iam.v1.TestIamPermissionsRequest) e.getUnfinishedMessage();
+        parsedMessage = (TestIamPermissionsRequest) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
         if (parsedMessage != null) {
@@ -526,44 +544,42 @@ private static final long serialVersionUID = 0L;
     }
     private int bitField0_;
 
-    private java.lang.Object resource_ = "";
+    private Object resource_ = "";
     /**
      * <pre>
      * REQUIRED: The resource for which the policy detail is being requested.
-     * `resource` is usually specified as a path. For example, a Project
-     * resource is specified as `projects/{project}`.
+     * See the operation documentation for the appropriate value for this field.
      * </pre>
      *
      * <code>string resource = 1;</code>
      */
-    public java.lang.String getResource() {
-      java.lang.Object ref = resource_;
-      if (!(ref instanceof java.lang.String)) {
+    public String getResource() {
+      Object ref = resource_;
+      if (!(ref instanceof String)) {
         com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
+        String s = bs.toStringUtf8();
         resource_ = s;
         return s;
       } else {
-        return (java.lang.String) ref;
+        return (String) ref;
       }
     }
     /**
      * <pre>
      * REQUIRED: The resource for which the policy detail is being requested.
-     * `resource` is usually specified as a path. For example, a Project
-     * resource is specified as `projects/{project}`.
+     * See the operation documentation for the appropriate value for this field.
      * </pre>
      *
      * <code>string resource = 1;</code>
      */
     public com.google.protobuf.ByteString
         getResourceBytes() {
-      java.lang.Object ref = resource_;
+      Object ref = resource_;
       if (ref instanceof String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
+                (String) ref);
         resource_ = b;
         return b;
       } else {
@@ -573,14 +589,13 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * REQUIRED: The resource for which the policy detail is being requested.
-     * `resource` is usually specified as a path. For example, a Project
-     * resource is specified as `projects/{project}`.
+     * See the operation documentation for the appropriate value for this field.
      * </pre>
      *
      * <code>string resource = 1;</code>
      */
     public Builder setResource(
-        java.lang.String value) {
+        String value) {
       if (value == null) {
     throw new NullPointerException();
   }
@@ -592,8 +607,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * REQUIRED: The resource for which the policy detail is being requested.
-     * `resource` is usually specified as a path. For example, a Project
-     * resource is specified as `projects/{project}`.
+     * See the operation documentation for the appropriate value for this field.
      * </pre>
      *
      * <code>string resource = 1;</code>
@@ -607,8 +621,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * REQUIRED: The resource for which the policy detail is being requested.
-     * `resource` is usually specified as a path. For example, a Project
-     * resource is specified as `projects/{project}`.
+     * See the operation documentation for the appropriate value for this field.
      * </pre>
      *
      * <code>string resource = 1;</code>
@@ -627,7 +640,7 @@ private static final long serialVersionUID = 0L;
 
     private com.google.protobuf.LazyStringList permissions_ = com.google.protobuf.LazyStringArrayList.EMPTY;
     private void ensurePermissionsIsMutable() {
-      if (!((bitField0_ & 0x00000002) == 0x00000002)) {
+      if (!((bitField0_ & 0x00000002) != 0)) {
         permissions_ = new com.google.protobuf.LazyStringArrayList(permissions_);
         bitField0_ |= 0x00000002;
        }
@@ -669,7 +682,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated string permissions = 2;</code>
      */
-    public java.lang.String getPermissions(int index) {
+    public String getPermissions(int index) {
       return permissions_.get(index);
     }
     /**
@@ -697,7 +710,7 @@ private static final long serialVersionUID = 0L;
      * <code>repeated string permissions = 2;</code>
      */
     public Builder setPermissions(
-        int index, java.lang.String value) {
+        int index, String value) {
       if (value == null) {
     throw new NullPointerException();
   }
@@ -717,7 +730,7 @@ private static final long serialVersionUID = 0L;
      * <code>repeated string permissions = 2;</code>
      */
     public Builder addPermissions(
-        java.lang.String value) {
+        String value) {
       if (value == null) {
     throw new NullPointerException();
   }
@@ -737,7 +750,7 @@ private static final long serialVersionUID = 0L;
      * <code>repeated string permissions = 2;</code>
      */
     public Builder addAllPermissions(
-        java.lang.Iterable<java.lang.String> values) {
+        Iterable<String> values) {
       ensurePermissionsIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(
           values, permissions_);
@@ -781,11 +794,13 @@ private static final long serialVersionUID = 0L;
       onChanged();
       return this;
     }
+    @Override
     public final Builder setUnknownFields(
         final com.google.protobuf.UnknownFieldSet unknownFields) {
-      return super.setUnknownFieldsProto3(unknownFields);
+      return super.setUnknownFields(unknownFields);
     }
 
+    @Override
     public final Builder mergeUnknownFields(
         final com.google.protobuf.UnknownFieldSet unknownFields) {
       return super.mergeUnknownFields(unknownFields);
@@ -796,17 +811,18 @@ private static final long serialVersionUID = 0L;
   }
 
   // @@protoc_insertion_point(class_scope:google.iam.v1.TestIamPermissionsRequest)
-  private static final com.google.iam.v1.TestIamPermissionsRequest DEFAULT_INSTANCE;
+  private static final TestIamPermissionsRequest DEFAULT_INSTANCE;
   static {
-    DEFAULT_INSTANCE = new com.google.iam.v1.TestIamPermissionsRequest();
+    DEFAULT_INSTANCE = new TestIamPermissionsRequest();
   }
 
-  public static com.google.iam.v1.TestIamPermissionsRequest getDefaultInstance() {
+  public static TestIamPermissionsRequest getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
 
   private static final com.google.protobuf.Parser<TestIamPermissionsRequest>
       PARSER = new com.google.protobuf.AbstractParser<TestIamPermissionsRequest>() {
+    @Override
     public TestIamPermissionsRequest parsePartialFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -819,12 +835,13 @@ private static final long serialVersionUID = 0L;
     return PARSER;
   }
 
-  @java.lang.Override
+  @Override
   public com.google.protobuf.Parser<TestIamPermissionsRequest> getParserForType() {
     return PARSER;
   }
 
-  public com.google.iam.v1.TestIamPermissionsRequest getDefaultInstanceForType() {
+  @Override
+  public TestIamPermissionsRequest getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
 

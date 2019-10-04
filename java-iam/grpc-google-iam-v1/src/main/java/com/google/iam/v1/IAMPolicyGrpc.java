@@ -48,35 +48,35 @@ public final class IAMPolicyGrpc {
 
   // Static method descriptors that strictly reflect the proto.
   @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
-  @java.lang.Deprecated // Use {@link #getSetIamPolicyMethod()} instead. 
-  public static final io.grpc.MethodDescriptor<com.google.iam.v1.SetIamPolicyRequest,
-      com.google.iam.v1.Policy> METHOD_SET_IAM_POLICY = getSetIamPolicyMethodHelper();
+  @Deprecated // Use {@link #getSetIamPolicyMethod()} instead.
+  public static final io.grpc.MethodDescriptor<SetIamPolicyRequest,
+      Policy> METHOD_SET_IAM_POLICY = getSetIamPolicyMethodHelper();
 
-  private static volatile io.grpc.MethodDescriptor<com.google.iam.v1.SetIamPolicyRequest,
-      com.google.iam.v1.Policy> getSetIamPolicyMethod;
+  private static volatile io.grpc.MethodDescriptor<SetIamPolicyRequest,
+      Policy> getSetIamPolicyMethod;
 
   @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
-  public static io.grpc.MethodDescriptor<com.google.iam.v1.SetIamPolicyRequest,
-      com.google.iam.v1.Policy> getSetIamPolicyMethod() {
+  public static io.grpc.MethodDescriptor<SetIamPolicyRequest,
+      Policy> getSetIamPolicyMethod() {
     return getSetIamPolicyMethodHelper();
   }
 
-  private static io.grpc.MethodDescriptor<com.google.iam.v1.SetIamPolicyRequest,
-      com.google.iam.v1.Policy> getSetIamPolicyMethodHelper() {
-    io.grpc.MethodDescriptor<com.google.iam.v1.SetIamPolicyRequest, com.google.iam.v1.Policy> getSetIamPolicyMethod;
+  private static io.grpc.MethodDescriptor<SetIamPolicyRequest,
+      Policy> getSetIamPolicyMethodHelper() {
+    io.grpc.MethodDescriptor<SetIamPolicyRequest, Policy> getSetIamPolicyMethod;
     if ((getSetIamPolicyMethod = IAMPolicyGrpc.getSetIamPolicyMethod) == null) {
       synchronized (IAMPolicyGrpc.class) {
         if ((getSetIamPolicyMethod = IAMPolicyGrpc.getSetIamPolicyMethod) == null) {
           IAMPolicyGrpc.getSetIamPolicyMethod = getSetIamPolicyMethod = 
-              io.grpc.MethodDescriptor.<com.google.iam.v1.SetIamPolicyRequest, com.google.iam.v1.Policy>newBuilder()
+              io.grpc.MethodDescriptor.<SetIamPolicyRequest, Policy>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
               .setFullMethodName(generateFullMethodName(
                   "google.iam.v1.IAMPolicy", "SetIamPolicy"))
               .setSampledToLocalTracing(true)
               .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  com.google.iam.v1.SetIamPolicyRequest.getDefaultInstance()))
+                  SetIamPolicyRequest.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  com.google.iam.v1.Policy.getDefaultInstance()))
+                  Policy.getDefaultInstance()))
                   .setSchemaDescriptor(new IAMPolicyMethodDescriptorSupplier("SetIamPolicy"))
                   .build();
           }
@@ -85,35 +85,35 @@ public final class IAMPolicyGrpc {
      return getSetIamPolicyMethod;
   }
   @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
-  @java.lang.Deprecated // Use {@link #getGetIamPolicyMethod()} instead. 
-  public static final io.grpc.MethodDescriptor<com.google.iam.v1.GetIamPolicyRequest,
-      com.google.iam.v1.Policy> METHOD_GET_IAM_POLICY = getGetIamPolicyMethodHelper();
+  @Deprecated // Use {@link #getGetIamPolicyMethod()} instead.
+  public static final io.grpc.MethodDescriptor<GetIamPolicyRequest,
+      Policy> METHOD_GET_IAM_POLICY = getGetIamPolicyMethodHelper();
 
-  private static volatile io.grpc.MethodDescriptor<com.google.iam.v1.GetIamPolicyRequest,
-      com.google.iam.v1.Policy> getGetIamPolicyMethod;
+  private static volatile io.grpc.MethodDescriptor<GetIamPolicyRequest,
+      Policy> getGetIamPolicyMethod;
 
   @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
-  public static io.grpc.MethodDescriptor<com.google.iam.v1.GetIamPolicyRequest,
-      com.google.iam.v1.Policy> getGetIamPolicyMethod() {
+  public static io.grpc.MethodDescriptor<GetIamPolicyRequest,
+      Policy> getGetIamPolicyMethod() {
     return getGetIamPolicyMethodHelper();
   }
 
-  private static io.grpc.MethodDescriptor<com.google.iam.v1.GetIamPolicyRequest,
-      com.google.iam.v1.Policy> getGetIamPolicyMethodHelper() {
-    io.grpc.MethodDescriptor<com.google.iam.v1.GetIamPolicyRequest, com.google.iam.v1.Policy> getGetIamPolicyMethod;
+  private static io.grpc.MethodDescriptor<GetIamPolicyRequest,
+      Policy> getGetIamPolicyMethodHelper() {
+    io.grpc.MethodDescriptor<GetIamPolicyRequest, Policy> getGetIamPolicyMethod;
     if ((getGetIamPolicyMethod = IAMPolicyGrpc.getGetIamPolicyMethod) == null) {
       synchronized (IAMPolicyGrpc.class) {
         if ((getGetIamPolicyMethod = IAMPolicyGrpc.getGetIamPolicyMethod) == null) {
           IAMPolicyGrpc.getGetIamPolicyMethod = getGetIamPolicyMethod = 
-              io.grpc.MethodDescriptor.<com.google.iam.v1.GetIamPolicyRequest, com.google.iam.v1.Policy>newBuilder()
+              io.grpc.MethodDescriptor.<GetIamPolicyRequest, Policy>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
               .setFullMethodName(generateFullMethodName(
                   "google.iam.v1.IAMPolicy", "GetIamPolicy"))
               .setSampledToLocalTracing(true)
               .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  com.google.iam.v1.GetIamPolicyRequest.getDefaultInstance()))
+                  GetIamPolicyRequest.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  com.google.iam.v1.Policy.getDefaultInstance()))
+                  Policy.getDefaultInstance()))
                   .setSchemaDescriptor(new IAMPolicyMethodDescriptorSupplier("GetIamPolicy"))
                   .build();
           }
@@ -122,35 +122,35 @@ public final class IAMPolicyGrpc {
      return getGetIamPolicyMethod;
   }
   @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
-  @java.lang.Deprecated // Use {@link #getTestIamPermissionsMethod()} instead. 
-  public static final io.grpc.MethodDescriptor<com.google.iam.v1.TestIamPermissionsRequest,
-      com.google.iam.v1.TestIamPermissionsResponse> METHOD_TEST_IAM_PERMISSIONS = getTestIamPermissionsMethodHelper();
+  @Deprecated // Use {@link #getTestIamPermissionsMethod()} instead.
+  public static final io.grpc.MethodDescriptor<TestIamPermissionsRequest,
+      TestIamPermissionsResponse> METHOD_TEST_IAM_PERMISSIONS = getTestIamPermissionsMethodHelper();
 
-  private static volatile io.grpc.MethodDescriptor<com.google.iam.v1.TestIamPermissionsRequest,
-      com.google.iam.v1.TestIamPermissionsResponse> getTestIamPermissionsMethod;
+  private static volatile io.grpc.MethodDescriptor<TestIamPermissionsRequest,
+      TestIamPermissionsResponse> getTestIamPermissionsMethod;
 
   @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
-  public static io.grpc.MethodDescriptor<com.google.iam.v1.TestIamPermissionsRequest,
-      com.google.iam.v1.TestIamPermissionsResponse> getTestIamPermissionsMethod() {
+  public static io.grpc.MethodDescriptor<TestIamPermissionsRequest,
+      TestIamPermissionsResponse> getTestIamPermissionsMethod() {
     return getTestIamPermissionsMethodHelper();
   }
 
-  private static io.grpc.MethodDescriptor<com.google.iam.v1.TestIamPermissionsRequest,
-      com.google.iam.v1.TestIamPermissionsResponse> getTestIamPermissionsMethodHelper() {
-    io.grpc.MethodDescriptor<com.google.iam.v1.TestIamPermissionsRequest, com.google.iam.v1.TestIamPermissionsResponse> getTestIamPermissionsMethod;
+  private static io.grpc.MethodDescriptor<TestIamPermissionsRequest,
+      TestIamPermissionsResponse> getTestIamPermissionsMethodHelper() {
+    io.grpc.MethodDescriptor<TestIamPermissionsRequest, TestIamPermissionsResponse> getTestIamPermissionsMethod;
     if ((getTestIamPermissionsMethod = IAMPolicyGrpc.getTestIamPermissionsMethod) == null) {
       synchronized (IAMPolicyGrpc.class) {
         if ((getTestIamPermissionsMethod = IAMPolicyGrpc.getTestIamPermissionsMethod) == null) {
           IAMPolicyGrpc.getTestIamPermissionsMethod = getTestIamPermissionsMethod = 
-              io.grpc.MethodDescriptor.<com.google.iam.v1.TestIamPermissionsRequest, com.google.iam.v1.TestIamPermissionsResponse>newBuilder()
+              io.grpc.MethodDescriptor.<TestIamPermissionsRequest, TestIamPermissionsResponse>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
               .setFullMethodName(generateFullMethodName(
                   "google.iam.v1.IAMPolicy", "TestIamPermissions"))
               .setSampledToLocalTracing(true)
               .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  com.google.iam.v1.TestIamPermissionsRequest.getDefaultInstance()))
+                  TestIamPermissionsRequest.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  com.google.iam.v1.TestIamPermissionsResponse.getDefaultInstance()))
+                  TestIamPermissionsResponse.getDefaultInstance()))
                   .setSchemaDescriptor(new IAMPolicyMethodDescriptorSupplier("TestIamPermissions"))
                   .build();
           }
@@ -212,8 +212,8 @@ public final class IAMPolicyGrpc {
      * existing policy.
      * </pre>
      */
-    public void setIamPolicy(com.google.iam.v1.SetIamPolicyRequest request,
-        io.grpc.stub.StreamObserver<com.google.iam.v1.Policy> responseObserver) {
+    public void setIamPolicy(SetIamPolicyRequest request,
+        io.grpc.stub.StreamObserver<Policy> responseObserver) {
       asyncUnimplementedUnaryCall(getSetIamPolicyMethodHelper(), responseObserver);
     }
 
@@ -224,8 +224,8 @@ public final class IAMPolicyGrpc {
      * set.
      * </pre>
      */
-    public void getIamPolicy(com.google.iam.v1.GetIamPolicyRequest request,
-        io.grpc.stub.StreamObserver<com.google.iam.v1.Policy> responseObserver) {
+    public void getIamPolicy(GetIamPolicyRequest request,
+        io.grpc.stub.StreamObserver<Policy> responseObserver) {
       asyncUnimplementedUnaryCall(getGetIamPolicyMethodHelper(), responseObserver);
     }
 
@@ -234,35 +234,38 @@ public final class IAMPolicyGrpc {
      * Returns permissions that a caller has on the specified resource.
      * If the resource does not exist, this will return an empty set of
      * permissions, not a NOT_FOUND error.
+     * Note: This operation is designed to be used for building permission-aware
+     * UIs and command-line tools, not for authorization checking. This operation
+     * may "fail open" without warning.
      * </pre>
      */
-    public void testIamPermissions(com.google.iam.v1.TestIamPermissionsRequest request,
-        io.grpc.stub.StreamObserver<com.google.iam.v1.TestIamPermissionsResponse> responseObserver) {
+    public void testIamPermissions(TestIamPermissionsRequest request,
+        io.grpc.stub.StreamObserver<TestIamPermissionsResponse> responseObserver) {
       asyncUnimplementedUnaryCall(getTestIamPermissionsMethodHelper(), responseObserver);
     }
 
-    @java.lang.Override public final io.grpc.ServerServiceDefinition bindService() {
+    @Override public final io.grpc.ServerServiceDefinition bindService() {
       return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
           .addMethod(
             getSetIamPolicyMethodHelper(),
             asyncUnaryCall(
               new MethodHandlers<
-                com.google.iam.v1.SetIamPolicyRequest,
-                com.google.iam.v1.Policy>(
+                SetIamPolicyRequest,
+                Policy>(
                   this, METHODID_SET_IAM_POLICY)))
           .addMethod(
             getGetIamPolicyMethodHelper(),
             asyncUnaryCall(
               new MethodHandlers<
-                com.google.iam.v1.GetIamPolicyRequest,
-                com.google.iam.v1.Policy>(
+                GetIamPolicyRequest,
+                Policy>(
                   this, METHODID_GET_IAM_POLICY)))
           .addMethod(
             getTestIamPermissionsMethodHelper(),
             asyncUnaryCall(
               new MethodHandlers<
-                com.google.iam.v1.TestIamPermissionsRequest,
-                com.google.iam.v1.TestIamPermissionsResponse>(
+                TestIamPermissionsRequest,
+                TestIamPermissionsResponse>(
                   this, METHODID_TEST_IAM_PERMISSIONS)))
           .build();
     }
@@ -300,7 +303,7 @@ public final class IAMPolicyGrpc {
       super(channel, callOptions);
     }
 
-    @java.lang.Override
+    @Override
     protected IAMPolicyStub build(io.grpc.Channel channel,
         io.grpc.CallOptions callOptions) {
       return new IAMPolicyStub(channel, callOptions);
@@ -312,8 +315,8 @@ public final class IAMPolicyGrpc {
      * existing policy.
      * </pre>
      */
-    public void setIamPolicy(com.google.iam.v1.SetIamPolicyRequest request,
-        io.grpc.stub.StreamObserver<com.google.iam.v1.Policy> responseObserver) {
+    public void setIamPolicy(SetIamPolicyRequest request,
+        io.grpc.stub.StreamObserver<Policy> responseObserver) {
       asyncUnaryCall(
           getChannel().newCall(getSetIamPolicyMethodHelper(), getCallOptions()), request, responseObserver);
     }
@@ -325,8 +328,8 @@ public final class IAMPolicyGrpc {
      * set.
      * </pre>
      */
-    public void getIamPolicy(com.google.iam.v1.GetIamPolicyRequest request,
-        io.grpc.stub.StreamObserver<com.google.iam.v1.Policy> responseObserver) {
+    public void getIamPolicy(GetIamPolicyRequest request,
+        io.grpc.stub.StreamObserver<Policy> responseObserver) {
       asyncUnaryCall(
           getChannel().newCall(getGetIamPolicyMethodHelper(), getCallOptions()), request, responseObserver);
     }
@@ -336,10 +339,13 @@ public final class IAMPolicyGrpc {
      * Returns permissions that a caller has on the specified resource.
      * If the resource does not exist, this will return an empty set of
      * permissions, not a NOT_FOUND error.
+     * Note: This operation is designed to be used for building permission-aware
+     * UIs and command-line tools, not for authorization checking. This operation
+     * may "fail open" without warning.
      * </pre>
      */
-    public void testIamPermissions(com.google.iam.v1.TestIamPermissionsRequest request,
-        io.grpc.stub.StreamObserver<com.google.iam.v1.TestIamPermissionsResponse> responseObserver) {
+    public void testIamPermissions(TestIamPermissionsRequest request,
+        io.grpc.stub.StreamObserver<TestIamPermissionsResponse> responseObserver) {
       asyncUnaryCall(
           getChannel().newCall(getTestIamPermissionsMethodHelper(), getCallOptions()), request, responseObserver);
     }
@@ -377,7 +383,7 @@ public final class IAMPolicyGrpc {
       super(channel, callOptions);
     }
 
-    @java.lang.Override
+    @Override
     protected IAMPolicyBlockingStub build(io.grpc.Channel channel,
         io.grpc.CallOptions callOptions) {
       return new IAMPolicyBlockingStub(channel, callOptions);
@@ -389,7 +395,7 @@ public final class IAMPolicyGrpc {
      * existing policy.
      * </pre>
      */
-    public com.google.iam.v1.Policy setIamPolicy(com.google.iam.v1.SetIamPolicyRequest request) {
+    public Policy setIamPolicy(SetIamPolicyRequest request) {
       return blockingUnaryCall(
           getChannel(), getSetIamPolicyMethodHelper(), getCallOptions(), request);
     }
@@ -401,7 +407,7 @@ public final class IAMPolicyGrpc {
      * set.
      * </pre>
      */
-    public com.google.iam.v1.Policy getIamPolicy(com.google.iam.v1.GetIamPolicyRequest request) {
+    public Policy getIamPolicy(GetIamPolicyRequest request) {
       return blockingUnaryCall(
           getChannel(), getGetIamPolicyMethodHelper(), getCallOptions(), request);
     }
@@ -411,9 +417,12 @@ public final class IAMPolicyGrpc {
      * Returns permissions that a caller has on the specified resource.
      * If the resource does not exist, this will return an empty set of
      * permissions, not a NOT_FOUND error.
+     * Note: This operation is designed to be used for building permission-aware
+     * UIs and command-line tools, not for authorization checking. This operation
+     * may "fail open" without warning.
      * </pre>
      */
-    public com.google.iam.v1.TestIamPermissionsResponse testIamPermissions(com.google.iam.v1.TestIamPermissionsRequest request) {
+    public TestIamPermissionsResponse testIamPermissions(TestIamPermissionsRequest request) {
       return blockingUnaryCall(
           getChannel(), getTestIamPermissionsMethodHelper(), getCallOptions(), request);
     }
@@ -451,7 +460,7 @@ public final class IAMPolicyGrpc {
       super(channel, callOptions);
     }
 
-    @java.lang.Override
+    @Override
     protected IAMPolicyFutureStub build(io.grpc.Channel channel,
         io.grpc.CallOptions callOptions) {
       return new IAMPolicyFutureStub(channel, callOptions);
@@ -463,8 +472,8 @@ public final class IAMPolicyGrpc {
      * existing policy.
      * </pre>
      */
-    public com.google.common.util.concurrent.ListenableFuture<com.google.iam.v1.Policy> setIamPolicy(
-        com.google.iam.v1.SetIamPolicyRequest request) {
+    public com.google.common.util.concurrent.ListenableFuture<Policy> setIamPolicy(
+        SetIamPolicyRequest request) {
       return futureUnaryCall(
           getChannel().newCall(getSetIamPolicyMethodHelper(), getCallOptions()), request);
     }
@@ -476,8 +485,8 @@ public final class IAMPolicyGrpc {
      * set.
      * </pre>
      */
-    public com.google.common.util.concurrent.ListenableFuture<com.google.iam.v1.Policy> getIamPolicy(
-        com.google.iam.v1.GetIamPolicyRequest request) {
+    public com.google.common.util.concurrent.ListenableFuture<Policy> getIamPolicy(
+        GetIamPolicyRequest request) {
       return futureUnaryCall(
           getChannel().newCall(getGetIamPolicyMethodHelper(), getCallOptions()), request);
     }
@@ -487,10 +496,13 @@ public final class IAMPolicyGrpc {
      * Returns permissions that a caller has on the specified resource.
      * If the resource does not exist, this will return an empty set of
      * permissions, not a NOT_FOUND error.
+     * Note: This operation is designed to be used for building permission-aware
+     * UIs and command-line tools, not for authorization checking. This operation
+     * may "fail open" without warning.
      * </pre>
      */
-    public com.google.common.util.concurrent.ListenableFuture<com.google.iam.v1.TestIamPermissionsResponse> testIamPermissions(
-        com.google.iam.v1.TestIamPermissionsRequest request) {
+    public com.google.common.util.concurrent.ListenableFuture<TestIamPermissionsResponse> testIamPermissions(
+        TestIamPermissionsRequest request) {
       return futureUnaryCall(
           getChannel().newCall(getTestIamPermissionsMethodHelper(), getCallOptions()), request);
     }
@@ -513,29 +525,29 @@ public final class IAMPolicyGrpc {
       this.methodId = methodId;
     }
 
-    @java.lang.Override
-    @java.lang.SuppressWarnings("unchecked")
+    @Override
+    @SuppressWarnings("unchecked")
     public void invoke(Req request, io.grpc.stub.StreamObserver<Resp> responseObserver) {
       switch (methodId) {
         case METHODID_SET_IAM_POLICY:
-          serviceImpl.setIamPolicy((com.google.iam.v1.SetIamPolicyRequest) request,
-              (io.grpc.stub.StreamObserver<com.google.iam.v1.Policy>) responseObserver);
+          serviceImpl.setIamPolicy((SetIamPolicyRequest) request,
+              (io.grpc.stub.StreamObserver<Policy>) responseObserver);
           break;
         case METHODID_GET_IAM_POLICY:
-          serviceImpl.getIamPolicy((com.google.iam.v1.GetIamPolicyRequest) request,
-              (io.grpc.stub.StreamObserver<com.google.iam.v1.Policy>) responseObserver);
+          serviceImpl.getIamPolicy((GetIamPolicyRequest) request,
+              (io.grpc.stub.StreamObserver<Policy>) responseObserver);
           break;
         case METHODID_TEST_IAM_PERMISSIONS:
-          serviceImpl.testIamPermissions((com.google.iam.v1.TestIamPermissionsRequest) request,
-              (io.grpc.stub.StreamObserver<com.google.iam.v1.TestIamPermissionsResponse>) responseObserver);
+          serviceImpl.testIamPermissions((TestIamPermissionsRequest) request,
+              (io.grpc.stub.StreamObserver<TestIamPermissionsResponse>) responseObserver);
           break;
         default:
           throw new AssertionError();
       }
     }
 
-    @java.lang.Override
-    @java.lang.SuppressWarnings("unchecked")
+    @Override
+    @SuppressWarnings("unchecked")
     public io.grpc.stub.StreamObserver<Req> invoke(
         io.grpc.stub.StreamObserver<Resp> responseObserver) {
       switch (methodId) {
@@ -549,12 +561,12 @@ public final class IAMPolicyGrpc {
       implements io.grpc.protobuf.ProtoFileDescriptorSupplier, io.grpc.protobuf.ProtoServiceDescriptorSupplier {
     IAMPolicyBaseDescriptorSupplier() {}
 
-    @java.lang.Override
+    @Override
     public com.google.protobuf.Descriptors.FileDescriptor getFileDescriptor() {
-      return com.google.iam.v1.IamPolicyProto.getDescriptor();
+      return IamPolicyProto.getDescriptor();
     }
 
-    @java.lang.Override
+    @Override
     public com.google.protobuf.Descriptors.ServiceDescriptor getServiceDescriptor() {
       return getFileDescriptor().findServiceByName("IAMPolicy");
     }
@@ -574,7 +586,7 @@ public final class IAMPolicyGrpc {
       this.methodName = methodName;
     }
 
-    @java.lang.Override
+    @Override
     public com.google.protobuf.Descriptors.MethodDescriptor getMethodDescriptor() {
       return getServiceDescriptor().findMethodByName(methodName);
     }

@@ -15,7 +15,7 @@ public interface TestIamPermissionsResponseOrBuilder extends
    *
    * <code>repeated string permissions = 1;</code>
    */
-  java.util.List<java.lang.String>
+  java.util.List<String>
       getPermissionsList();
   /**
    * <pre>
@@ -34,7 +34,7 @@ public interface TestIamPermissionsResponseOrBuilder extends
    *
    * <code>repeated string permissions = 1;</code>
    */
-  java.lang.String getPermissions(int index);
+  String getPermissions(int index);
   /**
    * <pre>
    * A subset of `TestPermissionsRequest.permissions` that the caller is

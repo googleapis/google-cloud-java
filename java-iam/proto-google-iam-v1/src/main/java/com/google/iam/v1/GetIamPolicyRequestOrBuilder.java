@@ -10,22 +10,48 @@ public interface GetIamPolicyRequestOrBuilder extends
   /**
    * <pre>
    * REQUIRED: The resource for which the policy is being requested.
-   * `resource` is usually specified as a path. For example, a Project
-   * resource is specified as `projects/{project}`.
+   * See the operation documentation for the appropriate value for this field.
    * </pre>
    *
    * <code>string resource = 1;</code>
    */
-  java.lang.String getResource();
+  String getResource();
   /**
    * <pre>
    * REQUIRED: The resource for which the policy is being requested.
-   * `resource` is usually specified as a path. For example, a Project
-   * resource is specified as `projects/{project}`.
+   * See the operation documentation for the appropriate value for this field.
    * </pre>
    *
    * <code>string resource = 1;</code>
    */
   com.google.protobuf.ByteString
       getResourceBytes();
+
+  /**
+   * <pre>
+   * OPTIONAL: A `GetPolicyOptions` object for specifying options to
+   * `GetIamPolicy`. This field is only used by Cloud IAM.
+   * </pre>
+   *
+   * <code>.google.iam.v1.GetPolicyOptions options = 2;</code>
+   */
+  boolean hasOptions();
+  /**
+   * <pre>
+   * OPTIONAL: A `GetPolicyOptions` object for specifying options to
+   * `GetIamPolicy`. This field is only used by Cloud IAM.
+   * </pre>
+   *
+   * <code>.google.iam.v1.GetPolicyOptions options = 2;</code>
+   */
+  GetPolicyOptions getOptions();
+  /**
+   * <pre>
+   * OPTIONAL: A `GetPolicyOptions` object for specifying options to
+   * `GetIamPolicy`. This field is only used by Cloud IAM.
+   * </pre>
+   *
+   * <code>.google.iam.v1.GetPolicyOptions options = 2;</code>
+   */
+  GetPolicyOptionsOrBuilder getOptionsOrBuilder();
 }

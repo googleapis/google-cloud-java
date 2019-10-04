@@ -5,25 +5,26 @@ package com.google.iam.v1;
 
 /**
  * <pre>
- * One delta entry for Binding. Each individual change (only one member in each
- * entry) to a binding will be a separate entry.
+ * One delta entry for AuditConfig. Each individual change (only one
+ * exempted_member in each entry) to a AuditConfig will be a separate entry.
  * </pre>
  *
- * Protobuf type {@code google.iam.v1.BindingDelta}
+ * Protobuf type {@code google.iam.v1.AuditConfigDelta}
  */
-public  final class BindingDelta extends
+public  final class AuditConfigDelta extends
     com.google.protobuf.GeneratedMessageV3 implements
-    // @@protoc_insertion_point(message_implements:google.iam.v1.BindingDelta)
-    BindingDeltaOrBuilder {
+    // @@protoc_insertion_point(message_implements:google.iam.v1.AuditConfigDelta)
+    AuditConfigDeltaOrBuilder {
 private static final long serialVersionUID = 0L;
-  // Use BindingDelta.newBuilder() to construct.
-  private BindingDelta(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+  // Use AuditConfigDelta.newBuilder() to construct.
+  private AuditConfigDelta(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
   }
-  private BindingDelta() {
+  private AuditConfigDelta() {
     action_ = 0;
-    role_ = "";
-    member_ = "";
+    service_ = "";
+    exemptedMember_ = "";
+    logType_ = "";
   }
 
   @Override
@@ -31,7 +32,7 @@ private static final long serialVersionUID = 0L;
   getUnknownFields() {
     return this.unknownFields;
   }
-  private BindingDelta(
+  private AuditConfigDelta(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
@@ -59,26 +60,19 @@ private static final long serialVersionUID = 0L;
           case 18: {
             String s = input.readStringRequireUtf8();
 
-            role_ = s;
+            service_ = s;
             break;
           }
           case 26: {
             String s = input.readStringRequireUtf8();
 
-            member_ = s;
+            exemptedMember_ = s;
             break;
           }
           case 34: {
-            com.google.type.Expr.Builder subBuilder = null;
-            if (condition_ != null) {
-              subBuilder = condition_.toBuilder();
-            }
-            condition_ = input.readMessage(com.google.type.Expr.parser(), extensionRegistry);
-            if (subBuilder != null) {
-              subBuilder.mergeFrom(condition_);
-              condition_ = subBuilder.buildPartial();
-            }
+            String s = input.readStringRequireUtf8();
 
+            logType_ = s;
             break;
           }
           default: {
@@ -102,23 +96,23 @@ private static final long serialVersionUID = 0L;
   }
   public static final com.google.protobuf.Descriptors.Descriptor
       getDescriptor() {
-    return PolicyProto.internal_static_google_iam_v1_BindingDelta_descriptor;
+    return PolicyProto.internal_static_google_iam_v1_AuditConfigDelta_descriptor;
   }
 
   @Override
   protected FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return PolicyProto.internal_static_google_iam_v1_BindingDelta_fieldAccessorTable
+    return PolicyProto.internal_static_google_iam_v1_AuditConfigDelta_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-            BindingDelta.class, Builder.class);
+            AuditConfigDelta.class, Builder.class);
   }
 
   /**
    * <pre>
-   * The type of action performed on a Binding in a policy.
+   * The type of action performed on an audit configuration in a policy.
    * </pre>
    *
-   * Protobuf enum {@code google.iam.v1.BindingDelta.Action}
+   * Protobuf enum {@code google.iam.v1.AuditConfigDelta.Action}
    */
   public enum Action
       implements com.google.protobuf.ProtocolMessageEnum {
@@ -132,7 +126,7 @@ private static final long serialVersionUID = 0L;
     ACTION_UNSPECIFIED(0),
     /**
      * <pre>
-     * Addition of a Binding.
+     * Addition of an audit configuration.
      * </pre>
      *
      * <code>ADD = 1;</code>
@@ -140,7 +134,7 @@ private static final long serialVersionUID = 0L;
     ADD(1),
     /**
      * <pre>
-     * Removal of a Binding.
+     * Removal of an audit configuration.
      * </pre>
      *
      * <code>REMOVE = 2;</code>
@@ -159,7 +153,7 @@ private static final long serialVersionUID = 0L;
     public static final int ACTION_UNSPECIFIED_VALUE = 0;
     /**
      * <pre>
-     * Addition of a Binding.
+     * Addition of an audit configuration.
      * </pre>
      *
      * <code>ADD = 1;</code>
@@ -167,7 +161,7 @@ private static final long serialVersionUID = 0L;
     public static final int ADD_VALUE = 1;
     /**
      * <pre>
-     * Removal of a Binding.
+     * Removal of an audit configuration.
      * </pre>
      *
      * <code>REMOVE = 2;</code>
@@ -222,7 +216,7 @@ private static final long serialVersionUID = 0L;
     }
     public static final com.google.protobuf.Descriptors.EnumDescriptor
         getDescriptor() {
-      return BindingDelta.getDescriptor().getEnumTypes().get(0);
+      return AuditConfigDelta.getDescriptor().getEnumTypes().get(0);
     }
 
     private static final Action[] VALUES = values();
@@ -245,29 +239,29 @@ private static final long serialVersionUID = 0L;
       this.value = value;
     }
 
-    // @@protoc_insertion_point(enum_scope:google.iam.v1.BindingDelta.Action)
+    // @@protoc_insertion_point(enum_scope:google.iam.v1.AuditConfigDelta.Action)
   }
 
   public static final int ACTION_FIELD_NUMBER = 1;
   private int action_;
   /**
    * <pre>
-   * The action that was performed on a Binding.
+   * The action that was performed on an audit configuration in a policy.
    * Required
    * </pre>
    *
-   * <code>.google.iam.v1.BindingDelta.Action action = 1;</code>
+   * <code>.google.iam.v1.AuditConfigDelta.Action action = 1;</code>
    */
   public int getActionValue() {
     return action_;
   }
   /**
    * <pre>
-   * The action that was performed on a Binding.
+   * The action that was performed on an audit configuration in a policy.
    * Required
    * </pre>
    *
-   * <code>.google.iam.v1.BindingDelta.Action action = 1;</code>
+   * <code>.google.iam.v1.AuditConfigDelta.Action action = 1;</code>
    */
   public Action getAction() {
     @SuppressWarnings("deprecation")
@@ -275,129 +269,144 @@ private static final long serialVersionUID = 0L;
     return result == null ? Action.UNRECOGNIZED : result;
   }
 
-  public static final int ROLE_FIELD_NUMBER = 2;
-  private volatile Object role_;
+  public static final int SERVICE_FIELD_NUMBER = 2;
+  private volatile Object service_;
   /**
    * <pre>
-   * Role that is assigned to `members`.
-   * For example, `roles/viewer`, `roles/editor`, or `roles/owner`.
+   * Specifies a service that was configured for Cloud Audit Logging.
+   * For example, `storage.googleapis.com`, `cloudsql.googleapis.com`.
+   * `allServices` is a special value that covers all services.
    * Required
    * </pre>
    *
-   * <code>string role = 2;</code>
+   * <code>string service = 2;</code>
    */
-  public String getRole() {
-    Object ref = role_;
+  public String getService() {
+    Object ref = service_;
     if (ref instanceof String) {
       return (String) ref;
     } else {
       com.google.protobuf.ByteString bs = 
           (com.google.protobuf.ByteString) ref;
       String s = bs.toStringUtf8();
-      role_ = s;
+      service_ = s;
       return s;
     }
   }
   /**
    * <pre>
-   * Role that is assigned to `members`.
-   * For example, `roles/viewer`, `roles/editor`, or `roles/owner`.
+   * Specifies a service that was configured for Cloud Audit Logging.
+   * For example, `storage.googleapis.com`, `cloudsql.googleapis.com`.
+   * `allServices` is a special value that covers all services.
    * Required
    * </pre>
    *
-   * <code>string role = 2;</code>
+   * <code>string service = 2;</code>
    */
   public com.google.protobuf.ByteString
-      getRoleBytes() {
-    Object ref = role_;
+      getServiceBytes() {
+    Object ref = service_;
     if (ref instanceof String) {
       com.google.protobuf.ByteString b = 
           com.google.protobuf.ByteString.copyFromUtf8(
               (String) ref);
-      role_ = b;
+      service_ = b;
       return b;
     } else {
       return (com.google.protobuf.ByteString) ref;
     }
   }
 
-  public static final int MEMBER_FIELD_NUMBER = 3;
-  private volatile Object member_;
+  public static final int EXEMPTED_MEMBER_FIELD_NUMBER = 3;
+  private volatile Object exemptedMember_;
   /**
    * <pre>
-   * A single identity requesting access for a Cloud Platform resource.
+   * A single identity that is exempted from "data access" audit
+   * logging for the `service` specified above.
    * Follows the same format of Binding.members.
-   * Required
    * </pre>
    *
-   * <code>string member = 3;</code>
+   * <code>string exempted_member = 3;</code>
    */
-  public String getMember() {
-    Object ref = member_;
+  public String getExemptedMember() {
+    Object ref = exemptedMember_;
     if (ref instanceof String) {
       return (String) ref;
     } else {
       com.google.protobuf.ByteString bs = 
           (com.google.protobuf.ByteString) ref;
       String s = bs.toStringUtf8();
-      member_ = s;
+      exemptedMember_ = s;
       return s;
     }
   }
   /**
    * <pre>
-   * A single identity requesting access for a Cloud Platform resource.
+   * A single identity that is exempted from "data access" audit
+   * logging for the `service` specified above.
    * Follows the same format of Binding.members.
-   * Required
    * </pre>
    *
-   * <code>string member = 3;</code>
+   * <code>string exempted_member = 3;</code>
    */
   public com.google.protobuf.ByteString
-      getMemberBytes() {
-    Object ref = member_;
+      getExemptedMemberBytes() {
+    Object ref = exemptedMember_;
     if (ref instanceof String) {
       com.google.protobuf.ByteString b = 
           com.google.protobuf.ByteString.copyFromUtf8(
               (String) ref);
-      member_ = b;
+      exemptedMember_ = b;
       return b;
     } else {
       return (com.google.protobuf.ByteString) ref;
     }
   }
 
-  public static final int CONDITION_FIELD_NUMBER = 4;
-  private com.google.type.Expr condition_;
+  public static final int LOG_TYPE_FIELD_NUMBER = 4;
+  private volatile Object logType_;
   /**
    * <pre>
-   * The condition that is associated with this binding.
+   * Specifies the log_type that was be enabled. ADMIN_ACTIVITY is always
+   * enabled, and cannot be configured.
+   * Required
    * </pre>
    *
-   * <code>.google.type.Expr condition = 4;</code>
+   * <code>string log_type = 4;</code>
    */
-  public boolean hasCondition() {
-    return condition_ != null;
+  public String getLogType() {
+    Object ref = logType_;
+    if (ref instanceof String) {
+      return (String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      String s = bs.toStringUtf8();
+      logType_ = s;
+      return s;
+    }
   }
   /**
    * <pre>
-   * The condition that is associated with this binding.
+   * Specifies the log_type that was be enabled. ADMIN_ACTIVITY is always
+   * enabled, and cannot be configured.
+   * Required
    * </pre>
    *
-   * <code>.google.type.Expr condition = 4;</code>
+   * <code>string log_type = 4;</code>
    */
-  public com.google.type.Expr getCondition() {
-    return condition_ == null ? com.google.type.Expr.getDefaultInstance() : condition_;
-  }
-  /**
-   * <pre>
-   * The condition that is associated with this binding.
-   * </pre>
-   *
-   * <code>.google.type.Expr condition = 4;</code>
-   */
-  public com.google.type.ExprOrBuilder getConditionOrBuilder() {
-    return getCondition();
+  public com.google.protobuf.ByteString
+      getLogTypeBytes() {
+    Object ref = logType_;
+    if (ref instanceof String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (String) ref);
+      logType_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
   }
 
   private byte memoizedIsInitialized = -1;
@@ -417,14 +426,14 @@ private static final long serialVersionUID = 0L;
     if (action_ != Action.ACTION_UNSPECIFIED.getNumber()) {
       output.writeEnum(1, action_);
     }
-    if (!getRoleBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 2, role_);
+    if (!getServiceBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 2, service_);
     }
-    if (!getMemberBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 3, member_);
+    if (!getExemptedMemberBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 3, exemptedMember_);
     }
-    if (condition_ != null) {
-      output.writeMessage(4, getCondition());
+    if (!getLogTypeBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 4, logType_);
     }
     unknownFields.writeTo(output);
   }
@@ -439,15 +448,14 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeEnumSize(1, action_);
     }
-    if (!getRoleBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, role_);
+    if (!getServiceBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, service_);
     }
-    if (!getMemberBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, member_);
+    if (!getExemptedMemberBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, exemptedMember_);
     }
-    if (condition_ != null) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(4, getCondition());
+    if (!getLogTypeBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, logType_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -459,21 +467,18 @@ private static final long serialVersionUID = 0L;
     if (obj == this) {
      return true;
     }
-    if (!(obj instanceof BindingDelta)) {
+    if (!(obj instanceof AuditConfigDelta)) {
       return super.equals(obj);
     }
-    BindingDelta other = (BindingDelta) obj;
+    AuditConfigDelta other = (AuditConfigDelta) obj;
 
     if (action_ != other.action_) return false;
-    if (!getRole()
-        .equals(other.getRole())) return false;
-    if (!getMember()
-        .equals(other.getMember())) return false;
-    if (hasCondition() != other.hasCondition()) return false;
-    if (hasCondition()) {
-      if (!getCondition()
-          .equals(other.getCondition())) return false;
-    }
+    if (!getService()
+        .equals(other.getService())) return false;
+    if (!getExemptedMember()
+        .equals(other.getExemptedMember())) return false;
+    if (!getLogType()
+        .equals(other.getLogType())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -487,82 +492,80 @@ private static final long serialVersionUID = 0L;
     hash = (19 * hash) + getDescriptor().hashCode();
     hash = (37 * hash) + ACTION_FIELD_NUMBER;
     hash = (53 * hash) + action_;
-    hash = (37 * hash) + ROLE_FIELD_NUMBER;
-    hash = (53 * hash) + getRole().hashCode();
-    hash = (37 * hash) + MEMBER_FIELD_NUMBER;
-    hash = (53 * hash) + getMember().hashCode();
-    if (hasCondition()) {
-      hash = (37 * hash) + CONDITION_FIELD_NUMBER;
-      hash = (53 * hash) + getCondition().hashCode();
-    }
+    hash = (37 * hash) + SERVICE_FIELD_NUMBER;
+    hash = (53 * hash) + getService().hashCode();
+    hash = (37 * hash) + EXEMPTED_MEMBER_FIELD_NUMBER;
+    hash = (53 * hash) + getExemptedMember().hashCode();
+    hash = (37 * hash) + LOG_TYPE_FIELD_NUMBER;
+    hash = (53 * hash) + getLogType().hashCode();
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
   }
 
-  public static BindingDelta parseFrom(
+  public static AuditConfigDelta parseFrom(
       java.nio.ByteBuffer data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static BindingDelta parseFrom(
+  public static AuditConfigDelta parseFrom(
       java.nio.ByteBuffer data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static BindingDelta parseFrom(
+  public static AuditConfigDelta parseFrom(
       com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static BindingDelta parseFrom(
+  public static AuditConfigDelta parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static BindingDelta parseFrom(byte[] data)
+  public static AuditConfigDelta parseFrom(byte[] data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static BindingDelta parseFrom(
+  public static AuditConfigDelta parseFrom(
       byte[] data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static BindingDelta parseFrom(java.io.InputStream input)
+  public static AuditConfigDelta parseFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input);
   }
-  public static BindingDelta parseFrom(
+  public static AuditConfigDelta parseFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input, extensionRegistry);
   }
-  public static BindingDelta parseDelimitedFrom(java.io.InputStream input)
+  public static AuditConfigDelta parseDelimitedFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseDelimitedWithIOException(PARSER, input);
   }
-  public static BindingDelta parseDelimitedFrom(
+  public static AuditConfigDelta parseDelimitedFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
   }
-  public static BindingDelta parseFrom(
+  public static AuditConfigDelta parseFrom(
       com.google.protobuf.CodedInputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input);
   }
-  public static BindingDelta parseFrom(
+  public static AuditConfigDelta parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
@@ -575,7 +578,7 @@ private static final long serialVersionUID = 0L;
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
-  public static Builder newBuilder(BindingDelta prototype) {
+  public static Builder newBuilder(AuditConfigDelta prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
   @Override
@@ -592,30 +595,30 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * One delta entry for Binding. Each individual change (only one member in each
-   * entry) to a binding will be a separate entry.
+   * One delta entry for AuditConfig. Each individual change (only one
+   * exempted_member in each entry) to a AuditConfig will be a separate entry.
    * </pre>
    *
-   * Protobuf type {@code google.iam.v1.BindingDelta}
+   * Protobuf type {@code google.iam.v1.AuditConfigDelta}
    */
   public static final class Builder extends
       com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-      // @@protoc_insertion_point(builder_implements:google.iam.v1.BindingDelta)
-      com.google.iam.v1.BindingDeltaOrBuilder {
+      // @@protoc_insertion_point(builder_implements:google.iam.v1.AuditConfigDelta)
+      com.google.iam.v1.AuditConfigDeltaOrBuilder {
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return PolicyProto.internal_static_google_iam_v1_BindingDelta_descriptor;
+      return PolicyProto.internal_static_google_iam_v1_AuditConfigDelta_descriptor;
     }
 
     @Override
     protected FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return PolicyProto.internal_static_google_iam_v1_BindingDelta_fieldAccessorTable
+      return PolicyProto.internal_static_google_iam_v1_AuditConfigDelta_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              BindingDelta.class, Builder.class);
+              AuditConfigDelta.class, Builder.class);
     }
 
-    // Construct using com.google.iam.v1.BindingDelta.newBuilder()
+    // Construct using com.google.iam.v1.AuditConfigDelta.newBuilder()
     private Builder() {
       maybeForceBuilderInitialization();
     }
@@ -635,33 +638,29 @@ private static final long serialVersionUID = 0L;
       super.clear();
       action_ = 0;
 
-      role_ = "";
+      service_ = "";
 
-      member_ = "";
+      exemptedMember_ = "";
 
-      if (conditionBuilder_ == null) {
-        condition_ = null;
-      } else {
-        condition_ = null;
-        conditionBuilder_ = null;
-      }
+      logType_ = "";
+
       return this;
     }
 
     @Override
     public com.google.protobuf.Descriptors.Descriptor
         getDescriptorForType() {
-      return PolicyProto.internal_static_google_iam_v1_BindingDelta_descriptor;
+      return PolicyProto.internal_static_google_iam_v1_AuditConfigDelta_descriptor;
     }
 
     @Override
-    public BindingDelta getDefaultInstanceForType() {
-      return BindingDelta.getDefaultInstance();
+    public AuditConfigDelta getDefaultInstanceForType() {
+      return AuditConfigDelta.getDefaultInstance();
     }
 
     @Override
-    public BindingDelta build() {
-      BindingDelta result = buildPartial();
+    public AuditConfigDelta build() {
+      AuditConfigDelta result = buildPartial();
       if (!result.isInitialized()) {
         throw newUninitializedMessageException(result);
       }
@@ -669,16 +668,12 @@ private static final long serialVersionUID = 0L;
     }
 
     @Override
-    public BindingDelta buildPartial() {
-      BindingDelta result = new BindingDelta(this);
+    public AuditConfigDelta buildPartial() {
+      AuditConfigDelta result = new AuditConfigDelta(this);
       result.action_ = action_;
-      result.role_ = role_;
-      result.member_ = member_;
-      if (conditionBuilder_ == null) {
-        result.condition_ = condition_;
-      } else {
-        result.condition_ = conditionBuilder_.build();
-      }
+      result.service_ = service_;
+      result.exemptedMember_ = exemptedMember_;
+      result.logType_ = logType_;
       onBuilt();
       return result;
     }
@@ -717,29 +712,30 @@ private static final long serialVersionUID = 0L;
     }
     @Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
-      if (other instanceof BindingDelta) {
-        return mergeFrom((BindingDelta)other);
+      if (other instanceof AuditConfigDelta) {
+        return mergeFrom((AuditConfigDelta)other);
       } else {
         super.mergeFrom(other);
         return this;
       }
     }
 
-    public Builder mergeFrom(BindingDelta other) {
-      if (other == BindingDelta.getDefaultInstance()) return this;
+    public Builder mergeFrom(AuditConfigDelta other) {
+      if (other == AuditConfigDelta.getDefaultInstance()) return this;
       if (other.action_ != 0) {
         setActionValue(other.getActionValue());
       }
-      if (!other.getRole().isEmpty()) {
-        role_ = other.role_;
+      if (!other.getService().isEmpty()) {
+        service_ = other.service_;
         onChanged();
       }
-      if (!other.getMember().isEmpty()) {
-        member_ = other.member_;
+      if (!other.getExemptedMember().isEmpty()) {
+        exemptedMember_ = other.exemptedMember_;
         onChanged();
       }
-      if (other.hasCondition()) {
-        mergeCondition(other.getCondition());
+      if (!other.getLogType().isEmpty()) {
+        logType_ = other.logType_;
+        onChanged();
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -756,11 +752,11 @@ private static final long serialVersionUID = 0L;
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      BindingDelta parsedMessage = null;
+      AuditConfigDelta parsedMessage = null;
       try {
         parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage = (BindingDelta) e.getUnfinishedMessage();
+        parsedMessage = (AuditConfigDelta) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
         if (parsedMessage != null) {
@@ -773,22 +769,22 @@ private static final long serialVersionUID = 0L;
     private int action_ = 0;
     /**
      * <pre>
-     * The action that was performed on a Binding.
+     * The action that was performed on an audit configuration in a policy.
      * Required
      * </pre>
      *
-     * <code>.google.iam.v1.BindingDelta.Action action = 1;</code>
+     * <code>.google.iam.v1.AuditConfigDelta.Action action = 1;</code>
      */
     public int getActionValue() {
       return action_;
     }
     /**
      * <pre>
-     * The action that was performed on a Binding.
+     * The action that was performed on an audit configuration in a policy.
      * Required
      * </pre>
      *
-     * <code>.google.iam.v1.BindingDelta.Action action = 1;</code>
+     * <code>.google.iam.v1.AuditConfigDelta.Action action = 1;</code>
      */
     public Builder setActionValue(int value) {
       action_ = value;
@@ -797,11 +793,11 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The action that was performed on a Binding.
+     * The action that was performed on an audit configuration in a policy.
      * Required
      * </pre>
      *
-     * <code>.google.iam.v1.BindingDelta.Action action = 1;</code>
+     * <code>.google.iam.v1.AuditConfigDelta.Action action = 1;</code>
      */
     public Action getAction() {
       @SuppressWarnings("deprecation")
@@ -810,11 +806,11 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The action that was performed on a Binding.
+     * The action that was performed on an audit configuration in a policy.
      * Required
      * </pre>
      *
-     * <code>.google.iam.v1.BindingDelta.Action action = 1;</code>
+     * <code>.google.iam.v1.AuditConfigDelta.Action action = 1;</code>
      */
     public Builder setAction(Action value) {
       if (value == null) {
@@ -827,11 +823,11 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The action that was performed on a Binding.
+     * The action that was performed on an audit configuration in a policy.
      * Required
      * </pre>
      *
-     * <code>.google.iam.v1.BindingDelta.Action action = 1;</code>
+     * <code>.google.iam.v1.AuditConfigDelta.Action action = 1;</code>
      */
     public Builder clearAction() {
       
@@ -840,23 +836,24 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private Object role_ = "";
+    private Object service_ = "";
     /**
      * <pre>
-     * Role that is assigned to `members`.
-     * For example, `roles/viewer`, `roles/editor`, or `roles/owner`.
+     * Specifies a service that was configured for Cloud Audit Logging.
+     * For example, `storage.googleapis.com`, `cloudsql.googleapis.com`.
+     * `allServices` is a special value that covers all services.
      * Required
      * </pre>
      *
-     * <code>string role = 2;</code>
+     * <code>string service = 2;</code>
      */
-    public String getRole() {
-      Object ref = role_;
+    public String getService() {
+      Object ref = service_;
       if (!(ref instanceof String)) {
         com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         String s = bs.toStringUtf8();
-        role_ = s;
+        service_ = s;
         return s;
       } else {
         return (String) ref;
@@ -864,21 +861,22 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Role that is assigned to `members`.
-     * For example, `roles/viewer`, `roles/editor`, or `roles/owner`.
+     * Specifies a service that was configured for Cloud Audit Logging.
+     * For example, `storage.googleapis.com`, `cloudsql.googleapis.com`.
+     * `allServices` is a special value that covers all services.
      * Required
      * </pre>
      *
-     * <code>string role = 2;</code>
+     * <code>string service = 2;</code>
      */
     public com.google.protobuf.ByteString
-        getRoleBytes() {
-      Object ref = role_;
+        getServiceBytes() {
+      Object ref = service_;
       if (ref instanceof String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (String) ref);
-        role_ = b;
+        service_ = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
@@ -886,76 +884,79 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Role that is assigned to `members`.
-     * For example, `roles/viewer`, `roles/editor`, or `roles/owner`.
+     * Specifies a service that was configured for Cloud Audit Logging.
+     * For example, `storage.googleapis.com`, `cloudsql.googleapis.com`.
+     * `allServices` is a special value that covers all services.
      * Required
      * </pre>
      *
-     * <code>string role = 2;</code>
+     * <code>string service = 2;</code>
      */
-    public Builder setRole(
+    public Builder setService(
         String value) {
       if (value == null) {
     throw new NullPointerException();
   }
   
-      role_ = value;
+      service_ = value;
       onChanged();
       return this;
     }
     /**
      * <pre>
-     * Role that is assigned to `members`.
-     * For example, `roles/viewer`, `roles/editor`, or `roles/owner`.
+     * Specifies a service that was configured for Cloud Audit Logging.
+     * For example, `storage.googleapis.com`, `cloudsql.googleapis.com`.
+     * `allServices` is a special value that covers all services.
      * Required
      * </pre>
      *
-     * <code>string role = 2;</code>
+     * <code>string service = 2;</code>
      */
-    public Builder clearRole() {
+    public Builder clearService() {
       
-      role_ = getDefaultInstance().getRole();
+      service_ = getDefaultInstance().getService();
       onChanged();
       return this;
     }
     /**
      * <pre>
-     * Role that is assigned to `members`.
-     * For example, `roles/viewer`, `roles/editor`, or `roles/owner`.
+     * Specifies a service that was configured for Cloud Audit Logging.
+     * For example, `storage.googleapis.com`, `cloudsql.googleapis.com`.
+     * `allServices` is a special value that covers all services.
      * Required
      * </pre>
      *
-     * <code>string role = 2;</code>
+     * <code>string service = 2;</code>
      */
-    public Builder setRoleBytes(
+    public Builder setServiceBytes(
         com.google.protobuf.ByteString value) {
       if (value == null) {
     throw new NullPointerException();
   }
   checkByteStringIsUtf8(value);
       
-      role_ = value;
+      service_ = value;
       onChanged();
       return this;
     }
 
-    private Object member_ = "";
+    private Object exemptedMember_ = "";
     /**
      * <pre>
-     * A single identity requesting access for a Cloud Platform resource.
+     * A single identity that is exempted from "data access" audit
+     * logging for the `service` specified above.
      * Follows the same format of Binding.members.
-     * Required
      * </pre>
      *
-     * <code>string member = 3;</code>
+     * <code>string exempted_member = 3;</code>
      */
-    public String getMember() {
-      Object ref = member_;
+    public String getExemptedMember() {
+      Object ref = exemptedMember_;
       if (!(ref instanceof String)) {
         com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         String s = bs.toStringUtf8();
-        member_ = s;
+        exemptedMember_ = s;
         return s;
       } else {
         return (String) ref;
@@ -963,21 +964,21 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * A single identity requesting access for a Cloud Platform resource.
+     * A single identity that is exempted from "data access" audit
+     * logging for the `service` specified above.
      * Follows the same format of Binding.members.
-     * Required
      * </pre>
      *
-     * <code>string member = 3;</code>
+     * <code>string exempted_member = 3;</code>
      */
     public com.google.protobuf.ByteString
-        getMemberBytes() {
-      Object ref = member_;
+        getExemptedMemberBytes() {
+      Object ref = exemptedMember_;
       if (ref instanceof String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (String) ref);
-        member_ = b;
+        exemptedMember_ = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
@@ -985,210 +986,156 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * A single identity requesting access for a Cloud Platform resource.
+     * A single identity that is exempted from "data access" audit
+     * logging for the `service` specified above.
      * Follows the same format of Binding.members.
-     * Required
      * </pre>
      *
-     * <code>string member = 3;</code>
+     * <code>string exempted_member = 3;</code>
      */
-    public Builder setMember(
+    public Builder setExemptedMember(
         String value) {
       if (value == null) {
     throw new NullPointerException();
   }
   
-      member_ = value;
+      exemptedMember_ = value;
       onChanged();
       return this;
     }
     /**
      * <pre>
-     * A single identity requesting access for a Cloud Platform resource.
+     * A single identity that is exempted from "data access" audit
+     * logging for the `service` specified above.
      * Follows the same format of Binding.members.
-     * Required
      * </pre>
      *
-     * <code>string member = 3;</code>
+     * <code>string exempted_member = 3;</code>
      */
-    public Builder clearMember() {
+    public Builder clearExemptedMember() {
       
-      member_ = getDefaultInstance().getMember();
+      exemptedMember_ = getDefaultInstance().getExemptedMember();
       onChanged();
       return this;
     }
     /**
      * <pre>
-     * A single identity requesting access for a Cloud Platform resource.
+     * A single identity that is exempted from "data access" audit
+     * logging for the `service` specified above.
      * Follows the same format of Binding.members.
-     * Required
      * </pre>
      *
-     * <code>string member = 3;</code>
+     * <code>string exempted_member = 3;</code>
      */
-    public Builder setMemberBytes(
+    public Builder setExemptedMemberBytes(
         com.google.protobuf.ByteString value) {
       if (value == null) {
     throw new NullPointerException();
   }
   checkByteStringIsUtf8(value);
       
-      member_ = value;
+      exemptedMember_ = value;
       onChanged();
       return this;
     }
 
-    private com.google.type.Expr condition_;
-    private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.type.Expr, com.google.type.Expr.Builder, com.google.type.ExprOrBuilder> conditionBuilder_;
+    private Object logType_ = "";
     /**
      * <pre>
-     * The condition that is associated with this binding.
+     * Specifies the log_type that was be enabled. ADMIN_ACTIVITY is always
+     * enabled, and cannot be configured.
+     * Required
      * </pre>
      *
-     * <code>.google.type.Expr condition = 4;</code>
+     * <code>string log_type = 4;</code>
      */
-    public boolean hasCondition() {
-      return conditionBuilder_ != null || condition_ != null;
-    }
-    /**
-     * <pre>
-     * The condition that is associated with this binding.
-     * </pre>
-     *
-     * <code>.google.type.Expr condition = 4;</code>
-     */
-    public com.google.type.Expr getCondition() {
-      if (conditionBuilder_ == null) {
-        return condition_ == null ? com.google.type.Expr.getDefaultInstance() : condition_;
+    public String getLogType() {
+      Object ref = logType_;
+      if (!(ref instanceof String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        String s = bs.toStringUtf8();
+        logType_ = s;
+        return s;
       } else {
-        return conditionBuilder_.getMessage();
+        return (String) ref;
       }
     }
     /**
      * <pre>
-     * The condition that is associated with this binding.
+     * Specifies the log_type that was be enabled. ADMIN_ACTIVITY is always
+     * enabled, and cannot be configured.
+     * Required
      * </pre>
      *
-     * <code>.google.type.Expr condition = 4;</code>
+     * <code>string log_type = 4;</code>
      */
-    public Builder setCondition(com.google.type.Expr value) {
-      if (conditionBuilder_ == null) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
-        condition_ = value;
-        onChanged();
+    public com.google.protobuf.ByteString
+        getLogTypeBytes() {
+      Object ref = logType_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (String) ref);
+        logType_ = b;
+        return b;
       } else {
-        conditionBuilder_.setMessage(value);
+        return (com.google.protobuf.ByteString) ref;
       }
-
+    }
+    /**
+     * <pre>
+     * Specifies the log_type that was be enabled. ADMIN_ACTIVITY is always
+     * enabled, and cannot be configured.
+     * Required
+     * </pre>
+     *
+     * <code>string log_type = 4;</code>
+     */
+    public Builder setLogType(
+        String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      logType_ = value;
+      onChanged();
       return this;
     }
     /**
      * <pre>
-     * The condition that is associated with this binding.
+     * Specifies the log_type that was be enabled. ADMIN_ACTIVITY is always
+     * enabled, and cannot be configured.
+     * Required
      * </pre>
      *
-     * <code>.google.type.Expr condition = 4;</code>
+     * <code>string log_type = 4;</code>
      */
-    public Builder setCondition(
-        com.google.type.Expr.Builder builderForValue) {
-      if (conditionBuilder_ == null) {
-        condition_ = builderForValue.build();
-        onChanged();
-      } else {
-        conditionBuilder_.setMessage(builderForValue.build());
-      }
-
-      return this;
-    }
-    /**
-     * <pre>
-     * The condition that is associated with this binding.
-     * </pre>
-     *
-     * <code>.google.type.Expr condition = 4;</code>
-     */
-    public Builder mergeCondition(com.google.type.Expr value) {
-      if (conditionBuilder_ == null) {
-        if (condition_ != null) {
-          condition_ =
-            com.google.type.Expr.newBuilder(condition_).mergeFrom(value).buildPartial();
-        } else {
-          condition_ = value;
-        }
-        onChanged();
-      } else {
-        conditionBuilder_.mergeFrom(value);
-      }
-
-      return this;
-    }
-    /**
-     * <pre>
-     * The condition that is associated with this binding.
-     * </pre>
-     *
-     * <code>.google.type.Expr condition = 4;</code>
-     */
-    public Builder clearCondition() {
-      if (conditionBuilder_ == null) {
-        condition_ = null;
-        onChanged();
-      } else {
-        condition_ = null;
-        conditionBuilder_ = null;
-      }
-
-      return this;
-    }
-    /**
-     * <pre>
-     * The condition that is associated with this binding.
-     * </pre>
-     *
-     * <code>.google.type.Expr condition = 4;</code>
-     */
-    public com.google.type.Expr.Builder getConditionBuilder() {
+    public Builder clearLogType() {
       
+      logType_ = getDefaultInstance().getLogType();
       onChanged();
-      return getConditionFieldBuilder().getBuilder();
+      return this;
     }
     /**
      * <pre>
-     * The condition that is associated with this binding.
+     * Specifies the log_type that was be enabled. ADMIN_ACTIVITY is always
+     * enabled, and cannot be configured.
+     * Required
      * </pre>
      *
-     * <code>.google.type.Expr condition = 4;</code>
+     * <code>string log_type = 4;</code>
      */
-    public com.google.type.ExprOrBuilder getConditionOrBuilder() {
-      if (conditionBuilder_ != null) {
-        return conditionBuilder_.getMessageOrBuilder();
-      } else {
-        return condition_ == null ?
-            com.google.type.Expr.getDefaultInstance() : condition_;
-      }
-    }
-    /**
-     * <pre>
-     * The condition that is associated with this binding.
-     * </pre>
-     *
-     * <code>.google.type.Expr condition = 4;</code>
-     */
-    private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.type.Expr, com.google.type.Expr.Builder, com.google.type.ExprOrBuilder> 
-        getConditionFieldBuilder() {
-      if (conditionBuilder_ == null) {
-        conditionBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            com.google.type.Expr, com.google.type.Expr.Builder, com.google.type.ExprOrBuilder>(
-                getCondition(),
-                getParentForChildren(),
-                isClean());
-        condition_ = null;
-      }
-      return conditionBuilder_;
+    public Builder setLogTypeBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      logType_ = value;
+      onChanged();
+      return this;
     }
     @Override
     public final Builder setUnknownFields(
@@ -1203,41 +1150,41 @@ private static final long serialVersionUID = 0L;
     }
 
 
-    // @@protoc_insertion_point(builder_scope:google.iam.v1.BindingDelta)
+    // @@protoc_insertion_point(builder_scope:google.iam.v1.AuditConfigDelta)
   }
 
-  // @@protoc_insertion_point(class_scope:google.iam.v1.BindingDelta)
-  private static final BindingDelta DEFAULT_INSTANCE;
+  // @@protoc_insertion_point(class_scope:google.iam.v1.AuditConfigDelta)
+  private static final AuditConfigDelta DEFAULT_INSTANCE;
   static {
-    DEFAULT_INSTANCE = new BindingDelta();
+    DEFAULT_INSTANCE = new AuditConfigDelta();
   }
 
-  public static BindingDelta getDefaultInstance() {
+  public static AuditConfigDelta getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
 
-  private static final com.google.protobuf.Parser<BindingDelta>
-      PARSER = new com.google.protobuf.AbstractParser<BindingDelta>() {
+  private static final com.google.protobuf.Parser<AuditConfigDelta>
+      PARSER = new com.google.protobuf.AbstractParser<AuditConfigDelta>() {
     @Override
-    public BindingDelta parsePartialFrom(
+    public AuditConfigDelta parsePartialFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return new BindingDelta(input, extensionRegistry);
+      return new AuditConfigDelta(input, extensionRegistry);
     }
   };
 
-  public static com.google.protobuf.Parser<BindingDelta> parser() {
+  public static com.google.protobuf.Parser<AuditConfigDelta> parser() {
     return PARSER;
   }
 
   @Override
-  public com.google.protobuf.Parser<BindingDelta> getParserForType() {
+  public com.google.protobuf.Parser<AuditConfigDelta> getParserForType() {
     return PARSER;
   }
 
   @Override
-  public BindingDelta getDefaultInstanceForType() {
+  public AuditConfigDelta getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
 

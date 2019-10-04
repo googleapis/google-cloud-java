@@ -23,7 +23,7 @@ private static final long serialVersionUID = 0L;
     resource_ = "";
   }
 
-  @java.lang.Override
+  @Override
   public final com.google.protobuf.UnknownFieldSet
   getUnknownFields() {
     return this.unknownFields;
@@ -34,7 +34,7 @@ private static final long serialVersionUID = 0L;
       throws com.google.protobuf.InvalidProtocolBufferException {
     this();
     if (extensionRegistry == null) {
-      throw new java.lang.NullPointerException();
+      throw new NullPointerException();
     }
     int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
@@ -47,17 +47,30 @@ private static final long serialVersionUID = 0L;
           case 0:
             done = true;
             break;
+          case 10: {
+            String s = input.readStringRequireUtf8();
+
+            resource_ = s;
+            break;
+          }
+          case 18: {
+            GetPolicyOptions.Builder subBuilder = null;
+            if (options_ != null) {
+              subBuilder = options_.toBuilder();
+            }
+            options_ = input.readMessage(GetPolicyOptions.parser(), extensionRegistry);
+            if (subBuilder != null) {
+              subBuilder.mergeFrom(options_);
+              options_ = subBuilder.buildPartial();
+            }
+
+            break;
+          }
           default: {
-            if (!parseUnknownFieldProto3(
+            if (!parseUnknownField(
                 input, unknownFields, extensionRegistry, tag)) {
               done = true;
             }
-            break;
-          }
-          case 10: {
-            java.lang.String s = input.readStringRequireUtf8();
-
-            resource_ = s;
             break;
           }
         }
@@ -74,35 +87,35 @@ private static final long serialVersionUID = 0L;
   }
   public static final com.google.protobuf.Descriptors.Descriptor
       getDescriptor() {
-    return com.google.iam.v1.IamPolicyProto.internal_static_google_iam_v1_GetIamPolicyRequest_descriptor;
+    return IamPolicyProto.internal_static_google_iam_v1_GetIamPolicyRequest_descriptor;
   }
 
-  protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+  @Override
+  protected FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return com.google.iam.v1.IamPolicyProto.internal_static_google_iam_v1_GetIamPolicyRequest_fieldAccessorTable
+    return IamPolicyProto.internal_static_google_iam_v1_GetIamPolicyRequest_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-            com.google.iam.v1.GetIamPolicyRequest.class, com.google.iam.v1.GetIamPolicyRequest.Builder.class);
+            GetIamPolicyRequest.class, Builder.class);
   }
 
   public static final int RESOURCE_FIELD_NUMBER = 1;
-  private volatile java.lang.Object resource_;
+  private volatile Object resource_;
   /**
    * <pre>
    * REQUIRED: The resource for which the policy is being requested.
-   * `resource` is usually specified as a path. For example, a Project
-   * resource is specified as `projects/{project}`.
+   * See the operation documentation for the appropriate value for this field.
    * </pre>
    *
    * <code>string resource = 1;</code>
    */
-  public java.lang.String getResource() {
-    java.lang.Object ref = resource_;
-    if (ref instanceof java.lang.String) {
-      return (java.lang.String) ref;
+  public String getResource() {
+    Object ref = resource_;
+    if (ref instanceof String) {
+      return (String) ref;
     } else {
       com.google.protobuf.ByteString bs = 
           (com.google.protobuf.ByteString) ref;
-      java.lang.String s = bs.toStringUtf8();
+      String s = bs.toStringUtf8();
       resource_ = s;
       return s;
     }
@@ -110,19 +123,18 @@ private static final long serialVersionUID = 0L;
   /**
    * <pre>
    * REQUIRED: The resource for which the policy is being requested.
-   * `resource` is usually specified as a path. For example, a Project
-   * resource is specified as `projects/{project}`.
+   * See the operation documentation for the appropriate value for this field.
    * </pre>
    *
    * <code>string resource = 1;</code>
    */
   public com.google.protobuf.ByteString
       getResourceBytes() {
-    java.lang.Object ref = resource_;
-    if (ref instanceof java.lang.String) {
+    Object ref = resource_;
+    if (ref instanceof String) {
       com.google.protobuf.ByteString b = 
           com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
+              (String) ref);
       resource_ = b;
       return b;
     } else {
@@ -130,7 +142,44 @@ private static final long serialVersionUID = 0L;
     }
   }
 
+  public static final int OPTIONS_FIELD_NUMBER = 2;
+  private GetPolicyOptions options_;
+  /**
+   * <pre>
+   * OPTIONAL: A `GetPolicyOptions` object for specifying options to
+   * `GetIamPolicy`. This field is only used by Cloud IAM.
+   * </pre>
+   *
+   * <code>.google.iam.v1.GetPolicyOptions options = 2;</code>
+   */
+  public boolean hasOptions() {
+    return options_ != null;
+  }
+  /**
+   * <pre>
+   * OPTIONAL: A `GetPolicyOptions` object for specifying options to
+   * `GetIamPolicy`. This field is only used by Cloud IAM.
+   * </pre>
+   *
+   * <code>.google.iam.v1.GetPolicyOptions options = 2;</code>
+   */
+  public GetPolicyOptions getOptions() {
+    return options_ == null ? GetPolicyOptions.getDefaultInstance() : options_;
+  }
+  /**
+   * <pre>
+   * OPTIONAL: A `GetPolicyOptions` object for specifying options to
+   * `GetIamPolicy`. This field is only used by Cloud IAM.
+   * </pre>
+   *
+   * <code>.google.iam.v1.GetPolicyOptions options = 2;</code>
+   */
+  public com.google.iam.v1.GetPolicyOptionsOrBuilder getOptionsOrBuilder() {
+    return getOptions();
+  }
+
   private byte memoizedIsInitialized = -1;
+  @Override
   public final boolean isInitialized() {
     byte isInitialized = memoizedIsInitialized;
     if (isInitialized == 1) return true;
@@ -140,14 +189,19 @@ private static final long serialVersionUID = 0L;
     return true;
   }
 
+  @Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
     if (!getResourceBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, resource_);
     }
+    if (options_ != null) {
+      output.writeMessage(2, getOptions());
+    }
     unknownFields.writeTo(output);
   }
 
+  @Override
   public int getSerializedSize() {
     int size = memoizedSize;
     if (size != -1) return size;
@@ -156,29 +210,37 @@ private static final long serialVersionUID = 0L;
     if (!getResourceBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, resource_);
     }
+    if (options_ != null) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(2, getOptions());
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
   }
 
-  @java.lang.Override
-  public boolean equals(final java.lang.Object obj) {
+  @Override
+  public boolean equals(final Object obj) {
     if (obj == this) {
      return true;
     }
-    if (!(obj instanceof com.google.iam.v1.GetIamPolicyRequest)) {
+    if (!(obj instanceof GetIamPolicyRequest)) {
       return super.equals(obj);
     }
-    com.google.iam.v1.GetIamPolicyRequest other = (com.google.iam.v1.GetIamPolicyRequest) obj;
+    GetIamPolicyRequest other = (GetIamPolicyRequest) obj;
 
-    boolean result = true;
-    result = result && getResource()
-        .equals(other.getResource());
-    result = result && unknownFields.equals(other.unknownFields);
-    return result;
+    if (!getResource()
+        .equals(other.getResource())) return false;
+    if (hasOptions() != other.hasOptions()) return false;
+    if (hasOptions()) {
+      if (!getOptions()
+          .equals(other.getOptions())) return false;
+    }
+    if (!unknownFields.equals(other.unknownFields)) return false;
+    return true;
   }
 
-  @java.lang.Override
+  @Override
   public int hashCode() {
     if (memoizedHashCode != 0) {
       return memoizedHashCode;
@@ -187,74 +249,78 @@ private static final long serialVersionUID = 0L;
     hash = (19 * hash) + getDescriptor().hashCode();
     hash = (37 * hash) + RESOURCE_FIELD_NUMBER;
     hash = (53 * hash) + getResource().hashCode();
+    if (hasOptions()) {
+      hash = (37 * hash) + OPTIONS_FIELD_NUMBER;
+      hash = (53 * hash) + getOptions().hashCode();
+    }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
   }
 
-  public static com.google.iam.v1.GetIamPolicyRequest parseFrom(
+  public static GetIamPolicyRequest parseFrom(
       java.nio.ByteBuffer data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static com.google.iam.v1.GetIamPolicyRequest parseFrom(
+  public static GetIamPolicyRequest parseFrom(
       java.nio.ByteBuffer data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static com.google.iam.v1.GetIamPolicyRequest parseFrom(
+  public static GetIamPolicyRequest parseFrom(
       com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static com.google.iam.v1.GetIamPolicyRequest parseFrom(
+  public static GetIamPolicyRequest parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static com.google.iam.v1.GetIamPolicyRequest parseFrom(byte[] data)
+  public static GetIamPolicyRequest parseFrom(byte[] data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static com.google.iam.v1.GetIamPolicyRequest parseFrom(
+  public static GetIamPolicyRequest parseFrom(
       byte[] data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static com.google.iam.v1.GetIamPolicyRequest parseFrom(java.io.InputStream input)
+  public static GetIamPolicyRequest parseFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input);
   }
-  public static com.google.iam.v1.GetIamPolicyRequest parseFrom(
+  public static GetIamPolicyRequest parseFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input, extensionRegistry);
   }
-  public static com.google.iam.v1.GetIamPolicyRequest parseDelimitedFrom(java.io.InputStream input)
+  public static GetIamPolicyRequest parseDelimitedFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseDelimitedWithIOException(PARSER, input);
   }
-  public static com.google.iam.v1.GetIamPolicyRequest parseDelimitedFrom(
+  public static GetIamPolicyRequest parseDelimitedFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
   }
-  public static com.google.iam.v1.GetIamPolicyRequest parseFrom(
+  public static GetIamPolicyRequest parseFrom(
       com.google.protobuf.CodedInputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input);
   }
-  public static com.google.iam.v1.GetIamPolicyRequest parseFrom(
+  public static GetIamPolicyRequest parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
@@ -262,21 +328,23 @@ private static final long serialVersionUID = 0L;
         .parseWithIOException(PARSER, input, extensionRegistry);
   }
 
+  @Override
   public Builder newBuilderForType() { return newBuilder(); }
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
-  public static Builder newBuilder(com.google.iam.v1.GetIamPolicyRequest prototype) {
+  public static Builder newBuilder(GetIamPolicyRequest prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
+  @Override
   public Builder toBuilder() {
     return this == DEFAULT_INSTANCE
         ? new Builder() : new Builder().mergeFrom(this);
   }
 
-  @java.lang.Override
+  @Override
   protected Builder newBuilderForType(
-      com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      BuilderParent parent) {
     Builder builder = new Builder(parent);
     return builder;
   }
@@ -293,14 +361,15 @@ private static final long serialVersionUID = 0L;
       com.google.iam.v1.GetIamPolicyRequestOrBuilder {
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return com.google.iam.v1.IamPolicyProto.internal_static_google_iam_v1_GetIamPolicyRequest_descriptor;
+      return IamPolicyProto.internal_static_google_iam_v1_GetIamPolicyRequest_descriptor;
     }
 
-    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+    @Override
+    protected FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.google.iam.v1.IamPolicyProto.internal_static_google_iam_v1_GetIamPolicyRequest_fieldAccessorTable
+      return IamPolicyProto.internal_static_google_iam_v1_GetIamPolicyRequest_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.google.iam.v1.GetIamPolicyRequest.class, com.google.iam.v1.GetIamPolicyRequest.Builder.class);
+              GetIamPolicyRequest.class, Builder.class);
     }
 
     // Construct using com.google.iam.v1.GetIamPolicyRequest.newBuilder()
@@ -309,7 +378,7 @@ private static final long serialVersionUID = 0L;
     }
 
     private Builder(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        BuilderParent parent) {
       super(parent);
       maybeForceBuilderInitialization();
     }
@@ -318,96 +387,124 @@ private static final long serialVersionUID = 0L;
               .alwaysUseFieldBuilders) {
       }
     }
+    @Override
     public Builder clear() {
       super.clear();
       resource_ = "";
 
+      if (optionsBuilder_ == null) {
+        options_ = null;
+      } else {
+        options_ = null;
+        optionsBuilder_ = null;
+      }
       return this;
     }
 
+    @Override
     public com.google.protobuf.Descriptors.Descriptor
         getDescriptorForType() {
-      return com.google.iam.v1.IamPolicyProto.internal_static_google_iam_v1_GetIamPolicyRequest_descriptor;
+      return IamPolicyProto.internal_static_google_iam_v1_GetIamPolicyRequest_descriptor;
     }
 
-    public com.google.iam.v1.GetIamPolicyRequest getDefaultInstanceForType() {
-      return com.google.iam.v1.GetIamPolicyRequest.getDefaultInstance();
+    @Override
+    public GetIamPolicyRequest getDefaultInstanceForType() {
+      return GetIamPolicyRequest.getDefaultInstance();
     }
 
-    public com.google.iam.v1.GetIamPolicyRequest build() {
-      com.google.iam.v1.GetIamPolicyRequest result = buildPartial();
+    @Override
+    public GetIamPolicyRequest build() {
+      GetIamPolicyRequest result = buildPartial();
       if (!result.isInitialized()) {
         throw newUninitializedMessageException(result);
       }
       return result;
     }
 
-    public com.google.iam.v1.GetIamPolicyRequest buildPartial() {
-      com.google.iam.v1.GetIamPolicyRequest result = new com.google.iam.v1.GetIamPolicyRequest(this);
+    @Override
+    public GetIamPolicyRequest buildPartial() {
+      GetIamPolicyRequest result = new GetIamPolicyRequest(this);
       result.resource_ = resource_;
+      if (optionsBuilder_ == null) {
+        result.options_ = options_;
+      } else {
+        result.options_ = optionsBuilder_.build();
+      }
       onBuilt();
       return result;
     }
 
+    @Override
     public Builder clone() {
-      return (Builder) super.clone();
+      return super.clone();
     }
+    @Override
     public Builder setField(
         com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
-      return (Builder) super.setField(field, value);
+        Object value) {
+      return super.setField(field, value);
     }
+    @Override
     public Builder clearField(
         com.google.protobuf.Descriptors.FieldDescriptor field) {
-      return (Builder) super.clearField(field);
+      return super.clearField(field);
     }
+    @Override
     public Builder clearOneof(
         com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-      return (Builder) super.clearOneof(oneof);
+      return super.clearOneof(oneof);
     }
+    @Override
     public Builder setRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field,
-        int index, java.lang.Object value) {
-      return (Builder) super.setRepeatedField(field, index, value);
+        int index, Object value) {
+      return super.setRepeatedField(field, index, value);
     }
+    @Override
     public Builder addRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
-      return (Builder) super.addRepeatedField(field, value);
+        Object value) {
+      return super.addRepeatedField(field, value);
     }
+    @Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
-      if (other instanceof com.google.iam.v1.GetIamPolicyRequest) {
-        return mergeFrom((com.google.iam.v1.GetIamPolicyRequest)other);
+      if (other instanceof GetIamPolicyRequest) {
+        return mergeFrom((GetIamPolicyRequest)other);
       } else {
         super.mergeFrom(other);
         return this;
       }
     }
 
-    public Builder mergeFrom(com.google.iam.v1.GetIamPolicyRequest other) {
-      if (other == com.google.iam.v1.GetIamPolicyRequest.getDefaultInstance()) return this;
+    public Builder mergeFrom(GetIamPolicyRequest other) {
+      if (other == GetIamPolicyRequest.getDefaultInstance()) return this;
       if (!other.getResource().isEmpty()) {
         resource_ = other.resource_;
         onChanged();
+      }
+      if (other.hasOptions()) {
+        mergeOptions(other.getOptions());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
       return this;
     }
 
+    @Override
     public final boolean isInitialized() {
       return true;
     }
 
+    @Override
     public Builder mergeFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      com.google.iam.v1.GetIamPolicyRequest parsedMessage = null;
+      GetIamPolicyRequest parsedMessage = null;
       try {
         parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage = (com.google.iam.v1.GetIamPolicyRequest) e.getUnfinishedMessage();
+        parsedMessage = (GetIamPolicyRequest) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
         if (parsedMessage != null) {
@@ -417,44 +514,42 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private java.lang.Object resource_ = "";
+    private Object resource_ = "";
     /**
      * <pre>
      * REQUIRED: The resource for which the policy is being requested.
-     * `resource` is usually specified as a path. For example, a Project
-     * resource is specified as `projects/{project}`.
+     * See the operation documentation for the appropriate value for this field.
      * </pre>
      *
      * <code>string resource = 1;</code>
      */
-    public java.lang.String getResource() {
-      java.lang.Object ref = resource_;
-      if (!(ref instanceof java.lang.String)) {
+    public String getResource() {
+      Object ref = resource_;
+      if (!(ref instanceof String)) {
         com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
+        String s = bs.toStringUtf8();
         resource_ = s;
         return s;
       } else {
-        return (java.lang.String) ref;
+        return (String) ref;
       }
     }
     /**
      * <pre>
      * REQUIRED: The resource for which the policy is being requested.
-     * `resource` is usually specified as a path. For example, a Project
-     * resource is specified as `projects/{project}`.
+     * See the operation documentation for the appropriate value for this field.
      * </pre>
      *
      * <code>string resource = 1;</code>
      */
     public com.google.protobuf.ByteString
         getResourceBytes() {
-      java.lang.Object ref = resource_;
+      Object ref = resource_;
       if (ref instanceof String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
+                (String) ref);
         resource_ = b;
         return b;
       } else {
@@ -464,14 +559,13 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * REQUIRED: The resource for which the policy is being requested.
-     * `resource` is usually specified as a path. For example, a Project
-     * resource is specified as `projects/{project}`.
+     * See the operation documentation for the appropriate value for this field.
      * </pre>
      *
      * <code>string resource = 1;</code>
      */
     public Builder setResource(
-        java.lang.String value) {
+        String value) {
       if (value == null) {
     throw new NullPointerException();
   }
@@ -483,8 +577,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * REQUIRED: The resource for which the policy is being requested.
-     * `resource` is usually specified as a path. For example, a Project
-     * resource is specified as `projects/{project}`.
+     * See the operation documentation for the appropriate value for this field.
      * </pre>
      *
      * <code>string resource = 1;</code>
@@ -498,8 +591,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * REQUIRED: The resource for which the policy is being requested.
-     * `resource` is usually specified as a path. For example, a Project
-     * resource is specified as `projects/{project}`.
+     * See the operation documentation for the appropriate value for this field.
      * </pre>
      *
      * <code>string resource = 1;</code>
@@ -515,11 +607,175 @@ private static final long serialVersionUID = 0L;
       onChanged();
       return this;
     }
+
+    private GetPolicyOptions options_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+        GetPolicyOptions, GetPolicyOptions.Builder, com.google.iam.v1.GetPolicyOptionsOrBuilder> optionsBuilder_;
+    /**
+     * <pre>
+     * OPTIONAL: A `GetPolicyOptions` object for specifying options to
+     * `GetIamPolicy`. This field is only used by Cloud IAM.
+     * </pre>
+     *
+     * <code>.google.iam.v1.GetPolicyOptions options = 2;</code>
+     */
+    public boolean hasOptions() {
+      return optionsBuilder_ != null || options_ != null;
+    }
+    /**
+     * <pre>
+     * OPTIONAL: A `GetPolicyOptions` object for specifying options to
+     * `GetIamPolicy`. This field is only used by Cloud IAM.
+     * </pre>
+     *
+     * <code>.google.iam.v1.GetPolicyOptions options = 2;</code>
+     */
+    public GetPolicyOptions getOptions() {
+      if (optionsBuilder_ == null) {
+        return options_ == null ? GetPolicyOptions.getDefaultInstance() : options_;
+      } else {
+        return optionsBuilder_.getMessage();
+      }
+    }
+    /**
+     * <pre>
+     * OPTIONAL: A `GetPolicyOptions` object for specifying options to
+     * `GetIamPolicy`. This field is only used by Cloud IAM.
+     * </pre>
+     *
+     * <code>.google.iam.v1.GetPolicyOptions options = 2;</code>
+     */
+    public Builder setOptions(GetPolicyOptions value) {
+      if (optionsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        options_ = value;
+        onChanged();
+      } else {
+        optionsBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * OPTIONAL: A `GetPolicyOptions` object for specifying options to
+     * `GetIamPolicy`. This field is only used by Cloud IAM.
+     * </pre>
+     *
+     * <code>.google.iam.v1.GetPolicyOptions options = 2;</code>
+     */
+    public Builder setOptions(
+        GetPolicyOptions.Builder builderForValue) {
+      if (optionsBuilder_ == null) {
+        options_ = builderForValue.build();
+        onChanged();
+      } else {
+        optionsBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * OPTIONAL: A `GetPolicyOptions` object for specifying options to
+     * `GetIamPolicy`. This field is only used by Cloud IAM.
+     * </pre>
+     *
+     * <code>.google.iam.v1.GetPolicyOptions options = 2;</code>
+     */
+    public Builder mergeOptions(GetPolicyOptions value) {
+      if (optionsBuilder_ == null) {
+        if (options_ != null) {
+          options_ =
+            GetPolicyOptions.newBuilder(options_).mergeFrom(value).buildPartial();
+        } else {
+          options_ = value;
+        }
+        onChanged();
+      } else {
+        optionsBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * OPTIONAL: A `GetPolicyOptions` object for specifying options to
+     * `GetIamPolicy`. This field is only used by Cloud IAM.
+     * </pre>
+     *
+     * <code>.google.iam.v1.GetPolicyOptions options = 2;</code>
+     */
+    public Builder clearOptions() {
+      if (optionsBuilder_ == null) {
+        options_ = null;
+        onChanged();
+      } else {
+        options_ = null;
+        optionsBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * OPTIONAL: A `GetPolicyOptions` object for specifying options to
+     * `GetIamPolicy`. This field is only used by Cloud IAM.
+     * </pre>
+     *
+     * <code>.google.iam.v1.GetPolicyOptions options = 2;</code>
+     */
+    public GetPolicyOptions.Builder getOptionsBuilder() {
+      
+      onChanged();
+      return getOptionsFieldBuilder().getBuilder();
+    }
+    /**
+     * <pre>
+     * OPTIONAL: A `GetPolicyOptions` object for specifying options to
+     * `GetIamPolicy`. This field is only used by Cloud IAM.
+     * </pre>
+     *
+     * <code>.google.iam.v1.GetPolicyOptions options = 2;</code>
+     */
+    public com.google.iam.v1.GetPolicyOptionsOrBuilder getOptionsOrBuilder() {
+      if (optionsBuilder_ != null) {
+        return optionsBuilder_.getMessageOrBuilder();
+      } else {
+        return options_ == null ?
+            GetPolicyOptions.getDefaultInstance() : options_;
+      }
+    }
+    /**
+     * <pre>
+     * OPTIONAL: A `GetPolicyOptions` object for specifying options to
+     * `GetIamPolicy`. This field is only used by Cloud IAM.
+     * </pre>
+     *
+     * <code>.google.iam.v1.GetPolicyOptions options = 2;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+        GetPolicyOptions, GetPolicyOptions.Builder, com.google.iam.v1.GetPolicyOptionsOrBuilder>
+        getOptionsFieldBuilder() {
+      if (optionsBuilder_ == null) {
+        optionsBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            GetPolicyOptions, GetPolicyOptions.Builder, com.google.iam.v1.GetPolicyOptionsOrBuilder>(
+                getOptions(),
+                getParentForChildren(),
+                isClean());
+        options_ = null;
+      }
+      return optionsBuilder_;
+    }
+    @Override
     public final Builder setUnknownFields(
         final com.google.protobuf.UnknownFieldSet unknownFields) {
-      return super.setUnknownFieldsProto3(unknownFields);
+      return super.setUnknownFields(unknownFields);
     }
 
+    @Override
     public final Builder mergeUnknownFields(
         final com.google.protobuf.UnknownFieldSet unknownFields) {
       return super.mergeUnknownFields(unknownFields);
@@ -530,17 +786,18 @@ private static final long serialVersionUID = 0L;
   }
 
   // @@protoc_insertion_point(class_scope:google.iam.v1.GetIamPolicyRequest)
-  private static final com.google.iam.v1.GetIamPolicyRequest DEFAULT_INSTANCE;
+  private static final GetIamPolicyRequest DEFAULT_INSTANCE;
   static {
-    DEFAULT_INSTANCE = new com.google.iam.v1.GetIamPolicyRequest();
+    DEFAULT_INSTANCE = new GetIamPolicyRequest();
   }
 
-  public static com.google.iam.v1.GetIamPolicyRequest getDefaultInstance() {
+  public static GetIamPolicyRequest getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
 
   private static final com.google.protobuf.Parser<GetIamPolicyRequest>
       PARSER = new com.google.protobuf.AbstractParser<GetIamPolicyRequest>() {
+    @Override
     public GetIamPolicyRequest parsePartialFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -553,12 +810,13 @@ private static final long serialVersionUID = 0L;
     return PARSER;
   }
 
-  @java.lang.Override
+  @Override
   public com.google.protobuf.Parser<GetIamPolicyRequest> getParserForType() {
     return PARSER;
   }
 
-  public com.google.iam.v1.GetIamPolicyRequest getDefaultInstanceForType() {
+  @Override
+  public GetIamPolicyRequest getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
 

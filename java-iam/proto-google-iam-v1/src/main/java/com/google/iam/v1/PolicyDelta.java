@@ -21,9 +21,10 @@ private static final long serialVersionUID = 0L;
   }
   private PolicyDelta() {
     bindingDeltas_ = java.util.Collections.emptyList();
+    auditConfigDeltas_ = java.util.Collections.emptyList();
   }
 
-  @java.lang.Override
+  @Override
   public final com.google.protobuf.UnknownFieldSet
   getUnknownFields() {
     return this.unknownFields;
@@ -34,7 +35,7 @@ private static final long serialVersionUID = 0L;
       throws com.google.protobuf.InvalidProtocolBufferException {
     this();
     if (extensionRegistry == null) {
-      throw new java.lang.NullPointerException();
+      throw new NullPointerException();
     }
     int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
@@ -47,20 +48,29 @@ private static final long serialVersionUID = 0L;
           case 0:
             done = true;
             break;
-          default: {
-            if (!parseUnknownFieldProto3(
-                input, unknownFields, extensionRegistry, tag)) {
-              done = true;
-            }
-            break;
-          }
           case 10: {
-            if (!((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
+            if (!((mutable_bitField0_ & 0x00000001) != 0)) {
               bindingDeltas_ = new java.util.ArrayList<com.google.iam.v1.BindingDelta>();
               mutable_bitField0_ |= 0x00000001;
             }
             bindingDeltas_.add(
                 input.readMessage(com.google.iam.v1.BindingDelta.parser(), extensionRegistry));
+            break;
+          }
+          case 18: {
+            if (!((mutable_bitField0_ & 0x00000002) != 0)) {
+              auditConfigDeltas_ = new java.util.ArrayList<com.google.iam.v1.AuditConfigDelta>();
+              mutable_bitField0_ |= 0x00000002;
+            }
+            auditConfigDeltas_.add(
+                input.readMessage(com.google.iam.v1.AuditConfigDelta.parser(), extensionRegistry));
+            break;
+          }
+          default: {
+            if (!parseUnknownField(
+                input, unknownFields, extensionRegistry, tag)) {
+              done = true;
+            }
             break;
           }
         }
@@ -71,8 +81,11 @@ private static final long serialVersionUID = 0L;
       throw new com.google.protobuf.InvalidProtocolBufferException(
           e).setUnfinishedMessage(this);
     } finally {
-      if (((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
+      if (((mutable_bitField0_ & 0x00000001) != 0)) {
         bindingDeltas_ = java.util.Collections.unmodifiableList(bindingDeltas_);
+      }
+      if (((mutable_bitField0_ & 0x00000002) != 0)) {
+        auditConfigDeltas_ = java.util.Collections.unmodifiableList(auditConfigDeltas_);
       }
       this.unknownFields = unknownFields.build();
       makeExtensionsImmutable();
@@ -83,11 +96,12 @@ private static final long serialVersionUID = 0L;
     return com.google.iam.v1.PolicyProto.internal_static_google_iam_v1_PolicyDelta_descriptor;
   }
 
-  protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+  @Override
+  protected FieldAccessorTable
       internalGetFieldAccessorTable() {
     return com.google.iam.v1.PolicyProto.internal_static_google_iam_v1_PolicyDelta_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-            com.google.iam.v1.PolicyDelta.class, com.google.iam.v1.PolicyDelta.Builder.class);
+            PolicyDelta.class, Builder.class);
   }
 
   public static final int BINDING_DELTAS_FIELD_NUMBER = 1;
@@ -145,7 +159,63 @@ private static final long serialVersionUID = 0L;
     return bindingDeltas_.get(index);
   }
 
+  public static final int AUDIT_CONFIG_DELTAS_FIELD_NUMBER = 2;
+  private java.util.List<com.google.iam.v1.AuditConfigDelta> auditConfigDeltas_;
+  /**
+   * <pre>
+   * The delta for AuditConfigs between two policies.
+   * </pre>
+   *
+   * <code>repeated .google.iam.v1.AuditConfigDelta audit_config_deltas = 2;</code>
+   */
+  public java.util.List<com.google.iam.v1.AuditConfigDelta> getAuditConfigDeltasList() {
+    return auditConfigDeltas_;
+  }
+  /**
+   * <pre>
+   * The delta for AuditConfigs between two policies.
+   * </pre>
+   *
+   * <code>repeated .google.iam.v1.AuditConfigDelta audit_config_deltas = 2;</code>
+   */
+  public java.util.List<? extends com.google.iam.v1.AuditConfigDeltaOrBuilder> 
+      getAuditConfigDeltasOrBuilderList() {
+    return auditConfigDeltas_;
+  }
+  /**
+   * <pre>
+   * The delta for AuditConfigs between two policies.
+   * </pre>
+   *
+   * <code>repeated .google.iam.v1.AuditConfigDelta audit_config_deltas = 2;</code>
+   */
+  public int getAuditConfigDeltasCount() {
+    return auditConfigDeltas_.size();
+  }
+  /**
+   * <pre>
+   * The delta for AuditConfigs between two policies.
+   * </pre>
+   *
+   * <code>repeated .google.iam.v1.AuditConfigDelta audit_config_deltas = 2;</code>
+   */
+  public com.google.iam.v1.AuditConfigDelta getAuditConfigDeltas(int index) {
+    return auditConfigDeltas_.get(index);
+  }
+  /**
+   * <pre>
+   * The delta for AuditConfigs between two policies.
+   * </pre>
+   *
+   * <code>repeated .google.iam.v1.AuditConfigDelta audit_config_deltas = 2;</code>
+   */
+  public com.google.iam.v1.AuditConfigDeltaOrBuilder getAuditConfigDeltasOrBuilder(
+      int index) {
+    return auditConfigDeltas_.get(index);
+  }
+
   private byte memoizedIsInitialized = -1;
+  @Override
   public final boolean isInitialized() {
     byte isInitialized = memoizedIsInitialized;
     if (isInitialized == 1) return true;
@@ -155,14 +225,19 @@ private static final long serialVersionUID = 0L;
     return true;
   }
 
+  @Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
     for (int i = 0; i < bindingDeltas_.size(); i++) {
       output.writeMessage(1, bindingDeltas_.get(i));
     }
+    for (int i = 0; i < auditConfigDeltas_.size(); i++) {
+      output.writeMessage(2, auditConfigDeltas_.get(i));
+    }
     unknownFields.writeTo(output);
   }
 
+  @Override
   public int getSerializedSize() {
     int size = memoizedSize;
     if (size != -1) return size;
@@ -172,29 +247,34 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(1, bindingDeltas_.get(i));
     }
+    for (int i = 0; i < auditConfigDeltas_.size(); i++) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(2, auditConfigDeltas_.get(i));
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
   }
 
-  @java.lang.Override
-  public boolean equals(final java.lang.Object obj) {
+  @Override
+  public boolean equals(final Object obj) {
     if (obj == this) {
      return true;
     }
-    if (!(obj instanceof com.google.iam.v1.PolicyDelta)) {
+    if (!(obj instanceof PolicyDelta)) {
       return super.equals(obj);
     }
-    com.google.iam.v1.PolicyDelta other = (com.google.iam.v1.PolicyDelta) obj;
+    PolicyDelta other = (PolicyDelta) obj;
 
-    boolean result = true;
-    result = result && getBindingDeltasList()
-        .equals(other.getBindingDeltasList());
-    result = result && unknownFields.equals(other.unknownFields);
-    return result;
+    if (!getBindingDeltasList()
+        .equals(other.getBindingDeltasList())) return false;
+    if (!getAuditConfigDeltasList()
+        .equals(other.getAuditConfigDeltasList())) return false;
+    if (!unknownFields.equals(other.unknownFields)) return false;
+    return true;
   }
 
-  @java.lang.Override
+  @Override
   public int hashCode() {
     if (memoizedHashCode != 0) {
       return memoizedHashCode;
@@ -205,74 +285,78 @@ private static final long serialVersionUID = 0L;
       hash = (37 * hash) + BINDING_DELTAS_FIELD_NUMBER;
       hash = (53 * hash) + getBindingDeltasList().hashCode();
     }
+    if (getAuditConfigDeltasCount() > 0) {
+      hash = (37 * hash) + AUDIT_CONFIG_DELTAS_FIELD_NUMBER;
+      hash = (53 * hash) + getAuditConfigDeltasList().hashCode();
+    }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
   }
 
-  public static com.google.iam.v1.PolicyDelta parseFrom(
+  public static PolicyDelta parseFrom(
       java.nio.ByteBuffer data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static com.google.iam.v1.PolicyDelta parseFrom(
+  public static PolicyDelta parseFrom(
       java.nio.ByteBuffer data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static com.google.iam.v1.PolicyDelta parseFrom(
+  public static PolicyDelta parseFrom(
       com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static com.google.iam.v1.PolicyDelta parseFrom(
+  public static PolicyDelta parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static com.google.iam.v1.PolicyDelta parseFrom(byte[] data)
+  public static PolicyDelta parseFrom(byte[] data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static com.google.iam.v1.PolicyDelta parseFrom(
+  public static PolicyDelta parseFrom(
       byte[] data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static com.google.iam.v1.PolicyDelta parseFrom(java.io.InputStream input)
+  public static PolicyDelta parseFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input);
   }
-  public static com.google.iam.v1.PolicyDelta parseFrom(
+  public static PolicyDelta parseFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input, extensionRegistry);
   }
-  public static com.google.iam.v1.PolicyDelta parseDelimitedFrom(java.io.InputStream input)
+  public static PolicyDelta parseDelimitedFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseDelimitedWithIOException(PARSER, input);
   }
-  public static com.google.iam.v1.PolicyDelta parseDelimitedFrom(
+  public static PolicyDelta parseDelimitedFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
   }
-  public static com.google.iam.v1.PolicyDelta parseFrom(
+  public static PolicyDelta parseFrom(
       com.google.protobuf.CodedInputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input);
   }
-  public static com.google.iam.v1.PolicyDelta parseFrom(
+  public static PolicyDelta parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
@@ -280,21 +364,23 @@ private static final long serialVersionUID = 0L;
         .parseWithIOException(PARSER, input, extensionRegistry);
   }
 
+  @Override
   public Builder newBuilderForType() { return newBuilder(); }
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
-  public static Builder newBuilder(com.google.iam.v1.PolicyDelta prototype) {
+  public static Builder newBuilder(PolicyDelta prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
+  @Override
   public Builder toBuilder() {
     return this == DEFAULT_INSTANCE
         ? new Builder() : new Builder().mergeFrom(this);
   }
 
-  @java.lang.Override
+  @Override
   protected Builder newBuilderForType(
-      com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      BuilderParent parent) {
     Builder builder = new Builder(parent);
     return builder;
   }
@@ -314,11 +400,12 @@ private static final long serialVersionUID = 0L;
       return com.google.iam.v1.PolicyProto.internal_static_google_iam_v1_PolicyDelta_descriptor;
     }
 
-    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+    @Override
+    protected FieldAccessorTable
         internalGetFieldAccessorTable() {
       return com.google.iam.v1.PolicyProto.internal_static_google_iam_v1_PolicyDelta_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.google.iam.v1.PolicyDelta.class, com.google.iam.v1.PolicyDelta.Builder.class);
+              PolicyDelta.class, Builder.class);
     }
 
     // Construct using com.google.iam.v1.PolicyDelta.newBuilder()
@@ -327,7 +414,7 @@ private static final long serialVersionUID = 0L;
     }
 
     private Builder(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        BuilderParent parent) {
       super(parent);
       maybeForceBuilderInitialization();
     }
@@ -335,8 +422,10 @@ private static final long serialVersionUID = 0L;
       if (com.google.protobuf.GeneratedMessageV3
               .alwaysUseFieldBuilders) {
         getBindingDeltasFieldBuilder();
+        getAuditConfigDeltasFieldBuilder();
       }
     }
+    @Override
     public Builder clear() {
       super.clear();
       if (bindingDeltasBuilder_ == null) {
@@ -345,31 +434,41 @@ private static final long serialVersionUID = 0L;
       } else {
         bindingDeltasBuilder_.clear();
       }
+      if (auditConfigDeltasBuilder_ == null) {
+        auditConfigDeltas_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000002);
+      } else {
+        auditConfigDeltasBuilder_.clear();
+      }
       return this;
     }
 
+    @Override
     public com.google.protobuf.Descriptors.Descriptor
         getDescriptorForType() {
       return com.google.iam.v1.PolicyProto.internal_static_google_iam_v1_PolicyDelta_descriptor;
     }
 
-    public com.google.iam.v1.PolicyDelta getDefaultInstanceForType() {
-      return com.google.iam.v1.PolicyDelta.getDefaultInstance();
+    @Override
+    public PolicyDelta getDefaultInstanceForType() {
+      return PolicyDelta.getDefaultInstance();
     }
 
-    public com.google.iam.v1.PolicyDelta build() {
-      com.google.iam.v1.PolicyDelta result = buildPartial();
+    @Override
+    public PolicyDelta build() {
+      PolicyDelta result = buildPartial();
       if (!result.isInitialized()) {
         throw newUninitializedMessageException(result);
       }
       return result;
     }
 
-    public com.google.iam.v1.PolicyDelta buildPartial() {
-      com.google.iam.v1.PolicyDelta result = new com.google.iam.v1.PolicyDelta(this);
+    @Override
+    public PolicyDelta buildPartial() {
+      PolicyDelta result = new PolicyDelta(this);
       int from_bitField0_ = bitField0_;
       if (bindingDeltasBuilder_ == null) {
-        if (((bitField0_ & 0x00000001) == 0x00000001)) {
+        if (((bitField0_ & 0x00000001) != 0)) {
           bindingDeltas_ = java.util.Collections.unmodifiableList(bindingDeltas_);
           bitField0_ = (bitField0_ & ~0x00000001);
         }
@@ -377,47 +476,63 @@ private static final long serialVersionUID = 0L;
       } else {
         result.bindingDeltas_ = bindingDeltasBuilder_.build();
       }
+      if (auditConfigDeltasBuilder_ == null) {
+        if (((bitField0_ & 0x00000002) != 0)) {
+          auditConfigDeltas_ = java.util.Collections.unmodifiableList(auditConfigDeltas_);
+          bitField0_ = (bitField0_ & ~0x00000002);
+        }
+        result.auditConfigDeltas_ = auditConfigDeltas_;
+      } else {
+        result.auditConfigDeltas_ = auditConfigDeltasBuilder_.build();
+      }
       onBuilt();
       return result;
     }
 
+    @Override
     public Builder clone() {
-      return (Builder) super.clone();
+      return super.clone();
     }
+    @Override
     public Builder setField(
         com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
-      return (Builder) super.setField(field, value);
+        Object value) {
+      return super.setField(field, value);
     }
+    @Override
     public Builder clearField(
         com.google.protobuf.Descriptors.FieldDescriptor field) {
-      return (Builder) super.clearField(field);
+      return super.clearField(field);
     }
+    @Override
     public Builder clearOneof(
         com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-      return (Builder) super.clearOneof(oneof);
+      return super.clearOneof(oneof);
     }
+    @Override
     public Builder setRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field,
-        int index, java.lang.Object value) {
-      return (Builder) super.setRepeatedField(field, index, value);
+        int index, Object value) {
+      return super.setRepeatedField(field, index, value);
     }
+    @Override
     public Builder addRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
-      return (Builder) super.addRepeatedField(field, value);
+        Object value) {
+      return super.addRepeatedField(field, value);
     }
+    @Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
-      if (other instanceof com.google.iam.v1.PolicyDelta) {
-        return mergeFrom((com.google.iam.v1.PolicyDelta)other);
+      if (other instanceof PolicyDelta) {
+        return mergeFrom((PolicyDelta)other);
       } else {
         super.mergeFrom(other);
         return this;
       }
     }
 
-    public Builder mergeFrom(com.google.iam.v1.PolicyDelta other) {
-      if (other == com.google.iam.v1.PolicyDelta.getDefaultInstance()) return this;
+    public Builder mergeFrom(PolicyDelta other) {
+      if (other == PolicyDelta.getDefaultInstance()) return this;
       if (bindingDeltasBuilder_ == null) {
         if (!other.bindingDeltas_.isEmpty()) {
           if (bindingDeltas_.isEmpty()) {
@@ -444,24 +559,52 @@ private static final long serialVersionUID = 0L;
           }
         }
       }
+      if (auditConfigDeltasBuilder_ == null) {
+        if (!other.auditConfigDeltas_.isEmpty()) {
+          if (auditConfigDeltas_.isEmpty()) {
+            auditConfigDeltas_ = other.auditConfigDeltas_;
+            bitField0_ = (bitField0_ & ~0x00000002);
+          } else {
+            ensureAuditConfigDeltasIsMutable();
+            auditConfigDeltas_.addAll(other.auditConfigDeltas_);
+          }
+          onChanged();
+        }
+      } else {
+        if (!other.auditConfigDeltas_.isEmpty()) {
+          if (auditConfigDeltasBuilder_.isEmpty()) {
+            auditConfigDeltasBuilder_.dispose();
+            auditConfigDeltasBuilder_ = null;
+            auditConfigDeltas_ = other.auditConfigDeltas_;
+            bitField0_ = (bitField0_ & ~0x00000002);
+            auditConfigDeltasBuilder_ = 
+              com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
+                 getAuditConfigDeltasFieldBuilder() : null;
+          } else {
+            auditConfigDeltasBuilder_.addAllMessages(other.auditConfigDeltas_);
+          }
+        }
+      }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
       return this;
     }
 
+    @Override
     public final boolean isInitialized() {
       return true;
     }
 
+    @Override
     public Builder mergeFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      com.google.iam.v1.PolicyDelta parsedMessage = null;
+      PolicyDelta parsedMessage = null;
       try {
         parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage = (com.google.iam.v1.PolicyDelta) e.getUnfinishedMessage();
+        parsedMessage = (PolicyDelta) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
         if (parsedMessage != null) {
@@ -475,7 +618,7 @@ private static final long serialVersionUID = 0L;
     private java.util.List<com.google.iam.v1.BindingDelta> bindingDeltas_ =
       java.util.Collections.emptyList();
     private void ensureBindingDeltasIsMutable() {
-      if (!((bitField0_ & 0x00000001) == 0x00000001)) {
+      if (!((bitField0_ & 0x00000001) != 0)) {
         bindingDeltas_ = new java.util.ArrayList<com.google.iam.v1.BindingDelta>(bindingDeltas_);
         bitField0_ |= 0x00000001;
        }
@@ -650,7 +793,7 @@ private static final long serialVersionUID = 0L;
      * <code>repeated .google.iam.v1.BindingDelta binding_deltas = 1;</code>
      */
     public Builder addAllBindingDeltas(
-        java.lang.Iterable<? extends com.google.iam.v1.BindingDelta> values) {
+        Iterable<? extends com.google.iam.v1.BindingDelta> values) {
       if (bindingDeltasBuilder_ == null) {
         ensureBindingDeltasIsMutable();
         com.google.protobuf.AbstractMessageLite.Builder.addAll(
@@ -776,18 +919,332 @@ private static final long serialVersionUID = 0L;
         bindingDeltasBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
             com.google.iam.v1.BindingDelta, com.google.iam.v1.BindingDelta.Builder, com.google.iam.v1.BindingDeltaOrBuilder>(
                 bindingDeltas_,
-                ((bitField0_ & 0x00000001) == 0x00000001),
+                ((bitField0_ & 0x00000001) != 0),
                 getParentForChildren(),
                 isClean());
         bindingDeltas_ = null;
       }
       return bindingDeltasBuilder_;
     }
-    public final Builder setUnknownFields(
-        final com.google.protobuf.UnknownFieldSet unknownFields) {
-      return super.setUnknownFieldsProto3(unknownFields);
+
+    private java.util.List<com.google.iam.v1.AuditConfigDelta> auditConfigDeltas_ =
+      java.util.Collections.emptyList();
+    private void ensureAuditConfigDeltasIsMutable() {
+      if (!((bitField0_ & 0x00000002) != 0)) {
+        auditConfigDeltas_ = new java.util.ArrayList<com.google.iam.v1.AuditConfigDelta>(auditConfigDeltas_);
+        bitField0_ |= 0x00000002;
+       }
     }
 
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+        com.google.iam.v1.AuditConfigDelta, com.google.iam.v1.AuditConfigDelta.Builder, com.google.iam.v1.AuditConfigDeltaOrBuilder> auditConfigDeltasBuilder_;
+
+    /**
+     * <pre>
+     * The delta for AuditConfigs between two policies.
+     * </pre>
+     *
+     * <code>repeated .google.iam.v1.AuditConfigDelta audit_config_deltas = 2;</code>
+     */
+    public java.util.List<com.google.iam.v1.AuditConfigDelta> getAuditConfigDeltasList() {
+      if (auditConfigDeltasBuilder_ == null) {
+        return java.util.Collections.unmodifiableList(auditConfigDeltas_);
+      } else {
+        return auditConfigDeltasBuilder_.getMessageList();
+      }
+    }
+    /**
+     * <pre>
+     * The delta for AuditConfigs between two policies.
+     * </pre>
+     *
+     * <code>repeated .google.iam.v1.AuditConfigDelta audit_config_deltas = 2;</code>
+     */
+    public int getAuditConfigDeltasCount() {
+      if (auditConfigDeltasBuilder_ == null) {
+        return auditConfigDeltas_.size();
+      } else {
+        return auditConfigDeltasBuilder_.getCount();
+      }
+    }
+    /**
+     * <pre>
+     * The delta for AuditConfigs between two policies.
+     * </pre>
+     *
+     * <code>repeated .google.iam.v1.AuditConfigDelta audit_config_deltas = 2;</code>
+     */
+    public com.google.iam.v1.AuditConfigDelta getAuditConfigDeltas(int index) {
+      if (auditConfigDeltasBuilder_ == null) {
+        return auditConfigDeltas_.get(index);
+      } else {
+        return auditConfigDeltasBuilder_.getMessage(index);
+      }
+    }
+    /**
+     * <pre>
+     * The delta for AuditConfigs between two policies.
+     * </pre>
+     *
+     * <code>repeated .google.iam.v1.AuditConfigDelta audit_config_deltas = 2;</code>
+     */
+    public Builder setAuditConfigDeltas(
+        int index, com.google.iam.v1.AuditConfigDelta value) {
+      if (auditConfigDeltasBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureAuditConfigDeltasIsMutable();
+        auditConfigDeltas_.set(index, value);
+        onChanged();
+      } else {
+        auditConfigDeltasBuilder_.setMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * The delta for AuditConfigs between two policies.
+     * </pre>
+     *
+     * <code>repeated .google.iam.v1.AuditConfigDelta audit_config_deltas = 2;</code>
+     */
+    public Builder setAuditConfigDeltas(
+        int index, com.google.iam.v1.AuditConfigDelta.Builder builderForValue) {
+      if (auditConfigDeltasBuilder_ == null) {
+        ensureAuditConfigDeltasIsMutable();
+        auditConfigDeltas_.set(index, builderForValue.build());
+        onChanged();
+      } else {
+        auditConfigDeltasBuilder_.setMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * The delta for AuditConfigs between two policies.
+     * </pre>
+     *
+     * <code>repeated .google.iam.v1.AuditConfigDelta audit_config_deltas = 2;</code>
+     */
+    public Builder addAuditConfigDeltas(com.google.iam.v1.AuditConfigDelta value) {
+      if (auditConfigDeltasBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureAuditConfigDeltasIsMutable();
+        auditConfigDeltas_.add(value);
+        onChanged();
+      } else {
+        auditConfigDeltasBuilder_.addMessage(value);
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * The delta for AuditConfigs between two policies.
+     * </pre>
+     *
+     * <code>repeated .google.iam.v1.AuditConfigDelta audit_config_deltas = 2;</code>
+     */
+    public Builder addAuditConfigDeltas(
+        int index, com.google.iam.v1.AuditConfigDelta value) {
+      if (auditConfigDeltasBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureAuditConfigDeltasIsMutable();
+        auditConfigDeltas_.add(index, value);
+        onChanged();
+      } else {
+        auditConfigDeltasBuilder_.addMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * The delta for AuditConfigs between two policies.
+     * </pre>
+     *
+     * <code>repeated .google.iam.v1.AuditConfigDelta audit_config_deltas = 2;</code>
+     */
+    public Builder addAuditConfigDeltas(
+        com.google.iam.v1.AuditConfigDelta.Builder builderForValue) {
+      if (auditConfigDeltasBuilder_ == null) {
+        ensureAuditConfigDeltasIsMutable();
+        auditConfigDeltas_.add(builderForValue.build());
+        onChanged();
+      } else {
+        auditConfigDeltasBuilder_.addMessage(builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * The delta for AuditConfigs between two policies.
+     * </pre>
+     *
+     * <code>repeated .google.iam.v1.AuditConfigDelta audit_config_deltas = 2;</code>
+     */
+    public Builder addAuditConfigDeltas(
+        int index, com.google.iam.v1.AuditConfigDelta.Builder builderForValue) {
+      if (auditConfigDeltasBuilder_ == null) {
+        ensureAuditConfigDeltasIsMutable();
+        auditConfigDeltas_.add(index, builderForValue.build());
+        onChanged();
+      } else {
+        auditConfigDeltasBuilder_.addMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * The delta for AuditConfigs between two policies.
+     * </pre>
+     *
+     * <code>repeated .google.iam.v1.AuditConfigDelta audit_config_deltas = 2;</code>
+     */
+    public Builder addAllAuditConfigDeltas(
+        Iterable<? extends com.google.iam.v1.AuditConfigDelta> values) {
+      if (auditConfigDeltasBuilder_ == null) {
+        ensureAuditConfigDeltasIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(
+            values, auditConfigDeltas_);
+        onChanged();
+      } else {
+        auditConfigDeltasBuilder_.addAllMessages(values);
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * The delta for AuditConfigs between two policies.
+     * </pre>
+     *
+     * <code>repeated .google.iam.v1.AuditConfigDelta audit_config_deltas = 2;</code>
+     */
+    public Builder clearAuditConfigDeltas() {
+      if (auditConfigDeltasBuilder_ == null) {
+        auditConfigDeltas_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000002);
+        onChanged();
+      } else {
+        auditConfigDeltasBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * The delta for AuditConfigs between two policies.
+     * </pre>
+     *
+     * <code>repeated .google.iam.v1.AuditConfigDelta audit_config_deltas = 2;</code>
+     */
+    public Builder removeAuditConfigDeltas(int index) {
+      if (auditConfigDeltasBuilder_ == null) {
+        ensureAuditConfigDeltasIsMutable();
+        auditConfigDeltas_.remove(index);
+        onChanged();
+      } else {
+        auditConfigDeltasBuilder_.remove(index);
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * The delta for AuditConfigs between two policies.
+     * </pre>
+     *
+     * <code>repeated .google.iam.v1.AuditConfigDelta audit_config_deltas = 2;</code>
+     */
+    public com.google.iam.v1.AuditConfigDelta.Builder getAuditConfigDeltasBuilder(
+        int index) {
+      return getAuditConfigDeltasFieldBuilder().getBuilder(index);
+    }
+    /**
+     * <pre>
+     * The delta for AuditConfigs between two policies.
+     * </pre>
+     *
+     * <code>repeated .google.iam.v1.AuditConfigDelta audit_config_deltas = 2;</code>
+     */
+    public com.google.iam.v1.AuditConfigDeltaOrBuilder getAuditConfigDeltasOrBuilder(
+        int index) {
+      if (auditConfigDeltasBuilder_ == null) {
+        return auditConfigDeltas_.get(index);  } else {
+        return auditConfigDeltasBuilder_.getMessageOrBuilder(index);
+      }
+    }
+    /**
+     * <pre>
+     * The delta for AuditConfigs between two policies.
+     * </pre>
+     *
+     * <code>repeated .google.iam.v1.AuditConfigDelta audit_config_deltas = 2;</code>
+     */
+    public java.util.List<? extends com.google.iam.v1.AuditConfigDeltaOrBuilder> 
+         getAuditConfigDeltasOrBuilderList() {
+      if (auditConfigDeltasBuilder_ != null) {
+        return auditConfigDeltasBuilder_.getMessageOrBuilderList();
+      } else {
+        return java.util.Collections.unmodifiableList(auditConfigDeltas_);
+      }
+    }
+    /**
+     * <pre>
+     * The delta for AuditConfigs between two policies.
+     * </pre>
+     *
+     * <code>repeated .google.iam.v1.AuditConfigDelta audit_config_deltas = 2;</code>
+     */
+    public com.google.iam.v1.AuditConfigDelta.Builder addAuditConfigDeltasBuilder() {
+      return getAuditConfigDeltasFieldBuilder().addBuilder(
+          com.google.iam.v1.AuditConfigDelta.getDefaultInstance());
+    }
+    /**
+     * <pre>
+     * The delta for AuditConfigs between two policies.
+     * </pre>
+     *
+     * <code>repeated .google.iam.v1.AuditConfigDelta audit_config_deltas = 2;</code>
+     */
+    public com.google.iam.v1.AuditConfigDelta.Builder addAuditConfigDeltasBuilder(
+        int index) {
+      return getAuditConfigDeltasFieldBuilder().addBuilder(
+          index, com.google.iam.v1.AuditConfigDelta.getDefaultInstance());
+    }
+    /**
+     * <pre>
+     * The delta for AuditConfigs between two policies.
+     * </pre>
+     *
+     * <code>repeated .google.iam.v1.AuditConfigDelta audit_config_deltas = 2;</code>
+     */
+    public java.util.List<com.google.iam.v1.AuditConfigDelta.Builder> 
+         getAuditConfigDeltasBuilderList() {
+      return getAuditConfigDeltasFieldBuilder().getBuilderList();
+    }
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+        com.google.iam.v1.AuditConfigDelta, com.google.iam.v1.AuditConfigDelta.Builder, com.google.iam.v1.AuditConfigDeltaOrBuilder> 
+        getAuditConfigDeltasFieldBuilder() {
+      if (auditConfigDeltasBuilder_ == null) {
+        auditConfigDeltasBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
+            com.google.iam.v1.AuditConfigDelta, com.google.iam.v1.AuditConfigDelta.Builder, com.google.iam.v1.AuditConfigDeltaOrBuilder>(
+                auditConfigDeltas_,
+                ((bitField0_ & 0x00000002) != 0),
+                getParentForChildren(),
+                isClean());
+        auditConfigDeltas_ = null;
+      }
+      return auditConfigDeltasBuilder_;
+    }
+    @Override
+    public final Builder setUnknownFields(
+        final com.google.protobuf.UnknownFieldSet unknownFields) {
+      return super.setUnknownFields(unknownFields);
+    }
+
+    @Override
     public final Builder mergeUnknownFields(
         final com.google.protobuf.UnknownFieldSet unknownFields) {
       return super.mergeUnknownFields(unknownFields);
@@ -798,17 +1255,18 @@ private static final long serialVersionUID = 0L;
   }
 
   // @@protoc_insertion_point(class_scope:google.iam.v1.PolicyDelta)
-  private static final com.google.iam.v1.PolicyDelta DEFAULT_INSTANCE;
+  private static final PolicyDelta DEFAULT_INSTANCE;
   static {
-    DEFAULT_INSTANCE = new com.google.iam.v1.PolicyDelta();
+    DEFAULT_INSTANCE = new PolicyDelta();
   }
 
-  public static com.google.iam.v1.PolicyDelta getDefaultInstance() {
+  public static PolicyDelta getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
 
   private static final com.google.protobuf.Parser<PolicyDelta>
       PARSER = new com.google.protobuf.AbstractParser<PolicyDelta>() {
+    @Override
     public PolicyDelta parsePartialFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -821,12 +1279,13 @@ private static final long serialVersionUID = 0L;
     return PARSER;
   }
 
-  @java.lang.Override
+  @Override
   public com.google.protobuf.Parser<PolicyDelta> getParserForType() {
     return PARSER;
   }
 
-  public com.google.iam.v1.PolicyDelta getDefaultInstanceForType() {
+  @Override
+  public PolicyDelta getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
 

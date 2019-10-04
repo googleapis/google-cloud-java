@@ -24,7 +24,7 @@ private static final long serialVersionUID = 0L;
     members_ = com.google.protobuf.LazyStringArrayList.EMPTY;
   }
 
-  @java.lang.Override
+  @Override
   public final com.google.protobuf.UnknownFieldSet
   getUnknownFields() {
     return this.unknownFields;
@@ -35,7 +35,7 @@ private static final long serialVersionUID = 0L;
       throws com.google.protobuf.InvalidProtocolBufferException {
     this();
     if (extensionRegistry == null) {
-      throw new java.lang.NullPointerException();
+      throw new NullPointerException();
     }
     int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
@@ -48,26 +48,39 @@ private static final long serialVersionUID = 0L;
           case 0:
             done = true;
             break;
-          default: {
-            if (!parseUnknownFieldProto3(
-                input, unknownFields, extensionRegistry, tag)) {
-              done = true;
-            }
-            break;
-          }
           case 10: {
-            java.lang.String s = input.readStringRequireUtf8();
+            String s = input.readStringRequireUtf8();
 
             role_ = s;
             break;
           }
           case 18: {
-            java.lang.String s = input.readStringRequireUtf8();
-            if (!((mutable_bitField0_ & 0x00000002) == 0x00000002)) {
+            String s = input.readStringRequireUtf8();
+            if (!((mutable_bitField0_ & 0x00000002) != 0)) {
               members_ = new com.google.protobuf.LazyStringArrayList();
               mutable_bitField0_ |= 0x00000002;
             }
             members_.add(s);
+            break;
+          }
+          case 26: {
+            com.google.type.Expr.Builder subBuilder = null;
+            if (condition_ != null) {
+              subBuilder = condition_.toBuilder();
+            }
+            condition_ = input.readMessage(com.google.type.Expr.parser(), extensionRegistry);
+            if (subBuilder != null) {
+              subBuilder.mergeFrom(condition_);
+              condition_ = subBuilder.buildPartial();
+            }
+
+            break;
+          }
+          default: {
+            if (!parseUnknownField(
+                input, unknownFields, extensionRegistry, tag)) {
+              done = true;
+            }
             break;
           }
         }
@@ -78,7 +91,7 @@ private static final long serialVersionUID = 0L;
       throw new com.google.protobuf.InvalidProtocolBufferException(
           e).setUnfinishedMessage(this);
     } finally {
-      if (((mutable_bitField0_ & 0x00000002) == 0x00000002)) {
+      if (((mutable_bitField0_ & 0x00000002) != 0)) {
         members_ = members_.getUnmodifiableView();
       }
       this.unknownFields = unknownFields.build();
@@ -90,33 +103,33 @@ private static final long serialVersionUID = 0L;
     return com.google.iam.v1.PolicyProto.internal_static_google_iam_v1_Binding_descriptor;
   }
 
-  protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+  @Override
+  protected FieldAccessorTable
       internalGetFieldAccessorTable() {
     return com.google.iam.v1.PolicyProto.internal_static_google_iam_v1_Binding_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-            com.google.iam.v1.Binding.class, com.google.iam.v1.Binding.Builder.class);
+            Binding.class, Builder.class);
   }
 
   private int bitField0_;
   public static final int ROLE_FIELD_NUMBER = 1;
-  private volatile java.lang.Object role_;
+  private volatile Object role_;
   /**
    * <pre>
    * Role that is assigned to `members`.
    * For example, `roles/viewer`, `roles/editor`, or `roles/owner`.
-   * Required
    * </pre>
    *
    * <code>string role = 1;</code>
    */
-  public java.lang.String getRole() {
-    java.lang.Object ref = role_;
-    if (ref instanceof java.lang.String) {
-      return (java.lang.String) ref;
+  public String getRole() {
+    Object ref = role_;
+    if (ref instanceof String) {
+      return (String) ref;
     } else {
       com.google.protobuf.ByteString bs = 
           (com.google.protobuf.ByteString) ref;
-      java.lang.String s = bs.toStringUtf8();
+      String s = bs.toStringUtf8();
       role_ = s;
       return s;
     }
@@ -125,18 +138,17 @@ private static final long serialVersionUID = 0L;
    * <pre>
    * Role that is assigned to `members`.
    * For example, `roles/viewer`, `roles/editor`, or `roles/owner`.
-   * Required
    * </pre>
    *
    * <code>string role = 1;</code>
    */
   public com.google.protobuf.ByteString
       getRoleBytes() {
-    java.lang.Object ref = role_;
-    if (ref instanceof java.lang.String) {
+    Object ref = role_;
+    if (ref instanceof String) {
       com.google.protobuf.ByteString b = 
           com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
+              (String) ref);
       role_ = b;
       return b;
     } else {
@@ -155,12 +167,12 @@ private static final long serialVersionUID = 0L;
    * * `allAuthenticatedUsers`: A special identifier that represents anyone
    *    who is authenticated with a Google account or a service account.
    * * `user:{emailid}`: An email address that represents a specific Google
-   *    account. For example, `alice&#64;gmail.com` or `joe&#64;example.com`.
+   *    account. For example, `alice&#64;example.com` .
    * * `serviceAccount:{emailid}`: An email address that represents a service
    *    account. For example, `my-other-app&#64;appspot.gserviceaccount.com`.
    * * `group:{emailid}`: An email address that represents a Google group.
    *    For example, `admins&#64;example.com`.
-   * * `domain:{domain}`: A Google Apps domain name that represents all the
+   * * `domain:{domain}`: The G Suite domain (primary) that represents all the
    *    users of that domain. For example, `google.com` or `example.com`.
    * </pre>
    *
@@ -179,12 +191,12 @@ private static final long serialVersionUID = 0L;
    * * `allAuthenticatedUsers`: A special identifier that represents anyone
    *    who is authenticated with a Google account or a service account.
    * * `user:{emailid}`: An email address that represents a specific Google
-   *    account. For example, `alice&#64;gmail.com` or `joe&#64;example.com`.
+   *    account. For example, `alice&#64;example.com` .
    * * `serviceAccount:{emailid}`: An email address that represents a service
    *    account. For example, `my-other-app&#64;appspot.gserviceaccount.com`.
    * * `group:{emailid}`: An email address that represents a Google group.
    *    For example, `admins&#64;example.com`.
-   * * `domain:{domain}`: A Google Apps domain name that represents all the
+   * * `domain:{domain}`: The G Suite domain (primary) that represents all the
    *    users of that domain. For example, `google.com` or `example.com`.
    * </pre>
    *
@@ -202,18 +214,18 @@ private static final long serialVersionUID = 0L;
    * * `allAuthenticatedUsers`: A special identifier that represents anyone
    *    who is authenticated with a Google account or a service account.
    * * `user:{emailid}`: An email address that represents a specific Google
-   *    account. For example, `alice&#64;gmail.com` or `joe&#64;example.com`.
+   *    account. For example, `alice&#64;example.com` .
    * * `serviceAccount:{emailid}`: An email address that represents a service
    *    account. For example, `my-other-app&#64;appspot.gserviceaccount.com`.
    * * `group:{emailid}`: An email address that represents a Google group.
    *    For example, `admins&#64;example.com`.
-   * * `domain:{domain}`: A Google Apps domain name that represents all the
+   * * `domain:{domain}`: The G Suite domain (primary) that represents all the
    *    users of that domain. For example, `google.com` or `example.com`.
    * </pre>
    *
    * <code>repeated string members = 2;</code>
    */
-  public java.lang.String getMembers(int index) {
+  public String getMembers(int index) {
     return members_.get(index);
   }
   /**
@@ -225,12 +237,12 @@ private static final long serialVersionUID = 0L;
    * * `allAuthenticatedUsers`: A special identifier that represents anyone
    *    who is authenticated with a Google account or a service account.
    * * `user:{emailid}`: An email address that represents a specific Google
-   *    account. For example, `alice&#64;gmail.com` or `joe&#64;example.com`.
+   *    account. For example, `alice&#64;example.com` .
    * * `serviceAccount:{emailid}`: An email address that represents a service
    *    account. For example, `my-other-app&#64;appspot.gserviceaccount.com`.
    * * `group:{emailid}`: An email address that represents a Google group.
    *    For example, `admins&#64;example.com`.
-   * * `domain:{domain}`: A Google Apps domain name that represents all the
+   * * `domain:{domain}`: The G Suite domain (primary) that represents all the
    *    users of that domain. For example, `google.com` or `example.com`.
    * </pre>
    *
@@ -241,7 +253,50 @@ private static final long serialVersionUID = 0L;
     return members_.getByteString(index);
   }
 
+  public static final int CONDITION_FIELD_NUMBER = 3;
+  private com.google.type.Expr condition_;
+  /**
+   * <pre>
+   * The condition that is associated with this binding.
+   * NOTE: An unsatisfied condition will not allow user access via current
+   * binding. Different bindings, including their conditions, are examined
+   * independently.
+   * </pre>
+   *
+   * <code>.google.type.Expr condition = 3;</code>
+   */
+  public boolean hasCondition() {
+    return condition_ != null;
+  }
+  /**
+   * <pre>
+   * The condition that is associated with this binding.
+   * NOTE: An unsatisfied condition will not allow user access via current
+   * binding. Different bindings, including their conditions, are examined
+   * independently.
+   * </pre>
+   *
+   * <code>.google.type.Expr condition = 3;</code>
+   */
+  public com.google.type.Expr getCondition() {
+    return condition_ == null ? com.google.type.Expr.getDefaultInstance() : condition_;
+  }
+  /**
+   * <pre>
+   * The condition that is associated with this binding.
+   * NOTE: An unsatisfied condition will not allow user access via current
+   * binding. Different bindings, including their conditions, are examined
+   * independently.
+   * </pre>
+   *
+   * <code>.google.type.Expr condition = 3;</code>
+   */
+  public com.google.type.ExprOrBuilder getConditionOrBuilder() {
+    return getCondition();
+  }
+
   private byte memoizedIsInitialized = -1;
+  @Override
   public final boolean isInitialized() {
     byte isInitialized = memoizedIsInitialized;
     if (isInitialized == 1) return true;
@@ -251,6 +306,7 @@ private static final long serialVersionUID = 0L;
     return true;
   }
 
+  @Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
     if (!getRoleBytes().isEmpty()) {
@@ -259,9 +315,13 @@ private static final long serialVersionUID = 0L;
     for (int i = 0; i < members_.size(); i++) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, members_.getRaw(i));
     }
+    if (condition_ != null) {
+      output.writeMessage(3, getCondition());
+    }
     unknownFields.writeTo(output);
   }
 
+  @Override
   public int getSerializedSize() {
     int size = memoizedSize;
     if (size != -1) return size;
@@ -278,31 +338,39 @@ private static final long serialVersionUID = 0L;
       size += dataSize;
       size += 1 * getMembersList().size();
     }
+    if (condition_ != null) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(3, getCondition());
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
   }
 
-  @java.lang.Override
-  public boolean equals(final java.lang.Object obj) {
+  @Override
+  public boolean equals(final Object obj) {
     if (obj == this) {
      return true;
     }
-    if (!(obj instanceof com.google.iam.v1.Binding)) {
+    if (!(obj instanceof Binding)) {
       return super.equals(obj);
     }
-    com.google.iam.v1.Binding other = (com.google.iam.v1.Binding) obj;
+    Binding other = (Binding) obj;
 
-    boolean result = true;
-    result = result && getRole()
-        .equals(other.getRole());
-    result = result && getMembersList()
-        .equals(other.getMembersList());
-    result = result && unknownFields.equals(other.unknownFields);
-    return result;
+    if (!getRole()
+        .equals(other.getRole())) return false;
+    if (!getMembersList()
+        .equals(other.getMembersList())) return false;
+    if (hasCondition() != other.hasCondition()) return false;
+    if (hasCondition()) {
+      if (!getCondition()
+          .equals(other.getCondition())) return false;
+    }
+    if (!unknownFields.equals(other.unknownFields)) return false;
+    return true;
   }
 
-  @java.lang.Override
+  @Override
   public int hashCode() {
     if (memoizedHashCode != 0) {
       return memoizedHashCode;
@@ -315,74 +383,78 @@ private static final long serialVersionUID = 0L;
       hash = (37 * hash) + MEMBERS_FIELD_NUMBER;
       hash = (53 * hash) + getMembersList().hashCode();
     }
+    if (hasCondition()) {
+      hash = (37 * hash) + CONDITION_FIELD_NUMBER;
+      hash = (53 * hash) + getCondition().hashCode();
+    }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
   }
 
-  public static com.google.iam.v1.Binding parseFrom(
+  public static Binding parseFrom(
       java.nio.ByteBuffer data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static com.google.iam.v1.Binding parseFrom(
+  public static Binding parseFrom(
       java.nio.ByteBuffer data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static com.google.iam.v1.Binding parseFrom(
+  public static Binding parseFrom(
       com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static com.google.iam.v1.Binding parseFrom(
+  public static Binding parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static com.google.iam.v1.Binding parseFrom(byte[] data)
+  public static Binding parseFrom(byte[] data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static com.google.iam.v1.Binding parseFrom(
+  public static Binding parseFrom(
       byte[] data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static com.google.iam.v1.Binding parseFrom(java.io.InputStream input)
+  public static Binding parseFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input);
   }
-  public static com.google.iam.v1.Binding parseFrom(
+  public static Binding parseFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input, extensionRegistry);
   }
-  public static com.google.iam.v1.Binding parseDelimitedFrom(java.io.InputStream input)
+  public static Binding parseDelimitedFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseDelimitedWithIOException(PARSER, input);
   }
-  public static com.google.iam.v1.Binding parseDelimitedFrom(
+  public static Binding parseDelimitedFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
   }
-  public static com.google.iam.v1.Binding parseFrom(
+  public static Binding parseFrom(
       com.google.protobuf.CodedInputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input);
   }
-  public static com.google.iam.v1.Binding parseFrom(
+  public static Binding parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
@@ -390,21 +462,23 @@ private static final long serialVersionUID = 0L;
         .parseWithIOException(PARSER, input, extensionRegistry);
   }
 
+  @Override
   public Builder newBuilderForType() { return newBuilder(); }
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
-  public static Builder newBuilder(com.google.iam.v1.Binding prototype) {
+  public static Builder newBuilder(Binding prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
+  @Override
   public Builder toBuilder() {
     return this == DEFAULT_INSTANCE
         ? new Builder() : new Builder().mergeFrom(this);
   }
 
-  @java.lang.Override
+  @Override
   protected Builder newBuilderForType(
-      com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      BuilderParent parent) {
     Builder builder = new Builder(parent);
     return builder;
   }
@@ -424,11 +498,12 @@ private static final long serialVersionUID = 0L;
       return com.google.iam.v1.PolicyProto.internal_static_google_iam_v1_Binding_descriptor;
     }
 
-    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+    @Override
+    protected FieldAccessorTable
         internalGetFieldAccessorTable() {
       return com.google.iam.v1.PolicyProto.internal_static_google_iam_v1_Binding_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.google.iam.v1.Binding.class, com.google.iam.v1.Binding.Builder.class);
+              Binding.class, Builder.class);
     }
 
     // Construct using com.google.iam.v1.Binding.newBuilder()
@@ -437,7 +512,7 @@ private static final long serialVersionUID = 0L;
     }
 
     private Builder(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        BuilderParent parent) {
       super(parent);
       maybeForceBuilderInitialization();
     }
@@ -446,84 +521,107 @@ private static final long serialVersionUID = 0L;
               .alwaysUseFieldBuilders) {
       }
     }
+    @Override
     public Builder clear() {
       super.clear();
       role_ = "";
 
       members_ = com.google.protobuf.LazyStringArrayList.EMPTY;
       bitField0_ = (bitField0_ & ~0x00000002);
+      if (conditionBuilder_ == null) {
+        condition_ = null;
+      } else {
+        condition_ = null;
+        conditionBuilder_ = null;
+      }
       return this;
     }
 
+    @Override
     public com.google.protobuf.Descriptors.Descriptor
         getDescriptorForType() {
       return com.google.iam.v1.PolicyProto.internal_static_google_iam_v1_Binding_descriptor;
     }
 
-    public com.google.iam.v1.Binding getDefaultInstanceForType() {
-      return com.google.iam.v1.Binding.getDefaultInstance();
+    @Override
+    public Binding getDefaultInstanceForType() {
+      return Binding.getDefaultInstance();
     }
 
-    public com.google.iam.v1.Binding build() {
-      com.google.iam.v1.Binding result = buildPartial();
+    @Override
+    public Binding build() {
+      Binding result = buildPartial();
       if (!result.isInitialized()) {
         throw newUninitializedMessageException(result);
       }
       return result;
     }
 
-    public com.google.iam.v1.Binding buildPartial() {
-      com.google.iam.v1.Binding result = new com.google.iam.v1.Binding(this);
+    @Override
+    public Binding buildPartial() {
+      Binding result = new Binding(this);
       int from_bitField0_ = bitField0_;
       int to_bitField0_ = 0;
       result.role_ = role_;
-      if (((bitField0_ & 0x00000002) == 0x00000002)) {
+      if (((bitField0_ & 0x00000002) != 0)) {
         members_ = members_.getUnmodifiableView();
         bitField0_ = (bitField0_ & ~0x00000002);
       }
       result.members_ = members_;
+      if (conditionBuilder_ == null) {
+        result.condition_ = condition_;
+      } else {
+        result.condition_ = conditionBuilder_.build();
+      }
       result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
 
+    @Override
     public Builder clone() {
-      return (Builder) super.clone();
+      return super.clone();
     }
+    @Override
     public Builder setField(
         com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
-      return (Builder) super.setField(field, value);
+        Object value) {
+      return super.setField(field, value);
     }
+    @Override
     public Builder clearField(
         com.google.protobuf.Descriptors.FieldDescriptor field) {
-      return (Builder) super.clearField(field);
+      return super.clearField(field);
     }
+    @Override
     public Builder clearOneof(
         com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-      return (Builder) super.clearOneof(oneof);
+      return super.clearOneof(oneof);
     }
+    @Override
     public Builder setRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field,
-        int index, java.lang.Object value) {
-      return (Builder) super.setRepeatedField(field, index, value);
+        int index, Object value) {
+      return super.setRepeatedField(field, index, value);
     }
+    @Override
     public Builder addRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
-      return (Builder) super.addRepeatedField(field, value);
+        Object value) {
+      return super.addRepeatedField(field, value);
     }
+    @Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
-      if (other instanceof com.google.iam.v1.Binding) {
-        return mergeFrom((com.google.iam.v1.Binding)other);
+      if (other instanceof Binding) {
+        return mergeFrom((Binding)other);
       } else {
         super.mergeFrom(other);
         return this;
       }
     }
 
-    public Builder mergeFrom(com.google.iam.v1.Binding other) {
-      if (other == com.google.iam.v1.Binding.getDefaultInstance()) return this;
+    public Builder mergeFrom(Binding other) {
+      if (other == Binding.getDefaultInstance()) return this;
       if (!other.getRole().isEmpty()) {
         role_ = other.role_;
         onChanged();
@@ -538,24 +636,29 @@ private static final long serialVersionUID = 0L;
         }
         onChanged();
       }
+      if (other.hasCondition()) {
+        mergeCondition(other.getCondition());
+      }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
       return this;
     }
 
+    @Override
     public final boolean isInitialized() {
       return true;
     }
 
+    @Override
     public Builder mergeFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      com.google.iam.v1.Binding parsedMessage = null;
+      Binding parsedMessage = null;
       try {
         parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage = (com.google.iam.v1.Binding) e.getUnfinishedMessage();
+        parsedMessage = (Binding) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
         if (parsedMessage != null) {
@@ -566,44 +669,42 @@ private static final long serialVersionUID = 0L;
     }
     private int bitField0_;
 
-    private java.lang.Object role_ = "";
+    private Object role_ = "";
     /**
      * <pre>
      * Role that is assigned to `members`.
      * For example, `roles/viewer`, `roles/editor`, or `roles/owner`.
-     * Required
      * </pre>
      *
      * <code>string role = 1;</code>
      */
-    public java.lang.String getRole() {
-      java.lang.Object ref = role_;
-      if (!(ref instanceof java.lang.String)) {
+    public String getRole() {
+      Object ref = role_;
+      if (!(ref instanceof String)) {
         com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
+        String s = bs.toStringUtf8();
         role_ = s;
         return s;
       } else {
-        return (java.lang.String) ref;
+        return (String) ref;
       }
     }
     /**
      * <pre>
      * Role that is assigned to `members`.
      * For example, `roles/viewer`, `roles/editor`, or `roles/owner`.
-     * Required
      * </pre>
      *
      * <code>string role = 1;</code>
      */
     public com.google.protobuf.ByteString
         getRoleBytes() {
-      java.lang.Object ref = role_;
+      Object ref = role_;
       if (ref instanceof String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
+                (String) ref);
         role_ = b;
         return b;
       } else {
@@ -614,13 +715,12 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * Role that is assigned to `members`.
      * For example, `roles/viewer`, `roles/editor`, or `roles/owner`.
-     * Required
      * </pre>
      *
      * <code>string role = 1;</code>
      */
     public Builder setRole(
-        java.lang.String value) {
+        String value) {
       if (value == null) {
     throw new NullPointerException();
   }
@@ -633,7 +733,6 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * Role that is assigned to `members`.
      * For example, `roles/viewer`, `roles/editor`, or `roles/owner`.
-     * Required
      * </pre>
      *
      * <code>string role = 1;</code>
@@ -648,7 +747,6 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * Role that is assigned to `members`.
      * For example, `roles/viewer`, `roles/editor`, or `roles/owner`.
-     * Required
      * </pre>
      *
      * <code>string role = 1;</code>
@@ -667,7 +765,7 @@ private static final long serialVersionUID = 0L;
 
     private com.google.protobuf.LazyStringList members_ = com.google.protobuf.LazyStringArrayList.EMPTY;
     private void ensureMembersIsMutable() {
-      if (!((bitField0_ & 0x00000002) == 0x00000002)) {
+      if (!((bitField0_ & 0x00000002) != 0)) {
         members_ = new com.google.protobuf.LazyStringArrayList(members_);
         bitField0_ |= 0x00000002;
        }
@@ -681,12 +779,12 @@ private static final long serialVersionUID = 0L;
      * * `allAuthenticatedUsers`: A special identifier that represents anyone
      *    who is authenticated with a Google account or a service account.
      * * `user:{emailid}`: An email address that represents a specific Google
-     *    account. For example, `alice&#64;gmail.com` or `joe&#64;example.com`.
+     *    account. For example, `alice&#64;example.com` .
      * * `serviceAccount:{emailid}`: An email address that represents a service
      *    account. For example, `my-other-app&#64;appspot.gserviceaccount.com`.
      * * `group:{emailid}`: An email address that represents a Google group.
      *    For example, `admins&#64;example.com`.
-     * * `domain:{domain}`: A Google Apps domain name that represents all the
+     * * `domain:{domain}`: The G Suite domain (primary) that represents all the
      *    users of that domain. For example, `google.com` or `example.com`.
      * </pre>
      *
@@ -705,12 +803,12 @@ private static final long serialVersionUID = 0L;
      * * `allAuthenticatedUsers`: A special identifier that represents anyone
      *    who is authenticated with a Google account or a service account.
      * * `user:{emailid}`: An email address that represents a specific Google
-     *    account. For example, `alice&#64;gmail.com` or `joe&#64;example.com`.
+     *    account. For example, `alice&#64;example.com` .
      * * `serviceAccount:{emailid}`: An email address that represents a service
      *    account. For example, `my-other-app&#64;appspot.gserviceaccount.com`.
      * * `group:{emailid}`: An email address that represents a Google group.
      *    For example, `admins&#64;example.com`.
-     * * `domain:{domain}`: A Google Apps domain name that represents all the
+     * * `domain:{domain}`: The G Suite domain (primary) that represents all the
      *    users of that domain. For example, `google.com` or `example.com`.
      * </pre>
      *
@@ -728,18 +826,18 @@ private static final long serialVersionUID = 0L;
      * * `allAuthenticatedUsers`: A special identifier that represents anyone
      *    who is authenticated with a Google account or a service account.
      * * `user:{emailid}`: An email address that represents a specific Google
-     *    account. For example, `alice&#64;gmail.com` or `joe&#64;example.com`.
+     *    account. For example, `alice&#64;example.com` .
      * * `serviceAccount:{emailid}`: An email address that represents a service
      *    account. For example, `my-other-app&#64;appspot.gserviceaccount.com`.
      * * `group:{emailid}`: An email address that represents a Google group.
      *    For example, `admins&#64;example.com`.
-     * * `domain:{domain}`: A Google Apps domain name that represents all the
+     * * `domain:{domain}`: The G Suite domain (primary) that represents all the
      *    users of that domain. For example, `google.com` or `example.com`.
      * </pre>
      *
      * <code>repeated string members = 2;</code>
      */
-    public java.lang.String getMembers(int index) {
+    public String getMembers(int index) {
       return members_.get(index);
     }
     /**
@@ -751,12 +849,12 @@ private static final long serialVersionUID = 0L;
      * * `allAuthenticatedUsers`: A special identifier that represents anyone
      *    who is authenticated with a Google account or a service account.
      * * `user:{emailid}`: An email address that represents a specific Google
-     *    account. For example, `alice&#64;gmail.com` or `joe&#64;example.com`.
+     *    account. For example, `alice&#64;example.com` .
      * * `serviceAccount:{emailid}`: An email address that represents a service
      *    account. For example, `my-other-app&#64;appspot.gserviceaccount.com`.
      * * `group:{emailid}`: An email address that represents a Google group.
      *    For example, `admins&#64;example.com`.
-     * * `domain:{domain}`: A Google Apps domain name that represents all the
+     * * `domain:{domain}`: The G Suite domain (primary) that represents all the
      *    users of that domain. For example, `google.com` or `example.com`.
      * </pre>
      *
@@ -775,19 +873,19 @@ private static final long serialVersionUID = 0L;
      * * `allAuthenticatedUsers`: A special identifier that represents anyone
      *    who is authenticated with a Google account or a service account.
      * * `user:{emailid}`: An email address that represents a specific Google
-     *    account. For example, `alice&#64;gmail.com` or `joe&#64;example.com`.
+     *    account. For example, `alice&#64;example.com` .
      * * `serviceAccount:{emailid}`: An email address that represents a service
      *    account. For example, `my-other-app&#64;appspot.gserviceaccount.com`.
      * * `group:{emailid}`: An email address that represents a Google group.
      *    For example, `admins&#64;example.com`.
-     * * `domain:{domain}`: A Google Apps domain name that represents all the
+     * * `domain:{domain}`: The G Suite domain (primary) that represents all the
      *    users of that domain. For example, `google.com` or `example.com`.
      * </pre>
      *
      * <code>repeated string members = 2;</code>
      */
     public Builder setMembers(
-        int index, java.lang.String value) {
+        int index, String value) {
       if (value == null) {
     throw new NullPointerException();
   }
@@ -805,19 +903,19 @@ private static final long serialVersionUID = 0L;
      * * `allAuthenticatedUsers`: A special identifier that represents anyone
      *    who is authenticated with a Google account or a service account.
      * * `user:{emailid}`: An email address that represents a specific Google
-     *    account. For example, `alice&#64;gmail.com` or `joe&#64;example.com`.
+     *    account. For example, `alice&#64;example.com` .
      * * `serviceAccount:{emailid}`: An email address that represents a service
      *    account. For example, `my-other-app&#64;appspot.gserviceaccount.com`.
      * * `group:{emailid}`: An email address that represents a Google group.
      *    For example, `admins&#64;example.com`.
-     * * `domain:{domain}`: A Google Apps domain name that represents all the
+     * * `domain:{domain}`: The G Suite domain (primary) that represents all the
      *    users of that domain. For example, `google.com` or `example.com`.
      * </pre>
      *
      * <code>repeated string members = 2;</code>
      */
     public Builder addMembers(
-        java.lang.String value) {
+        String value) {
       if (value == null) {
     throw new NullPointerException();
   }
@@ -835,19 +933,19 @@ private static final long serialVersionUID = 0L;
      * * `allAuthenticatedUsers`: A special identifier that represents anyone
      *    who is authenticated with a Google account or a service account.
      * * `user:{emailid}`: An email address that represents a specific Google
-     *    account. For example, `alice&#64;gmail.com` or `joe&#64;example.com`.
+     *    account. For example, `alice&#64;example.com` .
      * * `serviceAccount:{emailid}`: An email address that represents a service
      *    account. For example, `my-other-app&#64;appspot.gserviceaccount.com`.
      * * `group:{emailid}`: An email address that represents a Google group.
      *    For example, `admins&#64;example.com`.
-     * * `domain:{domain}`: A Google Apps domain name that represents all the
+     * * `domain:{domain}`: The G Suite domain (primary) that represents all the
      *    users of that domain. For example, `google.com` or `example.com`.
      * </pre>
      *
      * <code>repeated string members = 2;</code>
      */
     public Builder addAllMembers(
-        java.lang.Iterable<java.lang.String> values) {
+        Iterable<String> values) {
       ensureMembersIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(
           values, members_);
@@ -863,12 +961,12 @@ private static final long serialVersionUID = 0L;
      * * `allAuthenticatedUsers`: A special identifier that represents anyone
      *    who is authenticated with a Google account or a service account.
      * * `user:{emailid}`: An email address that represents a specific Google
-     *    account. For example, `alice&#64;gmail.com` or `joe&#64;example.com`.
+     *    account. For example, `alice&#64;example.com` .
      * * `serviceAccount:{emailid}`: An email address that represents a service
      *    account. For example, `my-other-app&#64;appspot.gserviceaccount.com`.
      * * `group:{emailid}`: An email address that represents a Google group.
      *    For example, `admins&#64;example.com`.
-     * * `domain:{domain}`: A Google Apps domain name that represents all the
+     * * `domain:{domain}`: The G Suite domain (primary) that represents all the
      *    users of that domain. For example, `google.com` or `example.com`.
      * </pre>
      *
@@ -889,12 +987,12 @@ private static final long serialVersionUID = 0L;
      * * `allAuthenticatedUsers`: A special identifier that represents anyone
      *    who is authenticated with a Google account or a service account.
      * * `user:{emailid}`: An email address that represents a specific Google
-     *    account. For example, `alice&#64;gmail.com` or `joe&#64;example.com`.
+     *    account. For example, `alice&#64;example.com` .
      * * `serviceAccount:{emailid}`: An email address that represents a service
      *    account. For example, `my-other-app&#64;appspot.gserviceaccount.com`.
      * * `group:{emailid}`: An email address that represents a Google group.
      *    For example, `admins&#64;example.com`.
-     * * `domain:{domain}`: A Google Apps domain name that represents all the
+     * * `domain:{domain}`: The G Suite domain (primary) that represents all the
      *    users of that domain. For example, `google.com` or `example.com`.
      * </pre>
      *
@@ -911,11 +1009,193 @@ private static final long serialVersionUID = 0L;
       onChanged();
       return this;
     }
+
+    private com.google.type.Expr condition_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.google.type.Expr, com.google.type.Expr.Builder, com.google.type.ExprOrBuilder> conditionBuilder_;
+    /**
+     * <pre>
+     * The condition that is associated with this binding.
+     * NOTE: An unsatisfied condition will not allow user access via current
+     * binding. Different bindings, including their conditions, are examined
+     * independently.
+     * </pre>
+     *
+     * <code>.google.type.Expr condition = 3;</code>
+     */
+    public boolean hasCondition() {
+      return conditionBuilder_ != null || condition_ != null;
+    }
+    /**
+     * <pre>
+     * The condition that is associated with this binding.
+     * NOTE: An unsatisfied condition will not allow user access via current
+     * binding. Different bindings, including their conditions, are examined
+     * independently.
+     * </pre>
+     *
+     * <code>.google.type.Expr condition = 3;</code>
+     */
+    public com.google.type.Expr getCondition() {
+      if (conditionBuilder_ == null) {
+        return condition_ == null ? com.google.type.Expr.getDefaultInstance() : condition_;
+      } else {
+        return conditionBuilder_.getMessage();
+      }
+    }
+    /**
+     * <pre>
+     * The condition that is associated with this binding.
+     * NOTE: An unsatisfied condition will not allow user access via current
+     * binding. Different bindings, including their conditions, are examined
+     * independently.
+     * </pre>
+     *
+     * <code>.google.type.Expr condition = 3;</code>
+     */
+    public Builder setCondition(com.google.type.Expr value) {
+      if (conditionBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        condition_ = value;
+        onChanged();
+      } else {
+        conditionBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * The condition that is associated with this binding.
+     * NOTE: An unsatisfied condition will not allow user access via current
+     * binding. Different bindings, including their conditions, are examined
+     * independently.
+     * </pre>
+     *
+     * <code>.google.type.Expr condition = 3;</code>
+     */
+    public Builder setCondition(
+        com.google.type.Expr.Builder builderForValue) {
+      if (conditionBuilder_ == null) {
+        condition_ = builderForValue.build();
+        onChanged();
+      } else {
+        conditionBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * The condition that is associated with this binding.
+     * NOTE: An unsatisfied condition will not allow user access via current
+     * binding. Different bindings, including their conditions, are examined
+     * independently.
+     * </pre>
+     *
+     * <code>.google.type.Expr condition = 3;</code>
+     */
+    public Builder mergeCondition(com.google.type.Expr value) {
+      if (conditionBuilder_ == null) {
+        if (condition_ != null) {
+          condition_ =
+            com.google.type.Expr.newBuilder(condition_).mergeFrom(value).buildPartial();
+        } else {
+          condition_ = value;
+        }
+        onChanged();
+      } else {
+        conditionBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * The condition that is associated with this binding.
+     * NOTE: An unsatisfied condition will not allow user access via current
+     * binding. Different bindings, including their conditions, are examined
+     * independently.
+     * </pre>
+     *
+     * <code>.google.type.Expr condition = 3;</code>
+     */
+    public Builder clearCondition() {
+      if (conditionBuilder_ == null) {
+        condition_ = null;
+        onChanged();
+      } else {
+        condition_ = null;
+        conditionBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * The condition that is associated with this binding.
+     * NOTE: An unsatisfied condition will not allow user access via current
+     * binding. Different bindings, including their conditions, are examined
+     * independently.
+     * </pre>
+     *
+     * <code>.google.type.Expr condition = 3;</code>
+     */
+    public com.google.type.Expr.Builder getConditionBuilder() {
+      
+      onChanged();
+      return getConditionFieldBuilder().getBuilder();
+    }
+    /**
+     * <pre>
+     * The condition that is associated with this binding.
+     * NOTE: An unsatisfied condition will not allow user access via current
+     * binding. Different bindings, including their conditions, are examined
+     * independently.
+     * </pre>
+     *
+     * <code>.google.type.Expr condition = 3;</code>
+     */
+    public com.google.type.ExprOrBuilder getConditionOrBuilder() {
+      if (conditionBuilder_ != null) {
+        return conditionBuilder_.getMessageOrBuilder();
+      } else {
+        return condition_ == null ?
+            com.google.type.Expr.getDefaultInstance() : condition_;
+      }
+    }
+    /**
+     * <pre>
+     * The condition that is associated with this binding.
+     * NOTE: An unsatisfied condition will not allow user access via current
+     * binding. Different bindings, including their conditions, are examined
+     * independently.
+     * </pre>
+     *
+     * <code>.google.type.Expr condition = 3;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.google.type.Expr, com.google.type.Expr.Builder, com.google.type.ExprOrBuilder> 
+        getConditionFieldBuilder() {
+      if (conditionBuilder_ == null) {
+        conditionBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            com.google.type.Expr, com.google.type.Expr.Builder, com.google.type.ExprOrBuilder>(
+                getCondition(),
+                getParentForChildren(),
+                isClean());
+        condition_ = null;
+      }
+      return conditionBuilder_;
+    }
+    @Override
     public final Builder setUnknownFields(
         final com.google.protobuf.UnknownFieldSet unknownFields) {
-      return super.setUnknownFieldsProto3(unknownFields);
+      return super.setUnknownFields(unknownFields);
     }
 
+    @Override
     public final Builder mergeUnknownFields(
         final com.google.protobuf.UnknownFieldSet unknownFields) {
       return super.mergeUnknownFields(unknownFields);
@@ -926,17 +1206,18 @@ private static final long serialVersionUID = 0L;
   }
 
   // @@protoc_insertion_point(class_scope:google.iam.v1.Binding)
-  private static final com.google.iam.v1.Binding DEFAULT_INSTANCE;
+  private static final Binding DEFAULT_INSTANCE;
   static {
-    DEFAULT_INSTANCE = new com.google.iam.v1.Binding();
+    DEFAULT_INSTANCE = new Binding();
   }
 
-  public static com.google.iam.v1.Binding getDefaultInstance() {
+  public static Binding getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
 
   private static final com.google.protobuf.Parser<Binding>
       PARSER = new com.google.protobuf.AbstractParser<Binding>() {
+    @Override
     public Binding parsePartialFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -949,12 +1230,13 @@ private static final long serialVersionUID = 0L;
     return PARSER;
   }
 
-  @java.lang.Override
+  @Override
   public com.google.protobuf.Parser<Binding> getParserForType() {
     return PARSER;
   }
 
-  public com.google.iam.v1.Binding getDefaultInstanceForType() {
+  @Override
+  public Binding getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
 

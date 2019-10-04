@@ -14,7 +14,7 @@ public interface PolicyDeltaOrBuilder extends
    *
    * <code>repeated .google.iam.v1.BindingDelta binding_deltas = 1;</code>
    */
-  java.util.List<com.google.iam.v1.BindingDelta> 
+  java.util.List<BindingDelta>
       getBindingDeltasList();
   /**
    * <pre>
@@ -23,7 +23,7 @@ public interface PolicyDeltaOrBuilder extends
    *
    * <code>repeated .google.iam.v1.BindingDelta binding_deltas = 1;</code>
    */
-  com.google.iam.v1.BindingDelta getBindingDeltas(int index);
+  BindingDelta getBindingDeltas(int index);
   /**
    * <pre>
    * The delta for Bindings between two policies.
@@ -49,5 +49,49 @@ public interface PolicyDeltaOrBuilder extends
    * <code>repeated .google.iam.v1.BindingDelta binding_deltas = 1;</code>
    */
   com.google.iam.v1.BindingDeltaOrBuilder getBindingDeltasOrBuilder(
+      int index);
+
+  /**
+   * <pre>
+   * The delta for AuditConfigs between two policies.
+   * </pre>
+   *
+   * <code>repeated .google.iam.v1.AuditConfigDelta audit_config_deltas = 2;</code>
+   */
+  java.util.List<AuditConfigDelta>
+      getAuditConfigDeltasList();
+  /**
+   * <pre>
+   * The delta for AuditConfigs between two policies.
+   * </pre>
+   *
+   * <code>repeated .google.iam.v1.AuditConfigDelta audit_config_deltas = 2;</code>
+   */
+  AuditConfigDelta getAuditConfigDeltas(int index);
+  /**
+   * <pre>
+   * The delta for AuditConfigs between two policies.
+   * </pre>
+   *
+   * <code>repeated .google.iam.v1.AuditConfigDelta audit_config_deltas = 2;</code>
+   */
+  int getAuditConfigDeltasCount();
+  /**
+   * <pre>
+   * The delta for AuditConfigs between two policies.
+   * </pre>
+   *
+   * <code>repeated .google.iam.v1.AuditConfigDelta audit_config_deltas = 2;</code>
+   */
+  java.util.List<? extends com.google.iam.v1.AuditConfigDeltaOrBuilder> 
+      getAuditConfigDeltasOrBuilderList();
+  /**
+   * <pre>
+   * The delta for AuditConfigs between two policies.
+   * </pre>
+   *
+   * <code>repeated .google.iam.v1.AuditConfigDelta audit_config_deltas = 2;</code>
+   */
+  com.google.iam.v1.AuditConfigDeltaOrBuilder getAuditConfigDeltasOrBuilder(
       int index);
 }

@@ -11,17 +11,15 @@ public interface BindingOrBuilder extends
    * <pre>
    * Role that is assigned to `members`.
    * For example, `roles/viewer`, `roles/editor`, or `roles/owner`.
-   * Required
    * </pre>
    *
    * <code>string role = 1;</code>
    */
-  java.lang.String getRole();
+  String getRole();
   /**
    * <pre>
    * Role that is assigned to `members`.
    * For example, `roles/viewer`, `roles/editor`, or `roles/owner`.
-   * Required
    * </pre>
    *
    * <code>string role = 1;</code>
@@ -38,18 +36,18 @@ public interface BindingOrBuilder extends
    * * `allAuthenticatedUsers`: A special identifier that represents anyone
    *    who is authenticated with a Google account or a service account.
    * * `user:{emailid}`: An email address that represents a specific Google
-   *    account. For example, `alice&#64;gmail.com` or `joe&#64;example.com`.
+   *    account. For example, `alice&#64;example.com` .
    * * `serviceAccount:{emailid}`: An email address that represents a service
    *    account. For example, `my-other-app&#64;appspot.gserviceaccount.com`.
    * * `group:{emailid}`: An email address that represents a Google group.
    *    For example, `admins&#64;example.com`.
-   * * `domain:{domain}`: A Google Apps domain name that represents all the
+   * * `domain:{domain}`: The G Suite domain (primary) that represents all the
    *    users of that domain. For example, `google.com` or `example.com`.
    * </pre>
    *
    * <code>repeated string members = 2;</code>
    */
-  java.util.List<java.lang.String>
+  java.util.List<String>
       getMembersList();
   /**
    * <pre>
@@ -60,12 +58,12 @@ public interface BindingOrBuilder extends
    * * `allAuthenticatedUsers`: A special identifier that represents anyone
    *    who is authenticated with a Google account or a service account.
    * * `user:{emailid}`: An email address that represents a specific Google
-   *    account. For example, `alice&#64;gmail.com` or `joe&#64;example.com`.
+   *    account. For example, `alice&#64;example.com` .
    * * `serviceAccount:{emailid}`: An email address that represents a service
    *    account. For example, `my-other-app&#64;appspot.gserviceaccount.com`.
    * * `group:{emailid}`: An email address that represents a Google group.
    *    For example, `admins&#64;example.com`.
-   * * `domain:{domain}`: A Google Apps domain name that represents all the
+   * * `domain:{domain}`: The G Suite domain (primary) that represents all the
    *    users of that domain. For example, `google.com` or `example.com`.
    * </pre>
    *
@@ -81,18 +79,18 @@ public interface BindingOrBuilder extends
    * * `allAuthenticatedUsers`: A special identifier that represents anyone
    *    who is authenticated with a Google account or a service account.
    * * `user:{emailid}`: An email address that represents a specific Google
-   *    account. For example, `alice&#64;gmail.com` or `joe&#64;example.com`.
+   *    account. For example, `alice&#64;example.com` .
    * * `serviceAccount:{emailid}`: An email address that represents a service
    *    account. For example, `my-other-app&#64;appspot.gserviceaccount.com`.
    * * `group:{emailid}`: An email address that represents a Google group.
    *    For example, `admins&#64;example.com`.
-   * * `domain:{domain}`: A Google Apps domain name that represents all the
+   * * `domain:{domain}`: The G Suite domain (primary) that represents all the
    *    users of that domain. For example, `google.com` or `example.com`.
    * </pre>
    *
    * <code>repeated string members = 2;</code>
    */
-  java.lang.String getMembers(int index);
+  String getMembers(int index);
   /**
    * <pre>
    * Specifies the identities requesting access for a Cloud Platform resource.
@@ -102,12 +100,12 @@ public interface BindingOrBuilder extends
    * * `allAuthenticatedUsers`: A special identifier that represents anyone
    *    who is authenticated with a Google account or a service account.
    * * `user:{emailid}`: An email address that represents a specific Google
-   *    account. For example, `alice&#64;gmail.com` or `joe&#64;example.com`.
+   *    account. For example, `alice&#64;example.com` .
    * * `serviceAccount:{emailid}`: An email address that represents a service
    *    account. For example, `my-other-app&#64;appspot.gserviceaccount.com`.
    * * `group:{emailid}`: An email address that represents a Google group.
    *    For example, `admins&#64;example.com`.
-   * * `domain:{domain}`: A Google Apps domain name that represents all the
+   * * `domain:{domain}`: The G Suite domain (primary) that represents all the
    *    users of that domain. For example, `google.com` or `example.com`.
    * </pre>
    *
@@ -115,4 +113,38 @@ public interface BindingOrBuilder extends
    */
   com.google.protobuf.ByteString
       getMembersBytes(int index);
+
+  /**
+   * <pre>
+   * The condition that is associated with this binding.
+   * NOTE: An unsatisfied condition will not allow user access via current
+   * binding. Different bindings, including their conditions, are examined
+   * independently.
+   * </pre>
+   *
+   * <code>.google.type.Expr condition = 3;</code>
+   */
+  boolean hasCondition();
+  /**
+   * <pre>
+   * The condition that is associated with this binding.
+   * NOTE: An unsatisfied condition will not allow user access via current
+   * binding. Different bindings, including their conditions, are examined
+   * independently.
+   * </pre>
+   *
+   * <code>.google.type.Expr condition = 3;</code>
+   */
+  com.google.type.Expr getCondition();
+  /**
+   * <pre>
+   * The condition that is associated with this binding.
+   * NOTE: An unsatisfied condition will not allow user access via current
+   * binding. Different bindings, including their conditions, are examined
+   * independently.
+   * </pre>
+   *
+   * <code>.google.type.Expr condition = 3;</code>
+   */
+  com.google.type.ExprOrBuilder getConditionOrBuilder();
 }

@@ -24,7 +24,7 @@ public interface BindingDeltaOrBuilder extends
    *
    * <code>.google.iam.v1.BindingDelta.Action action = 1;</code>
    */
-  com.google.iam.v1.BindingDelta.Action getAction();
+  BindingDelta.Action getAction();
 
   /**
    * <pre>
@@ -35,7 +35,7 @@ public interface BindingDeltaOrBuilder extends
    *
    * <code>string role = 2;</code>
    */
-  java.lang.String getRole();
+  String getRole();
   /**
    * <pre>
    * Role that is assigned to `members`.
@@ -57,7 +57,7 @@ public interface BindingDeltaOrBuilder extends
    *
    * <code>string member = 3;</code>
    */
-  java.lang.String getMember();
+  String getMember();
   /**
    * <pre>
    * A single identity requesting access for a Cloud Platform resource.
@@ -69,4 +69,29 @@ public interface BindingDeltaOrBuilder extends
    */
   com.google.protobuf.ByteString
       getMemberBytes();
+
+  /**
+   * <pre>
+   * The condition that is associated with this binding.
+   * </pre>
+   *
+   * <code>.google.type.Expr condition = 4;</code>
+   */
+  boolean hasCondition();
+  /**
+   * <pre>
+   * The condition that is associated with this binding.
+   * </pre>
+   *
+   * <code>.google.type.Expr condition = 4;</code>
+   */
+  com.google.type.Expr getCondition();
+  /**
+   * <pre>
+   * The condition that is associated with this binding.
+   * </pre>
+   *
+   * <code>.google.type.Expr condition = 4;</code>
+   */
+  com.google.type.ExprOrBuilder getConditionOrBuilder();
 }

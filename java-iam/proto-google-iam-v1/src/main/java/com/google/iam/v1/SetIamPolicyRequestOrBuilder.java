@@ -10,18 +10,16 @@ public interface SetIamPolicyRequestOrBuilder extends
   /**
    * <pre>
    * REQUIRED: The resource for which the policy is being specified.
-   * `resource` is usually specified as a path. For example, a Project
-   * resource is specified as `projects/{project}`.
+   * See the operation documentation for the appropriate value for this field.
    * </pre>
    *
    * <code>string resource = 1;</code>
    */
-  java.lang.String getResource();
+  String getResource();
   /**
    * <pre>
    * REQUIRED: The resource for which the policy is being specified.
-   * `resource` is usually specified as a path. For example, a Project
-   * resource is specified as `projects/{project}`.
+   * See the operation documentation for the appropriate value for this field.
    * </pre>
    *
    * <code>string resource = 1;</code>
@@ -50,7 +48,7 @@ public interface SetIamPolicyRequestOrBuilder extends
    *
    * <code>.google.iam.v1.Policy policy = 2;</code>
    */
-  com.google.iam.v1.Policy getPolicy();
+  Policy getPolicy();
   /**
    * <pre>
    * REQUIRED: The complete policy to be applied to the `resource`. The size of
@@ -61,5 +59,5 @@ public interface SetIamPolicyRequestOrBuilder extends
    *
    * <code>.google.iam.v1.Policy policy = 2;</code>
    */
-  com.google.iam.v1.PolicyOrBuilder getPolicyOrBuilder();
+  PolicyOrBuilder getPolicyOrBuilder();
 }

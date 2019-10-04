@@ -42,30 +42,33 @@ public final class IamPolicyProto {
   private static  com.google.protobuf.Descriptors.FileDescriptor
       descriptor;
   static {
-    java.lang.String[] descriptorData = {
+    String[] descriptorData = {
       "\n\036google/iam/v1/iam_policy.proto\022\rgoogle" +
-      ".iam.v1\032\034google/api/annotations.proto\032\032g" +
-      "oogle/iam/v1/policy.proto\"N\n\023SetIamPolic" +
-      "yRequest\022\020\n\010resource\030\001 \001(\t\022%\n\006policy\030\002 \001" +
-      "(\0132\025.google.iam.v1.Policy\"\'\n\023GetIamPolic" +
-      "yRequest\022\020\n\010resource\030\001 \001(\t\"B\n\031TestIamPer" +
-      "missionsRequest\022\020\n\010resource\030\001 \001(\t\022\023\n\013per" +
-      "missions\030\002 \003(\t\"1\n\032TestIamPermissionsResp" +
-      "onse\022\023\n\013permissions\030\001 \003(\t2\224\003\n\tIAMPolicy\022" +
-      "t\n\014SetIamPolicy\022\".google.iam.v1.SetIamPo" +
-      "licyRequest\032\025.google.iam.v1.Policy\")\202\323\344\223" +
-      "\002#\"\036/v1/{resource=**}:setIamPolicy:\001*\022t\n" +
-      "\014GetIamPolicy\022\".google.iam.v1.GetIamPoli" +
-      "cyRequest\032\025.google.iam.v1.Policy\")\202\323\344\223\002#" +
-      "\"\036/v1/{resource=**}:getIamPolicy:\001*\022\232\001\n\022" +
-      "TestIamPermissions\022(.google.iam.v1.TestI" +
-      "amPermissionsRequest\032).google.iam.v1.Tes" +
-      "tIamPermissionsResponse\"/\202\323\344\223\002)\"$/v1/{re" +
-      "source=**}:testIamPermissions:\001*B\206\001\n\021com" +
-      ".google.iam.v1B\016IamPolicyProtoP\001Z0google" +
-      ".golang.org/genproto/googleapis/iam/v1;i" +
-      "am\370\001\001\252\002\023Google.Cloud.Iam.V1\312\002\023Google\\Clo" +
-      "ud\\Iam\\V1b\006proto3"
+      ".iam.v1\032\033google/iam/v1/options.proto\032\032go" +
+      "ogle/iam/v1/policy.proto\032\034google/api/ann" +
+      "otations.proto\032\027google/api/client.proto\"" +
+      "N\n\023SetIamPolicyRequest\022\020\n\010resource\030\001 \001(\t" +
+      "\022%\n\006policy\030\002 \001(\0132\025.google.iam.v1.Policy\"" +
+      "Y\n\023GetIamPolicyRequest\022\020\n\010resource\030\001 \001(\t" +
+      "\0220\n\007options\030\002 \001(\0132\037.google.iam.v1.GetPol" +
+      "icyOptions\"B\n\031TestIamPermissionsRequest\022" +
+      "\020\n\010resource\030\001 \001(\t\022\023\n\013permissions\030\002 \003(\t\"1" +
+      "\n\032TestIamPermissionsResponse\022\023\n\013permissi" +
+      "ons\030\001 \003(\t2\264\003\n\tIAMPolicy\022t\n\014SetIamPolicy\022" +
+      "\".google.iam.v1.SetIamPolicyRequest\032\025.go" +
+      "ogle.iam.v1.Policy\")\202\323\344\223\002#\"\036/v1/{resourc" +
+      "e=**}:setIamPolicy:\001*\022t\n\014GetIamPolicy\022\"." +
+      "google.iam.v1.GetIamPolicyRequest\032\025.goog" +
+      "le.iam.v1.Policy\")\202\323\344\223\002#\"\036/v1/{resource=" +
+      "**}:getIamPolicy:\001*\022\232\001\n\022TestIamPermissio" +
+      "ns\022(.google.iam.v1.TestIamPermissionsReq" +
+      "uest\032).google.iam.v1.TestIamPermissionsR" +
+      "esponse\"/\202\323\344\223\002)\"$/v1/{resource=**}:testI" +
+      "amPermissions:\001*\032\036\312A\033iam-meta-api.google" +
+      "apis.comB\206\001\n\021com.google.iam.v1B\016IamPolic" +
+      "yProtoP\001Z0google.golang.org/genproto/goo" +
+      "gleapis/iam/v1;iam\370\001\001\252\002\023Google.Cloud.Iam" +
+      ".V1\312\002\023Google\\Cloud\\Iam\\V1b\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -78,40 +81,45 @@ public final class IamPolicyProto {
     com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
+          OptionsProto.getDescriptor(),
+          PolicyProto.getDescriptor(),
           com.google.api.AnnotationsProto.getDescriptor(),
-          com.google.iam.v1.PolicyProto.getDescriptor(),
+          com.google.api.ClientProto.getDescriptor(),
         }, assigner);
     internal_static_google_iam_v1_SetIamPolicyRequest_descriptor =
       getDescriptor().getMessageTypes().get(0);
     internal_static_google_iam_v1_SetIamPolicyRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_google_iam_v1_SetIamPolicyRequest_descriptor,
-        new java.lang.String[] { "Resource", "Policy", });
+        new String[] { "Resource", "Policy", });
     internal_static_google_iam_v1_GetIamPolicyRequest_descriptor =
       getDescriptor().getMessageTypes().get(1);
     internal_static_google_iam_v1_GetIamPolicyRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_google_iam_v1_GetIamPolicyRequest_descriptor,
-        new java.lang.String[] { "Resource", });
+        new String[] { "Resource", "Options", });
     internal_static_google_iam_v1_TestIamPermissionsRequest_descriptor =
       getDescriptor().getMessageTypes().get(2);
     internal_static_google_iam_v1_TestIamPermissionsRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_google_iam_v1_TestIamPermissionsRequest_descriptor,
-        new java.lang.String[] { "Resource", "Permissions", });
+        new String[] { "Resource", "Permissions", });
     internal_static_google_iam_v1_TestIamPermissionsResponse_descriptor =
       getDescriptor().getMessageTypes().get(3);
     internal_static_google_iam_v1_TestIamPermissionsResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_google_iam_v1_TestIamPermissionsResponse_descriptor,
-        new java.lang.String[] { "Permissions", });
+        new String[] { "Permissions", });
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();
+    registry.add(com.google.api.ClientProto.defaultHost);
     registry.add(com.google.api.AnnotationsProto.http);
     com.google.protobuf.Descriptors.FileDescriptor
         .internalUpdateFileDescriptor(descriptor, registry);
+    OptionsProto.getDescriptor();
+    PolicyProto.getDescriptor();
     com.google.api.AnnotationsProto.getDescriptor();
-    com.google.iam.v1.PolicyProto.getDescriptor();
+    com.google.api.ClientProto.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

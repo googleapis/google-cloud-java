@@ -10,18 +10,16 @@ public interface TestIamPermissionsRequestOrBuilder extends
   /**
    * <pre>
    * REQUIRED: The resource for which the policy detail is being requested.
-   * `resource` is usually specified as a path. For example, a Project
-   * resource is specified as `projects/{project}`.
+   * See the operation documentation for the appropriate value for this field.
    * </pre>
    *
    * <code>string resource = 1;</code>
    */
-  java.lang.String getResource();
+  String getResource();
   /**
    * <pre>
    * REQUIRED: The resource for which the policy detail is being requested.
-   * `resource` is usually specified as a path. For example, a Project
-   * resource is specified as `projects/{project}`.
+   * See the operation documentation for the appropriate value for this field.
    * </pre>
    *
    * <code>string resource = 1;</code>
@@ -39,7 +37,7 @@ public interface TestIamPermissionsRequestOrBuilder extends
    *
    * <code>repeated string permissions = 2;</code>
    */
-  java.util.List<java.lang.String>
+  java.util.List<String>
       getPermissionsList();
   /**
    * <pre>
@@ -62,7 +60,7 @@ public interface TestIamPermissionsRequestOrBuilder extends
    *
    * <code>repeated string permissions = 2;</code>
    */
-  java.lang.String getPermissions(int index);
+  String getPermissions(int index);
   /**
    * <pre>
    * The set of permissions to check for the `resource`. Permissions with

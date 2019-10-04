@@ -9,7 +9,16 @@ public interface PolicyOrBuilder extends
 
   /**
    * <pre>
-   * Version of the `Policy`. The default version is 0.
+   * Specifies the format of the policy.
+   * Valid values are 0, 1, and 3. Requests specifying an invalid value will be
+   * rejected.
+   * Operations affecting conditional bindings must specify version 3. This can
+   * be either setting a conditional policy, modifying a conditional binding,
+   * or removing a conditional binding from the stored conditional policy.
+   * Operations on non-conditional policies may specify any valid value or
+   * leave the field unset.
+   * If no etag is provided in the call to `setIamPolicy`, any version
+   * compliance checks on the incoming and/or stored policy is skipped.
    * </pre>
    *
    * <code>int32 version = 1;</code>
@@ -18,29 +27,29 @@ public interface PolicyOrBuilder extends
 
   /**
    * <pre>
-   * Associates a list of `members` to a `role`.
-   * Multiple `bindings` must not be specified for the same `role`.
+   * Associates a list of `members` to a `role`. Optionally may specify a
+   * `condition` that determines when binding is in effect.
    * `bindings` with no members will result in an error.
    * </pre>
    *
    * <code>repeated .google.iam.v1.Binding bindings = 4;</code>
    */
-  java.util.List<com.google.iam.v1.Binding> 
+  java.util.List<Binding>
       getBindingsList();
   /**
    * <pre>
-   * Associates a list of `members` to a `role`.
-   * Multiple `bindings` must not be specified for the same `role`.
+   * Associates a list of `members` to a `role`. Optionally may specify a
+   * `condition` that determines when binding is in effect.
    * `bindings` with no members will result in an error.
    * </pre>
    *
    * <code>repeated .google.iam.v1.Binding bindings = 4;</code>
    */
-  com.google.iam.v1.Binding getBindings(int index);
+  Binding getBindings(int index);
   /**
    * <pre>
-   * Associates a list of `members` to a `role`.
-   * Multiple `bindings` must not be specified for the same `role`.
+   * Associates a list of `members` to a `role`. Optionally may specify a
+   * `condition` that determines when binding is in effect.
    * `bindings` with no members will result in an error.
    * </pre>
    *
@@ -49,8 +58,8 @@ public interface PolicyOrBuilder extends
   int getBindingsCount();
   /**
    * <pre>
-   * Associates a list of `members` to a `role`.
-   * Multiple `bindings` must not be specified for the same `role`.
+   * Associates a list of `members` to a `role`. Optionally may specify a
+   * `condition` that determines when binding is in effect.
    * `bindings` with no members will result in an error.
    * </pre>
    *
@@ -60,8 +69,8 @@ public interface PolicyOrBuilder extends
       getBindingsOrBuilderList();
   /**
    * <pre>
-   * Associates a list of `members` to a `role`.
-   * Multiple `bindings` must not be specified for the same `role`.
+   * Associates a list of `members` to a `role`. Optionally may specify a
+   * `condition` that determines when binding is in effect.
    * `bindings` with no members will result in an error.
    * </pre>
    *
@@ -80,7 +89,9 @@ public interface PolicyOrBuilder extends
    * systems are expected to put that etag in the request to `setIamPolicy` to
    * ensure that their change will be applied to the same version of the policy.
    * If no `etag` is provided in the call to `setIamPolicy`, then the existing
-   * policy is overwritten blindly.
+   * policy is overwritten. Due to blind-set semantics of an etag-less policy,
+   * 'setIamPolicy' will not fail even if either of incoming or stored policy
+   * does not meet the version requirements.
    * </pre>
    *
    * <code>bytes etag = 3;</code>

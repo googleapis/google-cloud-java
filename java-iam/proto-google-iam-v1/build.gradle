@@ -8,7 +8,7 @@ apply plugin: 'java'
 
 description = 'PROTO library for proto-google-iam-v1'
 group = 'com.google.api.grpc'
-version = "0.12.0"
+version = "0.13.0"
 sourceCompatibility = 1.7
 targetCompatibility = 1.7
 
@@ -18,8 +18,8 @@ repositories {
 }
 
 dependencies {
-  compile 'com.google.protobuf:protobuf-java:3.5.1'
-  compile 'com.google.api:api-common:1.5.0'
+  compile 'com.google.protobuf:protobuf-java:3.7.1'
+  compile 'com.google.api:api-common:1.8.1'
   compile project(':proto-google-common-protos')
 }
 
