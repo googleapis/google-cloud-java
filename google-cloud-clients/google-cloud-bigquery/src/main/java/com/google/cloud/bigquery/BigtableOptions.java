@@ -139,10 +139,16 @@ public class BigtableOptions extends FormatOptions {
 
   static BigtableOptions fromPb(com.google.api.services.bigquery.model.BigtableOptions options) {
     Builder builder = newBuilder();
-    builder.setIgnoreUnspecifiedColumnFamilies(options.getIgnoreUnspecifiedColumnFamilies());
-    builder.setReadRowkeyAsString(options.getReadRowkeyAsString());
-    builder.setColumnFamilies(
-        Lists.transform(options.getColumnFamilies(), BigtableColumnFamily.FROM_PB_FUNCTION));
+    if (null != options.getIgnoreUnspecifiedColumnFamilies()) {
+      builder.setIgnoreUnspecifiedColumnFamilies(options.getIgnoreUnspecifiedColumnFamilies());
+    }
+    if (null != options.getReadRowkeyAsString()) {
+      builder.setReadRowkeyAsString(options.getReadRowkeyAsString());
+    }
+    if (null != options.getColumnFamilies()) {
+      builder.setColumnFamilies(
+          Lists.transform(options.getColumnFamilies(), BigtableColumnFamily.FROM_PB_FUNCTION));
+    }
     return builder.build();
   }
 
