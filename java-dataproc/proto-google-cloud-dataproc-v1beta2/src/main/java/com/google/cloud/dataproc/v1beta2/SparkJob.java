@@ -9,6 +9,11 @@ package com.google.cloud.dataproc.v1beta2;
  * <pre>
  * A Cloud Dataproc job for running [Apache Spark](http://spark.apache.org/)
  * applications on YARN.
+ * The specification of the main method to call to drive the job.
+ * Specify either the jar file that contains the main class or the main class
+ * name. To pass both a main jar and a main class in that jar, add the jar to
+ * `CommonJob.jar_file_uris`, and then specify the main class name in
+ * `main_class`.
  * </pre>
  *
  * Protobuf type {@code google.cloud.dataproc.v1beta2.SparkJob}
@@ -1004,6 +1009,11 @@ public final class SparkJob extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * A Cloud Dataproc job for running [Apache Spark](http://spark.apache.org/)
    * applications on YARN.
+   * The specification of the main method to call to drive the job.
+   * Specify either the jar file that contains the main class or the main class
+   * name. To pass both a main jar and a main class in that jar, add the jar to
+   * `CommonJob.jar_file_uris`, and then specify the main class name in
+   * `main_class`.
    * </pre>
    *
    * Protobuf type {@code google.cloud.dataproc.v1beta2.SparkJob}

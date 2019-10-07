@@ -21,7 +21,7 @@ public interface SoftwareConfigOrBuilder
    * If unspecified, it defaults to the latest Debian version.
    * </pre>
    *
-   * <code>string image_version = 1;</code>
+   * <code>string image_version = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   java.lang.String getImageVersion();
   /**
@@ -37,7 +37,7 @@ public interface SoftwareConfigOrBuilder
    * If unspecified, it defaults to the latest Debian version.
    * </pre>
    *
-   * <code>string image_version = 1;</code>
+   * <code>string image_version = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   com.google.protobuf.ByteString getImageVersionBytes();
 
@@ -62,7 +62,8 @@ public interface SoftwareConfigOrBuilder
    * [Cluster properties](/dataproc/docs/concepts/cluster-properties).
    * </pre>
    *
-   * <code>map&lt;string, string&gt; properties = 2;</code>
+   * <code>map&lt;string, string&gt; properties = 2 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   int getPropertiesCount();
   /**
@@ -86,7 +87,8 @@ public interface SoftwareConfigOrBuilder
    * [Cluster properties](/dataproc/docs/concepts/cluster-properties).
    * </pre>
    *
-   * <code>map&lt;string, string&gt; properties = 2;</code>
+   * <code>map&lt;string, string&gt; properties = 2 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   boolean containsProperties(java.lang.String key);
   /** Use {@link #getPropertiesMap()} instead. */
@@ -113,7 +115,8 @@ public interface SoftwareConfigOrBuilder
    * [Cluster properties](/dataproc/docs/concepts/cluster-properties).
    * </pre>
    *
-   * <code>map&lt;string, string&gt; properties = 2;</code>
+   * <code>map&lt;string, string&gt; properties = 2 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   java.util.Map<java.lang.String, java.lang.String> getPropertiesMap();
   /**
@@ -137,7 +140,8 @@ public interface SoftwareConfigOrBuilder
    * [Cluster properties](/dataproc/docs/concepts/cluster-properties).
    * </pre>
    *
-   * <code>map&lt;string, string&gt; properties = 2;</code>
+   * <code>map&lt;string, string&gt; properties = 2 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   java.lang.String getPropertiesOrDefault(java.lang.String key, java.lang.String defaultValue);
   /**
@@ -161,7 +165,8 @@ public interface SoftwareConfigOrBuilder
    * [Cluster properties](/dataproc/docs/concepts/cluster-properties).
    * </pre>
    *
-   * <code>map&lt;string, string&gt; properties = 2;</code>
+   * <code>map&lt;string, string&gt; properties = 2 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   java.lang.String getPropertiesOrThrow(java.lang.String key);
 

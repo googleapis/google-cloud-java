@@ -16,7 +16,9 @@ public interface UpdateWorkflowTemplateRequestOrBuilder
    * The `template.version` field must match the current version.
    * </pre>
    *
-   * <code>.google.cloud.dataproc.v1beta2.WorkflowTemplate template = 1;</code>
+   * <code>
+   * .google.cloud.dataproc.v1beta2.WorkflowTemplate template = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    */
   boolean hasTemplate();
   /**
@@ -27,7 +29,9 @@ public interface UpdateWorkflowTemplateRequestOrBuilder
    * The `template.version` field must match the current version.
    * </pre>
    *
-   * <code>.google.cloud.dataproc.v1beta2.WorkflowTemplate template = 1;</code>
+   * <code>
+   * .google.cloud.dataproc.v1beta2.WorkflowTemplate template = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    */
   com.google.cloud.dataproc.v1beta2.WorkflowTemplate getTemplate();
   /**
@@ -38,7 +42,9 @@ public interface UpdateWorkflowTemplateRequestOrBuilder
    * The `template.version` field must match the current version.
    * </pre>
    *
-   * <code>.google.cloud.dataproc.v1beta2.WorkflowTemplate template = 1;</code>
+   * <code>
+   * .google.cloud.dataproc.v1beta2.WorkflowTemplate template = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    */
   com.google.cloud.dataproc.v1beta2.WorkflowTemplateOrBuilder getTemplateOrBuilder();
 }

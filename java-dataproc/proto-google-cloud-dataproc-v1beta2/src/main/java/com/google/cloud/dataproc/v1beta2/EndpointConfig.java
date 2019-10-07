@@ -147,7 +147,8 @@ public final class EndpointConfig extends com.google.protobuf.GeneratedMessageV3
    * if enable_http_port_access is true.
    * </pre>
    *
-   * <code>map&lt;string, string&gt; http_ports = 1;</code>
+   * <code>map&lt;string, string&gt; http_ports = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    */
   public boolean containsHttpPorts(java.lang.String key) {
     if (key == null) {
@@ -168,7 +169,8 @@ public final class EndpointConfig extends com.google.protobuf.GeneratedMessageV3
    * if enable_http_port_access is true.
    * </pre>
    *
-   * <code>map&lt;string, string&gt; http_ports = 1;</code>
+   * <code>map&lt;string, string&gt; http_ports = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    */
   public java.util.Map<java.lang.String, java.lang.String> getHttpPortsMap() {
     return internalGetHttpPorts().getMap();
@@ -181,7 +183,8 @@ public final class EndpointConfig extends com.google.protobuf.GeneratedMessageV3
    * if enable_http_port_access is true.
    * </pre>
    *
-   * <code>map&lt;string, string&gt; http_ports = 1;</code>
+   * <code>map&lt;string, string&gt; http_ports = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    */
   public java.lang.String getHttpPortsOrDefault(
       java.lang.String key, java.lang.String defaultValue) {
@@ -199,7 +202,8 @@ public final class EndpointConfig extends com.google.protobuf.GeneratedMessageV3
    * if enable_http_port_access is true.
    * </pre>
    *
-   * <code>map&lt;string, string&gt; http_ports = 1;</code>
+   * <code>map&lt;string, string&gt; http_ports = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    */
   public java.lang.String getHttpPortsOrThrow(java.lang.String key) {
     if (key == null) {
@@ -222,7 +226,7 @@ public final class EndpointConfig extends com.google.protobuf.GeneratedMessageV3
    * from external sources. Defaults to false.
    * </pre>
    *
-   * <code>bool enable_http_port_access = 2;</code>
+   * <code>bool enable_http_port_access = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   public boolean getEnableHttpPortAccess() {
     return enableHttpPortAccess_;
@@ -625,7 +629,8 @@ public final class EndpointConfig extends com.google.protobuf.GeneratedMessageV3
      * if enable_http_port_access is true.
      * </pre>
      *
-     * <code>map&lt;string, string&gt; http_ports = 1;</code>
+     * <code>map&lt;string, string&gt; http_ports = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public boolean containsHttpPorts(java.lang.String key) {
       if (key == null) {
@@ -646,7 +651,8 @@ public final class EndpointConfig extends com.google.protobuf.GeneratedMessageV3
      * if enable_http_port_access is true.
      * </pre>
      *
-     * <code>map&lt;string, string&gt; http_ports = 1;</code>
+     * <code>map&lt;string, string&gt; http_ports = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public java.util.Map<java.lang.String, java.lang.String> getHttpPortsMap() {
       return internalGetHttpPorts().getMap();
@@ -659,7 +665,8 @@ public final class EndpointConfig extends com.google.protobuf.GeneratedMessageV3
      * if enable_http_port_access is true.
      * </pre>
      *
-     * <code>map&lt;string, string&gt; http_ports = 1;</code>
+     * <code>map&lt;string, string&gt; http_ports = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public java.lang.String getHttpPortsOrDefault(
         java.lang.String key, java.lang.String defaultValue) {
@@ -677,7 +684,8 @@ public final class EndpointConfig extends com.google.protobuf.GeneratedMessageV3
      * if enable_http_port_access is true.
      * </pre>
      *
-     * <code>map&lt;string, string&gt; http_ports = 1;</code>
+     * <code>map&lt;string, string&gt; http_ports = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public java.lang.String getHttpPortsOrThrow(java.lang.String key) {
       if (key == null) {
@@ -702,7 +710,8 @@ public final class EndpointConfig extends com.google.protobuf.GeneratedMessageV3
      * if enable_http_port_access is true.
      * </pre>
      *
-     * <code>map&lt;string, string&gt; http_ports = 1;</code>
+     * <code>map&lt;string, string&gt; http_ports = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public Builder removeHttpPorts(java.lang.String key) {
       if (key == null) {
@@ -724,7 +733,8 @@ public final class EndpointConfig extends com.google.protobuf.GeneratedMessageV3
      * if enable_http_port_access is true.
      * </pre>
      *
-     * <code>map&lt;string, string&gt; http_ports = 1;</code>
+     * <code>map&lt;string, string&gt; http_ports = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public Builder putHttpPorts(java.lang.String key, java.lang.String value) {
       if (key == null) {
@@ -744,7 +754,8 @@ public final class EndpointConfig extends com.google.protobuf.GeneratedMessageV3
      * if enable_http_port_access is true.
      * </pre>
      *
-     * <code>map&lt;string, string&gt; http_ports = 1;</code>
+     * <code>map&lt;string, string&gt; http_ports = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public Builder putAllHttpPorts(java.util.Map<java.lang.String, java.lang.String> values) {
       internalGetMutableHttpPorts().getMutableMap().putAll(values);
@@ -760,7 +771,7 @@ public final class EndpointConfig extends com.google.protobuf.GeneratedMessageV3
      * from external sources. Defaults to false.
      * </pre>
      *
-     * <code>bool enable_http_port_access = 2;</code>
+     * <code>bool enable_http_port_access = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public boolean getEnableHttpPortAccess() {
       return enableHttpPortAccess_;
@@ -773,7 +784,7 @@ public final class EndpointConfig extends com.google.protobuf.GeneratedMessageV3
      * from external sources. Defaults to false.
      * </pre>
      *
-     * <code>bool enable_http_port_access = 2;</code>
+     * <code>bool enable_http_port_access = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public Builder setEnableHttpPortAccess(boolean value) {
 
@@ -789,7 +800,7 @@ public final class EndpointConfig extends com.google.protobuf.GeneratedMessageV3
      * from external sources. Defaults to false.
      * </pre>
      *
-     * <code>bool enable_http_port_access = 2;</code>
+     * <code>bool enable_http_port_access = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public Builder clearEnableHttpPortAccess() {
 

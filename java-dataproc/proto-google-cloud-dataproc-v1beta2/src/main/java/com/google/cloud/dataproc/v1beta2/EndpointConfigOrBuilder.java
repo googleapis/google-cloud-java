@@ -16,7 +16,8 @@ public interface EndpointConfigOrBuilder
    * if enable_http_port_access is true.
    * </pre>
    *
-   * <code>map&lt;string, string&gt; http_ports = 1;</code>
+   * <code>map&lt;string, string&gt; http_ports = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    */
   int getHttpPortsCount();
   /**
@@ -27,7 +28,8 @@ public interface EndpointConfigOrBuilder
    * if enable_http_port_access is true.
    * </pre>
    *
-   * <code>map&lt;string, string&gt; http_ports = 1;</code>
+   * <code>map&lt;string, string&gt; http_ports = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    */
   boolean containsHttpPorts(java.lang.String key);
   /** Use {@link #getHttpPortsMap()} instead. */
@@ -41,7 +43,8 @@ public interface EndpointConfigOrBuilder
    * if enable_http_port_access is true.
    * </pre>
    *
-   * <code>map&lt;string, string&gt; http_ports = 1;</code>
+   * <code>map&lt;string, string&gt; http_ports = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    */
   java.util.Map<java.lang.String, java.lang.String> getHttpPortsMap();
   /**
@@ -52,7 +55,8 @@ public interface EndpointConfigOrBuilder
    * if enable_http_port_access is true.
    * </pre>
    *
-   * <code>map&lt;string, string&gt; http_ports = 1;</code>
+   * <code>map&lt;string, string&gt; http_ports = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    */
   java.lang.String getHttpPortsOrDefault(java.lang.String key, java.lang.String defaultValue);
   /**
@@ -63,7 +67,8 @@ public interface EndpointConfigOrBuilder
    * if enable_http_port_access is true.
    * </pre>
    *
-   * <code>map&lt;string, string&gt; http_ports = 1;</code>
+   * <code>map&lt;string, string&gt; http_ports = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    */
   java.lang.String getHttpPortsOrThrow(java.lang.String key);
 
@@ -75,7 +80,7 @@ public interface EndpointConfigOrBuilder
    * from external sources. Defaults to false.
    * </pre>
    *
-   * <code>bool enable_http_port_access = 2;</code>
+   * <code>bool enable_http_port_access = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   boolean getEnableHttpPortAccess();
 }

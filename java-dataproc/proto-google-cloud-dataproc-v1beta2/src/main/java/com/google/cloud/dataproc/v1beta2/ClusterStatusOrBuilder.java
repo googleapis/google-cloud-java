@@ -15,7 +15,9 @@ public interface ClusterStatusOrBuilder
    * Output only. The cluster's state.
    * </pre>
    *
-   * <code>.google.cloud.dataproc.v1beta2.ClusterStatus.State state = 1;</code>
+   * <code>
+   * .google.cloud.dataproc.v1beta2.ClusterStatus.State state = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    */
   int getStateValue();
   /**
@@ -25,7 +27,9 @@ public interface ClusterStatusOrBuilder
    * Output only. The cluster's state.
    * </pre>
    *
-   * <code>.google.cloud.dataproc.v1beta2.ClusterStatus.State state = 1;</code>
+   * <code>
+   * .google.cloud.dataproc.v1beta2.ClusterStatus.State state = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    */
   com.google.cloud.dataproc.v1beta2.ClusterStatus.State getState();
 
@@ -36,7 +40,7 @@ public interface ClusterStatusOrBuilder
    * Output only. Optional details of cluster's state.
    * </pre>
    *
-   * <code>string detail = 2;</code>
+   * <code>string detail = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    */
   java.lang.String getDetail();
   /**
@@ -46,7 +50,7 @@ public interface ClusterStatusOrBuilder
    * Output only. Optional details of cluster's state.
    * </pre>
    *
-   * <code>string detail = 2;</code>
+   * <code>string detail = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    */
   com.google.protobuf.ByteString getDetailBytes();
 
@@ -57,7 +61,9 @@ public interface ClusterStatusOrBuilder
    * Output only. Time when this state was entered.
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp state_start_time = 3;</code>
+   * <code>
+   * .google.protobuf.Timestamp state_start_time = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    */
   boolean hasStateStartTime();
   /**
@@ -67,7 +73,9 @@ public interface ClusterStatusOrBuilder
    * Output only. Time when this state was entered.
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp state_start_time = 3;</code>
+   * <code>
+   * .google.protobuf.Timestamp state_start_time = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    */
   com.google.protobuf.Timestamp getStateStartTime();
   /**
@@ -77,7 +85,9 @@ public interface ClusterStatusOrBuilder
    * Output only. Time when this state was entered.
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp state_start_time = 3;</code>
+   * <code>
+   * .google.protobuf.Timestamp state_start_time = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    */
   com.google.protobuf.TimestampOrBuilder getStateStartTimeOrBuilder();
 
@@ -89,7 +99,9 @@ public interface ClusterStatusOrBuilder
    * status reported by the agent.
    * </pre>
    *
-   * <code>.google.cloud.dataproc.v1beta2.ClusterStatus.Substate substate = 4;</code>
+   * <code>
+   * .google.cloud.dataproc.v1beta2.ClusterStatus.Substate substate = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    */
   int getSubstateValue();
   /**
@@ -100,7 +112,9 @@ public interface ClusterStatusOrBuilder
    * status reported by the agent.
    * </pre>
    *
-   * <code>.google.cloud.dataproc.v1beta2.ClusterStatus.Substate substate = 4;</code>
+   * <code>
+   * .google.cloud.dataproc.v1beta2.ClusterStatus.Substate substate = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    */
   com.google.cloud.dataproc.v1beta2.ClusterStatus.Substate getSubstate();
 }

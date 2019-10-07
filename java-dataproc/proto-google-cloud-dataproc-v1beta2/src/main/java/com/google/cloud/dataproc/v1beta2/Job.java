@@ -464,7 +464,9 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
    * run the job.
    * </pre>
    *
-   * <code>.google.cloud.dataproc.v1beta2.JobPlacement placement = 2;</code>
+   * <code>
+   * .google.cloud.dataproc.v1beta2.JobPlacement placement = 2 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   public boolean hasPlacement() {
     return placement_ != null;
@@ -477,7 +479,9 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
    * run the job.
    * </pre>
    *
-   * <code>.google.cloud.dataproc.v1beta2.JobPlacement placement = 2;</code>
+   * <code>
+   * .google.cloud.dataproc.v1beta2.JobPlacement placement = 2 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   public com.google.cloud.dataproc.v1beta2.JobPlacement getPlacement() {
     return placement_ == null
@@ -492,7 +496,9 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
    * run the job.
    * </pre>
    *
-   * <code>.google.cloud.dataproc.v1beta2.JobPlacement placement = 2;</code>
+   * <code>
+   * .google.cloud.dataproc.v1beta2.JobPlacement placement = 2 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   public com.google.cloud.dataproc.v1beta2.JobPlacementOrBuilder getPlacementOrBuilder() {
     return getPlacement();
@@ -2409,7 +2415,9 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      * run the job.
      * </pre>
      *
-     * <code>.google.cloud.dataproc.v1beta2.JobPlacement placement = 2;</code>
+     * <code>
+     * .google.cloud.dataproc.v1beta2.JobPlacement placement = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public boolean hasPlacement() {
       return placementBuilder_ != null || placement_ != null;
@@ -2422,7 +2430,9 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      * run the job.
      * </pre>
      *
-     * <code>.google.cloud.dataproc.v1beta2.JobPlacement placement = 2;</code>
+     * <code>
+     * .google.cloud.dataproc.v1beta2.JobPlacement placement = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public com.google.cloud.dataproc.v1beta2.JobPlacement getPlacement() {
       if (placementBuilder_ == null) {
@@ -2441,7 +2451,9 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      * run the job.
      * </pre>
      *
-     * <code>.google.cloud.dataproc.v1beta2.JobPlacement placement = 2;</code>
+     * <code>
+     * .google.cloud.dataproc.v1beta2.JobPlacement placement = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder setPlacement(com.google.cloud.dataproc.v1beta2.JobPlacement value) {
       if (placementBuilder_ == null) {
@@ -2464,7 +2476,9 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      * run the job.
      * </pre>
      *
-     * <code>.google.cloud.dataproc.v1beta2.JobPlacement placement = 2;</code>
+     * <code>
+     * .google.cloud.dataproc.v1beta2.JobPlacement placement = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder setPlacement(
         com.google.cloud.dataproc.v1beta2.JobPlacement.Builder builderForValue) {
@@ -2485,7 +2499,9 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      * run the job.
      * </pre>
      *
-     * <code>.google.cloud.dataproc.v1beta2.JobPlacement placement = 2;</code>
+     * <code>
+     * .google.cloud.dataproc.v1beta2.JobPlacement placement = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder mergePlacement(com.google.cloud.dataproc.v1beta2.JobPlacement value) {
       if (placementBuilder_ == null) {
@@ -2512,7 +2528,9 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      * run the job.
      * </pre>
      *
-     * <code>.google.cloud.dataproc.v1beta2.JobPlacement placement = 2;</code>
+     * <code>
+     * .google.cloud.dataproc.v1beta2.JobPlacement placement = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder clearPlacement() {
       if (placementBuilder_ == null) {
@@ -2533,7 +2551,9 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      * run the job.
      * </pre>
      *
-     * <code>.google.cloud.dataproc.v1beta2.JobPlacement placement = 2;</code>
+     * <code>
+     * .google.cloud.dataproc.v1beta2.JobPlacement placement = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public com.google.cloud.dataproc.v1beta2.JobPlacement.Builder getPlacementBuilder() {
 
@@ -2548,7 +2568,9 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      * run the job.
      * </pre>
      *
-     * <code>.google.cloud.dataproc.v1beta2.JobPlacement placement = 2;</code>
+     * <code>
+     * .google.cloud.dataproc.v1beta2.JobPlacement placement = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public com.google.cloud.dataproc.v1beta2.JobPlacementOrBuilder getPlacementOrBuilder() {
       if (placementBuilder_ != null) {
@@ -2567,7 +2589,9 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      * run the job.
      * </pre>
      *
-     * <code>.google.cloud.dataproc.v1beta2.JobPlacement placement = 2;</code>
+     * <code>
+     * .google.cloud.dataproc.v1beta2.JobPlacement placement = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.dataproc.v1beta2.JobPlacement,
