@@ -16,21 +16,20 @@
 
 package com.google.cloud.redis.it;
 
+import static org.junit.Assert.assertEquals;
+
 import com.google.cloud.ServiceOptions;
 import com.google.cloud.redis.v1beta1.CloudRedisClient;
 import com.google.cloud.redis.v1beta1.Instance;
 import com.google.cloud.redis.v1beta1.InstanceName;
 import com.google.cloud.redis.v1beta1.LocationName;
 import com.google.common.collect.Lists;
-import org.junit.AfterClass;
-import org.junit.BeforeClass;
-import org.junit.Test;
-
 import java.util.List;
 import java.util.UUID;
 import java.util.logging.Logger;
-
-import static org.junit.Assert.assertEquals;
+import org.junit.AfterClass;
+import org.junit.BeforeClass;
+import org.junit.Test;
 
 public class ITSystemTest {
 
@@ -57,7 +56,10 @@ public class ITSystemTest {
         Instance.newBuilder()
             .setTier(TIER)
             .setMemorySizeGb(MEMORY_SIZE_GB)
-            .setAuthorizedNetwork(AUTHORIZED_NETWORK == null || AUTHORIZED_NETWORK.isEmpty() ? "default" : AUTHORIZED_NETWORK)
+            .setAuthorizedNetwork(
+                AUTHORIZED_NETWORK == null || AUTHORIZED_NETWORK.isEmpty()
+                    ? "default"
+                    : AUTHORIZED_NETWORK)
             .build();
     client.createInstanceAsync(parent, INSTANCE, instance).get();
     log.info("redis instance created successfully.");
@@ -69,7 +71,6 @@ public class ITSystemTest {
     /** Deletes a specific Redis instance. Instance stops serving and data is deleted. */
     InstanceName name = InstanceName.of(projectId, LOCATION, INSTANCE);
     client.deleteInstanceAsync(name);
-    log.info("redis instance deleted successfully.");
     client.close();
   }
 
