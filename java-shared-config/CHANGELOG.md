@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.2.0](https://www.github.com/googleapis/java-shared-config/compare/v0.1.4...v0.2.0) (2019-10-07)
+
+
+### Features
+
+* enable clirr-maven-plugin ([#34](https://www.github.com/googleapis/java-shared-config/issues/34)) ([48cb08e](https://www.github.com/googleapis/java-shared-config/commit/48cb08e))
+
 ### [0.1.3](https://www.github.com/googleapis/java-shared-config/compare/v0.1.2...v0.1.3) (2019-09-20)
 
 
