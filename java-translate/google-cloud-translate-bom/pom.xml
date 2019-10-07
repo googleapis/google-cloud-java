@@ -60,12 +60,12 @@
 
   <dependencyManagement>
     <dependencies>
-
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>grpc-google-cloud-translate-v3beta1</artifactId>
         <version>0.76.1-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-translate-v3beta1:current} -->
       </dependency>
+      <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>grpc-google-cloud-translate-v3</artifactId>
         <version>0.76.1-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-translate-v3:current} -->
