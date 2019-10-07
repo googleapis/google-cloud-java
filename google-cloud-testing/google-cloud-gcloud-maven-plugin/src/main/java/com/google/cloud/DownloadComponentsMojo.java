@@ -34,7 +34,11 @@ import java.io.OutputStream;
 import java.io.Writer;
 import java.net.MalformedURLException;
 import java.net.URL;
+import java.nio.file.FileVisitResult;
 import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.SimpleFileVisitor;
+import java.nio.file.attribute.BasicFileAttributes;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 import java.util.ArrayList;
@@ -53,7 +57,6 @@ import org.apache.commons.compress.archivers.tar.TarArchiveInputStream;
 import org.apache.commons.compress.compressors.gzip.GzipCompressorInputStream;
 import org.apache.commons.compress.utils.IOUtils;
 import org.apache.commons.compress.utils.Lists;
-import org.apache.commons.io.FileUtils;
 import org.apache.maven.execution.MavenSession;
 import org.apache.maven.plugin.AbstractMojo;
 import org.apache.maven.plugin.MojoExecutionException;
@@ -91,6 +94,7 @@ public class DownloadComponentsMojo extends AbstractMojo {
 
   private ExecutorService executor;
 
+  @Override
   public void execute() throws MojoExecutionException {
     executor = Executors.newCachedThreadPool();
 
@@ -239,7 +243,7 @@ public class DownloadComponentsMojo extends AbstractMojo {
     @SuppressWarnings("unused")
     boolean ignored = localCache.delete();
 
-    FileUtils.moveFile(tempFile, localCache);
+    Files.move(tempFile.toPath(), localCache.toPath());
   }
 
   /** Parse the locally cached manifest and extract the relevant components. */
@@ -363,8 +367,27 @@ public class DownloadComponentsMojo extends AbstractMojo {
 
     // Move it into place
     File localPath = getComponentPath(component);
-    FileUtils.deleteDirectory(localPath);
-    FileUtils.moveDirectory(tmpPath, localPath);
+    deleteRecursively(localPath.toPath());
+    Files.move(tmpPath.toPath(), localPath.toPath());
+  }
+
+  private static void deleteRecursively(Path localPath) throws IOException {
+    Files.walkFileTree(localPath, 
+      new SimpleFileVisitor<Path>() {
+        @Override
+        public FileVisitResult postVisitDirectory(Path directory, IOException ex)
+            throws IOException {
+          Files.delete(directory);
+          return FileVisitResult.CONTINUE;
+        }
+         
+        @Override
+        public FileVisitResult visitFile(Path file, BasicFileAttributes attributes) 
+            throws IOException {
+          Files.delete(file);
+          return FileVisitResult.CONTINUE;
+        }
+    });    
   }
 
   private static String byteArrayToHex(byte[] a) {
