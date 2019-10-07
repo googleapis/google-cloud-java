@@ -43,7 +43,7 @@ public class ITSystemTest {
       INSTANCE_NAME_PREFIX + "-" + UUID.randomUUID().toString().substring(0, 8);
   private static final String LOCATION = "us-central1";
   private static final int MEMORY_SIZE_GB = 1;
-  private static final String AUTHORIZED_NETWORK = System.getProperty("redis.network");;
+  private static final String AUTHORIZED_NETWORK = System.getProperty("redis.network");
 
   @BeforeClass
   public static void beforeClass() throws Exception {
@@ -52,14 +52,15 @@ public class ITSystemTest {
 
     /** Creates a Redis instance based on the specified tier and memory size. */
     LocationName parent = LocationName.of(projectId, LOCATION);
+    String authorizedNetwork =
+        AUTHORIZED_NETWORK == null || AUTHORIZED_NETWORK.isEmpty()
+            ? "projects/" + projectId + "/global/networks/default"
+            : "projects/" + projectId + "/global/networks/" + AUTHORIZED_NETWORK;
     Instance instance =
         Instance.newBuilder()
             .setTier(TIER)
             .setMemorySizeGb(MEMORY_SIZE_GB)
-            .setAuthorizedNetwork(
-                AUTHORIZED_NETWORK == null || AUTHORIZED_NETWORK.isEmpty()
-                    ? "default"
-                    : AUTHORIZED_NETWORK)
+            .setAuthorizedNetwork(authorizedNetwork)
             .build();
     client.createInstanceAsync(parent, INSTANCE, instance).get();
     log.info("redis instance created successfully.");
