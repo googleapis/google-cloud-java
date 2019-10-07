@@ -15,7 +15,9 @@ public interface ListAutoscalingPoliciesResponseOrBuilder
    * Output only. Autoscaling policies list.
    * </pre>
    *
-   * <code>repeated .google.cloud.dataproc.v1beta2.AutoscalingPolicy policies = 1;</code>
+   * <code>
+   * repeated .google.cloud.dataproc.v1beta2.AutoscalingPolicy policies = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    */
   java.util.List<com.google.cloud.dataproc.v1beta2.AutoscalingPolicy> getPoliciesList();
   /**
@@ -25,7 +27,9 @@ public interface ListAutoscalingPoliciesResponseOrBuilder
    * Output only. Autoscaling policies list.
    * </pre>
    *
-   * <code>repeated .google.cloud.dataproc.v1beta2.AutoscalingPolicy policies = 1;</code>
+   * <code>
+   * repeated .google.cloud.dataproc.v1beta2.AutoscalingPolicy policies = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    */
   com.google.cloud.dataproc.v1beta2.AutoscalingPolicy getPolicies(int index);
   /**
@@ -35,7 +39,9 @@ public interface ListAutoscalingPoliciesResponseOrBuilder
    * Output only. Autoscaling policies list.
    * </pre>
    *
-   * <code>repeated .google.cloud.dataproc.v1beta2.AutoscalingPolicy policies = 1;</code>
+   * <code>
+   * repeated .google.cloud.dataproc.v1beta2.AutoscalingPolicy policies = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    */
   int getPoliciesCount();
   /**
@@ -45,7 +51,9 @@ public interface ListAutoscalingPoliciesResponseOrBuilder
    * Output only. Autoscaling policies list.
    * </pre>
    *
-   * <code>repeated .google.cloud.dataproc.v1beta2.AutoscalingPolicy policies = 1;</code>
+   * <code>
+   * repeated .google.cloud.dataproc.v1beta2.AutoscalingPolicy policies = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    */
   java.util.List<? extends com.google.cloud.dataproc.v1beta2.AutoscalingPolicyOrBuilder>
       getPoliciesOrBuilderList();
@@ -56,7 +64,9 @@ public interface ListAutoscalingPoliciesResponseOrBuilder
    * Output only. Autoscaling policies list.
    * </pre>
    *
-   * <code>repeated .google.cloud.dataproc.v1beta2.AutoscalingPolicy policies = 1;</code>
+   * <code>
+   * repeated .google.cloud.dataproc.v1beta2.AutoscalingPolicy policies = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    */
   com.google.cloud.dataproc.v1beta2.AutoscalingPolicyOrBuilder getPoliciesOrBuilder(int index);
 
@@ -68,7 +78,7 @@ public interface ListAutoscalingPoliciesResponseOrBuilder
    * results to fetch.
    * </pre>
    *
-   * <code>string next_page_token = 2;</code>
+   * <code>string next_page_token = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    */
   java.lang.String getNextPageToken();
   /**
@@ -79,7 +89,7 @@ public interface ListAutoscalingPoliciesResponseOrBuilder
    * results to fetch.
    * </pre>
    *
-   * <code>string next_page_token = 2;</code>
+   * <code>string next_page_token = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    */
   com.google.protobuf.ByteString getNextPageTokenBytes();
 }

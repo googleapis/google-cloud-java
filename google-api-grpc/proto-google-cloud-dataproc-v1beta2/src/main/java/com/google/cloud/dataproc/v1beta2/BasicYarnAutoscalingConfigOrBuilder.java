@@ -19,7 +19,9 @@ public interface BasicYarnAutoscalingConfigOrBuilder
    * Bounds: [0s, 1d].
    * </pre>
    *
-   * <code>.google.protobuf.Duration graceful_decommission_timeout = 5;</code>
+   * <code>
+   * .google.protobuf.Duration graceful_decommission_timeout = 5 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   boolean hasGracefulDecommissionTimeout();
   /**
@@ -33,7 +35,9 @@ public interface BasicYarnAutoscalingConfigOrBuilder
    * Bounds: [0s, 1d].
    * </pre>
    *
-   * <code>.google.protobuf.Duration graceful_decommission_timeout = 5;</code>
+   * <code>
+   * .google.protobuf.Duration graceful_decommission_timeout = 5 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   com.google.protobuf.Duration getGracefulDecommissionTimeout();
   /**
@@ -47,7 +51,9 @@ public interface BasicYarnAutoscalingConfigOrBuilder
    * Bounds: [0s, 1d].
    * </pre>
    *
-   * <code>.google.protobuf.Duration graceful_decommission_timeout = 5;</code>
+   * <code>
+   * .google.protobuf.Duration graceful_decommission_timeout = 5 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   com.google.protobuf.DurationOrBuilder getGracefulDecommissionTimeoutOrBuilder();
 
@@ -63,7 +69,7 @@ public interface BasicYarnAutoscalingConfigOrBuilder
    * Bounds: [0.0, 1.0].
    * </pre>
    *
-   * <code>double scale_up_factor = 1;</code>
+   * <code>double scale_up_factor = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   double getScaleUpFactor();
 
@@ -79,7 +85,7 @@ public interface BasicYarnAutoscalingConfigOrBuilder
    * Bounds: [0.0, 1.0].
    * </pre>
    *
-   * <code>double scale_down_factor = 2;</code>
+   * <code>double scale_down_factor = 2 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   double getScaleDownFactor();
 
@@ -95,7 +101,7 @@ public interface BasicYarnAutoscalingConfigOrBuilder
    * Bounds: [0.0, 1.0]. Default: 0.0.
    * </pre>
    *
-   * <code>double scale_up_min_worker_fraction = 3;</code>
+   * <code>double scale_up_min_worker_fraction = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   double getScaleUpMinWorkerFraction();
 
@@ -111,7 +117,8 @@ public interface BasicYarnAutoscalingConfigOrBuilder
    * Bounds: [0.0, 1.0]. Default: 0.0.
    * </pre>
    *
-   * <code>double scale_down_min_worker_fraction = 4;</code>
+   * <code>double scale_down_min_worker_fraction = 4 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   double getScaleDownMinWorkerFraction();
 }

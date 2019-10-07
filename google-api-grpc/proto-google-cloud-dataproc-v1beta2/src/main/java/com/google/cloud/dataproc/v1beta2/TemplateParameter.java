@@ -145,7 +145,7 @@ public final class TemplateParameter extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * Required.  Parameter name.
+   * Required. Parameter name.
    * The parameter name is used as the key, and paired with the
    * parameter value, which are passed to the template when the template
    * is instantiated.
@@ -171,7 +171,7 @@ public final class TemplateParameter extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * Required.  Parameter name.
+   * Required. Parameter name.
    * The parameter name is used as the key, and paired with the
    * parameter value, which are passed to the template when the template
    * is instantiated.
@@ -884,7 +884,7 @@ public final class TemplateParameter extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Required.  Parameter name.
+     * Required. Parameter name.
      * The parameter name is used as the key, and paired with the
      * parameter value, which are passed to the template when the template
      * is instantiated.
@@ -910,7 +910,7 @@ public final class TemplateParameter extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Required.  Parameter name.
+     * Required. Parameter name.
      * The parameter name is used as the key, and paired with the
      * parameter value, which are passed to the template when the template
      * is instantiated.
@@ -936,7 +936,7 @@ public final class TemplateParameter extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Required.  Parameter name.
+     * Required. Parameter name.
      * The parameter name is used as the key, and paired with the
      * parameter value, which are passed to the template when the template
      * is instantiated.
@@ -960,7 +960,7 @@ public final class TemplateParameter extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Required.  Parameter name.
+     * Required. Parameter name.
      * The parameter name is used as the key, and paired with the
      * parameter value, which are passed to the template when the template
      * is instantiated.
@@ -981,7 +981,7 @@ public final class TemplateParameter extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Required.  Parameter name.
+     * Required. Parameter name.
      * The parameter name is used as the key, and paired with the
      * parameter value, which are passed to the template when the template
      * is instantiated.

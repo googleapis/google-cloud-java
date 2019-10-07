@@ -118,7 +118,9 @@ public final class ListWorkflowTemplatesResponse extends com.google.protobuf.Gen
    * Output only. WorkflowTemplates list.
    * </pre>
    *
-   * <code>repeated .google.cloud.dataproc.v1beta2.WorkflowTemplate templates = 1;</code>
+   * <code>
+   * repeated .google.cloud.dataproc.v1beta2.WorkflowTemplate templates = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    */
   public java.util.List<com.google.cloud.dataproc.v1beta2.WorkflowTemplate> getTemplatesList() {
     return templates_;
@@ -130,7 +132,9 @@ public final class ListWorkflowTemplatesResponse extends com.google.protobuf.Gen
    * Output only. WorkflowTemplates list.
    * </pre>
    *
-   * <code>repeated .google.cloud.dataproc.v1beta2.WorkflowTemplate templates = 1;</code>
+   * <code>
+   * repeated .google.cloud.dataproc.v1beta2.WorkflowTemplate templates = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    */
   public java.util.List<? extends com.google.cloud.dataproc.v1beta2.WorkflowTemplateOrBuilder>
       getTemplatesOrBuilderList() {
@@ -143,7 +147,9 @@ public final class ListWorkflowTemplatesResponse extends com.google.protobuf.Gen
    * Output only. WorkflowTemplates list.
    * </pre>
    *
-   * <code>repeated .google.cloud.dataproc.v1beta2.WorkflowTemplate templates = 1;</code>
+   * <code>
+   * repeated .google.cloud.dataproc.v1beta2.WorkflowTemplate templates = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    */
   public int getTemplatesCount() {
     return templates_.size();
@@ -155,7 +161,9 @@ public final class ListWorkflowTemplatesResponse extends com.google.protobuf.Gen
    * Output only. WorkflowTemplates list.
    * </pre>
    *
-   * <code>repeated .google.cloud.dataproc.v1beta2.WorkflowTemplate templates = 1;</code>
+   * <code>
+   * repeated .google.cloud.dataproc.v1beta2.WorkflowTemplate templates = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    */
   public com.google.cloud.dataproc.v1beta2.WorkflowTemplate getTemplates(int index) {
     return templates_.get(index);
@@ -167,7 +175,9 @@ public final class ListWorkflowTemplatesResponse extends com.google.protobuf.Gen
    * Output only. WorkflowTemplates list.
    * </pre>
    *
-   * <code>repeated .google.cloud.dataproc.v1beta2.WorkflowTemplate templates = 1;</code>
+   * <code>
+   * repeated .google.cloud.dataproc.v1beta2.WorkflowTemplate templates = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    */
   public com.google.cloud.dataproc.v1beta2.WorkflowTemplateOrBuilder getTemplatesOrBuilder(
       int index) {
@@ -185,7 +195,7 @@ public final class ListWorkflowTemplatesResponse extends com.google.protobuf.Gen
    * page_token in a subsequent &lt;code&gt;ListWorkflowTemplatesRequest&lt;/code&gt;.
    * </pre>
    *
-   * <code>string next_page_token = 2;</code>
+   * <code>string next_page_token = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    */
   public java.lang.String getNextPageToken() {
     java.lang.Object ref = nextPageToken_;
@@ -207,7 +217,7 @@ public final class ListWorkflowTemplatesResponse extends com.google.protobuf.Gen
    * page_token in a subsequent &lt;code&gt;ListWorkflowTemplatesRequest&lt;/code&gt;.
    * </pre>
    *
-   * <code>string next_page_token = 2;</code>
+   * <code>string next_page_token = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    */
   public com.google.protobuf.ByteString getNextPageTokenBytes() {
     java.lang.Object ref = nextPageToken_;
@@ -628,7 +638,9 @@ public final class ListWorkflowTemplatesResponse extends com.google.protobuf.Gen
      * Output only. WorkflowTemplates list.
      * </pre>
      *
-     * <code>repeated .google.cloud.dataproc.v1beta2.WorkflowTemplate templates = 1;</code>
+     * <code>
+     * repeated .google.cloud.dataproc.v1beta2.WorkflowTemplate templates = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public java.util.List<com.google.cloud.dataproc.v1beta2.WorkflowTemplate> getTemplatesList() {
       if (templatesBuilder_ == null) {
@@ -644,7 +656,9 @@ public final class ListWorkflowTemplatesResponse extends com.google.protobuf.Gen
      * Output only. WorkflowTemplates list.
      * </pre>
      *
-     * <code>repeated .google.cloud.dataproc.v1beta2.WorkflowTemplate templates = 1;</code>
+     * <code>
+     * repeated .google.cloud.dataproc.v1beta2.WorkflowTemplate templates = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public int getTemplatesCount() {
       if (templatesBuilder_ == null) {
@@ -660,7 +674,9 @@ public final class ListWorkflowTemplatesResponse extends com.google.protobuf.Gen
      * Output only. WorkflowTemplates list.
      * </pre>
      *
-     * <code>repeated .google.cloud.dataproc.v1beta2.WorkflowTemplate templates = 1;</code>
+     * <code>
+     * repeated .google.cloud.dataproc.v1beta2.WorkflowTemplate templates = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public com.google.cloud.dataproc.v1beta2.WorkflowTemplate getTemplates(int index) {
       if (templatesBuilder_ == null) {
@@ -676,7 +692,9 @@ public final class ListWorkflowTemplatesResponse extends com.google.protobuf.Gen
      * Output only. WorkflowTemplates list.
      * </pre>
      *
-     * <code>repeated .google.cloud.dataproc.v1beta2.WorkflowTemplate templates = 1;</code>
+     * <code>
+     * repeated .google.cloud.dataproc.v1beta2.WorkflowTemplate templates = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public Builder setTemplates(
         int index, com.google.cloud.dataproc.v1beta2.WorkflowTemplate value) {
@@ -699,7 +717,9 @@ public final class ListWorkflowTemplatesResponse extends com.google.protobuf.Gen
      * Output only. WorkflowTemplates list.
      * </pre>
      *
-     * <code>repeated .google.cloud.dataproc.v1beta2.WorkflowTemplate templates = 1;</code>
+     * <code>
+     * repeated .google.cloud.dataproc.v1beta2.WorkflowTemplate templates = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public Builder setTemplates(
         int index, com.google.cloud.dataproc.v1beta2.WorkflowTemplate.Builder builderForValue) {
@@ -719,7 +739,9 @@ public final class ListWorkflowTemplatesResponse extends com.google.protobuf.Gen
      * Output only. WorkflowTemplates list.
      * </pre>
      *
-     * <code>repeated .google.cloud.dataproc.v1beta2.WorkflowTemplate templates = 1;</code>
+     * <code>
+     * repeated .google.cloud.dataproc.v1beta2.WorkflowTemplate templates = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public Builder addTemplates(com.google.cloud.dataproc.v1beta2.WorkflowTemplate value) {
       if (templatesBuilder_ == null) {
@@ -741,7 +763,9 @@ public final class ListWorkflowTemplatesResponse extends com.google.protobuf.Gen
      * Output only. WorkflowTemplates list.
      * </pre>
      *
-     * <code>repeated .google.cloud.dataproc.v1beta2.WorkflowTemplate templates = 1;</code>
+     * <code>
+     * repeated .google.cloud.dataproc.v1beta2.WorkflowTemplate templates = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public Builder addTemplates(
         int index, com.google.cloud.dataproc.v1beta2.WorkflowTemplate value) {
@@ -764,7 +788,9 @@ public final class ListWorkflowTemplatesResponse extends com.google.protobuf.Gen
      * Output only. WorkflowTemplates list.
      * </pre>
      *
-     * <code>repeated .google.cloud.dataproc.v1beta2.WorkflowTemplate templates = 1;</code>
+     * <code>
+     * repeated .google.cloud.dataproc.v1beta2.WorkflowTemplate templates = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public Builder addTemplates(
         com.google.cloud.dataproc.v1beta2.WorkflowTemplate.Builder builderForValue) {
@@ -784,7 +810,9 @@ public final class ListWorkflowTemplatesResponse extends com.google.protobuf.Gen
      * Output only. WorkflowTemplates list.
      * </pre>
      *
-     * <code>repeated .google.cloud.dataproc.v1beta2.WorkflowTemplate templates = 1;</code>
+     * <code>
+     * repeated .google.cloud.dataproc.v1beta2.WorkflowTemplate templates = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public Builder addTemplates(
         int index, com.google.cloud.dataproc.v1beta2.WorkflowTemplate.Builder builderForValue) {
@@ -804,7 +832,9 @@ public final class ListWorkflowTemplatesResponse extends com.google.protobuf.Gen
      * Output only. WorkflowTemplates list.
      * </pre>
      *
-     * <code>repeated .google.cloud.dataproc.v1beta2.WorkflowTemplate templates = 1;</code>
+     * <code>
+     * repeated .google.cloud.dataproc.v1beta2.WorkflowTemplate templates = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public Builder addAllTemplates(
         java.lang.Iterable<? extends com.google.cloud.dataproc.v1beta2.WorkflowTemplate> values) {
@@ -824,7 +854,9 @@ public final class ListWorkflowTemplatesResponse extends com.google.protobuf.Gen
      * Output only. WorkflowTemplates list.
      * </pre>
      *
-     * <code>repeated .google.cloud.dataproc.v1beta2.WorkflowTemplate templates = 1;</code>
+     * <code>
+     * repeated .google.cloud.dataproc.v1beta2.WorkflowTemplate templates = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public Builder clearTemplates() {
       if (templatesBuilder_ == null) {
@@ -843,7 +875,9 @@ public final class ListWorkflowTemplatesResponse extends com.google.protobuf.Gen
      * Output only. WorkflowTemplates list.
      * </pre>
      *
-     * <code>repeated .google.cloud.dataproc.v1beta2.WorkflowTemplate templates = 1;</code>
+     * <code>
+     * repeated .google.cloud.dataproc.v1beta2.WorkflowTemplate templates = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public Builder removeTemplates(int index) {
       if (templatesBuilder_ == null) {
@@ -862,7 +896,9 @@ public final class ListWorkflowTemplatesResponse extends com.google.protobuf.Gen
      * Output only. WorkflowTemplates list.
      * </pre>
      *
-     * <code>repeated .google.cloud.dataproc.v1beta2.WorkflowTemplate templates = 1;</code>
+     * <code>
+     * repeated .google.cloud.dataproc.v1beta2.WorkflowTemplate templates = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public com.google.cloud.dataproc.v1beta2.WorkflowTemplate.Builder getTemplatesBuilder(
         int index) {
@@ -875,7 +911,9 @@ public final class ListWorkflowTemplatesResponse extends com.google.protobuf.Gen
      * Output only. WorkflowTemplates list.
      * </pre>
      *
-     * <code>repeated .google.cloud.dataproc.v1beta2.WorkflowTemplate templates = 1;</code>
+     * <code>
+     * repeated .google.cloud.dataproc.v1beta2.WorkflowTemplate templates = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public com.google.cloud.dataproc.v1beta2.WorkflowTemplateOrBuilder getTemplatesOrBuilder(
         int index) {
@@ -892,7 +930,9 @@ public final class ListWorkflowTemplatesResponse extends com.google.protobuf.Gen
      * Output only. WorkflowTemplates list.
      * </pre>
      *
-     * <code>repeated .google.cloud.dataproc.v1beta2.WorkflowTemplate templates = 1;</code>
+     * <code>
+     * repeated .google.cloud.dataproc.v1beta2.WorkflowTemplate templates = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public java.util.List<? extends com.google.cloud.dataproc.v1beta2.WorkflowTemplateOrBuilder>
         getTemplatesOrBuilderList() {
@@ -909,7 +949,9 @@ public final class ListWorkflowTemplatesResponse extends com.google.protobuf.Gen
      * Output only. WorkflowTemplates list.
      * </pre>
      *
-     * <code>repeated .google.cloud.dataproc.v1beta2.WorkflowTemplate templates = 1;</code>
+     * <code>
+     * repeated .google.cloud.dataproc.v1beta2.WorkflowTemplate templates = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public com.google.cloud.dataproc.v1beta2.WorkflowTemplate.Builder addTemplatesBuilder() {
       return getTemplatesFieldBuilder()
@@ -922,7 +964,9 @@ public final class ListWorkflowTemplatesResponse extends com.google.protobuf.Gen
      * Output only. WorkflowTemplates list.
      * </pre>
      *
-     * <code>repeated .google.cloud.dataproc.v1beta2.WorkflowTemplate templates = 1;</code>
+     * <code>
+     * repeated .google.cloud.dataproc.v1beta2.WorkflowTemplate templates = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public com.google.cloud.dataproc.v1beta2.WorkflowTemplate.Builder addTemplatesBuilder(
         int index) {
@@ -937,7 +981,9 @@ public final class ListWorkflowTemplatesResponse extends com.google.protobuf.Gen
      * Output only. WorkflowTemplates list.
      * </pre>
      *
-     * <code>repeated .google.cloud.dataproc.v1beta2.WorkflowTemplate templates = 1;</code>
+     * <code>
+     * repeated .google.cloud.dataproc.v1beta2.WorkflowTemplate templates = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public java.util.List<com.google.cloud.dataproc.v1beta2.WorkflowTemplate.Builder>
         getTemplatesBuilderList() {
@@ -971,7 +1017,7 @@ public final class ListWorkflowTemplatesResponse extends com.google.protobuf.Gen
      * page_token in a subsequent &lt;code&gt;ListWorkflowTemplatesRequest&lt;/code&gt;.
      * </pre>
      *
-     * <code>string next_page_token = 2;</code>
+     * <code>string next_page_token = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     public java.lang.String getNextPageToken() {
       java.lang.Object ref = nextPageToken_;
@@ -993,7 +1039,7 @@ public final class ListWorkflowTemplatesResponse extends com.google.protobuf.Gen
      * page_token in a subsequent &lt;code&gt;ListWorkflowTemplatesRequest&lt;/code&gt;.
      * </pre>
      *
-     * <code>string next_page_token = 2;</code>
+     * <code>string next_page_token = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     public com.google.protobuf.ByteString getNextPageTokenBytes() {
       java.lang.Object ref = nextPageToken_;
@@ -1015,7 +1061,7 @@ public final class ListWorkflowTemplatesResponse extends com.google.protobuf.Gen
      * page_token in a subsequent &lt;code&gt;ListWorkflowTemplatesRequest&lt;/code&gt;.
      * </pre>
      *
-     * <code>string next_page_token = 2;</code>
+     * <code>string next_page_token = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     public Builder setNextPageToken(java.lang.String value) {
       if (value == null) {
@@ -1035,7 +1081,7 @@ public final class ListWorkflowTemplatesResponse extends com.google.protobuf.Gen
      * page_token in a subsequent &lt;code&gt;ListWorkflowTemplatesRequest&lt;/code&gt;.
      * </pre>
      *
-     * <code>string next_page_token = 2;</code>
+     * <code>string next_page_token = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     public Builder clearNextPageToken() {
 
@@ -1052,7 +1098,7 @@ public final class ListWorkflowTemplatesResponse extends com.google.protobuf.Gen
      * page_token in a subsequent &lt;code&gt;ListWorkflowTemplatesRequest&lt;/code&gt;.
      * </pre>
      *
-     * <code>string next_page_token = 2;</code>
+     * <code>string next_page_token = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     public Builder setNextPageTokenBytes(com.google.protobuf.ByteString value) {
       if (value == null) {

@@ -17,7 +17,7 @@ public interface DiskConfigOrBuilder
    * "pd-standard" (Persistent Disk Hard Disk Drive).
    * </pre>
    *
-   * <code>string boot_disk_type = 3;</code>
+   * <code>string boot_disk_type = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   java.lang.String getBootDiskType();
   /**
@@ -29,7 +29,7 @@ public interface DiskConfigOrBuilder
    * "pd-standard" (Persistent Disk Hard Disk Drive).
    * </pre>
    *
-   * <code>string boot_disk_type = 3;</code>
+   * <code>string boot_disk_type = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   com.google.protobuf.ByteString getBootDiskTypeBytes();
 
@@ -40,7 +40,7 @@ public interface DiskConfigOrBuilder
    * Optional. Size in GB of the boot disk (default is 500GB).
    * </pre>
    *
-   * <code>int32 boot_disk_size_gb = 1;</code>
+   * <code>int32 boot_disk_size_gb = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   int getBootDiskSizeGb();
 
@@ -48,7 +48,7 @@ public interface DiskConfigOrBuilder
    *
    *
    * <pre>
-   * Optional. Number of attached SSDs, from 0 to 4 (default is 0).
+   * Number of attached SSDs, from 0 to 4 (default is 0).
    * If SSDs are not attached, the boot disk is used to store runtime logs and
    * [HDFS](https://hadoop.apache.org/docs/r1.2.1/hdfs_user_guide.html) data.
    * If one or more SSDs are attached, this runtime bulk

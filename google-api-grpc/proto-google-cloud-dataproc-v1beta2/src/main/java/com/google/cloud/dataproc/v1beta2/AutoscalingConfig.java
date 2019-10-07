@@ -105,7 +105,7 @@ public final class AutoscalingConfig extends com.google.protobuf.GeneratedMessag
    * Note that the policy must be in the same project and Cloud Dataproc region.
    * </pre>
    *
-   * <code>string policy_uri = 1;</code>
+   * <code>string policy_uri = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   public java.lang.String getPolicyUri() {
     java.lang.Object ref = policyUri_;
@@ -130,7 +130,7 @@ public final class AutoscalingConfig extends com.google.protobuf.GeneratedMessag
    * Note that the policy must be in the same project and Cloud Dataproc region.
    * </pre>
    *
-   * <code>string policy_uri = 1;</code>
+   * <code>string policy_uri = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   public com.google.protobuf.ByteString getPolicyUriBytes() {
     java.lang.Object ref = policyUri_;
@@ -475,7 +475,7 @@ public final class AutoscalingConfig extends com.google.protobuf.GeneratedMessag
      * Note that the policy must be in the same project and Cloud Dataproc region.
      * </pre>
      *
-     * <code>string policy_uri = 1;</code>
+     * <code>string policy_uri = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public java.lang.String getPolicyUri() {
       java.lang.Object ref = policyUri_;
@@ -500,7 +500,7 @@ public final class AutoscalingConfig extends com.google.protobuf.GeneratedMessag
      * Note that the policy must be in the same project and Cloud Dataproc region.
      * </pre>
      *
-     * <code>string policy_uri = 1;</code>
+     * <code>string policy_uri = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public com.google.protobuf.ByteString getPolicyUriBytes() {
       java.lang.Object ref = policyUri_;
@@ -525,7 +525,7 @@ public final class AutoscalingConfig extends com.google.protobuf.GeneratedMessag
      * Note that the policy must be in the same project and Cloud Dataproc region.
      * </pre>
      *
-     * <code>string policy_uri = 1;</code>
+     * <code>string policy_uri = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public Builder setPolicyUri(java.lang.String value) {
       if (value == null) {
@@ -548,7 +548,7 @@ public final class AutoscalingConfig extends com.google.protobuf.GeneratedMessag
      * Note that the policy must be in the same project and Cloud Dataproc region.
      * </pre>
      *
-     * <code>string policy_uri = 1;</code>
+     * <code>string policy_uri = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public Builder clearPolicyUri() {
 
@@ -568,7 +568,7 @@ public final class AutoscalingConfig extends com.google.protobuf.GeneratedMessag
      * Note that the policy must be in the same project and Cloud Dataproc region.
      * </pre>
      *
-     * <code>string policy_uri = 1;</code>
+     * <code>string policy_uri = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public Builder setPolicyUriBytes(com.google.protobuf.ByteString value) {
       if (value == null) {

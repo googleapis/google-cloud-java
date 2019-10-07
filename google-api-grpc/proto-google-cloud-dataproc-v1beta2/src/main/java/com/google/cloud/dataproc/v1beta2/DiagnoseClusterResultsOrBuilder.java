@@ -17,7 +17,7 @@ public interface DiagnoseClusterResultsOrBuilder
    * diagnostics.
    * </pre>
    *
-   * <code>string output_uri = 1;</code>
+   * <code>string output_uri = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    */
   java.lang.String getOutputUri();
   /**
@@ -29,7 +29,7 @@ public interface DiagnoseClusterResultsOrBuilder
    * diagnostics.
    * </pre>
    *
-   * <code>string output_uri = 1;</code>
+   * <code>string output_uri = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    */
   com.google.protobuf.ByteString getOutputUriBytes();
 }

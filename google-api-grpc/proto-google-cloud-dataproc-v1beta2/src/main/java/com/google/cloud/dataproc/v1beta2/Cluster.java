@@ -206,7 +206,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
    * Required. The Google Cloud Platform project ID that the cluster belongs to.
    * </pre>
    *
-   * <code>string project_id = 1;</code>
+   * <code>string project_id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   public java.lang.String getProjectId() {
     java.lang.Object ref = projectId_;
@@ -226,7 +226,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
    * Required. The Google Cloud Platform project ID that the cluster belongs to.
    * </pre>
    *
-   * <code>string project_id = 1;</code>
+   * <code>string project_id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   public com.google.protobuf.ByteString getProjectIdBytes() {
     java.lang.Object ref = projectId_;
@@ -250,7 +250,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
    * unique. Names of deleted clusters can be reused.
    * </pre>
    *
-   * <code>string cluster_name = 2;</code>
+   * <code>string cluster_name = 2 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   public java.lang.String getClusterName() {
     java.lang.Object ref = clusterName_;
@@ -271,7 +271,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
    * unique. Names of deleted clusters can be reused.
    * </pre>
    *
-   * <code>string cluster_name = 2;</code>
+   * <code>string cluster_name = 2 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   public com.google.protobuf.ByteString getClusterNameBytes() {
     java.lang.Object ref = clusterName_;
@@ -295,7 +295,9 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
    * default values, and values may change when clusters are updated.
    * </pre>
    *
-   * <code>.google.cloud.dataproc.v1beta2.ClusterConfig config = 3;</code>
+   * <code>
+   * .google.cloud.dataproc.v1beta2.ClusterConfig config = 3 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   public boolean hasConfig() {
     return config_ != null;
@@ -308,7 +310,9 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
    * default values, and values may change when clusters are updated.
    * </pre>
    *
-   * <code>.google.cloud.dataproc.v1beta2.ClusterConfig config = 3;</code>
+   * <code>
+   * .google.cloud.dataproc.v1beta2.ClusterConfig config = 3 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   public com.google.cloud.dataproc.v1beta2.ClusterConfig getConfig() {
     return config_ == null
@@ -323,7 +327,9 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
    * default values, and values may change when clusters are updated.
    * </pre>
    *
-   * <code>.google.cloud.dataproc.v1beta2.ClusterConfig config = 3;</code>
+   * <code>
+   * .google.cloud.dataproc.v1beta2.ClusterConfig config = 3 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   public com.google.cloud.dataproc.v1beta2.ClusterConfigOrBuilder getConfigOrBuilder() {
     return getConfig();
@@ -367,7 +373,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
    * associated with a cluster.
    * </pre>
    *
-   * <code>map&lt;string, string&gt; labels = 8;</code>
+   * <code>map&lt;string, string&gt; labels = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   public boolean containsLabels(java.lang.String key) {
     if (key == null) {
@@ -393,7 +399,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
    * associated with a cluster.
    * </pre>
    *
-   * <code>map&lt;string, string&gt; labels = 8;</code>
+   * <code>map&lt;string, string&gt; labels = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   public java.util.Map<java.lang.String, java.lang.String> getLabelsMap() {
     return internalGetLabels().getMap();
@@ -411,7 +417,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
    * associated with a cluster.
    * </pre>
    *
-   * <code>map&lt;string, string&gt; labels = 8;</code>
+   * <code>map&lt;string, string&gt; labels = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   public java.lang.String getLabelsOrDefault(java.lang.String key, java.lang.String defaultValue) {
     if (key == null) {
@@ -433,7 +439,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
    * associated with a cluster.
    * </pre>
    *
-   * <code>map&lt;string, string&gt; labels = 8;</code>
+   * <code>map&lt;string, string&gt; labels = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   public java.lang.String getLabelsOrThrow(java.lang.String key) {
     if (key == null) {
@@ -455,7 +461,9 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
    * Output only. Cluster status.
    * </pre>
    *
-   * <code>.google.cloud.dataproc.v1beta2.ClusterStatus status = 4;</code>
+   * <code>
+   * .google.cloud.dataproc.v1beta2.ClusterStatus status = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    */
   public boolean hasStatus() {
     return status_ != null;
@@ -467,7 +475,9 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
    * Output only. Cluster status.
    * </pre>
    *
-   * <code>.google.cloud.dataproc.v1beta2.ClusterStatus status = 4;</code>
+   * <code>
+   * .google.cloud.dataproc.v1beta2.ClusterStatus status = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    */
   public com.google.cloud.dataproc.v1beta2.ClusterStatus getStatus() {
     return status_ == null
@@ -481,7 +491,9 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
    * Output only. Cluster status.
    * </pre>
    *
-   * <code>.google.cloud.dataproc.v1beta2.ClusterStatus status = 4;</code>
+   * <code>
+   * .google.cloud.dataproc.v1beta2.ClusterStatus status = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    */
   public com.google.cloud.dataproc.v1beta2.ClusterStatusOrBuilder getStatusOrBuilder() {
     return getStatus();
@@ -496,7 +508,9 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
    * Output only. The previous cluster status.
    * </pre>
    *
-   * <code>repeated .google.cloud.dataproc.v1beta2.ClusterStatus status_history = 7;</code>
+   * <code>
+   * repeated .google.cloud.dataproc.v1beta2.ClusterStatus status_history = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    */
   public java.util.List<com.google.cloud.dataproc.v1beta2.ClusterStatus> getStatusHistoryList() {
     return statusHistory_;
@@ -508,7 +522,9 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
    * Output only. The previous cluster status.
    * </pre>
    *
-   * <code>repeated .google.cloud.dataproc.v1beta2.ClusterStatus status_history = 7;</code>
+   * <code>
+   * repeated .google.cloud.dataproc.v1beta2.ClusterStatus status_history = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    */
   public java.util.List<? extends com.google.cloud.dataproc.v1beta2.ClusterStatusOrBuilder>
       getStatusHistoryOrBuilderList() {
@@ -521,7 +537,9 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
    * Output only. The previous cluster status.
    * </pre>
    *
-   * <code>repeated .google.cloud.dataproc.v1beta2.ClusterStatus status_history = 7;</code>
+   * <code>
+   * repeated .google.cloud.dataproc.v1beta2.ClusterStatus status_history = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    */
   public int getStatusHistoryCount() {
     return statusHistory_.size();
@@ -533,7 +551,9 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
    * Output only. The previous cluster status.
    * </pre>
    *
-   * <code>repeated .google.cloud.dataproc.v1beta2.ClusterStatus status_history = 7;</code>
+   * <code>
+   * repeated .google.cloud.dataproc.v1beta2.ClusterStatus status_history = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    */
   public com.google.cloud.dataproc.v1beta2.ClusterStatus getStatusHistory(int index) {
     return statusHistory_.get(index);
@@ -545,7 +565,9 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
    * Output only. The previous cluster status.
    * </pre>
    *
-   * <code>repeated .google.cloud.dataproc.v1beta2.ClusterStatus status_history = 7;</code>
+   * <code>
+   * repeated .google.cloud.dataproc.v1beta2.ClusterStatus status_history = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    */
   public com.google.cloud.dataproc.v1beta2.ClusterStatusOrBuilder getStatusHistoryOrBuilder(
       int index) {
@@ -562,7 +584,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
    * generates this value when it creates the cluster.
    * </pre>
    *
-   * <code>string cluster_uuid = 6;</code>
+   * <code>string cluster_uuid = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    */
   public java.lang.String getClusterUuid() {
     java.lang.Object ref = clusterUuid_;
@@ -583,7 +605,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
    * generates this value when it creates the cluster.
    * </pre>
    *
-   * <code>string cluster_uuid = 6;</code>
+   * <code>string cluster_uuid = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    */
   public com.google.protobuf.ByteString getClusterUuidBytes() {
     java.lang.Object ref = clusterUuid_;
@@ -608,7 +630,9 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
    * may be changed before final release.
    * </pre>
    *
-   * <code>.google.cloud.dataproc.v1beta2.ClusterMetrics metrics = 9;</code>
+   * <code>
+   * .google.cloud.dataproc.v1beta2.ClusterMetrics metrics = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    */
   public boolean hasMetrics() {
     return metrics_ != null;
@@ -622,7 +646,9 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
    * may be changed before final release.
    * </pre>
    *
-   * <code>.google.cloud.dataproc.v1beta2.ClusterMetrics metrics = 9;</code>
+   * <code>
+   * .google.cloud.dataproc.v1beta2.ClusterMetrics metrics = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    */
   public com.google.cloud.dataproc.v1beta2.ClusterMetrics getMetrics() {
     return metrics_ == null
@@ -638,7 +664,9 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
    * may be changed before final release.
    * </pre>
    *
-   * <code>.google.cloud.dataproc.v1beta2.ClusterMetrics metrics = 9;</code>
+   * <code>
+   * .google.cloud.dataproc.v1beta2.ClusterMetrics metrics = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    */
   public com.google.cloud.dataproc.v1beta2.ClusterMetricsOrBuilder getMetricsOrBuilder() {
     return getMetrics();
@@ -1186,7 +1214,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      * Required. The Google Cloud Platform project ID that the cluster belongs to.
      * </pre>
      *
-     * <code>string project_id = 1;</code>
+     * <code>string project_id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public java.lang.String getProjectId() {
       java.lang.Object ref = projectId_;
@@ -1206,7 +1234,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      * Required. The Google Cloud Platform project ID that the cluster belongs to.
      * </pre>
      *
-     * <code>string project_id = 1;</code>
+     * <code>string project_id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public com.google.protobuf.ByteString getProjectIdBytes() {
       java.lang.Object ref = projectId_;
@@ -1226,7 +1254,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      * Required. The Google Cloud Platform project ID that the cluster belongs to.
      * </pre>
      *
-     * <code>string project_id = 1;</code>
+     * <code>string project_id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder setProjectId(java.lang.String value) {
       if (value == null) {
@@ -1244,7 +1272,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      * Required. The Google Cloud Platform project ID that the cluster belongs to.
      * </pre>
      *
-     * <code>string project_id = 1;</code>
+     * <code>string project_id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder clearProjectId() {
 
@@ -1259,7 +1287,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      * Required. The Google Cloud Platform project ID that the cluster belongs to.
      * </pre>
      *
-     * <code>string project_id = 1;</code>
+     * <code>string project_id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder setProjectIdBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -1281,7 +1309,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      * unique. Names of deleted clusters can be reused.
      * </pre>
      *
-     * <code>string cluster_name = 2;</code>
+     * <code>string cluster_name = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public java.lang.String getClusterName() {
       java.lang.Object ref = clusterName_;
@@ -1302,7 +1330,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      * unique. Names of deleted clusters can be reused.
      * </pre>
      *
-     * <code>string cluster_name = 2;</code>
+     * <code>string cluster_name = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public com.google.protobuf.ByteString getClusterNameBytes() {
       java.lang.Object ref = clusterName_;
@@ -1323,7 +1351,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      * unique. Names of deleted clusters can be reused.
      * </pre>
      *
-     * <code>string cluster_name = 2;</code>
+     * <code>string cluster_name = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder setClusterName(java.lang.String value) {
       if (value == null) {
@@ -1342,7 +1370,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      * unique. Names of deleted clusters can be reused.
      * </pre>
      *
-     * <code>string cluster_name = 2;</code>
+     * <code>string cluster_name = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder clearClusterName() {
 
@@ -1358,7 +1386,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      * unique. Names of deleted clusters can be reused.
      * </pre>
      *
-     * <code>string cluster_name = 2;</code>
+     * <code>string cluster_name = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder setClusterNameBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -1385,7 +1413,9 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      * default values, and values may change when clusters are updated.
      * </pre>
      *
-     * <code>.google.cloud.dataproc.v1beta2.ClusterConfig config = 3;</code>
+     * <code>
+     * .google.cloud.dataproc.v1beta2.ClusterConfig config = 3 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public boolean hasConfig() {
       return configBuilder_ != null || config_ != null;
@@ -1398,7 +1428,9 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      * default values, and values may change when clusters are updated.
      * </pre>
      *
-     * <code>.google.cloud.dataproc.v1beta2.ClusterConfig config = 3;</code>
+     * <code>
+     * .google.cloud.dataproc.v1beta2.ClusterConfig config = 3 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public com.google.cloud.dataproc.v1beta2.ClusterConfig getConfig() {
       if (configBuilder_ == null) {
@@ -1417,7 +1449,9 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      * default values, and values may change when clusters are updated.
      * </pre>
      *
-     * <code>.google.cloud.dataproc.v1beta2.ClusterConfig config = 3;</code>
+     * <code>
+     * .google.cloud.dataproc.v1beta2.ClusterConfig config = 3 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder setConfig(com.google.cloud.dataproc.v1beta2.ClusterConfig value) {
       if (configBuilder_ == null) {
@@ -1440,7 +1474,9 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      * default values, and values may change when clusters are updated.
      * </pre>
      *
-     * <code>.google.cloud.dataproc.v1beta2.ClusterConfig config = 3;</code>
+     * <code>
+     * .google.cloud.dataproc.v1beta2.ClusterConfig config = 3 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder setConfig(
         com.google.cloud.dataproc.v1beta2.ClusterConfig.Builder builderForValue) {
@@ -1461,7 +1497,9 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      * default values, and values may change when clusters are updated.
      * </pre>
      *
-     * <code>.google.cloud.dataproc.v1beta2.ClusterConfig config = 3;</code>
+     * <code>
+     * .google.cloud.dataproc.v1beta2.ClusterConfig config = 3 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder mergeConfig(com.google.cloud.dataproc.v1beta2.ClusterConfig value) {
       if (configBuilder_ == null) {
@@ -1488,7 +1526,9 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      * default values, and values may change when clusters are updated.
      * </pre>
      *
-     * <code>.google.cloud.dataproc.v1beta2.ClusterConfig config = 3;</code>
+     * <code>
+     * .google.cloud.dataproc.v1beta2.ClusterConfig config = 3 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder clearConfig() {
       if (configBuilder_ == null) {
@@ -1509,7 +1549,9 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      * default values, and values may change when clusters are updated.
      * </pre>
      *
-     * <code>.google.cloud.dataproc.v1beta2.ClusterConfig config = 3;</code>
+     * <code>
+     * .google.cloud.dataproc.v1beta2.ClusterConfig config = 3 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public com.google.cloud.dataproc.v1beta2.ClusterConfig.Builder getConfigBuilder() {
 
@@ -1524,7 +1566,9 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      * default values, and values may change when clusters are updated.
      * </pre>
      *
-     * <code>.google.cloud.dataproc.v1beta2.ClusterConfig config = 3;</code>
+     * <code>
+     * .google.cloud.dataproc.v1beta2.ClusterConfig config = 3 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public com.google.cloud.dataproc.v1beta2.ClusterConfigOrBuilder getConfigOrBuilder() {
       if (configBuilder_ != null) {
@@ -1543,7 +1587,9 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      * default values, and values may change when clusters are updated.
      * </pre>
      *
-     * <code>.google.cloud.dataproc.v1beta2.ClusterConfig config = 3;</code>
+     * <code>
+     * .google.cloud.dataproc.v1beta2.ClusterConfig config = 3 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.dataproc.v1beta2.ClusterConfig,
@@ -1600,7 +1646,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      * associated with a cluster.
      * </pre>
      *
-     * <code>map&lt;string, string&gt; labels = 8;</code>
+     * <code>map&lt;string, string&gt; labels = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public boolean containsLabels(java.lang.String key) {
       if (key == null) {
@@ -1626,7 +1672,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      * associated with a cluster.
      * </pre>
      *
-     * <code>map&lt;string, string&gt; labels = 8;</code>
+     * <code>map&lt;string, string&gt; labels = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public java.util.Map<java.lang.String, java.lang.String> getLabelsMap() {
       return internalGetLabels().getMap();
@@ -1644,7 +1690,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      * associated with a cluster.
      * </pre>
      *
-     * <code>map&lt;string, string&gt; labels = 8;</code>
+     * <code>map&lt;string, string&gt; labels = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public java.lang.String getLabelsOrDefault(
         java.lang.String key, java.lang.String defaultValue) {
@@ -1667,7 +1713,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      * associated with a cluster.
      * </pre>
      *
-     * <code>map&lt;string, string&gt; labels = 8;</code>
+     * <code>map&lt;string, string&gt; labels = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public java.lang.String getLabelsOrThrow(java.lang.String key) {
       if (key == null) {
@@ -1697,7 +1743,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      * associated with a cluster.
      * </pre>
      *
-     * <code>map&lt;string, string&gt; labels = 8;</code>
+     * <code>map&lt;string, string&gt; labels = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public Builder removeLabels(java.lang.String key) {
       if (key == null) {
@@ -1724,7 +1770,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      * associated with a cluster.
      * </pre>
      *
-     * <code>map&lt;string, string&gt; labels = 8;</code>
+     * <code>map&lt;string, string&gt; labels = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public Builder putLabels(java.lang.String key, java.lang.String value) {
       if (key == null) {
@@ -1749,7 +1795,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      * associated with a cluster.
      * </pre>
      *
-     * <code>map&lt;string, string&gt; labels = 8;</code>
+     * <code>map&lt;string, string&gt; labels = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public Builder putAllLabels(java.util.Map<java.lang.String, java.lang.String> values) {
       internalGetMutableLabels().getMutableMap().putAll(values);
@@ -1769,7 +1815,9 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      * Output only. Cluster status.
      * </pre>
      *
-     * <code>.google.cloud.dataproc.v1beta2.ClusterStatus status = 4;</code>
+     * <code>
+     * .google.cloud.dataproc.v1beta2.ClusterStatus status = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public boolean hasStatus() {
       return statusBuilder_ != null || status_ != null;
@@ -1781,7 +1829,9 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      * Output only. Cluster status.
      * </pre>
      *
-     * <code>.google.cloud.dataproc.v1beta2.ClusterStatus status = 4;</code>
+     * <code>
+     * .google.cloud.dataproc.v1beta2.ClusterStatus status = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public com.google.cloud.dataproc.v1beta2.ClusterStatus getStatus() {
       if (statusBuilder_ == null) {
@@ -1799,7 +1849,9 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      * Output only. Cluster status.
      * </pre>
      *
-     * <code>.google.cloud.dataproc.v1beta2.ClusterStatus status = 4;</code>
+     * <code>
+     * .google.cloud.dataproc.v1beta2.ClusterStatus status = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public Builder setStatus(com.google.cloud.dataproc.v1beta2.ClusterStatus value) {
       if (statusBuilder_ == null) {
@@ -1821,7 +1873,9 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      * Output only. Cluster status.
      * </pre>
      *
-     * <code>.google.cloud.dataproc.v1beta2.ClusterStatus status = 4;</code>
+     * <code>
+     * .google.cloud.dataproc.v1beta2.ClusterStatus status = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public Builder setStatus(
         com.google.cloud.dataproc.v1beta2.ClusterStatus.Builder builderForValue) {
@@ -1841,7 +1895,9 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      * Output only. Cluster status.
      * </pre>
      *
-     * <code>.google.cloud.dataproc.v1beta2.ClusterStatus status = 4;</code>
+     * <code>
+     * .google.cloud.dataproc.v1beta2.ClusterStatus status = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public Builder mergeStatus(com.google.cloud.dataproc.v1beta2.ClusterStatus value) {
       if (statusBuilder_ == null) {
@@ -1867,7 +1923,9 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      * Output only. Cluster status.
      * </pre>
      *
-     * <code>.google.cloud.dataproc.v1beta2.ClusterStatus status = 4;</code>
+     * <code>
+     * .google.cloud.dataproc.v1beta2.ClusterStatus status = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public Builder clearStatus() {
       if (statusBuilder_ == null) {
@@ -1887,7 +1945,9 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      * Output only. Cluster status.
      * </pre>
      *
-     * <code>.google.cloud.dataproc.v1beta2.ClusterStatus status = 4;</code>
+     * <code>
+     * .google.cloud.dataproc.v1beta2.ClusterStatus status = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public com.google.cloud.dataproc.v1beta2.ClusterStatus.Builder getStatusBuilder() {
 
@@ -1901,7 +1961,9 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      * Output only. Cluster status.
      * </pre>
      *
-     * <code>.google.cloud.dataproc.v1beta2.ClusterStatus status = 4;</code>
+     * <code>
+     * .google.cloud.dataproc.v1beta2.ClusterStatus status = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public com.google.cloud.dataproc.v1beta2.ClusterStatusOrBuilder getStatusOrBuilder() {
       if (statusBuilder_ != null) {
@@ -1919,7 +1981,9 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      * Output only. Cluster status.
      * </pre>
      *
-     * <code>.google.cloud.dataproc.v1beta2.ClusterStatus status = 4;</code>
+     * <code>
+     * .google.cloud.dataproc.v1beta2.ClusterStatus status = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.dataproc.v1beta2.ClusterStatus,
@@ -1963,7 +2027,9 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      * Output only. The previous cluster status.
      * </pre>
      *
-     * <code>repeated .google.cloud.dataproc.v1beta2.ClusterStatus status_history = 7;</code>
+     * <code>
+     * repeated .google.cloud.dataproc.v1beta2.ClusterStatus status_history = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public java.util.List<com.google.cloud.dataproc.v1beta2.ClusterStatus> getStatusHistoryList() {
       if (statusHistoryBuilder_ == null) {
@@ -1979,7 +2045,9 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      * Output only. The previous cluster status.
      * </pre>
      *
-     * <code>repeated .google.cloud.dataproc.v1beta2.ClusterStatus status_history = 7;</code>
+     * <code>
+     * repeated .google.cloud.dataproc.v1beta2.ClusterStatus status_history = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public int getStatusHistoryCount() {
       if (statusHistoryBuilder_ == null) {
@@ -1995,7 +2063,9 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      * Output only. The previous cluster status.
      * </pre>
      *
-     * <code>repeated .google.cloud.dataproc.v1beta2.ClusterStatus status_history = 7;</code>
+     * <code>
+     * repeated .google.cloud.dataproc.v1beta2.ClusterStatus status_history = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public com.google.cloud.dataproc.v1beta2.ClusterStatus getStatusHistory(int index) {
       if (statusHistoryBuilder_ == null) {
@@ -2011,7 +2081,9 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      * Output only. The previous cluster status.
      * </pre>
      *
-     * <code>repeated .google.cloud.dataproc.v1beta2.ClusterStatus status_history = 7;</code>
+     * <code>
+     * repeated .google.cloud.dataproc.v1beta2.ClusterStatus status_history = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public Builder setStatusHistory(
         int index, com.google.cloud.dataproc.v1beta2.ClusterStatus value) {
@@ -2034,7 +2106,9 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      * Output only. The previous cluster status.
      * </pre>
      *
-     * <code>repeated .google.cloud.dataproc.v1beta2.ClusterStatus status_history = 7;</code>
+     * <code>
+     * repeated .google.cloud.dataproc.v1beta2.ClusterStatus status_history = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public Builder setStatusHistory(
         int index, com.google.cloud.dataproc.v1beta2.ClusterStatus.Builder builderForValue) {
@@ -2054,7 +2128,9 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      * Output only. The previous cluster status.
      * </pre>
      *
-     * <code>repeated .google.cloud.dataproc.v1beta2.ClusterStatus status_history = 7;</code>
+     * <code>
+     * repeated .google.cloud.dataproc.v1beta2.ClusterStatus status_history = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public Builder addStatusHistory(com.google.cloud.dataproc.v1beta2.ClusterStatus value) {
       if (statusHistoryBuilder_ == null) {
@@ -2076,7 +2152,9 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      * Output only. The previous cluster status.
      * </pre>
      *
-     * <code>repeated .google.cloud.dataproc.v1beta2.ClusterStatus status_history = 7;</code>
+     * <code>
+     * repeated .google.cloud.dataproc.v1beta2.ClusterStatus status_history = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public Builder addStatusHistory(
         int index, com.google.cloud.dataproc.v1beta2.ClusterStatus value) {
@@ -2099,7 +2177,9 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      * Output only. The previous cluster status.
      * </pre>
      *
-     * <code>repeated .google.cloud.dataproc.v1beta2.ClusterStatus status_history = 7;</code>
+     * <code>
+     * repeated .google.cloud.dataproc.v1beta2.ClusterStatus status_history = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public Builder addStatusHistory(
         com.google.cloud.dataproc.v1beta2.ClusterStatus.Builder builderForValue) {
@@ -2119,7 +2199,9 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      * Output only. The previous cluster status.
      * </pre>
      *
-     * <code>repeated .google.cloud.dataproc.v1beta2.ClusterStatus status_history = 7;</code>
+     * <code>
+     * repeated .google.cloud.dataproc.v1beta2.ClusterStatus status_history = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public Builder addStatusHistory(
         int index, com.google.cloud.dataproc.v1beta2.ClusterStatus.Builder builderForValue) {
@@ -2139,7 +2221,9 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      * Output only. The previous cluster status.
      * </pre>
      *
-     * <code>repeated .google.cloud.dataproc.v1beta2.ClusterStatus status_history = 7;</code>
+     * <code>
+     * repeated .google.cloud.dataproc.v1beta2.ClusterStatus status_history = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public Builder addAllStatusHistory(
         java.lang.Iterable<? extends com.google.cloud.dataproc.v1beta2.ClusterStatus> values) {
@@ -2159,7 +2243,9 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      * Output only. The previous cluster status.
      * </pre>
      *
-     * <code>repeated .google.cloud.dataproc.v1beta2.ClusterStatus status_history = 7;</code>
+     * <code>
+     * repeated .google.cloud.dataproc.v1beta2.ClusterStatus status_history = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public Builder clearStatusHistory() {
       if (statusHistoryBuilder_ == null) {
@@ -2178,7 +2264,9 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      * Output only. The previous cluster status.
      * </pre>
      *
-     * <code>repeated .google.cloud.dataproc.v1beta2.ClusterStatus status_history = 7;</code>
+     * <code>
+     * repeated .google.cloud.dataproc.v1beta2.ClusterStatus status_history = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public Builder removeStatusHistory(int index) {
       if (statusHistoryBuilder_ == null) {
@@ -2197,7 +2285,9 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      * Output only. The previous cluster status.
      * </pre>
      *
-     * <code>repeated .google.cloud.dataproc.v1beta2.ClusterStatus status_history = 7;</code>
+     * <code>
+     * repeated .google.cloud.dataproc.v1beta2.ClusterStatus status_history = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public com.google.cloud.dataproc.v1beta2.ClusterStatus.Builder getStatusHistoryBuilder(
         int index) {
@@ -2210,7 +2300,9 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      * Output only. The previous cluster status.
      * </pre>
      *
-     * <code>repeated .google.cloud.dataproc.v1beta2.ClusterStatus status_history = 7;</code>
+     * <code>
+     * repeated .google.cloud.dataproc.v1beta2.ClusterStatus status_history = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public com.google.cloud.dataproc.v1beta2.ClusterStatusOrBuilder getStatusHistoryOrBuilder(
         int index) {
@@ -2227,7 +2319,9 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      * Output only. The previous cluster status.
      * </pre>
      *
-     * <code>repeated .google.cloud.dataproc.v1beta2.ClusterStatus status_history = 7;</code>
+     * <code>
+     * repeated .google.cloud.dataproc.v1beta2.ClusterStatus status_history = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public java.util.List<? extends com.google.cloud.dataproc.v1beta2.ClusterStatusOrBuilder>
         getStatusHistoryOrBuilderList() {
@@ -2244,7 +2338,9 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      * Output only. The previous cluster status.
      * </pre>
      *
-     * <code>repeated .google.cloud.dataproc.v1beta2.ClusterStatus status_history = 7;</code>
+     * <code>
+     * repeated .google.cloud.dataproc.v1beta2.ClusterStatus status_history = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public com.google.cloud.dataproc.v1beta2.ClusterStatus.Builder addStatusHistoryBuilder() {
       return getStatusHistoryFieldBuilder()
@@ -2257,7 +2353,9 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      * Output only. The previous cluster status.
      * </pre>
      *
-     * <code>repeated .google.cloud.dataproc.v1beta2.ClusterStatus status_history = 7;</code>
+     * <code>
+     * repeated .google.cloud.dataproc.v1beta2.ClusterStatus status_history = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public com.google.cloud.dataproc.v1beta2.ClusterStatus.Builder addStatusHistoryBuilder(
         int index) {
@@ -2271,7 +2369,9 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      * Output only. The previous cluster status.
      * </pre>
      *
-     * <code>repeated .google.cloud.dataproc.v1beta2.ClusterStatus status_history = 7;</code>
+     * <code>
+     * repeated .google.cloud.dataproc.v1beta2.ClusterStatus status_history = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public java.util.List<com.google.cloud.dataproc.v1beta2.ClusterStatus.Builder>
         getStatusHistoryBuilderList() {
@@ -2307,7 +2407,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      * generates this value when it creates the cluster.
      * </pre>
      *
-     * <code>string cluster_uuid = 6;</code>
+     * <code>string cluster_uuid = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     public java.lang.String getClusterUuid() {
       java.lang.Object ref = clusterUuid_;
@@ -2328,7 +2428,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      * generates this value when it creates the cluster.
      * </pre>
      *
-     * <code>string cluster_uuid = 6;</code>
+     * <code>string cluster_uuid = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     public com.google.protobuf.ByteString getClusterUuidBytes() {
       java.lang.Object ref = clusterUuid_;
@@ -2349,7 +2449,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      * generates this value when it creates the cluster.
      * </pre>
      *
-     * <code>string cluster_uuid = 6;</code>
+     * <code>string cluster_uuid = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     public Builder setClusterUuid(java.lang.String value) {
       if (value == null) {
@@ -2368,7 +2468,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      * generates this value when it creates the cluster.
      * </pre>
      *
-     * <code>string cluster_uuid = 6;</code>
+     * <code>string cluster_uuid = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     public Builder clearClusterUuid() {
 
@@ -2384,7 +2484,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      * generates this value when it creates the cluster.
      * </pre>
      *
-     * <code>string cluster_uuid = 6;</code>
+     * <code>string cluster_uuid = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     public Builder setClusterUuidBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -2412,7 +2512,9 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      * may be changed before final release.
      * </pre>
      *
-     * <code>.google.cloud.dataproc.v1beta2.ClusterMetrics metrics = 9;</code>
+     * <code>
+     * .google.cloud.dataproc.v1beta2.ClusterMetrics metrics = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public boolean hasMetrics() {
       return metricsBuilder_ != null || metrics_ != null;
@@ -2426,7 +2528,9 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      * may be changed before final release.
      * </pre>
      *
-     * <code>.google.cloud.dataproc.v1beta2.ClusterMetrics metrics = 9;</code>
+     * <code>
+     * .google.cloud.dataproc.v1beta2.ClusterMetrics metrics = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public com.google.cloud.dataproc.v1beta2.ClusterMetrics getMetrics() {
       if (metricsBuilder_ == null) {
@@ -2446,7 +2550,9 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      * may be changed before final release.
      * </pre>
      *
-     * <code>.google.cloud.dataproc.v1beta2.ClusterMetrics metrics = 9;</code>
+     * <code>
+     * .google.cloud.dataproc.v1beta2.ClusterMetrics metrics = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public Builder setMetrics(com.google.cloud.dataproc.v1beta2.ClusterMetrics value) {
       if (metricsBuilder_ == null) {
@@ -2470,7 +2576,9 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      * may be changed before final release.
      * </pre>
      *
-     * <code>.google.cloud.dataproc.v1beta2.ClusterMetrics metrics = 9;</code>
+     * <code>
+     * .google.cloud.dataproc.v1beta2.ClusterMetrics metrics = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public Builder setMetrics(
         com.google.cloud.dataproc.v1beta2.ClusterMetrics.Builder builderForValue) {
@@ -2492,7 +2600,9 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      * may be changed before final release.
      * </pre>
      *
-     * <code>.google.cloud.dataproc.v1beta2.ClusterMetrics metrics = 9;</code>
+     * <code>
+     * .google.cloud.dataproc.v1beta2.ClusterMetrics metrics = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public Builder mergeMetrics(com.google.cloud.dataproc.v1beta2.ClusterMetrics value) {
       if (metricsBuilder_ == null) {
@@ -2520,7 +2630,9 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      * may be changed before final release.
      * </pre>
      *
-     * <code>.google.cloud.dataproc.v1beta2.ClusterMetrics metrics = 9;</code>
+     * <code>
+     * .google.cloud.dataproc.v1beta2.ClusterMetrics metrics = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public Builder clearMetrics() {
       if (metricsBuilder_ == null) {
@@ -2542,7 +2654,9 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      * may be changed before final release.
      * </pre>
      *
-     * <code>.google.cloud.dataproc.v1beta2.ClusterMetrics metrics = 9;</code>
+     * <code>
+     * .google.cloud.dataproc.v1beta2.ClusterMetrics metrics = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public com.google.cloud.dataproc.v1beta2.ClusterMetrics.Builder getMetricsBuilder() {
 
@@ -2558,7 +2672,9 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      * may be changed before final release.
      * </pre>
      *
-     * <code>.google.cloud.dataproc.v1beta2.ClusterMetrics metrics = 9;</code>
+     * <code>
+     * .google.cloud.dataproc.v1beta2.ClusterMetrics metrics = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public com.google.cloud.dataproc.v1beta2.ClusterMetricsOrBuilder getMetricsOrBuilder() {
       if (metricsBuilder_ != null) {
@@ -2578,7 +2694,9 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      * may be changed before final release.
      * </pre>
      *
-     * <code>.google.cloud.dataproc.v1beta2.ClusterMetrics metrics = 9;</code>
+     * <code>
+     * .google.cloud.dataproc.v1beta2.ClusterMetrics metrics = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.dataproc.v1beta2.ClusterMetrics,
