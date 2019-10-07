@@ -22,7 +22,8 @@ package com.google.cloud.automl.v1;
  *
  *
  * <pre>
- * Request message for [AutoMl.CreateModel][google.cloud.automl.v1.AutoMl.CreateModel].
+ * Request message for
+ * [AutoMl.CreateModel][google.cloud.automl.v1.AutoMl.CreateModel].
  * </pre>
  *
  * Protobuf type {@code google.cloud.automl.v1.CreateModelRequest}
@@ -380,7 +381,8 @@ public final class CreateModelRequest extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * Request message for [AutoMl.CreateModel][google.cloud.automl.v1.AutoMl.CreateModel].
+   * Request message for
+   * [AutoMl.CreateModel][google.cloud.automl.v1.AutoMl.CreateModel].
    * </pre>
    *
    * Protobuf type {@code google.cloud.automl.v1.CreateModelRequest}

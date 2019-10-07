@@ -22,7 +22,8 @@ package com.google.cloud.automl.v1;
  *
  *
  * <pre>
- * Response message for [AutoMl.ListModels][google.cloud.automl.v1.AutoMl.ListModels].
+ * Response message for
+ * [AutoMl.ListModels][google.cloud.automl.v1.AutoMl.ListModels].
  * </pre>
  *
  * Protobuf type {@code google.cloud.automl.v1.ListModelsResponse}
@@ -192,7 +193,9 @@ public final class ListModelsResponse extends com.google.protobuf.GeneratedMessa
    *
    * <pre>
    * A token to retrieve next page of results.
-   * Pass to [ListModelsRequest.page_token][google.cloud.automl.v1.ListModelsRequest.page_token] to obtain that page.
+   * Pass to
+   * [ListModelsRequest.page_token][google.cloud.automl.v1.ListModelsRequest.page_token]
+   * to obtain that page.
    * </pre>
    *
    * <code>string next_page_token = 2;</code>
@@ -213,7 +216,9 @@ public final class ListModelsResponse extends com.google.protobuf.GeneratedMessa
    *
    * <pre>
    * A token to retrieve next page of results.
-   * Pass to [ListModelsRequest.page_token][google.cloud.automl.v1.ListModelsRequest.page_token] to obtain that page.
+   * Pass to
+   * [ListModelsRequest.page_token][google.cloud.automl.v1.ListModelsRequest.page_token]
+   * to obtain that page.
    * </pre>
    *
    * <code>string next_page_token = 2;</code>
@@ -404,7 +409,8 @@ public final class ListModelsResponse extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * Response message for [AutoMl.ListModels][google.cloud.automl.v1.AutoMl.ListModels].
+   * Response message for
+   * [AutoMl.ListModels][google.cloud.automl.v1.AutoMl.ListModels].
    * </pre>
    *
    * Protobuf type {@code google.cloud.automl.v1.ListModelsResponse}
@@ -958,7 +964,9 @@ public final class ListModelsResponse extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * A token to retrieve next page of results.
-     * Pass to [ListModelsRequest.page_token][google.cloud.automl.v1.ListModelsRequest.page_token] to obtain that page.
+     * Pass to
+     * [ListModelsRequest.page_token][google.cloud.automl.v1.ListModelsRequest.page_token]
+     * to obtain that page.
      * </pre>
      *
      * <code>string next_page_token = 2;</code>
@@ -979,7 +987,9 @@ public final class ListModelsResponse extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * A token to retrieve next page of results.
-     * Pass to [ListModelsRequest.page_token][google.cloud.automl.v1.ListModelsRequest.page_token] to obtain that page.
+     * Pass to
+     * [ListModelsRequest.page_token][google.cloud.automl.v1.ListModelsRequest.page_token]
+     * to obtain that page.
      * </pre>
      *
      * <code>string next_page_token = 2;</code>
@@ -1000,7 +1010,9 @@ public final class ListModelsResponse extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * A token to retrieve next page of results.
-     * Pass to [ListModelsRequest.page_token][google.cloud.automl.v1.ListModelsRequest.page_token] to obtain that page.
+     * Pass to
+     * [ListModelsRequest.page_token][google.cloud.automl.v1.ListModelsRequest.page_token]
+     * to obtain that page.
      * </pre>
      *
      * <code>string next_page_token = 2;</code>
@@ -1019,7 +1031,9 @@ public final class ListModelsResponse extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * A token to retrieve next page of results.
-     * Pass to [ListModelsRequest.page_token][google.cloud.automl.v1.ListModelsRequest.page_token] to obtain that page.
+     * Pass to
+     * [ListModelsRequest.page_token][google.cloud.automl.v1.ListModelsRequest.page_token]
+     * to obtain that page.
      * </pre>
      *
      * <code>string next_page_token = 2;</code>
@@ -1035,7 +1049,9 @@ public final class ListModelsResponse extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * A token to retrieve next page of results.
-     * Pass to [ListModelsRequest.page_token][google.cloud.automl.v1.ListModelsRequest.page_token] to obtain that page.
+     * Pass to
+     * [ListModelsRequest.page_token][google.cloud.automl.v1.ListModelsRequest.page_token]
+     * to obtain that page.
      * </pre>
      *
      * <code>string next_page_token = 2;</code>

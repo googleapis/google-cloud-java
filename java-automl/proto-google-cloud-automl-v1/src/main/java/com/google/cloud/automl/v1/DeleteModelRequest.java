@@ -22,7 +22,8 @@ package com.google.cloud.automl.v1;
  *
  *
  * <pre>
- * Request message for [AutoMl.DeleteModel][google.cloud.automl.v1.AutoMl.DeleteModel].
+ * Request message for
+ * [AutoMl.DeleteModel][google.cloud.automl.v1.AutoMl.DeleteModel].
  * </pre>
  *
  * Protobuf type {@code google.cloud.automl.v1.DeleteModelRequest}
@@ -312,7 +313,8 @@ public final class DeleteModelRequest extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * Request message for [AutoMl.DeleteModel][google.cloud.automl.v1.AutoMl.DeleteModel].
+   * Request message for
+   * [AutoMl.DeleteModel][google.cloud.automl.v1.AutoMl.DeleteModel].
    * </pre>
    *
    * Protobuf type {@code google.cloud.automl.v1.DeleteModelRequest}

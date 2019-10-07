@@ -22,7 +22,8 @@ package com.google.cloud.automl.v1;
  *
  *
  * <pre>
- * Request message for [AutoMl.GetModel][google.cloud.automl.v1.AutoMl.GetModel].
+ * Request message for
+ * [AutoMl.GetModel][google.cloud.automl.v1.AutoMl.GetModel].
  * </pre>
  *
  * Protobuf type {@code google.cloud.automl.v1.GetModelRequest}
@@ -312,7 +313,8 @@ public final class GetModelRequest extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * Request message for [AutoMl.GetModel][google.cloud.automl.v1.AutoMl.GetModel].
+   * Request message for
+   * [AutoMl.GetModel][google.cloud.automl.v1.AutoMl.GetModel].
    * </pre>
    *
    * Protobuf type {@code google.cloud.automl.v1.GetModelRequest}

@@ -52,27 +52,25 @@ public final class Operations {
           + "o\022\026google.cloud.automl.v1\032\037google/cloud/"
           + "automl/v1/io.proto\032\"google/cloud/automl/"
           + "v1/model.proto\032-google/cloud/automl/v1/m"
-          + "odel_evaluation.proto\032/google/cloud/auto"
-          + "ml/v1/prediction_service.proto\032$google/c"
-          + "loud/automl/v1/service.proto\032\033google/pro"
-          + "tobuf/empty.proto\032\037google/protobuf/times"
-          + "tamp.proto\032\027google/rpc/status.proto\032\034goo"
-          + "gle/api/annotations.proto\"\351\002\n\021OperationM"
-          + "etadata\022I\n\016delete_details\030\010 \001(\0132/.google"
-          + ".cloud.automl.v1.DeleteOperationMetadata"
-          + "H\000\022T\n\024create_model_details\030\n \001(\01324.googl"
-          + "e.cloud.automl.v1.CreateModelOperationMe"
-          + "tadataH\000\022\030\n\020progress_percent\030\r \001(\005\022,\n\020pa"
-          + "rtial_failures\030\002 \003(\0132\022.google.rpc.Status"
-          + "\022/\n\013create_time\030\003 \001(\0132\032.google.protobuf."
-          + "Timestamp\022/\n\013update_time\030\004 \001(\0132\032.google."
-          + "protobuf.TimestampB\t\n\007details\"\031\n\027DeleteO"
-          + "perationMetadata\"\036\n\034CreateModelOperation"
-          + "MetadataB\252\001\n\032com.google.cloud.automl.v1P"
-          + "\001Z<google.golang.org/genproto/googleapis"
-          + "/cloud/automl/v1;automl\252\002\026Google.Cloud.A"
-          + "utoML.V1\312\002\026Google\\Cloud\\AutoML\\V1\352\002\031Goog"
-          + "le::Cloud::AutoML::V1b\006proto3"
+          + "odel_evaluation.proto\032\033google/protobuf/e"
+          + "mpty.proto\032\037google/protobuf/timestamp.pr"
+          + "oto\032\027google/rpc/status.proto\032\034google/api"
+          + "/annotations.proto\"\351\002\n\021OperationMetadata"
+          + "\022I\n\016delete_details\030\010 \001(\0132/.google.cloud."
+          + "automl.v1.DeleteOperationMetadataH\000\022T\n\024c"
+          + "reate_model_details\030\n \001(\01324.google.cloud"
+          + ".automl.v1.CreateModelOperationMetadataH"
+          + "\000\022\030\n\020progress_percent\030\r \001(\005\022,\n\020partial_f"
+          + "ailures\030\002 \003(\0132\022.google.rpc.Status\022/\n\013cre"
+          + "ate_time\030\003 \001(\0132\032.google.protobuf.Timesta"
+          + "mp\022/\n\013update_time\030\004 \001(\0132\032.google.protobu"
+          + "f.TimestampB\t\n\007details\"\031\n\027DeleteOperatio"
+          + "nMetadata\"\036\n\034CreateModelOperationMetadat"
+          + "aB\252\001\n\032com.google.cloud.automl.v1P\001Z<goog"
+          + "le.golang.org/genproto/googleapis/cloud/"
+          + "automl/v1;automl\252\002\026Google.Cloud.AutoML.V"
+          + "1\312\002\026Google\\Cloud\\AutoML\\V1\352\002\031Google::Clo"
+          + "ud::AutoML::V1b\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner() {
@@ -88,8 +86,6 @@ public final class Operations {
           com.google.cloud.automl.v1.Io.getDescriptor(),
           com.google.cloud.automl.v1.ModelOuterClass.getDescriptor(),
           com.google.cloud.automl.v1.ModelEvaluationOuterClass.getDescriptor(),
-          com.google.cloud.automl.v1.PredictionServiceProto.getDescriptor(),
-          com.google.cloud.automl.v1.AutoMlProto.getDescriptor(),
           com.google.protobuf.EmptyProto.getDescriptor(),
           com.google.protobuf.TimestampProto.getDescriptor(),
           com.google.rpc.StatusProto.getDescriptor(),
@@ -125,8 +121,6 @@ public final class Operations {
     com.google.cloud.automl.v1.Io.getDescriptor();
     com.google.cloud.automl.v1.ModelOuterClass.getDescriptor();
     com.google.cloud.automl.v1.ModelEvaluationOuterClass.getDescriptor();
-    com.google.cloud.automl.v1.PredictionServiceProto.getDescriptor();
-    com.google.cloud.automl.v1.AutoMlProto.getDescriptor();
     com.google.protobuf.EmptyProto.getDescriptor();
     com.google.protobuf.TimestampProto.getDescriptor();
     com.google.rpc.StatusProto.getDescriptor();

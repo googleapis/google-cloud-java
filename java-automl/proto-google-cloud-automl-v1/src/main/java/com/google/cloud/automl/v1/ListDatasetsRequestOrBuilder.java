@@ -93,7 +93,8 @@ public interface ListDatasetsRequestOrBuilder
    * <pre>
    * A token identifying a page of results for the server to return
    * Typically obtained via
-   * [ListDatasetsResponse.next_page_token][google.cloud.automl.v1.ListDatasetsResponse.next_page_token] of the previous
+   * [ListDatasetsResponse.next_page_token][google.cloud.automl.v1.ListDatasetsResponse.next_page_token]
+   * of the previous
    * [AutoMl.ListDatasets][google.cloud.automl.v1.AutoMl.ListDatasets] call.
    * </pre>
    *
@@ -106,7 +107,8 @@ public interface ListDatasetsRequestOrBuilder
    * <pre>
    * A token identifying a page of results for the server to return
    * Typically obtained via
-   * [ListDatasetsResponse.next_page_token][google.cloud.automl.v1.ListDatasetsResponse.next_page_token] of the previous
+   * [ListDatasetsResponse.next_page_token][google.cloud.automl.v1.ListDatasetsResponse.next_page_token]
+   * of the previous
    * [AutoMl.ListDatasets][google.cloud.automl.v1.AutoMl.ListDatasets] call.
    * </pre>
    *

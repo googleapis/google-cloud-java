@@ -100,8 +100,10 @@ public interface ListModelEvaluationsRequestOrBuilder
    * <pre>
    * A token identifying a page of results for the server to return.
    * Typically obtained via
-   * [ListModelEvaluationsResponse.next_page_token][google.cloud.automl.v1.ListModelEvaluationsResponse.next_page_token] of the previous
-   * [AutoMl.ListModelEvaluations][google.cloud.automl.v1.AutoMl.ListModelEvaluations] call.
+   * [ListModelEvaluationsResponse.next_page_token][google.cloud.automl.v1.ListModelEvaluationsResponse.next_page_token]
+   * of the previous
+   * [AutoMl.ListModelEvaluations][google.cloud.automl.v1.AutoMl.ListModelEvaluations]
+   * call.
    * </pre>
    *
    * <code>string page_token = 6;</code>
@@ -113,8 +115,10 @@ public interface ListModelEvaluationsRequestOrBuilder
    * <pre>
    * A token identifying a page of results for the server to return.
    * Typically obtained via
-   * [ListModelEvaluationsResponse.next_page_token][google.cloud.automl.v1.ListModelEvaluationsResponse.next_page_token] of the previous
-   * [AutoMl.ListModelEvaluations][google.cloud.automl.v1.AutoMl.ListModelEvaluations] call.
+   * [ListModelEvaluationsResponse.next_page_token][google.cloud.automl.v1.ListModelEvaluationsResponse.next_page_token]
+   * of the previous
+   * [AutoMl.ListModelEvaluations][google.cloud.automl.v1.AutoMl.ListModelEvaluations]
+   * call.
    * </pre>
    *
    * <code>string page_token = 6;</code>

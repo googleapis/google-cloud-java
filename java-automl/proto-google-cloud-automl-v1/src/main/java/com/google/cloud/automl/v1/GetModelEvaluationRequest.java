@@ -22,7 +22,8 @@ package com.google.cloud.automl.v1;
  *
  *
  * <pre>
- * Request message for [AutoMl.GetModelEvaluation][google.cloud.automl.v1.AutoMl.GetModelEvaluation].
+ * Request message for
+ * [AutoMl.GetModelEvaluation][google.cloud.automl.v1.AutoMl.GetModelEvaluation].
  * </pre>
  *
  * Protobuf type {@code google.cloud.automl.v1.GetModelEvaluationRequest}
@@ -312,7 +313,8 @@ public final class GetModelEvaluationRequest extends com.google.protobuf.Generat
    *
    *
    * <pre>
-   * Request message for [AutoMl.GetModelEvaluation][google.cloud.automl.v1.AutoMl.GetModelEvaluation].
+   * Request message for
+   * [AutoMl.GetModelEvaluation][google.cloud.automl.v1.AutoMl.GetModelEvaluation].
    * </pre>
    *
    * Protobuf type {@code google.cloud.automl.v1.GetModelEvaluationRequest}

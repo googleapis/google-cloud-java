@@ -22,7 +22,8 @@ package com.google.cloud.automl.v1;
  *
  *
  * <pre>
- * Request message for [AutoMl.UpdateDataset][google.cloud.automl.v1.AutoMl.UpdateDataset]
+ * Request message for
+ * [AutoMl.UpdateDataset][google.cloud.automl.v1.AutoMl.UpdateDataset]
  * </pre>
  *
  * Protobuf type {@code google.cloud.automl.v1.UpdateDatasetRequest}
@@ -387,7 +388,8 @@ public final class UpdateDatasetRequest extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * Request message for [AutoMl.UpdateDataset][google.cloud.automl.v1.AutoMl.UpdateDataset]
+   * Request message for
+   * [AutoMl.UpdateDataset][google.cloud.automl.v1.AutoMl.UpdateDataset]
    * </pre>
    *
    * Protobuf type {@code google.cloud.automl.v1.UpdateDatasetRequest}

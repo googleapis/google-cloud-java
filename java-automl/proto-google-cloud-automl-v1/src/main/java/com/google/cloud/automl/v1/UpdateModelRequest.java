@@ -22,7 +22,8 @@ package com.google.cloud.automl.v1;
  *
  *
  * <pre>
- * Request message for [AutoMl.UpdateModel][google.cloud.automl.v1.AutoMl.UpdateModel]
+ * Request message for
+ * [AutoMl.UpdateModel][google.cloud.automl.v1.AutoMl.UpdateModel]
  * </pre>
  *
  * Protobuf type {@code google.cloud.automl.v1.UpdateModelRequest}
@@ -387,7 +388,8 @@ public final class UpdateModelRequest extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * Request message for [AutoMl.UpdateModel][google.cloud.automl.v1.AutoMl.UpdateModel]
+   * Request message for
+   * [AutoMl.UpdateModel][google.cloud.automl.v1.AutoMl.UpdateModel]
    * </pre>
    *
    * Protobuf type {@code google.cloud.automl.v1.UpdateModelRequest}

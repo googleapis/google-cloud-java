@@ -22,7 +22,8 @@ package com.google.cloud.automl.v1;
  *
  *
  * <pre>
- * Request message for [AutoMl.ListModels][google.cloud.automl.v1.AutoMl.ListModels].
+ * Request message for
+ * [AutoMl.ListModels][google.cloud.automl.v1.AutoMl.ListModels].
  * </pre>
  *
  * Protobuf type {@code google.cloud.automl.v1.ListModelsRequest}
@@ -248,7 +249,8 @@ public final class ListModelsRequest extends com.google.protobuf.GeneratedMessag
    * <pre>
    * A token identifying a page of results for the server to return
    * Typically obtained via
-   * [ListModelsResponse.next_page_token][google.cloud.automl.v1.ListModelsResponse.next_page_token] of the previous
+   * [ListModelsResponse.next_page_token][google.cloud.automl.v1.ListModelsResponse.next_page_token]
+   * of the previous
    * [AutoMl.ListModels][google.cloud.automl.v1.AutoMl.ListModels] call.
    * </pre>
    *
@@ -271,7 +273,8 @@ public final class ListModelsRequest extends com.google.protobuf.GeneratedMessag
    * <pre>
    * A token identifying a page of results for the server to return
    * Typically obtained via
-   * [ListModelsResponse.next_page_token][google.cloud.automl.v1.ListModelsResponse.next_page_token] of the previous
+   * [ListModelsResponse.next_page_token][google.cloud.automl.v1.ListModelsResponse.next_page_token]
+   * of the previous
    * [AutoMl.ListModels][google.cloud.automl.v1.AutoMl.ListModels] call.
    * </pre>
    *
@@ -479,7 +482,8 @@ public final class ListModelsRequest extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * Request message for [AutoMl.ListModels][google.cloud.automl.v1.AutoMl.ListModels].
+   * Request message for
+   * [AutoMl.ListModels][google.cloud.automl.v1.AutoMl.ListModels].
    * </pre>
    *
    * Protobuf type {@code google.cloud.automl.v1.ListModelsRequest}
@@ -921,7 +925,8 @@ public final class ListModelsRequest extends com.google.protobuf.GeneratedMessag
      * <pre>
      * A token identifying a page of results for the server to return
      * Typically obtained via
-     * [ListModelsResponse.next_page_token][google.cloud.automl.v1.ListModelsResponse.next_page_token] of the previous
+     * [ListModelsResponse.next_page_token][google.cloud.automl.v1.ListModelsResponse.next_page_token]
+     * of the previous
      * [AutoMl.ListModels][google.cloud.automl.v1.AutoMl.ListModels] call.
      * </pre>
      *
@@ -944,7 +949,8 @@ public final class ListModelsRequest extends com.google.protobuf.GeneratedMessag
      * <pre>
      * A token identifying a page of results for the server to return
      * Typically obtained via
-     * [ListModelsResponse.next_page_token][google.cloud.automl.v1.ListModelsResponse.next_page_token] of the previous
+     * [ListModelsResponse.next_page_token][google.cloud.automl.v1.ListModelsResponse.next_page_token]
+     * of the previous
      * [AutoMl.ListModels][google.cloud.automl.v1.AutoMl.ListModels] call.
      * </pre>
      *
@@ -967,7 +973,8 @@ public final class ListModelsRequest extends com.google.protobuf.GeneratedMessag
      * <pre>
      * A token identifying a page of results for the server to return
      * Typically obtained via
-     * [ListModelsResponse.next_page_token][google.cloud.automl.v1.ListModelsResponse.next_page_token] of the previous
+     * [ListModelsResponse.next_page_token][google.cloud.automl.v1.ListModelsResponse.next_page_token]
+     * of the previous
      * [AutoMl.ListModels][google.cloud.automl.v1.AutoMl.ListModels] call.
      * </pre>
      *
@@ -988,7 +995,8 @@ public final class ListModelsRequest extends com.google.protobuf.GeneratedMessag
      * <pre>
      * A token identifying a page of results for the server to return
      * Typically obtained via
-     * [ListModelsResponse.next_page_token][google.cloud.automl.v1.ListModelsResponse.next_page_token] of the previous
+     * [ListModelsResponse.next_page_token][google.cloud.automl.v1.ListModelsResponse.next_page_token]
+     * of the previous
      * [AutoMl.ListModels][google.cloud.automl.v1.AutoMl.ListModels] call.
      * </pre>
      *
@@ -1006,7 +1014,8 @@ public final class ListModelsRequest extends com.google.protobuf.GeneratedMessag
      * <pre>
      * A token identifying a page of results for the server to return
      * Typically obtained via
-     * [ListModelsResponse.next_page_token][google.cloud.automl.v1.ListModelsResponse.next_page_token] of the previous
+     * [ListModelsResponse.next_page_token][google.cloud.automl.v1.ListModelsResponse.next_page_token]
+     * of the previous
      * [AutoMl.ListModels][google.cloud.automl.v1.AutoMl.ListModels] call.
      * </pre>
      *

@@ -22,7 +22,8 @@ package com.google.cloud.automl.v1;
  *
  *
  * <pre>
- * Request message for [AutoMl.ImportData][google.cloud.automl.v1.AutoMl.ImportData].
+ * Request message for
+ * [AutoMl.ImportData][google.cloud.automl.v1.AutoMl.ImportData].
  * </pre>
  *
  * Protobuf type {@code google.cloud.automl.v1.ImportDataRequest}
@@ -388,7 +389,8 @@ public final class ImportDataRequest extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * Request message for [AutoMl.ImportData][google.cloud.automl.v1.AutoMl.ImportData].
+   * Request message for
+   * [AutoMl.ImportData][google.cloud.automl.v1.AutoMl.ImportData].
    * </pre>
    *
    * Protobuf type {@code google.cloud.automl.v1.ImportDataRequest}

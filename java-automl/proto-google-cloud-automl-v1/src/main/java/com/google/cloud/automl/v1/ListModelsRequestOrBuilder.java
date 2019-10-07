@@ -94,7 +94,8 @@ public interface ListModelsRequestOrBuilder
    * <pre>
    * A token identifying a page of results for the server to return
    * Typically obtained via
-   * [ListModelsResponse.next_page_token][google.cloud.automl.v1.ListModelsResponse.next_page_token] of the previous
+   * [ListModelsResponse.next_page_token][google.cloud.automl.v1.ListModelsResponse.next_page_token]
+   * of the previous
    * [AutoMl.ListModels][google.cloud.automl.v1.AutoMl.ListModels] call.
    * </pre>
    *
@@ -107,7 +108,8 @@ public interface ListModelsRequestOrBuilder
    * <pre>
    * A token identifying a page of results for the server to return
    * Typically obtained via
-   * [ListModelsResponse.next_page_token][google.cloud.automl.v1.ListModelsResponse.next_page_token] of the previous
+   * [ListModelsResponse.next_page_token][google.cloud.automl.v1.ListModelsResponse.next_page_token]
+   * of the previous
    * [AutoMl.ListModels][google.cloud.automl.v1.AutoMl.ListModels] call.
    * </pre>
    *

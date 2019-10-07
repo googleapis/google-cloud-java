@@ -22,7 +22,8 @@ package com.google.cloud.automl.v1;
  *
  *
  * <pre>
- * Response message for [AutoMl.ListModelEvaluations][google.cloud.automl.v1.AutoMl.ListModelEvaluations].
+ * Response message for
+ * [AutoMl.ListModelEvaluations][google.cloud.automl.v1.AutoMl.ListModelEvaluations].
  * </pre>
  *
  * Protobuf type {@code google.cloud.automl.v1.ListModelEvaluationsResponse}
@@ -195,8 +196,11 @@ public final class ListModelEvaluationsResponse extends com.google.protobuf.Gene
    *
    * <pre>
    * A token to retrieve next page of results.
-   * Pass to the [ListModelEvaluationsRequest.page_token][google.cloud.automl.v1.ListModelEvaluationsRequest.page_token] field of a new
-   * [AutoMl.ListModelEvaluations][google.cloud.automl.v1.AutoMl.ListModelEvaluations] request to obtain that page.
+   * Pass to the
+   * [ListModelEvaluationsRequest.page_token][google.cloud.automl.v1.ListModelEvaluationsRequest.page_token]
+   * field of a new
+   * [AutoMl.ListModelEvaluations][google.cloud.automl.v1.AutoMl.ListModelEvaluations]
+   * request to obtain that page.
    * </pre>
    *
    * <code>string next_page_token = 2;</code>
@@ -217,8 +221,11 @@ public final class ListModelEvaluationsResponse extends com.google.protobuf.Gene
    *
    * <pre>
    * A token to retrieve next page of results.
-   * Pass to the [ListModelEvaluationsRequest.page_token][google.cloud.automl.v1.ListModelEvaluationsRequest.page_token] field of a new
-   * [AutoMl.ListModelEvaluations][google.cloud.automl.v1.AutoMl.ListModelEvaluations] request to obtain that page.
+   * Pass to the
+   * [ListModelEvaluationsRequest.page_token][google.cloud.automl.v1.ListModelEvaluationsRequest.page_token]
+   * field of a new
+   * [AutoMl.ListModelEvaluations][google.cloud.automl.v1.AutoMl.ListModelEvaluations]
+   * request to obtain that page.
    * </pre>
    *
    * <code>string next_page_token = 2;</code>
@@ -410,7 +417,8 @@ public final class ListModelEvaluationsResponse extends com.google.protobuf.Gene
    *
    *
    * <pre>
-   * Response message for [AutoMl.ListModelEvaluations][google.cloud.automl.v1.AutoMl.ListModelEvaluations].
+   * Response message for
+   * [AutoMl.ListModelEvaluations][google.cloud.automl.v1.AutoMl.ListModelEvaluations].
    * </pre>
    *
    * Protobuf type {@code google.cloud.automl.v1.ListModelEvaluationsResponse}
@@ -975,8 +983,11 @@ public final class ListModelEvaluationsResponse extends com.google.protobuf.Gene
      *
      * <pre>
      * A token to retrieve next page of results.
-     * Pass to the [ListModelEvaluationsRequest.page_token][google.cloud.automl.v1.ListModelEvaluationsRequest.page_token] field of a new
-     * [AutoMl.ListModelEvaluations][google.cloud.automl.v1.AutoMl.ListModelEvaluations] request to obtain that page.
+     * Pass to the
+     * [ListModelEvaluationsRequest.page_token][google.cloud.automl.v1.ListModelEvaluationsRequest.page_token]
+     * field of a new
+     * [AutoMl.ListModelEvaluations][google.cloud.automl.v1.AutoMl.ListModelEvaluations]
+     * request to obtain that page.
      * </pre>
      *
      * <code>string next_page_token = 2;</code>
@@ -997,8 +1008,11 @@ public final class ListModelEvaluationsResponse extends com.google.protobuf.Gene
      *
      * <pre>
      * A token to retrieve next page of results.
-     * Pass to the [ListModelEvaluationsRequest.page_token][google.cloud.automl.v1.ListModelEvaluationsRequest.page_token] field of a new
-     * [AutoMl.ListModelEvaluations][google.cloud.automl.v1.AutoMl.ListModelEvaluations] request to obtain that page.
+     * Pass to the
+     * [ListModelEvaluationsRequest.page_token][google.cloud.automl.v1.ListModelEvaluationsRequest.page_token]
+     * field of a new
+     * [AutoMl.ListModelEvaluations][google.cloud.automl.v1.AutoMl.ListModelEvaluations]
+     * request to obtain that page.
      * </pre>
      *
      * <code>string next_page_token = 2;</code>
@@ -1019,8 +1033,11 @@ public final class ListModelEvaluationsResponse extends com.google.protobuf.Gene
      *
      * <pre>
      * A token to retrieve next page of results.
-     * Pass to the [ListModelEvaluationsRequest.page_token][google.cloud.automl.v1.ListModelEvaluationsRequest.page_token] field of a new
-     * [AutoMl.ListModelEvaluations][google.cloud.automl.v1.AutoMl.ListModelEvaluations] request to obtain that page.
+     * Pass to the
+     * [ListModelEvaluationsRequest.page_token][google.cloud.automl.v1.ListModelEvaluationsRequest.page_token]
+     * field of a new
+     * [AutoMl.ListModelEvaluations][google.cloud.automl.v1.AutoMl.ListModelEvaluations]
+     * request to obtain that page.
      * </pre>
      *
      * <code>string next_page_token = 2;</code>
@@ -1039,8 +1056,11 @@ public final class ListModelEvaluationsResponse extends com.google.protobuf.Gene
      *
      * <pre>
      * A token to retrieve next page of results.
-     * Pass to the [ListModelEvaluationsRequest.page_token][google.cloud.automl.v1.ListModelEvaluationsRequest.page_token] field of a new
-     * [AutoMl.ListModelEvaluations][google.cloud.automl.v1.AutoMl.ListModelEvaluations] request to obtain that page.
+     * Pass to the
+     * [ListModelEvaluationsRequest.page_token][google.cloud.automl.v1.ListModelEvaluationsRequest.page_token]
+     * field of a new
+     * [AutoMl.ListModelEvaluations][google.cloud.automl.v1.AutoMl.ListModelEvaluations]
+     * request to obtain that page.
      * </pre>
      *
      * <code>string next_page_token = 2;</code>
@@ -1056,8 +1076,11 @@ public final class ListModelEvaluationsResponse extends com.google.protobuf.Gene
      *
      * <pre>
      * A token to retrieve next page of results.
-     * Pass to the [ListModelEvaluationsRequest.page_token][google.cloud.automl.v1.ListModelEvaluationsRequest.page_token] field of a new
-     * [AutoMl.ListModelEvaluations][google.cloud.automl.v1.AutoMl.ListModelEvaluations] request to obtain that page.
+     * Pass to the
+     * [ListModelEvaluationsRequest.page_token][google.cloud.automl.v1.ListModelEvaluationsRequest.page_token]
+     * field of a new
+     * [AutoMl.ListModelEvaluations][google.cloud.automl.v1.AutoMl.ListModelEvaluations]
+     * request to obtain that page.
      * </pre>
      *
      * <code>string next_page_token = 2;</code>
