@@ -16,20 +16,21 @@
 
 package com.google.cloud.redis.it;
 
-import static org.junit.Assert.assertEquals;
-
 import com.google.cloud.ServiceOptions;
 import com.google.cloud.redis.v1beta1.CloudRedisClient;
 import com.google.cloud.redis.v1beta1.Instance;
 import com.google.cloud.redis.v1beta1.InstanceName;
 import com.google.cloud.redis.v1beta1.LocationName;
 import com.google.common.collect.Lists;
-import java.util.List;
-import java.util.UUID;
-import java.util.logging.Logger;
 import org.junit.AfterClass;
 import org.junit.BeforeClass;
 import org.junit.Test;
+
+import java.util.List;
+import java.util.UUID;
+import java.util.logging.Logger;
+
+import static org.junit.Assert.assertEquals;
 
 public class ITSystemTest {
 
@@ -43,6 +44,7 @@ public class ITSystemTest {
       INSTANCE_NAME_PREFIX + "-" + UUID.randomUUID().toString().substring(0, 8);
   private static final String LOCATION = "us-central1";
   private static final int MEMORY_SIZE_GB = 1;
+  private static final String AUTHORIZED_NETWORK = System.getProperty("redis.network");;
 
   @BeforeClass
   public static void beforeClass() throws Exception {
@@ -51,7 +53,12 @@ public class ITSystemTest {
 
     /** Creates a Redis instance based on the specified tier and memory size. */
     LocationName parent = LocationName.of(projectId, LOCATION);
-    Instance instance = Instance.newBuilder().setTier(TIER).setMemorySizeGb(MEMORY_SIZE_GB).build();
+    Instance instance =
+        Instance.newBuilder()
+            .setTier(TIER)
+            .setMemorySizeGb(MEMORY_SIZE_GB)
+            .setAuthorizedNetwork(AUTHORIZED_NETWORK == null || AUTHORIZED_NETWORK.isEmpty() ? "default" : AUTHORIZED_NETWORK)
+            .build();
     client.createInstanceAsync(parent, INSTANCE, instance).get();
     log.info("redis instance created successfully.");
   }
