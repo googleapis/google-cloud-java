@@ -70,6 +70,7 @@ public class DatasetInfo implements Serializable {
   private final String selfLink;
   private final Labels labels;
   private final EncryptionConfiguration defaultEncryptionConfiguration;
+  private final Long defaultPartitionExpirationMs;
 
   /** A builder for {@code DatasetInfo} objects. */
   public abstract static class Builder {
@@ -132,6 +133,20 @@ public class DatasetInfo implements Serializable {
     public abstract Builder setDefaultEncryptionConfiguration(
         EncryptionConfiguration defaultEncryptionConfiguration);
 
+    /**
+     * [Optional] The default partition expiration for all partitioned tables in the dataset, in
+     * milliseconds. Once this property is set, all newly-created partitioned tables in the dataset
+     * will have an expirationMs property in the timePartitioning settings set to this value, and
+     * changing the value will only affect new tables, not existing ones. The storage in a partition
+     * will have an expiration time of its partition time plus this value. Setting this property
+     * overrides the use of defaultTableExpirationMs for partitioned tables: only one of
+     * defaultTableExpirationMs and defaultPartitionExpirationMs will be used for any new
+     * partitioned table. If you provide an explicit timePartitioning.expirationMs when creating or
+     * updating a partitioned table, that value takes precedence over the default partition
+     * expiration time indicated by this property. The value may be {@code null}.
+     */
+    public abstract Builder setDefaultPartitionExpirationMs(Long defaultPartitionExpirationMs);
+
     /** Creates a {@code DatasetInfo} object. */
     public abstract DatasetInfo build();
   }
@@ -151,6 +166,7 @@ public class DatasetInfo implements Serializable {
     private String selfLink;
     private Labels labels = Labels.ZERO;
     private EncryptionConfiguration defaultEncryptionConfiguration;
+    private Long defaultPartitionExpirationMs;
 
     BuilderImpl() {}
 
@@ -168,6 +184,7 @@ public class DatasetInfo implements Serializable {
       this.selfLink = datasetInfo.selfLink;
       this.labels = datasetInfo.labels;
       this.defaultEncryptionConfiguration = datasetInfo.defaultEncryptionConfiguration;
+      this.defaultPartitionExpirationMs = datasetInfo.defaultPartitionExpirationMs;
     }
 
     BuilderImpl(com.google.api.services.bigquery.model.Dataset datasetPb) {
@@ -200,6 +217,7 @@ public class DatasetInfo implements Serializable {
             new EncryptionConfiguration.Builder(datasetPb.getDefaultEncryptionConfiguration())
                 .build();
       }
+      this.defaultPartitionExpirationMs = datasetPb.getDefaultPartitionExpirationMs();
     }
 
     @Override
@@ -289,6 +307,12 @@ public class DatasetInfo implements Serializable {
     }
 
     @Override
+    public Builder setDefaultPartitionExpirationMs(Long defaultPartitionExpirationMs) {
+      this.defaultPartitionExpirationMs = defaultPartitionExpirationMs;
+      return this;
+    }
+
+    @Override
     public DatasetInfo build() {
       return new DatasetInfo(this);
     }
@@ -308,6 +332,7 @@ public class DatasetInfo implements Serializable {
     selfLink = builder.selfLink;
     labels = builder.labels;
     defaultEncryptionConfiguration = builder.defaultEncryptionConfiguration;
+    defaultPartitionExpirationMs = builder.defaultPartitionExpirationMs;
   }
 
   /** Returns the dataset identity. */
@@ -429,6 +454,10 @@ public class DatasetInfo implements Serializable {
     return defaultEncryptionConfiguration;
   }
 
+  public Long getDefaultPartitionExpirationMs() {
+    return defaultPartitionExpirationMs;
+  }
+
   /** Returns a builder for the dataset object. */
   public Builder toBuilder() {
     return new BuilderImpl(this);
@@ -450,6 +479,7 @@ public class DatasetInfo implements Serializable {
         .add("acl", acl)
         .add("labels", labels)
         .add("defaultEncryptionConfiguration", defaultEncryptionConfiguration)
+        .add("defaultPartitionExpirationMs", defaultPartitionExpirationMs)
         .toString();
   }
 
@@ -514,6 +544,9 @@ public class DatasetInfo implements Serializable {
     datasetPb.setLabels(labels.toPb());
     if (defaultEncryptionConfiguration != null) {
       datasetPb.setDefaultEncryptionConfiguration(defaultEncryptionConfiguration.toPb());
+    }
+    if (defaultPartitionExpirationMs != null) {
+      datasetPb.setDefaultPartitionExpirationMs(defaultPartitionExpirationMs);
     }
     return datasetPb;
   }
