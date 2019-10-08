@@ -36,6 +36,8 @@ import javax.annotation.Nonnull;
  *
  * <ul>
  *   <li>The default service address (bigtable.googleapis.com) and default port (443) are used.
+ *   <li>The transport provider is configured with a channel pool that contains twice as many
+ *       connections as CPUs.
  *   <li>Credentials are acquired automatically through Application Default Credentials.
  *   <li>Retries are configured for idempotent methods but not for non-idempotent methods.
  * </ul>
