@@ -53,6 +53,31 @@ public interface MutationApi<T extends MutationApi<T>> {
       long timestamp,
       @Nonnull ByteString value);
 
+  /**
+   * Adds a mutation which sets the value of the specified cell.
+   *
+   * <p>This a convenience method that converts Strings to ByteStrings and uses microseconds since
+   * epoch as the timestamp. Also it accepts long value.
+   */
+  T setCell(@Nonnull String familyName, @Nonnull String qualifier, long value);
+
+  /**
+   * Adds a mutation which sets the value of the specified cell.
+   *
+   * <p>This is a convenience override that converts Strings to ByteStrings.
+   */
+  T setCell(@Nonnull String familyName, @Nonnull String qualifier, long timestamp, long value);
+
+  /**
+   * Adds a mutation which sets the value of the specified cell.
+   *
+   * <p>Uses microseconds since epoch as the timestamp.
+   */
+  T setCell(@Nonnull String familyName, @Nonnull ByteString qualifier, long value);
+
+  /** Adds a mutation which sets the value of the specified cell. */
+  T setCell(@Nonnull String familyName, @Nonnull ByteString qualifier, long timestamp, long value);
+
   /** Adds a mutation which deletes cells from the specified column. */
   T deleteCells(@Nonnull String familyName, @Nonnull String qualifier);
 

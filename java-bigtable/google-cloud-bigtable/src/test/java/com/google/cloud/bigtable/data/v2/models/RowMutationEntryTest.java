@@ -20,6 +20,7 @@ import static com.google.common.truth.Truth.assertThat;
 import com.google.bigtable.v2.MutateRowsRequest;
 import com.google.bigtable.v2.Mutation;
 import com.google.common.collect.ImmutableList;
+import com.google.common.primitives.Longs;
 import com.google.protobuf.ByteString;
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
@@ -139,5 +140,29 @@ public class RowMutationEntryTest {
                     .setDeleteFromFamily(
                         Mutation.DeleteFromFamily.newBuilder().setFamilyName("family-2"))
                     .build()));
+  }
+
+  @Test
+  public void testWithLongValue() {
+    RowMutationEntry rowMutationEntry =
+        RowMutationEntry.create("fake-key")
+            .setCell("fake-family", "fake-qualifier", 100_000L)
+            .setCell("fake-family", "fake-qualifier", 30_000L, 100_000L);
+
+    MutateRowsRequest.Entry entryMutation = rowMutationEntry.toProto();
+
+    Mutation.SetCell setCell = entryMutation.getMutations(0).getSetCell();
+    assertThat(setCell.getFamilyName()).isEqualTo("fake-family");
+    assertThat(setCell.getColumnQualifier().toStringUtf8()).isEqualTo("fake-qualifier");
+    assertThat(setCell.getValue()).isEqualTo(ByteString.copyFrom(Longs.toByteArray(100_000L)));
+
+    assertThat(entryMutation.getMutations(1).getSetCell())
+        .isEqualTo(
+            Mutation.SetCell.newBuilder()
+                .setFamilyName("fake-family")
+                .setColumnQualifier(ByteString.copyFromUtf8("fake-qualifier"))
+                .setTimestampMicros(30_000L)
+                .setValue(ByteString.copyFrom(Longs.toByteArray(100_000L)))
+                .build());
   }
 }

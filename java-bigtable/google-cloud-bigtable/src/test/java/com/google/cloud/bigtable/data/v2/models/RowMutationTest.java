@@ -19,8 +19,10 @@ import static com.google.common.truth.Truth.assertThat;
 
 import com.google.bigtable.v2.MutateRowRequest;
 import com.google.bigtable.v2.MutateRowsRequest;
+import com.google.bigtable.v2.Mutation.SetCell;
 import com.google.cloud.bigtable.data.v2.internal.NameUtil;
 import com.google.cloud.bigtable.data.v2.internal.RequestContext;
+import com.google.common.primitives.Longs;
 import com.google.protobuf.ByteString;
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
@@ -112,5 +114,29 @@ public class RowMutationTest {
 
     RowMutation actual = (RowMutation) ois.readObject();
     assertThat(actual.toProto(REQUEST_CONTEXT)).isEqualTo(expected.toProto(REQUEST_CONTEXT));
+  }
+
+  @Test
+  public void testWithLongValue() {
+    RowMutation rowMutation =
+        RowMutation.create("fake-table", "fake-key")
+            .setCell("fake-family", "fake-qualifier", 100_000L)
+            .setCell("fake-family", "fake-qualifier", 30_000L, 100_000L);
+
+    MutateRowRequest actualRowMutation = rowMutation.toProto(REQUEST_CONTEXT);
+
+    SetCell setCell = actualRowMutation.getMutations(0).getSetCell();
+    assertThat(setCell.getFamilyName()).isEqualTo("fake-family");
+    assertThat(setCell.getColumnQualifier().toStringUtf8()).isEqualTo("fake-qualifier");
+    assertThat(setCell.getValue()).isEqualTo(ByteString.copyFrom(Longs.toByteArray(100_000L)));
+
+    assertThat(actualRowMutation.getMutations(1).getSetCell())
+        .isEqualTo(
+            SetCell.newBuilder()
+                .setFamilyName("fake-family")
+                .setColumnQualifier(ByteString.copyFromUtf8("fake-qualifier"))
+                .setTimestampMicros(30_000L)
+                .setValue(ByteString.copyFrom(Longs.toByteArray(100_000L)))
+                .build());
   }
 }

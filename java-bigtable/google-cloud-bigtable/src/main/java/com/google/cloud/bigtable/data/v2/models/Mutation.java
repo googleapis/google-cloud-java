@@ -24,6 +24,7 @@ import com.google.bigtable.v2.Mutation.SetCell;
 import com.google.cloud.bigtable.data.v2.models.Range.TimestampRange;
 import com.google.common.base.Preconditions;
 import com.google.common.collect.ImmutableList;
+import com.google.common.primitives.Longs;
 import com.google.protobuf.ByteString;
 import java.io.IOException;
 import java.io.ObjectInputStream;
@@ -153,6 +154,31 @@ public final class Mutation implements MutationApi<Mutation>, Serializable {
             .build());
 
     return this;
+  }
+
+  @Override
+  public Mutation setCell(@Nonnull String familyName, @Nonnull String qualifier, long value) {
+    return setCell(familyName, wrapByteString(qualifier), value);
+  }
+
+  @Override
+  public Mutation setCell(
+      @Nonnull String familyName, @Nonnull String qualifier, long timestamp, long value) {
+
+    return setCell(familyName, wrapByteString(qualifier), timestamp, value);
+  }
+
+  @Override
+  public Mutation setCell(@Nonnull String familyName, @Nonnull ByteString qualifier, long value) {
+
+    return setCell(familyName, qualifier, ByteString.copyFrom(Longs.toByteArray(value)));
+  }
+
+  @Override
+  public Mutation setCell(
+      @Nonnull String familyName, @Nonnull ByteString qualifier, long timestamp, long value) {
+
+    return setCell(familyName, qualifier, timestamp, ByteString.copyFrom(Longs.toByteArray(value)));
   }
 
   @Override
