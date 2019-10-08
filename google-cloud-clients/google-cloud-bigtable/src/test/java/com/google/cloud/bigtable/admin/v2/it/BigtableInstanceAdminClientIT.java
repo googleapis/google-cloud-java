@@ -117,7 +117,7 @@ public class BigtableInstanceAdminClientIT {
 
     client.createInstance(
         CreateInstanceRequest.of(newInstanceId)
-            .addCluster(newClusterId, "us-central1-a", 0, StorageType.SSD)
+            .addDevelopmentCluster(newClusterId, "us-central1-a", StorageType.SSD)
             .setDisplayName("Fresh-Instance-Name")
             .addLabel("state", "readytodelete")
             .setType(Instance.Type.DEVELOPMENT));
