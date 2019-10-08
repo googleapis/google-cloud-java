@@ -52,6 +52,19 @@ public abstract class CloudRedisStub implements BackgroundResource {
     throw new UnsupportedOperationException("Not implemented: getOperationsStub()");
   }
 
+  public UnaryCallable<ListInstancesRequest, ListInstancesPagedResponse>
+      listInstancesPagedCallable() {
+    throw new UnsupportedOperationException("Not implemented: listInstancesPagedCallable()");
+  }
+
+  public UnaryCallable<ListInstancesRequest, ListInstancesResponse> listInstancesCallable() {
+    throw new UnsupportedOperationException("Not implemented: listInstancesCallable()");
+  }
+
+  public UnaryCallable<GetInstanceRequest, Instance> getInstanceCallable() {
+    throw new UnsupportedOperationException("Not implemented: getInstanceCallable()");
+  }
+
   @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
   public OperationCallable<CreateInstanceRequest, Instance, OperationMetadata>
       createInstanceOperationCallable() {
@@ -70,19 +83,6 @@ public abstract class CloudRedisStub implements BackgroundResource {
 
   public UnaryCallable<UpdateInstanceRequest, Operation> updateInstanceCallable() {
     throw new UnsupportedOperationException("Not implemented: updateInstanceCallable()");
-  }
-
-  public UnaryCallable<ListInstancesRequest, ListInstancesPagedResponse>
-      listInstancesPagedCallable() {
-    throw new UnsupportedOperationException("Not implemented: listInstancesPagedCallable()");
-  }
-
-  public UnaryCallable<ListInstancesRequest, ListInstancesResponse> listInstancesCallable() {
-    throw new UnsupportedOperationException("Not implemented: listInstancesCallable()");
-  }
-
-  public UnaryCallable<GetInstanceRequest, Instance> getInstanceCallable() {
-    throw new UnsupportedOperationException("Not implemented: getInstanceCallable()");
   }
 
   @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
