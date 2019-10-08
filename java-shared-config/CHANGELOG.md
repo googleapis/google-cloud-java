@@ -1,5 +1,12 @@
 # Changelog
 
+### [0.2.1](https://www.github.com/googleapis/java-shared-config/compare/v0.2.0...v0.2.1) (2019-10-08)
+
+
+### Bug Fixes
+
+* specify surefire-junit4 build dependency for offline tests ([#37](https://www.github.com/googleapis/java-shared-config/issues/37)) ([f93f18e](https://www.github.com/googleapis/java-shared-config/commit/f93f18e))
+
 ## [0.2.0](https://www.github.com/googleapis/java-shared-config/compare/v0.1.4...v0.2.0) (2019-10-07)
 
 
