@@ -104,6 +104,34 @@ public class RowMutationEntry implements MutationApi<RowMutationEntry>, Serializ
     return this;
   }
 
+  @Override
+  public RowMutationEntry setCell(
+      @Nonnull String familyName, @Nonnull String qualifier, long value) {
+    mutation.setCell(familyName, qualifier, value);
+    return this;
+  }
+
+  @Override
+  public RowMutationEntry setCell(
+      @Nonnull String familyName, @Nonnull String qualifier, long timestamp, long value) {
+    mutation.setCell(familyName, qualifier, timestamp, value);
+    return this;
+  }
+
+  @Override
+  public RowMutationEntry setCell(
+      @Nonnull String familyName, @Nonnull ByteString qualifier, long value) {
+    mutation.setCell(familyName, qualifier, value);
+    return this;
+  }
+
+  @Override
+  public RowMutationEntry setCell(
+      @Nonnull String familyName, @Nonnull ByteString qualifier, long timestamp, long value) {
+    mutation.setCell(familyName, qualifier, timestamp, value);
+    return this;
+  }
+
   /** {@inheritDoc} */
   @Override
   public RowMutationEntry deleteCells(@Nonnull String familyName, @Nonnull String qualifier) {

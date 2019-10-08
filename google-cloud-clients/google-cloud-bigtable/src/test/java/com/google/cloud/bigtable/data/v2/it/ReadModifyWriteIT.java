@@ -47,12 +47,15 @@ public class ReadModifyWriteIT {
             .readModifyWriteRowAsync(
                 ReadModifyWriteRow.create(tableId, rowKey)
                     .append(family, "q1", "a")
-                    .increment(family, "q2", 3))
+                    .increment(family, "q2", 3)
+                    .increment(family, "q3", 0x12345679))
             .get(1, TimeUnit.MINUTES);
 
-    assertThat(row.getCells()).hasSize(2);
+    assertThat(row.getCells()).hasSize(3);
     assertThat(row.getCells().get(0).getValue()).isEqualTo(ByteString.copyFromUtf8("a"));
     assertThat(row.getCells().get(1).getValue())
         .isEqualTo(ByteString.copyFrom(new byte[] {0, 0, 0, 0, 0, 0, 0, 3}));
+    assertThat(row.getCells().get(2).getValue())
+        .isEqualTo(ByteString.copyFrom(new byte[] {0, 0, 0, 0, 0x12, 0x34, 0x56, 0x79}));
   }
 }
