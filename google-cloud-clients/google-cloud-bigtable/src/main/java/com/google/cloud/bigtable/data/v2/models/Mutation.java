@@ -170,9 +170,8 @@ public final class Mutation implements MutationApi<Mutation>, Serializable {
 
   @Override
   public Mutation setCell(@Nonnull String familyName, @Nonnull ByteString qualifier, long value) {
-    long timestamp = System.currentTimeMillis() * 1_000;
 
-    return setCell(familyName, qualifier, timestamp, value);
+    return setCell(familyName, qualifier, ByteString.copyFrom(Longs.toByteArray(value)));
   }
 
   @Override
