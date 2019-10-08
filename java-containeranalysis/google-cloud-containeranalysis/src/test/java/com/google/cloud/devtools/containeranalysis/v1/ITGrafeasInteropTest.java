@@ -22,7 +22,12 @@ import io.grafeas.v1.GrafeasSettings;
 import java.io.IOException;
 import org.junit.Test;
 
-public class GrafeasInteropTest {
+/**
+ * This test requires application default credentials. They are available if running in Google
+ * Compute Engine. Otherwise, the environment variable GOOGLE_APPLICATION_CREDENTIALS must point to
+ * a file containing the credentials.
+ */
+public class ITGrafeasInteropTest {
 
   @Test
   public void createsGrafeasClient() throws IOException {
