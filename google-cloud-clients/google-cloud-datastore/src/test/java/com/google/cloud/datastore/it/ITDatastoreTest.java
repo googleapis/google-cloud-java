@@ -255,7 +255,7 @@ public class ITDatastoreTest {
   }
 
   @Test
-  public void testTransactionWithQuery() throws InterruptedException {
+  public void testTransactionWithQuery() {
     Query<Entity> query =
         Query.newEntityQueryBuilder()
             .setKind(KIND2)
@@ -863,12 +863,12 @@ public class ITDatastoreTest {
   public void testSetLimit() {
     DATASTORE.put(ENTITY1);
     Query<Key> keyQuery = Query.newKeyQueryBuilder().setLimit(1).build();
-    QueryResults queryResults = DATASTORE.run(keyQuery);
+    QueryResults<?> queryResults = DATASTORE.run(keyQuery);
     assertTrue(queryResults.hasNext());
     assertEquals(KEY1, queryResults.next());
 
-    Query query = Query.newEntityQueryBuilder().setLimit(0).build();
-    QueryResults results = DATASTORE.run(query);
+    Query<?> query = Query.newEntityQueryBuilder().setLimit(0).build();
+    QueryResults<?> results = DATASTORE.run(query);
     assertFalse(results.hasNext());
   }
 
