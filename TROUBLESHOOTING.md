@@ -167,35 +167,35 @@ There are different strategies to resolve conflicts, but you must understand the
   consider [shading dependencies](https://maven.apache.org/plugins/maven-shade-plugin/)
   that conflict with `google-cloud-java`.
 
-For example, to shade `guava` and `protobuf-java`:
+  For example, to shade `guava` and `protobuf-java`:
 
 ```
-<plugin>
-  <groupId>org.apache.maven.plugins</groupId>
-  <artifactId>maven-shade-plugin</artifactId>
-  <version>...</version>
-  <executions>
-    <execution>
-      <phase>package</phase>
-      <goals>
-        <goal>shade</goal>
-      </goals>
-      <configuration>
-        <keepDependenciesWithProvidedScope>false</keepDependenciesWithProvidedScope>
-        <relocations>
-          <!-- move protobuf to a shaded package -->
-          <relocation>
-            <pattern>com.google.protobuf</pattern>
-            <shadedPattern>myapp.shaded.com.google.protobuf</shadedPattern>
-          </relocation>
-          <!-- move Guava to a shaded package -->
-          <relocation>
-            <pattern>com.google.common</pattern>
-            <shadedPattern>myapp.shaded.com.google.common</shadedPattern>
-          </relocation>
-        </relocations>
-      </configuration>
-    </execution>
-  </executions>
-</plugin>
+  <plugin>
+    <groupId>org.apache.maven.plugins</groupId>
+    <artifactId>maven-shade-plugin</artifactId>
+    <version>...</version>
+    <executions>
+      <execution>
+        <phase>package</phase>
+        <goals>
+          <goal>shade</goal>
+        </goals>
+        <configuration>
+          <keepDependenciesWithProvidedScope>false</keepDependenciesWithProvidedScope>
+          <relocations>
+            <!-- move protobuf to a shaded package -->
+            <relocation>
+              <pattern>com.google.protobuf</pattern>
+              <shadedPattern>myapp.shaded.com.google.protobuf</shadedPattern>
+            </relocation>
+            <!-- move Guava to a shaded package -->
+            <relocation>
+              <pattern>com.google.common</pattern>
+              <shadedPattern>myapp.shaded.com.google.common</shadedPattern>
+            </relocation>
+          </relocations>
+        </configuration>
+      </execution>
+    </executions>
+  </plugin>
 ```
