@@ -21,6 +21,7 @@ import com.google.cloud.bigtable.admin.v2.models.AppProfile;
 import com.google.cloud.bigtable.admin.v2.models.Cluster;
 import com.google.cloud.bigtable.admin.v2.models.Instance;
 import com.google.cloud.bigtable.data.v2.BigtableDataClient;
+import com.google.cloud.bigtable.data.v2.BigtableDataSettings;
 import org.threeten.bp.Instant;
 import org.threeten.bp.temporal.ChronoUnit;
 
@@ -44,6 +45,8 @@ public abstract class AbstractTestEnv {
   public abstract BigtableTableAdminClient getTableAdminClient();
 
   public abstract BigtableInstanceAdminClient getInstanceAdminClient();
+
+  public abstract BigtableDataSettings getDataClientSettings();
 
   public abstract String getProjectId();
 

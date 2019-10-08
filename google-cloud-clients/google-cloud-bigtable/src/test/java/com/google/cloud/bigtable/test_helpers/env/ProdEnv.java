@@ -18,6 +18,7 @@ package com.google.cloud.bigtable.test_helpers.env;
 import com.google.cloud.bigtable.admin.v2.BigtableInstanceAdminClient;
 import com.google.cloud.bigtable.admin.v2.BigtableTableAdminClient;
 import com.google.cloud.bigtable.data.v2.BigtableDataClient;
+import com.google.cloud.bigtable.data.v2.BigtableDataSettings;
 import java.io.IOException;
 
 /**
@@ -39,6 +40,8 @@ class ProdEnv extends AbstractTestEnv {
   private final String instanceId;
   private final String tableId;
 
+  private final BigtableDataSettings dataSettings;
+
   private BigtableDataClient dataClient;
   private BigtableTableAdminClient tableAdminClient;
   private BigtableInstanceAdminClient instanceAdminClient;
@@ -54,11 +57,14 @@ class ProdEnv extends AbstractTestEnv {
     this.projectId = projectId;
     this.instanceId = instanceId;
     this.tableId = tableId;
+
+    this.dataSettings =
+        BigtableDataSettings.newBuilder().setProjectId(projectId).setInstanceId(instanceId).build();
   }
 
   @Override
   void start() throws IOException {
-    dataClient = BigtableDataClient.create(projectId, instanceId);
+    dataClient = BigtableDataClient.create(dataSettings);
     tableAdminClient = BigtableTableAdminClient.create(projectId, instanceId);
     instanceAdminClient = BigtableInstanceAdminClient.create(projectId);
   }
@@ -83,6 +89,11 @@ class ProdEnv extends AbstractTestEnv {
   @Override
   public BigtableInstanceAdminClient getInstanceAdminClient() {
     return instanceAdminClient;
+  }
+
+  @Override
+  public BigtableDataSettings getDataClientSettings() {
+    return dataSettings;
   }
 
   @Override

@@ -32,6 +32,8 @@ public class EmulatorEnv extends AbstractTestEnv {
   private BigtableTableAdminClient tableAdminClient;
   private BigtableDataClient dataClient;
 
+  private BigtableDataSettings dataSettings;
+
   public static EmulatorEnv createBundled() {
     return new EmulatorEnv();
   }
@@ -43,15 +45,17 @@ public class EmulatorEnv extends AbstractTestEnv {
     emulator = Emulator.createBundled();
     emulator.start();
 
+    dataSettings =
+        BigtableDataSettings.newBuilderForEmulator(emulator.getPort())
+            .setProjectId("fake-project")
+            .setInstanceId("fake-instance")
+            .build();
+
+    dataClient = BigtableDataClient.create(dataSettings);
+
     tableAdminClient =
         BigtableTableAdminClient.create(
             BigtableTableAdminSettings.newBuilderForEmulator(emulator.getPort())
-                .setProjectId("fake-project")
-                .setInstanceId("fake-instance")
-                .build());
-    dataClient =
-        BigtableDataClient.create(
-            BigtableDataSettings.newBuilderForEmulator(emulator.getPort())
                 .setProjectId("fake-project")
                 .setInstanceId("fake-instance")
                 .build());
@@ -60,10 +64,15 @@ public class EmulatorEnv extends AbstractTestEnv {
   }
 
   @Override
-  void stop() throws Exception {
+  void stop() {
     tableAdminClient.close();
     dataClient.close();
     emulator.stop();
+  }
+
+  @Override
+  public BigtableDataSettings getDataClientSettings() {
+    return dataSettings;
   }
 
   @Override
