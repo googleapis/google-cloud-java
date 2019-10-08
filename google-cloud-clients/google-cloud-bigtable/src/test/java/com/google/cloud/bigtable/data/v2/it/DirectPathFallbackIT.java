@@ -51,6 +51,10 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
 
+/**
+ * Test DirectPath fallback behavior by injecting a ChannelHandler into the netty stack that will
+ * disrupt IPv6 communications.
+ */
 @RunWith(JUnit4.class)
 public class DirectPathFallbackIT {
   @ClassRule public static TestEnvRule testEnvRule = new TestEnvRule();
@@ -122,22 +126,22 @@ public class DirectPathFallbackIT {
     // Verify that we can send a request
     instrumentedClient.readRow(testEnvRule.env().getTableId(), "nonexistent-row");
 
-    // enable the blackhole
+    // Enable the blackhole, which will prevent communication via IPv6 and thus DirectPath.
     blackholeIPv6.set(true);
 
-    // Verify that we can still send a request
+    // Send a request, which should be routed over IPv4 and CFE.
     instrumentedClient.readRow(testEnvRule.env().getTableId(), "nonexistent-row");
 
-    // Make sure that we actually blocked the transport
+    // Verify that the above check was meaningful, by verifying that the blackhole actually dropped
+    // packets.
     assertThat(numBlocked.get()).isGreaterThan(0);
-
-    // disable blackhole
-    blackholeIPv6.set(false);
 
     // Make sure that the client will start reading from IPv6 again by sending new requests and
     // checking the injected IPv6 counter has been updated.
+    blackholeIPv6.set(false);
     numIPv6Read.set(0);
 
+    // Arbitrary count that will ensure that there have been enough activity via IPv6.
     final int MIN_COMPLETE_READ_CALLS = 40;
 
     while (numIPv6Read.get() < MIN_COMPLETE_READ_CALLS) {
