@@ -23,10 +23,9 @@ import java.io.IOException;
 import org.junit.Test;
 
 /**
- * This test requires application default credentials. 
- * They are available if running in Google Compute Engine. Otherwise, the 
- * environment variable GOOGLE_APPLICATION_CREDENTIALS must point
- * to a file containing the credentials. 
+ * This test requires application default credentials. They are available if running in Google
+ * Compute Engine. Otherwise, the environment variable GOOGLE_APPLICATION_CREDENTIALS must point to
+ * a file containing the credentials.
  */
 public class ITGrafeasInteropTest {
 
