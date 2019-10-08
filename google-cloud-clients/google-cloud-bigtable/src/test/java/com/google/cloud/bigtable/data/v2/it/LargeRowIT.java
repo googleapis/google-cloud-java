@@ -16,12 +16,10 @@
 package com.google.cloud.bigtable.data.v2.it;
 
 import static com.google.common.truth.Truth.assertThat;
-import static com.google.common.truth.TruthJUnit.assume;
 
 import com.google.cloud.bigtable.data.v2.models.Query;
 import com.google.cloud.bigtable.data.v2.models.Row;
 import com.google.cloud.bigtable.data.v2.models.RowMutation;
-import com.google.cloud.bigtable.test_helpers.env.DirectPathEnv;
 import com.google.cloud.bigtable.test_helpers.env.TestEnvRule;
 import com.google.protobuf.ByteString;
 import java.util.Random;
@@ -38,9 +36,6 @@ public class LargeRowIT {
 
   @Test
   public void testWriteRead() throws Exception {
-    // TODO(igorbernstein2): remove this once direct path supports large messages
-    assume().that(testEnvRule.env()).isNotInstanceOf(DirectPathEnv.class);
-
     String rowKey = UUID.randomUUID().toString();
     String familyId = testEnvRule.env().getFamilyId();
 
