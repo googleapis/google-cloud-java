@@ -23,7 +23,7 @@ public interface OrderedJobOrBuilder
    * or hyphen. Must consist of between 3 and 50 characters.
    * </pre>
    *
-   * <code>string step_id = 1;</code>
+   * <code>string step_id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   java.lang.String getStepId();
   /**
@@ -41,7 +41,7 @@ public interface OrderedJobOrBuilder
    * or hyphen. Must consist of between 3 and 50 characters.
    * </pre>
    *
-   * <code>string step_id = 1;</code>
+   * <code>string step_id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   com.google.protobuf.ByteString getStepIdBytes();
 
@@ -244,7 +244,7 @@ public interface OrderedJobOrBuilder
    * No more than 32 labels can be associated with a given job.
    * </pre>
    *
-   * <code>map&lt;string, string&gt; labels = 8;</code>
+   * <code>map&lt;string, string&gt; labels = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   int getLabelsCount();
   /**
@@ -260,7 +260,7 @@ public interface OrderedJobOrBuilder
    * No more than 32 labels can be associated with a given job.
    * </pre>
    *
-   * <code>map&lt;string, string&gt; labels = 8;</code>
+   * <code>map&lt;string, string&gt; labels = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   boolean containsLabels(java.lang.String key);
   /** Use {@link #getLabelsMap()} instead. */
@@ -279,7 +279,7 @@ public interface OrderedJobOrBuilder
    * No more than 32 labels can be associated with a given job.
    * </pre>
    *
-   * <code>map&lt;string, string&gt; labels = 8;</code>
+   * <code>map&lt;string, string&gt; labels = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   java.util.Map<java.lang.String, java.lang.String> getLabelsMap();
   /**
@@ -295,7 +295,7 @@ public interface OrderedJobOrBuilder
    * No more than 32 labels can be associated with a given job.
    * </pre>
    *
-   * <code>map&lt;string, string&gt; labels = 8;</code>
+   * <code>map&lt;string, string&gt; labels = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   java.lang.String getLabelsOrDefault(java.lang.String key, java.lang.String defaultValue);
   /**
@@ -311,7 +311,7 @@ public interface OrderedJobOrBuilder
    * No more than 32 labels can be associated with a given job.
    * </pre>
    *
-   * <code>map&lt;string, string&gt; labels = 8;</code>
+   * <code>map&lt;string, string&gt; labels = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   java.lang.String getLabelsOrThrow(java.lang.String key);
 
@@ -322,7 +322,9 @@ public interface OrderedJobOrBuilder
    * Optional. Job scheduling configuration.
    * </pre>
    *
-   * <code>.google.cloud.dataproc.v1.JobScheduling scheduling = 9;</code>
+   * <code>
+   * .google.cloud.dataproc.v1.JobScheduling scheduling = 9 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   boolean hasScheduling();
   /**
@@ -332,7 +334,9 @@ public interface OrderedJobOrBuilder
    * Optional. Job scheduling configuration.
    * </pre>
    *
-   * <code>.google.cloud.dataproc.v1.JobScheduling scheduling = 9;</code>
+   * <code>
+   * .google.cloud.dataproc.v1.JobScheduling scheduling = 9 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   com.google.cloud.dataproc.v1.JobScheduling getScheduling();
   /**
@@ -342,7 +346,9 @@ public interface OrderedJobOrBuilder
    * Optional. Job scheduling configuration.
    * </pre>
    *
-   * <code>.google.cloud.dataproc.v1.JobScheduling scheduling = 9;</code>
+   * <code>
+   * .google.cloud.dataproc.v1.JobScheduling scheduling = 9 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   com.google.cloud.dataproc.v1.JobSchedulingOrBuilder getSchedulingOrBuilder();
 
@@ -354,7 +360,8 @@ public interface OrderedJobOrBuilder
    * If not specified, the job will start at the beginning of workflow.
    * </pre>
    *
-   * <code>repeated string prerequisite_step_ids = 10;</code>
+   * <code>repeated string prerequisite_step_ids = 10 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   java.util.List<java.lang.String> getPrerequisiteStepIdsList();
   /**
@@ -365,7 +372,8 @@ public interface OrderedJobOrBuilder
    * If not specified, the job will start at the beginning of workflow.
    * </pre>
    *
-   * <code>repeated string prerequisite_step_ids = 10;</code>
+   * <code>repeated string prerequisite_step_ids = 10 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   int getPrerequisiteStepIdsCount();
   /**
@@ -376,7 +384,8 @@ public interface OrderedJobOrBuilder
    * If not specified, the job will start at the beginning of workflow.
    * </pre>
    *
-   * <code>repeated string prerequisite_step_ids = 10;</code>
+   * <code>repeated string prerequisite_step_ids = 10 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   java.lang.String getPrerequisiteStepIds(int index);
   /**
@@ -387,7 +396,8 @@ public interface OrderedJobOrBuilder
    * If not specified, the job will start at the beginning of workflow.
    * </pre>
    *
-   * <code>repeated string prerequisite_step_ids = 10;</code>
+   * <code>repeated string prerequisite_step_ids = 10 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   com.google.protobuf.ByteString getPrerequisiteStepIdsBytes(int index);
 

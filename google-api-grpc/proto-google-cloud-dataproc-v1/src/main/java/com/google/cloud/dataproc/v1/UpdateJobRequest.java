@@ -147,7 +147,7 @@ public final class UpdateJobRequest extends com.google.protobuf.GeneratedMessage
    * belongs to.
    * </pre>
    *
-   * <code>string project_id = 1;</code>
+   * <code>string project_id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   public java.lang.String getProjectId() {
     java.lang.Object ref = projectId_;
@@ -168,7 +168,7 @@ public final class UpdateJobRequest extends com.google.protobuf.GeneratedMessage
    * belongs to.
    * </pre>
    *
-   * <code>string project_id = 1;</code>
+   * <code>string project_id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   public com.google.protobuf.ByteString getProjectIdBytes() {
     java.lang.Object ref = projectId_;
@@ -191,7 +191,7 @@ public final class UpdateJobRequest extends com.google.protobuf.GeneratedMessage
    * Required. The Cloud Dataproc region in which to handle the request.
    * </pre>
    *
-   * <code>string region = 2;</code>
+   * <code>string region = 2 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   public java.lang.String getRegion() {
     java.lang.Object ref = region_;
@@ -211,7 +211,7 @@ public final class UpdateJobRequest extends com.google.protobuf.GeneratedMessage
    * Required. The Cloud Dataproc region in which to handle the request.
    * </pre>
    *
-   * <code>string region = 2;</code>
+   * <code>string region = 2 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   public com.google.protobuf.ByteString getRegionBytes() {
     java.lang.Object ref = region_;
@@ -234,7 +234,7 @@ public final class UpdateJobRequest extends com.google.protobuf.GeneratedMessage
    * Required. The job ID.
    * </pre>
    *
-   * <code>string job_id = 3;</code>
+   * <code>string job_id = 3 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   public java.lang.String getJobId() {
     java.lang.Object ref = jobId_;
@@ -254,7 +254,7 @@ public final class UpdateJobRequest extends com.google.protobuf.GeneratedMessage
    * Required. The job ID.
    * </pre>
    *
-   * <code>string job_id = 3;</code>
+   * <code>string job_id = 3 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   public com.google.protobuf.ByteString getJobIdBytes() {
     java.lang.Object ref = jobId_;
@@ -277,7 +277,7 @@ public final class UpdateJobRequest extends com.google.protobuf.GeneratedMessage
    * Required. The changes to the job.
    * </pre>
    *
-   * <code>.google.cloud.dataproc.v1.Job job = 4;</code>
+   * <code>.google.cloud.dataproc.v1.Job job = 4 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   public boolean hasJob() {
     return job_ != null;
@@ -289,7 +289,7 @@ public final class UpdateJobRequest extends com.google.protobuf.GeneratedMessage
    * Required. The changes to the job.
    * </pre>
    *
-   * <code>.google.cloud.dataproc.v1.Job job = 4;</code>
+   * <code>.google.cloud.dataproc.v1.Job job = 4 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   public com.google.cloud.dataproc.v1.Job getJob() {
     return job_ == null ? com.google.cloud.dataproc.v1.Job.getDefaultInstance() : job_;
@@ -301,7 +301,7 @@ public final class UpdateJobRequest extends com.google.protobuf.GeneratedMessage
    * Required. The changes to the job.
    * </pre>
    *
-   * <code>.google.cloud.dataproc.v1.Job job = 4;</code>
+   * <code>.google.cloud.dataproc.v1.Job job = 4 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   public com.google.cloud.dataproc.v1.JobOrBuilder getJobOrBuilder() {
     return getJob();
@@ -321,7 +321,8 @@ public final class UpdateJobRequest extends com.google.protobuf.GeneratedMessage
    * field that can be updated.
    * </pre>
    *
-   * <code>.google.protobuf.FieldMask update_mask = 5;</code>
+   * <code>.google.protobuf.FieldMask update_mask = 5 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   public boolean hasUpdateMask() {
     return updateMask_ != null;
@@ -338,7 +339,8 @@ public final class UpdateJobRequest extends com.google.protobuf.GeneratedMessage
    * field that can be updated.
    * </pre>
    *
-   * <code>.google.protobuf.FieldMask update_mask = 5;</code>
+   * <code>.google.protobuf.FieldMask update_mask = 5 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   public com.google.protobuf.FieldMask getUpdateMask() {
     return updateMask_ == null ? com.google.protobuf.FieldMask.getDefaultInstance() : updateMask_;
@@ -355,7 +357,8 @@ public final class UpdateJobRequest extends com.google.protobuf.GeneratedMessage
    * field that can be updated.
    * </pre>
    *
-   * <code>.google.protobuf.FieldMask update_mask = 5;</code>
+   * <code>.google.protobuf.FieldMask update_mask = 5 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   public com.google.protobuf.FieldMaskOrBuilder getUpdateMaskOrBuilder() {
     return getUpdateMask();
@@ -774,7 +777,7 @@ public final class UpdateJobRequest extends com.google.protobuf.GeneratedMessage
      * belongs to.
      * </pre>
      *
-     * <code>string project_id = 1;</code>
+     * <code>string project_id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public java.lang.String getProjectId() {
       java.lang.Object ref = projectId_;
@@ -795,7 +798,7 @@ public final class UpdateJobRequest extends com.google.protobuf.GeneratedMessage
      * belongs to.
      * </pre>
      *
-     * <code>string project_id = 1;</code>
+     * <code>string project_id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public com.google.protobuf.ByteString getProjectIdBytes() {
       java.lang.Object ref = projectId_;
@@ -816,7 +819,7 @@ public final class UpdateJobRequest extends com.google.protobuf.GeneratedMessage
      * belongs to.
      * </pre>
      *
-     * <code>string project_id = 1;</code>
+     * <code>string project_id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder setProjectId(java.lang.String value) {
       if (value == null) {
@@ -835,7 +838,7 @@ public final class UpdateJobRequest extends com.google.protobuf.GeneratedMessage
      * belongs to.
      * </pre>
      *
-     * <code>string project_id = 1;</code>
+     * <code>string project_id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder clearProjectId() {
 
@@ -851,7 +854,7 @@ public final class UpdateJobRequest extends com.google.protobuf.GeneratedMessage
      * belongs to.
      * </pre>
      *
-     * <code>string project_id = 1;</code>
+     * <code>string project_id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder setProjectIdBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -872,7 +875,7 @@ public final class UpdateJobRequest extends com.google.protobuf.GeneratedMessage
      * Required. The Cloud Dataproc region in which to handle the request.
      * </pre>
      *
-     * <code>string region = 2;</code>
+     * <code>string region = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public java.lang.String getRegion() {
       java.lang.Object ref = region_;
@@ -892,7 +895,7 @@ public final class UpdateJobRequest extends com.google.protobuf.GeneratedMessage
      * Required. The Cloud Dataproc region in which to handle the request.
      * </pre>
      *
-     * <code>string region = 2;</code>
+     * <code>string region = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public com.google.protobuf.ByteString getRegionBytes() {
       java.lang.Object ref = region_;
@@ -912,7 +915,7 @@ public final class UpdateJobRequest extends com.google.protobuf.GeneratedMessage
      * Required. The Cloud Dataproc region in which to handle the request.
      * </pre>
      *
-     * <code>string region = 2;</code>
+     * <code>string region = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder setRegion(java.lang.String value) {
       if (value == null) {
@@ -930,7 +933,7 @@ public final class UpdateJobRequest extends com.google.protobuf.GeneratedMessage
      * Required. The Cloud Dataproc region in which to handle the request.
      * </pre>
      *
-     * <code>string region = 2;</code>
+     * <code>string region = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder clearRegion() {
 
@@ -945,7 +948,7 @@ public final class UpdateJobRequest extends com.google.protobuf.GeneratedMessage
      * Required. The Cloud Dataproc region in which to handle the request.
      * </pre>
      *
-     * <code>string region = 2;</code>
+     * <code>string region = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder setRegionBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -966,7 +969,7 @@ public final class UpdateJobRequest extends com.google.protobuf.GeneratedMessage
      * Required. The job ID.
      * </pre>
      *
-     * <code>string job_id = 3;</code>
+     * <code>string job_id = 3 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public java.lang.String getJobId() {
       java.lang.Object ref = jobId_;
@@ -986,7 +989,7 @@ public final class UpdateJobRequest extends com.google.protobuf.GeneratedMessage
      * Required. The job ID.
      * </pre>
      *
-     * <code>string job_id = 3;</code>
+     * <code>string job_id = 3 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public com.google.protobuf.ByteString getJobIdBytes() {
       java.lang.Object ref = jobId_;
@@ -1006,7 +1009,7 @@ public final class UpdateJobRequest extends com.google.protobuf.GeneratedMessage
      * Required. The job ID.
      * </pre>
      *
-     * <code>string job_id = 3;</code>
+     * <code>string job_id = 3 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder setJobId(java.lang.String value) {
       if (value == null) {
@@ -1024,7 +1027,7 @@ public final class UpdateJobRequest extends com.google.protobuf.GeneratedMessage
      * Required. The job ID.
      * </pre>
      *
-     * <code>string job_id = 3;</code>
+     * <code>string job_id = 3 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder clearJobId() {
 
@@ -1039,7 +1042,7 @@ public final class UpdateJobRequest extends com.google.protobuf.GeneratedMessage
      * Required. The job ID.
      * </pre>
      *
-     * <code>string job_id = 3;</code>
+     * <code>string job_id = 3 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder setJobIdBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -1065,7 +1068,7 @@ public final class UpdateJobRequest extends com.google.protobuf.GeneratedMessage
      * Required. The changes to the job.
      * </pre>
      *
-     * <code>.google.cloud.dataproc.v1.Job job = 4;</code>
+     * <code>.google.cloud.dataproc.v1.Job job = 4 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public boolean hasJob() {
       return jobBuilder_ != null || job_ != null;
@@ -1077,7 +1080,7 @@ public final class UpdateJobRequest extends com.google.protobuf.GeneratedMessage
      * Required. The changes to the job.
      * </pre>
      *
-     * <code>.google.cloud.dataproc.v1.Job job = 4;</code>
+     * <code>.google.cloud.dataproc.v1.Job job = 4 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public com.google.cloud.dataproc.v1.Job getJob() {
       if (jobBuilder_ == null) {
@@ -1093,7 +1096,7 @@ public final class UpdateJobRequest extends com.google.protobuf.GeneratedMessage
      * Required. The changes to the job.
      * </pre>
      *
-     * <code>.google.cloud.dataproc.v1.Job job = 4;</code>
+     * <code>.google.cloud.dataproc.v1.Job job = 4 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder setJob(com.google.cloud.dataproc.v1.Job value) {
       if (jobBuilder_ == null) {
@@ -1115,7 +1118,7 @@ public final class UpdateJobRequest extends com.google.protobuf.GeneratedMessage
      * Required. The changes to the job.
      * </pre>
      *
-     * <code>.google.cloud.dataproc.v1.Job job = 4;</code>
+     * <code>.google.cloud.dataproc.v1.Job job = 4 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder setJob(com.google.cloud.dataproc.v1.Job.Builder builderForValue) {
       if (jobBuilder_ == null) {
@@ -1134,7 +1137,7 @@ public final class UpdateJobRequest extends com.google.protobuf.GeneratedMessage
      * Required. The changes to the job.
      * </pre>
      *
-     * <code>.google.cloud.dataproc.v1.Job job = 4;</code>
+     * <code>.google.cloud.dataproc.v1.Job job = 4 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder mergeJob(com.google.cloud.dataproc.v1.Job value) {
       if (jobBuilder_ == null) {
@@ -1157,7 +1160,7 @@ public final class UpdateJobRequest extends com.google.protobuf.GeneratedMessage
      * Required. The changes to the job.
      * </pre>
      *
-     * <code>.google.cloud.dataproc.v1.Job job = 4;</code>
+     * <code>.google.cloud.dataproc.v1.Job job = 4 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder clearJob() {
       if (jobBuilder_ == null) {
@@ -1177,7 +1180,7 @@ public final class UpdateJobRequest extends com.google.protobuf.GeneratedMessage
      * Required. The changes to the job.
      * </pre>
      *
-     * <code>.google.cloud.dataproc.v1.Job job = 4;</code>
+     * <code>.google.cloud.dataproc.v1.Job job = 4 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public com.google.cloud.dataproc.v1.Job.Builder getJobBuilder() {
 
@@ -1191,7 +1194,7 @@ public final class UpdateJobRequest extends com.google.protobuf.GeneratedMessage
      * Required. The changes to the job.
      * </pre>
      *
-     * <code>.google.cloud.dataproc.v1.Job job = 4;</code>
+     * <code>.google.cloud.dataproc.v1.Job job = 4 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public com.google.cloud.dataproc.v1.JobOrBuilder getJobOrBuilder() {
       if (jobBuilder_ != null) {
@@ -1207,7 +1210,7 @@ public final class UpdateJobRequest extends com.google.protobuf.GeneratedMessage
      * Required. The changes to the job.
      * </pre>
      *
-     * <code>.google.cloud.dataproc.v1.Job job = 4;</code>
+     * <code>.google.cloud.dataproc.v1.Job job = 4 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.dataproc.v1.Job,
@@ -1244,7 +1247,8 @@ public final class UpdateJobRequest extends com.google.protobuf.GeneratedMessage
      * field that can be updated.
      * </pre>
      *
-     * <code>.google.protobuf.FieldMask update_mask = 5;</code>
+     * <code>.google.protobuf.FieldMask update_mask = 5 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public boolean hasUpdateMask() {
       return updateMaskBuilder_ != null || updateMask_ != null;
@@ -1261,7 +1265,8 @@ public final class UpdateJobRequest extends com.google.protobuf.GeneratedMessage
      * field that can be updated.
      * </pre>
      *
-     * <code>.google.protobuf.FieldMask update_mask = 5;</code>
+     * <code>.google.protobuf.FieldMask update_mask = 5 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public com.google.protobuf.FieldMask getUpdateMask() {
       if (updateMaskBuilder_ == null) {
@@ -1284,7 +1289,8 @@ public final class UpdateJobRequest extends com.google.protobuf.GeneratedMessage
      * field that can be updated.
      * </pre>
      *
-     * <code>.google.protobuf.FieldMask update_mask = 5;</code>
+     * <code>.google.protobuf.FieldMask update_mask = 5 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder setUpdateMask(com.google.protobuf.FieldMask value) {
       if (updateMaskBuilder_ == null) {
@@ -1311,7 +1317,8 @@ public final class UpdateJobRequest extends com.google.protobuf.GeneratedMessage
      * field that can be updated.
      * </pre>
      *
-     * <code>.google.protobuf.FieldMask update_mask = 5;</code>
+     * <code>.google.protobuf.FieldMask update_mask = 5 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder setUpdateMask(com.google.protobuf.FieldMask.Builder builderForValue) {
       if (updateMaskBuilder_ == null) {
@@ -1335,7 +1342,8 @@ public final class UpdateJobRequest extends com.google.protobuf.GeneratedMessage
      * field that can be updated.
      * </pre>
      *
-     * <code>.google.protobuf.FieldMask update_mask = 5;</code>
+     * <code>.google.protobuf.FieldMask update_mask = 5 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder mergeUpdateMask(com.google.protobuf.FieldMask value) {
       if (updateMaskBuilder_ == null) {
@@ -1364,7 +1372,8 @@ public final class UpdateJobRequest extends com.google.protobuf.GeneratedMessage
      * field that can be updated.
      * </pre>
      *
-     * <code>.google.protobuf.FieldMask update_mask = 5;</code>
+     * <code>.google.protobuf.FieldMask update_mask = 5 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder clearUpdateMask() {
       if (updateMaskBuilder_ == null) {
@@ -1389,7 +1398,8 @@ public final class UpdateJobRequest extends com.google.protobuf.GeneratedMessage
      * field that can be updated.
      * </pre>
      *
-     * <code>.google.protobuf.FieldMask update_mask = 5;</code>
+     * <code>.google.protobuf.FieldMask update_mask = 5 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public com.google.protobuf.FieldMask.Builder getUpdateMaskBuilder() {
 
@@ -1408,7 +1418,8 @@ public final class UpdateJobRequest extends com.google.protobuf.GeneratedMessage
      * field that can be updated.
      * </pre>
      *
-     * <code>.google.protobuf.FieldMask update_mask = 5;</code>
+     * <code>.google.protobuf.FieldMask update_mask = 5 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public com.google.protobuf.FieldMaskOrBuilder getUpdateMaskOrBuilder() {
       if (updateMaskBuilder_ != null) {
@@ -1431,7 +1442,8 @@ public final class UpdateJobRequest extends com.google.protobuf.GeneratedMessage
      * field that can be updated.
      * </pre>
      *
-     * <code>.google.protobuf.FieldMask update_mask = 5;</code>
+     * <code>.google.protobuf.FieldMask update_mask = 5 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.protobuf.FieldMask,

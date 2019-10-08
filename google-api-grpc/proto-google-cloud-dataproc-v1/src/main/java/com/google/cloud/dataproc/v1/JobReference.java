@@ -109,7 +109,7 @@ public final class JobReference extends com.google.protobuf.GeneratedMessageV3
    * belongs to.
    * </pre>
    *
-   * <code>string project_id = 1;</code>
+   * <code>string project_id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   public java.lang.String getProjectId() {
     java.lang.Object ref = projectId_;
@@ -130,7 +130,7 @@ public final class JobReference extends com.google.protobuf.GeneratedMessageV3
    * belongs to.
    * </pre>
    *
-   * <code>string project_id = 1;</code>
+   * <code>string project_id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   public com.google.protobuf.ByteString getProjectIdBytes() {
     java.lang.Object ref = projectId_;
@@ -156,7 +156,7 @@ public final class JobReference extends com.google.protobuf.GeneratedMessageV3
    * If not specified by the caller, the job ID will be provided by the server.
    * </pre>
    *
-   * <code>string job_id = 2;</code>
+   * <code>string job_id = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   public java.lang.String getJobId() {
     java.lang.Object ref = jobId_;
@@ -179,7 +179,7 @@ public final class JobReference extends com.google.protobuf.GeneratedMessageV3
    * If not specified by the caller, the job ID will be provided by the server.
    * </pre>
    *
-   * <code>string job_id = 2;</code>
+   * <code>string job_id = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   public com.google.protobuf.ByteString getJobIdBytes() {
     java.lang.Object ref = jobId_;
@@ -534,7 +534,7 @@ public final class JobReference extends com.google.protobuf.GeneratedMessageV3
      * belongs to.
      * </pre>
      *
-     * <code>string project_id = 1;</code>
+     * <code>string project_id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public java.lang.String getProjectId() {
       java.lang.Object ref = projectId_;
@@ -555,7 +555,7 @@ public final class JobReference extends com.google.protobuf.GeneratedMessageV3
      * belongs to.
      * </pre>
      *
-     * <code>string project_id = 1;</code>
+     * <code>string project_id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public com.google.protobuf.ByteString getProjectIdBytes() {
       java.lang.Object ref = projectId_;
@@ -576,7 +576,7 @@ public final class JobReference extends com.google.protobuf.GeneratedMessageV3
      * belongs to.
      * </pre>
      *
-     * <code>string project_id = 1;</code>
+     * <code>string project_id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder setProjectId(java.lang.String value) {
       if (value == null) {
@@ -595,7 +595,7 @@ public final class JobReference extends com.google.protobuf.GeneratedMessageV3
      * belongs to.
      * </pre>
      *
-     * <code>string project_id = 1;</code>
+     * <code>string project_id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder clearProjectId() {
 
@@ -611,7 +611,7 @@ public final class JobReference extends com.google.protobuf.GeneratedMessageV3
      * belongs to.
      * </pre>
      *
-     * <code>string project_id = 1;</code>
+     * <code>string project_id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder setProjectIdBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -635,7 +635,7 @@ public final class JobReference extends com.google.protobuf.GeneratedMessageV3
      * If not specified by the caller, the job ID will be provided by the server.
      * </pre>
      *
-     * <code>string job_id = 2;</code>
+     * <code>string job_id = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public java.lang.String getJobId() {
       java.lang.Object ref = jobId_;
@@ -658,7 +658,7 @@ public final class JobReference extends com.google.protobuf.GeneratedMessageV3
      * If not specified by the caller, the job ID will be provided by the server.
      * </pre>
      *
-     * <code>string job_id = 2;</code>
+     * <code>string job_id = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public com.google.protobuf.ByteString getJobIdBytes() {
       java.lang.Object ref = jobId_;
@@ -681,7 +681,7 @@ public final class JobReference extends com.google.protobuf.GeneratedMessageV3
      * If not specified by the caller, the job ID will be provided by the server.
      * </pre>
      *
-     * <code>string job_id = 2;</code>
+     * <code>string job_id = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public Builder setJobId(java.lang.String value) {
       if (value == null) {
@@ -702,7 +702,7 @@ public final class JobReference extends com.google.protobuf.GeneratedMessageV3
      * If not specified by the caller, the job ID will be provided by the server.
      * </pre>
      *
-     * <code>string job_id = 2;</code>
+     * <code>string job_id = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public Builder clearJobId() {
 
@@ -720,7 +720,7 @@ public final class JobReference extends com.google.protobuf.GeneratedMessageV3
      * If not specified by the caller, the job ID will be provided by the server.
      * </pre>
      *
-     * <code>string job_id = 2;</code>
+     * <code>string job_id = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public Builder setJobIdBytes(com.google.protobuf.ByteString value) {
       if (value == null) {

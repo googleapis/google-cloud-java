@@ -15,7 +15,7 @@ public interface YarnApplicationOrBuilder
    * Required. The application name.
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   java.lang.String getName();
   /**
@@ -25,7 +25,7 @@ public interface YarnApplicationOrBuilder
    * Required. The application name.
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   com.google.protobuf.ByteString getNameBytes();
 
@@ -36,7 +36,9 @@ public interface YarnApplicationOrBuilder
    * Required. The application state.
    * </pre>
    *
-   * <code>.google.cloud.dataproc.v1.YarnApplication.State state = 2;</code>
+   * <code>
+   * .google.cloud.dataproc.v1.YarnApplication.State state = 2 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   int getStateValue();
   /**
@@ -46,7 +48,9 @@ public interface YarnApplicationOrBuilder
    * Required. The application state.
    * </pre>
    *
-   * <code>.google.cloud.dataproc.v1.YarnApplication.State state = 2;</code>
+   * <code>
+   * .google.cloud.dataproc.v1.YarnApplication.State state = 2 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   com.google.cloud.dataproc.v1.YarnApplication.State getState();
 
@@ -57,7 +61,7 @@ public interface YarnApplicationOrBuilder
    * Required. The numerical progress of the application, from 1 to 100.
    * </pre>
    *
-   * <code>float progress = 3;</code>
+   * <code>float progress = 3 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   float getProgress();
 
@@ -71,7 +75,7 @@ public interface YarnApplicationOrBuilder
    * possibly, access.
    * </pre>
    *
-   * <code>string tracking_url = 4;</code>
+   * <code>string tracking_url = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   java.lang.String getTrackingUrl();
   /**
@@ -84,7 +88,7 @@ public interface YarnApplicationOrBuilder
    * possibly, access.
    * </pre>
    *
-   * <code>string tracking_url = 4;</code>
+   * <code>string tracking_url = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   com.google.protobuf.ByteString getTrackingUrlBytes();
 }

@@ -15,7 +15,9 @@ public interface JobStatusOrBuilder
    * Output only. A state message specifying the overall job state.
    * </pre>
    *
-   * <code>.google.cloud.dataproc.v1.JobStatus.State state = 1;</code>
+   * <code>
+   * .google.cloud.dataproc.v1.JobStatus.State state = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    */
   int getStateValue();
   /**
@@ -25,7 +27,9 @@ public interface JobStatusOrBuilder
    * Output only. A state message specifying the overall job state.
    * </pre>
    *
-   * <code>.google.cloud.dataproc.v1.JobStatus.State state = 1;</code>
+   * <code>
+   * .google.cloud.dataproc.v1.JobStatus.State state = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    */
   com.google.cloud.dataproc.v1.JobStatus.State getState();
 
@@ -33,22 +37,26 @@ public interface JobStatusOrBuilder
    *
    *
    * <pre>
-   * Output only. Optional job state details, such as an error
+   * Optional. Output only. Job state details, such as an error
    * description if the state is &lt;code&gt;ERROR&lt;/code&gt;.
    * </pre>
    *
-   * <code>string details = 2;</code>
+   * <code>
+   * string details = 2 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   java.lang.String getDetails();
   /**
    *
    *
    * <pre>
-   * Output only. Optional job state details, such as an error
+   * Optional. Output only. Job state details, such as an error
    * description if the state is &lt;code&gt;ERROR&lt;/code&gt;.
    * </pre>
    *
-   * <code>string details = 2;</code>
+   * <code>
+   * string details = 2 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   com.google.protobuf.ByteString getDetailsBytes();
 
@@ -59,7 +67,9 @@ public interface JobStatusOrBuilder
    * Output only. The time when this state was entered.
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp state_start_time = 6;</code>
+   * <code>
+   * .google.protobuf.Timestamp state_start_time = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    */
   boolean hasStateStartTime();
   /**
@@ -69,7 +79,9 @@ public interface JobStatusOrBuilder
    * Output only. The time when this state was entered.
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp state_start_time = 6;</code>
+   * <code>
+   * .google.protobuf.Timestamp state_start_time = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    */
   com.google.protobuf.Timestamp getStateStartTime();
   /**
@@ -79,7 +91,9 @@ public interface JobStatusOrBuilder
    * Output only. The time when this state was entered.
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp state_start_time = 6;</code>
+   * <code>
+   * .google.protobuf.Timestamp state_start_time = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    */
   com.google.protobuf.TimestampOrBuilder getStateStartTimeOrBuilder();
 
@@ -91,7 +105,9 @@ public interface JobStatusOrBuilder
    * status reported by the agent.
    * </pre>
    *
-   * <code>.google.cloud.dataproc.v1.JobStatus.Substate substate = 7;</code>
+   * <code>
+   * .google.cloud.dataproc.v1.JobStatus.Substate substate = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    */
   int getSubstateValue();
   /**
@@ -102,7 +118,9 @@ public interface JobStatusOrBuilder
    * status reported by the agent.
    * </pre>
    *
-   * <code>.google.cloud.dataproc.v1.JobStatus.Substate substate = 7;</code>
+   * <code>
+   * .google.cloud.dataproc.v1.JobStatus.Substate substate = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    */
   com.google.cloud.dataproc.v1.JobStatus.Substate getSubstate();
 }

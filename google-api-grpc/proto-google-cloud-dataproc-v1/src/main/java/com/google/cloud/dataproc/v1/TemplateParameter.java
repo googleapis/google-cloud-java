@@ -144,7 +144,7 @@ public final class TemplateParameter extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * Required.  Parameter name.
+   * Required. Parameter name.
    * The parameter name is used as the key, and paired with the
    * parameter value, which are passed to the template when the template
    * is instantiated.
@@ -153,7 +153,7 @@ public final class TemplateParameter extends com.google.protobuf.GeneratedMessag
    * 40 characters.
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   public java.lang.String getName() {
     java.lang.Object ref = name_;
@@ -170,7 +170,7 @@ public final class TemplateParameter extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * Required.  Parameter name.
+   * Required. Parameter name.
    * The parameter name is used as the key, and paired with the
    * parameter value, which are passed to the template when the template
    * is instantiated.
@@ -179,7 +179,7 @@ public final class TemplateParameter extends com.google.protobuf.GeneratedMessag
    * 40 characters.
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   public com.google.protobuf.ByteString getNameBytes() {
     java.lang.Object ref = name_;
@@ -237,7 +237,7 @@ public final class TemplateParameter extends com.google.protobuf.GeneratedMessag
    * - jobs['step-id'].sparkJob.args
    * </pre>
    *
-   * <code>repeated string fields = 2;</code>
+   * <code>repeated string fields = 2 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   public com.google.protobuf.ProtocolStringList getFieldsList() {
     return fields_;
@@ -284,7 +284,7 @@ public final class TemplateParameter extends com.google.protobuf.GeneratedMessag
    * - jobs['step-id'].sparkJob.args
    * </pre>
    *
-   * <code>repeated string fields = 2;</code>
+   * <code>repeated string fields = 2 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   public int getFieldsCount() {
     return fields_.size();
@@ -331,7 +331,7 @@ public final class TemplateParameter extends com.google.protobuf.GeneratedMessag
    * - jobs['step-id'].sparkJob.args
    * </pre>
    *
-   * <code>repeated string fields = 2;</code>
+   * <code>repeated string fields = 2 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   public java.lang.String getFields(int index) {
     return fields_.get(index);
@@ -378,7 +378,7 @@ public final class TemplateParameter extends com.google.protobuf.GeneratedMessag
    * - jobs['step-id'].sparkJob.args
    * </pre>
    *
-   * <code>repeated string fields = 2;</code>
+   * <code>repeated string fields = 2 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   public com.google.protobuf.ByteString getFieldsBytes(int index) {
     return fields_.getByteString(index);
@@ -394,7 +394,7 @@ public final class TemplateParameter extends com.google.protobuf.GeneratedMessag
    * Must not exceed 1024 characters.
    * </pre>
    *
-   * <code>string description = 3;</code>
+   * <code>string description = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   public java.lang.String getDescription() {
     java.lang.Object ref = description_;
@@ -415,7 +415,7 @@ public final class TemplateParameter extends com.google.protobuf.GeneratedMessag
    * Must not exceed 1024 characters.
    * </pre>
    *
-   * <code>string description = 3;</code>
+   * <code>string description = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   public com.google.protobuf.ByteString getDescriptionBytes() {
     java.lang.Object ref = description_;
@@ -438,7 +438,9 @@ public final class TemplateParameter extends com.google.protobuf.GeneratedMessag
    * Optional. Validation rules to be applied to this parameter's value.
    * </pre>
    *
-   * <code>.google.cloud.dataproc.v1.ParameterValidation validation = 4;</code>
+   * <code>
+   * .google.cloud.dataproc.v1.ParameterValidation validation = 4 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   public boolean hasValidation() {
     return validation_ != null;
@@ -450,7 +452,9 @@ public final class TemplateParameter extends com.google.protobuf.GeneratedMessag
    * Optional. Validation rules to be applied to this parameter's value.
    * </pre>
    *
-   * <code>.google.cloud.dataproc.v1.ParameterValidation validation = 4;</code>
+   * <code>
+   * .google.cloud.dataproc.v1.ParameterValidation validation = 4 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   public com.google.cloud.dataproc.v1.ParameterValidation getValidation() {
     return validation_ == null
@@ -464,7 +468,9 @@ public final class TemplateParameter extends com.google.protobuf.GeneratedMessag
    * Optional. Validation rules to be applied to this parameter's value.
    * </pre>
    *
-   * <code>.google.cloud.dataproc.v1.ParameterValidation validation = 4;</code>
+   * <code>
+   * .google.cloud.dataproc.v1.ParameterValidation validation = 4 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   public com.google.cloud.dataproc.v1.ParameterValidationOrBuilder getValidationOrBuilder() {
     return getValidation();
@@ -881,7 +887,7 @@ public final class TemplateParameter extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Required.  Parameter name.
+     * Required. Parameter name.
      * The parameter name is used as the key, and paired with the
      * parameter value, which are passed to the template when the template
      * is instantiated.
@@ -890,7 +896,7 @@ public final class TemplateParameter extends com.google.protobuf.GeneratedMessag
      * 40 characters.
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public java.lang.String getName() {
       java.lang.Object ref = name_;
@@ -907,7 +913,7 @@ public final class TemplateParameter extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Required.  Parameter name.
+     * Required. Parameter name.
      * The parameter name is used as the key, and paired with the
      * parameter value, which are passed to the template when the template
      * is instantiated.
@@ -916,7 +922,7 @@ public final class TemplateParameter extends com.google.protobuf.GeneratedMessag
      * 40 characters.
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public com.google.protobuf.ByteString getNameBytes() {
       java.lang.Object ref = name_;
@@ -933,7 +939,7 @@ public final class TemplateParameter extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Required.  Parameter name.
+     * Required. Parameter name.
      * The parameter name is used as the key, and paired with the
      * parameter value, which are passed to the template when the template
      * is instantiated.
@@ -942,7 +948,7 @@ public final class TemplateParameter extends com.google.protobuf.GeneratedMessag
      * 40 characters.
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder setName(java.lang.String value) {
       if (value == null) {
@@ -957,7 +963,7 @@ public final class TemplateParameter extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Required.  Parameter name.
+     * Required. Parameter name.
      * The parameter name is used as the key, and paired with the
      * parameter value, which are passed to the template when the template
      * is instantiated.
@@ -966,7 +972,7 @@ public final class TemplateParameter extends com.google.protobuf.GeneratedMessag
      * 40 characters.
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder clearName() {
 
@@ -978,7 +984,7 @@ public final class TemplateParameter extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Required.  Parameter name.
+     * Required. Parameter name.
      * The parameter name is used as the key, and paired with the
      * parameter value, which are passed to the template when the template
      * is instantiated.
@@ -987,7 +993,7 @@ public final class TemplateParameter extends com.google.protobuf.GeneratedMessag
      * 40 characters.
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder setNameBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -1051,7 +1057,7 @@ public final class TemplateParameter extends com.google.protobuf.GeneratedMessag
      * - jobs['step-id'].sparkJob.args
      * </pre>
      *
-     * <code>repeated string fields = 2;</code>
+     * <code>repeated string fields = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public com.google.protobuf.ProtocolStringList getFieldsList() {
       return fields_.getUnmodifiableView();
@@ -1098,7 +1104,7 @@ public final class TemplateParameter extends com.google.protobuf.GeneratedMessag
      * - jobs['step-id'].sparkJob.args
      * </pre>
      *
-     * <code>repeated string fields = 2;</code>
+     * <code>repeated string fields = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public int getFieldsCount() {
       return fields_.size();
@@ -1145,7 +1151,7 @@ public final class TemplateParameter extends com.google.protobuf.GeneratedMessag
      * - jobs['step-id'].sparkJob.args
      * </pre>
      *
-     * <code>repeated string fields = 2;</code>
+     * <code>repeated string fields = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public java.lang.String getFields(int index) {
       return fields_.get(index);
@@ -1192,7 +1198,7 @@ public final class TemplateParameter extends com.google.protobuf.GeneratedMessag
      * - jobs['step-id'].sparkJob.args
      * </pre>
      *
-     * <code>repeated string fields = 2;</code>
+     * <code>repeated string fields = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public com.google.protobuf.ByteString getFieldsBytes(int index) {
       return fields_.getByteString(index);
@@ -1239,7 +1245,7 @@ public final class TemplateParameter extends com.google.protobuf.GeneratedMessag
      * - jobs['step-id'].sparkJob.args
      * </pre>
      *
-     * <code>repeated string fields = 2;</code>
+     * <code>repeated string fields = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder setFields(int index, java.lang.String value) {
       if (value == null) {
@@ -1292,7 +1298,7 @@ public final class TemplateParameter extends com.google.protobuf.GeneratedMessag
      * - jobs['step-id'].sparkJob.args
      * </pre>
      *
-     * <code>repeated string fields = 2;</code>
+     * <code>repeated string fields = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder addFields(java.lang.String value) {
       if (value == null) {
@@ -1345,7 +1351,7 @@ public final class TemplateParameter extends com.google.protobuf.GeneratedMessag
      * - jobs['step-id'].sparkJob.args
      * </pre>
      *
-     * <code>repeated string fields = 2;</code>
+     * <code>repeated string fields = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder addAllFields(java.lang.Iterable<java.lang.String> values) {
       ensureFieldsIsMutable();
@@ -1395,7 +1401,7 @@ public final class TemplateParameter extends com.google.protobuf.GeneratedMessag
      * - jobs['step-id'].sparkJob.args
      * </pre>
      *
-     * <code>repeated string fields = 2;</code>
+     * <code>repeated string fields = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder clearFields() {
       fields_ = com.google.protobuf.LazyStringArrayList.EMPTY;
@@ -1445,7 +1451,7 @@ public final class TemplateParameter extends com.google.protobuf.GeneratedMessag
      * - jobs['step-id'].sparkJob.args
      * </pre>
      *
-     * <code>repeated string fields = 2;</code>
+     * <code>repeated string fields = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder addFieldsBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -1467,7 +1473,7 @@ public final class TemplateParameter extends com.google.protobuf.GeneratedMessag
      * Must not exceed 1024 characters.
      * </pre>
      *
-     * <code>string description = 3;</code>
+     * <code>string description = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public java.lang.String getDescription() {
       java.lang.Object ref = description_;
@@ -1488,7 +1494,7 @@ public final class TemplateParameter extends com.google.protobuf.GeneratedMessag
      * Must not exceed 1024 characters.
      * </pre>
      *
-     * <code>string description = 3;</code>
+     * <code>string description = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public com.google.protobuf.ByteString getDescriptionBytes() {
       java.lang.Object ref = description_;
@@ -1509,7 +1515,7 @@ public final class TemplateParameter extends com.google.protobuf.GeneratedMessag
      * Must not exceed 1024 characters.
      * </pre>
      *
-     * <code>string description = 3;</code>
+     * <code>string description = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public Builder setDescription(java.lang.String value) {
       if (value == null) {
@@ -1528,7 +1534,7 @@ public final class TemplateParameter extends com.google.protobuf.GeneratedMessag
      * Must not exceed 1024 characters.
      * </pre>
      *
-     * <code>string description = 3;</code>
+     * <code>string description = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public Builder clearDescription() {
 
@@ -1544,7 +1550,7 @@ public final class TemplateParameter extends com.google.protobuf.GeneratedMessag
      * Must not exceed 1024 characters.
      * </pre>
      *
-     * <code>string description = 3;</code>
+     * <code>string description = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public Builder setDescriptionBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -1570,7 +1576,9 @@ public final class TemplateParameter extends com.google.protobuf.GeneratedMessag
      * Optional. Validation rules to be applied to this parameter's value.
      * </pre>
      *
-     * <code>.google.cloud.dataproc.v1.ParameterValidation validation = 4;</code>
+     * <code>
+     * .google.cloud.dataproc.v1.ParameterValidation validation = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public boolean hasValidation() {
       return validationBuilder_ != null || validation_ != null;
@@ -1582,7 +1590,9 @@ public final class TemplateParameter extends com.google.protobuf.GeneratedMessag
      * Optional. Validation rules to be applied to this parameter's value.
      * </pre>
      *
-     * <code>.google.cloud.dataproc.v1.ParameterValidation validation = 4;</code>
+     * <code>
+     * .google.cloud.dataproc.v1.ParameterValidation validation = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public com.google.cloud.dataproc.v1.ParameterValidation getValidation() {
       if (validationBuilder_ == null) {
@@ -1600,7 +1610,9 @@ public final class TemplateParameter extends com.google.protobuf.GeneratedMessag
      * Optional. Validation rules to be applied to this parameter's value.
      * </pre>
      *
-     * <code>.google.cloud.dataproc.v1.ParameterValidation validation = 4;</code>
+     * <code>
+     * .google.cloud.dataproc.v1.ParameterValidation validation = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder setValidation(com.google.cloud.dataproc.v1.ParameterValidation value) {
       if (validationBuilder_ == null) {
@@ -1622,7 +1634,9 @@ public final class TemplateParameter extends com.google.protobuf.GeneratedMessag
      * Optional. Validation rules to be applied to this parameter's value.
      * </pre>
      *
-     * <code>.google.cloud.dataproc.v1.ParameterValidation validation = 4;</code>
+     * <code>
+     * .google.cloud.dataproc.v1.ParameterValidation validation = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder setValidation(
         com.google.cloud.dataproc.v1.ParameterValidation.Builder builderForValue) {
@@ -1642,7 +1656,9 @@ public final class TemplateParameter extends com.google.protobuf.GeneratedMessag
      * Optional. Validation rules to be applied to this parameter's value.
      * </pre>
      *
-     * <code>.google.cloud.dataproc.v1.ParameterValidation validation = 4;</code>
+     * <code>
+     * .google.cloud.dataproc.v1.ParameterValidation validation = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder mergeValidation(com.google.cloud.dataproc.v1.ParameterValidation value) {
       if (validationBuilder_ == null) {
@@ -1668,7 +1684,9 @@ public final class TemplateParameter extends com.google.protobuf.GeneratedMessag
      * Optional. Validation rules to be applied to this parameter's value.
      * </pre>
      *
-     * <code>.google.cloud.dataproc.v1.ParameterValidation validation = 4;</code>
+     * <code>
+     * .google.cloud.dataproc.v1.ParameterValidation validation = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder clearValidation() {
       if (validationBuilder_ == null) {
@@ -1688,7 +1706,9 @@ public final class TemplateParameter extends com.google.protobuf.GeneratedMessag
      * Optional. Validation rules to be applied to this parameter's value.
      * </pre>
      *
-     * <code>.google.cloud.dataproc.v1.ParameterValidation validation = 4;</code>
+     * <code>
+     * .google.cloud.dataproc.v1.ParameterValidation validation = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public com.google.cloud.dataproc.v1.ParameterValidation.Builder getValidationBuilder() {
 
@@ -1702,7 +1722,9 @@ public final class TemplateParameter extends com.google.protobuf.GeneratedMessag
      * Optional. Validation rules to be applied to this parameter's value.
      * </pre>
      *
-     * <code>.google.cloud.dataproc.v1.ParameterValidation validation = 4;</code>
+     * <code>
+     * .google.cloud.dataproc.v1.ParameterValidation validation = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public com.google.cloud.dataproc.v1.ParameterValidationOrBuilder getValidationOrBuilder() {
       if (validationBuilder_ != null) {
@@ -1720,7 +1742,9 @@ public final class TemplateParameter extends com.google.protobuf.GeneratedMessag
      * Optional. Validation rules to be applied to this parameter's value.
      * </pre>
      *
-     * <code>.google.cloud.dataproc.v1.ParameterValidation validation = 4;</code>
+     * <code>
+     * .google.cloud.dataproc.v1.ParameterValidation validation = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.dataproc.v1.ParameterValidation,

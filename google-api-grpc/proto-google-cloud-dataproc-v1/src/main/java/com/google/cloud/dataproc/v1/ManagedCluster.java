@@ -145,7 +145,7 @@ public final class ManagedCluster extends com.google.protobuf.GeneratedMessageV3
    * hyphen. Must consist of between 2 and 35 characters.
    * </pre>
    *
-   * <code>string cluster_name = 2;</code>
+   * <code>string cluster_name = 2 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   public java.lang.String getClusterName() {
     java.lang.Object ref = clusterName_;
@@ -169,7 +169,7 @@ public final class ManagedCluster extends com.google.protobuf.GeneratedMessageV3
    * hyphen. Must consist of between 2 and 35 characters.
    * </pre>
    *
-   * <code>string cluster_name = 2;</code>
+   * <code>string cluster_name = 2 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   public com.google.protobuf.ByteString getClusterNameBytes() {
     java.lang.Object ref = clusterName_;
@@ -192,7 +192,9 @@ public final class ManagedCluster extends com.google.protobuf.GeneratedMessageV3
    * Required. The cluster configuration.
    * </pre>
    *
-   * <code>.google.cloud.dataproc.v1.ClusterConfig config = 3;</code>
+   * <code>
+   * .google.cloud.dataproc.v1.ClusterConfig config = 3 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   public boolean hasConfig() {
     return config_ != null;
@@ -204,7 +206,9 @@ public final class ManagedCluster extends com.google.protobuf.GeneratedMessageV3
    * Required. The cluster configuration.
    * </pre>
    *
-   * <code>.google.cloud.dataproc.v1.ClusterConfig config = 3;</code>
+   * <code>
+   * .google.cloud.dataproc.v1.ClusterConfig config = 3 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   public com.google.cloud.dataproc.v1.ClusterConfig getConfig() {
     return config_ == null
@@ -218,7 +222,9 @@ public final class ManagedCluster extends com.google.protobuf.GeneratedMessageV3
    * Required. The cluster configuration.
    * </pre>
    *
-   * <code>.google.cloud.dataproc.v1.ClusterConfig config = 3;</code>
+   * <code>
+   * .google.cloud.dataproc.v1.ClusterConfig config = 3 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   public com.google.cloud.dataproc.v1.ClusterConfigOrBuilder getConfigOrBuilder() {
     return getConfig();
@@ -262,7 +268,7 @@ public final class ManagedCluster extends com.google.protobuf.GeneratedMessageV3
    * No more than 32 labels can be associated with a given cluster.
    * </pre>
    *
-   * <code>map&lt;string, string&gt; labels = 4;</code>
+   * <code>map&lt;string, string&gt; labels = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   public boolean containsLabels(java.lang.String key) {
     if (key == null) {
@@ -288,7 +294,7 @@ public final class ManagedCluster extends com.google.protobuf.GeneratedMessageV3
    * No more than 32 labels can be associated with a given cluster.
    * </pre>
    *
-   * <code>map&lt;string, string&gt; labels = 4;</code>
+   * <code>map&lt;string, string&gt; labels = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   public java.util.Map<java.lang.String, java.lang.String> getLabelsMap() {
     return internalGetLabels().getMap();
@@ -306,7 +312,7 @@ public final class ManagedCluster extends com.google.protobuf.GeneratedMessageV3
    * No more than 32 labels can be associated with a given cluster.
    * </pre>
    *
-   * <code>map&lt;string, string&gt; labels = 4;</code>
+   * <code>map&lt;string, string&gt; labels = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   public java.lang.String getLabelsOrDefault(java.lang.String key, java.lang.String defaultValue) {
     if (key == null) {
@@ -328,7 +334,7 @@ public final class ManagedCluster extends com.google.protobuf.GeneratedMessageV3
    * No more than 32 labels can be associated with a given cluster.
    * </pre>
    *
-   * <code>map&lt;string, string&gt; labels = 4;</code>
+   * <code>map&lt;string, string&gt; labels = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   public java.lang.String getLabelsOrThrow(java.lang.String key) {
     if (key == null) {
@@ -743,7 +749,7 @@ public final class ManagedCluster extends com.google.protobuf.GeneratedMessageV3
      * hyphen. Must consist of between 2 and 35 characters.
      * </pre>
      *
-     * <code>string cluster_name = 2;</code>
+     * <code>string cluster_name = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public java.lang.String getClusterName() {
       java.lang.Object ref = clusterName_;
@@ -767,7 +773,7 @@ public final class ManagedCluster extends com.google.protobuf.GeneratedMessageV3
      * hyphen. Must consist of between 2 and 35 characters.
      * </pre>
      *
-     * <code>string cluster_name = 2;</code>
+     * <code>string cluster_name = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public com.google.protobuf.ByteString getClusterNameBytes() {
       java.lang.Object ref = clusterName_;
@@ -791,7 +797,7 @@ public final class ManagedCluster extends com.google.protobuf.GeneratedMessageV3
      * hyphen. Must consist of between 2 and 35 characters.
      * </pre>
      *
-     * <code>string cluster_name = 2;</code>
+     * <code>string cluster_name = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder setClusterName(java.lang.String value) {
       if (value == null) {
@@ -813,7 +819,7 @@ public final class ManagedCluster extends com.google.protobuf.GeneratedMessageV3
      * hyphen. Must consist of between 2 and 35 characters.
      * </pre>
      *
-     * <code>string cluster_name = 2;</code>
+     * <code>string cluster_name = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder clearClusterName() {
 
@@ -832,7 +838,7 @@ public final class ManagedCluster extends com.google.protobuf.GeneratedMessageV3
      * hyphen. Must consist of between 2 and 35 characters.
      * </pre>
      *
-     * <code>string cluster_name = 2;</code>
+     * <code>string cluster_name = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder setClusterNameBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -858,7 +864,9 @@ public final class ManagedCluster extends com.google.protobuf.GeneratedMessageV3
      * Required. The cluster configuration.
      * </pre>
      *
-     * <code>.google.cloud.dataproc.v1.ClusterConfig config = 3;</code>
+     * <code>
+     * .google.cloud.dataproc.v1.ClusterConfig config = 3 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public boolean hasConfig() {
       return configBuilder_ != null || config_ != null;
@@ -870,7 +878,9 @@ public final class ManagedCluster extends com.google.protobuf.GeneratedMessageV3
      * Required. The cluster configuration.
      * </pre>
      *
-     * <code>.google.cloud.dataproc.v1.ClusterConfig config = 3;</code>
+     * <code>
+     * .google.cloud.dataproc.v1.ClusterConfig config = 3 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public com.google.cloud.dataproc.v1.ClusterConfig getConfig() {
       if (configBuilder_ == null) {
@@ -888,7 +898,9 @@ public final class ManagedCluster extends com.google.protobuf.GeneratedMessageV3
      * Required. The cluster configuration.
      * </pre>
      *
-     * <code>.google.cloud.dataproc.v1.ClusterConfig config = 3;</code>
+     * <code>
+     * .google.cloud.dataproc.v1.ClusterConfig config = 3 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder setConfig(com.google.cloud.dataproc.v1.ClusterConfig value) {
       if (configBuilder_ == null) {
@@ -910,7 +922,9 @@ public final class ManagedCluster extends com.google.protobuf.GeneratedMessageV3
      * Required. The cluster configuration.
      * </pre>
      *
-     * <code>.google.cloud.dataproc.v1.ClusterConfig config = 3;</code>
+     * <code>
+     * .google.cloud.dataproc.v1.ClusterConfig config = 3 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder setConfig(com.google.cloud.dataproc.v1.ClusterConfig.Builder builderForValue) {
       if (configBuilder_ == null) {
@@ -929,7 +943,9 @@ public final class ManagedCluster extends com.google.protobuf.GeneratedMessageV3
      * Required. The cluster configuration.
      * </pre>
      *
-     * <code>.google.cloud.dataproc.v1.ClusterConfig config = 3;</code>
+     * <code>
+     * .google.cloud.dataproc.v1.ClusterConfig config = 3 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder mergeConfig(com.google.cloud.dataproc.v1.ClusterConfig value) {
       if (configBuilder_ == null) {
@@ -955,7 +971,9 @@ public final class ManagedCluster extends com.google.protobuf.GeneratedMessageV3
      * Required. The cluster configuration.
      * </pre>
      *
-     * <code>.google.cloud.dataproc.v1.ClusterConfig config = 3;</code>
+     * <code>
+     * .google.cloud.dataproc.v1.ClusterConfig config = 3 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder clearConfig() {
       if (configBuilder_ == null) {
@@ -975,7 +993,9 @@ public final class ManagedCluster extends com.google.protobuf.GeneratedMessageV3
      * Required. The cluster configuration.
      * </pre>
      *
-     * <code>.google.cloud.dataproc.v1.ClusterConfig config = 3;</code>
+     * <code>
+     * .google.cloud.dataproc.v1.ClusterConfig config = 3 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public com.google.cloud.dataproc.v1.ClusterConfig.Builder getConfigBuilder() {
 
@@ -989,7 +1009,9 @@ public final class ManagedCluster extends com.google.protobuf.GeneratedMessageV3
      * Required. The cluster configuration.
      * </pre>
      *
-     * <code>.google.cloud.dataproc.v1.ClusterConfig config = 3;</code>
+     * <code>
+     * .google.cloud.dataproc.v1.ClusterConfig config = 3 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public com.google.cloud.dataproc.v1.ClusterConfigOrBuilder getConfigOrBuilder() {
       if (configBuilder_ != null) {
@@ -1007,7 +1029,9 @@ public final class ManagedCluster extends com.google.protobuf.GeneratedMessageV3
      * Required. The cluster configuration.
      * </pre>
      *
-     * <code>.google.cloud.dataproc.v1.ClusterConfig config = 3;</code>
+     * <code>
+     * .google.cloud.dataproc.v1.ClusterConfig config = 3 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.dataproc.v1.ClusterConfig,
@@ -1064,7 +1088,7 @@ public final class ManagedCluster extends com.google.protobuf.GeneratedMessageV3
      * No more than 32 labels can be associated with a given cluster.
      * </pre>
      *
-     * <code>map&lt;string, string&gt; labels = 4;</code>
+     * <code>map&lt;string, string&gt; labels = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public boolean containsLabels(java.lang.String key) {
       if (key == null) {
@@ -1090,7 +1114,7 @@ public final class ManagedCluster extends com.google.protobuf.GeneratedMessageV3
      * No more than 32 labels can be associated with a given cluster.
      * </pre>
      *
-     * <code>map&lt;string, string&gt; labels = 4;</code>
+     * <code>map&lt;string, string&gt; labels = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public java.util.Map<java.lang.String, java.lang.String> getLabelsMap() {
       return internalGetLabels().getMap();
@@ -1108,7 +1132,7 @@ public final class ManagedCluster extends com.google.protobuf.GeneratedMessageV3
      * No more than 32 labels can be associated with a given cluster.
      * </pre>
      *
-     * <code>map&lt;string, string&gt; labels = 4;</code>
+     * <code>map&lt;string, string&gt; labels = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public java.lang.String getLabelsOrDefault(
         java.lang.String key, java.lang.String defaultValue) {
@@ -1131,7 +1155,7 @@ public final class ManagedCluster extends com.google.protobuf.GeneratedMessageV3
      * No more than 32 labels can be associated with a given cluster.
      * </pre>
      *
-     * <code>map&lt;string, string&gt; labels = 4;</code>
+     * <code>map&lt;string, string&gt; labels = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public java.lang.String getLabelsOrThrow(java.lang.String key) {
       if (key == null) {
@@ -1161,7 +1185,7 @@ public final class ManagedCluster extends com.google.protobuf.GeneratedMessageV3
      * No more than 32 labels can be associated with a given cluster.
      * </pre>
      *
-     * <code>map&lt;string, string&gt; labels = 4;</code>
+     * <code>map&lt;string, string&gt; labels = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public Builder removeLabels(java.lang.String key) {
       if (key == null) {
@@ -1188,7 +1212,7 @@ public final class ManagedCluster extends com.google.protobuf.GeneratedMessageV3
      * No more than 32 labels can be associated with a given cluster.
      * </pre>
      *
-     * <code>map&lt;string, string&gt; labels = 4;</code>
+     * <code>map&lt;string, string&gt; labels = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public Builder putLabels(java.lang.String key, java.lang.String value) {
       if (key == null) {
@@ -1213,7 +1237,7 @@ public final class ManagedCluster extends com.google.protobuf.GeneratedMessageV3
      * No more than 32 labels can be associated with a given cluster.
      * </pre>
      *
-     * <code>map&lt;string, string&gt; labels = 4;</code>
+     * <code>map&lt;string, string&gt; labels = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public Builder putAllLabels(java.util.Map<java.lang.String, java.lang.String> values) {
       internalGetMutableLabels().getMutableMap().putAll(values);

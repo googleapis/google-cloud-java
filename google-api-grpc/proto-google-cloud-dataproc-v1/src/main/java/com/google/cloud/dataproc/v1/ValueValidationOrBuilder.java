@@ -15,7 +15,7 @@ public interface ValueValidationOrBuilder
    * Required. List of allowed values for the parameter.
    * </pre>
    *
-   * <code>repeated string values = 1;</code>
+   * <code>repeated string values = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   java.util.List<java.lang.String> getValuesList();
   /**
@@ -25,7 +25,7 @@ public interface ValueValidationOrBuilder
    * Required. List of allowed values for the parameter.
    * </pre>
    *
-   * <code>repeated string values = 1;</code>
+   * <code>repeated string values = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   int getValuesCount();
   /**
@@ -35,7 +35,7 @@ public interface ValueValidationOrBuilder
    * Required. List of allowed values for the parameter.
    * </pre>
    *
-   * <code>repeated string values = 1;</code>
+   * <code>repeated string values = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   java.lang.String getValues(int index);
   /**
@@ -45,7 +45,7 @@ public interface ValueValidationOrBuilder
    * Required. List of allowed values for the parameter.
    * </pre>
    *
-   * <code>repeated string values = 1;</code>
+   * <code>repeated string values = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   com.google.protobuf.ByteString getValuesBytes(int index);
 }

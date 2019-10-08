@@ -189,9 +189,12 @@ public class WorkflowTemplateServiceClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param parent Required. The "resource name" of the region, as described in
-   *     https://cloud.google.com/apis/design/resource_names of the form
-   *     `projects/{project_id}/regions/{region}`
+   * @param parent Required. The resource name of the region or location, as described in
+   *     https://cloud.google.com/apis/design/resource_names.
+   *     <p>&#42; For `projects.regions.workflowTemplates,create`, the resource name of the region
+   *     has the following format: `projects/{project_id}/regions/{region}`
+   *     <p>&#42; For `projects.locations.workflowTemplates.create`, the resource name of the
+   *     location has the following format: `projects/{project_id}/locations/{location}`
    * @param template Required. The Dataproc workflow template to create.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -220,9 +223,12 @@ public class WorkflowTemplateServiceClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param parent Required. The "resource name" of the region, as described in
-   *     https://cloud.google.com/apis/design/resource_names of the form
-   *     `projects/{project_id}/regions/{region}`
+   * @param parent Required. The resource name of the region or location, as described in
+   *     https://cloud.google.com/apis/design/resource_names.
+   *     <p>&#42; For `projects.regions.workflowTemplates,create`, the resource name of the region
+   *     has the following format: `projects/{project_id}/regions/{region}`
+   *     <p>&#42; For `projects.locations.workflowTemplates.create`, the resource name of the
+   *     location has the following format: `projects/{project_id}/locations/{location}`
    * @param template Required. The Dataproc workflow template to create.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -298,9 +304,14 @@ public class WorkflowTemplateServiceClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param name Required. The "resource name" of the workflow template, as described in
-   *     https://cloud.google.com/apis/design/resource_names of the form
+   * @param name Required. The resource name of the workflow template, as described in
+   *     https://cloud.google.com/apis/design/resource_names.
+   *     <p>&#42; For `projects.regions.workflowTemplates.get`, the resource name of the template
+   *     has the following format:
    *     `projects/{project_id}/regions/{region}/workflowTemplates/{template_id}`
+   *     <p>&#42; For `projects.locations.workflowTemplates.get`, the resource name of the template
+   *     has the following format:
+   *     `projects/{project_id}/locations/{location}/workflowTemplates/{template_id}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final WorkflowTemplate getWorkflowTemplate(WorkflowTemplateName name) {
@@ -327,9 +338,14 @@ public class WorkflowTemplateServiceClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param name Required. The "resource name" of the workflow template, as described in
-   *     https://cloud.google.com/apis/design/resource_names of the form
+   * @param name Required. The resource name of the workflow template, as described in
+   *     https://cloud.google.com/apis/design/resource_names.
+   *     <p>&#42; For `projects.regions.workflowTemplates.get`, the resource name of the template
+   *     has the following format:
    *     `projects/{project_id}/regions/{region}/workflowTemplates/{template_id}`
+   *     <p>&#42; For `projects.locations.workflowTemplates.get`, the resource name of the template
+   *     has the following format:
+   *     `projects/{project_id}/locations/{location}/workflowTemplates/{template_id}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final WorkflowTemplate getWorkflowTemplate(String name) {
@@ -402,7 +418,9 @@ public class WorkflowTemplateServiceClient implements BackgroundResource {
    * inflight jobs to be cancelled and workflow-owned clusters to be deleted.
    *
    * <p>The [Operation.metadata][google.longrunning.Operation.metadata] will be
-   * [WorkflowMetadata][google.cloud.dataproc.v1.WorkflowMetadata].
+   * [WorkflowMetadata](/dataproc/docs/reference/rpc/google.cloud.dataproc.v1#workflowmetadata).
+   * Also see [Using
+   * WorkflowMetadata](/dataproc/docs/concepts/workflows/debugging#using_workflowmetadata).
    *
    * <p>On successful completion, [Operation.response][google.longrunning.Operation.response] will
    * be [Empty][google.protobuf.Empty].
@@ -416,9 +434,14 @@ public class WorkflowTemplateServiceClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param name Required. The "resource name" of the workflow template, as described in
-   *     https://cloud.google.com/apis/design/resource_names of the form
+   * @param name Required. The resource name of the workflow template, as described in
+   *     https://cloud.google.com/apis/design/resource_names.
+   *     <p>&#42; For `projects.regions.workflowTemplates.instantiate`, the resource name of the
+   *     template has the following format:
    *     `projects/{project_id}/regions/{region}/workflowTemplates/{template_id}`
+   *     <p>&#42; For `projects.locations.workflowTemplates.instantiate`, the resource name of the
+   *     template has the following format:
+   *     `projects/{project_id}/locations/{location}/workflowTemplates/{template_id}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi(
@@ -446,7 +469,9 @@ public class WorkflowTemplateServiceClient implements BackgroundResource {
    * inflight jobs to be cancelled and workflow-owned clusters to be deleted.
    *
    * <p>The [Operation.metadata][google.longrunning.Operation.metadata] will be
-   * [WorkflowMetadata][google.cloud.dataproc.v1.WorkflowMetadata].
+   * [WorkflowMetadata](/dataproc/docs/reference/rpc/google.cloud.dataproc.v1#workflowmetadata).
+   * Also see [Using
+   * WorkflowMetadata](/dataproc/docs/concepts/workflows/debugging#using_workflowmetadata).
    *
    * <p>On successful completion, [Operation.response][google.longrunning.Operation.response] will
    * be [Empty][google.protobuf.Empty].
@@ -460,9 +485,14 @@ public class WorkflowTemplateServiceClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param name Required. The "resource name" of the workflow template, as described in
-   *     https://cloud.google.com/apis/design/resource_names of the form
+   * @param name Required. The resource name of the workflow template, as described in
+   *     https://cloud.google.com/apis/design/resource_names.
+   *     <p>&#42; For `projects.regions.workflowTemplates.instantiate`, the resource name of the
+   *     template has the following format:
    *     `projects/{project_id}/regions/{region}/workflowTemplates/{template_id}`
+   *     <p>&#42; For `projects.locations.workflowTemplates.instantiate`, the resource name of the
+   *     template has the following format:
+   *     `projects/{project_id}/locations/{location}/workflowTemplates/{template_id}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi(
@@ -488,7 +518,9 @@ public class WorkflowTemplateServiceClient implements BackgroundResource {
    * inflight jobs to be cancelled and workflow-owned clusters to be deleted.
    *
    * <p>The [Operation.metadata][google.longrunning.Operation.metadata] will be
-   * [WorkflowMetadata][google.cloud.dataproc.v1.WorkflowMetadata].
+   * [WorkflowMetadata](/dataproc/docs/reference/rpc/google.cloud.dataproc.v1#workflowmetadata).
+   * Also see [Using
+   * WorkflowMetadata](/dataproc/docs/concepts/workflows/debugging#using_workflowmetadata).
    *
    * <p>On successful completion, [Operation.response][google.longrunning.Operation.response] will
    * be [Empty][google.protobuf.Empty].
@@ -503,9 +535,14 @@ public class WorkflowTemplateServiceClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param name Required. The "resource name" of the workflow template, as described in
-   *     https://cloud.google.com/apis/design/resource_names of the form
+   * @param name Required. The resource name of the workflow template, as described in
+   *     https://cloud.google.com/apis/design/resource_names.
+   *     <p>&#42; For `projects.regions.workflowTemplates.instantiate`, the resource name of the
+   *     template has the following format:
    *     `projects/{project_id}/regions/{region}/workflowTemplates/{template_id}`
+   *     <p>&#42; For `projects.locations.workflowTemplates.instantiate`, the resource name of the
+   *     template has the following format:
+   *     `projects/{project_id}/locations/{location}/workflowTemplates/{template_id}`
    * @param parameters Optional. Map from parameter names to values that should be used for those
    *     parameters. Values may not exceed 100 characters.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -536,7 +573,9 @@ public class WorkflowTemplateServiceClient implements BackgroundResource {
    * inflight jobs to be cancelled and workflow-owned clusters to be deleted.
    *
    * <p>The [Operation.metadata][google.longrunning.Operation.metadata] will be
-   * [WorkflowMetadata][google.cloud.dataproc.v1.WorkflowMetadata].
+   * [WorkflowMetadata](/dataproc/docs/reference/rpc/google.cloud.dataproc.v1#workflowmetadata).
+   * Also see [Using
+   * WorkflowMetadata](/dataproc/docs/concepts/workflows/debugging#using_workflowmetadata).
    *
    * <p>On successful completion, [Operation.response][google.longrunning.Operation.response] will
    * be [Empty][google.protobuf.Empty].
@@ -551,9 +590,14 @@ public class WorkflowTemplateServiceClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param name Required. The "resource name" of the workflow template, as described in
-   *     https://cloud.google.com/apis/design/resource_names of the form
+   * @param name Required. The resource name of the workflow template, as described in
+   *     https://cloud.google.com/apis/design/resource_names.
+   *     <p>&#42; For `projects.regions.workflowTemplates.instantiate`, the resource name of the
+   *     template has the following format:
    *     `projects/{project_id}/regions/{region}/workflowTemplates/{template_id}`
+   *     <p>&#42; For `projects.locations.workflowTemplates.instantiate`, the resource name of the
+   *     template has the following format:
+   *     `projects/{project_id}/locations/{location}/workflowTemplates/{template_id}`
    * @param parameters Optional. Map from parameter names to values that should be used for those
    *     parameters. Values may not exceed 100 characters.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -584,7 +628,9 @@ public class WorkflowTemplateServiceClient implements BackgroundResource {
    * inflight jobs to be cancelled and workflow-owned clusters to be deleted.
    *
    * <p>The [Operation.metadata][google.longrunning.Operation.metadata] will be
-   * [WorkflowMetadata][google.cloud.dataproc.v1.WorkflowMetadata].
+   * [WorkflowMetadata](/dataproc/docs/reference/rpc/google.cloud.dataproc.v1#workflowmetadata).
+   * Also see [Using
+   * WorkflowMetadata](/dataproc/docs/concepts/workflows/debugging#using_workflowmetadata).
    *
    * <p>On successful completion, [Operation.response][google.longrunning.Operation.response] will
    * be [Empty][google.protobuf.Empty].
@@ -624,7 +670,9 @@ public class WorkflowTemplateServiceClient implements BackgroundResource {
    * inflight jobs to be cancelled and workflow-owned clusters to be deleted.
    *
    * <p>The [Operation.metadata][google.longrunning.Operation.metadata] will be
-   * [WorkflowMetadata][google.cloud.dataproc.v1.WorkflowMetadata].
+   * [WorkflowMetadata](/dataproc/docs/reference/rpc/google.cloud.dataproc.v1#workflowmetadata).
+   * Also see [Using
+   * WorkflowMetadata](/dataproc/docs/concepts/workflows/debugging#using_workflowmetadata).
    *
    * <p>On successful completion, [Operation.response][google.longrunning.Operation.response] will
    * be [Empty][google.protobuf.Empty].
@@ -662,7 +710,9 @@ public class WorkflowTemplateServiceClient implements BackgroundResource {
    * inflight jobs to be cancelled and workflow-owned clusters to be deleted.
    *
    * <p>The [Operation.metadata][google.longrunning.Operation.metadata] will be
-   * [WorkflowMetadata][google.cloud.dataproc.v1.WorkflowMetadata].
+   * [WorkflowMetadata](/dataproc/docs/reference/rpc/google.cloud.dataproc.v1#workflowmetadata).
+   * Also see [Using
+   * WorkflowMetadata](/dataproc/docs/concepts/workflows/debugging#using_workflowmetadata).
    *
    * <p>On successful completion, [Operation.response][google.longrunning.Operation.response] will
    * be [Empty][google.protobuf.Empty].
@@ -704,7 +754,9 @@ public class WorkflowTemplateServiceClient implements BackgroundResource {
    * inflight jobs to be cancelled and workflow-owned clusters to be deleted.
    *
    * <p>The [Operation.metadata][google.longrunning.Operation.metadata] will be
-   * [WorkflowMetadata][google.cloud.dataproc.v1.WorkflowMetadata].
+   * [WorkflowMetadata](/dataproc/docs/reference/rpc/google.cloud.dataproc.v1#workflowmetadata).
+   * Also see [Using
+   * WorkflowMetadata](/dataproc/docs/concepts/workflows/debugging#using_workflowmetadata).
    *
    * <p>On successful completion, [Operation.response][google.longrunning.Operation.response] will
    * be [Empty][google.protobuf.Empty].
@@ -719,9 +771,12 @@ public class WorkflowTemplateServiceClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param parent Required. The "resource name" of the workflow template region, as described in
-   *     https://cloud.google.com/apis/design/resource_names of the form
-   *     `projects/{project_id}/regions/{region}`
+   * @param parent Required. The resource name of the region or location, as described in
+   *     https://cloud.google.com/apis/design/resource_names.
+   *     <p>&#42; For `projects.regions.workflowTemplates,instantiateinline`, the resource name of
+   *     the region has the following format: `projects/{project_id}/regions/{region}`
+   *     <p>&#42; For `projects.locations.workflowTemplates.instantiateinline`, the resource name of
+   *     the location has the following format: `projects/{project_id}/locations/{location}`
    * @param template Required. The workflow template to instantiate.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -756,7 +811,9 @@ public class WorkflowTemplateServiceClient implements BackgroundResource {
    * inflight jobs to be cancelled and workflow-owned clusters to be deleted.
    *
    * <p>The [Operation.metadata][google.longrunning.Operation.metadata] will be
-   * [WorkflowMetadata][google.cloud.dataproc.v1.WorkflowMetadata].
+   * [WorkflowMetadata](/dataproc/docs/reference/rpc/google.cloud.dataproc.v1#workflowmetadata).
+   * Also see [Using
+   * WorkflowMetadata](/dataproc/docs/concepts/workflows/debugging#using_workflowmetadata).
    *
    * <p>On successful completion, [Operation.response][google.longrunning.Operation.response] will
    * be [Empty][google.protobuf.Empty].
@@ -771,9 +828,12 @@ public class WorkflowTemplateServiceClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param parent Required. The "resource name" of the workflow template region, as described in
-   *     https://cloud.google.com/apis/design/resource_names of the form
-   *     `projects/{project_id}/regions/{region}`
+   * @param parent Required. The resource name of the region or location, as described in
+   *     https://cloud.google.com/apis/design/resource_names.
+   *     <p>&#42; For `projects.regions.workflowTemplates,instantiateinline`, the resource name of
+   *     the region has the following format: `projects/{project_id}/regions/{region}`
+   *     <p>&#42; For `projects.locations.workflowTemplates.instantiateinline`, the resource name of
+   *     the location has the following format: `projects/{project_id}/locations/{location}`
    * @param template Required. The workflow template to instantiate.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -808,7 +868,9 @@ public class WorkflowTemplateServiceClient implements BackgroundResource {
    * inflight jobs to be cancelled and workflow-owned clusters to be deleted.
    *
    * <p>The [Operation.metadata][google.longrunning.Operation.metadata] will be
-   * [WorkflowMetadata][google.cloud.dataproc.v1.WorkflowMetadata].
+   * [WorkflowMetadata](/dataproc/docs/reference/rpc/google.cloud.dataproc.v1#workflowmetadata).
+   * Also see [Using
+   * WorkflowMetadata](/dataproc/docs/concepts/workflows/debugging#using_workflowmetadata).
    *
    * <p>On successful completion, [Operation.response][google.longrunning.Operation.response] will
    * be [Empty][google.protobuf.Empty].
@@ -855,7 +917,9 @@ public class WorkflowTemplateServiceClient implements BackgroundResource {
    * inflight jobs to be cancelled and workflow-owned clusters to be deleted.
    *
    * <p>The [Operation.metadata][google.longrunning.Operation.metadata] will be
-   * [WorkflowMetadata][google.cloud.dataproc.v1.WorkflowMetadata].
+   * [WorkflowMetadata](/dataproc/docs/reference/rpc/google.cloud.dataproc.v1#workflowmetadata).
+   * Also see [Using
+   * WorkflowMetadata](/dataproc/docs/concepts/workflows/debugging#using_workflowmetadata).
    *
    * <p>On successful completion, [Operation.response][google.longrunning.Operation.response] will
    * be [Empty][google.protobuf.Empty].
@@ -900,7 +964,9 @@ public class WorkflowTemplateServiceClient implements BackgroundResource {
    * inflight jobs to be cancelled and workflow-owned clusters to be deleted.
    *
    * <p>The [Operation.metadata][google.longrunning.Operation.metadata] will be
-   * [WorkflowMetadata][google.cloud.dataproc.v1.WorkflowMetadata].
+   * [WorkflowMetadata](/dataproc/docs/reference/rpc/google.cloud.dataproc.v1#workflowmetadata).
+   * Also see [Using
+   * WorkflowMetadata](/dataproc/docs/concepts/workflows/debugging#using_workflowmetadata).
    *
    * <p>On successful completion, [Operation.response][google.longrunning.Operation.response] will
    * be [Empty][google.protobuf.Empty].
@@ -1014,9 +1080,12 @@ public class WorkflowTemplateServiceClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param parent Required. The "resource name" of the region, as described in
-   *     https://cloud.google.com/apis/design/resource_names of the form
-   *     `projects/{project_id}/regions/{region}`
+   * @param parent Required. The resource name of the region or location, as described in
+   *     https://cloud.google.com/apis/design/resource_names.
+   *     <p>&#42; For `projects.regions.workflowTemplates,list`, the resource name of the region has
+   *     the following format: `projects/{project_id}/regions/{region}`
+   *     <p>&#42; For `projects.locations.workflowTemplates.list`, the resource name of the location
+   *     has the following format: `projects/{project_id}/locations/{location}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListWorkflowTemplatesPagedResponse listWorkflowTemplates(RegionName parent) {
@@ -1042,9 +1111,12 @@ public class WorkflowTemplateServiceClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param parent Required. The "resource name" of the region, as described in
-   *     https://cloud.google.com/apis/design/resource_names of the form
-   *     `projects/{project_id}/regions/{region}`
+   * @param parent Required. The resource name of the region or location, as described in
+   *     https://cloud.google.com/apis/design/resource_names.
+   *     <p>&#42; For `projects.regions.workflowTemplates,list`, the resource name of the region has
+   *     the following format: `projects/{project_id}/regions/{region}`
+   *     <p>&#42; For `projects.locations.workflowTemplates.list`, the resource name of the location
+   *     has the following format: `projects/{project_id}/locations/{location}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListWorkflowTemplatesPagedResponse listWorkflowTemplates(String parent) {
@@ -1149,9 +1221,14 @@ public class WorkflowTemplateServiceClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param name Required. The "resource name" of the workflow template, as described in
-   *     https://cloud.google.com/apis/design/resource_names of the form
+   * @param name Required. The resource name of the workflow template, as described in
+   *     https://cloud.google.com/apis/design/resource_names.
+   *     <p>&#42; For `projects.regions.workflowTemplates.delete`, the resource name of the template
+   *     has the following format:
    *     `projects/{project_id}/regions/{region}/workflowTemplates/{template_id}`
+   *     <p>&#42; For `projects.locations.workflowTemplates.instantiate`, the resource name of the
+   *     template has the following format:
+   *     `projects/{project_id}/locations/{location}/workflowTemplates/{template_id}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final void deleteWorkflowTemplate(WorkflowTemplateName name) {
@@ -1176,9 +1253,14 @@ public class WorkflowTemplateServiceClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param name Required. The "resource name" of the workflow template, as described in
-   *     https://cloud.google.com/apis/design/resource_names of the form
+   * @param name Required. The resource name of the workflow template, as described in
+   *     https://cloud.google.com/apis/design/resource_names.
+   *     <p>&#42; For `projects.regions.workflowTemplates.delete`, the resource name of the template
+   *     has the following format:
    *     `projects/{project_id}/regions/{region}/workflowTemplates/{template_id}`
+   *     <p>&#42; For `projects.locations.workflowTemplates.instantiate`, the resource name of the
+   *     template has the following format:
+   *     `projects/{project_id}/locations/{location}/workflowTemplates/{template_id}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final void deleteWorkflowTemplate(String name) {

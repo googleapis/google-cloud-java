@@ -34,28 +34,31 @@ public final class OperationsProto {
   static {
     java.lang.String[] descriptorData = {
       "\n)google/cloud/dataproc/v1/operations.pr"
-          + "oto\022\030google.cloud.dataproc.v1\032\034google/ap"
-          + "i/annotations.proto\032\037google/protobuf/tim"
-          + "estamp.proto\"\365\001\n\026ClusterOperationStatus\022"
-          + "E\n\005state\030\001 \001(\01626.google.cloud.dataproc.v"
-          + "1.ClusterOperationStatus.State\022\023\n\013inner_"
-          + "state\030\002 \001(\t\022\017\n\007details\030\003 \001(\t\0224\n\020state_st"
-          + "art_time\030\004 \001(\0132\032.google.protobuf.Timesta"
-          + "mp\"8\n\005State\022\013\n\007UNKNOWN\020\000\022\013\n\007PENDING\020\001\022\013\n"
-          + "\007RUNNING\020\002\022\010\n\004DONE\020\003\"\220\003\n\030ClusterOperatio"
-          + "nMetadata\022\024\n\014cluster_name\030\007 \001(\t\022\024\n\014clust"
-          + "er_uuid\030\010 \001(\t\022@\n\006status\030\t \001(\01320.google.c"
-          + "loud.dataproc.v1.ClusterOperationStatus\022"
-          + "H\n\016status_history\030\n \003(\01320.google.cloud.d"
-          + "ataproc.v1.ClusterOperationStatus\022\026\n\016ope"
-          + "ration_type\030\013 \001(\t\022\023\n\013description\030\014 \001(\t\022N"
-          + "\n\006labels\030\r \003(\0132>.google.cloud.dataproc.v"
-          + "1.ClusterOperationMetadata.LabelsEntry\022\020"
-          + "\n\010warnings\030\016 \003(\t\032-\n\013LabelsEntry\022\013\n\003key\030\001"
-          + " \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001Bs\n\034com.google.cl"
-          + "oud.dataproc.v1B\017OperationsProtoP\001Z@goog"
-          + "le.golang.org/genproto/googleapis/cloud/"
-          + "dataproc/v1;dataprocb\006proto3"
+          + "oto\022\030google.cloud.dataproc.v1\032\037google/ap"
+          + "i/field_behavior.proto\032\037google/protobuf/"
+          + "timestamp.proto\032\034google/api/annotations."
+          + "proto\"\211\002\n\026ClusterOperationStatus\022J\n\005stat"
+          + "e\030\001 \001(\01626.google.cloud.dataproc.v1.Clust"
+          + "erOperationStatus.StateB\003\340A\003\022\030\n\013inner_st"
+          + "ate\030\002 \001(\tB\003\340A\003\022\024\n\007details\030\003 \001(\tB\003\340A\003\0229\n\020"
+          + "state_start_time\030\004 \001(\0132\032.google.protobuf"
+          + ".TimestampB\003\340A\003\"8\n\005State\022\013\n\007UNKNOWN\020\000\022\013\n"
+          + "\007PENDING\020\001\022\013\n\007RUNNING\020\002\022\010\n\004DONE\020\003\"\270\003\n\030Cl"
+          + "usterOperationMetadata\022\031\n\014cluster_name\030\007"
+          + " \001(\tB\003\340A\003\022\031\n\014cluster_uuid\030\010 \001(\tB\003\340A\003\022E\n\006"
+          + "status\030\t \001(\01320.google.cloud.dataproc.v1."
+          + "ClusterOperationStatusB\003\340A\003\022M\n\016status_hi"
+          + "story\030\n \003(\01320.google.cloud.dataproc.v1.C"
+          + "lusterOperationStatusB\003\340A\003\022\033\n\016operation_"
+          + "type\030\013 \001(\tB\003\340A\003\022\030\n\013description\030\014 \001(\tB\003\340A"
+          + "\003\022S\n\006labels\030\r \003(\0132>.google.cloud.datapro"
+          + "c.v1.ClusterOperationMetadata.LabelsEntr"
+          + "yB\003\340A\003\022\025\n\010warnings\030\016 \003(\tB\003\340A\003\032-\n\013LabelsE"
+          + "ntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001Bs\n\034"
+          + "com.google.cloud.dataproc.v1B\017Operations"
+          + "ProtoP\001Z@google.golang.org/genproto/goog"
+          + "leapis/cloud/dataproc/v1;dataprocb\006proto"
+          + "3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner() {
@@ -68,8 +71,9 @@ public final class OperationsProto {
     com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
         descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
-          com.google.api.AnnotationsProto.getDescriptor(),
+          com.google.api.FieldBehaviorProto.getDescriptor(),
           com.google.protobuf.TimestampProto.getDescriptor(),
+          com.google.api.AnnotationsProto.getDescriptor(),
         },
         assigner);
     internal_static_google_cloud_dataproc_v1_ClusterOperationStatus_descriptor =
@@ -105,8 +109,14 @@ public final class OperationsProto {
             new java.lang.String[] {
               "Key", "Value",
             });
-    com.google.api.AnnotationsProto.getDescriptor();
+    com.google.protobuf.ExtensionRegistry registry =
+        com.google.protobuf.ExtensionRegistry.newInstance();
+    registry.add(com.google.api.FieldBehaviorProto.fieldBehavior);
+    com.google.protobuf.Descriptors.FileDescriptor.internalUpdateFileDescriptor(
+        descriptor, registry);
+    com.google.api.FieldBehaviorProto.getDescriptor();
     com.google.protobuf.TimestampProto.getDescriptor();
+    com.google.api.AnnotationsProto.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

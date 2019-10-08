@@ -352,7 +352,7 @@ public final class WorkflowNode extends com.google.protobuf.GeneratedMessageV3
    * Output only. The name of the node.
    * </pre>
    *
-   * <code>string step_id = 1;</code>
+   * <code>string step_id = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    */
   public java.lang.String getStepId() {
     java.lang.Object ref = stepId_;
@@ -372,7 +372,7 @@ public final class WorkflowNode extends com.google.protobuf.GeneratedMessageV3
    * Output only. The name of the node.
    * </pre>
    *
-   * <code>string step_id = 1;</code>
+   * <code>string step_id = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    */
   public com.google.protobuf.ByteString getStepIdBytes() {
     java.lang.Object ref = stepId_;
@@ -395,7 +395,8 @@ public final class WorkflowNode extends com.google.protobuf.GeneratedMessageV3
    * Output only. Node's prerequisite nodes.
    * </pre>
    *
-   * <code>repeated string prerequisite_step_ids = 2;</code>
+   * <code>repeated string prerequisite_step_ids = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    */
   public com.google.protobuf.ProtocolStringList getPrerequisiteStepIdsList() {
     return prerequisiteStepIds_;
@@ -407,7 +408,8 @@ public final class WorkflowNode extends com.google.protobuf.GeneratedMessageV3
    * Output only. Node's prerequisite nodes.
    * </pre>
    *
-   * <code>repeated string prerequisite_step_ids = 2;</code>
+   * <code>repeated string prerequisite_step_ids = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    */
   public int getPrerequisiteStepIdsCount() {
     return prerequisiteStepIds_.size();
@@ -419,7 +421,8 @@ public final class WorkflowNode extends com.google.protobuf.GeneratedMessageV3
    * Output only. Node's prerequisite nodes.
    * </pre>
    *
-   * <code>repeated string prerequisite_step_ids = 2;</code>
+   * <code>repeated string prerequisite_step_ids = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    */
   public java.lang.String getPrerequisiteStepIds(int index) {
     return prerequisiteStepIds_.get(index);
@@ -431,7 +434,8 @@ public final class WorkflowNode extends com.google.protobuf.GeneratedMessageV3
    * Output only. Node's prerequisite nodes.
    * </pre>
    *
-   * <code>repeated string prerequisite_step_ids = 2;</code>
+   * <code>repeated string prerequisite_step_ids = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    */
   public com.google.protobuf.ByteString getPrerequisiteStepIdsBytes(int index) {
     return prerequisiteStepIds_.getByteString(index);
@@ -446,7 +450,7 @@ public final class WorkflowNode extends com.google.protobuf.GeneratedMessageV3
    * Output only. The job id; populated after the node enters RUNNING state.
    * </pre>
    *
-   * <code>string job_id = 3;</code>
+   * <code>string job_id = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    */
   public java.lang.String getJobId() {
     java.lang.Object ref = jobId_;
@@ -466,7 +470,7 @@ public final class WorkflowNode extends com.google.protobuf.GeneratedMessageV3
    * Output only. The job id; populated after the node enters RUNNING state.
    * </pre>
    *
-   * <code>string job_id = 3;</code>
+   * <code>string job_id = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    */
   public com.google.protobuf.ByteString getJobIdBytes() {
     java.lang.Object ref = jobId_;
@@ -489,7 +493,9 @@ public final class WorkflowNode extends com.google.protobuf.GeneratedMessageV3
    * Output only. The node state.
    * </pre>
    *
-   * <code>.google.cloud.dataproc.v1.WorkflowNode.NodeState state = 5;</code>
+   * <code>
+   * .google.cloud.dataproc.v1.WorkflowNode.NodeState state = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    */
   public int getStateValue() {
     return state_;
@@ -501,7 +507,9 @@ public final class WorkflowNode extends com.google.protobuf.GeneratedMessageV3
    * Output only. The node state.
    * </pre>
    *
-   * <code>.google.cloud.dataproc.v1.WorkflowNode.NodeState state = 5;</code>
+   * <code>
+   * .google.cloud.dataproc.v1.WorkflowNode.NodeState state = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    */
   public com.google.cloud.dataproc.v1.WorkflowNode.NodeState getState() {
     @SuppressWarnings("deprecation")
@@ -521,7 +529,7 @@ public final class WorkflowNode extends com.google.protobuf.GeneratedMessageV3
    * Output only. The error detail.
    * </pre>
    *
-   * <code>string error = 6;</code>
+   * <code>string error = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    */
   public java.lang.String getError() {
     java.lang.Object ref = error_;
@@ -541,7 +549,7 @@ public final class WorkflowNode extends com.google.protobuf.GeneratedMessageV3
    * Output only. The error detail.
    * </pre>
    *
-   * <code>string error = 6;</code>
+   * <code>string error = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    */
   public com.google.protobuf.ByteString getErrorBytes() {
     java.lang.Object ref = error_;
@@ -966,7 +974,7 @@ public final class WorkflowNode extends com.google.protobuf.GeneratedMessageV3
      * Output only. The name of the node.
      * </pre>
      *
-     * <code>string step_id = 1;</code>
+     * <code>string step_id = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     public java.lang.String getStepId() {
       java.lang.Object ref = stepId_;
@@ -986,7 +994,7 @@ public final class WorkflowNode extends com.google.protobuf.GeneratedMessageV3
      * Output only. The name of the node.
      * </pre>
      *
-     * <code>string step_id = 1;</code>
+     * <code>string step_id = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     public com.google.protobuf.ByteString getStepIdBytes() {
       java.lang.Object ref = stepId_;
@@ -1006,7 +1014,7 @@ public final class WorkflowNode extends com.google.protobuf.GeneratedMessageV3
      * Output only. The name of the node.
      * </pre>
      *
-     * <code>string step_id = 1;</code>
+     * <code>string step_id = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     public Builder setStepId(java.lang.String value) {
       if (value == null) {
@@ -1024,7 +1032,7 @@ public final class WorkflowNode extends com.google.protobuf.GeneratedMessageV3
      * Output only. The name of the node.
      * </pre>
      *
-     * <code>string step_id = 1;</code>
+     * <code>string step_id = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     public Builder clearStepId() {
 
@@ -1039,7 +1047,7 @@ public final class WorkflowNode extends com.google.protobuf.GeneratedMessageV3
      * Output only. The name of the node.
      * </pre>
      *
-     * <code>string step_id = 1;</code>
+     * <code>string step_id = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     public Builder setStepIdBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -1068,7 +1076,8 @@ public final class WorkflowNode extends com.google.protobuf.GeneratedMessageV3
      * Output only. Node's prerequisite nodes.
      * </pre>
      *
-     * <code>repeated string prerequisite_step_ids = 2;</code>
+     * <code>repeated string prerequisite_step_ids = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public com.google.protobuf.ProtocolStringList getPrerequisiteStepIdsList() {
       return prerequisiteStepIds_.getUnmodifiableView();
@@ -1080,7 +1089,8 @@ public final class WorkflowNode extends com.google.protobuf.GeneratedMessageV3
      * Output only. Node's prerequisite nodes.
      * </pre>
      *
-     * <code>repeated string prerequisite_step_ids = 2;</code>
+     * <code>repeated string prerequisite_step_ids = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public int getPrerequisiteStepIdsCount() {
       return prerequisiteStepIds_.size();
@@ -1092,7 +1102,8 @@ public final class WorkflowNode extends com.google.protobuf.GeneratedMessageV3
      * Output only. Node's prerequisite nodes.
      * </pre>
      *
-     * <code>repeated string prerequisite_step_ids = 2;</code>
+     * <code>repeated string prerequisite_step_ids = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public java.lang.String getPrerequisiteStepIds(int index) {
       return prerequisiteStepIds_.get(index);
@@ -1104,7 +1115,8 @@ public final class WorkflowNode extends com.google.protobuf.GeneratedMessageV3
      * Output only. Node's prerequisite nodes.
      * </pre>
      *
-     * <code>repeated string prerequisite_step_ids = 2;</code>
+     * <code>repeated string prerequisite_step_ids = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public com.google.protobuf.ByteString getPrerequisiteStepIdsBytes(int index) {
       return prerequisiteStepIds_.getByteString(index);
@@ -1116,7 +1128,8 @@ public final class WorkflowNode extends com.google.protobuf.GeneratedMessageV3
      * Output only. Node's prerequisite nodes.
      * </pre>
      *
-     * <code>repeated string prerequisite_step_ids = 2;</code>
+     * <code>repeated string prerequisite_step_ids = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public Builder setPrerequisiteStepIds(int index, java.lang.String value) {
       if (value == null) {
@@ -1134,7 +1147,8 @@ public final class WorkflowNode extends com.google.protobuf.GeneratedMessageV3
      * Output only. Node's prerequisite nodes.
      * </pre>
      *
-     * <code>repeated string prerequisite_step_ids = 2;</code>
+     * <code>repeated string prerequisite_step_ids = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public Builder addPrerequisiteStepIds(java.lang.String value) {
       if (value == null) {
@@ -1152,7 +1166,8 @@ public final class WorkflowNode extends com.google.protobuf.GeneratedMessageV3
      * Output only. Node's prerequisite nodes.
      * </pre>
      *
-     * <code>repeated string prerequisite_step_ids = 2;</code>
+     * <code>repeated string prerequisite_step_ids = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public Builder addAllPrerequisiteStepIds(java.lang.Iterable<java.lang.String> values) {
       ensurePrerequisiteStepIdsIsMutable();
@@ -1167,7 +1182,8 @@ public final class WorkflowNode extends com.google.protobuf.GeneratedMessageV3
      * Output only. Node's prerequisite nodes.
      * </pre>
      *
-     * <code>repeated string prerequisite_step_ids = 2;</code>
+     * <code>repeated string prerequisite_step_ids = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public Builder clearPrerequisiteStepIds() {
       prerequisiteStepIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
@@ -1182,7 +1198,8 @@ public final class WorkflowNode extends com.google.protobuf.GeneratedMessageV3
      * Output only. Node's prerequisite nodes.
      * </pre>
      *
-     * <code>repeated string prerequisite_step_ids = 2;</code>
+     * <code>repeated string prerequisite_step_ids = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public Builder addPrerequisiteStepIdsBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -1203,7 +1220,7 @@ public final class WorkflowNode extends com.google.protobuf.GeneratedMessageV3
      * Output only. The job id; populated after the node enters RUNNING state.
      * </pre>
      *
-     * <code>string job_id = 3;</code>
+     * <code>string job_id = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     public java.lang.String getJobId() {
       java.lang.Object ref = jobId_;
@@ -1223,7 +1240,7 @@ public final class WorkflowNode extends com.google.protobuf.GeneratedMessageV3
      * Output only. The job id; populated after the node enters RUNNING state.
      * </pre>
      *
-     * <code>string job_id = 3;</code>
+     * <code>string job_id = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     public com.google.protobuf.ByteString getJobIdBytes() {
       java.lang.Object ref = jobId_;
@@ -1243,7 +1260,7 @@ public final class WorkflowNode extends com.google.protobuf.GeneratedMessageV3
      * Output only. The job id; populated after the node enters RUNNING state.
      * </pre>
      *
-     * <code>string job_id = 3;</code>
+     * <code>string job_id = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     public Builder setJobId(java.lang.String value) {
       if (value == null) {
@@ -1261,7 +1278,7 @@ public final class WorkflowNode extends com.google.protobuf.GeneratedMessageV3
      * Output only. The job id; populated after the node enters RUNNING state.
      * </pre>
      *
-     * <code>string job_id = 3;</code>
+     * <code>string job_id = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     public Builder clearJobId() {
 
@@ -1276,7 +1293,7 @@ public final class WorkflowNode extends com.google.protobuf.GeneratedMessageV3
      * Output only. The job id; populated after the node enters RUNNING state.
      * </pre>
      *
-     * <code>string job_id = 3;</code>
+     * <code>string job_id = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     public Builder setJobIdBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -1297,7 +1314,9 @@ public final class WorkflowNode extends com.google.protobuf.GeneratedMessageV3
      * Output only. The node state.
      * </pre>
      *
-     * <code>.google.cloud.dataproc.v1.WorkflowNode.NodeState state = 5;</code>
+     * <code>
+     * .google.cloud.dataproc.v1.WorkflowNode.NodeState state = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public int getStateValue() {
       return state_;
@@ -1309,7 +1328,9 @@ public final class WorkflowNode extends com.google.protobuf.GeneratedMessageV3
      * Output only. The node state.
      * </pre>
      *
-     * <code>.google.cloud.dataproc.v1.WorkflowNode.NodeState state = 5;</code>
+     * <code>
+     * .google.cloud.dataproc.v1.WorkflowNode.NodeState state = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public Builder setStateValue(int value) {
       state_ = value;
@@ -1323,7 +1344,9 @@ public final class WorkflowNode extends com.google.protobuf.GeneratedMessageV3
      * Output only. The node state.
      * </pre>
      *
-     * <code>.google.cloud.dataproc.v1.WorkflowNode.NodeState state = 5;</code>
+     * <code>
+     * .google.cloud.dataproc.v1.WorkflowNode.NodeState state = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public com.google.cloud.dataproc.v1.WorkflowNode.NodeState getState() {
       @SuppressWarnings("deprecation")
@@ -1340,7 +1363,9 @@ public final class WorkflowNode extends com.google.protobuf.GeneratedMessageV3
      * Output only. The node state.
      * </pre>
      *
-     * <code>.google.cloud.dataproc.v1.WorkflowNode.NodeState state = 5;</code>
+     * <code>
+     * .google.cloud.dataproc.v1.WorkflowNode.NodeState state = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public Builder setState(com.google.cloud.dataproc.v1.WorkflowNode.NodeState value) {
       if (value == null) {
@@ -1358,7 +1383,9 @@ public final class WorkflowNode extends com.google.protobuf.GeneratedMessageV3
      * Output only. The node state.
      * </pre>
      *
-     * <code>.google.cloud.dataproc.v1.WorkflowNode.NodeState state = 5;</code>
+     * <code>
+     * .google.cloud.dataproc.v1.WorkflowNode.NodeState state = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public Builder clearState() {
 
@@ -1375,7 +1402,7 @@ public final class WorkflowNode extends com.google.protobuf.GeneratedMessageV3
      * Output only. The error detail.
      * </pre>
      *
-     * <code>string error = 6;</code>
+     * <code>string error = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     public java.lang.String getError() {
       java.lang.Object ref = error_;
@@ -1395,7 +1422,7 @@ public final class WorkflowNode extends com.google.protobuf.GeneratedMessageV3
      * Output only. The error detail.
      * </pre>
      *
-     * <code>string error = 6;</code>
+     * <code>string error = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     public com.google.protobuf.ByteString getErrorBytes() {
       java.lang.Object ref = error_;
@@ -1415,7 +1442,7 @@ public final class WorkflowNode extends com.google.protobuf.GeneratedMessageV3
      * Output only. The error detail.
      * </pre>
      *
-     * <code>string error = 6;</code>
+     * <code>string error = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     public Builder setError(java.lang.String value) {
       if (value == null) {
@@ -1433,7 +1460,7 @@ public final class WorkflowNode extends com.google.protobuf.GeneratedMessageV3
      * Output only. The error detail.
      * </pre>
      *
-     * <code>string error = 6;</code>
+     * <code>string error = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     public Builder clearError() {
 
@@ -1448,7 +1475,7 @@ public final class WorkflowNode extends com.google.protobuf.GeneratedMessageV3
      * Output only. The error detail.
      * </pre>
      *
-     * <code>string error = 6;</code>
+     * <code>string error = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     public Builder setErrorBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
