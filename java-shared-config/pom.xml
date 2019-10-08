@@ -398,7 +398,21 @@
         </plugins>
       </build>
     </profile>
-
+    <profile>
+      <id>allow-snapshots</id>
+      <repositories>
+        <repository>
+          <id>sonatype-snapshots</id>
+          <url>https://oss.sonatype.org/content/repositories/snapshots</url>
+          <releases>
+            <enabled>false</enabled>
+          </releases>
+          <snapshots>
+            <enabled>true</enabled>
+          </snapshots>
+        </repository>
+      </repositories>
+    </profile>
     <profile>
       <!-- Only run checkstyle plugin on Java 8+ (checkstyle artifact only supports Java 8+) -->
       <id>checkstyle-tests</id>
