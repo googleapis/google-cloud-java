@@ -15,7 +15,9 @@ public interface ListClustersResponseOrBuilder
    * Output only. The clusters in the project.
    * </pre>
    *
-   * <code>repeated .google.cloud.dataproc.v1.Cluster clusters = 1;</code>
+   * <code>
+   * repeated .google.cloud.dataproc.v1.Cluster clusters = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    */
   java.util.List<com.google.cloud.dataproc.v1.Cluster> getClustersList();
   /**
@@ -25,7 +27,9 @@ public interface ListClustersResponseOrBuilder
    * Output only. The clusters in the project.
    * </pre>
    *
-   * <code>repeated .google.cloud.dataproc.v1.Cluster clusters = 1;</code>
+   * <code>
+   * repeated .google.cloud.dataproc.v1.Cluster clusters = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    */
   com.google.cloud.dataproc.v1.Cluster getClusters(int index);
   /**
@@ -35,7 +39,9 @@ public interface ListClustersResponseOrBuilder
    * Output only. The clusters in the project.
    * </pre>
    *
-   * <code>repeated .google.cloud.dataproc.v1.Cluster clusters = 1;</code>
+   * <code>
+   * repeated .google.cloud.dataproc.v1.Cluster clusters = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    */
   int getClustersCount();
   /**
@@ -45,7 +51,9 @@ public interface ListClustersResponseOrBuilder
    * Output only. The clusters in the project.
    * </pre>
    *
-   * <code>repeated .google.cloud.dataproc.v1.Cluster clusters = 1;</code>
+   * <code>
+   * repeated .google.cloud.dataproc.v1.Cluster clusters = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    */
   java.util.List<? extends com.google.cloud.dataproc.v1.ClusterOrBuilder>
       getClustersOrBuilderList();
@@ -56,7 +64,9 @@ public interface ListClustersResponseOrBuilder
    * Output only. The clusters in the project.
    * </pre>
    *
-   * <code>repeated .google.cloud.dataproc.v1.Cluster clusters = 1;</code>
+   * <code>
+   * repeated .google.cloud.dataproc.v1.Cluster clusters = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    */
   com.google.cloud.dataproc.v1.ClusterOrBuilder getClustersOrBuilder(int index);
 
@@ -69,7 +79,7 @@ public interface ListClustersResponseOrBuilder
    * `page_token` in a subsequent `ListClustersRequest`.
    * </pre>
    *
-   * <code>string next_page_token = 2;</code>
+   * <code>string next_page_token = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    */
   java.lang.String getNextPageToken();
   /**
@@ -81,7 +91,7 @@ public interface ListClustersResponseOrBuilder
    * `page_token` in a subsequent `ListClustersRequest`.
    * </pre>
    *
-   * <code>string next_page_token = 2;</code>
+   * <code>string next_page_token = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    */
   com.google.protobuf.ByteString getNextPageTokenBytes();
 }

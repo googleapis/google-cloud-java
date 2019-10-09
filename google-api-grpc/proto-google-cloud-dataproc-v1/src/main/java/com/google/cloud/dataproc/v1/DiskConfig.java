@@ -112,7 +112,7 @@ public final class DiskConfig extends com.google.protobuf.GeneratedMessageV3
    * "pd-standard" (Persistent Disk Hard Disk Drive).
    * </pre>
    *
-   * <code>string boot_disk_type = 3;</code>
+   * <code>string boot_disk_type = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   public java.lang.String getBootDiskType() {
     java.lang.Object ref = bootDiskType_;
@@ -134,7 +134,7 @@ public final class DiskConfig extends com.google.protobuf.GeneratedMessageV3
    * "pd-standard" (Persistent Disk Hard Disk Drive).
    * </pre>
    *
-   * <code>string boot_disk_type = 3;</code>
+   * <code>string boot_disk_type = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   public com.google.protobuf.ByteString getBootDiskTypeBytes() {
     java.lang.Object ref = bootDiskType_;
@@ -157,7 +157,7 @@ public final class DiskConfig extends com.google.protobuf.GeneratedMessageV3
    * Optional. Size in GB of the boot disk (default is 500GB).
    * </pre>
    *
-   * <code>int32 boot_disk_size_gb = 1;</code>
+   * <code>int32 boot_disk_size_gb = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   public int getBootDiskSizeGb() {
     return bootDiskSizeGb_;
@@ -177,7 +177,7 @@ public final class DiskConfig extends com.google.protobuf.GeneratedMessageV3
    * config and installed binaries.
    * </pre>
    *
-   * <code>int32 num_local_ssds = 2;</code>
+   * <code>int32 num_local_ssds = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   public int getNumLocalSsds() {
     return numLocalSsds_;
@@ -538,7 +538,7 @@ public final class DiskConfig extends com.google.protobuf.GeneratedMessageV3
      * "pd-standard" (Persistent Disk Hard Disk Drive).
      * </pre>
      *
-     * <code>string boot_disk_type = 3;</code>
+     * <code>string boot_disk_type = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public java.lang.String getBootDiskType() {
       java.lang.Object ref = bootDiskType_;
@@ -560,7 +560,7 @@ public final class DiskConfig extends com.google.protobuf.GeneratedMessageV3
      * "pd-standard" (Persistent Disk Hard Disk Drive).
      * </pre>
      *
-     * <code>string boot_disk_type = 3;</code>
+     * <code>string boot_disk_type = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public com.google.protobuf.ByteString getBootDiskTypeBytes() {
       java.lang.Object ref = bootDiskType_;
@@ -582,7 +582,7 @@ public final class DiskConfig extends com.google.protobuf.GeneratedMessageV3
      * "pd-standard" (Persistent Disk Hard Disk Drive).
      * </pre>
      *
-     * <code>string boot_disk_type = 3;</code>
+     * <code>string boot_disk_type = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public Builder setBootDiskType(java.lang.String value) {
       if (value == null) {
@@ -602,7 +602,7 @@ public final class DiskConfig extends com.google.protobuf.GeneratedMessageV3
      * "pd-standard" (Persistent Disk Hard Disk Drive).
      * </pre>
      *
-     * <code>string boot_disk_type = 3;</code>
+     * <code>string boot_disk_type = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public Builder clearBootDiskType() {
 
@@ -619,7 +619,7 @@ public final class DiskConfig extends com.google.protobuf.GeneratedMessageV3
      * "pd-standard" (Persistent Disk Hard Disk Drive).
      * </pre>
      *
-     * <code>string boot_disk_type = 3;</code>
+     * <code>string boot_disk_type = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public Builder setBootDiskTypeBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -640,7 +640,7 @@ public final class DiskConfig extends com.google.protobuf.GeneratedMessageV3
      * Optional. Size in GB of the boot disk (default is 500GB).
      * </pre>
      *
-     * <code>int32 boot_disk_size_gb = 1;</code>
+     * <code>int32 boot_disk_size_gb = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public int getBootDiskSizeGb() {
       return bootDiskSizeGb_;
@@ -652,7 +652,7 @@ public final class DiskConfig extends com.google.protobuf.GeneratedMessageV3
      * Optional. Size in GB of the boot disk (default is 500GB).
      * </pre>
      *
-     * <code>int32 boot_disk_size_gb = 1;</code>
+     * <code>int32 boot_disk_size_gb = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public Builder setBootDiskSizeGb(int value) {
 
@@ -667,7 +667,7 @@ public final class DiskConfig extends com.google.protobuf.GeneratedMessageV3
      * Optional. Size in GB of the boot disk (default is 500GB).
      * </pre>
      *
-     * <code>int32 boot_disk_size_gb = 1;</code>
+     * <code>int32 boot_disk_size_gb = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public Builder clearBootDiskSizeGb() {
 
@@ -689,7 +689,7 @@ public final class DiskConfig extends com.google.protobuf.GeneratedMessageV3
      * config and installed binaries.
      * </pre>
      *
-     * <code>int32 num_local_ssds = 2;</code>
+     * <code>int32 num_local_ssds = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public int getNumLocalSsds() {
       return numLocalSsds_;
@@ -706,7 +706,7 @@ public final class DiskConfig extends com.google.protobuf.GeneratedMessageV3
      * config and installed binaries.
      * </pre>
      *
-     * <code>int32 num_local_ssds = 2;</code>
+     * <code>int32 num_local_ssds = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public Builder setNumLocalSsds(int value) {
 
@@ -726,7 +726,7 @@ public final class DiskConfig extends com.google.protobuf.GeneratedMessageV3
      * config and installed binaries.
      * </pre>
      *
-     * <code>int32 num_local_ssds = 2;</code>
+     * <code>int32 num_local_ssds = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public Builder clearNumLocalSsds() {
 

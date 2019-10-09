@@ -319,7 +319,7 @@ public final class HiveJob extends com.google.protobuf.GeneratedMessageV3
    * executing independent parallel queries.
    * </pre>
    *
-   * <code>bool continue_on_failure = 3;</code>
+   * <code>bool continue_on_failure = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   public boolean getContinueOnFailure() {
     return continueOnFailure_;
@@ -360,7 +360,8 @@ public final class HiveJob extends com.google.protobuf.GeneratedMessageV3
    * Hive command: `SET name="value";`).
    * </pre>
    *
-   * <code>map&lt;string, string&gt; script_variables = 4;</code>
+   * <code>map&lt;string, string&gt; script_variables = 4 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   public boolean containsScriptVariables(java.lang.String key) {
     if (key == null) {
@@ -381,7 +382,8 @@ public final class HiveJob extends com.google.protobuf.GeneratedMessageV3
    * Hive command: `SET name="value";`).
    * </pre>
    *
-   * <code>map&lt;string, string&gt; script_variables = 4;</code>
+   * <code>map&lt;string, string&gt; script_variables = 4 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   public java.util.Map<java.lang.String, java.lang.String> getScriptVariablesMap() {
     return internalGetScriptVariables().getMap();
@@ -394,7 +396,8 @@ public final class HiveJob extends com.google.protobuf.GeneratedMessageV3
    * Hive command: `SET name="value";`).
    * </pre>
    *
-   * <code>map&lt;string, string&gt; script_variables = 4;</code>
+   * <code>map&lt;string, string&gt; script_variables = 4 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   public java.lang.String getScriptVariablesOrDefault(
       java.lang.String key, java.lang.String defaultValue) {
@@ -412,7 +415,8 @@ public final class HiveJob extends com.google.protobuf.GeneratedMessageV3
    * Hive command: `SET name="value";`).
    * </pre>
    *
-   * <code>map&lt;string, string&gt; script_variables = 4;</code>
+   * <code>map&lt;string, string&gt; script_variables = 4 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   public java.lang.String getScriptVariablesOrThrow(java.lang.String key) {
     if (key == null) {
@@ -460,7 +464,8 @@ public final class HiveJob extends com.google.protobuf.GeneratedMessageV3
    * /etc/hive/conf/hive-site.xml, and classes in user code.
    * </pre>
    *
-   * <code>map&lt;string, string&gt; properties = 5;</code>
+   * <code>map&lt;string, string&gt; properties = 5 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   public boolean containsProperties(java.lang.String key) {
     if (key == null) {
@@ -483,7 +488,8 @@ public final class HiveJob extends com.google.protobuf.GeneratedMessageV3
    * /etc/hive/conf/hive-site.xml, and classes in user code.
    * </pre>
    *
-   * <code>map&lt;string, string&gt; properties = 5;</code>
+   * <code>map&lt;string, string&gt; properties = 5 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   public java.util.Map<java.lang.String, java.lang.String> getPropertiesMap() {
     return internalGetProperties().getMap();
@@ -498,7 +504,8 @@ public final class HiveJob extends com.google.protobuf.GeneratedMessageV3
    * /etc/hive/conf/hive-site.xml, and classes in user code.
    * </pre>
    *
-   * <code>map&lt;string, string&gt; properties = 5;</code>
+   * <code>map&lt;string, string&gt; properties = 5 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   public java.lang.String getPropertiesOrDefault(
       java.lang.String key, java.lang.String defaultValue) {
@@ -518,7 +525,8 @@ public final class HiveJob extends com.google.protobuf.GeneratedMessageV3
    * /etc/hive/conf/hive-site.xml, and classes in user code.
    * </pre>
    *
-   * <code>map&lt;string, string&gt; properties = 5;</code>
+   * <code>map&lt;string, string&gt; properties = 5 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   public java.lang.String getPropertiesOrThrow(java.lang.String key) {
     if (key == null) {
@@ -542,7 +550,7 @@ public final class HiveJob extends com.google.protobuf.GeneratedMessageV3
    * and UDFs.
    * </pre>
    *
-   * <code>repeated string jar_file_uris = 6;</code>
+   * <code>repeated string jar_file_uris = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   public com.google.protobuf.ProtocolStringList getJarFileUrisList() {
     return jarFileUris_;
@@ -556,7 +564,7 @@ public final class HiveJob extends com.google.protobuf.GeneratedMessageV3
    * and UDFs.
    * </pre>
    *
-   * <code>repeated string jar_file_uris = 6;</code>
+   * <code>repeated string jar_file_uris = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   public int getJarFileUrisCount() {
     return jarFileUris_.size();
@@ -570,7 +578,7 @@ public final class HiveJob extends com.google.protobuf.GeneratedMessageV3
    * and UDFs.
    * </pre>
    *
-   * <code>repeated string jar_file_uris = 6;</code>
+   * <code>repeated string jar_file_uris = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   public java.lang.String getJarFileUris(int index) {
     return jarFileUris_.get(index);
@@ -584,7 +592,7 @@ public final class HiveJob extends com.google.protobuf.GeneratedMessageV3
    * and UDFs.
    * </pre>
    *
-   * <code>repeated string jar_file_uris = 6;</code>
+   * <code>repeated string jar_file_uris = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   public com.google.protobuf.ByteString getJarFileUrisBytes(int index) {
     return jarFileUris_.getByteString(index);
@@ -1405,7 +1413,7 @@ public final class HiveJob extends com.google.protobuf.GeneratedMessageV3
      * executing independent parallel queries.
      * </pre>
      *
-     * <code>bool continue_on_failure = 3;</code>
+     * <code>bool continue_on_failure = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public boolean getContinueOnFailure() {
       return continueOnFailure_;
@@ -1419,7 +1427,7 @@ public final class HiveJob extends com.google.protobuf.GeneratedMessageV3
      * executing independent parallel queries.
      * </pre>
      *
-     * <code>bool continue_on_failure = 3;</code>
+     * <code>bool continue_on_failure = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public Builder setContinueOnFailure(boolean value) {
 
@@ -1436,7 +1444,7 @@ public final class HiveJob extends com.google.protobuf.GeneratedMessageV3
      * executing independent parallel queries.
      * </pre>
      *
-     * <code>bool continue_on_failure = 3;</code>
+     * <code>bool continue_on_failure = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public Builder clearContinueOnFailure() {
 
@@ -1482,7 +1490,9 @@ public final class HiveJob extends com.google.protobuf.GeneratedMessageV3
      * Hive command: `SET name="value";`).
      * </pre>
      *
-     * <code>map&lt;string, string&gt; script_variables = 4;</code>
+     * <code>
+     * map&lt;string, string&gt; script_variables = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public boolean containsScriptVariables(java.lang.String key) {
       if (key == null) {
@@ -1503,7 +1513,9 @@ public final class HiveJob extends com.google.protobuf.GeneratedMessageV3
      * Hive command: `SET name="value";`).
      * </pre>
      *
-     * <code>map&lt;string, string&gt; script_variables = 4;</code>
+     * <code>
+     * map&lt;string, string&gt; script_variables = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public java.util.Map<java.lang.String, java.lang.String> getScriptVariablesMap() {
       return internalGetScriptVariables().getMap();
@@ -1516,7 +1528,9 @@ public final class HiveJob extends com.google.protobuf.GeneratedMessageV3
      * Hive command: `SET name="value";`).
      * </pre>
      *
-     * <code>map&lt;string, string&gt; script_variables = 4;</code>
+     * <code>
+     * map&lt;string, string&gt; script_variables = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public java.lang.String getScriptVariablesOrDefault(
         java.lang.String key, java.lang.String defaultValue) {
@@ -1534,7 +1548,9 @@ public final class HiveJob extends com.google.protobuf.GeneratedMessageV3
      * Hive command: `SET name="value";`).
      * </pre>
      *
-     * <code>map&lt;string, string&gt; script_variables = 4;</code>
+     * <code>
+     * map&lt;string, string&gt; script_variables = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public java.lang.String getScriptVariablesOrThrow(java.lang.String key) {
       if (key == null) {
@@ -1559,7 +1575,9 @@ public final class HiveJob extends com.google.protobuf.GeneratedMessageV3
      * Hive command: `SET name="value";`).
      * </pre>
      *
-     * <code>map&lt;string, string&gt; script_variables = 4;</code>
+     * <code>
+     * map&lt;string, string&gt; script_variables = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder removeScriptVariables(java.lang.String key) {
       if (key == null) {
@@ -1581,7 +1599,9 @@ public final class HiveJob extends com.google.protobuf.GeneratedMessageV3
      * Hive command: `SET name="value";`).
      * </pre>
      *
-     * <code>map&lt;string, string&gt; script_variables = 4;</code>
+     * <code>
+     * map&lt;string, string&gt; script_variables = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder putScriptVariables(java.lang.String key, java.lang.String value) {
       if (key == null) {
@@ -1601,7 +1621,9 @@ public final class HiveJob extends com.google.protobuf.GeneratedMessageV3
      * Hive command: `SET name="value";`).
      * </pre>
      *
-     * <code>map&lt;string, string&gt; script_variables = 4;</code>
+     * <code>
+     * map&lt;string, string&gt; script_variables = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder putAllScriptVariables(java.util.Map<java.lang.String, java.lang.String> values) {
       internalGetMutableScriptVariables().getMutableMap().putAll(values);
@@ -1646,7 +1668,8 @@ public final class HiveJob extends com.google.protobuf.GeneratedMessageV3
      * /etc/hive/conf/hive-site.xml, and classes in user code.
      * </pre>
      *
-     * <code>map&lt;string, string&gt; properties = 5;</code>
+     * <code>map&lt;string, string&gt; properties = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public boolean containsProperties(java.lang.String key) {
       if (key == null) {
@@ -1669,7 +1692,8 @@ public final class HiveJob extends com.google.protobuf.GeneratedMessageV3
      * /etc/hive/conf/hive-site.xml, and classes in user code.
      * </pre>
      *
-     * <code>map&lt;string, string&gt; properties = 5;</code>
+     * <code>map&lt;string, string&gt; properties = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public java.util.Map<java.lang.String, java.lang.String> getPropertiesMap() {
       return internalGetProperties().getMap();
@@ -1684,7 +1708,8 @@ public final class HiveJob extends com.google.protobuf.GeneratedMessageV3
      * /etc/hive/conf/hive-site.xml, and classes in user code.
      * </pre>
      *
-     * <code>map&lt;string, string&gt; properties = 5;</code>
+     * <code>map&lt;string, string&gt; properties = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public java.lang.String getPropertiesOrDefault(
         java.lang.String key, java.lang.String defaultValue) {
@@ -1704,7 +1729,8 @@ public final class HiveJob extends com.google.protobuf.GeneratedMessageV3
      * /etc/hive/conf/hive-site.xml, and classes in user code.
      * </pre>
      *
-     * <code>map&lt;string, string&gt; properties = 5;</code>
+     * <code>map&lt;string, string&gt; properties = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public java.lang.String getPropertiesOrThrow(java.lang.String key) {
       if (key == null) {
@@ -1731,7 +1757,8 @@ public final class HiveJob extends com.google.protobuf.GeneratedMessageV3
      * /etc/hive/conf/hive-site.xml, and classes in user code.
      * </pre>
      *
-     * <code>map&lt;string, string&gt; properties = 5;</code>
+     * <code>map&lt;string, string&gt; properties = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder removeProperties(java.lang.String key) {
       if (key == null) {
@@ -1755,7 +1782,8 @@ public final class HiveJob extends com.google.protobuf.GeneratedMessageV3
      * /etc/hive/conf/hive-site.xml, and classes in user code.
      * </pre>
      *
-     * <code>map&lt;string, string&gt; properties = 5;</code>
+     * <code>map&lt;string, string&gt; properties = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder putProperties(java.lang.String key, java.lang.String value) {
       if (key == null) {
@@ -1777,7 +1805,8 @@ public final class HiveJob extends com.google.protobuf.GeneratedMessageV3
      * /etc/hive/conf/hive-site.xml, and classes in user code.
      * </pre>
      *
-     * <code>map&lt;string, string&gt; properties = 5;</code>
+     * <code>map&lt;string, string&gt; properties = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder putAllProperties(java.util.Map<java.lang.String, java.lang.String> values) {
       internalGetMutableProperties().getMutableMap().putAll(values);
@@ -1802,7 +1831,7 @@ public final class HiveJob extends com.google.protobuf.GeneratedMessageV3
      * and UDFs.
      * </pre>
      *
-     * <code>repeated string jar_file_uris = 6;</code>
+     * <code>repeated string jar_file_uris = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public com.google.protobuf.ProtocolStringList getJarFileUrisList() {
       return jarFileUris_.getUnmodifiableView();
@@ -1816,7 +1845,7 @@ public final class HiveJob extends com.google.protobuf.GeneratedMessageV3
      * and UDFs.
      * </pre>
      *
-     * <code>repeated string jar_file_uris = 6;</code>
+     * <code>repeated string jar_file_uris = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public int getJarFileUrisCount() {
       return jarFileUris_.size();
@@ -1830,7 +1859,7 @@ public final class HiveJob extends com.google.protobuf.GeneratedMessageV3
      * and UDFs.
      * </pre>
      *
-     * <code>repeated string jar_file_uris = 6;</code>
+     * <code>repeated string jar_file_uris = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public java.lang.String getJarFileUris(int index) {
       return jarFileUris_.get(index);
@@ -1844,7 +1873,7 @@ public final class HiveJob extends com.google.protobuf.GeneratedMessageV3
      * and UDFs.
      * </pre>
      *
-     * <code>repeated string jar_file_uris = 6;</code>
+     * <code>repeated string jar_file_uris = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public com.google.protobuf.ByteString getJarFileUrisBytes(int index) {
       return jarFileUris_.getByteString(index);
@@ -1858,7 +1887,7 @@ public final class HiveJob extends com.google.protobuf.GeneratedMessageV3
      * and UDFs.
      * </pre>
      *
-     * <code>repeated string jar_file_uris = 6;</code>
+     * <code>repeated string jar_file_uris = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public Builder setJarFileUris(int index, java.lang.String value) {
       if (value == null) {
@@ -1878,7 +1907,7 @@ public final class HiveJob extends com.google.protobuf.GeneratedMessageV3
      * and UDFs.
      * </pre>
      *
-     * <code>repeated string jar_file_uris = 6;</code>
+     * <code>repeated string jar_file_uris = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public Builder addJarFileUris(java.lang.String value) {
       if (value == null) {
@@ -1898,7 +1927,7 @@ public final class HiveJob extends com.google.protobuf.GeneratedMessageV3
      * and UDFs.
      * </pre>
      *
-     * <code>repeated string jar_file_uris = 6;</code>
+     * <code>repeated string jar_file_uris = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public Builder addAllJarFileUris(java.lang.Iterable<java.lang.String> values) {
       ensureJarFileUrisIsMutable();
@@ -1915,7 +1944,7 @@ public final class HiveJob extends com.google.protobuf.GeneratedMessageV3
      * and UDFs.
      * </pre>
      *
-     * <code>repeated string jar_file_uris = 6;</code>
+     * <code>repeated string jar_file_uris = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public Builder clearJarFileUris() {
       jarFileUris_ = com.google.protobuf.LazyStringArrayList.EMPTY;
@@ -1932,7 +1961,7 @@ public final class HiveJob extends com.google.protobuf.GeneratedMessageV3
      * and UDFs.
      * </pre>
      *
-     * <code>repeated string jar_file_uris = 6;</code>
+     * <code>repeated string jar_file_uris = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public Builder addJarFileUrisBytes(com.google.protobuf.ByteString value) {
       if (value == null) {

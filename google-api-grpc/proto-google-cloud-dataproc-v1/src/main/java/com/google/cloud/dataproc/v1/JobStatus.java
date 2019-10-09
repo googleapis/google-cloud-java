@@ -619,7 +619,9 @@ public final class JobStatus extends com.google.protobuf.GeneratedMessageV3
    * Output only. A state message specifying the overall job state.
    * </pre>
    *
-   * <code>.google.cloud.dataproc.v1.JobStatus.State state = 1;</code>
+   * <code>
+   * .google.cloud.dataproc.v1.JobStatus.State state = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    */
   public int getStateValue() {
     return state_;
@@ -631,7 +633,9 @@ public final class JobStatus extends com.google.protobuf.GeneratedMessageV3
    * Output only. A state message specifying the overall job state.
    * </pre>
    *
-   * <code>.google.cloud.dataproc.v1.JobStatus.State state = 1;</code>
+   * <code>
+   * .google.cloud.dataproc.v1.JobStatus.State state = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    */
   public com.google.cloud.dataproc.v1.JobStatus.State getState() {
     @SuppressWarnings("deprecation")
@@ -646,11 +650,13 @@ public final class JobStatus extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. Optional job state details, such as an error
+   * Optional. Output only. Job state details, such as an error
    * description if the state is &lt;code&gt;ERROR&lt;/code&gt;.
    * </pre>
    *
-   * <code>string details = 2;</code>
+   * <code>
+   * string details = 2 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   public java.lang.String getDetails() {
     java.lang.Object ref = details_;
@@ -667,11 +673,13 @@ public final class JobStatus extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. Optional job state details, such as an error
+   * Optional. Output only. Job state details, such as an error
    * description if the state is &lt;code&gt;ERROR&lt;/code&gt;.
    * </pre>
    *
-   * <code>string details = 2;</code>
+   * <code>
+   * string details = 2 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   public com.google.protobuf.ByteString getDetailsBytes() {
     java.lang.Object ref = details_;
@@ -694,7 +702,9 @@ public final class JobStatus extends com.google.protobuf.GeneratedMessageV3
    * Output only. The time when this state was entered.
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp state_start_time = 6;</code>
+   * <code>
+   * .google.protobuf.Timestamp state_start_time = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    */
   public boolean hasStateStartTime() {
     return stateStartTime_ != null;
@@ -706,7 +716,9 @@ public final class JobStatus extends com.google.protobuf.GeneratedMessageV3
    * Output only. The time when this state was entered.
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp state_start_time = 6;</code>
+   * <code>
+   * .google.protobuf.Timestamp state_start_time = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    */
   public com.google.protobuf.Timestamp getStateStartTime() {
     return stateStartTime_ == null
@@ -720,7 +732,9 @@ public final class JobStatus extends com.google.protobuf.GeneratedMessageV3
    * Output only. The time when this state was entered.
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp state_start_time = 6;</code>
+   * <code>
+   * .google.protobuf.Timestamp state_start_time = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    */
   public com.google.protobuf.TimestampOrBuilder getStateStartTimeOrBuilder() {
     return getStateStartTime();
@@ -736,7 +750,9 @@ public final class JobStatus extends com.google.protobuf.GeneratedMessageV3
    * status reported by the agent.
    * </pre>
    *
-   * <code>.google.cloud.dataproc.v1.JobStatus.Substate substate = 7;</code>
+   * <code>
+   * .google.cloud.dataproc.v1.JobStatus.Substate substate = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    */
   public int getSubstateValue() {
     return substate_;
@@ -749,7 +765,9 @@ public final class JobStatus extends com.google.protobuf.GeneratedMessageV3
    * status reported by the agent.
    * </pre>
    *
-   * <code>.google.cloud.dataproc.v1.JobStatus.Substate substate = 7;</code>
+   * <code>
+   * .google.cloud.dataproc.v1.JobStatus.Substate substate = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    */
   public com.google.cloud.dataproc.v1.JobStatus.Substate getSubstate() {
     @SuppressWarnings("deprecation")
@@ -1139,7 +1157,9 @@ public final class JobStatus extends com.google.protobuf.GeneratedMessageV3
      * Output only. A state message specifying the overall job state.
      * </pre>
      *
-     * <code>.google.cloud.dataproc.v1.JobStatus.State state = 1;</code>
+     * <code>
+     * .google.cloud.dataproc.v1.JobStatus.State state = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public int getStateValue() {
       return state_;
@@ -1151,7 +1171,9 @@ public final class JobStatus extends com.google.protobuf.GeneratedMessageV3
      * Output only. A state message specifying the overall job state.
      * </pre>
      *
-     * <code>.google.cloud.dataproc.v1.JobStatus.State state = 1;</code>
+     * <code>
+     * .google.cloud.dataproc.v1.JobStatus.State state = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public Builder setStateValue(int value) {
       state_ = value;
@@ -1165,7 +1187,9 @@ public final class JobStatus extends com.google.protobuf.GeneratedMessageV3
      * Output only. A state message specifying the overall job state.
      * </pre>
      *
-     * <code>.google.cloud.dataproc.v1.JobStatus.State state = 1;</code>
+     * <code>
+     * .google.cloud.dataproc.v1.JobStatus.State state = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public com.google.cloud.dataproc.v1.JobStatus.State getState() {
       @SuppressWarnings("deprecation")
@@ -1180,7 +1204,9 @@ public final class JobStatus extends com.google.protobuf.GeneratedMessageV3
      * Output only. A state message specifying the overall job state.
      * </pre>
      *
-     * <code>.google.cloud.dataproc.v1.JobStatus.State state = 1;</code>
+     * <code>
+     * .google.cloud.dataproc.v1.JobStatus.State state = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public Builder setState(com.google.cloud.dataproc.v1.JobStatus.State value) {
       if (value == null) {
@@ -1198,7 +1224,9 @@ public final class JobStatus extends com.google.protobuf.GeneratedMessageV3
      * Output only. A state message specifying the overall job state.
      * </pre>
      *
-     * <code>.google.cloud.dataproc.v1.JobStatus.State state = 1;</code>
+     * <code>
+     * .google.cloud.dataproc.v1.JobStatus.State state = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public Builder clearState() {
 
@@ -1212,11 +1240,13 @@ public final class JobStatus extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Optional job state details, such as an error
+     * Optional. Output only. Job state details, such as an error
      * description if the state is &lt;code&gt;ERROR&lt;/code&gt;.
      * </pre>
      *
-     * <code>string details = 2;</code>
+     * <code>
+     * string details = 2 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public java.lang.String getDetails() {
       java.lang.Object ref = details_;
@@ -1233,11 +1263,13 @@ public final class JobStatus extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Optional job state details, such as an error
+     * Optional. Output only. Job state details, such as an error
      * description if the state is &lt;code&gt;ERROR&lt;/code&gt;.
      * </pre>
      *
-     * <code>string details = 2;</code>
+     * <code>
+     * string details = 2 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public com.google.protobuf.ByteString getDetailsBytes() {
       java.lang.Object ref = details_;
@@ -1254,11 +1286,13 @@ public final class JobStatus extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Optional job state details, such as an error
+     * Optional. Output only. Job state details, such as an error
      * description if the state is &lt;code&gt;ERROR&lt;/code&gt;.
      * </pre>
      *
-     * <code>string details = 2;</code>
+     * <code>
+     * string details = 2 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder setDetails(java.lang.String value) {
       if (value == null) {
@@ -1273,11 +1307,13 @@ public final class JobStatus extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Optional job state details, such as an error
+     * Optional. Output only. Job state details, such as an error
      * description if the state is &lt;code&gt;ERROR&lt;/code&gt;.
      * </pre>
      *
-     * <code>string details = 2;</code>
+     * <code>
+     * string details = 2 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder clearDetails() {
 
@@ -1289,11 +1325,13 @@ public final class JobStatus extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Optional job state details, such as an error
+     * Optional. Output only. Job state details, such as an error
      * description if the state is &lt;code&gt;ERROR&lt;/code&gt;.
      * </pre>
      *
-     * <code>string details = 2;</code>
+     * <code>
+     * string details = 2 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder setDetailsBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -1319,7 +1357,9 @@ public final class JobStatus extends com.google.protobuf.GeneratedMessageV3
      * Output only. The time when this state was entered.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp state_start_time = 6;</code>
+     * <code>
+     * .google.protobuf.Timestamp state_start_time = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public boolean hasStateStartTime() {
       return stateStartTimeBuilder_ != null || stateStartTime_ != null;
@@ -1331,7 +1371,9 @@ public final class JobStatus extends com.google.protobuf.GeneratedMessageV3
      * Output only. The time when this state was entered.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp state_start_time = 6;</code>
+     * <code>
+     * .google.protobuf.Timestamp state_start_time = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public com.google.protobuf.Timestamp getStateStartTime() {
       if (stateStartTimeBuilder_ == null) {
@@ -1349,7 +1391,9 @@ public final class JobStatus extends com.google.protobuf.GeneratedMessageV3
      * Output only. The time when this state was entered.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp state_start_time = 6;</code>
+     * <code>
+     * .google.protobuf.Timestamp state_start_time = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public Builder setStateStartTime(com.google.protobuf.Timestamp value) {
       if (stateStartTimeBuilder_ == null) {
@@ -1371,7 +1415,9 @@ public final class JobStatus extends com.google.protobuf.GeneratedMessageV3
      * Output only. The time when this state was entered.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp state_start_time = 6;</code>
+     * <code>
+     * .google.protobuf.Timestamp state_start_time = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public Builder setStateStartTime(com.google.protobuf.Timestamp.Builder builderForValue) {
       if (stateStartTimeBuilder_ == null) {
@@ -1390,7 +1436,9 @@ public final class JobStatus extends com.google.protobuf.GeneratedMessageV3
      * Output only. The time when this state was entered.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp state_start_time = 6;</code>
+     * <code>
+     * .google.protobuf.Timestamp state_start_time = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public Builder mergeStateStartTime(com.google.protobuf.Timestamp value) {
       if (stateStartTimeBuilder_ == null) {
@@ -1416,7 +1464,9 @@ public final class JobStatus extends com.google.protobuf.GeneratedMessageV3
      * Output only. The time when this state was entered.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp state_start_time = 6;</code>
+     * <code>
+     * .google.protobuf.Timestamp state_start_time = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public Builder clearStateStartTime() {
       if (stateStartTimeBuilder_ == null) {
@@ -1436,7 +1486,9 @@ public final class JobStatus extends com.google.protobuf.GeneratedMessageV3
      * Output only. The time when this state was entered.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp state_start_time = 6;</code>
+     * <code>
+     * .google.protobuf.Timestamp state_start_time = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public com.google.protobuf.Timestamp.Builder getStateStartTimeBuilder() {
 
@@ -1450,7 +1502,9 @@ public final class JobStatus extends com.google.protobuf.GeneratedMessageV3
      * Output only. The time when this state was entered.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp state_start_time = 6;</code>
+     * <code>
+     * .google.protobuf.Timestamp state_start_time = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public com.google.protobuf.TimestampOrBuilder getStateStartTimeOrBuilder() {
       if (stateStartTimeBuilder_ != null) {
@@ -1468,7 +1522,9 @@ public final class JobStatus extends com.google.protobuf.GeneratedMessageV3
      * Output only. The time when this state was entered.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp state_start_time = 6;</code>
+     * <code>
+     * .google.protobuf.Timestamp state_start_time = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.protobuf.Timestamp,
@@ -1496,7 +1552,9 @@ public final class JobStatus extends com.google.protobuf.GeneratedMessageV3
      * status reported by the agent.
      * </pre>
      *
-     * <code>.google.cloud.dataproc.v1.JobStatus.Substate substate = 7;</code>
+     * <code>
+     * .google.cloud.dataproc.v1.JobStatus.Substate substate = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public int getSubstateValue() {
       return substate_;
@@ -1509,7 +1567,9 @@ public final class JobStatus extends com.google.protobuf.GeneratedMessageV3
      * status reported by the agent.
      * </pre>
      *
-     * <code>.google.cloud.dataproc.v1.JobStatus.Substate substate = 7;</code>
+     * <code>
+     * .google.cloud.dataproc.v1.JobStatus.Substate substate = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public Builder setSubstateValue(int value) {
       substate_ = value;
@@ -1524,7 +1584,9 @@ public final class JobStatus extends com.google.protobuf.GeneratedMessageV3
      * status reported by the agent.
      * </pre>
      *
-     * <code>.google.cloud.dataproc.v1.JobStatus.Substate substate = 7;</code>
+     * <code>
+     * .google.cloud.dataproc.v1.JobStatus.Substate substate = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public com.google.cloud.dataproc.v1.JobStatus.Substate getSubstate() {
       @SuppressWarnings("deprecation")
@@ -1540,7 +1602,9 @@ public final class JobStatus extends com.google.protobuf.GeneratedMessageV3
      * status reported by the agent.
      * </pre>
      *
-     * <code>.google.cloud.dataproc.v1.JobStatus.Substate substate = 7;</code>
+     * <code>
+     * .google.cloud.dataproc.v1.JobStatus.Substate substate = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public Builder setSubstate(com.google.cloud.dataproc.v1.JobStatus.Substate value) {
       if (value == null) {
@@ -1559,7 +1623,9 @@ public final class JobStatus extends com.google.protobuf.GeneratedMessageV3
      * status reported by the agent.
      * </pre>
      *
-     * <code>.google.cloud.dataproc.v1.JobStatus.Substate substate = 7;</code>
+     * <code>
+     * .google.cloud.dataproc.v1.JobStatus.Substate substate = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public Builder clearSubstate() {
 

@@ -16,7 +16,7 @@ public interface InstanceGroupConfigOrBuilder
    * For master instance groups, must be set to 1.
    * </pre>
    *
-   * <code>int32 num_instances = 1;</code>
+   * <code>int32 num_instances = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   int getNumInstances();
 
@@ -28,7 +28,7 @@ public interface InstanceGroupConfigOrBuilder
    * from `cluster_name`, `num_instances`, and the instance group.
    * </pre>
    *
-   * <code>repeated string instance_names = 2;</code>
+   * <code>repeated string instance_names = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    */
   java.util.List<java.lang.String> getInstanceNamesList();
   /**
@@ -39,7 +39,7 @@ public interface InstanceGroupConfigOrBuilder
    * from `cluster_name`, `num_instances`, and the instance group.
    * </pre>
    *
-   * <code>repeated string instance_names = 2;</code>
+   * <code>repeated string instance_names = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    */
   int getInstanceNamesCount();
   /**
@@ -50,7 +50,7 @@ public interface InstanceGroupConfigOrBuilder
    * from `cluster_name`, `num_instances`, and the instance group.
    * </pre>
    *
-   * <code>repeated string instance_names = 2;</code>
+   * <code>repeated string instance_names = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    */
   java.lang.String getInstanceNames(int index);
   /**
@@ -61,7 +61,7 @@ public interface InstanceGroupConfigOrBuilder
    * from `cluster_name`, `num_instances`, and the instance group.
    * </pre>
    *
-   * <code>repeated string instance_names = 2;</code>
+   * <code>repeated string instance_names = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    */
   com.google.protobuf.ByteString getInstanceNamesBytes(int index);
 
@@ -74,7 +74,7 @@ public interface InstanceGroupConfigOrBuilder
    * `SoftwareConfig.image_version`.
    * </pre>
    *
-   * <code>string image_uri = 3;</code>
+   * <code>string image_uri = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   java.lang.String getImageUri();
   /**
@@ -86,7 +86,7 @@ public interface InstanceGroupConfigOrBuilder
    * `SoftwareConfig.image_version`.
    * </pre>
    *
-   * <code>string image_uri = 3;</code>
+   * <code>string image_uri = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   com.google.protobuf.ByteString getImageUriBytes();
 
@@ -106,7 +106,7 @@ public interface InstanceGroupConfigOrBuilder
    * resource, for example, `n1-standard-2`.
    * </pre>
    *
-   * <code>string machine_type_uri = 4;</code>
+   * <code>string machine_type_uri = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   java.lang.String getMachineTypeUri();
   /**
@@ -125,7 +125,7 @@ public interface InstanceGroupConfigOrBuilder
    * resource, for example, `n1-standard-2`.
    * </pre>
    *
-   * <code>string machine_type_uri = 4;</code>
+   * <code>string machine_type_uri = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   com.google.protobuf.ByteString getMachineTypeUriBytes();
 
@@ -136,7 +136,9 @@ public interface InstanceGroupConfigOrBuilder
    * Optional. Disk option config settings.
    * </pre>
    *
-   * <code>.google.cloud.dataproc.v1.DiskConfig disk_config = 5;</code>
+   * <code>
+   * .google.cloud.dataproc.v1.DiskConfig disk_config = 5 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   boolean hasDiskConfig();
   /**
@@ -146,7 +148,9 @@ public interface InstanceGroupConfigOrBuilder
    * Optional. Disk option config settings.
    * </pre>
    *
-   * <code>.google.cloud.dataproc.v1.DiskConfig disk_config = 5;</code>
+   * <code>
+   * .google.cloud.dataproc.v1.DiskConfig disk_config = 5 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   com.google.cloud.dataproc.v1.DiskConfig getDiskConfig();
   /**
@@ -156,7 +160,9 @@ public interface InstanceGroupConfigOrBuilder
    * Optional. Disk option config settings.
    * </pre>
    *
-   * <code>.google.cloud.dataproc.v1.DiskConfig disk_config = 5;</code>
+   * <code>
+   * .google.cloud.dataproc.v1.DiskConfig disk_config = 5 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   com.google.cloud.dataproc.v1.DiskConfigOrBuilder getDiskConfigOrBuilder();
 
@@ -168,7 +174,7 @@ public interface InstanceGroupConfigOrBuilder
    * instances.
    * </pre>
    *
-   * <code>bool is_preemptible = 6;</code>
+   * <code>bool is_preemptible = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   boolean getIsPreemptible();
 
@@ -181,7 +187,9 @@ public interface InstanceGroupConfigOrBuilder
    * This is only used for preemptible instance groups.
    * </pre>
    *
-   * <code>.google.cloud.dataproc.v1.ManagedGroupConfig managed_group_config = 7;</code>
+   * <code>
+   * .google.cloud.dataproc.v1.ManagedGroupConfig managed_group_config = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    */
   boolean hasManagedGroupConfig();
   /**
@@ -193,7 +201,9 @@ public interface InstanceGroupConfigOrBuilder
    * This is only used for preemptible instance groups.
    * </pre>
    *
-   * <code>.google.cloud.dataproc.v1.ManagedGroupConfig managed_group_config = 7;</code>
+   * <code>
+   * .google.cloud.dataproc.v1.ManagedGroupConfig managed_group_config = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    */
   com.google.cloud.dataproc.v1.ManagedGroupConfig getManagedGroupConfig();
   /**
@@ -205,7 +215,9 @@ public interface InstanceGroupConfigOrBuilder
    * This is only used for preemptible instance groups.
    * </pre>
    *
-   * <code>.google.cloud.dataproc.v1.ManagedGroupConfig managed_group_config = 7;</code>
+   * <code>
+   * .google.cloud.dataproc.v1.ManagedGroupConfig managed_group_config = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    */
   com.google.cloud.dataproc.v1.ManagedGroupConfigOrBuilder getManagedGroupConfigOrBuilder();
 
@@ -215,11 +227,11 @@ public interface InstanceGroupConfigOrBuilder
    * <pre>
    * Optional. The Compute Engine accelerator configuration for these
    * instances.
-   * **Beta Feature**: This feature is still under development. It may be
-   * changed before final release.
    * </pre>
    *
-   * <code>repeated .google.cloud.dataproc.v1.AcceleratorConfig accelerators = 8;</code>
+   * <code>
+   * repeated .google.cloud.dataproc.v1.AcceleratorConfig accelerators = 8 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   java.util.List<com.google.cloud.dataproc.v1.AcceleratorConfig> getAcceleratorsList();
   /**
@@ -228,11 +240,11 @@ public interface InstanceGroupConfigOrBuilder
    * <pre>
    * Optional. The Compute Engine accelerator configuration for these
    * instances.
-   * **Beta Feature**: This feature is still under development. It may be
-   * changed before final release.
    * </pre>
    *
-   * <code>repeated .google.cloud.dataproc.v1.AcceleratorConfig accelerators = 8;</code>
+   * <code>
+   * repeated .google.cloud.dataproc.v1.AcceleratorConfig accelerators = 8 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   com.google.cloud.dataproc.v1.AcceleratorConfig getAccelerators(int index);
   /**
@@ -241,11 +253,11 @@ public interface InstanceGroupConfigOrBuilder
    * <pre>
    * Optional. The Compute Engine accelerator configuration for these
    * instances.
-   * **Beta Feature**: This feature is still under development. It may be
-   * changed before final release.
    * </pre>
    *
-   * <code>repeated .google.cloud.dataproc.v1.AcceleratorConfig accelerators = 8;</code>
+   * <code>
+   * repeated .google.cloud.dataproc.v1.AcceleratorConfig accelerators = 8 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   int getAcceleratorsCount();
   /**
@@ -254,11 +266,11 @@ public interface InstanceGroupConfigOrBuilder
    * <pre>
    * Optional. The Compute Engine accelerator configuration for these
    * instances.
-   * **Beta Feature**: This feature is still under development. It may be
-   * changed before final release.
    * </pre>
    *
-   * <code>repeated .google.cloud.dataproc.v1.AcceleratorConfig accelerators = 8;</code>
+   * <code>
+   * repeated .google.cloud.dataproc.v1.AcceleratorConfig accelerators = 8 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   java.util.List<? extends com.google.cloud.dataproc.v1.AcceleratorConfigOrBuilder>
       getAcceleratorsOrBuilderList();
@@ -268,11 +280,36 @@ public interface InstanceGroupConfigOrBuilder
    * <pre>
    * Optional. The Compute Engine accelerator configuration for these
    * instances.
-   * **Beta Feature**: This feature is still under development. It may be
-   * changed before final release.
    * </pre>
    *
-   * <code>repeated .google.cloud.dataproc.v1.AcceleratorConfig accelerators = 8;</code>
+   * <code>
+   * repeated .google.cloud.dataproc.v1.AcceleratorConfig accelerators = 8 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   com.google.cloud.dataproc.v1.AcceleratorConfigOrBuilder getAcceleratorsOrBuilder(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Specifies the minimum cpu platform for the Instance Group.
+   * See [Cloud Dataproc&amp;rarr;Minimum CPU Platform]
+   * (/dataproc/docs/concepts/compute/dataproc-min-cpu).
+   * </pre>
+   *
+   * <code>string min_cpu_platform = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
+   */
+  java.lang.String getMinCpuPlatform();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Specifies the minimum cpu platform for the Instance Group.
+   * See [Cloud Dataproc&amp;rarr;Minimum CPU Platform]
+   * (/dataproc/docs/concepts/compute/dataproc-min-cpu).
+   * </pre>
+   *
+   * <code>string min_cpu_platform = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
+   */
+  com.google.protobuf.ByteString getMinCpuPlatformBytes();
 }

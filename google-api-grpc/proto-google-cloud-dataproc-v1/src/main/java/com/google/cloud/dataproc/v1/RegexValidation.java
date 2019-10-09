@@ -108,7 +108,7 @@ public final class RegexValidation extends com.google.protobuf.GeneratedMessageV
    * matches are not sufficient).
    * </pre>
    *
-   * <code>repeated string regexes = 1;</code>
+   * <code>repeated string regexes = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   public com.google.protobuf.ProtocolStringList getRegexesList() {
     return regexes_;
@@ -122,7 +122,7 @@ public final class RegexValidation extends com.google.protobuf.GeneratedMessageV
    * matches are not sufficient).
    * </pre>
    *
-   * <code>repeated string regexes = 1;</code>
+   * <code>repeated string regexes = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   public int getRegexesCount() {
     return regexes_.size();
@@ -136,7 +136,7 @@ public final class RegexValidation extends com.google.protobuf.GeneratedMessageV
    * matches are not sufficient).
    * </pre>
    *
-   * <code>repeated string regexes = 1;</code>
+   * <code>repeated string regexes = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   public java.lang.String getRegexes(int index) {
     return regexes_.get(index);
@@ -150,7 +150,7 @@ public final class RegexValidation extends com.google.protobuf.GeneratedMessageV
    * matches are not sufficient).
    * </pre>
    *
-   * <code>repeated string regexes = 1;</code>
+   * <code>repeated string regexes = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   public com.google.protobuf.ByteString getRegexesBytes(int index) {
     return regexes_.getByteString(index);
@@ -510,7 +510,7 @@ public final class RegexValidation extends com.google.protobuf.GeneratedMessageV
      * matches are not sufficient).
      * </pre>
      *
-     * <code>repeated string regexes = 1;</code>
+     * <code>repeated string regexes = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public com.google.protobuf.ProtocolStringList getRegexesList() {
       return regexes_.getUnmodifiableView();
@@ -524,7 +524,7 @@ public final class RegexValidation extends com.google.protobuf.GeneratedMessageV
      * matches are not sufficient).
      * </pre>
      *
-     * <code>repeated string regexes = 1;</code>
+     * <code>repeated string regexes = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public int getRegexesCount() {
       return regexes_.size();
@@ -538,7 +538,7 @@ public final class RegexValidation extends com.google.protobuf.GeneratedMessageV
      * matches are not sufficient).
      * </pre>
      *
-     * <code>repeated string regexes = 1;</code>
+     * <code>repeated string regexes = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public java.lang.String getRegexes(int index) {
       return regexes_.get(index);
@@ -552,7 +552,7 @@ public final class RegexValidation extends com.google.protobuf.GeneratedMessageV
      * matches are not sufficient).
      * </pre>
      *
-     * <code>repeated string regexes = 1;</code>
+     * <code>repeated string regexes = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public com.google.protobuf.ByteString getRegexesBytes(int index) {
       return regexes_.getByteString(index);
@@ -566,7 +566,7 @@ public final class RegexValidation extends com.google.protobuf.GeneratedMessageV
      * matches are not sufficient).
      * </pre>
      *
-     * <code>repeated string regexes = 1;</code>
+     * <code>repeated string regexes = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder setRegexes(int index, java.lang.String value) {
       if (value == null) {
@@ -586,7 +586,7 @@ public final class RegexValidation extends com.google.protobuf.GeneratedMessageV
      * matches are not sufficient).
      * </pre>
      *
-     * <code>repeated string regexes = 1;</code>
+     * <code>repeated string regexes = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder addRegexes(java.lang.String value) {
       if (value == null) {
@@ -606,7 +606,7 @@ public final class RegexValidation extends com.google.protobuf.GeneratedMessageV
      * matches are not sufficient).
      * </pre>
      *
-     * <code>repeated string regexes = 1;</code>
+     * <code>repeated string regexes = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder addAllRegexes(java.lang.Iterable<java.lang.String> values) {
       ensureRegexesIsMutable();
@@ -623,7 +623,7 @@ public final class RegexValidation extends com.google.protobuf.GeneratedMessageV
      * matches are not sufficient).
      * </pre>
      *
-     * <code>repeated string regexes = 1;</code>
+     * <code>repeated string regexes = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder clearRegexes() {
       regexes_ = com.google.protobuf.LazyStringArrayList.EMPTY;
@@ -640,7 +640,7 @@ public final class RegexValidation extends com.google.protobuf.GeneratedMessageV
      * matches are not sufficient).
      * </pre>
      *
-     * <code>repeated string regexes = 1;</code>
+     * <code>repeated string regexes = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder addRegexesBytes(com.google.protobuf.ByteString value) {
       if (value == null) {

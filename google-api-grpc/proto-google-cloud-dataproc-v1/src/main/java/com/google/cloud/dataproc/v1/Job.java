@@ -386,7 +386,9 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
    * &lt;code&gt;job_id&lt;/code&gt;.
    * </pre>
    *
-   * <code>.google.cloud.dataproc.v1.JobReference reference = 1;</code>
+   * <code>
+   * .google.cloud.dataproc.v1.JobReference reference = 1 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   public boolean hasReference() {
     return reference_ != null;
@@ -401,7 +403,9 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
    * &lt;code&gt;job_id&lt;/code&gt;.
    * </pre>
    *
-   * <code>.google.cloud.dataproc.v1.JobReference reference = 1;</code>
+   * <code>
+   * .google.cloud.dataproc.v1.JobReference reference = 1 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   public com.google.cloud.dataproc.v1.JobReference getReference() {
     return reference_ == null
@@ -418,7 +422,9 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
    * &lt;code&gt;job_id&lt;/code&gt;.
    * </pre>
    *
-   * <code>.google.cloud.dataproc.v1.JobReference reference = 1;</code>
+   * <code>
+   * .google.cloud.dataproc.v1.JobReference reference = 1 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   public com.google.cloud.dataproc.v1.JobReferenceOrBuilder getReferenceOrBuilder() {
     return getReference();
@@ -434,7 +440,9 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
    * run the job.
    * </pre>
    *
-   * <code>.google.cloud.dataproc.v1.JobPlacement placement = 2;</code>
+   * <code>
+   * .google.cloud.dataproc.v1.JobPlacement placement = 2 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   public boolean hasPlacement() {
     return placement_ != null;
@@ -447,7 +455,9 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
    * run the job.
    * </pre>
    *
-   * <code>.google.cloud.dataproc.v1.JobPlacement placement = 2;</code>
+   * <code>
+   * .google.cloud.dataproc.v1.JobPlacement placement = 2 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   public com.google.cloud.dataproc.v1.JobPlacement getPlacement() {
     return placement_ == null
@@ -462,7 +472,9 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
    * run the job.
    * </pre>
    *
-   * <code>.google.cloud.dataproc.v1.JobPlacement placement = 2;</code>
+   * <code>
+   * .google.cloud.dataproc.v1.JobPlacement placement = 2 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   public com.google.cloud.dataproc.v1.JobPlacementOrBuilder getPlacementOrBuilder() {
     return getPlacement();
@@ -743,7 +755,9 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
    * and &lt;code&gt;yarn_applications&lt;/code&gt; fields.
    * </pre>
    *
-   * <code>.google.cloud.dataproc.v1.JobStatus status = 8;</code>
+   * <code>
+   * .google.cloud.dataproc.v1.JobStatus status = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    */
   public boolean hasStatus() {
     return status_ != null;
@@ -757,7 +771,9 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
    * and &lt;code&gt;yarn_applications&lt;/code&gt; fields.
    * </pre>
    *
-   * <code>.google.cloud.dataproc.v1.JobStatus status = 8;</code>
+   * <code>
+   * .google.cloud.dataproc.v1.JobStatus status = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    */
   public com.google.cloud.dataproc.v1.JobStatus getStatus() {
     return status_ == null ? com.google.cloud.dataproc.v1.JobStatus.getDefaultInstance() : status_;
@@ -771,7 +787,9 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
    * and &lt;code&gt;yarn_applications&lt;/code&gt; fields.
    * </pre>
    *
-   * <code>.google.cloud.dataproc.v1.JobStatus status = 8;</code>
+   * <code>
+   * .google.cloud.dataproc.v1.JobStatus status = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    */
   public com.google.cloud.dataproc.v1.JobStatusOrBuilder getStatusOrBuilder() {
     return getStatus();
@@ -786,7 +804,9 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
    * Output only. The previous job status.
    * </pre>
    *
-   * <code>repeated .google.cloud.dataproc.v1.JobStatus status_history = 13;</code>
+   * <code>
+   * repeated .google.cloud.dataproc.v1.JobStatus status_history = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    */
   public java.util.List<com.google.cloud.dataproc.v1.JobStatus> getStatusHistoryList() {
     return statusHistory_;
@@ -798,7 +818,9 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
    * Output only. The previous job status.
    * </pre>
    *
-   * <code>repeated .google.cloud.dataproc.v1.JobStatus status_history = 13;</code>
+   * <code>
+   * repeated .google.cloud.dataproc.v1.JobStatus status_history = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    */
   public java.util.List<? extends com.google.cloud.dataproc.v1.JobStatusOrBuilder>
       getStatusHistoryOrBuilderList() {
@@ -811,7 +833,9 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
    * Output only. The previous job status.
    * </pre>
    *
-   * <code>repeated .google.cloud.dataproc.v1.JobStatus status_history = 13;</code>
+   * <code>
+   * repeated .google.cloud.dataproc.v1.JobStatus status_history = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    */
   public int getStatusHistoryCount() {
     return statusHistory_.size();
@@ -823,7 +847,9 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
    * Output only. The previous job status.
    * </pre>
    *
-   * <code>repeated .google.cloud.dataproc.v1.JobStatus status_history = 13;</code>
+   * <code>
+   * repeated .google.cloud.dataproc.v1.JobStatus status_history = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    */
   public com.google.cloud.dataproc.v1.JobStatus getStatusHistory(int index) {
     return statusHistory_.get(index);
@@ -835,7 +861,9 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
    * Output only. The previous job status.
    * </pre>
    *
-   * <code>repeated .google.cloud.dataproc.v1.JobStatus status_history = 13;</code>
+   * <code>
+   * repeated .google.cloud.dataproc.v1.JobStatus status_history = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    */
   public com.google.cloud.dataproc.v1.JobStatusOrBuilder getStatusHistoryOrBuilder(int index) {
     return statusHistory_.get(index);
@@ -852,7 +880,9 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
    * may be changed before final release.
    * </pre>
    *
-   * <code>repeated .google.cloud.dataproc.v1.YarnApplication yarn_applications = 9;</code>
+   * <code>
+   * repeated .google.cloud.dataproc.v1.YarnApplication yarn_applications = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    */
   public java.util.List<com.google.cloud.dataproc.v1.YarnApplication> getYarnApplicationsList() {
     return yarnApplications_;
@@ -866,7 +896,9 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
    * may be changed before final release.
    * </pre>
    *
-   * <code>repeated .google.cloud.dataproc.v1.YarnApplication yarn_applications = 9;</code>
+   * <code>
+   * repeated .google.cloud.dataproc.v1.YarnApplication yarn_applications = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    */
   public java.util.List<? extends com.google.cloud.dataproc.v1.YarnApplicationOrBuilder>
       getYarnApplicationsOrBuilderList() {
@@ -881,7 +913,9 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
    * may be changed before final release.
    * </pre>
    *
-   * <code>repeated .google.cloud.dataproc.v1.YarnApplication yarn_applications = 9;</code>
+   * <code>
+   * repeated .google.cloud.dataproc.v1.YarnApplication yarn_applications = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    */
   public int getYarnApplicationsCount() {
     return yarnApplications_.size();
@@ -895,7 +929,9 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
    * may be changed before final release.
    * </pre>
    *
-   * <code>repeated .google.cloud.dataproc.v1.YarnApplication yarn_applications = 9;</code>
+   * <code>
+   * repeated .google.cloud.dataproc.v1.YarnApplication yarn_applications = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    */
   public com.google.cloud.dataproc.v1.YarnApplication getYarnApplications(int index) {
     return yarnApplications_.get(index);
@@ -909,7 +945,9 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
    * may be changed before final release.
    * </pre>
    *
-   * <code>repeated .google.cloud.dataproc.v1.YarnApplication yarn_applications = 9;</code>
+   * <code>
+   * repeated .google.cloud.dataproc.v1.YarnApplication yarn_applications = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    */
   public com.google.cloud.dataproc.v1.YarnApplicationOrBuilder getYarnApplicationsOrBuilder(
       int index) {
@@ -926,7 +964,8 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
    * driver program.
    * </pre>
    *
-   * <code>string driver_output_resource_uri = 17;</code>
+   * <code>string driver_output_resource_uri = 17 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    */
   public java.lang.String getDriverOutputResourceUri() {
     java.lang.Object ref = driverOutputResourceUri_;
@@ -947,7 +986,8 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
    * driver program.
    * </pre>
    *
-   * <code>string driver_output_resource_uri = 17;</code>
+   * <code>string driver_output_resource_uri = 17 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    */
   public com.google.protobuf.ByteString getDriverOutputResourceUriBytes() {
     java.lang.Object ref = driverOutputResourceUri_;
@@ -972,7 +1012,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
    * control files may be placed in the same location as `driver_output_uri`.
    * </pre>
    *
-   * <code>string driver_control_files_uri = 15;</code>
+   * <code>string driver_control_files_uri = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    */
   public java.lang.String getDriverControlFilesUri() {
     java.lang.Object ref = driverControlFilesUri_;
@@ -994,7 +1034,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
    * control files may be placed in the same location as `driver_output_uri`.
    * </pre>
    *
-   * <code>string driver_control_files_uri = 15;</code>
+   * <code>string driver_control_files_uri = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    */
   public com.google.protobuf.ByteString getDriverControlFilesUriBytes() {
     java.lang.Object ref = driverControlFilesUri_;
@@ -1046,7 +1086,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
    * associated with a job.
    * </pre>
    *
-   * <code>map&lt;string, string&gt; labels = 18;</code>
+   * <code>map&lt;string, string&gt; labels = 18 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   public boolean containsLabels(java.lang.String key) {
     if (key == null) {
@@ -1072,7 +1112,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
    * associated with a job.
    * </pre>
    *
-   * <code>map&lt;string, string&gt; labels = 18;</code>
+   * <code>map&lt;string, string&gt; labels = 18 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   public java.util.Map<java.lang.String, java.lang.String> getLabelsMap() {
     return internalGetLabels().getMap();
@@ -1090,7 +1130,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
    * associated with a job.
    * </pre>
    *
-   * <code>map&lt;string, string&gt; labels = 18;</code>
+   * <code>map&lt;string, string&gt; labels = 18 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   public java.lang.String getLabelsOrDefault(java.lang.String key, java.lang.String defaultValue) {
     if (key == null) {
@@ -1112,7 +1152,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
    * associated with a job.
    * </pre>
    *
-   * <code>map&lt;string, string&gt; labels = 18;</code>
+   * <code>map&lt;string, string&gt; labels = 18 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   public java.lang.String getLabelsOrThrow(java.lang.String key) {
     if (key == null) {
@@ -1134,7 +1174,9 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
    * Optional. Job scheduling configuration.
    * </pre>
    *
-   * <code>.google.cloud.dataproc.v1.JobScheduling scheduling = 20;</code>
+   * <code>
+   * .google.cloud.dataproc.v1.JobScheduling scheduling = 20 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   public boolean hasScheduling() {
     return scheduling_ != null;
@@ -1146,7 +1188,9 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
    * Optional. Job scheduling configuration.
    * </pre>
    *
-   * <code>.google.cloud.dataproc.v1.JobScheduling scheduling = 20;</code>
+   * <code>
+   * .google.cloud.dataproc.v1.JobScheduling scheduling = 20 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   public com.google.cloud.dataproc.v1.JobScheduling getScheduling() {
     return scheduling_ == null
@@ -1160,7 +1204,9 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
    * Optional. Job scheduling configuration.
    * </pre>
    *
-   * <code>.google.cloud.dataproc.v1.JobScheduling scheduling = 20;</code>
+   * <code>
+   * .google.cloud.dataproc.v1.JobScheduling scheduling = 20 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   public com.google.cloud.dataproc.v1.JobSchedulingOrBuilder getSchedulingOrBuilder() {
     return getScheduling();
@@ -1177,7 +1223,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
    * may be reused over time.
    * </pre>
    *
-   * <code>string job_uuid = 22;</code>
+   * <code>string job_uuid = 22 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    */
   public java.lang.String getJobUuid() {
     java.lang.Object ref = jobUuid_;
@@ -1199,7 +1245,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
    * may be reused over time.
    * </pre>
    *
-   * <code>string job_uuid = 22;</code>
+   * <code>string job_uuid = 22 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    */
   public com.google.protobuf.ByteString getJobUuidBytes() {
     java.lang.Object ref = jobUuid_;
@@ -2036,7 +2082,9 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      * &lt;code&gt;job_id&lt;/code&gt;.
      * </pre>
      *
-     * <code>.google.cloud.dataproc.v1.JobReference reference = 1;</code>
+     * <code>
+     * .google.cloud.dataproc.v1.JobReference reference = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public boolean hasReference() {
       return referenceBuilder_ != null || reference_ != null;
@@ -2051,7 +2099,9 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      * &lt;code&gt;job_id&lt;/code&gt;.
      * </pre>
      *
-     * <code>.google.cloud.dataproc.v1.JobReference reference = 1;</code>
+     * <code>
+     * .google.cloud.dataproc.v1.JobReference reference = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public com.google.cloud.dataproc.v1.JobReference getReference() {
       if (referenceBuilder_ == null) {
@@ -2072,7 +2122,9 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      * &lt;code&gt;job_id&lt;/code&gt;.
      * </pre>
      *
-     * <code>.google.cloud.dataproc.v1.JobReference reference = 1;</code>
+     * <code>
+     * .google.cloud.dataproc.v1.JobReference reference = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder setReference(com.google.cloud.dataproc.v1.JobReference value) {
       if (referenceBuilder_ == null) {
@@ -2097,7 +2149,9 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      * &lt;code&gt;job_id&lt;/code&gt;.
      * </pre>
      *
-     * <code>.google.cloud.dataproc.v1.JobReference reference = 1;</code>
+     * <code>
+     * .google.cloud.dataproc.v1.JobReference reference = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder setReference(com.google.cloud.dataproc.v1.JobReference.Builder builderForValue) {
       if (referenceBuilder_ == null) {
@@ -2119,7 +2173,9 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      * &lt;code&gt;job_id&lt;/code&gt;.
      * </pre>
      *
-     * <code>.google.cloud.dataproc.v1.JobReference reference = 1;</code>
+     * <code>
+     * .google.cloud.dataproc.v1.JobReference reference = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder mergeReference(com.google.cloud.dataproc.v1.JobReference value) {
       if (referenceBuilder_ == null) {
@@ -2148,7 +2204,9 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      * &lt;code&gt;job_id&lt;/code&gt;.
      * </pre>
      *
-     * <code>.google.cloud.dataproc.v1.JobReference reference = 1;</code>
+     * <code>
+     * .google.cloud.dataproc.v1.JobReference reference = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder clearReference() {
       if (referenceBuilder_ == null) {
@@ -2171,7 +2229,9 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      * &lt;code&gt;job_id&lt;/code&gt;.
      * </pre>
      *
-     * <code>.google.cloud.dataproc.v1.JobReference reference = 1;</code>
+     * <code>
+     * .google.cloud.dataproc.v1.JobReference reference = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public com.google.cloud.dataproc.v1.JobReference.Builder getReferenceBuilder() {
 
@@ -2188,7 +2248,9 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      * &lt;code&gt;job_id&lt;/code&gt;.
      * </pre>
      *
-     * <code>.google.cloud.dataproc.v1.JobReference reference = 1;</code>
+     * <code>
+     * .google.cloud.dataproc.v1.JobReference reference = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public com.google.cloud.dataproc.v1.JobReferenceOrBuilder getReferenceOrBuilder() {
       if (referenceBuilder_ != null) {
@@ -2209,7 +2271,9 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      * &lt;code&gt;job_id&lt;/code&gt;.
      * </pre>
      *
-     * <code>.google.cloud.dataproc.v1.JobReference reference = 1;</code>
+     * <code>
+     * .google.cloud.dataproc.v1.JobReference reference = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.dataproc.v1.JobReference,
@@ -2242,7 +2306,9 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      * run the job.
      * </pre>
      *
-     * <code>.google.cloud.dataproc.v1.JobPlacement placement = 2;</code>
+     * <code>
+     * .google.cloud.dataproc.v1.JobPlacement placement = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public boolean hasPlacement() {
       return placementBuilder_ != null || placement_ != null;
@@ -2255,7 +2321,9 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      * run the job.
      * </pre>
      *
-     * <code>.google.cloud.dataproc.v1.JobPlacement placement = 2;</code>
+     * <code>
+     * .google.cloud.dataproc.v1.JobPlacement placement = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public com.google.cloud.dataproc.v1.JobPlacement getPlacement() {
       if (placementBuilder_ == null) {
@@ -2274,7 +2342,9 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      * run the job.
      * </pre>
      *
-     * <code>.google.cloud.dataproc.v1.JobPlacement placement = 2;</code>
+     * <code>
+     * .google.cloud.dataproc.v1.JobPlacement placement = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder setPlacement(com.google.cloud.dataproc.v1.JobPlacement value) {
       if (placementBuilder_ == null) {
@@ -2297,7 +2367,9 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      * run the job.
      * </pre>
      *
-     * <code>.google.cloud.dataproc.v1.JobPlacement placement = 2;</code>
+     * <code>
+     * .google.cloud.dataproc.v1.JobPlacement placement = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder setPlacement(com.google.cloud.dataproc.v1.JobPlacement.Builder builderForValue) {
       if (placementBuilder_ == null) {
@@ -2317,7 +2389,9 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      * run the job.
      * </pre>
      *
-     * <code>.google.cloud.dataproc.v1.JobPlacement placement = 2;</code>
+     * <code>
+     * .google.cloud.dataproc.v1.JobPlacement placement = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder mergePlacement(com.google.cloud.dataproc.v1.JobPlacement value) {
       if (placementBuilder_ == null) {
@@ -2344,7 +2418,9 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      * run the job.
      * </pre>
      *
-     * <code>.google.cloud.dataproc.v1.JobPlacement placement = 2;</code>
+     * <code>
+     * .google.cloud.dataproc.v1.JobPlacement placement = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder clearPlacement() {
       if (placementBuilder_ == null) {
@@ -2365,7 +2441,9 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      * run the job.
      * </pre>
      *
-     * <code>.google.cloud.dataproc.v1.JobPlacement placement = 2;</code>
+     * <code>
+     * .google.cloud.dataproc.v1.JobPlacement placement = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public com.google.cloud.dataproc.v1.JobPlacement.Builder getPlacementBuilder() {
 
@@ -2380,7 +2458,9 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      * run the job.
      * </pre>
      *
-     * <code>.google.cloud.dataproc.v1.JobPlacement placement = 2;</code>
+     * <code>
+     * .google.cloud.dataproc.v1.JobPlacement placement = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public com.google.cloud.dataproc.v1.JobPlacementOrBuilder getPlacementOrBuilder() {
       if (placementBuilder_ != null) {
@@ -2399,7 +2479,9 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      * run the job.
      * </pre>
      *
-     * <code>.google.cloud.dataproc.v1.JobPlacement placement = 2;</code>
+     * <code>
+     * .google.cloud.dataproc.v1.JobPlacement placement = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.dataproc.v1.JobPlacement,
@@ -3636,7 +3718,9 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      * and &lt;code&gt;yarn_applications&lt;/code&gt; fields.
      * </pre>
      *
-     * <code>.google.cloud.dataproc.v1.JobStatus status = 8;</code>
+     * <code>
+     * .google.cloud.dataproc.v1.JobStatus status = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public boolean hasStatus() {
       return statusBuilder_ != null || status_ != null;
@@ -3650,7 +3734,9 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      * and &lt;code&gt;yarn_applications&lt;/code&gt; fields.
      * </pre>
      *
-     * <code>.google.cloud.dataproc.v1.JobStatus status = 8;</code>
+     * <code>
+     * .google.cloud.dataproc.v1.JobStatus status = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public com.google.cloud.dataproc.v1.JobStatus getStatus() {
       if (statusBuilder_ == null) {
@@ -3670,7 +3756,9 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      * and &lt;code&gt;yarn_applications&lt;/code&gt; fields.
      * </pre>
      *
-     * <code>.google.cloud.dataproc.v1.JobStatus status = 8;</code>
+     * <code>
+     * .google.cloud.dataproc.v1.JobStatus status = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public Builder setStatus(com.google.cloud.dataproc.v1.JobStatus value) {
       if (statusBuilder_ == null) {
@@ -3694,7 +3782,9 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      * and &lt;code&gt;yarn_applications&lt;/code&gt; fields.
      * </pre>
      *
-     * <code>.google.cloud.dataproc.v1.JobStatus status = 8;</code>
+     * <code>
+     * .google.cloud.dataproc.v1.JobStatus status = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public Builder setStatus(com.google.cloud.dataproc.v1.JobStatus.Builder builderForValue) {
       if (statusBuilder_ == null) {
@@ -3715,7 +3805,9 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      * and &lt;code&gt;yarn_applications&lt;/code&gt; fields.
      * </pre>
      *
-     * <code>.google.cloud.dataproc.v1.JobStatus status = 8;</code>
+     * <code>
+     * .google.cloud.dataproc.v1.JobStatus status = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public Builder mergeStatus(com.google.cloud.dataproc.v1.JobStatus value) {
       if (statusBuilder_ == null) {
@@ -3743,7 +3835,9 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      * and &lt;code&gt;yarn_applications&lt;/code&gt; fields.
      * </pre>
      *
-     * <code>.google.cloud.dataproc.v1.JobStatus status = 8;</code>
+     * <code>
+     * .google.cloud.dataproc.v1.JobStatus status = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public Builder clearStatus() {
       if (statusBuilder_ == null) {
@@ -3765,7 +3859,9 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      * and &lt;code&gt;yarn_applications&lt;/code&gt; fields.
      * </pre>
      *
-     * <code>.google.cloud.dataproc.v1.JobStatus status = 8;</code>
+     * <code>
+     * .google.cloud.dataproc.v1.JobStatus status = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public com.google.cloud.dataproc.v1.JobStatus.Builder getStatusBuilder() {
 
@@ -3781,7 +3877,9 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      * and &lt;code&gt;yarn_applications&lt;/code&gt; fields.
      * </pre>
      *
-     * <code>.google.cloud.dataproc.v1.JobStatus status = 8;</code>
+     * <code>
+     * .google.cloud.dataproc.v1.JobStatus status = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public com.google.cloud.dataproc.v1.JobStatusOrBuilder getStatusOrBuilder() {
       if (statusBuilder_ != null) {
@@ -3801,7 +3899,9 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      * and &lt;code&gt;yarn_applications&lt;/code&gt; fields.
      * </pre>
      *
-     * <code>.google.cloud.dataproc.v1.JobStatus status = 8;</code>
+     * <code>
+     * .google.cloud.dataproc.v1.JobStatus status = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.dataproc.v1.JobStatus,
@@ -3844,7 +3944,9 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      * Output only. The previous job status.
      * </pre>
      *
-     * <code>repeated .google.cloud.dataproc.v1.JobStatus status_history = 13;</code>
+     * <code>
+     * repeated .google.cloud.dataproc.v1.JobStatus status_history = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public java.util.List<com.google.cloud.dataproc.v1.JobStatus> getStatusHistoryList() {
       if (statusHistoryBuilder_ == null) {
@@ -3860,7 +3962,9 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      * Output only. The previous job status.
      * </pre>
      *
-     * <code>repeated .google.cloud.dataproc.v1.JobStatus status_history = 13;</code>
+     * <code>
+     * repeated .google.cloud.dataproc.v1.JobStatus status_history = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public int getStatusHistoryCount() {
       if (statusHistoryBuilder_ == null) {
@@ -3876,7 +3980,9 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      * Output only. The previous job status.
      * </pre>
      *
-     * <code>repeated .google.cloud.dataproc.v1.JobStatus status_history = 13;</code>
+     * <code>
+     * repeated .google.cloud.dataproc.v1.JobStatus status_history = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public com.google.cloud.dataproc.v1.JobStatus getStatusHistory(int index) {
       if (statusHistoryBuilder_ == null) {
@@ -3892,7 +3998,9 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      * Output only. The previous job status.
      * </pre>
      *
-     * <code>repeated .google.cloud.dataproc.v1.JobStatus status_history = 13;</code>
+     * <code>
+     * repeated .google.cloud.dataproc.v1.JobStatus status_history = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public Builder setStatusHistory(int index, com.google.cloud.dataproc.v1.JobStatus value) {
       if (statusHistoryBuilder_ == null) {
@@ -3914,7 +4022,9 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      * Output only. The previous job status.
      * </pre>
      *
-     * <code>repeated .google.cloud.dataproc.v1.JobStatus status_history = 13;</code>
+     * <code>
+     * repeated .google.cloud.dataproc.v1.JobStatus status_history = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public Builder setStatusHistory(
         int index, com.google.cloud.dataproc.v1.JobStatus.Builder builderForValue) {
@@ -3934,7 +4044,9 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      * Output only. The previous job status.
      * </pre>
      *
-     * <code>repeated .google.cloud.dataproc.v1.JobStatus status_history = 13;</code>
+     * <code>
+     * repeated .google.cloud.dataproc.v1.JobStatus status_history = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public Builder addStatusHistory(com.google.cloud.dataproc.v1.JobStatus value) {
       if (statusHistoryBuilder_ == null) {
@@ -3956,7 +4068,9 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      * Output only. The previous job status.
      * </pre>
      *
-     * <code>repeated .google.cloud.dataproc.v1.JobStatus status_history = 13;</code>
+     * <code>
+     * repeated .google.cloud.dataproc.v1.JobStatus status_history = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public Builder addStatusHistory(int index, com.google.cloud.dataproc.v1.JobStatus value) {
       if (statusHistoryBuilder_ == null) {
@@ -3978,7 +4092,9 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      * Output only. The previous job status.
      * </pre>
      *
-     * <code>repeated .google.cloud.dataproc.v1.JobStatus status_history = 13;</code>
+     * <code>
+     * repeated .google.cloud.dataproc.v1.JobStatus status_history = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public Builder addStatusHistory(
         com.google.cloud.dataproc.v1.JobStatus.Builder builderForValue) {
@@ -3998,7 +4114,9 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      * Output only. The previous job status.
      * </pre>
      *
-     * <code>repeated .google.cloud.dataproc.v1.JobStatus status_history = 13;</code>
+     * <code>
+     * repeated .google.cloud.dataproc.v1.JobStatus status_history = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public Builder addStatusHistory(
         int index, com.google.cloud.dataproc.v1.JobStatus.Builder builderForValue) {
@@ -4018,7 +4136,9 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      * Output only. The previous job status.
      * </pre>
      *
-     * <code>repeated .google.cloud.dataproc.v1.JobStatus status_history = 13;</code>
+     * <code>
+     * repeated .google.cloud.dataproc.v1.JobStatus status_history = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public Builder addAllStatusHistory(
         java.lang.Iterable<? extends com.google.cloud.dataproc.v1.JobStatus> values) {
@@ -4038,7 +4158,9 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      * Output only. The previous job status.
      * </pre>
      *
-     * <code>repeated .google.cloud.dataproc.v1.JobStatus status_history = 13;</code>
+     * <code>
+     * repeated .google.cloud.dataproc.v1.JobStatus status_history = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public Builder clearStatusHistory() {
       if (statusHistoryBuilder_ == null) {
@@ -4057,7 +4179,9 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      * Output only. The previous job status.
      * </pre>
      *
-     * <code>repeated .google.cloud.dataproc.v1.JobStatus status_history = 13;</code>
+     * <code>
+     * repeated .google.cloud.dataproc.v1.JobStatus status_history = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public Builder removeStatusHistory(int index) {
       if (statusHistoryBuilder_ == null) {
@@ -4076,7 +4200,9 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      * Output only. The previous job status.
      * </pre>
      *
-     * <code>repeated .google.cloud.dataproc.v1.JobStatus status_history = 13;</code>
+     * <code>
+     * repeated .google.cloud.dataproc.v1.JobStatus status_history = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public com.google.cloud.dataproc.v1.JobStatus.Builder getStatusHistoryBuilder(int index) {
       return getStatusHistoryFieldBuilder().getBuilder(index);
@@ -4088,7 +4214,9 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      * Output only. The previous job status.
      * </pre>
      *
-     * <code>repeated .google.cloud.dataproc.v1.JobStatus status_history = 13;</code>
+     * <code>
+     * repeated .google.cloud.dataproc.v1.JobStatus status_history = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public com.google.cloud.dataproc.v1.JobStatusOrBuilder getStatusHistoryOrBuilder(int index) {
       if (statusHistoryBuilder_ == null) {
@@ -4104,7 +4232,9 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      * Output only. The previous job status.
      * </pre>
      *
-     * <code>repeated .google.cloud.dataproc.v1.JobStatus status_history = 13;</code>
+     * <code>
+     * repeated .google.cloud.dataproc.v1.JobStatus status_history = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public java.util.List<? extends com.google.cloud.dataproc.v1.JobStatusOrBuilder>
         getStatusHistoryOrBuilderList() {
@@ -4121,7 +4251,9 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      * Output only. The previous job status.
      * </pre>
      *
-     * <code>repeated .google.cloud.dataproc.v1.JobStatus status_history = 13;</code>
+     * <code>
+     * repeated .google.cloud.dataproc.v1.JobStatus status_history = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public com.google.cloud.dataproc.v1.JobStatus.Builder addStatusHistoryBuilder() {
       return getStatusHistoryFieldBuilder()
@@ -4134,7 +4266,9 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      * Output only. The previous job status.
      * </pre>
      *
-     * <code>repeated .google.cloud.dataproc.v1.JobStatus status_history = 13;</code>
+     * <code>
+     * repeated .google.cloud.dataproc.v1.JobStatus status_history = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public com.google.cloud.dataproc.v1.JobStatus.Builder addStatusHistoryBuilder(int index) {
       return getStatusHistoryFieldBuilder()
@@ -4147,7 +4281,9 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      * Output only. The previous job status.
      * </pre>
      *
-     * <code>repeated .google.cloud.dataproc.v1.JobStatus status_history = 13;</code>
+     * <code>
+     * repeated .google.cloud.dataproc.v1.JobStatus status_history = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public java.util.List<com.google.cloud.dataproc.v1.JobStatus.Builder>
         getStatusHistoryBuilderList() {
@@ -4201,7 +4337,9 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      * may be changed before final release.
      * </pre>
      *
-     * <code>repeated .google.cloud.dataproc.v1.YarnApplication yarn_applications = 9;</code>
+     * <code>
+     * repeated .google.cloud.dataproc.v1.YarnApplication yarn_applications = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public java.util.List<com.google.cloud.dataproc.v1.YarnApplication> getYarnApplicationsList() {
       if (yarnApplicationsBuilder_ == null) {
@@ -4219,7 +4357,9 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      * may be changed before final release.
      * </pre>
      *
-     * <code>repeated .google.cloud.dataproc.v1.YarnApplication yarn_applications = 9;</code>
+     * <code>
+     * repeated .google.cloud.dataproc.v1.YarnApplication yarn_applications = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public int getYarnApplicationsCount() {
       if (yarnApplicationsBuilder_ == null) {
@@ -4237,7 +4377,9 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      * may be changed before final release.
      * </pre>
      *
-     * <code>repeated .google.cloud.dataproc.v1.YarnApplication yarn_applications = 9;</code>
+     * <code>
+     * repeated .google.cloud.dataproc.v1.YarnApplication yarn_applications = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public com.google.cloud.dataproc.v1.YarnApplication getYarnApplications(int index) {
       if (yarnApplicationsBuilder_ == null) {
@@ -4255,7 +4397,9 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      * may be changed before final release.
      * </pre>
      *
-     * <code>repeated .google.cloud.dataproc.v1.YarnApplication yarn_applications = 9;</code>
+     * <code>
+     * repeated .google.cloud.dataproc.v1.YarnApplication yarn_applications = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public Builder setYarnApplications(
         int index, com.google.cloud.dataproc.v1.YarnApplication value) {
@@ -4280,7 +4424,9 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      * may be changed before final release.
      * </pre>
      *
-     * <code>repeated .google.cloud.dataproc.v1.YarnApplication yarn_applications = 9;</code>
+     * <code>
+     * repeated .google.cloud.dataproc.v1.YarnApplication yarn_applications = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public Builder setYarnApplications(
         int index, com.google.cloud.dataproc.v1.YarnApplication.Builder builderForValue) {
@@ -4302,7 +4448,9 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      * may be changed before final release.
      * </pre>
      *
-     * <code>repeated .google.cloud.dataproc.v1.YarnApplication yarn_applications = 9;</code>
+     * <code>
+     * repeated .google.cloud.dataproc.v1.YarnApplication yarn_applications = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public Builder addYarnApplications(com.google.cloud.dataproc.v1.YarnApplication value) {
       if (yarnApplicationsBuilder_ == null) {
@@ -4326,7 +4474,9 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      * may be changed before final release.
      * </pre>
      *
-     * <code>repeated .google.cloud.dataproc.v1.YarnApplication yarn_applications = 9;</code>
+     * <code>
+     * repeated .google.cloud.dataproc.v1.YarnApplication yarn_applications = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public Builder addYarnApplications(
         int index, com.google.cloud.dataproc.v1.YarnApplication value) {
@@ -4351,7 +4501,9 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      * may be changed before final release.
      * </pre>
      *
-     * <code>repeated .google.cloud.dataproc.v1.YarnApplication yarn_applications = 9;</code>
+     * <code>
+     * repeated .google.cloud.dataproc.v1.YarnApplication yarn_applications = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public Builder addYarnApplications(
         com.google.cloud.dataproc.v1.YarnApplication.Builder builderForValue) {
@@ -4373,7 +4525,9 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      * may be changed before final release.
      * </pre>
      *
-     * <code>repeated .google.cloud.dataproc.v1.YarnApplication yarn_applications = 9;</code>
+     * <code>
+     * repeated .google.cloud.dataproc.v1.YarnApplication yarn_applications = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public Builder addYarnApplications(
         int index, com.google.cloud.dataproc.v1.YarnApplication.Builder builderForValue) {
@@ -4395,7 +4549,9 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      * may be changed before final release.
      * </pre>
      *
-     * <code>repeated .google.cloud.dataproc.v1.YarnApplication yarn_applications = 9;</code>
+     * <code>
+     * repeated .google.cloud.dataproc.v1.YarnApplication yarn_applications = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public Builder addAllYarnApplications(
         java.lang.Iterable<? extends com.google.cloud.dataproc.v1.YarnApplication> values) {
@@ -4417,7 +4573,9 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      * may be changed before final release.
      * </pre>
      *
-     * <code>repeated .google.cloud.dataproc.v1.YarnApplication yarn_applications = 9;</code>
+     * <code>
+     * repeated .google.cloud.dataproc.v1.YarnApplication yarn_applications = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public Builder clearYarnApplications() {
       if (yarnApplicationsBuilder_ == null) {
@@ -4438,7 +4596,9 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      * may be changed before final release.
      * </pre>
      *
-     * <code>repeated .google.cloud.dataproc.v1.YarnApplication yarn_applications = 9;</code>
+     * <code>
+     * repeated .google.cloud.dataproc.v1.YarnApplication yarn_applications = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public Builder removeYarnApplications(int index) {
       if (yarnApplicationsBuilder_ == null) {
@@ -4459,7 +4619,9 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      * may be changed before final release.
      * </pre>
      *
-     * <code>repeated .google.cloud.dataproc.v1.YarnApplication yarn_applications = 9;</code>
+     * <code>
+     * repeated .google.cloud.dataproc.v1.YarnApplication yarn_applications = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public com.google.cloud.dataproc.v1.YarnApplication.Builder getYarnApplicationsBuilder(
         int index) {
@@ -4474,7 +4636,9 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      * may be changed before final release.
      * </pre>
      *
-     * <code>repeated .google.cloud.dataproc.v1.YarnApplication yarn_applications = 9;</code>
+     * <code>
+     * repeated .google.cloud.dataproc.v1.YarnApplication yarn_applications = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public com.google.cloud.dataproc.v1.YarnApplicationOrBuilder getYarnApplicationsOrBuilder(
         int index) {
@@ -4493,7 +4657,9 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      * may be changed before final release.
      * </pre>
      *
-     * <code>repeated .google.cloud.dataproc.v1.YarnApplication yarn_applications = 9;</code>
+     * <code>
+     * repeated .google.cloud.dataproc.v1.YarnApplication yarn_applications = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public java.util.List<? extends com.google.cloud.dataproc.v1.YarnApplicationOrBuilder>
         getYarnApplicationsOrBuilderList() {
@@ -4512,7 +4678,9 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      * may be changed before final release.
      * </pre>
      *
-     * <code>repeated .google.cloud.dataproc.v1.YarnApplication yarn_applications = 9;</code>
+     * <code>
+     * repeated .google.cloud.dataproc.v1.YarnApplication yarn_applications = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public com.google.cloud.dataproc.v1.YarnApplication.Builder addYarnApplicationsBuilder() {
       return getYarnApplicationsFieldBuilder()
@@ -4527,7 +4695,9 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      * may be changed before final release.
      * </pre>
      *
-     * <code>repeated .google.cloud.dataproc.v1.YarnApplication yarn_applications = 9;</code>
+     * <code>
+     * repeated .google.cloud.dataproc.v1.YarnApplication yarn_applications = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public com.google.cloud.dataproc.v1.YarnApplication.Builder addYarnApplicationsBuilder(
         int index) {
@@ -4543,7 +4713,9 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      * may be changed before final release.
      * </pre>
      *
-     * <code>repeated .google.cloud.dataproc.v1.YarnApplication yarn_applications = 9;</code>
+     * <code>
+     * repeated .google.cloud.dataproc.v1.YarnApplication yarn_applications = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public java.util.List<com.google.cloud.dataproc.v1.YarnApplication.Builder>
         getYarnApplicationsBuilderList() {
@@ -4579,7 +4751,8 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      * driver program.
      * </pre>
      *
-     * <code>string driver_output_resource_uri = 17;</code>
+     * <code>string driver_output_resource_uri = 17 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public java.lang.String getDriverOutputResourceUri() {
       java.lang.Object ref = driverOutputResourceUri_;
@@ -4600,7 +4773,8 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      * driver program.
      * </pre>
      *
-     * <code>string driver_output_resource_uri = 17;</code>
+     * <code>string driver_output_resource_uri = 17 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public com.google.protobuf.ByteString getDriverOutputResourceUriBytes() {
       java.lang.Object ref = driverOutputResourceUri_;
@@ -4621,7 +4795,8 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      * driver program.
      * </pre>
      *
-     * <code>string driver_output_resource_uri = 17;</code>
+     * <code>string driver_output_resource_uri = 17 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public Builder setDriverOutputResourceUri(java.lang.String value) {
       if (value == null) {
@@ -4640,7 +4815,8 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      * driver program.
      * </pre>
      *
-     * <code>string driver_output_resource_uri = 17;</code>
+     * <code>string driver_output_resource_uri = 17 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public Builder clearDriverOutputResourceUri() {
 
@@ -4656,7 +4832,8 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      * driver program.
      * </pre>
      *
-     * <code>string driver_output_resource_uri = 17;</code>
+     * <code>string driver_output_resource_uri = 17 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public Builder setDriverOutputResourceUriBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -4679,7 +4856,8 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      * control files may be placed in the same location as `driver_output_uri`.
      * </pre>
      *
-     * <code>string driver_control_files_uri = 15;</code>
+     * <code>string driver_control_files_uri = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public java.lang.String getDriverControlFilesUri() {
       java.lang.Object ref = driverControlFilesUri_;
@@ -4701,7 +4879,8 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      * control files may be placed in the same location as `driver_output_uri`.
      * </pre>
      *
-     * <code>string driver_control_files_uri = 15;</code>
+     * <code>string driver_control_files_uri = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public com.google.protobuf.ByteString getDriverControlFilesUriBytes() {
       java.lang.Object ref = driverControlFilesUri_;
@@ -4723,7 +4902,8 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      * control files may be placed in the same location as `driver_output_uri`.
      * </pre>
      *
-     * <code>string driver_control_files_uri = 15;</code>
+     * <code>string driver_control_files_uri = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public Builder setDriverControlFilesUri(java.lang.String value) {
       if (value == null) {
@@ -4743,7 +4923,8 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      * control files may be placed in the same location as `driver_output_uri`.
      * </pre>
      *
-     * <code>string driver_control_files_uri = 15;</code>
+     * <code>string driver_control_files_uri = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public Builder clearDriverControlFilesUri() {
 
@@ -4760,7 +4941,8 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      * control files may be placed in the same location as `driver_output_uri`.
      * </pre>
      *
-     * <code>string driver_control_files_uri = 15;</code>
+     * <code>string driver_control_files_uri = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public Builder setDriverControlFilesUriBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -4811,7 +4993,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      * associated with a job.
      * </pre>
      *
-     * <code>map&lt;string, string&gt; labels = 18;</code>
+     * <code>map&lt;string, string&gt; labels = 18 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public boolean containsLabels(java.lang.String key) {
       if (key == null) {
@@ -4837,7 +5019,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      * associated with a job.
      * </pre>
      *
-     * <code>map&lt;string, string&gt; labels = 18;</code>
+     * <code>map&lt;string, string&gt; labels = 18 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public java.util.Map<java.lang.String, java.lang.String> getLabelsMap() {
       return internalGetLabels().getMap();
@@ -4855,7 +5037,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      * associated with a job.
      * </pre>
      *
-     * <code>map&lt;string, string&gt; labels = 18;</code>
+     * <code>map&lt;string, string&gt; labels = 18 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public java.lang.String getLabelsOrDefault(
         java.lang.String key, java.lang.String defaultValue) {
@@ -4878,7 +5060,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      * associated with a job.
      * </pre>
      *
-     * <code>map&lt;string, string&gt; labels = 18;</code>
+     * <code>map&lt;string, string&gt; labels = 18 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public java.lang.String getLabelsOrThrow(java.lang.String key) {
       if (key == null) {
@@ -4908,7 +5090,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      * associated with a job.
      * </pre>
      *
-     * <code>map&lt;string, string&gt; labels = 18;</code>
+     * <code>map&lt;string, string&gt; labels = 18 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public Builder removeLabels(java.lang.String key) {
       if (key == null) {
@@ -4935,7 +5117,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      * associated with a job.
      * </pre>
      *
-     * <code>map&lt;string, string&gt; labels = 18;</code>
+     * <code>map&lt;string, string&gt; labels = 18 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public Builder putLabels(java.lang.String key, java.lang.String value) {
       if (key == null) {
@@ -4960,7 +5142,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      * associated with a job.
      * </pre>
      *
-     * <code>map&lt;string, string&gt; labels = 18;</code>
+     * <code>map&lt;string, string&gt; labels = 18 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public Builder putAllLabels(java.util.Map<java.lang.String, java.lang.String> values) {
       internalGetMutableLabels().getMutableMap().putAll(values);
@@ -4980,7 +5162,9 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      * Optional. Job scheduling configuration.
      * </pre>
      *
-     * <code>.google.cloud.dataproc.v1.JobScheduling scheduling = 20;</code>
+     * <code>
+     * .google.cloud.dataproc.v1.JobScheduling scheduling = 20 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public boolean hasScheduling() {
       return schedulingBuilder_ != null || scheduling_ != null;
@@ -4992,7 +5176,9 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      * Optional. Job scheduling configuration.
      * </pre>
      *
-     * <code>.google.cloud.dataproc.v1.JobScheduling scheduling = 20;</code>
+     * <code>
+     * .google.cloud.dataproc.v1.JobScheduling scheduling = 20 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public com.google.cloud.dataproc.v1.JobScheduling getScheduling() {
       if (schedulingBuilder_ == null) {
@@ -5010,7 +5196,9 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      * Optional. Job scheduling configuration.
      * </pre>
      *
-     * <code>.google.cloud.dataproc.v1.JobScheduling scheduling = 20;</code>
+     * <code>
+     * .google.cloud.dataproc.v1.JobScheduling scheduling = 20 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder setScheduling(com.google.cloud.dataproc.v1.JobScheduling value) {
       if (schedulingBuilder_ == null) {
@@ -5032,7 +5220,9 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      * Optional. Job scheduling configuration.
      * </pre>
      *
-     * <code>.google.cloud.dataproc.v1.JobScheduling scheduling = 20;</code>
+     * <code>
+     * .google.cloud.dataproc.v1.JobScheduling scheduling = 20 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder setScheduling(
         com.google.cloud.dataproc.v1.JobScheduling.Builder builderForValue) {
@@ -5052,7 +5242,9 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      * Optional. Job scheduling configuration.
      * </pre>
      *
-     * <code>.google.cloud.dataproc.v1.JobScheduling scheduling = 20;</code>
+     * <code>
+     * .google.cloud.dataproc.v1.JobScheduling scheduling = 20 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder mergeScheduling(com.google.cloud.dataproc.v1.JobScheduling value) {
       if (schedulingBuilder_ == null) {
@@ -5078,7 +5270,9 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      * Optional. Job scheduling configuration.
      * </pre>
      *
-     * <code>.google.cloud.dataproc.v1.JobScheduling scheduling = 20;</code>
+     * <code>
+     * .google.cloud.dataproc.v1.JobScheduling scheduling = 20 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder clearScheduling() {
       if (schedulingBuilder_ == null) {
@@ -5098,7 +5292,9 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      * Optional. Job scheduling configuration.
      * </pre>
      *
-     * <code>.google.cloud.dataproc.v1.JobScheduling scheduling = 20;</code>
+     * <code>
+     * .google.cloud.dataproc.v1.JobScheduling scheduling = 20 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public com.google.cloud.dataproc.v1.JobScheduling.Builder getSchedulingBuilder() {
 
@@ -5112,7 +5308,9 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      * Optional. Job scheduling configuration.
      * </pre>
      *
-     * <code>.google.cloud.dataproc.v1.JobScheduling scheduling = 20;</code>
+     * <code>
+     * .google.cloud.dataproc.v1.JobScheduling scheduling = 20 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public com.google.cloud.dataproc.v1.JobSchedulingOrBuilder getSchedulingOrBuilder() {
       if (schedulingBuilder_ != null) {
@@ -5130,7 +5328,9 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      * Optional. Job scheduling configuration.
      * </pre>
      *
-     * <code>.google.cloud.dataproc.v1.JobScheduling scheduling = 20;</code>
+     * <code>
+     * .google.cloud.dataproc.v1.JobScheduling scheduling = 20 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.dataproc.v1.JobScheduling,
@@ -5159,7 +5359,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      * may be reused over time.
      * </pre>
      *
-     * <code>string job_uuid = 22;</code>
+     * <code>string job_uuid = 22 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     public java.lang.String getJobUuid() {
       java.lang.Object ref = jobUuid_;
@@ -5181,7 +5381,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      * may be reused over time.
      * </pre>
      *
-     * <code>string job_uuid = 22;</code>
+     * <code>string job_uuid = 22 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     public com.google.protobuf.ByteString getJobUuidBytes() {
       java.lang.Object ref = jobUuid_;
@@ -5203,7 +5403,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      * may be reused over time.
      * </pre>
      *
-     * <code>string job_uuid = 22;</code>
+     * <code>string job_uuid = 22 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     public Builder setJobUuid(java.lang.String value) {
       if (value == null) {
@@ -5223,7 +5423,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      * may be reused over time.
      * </pre>
      *
-     * <code>string job_uuid = 22;</code>
+     * <code>string job_uuid = 22 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     public Builder clearJobUuid() {
 
@@ -5240,7 +5440,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      * may be reused over time.
      * </pre>
      *
-     * <code>string job_uuid = 22;</code>
+     * <code>string job_uuid = 22 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     public Builder setJobUuidBytes(com.google.protobuf.ByteString value) {
       if (value == null) {

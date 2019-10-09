@@ -15,7 +15,9 @@ public interface WorkflowGraphOrBuilder
    * Output only. The workflow nodes.
    * </pre>
    *
-   * <code>repeated .google.cloud.dataproc.v1.WorkflowNode nodes = 1;</code>
+   * <code>
+   * repeated .google.cloud.dataproc.v1.WorkflowNode nodes = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    */
   java.util.List<com.google.cloud.dataproc.v1.WorkflowNode> getNodesList();
   /**
@@ -25,7 +27,9 @@ public interface WorkflowGraphOrBuilder
    * Output only. The workflow nodes.
    * </pre>
    *
-   * <code>repeated .google.cloud.dataproc.v1.WorkflowNode nodes = 1;</code>
+   * <code>
+   * repeated .google.cloud.dataproc.v1.WorkflowNode nodes = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    */
   com.google.cloud.dataproc.v1.WorkflowNode getNodes(int index);
   /**
@@ -35,7 +39,9 @@ public interface WorkflowGraphOrBuilder
    * Output only. The workflow nodes.
    * </pre>
    *
-   * <code>repeated .google.cloud.dataproc.v1.WorkflowNode nodes = 1;</code>
+   * <code>
+   * repeated .google.cloud.dataproc.v1.WorkflowNode nodes = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    */
   int getNodesCount();
   /**
@@ -45,7 +51,9 @@ public interface WorkflowGraphOrBuilder
    * Output only. The workflow nodes.
    * </pre>
    *
-   * <code>repeated .google.cloud.dataproc.v1.WorkflowNode nodes = 1;</code>
+   * <code>
+   * repeated .google.cloud.dataproc.v1.WorkflowNode nodes = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    */
   java.util.List<? extends com.google.cloud.dataproc.v1.WorkflowNodeOrBuilder>
       getNodesOrBuilderList();
@@ -56,7 +64,9 @@ public interface WorkflowGraphOrBuilder
    * Output only. The workflow nodes.
    * </pre>
    *
-   * <code>repeated .google.cloud.dataproc.v1.WorkflowNode nodes = 1;</code>
+   * <code>
+   * repeated .google.cloud.dataproc.v1.WorkflowNode nodes = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    */
   com.google.cloud.dataproc.v1.WorkflowNodeOrBuilder getNodesOrBuilder(int index);
 }

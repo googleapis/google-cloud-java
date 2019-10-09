@@ -16,7 +16,7 @@ public interface DeleteClusterRequestOrBuilder
    * belongs to.
    * </pre>
    *
-   * <code>string project_id = 1;</code>
+   * <code>string project_id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   java.lang.String getProjectId();
   /**
@@ -27,7 +27,7 @@ public interface DeleteClusterRequestOrBuilder
    * belongs to.
    * </pre>
    *
-   * <code>string project_id = 1;</code>
+   * <code>string project_id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   com.google.protobuf.ByteString getProjectIdBytes();
 
@@ -38,7 +38,7 @@ public interface DeleteClusterRequestOrBuilder
    * Required. The Cloud Dataproc region in which to handle the request.
    * </pre>
    *
-   * <code>string region = 3;</code>
+   * <code>string region = 3 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   java.lang.String getRegion();
   /**
@@ -48,7 +48,7 @@ public interface DeleteClusterRequestOrBuilder
    * Required. The Cloud Dataproc region in which to handle the request.
    * </pre>
    *
-   * <code>string region = 3;</code>
+   * <code>string region = 3 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   com.google.protobuf.ByteString getRegionBytes();
 
@@ -59,7 +59,7 @@ public interface DeleteClusterRequestOrBuilder
    * Required. The cluster name.
    * </pre>
    *
-   * <code>string cluster_name = 2;</code>
+   * <code>string cluster_name = 2 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   java.lang.String getClusterName();
   /**
@@ -69,7 +69,7 @@ public interface DeleteClusterRequestOrBuilder
    * Required. The cluster name.
    * </pre>
    *
-   * <code>string cluster_name = 2;</code>
+   * <code>string cluster_name = 2 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   com.google.protobuf.ByteString getClusterNameBytes();
 
@@ -81,7 +81,7 @@ public interface DeleteClusterRequestOrBuilder
    * (with error NOT_FOUND) if cluster with specified UUID does not exist.
    * </pre>
    *
-   * <code>string cluster_uuid = 4;</code>
+   * <code>string cluster_uuid = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   java.lang.String getClusterUuid();
   /**
@@ -92,7 +92,7 @@ public interface DeleteClusterRequestOrBuilder
    * (with error NOT_FOUND) if cluster with specified UUID does not exist.
    * </pre>
    *
-   * <code>string cluster_uuid = 4;</code>
+   * <code>string cluster_uuid = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   com.google.protobuf.ByteString getClusterUuidBytes();
 
@@ -111,7 +111,7 @@ public interface DeleteClusterRequestOrBuilder
    * underscores (_), and hyphens (-). The maximum length is 40 characters.
    * </pre>
    *
-   * <code>string request_id = 5;</code>
+   * <code>string request_id = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   java.lang.String getRequestId();
   /**
@@ -129,7 +129,7 @@ public interface DeleteClusterRequestOrBuilder
    * underscores (_), and hyphens (-). The maximum length is 40 characters.
    * </pre>
    *
-   * <code>string request_id = 5;</code>
+   * <code>string request_id = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   com.google.protobuf.ByteString getRequestIdBytes();
 }

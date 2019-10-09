@@ -17,7 +17,7 @@ public interface RegexValidationOrBuilder
    * matches are not sufficient).
    * </pre>
    *
-   * <code>repeated string regexes = 1;</code>
+   * <code>repeated string regexes = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   java.util.List<java.lang.String> getRegexesList();
   /**
@@ -29,7 +29,7 @@ public interface RegexValidationOrBuilder
    * matches are not sufficient).
    * </pre>
    *
-   * <code>repeated string regexes = 1;</code>
+   * <code>repeated string regexes = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   int getRegexesCount();
   /**
@@ -41,7 +41,7 @@ public interface RegexValidationOrBuilder
    * matches are not sufficient).
    * </pre>
    *
-   * <code>repeated string regexes = 1;</code>
+   * <code>repeated string regexes = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   java.lang.String getRegexes(int index);
   /**
@@ -53,7 +53,7 @@ public interface RegexValidationOrBuilder
    * matches are not sufficient).
    * </pre>
    *
-   * <code>repeated string regexes = 1;</code>
+   * <code>repeated string regexes = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   com.google.protobuf.ByteString getRegexesBytes(int index);
 }
