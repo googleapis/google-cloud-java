@@ -163,8 +163,8 @@ public class OsLoginServiceClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param name A reference to the POSIX account to update. POSIX accounts are identified by the
-   *     project ID they are associated with. A reference to the POSIX account is in format
+   * @param name Required. A reference to the POSIX account to update. POSIX accounts are identified
+   *     by the project ID they are associated with. A reference to the POSIX account is in format
    *     `users/{user}/projects/{project}`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -190,8 +190,8 @@ public class OsLoginServiceClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param name A reference to the POSIX account to update. POSIX accounts are identified by the
-   *     project ID they are associated with. A reference to the POSIX account is in format
+   * @param name Required. A reference to the POSIX account to update. POSIX accounts are identified
+   *     by the project ID they are associated with. A reference to the POSIX account is in format
    *     `users/{user}/projects/{project}`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -260,8 +260,8 @@ public class OsLoginServiceClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param name The fingerprint of the public key to update. Public keys are identified by their
-   *     SHA-256 fingerprint. The fingerprint of the public key is in format
+   * @param name Required. The fingerprint of the public key to update. Public keys are identified
+   *     by their SHA-256 fingerprint. The fingerprint of the public key is in format
    *     `users/{user}/sshPublicKeys/{fingerprint}`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -287,8 +287,8 @@ public class OsLoginServiceClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param name The fingerprint of the public key to update. Public keys are identified by their
-   *     SHA-256 fingerprint. The fingerprint of the public key is in format
+   * @param name Required. The fingerprint of the public key to update. Public keys are identified
+   *     by their SHA-256 fingerprint. The fingerprint of the public key is in format
    *     `users/{user}/sshPublicKeys/{fingerprint}`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -358,7 +358,7 @@ public class OsLoginServiceClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param name The unique ID for the user in format `users/{user}`.
+   * @param name Required. The unique ID for the user in format `users/{user}`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final LoginProfile getLoginProfile(UserName name) {
@@ -382,7 +382,7 @@ public class OsLoginServiceClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param name The unique ID for the user in format `users/{user}`.
+   * @param name Required. The unique ID for the user in format `users/{user}`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final LoginProfile getLoginProfile(String name) {
@@ -547,8 +547,8 @@ public class OsLoginServiceClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param parent The unique ID for the user in format `users/{user}`.
-   * @param sshPublicKey The SSH public key and expiration time.
+   * @param parent Required. The unique ID for the user in format `users/{user}`.
+   * @param sshPublicKey Optional. The SSH public key and expiration time.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ImportSshPublicKeyResponse importSshPublicKey(
@@ -577,8 +577,8 @@ public class OsLoginServiceClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param parent The unique ID for the user in format `users/{user}`.
-   * @param sshPublicKey The SSH public key and expiration time.
+   * @param parent Required. The unique ID for the user in format `users/{user}`.
+   * @param sshPublicKey Optional. The SSH public key and expiration time.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ImportSshPublicKeyResponse importSshPublicKey(
@@ -608,8 +608,8 @@ public class OsLoginServiceClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param parent The unique ID for the user in format `users/{user}`.
-   * @param sshPublicKey The SSH public key and expiration time.
+   * @param parent Required. The unique ID for the user in format `users/{user}`.
+   * @param sshPublicKey Optional. The SSH public key and expiration time.
    * @param projectId The project ID of the Google Cloud Platform project.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -641,8 +641,8 @@ public class OsLoginServiceClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param parent The unique ID for the user in format `users/{user}`.
-   * @param sshPublicKey The SSH public key and expiration time.
+   * @param parent Required. The unique ID for the user in format `users/{user}`.
+   * @param sshPublicKey Optional. The SSH public key and expiration time.
    * @param projectId The project ID of the Google Cloud Platform project.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -725,10 +725,10 @@ public class OsLoginServiceClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param name The fingerprint of the public key to update. Public keys are identified by their
-   *     SHA-256 fingerprint. The fingerprint of the public key is in format
+   * @param name Required. The fingerprint of the public key to update. Public keys are identified
+   *     by their SHA-256 fingerprint. The fingerprint of the public key is in format
    *     `users/{user}/sshPublicKeys/{fingerprint}`.
-   * @param sshPublicKey The SSH public key and expiration time.
+   * @param sshPublicKey Required. The SSH public key and expiration time.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final SshPublicKey updateSshPublicKey(FingerprintName name, SshPublicKey sshPublicKey) {
@@ -756,10 +756,10 @@ public class OsLoginServiceClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param name The fingerprint of the public key to update. Public keys are identified by their
-   *     SHA-256 fingerprint. The fingerprint of the public key is in format
+   * @param name Required. The fingerprint of the public key to update. Public keys are identified
+   *     by their SHA-256 fingerprint. The fingerprint of the public key is in format
    *     `users/{user}/sshPublicKeys/{fingerprint}`.
-   * @param sshPublicKey The SSH public key and expiration time.
+   * @param sshPublicKey Required. The SSH public key and expiration time.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final SshPublicKey updateSshPublicKey(String name, SshPublicKey sshPublicKey) {
@@ -785,10 +785,10 @@ public class OsLoginServiceClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param name The fingerprint of the public key to update. Public keys are identified by their
-   *     SHA-256 fingerprint. The fingerprint of the public key is in format
+   * @param name Required. The fingerprint of the public key to update. Public keys are identified
+   *     by their SHA-256 fingerprint. The fingerprint of the public key is in format
    *     `users/{user}/sshPublicKeys/{fingerprint}`.
-   * @param sshPublicKey The SSH public key and expiration time.
+   * @param sshPublicKey Required. The SSH public key and expiration time.
    * @param updateMask Mask to control which fields get updated. Updates all if not present.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -820,10 +820,10 @@ public class OsLoginServiceClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param name The fingerprint of the public key to update. Public keys are identified by their
-   *     SHA-256 fingerprint. The fingerprint of the public key is in format
+   * @param name Required. The fingerprint of the public key to update. Public keys are identified
+   *     by their SHA-256 fingerprint. The fingerprint of the public key is in format
    *     `users/{user}/sshPublicKeys/{fingerprint}`.
-   * @param sshPublicKey The SSH public key and expiration time.
+   * @param sshPublicKey Required. The SSH public key and expiration time.
    * @param updateMask Mask to control which fields get updated. Updates all if not present.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */

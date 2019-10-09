@@ -32,7 +32,7 @@ import javax.annotation.Generated;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS
 /**
- * Base stub class for Google Cloud OS Login API.
+ * Base stub class for Cloud OS Login API.
  *
  * <p>This class is for advanced usage and reflects the underlying API directly.
  */
