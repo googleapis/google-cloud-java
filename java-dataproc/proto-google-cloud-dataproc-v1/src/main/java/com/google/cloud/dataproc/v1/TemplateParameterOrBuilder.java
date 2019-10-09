@@ -12,7 +12,7 @@ public interface TemplateParameterOrBuilder
    *
    *
    * <pre>
-   * Required.  Parameter name.
+   * Required. Parameter name.
    * The parameter name is used as the key, and paired with the
    * parameter value, which are passed to the template when the template
    * is instantiated.
@@ -21,14 +21,14 @@ public interface TemplateParameterOrBuilder
    * 40 characters.
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   java.lang.String getName();
   /**
    *
    *
    * <pre>
-   * Required.  Parameter name.
+   * Required. Parameter name.
    * The parameter name is used as the key, and paired with the
    * parameter value, which are passed to the template when the template
    * is instantiated.
@@ -37,7 +37,7 @@ public interface TemplateParameterOrBuilder
    * 40 characters.
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   com.google.protobuf.ByteString getNameBytes();
 
@@ -83,7 +83,7 @@ public interface TemplateParameterOrBuilder
    * - jobs['step-id'].sparkJob.args
    * </pre>
    *
-   * <code>repeated string fields = 2;</code>
+   * <code>repeated string fields = 2 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   java.util.List<java.lang.String> getFieldsList();
   /**
@@ -128,7 +128,7 @@ public interface TemplateParameterOrBuilder
    * - jobs['step-id'].sparkJob.args
    * </pre>
    *
-   * <code>repeated string fields = 2;</code>
+   * <code>repeated string fields = 2 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   int getFieldsCount();
   /**
@@ -173,7 +173,7 @@ public interface TemplateParameterOrBuilder
    * - jobs['step-id'].sparkJob.args
    * </pre>
    *
-   * <code>repeated string fields = 2;</code>
+   * <code>repeated string fields = 2 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   java.lang.String getFields(int index);
   /**
@@ -218,7 +218,7 @@ public interface TemplateParameterOrBuilder
    * - jobs['step-id'].sparkJob.args
    * </pre>
    *
-   * <code>repeated string fields = 2;</code>
+   * <code>repeated string fields = 2 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   com.google.protobuf.ByteString getFieldsBytes(int index);
 
@@ -230,7 +230,7 @@ public interface TemplateParameterOrBuilder
    * Must not exceed 1024 characters.
    * </pre>
    *
-   * <code>string description = 3;</code>
+   * <code>string description = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   java.lang.String getDescription();
   /**
@@ -241,7 +241,7 @@ public interface TemplateParameterOrBuilder
    * Must not exceed 1024 characters.
    * </pre>
    *
-   * <code>string description = 3;</code>
+   * <code>string description = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   com.google.protobuf.ByteString getDescriptionBytes();
 
@@ -252,7 +252,9 @@ public interface TemplateParameterOrBuilder
    * Optional. Validation rules to be applied to this parameter's value.
    * </pre>
    *
-   * <code>.google.cloud.dataproc.v1.ParameterValidation validation = 4;</code>
+   * <code>
+   * .google.cloud.dataproc.v1.ParameterValidation validation = 4 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   boolean hasValidation();
   /**
@@ -262,7 +264,9 @@ public interface TemplateParameterOrBuilder
    * Optional. Validation rules to be applied to this parameter's value.
    * </pre>
    *
-   * <code>.google.cloud.dataproc.v1.ParameterValidation validation = 4;</code>
+   * <code>
+   * .google.cloud.dataproc.v1.ParameterValidation validation = 4 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   com.google.cloud.dataproc.v1.ParameterValidation getValidation();
   /**
@@ -272,7 +276,9 @@ public interface TemplateParameterOrBuilder
    * Optional. Validation rules to be applied to this parameter's value.
    * </pre>
    *
-   * <code>.google.cloud.dataproc.v1.ParameterValidation validation = 4;</code>
+   * <code>
+   * .google.cloud.dataproc.v1.ParameterValidation validation = 4 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   com.google.cloud.dataproc.v1.ParameterValidationOrBuilder getValidationOrBuilder();
 }

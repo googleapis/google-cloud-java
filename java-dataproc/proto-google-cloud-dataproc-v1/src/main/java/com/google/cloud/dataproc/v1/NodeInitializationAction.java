@@ -116,7 +116,7 @@ public final class NodeInitializationAction extends com.google.protobuf.Generate
    * Required. Cloud Storage URI of executable file.
    * </pre>
    *
-   * <code>string executable_file = 1;</code>
+   * <code>string executable_file = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   public java.lang.String getExecutableFile() {
     java.lang.Object ref = executableFile_;
@@ -136,7 +136,7 @@ public final class NodeInitializationAction extends com.google.protobuf.Generate
    * Required. Cloud Storage URI of executable file.
    * </pre>
    *
-   * <code>string executable_file = 1;</code>
+   * <code>string executable_file = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   public com.google.protobuf.ByteString getExecutableFileBytes() {
     java.lang.Object ref = executableFile_;
@@ -162,7 +162,9 @@ public final class NodeInitializationAction extends com.google.protobuf.Generate
    * period) if the executable is not completed at end of the timeout period.
    * </pre>
    *
-   * <code>.google.protobuf.Duration execution_timeout = 2;</code>
+   * <code>
+   * .google.protobuf.Duration execution_timeout = 2 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   public boolean hasExecutionTimeout() {
     return executionTimeout_ != null;
@@ -177,7 +179,9 @@ public final class NodeInitializationAction extends com.google.protobuf.Generate
    * period) if the executable is not completed at end of the timeout period.
    * </pre>
    *
-   * <code>.google.protobuf.Duration execution_timeout = 2;</code>
+   * <code>
+   * .google.protobuf.Duration execution_timeout = 2 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   public com.google.protobuf.Duration getExecutionTimeout() {
     return executionTimeout_ == null
@@ -194,7 +198,9 @@ public final class NodeInitializationAction extends com.google.protobuf.Generate
    * period) if the executable is not completed at end of the timeout period.
    * </pre>
    *
-   * <code>.google.protobuf.Duration execution_timeout = 2;</code>
+   * <code>
+   * .google.protobuf.Duration execution_timeout = 2 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   public com.google.protobuf.DurationOrBuilder getExecutionTimeoutOrBuilder() {
     return getExecutionTimeout();
@@ -556,7 +562,7 @@ public final class NodeInitializationAction extends com.google.protobuf.Generate
      * Required. Cloud Storage URI of executable file.
      * </pre>
      *
-     * <code>string executable_file = 1;</code>
+     * <code>string executable_file = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public java.lang.String getExecutableFile() {
       java.lang.Object ref = executableFile_;
@@ -576,7 +582,7 @@ public final class NodeInitializationAction extends com.google.protobuf.Generate
      * Required. Cloud Storage URI of executable file.
      * </pre>
      *
-     * <code>string executable_file = 1;</code>
+     * <code>string executable_file = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public com.google.protobuf.ByteString getExecutableFileBytes() {
       java.lang.Object ref = executableFile_;
@@ -596,7 +602,7 @@ public final class NodeInitializationAction extends com.google.protobuf.Generate
      * Required. Cloud Storage URI of executable file.
      * </pre>
      *
-     * <code>string executable_file = 1;</code>
+     * <code>string executable_file = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder setExecutableFile(java.lang.String value) {
       if (value == null) {
@@ -614,7 +620,7 @@ public final class NodeInitializationAction extends com.google.protobuf.Generate
      * Required. Cloud Storage URI of executable file.
      * </pre>
      *
-     * <code>string executable_file = 1;</code>
+     * <code>string executable_file = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder clearExecutableFile() {
 
@@ -629,7 +635,7 @@ public final class NodeInitializationAction extends com.google.protobuf.Generate
      * Required. Cloud Storage URI of executable file.
      * </pre>
      *
-     * <code>string executable_file = 1;</code>
+     * <code>string executable_file = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder setExecutableFileBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -658,7 +664,9 @@ public final class NodeInitializationAction extends com.google.protobuf.Generate
      * period) if the executable is not completed at end of the timeout period.
      * </pre>
      *
-     * <code>.google.protobuf.Duration execution_timeout = 2;</code>
+     * <code>
+     * .google.protobuf.Duration execution_timeout = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public boolean hasExecutionTimeout() {
       return executionTimeoutBuilder_ != null || executionTimeout_ != null;
@@ -673,7 +681,9 @@ public final class NodeInitializationAction extends com.google.protobuf.Generate
      * period) if the executable is not completed at end of the timeout period.
      * </pre>
      *
-     * <code>.google.protobuf.Duration execution_timeout = 2;</code>
+     * <code>
+     * .google.protobuf.Duration execution_timeout = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public com.google.protobuf.Duration getExecutionTimeout() {
       if (executionTimeoutBuilder_ == null) {
@@ -694,7 +704,9 @@ public final class NodeInitializationAction extends com.google.protobuf.Generate
      * period) if the executable is not completed at end of the timeout period.
      * </pre>
      *
-     * <code>.google.protobuf.Duration execution_timeout = 2;</code>
+     * <code>
+     * .google.protobuf.Duration execution_timeout = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder setExecutionTimeout(com.google.protobuf.Duration value) {
       if (executionTimeoutBuilder_ == null) {
@@ -719,7 +731,9 @@ public final class NodeInitializationAction extends com.google.protobuf.Generate
      * period) if the executable is not completed at end of the timeout period.
      * </pre>
      *
-     * <code>.google.protobuf.Duration execution_timeout = 2;</code>
+     * <code>
+     * .google.protobuf.Duration execution_timeout = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder setExecutionTimeout(com.google.protobuf.Duration.Builder builderForValue) {
       if (executionTimeoutBuilder_ == null) {
@@ -741,7 +755,9 @@ public final class NodeInitializationAction extends com.google.protobuf.Generate
      * period) if the executable is not completed at end of the timeout period.
      * </pre>
      *
-     * <code>.google.protobuf.Duration execution_timeout = 2;</code>
+     * <code>
+     * .google.protobuf.Duration execution_timeout = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder mergeExecutionTimeout(com.google.protobuf.Duration value) {
       if (executionTimeoutBuilder_ == null) {
@@ -770,7 +786,9 @@ public final class NodeInitializationAction extends com.google.protobuf.Generate
      * period) if the executable is not completed at end of the timeout period.
      * </pre>
      *
-     * <code>.google.protobuf.Duration execution_timeout = 2;</code>
+     * <code>
+     * .google.protobuf.Duration execution_timeout = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder clearExecutionTimeout() {
       if (executionTimeoutBuilder_ == null) {
@@ -793,7 +811,9 @@ public final class NodeInitializationAction extends com.google.protobuf.Generate
      * period) if the executable is not completed at end of the timeout period.
      * </pre>
      *
-     * <code>.google.protobuf.Duration execution_timeout = 2;</code>
+     * <code>
+     * .google.protobuf.Duration execution_timeout = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public com.google.protobuf.Duration.Builder getExecutionTimeoutBuilder() {
 
@@ -810,7 +830,9 @@ public final class NodeInitializationAction extends com.google.protobuf.Generate
      * period) if the executable is not completed at end of the timeout period.
      * </pre>
      *
-     * <code>.google.protobuf.Duration execution_timeout = 2;</code>
+     * <code>
+     * .google.protobuf.Duration execution_timeout = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public com.google.protobuf.DurationOrBuilder getExecutionTimeoutOrBuilder() {
       if (executionTimeoutBuilder_ != null) {
@@ -831,7 +853,9 @@ public final class NodeInitializationAction extends com.google.protobuf.Generate
      * period) if the executable is not completed at end of the timeout period.
      * </pre>
      *
-     * <code>.google.protobuf.Duration execution_timeout = 2;</code>
+     * <code>
+     * .google.protobuf.Duration execution_timeout = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.protobuf.Duration,

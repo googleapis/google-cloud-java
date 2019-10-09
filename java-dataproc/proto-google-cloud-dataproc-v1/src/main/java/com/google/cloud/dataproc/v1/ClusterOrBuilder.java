@@ -99,7 +99,7 @@ public interface ClusterOrBuilder
    * associated with a cluster.
    * </pre>
    *
-   * <code>map&lt;string, string&gt; labels = 8;</code>
+   * <code>map&lt;string, string&gt; labels = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   int getLabelsCount();
   /**
@@ -115,7 +115,7 @@ public interface ClusterOrBuilder
    * associated with a cluster.
    * </pre>
    *
-   * <code>map&lt;string, string&gt; labels = 8;</code>
+   * <code>map&lt;string, string&gt; labels = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   boolean containsLabels(java.lang.String key);
   /** Use {@link #getLabelsMap()} instead. */
@@ -134,7 +134,7 @@ public interface ClusterOrBuilder
    * associated with a cluster.
    * </pre>
    *
-   * <code>map&lt;string, string&gt; labels = 8;</code>
+   * <code>map&lt;string, string&gt; labels = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   java.util.Map<java.lang.String, java.lang.String> getLabelsMap();
   /**
@@ -150,7 +150,7 @@ public interface ClusterOrBuilder
    * associated with a cluster.
    * </pre>
    *
-   * <code>map&lt;string, string&gt; labels = 8;</code>
+   * <code>map&lt;string, string&gt; labels = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   java.lang.String getLabelsOrDefault(java.lang.String key, java.lang.String defaultValue);
   /**
@@ -166,7 +166,7 @@ public interface ClusterOrBuilder
    * associated with a cluster.
    * </pre>
    *
-   * <code>map&lt;string, string&gt; labels = 8;</code>
+   * <code>map&lt;string, string&gt; labels = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   java.lang.String getLabelsOrThrow(java.lang.String key);
 
@@ -177,7 +177,9 @@ public interface ClusterOrBuilder
    * Output only. Cluster status.
    * </pre>
    *
-   * <code>.google.cloud.dataproc.v1.ClusterStatus status = 4;</code>
+   * <code>
+   * .google.cloud.dataproc.v1.ClusterStatus status = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    */
   boolean hasStatus();
   /**
@@ -187,7 +189,9 @@ public interface ClusterOrBuilder
    * Output only. Cluster status.
    * </pre>
    *
-   * <code>.google.cloud.dataproc.v1.ClusterStatus status = 4;</code>
+   * <code>
+   * .google.cloud.dataproc.v1.ClusterStatus status = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    */
   com.google.cloud.dataproc.v1.ClusterStatus getStatus();
   /**
@@ -197,7 +201,9 @@ public interface ClusterOrBuilder
    * Output only. Cluster status.
    * </pre>
    *
-   * <code>.google.cloud.dataproc.v1.ClusterStatus status = 4;</code>
+   * <code>
+   * .google.cloud.dataproc.v1.ClusterStatus status = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    */
   com.google.cloud.dataproc.v1.ClusterStatusOrBuilder getStatusOrBuilder();
 
@@ -208,7 +214,9 @@ public interface ClusterOrBuilder
    * Output only. The previous cluster status.
    * </pre>
    *
-   * <code>repeated .google.cloud.dataproc.v1.ClusterStatus status_history = 7;</code>
+   * <code>
+   * repeated .google.cloud.dataproc.v1.ClusterStatus status_history = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    */
   java.util.List<com.google.cloud.dataproc.v1.ClusterStatus> getStatusHistoryList();
   /**
@@ -218,7 +226,9 @@ public interface ClusterOrBuilder
    * Output only. The previous cluster status.
    * </pre>
    *
-   * <code>repeated .google.cloud.dataproc.v1.ClusterStatus status_history = 7;</code>
+   * <code>
+   * repeated .google.cloud.dataproc.v1.ClusterStatus status_history = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    */
   com.google.cloud.dataproc.v1.ClusterStatus getStatusHistory(int index);
   /**
@@ -228,7 +238,9 @@ public interface ClusterOrBuilder
    * Output only. The previous cluster status.
    * </pre>
    *
-   * <code>repeated .google.cloud.dataproc.v1.ClusterStatus status_history = 7;</code>
+   * <code>
+   * repeated .google.cloud.dataproc.v1.ClusterStatus status_history = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    */
   int getStatusHistoryCount();
   /**
@@ -238,7 +250,9 @@ public interface ClusterOrBuilder
    * Output only. The previous cluster status.
    * </pre>
    *
-   * <code>repeated .google.cloud.dataproc.v1.ClusterStatus status_history = 7;</code>
+   * <code>
+   * repeated .google.cloud.dataproc.v1.ClusterStatus status_history = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    */
   java.util.List<? extends com.google.cloud.dataproc.v1.ClusterStatusOrBuilder>
       getStatusHistoryOrBuilderList();
@@ -249,7 +263,9 @@ public interface ClusterOrBuilder
    * Output only. The previous cluster status.
    * </pre>
    *
-   * <code>repeated .google.cloud.dataproc.v1.ClusterStatus status_history = 7;</code>
+   * <code>
+   * repeated .google.cloud.dataproc.v1.ClusterStatus status_history = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    */
   com.google.cloud.dataproc.v1.ClusterStatusOrBuilder getStatusHistoryOrBuilder(int index);
 
@@ -261,7 +277,7 @@ public interface ClusterOrBuilder
    * generates this value when it creates the cluster.
    * </pre>
    *
-   * <code>string cluster_uuid = 6;</code>
+   * <code>string cluster_uuid = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    */
   java.lang.String getClusterUuid();
   /**
@@ -272,7 +288,7 @@ public interface ClusterOrBuilder
    * generates this value when it creates the cluster.
    * </pre>
    *
-   * <code>string cluster_uuid = 6;</code>
+   * <code>string cluster_uuid = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    */
   com.google.protobuf.ByteString getClusterUuidBytes();
 

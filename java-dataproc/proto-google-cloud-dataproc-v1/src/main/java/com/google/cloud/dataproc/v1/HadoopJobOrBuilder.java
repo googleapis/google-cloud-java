@@ -70,7 +70,7 @@ public interface HadoopJobOrBuilder
    * submission.
    * </pre>
    *
-   * <code>repeated string args = 3;</code>
+   * <code>repeated string args = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   java.util.List<java.lang.String> getArgsList();
   /**
@@ -83,7 +83,7 @@ public interface HadoopJobOrBuilder
    * submission.
    * </pre>
    *
-   * <code>repeated string args = 3;</code>
+   * <code>repeated string args = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   int getArgsCount();
   /**
@@ -96,7 +96,7 @@ public interface HadoopJobOrBuilder
    * submission.
    * </pre>
    *
-   * <code>repeated string args = 3;</code>
+   * <code>repeated string args = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   java.lang.String getArgs(int index);
   /**
@@ -109,7 +109,7 @@ public interface HadoopJobOrBuilder
    * submission.
    * </pre>
    *
-   * <code>repeated string args = 3;</code>
+   * <code>repeated string args = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   com.google.protobuf.ByteString getArgsBytes(int index);
 
@@ -121,7 +121,7 @@ public interface HadoopJobOrBuilder
    * Hadoop driver and tasks.
    * </pre>
    *
-   * <code>repeated string jar_file_uris = 4;</code>
+   * <code>repeated string jar_file_uris = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   java.util.List<java.lang.String> getJarFileUrisList();
   /**
@@ -132,7 +132,7 @@ public interface HadoopJobOrBuilder
    * Hadoop driver and tasks.
    * </pre>
    *
-   * <code>repeated string jar_file_uris = 4;</code>
+   * <code>repeated string jar_file_uris = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   int getJarFileUrisCount();
   /**
@@ -143,7 +143,7 @@ public interface HadoopJobOrBuilder
    * Hadoop driver and tasks.
    * </pre>
    *
-   * <code>repeated string jar_file_uris = 4;</code>
+   * <code>repeated string jar_file_uris = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   java.lang.String getJarFileUris(int index);
   /**
@@ -154,7 +154,7 @@ public interface HadoopJobOrBuilder
    * Hadoop driver and tasks.
    * </pre>
    *
-   * <code>repeated string jar_file_uris = 4;</code>
+   * <code>repeated string jar_file_uris = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   com.google.protobuf.ByteString getJarFileUrisBytes(int index);
 
@@ -167,7 +167,7 @@ public interface HadoopJobOrBuilder
    * for naively parallel tasks.
    * </pre>
    *
-   * <code>repeated string file_uris = 5;</code>
+   * <code>repeated string file_uris = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   java.util.List<java.lang.String> getFileUrisList();
   /**
@@ -179,7 +179,7 @@ public interface HadoopJobOrBuilder
    * for naively parallel tasks.
    * </pre>
    *
-   * <code>repeated string file_uris = 5;</code>
+   * <code>repeated string file_uris = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   int getFileUrisCount();
   /**
@@ -191,7 +191,7 @@ public interface HadoopJobOrBuilder
    * for naively parallel tasks.
    * </pre>
    *
-   * <code>repeated string file_uris = 5;</code>
+   * <code>repeated string file_uris = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   java.lang.String getFileUris(int index);
   /**
@@ -203,7 +203,7 @@ public interface HadoopJobOrBuilder
    * for naively parallel tasks.
    * </pre>
    *
-   * <code>repeated string file_uris = 5;</code>
+   * <code>repeated string file_uris = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   com.google.protobuf.ByteString getFileUrisBytes(int index);
 
@@ -216,7 +216,7 @@ public interface HadoopJobOrBuilder
    * .jar, .tar, .tar.gz, .tgz, or .zip.
    * </pre>
    *
-   * <code>repeated string archive_uris = 6;</code>
+   * <code>repeated string archive_uris = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   java.util.List<java.lang.String> getArchiveUrisList();
   /**
@@ -228,7 +228,7 @@ public interface HadoopJobOrBuilder
    * .jar, .tar, .tar.gz, .tgz, or .zip.
    * </pre>
    *
-   * <code>repeated string archive_uris = 6;</code>
+   * <code>repeated string archive_uris = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   int getArchiveUrisCount();
   /**
@@ -240,7 +240,7 @@ public interface HadoopJobOrBuilder
    * .jar, .tar, .tar.gz, .tgz, or .zip.
    * </pre>
    *
-   * <code>repeated string archive_uris = 6;</code>
+   * <code>repeated string archive_uris = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   java.lang.String getArchiveUris(int index);
   /**
@@ -252,7 +252,7 @@ public interface HadoopJobOrBuilder
    * .jar, .tar, .tar.gz, .tgz, or .zip.
    * </pre>
    *
-   * <code>repeated string archive_uris = 6;</code>
+   * <code>repeated string archive_uris = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   com.google.protobuf.ByteString getArchiveUrisBytes(int index);
 
@@ -266,7 +266,8 @@ public interface HadoopJobOrBuilder
    * classes in user code.
    * </pre>
    *
-   * <code>map&lt;string, string&gt; properties = 7;</code>
+   * <code>map&lt;string, string&gt; properties = 7 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   int getPropertiesCount();
   /**
@@ -279,7 +280,8 @@ public interface HadoopJobOrBuilder
    * classes in user code.
    * </pre>
    *
-   * <code>map&lt;string, string&gt; properties = 7;</code>
+   * <code>map&lt;string, string&gt; properties = 7 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   boolean containsProperties(java.lang.String key);
   /** Use {@link #getPropertiesMap()} instead. */
@@ -295,7 +297,8 @@ public interface HadoopJobOrBuilder
    * classes in user code.
    * </pre>
    *
-   * <code>map&lt;string, string&gt; properties = 7;</code>
+   * <code>map&lt;string, string&gt; properties = 7 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   java.util.Map<java.lang.String, java.lang.String> getPropertiesMap();
   /**
@@ -308,7 +311,8 @@ public interface HadoopJobOrBuilder
    * classes in user code.
    * </pre>
    *
-   * <code>map&lt;string, string&gt; properties = 7;</code>
+   * <code>map&lt;string, string&gt; properties = 7 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   java.lang.String getPropertiesOrDefault(java.lang.String key, java.lang.String defaultValue);
   /**
@@ -321,7 +325,8 @@ public interface HadoopJobOrBuilder
    * classes in user code.
    * </pre>
    *
-   * <code>map&lt;string, string&gt; properties = 7;</code>
+   * <code>map&lt;string, string&gt; properties = 7 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   java.lang.String getPropertiesOrThrow(java.lang.String key);
 
@@ -332,7 +337,9 @@ public interface HadoopJobOrBuilder
    * Optional. The runtime log config for job execution.
    * </pre>
    *
-   * <code>.google.cloud.dataproc.v1.LoggingConfig logging_config = 8;</code>
+   * <code>
+   * .google.cloud.dataproc.v1.LoggingConfig logging_config = 8 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   boolean hasLoggingConfig();
   /**
@@ -342,7 +349,9 @@ public interface HadoopJobOrBuilder
    * Optional. The runtime log config for job execution.
    * </pre>
    *
-   * <code>.google.cloud.dataproc.v1.LoggingConfig logging_config = 8;</code>
+   * <code>
+   * .google.cloud.dataproc.v1.LoggingConfig logging_config = 8 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   com.google.cloud.dataproc.v1.LoggingConfig getLoggingConfig();
   /**
@@ -352,7 +361,9 @@ public interface HadoopJobOrBuilder
    * Optional. The runtime log config for job execution.
    * </pre>
    *
-   * <code>.google.cloud.dataproc.v1.LoggingConfig logging_config = 8;</code>
+   * <code>
+   * .google.cloud.dataproc.v1.LoggingConfig logging_config = 8 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   com.google.cloud.dataproc.v1.LoggingConfigOrBuilder getLoggingConfigOrBuilder();
 

@@ -101,7 +101,7 @@ public final class JobScheduling extends com.google.protobuf.GeneratedMessageV3
    * Maximum value is 10.
    * </pre>
    *
-   * <code>int32 max_failures_per_hour = 1;</code>
+   * <code>int32 max_failures_per_hour = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   public int getMaxFailuresPerHour() {
     return maxFailuresPerHour_;
@@ -435,7 +435,7 @@ public final class JobScheduling extends com.google.protobuf.GeneratedMessageV3
      * Maximum value is 10.
      * </pre>
      *
-     * <code>int32 max_failures_per_hour = 1;</code>
+     * <code>int32 max_failures_per_hour = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public int getMaxFailuresPerHour() {
       return maxFailuresPerHour_;
@@ -452,7 +452,7 @@ public final class JobScheduling extends com.google.protobuf.GeneratedMessageV3
      * Maximum value is 10.
      * </pre>
      *
-     * <code>int32 max_failures_per_hour = 1;</code>
+     * <code>int32 max_failures_per_hour = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public Builder setMaxFailuresPerHour(int value) {
 
@@ -472,7 +472,7 @@ public final class JobScheduling extends com.google.protobuf.GeneratedMessageV3
      * Maximum value is 10.
      * </pre>
      *
-     * <code>int32 max_failures_per_hour = 1;</code>
+     * <code>int32 max_failures_per_hour = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public Builder clearMaxFailuresPerHour() {
 

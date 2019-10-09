@@ -117,7 +117,7 @@ public final class GetJobRequest extends com.google.protobuf.GeneratedMessageV3
    * belongs to.
    * </pre>
    *
-   * <code>string project_id = 1;</code>
+   * <code>string project_id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   public java.lang.String getProjectId() {
     java.lang.Object ref = projectId_;
@@ -138,7 +138,7 @@ public final class GetJobRequest extends com.google.protobuf.GeneratedMessageV3
    * belongs to.
    * </pre>
    *
-   * <code>string project_id = 1;</code>
+   * <code>string project_id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   public com.google.protobuf.ByteString getProjectIdBytes() {
     java.lang.Object ref = projectId_;
@@ -161,7 +161,7 @@ public final class GetJobRequest extends com.google.protobuf.GeneratedMessageV3
    * Required. The Cloud Dataproc region in which to handle the request.
    * </pre>
    *
-   * <code>string region = 3;</code>
+   * <code>string region = 3 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   public java.lang.String getRegion() {
     java.lang.Object ref = region_;
@@ -181,7 +181,7 @@ public final class GetJobRequest extends com.google.protobuf.GeneratedMessageV3
    * Required. The Cloud Dataproc region in which to handle the request.
    * </pre>
    *
-   * <code>string region = 3;</code>
+   * <code>string region = 3 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   public com.google.protobuf.ByteString getRegionBytes() {
     java.lang.Object ref = region_;
@@ -204,7 +204,7 @@ public final class GetJobRequest extends com.google.protobuf.GeneratedMessageV3
    * Required. The job ID.
    * </pre>
    *
-   * <code>string job_id = 2;</code>
+   * <code>string job_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   public java.lang.String getJobId() {
     java.lang.Object ref = jobId_;
@@ -224,7 +224,7 @@ public final class GetJobRequest extends com.google.protobuf.GeneratedMessageV3
    * Required. The job ID.
    * </pre>
    *
-   * <code>string job_id = 2;</code>
+   * <code>string job_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   public com.google.protobuf.ByteString getJobIdBytes() {
     java.lang.Object ref = jobId_;
@@ -595,7 +595,7 @@ public final class GetJobRequest extends com.google.protobuf.GeneratedMessageV3
      * belongs to.
      * </pre>
      *
-     * <code>string project_id = 1;</code>
+     * <code>string project_id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public java.lang.String getProjectId() {
       java.lang.Object ref = projectId_;
@@ -616,7 +616,7 @@ public final class GetJobRequest extends com.google.protobuf.GeneratedMessageV3
      * belongs to.
      * </pre>
      *
-     * <code>string project_id = 1;</code>
+     * <code>string project_id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public com.google.protobuf.ByteString getProjectIdBytes() {
       java.lang.Object ref = projectId_;
@@ -637,7 +637,7 @@ public final class GetJobRequest extends com.google.protobuf.GeneratedMessageV3
      * belongs to.
      * </pre>
      *
-     * <code>string project_id = 1;</code>
+     * <code>string project_id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder setProjectId(java.lang.String value) {
       if (value == null) {
@@ -656,7 +656,7 @@ public final class GetJobRequest extends com.google.protobuf.GeneratedMessageV3
      * belongs to.
      * </pre>
      *
-     * <code>string project_id = 1;</code>
+     * <code>string project_id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder clearProjectId() {
 
@@ -672,7 +672,7 @@ public final class GetJobRequest extends com.google.protobuf.GeneratedMessageV3
      * belongs to.
      * </pre>
      *
-     * <code>string project_id = 1;</code>
+     * <code>string project_id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder setProjectIdBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -693,7 +693,7 @@ public final class GetJobRequest extends com.google.protobuf.GeneratedMessageV3
      * Required. The Cloud Dataproc region in which to handle the request.
      * </pre>
      *
-     * <code>string region = 3;</code>
+     * <code>string region = 3 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public java.lang.String getRegion() {
       java.lang.Object ref = region_;
@@ -713,7 +713,7 @@ public final class GetJobRequest extends com.google.protobuf.GeneratedMessageV3
      * Required. The Cloud Dataproc region in which to handle the request.
      * </pre>
      *
-     * <code>string region = 3;</code>
+     * <code>string region = 3 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public com.google.protobuf.ByteString getRegionBytes() {
       java.lang.Object ref = region_;
@@ -733,7 +733,7 @@ public final class GetJobRequest extends com.google.protobuf.GeneratedMessageV3
      * Required. The Cloud Dataproc region in which to handle the request.
      * </pre>
      *
-     * <code>string region = 3;</code>
+     * <code>string region = 3 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder setRegion(java.lang.String value) {
       if (value == null) {
@@ -751,7 +751,7 @@ public final class GetJobRequest extends com.google.protobuf.GeneratedMessageV3
      * Required. The Cloud Dataproc region in which to handle the request.
      * </pre>
      *
-     * <code>string region = 3;</code>
+     * <code>string region = 3 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder clearRegion() {
 
@@ -766,7 +766,7 @@ public final class GetJobRequest extends com.google.protobuf.GeneratedMessageV3
      * Required. The Cloud Dataproc region in which to handle the request.
      * </pre>
      *
-     * <code>string region = 3;</code>
+     * <code>string region = 3 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder setRegionBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -787,7 +787,7 @@ public final class GetJobRequest extends com.google.protobuf.GeneratedMessageV3
      * Required. The job ID.
      * </pre>
      *
-     * <code>string job_id = 2;</code>
+     * <code>string job_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public java.lang.String getJobId() {
       java.lang.Object ref = jobId_;
@@ -807,7 +807,7 @@ public final class GetJobRequest extends com.google.protobuf.GeneratedMessageV3
      * Required. The job ID.
      * </pre>
      *
-     * <code>string job_id = 2;</code>
+     * <code>string job_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public com.google.protobuf.ByteString getJobIdBytes() {
       java.lang.Object ref = jobId_;
@@ -827,7 +827,7 @@ public final class GetJobRequest extends com.google.protobuf.GeneratedMessageV3
      * Required. The job ID.
      * </pre>
      *
-     * <code>string job_id = 2;</code>
+     * <code>string job_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder setJobId(java.lang.String value) {
       if (value == null) {
@@ -845,7 +845,7 @@ public final class GetJobRequest extends com.google.protobuf.GeneratedMessageV3
      * Required. The job ID.
      * </pre>
      *
-     * <code>string job_id = 2;</code>
+     * <code>string job_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder clearJobId() {
 
@@ -860,7 +860,7 @@ public final class GetJobRequest extends com.google.protobuf.GeneratedMessageV3
      * Required. The job ID.
      * </pre>
      *
-     * <code>string job_id = 2;</code>
+     * <code>string job_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder setJobIdBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
