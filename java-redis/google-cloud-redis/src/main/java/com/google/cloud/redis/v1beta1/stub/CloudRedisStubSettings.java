@@ -99,16 +99,16 @@ public class CloudRedisStubSettings extends StubSettings<CloudRedisStubSettings>
   private static final ImmutableList<String> DEFAULT_SERVICE_SCOPES =
       ImmutableList.<String>builder().add("https://www.googleapis.com/auth/cloud-platform").build();
 
+  private final PagedCallSettings<
+          ListInstancesRequest, ListInstancesResponse, ListInstancesPagedResponse>
+      listInstancesSettings;
+  private final UnaryCallSettings<GetInstanceRequest, Instance> getInstanceSettings;
   private final UnaryCallSettings<CreateInstanceRequest, Operation> createInstanceSettings;
   private final OperationCallSettings<CreateInstanceRequest, Instance, Any>
       createInstanceOperationSettings;
   private final UnaryCallSettings<UpdateInstanceRequest, Operation> updateInstanceSettings;
   private final OperationCallSettings<UpdateInstanceRequest, Instance, Any>
       updateInstanceOperationSettings;
-  private final PagedCallSettings<
-          ListInstancesRequest, ListInstancesResponse, ListInstancesPagedResponse>
-      listInstancesSettings;
-  private final UnaryCallSettings<GetInstanceRequest, Instance> getInstanceSettings;
   private final UnaryCallSettings<ImportInstanceRequest, Operation> importInstanceSettings;
   private final OperationCallSettings<ImportInstanceRequest, Instance, Any>
       importInstanceOperationSettings;
@@ -121,6 +121,17 @@ public class CloudRedisStubSettings extends StubSettings<CloudRedisStubSettings>
   private final UnaryCallSettings<DeleteInstanceRequest, Operation> deleteInstanceSettings;
   private final OperationCallSettings<DeleteInstanceRequest, Empty, Any>
       deleteInstanceOperationSettings;
+
+  /** Returns the object with the settings used for calls to listInstances. */
+  public PagedCallSettings<ListInstancesRequest, ListInstancesResponse, ListInstancesPagedResponse>
+      listInstancesSettings() {
+    return listInstancesSettings;
+  }
+
+  /** Returns the object with the settings used for calls to getInstance. */
+  public UnaryCallSettings<GetInstanceRequest, Instance> getInstanceSettings() {
+    return getInstanceSettings;
+  }
 
   /** Returns the object with the settings used for calls to createInstance. */
   public UnaryCallSettings<CreateInstanceRequest, Operation> createInstanceSettings() {
@@ -144,17 +155,6 @@ public class CloudRedisStubSettings extends StubSettings<CloudRedisStubSettings>
   public OperationCallSettings<UpdateInstanceRequest, Instance, Any>
       updateInstanceOperationSettings() {
     return updateInstanceOperationSettings;
-  }
-
-  /** Returns the object with the settings used for calls to listInstances. */
-  public PagedCallSettings<ListInstancesRequest, ListInstancesResponse, ListInstancesPagedResponse>
-      listInstancesSettings() {
-    return listInstancesSettings;
-  }
-
-  /** Returns the object with the settings used for calls to getInstance. */
-  public UnaryCallSettings<GetInstanceRequest, Instance> getInstanceSettings() {
-    return getInstanceSettings;
   }
 
   /** Returns the object with the settings used for calls to importInstance. */
@@ -274,12 +274,12 @@ public class CloudRedisStubSettings extends StubSettings<CloudRedisStubSettings>
   protected CloudRedisStubSettings(Builder settingsBuilder) throws IOException {
     super(settingsBuilder);
 
+    listInstancesSettings = settingsBuilder.listInstancesSettings().build();
+    getInstanceSettings = settingsBuilder.getInstanceSettings().build();
     createInstanceSettings = settingsBuilder.createInstanceSettings().build();
     createInstanceOperationSettings = settingsBuilder.createInstanceOperationSettings().build();
     updateInstanceSettings = settingsBuilder.updateInstanceSettings().build();
     updateInstanceOperationSettings = settingsBuilder.updateInstanceOperationSettings().build();
-    listInstancesSettings = settingsBuilder.listInstancesSettings().build();
-    getInstanceSettings = settingsBuilder.getInstanceSettings().build();
     importInstanceSettings = settingsBuilder.importInstanceSettings().build();
     importInstanceOperationSettings = settingsBuilder.importInstanceOperationSettings().build();
     exportInstanceSettings = settingsBuilder.exportInstanceSettings().build();
@@ -347,6 +347,10 @@ public class CloudRedisStubSettings extends StubSettings<CloudRedisStubSettings>
   public static class Builder extends StubSettings.Builder<CloudRedisStubSettings, Builder> {
     private final ImmutableList<UnaryCallSettings.Builder<?, ?>> unaryMethodSettingsBuilders;
 
+    private final PagedCallSettings.Builder<
+            ListInstancesRequest, ListInstancesResponse, ListInstancesPagedResponse>
+        listInstancesSettings;
+    private final UnaryCallSettings.Builder<GetInstanceRequest, Instance> getInstanceSettings;
     private final UnaryCallSettings.Builder<CreateInstanceRequest, Operation>
         createInstanceSettings;
     private final OperationCallSettings.Builder<CreateInstanceRequest, Instance, Any>
@@ -355,10 +359,6 @@ public class CloudRedisStubSettings extends StubSettings<CloudRedisStubSettings>
         updateInstanceSettings;
     private final OperationCallSettings.Builder<UpdateInstanceRequest, Instance, Any>
         updateInstanceOperationSettings;
-    private final PagedCallSettings.Builder<
-            ListInstancesRequest, ListInstancesResponse, ListInstancesPagedResponse>
-        listInstancesSettings;
-    private final UnaryCallSettings.Builder<GetInstanceRequest, Instance> getInstanceSettings;
     private final UnaryCallSettings.Builder<ImportInstanceRequest, Operation>
         importInstanceSettings;
     private final OperationCallSettings.Builder<ImportInstanceRequest, Instance, Any>
@@ -417,6 +417,10 @@ public class CloudRedisStubSettings extends StubSettings<CloudRedisStubSettings>
     protected Builder(ClientContext clientContext) {
       super(clientContext);
 
+      listInstancesSettings = PagedCallSettings.newBuilder(LIST_INSTANCES_PAGE_STR_FACT);
+
+      getInstanceSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+
       createInstanceSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
       createInstanceOperationSettings = OperationCallSettings.newBuilder();
@@ -424,10 +428,6 @@ public class CloudRedisStubSettings extends StubSettings<CloudRedisStubSettings>
       updateInstanceSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
       updateInstanceOperationSettings = OperationCallSettings.newBuilder();
-
-      listInstancesSettings = PagedCallSettings.newBuilder(LIST_INSTANCES_PAGE_STR_FACT);
-
-      getInstanceSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
       importInstanceSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
@@ -447,10 +447,10 @@ public class CloudRedisStubSettings extends StubSettings<CloudRedisStubSettings>
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
-              createInstanceSettings,
-              updateInstanceSettings,
               listInstancesSettings,
               getInstanceSettings,
+              createInstanceSettings,
+              updateInstanceSettings,
               importInstanceSettings,
               exportInstanceSettings,
               failoverInstanceSettings,
@@ -471,6 +471,16 @@ public class CloudRedisStubSettings extends StubSettings<CloudRedisStubSettings>
     private static Builder initDefaults(Builder builder) {
 
       builder
+          .listInstancesSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
+
+      builder
+          .getInstanceSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
+
+      builder
           .createInstanceSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
@@ -478,16 +488,6 @@ public class CloudRedisStubSettings extends StubSettings<CloudRedisStubSettings>
       builder
           .updateInstanceSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
-
-      builder
-          .listInstancesSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
-
-      builder
-          .getInstanceSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
 
       builder
@@ -523,13 +523,13 @@ public class CloudRedisStubSettings extends StubSettings<CloudRedisStubSettings>
           .setPollingAlgorithm(
               OperationTimedPollAlgorithm.create(
                   RetrySettings.newBuilder()
-                      .setInitialRetryDelay(Duration.ofMillis(500L))
+                      .setInitialRetryDelay(Duration.ofMillis(60000L))
                       .setRetryDelayMultiplier(1.5)
-                      .setMaxRetryDelay(Duration.ofMillis(5000L))
+                      .setMaxRetryDelay(Duration.ofMillis(360000L))
                       .setInitialRpcTimeout(Duration.ZERO) // ignored
                       .setRpcTimeoutMultiplier(1.0) // ignored
                       .setMaxRpcTimeout(Duration.ZERO) // ignored
-                      .setTotalTimeout(Duration.ofMillis(300000L))
+                      .setTotalTimeout(Duration.ofMillis(1200000L))
                       .build()));
       builder
           .updateInstanceOperationSettings()
@@ -545,13 +545,13 @@ public class CloudRedisStubSettings extends StubSettings<CloudRedisStubSettings>
           .setPollingAlgorithm(
               OperationTimedPollAlgorithm.create(
                   RetrySettings.newBuilder()
-                      .setInitialRetryDelay(Duration.ofMillis(500L))
+                      .setInitialRetryDelay(Duration.ofMillis(60000L))
                       .setRetryDelayMultiplier(1.5)
-                      .setMaxRetryDelay(Duration.ofMillis(5000L))
+                      .setMaxRetryDelay(Duration.ofMillis(360000L))
                       .setInitialRpcTimeout(Duration.ZERO) // ignored
                       .setRpcTimeoutMultiplier(1.0) // ignored
                       .setMaxRpcTimeout(Duration.ZERO) // ignored
-                      .setTotalTimeout(Duration.ofMillis(300000L))
+                      .setTotalTimeout(Duration.ofMillis(7200000L))
                       .build()));
       builder
           .importInstanceOperationSettings()
@@ -567,13 +567,13 @@ public class CloudRedisStubSettings extends StubSettings<CloudRedisStubSettings>
           .setPollingAlgorithm(
               OperationTimedPollAlgorithm.create(
                   RetrySettings.newBuilder()
-                      .setInitialRetryDelay(Duration.ofMillis(500L))
+                      .setInitialRetryDelay(Duration.ofMillis(60000L))
                       .setRetryDelayMultiplier(1.5)
-                      .setMaxRetryDelay(Duration.ofMillis(5000L))
+                      .setMaxRetryDelay(Duration.ofMillis(360000L))
                       .setInitialRpcTimeout(Duration.ZERO) // ignored
                       .setRpcTimeoutMultiplier(1.0) // ignored
                       .setMaxRpcTimeout(Duration.ZERO) // ignored
-                      .setTotalTimeout(Duration.ofMillis(300000L))
+                      .setTotalTimeout(Duration.ofMillis(18000000L))
                       .build()));
       builder
           .exportInstanceOperationSettings()
@@ -589,13 +589,13 @@ public class CloudRedisStubSettings extends StubSettings<CloudRedisStubSettings>
           .setPollingAlgorithm(
               OperationTimedPollAlgorithm.create(
                   RetrySettings.newBuilder()
-                      .setInitialRetryDelay(Duration.ofMillis(500L))
+                      .setInitialRetryDelay(Duration.ofMillis(60000L))
                       .setRetryDelayMultiplier(1.5)
-                      .setMaxRetryDelay(Duration.ofMillis(5000L))
+                      .setMaxRetryDelay(Duration.ofMillis(360000L))
                       .setInitialRpcTimeout(Duration.ZERO) // ignored
                       .setRpcTimeoutMultiplier(1.0) // ignored
                       .setMaxRpcTimeout(Duration.ZERO) // ignored
-                      .setTotalTimeout(Duration.ofMillis(300000L))
+                      .setTotalTimeout(Duration.ofMillis(18000000L))
                       .build()));
       builder
           .failoverInstanceOperationSettings()
@@ -611,13 +611,13 @@ public class CloudRedisStubSettings extends StubSettings<CloudRedisStubSettings>
           .setPollingAlgorithm(
               OperationTimedPollAlgorithm.create(
                   RetrySettings.newBuilder()
-                      .setInitialRetryDelay(Duration.ofMillis(500L))
+                      .setInitialRetryDelay(Duration.ofMillis(60000L))
                       .setRetryDelayMultiplier(1.5)
-                      .setMaxRetryDelay(Duration.ofMillis(5000L))
+                      .setMaxRetryDelay(Duration.ofMillis(360000L))
                       .setInitialRpcTimeout(Duration.ZERO) // ignored
                       .setRpcTimeoutMultiplier(1.0) // ignored
                       .setMaxRpcTimeout(Duration.ZERO) // ignored
-                      .setTotalTimeout(Duration.ofMillis(300000L))
+                      .setTotalTimeout(Duration.ofMillis(1200000L))
                       .build()));
       builder
           .deleteInstanceOperationSettings()
@@ -633,13 +633,13 @@ public class CloudRedisStubSettings extends StubSettings<CloudRedisStubSettings>
           .setPollingAlgorithm(
               OperationTimedPollAlgorithm.create(
                   RetrySettings.newBuilder()
-                      .setInitialRetryDelay(Duration.ofMillis(500L))
+                      .setInitialRetryDelay(Duration.ofMillis(60000L))
                       .setRetryDelayMultiplier(1.5)
-                      .setMaxRetryDelay(Duration.ofMillis(5000L))
+                      .setMaxRetryDelay(Duration.ofMillis(360000L))
                       .setInitialRpcTimeout(Duration.ZERO) // ignored
                       .setRpcTimeoutMultiplier(1.0) // ignored
                       .setMaxRpcTimeout(Duration.ZERO) // ignored
-                      .setTotalTimeout(Duration.ofMillis(300000L))
+                      .setTotalTimeout(Duration.ofMillis(1200000L))
                       .build()));
 
       return builder;
@@ -648,12 +648,12 @@ public class CloudRedisStubSettings extends StubSettings<CloudRedisStubSettings>
     protected Builder(CloudRedisStubSettings settings) {
       super(settings);
 
+      listInstancesSettings = settings.listInstancesSettings.toBuilder();
+      getInstanceSettings = settings.getInstanceSettings.toBuilder();
       createInstanceSettings = settings.createInstanceSettings.toBuilder();
       createInstanceOperationSettings = settings.createInstanceOperationSettings.toBuilder();
       updateInstanceSettings = settings.updateInstanceSettings.toBuilder();
       updateInstanceOperationSettings = settings.updateInstanceOperationSettings.toBuilder();
-      listInstancesSettings = settings.listInstancesSettings.toBuilder();
-      getInstanceSettings = settings.getInstanceSettings.toBuilder();
       importInstanceSettings = settings.importInstanceSettings.toBuilder();
       importInstanceOperationSettings = settings.importInstanceOperationSettings.toBuilder();
       exportInstanceSettings = settings.exportInstanceSettings.toBuilder();
@@ -665,10 +665,10 @@ public class CloudRedisStubSettings extends StubSettings<CloudRedisStubSettings>
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
-              createInstanceSettings,
-              updateInstanceSettings,
               listInstancesSettings,
               getInstanceSettings,
+              createInstanceSettings,
+              updateInstanceSettings,
               importInstanceSettings,
               exportInstanceSettings,
               failoverInstanceSettings,
@@ -689,6 +689,18 @@ public class CloudRedisStubSettings extends StubSettings<CloudRedisStubSettings>
 
     public ImmutableList<UnaryCallSettings.Builder<?, ?>> unaryMethodSettingsBuilders() {
       return unaryMethodSettingsBuilders;
+    }
+
+    /** Returns the builder for the settings used for calls to listInstances. */
+    public PagedCallSettings.Builder<
+            ListInstancesRequest, ListInstancesResponse, ListInstancesPagedResponse>
+        listInstancesSettings() {
+      return listInstancesSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to getInstance. */
+    public UnaryCallSettings.Builder<GetInstanceRequest, Instance> getInstanceSettings() {
+      return getInstanceSettings;
     }
 
     /** Returns the builder for the settings used for calls to createInstance. */
@@ -715,18 +727,6 @@ public class CloudRedisStubSettings extends StubSettings<CloudRedisStubSettings>
     public OperationCallSettings.Builder<UpdateInstanceRequest, Instance, Any>
         updateInstanceOperationSettings() {
       return updateInstanceOperationSettings;
-    }
-
-    /** Returns the builder for the settings used for calls to listInstances. */
-    public PagedCallSettings.Builder<
-            ListInstancesRequest, ListInstancesResponse, ListInstancesPagedResponse>
-        listInstancesSettings() {
-      return listInstancesSettings;
-    }
-
-    /** Returns the builder for the settings used for calls to getInstance. */
-    public UnaryCallSettings.Builder<GetInstanceRequest, Instance> getInstanceSettings() {
-      return getInstanceSettings;
     }
 
     /** Returns the builder for the settings used for calls to importInstance. */
