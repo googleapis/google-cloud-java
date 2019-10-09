@@ -15,7 +15,7 @@
  */
 
 /**
- * A client to Google Cloud OS Login API.
+ * A client to Cloud OS Login API.
  *
  * <p>The interfaces provided are listed below, along with usage samples.
  *

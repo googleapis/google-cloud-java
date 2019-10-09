@@ -12,20 +12,24 @@ public interface ImportSshPublicKeyRequestOrBuilder
    *
    *
    * <pre>
-   * The unique ID for the user in format `users/{user}`.
+   * Required. The unique ID for the user in format `users/{user}`.
    * </pre>
    *
-   * <code>string parent = 1;</code>
+   * <code>
+   * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    */
   java.lang.String getParent();
   /**
    *
    *
    * <pre>
-   * The unique ID for the user in format `users/{user}`.
+   * Required. The unique ID for the user in format `users/{user}`.
    * </pre>
    *
-   * <code>string parent = 1;</code>
+   * <code>
+   * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    */
   com.google.protobuf.ByteString getParentBytes();
 
@@ -33,30 +37,36 @@ public interface ImportSshPublicKeyRequestOrBuilder
    *
    *
    * <pre>
-   * The SSH public key and expiration time.
+   * Optional. The SSH public key and expiration time.
    * </pre>
    *
-   * <code>.google.cloud.oslogin.common.SshPublicKey ssh_public_key = 2;</code>
+   * <code>
+   * .google.cloud.oslogin.common.SshPublicKey ssh_public_key = 2 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   boolean hasSshPublicKey();
   /**
    *
    *
    * <pre>
-   * The SSH public key and expiration time.
+   * Optional. The SSH public key and expiration time.
    * </pre>
    *
-   * <code>.google.cloud.oslogin.common.SshPublicKey ssh_public_key = 2;</code>
+   * <code>
+   * .google.cloud.oslogin.common.SshPublicKey ssh_public_key = 2 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   com.google.cloud.oslogin.common.OsLoginProto.SshPublicKey getSshPublicKey();
   /**
    *
    *
    * <pre>
-   * The SSH public key and expiration time.
+   * Optional. The SSH public key and expiration time.
    * </pre>
    *
-   * <code>.google.cloud.oslogin.common.SshPublicKey ssh_public_key = 2;</code>
+   * <code>
+   * .google.cloud.oslogin.common.SshPublicKey ssh_public_key = 2 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   com.google.cloud.oslogin.common.OsLoginProto.SshPublicKeyOrBuilder getSshPublicKeyOrBuilder();
 
