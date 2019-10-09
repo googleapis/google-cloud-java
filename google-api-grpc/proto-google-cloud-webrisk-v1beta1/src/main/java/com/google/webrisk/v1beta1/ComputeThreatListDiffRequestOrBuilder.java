@@ -12,20 +12,24 @@ public interface ComputeThreatListDiffRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The ThreatList to update.
+   * The ThreatList to update.
    * </pre>
    *
-   * <code>.google.cloud.webrisk.v1beta1.ThreatType threat_type = 1;</code>
+   * <code>
+   * .google.cloud.webrisk.v1beta1.ThreatType threat_type = 1 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   int getThreatTypeValue();
   /**
    *
    *
    * <pre>
-   * Required. The ThreatList to update.
+   * The ThreatList to update.
    * </pre>
    *
-   * <code>.google.cloud.webrisk.v1beta1.ThreatType threat_type = 1;</code>
+   * <code>
+   * .google.cloud.webrisk.v1beta1.ThreatType threat_type = 1 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   com.google.webrisk.v1beta1.ThreatType getThreatType();
 
@@ -45,10 +49,11 @@ public interface ComputeThreatListDiffRequestOrBuilder
    *
    *
    * <pre>
-   * The constraints associated with this request.
+   * Required. The constraints associated with this request.
    * </pre>
    *
-   * <code>.google.cloud.webrisk.v1beta1.ComputeThreatListDiffRequest.Constraints constraints = 3;
+   * <code>
+   * .google.cloud.webrisk.v1beta1.ComputeThreatListDiffRequest.Constraints constraints = 3 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    */
   boolean hasConstraints();
@@ -56,10 +61,11 @@ public interface ComputeThreatListDiffRequestOrBuilder
    *
    *
    * <pre>
-   * The constraints associated with this request.
+   * Required. The constraints associated with this request.
    * </pre>
    *
-   * <code>.google.cloud.webrisk.v1beta1.ComputeThreatListDiffRequest.Constraints constraints = 3;
+   * <code>
+   * .google.cloud.webrisk.v1beta1.ComputeThreatListDiffRequest.Constraints constraints = 3 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    */
   com.google.webrisk.v1beta1.ComputeThreatListDiffRequest.Constraints getConstraints();
@@ -67,10 +73,11 @@ public interface ComputeThreatListDiffRequestOrBuilder
    *
    *
    * <pre>
-   * The constraints associated with this request.
+   * Required. The constraints associated with this request.
    * </pre>
    *
-   * <code>.google.cloud.webrisk.v1beta1.ComputeThreatListDiffRequest.Constraints constraints = 3;
+   * <code>
+   * .google.cloud.webrisk.v1beta1.ComputeThreatListDiffRequest.Constraints constraints = 3 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    */
   com.google.webrisk.v1beta1.ComputeThreatListDiffRequest.ConstraintsOrBuilder

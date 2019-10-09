@@ -27,7 +27,9 @@ public interface SearchHashesRequestOrBuilder
    * Required. The ThreatLists to search in.
    * </pre>
    *
-   * <code>repeated .google.cloud.webrisk.v1beta1.ThreatType threat_types = 2;</code>
+   * <code>
+   * repeated .google.cloud.webrisk.v1beta1.ThreatType threat_types = 2 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   java.util.List<com.google.webrisk.v1beta1.ThreatType> getThreatTypesList();
   /**
@@ -37,7 +39,9 @@ public interface SearchHashesRequestOrBuilder
    * Required. The ThreatLists to search in.
    * </pre>
    *
-   * <code>repeated .google.cloud.webrisk.v1beta1.ThreatType threat_types = 2;</code>
+   * <code>
+   * repeated .google.cloud.webrisk.v1beta1.ThreatType threat_types = 2 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   int getThreatTypesCount();
   /**
@@ -47,7 +51,9 @@ public interface SearchHashesRequestOrBuilder
    * Required. The ThreatLists to search in.
    * </pre>
    *
-   * <code>repeated .google.cloud.webrisk.v1beta1.ThreatType threat_types = 2;</code>
+   * <code>
+   * repeated .google.cloud.webrisk.v1beta1.ThreatType threat_types = 2 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   com.google.webrisk.v1beta1.ThreatType getThreatTypes(int index);
   /**
@@ -57,7 +63,9 @@ public interface SearchHashesRequestOrBuilder
    * Required. The ThreatLists to search in.
    * </pre>
    *
-   * <code>repeated .google.cloud.webrisk.v1beta1.ThreatType threat_types = 2;</code>
+   * <code>
+   * repeated .google.cloud.webrisk.v1beta1.ThreatType threat_types = 2 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   java.util.List<java.lang.Integer> getThreatTypesValueList();
   /**
@@ -67,7 +75,9 @@ public interface SearchHashesRequestOrBuilder
    * Required. The ThreatLists to search in.
    * </pre>
    *
-   * <code>repeated .google.cloud.webrisk.v1beta1.ThreatType threat_types = 2;</code>
+   * <code>
+   * repeated .google.cloud.webrisk.v1beta1.ThreatType threat_types = 2 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   int getThreatTypesValue(int index);
 }
