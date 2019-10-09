@@ -31,7 +31,7 @@ import org.junit.BeforeClass;
 import org.junit.Test;
 
 @javax.annotation.Generated("by Google")
-public class VPCServiceControlV3Test {
+public class VPCServiceControlTest {
   static final String PROJECT_INSIDE = System.getenv("PROJECT_ID");
   static final String PROJECT_OUTSIDE =
       System.getenv("GOOGLE_CLOUD_TESTS_VPCSC_OUTSIDE_PERIMETER_PROJECT");
