@@ -272,7 +272,7 @@
       <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-bigtable-emulator</artifactId>
-        <version>0.114.1-alpha-SNAPSHOT</version><!-- {x-version-update:google-cloud-bigtable-emulator:current} -->
+        <version>0.114.0-alpha</version>
       </dependency>
       <dependency>
         <groupId>com.google.cloud</groupId>

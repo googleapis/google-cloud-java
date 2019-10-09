@@ -24,8 +24,6 @@
     <module>google-cloud-appengineflexjava</module>
     <module>google-cloud-appenginejava8</module>
     <module>google-cloud-managedtest</module>
-    <module>google-cloud-gcloud-maven-plugin</module>
-    <module>google-cloud-bigtable-emulator</module>
     <module>google-cloud-conformance-tests</module>
   </modules>
   <dependencyManagement>
