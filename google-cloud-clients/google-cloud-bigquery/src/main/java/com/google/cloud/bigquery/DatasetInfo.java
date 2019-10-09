@@ -134,11 +134,11 @@ public class DatasetInfo implements Serializable {
         EncryptionConfiguration defaultEncryptionConfiguration);
 
     /**
-     * [Optional] The default partition expiration for all partitioned tables in the dataset, in
-     * milliseconds. Once this property is set, all newly-created partitioned tables in the dataset
-     * will have an expirationMs property in the timePartitioning settings set to this value, and
-     * changing the value will only affect new tables, not existing ones. The storage in a partition
-     * will have an expiration time of its partition time plus this value. Setting this property
+     * [Optional] The default partition expiration time for all partitioned tables in the dataset,
+     * in milliseconds. Once this property is set, all newly-created partitioned tables in the
+     * dataset will has an expirationMs property in the timePartitioning settings set to this value.
+     * Changing the value only affect new tables, not existing ones. The storage in a partition will
+     * have an expiration time of its partition time plus this value. Setting this property
      * overrides the use of defaultTableExpirationMs for partitioned tables: only one of
      * defaultTableExpirationMs and defaultPartitionExpirationMs will be used for any new
      * partitioned table. If you provide an explicit timePartitioning.expirationMs when creating or
