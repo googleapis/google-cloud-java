@@ -88,16 +88,32 @@ public class AutoMlClientTest {
 
   @Test
   @SuppressWarnings("all")
-  public void createDatasetTest() {
+  public void createDatasetTest() throws Exception {
     String name = "name3373707";
-    boolean done = true;
-    Operation expectedResponse = Operation.newBuilder().setName(name).setDone(done).build();
-    mockAutoMl.addResponse(expectedResponse);
+    String displayName = "displayName1615086568";
+    String description = "description-1724546052";
+    int exampleCount = 1517063674;
+    String etag = "etag3123477";
+    Dataset expectedResponse =
+        Dataset.newBuilder()
+            .setName(name)
+            .setDisplayName(displayName)
+            .setDescription(description)
+            .setExampleCount(exampleCount)
+            .setEtag(etag)
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("createDatasetTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockAutoMl.addResponse(resultOperation);
 
     LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
     Dataset dataset = Dataset.newBuilder().build();
 
-    Operation actualResponse = client.createDataset(parent, dataset);
+    Dataset actualResponse = client.createDatasetAsync(parent, dataset).get();
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<AbstractMessage> actualRequests = mockAutoMl.getRequests();
@@ -122,10 +138,12 @@ public class AutoMlClientTest {
       LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
       Dataset dataset = Dataset.newBuilder().build();
 
-      client.createDataset(parent, dataset);
+      client.createDatasetAsync(parent, dataset).get();
       Assert.fail("No exception raised");
-    } catch (InvalidArgumentException e) {
-      // Expected exception
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = (InvalidArgumentException) e.getCause();
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
     }
   }
 

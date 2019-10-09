@@ -92,13 +92,13 @@ import org.threeten.bp.Duration;
  * <p>The builder of this class is recursive, so contained classes are themselves builders. When
  * build() is called, the tree of builders is called to create the complete settings object.
  *
- * <p>For example, to set the total timeout of createDataset to 30 seconds:
+ * <p>For example, to set the total timeout of updateDataset to 30 seconds:
  *
  * <pre>
  * <code>
  * AutoMlStubSettings.Builder autoMlSettingsBuilder =
  *     AutoMlStubSettings.newBuilder();
- * autoMlSettingsBuilder.createDatasetSettings().getRetrySettings().toBuilder()
+ * autoMlSettingsBuilder.updateDatasetSettings().getRetrySettings().toBuilder()
  *     .setTotalTimeout(Duration.ofSeconds(30));
  * AutoMlStubSettings autoMlSettings = autoMlSettingsBuilder.build();
  * </code>
@@ -112,6 +112,8 @@ public class AutoMlStubSettings extends StubSettings<AutoMlStubSettings> {
       ImmutableList.<String>builder().add("https://www.googleapis.com/auth/cloud-platform").build();
 
   private final UnaryCallSettings<CreateDatasetRequest, Operation> createDatasetSettings;
+  private final OperationCallSettings<CreateDatasetRequest, Dataset, OperationMetadata>
+      createDatasetOperationSettings;
   private final UnaryCallSettings<UpdateDatasetRequest, Dataset> updateDatasetSettings;
   private final UnaryCallSettings<GetDatasetRequest, Dataset> getDatasetSettings;
   private final PagedCallSettings<
@@ -147,6 +149,13 @@ public class AutoMlStubSettings extends StubSettings<AutoMlStubSettings> {
   /** Returns the object with the settings used for calls to createDataset. */
   public UnaryCallSettings<CreateDatasetRequest, Operation> createDatasetSettings() {
     return createDatasetSettings;
+  }
+
+  /** Returns the object with the settings used for calls to createDataset. */
+  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
+  public OperationCallSettings<CreateDatasetRequest, Dataset, OperationMetadata>
+      createDatasetOperationSettings() {
+    return createDatasetOperationSettings;
   }
 
   /** Returns the object with the settings used for calls to updateDataset. */
@@ -325,6 +334,7 @@ public class AutoMlStubSettings extends StubSettings<AutoMlStubSettings> {
     super(settingsBuilder);
 
     createDatasetSettings = settingsBuilder.createDatasetSettings().build();
+    createDatasetOperationSettings = settingsBuilder.createDatasetOperationSettings().build();
     updateDatasetSettings = settingsBuilder.updateDatasetSettings().build();
     getDatasetSettings = settingsBuilder.getDatasetSettings().build();
     listDatasetsSettings = settingsBuilder.listDatasetsSettings().build();
@@ -521,6 +531,8 @@ public class AutoMlStubSettings extends StubSettings<AutoMlStubSettings> {
     private final ImmutableList<UnaryCallSettings.Builder<?, ?>> unaryMethodSettingsBuilders;
 
     private final UnaryCallSettings.Builder<CreateDatasetRequest, Operation> createDatasetSettings;
+    private final OperationCallSettings.Builder<CreateDatasetRequest, Dataset, OperationMetadata>
+        createDatasetOperationSettings;
     private final UnaryCallSettings.Builder<UpdateDatasetRequest, Dataset> updateDatasetSettings;
     private final UnaryCallSettings.Builder<GetDatasetRequest, Dataset> getDatasetSettings;
     private final PagedCallSettings.Builder<
@@ -596,6 +608,8 @@ public class AutoMlStubSettings extends StubSettings<AutoMlStubSettings> {
       super(clientContext);
 
       createDatasetSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+
+      createDatasetOperationSettings = OperationCallSettings.newBuilder();
 
       updateDatasetSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
@@ -735,6 +749,29 @@ public class AutoMlStubSettings extends StubSettings<AutoMlStubSettings> {
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
       builder
+          .createDatasetOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<CreateDatasetRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(Dataset.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(OperationMetadata.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelay(Duration.ofMillis(500L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelay(Duration.ofMillis(5000L))
+                      .setInitialRpcTimeout(Duration.ZERO) // ignored
+                      .setRpcTimeoutMultiplier(1.0) // ignored
+                      .setMaxRpcTimeout(Duration.ZERO) // ignored
+                      .setTotalTimeout(Duration.ofMillis(300000L))
+                      .build()));
+      builder
           .deleteDatasetOperationSettings()
           .setInitialCallSettings(
               UnaryCallSettings
@@ -853,6 +890,7 @@ public class AutoMlStubSettings extends StubSettings<AutoMlStubSettings> {
       super(settings);
 
       createDatasetSettings = settings.createDatasetSettings.toBuilder();
+      createDatasetOperationSettings = settings.createDatasetOperationSettings.toBuilder();
       updateDatasetSettings = settings.updateDatasetSettings.toBuilder();
       getDatasetSettings = settings.getDatasetSettings.toBuilder();
       listDatasetsSettings = settings.listDatasetsSettings.toBuilder();
@@ -909,6 +947,14 @@ public class AutoMlStubSettings extends StubSettings<AutoMlStubSettings> {
     /** Returns the builder for the settings used for calls to createDataset. */
     public UnaryCallSettings.Builder<CreateDatasetRequest, Operation> createDatasetSettings() {
       return createDatasetSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to createDataset. */
+    @BetaApi(
+        "The surface for use by generated code is not stable yet and may change in the future.")
+    public OperationCallSettings.Builder<CreateDatasetRequest, Dataset, OperationMetadata>
+        createDatasetOperationSettings() {
+      return createDatasetOperationSettings;
     }
 
     /** Returns the builder for the settings used for calls to updateDataset. */

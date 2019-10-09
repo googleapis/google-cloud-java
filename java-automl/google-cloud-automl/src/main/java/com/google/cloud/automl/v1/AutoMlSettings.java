@@ -53,13 +53,13 @@ import javax.annotation.Generated;
  * <p>The builder of this class is recursive, so contained classes are themselves builders. When
  * build() is called, the tree of builders is called to create the complete settings object.
  *
- * <p>For example, to set the total timeout of createDataset to 30 seconds:
+ * <p>For example, to set the total timeout of updateDataset to 30 seconds:
  *
  * <pre>
  * <code>
  * AutoMlSettings.Builder autoMlSettingsBuilder =
  *     AutoMlSettings.newBuilder();
- * autoMlSettingsBuilder.createDatasetSettings().getRetrySettings().toBuilder()
+ * autoMlSettingsBuilder.updateDatasetSettings().getRetrySettings().toBuilder()
  *     .setTotalTimeout(Duration.ofSeconds(30));
  * AutoMlSettings autoMlSettings = autoMlSettingsBuilder.build();
  * </code>
@@ -71,6 +71,14 @@ public class AutoMlSettings extends ClientSettings<AutoMlSettings> {
   /** Returns the object with the settings used for calls to createDataset. */
   public UnaryCallSettings<CreateDatasetRequest, Operation> createDatasetSettings() {
     return ((AutoMlStubSettings) getStubSettings()).createDatasetSettings();
+  }
+
+  /** Returns the object with the settings used for calls to createDataset. */
+  @BetaApi(
+      "The surface for long-running operations is not stable yet and may change in the future.")
+  public OperationCallSettings<CreateDatasetRequest, Dataset, OperationMetadata>
+      createDatasetOperationSettings() {
+    return ((AutoMlStubSettings) getStubSettings()).createDatasetOperationSettings();
   }
 
   /** Returns the object with the settings used for calls to updateDataset. */
@@ -284,6 +292,14 @@ public class AutoMlSettings extends ClientSettings<AutoMlSettings> {
     /** Returns the builder for the settings used for calls to createDataset. */
     public UnaryCallSettings.Builder<CreateDatasetRequest, Operation> createDatasetSettings() {
       return getStubSettingsBuilder().createDatasetSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to createDataset. */
+    @BetaApi(
+        "The surface for long-running operations is not stable yet and may change in the future.")
+    public OperationCallSettings.Builder<CreateDatasetRequest, Dataset, OperationMetadata>
+        createDatasetOperationSettings() {
+      return getStubSettingsBuilder().createDatasetOperationSettings();
     }
 
     /** Returns the builder for the settings used for calls to updateDataset. */

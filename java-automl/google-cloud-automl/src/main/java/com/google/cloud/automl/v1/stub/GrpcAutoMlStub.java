@@ -187,6 +187,8 @@ public class GrpcAutoMlStub extends AutoMlStub {
   private final GrpcOperationsStub operationsStub;
 
   private final UnaryCallable<CreateDatasetRequest, Operation> createDatasetCallable;
+  private final OperationCallable<CreateDatasetRequest, Dataset, OperationMetadata>
+      createDatasetOperationCallable;
   private final UnaryCallable<UpdateDatasetRequest, Dataset> updateDatasetCallable;
   private final UnaryCallable<GetDatasetRequest, Dataset> getDatasetCallable;
   private final UnaryCallable<ListDatasetsRequest, ListDatasetsResponse> listDatasetsCallable;
@@ -443,6 +445,12 @@ public class GrpcAutoMlStub extends AutoMlStub {
     this.createDatasetCallable =
         callableFactory.createUnaryCallable(
             createDatasetTransportSettings, settings.createDatasetSettings(), clientContext);
+    this.createDatasetOperationCallable =
+        callableFactory.createOperationCallable(
+            createDatasetTransportSettings,
+            settings.createDatasetOperationSettings(),
+            clientContext,
+            this.operationsStub);
     this.updateDatasetCallable =
         callableFactory.createUnaryCallable(
             updateDatasetTransportSettings, settings.updateDatasetSettings(), clientContext);
@@ -534,6 +542,12 @@ public class GrpcAutoMlStub extends AutoMlStub {
   @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
   public GrpcOperationsStub getOperationsStub() {
     return operationsStub;
+  }
+
+  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
+  public OperationCallable<CreateDatasetRequest, Dataset, OperationMetadata>
+      createDatasetOperationCallable() {
+    return createDatasetOperationCallable;
   }
 
   public UnaryCallable<CreateDatasetRequest, Operation> createDatasetCallable() {

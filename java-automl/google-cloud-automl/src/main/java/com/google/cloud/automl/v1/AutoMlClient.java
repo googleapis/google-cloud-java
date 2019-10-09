@@ -61,9 +61,9 @@ import javax.annotation.Generated;
  * <pre>
  * <code>
  * try (AutoMlClient autoMlClient = AutoMlClient.create()) {
- *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
  *   Dataset dataset = Dataset.newBuilder().build();
- *   Operation response = autoMlClient.createDataset(parent, dataset);
+ *   FieldMask updateMask = FieldMask.newBuilder().build();
+ *   Dataset response = autoMlClient.updateDataset(dataset, updateMask);
  * }
  * </code>
  * </pre>
@@ -193,7 +193,7 @@ public class AutoMlClient implements BackgroundResource {
    * try (AutoMlClient autoMlClient = AutoMlClient.create()) {
    *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
    *   Dataset dataset = Dataset.newBuilder().build();
-   *   Operation response = autoMlClient.createDataset(parent, dataset);
+   *   Dataset response = autoMlClient.createDatasetAsync(parent, dataset).get();
    * }
    * </code></pre>
    *
@@ -201,14 +201,17 @@ public class AutoMlClient implements BackgroundResource {
    * @param dataset The dataset to create.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Operation createDataset(LocationName parent, Dataset dataset) {
+  @BetaApi(
+      "The surface for long-running operations is not stable yet and may change in the future.")
+  public final OperationFuture<Dataset, OperationMetadata> createDatasetAsync(
+      LocationName parent, Dataset dataset) {
 
     CreateDatasetRequest request =
         CreateDatasetRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
             .setDataset(dataset)
             .build();
-    return createDataset(request);
+    return createDatasetAsync(request);
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
@@ -221,7 +224,7 @@ public class AutoMlClient implements BackgroundResource {
    * try (AutoMlClient autoMlClient = AutoMlClient.create()) {
    *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
    *   Dataset dataset = Dataset.newBuilder().build();
-   *   Operation response = autoMlClient.createDataset(parent.toString(), dataset);
+   *   Dataset response = autoMlClient.createDatasetAsync(parent.toString(), dataset).get();
    * }
    * </code></pre>
    *
@@ -229,11 +232,14 @@ public class AutoMlClient implements BackgroundResource {
    * @param dataset The dataset to create.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Operation createDataset(String parent, Dataset dataset) {
+  @BetaApi(
+      "The surface for long-running operations is not stable yet and may change in the future.")
+  public final OperationFuture<Dataset, OperationMetadata> createDatasetAsync(
+      String parent, Dataset dataset) {
 
     CreateDatasetRequest request =
         CreateDatasetRequest.newBuilder().setParent(parent).setDataset(dataset).build();
-    return createDataset(request);
+    return createDatasetAsync(request);
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
@@ -250,15 +256,44 @@ public class AutoMlClient implements BackgroundResource {
    *     .setParent(parent.toString())
    *     .setDataset(dataset)
    *     .build();
-   *   Operation response = autoMlClient.createDataset(request);
+   *   Dataset response = autoMlClient.createDatasetAsync(request).get();
    * }
    * </code></pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Operation createDataset(CreateDatasetRequest request) {
-    return createDatasetCallable().call(request);
+  @BetaApi(
+      "The surface for long-running operations is not stable yet and may change in the future.")
+  public final OperationFuture<Dataset, OperationMetadata> createDatasetAsync(
+      CreateDatasetRequest request) {
+    return createDatasetOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Creates a dataset.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (AutoMlClient autoMlClient = AutoMlClient.create()) {
+   *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+   *   Dataset dataset = Dataset.newBuilder().build();
+   *   CreateDatasetRequest request = CreateDatasetRequest.newBuilder()
+   *     .setParent(parent.toString())
+   *     .setDataset(dataset)
+   *     .build();
+   *   OperationFuture&lt;Dataset, OperationMetadata&gt; future = autoMlClient.createDatasetOperationCallable().futureCall(request);
+   *   // Do something
+   *   Dataset response = future.get();
+   * }
+   * </code></pre>
+   */
+  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
+  public final OperationCallable<CreateDatasetRequest, Dataset, OperationMetadata>
+      createDatasetOperationCallable() {
+    return stub.createDatasetOperationCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD

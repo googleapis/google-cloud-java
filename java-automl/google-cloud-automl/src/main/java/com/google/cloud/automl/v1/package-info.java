@@ -40,9 +40,9 @@
  * <pre>
  * <code>
  * try (AutoMlClient autoMlClient = AutoMlClient.create()) {
- *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
  *   Dataset dataset = Dataset.newBuilder().build();
- *   Operation response = autoMlClient.createDataset(parent, dataset);
+ *   FieldMask updateMask = FieldMask.newBuilder().build();
+ *   Dataset response = autoMlClient.updateDataset(dataset, updateMask);
  * }
  * </code>
  * </pre>

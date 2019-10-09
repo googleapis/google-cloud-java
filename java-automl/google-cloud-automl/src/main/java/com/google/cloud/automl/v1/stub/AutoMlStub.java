@@ -64,6 +64,12 @@ public abstract class AutoMlStub implements BackgroundResource {
     throw new UnsupportedOperationException("Not implemented: getOperationsStub()");
   }
 
+  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
+  public OperationCallable<CreateDatasetRequest, Dataset, OperationMetadata>
+      createDatasetOperationCallable() {
+    throw new UnsupportedOperationException("Not implemented: createDatasetOperationCallable()");
+  }
+
   public UnaryCallable<CreateDatasetRequest, Operation> createDatasetCallable() {
     throw new UnsupportedOperationException("Not implemented: createDatasetCallable()");
   }
