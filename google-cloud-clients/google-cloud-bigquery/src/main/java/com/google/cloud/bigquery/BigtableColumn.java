@@ -93,6 +93,7 @@ public abstract class BigtableColumn implements Serializable {
     public abstract BigtableColumn build();
   }
 
+  /** Returns a builder for a {@link BigtableColumn} object. */
   public static Builder newBuilder() {
     return new AutoValue_BigtableColumn.Builder();
   }

@@ -40,6 +40,7 @@ public class BigtableOptions extends FormatOptions {
     return columnFamilies;
   }
 
+  /** A builder for {@code BigtableOptions} objects. */
   public static final class Builder {
 
     private Boolean ignoreUnspecifiedColumnFamilies;
@@ -133,19 +134,16 @@ public class BigtableOptions extends FormatOptions {
         && Objects.equals(columnFamilies, other.columnFamilies);
   }
 
+  /** Returns a builder for a {@link BigtableOptions} object. */
   public static Builder newBuilder() {
     return new Builder();
   }
 
   static BigtableOptions fromPb(com.google.api.services.bigquery.model.BigtableOptions options) {
     Builder builder = newBuilder();
-    if (null != options.getIgnoreUnspecifiedColumnFamilies()) {
-      builder.setIgnoreUnspecifiedColumnFamilies(options.getIgnoreUnspecifiedColumnFamilies());
-    }
-    if (null != options.getReadRowkeyAsString()) {
-      builder.setReadRowkeyAsString(options.getReadRowkeyAsString());
-    }
-    if (null != options.getColumnFamilies()) {
+    builder.setIgnoreUnspecifiedColumnFamilies(options.getIgnoreUnspecifiedColumnFamilies());
+    builder.setReadRowkeyAsString(options.getReadRowkeyAsString());
+    if (options.getColumnFamilies() != null) {
       builder.setColumnFamilies(
           Lists.transform(options.getColumnFamilies(), BigtableColumnFamily.FROM_PB_FUNCTION));
     }

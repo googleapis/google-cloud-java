@@ -305,7 +305,7 @@ public abstract class ExternalTableDefinition extends TableDefinition {
   /**
    * Creates a builder for an ExternalTableDefinition object.
    *
-   * @param sourceUri The fully-qualified URIs that point to your data in Google Cloud. For Google
+   * @param sourceUri the fully-qualified URIs that point to your data in Google Cloud. For Google
    *     Cloud Bigtable URIs: Exactly one URI can be specified and it has be a fully specified and
    *     valid HTTPS URL for a Google Cloud Bigtable table. Size limits related to load jobs apply
    *     to external data sources, plus an additional limit of 10 GB maximum size across all URIs.
@@ -362,7 +362,7 @@ public abstract class ExternalTableDefinition extends TableDefinition {
   /**
    * Creates a builder for an ExternalTableDefinition object.
    *
-   * @param sourceUri The fully-qualified URIs that point to your data in Google Cloud. For Google
+   * @param sourceUri the fully-qualified URIs that point to your data in Google Cloud. For Google
    *     Cloud Bigtable URIs: Exactly one URI can be specified and it has be a fully specified and
    *     valid HTTPS URL for a Google Cloud Bigtable table. Size limits related to load jobs apply
    *     to external data sources, plus an additional limit of 10 GB maximum size across all URIs.
