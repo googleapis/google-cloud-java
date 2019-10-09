@@ -125,42 +125,77 @@ as every server environment is different.
 ### Resolving the conflict
 
 There are different strategies to resolve conflicts, but you must understand the root cause of the conflicts, e.g.:
-- If you have control over the dependency tree and you have the option to upgrade
-  offending dependencies (e.g., upgrading Guava version), then this is the easiest route.
-- If you don't have control over the dependency tree 
-  or changing dependency versions causes other failures, 
+- If you have control over the dependency tree, you can upgrade
+  offending dependencies (e.g., upgrading Guava version). This is the 
+  least hackish approach but it is a lot of work that can require multiple releases
+   of multiple libraries to sync everything up. 
+- If you can't modify and push new versions of your dependencies, import
+  `com.google.cloud:libraries-bom:2.5.0` (or a more recent version) and use that to
+  select consistent dependency version. This is the easiest route. 
+  For example, this is how you can depend on consistent versions of Guava and 
+  `com.google.cloud:google-cloud-storage` without explicitly setting the version of either one:
+  
+```
+  ...
+  <dependencyManagement>
+    <dependencies>
+      <dependency>
+        <groupId>com.google.cloud</groupId>
+        <artifactId>libraries-bom</artifactId>
+        <version>2.5.0</version>
+        <type>pom</type>
+        <scope>import</scope>
+       </dependency>
+     </dependencies>
+  </dependencyManagement>
+  ...
+  <dependencies>
+    <dependency>
+      <groupId>com.google.cloud</groupId>
+      <artifactId>google-cloud-storage</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>com.google.guava</groupId>
+      <artifactId>guava</artifactId>
+    </dependency>
+    ...
+  </dependencies>
+  ...
+```
+
+- If changing dependency versions causes other failures, 
   consider [shading dependencies](https://maven.apache.org/plugins/maven-shade-plugin/)
   that conflict with `google-cloud-java`.
 
-For example, to shade `guava` and `protobuf-java`:
+  For example, to shade `guava` and `protobuf-java`:
 
 ```
-<plugin>
-  <groupId>org.apache.maven.plugins</groupId>
-  <artifactId>maven-shade-plugin</artifactId>
-  <version>...</version>
-  <executions>
-    <execution>
-      <phase>package</phase>
-      <goals>
-        <goal>shade</goal>
-      </goals>
-      <configuration>
-        <keepDependenciesWithProvidedScope>false</keepDependenciesWithProvidedScope>
-        <relocations>
-          <!-- move protobuf to a shaded package -->
-          <relocation>
-            <pattern>com.google.protobuf</pattern>
-            <shadedPattern>myapp.shaded.com.google.protobuf</shadedPattern>
-          </relocation>
-          <!-- move Guava to a shaded package -->
-          <relocation>
-            <pattern>com.google.common</pattern>
-            <shadedPattern>myapp.shaded.com.google.common</shadedPattern>
-          </relocation>
-        </relocations>
-      </configuration>
-    </execution>
-  </executions>
-</plugin>
+  <plugin>
+    <groupId>org.apache.maven.plugins</groupId>
+    <artifactId>maven-shade-plugin</artifactId>
+    <version>...</version>
+    <executions>
+      <execution>
+        <phase>package</phase>
+        <goals>
+          <goal>shade</goal>
+        </goals>
+        <configuration>
+          <keepDependenciesWithProvidedScope>false</keepDependenciesWithProvidedScope>
+          <relocations>
+            <!-- move protobuf to a shaded package -->
+            <relocation>
+              <pattern>com.google.protobuf</pattern>
+              <shadedPattern>myapp.shaded.com.google.protobuf</shadedPattern>
+            </relocation>
+            <!-- move Guava to a shaded package -->
+            <relocation>
+              <pattern>com.google.common</pattern>
+              <shadedPattern>myapp.shaded.com.google.common</shadedPattern>
+            </relocation>
+          </relocations>
+        </configuration>
+      </execution>
+    </executions>
+  </plugin>
 ```
