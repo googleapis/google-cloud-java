@@ -65,7 +65,7 @@
     <site.installationModule>google-cloud-translate-parent</site.installationModule>
     <google.core.version>1.91.2</google.core.version>
     <google.api-common.version>1.8.1</google.api-common.version>
-    <google.common-protos.version>1.16.0</google.common-protos.version>
+    <google.common-protos.version>1.17.0</google.common-protos.version>
     <google.auth.version>0.17.2</google.auth.version>
     <google.http-client.version>1.32.1</google.http-client.version>
     <gax.version>1.49.0</gax.version>
