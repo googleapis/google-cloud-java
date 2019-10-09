@@ -17,8 +17,14 @@
 package com.google.cloud.spanner;
 
 import static com.google.common.truth.Truth.assertThat;
+import static org.mockito.Mockito.verify;
 import static org.mockito.MockitoAnnotations.initMocks;
 
+import com.google.cloud.Identity;
+import com.google.cloud.Policy;
+import com.google.cloud.Role;
+import com.google.cloud.spanner.DatabaseInfo.State;
+import java.util.Arrays;
 import org.junit.Before;
 import org.junit.Rule;
 import org.junit.Test;
@@ -46,6 +52,36 @@ public class DatabaseTest {
     Database db = createDatabase();
     assertThat(db.getId().getName()).isEqualTo(NAME);
     assertThat(db.getState()).isEqualTo(DatabaseInfo.State.CREATING);
+  }
+
+  @Test
+  public void getIAMPolicy() {
+    Database database =
+        new Database(
+            DatabaseId.of("test-project", "test-instance", "test-database"), State.READY, dbClient);
+    database.getIAMPolicy();
+    verify(dbClient).getDatabaseIAMPolicy("test-instance", "test-database");
+  }
+
+  @Test
+  public void setIAMPolicy() {
+    Database database =
+        new Database(
+            DatabaseId.of("test-project", "test-instance", "test-database"), State.READY, dbClient);
+    Policy policy =
+        Policy.newBuilder().addIdentity(Role.editor(), Identity.user("joe@example.com")).build();
+    database.setIAMPolicy(policy);
+    verify(dbClient).setDatabaseIAMPolicy("test-instance", "test-database", policy);
+  }
+
+  @Test
+  public void testIAMPermissions() {
+    Database database =
+        new Database(
+            DatabaseId.of("test-project", "test-instance", "test-database"), State.READY, dbClient);
+    Iterable<String> permissions = Arrays.asList("read");
+    database.testIAMPermissions(permissions);
+    verify(dbClient).testDatabaseIAMPermissions("test-instance", "test-database", permissions);
   }
 
   private Database createDatabase() {
