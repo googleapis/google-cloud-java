@@ -12,7 +12,6 @@ public interface ScanConfigErrorOrBuilder
    *
    *
    * <pre>
-   * Output only.
    * Indicates the reason code for a configuration failure.
    * </pre>
    *
@@ -23,7 +22,6 @@ public interface ScanConfigErrorOrBuilder
    *
    *
    * <pre>
-   * Output only.
    * Indicates the reason code for a configuration failure.
    * </pre>
    *
@@ -35,7 +33,6 @@ public interface ScanConfigErrorOrBuilder
    *
    *
    * <pre>
-   * Output only.
    * Indicates the full name of the ScanConfig field that triggers this error,
    * for example "scan_config.max_qps". This field is provided for
    * troubleshooting purposes only and its actual value can change in the
@@ -49,7 +46,6 @@ public interface ScanConfigErrorOrBuilder
    *
    *
    * <pre>
-   * Output only.
    * Indicates the full name of the ScanConfig field that triggers this error,
    * for example "scan_config.max_qps". This field is provided for
    * troubleshooting purposes only and its actual value can change in the

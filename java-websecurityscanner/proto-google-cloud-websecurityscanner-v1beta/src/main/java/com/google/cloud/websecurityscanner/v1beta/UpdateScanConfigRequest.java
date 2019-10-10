@@ -120,13 +120,14 @@ public final class UpdateScanConfigRequest extends com.google.protobuf.Generated
    *
    *
    * <pre>
-   * Required.
-   * The ScanConfig to be updated. The name field must be set to identify the
+   * Required. The ScanConfig to be updated. The name field must be set to identify the
    * resource to be updated. The values of fields not covered by the mask
    * will be ignored.
    * </pre>
    *
-   * <code>.google.cloud.websecurityscanner.v1beta.ScanConfig scan_config = 2;</code>
+   * <code>
+   * .google.cloud.websecurityscanner.v1beta.ScanConfig scan_config = 2 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   public boolean hasScanConfig() {
     return scanConfig_ != null;
@@ -135,13 +136,14 @@ public final class UpdateScanConfigRequest extends com.google.protobuf.Generated
    *
    *
    * <pre>
-   * Required.
-   * The ScanConfig to be updated. The name field must be set to identify the
+   * Required. The ScanConfig to be updated. The name field must be set to identify the
    * resource to be updated. The values of fields not covered by the mask
    * will be ignored.
    * </pre>
    *
-   * <code>.google.cloud.websecurityscanner.v1beta.ScanConfig scan_config = 2;</code>
+   * <code>
+   * .google.cloud.websecurityscanner.v1beta.ScanConfig scan_config = 2 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   public com.google.cloud.websecurityscanner.v1beta.ScanConfig getScanConfig() {
     return scanConfig_ == null
@@ -152,13 +154,14 @@ public final class UpdateScanConfigRequest extends com.google.protobuf.Generated
    *
    *
    * <pre>
-   * Required.
-   * The ScanConfig to be updated. The name field must be set to identify the
+   * Required. The ScanConfig to be updated. The name field must be set to identify the
    * resource to be updated. The values of fields not covered by the mask
    * will be ignored.
    * </pre>
    *
-   * <code>.google.cloud.websecurityscanner.v1beta.ScanConfig scan_config = 2;</code>
+   * <code>
+   * .google.cloud.websecurityscanner.v1beta.ScanConfig scan_config = 2 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   public com.google.cloud.websecurityscanner.v1beta.ScanConfigOrBuilder getScanConfigOrBuilder() {
     return getScanConfig();
@@ -170,13 +173,13 @@ public final class UpdateScanConfigRequest extends com.google.protobuf.Generated
    *
    *
    * <pre>
-   * Required.
-   * The update mask applies to the resource. For the `FieldMask` definition,
+   * Required. The update mask applies to the resource. For the `FieldMask` definition,
    * see
    * https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#fieldmask
    * </pre>
    *
-   * <code>.google.protobuf.FieldMask update_mask = 3;</code>
+   * <code>.google.protobuf.FieldMask update_mask = 3 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   public boolean hasUpdateMask() {
     return updateMask_ != null;
@@ -185,13 +188,13 @@ public final class UpdateScanConfigRequest extends com.google.protobuf.Generated
    *
    *
    * <pre>
-   * Required.
-   * The update mask applies to the resource. For the `FieldMask` definition,
+   * Required. The update mask applies to the resource. For the `FieldMask` definition,
    * see
    * https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#fieldmask
    * </pre>
    *
-   * <code>.google.protobuf.FieldMask update_mask = 3;</code>
+   * <code>.google.protobuf.FieldMask update_mask = 3 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   public com.google.protobuf.FieldMask getUpdateMask() {
     return updateMask_ == null ? com.google.protobuf.FieldMask.getDefaultInstance() : updateMask_;
@@ -200,13 +203,13 @@ public final class UpdateScanConfigRequest extends com.google.protobuf.Generated
    *
    *
    * <pre>
-   * Required.
-   * The update mask applies to the resource. For the `FieldMask` definition,
+   * Required. The update mask applies to the resource. For the `FieldMask` definition,
    * see
    * https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#fieldmask
    * </pre>
    *
-   * <code>.google.protobuf.FieldMask update_mask = 3;</code>
+   * <code>.google.protobuf.FieldMask update_mask = 3 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   public com.google.protobuf.FieldMaskOrBuilder getUpdateMaskOrBuilder() {
     return getUpdateMask();
@@ -589,13 +592,14 @@ public final class UpdateScanConfigRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Required.
-     * The ScanConfig to be updated. The name field must be set to identify the
+     * Required. The ScanConfig to be updated. The name field must be set to identify the
      * resource to be updated. The values of fields not covered by the mask
      * will be ignored.
      * </pre>
      *
-     * <code>.google.cloud.websecurityscanner.v1beta.ScanConfig scan_config = 2;</code>
+     * <code>
+     * .google.cloud.websecurityscanner.v1beta.ScanConfig scan_config = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public boolean hasScanConfig() {
       return scanConfigBuilder_ != null || scanConfig_ != null;
@@ -604,13 +608,14 @@ public final class UpdateScanConfigRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Required.
-     * The ScanConfig to be updated. The name field must be set to identify the
+     * Required. The ScanConfig to be updated. The name field must be set to identify the
      * resource to be updated. The values of fields not covered by the mask
      * will be ignored.
      * </pre>
      *
-     * <code>.google.cloud.websecurityscanner.v1beta.ScanConfig scan_config = 2;</code>
+     * <code>
+     * .google.cloud.websecurityscanner.v1beta.ScanConfig scan_config = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public com.google.cloud.websecurityscanner.v1beta.ScanConfig getScanConfig() {
       if (scanConfigBuilder_ == null) {
@@ -625,13 +630,14 @@ public final class UpdateScanConfigRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Required.
-     * The ScanConfig to be updated. The name field must be set to identify the
+     * Required. The ScanConfig to be updated. The name field must be set to identify the
      * resource to be updated. The values of fields not covered by the mask
      * will be ignored.
      * </pre>
      *
-     * <code>.google.cloud.websecurityscanner.v1beta.ScanConfig scan_config = 2;</code>
+     * <code>
+     * .google.cloud.websecurityscanner.v1beta.ScanConfig scan_config = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder setScanConfig(com.google.cloud.websecurityscanner.v1beta.ScanConfig value) {
       if (scanConfigBuilder_ == null) {
@@ -650,13 +656,14 @@ public final class UpdateScanConfigRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Required.
-     * The ScanConfig to be updated. The name field must be set to identify the
+     * Required. The ScanConfig to be updated. The name field must be set to identify the
      * resource to be updated. The values of fields not covered by the mask
      * will be ignored.
      * </pre>
      *
-     * <code>.google.cloud.websecurityscanner.v1beta.ScanConfig scan_config = 2;</code>
+     * <code>
+     * .google.cloud.websecurityscanner.v1beta.ScanConfig scan_config = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder setScanConfig(
         com.google.cloud.websecurityscanner.v1beta.ScanConfig.Builder builderForValue) {
@@ -673,13 +680,14 @@ public final class UpdateScanConfigRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Required.
-     * The ScanConfig to be updated. The name field must be set to identify the
+     * Required. The ScanConfig to be updated. The name field must be set to identify the
      * resource to be updated. The values of fields not covered by the mask
      * will be ignored.
      * </pre>
      *
-     * <code>.google.cloud.websecurityscanner.v1beta.ScanConfig scan_config = 2;</code>
+     * <code>
+     * .google.cloud.websecurityscanner.v1beta.ScanConfig scan_config = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder mergeScanConfig(com.google.cloud.websecurityscanner.v1beta.ScanConfig value) {
       if (scanConfigBuilder_ == null) {
@@ -702,13 +710,14 @@ public final class UpdateScanConfigRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Required.
-     * The ScanConfig to be updated. The name field must be set to identify the
+     * Required. The ScanConfig to be updated. The name field must be set to identify the
      * resource to be updated. The values of fields not covered by the mask
      * will be ignored.
      * </pre>
      *
-     * <code>.google.cloud.websecurityscanner.v1beta.ScanConfig scan_config = 2;</code>
+     * <code>
+     * .google.cloud.websecurityscanner.v1beta.ScanConfig scan_config = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder clearScanConfig() {
       if (scanConfigBuilder_ == null) {
@@ -725,13 +734,14 @@ public final class UpdateScanConfigRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Required.
-     * The ScanConfig to be updated. The name field must be set to identify the
+     * Required. The ScanConfig to be updated. The name field must be set to identify the
      * resource to be updated. The values of fields not covered by the mask
      * will be ignored.
      * </pre>
      *
-     * <code>.google.cloud.websecurityscanner.v1beta.ScanConfig scan_config = 2;</code>
+     * <code>
+     * .google.cloud.websecurityscanner.v1beta.ScanConfig scan_config = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public com.google.cloud.websecurityscanner.v1beta.ScanConfig.Builder getScanConfigBuilder() {
 
@@ -742,13 +752,14 @@ public final class UpdateScanConfigRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Required.
-     * The ScanConfig to be updated. The name field must be set to identify the
+     * Required. The ScanConfig to be updated. The name field must be set to identify the
      * resource to be updated. The values of fields not covered by the mask
      * will be ignored.
      * </pre>
      *
-     * <code>.google.cloud.websecurityscanner.v1beta.ScanConfig scan_config = 2;</code>
+     * <code>
+     * .google.cloud.websecurityscanner.v1beta.ScanConfig scan_config = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public com.google.cloud.websecurityscanner.v1beta.ScanConfigOrBuilder getScanConfigOrBuilder() {
       if (scanConfigBuilder_ != null) {
@@ -763,13 +774,14 @@ public final class UpdateScanConfigRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Required.
-     * The ScanConfig to be updated. The name field must be set to identify the
+     * Required. The ScanConfig to be updated. The name field must be set to identify the
      * resource to be updated. The values of fields not covered by the mask
      * will be ignored.
      * </pre>
      *
-     * <code>.google.cloud.websecurityscanner.v1beta.ScanConfig scan_config = 2;</code>
+     * <code>
+     * .google.cloud.websecurityscanner.v1beta.ScanConfig scan_config = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.websecurityscanner.v1beta.ScanConfig,
@@ -798,13 +810,13 @@ public final class UpdateScanConfigRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Required.
-     * The update mask applies to the resource. For the `FieldMask` definition,
+     * Required. The update mask applies to the resource. For the `FieldMask` definition,
      * see
      * https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#fieldmask
      * </pre>
      *
-     * <code>.google.protobuf.FieldMask update_mask = 3;</code>
+     * <code>.google.protobuf.FieldMask update_mask = 3 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public boolean hasUpdateMask() {
       return updateMaskBuilder_ != null || updateMask_ != null;
@@ -813,13 +825,13 @@ public final class UpdateScanConfigRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Required.
-     * The update mask applies to the resource. For the `FieldMask` definition,
+     * Required. The update mask applies to the resource. For the `FieldMask` definition,
      * see
      * https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#fieldmask
      * </pre>
      *
-     * <code>.google.protobuf.FieldMask update_mask = 3;</code>
+     * <code>.google.protobuf.FieldMask update_mask = 3 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public com.google.protobuf.FieldMask getUpdateMask() {
       if (updateMaskBuilder_ == null) {
@@ -834,13 +846,13 @@ public final class UpdateScanConfigRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Required.
-     * The update mask applies to the resource. For the `FieldMask` definition,
+     * Required. The update mask applies to the resource. For the `FieldMask` definition,
      * see
      * https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#fieldmask
      * </pre>
      *
-     * <code>.google.protobuf.FieldMask update_mask = 3;</code>
+     * <code>.google.protobuf.FieldMask update_mask = 3 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder setUpdateMask(com.google.protobuf.FieldMask value) {
       if (updateMaskBuilder_ == null) {
@@ -859,13 +871,13 @@ public final class UpdateScanConfigRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Required.
-     * The update mask applies to the resource. For the `FieldMask` definition,
+     * Required. The update mask applies to the resource. For the `FieldMask` definition,
      * see
      * https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#fieldmask
      * </pre>
      *
-     * <code>.google.protobuf.FieldMask update_mask = 3;</code>
+     * <code>.google.protobuf.FieldMask update_mask = 3 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder setUpdateMask(com.google.protobuf.FieldMask.Builder builderForValue) {
       if (updateMaskBuilder_ == null) {
@@ -881,13 +893,13 @@ public final class UpdateScanConfigRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Required.
-     * The update mask applies to the resource. For the `FieldMask` definition,
+     * Required. The update mask applies to the resource. For the `FieldMask` definition,
      * see
      * https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#fieldmask
      * </pre>
      *
-     * <code>.google.protobuf.FieldMask update_mask = 3;</code>
+     * <code>.google.protobuf.FieldMask update_mask = 3 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder mergeUpdateMask(com.google.protobuf.FieldMask value) {
       if (updateMaskBuilder_ == null) {
@@ -908,13 +920,13 @@ public final class UpdateScanConfigRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Required.
-     * The update mask applies to the resource. For the `FieldMask` definition,
+     * Required. The update mask applies to the resource. For the `FieldMask` definition,
      * see
      * https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#fieldmask
      * </pre>
      *
-     * <code>.google.protobuf.FieldMask update_mask = 3;</code>
+     * <code>.google.protobuf.FieldMask update_mask = 3 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder clearUpdateMask() {
       if (updateMaskBuilder_ == null) {
@@ -931,13 +943,13 @@ public final class UpdateScanConfigRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Required.
-     * The update mask applies to the resource. For the `FieldMask` definition,
+     * Required. The update mask applies to the resource. For the `FieldMask` definition,
      * see
      * https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#fieldmask
      * </pre>
      *
-     * <code>.google.protobuf.FieldMask update_mask = 3;</code>
+     * <code>.google.protobuf.FieldMask update_mask = 3 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public com.google.protobuf.FieldMask.Builder getUpdateMaskBuilder() {
 
@@ -948,13 +960,13 @@ public final class UpdateScanConfigRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Required.
-     * The update mask applies to the resource. For the `FieldMask` definition,
+     * Required. The update mask applies to the resource. For the `FieldMask` definition,
      * see
      * https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#fieldmask
      * </pre>
      *
-     * <code>.google.protobuf.FieldMask update_mask = 3;</code>
+     * <code>.google.protobuf.FieldMask update_mask = 3 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public com.google.protobuf.FieldMaskOrBuilder getUpdateMaskOrBuilder() {
       if (updateMaskBuilder_ != null) {
@@ -969,13 +981,13 @@ public final class UpdateScanConfigRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Required.
-     * The update mask applies to the resource. For the `FieldMask` definition,
+     * Required. The update mask applies to the resource. For the `FieldMask` definition,
      * see
      * https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#fieldmask
      * </pre>
      *
-     * <code>.google.protobuf.FieldMask update_mask = 3;</code>
+     * <code>.google.protobuf.FieldMask update_mask = 3 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.protobuf.FieldMask,
