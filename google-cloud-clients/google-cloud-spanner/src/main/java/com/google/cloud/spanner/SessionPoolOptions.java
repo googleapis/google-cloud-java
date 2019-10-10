@@ -35,7 +35,10 @@ public class SessionPoolOptions {
   private final long initialWaitForSessionTimeoutMillis;
 
   private SessionPoolOptions(Builder builder) {
-    this.minSessions = builder.minSessions;
+    // minSessions > maxSessions is only possible if the user has only set a value for maxSessions.
+    // We allow that to prevent code that only sets a value for maxSessions to break if the
+    // maxSessions value is less than the default for minSessions.
+    this.minSessions = Math.min(builder.minSessions, builder.maxSessions);
     this.maxSessions = builder.maxSessions;
     this.maxIdleSessions = builder.maxIdleSessions;
     this.writeSessionsFraction = builder.writeSessionsFraction;
@@ -99,6 +102,7 @@ public class SessionPoolOptions {
 
   /** Builder for creating SessionPoolOptions. */
   public static class Builder {
+    private boolean minSessionsSet = false;
     private int minSessions = DEFAULT_MIN_SESSIONS;
     private int maxSessions = DEFAULT_MAX_SESSIONS;
     private int maxIdleSessions;
@@ -113,6 +117,8 @@ public class SessionPoolOptions {
      * in parallel. Defaults to 100.
      */
     public Builder setMinSessions(int minSessions) {
+      Preconditions.checkArgument(minSessions >= 0, "minSessions must be >= 0");
+      this.minSessionsSet = true;
       this.minSessions = minSessions;
       return this;
     }
@@ -124,6 +130,7 @@ public class SessionPoolOptions {
      * can either block or fail. Defaults to 400.
      */
     public Builder setMaxSessions(int maxSessions) {
+      Preconditions.checkArgument(maxSessions > 0, "maxSessions must be > 0");
       this.maxSessions = maxSessions;
       return this;
     }
@@ -210,11 +217,13 @@ public class SessionPoolOptions {
     }
 
     private void validate() {
-      Preconditions.checkArgument(
-          maxSessions >= minSessions,
-          "Min sessions(%s) must be <= max sessions(%s)",
-          minSessions,
-          maxSessions);
+      if (minSessionsSet) {
+        Preconditions.checkArgument(
+            maxSessions >= minSessions,
+            "Min sessions(%s) must be <= max sessions(%s)",
+            minSessions,
+            maxSessions);
+      }
       Preconditions.checkArgument(
           keepAliveIntervalMinutes < 60, "Keep alive interval should be less than" + "60 minutes");
       Preconditions.checkArgument(
