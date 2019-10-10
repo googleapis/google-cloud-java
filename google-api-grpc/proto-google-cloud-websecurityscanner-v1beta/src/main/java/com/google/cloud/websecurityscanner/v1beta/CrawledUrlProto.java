@@ -27,14 +27,14 @@ public final class CrawledUrlProto {
     java.lang.String[] descriptorData = {
       "\n8google/cloud/websecurityscanner/v1beta"
           + "/crawled_url.proto\022&google.cloud.websecu"
-          + "rityscanner.v1beta\032\034google/api/annotatio"
-          + "ns.proto\"<\n\nCrawledUrl\022\023\n\013http_method\030\001 "
-          + "\001(\t\022\013\n\003url\030\002 \001(\t\022\014\n\004body\030\003 \001(\tB\302\001\n*com.g"
-          + "oogle.cloud.websecurityscanner.v1betaB\017C"
-          + "rawledUrlProtoP\001ZXgoogle.golang.org/genp"
-          + "roto/googleapis/cloud/websecurityscanner"
-          + "/v1beta;websecurityscanner\312\002&Google\\Clou"
-          + "d\\WebSecurityScanner\\V1betab\006proto3"
+          + "rityscanner.v1beta\"<\n\nCrawledUrl\022\023\n\013http"
+          + "_method\030\001 \001(\t\022\013\n\003url\030\002 \001(\t\022\014\n\004body\030\003 \001(\t"
+          + "B\302\001\n*com.google.cloud.websecurityscanner"
+          + ".v1betaB\017CrawledUrlProtoP\001ZXgoogle.golan"
+          + "g.org/genproto/googleapis/cloud/websecur"
+          + "ityscanner/v1beta;websecurityscanner\312\002&G"
+          + "oogle\\Cloud\\WebSecurityScanner\\V1betab\006p"
+          + "roto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner() {
@@ -45,11 +45,7 @@ public final class CrawledUrlProto {
           }
         };
     com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
-        descriptorData,
-        new com.google.protobuf.Descriptors.FileDescriptor[] {
-          com.google.api.AnnotationsProto.getDescriptor(),
-        },
-        assigner);
+        descriptorData, new com.google.protobuf.Descriptors.FileDescriptor[] {}, assigner);
     internal_static_google_cloud_websecurityscanner_v1beta_CrawledUrl_descriptor =
         getDescriptor().getMessageTypes().get(0);
     internal_static_google_cloud_websecurityscanner_v1beta_CrawledUrl_fieldAccessorTable =
@@ -58,7 +54,6 @@ public final class CrawledUrlProto {
             new java.lang.String[] {
               "HttpMethod", "Url", "Body",
             });
-    com.google.api.AnnotationsProto.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

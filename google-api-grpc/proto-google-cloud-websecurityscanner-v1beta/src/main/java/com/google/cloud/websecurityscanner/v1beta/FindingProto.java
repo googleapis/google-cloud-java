@@ -27,31 +27,34 @@ public final class FindingProto {
     java.lang.String[] descriptorData = {
       "\n4google/cloud/websecurityscanner/v1beta"
           + "/finding.proto\022&google.cloud.websecurity"
-          + "scanner.v1beta\032\034google/api/annotations.p"
-          + "roto\032:google/cloud/websecurityscanner/v1"
-          + "beta/finding_addon.proto\"\242\005\n\007Finding\022\014\n\004"
-          + "name\030\001 \001(\t\022\024\n\014finding_type\030\002 \001(\t\022\023\n\013http"
-          + "_method\030\003 \001(\t\022\022\n\nfuzzed_url\030\004 \001(\t\022\014\n\004bod"
-          + "y\030\005 \001(\t\022\023\n\013description\030\006 \001(\t\022\030\n\020reproduc"
-          + "tion_url\030\007 \001(\t\022\021\n\tframe_url\030\010 \001(\t\022\021\n\tfin"
-          + "al_url\030\t \001(\t\022\023\n\013tracking_id\030\n \001(\t\022:\n\004for"
-          + "m\030\020 \001(\0132,.google.cloud.websecurityscanne"
-          + "r.v1beta.Form\022Q\n\020outdated_library\030\013 \001(\0132"
-          + "7.google.cloud.websecurityscanner.v1beta"
-          + ".OutdatedLibrary\022U\n\022violating_resource\030\014"
-          + " \001(\01329.google.cloud.websecurityscanner.v"
-          + "1beta.ViolatingResource\022U\n\022vulnerable_he"
-          + "aders\030\017 \001(\01329.google.cloud.websecuritysc"
-          + "anner.v1beta.VulnerableHeaders\022[\n\025vulner"
-          + "able_parameters\030\r \001(\0132<.google.cloud.web"
-          + "securityscanner.v1beta.VulnerableParamet"
-          + "ers\0228\n\003xss\030\016 \001(\0132+.google.cloud.websecur"
-          + "ityscanner.v1beta.XssB\277\001\n*com.google.clo"
-          + "ud.websecurityscanner.v1betaB\014FindingPro"
-          + "toP\001ZXgoogle.golang.org/genproto/googlea"
-          + "pis/cloud/websecurityscanner/v1beta;webs"
-          + "ecurityscanner\312\002&Google\\Cloud\\WebSecurit"
-          + "yScanner\\V1betab\006proto3"
+          + "scanner.v1beta\032\031google/api/resource.prot"
+          + "o\032:google/cloud/websecurityscanner/v1bet"
+          + "a/finding_addon.proto\"\251\006\n\007Finding\022\014\n\004nam"
+          + "e\030\001 \001(\t\022\024\n\014finding_type\030\002 \001(\t\022\023\n\013http_me"
+          + "thod\030\003 \001(\t\022\022\n\nfuzzed_url\030\004 \001(\t\022\014\n\004body\030\005"
+          + " \001(\t\022\023\n\013description\030\006 \001(\t\022\030\n\020reproductio"
+          + "n_url\030\007 \001(\t\022\021\n\tframe_url\030\010 \001(\t\022\021\n\tfinal_"
+          + "url\030\t \001(\t\022\023\n\013tracking_id\030\n \001(\t\022:\n\004form\030\020"
+          + " \001(\0132,.google.cloud.websecurityscanner.v"
+          + "1beta.Form\022Q\n\020outdated_library\030\013 \001(\01327.g"
+          + "oogle.cloud.websecurityscanner.v1beta.Ou"
+          + "tdatedLibrary\022U\n\022violating_resource\030\014 \001("
+          + "\01329.google.cloud.websecurityscanner.v1be"
+          + "ta.ViolatingResource\022U\n\022vulnerable_heade"
+          + "rs\030\017 \001(\01329.google.cloud.websecurityscann"
+          + "er.v1beta.VulnerableHeaders\022[\n\025vulnerabl"
+          + "e_parameters\030\r \001(\0132<.google.cloud.websec"
+          + "urityscanner.v1beta.VulnerableParameters"
+          + "\0228\n\003xss\030\016 \001(\0132+.google.cloud.websecurity"
+          + "scanner.v1beta.Xss:\204\001\352A\200\001\n)websecuritysc"
+          + "anner.googleapis.com/Finding\022Sprojects/{"
+          + "project}/scanConfigs/{scan_config}/scanR"
+          + "uns/{scan_run}/findings/{finding}B\277\001\n*co"
+          + "m.google.cloud.websecurityscanner.v1beta"
+          + "B\014FindingProtoP\001ZXgoogle.golang.org/genp"
+          + "roto/googleapis/cloud/websecurityscanner"
+          + "/v1beta;websecurityscanner\312\002&Google\\Clou"
+          + "d\\WebSecurityScanner\\V1betab\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner() {
@@ -64,7 +67,7 @@ public final class FindingProto {
     com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
         descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
-          com.google.api.AnnotationsProto.getDescriptor(),
+          com.google.api.ResourceProto.getDescriptor(),
           com.google.cloud.websecurityscanner.v1beta.FindingAddonProto.getDescriptor(),
         },
         assigner);
@@ -91,7 +94,12 @@ public final class FindingProto {
               "VulnerableParameters",
               "Xss",
             });
-    com.google.api.AnnotationsProto.getDescriptor();
+    com.google.protobuf.ExtensionRegistry registry =
+        com.google.protobuf.ExtensionRegistry.newInstance();
+    registry.add(com.google.api.ResourceProto.resource);
+    com.google.protobuf.Descriptors.FileDescriptor.internalUpdateFileDescriptor(
+        descriptor, registry);
+    com.google.api.ResourceProto.getDescriptor();
     com.google.cloud.websecurityscanner.v1beta.FindingAddonProto.getDescriptor();
   }
 

@@ -118,13 +118,14 @@ public final class ListFindingsRequest extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * Required.
-   * The parent resource name, which should be a scan run resource name in the
+   * Required. The parent resource name, which should be a scan run resource name in the
    * format
    * 'projects/{projectId}/scanConfigs/{scanConfigId}/scanRuns/{scanRunId}'.
    * </pre>
    *
-   * <code>string parent = 1;</code>
+   * <code>
+   * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    */
   public java.lang.String getParent() {
     java.lang.Object ref = parent_;
@@ -141,13 +142,14 @@ public final class ListFindingsRequest extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * Required.
-   * The parent resource name, which should be a scan run resource name in the
+   * Required. The parent resource name, which should be a scan run resource name in the
    * format
    * 'projects/{projectId}/scanConfigs/{scanConfigId}/scanRuns/{scanRunId}'.
    * </pre>
    *
-   * <code>string parent = 1;</code>
+   * <code>
+   * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    */
   public com.google.protobuf.ByteString getParentBytes() {
     java.lang.Object ref = parent_;
@@ -167,13 +169,13 @@ public final class ListFindingsRequest extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * The filter expression. The expression must be in the format: &lt;field&gt;
+   * Required. The filter expression. The expression must be in the format: &lt;field&gt;
    * &lt;operator&gt; &lt;value&gt;.
    * Supported field: 'finding_type'.
    * Supported operator: '='.
    * </pre>
    *
-   * <code>string filter = 2;</code>
+   * <code>string filter = 2 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   public java.lang.String getFilter() {
     java.lang.Object ref = filter_;
@@ -190,13 +192,13 @@ public final class ListFindingsRequest extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * The filter expression. The expression must be in the format: &lt;field&gt;
+   * Required. The filter expression. The expression must be in the format: &lt;field&gt;
    * &lt;operator&gt; &lt;value&gt;.
    * Supported field: 'finding_type'.
    * Supported operator: '='.
    * </pre>
    *
-   * <code>string filter = 2;</code>
+   * <code>string filter = 2 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   public com.google.protobuf.ByteString getFilterBytes() {
     java.lang.Object ref = filter_;
@@ -648,13 +650,14 @@ public final class ListFindingsRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Required.
-     * The parent resource name, which should be a scan run resource name in the
+     * Required. The parent resource name, which should be a scan run resource name in the
      * format
      * 'projects/{projectId}/scanConfigs/{scanConfigId}/scanRuns/{scanRunId}'.
      * </pre>
      *
-     * <code>string parent = 1;</code>
+     * <code>
+     * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      */
     public java.lang.String getParent() {
       java.lang.Object ref = parent_;
@@ -671,13 +674,14 @@ public final class ListFindingsRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Required.
-     * The parent resource name, which should be a scan run resource name in the
+     * Required. The parent resource name, which should be a scan run resource name in the
      * format
      * 'projects/{projectId}/scanConfigs/{scanConfigId}/scanRuns/{scanRunId}'.
      * </pre>
      *
-     * <code>string parent = 1;</code>
+     * <code>
+     * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      */
     public com.google.protobuf.ByteString getParentBytes() {
       java.lang.Object ref = parent_;
@@ -694,13 +698,14 @@ public final class ListFindingsRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Required.
-     * The parent resource name, which should be a scan run resource name in the
+     * Required. The parent resource name, which should be a scan run resource name in the
      * format
      * 'projects/{projectId}/scanConfigs/{scanConfigId}/scanRuns/{scanRunId}'.
      * </pre>
      *
-     * <code>string parent = 1;</code>
+     * <code>
+     * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      */
     public Builder setParent(java.lang.String value) {
       if (value == null) {
@@ -715,13 +720,14 @@ public final class ListFindingsRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Required.
-     * The parent resource name, which should be a scan run resource name in the
+     * Required. The parent resource name, which should be a scan run resource name in the
      * format
      * 'projects/{projectId}/scanConfigs/{scanConfigId}/scanRuns/{scanRunId}'.
      * </pre>
      *
-     * <code>string parent = 1;</code>
+     * <code>
+     * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      */
     public Builder clearParent() {
 
@@ -733,13 +739,14 @@ public final class ListFindingsRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Required.
-     * The parent resource name, which should be a scan run resource name in the
+     * Required. The parent resource name, which should be a scan run resource name in the
      * format
      * 'projects/{projectId}/scanConfigs/{scanConfigId}/scanRuns/{scanRunId}'.
      * </pre>
      *
-     * <code>string parent = 1;</code>
+     * <code>
+     * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      */
     public Builder setParentBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -757,13 +764,13 @@ public final class ListFindingsRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * The filter expression. The expression must be in the format: &lt;field&gt;
+     * Required. The filter expression. The expression must be in the format: &lt;field&gt;
      * &lt;operator&gt; &lt;value&gt;.
      * Supported field: 'finding_type'.
      * Supported operator: '='.
      * </pre>
      *
-     * <code>string filter = 2;</code>
+     * <code>string filter = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public java.lang.String getFilter() {
       java.lang.Object ref = filter_;
@@ -780,13 +787,13 @@ public final class ListFindingsRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * The filter expression. The expression must be in the format: &lt;field&gt;
+     * Required. The filter expression. The expression must be in the format: &lt;field&gt;
      * &lt;operator&gt; &lt;value&gt;.
      * Supported field: 'finding_type'.
      * Supported operator: '='.
      * </pre>
      *
-     * <code>string filter = 2;</code>
+     * <code>string filter = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public com.google.protobuf.ByteString getFilterBytes() {
       java.lang.Object ref = filter_;
@@ -803,13 +810,13 @@ public final class ListFindingsRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * The filter expression. The expression must be in the format: &lt;field&gt;
+     * Required. The filter expression. The expression must be in the format: &lt;field&gt;
      * &lt;operator&gt; &lt;value&gt;.
      * Supported field: 'finding_type'.
      * Supported operator: '='.
      * </pre>
      *
-     * <code>string filter = 2;</code>
+     * <code>string filter = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder setFilter(java.lang.String value) {
       if (value == null) {
@@ -824,13 +831,13 @@ public final class ListFindingsRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * The filter expression. The expression must be in the format: &lt;field&gt;
+     * Required. The filter expression. The expression must be in the format: &lt;field&gt;
      * &lt;operator&gt; &lt;value&gt;.
      * Supported field: 'finding_type'.
      * Supported operator: '='.
      * </pre>
      *
-     * <code>string filter = 2;</code>
+     * <code>string filter = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder clearFilter() {
 
@@ -842,13 +849,13 @@ public final class ListFindingsRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * The filter expression. The expression must be in the format: &lt;field&gt;
+     * Required. The filter expression. The expression must be in the format: &lt;field&gt;
      * &lt;operator&gt; &lt;value&gt;.
      * Supported field: 'finding_type'.
      * Supported operator: '='.
      * </pre>
      *
-     * <code>string filter = 2;</code>
+     * <code>string filter = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder setFilterBytes(com.google.protobuf.ByteString value) {
       if (value == null) {

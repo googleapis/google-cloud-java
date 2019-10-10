@@ -108,7 +108,7 @@ public final class ScanConfigError extends com.google.protobuf.GeneratedMessageV
    * <pre>
    * Output only.
    * Defines an error reason code.
-   * Next id: 43
+   * Next id: 44
    * </pre>
    *
    * Protobuf enum {@code google.cloud.websecurityscanner.v1beta.ScanConfigError.Code}
@@ -327,6 +327,16 @@ public final class ScanConfigError extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
+     * User tries to update managed scan
+     * </pre>
+     *
+     * <code>FORBIDDEN_UPDATE_TO_MANAGED_SCAN = 43;</code>
+     */
+    FORBIDDEN_UPDATE_TO_MANAGED_SCAN(21, 43),
+    /**
+     *
+     *
+     * <pre>
      * The supplied filter is malformed. For example, it can not be parsed, does
      * not have a filter type in expression, or the same filter type appears
      * more than once.
@@ -334,7 +344,7 @@ public final class ScanConfigError extends com.google.protobuf.GeneratedMessageV
      *
      * <code>MALFORMED_FILTER = 22;</code>
      */
-    MALFORMED_FILTER(21, 22),
+    MALFORMED_FILTER(22, 22),
     /**
      *
      *
@@ -344,7 +354,7 @@ public final class ScanConfigError extends com.google.protobuf.GeneratedMessageV
      *
      * <code>MALFORMED_RESOURCE_NAME = 23;</code>
      */
-    MALFORMED_RESOURCE_NAME(22, 23),
+    MALFORMED_RESOURCE_NAME(23, 23),
     /**
      *
      *
@@ -354,7 +364,7 @@ public final class ScanConfigError extends com.google.protobuf.GeneratedMessageV
      *
      * <code>PROJECT_INACTIVE = 24;</code>
      */
-    PROJECT_INACTIVE(23, 24),
+    PROJECT_INACTIVE(24, 24),
     /**
      *
      *
@@ -364,7 +374,7 @@ public final class ScanConfigError extends com.google.protobuf.GeneratedMessageV
      *
      * <code>REQUIRED_FIELD = 25;</code>
      */
-    REQUIRED_FIELD(24, 25),
+    REQUIRED_FIELD(25, 25),
     /**
      *
      *
@@ -375,7 +385,7 @@ public final class ScanConfigError extends com.google.protobuf.GeneratedMessageV
      *
      * <code>RESOURCE_NAME_INCONSISTENT = 26;</code>
      */
-    RESOURCE_NAME_INCONSISTENT(25, 26),
+    RESOURCE_NAME_INCONSISTENT(26, 26),
     /**
      *
      *
@@ -385,7 +395,7 @@ public final class ScanConfigError extends com.google.protobuf.GeneratedMessageV
      *
      * <code>SCAN_ALREADY_RUNNING = 27;</code>
      */
-    SCAN_ALREADY_RUNNING(26, 27),
+    SCAN_ALREADY_RUNNING(27, 27),
     /**
      *
      *
@@ -395,7 +405,7 @@ public final class ScanConfigError extends com.google.protobuf.GeneratedMessageV
      *
      * <code>SCAN_NOT_RUNNING = 28;</code>
      */
-    SCAN_NOT_RUNNING(27, 28),
+    SCAN_NOT_RUNNING(28, 28),
     /**
      *
      *
@@ -405,7 +415,7 @@ public final class ScanConfigError extends com.google.protobuf.GeneratedMessageV
      *
      * <code>SEED_URL_DOES_NOT_BELONG_TO_CURRENT_PROJECT = 29;</code>
      */
-    SEED_URL_DOES_NOT_BELONG_TO_CURRENT_PROJECT(28, 29),
+    SEED_URL_DOES_NOT_BELONG_TO_CURRENT_PROJECT(29, 29),
     /**
      *
      *
@@ -415,7 +425,7 @@ public final class ScanConfigError extends com.google.protobuf.GeneratedMessageV
      *
      * <code>SEED_URL_MALFORMED = 30;</code>
      */
-    SEED_URL_MALFORMED(29, 30),
+    SEED_URL_MALFORMED(30, 30),
     /**
      *
      *
@@ -425,7 +435,7 @@ public final class ScanConfigError extends com.google.protobuf.GeneratedMessageV
      *
      * <code>SEED_URL_MAPPED_TO_NON_ROUTABLE_ADDRESS = 31;</code>
      */
-    SEED_URL_MAPPED_TO_NON_ROUTABLE_ADDRESS(30, 31),
+    SEED_URL_MAPPED_TO_NON_ROUTABLE_ADDRESS(31, 31),
     /**
      *
      *
@@ -436,7 +446,7 @@ public final class ScanConfigError extends com.google.protobuf.GeneratedMessageV
      *
      * <code>SEED_URL_MAPPED_TO_UNRESERVED_ADDRESS = 32;</code>
      */
-    SEED_URL_MAPPED_TO_UNRESERVED_ADDRESS(31, 32),
+    SEED_URL_MAPPED_TO_UNRESERVED_ADDRESS(32, 32),
     /**
      *
      *
@@ -446,7 +456,7 @@ public final class ScanConfigError extends com.google.protobuf.GeneratedMessageV
      *
      * <code>SEED_URL_HAS_NON_ROUTABLE_IP_ADDRESS = 33;</code>
      */
-    SEED_URL_HAS_NON_ROUTABLE_IP_ADDRESS(32, 33),
+    SEED_URL_HAS_NON_ROUTABLE_IP_ADDRESS(33, 33),
     /**
      *
      *
@@ -457,7 +467,7 @@ public final class ScanConfigError extends com.google.protobuf.GeneratedMessageV
      *
      * <code>SEED_URL_HAS_UNRESERVED_IP_ADDRESS = 35;</code>
      */
-    SEED_URL_HAS_UNRESERVED_IP_ADDRESS(33, 35),
+    SEED_URL_HAS_UNRESERVED_IP_ADDRESS(34, 35),
     /**
      *
      *
@@ -468,7 +478,7 @@ public final class ScanConfigError extends com.google.protobuf.GeneratedMessageV
      *
      * <code>SERVICE_ACCOUNT_NOT_CONFIGURED = 36;</code>
      */
-    SERVICE_ACCOUNT_NOT_CONFIGURED(34, 36),
+    SERVICE_ACCOUNT_NOT_CONFIGURED(35, 36),
     /**
      *
      *
@@ -478,7 +488,7 @@ public final class ScanConfigError extends com.google.protobuf.GeneratedMessageV
      *
      * <code>TOO_MANY_SCANS = 37;</code>
      */
-    TOO_MANY_SCANS(35, 37),
+    TOO_MANY_SCANS(36, 37),
     /**
      *
      *
@@ -488,7 +498,7 @@ public final class ScanConfigError extends com.google.protobuf.GeneratedMessageV
      *
      * <code>UNABLE_TO_RESOLVE_PROJECT_INFO = 38;</code>
      */
-    UNABLE_TO_RESOLVE_PROJECT_INFO(36, 38),
+    UNABLE_TO_RESOLVE_PROJECT_INFO(37, 38),
     /**
      *
      *
@@ -498,7 +508,7 @@ public final class ScanConfigError extends com.google.protobuf.GeneratedMessageV
      *
      * <code>UNSUPPORTED_BLACKLIST_PATTERN_FORMAT = 39;</code>
      */
-    UNSUPPORTED_BLACKLIST_PATTERN_FORMAT(37, 39),
+    UNSUPPORTED_BLACKLIST_PATTERN_FORMAT(38, 39),
     /**
      *
      *
@@ -508,7 +518,7 @@ public final class ScanConfigError extends com.google.protobuf.GeneratedMessageV
      *
      * <code>UNSUPPORTED_FILTER = 40;</code>
      */
-    UNSUPPORTED_FILTER(38, 40),
+    UNSUPPORTED_FILTER(39, 40),
     /**
      *
      *
@@ -519,7 +529,7 @@ public final class ScanConfigError extends com.google.protobuf.GeneratedMessageV
      *
      * <code>UNSUPPORTED_FINDING_TYPE = 41;</code>
      */
-    UNSUPPORTED_FINDING_TYPE(39, 41),
+    UNSUPPORTED_FINDING_TYPE(40, 41),
     /**
      *
      *
@@ -529,7 +539,7 @@ public final class ScanConfigError extends com.google.protobuf.GeneratedMessageV
      *
      * <code>UNSUPPORTED_URL_SCHEME = 42;</code>
      */
-    UNSUPPORTED_URL_SCHEME(40, 42),
+    UNSUPPORTED_URL_SCHEME(41, 42),
     UNRECOGNIZED(-1, -1),
     ;
 
@@ -762,6 +772,16 @@ public final class ScanConfigError extends com.google.protobuf.GeneratedMessageV
      * <code>FORBIDDEN_TO_SCAN_COMPUTE = 21;</code>
      */
     public static final int FORBIDDEN_TO_SCAN_COMPUTE_VALUE = 21;
+    /**
+     *
+     *
+     * <pre>
+     * User tries to update managed scan
+     * </pre>
+     *
+     * <code>FORBIDDEN_UPDATE_TO_MANAGED_SCAN = 43;</code>
+     */
+    public static final int FORBIDDEN_UPDATE_TO_MANAGED_SCAN_VALUE = 43;
     /**
      *
      *
@@ -1026,6 +1046,8 @@ public final class ScanConfigError extends com.google.protobuf.GeneratedMessageV
           return FINDING_TYPE_UNSPECIFIED;
         case 21:
           return FORBIDDEN_TO_SCAN_COMPUTE;
+        case 43:
+          return FORBIDDEN_UPDATE_TO_MANAGED_SCAN;
         case 22:
           return MALFORMED_FILTER;
         case 23:
@@ -1118,6 +1140,7 @@ public final class ScanConfigError extends com.google.protobuf.GeneratedMessageV
       FAILED_TO_AUTHENTICATE_TO_TARGET,
       FINDING_TYPE_UNSPECIFIED,
       FORBIDDEN_TO_SCAN_COMPUTE,
+      FORBIDDEN_UPDATE_TO_MANAGED_SCAN,
       MALFORMED_FILTER,
       MALFORMED_RESOURCE_NAME,
       PROJECT_INACTIVE,
@@ -1167,7 +1190,6 @@ public final class ScanConfigError extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * Output only.
    * Indicates the reason code for a configuration failure.
    * </pre>
    *
@@ -1180,7 +1202,6 @@ public final class ScanConfigError extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * Output only.
    * Indicates the reason code for a configuration failure.
    * </pre>
    *
@@ -1201,7 +1222,6 @@ public final class ScanConfigError extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * Output only.
    * Indicates the full name of the ScanConfig field that triggers this error,
    * for example "scan_config.max_qps". This field is provided for
    * troubleshooting purposes only and its actual value can change in the
@@ -1225,7 +1245,6 @@ public final class ScanConfigError extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * Output only.
    * Indicates the full name of the ScanConfig field that triggers this error,
    * for example "scan_config.max_qps". This field is provided for
    * troubleshooting purposes only and its actual value can change in the
@@ -1592,7 +1611,6 @@ public final class ScanConfigError extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Output only.
      * Indicates the reason code for a configuration failure.
      * </pre>
      *
@@ -1605,7 +1623,6 @@ public final class ScanConfigError extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Output only.
      * Indicates the reason code for a configuration failure.
      * </pre>
      *
@@ -1620,7 +1637,6 @@ public final class ScanConfigError extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Output only.
      * Indicates the reason code for a configuration failure.
      * </pre>
      *
@@ -1638,7 +1654,6 @@ public final class ScanConfigError extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Output only.
      * Indicates the reason code for a configuration failure.
      * </pre>
      *
@@ -1657,7 +1672,6 @@ public final class ScanConfigError extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Output only.
      * Indicates the reason code for a configuration failure.
      * </pre>
      *
@@ -1675,7 +1689,6 @@ public final class ScanConfigError extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Output only.
      * Indicates the full name of the ScanConfig field that triggers this error,
      * for example "scan_config.max_qps". This field is provided for
      * troubleshooting purposes only and its actual value can change in the
@@ -1699,7 +1712,6 @@ public final class ScanConfigError extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Output only.
      * Indicates the full name of the ScanConfig field that triggers this error,
      * for example "scan_config.max_qps". This field is provided for
      * troubleshooting purposes only and its actual value can change in the
@@ -1723,7 +1735,6 @@ public final class ScanConfigError extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Output only.
      * Indicates the full name of the ScanConfig field that triggers this error,
      * for example "scan_config.max_qps". This field is provided for
      * troubleshooting purposes only and its actual value can change in the
@@ -1745,7 +1756,6 @@ public final class ScanConfigError extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Output only.
      * Indicates the full name of the ScanConfig field that triggers this error,
      * for example "scan_config.max_qps". This field is provided for
      * troubleshooting purposes only and its actual value can change in the
@@ -1764,7 +1774,6 @@ public final class ScanConfigError extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Output only.
      * Indicates the full name of the ScanConfig field that triggers this error,
      * for example "scan_config.max_qps". This field is provided for
      * troubleshooting purposes only and its actual value can change in the

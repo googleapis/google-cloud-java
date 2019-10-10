@@ -27,35 +27,38 @@ public final class ScanRunProto {
     java.lang.String[] descriptorData = {
       "\n5google/cloud/websecurityscanner/v1beta"
           + "/scan_run.proto\022&google.cloud.websecurit"
-          + "yscanner.v1beta\032\034google/api/annotations."
-          + "proto\032Agoogle/cloud/websecurityscanner/v"
-          + "1beta/scan_run_error_trace.proto\032Cgoogle"
-          + "/cloud/websecurityscanner/v1beta/scan_ru"
-          + "n_warning_trace.proto\032\037google/protobuf/t"
-          + "imestamp.proto\"\340\005\n\007ScanRun\022\014\n\004name\030\001 \001(\t"
-          + "\022W\n\017execution_state\030\002 \001(\0162>.google.cloud"
-          + ".websecurityscanner.v1beta.ScanRun.Execu"
-          + "tionState\022Q\n\014result_state\030\003 \001(\0162;.google"
-          + ".cloud.websecurityscanner.v1beta.ScanRun"
-          + ".ResultState\022.\n\nstart_time\030\004 \001(\0132\032.googl"
-          + "e.protobuf.Timestamp\022,\n\010end_time\030\005 \001(\0132\032"
-          + ".google.protobuf.Timestamp\022\032\n\022urls_crawl"
-          + "ed_count\030\006 \001(\003\022\031\n\021urls_tested_count\030\007 \001("
-          + "\003\022\033\n\023has_vulnerabilities\030\010 \001(\010\022\030\n\020progre"
-          + "ss_percent\030\t \001(\005\022N\n\013error_trace\030\n \001(\01329."
+          + "yscanner.v1beta\032\031google/api/resource.pro"
+          + "to\032Agoogle/cloud/websecurityscanner/v1be"
+          + "ta/scan_run_error_trace.proto\032Cgoogle/cl"
+          + "oud/websecurityscanner/v1beta/scan_run_w"
+          + "arning_trace.proto\032\037google/protobuf/time"
+          + "stamp.proto\"\322\006\n\007ScanRun\022\014\n\004name\030\001 \001(\t\022W\n"
+          + "\017execution_state\030\002 \001(\0162>.google.cloud.we"
+          + "bsecurityscanner.v1beta.ScanRun.Executio"
+          + "nState\022Q\n\014result_state\030\003 \001(\0162;.google.cl"
+          + "oud.websecurityscanner.v1beta.ScanRun.Re"
+          + "sultState\022.\n\nstart_time\030\004 \001(\0132\032.google.p"
+          + "rotobuf.Timestamp\022,\n\010end_time\030\005 \001(\0132\032.go"
+          + "ogle.protobuf.Timestamp\022\032\n\022urls_crawled_"
+          + "count\030\006 \001(\003\022\031\n\021urls_tested_count\030\007 \001(\003\022\033"
+          + "\n\023has_vulnerabilities\030\010 \001(\010\022\030\n\020progress_"
+          + "percent\030\t \001(\005\022N\n\013error_trace\030\n \001(\01329.goo"
+          + "gle.cloud.websecurityscanner.v1beta.Scan"
+          + "RunErrorTrace\022S\n\016warning_traces\030\013 \003(\0132;."
           + "google.cloud.websecurityscanner.v1beta.S"
-          + "canRunErrorTrace\022S\n\016warning_traces\030\013 \003(\013"
-          + "2;.google.cloud.websecurityscanner.v1bet"
-          + "a.ScanRunWarningTrace\"Y\n\016ExecutionState\022"
-          + "\037\n\033EXECUTION_STATE_UNSPECIFIED\020\000\022\n\n\006QUEU"
-          + "ED\020\001\022\014\n\010SCANNING\020\002\022\014\n\010FINISHED\020\003\"O\n\013Resu"
-          + "ltState\022\034\n\030RESULT_STATE_UNSPECIFIED\020\000\022\013\n"
-          + "\007SUCCESS\020\001\022\t\n\005ERROR\020\002\022\n\n\006KILLED\020\003B\277\001\n*co"
-          + "m.google.cloud.websecurityscanner.v1beta"
-          + "B\014ScanRunProtoP\001ZXgoogle.golang.org/genp"
-          + "roto/googleapis/cloud/websecurityscanner"
-          + "/v1beta;websecurityscanner\312\002&Google\\Clou"
-          + "d\\WebSecurityScanner\\V1betab\006proto3"
+          + "canRunWarningTrace\"Y\n\016ExecutionState\022\037\n\033"
+          + "EXECUTION_STATE_UNSPECIFIED\020\000\022\n\n\006QUEUED\020"
+          + "\001\022\014\n\010SCANNING\020\002\022\014\n\010FINISHED\020\003\"O\n\013ResultS"
+          + "tate\022\034\n\030RESULT_STATE_UNSPECIFIED\020\000\022\013\n\007SU"
+          + "CCESS\020\001\022\t\n\005ERROR\020\002\022\n\n\006KILLED\020\003:p\352Am\n)web"
+          + "securityscanner.googleapis.com/ScanRun\022@"
+          + "projects/{project}/scanConfigs/{scan_con"
+          + "fig}/scanRuns/{scan_run}B\277\001\n*com.google."
+          + "cloud.websecurityscanner.v1betaB\014ScanRun"
+          + "ProtoP\001ZXgoogle.golang.org/genproto/goog"
+          + "leapis/cloud/websecurityscanner/v1beta;w"
+          + "ebsecurityscanner\312\002&Google\\Cloud\\WebSecu"
+          + "rityScanner\\V1betab\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner() {
@@ -68,7 +71,7 @@ public final class ScanRunProto {
     com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
         descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
-          com.google.api.AnnotationsProto.getDescriptor(),
+          com.google.api.ResourceProto.getDescriptor(),
           com.google.cloud.websecurityscanner.v1beta.ScanRunErrorTraceProto.getDescriptor(),
           com.google.cloud.websecurityscanner.v1beta.ScanRunWarningTraceProto.getDescriptor(),
           com.google.protobuf.TimestampProto.getDescriptor(),
@@ -92,7 +95,12 @@ public final class ScanRunProto {
               "ErrorTrace",
               "WarningTraces",
             });
-    com.google.api.AnnotationsProto.getDescriptor();
+    com.google.protobuf.ExtensionRegistry registry =
+        com.google.protobuf.ExtensionRegistry.newInstance();
+    registry.add(com.google.api.ResourceProto.resource);
+    com.google.protobuf.Descriptors.FileDescriptor.internalUpdateFileDescriptor(
+        descriptor, registry);
+    com.google.api.ResourceProto.getDescriptor();
     com.google.cloud.websecurityscanner.v1beta.ScanRunErrorTraceProto.getDescriptor();
     com.google.cloud.websecurityscanner.v1beta.ScanRunWarningTraceProto.getDescriptor();
     com.google.protobuf.TimestampProto.getDescriptor();

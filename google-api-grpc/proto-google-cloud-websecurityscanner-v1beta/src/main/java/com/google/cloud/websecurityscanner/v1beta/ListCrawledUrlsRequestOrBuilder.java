@@ -12,26 +12,28 @@ public interface ListCrawledUrlsRequestOrBuilder
    *
    *
    * <pre>
-   * Required.
-   * The parent resource name, which should be a scan run resource name in the
+   * Required. The parent resource name, which should be a scan run resource name in the
    * format
    * 'projects/{projectId}/scanConfigs/{scanConfigId}/scanRuns/{scanRunId}'.
    * </pre>
    *
-   * <code>string parent = 1;</code>
+   * <code>
+   * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    */
   java.lang.String getParent();
   /**
    *
    *
    * <pre>
-   * Required.
-   * The parent resource name, which should be a scan run resource name in the
+   * Required. The parent resource name, which should be a scan run resource name in the
    * format
    * 'projects/{projectId}/scanConfigs/{scanConfigId}/scanRuns/{scanRunId}'.
    * </pre>
    *
-   * <code>string parent = 1;</code>
+   * <code>
+   * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    */
   com.google.protobuf.ByteString getParentBytes();
 

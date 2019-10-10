@@ -51,26 +51,25 @@ public final class FindingAddonProto {
     java.lang.String[] descriptorData = {
       "\n:google/cloud/websecurityscanner/v1beta"
           + "/finding_addon.proto\022&google.cloud.webse"
-          + "curityscanner.v1beta\032\034google/api/annotat"
-          + "ions.proto\"*\n\004Form\022\022\n\naction_uri\030\001 \001(\t\022\016"
-          + "\n\006fields\030\002 \003(\t\"Q\n\017OutdatedLibrary\022\024\n\014lib"
-          + "rary_name\030\001 \001(\t\022\017\n\007version\030\002 \001(\t\022\027\n\017lear"
-          + "n_more_urls\030\003 \003(\t\"?\n\021ViolatingResource\022\024"
-          + "\n\014content_type\030\001 \001(\t\022\024\n\014resource_url\030\002 \001"
-          + "(\t\"/\n\024VulnerableParameters\022\027\n\017parameter_"
-          + "names\030\001 \003(\t\"\350\001\n\021VulnerableHeaders\022Q\n\007hea"
-          + "ders\030\001 \003(\0132@.google.cloud.websecuritysca"
-          + "nner.v1beta.VulnerableHeaders.Header\022Y\n\017"
-          + "missing_headers\030\002 \003(\0132@.google.cloud.web"
-          + "securityscanner.v1beta.VulnerableHeaders"
-          + ".Header\032%\n\006Header\022\014\n\004name\030\001 \001(\t\022\r\n\005value"
-          + "\030\002 \001(\t\"2\n\003Xss\022\024\n\014stack_traces\030\001 \003(\t\022\025\n\re"
-          + "rror_message\030\002 \001(\tB\304\001\n*com.google.cloud."
-          + "websecurityscanner.v1betaB\021FindingAddonP"
-          + "rotoP\001ZXgoogle.golang.org/genproto/googl"
-          + "eapis/cloud/websecurityscanner/v1beta;we"
-          + "bsecurityscanner\312\002&Google\\Cloud\\WebSecur"
-          + "ityScanner\\V1betab\006proto3"
+          + "curityscanner.v1beta\"*\n\004Form\022\022\n\naction_u"
+          + "ri\030\001 \001(\t\022\016\n\006fields\030\002 \003(\t\"Q\n\017OutdatedLibr"
+          + "ary\022\024\n\014library_name\030\001 \001(\t\022\017\n\007version\030\002 \001"
+          + "(\t\022\027\n\017learn_more_urls\030\003 \003(\t\"?\n\021Violating"
+          + "Resource\022\024\n\014content_type\030\001 \001(\t\022\024\n\014resour"
+          + "ce_url\030\002 \001(\t\"/\n\024VulnerableParameters\022\027\n\017"
+          + "parameter_names\030\001 \003(\t\"\350\001\n\021VulnerableHead"
+          + "ers\022Q\n\007headers\030\001 \003(\0132@.google.cloud.webs"
+          + "ecurityscanner.v1beta.VulnerableHeaders."
+          + "Header\022Y\n\017missing_headers\030\002 \003(\0132@.google"
+          + ".cloud.websecurityscanner.v1beta.Vulnera"
+          + "bleHeaders.Header\032%\n\006Header\022\014\n\004name\030\001 \001("
+          + "\t\022\r\n\005value\030\002 \001(\t\"2\n\003Xss\022\024\n\014stack_traces\030"
+          + "\001 \003(\t\022\025\n\rerror_message\030\002 \001(\tB\304\001\n*com.goo"
+          + "gle.cloud.websecurityscanner.v1betaB\021Fin"
+          + "dingAddonProtoP\001ZXgoogle.golang.org/genp"
+          + "roto/googleapis/cloud/websecurityscanner"
+          + "/v1beta;websecurityscanner\312\002&Google\\Clou"
+          + "d\\WebSecurityScanner\\V1betab\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner() {
@@ -81,11 +80,7 @@ public final class FindingAddonProto {
           }
         };
     com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
-        descriptorData,
-        new com.google.protobuf.Descriptors.FileDescriptor[] {
-          com.google.api.AnnotationsProto.getDescriptor(),
-        },
-        assigner);
+        descriptorData, new com.google.protobuf.Descriptors.FileDescriptor[] {}, assigner);
     internal_static_google_cloud_websecurityscanner_v1beta_Form_descriptor =
         getDescriptor().getMessageTypes().get(0);
     internal_static_google_cloud_websecurityscanner_v1beta_Form_fieldAccessorTable =
@@ -144,7 +139,6 @@ public final class FindingAddonProto {
             new java.lang.String[] {
               "StackTraces", "ErrorMessage",
             });
-    com.google.api.AnnotationsProto.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)
