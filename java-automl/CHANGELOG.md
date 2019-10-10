@@ -1,5 +1,22 @@
 # Changelog
 
+## [0.114.0](https://www.github.com/googleapis/java-automl/compare/v0.113.0...v0.114.0) (2019-10-10)
+
+
+### Dependencies
+
+* update dependency com.google.api.grpc:proto-google-common-protos to v1.17.0 ([#19](https://www.github.com/googleapis/java-automl/issues/19)) ([b7e7dcf](https://www.github.com/googleapis/java-automl/commit/b7e7dcf))
+
+
+### Documentation
+
+* regenerate client - switch to proto annotations ([#20](https://www.github.com/googleapis/java-automl/issues/20)) ([7b2c80a](https://www.github.com/googleapis/java-automl/commit/7b2c80a))
+
+
+### Features
+
+* createDataset now an LRO ([#23](https://www.github.com/googleapis/java-automl/issues/23)) ([a7253c8](https://www.github.com/googleapis/java-automl/commit/a7253c8))
+
 ## [0.113.0](https://www.github.com/googleapis/java-automl/compare/v0.112.0...v0.113.0) (2019-10-02)
 
 
