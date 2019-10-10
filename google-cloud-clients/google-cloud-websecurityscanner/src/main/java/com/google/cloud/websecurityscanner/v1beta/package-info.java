@@ -30,9 +30,9 @@
  * <pre>
  * <code>
  * try (WebSecurityScannerClient webSecurityScannerClient = WebSecurityScannerClient.create()) {
- *   String formattedParent = WebSecurityScannerClient.formatProjectName("[PROJECT]");
+ *   ProjectName parent = ProjectName.of("[PROJECT]");
  *   ScanConfig scanConfig = ScanConfig.newBuilder().build();
- *   ScanConfig response = webSecurityScannerClient.createScanConfig(formattedParent, scanConfig);
+ *   ScanConfig response = webSecurityScannerClient.createScanConfig(parent, scanConfig);
  * }
  * </code>
  * </pre>

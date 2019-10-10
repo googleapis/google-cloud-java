@@ -195,7 +195,7 @@ public final class ScanRunErrorTrace extends com.google.protobuf.GeneratedMessag
      * <pre>
      * Indicates that a scan encountered numerous errors from the web site
      * pages. When available, most_common_http_error_code field indicates the
-     * the most common HTTP error code encountered during the scan.
+     * most common HTTP error code encountered during the scan.
      * </pre>
      *
      * <code>TOO_MANY_HTTP_ERRORS = 6;</code>
@@ -273,7 +273,7 @@ public final class ScanRunErrorTrace extends com.google.protobuf.GeneratedMessag
      * <pre>
      * Indicates that a scan encountered numerous errors from the web site
      * pages. When available, most_common_http_error_code field indicates the
-     * the most common HTTP error code encountered during the scan.
+     * most common HTTP error code encountered during the scan.
      * </pre>
      *
      * <code>TOO_MANY_HTTP_ERRORS = 6;</code>
@@ -367,7 +367,6 @@ public final class ScanRunErrorTrace extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * Output only.
    * Indicates the error reason code.
    * </pre>
    *
@@ -380,7 +379,6 @@ public final class ScanRunErrorTrace extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * Output only.
    * Indicates the error reason code.
    * </pre>
    *
@@ -401,7 +399,6 @@ public final class ScanRunErrorTrace extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * Output only.
    * If the scan encounters SCAN_CONFIG_ISSUE error, this field has the error
    * message encountered during scan configuration validation that is performed
    * before each scan run.
@@ -416,7 +413,6 @@ public final class ScanRunErrorTrace extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * Output only.
    * If the scan encounters SCAN_CONFIG_ISSUE error, this field has the error
    * message encountered during scan configuration validation that is performed
    * before each scan run.
@@ -433,7 +429,6 @@ public final class ScanRunErrorTrace extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * Output only.
    * If the scan encounters SCAN_CONFIG_ISSUE error, this field has the error
    * message encountered during scan configuration validation that is performed
    * before each scan run.
@@ -452,7 +447,6 @@ public final class ScanRunErrorTrace extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * Output only.
    * If the scan encounters TOO_MANY_HTTP_ERRORS, this field indicates the most
    * common HTTP error code, if such is available. For example, if this code is
    * 404, the scan has encountered too many NOT_FOUND responses.
@@ -837,7 +831,6 @@ public final class ScanRunErrorTrace extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Output only.
      * Indicates the error reason code.
      * </pre>
      *
@@ -850,7 +843,6 @@ public final class ScanRunErrorTrace extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Output only.
      * Indicates the error reason code.
      * </pre>
      *
@@ -865,7 +857,6 @@ public final class ScanRunErrorTrace extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Output only.
      * Indicates the error reason code.
      * </pre>
      *
@@ -883,7 +874,6 @@ public final class ScanRunErrorTrace extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Output only.
      * Indicates the error reason code.
      * </pre>
      *
@@ -903,7 +893,6 @@ public final class ScanRunErrorTrace extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Output only.
      * Indicates the error reason code.
      * </pre>
      *
@@ -926,7 +915,6 @@ public final class ScanRunErrorTrace extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Output only.
      * If the scan encounters SCAN_CONFIG_ISSUE error, this field has the error
      * message encountered during scan configuration validation that is performed
      * before each scan run.
@@ -941,7 +929,6 @@ public final class ScanRunErrorTrace extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Output only.
      * If the scan encounters SCAN_CONFIG_ISSUE error, this field has the error
      * message encountered during scan configuration validation that is performed
      * before each scan run.
@@ -962,7 +949,6 @@ public final class ScanRunErrorTrace extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Output only.
      * If the scan encounters SCAN_CONFIG_ISSUE error, this field has the error
      * message encountered during scan configuration validation that is performed
      * before each scan run.
@@ -988,7 +974,6 @@ public final class ScanRunErrorTrace extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Output only.
      * If the scan encounters SCAN_CONFIG_ISSUE error, this field has the error
      * message encountered during scan configuration validation that is performed
      * before each scan run.
@@ -1011,7 +996,6 @@ public final class ScanRunErrorTrace extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Output only.
      * If the scan encounters SCAN_CONFIG_ISSUE error, this field has the error
      * message encountered during scan configuration validation that is performed
      * before each scan run.
@@ -1042,7 +1026,6 @@ public final class ScanRunErrorTrace extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Output only.
      * If the scan encounters SCAN_CONFIG_ISSUE error, this field has the error
      * message encountered during scan configuration validation that is performed
      * before each scan run.
@@ -1065,7 +1048,6 @@ public final class ScanRunErrorTrace extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Output only.
      * If the scan encounters SCAN_CONFIG_ISSUE error, this field has the error
      * message encountered during scan configuration validation that is performed
      * before each scan run.
@@ -1083,7 +1065,6 @@ public final class ScanRunErrorTrace extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Output only.
      * If the scan encounters SCAN_CONFIG_ISSUE error, this field has the error
      * message encountered during scan configuration validation that is performed
      * before each scan run.
@@ -1105,7 +1086,6 @@ public final class ScanRunErrorTrace extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Output only.
      * If the scan encounters SCAN_CONFIG_ISSUE error, this field has the error
      * message encountered during scan configuration validation that is performed
      * before each scan run.
@@ -1135,7 +1115,6 @@ public final class ScanRunErrorTrace extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Output only.
      * If the scan encounters TOO_MANY_HTTP_ERRORS, this field indicates the most
      * common HTTP error code, if such is available. For example, if this code is
      * 404, the scan has encountered too many NOT_FOUND responses.
@@ -1150,7 +1129,6 @@ public final class ScanRunErrorTrace extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Output only.
      * If the scan encounters TOO_MANY_HTTP_ERRORS, this field indicates the most
      * common HTTP error code, if such is available. For example, if this code is
      * 404, the scan has encountered too many NOT_FOUND responses.
@@ -1168,7 +1146,6 @@ public final class ScanRunErrorTrace extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Output only.
      * If the scan encounters TOO_MANY_HTTP_ERRORS, this field indicates the most
      * common HTTP error code, if such is available. For example, if this code is
      * 404, the scan has encountered too many NOT_FOUND responses.
