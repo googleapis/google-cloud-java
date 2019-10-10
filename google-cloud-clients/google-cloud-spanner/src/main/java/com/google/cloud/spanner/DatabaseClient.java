@@ -248,8 +248,6 @@ public interface DatabaseClient {
    */
   TransactionRunner readWriteTransaction();
 
-  TransactionRunner readWriteTransactionWithInlineBegin();
-
   /**
    * Returns a transaction manager which allows manual management of transaction lifecycle. This API
    * is meant for advanced users. Most users should instead use the {@link #readWriteTransaction()}

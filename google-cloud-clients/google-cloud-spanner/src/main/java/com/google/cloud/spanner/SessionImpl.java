@@ -188,14 +188,10 @@ class SessionImpl implements Session {
   public TransactionRunner readWriteTransaction() {
     return setActive(
         new TransactionRunnerImpl(
-            this, spanner.getRpc(), spanner.getDefaultPrefetchChunks(), false));
-  }
-
-  @Override
-  public TransactionRunner readWriteTransactionWithInlineBegin() {
-    return setActive(
-        new TransactionRunnerImpl(
-            this, spanner.getRpc(), spanner.getDefaultPrefetchChunks(), true));
+            this,
+            spanner.getRpc(),
+            spanner.getDefaultPrefetchChunks(),
+            spanner.getOptions().getSessionPoolOptions().isInlineBeginTransaction()));
   }
 
   @Override

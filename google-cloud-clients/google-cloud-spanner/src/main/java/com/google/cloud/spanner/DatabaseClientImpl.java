@@ -167,6 +167,12 @@ class DatabaseClientImpl implements DatabaseClient {
 
   @Override
   public TransactionRunner readWriteTransaction() {
+    return pool.getOptions().isInlineBeginTransaction()
+        ? inlinedReadWriteTransaction()
+        : preparedReadWriteTransaction();
+  }
+
+  private TransactionRunner preparedReadWriteTransaction() {
     Span span = tracer.spanBuilder(READ_WRITE_TRANSACTION).startSpan();
     try (Scope s = tracer.withSpan(span)) {
       return getReadWriteSession().readWriteTransaction();
@@ -176,11 +182,10 @@ class DatabaseClientImpl implements DatabaseClient {
     }
   }
 
-  @Override
-  public TransactionRunner readWriteTransactionWithInlineBegin() {
+  private TransactionRunner inlinedReadWriteTransaction() {
     Span span = tracer.spanBuilder(READ_WRITE_TRANSACTION_WITH_INLINE_BEGIN).startSpan();
     try (Scope s = tracer.withSpan(span)) {
-      return getReadSession().readWriteTransactionWithInlineBegin();
+      return getReadSession().readWriteTransaction();
     } catch (RuntimeException e) {
       TraceUtil.endSpanWithFailure(span, e);
       throw e;
@@ -189,9 +194,25 @@ class DatabaseClientImpl implements DatabaseClient {
 
   @Override
   public TransactionManager transactionManager() {
+    return pool.getOptions().isInlineBeginTransaction()
+        ? inlinedTransactionManager()
+        : preparedTransactionManager();
+  }
+
+  private TransactionManager preparedTransactionManager() {
     Span span = tracer.spanBuilder(READ_WRITE_TRANSACTION).startSpan();
     try (Scope s = tracer.withSpan(span)) {
       return getReadWriteSession().transactionManager();
+    } catch (RuntimeException e) {
+      TraceUtil.endSpanWithFailure(span, e);
+      throw e;
+    }
+  }
+
+  private TransactionManager inlinedTransactionManager() {
+    Span span = tracer.spanBuilder(READ_WRITE_TRANSACTION_WITH_INLINE_BEGIN).startSpan();
+    try (Scope s = tracer.withSpan(span)) {
+      return getReadSession().transactionManager();
     } catch (RuntimeException e) {
       TraceUtil.endSpanWithFailure(span, e);
       throw e;

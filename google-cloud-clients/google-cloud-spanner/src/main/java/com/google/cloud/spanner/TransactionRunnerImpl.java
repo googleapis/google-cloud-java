@@ -70,9 +70,14 @@ class TransactionRunnerImpl implements SessionTransaction, TransactionRunner {
     @GuardedBy("lock")
     private long retryDelayInMillis = -1L;
 
-    // transactionLock guards that only one request can be either beginning, committing or rolling
-    // back the transaction at any time.
+    /**
+     * transactionLock guards that only one request can be either beginning, committing or rolling
+     * back the transaction at any time. We only hold on to this lock while a request is creating a
+     * transaction. After a transaction has been created, the lock is released and concurrent
+     * requests can be executed on the transaction.
+     */
     private final ReentrantLock transactionLock = new ReentrantLock();
+
     private volatile ByteString transactionId;
     private Timestamp commitTimestamp;
 

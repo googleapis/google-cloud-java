@@ -133,7 +133,10 @@ public class ReadWriteTransactionWithInlineBeginTest {
         SpannerOptions.newBuilder()
             .setProjectId("[PROJECT]")
             .setSessionPoolOption(
-                SessionPoolOptions.newBuilder().setWriteSessionsFraction(0.0f).build())
+                SessionPoolOptions.newBuilder()
+                    .setWriteSessionsFraction(0.0f)
+                    .setInlineBeginTransaction(true)
+                    .build())
             .setChannelProvider(channelProvider)
             .setCredentials(NoCredentials.getInstance())
             .build()
@@ -153,7 +156,7 @@ public class ReadWriteTransactionWithInlineBeginTest {
   public void singleUpdate() {
     Long updateCount =
         client
-            .readWriteTransactionWithInlineBegin()
+            .readWriteTransaction()
             .run(
                 new TransactionCallable<Long>() {
                   @Override
@@ -168,7 +171,7 @@ public class ReadWriteTransactionWithInlineBeginTest {
   public void singleBatchUpdate() {
     long[] updateCounts =
         client
-            .readWriteTransactionWithInlineBegin()
+            .readWriteTransaction()
             .run(
                 new TransactionCallable<long[]>() {
                   @Override
@@ -184,7 +187,7 @@ public class ReadWriteTransactionWithInlineBeginTest {
   public void singleQuery() {
     Long value =
         client
-            .readWriteTransactionWithInlineBegin()
+            .readWriteTransaction()
             .run(
                 new TransactionCallable<Long>() {
                   @Override
@@ -204,7 +207,7 @@ public class ReadWriteTransactionWithInlineBeginTest {
   public void updateAndQuery() {
     long[] res =
         client
-            .readWriteTransactionWithInlineBegin()
+            .readWriteTransaction()
             .run(
                 new TransactionCallable<long[]>() {
                   @Override
@@ -228,7 +231,7 @@ public class ReadWriteTransactionWithInlineBeginTest {
     final ExecutorService service = Executors.newFixedThreadPool(8);
     Long updateCount =
         client
-            .readWriteTransactionWithInlineBegin()
+            .readWriteTransaction()
             .run(
                 new TransactionCallable<Long>() {
                   @Override
@@ -260,7 +263,7 @@ public class ReadWriteTransactionWithInlineBeginTest {
     final ExecutorService service = Executors.newFixedThreadPool(8);
     Long updateCount =
         client
-            .readWriteTransactionWithInlineBegin()
+            .readWriteTransaction()
             .run(
                 new TransactionCallable<Long>() {
                   @Override
@@ -295,7 +298,7 @@ public class ReadWriteTransactionWithInlineBeginTest {
     final ExecutorService service = Executors.newFixedThreadPool(8);
     Long selectedTotal =
         client
-            .readWriteTransactionWithInlineBegin()
+            .readWriteTransaction()
             .run(
                 new TransactionCallable<Long>() {
                   @Override
@@ -330,7 +333,7 @@ public class ReadWriteTransactionWithInlineBeginTest {
   public void failedUpdate() {
     exception.expect(SpannerMatchers.isSpannerException(ErrorCode.INVALID_ARGUMENT));
     client
-        .readWriteTransactionWithInlineBegin()
+        .readWriteTransaction()
         .run(
             new TransactionCallable<Long>() {
               @Override
@@ -344,7 +347,7 @@ public class ReadWriteTransactionWithInlineBeginTest {
   public void failedBatchUpdate() {
     exception.expect(SpannerMatchers.isSpannerException(ErrorCode.INVALID_ARGUMENT));
     client
-        .readWriteTransactionWithInlineBegin()
+        .readWriteTransaction()
         .run(
             new TransactionCallable<long[]>() {
               @Override
@@ -359,7 +362,7 @@ public class ReadWriteTransactionWithInlineBeginTest {
   public void failedQuery() {
     exception.expect(SpannerMatchers.isSpannerException(ErrorCode.INVALID_ARGUMENT));
     client
-        .readWriteTransactionWithInlineBegin()
+        .readWriteTransaction()
         .run(
             new TransactionCallable<Void>() {
               @Override
@@ -376,7 +379,7 @@ public class ReadWriteTransactionWithInlineBeginTest {
   public void failedUpdateAndThenUpdate() {
     Long updateCount =
         client
-            .readWriteTransactionWithInlineBegin()
+            .readWriteTransaction()
             .run(
                 new TransactionCallable<Long>() {
                   @Override
@@ -401,7 +404,7 @@ public class ReadWriteTransactionWithInlineBeginTest {
   public void failedBatchUpdateAndThenUpdate() {
     Long updateCount =
         client
-            .readWriteTransactionWithInlineBegin()
+            .readWriteTransaction()
             .run(
                 new TransactionCallable<Long>() {
                   @Override
@@ -427,7 +430,7 @@ public class ReadWriteTransactionWithInlineBeginTest {
   public void failedQueryAndThenUpdate() {
     Long updateCount =
         client
-            .readWriteTransactionWithInlineBegin()
+            .readWriteTransaction()
             .run(
                 new TransactionCallable<Long>() {
                   @Override
@@ -453,7 +456,7 @@ public class ReadWriteTransactionWithInlineBeginTest {
     final AtomicInteger attempt = new AtomicInteger();
     Long updateCount =
         client
-            .readWriteTransactionWithInlineBegin()
+            .readWriteTransaction()
             .run(
                 new TransactionCallable<Long>() {
                   @Override
@@ -475,7 +478,7 @@ public class ReadWriteTransactionWithInlineBeginTest {
     final AtomicInteger attempt = new AtomicInteger();
     long[] updateCounts =
         client
-            .readWriteTransactionWithInlineBegin()
+            .readWriteTransaction()
             .run(
                 new TransactionCallable<long[]>() {
                   @Override

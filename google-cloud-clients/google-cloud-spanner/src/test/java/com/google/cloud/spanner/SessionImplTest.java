@@ -86,6 +86,8 @@ public class SessionImplTest {
     GrpcTransportOptions transportOptions = mock(GrpcTransportOptions.class);
     when(transportOptions.getExecutorFactory()).thenReturn(mock(ExecutorFactory.class));
     when(spannerOptions.getTransportOptions()).thenReturn(transportOptions);
+    when(spannerOptions.getSessionPoolOptions()).thenReturn(mock(SessionPoolOptions.class));
+
     @SuppressWarnings("resource")
     SpannerImpl spanner = new SpannerImpl(rpc, spannerOptions);
     String dbName = "projects/p1/instances/i1/databases/d1";
