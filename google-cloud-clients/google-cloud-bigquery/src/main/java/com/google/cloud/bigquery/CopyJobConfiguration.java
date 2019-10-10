@@ -42,6 +42,7 @@ public final class CopyJobConfiguration extends JobConfiguration {
   private final JobInfo.WriteDisposition writeDisposition;
   private final EncryptionConfiguration destinationEncryptionConfiguration;
   private final Map<String, String> labels;
+  private final Long jobTimeoutMs;
 
   public static final class Builder
       extends JobConfiguration.Builder<CopyJobConfiguration, Builder> {
@@ -52,6 +53,7 @@ public final class CopyJobConfiguration extends JobConfiguration {
     private JobInfo.WriteDisposition writeDisposition;
     private EncryptionConfiguration destinationEncryptionConfiguration;
     private Map<String, String> labels;
+    private Long jobTimeoutMs;
 
     private Builder() {
       super(Type.COPY);
@@ -65,6 +67,7 @@ public final class CopyJobConfiguration extends JobConfiguration {
       this.writeDisposition = jobConfiguration.writeDisposition;
       this.destinationEncryptionConfiguration = jobConfiguration.destinationEncryptionConfiguration;
       this.labels = jobConfiguration.labels;
+      this.jobTimeoutMs = jobConfiguration.jobTimeoutMs;
     }
 
     private Builder(com.google.api.services.bigquery.model.JobConfiguration configurationPb) {
@@ -93,6 +96,9 @@ public final class CopyJobConfiguration extends JobConfiguration {
       }
       if (configurationPb.getLabels() != null) {
         this.labels = configurationPb.getLabels();
+      }
+      if (configurationPb.getJobTimeoutMs() != null) {
+        this.jobTimeoutMs = configurationPb.getJobTimeoutMs();
       }
     }
 
@@ -152,6 +158,17 @@ public final class CopyJobConfiguration extends JobConfiguration {
       return this;
     }
 
+    /**
+     * [Optional] Job timeout in milliseconds. If this time limit is exceeded, BigQuery may attempt
+     * to terminate the job.
+     *
+     * @param jobTimeoutMs jobTimeoutMs or {@code null} for none
+     */
+    public Builder setJobTimeoutMs(Long jobTimeoutMs) {
+      this.jobTimeoutMs = jobTimeoutMs;
+      return this;
+    }
+
     public CopyJobConfiguration build() {
       return new CopyJobConfiguration(this);
     }
@@ -165,6 +182,7 @@ public final class CopyJobConfiguration extends JobConfiguration {
     this.writeDisposition = builder.writeDisposition;
     this.destinationEncryptionConfiguration = builder.destinationEncryptionConfiguration;
     this.labels = builder.labels;
+    this.jobTimeoutMs = builder.jobTimeoutMs;
   }
 
   /** Returns the source tables to copy. */
@@ -208,6 +226,11 @@ public final class CopyJobConfiguration extends JobConfiguration {
     return labels;
   }
 
+  /** Returns the timeout associated with this job */
+  public Long getJobTimeoutMs() {
+    return jobTimeoutMs;
+  }
+
   @Override
   public Builder toBuilder() {
     return new Builder(this);
@@ -221,7 +244,8 @@ public final class CopyJobConfiguration extends JobConfiguration {
         .add("destinationEncryptionConfiguration", destinationEncryptionConfiguration)
         .add("createDisposition", createDisposition)
         .add("writeDisposition", writeDisposition)
-        .add("labels", labels);
+        .add("labels", labels)
+        .add("jobTimeoutMs", jobTimeoutMs);
   }
 
   @Override
@@ -238,7 +262,8 @@ public final class CopyJobConfiguration extends JobConfiguration {
         destinationTable,
         createDisposition,
         writeDisposition,
-        labels);
+        labels,
+        jobTimeoutMs);
   }
 
   @Override
@@ -285,6 +310,9 @@ public final class CopyJobConfiguration extends JobConfiguration {
     }
     if (labels != null) {
       jobConfiguration.setLabels(labels);
+    }
+    if (jobTimeoutMs != null) {
+      jobConfiguration.setJobTimeoutMs(jobTimeoutMs);
     }
     jobConfiguration.setCopy(configurationPb);
     return jobConfiguration;
