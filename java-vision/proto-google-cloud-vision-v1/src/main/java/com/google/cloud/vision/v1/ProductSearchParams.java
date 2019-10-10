@@ -185,7 +185,7 @@ public final class ProductSearchParams extends com.google.protobuf.GeneratedMess
    * `projects/PROJECT_ID/locations/LOC_ID/productSets/PRODUCT_SET_ID`.
    * </pre>
    *
-   * <code>string product_set = 6;</code>
+   * <code>string product_set = 6 [(.google.api.resource_reference) = { ... }</code>
    */
   public java.lang.String getProductSet() {
     java.lang.Object ref = productSet_;
@@ -207,7 +207,7 @@ public final class ProductSearchParams extends com.google.protobuf.GeneratedMess
    * `projects/PROJECT_ID/locations/LOC_ID/productSets/PRODUCT_SET_ID`.
    * </pre>
    *
-   * <code>string product_set = 6;</code>
+   * <code>string product_set = 6 [(.google.api.resource_reference) = { ... }</code>
    */
   public com.google.protobuf.ByteString getProductSetBytes() {
     java.lang.Object ref = productSet_;
@@ -950,7 +950,7 @@ public final class ProductSearchParams extends com.google.protobuf.GeneratedMess
      * `projects/PROJECT_ID/locations/LOC_ID/productSets/PRODUCT_SET_ID`.
      * </pre>
      *
-     * <code>string product_set = 6;</code>
+     * <code>string product_set = 6 [(.google.api.resource_reference) = { ... }</code>
      */
     public java.lang.String getProductSet() {
       java.lang.Object ref = productSet_;
@@ -972,7 +972,7 @@ public final class ProductSearchParams extends com.google.protobuf.GeneratedMess
      * `projects/PROJECT_ID/locations/LOC_ID/productSets/PRODUCT_SET_ID`.
      * </pre>
      *
-     * <code>string product_set = 6;</code>
+     * <code>string product_set = 6 [(.google.api.resource_reference) = { ... }</code>
      */
     public com.google.protobuf.ByteString getProductSetBytes() {
       java.lang.Object ref = productSet_;
@@ -994,7 +994,7 @@ public final class ProductSearchParams extends com.google.protobuf.GeneratedMess
      * `projects/PROJECT_ID/locations/LOC_ID/productSets/PRODUCT_SET_ID`.
      * </pre>
      *
-     * <code>string product_set = 6;</code>
+     * <code>string product_set = 6 [(.google.api.resource_reference) = { ... }</code>
      */
     public Builder setProductSet(java.lang.String value) {
       if (value == null) {
@@ -1014,7 +1014,7 @@ public final class ProductSearchParams extends com.google.protobuf.GeneratedMess
      * `projects/PROJECT_ID/locations/LOC_ID/productSets/PRODUCT_SET_ID`.
      * </pre>
      *
-     * <code>string product_set = 6;</code>
+     * <code>string product_set = 6 [(.google.api.resource_reference) = { ... }</code>
      */
     public Builder clearProductSet() {
 
@@ -1031,7 +1031,7 @@ public final class ProductSearchParams extends com.google.protobuf.GeneratedMess
      * `projects/PROJECT_ID/locations/LOC_ID/productSets/PRODUCT_SET_ID`.
      * </pre>
      *
-     * <code>string product_set = 6;</code>
+     * <code>string product_set = 6 [(.google.api.resource_reference) = { ... }</code>
      */
     public Builder setProductSetBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
