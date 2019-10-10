@@ -76,6 +76,18 @@ import javax.annotation.Nullable;
  *       service.
  * </ol>
  *
+ * <p>Taking ReadRows as an example for callable:
+ *
+ * <pre>{@code
+ * // These two invocation are equivalent
+ * ServerStream<Row> stream1 = client.readRows(query);
+ * ServerStream<Row> stream2 = client.readRowsCallable().call(query);
+ *
+ * // These two invocation are also equivalent
+ * client.readRowsAsync(query, observer);
+ * client.readRowsCallable().call(query, observer);
+ * }</pre>
+ *
  * <p>All RPC related errors are represented as subclasses of {@link
  * com.google.api.gax.rpc.ApiException}. For example, a nonexistent table will trigger a {@link
  * com.google.api.gax.rpc.NotFoundException}. Async methods will wrap the error inside the future.

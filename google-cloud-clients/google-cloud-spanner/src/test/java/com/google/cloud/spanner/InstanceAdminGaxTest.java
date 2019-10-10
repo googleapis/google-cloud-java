@@ -231,8 +231,8 @@ public class InstanceAdminGaxTest {
             .setInitialRetryDelay(Duration.ofMillis(1L))
             .setMaxRetryDelay(Duration.ofMillis(1L))
             .setInitialRpcTimeout(Duration.ofMillis(20L))
-            .setMaxRpcTimeout(Duration.ofMillis(1000L))
-            .setRetryDelayMultiplier(2.0)
+            .setMaxRpcTimeout(Duration.ofMillis(200L))
+            .setRetryDelayMultiplier(1.3)
             .setMaxAttempts(10)
             .setTotalTimeout(Duration.ofMillis(200L))
             .build();
