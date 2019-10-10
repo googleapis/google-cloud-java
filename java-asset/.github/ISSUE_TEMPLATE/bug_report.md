@@ -10,7 +10,7 @@ Thanks for stopping by to let us know something could be better!
 
 Please run down the following list and make sure you've tried the usual "quick fixes":
 
-  - Search the issues already opened: https://github.com/googleapis/cloudasset/issues
+  - Search the issues already opened: https://github.com/googleapis/java-asset/issues
   - Check for answers on StackOverflow: http://stackoverflow.com/questions/tagged/google-cloud-platform
 
 If you are still having issues, please include as much information as possible:
