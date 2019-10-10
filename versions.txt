@@ -18,7 +18,6 @@ google-cloud-compute:0.115.0-alpha:0.115.1-alpha-SNAPSHOT
 google-cloud-container:0.115.0-beta:0.115.1-beta-SNAPSHOT
 google-cloud-containeranalysis:0.115.0-beta:0.115.1-beta-SNAPSHOT
 google-cloud-contrib:0.115.0-alpha:0.115.1-alpha-SNAPSHOT
-google-cloud-datacatalog:0.28.0-alpha:0.28.1-alpha-SNAPSHOT
 google-cloud-datalabeling:0.115.0-alpha:0.115.1-alpha-SNAPSHOT
 google-cloud-dataproc:0.115.0:0.115.1-SNAPSHOT
 google-cloud-datastore:1.97.0:1.97.1-SNAPSHOT
@@ -69,7 +68,6 @@ grpc-google-cloud-bigtable-v2:0.80.0:0.80.1-SNAPSHOT
 grpc-google-cloud-container-v1:0.80.0:0.80.1-SNAPSHOT
 grpc-google-cloud-containeranalysis-v1:0.80.0:0.80.1-SNAPSHOT
 grpc-google-cloud-containeranalysis-v1beta1:0.80.0:0.80.1-SNAPSHOT
-grpc-google-cloud-datacatalog-v1beta1:0.28.0-alpha:0.28.1-alpha-SNAPSHOT
 grpc-google-cloud-datalabeling-v1beta1:0.80.0:0.80.1-SNAPSHOT
 grpc-google-cloud-dataproc-v1:0.80.0:0.80.1-SNAPSHOT
 grpc-google-cloud-dataproc-v1beta2:0.80.0:0.80.1-SNAPSHOT
@@ -128,7 +126,6 @@ proto-google-cloud-bigtable-v2:0.80.0:0.80.1-SNAPSHOT
 proto-google-cloud-container-v1:0.80.0:0.80.1-SNAPSHOT
 proto-google-cloud-containeranalysis-v1:0.80.0:0.80.1-SNAPSHOT
 proto-google-cloud-containeranalysis-v1beta1:0.80.0:0.80.1-SNAPSHOT
-proto-google-cloud-datacatalog-v1beta1:0.28.0-alpha:0.28.1-alpha-SNAPSHOT
 proto-google-cloud-datalabeling-v1beta1:0.80.0:0.80.1-SNAPSHOT
 proto-google-cloud-dataproc-v1:0.80.0:0.80.1-SNAPSHOT
 proto-google-cloud-dataproc-v1beta2:0.80.0:0.80.1-SNAPSHOT
