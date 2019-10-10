@@ -18,6 +18,7 @@
     <site.installationModule>google-cloud-bigtable</site.installationModule>
   </properties>
   <dependencies>
+    <!-- Production dependencies -->
     <dependency>
       <groupId>${project.groupId}</groupId>
       <artifactId>google-cloud-core-grpc</artifactId>
