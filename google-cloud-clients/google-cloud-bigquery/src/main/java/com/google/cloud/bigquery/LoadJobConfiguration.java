@@ -53,6 +53,7 @@ public final class LoadJobConfiguration extends JobConfiguration implements Load
   private final Boolean useAvroLogicalTypes;
   private final Map<String, String> labels;
   private final Long jobTimeoutMs;
+  private final RangePartitioning rangePartitioning;
 
   public static final class Builder extends JobConfiguration.Builder<LoadJobConfiguration, Builder>
       implements LoadConfiguration.Builder {
@@ -75,6 +76,7 @@ public final class LoadJobConfiguration extends JobConfiguration implements Load
     private Boolean useAvroLogicalTypes;
     private Map<String, String> labels;
     private Long jobTimeoutMs;
+    private RangePartitioning rangePartitioning;
 
     private Builder() {
       super(Type.LOAD);
@@ -100,6 +102,7 @@ public final class LoadJobConfiguration extends JobConfiguration implements Load
       this.useAvroLogicalTypes = loadConfiguration.useAvroLogicalTypes;
       this.labels = loadConfiguration.labels;
       this.jobTimeoutMs = loadConfiguration.jobTimeoutMs;
+      this.rangePartitioning = loadConfiguration.rangePartitioning;
     }
 
     private Builder(com.google.api.services.bigquery.model.JobConfiguration configurationPb) {
@@ -178,6 +181,10 @@ public final class LoadJobConfiguration extends JobConfiguration implements Load
       }
       if (configurationPb.getJobTimeoutMs() != null) {
         this.jobTimeoutMs = configurationPb.getJobTimeoutMs();
+      }
+      if (loadConfigurationPb.getRangePartitioning() != null) {
+        this.rangePartitioning =
+            RangePartitioning.fromPb(loadConfigurationPb.getRangePartitioning());
       }
     }
 
@@ -301,6 +308,17 @@ public final class LoadJobConfiguration extends JobConfiguration implements Load
       return this;
     }
 
+    /**
+     * Range partitioning specification for this table. Only one of timePartitioning and
+     * rangePartitioning should be specified.
+     *
+     * @param rangePartitioning rangePartitioning or {@code null} for none
+     */
+    public Builder setRangePartitioning(RangePartitioning rangePartitioning) {
+      this.rangePartitioning = rangePartitioning;
+      return this;
+    }
+
     @Override
     public LoadJobConfiguration build() {
       return new LoadJobConfiguration(this);
@@ -326,6 +344,7 @@ public final class LoadJobConfiguration extends JobConfiguration implements Load
     this.useAvroLogicalTypes = builder.useAvroLogicalTypes;
     this.labels = builder.labels;
     this.jobTimeoutMs = builder.jobTimeoutMs;
+    this.rangePartitioning = builder.rangePartitioning;
   }
 
   @Override
@@ -428,6 +447,11 @@ public final class LoadJobConfiguration extends JobConfiguration implements Load
     return jobTimeoutMs;
   }
 
+  /** Returns the range partitioning specification for this table */
+  public RangePartitioning getRangePartitioning() {
+    return rangePartitioning;
+  }
+
   @Override
   public Builder toBuilder() {
     return new Builder(this);
@@ -452,7 +476,8 @@ public final class LoadJobConfiguration extends JobConfiguration implements Load
         .add("clustering", clustering)
         .add("useAvroLogicalTypes", useAvroLogicalTypes)
         .add("labels", labels)
-        .add("jobTimeoutMs", jobTimeoutMs);
+        .add("jobTimeoutMs", jobTimeoutMs)
+        .add("rangePartitioning", rangePartitioning);
   }
 
   @Override
@@ -541,6 +566,9 @@ public final class LoadJobConfiguration extends JobConfiguration implements Load
     }
     if (jobTimeoutMs != null) {
       jobConfiguration.setJobTimeoutMs(jobTimeoutMs);
+    }
+    if (rangePartitioning != null) {
+      loadConfigurationPb.setRangePartitioning(rangePartitioning.toPb());
     }
     jobConfiguration.setLoad(loadConfigurationPb);
     return jobConfiguration;
