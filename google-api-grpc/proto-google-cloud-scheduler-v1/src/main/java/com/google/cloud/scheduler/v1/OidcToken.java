@@ -9,9 +9,10 @@ package com.google.cloud.scheduler.v1;
  * <pre>
  * Contains information needed for generating an
  * [OpenID Connect
- * token](https://developers.google.com/identity/protocols/OpenIDConnect). This
- * type of authorization should be used when sending requests to third party
- * endpoints or Cloud Run.
+ * token](https://developers.google.com/identity/protocols/OpenIDConnect).
+ * This type of authorization can be used for many scenarios, including
+ * calling Cloud Run, or endpoints where you intend to validate the token
+ * yourself.
  * </pre>
  *
  * Protobuf type {@code google.cloud.scheduler.v1.OidcToken}
@@ -370,9 +371,10 @@ public final class OidcToken extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Contains information needed for generating an
    * [OpenID Connect
-   * token](https://developers.google.com/identity/protocols/OpenIDConnect). This
-   * type of authorization should be used when sending requests to third party
-   * endpoints or Cloud Run.
+   * token](https://developers.google.com/identity/protocols/OpenIDConnect).
+   * This type of authorization can be used for many scenarios, including
+   * calling Cloud Run, or endpoints where you intend to validate the token
+   * yourself.
    * </pre>
    *
    * Protobuf type {@code google.cloud.scheduler.v1.OidcToken}

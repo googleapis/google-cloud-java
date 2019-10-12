@@ -131,8 +131,7 @@ public final class PubsubTarget extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Required.
-   * The name of the Cloud Pub/Sub topic to which messages will
+   * Required. The name of the Cloud Pub/Sub topic to which messages will
    * be published when a job is delivered. The topic name must be in the
    * same format as required by PubSub's
    * [PublishRequest.name](https://cloud.google.com/pubsub/docs/reference/rpc/google.pubsub.v1#publishrequest),
@@ -140,7 +139,7 @@ public final class PubsubTarget extends com.google.protobuf.GeneratedMessageV3
    * The topic must be in the same project as the Cloud Scheduler job.
    * </pre>
    *
-   * <code>string topic_name = 1;</code>
+   * <code>string topic_name = 1 [(.google.api.resource_reference) = { ... }</code>
    */
   public java.lang.String getTopicName() {
     java.lang.Object ref = topicName_;
@@ -157,8 +156,7 @@ public final class PubsubTarget extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Required.
-   * The name of the Cloud Pub/Sub topic to which messages will
+   * Required. The name of the Cloud Pub/Sub topic to which messages will
    * be published when a job is delivered. The topic name must be in the
    * same format as required by PubSub's
    * [PublishRequest.name](https://cloud.google.com/pubsub/docs/reference/rpc/google.pubsub.v1#publishrequest),
@@ -166,7 +164,7 @@ public final class PubsubTarget extends com.google.protobuf.GeneratedMessageV3
    * The topic must be in the same project as the Cloud Scheduler job.
    * </pre>
    *
-   * <code>string topic_name = 1;</code>
+   * <code>string topic_name = 1 [(.google.api.resource_reference) = { ... }</code>
    */
   public com.google.protobuf.ByteString getTopicNameBytes() {
     java.lang.Object ref = topicName_;
@@ -682,8 +680,7 @@ public final class PubsubTarget extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required.
-     * The name of the Cloud Pub/Sub topic to which messages will
+     * Required. The name of the Cloud Pub/Sub topic to which messages will
      * be published when a job is delivered. The topic name must be in the
      * same format as required by PubSub's
      * [PublishRequest.name](https://cloud.google.com/pubsub/docs/reference/rpc/google.pubsub.v1#publishrequest),
@@ -691,7 +688,7 @@ public final class PubsubTarget extends com.google.protobuf.GeneratedMessageV3
      * The topic must be in the same project as the Cloud Scheduler job.
      * </pre>
      *
-     * <code>string topic_name = 1;</code>
+     * <code>string topic_name = 1 [(.google.api.resource_reference) = { ... }</code>
      */
     public java.lang.String getTopicName() {
       java.lang.Object ref = topicName_;
@@ -708,8 +705,7 @@ public final class PubsubTarget extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required.
-     * The name of the Cloud Pub/Sub topic to which messages will
+     * Required. The name of the Cloud Pub/Sub topic to which messages will
      * be published when a job is delivered. The topic name must be in the
      * same format as required by PubSub's
      * [PublishRequest.name](https://cloud.google.com/pubsub/docs/reference/rpc/google.pubsub.v1#publishrequest),
@@ -717,7 +713,7 @@ public final class PubsubTarget extends com.google.protobuf.GeneratedMessageV3
      * The topic must be in the same project as the Cloud Scheduler job.
      * </pre>
      *
-     * <code>string topic_name = 1;</code>
+     * <code>string topic_name = 1 [(.google.api.resource_reference) = { ... }</code>
      */
     public com.google.protobuf.ByteString getTopicNameBytes() {
       java.lang.Object ref = topicName_;
@@ -734,8 +730,7 @@ public final class PubsubTarget extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required.
-     * The name of the Cloud Pub/Sub topic to which messages will
+     * Required. The name of the Cloud Pub/Sub topic to which messages will
      * be published when a job is delivered. The topic name must be in the
      * same format as required by PubSub's
      * [PublishRequest.name](https://cloud.google.com/pubsub/docs/reference/rpc/google.pubsub.v1#publishrequest),
@@ -743,7 +738,7 @@ public final class PubsubTarget extends com.google.protobuf.GeneratedMessageV3
      * The topic must be in the same project as the Cloud Scheduler job.
      * </pre>
      *
-     * <code>string topic_name = 1;</code>
+     * <code>string topic_name = 1 [(.google.api.resource_reference) = { ... }</code>
      */
     public Builder setTopicName(java.lang.String value) {
       if (value == null) {
@@ -758,8 +753,7 @@ public final class PubsubTarget extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required.
-     * The name of the Cloud Pub/Sub topic to which messages will
+     * Required. The name of the Cloud Pub/Sub topic to which messages will
      * be published when a job is delivered. The topic name must be in the
      * same format as required by PubSub's
      * [PublishRequest.name](https://cloud.google.com/pubsub/docs/reference/rpc/google.pubsub.v1#publishrequest),
@@ -767,7 +761,7 @@ public final class PubsubTarget extends com.google.protobuf.GeneratedMessageV3
      * The topic must be in the same project as the Cloud Scheduler job.
      * </pre>
      *
-     * <code>string topic_name = 1;</code>
+     * <code>string topic_name = 1 [(.google.api.resource_reference) = { ... }</code>
      */
     public Builder clearTopicName() {
 
@@ -779,8 +773,7 @@ public final class PubsubTarget extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required.
-     * The name of the Cloud Pub/Sub topic to which messages will
+     * Required. The name of the Cloud Pub/Sub topic to which messages will
      * be published when a job is delivered. The topic name must be in the
      * same format as required by PubSub's
      * [PublishRequest.name](https://cloud.google.com/pubsub/docs/reference/rpc/google.pubsub.v1#publishrequest),
@@ -788,7 +781,7 @@ public final class PubsubTarget extends com.google.protobuf.GeneratedMessageV3
      * The topic must be in the same project as the Cloud Scheduler job.
      * </pre>
      *
-     * <code>string topic_name = 1;</code>
+     * <code>string topic_name = 1 [(.google.api.resource_reference) = { ... }</code>
      */
     public Builder setTopicNameBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
