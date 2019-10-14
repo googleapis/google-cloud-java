@@ -45,6 +45,7 @@ public final class ExtractJobConfiguration extends JobConfiguration {
   private final String compression;
   private final Boolean useAvroLogicalTypes;
   private final Map<String, String> labels;
+  private final Long jobTimeoutMs;
 
   public static final class Builder
       extends JobConfiguration.Builder<ExtractJobConfiguration, Builder> {
@@ -57,6 +58,7 @@ public final class ExtractJobConfiguration extends JobConfiguration {
     private String compression;
     private Boolean useAvroLogicalTypes;
     private Map<String, String> labels;
+    private Long jobTimeoutMs;
 
     private Builder() {
       super(Type.EXTRACT);
@@ -72,6 +74,7 @@ public final class ExtractJobConfiguration extends JobConfiguration {
       this.compression = jobInfo.compression;
       this.useAvroLogicalTypes = jobInfo.useAvroLogicalTypes;
       this.labels = jobInfo.labels;
+      this.jobTimeoutMs = jobInfo.jobTimeoutMs;
     }
 
     private Builder(com.google.api.services.bigquery.model.JobConfiguration configurationPb) {
@@ -86,6 +89,9 @@ public final class ExtractJobConfiguration extends JobConfiguration {
       this.useAvroLogicalTypes = extractConfigurationPb.getUseAvroLogicalTypes();
       if (configurationPb.getLabels() != null) {
         this.labels = configurationPb.getLabels();
+      }
+      if (configurationPb.getJobTimeoutMs() != null) {
+        this.jobTimeoutMs = configurationPb.getJobTimeoutMs();
       }
     }
 
@@ -167,6 +173,17 @@ public final class ExtractJobConfiguration extends JobConfiguration {
       return this;
     }
 
+    /**
+     * [Optional] Job timeout in milliseconds. If this time limit is exceeded, BigQuery may attempt
+     * to terminate the job.
+     *
+     * @param jobTimeoutMs jobTimeoutMs or {@code null} for none
+     */
+    public Builder setJobTimeoutMs(Long jobTimeoutMs) {
+      this.jobTimeoutMs = jobTimeoutMs;
+      return this;
+    }
+
     public ExtractJobConfiguration build() {
       return new ExtractJobConfiguration(this);
     }
@@ -182,6 +199,7 @@ public final class ExtractJobConfiguration extends JobConfiguration {
     this.compression = builder.compression;
     this.useAvroLogicalTypes = builder.useAvroLogicalTypes;
     this.labels = builder.labels;
+    this.jobTimeoutMs = builder.jobTimeoutMs;
   }
 
   /** Returns the table to export. */
@@ -231,6 +249,11 @@ public final class ExtractJobConfiguration extends JobConfiguration {
     return labels;
   }
 
+  /** Returns the timeout associated with this job */
+  public Long getJobTimeoutMs() {
+    return jobTimeoutMs;
+  }
+
   @Override
   public Builder toBuilder() {
     return new Builder(this);
@@ -246,7 +269,8 @@ public final class ExtractJobConfiguration extends JobConfiguration {
         .add("fieldDelimiter", fieldDelimiter)
         .add("compression", compression)
         .add("useAvroLogicalTypes", useAvroLogicalTypes)
-        .add("labels", labels);
+        .add("labels", labels)
+        .add("jobTimeoutMs", jobTimeoutMs);
   }
 
   @Override
@@ -266,7 +290,8 @@ public final class ExtractJobConfiguration extends JobConfiguration {
         format,
         compression,
         useAvroLogicalTypes,
-        labels);
+        labels,
+        jobTimeoutMs);
   }
 
   @Override
@@ -291,6 +316,9 @@ public final class ExtractJobConfiguration extends JobConfiguration {
     extractConfigurationPb.setUseAvroLogicalTypes(useAvroLogicalTypes);
     if (labels != null) {
       jobConfiguration.setLabels(labels);
+    }
+    if (jobTimeoutMs != null) {
+      jobConfiguration.setJobTimeoutMs(jobTimeoutMs);
     }
     jobConfiguration.setExtract(extractConfigurationPb);
     return jobConfiguration;

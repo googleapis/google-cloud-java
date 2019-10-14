@@ -43,18 +43,21 @@ public class CopyJobConfigurationTest {
   private static final EncryptionConfiguration COPY_JOB_ENCRYPTION_CONFIGURATION =
       EncryptionConfiguration.newBuilder().setKmsKeyName("KMS_KEY_1").build();
   private static final Map<String, String> LABELS = ImmutableMap.of("job-name", "copy");
+  private static final Long TIMEOUT = 10L;
   private static final CopyJobConfiguration COPY_JOB_CONFIGURATION =
       CopyJobConfiguration.newBuilder(DESTINATION_TABLE, SOURCE_TABLE)
           .setCreateDisposition(CREATE_DISPOSITION)
           .setWriteDisposition(WRITE_DISPOSITION)
           .setDestinationEncryptionConfiguration(COPY_JOB_ENCRYPTION_CONFIGURATION)
           .setLabels(LABELS)
+          .setJobTimeoutMs(TIMEOUT)
           .build();
   private static final CopyJobConfiguration COPY_JOB_CONFIGURATION_MULTIPLE_TABLES =
       CopyJobConfiguration.newBuilder(DESTINATION_TABLE, SOURCE_TABLES)
           .setCreateDisposition(CREATE_DISPOSITION)
           .setWriteDisposition(WRITE_DISPOSITION)
           .setLabels(LABELS)
+          .setJobTimeoutMs(TIMEOUT)
           .build();
 
   @Test
@@ -101,6 +104,7 @@ public class CopyJobConfigurationTest {
     assertEquals(CREATE_DISPOSITION, COPY_JOB_CONFIGURATION.getCreateDisposition());
     assertEquals(WRITE_DISPOSITION, COPY_JOB_CONFIGURATION.getWriteDisposition());
     assertEquals(LABELS, COPY_JOB_CONFIGURATION.getLabels());
+    assertEquals(TIMEOUT, COPY_JOB_CONFIGURATION.getJobTimeoutMs());
   }
 
   @Test
@@ -113,6 +117,7 @@ public class CopyJobConfigurationTest {
     assertNull(COPY_JOB_CONFIGURATION_MULTIPLE_TABLES.toPb().getCopy().getSourceTable());
     assertNotNull(COPY_JOB_CONFIGURATION.getLabels());
     assertNotNull(COPY_JOB_CONFIGURATION_MULTIPLE_TABLES.getLabels());
+    assertNotNull(COPY_JOB_CONFIGURATION.getJobTimeoutMs());
     compareCopyJobConfiguration(
         COPY_JOB_CONFIGURATION, CopyJobConfiguration.fromPb(COPY_JOB_CONFIGURATION.toPb()));
     compareCopyJobConfiguration(
@@ -176,5 +181,6 @@ public class CopyJobConfigurationTest {
         expected.getDestinationEncryptionConfiguration(),
         value.getDestinationEncryptionConfiguration());
     assertEquals(expected.getLabels(), value.getLabels());
+    assertEquals(expected.getJobTimeoutMs(), value.getJobTimeoutMs());
   }
 }

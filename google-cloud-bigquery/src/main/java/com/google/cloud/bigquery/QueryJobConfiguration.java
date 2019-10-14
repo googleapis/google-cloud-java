@@ -65,6 +65,7 @@ public final class QueryJobConfiguration extends JobConfiguration {
   private final EncryptionConfiguration destinationEncryptionConfiguration;
   private final TimePartitioning timePartitioning;
   private final Clustering clustering;
+  private final Long jobTimeoutMs;
 
   /**
    * Priority levels for a query. If not specified the priority is assumed to be {@link
@@ -110,6 +111,7 @@ public final class QueryJobConfiguration extends JobConfiguration {
     private EncryptionConfiguration destinationEncryptionConfiguration;
     private TimePartitioning timePartitioning;
     private Clustering clustering;
+    private Long jobTimeoutMs;
 
     private Builder() {
       super(Type.QUERY);
@@ -138,6 +140,7 @@ public final class QueryJobConfiguration extends JobConfiguration {
       this.destinationEncryptionConfiguration = jobConfiguration.destinationEncryptionConfiguration;
       this.timePartitioning = jobConfiguration.timePartitioning;
       this.clustering = jobConfiguration.clustering;
+      this.jobTimeoutMs = jobConfiguration.jobTimeoutMs;
     }
 
     private Builder(com.google.api.services.bigquery.model.JobConfiguration configurationPb) {
@@ -220,6 +223,9 @@ public final class QueryJobConfiguration extends JobConfiguration {
       }
       if (queryConfigurationPb.getClustering() != null) {
         this.clustering = Clustering.fromPb(queryConfigurationPb.getClustering());
+      }
+      if (configurationPb.getJobTimeoutMs() != null) {
+        this.jobTimeoutMs = configurationPb.getJobTimeoutMs();
       }
     }
 
@@ -524,6 +530,17 @@ public final class QueryJobConfiguration extends JobConfiguration {
       return this;
     }
 
+    /**
+     * [Optional] Job timeout in milliseconds. If this time limit is exceeded, BigQuery may attempt
+     * to terminate the job.
+     *
+     * @param jobTimeoutMs jobTimeoutMs or {@code null} for none
+     */
+    public Builder setJobTimeoutMs(Long jobTimeoutMs) {
+      this.jobTimeoutMs = jobTimeoutMs;
+      return this;
+    }
+
     public QueryJobConfiguration build() {
       return new QueryJobConfiguration(this);
     }
@@ -561,6 +578,7 @@ public final class QueryJobConfiguration extends JobConfiguration {
     this.destinationEncryptionConfiguration = builder.destinationEncryptionConfiguration;
     this.timePartitioning = builder.timePartitioning;
     this.clustering = builder.clustering;
+    this.jobTimeoutMs = builder.jobTimeoutMs;
   }
 
   /**
@@ -730,6 +748,11 @@ public final class QueryJobConfiguration extends JobConfiguration {
     return clustering;
   }
 
+  /** Returns the timeout associated with this job */
+  public Long getJobTimeoutMs() {
+    return jobTimeoutMs;
+  }
+
   @Override
   public Builder toBuilder() {
     return new Builder(this);
@@ -758,7 +781,8 @@ public final class QueryJobConfiguration extends JobConfiguration {
         .add("maximumBytesBilled", maximumBytesBilled)
         .add("schemaUpdateOptions", schemaUpdateOptions)
         .add("timePartitioning", timePartitioning)
-        .add("clustering", clustering);
+        .add("clustering", clustering)
+        .add("jobTimeoutMs", jobTimeoutMs);
   }
 
   @Override
@@ -790,7 +814,8 @@ public final class QueryJobConfiguration extends JobConfiguration {
         maximumBytesBilled,
         schemaUpdateOptions,
         timePartitioning,
-        clustering);
+        clustering,
+        jobTimeoutMs);
   }
 
   @Override
@@ -880,7 +905,11 @@ public final class QueryJobConfiguration extends JobConfiguration {
     if (clustering != null) {
       queryConfigurationPb.setClustering(clustering.toPb());
     }
-    return configurationPb.setQuery(queryConfigurationPb);
+    if (jobTimeoutMs != null) {
+      configurationPb.setJobTimeoutMs(jobTimeoutMs);
+    }
+    configurationPb.setQuery(queryConfigurationPb);
+    return configurationPb;
   }
 
   /** Creates a builder for a BigQuery Query Job given the query to be run. */
