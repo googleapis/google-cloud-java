@@ -2,30 +2,59 @@
   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
+  <groupId>com.google.api.grpc</groupId>
   <artifactId>grpc-google-cloud-datacatalog-v1beta1</artifactId>
   <version>0.28.1-alpha-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-datacatalog-v1beta1:current} -->
   <name>grpc-google-cloud-datacatalog-v1beta1</name>
   <description>GRPC library for grpc-google-cloud-datacatalog-v1beta1</description>
   <parent>
-    <groupId>com.google.api.grpc</groupId>
-    <artifactId>google-api-grpc</artifactId>
-    <version>0.80.1-SNAPSHOT</version><!-- {x-version-update:google-api-grpc:current} -->
+    <groupId>com.google.cloud</groupId>
+    <artifactId>google-cloud-datacatalog-parent</artifactId>
+    <version>0.28.1-alpha-SNAPSHOT</version><!-- {x-version-update:google-cloud-datacatalog:current} -->
   </parent>
   <dependencies>
     <dependency>
       <groupId>io.grpc</groupId>
+      <artifactId>grpc-api</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>io.grpc</groupId>
       <artifactId>grpc-stub</artifactId>
-      <scope>compile</scope>
     </dependency>
     <dependency>
       <groupId>io.grpc</groupId>
       <artifactId>grpc-protobuf</artifactId>
-      <scope>compile</scope>
+    </dependency>
+    <dependency>
+      <groupId>com.google.protobuf</groupId>
+      <artifactId>protobuf-java</artifactId>
     </dependency>
     <dependency>
       <groupId>com.google.api.grpc</groupId>
       <artifactId>proto-google-cloud-datacatalog-v1beta1</artifactId>
-      <scope>compile</scope>
+    </dependency>
+    <dependency>
+      <groupId>com.google.api.grpc</groupId>
+      <artifactId>proto-google-iam-v1</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>com.google.guava</groupId>
+      <artifactId>guava</artifactId>
     </dependency>
   </dependencies>
+
+  <profiles>
+    <profile>
+      <id>java9</id>
+      <activation>
+        <jdk>[9,)</jdk>
+      </activation>
+      <dependencies>
+        <dependency>
+          <groupId>javax.annotation</groupId>
+          <artifactId>javax.annotation-api</artifactId>
+        </dependency>
+      </dependencies>
+    </profile>
+  </profiles>
 </project>
