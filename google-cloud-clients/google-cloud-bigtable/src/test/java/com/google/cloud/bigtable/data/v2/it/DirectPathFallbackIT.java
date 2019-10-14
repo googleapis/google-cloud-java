@@ -60,6 +60,7 @@ public class DirectPathFallbackIT {
   // A threshold of completed read calls to observe to ascertain IPv6 is working.
   // This was determined experimentally to account for both gRPC-LB RPCs and Bigtable api RPCs.
   private static final int MIN_COMPLETE_READ_CALLS = 40;
+  private static final int NUM_RPCS_TO_SEND = 20;
 
   @ClassRule public static TestEnvRule testEnvRule = new TestEnvRule();
 
@@ -71,16 +72,18 @@ public class DirectPathFallbackIT {
   private EventLoopGroup eventLoopGroup;
   private BigtableDataClient instrumentedClient;
 
+  public DirectPathFallbackIT() {
+    // Create a transport channel provider that can intercept ipv6 packets.
+    channelFactory = new MyChannelFactory();
+    eventLoopGroup = new NioEventLoopGroup();
+  }
+
   @Before
   public void setup() throws IOException {
     assume()
         .withMessage("DirectPath integration tests can only run against DirectPathEnv")
         .that(testEnvRule.env())
         .isInstanceOf(DirectPathEnv.class);
-
-    // Create a transport channel provider that can intercept ipv6 packets.
-    channelFactory = new MyChannelFactory();
-    eventLoopGroup = new NioEventLoopGroup();
 
     BigtableDataSettings defaultSettings = testEnvRule.env().getDataClientSettings();
     InstantiatingGrpcChannelProvider defaultTransportProvider =
@@ -146,7 +149,7 @@ public class DirectPathFallbackIT {
     numIPv6Read.set(0);
 
     while (numIPv6Read.get() < MIN_COMPLETE_READ_CALLS) {
-      for (int i = 0; i < 20; i++) {
+      for (int i = 0; i < NUM_RPCS_TO_SEND; i++) {
         instrumentedClient.readRow(testEnvRule.env().getTableId(), "nonexistent-row");
       }
 
