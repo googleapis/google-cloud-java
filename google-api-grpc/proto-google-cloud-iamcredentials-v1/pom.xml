@@ -3,7 +3,7 @@
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
   <artifactId>proto-google-cloud-iamcredentials-v1</artifactId>
-  <version>0.42.1-alpha-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-iamcredentials-v1:current} -->
+  <version>0.42.0-alpha</version>
   <name>proto-google-cloud-iamcredentials-v1</name>
   <description>PROTO library for proto-google-cloud-iamcredentials-v1</description>
   <parent>
@@ -33,4 +33,26 @@
       <scope>compile</scope>
     </dependency>
   </dependencies>
+
+  <build>
+    <plugins>
+      <plugin>
+        <!-- skip deployment until we fully migrate to https://github.com/googleapis/java-datacatalog -->
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-deploy-plugin</artifactId>
+        <version>2.8.2</version>
+        <configuration>
+          <skip>true</skip>
+        </configuration>
+      </plugin>
+      <plugin>
+        <groupId>org.sonatype.plugins</groupId>
+        <artifactId>nexus-staging-maven-plugin</artifactId>
+        <version>1.6.8</version>
+        <configuration>
+          <skipNexusStagingDeployMojo>true</skipNexusStagingDeployMojo>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
 </project>

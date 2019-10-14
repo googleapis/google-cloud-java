@@ -16,7 +16,6 @@ Java idiomatic client for [IAM Service Account Credentials API][product-overview
 Quickstart
 ----------
 
-[//]: # ({x-version-update-start:google-cloud-iamcredentials:released})
 If you are using Maven, add this to your pom.xml file
 ```xml
 <dependency>
@@ -33,7 +32,6 @@ If you are using SBT, add this to your dependencies
 ```Scala
 libraryDependencies += "com.google.cloud" % "google-cloud-iamcredentials" % "0.42.0-alpha"
 ```
-[//]: # ({x-version-update-end})
 
 Authentication
 --------------
