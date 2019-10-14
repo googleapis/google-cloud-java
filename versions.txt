@@ -28,7 +28,6 @@ google-cloud-dns:0.115.0-alpha:0.115.1-alpha-SNAPSHOT
 google-cloud-errorreporting:0.115.0-beta:0.115.1-beta-SNAPSHOT
 google-cloud-examples:0.115.0-alpha:0.115.1-alpha-SNAPSHOT
 google-cloud-firestore:1.27.0:1.27.1-SNAPSHOT
-google-cloud-gameservices:0.16.0:0.16.1-SNAPSHOT
 google-cloud-gcloud-maven-plugin:0.115.0-alpha:0.115.1-alpha-SNAPSHOT
 google-cloud-iamcredentials:0.42.0-alpha:0.42.1-alpha-SNAPSHOT
 google-cloud-iot:0.115.0-beta:0.115.1-beta-SNAPSHOT
@@ -80,7 +79,6 @@ grpc-google-cloud-error-reporting-v1beta1:0.80.0:0.80.1-SNAPSHOT
 grpc-google-cloud-firestore-admin-v1:1.27.0:1.27.1-SNAPSHOT
 grpc-google-cloud-firestore-v1:1.27.0:1.27.1-SNAPSHOT
 grpc-google-cloud-firestore-v1beta1:0.80.0:0.80.1-SNAPSHOT
-grpc-google-cloud-gameservices-v1alpha:0.16.0:0.16.1-SNAPSHOT
 grpc-google-cloud-iamcredentials-v1:0.42.0-alpha:0.42.1-alpha-SNAPSHOT
 grpc-google-cloud-iot-v1:0.80.0:0.80.1-SNAPSHOT
 grpc-google-cloud-kms-v1:0.80.0:0.80.1-SNAPSHOT
@@ -140,7 +138,6 @@ proto-google-cloud-error-reporting-v1beta1:0.80.0:0.80.1-SNAPSHOT
 proto-google-cloud-firestore-admin-v1:1.27.0:1.27.1-SNAPSHOT
 proto-google-cloud-firestore-v1:1.27.0:1.27.1-SNAPSHOT
 proto-google-cloud-firestore-v1beta1:0.80.0:0.80.1-SNAPSHOT
-proto-google-cloud-gameservices-v1alpha:0.16.0:0.16.1-SNAPSHOT
 proto-google-cloud-iamcredentials-v1:0.42.0-alpha:0.42.1-alpha-SNAPSHOT
 proto-google-cloud-iot-v1:0.80.0:0.80.1-SNAPSHOT
 proto-google-cloud-kms-v1:0.80.0:0.80.1-SNAPSHOT
