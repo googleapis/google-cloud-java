@@ -18,6 +18,9 @@
     <site.installationModule>google-cloud-bigtable</site.installationModule>
   </properties>
   <dependencies>
+    <!-- NOTE: Dependencies are organized into two groups, production and test.
+         Within a group, dependencies are sorted by (groupId, artifactId) -->
+
     <!-- Production dependencies -->
     <dependency>
       <groupId>${project.groupId}</groupId>
