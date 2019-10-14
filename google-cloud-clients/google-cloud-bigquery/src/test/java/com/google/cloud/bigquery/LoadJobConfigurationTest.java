@@ -62,6 +62,7 @@ public class LoadJobConfigurationTest {
       Clustering.newBuilder().setFields(ImmutableList.of("Foo", "Bar")).build();
   private static final Map<String, String> LABELS =
       ImmutableMap.of("test-job-name", "test-load-job");
+  private static final Long TIMEOUT = 10L;
   private static final LoadJobConfiguration LOAD_CONFIGURATION_CSV =
       LoadJobConfiguration.newBuilder(TABLE_ID, SOURCE_URIS)
           .setCreateDisposition(CREATE_DISPOSITION)
@@ -76,6 +77,7 @@ public class LoadJobConfigurationTest {
           .setTimePartitioning(TIME_PARTITIONING)
           .setClustering(CLUSTERING)
           .setLabels(LABELS)
+          .setJobTimeoutMs(TIMEOUT)
           .build();
   private static final DatastoreBackupOptions BACKUP_OPTIONS =
       DatastoreBackupOptions.newBuilder()
@@ -92,6 +94,7 @@ public class LoadJobConfigurationTest {
           .setSchemaUpdateOptions(SCHEMA_UPDATE_OPTIONS)
           .setAutodetect(AUTODETECT)
           .setLabels(LABELS)
+          .setJobTimeoutMs(TIMEOUT)
           .build();
   private static final LoadJobConfiguration LOAD_CONFIGURATION_AVRO =
       LoadJobConfiguration.newBuilder(TABLE_ID, SOURCE_URIS)
@@ -108,6 +111,7 @@ public class LoadJobConfigurationTest {
           .setClustering(CLUSTERING)
           .setUseAvroLogicalTypes(USERAVROLOGICALTYPES)
           .setLabels(LABELS)
+          .setJobTimeoutMs(TIMEOUT)
           .build();
 
   @Test
@@ -224,5 +228,6 @@ public class LoadJobConfigurationTest {
     assertEquals(expected.getClustering(), value.getClustering());
     assertEquals(expected.getUseAvroLogicalTypes(), value.getUseAvroLogicalTypes());
     assertEquals(expected.getLabels(), value.getLabels());
+    assertEquals(expected.getJobTimeoutMs(), value.getJobTimeoutMs());
   }
 }
