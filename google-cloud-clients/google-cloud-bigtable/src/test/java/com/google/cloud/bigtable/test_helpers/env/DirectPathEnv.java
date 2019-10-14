@@ -87,6 +87,18 @@ public class DirectPathEnv extends AbstractTestEnv {
 
     // TODO: Remove this after https://github.com/googleapis/gax-java/pull/707 is merged
     if (directPathEnabled) {
+      ImmutableMap<String, Object> pickFirstStrategy =
+          ImmutableMap.<String, Object>of("pick_first", ImmutableMap.of());
+
+      ImmutableMap<String, Object> childPolicy =
+          ImmutableMap.<String, Object>of("childPolicy", ImmutableList.of(pickFirstStrategy));
+
+      ImmutableMap<String, Object> grpcLbPolicy =
+          ImmutableMap.<String, Object>of("grpclb", childPolicy);
+
+      final ImmutableMap<String, Object> loadBalancingConfig =
+          ImmutableMap.<String, Object>of("loadBalancingConfig", ImmutableList.of(grpcLbPolicy));
+
       settingsBuilder
           .stubSettings()
           .setTransportChannelProvider(
@@ -97,17 +109,7 @@ public class DirectPathEnv extends AbstractTestEnv {
                         public ManagedChannelBuilder apply(ManagedChannelBuilder builder) {
                           // Configure pick_first strategy to force a single subchannel per
                           // ManagedChannel
-                          builder.defaultServiceConfig(
-                              ImmutableMap.of(
-                                  "loadBalancingConfig",
-                                  ImmutableList.of(
-                                      ImmutableMap.of(
-                                          "grpclb",
-                                          ImmutableMap.of(
-                                              "childPolicy",
-                                              ImmutableList.of(
-                                                  ImmutableMap.of(
-                                                      "pick_first", ImmutableMap.of())))))));
+                          builder.defaultServiceConfig(loadBalancingConfig);
 
                           return builder;
                         }

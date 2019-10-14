@@ -57,6 +57,10 @@ import org.junit.runners.JUnit4;
  */
 @RunWith(JUnit4.class)
 public class DirectPathFallbackIT {
+  // A threshold of completed read calls to observe to ascertain IPv6 is working.
+  // This was determined experimentally to account for both gRPC-LB RPCs and Bigtable api RPCs.
+  private static final int MIN_COMPLETE_READ_CALLS = 40;
+
   @ClassRule public static TestEnvRule testEnvRule = new TestEnvRule();
 
   private AtomicBoolean blackholeIPv6 = new AtomicBoolean();
@@ -140,9 +144,6 @@ public class DirectPathFallbackIT {
     // checking the injected IPv6 counter has been updated.
     blackholeIPv6.set(false);
     numIPv6Read.set(0);
-
-    // Arbitrary count that will ensure that there have been enough activity via IPv6.
-    final int MIN_COMPLETE_READ_CALLS = 40;
 
     while (numIPv6Read.get() < MIN_COMPLETE_READ_CALLS) {
       for (int i = 0; i < 20; i++) {
