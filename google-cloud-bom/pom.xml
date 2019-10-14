@@ -1018,12 +1018,17 @@
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>proto-google-cloud-iot-v1</artifactId>
-        <version>0.80.1-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-iot-v1:current} -->
+        <version>0.80.0</version>
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>grpc-google-cloud-iot-v1</artifactId>
-        <version>0.80.1-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-iot-v1:current} -->
+        <version>0.80.0</version>
+      </dependency>
+      <dependency>
+        <groupId>com.google.cloud</groupId>
+        <artifactId>google-cloud-iot</artifactId>
+        <version>0.115.0-beta</version>
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
