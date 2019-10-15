@@ -22,14 +22,23 @@ import static org.mockito.Mockito.when;
 import static org.mockito.MockitoAnnotations.initMocks;
 
 import com.google.api.gax.longrunning.OperationFuture;
+import com.google.cloud.Identity;
+import com.google.cloud.Role;
 import com.google.cloud.spanner.spi.v1.SpannerRpc;
 import com.google.cloud.spanner.spi.v1.SpannerRpc.Paginated;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.Lists;
+import com.google.common.collect.Sets;
+import com.google.common.io.BaseEncoding;
+import com.google.iam.v1.Binding;
+import com.google.iam.v1.Policy;
+import com.google.iam.v1.TestIamPermissionsResponse;
+import com.google.protobuf.ByteString;
 import com.google.protobuf.FieldMask;
 import com.google.spanner.admin.instance.v1.CreateInstanceMetadata;
 import com.google.spanner.admin.instance.v1.InstanceConfig;
 import com.google.spanner.admin.instance.v1.UpdateInstanceMetadata;
+import java.util.Arrays;
 import java.util.List;
 import org.junit.Before;
 import org.junit.Test;
@@ -173,5 +182,72 @@ public class InstanceAdminClientImplTest {
     assertThat(instances.get(0).getId().getName()).isEqualTo(INSTANCE_NAME);
     assertThat(instances.get(1).getId().getName()).isEqualTo(INSTANCE_NAME2);
     assertThat(instances.size()).isEqualTo(2);
+  }
+
+  @Test
+  public void getInstanceIAMPolicy() {
+    when(rpc.getInstanceAdminIAMPolicy(INSTANCE_NAME))
+        .thenReturn(
+            Policy.newBuilder()
+                .addBindings(
+                    Binding.newBuilder()
+                        .addMembers("user:joe@example.com")
+                        .setRole("roles/viewer")
+                        .build())
+                .build());
+    com.google.cloud.Policy policy = client.getInstanceIAMPolicy(INSTANCE_ID);
+    assertThat(policy.getBindings())
+        .containsExactly(Role.viewer(), Sets.newHashSet(Identity.user("joe@example.com")));
+
+    when(rpc.getInstanceAdminIAMPolicy(INSTANCE_NAME))
+        .thenReturn(
+            Policy.newBuilder()
+                .addBindings(
+                    Binding.newBuilder()
+                        .addAllMembers(Arrays.asList("allAuthenticatedUsers", "domain:google.com"))
+                        .setRole("roles/viewer")
+                        .build())
+                .build());
+    policy = client.getInstanceIAMPolicy(INSTANCE_ID);
+    assertThat(policy.getBindings())
+        .containsExactly(
+            Role.viewer(),
+            Sets.newHashSet(Identity.allAuthenticatedUsers(), Identity.domain("google.com")));
+  }
+
+  @Test
+  public void setInstanceIAMPolicy() {
+    ByteString etag = ByteString.copyFrom(BaseEncoding.base64().decode("v1"));
+    String etagEncoded = BaseEncoding.base64().encode(etag.toByteArray());
+    Policy proto =
+        Policy.newBuilder()
+            .addBindings(
+                Binding.newBuilder()
+                    .setRole("roles/viewer")
+                    .addMembers("user:joe@example.com")
+                    .build())
+            .setEtag(etag)
+            .build();
+    when(rpc.setInstanceAdminIAMPolicy(INSTANCE_NAME, proto)).thenReturn(proto);
+    com.google.cloud.Policy policy =
+        com.google.cloud.Policy.newBuilder()
+            .addIdentity(Role.viewer(), Identity.user("joe@example.com"))
+            .setEtag(etagEncoded)
+            .build();
+    com.google.cloud.Policy updated = client.setInstanceIAMPolicy(INSTANCE_ID, policy);
+    assertThat(updated).isEqualTo(policy);
+  }
+
+  @Test
+  public void testInstanceIAMPermissions() {
+    Iterable<String> permissions =
+        Arrays.asList("spanner.instances.list", "spanner.instances.create");
+    when(rpc.testInstanceAdminIAMPermissions(INSTANCE_NAME, permissions))
+        .thenReturn(
+            TestIamPermissionsResponse.newBuilder()
+                .addPermissions("spanner.instances.list")
+                .build());
+    Iterable<String> allowed = client.testInstanceIAMPermissions(INSTANCE_ID, permissions);
+    assertThat(allowed).containsExactly("spanner.instances.list");
   }
 }

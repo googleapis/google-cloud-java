@@ -1042,8 +1042,7 @@ final class SessionPool {
   }
 
   private final SessionPoolOptions options;
-  private final DatabaseId db;
-  private final SpannerImpl spanner;
+  private final SessionClient sessionClient;
   private final ScheduledExecutorService executor;
   private final ExecutorFactory<ScheduledExecutorService> executorFactory;
   final PoolMaintainer poolMaintainer;
@@ -1094,30 +1093,27 @@ final class SessionPool {
    * Return pool is immediately ready for use, though getting a session might block for sessions to
    * be created.
    */
-  static SessionPool createPool(SpannerOptions spannerOptions, DatabaseId db, SpannerImpl spanner) {
+  static SessionPool createPool(SpannerOptions spannerOptions, SessionClient sessionClient) {
     return createPool(
         spannerOptions.getSessionPoolOptions(),
         ((GrpcTransportOptions) spannerOptions.getTransportOptions()).getExecutorFactory(),
-        db,
-        spanner);
+        sessionClient);
   }
 
   static SessionPool createPool(
       SessionPoolOptions poolOptions,
       ExecutorFactory<ScheduledExecutorService> executorFactory,
-      DatabaseId db,
-      SpannerImpl spanner) {
-    return createPool(poolOptions, executorFactory, db, spanner, new Clock());
+      SessionClient sessionClient) {
+    return createPool(poolOptions, executorFactory, sessionClient, new Clock());
   }
 
   static SessionPool createPool(
       SessionPoolOptions poolOptions,
       ExecutorFactory<ScheduledExecutorService> executorFactory,
-      DatabaseId db,
-      SpannerImpl spanner,
+      SessionClient sessionClient,
       Clock clock) {
     SessionPool pool =
-        new SessionPool(poolOptions, executorFactory, executorFactory.get(), db, spanner, clock);
+        new SessionPool(poolOptions, executorFactory, executorFactory.get(), sessionClient, clock);
     pool.initPool();
     return pool;
   }
@@ -1126,14 +1122,12 @@ final class SessionPool {
       SessionPoolOptions options,
       ExecutorFactory<ScheduledExecutorService> executorFactory,
       ScheduledExecutorService executor,
-      DatabaseId db,
-      SpannerImpl spanner,
+      SessionClient sessionClient,
       Clock clock) {
     this.options = options;
     this.executorFactory = executorFactory;
     this.executor = executor;
-    this.db = db;
-    this.spanner = spanner;
+    this.sessionClient = sessionClient;
     this.clock = clock;
     this.poolMaintainer = new PoolMaintainer();
   }
@@ -1637,7 +1631,7 @@ final class SessionPool {
         // calls and the session consumer consumes the returned sessions as they become available.
         // The batchCreateSessions method automatically spreads the sessions evenly over all
         // available channels.
-        spanner.asyncBatchCreateSessions(db, sessionCount, sessionConsumer);
+        sessionClient.asyncBatchCreateSessions(sessionCount, sessionConsumer);
         logger.log(Level.FINE, "Sessions created");
       } catch (Throwable t) {
         // Expose this to customer via a metric.

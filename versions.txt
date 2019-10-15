@@ -19,7 +19,6 @@ google-cloud-container:0.115.0-beta:0.115.1-beta-SNAPSHOT
 google-cloud-containeranalysis:0.115.0-beta:0.115.1-beta-SNAPSHOT
 google-cloud-contrib:0.115.0-alpha:0.115.1-alpha-SNAPSHOT
 google-cloud-datacatalog:0.28.0-alpha:0.28.1-alpha-SNAPSHOT
-google-cloud-datalabeling:0.115.0-alpha:0.115.1-alpha-SNAPSHOT
 google-cloud-dataproc:0.115.0:0.115.1-SNAPSHOT
 google-cloud-datastore:1.97.0:1.97.1-SNAPSHOT
 google-cloud-dialogflow:0.115.0-alpha:0.115.1-alpha-SNAPSHOT
@@ -30,7 +29,6 @@ google-cloud-examples:0.115.0-alpha:0.115.1-alpha-SNAPSHOT
 google-cloud-firestore:1.27.0:1.27.1-SNAPSHOT
 google-cloud-gameservices:0.16.0:0.16.1-SNAPSHOT
 google-cloud-gcloud-maven-plugin:0.115.0-alpha:0.115.1-alpha-SNAPSHOT
-google-cloud-iot:0.115.0-beta:0.115.1-beta-SNAPSHOT
 google-cloud-kms:1.33.0:1.33.1-SNAPSHOT
 google-cloud-language:1.97.0:1.97.1-SNAPSHOT
 google-cloud-logging:1.97.0:1.97.1-SNAPSHOT
@@ -69,7 +67,6 @@ grpc-google-cloud-container-v1:0.80.0:0.80.1-SNAPSHOT
 grpc-google-cloud-containeranalysis-v1:0.80.0:0.80.1-SNAPSHOT
 grpc-google-cloud-containeranalysis-v1beta1:0.80.0:0.80.1-SNAPSHOT
 grpc-google-cloud-datacatalog-v1beta1:0.28.0-alpha:0.28.1-alpha-SNAPSHOT
-grpc-google-cloud-datalabeling-v1beta1:0.80.0:0.80.1-SNAPSHOT
 grpc-google-cloud-dataproc-v1:0.80.0:0.80.1-SNAPSHOT
 grpc-google-cloud-dataproc-v1beta2:0.80.0:0.80.1-SNAPSHOT
 grpc-google-cloud-dialogflow-v2:0.80.0:0.80.1-SNAPSHOT
@@ -80,7 +77,6 @@ grpc-google-cloud-firestore-admin-v1:1.27.0:1.27.1-SNAPSHOT
 grpc-google-cloud-firestore-v1:1.27.0:1.27.1-SNAPSHOT
 grpc-google-cloud-firestore-v1beta1:0.80.0:0.80.1-SNAPSHOT
 grpc-google-cloud-gameservices-v1alpha:0.16.0:0.16.1-SNAPSHOT
-grpc-google-cloud-iot-v1:0.80.0:0.80.1-SNAPSHOT
 grpc-google-cloud-kms-v1:0.80.0:0.80.1-SNAPSHOT
 grpc-google-cloud-language-v1:1.79.0:1.79.1-SNAPSHOT
 grpc-google-cloud-language-v1beta2:0.80.0:0.80.1-SNAPSHOT
@@ -127,7 +123,6 @@ proto-google-cloud-container-v1:0.80.0:0.80.1-SNAPSHOT
 proto-google-cloud-containeranalysis-v1:0.80.0:0.80.1-SNAPSHOT
 proto-google-cloud-containeranalysis-v1beta1:0.80.0:0.80.1-SNAPSHOT
 proto-google-cloud-datacatalog-v1beta1:0.28.0-alpha:0.28.1-alpha-SNAPSHOT
-proto-google-cloud-datalabeling-v1beta1:0.80.0:0.80.1-SNAPSHOT
 proto-google-cloud-dataproc-v1:0.80.0:0.80.1-SNAPSHOT
 proto-google-cloud-dataproc-v1beta2:0.80.0:0.80.1-SNAPSHOT
 proto-google-cloud-datastore-v1:0.80.0:0.80.1-SNAPSHOT
@@ -139,7 +134,6 @@ proto-google-cloud-firestore-admin-v1:1.27.0:1.27.1-SNAPSHOT
 proto-google-cloud-firestore-v1:1.27.0:1.27.1-SNAPSHOT
 proto-google-cloud-firestore-v1beta1:0.80.0:0.80.1-SNAPSHOT
 proto-google-cloud-gameservices-v1alpha:0.16.0:0.16.1-SNAPSHOT
-proto-google-cloud-iot-v1:0.80.0:0.80.1-SNAPSHOT
 proto-google-cloud-kms-v1:0.80.0:0.80.1-SNAPSHOT
 proto-google-cloud-language-v1:1.79.0:1.79.1-SNAPSHOT
 proto-google-cloud-language-v1beta2:0.80.0:0.80.1-SNAPSHOT

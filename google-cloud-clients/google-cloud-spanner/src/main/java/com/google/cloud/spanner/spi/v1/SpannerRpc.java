@@ -19,8 +19,11 @@ package com.google.cloud.spanner.spi.v1;
 import com.google.api.gax.longrunning.OperationFuture;
 import com.google.cloud.ServiceRpc;
 import com.google.cloud.spanner.SpannerException;
-import com.google.cloud.spanner.spi.v1.SpannerRpc.Option;
+import com.google.cloud.spanner.admin.database.v1.stub.DatabaseAdminStub;
+import com.google.cloud.spanner.admin.instance.v1.stub.InstanceAdminStub;
 import com.google.common.collect.ImmutableList;
+import com.google.iam.v1.Policy;
+import com.google.iam.v1.TestIamPermissionsResponse;
 import com.google.longrunning.Operation;
 import com.google.protobuf.Empty;
 import com.google.protobuf.FieldMask;
@@ -242,6 +245,36 @@ public interface SpannerRpc extends ServiceRpc {
 
   PartitionResponse partitionRead(PartitionReadRequest request, @Nullable Map<Option, ?> options)
       throws SpannerException;
+
+  /** Gets the IAM policy for the given resource using the {@link DatabaseAdminStub}. */
+  Policy getDatabaseAdminIAMPolicy(String resource);
+
+  /**
+   * Updates the IAM policy for the given resource using the {@link DatabaseAdminStub}. It is highly
+   * recommended to first get the current policy and base the updated policy on the returned policy.
+   * See {@link Policy.Builder#setEtag(com.google.protobuf.ByteString)} for information on the
+   * recommended read-modify-write cycle.
+   */
+  Policy setDatabaseAdminIAMPolicy(String resource, Policy policy);
+
+  /** Tests the IAM permissions for the given resource using the {@link DatabaseAdminStub}. */
+  TestIamPermissionsResponse testDatabaseAdminIAMPermissions(
+      String resource, Iterable<String> permissions);
+
+  /** Gets the IAM policy for the given resource using the {@link InstanceAdminStub}. */
+  Policy getInstanceAdminIAMPolicy(String resource);
+
+  /**
+   * Updates the IAM policy for the given resource using the {@link InstanceAdminStub}. It is highly
+   * recommended to first get the current policy and base the updated policy on the returned policy.
+   * See {@link Policy.Builder#setEtag(com.google.protobuf.ByteString)} for information on the
+   * recommended read-modify-write cycle.
+   */
+  Policy setInstanceAdminIAMPolicy(String resource, Policy policy);
+
+  /** Tests the IAM permissions for the given resource using the {@link InstanceAdminStub}. */
+  TestIamPermissionsResponse testInstanceAdminIAMPermissions(
+      String resource, Iterable<String> permissions);
 
   public void shutdown();
 

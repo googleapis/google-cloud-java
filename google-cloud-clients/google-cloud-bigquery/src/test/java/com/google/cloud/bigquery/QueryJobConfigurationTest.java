@@ -84,6 +84,8 @@ public class QueryJobConfigurationTest {
   private static final Clustering CLUSTERING =
       Clustering.newBuilder().setFields(ImmutableList.of("Foo", "Bar")).build();
   private static final Long TIMEOUT = 10L;
+  private static final Map<String, String> LABELS =
+      ImmutableMap.of("test-job-name", "test-query-job");
   private static final QueryJobConfiguration QUERY_JOB_CONFIGURATION =
       QueryJobConfiguration.newBuilder(QUERY)
           .setUseQueryCache(USE_QUERY_CACHE)
@@ -104,6 +106,7 @@ public class QueryJobConfigurationTest {
           .setTimePartitioning(TIME_PARTITIONING)
           .setClustering(CLUSTERING)
           .setJobTimeoutMs(TIMEOUT)
+          .setLabels(LABELS)
           .build();
 
   @Test
@@ -136,6 +139,7 @@ public class QueryJobConfigurationTest {
     assertNull(QUERY_JOB_CONFIGURATION.toPb().getCopy());
     assertNull(QUERY_JOB_CONFIGURATION.toPb().getLoad());
     assertNotNull(QUERY_JOB_CONFIGURATION.getJobTimeoutMs());
+    assertNotNull(QUERY_JOB_CONFIGURATION.getLabels());
     compareQueryJobConfiguration(
         QUERY_JOB_CONFIGURATION, QueryJobConfiguration.fromPb(QUERY_JOB_CONFIGURATION.toPb()));
     QueryJobConfiguration job = QueryJobConfiguration.of(QUERY);
@@ -192,5 +196,6 @@ public class QueryJobConfigurationTest {
     assertEquals(expected.getTimePartitioning(), value.getTimePartitioning());
     assertEquals(expected.getClustering(), value.getClustering());
     assertEquals(expected.getJobTimeoutMs(), value.getJobTimeoutMs());
+    assertEquals(expected.getLabels(), value.getLabels());
   }
 }

@@ -18,6 +18,7 @@ package com.google.cloud.spanner;
 
 import com.google.api.gax.longrunning.OperationFuture;
 import com.google.api.gax.paging.Page;
+import com.google.cloud.Policy;
 import com.google.spanner.admin.database.v1.CreateDatabaseMetadata;
 import com.google.spanner.admin.instance.v1.UpdateInstanceMetadata;
 import java.util.Map;
@@ -129,6 +130,32 @@ public class Instance extends InstanceInfo {
   public OperationFuture<Database, CreateDatabaseMetadata> createDatabase(
       String databaseId, Iterable<String> statements) throws SpannerException {
     return dbClient.createDatabase(instanceId(), databaseId, statements);
+  }
+
+  /** Returns the IAM {@link Policy} for this instance. */
+  public Policy getIAMPolicy() {
+    return instanceClient.getInstanceIAMPolicy(instanceId());
+  }
+
+  /**
+   * Updates the IAM policy for this instance and returns the resulting policy. It is highly
+   * recommended to first get the current policy and base the updated policy on the returned policy.
+   * See {@link Policy.Builder#setEtag(String)} for information on the recommended read-modify-write
+   * cycle.
+   */
+  public Policy setIAMPolicy(Policy policy) {
+    return instanceClient.setInstanceIAMPolicy(instanceId(), policy);
+  }
+
+  /**
+   * Tests for the given permissions on this instance for the caller.
+   *
+   * @param permissions the permissions to test for. Permissions with wildcards (such as '*',
+   *     'spanner.*', 'spanner.instances.*') are not allowed.
+   * @return the subset of the tested permissions that the caller is allowed.
+   */
+  public Iterable<String> testIAMPermissions(Iterable<String> permissions) {
+    return instanceClient.testInstanceIAMPermissions(instanceId(), permissions);
   }
 
   private String instanceId() {

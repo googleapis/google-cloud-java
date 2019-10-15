@@ -132,8 +132,11 @@ public abstract class ITAbstractSpannerTest {
             Field stateField = cls.getDeclaredField("txnState");
             stateField.setAccessible(true);
 
-            // first rollback, and then pretend it aborted
-            tx.rollback();
+            // First rollback the delegate, and then pretend it aborted.
+            // We should call rollback on the delegate and not the wrapping
+            // AutoClosingTransactionManager, as the latter would cause the session to be returned
+            // to the session pool.
+            delegate.rollback();
             stateField.set(delegate, TransactionState.ABORTED);
           } catch (Exception e) {
             throw new RuntimeException(e);
