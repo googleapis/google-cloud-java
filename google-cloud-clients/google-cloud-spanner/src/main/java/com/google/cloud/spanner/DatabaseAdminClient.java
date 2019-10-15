@@ -18,6 +18,7 @@ package com.google.cloud.spanner;
 
 import com.google.api.gax.longrunning.OperationFuture;
 import com.google.api.gax.paging.Page;
+import com.google.cloud.Policy;
 import com.google.cloud.spanner.Options.ListOption;
 import com.google.spanner.admin.database.v1.CreateDatabaseMetadata;
 import com.google.spanner.admin.database.v1.UpdateDatabaseDdlMetadata;
@@ -151,4 +152,27 @@ public interface DatabaseAdminClient {
    * }</pre>
    */
   Page<Database> listDatabases(String instanceId, ListOption... options);
+
+  /** Returns the IAM policy for the given database. */
+  Policy getDatabaseIAMPolicy(String instanceId, String databaseId);
+
+  /**
+   * Updates the IAM policy for the given database and returns the resulting policy. It is highly
+   * recommended to first get the current policy and base the updated policy on the returned policy.
+   * See {@link Policy.Builder#setEtag(String)} for information on the recommended read-modify-write
+   * cycle.
+   */
+  Policy setDatabaseIAMPolicy(String instanceId, String databaseId, Policy policy);
+
+  /**
+   * Tests for the given permissions on the specified database for the caller.
+   *
+   * @param instanceId the id of the instance where the database to test is located.
+   * @param databaseId the id of the database to test.
+   * @param permissions the permissions to test for. Permissions with wildcards (such as '*',
+   *     'spanner.*', 'spanner.instances.*') are not allowed.
+   * @return the subset of the tested permissions that the caller is allowed.
+   */
+  Iterable<String> testDatabaseIAMPermissions(
+      String instanceId, String databaseId, Iterable<String> permissions);
 }
