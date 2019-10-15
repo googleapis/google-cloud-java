@@ -225,25 +225,29 @@ public class DirectPathFallbackIT {
 
     @Override
     public void channelRead(ChannelHandlerContext ctx, Object msg) throws Exception {
-      if (!(isIPv6 && blackholeIPv6.get())) {
-        super.channelRead(ctx, msg);
-      } else {
+      boolean dropCall = isIPv6 && blackholeIPv6.get();
+
+      if (dropCall) {
         // Don't notify the next handler and increment counter
         numBlocked.incrementAndGet();
         ReferenceCountUtil.release(msg);
+      } else {
+        super.channelRead(ctx, msg);
       }
     }
 
     @Override
     public void channelReadComplete(ChannelHandlerContext ctx) throws Exception {
-      if (!(isIPv6 && blackholeIPv6.get())) {
+      boolean dropCall = isIPv6 && blackholeIPv6.get();
+
+      if (dropCall) {
+        // Don't notify the next handler and increment counter
+        numBlocked.incrementAndGet();
+      } else {
         if (isIPv6) {
           numIPv6Read.incrementAndGet();
         }
         super.channelReadComplete(ctx);
-      } else {
-        // Don't notify the next handler and increment counter
-        numBlocked.incrementAndGet();
       }
     }
   }
