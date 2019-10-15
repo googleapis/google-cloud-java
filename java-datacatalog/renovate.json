@@ -6,7 +6,7 @@
   "packageRules": [
     {
       "managers": ["maven"],
-      "packageNames": ["com.google.guava:guava"],
+      "packageNames": ["com.google.guava:guava*"],
       "versionScheme": "docker"
     },
     {
