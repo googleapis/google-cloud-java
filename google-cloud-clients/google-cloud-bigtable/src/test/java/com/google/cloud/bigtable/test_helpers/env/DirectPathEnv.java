@@ -15,11 +15,15 @@
  */
 package com.google.cloud.bigtable.test_helpers.env;
 
+import com.google.api.core.ApiFunction;
 import com.google.cloud.bigtable.admin.v2.BigtableInstanceAdminClient;
 import com.google.cloud.bigtable.admin.v2.BigtableTableAdminClient;
 import com.google.cloud.bigtable.data.v2.BigtableDataClient;
 import com.google.cloud.bigtable.data.v2.BigtableDataSettings;
 import com.google.cloud.bigtable.data.v2.stub.EnhancedBigtableStubSettings;
+import com.google.common.collect.ImmutableList;
+import com.google.common.collect.ImmutableMap;
+import io.grpc.ManagedChannelBuilder;
 import java.io.IOException;
 
 /**
@@ -53,6 +57,8 @@ public class DirectPathEnv extends AbstractTestEnv {
   private final String instanceId;
   private final String tableId;
 
+  private final BigtableDataSettings dataSettings;
+
   private BigtableDataClient dataClient;
   private BigtableTableAdminClient tableAdminClient;
   private BigtableInstanceAdminClient instanceAdminClient;
@@ -71,29 +77,52 @@ public class DirectPathEnv extends AbstractTestEnv {
     this.projectId = projectId;
     this.instanceId = instanceId;
     this.tableId = tableId;
-  }
 
-  @Override
-  void start() throws IOException {
+    // Build the data client settings
     BigtableDataSettings.Builder settingsBuilder =
         BigtableDataSettings.newBuilder().setProjectId(projectId).setInstanceId(instanceId);
 
     // Direct path test environment uses a different endpoint.
     settingsBuilder.stubSettings().setEndpoint(DIRECT_PATH_END_POINT);
 
-    // TODO(igorbernstein): move direct path conditional logic to gax
-    // Direct path environment can be accessed via CFE or direct path. When using direct path,
-    // disable connection pooling.
+    // TODO: Remove this after https://github.com/googleapis/gax-java/pull/707 is merged
     if (directPathEnabled) {
+      ImmutableMap<String, Object> pickFirstStrategy =
+          ImmutableMap.<String, Object>of("pick_first", ImmutableMap.of());
+
+      ImmutableMap<String, Object> childPolicy =
+          ImmutableMap.<String, Object>of("childPolicy", ImmutableList.of(pickFirstStrategy));
+
+      ImmutableMap<String, Object> grpcLbPolicy =
+          ImmutableMap.<String, Object>of("grpclb", childPolicy);
+
+      final ImmutableMap<String, Object> loadBalancingConfig =
+          ImmutableMap.<String, Object>of("loadBalancingConfig", ImmutableList.of(grpcLbPolicy));
+
       settingsBuilder
           .stubSettings()
           .setTransportChannelProvider(
               EnhancedBigtableStubSettings.defaultGrpcTransportProviderBuilder()
-                  .setPoolSize(1)
+                  .setChannelConfigurator(
+                      new ApiFunction<ManagedChannelBuilder, ManagedChannelBuilder>() {
+                        @Override
+                        public ManagedChannelBuilder apply(ManagedChannelBuilder builder) {
+                          // Configure pick_first strategy to force a single subchannel per
+                          // ManagedChannel
+                          builder.defaultServiceConfig(loadBalancingConfig);
+
+                          return builder;
+                        }
+                      })
                   .build());
     }
 
-    dataClient = BigtableDataClient.create(settingsBuilder.build());
+    this.dataSettings = settingsBuilder.build();
+  }
+
+  @Override
+  void start() throws IOException {
+    dataClient = BigtableDataClient.create(dataSettings);
     tableAdminClient = BigtableTableAdminClient.create(projectId, instanceId);
     instanceAdminClient = BigtableInstanceAdminClient.create(projectId);
   }
@@ -118,6 +147,11 @@ public class DirectPathEnv extends AbstractTestEnv {
   @Override
   public BigtableInstanceAdminClient getInstanceAdminClient() {
     return instanceAdminClient;
+  }
+
+  @Override
+  public BigtableDataSettings getDataClientSettings() {
+    return dataSettings;
   }
 
   @Override
