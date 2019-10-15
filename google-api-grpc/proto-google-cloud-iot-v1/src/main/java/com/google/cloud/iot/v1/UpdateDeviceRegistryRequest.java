@@ -119,12 +119,14 @@ public final class UpdateDeviceRegistryRequest extends com.google.protobuf.Gener
    *
    *
    * <pre>
-   * The new values for the device registry. The `id` field must be empty, and
+   * Required. The new values for the device registry. The `id` field must be empty, and
    * the `name` field must indicate the path of the resource. For example,
    * `projects/example-project/locations/us-central1/registries/my-registry`.
    * </pre>
    *
-   * <code>.google.cloud.iot.v1.DeviceRegistry device_registry = 1;</code>
+   * <code>
+   * .google.cloud.iot.v1.DeviceRegistry device_registry = 1 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   public boolean hasDeviceRegistry() {
     return deviceRegistry_ != null;
@@ -133,12 +135,14 @@ public final class UpdateDeviceRegistryRequest extends com.google.protobuf.Gener
    *
    *
    * <pre>
-   * The new values for the device registry. The `id` field must be empty, and
+   * Required. The new values for the device registry. The `id` field must be empty, and
    * the `name` field must indicate the path of the resource. For example,
    * `projects/example-project/locations/us-central1/registries/my-registry`.
    * </pre>
    *
-   * <code>.google.cloud.iot.v1.DeviceRegistry device_registry = 1;</code>
+   * <code>
+   * .google.cloud.iot.v1.DeviceRegistry device_registry = 1 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   public com.google.cloud.iot.v1.DeviceRegistry getDeviceRegistry() {
     return deviceRegistry_ == null
@@ -149,12 +153,14 @@ public final class UpdateDeviceRegistryRequest extends com.google.protobuf.Gener
    *
    *
    * <pre>
-   * The new values for the device registry. The `id` field must be empty, and
+   * Required. The new values for the device registry. The `id` field must be empty, and
    * the `name` field must indicate the path of the resource. For example,
    * `projects/example-project/locations/us-central1/registries/my-registry`.
    * </pre>
    *
-   * <code>.google.cloud.iot.v1.DeviceRegistry device_registry = 1;</code>
+   * <code>
+   * .google.cloud.iot.v1.DeviceRegistry device_registry = 1 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   public com.google.cloud.iot.v1.DeviceRegistryOrBuilder getDeviceRegistryOrBuilder() {
     return getDeviceRegistry();
@@ -166,14 +172,15 @@ public final class UpdateDeviceRegistryRequest extends com.google.protobuf.Gener
    *
    *
    * <pre>
-   * Only updates the `device_registry` fields indicated by this mask.
+   * Required. Only updates the `device_registry` fields indicated by this mask.
    * The field mask must not be empty, and it must not contain fields that
    * are immutable or only set by the server.
    * Mutable top-level fields: `event_notification_config`, `http_config`,
    * `mqtt_config`, and `state_notification_config`.
    * </pre>
    *
-   * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+   * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   public boolean hasUpdateMask() {
     return updateMask_ != null;
@@ -182,14 +189,15 @@ public final class UpdateDeviceRegistryRequest extends com.google.protobuf.Gener
    *
    *
    * <pre>
-   * Only updates the `device_registry` fields indicated by this mask.
+   * Required. Only updates the `device_registry` fields indicated by this mask.
    * The field mask must not be empty, and it must not contain fields that
    * are immutable or only set by the server.
    * Mutable top-level fields: `event_notification_config`, `http_config`,
    * `mqtt_config`, and `state_notification_config`.
    * </pre>
    *
-   * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+   * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   public com.google.protobuf.FieldMask getUpdateMask() {
     return updateMask_ == null ? com.google.protobuf.FieldMask.getDefaultInstance() : updateMask_;
@@ -198,14 +206,15 @@ public final class UpdateDeviceRegistryRequest extends com.google.protobuf.Gener
    *
    *
    * <pre>
-   * Only updates the `device_registry` fields indicated by this mask.
+   * Required. Only updates the `device_registry` fields indicated by this mask.
    * The field mask must not be empty, and it must not contain fields that
    * are immutable or only set by the server.
    * Mutable top-level fields: `event_notification_config`, `http_config`,
    * `mqtt_config`, and `state_notification_config`.
    * </pre>
    *
-   * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+   * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   public com.google.protobuf.FieldMaskOrBuilder getUpdateMaskOrBuilder() {
     return getUpdateMask();
@@ -579,12 +588,14 @@ public final class UpdateDeviceRegistryRequest extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * The new values for the device registry. The `id` field must be empty, and
+     * Required. The new values for the device registry. The `id` field must be empty, and
      * the `name` field must indicate the path of the resource. For example,
      * `projects/example-project/locations/us-central1/registries/my-registry`.
      * </pre>
      *
-     * <code>.google.cloud.iot.v1.DeviceRegistry device_registry = 1;</code>
+     * <code>
+     * .google.cloud.iot.v1.DeviceRegistry device_registry = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public boolean hasDeviceRegistry() {
       return deviceRegistryBuilder_ != null || deviceRegistry_ != null;
@@ -593,12 +604,14 @@ public final class UpdateDeviceRegistryRequest extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * The new values for the device registry. The `id` field must be empty, and
+     * Required. The new values for the device registry. The `id` field must be empty, and
      * the `name` field must indicate the path of the resource. For example,
      * `projects/example-project/locations/us-central1/registries/my-registry`.
      * </pre>
      *
-     * <code>.google.cloud.iot.v1.DeviceRegistry device_registry = 1;</code>
+     * <code>
+     * .google.cloud.iot.v1.DeviceRegistry device_registry = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public com.google.cloud.iot.v1.DeviceRegistry getDeviceRegistry() {
       if (deviceRegistryBuilder_ == null) {
@@ -613,12 +626,14 @@ public final class UpdateDeviceRegistryRequest extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * The new values for the device registry. The `id` field must be empty, and
+     * Required. The new values for the device registry. The `id` field must be empty, and
      * the `name` field must indicate the path of the resource. For example,
      * `projects/example-project/locations/us-central1/registries/my-registry`.
      * </pre>
      *
-     * <code>.google.cloud.iot.v1.DeviceRegistry device_registry = 1;</code>
+     * <code>
+     * .google.cloud.iot.v1.DeviceRegistry device_registry = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder setDeviceRegistry(com.google.cloud.iot.v1.DeviceRegistry value) {
       if (deviceRegistryBuilder_ == null) {
@@ -637,12 +652,14 @@ public final class UpdateDeviceRegistryRequest extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * The new values for the device registry. The `id` field must be empty, and
+     * Required. The new values for the device registry. The `id` field must be empty, and
      * the `name` field must indicate the path of the resource. For example,
      * `projects/example-project/locations/us-central1/registries/my-registry`.
      * </pre>
      *
-     * <code>.google.cloud.iot.v1.DeviceRegistry device_registry = 1;</code>
+     * <code>
+     * .google.cloud.iot.v1.DeviceRegistry device_registry = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder setDeviceRegistry(
         com.google.cloud.iot.v1.DeviceRegistry.Builder builderForValue) {
@@ -659,12 +676,14 @@ public final class UpdateDeviceRegistryRequest extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * The new values for the device registry. The `id` field must be empty, and
+     * Required. The new values for the device registry. The `id` field must be empty, and
      * the `name` field must indicate the path of the resource. For example,
      * `projects/example-project/locations/us-central1/registries/my-registry`.
      * </pre>
      *
-     * <code>.google.cloud.iot.v1.DeviceRegistry device_registry = 1;</code>
+     * <code>
+     * .google.cloud.iot.v1.DeviceRegistry device_registry = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder mergeDeviceRegistry(com.google.cloud.iot.v1.DeviceRegistry value) {
       if (deviceRegistryBuilder_ == null) {
@@ -687,12 +706,14 @@ public final class UpdateDeviceRegistryRequest extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * The new values for the device registry. The `id` field must be empty, and
+     * Required. The new values for the device registry. The `id` field must be empty, and
      * the `name` field must indicate the path of the resource. For example,
      * `projects/example-project/locations/us-central1/registries/my-registry`.
      * </pre>
      *
-     * <code>.google.cloud.iot.v1.DeviceRegistry device_registry = 1;</code>
+     * <code>
+     * .google.cloud.iot.v1.DeviceRegistry device_registry = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder clearDeviceRegistry() {
       if (deviceRegistryBuilder_ == null) {
@@ -709,12 +730,14 @@ public final class UpdateDeviceRegistryRequest extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * The new values for the device registry. The `id` field must be empty, and
+     * Required. The new values for the device registry. The `id` field must be empty, and
      * the `name` field must indicate the path of the resource. For example,
      * `projects/example-project/locations/us-central1/registries/my-registry`.
      * </pre>
      *
-     * <code>.google.cloud.iot.v1.DeviceRegistry device_registry = 1;</code>
+     * <code>
+     * .google.cloud.iot.v1.DeviceRegistry device_registry = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public com.google.cloud.iot.v1.DeviceRegistry.Builder getDeviceRegistryBuilder() {
 
@@ -725,12 +748,14 @@ public final class UpdateDeviceRegistryRequest extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * The new values for the device registry. The `id` field must be empty, and
+     * Required. The new values for the device registry. The `id` field must be empty, and
      * the `name` field must indicate the path of the resource. For example,
      * `projects/example-project/locations/us-central1/registries/my-registry`.
      * </pre>
      *
-     * <code>.google.cloud.iot.v1.DeviceRegistry device_registry = 1;</code>
+     * <code>
+     * .google.cloud.iot.v1.DeviceRegistry device_registry = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public com.google.cloud.iot.v1.DeviceRegistryOrBuilder getDeviceRegistryOrBuilder() {
       if (deviceRegistryBuilder_ != null) {
@@ -745,12 +770,14 @@ public final class UpdateDeviceRegistryRequest extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * The new values for the device registry. The `id` field must be empty, and
+     * Required. The new values for the device registry. The `id` field must be empty, and
      * the `name` field must indicate the path of the resource. For example,
      * `projects/example-project/locations/us-central1/registries/my-registry`.
      * </pre>
      *
-     * <code>.google.cloud.iot.v1.DeviceRegistry device_registry = 1;</code>
+     * <code>
+     * .google.cloud.iot.v1.DeviceRegistry device_registry = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.iot.v1.DeviceRegistry,
@@ -779,14 +806,15 @@ public final class UpdateDeviceRegistryRequest extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * Only updates the `device_registry` fields indicated by this mask.
+     * Required. Only updates the `device_registry` fields indicated by this mask.
      * The field mask must not be empty, and it must not contain fields that
      * are immutable or only set by the server.
      * Mutable top-level fields: `event_notification_config`, `http_config`,
      * `mqtt_config`, and `state_notification_config`.
      * </pre>
      *
-     * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+     * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public boolean hasUpdateMask() {
       return updateMaskBuilder_ != null || updateMask_ != null;
@@ -795,14 +823,15 @@ public final class UpdateDeviceRegistryRequest extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * Only updates the `device_registry` fields indicated by this mask.
+     * Required. Only updates the `device_registry` fields indicated by this mask.
      * The field mask must not be empty, and it must not contain fields that
      * are immutable or only set by the server.
      * Mutable top-level fields: `event_notification_config`, `http_config`,
      * `mqtt_config`, and `state_notification_config`.
      * </pre>
      *
-     * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+     * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public com.google.protobuf.FieldMask getUpdateMask() {
       if (updateMaskBuilder_ == null) {
@@ -817,14 +846,15 @@ public final class UpdateDeviceRegistryRequest extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * Only updates the `device_registry` fields indicated by this mask.
+     * Required. Only updates the `device_registry` fields indicated by this mask.
      * The field mask must not be empty, and it must not contain fields that
      * are immutable or only set by the server.
      * Mutable top-level fields: `event_notification_config`, `http_config`,
      * `mqtt_config`, and `state_notification_config`.
      * </pre>
      *
-     * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+     * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder setUpdateMask(com.google.protobuf.FieldMask value) {
       if (updateMaskBuilder_ == null) {
@@ -843,14 +873,15 @@ public final class UpdateDeviceRegistryRequest extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * Only updates the `device_registry` fields indicated by this mask.
+     * Required. Only updates the `device_registry` fields indicated by this mask.
      * The field mask must not be empty, and it must not contain fields that
      * are immutable or only set by the server.
      * Mutable top-level fields: `event_notification_config`, `http_config`,
      * `mqtt_config`, and `state_notification_config`.
      * </pre>
      *
-     * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+     * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder setUpdateMask(com.google.protobuf.FieldMask.Builder builderForValue) {
       if (updateMaskBuilder_ == null) {
@@ -866,14 +897,15 @@ public final class UpdateDeviceRegistryRequest extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * Only updates the `device_registry` fields indicated by this mask.
+     * Required. Only updates the `device_registry` fields indicated by this mask.
      * The field mask must not be empty, and it must not contain fields that
      * are immutable or only set by the server.
      * Mutable top-level fields: `event_notification_config`, `http_config`,
      * `mqtt_config`, and `state_notification_config`.
      * </pre>
      *
-     * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+     * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder mergeUpdateMask(com.google.protobuf.FieldMask value) {
       if (updateMaskBuilder_ == null) {
@@ -894,14 +926,15 @@ public final class UpdateDeviceRegistryRequest extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * Only updates the `device_registry` fields indicated by this mask.
+     * Required. Only updates the `device_registry` fields indicated by this mask.
      * The field mask must not be empty, and it must not contain fields that
      * are immutable or only set by the server.
      * Mutable top-level fields: `event_notification_config`, `http_config`,
      * `mqtt_config`, and `state_notification_config`.
      * </pre>
      *
-     * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+     * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder clearUpdateMask() {
       if (updateMaskBuilder_ == null) {
@@ -918,14 +951,15 @@ public final class UpdateDeviceRegistryRequest extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * Only updates the `device_registry` fields indicated by this mask.
+     * Required. Only updates the `device_registry` fields indicated by this mask.
      * The field mask must not be empty, and it must not contain fields that
      * are immutable or only set by the server.
      * Mutable top-level fields: `event_notification_config`, `http_config`,
      * `mqtt_config`, and `state_notification_config`.
      * </pre>
      *
-     * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+     * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public com.google.protobuf.FieldMask.Builder getUpdateMaskBuilder() {
 
@@ -936,14 +970,15 @@ public final class UpdateDeviceRegistryRequest extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * Only updates the `device_registry` fields indicated by this mask.
+     * Required. Only updates the `device_registry` fields indicated by this mask.
      * The field mask must not be empty, and it must not contain fields that
      * are immutable or only set by the server.
      * Mutable top-level fields: `event_notification_config`, `http_config`,
      * `mqtt_config`, and `state_notification_config`.
      * </pre>
      *
-     * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+     * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public com.google.protobuf.FieldMaskOrBuilder getUpdateMaskOrBuilder() {
       if (updateMaskBuilder_ != null) {
@@ -958,14 +993,15 @@ public final class UpdateDeviceRegistryRequest extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * Only updates the `device_registry` fields indicated by this mask.
+     * Required. Only updates the `device_registry` fields indicated by this mask.
      * The field mask must not be empty, and it must not contain fields that
      * are immutable or only set by the server.
      * Mutable top-level fields: `event_notification_config`, `http_config`,
      * `mqtt_config`, and `state_notification_config`.
      * </pre>
      *
-     * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+     * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.protobuf.FieldMask,

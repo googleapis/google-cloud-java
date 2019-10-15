@@ -523,13 +523,6 @@ public class DeviceManagerStubSettings extends StubSettings<DeviceManagerStubSet
               Lists.<StatusCode.Code>newArrayList(
                   StatusCode.Code.DEADLINE_EXCEEDED, StatusCode.Code.UNAVAILABLE)));
       definitions.put("non_idempotent", ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList()));
-      definitions.put(
-          "rate_limited_aware",
-          ImmutableSet.copyOf(
-              Lists.<StatusCode.Code>newArrayList(
-                  StatusCode.Code.DEADLINE_EXCEEDED,
-                  StatusCode.Code.RESOURCE_EXHAUSTED,
-                  StatusCode.Code.UNAVAILABLE)));
       RETRYABLE_CODE_DEFINITIONS = definitions.build();
     }
 
@@ -546,20 +539,9 @@ public class DeviceManagerStubSettings extends StubSettings<DeviceManagerStubSet
               .setInitialRpcTimeout(Duration.ofMillis(20000L))
               .setRpcTimeoutMultiplier(1.0)
               .setMaxRpcTimeout(Duration.ofMillis(20000L))
-              .setTotalTimeout(Duration.ofMillis(120000L))
+              .setTotalTimeout(Duration.ofMillis(600000L))
               .build();
       definitions.put("default", settings);
-      settings =
-          RetrySettings.newBuilder()
-              .setInitialRetryDelay(Duration.ofMillis(1000L))
-              .setRetryDelayMultiplier(1.3)
-              .setMaxRetryDelay(Duration.ofMillis(60000L))
-              .setInitialRpcTimeout(Duration.ofMillis(20000L))
-              .setRpcTimeoutMultiplier(1.0)
-              .setMaxRpcTimeout(Duration.ofMillis(20000L))
-              .setTotalTimeout(Duration.ofMillis(120000L))
-              .build();
-      definitions.put("rate_limited_aware", settings);
       RETRY_PARAM_DEFINITIONS = definitions.build();
     }
 
@@ -662,7 +644,7 @@ public class DeviceManagerStubSettings extends StubSettings<DeviceManagerStubSet
 
       builder
           .deleteDeviceRegistrySettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
 
       builder
@@ -687,7 +669,7 @@ public class DeviceManagerStubSettings extends StubSettings<DeviceManagerStubSet
 
       builder
           .deleteDeviceSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
 
       builder
@@ -697,8 +679,8 @@ public class DeviceManagerStubSettings extends StubSettings<DeviceManagerStubSet
 
       builder
           .modifyCloudToDeviceConfigSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("rate_limited_aware"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("rate_limited_aware"));
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
 
       builder
           .listDeviceConfigVersionsSettings()
@@ -727,8 +709,8 @@ public class DeviceManagerStubSettings extends StubSettings<DeviceManagerStubSet
 
       builder
           .sendCommandToDeviceSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("rate_limited_aware"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("rate_limited_aware"));
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
 
       builder
           .bindDeviceToGatewaySettings()

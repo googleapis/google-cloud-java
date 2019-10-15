@@ -25,6 +25,7 @@ import com.google.api.gax.grpc.testing.MockGrpcService;
 import com.google.api.gax.grpc.testing.MockServiceHelper;
 import com.google.api.gax.rpc.ApiClientHeaderProvider;
 import com.google.api.gax.rpc.InvalidArgumentException;
+import com.google.api.resourcenames.ResourceName;
 import com.google.common.collect.Lists;
 import com.google.iam.v1.GetIamPolicyRequest;
 import com.google.iam.v1.Policy;
@@ -90,7 +91,7 @@ public class DeviceManagerClientTest {
   @SuppressWarnings("all")
   public void createDeviceRegistryTest() {
     String id = "id3355";
-    RegistryName name = RegistryName.of("[PROJECT]", "[LOCATION]", "[REGISTRY]");
+    DeviceRegistryName name = DeviceRegistryName.of("[PROJECT]", "[LOCATION]", "[REGISTRY]");
     DeviceRegistry expectedResponse =
         DeviceRegistry.newBuilder().setId(id).setName(name.toString()).build();
     mockDeviceManager.addResponse(expectedResponse);
@@ -134,12 +135,12 @@ public class DeviceManagerClientTest {
   @SuppressWarnings("all")
   public void getDeviceRegistryTest() {
     String id = "id3355";
-    RegistryName name2 = RegistryName.of("[PROJECT]", "[LOCATION]", "[REGISTRY]");
+    DeviceRegistryName name2 = DeviceRegistryName.of("[PROJECT]", "[LOCATION]", "[REGISTRY]");
     DeviceRegistry expectedResponse =
         DeviceRegistry.newBuilder().setId(id).setName(name2.toString()).build();
     mockDeviceManager.addResponse(expectedResponse);
 
-    RegistryName name = RegistryName.of("[PROJECT]", "[LOCATION]", "[REGISTRY]");
+    DeviceRegistryName name = DeviceRegistryName.of("[PROJECT]", "[LOCATION]", "[REGISTRY]");
 
     DeviceRegistry actualResponse = client.getDeviceRegistry(name);
     Assert.assertEquals(expectedResponse, actualResponse);
@@ -148,7 +149,7 @@ public class DeviceManagerClientTest {
     Assert.assertEquals(1, actualRequests.size());
     GetDeviceRegistryRequest actualRequest = (GetDeviceRegistryRequest) actualRequests.get(0);
 
-    Assert.assertEquals(name, RegistryName.parse(actualRequest.getName()));
+    Assert.assertEquals(name, DeviceRegistryName.parse(actualRequest.getName()));
     Assert.assertTrue(
         channelProvider.isHeaderSent(
             ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
@@ -162,7 +163,7 @@ public class DeviceManagerClientTest {
     mockDeviceManager.addException(exception);
 
     try {
-      RegistryName name = RegistryName.of("[PROJECT]", "[LOCATION]", "[REGISTRY]");
+      DeviceRegistryName name = DeviceRegistryName.of("[PROJECT]", "[LOCATION]", "[REGISTRY]");
 
       client.getDeviceRegistry(name);
       Assert.fail("No exception raised");
@@ -175,7 +176,7 @@ public class DeviceManagerClientTest {
   @SuppressWarnings("all")
   public void updateDeviceRegistryTest() {
     String id = "id3355";
-    RegistryName name = RegistryName.of("[PROJECT]", "[LOCATION]", "[REGISTRY]");
+    DeviceRegistryName name = DeviceRegistryName.of("[PROJECT]", "[LOCATION]", "[REGISTRY]");
     DeviceRegistry expectedResponse =
         DeviceRegistry.newBuilder().setId(id).setName(name.toString()).build();
     mockDeviceManager.addResponse(expectedResponse);
@@ -221,7 +222,7 @@ public class DeviceManagerClientTest {
     Empty expectedResponse = Empty.newBuilder().build();
     mockDeviceManager.addResponse(expectedResponse);
 
-    RegistryName name = RegistryName.of("[PROJECT]", "[LOCATION]", "[REGISTRY]");
+    DeviceRegistryName name = DeviceRegistryName.of("[PROJECT]", "[LOCATION]", "[REGISTRY]");
 
     client.deleteDeviceRegistry(name);
 
@@ -229,7 +230,7 @@ public class DeviceManagerClientTest {
     Assert.assertEquals(1, actualRequests.size());
     DeleteDeviceRegistryRequest actualRequest = (DeleteDeviceRegistryRequest) actualRequests.get(0);
 
-    Assert.assertEquals(name, RegistryName.parse(actualRequest.getName()));
+    Assert.assertEquals(name, DeviceRegistryName.parse(actualRequest.getName()));
     Assert.assertTrue(
         channelProvider.isHeaderSent(
             ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
@@ -243,7 +244,7 @@ public class DeviceManagerClientTest {
     mockDeviceManager.addException(exception);
 
     try {
-      RegistryName name = RegistryName.of("[PROJECT]", "[LOCATION]", "[REGISTRY]");
+      DeviceRegistryName name = DeviceRegistryName.of("[PROJECT]", "[LOCATION]", "[REGISTRY]");
 
       client.deleteDeviceRegistry(name);
       Assert.fail("No exception raised");
@@ -316,7 +317,7 @@ public class DeviceManagerClientTest {
             .build();
     mockDeviceManager.addResponse(expectedResponse);
 
-    RegistryName parent = RegistryName.of("[PROJECT]", "[LOCATION]", "[REGISTRY]");
+    DeviceRegistryName parent = DeviceRegistryName.of("[PROJECT]", "[LOCATION]", "[REGISTRY]");
     Device device = Device.newBuilder().build();
 
     Device actualResponse = client.createDevice(parent, device);
@@ -326,7 +327,7 @@ public class DeviceManagerClientTest {
     Assert.assertEquals(1, actualRequests.size());
     CreateDeviceRequest actualRequest = (CreateDeviceRequest) actualRequests.get(0);
 
-    Assert.assertEquals(parent, RegistryName.parse(actualRequest.getParent()));
+    Assert.assertEquals(parent, DeviceRegistryName.parse(actualRequest.getParent()));
     Assert.assertEquals(device, actualRequest.getDevice());
     Assert.assertTrue(
         channelProvider.isHeaderSent(
@@ -341,7 +342,7 @@ public class DeviceManagerClientTest {
     mockDeviceManager.addException(exception);
 
     try {
-      RegistryName parent = RegistryName.of("[PROJECT]", "[LOCATION]", "[REGISTRY]");
+      DeviceRegistryName parent = DeviceRegistryName.of("[PROJECT]", "[LOCATION]", "[REGISTRY]");
       Device device = Device.newBuilder().build();
 
       client.createDevice(parent, device);
@@ -500,7 +501,7 @@ public class DeviceManagerClientTest {
             .build();
     mockDeviceManager.addResponse(expectedResponse);
 
-    RegistryName parent = RegistryName.of("[PROJECT]", "[LOCATION]", "[REGISTRY]");
+    DeviceRegistryName parent = DeviceRegistryName.of("[PROJECT]", "[LOCATION]", "[REGISTRY]");
 
     ListDevicesPagedResponse pagedListResponse = client.listDevices(parent);
 
@@ -512,7 +513,7 @@ public class DeviceManagerClientTest {
     Assert.assertEquals(1, actualRequests.size());
     ListDevicesRequest actualRequest = (ListDevicesRequest) actualRequests.get(0);
 
-    Assert.assertEquals(parent, RegistryName.parse(actualRequest.getParent()));
+    Assert.assertEquals(parent, DeviceRegistryName.parse(actualRequest.getParent()));
     Assert.assertTrue(
         channelProvider.isHeaderSent(
             ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
@@ -526,7 +527,7 @@ public class DeviceManagerClientTest {
     mockDeviceManager.addException(exception);
 
     try {
-      RegistryName parent = RegistryName.of("[PROJECT]", "[LOCATION]", "[REGISTRY]");
+      DeviceRegistryName parent = DeviceRegistryName.of("[PROJECT]", "[LOCATION]", "[REGISTRY]");
 
       client.listDevices(parent);
       Assert.fail("No exception raised");
@@ -666,7 +667,8 @@ public class DeviceManagerClientTest {
     Policy expectedResponse = Policy.newBuilder().setVersion(version).setEtag(etag).build();
     mockDeviceManager.addResponse(expectedResponse);
 
-    RegistryName resource = RegistryName.of("[PROJECT]", "[LOCATION]", "[REGISTRY]");
+    ResourceName resource =
+        com.google.iam.v1.DeviceName.of("[PROJECT]", "[LOCATION]", "[REGISTRY]", "[DEVICE]");
     Policy policy = Policy.newBuilder().build();
 
     Policy actualResponse = client.setIamPolicy(resource, policy);
@@ -691,7 +693,8 @@ public class DeviceManagerClientTest {
     mockDeviceManager.addException(exception);
 
     try {
-      RegistryName resource = RegistryName.of("[PROJECT]", "[LOCATION]", "[REGISTRY]");
+      ResourceName resource =
+          com.google.iam.v1.DeviceName.of("[PROJECT]", "[LOCATION]", "[REGISTRY]", "[DEVICE]");
       Policy policy = Policy.newBuilder().build();
 
       client.setIamPolicy(resource, policy);
@@ -709,7 +712,8 @@ public class DeviceManagerClientTest {
     Policy expectedResponse = Policy.newBuilder().setVersion(version).setEtag(etag).build();
     mockDeviceManager.addResponse(expectedResponse);
 
-    RegistryName resource = RegistryName.of("[PROJECT]", "[LOCATION]", "[REGISTRY]");
+    ResourceName resource =
+        com.google.iam.v1.DeviceName.of("[PROJECT]", "[LOCATION]", "[REGISTRY]", "[DEVICE]");
 
     Policy actualResponse = client.getIamPolicy(resource);
     Assert.assertEquals(expectedResponse, actualResponse);
@@ -732,7 +736,8 @@ public class DeviceManagerClientTest {
     mockDeviceManager.addException(exception);
 
     try {
-      RegistryName resource = RegistryName.of("[PROJECT]", "[LOCATION]", "[REGISTRY]");
+      ResourceName resource =
+          com.google.iam.v1.DeviceName.of("[PROJECT]", "[LOCATION]", "[REGISTRY]", "[DEVICE]");
 
       client.getIamPolicy(resource);
       Assert.fail("No exception raised");
@@ -747,7 +752,8 @@ public class DeviceManagerClientTest {
     TestIamPermissionsResponse expectedResponse = TestIamPermissionsResponse.newBuilder().build();
     mockDeviceManager.addResponse(expectedResponse);
 
-    RegistryName resource = RegistryName.of("[PROJECT]", "[LOCATION]", "[REGISTRY]");
+    ResourceName resource =
+        com.google.iam.v1.DeviceName.of("[PROJECT]", "[LOCATION]", "[REGISTRY]", "[DEVICE]");
     List<String> permissions = new ArrayList<>();
 
     TestIamPermissionsResponse actualResponse = client.testIamPermissions(resource, permissions);
@@ -772,7 +778,8 @@ public class DeviceManagerClientTest {
     mockDeviceManager.addException(exception);
 
     try {
-      RegistryName resource = RegistryName.of("[PROJECT]", "[LOCATION]", "[REGISTRY]");
+      ResourceName resource =
+          com.google.iam.v1.DeviceName.of("[PROJECT]", "[LOCATION]", "[REGISTRY]", "[DEVICE]");
       List<String> permissions = new ArrayList<>();
 
       client.testIamPermissions(resource, permissions);
@@ -785,6 +792,47 @@ public class DeviceManagerClientTest {
   @Test
   @SuppressWarnings("all")
   public void sendCommandToDeviceTest() {
+    SendCommandToDeviceResponse expectedResponse = SendCommandToDeviceResponse.newBuilder().build();
+    mockDeviceManager.addResponse(expectedResponse);
+
+    DeviceName name = DeviceName.of("[PROJECT]", "[LOCATION]", "[REGISTRY]", "[DEVICE]");
+    ByteString binaryData = ByteString.copyFromUtf8("40");
+
+    SendCommandToDeviceResponse actualResponse = client.sendCommandToDevice(name, binaryData);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockDeviceManager.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    SendCommandToDeviceRequest actualRequest = (SendCommandToDeviceRequest) actualRequests.get(0);
+
+    Assert.assertEquals(name, DeviceName.parse(actualRequest.getName()));
+    Assert.assertEquals(binaryData, actualRequest.getBinaryData());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  @SuppressWarnings("all")
+  public void sendCommandToDeviceExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
+    mockDeviceManager.addException(exception);
+
+    try {
+      DeviceName name = DeviceName.of("[PROJECT]", "[LOCATION]", "[REGISTRY]", "[DEVICE]");
+      ByteString binaryData = ByteString.copyFromUtf8("40");
+
+      client.sendCommandToDevice(name, binaryData);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception
+    }
+  }
+
+  @Test
+  @SuppressWarnings("all")
+  public void sendCommandToDeviceTest2() {
     SendCommandToDeviceResponse expectedResponse = SendCommandToDeviceResponse.newBuilder().build();
     mockDeviceManager.addResponse(expectedResponse);
 
@@ -811,7 +859,7 @@ public class DeviceManagerClientTest {
 
   @Test
   @SuppressWarnings("all")
-  public void sendCommandToDeviceExceptionTest() throws Exception {
+  public void sendCommandToDeviceExceptionTest2() throws Exception {
     StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
     mockDeviceManager.addException(exception);
 
@@ -833,7 +881,7 @@ public class DeviceManagerClientTest {
     BindDeviceToGatewayResponse expectedResponse = BindDeviceToGatewayResponse.newBuilder().build();
     mockDeviceManager.addResponse(expectedResponse);
 
-    RegistryName parent = RegistryName.of("[PROJECT]", "[LOCATION]", "[REGISTRY]");
+    DeviceRegistryName parent = DeviceRegistryName.of("[PROJECT]", "[LOCATION]", "[REGISTRY]");
     String gatewayId = "gatewayId955798774";
     String deviceId = "deviceId25209764";
 
@@ -845,7 +893,7 @@ public class DeviceManagerClientTest {
     Assert.assertEquals(1, actualRequests.size());
     BindDeviceToGatewayRequest actualRequest = (BindDeviceToGatewayRequest) actualRequests.get(0);
 
-    Assert.assertEquals(parent, RegistryName.parse(actualRequest.getParent()));
+    Assert.assertEquals(parent, DeviceRegistryName.parse(actualRequest.getParent()));
     Assert.assertEquals(gatewayId, actualRequest.getGatewayId());
     Assert.assertEquals(deviceId, actualRequest.getDeviceId());
     Assert.assertTrue(
@@ -861,7 +909,7 @@ public class DeviceManagerClientTest {
     mockDeviceManager.addException(exception);
 
     try {
-      RegistryName parent = RegistryName.of("[PROJECT]", "[LOCATION]", "[REGISTRY]");
+      DeviceRegistryName parent = DeviceRegistryName.of("[PROJECT]", "[LOCATION]", "[REGISTRY]");
       String gatewayId = "gatewayId955798774";
       String deviceId = "deviceId25209764";
 
@@ -879,7 +927,7 @@ public class DeviceManagerClientTest {
         UnbindDeviceFromGatewayResponse.newBuilder().build();
     mockDeviceManager.addResponse(expectedResponse);
 
-    RegistryName parent = RegistryName.of("[PROJECT]", "[LOCATION]", "[REGISTRY]");
+    DeviceRegistryName parent = DeviceRegistryName.of("[PROJECT]", "[LOCATION]", "[REGISTRY]");
     String gatewayId = "gatewayId955798774";
     String deviceId = "deviceId25209764";
 
@@ -892,7 +940,7 @@ public class DeviceManagerClientTest {
     UnbindDeviceFromGatewayRequest actualRequest =
         (UnbindDeviceFromGatewayRequest) actualRequests.get(0);
 
-    Assert.assertEquals(parent, RegistryName.parse(actualRequest.getParent()));
+    Assert.assertEquals(parent, DeviceRegistryName.parse(actualRequest.getParent()));
     Assert.assertEquals(gatewayId, actualRequest.getGatewayId());
     Assert.assertEquals(deviceId, actualRequest.getDeviceId());
     Assert.assertTrue(
@@ -908,7 +956,7 @@ public class DeviceManagerClientTest {
     mockDeviceManager.addException(exception);
 
     try {
-      RegistryName parent = RegistryName.of("[PROJECT]", "[LOCATION]", "[REGISTRY]");
+      DeviceRegistryName parent = DeviceRegistryName.of("[PROJECT]", "[LOCATION]", "[REGISTRY]");
       String gatewayId = "gatewayId955798774";
       String deviceId = "deviceId25209764";
 
