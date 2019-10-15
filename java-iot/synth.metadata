@@ -1,0 +1,31 @@
+{
+  "updateTime": "2019-10-15T19:34:36.881164Z",
+  "sources": [
+    {
+      "generator": {
+        "name": "artman",
+        "version": "0.39.0",
+        "dockerImage": "googleapis/artman@sha256:72554d0b3bdc0b4ac7d6726a6a606c00c14b454339037ed86be94574fb05d9f3"
+      }
+    },
+    {
+      "template": {
+        "name": "java_library",
+        "origin": "synthtool.gcp",
+        "version": "2019.5.2"
+      }
+    }
+  ],
+  "destinations": [
+    {
+      "client": {
+        "source": "googleapis",
+        "apiName": "iot",
+        "apiVersion": "v1",
+        "language": "java",
+        "generator": "gapic",
+        "config": "google/cloud/iot/artman_cloudiot.yaml"
+      }
+    }
+  ]
+}
