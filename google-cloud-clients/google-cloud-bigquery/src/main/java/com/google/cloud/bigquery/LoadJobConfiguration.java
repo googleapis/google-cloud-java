@@ -52,6 +52,7 @@ public final class LoadJobConfiguration extends JobConfiguration implements Load
   private final Clustering clustering;
   private final Boolean useAvroLogicalTypes;
   private final Map<String, String> labels;
+  private final Long jobTimeoutMs;
 
   public static final class Builder extends JobConfiguration.Builder<LoadJobConfiguration, Builder>
       implements LoadConfiguration.Builder {
@@ -73,6 +74,7 @@ public final class LoadJobConfiguration extends JobConfiguration implements Load
     private Clustering clustering;
     private Boolean useAvroLogicalTypes;
     private Map<String, String> labels;
+    private Long jobTimeoutMs;
 
     private Builder() {
       super(Type.LOAD);
@@ -97,6 +99,7 @@ public final class LoadJobConfiguration extends JobConfiguration implements Load
       this.clustering = loadConfiguration.clustering;
       this.useAvroLogicalTypes = loadConfiguration.useAvroLogicalTypes;
       this.labels = loadConfiguration.labels;
+      this.jobTimeoutMs = loadConfiguration.jobTimeoutMs;
     }
 
     private Builder(com.google.api.services.bigquery.model.JobConfiguration configurationPb) {
@@ -172,6 +175,9 @@ public final class LoadJobConfiguration extends JobConfiguration implements Load
       }
       if (configurationPb.getLabels() != null) {
         this.labels = configurationPb.getLabels();
+      }
+      if (configurationPb.getJobTimeoutMs() != null) {
+        this.jobTimeoutMs = configurationPb.getJobTimeoutMs();
       }
     }
 
@@ -284,6 +290,17 @@ public final class LoadJobConfiguration extends JobConfiguration implements Load
       return this;
     }
 
+    /**
+     * [Optional] Job timeout in milliseconds. If this time limit is exceeded, BigQuery may attempt
+     * to terminate the job.
+     *
+     * @param jobTimeoutMs jobTimeoutMs or {@code null} for none
+     */
+    public Builder setJobTimeoutMs(Long jobTimeoutMs) {
+      this.jobTimeoutMs = jobTimeoutMs;
+      return this;
+    }
+
     @Override
     public LoadJobConfiguration build() {
       return new LoadJobConfiguration(this);
@@ -308,6 +325,7 @@ public final class LoadJobConfiguration extends JobConfiguration implements Load
     this.clustering = builder.clustering;
     this.useAvroLogicalTypes = builder.useAvroLogicalTypes;
     this.labels = builder.labels;
+    this.jobTimeoutMs = builder.jobTimeoutMs;
   }
 
   @Override
@@ -405,6 +423,11 @@ public final class LoadJobConfiguration extends JobConfiguration implements Load
     return labels;
   }
 
+  /** Returns the timeout associated with this job */
+  public Long getJobTimeoutMs() {
+    return jobTimeoutMs;
+  }
+
   @Override
   public Builder toBuilder() {
     return new Builder(this);
@@ -428,7 +451,8 @@ public final class LoadJobConfiguration extends JobConfiguration implements Load
         .add("timePartitioning", timePartitioning)
         .add("clustering", clustering)
         .add("useAvroLogicalTypes", useAvroLogicalTypes)
-        .add("labels", labels);
+        .add("labels", labels)
+        .add("jobTimeoutMs", jobTimeoutMs);
   }
 
   @Override
@@ -514,6 +538,9 @@ public final class LoadJobConfiguration extends JobConfiguration implements Load
     loadConfigurationPb.setUseAvroLogicalTypes(useAvroLogicalTypes);
     if (labels != null) {
       jobConfiguration.setLabels(labels);
+    }
+    if (jobTimeoutMs != null) {
+      jobConfiguration.setJobTimeoutMs(jobTimeoutMs);
     }
     jobConfiguration.setLoad(loadConfigurationPb);
     return jobConfiguration;

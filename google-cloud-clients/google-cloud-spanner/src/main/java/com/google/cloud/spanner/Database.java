@@ -19,6 +19,7 @@ package com.google.cloud.spanner;
 import static com.google.common.base.Preconditions.checkArgument;
 
 import com.google.api.gax.longrunning.OperationFuture;
+import com.google.cloud.Policy;
 import com.google.spanner.admin.database.v1.UpdateDatabaseDdlMetadata;
 
 /**
@@ -68,6 +69,32 @@ public class Database extends DatabaseInfo {
    */
   public Iterable<String> getDdl() throws SpannerException {
     return dbClient.getDatabaseDdl(instance(), database());
+  }
+
+  /** Returns the IAM {@link Policy} for this database. */
+  public Policy getIAMPolicy() {
+    return dbClient.getDatabaseIAMPolicy(instance(), database());
+  }
+
+  /**
+   * Updates the IAM policy for this database and returns the resulting policy. It is highly
+   * recommended to first get the current policy and base the updated policy on the returned policy.
+   * See {@link Policy.Builder#setEtag(String)} for information on the recommended read-modify-write
+   * cycle.
+   */
+  public Policy setIAMPolicy(Policy policy) {
+    return dbClient.setDatabaseIAMPolicy(instance(), database(), policy);
+  }
+
+  /**
+   * Tests for the given permissions on this database for the caller.
+   *
+   * @param permissions the permissions to test for. Permissions with wildcards (such as '*',
+   *     'spanner.*', 'spanner.instances.*') are not allowed.
+   * @return the subset of the tested permissions that the caller is allowed.
+   */
+  public Iterable<String> testIAMPermissions(Iterable<String> permissions) {
+    return dbClient.testDatabaseIAMPermissions(instance(), database(), permissions);
   }
 
   private String instance() {

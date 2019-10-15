@@ -95,8 +95,7 @@ public class SessionPoolIntegrationTest {
                 return new ScheduledThreadPoolExecutor(2);
               }
             },
-            db.getId(),
-            (SpannerImpl) env.getTestHelper().getClient());
+            ((SpannerImpl) env.getTestHelper().getClient()).getSessionClient(db.getId()));
   }
 
   @Test

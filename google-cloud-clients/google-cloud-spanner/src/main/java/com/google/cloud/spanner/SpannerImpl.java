@@ -26,7 +26,6 @@ import com.google.cloud.BaseService;
 import com.google.cloud.PageImpl;
 import com.google.cloud.PageImpl.NextPageFetcher;
 import com.google.cloud.grpc.GrpcTransportOptions;
-import com.google.cloud.spanner.SessionClient.SessionConsumer;
 import com.google.cloud.spanner.SessionClient.SessionId;
 import com.google.cloud.spanner.spi.v1.SpannerRpc;
 import com.google.cloud.spanner.spi.v1.SpannerRpc.Paginated;
@@ -174,15 +173,6 @@ class SpannerImpl extends BaseService<SpannerOptions> implements Spanner {
     return getOptions().getPrefetchChunks();
   }
 
-  SessionImpl createSession(final DatabaseId db) throws SpannerException {
-    return getSessionClient(db).createSession();
-  }
-
-  void asyncBatchCreateSessions(
-      final DatabaseId db, final int sessionCount, SessionConsumer consumer) {
-    getSessionClient(db).asyncBatchCreateSessions(sessionCount, consumer);
-  }
-
   SessionImpl sessionWithId(String name) {
     Preconditions.checkArgument(!Strings.isNullOrEmpty(name), "name is null or empty");
     SessionId id = SessionId.of(name);
@@ -223,7 +213,8 @@ class SpannerImpl extends BaseService<SpannerOptions> implements Spanner {
       if (dbClients.containsKey(db)) {
         return dbClients.get(db);
       } else {
-        SessionPool pool = SessionPool.createPool(getOptions(), db, SpannerImpl.this);
+        SessionPool pool =
+            SessionPool.createPool(getOptions(), SpannerImpl.this.getSessionClient(db));
         DatabaseClientImpl dbClient = createDatabaseClient(pool);
         dbClients.put(db, dbClient);
         return dbClient;
@@ -238,7 +229,7 @@ class SpannerImpl extends BaseService<SpannerOptions> implements Spanner {
 
   @Override
   public BatchClient getBatchClient(DatabaseId db) {
-    return new BatchClientImpl(db, SpannerImpl.this);
+    return new BatchClientImpl(getSessionClient(db));
   }
 
   @Override

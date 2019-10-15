@@ -187,6 +187,10 @@ class SessionClient implements AutoCloseable {
     executorFactory.release(executor);
   }
 
+  SpannerImpl getSpanner() {
+    return spanner;
+  }
+
   /** Create a single session. */
   SessionImpl createSession() {
     // The sessionChannelCounter could overflow, but that will just flip it to Integer.MIN_VALUE,

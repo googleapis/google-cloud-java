@@ -1541,6 +1541,25 @@ public class ITBigQueryTest {
   }
 
   @Test
+  public void testQueryJobWithLabels() throws InterruptedException, TimeoutException {
+    String tableName = "test_query_job_table";
+    String query = "SELECT TimestampField, StringField, BooleanField FROM " + TABLE_ID.getTable();
+    Map<String, String> labels = ImmutableMap.of("test-job-name", "test-query-job");
+    TableId destinationTable = TableId.of(DATASET, tableName);
+    QueryJobConfiguration configuration =
+        QueryJobConfiguration.newBuilder(query)
+            .setDefaultDataset(DatasetId.of(DATASET))
+            .setDestinationTable(destinationTable)
+            .setLabels(labels)
+            .build();
+    Job remoteJob = bigquery.create(JobInfo.of(configuration));
+    remoteJob = remoteJob.waitFor();
+    assertNull(remoteJob.getStatus().getError());
+    QueryJobConfiguration queryJobConfiguration = remoteJob.getConfiguration();
+    assertEquals(labels, queryJobConfiguration.getLabels());
+  }
+
+  @Test
   public void testQueryJobWithDryRun() throws InterruptedException, TimeoutException {
     String tableName = "test_query_job_table";
     String query = "SELECT TimestampField, StringField, BooleanField FROM " + TABLE_ID.getTable();
