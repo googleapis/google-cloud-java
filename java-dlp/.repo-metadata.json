@@ -2,12 +2,12 @@
   "name": "dlp",
   "name_pretty": "Cloud Data Loss Prevention",
   "product_documentation": "https://cloud.google.com/dlp/docs/",
-  "client_documentation": "https://googleapis.dev/java/google-cloud-clients/latest/index.html?com/google/cloud/dlp/v2/package-summary.html",
+  "client_documentation": "https://googleapis.dev/java/java-dlp/latest/index.html",
   "issue_tracker": "",
   "release_level": "beta",
   "language": "java",
-  "repo": "googleapis/google-cloud-java",
-  "repo_short": "google-cloud-java",
+  "repo": "googleapis/java-dlp",
+  "repo_short": "java-dlp",
   "distribution_name": "com.google.cloud:google-cloud-dlp",
   "api_id": "dlp.googleapis.com"
 }
