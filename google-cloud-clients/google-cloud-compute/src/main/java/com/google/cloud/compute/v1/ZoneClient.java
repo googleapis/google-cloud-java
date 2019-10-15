@@ -154,6 +154,7 @@ public class ZoneClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Returns the specified Zone resource. Gets a list of available zones by making a list() request.
+   * (== suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -178,6 +179,7 @@ public class ZoneClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Returns the specified Zone resource. Gets a list of available zones by making a list() request.
+   * (== suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -201,6 +203,7 @@ public class ZoneClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Returns the specified Zone resource. Gets a list of available zones by making a list() request.
+   * (== suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -225,6 +228,7 @@ public class ZoneClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Returns the specified Zone resource. Gets a list of available zones by making a list() request.
+   * (== suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -247,7 +251,8 @@ public class ZoneClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Retrieves the list of Zone resources available to the specified project.
+   * Retrieves the list of Zone resources available to the specified project. (== suppress_warning
+   * http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -274,7 +279,8 @@ public class ZoneClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Retrieves the list of Zone resources available to the specified project.
+   * Retrieves the list of Zone resources available to the specified project. (== suppress_warning
+   * http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -298,7 +304,8 @@ public class ZoneClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Retrieves the list of Zone resources available to the specified project.
+   * Retrieves the list of Zone resources available to the specified project. (== suppress_warning
+   * http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -324,7 +331,8 @@ public class ZoneClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Retrieves the list of Zone resources available to the specified project.
+   * Retrieves the list of Zone resources available to the specified project. (== suppress_warning
+   * http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -350,7 +358,8 @@ public class ZoneClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Retrieves the list of Zone resources available to the specified project.
+   * Retrieves the list of Zone resources available to the specified project. (== suppress_warning
+   * http-rest-shadowed ==)
    *
    * <p>Sample code:
    *

@@ -26,7 +26,7 @@ import javax.annotation.Nullable;
 @BetaApi
 /**
  * Request object for method compute.projects.listXpnHosts. Lists all shared VPC host projects
- * visible to the user in an organization.
+ * visible to the user in an organization. (== suppress_warning http-rest-shadowed ==)
  */
 public final class ListXpnHostsProjectsHttpRequest implements ApiMessage {
   private final String access_token;

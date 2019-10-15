@@ -156,7 +156,7 @@ public class HttpHealthCheckClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Deletes the specified HttpHealthCheck resource.
+   * Deletes the specified HttpHealthCheck resource. (== suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -182,7 +182,7 @@ public class HttpHealthCheckClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Deletes the specified HttpHealthCheck resource.
+   * Deletes the specified HttpHealthCheck resource. (== suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -206,7 +206,7 @@ public class HttpHealthCheckClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Deletes the specified HttpHealthCheck resource.
+   * Deletes the specified HttpHealthCheck resource. (== suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -230,7 +230,7 @@ public class HttpHealthCheckClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Deletes the specified HttpHealthCheck resource.
+   * Deletes the specified HttpHealthCheck resource. (== suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -255,7 +255,7 @@ public class HttpHealthCheckClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Returns the specified HttpHealthCheck resource. Gets a list of available HTTP health checks by
-   * making a list() request.
+   * making a list() request. (== suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -283,7 +283,7 @@ public class HttpHealthCheckClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Returns the specified HttpHealthCheck resource. Gets a list of available HTTP health checks by
-   * making a list() request.
+   * making a list() request. (== suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -308,7 +308,7 @@ public class HttpHealthCheckClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Returns the specified HttpHealthCheck resource. Gets a list of available HTTP health checks by
-   * making a list() request.
+   * making a list() request. (== suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -333,7 +333,7 @@ public class HttpHealthCheckClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Returns the specified HttpHealthCheck resource. Gets a list of available HTTP health checks by
-   * making a list() request.
+   * making a list() request. (== suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -358,7 +358,7 @@ public class HttpHealthCheckClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Creates a HttpHealthCheck resource in the specified project using the data included in the
-   * request.
+   * request. (== suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -391,7 +391,7 @@ public class HttpHealthCheckClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Creates a HttpHealthCheck resource in the specified project using the data included in the
-   * request.
+   * request. (== suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -424,7 +424,7 @@ public class HttpHealthCheckClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Creates a HttpHealthCheck resource in the specified project using the data included in the
-   * request.
+   * request. (== suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -451,7 +451,7 @@ public class HttpHealthCheckClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Creates a HttpHealthCheck resource in the specified project using the data included in the
-   * request.
+   * request. (== suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -477,7 +477,8 @@ public class HttpHealthCheckClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Retrieves the list of HttpHealthCheck resources available to the specified project.
+   * Retrieves the list of HttpHealthCheck resources available to the specified project. (==
+   * suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -504,7 +505,8 @@ public class HttpHealthCheckClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Retrieves the list of HttpHealthCheck resources available to the specified project.
+   * Retrieves the list of HttpHealthCheck resources available to the specified project. (==
+   * suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -529,7 +531,8 @@ public class HttpHealthCheckClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Retrieves the list of HttpHealthCheck resources available to the specified project.
+   * Retrieves the list of HttpHealthCheck resources available to the specified project. (==
+   * suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -556,7 +559,8 @@ public class HttpHealthCheckClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Retrieves the list of HttpHealthCheck resources available to the specified project.
+   * Retrieves the list of HttpHealthCheck resources available to the specified project. (==
+   * suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -582,7 +586,8 @@ public class HttpHealthCheckClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Retrieves the list of HttpHealthCheck resources available to the specified project.
+   * Retrieves the list of HttpHealthCheck resources available to the specified project. (==
+   * suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -617,7 +622,7 @@ public class HttpHealthCheckClient implements BackgroundResource {
   /**
    * Updates a HttpHealthCheck resource in the specified project using the data included in the
    * request. This method supports PATCH semantics and uses the JSON merge patch format and
-   * processing rules.
+   * processing rules. (== suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -659,7 +664,7 @@ public class HttpHealthCheckClient implements BackgroundResource {
   /**
    * Updates a HttpHealthCheck resource in the specified project using the data included in the
    * request. This method supports PATCH semantics and uses the JSON merge patch format and
-   * processing rules.
+   * processing rules. (== suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -699,7 +704,7 @@ public class HttpHealthCheckClient implements BackgroundResource {
   /**
    * Updates a HttpHealthCheck resource in the specified project using the data included in the
    * request. This method supports PATCH semantics and uses the JSON merge patch format and
-   * processing rules.
+   * processing rules. (== suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -729,7 +734,7 @@ public class HttpHealthCheckClient implements BackgroundResource {
   /**
    * Updates a HttpHealthCheck resource in the specified project using the data included in the
    * request. This method supports PATCH semantics and uses the JSON merge patch format and
-   * processing rules.
+   * processing rules. (== suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -758,7 +763,7 @@ public class HttpHealthCheckClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Updates a HttpHealthCheck resource in the specified project using the data included in the
-   * request.
+   * request. (== suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -799,7 +804,7 @@ public class HttpHealthCheckClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Updates a HttpHealthCheck resource in the specified project using the data included in the
-   * request.
+   * request. (== suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -838,7 +843,7 @@ public class HttpHealthCheckClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Updates a HttpHealthCheck resource in the specified project using the data included in the
-   * request.
+   * request. (== suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -867,7 +872,7 @@ public class HttpHealthCheckClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Updates a HttpHealthCheck resource in the specified project using the data included in the
-   * request.
+   * request. (== suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *

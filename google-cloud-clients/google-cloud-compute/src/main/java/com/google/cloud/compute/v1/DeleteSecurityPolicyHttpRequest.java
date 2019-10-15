@@ -24,7 +24,10 @@ import javax.annotation.Nullable;
 
 @Generated("by GAPIC")
 @BetaApi
-/** Request object for method compute.securityPolicies.delete. Deletes the specified policy. */
+/**
+ * Request object for method compute.securityPolicies.delete. Deletes the specified policy. (==
+ * suppress_warning http-rest-shadowed ==)
+ */
 public final class DeleteSecurityPolicyHttpRequest implements ApiMessage {
   private final String access_token;
   private final String callback;

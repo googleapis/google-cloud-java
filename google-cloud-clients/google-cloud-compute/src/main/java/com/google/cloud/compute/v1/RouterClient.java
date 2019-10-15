@@ -153,7 +153,7 @@ public class RouterClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Retrieves an aggregated list of routers.
+   * Retrieves an aggregated list of routers. (== suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -180,7 +180,7 @@ public class RouterClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Retrieves an aggregated list of routers.
+   * Retrieves an aggregated list of routers. (== suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -205,7 +205,7 @@ public class RouterClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Retrieves an aggregated list of routers.
+   * Retrieves an aggregated list of routers. (== suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -232,7 +232,7 @@ public class RouterClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Retrieves an aggregated list of routers.
+   * Retrieves an aggregated list of routers. (== suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -258,7 +258,7 @@ public class RouterClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Retrieves an aggregated list of routers.
+   * Retrieves an aggregated list of routers. (== suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -291,7 +291,7 @@ public class RouterClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Deletes the specified Router resource.
+   * Deletes the specified Router resource. (== suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -317,7 +317,7 @@ public class RouterClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Deletes the specified Router resource.
+   * Deletes the specified Router resource. (== suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -341,7 +341,7 @@ public class RouterClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Deletes the specified Router resource.
+   * Deletes the specified Router resource. (== suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -365,7 +365,7 @@ public class RouterClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Deletes the specified Router resource.
+   * Deletes the specified Router resource. (== suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -389,7 +389,7 @@ public class RouterClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Returns the specified Router resource. Gets a list of available routers by making a list()
-   * request.
+   * request. (== suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -416,7 +416,7 @@ public class RouterClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Returns the specified Router resource. Gets a list of available routers by making a list()
-   * request.
+   * request. (== suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -440,7 +440,7 @@ public class RouterClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Returns the specified Router resource. Gets a list of available routers by making a list()
-   * request.
+   * request. (== suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -465,7 +465,7 @@ public class RouterClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Returns the specified Router resource. Gets a list of available routers by making a list()
-   * request.
+   * request. (== suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -488,7 +488,8 @@ public class RouterClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Retrieves runtime Nat mapping information of VM endpoints.
+   * Retrieves runtime Nat mapping information of VM endpoints. (== suppress_warning
+   * http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -516,7 +517,8 @@ public class RouterClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Retrieves runtime Nat mapping information of VM endpoints.
+   * Retrieves runtime Nat mapping information of VM endpoints. (== suppress_warning
+   * http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -541,7 +543,8 @@ public class RouterClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Retrieves runtime Nat mapping information of VM endpoints.
+   * Retrieves runtime Nat mapping information of VM endpoints. (== suppress_warning
+   * http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -568,7 +571,8 @@ public class RouterClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Retrieves runtime Nat mapping information of VM endpoints.
+   * Retrieves runtime Nat mapping information of VM endpoints. (== suppress_warning
+   * http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -595,7 +599,8 @@ public class RouterClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Retrieves runtime Nat mapping information of VM endpoints.
+   * Retrieves runtime Nat mapping information of VM endpoints. (== suppress_warning
+   * http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -628,7 +633,8 @@ public class RouterClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Retrieves runtime information of the specified router.
+   * Retrieves runtime information of the specified router. (== suppress_warning http-rest-shadowed
+   * ==)
    *
    * <p>Sample code:
    *
@@ -654,7 +660,8 @@ public class RouterClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Retrieves runtime information of the specified router.
+   * Retrieves runtime information of the specified router. (== suppress_warning http-rest-shadowed
+   * ==)
    *
    * <p>Sample code:
    *
@@ -678,7 +685,8 @@ public class RouterClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Retrieves runtime information of the specified router.
+   * Retrieves runtime information of the specified router. (== suppress_warning http-rest-shadowed
+   * ==)
    *
    * <p>Sample code:
    *
@@ -703,7 +711,8 @@ public class RouterClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Retrieves runtime information of the specified router.
+   * Retrieves runtime information of the specified router. (== suppress_warning http-rest-shadowed
+   * ==)
    *
    * <p>Sample code:
    *
@@ -728,7 +737,7 @@ public class RouterClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Creates a Router resource in the specified project and region using the data included in the
-   * request.
+   * request. (== suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -759,7 +768,7 @@ public class RouterClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Creates a Router resource in the specified project and region using the data included in the
-   * request.
+   * request. (== suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -790,7 +799,7 @@ public class RouterClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Creates a Router resource in the specified project and region using the data included in the
-   * request.
+   * request. (== suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -817,7 +826,7 @@ public class RouterClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Creates a Router resource in the specified project and region using the data included in the
-   * request.
+   * request. (== suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -842,7 +851,8 @@ public class RouterClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Retrieves a list of Router resources available to the specified project.
+   * Retrieves a list of Router resources available to the specified project. (== suppress_warning
+   * http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -869,7 +879,8 @@ public class RouterClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Retrieves a list of Router resources available to the specified project.
+   * Retrieves a list of Router resources available to the specified project. (== suppress_warning
+   * http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -893,7 +904,8 @@ public class RouterClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Retrieves a list of Router resources available to the specified project.
+   * Retrieves a list of Router resources available to the specified project. (== suppress_warning
+   * http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -919,7 +931,8 @@ public class RouterClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Retrieves a list of Router resources available to the specified project.
+   * Retrieves a list of Router resources available to the specified project. (== suppress_warning
+   * http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -945,7 +958,8 @@ public class RouterClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Retrieves a list of Router resources available to the specified project.
+   * Retrieves a list of Router resources available to the specified project. (== suppress_warning
+   * http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -978,7 +992,8 @@ public class RouterClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Patches the specified Router resource with the data included in the request. This method
-   * supports PATCH semantics and uses JSON merge patch format and processing rules.
+   * supports PATCH semantics and uses JSON merge patch format and processing rules. (==
+   * suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -1016,7 +1031,8 @@ public class RouterClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Patches the specified Router resource with the data included in the request. This method
-   * supports PATCH semantics and uses JSON merge patch format and processing rules.
+   * supports PATCH semantics and uses JSON merge patch format and processing rules. (==
+   * suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -1053,7 +1069,8 @@ public class RouterClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Patches the specified Router resource with the data included in the request. This method
-   * supports PATCH semantics and uses JSON merge patch format and processing rules.
+   * supports PATCH semantics and uses JSON merge patch format and processing rules. (==
+   * suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -1082,7 +1099,8 @@ public class RouterClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Patches the specified Router resource with the data included in the request. This method
-   * supports PATCH semantics and uses JSON merge patch format and processing rules.
+   * supports PATCH semantics and uses JSON merge patch format and processing rules. (==
+   * suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -1110,7 +1128,7 @@ public class RouterClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Preview fields auto-generated during router create and update operations. Calling this method
-   * does NOT create or update the router.
+   * does NOT create or update the router. (== suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -1142,7 +1160,7 @@ public class RouterClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Preview fields auto-generated during router create and update operations. Calling this method
-   * does NOT create or update the router.
+   * does NOT create or update the router. (== suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -1173,7 +1191,7 @@ public class RouterClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Preview fields auto-generated during router create and update operations. Calling this method
-   * does NOT create or update the router.
+   * does NOT create or update the router. (== suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -1200,7 +1218,7 @@ public class RouterClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Preview fields auto-generated during router create and update operations. Calling this method
-   * does NOT create or update the router.
+   * does NOT create or update the router. (== suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -1229,6 +1247,7 @@ public class RouterClient implements BackgroundResource {
    * Updates the specified Router resource with the data included in the request. This method
    * conforms to PUT semantics, which requests that the state of the target resource be created or
    * replaced with the state defined by the representation enclosed in the request message payload.
+   * (== suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -1268,6 +1287,7 @@ public class RouterClient implements BackgroundResource {
    * Updates the specified Router resource with the data included in the request. This method
    * conforms to PUT semantics, which requests that the state of the target resource be created or
    * replaced with the state defined by the representation enclosed in the request message payload.
+   * (== suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -1307,6 +1327,7 @@ public class RouterClient implements BackgroundResource {
    * Updates the specified Router resource with the data included in the request. This method
    * conforms to PUT semantics, which requests that the state of the target resource be created or
    * replaced with the state defined by the representation enclosed in the request message payload.
+   * (== suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -1337,6 +1358,7 @@ public class RouterClient implements BackgroundResource {
    * Updates the specified Router resource with the data included in the request. This method
    * conforms to PUT semantics, which requests that the state of the target resource be created or
    * replaced with the state defined by the representation enclosed in the request message payload.
+   * (== suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *

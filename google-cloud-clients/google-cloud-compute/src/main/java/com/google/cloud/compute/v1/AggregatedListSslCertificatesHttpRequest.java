@@ -26,7 +26,8 @@ import javax.annotation.Nullable;
 @BetaApi
 /**
  * Request object for method compute.sslCertificates.aggregatedList. Retrieves the list of all
- * SslCertificate resources, regional and global, available to the specified project.
+ * SslCertificate resources, regional and global, available to the specified project. (==
+ * suppress_warning http-rest-shadowed ==)
  */
 public final class AggregatedListSslCertificatesHttpRequest implements ApiMessage {
   private final String access_token;

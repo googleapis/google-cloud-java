@@ -26,7 +26,8 @@ import javax.annotation.Nullable;
 @BetaApi
 /**
  * Request object for method compute.healthChecks.insert. Creates a HealthCheck resource in the
- * specified project using the data included in the request.
+ * specified project using the data included in the request. (== suppress_warning http-rest-shadowed
+ * ==)
  */
 public final class InsertHealthCheckHttpRequest implements ApiMessage {
   private final String access_token;

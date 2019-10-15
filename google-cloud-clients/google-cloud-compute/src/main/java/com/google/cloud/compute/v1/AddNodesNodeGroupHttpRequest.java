@@ -26,7 +26,7 @@ import javax.annotation.Nullable;
 @BetaApi
 /**
  * Request object for method compute.nodeGroups.addNodes. Adds specified number of nodes to the node
- * group.
+ * group. (== suppress_warning http-rest-shadowed ==)
  */
 public final class AddNodesNodeGroupHttpRequest implements ApiMessage {
   private final String access_token;

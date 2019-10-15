@@ -26,7 +26,8 @@ import javax.annotation.Nullable;
 @BetaApi
 /**
  * Request object for method compute.regionSslCertificates.list. Retrieves the list of
- * SslCertificate resources available to the specified project in the specified region.
+ * SslCertificate resources available to the specified project in the specified region. (==
+ * suppress_warning http-rest-shadowed ==)
  */
 public final class ListRegionSslCertificatesHttpRequest implements ApiMessage {
   private final String access_token;

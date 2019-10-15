@@ -24,7 +24,10 @@ import javax.annotation.Nullable;
 
 @Generated("by GAPIC")
 @BetaApi
-/** Request object for method compute.resourcePolicies.insert. Creates a new resource policy. */
+/**
+ * Request object for method compute.resourcePolicies.insert. Creates a new resource policy. (==
+ * suppress_warning http-rest-shadowed ==)
+ */
 public final class InsertResourcePolicyHttpRequest implements ApiMessage {
   private final String access_token;
   private final String callback;

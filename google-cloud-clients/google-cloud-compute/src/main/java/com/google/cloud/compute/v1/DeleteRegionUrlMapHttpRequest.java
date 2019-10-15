@@ -26,6 +26,7 @@ import javax.annotation.Nullable;
 @BetaApi
 /**
  * Request object for method compute.regionUrlMaps.delete. Deletes the specified UrlMap resource.
+ * (== suppress_warning http-rest-shadowed ==)
  */
 public final class DeleteRegionUrlMapHttpRequest implements ApiMessage {
   private final String access_token;

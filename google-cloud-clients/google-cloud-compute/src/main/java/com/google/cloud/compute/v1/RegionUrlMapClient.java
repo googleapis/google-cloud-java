@@ -155,7 +155,7 @@ public class RegionUrlMapClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Deletes the specified UrlMap resource.
+   * Deletes the specified UrlMap resource. (== suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -185,7 +185,7 @@ public class RegionUrlMapClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Deletes the specified UrlMap resource.
+   * Deletes the specified UrlMap resource. (== suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -215,7 +215,7 @@ public class RegionUrlMapClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Deletes the specified UrlMap resource.
+   * Deletes the specified UrlMap resource. (== suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -241,7 +241,7 @@ public class RegionUrlMapClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Deletes the specified UrlMap resource.
+   * Deletes the specified UrlMap resource. (== suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -268,7 +268,7 @@ public class RegionUrlMapClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Returns the specified UrlMap resource. Gets a list of available URL maps by making a list()
-   * request.
+   * request. (== suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -295,7 +295,7 @@ public class RegionUrlMapClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Returns the specified UrlMap resource. Gets a list of available URL maps by making a list()
-   * request.
+   * request. (== suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -320,7 +320,7 @@ public class RegionUrlMapClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Returns the specified UrlMap resource. Gets a list of available URL maps by making a list()
-   * request.
+   * request. (== suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -345,7 +345,7 @@ public class RegionUrlMapClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Returns the specified UrlMap resource. Gets a list of available URL maps by making a list()
-   * request.
+   * request. (== suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -368,7 +368,8 @@ public class RegionUrlMapClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Creates a UrlMap resource in the specified project using the data included in the request.
+   * Creates a UrlMap resource in the specified project using the data included in the request. (==
+   * suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -408,7 +409,8 @@ public class RegionUrlMapClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Creates a UrlMap resource in the specified project using the data included in the request.
+   * Creates a UrlMap resource in the specified project using the data included in the request. (==
+   * suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -448,7 +450,8 @@ public class RegionUrlMapClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Creates a UrlMap resource in the specified project using the data included in the request.
+   * Creates a UrlMap resource in the specified project using the data included in the request. (==
+   * suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -476,7 +479,8 @@ public class RegionUrlMapClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Creates a UrlMap resource in the specified project using the data included in the request.
+   * Creates a UrlMap resource in the specified project using the data included in the request. (==
+   * suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -505,7 +509,7 @@ public class RegionUrlMapClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Retrieves the list of UrlMap resources available to the specified project in the specified
-   * region.
+   * region. (== suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -533,7 +537,7 @@ public class RegionUrlMapClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Retrieves the list of UrlMap resources available to the specified project in the specified
-   * region.
+   * region. (== suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -559,7 +563,7 @@ public class RegionUrlMapClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Retrieves the list of UrlMap resources available to the specified project in the specified
-   * region.
+   * region. (== suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -587,7 +591,7 @@ public class RegionUrlMapClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Retrieves the list of UrlMap resources available to the specified project in the specified
-   * region.
+   * region. (== suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -614,7 +618,7 @@ public class RegionUrlMapClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Retrieves the list of UrlMap resources available to the specified project in the specified
-   * region.
+   * region. (== suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -647,7 +651,8 @@ public class RegionUrlMapClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Patches the specified UrlMap resource with the data included in the request. This method
-   * supports PATCH semantics and uses JSON merge patch format and processing rules.
+   * supports PATCH semantics and uses JSON merge patch format and processing rules. (==
+   * suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -697,7 +702,8 @@ public class RegionUrlMapClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Patches the specified UrlMap resource with the data included in the request. This method
-   * supports PATCH semantics and uses JSON merge patch format and processing rules.
+   * supports PATCH semantics and uses JSON merge patch format and processing rules. (==
+   * suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -744,7 +750,8 @@ public class RegionUrlMapClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Patches the specified UrlMap resource with the data included in the request. This method
-   * supports PATCH semantics and uses JSON merge patch format and processing rules.
+   * supports PATCH semantics and uses JSON merge patch format and processing rules. (==
+   * suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -775,7 +782,8 @@ public class RegionUrlMapClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Patches the specified UrlMap resource with the data included in the request. This method
-   * supports PATCH semantics and uses JSON merge patch format and processing rules.
+   * supports PATCH semantics and uses JSON merge patch format and processing rules. (==
+   * suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -804,7 +812,8 @@ public class RegionUrlMapClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Updates the specified UrlMap resource with the data included in the request.
+   * Updates the specified UrlMap resource with the data included in the request. (==
+   * suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -853,7 +862,8 @@ public class RegionUrlMapClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Updates the specified UrlMap resource with the data included in the request.
+   * Updates the specified UrlMap resource with the data included in the request. (==
+   * suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -899,7 +909,8 @@ public class RegionUrlMapClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Updates the specified UrlMap resource with the data included in the request.
+   * Updates the specified UrlMap resource with the data included in the request. (==
+   * suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -929,7 +940,8 @@ public class RegionUrlMapClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Updates the specified UrlMap resource with the data included in the request.
+   * Updates the specified UrlMap resource with the data included in the request. (==
+   * suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -960,7 +972,8 @@ public class RegionUrlMapClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Runs static validation for the UrlMap. In particular, the tests of the provided UrlMap will be
-   * run. Calling this method does NOT create the UrlMap.
+   * run. Calling this method does NOT create the UrlMap. (== suppress_warning http-rest-shadowed
+   * ==)
    *
    * <p>Sample code:
    *
@@ -992,7 +1005,8 @@ public class RegionUrlMapClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Runs static validation for the UrlMap. In particular, the tests of the provided UrlMap will be
-   * run. Calling this method does NOT create the UrlMap.
+   * run. Calling this method does NOT create the UrlMap. (== suppress_warning http-rest-shadowed
+   * ==)
    *
    * <p>Sample code:
    *
@@ -1023,7 +1037,8 @@ public class RegionUrlMapClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Runs static validation for the UrlMap. In particular, the tests of the provided UrlMap will be
-   * run. Calling this method does NOT create the UrlMap.
+   * run. Calling this method does NOT create the UrlMap. (== suppress_warning http-rest-shadowed
+   * ==)
    *
    * <p>Sample code:
    *
@@ -1051,7 +1066,8 @@ public class RegionUrlMapClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Runs static validation for the UrlMap. In particular, the tests of the provided UrlMap will be
-   * run. Calling this method does NOT create the UrlMap.
+   * run. Calling this method does NOT create the UrlMap. (== suppress_warning http-rest-shadowed
+   * ==)
    *
    * <p>Sample code:
    *

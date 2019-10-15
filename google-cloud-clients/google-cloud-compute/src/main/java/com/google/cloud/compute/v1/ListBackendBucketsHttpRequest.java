@@ -26,7 +26,7 @@ import javax.annotation.Nullable;
 @BetaApi
 /**
  * Request object for method compute.backendBuckets.list. Retrieves the list of BackendBucket
- * resources available to the specified project.
+ * resources available to the specified project. (== suppress_warning http-rest-shadowed ==)
  */
 public final class ListBackendBucketsHttpRequest implements ApiMessage {
   private final String access_token;

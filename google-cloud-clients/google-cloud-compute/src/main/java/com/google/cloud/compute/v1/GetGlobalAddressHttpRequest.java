@@ -26,7 +26,8 @@ import javax.annotation.Nullable;
 @BetaApi
 /**
  * Request object for method compute.globalAddresses.get. Returns the specified address resource.
- * Gets a list of available addresses by making a list() request.
+ * Gets a list of available addresses by making a list() request. (== suppress_warning
+ * http-rest-shadowed ==)
  */
 public final class GetGlobalAddressHttpRequest implements ApiMessage {
   private final String access_token;

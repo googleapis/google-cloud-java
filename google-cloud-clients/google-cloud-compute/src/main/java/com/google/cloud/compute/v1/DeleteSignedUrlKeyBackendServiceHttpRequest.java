@@ -26,7 +26,8 @@ import javax.annotation.Nullable;
 @BetaApi
 /**
  * Request object for method compute.backendServices.deleteSignedUrlKey. Deletes a key for
- * validating requests with signed URLs for this backend service.
+ * validating requests with signed URLs for this backend service. (== suppress_warning
+ * http-rest-shadowed ==)
  */
 public final class DeleteSignedUrlKeyBackendServiceHttpRequest implements ApiMessage {
   private final String access_token;

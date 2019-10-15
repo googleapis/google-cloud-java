@@ -41,6 +41,7 @@ public final class Route implements ApiMessage {
   private final String name;
   private final String network;
   private final String nextHopGateway;
+  private final String nextHopIlb;
   private final String nextHopInstance;
   private final String nextHopIp;
   private final String nextHopNetwork;
@@ -60,6 +61,7 @@ public final class Route implements ApiMessage {
     this.name = null;
     this.network = null;
     this.nextHopGateway = null;
+    this.nextHopIlb = null;
     this.nextHopInstance = null;
     this.nextHopIp = null;
     this.nextHopNetwork = null;
@@ -80,6 +82,7 @@ public final class Route implements ApiMessage {
       String name,
       String network,
       String nextHopGateway,
+      String nextHopIlb,
       String nextHopInstance,
       String nextHopIp,
       String nextHopNetwork,
@@ -97,6 +100,7 @@ public final class Route implements ApiMessage {
     this.name = name;
     this.network = network;
     this.nextHopGateway = nextHopGateway;
+    this.nextHopIlb = nextHopIlb;
     this.nextHopInstance = nextHopInstance;
     this.nextHopIp = nextHopIp;
     this.nextHopNetwork = nextHopNetwork;
@@ -133,6 +137,9 @@ public final class Route implements ApiMessage {
     }
     if ("nextHopGateway".equals(fieldName)) {
       return nextHopGateway;
+    }
+    if ("nextHopIlb".equals(fieldName)) {
+      return nextHopIlb;
     }
     if ("nextHopInstance".equals(fieldName)) {
       return nextHopInstance;
@@ -237,6 +244,17 @@ public final class Route implements ApiMessage {
   }
 
   /**
+   * The URL to a forwarding rule of type loadBalancingScheme=INTERNAL that should handle matching
+   * packets. You can only specify the forwarding rule as a partial or full URL. For example, the
+   * following are all valid URLs: -
+   * https://www.googleapis.com/compute/v1/projects/project/regions/region/forwardingRules/forwardingRule
+   * - regions/region/forwardingRules/forwardingRule
+   */
+  public String getNextHopIlb() {
+    return nextHopIlb;
+  }
+
+  /**
    * The URL to an instance that should handle matching packets. You can specify this as a full or
    * partial URL. For example:
    * https://www.googleapis.com/compute/v1/projects/project/zones/zone/instances/
@@ -330,6 +348,7 @@ public final class Route implements ApiMessage {
     private String name;
     private String network;
     private String nextHopGateway;
+    private String nextHopIlb;
     private String nextHopInstance;
     private String nextHopIp;
     private String nextHopNetwork;
@@ -367,6 +386,9 @@ public final class Route implements ApiMessage {
       }
       if (other.getNextHopGateway() != null) {
         this.nextHopGateway = other.nextHopGateway;
+      }
+      if (other.getNextHopIlb() != null) {
+        this.nextHopIlb = other.nextHopIlb;
       }
       if (other.getNextHopInstance() != null) {
         this.nextHopInstance = other.nextHopInstance;
@@ -407,6 +429,7 @@ public final class Route implements ApiMessage {
       this.name = source.name;
       this.network = source.network;
       this.nextHopGateway = source.nextHopGateway;
+      this.nextHopIlb = source.nextHopIlb;
       this.nextHopInstance = source.nextHopInstance;
       this.nextHopIp = source.nextHopIp;
       this.nextHopNetwork = source.nextHopNetwork;
@@ -539,6 +562,29 @@ public final class Route implements ApiMessage {
      */
     public Builder setNextHopGateway(String nextHopGateway) {
       this.nextHopGateway = nextHopGateway;
+      return this;
+    }
+
+    /**
+     * The URL to a forwarding rule of type loadBalancingScheme=INTERNAL that should handle matching
+     * packets. You can only specify the forwarding rule as a partial or full URL. For example, the
+     * following are all valid URLs: -
+     * https://www.googleapis.com/compute/v1/projects/project/regions/region/forwardingRules/forwardingRule
+     * - regions/region/forwardingRules/forwardingRule
+     */
+    public String getNextHopIlb() {
+      return nextHopIlb;
+    }
+
+    /**
+     * The URL to a forwarding rule of type loadBalancingScheme=INTERNAL that should handle matching
+     * packets. You can only specify the forwarding rule as a partial or full URL. For example, the
+     * following are all valid URLs: -
+     * https://www.googleapis.com/compute/v1/projects/project/regions/region/forwardingRules/forwardingRule
+     * - regions/region/forwardingRules/forwardingRule
+     */
+    public Builder setNextHopIlb(String nextHopIlb) {
+      this.nextHopIlb = nextHopIlb;
       return this;
     }
 
@@ -715,6 +761,7 @@ public final class Route implements ApiMessage {
           name,
           network,
           nextHopGateway,
+          nextHopIlb,
           nextHopInstance,
           nextHopIp,
           nextHopNetwork,
@@ -736,6 +783,7 @@ public final class Route implements ApiMessage {
       newBuilder.setName(this.name);
       newBuilder.setNetwork(this.network);
       newBuilder.setNextHopGateway(this.nextHopGateway);
+      newBuilder.setNextHopIlb(this.nextHopIlb);
       newBuilder.setNextHopInstance(this.nextHopInstance);
       newBuilder.setNextHopIp(this.nextHopIp);
       newBuilder.setNextHopNetwork(this.nextHopNetwork);
@@ -775,6 +823,9 @@ public final class Route implements ApiMessage {
         + ", "
         + "nextHopGateway="
         + nextHopGateway
+        + ", "
+        + "nextHopIlb="
+        + nextHopIlb
         + ", "
         + "nextHopInstance="
         + nextHopInstance
@@ -820,6 +871,7 @@ public final class Route implements ApiMessage {
           && Objects.equals(this.name, that.getName())
           && Objects.equals(this.network, that.getNetwork())
           && Objects.equals(this.nextHopGateway, that.getNextHopGateway())
+          && Objects.equals(this.nextHopIlb, that.getNextHopIlb())
           && Objects.equals(this.nextHopInstance, that.getNextHopInstance())
           && Objects.equals(this.nextHopIp, that.getNextHopIp())
           && Objects.equals(this.nextHopNetwork, that.getNextHopNetwork())
@@ -844,6 +896,7 @@ public final class Route implements ApiMessage {
         name,
         network,
         nextHopGateway,
+        nextHopIlb,
         nextHopInstance,
         nextHopIp,
         nextHopNetwork,

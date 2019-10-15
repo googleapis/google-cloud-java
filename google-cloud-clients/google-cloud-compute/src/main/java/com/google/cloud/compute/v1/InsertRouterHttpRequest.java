@@ -26,7 +26,8 @@ import javax.annotation.Nullable;
 @BetaApi
 /**
  * Request object for method compute.routers.insert. Creates a Router resource in the specified
- * project and region using the data included in the request.
+ * project and region using the data included in the request. (== suppress_warning
+ * http-rest-shadowed ==)
  */
 public final class InsertRouterHttpRequest implements ApiMessage {
   private final String access_token;

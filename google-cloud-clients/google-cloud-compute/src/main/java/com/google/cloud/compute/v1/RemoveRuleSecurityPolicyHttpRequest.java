@@ -26,7 +26,7 @@ import javax.annotation.Nullable;
 @BetaApi
 /**
  * Request object for method compute.securityPolicies.removeRule. Deletes a rule at the specified
- * priority.
+ * priority. (== suppress_warning http-rest-shadowed ==)
  */
 public final class RemoveRuleSecurityPolicyHttpRequest implements ApiMessage {
   private final String access_token;

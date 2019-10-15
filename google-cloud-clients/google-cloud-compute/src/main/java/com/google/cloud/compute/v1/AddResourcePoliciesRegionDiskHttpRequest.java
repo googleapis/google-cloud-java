@@ -27,7 +27,7 @@ import javax.annotation.Nullable;
 /**
  * Request object for method compute.regionDisks.addResourcePolicies. Adds existing resource
  * policies to a regional disk. You can only add one policy which will be applied to this disk for
- * scheduling snapshot creation.
+ * scheduling snapshot creation. (== suppress_warning http-rest-shadowed ==)
  */
 public final class AddResourcePoliciesRegionDiskHttpRequest implements ApiMessage {
   private final String access_token;

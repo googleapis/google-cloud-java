@@ -26,7 +26,7 @@ import javax.annotation.Nullable;
 @BetaApi
 /**
  * Request object for method compute.nodeGroups.setNodeTemplate. Updates the node template of the
- * node group.
+ * node group. (== suppress_warning http-rest-shadowed ==)
  */
 public final class SetNodeTemplateNodeGroupHttpRequest implements ApiMessage {
   private final String access_token;

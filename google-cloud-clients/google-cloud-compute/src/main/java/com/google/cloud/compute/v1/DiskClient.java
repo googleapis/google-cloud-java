@@ -155,7 +155,7 @@ public class DiskClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Adds existing resource policies to a disk. You can only add one policy which will be applied to
-   * this disk for scheduling snapshot creation.
+   * this disk for scheduling snapshot creation. (== suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -187,7 +187,7 @@ public class DiskClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Adds existing resource policies to a disk. You can only add one policy which will be applied to
-   * this disk for scheduling snapshot creation.
+   * this disk for scheduling snapshot creation. (== suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -218,7 +218,7 @@ public class DiskClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Adds existing resource policies to a disk. You can only add one policy which will be applied to
-   * this disk for scheduling snapshot creation.
+   * this disk for scheduling snapshot creation. (== suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -245,7 +245,7 @@ public class DiskClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Adds existing resource policies to a disk. You can only add one policy which will be applied to
-   * this disk for scheduling snapshot creation.
+   * this disk for scheduling snapshot creation. (== suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -271,7 +271,7 @@ public class DiskClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Retrieves an aggregated list of persistent disks.
+   * Retrieves an aggregated list of persistent disks. (== suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -298,7 +298,7 @@ public class DiskClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Retrieves an aggregated list of persistent disks.
+   * Retrieves an aggregated list of persistent disks. (== suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -323,7 +323,7 @@ public class DiskClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Retrieves an aggregated list of persistent disks.
+   * Retrieves an aggregated list of persistent disks. (== suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -350,7 +350,7 @@ public class DiskClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Retrieves an aggregated list of persistent disks.
+   * Retrieves an aggregated list of persistent disks. (== suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -376,7 +376,7 @@ public class DiskClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Retrieves an aggregated list of persistent disks.
+   * Retrieves an aggregated list of persistent disks. (== suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -409,7 +409,7 @@ public class DiskClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Creates a snapshot of a specified persistent disk.
+   * Creates a snapshot of a specified persistent disk. (== suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -447,7 +447,7 @@ public class DiskClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Creates a snapshot of a specified persistent disk.
+   * Creates a snapshot of a specified persistent disk. (== suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -485,7 +485,7 @@ public class DiskClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Creates a snapshot of a specified persistent disk.
+   * Creates a snapshot of a specified persistent disk. (== suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -513,7 +513,7 @@ public class DiskClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Creates a snapshot of a specified persistent disk.
+   * Creates a snapshot of a specified persistent disk. (== suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -543,7 +543,7 @@ public class DiskClient implements BackgroundResource {
   /**
    * Deletes the specified persistent disk. Deleting a disk removes its data permanently and is
    * irreversible. However, deleting a disk does not delete any snapshots previously made from the
-   * disk. You must separately delete snapshots.
+   * disk. You must separately delete snapshots. (== suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -569,7 +569,7 @@ public class DiskClient implements BackgroundResource {
   /**
    * Deletes the specified persistent disk. Deleting a disk removes its data permanently and is
    * irreversible. However, deleting a disk does not delete any snapshots previously made from the
-   * disk. You must separately delete snapshots.
+   * disk. You must separately delete snapshots. (== suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -594,7 +594,7 @@ public class DiskClient implements BackgroundResource {
   /**
    * Deletes the specified persistent disk. Deleting a disk removes its data permanently and is
    * irreversible. However, deleting a disk does not delete any snapshots previously made from the
-   * disk. You must separately delete snapshots.
+   * disk. You must separately delete snapshots. (== suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -620,7 +620,7 @@ public class DiskClient implements BackgroundResource {
   /**
    * Deletes the specified persistent disk. Deleting a disk removes its data permanently and is
    * irreversible. However, deleting a disk does not delete any snapshots previously made from the
-   * disk. You must separately delete snapshots.
+   * disk. You must separately delete snapshots. (== suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -644,7 +644,7 @@ public class DiskClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Returns a specified persistent disk. Gets a list of available persistent disks by making a
-   * list() request.
+   * list() request. (== suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -669,7 +669,7 @@ public class DiskClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Returns a specified persistent disk. Gets a list of available persistent disks by making a
-   * list() request.
+   * list() request. (== suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -693,7 +693,7 @@ public class DiskClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Returns a specified persistent disk. Gets a list of available persistent disks by making a
-   * list() request.
+   * list() request. (== suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -718,7 +718,7 @@ public class DiskClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Returns a specified persistent disk. Gets a list of available persistent disks by making a
-   * list() request.
+   * list() request. (== suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -742,7 +742,7 @@ public class DiskClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Gets the access control policy for a resource. May be empty if no such policy or resource
-   * exists.
+   * exists. (== suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -769,7 +769,7 @@ public class DiskClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Gets the access control policy for a resource. May be empty if no such policy or resource
-   * exists.
+   * exists. (== suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -794,7 +794,7 @@ public class DiskClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Gets the access control policy for a resource. May be empty if no such policy or resource
-   * exists.
+   * exists. (== suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -819,7 +819,7 @@ public class DiskClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Gets the access control policy for a resource. May be empty if no such policy or resource
-   * exists.
+   * exists. (== suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -845,7 +845,7 @@ public class DiskClient implements BackgroundResource {
    * Creates a persistent disk in the specified project using the data in the request. You can
    * create a disk with a sourceImage, a sourceSnapshot, or create an empty 500 GB data disk by
    * omitting all properties. You can also create a disk that is larger than the default size by
-   * specifying the sizeGb property.
+   * specifying the sizeGb property. (== suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -885,7 +885,7 @@ public class DiskClient implements BackgroundResource {
    * Creates a persistent disk in the specified project using the data in the request. You can
    * create a disk with a sourceImage, a sourceSnapshot, or create an empty 500 GB data disk by
    * omitting all properties. You can also create a disk that is larger than the default size by
-   * specifying the sizeGb property.
+   * specifying the sizeGb property. (== suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -922,7 +922,7 @@ public class DiskClient implements BackgroundResource {
    * Creates a persistent disk in the specified project using the data in the request. You can
    * create a disk with a sourceImage, a sourceSnapshot, or create an empty 500 GB data disk by
    * omitting all properties. You can also create a disk that is larger than the default size by
-   * specifying the sizeGb property.
+   * specifying the sizeGb property. (== suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -951,7 +951,7 @@ public class DiskClient implements BackgroundResource {
    * Creates a persistent disk in the specified project using the data in the request. You can
    * create a disk with a sourceImage, a sourceSnapshot, or create an empty 500 GB data disk by
    * omitting all properties. You can also create a disk that is larger than the default size by
-   * specifying the sizeGb property.
+   * specifying the sizeGb property. (== suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -976,7 +976,8 @@ public class DiskClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Retrieves a list of persistent disks contained within the specified zone.
+   * Retrieves a list of persistent disks contained within the specified zone. (== suppress_warning
+   * http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -1001,7 +1002,8 @@ public class DiskClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Retrieves a list of persistent disks contained within the specified zone.
+   * Retrieves a list of persistent disks contained within the specified zone. (== suppress_warning
+   * http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -1025,7 +1027,8 @@ public class DiskClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Retrieves a list of persistent disks contained within the specified zone.
+   * Retrieves a list of persistent disks contained within the specified zone. (== suppress_warning
+   * http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -1051,7 +1054,8 @@ public class DiskClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Retrieves a list of persistent disks contained within the specified zone.
+   * Retrieves a list of persistent disks contained within the specified zone. (== suppress_warning
+   * http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -1077,7 +1081,8 @@ public class DiskClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Retrieves a list of persistent disks contained within the specified zone.
+   * Retrieves a list of persistent disks contained within the specified zone. (== suppress_warning
+   * http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -1109,7 +1114,7 @@ public class DiskClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Removes resource policies from a disk.
+   * Removes resource policies from a disk. (== suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -1141,7 +1146,7 @@ public class DiskClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Removes resource policies from a disk.
+   * Removes resource policies from a disk. (== suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -1172,7 +1177,7 @@ public class DiskClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Removes resource policies from a disk.
+   * Removes resource policies from a disk. (== suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -1198,7 +1203,7 @@ public class DiskClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Removes resource policies from a disk.
+   * Removes resource policies from a disk. (== suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -1224,7 +1229,8 @@ public class DiskClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Resizes the specified persistent disk. You can only increase the size of the disk.
+   * Resizes the specified persistent disk. You can only increase the size of the disk. (==
+   * suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -1254,7 +1260,8 @@ public class DiskClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Resizes the specified persistent disk. You can only increase the size of the disk.
+   * Resizes the specified persistent disk. You can only increase the size of the disk. (==
+   * suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -1283,7 +1290,8 @@ public class DiskClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Resizes the specified persistent disk. You can only increase the size of the disk.
+   * Resizes the specified persistent disk. You can only increase the size of the disk. (==
+   * suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -1309,7 +1317,8 @@ public class DiskClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Resizes the specified persistent disk. You can only increase the size of the disk.
+   * Resizes the specified persistent disk. You can only increase the size of the disk. (==
+   * suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -1334,7 +1343,8 @@ public class DiskClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Sets the access control policy on the specified resource. Replaces any existing policy.
+   * Sets the access control policy on the specified resource. Replaces any existing policy. (==
+   * suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -1364,7 +1374,8 @@ public class DiskClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Sets the access control policy on the specified resource. Replaces any existing policy.
+   * Sets the access control policy on the specified resource. Replaces any existing policy. (==
+   * suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -1394,7 +1405,8 @@ public class DiskClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Sets the access control policy on the specified resource. Replaces any existing policy.
+   * Sets the access control policy on the specified resource. Replaces any existing policy. (==
+   * suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -1420,7 +1432,8 @@ public class DiskClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Sets the access control policy on the specified resource. Replaces any existing policy.
+   * Sets the access control policy on the specified resource. Replaces any existing policy. (==
+   * suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -1446,7 +1459,7 @@ public class DiskClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Sets the labels on a disk. To learn more about labels, read the Labeling Resources
-   * documentation.
+   * documentation. (== suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -1477,7 +1490,7 @@ public class DiskClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Sets the labels on a disk. To learn more about labels, read the Labeling Resources
-   * documentation.
+   * documentation. (== suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -1508,7 +1521,7 @@ public class DiskClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Sets the labels on a disk. To learn more about labels, read the Labeling Resources
-   * documentation.
+   * documentation. (== suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -1535,7 +1548,7 @@ public class DiskClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Sets the labels on a disk. To learn more about labels, read the Labeling Resources
-   * documentation.
+   * documentation. (== suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -1560,7 +1573,8 @@ public class DiskClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Returns permissions that a caller has on the specified resource.
+   * Returns permissions that a caller has on the specified resource. (== suppress_warning
+   * http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -1590,7 +1604,8 @@ public class DiskClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Returns permissions that a caller has on the specified resource.
+   * Returns permissions that a caller has on the specified resource. (== suppress_warning
+   * http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -1620,7 +1635,8 @@ public class DiskClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Returns permissions that a caller has on the specified resource.
+   * Returns permissions that a caller has on the specified resource. (== suppress_warning
+   * http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -1647,7 +1663,8 @@ public class DiskClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Returns permissions that a caller has on the specified resource.
+   * Returns permissions that a caller has on the specified resource. (== suppress_warning
+   * http-rest-shadowed ==)
    *
    * <p>Sample code:
    *

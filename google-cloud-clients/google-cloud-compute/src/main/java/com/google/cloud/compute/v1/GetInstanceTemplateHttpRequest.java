@@ -26,7 +26,8 @@ import javax.annotation.Nullable;
 @BetaApi
 /**
  * Request object for method compute.instanceTemplates.get. Returns the specified instance template.
- * Gets a list of available instance templates by making a list() request.
+ * Gets a list of available instance templates by making a list() request. (== suppress_warning
+ * http-rest-shadowed ==)
  */
 public final class GetInstanceTemplateHttpRequest implements ApiMessage {
   private final String access_token;

@@ -155,7 +155,7 @@ public class TargetTcpProxyClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Deletes the specified TargetTcpProxy resource.
+   * Deletes the specified TargetTcpProxy resource. (== suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -181,7 +181,7 @@ public class TargetTcpProxyClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Deletes the specified TargetTcpProxy resource.
+   * Deletes the specified TargetTcpProxy resource. (== suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -205,7 +205,7 @@ public class TargetTcpProxyClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Deletes the specified TargetTcpProxy resource.
+   * Deletes the specified TargetTcpProxy resource. (== suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -229,7 +229,7 @@ public class TargetTcpProxyClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Deletes the specified TargetTcpProxy resource.
+   * Deletes the specified TargetTcpProxy resource. (== suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -254,7 +254,7 @@ public class TargetTcpProxyClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Returns the specified TargetTcpProxy resource. Gets a list of available target TCP proxies by
-   * making a list() request.
+   * making a list() request. (== suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -281,7 +281,7 @@ public class TargetTcpProxyClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Returns the specified TargetTcpProxy resource. Gets a list of available target TCP proxies by
-   * making a list() request.
+   * making a list() request. (== suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -306,7 +306,7 @@ public class TargetTcpProxyClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Returns the specified TargetTcpProxy resource. Gets a list of available target TCP proxies by
-   * making a list() request.
+   * making a list() request. (== suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -331,7 +331,7 @@ public class TargetTcpProxyClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Returns the specified TargetTcpProxy resource. Gets a list of available target TCP proxies by
-   * making a list() request.
+   * making a list() request. (== suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -356,7 +356,7 @@ public class TargetTcpProxyClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Creates a TargetTcpProxy resource in the specified project using the data included in the
-   * request.
+   * request. (== suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -391,7 +391,7 @@ public class TargetTcpProxyClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Creates a TargetTcpProxy resource in the specified project using the data included in the
-   * request.
+   * request. (== suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -426,7 +426,7 @@ public class TargetTcpProxyClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Creates a TargetTcpProxy resource in the specified project using the data included in the
-   * request.
+   * request. (== suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -453,7 +453,7 @@ public class TargetTcpProxyClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Creates a TargetTcpProxy resource in the specified project using the data included in the
-   * request.
+   * request. (== suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -479,7 +479,8 @@ public class TargetTcpProxyClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Retrieves the list of TargetTcpProxy resources available to the specified project.
+   * Retrieves the list of TargetTcpProxy resources available to the specified project. (==
+   * suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -506,7 +507,8 @@ public class TargetTcpProxyClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Retrieves the list of TargetTcpProxy resources available to the specified project.
+   * Retrieves the list of TargetTcpProxy resources available to the specified project. (==
+   * suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -531,7 +533,8 @@ public class TargetTcpProxyClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Retrieves the list of TargetTcpProxy resources available to the specified project.
+   * Retrieves the list of TargetTcpProxy resources available to the specified project. (==
+   * suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -558,7 +561,8 @@ public class TargetTcpProxyClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Retrieves the list of TargetTcpProxy resources available to the specified project.
+   * Retrieves the list of TargetTcpProxy resources available to the specified project. (==
+   * suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -584,7 +588,8 @@ public class TargetTcpProxyClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Retrieves the list of TargetTcpProxy resources available to the specified project.
+   * Retrieves the list of TargetTcpProxy resources available to the specified project. (==
+   * suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -617,7 +622,7 @@ public class TargetTcpProxyClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Changes the BackendService for TargetTcpProxy.
+   * Changes the BackendService for TargetTcpProxy. (== suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -650,7 +655,7 @@ public class TargetTcpProxyClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Changes the BackendService for TargetTcpProxy.
+   * Changes the BackendService for TargetTcpProxy. (== suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -683,7 +688,7 @@ public class TargetTcpProxyClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Changes the BackendService for TargetTcpProxy.
+   * Changes the BackendService for TargetTcpProxy. (== suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -710,7 +715,7 @@ public class TargetTcpProxyClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Changes the BackendService for TargetTcpProxy.
+   * Changes the BackendService for TargetTcpProxy. (== suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -736,7 +741,7 @@ public class TargetTcpProxyClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Changes the ProxyHeaderType for TargetTcpProxy.
+   * Changes the ProxyHeaderType for TargetTcpProxy. (== suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -768,7 +773,7 @@ public class TargetTcpProxyClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Changes the ProxyHeaderType for TargetTcpProxy.
+   * Changes the ProxyHeaderType for TargetTcpProxy. (== suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -800,7 +805,7 @@ public class TargetTcpProxyClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Changes the ProxyHeaderType for TargetTcpProxy.
+   * Changes the ProxyHeaderType for TargetTcpProxy. (== suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -827,7 +832,7 @@ public class TargetTcpProxyClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Changes the ProxyHeaderType for TargetTcpProxy.
+   * Changes the ProxyHeaderType for TargetTcpProxy. (== suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *

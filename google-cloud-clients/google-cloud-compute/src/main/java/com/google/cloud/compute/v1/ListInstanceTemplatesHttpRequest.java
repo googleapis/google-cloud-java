@@ -26,7 +26,7 @@ import javax.annotation.Nullable;
 @BetaApi
 /**
  * Request object for method compute.instanceTemplates.list. Retrieves a list of instance templates
- * that are contained within the specified project.
+ * that are contained within the specified project. (== suppress_warning http-rest-shadowed ==)
  */
 public final class ListInstanceTemplatesHttpRequest implements ApiMessage {
   private final String access_token;

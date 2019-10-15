@@ -29,31 +29,15 @@ import javax.annotation.Nullable;
 /**
  * Represents a Forwarding Rule resource.
  *
- * <p>A forwardingRules resource represents a regional forwarding rule.
+ * <p>A forwarding rule and its corresponding IP address represent the frontend configuration of a
+ * Google Cloud Platform load balancer. Forwarding rules can also reference target instances and
+ * Cloud VPN Classic gateways (targetVpnGateway).
  *
- * <p>Regional external forwarding rules can reference any of the following resources:
+ * <p>For more information, read Forwarding rule concepts and Using protocol forwarding.
  *
- * <p>- A target instance - A Cloud VPN Classic gateway (targetVpnGateway), - A target pool for a
- * Network Load Balancer - A global target HTTP(S) proxy for an HTTP(S) load balancer using Standard
- * Tier - A target SSL proxy for a SSL Proxy load balancer using Standard Tier - A target TCP proxy
- * for a TCP Proxy load balancer using Standard Tier.
- *
- * <p>Regional internal forwarding rules can reference the backend service of an internal TCP/UDP
- * load balancer.
- *
- * <p>For regional internal forwarding rules, the following applies: - If the loadBalancingScheme
- * for the load balancer is INTERNAL, then the forwarding rule references a regional internal
- * backend service. - If the loadBalancingScheme for the load balancer is INTERNAL_MANAGED, then the
- * forwarding rule must reference a regional target HTTP(S) proxy.
- *
- * <p>For more information, read Using Forwarding rules.
- *
- * <p>A globalForwardingRules resource represents a global forwarding rule.
- *
- * <p>Global forwarding rules are only used by load balancers that use Premium Tier. (==
- * resource_for beta.forwardingRules ==) (== resource_for v1.forwardingRules ==) (== resource_for
- * beta.globalForwardingRules ==) (== resource_for v1.globalForwardingRules ==) (== resource_for
- * beta.regionForwardingRules ==) (== resource_for v1.regionForwardingRules ==)
+ * <p>(== resource_for beta.forwardingRules ==) (== resource_for v1.forwardingRules ==) (==
+ * resource_for beta.globalForwardingRules ==) (== resource_for v1.globalForwardingRules ==) (==
+ * resource_for beta.regionForwardingRules ==) (== resource_for v1.regionForwardingRules ==)
  */
 public final class ForwardingRule implements ApiMessage {
   private final Boolean allPorts;
@@ -304,8 +288,12 @@ public final class ForwardingRule implements ApiMessage {
   /**
    * The IP protocol to which this rule applies. Valid options are TCP, UDP, ESP, AH, SCTP or ICMP.
    *
-   * <p>When the load balancing scheme is INTERNAL, only TCP and UDP are valid. When the load
-   * balancing scheme is INTERNAL_SELF_MANAGED, only TCPis valid.
+   * <p>For Internal TCP/UDP Load Balancing, the load balancing scheme is INTERNAL, and one of TCP
+   * or UDP are valid. For Traffic Director, the load balancing scheme is INTERNAL_SELF_MANAGED, and
+   * only TCPis valid. For Internal HTTP(S) Load Balancing, the load balancing scheme is
+   * INTERNAL_MANAGED, and only TCP is valid. For HTTP(S), SSL Proxy, and TCP Proxy Load Balancing,
+   * the load balancing scheme is EXTERNAL and only TCP is valid. For Network TCP/UDP Load
+   * Balancing, the load balancing scheme is EXTERNAL, and one of TCP or UDP is valid.
    */
   public String getIPProtocol() {
     return iPProtocol;
@@ -335,11 +323,18 @@ public final class ForwardingRule implements ApiMessage {
   }
 
   /**
-   * This signifies what the ForwardingRule will be used for and can only take the following values:
-   * INTERNAL, INTERNAL_SELF_MANAGED, EXTERNAL. The value of INTERNAL means that this will be used
-   * for Internal Network Load Balancing (TCP, UDP). The value of INTERNAL_SELF_MANAGED means that
-   * this will be used for Internal Global HTTP(S) LB. The value of EXTERNAL means that this will be
-   * used for External Load Balancing (HTTP(S) LB, External TCP/UDP LB, SSL Proxy)
+   * Specifies the forwarding rule type. EXTERNAL is used for: - Classic Cloud VPN gateways -
+   * Protocol forwarding to VMs from an external IP address - The following load balancers: HTTP(S),
+   * SSL Proxy, TCP Proxy, and Network TCP/UDP.
+   *
+   * <p>INTERNAL is used for: - Protocol forwarding to VMs from an internal IP address - Internal
+   * TCP/UDP load balancers
+   *
+   * <p>INTERNAL_MANAGED is used for: - Internal HTTP(S) load balancers
+   *
+   * <p>INTERNAL_SELF_MANAGED is used for: - Traffic Director
+   *
+   * <p>For more information about forwarding rules, refer to Forwarding rule concepts.
    */
   public String getLoadBalancingScheme() {
     return loadBalancingScheme;
@@ -761,8 +756,12 @@ public final class ForwardingRule implements ApiMessage {
      * The IP protocol to which this rule applies. Valid options are TCP, UDP, ESP, AH, SCTP or
      * ICMP.
      *
-     * <p>When the load balancing scheme is INTERNAL, only TCP and UDP are valid. When the load
-     * balancing scheme is INTERNAL_SELF_MANAGED, only TCPis valid.
+     * <p>For Internal TCP/UDP Load Balancing, the load balancing scheme is INTERNAL, and one of TCP
+     * or UDP are valid. For Traffic Director, the load balancing scheme is INTERNAL_SELF_MANAGED,
+     * and only TCPis valid. For Internal HTTP(S) Load Balancing, the load balancing scheme is
+     * INTERNAL_MANAGED, and only TCP is valid. For HTTP(S), SSL Proxy, and TCP Proxy Load
+     * Balancing, the load balancing scheme is EXTERNAL and only TCP is valid. For Network TCP/UDP
+     * Load Balancing, the load balancing scheme is EXTERNAL, and one of TCP or UDP is valid.
      */
     public String getIPProtocol() {
       return iPProtocol;
@@ -772,8 +771,12 @@ public final class ForwardingRule implements ApiMessage {
      * The IP protocol to which this rule applies. Valid options are TCP, UDP, ESP, AH, SCTP or
      * ICMP.
      *
-     * <p>When the load balancing scheme is INTERNAL, only TCP and UDP are valid. When the load
-     * balancing scheme is INTERNAL_SELF_MANAGED, only TCPis valid.
+     * <p>For Internal TCP/UDP Load Balancing, the load balancing scheme is INTERNAL, and one of TCP
+     * or UDP are valid. For Traffic Director, the load balancing scheme is INTERNAL_SELF_MANAGED,
+     * and only TCPis valid. For Internal HTTP(S) Load Balancing, the load balancing scheme is
+     * INTERNAL_MANAGED, and only TCP is valid. For HTTP(S), SSL Proxy, and TCP Proxy Load
+     * Balancing, the load balancing scheme is EXTERNAL and only TCP is valid. For Network TCP/UDP
+     * Load Balancing, the load balancing scheme is EXTERNAL, and one of TCP or UDP is valid.
      */
     public Builder setIPProtocol(String iPProtocol) {
       this.iPProtocol = iPProtocol;
@@ -832,22 +835,36 @@ public final class ForwardingRule implements ApiMessage {
     }
 
     /**
-     * This signifies what the ForwardingRule will be used for and can only take the following
-     * values: INTERNAL, INTERNAL_SELF_MANAGED, EXTERNAL. The value of INTERNAL means that this will
-     * be used for Internal Network Load Balancing (TCP, UDP). The value of INTERNAL_SELF_MANAGED
-     * means that this will be used for Internal Global HTTP(S) LB. The value of EXTERNAL means that
-     * this will be used for External Load Balancing (HTTP(S) LB, External TCP/UDP LB, SSL Proxy)
+     * Specifies the forwarding rule type. EXTERNAL is used for: - Classic Cloud VPN gateways -
+     * Protocol forwarding to VMs from an external IP address - The following load balancers:
+     * HTTP(S), SSL Proxy, TCP Proxy, and Network TCP/UDP.
+     *
+     * <p>INTERNAL is used for: - Protocol forwarding to VMs from an internal IP address - Internal
+     * TCP/UDP load balancers
+     *
+     * <p>INTERNAL_MANAGED is used for: - Internal HTTP(S) load balancers
+     *
+     * <p>INTERNAL_SELF_MANAGED is used for: - Traffic Director
+     *
+     * <p>For more information about forwarding rules, refer to Forwarding rule concepts.
      */
     public String getLoadBalancingScheme() {
       return loadBalancingScheme;
     }
 
     /**
-     * This signifies what the ForwardingRule will be used for and can only take the following
-     * values: INTERNAL, INTERNAL_SELF_MANAGED, EXTERNAL. The value of INTERNAL means that this will
-     * be used for Internal Network Load Balancing (TCP, UDP). The value of INTERNAL_SELF_MANAGED
-     * means that this will be used for Internal Global HTTP(S) LB. The value of EXTERNAL means that
-     * this will be used for External Load Balancing (HTTP(S) LB, External TCP/UDP LB, SSL Proxy)
+     * Specifies the forwarding rule type. EXTERNAL is used for: - Classic Cloud VPN gateways -
+     * Protocol forwarding to VMs from an external IP address - The following load balancers:
+     * HTTP(S), SSL Proxy, TCP Proxy, and Network TCP/UDP.
+     *
+     * <p>INTERNAL is used for: - Protocol forwarding to VMs from an internal IP address - Internal
+     * TCP/UDP load balancers
+     *
+     * <p>INTERNAL_MANAGED is used for: - Internal HTTP(S) load balancers
+     *
+     * <p>INTERNAL_SELF_MANAGED is used for: - Traffic Director
+     *
+     * <p>For more information about forwarding rules, refer to Forwarding rule concepts.
      */
     public Builder setLoadBalancingScheme(String loadBalancingScheme) {
       this.loadBalancingScheme = loadBalancingScheme;

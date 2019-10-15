@@ -26,7 +26,8 @@ import javax.annotation.Nullable;
 @BetaApi
 /**
  * Request object for method compute.reservations.list. A list of all the reservations that have
- * been configured for the specified project in specified zone.
+ * been configured for the specified project in specified zone. (== suppress_warning
+ * http-rest-shadowed ==)
  */
 public final class ListReservationsHttpRequest implements ApiMessage {
   private final String access_token;

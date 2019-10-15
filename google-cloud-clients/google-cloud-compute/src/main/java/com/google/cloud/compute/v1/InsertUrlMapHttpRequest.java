@@ -26,7 +26,7 @@ import javax.annotation.Nullable;
 @BetaApi
 /**
  * Request object for method compute.urlMaps.insert. Creates a UrlMap resource in the specified
- * project using the data included in the request.
+ * project using the data included in the request. (== suppress_warning http-rest-shadowed ==)
  */
 public final class InsertUrlMapHttpRequest implements ApiMessage {
   private final String access_token;

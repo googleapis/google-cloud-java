@@ -155,7 +155,7 @@ public class GlobalAddressClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Deletes the specified address resource.
+   * Deletes the specified address resource. (== suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -181,7 +181,7 @@ public class GlobalAddressClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Deletes the specified address resource.
+   * Deletes the specified address resource. (== suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -205,7 +205,7 @@ public class GlobalAddressClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Deletes the specified address resource.
+   * Deletes the specified address resource. (== suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -229,7 +229,7 @@ public class GlobalAddressClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Deletes the specified address resource.
+   * Deletes the specified address resource. (== suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -254,7 +254,7 @@ public class GlobalAddressClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Returns the specified address resource. Gets a list of available addresses by making a list()
-   * request.
+   * request. (== suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -281,7 +281,7 @@ public class GlobalAddressClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Returns the specified address resource. Gets a list of available addresses by making a list()
-   * request.
+   * request. (== suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -306,7 +306,7 @@ public class GlobalAddressClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Returns the specified address resource. Gets a list of available addresses by making a list()
-   * request.
+   * request. (== suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -331,7 +331,7 @@ public class GlobalAddressClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Returns the specified address resource. Gets a list of available addresses by making a list()
-   * request.
+   * request. (== suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -355,6 +355,7 @@ public class GlobalAddressClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Creates an address resource in the specified project by using the data included in the request.
+   * (== suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -396,6 +397,7 @@ public class GlobalAddressClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Creates an address resource in the specified project by using the data included in the request.
+   * (== suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -437,6 +439,7 @@ public class GlobalAddressClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Creates an address resource in the specified project by using the data included in the request.
+   * (== suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -463,6 +466,7 @@ public class GlobalAddressClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Creates an address resource in the specified project by using the data included in the request.
+   * (== suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -488,7 +492,7 @@ public class GlobalAddressClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Retrieves a list of global addresses.
+   * Retrieves a list of global addresses. (== suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -515,7 +519,7 @@ public class GlobalAddressClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Retrieves a list of global addresses.
+   * Retrieves a list of global addresses. (== suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -540,7 +544,7 @@ public class GlobalAddressClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Retrieves a list of global addresses.
+   * Retrieves a list of global addresses. (== suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -567,7 +571,7 @@ public class GlobalAddressClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Retrieves a list of global addresses.
+   * Retrieves a list of global addresses. (== suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -593,7 +597,7 @@ public class GlobalAddressClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Retrieves a list of global addresses.
+   * Retrieves a list of global addresses. (== suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *

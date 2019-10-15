@@ -155,7 +155,7 @@ public class ForwardingRuleClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Retrieves an aggregated list of forwarding rules.
+   * Retrieves an aggregated list of forwarding rules. (== suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -183,7 +183,7 @@ public class ForwardingRuleClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Retrieves an aggregated list of forwarding rules.
+   * Retrieves an aggregated list of forwarding rules. (== suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -209,7 +209,7 @@ public class ForwardingRuleClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Retrieves an aggregated list of forwarding rules.
+   * Retrieves an aggregated list of forwarding rules. (== suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -236,7 +236,7 @@ public class ForwardingRuleClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Retrieves an aggregated list of forwarding rules.
+   * Retrieves an aggregated list of forwarding rules. (== suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -263,7 +263,7 @@ public class ForwardingRuleClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Retrieves an aggregated list of forwarding rules.
+   * Retrieves an aggregated list of forwarding rules. (== suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -296,7 +296,7 @@ public class ForwardingRuleClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Deletes the specified ForwardingRule resource.
+   * Deletes the specified ForwardingRule resource. (== suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -322,7 +322,7 @@ public class ForwardingRuleClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Deletes the specified ForwardingRule resource.
+   * Deletes the specified ForwardingRule resource. (== suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -346,7 +346,7 @@ public class ForwardingRuleClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Deletes the specified ForwardingRule resource.
+   * Deletes the specified ForwardingRule resource. (== suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -370,7 +370,7 @@ public class ForwardingRuleClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Deletes the specified ForwardingRule resource.
+   * Deletes the specified ForwardingRule resource. (== suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -394,7 +394,7 @@ public class ForwardingRuleClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Returns the specified ForwardingRule resource.
+   * Returns the specified ForwardingRule resource. (== suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -420,7 +420,7 @@ public class ForwardingRuleClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Returns the specified ForwardingRule resource.
+   * Returns the specified ForwardingRule resource. (== suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -444,7 +444,7 @@ public class ForwardingRuleClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Returns the specified ForwardingRule resource.
+   * Returns the specified ForwardingRule resource. (== suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -468,7 +468,7 @@ public class ForwardingRuleClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Returns the specified ForwardingRule resource.
+   * Returns the specified ForwardingRule resource. (== suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -493,7 +493,7 @@ public class ForwardingRuleClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Creates a ForwardingRule resource in the specified project and region using the data included
-   * in the request.
+   * in the request. (== suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -507,22 +507,11 @@ public class ForwardingRuleClient implements BackgroundResource {
    *
    * @param region Name of the region scoping this request.
    * @param forwardingRuleResource Represents a Forwarding Rule resource.
-   *     <p>A forwardingRules resource represents a regional forwarding rule.
-   *     <p>Regional external forwarding rules can reference any of the following resources:
-   *     <p>- A target instance - A Cloud VPN Classic gateway (targetVpnGateway), - A target pool
-   *     for a Network Load Balancer - A global target HTTP(S) proxy for an HTTP(S) load balancer
-   *     using Standard Tier - A target SSL proxy for a SSL Proxy load balancer using Standard Tier
-   *     - A target TCP proxy for a TCP Proxy load balancer using Standard Tier.
-   *     <p>Regional internal forwarding rules can reference the backend service of an internal
-   *     TCP/UDP load balancer.
-   *     <p>For regional internal forwarding rules, the following applies: - If the
-   *     loadBalancingScheme for the load balancer is INTERNAL, then the forwarding rule references
-   *     a regional internal backend service. - If the loadBalancingScheme for the load balancer is
-   *     INTERNAL_MANAGED, then the forwarding rule must reference a regional target HTTP(S) proxy.
-   *     <p>For more information, read Using Forwarding rules.
-   *     <p>A globalForwardingRules resource represents a global forwarding rule.
-   *     <p>Global forwarding rules are only used by load balancers that use Premium Tier. (==
-   *     resource_for beta.forwardingRules ==) (== resource_for v1.forwardingRules ==) (==
+   *     <p>A forwarding rule and its corresponding IP address represent the frontend configuration
+   *     of a Google Cloud Platform load balancer. Forwarding rules can also reference target
+   *     instances and Cloud VPN Classic gateways (targetVpnGateway).
+   *     <p>For more information, read Forwarding rule concepts and Using protocol forwarding.
+   *     <p>(== resource_for beta.forwardingRules ==) (== resource_for v1.forwardingRules ==) (==
    *     resource_for beta.globalForwardingRules ==) (== resource_for v1.globalForwardingRules ==)
    *     (== resource_for beta.regionForwardingRules ==) (== resource_for v1.regionForwardingRules
    *     ==)
@@ -543,7 +532,7 @@ public class ForwardingRuleClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Creates a ForwardingRule resource in the specified project and region using the data included
-   * in the request.
+   * in the request. (== suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -557,22 +546,11 @@ public class ForwardingRuleClient implements BackgroundResource {
    *
    * @param region Name of the region scoping this request.
    * @param forwardingRuleResource Represents a Forwarding Rule resource.
-   *     <p>A forwardingRules resource represents a regional forwarding rule.
-   *     <p>Regional external forwarding rules can reference any of the following resources:
-   *     <p>- A target instance - A Cloud VPN Classic gateway (targetVpnGateway), - A target pool
-   *     for a Network Load Balancer - A global target HTTP(S) proxy for an HTTP(S) load balancer
-   *     using Standard Tier - A target SSL proxy for a SSL Proxy load balancer using Standard Tier
-   *     - A target TCP proxy for a TCP Proxy load balancer using Standard Tier.
-   *     <p>Regional internal forwarding rules can reference the backend service of an internal
-   *     TCP/UDP load balancer.
-   *     <p>For regional internal forwarding rules, the following applies: - If the
-   *     loadBalancingScheme for the load balancer is INTERNAL, then the forwarding rule references
-   *     a regional internal backend service. - If the loadBalancingScheme for the load balancer is
-   *     INTERNAL_MANAGED, then the forwarding rule must reference a regional target HTTP(S) proxy.
-   *     <p>For more information, read Using Forwarding rules.
-   *     <p>A globalForwardingRules resource represents a global forwarding rule.
-   *     <p>Global forwarding rules are only used by load balancers that use Premium Tier. (==
-   *     resource_for beta.forwardingRules ==) (== resource_for v1.forwardingRules ==) (==
+   *     <p>A forwarding rule and its corresponding IP address represent the frontend configuration
+   *     of a Google Cloud Platform load balancer. Forwarding rules can also reference target
+   *     instances and Cloud VPN Classic gateways (targetVpnGateway).
+   *     <p>For more information, read Forwarding rule concepts and Using protocol forwarding.
+   *     <p>(== resource_for beta.forwardingRules ==) (== resource_for v1.forwardingRules ==) (==
    *     resource_for beta.globalForwardingRules ==) (== resource_for v1.globalForwardingRules ==)
    *     (== resource_for beta.regionForwardingRules ==) (== resource_for v1.regionForwardingRules
    *     ==)
@@ -593,7 +571,7 @@ public class ForwardingRuleClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Creates a ForwardingRule resource in the specified project and region using the data included
-   * in the request.
+   * in the request. (== suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -620,7 +598,7 @@ public class ForwardingRuleClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Creates a ForwardingRule resource in the specified project and region using the data included
-   * in the request.
+   * in the request. (== suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -646,7 +624,8 @@ public class ForwardingRuleClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Retrieves a list of ForwardingRule resources available to the specified project and region.
+   * Retrieves a list of ForwardingRule resources available to the specified project and region. (==
+   * suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -673,7 +652,8 @@ public class ForwardingRuleClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Retrieves a list of ForwardingRule resources available to the specified project and region.
+   * Retrieves a list of ForwardingRule resources available to the specified project and region. (==
+   * suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -698,7 +678,8 @@ public class ForwardingRuleClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Retrieves a list of ForwardingRule resources available to the specified project and region.
+   * Retrieves a list of ForwardingRule resources available to the specified project and region. (==
+   * suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -725,7 +706,8 @@ public class ForwardingRuleClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Retrieves a list of ForwardingRule resources available to the specified project and region.
+   * Retrieves a list of ForwardingRule resources available to the specified project and region. (==
+   * suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -751,7 +733,8 @@ public class ForwardingRuleClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Retrieves a list of ForwardingRule resources available to the specified project and region.
+   * Retrieves a list of ForwardingRule resources available to the specified project and region. (==
+   * suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -785,7 +768,7 @@ public class ForwardingRuleClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Changes target URL for forwarding rule. The new target should be of the same type as the old
-   * target.
+   * target. (== suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -816,7 +799,7 @@ public class ForwardingRuleClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Changes target URL for forwarding rule. The new target should be of the same type as the old
-   * target.
+   * target. (== suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -847,7 +830,7 @@ public class ForwardingRuleClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Changes target URL for forwarding rule. The new target should be of the same type as the old
-   * target.
+   * target. (== suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -874,7 +857,7 @@ public class ForwardingRuleClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Changes target URL for forwarding rule. The new target should be of the same type as the old
-   * target.
+   * target. (== suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *

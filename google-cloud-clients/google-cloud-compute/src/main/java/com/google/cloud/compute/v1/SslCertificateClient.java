@@ -156,7 +156,7 @@ public class SslCertificateClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Retrieves the list of all SslCertificate resources, regional and global, available to the
-   * specified project.
+   * specified project. (== suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -185,7 +185,7 @@ public class SslCertificateClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Retrieves the list of all SslCertificate resources, regional and global, available to the
-   * specified project.
+   * specified project. (== suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -212,7 +212,7 @@ public class SslCertificateClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Retrieves the list of all SslCertificate resources, regional and global, available to the
-   * specified project.
+   * specified project. (== suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -240,7 +240,7 @@ public class SslCertificateClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Retrieves the list of all SslCertificate resources, regional and global, available to the
-   * specified project.
+   * specified project. (== suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -268,7 +268,7 @@ public class SslCertificateClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Retrieves the list of all SslCertificate resources, regional and global, available to the
-   * specified project.
+   * specified project. (== suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -301,7 +301,7 @@ public class SslCertificateClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Deletes the specified SslCertificate resource.
+   * Deletes the specified SslCertificate resource. (== suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -327,7 +327,7 @@ public class SslCertificateClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Deletes the specified SslCertificate resource.
+   * Deletes the specified SslCertificate resource. (== suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -351,7 +351,7 @@ public class SslCertificateClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Deletes the specified SslCertificate resource.
+   * Deletes the specified SslCertificate resource. (== suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -375,7 +375,7 @@ public class SslCertificateClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Deletes the specified SslCertificate resource.
+   * Deletes the specified SslCertificate resource. (== suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -400,7 +400,7 @@ public class SslCertificateClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Returns the specified SslCertificate resource. Gets a list of available SSL certificates by
-   * making a list() request.
+   * making a list() request. (== suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -427,7 +427,7 @@ public class SslCertificateClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Returns the specified SslCertificate resource. Gets a list of available SSL certificates by
-   * making a list() request.
+   * making a list() request. (== suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -452,7 +452,7 @@ public class SslCertificateClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Returns the specified SslCertificate resource. Gets a list of available SSL certificates by
-   * making a list() request.
+   * making a list() request. (== suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -477,7 +477,7 @@ public class SslCertificateClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Returns the specified SslCertificate resource. Gets a list of available SSL certificates by
-   * making a list() request.
+   * making a list() request. (== suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -502,7 +502,7 @@ public class SslCertificateClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Creates a SslCertificate resource in the specified project using the data included in the
-   * request.
+   * request. (== suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -537,7 +537,7 @@ public class SslCertificateClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Creates a SslCertificate resource in the specified project using the data included in the
-   * request.
+   * request. (== suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -572,7 +572,7 @@ public class SslCertificateClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Creates a SslCertificate resource in the specified project using the data included in the
-   * request.
+   * request. (== suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -599,7 +599,7 @@ public class SslCertificateClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Creates a SslCertificate resource in the specified project using the data included in the
-   * request.
+   * request. (== suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -625,7 +625,8 @@ public class SslCertificateClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Retrieves the list of SslCertificate resources available to the specified project.
+   * Retrieves the list of SslCertificate resources available to the specified project. (==
+   * suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -652,7 +653,8 @@ public class SslCertificateClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Retrieves the list of SslCertificate resources available to the specified project.
+   * Retrieves the list of SslCertificate resources available to the specified project. (==
+   * suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -677,7 +679,8 @@ public class SslCertificateClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Retrieves the list of SslCertificate resources available to the specified project.
+   * Retrieves the list of SslCertificate resources available to the specified project. (==
+   * suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -704,7 +707,8 @@ public class SslCertificateClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Retrieves the list of SslCertificate resources available to the specified project.
+   * Retrieves the list of SslCertificate resources available to the specified project. (==
+   * suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -730,7 +734,8 @@ public class SslCertificateClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Retrieves the list of SslCertificate resources available to the specified project.
+   * Retrieves the list of SslCertificate resources available to the specified project. (==
+   * suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *

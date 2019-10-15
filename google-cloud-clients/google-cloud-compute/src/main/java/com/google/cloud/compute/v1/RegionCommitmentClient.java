@@ -156,7 +156,7 @@ public class RegionCommitmentClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Retrieves an aggregated list of commitments.
+   * Retrieves an aggregated list of commitments. (== suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -184,7 +184,7 @@ public class RegionCommitmentClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Retrieves an aggregated list of commitments.
+   * Retrieves an aggregated list of commitments. (== suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -210,7 +210,7 @@ public class RegionCommitmentClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Retrieves an aggregated list of commitments.
+   * Retrieves an aggregated list of commitments. (== suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -237,7 +237,7 @@ public class RegionCommitmentClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Retrieves an aggregated list of commitments.
+   * Retrieves an aggregated list of commitments. (== suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -264,7 +264,7 @@ public class RegionCommitmentClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Retrieves an aggregated list of commitments.
+   * Retrieves an aggregated list of commitments. (== suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -298,7 +298,7 @@ public class RegionCommitmentClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Returns the specified commitment resource. Gets a list of available commitments by making a
-   * list() request.
+   * list() request. (== suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -325,7 +325,7 @@ public class RegionCommitmentClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Returns the specified commitment resource. Gets a list of available commitments by making a
-   * list() request.
+   * list() request. (== suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -350,7 +350,7 @@ public class RegionCommitmentClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Returns the specified commitment resource. Gets a list of available commitments by making a
-   * list() request.
+   * list() request. (== suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -375,7 +375,7 @@ public class RegionCommitmentClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Returns the specified commitment resource. Gets a list of available commitments by making a
-   * list() request.
+   * list() request. (== suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -399,7 +399,8 @@ public class RegionCommitmentClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Creates a commitment in the specified project using the data included in the request.
+   * Creates a commitment in the specified project using the data included in the request. (==
+   * suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -434,7 +435,8 @@ public class RegionCommitmentClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Creates a commitment in the specified project using the data included in the request.
+   * Creates a commitment in the specified project using the data included in the request. (==
+   * suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -468,7 +470,8 @@ public class RegionCommitmentClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Creates a commitment in the specified project using the data included in the request.
+   * Creates a commitment in the specified project using the data included in the request. (==
+   * suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -494,7 +497,8 @@ public class RegionCommitmentClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Creates a commitment in the specified project using the data included in the request.
+   * Creates a commitment in the specified project using the data included in the request. (==
+   * suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -520,7 +524,8 @@ public class RegionCommitmentClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Retrieves a list of commitments contained within the specified region.
+   * Retrieves a list of commitments contained within the specified region. (== suppress_warning
+   * http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -547,7 +552,8 @@ public class RegionCommitmentClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Retrieves a list of commitments contained within the specified region.
+   * Retrieves a list of commitments contained within the specified region. (== suppress_warning
+   * http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -572,7 +578,8 @@ public class RegionCommitmentClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Retrieves a list of commitments contained within the specified region.
+   * Retrieves a list of commitments contained within the specified region. (== suppress_warning
+   * http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -599,7 +606,8 @@ public class RegionCommitmentClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Retrieves a list of commitments contained within the specified region.
+   * Retrieves a list of commitments contained within the specified region. (== suppress_warning
+   * http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -625,7 +633,8 @@ public class RegionCommitmentClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Retrieves a list of commitments contained within the specified region.
+   * Retrieves a list of commitments contained within the specified region. (== suppress_warning
+   * http-rest-shadowed ==)
    *
    * <p>Sample code:
    *

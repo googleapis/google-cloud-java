@@ -26,7 +26,7 @@ import javax.annotation.Nullable;
 @BetaApi
 /**
  * Request object for method compute.nodeTypes.aggregatedList. Retrieves an aggregated list of node
- * types.
+ * types. (== suppress_warning http-rest-shadowed ==)
  */
 public final class AggregatedListNodeTypesHttpRequest implements ApiMessage {
   private final String access_token;

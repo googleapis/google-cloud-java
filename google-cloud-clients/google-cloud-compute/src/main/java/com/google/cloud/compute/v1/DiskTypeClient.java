@@ -153,7 +153,7 @@ public class DiskTypeClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Retrieves an aggregated list of disk types.
+   * Retrieves an aggregated list of disk types. (== suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -180,7 +180,7 @@ public class DiskTypeClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Retrieves an aggregated list of disk types.
+   * Retrieves an aggregated list of disk types. (== suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -205,7 +205,7 @@ public class DiskTypeClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Retrieves an aggregated list of disk types.
+   * Retrieves an aggregated list of disk types. (== suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -232,7 +232,7 @@ public class DiskTypeClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Retrieves an aggregated list of disk types.
+   * Retrieves an aggregated list of disk types. (== suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -259,7 +259,7 @@ public class DiskTypeClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Retrieves an aggregated list of disk types.
+   * Retrieves an aggregated list of disk types. (== suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -293,7 +293,7 @@ public class DiskTypeClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Returns the specified disk type. Gets a list of available disk types by making a list()
-   * request.
+   * request. (== suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -320,7 +320,7 @@ public class DiskTypeClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Returns the specified disk type. Gets a list of available disk types by making a list()
-   * request.
+   * request. (== suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -345,7 +345,7 @@ public class DiskTypeClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Returns the specified disk type. Gets a list of available disk types by making a list()
-   * request.
+   * request. (== suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -370,7 +370,7 @@ public class DiskTypeClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Returns the specified disk type. Gets a list of available disk types by making a list()
-   * request.
+   * request. (== suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -393,7 +393,8 @@ public class DiskTypeClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Retrieves a list of disk types available to the specified project.
+   * Retrieves a list of disk types available to the specified project. (== suppress_warning
+   * http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -420,7 +421,8 @@ public class DiskTypeClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Retrieves a list of disk types available to the specified project.
+   * Retrieves a list of disk types available to the specified project. (== suppress_warning
+   * http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -444,7 +446,8 @@ public class DiskTypeClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Retrieves a list of disk types available to the specified project.
+   * Retrieves a list of disk types available to the specified project. (== suppress_warning
+   * http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -470,7 +473,8 @@ public class DiskTypeClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Retrieves a list of disk types available to the specified project.
+   * Retrieves a list of disk types available to the specified project. (== suppress_warning
+   * http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -496,7 +500,8 @@ public class DiskTypeClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Retrieves a list of disk types available to the specified project.
+   * Retrieves a list of disk types available to the specified project. (== suppress_warning
+   * http-rest-shadowed ==)
    *
    * <p>Sample code:
    *

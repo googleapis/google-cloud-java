@@ -26,7 +26,8 @@ import javax.annotation.Nullable;
 @BetaApi
 /**
  * Request object for method compute.targetTcpProxies.get. Returns the specified TargetTcpProxy
- * resource. Gets a list of available target TCP proxies by making a list() request.
+ * resource. Gets a list of available target TCP proxies by making a list() request. (==
+ * suppress_warning http-rest-shadowed ==)
  */
 public final class GetTargetTcpProxyHttpRequest implements ApiMessage {
   private final String access_token;

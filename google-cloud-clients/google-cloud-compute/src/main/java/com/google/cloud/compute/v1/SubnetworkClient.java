@@ -153,7 +153,7 @@ public class SubnetworkClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Retrieves an aggregated list of subnetworks.
+   * Retrieves an aggregated list of subnetworks. (== suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -181,7 +181,7 @@ public class SubnetworkClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Retrieves an aggregated list of subnetworks.
+   * Retrieves an aggregated list of subnetworks. (== suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -206,7 +206,7 @@ public class SubnetworkClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Retrieves an aggregated list of subnetworks.
+   * Retrieves an aggregated list of subnetworks. (== suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -233,7 +233,7 @@ public class SubnetworkClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Retrieves an aggregated list of subnetworks.
+   * Retrieves an aggregated list of subnetworks. (== suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -260,7 +260,7 @@ public class SubnetworkClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Retrieves an aggregated list of subnetworks.
+   * Retrieves an aggregated list of subnetworks. (== suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -293,7 +293,7 @@ public class SubnetworkClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Deletes the specified subnetwork.
+   * Deletes the specified subnetwork. (== suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -319,7 +319,7 @@ public class SubnetworkClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Deletes the specified subnetwork.
+   * Deletes the specified subnetwork. (== suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -343,7 +343,7 @@ public class SubnetworkClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Deletes the specified subnetwork.
+   * Deletes the specified subnetwork. (== suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -367,7 +367,7 @@ public class SubnetworkClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Deletes the specified subnetwork.
+   * Deletes the specified subnetwork. (== suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -390,7 +390,8 @@ public class SubnetworkClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Expands the IP CIDR range of the subnetwork to a specified value.
+   * Expands the IP CIDR range of the subnetwork to a specified value. (== suppress_warning
+   * http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -422,7 +423,8 @@ public class SubnetworkClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Expands the IP CIDR range of the subnetwork to a specified value.
+   * Expands the IP CIDR range of the subnetwork to a specified value. (== suppress_warning
+   * http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -454,7 +456,8 @@ public class SubnetworkClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Expands the IP CIDR range of the subnetwork to a specified value.
+   * Expands the IP CIDR range of the subnetwork to a specified value. (== suppress_warning
+   * http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -481,7 +484,8 @@ public class SubnetworkClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Expands the IP CIDR range of the subnetwork to a specified value.
+   * Expands the IP CIDR range of the subnetwork to a specified value. (== suppress_warning
+   * http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -507,7 +511,8 @@ public class SubnetworkClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Returns the specified subnetwork. Gets a list of available subnetworks list() request.
+   * Returns the specified subnetwork. Gets a list of available subnetworks list() request. (==
+   * suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -533,7 +538,8 @@ public class SubnetworkClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Returns the specified subnetwork. Gets a list of available subnetworks list() request.
+   * Returns the specified subnetwork. Gets a list of available subnetworks list() request. (==
+   * suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -557,7 +563,8 @@ public class SubnetworkClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Returns the specified subnetwork. Gets a list of available subnetworks list() request.
+   * Returns the specified subnetwork. Gets a list of available subnetworks list() request. (==
+   * suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -581,7 +588,8 @@ public class SubnetworkClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Returns the specified subnetwork. Gets a list of available subnetworks list() request.
+   * Returns the specified subnetwork. Gets a list of available subnetworks list() request. (==
+   * suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -605,7 +613,7 @@ public class SubnetworkClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Gets the access control policy for a resource. May be empty if no such policy or resource
-   * exists.
+   * exists. (== suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -632,7 +640,7 @@ public class SubnetworkClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Gets the access control policy for a resource. May be empty if no such policy or resource
-   * exists.
+   * exists. (== suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -657,7 +665,7 @@ public class SubnetworkClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Gets the access control policy for a resource. May be empty if no such policy or resource
-   * exists.
+   * exists. (== suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -682,7 +690,7 @@ public class SubnetworkClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Gets the access control policy for a resource. May be empty if no such policy or resource
-   * exists.
+   * exists. (== suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -706,7 +714,8 @@ public class SubnetworkClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Creates a subnetwork in the specified project using the data included in the request.
+   * Creates a subnetwork in the specified project using the data included in the request. (==
+   * suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -739,7 +748,8 @@ public class SubnetworkClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Creates a subnetwork in the specified project using the data included in the request.
+   * Creates a subnetwork in the specified project using the data included in the request. (==
+   * suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -772,7 +782,8 @@ public class SubnetworkClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Creates a subnetwork in the specified project using the data included in the request.
+   * Creates a subnetwork in the specified project using the data included in the request. (==
+   * suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -798,7 +809,8 @@ public class SubnetworkClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Creates a subnetwork in the specified project using the data included in the request.
+   * Creates a subnetwork in the specified project using the data included in the request. (==
+   * suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -823,7 +835,8 @@ public class SubnetworkClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Retrieves a list of subnetworks available to the specified project.
+   * Retrieves a list of subnetworks available to the specified project. (== suppress_warning
+   * http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -850,7 +863,8 @@ public class SubnetworkClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Retrieves a list of subnetworks available to the specified project.
+   * Retrieves a list of subnetworks available to the specified project. (== suppress_warning
+   * http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -875,7 +889,8 @@ public class SubnetworkClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Retrieves a list of subnetworks available to the specified project.
+   * Retrieves a list of subnetworks available to the specified project. (== suppress_warning
+   * http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -901,7 +916,8 @@ public class SubnetworkClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Retrieves a list of subnetworks available to the specified project.
+   * Retrieves a list of subnetworks available to the specified project. (== suppress_warning
+   * http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -927,7 +943,8 @@ public class SubnetworkClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Retrieves a list of subnetworks available to the specified project.
+   * Retrieves a list of subnetworks available to the specified project. (== suppress_warning
+   * http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -961,7 +978,7 @@ public class SubnetworkClient implements BackgroundResource {
   /**
    * Retrieves an aggregated list of all usable subnetworks in the project. The list contains all of
    * the subnetworks in the project and the subnetworks that were shared by a Shared VPC host
-   * project.
+   * project. (== suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -990,7 +1007,7 @@ public class SubnetworkClient implements BackgroundResource {
   /**
    * Retrieves an aggregated list of all usable subnetworks in the project. The list contains all of
    * the subnetworks in the project and the subnetworks that were shared by a Shared VPC host
-   * project.
+   * project. (== suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -1017,7 +1034,7 @@ public class SubnetworkClient implements BackgroundResource {
   /**
    * Retrieves an aggregated list of all usable subnetworks in the project. The list contains all of
    * the subnetworks in the project and the subnetworks that were shared by a Shared VPC host
-   * project.
+   * project. (== suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -1046,7 +1063,7 @@ public class SubnetworkClient implements BackgroundResource {
   /**
    * Retrieves an aggregated list of all usable subnetworks in the project. The list contains all of
    * the subnetworks in the project and the subnetworks that were shared by a Shared VPC host
-   * project.
+   * project. (== suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -1074,7 +1091,7 @@ public class SubnetworkClient implements BackgroundResource {
   /**
    * Retrieves an aggregated list of all usable subnetworks in the project. The list contains all of
    * the subnetworks in the project and the subnetworks that were shared by a Shared VPC host
-   * project.
+   * project. (== suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -1109,7 +1126,8 @@ public class SubnetworkClient implements BackgroundResource {
   /**
    * Patches the specified subnetwork with the data included in the request. Only certain fields can
    * up updated with a patch request as indicated in the field descriptions. You must specify the
-   * current fingeprint of the subnetwork resource being patched.
+   * current fingeprint of the subnetwork resource being patched. (== suppress_warning
+   * http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -1153,7 +1171,8 @@ public class SubnetworkClient implements BackgroundResource {
   /**
    * Patches the specified subnetwork with the data included in the request. Only certain fields can
    * up updated with a patch request as indicated in the field descriptions. You must specify the
-   * current fingeprint of the subnetwork resource being patched.
+   * current fingeprint of the subnetwork resource being patched. (== suppress_warning
+   * http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -1195,7 +1214,8 @@ public class SubnetworkClient implements BackgroundResource {
   /**
    * Patches the specified subnetwork with the data included in the request. Only certain fields can
    * up updated with a patch request as indicated in the field descriptions. You must specify the
-   * current fingeprint of the subnetwork resource being patched.
+   * current fingeprint of the subnetwork resource being patched. (== suppress_warning
+   * http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -1225,7 +1245,8 @@ public class SubnetworkClient implements BackgroundResource {
   /**
    * Patches the specified subnetwork with the data included in the request. Only certain fields can
    * up updated with a patch request as indicated in the field descriptions. You must specify the
-   * current fingeprint of the subnetwork resource being patched.
+   * current fingeprint of the subnetwork resource being patched. (== suppress_warning
+   * http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -1252,7 +1273,8 @@ public class SubnetworkClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Sets the access control policy on the specified resource. Replaces any existing policy.
+   * Sets the access control policy on the specified resource. Replaces any existing policy. (==
+   * suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -1283,7 +1305,8 @@ public class SubnetworkClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Sets the access control policy on the specified resource. Replaces any existing policy.
+   * Sets the access control policy on the specified resource. Replaces any existing policy. (==
+   * suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -1313,7 +1336,8 @@ public class SubnetworkClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Sets the access control policy on the specified resource. Replaces any existing policy.
+   * Sets the access control policy on the specified resource. Replaces any existing policy. (==
+   * suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -1339,7 +1363,8 @@ public class SubnetworkClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Sets the access control policy on the specified resource. Replaces any existing policy.
+   * Sets the access control policy on the specified resource. Replaces any existing policy. (==
+   * suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -1366,7 +1391,7 @@ public class SubnetworkClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Set whether VMs in this subnet can access Google services without assigning external IP
-   * addresses through Private Google Access.
+   * addresses through Private Google Access. (== suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -1400,7 +1425,7 @@ public class SubnetworkClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Set whether VMs in this subnet can access Google services without assigning external IP
-   * addresses through Private Google Access.
+   * addresses through Private Google Access. (== suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -1434,7 +1459,7 @@ public class SubnetworkClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Set whether VMs in this subnet can access Google services without assigning external IP
-   * addresses through Private Google Access.
+   * addresses through Private Google Access. (== suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -1462,7 +1487,7 @@ public class SubnetworkClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Set whether VMs in this subnet can access Google services without assigning external IP
-   * addresses through Private Google Access.
+   * addresses through Private Google Access. (== suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -1488,7 +1513,8 @@ public class SubnetworkClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Returns permissions that a caller has on the specified resource.
+   * Returns permissions that a caller has on the specified resource. (== suppress_warning
+   * http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -1519,7 +1545,8 @@ public class SubnetworkClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Returns permissions that a caller has on the specified resource.
+   * Returns permissions that a caller has on the specified resource. (== suppress_warning
+   * http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -1549,7 +1576,8 @@ public class SubnetworkClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Returns permissions that a caller has on the specified resource.
+   * Returns permissions that a caller has on the specified resource. (== suppress_warning
+   * http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -1576,7 +1604,8 @@ public class SubnetworkClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Returns permissions that a caller has on the specified resource.
+   * Returns permissions that a caller has on the specified resource. (== suppress_warning
+   * http-rest-shadowed ==)
    *
    * <p>Sample code:
    *

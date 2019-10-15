@@ -26,7 +26,8 @@ import javax.annotation.Nullable;
 @BetaApi
 /**
  * Request object for method compute.targetHttpProxies.aggregatedList. Retrieves the list of all
- * TargetHttpProxy resources, regional and global, available to the specified project.
+ * TargetHttpProxy resources, regional and global, available to the specified project. (==
+ * suppress_warning http-rest-shadowed ==)
  */
 public final class AggregatedListTargetHttpProxiesHttpRequest implements ApiMessage {
   private final String access_token;

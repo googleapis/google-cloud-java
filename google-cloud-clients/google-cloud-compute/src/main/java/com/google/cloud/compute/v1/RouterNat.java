@@ -32,6 +32,7 @@ import javax.annotation.Nullable;
  * would auto-allocate ephemeral IPs if no external IPs are provided.
  */
 public final class RouterNat implements ApiMessage {
+  private final List<String> drainNatIps;
   private final Integer icmpIdleTimeoutSec;
   private final RouterNatLogConfig logConfig;
   private final Integer minPortsPerVm;
@@ -45,6 +46,7 @@ public final class RouterNat implements ApiMessage {
   private final Integer udpIdleTimeoutSec;
 
   private RouterNat() {
+    this.drainNatIps = null;
     this.icmpIdleTimeoutSec = null;
     this.logConfig = null;
     this.minPortsPerVm = null;
@@ -59,6 +61,7 @@ public final class RouterNat implements ApiMessage {
   }
 
   private RouterNat(
+      List<String> drainNatIps,
       Integer icmpIdleTimeoutSec,
       RouterNatLogConfig logConfig,
       Integer minPortsPerVm,
@@ -70,6 +73,7 @@ public final class RouterNat implements ApiMessage {
       Integer tcpEstablishedIdleTimeoutSec,
       Integer tcpTransitoryIdleTimeoutSec,
       Integer udpIdleTimeoutSec) {
+    this.drainNatIps = drainNatIps;
     this.icmpIdleTimeoutSec = icmpIdleTimeoutSec;
     this.logConfig = logConfig;
     this.minPortsPerVm = minPortsPerVm;
@@ -85,6 +89,9 @@ public final class RouterNat implements ApiMessage {
 
   @Override
   public Object getFieldValue(String fieldName) {
+    if ("drainNatIps".equals(fieldName)) {
+      return drainNatIps;
+    }
     if ("icmpIdleTimeoutSec".equals(fieldName)) {
       return icmpIdleTimeoutSec;
     }
@@ -137,6 +144,14 @@ public final class RouterNat implements ApiMessage {
    */
   public List<String> getFieldMask() {
     return null;
+  }
+
+  /**
+   * A list of URLs of the IP resources to be drained. These IPs must be valid static external IPs
+   * that have been assigned to the NAT. These IPs should be used for updating/patching a NAT only.
+   */
+  public List<String> getDrainNatIpsList() {
+    return drainNatIps;
   }
 
   /** Timeout (in seconds) for ICMP connections. Defaults to 30s if not set. */
@@ -243,6 +258,7 @@ public final class RouterNat implements ApiMessage {
   }
 
   public static class Builder {
+    private List<String> drainNatIps;
     private Integer icmpIdleTimeoutSec;
     private RouterNatLogConfig logConfig;
     private Integer minPortsPerVm;
@@ -259,6 +275,9 @@ public final class RouterNat implements ApiMessage {
 
     public Builder mergeFrom(RouterNat other) {
       if (other == RouterNat.getDefaultInstance()) return this;
+      if (other.getDrainNatIpsList() != null) {
+        this.drainNatIps = other.drainNatIps;
+      }
       if (other.getIcmpIdleTimeoutSec() != null) {
         this.icmpIdleTimeoutSec = other.icmpIdleTimeoutSec;
       }
@@ -296,6 +315,7 @@ public final class RouterNat implements ApiMessage {
     }
 
     Builder(RouterNat source) {
+      this.drainNatIps = source.drainNatIps;
       this.icmpIdleTimeoutSec = source.icmpIdleTimeoutSec;
       this.logConfig = source.logConfig;
       this.minPortsPerVm = source.minPortsPerVm;
@@ -307,6 +327,41 @@ public final class RouterNat implements ApiMessage {
       this.tcpEstablishedIdleTimeoutSec = source.tcpEstablishedIdleTimeoutSec;
       this.tcpTransitoryIdleTimeoutSec = source.tcpTransitoryIdleTimeoutSec;
       this.udpIdleTimeoutSec = source.udpIdleTimeoutSec;
+    }
+
+    /**
+     * A list of URLs of the IP resources to be drained. These IPs must be valid static external IPs
+     * that have been assigned to the NAT. These IPs should be used for updating/patching a NAT
+     * only.
+     */
+    public List<String> getDrainNatIpsList() {
+      return drainNatIps;
+    }
+
+    /**
+     * A list of URLs of the IP resources to be drained. These IPs must be valid static external IPs
+     * that have been assigned to the NAT. These IPs should be used for updating/patching a NAT
+     * only.
+     */
+    public Builder addAllDrainNatIps(List<String> drainNatIps) {
+      if (this.drainNatIps == null) {
+        this.drainNatIps = new LinkedList<>();
+      }
+      this.drainNatIps.addAll(drainNatIps);
+      return this;
+    }
+
+    /**
+     * A list of URLs of the IP resources to be drained. These IPs must be valid static external IPs
+     * that have been assigned to the NAT. These IPs should be used for updating/patching a NAT
+     * only.
+     */
+    public Builder addDrainNatIps(String drainNatIps) {
+      if (this.drainNatIps == null) {
+        this.drainNatIps = new LinkedList<>();
+      }
+      this.drainNatIps.add(drainNatIps);
+      return this;
     }
 
     /** Timeout (in seconds) for ICMP connections. Defaults to 30s if not set. */
@@ -519,6 +574,7 @@ public final class RouterNat implements ApiMessage {
     public RouterNat build() {
 
       return new RouterNat(
+          drainNatIps,
           icmpIdleTimeoutSec,
           logConfig,
           minPortsPerVm,
@@ -534,6 +590,7 @@ public final class RouterNat implements ApiMessage {
 
     public Builder clone() {
       Builder newBuilder = new Builder();
+      newBuilder.addAllDrainNatIps(this.drainNatIps);
       newBuilder.setIcmpIdleTimeoutSec(this.icmpIdleTimeoutSec);
       newBuilder.setLogConfig(this.logConfig);
       newBuilder.setMinPortsPerVm(this.minPortsPerVm);
@@ -552,6 +609,9 @@ public final class RouterNat implements ApiMessage {
   @Override
   public String toString() {
     return "RouterNat{"
+        + "drainNatIps="
+        + drainNatIps
+        + ", "
         + "icmpIdleTimeoutSec="
         + icmpIdleTimeoutSec
         + ", "
@@ -594,7 +654,8 @@ public final class RouterNat implements ApiMessage {
     }
     if (o instanceof RouterNat) {
       RouterNat that = (RouterNat) o;
-      return Objects.equals(this.icmpIdleTimeoutSec, that.getIcmpIdleTimeoutSec())
+      return Objects.equals(this.drainNatIps, that.getDrainNatIpsList())
+          && Objects.equals(this.icmpIdleTimeoutSec, that.getIcmpIdleTimeoutSec())
           && Objects.equals(this.logConfig, that.getLogConfig())
           && Objects.equals(this.minPortsPerVm, that.getMinPortsPerVm())
           && Objects.equals(this.name, that.getName())
@@ -614,6 +675,7 @@ public final class RouterNat implements ApiMessage {
   @Override
   public int hashCode() {
     return Objects.hash(
+        drainNatIps,
         icmpIdleTimeoutSec,
         logConfig,
         minPortsPerVm,

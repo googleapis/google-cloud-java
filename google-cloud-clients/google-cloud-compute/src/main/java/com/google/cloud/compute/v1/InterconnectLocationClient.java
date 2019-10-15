@@ -157,7 +157,7 @@ public class InterconnectLocationClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Returns the details for the specified interconnect location. Gets a list of available
-   * interconnect locations by making a list() request.
+   * interconnect locations by making a list() request. (== suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -186,7 +186,7 @@ public class InterconnectLocationClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Returns the details for the specified interconnect location. Gets a list of available
-   * interconnect locations by making a list() request.
+   * interconnect locations by making a list() request. (== suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -213,7 +213,7 @@ public class InterconnectLocationClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Returns the details for the specified interconnect location. Gets a list of available
-   * interconnect locations by making a list() request.
+   * interconnect locations by making a list() request. (== suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -239,7 +239,7 @@ public class InterconnectLocationClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Returns the details for the specified interconnect location. Gets a list of available
-   * interconnect locations by making a list() request.
+   * interconnect locations by making a list() request. (== suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -263,7 +263,8 @@ public class InterconnectLocationClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Retrieves the list of interconnect locations available to the specified project.
+   * Retrieves the list of interconnect locations available to the specified project. (==
+   * suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -291,7 +292,8 @@ public class InterconnectLocationClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Retrieves the list of interconnect locations available to the specified project.
+   * Retrieves the list of interconnect locations available to the specified project. (==
+   * suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -316,7 +318,8 @@ public class InterconnectLocationClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Retrieves the list of interconnect locations available to the specified project.
+   * Retrieves the list of interconnect locations available to the specified project. (==
+   * suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -343,7 +346,8 @@ public class InterconnectLocationClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Retrieves the list of interconnect locations available to the specified project.
+   * Retrieves the list of interconnect locations available to the specified project. (==
+   * suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -370,7 +374,8 @@ public class InterconnectLocationClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Retrieves the list of interconnect locations available to the specified project.
+   * Retrieves the list of interconnect locations available to the specified project. (==
+   * suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *

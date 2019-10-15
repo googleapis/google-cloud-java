@@ -26,7 +26,7 @@ import javax.annotation.Nullable;
 @BetaApi
 /**
  * Request object for method compute.regionDisks.resize. Resizes the specified regional persistent
- * disk.
+ * disk. (== suppress_warning http-rest-shadowed ==)
  */
 public final class ResizeRegionDiskHttpRequest implements ApiMessage {
   private final String access_token;

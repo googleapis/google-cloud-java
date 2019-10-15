@@ -17,6 +17,7 @@ package com.google.cloud.compute.v1;
 
 import com.google.api.core.BetaApi;
 import com.google.api.gax.httpjson.ApiMessage;
+import java.util.LinkedList;
 import java.util.List;
 import java.util.Objects;
 import javax.annotation.Generated;
@@ -46,21 +47,28 @@ import javax.annotation.Nullable;
  * future).
  */
 public final class LogConfigCounterOptions implements ApiMessage {
+  private final List<LogConfigCounterOptionsCustomField> customFields;
   private final String field;
   private final String metric;
 
   private LogConfigCounterOptions() {
+    this.customFields = null;
     this.field = null;
     this.metric = null;
   }
 
-  private LogConfigCounterOptions(String field, String metric) {
+  private LogConfigCounterOptions(
+      List<LogConfigCounterOptionsCustomField> customFields, String field, String metric) {
+    this.customFields = customFields;
     this.field = field;
     this.metric = metric;
   }
 
   @Override
   public Object getFieldValue(String fieldName) {
+    if ("customFields".equals(fieldName)) {
+      return customFields;
+    }
     if ("field".equals(fieldName)) {
       return field;
     }
@@ -86,6 +94,11 @@ public final class LogConfigCounterOptions implements ApiMessage {
    */
   public List<String> getFieldMask() {
     return null;
+  }
+
+  /** Custom fields. */
+  public List<LogConfigCounterOptionsCustomField> getCustomFieldsList() {
+    return customFields;
   }
 
   /** The field value to attribute. */
@@ -121,6 +134,7 @@ public final class LogConfigCounterOptions implements ApiMessage {
   }
 
   public static class Builder {
+    private List<LogConfigCounterOptionsCustomField> customFields;
     private String field;
     private String metric;
 
@@ -128,6 +142,9 @@ public final class LogConfigCounterOptions implements ApiMessage {
 
     public Builder mergeFrom(LogConfigCounterOptions other) {
       if (other == LogConfigCounterOptions.getDefaultInstance()) return this;
+      if (other.getCustomFieldsList() != null) {
+        this.customFields = other.customFields;
+      }
       if (other.getField() != null) {
         this.field = other.field;
       }
@@ -138,8 +155,32 @@ public final class LogConfigCounterOptions implements ApiMessage {
     }
 
     Builder(LogConfigCounterOptions source) {
+      this.customFields = source.customFields;
       this.field = source.field;
       this.metric = source.metric;
+    }
+
+    /** Custom fields. */
+    public List<LogConfigCounterOptionsCustomField> getCustomFieldsList() {
+      return customFields;
+    }
+
+    /** Custom fields. */
+    public Builder addAllCustomFields(List<LogConfigCounterOptionsCustomField> customFields) {
+      if (this.customFields == null) {
+        this.customFields = new LinkedList<>();
+      }
+      this.customFields.addAll(customFields);
+      return this;
+    }
+
+    /** Custom fields. */
+    public Builder addCustomFields(LogConfigCounterOptionsCustomField customFields) {
+      if (this.customFields == null) {
+        this.customFields = new LinkedList<>();
+      }
+      this.customFields.add(customFields);
+      return this;
     }
 
     /** The field value to attribute. */
@@ -166,11 +207,12 @@ public final class LogConfigCounterOptions implements ApiMessage {
 
     public LogConfigCounterOptions build() {
 
-      return new LogConfigCounterOptions(field, metric);
+      return new LogConfigCounterOptions(customFields, field, metric);
     }
 
     public Builder clone() {
       Builder newBuilder = new Builder();
+      newBuilder.addAllCustomFields(this.customFields);
       newBuilder.setField(this.field);
       newBuilder.setMetric(this.metric);
       return newBuilder;
@@ -179,7 +221,16 @@ public final class LogConfigCounterOptions implements ApiMessage {
 
   @Override
   public String toString() {
-    return "LogConfigCounterOptions{" + "field=" + field + ", " + "metric=" + metric + "}";
+    return "LogConfigCounterOptions{"
+        + "customFields="
+        + customFields
+        + ", "
+        + "field="
+        + field
+        + ", "
+        + "metric="
+        + metric
+        + "}";
   }
 
   @Override
@@ -189,7 +240,8 @@ public final class LogConfigCounterOptions implements ApiMessage {
     }
     if (o instanceof LogConfigCounterOptions) {
       LogConfigCounterOptions that = (LogConfigCounterOptions) o;
-      return Objects.equals(this.field, that.getField())
+      return Objects.equals(this.customFields, that.getCustomFieldsList())
+          && Objects.equals(this.field, that.getField())
           && Objects.equals(this.metric, that.getMetric());
     }
     return false;
@@ -197,6 +249,6 @@ public final class LogConfigCounterOptions implements ApiMessage {
 
   @Override
   public int hashCode() {
-    return Objects.hash(field, metric);
+    return Objects.hash(customFields, field, metric);
   }
 }

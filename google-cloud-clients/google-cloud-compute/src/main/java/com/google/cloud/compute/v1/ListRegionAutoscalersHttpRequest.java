@@ -26,7 +26,7 @@ import javax.annotation.Nullable;
 @BetaApi
 /**
  * Request object for method compute.regionAutoscalers.list. Retrieves a list of autoscalers
- * contained within the specified region.
+ * contained within the specified region. (== suppress_warning http-rest-shadowed ==)
  */
 public final class ListRegionAutoscalersHttpRequest implements ApiMessage {
   private final String access_token;

@@ -26,7 +26,8 @@ import javax.annotation.Nullable;
 @BetaApi
 /**
  * Request object for method compute.instances.setMachineType. Changes the machine type for a
- * stopped instance to the machine type specified in the request.
+ * stopped instance to the machine type specified in the request. (== suppress_warning
+ * http-rest-shadowed ==)
  */
 public final class SetMachineTypeInstanceHttpRequest implements ApiMessage {
   private final String access_token;

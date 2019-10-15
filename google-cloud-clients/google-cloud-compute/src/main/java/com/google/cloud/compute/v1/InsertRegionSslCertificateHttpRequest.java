@@ -26,7 +26,8 @@ import javax.annotation.Nullable;
 @BetaApi
 /**
  * Request object for method compute.regionSslCertificates.insert. Creates a SslCertificate resource
- * in the specified project and region using the data included in the request
+ * in the specified project and region using the data included in the request (== suppress_warning
+ * http-rest-shadowed ==)
  */
 public final class InsertRegionSslCertificateHttpRequest implements ApiMessage {
   private final String access_token;

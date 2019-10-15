@@ -156,7 +156,7 @@ public class RegionTargetHttpProxyClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Deletes the specified TargetHttpProxy resource.
+   * Deletes the specified TargetHttpProxy resource. (== suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -183,7 +183,7 @@ public class RegionTargetHttpProxyClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Deletes the specified TargetHttpProxy resource.
+   * Deletes the specified TargetHttpProxy resource. (== suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -209,7 +209,7 @@ public class RegionTargetHttpProxyClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Deletes the specified TargetHttpProxy resource.
+   * Deletes the specified TargetHttpProxy resource. (== suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -234,7 +234,7 @@ public class RegionTargetHttpProxyClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Deletes the specified TargetHttpProxy resource.
+   * Deletes the specified TargetHttpProxy resource. (== suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -259,7 +259,8 @@ public class RegionTargetHttpProxyClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Returns the specified TargetHttpProxy resource in the specified region. Gets a list of
-   * available target HTTP proxies by making a list() request.
+   * available target HTTP proxies by making a list() request. (== suppress_warning
+   * http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -287,7 +288,8 @@ public class RegionTargetHttpProxyClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Returns the specified TargetHttpProxy resource in the specified region. Gets a list of
-   * available target HTTP proxies by making a list() request.
+   * available target HTTP proxies by making a list() request. (== suppress_warning
+   * http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -314,7 +316,8 @@ public class RegionTargetHttpProxyClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Returns the specified TargetHttpProxy resource in the specified region. Gets a list of
-   * available target HTTP proxies by making a list() request.
+   * available target HTTP proxies by making a list() request. (== suppress_warning
+   * http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -340,7 +343,8 @@ public class RegionTargetHttpProxyClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Returns the specified TargetHttpProxy resource in the specified region. Gets a list of
-   * available target HTTP proxies by making a list() request.
+   * available target HTTP proxies by making a list() request. (== suppress_warning
+   * http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -365,7 +369,7 @@ public class RegionTargetHttpProxyClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Creates a TargetHttpProxy resource in the specified project and region using the data included
-   * in the request.
+   * in the request. (== suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -400,7 +404,7 @@ public class RegionTargetHttpProxyClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Creates a TargetHttpProxy resource in the specified project and region using the data included
-   * in the request.
+   * in the request. (== suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -435,7 +439,7 @@ public class RegionTargetHttpProxyClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Creates a TargetHttpProxy resource in the specified project and region using the data included
-   * in the request.
+   * in the request. (== suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -463,7 +467,7 @@ public class RegionTargetHttpProxyClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Creates a TargetHttpProxy resource in the specified project and region using the data included
-   * in the request.
+   * in the request. (== suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -490,7 +494,7 @@ public class RegionTargetHttpProxyClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Retrieves the list of TargetHttpProxy resources available to the specified project in the
-   * specified region.
+   * specified region. (== suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -519,7 +523,7 @@ public class RegionTargetHttpProxyClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Retrieves the list of TargetHttpProxy resources available to the specified project in the
-   * specified region.
+   * specified region. (== suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -545,7 +549,7 @@ public class RegionTargetHttpProxyClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Retrieves the list of TargetHttpProxy resources available to the specified project in the
-   * specified region.
+   * specified region. (== suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -573,7 +577,7 @@ public class RegionTargetHttpProxyClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Retrieves the list of TargetHttpProxy resources available to the specified project in the
-   * specified region.
+   * specified region. (== suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -601,7 +605,7 @@ public class RegionTargetHttpProxyClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Retrieves the list of TargetHttpProxy resources available to the specified project in the
-   * specified region.
+   * specified region. (== suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -634,7 +638,7 @@ public class RegionTargetHttpProxyClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Changes the URL map for TargetHttpProxy.
+   * Changes the URL map for TargetHttpProxy. (== suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -664,7 +668,7 @@ public class RegionTargetHttpProxyClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Changes the URL map for TargetHttpProxy.
+   * Changes the URL map for TargetHttpProxy. (== suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -694,7 +698,7 @@ public class RegionTargetHttpProxyClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Changes the URL map for TargetHttpProxy.
+   * Changes the URL map for TargetHttpProxy. (== suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -721,7 +725,7 @@ public class RegionTargetHttpProxyClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Changes the URL map for TargetHttpProxy.
+   * Changes the URL map for TargetHttpProxy. (== suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *

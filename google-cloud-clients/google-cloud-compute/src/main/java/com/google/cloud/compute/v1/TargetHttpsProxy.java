@@ -177,12 +177,12 @@ public final class TargetHttpsProxy implements ApiMessage {
   }
 
   /**
-   * Specifies the QUIC override policy for this TargetHttpsProxy resource. This determines whether
-   * the load balancer will attempt to negotiate QUIC with clients or not. Can specify one of NONE,
-   * ENABLE, or DISABLE. Specify ENABLE to always enable QUIC, Enables QUIC when set to ENABLE, and
-   * disables QUIC when set to DISABLE. If NONE is specified, uses the QUIC policy with no user
-   * overrides, which is equivalent to DISABLE. Not specifying this field is equivalent to
-   * specifying NONE.
+   * Specifies the QUIC override policy for this TargetHttpsProxy resource. This setting determines
+   * whether the load balancer attempts to negotiate QUIC with clients. You can specify NONE,
+   * ENABLE, or DISABLE. - When quic-override is set to NONE, Google manages whether QUIC is used. -
+   * When quic-override is set to ENABLE, the load balancer uses QUIC when possible. - When
+   * quic-override is set to DISABLE, the load balancer doesn't use QUIC. - If the quic-override
+   * flag is not specified, NONE is implied. -
    */
   public String getQuicOverride() {
     return quicOverride;
@@ -212,7 +212,7 @@ public final class TargetHttpsProxy implements ApiMessage {
 
   /**
    * URL of SslPolicy resource that will be associated with the TargetHttpsProxy resource. If not
-   * set, the TargetHttpsProxy resource will not have any SSL policy configured.
+   * set, the TargetHttpsProxy resource has no SSL policy configured.
    */
   public String getSslPolicy() {
     return sslPolicy;
@@ -395,24 +395,24 @@ public final class TargetHttpsProxy implements ApiMessage {
     }
 
     /**
-     * Specifies the QUIC override policy for this TargetHttpsProxy resource. This determines
-     * whether the load balancer will attempt to negotiate QUIC with clients or not. Can specify one
-     * of NONE, ENABLE, or DISABLE. Specify ENABLE to always enable QUIC, Enables QUIC when set to
-     * ENABLE, and disables QUIC when set to DISABLE. If NONE is specified, uses the QUIC policy
-     * with no user overrides, which is equivalent to DISABLE. Not specifying this field is
-     * equivalent to specifying NONE.
+     * Specifies the QUIC override policy for this TargetHttpsProxy resource. This setting
+     * determines whether the load balancer attempts to negotiate QUIC with clients. You can specify
+     * NONE, ENABLE, or DISABLE. - When quic-override is set to NONE, Google manages whether QUIC is
+     * used. - When quic-override is set to ENABLE, the load balancer uses QUIC when possible. -
+     * When quic-override is set to DISABLE, the load balancer doesn't use QUIC. - If the
+     * quic-override flag is not specified, NONE is implied. -
      */
     public String getQuicOverride() {
       return quicOverride;
     }
 
     /**
-     * Specifies the QUIC override policy for this TargetHttpsProxy resource. This determines
-     * whether the load balancer will attempt to negotiate QUIC with clients or not. Can specify one
-     * of NONE, ENABLE, or DISABLE. Specify ENABLE to always enable QUIC, Enables QUIC when set to
-     * ENABLE, and disables QUIC when set to DISABLE. If NONE is specified, uses the QUIC policy
-     * with no user overrides, which is equivalent to DISABLE. Not specifying this field is
-     * equivalent to specifying NONE.
+     * Specifies the QUIC override policy for this TargetHttpsProxy resource. This setting
+     * determines whether the load balancer attempts to negotiate QUIC with clients. You can specify
+     * NONE, ENABLE, or DISABLE. - When quic-override is set to NONE, Google manages whether QUIC is
+     * used. - When quic-override is set to ENABLE, the load balancer uses QUIC when possible. -
+     * When quic-override is set to DISABLE, the load balancer doesn't use QUIC. - If the
+     * quic-override flag is not specified, NONE is implied. -
      */
     public Builder setQuicOverride(String quicOverride) {
       this.quicOverride = quicOverride;
@@ -484,7 +484,7 @@ public final class TargetHttpsProxy implements ApiMessage {
 
     /**
      * URL of SslPolicy resource that will be associated with the TargetHttpsProxy resource. If not
-     * set, the TargetHttpsProxy resource will not have any SSL policy configured.
+     * set, the TargetHttpsProxy resource has no SSL policy configured.
      */
     public String getSslPolicy() {
       return sslPolicy;
@@ -492,7 +492,7 @@ public final class TargetHttpsProxy implements ApiMessage {
 
     /**
      * URL of SslPolicy resource that will be associated with the TargetHttpsProxy resource. If not
-     * set, the TargetHttpsProxy resource will not have any SSL policy configured.
+     * set, the TargetHttpsProxy resource has no SSL policy configured.
      */
     public Builder setSslPolicy(String sslPolicy) {
       this.sslPolicy = sslPolicy;

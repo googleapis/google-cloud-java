@@ -26,7 +26,8 @@ import javax.annotation.Nullable;
 @BetaApi
 /**
  * Request object for method compute.interconnects.getDiagnostics. Returns the
- * interconnectDiagnostics for the specified interconnect.
+ * interconnectDiagnostics for the specified interconnect. (== suppress_warning http-rest-shadowed
+ * ==)
  */
 public final class GetDiagnosticsInterconnectHttpRequest implements ApiMessage {
   private final String access_token;

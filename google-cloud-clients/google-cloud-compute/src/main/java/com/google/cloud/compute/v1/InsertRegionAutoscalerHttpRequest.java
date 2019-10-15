@@ -26,7 +26,8 @@ import javax.annotation.Nullable;
 @BetaApi
 /**
  * Request object for method compute.regionAutoscalers.insert. Creates an autoscaler in the
- * specified project using the data included in the request.
+ * specified project using the data included in the request. (== suppress_warning http-rest-shadowed
+ * ==)
  */
 public final class InsertRegionAutoscalerHttpRequest implements ApiMessage {
   private final String access_token;

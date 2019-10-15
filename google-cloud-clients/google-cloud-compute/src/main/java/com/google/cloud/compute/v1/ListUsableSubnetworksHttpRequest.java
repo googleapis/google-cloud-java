@@ -27,7 +27,8 @@ import javax.annotation.Nullable;
 /**
  * Request object for method compute.subnetworks.listUsable. Retrieves an aggregated list of all
  * usable subnetworks in the project. The list contains all of the subnetworks in the project and
- * the subnetworks that were shared by a Shared VPC host project.
+ * the subnetworks that were shared by a Shared VPC host project. (== suppress_warning
+ * http-rest-shadowed ==)
  */
 public final class ListUsableSubnetworksHttpRequest implements ApiMessage {
   private final String access_token;

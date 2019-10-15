@@ -27,7 +27,8 @@ import javax.annotation.Nullable;
 /**
  * Request object for method compute.instanceTemplates.delete. Deletes the specified instance
  * template. Deleting an instance template is permanent and cannot be undone. It is not possible to
- * delete templates that are already in use by a managed instance group.
+ * delete templates that are already in use by a managed instance group. (== suppress_warning
+ * http-rest-shadowed ==)
  */
 public final class DeleteInstanceTemplateHttpRequest implements ApiMessage {
   private final String access_token;

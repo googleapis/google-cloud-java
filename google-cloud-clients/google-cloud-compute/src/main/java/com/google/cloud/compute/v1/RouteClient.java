@@ -153,7 +153,7 @@ public class RouteClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Deletes the specified Route resource.
+   * Deletes the specified Route resource. (== suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -179,7 +179,7 @@ public class RouteClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Deletes the specified Route resource.
+   * Deletes the specified Route resource. (== suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -202,7 +202,7 @@ public class RouteClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Deletes the specified Route resource.
+   * Deletes the specified Route resource. (== suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -226,7 +226,7 @@ public class RouteClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Deletes the specified Route resource.
+   * Deletes the specified Route resource. (== suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -250,7 +250,7 @@ public class RouteClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Returns the specified Route resource. Gets a list of available routes by making a list()
-   * request.
+   * request. (== suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -275,7 +275,7 @@ public class RouteClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Returns the specified Route resource. Gets a list of available routes by making a list()
-   * request.
+   * request. (== suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -299,7 +299,7 @@ public class RouteClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Returns the specified Route resource. Gets a list of available routes by making a list()
-   * request.
+   * request. (== suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -324,7 +324,7 @@ public class RouteClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Returns the specified Route resource. Gets a list of available routes by making a list()
-   * request.
+   * request. (== suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -347,7 +347,8 @@ public class RouteClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Creates a Route resource in the specified project using the data included in the request.
+   * Creates a Route resource in the specified project using the data included in the request. (==
+   * suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -379,7 +380,8 @@ public class RouteClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Creates a Route resource in the specified project using the data included in the request.
+   * Creates a Route resource in the specified project using the data included in the request. (==
+   * suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -411,7 +413,8 @@ public class RouteClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Creates a Route resource in the specified project using the data included in the request.
+   * Creates a Route resource in the specified project using the data included in the request. (==
+   * suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -437,7 +440,8 @@ public class RouteClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Creates a Route resource in the specified project using the data included in the request.
+   * Creates a Route resource in the specified project using the data included in the request. (==
+   * suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -462,7 +466,8 @@ public class RouteClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Retrieves the list of Route resources available to the specified project.
+   * Retrieves the list of Route resources available to the specified project. (== suppress_warning
+   * http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -489,7 +494,8 @@ public class RouteClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Retrieves the list of Route resources available to the specified project.
+   * Retrieves the list of Route resources available to the specified project. (== suppress_warning
+   * http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -513,7 +519,8 @@ public class RouteClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Retrieves the list of Route resources available to the specified project.
+   * Retrieves the list of Route resources available to the specified project. (== suppress_warning
+   * http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -539,7 +546,8 @@ public class RouteClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Retrieves the list of Route resources available to the specified project.
+   * Retrieves the list of Route resources available to the specified project. (== suppress_warning
+   * http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -565,7 +573,8 @@ public class RouteClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Retrieves the list of Route resources available to the specified project.
+   * Retrieves the list of Route resources available to the specified project. (== suppress_warning
+   * http-rest-shadowed ==)
    *
    * <p>Sample code:
    *

@@ -26,7 +26,7 @@ import javax.annotation.Nullable;
 @BetaApi
 /**
  * Request object for method compute.zoneOperations.delete. Deletes the specified zone-specific
- * Operations resource.
+ * Operations resource. (== suppress_warning http-rest-shadowed ==)
  */
 public final class DeleteZoneOperationHttpRequest implements ApiMessage {
   private final String access_token;

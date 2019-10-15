@@ -156,7 +156,7 @@ public class RegionDiskTypeClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Returns the specified regional disk type. Gets a list of available disk types by making a
-   * list() request.
+   * list() request. (== suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -183,7 +183,7 @@ public class RegionDiskTypeClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Returns the specified regional disk type. Gets a list of available disk types by making a
-   * list() request.
+   * list() request. (== suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -208,7 +208,7 @@ public class RegionDiskTypeClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Returns the specified regional disk type. Gets a list of available disk types by making a
-   * list() request.
+   * list() request. (== suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -233,7 +233,7 @@ public class RegionDiskTypeClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Returns the specified regional disk type. Gets a list of available disk types by making a
-   * list() request.
+   * list() request. (== suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -256,7 +256,8 @@ public class RegionDiskTypeClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Retrieves a list of regional disk types available to the specified project.
+   * Retrieves a list of regional disk types available to the specified project. (==
+   * suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -283,7 +284,8 @@ public class RegionDiskTypeClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Retrieves a list of regional disk types available to the specified project.
+   * Retrieves a list of regional disk types available to the specified project. (==
+   * suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -308,7 +310,8 @@ public class RegionDiskTypeClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Retrieves a list of regional disk types available to the specified project.
+   * Retrieves a list of regional disk types available to the specified project. (==
+   * suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -335,7 +338,8 @@ public class RegionDiskTypeClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Retrieves a list of regional disk types available to the specified project.
+   * Retrieves a list of regional disk types available to the specified project. (==
+   * suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -361,7 +365,8 @@ public class RegionDiskTypeClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Retrieves a list of regional disk types available to the specified project.
+   * Retrieves a list of regional disk types available to the specified project. (==
+   * suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *

@@ -26,7 +26,7 @@ import javax.annotation.Nullable;
 @BetaApi
 /**
  * Request object for method compute.networkEndpointGroups.aggregatedList. Retrieves the list of
- * network endpoint groups and sorts them by zone.
+ * network endpoint groups and sorts them by zone. (== suppress_warning http-rest-shadowed ==)
  */
 public final class AggregatedListNetworkEndpointGroupsHttpRequest implements ApiMessage {
   private final String access_token;

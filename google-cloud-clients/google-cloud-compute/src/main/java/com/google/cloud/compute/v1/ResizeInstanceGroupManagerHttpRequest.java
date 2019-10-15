@@ -43,7 +43,7 @@ import javax.annotation.Nullable;
  *
  * <p>If the group is part of a backend service that has enabled connection draining, it can take up
  * to 60 seconds after the connection draining duration has elapsed before the VM instance is
- * removed or deleted.
+ * removed or deleted. (== suppress_warning http-rest-shadowed ==)
  */
 public final class ResizeInstanceGroupManagerHttpRequest implements ApiMessage {
   private final String access_token;

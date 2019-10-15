@@ -26,6 +26,7 @@ import javax.annotation.Nullable;
 @BetaApi
 /**
  * Request object for method compute.resourcePolicies.delete. Deletes the specified resource policy.
+ * (== suppress_warning http-rest-shadowed ==)
  */
 public final class DeleteResourcePolicyHttpRequest implements ApiMessage {
   private final String access_token;

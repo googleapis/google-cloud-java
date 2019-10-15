@@ -26,7 +26,7 @@ import javax.annotation.Nullable;
 @BetaApi
 /**
  * Request object for method compute.instances.simulateMaintenanceEvent. Simulates a maintenance
- * event on the instance.
+ * event on the instance. (== suppress_warning http-rest-shadowed ==)
  */
 public final class SimulateMaintenanceEventInstanceHttpRequest implements ApiMessage {
   private final String access_token;

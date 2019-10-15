@@ -153,7 +153,7 @@ public class ImageClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Deletes the specified image.
+   * Deletes the specified image. (== suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -179,7 +179,7 @@ public class ImageClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Deletes the specified image.
+   * Deletes the specified image. (== suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -202,7 +202,7 @@ public class ImageClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Deletes the specified image.
+   * Deletes the specified image. (== suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -226,7 +226,7 @@ public class ImageClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Deletes the specified image.
+   * Deletes the specified image. (== suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -251,7 +251,8 @@ public class ImageClient implements BackgroundResource {
   /**
    * Sets the deprecation status of an image.
    *
-   * <p>If an empty request body is given, clears the deprecation status instead.
+   * <p>If an empty request body is given, clears the deprecation status instead. (==
+   * suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -283,7 +284,8 @@ public class ImageClient implements BackgroundResource {
   /**
    * Sets the deprecation status of an image.
    *
-   * <p>If an empty request body is given, clears the deprecation status instead.
+   * <p>If an empty request body is given, clears the deprecation status instead. (==
+   * suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -314,7 +316,8 @@ public class ImageClient implements BackgroundResource {
   /**
    * Sets the deprecation status of an image.
    *
-   * <p>If an empty request body is given, clears the deprecation status instead.
+   * <p>If an empty request body is given, clears the deprecation status instead. (==
+   * suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -342,7 +345,8 @@ public class ImageClient implements BackgroundResource {
   /**
    * Sets the deprecation status of an image.
    *
-   * <p>If an empty request body is given, clears the deprecation status instead.
+   * <p>If an empty request body is given, clears the deprecation status instead. (==
+   * suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -367,7 +371,8 @@ public class ImageClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Returns the specified image. Gets a list of available images by making a list() request.
+   * Returns the specified image. Gets a list of available images by making a list() request. (==
+   * suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -391,7 +396,8 @@ public class ImageClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Returns the specified image. Gets a list of available images by making a list() request.
+   * Returns the specified image. Gets a list of available images by making a list() request. (==
+   * suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -414,7 +420,8 @@ public class ImageClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Returns the specified image. Gets a list of available images by making a list() request.
+   * Returns the specified image. Gets a list of available images by making a list() request. (==
+   * suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -438,7 +445,8 @@ public class ImageClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Returns the specified image. Gets a list of available images by making a list() request.
+   * Returns the specified image. Gets a list of available images by making a list() request. (==
+   * suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -461,7 +469,8 @@ public class ImageClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Returns the latest image that is part of an image family and is not deprecated.
+   * Returns the latest image that is part of an image family and is not deprecated. (==
+   * suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -487,7 +496,8 @@ public class ImageClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Returns the latest image that is part of an image family and is not deprecated.
+   * Returns the latest image that is part of an image family and is not deprecated. (==
+   * suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -511,7 +521,8 @@ public class ImageClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Returns the latest image that is part of an image family and is not deprecated.
+   * Returns the latest image that is part of an image family and is not deprecated. (==
+   * suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -535,7 +546,8 @@ public class ImageClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Returns the latest image that is part of an image family and is not deprecated.
+   * Returns the latest image that is part of an image family and is not deprecated. (==
+   * suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -559,7 +571,7 @@ public class ImageClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Gets the access control policy for a resource. May be empty if no such policy or resource
-   * exists.
+   * exists. (== suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -586,7 +598,7 @@ public class ImageClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Gets the access control policy for a resource. May be empty if no such policy or resource
-   * exists.
+   * exists. (== suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -611,7 +623,7 @@ public class ImageClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Gets the access control policy for a resource. May be empty if no such policy or resource
-   * exists.
+   * exists. (== suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -636,7 +648,7 @@ public class ImageClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Gets the access control policy for a resource. May be empty if no such policy or resource
-   * exists.
+   * exists. (== suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -659,7 +671,8 @@ public class ImageClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Creates an image in the specified project using the data included in the request.
+   * Creates an image in the specified project using the data included in the request. (==
+   * suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -694,7 +707,8 @@ public class ImageClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Creates an image in the specified project using the data included in the request.
+   * Creates an image in the specified project using the data included in the request. (==
+   * suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -728,7 +742,8 @@ public class ImageClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Creates an image in the specified project using the data included in the request.
+   * Creates an image in the specified project using the data included in the request. (==
+   * suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -756,7 +771,8 @@ public class ImageClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Creates an image in the specified project using the data included in the request.
+   * Creates an image in the specified project using the data included in the request. (==
+   * suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -787,7 +803,7 @@ public class ImageClient implements BackgroundResource {
    * images you create that belong to your project. This method does not get any images that belong
    * to other projects, including publicly-available images, like Debian 8. If you want to get a
    * list of publicly-available images, use this method to make a request to the respective image
-   * project, such as debian-cloud or windows-cloud.
+   * project, such as debian-cloud or windows-cloud. (== suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -818,7 +834,7 @@ public class ImageClient implements BackgroundResource {
    * images you create that belong to your project. This method does not get any images that belong
    * to other projects, including publicly-available images, like Debian 8. If you want to get a
    * list of publicly-available images, use this method to make a request to the respective image
-   * project, such as debian-cloud or windows-cloud.
+   * project, such as debian-cloud or windows-cloud. (== suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -846,7 +862,7 @@ public class ImageClient implements BackgroundResource {
    * images you create that belong to your project. This method does not get any images that belong
    * to other projects, including publicly-available images, like Debian 8. If you want to get a
    * list of publicly-available images, use this method to make a request to the respective image
-   * project, such as debian-cloud or windows-cloud.
+   * project, such as debian-cloud or windows-cloud. (== suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -876,7 +892,7 @@ public class ImageClient implements BackgroundResource {
    * images you create that belong to your project. This method does not get any images that belong
    * to other projects, including publicly-available images, like Debian 8. If you want to get a
    * list of publicly-available images, use this method to make a request to the respective image
-   * project, such as debian-cloud or windows-cloud.
+   * project, such as debian-cloud or windows-cloud. (== suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -906,7 +922,7 @@ public class ImageClient implements BackgroundResource {
    * images you create that belong to your project. This method does not get any images that belong
    * to other projects, including publicly-available images, like Debian 8. If you want to get a
    * list of publicly-available images, use this method to make a request to the respective image
-   * project, such as debian-cloud or windows-cloud.
+   * project, such as debian-cloud or windows-cloud. (== suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -938,7 +954,8 @@ public class ImageClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Sets the access control policy on the specified resource. Replaces any existing policy.
+   * Sets the access control policy on the specified resource. Replaces any existing policy. (==
+   * suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -969,7 +986,8 @@ public class ImageClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Sets the access control policy on the specified resource. Replaces any existing policy.
+   * Sets the access control policy on the specified resource. Replaces any existing policy. (==
+   * suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -999,7 +1017,8 @@ public class ImageClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Sets the access control policy on the specified resource. Replaces any existing policy.
+   * Sets the access control policy on the specified resource. Replaces any existing policy. (==
+   * suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -1025,7 +1044,8 @@ public class ImageClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Sets the access control policy on the specified resource. Replaces any existing policy.
+   * Sets the access control policy on the specified resource. Replaces any existing policy. (==
+   * suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -1051,7 +1071,7 @@ public class ImageClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Sets the labels on an image. To learn more about labels, read the Labeling Resources
-   * documentation.
+   * documentation. (== suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -1083,7 +1103,7 @@ public class ImageClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Sets the labels on an image. To learn more about labels, read the Labeling Resources
-   * documentation.
+   * documentation. (== suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -1114,7 +1134,7 @@ public class ImageClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Sets the labels on an image. To learn more about labels, read the Labeling Resources
-   * documentation.
+   * documentation. (== suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -1141,7 +1161,7 @@ public class ImageClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Sets the labels on an image. To learn more about labels, read the Labeling Resources
-   * documentation.
+   * documentation. (== suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -1166,7 +1186,8 @@ public class ImageClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Returns permissions that a caller has on the specified resource.
+   * Returns permissions that a caller has on the specified resource. (== suppress_warning
+   * http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -1197,7 +1218,8 @@ public class ImageClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Returns permissions that a caller has on the specified resource.
+   * Returns permissions that a caller has on the specified resource. (== suppress_warning
+   * http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -1227,7 +1249,8 @@ public class ImageClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Returns permissions that a caller has on the specified resource.
+   * Returns permissions that a caller has on the specified resource. (== suppress_warning
+   * http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -1254,7 +1277,8 @@ public class ImageClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Returns permissions that a caller has on the specified resource.
+   * Returns permissions that a caller has on the specified resource. (== suppress_warning
+   * http-rest-shadowed ==)
    *
    * <p>Sample code:
    *

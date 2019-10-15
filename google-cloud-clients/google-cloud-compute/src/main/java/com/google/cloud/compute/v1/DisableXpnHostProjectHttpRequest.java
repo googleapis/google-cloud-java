@@ -26,7 +26,7 @@ import javax.annotation.Nullable;
 @BetaApi
 /**
  * Request object for method compute.projects.disableXpnHost. Disable this project as a shared VPC
- * host project.
+ * host project. (== suppress_warning http-rest-shadowed ==)
  */
 public final class DisableXpnHostProjectHttpRequest implements ApiMessage {
   private final String access_token;

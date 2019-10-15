@@ -30,7 +30,7 @@ import javax.annotation.Nullable;
  * resource with the data included in the request. There are several restrictions and guidelines to
  * keep in mind when updating a backend service. Read Restrictions and Guidelines for more
  * information. This method supports PATCH semantics and uses the JSON merge patch format and
- * processing rules.
+ * processing rules. (== suppress_warning http-rest-shadowed ==)
  */
 public final class PatchBackendServiceHttpRequest implements ApiMessage {
   private final String access_token;
@@ -148,16 +148,12 @@ public final class PatchBackendServiceHttpRequest implements ApiMessage {
   /**
    * Represents a Backend Service resource.
    *
-   * <p>Backend services must have an associated health check. Backend services also store
-   * information about session affinity. For more information, read Backend Services.
+   * <p>A backend service contains configuration values for Google Cloud Platform load balancing
+   * services.
    *
-   * <p>A backendServices resource represents a global backend service. Global backend services are
-   * used for HTTP(S), SSL Proxy, TCP Proxy load balancing and Traffic Director.
+   * <p>For more information, read Backend Services.
    *
-   * <p>A regionBackendServices resource represents a regional backend service. Regional backend
-   * services are used for internal TCP/UDP load balancing. For more information, read Internal
-   * TCP/UDP Load balancing. (== resource_for v1.backendService ==) (== resource_for
-   * beta.backendService ==)
+   * <p>(== resource_for v1.backendService ==) (== resource_for beta.backendService ==)
    */
   public BackendService getBackendServiceResource() {
     return backendServiceResource;
@@ -348,16 +344,12 @@ public final class PatchBackendServiceHttpRequest implements ApiMessage {
     /**
      * Represents a Backend Service resource.
      *
-     * <p>Backend services must have an associated health check. Backend services also store
-     * information about session affinity. For more information, read Backend Services.
+     * <p>A backend service contains configuration values for Google Cloud Platform load balancing
+     * services.
      *
-     * <p>A backendServices resource represents a global backend service. Global backend services
-     * are used for HTTP(S), SSL Proxy, TCP Proxy load balancing and Traffic Director.
+     * <p>For more information, read Backend Services.
      *
-     * <p>A regionBackendServices resource represents a regional backend service. Regional backend
-     * services are used for internal TCP/UDP load balancing. For more information, read Internal
-     * TCP/UDP Load balancing. (== resource_for v1.backendService ==) (== resource_for
-     * beta.backendService ==)
+     * <p>(== resource_for v1.backendService ==) (== resource_for beta.backendService ==)
      */
     public BackendService getBackendServiceResource() {
       return backendServiceResource;
@@ -366,16 +358,12 @@ public final class PatchBackendServiceHttpRequest implements ApiMessage {
     /**
      * Represents a Backend Service resource.
      *
-     * <p>Backend services must have an associated health check. Backend services also store
-     * information about session affinity. For more information, read Backend Services.
+     * <p>A backend service contains configuration values for Google Cloud Platform load balancing
+     * services.
      *
-     * <p>A backendServices resource represents a global backend service. Global backend services
-     * are used for HTTP(S), SSL Proxy, TCP Proxy load balancing and Traffic Director.
+     * <p>For more information, read Backend Services.
      *
-     * <p>A regionBackendServices resource represents a regional backend service. Regional backend
-     * services are used for internal TCP/UDP load balancing. For more information, read Internal
-     * TCP/UDP Load balancing. (== resource_for v1.backendService ==) (== resource_for
-     * beta.backendService ==)
+     * <p>(== resource_for v1.backendService ==) (== resource_for beta.backendService ==)
      */
     public Builder setBackendServiceResource(BackendService backendServiceResource) {
       this.backendServiceResource = backendServiceResource;

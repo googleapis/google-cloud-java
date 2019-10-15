@@ -26,7 +26,7 @@ import javax.annotation.Nullable;
 @BetaApi
 /**
  * Request object for method compute.backendServices.setSecurityPolicy. Sets the security policy for
- * the specified backend service.
+ * the specified backend service. (== suppress_warning http-rest-shadowed ==)
  */
 public final class SetSecurityPolicyBackendServiceHttpRequest implements ApiMessage {
   private final String access_token;

@@ -26,7 +26,7 @@ import javax.annotation.Nullable;
 @BetaApi
 /**
  * Request object for method compute.sslPolicies.list. Lists all the SSL policies that have been
- * configured for the specified project.
+ * configured for the specified project. (== suppress_warning http-rest-shadowed ==)
  */
 public final class ListSslPoliciesHttpRequest implements ApiMessage {
   private final String access_token;

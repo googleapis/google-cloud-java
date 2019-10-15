@@ -26,7 +26,8 @@ import javax.annotation.Nullable;
 @BetaApi
 /**
  * Request object for method compute.sslCertificates.get. Returns the specified SslCertificate
- * resource. Gets a list of available SSL certificates by making a list() request.
+ * resource. Gets a list of available SSL certificates by making a list() request. (==
+ * suppress_warning http-rest-shadowed ==)
  */
 public final class GetSslCertificateHttpRequest implements ApiMessage {
   private final String access_token;

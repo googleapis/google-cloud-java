@@ -26,7 +26,7 @@ import javax.annotation.Nullable;
 @BetaApi
 /**
  * Request object for method compute.regionCommitments.list. Retrieves a list of commitments
- * contained within the specified region.
+ * contained within the specified region. (== suppress_warning http-rest-shadowed ==)
  */
 public final class ListRegionCommitmentsHttpRequest implements ApiMessage {
   private final String access_token;

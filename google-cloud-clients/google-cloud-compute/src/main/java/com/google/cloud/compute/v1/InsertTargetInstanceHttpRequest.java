@@ -26,7 +26,8 @@ import javax.annotation.Nullable;
 @BetaApi
 /**
  * Request object for method compute.targetInstances.insert. Creates a TargetInstance resource in
- * the specified project and zone using the data included in the request.
+ * the specified project and zone using the data included in the request. (== suppress_warning
+ * http-rest-shadowed ==)
  */
 public final class InsertTargetInstanceHttpRequest implements ApiMessage {
   private final String access_token;

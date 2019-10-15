@@ -26,7 +26,7 @@ import javax.annotation.Nullable;
 @BetaApi
 /**
  * Request object for method compute.targetVpnGateways.aggregatedList. Retrieves an aggregated list
- * of target VPN gateways.
+ * of target VPN gateways. (== suppress_warning http-rest-shadowed ==)
  */
 public final class AggregatedListTargetVpnGatewaysHttpRequest implements ApiMessage {
   private final String access_token;

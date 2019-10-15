@@ -26,7 +26,7 @@ import javax.annotation.Nullable;
 @BetaApi
 /**
  * Request object for method compute.disks.resize. Resizes the specified persistent disk. You can
- * only increase the size of the disk.
+ * only increase the size of the disk. (== suppress_warning http-rest-shadowed ==)
  */
 public final class ResizeDiskHttpRequest implements ApiMessage {
   private final String access_token;

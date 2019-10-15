@@ -26,7 +26,8 @@ import javax.annotation.Nullable;
 @BetaApi
 /**
  * Request object for method compute.instances.setLabels. Sets labels on an instance. To learn more
- * about labels, read the Labeling Resources documentation.
+ * about labels, read the Labeling Resources documentation. (== suppress_warning http-rest-shadowed
+ * ==)
  */
 public final class SetLabelsInstanceHttpRequest implements ApiMessage {
   private final String access_token;

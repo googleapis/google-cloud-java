@@ -155,7 +155,7 @@ public class TargetSslProxyClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Deletes the specified TargetSslProxy resource.
+   * Deletes the specified TargetSslProxy resource. (== suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -181,7 +181,7 @@ public class TargetSslProxyClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Deletes the specified TargetSslProxy resource.
+   * Deletes the specified TargetSslProxy resource. (== suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -205,7 +205,7 @@ public class TargetSslProxyClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Deletes the specified TargetSslProxy resource.
+   * Deletes the specified TargetSslProxy resource. (== suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -229,7 +229,7 @@ public class TargetSslProxyClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Deletes the specified TargetSslProxy resource.
+   * Deletes the specified TargetSslProxy resource. (== suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -254,7 +254,7 @@ public class TargetSslProxyClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Returns the specified TargetSslProxy resource. Gets a list of available target SSL proxies by
-   * making a list() request.
+   * making a list() request. (== suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -281,7 +281,7 @@ public class TargetSslProxyClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Returns the specified TargetSslProxy resource. Gets a list of available target SSL proxies by
-   * making a list() request.
+   * making a list() request. (== suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -306,7 +306,7 @@ public class TargetSslProxyClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Returns the specified TargetSslProxy resource. Gets a list of available target SSL proxies by
-   * making a list() request.
+   * making a list() request. (== suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -331,7 +331,7 @@ public class TargetSslProxyClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Returns the specified TargetSslProxy resource. Gets a list of available target SSL proxies by
-   * making a list() request.
+   * making a list() request. (== suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -356,7 +356,7 @@ public class TargetSslProxyClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Creates a TargetSslProxy resource in the specified project using the data included in the
-   * request.
+   * request. (== suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -391,7 +391,7 @@ public class TargetSslProxyClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Creates a TargetSslProxy resource in the specified project using the data included in the
-   * request.
+   * request. (== suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -426,7 +426,7 @@ public class TargetSslProxyClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Creates a TargetSslProxy resource in the specified project using the data included in the
-   * request.
+   * request. (== suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -453,7 +453,7 @@ public class TargetSslProxyClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Creates a TargetSslProxy resource in the specified project using the data included in the
-   * request.
+   * request. (== suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -479,7 +479,8 @@ public class TargetSslProxyClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Retrieves the list of TargetSslProxy resources available to the specified project.
+   * Retrieves the list of TargetSslProxy resources available to the specified project. (==
+   * suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -506,7 +507,8 @@ public class TargetSslProxyClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Retrieves the list of TargetSslProxy resources available to the specified project.
+   * Retrieves the list of TargetSslProxy resources available to the specified project. (==
+   * suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -531,7 +533,8 @@ public class TargetSslProxyClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Retrieves the list of TargetSslProxy resources available to the specified project.
+   * Retrieves the list of TargetSslProxy resources available to the specified project. (==
+   * suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -558,7 +561,8 @@ public class TargetSslProxyClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Retrieves the list of TargetSslProxy resources available to the specified project.
+   * Retrieves the list of TargetSslProxy resources available to the specified project. (==
+   * suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -584,7 +588,8 @@ public class TargetSslProxyClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Retrieves the list of TargetSslProxy resources available to the specified project.
+   * Retrieves the list of TargetSslProxy resources available to the specified project. (==
+   * suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -617,7 +622,7 @@ public class TargetSslProxyClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Changes the BackendService for TargetSslProxy.
+   * Changes the BackendService for TargetSslProxy. (== suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -650,7 +655,7 @@ public class TargetSslProxyClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Changes the BackendService for TargetSslProxy.
+   * Changes the BackendService for TargetSslProxy. (== suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -683,7 +688,7 @@ public class TargetSslProxyClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Changes the BackendService for TargetSslProxy.
+   * Changes the BackendService for TargetSslProxy. (== suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -710,7 +715,7 @@ public class TargetSslProxyClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Changes the BackendService for TargetSslProxy.
+   * Changes the BackendService for TargetSslProxy. (== suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -736,7 +741,7 @@ public class TargetSslProxyClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Changes the ProxyHeaderType for TargetSslProxy.
+   * Changes the ProxyHeaderType for TargetSslProxy. (== suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -768,7 +773,7 @@ public class TargetSslProxyClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Changes the ProxyHeaderType for TargetSslProxy.
+   * Changes the ProxyHeaderType for TargetSslProxy. (== suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -800,7 +805,7 @@ public class TargetSslProxyClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Changes the ProxyHeaderType for TargetSslProxy.
+   * Changes the ProxyHeaderType for TargetSslProxy. (== suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -827,7 +832,7 @@ public class TargetSslProxyClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Changes the ProxyHeaderType for TargetSslProxy.
+   * Changes the ProxyHeaderType for TargetSslProxy. (== suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -853,7 +858,7 @@ public class TargetSslProxyClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Changes SslCertificates for TargetSslProxy.
+   * Changes SslCertificates for TargetSslProxy. (== suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -886,7 +891,7 @@ public class TargetSslProxyClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Changes SslCertificates for TargetSslProxy.
+   * Changes SslCertificates for TargetSslProxy. (== suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -919,7 +924,7 @@ public class TargetSslProxyClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Changes SslCertificates for TargetSslProxy.
+   * Changes SslCertificates for TargetSslProxy. (== suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -946,7 +951,7 @@ public class TargetSslProxyClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Changes SslCertificates for TargetSslProxy.
+   * Changes SslCertificates for TargetSslProxy. (== suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -974,7 +979,8 @@ public class TargetSslProxyClient implements BackgroundResource {
   /**
    * Sets the SSL policy for TargetSslProxy. The SSL policy specifies the server-side support for
    * SSL features. This affects connections between clients and the SSL proxy load balancer. They do
-   * not affect the connection between the load balancer and the backends.
+   * not affect the connection between the load balancer and the backends. (== suppress_warning
+   * http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -1008,7 +1014,8 @@ public class TargetSslProxyClient implements BackgroundResource {
   /**
    * Sets the SSL policy for TargetSslProxy. The SSL policy specifies the server-side support for
    * SSL features. This affects connections between clients and the SSL proxy load balancer. They do
-   * not affect the connection between the load balancer and the backends.
+   * not affect the connection between the load balancer and the backends. (== suppress_warning
+   * http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -1041,7 +1048,8 @@ public class TargetSslProxyClient implements BackgroundResource {
   /**
    * Sets the SSL policy for TargetSslProxy. The SSL policy specifies the server-side support for
    * SSL features. This affects connections between clients and the SSL proxy load balancer. They do
-   * not affect the connection between the load balancer and the backends.
+   * not affect the connection between the load balancer and the backends. (== suppress_warning
+   * http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -1069,7 +1077,8 @@ public class TargetSslProxyClient implements BackgroundResource {
   /**
    * Sets the SSL policy for TargetSslProxy. The SSL policy specifies the server-side support for
    * SSL features. This affects connections between clients and the SSL proxy load balancer. They do
-   * not affect the connection between the load balancer and the backends.
+   * not affect the connection between the load balancer and the backends. (== suppress_warning
+   * http-rest-shadowed ==)
    *
    * <p>Sample code:
    *

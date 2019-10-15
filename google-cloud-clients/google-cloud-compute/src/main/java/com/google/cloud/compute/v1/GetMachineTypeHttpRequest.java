@@ -26,7 +26,8 @@ import javax.annotation.Nullable;
 @BetaApi
 /**
  * Request object for method compute.machineTypes.get. Returns the specified machine type. Gets a
- * list of available machine types by making a list() request.
+ * list of available machine types by making a list() request. (== suppress_warning
+ * http-rest-shadowed ==)
  */
 public final class GetMachineTypeHttpRequest implements ApiMessage {
   private final String access_token;

@@ -26,7 +26,8 @@ import javax.annotation.Nullable;
 @BetaApi
 /**
  * Request object for method compute.instanceGroupManagers.list. Retrieves a list of managed
- * instance groups that are contained within the specified project and zone.
+ * instance groups that are contained within the specified project and zone. (== suppress_warning
+ * http-rest-shadowed ==)
  */
 public final class ListInstanceGroupManagersHttpRequest implements ApiMessage {
   private final String access_token;

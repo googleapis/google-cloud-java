@@ -26,7 +26,8 @@ import javax.annotation.Nullable;
 @BetaApi
 /**
  * Request object for method compute.instanceTemplates.getIamPolicy. Gets the access control policy
- * for a resource. May be empty if no such policy or resource exists.
+ * for a resource. May be empty if no such policy or resource exists. (== suppress_warning
+ * http-rest-shadowed ==)
  */
 public final class GetIamPolicyInstanceTemplateHttpRequest implements ApiMessage {
   private final String access_token;

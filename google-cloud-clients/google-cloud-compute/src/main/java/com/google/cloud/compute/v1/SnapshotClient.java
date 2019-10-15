@@ -158,7 +158,7 @@ public class SnapshotClient implements BackgroundResource {
    * for deletion is needed for subsequent snapshots, the data will be moved to the next
    * corresponding snapshot.
    *
-   * <p>For more information, see Deleting snapshots.
+   * <p>For more information, see Deleting snapshots. (== suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -189,7 +189,7 @@ public class SnapshotClient implements BackgroundResource {
    * for deletion is needed for subsequent snapshots, the data will be moved to the next
    * corresponding snapshot.
    *
-   * <p>For more information, see Deleting snapshots.
+   * <p>For more information, see Deleting snapshots. (== suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -218,7 +218,7 @@ public class SnapshotClient implements BackgroundResource {
    * for deletion is needed for subsequent snapshots, the data will be moved to the next
    * corresponding snapshot.
    *
-   * <p>For more information, see Deleting snapshots.
+   * <p>For more information, see Deleting snapshots. (== suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -247,7 +247,7 @@ public class SnapshotClient implements BackgroundResource {
    * for deletion is needed for subsequent snapshots, the data will be moved to the next
    * corresponding snapshot.
    *
-   * <p>For more information, see Deleting snapshots.
+   * <p>For more information, see Deleting snapshots. (== suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -271,7 +271,7 @@ public class SnapshotClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Returns the specified Snapshot resource. Gets a list of available snapshots by making a list()
-   * request.
+   * request. (== suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -298,7 +298,7 @@ public class SnapshotClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Returns the specified Snapshot resource. Gets a list of available snapshots by making a list()
-   * request.
+   * request. (== suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -323,7 +323,7 @@ public class SnapshotClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Returns the specified Snapshot resource. Gets a list of available snapshots by making a list()
-   * request.
+   * request. (== suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -348,7 +348,7 @@ public class SnapshotClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Returns the specified Snapshot resource. Gets a list of available snapshots by making a list()
-   * request.
+   * request. (== suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -372,7 +372,7 @@ public class SnapshotClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Gets the access control policy for a resource. May be empty if no such policy or resource
-   * exists.
+   * exists. (== suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -399,7 +399,7 @@ public class SnapshotClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Gets the access control policy for a resource. May be empty if no such policy or resource
-   * exists.
+   * exists. (== suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -424,7 +424,7 @@ public class SnapshotClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Gets the access control policy for a resource. May be empty if no such policy or resource
-   * exists.
+   * exists. (== suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -449,7 +449,7 @@ public class SnapshotClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Gets the access control policy for a resource. May be empty if no such policy or resource
-   * exists.
+   * exists. (== suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -473,7 +473,8 @@ public class SnapshotClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Retrieves the list of Snapshot resources contained within the specified project.
+   * Retrieves the list of Snapshot resources contained within the specified project. (==
+   * suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -500,7 +501,8 @@ public class SnapshotClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Retrieves the list of Snapshot resources contained within the specified project.
+   * Retrieves the list of Snapshot resources contained within the specified project. (==
+   * suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -525,7 +527,8 @@ public class SnapshotClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Retrieves the list of Snapshot resources contained within the specified project.
+   * Retrieves the list of Snapshot resources contained within the specified project. (==
+   * suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -551,7 +554,8 @@ public class SnapshotClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Retrieves the list of Snapshot resources contained within the specified project.
+   * Retrieves the list of Snapshot resources contained within the specified project. (==
+   * suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -577,7 +581,8 @@ public class SnapshotClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Retrieves the list of Snapshot resources contained within the specified project.
+   * Retrieves the list of Snapshot resources contained within the specified project. (==
+   * suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -609,7 +614,8 @@ public class SnapshotClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Sets the access control policy on the specified resource. Replaces any existing policy.
+   * Sets the access control policy on the specified resource. Replaces any existing policy. (==
+   * suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -640,7 +646,8 @@ public class SnapshotClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Sets the access control policy on the specified resource. Replaces any existing policy.
+   * Sets the access control policy on the specified resource. Replaces any existing policy. (==
+   * suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -670,7 +677,8 @@ public class SnapshotClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Sets the access control policy on the specified resource. Replaces any existing policy.
+   * Sets the access control policy on the specified resource. Replaces any existing policy. (==
+   * suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -696,7 +704,8 @@ public class SnapshotClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Sets the access control policy on the specified resource. Replaces any existing policy.
+   * Sets the access control policy on the specified resource. Replaces any existing policy. (==
+   * suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -723,7 +732,7 @@ public class SnapshotClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Sets the labels on a snapshot. To learn more about labels, read the Labeling Resources
-   * documentation.
+   * documentation. (== suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -755,7 +764,7 @@ public class SnapshotClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Sets the labels on a snapshot. To learn more about labels, read the Labeling Resources
-   * documentation.
+   * documentation. (== suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -786,7 +795,7 @@ public class SnapshotClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Sets the labels on a snapshot. To learn more about labels, read the Labeling Resources
-   * documentation.
+   * documentation. (== suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -813,7 +822,7 @@ public class SnapshotClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Sets the labels on a snapshot. To learn more about labels, read the Labeling Resources
-   * documentation.
+   * documentation. (== suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -838,7 +847,8 @@ public class SnapshotClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Returns permissions that a caller has on the specified resource.
+   * Returns permissions that a caller has on the specified resource. (== suppress_warning
+   * http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -869,7 +879,8 @@ public class SnapshotClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Returns permissions that a caller has on the specified resource.
+   * Returns permissions that a caller has on the specified resource. (== suppress_warning
+   * http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -899,7 +910,8 @@ public class SnapshotClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Returns permissions that a caller has on the specified resource.
+   * Returns permissions that a caller has on the specified resource. (== suppress_warning
+   * http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -926,7 +938,8 @@ public class SnapshotClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Returns permissions that a caller has on the specified resource.
+   * Returns permissions that a caller has on the specified resource. (== suppress_warning
+   * http-rest-shadowed ==)
    *
    * <p>Sample code:
    *

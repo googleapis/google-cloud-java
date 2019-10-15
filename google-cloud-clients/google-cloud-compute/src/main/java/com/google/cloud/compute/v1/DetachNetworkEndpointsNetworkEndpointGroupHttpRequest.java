@@ -26,7 +26,8 @@ import javax.annotation.Nullable;
 @BetaApi
 /**
  * Request object for method compute.networkEndpointGroups.detachNetworkEndpoints. Detach a list of
- * network endpoints from the specified network endpoint group.
+ * network endpoints from the specified network endpoint group. (== suppress_warning
+ * http-rest-shadowed ==)
  */
 public final class DetachNetworkEndpointsNetworkEndpointGroupHttpRequest implements ApiMessage {
   private final String access_token;

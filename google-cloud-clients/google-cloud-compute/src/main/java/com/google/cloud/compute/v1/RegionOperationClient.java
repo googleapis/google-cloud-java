@@ -156,7 +156,8 @@ public class RegionOperationClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Deletes the specified region-specific Operations resource.
+   * Deletes the specified region-specific Operations resource. (== suppress_warning
+   * http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -182,7 +183,8 @@ public class RegionOperationClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Deletes the specified region-specific Operations resource.
+   * Deletes the specified region-specific Operations resource. (== suppress_warning
+   * http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -206,7 +208,8 @@ public class RegionOperationClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Deletes the specified region-specific Operations resource.
+   * Deletes the specified region-specific Operations resource. (== suppress_warning
+   * http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -230,7 +233,8 @@ public class RegionOperationClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Deletes the specified region-specific Operations resource.
+   * Deletes the specified region-specific Operations resource. (== suppress_warning
+   * http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -254,7 +258,8 @@ public class RegionOperationClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Retrieves the specified region-specific Operations resource.
+   * Retrieves the specified region-specific Operations resource. (== suppress_warning
+   * http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -280,7 +285,8 @@ public class RegionOperationClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Retrieves the specified region-specific Operations resource.
+   * Retrieves the specified region-specific Operations resource. (== suppress_warning
+   * http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -304,7 +310,8 @@ public class RegionOperationClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Retrieves the specified region-specific Operations resource.
+   * Retrieves the specified region-specific Operations resource. (== suppress_warning
+   * http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -328,7 +335,8 @@ public class RegionOperationClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Retrieves the specified region-specific Operations resource.
+   * Retrieves the specified region-specific Operations resource. (== suppress_warning
+   * http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -352,7 +360,8 @@ public class RegionOperationClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Retrieves a list of Operation resources contained within the specified region.
+   * Retrieves a list of Operation resources contained within the specified region. (==
+   * suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -379,7 +388,8 @@ public class RegionOperationClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Retrieves a list of Operation resources contained within the specified region.
+   * Retrieves a list of Operation resources contained within the specified region. (==
+   * suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -404,7 +414,8 @@ public class RegionOperationClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Retrieves a list of Operation resources contained within the specified region.
+   * Retrieves a list of Operation resources contained within the specified region. (==
+   * suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -431,7 +442,8 @@ public class RegionOperationClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Retrieves a list of Operation resources contained within the specified region.
+   * Retrieves a list of Operation resources contained within the specified region. (==
+   * suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -457,7 +469,8 @@ public class RegionOperationClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Retrieves a list of Operation resources contained within the specified region.
+   * Retrieves a list of Operation resources contained within the specified region. (==
+   * suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *

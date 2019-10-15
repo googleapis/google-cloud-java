@@ -28,16 +28,12 @@ import javax.annotation.Nullable;
 /**
  * Represents a Backend Service resource.
  *
- * <p>Backend services must have an associated health check. Backend services also store information
- * about session affinity. For more information, read Backend Services.
+ * <p>A backend service contains configuration values for Google Cloud Platform load balancing
+ * services.
  *
- * <p>A backendServices resource represents a global backend service. Global backend services are
- * used for HTTP(S), SSL Proxy, TCP Proxy load balancing and Traffic Director.
+ * <p>For more information, read Backend Services.
  *
- * <p>A regionBackendServices resource represents a regional backend service. Regional backend
- * services are used for internal TCP/UDP load balancing. For more information, read Internal
- * TCP/UDP Load balancing. (== resource_for v1.backendService ==) (== resource_for
- * beta.backendService ==)
+ * <p>(== resource_for v1.backendService ==) (== resource_for beta.backendService ==)
  */
 public final class BackendService implements ApiMessage {
   private final Integer affinityCookieTtlSec;
@@ -374,9 +370,11 @@ public final class BackendService implements ApiMessage {
   }
 
   /**
-   * Indicates whether the backend service will be used with internal or external load balancing. A
-   * backend service created for one type of load balancing cannot be used with the other. Possible
-   * values are INTERNAL and EXTERNAL.
+   * Specifies the load balancer type. Choose EXTERNAL for load balancers that receive traffic from
+   * external clients. Choose INTERNAL for Internal TCP/UDP Load Balancing. Choose INTERNAL_MANAGED
+   * for Internal HTTP(S) Load Balancing. Choose INTERNAL_SELF_MANAGED for Traffic Director. A
+   * backend service created for one type of load balancing cannot be used with another. For more
+   * information, refer to Choosing a load balancer.
    */
   public String getLoadBalancingScheme() {
     return loadBalancingScheme;
@@ -452,9 +450,9 @@ public final class BackendService implements ApiMessage {
   /**
    * The protocol this BackendService uses to communicate with backends.
    *
-   * <p>Possible values are HTTP, HTTPS, TCP, SSL, or UDP, depending on the chosen load balancer or
-   * Traffic Director configuration. Refer to the documentation for the load balancer or for Traffic
-   * director for more information.
+   * <p>Possible values are HTTP, HTTPS, HTTP2, TCP, SSL, or UDP, depending on the chosen load
+   * balancer or Traffic Director configuration. Refer to the documentation for the load balancer or
+   * for Traffic Director for more information.
    */
   public String getProtocol() {
     return protocol;
@@ -964,18 +962,22 @@ public final class BackendService implements ApiMessage {
     }
 
     /**
-     * Indicates whether the backend service will be used with internal or external load balancing.
-     * A backend service created for one type of load balancing cannot be used with the other.
-     * Possible values are INTERNAL and EXTERNAL.
+     * Specifies the load balancer type. Choose EXTERNAL for load balancers that receive traffic
+     * from external clients. Choose INTERNAL for Internal TCP/UDP Load Balancing. Choose
+     * INTERNAL_MANAGED for Internal HTTP(S) Load Balancing. Choose INTERNAL_SELF_MANAGED for
+     * Traffic Director. A backend service created for one type of load balancing cannot be used
+     * with another. For more information, refer to Choosing a load balancer.
      */
     public String getLoadBalancingScheme() {
       return loadBalancingScheme;
     }
 
     /**
-     * Indicates whether the backend service will be used with internal or external load balancing.
-     * A backend service created for one type of load balancing cannot be used with the other.
-     * Possible values are INTERNAL and EXTERNAL.
+     * Specifies the load balancer type. Choose EXTERNAL for load balancers that receive traffic
+     * from external clients. Choose INTERNAL for Internal TCP/UDP Load Balancing. Choose
+     * INTERNAL_MANAGED for Internal HTTP(S) Load Balancing. Choose INTERNAL_SELF_MANAGED for
+     * Traffic Director. A backend service created for one type of load balancing cannot be used
+     * with another. For more information, refer to Choosing a load balancer.
      */
     public Builder setLoadBalancingScheme(String loadBalancingScheme) {
       this.loadBalancingScheme = loadBalancingScheme;
@@ -1126,9 +1128,9 @@ public final class BackendService implements ApiMessage {
     /**
      * The protocol this BackendService uses to communicate with backends.
      *
-     * <p>Possible values are HTTP, HTTPS, TCP, SSL, or UDP, depending on the chosen load balancer
-     * or Traffic Director configuration. Refer to the documentation for the load balancer or for
-     * Traffic director for more information.
+     * <p>Possible values are HTTP, HTTPS, HTTP2, TCP, SSL, or UDP, depending on the chosen load
+     * balancer or Traffic Director configuration. Refer to the documentation for the load balancer
+     * or for Traffic Director for more information.
      */
     public String getProtocol() {
       return protocol;
@@ -1137,9 +1139,9 @@ public final class BackendService implements ApiMessage {
     /**
      * The protocol this BackendService uses to communicate with backends.
      *
-     * <p>Possible values are HTTP, HTTPS, TCP, SSL, or UDP, depending on the chosen load balancer
-     * or Traffic Director configuration. Refer to the documentation for the load balancer or for
-     * Traffic director for more information.
+     * <p>Possible values are HTTP, HTTPS, HTTP2, TCP, SSL, or UDP, depending on the chosen load
+     * balancer or Traffic Director configuration. Refer to the documentation for the load balancer
+     * or for Traffic Director for more information.
      */
     public Builder setProtocol(String protocol) {
       this.protocol = protocol;

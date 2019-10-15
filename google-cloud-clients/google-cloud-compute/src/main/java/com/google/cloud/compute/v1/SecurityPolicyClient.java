@@ -156,7 +156,7 @@ public class SecurityPolicyClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Inserts a rule into a security policy.
+   * Inserts a rule into a security policy. (== suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -188,7 +188,7 @@ public class SecurityPolicyClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Inserts a rule into a security policy.
+   * Inserts a rule into a security policy. (== suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -219,7 +219,7 @@ public class SecurityPolicyClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Inserts a rule into a security policy.
+   * Inserts a rule into a security policy. (== suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -245,7 +245,7 @@ public class SecurityPolicyClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Inserts a rule into a security policy.
+   * Inserts a rule into a security policy. (== suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -271,7 +271,7 @@ public class SecurityPolicyClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Deletes the specified policy.
+   * Deletes the specified policy. (== suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -297,7 +297,7 @@ public class SecurityPolicyClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Deletes the specified policy.
+   * Deletes the specified policy. (== suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -321,7 +321,7 @@ public class SecurityPolicyClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Deletes the specified policy.
+   * Deletes the specified policy. (== suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -345,7 +345,7 @@ public class SecurityPolicyClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Deletes the specified policy.
+   * Deletes the specified policy. (== suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -369,7 +369,8 @@ public class SecurityPolicyClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * List all of the ordered rules present in a single specified policy.
+   * List all of the ordered rules present in a single specified policy. (== suppress_warning
+   * http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -395,7 +396,8 @@ public class SecurityPolicyClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * List all of the ordered rules present in a single specified policy.
+   * List all of the ordered rules present in a single specified policy. (== suppress_warning
+   * http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -419,7 +421,8 @@ public class SecurityPolicyClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * List all of the ordered rules present in a single specified policy.
+   * List all of the ordered rules present in a single specified policy. (== suppress_warning
+   * http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -443,7 +446,8 @@ public class SecurityPolicyClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * List all of the ordered rules present in a single specified policy.
+   * List all of the ordered rules present in a single specified policy. (== suppress_warning
+   * http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -467,7 +471,7 @@ public class SecurityPolicyClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Gets a rule at the specified priority.
+   * Gets a rule at the specified priority. (== suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -497,7 +501,7 @@ public class SecurityPolicyClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Gets a rule at the specified priority.
+   * Gets a rule at the specified priority. (== suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -526,7 +530,7 @@ public class SecurityPolicyClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Gets a rule at the specified priority.
+   * Gets a rule at the specified priority. (== suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -552,7 +556,7 @@ public class SecurityPolicyClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Gets a rule at the specified priority.
+   * Gets a rule at the specified priority. (== suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -578,7 +582,8 @@ public class SecurityPolicyClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Creates a new policy in the specified project using the data included in the request.
+   * Creates a new policy in the specified project using the data included in the request. (==
+   * suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -611,7 +616,8 @@ public class SecurityPolicyClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Creates a new policy in the specified project using the data included in the request.
+   * Creates a new policy in the specified project using the data included in the request. (==
+   * suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -644,7 +650,8 @@ public class SecurityPolicyClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Creates a new policy in the specified project using the data included in the request.
+   * Creates a new policy in the specified project using the data included in the request. (==
+   * suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -670,7 +677,8 @@ public class SecurityPolicyClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Creates a new policy in the specified project using the data included in the request.
+   * Creates a new policy in the specified project using the data included in the request. (==
+   * suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -696,7 +704,8 @@ public class SecurityPolicyClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * List all the policies that have been configured for the specified project.
+   * List all the policies that have been configured for the specified project. (== suppress_warning
+   * http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -723,7 +732,8 @@ public class SecurityPolicyClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * List all the policies that have been configured for the specified project.
+   * List all the policies that have been configured for the specified project. (== suppress_warning
+   * http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -748,7 +758,8 @@ public class SecurityPolicyClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * List all the policies that have been configured for the specified project.
+   * List all the policies that have been configured for the specified project. (== suppress_warning
+   * http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -775,7 +786,8 @@ public class SecurityPolicyClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * List all the policies that have been configured for the specified project.
+   * List all the policies that have been configured for the specified project. (== suppress_warning
+   * http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -801,7 +813,8 @@ public class SecurityPolicyClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * List all the policies that have been configured for the specified project.
+   * List all the policies that have been configured for the specified project. (== suppress_warning
+   * http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -834,7 +847,8 @@ public class SecurityPolicyClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Patches the specified policy with the data included in the request.
+   * Patches the specified policy with the data included in the request. (== suppress_warning
+   * http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -875,7 +889,8 @@ public class SecurityPolicyClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Patches the specified policy with the data included in the request.
+   * Patches the specified policy with the data included in the request. (== suppress_warning
+   * http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -914,7 +929,8 @@ public class SecurityPolicyClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Patches the specified policy with the data included in the request.
+   * Patches the specified policy with the data included in the request. (== suppress_warning
+   * http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -942,7 +958,8 @@ public class SecurityPolicyClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Patches the specified policy with the data included in the request.
+   * Patches the specified policy with the data included in the request. (== suppress_warning
+   * http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -970,7 +987,7 @@ public class SecurityPolicyClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Patches a rule at the specified priority.
+   * Patches a rule at the specified priority. (== suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -1006,7 +1023,7 @@ public class SecurityPolicyClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Patches a rule at the specified priority.
+   * Patches a rule at the specified priority. (== suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -1040,7 +1057,7 @@ public class SecurityPolicyClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Patches a rule at the specified priority.
+   * Patches a rule at the specified priority. (== suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -1068,7 +1085,7 @@ public class SecurityPolicyClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Patches a rule at the specified priority.
+   * Patches a rule at the specified priority. (== suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -1096,7 +1113,7 @@ public class SecurityPolicyClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Deletes a rule at the specified priority.
+   * Deletes a rule at the specified priority. (== suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -1126,7 +1143,7 @@ public class SecurityPolicyClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Deletes a rule at the specified priority.
+   * Deletes a rule at the specified priority. (== suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -1155,7 +1172,7 @@ public class SecurityPolicyClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Deletes a rule at the specified priority.
+   * Deletes a rule at the specified priority. (== suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -1181,7 +1198,7 @@ public class SecurityPolicyClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Deletes a rule at the specified priority.
+   * Deletes a rule at the specified priority. (== suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *

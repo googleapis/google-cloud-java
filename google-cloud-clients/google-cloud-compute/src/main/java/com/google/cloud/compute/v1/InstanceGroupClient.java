@@ -157,7 +157,8 @@ public class InstanceGroupClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Adds a list of instances to the specified instance group. All of the instances in the instance
-   * group must be in the same network/subnetwork. Read Adding instances for more information.
+   * group must be in the same network/subnetwork. Read Adding instances for more information. (==
+   * suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -189,7 +190,8 @@ public class InstanceGroupClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Adds a list of instances to the specified instance group. All of the instances in the instance
-   * group must be in the same network/subnetwork. Read Adding instances for more information.
+   * group must be in the same network/subnetwork. Read Adding instances for more information. (==
+   * suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -221,7 +223,8 @@ public class InstanceGroupClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Adds a list of instances to the specified instance group. All of the instances in the instance
-   * group must be in the same network/subnetwork. Read Adding instances for more information.
+   * group must be in the same network/subnetwork. Read Adding instances for more information. (==
+   * suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -248,7 +251,8 @@ public class InstanceGroupClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Adds a list of instances to the specified instance group. All of the instances in the instance
-   * group must be in the same network/subnetwork. Read Adding instances for more information.
+   * group must be in the same network/subnetwork. Read Adding instances for more information. (==
+   * suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -274,7 +278,8 @@ public class InstanceGroupClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Retrieves the list of instance groups and sorts them by zone.
+   * Retrieves the list of instance groups and sorts them by zone. (== suppress_warning
+   * http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -302,7 +307,8 @@ public class InstanceGroupClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Retrieves the list of instance groups and sorts them by zone.
+   * Retrieves the list of instance groups and sorts them by zone. (== suppress_warning
+   * http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -328,7 +334,8 @@ public class InstanceGroupClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Retrieves the list of instance groups and sorts them by zone.
+   * Retrieves the list of instance groups and sorts them by zone. (== suppress_warning
+   * http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -355,7 +362,8 @@ public class InstanceGroupClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Retrieves the list of instance groups and sorts them by zone.
+   * Retrieves the list of instance groups and sorts them by zone. (== suppress_warning
+   * http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -382,7 +390,8 @@ public class InstanceGroupClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Retrieves the list of instance groups and sorts them by zone.
+   * Retrieves the list of instance groups and sorts them by zone. (== suppress_warning
+   * http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -417,7 +426,7 @@ public class InstanceGroupClient implements BackgroundResource {
   /**
    * Deletes the specified instance group. The instances in the group are not deleted. Note that
    * instance group must not belong to a backend service. Read Deleting an instance group for more
-   * information.
+   * information. (== suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -445,7 +454,7 @@ public class InstanceGroupClient implements BackgroundResource {
   /**
    * Deletes the specified instance group. The instances in the group are not deleted. Note that
    * instance group must not belong to a backend service. Read Deleting an instance group for more
-   * information.
+   * information. (== suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -471,7 +480,7 @@ public class InstanceGroupClient implements BackgroundResource {
   /**
    * Deletes the specified instance group. The instances in the group are not deleted. Note that
    * instance group must not belong to a backend service. Read Deleting an instance group for more
-   * information.
+   * information. (== suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -497,7 +506,7 @@ public class InstanceGroupClient implements BackgroundResource {
   /**
    * Deletes the specified instance group. The instances in the group are not deleted. Note that
    * instance group must not belong to a backend service. Read Deleting an instance group for more
-   * information.
+   * information. (== suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -522,7 +531,7 @@ public class InstanceGroupClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Returns the specified instance group. Gets a list of available instance groups by making a
-   * list() request.
+   * list() request. (== suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -549,7 +558,7 @@ public class InstanceGroupClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Returns the specified instance group. Gets a list of available instance groups by making a
-   * list() request.
+   * list() request. (== suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -574,7 +583,7 @@ public class InstanceGroupClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Returns the specified instance group. Gets a list of available instance groups by making a
-   * list() request.
+   * list() request. (== suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -599,7 +608,7 @@ public class InstanceGroupClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Returns the specified instance group. Gets a list of available instance groups by making a
-   * list() request.
+   * list() request. (== suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -624,7 +633,7 @@ public class InstanceGroupClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Creates an instance group in the specified project using the parameters that are included in
-   * the request.
+   * the request. (== suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -662,7 +671,7 @@ public class InstanceGroupClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Creates an instance group in the specified project using the parameters that are included in
-   * the request.
+   * the request. (== suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -699,7 +708,7 @@ public class InstanceGroupClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Creates an instance group in the specified project using the parameters that are included in
-   * the request.
+   * the request. (== suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -726,7 +735,7 @@ public class InstanceGroupClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Creates an instance group in the specified project using the parameters that are included in
-   * the request.
+   * the request. (== suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -752,7 +761,8 @@ public class InstanceGroupClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Retrieves the list of instance groups that are located in the specified project and zone.
+   * Retrieves the list of instance groups that are located in the specified project and zone. (==
+   * suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -779,7 +789,8 @@ public class InstanceGroupClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Retrieves the list of instance groups that are located in the specified project and zone.
+   * Retrieves the list of instance groups that are located in the specified project and zone. (==
+   * suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -804,7 +815,8 @@ public class InstanceGroupClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Retrieves the list of instance groups that are located in the specified project and zone.
+   * Retrieves the list of instance groups that are located in the specified project and zone. (==
+   * suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -831,7 +843,8 @@ public class InstanceGroupClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Retrieves the list of instance groups that are located in the specified project and zone.
+   * Retrieves the list of instance groups that are located in the specified project and zone. (==
+   * suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -857,7 +870,8 @@ public class InstanceGroupClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Retrieves the list of instance groups that are located in the specified project and zone.
+   * Retrieves the list of instance groups that are located in the specified project and zone. (==
+   * suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -890,7 +904,8 @@ public class InstanceGroupClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Lists the instances in the specified instance group.
+   * Lists the instances in the specified instance group. (== suppress_warning http-rest-shadowed
+   * ==)
    *
    * <p>Sample code:
    *
@@ -924,7 +939,8 @@ public class InstanceGroupClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Lists the instances in the specified instance group.
+   * Lists the instances in the specified instance group. (== suppress_warning http-rest-shadowed
+   * ==)
    *
    * <p>Sample code:
    *
@@ -958,7 +974,8 @@ public class InstanceGroupClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Lists the instances in the specified instance group.
+   * Lists the instances in the specified instance group. (== suppress_warning http-rest-shadowed
+   * ==)
    *
    * <p>Sample code:
    *
@@ -987,7 +1004,8 @@ public class InstanceGroupClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Lists the instances in the specified instance group.
+   * Lists the instances in the specified instance group. (== suppress_warning http-rest-shadowed
+   * ==)
    *
    * <p>Sample code:
    *
@@ -1016,7 +1034,8 @@ public class InstanceGroupClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Lists the instances in the specified instance group.
+   * Lists the instances in the specified instance group. (== suppress_warning http-rest-shadowed
+   * ==)
    *
    * <p>Sample code:
    *
@@ -1056,7 +1075,7 @@ public class InstanceGroupClient implements BackgroundResource {
    *
    * <p>If the group is part of a backend service that has enabled connection draining, it can take
    * up to 60 seconds after the connection draining duration before the VM instance is removed or
-   * deleted.
+   * deleted. (== suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -1094,7 +1113,7 @@ public class InstanceGroupClient implements BackgroundResource {
    *
    * <p>If the group is part of a backend service that has enabled connection draining, it can take
    * up to 60 seconds after the connection draining duration before the VM instance is removed or
-   * deleted.
+   * deleted. (== suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -1132,7 +1151,7 @@ public class InstanceGroupClient implements BackgroundResource {
    *
    * <p>If the group is part of a backend service that has enabled connection draining, it can take
    * up to 60 seconds after the connection draining duration before the VM instance is removed or
-   * deleted.
+   * deleted. (== suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -1164,7 +1183,7 @@ public class InstanceGroupClient implements BackgroundResource {
    *
    * <p>If the group is part of a backend service that has enabled connection draining, it can take
    * up to 60 seconds after the connection draining duration before the VM instance is removed or
-   * deleted.
+   * deleted. (== suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -1190,7 +1209,8 @@ public class InstanceGroupClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Sets the named ports for the specified instance group.
+   * Sets the named ports for the specified instance group. (== suppress_warning http-rest-shadowed
+   * ==)
    *
    * <p>Sample code:
    *
@@ -1222,7 +1242,8 @@ public class InstanceGroupClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Sets the named ports for the specified instance group.
+   * Sets the named ports for the specified instance group. (== suppress_warning http-rest-shadowed
+   * ==)
    *
    * <p>Sample code:
    *
@@ -1254,7 +1275,8 @@ public class InstanceGroupClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Sets the named ports for the specified instance group.
+   * Sets the named ports for the specified instance group. (== suppress_warning http-rest-shadowed
+   * ==)
    *
    * <p>Sample code:
    *
@@ -1280,7 +1302,8 @@ public class InstanceGroupClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Sets the named ports for the specified instance group.
+   * Sets the named ports for the specified instance group. (== suppress_warning http-rest-shadowed
+   * ==)
    *
    * <p>Sample code:
    *

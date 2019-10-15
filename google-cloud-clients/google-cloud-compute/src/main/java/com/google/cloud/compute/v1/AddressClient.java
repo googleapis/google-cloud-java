@@ -153,7 +153,7 @@ public class AddressClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Retrieves an aggregated list of addresses.
+   * Retrieves an aggregated list of addresses. (== suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -180,7 +180,7 @@ public class AddressClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Retrieves an aggregated list of addresses.
+   * Retrieves an aggregated list of addresses. (== suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -205,7 +205,7 @@ public class AddressClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Retrieves an aggregated list of addresses.
+   * Retrieves an aggregated list of addresses. (== suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -232,7 +232,7 @@ public class AddressClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Retrieves an aggregated list of addresses.
+   * Retrieves an aggregated list of addresses. (== suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -259,7 +259,7 @@ public class AddressClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Retrieves an aggregated list of addresses.
+   * Retrieves an aggregated list of addresses. (== suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -292,7 +292,7 @@ public class AddressClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Deletes the specified address resource.
+   * Deletes the specified address resource. (== suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -318,7 +318,7 @@ public class AddressClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Deletes the specified address resource.
+   * Deletes the specified address resource. (== suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -342,7 +342,7 @@ public class AddressClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Deletes the specified address resource.
+   * Deletes the specified address resource. (== suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -366,7 +366,7 @@ public class AddressClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Deletes the specified address resource.
+   * Deletes the specified address resource. (== suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -389,7 +389,7 @@ public class AddressClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Returns the specified address resource.
+   * Returns the specified address resource. (== suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -415,7 +415,7 @@ public class AddressClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Returns the specified address resource.
+   * Returns the specified address resource. (== suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -438,7 +438,7 @@ public class AddressClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Returns the specified address resource.
+   * Returns the specified address resource. (== suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -462,7 +462,7 @@ public class AddressClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Returns the specified address resource.
+   * Returns the specified address resource. (== suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -486,6 +486,7 @@ public class AddressClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Creates an address resource in the specified project by using the data included in the request.
+   * (== suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -527,6 +528,7 @@ public class AddressClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Creates an address resource in the specified project by using the data included in the request.
+   * (== suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -568,6 +570,7 @@ public class AddressClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Creates an address resource in the specified project by using the data included in the request.
+   * (== suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -594,6 +597,7 @@ public class AddressClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Creates an address resource in the specified project by using the data included in the request.
+   * (== suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -618,7 +622,8 @@ public class AddressClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Retrieves a list of addresses contained within the specified region.
+   * Retrieves a list of addresses contained within the specified region. (== suppress_warning
+   * http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -645,7 +650,8 @@ public class AddressClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Retrieves a list of addresses contained within the specified region.
+   * Retrieves a list of addresses contained within the specified region. (== suppress_warning
+   * http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -670,7 +676,8 @@ public class AddressClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Retrieves a list of addresses contained within the specified region.
+   * Retrieves a list of addresses contained within the specified region. (== suppress_warning
+   * http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -696,7 +703,8 @@ public class AddressClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Retrieves a list of addresses contained within the specified region.
+   * Retrieves a list of addresses contained within the specified region. (== suppress_warning
+   * http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -722,7 +730,8 @@ public class AddressClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Retrieves a list of addresses contained within the specified region.
+   * Retrieves a list of addresses contained within the specified region. (== suppress_warning
+   * http-rest-shadowed ==)
    *
    * <p>Sample code:
    *

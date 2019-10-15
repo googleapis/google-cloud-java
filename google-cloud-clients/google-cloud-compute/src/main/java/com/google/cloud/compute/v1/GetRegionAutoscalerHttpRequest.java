@@ -24,7 +24,10 @@ import javax.annotation.Nullable;
 
 @Generated("by GAPIC")
 @BetaApi
-/** Request object for method compute.regionAutoscalers.get. Returns the specified autoscaler. */
+/**
+ * Request object for method compute.regionAutoscalers.get. Returns the specified autoscaler. (==
+ * suppress_warning http-rest-shadowed ==)
+ */
 public final class GetRegionAutoscalerHttpRequest implements ApiMessage {
   private final String access_token;
   private final String autoscaler;

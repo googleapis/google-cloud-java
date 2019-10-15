@@ -26,7 +26,7 @@ import javax.annotation.Nullable;
 @BetaApi
 /**
  * Request object for method compute.networkEndpointGroups.testIamPermissions. Returns permissions
- * that a caller has on the specified resource.
+ * that a caller has on the specified resource. (== suppress_warning http-rest-shadowed ==)
  */
 public final class TestIamPermissionsNetworkEndpointGroupHttpRequest implements ApiMessage {
   private final String access_token;

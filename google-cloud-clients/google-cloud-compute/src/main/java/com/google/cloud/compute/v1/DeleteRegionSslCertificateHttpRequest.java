@@ -26,7 +26,7 @@ import javax.annotation.Nullable;
 @BetaApi
 /**
  * Request object for method compute.regionSslCertificates.delete. Deletes the specified
- * SslCertificate resource in the region.
+ * SslCertificate resource in the region. (== suppress_warning http-rest-shadowed ==)
  */
 public final class DeleteRegionSslCertificateHttpRequest implements ApiMessage {
   private final String access_token;

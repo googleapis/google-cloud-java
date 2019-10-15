@@ -26,7 +26,7 @@ import javax.annotation.Nullable;
 @BetaApi
 /**
  * Request object for method compute.acceleratorTypes.list. Retrieves a list of accelerator types
- * available to the specified project.
+ * available to the specified project. (== suppress_warning http-rest-shadowed ==)
  */
 public final class ListAcceleratorTypesHttpRequest implements ApiMessage {
   private final String access_token;

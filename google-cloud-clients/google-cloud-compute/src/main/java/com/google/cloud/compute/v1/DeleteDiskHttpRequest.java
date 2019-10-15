@@ -27,7 +27,8 @@ import javax.annotation.Nullable;
 /**
  * Request object for method compute.disks.delete. Deletes the specified persistent disk. Deleting a
  * disk removes its data permanently and is irreversible. However, deleting a disk does not delete
- * any snapshots previously made from the disk. You must separately delete snapshots.
+ * any snapshots previously made from the disk. You must separately delete snapshots. (==
+ * suppress_warning http-rest-shadowed ==)
  */
 public final class DeleteDiskHttpRequest implements ApiMessage {
   private final String access_token;

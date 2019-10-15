@@ -26,7 +26,7 @@ import javax.annotation.Nullable;
 @BetaApi
 /**
  * Request object for method compute.instanceGroupManagers.aggregatedList. Retrieves the list of
- * managed instance groups and groups them by zone.
+ * managed instance groups and groups them by zone. (== suppress_warning http-rest-shadowed ==)
  */
 public final class AggregatedListInstanceGroupManagersHttpRequest implements ApiMessage {
   private final String access_token;

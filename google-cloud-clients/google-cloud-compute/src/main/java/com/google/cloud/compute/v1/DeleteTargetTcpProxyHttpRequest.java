@@ -26,7 +26,7 @@ import javax.annotation.Nullable;
 @BetaApi
 /**
  * Request object for method compute.targetTcpProxies.delete. Deletes the specified TargetTcpProxy
- * resource.
+ * resource. (== suppress_warning http-rest-shadowed ==)
  */
 public final class DeleteTargetTcpProxyHttpRequest implements ApiMessage {
   private final String access_token;

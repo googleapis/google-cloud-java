@@ -26,6 +26,7 @@ import javax.annotation.Nullable;
 @BetaApi
 /**
  * Request object for method compute.acceleratorTypes.get. Returns the specified accelerator type.
+ * (== suppress_warning http-rest-shadowed ==)
  */
 public final class GetAcceleratorTypeHttpRequest implements ApiMessage {
   private final String acceleratorType;

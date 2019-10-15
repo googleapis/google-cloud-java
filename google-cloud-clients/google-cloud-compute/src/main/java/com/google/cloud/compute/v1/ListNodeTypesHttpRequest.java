@@ -26,7 +26,7 @@ import javax.annotation.Nullable;
 @BetaApi
 /**
  * Request object for method compute.nodeTypes.list. Retrieves a list of node types available to the
- * specified project.
+ * specified project. (== suppress_warning http-rest-shadowed ==)
  */
 public final class ListNodeTypesHttpRequest implements ApiMessage {
   private final String access_token;

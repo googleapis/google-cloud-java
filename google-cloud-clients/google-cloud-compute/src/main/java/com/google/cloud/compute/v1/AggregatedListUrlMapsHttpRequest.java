@@ -26,7 +26,8 @@ import javax.annotation.Nullable;
 @BetaApi
 /**
  * Request object for method compute.urlMaps.aggregatedList. Retrieves the list of all UrlMap
- * resources, regional and global, available to the specified project.
+ * resources, regional and global, available to the specified project. (== suppress_warning
+ * http-rest-shadowed ==)
  */
 public final class AggregatedListUrlMapsHttpRequest implements ApiMessage {
   private final String access_token;

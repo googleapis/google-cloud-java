@@ -30,28 +30,36 @@ import javax.annotation.Nullable;
  * load balancing proxies will perform.
  */
 public final class HttpRouteRule implements ApiMessage {
+  private final String description;
   private final HttpHeaderAction headerAction;
   private final List<HttpRouteRuleMatch> matchRules;
+  private final Integer priority;
   private final HttpRouteAction routeAction;
   private final String service;
   private final HttpRedirectAction urlRedirect;
 
   private HttpRouteRule() {
+    this.description = null;
     this.headerAction = null;
     this.matchRules = null;
+    this.priority = null;
     this.routeAction = null;
     this.service = null;
     this.urlRedirect = null;
   }
 
   private HttpRouteRule(
+      String description,
       HttpHeaderAction headerAction,
       List<HttpRouteRuleMatch> matchRules,
+      Integer priority,
       HttpRouteAction routeAction,
       String service,
       HttpRedirectAction urlRedirect) {
+    this.description = description;
     this.headerAction = headerAction;
     this.matchRules = matchRules;
+    this.priority = priority;
     this.routeAction = routeAction;
     this.service = service;
     this.urlRedirect = urlRedirect;
@@ -59,11 +67,17 @@ public final class HttpRouteRule implements ApiMessage {
 
   @Override
   public Object getFieldValue(String fieldName) {
+    if ("description".equals(fieldName)) {
+      return description;
+    }
     if ("headerAction".equals(fieldName)) {
       return headerAction;
     }
     if ("matchRules".equals(fieldName)) {
       return matchRules;
+    }
+    if ("priority".equals(fieldName)) {
+      return priority;
     }
     if ("routeAction".equals(fieldName)) {
       return routeAction;
@@ -96,6 +110,14 @@ public final class HttpRouteRule implements ApiMessage {
   }
 
   /**
+   * The short description conveying the intent of this routeRule. The description can have a
+   * maximum length of 1024 characters.
+   */
+  public String getDescription() {
+    return description;
+  }
+
+  /**
    * Specifies changes to request and response headers that need to take effect for the selected
    * backendService. The headerAction specified here are applied before the matching
    * pathMatchers[].headerAction and after
@@ -107,6 +129,21 @@ public final class HttpRouteRule implements ApiMessage {
 
   public List<HttpRouteRuleMatch> getMatchRulesList() {
     return matchRules;
+  }
+
+  /**
+   * For routeRules within a given pathMatcher, priority determines the order in which load balancer
+   * will interpret routeRules. RouteRules are evaluated in order of priority, from the lowest to
+   * highest number. The priority of a rule decreases as its number increases (1, 2, 3, N+1). The
+   * first rule that matches the request is applied. You cannot configure two or more routeRules
+   * with the same priority. Priority for each rule must be set to a number between 0 and 2147483647
+   * inclusive. Priority numbers can have gaps, which enable you to add or remove rules in the
+   * future without affecting the rest of the rules. For example, 1, 2, 3, 4, 5, 9, 12, 16 is a
+   * valid series of priority numbers to which you could add rules numbered from 6 to 8, 10 to 11,
+   * and 13 to 15 in the future without any impact on existing rules.
+   */
+  public Integer getPriority() {
+    return priority;
   }
 
   /**
@@ -163,8 +200,10 @@ public final class HttpRouteRule implements ApiMessage {
   }
 
   public static class Builder {
+    private String description;
     private HttpHeaderAction headerAction;
     private List<HttpRouteRuleMatch> matchRules;
+    private Integer priority;
     private HttpRouteAction routeAction;
     private String service;
     private HttpRedirectAction urlRedirect;
@@ -173,11 +212,17 @@ public final class HttpRouteRule implements ApiMessage {
 
     public Builder mergeFrom(HttpRouteRule other) {
       if (other == HttpRouteRule.getDefaultInstance()) return this;
+      if (other.getDescription() != null) {
+        this.description = other.description;
+      }
       if (other.getHeaderAction() != null) {
         this.headerAction = other.headerAction;
       }
       if (other.getMatchRulesList() != null) {
         this.matchRules = other.matchRules;
+      }
+      if (other.getPriority() != null) {
+        this.priority = other.priority;
       }
       if (other.getRouteAction() != null) {
         this.routeAction = other.routeAction;
@@ -192,11 +237,30 @@ public final class HttpRouteRule implements ApiMessage {
     }
 
     Builder(HttpRouteRule source) {
+      this.description = source.description;
       this.headerAction = source.headerAction;
       this.matchRules = source.matchRules;
+      this.priority = source.priority;
       this.routeAction = source.routeAction;
       this.service = source.service;
       this.urlRedirect = source.urlRedirect;
+    }
+
+    /**
+     * The short description conveying the intent of this routeRule. The description can have a
+     * maximum length of 1024 characters.
+     */
+    public String getDescription() {
+      return description;
+    }
+
+    /**
+     * The short description conveying the intent of this routeRule. The description can have a
+     * maximum length of 1024 characters.
+     */
+    public Builder setDescription(String description) {
+      this.description = description;
+      return this;
     }
 
     /**
@@ -237,6 +301,37 @@ public final class HttpRouteRule implements ApiMessage {
         this.matchRules = new LinkedList<>();
       }
       this.matchRules.add(matchRules);
+      return this;
+    }
+
+    /**
+     * For routeRules within a given pathMatcher, priority determines the order in which load
+     * balancer will interpret routeRules. RouteRules are evaluated in order of priority, from the
+     * lowest to highest number. The priority of a rule decreases as its number increases (1, 2, 3,
+     * N+1). The first rule that matches the request is applied. You cannot configure two or more
+     * routeRules with the same priority. Priority for each rule must be set to a number between 0
+     * and 2147483647 inclusive. Priority numbers can have gaps, which enable you to add or remove
+     * rules in the future without affecting the rest of the rules. For example, 1, 2, 3, 4, 5, 9,
+     * 12, 16 is a valid series of priority numbers to which you could add rules numbered from 6 to
+     * 8, 10 to 11, and 13 to 15 in the future without any impact on existing rules.
+     */
+    public Integer getPriority() {
+      return priority;
+    }
+
+    /**
+     * For routeRules within a given pathMatcher, priority determines the order in which load
+     * balancer will interpret routeRules. RouteRules are evaluated in order of priority, from the
+     * lowest to highest number. The priority of a rule decreases as its number increases (1, 2, 3,
+     * N+1). The first rule that matches the request is applied. You cannot configure two or more
+     * routeRules with the same priority. Priority for each rule must be set to a number between 0
+     * and 2147483647 inclusive. Priority numbers can have gaps, which enable you to add or remove
+     * rules in the future without affecting the rest of the rules. For example, 1, 2, 3, 4, 5, 9,
+     * 12, 16 is a valid series of priority numbers to which you could add rules numbered from 6 to
+     * 8, 10 to 11, and 13 to 15 in the future without any impact on existing rules.
+     */
+    public Builder setPriority(Integer priority) {
+      this.priority = priority;
       return this;
     }
 
@@ -307,13 +402,16 @@ public final class HttpRouteRule implements ApiMessage {
 
     public HttpRouteRule build() {
 
-      return new HttpRouteRule(headerAction, matchRules, routeAction, service, urlRedirect);
+      return new HttpRouteRule(
+          description, headerAction, matchRules, priority, routeAction, service, urlRedirect);
     }
 
     public Builder clone() {
       Builder newBuilder = new Builder();
+      newBuilder.setDescription(this.description);
       newBuilder.setHeaderAction(this.headerAction);
       newBuilder.addAllMatchRules(this.matchRules);
+      newBuilder.setPriority(this.priority);
       newBuilder.setRouteAction(this.routeAction);
       newBuilder.setService(this.service);
       newBuilder.setUrlRedirect(this.urlRedirect);
@@ -324,11 +422,17 @@ public final class HttpRouteRule implements ApiMessage {
   @Override
   public String toString() {
     return "HttpRouteRule{"
+        + "description="
+        + description
+        + ", "
         + "headerAction="
         + headerAction
         + ", "
         + "matchRules="
         + matchRules
+        + ", "
+        + "priority="
+        + priority
         + ", "
         + "routeAction="
         + routeAction
@@ -348,8 +452,10 @@ public final class HttpRouteRule implements ApiMessage {
     }
     if (o instanceof HttpRouteRule) {
       HttpRouteRule that = (HttpRouteRule) o;
-      return Objects.equals(this.headerAction, that.getHeaderAction())
+      return Objects.equals(this.description, that.getDescription())
+          && Objects.equals(this.headerAction, that.getHeaderAction())
           && Objects.equals(this.matchRules, that.getMatchRulesList())
+          && Objects.equals(this.priority, that.getPriority())
           && Objects.equals(this.routeAction, that.getRouteAction())
           && Objects.equals(this.service, that.getService())
           && Objects.equals(this.urlRedirect, that.getUrlRedirect());
@@ -359,6 +465,7 @@ public final class HttpRouteRule implements ApiMessage {
 
   @Override
   public int hashCode() {
-    return Objects.hash(headerAction, matchRules, routeAction, service, urlRedirect);
+    return Objects.hash(
+        description, headerAction, matchRules, priority, routeAction, service, urlRedirect);
   }
 }

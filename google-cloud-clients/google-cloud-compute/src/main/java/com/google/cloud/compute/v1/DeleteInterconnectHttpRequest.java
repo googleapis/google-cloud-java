@@ -24,7 +24,10 @@ import javax.annotation.Nullable;
 
 @Generated("by GAPIC")
 @BetaApi
-/** Request object for method compute.interconnects.delete. Deletes the specified interconnect. */
+/**
+ * Request object for method compute.interconnects.delete. Deletes the specified interconnect. (==
+ * suppress_warning http-rest-shadowed ==)
+ */
 public final class DeleteInterconnectHttpRequest implements ApiMessage {
   private final String access_token;
   private final String callback;

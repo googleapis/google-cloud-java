@@ -26,7 +26,7 @@ import javax.annotation.Nullable;
 @BetaApi
 /**
  * Request object for method compute.reservations.get. Retrieves information about the specified
- * reservation.
+ * reservation. (== suppress_warning http-rest-shadowed ==)
  */
 public final class GetReservationHttpRequest implements ApiMessage {
   private final String access_token;

@@ -26,7 +26,7 @@ import javax.annotation.Nullable;
 @BetaApi
 /**
  * Request object for method compute.machineTypes.aggregatedList. Retrieves an aggregated list of
- * machine types.
+ * machine types. (== suppress_warning http-rest-shadowed ==)
  */
 public final class AggregatedListMachineTypesHttpRequest implements ApiMessage {
   private final String access_token;

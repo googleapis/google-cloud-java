@@ -26,7 +26,8 @@ import javax.annotation.Nullable;
 @BetaApi
 /**
  * Request object for method compute.routers.preview. Preview fields auto-generated during router
- * create and update operations. Calling this method does NOT create or update the router.
+ * create and update operations. Calling this method does NOT create or update the router. (==
+ * suppress_warning http-rest-shadowed ==)
  */
 public final class PreviewRouterHttpRequest implements ApiMessage {
   private final String access_token;

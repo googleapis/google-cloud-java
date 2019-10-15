@@ -26,7 +26,8 @@ import javax.annotation.Nullable;
 @BetaApi
 /**
  * Request object for method compute.backendServices.aggregatedList. Retrieves the list of all
- * BackendService resources, regional and global, available to the specified project.
+ * BackendService resources, regional and global, available to the specified project. (==
+ * suppress_warning http-rest-shadowed ==)
  */
 public final class AggregatedListBackendServicesHttpRequest implements ApiMessage {
   private final String access_token;

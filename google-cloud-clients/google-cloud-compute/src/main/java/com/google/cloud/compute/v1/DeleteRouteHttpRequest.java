@@ -24,7 +24,10 @@ import javax.annotation.Nullable;
 
 @Generated("by GAPIC")
 @BetaApi
-/** Request object for method compute.routes.delete. Deletes the specified Route resource. */
+/**
+ * Request object for method compute.routes.delete. Deletes the specified Route resource. (==
+ * suppress_warning http-rest-shadowed ==)
+ */
 public final class DeleteRouteHttpRequest implements ApiMessage {
   private final String access_token;
   private final String callback;

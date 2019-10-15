@@ -26,7 +26,7 @@ import javax.annotation.Nullable;
 @BetaApi
 /**
  * Request object for method compute.instances.setDeletionProtection. Sets deletion protection on
- * the instance.
+ * the instance. (== suppress_warning http-rest-shadowed ==)
  */
 public final class SetDeletionProtectionInstanceHttpRequest implements ApiMessage {
   private final String access_token;

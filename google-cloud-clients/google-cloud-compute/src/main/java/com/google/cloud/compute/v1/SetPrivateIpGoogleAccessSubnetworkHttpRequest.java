@@ -27,7 +27,7 @@ import javax.annotation.Nullable;
 /**
  * Request object for method compute.subnetworks.setPrivateIpGoogleAccess. Set whether VMs in this
  * subnet can access Google services without assigning external IP addresses through Private Google
- * Access.
+ * Access. (== suppress_warning http-rest-shadowed ==)
  */
 public final class SetPrivateIpGoogleAccessSubnetworkHttpRequest implements ApiMessage {
   private final String access_token;

@@ -27,8 +27,9 @@ import javax.annotation.Nullable;
 @BetaApi
 /**
  * Request object for method compute.firewalls.update. Updates the specified firewall rule with the
- * data included in the request. The PUT method can only update the following fields of firewall
- * rule: allowed, description, sourceRanges, sourceTags, targetTags.
+ * data included in the request. Note that all fields will be updated if using PUT, even fields that
+ * are not specified. To update individual fields, please use PATCH instead. (== suppress_warning
+ * http-rest-shadowed ==)
  */
 public final class UpdateFirewallHttpRequest implements ApiMessage {
   private final String access_token;

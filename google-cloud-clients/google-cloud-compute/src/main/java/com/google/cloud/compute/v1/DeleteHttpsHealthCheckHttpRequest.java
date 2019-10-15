@@ -26,7 +26,7 @@ import javax.annotation.Nullable;
 @BetaApi
 /**
  * Request object for method compute.httpsHealthChecks.delete. Deletes the specified
- * HttpsHealthCheck resource.
+ * HttpsHealthCheck resource. (== suppress_warning http-rest-shadowed ==)
  */
 public final class DeleteHttpsHealthCheckHttpRequest implements ApiMessage {
   private final String access_token;

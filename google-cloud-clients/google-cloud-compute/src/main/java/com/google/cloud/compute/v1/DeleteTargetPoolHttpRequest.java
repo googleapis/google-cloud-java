@@ -24,7 +24,10 @@ import javax.annotation.Nullable;
 
 @Generated("by GAPIC")
 @BetaApi
-/** Request object for method compute.targetPools.delete. Deletes the specified target pool. */
+/**
+ * Request object for method compute.targetPools.delete. Deletes the specified target pool. (==
+ * suppress_warning http-rest-shadowed ==)
+ */
 public final class DeleteTargetPoolHttpRequest implements ApiMessage {
   private final String access_token;
   private final String callback;

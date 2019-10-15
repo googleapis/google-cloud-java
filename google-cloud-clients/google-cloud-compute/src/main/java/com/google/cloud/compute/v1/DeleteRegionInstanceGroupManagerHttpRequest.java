@@ -26,7 +26,8 @@ import javax.annotation.Nullable;
 @BetaApi
 /**
  * Request object for method compute.regionInstanceGroupManagers.delete. Deletes the specified
- * managed instance group and all of the instances in that group.
+ * managed instance group and all of the instances in that group. (== suppress_warning
+ * http-rest-shadowed ==)
  */
 public final class DeleteRegionInstanceGroupManagerHttpRequest implements ApiMessage {
   private final String access_token;

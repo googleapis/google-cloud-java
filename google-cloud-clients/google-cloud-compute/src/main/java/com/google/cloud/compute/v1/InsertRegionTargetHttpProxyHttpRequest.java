@@ -26,7 +26,8 @@ import javax.annotation.Nullable;
 @BetaApi
 /**
  * Request object for method compute.regionTargetHttpProxies.insert. Creates a TargetHttpProxy
- * resource in the specified project and region using the data included in the request.
+ * resource in the specified project and region using the data included in the request. (==
+ * suppress_warning http-rest-shadowed ==)
  */
 public final class InsertRegionTargetHttpProxyHttpRequest implements ApiMessage {
   private final String access_token;

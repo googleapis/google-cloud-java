@@ -154,7 +154,7 @@ public class ReservationClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Retrieves an aggregated list of reservations.
+   * Retrieves an aggregated list of reservations. (== suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -182,7 +182,7 @@ public class ReservationClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Retrieves an aggregated list of reservations.
+   * Retrieves an aggregated list of reservations. (== suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -207,7 +207,7 @@ public class ReservationClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Retrieves an aggregated list of reservations.
+   * Retrieves an aggregated list of reservations. (== suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -234,7 +234,7 @@ public class ReservationClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Retrieves an aggregated list of reservations.
+   * Retrieves an aggregated list of reservations. (== suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -261,7 +261,7 @@ public class ReservationClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Retrieves an aggregated list of reservations.
+   * Retrieves an aggregated list of reservations. (== suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -294,7 +294,7 @@ public class ReservationClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Deletes the specified reservation.
+   * Deletes the specified reservation. (== suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -320,7 +320,7 @@ public class ReservationClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Deletes the specified reservation.
+   * Deletes the specified reservation. (== suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -344,7 +344,7 @@ public class ReservationClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Deletes the specified reservation.
+   * Deletes the specified reservation. (== suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -368,7 +368,7 @@ public class ReservationClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Deletes the specified reservation.
+   * Deletes the specified reservation. (== suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -391,7 +391,8 @@ public class ReservationClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Retrieves information about the specified reservation.
+   * Retrieves information about the specified reservation. (== suppress_warning http-rest-shadowed
+   * ==)
    *
    * <p>Sample code:
    *
@@ -417,7 +418,8 @@ public class ReservationClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Retrieves information about the specified reservation.
+   * Retrieves information about the specified reservation. (== suppress_warning http-rest-shadowed
+   * ==)
    *
    * <p>Sample code:
    *
@@ -441,7 +443,8 @@ public class ReservationClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Retrieves information about the specified reservation.
+   * Retrieves information about the specified reservation. (== suppress_warning http-rest-shadowed
+   * ==)
    *
    * <p>Sample code:
    *
@@ -465,7 +468,8 @@ public class ReservationClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Retrieves information about the specified reservation.
+   * Retrieves information about the specified reservation. (== suppress_warning http-rest-shadowed
+   * ==)
    *
    * <p>Sample code:
    *
@@ -489,7 +493,7 @@ public class ReservationClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Gets the access control policy for a resource. May be empty if no such policy or resource
-   * exists.
+   * exists. (== suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -516,7 +520,7 @@ public class ReservationClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Gets the access control policy for a resource. May be empty if no such policy or resource
-   * exists.
+   * exists. (== suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -541,7 +545,7 @@ public class ReservationClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Gets the access control policy for a resource. May be empty if no such policy or resource
-   * exists.
+   * exists. (== suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -566,7 +570,7 @@ public class ReservationClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Gets the access control policy for a resource. May be empty if no such policy or resource
-   * exists.
+   * exists. (== suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -590,7 +594,8 @@ public class ReservationClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Creates a new reservation. For more information, read Reserving zonal resources.
+   * Creates a new reservation. For more information, read Reserving zonal resources. (==
+   * suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -622,7 +627,8 @@ public class ReservationClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Creates a new reservation. For more information, read Reserving zonal resources.
+   * Creates a new reservation. For more information, read Reserving zonal resources. (==
+   * suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -654,7 +660,8 @@ public class ReservationClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Creates a new reservation. For more information, read Reserving zonal resources.
+   * Creates a new reservation. For more information, read Reserving zonal resources. (==
+   * suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -680,7 +687,8 @@ public class ReservationClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Creates a new reservation. For more information, read Reserving zonal resources.
+   * Creates a new reservation. For more information, read Reserving zonal resources. (==
+   * suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -706,7 +714,7 @@ public class ReservationClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * A list of all the reservations that have been configured for the specified project in specified
-   * zone.
+   * zone. (== suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -734,7 +742,7 @@ public class ReservationClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * A list of all the reservations that have been configured for the specified project in specified
-   * zone.
+   * zone. (== suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -760,7 +768,7 @@ public class ReservationClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * A list of all the reservations that have been configured for the specified project in specified
-   * zone.
+   * zone. (== suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -787,7 +795,7 @@ public class ReservationClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * A list of all the reservations that have been configured for the specified project in specified
-   * zone.
+   * zone. (== suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -814,7 +822,7 @@ public class ReservationClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * A list of all the reservations that have been configured for the specified project in specified
-   * zone.
+   * zone. (== suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -848,7 +856,7 @@ public class ReservationClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Resizes the reservation (applicable to standalone reservations only). For more information,
-   * read Modifying reservations.
+   * read Modifying reservations. (== suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -880,7 +888,7 @@ public class ReservationClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Resizes the reservation (applicable to standalone reservations only). For more information,
-   * read Modifying reservations.
+   * read Modifying reservations. (== suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -911,7 +919,7 @@ public class ReservationClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Resizes the reservation (applicable to standalone reservations only). For more information,
-   * read Modifying reservations.
+   * read Modifying reservations. (== suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -938,7 +946,7 @@ public class ReservationClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Resizes the reservation (applicable to standalone reservations only). For more information,
-   * read Modifying reservations.
+   * read Modifying reservations. (== suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -963,7 +971,8 @@ public class ReservationClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Sets the access control policy on the specified resource. Replaces any existing policy.
+   * Sets the access control policy on the specified resource. Replaces any existing policy. (==
+   * suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -994,7 +1003,8 @@ public class ReservationClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Sets the access control policy on the specified resource. Replaces any existing policy.
+   * Sets the access control policy on the specified resource. Replaces any existing policy. (==
+   * suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -1024,7 +1034,8 @@ public class ReservationClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Sets the access control policy on the specified resource. Replaces any existing policy.
+   * Sets the access control policy on the specified resource. Replaces any existing policy. (==
+   * suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -1050,7 +1061,8 @@ public class ReservationClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Sets the access control policy on the specified resource. Replaces any existing policy.
+   * Sets the access control policy on the specified resource. Replaces any existing policy. (==
+   * suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -1076,7 +1088,8 @@ public class ReservationClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Returns permissions that a caller has on the specified resource.
+   * Returns permissions that a caller has on the specified resource. (== suppress_warning
+   * http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -1107,7 +1120,8 @@ public class ReservationClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Returns permissions that a caller has on the specified resource.
+   * Returns permissions that a caller has on the specified resource. (== suppress_warning
+   * http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -1137,7 +1151,8 @@ public class ReservationClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Returns permissions that a caller has on the specified resource.
+   * Returns permissions that a caller has on the specified resource. (== suppress_warning
+   * http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -1164,7 +1179,8 @@ public class ReservationClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Returns permissions that a caller has on the specified resource.
+   * Returns permissions that a caller has on the specified resource. (== suppress_warning
+   * http-rest-shadowed ==)
    *
    * <p>Sample code:
    *

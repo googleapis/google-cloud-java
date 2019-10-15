@@ -26,7 +26,8 @@ import javax.annotation.Nullable;
 @BetaApi
 /**
  * Request object for method compute.forwardingRules.setTarget. Changes target URL for forwarding
- * rule. The new target should be of the same type as the old target.
+ * rule. The new target should be of the same type as the old target. (== suppress_warning
+ * http-rest-shadowed ==)
  */
 public final class SetTargetForwardingRuleHttpRequest implements ApiMessage {
   private final String access_token;

@@ -26,7 +26,7 @@ import javax.annotation.Nullable;
 @BetaApi
 /**
  * Request object for method compute.instances.getShieldedInstanceIdentity. Returns the Shielded
- * Instance Identity of an instance
+ * Instance Identity of an instance (== suppress_warning http-rest-shadowed ==)
  */
 public final class GetShieldedInstanceIdentityInstanceHttpRequest implements ApiMessage {
   private final String access_token;

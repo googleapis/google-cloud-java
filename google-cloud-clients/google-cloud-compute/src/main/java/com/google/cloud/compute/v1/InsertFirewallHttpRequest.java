@@ -26,7 +26,7 @@ import javax.annotation.Nullable;
 @BetaApi
 /**
  * Request object for method compute.firewalls.insert. Creates a firewall rule in the specified
- * project using the data included in the request.
+ * project using the data included in the request. (== suppress_warning http-rest-shadowed ==)
  */
 public final class InsertFirewallHttpRequest implements ApiMessage {
   private final String access_token;

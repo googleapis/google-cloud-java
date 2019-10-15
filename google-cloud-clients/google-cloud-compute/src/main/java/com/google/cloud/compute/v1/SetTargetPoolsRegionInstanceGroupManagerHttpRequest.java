@@ -27,7 +27,7 @@ import javax.annotation.Nullable;
 /**
  * Request object for method compute.regionInstanceGroupManagers.setTargetPools. Modifies the target
  * pools to which all new instances in this group are assigned. Existing instances in the group are
- * not affected.
+ * not affected. (== suppress_warning http-rest-shadowed ==)
  */
 public final class SetTargetPoolsRegionInstanceGroupManagerHttpRequest implements ApiMessage {
   private final String access_token;

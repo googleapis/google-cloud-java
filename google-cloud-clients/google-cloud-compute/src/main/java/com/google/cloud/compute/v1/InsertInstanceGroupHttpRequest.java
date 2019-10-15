@@ -26,7 +26,8 @@ import javax.annotation.Nullable;
 @BetaApi
 /**
  * Request object for method compute.instanceGroups.insert. Creates an instance group in the
- * specified project using the parameters that are included in the request.
+ * specified project using the parameters that are included in the request. (== suppress_warning
+ * http-rest-shadowed ==)
  */
 public final class InsertInstanceGroupHttpRequest implements ApiMessage {
   private final String access_token;

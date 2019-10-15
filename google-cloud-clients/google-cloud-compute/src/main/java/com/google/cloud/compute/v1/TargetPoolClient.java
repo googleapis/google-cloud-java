@@ -154,7 +154,7 @@ public class TargetPoolClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Adds health check URLs to a target pool.
+   * Adds health check URLs to a target pool. (== suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -185,7 +185,7 @@ public class TargetPoolClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Adds health check URLs to a target pool.
+   * Adds health check URLs to a target pool. (== suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -216,7 +216,7 @@ public class TargetPoolClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Adds health check URLs to a target pool.
+   * Adds health check URLs to a target pool. (== suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -242,7 +242,7 @@ public class TargetPoolClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Adds health check URLs to a target pool.
+   * Adds health check URLs to a target pool. (== suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -268,7 +268,7 @@ public class TargetPoolClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Adds an instance to a target pool.
+   * Adds an instance to a target pool. (== suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -299,7 +299,7 @@ public class TargetPoolClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Adds an instance to a target pool.
+   * Adds an instance to a target pool. (== suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -329,7 +329,7 @@ public class TargetPoolClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Adds an instance to a target pool.
+   * Adds an instance to a target pool. (== suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -355,7 +355,7 @@ public class TargetPoolClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Adds an instance to a target pool.
+   * Adds an instance to a target pool. (== suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -381,7 +381,7 @@ public class TargetPoolClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Retrieves an aggregated list of target pools.
+   * Retrieves an aggregated list of target pools. (== suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -409,7 +409,7 @@ public class TargetPoolClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Retrieves an aggregated list of target pools.
+   * Retrieves an aggregated list of target pools. (== suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -434,7 +434,7 @@ public class TargetPoolClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Retrieves an aggregated list of target pools.
+   * Retrieves an aggregated list of target pools. (== suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -461,7 +461,7 @@ public class TargetPoolClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Retrieves an aggregated list of target pools.
+   * Retrieves an aggregated list of target pools. (== suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -488,7 +488,7 @@ public class TargetPoolClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Retrieves an aggregated list of target pools.
+   * Retrieves an aggregated list of target pools. (== suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -521,7 +521,7 @@ public class TargetPoolClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Deletes the specified target pool.
+   * Deletes the specified target pool. (== suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -547,7 +547,7 @@ public class TargetPoolClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Deletes the specified target pool.
+   * Deletes the specified target pool. (== suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -571,7 +571,7 @@ public class TargetPoolClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Deletes the specified target pool.
+   * Deletes the specified target pool. (== suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -595,7 +595,7 @@ public class TargetPoolClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Deletes the specified target pool.
+   * Deletes the specified target pool. (== suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -619,7 +619,7 @@ public class TargetPoolClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Returns the specified target pool. Gets a list of available target pools by making a list()
-   * request.
+   * request. (== suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -646,7 +646,7 @@ public class TargetPoolClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Returns the specified target pool. Gets a list of available target pools by making a list()
-   * request.
+   * request. (== suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -671,7 +671,7 @@ public class TargetPoolClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Returns the specified target pool. Gets a list of available target pools by making a list()
-   * request.
+   * request. (== suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -696,7 +696,7 @@ public class TargetPoolClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Returns the specified target pool. Gets a list of available target pools by making a list()
-   * request.
+   * request. (== suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -720,7 +720,7 @@ public class TargetPoolClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Gets the most recent health check results for each IP for the instance that is referenced by
-   * the given target pool.
+   * the given target pool. (== suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -751,7 +751,7 @@ public class TargetPoolClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Gets the most recent health check results for each IP for the instance that is referenced by
-   * the given target pool.
+   * the given target pool. (== suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -782,7 +782,7 @@ public class TargetPoolClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Gets the most recent health check results for each IP for the instance that is referenced by
-   * the given target pool.
+   * the given target pool. (== suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -810,7 +810,7 @@ public class TargetPoolClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Gets the most recent health check results for each IP for the instance that is referenced by
-   * the given target pool.
+   * the given target pool. (== suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -837,7 +837,7 @@ public class TargetPoolClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Creates a target pool in the specified project and region using the data included in the
-   * request.
+   * request. (== suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -864,7 +864,7 @@ public class TargetPoolClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Creates a target pool in the specified project and region using the data included in the
-   * request.
+   * request. (== suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -889,7 +889,7 @@ public class TargetPoolClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Creates a target pool in the specified project and region using the data included in the
-   * request.
+   * request. (== suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -914,7 +914,7 @@ public class TargetPoolClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Creates a target pool in the specified project and region using the data included in the
-   * request.
+   * request. (== suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -937,7 +937,8 @@ public class TargetPoolClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Retrieves a list of target pools available to the specified project and region.
+   * Retrieves a list of target pools available to the specified project and region. (==
+   * suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -964,7 +965,8 @@ public class TargetPoolClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Retrieves a list of target pools available to the specified project and region.
+   * Retrieves a list of target pools available to the specified project and region. (==
+   * suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -989,7 +991,8 @@ public class TargetPoolClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Retrieves a list of target pools available to the specified project and region.
+   * Retrieves a list of target pools available to the specified project and region. (==
+   * suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -1015,7 +1018,8 @@ public class TargetPoolClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Retrieves a list of target pools available to the specified project and region.
+   * Retrieves a list of target pools available to the specified project and region. (==
+   * suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -1041,7 +1045,8 @@ public class TargetPoolClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Retrieves a list of target pools available to the specified project and region.
+   * Retrieves a list of target pools available to the specified project and region. (==
+   * suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -1073,7 +1078,7 @@ public class TargetPoolClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Removes health check URL from a target pool.
+   * Removes health check URL from a target pool. (== suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -1105,7 +1110,7 @@ public class TargetPoolClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Removes health check URL from a target pool.
+   * Removes health check URL from a target pool. (== suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -1137,7 +1142,7 @@ public class TargetPoolClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Removes health check URL from a target pool.
+   * Removes health check URL from a target pool. (== suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -1164,7 +1169,7 @@ public class TargetPoolClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Removes health check URL from a target pool.
+   * Removes health check URL from a target pool. (== suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -1190,7 +1195,7 @@ public class TargetPoolClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Removes instance URL from a target pool.
+   * Removes instance URL from a target pool. (== suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -1221,7 +1226,7 @@ public class TargetPoolClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Removes instance URL from a target pool.
+   * Removes instance URL from a target pool. (== suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -1252,7 +1257,7 @@ public class TargetPoolClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Removes instance URL from a target pool.
+   * Removes instance URL from a target pool. (== suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -1278,7 +1283,7 @@ public class TargetPoolClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Removes instance URL from a target pool.
+   * Removes instance URL from a target pool. (== suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -1304,7 +1309,7 @@ public class TargetPoolClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Changes a backup target pool's configurations.
+   * Changes a backup target pool's configurations. (== suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -1339,7 +1344,7 @@ public class TargetPoolClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Changes a backup target pool's configurations.
+   * Changes a backup target pool's configurations. (== suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -1372,7 +1377,7 @@ public class TargetPoolClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Changes a backup target pool's configurations.
+   * Changes a backup target pool's configurations. (== suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -1400,7 +1405,7 @@ public class TargetPoolClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Changes a backup target pool's configurations.
+   * Changes a backup target pool's configurations. (== suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *

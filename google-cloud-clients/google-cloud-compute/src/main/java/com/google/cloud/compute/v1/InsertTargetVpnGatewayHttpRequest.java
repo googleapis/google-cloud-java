@@ -26,7 +26,8 @@ import javax.annotation.Nullable;
 @BetaApi
 /**
  * Request object for method compute.targetVpnGateways.insert. Creates a target VPN gateway in the
- * specified project and region using the data included in the request.
+ * specified project and region using the data included in the request. (== suppress_warning
+ * http-rest-shadowed ==)
  */
 public final class InsertTargetVpnGatewayHttpRequest implements ApiMessage {
   private final String access_token;

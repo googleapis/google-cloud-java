@@ -26,7 +26,7 @@ import javax.annotation.Nullable;
 @BetaApi
 /**
  * Request object for method compute.targetHttpProxies.list. Retrieves the list of TargetHttpProxy
- * resources available to the specified project.
+ * resources available to the specified project. (== suppress_warning http-rest-shadowed ==)
  */
 public final class ListTargetHttpProxiesHttpRequest implements ApiMessage {
   private final String access_token;

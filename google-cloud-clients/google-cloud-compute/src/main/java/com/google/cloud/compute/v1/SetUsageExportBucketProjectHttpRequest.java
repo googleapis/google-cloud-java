@@ -27,7 +27,8 @@ import javax.annotation.Nullable;
 /**
  * Request object for method compute.projects.setUsageExportBucket. Enables the usage export feature
  * and sets the usage export bucket where reports are stored. If you provide an empty request body
- * using this method, the usage export feature will be disabled.
+ * using this method, the usage export feature will be disabled. (== suppress_warning
+ * http-rest-shadowed ==)
  */
 public final class SetUsageExportBucketProjectHttpRequest implements ApiMessage {
   private final String access_token;

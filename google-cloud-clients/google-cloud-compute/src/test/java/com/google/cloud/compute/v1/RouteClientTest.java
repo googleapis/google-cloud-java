@@ -181,6 +181,7 @@ public class RouteClientTest {
     String name = "name3373707";
     ProjectGlobalNetworkName network = ProjectGlobalNetworkName.of("[PROJECT]", "[NETWORK]");
     String nextHopGateway = "nextHopGateway-159695614";
+    String nextHopIlb = "nextHopIlb-1948803747";
     String nextHopInstance = "nextHopInstance1467250071";
     String nextHopIp = "nextHopIp1184061353";
     String nextHopNetwork = "nextHopNetwork1872908524";
@@ -198,6 +199,7 @@ public class RouteClientTest {
             .setName(name)
             .setNetwork(network.toString())
             .setNextHopGateway(nextHopGateway)
+            .setNextHopIlb(nextHopIlb)
             .setNextHopInstance(nextHopInstance)
             .setNextHopIp(nextHopIp)
             .setNextHopNetwork(nextHopNetwork)

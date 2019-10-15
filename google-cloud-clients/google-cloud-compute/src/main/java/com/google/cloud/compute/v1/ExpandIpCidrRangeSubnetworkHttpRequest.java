@@ -26,7 +26,7 @@ import javax.annotation.Nullable;
 @BetaApi
 /**
  * Request object for method compute.subnetworks.expandIpCidrRange. Expands the IP CIDR range of the
- * subnetwork to a specified value.
+ * subnetwork to a specified value. (== suppress_warning http-rest-shadowed ==)
  */
 public final class ExpandIpCidrRangeSubnetworkHttpRequest implements ApiMessage {
   private final String access_token;

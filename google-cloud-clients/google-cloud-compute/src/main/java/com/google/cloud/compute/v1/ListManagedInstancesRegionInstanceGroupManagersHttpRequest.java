@@ -27,7 +27,8 @@ import javax.annotation.Nullable;
 /**
  * Request object for method compute.regionInstanceGroupManagers.listManagedInstances. Lists the
  * instances in the managed instance group and instances that are scheduled to be created. The list
- * includes any current actions that the group has scheduled for its instances.
+ * includes any current actions that the group has scheduled for its instances. (== suppress_warning
+ * http-rest-shadowed ==)
  */
 public final class ListManagedInstancesRegionInstanceGroupManagersHttpRequest
     implements ApiMessage {

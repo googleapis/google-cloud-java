@@ -26,7 +26,8 @@ import javax.annotation.Nullable;
 @BetaApi
 /**
  * Request object for method compute.healthChecks.aggregatedList. Retrieves the list of all
- * HealthCheck resources, regional and global, available to the specified project.
+ * HealthCheck resources, regional and global, available to the specified project. (==
+ * suppress_warning http-rest-shadowed ==)
  */
 public final class AggregatedListHealthChecksHttpRequest implements ApiMessage {
   private final String access_token;

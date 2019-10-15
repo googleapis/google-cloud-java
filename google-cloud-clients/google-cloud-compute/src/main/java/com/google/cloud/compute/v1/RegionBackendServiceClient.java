@@ -156,7 +156,8 @@ public class RegionBackendServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Deletes the specified regional BackendService resource.
+   * Deletes the specified regional BackendService resource. (== suppress_warning http-rest-shadowed
+   * ==)
    *
    * <p>Sample code:
    *
@@ -183,7 +184,8 @@ public class RegionBackendServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Deletes the specified regional BackendService resource.
+   * Deletes the specified regional BackendService resource. (== suppress_warning http-rest-shadowed
+   * ==)
    *
    * <p>Sample code:
    *
@@ -209,7 +211,8 @@ public class RegionBackendServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Deletes the specified regional BackendService resource.
+   * Deletes the specified regional BackendService resource. (== suppress_warning http-rest-shadowed
+   * ==)
    *
    * <p>Sample code:
    *
@@ -233,7 +236,8 @@ public class RegionBackendServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Deletes the specified regional BackendService resource.
+   * Deletes the specified regional BackendService resource. (== suppress_warning http-rest-shadowed
+   * ==)
    *
    * <p>Sample code:
    *
@@ -257,7 +261,8 @@ public class RegionBackendServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Returns the specified regional BackendService resource.
+   * Returns the specified regional BackendService resource. (== suppress_warning http-rest-shadowed
+   * ==)
    *
    * <p>Sample code:
    *
@@ -284,7 +289,8 @@ public class RegionBackendServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Returns the specified regional BackendService resource.
+   * Returns the specified regional BackendService resource. (== suppress_warning http-rest-shadowed
+   * ==)
    *
    * <p>Sample code:
    *
@@ -308,7 +314,8 @@ public class RegionBackendServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Returns the specified regional BackendService resource.
+   * Returns the specified regional BackendService resource. (== suppress_warning http-rest-shadowed
+   * ==)
    *
    * <p>Sample code:
    *
@@ -332,7 +339,8 @@ public class RegionBackendServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Returns the specified regional BackendService resource.
+   * Returns the specified regional BackendService resource. (== suppress_warning http-rest-shadowed
+   * ==)
    *
    * <p>Sample code:
    *
@@ -356,7 +364,8 @@ public class RegionBackendServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Gets the most recent health check results for this regional BackendService.
+   * Gets the most recent health check results for this regional BackendService. (==
+   * suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -387,7 +396,8 @@ public class RegionBackendServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Gets the most recent health check results for this regional BackendService.
+   * Gets the most recent health check results for this regional BackendService. (==
+   * suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -417,7 +427,8 @@ public class RegionBackendServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Gets the most recent health check results for this regional BackendService.
+   * Gets the most recent health check results for this regional BackendService. (==
+   * suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -444,7 +455,8 @@ public class RegionBackendServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Gets the most recent health check results for this regional BackendService.
+   * Gets the most recent health check results for this regional BackendService. (==
+   * suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -472,7 +484,8 @@ public class RegionBackendServiceClient implements BackgroundResource {
   /**
    * Creates a regional BackendService resource in the specified project using the data included in
    * the request. There are several restrictions and guidelines to keep in mind when creating a
-   * regional backend service. Read Restrictions and Guidelines for more information.
+   * regional backend service. Read Restrictions and Guidelines for more information. (==
+   * suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -486,14 +499,10 @@ public class RegionBackendServiceClient implements BackgroundResource {
    *
    * @param region Name of the region scoping this request.
    * @param backendServiceResource Represents a Backend Service resource.
-   *     <p>Backend services must have an associated health check. Backend services also store
-   *     information about session affinity. For more information, read Backend Services.
-   *     <p>A backendServices resource represents a global backend service. Global backend services
-   *     are used for HTTP(S), SSL Proxy, TCP Proxy load balancing and Traffic Director.
-   *     <p>A regionBackendServices resource represents a regional backend service. Regional backend
-   *     services are used for internal TCP/UDP load balancing. For more information, read Internal
-   *     TCP/UDP Load balancing. (== resource_for v1.backendService ==) (== resource_for
-   *     beta.backendService ==)
+   *     <p>A backend service contains configuration values for Google Cloud Platform load balancing
+   *     services.
+   *     <p>For more information, read Backend Services.
+   *     <p>(== resource_for v1.backendService ==) (== resource_for beta.backendService ==)
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
@@ -512,7 +521,8 @@ public class RegionBackendServiceClient implements BackgroundResource {
   /**
    * Creates a regional BackendService resource in the specified project using the data included in
    * the request. There are several restrictions and guidelines to keep in mind when creating a
-   * regional backend service. Read Restrictions and Guidelines for more information.
+   * regional backend service. Read Restrictions and Guidelines for more information. (==
+   * suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -526,14 +536,10 @@ public class RegionBackendServiceClient implements BackgroundResource {
    *
    * @param region Name of the region scoping this request.
    * @param backendServiceResource Represents a Backend Service resource.
-   *     <p>Backend services must have an associated health check. Backend services also store
-   *     information about session affinity. For more information, read Backend Services.
-   *     <p>A backendServices resource represents a global backend service. Global backend services
-   *     are used for HTTP(S), SSL Proxy, TCP Proxy load balancing and Traffic Director.
-   *     <p>A regionBackendServices resource represents a regional backend service. Regional backend
-   *     services are used for internal TCP/UDP load balancing. For more information, read Internal
-   *     TCP/UDP Load balancing. (== resource_for v1.backendService ==) (== resource_for
-   *     beta.backendService ==)
+   *     <p>A backend service contains configuration values for Google Cloud Platform load balancing
+   *     services.
+   *     <p>For more information, read Backend Services.
+   *     <p>(== resource_for v1.backendService ==) (== resource_for beta.backendService ==)
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
@@ -552,7 +558,8 @@ public class RegionBackendServiceClient implements BackgroundResource {
   /**
    * Creates a regional BackendService resource in the specified project using the data included in
    * the request. There are several restrictions and guidelines to keep in mind when creating a
-   * regional backend service. Read Restrictions and Guidelines for more information.
+   * regional backend service. Read Restrictions and Guidelines for more information. (==
+   * suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -580,7 +587,8 @@ public class RegionBackendServiceClient implements BackgroundResource {
   /**
    * Creates a regional BackendService resource in the specified project using the data included in
    * the request. There are several restrictions and guidelines to keep in mind when creating a
-   * regional backend service. Read Restrictions and Guidelines for more information.
+   * regional backend service. Read Restrictions and Guidelines for more information. (==
+   * suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -607,7 +615,7 @@ public class RegionBackendServiceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Retrieves the list of regional BackendService resources available to the specified project in
-   * the given region.
+   * the given region. (== suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -636,7 +644,7 @@ public class RegionBackendServiceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Retrieves the list of regional BackendService resources available to the specified project in
-   * the given region.
+   * the given region. (== suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -662,7 +670,7 @@ public class RegionBackendServiceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Retrieves the list of regional BackendService resources available to the specified project in
-   * the given region.
+   * the given region. (== suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -690,7 +698,7 @@ public class RegionBackendServiceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Retrieves the list of regional BackendService resources available to the specified project in
-   * the given region.
+   * the given region. (== suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -718,7 +726,7 @@ public class RegionBackendServiceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Retrieves the list of regional BackendService resources available to the specified project in
-   * the given region.
+   * the given region. (== suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -754,7 +762,8 @@ public class RegionBackendServiceClient implements BackgroundResource {
    * Updates the specified regional BackendService resource with the data included in the request.
    * There are several restrictions and guidelines to keep in mind when updating a backend service.
    * Read Restrictions and Guidelines for more information. This method supports PATCH semantics and
-   * uses the JSON merge patch format and processing rules.
+   * uses the JSON merge patch format and processing rules. (== suppress_warning http-rest-shadowed
+   * ==)
    *
    * <p>Sample code:
    *
@@ -769,14 +778,10 @@ public class RegionBackendServiceClient implements BackgroundResource {
    *
    * @param backendService Name of the BackendService resource to patch.
    * @param backendServiceResource Represents a Backend Service resource.
-   *     <p>Backend services must have an associated health check. Backend services also store
-   *     information about session affinity. For more information, read Backend Services.
-   *     <p>A backendServices resource represents a global backend service. Global backend services
-   *     are used for HTTP(S), SSL Proxy, TCP Proxy load balancing and Traffic Director.
-   *     <p>A regionBackendServices resource represents a regional backend service. Regional backend
-   *     services are used for internal TCP/UDP load balancing. For more information, read Internal
-   *     TCP/UDP Load balancing. (== resource_for v1.backendService ==) (== resource_for
-   *     beta.backendService ==)
+   *     <p>A backend service contains configuration values for Google Cloud Platform load balancing
+   *     services.
+   *     <p>For more information, read Backend Services.
+   *     <p>(== resource_for v1.backendService ==) (== resource_for beta.backendService ==)
    * @param fieldMask The fields that should be serialized (even if they have empty values). If the
    *     containing message object has a non-null fieldmask, then all the fields in the field mask
    *     (and only those fields in the field mask) will be serialized. If the containing object does
@@ -803,7 +808,8 @@ public class RegionBackendServiceClient implements BackgroundResource {
    * Updates the specified regional BackendService resource with the data included in the request.
    * There are several restrictions and guidelines to keep in mind when updating a backend service.
    * Read Restrictions and Guidelines for more information. This method supports PATCH semantics and
-   * uses the JSON merge patch format and processing rules.
+   * uses the JSON merge patch format and processing rules. (== suppress_warning http-rest-shadowed
+   * ==)
    *
    * <p>Sample code:
    *
@@ -818,14 +824,10 @@ public class RegionBackendServiceClient implements BackgroundResource {
    *
    * @param backendService Name of the BackendService resource to patch.
    * @param backendServiceResource Represents a Backend Service resource.
-   *     <p>Backend services must have an associated health check. Backend services also store
-   *     information about session affinity. For more information, read Backend Services.
-   *     <p>A backendServices resource represents a global backend service. Global backend services
-   *     are used for HTTP(S), SSL Proxy, TCP Proxy load balancing and Traffic Director.
-   *     <p>A regionBackendServices resource represents a regional backend service. Regional backend
-   *     services are used for internal TCP/UDP load balancing. For more information, read Internal
-   *     TCP/UDP Load balancing. (== resource_for v1.backendService ==) (== resource_for
-   *     beta.backendService ==)
+   *     <p>A backend service contains configuration values for Google Cloud Platform load balancing
+   *     services.
+   *     <p>For more information, read Backend Services.
+   *     <p>(== resource_for v1.backendService ==) (== resource_for beta.backendService ==)
    * @param fieldMask The fields that should be serialized (even if they have empty values). If the
    *     containing message object has a non-null fieldmask, then all the fields in the field mask
    *     (and only those fields in the field mask) will be serialized. If the containing object does
@@ -850,7 +852,8 @@ public class RegionBackendServiceClient implements BackgroundResource {
    * Updates the specified regional BackendService resource with the data included in the request.
    * There are several restrictions and guidelines to keep in mind when updating a backend service.
    * Read Restrictions and Guidelines for more information. This method supports PATCH semantics and
-   * uses the JSON merge patch format and processing rules.
+   * uses the JSON merge patch format and processing rules. (== suppress_warning http-rest-shadowed
+   * ==)
    *
    * <p>Sample code:
    *
@@ -881,7 +884,8 @@ public class RegionBackendServiceClient implements BackgroundResource {
    * Updates the specified regional BackendService resource with the data included in the request.
    * There are several restrictions and guidelines to keep in mind when updating a backend service.
    * Read Restrictions and Guidelines for more information. This method supports PATCH semantics and
-   * uses the JSON merge patch format and processing rules.
+   * uses the JSON merge patch format and processing rules. (== suppress_warning http-rest-shadowed
+   * ==)
    *
    * <p>Sample code:
    *
@@ -911,7 +915,8 @@ public class RegionBackendServiceClient implements BackgroundResource {
   /**
    * Updates the specified regional BackendService resource with the data included in the request.
    * There are several restrictions and guidelines to keep in mind when updating a backend service.
-   * Read Restrictions and Guidelines for more information.
+   * Read Restrictions and Guidelines for more information. (== suppress_warning http-rest-shadowed
+   * ==)
    *
    * <p>Sample code:
    *
@@ -926,14 +931,10 @@ public class RegionBackendServiceClient implements BackgroundResource {
    *
    * @param backendService Name of the BackendService resource to update.
    * @param backendServiceResource Represents a Backend Service resource.
-   *     <p>Backend services must have an associated health check. Backend services also store
-   *     information about session affinity. For more information, read Backend Services.
-   *     <p>A backendServices resource represents a global backend service. Global backend services
-   *     are used for HTTP(S), SSL Proxy, TCP Proxy load balancing and Traffic Director.
-   *     <p>A regionBackendServices resource represents a regional backend service. Regional backend
-   *     services are used for internal TCP/UDP load balancing. For more information, read Internal
-   *     TCP/UDP Load balancing. (== resource_for v1.backendService ==) (== resource_for
-   *     beta.backendService ==)
+   *     <p>A backend service contains configuration values for Google Cloud Platform load balancing
+   *     services.
+   *     <p>For more information, read Backend Services.
+   *     <p>(== resource_for v1.backendService ==) (== resource_for beta.backendService ==)
    * @param fieldMask The fields that should be serialized (even if they have empty values). If the
    *     containing message object has a non-null fieldmask, then all the fields in the field mask
    *     (and only those fields in the field mask) will be serialized. If the containing object does
@@ -959,7 +960,8 @@ public class RegionBackendServiceClient implements BackgroundResource {
   /**
    * Updates the specified regional BackendService resource with the data included in the request.
    * There are several restrictions and guidelines to keep in mind when updating a backend service.
-   * Read Restrictions and Guidelines for more information.
+   * Read Restrictions and Guidelines for more information. (== suppress_warning http-rest-shadowed
+   * ==)
    *
    * <p>Sample code:
    *
@@ -974,14 +976,10 @@ public class RegionBackendServiceClient implements BackgroundResource {
    *
    * @param backendService Name of the BackendService resource to update.
    * @param backendServiceResource Represents a Backend Service resource.
-   *     <p>Backend services must have an associated health check. Backend services also store
-   *     information about session affinity. For more information, read Backend Services.
-   *     <p>A backendServices resource represents a global backend service. Global backend services
-   *     are used for HTTP(S), SSL Proxy, TCP Proxy load balancing and Traffic Director.
-   *     <p>A regionBackendServices resource represents a regional backend service. Regional backend
-   *     services are used for internal TCP/UDP load balancing. For more information, read Internal
-   *     TCP/UDP Load balancing. (== resource_for v1.backendService ==) (== resource_for
-   *     beta.backendService ==)
+   *     <p>A backend service contains configuration values for Google Cloud Platform load balancing
+   *     services.
+   *     <p>For more information, read Backend Services.
+   *     <p>(== resource_for v1.backendService ==) (== resource_for beta.backendService ==)
    * @param fieldMask The fields that should be serialized (even if they have empty values). If the
    *     containing message object has a non-null fieldmask, then all the fields in the field mask
    *     (and only those fields in the field mask) will be serialized. If the containing object does
@@ -1005,7 +1003,8 @@ public class RegionBackendServiceClient implements BackgroundResource {
   /**
    * Updates the specified regional BackendService resource with the data included in the request.
    * There are several restrictions and guidelines to keep in mind when updating a backend service.
-   * Read Restrictions and Guidelines for more information.
+   * Read Restrictions and Guidelines for more information. (== suppress_warning http-rest-shadowed
+   * ==)
    *
    * <p>Sample code:
    *
@@ -1035,7 +1034,8 @@ public class RegionBackendServiceClient implements BackgroundResource {
   /**
    * Updates the specified regional BackendService resource with the data included in the request.
    * There are several restrictions and guidelines to keep in mind when updating a backend service.
-   * Read Restrictions and Guidelines for more information.
+   * Read Restrictions and Guidelines for more information. (== suppress_warning http-rest-shadowed
+   * ==)
    *
    * <p>Sample code:
    *

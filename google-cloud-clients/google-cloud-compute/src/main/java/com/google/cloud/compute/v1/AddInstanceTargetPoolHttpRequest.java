@@ -24,7 +24,10 @@ import javax.annotation.Nullable;
 
 @Generated("by GAPIC")
 @BetaApi
-/** Request object for method compute.targetPools.addInstance. Adds an instance to a target pool. */
+/**
+ * Request object for method compute.targetPools.addInstance. Adds an instance to a target pool. (==
+ * suppress_warning http-rest-shadowed ==)
+ */
 public final class AddInstanceTargetPoolHttpRequest implements ApiMessage {
   private final String access_token;
   private final String callback;

@@ -26,7 +26,8 @@ import javax.annotation.Nullable;
 @BetaApi
 /**
  * Request object for method compute.nodeTemplates.get. Returns the specified node template. Gets a
- * list of available node templates by making a list() request.
+ * list of available node templates by making a list() request. (== suppress_warning
+ * http-rest-shadowed ==)
  */
 public final class GetNodeTemplateHttpRequest implements ApiMessage {
   private final String access_token;

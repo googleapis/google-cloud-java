@@ -26,7 +26,8 @@ import javax.annotation.Nullable;
 @BetaApi
 /**
  * Request object for method compute.sslPolicies.insert. Returns the specified SSL policy resource.
- * Gets a list of available SSL policies by making a list() request.
+ * Gets a list of available SSL policies by making a list() request. (== suppress_warning
+ * http-rest-shadowed ==)
  */
 public final class InsertSslPolicyHttpRequest implements ApiMessage {
   private final String access_token;

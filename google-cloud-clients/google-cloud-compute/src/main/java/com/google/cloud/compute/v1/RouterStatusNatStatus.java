@@ -28,6 +28,8 @@ import javax.annotation.Nullable;
 /** Status of a NAT contained in this router. Next tag: 9 */
 public final class RouterStatusNatStatus implements ApiMessage {
   private final List<String> autoAllocatedNatIps;
+  private final List<String> drainAutoAllocatedNatIps;
+  private final List<String> drainUserAllocatedNatIps;
   private final Integer minExtraNatIpsNeeded;
   private final String name;
   private final Integer numVmEndpointsWithNatMappings;
@@ -36,6 +38,8 @@ public final class RouterStatusNatStatus implements ApiMessage {
 
   private RouterStatusNatStatus() {
     this.autoAllocatedNatIps = null;
+    this.drainAutoAllocatedNatIps = null;
+    this.drainUserAllocatedNatIps = null;
     this.minExtraNatIpsNeeded = null;
     this.name = null;
     this.numVmEndpointsWithNatMappings = null;
@@ -45,12 +49,16 @@ public final class RouterStatusNatStatus implements ApiMessage {
 
   private RouterStatusNatStatus(
       List<String> autoAllocatedNatIps,
+      List<String> drainAutoAllocatedNatIps,
+      List<String> drainUserAllocatedNatIps,
       Integer minExtraNatIpsNeeded,
       String name,
       Integer numVmEndpointsWithNatMappings,
       List<String> userAllocatedNatIpResources,
       List<String> userAllocatedNatIps) {
     this.autoAllocatedNatIps = autoAllocatedNatIps;
+    this.drainAutoAllocatedNatIps = drainAutoAllocatedNatIps;
+    this.drainUserAllocatedNatIps = drainUserAllocatedNatIps;
     this.minExtraNatIpsNeeded = minExtraNatIpsNeeded;
     this.name = name;
     this.numVmEndpointsWithNatMappings = numVmEndpointsWithNatMappings;
@@ -62,6 +70,12 @@ public final class RouterStatusNatStatus implements ApiMessage {
   public Object getFieldValue(String fieldName) {
     if ("autoAllocatedNatIps".equals(fieldName)) {
       return autoAllocatedNatIps;
+    }
+    if ("drainAutoAllocatedNatIps".equals(fieldName)) {
+      return drainAutoAllocatedNatIps;
+    }
+    if ("drainUserAllocatedNatIps".equals(fieldName)) {
+      return drainUserAllocatedNatIps;
     }
     if ("minExtraNatIpsNeeded".equals(fieldName)) {
       return minExtraNatIpsNeeded;
@@ -102,6 +116,22 @@ public final class RouterStatusNatStatus implements ApiMessage {
   /** A list of IPs auto-allocated for NAT. Example: ["1.1.1.1", "129.2.16.89"] */
   public List<String> getAutoAllocatedNatIpsList() {
     return autoAllocatedNatIps;
+  }
+
+  /**
+   * A list of IPs auto-allocated for NAT that are in drain mode. Example: ["1.1.1.1",
+   * ?179.12.26.133?].
+   */
+  public List<String> getDrainAutoAllocatedNatIpsList() {
+    return drainAutoAllocatedNatIps;
+  }
+
+  /**
+   * A list of IPs user-allocated for NAT that are in drain mode. Example: ["1.1.1.1",
+   * ?179.12.26.133?].
+   */
+  public List<String> getDrainUserAllocatedNatIpsList() {
+    return drainUserAllocatedNatIps;
   }
 
   /**
@@ -157,6 +187,8 @@ public final class RouterStatusNatStatus implements ApiMessage {
 
   public static class Builder {
     private List<String> autoAllocatedNatIps;
+    private List<String> drainAutoAllocatedNatIps;
+    private List<String> drainUserAllocatedNatIps;
     private Integer minExtraNatIpsNeeded;
     private String name;
     private Integer numVmEndpointsWithNatMappings;
@@ -169,6 +201,12 @@ public final class RouterStatusNatStatus implements ApiMessage {
       if (other == RouterStatusNatStatus.getDefaultInstance()) return this;
       if (other.getAutoAllocatedNatIpsList() != null) {
         this.autoAllocatedNatIps = other.autoAllocatedNatIps;
+      }
+      if (other.getDrainAutoAllocatedNatIpsList() != null) {
+        this.drainAutoAllocatedNatIps = other.drainAutoAllocatedNatIps;
+      }
+      if (other.getDrainUserAllocatedNatIpsList() != null) {
+        this.drainUserAllocatedNatIps = other.drainUserAllocatedNatIps;
       }
       if (other.getMinExtraNatIpsNeeded() != null) {
         this.minExtraNatIpsNeeded = other.minExtraNatIpsNeeded;
@@ -190,6 +228,8 @@ public final class RouterStatusNatStatus implements ApiMessage {
 
     Builder(RouterStatusNatStatus source) {
       this.autoAllocatedNatIps = source.autoAllocatedNatIps;
+      this.drainAutoAllocatedNatIps = source.drainAutoAllocatedNatIps;
+      this.drainUserAllocatedNatIps = source.drainUserAllocatedNatIps;
       this.minExtraNatIpsNeeded = source.minExtraNatIpsNeeded;
       this.name = source.name;
       this.numVmEndpointsWithNatMappings = source.numVmEndpointsWithNatMappings;
@@ -217,6 +257,70 @@ public final class RouterStatusNatStatus implements ApiMessage {
         this.autoAllocatedNatIps = new LinkedList<>();
       }
       this.autoAllocatedNatIps.add(autoAllocatedNatIps);
+      return this;
+    }
+
+    /**
+     * A list of IPs auto-allocated for NAT that are in drain mode. Example: ["1.1.1.1",
+     * ?179.12.26.133?].
+     */
+    public List<String> getDrainAutoAllocatedNatIpsList() {
+      return drainAutoAllocatedNatIps;
+    }
+
+    /**
+     * A list of IPs auto-allocated for NAT that are in drain mode. Example: ["1.1.1.1",
+     * ?179.12.26.133?].
+     */
+    public Builder addAllDrainAutoAllocatedNatIps(List<String> drainAutoAllocatedNatIps) {
+      if (this.drainAutoAllocatedNatIps == null) {
+        this.drainAutoAllocatedNatIps = new LinkedList<>();
+      }
+      this.drainAutoAllocatedNatIps.addAll(drainAutoAllocatedNatIps);
+      return this;
+    }
+
+    /**
+     * A list of IPs auto-allocated for NAT that are in drain mode. Example: ["1.1.1.1",
+     * ?179.12.26.133?].
+     */
+    public Builder addDrainAutoAllocatedNatIps(String drainAutoAllocatedNatIps) {
+      if (this.drainAutoAllocatedNatIps == null) {
+        this.drainAutoAllocatedNatIps = new LinkedList<>();
+      }
+      this.drainAutoAllocatedNatIps.add(drainAutoAllocatedNatIps);
+      return this;
+    }
+
+    /**
+     * A list of IPs user-allocated for NAT that are in drain mode. Example: ["1.1.1.1",
+     * ?179.12.26.133?].
+     */
+    public List<String> getDrainUserAllocatedNatIpsList() {
+      return drainUserAllocatedNatIps;
+    }
+
+    /**
+     * A list of IPs user-allocated for NAT that are in drain mode. Example: ["1.1.1.1",
+     * ?179.12.26.133?].
+     */
+    public Builder addAllDrainUserAllocatedNatIps(List<String> drainUserAllocatedNatIps) {
+      if (this.drainUserAllocatedNatIps == null) {
+        this.drainUserAllocatedNatIps = new LinkedList<>();
+      }
+      this.drainUserAllocatedNatIps.addAll(drainUserAllocatedNatIps);
+      return this;
+    }
+
+    /**
+     * A list of IPs user-allocated for NAT that are in drain mode. Example: ["1.1.1.1",
+     * ?179.12.26.133?].
+     */
+    public Builder addDrainUserAllocatedNatIps(String drainUserAllocatedNatIps) {
+      if (this.drainUserAllocatedNatIps == null) {
+        this.drainUserAllocatedNatIps = new LinkedList<>();
+      }
+      this.drainUserAllocatedNatIps.add(drainUserAllocatedNatIps);
       return this;
     }
 
@@ -311,6 +415,8 @@ public final class RouterStatusNatStatus implements ApiMessage {
 
       return new RouterStatusNatStatus(
           autoAllocatedNatIps,
+          drainAutoAllocatedNatIps,
+          drainUserAllocatedNatIps,
           minExtraNatIpsNeeded,
           name,
           numVmEndpointsWithNatMappings,
@@ -321,6 +427,8 @@ public final class RouterStatusNatStatus implements ApiMessage {
     public Builder clone() {
       Builder newBuilder = new Builder();
       newBuilder.addAllAutoAllocatedNatIps(this.autoAllocatedNatIps);
+      newBuilder.addAllDrainAutoAllocatedNatIps(this.drainAutoAllocatedNatIps);
+      newBuilder.addAllDrainUserAllocatedNatIps(this.drainUserAllocatedNatIps);
       newBuilder.setMinExtraNatIpsNeeded(this.minExtraNatIpsNeeded);
       newBuilder.setName(this.name);
       newBuilder.setNumVmEndpointsWithNatMappings(this.numVmEndpointsWithNatMappings);
@@ -335,6 +443,12 @@ public final class RouterStatusNatStatus implements ApiMessage {
     return "RouterStatusNatStatus{"
         + "autoAllocatedNatIps="
         + autoAllocatedNatIps
+        + ", "
+        + "drainAutoAllocatedNatIps="
+        + drainAutoAllocatedNatIps
+        + ", "
+        + "drainUserAllocatedNatIps="
+        + drainUserAllocatedNatIps
         + ", "
         + "minExtraNatIpsNeeded="
         + minExtraNatIpsNeeded
@@ -361,6 +475,8 @@ public final class RouterStatusNatStatus implements ApiMessage {
     if (o instanceof RouterStatusNatStatus) {
       RouterStatusNatStatus that = (RouterStatusNatStatus) o;
       return Objects.equals(this.autoAllocatedNatIps, that.getAutoAllocatedNatIpsList())
+          && Objects.equals(this.drainAutoAllocatedNatIps, that.getDrainAutoAllocatedNatIpsList())
+          && Objects.equals(this.drainUserAllocatedNatIps, that.getDrainUserAllocatedNatIpsList())
           && Objects.equals(this.minExtraNatIpsNeeded, that.getMinExtraNatIpsNeeded())
           && Objects.equals(this.name, that.getName())
           && Objects.equals(
@@ -376,6 +492,8 @@ public final class RouterStatusNatStatus implements ApiMessage {
   public int hashCode() {
     return Objects.hash(
         autoAllocatedNatIps,
+        drainAutoAllocatedNatIps,
+        drainUserAllocatedNatIps,
         minExtraNatIpsNeeded,
         name,
         numVmEndpointsWithNatMappings,

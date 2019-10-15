@@ -156,7 +156,8 @@ public class RegionSslCertificateClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Deletes the specified SslCertificate resource in the region.
+   * Deletes the specified SslCertificate resource in the region. (== suppress_warning
+   * http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -183,7 +184,8 @@ public class RegionSslCertificateClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Deletes the specified SslCertificate resource in the region.
+   * Deletes the specified SslCertificate resource in the region. (== suppress_warning
+   * http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -209,7 +211,8 @@ public class RegionSslCertificateClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Deletes the specified SslCertificate resource in the region.
+   * Deletes the specified SslCertificate resource in the region. (== suppress_warning
+   * http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -233,7 +236,8 @@ public class RegionSslCertificateClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Deletes the specified SslCertificate resource in the region.
+   * Deletes the specified SslCertificate resource in the region. (== suppress_warning
+   * http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -258,7 +262,7 @@ public class RegionSslCertificateClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Returns the specified SslCertificate resource in the specified region. Get a list of available
-   * SSL certificates by making a list() request.
+   * SSL certificates by making a list() request. (== suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -286,7 +290,7 @@ public class RegionSslCertificateClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Returns the specified SslCertificate resource in the specified region. Get a list of available
-   * SSL certificates by making a list() request.
+   * SSL certificates by making a list() request. (== suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -311,7 +315,7 @@ public class RegionSslCertificateClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Returns the specified SslCertificate resource in the specified region. Get a list of available
-   * SSL certificates by making a list() request.
+   * SSL certificates by making a list() request. (== suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -336,7 +340,7 @@ public class RegionSslCertificateClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Returns the specified SslCertificate resource in the specified region. Get a list of available
-   * SSL certificates by making a list() request.
+   * SSL certificates by making a list() request. (== suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -361,7 +365,7 @@ public class RegionSslCertificateClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Creates a SslCertificate resource in the specified project and region using the data included
-   * in the request
+   * in the request (== suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -396,7 +400,7 @@ public class RegionSslCertificateClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Creates a SslCertificate resource in the specified project and region using the data included
-   * in the request
+   * in the request (== suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -431,7 +435,7 @@ public class RegionSslCertificateClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Creates a SslCertificate resource in the specified project and region using the data included
-   * in the request
+   * in the request (== suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -458,7 +462,7 @@ public class RegionSslCertificateClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Creates a SslCertificate resource in the specified project and region using the data included
-   * in the request
+   * in the request (== suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -485,7 +489,7 @@ public class RegionSslCertificateClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Retrieves the list of SslCertificate resources available to the specified project in the
-   * specified region.
+   * specified region. (== suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -514,7 +518,7 @@ public class RegionSslCertificateClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Retrieves the list of SslCertificate resources available to the specified project in the
-   * specified region.
+   * specified region. (== suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -540,7 +544,7 @@ public class RegionSslCertificateClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Retrieves the list of SslCertificate resources available to the specified project in the
-   * specified region.
+   * specified region. (== suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -568,7 +572,7 @@ public class RegionSslCertificateClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Retrieves the list of SslCertificate resources available to the specified project in the
-   * specified region.
+   * specified region. (== suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -596,7 +600,7 @@ public class RegionSslCertificateClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Retrieves the list of SslCertificate resources available to the specified project in the
-   * specified region.
+   * specified region. (== suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *

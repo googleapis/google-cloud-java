@@ -156,7 +156,8 @@ public class TargetVpnGatewayClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Retrieves an aggregated list of target VPN gateways.
+   * Retrieves an aggregated list of target VPN gateways. (== suppress_warning http-rest-shadowed
+   * ==)
    *
    * <p>Sample code:
    *
@@ -184,7 +185,8 @@ public class TargetVpnGatewayClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Retrieves an aggregated list of target VPN gateways.
+   * Retrieves an aggregated list of target VPN gateways. (== suppress_warning http-rest-shadowed
+   * ==)
    *
    * <p>Sample code:
    *
@@ -210,7 +212,8 @@ public class TargetVpnGatewayClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Retrieves an aggregated list of target VPN gateways.
+   * Retrieves an aggregated list of target VPN gateways. (== suppress_warning http-rest-shadowed
+   * ==)
    *
    * <p>Sample code:
    *
@@ -237,7 +240,8 @@ public class TargetVpnGatewayClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Retrieves an aggregated list of target VPN gateways.
+   * Retrieves an aggregated list of target VPN gateways. (== suppress_warning http-rest-shadowed
+   * ==)
    *
    * <p>Sample code:
    *
@@ -264,7 +268,8 @@ public class TargetVpnGatewayClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Retrieves an aggregated list of target VPN gateways.
+   * Retrieves an aggregated list of target VPN gateways. (== suppress_warning http-rest-shadowed
+   * ==)
    *
    * <p>Sample code:
    *
@@ -298,7 +303,7 @@ public class TargetVpnGatewayClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Deletes the specified target VPN gateway.
+   * Deletes the specified target VPN gateway. (== suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -325,7 +330,7 @@ public class TargetVpnGatewayClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Deletes the specified target VPN gateway.
+   * Deletes the specified target VPN gateway. (== suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -351,7 +356,7 @@ public class TargetVpnGatewayClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Deletes the specified target VPN gateway.
+   * Deletes the specified target VPN gateway. (== suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -375,7 +380,7 @@ public class TargetVpnGatewayClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Deletes the specified target VPN gateway.
+   * Deletes the specified target VPN gateway. (== suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -400,7 +405,7 @@ public class TargetVpnGatewayClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Returns the specified target VPN gateway. Gets a list of available target VPN gateways by
-   * making a list() request.
+   * making a list() request. (== suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -428,7 +433,7 @@ public class TargetVpnGatewayClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Returns the specified target VPN gateway. Gets a list of available target VPN gateways by
-   * making a list() request.
+   * making a list() request. (== suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -453,7 +458,7 @@ public class TargetVpnGatewayClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Returns the specified target VPN gateway. Gets a list of available target VPN gateways by
-   * making a list() request.
+   * making a list() request. (== suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -478,7 +483,7 @@ public class TargetVpnGatewayClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Returns the specified target VPN gateway. Gets a list of available target VPN gateways by
-   * making a list() request.
+   * making a list() request. (== suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -503,7 +508,7 @@ public class TargetVpnGatewayClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Creates a target VPN gateway in the specified project and region using the data included in the
-   * request.
+   * request. (== suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -537,7 +542,7 @@ public class TargetVpnGatewayClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Creates a target VPN gateway in the specified project and region using the data included in the
-   * request.
+   * request. (== suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -571,7 +576,7 @@ public class TargetVpnGatewayClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Creates a target VPN gateway in the specified project and region using the data included in the
-   * request.
+   * request. (== suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -598,7 +603,7 @@ public class TargetVpnGatewayClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Creates a target VPN gateway in the specified project and region using the data included in the
-   * request.
+   * request. (== suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -624,7 +629,8 @@ public class TargetVpnGatewayClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Retrieves a list of target VPN gateways available to the specified project and region.
+   * Retrieves a list of target VPN gateways available to the specified project and region. (==
+   * suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -651,7 +657,8 @@ public class TargetVpnGatewayClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Retrieves a list of target VPN gateways available to the specified project and region.
+   * Retrieves a list of target VPN gateways available to the specified project and region. (==
+   * suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -676,7 +683,8 @@ public class TargetVpnGatewayClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Retrieves a list of target VPN gateways available to the specified project and region.
+   * Retrieves a list of target VPN gateways available to the specified project and region. (==
+   * suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -703,7 +711,8 @@ public class TargetVpnGatewayClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Retrieves a list of target VPN gateways available to the specified project and region.
+   * Retrieves a list of target VPN gateways available to the specified project and region. (==
+   * suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *
@@ -729,7 +738,8 @@ public class TargetVpnGatewayClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Retrieves a list of target VPN gateways available to the specified project and region.
+   * Retrieves a list of target VPN gateways available to the specified project and region. (==
+   * suppress_warning http-rest-shadowed ==)
    *
    * <p>Sample code:
    *

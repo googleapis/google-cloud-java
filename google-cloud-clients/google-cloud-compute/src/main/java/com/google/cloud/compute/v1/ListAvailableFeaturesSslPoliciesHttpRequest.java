@@ -26,7 +26,8 @@ import javax.annotation.Nullable;
 @BetaApi
 /**
  * Request object for method compute.sslPolicies.listAvailableFeatures. Lists all features that can
- * be specified in the SSL policy when using custom profile.
+ * be specified in the SSL policy when using custom profile. (== suppress_warning http-rest-shadowed
+ * ==)
  */
 public final class ListAvailableFeaturesSslPoliciesHttpRequest implements ApiMessage {
   private final String access_token;

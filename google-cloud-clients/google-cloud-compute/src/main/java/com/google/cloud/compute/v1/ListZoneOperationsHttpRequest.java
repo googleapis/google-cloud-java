@@ -26,7 +26,7 @@ import javax.annotation.Nullable;
 @BetaApi
 /**
  * Request object for method compute.zoneOperations.list. Retrieves a list of Operation resources
- * contained within the specified zone.
+ * contained within the specified zone. (== suppress_warning http-rest-shadowed ==)
  */
 public final class ListZoneOperationsHttpRequest implements ApiMessage {
   private final String access_token;

@@ -26,7 +26,7 @@ import javax.annotation.Nullable;
 @BetaApi
 /**
  * Request object for method compute.regionHealthChecks.delete. Deletes the specified HealthCheck
- * resource.
+ * resource. (== suppress_warning http-rest-shadowed ==)
  */
 public final class DeleteRegionHealthCheckHttpRequest implements ApiMessage {
   private final String access_token;
