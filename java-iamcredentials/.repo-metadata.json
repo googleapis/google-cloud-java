@@ -6,8 +6,8 @@
   "issue_tracker": "https://issuetracker.google.com/issues/new?component=187161&template=0",
   "release_level": "alpha",
   "language": "java",
-  "repo": "googleapis/google-cloud-java",
-  "repo_short": "google-cloud-java",
+  "repo": "googleapis/java-iamcredentials",
+  "repo_short": "java-iamcredentials",
   "distribution_name": "com.google.cloud:google-cloud-iamcredentials",
   "api_id": "iamcredentials.googleapis.com"
 }

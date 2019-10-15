@@ -25,16 +25,16 @@ versions = ['v1']
 config_pattern = '/google/iam/credentials/artman_iamcredentials_{version}.yaml'
 
 for version in versions:
-    library = gapic.java_library(
+    java.gapic_library(
         service=service,
         version=version,
-        config_path=config_pattern.format(version=version),
-        artman_output_name='')
+        config_pattern=config_pattern,
+        package_pattern='com.google.cloud.iam.credentials.{version}',
+        gapic=gapic,
+    )
 
-    s.copy(library / f'gapic-google-cloud-{service}-{version}/src', 'src')
-    s.copy(library / f'grpc-google-cloud-{service}-{version}/src', f'../../google-api-grpc/grpc-google-cloud-{service}-{version}/src')
-    s.copy(library / f'proto-google-cloud-{service}-{version}/src', f'../../google-api-grpc/proto-google-cloud-{service}-{version}/src')
-
-    java.format_code('./src')
-    java.format_code(f'../../google-api-grpc/grpc-google-cloud-{service}-{version}/src')
-    java.format_code(f'../../google-api-grpc/proto-google-cloud-{service}-{version}/src')
+common_templates = gcp.CommonTemplates()
+templates = common_templates.java_library()
+s.copy(templates, excludes=[
+  'README.md',
+])
