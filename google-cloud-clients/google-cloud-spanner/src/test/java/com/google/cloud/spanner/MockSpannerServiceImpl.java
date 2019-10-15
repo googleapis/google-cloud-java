@@ -450,6 +450,7 @@ public class MockSpannerServiceImpl extends SpannerImplBase implements MockGrpcS
       new ConcurrentHashMap<>();
   private final ConcurrentMap<ByteString, Boolean> abortedTransactions = new ConcurrentHashMap<>();
   private final AtomicBoolean abortNextTransaction = new AtomicBoolean();
+  private final AtomicBoolean abortNextStatement = new AtomicBoolean();
   private final ConcurrentMap<String, AtomicLong> transactionCounters = new ConcurrentHashMap<>();
   private final ConcurrentMap<String, List<ByteString>> partitionTokens = new ConcurrentHashMap<>();
   private ConcurrentMap<ByteString, Instant> transactionLastUsed = new ConcurrentHashMap<>();
@@ -562,6 +563,11 @@ public class MockSpannerServiceImpl extends SpannerImplBase implements MockGrpcS
   /** Instruct the mock server to abort the next transaction that is created. */
   public void abortNextTransaction() {
     abortNextTransaction.set(true);
+  }
+
+  /** Instructs the mock server to abort the transaction of the next statement that is executed. */
+  public void abortNextStatement() {
+    abortNextStatement.set(true);
   }
 
   /** Instruct the mock server to abort all transactions currently active on the server. */
@@ -1384,8 +1390,9 @@ public class MockSpannerServiceImpl extends SpannerImplBase implements MockGrpcS
   }
 
   private void simulateAbort(Session session, ByteString transactionId) {
+    ensureMostRecentTransaction(session, transactionId);
     if (isReadWriteTransaction(transactionId)) {
-      if (abortProbability > random.nextDouble()) {
+      if (abortNextStatement.getAndSet(false) || abortProbability > random.nextDouble()) {
         rollbackTransaction(transactionId);
         RetryInfo retryInfo =
             RetryInfo.newBuilder()
@@ -1402,6 +1409,24 @@ public class MockSpannerServiceImpl extends SpannerImplBase implements MockGrpcS
                 String.format(
                     "Transaction with id %s has been aborted", transactionId.toStringUtf8()))
             .asRuntimeException(trailers);
+      }
+    }
+  }
+
+  private void ensureMostRecentTransaction(Session session, ByteString transactionId) {
+    AtomicLong counter = transactionCounters.get(session.getName());
+    if (transactionId != null && transactionId.toStringUtf8() != null && counter != null) {
+      int index = transactionId.toStringUtf8().lastIndexOf('/');
+      if (index > -1) {
+        long id = Long.valueOf(transactionId.toStringUtf8().substring(index + 1));
+        if (id != counter.get()) {
+          throw Status.FAILED_PRECONDITION
+              .withDescription(
+                  String.format(
+                      "This transaction has been invalidated by a later transaction in the same session.",
+                      session.getName()))
+              .asRuntimeException();
+        }
       }
     }
   }

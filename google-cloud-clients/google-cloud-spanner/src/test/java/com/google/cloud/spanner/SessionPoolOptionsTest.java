@@ -15,7 +15,7 @@
  */
 package com.google.cloud.spanner;
 
-import static junit.framework.TestCase.assertEquals;
+import static com.google.common.truth.Truth.assertThat;
 
 import java.util.ArrayList;
 import java.util.Collection;
@@ -58,7 +58,58 @@ public class SessionPoolOptionsTest {
             .setMaxSessions(maxSessions)
             .build();
 
-    assertEquals(minSessions, options.getMinSessions());
-    assertEquals(maxSessions, options.getMaxSessions());
+    assertThat(minSessions).isEqualTo(options.getMinSessions());
+    assertThat(maxSessions).isEqualTo(options.getMaxSessions());
+  }
+
+  /**
+   * Setting MaxSessions to a value lower than the default MinSessions should be allowed, and should
+   * cause the MinSessions to be set to the same value as the MaxSessions.
+   */
+  @Test
+  public void setOnlyMaxSessions() {
+    final int defaultMinSessions = 100;
+    // Set max sessions > DEFAULT_MIN_SESSIONS.
+    SessionPoolOptions options =
+        SessionPoolOptions.newBuilder().setMaxSessions(defaultMinSessions + 1).build();
+    assertThat(options.getMaxSessions()).isEqualTo(defaultMinSessions + 1);
+    assertThat(options.getMinSessions()).isEqualTo(defaultMinSessions);
+    // Set max sessions < DEFAULT_MIN_SESSIONS.
+    options = SessionPoolOptions.newBuilder().setMaxSessions(defaultMinSessions - 1).build();
+    assertThat(options.getMaxSessions()).isEqualTo(defaultMinSessions - 1);
+    assertThat(options.getMinSessions()).isEqualTo(defaultMinSessions - 1);
+  }
+
+  @Test
+  public void setValidMinSessions() {
+    SessionPoolOptions.newBuilder().setMinSessions(0).build();
+    SessionPoolOptions.newBuilder().setMinSessions(1).build();
+    SessionPoolOptions.newBuilder().setMinSessions(400).build();
+    SessionPoolOptions.newBuilder()
+        .setMaxSessions(Integer.MAX_VALUE)
+        .setMinSessions(Integer.MAX_VALUE)
+        .build();
+  }
+
+  @Test(expected = IllegalArgumentException.class)
+  public void setNegativeMinSessions() {
+    SessionPoolOptions.newBuilder().setMinSessions(-1);
+  }
+
+  @Test
+  public void setValidMaxSessions() {
+    SessionPoolOptions.newBuilder().setMaxSessions(1).build();
+    SessionPoolOptions.newBuilder().setMaxSessions(400).build();
+    SessionPoolOptions.newBuilder().setMaxSessions(Integer.MAX_VALUE).build();
+  }
+
+  @Test(expected = IllegalArgumentException.class)
+  public void setZeroMaxSessions() {
+    SessionPoolOptions.newBuilder().setMaxSessions(0);
+  }
+
+  @Test(expected = IllegalArgumentException.class)
+  public void setNegativeMaxSessions() {
+    SessionPoolOptions.newBuilder().setMaxSessions(-1);
   }
 }

@@ -19,18 +19,22 @@ package com.google.cloud.spanner.jdbc;
 import static org.hamcrest.CoreMatchers.is;
 import static org.junit.Assert.assertThat;
 
+import com.google.cloud.spanner.MockSpannerServiceImpl;
+import io.grpc.Server;
+import io.grpc.netty.shaded.io.grpc.netty.NettyServerBuilder;
+import java.io.IOException;
+import java.net.InetSocketAddress;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
+import org.junit.AfterClass;
+import org.junit.BeforeClass;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
 
 @RunWith(JUnit4.class)
 public class JdbcDriverTest {
-  private static final String TEST_KEY_PATH =
-      ConnectionOptionsTest.class.getResource("test-key.json").getFile();
-
   /**
    * Make sure the JDBC driver class is loaded. This is needed when running the test using Maven.
    */
@@ -43,13 +47,33 @@ public class JdbcDriverTest {
     }
   }
 
+  private static MockSpannerServiceImpl mockSpanner;
+  private static Server server;
+  private static InetSocketAddress address;
+  private static final String TEST_KEY_PATH =
+      ConnectionOptionsTest.class.getResource("test-key.json").getFile();
+
+  @BeforeClass
+  public static void startStaticServer() throws IOException {
+    mockSpanner = new MockSpannerServiceImpl();
+    address = new InetSocketAddress("localhost", 0);
+    server = NettyServerBuilder.forAddress(address).addService(mockSpanner).build().start();
+  }
+
+  @AfterClass
+  public static void stopServer() throws Exception {
+    SpannerPool.closeSpannerPool();
+    server.shutdown();
+    server.awaitTermination();
+  }
+
   @Test
   public void testConnect() throws SQLException {
     try (Connection connection =
         DriverManager.getConnection(
             String.format(
-                "jdbc:cloudspanner:/projects/test-project/instances/static-test-instance/databases/test-database;credentials=%s",
-                TEST_KEY_PATH))) {
+                "jdbc:cloudspanner://localhost:%d/projects/test-project/instances/static-test-instance/databases/test-database;usePlainText=true;credentials=%s",
+                server.getPort(), TEST_KEY_PATH))) {
       assertThat(connection.isClosed(), is(false));
     }
   }
@@ -59,8 +83,8 @@ public class JdbcDriverTest {
     try (Connection connection =
         DriverManager.getConnection(
             String.format(
-                "jdbc:cloudspanner:/projects/test-project/instances/static-test-instance/databases/test-database;credentialsUrl=%s",
-                TEST_KEY_PATH))) {
+                "jdbc:cloudspanner://localhost:%d/projects/test-project/instances/static-test-instance/databases/test-database;usePlainText=true;credentialsUrl=%s",
+                server.getPort(), TEST_KEY_PATH))) {
       assertThat(connection.isClosed(), is(false));
     }
   }
