@@ -66,6 +66,7 @@ public final class QueryJobConfiguration extends JobConfiguration {
   private final TimePartitioning timePartitioning;
   private final Clustering clustering;
   private final Long jobTimeoutMs;
+  private final Map<String, String> labels;
 
   /**
    * Priority levels for a query. If not specified the priority is assumed to be {@link
@@ -112,6 +113,7 @@ public final class QueryJobConfiguration extends JobConfiguration {
     private TimePartitioning timePartitioning;
     private Clustering clustering;
     private Long jobTimeoutMs;
+    private Map<String, String> labels;
 
     private Builder() {
       super(Type.QUERY);
@@ -141,6 +143,7 @@ public final class QueryJobConfiguration extends JobConfiguration {
       this.timePartitioning = jobConfiguration.timePartitioning;
       this.clustering = jobConfiguration.clustering;
       this.jobTimeoutMs = jobConfiguration.jobTimeoutMs;
+      this.labels = jobConfiguration.labels;
     }
 
     private Builder(com.google.api.services.bigquery.model.JobConfiguration configurationPb) {
@@ -226,6 +229,9 @@ public final class QueryJobConfiguration extends JobConfiguration {
       }
       if (configurationPb.getJobTimeoutMs() != null) {
         this.jobTimeoutMs = configurationPb.getJobTimeoutMs();
+      }
+      if (configurationPb.getLabels() != null) {
+        this.labels = configurationPb.getLabels();
       }
     }
 
@@ -541,6 +547,20 @@ public final class QueryJobConfiguration extends JobConfiguration {
       return this;
     }
 
+    /**
+     * The labels associated with this job. You can use these to organize and group your jobs. Label
+     * keys and values can be no longer than 63 characters, can only contain lowercase letters,
+     * numeric characters, underscores and dashes. International characters are allowed. Label
+     * values are optional. Label keys must start with a letter and each label in the list must have
+     * a different key.
+     *
+     * @param labels labels or {@code null} for none
+     */
+    public Builder setLabels(Map<String, String> labels) {
+      this.labels = labels;
+      return this;
+    }
+
     public QueryJobConfiguration build() {
       return new QueryJobConfiguration(this);
     }
@@ -579,6 +599,7 @@ public final class QueryJobConfiguration extends JobConfiguration {
     this.timePartitioning = builder.timePartitioning;
     this.clustering = builder.clustering;
     this.jobTimeoutMs = builder.jobTimeoutMs;
+    this.labels = builder.labels;
   }
 
   /**
@@ -753,6 +774,11 @@ public final class QueryJobConfiguration extends JobConfiguration {
     return jobTimeoutMs;
   }
 
+  /** Returns the labels associated with this job */
+  public Map<String, String> getLabels() {
+    return labels;
+  }
+
   @Override
   public Builder toBuilder() {
     return new Builder(this);
@@ -782,7 +808,8 @@ public final class QueryJobConfiguration extends JobConfiguration {
         .add("schemaUpdateOptions", schemaUpdateOptions)
         .add("timePartitioning", timePartitioning)
         .add("clustering", clustering)
-        .add("jobTimeoutMs", jobTimeoutMs);
+        .add("jobTimeoutMs", jobTimeoutMs)
+        .add("labels", labels);
   }
 
   @Override
@@ -815,7 +842,8 @@ public final class QueryJobConfiguration extends JobConfiguration {
         schemaUpdateOptions,
         timePartitioning,
         clustering,
-        jobTimeoutMs);
+        jobTimeoutMs,
+        labels);
   }
 
   @Override
@@ -907,6 +935,9 @@ public final class QueryJobConfiguration extends JobConfiguration {
     }
     if (jobTimeoutMs != null) {
       configurationPb.setJobTimeoutMs(jobTimeoutMs);
+    }
+    if (labels != null) {
+      configurationPb.setLabels(labels);
     }
     configurationPb.setQuery(queryConfigurationPb);
     return configurationPb;
