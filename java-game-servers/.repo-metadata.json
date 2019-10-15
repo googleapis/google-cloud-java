@@ -6,8 +6,8 @@
   "issue_tracker": "",
   "release_level": "alpha",
   "language": "java",
-  "repo": "googleapis/google-cloud-java",
-  "repo_short": "google-cloud-java",
+  "repo": "googleapis/java-gameservices",
+  "repo_short": "java-gameservices",
   "distribution_name": "com.google.cloud:google-cloud-gameservices",
   "api_id": "gameservices.googleapis.com"
 }
