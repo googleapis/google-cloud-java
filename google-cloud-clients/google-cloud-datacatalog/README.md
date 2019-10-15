@@ -18,7 +18,6 @@ Data Catalog is a fully managed and scalable metadata management service that em
 Quickstart
 ----------
 
-[//]: # ({x-version-update-start:google-cloud-datacatalog:released})
 If you are using Maven, add this to your pom.xml file
 ```xml
 <dependency>
@@ -35,7 +34,6 @@ If you are using SBT, add this to your dependencies
 ```Scala
 libraryDependencies += "com.google.cloud" % "google-cloud-datacatalog" % "0.28.0-alpha"
 ```
-[//]: # ({x-version-update-end})
 
 Authentication
 --------------
