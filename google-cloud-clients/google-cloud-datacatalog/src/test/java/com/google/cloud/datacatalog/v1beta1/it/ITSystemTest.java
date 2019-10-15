@@ -96,7 +96,7 @@ public class ITSystemTest {
   }
 
   @AfterClass
-  public static void AfterClass() {
+  public static void afterClass() {
     client.deleteEntryGroup(ENTRY_GROUP_NAME);
     client.deleteTagTemplateField(FIELD_NAME, FORCE);
     client.deleteTagTemplate(TAG_TEMPLATE_NAME, FORCE);
