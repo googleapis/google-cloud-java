@@ -18,9 +18,25 @@
     <site.installationModule>google-cloud-bigtable</site.installationModule>
   </properties>
   <dependencies>
+    <!-- NOTE: Dependencies are organized into two groups, production and test.
+         Within a group, dependencies are sorted by (groupId, artifactId) -->
+
+    <!-- Production dependencies -->
     <dependency>
       <groupId>${project.groupId}</groupId>
       <artifactId>google-cloud-core-grpc</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>com.google.api</groupId>
+      <artifactId>api-common</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>com.google.api</groupId>
+      <artifactId>gax-grpc</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>com.google.api</groupId>
+      <artifactId>gax</artifactId>
     </dependency>
     <dependency>
       <groupId>com.google.api.grpc</groupId>
@@ -31,15 +47,86 @@
       <artifactId>proto-google-cloud-bigtable-admin-v2</artifactId>
     </dependency>
     <dependency>
+      <groupId>com.google.api.grpc</groupId>
+      <artifactId>proto-google-common-protos</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>com.google.api.grpc</groupId>
+      <artifactId>proto-google-iam-v1</artifactId>
+    </dependency>
+    <dependency>
       <groupId>com.google.auto.value</groupId>
       <artifactId>auto-value</artifactId>
       <scope>provided</scope>
     </dependency>
     <dependency>
+      <groupId>com.google.auto.value</groupId>
+      <artifactId>auto-value-annotations</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>com.google.cloud</groupId>
+      <artifactId>google-cloud-core</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>com.google.code.findbugs</groupId>
+      <artifactId>jsr305</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>com.google.guava</groupId>
+      <artifactId>guava</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>com.google.protobuf</groupId>
+      <artifactId>protobuf-java</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>com.google.protobuf</groupId>
+      <artifactId>protobuf-java-util</artifactId>
+    </dependency>
+    <dependency>
       <groupId>io.opencensus</groupId>
       <artifactId>opencensus-api</artifactId>
     </dependency>
-
+    <dependency>
+      <groupId>io.grpc</groupId>
+      <artifactId>grpc-alts</artifactId>
+      <scope>runtime</scope>
+    </dependency>
+    <dependency>
+      <groupId>io.grpc</groupId>
+      <artifactId>grpc-api</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>io.grpc</groupId>
+      <artifactId>grpc-auth</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>io.grpc</groupId>
+      <artifactId>grpc-context</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>io.grpc</groupId>
+      <artifactId>grpc-core</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>io.grpc</groupId>
+      <artifactId>grpc-grpclb</artifactId>
+      <scope>runtime</scope>
+    </dependency>
+    <dependency>
+      <groupId>io.grpc</groupId>
+      <artifactId>grpc-netty-shaded</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>io.grpc</groupId>
+      <artifactId>grpc-protobuf</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>org.threeten</groupId>
+      <artifactId>threetenbp</artifactId>
+      <!-- For dependency convergence with gax -->
+      <version>1.3.3</version>
+    </dependency>
     <!-- // TODO(igorbernstein): Enable grpc views once we upgrade to grpc-java 1.24.0 -->
 <!--    <dependency>-->
 <!--      <groupId>io.opencensus</groupId>-->
@@ -48,6 +135,19 @@
 <!--    </dependency>-->
 
     <!-- Test dependencies -->
+    <dependency>
+      <groupId>com.google.api</groupId>
+      <artifactId>gax</artifactId>
+      <classifier>testlib</classifier>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <!-- Need testing utility classes for generated gRPC clients tests -->
+      <groupId>com.google.api</groupId>
+      <artifactId>gax-grpc</artifactId>
+      <classifier>testlib</classifier>
+      <scope>test</scope>
+    </dependency>
     <dependency>
       <groupId>com.google.api.grpc</groupId>
       <artifactId>grpc-google-cloud-bigtable-v2</artifactId>
@@ -64,8 +164,8 @@
       <scope>test</scope>
     </dependency>
     <dependency>
-      <groupId>org.mockito</groupId>
-      <artifactId>mockito-all</artifactId>
+      <groupId>com.google.cloud</groupId>
+      <artifactId>google-cloud-conformance-tests</artifactId>
       <scope>test</scope>
     </dependency>
     <dependency>
@@ -74,16 +174,8 @@
       <scope>test</scope>
     </dependency>
     <dependency>
-      <groupId>com.google.api</groupId>
-      <artifactId>gax</artifactId>
-      <classifier>testlib</classifier>
-      <scope>test</scope>
-    </dependency>
-    <!-- Need testing utility classes for generated gRPC clients tests -->
-    <dependency>
-      <groupId>com.google.api</groupId>
-      <artifactId>gax-grpc</artifactId>
-      <classifier>testlib</classifier>
+      <groupId>io.grpc</groupId>
+      <artifactId>grpc-stub</artifactId>
       <scope>test</scope>
     </dependency>
     <dependency>
@@ -92,8 +184,13 @@
       <scope>test</scope>
     </dependency>
     <dependency>
-      <groupId>com.google.cloud</groupId>
-      <artifactId>google-cloud-conformance-tests</artifactId>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.mockito</groupId>
+      <artifactId>mockito-all</artifactId>
       <scope>test</scope>
     </dependency>
   </dependencies>
