@@ -1088,17 +1088,17 @@
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>proto-google-cloud-webrisk-v1beta1</artifactId>
-        <version>0.30.1-alpha-SNAPSHOT</version><!--{x-version-update:proto-google-cloud-webrisk-v1beta1:current}-->
+        <version>0.30.0-alpha</version>
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>grpc-google-cloud-webrisk-v1beta1</artifactId>
-        <version>0.30.1-alpha-SNAPSHOT</version><!--{x-version-update:grpc-google-cloud-webrisk-v1beta1:current}-->
+        <version>0.30.0-alpha</version>
       </dependency>
       <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-webrisk</artifactId>
-        <version>0.30.1-alpha-SNAPSHOT</version><!--{x-version-update:google-cloud-webrisk:current}-->
+        <version>0.30.0-alpha</version>
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
