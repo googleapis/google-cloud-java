@@ -12,6 +12,8 @@ Java idiomatic client for [Cloud Bigtable][cloud-bigtable].
 
 ## Quickstart
 
+WARNING: If you are experiencing version conflicts with gRPC, see [Version Conflicts](#version-conflicts).
+
 [//]: # ({x-version-update-start:google-cloud-bigtable:released})
 If you are using Maven, add this to your pom.xml file
 ```xml
@@ -21,6 +23,7 @@ If you are using Maven, add this to your pom.xml file
   <version>1.3.0</version>
 </dependency>
 ```
+
 If you are using Gradle, add this to your dependencies
 ```Groovy
 compile 'com.google.cloud:google-cloud-bigtable:1.3.0'
@@ -317,6 +320,27 @@ StackdriverStatsExporter.createAndRegister(
 
 BigtableDataSettings.enableOpenCensusStats();
 ```
+
+## Version Conflicts
+
+google-cloud-bigtable depends on gRPC directly which may conflict with the versions brought in by other libraries, for example Apache Beam. This happens because internal dependencies between gRPC libraries are pinned to an exact version of grpc-core (see [here](https://github.com/grpc/grpc-java/commit/90db93b990305aa5a8428cf391b55498c7993b6e)). If both google-cloud-bigtable and the other library bring in two gRPC libraries that depend on the different versions of grpc-core, then dependency resolution will fail. The easiest way to fix this is to depend on the gRPC bom, which will force all the gRPC transitive libraries to use the same version.
+
+Add the following to your project's pom.xml.
+
+```
+    <dependencyManagement>
+      <dependencies>
+        <dependency>
+          <groupId>io.grpc</groupId>
+          <artifactId>grpc-bom</artifactId>
+          <version>1.24.0</version>
+          <type>pom</type>
+          <scope>import</scope>
+        </dependency>
+      </dependencies>
+    </dependencyManagement>
+```
+
 
 ## Troubleshooting
 
