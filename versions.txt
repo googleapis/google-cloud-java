@@ -52,7 +52,6 @@ google-cloud-testing:0.115.0-alpha:0.115.1-alpha-SNAPSHOT
 google-cloud-texttospeech:0.115.0-beta:0.115.1-beta-SNAPSHOT
 google-cloud-util:0.115.0-alpha:0.115.1-alpha-SNAPSHOT
 google-cloud-webrisk:0.30.0-alpha:0.30.1-alpha-SNAPSHOT
-google-cloud-websecurityscanner:0.115.0:0.115.1-SNAPSHOT
 grafeas:0.18.0:0.18.1-SNAPSHOT
 grpc-google-cloud-bigquerydatatransfer-v1:0.80.0:0.80.1-SNAPSHOT
 grpc-google-cloud-bigquerystorage-v1beta1:0.80.0:0.80.1-SNAPSHOT
@@ -94,8 +93,6 @@ grpc-google-cloud-tasks-v2beta3:0.80.0:0.80.1-SNAPSHOT
 grpc-google-cloud-texttospeech-v1:0.80.0:0.80.1-SNAPSHOT
 grpc-google-cloud-texttospeech-v1beta1:0.80.0:0.80.1-SNAPSHOT
 grpc-google-cloud-webrisk-v1beta1:0.30.0-alpha:0.30.1-alpha-SNAPSHOT
-grpc-google-cloud-websecurityscanner-v1alpha:0.80.0:0.80.1-SNAPSHOT
-grpc-google-cloud-websecurityscanner-v1beta:0.80.0:0.80.1-SNAPSHOT
 proto-google-cloud-bigquerydatatransfer-v1:0.80.0:0.80.1-SNAPSHOT
 proto-google-cloud-bigquerystorage-v1beta1:0.80.0:0.80.1-SNAPSHOT
 proto-google-cloud-bigtable-admin-v2:0.80.0:0.80.1-SNAPSHOT
@@ -137,5 +134,3 @@ proto-google-cloud-tasks-v2beta3:0.80.0:0.80.1-SNAPSHOT
 proto-google-cloud-texttospeech-v1:0.80.0:0.80.1-SNAPSHOT
 proto-google-cloud-texttospeech-v1beta1:0.80.0:0.80.1-SNAPSHOT
 proto-google-cloud-webrisk-v1beta1:0.30.0-alpha:0.30.1-alpha-SNAPSHOT
-proto-google-cloud-websecurityscanner-v1alpha:0.80.0:0.80.1-SNAPSHOT
-proto-google-cloud-websecurityscanner-v1beta:0.80.0:0.80.1-SNAPSHOT
