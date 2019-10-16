@@ -158,6 +158,7 @@
     <!-- make sure to keep gax version in sync with google-cloud-bom -->
     <gax.version>1.49.0</gax.version>
     <api.common.java.version>1.8.1</api.common.java.version>
+    <!-- make sure to update the grpc version in google-cloud-clients/google-cloud-bigtable/README -->
     <grpc.version>1.24.0</grpc.version>
     <google.auth.version>0.17.2</google.auth.version>
     <!-- We are currently using the *-android version to support JDK7. -->
