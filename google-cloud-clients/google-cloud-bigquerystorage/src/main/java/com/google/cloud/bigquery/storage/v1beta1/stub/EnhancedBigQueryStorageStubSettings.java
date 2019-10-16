@@ -65,9 +65,6 @@ import org.threeten.bp.Duration;
 public class EnhancedBigQueryStorageStubSettings
     extends StubSettings<EnhancedBigQueryStorageStubSettings> {
 
-  // The largest possible inbound message is a ReadRowsResponse with a single 10mb Row object.
-  private static final int MAX_INBOUND_MESSAGE_SIZE = 1024 * 1024 * 11;
-
   private final UnaryCallSettings<CreateReadSessionRequest, ReadSession> createReadSessionSettings;
   private final ServerStreamingCallSettings<ReadRowsRequest, ReadRowsResponse> readRowsSettings;
   private final UnaryCallSettings<
@@ -127,9 +124,7 @@ public class EnhancedBigQueryStorageStubSettings
 
   /** Returns a builder for the default ChannelProvider for this service. */
   public static InstantiatingGrpcChannelProvider.Builder defaultGrpcTransportProviderBuilder() {
-    return BigQueryStorageStubSettings.defaultGrpcTransportProviderBuilder()
-        .setChannelsPerCpu(2.0)
-        .setMaxInboundMessageSize(MAX_INBOUND_MESSAGE_SIZE);
+    return BigQueryStorageStubSettings.defaultGrpcTransportProviderBuilder();
   }
 
   public static TransportChannelProvider defaultTransportChannelProvider() {
@@ -171,17 +166,6 @@ public class EnhancedBigQueryStorageStubSettings
   public static class Builder
       extends StubSettings.Builder<EnhancedBigQueryStorageStubSettings, Builder> {
 
-    private static final RetrySettings READ_ROWS_RETRY_SETTINGS =
-        RetrySettings.newBuilder()
-            .setInitialRetryDelay(Duration.ofMillis(100L))
-            .setRetryDelayMultiplier(1.3)
-            .setMaxRetryDelay(Duration.ofMinutes(1L))
-            .setInitialRpcTimeout(Duration.ofDays(1L))
-            .setRpcTimeoutMultiplier(1.0)
-            .setMaxRpcTimeout(Duration.ofDays(1L))
-            .setTotalTimeout(Duration.ofDays(1L))
-            .build();
-
     private final ImmutableList<UnaryCallSettings.Builder<?, ?>> unaryMethodSettingsBuilders;
 
     private final UnaryCallSettings.Builder<CreateReadSessionRequest, ReadSession>
@@ -220,7 +204,6 @@ public class EnhancedBigQueryStorageStubSettings
       readRowsSettings =
           baseDefaults
               .readRowsSettings()
-              .setRetrySettings(READ_ROWS_RETRY_SETTINGS)
               .setResumptionStrategy(new ReadRowsResumptionStrategy());
 
       unaryMethodSettingsBuilders =
