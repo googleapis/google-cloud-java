@@ -33,11 +33,10 @@ import org.junit.runners.JUnit4;
 public class PredictionApiIT {
   private static final String COMPUTE_REGION = "us-central1";
   private static final String PROJECT_ID = "java-docs-samples-testing";
-  private static final String modelId = "2188848820815848149";
+  private static final String modelId = "TRL2188848820815848149";
   private static final String filePath = "./resources/input.txt";
   private ByteArrayOutputStream bout;
   private PrintStream out;
-  private PredictionApi app;
 
   @Before
   public void setUp() {
@@ -55,6 +54,16 @@ public class PredictionApiIT {
   public void testPredict() throws Exception {
     // Act
     PredictionApi.predict(PROJECT_ID, COMPUTE_REGION, modelId, filePath);
+
+    // Assert
+    String got = bout.toString();
+    assertThat(got).contains("Translated Content");
+  }
+
+  @Test
+  public void testPrediction() {
+    // Act
+    Prediction.predict(PROJECT_ID, modelId, filePath);
 
     // Assert
     String got = bout.toString();
