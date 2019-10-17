@@ -269,8 +269,6 @@ public class BucketInfoTest {
             .build()
             .toPb();
 
-    assertEquals(Boolean.TRUE, iamConfiguration.getBucketPolicyOnly().getEnabled());
-    assertNotNull(iamConfiguration.getBucketPolicyOnly().getLockedTime());
     assertEquals(Boolean.TRUE, iamConfiguration.getUniformBucketLevelAccess().getEnabled());
     assertNotNull(iamConfiguration.getUniformBucketLevelAccess().getLockedTime());
   }
