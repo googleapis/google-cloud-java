@@ -27,20 +27,20 @@ public interface ListBuildsRequestOrBuilder
    *
    *
    * <pre>
-   * ID of the project.
+   * Required. ID of the project.
    * </pre>
    *
-   * <code>string project_id = 1;</code>
+   * <code>string project_id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   java.lang.String getProjectId();
   /**
    *
    *
    * <pre>
-   * ID of the project.
+   * Required. ID of the project.
    * </pre>
    *
-   * <code>string project_id = 1;</code>
+   * <code>string project_id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   com.google.protobuf.ByteString getProjectIdBytes();
 

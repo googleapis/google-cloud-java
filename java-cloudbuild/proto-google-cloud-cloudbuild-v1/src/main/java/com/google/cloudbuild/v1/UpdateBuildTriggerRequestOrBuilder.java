@@ -27,20 +27,20 @@ public interface UpdateBuildTriggerRequestOrBuilder
    *
    *
    * <pre>
-   * ID of the project that owns the trigger.
+   * Required. ID of the project that owns the trigger.
    * </pre>
    *
-   * <code>string project_id = 1;</code>
+   * <code>string project_id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   java.lang.String getProjectId();
   /**
    *
    *
    * <pre>
-   * ID of the project that owns the trigger.
+   * Required. ID of the project that owns the trigger.
    * </pre>
    *
-   * <code>string project_id = 1;</code>
+   * <code>string project_id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   com.google.protobuf.ByteString getProjectIdBytes();
 
@@ -48,20 +48,20 @@ public interface UpdateBuildTriggerRequestOrBuilder
    *
    *
    * <pre>
-   * ID of the `BuildTrigger` to update.
+   * Required. ID of the `BuildTrigger` to update.
    * </pre>
    *
-   * <code>string trigger_id = 2;</code>
+   * <code>string trigger_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   java.lang.String getTriggerId();
   /**
    *
    *
    * <pre>
-   * ID of the `BuildTrigger` to update.
+   * Required. ID of the `BuildTrigger` to update.
    * </pre>
    *
-   * <code>string trigger_id = 2;</code>
+   * <code>string trigger_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   com.google.protobuf.ByteString getTriggerIdBytes();
 
@@ -69,30 +69,36 @@ public interface UpdateBuildTriggerRequestOrBuilder
    *
    *
    * <pre>
-   * `BuildTrigger` to update.
+   * Required. `BuildTrigger` to update.
    * </pre>
    *
-   * <code>.google.devtools.cloudbuild.v1.BuildTrigger trigger = 3;</code>
+   * <code>
+   * .google.devtools.cloudbuild.v1.BuildTrigger trigger = 3 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   boolean hasTrigger();
   /**
    *
    *
    * <pre>
-   * `BuildTrigger` to update.
+   * Required. `BuildTrigger` to update.
    * </pre>
    *
-   * <code>.google.devtools.cloudbuild.v1.BuildTrigger trigger = 3;</code>
+   * <code>
+   * .google.devtools.cloudbuild.v1.BuildTrigger trigger = 3 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   com.google.cloudbuild.v1.BuildTrigger getTrigger();
   /**
    *
    *
    * <pre>
-   * `BuildTrigger` to update.
+   * Required. `BuildTrigger` to update.
    * </pre>
    *
-   * <code>.google.devtools.cloudbuild.v1.BuildTrigger trigger = 3;</code>
+   * <code>
+   * .google.devtools.cloudbuild.v1.BuildTrigger trigger = 3 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   com.google.cloudbuild.v1.BuildTriggerOrBuilder getTriggerOrBuilder();
 }

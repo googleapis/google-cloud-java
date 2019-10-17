@@ -120,10 +120,10 @@ public final class CancelBuildRequest extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * ID of the project.
+   * Required. ID of the project.
    * </pre>
    *
-   * <code>string project_id = 1;</code>
+   * <code>string project_id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   public java.lang.String getProjectId() {
     java.lang.Object ref = projectId_;
@@ -140,10 +140,10 @@ public final class CancelBuildRequest extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * ID of the project.
+   * Required. ID of the project.
    * </pre>
    *
-   * <code>string project_id = 1;</code>
+   * <code>string project_id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   public com.google.protobuf.ByteString getProjectIdBytes() {
     java.lang.Object ref = projectId_;
@@ -163,10 +163,10 @@ public final class CancelBuildRequest extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * ID of the build.
+   * Required. ID of the build.
    * </pre>
    *
-   * <code>string id = 2;</code>
+   * <code>string id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   public java.lang.String getId() {
     java.lang.Object ref = id_;
@@ -183,10 +183,10 @@ public final class CancelBuildRequest extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * ID of the build.
+   * Required. ID of the build.
    * </pre>
    *
-   * <code>string id = 2;</code>
+   * <code>string id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   public com.google.protobuf.ByteString getIdBytes() {
     java.lang.Object ref = id_;
@@ -537,10 +537,10 @@ public final class CancelBuildRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * ID of the project.
+     * Required. ID of the project.
      * </pre>
      *
-     * <code>string project_id = 1;</code>
+     * <code>string project_id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public java.lang.String getProjectId() {
       java.lang.Object ref = projectId_;
@@ -557,10 +557,10 @@ public final class CancelBuildRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * ID of the project.
+     * Required. ID of the project.
      * </pre>
      *
-     * <code>string project_id = 1;</code>
+     * <code>string project_id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public com.google.protobuf.ByteString getProjectIdBytes() {
       java.lang.Object ref = projectId_;
@@ -577,10 +577,10 @@ public final class CancelBuildRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * ID of the project.
+     * Required. ID of the project.
      * </pre>
      *
-     * <code>string project_id = 1;</code>
+     * <code>string project_id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder setProjectId(java.lang.String value) {
       if (value == null) {
@@ -595,10 +595,10 @@ public final class CancelBuildRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * ID of the project.
+     * Required. ID of the project.
      * </pre>
      *
-     * <code>string project_id = 1;</code>
+     * <code>string project_id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder clearProjectId() {
 
@@ -610,10 +610,10 @@ public final class CancelBuildRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * ID of the project.
+     * Required. ID of the project.
      * </pre>
      *
-     * <code>string project_id = 1;</code>
+     * <code>string project_id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder setProjectIdBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -631,10 +631,10 @@ public final class CancelBuildRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * ID of the build.
+     * Required. ID of the build.
      * </pre>
      *
-     * <code>string id = 2;</code>
+     * <code>string id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public java.lang.String getId() {
       java.lang.Object ref = id_;
@@ -651,10 +651,10 @@ public final class CancelBuildRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * ID of the build.
+     * Required. ID of the build.
      * </pre>
      *
-     * <code>string id = 2;</code>
+     * <code>string id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public com.google.protobuf.ByteString getIdBytes() {
       java.lang.Object ref = id_;
@@ -671,10 +671,10 @@ public final class CancelBuildRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * ID of the build.
+     * Required. ID of the build.
      * </pre>
      *
-     * <code>string id = 2;</code>
+     * <code>string id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder setId(java.lang.String value) {
       if (value == null) {
@@ -689,10 +689,10 @@ public final class CancelBuildRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * ID of the build.
+     * Required. ID of the build.
      * </pre>
      *
-     * <code>string id = 2;</code>
+     * <code>string id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder clearId() {
 
@@ -704,10 +704,10 @@ public final class CancelBuildRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * ID of the build.
+     * Required. ID of the build.
      * </pre>
      *
-     * <code>string id = 2;</code>
+     * <code>string id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder setIdBytes(com.google.protobuf.ByteString value) {
       if (value == null) {

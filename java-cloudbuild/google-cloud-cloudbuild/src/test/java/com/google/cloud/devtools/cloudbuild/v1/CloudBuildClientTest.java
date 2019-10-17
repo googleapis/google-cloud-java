@@ -302,12 +302,14 @@ public class CloudBuildClientTest {
   public void createBuildTriggerTest() {
     String id = "id3355";
     String description = "description-1724546052";
+    String name = "name3373707";
     String filename = "filename-734768633";
     boolean disabled = true;
     BuildTrigger expectedResponse =
         BuildTrigger.newBuilder()
             .setId(id)
             .setDescription(description)
+            .setName(name)
             .setFilename(filename)
             .setDisabled(disabled)
             .build();
@@ -353,12 +355,14 @@ public class CloudBuildClientTest {
   public void getBuildTriggerTest() {
     String id = "id3355";
     String description = "description-1724546052";
+    String name = "name3373707";
     String filename = "filename-734768633";
     boolean disabled = true;
     BuildTrigger expectedResponse =
         BuildTrigger.newBuilder()
             .setId(id)
             .setDescription(description)
+            .setName(name)
             .setFilename(filename)
             .setDisabled(disabled)
             .build();
@@ -402,7 +406,9 @@ public class CloudBuildClientTest {
   @Test
   @SuppressWarnings("all")
   public void listBuildTriggersTest() {
-    ListBuildTriggersResponse expectedResponse = ListBuildTriggersResponse.newBuilder().build();
+    String nextPageToken = "nextPageToken-1530815211";
+    ListBuildTriggersResponse expectedResponse =
+        ListBuildTriggersResponse.newBuilder().setNextPageToken(nextPageToken).build();
     mockCloudBuild.addResponse(expectedResponse);
 
     String projectId = "projectId-1969970175";
@@ -482,12 +488,14 @@ public class CloudBuildClientTest {
   public void updateBuildTriggerTest() {
     String id = "id3355";
     String description = "description-1724546052";
+    String name = "name3373707";
     String filename = "filename-734768633";
     boolean disabled = true;
     BuildTrigger expectedResponse =
         BuildTrigger.newBuilder()
             .setId(id)
             .setDescription(description)
+            .setName(name)
             .setFilename(filename)
             .setDisabled(disabled)
             .build();

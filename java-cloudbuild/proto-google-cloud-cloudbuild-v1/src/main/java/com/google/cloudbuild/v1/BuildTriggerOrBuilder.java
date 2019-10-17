@@ -69,6 +69,68 @@ public interface BuildTriggerOrBuilder
    *
    *
    * <pre>
+   * User assigned name of the trigger. Must be unique within the project.
+   * </pre>
+   *
+   * <code>string name = 21;</code>
+   */
+  java.lang.String getName();
+  /**
+   *
+   *
+   * <pre>
+   * User assigned name of the trigger. Must be unique within the project.
+   * </pre>
+   *
+   * <code>string name = 21;</code>
+   */
+  com.google.protobuf.ByteString getNameBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Tags for annotation of a `BuildTrigger`
+   * </pre>
+   *
+   * <code>repeated string tags = 19;</code>
+   */
+  java.util.List<java.lang.String> getTagsList();
+  /**
+   *
+   *
+   * <pre>
+   * Tags for annotation of a `BuildTrigger`
+   * </pre>
+   *
+   * <code>repeated string tags = 19;</code>
+   */
+  int getTagsCount();
+  /**
+   *
+   *
+   * <pre>
+   * Tags for annotation of a `BuildTrigger`
+   * </pre>
+   *
+   * <code>repeated string tags = 19;</code>
+   */
+  java.lang.String getTags(int index);
+  /**
+   *
+   *
+   * <pre>
+   * Tags for annotation of a `BuildTrigger`
+   * </pre>
+   *
+   * <code>repeated string tags = 19;</code>
+   */
+  com.google.protobuf.ByteString getTagsBytes(int index);
+
+  /**
+   *
+   *
+   * <pre>
    * Template describing the types of source changes to trigger a build.
    * Branch and tag names in trigger templates are interpreted as regular
    * expressions. Any branch or tag change that matches that regular expression
@@ -104,6 +166,40 @@ public interface BuildTriggerOrBuilder
    * <code>.google.devtools.cloudbuild.v1.RepoSource trigger_template = 7;</code>
    */
   com.google.cloudbuild.v1.RepoSourceOrBuilder getTriggerTemplateOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * GitHubEventsConfig describes the configuration of a trigger that creates
+   * a build whenever a GitHub event is received.
+   * </pre>
+   *
+   * <code>.google.devtools.cloudbuild.v1.GitHubEventsConfig github = 13;</code>
+   */
+  boolean hasGithub();
+  /**
+   *
+   *
+   * <pre>
+   * GitHubEventsConfig describes the configuration of a trigger that creates
+   * a build whenever a GitHub event is received.
+   * </pre>
+   *
+   * <code>.google.devtools.cloudbuild.v1.GitHubEventsConfig github = 13;</code>
+   */
+  com.google.cloudbuild.v1.GitHubEventsConfig getGithub();
+  /**
+   *
+   *
+   * <pre>
+   * GitHubEventsConfig describes the configuration of a trigger that creates
+   * a build whenever a GitHub event is received.
+   * </pre>
+   *
+   * <code>.google.devtools.cloudbuild.v1.GitHubEventsConfig github = 13;</code>
+   */
+  com.google.cloudbuild.v1.GitHubEventsConfigOrBuilder getGithubOrBuilder();
 
   /**
    *

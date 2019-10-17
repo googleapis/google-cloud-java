@@ -127,10 +127,10 @@ public final class CreateBuildRequest extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * ID of the project.
+   * Required. ID of the project.
    * </pre>
    *
-   * <code>string project_id = 1;</code>
+   * <code>string project_id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   public java.lang.String getProjectId() {
     java.lang.Object ref = projectId_;
@@ -147,10 +147,10 @@ public final class CreateBuildRequest extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * ID of the project.
+   * Required. ID of the project.
    * </pre>
    *
-   * <code>string project_id = 1;</code>
+   * <code>string project_id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   public com.google.protobuf.ByteString getProjectIdBytes() {
     java.lang.Object ref = projectId_;
@@ -170,10 +170,11 @@ public final class CreateBuildRequest extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * Build resource to create.
+   * Required. Build resource to create.
    * </pre>
    *
-   * <code>.google.devtools.cloudbuild.v1.Build build = 2;</code>
+   * <code>.google.devtools.cloudbuild.v1.Build build = 2 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   public boolean hasBuild() {
     return build_ != null;
@@ -182,10 +183,11 @@ public final class CreateBuildRequest extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * Build resource to create.
+   * Required. Build resource to create.
    * </pre>
    *
-   * <code>.google.devtools.cloudbuild.v1.Build build = 2;</code>
+   * <code>.google.devtools.cloudbuild.v1.Build build = 2 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   public com.google.cloudbuild.v1.Build getBuild() {
     return build_ == null ? com.google.cloudbuild.v1.Build.getDefaultInstance() : build_;
@@ -194,10 +196,11 @@ public final class CreateBuildRequest extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * Build resource to create.
+   * Required. Build resource to create.
    * </pre>
    *
-   * <code>.google.devtools.cloudbuild.v1.Build build = 2;</code>
+   * <code>.google.devtools.cloudbuild.v1.Build build = 2 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   public com.google.cloudbuild.v1.BuildOrBuilder getBuildOrBuilder() {
     return getBuild();
@@ -552,10 +555,10 @@ public final class CreateBuildRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * ID of the project.
+     * Required. ID of the project.
      * </pre>
      *
-     * <code>string project_id = 1;</code>
+     * <code>string project_id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public java.lang.String getProjectId() {
       java.lang.Object ref = projectId_;
@@ -572,10 +575,10 @@ public final class CreateBuildRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * ID of the project.
+     * Required. ID of the project.
      * </pre>
      *
-     * <code>string project_id = 1;</code>
+     * <code>string project_id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public com.google.protobuf.ByteString getProjectIdBytes() {
       java.lang.Object ref = projectId_;
@@ -592,10 +595,10 @@ public final class CreateBuildRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * ID of the project.
+     * Required. ID of the project.
      * </pre>
      *
-     * <code>string project_id = 1;</code>
+     * <code>string project_id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder setProjectId(java.lang.String value) {
       if (value == null) {
@@ -610,10 +613,10 @@ public final class CreateBuildRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * ID of the project.
+     * Required. ID of the project.
      * </pre>
      *
-     * <code>string project_id = 1;</code>
+     * <code>string project_id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder clearProjectId() {
 
@@ -625,10 +628,10 @@ public final class CreateBuildRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * ID of the project.
+     * Required. ID of the project.
      * </pre>
      *
-     * <code>string project_id = 1;</code>
+     * <code>string project_id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder setProjectIdBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -651,10 +654,12 @@ public final class CreateBuildRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Build resource to create.
+     * Required. Build resource to create.
      * </pre>
      *
-     * <code>.google.devtools.cloudbuild.v1.Build build = 2;</code>
+     * <code>
+     * .google.devtools.cloudbuild.v1.Build build = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public boolean hasBuild() {
       return buildBuilder_ != null || build_ != null;
@@ -663,10 +668,12 @@ public final class CreateBuildRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Build resource to create.
+     * Required. Build resource to create.
      * </pre>
      *
-     * <code>.google.devtools.cloudbuild.v1.Build build = 2;</code>
+     * <code>
+     * .google.devtools.cloudbuild.v1.Build build = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public com.google.cloudbuild.v1.Build getBuild() {
       if (buildBuilder_ == null) {
@@ -679,10 +686,12 @@ public final class CreateBuildRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Build resource to create.
+     * Required. Build resource to create.
      * </pre>
      *
-     * <code>.google.devtools.cloudbuild.v1.Build build = 2;</code>
+     * <code>
+     * .google.devtools.cloudbuild.v1.Build build = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder setBuild(com.google.cloudbuild.v1.Build value) {
       if (buildBuilder_ == null) {
@@ -701,10 +710,12 @@ public final class CreateBuildRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Build resource to create.
+     * Required. Build resource to create.
      * </pre>
      *
-     * <code>.google.devtools.cloudbuild.v1.Build build = 2;</code>
+     * <code>
+     * .google.devtools.cloudbuild.v1.Build build = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder setBuild(com.google.cloudbuild.v1.Build.Builder builderForValue) {
       if (buildBuilder_ == null) {
@@ -720,10 +731,12 @@ public final class CreateBuildRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Build resource to create.
+     * Required. Build resource to create.
      * </pre>
      *
-     * <code>.google.devtools.cloudbuild.v1.Build build = 2;</code>
+     * <code>
+     * .google.devtools.cloudbuild.v1.Build build = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder mergeBuild(com.google.cloudbuild.v1.Build value) {
       if (buildBuilder_ == null) {
@@ -744,10 +757,12 @@ public final class CreateBuildRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Build resource to create.
+     * Required. Build resource to create.
      * </pre>
      *
-     * <code>.google.devtools.cloudbuild.v1.Build build = 2;</code>
+     * <code>
+     * .google.devtools.cloudbuild.v1.Build build = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder clearBuild() {
       if (buildBuilder_ == null) {
@@ -764,10 +779,12 @@ public final class CreateBuildRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Build resource to create.
+     * Required. Build resource to create.
      * </pre>
      *
-     * <code>.google.devtools.cloudbuild.v1.Build build = 2;</code>
+     * <code>
+     * .google.devtools.cloudbuild.v1.Build build = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public com.google.cloudbuild.v1.Build.Builder getBuildBuilder() {
 
@@ -778,10 +795,12 @@ public final class CreateBuildRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Build resource to create.
+     * Required. Build resource to create.
      * </pre>
      *
-     * <code>.google.devtools.cloudbuild.v1.Build build = 2;</code>
+     * <code>
+     * .google.devtools.cloudbuild.v1.Build build = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public com.google.cloudbuild.v1.BuildOrBuilder getBuildOrBuilder() {
       if (buildBuilder_ != null) {
@@ -794,10 +813,12 @@ public final class CreateBuildRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Build resource to create.
+     * Required. Build resource to create.
      * </pre>
      *
-     * <code>.google.devtools.cloudbuild.v1.Build build = 2;</code>
+     * <code>
+     * .google.devtools.cloudbuild.v1.Build build = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloudbuild.v1.Build,

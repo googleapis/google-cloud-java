@@ -22,16 +22,23 @@ import com.google.cloudbuild.v1.CancelBuildRequest;
 import com.google.cloudbuild.v1.CloudBuildGrpc.CloudBuildImplBase;
 import com.google.cloudbuild.v1.CreateBuildRequest;
 import com.google.cloudbuild.v1.CreateBuildTriggerRequest;
+import com.google.cloudbuild.v1.CreateWorkerPoolRequest;
 import com.google.cloudbuild.v1.DeleteBuildTriggerRequest;
+import com.google.cloudbuild.v1.DeleteWorkerPoolRequest;
 import com.google.cloudbuild.v1.GetBuildRequest;
 import com.google.cloudbuild.v1.GetBuildTriggerRequest;
+import com.google.cloudbuild.v1.GetWorkerPoolRequest;
 import com.google.cloudbuild.v1.ListBuildTriggersRequest;
 import com.google.cloudbuild.v1.ListBuildTriggersResponse;
 import com.google.cloudbuild.v1.ListBuildsRequest;
 import com.google.cloudbuild.v1.ListBuildsResponse;
+import com.google.cloudbuild.v1.ListWorkerPoolsRequest;
+import com.google.cloudbuild.v1.ListWorkerPoolsResponse;
 import com.google.cloudbuild.v1.RetryBuildRequest;
 import com.google.cloudbuild.v1.RunBuildTriggerRequest;
 import com.google.cloudbuild.v1.UpdateBuildTriggerRequest;
+import com.google.cloudbuild.v1.UpdateWorkerPoolRequest;
+import com.google.cloudbuild.v1.WorkerPool;
 import com.google.longrunning.Operation;
 import com.google.protobuf.AbstractMessage;
 import com.google.protobuf.Empty;
@@ -227,6 +234,81 @@ public class MockCloudBuildImpl extends CloudBuildImplBase {
     if (response instanceof Operation) {
       requests.add(request);
       responseObserver.onNext((Operation) response);
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError((Exception) response);
+    } else {
+      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+    }
+  }
+
+  @Override
+  public void createWorkerPool(
+      CreateWorkerPoolRequest request, StreamObserver<WorkerPool> responseObserver) {
+    Object response = responses.remove();
+    if (response instanceof WorkerPool) {
+      requests.add(request);
+      responseObserver.onNext((WorkerPool) response);
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError((Exception) response);
+    } else {
+      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+    }
+  }
+
+  @Override
+  public void getWorkerPool(
+      GetWorkerPoolRequest request, StreamObserver<WorkerPool> responseObserver) {
+    Object response = responses.remove();
+    if (response instanceof WorkerPool) {
+      requests.add(request);
+      responseObserver.onNext((WorkerPool) response);
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError((Exception) response);
+    } else {
+      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+    }
+  }
+
+  @Override
+  public void deleteWorkerPool(
+      DeleteWorkerPoolRequest request, StreamObserver<Empty> responseObserver) {
+    Object response = responses.remove();
+    if (response instanceof Empty) {
+      requests.add(request);
+      responseObserver.onNext((Empty) response);
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError((Exception) response);
+    } else {
+      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+    }
+  }
+
+  @Override
+  public void updateWorkerPool(
+      UpdateWorkerPoolRequest request, StreamObserver<WorkerPool> responseObserver) {
+    Object response = responses.remove();
+    if (response instanceof WorkerPool) {
+      requests.add(request);
+      responseObserver.onNext((WorkerPool) response);
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError((Exception) response);
+    } else {
+      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+    }
+  }
+
+  @Override
+  public void listWorkerPools(
+      ListWorkerPoolsRequest request, StreamObserver<ListWorkerPoolsResponse> responseObserver) {
+    Object response = responses.remove();
+    if (response instanceof ListWorkerPoolsResponse) {
+      requests.add(request);
+      responseObserver.onNext((ListWorkerPoolsResponse) response);
       responseObserver.onCompleted();
     } else if (response instanceof Exception) {
       responseObserver.onError((Exception) response);

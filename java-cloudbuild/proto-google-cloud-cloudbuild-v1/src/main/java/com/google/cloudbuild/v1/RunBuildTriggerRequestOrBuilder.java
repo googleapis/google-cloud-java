@@ -27,20 +27,20 @@ public interface RunBuildTriggerRequestOrBuilder
    *
    *
    * <pre>
-   * ID of the project.
+   * Required. ID of the project.
    * </pre>
    *
-   * <code>string project_id = 1;</code>
+   * <code>string project_id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   java.lang.String getProjectId();
   /**
    *
    *
    * <pre>
-   * ID of the project.
+   * Required. ID of the project.
    * </pre>
    *
-   * <code>string project_id = 1;</code>
+   * <code>string project_id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   com.google.protobuf.ByteString getProjectIdBytes();
 
@@ -48,20 +48,20 @@ public interface RunBuildTriggerRequestOrBuilder
    *
    *
    * <pre>
-   * ID of the trigger.
+   * Required. ID of the trigger.
    * </pre>
    *
-   * <code>string trigger_id = 2;</code>
+   * <code>string trigger_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   java.lang.String getTriggerId();
   /**
    *
    *
    * <pre>
-   * ID of the trigger.
+   * Required. ID of the trigger.
    * </pre>
    *
-   * <code>string trigger_id = 2;</code>
+   * <code>string trigger_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   com.google.protobuf.ByteString getTriggerIdBytes();
 
@@ -69,30 +69,36 @@ public interface RunBuildTriggerRequestOrBuilder
    *
    *
    * <pre>
-   * Source to build against this trigger.
+   * Required. Source to build against this trigger.
    * </pre>
    *
-   * <code>.google.devtools.cloudbuild.v1.RepoSource source = 3;</code>
+   * <code>
+   * .google.devtools.cloudbuild.v1.RepoSource source = 3 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   boolean hasSource();
   /**
    *
    *
    * <pre>
-   * Source to build against this trigger.
+   * Required. Source to build against this trigger.
    * </pre>
    *
-   * <code>.google.devtools.cloudbuild.v1.RepoSource source = 3;</code>
+   * <code>
+   * .google.devtools.cloudbuild.v1.RepoSource source = 3 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   com.google.cloudbuild.v1.RepoSource getSource();
   /**
    *
    *
    * <pre>
-   * Source to build against this trigger.
+   * Required. Source to build against this trigger.
    * </pre>
    *
-   * <code>.google.devtools.cloudbuild.v1.RepoSource source = 3;</code>
+   * <code>
+   * .google.devtools.cloudbuild.v1.RepoSource source = 3 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   com.google.cloudbuild.v1.RepoSourceOrBuilder getSourceOrBuilder();
 }

@@ -39,6 +39,7 @@ public final class ListBuildTriggersResponse extends com.google.protobuf.Generat
 
   private ListBuildTriggersResponse() {
     triggers_ = java.util.Collections.emptyList();
+    nextPageToken_ = "";
   }
 
   @java.lang.Override
@@ -74,6 +75,13 @@ public final class ListBuildTriggersResponse extends com.google.protobuf.Generat
               triggers_.add(
                   input.readMessage(
                       com.google.cloudbuild.v1.BuildTrigger.parser(), extensionRegistry));
+              break;
+            }
+          case 18:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              nextPageToken_ = s;
               break;
             }
           default:
@@ -113,6 +121,7 @@ public final class ListBuildTriggersResponse extends com.google.protobuf.Generat
             com.google.cloudbuild.v1.ListBuildTriggersResponse.Builder.class);
   }
 
+  private int bitField0_;
   public static final int TRIGGERS_FIELD_NUMBER = 1;
   private java.util.List<com.google.cloudbuild.v1.BuildTrigger> triggers_;
   /**
@@ -177,6 +186,49 @@ public final class ListBuildTriggersResponse extends com.google.protobuf.Generat
     return triggers_.get(index);
   }
 
+  public static final int NEXT_PAGE_TOKEN_FIELD_NUMBER = 2;
+  private volatile java.lang.Object nextPageToken_;
+  /**
+   *
+   *
+   * <pre>
+   * Token to receive the next page of results.
+   * </pre>
+   *
+   * <code>string next_page_token = 2;</code>
+   */
+  public java.lang.String getNextPageToken() {
+    java.lang.Object ref = nextPageToken_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      nextPageToken_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Token to receive the next page of results.
+   * </pre>
+   *
+   * <code>string next_page_token = 2;</code>
+   */
+  public com.google.protobuf.ByteString getNextPageTokenBytes() {
+    java.lang.Object ref = nextPageToken_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      nextPageToken_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -194,6 +246,9 @@ public final class ListBuildTriggersResponse extends com.google.protobuf.Generat
     for (int i = 0; i < triggers_.size(); i++) {
       output.writeMessage(1, triggers_.get(i));
     }
+    if (!getNextPageTokenBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 2, nextPageToken_);
+    }
     unknownFields.writeTo(output);
   }
 
@@ -205,6 +260,9 @@ public final class ListBuildTriggersResponse extends com.google.protobuf.Generat
     size = 0;
     for (int i = 0; i < triggers_.size(); i++) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(1, triggers_.get(i));
+    }
+    if (!getNextPageTokenBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, nextPageToken_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -223,6 +281,7 @@ public final class ListBuildTriggersResponse extends com.google.protobuf.Generat
         (com.google.cloudbuild.v1.ListBuildTriggersResponse) obj;
 
     if (!getTriggersList().equals(other.getTriggersList())) return false;
+    if (!getNextPageToken().equals(other.getNextPageToken())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -238,6 +297,8 @@ public final class ListBuildTriggersResponse extends com.google.protobuf.Generat
       hash = (37 * hash) + TRIGGERS_FIELD_NUMBER;
       hash = (53 * hash) + getTriggersList().hashCode();
     }
+    hash = (37 * hash) + NEXT_PAGE_TOKEN_FIELD_NUMBER;
+    hash = (53 * hash) + getNextPageToken().hashCode();
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -391,6 +452,8 @@ public final class ListBuildTriggersResponse extends com.google.protobuf.Generat
       } else {
         triggersBuilder_.clear();
       }
+      nextPageToken_ = "";
+
       return this;
     }
 
@@ -419,6 +482,7 @@ public final class ListBuildTriggersResponse extends com.google.protobuf.Generat
       com.google.cloudbuild.v1.ListBuildTriggersResponse result =
           new com.google.cloudbuild.v1.ListBuildTriggersResponse(this);
       int from_bitField0_ = bitField0_;
+      int to_bitField0_ = 0;
       if (triggersBuilder_ == null) {
         if (((bitField0_ & 0x00000001) != 0)) {
           triggers_ = java.util.Collections.unmodifiableList(triggers_);
@@ -428,6 +492,8 @@ public final class ListBuildTriggersResponse extends com.google.protobuf.Generat
       } else {
         result.triggers_ = triggersBuilder_.build();
       }
+      result.nextPageToken_ = nextPageToken_;
+      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -504,6 +570,10 @@ public final class ListBuildTriggersResponse extends com.google.protobuf.Generat
             triggersBuilder_.addAllMessages(other.triggers_);
           }
         }
+      }
+      if (!other.getNextPageToken().isEmpty()) {
+        nextPageToken_ = other.nextPageToken_;
+        onChanged();
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -883,6 +953,100 @@ public final class ListBuildTriggersResponse extends com.google.protobuf.Generat
         triggers_ = null;
       }
       return triggersBuilder_;
+    }
+
+    private java.lang.Object nextPageToken_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * Token to receive the next page of results.
+     * </pre>
+     *
+     * <code>string next_page_token = 2;</code>
+     */
+    public java.lang.String getNextPageToken() {
+      java.lang.Object ref = nextPageToken_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        nextPageToken_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Token to receive the next page of results.
+     * </pre>
+     *
+     * <code>string next_page_token = 2;</code>
+     */
+    public com.google.protobuf.ByteString getNextPageTokenBytes() {
+      java.lang.Object ref = nextPageToken_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        nextPageToken_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Token to receive the next page of results.
+     * </pre>
+     *
+     * <code>string next_page_token = 2;</code>
+     */
+    public Builder setNextPageToken(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+
+      nextPageToken_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Token to receive the next page of results.
+     * </pre>
+     *
+     * <code>string next_page_token = 2;</code>
+     */
+    public Builder clearNextPageToken() {
+
+      nextPageToken_ = getDefaultInstance().getNextPageToken();
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Token to receive the next page of results.
+     * </pre>
+     *
+     * <code>string next_page_token = 2;</code>
+     */
+    public Builder setNextPageTokenBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
+      nextPageToken_ = value;
+      onChanged();
+      return this;
     }
 
     @java.lang.Override

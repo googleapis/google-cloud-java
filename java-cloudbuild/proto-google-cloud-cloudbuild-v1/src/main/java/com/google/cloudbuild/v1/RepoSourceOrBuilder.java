@@ -73,7 +73,9 @@ public interface RepoSourceOrBuilder
    *
    *
    * <pre>
-   * Name of the branch to build.
+   * Regex matching branches to build.
+   * The syntax of the regular expressions accepted is the syntax accepted by
+   * RE2 and described at https://github.com/google/re2/wiki/Syntax
    * </pre>
    *
    * <code>string branch_name = 3;</code>
@@ -83,7 +85,9 @@ public interface RepoSourceOrBuilder
    *
    *
    * <pre>
-   * Name of the branch to build.
+   * Regex matching branches to build.
+   * The syntax of the regular expressions accepted is the syntax accepted by
+   * RE2 and described at https://github.com/google/re2/wiki/Syntax
    * </pre>
    *
    * <code>string branch_name = 3;</code>
@@ -94,7 +98,9 @@ public interface RepoSourceOrBuilder
    *
    *
    * <pre>
-   * Name of the tag to build.
+   * Regex matching tags to build.
+   * The syntax of the regular expressions accepted is the syntax accepted by
+   * RE2 and described at https://github.com/google/re2/wiki/Syntax
    * </pre>
    *
    * <code>string tag_name = 4;</code>
@@ -104,7 +110,9 @@ public interface RepoSourceOrBuilder
    *
    *
    * <pre>
-   * Name of the tag to build.
+   * Regex matching tags to build.
+   * The syntax of the regular expressions accepted is the syntax accepted by
+   * RE2 and described at https://github.com/google/re2/wiki/Syntax
    * </pre>
    *
    * <code>string tag_name = 4;</code>

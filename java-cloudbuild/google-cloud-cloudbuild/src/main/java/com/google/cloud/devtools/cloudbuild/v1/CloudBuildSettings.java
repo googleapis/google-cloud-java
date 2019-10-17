@@ -34,16 +34,23 @@ import com.google.cloudbuild.v1.BuildTrigger;
 import com.google.cloudbuild.v1.CancelBuildRequest;
 import com.google.cloudbuild.v1.CreateBuildRequest;
 import com.google.cloudbuild.v1.CreateBuildTriggerRequest;
+import com.google.cloudbuild.v1.CreateWorkerPoolRequest;
 import com.google.cloudbuild.v1.DeleteBuildTriggerRequest;
+import com.google.cloudbuild.v1.DeleteWorkerPoolRequest;
 import com.google.cloudbuild.v1.GetBuildRequest;
 import com.google.cloudbuild.v1.GetBuildTriggerRequest;
+import com.google.cloudbuild.v1.GetWorkerPoolRequest;
 import com.google.cloudbuild.v1.ListBuildTriggersRequest;
 import com.google.cloudbuild.v1.ListBuildTriggersResponse;
 import com.google.cloudbuild.v1.ListBuildsRequest;
 import com.google.cloudbuild.v1.ListBuildsResponse;
+import com.google.cloudbuild.v1.ListWorkerPoolsRequest;
+import com.google.cloudbuild.v1.ListWorkerPoolsResponse;
 import com.google.cloudbuild.v1.RetryBuildRequest;
 import com.google.cloudbuild.v1.RunBuildTriggerRequest;
 import com.google.cloudbuild.v1.UpdateBuildTriggerRequest;
+import com.google.cloudbuild.v1.UpdateWorkerPoolRequest;
+import com.google.cloudbuild.v1.WorkerPool;
 import com.google.longrunning.Operation;
 import com.google.protobuf.Empty;
 import java.io.IOException;
@@ -135,6 +142,32 @@ public class CloudBuildSettings extends ClientSettings<CloudBuildSettings> {
   /** Returns the object with the settings used for calls to retryBuild. */
   public UnaryCallSettings<RetryBuildRequest, Operation> retryBuildSettings() {
     return ((CloudBuildStubSettings) getStubSettings()).retryBuildSettings();
+  }
+
+  /** Returns the object with the settings used for calls to createWorkerPool. */
+  public UnaryCallSettings<CreateWorkerPoolRequest, WorkerPool> createWorkerPoolSettings() {
+    return ((CloudBuildStubSettings) getStubSettings()).createWorkerPoolSettings();
+  }
+
+  /** Returns the object with the settings used for calls to getWorkerPool. */
+  public UnaryCallSettings<GetWorkerPoolRequest, WorkerPool> getWorkerPoolSettings() {
+    return ((CloudBuildStubSettings) getStubSettings()).getWorkerPoolSettings();
+  }
+
+  /** Returns the object with the settings used for calls to deleteWorkerPool. */
+  public UnaryCallSettings<DeleteWorkerPoolRequest, Empty> deleteWorkerPoolSettings() {
+    return ((CloudBuildStubSettings) getStubSettings()).deleteWorkerPoolSettings();
+  }
+
+  /** Returns the object with the settings used for calls to updateWorkerPool. */
+  public UnaryCallSettings<UpdateWorkerPoolRequest, WorkerPool> updateWorkerPoolSettings() {
+    return ((CloudBuildStubSettings) getStubSettings()).updateWorkerPoolSettings();
+  }
+
+  /** Returns the object with the settings used for calls to listWorkerPools. */
+  public UnaryCallSettings<ListWorkerPoolsRequest, ListWorkerPoolsResponse>
+      listWorkerPoolsSettings() {
+    return ((CloudBuildStubSettings) getStubSettings()).listWorkerPoolsSettings();
   }
 
   public static final CloudBuildSettings create(CloudBuildStubSettings stub) throws IOException {
@@ -292,6 +325,34 @@ public class CloudBuildSettings extends ClientSettings<CloudBuildSettings> {
     /** Returns the builder for the settings used for calls to retryBuild. */
     public UnaryCallSettings.Builder<RetryBuildRequest, Operation> retryBuildSettings() {
       return getStubSettingsBuilder().retryBuildSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to createWorkerPool. */
+    public UnaryCallSettings.Builder<CreateWorkerPoolRequest, WorkerPool>
+        createWorkerPoolSettings() {
+      return getStubSettingsBuilder().createWorkerPoolSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to getWorkerPool. */
+    public UnaryCallSettings.Builder<GetWorkerPoolRequest, WorkerPool> getWorkerPoolSettings() {
+      return getStubSettingsBuilder().getWorkerPoolSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to deleteWorkerPool. */
+    public UnaryCallSettings.Builder<DeleteWorkerPoolRequest, Empty> deleteWorkerPoolSettings() {
+      return getStubSettingsBuilder().deleteWorkerPoolSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to updateWorkerPool. */
+    public UnaryCallSettings.Builder<UpdateWorkerPoolRequest, WorkerPool>
+        updateWorkerPoolSettings() {
+      return getStubSettingsBuilder().updateWorkerPoolSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to listWorkerPools. */
+    public UnaryCallSettings.Builder<ListWorkerPoolsRequest, ListWorkerPoolsResponse>
+        listWorkerPoolsSettings() {
+      return getStubSettingsBuilder().listWorkerPoolsSettings();
     }
 
     @Override

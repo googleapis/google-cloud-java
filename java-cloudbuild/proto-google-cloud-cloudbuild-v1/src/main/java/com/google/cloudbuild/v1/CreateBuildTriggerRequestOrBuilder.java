@@ -27,20 +27,20 @@ public interface CreateBuildTriggerRequestOrBuilder
    *
    *
    * <pre>
-   * ID of the project for which to configure automatic builds.
+   * Required. ID of the project for which to configure automatic builds.
    * </pre>
    *
-   * <code>string project_id = 1;</code>
+   * <code>string project_id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   java.lang.String getProjectId();
   /**
    *
    *
    * <pre>
-   * ID of the project for which to configure automatic builds.
+   * Required. ID of the project for which to configure automatic builds.
    * </pre>
    *
-   * <code>string project_id = 1;</code>
+   * <code>string project_id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   com.google.protobuf.ByteString getProjectIdBytes();
 
@@ -48,30 +48,36 @@ public interface CreateBuildTriggerRequestOrBuilder
    *
    *
    * <pre>
-   * `BuildTrigger` to create.
+   * Required. `BuildTrigger` to create.
    * </pre>
    *
-   * <code>.google.devtools.cloudbuild.v1.BuildTrigger trigger = 2;</code>
+   * <code>
+   * .google.devtools.cloudbuild.v1.BuildTrigger trigger = 2 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   boolean hasTrigger();
   /**
    *
    *
    * <pre>
-   * `BuildTrigger` to create.
+   * Required. `BuildTrigger` to create.
    * </pre>
    *
-   * <code>.google.devtools.cloudbuild.v1.BuildTrigger trigger = 2;</code>
+   * <code>
+   * .google.devtools.cloudbuild.v1.BuildTrigger trigger = 2 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   com.google.cloudbuild.v1.BuildTrigger getTrigger();
   /**
    *
    *
    * <pre>
-   * `BuildTrigger` to create.
+   * Required. `BuildTrigger` to create.
    * </pre>
    *
-   * <code>.google.devtools.cloudbuild.v1.BuildTrigger trigger = 2;</code>
+   * <code>
+   * .google.devtools.cloudbuild.v1.BuildTrigger trigger = 2 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   com.google.cloudbuild.v1.BuildTriggerOrBuilder getTriggerOrBuilder();
 }

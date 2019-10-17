@@ -41,6 +41,8 @@ public final class BuildTrigger extends com.google.protobuf.GeneratedMessageV3
   private BuildTrigger() {
     id_ = "";
     description_ = "";
+    name_ = "";
+    tags_ = com.google.protobuf.LazyStringArrayList.EMPTY;
     ignoredFiles_ = com.google.protobuf.LazyStringArrayList.EMPTY;
     includedFiles_ = com.google.protobuf.LazyStringArrayList.EMPTY;
   }
@@ -143,11 +145,11 @@ public final class BuildTrigger extends com.google.protobuf.GeneratedMessageV3
             }
           case 90:
             {
-              if (!((mutable_bitField0_ & 0x00000080) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000400) != 0)) {
                 substitutions_ =
                     com.google.protobuf.MapField.newMapField(
                         SubstitutionsDefaultEntryHolder.defaultEntry);
-                mutable_bitField0_ |= 0x00000080;
+                mutable_bitField0_ |= 0x00000400;
               }
               com.google.protobuf.MapEntry<java.lang.String, java.lang.String> substitutions__ =
                   input.readMessage(
@@ -158,12 +160,28 @@ public final class BuildTrigger extends com.google.protobuf.GeneratedMessageV3
                   .put(substitutions__.getKey(), substitutions__.getValue());
               break;
             }
+          case 106:
+            {
+              com.google.cloudbuild.v1.GitHubEventsConfig.Builder subBuilder = null;
+              if (github_ != null) {
+                subBuilder = github_.toBuilder();
+              }
+              github_ =
+                  input.readMessage(
+                      com.google.cloudbuild.v1.GitHubEventsConfig.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(github_);
+                github_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
           case 122:
             {
               java.lang.String s = input.readStringRequireUtf8();
-              if (!((mutable_bitField0_ & 0x00000100) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000800) != 0)) {
                 ignoredFiles_ = new com.google.protobuf.LazyStringArrayList();
-                mutable_bitField0_ |= 0x00000100;
+                mutable_bitField0_ |= 0x00000800;
               }
               ignoredFiles_.add(s);
               break;
@@ -171,11 +189,28 @@ public final class BuildTrigger extends com.google.protobuf.GeneratedMessageV3
           case 130:
             {
               java.lang.String s = input.readStringRequireUtf8();
-              if (!((mutable_bitField0_ & 0x00000200) != 0)) {
+              if (!((mutable_bitField0_ & 0x00001000) != 0)) {
                 includedFiles_ = new com.google.protobuf.LazyStringArrayList();
-                mutable_bitField0_ |= 0x00000200;
+                mutable_bitField0_ |= 0x00001000;
               }
               includedFiles_.add(s);
+              break;
+            }
+          case 154:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+              if (!((mutable_bitField0_ & 0x00000008) != 0)) {
+                tags_ = new com.google.protobuf.LazyStringArrayList();
+                mutable_bitField0_ |= 0x00000008;
+              }
+              tags_.add(s);
+              break;
+            }
+          case 170:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              name_ = s;
               break;
             }
           default:
@@ -192,11 +227,14 @@ public final class BuildTrigger extends com.google.protobuf.GeneratedMessageV3
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
-      if (((mutable_bitField0_ & 0x00000100) != 0)) {
+      if (((mutable_bitField0_ & 0x00000800) != 0)) {
         ignoredFiles_ = ignoredFiles_.getUnmodifiableView();
       }
-      if (((mutable_bitField0_ & 0x00000200) != 0)) {
+      if (((mutable_bitField0_ & 0x00001000) != 0)) {
         includedFiles_ = includedFiles_.getUnmodifiableView();
+      }
+      if (((mutable_bitField0_ & 0x00000008) != 0)) {
+        tags_ = tags_.getUnmodifiableView();
       }
       this.unknownFields = unknownFields.build();
       makeExtensionsImmutable();
@@ -356,6 +394,100 @@ public final class BuildTrigger extends com.google.protobuf.GeneratedMessageV3
     }
   }
 
+  public static final int NAME_FIELD_NUMBER = 21;
+  private volatile java.lang.Object name_;
+  /**
+   *
+   *
+   * <pre>
+   * User assigned name of the trigger. Must be unique within the project.
+   * </pre>
+   *
+   * <code>string name = 21;</code>
+   */
+  public java.lang.String getName() {
+    java.lang.Object ref = name_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      name_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * User assigned name of the trigger. Must be unique within the project.
+   * </pre>
+   *
+   * <code>string name = 21;</code>
+   */
+  public com.google.protobuf.ByteString getNameBytes() {
+    java.lang.Object ref = name_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      name_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int TAGS_FIELD_NUMBER = 19;
+  private com.google.protobuf.LazyStringList tags_;
+  /**
+   *
+   *
+   * <pre>
+   * Tags for annotation of a `BuildTrigger`
+   * </pre>
+   *
+   * <code>repeated string tags = 19;</code>
+   */
+  public com.google.protobuf.ProtocolStringList getTagsList() {
+    return tags_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Tags for annotation of a `BuildTrigger`
+   * </pre>
+   *
+   * <code>repeated string tags = 19;</code>
+   */
+  public int getTagsCount() {
+    return tags_.size();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Tags for annotation of a `BuildTrigger`
+   * </pre>
+   *
+   * <code>repeated string tags = 19;</code>
+   */
+  public java.lang.String getTags(int index) {
+    return tags_.get(index);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Tags for annotation of a `BuildTrigger`
+   * </pre>
+   *
+   * <code>repeated string tags = 19;</code>
+   */
+  public com.google.protobuf.ByteString getTagsBytes(int index) {
+    return tags_.getByteString(index);
+  }
+
   public static final int TRIGGER_TEMPLATE_FIELD_NUMBER = 7;
   private com.google.cloudbuild.v1.RepoSource triggerTemplate_;
   /**
@@ -404,6 +536,50 @@ public final class BuildTrigger extends com.google.protobuf.GeneratedMessageV3
    */
   public com.google.cloudbuild.v1.RepoSourceOrBuilder getTriggerTemplateOrBuilder() {
     return getTriggerTemplate();
+  }
+
+  public static final int GITHUB_FIELD_NUMBER = 13;
+  private com.google.cloudbuild.v1.GitHubEventsConfig github_;
+  /**
+   *
+   *
+   * <pre>
+   * GitHubEventsConfig describes the configuration of a trigger that creates
+   * a build whenever a GitHub event is received.
+   * </pre>
+   *
+   * <code>.google.devtools.cloudbuild.v1.GitHubEventsConfig github = 13;</code>
+   */
+  public boolean hasGithub() {
+    return github_ != null;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * GitHubEventsConfig describes the configuration of a trigger that creates
+   * a build whenever a GitHub event is received.
+   * </pre>
+   *
+   * <code>.google.devtools.cloudbuild.v1.GitHubEventsConfig github = 13;</code>
+   */
+  public com.google.cloudbuild.v1.GitHubEventsConfig getGithub() {
+    return github_ == null
+        ? com.google.cloudbuild.v1.GitHubEventsConfig.getDefaultInstance()
+        : github_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * GitHubEventsConfig describes the configuration of a trigger that creates
+   * a build whenever a GitHub event is received.
+   * </pre>
+   *
+   * <code>.google.devtools.cloudbuild.v1.GitHubEventsConfig github = 13;</code>
+   */
+  public com.google.cloudbuild.v1.GitHubEventsConfigOrBuilder getGithubOrBuilder() {
+    return getGithub();
   }
 
   public static final int BUILD_FIELD_NUMBER = 4;
@@ -841,11 +1017,20 @@ public final class BuildTrigger extends com.google.protobuf.GeneratedMessageV3
     }
     com.google.protobuf.GeneratedMessageV3.serializeStringMapTo(
         output, internalGetSubstitutions(), SubstitutionsDefaultEntryHolder.defaultEntry, 11);
+    if (github_ != null) {
+      output.writeMessage(13, getGithub());
+    }
     for (int i = 0; i < ignoredFiles_.size(); i++) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 15, ignoredFiles_.getRaw(i));
     }
     for (int i = 0; i < includedFiles_.size(); i++) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 16, includedFiles_.getRaw(i));
+    }
+    for (int i = 0; i < tags_.size(); i++) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 19, tags_.getRaw(i));
+    }
+    if (!getNameBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 21, name_);
     }
     unknownFields.writeTo(output);
   }
@@ -889,6 +1074,9 @@ public final class BuildTrigger extends com.google.protobuf.GeneratedMessageV3
               .build();
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(11, substitutions__);
     }
+    if (github_ != null) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(13, getGithub());
+    }
     {
       int dataSize = 0;
       for (int i = 0; i < ignoredFiles_.size(); i++) {
@@ -904,6 +1092,17 @@ public final class BuildTrigger extends com.google.protobuf.GeneratedMessageV3
       }
       size += dataSize;
       size += 2 * getIncludedFilesList().size();
+    }
+    {
+      int dataSize = 0;
+      for (int i = 0; i < tags_.size(); i++) {
+        dataSize += computeStringSizeNoTag(tags_.getRaw(i));
+      }
+      size += dataSize;
+      size += 2 * getTagsList().size();
+    }
+    if (!getNameBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(21, name_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -922,9 +1121,15 @@ public final class BuildTrigger extends com.google.protobuf.GeneratedMessageV3
 
     if (!getId().equals(other.getId())) return false;
     if (!getDescription().equals(other.getDescription())) return false;
+    if (!getName().equals(other.getName())) return false;
+    if (!getTagsList().equals(other.getTagsList())) return false;
     if (hasTriggerTemplate() != other.hasTriggerTemplate()) return false;
     if (hasTriggerTemplate()) {
       if (!getTriggerTemplate().equals(other.getTriggerTemplate())) return false;
+    }
+    if (hasGithub() != other.hasGithub()) return false;
+    if (hasGithub()) {
+      if (!getGithub().equals(other.getGithub())) return false;
     }
     if (hasCreateTime() != other.hasCreateTime()) return false;
     if (hasCreateTime()) {
@@ -960,9 +1165,19 @@ public final class BuildTrigger extends com.google.protobuf.GeneratedMessageV3
     hash = (53 * hash) + getId().hashCode();
     hash = (37 * hash) + DESCRIPTION_FIELD_NUMBER;
     hash = (53 * hash) + getDescription().hashCode();
+    hash = (37 * hash) + NAME_FIELD_NUMBER;
+    hash = (53 * hash) + getName().hashCode();
+    if (getTagsCount() > 0) {
+      hash = (37 * hash) + TAGS_FIELD_NUMBER;
+      hash = (53 * hash) + getTagsList().hashCode();
+    }
     if (hasTriggerTemplate()) {
       hash = (37 * hash) + TRIGGER_TEMPLATE_FIELD_NUMBER;
       hash = (53 * hash) + getTriggerTemplate().hashCode();
+    }
+    if (hasGithub()) {
+      hash = (37 * hash) + GITHUB_FIELD_NUMBER;
+      hash = (53 * hash) + getGithub().hashCode();
     }
     if (hasCreateTime()) {
       hash = (37 * hash) + CREATE_TIME_FIELD_NUMBER;
@@ -1163,11 +1378,21 @@ public final class BuildTrigger extends com.google.protobuf.GeneratedMessageV3
 
       description_ = "";
 
+      name_ = "";
+
+      tags_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      bitField0_ = (bitField0_ & ~0x00000008);
       if (triggerTemplateBuilder_ == null) {
         triggerTemplate_ = null;
       } else {
         triggerTemplate_ = null;
         triggerTemplateBuilder_ = null;
+      }
+      if (githubBuilder_ == null) {
+        github_ = null;
+      } else {
+        github_ = null;
+        githubBuilder_ = null;
       }
       if (createTimeBuilder_ == null) {
         createTime_ = null;
@@ -1179,9 +1404,9 @@ public final class BuildTrigger extends com.google.protobuf.GeneratedMessageV3
 
       internalGetMutableSubstitutions().clear();
       ignoredFiles_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000100);
+      bitField0_ = (bitField0_ & ~0x00000800);
       includedFiles_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000200);
+      bitField0_ = (bitField0_ & ~0x00001000);
       buildTemplateCase_ = 0;
       buildTemplate_ = null;
       return this;
@@ -1215,10 +1440,21 @@ public final class BuildTrigger extends com.google.protobuf.GeneratedMessageV3
       int to_bitField0_ = 0;
       result.id_ = id_;
       result.description_ = description_;
+      result.name_ = name_;
+      if (((bitField0_ & 0x00000008) != 0)) {
+        tags_ = tags_.getUnmodifiableView();
+        bitField0_ = (bitField0_ & ~0x00000008);
+      }
+      result.tags_ = tags_;
       if (triggerTemplateBuilder_ == null) {
         result.triggerTemplate_ = triggerTemplate_;
       } else {
         result.triggerTemplate_ = triggerTemplateBuilder_.build();
+      }
+      if (githubBuilder_ == null) {
+        result.github_ = github_;
+      } else {
+        result.github_ = githubBuilder_.build();
       }
       if (buildTemplateCase_ == 4) {
         if (buildBuilder_ == null) {
@@ -1238,14 +1474,14 @@ public final class BuildTrigger extends com.google.protobuf.GeneratedMessageV3
       result.disabled_ = disabled_;
       result.substitutions_ = internalGetSubstitutions();
       result.substitutions_.makeImmutable();
-      if (((bitField0_ & 0x00000100) != 0)) {
+      if (((bitField0_ & 0x00000800) != 0)) {
         ignoredFiles_ = ignoredFiles_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000100);
+        bitField0_ = (bitField0_ & ~0x00000800);
       }
       result.ignoredFiles_ = ignoredFiles_;
-      if (((bitField0_ & 0x00000200) != 0)) {
+      if (((bitField0_ & 0x00001000) != 0)) {
         includedFiles_ = includedFiles_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000200);
+        bitField0_ = (bitField0_ & ~0x00001000);
       }
       result.includedFiles_ = includedFiles_;
       result.bitField0_ = to_bitField0_;
@@ -1307,8 +1543,25 @@ public final class BuildTrigger extends com.google.protobuf.GeneratedMessageV3
         description_ = other.description_;
         onChanged();
       }
+      if (!other.getName().isEmpty()) {
+        name_ = other.name_;
+        onChanged();
+      }
+      if (!other.tags_.isEmpty()) {
+        if (tags_.isEmpty()) {
+          tags_ = other.tags_;
+          bitField0_ = (bitField0_ & ~0x00000008);
+        } else {
+          ensureTagsIsMutable();
+          tags_.addAll(other.tags_);
+        }
+        onChanged();
+      }
       if (other.hasTriggerTemplate()) {
         mergeTriggerTemplate(other.getTriggerTemplate());
+      }
+      if (other.hasGithub()) {
+        mergeGithub(other.getGithub());
       }
       if (other.hasCreateTime()) {
         mergeCreateTime(other.getCreateTime());
@@ -1320,7 +1573,7 @@ public final class BuildTrigger extends com.google.protobuf.GeneratedMessageV3
       if (!other.ignoredFiles_.isEmpty()) {
         if (ignoredFiles_.isEmpty()) {
           ignoredFiles_ = other.ignoredFiles_;
-          bitField0_ = (bitField0_ & ~0x00000100);
+          bitField0_ = (bitField0_ & ~0x00000800);
         } else {
           ensureIgnoredFilesIsMutable();
           ignoredFiles_.addAll(other.ignoredFiles_);
@@ -1330,7 +1583,7 @@ public final class BuildTrigger extends com.google.protobuf.GeneratedMessageV3
       if (!other.includedFiles_.isEmpty()) {
         if (includedFiles_.isEmpty()) {
           includedFiles_ = other.includedFiles_;
-          bitField0_ = (bitField0_ & ~0x00000200);
+          bitField0_ = (bitField0_ & ~0x00001000);
         } else {
           ensureIncludedFilesIsMutable();
           includedFiles_.addAll(other.includedFiles_);
@@ -1588,6 +1841,243 @@ public final class BuildTrigger extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
+    private java.lang.Object name_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * User assigned name of the trigger. Must be unique within the project.
+     * </pre>
+     *
+     * <code>string name = 21;</code>
+     */
+    public java.lang.String getName() {
+      java.lang.Object ref = name_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        name_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * User assigned name of the trigger. Must be unique within the project.
+     * </pre>
+     *
+     * <code>string name = 21;</code>
+     */
+    public com.google.protobuf.ByteString getNameBytes() {
+      java.lang.Object ref = name_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        name_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * User assigned name of the trigger. Must be unique within the project.
+     * </pre>
+     *
+     * <code>string name = 21;</code>
+     */
+    public Builder setName(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+
+      name_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * User assigned name of the trigger. Must be unique within the project.
+     * </pre>
+     *
+     * <code>string name = 21;</code>
+     */
+    public Builder clearName() {
+
+      name_ = getDefaultInstance().getName();
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * User assigned name of the trigger. Must be unique within the project.
+     * </pre>
+     *
+     * <code>string name = 21;</code>
+     */
+    public Builder setNameBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
+      name_ = value;
+      onChanged();
+      return this;
+    }
+
+    private com.google.protobuf.LazyStringList tags_ =
+        com.google.protobuf.LazyStringArrayList.EMPTY;
+
+    private void ensureTagsIsMutable() {
+      if (!((bitField0_ & 0x00000008) != 0)) {
+        tags_ = new com.google.protobuf.LazyStringArrayList(tags_);
+        bitField0_ |= 0x00000008;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Tags for annotation of a `BuildTrigger`
+     * </pre>
+     *
+     * <code>repeated string tags = 19;</code>
+     */
+    public com.google.protobuf.ProtocolStringList getTagsList() {
+      return tags_.getUnmodifiableView();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Tags for annotation of a `BuildTrigger`
+     * </pre>
+     *
+     * <code>repeated string tags = 19;</code>
+     */
+    public int getTagsCount() {
+      return tags_.size();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Tags for annotation of a `BuildTrigger`
+     * </pre>
+     *
+     * <code>repeated string tags = 19;</code>
+     */
+    public java.lang.String getTags(int index) {
+      return tags_.get(index);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Tags for annotation of a `BuildTrigger`
+     * </pre>
+     *
+     * <code>repeated string tags = 19;</code>
+     */
+    public com.google.protobuf.ByteString getTagsBytes(int index) {
+      return tags_.getByteString(index);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Tags for annotation of a `BuildTrigger`
+     * </pre>
+     *
+     * <code>repeated string tags = 19;</code>
+     */
+    public Builder setTags(int index, java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      ensureTagsIsMutable();
+      tags_.set(index, value);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Tags for annotation of a `BuildTrigger`
+     * </pre>
+     *
+     * <code>repeated string tags = 19;</code>
+     */
+    public Builder addTags(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      ensureTagsIsMutable();
+      tags_.add(value);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Tags for annotation of a `BuildTrigger`
+     * </pre>
+     *
+     * <code>repeated string tags = 19;</code>
+     */
+    public Builder addAllTags(java.lang.Iterable<java.lang.String> values) {
+      ensureTagsIsMutable();
+      com.google.protobuf.AbstractMessageLite.Builder.addAll(values, tags_);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Tags for annotation of a `BuildTrigger`
+     * </pre>
+     *
+     * <code>repeated string tags = 19;</code>
+     */
+    public Builder clearTags() {
+      tags_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      bitField0_ = (bitField0_ & ~0x00000008);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Tags for annotation of a `BuildTrigger`
+     * </pre>
+     *
+     * <code>repeated string tags = 19;</code>
+     */
+    public Builder addTagsBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      ensureTagsIsMutable();
+      tags_.add(value);
+      onChanged();
+      return this;
+    }
+
     private com.google.cloudbuild.v1.RepoSource triggerTemplate_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloudbuild.v1.RepoSource,
@@ -1794,6 +2284,196 @@ public final class BuildTrigger extends com.google.protobuf.GeneratedMessageV3
         triggerTemplate_ = null;
       }
       return triggerTemplateBuilder_;
+    }
+
+    private com.google.cloudbuild.v1.GitHubEventsConfig github_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloudbuild.v1.GitHubEventsConfig,
+            com.google.cloudbuild.v1.GitHubEventsConfig.Builder,
+            com.google.cloudbuild.v1.GitHubEventsConfigOrBuilder>
+        githubBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * GitHubEventsConfig describes the configuration of a trigger that creates
+     * a build whenever a GitHub event is received.
+     * </pre>
+     *
+     * <code>.google.devtools.cloudbuild.v1.GitHubEventsConfig github = 13;</code>
+     */
+    public boolean hasGithub() {
+      return githubBuilder_ != null || github_ != null;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * GitHubEventsConfig describes the configuration of a trigger that creates
+     * a build whenever a GitHub event is received.
+     * </pre>
+     *
+     * <code>.google.devtools.cloudbuild.v1.GitHubEventsConfig github = 13;</code>
+     */
+    public com.google.cloudbuild.v1.GitHubEventsConfig getGithub() {
+      if (githubBuilder_ == null) {
+        return github_ == null
+            ? com.google.cloudbuild.v1.GitHubEventsConfig.getDefaultInstance()
+            : github_;
+      } else {
+        return githubBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * GitHubEventsConfig describes the configuration of a trigger that creates
+     * a build whenever a GitHub event is received.
+     * </pre>
+     *
+     * <code>.google.devtools.cloudbuild.v1.GitHubEventsConfig github = 13;</code>
+     */
+    public Builder setGithub(com.google.cloudbuild.v1.GitHubEventsConfig value) {
+      if (githubBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        github_ = value;
+        onChanged();
+      } else {
+        githubBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * GitHubEventsConfig describes the configuration of a trigger that creates
+     * a build whenever a GitHub event is received.
+     * </pre>
+     *
+     * <code>.google.devtools.cloudbuild.v1.GitHubEventsConfig github = 13;</code>
+     */
+    public Builder setGithub(com.google.cloudbuild.v1.GitHubEventsConfig.Builder builderForValue) {
+      if (githubBuilder_ == null) {
+        github_ = builderForValue.build();
+        onChanged();
+      } else {
+        githubBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * GitHubEventsConfig describes the configuration of a trigger that creates
+     * a build whenever a GitHub event is received.
+     * </pre>
+     *
+     * <code>.google.devtools.cloudbuild.v1.GitHubEventsConfig github = 13;</code>
+     */
+    public Builder mergeGithub(com.google.cloudbuild.v1.GitHubEventsConfig value) {
+      if (githubBuilder_ == null) {
+        if (github_ != null) {
+          github_ =
+              com.google.cloudbuild.v1.GitHubEventsConfig.newBuilder(github_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          github_ = value;
+        }
+        onChanged();
+      } else {
+        githubBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * GitHubEventsConfig describes the configuration of a trigger that creates
+     * a build whenever a GitHub event is received.
+     * </pre>
+     *
+     * <code>.google.devtools.cloudbuild.v1.GitHubEventsConfig github = 13;</code>
+     */
+    public Builder clearGithub() {
+      if (githubBuilder_ == null) {
+        github_ = null;
+        onChanged();
+      } else {
+        github_ = null;
+        githubBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * GitHubEventsConfig describes the configuration of a trigger that creates
+     * a build whenever a GitHub event is received.
+     * </pre>
+     *
+     * <code>.google.devtools.cloudbuild.v1.GitHubEventsConfig github = 13;</code>
+     */
+    public com.google.cloudbuild.v1.GitHubEventsConfig.Builder getGithubBuilder() {
+
+      onChanged();
+      return getGithubFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * GitHubEventsConfig describes the configuration of a trigger that creates
+     * a build whenever a GitHub event is received.
+     * </pre>
+     *
+     * <code>.google.devtools.cloudbuild.v1.GitHubEventsConfig github = 13;</code>
+     */
+    public com.google.cloudbuild.v1.GitHubEventsConfigOrBuilder getGithubOrBuilder() {
+      if (githubBuilder_ != null) {
+        return githubBuilder_.getMessageOrBuilder();
+      } else {
+        return github_ == null
+            ? com.google.cloudbuild.v1.GitHubEventsConfig.getDefaultInstance()
+            : github_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * GitHubEventsConfig describes the configuration of a trigger that creates
+     * a build whenever a GitHub event is received.
+     * </pre>
+     *
+     * <code>.google.devtools.cloudbuild.v1.GitHubEventsConfig github = 13;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloudbuild.v1.GitHubEventsConfig,
+            com.google.cloudbuild.v1.GitHubEventsConfig.Builder,
+            com.google.cloudbuild.v1.GitHubEventsConfigOrBuilder>
+        getGithubFieldBuilder() {
+      if (githubBuilder_ == null) {
+        githubBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloudbuild.v1.GitHubEventsConfig,
+                com.google.cloudbuild.v1.GitHubEventsConfig.Builder,
+                com.google.cloudbuild.v1.GitHubEventsConfigOrBuilder>(
+                getGithub(), getParentForChildren(), isClean());
+        github_ = null;
+      }
+      return githubBuilder_;
     }
 
     private com.google.protobuf.SingleFieldBuilderV3<
@@ -2487,9 +3167,9 @@ public final class BuildTrigger extends com.google.protobuf.GeneratedMessageV3
         com.google.protobuf.LazyStringArrayList.EMPTY;
 
     private void ensureIgnoredFilesIsMutable() {
-      if (!((bitField0_ & 0x00000100) != 0)) {
+      if (!((bitField0_ & 0x00000800) != 0)) {
         ignoredFiles_ = new com.google.protobuf.LazyStringArrayList(ignoredFiles_);
-        bitField0_ |= 0x00000100;
+        bitField0_ |= 0x00000800;
       }
     }
     /**
@@ -2650,7 +3330,7 @@ public final class BuildTrigger extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearIgnoredFiles() {
       ignoredFiles_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000100);
+      bitField0_ = (bitField0_ & ~0x00000800);
       onChanged();
       return this;
     }
@@ -2684,9 +3364,9 @@ public final class BuildTrigger extends com.google.protobuf.GeneratedMessageV3
         com.google.protobuf.LazyStringArrayList.EMPTY;
 
     private void ensureIncludedFilesIsMutable() {
-      if (!((bitField0_ & 0x00000200) != 0)) {
+      if (!((bitField0_ & 0x00001000) != 0)) {
         includedFiles_ = new com.google.protobuf.LazyStringArrayList(includedFiles_);
-        bitField0_ |= 0x00000200;
+        bitField0_ |= 0x00001000;
       }
     }
     /**
@@ -2847,7 +3527,7 @@ public final class BuildTrigger extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearIncludedFiles() {
       includedFiles_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000200);
+      bitField0_ = (bitField0_ & ~0x00001000);
       onChanged();
       return this;
     }

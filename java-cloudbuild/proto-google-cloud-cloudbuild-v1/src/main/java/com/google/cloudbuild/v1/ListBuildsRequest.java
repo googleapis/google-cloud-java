@@ -133,10 +133,10 @@ public final class ListBuildsRequest extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * ID of the project.
+   * Required. ID of the project.
    * </pre>
    *
-   * <code>string project_id = 1;</code>
+   * <code>string project_id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   public java.lang.String getProjectId() {
     java.lang.Object ref = projectId_;
@@ -153,10 +153,10 @@ public final class ListBuildsRequest extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * ID of the project.
+   * Required. ID of the project.
    * </pre>
    *
-   * <code>string project_id = 1;</code>
+   * <code>string project_id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   public com.google.protobuf.ByteString getProjectIdBytes() {
     java.lang.Object ref = projectId_;
@@ -639,10 +639,10 @@ public final class ListBuildsRequest extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * ID of the project.
+     * Required. ID of the project.
      * </pre>
      *
-     * <code>string project_id = 1;</code>
+     * <code>string project_id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public java.lang.String getProjectId() {
       java.lang.Object ref = projectId_;
@@ -659,10 +659,10 @@ public final class ListBuildsRequest extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * ID of the project.
+     * Required. ID of the project.
      * </pre>
      *
-     * <code>string project_id = 1;</code>
+     * <code>string project_id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public com.google.protobuf.ByteString getProjectIdBytes() {
       java.lang.Object ref = projectId_;
@@ -679,10 +679,10 @@ public final class ListBuildsRequest extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * ID of the project.
+     * Required. ID of the project.
      * </pre>
      *
-     * <code>string project_id = 1;</code>
+     * <code>string project_id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder setProjectId(java.lang.String value) {
       if (value == null) {
@@ -697,10 +697,10 @@ public final class ListBuildsRequest extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * ID of the project.
+     * Required. ID of the project.
      * </pre>
      *
-     * <code>string project_id = 1;</code>
+     * <code>string project_id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder clearProjectId() {
 
@@ -712,10 +712,10 @@ public final class ListBuildsRequest extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * ID of the project.
+     * Required. ID of the project.
      * </pre>
      *
-     * <code>string project_id = 1;</code>
+     * <code>string project_id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder setProjectIdBytes(com.google.protobuf.ByteString value) {
       if (value == null) {

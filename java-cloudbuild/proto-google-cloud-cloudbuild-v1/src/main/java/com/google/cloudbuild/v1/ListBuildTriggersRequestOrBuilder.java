@@ -27,20 +27,52 @@ public interface ListBuildTriggersRequestOrBuilder
    *
    *
    * <pre>
-   * ID of the project for which to list BuildTriggers.
+   * Required. ID of the project for which to list BuildTriggers.
    * </pre>
    *
-   * <code>string project_id = 1;</code>
+   * <code>string project_id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   java.lang.String getProjectId();
   /**
    *
    *
    * <pre>
-   * ID of the project for which to list BuildTriggers.
+   * Required. ID of the project for which to list BuildTriggers.
    * </pre>
    *
-   * <code>string project_id = 1;</code>
+   * <code>string project_id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   com.google.protobuf.ByteString getProjectIdBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Number of results to return in the list.
+   * </pre>
+   *
+   * <code>int32 page_size = 2;</code>
+   */
+  int getPageSize();
+
+  /**
+   *
+   *
+   * <pre>
+   * Token to provide to skip to a particular spot in the list.
+   * </pre>
+   *
+   * <code>string page_token = 3;</code>
+   */
+  java.lang.String getPageToken();
+  /**
+   *
+   *
+   * <pre>
+   * Token to provide to skip to a particular spot in the list.
+   * </pre>
+   *
+   * <code>string page_token = 3;</code>
+   */
+  com.google.protobuf.ByteString getPageTokenBytes();
 }

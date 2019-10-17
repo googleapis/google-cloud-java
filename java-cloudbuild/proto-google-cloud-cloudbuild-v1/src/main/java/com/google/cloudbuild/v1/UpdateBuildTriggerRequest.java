@@ -136,10 +136,10 @@ public final class UpdateBuildTriggerRequest extends com.google.protobuf.Generat
    *
    *
    * <pre>
-   * ID of the project that owns the trigger.
+   * Required. ID of the project that owns the trigger.
    * </pre>
    *
-   * <code>string project_id = 1;</code>
+   * <code>string project_id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   public java.lang.String getProjectId() {
     java.lang.Object ref = projectId_;
@@ -156,10 +156,10 @@ public final class UpdateBuildTriggerRequest extends com.google.protobuf.Generat
    *
    *
    * <pre>
-   * ID of the project that owns the trigger.
+   * Required. ID of the project that owns the trigger.
    * </pre>
    *
-   * <code>string project_id = 1;</code>
+   * <code>string project_id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   public com.google.protobuf.ByteString getProjectIdBytes() {
     java.lang.Object ref = projectId_;
@@ -179,10 +179,10 @@ public final class UpdateBuildTriggerRequest extends com.google.protobuf.Generat
    *
    *
    * <pre>
-   * ID of the `BuildTrigger` to update.
+   * Required. ID of the `BuildTrigger` to update.
    * </pre>
    *
-   * <code>string trigger_id = 2;</code>
+   * <code>string trigger_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   public java.lang.String getTriggerId() {
     java.lang.Object ref = triggerId_;
@@ -199,10 +199,10 @@ public final class UpdateBuildTriggerRequest extends com.google.protobuf.Generat
    *
    *
    * <pre>
-   * ID of the `BuildTrigger` to update.
+   * Required. ID of the `BuildTrigger` to update.
    * </pre>
    *
-   * <code>string trigger_id = 2;</code>
+   * <code>string trigger_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   public com.google.protobuf.ByteString getTriggerIdBytes() {
     java.lang.Object ref = triggerId_;
@@ -222,10 +222,12 @@ public final class UpdateBuildTriggerRequest extends com.google.protobuf.Generat
    *
    *
    * <pre>
-   * `BuildTrigger` to update.
+   * Required. `BuildTrigger` to update.
    * </pre>
    *
-   * <code>.google.devtools.cloudbuild.v1.BuildTrigger trigger = 3;</code>
+   * <code>
+   * .google.devtools.cloudbuild.v1.BuildTrigger trigger = 3 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   public boolean hasTrigger() {
     return trigger_ != null;
@@ -234,10 +236,12 @@ public final class UpdateBuildTriggerRequest extends com.google.protobuf.Generat
    *
    *
    * <pre>
-   * `BuildTrigger` to update.
+   * Required. `BuildTrigger` to update.
    * </pre>
    *
-   * <code>.google.devtools.cloudbuild.v1.BuildTrigger trigger = 3;</code>
+   * <code>
+   * .google.devtools.cloudbuild.v1.BuildTrigger trigger = 3 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   public com.google.cloudbuild.v1.BuildTrigger getTrigger() {
     return trigger_ == null ? com.google.cloudbuild.v1.BuildTrigger.getDefaultInstance() : trigger_;
@@ -246,10 +250,12 @@ public final class UpdateBuildTriggerRequest extends com.google.protobuf.Generat
    *
    *
    * <pre>
-   * `BuildTrigger` to update.
+   * Required. `BuildTrigger` to update.
    * </pre>
    *
-   * <code>.google.devtools.cloudbuild.v1.BuildTrigger trigger = 3;</code>
+   * <code>
+   * .google.devtools.cloudbuild.v1.BuildTrigger trigger = 3 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   public com.google.cloudbuild.v1.BuildTriggerOrBuilder getTriggerOrBuilder() {
     return getTrigger();
@@ -622,10 +628,10 @@ public final class UpdateBuildTriggerRequest extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * ID of the project that owns the trigger.
+     * Required. ID of the project that owns the trigger.
      * </pre>
      *
-     * <code>string project_id = 1;</code>
+     * <code>string project_id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public java.lang.String getProjectId() {
       java.lang.Object ref = projectId_;
@@ -642,10 +648,10 @@ public final class UpdateBuildTriggerRequest extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * ID of the project that owns the trigger.
+     * Required. ID of the project that owns the trigger.
      * </pre>
      *
-     * <code>string project_id = 1;</code>
+     * <code>string project_id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public com.google.protobuf.ByteString getProjectIdBytes() {
       java.lang.Object ref = projectId_;
@@ -662,10 +668,10 @@ public final class UpdateBuildTriggerRequest extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * ID of the project that owns the trigger.
+     * Required. ID of the project that owns the trigger.
      * </pre>
      *
-     * <code>string project_id = 1;</code>
+     * <code>string project_id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder setProjectId(java.lang.String value) {
       if (value == null) {
@@ -680,10 +686,10 @@ public final class UpdateBuildTriggerRequest extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * ID of the project that owns the trigger.
+     * Required. ID of the project that owns the trigger.
      * </pre>
      *
-     * <code>string project_id = 1;</code>
+     * <code>string project_id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder clearProjectId() {
 
@@ -695,10 +701,10 @@ public final class UpdateBuildTriggerRequest extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * ID of the project that owns the trigger.
+     * Required. ID of the project that owns the trigger.
      * </pre>
      *
-     * <code>string project_id = 1;</code>
+     * <code>string project_id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder setProjectIdBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -716,10 +722,10 @@ public final class UpdateBuildTriggerRequest extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * ID of the `BuildTrigger` to update.
+     * Required. ID of the `BuildTrigger` to update.
      * </pre>
      *
-     * <code>string trigger_id = 2;</code>
+     * <code>string trigger_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public java.lang.String getTriggerId() {
       java.lang.Object ref = triggerId_;
@@ -736,10 +742,10 @@ public final class UpdateBuildTriggerRequest extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * ID of the `BuildTrigger` to update.
+     * Required. ID of the `BuildTrigger` to update.
      * </pre>
      *
-     * <code>string trigger_id = 2;</code>
+     * <code>string trigger_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public com.google.protobuf.ByteString getTriggerIdBytes() {
       java.lang.Object ref = triggerId_;
@@ -756,10 +762,10 @@ public final class UpdateBuildTriggerRequest extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * ID of the `BuildTrigger` to update.
+     * Required. ID of the `BuildTrigger` to update.
      * </pre>
      *
-     * <code>string trigger_id = 2;</code>
+     * <code>string trigger_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder setTriggerId(java.lang.String value) {
       if (value == null) {
@@ -774,10 +780,10 @@ public final class UpdateBuildTriggerRequest extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * ID of the `BuildTrigger` to update.
+     * Required. ID of the `BuildTrigger` to update.
      * </pre>
      *
-     * <code>string trigger_id = 2;</code>
+     * <code>string trigger_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder clearTriggerId() {
 
@@ -789,10 +795,10 @@ public final class UpdateBuildTriggerRequest extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * ID of the `BuildTrigger` to update.
+     * Required. ID of the `BuildTrigger` to update.
      * </pre>
      *
-     * <code>string trigger_id = 2;</code>
+     * <code>string trigger_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder setTriggerIdBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -815,10 +821,12 @@ public final class UpdateBuildTriggerRequest extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * `BuildTrigger` to update.
+     * Required. `BuildTrigger` to update.
      * </pre>
      *
-     * <code>.google.devtools.cloudbuild.v1.BuildTrigger trigger = 3;</code>
+     * <code>
+     * .google.devtools.cloudbuild.v1.BuildTrigger trigger = 3 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public boolean hasTrigger() {
       return triggerBuilder_ != null || trigger_ != null;
@@ -827,10 +835,12 @@ public final class UpdateBuildTriggerRequest extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * `BuildTrigger` to update.
+     * Required. `BuildTrigger` to update.
      * </pre>
      *
-     * <code>.google.devtools.cloudbuild.v1.BuildTrigger trigger = 3;</code>
+     * <code>
+     * .google.devtools.cloudbuild.v1.BuildTrigger trigger = 3 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public com.google.cloudbuild.v1.BuildTrigger getTrigger() {
       if (triggerBuilder_ == null) {
@@ -845,10 +855,12 @@ public final class UpdateBuildTriggerRequest extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * `BuildTrigger` to update.
+     * Required. `BuildTrigger` to update.
      * </pre>
      *
-     * <code>.google.devtools.cloudbuild.v1.BuildTrigger trigger = 3;</code>
+     * <code>
+     * .google.devtools.cloudbuild.v1.BuildTrigger trigger = 3 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder setTrigger(com.google.cloudbuild.v1.BuildTrigger value) {
       if (triggerBuilder_ == null) {
@@ -867,10 +879,12 @@ public final class UpdateBuildTriggerRequest extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * `BuildTrigger` to update.
+     * Required. `BuildTrigger` to update.
      * </pre>
      *
-     * <code>.google.devtools.cloudbuild.v1.BuildTrigger trigger = 3;</code>
+     * <code>
+     * .google.devtools.cloudbuild.v1.BuildTrigger trigger = 3 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder setTrigger(com.google.cloudbuild.v1.BuildTrigger.Builder builderForValue) {
       if (triggerBuilder_ == null) {
@@ -886,10 +900,12 @@ public final class UpdateBuildTriggerRequest extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * `BuildTrigger` to update.
+     * Required. `BuildTrigger` to update.
      * </pre>
      *
-     * <code>.google.devtools.cloudbuild.v1.BuildTrigger trigger = 3;</code>
+     * <code>
+     * .google.devtools.cloudbuild.v1.BuildTrigger trigger = 3 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder mergeTrigger(com.google.cloudbuild.v1.BuildTrigger value) {
       if (triggerBuilder_ == null) {
@@ -912,10 +928,12 @@ public final class UpdateBuildTriggerRequest extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * `BuildTrigger` to update.
+     * Required. `BuildTrigger` to update.
      * </pre>
      *
-     * <code>.google.devtools.cloudbuild.v1.BuildTrigger trigger = 3;</code>
+     * <code>
+     * .google.devtools.cloudbuild.v1.BuildTrigger trigger = 3 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder clearTrigger() {
       if (triggerBuilder_ == null) {
@@ -932,10 +950,12 @@ public final class UpdateBuildTriggerRequest extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * `BuildTrigger` to update.
+     * Required. `BuildTrigger` to update.
      * </pre>
      *
-     * <code>.google.devtools.cloudbuild.v1.BuildTrigger trigger = 3;</code>
+     * <code>
+     * .google.devtools.cloudbuild.v1.BuildTrigger trigger = 3 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public com.google.cloudbuild.v1.BuildTrigger.Builder getTriggerBuilder() {
 
@@ -946,10 +966,12 @@ public final class UpdateBuildTriggerRequest extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * `BuildTrigger` to update.
+     * Required. `BuildTrigger` to update.
      * </pre>
      *
-     * <code>.google.devtools.cloudbuild.v1.BuildTrigger trigger = 3;</code>
+     * <code>
+     * .google.devtools.cloudbuild.v1.BuildTrigger trigger = 3 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public com.google.cloudbuild.v1.BuildTriggerOrBuilder getTriggerOrBuilder() {
       if (triggerBuilder_ != null) {
@@ -964,10 +986,12 @@ public final class UpdateBuildTriggerRequest extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * `BuildTrigger` to update.
+     * Required. `BuildTrigger` to update.
      * </pre>
      *
-     * <code>.google.devtools.cloudbuild.v1.BuildTrigger trigger = 3;</code>
+     * <code>
+     * .google.devtools.cloudbuild.v1.BuildTrigger trigger = 3 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloudbuild.v1.BuildTrigger,

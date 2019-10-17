@@ -148,6 +148,18 @@ public final class Cloudbuild {
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_devtools_cloudbuild_v1_BuildTrigger_SubstitutionsEntry_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_devtools_cloudbuild_v1_GitHubEventsConfig_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_devtools_cloudbuild_v1_GitHubEventsConfig_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_devtools_cloudbuild_v1_PullRequestFilter_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_devtools_cloudbuild_v1_PullRequestFilter_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_devtools_cloudbuild_v1_PushFilter_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_devtools_cloudbuild_v1_PushFilter_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_devtools_cloudbuild_v1_CreateBuildTriggerRequest_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_devtools_cloudbuild_v1_CreateBuildTriggerRequest_fieldAccessorTable;
@@ -175,6 +187,42 @@ public final class Cloudbuild {
       internal_static_google_devtools_cloudbuild_v1_BuildOptions_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_devtools_cloudbuild_v1_BuildOptions_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_devtools_cloudbuild_v1_WorkerPool_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_devtools_cloudbuild_v1_WorkerPool_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_devtools_cloudbuild_v1_WorkerConfig_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_devtools_cloudbuild_v1_WorkerConfig_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_devtools_cloudbuild_v1_Network_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_devtools_cloudbuild_v1_Network_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_devtools_cloudbuild_v1_CreateWorkerPoolRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_devtools_cloudbuild_v1_CreateWorkerPoolRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_devtools_cloudbuild_v1_GetWorkerPoolRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_devtools_cloudbuild_v1_GetWorkerPoolRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_devtools_cloudbuild_v1_DeleteWorkerPoolRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_devtools_cloudbuild_v1_DeleteWorkerPoolRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_devtools_cloudbuild_v1_UpdateWorkerPoolRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_devtools_cloudbuild_v1_UpdateWorkerPoolRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_devtools_cloudbuild_v1_ListWorkerPoolsRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_devtools_cloudbuild_v1_ListWorkerPoolsRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_devtools_cloudbuild_v1_ListWorkerPoolsResponse_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_devtools_cloudbuild_v1_ListWorkerPoolsResponse_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor getDescriptor() {
     return descriptor;
@@ -186,214 +234,288 @@ public final class Cloudbuild {
     java.lang.String[] descriptorData = {
       "\n.google/devtools/cloudbuild/v1/cloudbui"
           + "ld.proto\022\035google.devtools.cloudbuild.v1\032"
-          + "\034google/api/annotations.proto\032\031google/ap"
-          + "i/httpbody.proto\032\"google/cloud/audit/aud"
-          + "it_log.proto\032#google/longrunning/operati"
-          + "ons.proto\032\036google/protobuf/duration.prot"
-          + "o\032\033google/protobuf/empty.proto\032 google/p"
-          + "rotobuf/field_mask.proto\032\037google/protobu"
-          + "f/timestamp.proto\"3\n\021RetryBuildRequest\022\022"
-          + "\n\nproject_id\030\001 \001(\t\022\n\n\002id\030\002 \001(\t\"{\n\026RunBui"
-          + "ldTriggerRequest\022\022\n\nproject_id\030\001 \001(\t\022\022\n\n"
-          + "trigger_id\030\002 \001(\t\0229\n\006source\030\003 \001(\0132).googl"
-          + "e.devtools.cloudbuild.v1.RepoSource\"C\n\rS"
-          + "torageSource\022\016\n\006bucket\030\001 \001(\t\022\016\n\006object\030\002"
-          + " \001(\t\022\022\n\ngeneration\030\003 \001(\003\"\215\001\n\nRepoSource\022"
-          + "\022\n\nproject_id\030\001 \001(\t\022\021\n\trepo_name\030\002 \001(\t\022\025"
-          + "\n\013branch_name\030\003 \001(\tH\000\022\022\n\010tag_name\030\004 \001(\tH"
-          + "\000\022\024\n\ncommit_sha\030\005 \001(\tH\000\022\013\n\003dir\030\007 \001(\tB\n\n\010"
-          + "revision\"\234\001\n\006Source\022F\n\016storage_source\030\002 "
-          + "\001(\0132,.google.devtools.cloudbuild.v1.Stor"
-          + "ageSourceH\000\022@\n\013repo_source\030\003 \001(\0132).googl"
-          + "e.devtools.cloudbuild.v1.RepoSourceH\000B\010\n"
-          + "\006source\"h\n\nBuiltImage\022\014\n\004name\030\001 \001(\t\022\016\n\006d"
-          + "igest\030\003 \001(\t\022<\n\013push_timing\030\004 \001(\0132\'.googl"
-          + "e.devtools.cloudbuild.v1.TimeSpan\"\237\003\n\tBu"
-          + "ildStep\022\014\n\004name\030\001 \001(\t\022\013\n\003env\030\002 \003(\t\022\014\n\004ar"
-          + "gs\030\003 \003(\t\022\013\n\003dir\030\004 \001(\t\022\n\n\002id\030\005 \001(\t\022\020\n\010wai"
-          + "t_for\030\006 \003(\t\022\022\n\nentrypoint\030\007 \001(\t\022\022\n\nsecre"
-          + "t_env\030\010 \003(\t\0226\n\007volumes\030\t \003(\0132%.google.de"
-          + "vtools.cloudbuild.v1.Volume\0227\n\006timing\030\n "
-          + "\001(\0132\'.google.devtools.cloudbuild.v1.Time"
-          + "Span\022<\n\013pull_timing\030\r \001(\0132\'.google.devto"
-          + "ols.cloudbuild.v1.TimeSpan\022*\n\007timeout\030\013 "
-          + "\001(\0132\031.google.protobuf.Duration\022;\n\006status"
-          + "\030\014 \001(\0162+.google.devtools.cloudbuild.v1.B"
-          + "uild.Status\"$\n\006Volume\022\014\n\004name\030\001 \001(\t\022\014\n\004p"
-          + "ath\030\002 \001(\t\"\255\001\n\007Results\0229\n\006images\030\002 \003(\0132)."
-          + "google.devtools.cloudbuild.v1.BuiltImage"
-          + "\022\031\n\021build_step_images\030\003 \003(\t\022\031\n\021artifact_"
-          + "manifest\030\004 \001(\t\022\025\n\rnum_artifacts\030\005 \001(\003\022\032\n"
-          + "\022build_step_outputs\030\006 \003(\014\"`\n\016ArtifactRes"
-          + "ult\022\020\n\010location\030\001 \001(\t\022<\n\tfile_hash\030\002 \003(\013"
-          + "2).google.devtools.cloudbuild.v1.FileHas"
-          + "hes\"\340\t\n\005Build\022\n\n\002id\030\001 \001(\t\022\022\n\nproject_id\030"
-          + "\020 \001(\t\022;\n\006status\030\002 \001(\0162+.google.devtools."
-          + "cloudbuild.v1.Build.Status\022\025\n\rstatus_det"
-          + "ail\030\030 \001(\t\0225\n\006source\030\003 \001(\0132%.google.devto"
-          + "ols.cloudbuild.v1.Source\0227\n\005steps\030\013 \003(\0132"
-          + "(.google.devtools.cloudbuild.v1.BuildSte"
-          + "p\0227\n\007results\030\n \001(\0132&.google.devtools.clo"
-          + "udbuild.v1.Results\022/\n\013create_time\030\006 \001(\0132"
-          + "\032.google.protobuf.Timestamp\022.\n\nstart_tim"
-          + "e\030\007 \001(\0132\032.google.protobuf.Timestamp\022/\n\013f"
-          + "inish_time\030\010 \001(\0132\032.google.protobuf.Times"
-          + "tamp\022*\n\007timeout\030\014 \001(\0132\031.google.protobuf."
-          + "Duration\022\016\n\006images\030\r \003(\t\022;\n\tartifacts\030% "
-          + "\001(\0132(.google.devtools.cloudbuild.v1.Arti"
-          + "facts\022\023\n\013logs_bucket\030\023 \001(\t\022J\n\021source_pro"
-          + "venance\030\025 \001(\0132/.google.devtools.cloudbui"
-          + "ld.v1.SourceProvenance\022\030\n\020build_trigger_"
-          + "id\030\026 \001(\t\022<\n\007options\030\027 \001(\0132+.google.devto"
-          + "ols.cloudbuild.v1.BuildOptions\022\017\n\007log_ur"
-          + "l\030\031 \001(\t\022N\n\rsubstitutions\030\035 \003(\01327.google."
-          + "devtools.cloudbuild.v1.Build.Substitutio"
-          + "nsEntry\022\014\n\004tags\030\037 \003(\t\0226\n\007secrets\030  \003(\0132%"
-          + ".google.devtools.cloudbuild.v1.Secret\022@\n"
-          + "\006timing\030! \003(\01320.google.devtools.cloudbui"
-          + "ld.v1.Build.TimingEntry\0324\n\022Substitutions"
-          + "Entry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\032V\n"
-          + "\013TimingEntry\022\013\n\003key\030\001 \001(\t\0226\n\005value\030\002 \001(\013"
+          + "\034google/api/annotations.proto\032\027google/ap"
+          + "i/client.proto\032\037google/api/field_behavio"
+          + "r.proto\032#google/longrunning/operations.p"
+          + "roto\032\036google/protobuf/duration.proto\032\033go"
+          + "ogle/protobuf/empty.proto\032\037google/protob"
+          + "uf/timestamp.proto\"=\n\021RetryBuildRequest\022"
+          + "\027\n\nproject_id\030\001 \001(\tB\003\340A\002\022\017\n\002id\030\002 \001(\tB\003\340A"
+          + "\002\"\212\001\n\026RunBuildTriggerRequest\022\027\n\nproject_"
+          + "id\030\001 \001(\tB\003\340A\002\022\027\n\ntrigger_id\030\002 \001(\tB\003\340A\002\022>"
+          + "\n\006source\030\003 \001(\0132).google.devtools.cloudbu"
+          + "ild.v1.RepoSourceB\003\340A\002\"C\n\rStorageSource\022"
+          + "\016\n\006bucket\030\001 \001(\t\022\016\n\006object\030\002 \001(\t\022\022\n\ngener"
+          + "ation\030\003 \001(\003\"\215\001\n\nRepoSource\022\022\n\nproject_id"
+          + "\030\001 \001(\t\022\021\n\trepo_name\030\002 \001(\t\022\025\n\013branch_name"
+          + "\030\003 \001(\tH\000\022\022\n\010tag_name\030\004 \001(\tH\000\022\024\n\ncommit_s"
+          + "ha\030\005 \001(\tH\000\022\013\n\003dir\030\007 \001(\tB\n\n\010revision\"\234\001\n\006"
+          + "Source\022F\n\016storage_source\030\002 \001(\0132,.google."
+          + "devtools.cloudbuild.v1.StorageSourceH\000\022@"
+          + "\n\013repo_source\030\003 \001(\0132).google.devtools.cl"
+          + "oudbuild.v1.RepoSourceH\000B\010\n\006source\"h\n\nBu"
+          + "iltImage\022\014\n\004name\030\001 \001(\t\022\016\n\006digest\030\003 \001(\t\022<"
+          + "\n\013push_timing\030\004 \001(\0132\'.google.devtools.cl"
+          + "oudbuild.v1.TimeSpan\"\237\003\n\tBuildStep\022\014\n\004na"
+          + "me\030\001 \001(\t\022\013\n\003env\030\002 \003(\t\022\014\n\004args\030\003 \003(\t\022\013\n\003d"
+          + "ir\030\004 \001(\t\022\n\n\002id\030\005 \001(\t\022\020\n\010wait_for\030\006 \003(\t\022\022"
+          + "\n\nentrypoint\030\007 \001(\t\022\022\n\nsecret_env\030\010 \003(\t\0226"
+          + "\n\007volumes\030\t \003(\0132%.google.devtools.cloudb"
+          + "uild.v1.Volume\0227\n\006timing\030\n \001(\0132\'.google."
+          + "devtools.cloudbuild.v1.TimeSpan\022<\n\013pull_"
+          + "timing\030\r \001(\0132\'.google.devtools.cloudbuil"
+          + "d.v1.TimeSpan\022*\n\007timeout\030\013 \001(\0132\031.google."
+          + "protobuf.Duration\022;\n\006status\030\014 \001(\0162+.goog"
+          + "le.devtools.cloudbuild.v1.Build.Status\"$"
+          + "\n\006Volume\022\014\n\004name\030\001 \001(\t\022\014\n\004path\030\002 \001(\t\"\357\001\n"
+          + "\007Results\0229\n\006images\030\002 \003(\0132).google.devtoo"
+          + "ls.cloudbuild.v1.BuiltImage\022\031\n\021build_ste"
+          + "p_images\030\003 \003(\t\022\031\n\021artifact_manifest\030\004 \001("
+          + "\t\022\025\n\rnum_artifacts\030\005 \001(\003\022\032\n\022build_step_o"
+          + "utputs\030\006 \003(\014\022@\n\017artifact_timing\030\007 \001(\0132\'."
+          + "google.devtools.cloudbuild.v1.TimeSpan\"`"
+          + "\n\016ArtifactResult\022\020\n\010location\030\001 \001(\t\022<\n\tfi"
+          + "le_hash\030\002 \003(\0132).google.devtools.cloudbui"
+          + "ld.v1.FileHashes\"\340\t\n\005Build\022\n\n\002id\030\001 \001(\t\022\022"
+          + "\n\nproject_id\030\020 \001(\t\022;\n\006status\030\002 \001(\0162+.goo"
+          + "gle.devtools.cloudbuild.v1.Build.Status\022"
+          + "\025\n\rstatus_detail\030\030 \001(\t\0225\n\006source\030\003 \001(\0132%"
+          + ".google.devtools.cloudbuild.v1.Source\0227\n"
+          + "\005steps\030\013 \003(\0132(.google.devtools.cloudbuil"
+          + "d.v1.BuildStep\0227\n\007results\030\n \001(\0132&.google"
+          + ".devtools.cloudbuild.v1.Results\022/\n\013creat"
+          + "e_time\030\006 \001(\0132\032.google.protobuf.Timestamp"
+          + "\022.\n\nstart_time\030\007 \001(\0132\032.google.protobuf.T"
+          + "imestamp\022/\n\013finish_time\030\010 \001(\0132\032.google.p"
+          + "rotobuf.Timestamp\022*\n\007timeout\030\014 \001(\0132\031.goo"
+          + "gle.protobuf.Duration\022\016\n\006images\030\r \003(\t\022;\n"
+          + "\tartifacts\030% \001(\0132(.google.devtools.cloud"
+          + "build.v1.Artifacts\022\023\n\013logs_bucket\030\023 \001(\t\022"
+          + "J\n\021source_provenance\030\025 \001(\0132/.google.devt"
+          + "ools.cloudbuild.v1.SourceProvenance\022\030\n\020b"
+          + "uild_trigger_id\030\026 \001(\t\022<\n\007options\030\027 \001(\0132+"
+          + ".google.devtools.cloudbuild.v1.BuildOpti"
+          + "ons\022\017\n\007log_url\030\031 \001(\t\022N\n\rsubstitutions\030\035 "
+          + "\003(\01327.google.devtools.cloudbuild.v1.Buil"
+          + "d.SubstitutionsEntry\022\014\n\004tags\030\037 \003(\t\0226\n\007se"
+          + "crets\030  \003(\0132%.google.devtools.cloudbuild"
+          + ".v1.Secret\022@\n\006timing\030! \003(\01320.google.devt"
+          + "ools.cloudbuild.v1.Build.TimingEntry\0324\n\022"
+          + "SubstitutionsEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value"
+          + "\030\002 \001(\t:\0028\001\032V\n\013TimingEntry\022\013\n\003key\030\001 \001(\t\0226"
+          + "\n\005value\030\002 \001(\0132\'.google.devtools.cloudbui"
+          + "ld.v1.TimeSpan:\0028\001\"\177\n\006Status\022\022\n\016STATUS_U"
+          + "NKNOWN\020\000\022\n\n\006QUEUED\020\001\022\013\n\007WORKING\020\002\022\013\n\007SUC"
+          + "CESS\020\003\022\013\n\007FAILURE\020\004\022\022\n\016INTERNAL_ERROR\020\005\022"
+          + "\013\n\007TIMEOUT\020\006\022\r\n\tCANCELLED\020\007\"\323\001\n\tArtifact"
+          + "s\022\016\n\006images\030\001 \003(\t\022I\n\007objects\030\002 \001(\01328.goo"
+          + "gle.devtools.cloudbuild.v1.Artifacts.Art"
+          + "ifactObjects\032k\n\017ArtifactObjects\022\020\n\010locat"
+          + "ion\030\001 \001(\t\022\r\n\005paths\030\002 \003(\t\0227\n\006timing\030\003 \001(\013"
           + "2\'.google.devtools.cloudbuild.v1.TimeSpa"
-          + "n:\0028\001\"\177\n\006Status\022\022\n\016STATUS_UNKNOWN\020\000\022\n\n\006Q"
-          + "UEUED\020\001\022\013\n\007WORKING\020\002\022\013\n\007SUCCESS\020\003\022\013\n\007FAI"
-          + "LURE\020\004\022\022\n\016INTERNAL_ERROR\020\005\022\013\n\007TIMEOUT\020\006\022"
-          + "\r\n\tCANCELLED\020\007\"\323\001\n\tArtifacts\022\016\n\006images\030\001"
-          + " \003(\t\022I\n\007objects\030\002 \001(\01328.google.devtools."
-          + "cloudbuild.v1.Artifacts.ArtifactObjects\032"
-          + "k\n\017ArtifactObjects\022\020\n\010location\030\001 \001(\t\022\r\n\005"
-          + "paths\030\002 \003(\t\0227\n\006timing\030\003 \001(\0132\'.google.dev"
-          + "tools.cloudbuild.v1.TimeSpan\"h\n\010TimeSpan"
-          + "\022.\n\nstart_time\030\001 \001(\0132\032.google.protobuf.T"
-          + "imestamp\022,\n\010end_time\030\002 \001(\0132\032.google.prot"
-          + "obuf.Timestamp\"M\n\026BuildOperationMetadata"
-          + "\0223\n\005build\030\001 \001(\0132$.google.devtools.cloudb"
-          + "uild.v1.Build\"\336\002\n\020SourceProvenance\022M\n\027re"
-          + "solved_storage_source\030\003 \001(\0132,.google.dev"
-          + "tools.cloudbuild.v1.StorageSource\022G\n\024res"
-          + "olved_repo_source\030\006 \001(\0132).google.devtool"
-          + "s.cloudbuild.v1.RepoSource\022T\n\013file_hashe"
-          + "s\030\004 \003(\0132?.google.devtools.cloudbuild.v1."
-          + "SourceProvenance.FileHashesEntry\032\\\n\017File"
-          + "HashesEntry\022\013\n\003key\030\001 \001(\t\0228\n\005value\030\002 \001(\0132"
-          + ").google.devtools.cloudbuild.v1.FileHash"
-          + "es:\0028\001\"D\n\nFileHashes\0226\n\tfile_hash\030\001 \003(\0132"
-          + "#.google.devtools.cloudbuild.v1.Hash\"|\n\004"
-          + "Hash\022:\n\004type\030\001 \001(\0162,.google.devtools.clo"
-          + "udbuild.v1.Hash.HashType\022\r\n\005value\030\002 \001(\014\""
-          + ")\n\010HashType\022\010\n\004NONE\020\000\022\n\n\006SHA256\020\001\022\007\n\003MD5"
-          + "\020\002\"\232\001\n\006Secret\022\024\n\014kms_key_name\030\001 \001(\t\022H\n\ns"
-          + "ecret_env\030\003 \003(\01324.google.devtools.cloudb"
-          + "uild.v1.Secret.SecretEnvEntry\0320\n\016SecretE"
-          + "nvEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\014:\0028\001\""
-          + "]\n\022CreateBuildRequest\022\022\n\nproject_id\030\001 \001("
-          + "\t\0223\n\005build\030\002 \001(\0132$.google.devtools.cloud"
-          + "build.v1.Build\"1\n\017GetBuildRequest\022\022\n\npro"
-          + "ject_id\030\001 \001(\t\022\n\n\002id\030\002 \001(\t\"^\n\021ListBuildsR"
-          + "equest\022\022\n\nproject_id\030\001 \001(\t\022\021\n\tpage_size\030"
-          + "\002 \001(\005\022\022\n\npage_token\030\003 \001(\t\022\016\n\006filter\030\010 \001("
-          + "\t\"c\n\022ListBuildsResponse\0224\n\006builds\030\001 \003(\0132"
-          + "$.google.devtools.cloudbuild.v1.Build\022\027\n"
-          + "\017next_page_token\030\002 \001(\t\"4\n\022CancelBuildReq"
-          + "uest\022\022\n\nproject_id\030\001 \001(\t\022\n\n\002id\030\002 \001(\t\"\320\003\n"
-          + "\014BuildTrigger\022\n\n\002id\030\001 \001(\t\022\023\n\013description"
-          + "\030\n \001(\t\022C\n\020trigger_template\030\007 \001(\0132).googl"
-          + "e.devtools.cloudbuild.v1.RepoSource\0225\n\005b"
-          + "uild\030\004 \001(\0132$.google.devtools.cloudbuild."
-          + "v1.BuildH\000\022\022\n\010filename\030\010 \001(\tH\000\022/\n\013create"
-          + "_time\030\005 \001(\0132\032.google.protobuf.Timestamp\022"
-          + "\020\n\010disabled\030\t \001(\010\022U\n\rsubstitutions\030\013 \003(\013"
-          + "2>.google.devtools.cloudbuild.v1.BuildTr"
-          + "igger.SubstitutionsEntry\022\025\n\rignored_file"
-          + "s\030\017 \003(\t\022\026\n\016included_files\030\020 \003(\t\0324\n\022Subst"
-          + "itutionsEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001("
-          + "\t:\0028\001B\020\n\016build_template\"m\n\031CreateBuildTr"
-          + "iggerRequest\022\022\n\nproject_id\030\001 \001(\t\022<\n\007trig"
-          + "ger\030\002 \001(\0132+.google.devtools.cloudbuild.v"
-          + "1.BuildTrigger\"@\n\026GetBuildTriggerRequest"
-          + "\022\022\n\nproject_id\030\001 \001(\t\022\022\n\ntrigger_id\030\002 \001(\t"
-          + "\".\n\030ListBuildTriggersRequest\022\022\n\nproject_"
-          + "id\030\001 \001(\t\"Z\n\031ListBuildTriggersResponse\022=\n"
-          + "\010triggers\030\001 \003(\0132+.google.devtools.cloudb"
-          + "uild.v1.BuildTrigger\"C\n\031DeleteBuildTrigg"
-          + "erRequest\022\022\n\nproject_id\030\001 \001(\t\022\022\n\ntrigger"
-          + "_id\030\002 \001(\t\"\201\001\n\031UpdateBuildTriggerRequest\022"
-          + "\022\n\nproject_id\030\001 \001(\t\022\022\n\ntrigger_id\030\002 \001(\t\022"
-          + "<\n\007trigger\030\003 \001(\0132+.google.devtools.cloud"
-          + "build.v1.BuildTrigger\"\306\007\n\014BuildOptions\022L"
-          + "\n\026source_provenance_hash\030\001 \003(\0162,.google."
-          + "devtools.cloudbuild.v1.Hash.HashType\022Y\n\027"
-          + "requested_verify_option\030\002 \001(\01628.google.d"
-          + "evtools.cloudbuild.v1.BuildOptions.Verif"
-          + "yOption\022M\n\014machine_type\030\003 \001(\01627.google.d"
-          + "evtools.cloudbuild.v1.BuildOptions.Machi"
-          + "neType\022\024\n\014disk_size_gb\030\006 \001(\003\022[\n\023substitu"
-          + "tion_option\030\004 \001(\0162>.google.devtools.clou"
-          + "dbuild.v1.BuildOptions.SubstitutionOptio"
-          + "n\022\\\n\024log_streaming_option\030\005 \001(\0162>.google"
+          + "n\"h\n\010TimeSpan\022.\n\nstart_time\030\001 \001(\0132\032.goog"
+          + "le.protobuf.Timestamp\022,\n\010end_time\030\002 \001(\0132"
+          + "\032.google.protobuf.Timestamp\"M\n\026BuildOper"
+          + "ationMetadata\0223\n\005build\030\001 \001(\0132$.google.de"
+          + "vtools.cloudbuild.v1.Build\"\336\002\n\020SourcePro"
+          + "venance\022M\n\027resolved_storage_source\030\003 \001(\013"
+          + "2,.google.devtools.cloudbuild.v1.Storage"
+          + "Source\022G\n\024resolved_repo_source\030\006 \001(\0132).g"
+          + "oogle.devtools.cloudbuild.v1.RepoSource\022"
+          + "T\n\013file_hashes\030\004 \003(\0132?.google.devtools.c"
+          + "loudbuild.v1.SourceProvenance.FileHashes"
+          + "Entry\032\\\n\017FileHashesEntry\022\013\n\003key\030\001 \001(\t\0228\n"
+          + "\005value\030\002 \001(\0132).google.devtools.cloudbuil"
+          + "d.v1.FileHashes:\0028\001\"D\n\nFileHashes\0226\n\tfil"
+          + "e_hash\030\001 \003(\0132#.google.devtools.cloudbuil"
+          + "d.v1.Hash\"|\n\004Hash\022:\n\004type\030\001 \001(\0162,.google"
+          + ".devtools.cloudbuild.v1.Hash.HashType\022\r\n"
+          + "\005value\030\002 \001(\014\")\n\010HashType\022\010\n\004NONE\020\000\022\n\n\006SH"
+          + "A256\020\001\022\007\n\003MD5\020\002\"\232\001\n\006Secret\022\024\n\014kms_key_na"
+          + "me\030\001 \001(\t\022H\n\nsecret_env\030\003 \003(\01324.google.de"
+          + "vtools.cloudbuild.v1.Secret.SecretEnvEnt"
+          + "ry\0320\n\016SecretEnvEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005val"
+          + "ue\030\002 \001(\014:\0028\001\"g\n\022CreateBuildRequest\022\027\n\npr"
+          + "oject_id\030\001 \001(\tB\003\340A\002\0228\n\005build\030\002 \001(\0132$.goo"
+          + "gle.devtools.cloudbuild.v1.BuildB\003\340A\002\";\n"
+          + "\017GetBuildRequest\022\027\n\nproject_id\030\001 \001(\tB\003\340A"
+          + "\002\022\017\n\002id\030\002 \001(\tB\003\340A\002\"c\n\021ListBuildsRequest\022"
+          + "\027\n\nproject_id\030\001 \001(\tB\003\340A\002\022\021\n\tpage_size\030\002 "
+          + "\001(\005\022\022\n\npage_token\030\003 \001(\t\022\016\n\006filter\030\010 \001(\t\""
+          + "c\n\022ListBuildsResponse\0224\n\006builds\030\001 \003(\0132$."
+          + "google.devtools.cloudbuild.v1.Build\022\027\n\017n"
+          + "ext_page_token\030\002 \001(\t\">\n\022CancelBuildReque"
+          + "st\022\027\n\nproject_id\030\001 \001(\tB\003\340A\002\022\017\n\002id\030\002 \001(\tB"
+          + "\003\340A\002\"\257\004\n\014BuildTrigger\022\n\n\002id\030\001 \001(\t\022\023\n\013des"
+          + "cription\030\n \001(\t\022\014\n\004name\030\025 \001(\t\022\014\n\004tags\030\023 \003"
+          + "(\t\022C\n\020trigger_template\030\007 \001(\0132).google.de"
+          + "vtools.cloudbuild.v1.RepoSource\022A\n\006githu"
+          + "b\030\r \001(\01321.google.devtools.cloudbuild.v1."
+          + "GitHubEventsConfig\0225\n\005build\030\004 \001(\0132$.goog"
+          + "le.devtools.cloudbuild.v1.BuildH\000\022\022\n\010fil"
+          + "ename\030\010 \001(\tH\000\022/\n\013create_time\030\005 \001(\0132\032.goo"
+          + "gle.protobuf.Timestamp\022\020\n\010disabled\030\t \001(\010"
+          + "\022U\n\rsubstitutions\030\013 \003(\0132>.google.devtool"
+          + "s.cloudbuild.v1.BuildTrigger.Substitutio"
+          + "nsEntry\022\025\n\rignored_files\030\017 \003(\t\022\026\n\016includ"
+          + "ed_files\030\020 \003(\t\0324\n\022SubstitutionsEntry\022\013\n\003"
+          + "key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001B\020\n\016build_te"
+          + "mplate\"\330\001\n\022GitHubEventsConfig\022\027\n\017install"
+          + "ation_id\030\001 \001(\003\022\r\n\005owner\030\006 \001(\t\022\014\n\004name\030\007 "
+          + "\001(\t\022H\n\014pull_request\030\004 \001(\01320.google.devto"
+          + "ols.cloudbuild.v1.PullRequestFilterH\000\0229\n"
+          + "\004push\030\005 \001(\0132).google.devtools.cloudbuild"
+          + ".v1.PushFilterH\000B\007\n\005event\"\311\001\n\021PullReques"
+          + "tFilter\022\020\n\006branch\030\002 \001(\tH\000\022X\n\017comment_con"
+          + "trol\030\005 \001(\0162?.google.devtools.cloudbuild."
+          + "v1.PullRequestFilter.CommentControl\"=\n\016C"
+          + "ommentControl\022\025\n\021COMMENTS_DISABLED\020\000\022\024\n\020"
+          + "COMMENTS_ENABLED\020\001B\t\n\007git_ref\"8\n\nPushFil"
+          + "ter\022\020\n\006branch\030\002 \001(\tH\000\022\r\n\003tag\030\003 \001(\tH\000B\t\n\007"
+          + "git_ref\"w\n\031CreateBuildTriggerRequest\022\027\n\n"
+          + "project_id\030\001 \001(\tB\003\340A\002\022A\n\007trigger\030\002 \001(\0132+"
+          + ".google.devtools.cloudbuild.v1.BuildTrig"
+          + "gerB\003\340A\002\"J\n\026GetBuildTriggerRequest\022\027\n\npr"
+          + "oject_id\030\001 \001(\tB\003\340A\002\022\027\n\ntrigger_id\030\002 \001(\tB"
+          + "\003\340A\002\"Z\n\030ListBuildTriggersRequest\022\027\n\nproj"
+          + "ect_id\030\001 \001(\tB\003\340A\002\022\021\n\tpage_size\030\002 \001(\005\022\022\n\n"
+          + "page_token\030\003 \001(\t\"s\n\031ListBuildTriggersRes"
+          + "ponse\022=\n\010triggers\030\001 \003(\0132+.google.devtool"
+          + "s.cloudbuild.v1.BuildTrigger\022\027\n\017next_pag"
+          + "e_token\030\002 \001(\t\"M\n\031DeleteBuildTriggerReque"
+          + "st\022\027\n\nproject_id\030\001 \001(\tB\003\340A\002\022\027\n\ntrigger_i"
+          + "d\030\002 \001(\tB\003\340A\002\"\220\001\n\031UpdateBuildTriggerReque"
+          + "st\022\027\n\nproject_id\030\001 \001(\tB\003\340A\002\022\027\n\ntrigger_i"
+          + "d\030\002 \001(\tB\003\340A\002\022A\n\007trigger\030\003 \001(\0132+.google.d"
+          + "evtools.cloudbuild.v1.BuildTriggerB\003\340A\002\""
+          + "\306\007\n\014BuildOptions\022L\n\026source_provenance_ha"
+          + "sh\030\001 \003(\0162,.google.devtools.cloudbuild.v1"
+          + ".Hash.HashType\022Y\n\027requested_verify_optio"
+          + "n\030\002 \001(\01628.google.devtools.cloudbuild.v1."
+          + "BuildOptions.VerifyOption\022M\n\014machine_typ"
+          + "e\030\003 \001(\01627.google.devtools.cloudbuild.v1."
+          + "BuildOptions.MachineType\022\024\n\014disk_size_gb"
+          + "\030\006 \001(\003\022[\n\023substitution_option\030\004 \001(\0162>.go"
+          + "ogle.devtools.cloudbuild.v1.BuildOptions"
+          + ".SubstitutionOption\022\\\n\024log_streaming_opt"
+          + "ion\030\005 \001(\0162>.google.devtools.cloudbuild.v"
+          + "1.BuildOptions.LogStreamingOption\022\023\n\013wor"
+          + "ker_pool\030\007 \001(\t\022H\n\007logging\030\013 \001(\01627.google"
           + ".devtools.cloudbuild.v1.BuildOptions.Log"
-          + "StreamingOption\022\023\n\013worker_pool\030\007 \001(\t\022H\n\007"
-          + "logging\030\013 \001(\01627.google.devtools.cloudbui"
-          + "ld.v1.BuildOptions.LoggingMode\022\013\n\003env\030\014 "
-          + "\003(\t\022\022\n\nsecret_env\030\r \003(\t\0226\n\007volumes\030\016 \003(\013"
-          + "2%.google.devtools.cloudbuild.v1.Volume\""
-          + ".\n\014VerifyOption\022\020\n\014NOT_VERIFIED\020\000\022\014\n\010VER"
-          + "IFIED\020\001\"C\n\013MachineType\022\017\n\013UNSPECIFIED\020\000\022"
-          + "\020\n\014N1_HIGHCPU_8\020\001\022\021\n\rN1_HIGHCPU_32\020\002\"5\n\022"
-          + "SubstitutionOption\022\016\n\nMUST_MATCH\020\000\022\017\n\013AL"
-          + "LOW_LOOSE\020\001\"G\n\022LogStreamingOption\022\022\n\016STR"
-          + "EAM_DEFAULT\020\000\022\r\n\tSTREAM_ON\020\001\022\016\n\nSTREAM_O"
-          + "FF\020\002\"@\n\013LoggingMode\022\027\n\023LOGGING_UNSPECIFI"
-          + "ED\020\000\022\n\n\006LEGACY\020\001\022\014\n\010GCS_ONLY\020\0022\263\016\n\nCloud"
-          + "Build\022\220\001\n\013CreateBuild\0221.google.devtools."
-          + "cloudbuild.v1.CreateBuildRequest\032\035.googl"
-          + "e.longrunning.Operation\"/\202\323\344\223\002)\" /v1/pro"
-          + "jects/{project_id}/builds:\005build\022\217\001\n\010Get"
-          + "Build\022..google.devtools.cloudbuild.v1.Ge"
-          + "tBuildRequest\032$.google.devtools.cloudbui"
-          + "ld.v1.Build\"-\202\323\344\223\002\'\022%/v1/projects/{proje"
-          + "ct_id}/builds/{id}\022\233\001\n\nListBuilds\0220.goog"
-          + "le.devtools.cloudbuild.v1.ListBuildsRequ"
-          + "est\0321.google.devtools.cloudbuild.v1.List"
-          + "BuildsResponse\"(\202\323\344\223\002\"\022 /v1/projects/{pr"
-          + "oject_id}/builds\022\237\001\n\013CancelBuild\0221.googl"
-          + "e.devtools.cloudbuild.v1.CancelBuildRequ"
-          + "est\032$.google.devtools.cloudbuild.v1.Buil"
-          + "d\"7\202\323\344\223\0021\",/v1/projects/{project_id}/bui"
-          + "lds/{id}:cancel:\001*\022\225\001\n\nRetryBuild\0220.goog"
-          + "le.devtools.cloudbuild.v1.RetryBuildRequ"
-          + "est\032\035.google.longrunning.Operation\"6\202\323\344\223"
-          + "\0020\"+/v1/projects/{project_id}/builds/{id"
-          + "}:retry:\001*\022\260\001\n\022CreateBuildTrigger\0228.goog"
+          + "gingMode\022\013\n\003env\030\014 \003(\t\022\022\n\nsecret_env\030\r \003("
+          + "\t\0226\n\007volumes\030\016 \003(\0132%.google.devtools.clo"
+          + "udbuild.v1.Volume\".\n\014VerifyOption\022\020\n\014NOT"
+          + "_VERIFIED\020\000\022\014\n\010VERIFIED\020\001\"C\n\013MachineType"
+          + "\022\017\n\013UNSPECIFIED\020\000\022\020\n\014N1_HIGHCPU_8\020\001\022\021\n\rN"
+          + "1_HIGHCPU_32\020\002\"5\n\022SubstitutionOption\022\016\n\n"
+          + "MUST_MATCH\020\000\022\017\n\013ALLOW_LOOSE\020\001\"G\n\022LogStre"
+          + "amingOption\022\022\n\016STREAM_DEFAULT\020\000\022\r\n\tSTREA"
+          + "M_ON\020\001\022\016\n\nSTREAM_OFF\020\002\"@\n\013LoggingMode\022\027\n"
+          + "\023LOGGING_UNSPECIFIED\020\000\022\n\n\006LEGACY\020\001\022\014\n\010GC"
+          + "S_ONLY\020\002\"\364\004\n\nWorkerPool\022\014\n\004name\030\016 \001(\t\022\022\n"
+          + "\nproject_id\030\002 \001(\t\022\035\n\025service_account_ema"
+          + "il\030\003 \001(\t\022\024\n\014worker_count\030\004 \001(\003\022B\n\rworker"
+          + "_config\030\020 \001(\0132+.google.devtools.cloudbui"
+          + "ld.v1.WorkerConfig\022A\n\007regions\030\t \003(\01620.go"
+          + "ogle.devtools.cloudbuild.v1.WorkerPool.R"
+          + "egion\022/\n\013create_time\030\013 \001(\0132\032.google.prot"
+          + "obuf.Timestamp\022/\n\013update_time\030\021 \001(\0132\032.go"
+          + "ogle.protobuf.Timestamp\022/\n\013delete_time\030\014"
+          + " \001(\0132\032.google.protobuf.Timestamp\022@\n\006stat"
+          + "us\030\r \001(\01620.google.devtools.cloudbuild.v1"
+          + ".WorkerPool.Status\"[\n\006Region\022\026\n\022REGION_U"
+          + "NSPECIFIED\020\000\022\017\n\013US_CENTRAL1\020\001\022\014\n\010US_WEST"
+          + "1\020\002\022\014\n\010US_EAST1\020\003\022\014\n\010US_EAST4\020\004\"V\n\006Statu"
+          + "s\022\026\n\022STATUS_UNSPECIFIED\020\000\022\014\n\010CREATING\020\001\022"
+          + "\013\n\007RUNNING\020\002\022\014\n\010DELETING\020\003\022\013\n\007DELETED\020\004\""
+          + "\200\001\n\014WorkerConfig\022\024\n\014machine_type\030\001 \001(\t\022\024"
+          + "\n\014disk_size_gb\030\002 \001(\003\0227\n\007network\030\003 \001(\0132&."
+          + "google.devtools.cloudbuild.v1.Network\022\013\n"
+          + "\003tag\030\004 \001(\t\"B\n\007Network\022\022\n\nproject_id\030\001 \001("
+          + "\t\022\017\n\007network\030\002 \001(\t\022\022\n\nsubnetwork\030\003 \001(\t\"i"
+          + "\n\027CreateWorkerPoolRequest\022\016\n\006parent\030\001 \001("
+          + "\t\022>\n\013worker_pool\030\002 \001(\0132).google.devtools"
+          + ".cloudbuild.v1.WorkerPool\"$\n\024GetWorkerPo"
+          + "olRequest\022\014\n\004name\030\001 \001(\t\"\'\n\027DeleteWorkerP"
+          + "oolRequest\022\014\n\004name\030\001 \001(\t\"g\n\027UpdateWorker"
+          + "PoolRequest\022\014\n\004name\030\002 \001(\t\022>\n\013worker_pool"
+          + "\030\003 \001(\0132).google.devtools.cloudbuild.v1.W"
+          + "orkerPool\"(\n\026ListWorkerPoolsRequest\022\016\n\006p"
+          + "arent\030\001 \001(\t\"Z\n\027ListWorkerPoolsResponse\022?"
+          + "\n\014worker_pools\030\001 \003(\0132).google.devtools.c"
+          + "loudbuild.v1.WorkerPool2\272\025\n\nCloudBuild\022\243"
+          + "\001\n\013CreateBuild\0221.google.devtools.cloudbu"
+          + "ild.v1.CreateBuildRequest\032\035.google.longr"
+          + "unning.Operation\"B\202\323\344\223\002)\" /v1/projects/{"
+          + "project_id}/builds:\005build\332A\020project_id,b"
+          + "uild\022\237\001\n\010GetBuild\022..google.devtools.clou"
+          + "dbuild.v1.GetBuildRequest\032$.google.devto"
+          + "ols.cloudbuild.v1.Build\"=\202\323\344\223\002\'\022%/v1/pro"
+          + "jects/{project_id}/builds/{id}\332A\rproject"
+          + "_id,id\022\257\001\n\nListBuilds\0220.google.devtools."
+          + "cloudbuild.v1.ListBuildsRequest\0321.google"
+          + ".devtools.cloudbuild.v1.ListBuildsRespon"
+          + "se\"<\202\323\344\223\002\"\022 /v1/projects/{project_id}/bu"
+          + "ilds\332A\021project_id,filter\022\257\001\n\013CancelBuild"
+          + "\0221.google.devtools.cloudbuild.v1.CancelB"
+          + "uildRequest\032$.google.devtools.cloudbuild"
+          + ".v1.Build\"G\202\323\344\223\0021\",/v1/projects/{project"
+          + "_id}/builds/{id}:cancel:\001*\332A\rproject_id,"
+          + "id\022\245\001\n\nRetryBuild\0220.google.devtools.clou"
+          + "dbuild.v1.RetryBuildRequest\032\035.google.lon"
+          + "grunning.Operation\"F\202\323\344\223\0020\"+/v1/projects"
+          + "/{project_id}/builds/{id}:retry:\001*\332A\rpro"
+          + "ject_id,id\022\305\001\n\022CreateBuildTrigger\0228.goog"
           + "le.devtools.cloudbuild.v1.CreateBuildTri"
           + "ggerRequest\032+.google.devtools.cloudbuild"
-          + ".v1.BuildTrigger\"3\202\323\344\223\002-\"\"/v1/projects/{"
-          + "project_id}/triggers:\007trigger\022\256\001\n\017GetBui"
-          + "ldTrigger\0225.google.devtools.cloudbuild.v"
-          + "1.GetBuildTriggerRequest\032+.google.devtoo"
-          + "ls.cloudbuild.v1.BuildTrigger\"7\202\323\344\223\0021\022//"
-          + "v1/projects/{project_id}/triggers/{trigg"
-          + "er_id}\022\262\001\n\021ListBuildTriggers\0227.google.de"
-          + "vtools.cloudbuild.v1.ListBuildTriggersRe"
-          + "quest\0328.google.devtools.cloudbuild.v1.Li"
-          + "stBuildTriggersResponse\"*\202\323\344\223\002$\022\"/v1/pro"
-          + "jects/{project_id}/triggers\022\237\001\n\022DeleteBu"
-          + "ildTrigger\0228.google.devtools.cloudbuild."
-          + "v1.DeleteBuildTriggerRequest\032\026.google.pr"
-          + "otobuf.Empty\"7\202\323\344\223\0021*//v1/projects/{proj"
-          + "ect_id}/triggers/{trigger_id}\022\275\001\n\022Update"
-          + "BuildTrigger\0228.google.devtools.cloudbuil"
-          + "d.v1.UpdateBuildTriggerRequest\032+.google."
-          + "devtools.cloudbuild.v1.BuildTrigger\"@\202\323\344"
-          + "\223\002:2//v1/projects/{project_id}/triggers/"
-          + "{trigger_id}:\007trigger\022\254\001\n\017RunBuildTrigge"
-          + "r\0225.google.devtools.cloudbuild.v1.RunBui"
-          + "ldTriggerRequest\032\035.google.longrunning.Op"
-          + "eration\"C\202\323\344\223\002=\"3/v1/projects/{project_i"
-          + "d}/triggers/{trigger_id}:run:\006sourceBk\n\030"
-          + "com.google.cloudbuild.v1P\001ZGgoogle.golan"
-          + "g.org/genproto/googleapis/devtools/cloud"
-          + "build/v1;cloudbuild\242\002\003GCBb\006proto3"
+          + ".v1.BuildTrigger\"H\202\323\344\223\002-\"\"/v1/projects/{"
+          + "project_id}/triggers:\007trigger\332A\022project_"
+          + "id,trigger\022\306\001\n\017GetBuildTrigger\0225.google."
+          + "devtools.cloudbuild.v1.GetBuildTriggerRe"
+          + "quest\032+.google.devtools.cloudbuild.v1.Bu"
+          + "ildTrigger\"O\202\323\344\223\0021\022//v1/projects/{projec"
+          + "t_id}/triggers/{trigger_id}\332A\025project_id"
+          + ",trigger_id\022\277\001\n\021ListBuildTriggers\0227.goog"
+          + "le.devtools.cloudbuild.v1.ListBuildTrigg"
+          + "ersRequest\0328.google.devtools.cloudbuild."
+          + "v1.ListBuildTriggersResponse\"7\202\323\344\223\002$\022\"/v"
+          + "1/projects/{project_id}/triggers\332A\nproje"
+          + "ct_id\022\267\001\n\022DeleteBuildTrigger\0228.google.de"
+          + "vtools.cloudbuild.v1.DeleteBuildTriggerR"
+          + "equest\032\026.google.protobuf.Empty\"O\202\323\344\223\0021*/"
+          + "/v1/projects/{project_id}/triggers/{trig"
+          + "ger_id}\332A\025project_id,trigger_id\022\335\001\n\022Upda"
+          + "teBuildTrigger\0228.google.devtools.cloudbu"
+          + "ild.v1.UpdateBuildTriggerRequest\032+.googl"
+          + "e.devtools.cloudbuild.v1.BuildTrigger\"`\202"
+          + "\323\344\223\002:2//v1/projects/{project_id}/trigger"
+          + "s/{trigger_id}:\007trigger\332A\035project_id,tri"
+          + "gger_id,trigger\022\313\001\n\017RunBuildTrigger\0225.go"
+          + "ogle.devtools.cloudbuild.v1.RunBuildTrig"
+          + "gerRequest\032\035.google.longrunning.Operatio"
+          + "n\"b\202\323\344\223\002=\"3/v1/projects/{project_id}/tri"
+          + "ggers/{trigger_id}:run:\006source\332A\034project"
+          + "_id,trigger_id,source\022w\n\020CreateWorkerPoo"
+          + "l\0226.google.devtools.cloudbuild.v1.Create"
+          + "WorkerPoolRequest\032).google.devtools.clou"
+          + "dbuild.v1.WorkerPool\"\000\022q\n\rGetWorkerPool\022"
+          + "3.google.devtools.cloudbuild.v1.GetWorke"
+          + "rPoolRequest\032).google.devtools.cloudbuil"
+          + "d.v1.WorkerPool\"\000\022d\n\020DeleteWorkerPool\0226."
+          + "google.devtools.cloudbuild.v1.DeleteWork"
+          + "erPoolRequest\032\026.google.protobuf.Empty\"\000\022"
+          + "w\n\020UpdateWorkerPool\0226.google.devtools.cl"
+          + "oudbuild.v1.UpdateWorkerPoolRequest\032).go"
+          + "ogle.devtools.cloudbuild.v1.WorkerPool\"\000"
+          + "\022\202\001\n\017ListWorkerPools\0225.google.devtools.c"
+          + "loudbuild.v1.ListWorkerPoolsRequest\0326.go"
+          + "ogle.devtools.cloudbuild.v1.ListWorkerPo"
+          + "olsResponse\"\000\032M\312A\031cloudbuild.googleapis."
+          + "com\322A.https://www.googleapis.com/auth/cl"
+          + "oud-platformBk\n\030com.google.cloudbuild.v1"
+          + "P\001ZGgoogle.golang.org/genproto/googleapi"
+          + "s/devtools/cloudbuild/v1;cloudbuild\242\002\003GC"
+          + "Bb\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner() {
@@ -407,12 +529,11 @@ public final class Cloudbuild {
         descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
           com.google.api.AnnotationsProto.getDescriptor(),
-          com.google.api.HttpBodyProto.getDescriptor(),
-          com.google.cloud.audit.AuditLogProto.getDescriptor(),
+          com.google.api.ClientProto.getDescriptor(),
+          com.google.api.FieldBehaviorProto.getDescriptor(),
           com.google.longrunning.OperationsProto.getDescriptor(),
           com.google.protobuf.DurationProto.getDescriptor(),
           com.google.protobuf.EmptyProto.getDescriptor(),
-          com.google.protobuf.FieldMaskProto.getDescriptor(),
           com.google.protobuf.TimestampProto.getDescriptor(),
         },
         assigner);
@@ -498,7 +619,12 @@ public final class Cloudbuild {
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_devtools_cloudbuild_v1_Results_descriptor,
             new java.lang.String[] {
-              "Images", "BuildStepImages", "ArtifactManifest", "NumArtifacts", "BuildStepOutputs",
+              "Images",
+              "BuildStepImages",
+              "ArtifactManifest",
+              "NumArtifacts",
+              "BuildStepOutputs",
+              "ArtifactTiming",
             });
     internal_static_google_devtools_cloudbuild_v1_ArtifactResult_descriptor =
         getDescriptor().getMessageTypes().get(9);
@@ -683,7 +809,10 @@ public final class Cloudbuild {
             new java.lang.String[] {
               "Id",
               "Description",
+              "Name",
+              "Tags",
               "TriggerTemplate",
+              "Github",
               "Build",
               "Filename",
               "CreateTime",
@@ -703,8 +832,32 @@ public final class Cloudbuild {
             new java.lang.String[] {
               "Key", "Value",
             });
-    internal_static_google_devtools_cloudbuild_v1_CreateBuildTriggerRequest_descriptor =
+    internal_static_google_devtools_cloudbuild_v1_GitHubEventsConfig_descriptor =
         getDescriptor().getMessageTypes().get(24);
+    internal_static_google_devtools_cloudbuild_v1_GitHubEventsConfig_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_devtools_cloudbuild_v1_GitHubEventsConfig_descriptor,
+            new java.lang.String[] {
+              "InstallationId", "Owner", "Name", "PullRequest", "Push", "Event",
+            });
+    internal_static_google_devtools_cloudbuild_v1_PullRequestFilter_descriptor =
+        getDescriptor().getMessageTypes().get(25);
+    internal_static_google_devtools_cloudbuild_v1_PullRequestFilter_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_devtools_cloudbuild_v1_PullRequestFilter_descriptor,
+            new java.lang.String[] {
+              "Branch", "CommentControl", "GitRef",
+            });
+    internal_static_google_devtools_cloudbuild_v1_PushFilter_descriptor =
+        getDescriptor().getMessageTypes().get(26);
+    internal_static_google_devtools_cloudbuild_v1_PushFilter_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_devtools_cloudbuild_v1_PushFilter_descriptor,
+            new java.lang.String[] {
+              "Branch", "Tag", "GitRef",
+            });
+    internal_static_google_devtools_cloudbuild_v1_CreateBuildTriggerRequest_descriptor =
+        getDescriptor().getMessageTypes().get(27);
     internal_static_google_devtools_cloudbuild_v1_CreateBuildTriggerRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_devtools_cloudbuild_v1_CreateBuildTriggerRequest_descriptor,
@@ -712,7 +865,7 @@ public final class Cloudbuild {
               "ProjectId", "Trigger",
             });
     internal_static_google_devtools_cloudbuild_v1_GetBuildTriggerRequest_descriptor =
-        getDescriptor().getMessageTypes().get(25);
+        getDescriptor().getMessageTypes().get(28);
     internal_static_google_devtools_cloudbuild_v1_GetBuildTriggerRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_devtools_cloudbuild_v1_GetBuildTriggerRequest_descriptor,
@@ -720,23 +873,23 @@ public final class Cloudbuild {
               "ProjectId", "TriggerId",
             });
     internal_static_google_devtools_cloudbuild_v1_ListBuildTriggersRequest_descriptor =
-        getDescriptor().getMessageTypes().get(26);
+        getDescriptor().getMessageTypes().get(29);
     internal_static_google_devtools_cloudbuild_v1_ListBuildTriggersRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_devtools_cloudbuild_v1_ListBuildTriggersRequest_descriptor,
             new java.lang.String[] {
-              "ProjectId",
+              "ProjectId", "PageSize", "PageToken",
             });
     internal_static_google_devtools_cloudbuild_v1_ListBuildTriggersResponse_descriptor =
-        getDescriptor().getMessageTypes().get(27);
+        getDescriptor().getMessageTypes().get(30);
     internal_static_google_devtools_cloudbuild_v1_ListBuildTriggersResponse_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_devtools_cloudbuild_v1_ListBuildTriggersResponse_descriptor,
             new java.lang.String[] {
-              "Triggers",
+              "Triggers", "NextPageToken",
             });
     internal_static_google_devtools_cloudbuild_v1_DeleteBuildTriggerRequest_descriptor =
-        getDescriptor().getMessageTypes().get(28);
+        getDescriptor().getMessageTypes().get(31);
     internal_static_google_devtools_cloudbuild_v1_DeleteBuildTriggerRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_devtools_cloudbuild_v1_DeleteBuildTriggerRequest_descriptor,
@@ -744,7 +897,7 @@ public final class Cloudbuild {
               "ProjectId", "TriggerId",
             });
     internal_static_google_devtools_cloudbuild_v1_UpdateBuildTriggerRequest_descriptor =
-        getDescriptor().getMessageTypes().get(29);
+        getDescriptor().getMessageTypes().get(32);
     internal_static_google_devtools_cloudbuild_v1_UpdateBuildTriggerRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_devtools_cloudbuild_v1_UpdateBuildTriggerRequest_descriptor,
@@ -752,7 +905,7 @@ public final class Cloudbuild {
               "ProjectId", "TriggerId", "Trigger",
             });
     internal_static_google_devtools_cloudbuild_v1_BuildOptions_descriptor =
-        getDescriptor().getMessageTypes().get(30);
+        getDescriptor().getMessageTypes().get(33);
     internal_static_google_devtools_cloudbuild_v1_BuildOptions_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_devtools_cloudbuild_v1_BuildOptions_descriptor,
@@ -769,18 +922,102 @@ public final class Cloudbuild {
               "SecretEnv",
               "Volumes",
             });
+    internal_static_google_devtools_cloudbuild_v1_WorkerPool_descriptor =
+        getDescriptor().getMessageTypes().get(34);
+    internal_static_google_devtools_cloudbuild_v1_WorkerPool_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_devtools_cloudbuild_v1_WorkerPool_descriptor,
+            new java.lang.String[] {
+              "Name",
+              "ProjectId",
+              "ServiceAccountEmail",
+              "WorkerCount",
+              "WorkerConfig",
+              "Regions",
+              "CreateTime",
+              "UpdateTime",
+              "DeleteTime",
+              "Status",
+            });
+    internal_static_google_devtools_cloudbuild_v1_WorkerConfig_descriptor =
+        getDescriptor().getMessageTypes().get(35);
+    internal_static_google_devtools_cloudbuild_v1_WorkerConfig_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_devtools_cloudbuild_v1_WorkerConfig_descriptor,
+            new java.lang.String[] {
+              "MachineType", "DiskSizeGb", "Network", "Tag",
+            });
+    internal_static_google_devtools_cloudbuild_v1_Network_descriptor =
+        getDescriptor().getMessageTypes().get(36);
+    internal_static_google_devtools_cloudbuild_v1_Network_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_devtools_cloudbuild_v1_Network_descriptor,
+            new java.lang.String[] {
+              "ProjectId", "Network", "Subnetwork",
+            });
+    internal_static_google_devtools_cloudbuild_v1_CreateWorkerPoolRequest_descriptor =
+        getDescriptor().getMessageTypes().get(37);
+    internal_static_google_devtools_cloudbuild_v1_CreateWorkerPoolRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_devtools_cloudbuild_v1_CreateWorkerPoolRequest_descriptor,
+            new java.lang.String[] {
+              "Parent", "WorkerPool",
+            });
+    internal_static_google_devtools_cloudbuild_v1_GetWorkerPoolRequest_descriptor =
+        getDescriptor().getMessageTypes().get(38);
+    internal_static_google_devtools_cloudbuild_v1_GetWorkerPoolRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_devtools_cloudbuild_v1_GetWorkerPoolRequest_descriptor,
+            new java.lang.String[] {
+              "Name",
+            });
+    internal_static_google_devtools_cloudbuild_v1_DeleteWorkerPoolRequest_descriptor =
+        getDescriptor().getMessageTypes().get(39);
+    internal_static_google_devtools_cloudbuild_v1_DeleteWorkerPoolRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_devtools_cloudbuild_v1_DeleteWorkerPoolRequest_descriptor,
+            new java.lang.String[] {
+              "Name",
+            });
+    internal_static_google_devtools_cloudbuild_v1_UpdateWorkerPoolRequest_descriptor =
+        getDescriptor().getMessageTypes().get(40);
+    internal_static_google_devtools_cloudbuild_v1_UpdateWorkerPoolRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_devtools_cloudbuild_v1_UpdateWorkerPoolRequest_descriptor,
+            new java.lang.String[] {
+              "Name", "WorkerPool",
+            });
+    internal_static_google_devtools_cloudbuild_v1_ListWorkerPoolsRequest_descriptor =
+        getDescriptor().getMessageTypes().get(41);
+    internal_static_google_devtools_cloudbuild_v1_ListWorkerPoolsRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_devtools_cloudbuild_v1_ListWorkerPoolsRequest_descriptor,
+            new java.lang.String[] {
+              "Parent",
+            });
+    internal_static_google_devtools_cloudbuild_v1_ListWorkerPoolsResponse_descriptor =
+        getDescriptor().getMessageTypes().get(42);
+    internal_static_google_devtools_cloudbuild_v1_ListWorkerPoolsResponse_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_devtools_cloudbuild_v1_ListWorkerPoolsResponse_descriptor,
+            new java.lang.String[] {
+              "WorkerPools",
+            });
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();
+    registry.add(com.google.api.ClientProto.defaultHost);
+    registry.add(com.google.api.FieldBehaviorProto.fieldBehavior);
     registry.add(com.google.api.AnnotationsProto.http);
+    registry.add(com.google.api.ClientProto.methodSignature);
+    registry.add(com.google.api.ClientProto.oauthScopes);
     com.google.protobuf.Descriptors.FileDescriptor.internalUpdateFileDescriptor(
         descriptor, registry);
     com.google.api.AnnotationsProto.getDescriptor();
-    com.google.api.HttpBodyProto.getDescriptor();
-    com.google.cloud.audit.AuditLogProto.getDescriptor();
+    com.google.api.ClientProto.getDescriptor();
+    com.google.api.FieldBehaviorProto.getDescriptor();
     com.google.longrunning.OperationsProto.getDescriptor();
     com.google.protobuf.DurationProto.getDescriptor();
     com.google.protobuf.EmptyProto.getDescriptor();
-    com.google.protobuf.FieldMaskProto.getDescriptor();
     com.google.protobuf.TimestampProto.getDescriptor();
   }
 

@@ -110,6 +110,21 @@ public final class Results extends com.google.protobuf.GeneratedMessageV3
               buildStepOutputs_.add(input.readBytes());
               break;
             }
+          case 58:
+            {
+              com.google.cloudbuild.v1.TimeSpan.Builder subBuilder = null;
+              if (artifactTiming_ != null) {
+                subBuilder = artifactTiming_.toBuilder();
+              }
+              artifactTiming_ =
+                  input.readMessage(com.google.cloudbuild.v1.TimeSpan.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(artifactTiming_);
+                artifactTiming_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
           default:
             {
               if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -381,6 +396,47 @@ public final class Results extends com.google.protobuf.GeneratedMessageV3
     return buildStepOutputs_.get(index);
   }
 
+  public static final int ARTIFACT_TIMING_FIELD_NUMBER = 7;
+  private com.google.cloudbuild.v1.TimeSpan artifactTiming_;
+  /**
+   *
+   *
+   * <pre>
+   * Time to push all non-container artifacts.
+   * </pre>
+   *
+   * <code>.google.devtools.cloudbuild.v1.TimeSpan artifact_timing = 7;</code>
+   */
+  public boolean hasArtifactTiming() {
+    return artifactTiming_ != null;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Time to push all non-container artifacts.
+   * </pre>
+   *
+   * <code>.google.devtools.cloudbuild.v1.TimeSpan artifact_timing = 7;</code>
+   */
+  public com.google.cloudbuild.v1.TimeSpan getArtifactTiming() {
+    return artifactTiming_ == null
+        ? com.google.cloudbuild.v1.TimeSpan.getDefaultInstance()
+        : artifactTiming_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Time to push all non-container artifacts.
+   * </pre>
+   *
+   * <code>.google.devtools.cloudbuild.v1.TimeSpan artifact_timing = 7;</code>
+   */
+  public com.google.cloudbuild.v1.TimeSpanOrBuilder getArtifactTimingOrBuilder() {
+    return getArtifactTiming();
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -409,6 +465,9 @@ public final class Results extends com.google.protobuf.GeneratedMessageV3
     }
     for (int i = 0; i < buildStepOutputs_.size(); i++) {
       output.writeBytes(6, buildStepOutputs_.get(i));
+    }
+    if (artifactTiming_ != null) {
+      output.writeMessage(7, getArtifactTiming());
     }
     unknownFields.writeTo(output);
   }
@@ -445,6 +504,9 @@ public final class Results extends com.google.protobuf.GeneratedMessageV3
       size += dataSize;
       size += 1 * getBuildStepOutputsList().size();
     }
+    if (artifactTiming_ != null) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(7, getArtifactTiming());
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -465,6 +527,10 @@ public final class Results extends com.google.protobuf.GeneratedMessageV3
     if (!getArtifactManifest().equals(other.getArtifactManifest())) return false;
     if (getNumArtifacts() != other.getNumArtifacts()) return false;
     if (!getBuildStepOutputsList().equals(other.getBuildStepOutputsList())) return false;
+    if (hasArtifactTiming() != other.hasArtifactTiming()) return false;
+    if (hasArtifactTiming()) {
+      if (!getArtifactTiming().equals(other.getArtifactTiming())) return false;
+    }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -491,6 +557,10 @@ public final class Results extends com.google.protobuf.GeneratedMessageV3
     if (getBuildStepOutputsCount() > 0) {
       hash = (37 * hash) + BUILD_STEP_OUTPUTS_FIELD_NUMBER;
       hash = (53 * hash) + getBuildStepOutputsList().hashCode();
+    }
+    if (hasArtifactTiming()) {
+      hash = (37 * hash) + ARTIFACT_TIMING_FIELD_NUMBER;
+      hash = (53 * hash) + getArtifactTiming().hashCode();
     }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
@@ -652,6 +722,12 @@ public final class Results extends com.google.protobuf.GeneratedMessageV3
 
       buildStepOutputs_ = java.util.Collections.emptyList();
       bitField0_ = (bitField0_ & ~0x00000010);
+      if (artifactTimingBuilder_ == null) {
+        artifactTiming_ = null;
+      } else {
+        artifactTiming_ = null;
+        artifactTimingBuilder_ = null;
+      }
       return this;
     }
 
@@ -701,6 +777,11 @@ public final class Results extends com.google.protobuf.GeneratedMessageV3
         bitField0_ = (bitField0_ & ~0x00000010);
       }
       result.buildStepOutputs_ = buildStepOutputs_;
+      if (artifactTimingBuilder_ == null) {
+        result.artifactTiming_ = artifactTiming_;
+      } else {
+        result.artifactTiming_ = artifactTimingBuilder_.build();
+      }
       result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
@@ -804,6 +885,9 @@ public final class Results extends com.google.protobuf.GeneratedMessageV3
           buildStepOutputs_.addAll(other.buildStepOutputs_);
         }
         onChanged();
+      }
+      if (other.hasArtifactTiming()) {
+        mergeArtifactTiming(other.getArtifactTiming());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -1616,6 +1700,187 @@ public final class Results extends com.google.protobuf.GeneratedMessageV3
       bitField0_ = (bitField0_ & ~0x00000010);
       onChanged();
       return this;
+    }
+
+    private com.google.cloudbuild.v1.TimeSpan artifactTiming_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloudbuild.v1.TimeSpan,
+            com.google.cloudbuild.v1.TimeSpan.Builder,
+            com.google.cloudbuild.v1.TimeSpanOrBuilder>
+        artifactTimingBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Time to push all non-container artifacts.
+     * </pre>
+     *
+     * <code>.google.devtools.cloudbuild.v1.TimeSpan artifact_timing = 7;</code>
+     */
+    public boolean hasArtifactTiming() {
+      return artifactTimingBuilder_ != null || artifactTiming_ != null;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Time to push all non-container artifacts.
+     * </pre>
+     *
+     * <code>.google.devtools.cloudbuild.v1.TimeSpan artifact_timing = 7;</code>
+     */
+    public com.google.cloudbuild.v1.TimeSpan getArtifactTiming() {
+      if (artifactTimingBuilder_ == null) {
+        return artifactTiming_ == null
+            ? com.google.cloudbuild.v1.TimeSpan.getDefaultInstance()
+            : artifactTiming_;
+      } else {
+        return artifactTimingBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Time to push all non-container artifacts.
+     * </pre>
+     *
+     * <code>.google.devtools.cloudbuild.v1.TimeSpan artifact_timing = 7;</code>
+     */
+    public Builder setArtifactTiming(com.google.cloudbuild.v1.TimeSpan value) {
+      if (artifactTimingBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        artifactTiming_ = value;
+        onChanged();
+      } else {
+        artifactTimingBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Time to push all non-container artifacts.
+     * </pre>
+     *
+     * <code>.google.devtools.cloudbuild.v1.TimeSpan artifact_timing = 7;</code>
+     */
+    public Builder setArtifactTiming(com.google.cloudbuild.v1.TimeSpan.Builder builderForValue) {
+      if (artifactTimingBuilder_ == null) {
+        artifactTiming_ = builderForValue.build();
+        onChanged();
+      } else {
+        artifactTimingBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Time to push all non-container artifacts.
+     * </pre>
+     *
+     * <code>.google.devtools.cloudbuild.v1.TimeSpan artifact_timing = 7;</code>
+     */
+    public Builder mergeArtifactTiming(com.google.cloudbuild.v1.TimeSpan value) {
+      if (artifactTimingBuilder_ == null) {
+        if (artifactTiming_ != null) {
+          artifactTiming_ =
+              com.google.cloudbuild.v1.TimeSpan.newBuilder(artifactTiming_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          artifactTiming_ = value;
+        }
+        onChanged();
+      } else {
+        artifactTimingBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Time to push all non-container artifacts.
+     * </pre>
+     *
+     * <code>.google.devtools.cloudbuild.v1.TimeSpan artifact_timing = 7;</code>
+     */
+    public Builder clearArtifactTiming() {
+      if (artifactTimingBuilder_ == null) {
+        artifactTiming_ = null;
+        onChanged();
+      } else {
+        artifactTiming_ = null;
+        artifactTimingBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Time to push all non-container artifacts.
+     * </pre>
+     *
+     * <code>.google.devtools.cloudbuild.v1.TimeSpan artifact_timing = 7;</code>
+     */
+    public com.google.cloudbuild.v1.TimeSpan.Builder getArtifactTimingBuilder() {
+
+      onChanged();
+      return getArtifactTimingFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Time to push all non-container artifacts.
+     * </pre>
+     *
+     * <code>.google.devtools.cloudbuild.v1.TimeSpan artifact_timing = 7;</code>
+     */
+    public com.google.cloudbuild.v1.TimeSpanOrBuilder getArtifactTimingOrBuilder() {
+      if (artifactTimingBuilder_ != null) {
+        return artifactTimingBuilder_.getMessageOrBuilder();
+      } else {
+        return artifactTiming_ == null
+            ? com.google.cloudbuild.v1.TimeSpan.getDefaultInstance()
+            : artifactTiming_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Time to push all non-container artifacts.
+     * </pre>
+     *
+     * <code>.google.devtools.cloudbuild.v1.TimeSpan artifact_timing = 7;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloudbuild.v1.TimeSpan,
+            com.google.cloudbuild.v1.TimeSpan.Builder,
+            com.google.cloudbuild.v1.TimeSpanOrBuilder>
+        getArtifactTimingFieldBuilder() {
+      if (artifactTimingBuilder_ == null) {
+        artifactTimingBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloudbuild.v1.TimeSpan,
+                com.google.cloudbuild.v1.TimeSpan.Builder,
+                com.google.cloudbuild.v1.TimeSpanOrBuilder>(
+                getArtifactTiming(), getParentForChildren(), isClean());
+        artifactTiming_ = null;
+      }
+      return artifactTimingBuilder_;
     }
 
     @java.lang.Override

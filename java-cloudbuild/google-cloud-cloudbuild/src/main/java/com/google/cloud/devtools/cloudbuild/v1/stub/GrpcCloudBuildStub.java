@@ -30,16 +30,23 @@ import com.google.cloudbuild.v1.BuildTrigger;
 import com.google.cloudbuild.v1.CancelBuildRequest;
 import com.google.cloudbuild.v1.CreateBuildRequest;
 import com.google.cloudbuild.v1.CreateBuildTriggerRequest;
+import com.google.cloudbuild.v1.CreateWorkerPoolRequest;
 import com.google.cloudbuild.v1.DeleteBuildTriggerRequest;
+import com.google.cloudbuild.v1.DeleteWorkerPoolRequest;
 import com.google.cloudbuild.v1.GetBuildRequest;
 import com.google.cloudbuild.v1.GetBuildTriggerRequest;
+import com.google.cloudbuild.v1.GetWorkerPoolRequest;
 import com.google.cloudbuild.v1.ListBuildTriggersRequest;
 import com.google.cloudbuild.v1.ListBuildTriggersResponse;
 import com.google.cloudbuild.v1.ListBuildsRequest;
 import com.google.cloudbuild.v1.ListBuildsResponse;
+import com.google.cloudbuild.v1.ListWorkerPoolsRequest;
+import com.google.cloudbuild.v1.ListWorkerPoolsResponse;
 import com.google.cloudbuild.v1.RetryBuildRequest;
 import com.google.cloudbuild.v1.RunBuildTriggerRequest;
 import com.google.cloudbuild.v1.UpdateBuildTriggerRequest;
+import com.google.cloudbuild.v1.UpdateWorkerPoolRequest;
+import com.google.cloudbuild.v1.WorkerPool;
 import com.google.common.collect.ImmutableMap;
 import com.google.longrunning.Operation;
 import com.google.protobuf.Empty;
@@ -151,6 +158,52 @@ public class GrpcCloudBuildStub extends CloudBuildStub {
           .setRequestMarshaller(ProtoUtils.marshaller(RetryBuildRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
           .build();
+  private static final MethodDescriptor<CreateWorkerPoolRequest, WorkerPool>
+      createWorkerPoolMethodDescriptor =
+          MethodDescriptor.<CreateWorkerPoolRequest, WorkerPool>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.devtools.cloudbuild.v1.CloudBuild/CreateWorkerPool")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(CreateWorkerPoolRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(WorkerPool.getDefaultInstance()))
+              .build();
+  private static final MethodDescriptor<GetWorkerPoolRequest, WorkerPool>
+      getWorkerPoolMethodDescriptor =
+          MethodDescriptor.<GetWorkerPoolRequest, WorkerPool>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.devtools.cloudbuild.v1.CloudBuild/GetWorkerPool")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(GetWorkerPoolRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(WorkerPool.getDefaultInstance()))
+              .build();
+  private static final MethodDescriptor<DeleteWorkerPoolRequest, Empty>
+      deleteWorkerPoolMethodDescriptor =
+          MethodDescriptor.<DeleteWorkerPoolRequest, Empty>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.devtools.cloudbuild.v1.CloudBuild/DeleteWorkerPool")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(DeleteWorkerPoolRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+              .build();
+  private static final MethodDescriptor<UpdateWorkerPoolRequest, WorkerPool>
+      updateWorkerPoolMethodDescriptor =
+          MethodDescriptor.<UpdateWorkerPoolRequest, WorkerPool>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.devtools.cloudbuild.v1.CloudBuild/UpdateWorkerPool")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(UpdateWorkerPoolRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(WorkerPool.getDefaultInstance()))
+              .build();
+  private static final MethodDescriptor<ListWorkerPoolsRequest, ListWorkerPoolsResponse>
+      listWorkerPoolsMethodDescriptor =
+          MethodDescriptor.<ListWorkerPoolsRequest, ListWorkerPoolsResponse>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.devtools.cloudbuild.v1.CloudBuild/ListWorkerPools")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(ListWorkerPoolsRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(ListWorkerPoolsResponse.getDefaultInstance()))
+              .build();
 
   private final BackgroundResource backgroundResources;
 
@@ -167,6 +220,12 @@ public class GrpcCloudBuildStub extends CloudBuildStub {
   private final UnaryCallable<UpdateBuildTriggerRequest, BuildTrigger> updateBuildTriggerCallable;
   private final UnaryCallable<RunBuildTriggerRequest, Operation> runBuildTriggerCallable;
   private final UnaryCallable<RetryBuildRequest, Operation> retryBuildCallable;
+  private final UnaryCallable<CreateWorkerPoolRequest, WorkerPool> createWorkerPoolCallable;
+  private final UnaryCallable<GetWorkerPoolRequest, WorkerPool> getWorkerPoolCallable;
+  private final UnaryCallable<DeleteWorkerPoolRequest, Empty> deleteWorkerPoolCallable;
+  private final UnaryCallable<UpdateWorkerPoolRequest, WorkerPool> updateWorkerPoolCallable;
+  private final UnaryCallable<ListWorkerPoolsRequest, ListWorkerPoolsResponse>
+      listWorkerPoolsCallable;
 
   private final GrpcStubCallableFactory callableFactory;
 
@@ -288,6 +347,27 @@ public class GrpcCloudBuildStub extends CloudBuildStub {
         GrpcCallSettings.<RetryBuildRequest, Operation>newBuilder()
             .setMethodDescriptor(retryBuildMethodDescriptor)
             .build();
+    GrpcCallSettings<CreateWorkerPoolRequest, WorkerPool> createWorkerPoolTransportSettings =
+        GrpcCallSettings.<CreateWorkerPoolRequest, WorkerPool>newBuilder()
+            .setMethodDescriptor(createWorkerPoolMethodDescriptor)
+            .build();
+    GrpcCallSettings<GetWorkerPoolRequest, WorkerPool> getWorkerPoolTransportSettings =
+        GrpcCallSettings.<GetWorkerPoolRequest, WorkerPool>newBuilder()
+            .setMethodDescriptor(getWorkerPoolMethodDescriptor)
+            .build();
+    GrpcCallSettings<DeleteWorkerPoolRequest, Empty> deleteWorkerPoolTransportSettings =
+        GrpcCallSettings.<DeleteWorkerPoolRequest, Empty>newBuilder()
+            .setMethodDescriptor(deleteWorkerPoolMethodDescriptor)
+            .build();
+    GrpcCallSettings<UpdateWorkerPoolRequest, WorkerPool> updateWorkerPoolTransportSettings =
+        GrpcCallSettings.<UpdateWorkerPoolRequest, WorkerPool>newBuilder()
+            .setMethodDescriptor(updateWorkerPoolMethodDescriptor)
+            .build();
+    GrpcCallSettings<ListWorkerPoolsRequest, ListWorkerPoolsResponse>
+        listWorkerPoolsTransportSettings =
+            GrpcCallSettings.<ListWorkerPoolsRequest, ListWorkerPoolsResponse>newBuilder()
+                .setMethodDescriptor(listWorkerPoolsMethodDescriptor)
+                .build();
 
     this.createBuildCallable =
         callableFactory.createUnaryCallable(
@@ -333,6 +413,21 @@ public class GrpcCloudBuildStub extends CloudBuildStub {
     this.retryBuildCallable =
         callableFactory.createUnaryCallable(
             retryBuildTransportSettings, settings.retryBuildSettings(), clientContext);
+    this.createWorkerPoolCallable =
+        callableFactory.createUnaryCallable(
+            createWorkerPoolTransportSettings, settings.createWorkerPoolSettings(), clientContext);
+    this.getWorkerPoolCallable =
+        callableFactory.createUnaryCallable(
+            getWorkerPoolTransportSettings, settings.getWorkerPoolSettings(), clientContext);
+    this.deleteWorkerPoolCallable =
+        callableFactory.createUnaryCallable(
+            deleteWorkerPoolTransportSettings, settings.deleteWorkerPoolSettings(), clientContext);
+    this.updateWorkerPoolCallable =
+        callableFactory.createUnaryCallable(
+            updateWorkerPoolTransportSettings, settings.updateWorkerPoolSettings(), clientContext);
+    this.listWorkerPoolsCallable =
+        callableFactory.createUnaryCallable(
+            listWorkerPoolsTransportSettings, settings.listWorkerPoolsSettings(), clientContext);
 
     backgroundResources = new BackgroundResourceAggregation(clientContext.getBackgroundResources());
   }
@@ -384,6 +479,26 @@ public class GrpcCloudBuildStub extends CloudBuildStub {
 
   public UnaryCallable<RetryBuildRequest, Operation> retryBuildCallable() {
     return retryBuildCallable;
+  }
+
+  public UnaryCallable<CreateWorkerPoolRequest, WorkerPool> createWorkerPoolCallable() {
+    return createWorkerPoolCallable;
+  }
+
+  public UnaryCallable<GetWorkerPoolRequest, WorkerPool> getWorkerPoolCallable() {
+    return getWorkerPoolCallable;
+  }
+
+  public UnaryCallable<DeleteWorkerPoolRequest, Empty> deleteWorkerPoolCallable() {
+    return deleteWorkerPoolCallable;
+  }
+
+  public UnaryCallable<UpdateWorkerPoolRequest, WorkerPool> updateWorkerPoolCallable() {
+    return updateWorkerPoolCallable;
+  }
+
+  public UnaryCallable<ListWorkerPoolsRequest, ListWorkerPoolsResponse> listWorkerPoolsCallable() {
+    return listWorkerPoolsCallable;
   }
 
   @Override

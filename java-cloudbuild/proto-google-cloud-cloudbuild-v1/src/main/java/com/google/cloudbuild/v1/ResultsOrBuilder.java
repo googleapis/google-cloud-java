@@ -193,4 +193,35 @@ public interface ResultsOrBuilder
    * <code>repeated bytes build_step_outputs = 6;</code>
    */
   com.google.protobuf.ByteString getBuildStepOutputs(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Time to push all non-container artifacts.
+   * </pre>
+   *
+   * <code>.google.devtools.cloudbuild.v1.TimeSpan artifact_timing = 7;</code>
+   */
+  boolean hasArtifactTiming();
+  /**
+   *
+   *
+   * <pre>
+   * Time to push all non-container artifacts.
+   * </pre>
+   *
+   * <code>.google.devtools.cloudbuild.v1.TimeSpan artifact_timing = 7;</code>
+   */
+  com.google.cloudbuild.v1.TimeSpan getArtifactTiming();
+  /**
+   *
+   *
+   * <pre>
+   * Time to push all non-container artifacts.
+   * </pre>
+   *
+   * <code>.google.devtools.cloudbuild.v1.TimeSpan artifact_timing = 7;</code>
+   */
+  com.google.cloudbuild.v1.TimeSpanOrBuilder getArtifactTimingOrBuilder();
 }

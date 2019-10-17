@@ -25,16 +25,23 @@ import com.google.cloudbuild.v1.BuildTrigger;
 import com.google.cloudbuild.v1.CancelBuildRequest;
 import com.google.cloudbuild.v1.CreateBuildRequest;
 import com.google.cloudbuild.v1.CreateBuildTriggerRequest;
+import com.google.cloudbuild.v1.CreateWorkerPoolRequest;
 import com.google.cloudbuild.v1.DeleteBuildTriggerRequest;
+import com.google.cloudbuild.v1.DeleteWorkerPoolRequest;
 import com.google.cloudbuild.v1.GetBuildRequest;
 import com.google.cloudbuild.v1.GetBuildTriggerRequest;
+import com.google.cloudbuild.v1.GetWorkerPoolRequest;
 import com.google.cloudbuild.v1.ListBuildTriggersRequest;
 import com.google.cloudbuild.v1.ListBuildTriggersResponse;
 import com.google.cloudbuild.v1.ListBuildsRequest;
 import com.google.cloudbuild.v1.ListBuildsResponse;
+import com.google.cloudbuild.v1.ListWorkerPoolsRequest;
+import com.google.cloudbuild.v1.ListWorkerPoolsResponse;
 import com.google.cloudbuild.v1.RetryBuildRequest;
 import com.google.cloudbuild.v1.RunBuildTriggerRequest;
 import com.google.cloudbuild.v1.UpdateBuildTriggerRequest;
+import com.google.cloudbuild.v1.UpdateWorkerPoolRequest;
+import com.google.cloudbuild.v1.WorkerPool;
 import com.google.longrunning.Operation;
 import com.google.protobuf.Empty;
 import javax.annotation.Generated;
@@ -96,6 +103,26 @@ public abstract class CloudBuildStub implements BackgroundResource {
 
   public UnaryCallable<RetryBuildRequest, Operation> retryBuildCallable() {
     throw new UnsupportedOperationException("Not implemented: retryBuildCallable()");
+  }
+
+  public UnaryCallable<CreateWorkerPoolRequest, WorkerPool> createWorkerPoolCallable() {
+    throw new UnsupportedOperationException("Not implemented: createWorkerPoolCallable()");
+  }
+
+  public UnaryCallable<GetWorkerPoolRequest, WorkerPool> getWorkerPoolCallable() {
+    throw new UnsupportedOperationException("Not implemented: getWorkerPoolCallable()");
+  }
+
+  public UnaryCallable<DeleteWorkerPoolRequest, Empty> deleteWorkerPoolCallable() {
+    throw new UnsupportedOperationException("Not implemented: deleteWorkerPoolCallable()");
+  }
+
+  public UnaryCallable<UpdateWorkerPoolRequest, WorkerPool> updateWorkerPoolCallable() {
+    throw new UnsupportedOperationException("Not implemented: updateWorkerPoolCallable()");
+  }
+
+  public UnaryCallable<ListWorkerPoolsRequest, ListWorkerPoolsResponse> listWorkerPoolsCallable() {
+    throw new UnsupportedOperationException("Not implemented: listWorkerPoolsCallable()");
   }
 
   @Override

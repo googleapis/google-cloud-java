@@ -74,4 +74,25 @@ public interface ListBuildTriggersResponseOrBuilder
    * <code>repeated .google.devtools.cloudbuild.v1.BuildTrigger triggers = 1;</code>
    */
   com.google.cloudbuild.v1.BuildTriggerOrBuilder getTriggersOrBuilder(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Token to receive the next page of results.
+   * </pre>
+   *
+   * <code>string next_page_token = 2;</code>
+   */
+  java.lang.String getNextPageToken();
+  /**
+   *
+   *
+   * <pre>
+   * Token to receive the next page of results.
+   * </pre>
+   *
+   * <code>string next_page_token = 2;</code>
+   */
+  com.google.protobuf.ByteString getNextPageTokenBytes();
 }

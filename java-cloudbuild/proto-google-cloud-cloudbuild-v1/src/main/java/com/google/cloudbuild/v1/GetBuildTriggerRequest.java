@@ -120,10 +120,10 @@ public final class GetBuildTriggerRequest extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * ID of the project that owns the trigger.
+   * Required. ID of the project that owns the trigger.
    * </pre>
    *
-   * <code>string project_id = 1;</code>
+   * <code>string project_id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   public java.lang.String getProjectId() {
     java.lang.Object ref = projectId_;
@@ -140,10 +140,10 @@ public final class GetBuildTriggerRequest extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * ID of the project that owns the trigger.
+   * Required. ID of the project that owns the trigger.
    * </pre>
    *
-   * <code>string project_id = 1;</code>
+   * <code>string project_id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   public com.google.protobuf.ByteString getProjectIdBytes() {
     java.lang.Object ref = projectId_;
@@ -163,10 +163,10 @@ public final class GetBuildTriggerRequest extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * ID of the `BuildTrigger` to get.
+   * Required. ID of the `BuildTrigger` to get.
    * </pre>
    *
-   * <code>string trigger_id = 2;</code>
+   * <code>string trigger_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   public java.lang.String getTriggerId() {
     java.lang.Object ref = triggerId_;
@@ -183,10 +183,10 @@ public final class GetBuildTriggerRequest extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * ID of the `BuildTrigger` to get.
+   * Required. ID of the `BuildTrigger` to get.
    * </pre>
    *
-   * <code>string trigger_id = 2;</code>
+   * <code>string trigger_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   public com.google.protobuf.ByteString getTriggerIdBytes() {
     java.lang.Object ref = triggerId_;
@@ -538,10 +538,10 @@ public final class GetBuildTriggerRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * ID of the project that owns the trigger.
+     * Required. ID of the project that owns the trigger.
      * </pre>
      *
-     * <code>string project_id = 1;</code>
+     * <code>string project_id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public java.lang.String getProjectId() {
       java.lang.Object ref = projectId_;
@@ -558,10 +558,10 @@ public final class GetBuildTriggerRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * ID of the project that owns the trigger.
+     * Required. ID of the project that owns the trigger.
      * </pre>
      *
-     * <code>string project_id = 1;</code>
+     * <code>string project_id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public com.google.protobuf.ByteString getProjectIdBytes() {
       java.lang.Object ref = projectId_;
@@ -578,10 +578,10 @@ public final class GetBuildTriggerRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * ID of the project that owns the trigger.
+     * Required. ID of the project that owns the trigger.
      * </pre>
      *
-     * <code>string project_id = 1;</code>
+     * <code>string project_id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder setProjectId(java.lang.String value) {
       if (value == null) {
@@ -596,10 +596,10 @@ public final class GetBuildTriggerRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * ID of the project that owns the trigger.
+     * Required. ID of the project that owns the trigger.
      * </pre>
      *
-     * <code>string project_id = 1;</code>
+     * <code>string project_id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder clearProjectId() {
 
@@ -611,10 +611,10 @@ public final class GetBuildTriggerRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * ID of the project that owns the trigger.
+     * Required. ID of the project that owns the trigger.
      * </pre>
      *
-     * <code>string project_id = 1;</code>
+     * <code>string project_id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder setProjectIdBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -632,10 +632,10 @@ public final class GetBuildTriggerRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * ID of the `BuildTrigger` to get.
+     * Required. ID of the `BuildTrigger` to get.
      * </pre>
      *
-     * <code>string trigger_id = 2;</code>
+     * <code>string trigger_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public java.lang.String getTriggerId() {
       java.lang.Object ref = triggerId_;
@@ -652,10 +652,10 @@ public final class GetBuildTriggerRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * ID of the `BuildTrigger` to get.
+     * Required. ID of the `BuildTrigger` to get.
      * </pre>
      *
-     * <code>string trigger_id = 2;</code>
+     * <code>string trigger_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public com.google.protobuf.ByteString getTriggerIdBytes() {
       java.lang.Object ref = triggerId_;
@@ -672,10 +672,10 @@ public final class GetBuildTriggerRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * ID of the `BuildTrigger` to get.
+     * Required. ID of the `BuildTrigger` to get.
      * </pre>
      *
-     * <code>string trigger_id = 2;</code>
+     * <code>string trigger_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder setTriggerId(java.lang.String value) {
       if (value == null) {
@@ -690,10 +690,10 @@ public final class GetBuildTriggerRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * ID of the `BuildTrigger` to get.
+     * Required. ID of the `BuildTrigger` to get.
      * </pre>
      *
-     * <code>string trigger_id = 2;</code>
+     * <code>string trigger_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder clearTriggerId() {
 
@@ -705,10 +705,10 @@ public final class GetBuildTriggerRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * ID of the `BuildTrigger` to get.
+     * Required. ID of the `BuildTrigger` to get.
      * </pre>
      *
-     * <code>string trigger_id = 2;</code>
+     * <code>string trigger_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder setTriggerIdBytes(com.google.protobuf.ByteString value) {
       if (value == null) {

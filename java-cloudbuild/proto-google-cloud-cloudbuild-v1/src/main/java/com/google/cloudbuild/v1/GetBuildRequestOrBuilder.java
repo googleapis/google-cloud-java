@@ -27,20 +27,20 @@ public interface GetBuildRequestOrBuilder
    *
    *
    * <pre>
-   * ID of the project.
+   * Required. ID of the project.
    * </pre>
    *
-   * <code>string project_id = 1;</code>
+   * <code>string project_id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   java.lang.String getProjectId();
   /**
    *
    *
    * <pre>
-   * ID of the project.
+   * Required. ID of the project.
    * </pre>
    *
-   * <code>string project_id = 1;</code>
+   * <code>string project_id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   com.google.protobuf.ByteString getProjectIdBytes();
 
@@ -48,20 +48,20 @@ public interface GetBuildRequestOrBuilder
    *
    *
    * <pre>
-   * ID of the build.
+   * Required. ID of the build.
    * </pre>
    *
-   * <code>string id = 2;</code>
+   * <code>string id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   java.lang.String getId();
   /**
    *
    *
    * <pre>
-   * ID of the build.
+   * Required. ID of the build.
    * </pre>
    *
-   * <code>string id = 2;</code>
+   * <code>string id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   com.google.protobuf.ByteString getIdBytes();
 }

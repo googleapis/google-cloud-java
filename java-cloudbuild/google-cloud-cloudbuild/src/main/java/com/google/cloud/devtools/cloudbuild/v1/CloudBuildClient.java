@@ -32,17 +32,24 @@ import com.google.cloudbuild.v1.BuildTrigger;
 import com.google.cloudbuild.v1.CancelBuildRequest;
 import com.google.cloudbuild.v1.CreateBuildRequest;
 import com.google.cloudbuild.v1.CreateBuildTriggerRequest;
+import com.google.cloudbuild.v1.CreateWorkerPoolRequest;
 import com.google.cloudbuild.v1.DeleteBuildTriggerRequest;
+import com.google.cloudbuild.v1.DeleteWorkerPoolRequest;
 import com.google.cloudbuild.v1.GetBuildRequest;
 import com.google.cloudbuild.v1.GetBuildTriggerRequest;
+import com.google.cloudbuild.v1.GetWorkerPoolRequest;
 import com.google.cloudbuild.v1.ListBuildTriggersRequest;
 import com.google.cloudbuild.v1.ListBuildTriggersResponse;
 import com.google.cloudbuild.v1.ListBuildsRequest;
 import com.google.cloudbuild.v1.ListBuildsResponse;
+import com.google.cloudbuild.v1.ListWorkerPoolsRequest;
+import com.google.cloudbuild.v1.ListWorkerPoolsResponse;
 import com.google.cloudbuild.v1.RepoSource;
 import com.google.cloudbuild.v1.RetryBuildRequest;
 import com.google.cloudbuild.v1.RunBuildTriggerRequest;
 import com.google.cloudbuild.v1.UpdateBuildTriggerRequest;
+import com.google.cloudbuild.v1.UpdateWorkerPoolRequest;
+import com.google.cloudbuild.v1.WorkerPool;
 import com.google.common.util.concurrent.MoreExecutors;
 import com.google.longrunning.Operation;
 import com.google.protobuf.Empty;
@@ -81,13 +88,13 @@ import javax.annotation.Generated;
  * methods:
  *
  * <ol>
- *   <li> A "flattened" method. With this type of method, the fields of the request type have been
+ *   <li>A "flattened" method. With this type of method, the fields of the request type have been
  *       converted into function parameters. It may be the case that not all fields are available as
  *       parameters, and not every API method will have a flattened method entry point.
- *   <li> A "request object" method. This type of method only takes one parameter, a request object,
+ *   <li>A "request object" method. This type of method only takes one parameter, a request object,
  *       which must be constructed before the call. Not every API method will have a request object
  *       method.
- *   <li> A "callable" method. This type of method takes no parameters and returns an immutable API
+ *   <li>A "callable" method. This type of method takes no parameters and returns an immutable API
  *       callable object, which can be used to initiate calls to the service.
  * </ol>
  *
@@ -193,8 +200,8 @@ public class CloudBuildClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param projectId ID of the project.
-   * @param build Build resource to create.
+   * @param projectId Required. ID of the project.
+   * @param build Required. Build resource to create.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Operation createBuild(String projectId, Build build) {
@@ -276,8 +283,8 @@ public class CloudBuildClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param projectId ID of the project.
-   * @param id ID of the build.
+   * @param projectId Required. ID of the project.
+   * @param id Required. ID of the build.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Build getBuild(String projectId, String id) {
@@ -361,7 +368,7 @@ public class CloudBuildClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param projectId ID of the project.
+   * @param projectId Required. ID of the project.
    * @param filter The raw filter text to constrain the results.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -474,8 +481,8 @@ public class CloudBuildClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param projectId ID of the project.
-   * @param id ID of the build.
+   * @param projectId Required. ID of the project.
+   * @param id Required. ID of the build.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Build cancelBuild(String projectId, String id) {
@@ -550,8 +557,8 @@ public class CloudBuildClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param projectId ID of the project for which to configure automatic builds.
-   * @param trigger `BuildTrigger` to create.
+   * @param projectId Required. ID of the project for which to configure automatic builds.
+   * @param trigger Required. `BuildTrigger` to create.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final BuildTrigger createBuildTrigger(String projectId, BuildTrigger trigger) {
@@ -630,8 +637,8 @@ public class CloudBuildClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param projectId ID of the project that owns the trigger.
-   * @param triggerId ID of the `BuildTrigger` to get.
+   * @param projectId Required. ID of the project that owns the trigger.
+   * @param triggerId Required. ID of the `BuildTrigger` to get.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final BuildTrigger getBuildTrigger(String projectId, String triggerId) {
@@ -709,7 +716,7 @@ public class CloudBuildClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param projectId ID of the project for which to list BuildTriggers.
+   * @param projectId Required. ID of the project for which to list BuildTriggers.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListBuildTriggersResponse listBuildTriggers(String projectId) {
@@ -785,8 +792,8 @@ public class CloudBuildClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param projectId ID of the project that owns the trigger.
-   * @param triggerId ID of the `BuildTrigger` to delete.
+   * @param projectId Required. ID of the project that owns the trigger.
+   * @param triggerId Required. ID of the `BuildTrigger` to delete.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final void deleteBuildTrigger(String projectId, String triggerId) {
@@ -869,9 +876,9 @@ public class CloudBuildClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param projectId ID of the project that owns the trigger.
-   * @param triggerId ID of the `BuildTrigger` to update.
-   * @param trigger `BuildTrigger` to update.
+   * @param projectId Required. ID of the project that owns the trigger.
+   * @param triggerId Required. ID of the `BuildTrigger` to update.
+   * @param trigger Required. `BuildTrigger` to update.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final BuildTrigger updateBuildTrigger(
@@ -958,9 +965,9 @@ public class CloudBuildClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param projectId ID of the project.
-   * @param triggerId ID of the trigger.
-   * @param source Source to build against this trigger.
+   * @param projectId Required. ID of the project.
+   * @param triggerId Required. ID of the trigger.
+   * @param source Required. Source to build against this trigger.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Operation runBuildTrigger(String projectId, String triggerId, RepoSource source) {
@@ -1064,8 +1071,8 @@ public class CloudBuildClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param projectId ID of the project.
-   * @param id Build ID of the original build.
+   * @param projectId Required. ID of the project.
+   * @param id Required. Build ID of the original build.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Operation retryBuild(String projectId, String id) {
@@ -1170,6 +1177,222 @@ public class CloudBuildClient implements BackgroundResource {
     return stub.retryBuildCallable();
   }
 
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Creates a `WorkerPool` to run the builds, and returns the new worker pool.
+   *
+   * <p>This API is experimental.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (CloudBuildClient cloudBuildClient = CloudBuildClient.create()) {
+   *   CreateWorkerPoolRequest request = CreateWorkerPoolRequest.newBuilder().build();
+   *   WorkerPool response = cloudBuildClient.createWorkerPool(request);
+   * }
+   * </code></pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final WorkerPool createWorkerPool(CreateWorkerPoolRequest request) {
+    return createWorkerPoolCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Creates a `WorkerPool` to run the builds, and returns the new worker pool.
+   *
+   * <p>This API is experimental.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (CloudBuildClient cloudBuildClient = CloudBuildClient.create()) {
+   *   CreateWorkerPoolRequest request = CreateWorkerPoolRequest.newBuilder().build();
+   *   ApiFuture&lt;WorkerPool&gt; future = cloudBuildClient.createWorkerPoolCallable().futureCall(request);
+   *   // Do something
+   *   WorkerPool response = future.get();
+   * }
+   * </code></pre>
+   */
+  public final UnaryCallable<CreateWorkerPoolRequest, WorkerPool> createWorkerPoolCallable() {
+    return stub.createWorkerPoolCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Returns information about a `WorkerPool`.
+   *
+   * <p>This API is experimental.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (CloudBuildClient cloudBuildClient = CloudBuildClient.create()) {
+   *   GetWorkerPoolRequest request = GetWorkerPoolRequest.newBuilder().build();
+   *   WorkerPool response = cloudBuildClient.getWorkerPool(request);
+   * }
+   * </code></pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final WorkerPool getWorkerPool(GetWorkerPoolRequest request) {
+    return getWorkerPoolCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Returns information about a `WorkerPool`.
+   *
+   * <p>This API is experimental.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (CloudBuildClient cloudBuildClient = CloudBuildClient.create()) {
+   *   GetWorkerPoolRequest request = GetWorkerPoolRequest.newBuilder().build();
+   *   ApiFuture&lt;WorkerPool&gt; future = cloudBuildClient.getWorkerPoolCallable().futureCall(request);
+   *   // Do something
+   *   WorkerPool response = future.get();
+   * }
+   * </code></pre>
+   */
+  public final UnaryCallable<GetWorkerPoolRequest, WorkerPool> getWorkerPoolCallable() {
+    return stub.getWorkerPoolCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Deletes a `WorkerPool` by its project ID and WorkerPool name.
+   *
+   * <p>This API is experimental.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (CloudBuildClient cloudBuildClient = CloudBuildClient.create()) {
+   *   DeleteWorkerPoolRequest request = DeleteWorkerPoolRequest.newBuilder().build();
+   *   cloudBuildClient.deleteWorkerPool(request);
+   * }
+   * </code></pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final void deleteWorkerPool(DeleteWorkerPoolRequest request) {
+    deleteWorkerPoolCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Deletes a `WorkerPool` by its project ID and WorkerPool name.
+   *
+   * <p>This API is experimental.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (CloudBuildClient cloudBuildClient = CloudBuildClient.create()) {
+   *   DeleteWorkerPoolRequest request = DeleteWorkerPoolRequest.newBuilder().build();
+   *   ApiFuture&lt;Void&gt; future = cloudBuildClient.deleteWorkerPoolCallable().futureCall(request);
+   *   // Do something
+   *   future.get();
+   * }
+   * </code></pre>
+   */
+  public final UnaryCallable<DeleteWorkerPoolRequest, Empty> deleteWorkerPoolCallable() {
+    return stub.deleteWorkerPoolCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Update a `WorkerPool`.
+   *
+   * <p>This API is experimental.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (CloudBuildClient cloudBuildClient = CloudBuildClient.create()) {
+   *   UpdateWorkerPoolRequest request = UpdateWorkerPoolRequest.newBuilder().build();
+   *   WorkerPool response = cloudBuildClient.updateWorkerPool(request);
+   * }
+   * </code></pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final WorkerPool updateWorkerPool(UpdateWorkerPoolRequest request) {
+    return updateWorkerPoolCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Update a `WorkerPool`.
+   *
+   * <p>This API is experimental.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (CloudBuildClient cloudBuildClient = CloudBuildClient.create()) {
+   *   UpdateWorkerPoolRequest request = UpdateWorkerPoolRequest.newBuilder().build();
+   *   ApiFuture&lt;WorkerPool&gt; future = cloudBuildClient.updateWorkerPoolCallable().futureCall(request);
+   *   // Do something
+   *   WorkerPool response = future.get();
+   * }
+   * </code></pre>
+   */
+  public final UnaryCallable<UpdateWorkerPoolRequest, WorkerPool> updateWorkerPoolCallable() {
+    return stub.updateWorkerPoolCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * List project's `WorkerPool`s.
+   *
+   * <p>This API is experimental.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (CloudBuildClient cloudBuildClient = CloudBuildClient.create()) {
+   *   ListWorkerPoolsRequest request = ListWorkerPoolsRequest.newBuilder().build();
+   *   ListWorkerPoolsResponse response = cloudBuildClient.listWorkerPools(request);
+   * }
+   * </code></pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListWorkerPoolsResponse listWorkerPools(ListWorkerPoolsRequest request) {
+    return listWorkerPoolsCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * List project's `WorkerPool`s.
+   *
+   * <p>This API is experimental.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (CloudBuildClient cloudBuildClient = CloudBuildClient.create()) {
+   *   ListWorkerPoolsRequest request = ListWorkerPoolsRequest.newBuilder().build();
+   *   ApiFuture&lt;ListWorkerPoolsResponse&gt; future = cloudBuildClient.listWorkerPoolsCallable().futureCall(request);
+   *   // Do something
+   *   ListWorkerPoolsResponse response = future.get();
+   * }
+   * </code></pre>
+   */
+  public final UnaryCallable<ListWorkerPoolsRequest, ListWorkerPoolsResponse>
+      listWorkerPoolsCallable() {
+    return stub.listWorkerPoolsCallable();
+  }
+
   @Override
   public final void close() {
     stub.close();
@@ -1202,7 +1425,10 @@ public class CloudBuildClient implements BackgroundResource {
 
   public static class ListBuildsPagedResponse
       extends AbstractPagedListResponse<
-          ListBuildsRequest, ListBuildsResponse, Build, ListBuildsPage,
+          ListBuildsRequest,
+          ListBuildsResponse,
+          Build,
+          ListBuildsPage,
           ListBuildsFixedSizeCollection> {
 
     public static ApiFuture<ListBuildsPagedResponse> createAsync(
@@ -1256,7 +1482,10 @@ public class CloudBuildClient implements BackgroundResource {
 
   public static class ListBuildsFixedSizeCollection
       extends AbstractFixedSizeCollection<
-          ListBuildsRequest, ListBuildsResponse, Build, ListBuildsPage,
+          ListBuildsRequest,
+          ListBuildsResponse,
+          Build,
+          ListBuildsPage,
           ListBuildsFixedSizeCollection> {
 
     private ListBuildsFixedSizeCollection(List<ListBuildsPage> pages, int collectionSize) {

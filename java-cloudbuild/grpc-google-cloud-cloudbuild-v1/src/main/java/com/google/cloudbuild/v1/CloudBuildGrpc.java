@@ -621,6 +621,273 @@ public final class CloudBuildGrpc {
     return getRunBuildTriggerMethod;
   }
 
+  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
+  @java.lang.Deprecated // Use {@link #getCreateWorkerPoolMethod()} instead.
+  public static final io.grpc.MethodDescriptor<
+          com.google.cloudbuild.v1.CreateWorkerPoolRequest, com.google.cloudbuild.v1.WorkerPool>
+      METHOD_CREATE_WORKER_POOL = getCreateWorkerPoolMethodHelper();
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloudbuild.v1.CreateWorkerPoolRequest, com.google.cloudbuild.v1.WorkerPool>
+      getCreateWorkerPoolMethod;
+
+  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
+  public static io.grpc.MethodDescriptor<
+          com.google.cloudbuild.v1.CreateWorkerPoolRequest, com.google.cloudbuild.v1.WorkerPool>
+      getCreateWorkerPoolMethod() {
+    return getCreateWorkerPoolMethodHelper();
+  }
+
+  private static io.grpc.MethodDescriptor<
+          com.google.cloudbuild.v1.CreateWorkerPoolRequest, com.google.cloudbuild.v1.WorkerPool>
+      getCreateWorkerPoolMethodHelper() {
+    io.grpc.MethodDescriptor<
+            com.google.cloudbuild.v1.CreateWorkerPoolRequest, com.google.cloudbuild.v1.WorkerPool>
+        getCreateWorkerPoolMethod;
+    if ((getCreateWorkerPoolMethod = CloudBuildGrpc.getCreateWorkerPoolMethod) == null) {
+      synchronized (CloudBuildGrpc.class) {
+        if ((getCreateWorkerPoolMethod = CloudBuildGrpc.getCreateWorkerPoolMethod) == null) {
+          CloudBuildGrpc.getCreateWorkerPoolMethod =
+              getCreateWorkerPoolMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloudbuild.v1.CreateWorkerPoolRequest,
+                          com.google.cloudbuild.v1.WorkerPool>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(
+                              "google.devtools.cloudbuild.v1.CloudBuild", "CreateWorkerPool"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloudbuild.v1.CreateWorkerPoolRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloudbuild.v1.WorkerPool.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new CloudBuildMethodDescriptorSupplier("CreateWorkerPool"))
+                      .build();
+        }
+      }
+    }
+    return getCreateWorkerPoolMethod;
+  }
+
+  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
+  @java.lang.Deprecated // Use {@link #getGetWorkerPoolMethod()} instead.
+  public static final io.grpc.MethodDescriptor<
+          com.google.cloudbuild.v1.GetWorkerPoolRequest, com.google.cloudbuild.v1.WorkerPool>
+      METHOD_GET_WORKER_POOL = getGetWorkerPoolMethodHelper();
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloudbuild.v1.GetWorkerPoolRequest, com.google.cloudbuild.v1.WorkerPool>
+      getGetWorkerPoolMethod;
+
+  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
+  public static io.grpc.MethodDescriptor<
+          com.google.cloudbuild.v1.GetWorkerPoolRequest, com.google.cloudbuild.v1.WorkerPool>
+      getGetWorkerPoolMethod() {
+    return getGetWorkerPoolMethodHelper();
+  }
+
+  private static io.grpc.MethodDescriptor<
+          com.google.cloudbuild.v1.GetWorkerPoolRequest, com.google.cloudbuild.v1.WorkerPool>
+      getGetWorkerPoolMethodHelper() {
+    io.grpc.MethodDescriptor<
+            com.google.cloudbuild.v1.GetWorkerPoolRequest, com.google.cloudbuild.v1.WorkerPool>
+        getGetWorkerPoolMethod;
+    if ((getGetWorkerPoolMethod = CloudBuildGrpc.getGetWorkerPoolMethod) == null) {
+      synchronized (CloudBuildGrpc.class) {
+        if ((getGetWorkerPoolMethod = CloudBuildGrpc.getGetWorkerPoolMethod) == null) {
+          CloudBuildGrpc.getGetWorkerPoolMethod =
+              getGetWorkerPoolMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloudbuild.v1.GetWorkerPoolRequest,
+                          com.google.cloudbuild.v1.WorkerPool>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(
+                              "google.devtools.cloudbuild.v1.CloudBuild", "GetWorkerPool"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloudbuild.v1.GetWorkerPoolRequest.getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloudbuild.v1.WorkerPool.getDefaultInstance()))
+                      .setSchemaDescriptor(new CloudBuildMethodDescriptorSupplier("GetWorkerPool"))
+                      .build();
+        }
+      }
+    }
+    return getGetWorkerPoolMethod;
+  }
+
+  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
+  @java.lang.Deprecated // Use {@link #getDeleteWorkerPoolMethod()} instead.
+  public static final io.grpc.MethodDescriptor<
+          com.google.cloudbuild.v1.DeleteWorkerPoolRequest, com.google.protobuf.Empty>
+      METHOD_DELETE_WORKER_POOL = getDeleteWorkerPoolMethodHelper();
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloudbuild.v1.DeleteWorkerPoolRequest, com.google.protobuf.Empty>
+      getDeleteWorkerPoolMethod;
+
+  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
+  public static io.grpc.MethodDescriptor<
+          com.google.cloudbuild.v1.DeleteWorkerPoolRequest, com.google.protobuf.Empty>
+      getDeleteWorkerPoolMethod() {
+    return getDeleteWorkerPoolMethodHelper();
+  }
+
+  private static io.grpc.MethodDescriptor<
+          com.google.cloudbuild.v1.DeleteWorkerPoolRequest, com.google.protobuf.Empty>
+      getDeleteWorkerPoolMethodHelper() {
+    io.grpc.MethodDescriptor<
+            com.google.cloudbuild.v1.DeleteWorkerPoolRequest, com.google.protobuf.Empty>
+        getDeleteWorkerPoolMethod;
+    if ((getDeleteWorkerPoolMethod = CloudBuildGrpc.getDeleteWorkerPoolMethod) == null) {
+      synchronized (CloudBuildGrpc.class) {
+        if ((getDeleteWorkerPoolMethod = CloudBuildGrpc.getDeleteWorkerPoolMethod) == null) {
+          CloudBuildGrpc.getDeleteWorkerPoolMethod =
+              getDeleteWorkerPoolMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloudbuild.v1.DeleteWorkerPoolRequest, com.google.protobuf.Empty>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(
+                              "google.devtools.cloudbuild.v1.CloudBuild", "DeleteWorkerPool"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloudbuild.v1.DeleteWorkerPoolRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.protobuf.Empty.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new CloudBuildMethodDescriptorSupplier("DeleteWorkerPool"))
+                      .build();
+        }
+      }
+    }
+    return getDeleteWorkerPoolMethod;
+  }
+
+  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
+  @java.lang.Deprecated // Use {@link #getUpdateWorkerPoolMethod()} instead.
+  public static final io.grpc.MethodDescriptor<
+          com.google.cloudbuild.v1.UpdateWorkerPoolRequest, com.google.cloudbuild.v1.WorkerPool>
+      METHOD_UPDATE_WORKER_POOL = getUpdateWorkerPoolMethodHelper();
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloudbuild.v1.UpdateWorkerPoolRequest, com.google.cloudbuild.v1.WorkerPool>
+      getUpdateWorkerPoolMethod;
+
+  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
+  public static io.grpc.MethodDescriptor<
+          com.google.cloudbuild.v1.UpdateWorkerPoolRequest, com.google.cloudbuild.v1.WorkerPool>
+      getUpdateWorkerPoolMethod() {
+    return getUpdateWorkerPoolMethodHelper();
+  }
+
+  private static io.grpc.MethodDescriptor<
+          com.google.cloudbuild.v1.UpdateWorkerPoolRequest, com.google.cloudbuild.v1.WorkerPool>
+      getUpdateWorkerPoolMethodHelper() {
+    io.grpc.MethodDescriptor<
+            com.google.cloudbuild.v1.UpdateWorkerPoolRequest, com.google.cloudbuild.v1.WorkerPool>
+        getUpdateWorkerPoolMethod;
+    if ((getUpdateWorkerPoolMethod = CloudBuildGrpc.getUpdateWorkerPoolMethod) == null) {
+      synchronized (CloudBuildGrpc.class) {
+        if ((getUpdateWorkerPoolMethod = CloudBuildGrpc.getUpdateWorkerPoolMethod) == null) {
+          CloudBuildGrpc.getUpdateWorkerPoolMethod =
+              getUpdateWorkerPoolMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloudbuild.v1.UpdateWorkerPoolRequest,
+                          com.google.cloudbuild.v1.WorkerPool>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(
+                              "google.devtools.cloudbuild.v1.CloudBuild", "UpdateWorkerPool"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloudbuild.v1.UpdateWorkerPoolRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloudbuild.v1.WorkerPool.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new CloudBuildMethodDescriptorSupplier("UpdateWorkerPool"))
+                      .build();
+        }
+      }
+    }
+    return getUpdateWorkerPoolMethod;
+  }
+
+  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
+  @java.lang.Deprecated // Use {@link #getListWorkerPoolsMethod()} instead.
+  public static final io.grpc.MethodDescriptor<
+          com.google.cloudbuild.v1.ListWorkerPoolsRequest,
+          com.google.cloudbuild.v1.ListWorkerPoolsResponse>
+      METHOD_LIST_WORKER_POOLS = getListWorkerPoolsMethodHelper();
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloudbuild.v1.ListWorkerPoolsRequest,
+          com.google.cloudbuild.v1.ListWorkerPoolsResponse>
+      getListWorkerPoolsMethod;
+
+  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
+  public static io.grpc.MethodDescriptor<
+          com.google.cloudbuild.v1.ListWorkerPoolsRequest,
+          com.google.cloudbuild.v1.ListWorkerPoolsResponse>
+      getListWorkerPoolsMethod() {
+    return getListWorkerPoolsMethodHelper();
+  }
+
+  private static io.grpc.MethodDescriptor<
+          com.google.cloudbuild.v1.ListWorkerPoolsRequest,
+          com.google.cloudbuild.v1.ListWorkerPoolsResponse>
+      getListWorkerPoolsMethodHelper() {
+    io.grpc.MethodDescriptor<
+            com.google.cloudbuild.v1.ListWorkerPoolsRequest,
+            com.google.cloudbuild.v1.ListWorkerPoolsResponse>
+        getListWorkerPoolsMethod;
+    if ((getListWorkerPoolsMethod = CloudBuildGrpc.getListWorkerPoolsMethod) == null) {
+      synchronized (CloudBuildGrpc.class) {
+        if ((getListWorkerPoolsMethod = CloudBuildGrpc.getListWorkerPoolsMethod) == null) {
+          CloudBuildGrpc.getListWorkerPoolsMethod =
+              getListWorkerPoolsMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloudbuild.v1.ListWorkerPoolsRequest,
+                          com.google.cloudbuild.v1.ListWorkerPoolsResponse>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(
+                              "google.devtools.cloudbuild.v1.CloudBuild", "ListWorkerPools"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloudbuild.v1.ListWorkerPoolsRequest.getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloudbuild.v1.ListWorkerPoolsResponse
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new CloudBuildMethodDescriptorSupplier("ListWorkerPools"))
+                      .build();
+        }
+      }
+    }
+    return getListWorkerPoolsMethod;
+  }
+
   /** Creates a new async stub that supports all call types for the service */
   public static CloudBuildStub newStub(io.grpc.Channel channel) {
     return new CloudBuildStub(channel);
@@ -827,6 +1094,77 @@ public final class CloudBuildGrpc {
       asyncUnimplementedUnaryCall(getRunBuildTriggerMethodHelper(), responseObserver);
     }
 
+    /**
+     *
+     *
+     * <pre>
+     * Creates a `WorkerPool` to run the builds, and returns the new worker pool.
+     * This API is experimental.
+     * </pre>
+     */
+    public void createWorkerPool(
+        com.google.cloudbuild.v1.CreateWorkerPoolRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloudbuild.v1.WorkerPool> responseObserver) {
+      asyncUnimplementedUnaryCall(getCreateWorkerPoolMethodHelper(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Returns information about a `WorkerPool`.
+     * This API is experimental.
+     * </pre>
+     */
+    public void getWorkerPool(
+        com.google.cloudbuild.v1.GetWorkerPoolRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloudbuild.v1.WorkerPool> responseObserver) {
+      asyncUnimplementedUnaryCall(getGetWorkerPoolMethodHelper(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a `WorkerPool` by its project ID and WorkerPool name.
+     * This API is experimental.
+     * </pre>
+     */
+    public void deleteWorkerPool(
+        com.google.cloudbuild.v1.DeleteWorkerPoolRequest request,
+        io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
+      asyncUnimplementedUnaryCall(getDeleteWorkerPoolMethodHelper(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Update a `WorkerPool`.
+     * This API is experimental.
+     * </pre>
+     */
+    public void updateWorkerPool(
+        com.google.cloudbuild.v1.UpdateWorkerPoolRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloudbuild.v1.WorkerPool> responseObserver) {
+      asyncUnimplementedUnaryCall(getUpdateWorkerPoolMethodHelper(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * List project's `WorkerPool`s.
+     * This API is experimental.
+     * </pre>
+     */
+    public void listWorkerPools(
+        com.google.cloudbuild.v1.ListWorkerPoolsRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloudbuild.v1.ListWorkerPoolsResponse>
+            responseObserver) {
+      asyncUnimplementedUnaryCall(getListWorkerPoolsMethodHelper(), responseObserver);
+    }
+
     @java.lang.Override
     public final io.grpc.ServerServiceDefinition bindService() {
       return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
@@ -897,6 +1235,37 @@ public final class CloudBuildGrpc {
                   new MethodHandlers<
                       com.google.cloudbuild.v1.RunBuildTriggerRequest,
                       com.google.longrunning.Operation>(this, METHODID_RUN_BUILD_TRIGGER)))
+          .addMethod(
+              getCreateWorkerPoolMethodHelper(),
+              asyncUnaryCall(
+                  new MethodHandlers<
+                      com.google.cloudbuild.v1.CreateWorkerPoolRequest,
+                      com.google.cloudbuild.v1.WorkerPool>(this, METHODID_CREATE_WORKER_POOL)))
+          .addMethod(
+              getGetWorkerPoolMethodHelper(),
+              asyncUnaryCall(
+                  new MethodHandlers<
+                      com.google.cloudbuild.v1.GetWorkerPoolRequest,
+                      com.google.cloudbuild.v1.WorkerPool>(this, METHODID_GET_WORKER_POOL)))
+          .addMethod(
+              getDeleteWorkerPoolMethodHelper(),
+              asyncUnaryCall(
+                  new MethodHandlers<
+                      com.google.cloudbuild.v1.DeleteWorkerPoolRequest, com.google.protobuf.Empty>(
+                      this, METHODID_DELETE_WORKER_POOL)))
+          .addMethod(
+              getUpdateWorkerPoolMethodHelper(),
+              asyncUnaryCall(
+                  new MethodHandlers<
+                      com.google.cloudbuild.v1.UpdateWorkerPoolRequest,
+                      com.google.cloudbuild.v1.WorkerPool>(this, METHODID_UPDATE_WORKER_POOL)))
+          .addMethod(
+              getListWorkerPoolsMethodHelper(),
+              asyncUnaryCall(
+                  new MethodHandlers<
+                      com.google.cloudbuild.v1.ListWorkerPoolsRequest,
+                      com.google.cloudbuild.v1.ListWorkerPoolsResponse>(
+                      this, METHODID_LIST_WORKER_POOLS)))
           .build();
     }
   }
@@ -1134,6 +1503,92 @@ public final class CloudBuildGrpc {
           request,
           responseObserver);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a `WorkerPool` to run the builds, and returns the new worker pool.
+     * This API is experimental.
+     * </pre>
+     */
+    public void createWorkerPool(
+        com.google.cloudbuild.v1.CreateWorkerPoolRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloudbuild.v1.WorkerPool> responseObserver) {
+      asyncUnaryCall(
+          getChannel().newCall(getCreateWorkerPoolMethodHelper(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Returns information about a `WorkerPool`.
+     * This API is experimental.
+     * </pre>
+     */
+    public void getWorkerPool(
+        com.google.cloudbuild.v1.GetWorkerPoolRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloudbuild.v1.WorkerPool> responseObserver) {
+      asyncUnaryCall(
+          getChannel().newCall(getGetWorkerPoolMethodHelper(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a `WorkerPool` by its project ID and WorkerPool name.
+     * This API is experimental.
+     * </pre>
+     */
+    public void deleteWorkerPool(
+        com.google.cloudbuild.v1.DeleteWorkerPoolRequest request,
+        io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
+      asyncUnaryCall(
+          getChannel().newCall(getDeleteWorkerPoolMethodHelper(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Update a `WorkerPool`.
+     * This API is experimental.
+     * </pre>
+     */
+    public void updateWorkerPool(
+        com.google.cloudbuild.v1.UpdateWorkerPoolRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloudbuild.v1.WorkerPool> responseObserver) {
+      asyncUnaryCall(
+          getChannel().newCall(getUpdateWorkerPoolMethodHelper(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * List project's `WorkerPool`s.
+     * This API is experimental.
+     * </pre>
+     */
+    public void listWorkerPools(
+        com.google.cloudbuild.v1.ListWorkerPoolsRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloudbuild.v1.ListWorkerPoolsResponse>
+            responseObserver) {
+      asyncUnaryCall(
+          getChannel().newCall(getListWorkerPoolsMethodHelper(), getCallOptions()),
+          request,
+          responseObserver);
+    }
   }
 
   /**
@@ -1335,6 +1790,76 @@ public final class CloudBuildGrpc {
         com.google.cloudbuild.v1.RunBuildTriggerRequest request) {
       return blockingUnaryCall(
           getChannel(), getRunBuildTriggerMethodHelper(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a `WorkerPool` to run the builds, and returns the new worker pool.
+     * This API is experimental.
+     * </pre>
+     */
+    public com.google.cloudbuild.v1.WorkerPool createWorkerPool(
+        com.google.cloudbuild.v1.CreateWorkerPoolRequest request) {
+      return blockingUnaryCall(
+          getChannel(), getCreateWorkerPoolMethodHelper(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Returns information about a `WorkerPool`.
+     * This API is experimental.
+     * </pre>
+     */
+    public com.google.cloudbuild.v1.WorkerPool getWorkerPool(
+        com.google.cloudbuild.v1.GetWorkerPoolRequest request) {
+      return blockingUnaryCall(
+          getChannel(), getGetWorkerPoolMethodHelper(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a `WorkerPool` by its project ID and WorkerPool name.
+     * This API is experimental.
+     * </pre>
+     */
+    public com.google.protobuf.Empty deleteWorkerPool(
+        com.google.cloudbuild.v1.DeleteWorkerPoolRequest request) {
+      return blockingUnaryCall(
+          getChannel(), getDeleteWorkerPoolMethodHelper(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Update a `WorkerPool`.
+     * This API is experimental.
+     * </pre>
+     */
+    public com.google.cloudbuild.v1.WorkerPool updateWorkerPool(
+        com.google.cloudbuild.v1.UpdateWorkerPoolRequest request) {
+      return blockingUnaryCall(
+          getChannel(), getUpdateWorkerPoolMethodHelper(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * List project's `WorkerPool`s.
+     * This API is experimental.
+     * </pre>
+     */
+    public com.google.cloudbuild.v1.ListWorkerPoolsResponse listWorkerPools(
+        com.google.cloudbuild.v1.ListWorkerPoolsRequest request) {
+      return blockingUnaryCall(
+          getChannel(), getListWorkerPoolsMethodHelper(), getCallOptions(), request);
     }
   }
 
@@ -1540,6 +2065,77 @@ public final class CloudBuildGrpc {
       return futureUnaryCall(
           getChannel().newCall(getRunBuildTriggerMethodHelper(), getCallOptions()), request);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a `WorkerPool` to run the builds, and returns the new worker pool.
+     * This API is experimental.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.cloudbuild.v1.WorkerPool>
+        createWorkerPool(com.google.cloudbuild.v1.CreateWorkerPoolRequest request) {
+      return futureUnaryCall(
+          getChannel().newCall(getCreateWorkerPoolMethodHelper(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Returns information about a `WorkerPool`.
+     * This API is experimental.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.cloudbuild.v1.WorkerPool>
+        getWorkerPool(com.google.cloudbuild.v1.GetWorkerPoolRequest request) {
+      return futureUnaryCall(
+          getChannel().newCall(getGetWorkerPoolMethodHelper(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a `WorkerPool` by its project ID and WorkerPool name.
+     * This API is experimental.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.protobuf.Empty>
+        deleteWorkerPool(com.google.cloudbuild.v1.DeleteWorkerPoolRequest request) {
+      return futureUnaryCall(
+          getChannel().newCall(getDeleteWorkerPoolMethodHelper(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Update a `WorkerPool`.
+     * This API is experimental.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.cloudbuild.v1.WorkerPool>
+        updateWorkerPool(com.google.cloudbuild.v1.UpdateWorkerPoolRequest request) {
+      return futureUnaryCall(
+          getChannel().newCall(getUpdateWorkerPoolMethodHelper(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * List project's `WorkerPool`s.
+     * This API is experimental.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloudbuild.v1.ListWorkerPoolsResponse>
+        listWorkerPools(com.google.cloudbuild.v1.ListWorkerPoolsRequest request) {
+      return futureUnaryCall(
+          getChannel().newCall(getListWorkerPoolsMethodHelper(), getCallOptions()), request);
+    }
   }
 
   private static final int METHODID_CREATE_BUILD = 0;
@@ -1553,6 +2149,11 @@ public final class CloudBuildGrpc {
   private static final int METHODID_DELETE_BUILD_TRIGGER = 8;
   private static final int METHODID_UPDATE_BUILD_TRIGGER = 9;
   private static final int METHODID_RUN_BUILD_TRIGGER = 10;
+  private static final int METHODID_CREATE_WORKER_POOL = 11;
+  private static final int METHODID_GET_WORKER_POOL = 12;
+  private static final int METHODID_DELETE_WORKER_POOL = 13;
+  private static final int METHODID_UPDATE_WORKER_POOL = 14;
+  private static final int METHODID_LIST_WORKER_POOLS = 15;
 
   private static final class MethodHandlers<Req, Resp>
       implements io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -1631,6 +2232,32 @@ public final class CloudBuildGrpc {
               (com.google.cloudbuild.v1.RunBuildTriggerRequest) request,
               (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
           break;
+        case METHODID_CREATE_WORKER_POOL:
+          serviceImpl.createWorkerPool(
+              (com.google.cloudbuild.v1.CreateWorkerPoolRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.cloudbuild.v1.WorkerPool>) responseObserver);
+          break;
+        case METHODID_GET_WORKER_POOL:
+          serviceImpl.getWorkerPool(
+              (com.google.cloudbuild.v1.GetWorkerPoolRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.cloudbuild.v1.WorkerPool>) responseObserver);
+          break;
+        case METHODID_DELETE_WORKER_POOL:
+          serviceImpl.deleteWorkerPool(
+              (com.google.cloudbuild.v1.DeleteWorkerPoolRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.protobuf.Empty>) responseObserver);
+          break;
+        case METHODID_UPDATE_WORKER_POOL:
+          serviceImpl.updateWorkerPool(
+              (com.google.cloudbuild.v1.UpdateWorkerPoolRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.cloudbuild.v1.WorkerPool>) responseObserver);
+          break;
+        case METHODID_LIST_WORKER_POOLS:
+          serviceImpl.listWorkerPools(
+              (com.google.cloudbuild.v1.ListWorkerPoolsRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.cloudbuild.v1.ListWorkerPoolsResponse>)
+                  responseObserver);
+          break;
         default:
           throw new AssertionError();
       }
@@ -1706,6 +2333,11 @@ public final class CloudBuildGrpc {
                       .addMethod(getDeleteBuildTriggerMethodHelper())
                       .addMethod(getUpdateBuildTriggerMethodHelper())
                       .addMethod(getRunBuildTriggerMethodHelper())
+                      .addMethod(getCreateWorkerPoolMethodHelper())
+                      .addMethod(getGetWorkerPoolMethodHelper())
+                      .addMethod(getDeleteWorkerPoolMethodHelper())
+                      .addMethod(getUpdateWorkerPoolMethodHelper())
+                      .addMethod(getListWorkerPoolsMethodHelper())
                       .build();
         }
       }

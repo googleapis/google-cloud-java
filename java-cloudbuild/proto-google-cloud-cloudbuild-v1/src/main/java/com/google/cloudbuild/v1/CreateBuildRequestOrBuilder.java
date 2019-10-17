@@ -27,20 +27,20 @@ public interface CreateBuildRequestOrBuilder
    *
    *
    * <pre>
-   * ID of the project.
+   * Required. ID of the project.
    * </pre>
    *
-   * <code>string project_id = 1;</code>
+   * <code>string project_id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   java.lang.String getProjectId();
   /**
    *
    *
    * <pre>
-   * ID of the project.
+   * Required. ID of the project.
    * </pre>
    *
-   * <code>string project_id = 1;</code>
+   * <code>string project_id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   com.google.protobuf.ByteString getProjectIdBytes();
 
@@ -48,30 +48,33 @@ public interface CreateBuildRequestOrBuilder
    *
    *
    * <pre>
-   * Build resource to create.
+   * Required. Build resource to create.
    * </pre>
    *
-   * <code>.google.devtools.cloudbuild.v1.Build build = 2;</code>
+   * <code>.google.devtools.cloudbuild.v1.Build build = 2 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   boolean hasBuild();
   /**
    *
    *
    * <pre>
-   * Build resource to create.
+   * Required. Build resource to create.
    * </pre>
    *
-   * <code>.google.devtools.cloudbuild.v1.Build build = 2;</code>
+   * <code>.google.devtools.cloudbuild.v1.Build build = 2 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   com.google.cloudbuild.v1.Build getBuild();
   /**
    *
    *
    * <pre>
-   * Build resource to create.
+   * Required. Build resource to create.
    * </pre>
    *
-   * <code>.google.devtools.cloudbuild.v1.Build build = 2;</code>
+   * <code>.google.devtools.cloudbuild.v1.Build build = 2 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   com.google.cloudbuild.v1.BuildOrBuilder getBuildOrBuilder();
 }

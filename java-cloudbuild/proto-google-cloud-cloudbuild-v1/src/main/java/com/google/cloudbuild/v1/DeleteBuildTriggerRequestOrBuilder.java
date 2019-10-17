@@ -27,20 +27,20 @@ public interface DeleteBuildTriggerRequestOrBuilder
    *
    *
    * <pre>
-   * ID of the project that owns the trigger.
+   * Required. ID of the project that owns the trigger.
    * </pre>
    *
-   * <code>string project_id = 1;</code>
+   * <code>string project_id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   java.lang.String getProjectId();
   /**
    *
    *
    * <pre>
-   * ID of the project that owns the trigger.
+   * Required. ID of the project that owns the trigger.
    * </pre>
    *
-   * <code>string project_id = 1;</code>
+   * <code>string project_id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   com.google.protobuf.ByteString getProjectIdBytes();
 
@@ -48,20 +48,20 @@ public interface DeleteBuildTriggerRequestOrBuilder
    *
    *
    * <pre>
-   * ID of the `BuildTrigger` to delete.
+   * Required. ID of the `BuildTrigger` to delete.
    * </pre>
    *
-   * <code>string trigger_id = 2;</code>
+   * <code>string trigger_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   java.lang.String getTriggerId();
   /**
    *
    *
    * <pre>
-   * ID of the `BuildTrigger` to delete.
+   * Required. ID of the `BuildTrigger` to delete.
    * </pre>
    *
-   * <code>string trigger_id = 2;</code>
+   * <code>string trigger_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   com.google.protobuf.ByteString getTriggerIdBytes();
 }

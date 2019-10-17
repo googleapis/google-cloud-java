@@ -39,6 +39,7 @@ public final class ListBuildTriggersRequest extends com.google.protobuf.Generate
 
   private ListBuildTriggersRequest() {
     projectId_ = "";
+    pageToken_ = "";
   }
 
   @java.lang.Override
@@ -70,6 +71,18 @@ public final class ListBuildTriggersRequest extends com.google.protobuf.Generate
               java.lang.String s = input.readStringRequireUtf8();
 
               projectId_ = s;
+              break;
+            }
+          case 16:
+            {
+              pageSize_ = input.readInt32();
+              break;
+            }
+          case 26:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              pageToken_ = s;
               break;
             }
           default:
@@ -112,10 +125,10 @@ public final class ListBuildTriggersRequest extends com.google.protobuf.Generate
    *
    *
    * <pre>
-   * ID of the project for which to list BuildTriggers.
+   * Required. ID of the project for which to list BuildTriggers.
    * </pre>
    *
-   * <code>string project_id = 1;</code>
+   * <code>string project_id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   public java.lang.String getProjectId() {
     java.lang.Object ref = projectId_;
@@ -132,10 +145,10 @@ public final class ListBuildTriggersRequest extends com.google.protobuf.Generate
    *
    *
    * <pre>
-   * ID of the project for which to list BuildTriggers.
+   * Required. ID of the project for which to list BuildTriggers.
    * </pre>
    *
-   * <code>string project_id = 1;</code>
+   * <code>string project_id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   public com.google.protobuf.ByteString getProjectIdBytes() {
     java.lang.Object ref = projectId_;
@@ -143,6 +156,64 @@ public final class ListBuildTriggersRequest extends com.google.protobuf.Generate
       com.google.protobuf.ByteString b =
           com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
       projectId_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int PAGE_SIZE_FIELD_NUMBER = 2;
+  private int pageSize_;
+  /**
+   *
+   *
+   * <pre>
+   * Number of results to return in the list.
+   * </pre>
+   *
+   * <code>int32 page_size = 2;</code>
+   */
+  public int getPageSize() {
+    return pageSize_;
+  }
+
+  public static final int PAGE_TOKEN_FIELD_NUMBER = 3;
+  private volatile java.lang.Object pageToken_;
+  /**
+   *
+   *
+   * <pre>
+   * Token to provide to skip to a particular spot in the list.
+   * </pre>
+   *
+   * <code>string page_token = 3;</code>
+   */
+  public java.lang.String getPageToken() {
+    java.lang.Object ref = pageToken_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      pageToken_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Token to provide to skip to a particular spot in the list.
+   * </pre>
+   *
+   * <code>string page_token = 3;</code>
+   */
+  public com.google.protobuf.ByteString getPageTokenBytes() {
+    java.lang.Object ref = pageToken_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      pageToken_ = b;
       return b;
     } else {
       return (com.google.protobuf.ByteString) ref;
@@ -166,6 +237,12 @@ public final class ListBuildTriggersRequest extends com.google.protobuf.Generate
     if (!getProjectIdBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, projectId_);
     }
+    if (pageSize_ != 0) {
+      output.writeInt32(2, pageSize_);
+    }
+    if (!getPageTokenBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 3, pageToken_);
+    }
     unknownFields.writeTo(output);
   }
 
@@ -177,6 +254,12 @@ public final class ListBuildTriggersRequest extends com.google.protobuf.Generate
     size = 0;
     if (!getProjectIdBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, projectId_);
+    }
+    if (pageSize_ != 0) {
+      size += com.google.protobuf.CodedOutputStream.computeInt32Size(2, pageSize_);
+    }
+    if (!getPageTokenBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, pageToken_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -195,6 +278,8 @@ public final class ListBuildTriggersRequest extends com.google.protobuf.Generate
         (com.google.cloudbuild.v1.ListBuildTriggersRequest) obj;
 
     if (!getProjectId().equals(other.getProjectId())) return false;
+    if (getPageSize() != other.getPageSize()) return false;
+    if (!getPageToken().equals(other.getPageToken())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -208,6 +293,10 @@ public final class ListBuildTriggersRequest extends com.google.protobuf.Generate
     hash = (19 * hash) + getDescriptor().hashCode();
     hash = (37 * hash) + PROJECT_ID_FIELD_NUMBER;
     hash = (53 * hash) + getProjectId().hashCode();
+    hash = (37 * hash) + PAGE_SIZE_FIELD_NUMBER;
+    hash = (53 * hash) + getPageSize();
+    hash = (37 * hash) + PAGE_TOKEN_FIELD_NUMBER;
+    hash = (53 * hash) + getPageToken().hashCode();
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -355,6 +444,10 @@ public final class ListBuildTriggersRequest extends com.google.protobuf.Generate
       super.clear();
       projectId_ = "";
 
+      pageSize_ = 0;
+
+      pageToken_ = "";
+
       return this;
     }
 
@@ -383,6 +476,8 @@ public final class ListBuildTriggersRequest extends com.google.protobuf.Generate
       com.google.cloudbuild.v1.ListBuildTriggersRequest result =
           new com.google.cloudbuild.v1.ListBuildTriggersRequest(this);
       result.projectId_ = projectId_;
+      result.pageSize_ = pageSize_;
+      result.pageToken_ = pageToken_;
       onBuilt();
       return result;
     }
@@ -437,6 +532,13 @@ public final class ListBuildTriggersRequest extends com.google.protobuf.Generate
         projectId_ = other.projectId_;
         onChanged();
       }
+      if (other.getPageSize() != 0) {
+        setPageSize(other.getPageSize());
+      }
+      if (!other.getPageToken().isEmpty()) {
+        pageToken_ = other.pageToken_;
+        onChanged();
+      }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
       return this;
@@ -472,10 +574,10 @@ public final class ListBuildTriggersRequest extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * ID of the project for which to list BuildTriggers.
+     * Required. ID of the project for which to list BuildTriggers.
      * </pre>
      *
-     * <code>string project_id = 1;</code>
+     * <code>string project_id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public java.lang.String getProjectId() {
       java.lang.Object ref = projectId_;
@@ -492,10 +594,10 @@ public final class ListBuildTriggersRequest extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * ID of the project for which to list BuildTriggers.
+     * Required. ID of the project for which to list BuildTriggers.
      * </pre>
      *
-     * <code>string project_id = 1;</code>
+     * <code>string project_id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public com.google.protobuf.ByteString getProjectIdBytes() {
       java.lang.Object ref = projectId_;
@@ -512,10 +614,10 @@ public final class ListBuildTriggersRequest extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * ID of the project for which to list BuildTriggers.
+     * Required. ID of the project for which to list BuildTriggers.
      * </pre>
      *
-     * <code>string project_id = 1;</code>
+     * <code>string project_id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder setProjectId(java.lang.String value) {
       if (value == null) {
@@ -530,10 +632,10 @@ public final class ListBuildTriggersRequest extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * ID of the project for which to list BuildTriggers.
+     * Required. ID of the project for which to list BuildTriggers.
      * </pre>
      *
-     * <code>string project_id = 1;</code>
+     * <code>string project_id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder clearProjectId() {
 
@@ -545,10 +647,10 @@ public final class ListBuildTriggersRequest extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * ID of the project for which to list BuildTriggers.
+     * Required. ID of the project for which to list BuildTriggers.
      * </pre>
      *
-     * <code>string project_id = 1;</code>
+     * <code>string project_id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder setProjectIdBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -557,6 +659,144 @@ public final class ListBuildTriggersRequest extends com.google.protobuf.Generate
       checkByteStringIsUtf8(value);
 
       projectId_ = value;
+      onChanged();
+      return this;
+    }
+
+    private int pageSize_;
+    /**
+     *
+     *
+     * <pre>
+     * Number of results to return in the list.
+     * </pre>
+     *
+     * <code>int32 page_size = 2;</code>
+     */
+    public int getPageSize() {
+      return pageSize_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Number of results to return in the list.
+     * </pre>
+     *
+     * <code>int32 page_size = 2;</code>
+     */
+    public Builder setPageSize(int value) {
+
+      pageSize_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Number of results to return in the list.
+     * </pre>
+     *
+     * <code>int32 page_size = 2;</code>
+     */
+    public Builder clearPageSize() {
+
+      pageSize_ = 0;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object pageToken_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * Token to provide to skip to a particular spot in the list.
+     * </pre>
+     *
+     * <code>string page_token = 3;</code>
+     */
+    public java.lang.String getPageToken() {
+      java.lang.Object ref = pageToken_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        pageToken_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Token to provide to skip to a particular spot in the list.
+     * </pre>
+     *
+     * <code>string page_token = 3;</code>
+     */
+    public com.google.protobuf.ByteString getPageTokenBytes() {
+      java.lang.Object ref = pageToken_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        pageToken_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Token to provide to skip to a particular spot in the list.
+     * </pre>
+     *
+     * <code>string page_token = 3;</code>
+     */
+    public Builder setPageToken(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+
+      pageToken_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Token to provide to skip to a particular spot in the list.
+     * </pre>
+     *
+     * <code>string page_token = 3;</code>
+     */
+    public Builder clearPageToken() {
+
+      pageToken_ = getDefaultInstance().getPageToken();
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Token to provide to skip to a particular spot in the list.
+     * </pre>
+     *
+     * <code>string page_token = 3;</code>
+     */
+    public Builder setPageTokenBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
+      pageToken_ = value;
       onChanged();
       return this;
     }
