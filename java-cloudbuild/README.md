@@ -13,22 +13,22 @@ Java idiomatic client for [Cloud Build][api-reference].
 
 ## Quickstart
 
-[//]: # ({x-version-update-start:cloudbuild:released})
+[//]: # ({x-version-update-start:google-cloud-cloudbuild:released})
 If you are using Maven, add this to your pom.xml file
 ```xml
 <dependency>
   <groupId>com.google.cloud</groupId>
-  <artifactId>cloudbuild</artifactId>
+  <artifactId>google-cloud-cloudbuild</artifactId>
   <version>0.0.1</version>
 </dependency>
 ```
 If you are using Gradle, add this to your dependencies
 ```Groovy
-compile 'com.google.cloud:cloudbuild:0.0.1'
+compile 'com.google.cloud:google-cloud-cloudbuild:0.0.1'
 ```
 If you are using SBT, add this to your dependencies
 ```Scala
-libraryDependencies += "com.google.cloud" % "cloudbuild" % "0.0.1"
+libraryDependencies += "com.google.cloud" % "google-cloud-cloudbuild" % "0.0.1"
 ```
 [//]: # ({x-version-update-end})
 
@@ -55,8 +55,8 @@ project set up. You will also need to set up the local development environment b
 
 ### Installation and setup
 
-You'll need to obtain the `cloudbuild` library.  See the [Quickstart](#quickstart) section
-to add `cloudbuild` as a dependency in your code.
+You'll need to obtain the `google-cloud-cloudbuild` library.  See the [Quickstart](#quickstart) section
+to add `google-cloud-cloudbuild` as a dependency in your code.
 
 ## Troubleshooting
 
