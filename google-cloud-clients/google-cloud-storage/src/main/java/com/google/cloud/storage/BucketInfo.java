@@ -208,7 +208,7 @@ public class BucketInfo implements Serializable {
       }
 
       /**
-       * Sets whether uiform bucket-level access is enabled for this bucket. When this is enabled,
+       * Sets whether uniform bucket-level access is enabled for this bucket. When this is enabled,
        * access to the bucket will be configured through IAM, and legacy ACL policies will not work.
        * When this is first enabled, {@code uniformBucketLevelAccess.lockedTime} will be set by the
        * API automatically. This field can then be disabled until the time specified, after which it
