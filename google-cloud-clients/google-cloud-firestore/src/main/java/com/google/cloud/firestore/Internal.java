@@ -30,8 +30,10 @@ public class Internal {
   private FirestoreImpl firestore;
 
   @InternalApi
-  public Internal(FirestoreImpl firestore) {
-    this.firestore = firestore;
+  public Internal(Firestore firestore) {
+    Preconditions.checkArgument(
+        firestore instanceof FirestoreImpl, "Argument is required to be of type FirestoreImpl");
+    this.firestore = (FirestoreImpl) firestore;
   }
 
   @InternalApi
