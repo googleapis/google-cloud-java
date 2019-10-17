@@ -146,12 +146,19 @@ public final class InstantiateWorkflowTemplateRequest extends com.google.protobu
    *
    *
    * <pre>
-   * Required. The "resource name" of the workflow template, as described
-   * in https://cloud.google.com/apis/design/resource_names of the form
-   * `projects/{project_id}/regions/{region}/workflowTemplates/{template_id}`
+   * Required. The resource name of the workflow template, as described
+   * in https://cloud.google.com/apis/design/resource_names.
+   * * For `projects.regions.workflowTemplates.instantiate`, the resource name
+   * of the template has the following format:
+   *   `projects/{project_id}/regions/{region}/workflowTemplates/{template_id}`
+   * * For `projects.locations.workflowTemplates.instantiate`, the resource name
+   *   of the template has the following format:
+   *   `projects/{project_id}/locations/{location}/workflowTemplates/{template_id}`
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>
+   * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    */
   public java.lang.String getName() {
     java.lang.Object ref = name_;
@@ -168,12 +175,19 @@ public final class InstantiateWorkflowTemplateRequest extends com.google.protobu
    *
    *
    * <pre>
-   * Required. The "resource name" of the workflow template, as described
-   * in https://cloud.google.com/apis/design/resource_names of the form
-   * `projects/{project_id}/regions/{region}/workflowTemplates/{template_id}`
+   * Required. The resource name of the workflow template, as described
+   * in https://cloud.google.com/apis/design/resource_names.
+   * * For `projects.regions.workflowTemplates.instantiate`, the resource name
+   * of the template has the following format:
+   *   `projects/{project_id}/regions/{region}/workflowTemplates/{template_id}`
+   * * For `projects.locations.workflowTemplates.instantiate`, the resource name
+   *   of the template has the following format:
+   *   `projects/{project_id}/locations/{location}/workflowTemplates/{template_id}`
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>
+   * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    */
   public com.google.protobuf.ByteString getNameBytes() {
     java.lang.Object ref = name_;
@@ -829,12 +843,19 @@ public final class InstantiateWorkflowTemplateRequest extends com.google.protobu
      *
      *
      * <pre>
-     * Required. The "resource name" of the workflow template, as described
-     * in https://cloud.google.com/apis/design/resource_names of the form
-     * `projects/{project_id}/regions/{region}/workflowTemplates/{template_id}`
+     * Required. The resource name of the workflow template, as described
+     * in https://cloud.google.com/apis/design/resource_names.
+     * * For `projects.regions.workflowTemplates.instantiate`, the resource name
+     * of the template has the following format:
+     *   `projects/{project_id}/regions/{region}/workflowTemplates/{template_id}`
+     * * For `projects.locations.workflowTemplates.instantiate`, the resource name
+     *   of the template has the following format:
+     *   `projects/{project_id}/locations/{location}/workflowTemplates/{template_id}`
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>
+     * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      */
     public java.lang.String getName() {
       java.lang.Object ref = name_;
@@ -851,12 +872,19 @@ public final class InstantiateWorkflowTemplateRequest extends com.google.protobu
      *
      *
      * <pre>
-     * Required. The "resource name" of the workflow template, as described
-     * in https://cloud.google.com/apis/design/resource_names of the form
-     * `projects/{project_id}/regions/{region}/workflowTemplates/{template_id}`
+     * Required. The resource name of the workflow template, as described
+     * in https://cloud.google.com/apis/design/resource_names.
+     * * For `projects.regions.workflowTemplates.instantiate`, the resource name
+     * of the template has the following format:
+     *   `projects/{project_id}/regions/{region}/workflowTemplates/{template_id}`
+     * * For `projects.locations.workflowTemplates.instantiate`, the resource name
+     *   of the template has the following format:
+     *   `projects/{project_id}/locations/{location}/workflowTemplates/{template_id}`
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>
+     * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      */
     public com.google.protobuf.ByteString getNameBytes() {
       java.lang.Object ref = name_;
@@ -873,12 +901,19 @@ public final class InstantiateWorkflowTemplateRequest extends com.google.protobu
      *
      *
      * <pre>
-     * Required. The "resource name" of the workflow template, as described
-     * in https://cloud.google.com/apis/design/resource_names of the form
-     * `projects/{project_id}/regions/{region}/workflowTemplates/{template_id}`
+     * Required. The resource name of the workflow template, as described
+     * in https://cloud.google.com/apis/design/resource_names.
+     * * For `projects.regions.workflowTemplates.instantiate`, the resource name
+     * of the template has the following format:
+     *   `projects/{project_id}/regions/{region}/workflowTemplates/{template_id}`
+     * * For `projects.locations.workflowTemplates.instantiate`, the resource name
+     *   of the template has the following format:
+     *   `projects/{project_id}/locations/{location}/workflowTemplates/{template_id}`
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>
+     * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      */
     public Builder setName(java.lang.String value) {
       if (value == null) {
@@ -893,12 +928,19 @@ public final class InstantiateWorkflowTemplateRequest extends com.google.protobu
      *
      *
      * <pre>
-     * Required. The "resource name" of the workflow template, as described
-     * in https://cloud.google.com/apis/design/resource_names of the form
-     * `projects/{project_id}/regions/{region}/workflowTemplates/{template_id}`
+     * Required. The resource name of the workflow template, as described
+     * in https://cloud.google.com/apis/design/resource_names.
+     * * For `projects.regions.workflowTemplates.instantiate`, the resource name
+     * of the template has the following format:
+     *   `projects/{project_id}/regions/{region}/workflowTemplates/{template_id}`
+     * * For `projects.locations.workflowTemplates.instantiate`, the resource name
+     *   of the template has the following format:
+     *   `projects/{project_id}/locations/{location}/workflowTemplates/{template_id}`
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>
+     * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      */
     public Builder clearName() {
 
@@ -910,12 +952,19 @@ public final class InstantiateWorkflowTemplateRequest extends com.google.protobu
      *
      *
      * <pre>
-     * Required. The "resource name" of the workflow template, as described
-     * in https://cloud.google.com/apis/design/resource_names of the form
-     * `projects/{project_id}/regions/{region}/workflowTemplates/{template_id}`
+     * Required. The resource name of the workflow template, as described
+     * in https://cloud.google.com/apis/design/resource_names.
+     * * For `projects.regions.workflowTemplates.instantiate`, the resource name
+     * of the template has the following format:
+     *   `projects/{project_id}/regions/{region}/workflowTemplates/{template_id}`
+     * * For `projects.locations.workflowTemplates.instantiate`, the resource name
+     *   of the template has the following format:
+     *   `projects/{project_id}/locations/{location}/workflowTemplates/{template_id}`
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>
+     * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      */
     public Builder setNameBytes(com.google.protobuf.ByteString value) {
       if (value == null) {

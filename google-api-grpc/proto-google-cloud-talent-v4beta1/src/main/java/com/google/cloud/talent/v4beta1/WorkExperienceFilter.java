@@ -7,7 +7,6 @@ package com.google.cloud.talent.v4beta1;
  *
  *
  * <pre>
- * Input only.
  * Work experience filter.
  * This filter is used to search for profiles with working experience length
  * between
@@ -124,7 +123,7 @@ public final class WorkExperienceFilter extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * Optional. The minimum duration of the work experience (inclusive).
+   * The minimum duration of the work experience (inclusive).
    * </pre>
    *
    * <code>.google.protobuf.Duration min_experience = 1;</code>
@@ -136,7 +135,7 @@ public final class WorkExperienceFilter extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * Optional. The minimum duration of the work experience (inclusive).
+   * The minimum duration of the work experience (inclusive).
    * </pre>
    *
    * <code>.google.protobuf.Duration min_experience = 1;</code>
@@ -150,7 +149,7 @@ public final class WorkExperienceFilter extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * Optional. The minimum duration of the work experience (inclusive).
+   * The minimum duration of the work experience (inclusive).
    * </pre>
    *
    * <code>.google.protobuf.Duration min_experience = 1;</code>
@@ -165,7 +164,7 @@ public final class WorkExperienceFilter extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * Optional. The maximum duration of the work experience (exclusive).
+   * The maximum duration of the work experience (exclusive).
    * </pre>
    *
    * <code>.google.protobuf.Duration max_experience = 2;</code>
@@ -177,7 +176,7 @@ public final class WorkExperienceFilter extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * Optional. The maximum duration of the work experience (exclusive).
+   * The maximum duration of the work experience (exclusive).
    * </pre>
    *
    * <code>.google.protobuf.Duration max_experience = 2;</code>
@@ -191,7 +190,7 @@ public final class WorkExperienceFilter extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * Optional. The maximum duration of the work experience (exclusive).
+   * The maximum duration of the work experience (exclusive).
    * </pre>
    *
    * <code>.google.protobuf.Duration max_experience = 2;</code>
@@ -382,7 +381,6 @@ public final class WorkExperienceFilter extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * Input only.
    * Work experience filter.
    * This filter is used to search for profiles with working experience length
    * between
@@ -574,7 +572,7 @@ public final class WorkExperienceFilter extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Optional. The minimum duration of the work experience (inclusive).
+     * The minimum duration of the work experience (inclusive).
      * </pre>
      *
      * <code>.google.protobuf.Duration min_experience = 1;</code>
@@ -586,7 +584,7 @@ public final class WorkExperienceFilter extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Optional. The minimum duration of the work experience (inclusive).
+     * The minimum duration of the work experience (inclusive).
      * </pre>
      *
      * <code>.google.protobuf.Duration min_experience = 1;</code>
@@ -604,7 +602,7 @@ public final class WorkExperienceFilter extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Optional. The minimum duration of the work experience (inclusive).
+     * The minimum duration of the work experience (inclusive).
      * </pre>
      *
      * <code>.google.protobuf.Duration min_experience = 1;</code>
@@ -626,7 +624,7 @@ public final class WorkExperienceFilter extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Optional. The minimum duration of the work experience (inclusive).
+     * The minimum duration of the work experience (inclusive).
      * </pre>
      *
      * <code>.google.protobuf.Duration min_experience = 1;</code>
@@ -645,7 +643,7 @@ public final class WorkExperienceFilter extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Optional. The minimum duration of the work experience (inclusive).
+     * The minimum duration of the work experience (inclusive).
      * </pre>
      *
      * <code>.google.protobuf.Duration min_experience = 1;</code>
@@ -671,7 +669,7 @@ public final class WorkExperienceFilter extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Optional. The minimum duration of the work experience (inclusive).
+     * The minimum duration of the work experience (inclusive).
      * </pre>
      *
      * <code>.google.protobuf.Duration min_experience = 1;</code>
@@ -691,7 +689,7 @@ public final class WorkExperienceFilter extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Optional. The minimum duration of the work experience (inclusive).
+     * The minimum duration of the work experience (inclusive).
      * </pre>
      *
      * <code>.google.protobuf.Duration min_experience = 1;</code>
@@ -705,7 +703,7 @@ public final class WorkExperienceFilter extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Optional. The minimum duration of the work experience (inclusive).
+     * The minimum duration of the work experience (inclusive).
      * </pre>
      *
      * <code>.google.protobuf.Duration min_experience = 1;</code>
@@ -723,7 +721,7 @@ public final class WorkExperienceFilter extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Optional. The minimum duration of the work experience (inclusive).
+     * The minimum duration of the work experience (inclusive).
      * </pre>
      *
      * <code>.google.protobuf.Duration min_experience = 1;</code>
@@ -755,7 +753,7 @@ public final class WorkExperienceFilter extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Optional. The maximum duration of the work experience (exclusive).
+     * The maximum duration of the work experience (exclusive).
      * </pre>
      *
      * <code>.google.protobuf.Duration max_experience = 2;</code>
@@ -767,7 +765,7 @@ public final class WorkExperienceFilter extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Optional. The maximum duration of the work experience (exclusive).
+     * The maximum duration of the work experience (exclusive).
      * </pre>
      *
      * <code>.google.protobuf.Duration max_experience = 2;</code>
@@ -785,7 +783,7 @@ public final class WorkExperienceFilter extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Optional. The maximum duration of the work experience (exclusive).
+     * The maximum duration of the work experience (exclusive).
      * </pre>
      *
      * <code>.google.protobuf.Duration max_experience = 2;</code>
@@ -807,7 +805,7 @@ public final class WorkExperienceFilter extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Optional. The maximum duration of the work experience (exclusive).
+     * The maximum duration of the work experience (exclusive).
      * </pre>
      *
      * <code>.google.protobuf.Duration max_experience = 2;</code>
@@ -826,7 +824,7 @@ public final class WorkExperienceFilter extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Optional. The maximum duration of the work experience (exclusive).
+     * The maximum duration of the work experience (exclusive).
      * </pre>
      *
      * <code>.google.protobuf.Duration max_experience = 2;</code>
@@ -852,7 +850,7 @@ public final class WorkExperienceFilter extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Optional. The maximum duration of the work experience (exclusive).
+     * The maximum duration of the work experience (exclusive).
      * </pre>
      *
      * <code>.google.protobuf.Duration max_experience = 2;</code>
@@ -872,7 +870,7 @@ public final class WorkExperienceFilter extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Optional. The maximum duration of the work experience (exclusive).
+     * The maximum duration of the work experience (exclusive).
      * </pre>
      *
      * <code>.google.protobuf.Duration max_experience = 2;</code>
@@ -886,7 +884,7 @@ public final class WorkExperienceFilter extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Optional. The maximum duration of the work experience (exclusive).
+     * The maximum duration of the work experience (exclusive).
      * </pre>
      *
      * <code>.google.protobuf.Duration max_experience = 2;</code>
@@ -904,7 +902,7 @@ public final class WorkExperienceFilter extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Optional. The maximum duration of the work experience (exclusive).
+     * The maximum duration of the work experience (exclusive).
      * </pre>
      *
      * <code>.google.protobuf.Duration max_experience = 2;</code>

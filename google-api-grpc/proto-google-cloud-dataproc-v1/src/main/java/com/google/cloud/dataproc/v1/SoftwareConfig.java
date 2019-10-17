@@ -162,7 +162,7 @@ public final class SoftwareConfig extends com.google.protobuf.GeneratedMessageV3
    * If unspecified, it defaults to the latest Debian version.
    * </pre>
    *
-   * <code>string image_version = 1;</code>
+   * <code>string image_version = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   public java.lang.String getImageVersion() {
     java.lang.Object ref = imageVersion_;
@@ -188,7 +188,7 @@ public final class SoftwareConfig extends com.google.protobuf.GeneratedMessageV3
    * If unspecified, it defaults to the latest Debian version.
    * </pre>
    *
-   * <code>string image_version = 1;</code>
+   * <code>string image_version = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   public com.google.protobuf.ByteString getImageVersionBytes() {
     java.lang.Object ref = imageVersion_;
@@ -248,7 +248,8 @@ public final class SoftwareConfig extends com.google.protobuf.GeneratedMessageV3
    * [Cluster properties](/dataproc/docs/concepts/cluster-properties).
    * </pre>
    *
-   * <code>map&lt;string, string&gt; properties = 2;</code>
+   * <code>map&lt;string, string&gt; properties = 2 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   public boolean containsProperties(java.lang.String key) {
     if (key == null) {
@@ -282,7 +283,8 @@ public final class SoftwareConfig extends com.google.protobuf.GeneratedMessageV3
    * [Cluster properties](/dataproc/docs/concepts/cluster-properties).
    * </pre>
    *
-   * <code>map&lt;string, string&gt; properties = 2;</code>
+   * <code>map&lt;string, string&gt; properties = 2 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   public java.util.Map<java.lang.String, java.lang.String> getPropertiesMap() {
     return internalGetProperties().getMap();
@@ -308,7 +310,8 @@ public final class SoftwareConfig extends com.google.protobuf.GeneratedMessageV3
    * [Cluster properties](/dataproc/docs/concepts/cluster-properties).
    * </pre>
    *
-   * <code>map&lt;string, string&gt; properties = 2;</code>
+   * <code>map&lt;string, string&gt; properties = 2 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   public java.lang.String getPropertiesOrDefault(
       java.lang.String key, java.lang.String defaultValue) {
@@ -339,7 +342,8 @@ public final class SoftwareConfig extends com.google.protobuf.GeneratedMessageV3
    * [Cluster properties](/dataproc/docs/concepts/cluster-properties).
    * </pre>
    *
-   * <code>map&lt;string, string&gt; properties = 2;</code>
+   * <code>map&lt;string, string&gt; properties = 2 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   public java.lang.String getPropertiesOrThrow(java.lang.String key) {
     if (key == null) {
@@ -370,10 +374,12 @@ public final class SoftwareConfig extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The set of optional components to activate on the cluster.
+   * Optional. The set of components to activate on the cluster.
    * </pre>
    *
-   * <code>repeated .google.cloud.dataproc.v1.Component optional_components = 3;</code>
+   * <code>
+   * repeated .google.cloud.dataproc.v1.Component optional_components = 3 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   public java.util.List<com.google.cloud.dataproc.v1.Component> getOptionalComponentsList() {
     return new com.google.protobuf.Internal.ListAdapter<
@@ -384,10 +390,12 @@ public final class SoftwareConfig extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The set of optional components to activate on the cluster.
+   * Optional. The set of components to activate on the cluster.
    * </pre>
    *
-   * <code>repeated .google.cloud.dataproc.v1.Component optional_components = 3;</code>
+   * <code>
+   * repeated .google.cloud.dataproc.v1.Component optional_components = 3 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   public int getOptionalComponentsCount() {
     return optionalComponents_.size();
@@ -396,10 +404,12 @@ public final class SoftwareConfig extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The set of optional components to activate on the cluster.
+   * Optional. The set of components to activate on the cluster.
    * </pre>
    *
-   * <code>repeated .google.cloud.dataproc.v1.Component optional_components = 3;</code>
+   * <code>
+   * repeated .google.cloud.dataproc.v1.Component optional_components = 3 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   public com.google.cloud.dataproc.v1.Component getOptionalComponents(int index) {
     return optionalComponents_converter_.convert(optionalComponents_.get(index));
@@ -408,10 +418,12 @@ public final class SoftwareConfig extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The set of optional components to activate on the cluster.
+   * Optional. The set of components to activate on the cluster.
    * </pre>
    *
-   * <code>repeated .google.cloud.dataproc.v1.Component optional_components = 3;</code>
+   * <code>
+   * repeated .google.cloud.dataproc.v1.Component optional_components = 3 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   public java.util.List<java.lang.Integer> getOptionalComponentsValueList() {
     return optionalComponents_;
@@ -420,10 +432,12 @@ public final class SoftwareConfig extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The set of optional components to activate on the cluster.
+   * Optional. The set of components to activate on the cluster.
    * </pre>
    *
-   * <code>repeated .google.cloud.dataproc.v1.Component optional_components = 3;</code>
+   * <code>
+   * repeated .google.cloud.dataproc.v1.Component optional_components = 3 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   public int getOptionalComponentsValue(int index) {
     return optionalComponents_.get(index);
@@ -850,7 +864,7 @@ public final class SoftwareConfig extends com.google.protobuf.GeneratedMessageV3
      * If unspecified, it defaults to the latest Debian version.
      * </pre>
      *
-     * <code>string image_version = 1;</code>
+     * <code>string image_version = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public java.lang.String getImageVersion() {
       java.lang.Object ref = imageVersion_;
@@ -876,7 +890,7 @@ public final class SoftwareConfig extends com.google.protobuf.GeneratedMessageV3
      * If unspecified, it defaults to the latest Debian version.
      * </pre>
      *
-     * <code>string image_version = 1;</code>
+     * <code>string image_version = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public com.google.protobuf.ByteString getImageVersionBytes() {
       java.lang.Object ref = imageVersion_;
@@ -902,7 +916,7 @@ public final class SoftwareConfig extends com.google.protobuf.GeneratedMessageV3
      * If unspecified, it defaults to the latest Debian version.
      * </pre>
      *
-     * <code>string image_version = 1;</code>
+     * <code>string image_version = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public Builder setImageVersion(java.lang.String value) {
       if (value == null) {
@@ -926,7 +940,7 @@ public final class SoftwareConfig extends com.google.protobuf.GeneratedMessageV3
      * If unspecified, it defaults to the latest Debian version.
      * </pre>
      *
-     * <code>string image_version = 1;</code>
+     * <code>string image_version = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public Builder clearImageVersion() {
 
@@ -947,7 +961,7 @@ public final class SoftwareConfig extends com.google.protobuf.GeneratedMessageV3
      * If unspecified, it defaults to the latest Debian version.
      * </pre>
      *
-     * <code>string image_version = 1;</code>
+     * <code>string image_version = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public Builder setImageVersionBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -1009,7 +1023,8 @@ public final class SoftwareConfig extends com.google.protobuf.GeneratedMessageV3
      * [Cluster properties](/dataproc/docs/concepts/cluster-properties).
      * </pre>
      *
-     * <code>map&lt;string, string&gt; properties = 2;</code>
+     * <code>map&lt;string, string&gt; properties = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public boolean containsProperties(java.lang.String key) {
       if (key == null) {
@@ -1043,7 +1058,8 @@ public final class SoftwareConfig extends com.google.protobuf.GeneratedMessageV3
      * [Cluster properties](/dataproc/docs/concepts/cluster-properties).
      * </pre>
      *
-     * <code>map&lt;string, string&gt; properties = 2;</code>
+     * <code>map&lt;string, string&gt; properties = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public java.util.Map<java.lang.String, java.lang.String> getPropertiesMap() {
       return internalGetProperties().getMap();
@@ -1069,7 +1085,8 @@ public final class SoftwareConfig extends com.google.protobuf.GeneratedMessageV3
      * [Cluster properties](/dataproc/docs/concepts/cluster-properties).
      * </pre>
      *
-     * <code>map&lt;string, string&gt; properties = 2;</code>
+     * <code>map&lt;string, string&gt; properties = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public java.lang.String getPropertiesOrDefault(
         java.lang.String key, java.lang.String defaultValue) {
@@ -1100,7 +1117,8 @@ public final class SoftwareConfig extends com.google.protobuf.GeneratedMessageV3
      * [Cluster properties](/dataproc/docs/concepts/cluster-properties).
      * </pre>
      *
-     * <code>map&lt;string, string&gt; properties = 2;</code>
+     * <code>map&lt;string, string&gt; properties = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public java.lang.String getPropertiesOrThrow(java.lang.String key) {
       if (key == null) {
@@ -1138,7 +1156,8 @@ public final class SoftwareConfig extends com.google.protobuf.GeneratedMessageV3
      * [Cluster properties](/dataproc/docs/concepts/cluster-properties).
      * </pre>
      *
-     * <code>map&lt;string, string&gt; properties = 2;</code>
+     * <code>map&lt;string, string&gt; properties = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder removeProperties(java.lang.String key) {
       if (key == null) {
@@ -1173,7 +1192,8 @@ public final class SoftwareConfig extends com.google.protobuf.GeneratedMessageV3
      * [Cluster properties](/dataproc/docs/concepts/cluster-properties).
      * </pre>
      *
-     * <code>map&lt;string, string&gt; properties = 2;</code>
+     * <code>map&lt;string, string&gt; properties = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder putProperties(java.lang.String key, java.lang.String value) {
       if (key == null) {
@@ -1206,7 +1226,8 @@ public final class SoftwareConfig extends com.google.protobuf.GeneratedMessageV3
      * [Cluster properties](/dataproc/docs/concepts/cluster-properties).
      * </pre>
      *
-     * <code>map&lt;string, string&gt; properties = 2;</code>
+     * <code>map&lt;string, string&gt; properties = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder putAllProperties(java.util.Map<java.lang.String, java.lang.String> values) {
       internalGetMutableProperties().getMutableMap().putAll(values);
@@ -1226,10 +1247,12 @@ public final class SoftwareConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The set of optional components to activate on the cluster.
+     * Optional. The set of components to activate on the cluster.
      * </pre>
      *
-     * <code>repeated .google.cloud.dataproc.v1.Component optional_components = 3;</code>
+     * <code>
+     * repeated .google.cloud.dataproc.v1.Component optional_components = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public java.util.List<com.google.cloud.dataproc.v1.Component> getOptionalComponentsList() {
       return new com.google.protobuf.Internal.ListAdapter<
@@ -1240,10 +1263,12 @@ public final class SoftwareConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The set of optional components to activate on the cluster.
+     * Optional. The set of components to activate on the cluster.
      * </pre>
      *
-     * <code>repeated .google.cloud.dataproc.v1.Component optional_components = 3;</code>
+     * <code>
+     * repeated .google.cloud.dataproc.v1.Component optional_components = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public int getOptionalComponentsCount() {
       return optionalComponents_.size();
@@ -1252,10 +1277,12 @@ public final class SoftwareConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The set of optional components to activate on the cluster.
+     * Optional. The set of components to activate on the cluster.
      * </pre>
      *
-     * <code>repeated .google.cloud.dataproc.v1.Component optional_components = 3;</code>
+     * <code>
+     * repeated .google.cloud.dataproc.v1.Component optional_components = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public com.google.cloud.dataproc.v1.Component getOptionalComponents(int index) {
       return optionalComponents_converter_.convert(optionalComponents_.get(index));
@@ -1264,10 +1291,12 @@ public final class SoftwareConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The set of optional components to activate on the cluster.
+     * Optional. The set of components to activate on the cluster.
      * </pre>
      *
-     * <code>repeated .google.cloud.dataproc.v1.Component optional_components = 3;</code>
+     * <code>
+     * repeated .google.cloud.dataproc.v1.Component optional_components = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder setOptionalComponents(int index, com.google.cloud.dataproc.v1.Component value) {
       if (value == null) {
@@ -1282,10 +1311,12 @@ public final class SoftwareConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The set of optional components to activate on the cluster.
+     * Optional. The set of components to activate on the cluster.
      * </pre>
      *
-     * <code>repeated .google.cloud.dataproc.v1.Component optional_components = 3;</code>
+     * <code>
+     * repeated .google.cloud.dataproc.v1.Component optional_components = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder addOptionalComponents(com.google.cloud.dataproc.v1.Component value) {
       if (value == null) {
@@ -1300,10 +1331,12 @@ public final class SoftwareConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The set of optional components to activate on the cluster.
+     * Optional. The set of components to activate on the cluster.
      * </pre>
      *
-     * <code>repeated .google.cloud.dataproc.v1.Component optional_components = 3;</code>
+     * <code>
+     * repeated .google.cloud.dataproc.v1.Component optional_components = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder addAllOptionalComponents(
         java.lang.Iterable<? extends com.google.cloud.dataproc.v1.Component> values) {
@@ -1318,10 +1351,12 @@ public final class SoftwareConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The set of optional components to activate on the cluster.
+     * Optional. The set of components to activate on the cluster.
      * </pre>
      *
-     * <code>repeated .google.cloud.dataproc.v1.Component optional_components = 3;</code>
+     * <code>
+     * repeated .google.cloud.dataproc.v1.Component optional_components = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder clearOptionalComponents() {
       optionalComponents_ = java.util.Collections.emptyList();
@@ -1333,10 +1368,12 @@ public final class SoftwareConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The set of optional components to activate on the cluster.
+     * Optional. The set of components to activate on the cluster.
      * </pre>
      *
-     * <code>repeated .google.cloud.dataproc.v1.Component optional_components = 3;</code>
+     * <code>
+     * repeated .google.cloud.dataproc.v1.Component optional_components = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public java.util.List<java.lang.Integer> getOptionalComponentsValueList() {
       return java.util.Collections.unmodifiableList(optionalComponents_);
@@ -1345,10 +1382,12 @@ public final class SoftwareConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The set of optional components to activate on the cluster.
+     * Optional. The set of components to activate on the cluster.
      * </pre>
      *
-     * <code>repeated .google.cloud.dataproc.v1.Component optional_components = 3;</code>
+     * <code>
+     * repeated .google.cloud.dataproc.v1.Component optional_components = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public int getOptionalComponentsValue(int index) {
       return optionalComponents_.get(index);
@@ -1357,10 +1396,12 @@ public final class SoftwareConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The set of optional components to activate on the cluster.
+     * Optional. The set of components to activate on the cluster.
      * </pre>
      *
-     * <code>repeated .google.cloud.dataproc.v1.Component optional_components = 3;</code>
+     * <code>
+     * repeated .google.cloud.dataproc.v1.Component optional_components = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder setOptionalComponentsValue(int index, int value) {
       ensureOptionalComponentsIsMutable();
@@ -1372,10 +1413,12 @@ public final class SoftwareConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The set of optional components to activate on the cluster.
+     * Optional. The set of components to activate on the cluster.
      * </pre>
      *
-     * <code>repeated .google.cloud.dataproc.v1.Component optional_components = 3;</code>
+     * <code>
+     * repeated .google.cloud.dataproc.v1.Component optional_components = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder addOptionalComponentsValue(int value) {
       ensureOptionalComponentsIsMutable();
@@ -1387,10 +1430,12 @@ public final class SoftwareConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The set of optional components to activate on the cluster.
+     * Optional. The set of components to activate on the cluster.
      * </pre>
      *
-     * <code>repeated .google.cloud.dataproc.v1.Component optional_components = 3;</code>
+     * <code>
+     * repeated .google.cloud.dataproc.v1.Component optional_components = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder addAllOptionalComponentsValue(java.lang.Iterable<java.lang.Integer> values) {
       ensureOptionalComponentsIsMutable();

@@ -121,13 +121,14 @@ public final class CreateTaskRequest extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * Required.
-   * The queue name. For example:
+   * Required. The queue name. For example:
    * `projects/PROJECT_ID/locations/LOCATION_ID/queues/QUEUE_ID`
    * The queue must already exist.
    * </pre>
    *
-   * <code>string parent = 1;</code>
+   * <code>
+   * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    */
   public java.lang.String getParent() {
     java.lang.Object ref = parent_;
@@ -144,13 +145,14 @@ public final class CreateTaskRequest extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * Required.
-   * The queue name. For example:
+   * Required. The queue name. For example:
    * `projects/PROJECT_ID/locations/LOCATION_ID/queues/QUEUE_ID`
    * The queue must already exist.
    * </pre>
    *
-   * <code>string parent = 1;</code>
+   * <code>
+   * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    */
   public com.google.protobuf.ByteString getParentBytes() {
     java.lang.Object ref = parent_;
@@ -170,8 +172,7 @@ public final class CreateTaskRequest extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * Required.
-   * The task to add.
+   * Required. The task to add.
    * Task names have the following format:
    * `projects/PROJECT_ID/locations/LOCATION_ID/queues/QUEUE_ID/tasks/TASK_ID`.
    * The user can optionally specify a task [name][google.cloud.tasks.v2beta3.Task.name]. If a
@@ -201,7 +202,8 @@ public final class CreateTaskRequest extends com.google.protobuf.GeneratedMessag
    * efficiently.
    * </pre>
    *
-   * <code>.google.cloud.tasks.v2beta3.Task task = 2;</code>
+   * <code>.google.cloud.tasks.v2beta3.Task task = 2 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   public boolean hasTask() {
     return task_ != null;
@@ -210,8 +212,7 @@ public final class CreateTaskRequest extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * Required.
-   * The task to add.
+   * Required. The task to add.
    * Task names have the following format:
    * `projects/PROJECT_ID/locations/LOCATION_ID/queues/QUEUE_ID/tasks/TASK_ID`.
    * The user can optionally specify a task [name][google.cloud.tasks.v2beta3.Task.name]. If a
@@ -241,7 +242,8 @@ public final class CreateTaskRequest extends com.google.protobuf.GeneratedMessag
    * efficiently.
    * </pre>
    *
-   * <code>.google.cloud.tasks.v2beta3.Task task = 2;</code>
+   * <code>.google.cloud.tasks.v2beta3.Task task = 2 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   public com.google.cloud.tasks.v2beta3.Task getTask() {
     return task_ == null ? com.google.cloud.tasks.v2beta3.Task.getDefaultInstance() : task_;
@@ -250,8 +252,7 @@ public final class CreateTaskRequest extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * Required.
-   * The task to add.
+   * Required. The task to add.
    * Task names have the following format:
    * `projects/PROJECT_ID/locations/LOCATION_ID/queues/QUEUE_ID/tasks/TASK_ID`.
    * The user can optionally specify a task [name][google.cloud.tasks.v2beta3.Task.name]. If a
@@ -281,7 +282,8 @@ public final class CreateTaskRequest extends com.google.protobuf.GeneratedMessag
    * efficiently.
    * </pre>
    *
-   * <code>.google.cloud.tasks.v2beta3.Task task = 2;</code>
+   * <code>.google.cloud.tasks.v2beta3.Task task = 2 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   public com.google.cloud.tasks.v2beta3.TaskOrBuilder getTaskOrBuilder() {
     return getTask();
@@ -700,13 +702,14 @@ public final class CreateTaskRequest extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Required.
-     * The queue name. For example:
+     * Required. The queue name. For example:
      * `projects/PROJECT_ID/locations/LOCATION_ID/queues/QUEUE_ID`
      * The queue must already exist.
      * </pre>
      *
-     * <code>string parent = 1;</code>
+     * <code>
+     * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      */
     public java.lang.String getParent() {
       java.lang.Object ref = parent_;
@@ -723,13 +726,14 @@ public final class CreateTaskRequest extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Required.
-     * The queue name. For example:
+     * Required. The queue name. For example:
      * `projects/PROJECT_ID/locations/LOCATION_ID/queues/QUEUE_ID`
      * The queue must already exist.
      * </pre>
      *
-     * <code>string parent = 1;</code>
+     * <code>
+     * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      */
     public com.google.protobuf.ByteString getParentBytes() {
       java.lang.Object ref = parent_;
@@ -746,13 +750,14 @@ public final class CreateTaskRequest extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Required.
-     * The queue name. For example:
+     * Required. The queue name. For example:
      * `projects/PROJECT_ID/locations/LOCATION_ID/queues/QUEUE_ID`
      * The queue must already exist.
      * </pre>
      *
-     * <code>string parent = 1;</code>
+     * <code>
+     * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      */
     public Builder setParent(java.lang.String value) {
       if (value == null) {
@@ -767,13 +772,14 @@ public final class CreateTaskRequest extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Required.
-     * The queue name. For example:
+     * Required. The queue name. For example:
      * `projects/PROJECT_ID/locations/LOCATION_ID/queues/QUEUE_ID`
      * The queue must already exist.
      * </pre>
      *
-     * <code>string parent = 1;</code>
+     * <code>
+     * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      */
     public Builder clearParent() {
 
@@ -785,13 +791,14 @@ public final class CreateTaskRequest extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Required.
-     * The queue name. For example:
+     * Required. The queue name. For example:
      * `projects/PROJECT_ID/locations/LOCATION_ID/queues/QUEUE_ID`
      * The queue must already exist.
      * </pre>
      *
-     * <code>string parent = 1;</code>
+     * <code>
+     * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      */
     public Builder setParentBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -814,8 +821,7 @@ public final class CreateTaskRequest extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Required.
-     * The task to add.
+     * Required. The task to add.
      * Task names have the following format:
      * `projects/PROJECT_ID/locations/LOCATION_ID/queues/QUEUE_ID/tasks/TASK_ID`.
      * The user can optionally specify a task [name][google.cloud.tasks.v2beta3.Task.name]. If a
@@ -845,7 +851,8 @@ public final class CreateTaskRequest extends com.google.protobuf.GeneratedMessag
      * efficiently.
      * </pre>
      *
-     * <code>.google.cloud.tasks.v2beta3.Task task = 2;</code>
+     * <code>.google.cloud.tasks.v2beta3.Task task = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public boolean hasTask() {
       return taskBuilder_ != null || task_ != null;
@@ -854,8 +861,7 @@ public final class CreateTaskRequest extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Required.
-     * The task to add.
+     * Required. The task to add.
      * Task names have the following format:
      * `projects/PROJECT_ID/locations/LOCATION_ID/queues/QUEUE_ID/tasks/TASK_ID`.
      * The user can optionally specify a task [name][google.cloud.tasks.v2beta3.Task.name]. If a
@@ -885,7 +891,8 @@ public final class CreateTaskRequest extends com.google.protobuf.GeneratedMessag
      * efficiently.
      * </pre>
      *
-     * <code>.google.cloud.tasks.v2beta3.Task task = 2;</code>
+     * <code>.google.cloud.tasks.v2beta3.Task task = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public com.google.cloud.tasks.v2beta3.Task getTask() {
       if (taskBuilder_ == null) {
@@ -898,8 +905,7 @@ public final class CreateTaskRequest extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Required.
-     * The task to add.
+     * Required. The task to add.
      * Task names have the following format:
      * `projects/PROJECT_ID/locations/LOCATION_ID/queues/QUEUE_ID/tasks/TASK_ID`.
      * The user can optionally specify a task [name][google.cloud.tasks.v2beta3.Task.name]. If a
@@ -929,7 +935,8 @@ public final class CreateTaskRequest extends com.google.protobuf.GeneratedMessag
      * efficiently.
      * </pre>
      *
-     * <code>.google.cloud.tasks.v2beta3.Task task = 2;</code>
+     * <code>.google.cloud.tasks.v2beta3.Task task = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder setTask(com.google.cloud.tasks.v2beta3.Task value) {
       if (taskBuilder_ == null) {
@@ -948,8 +955,7 @@ public final class CreateTaskRequest extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Required.
-     * The task to add.
+     * Required. The task to add.
      * Task names have the following format:
      * `projects/PROJECT_ID/locations/LOCATION_ID/queues/QUEUE_ID/tasks/TASK_ID`.
      * The user can optionally specify a task [name][google.cloud.tasks.v2beta3.Task.name]. If a
@@ -979,7 +985,8 @@ public final class CreateTaskRequest extends com.google.protobuf.GeneratedMessag
      * efficiently.
      * </pre>
      *
-     * <code>.google.cloud.tasks.v2beta3.Task task = 2;</code>
+     * <code>.google.cloud.tasks.v2beta3.Task task = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder setTask(com.google.cloud.tasks.v2beta3.Task.Builder builderForValue) {
       if (taskBuilder_ == null) {
@@ -995,8 +1002,7 @@ public final class CreateTaskRequest extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Required.
-     * The task to add.
+     * Required. The task to add.
      * Task names have the following format:
      * `projects/PROJECT_ID/locations/LOCATION_ID/queues/QUEUE_ID/tasks/TASK_ID`.
      * The user can optionally specify a task [name][google.cloud.tasks.v2beta3.Task.name]. If a
@@ -1026,7 +1032,8 @@ public final class CreateTaskRequest extends com.google.protobuf.GeneratedMessag
      * efficiently.
      * </pre>
      *
-     * <code>.google.cloud.tasks.v2beta3.Task task = 2;</code>
+     * <code>.google.cloud.tasks.v2beta3.Task task = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder mergeTask(com.google.cloud.tasks.v2beta3.Task value) {
       if (taskBuilder_ == null) {
@@ -1047,8 +1054,7 @@ public final class CreateTaskRequest extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Required.
-     * The task to add.
+     * Required. The task to add.
      * Task names have the following format:
      * `projects/PROJECT_ID/locations/LOCATION_ID/queues/QUEUE_ID/tasks/TASK_ID`.
      * The user can optionally specify a task [name][google.cloud.tasks.v2beta3.Task.name]. If a
@@ -1078,7 +1084,8 @@ public final class CreateTaskRequest extends com.google.protobuf.GeneratedMessag
      * efficiently.
      * </pre>
      *
-     * <code>.google.cloud.tasks.v2beta3.Task task = 2;</code>
+     * <code>.google.cloud.tasks.v2beta3.Task task = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder clearTask() {
       if (taskBuilder_ == null) {
@@ -1095,8 +1102,7 @@ public final class CreateTaskRequest extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Required.
-     * The task to add.
+     * Required. The task to add.
      * Task names have the following format:
      * `projects/PROJECT_ID/locations/LOCATION_ID/queues/QUEUE_ID/tasks/TASK_ID`.
      * The user can optionally specify a task [name][google.cloud.tasks.v2beta3.Task.name]. If a
@@ -1126,7 +1132,8 @@ public final class CreateTaskRequest extends com.google.protobuf.GeneratedMessag
      * efficiently.
      * </pre>
      *
-     * <code>.google.cloud.tasks.v2beta3.Task task = 2;</code>
+     * <code>.google.cloud.tasks.v2beta3.Task task = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public com.google.cloud.tasks.v2beta3.Task.Builder getTaskBuilder() {
 
@@ -1137,8 +1144,7 @@ public final class CreateTaskRequest extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Required.
-     * The task to add.
+     * Required. The task to add.
      * Task names have the following format:
      * `projects/PROJECT_ID/locations/LOCATION_ID/queues/QUEUE_ID/tasks/TASK_ID`.
      * The user can optionally specify a task [name][google.cloud.tasks.v2beta3.Task.name]. If a
@@ -1168,7 +1174,8 @@ public final class CreateTaskRequest extends com.google.protobuf.GeneratedMessag
      * efficiently.
      * </pre>
      *
-     * <code>.google.cloud.tasks.v2beta3.Task task = 2;</code>
+     * <code>.google.cloud.tasks.v2beta3.Task task = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public com.google.cloud.tasks.v2beta3.TaskOrBuilder getTaskOrBuilder() {
       if (taskBuilder_ != null) {
@@ -1181,8 +1188,7 @@ public final class CreateTaskRequest extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Required.
-     * The task to add.
+     * Required. The task to add.
      * Task names have the following format:
      * `projects/PROJECT_ID/locations/LOCATION_ID/queues/QUEUE_ID/tasks/TASK_ID`.
      * The user can optionally specify a task [name][google.cloud.tasks.v2beta3.Task.name]. If a
@@ -1212,7 +1218,8 @@ public final class CreateTaskRequest extends com.google.protobuf.GeneratedMessag
      * efficiently.
      * </pre>
      *
-     * <code>.google.cloud.tasks.v2beta3.Task task = 2;</code>
+     * <code>.google.cloud.tasks.v2beta3.Task task = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.tasks.v2beta3.Task,

@@ -17,9 +17,9 @@ public interface CompanyOrBuilder
    * company is created.
    * The format is
    * "projects/{project_id}/tenants/{tenant_id}/companies/{company_id}", for
-   * example, "projects/api-test-project/tenants/foo/companies/bar".
-   * Tenant id is optional and the default tenant is used if unspecified, for
-   * example, "projects/api-test-project/companies/bar".
+   * example, "projects/foo/tenants/bar/companies/baz".
+   * If tenant id is unspecified, the default tenant is used. For
+   * example, "projects/foo/companies/bar".
    * </pre>
    *
    * <code>string name = 1;</code>
@@ -34,9 +34,9 @@ public interface CompanyOrBuilder
    * company is created.
    * The format is
    * "projects/{project_id}/tenants/{tenant_id}/companies/{company_id}", for
-   * example, "projects/api-test-project/tenants/foo/companies/bar".
-   * Tenant id is optional and the default tenant is used if unspecified, for
-   * example, "projects/api-test-project/companies/bar".
+   * example, "projects/foo/tenants/bar/companies/baz".
+   * If tenant id is unspecified, the default tenant is used. For
+   * example, "projects/foo/companies/bar".
    * </pre>
    *
    * <code>string name = 1;</code>
@@ -50,7 +50,7 @@ public interface CompanyOrBuilder
    * Required. The display name of the company, for example, "Google LLC".
    * </pre>
    *
-   * <code>string display_name = 2;</code>
+   * <code>string display_name = 2 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   java.lang.String getDisplayName();
   /**
@@ -60,7 +60,7 @@ public interface CompanyOrBuilder
    * Required. The display name of the company, for example, "Google LLC".
    * </pre>
    *
-   * <code>string display_name = 2;</code>
+   * <code>string display_name = 2 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   com.google.protobuf.ByteString getDisplayNameBytes();
 
@@ -73,7 +73,7 @@ public interface CompanyOrBuilder
    * The maximum number of allowed characters is 255.
    * </pre>
    *
-   * <code>string external_id = 3;</code>
+   * <code>string external_id = 3 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   java.lang.String getExternalId();
   /**
@@ -85,7 +85,7 @@ public interface CompanyOrBuilder
    * The maximum number of allowed characters is 255.
    * </pre>
    *
-   * <code>string external_id = 3;</code>
+   * <code>string external_id = 3 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   com.google.protobuf.ByteString getExternalIdBytes();
 
@@ -93,7 +93,7 @@ public interface CompanyOrBuilder
    *
    *
    * <pre>
-   * Optional. The employer's company size.
+   * The employer's company size.
    * </pre>
    *
    * <code>.google.cloud.talent.v4beta1.CompanySize size = 4;</code>
@@ -103,7 +103,7 @@ public interface CompanyOrBuilder
    *
    *
    * <pre>
-   * Optional. The employer's company size.
+   * The employer's company size.
    * </pre>
    *
    * <code>.google.cloud.talent.v4beta1.CompanySize size = 4;</code>
@@ -114,10 +114,10 @@ public interface CompanyOrBuilder
    *
    *
    * <pre>
-   * Optional. The street address of the company's main headquarters, which may
-   * be different from the job location. The service attempts to geolocate the
-   * provided address, and populates a more specific location wherever possible
-   * in
+   * The street address of the company's main headquarters, which may be
+   * different from the job location. The service attempts
+   * to geolocate the provided address, and populates a more specific
+   * location wherever possible in
    * [DerivedInfo.headquarters_location][google.cloud.talent.v4beta1.Company.DerivedInfo.headquarters_location].
    * </pre>
    *
@@ -128,10 +128,10 @@ public interface CompanyOrBuilder
    *
    *
    * <pre>
-   * Optional. The street address of the company's main headquarters, which may
-   * be different from the job location. The service attempts to geolocate the
-   * provided address, and populates a more specific location wherever possible
-   * in
+   * The street address of the company's main headquarters, which may be
+   * different from the job location. The service attempts
+   * to geolocate the provided address, and populates a more specific
+   * location wherever possible in
    * [DerivedInfo.headquarters_location][google.cloud.talent.v4beta1.Company.DerivedInfo.headquarters_location].
    * </pre>
    *
@@ -143,7 +143,7 @@ public interface CompanyOrBuilder
    *
    *
    * <pre>
-   * Optional. Set to true if it is the hiring agency that post jobs for other
+   * Set to true if it is the hiring agency that post jobs for other
    * employers.
    * Defaults to false if not provided.
    * </pre>
@@ -156,7 +156,7 @@ public interface CompanyOrBuilder
    *
    *
    * <pre>
-   * Optional. Equal Employment Opportunity legal disclaimer text to be
+   * Equal Employment Opportunity legal disclaimer text to be
    * associated with all jobs, and typically to be displayed in all
    * roles.
    * The maximum number of allowed characters is 500.
@@ -169,7 +169,7 @@ public interface CompanyOrBuilder
    *
    *
    * <pre>
-   * Optional. Equal Employment Opportunity legal disclaimer text to be
+   * Equal Employment Opportunity legal disclaimer text to be
    * associated with all jobs, and typically to be displayed in all
    * roles.
    * The maximum number of allowed characters is 500.
@@ -183,7 +183,7 @@ public interface CompanyOrBuilder
    *
    *
    * <pre>
-   * Optional. The URI representing the company's primary web site or home page,
+   * The URI representing the company's primary web site or home page,
    * for example, "https://www.google.com".
    * The maximum number of allowed characters is 255.
    * </pre>
@@ -195,7 +195,7 @@ public interface CompanyOrBuilder
    *
    *
    * <pre>
-   * Optional. The URI representing the company's primary web site or home page,
+   * The URI representing the company's primary web site or home page,
    * for example, "https://www.google.com".
    * The maximum number of allowed characters is 255.
    * </pre>
@@ -208,8 +208,8 @@ public interface CompanyOrBuilder
    *
    *
    * <pre>
-   * Optional. The URI to employer's career site or careers page on the
-   * employer's web site, for example, "https://careers.google.com".
+   * The URI to employer's career site or careers page on the employer's web
+   * site, for example, "https://careers.google.com".
    * </pre>
    *
    * <code>string career_site_uri = 9;</code>
@@ -219,8 +219,8 @@ public interface CompanyOrBuilder
    *
    *
    * <pre>
-   * Optional. The URI to employer's career site or careers page on the
-   * employer's web site, for example, "https://careers.google.com".
+   * The URI to employer's career site or careers page on the employer's web
+   * site, for example, "https://careers.google.com".
    * </pre>
    *
    * <code>string career_site_uri = 9;</code>
@@ -231,7 +231,7 @@ public interface CompanyOrBuilder
    *
    *
    * <pre>
-   * Optional. A URI that hosts the employer's company logo.
+   * A URI that hosts the employer's company logo.
    * </pre>
    *
    * <code>string image_uri = 10;</code>
@@ -241,7 +241,7 @@ public interface CompanyOrBuilder
    *
    *
    * <pre>
-   * Optional. A URI that hosts the employer's company logo.
+   * A URI that hosts the employer's company logo.
    * </pre>
    *
    * <code>string image_uri = 10;</code>
@@ -252,7 +252,7 @@ public interface CompanyOrBuilder
    *
    *
    * <pre>
-   * Optional. A list of keys of filterable
+   * A list of keys of filterable
    * [Job.custom_attributes][google.cloud.talent.v4beta1.Job.custom_attributes],
    * whose corresponding `string_values` are used in keyword searches. Jobs with
    * `string_values` under these specified field keys are returned if any
@@ -268,7 +268,7 @@ public interface CompanyOrBuilder
    *
    *
    * <pre>
-   * Optional. A list of keys of filterable
+   * A list of keys of filterable
    * [Job.custom_attributes][google.cloud.talent.v4beta1.Job.custom_attributes],
    * whose corresponding `string_values` are used in keyword searches. Jobs with
    * `string_values` under these specified field keys are returned if any
@@ -284,7 +284,7 @@ public interface CompanyOrBuilder
    *
    *
    * <pre>
-   * Optional. A list of keys of filterable
+   * A list of keys of filterable
    * [Job.custom_attributes][google.cloud.talent.v4beta1.Job.custom_attributes],
    * whose corresponding `string_values` are used in keyword searches. Jobs with
    * `string_values` under these specified field keys are returned if any
@@ -300,7 +300,7 @@ public interface CompanyOrBuilder
    *
    *
    * <pre>
-   * Optional. A list of keys of filterable
+   * A list of keys of filterable
    * [Job.custom_attributes][google.cloud.talent.v4beta1.Job.custom_attributes],
    * whose corresponding `string_values` are used in keyword searches. Jobs with
    * `string_values` under these specified field keys are returned if any
@@ -320,7 +320,9 @@ public interface CompanyOrBuilder
    * Output only. Derived details about the company.
    * </pre>
    *
-   * <code>.google.cloud.talent.v4beta1.Company.DerivedInfo derived_info = 12;</code>
+   * <code>
+   * .google.cloud.talent.v4beta1.Company.DerivedInfo derived_info = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    */
   boolean hasDerivedInfo();
   /**
@@ -330,7 +332,9 @@ public interface CompanyOrBuilder
    * Output only. Derived details about the company.
    * </pre>
    *
-   * <code>.google.cloud.talent.v4beta1.Company.DerivedInfo derived_info = 12;</code>
+   * <code>
+   * .google.cloud.talent.v4beta1.Company.DerivedInfo derived_info = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    */
   com.google.cloud.talent.v4beta1.Company.DerivedInfo getDerivedInfo();
   /**
@@ -340,7 +344,9 @@ public interface CompanyOrBuilder
    * Output only. Derived details about the company.
    * </pre>
    *
-   * <code>.google.cloud.talent.v4beta1.Company.DerivedInfo derived_info = 12;</code>
+   * <code>
+   * .google.cloud.talent.v4beta1.Company.DerivedInfo derived_info = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    */
   com.google.cloud.talent.v4beta1.Company.DerivedInfoOrBuilder getDerivedInfoOrBuilder();
 
@@ -353,7 +359,7 @@ public interface CompanyOrBuilder
    * abusive, or spammy.
    * </pre>
    *
-   * <code>bool suspended = 13;</code>
+   * <code>bool suspended = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    */
   boolean getSuspended();
 }

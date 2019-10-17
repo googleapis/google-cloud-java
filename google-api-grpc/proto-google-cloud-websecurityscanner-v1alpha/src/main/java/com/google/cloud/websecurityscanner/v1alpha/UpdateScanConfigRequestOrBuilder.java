@@ -12,39 +12,42 @@ public interface UpdateScanConfigRequestOrBuilder
    *
    *
    * <pre>
-   * Required.
-   * The ScanConfig to be updated. The name field must be set to identify the
+   * Required. The ScanConfig to be updated. The name field must be set to identify the
    * resource to be updated. The values of fields not covered by the mask
    * will be ignored.
    * </pre>
    *
-   * <code>.google.cloud.websecurityscanner.v1alpha.ScanConfig scan_config = 2;</code>
+   * <code>
+   * .google.cloud.websecurityscanner.v1alpha.ScanConfig scan_config = 2 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   boolean hasScanConfig();
   /**
    *
    *
    * <pre>
-   * Required.
-   * The ScanConfig to be updated. The name field must be set to identify the
+   * Required. The ScanConfig to be updated. The name field must be set to identify the
    * resource to be updated. The values of fields not covered by the mask
    * will be ignored.
    * </pre>
    *
-   * <code>.google.cloud.websecurityscanner.v1alpha.ScanConfig scan_config = 2;</code>
+   * <code>
+   * .google.cloud.websecurityscanner.v1alpha.ScanConfig scan_config = 2 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   com.google.cloud.websecurityscanner.v1alpha.ScanConfig getScanConfig();
   /**
    *
    *
    * <pre>
-   * Required.
-   * The ScanConfig to be updated. The name field must be set to identify the
+   * Required. The ScanConfig to be updated. The name field must be set to identify the
    * resource to be updated. The values of fields not covered by the mask
    * will be ignored.
    * </pre>
    *
-   * <code>.google.cloud.websecurityscanner.v1alpha.ScanConfig scan_config = 2;</code>
+   * <code>
+   * .google.cloud.websecurityscanner.v1alpha.ScanConfig scan_config = 2 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   com.google.cloud.websecurityscanner.v1alpha.ScanConfigOrBuilder getScanConfigOrBuilder();
 
@@ -52,39 +55,39 @@ public interface UpdateScanConfigRequestOrBuilder
    *
    *
    * <pre>
-   * Required.
-   * The update mask applies to the resource. For the `FieldMask` definition,
+   * Required. The update mask applies to the resource. For the `FieldMask` definition,
    * see
    * https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#fieldmask
    * </pre>
    *
-   * <code>.google.protobuf.FieldMask update_mask = 3;</code>
+   * <code>.google.protobuf.FieldMask update_mask = 3 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   boolean hasUpdateMask();
   /**
    *
    *
    * <pre>
-   * Required.
-   * The update mask applies to the resource. For the `FieldMask` definition,
+   * Required. The update mask applies to the resource. For the `FieldMask` definition,
    * see
    * https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#fieldmask
    * </pre>
    *
-   * <code>.google.protobuf.FieldMask update_mask = 3;</code>
+   * <code>.google.protobuf.FieldMask update_mask = 3 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   com.google.protobuf.FieldMask getUpdateMask();
   /**
    *
    *
    * <pre>
-   * Required.
-   * The update mask applies to the resource. For the `FieldMask` definition,
+   * Required. The update mask applies to the resource. For the `FieldMask` definition,
    * see
    * https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#fieldmask
    * </pre>
    *
-   * <code>.google.protobuf.FieldMask update_mask = 3;</code>
+   * <code>.google.protobuf.FieldMask update_mask = 3 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   com.google.protobuf.FieldMaskOrBuilder getUpdateMaskOrBuilder();
 }

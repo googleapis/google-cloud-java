@@ -2221,12 +2221,8 @@ public final class Target extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * A client provided target ID.
-   * If not set, the server will assign an ID for the target.
-   * Used for resuming a target without changing IDs. The IDs can either be
-   * client-assigned or be server-assigned in a previous stream. All targets
-   * with client provided IDs must be added before adding a target that needs
-   * a server-assigned id.
+   * The target ID that identifies the target on the stream. Must be a positive
+   * number and non-zero.
    * </pre>
    *
    * <code>int32 target_id = 5;</code>
@@ -3413,12 +3409,8 @@ public final class Target extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A client provided target ID.
-     * If not set, the server will assign an ID for the target.
-     * Used for resuming a target without changing IDs. The IDs can either be
-     * client-assigned or be server-assigned in a previous stream. All targets
-     * with client provided IDs must be added before adding a target that needs
-     * a server-assigned id.
+     * The target ID that identifies the target on the stream. Must be a positive
+     * number and non-zero.
      * </pre>
      *
      * <code>int32 target_id = 5;</code>
@@ -3430,12 +3422,8 @@ public final class Target extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A client provided target ID.
-     * If not set, the server will assign an ID for the target.
-     * Used for resuming a target without changing IDs. The IDs can either be
-     * client-assigned or be server-assigned in a previous stream. All targets
-     * with client provided IDs must be added before adding a target that needs
-     * a server-assigned id.
+     * The target ID that identifies the target on the stream. Must be a positive
+     * number and non-zero.
      * </pre>
      *
      * <code>int32 target_id = 5;</code>
@@ -3450,12 +3438,8 @@ public final class Target extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A client provided target ID.
-     * If not set, the server will assign an ID for the target.
-     * Used for resuming a target without changing IDs. The IDs can either be
-     * client-assigned or be server-assigned in a previous stream. All targets
-     * with client provided IDs must be added before adding a target that needs
-     * a server-assigned id.
+     * The target ID that identifies the target on the stream. Must be a positive
+     * number and non-zero.
      * </pre>
      *
      * <code>int32 target_id = 5;</code>

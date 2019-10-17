@@ -16,7 +16,9 @@ public interface SchemaOrBuilder
    * can be specified.
    * </pre>
    *
-   * <code>repeated .google.cloud.datacatalog.v1beta1.ColumnSchema columns = 2;</code>
+   * <code>
+   * repeated .google.cloud.datacatalog.v1beta1.ColumnSchema columns = 2 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   java.util.List<com.google.cloud.datacatalog.ColumnSchema> getColumnsList();
   /**
@@ -27,7 +29,9 @@ public interface SchemaOrBuilder
    * can be specified.
    * </pre>
    *
-   * <code>repeated .google.cloud.datacatalog.v1beta1.ColumnSchema columns = 2;</code>
+   * <code>
+   * repeated .google.cloud.datacatalog.v1beta1.ColumnSchema columns = 2 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   com.google.cloud.datacatalog.ColumnSchema getColumns(int index);
   /**
@@ -38,7 +42,9 @@ public interface SchemaOrBuilder
    * can be specified.
    * </pre>
    *
-   * <code>repeated .google.cloud.datacatalog.v1beta1.ColumnSchema columns = 2;</code>
+   * <code>
+   * repeated .google.cloud.datacatalog.v1beta1.ColumnSchema columns = 2 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   int getColumnsCount();
   /**
@@ -49,7 +55,9 @@ public interface SchemaOrBuilder
    * can be specified.
    * </pre>
    *
-   * <code>repeated .google.cloud.datacatalog.v1beta1.ColumnSchema columns = 2;</code>
+   * <code>
+   * repeated .google.cloud.datacatalog.v1beta1.ColumnSchema columns = 2 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   java.util.List<? extends com.google.cloud.datacatalog.ColumnSchemaOrBuilder>
       getColumnsOrBuilderList();
@@ -61,7 +69,9 @@ public interface SchemaOrBuilder
    * can be specified.
    * </pre>
    *
-   * <code>repeated .google.cloud.datacatalog.v1beta1.ColumnSchema columns = 2;</code>
+   * <code>
+   * repeated .google.cloud.datacatalog.v1beta1.ColumnSchema columns = 2 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   com.google.cloud.datacatalog.ColumnSchemaOrBuilder getColumnsOrBuilder(int index);
 }

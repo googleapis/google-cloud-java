@@ -239,7 +239,8 @@ public class CloudRedisStubSettings extends StubSettings<CloudRedisStubSettings>
 
   /** Returns a builder for the default ChannelProvider for this service. */
   public static InstantiatingGrpcChannelProvider.Builder defaultGrpcTransportProviderBuilder() {
-    return InstantiatingGrpcChannelProvider.newBuilder();
+    return InstantiatingGrpcChannelProvider.newBuilder()
+        .setMaxInboundMessageSize(Integer.MAX_VALUE);
   }
 
   public static TransportChannelProvider defaultTransportChannelProvider() {
@@ -530,7 +531,7 @@ public class CloudRedisStubSettings extends StubSettings<CloudRedisStubSettings>
                       .setInitialRpcTimeout(Duration.ZERO) // ignored
                       .setRpcTimeoutMultiplier(1.0) // ignored
                       .setMaxRpcTimeout(Duration.ZERO) // ignored
-                      .setTotalTimeout(Duration.ofMillis(1200000L))
+                      .setTotalTimeout(Duration.ofMillis(7200000L))
                       .build()));
       builder
           .updateInstanceOperationSettings()

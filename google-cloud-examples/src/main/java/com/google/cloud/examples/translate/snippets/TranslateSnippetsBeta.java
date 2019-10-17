@@ -405,7 +405,7 @@ public class TranslateSnippetsBeta {
       // Call the API
       TranslateTextResponse response = translationServiceClient.translateText(translateTextRequest);
       System.out.format(
-          "Translated text: %s", response.getTranslationsList().get(0).getTranslatedText());
+          "Translated text: %s", response.getGlossaryTranslationsList().get(0).getTranslatedText());
       return response;
 
     } catch (Exception e) {

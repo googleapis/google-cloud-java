@@ -48,7 +48,7 @@ import javax.annotation.Generated;
 // AUTO-GENERATED DOCUMENTATION AND SERVICE
 /**
  * Service Description: The UptimeCheckService API is used to manage (list, create, delete, edit)
- * uptime check configurations in the Stackdriver Monitoring product. An uptime check is a piece of
+ * Uptime check configurations in the Stackdriver Monitoring product. An Uptime check is a piece of
  * configuration that determines which resources and services to monitor for availability. These
  * configurations can also be configured interactively by navigating to the [Cloud Console]
  * (http://console.cloud.google.com), selecting the appropriate project, clicking on "Monitoring" on
@@ -172,8 +172,8 @@ public class UptimeCheckServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Lists the existing valid uptime check configurations for the project, leaving out any invalid
-   * configurations.
+   * Lists the existing valid Uptime check configurations for the project (leaving out any invalid
+   * configurations).
    *
    * <p>Sample code:
    *
@@ -186,7 +186,7 @@ public class UptimeCheckServiceClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param parent The project whose uptime check configurations are listed. The format is
+   * @param parent The project whose Uptime check configurations are listed. The format is
    *     `projects/[PROJECT_ID]`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -198,8 +198,8 @@ public class UptimeCheckServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Lists the existing valid uptime check configurations for the project, leaving out any invalid
-   * configurations.
+   * Lists the existing valid Uptime check configurations for the project (leaving out any invalid
+   * configurations).
    *
    * <p>Sample code:
    *
@@ -225,8 +225,8 @@ public class UptimeCheckServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Lists the existing valid uptime check configurations for the project, leaving out any invalid
-   * configurations.
+   * Lists the existing valid Uptime check configurations for the project (leaving out any invalid
+   * configurations).
    *
    * <p>Sample code:
    *
@@ -251,8 +251,8 @@ public class UptimeCheckServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Lists the existing valid uptime check configurations for the project, leaving out any invalid
-   * configurations.
+   * Lists the existing valid Uptime check configurations for the project (leaving out any invalid
+   * configurations).
    *
    * <p>Sample code:
    *
@@ -284,7 +284,7 @@ public class UptimeCheckServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Gets a single uptime check configuration.
+   * Gets a single Uptime check configuration.
    *
    * <p>Sample code:
    *
@@ -295,7 +295,7 @@ public class UptimeCheckServiceClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param name The uptime check configuration to retrieve. The format is
+   * @param name The Uptime check configuration to retrieve. The format is
    *     `projects/[PROJECT_ID]/uptimeCheckConfigs/[UPTIME_CHECK_ID]`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -310,7 +310,7 @@ public class UptimeCheckServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Gets a single uptime check configuration.
+   * Gets a single Uptime check configuration.
    *
    * <p>Sample code:
    *
@@ -321,7 +321,7 @@ public class UptimeCheckServiceClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param name The uptime check configuration to retrieve. The format is
+   * @param name The Uptime check configuration to retrieve. The format is
    *     `projects/[PROJECT_ID]/uptimeCheckConfigs/[UPTIME_CHECK_ID]`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -334,7 +334,7 @@ public class UptimeCheckServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Gets a single uptime check configuration.
+   * Gets a single Uptime check configuration.
    *
    * <p>Sample code:
    *
@@ -357,7 +357,7 @@ public class UptimeCheckServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Gets a single uptime check configuration.
+   * Gets a single Uptime check configuration.
    *
    * <p>Sample code:
    *
@@ -380,7 +380,7 @@ public class UptimeCheckServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Creates a new uptime check configuration.
+   * Creates a new Uptime check configuration.
    *
    * <p>Sample code:
    *
@@ -392,9 +392,9 @@ public class UptimeCheckServiceClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param parent The project in which to create the uptime check. The format is
+   * @param parent The project in which to create the Uptime check. The format is
    *     `projects/[PROJECT_ID]`.
-   * @param uptimeCheckConfig The new uptime check configuration.
+   * @param uptimeCheckConfig The new Uptime check configuration.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final UptimeCheckConfig createUptimeCheckConfig(
@@ -410,7 +410,7 @@ public class UptimeCheckServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Creates a new uptime check configuration.
+   * Creates a new Uptime check configuration.
    *
    * <p>Sample code:
    *
@@ -435,7 +435,7 @@ public class UptimeCheckServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Creates a new uptime check configuration.
+   * Creates a new Uptime check configuration.
    *
    * <p>Sample code:
    *
@@ -460,9 +460,9 @@ public class UptimeCheckServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Updates an uptime check configuration. You can either replace the entire configuration with a
+   * Updates an Uptime check configuration. You can either replace the entire configuration with a
    * new one or replace only certain fields in the current configuration by specifying the fields to
-   * be updated via `"updateMask"`. Returns the updated configuration.
+   * be updated via `updateMask`. Returns the updated configuration.
    *
    * <p>Sample code:
    *
@@ -473,11 +473,11 @@ public class UptimeCheckServiceClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param uptimeCheckConfig Required. If an `"updateMask"` has been specified, this field gives
-   *     the values for the set of fields mentioned in the `"updateMask"`. If an `"updateMask"` has
-   *     not been given, this uptime check configuration replaces the current configuration. If a
-   *     field is mentioned in `"updateMask"` but the corresonding field is omitted in this partial
-   *     uptime check configuration, it has the effect of deleting/clearing the field from the
+   * @param uptimeCheckConfig Required. If an `updateMask` has been specified, this field gives the
+   *     values for the set of fields mentioned in the `updateMask`. If an `updateMask` has not been
+   *     given, this Uptime check configuration replaces the current configuration. If a field is
+   *     mentioned in `updateMask` but the corresonding field is omitted in this partial Uptime
+   *     check configuration, it has the effect of deleting/clearing the field from the
    *     configuration on the server.
    *     <p>The following fields can be updated: `display_name`, `http_check`, `tcp_check`,
    *     `timeout`, `content_matchers`, and `selected_regions`.
@@ -492,9 +492,9 @@ public class UptimeCheckServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Updates an uptime check configuration. You can either replace the entire configuration with a
+   * Updates an Uptime check configuration. You can either replace the entire configuration with a
    * new one or replace only certain fields in the current configuration by specifying the fields to
-   * be updated via `"updateMask"`. Returns the updated configuration.
+   * be updated via `updateMask`. Returns the updated configuration.
    *
    * <p>Sample code:
    *
@@ -517,9 +517,9 @@ public class UptimeCheckServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Updates an uptime check configuration. You can either replace the entire configuration with a
+   * Updates an Uptime check configuration. You can either replace the entire configuration with a
    * new one or replace only certain fields in the current configuration by specifying the fields to
-   * be updated via `"updateMask"`. Returns the updated configuration.
+   * be updated via `updateMask`. Returns the updated configuration.
    *
    * <p>Sample code:
    *
@@ -542,7 +542,7 @@ public class UptimeCheckServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Deletes an uptime check configuration. Note that this method will fail if the uptime check
+   * Deletes an Uptime check configuration. Note that this method will fail if the Uptime check
    * configuration is referenced by an alert policy or other dependent configs that would be
    * rendered invalid by the deletion.
    *
@@ -555,7 +555,7 @@ public class UptimeCheckServiceClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param name The uptime check configuration to delete. The format is
+   * @param name The Uptime check configuration to delete. The format is
    *     `projects/[PROJECT_ID]/uptimeCheckConfigs/[UPTIME_CHECK_ID]`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -570,7 +570,7 @@ public class UptimeCheckServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Deletes an uptime check configuration. Note that this method will fail if the uptime check
+   * Deletes an Uptime check configuration. Note that this method will fail if the Uptime check
    * configuration is referenced by an alert policy or other dependent configs that would be
    * rendered invalid by the deletion.
    *
@@ -583,7 +583,7 @@ public class UptimeCheckServiceClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param name The uptime check configuration to delete. The format is
+   * @param name The Uptime check configuration to delete. The format is
    *     `projects/[PROJECT_ID]/uptimeCheckConfigs/[UPTIME_CHECK_ID]`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -596,7 +596,7 @@ public class UptimeCheckServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Deletes an uptime check configuration. Note that this method will fail if the uptime check
+   * Deletes an Uptime check configuration. Note that this method will fail if the Uptime check
    * configuration is referenced by an alert policy or other dependent configs that would be
    * rendered invalid by the deletion.
    *
@@ -621,7 +621,7 @@ public class UptimeCheckServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Deletes an uptime check configuration. Note that this method will fail if the uptime check
+   * Deletes an Uptime check configuration. Note that this method will fail if the Uptime check
    * configuration is referenced by an alert policy or other dependent configs that would be
    * rendered invalid by the deletion.
    *
@@ -646,7 +646,7 @@ public class UptimeCheckServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Returns the list of IPs that checkers run from
+   * Returns the list of IP addresses that checkers run from
    *
    * <p>Sample code:
    *
@@ -669,7 +669,7 @@ public class UptimeCheckServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Returns the list of IPs that checkers run from
+   * Returns the list of IP addresses that checkers run from
    *
    * <p>Sample code:
    *
@@ -691,7 +691,7 @@ public class UptimeCheckServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Returns the list of IPs that checkers run from
+   * Returns the list of IP addresses that checkers run from
    *
    * <p>Sample code:
    *

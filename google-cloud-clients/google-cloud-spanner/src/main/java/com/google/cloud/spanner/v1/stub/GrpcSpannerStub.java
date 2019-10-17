@@ -28,6 +28,8 @@ import com.google.api.gax.rpc.ServerStreamingCallable;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.common.collect.ImmutableMap;
 import com.google.protobuf.Empty;
+import com.google.spanner.v1.BatchCreateSessionsRequest;
+import com.google.spanner.v1.BatchCreateSessionsResponse;
 import com.google.spanner.v1.BeginTransactionRequest;
 import com.google.spanner.v1.CommitRequest;
 import com.google.spanner.v1.CommitResponse;
@@ -73,6 +75,16 @@ public class GrpcSpannerStub extends SpannerStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreateSessionRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Session.getDefaultInstance()))
+              .build();
+  private static final MethodDescriptor<BatchCreateSessionsRequest, BatchCreateSessionsResponse>
+      batchCreateSessionsMethodDescriptor =
+          MethodDescriptor.<BatchCreateSessionsRequest, BatchCreateSessionsResponse>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.spanner.v1.Spanner/BatchCreateSessions")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(BatchCreateSessionsRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(BatchCreateSessionsResponse.getDefaultInstance()))
               .build();
   private static final MethodDescriptor<GetSessionRequest, Session> getSessionMethodDescriptor =
       MethodDescriptor.<GetSessionRequest, Session>newBuilder()
@@ -182,6 +194,8 @@ public class GrpcSpannerStub extends SpannerStub {
   private final BackgroundResource backgroundResources;
 
   private final UnaryCallable<CreateSessionRequest, Session> createSessionCallable;
+  private final UnaryCallable<BatchCreateSessionsRequest, BatchCreateSessionsResponse>
+      batchCreateSessionsCallable;
   private final UnaryCallable<GetSessionRequest, Session> getSessionCallable;
   private final UnaryCallable<ListSessionsRequest, ListSessionsResponse> listSessionsCallable;
   private final UnaryCallable<ListSessionsRequest, ListSessionsPagedResponse>
@@ -249,6 +263,20 @@ public class GrpcSpannerStub extends SpannerStub {
                   }
                 })
             .build();
+    GrpcCallSettings<BatchCreateSessionsRequest, BatchCreateSessionsResponse>
+        batchCreateSessionsTransportSettings =
+            GrpcCallSettings.<BatchCreateSessionsRequest, BatchCreateSessionsResponse>newBuilder()
+                .setMethodDescriptor(batchCreateSessionsMethodDescriptor)
+                .setParamsExtractor(
+                    new RequestParamsExtractor<BatchCreateSessionsRequest>() {
+                      @Override
+                      public Map<String, String> extract(BatchCreateSessionsRequest request) {
+                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                        params.put("database", String.valueOf(request.getDatabase()));
+                        return params.build();
+                      }
+                    })
+                .build();
     GrpcCallSettings<GetSessionRequest, Session> getSessionTransportSettings =
         GrpcCallSettings.<GetSessionRequest, Session>newBuilder()
             .setMethodDescriptor(getSessionMethodDescriptor)
@@ -423,6 +451,11 @@ public class GrpcSpannerStub extends SpannerStub {
     this.createSessionCallable =
         callableFactory.createUnaryCallable(
             createSessionTransportSettings, settings.createSessionSettings(), clientContext);
+    this.batchCreateSessionsCallable =
+        callableFactory.createUnaryCallable(
+            batchCreateSessionsTransportSettings,
+            settings.batchCreateSessionsSettings(),
+            clientContext);
     this.getSessionCallable =
         callableFactory.createUnaryCallable(
             getSessionTransportSettings, settings.getSessionSettings(), clientContext);
@@ -473,6 +506,11 @@ public class GrpcSpannerStub extends SpannerStub {
 
   public UnaryCallable<CreateSessionRequest, Session> createSessionCallable() {
     return createSessionCallable;
+  }
+
+  public UnaryCallable<BatchCreateSessionsRequest, BatchCreateSessionsResponse>
+      batchCreateSessionsCallable() {
+    return batchCreateSessionsCallable;
   }
 
   public UnaryCallable<GetSessionRequest, Session> getSessionCallable() {

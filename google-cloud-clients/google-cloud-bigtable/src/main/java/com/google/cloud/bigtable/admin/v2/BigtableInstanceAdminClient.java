@@ -61,16 +61,20 @@ import javax.annotation.Nonnull;
  * <p>See the individual methods for example code.
  *
  * <pre>{@code
- * try(BigtableInstanceAdminClient client =  BigtableInstanceAdminClient.create("my-project")) {
- *   CreateInstanceRequest request = CreateInstanceRequest.of("my-instance")
- *     .addCluster("my-cluster", "us-east1-c", 3, StorageType.SSD);
+ * // One instance per application.
+ * BigtableInstanceAdminClient client =  BigtableInstanceAdminClient.create("my-project");
+ * CreateInstanceRequest request = CreateInstanceRequest.of("my-instance")
+ *   .addCluster("my-cluster", "us-east1-c", 3, StorageType.SSD);
  *
- *   Instance instance = client.createInstance(request);
- * }
+ * Instance instance = client.createInstance(request);
+ *
+ * // Cleanup during application shutdown.
+ * client.close();
  * }</pre>
  *
- * <p>Note: close() needs to be called on the client object to clean up resources such as threads.
- * In the example above, try-with-resources is used, which automatically calls close().
+ * <p>Creating a new client is a very expensive operation and should only be done once and shared in
+ * an application. However, close() needs to be called on the client object to clean up resources
+ * such as threads during application shutdown.
  *
  * <p>This class can be customized by passing in a custom instance of BigtableInstanceAdminSettings
  * to create(). For example:
@@ -1006,7 +1010,8 @@ public final class BigtableInstanceAdminClient implements AutoCloseable {
    */
   @SuppressWarnings("WeakerAccess")
   public void deleteAppProfile(String instanceId, String appProfileId) {
-    ApiExceptions.callAndTranslateApiException(deleteAppProfileAsync(instanceId, appProfileId));
+    ApiExceptions.callAndTranslateApiException(
+        deleteAppProfileAsync(instanceId, appProfileId, false));
   }
 
   /**
@@ -1022,8 +1027,41 @@ public final class BigtableInstanceAdminClient implements AutoCloseable {
    */
   @SuppressWarnings("WeakerAccess")
   public ApiFuture<Void> deleteAppProfileAsync(String instanceId, String appProfileId) {
+    return deleteAppProfileAsync(instanceId, appProfileId, false);
+  }
+
+  /**
+   * Deletes the specified app profile with an option to force deletion.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * client.deleteAppProfile("my-instance", "my-app-profile", true);
+   * }</pre>
+   */
+  @SuppressWarnings("WeakerAccess")
+  public void deleteAppProfile(String instanceId, String appProfileId, boolean forceDelete) {
+    ApiExceptions.callAndTranslateApiException(
+        deleteAppProfileAsync(instanceId, appProfileId, forceDelete));
+  }
+
+  /**
+   * Asynchronously deletes the specified app profile with an option to force deletion.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * ApiFuture<Void> deleteFuture = client.deleteAppProfileAsync("my-instance", "my-app-profile", true);
+   *
+   * deleteFuture.get();
+   * }</pre>
+   */
+  @SuppressWarnings("WeakerAccess")
+  public ApiFuture<Void> deleteAppProfileAsync(
+      String instanceId, String appProfileId, boolean forceDelete) {
     String name = NameUtil.formatAppProfileName(projectId, instanceId, appProfileId);
-    DeleteAppProfileRequest request = DeleteAppProfileRequest.newBuilder().setName(name).build();
+    DeleteAppProfileRequest request =
+        DeleteAppProfileRequest.newBuilder().setName(name).setIgnoreWarnings(forceDelete).build();
 
     return ApiFutures.transform(
         stub.deleteAppProfileCallable().futureCall(request),

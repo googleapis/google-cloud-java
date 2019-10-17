@@ -22,16 +22,16 @@ Add this to your pom.xml file
 <dependency>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-scheduler</artifactId>
-  <version>1.7.0</version>
+  <version>1.21.0</version>
 </dependency>
 ```
 If you are using Gradle, add this to your dependencies
 ```Groovy
-compile 'com.google.cloud:google-cloud-scheduler:1.7.0'
+compile 'com.google.cloud:google-cloud-scheduler:1.21.0'
 ```
 If you are using SBT, add this to your dependencies
 ```Scala
-libraryDependencies += "com.google.cloud" % "google-cloud-scheduler" % "1.7.0"
+libraryDependencies += "com.google.cloud" % "google-cloud-scheduler" % "1.21.0"
 ```
 [//]: # ({x-version-update-end})
 
@@ -111,4 +111,4 @@ Apache 2.0 - See [LICENSE] for more information.
 
 [cloud-scheduler]: https://cloud.google.com/scheduler/
 [scheduler-product-docs]: https://cloud.google.com/scheduler/docs/quickstart
-[scheduler-client-lib-docs]: https://googleapis.github.io/google-cloud-java/google-cloud-clients/apidocs/index.html?com/google/cloud/scheduler/v1/package-summary.html
+[scheduler-client-lib-docs]: https://googleapis.dev/java/google-cloud-clients/latest/index.html?com/google/cloud/scheduler/v1/package-summary.html

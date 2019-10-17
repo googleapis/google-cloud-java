@@ -16,7 +16,9 @@ public interface AnnotateAssessmentRequestOrBuilder
    * "projects/{project_number}/assessments/{assessment_id}".
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>
+   * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    */
   java.lang.String getName();
   /**
@@ -27,7 +29,9 @@ public interface AnnotateAssessmentRequestOrBuilder
    * "projects/{project_number}/assessments/{assessment_id}".
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>
+   * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    */
   com.google.protobuf.ByteString getNameBytes();
 
@@ -35,11 +39,11 @@ public interface AnnotateAssessmentRequestOrBuilder
    *
    *
    * <pre>
-   * The annotation that will be assigned to the Event.
+   * Required. The annotation that will be assigned to the Event.
    * </pre>
    *
    * <code>
-   * .google.cloud.recaptchaenterprise.v1beta1.AnnotateAssessmentRequest.Annotation annotation = 2;
+   * .google.cloud.recaptchaenterprise.v1beta1.AnnotateAssessmentRequest.Annotation annotation = 2 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    */
   int getAnnotationValue();
@@ -47,11 +51,11 @@ public interface AnnotateAssessmentRequestOrBuilder
    *
    *
    * <pre>
-   * The annotation that will be assigned to the Event.
+   * Required. The annotation that will be assigned to the Event.
    * </pre>
    *
    * <code>
-   * .google.cloud.recaptchaenterprise.v1beta1.AnnotateAssessmentRequest.Annotation annotation = 2;
+   * .google.cloud.recaptchaenterprise.v1beta1.AnnotateAssessmentRequest.Annotation annotation = 2 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    */
   com.google.recaptchaenterprise.v1beta1.AnnotateAssessmentRequest.Annotation getAnnotation();

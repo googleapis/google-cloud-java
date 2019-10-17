@@ -7,7 +7,6 @@ package com.google.cloud.talent.v4beta1;
  *
  *
  * <pre>
- * Output only.
  * List jobs response.
  * </pre>
  *
@@ -473,7 +472,6 @@ public final class ListJobsResponse extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Output only.
    * List jobs response.
    * </pre>
    *

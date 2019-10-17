@@ -15,7 +15,9 @@ public interface CompensationFilterOrBuilder
    * Required. Type of filter.
    * </pre>
    *
-   * <code>.google.cloud.talent.v4beta1.CompensationFilter.FilterType type = 1;</code>
+   * <code>
+   * .google.cloud.talent.v4beta1.CompensationFilter.FilterType type = 1 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   int getTypeValue();
   /**
@@ -25,7 +27,9 @@ public interface CompensationFilterOrBuilder
    * Required. Type of filter.
    * </pre>
    *
-   * <code>.google.cloud.talent.v4beta1.CompensationFilter.FilterType type = 1;</code>
+   * <code>
+   * .google.cloud.talent.v4beta1.CompensationFilter.FilterType type = 1 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   com.google.cloud.talent.v4beta1.CompensationFilter.FilterType getType();
 
@@ -37,7 +41,9 @@ public interface CompensationFilterOrBuilder
    * [CompensationInfo.CompensationUnit][google.cloud.talent.v4beta1.CompensationInfo.CompensationUnit].
    * </pre>
    *
-   * <code>repeated .google.cloud.talent.v4beta1.CompensationInfo.CompensationUnit units = 2;</code>
+   * <code>
+   * repeated .google.cloud.talent.v4beta1.CompensationInfo.CompensationUnit units = 2 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   java.util.List<com.google.cloud.talent.v4beta1.CompensationInfo.CompensationUnit> getUnitsList();
   /**
@@ -48,7 +54,9 @@ public interface CompensationFilterOrBuilder
    * [CompensationInfo.CompensationUnit][google.cloud.talent.v4beta1.CompensationInfo.CompensationUnit].
    * </pre>
    *
-   * <code>repeated .google.cloud.talent.v4beta1.CompensationInfo.CompensationUnit units = 2;</code>
+   * <code>
+   * repeated .google.cloud.talent.v4beta1.CompensationInfo.CompensationUnit units = 2 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   int getUnitsCount();
   /**
@@ -59,7 +67,9 @@ public interface CompensationFilterOrBuilder
    * [CompensationInfo.CompensationUnit][google.cloud.talent.v4beta1.CompensationInfo.CompensationUnit].
    * </pre>
    *
-   * <code>repeated .google.cloud.talent.v4beta1.CompensationInfo.CompensationUnit units = 2;</code>
+   * <code>
+   * repeated .google.cloud.talent.v4beta1.CompensationInfo.CompensationUnit units = 2 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   com.google.cloud.talent.v4beta1.CompensationInfo.CompensationUnit getUnits(int index);
   /**
@@ -70,7 +80,9 @@ public interface CompensationFilterOrBuilder
    * [CompensationInfo.CompensationUnit][google.cloud.talent.v4beta1.CompensationInfo.CompensationUnit].
    * </pre>
    *
-   * <code>repeated .google.cloud.talent.v4beta1.CompensationInfo.CompensationUnit units = 2;</code>
+   * <code>
+   * repeated .google.cloud.talent.v4beta1.CompensationInfo.CompensationUnit units = 2 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   java.util.List<java.lang.Integer> getUnitsValueList();
   /**
@@ -81,7 +93,9 @@ public interface CompensationFilterOrBuilder
    * [CompensationInfo.CompensationUnit][google.cloud.talent.v4beta1.CompensationInfo.CompensationUnit].
    * </pre>
    *
-   * <code>repeated .google.cloud.talent.v4beta1.CompensationInfo.CompensationUnit units = 2;</code>
+   * <code>
+   * repeated .google.cloud.talent.v4beta1.CompensationInfo.CompensationUnit units = 2 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   int getUnitsValue(int index);
 
@@ -89,7 +103,7 @@ public interface CompensationFilterOrBuilder
    *
    *
    * <pre>
-   * Optional. Compensation range.
+   * Compensation range.
    * </pre>
    *
    * <code>.google.cloud.talent.v4beta1.CompensationInfo.CompensationRange range = 3;</code>
@@ -99,7 +113,7 @@ public interface CompensationFilterOrBuilder
    *
    *
    * <pre>
-   * Optional. Compensation range.
+   * Compensation range.
    * </pre>
    *
    * <code>.google.cloud.talent.v4beta1.CompensationInfo.CompensationRange range = 3;</code>
@@ -109,7 +123,7 @@ public interface CompensationFilterOrBuilder
    *
    *
    * <pre>
-   * Optional. Compensation range.
+   * Compensation range.
    * </pre>
    *
    * <code>.google.cloud.talent.v4beta1.CompensationInfo.CompensationRange range = 3;</code>
@@ -120,8 +134,8 @@ public interface CompensationFilterOrBuilder
    *
    *
    * <pre>
-   * Optional. If set to true, jobs with unspecified compensation range fields
-   * are included.
+   * If set to true, jobs with unspecified compensation range fields are
+   * included.
    * </pre>
    *
    * <code>bool include_jobs_with_unspecified_compensation_range = 4;</code>

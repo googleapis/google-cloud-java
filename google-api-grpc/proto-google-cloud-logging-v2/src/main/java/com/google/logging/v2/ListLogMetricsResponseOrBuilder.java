@@ -64,7 +64,7 @@ public interface ListLogMetricsResponseOrBuilder
    *
    * <pre>
    * If there might be more results than appear in this response, then
-   * `nextPageToken` is included.  To get the next set of results, call this
+   * `nextPageToken` is included. To get the next set of results, call this
    * method again using the value of `nextPageToken` as `pageToken`.
    * </pre>
    *
@@ -76,7 +76,7 @@ public interface ListLogMetricsResponseOrBuilder
    *
    * <pre>
    * If there might be more results than appear in this response, then
-   * `nextPageToken` is included.  To get the next set of results, call this
+   * `nextPageToken` is included. To get the next set of results, call this
    * method again using the value of `nextPageToken` as `pageToken`.
    * </pre>
    *

@@ -12,24 +12,38 @@ public interface ListAutoscalingPoliciesRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The "resource name" of the region, as described
-   * in https://cloud.google.com/apis/design/resource_names of the form
-   * `projects/{project_id}/regions/{region}`
+   * Required. The "resource name" of the region or location, as described
+   * in https://cloud.google.com/apis/design/resource_names.
+   * * For `projects.regions.autoscalingPolicies.list`, the resource name
+   *   of the region has the following format:
+   *   `projects/{project_id}/regions/{region}`
+   * * For `projects.locations.autoscalingPolicies.list`, the resource name
+   *   of the location has the following format:
+   *   `projects/{project_id}/locations/{location}`
    * </pre>
    *
-   * <code>string parent = 1;</code>
+   * <code>
+   * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    */
   java.lang.String getParent();
   /**
    *
    *
    * <pre>
-   * Required. The "resource name" of the region, as described
-   * in https://cloud.google.com/apis/design/resource_names of the form
-   * `projects/{project_id}/regions/{region}`
+   * Required. The "resource name" of the region or location, as described
+   * in https://cloud.google.com/apis/design/resource_names.
+   * * For `projects.regions.autoscalingPolicies.list`, the resource name
+   *   of the region has the following format:
+   *   `projects/{project_id}/regions/{region}`
+   * * For `projects.locations.autoscalingPolicies.list`, the resource name
+   *   of the location has the following format:
+   *   `projects/{project_id}/locations/{location}`
    * </pre>
    *
-   * <code>string parent = 1;</code>
+   * <code>
+   * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    */
   com.google.protobuf.ByteString getParentBytes();
 
@@ -38,9 +52,10 @@ public interface ListAutoscalingPoliciesRequestOrBuilder
    *
    * <pre>
    * Optional. The maximum number of results to return in each response.
+   * Must be less than or equal to 1000. Defaults to 100.
    * </pre>
    *
-   * <code>int32 page_size = 2;</code>
+   * <code>int32 page_size = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   int getPageSize();
 
@@ -52,7 +67,7 @@ public interface ListAutoscalingPoliciesRequestOrBuilder
    * next page of results.
    * </pre>
    *
-   * <code>string page_token = 3;</code>
+   * <code>string page_token = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   java.lang.String getPageToken();
   /**
@@ -63,7 +78,7 @@ public interface ListAutoscalingPoliciesRequestOrBuilder
    * next page of results.
    * </pre>
    *
-   * <code>string page_token = 3;</code>
+   * <code>string page_token = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   com.google.protobuf.ByteString getPageTokenBytes();
 }

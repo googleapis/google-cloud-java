@@ -42,12 +42,16 @@ public final class Subnetwork implements ApiMessage {
   private final String id;
   private final String ipCidrRange;
   private final String kind;
+  private final SubnetworkLogConfig logConfig;
   private final String name;
   private final String network;
   private final Boolean privateIpGoogleAccess;
+  private final String purpose;
   private final String region;
+  private final String role;
   private final List<SubnetworkSecondaryRange> secondaryIpRanges;
   private final String selfLink;
+  private final String state;
 
   private Subnetwork() {
     this.creationTimestamp = null;
@@ -58,12 +62,16 @@ public final class Subnetwork implements ApiMessage {
     this.id = null;
     this.ipCidrRange = null;
     this.kind = null;
+    this.logConfig = null;
     this.name = null;
     this.network = null;
     this.privateIpGoogleAccess = null;
+    this.purpose = null;
     this.region = null;
+    this.role = null;
     this.secondaryIpRanges = null;
     this.selfLink = null;
+    this.state = null;
   }
 
   private Subnetwork(
@@ -75,12 +83,16 @@ public final class Subnetwork implements ApiMessage {
       String id,
       String ipCidrRange,
       String kind,
+      SubnetworkLogConfig logConfig,
       String name,
       String network,
       Boolean privateIpGoogleAccess,
+      String purpose,
       String region,
+      String role,
       List<SubnetworkSecondaryRange> secondaryIpRanges,
-      String selfLink) {
+      String selfLink,
+      String state) {
     this.creationTimestamp = creationTimestamp;
     this.description = description;
     this.enableFlowLogs = enableFlowLogs;
@@ -89,12 +101,16 @@ public final class Subnetwork implements ApiMessage {
     this.id = id;
     this.ipCidrRange = ipCidrRange;
     this.kind = kind;
+    this.logConfig = logConfig;
     this.name = name;
     this.network = network;
     this.privateIpGoogleAccess = privateIpGoogleAccess;
+    this.purpose = purpose;
     this.region = region;
+    this.role = role;
     this.secondaryIpRanges = secondaryIpRanges;
     this.selfLink = selfLink;
+    this.state = state;
   }
 
   @Override
@@ -123,6 +139,9 @@ public final class Subnetwork implements ApiMessage {
     if ("kind".equals(fieldName)) {
       return kind;
     }
+    if ("logConfig".equals(fieldName)) {
+      return logConfig;
+    }
     if ("name".equals(fieldName)) {
       return name;
     }
@@ -132,14 +151,23 @@ public final class Subnetwork implements ApiMessage {
     if ("privateIpGoogleAccess".equals(fieldName)) {
       return privateIpGoogleAccess;
     }
+    if ("purpose".equals(fieldName)) {
+      return purpose;
+    }
     if ("region".equals(fieldName)) {
       return region;
+    }
+    if ("role".equals(fieldName)) {
+      return role;
     }
     if ("secondaryIpRanges".equals(fieldName)) {
       return secondaryIpRanges;
     }
     if ("selfLink".equals(fieldName)) {
       return selfLink;
+    }
+    if ("state".equals(fieldName)) {
+      return state;
     }
     return null;
   }
@@ -226,6 +254,14 @@ public final class Subnetwork implements ApiMessage {
   }
 
   /**
+   * This field denotes the VPC flow logging options for this subnetwork. If logging is enabled,
+   * logs are exported to Stackdriver.
+   */
+  public SubnetworkLogConfig getLogConfig() {
+    return logConfig;
+  }
+
+  /**
    * The name of the resource, provided by the client when initially creating the resource. The name
    * must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63
    * characters long and match the regular expression `[a-z]([-a-z0-9]&#42;[a-z0-9])?` which means
@@ -255,11 +291,32 @@ public final class Subnetwork implements ApiMessage {
   }
 
   /**
+   * The purpose of the resource. This field can be either PRIVATE_RFC_1918 or
+   * INTERNAL_HTTPS_LOAD_BALANCER. A subnetwork with purpose set to INTERNAL_HTTPS_LOAD_BALANCER is
+   * a user-created subnetwork that is reserved for Internal HTTP(S) Load Balancing. If unspecified,
+   * the purpose defaults to PRIVATE_RFC_1918.
+   */
+  public String getPurpose() {
+    return purpose;
+  }
+
+  /**
    * URL of the region where the Subnetwork resides. This field can be set only at resource creation
    * time.
    */
   public String getRegion() {
     return region;
+  }
+
+  /**
+   * The role of subnetwork. Currenly, this field is only used when purpose =
+   * INTERNAL_HTTPS_LOAD_BALANCER. The value can be set to ACTIVE or BACKUP. An ACTIVE subnetwork is
+   * one that is currently being used for Internal HTTP(S) Load Balancing. A BACKUP subnetwork is
+   * one that is ready to be promoted to ACTIVE or is currently draining. This field can be updated
+   * with a patch request.
+   */
+  public String getRole() {
+    return role;
   }
 
   /**
@@ -275,6 +332,17 @@ public final class Subnetwork implements ApiMessage {
   /** [Output Only] Server-defined URL for the resource. */
   public String getSelfLink() {
     return selfLink;
+  }
+
+  /**
+   * [Output Only] The state of the subnetwork, which can be one of READY or DRAINING. A subnetwork
+   * that is READY is ready to be used. The state of DRAINING is only applicable to subnetworks that
+   * have the purpose set to INTERNAL_HTTPS_LOAD_BALANCER and indicates that connections to the load
+   * balancer are being drained. A subnetwork that is draining cannot be used or modified until it
+   * reaches a status of READY.
+   */
+  public String getState() {
+    return state;
   }
 
   public static Builder newBuilder() {
@@ -308,12 +376,16 @@ public final class Subnetwork implements ApiMessage {
     private String id;
     private String ipCidrRange;
     private String kind;
+    private SubnetworkLogConfig logConfig;
     private String name;
     private String network;
     private Boolean privateIpGoogleAccess;
+    private String purpose;
     private String region;
+    private String role;
     private List<SubnetworkSecondaryRange> secondaryIpRanges;
     private String selfLink;
+    private String state;
 
     Builder() {}
 
@@ -343,6 +415,9 @@ public final class Subnetwork implements ApiMessage {
       if (other.getKind() != null) {
         this.kind = other.kind;
       }
+      if (other.getLogConfig() != null) {
+        this.logConfig = other.logConfig;
+      }
       if (other.getName() != null) {
         this.name = other.name;
       }
@@ -352,14 +427,23 @@ public final class Subnetwork implements ApiMessage {
       if (other.getPrivateIpGoogleAccess() != null) {
         this.privateIpGoogleAccess = other.privateIpGoogleAccess;
       }
+      if (other.getPurpose() != null) {
+        this.purpose = other.purpose;
+      }
       if (other.getRegion() != null) {
         this.region = other.region;
+      }
+      if (other.getRole() != null) {
+        this.role = other.role;
       }
       if (other.getSecondaryIpRangesList() != null) {
         this.secondaryIpRanges = other.secondaryIpRanges;
       }
       if (other.getSelfLink() != null) {
         this.selfLink = other.selfLink;
+      }
+      if (other.getState() != null) {
+        this.state = other.state;
       }
       return this;
     }
@@ -373,12 +457,16 @@ public final class Subnetwork implements ApiMessage {
       this.id = source.id;
       this.ipCidrRange = source.ipCidrRange;
       this.kind = source.kind;
+      this.logConfig = source.logConfig;
       this.name = source.name;
       this.network = source.network;
       this.privateIpGoogleAccess = source.privateIpGoogleAccess;
+      this.purpose = source.purpose;
       this.region = source.region;
+      this.role = source.role;
       this.secondaryIpRanges = source.secondaryIpRanges;
       this.selfLink = source.selfLink;
+      this.state = source.state;
     }
 
     /** [Output Only] Creation timestamp in RFC3339 text format. */
@@ -518,6 +606,23 @@ public final class Subnetwork implements ApiMessage {
     }
 
     /**
+     * This field denotes the VPC flow logging options for this subnetwork. If logging is enabled,
+     * logs are exported to Stackdriver.
+     */
+    public SubnetworkLogConfig getLogConfig() {
+      return logConfig;
+    }
+
+    /**
+     * This field denotes the VPC flow logging options for this subnetwork. If logging is enabled,
+     * logs are exported to Stackdriver.
+     */
+    public Builder setLogConfig(SubnetworkLogConfig logConfig) {
+      this.logConfig = logConfig;
+      return this;
+    }
+
+    /**
      * The name of the resource, provided by the client when initially creating the resource. The
      * name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be
      * 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]&#42;[a-z0-9])?` which
@@ -579,6 +684,27 @@ public final class Subnetwork implements ApiMessage {
     }
 
     /**
+     * The purpose of the resource. This field can be either PRIVATE_RFC_1918 or
+     * INTERNAL_HTTPS_LOAD_BALANCER. A subnetwork with purpose set to INTERNAL_HTTPS_LOAD_BALANCER
+     * is a user-created subnetwork that is reserved for Internal HTTP(S) Load Balancing. If
+     * unspecified, the purpose defaults to PRIVATE_RFC_1918.
+     */
+    public String getPurpose() {
+      return purpose;
+    }
+
+    /**
+     * The purpose of the resource. This field can be either PRIVATE_RFC_1918 or
+     * INTERNAL_HTTPS_LOAD_BALANCER. A subnetwork with purpose set to INTERNAL_HTTPS_LOAD_BALANCER
+     * is a user-created subnetwork that is reserved for Internal HTTP(S) Load Balancing. If
+     * unspecified, the purpose defaults to PRIVATE_RFC_1918.
+     */
+    public Builder setPurpose(String purpose) {
+      this.purpose = purpose;
+      return this;
+    }
+
+    /**
      * URL of the region where the Subnetwork resides. This field can be set only at resource
      * creation time.
      */
@@ -592,6 +718,29 @@ public final class Subnetwork implements ApiMessage {
      */
     public Builder setRegion(String region) {
       this.region = region;
+      return this;
+    }
+
+    /**
+     * The role of subnetwork. Currenly, this field is only used when purpose =
+     * INTERNAL_HTTPS_LOAD_BALANCER. The value can be set to ACTIVE or BACKUP. An ACTIVE subnetwork
+     * is one that is currently being used for Internal HTTP(S) Load Balancing. A BACKUP subnetwork
+     * is one that is ready to be promoted to ACTIVE or is currently draining. This field can be
+     * updated with a patch request.
+     */
+    public String getRole() {
+      return role;
+    }
+
+    /**
+     * The role of subnetwork. Currenly, this field is only used when purpose =
+     * INTERNAL_HTTPS_LOAD_BALANCER. The value can be set to ACTIVE or BACKUP. An ACTIVE subnetwork
+     * is one that is currently being used for Internal HTTP(S) Load Balancing. A BACKUP subnetwork
+     * is one that is ready to be promoted to ACTIVE or is currently draining. This field can be
+     * updated with a patch request.
+     */
+    public Builder setRole(String role) {
+      this.role = role;
       return this;
     }
 
@@ -644,6 +793,29 @@ public final class Subnetwork implements ApiMessage {
       return this;
     }
 
+    /**
+     * [Output Only] The state of the subnetwork, which can be one of READY or DRAINING. A
+     * subnetwork that is READY is ready to be used. The state of DRAINING is only applicable to
+     * subnetworks that have the purpose set to INTERNAL_HTTPS_LOAD_BALANCER and indicates that
+     * connections to the load balancer are being drained. A subnetwork that is draining cannot be
+     * used or modified until it reaches a status of READY.
+     */
+    public String getState() {
+      return state;
+    }
+
+    /**
+     * [Output Only] The state of the subnetwork, which can be one of READY or DRAINING. A
+     * subnetwork that is READY is ready to be used. The state of DRAINING is only applicable to
+     * subnetworks that have the purpose set to INTERNAL_HTTPS_LOAD_BALANCER and indicates that
+     * connections to the load balancer are being drained. A subnetwork that is draining cannot be
+     * used or modified until it reaches a status of READY.
+     */
+    public Builder setState(String state) {
+      this.state = state;
+      return this;
+    }
+
     public Subnetwork build() {
 
       return new Subnetwork(
@@ -655,12 +827,16 @@ public final class Subnetwork implements ApiMessage {
           id,
           ipCidrRange,
           kind,
+          logConfig,
           name,
           network,
           privateIpGoogleAccess,
+          purpose,
           region,
+          role,
           secondaryIpRanges,
-          selfLink);
+          selfLink,
+          state);
     }
 
     public Builder clone() {
@@ -673,12 +849,16 @@ public final class Subnetwork implements ApiMessage {
       newBuilder.setId(this.id);
       newBuilder.setIpCidrRange(this.ipCidrRange);
       newBuilder.setKind(this.kind);
+      newBuilder.setLogConfig(this.logConfig);
       newBuilder.setName(this.name);
       newBuilder.setNetwork(this.network);
       newBuilder.setPrivateIpGoogleAccess(this.privateIpGoogleAccess);
+      newBuilder.setPurpose(this.purpose);
       newBuilder.setRegion(this.region);
+      newBuilder.setRole(this.role);
       newBuilder.addAllSecondaryIpRanges(this.secondaryIpRanges);
       newBuilder.setSelfLink(this.selfLink);
+      newBuilder.setState(this.state);
       return newBuilder;
     }
   }
@@ -710,6 +890,9 @@ public final class Subnetwork implements ApiMessage {
         + "kind="
         + kind
         + ", "
+        + "logConfig="
+        + logConfig
+        + ", "
         + "name="
         + name
         + ", "
@@ -719,14 +902,23 @@ public final class Subnetwork implements ApiMessage {
         + "privateIpGoogleAccess="
         + privateIpGoogleAccess
         + ", "
+        + "purpose="
+        + purpose
+        + ", "
         + "region="
         + region
+        + ", "
+        + "role="
+        + role
         + ", "
         + "secondaryIpRanges="
         + secondaryIpRanges
         + ", "
         + "selfLink="
         + selfLink
+        + ", "
+        + "state="
+        + state
         + "}";
   }
 
@@ -745,12 +937,16 @@ public final class Subnetwork implements ApiMessage {
           && Objects.equals(this.id, that.getId())
           && Objects.equals(this.ipCidrRange, that.getIpCidrRange())
           && Objects.equals(this.kind, that.getKind())
+          && Objects.equals(this.logConfig, that.getLogConfig())
           && Objects.equals(this.name, that.getName())
           && Objects.equals(this.network, that.getNetwork())
           && Objects.equals(this.privateIpGoogleAccess, that.getPrivateIpGoogleAccess())
+          && Objects.equals(this.purpose, that.getPurpose())
           && Objects.equals(this.region, that.getRegion())
+          && Objects.equals(this.role, that.getRole())
           && Objects.equals(this.secondaryIpRanges, that.getSecondaryIpRangesList())
-          && Objects.equals(this.selfLink, that.getSelfLink());
+          && Objects.equals(this.selfLink, that.getSelfLink())
+          && Objects.equals(this.state, that.getState());
     }
     return false;
   }
@@ -766,11 +962,15 @@ public final class Subnetwork implements ApiMessage {
         id,
         ipCidrRange,
         kind,
+        logConfig,
         name,
         network,
         privateIpGoogleAccess,
+        purpose,
         region,
+        role,
         secondaryIpRanges,
-        selfLink);
+        selfLink,
+        state);
   }
 }

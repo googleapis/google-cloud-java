@@ -130,7 +130,7 @@ public final class ListClustersRequest extends com.google.protobuf.GeneratedMess
    * belongs to.
    * </pre>
    *
-   * <code>string project_id = 1;</code>
+   * <code>string project_id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   public java.lang.String getProjectId() {
     java.lang.Object ref = projectId_;
@@ -151,7 +151,7 @@ public final class ListClustersRequest extends com.google.protobuf.GeneratedMess
    * belongs to.
    * </pre>
    *
-   * <code>string project_id = 1;</code>
+   * <code>string project_id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   public com.google.protobuf.ByteString getProjectIdBytes() {
     java.lang.Object ref = projectId_;
@@ -174,7 +174,7 @@ public final class ListClustersRequest extends com.google.protobuf.GeneratedMess
    * Required. The Cloud Dataproc region in which to handle the request.
    * </pre>
    *
-   * <code>string region = 4;</code>
+   * <code>string region = 4 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   public java.lang.String getRegion() {
     java.lang.Object ref = region_;
@@ -194,7 +194,7 @@ public final class ListClustersRequest extends com.google.protobuf.GeneratedMess
    * Required. The Cloud Dataproc region in which to handle the request.
    * </pre>
    *
-   * <code>string region = 4;</code>
+   * <code>string region = 4 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   public com.google.protobuf.ByteString getRegionBytes() {
     java.lang.Object ref = region_;
@@ -231,7 +231,7 @@ public final class ListClustersRequest extends com.google.protobuf.GeneratedMess
    * AND labels.env = staging AND labels.starred = *
    * </pre>
    *
-   * <code>string filter = 5;</code>
+   * <code>string filter = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   public java.lang.String getFilter() {
     java.lang.Object ref = filter_;
@@ -265,7 +265,7 @@ public final class ListClustersRequest extends com.google.protobuf.GeneratedMess
    * AND labels.env = staging AND labels.starred = *
    * </pre>
    *
-   * <code>string filter = 5;</code>
+   * <code>string filter = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   public com.google.protobuf.ByteString getFilterBytes() {
     java.lang.Object ref = filter_;
@@ -288,7 +288,7 @@ public final class ListClustersRequest extends com.google.protobuf.GeneratedMess
    * Optional. The standard List page size.
    * </pre>
    *
-   * <code>int32 page_size = 2;</code>
+   * <code>int32 page_size = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   public int getPageSize() {
     return pageSize_;
@@ -303,7 +303,7 @@ public final class ListClustersRequest extends com.google.protobuf.GeneratedMess
    * Optional. The standard List page token.
    * </pre>
    *
-   * <code>string page_token = 3;</code>
+   * <code>string page_token = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   public java.lang.String getPageToken() {
     java.lang.Object ref = pageToken_;
@@ -323,7 +323,7 @@ public final class ListClustersRequest extends com.google.protobuf.GeneratedMess
    * Optional. The standard List page token.
    * </pre>
    *
-   * <code>string page_token = 3;</code>
+   * <code>string page_token = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   public com.google.protobuf.ByteString getPageTokenBytes() {
     java.lang.Object ref = pageToken_;
@@ -726,7 +726,7 @@ public final class ListClustersRequest extends com.google.protobuf.GeneratedMess
      * belongs to.
      * </pre>
      *
-     * <code>string project_id = 1;</code>
+     * <code>string project_id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public java.lang.String getProjectId() {
       java.lang.Object ref = projectId_;
@@ -747,7 +747,7 @@ public final class ListClustersRequest extends com.google.protobuf.GeneratedMess
      * belongs to.
      * </pre>
      *
-     * <code>string project_id = 1;</code>
+     * <code>string project_id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public com.google.protobuf.ByteString getProjectIdBytes() {
       java.lang.Object ref = projectId_;
@@ -768,7 +768,7 @@ public final class ListClustersRequest extends com.google.protobuf.GeneratedMess
      * belongs to.
      * </pre>
      *
-     * <code>string project_id = 1;</code>
+     * <code>string project_id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder setProjectId(java.lang.String value) {
       if (value == null) {
@@ -787,7 +787,7 @@ public final class ListClustersRequest extends com.google.protobuf.GeneratedMess
      * belongs to.
      * </pre>
      *
-     * <code>string project_id = 1;</code>
+     * <code>string project_id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder clearProjectId() {
 
@@ -803,7 +803,7 @@ public final class ListClustersRequest extends com.google.protobuf.GeneratedMess
      * belongs to.
      * </pre>
      *
-     * <code>string project_id = 1;</code>
+     * <code>string project_id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder setProjectIdBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -824,7 +824,7 @@ public final class ListClustersRequest extends com.google.protobuf.GeneratedMess
      * Required. The Cloud Dataproc region in which to handle the request.
      * </pre>
      *
-     * <code>string region = 4;</code>
+     * <code>string region = 4 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public java.lang.String getRegion() {
       java.lang.Object ref = region_;
@@ -844,7 +844,7 @@ public final class ListClustersRequest extends com.google.protobuf.GeneratedMess
      * Required. The Cloud Dataproc region in which to handle the request.
      * </pre>
      *
-     * <code>string region = 4;</code>
+     * <code>string region = 4 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public com.google.protobuf.ByteString getRegionBytes() {
       java.lang.Object ref = region_;
@@ -864,7 +864,7 @@ public final class ListClustersRequest extends com.google.protobuf.GeneratedMess
      * Required. The Cloud Dataproc region in which to handle the request.
      * </pre>
      *
-     * <code>string region = 4;</code>
+     * <code>string region = 4 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder setRegion(java.lang.String value) {
       if (value == null) {
@@ -882,7 +882,7 @@ public final class ListClustersRequest extends com.google.protobuf.GeneratedMess
      * Required. The Cloud Dataproc region in which to handle the request.
      * </pre>
      *
-     * <code>string region = 4;</code>
+     * <code>string region = 4 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder clearRegion() {
 
@@ -897,7 +897,7 @@ public final class ListClustersRequest extends com.google.protobuf.GeneratedMess
      * Required. The Cloud Dataproc region in which to handle the request.
      * </pre>
      *
-     * <code>string region = 4;</code>
+     * <code>string region = 4 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder setRegionBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -932,7 +932,7 @@ public final class ListClustersRequest extends com.google.protobuf.GeneratedMess
      * AND labels.env = staging AND labels.starred = *
      * </pre>
      *
-     * <code>string filter = 5;</code>
+     * <code>string filter = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public java.lang.String getFilter() {
       java.lang.Object ref = filter_;
@@ -966,7 +966,7 @@ public final class ListClustersRequest extends com.google.protobuf.GeneratedMess
      * AND labels.env = staging AND labels.starred = *
      * </pre>
      *
-     * <code>string filter = 5;</code>
+     * <code>string filter = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public com.google.protobuf.ByteString getFilterBytes() {
       java.lang.Object ref = filter_;
@@ -1000,7 +1000,7 @@ public final class ListClustersRequest extends com.google.protobuf.GeneratedMess
      * AND labels.env = staging AND labels.starred = *
      * </pre>
      *
-     * <code>string filter = 5;</code>
+     * <code>string filter = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public Builder setFilter(java.lang.String value) {
       if (value == null) {
@@ -1032,7 +1032,7 @@ public final class ListClustersRequest extends com.google.protobuf.GeneratedMess
      * AND labels.env = staging AND labels.starred = *
      * </pre>
      *
-     * <code>string filter = 5;</code>
+     * <code>string filter = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public Builder clearFilter() {
 
@@ -1061,7 +1061,7 @@ public final class ListClustersRequest extends com.google.protobuf.GeneratedMess
      * AND labels.env = staging AND labels.starred = *
      * </pre>
      *
-     * <code>string filter = 5;</code>
+     * <code>string filter = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public Builder setFilterBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -1082,7 +1082,7 @@ public final class ListClustersRequest extends com.google.protobuf.GeneratedMess
      * Optional. The standard List page size.
      * </pre>
      *
-     * <code>int32 page_size = 2;</code>
+     * <code>int32 page_size = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public int getPageSize() {
       return pageSize_;
@@ -1094,7 +1094,7 @@ public final class ListClustersRequest extends com.google.protobuf.GeneratedMess
      * Optional. The standard List page size.
      * </pre>
      *
-     * <code>int32 page_size = 2;</code>
+     * <code>int32 page_size = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public Builder setPageSize(int value) {
 
@@ -1109,7 +1109,7 @@ public final class ListClustersRequest extends com.google.protobuf.GeneratedMess
      * Optional. The standard List page size.
      * </pre>
      *
-     * <code>int32 page_size = 2;</code>
+     * <code>int32 page_size = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public Builder clearPageSize() {
 
@@ -1126,7 +1126,7 @@ public final class ListClustersRequest extends com.google.protobuf.GeneratedMess
      * Optional. The standard List page token.
      * </pre>
      *
-     * <code>string page_token = 3;</code>
+     * <code>string page_token = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public java.lang.String getPageToken() {
       java.lang.Object ref = pageToken_;
@@ -1146,7 +1146,7 @@ public final class ListClustersRequest extends com.google.protobuf.GeneratedMess
      * Optional. The standard List page token.
      * </pre>
      *
-     * <code>string page_token = 3;</code>
+     * <code>string page_token = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public com.google.protobuf.ByteString getPageTokenBytes() {
       java.lang.Object ref = pageToken_;
@@ -1166,7 +1166,7 @@ public final class ListClustersRequest extends com.google.protobuf.GeneratedMess
      * Optional. The standard List page token.
      * </pre>
      *
-     * <code>string page_token = 3;</code>
+     * <code>string page_token = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public Builder setPageToken(java.lang.String value) {
       if (value == null) {
@@ -1184,7 +1184,7 @@ public final class ListClustersRequest extends com.google.protobuf.GeneratedMess
      * Optional. The standard List page token.
      * </pre>
      *
-     * <code>string page_token = 3;</code>
+     * <code>string page_token = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public Builder clearPageToken() {
 
@@ -1199,7 +1199,7 @@ public final class ListClustersRequest extends com.google.protobuf.GeneratedMess
      * Optional. The standard List page token.
      * </pre>
      *
-     * <code>string page_token = 3;</code>
+     * <code>string page_token = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public Builder setPageTokenBytes(com.google.protobuf.ByteString value) {
       if (value == null) {

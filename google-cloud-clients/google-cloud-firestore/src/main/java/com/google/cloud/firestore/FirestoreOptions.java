@@ -16,11 +16,13 @@
 
 package com.google.cloud.firestore;
 
+import com.google.api.core.ApiFunction;
 import com.google.api.core.InternalApi;
 import com.google.api.gax.core.CredentialsProvider;
 import com.google.api.gax.core.GoogleCredentialsProvider;
 import com.google.api.gax.grpc.InstantiatingGrpcChannelProvider;
 import com.google.api.gax.rpc.TransportChannelProvider;
+import com.google.auth.Credentials;
 import com.google.cloud.ServiceDefaults;
 import com.google.cloud.ServiceOptions;
 import com.google.cloud.TransportOptions;
@@ -28,8 +30,14 @@ import com.google.cloud.firestore.spi.v1.FirestoreRpc;
 import com.google.cloud.firestore.spi.v1.GrpcFirestoreRpc;
 import com.google.cloud.firestore.v1.FirestoreSettings;
 import com.google.cloud.grpc.GrpcTransportOptions;
+import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.ImmutableSet;
+import io.grpc.ManagedChannelBuilder;
 import java.io.IOException;
+import java.net.URI;
+import java.util.Arrays;
+import java.util.List;
+import java.util.Map;
 import java.util.Objects;
 import java.util.Set;
 import javax.annotation.Nonnull;
@@ -47,6 +55,8 @@ public final class FirestoreOptions extends ServiceOptions<Firestore, FirestoreO
   private static final boolean DEFAULT_TIMESTAMPS_IN_SNAPSHOTS_ENABLED = true;
 
   private static final long serialVersionUID = -5853552236134770090L;
+
+  private static final String FIRESTORE_EMULATOR_SYSTEM_VARIABLE = "FIRESTORE_EMULATOR_HOST";
 
   private final String databaseId;
   private final boolean timestampsInSnapshotsEnabled;
@@ -216,7 +226,67 @@ public final class FirestoreOptions extends ServiceOptions<Firestore, FirestoreO
         }
       }
 
+      // Override credentials and channel provider if we are using the emulator.
+      String emulatorHost = System.getenv(FIRESTORE_EMULATOR_SYSTEM_VARIABLE);
+      if (emulatorHost != null) {
+        // Try creating a host in order to validate that the host name is valid.
+        try {
+          String hostUrlString = "http://" + emulatorHost;
+          URI.create(hostUrlString);
+        } catch (Exception e) {
+          throw new IllegalArgumentException(
+              "Value: '"
+                  + emulatorHost
+                  + "' for property "
+                  + FIRESTORE_EMULATOR_SYSTEM_VARIABLE
+                  + " is not a valid host",
+              e);
+        }
+
+        // Setting the channel provider to use plaintext turns off SSL.
+        this.setChannelProvider(
+            InstantiatingGrpcChannelProvider.newBuilder()
+                .setEndpoint(emulatorHost)
+                .setChannelConfigurator(
+                    new ApiFunction<ManagedChannelBuilder, ManagedChannelBuilder>() {
+                      @Override
+                      public ManagedChannelBuilder apply(ManagedChannelBuilder input) {
+                        return input.usePlaintext();
+                      }
+                    })
+                .build());
+        this.setCredentials(new FakeCredentials());
+      }
+
       return new FirestoreOptions(this);
+    }
+
+    public class FakeCredentials extends Credentials {
+      private final Map<String, List<String>> HEADERS =
+          ImmutableMap.of("Authorization", Arrays.asList("Bearer owner"));
+
+      @Override
+      public String getAuthenticationType() {
+        throw new IllegalArgumentException("Not supported");
+      }
+
+      @Override
+      public Map<String, List<String>> getRequestMetadata(URI uri) {
+        return HEADERS;
+      }
+
+      @Override
+      public boolean hasRequestMetadata() {
+        return true;
+      }
+
+      @Override
+      public boolean hasRequestMetadataOnly() {
+        return true;
+      }
+
+      @Override
+      public void refresh() {}
     }
   }
 

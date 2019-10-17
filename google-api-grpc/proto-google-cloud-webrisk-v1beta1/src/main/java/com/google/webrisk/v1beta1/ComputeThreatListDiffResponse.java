@@ -865,7 +865,7 @@ public final class ComputeThreatListDiffResponse extends com.google.protobuf.Gen
    *
    *
    * <pre>
-   * The type of response. This may indicate that an action is required by the
+   * The type of response. This may indicate that an action must be taken by the
    * client when the response is received.
    * </pre>
    *
@@ -880,7 +880,7 @@ public final class ComputeThreatListDiffResponse extends com.google.protobuf.Gen
    *
    *
    * <pre>
-   * The type of response. This may indicate that an action is required by the
+   * The type of response. This may indicate that an action must be taken by the
    * client when the response is received.
    * </pre>
    *
@@ -1547,7 +1547,7 @@ public final class ComputeThreatListDiffResponse extends com.google.protobuf.Gen
      *
      *
      * <pre>
-     * The type of response. This may indicate that an action is required by the
+     * The type of response. This may indicate that an action must be taken by the
      * client when the response is received.
      * </pre>
      *
@@ -1562,7 +1562,7 @@ public final class ComputeThreatListDiffResponse extends com.google.protobuf.Gen
      *
      *
      * <pre>
-     * The type of response. This may indicate that an action is required by the
+     * The type of response. This may indicate that an action must be taken by the
      * client when the response is received.
      * </pre>
      *
@@ -1579,7 +1579,7 @@ public final class ComputeThreatListDiffResponse extends com.google.protobuf.Gen
      *
      *
      * <pre>
-     * The type of response. This may indicate that an action is required by the
+     * The type of response. This may indicate that an action must be taken by the
      * client when the response is received.
      * </pre>
      *
@@ -1600,7 +1600,7 @@ public final class ComputeThreatListDiffResponse extends com.google.protobuf.Gen
      *
      *
      * <pre>
-     * The type of response. This may indicate that an action is required by the
+     * The type of response. This may indicate that an action must be taken by the
      * client when the response is received.
      * </pre>
      *
@@ -1622,7 +1622,7 @@ public final class ComputeThreatListDiffResponse extends com.google.protobuf.Gen
      *
      *
      * <pre>
-     * The type of response. This may indicate that an action is required by the
+     * The type of response. This may indicate that an action must be taken by the
      * client when the response is received.
      * </pre>
      *

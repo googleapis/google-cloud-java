@@ -157,8 +157,9 @@ public class PhishingProtectionServiceV1Beta1Client implements BackgroundResourc
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Reports a URI suspected of containing phishing content to be reviewed. Once the report review
-   * is completed, if its result verifies the existince of malicious phishing content, the site will
-   * be added the to [Google's Social Engineering
+   * is complete, its result can be found in the Cloud Security Command Center findings dashboard
+   * for Phishing Protection. If the result verifies the existence of malicious phishing content,
+   * the site will be added the to [Google's Social Engineering
    * lists](https://support.google.com/webmasters/answer/6350487/) in order to protect users that
    * could get exposed to this threat in the future.
    *
@@ -174,7 +175,7 @@ public class PhishingProtectionServiceV1Beta1Client implements BackgroundResourc
    *
    * @param parent Required. The name of the project for which the report will be created, in the
    *     format "projects/{project_number}".
-   * @param uri The URI that is being reported for phishing content to be analyzed.
+   * @param uri Required. The URI that is being reported for phishing content to be analyzed.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ReportPhishingResponse reportPhishing(ProjectName parent, String uri) {
@@ -190,8 +191,9 @@ public class PhishingProtectionServiceV1Beta1Client implements BackgroundResourc
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Reports a URI suspected of containing phishing content to be reviewed. Once the report review
-   * is completed, if its result verifies the existince of malicious phishing content, the site will
-   * be added the to [Google's Social Engineering
+   * is complete, its result can be found in the Cloud Security Command Center findings dashboard
+   * for Phishing Protection. If the result verifies the existence of malicious phishing content,
+   * the site will be added the to [Google's Social Engineering
    * lists](https://support.google.com/webmasters/answer/6350487/) in order to protect users that
    * could get exposed to this threat in the future.
    *
@@ -207,7 +209,7 @@ public class PhishingProtectionServiceV1Beta1Client implements BackgroundResourc
    *
    * @param parent Required. The name of the project for which the report will be created, in the
    *     format "projects/{project_number}".
-   * @param uri The URI that is being reported for phishing content to be analyzed.
+   * @param uri Required. The URI that is being reported for phishing content to be analyzed.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ReportPhishingResponse reportPhishing(String parent, String uri) {
@@ -220,8 +222,9 @@ public class PhishingProtectionServiceV1Beta1Client implements BackgroundResourc
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Reports a URI suspected of containing phishing content to be reviewed. Once the report review
-   * is completed, if its result verifies the existince of malicious phishing content, the site will
-   * be added the to [Google's Social Engineering
+   * is complete, its result can be found in the Cloud Security Command Center findings dashboard
+   * for Phishing Protection. If the result verifies the existence of malicious phishing content,
+   * the site will be added the to [Google's Social Engineering
    * lists](https://support.google.com/webmasters/answer/6350487/) in order to protect users that
    * could get exposed to this threat in the future.
    *
@@ -249,8 +252,9 @@ public class PhishingProtectionServiceV1Beta1Client implements BackgroundResourc
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Reports a URI suspected of containing phishing content to be reviewed. Once the report review
-   * is completed, if its result verifies the existince of malicious phishing content, the site will
-   * be added the to [Google's Social Engineering
+   * is complete, its result can be found in the Cloud Security Command Center findings dashboard
+   * for Phishing Protection. If the result verifies the existence of malicious phishing content,
+   * the site will be added the to [Google's Social Engineering
    * lists](https://support.google.com/webmasters/answer/6350487/) in order to protect users that
    * could get exposed to this threat in the future.
    *

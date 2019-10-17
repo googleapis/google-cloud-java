@@ -12,7 +12,7 @@ public interface WorkflowTemplatePlacementOrBuilder
    *
    *
    * <pre>
-   * Optional. A cluster that is managed by the workflow.
+   * A cluster that is managed by the workflow.
    * </pre>
    *
    * <code>.google.cloud.dataproc.v1.ManagedCluster managed_cluster = 1;</code>
@@ -22,7 +22,7 @@ public interface WorkflowTemplatePlacementOrBuilder
    *
    *
    * <pre>
-   * Optional. A cluster that is managed by the workflow.
+   * A cluster that is managed by the workflow.
    * </pre>
    *
    * <code>.google.cloud.dataproc.v1.ManagedCluster managed_cluster = 1;</code>
@@ -32,7 +32,7 @@ public interface WorkflowTemplatePlacementOrBuilder
    *
    *
    * <pre>
-   * Optional. A cluster that is managed by the workflow.
+   * A cluster that is managed by the workflow.
    * </pre>
    *
    * <code>.google.cloud.dataproc.v1.ManagedCluster managed_cluster = 1;</code>

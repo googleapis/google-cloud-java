@@ -123,12 +123,14 @@ public final class CreateTagTemplateFieldRequest extends com.google.protobuf.Gen
    *
    * <pre>
    * Required. The name of the project this template is in. Example:
-   * "projects/{project_id}/locations/{location}/tagTemplates/{tag_template_id}".
+   * * projects/{project_id}/locations/{location}/tagTemplates/{tag_template_id}
    * Note that this TagTemplateField may not actually be stored in the location
    * in this name.
    * </pre>
    *
-   * <code>string parent = 1;</code>
+   * <code>
+   * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    */
   public java.lang.String getParent() {
     java.lang.Object ref = parent_;
@@ -146,12 +148,14 @@ public final class CreateTagTemplateFieldRequest extends com.google.protobuf.Gen
    *
    * <pre>
    * Required. The name of the project this template is in. Example:
-   * "projects/{project_id}/locations/{location}/tagTemplates/{tag_template_id}".
+   * * projects/{project_id}/locations/{location}/tagTemplates/{tag_template_id}
    * Note that this TagTemplateField may not actually be stored in the location
    * in this name.
    * </pre>
    *
-   * <code>string parent = 1;</code>
+   * <code>
+   * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    */
   public com.google.protobuf.ByteString getParentBytes() {
     java.lang.Object ref = parent_;
@@ -171,14 +175,14 @@ public final class CreateTagTemplateFieldRequest extends com.google.protobuf.Gen
    *
    *
    * <pre>
-   * Required. The id of the tag template field to create.
+   * Required. The ID of the tag template field to create.
    * Field ids can contain letters (both uppercase and lowercase), numbers
-   * (0-9), underscores (_) and dashes (-). Field ids must be at least 1
-   * character long and at most 128 characters long. Field ids must also be
-   * unique to their template.
+   * (0-9), underscores (_) and dashes (-). Field IDs must be at least 1
+   * character long and at most 128 characters long. Field IDs must also be
+   * unique within their template.
    * </pre>
    *
-   * <code>string tag_template_field_id = 2;</code>
+   * <code>string tag_template_field_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   public java.lang.String getTagTemplateFieldId() {
     java.lang.Object ref = tagTemplateFieldId_;
@@ -195,14 +199,14 @@ public final class CreateTagTemplateFieldRequest extends com.google.protobuf.Gen
    *
    *
    * <pre>
-   * Required. The id of the tag template field to create.
+   * Required. The ID of the tag template field to create.
    * Field ids can contain letters (both uppercase and lowercase), numbers
-   * (0-9), underscores (_) and dashes (-). Field ids must be at least 1
-   * character long and at most 128 characters long. Field ids must also be
-   * unique to their template.
+   * (0-9), underscores (_) and dashes (-). Field IDs must be at least 1
+   * character long and at most 128 characters long. Field IDs must also be
+   * unique within their template.
    * </pre>
    *
-   * <code>string tag_template_field_id = 2;</code>
+   * <code>string tag_template_field_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   public com.google.protobuf.ByteString getTagTemplateFieldIdBytes() {
     java.lang.Object ref = tagTemplateFieldId_;
@@ -225,7 +229,9 @@ public final class CreateTagTemplateFieldRequest extends com.google.protobuf.Gen
    * Required. The tag template field to create.
    * </pre>
    *
-   * <code>.google.cloud.datacatalog.v1beta1.TagTemplateField tag_template_field = 3;</code>
+   * <code>
+   * .google.cloud.datacatalog.v1beta1.TagTemplateField tag_template_field = 3 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   public boolean hasTagTemplateField() {
     return tagTemplateField_ != null;
@@ -237,7 +243,9 @@ public final class CreateTagTemplateFieldRequest extends com.google.protobuf.Gen
    * Required. The tag template field to create.
    * </pre>
    *
-   * <code>.google.cloud.datacatalog.v1beta1.TagTemplateField tag_template_field = 3;</code>
+   * <code>
+   * .google.cloud.datacatalog.v1beta1.TagTemplateField tag_template_field = 3 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   public com.google.cloud.datacatalog.TagTemplateField getTagTemplateField() {
     return tagTemplateField_ == null
@@ -251,7 +259,9 @@ public final class CreateTagTemplateFieldRequest extends com.google.protobuf.Gen
    * Required. The tag template field to create.
    * </pre>
    *
-   * <code>.google.cloud.datacatalog.v1beta1.TagTemplateField tag_template_field = 3;</code>
+   * <code>
+   * .google.cloud.datacatalog.v1beta1.TagTemplateField tag_template_field = 3 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   public com.google.cloud.datacatalog.TagTemplateFieldOrBuilder getTagTemplateFieldOrBuilder() {
     return getTagTemplateField();
@@ -627,12 +637,14 @@ public final class CreateTagTemplateFieldRequest extends com.google.protobuf.Gen
      *
      * <pre>
      * Required. The name of the project this template is in. Example:
-     * "projects/{project_id}/locations/{location}/tagTemplates/{tag_template_id}".
+     * * projects/{project_id}/locations/{location}/tagTemplates/{tag_template_id}
      * Note that this TagTemplateField may not actually be stored in the location
      * in this name.
      * </pre>
      *
-     * <code>string parent = 1;</code>
+     * <code>
+     * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      */
     public java.lang.String getParent() {
       java.lang.Object ref = parent_;
@@ -650,12 +662,14 @@ public final class CreateTagTemplateFieldRequest extends com.google.protobuf.Gen
      *
      * <pre>
      * Required. The name of the project this template is in. Example:
-     * "projects/{project_id}/locations/{location}/tagTemplates/{tag_template_id}".
+     * * projects/{project_id}/locations/{location}/tagTemplates/{tag_template_id}
      * Note that this TagTemplateField may not actually be stored in the location
      * in this name.
      * </pre>
      *
-     * <code>string parent = 1;</code>
+     * <code>
+     * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      */
     public com.google.protobuf.ByteString getParentBytes() {
       java.lang.Object ref = parent_;
@@ -673,12 +687,14 @@ public final class CreateTagTemplateFieldRequest extends com.google.protobuf.Gen
      *
      * <pre>
      * Required. The name of the project this template is in. Example:
-     * "projects/{project_id}/locations/{location}/tagTemplates/{tag_template_id}".
+     * * projects/{project_id}/locations/{location}/tagTemplates/{tag_template_id}
      * Note that this TagTemplateField may not actually be stored in the location
      * in this name.
      * </pre>
      *
-     * <code>string parent = 1;</code>
+     * <code>
+     * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      */
     public Builder setParent(java.lang.String value) {
       if (value == null) {
@@ -694,12 +710,14 @@ public final class CreateTagTemplateFieldRequest extends com.google.protobuf.Gen
      *
      * <pre>
      * Required. The name of the project this template is in. Example:
-     * "projects/{project_id}/locations/{location}/tagTemplates/{tag_template_id}".
+     * * projects/{project_id}/locations/{location}/tagTemplates/{tag_template_id}
      * Note that this TagTemplateField may not actually be stored in the location
      * in this name.
      * </pre>
      *
-     * <code>string parent = 1;</code>
+     * <code>
+     * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      */
     public Builder clearParent() {
 
@@ -712,12 +730,14 @@ public final class CreateTagTemplateFieldRequest extends com.google.protobuf.Gen
      *
      * <pre>
      * Required. The name of the project this template is in. Example:
-     * "projects/{project_id}/locations/{location}/tagTemplates/{tag_template_id}".
+     * * projects/{project_id}/locations/{location}/tagTemplates/{tag_template_id}
      * Note that this TagTemplateField may not actually be stored in the location
      * in this name.
      * </pre>
      *
-     * <code>string parent = 1;</code>
+     * <code>
+     * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      */
     public Builder setParentBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -735,14 +755,14 @@ public final class CreateTagTemplateFieldRequest extends com.google.protobuf.Gen
      *
      *
      * <pre>
-     * Required. The id of the tag template field to create.
+     * Required. The ID of the tag template field to create.
      * Field ids can contain letters (both uppercase and lowercase), numbers
-     * (0-9), underscores (_) and dashes (-). Field ids must be at least 1
-     * character long and at most 128 characters long. Field ids must also be
-     * unique to their template.
+     * (0-9), underscores (_) and dashes (-). Field IDs must be at least 1
+     * character long and at most 128 characters long. Field IDs must also be
+     * unique within their template.
      * </pre>
      *
-     * <code>string tag_template_field_id = 2;</code>
+     * <code>string tag_template_field_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public java.lang.String getTagTemplateFieldId() {
       java.lang.Object ref = tagTemplateFieldId_;
@@ -759,14 +779,14 @@ public final class CreateTagTemplateFieldRequest extends com.google.protobuf.Gen
      *
      *
      * <pre>
-     * Required. The id of the tag template field to create.
+     * Required. The ID of the tag template field to create.
      * Field ids can contain letters (both uppercase and lowercase), numbers
-     * (0-9), underscores (_) and dashes (-). Field ids must be at least 1
-     * character long and at most 128 characters long. Field ids must also be
-     * unique to their template.
+     * (0-9), underscores (_) and dashes (-). Field IDs must be at least 1
+     * character long and at most 128 characters long. Field IDs must also be
+     * unique within their template.
      * </pre>
      *
-     * <code>string tag_template_field_id = 2;</code>
+     * <code>string tag_template_field_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public com.google.protobuf.ByteString getTagTemplateFieldIdBytes() {
       java.lang.Object ref = tagTemplateFieldId_;
@@ -783,14 +803,14 @@ public final class CreateTagTemplateFieldRequest extends com.google.protobuf.Gen
      *
      *
      * <pre>
-     * Required. The id of the tag template field to create.
+     * Required. The ID of the tag template field to create.
      * Field ids can contain letters (both uppercase and lowercase), numbers
-     * (0-9), underscores (_) and dashes (-). Field ids must be at least 1
-     * character long and at most 128 characters long. Field ids must also be
-     * unique to their template.
+     * (0-9), underscores (_) and dashes (-). Field IDs must be at least 1
+     * character long and at most 128 characters long. Field IDs must also be
+     * unique within their template.
      * </pre>
      *
-     * <code>string tag_template_field_id = 2;</code>
+     * <code>string tag_template_field_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder setTagTemplateFieldId(java.lang.String value) {
       if (value == null) {
@@ -805,14 +825,14 @@ public final class CreateTagTemplateFieldRequest extends com.google.protobuf.Gen
      *
      *
      * <pre>
-     * Required. The id of the tag template field to create.
+     * Required. The ID of the tag template field to create.
      * Field ids can contain letters (both uppercase and lowercase), numbers
-     * (0-9), underscores (_) and dashes (-). Field ids must be at least 1
-     * character long and at most 128 characters long. Field ids must also be
-     * unique to their template.
+     * (0-9), underscores (_) and dashes (-). Field IDs must be at least 1
+     * character long and at most 128 characters long. Field IDs must also be
+     * unique within their template.
      * </pre>
      *
-     * <code>string tag_template_field_id = 2;</code>
+     * <code>string tag_template_field_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder clearTagTemplateFieldId() {
 
@@ -824,14 +844,14 @@ public final class CreateTagTemplateFieldRequest extends com.google.protobuf.Gen
      *
      *
      * <pre>
-     * Required. The id of the tag template field to create.
+     * Required. The ID of the tag template field to create.
      * Field ids can contain letters (both uppercase and lowercase), numbers
-     * (0-9), underscores (_) and dashes (-). Field ids must be at least 1
-     * character long and at most 128 characters long. Field ids must also be
-     * unique to their template.
+     * (0-9), underscores (_) and dashes (-). Field IDs must be at least 1
+     * character long and at most 128 characters long. Field IDs must also be
+     * unique within their template.
      * </pre>
      *
-     * <code>string tag_template_field_id = 2;</code>
+     * <code>string tag_template_field_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder setTagTemplateFieldIdBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -857,7 +877,9 @@ public final class CreateTagTemplateFieldRequest extends com.google.protobuf.Gen
      * Required. The tag template field to create.
      * </pre>
      *
-     * <code>.google.cloud.datacatalog.v1beta1.TagTemplateField tag_template_field = 3;</code>
+     * <code>
+     * .google.cloud.datacatalog.v1beta1.TagTemplateField tag_template_field = 3 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public boolean hasTagTemplateField() {
       return tagTemplateFieldBuilder_ != null || tagTemplateField_ != null;
@@ -869,7 +891,9 @@ public final class CreateTagTemplateFieldRequest extends com.google.protobuf.Gen
      * Required. The tag template field to create.
      * </pre>
      *
-     * <code>.google.cloud.datacatalog.v1beta1.TagTemplateField tag_template_field = 3;</code>
+     * <code>
+     * .google.cloud.datacatalog.v1beta1.TagTemplateField tag_template_field = 3 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public com.google.cloud.datacatalog.TagTemplateField getTagTemplateField() {
       if (tagTemplateFieldBuilder_ == null) {
@@ -887,7 +911,9 @@ public final class CreateTagTemplateFieldRequest extends com.google.protobuf.Gen
      * Required. The tag template field to create.
      * </pre>
      *
-     * <code>.google.cloud.datacatalog.v1beta1.TagTemplateField tag_template_field = 3;</code>
+     * <code>
+     * .google.cloud.datacatalog.v1beta1.TagTemplateField tag_template_field = 3 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder setTagTemplateField(com.google.cloud.datacatalog.TagTemplateField value) {
       if (tagTemplateFieldBuilder_ == null) {
@@ -909,7 +935,9 @@ public final class CreateTagTemplateFieldRequest extends com.google.protobuf.Gen
      * Required. The tag template field to create.
      * </pre>
      *
-     * <code>.google.cloud.datacatalog.v1beta1.TagTemplateField tag_template_field = 3;</code>
+     * <code>
+     * .google.cloud.datacatalog.v1beta1.TagTemplateField tag_template_field = 3 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder setTagTemplateField(
         com.google.cloud.datacatalog.TagTemplateField.Builder builderForValue) {
@@ -929,7 +957,9 @@ public final class CreateTagTemplateFieldRequest extends com.google.protobuf.Gen
      * Required. The tag template field to create.
      * </pre>
      *
-     * <code>.google.cloud.datacatalog.v1beta1.TagTemplateField tag_template_field = 3;</code>
+     * <code>
+     * .google.cloud.datacatalog.v1beta1.TagTemplateField tag_template_field = 3 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder mergeTagTemplateField(com.google.cloud.datacatalog.TagTemplateField value) {
       if (tagTemplateFieldBuilder_ == null) {
@@ -955,7 +985,9 @@ public final class CreateTagTemplateFieldRequest extends com.google.protobuf.Gen
      * Required. The tag template field to create.
      * </pre>
      *
-     * <code>.google.cloud.datacatalog.v1beta1.TagTemplateField tag_template_field = 3;</code>
+     * <code>
+     * .google.cloud.datacatalog.v1beta1.TagTemplateField tag_template_field = 3 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder clearTagTemplateField() {
       if (tagTemplateFieldBuilder_ == null) {
@@ -975,7 +1007,9 @@ public final class CreateTagTemplateFieldRequest extends com.google.protobuf.Gen
      * Required. The tag template field to create.
      * </pre>
      *
-     * <code>.google.cloud.datacatalog.v1beta1.TagTemplateField tag_template_field = 3;</code>
+     * <code>
+     * .google.cloud.datacatalog.v1beta1.TagTemplateField tag_template_field = 3 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public com.google.cloud.datacatalog.TagTemplateField.Builder getTagTemplateFieldBuilder() {
 
@@ -989,7 +1023,9 @@ public final class CreateTagTemplateFieldRequest extends com.google.protobuf.Gen
      * Required. The tag template field to create.
      * </pre>
      *
-     * <code>.google.cloud.datacatalog.v1beta1.TagTemplateField tag_template_field = 3;</code>
+     * <code>
+     * .google.cloud.datacatalog.v1beta1.TagTemplateField tag_template_field = 3 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public com.google.cloud.datacatalog.TagTemplateFieldOrBuilder getTagTemplateFieldOrBuilder() {
       if (tagTemplateFieldBuilder_ != null) {
@@ -1007,7 +1043,9 @@ public final class CreateTagTemplateFieldRequest extends com.google.protobuf.Gen
      * Required. The tag template field to create.
      * </pre>
      *
-     * <code>.google.cloud.datacatalog.v1beta1.TagTemplateField tag_template_field = 3;</code>
+     * <code>
+     * .google.cloud.datacatalog.v1beta1.TagTemplateField tag_template_field = 3 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.datacatalog.TagTemplateField,

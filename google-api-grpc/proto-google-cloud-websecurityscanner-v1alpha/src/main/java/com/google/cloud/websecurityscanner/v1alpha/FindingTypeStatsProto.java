@@ -27,17 +27,16 @@ public final class FindingTypeStatsProto {
     java.lang.String[] descriptorData = {
       "\n@google/cloud/websecurityscanner/v1alph"
           + "a/finding_type_stats.proto\022\'google.cloud"
-          + ".websecurityscanner.v1alpha\032\034google/api/"
-          + "annotations.proto\0325google/cloud/websecur"
-          + "ityscanner/v1alpha/finding.proto\"}\n\020Find"
-          + "ingTypeStats\022R\n\014finding_type\030\001 \001(\0162<.goo"
-          + "gle.cloud.websecurityscanner.v1alpha.Fin"
-          + "ding.FindingType\022\025\n\rfinding_count\030\002 \001(\005B"
-          + "\241\001\n+com.google.cloud.websecurityscanner."
-          + "v1alphaB\025FindingTypeStatsProtoP\001ZYgoogle"
-          + ".golang.org/genproto/googleapis/cloud/we"
-          + "bsecurityscanner/v1alpha;websecurityscan"
-          + "nerb\006proto3"
+          + ".websecurityscanner.v1alpha\0325google/clou"
+          + "d/websecurityscanner/v1alpha/finding.pro"
+          + "to\"}\n\020FindingTypeStats\022R\n\014finding_type\030\001"
+          + " \001(\0162<.google.cloud.websecurityscanner.v"
+          + "1alpha.Finding.FindingType\022\025\n\rfinding_co"
+          + "unt\030\002 \001(\005B\241\001\n+com.google.cloud.websecuri"
+          + "tyscanner.v1alphaB\025FindingTypeStatsProto"
+          + "P\001ZYgoogle.golang.org/genproto/googleapi"
+          + "s/cloud/websecurityscanner/v1alpha;webse"
+          + "curityscannerb\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner() {
@@ -50,7 +49,6 @@ public final class FindingTypeStatsProto {
     com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
         descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
-          com.google.api.AnnotationsProto.getDescriptor(),
           com.google.cloud.websecurityscanner.v1alpha.FindingProto.getDescriptor(),
         },
         assigner);
@@ -62,7 +60,6 @@ public final class FindingTypeStatsProto {
             new java.lang.String[] {
               "FindingType", "FindingCount",
             });
-    com.google.api.AnnotationsProto.getDescriptor();
     com.google.cloud.websecurityscanner.v1alpha.FindingProto.getDescriptor();
   }
 

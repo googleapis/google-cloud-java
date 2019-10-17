@@ -16,7 +16,7 @@ public interface ListJobsRequestOrBuilder
    * belongs to.
    * </pre>
    *
-   * <code>string project_id = 1;</code>
+   * <code>string project_id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   java.lang.String getProjectId();
   /**
@@ -27,7 +27,7 @@ public interface ListJobsRequestOrBuilder
    * belongs to.
    * </pre>
    *
-   * <code>string project_id = 1;</code>
+   * <code>string project_id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   com.google.protobuf.ByteString getProjectIdBytes();
 
@@ -38,7 +38,7 @@ public interface ListJobsRequestOrBuilder
    * Required. The Cloud Dataproc region in which to handle the request.
    * </pre>
    *
-   * <code>string region = 6;</code>
+   * <code>string region = 6 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   java.lang.String getRegion();
   /**
@@ -48,7 +48,7 @@ public interface ListJobsRequestOrBuilder
    * Required. The Cloud Dataproc region in which to handle the request.
    * </pre>
    *
-   * <code>string region = 6;</code>
+   * <code>string region = 6 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   com.google.protobuf.ByteString getRegionBytes();
 
@@ -59,7 +59,7 @@ public interface ListJobsRequestOrBuilder
    * Optional. The number of results to return in each response.
    * </pre>
    *
-   * <code>int32 page_size = 2;</code>
+   * <code>int32 page_size = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   int getPageSize();
 
@@ -71,7 +71,7 @@ public interface ListJobsRequestOrBuilder
    * next page of results.
    * </pre>
    *
-   * <code>string page_token = 3;</code>
+   * <code>string page_token = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   java.lang.String getPageToken();
   /**
@@ -82,7 +82,7 @@ public interface ListJobsRequestOrBuilder
    * next page of results.
    * </pre>
    *
-   * <code>string page_token = 3;</code>
+   * <code>string page_token = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   com.google.protobuf.ByteString getPageTokenBytes();
 
@@ -94,7 +94,7 @@ public interface ListJobsRequestOrBuilder
    * submitted to the named cluster.
    * </pre>
    *
-   * <code>string cluster_name = 4;</code>
+   * <code>string cluster_name = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   java.lang.String getClusterName();
   /**
@@ -105,7 +105,7 @@ public interface ListJobsRequestOrBuilder
    * submitted to the named cluster.
    * </pre>
    *
-   * <code>string cluster_name = 4;</code>
+   * <code>string cluster_name = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   com.google.protobuf.ByteString getClusterNameBytes();
 
@@ -118,7 +118,9 @@ public interface ListJobsRequestOrBuilder
    * If `filter` is provided, `jobStateMatcher` will be ignored.
    * </pre>
    *
-   * <code>.google.cloud.dataproc.v1.ListJobsRequest.JobStateMatcher job_state_matcher = 5;</code>
+   * <code>
+   * .google.cloud.dataproc.v1.ListJobsRequest.JobStateMatcher job_state_matcher = 5 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   int getJobStateMatcherValue();
   /**
@@ -130,7 +132,9 @@ public interface ListJobsRequestOrBuilder
    * If `filter` is provided, `jobStateMatcher` will be ignored.
    * </pre>
    *
-   * <code>.google.cloud.dataproc.v1.ListJobsRequest.JobStateMatcher job_state_matcher = 5;</code>
+   * <code>
+   * .google.cloud.dataproc.v1.ListJobsRequest.JobStateMatcher job_state_matcher = 5 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   com.google.cloud.dataproc.v1.ListJobsRequest.JobStateMatcher getJobStateMatcher();
 
@@ -150,7 +154,7 @@ public interface ListJobsRequestOrBuilder
    * status.state = ACTIVE AND labels.env = staging AND labels.starred = *
    * </pre>
    *
-   * <code>string filter = 7;</code>
+   * <code>string filter = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   java.lang.String getFilter();
   /**
@@ -169,7 +173,7 @@ public interface ListJobsRequestOrBuilder
    * status.state = ACTIVE AND labels.env = staging AND labels.starred = *
    * </pre>
    *
-   * <code>string filter = 7;</code>
+   * <code>string filter = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   com.google.protobuf.ByteString getFilterBytes();
 }

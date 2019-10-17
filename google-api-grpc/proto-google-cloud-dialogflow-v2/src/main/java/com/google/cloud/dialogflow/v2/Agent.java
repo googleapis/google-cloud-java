@@ -673,7 +673,9 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
    * Format: `projects/&lt;Project ID&gt;`.
    * </pre>
    *
-   * <code>string parent = 1;</code>
+   * <code>
+   * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    */
   public java.lang.String getParent() {
     java.lang.Object ref = parent_;
@@ -694,7 +696,9 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
    * Format: `projects/&lt;Project ID&gt;`.
    * </pre>
    *
-   * <code>string parent = 1;</code>
+   * <code>
+   * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    */
   public com.google.protobuf.ByteString getParentBytes() {
     java.lang.Object ref = parent_;
@@ -717,7 +721,7 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
    * Required. The name of this agent.
    * </pre>
    *
-   * <code>string display_name = 2;</code>
+   * <code>string display_name = 2 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   public java.lang.String getDisplayName() {
     java.lang.Object ref = displayName_;
@@ -737,7 +741,7 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
    * Required. The name of this agent.
    * </pre>
    *
-   * <code>string display_name = 2;</code>
+   * <code>string display_name = 2 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   public com.google.protobuf.ByteString getDisplayNameBytes() {
     java.lang.Object ref = displayName_;
@@ -764,7 +768,7 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
    * set by the `Update` method.
    * </pre>
    *
-   * <code>string default_language_code = 3;</code>
+   * <code>string default_language_code = 3 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   public java.lang.String getDefaultLanguageCode() {
     java.lang.Object ref = defaultLanguageCode_;
@@ -788,7 +792,7 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
    * set by the `Update` method.
    * </pre>
    *
-   * <code>string default_language_code = 3;</code>
+   * <code>string default_language_code = 3 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   public com.google.protobuf.ByteString getDefaultLanguageCodeBytes() {
     java.lang.Object ref = defaultLanguageCode_;
@@ -812,7 +816,8 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
    * `default_language_code`).
    * </pre>
    *
-   * <code>repeated string supported_language_codes = 4;</code>
+   * <code>repeated string supported_language_codes = 4 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   public com.google.protobuf.ProtocolStringList getSupportedLanguageCodesList() {
     return supportedLanguageCodes_;
@@ -825,7 +830,8 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
    * `default_language_code`).
    * </pre>
    *
-   * <code>repeated string supported_language_codes = 4;</code>
+   * <code>repeated string supported_language_codes = 4 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   public int getSupportedLanguageCodesCount() {
     return supportedLanguageCodes_.size();
@@ -838,7 +844,8 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
    * `default_language_code`).
    * </pre>
    *
-   * <code>repeated string supported_language_codes = 4;</code>
+   * <code>repeated string supported_language_codes = 4 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   public java.lang.String getSupportedLanguageCodes(int index) {
     return supportedLanguageCodes_.get(index);
@@ -851,7 +858,8 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
    * `default_language_code`).
    * </pre>
    *
-   * <code>repeated string supported_language_codes = 4;</code>
+   * <code>repeated string supported_language_codes = 4 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   public com.google.protobuf.ByteString getSupportedLanguageCodesBytes(int index) {
     return supportedLanguageCodes_.getByteString(index);
@@ -868,7 +876,7 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
    * America/New_York, Europe/Paris.
    * </pre>
    *
-   * <code>string time_zone = 5;</code>
+   * <code>string time_zone = 5 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   public java.lang.String getTimeZone() {
     java.lang.Object ref = timeZone_;
@@ -890,7 +898,7 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
    * America/New_York, Europe/Paris.
    * </pre>
    *
-   * <code>string time_zone = 5;</code>
+   * <code>string time_zone = 5 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   public com.google.protobuf.ByteString getTimeZoneBytes() {
     java.lang.Object ref = timeZone_;
@@ -914,7 +922,7 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
    * The maximum length is 500 characters. If exceeded, the request is rejected.
    * </pre>
    *
-   * <code>string description = 6;</code>
+   * <code>string description = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   public java.lang.String getDescription() {
     java.lang.Object ref = description_;
@@ -935,7 +943,7 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
    * The maximum length is 500 characters. If exceeded, the request is rejected.
    * </pre>
    *
-   * <code>string description = 6;</code>
+   * <code>string description = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   public com.google.protobuf.ByteString getDescriptionBytes() {
     java.lang.Object ref = description_;
@@ -962,7 +970,7 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
    * integration.
    * </pre>
    *
-   * <code>string avatar_uri = 7;</code>
+   * <code>string avatar_uri = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   public java.lang.String getAvatarUri() {
     java.lang.Object ref = avatarUri_;
@@ -986,7 +994,7 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
    * integration.
    * </pre>
    *
-   * <code>string avatar_uri = 7;</code>
+   * <code>string avatar_uri = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   public com.google.protobuf.ByteString getAvatarUriBytes() {
     java.lang.Object ref = avatarUri_;
@@ -1009,7 +1017,7 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
    * Optional. Determines whether this agent should log conversation queries.
    * </pre>
    *
-   * <code>bool enable_logging = 8;</code>
+   * <code>bool enable_logging = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   public boolean getEnableLogging() {
     return enableLogging_;
@@ -1024,7 +1032,9 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
    * Optional. Determines how intents are detected from user queries.
    * </pre>
    *
-   * <code>.google.cloud.dialogflow.v2.Agent.MatchMode match_mode = 9;</code>
+   * <code>
+   * .google.cloud.dialogflow.v2.Agent.MatchMode match_mode = 9 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   public int getMatchModeValue() {
     return matchMode_;
@@ -1036,7 +1046,9 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
    * Optional. Determines how intents are detected from user queries.
    * </pre>
    *
-   * <code>.google.cloud.dialogflow.v2.Agent.MatchMode match_mode = 9;</code>
+   * <code>
+   * .google.cloud.dialogflow.v2.Agent.MatchMode match_mode = 9 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   public com.google.cloud.dialogflow.v2.Agent.MatchMode getMatchMode() {
     @SuppressWarnings("deprecation")
@@ -1060,7 +1072,7 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
    * If set to 0.0, the default of 0.3 is used.
    * </pre>
    *
-   * <code>float classification_threshold = 10;</code>
+   * <code>float classification_threshold = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   public float getClassificationThreshold() {
     return classificationThreshold_;
@@ -1078,7 +1090,9 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
    * follow the specified API version.
    * </pre>
    *
-   * <code>.google.cloud.dialogflow.v2.Agent.ApiVersion api_version = 14;</code>
+   * <code>
+   * .google.cloud.dialogflow.v2.Agent.ApiVersion api_version = 14 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   public int getApiVersionValue() {
     return apiVersion_;
@@ -1093,7 +1107,9 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
    * follow the specified API version.
    * </pre>
    *
-   * <code>.google.cloud.dialogflow.v2.Agent.ApiVersion api_version = 14;</code>
+   * <code>
+   * .google.cloud.dialogflow.v2.Agent.ApiVersion api_version = 14 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   public com.google.cloud.dialogflow.v2.Agent.ApiVersion getApiVersion() {
     @SuppressWarnings("deprecation")
@@ -1111,7 +1127,9 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
    * Optional. The agent tier. If not specified, TIER_STANDARD is assumed.
    * </pre>
    *
-   * <code>.google.cloud.dialogflow.v2.Agent.Tier tier = 15;</code>
+   * <code>
+   * .google.cloud.dialogflow.v2.Agent.Tier tier = 15 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   public int getTierValue() {
     return tier_;
@@ -1123,7 +1141,9 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
    * Optional. The agent tier. If not specified, TIER_STANDARD is assumed.
    * </pre>
    *
-   * <code>.google.cloud.dialogflow.v2.Agent.Tier tier = 15;</code>
+   * <code>
+   * .google.cloud.dialogflow.v2.Agent.Tier tier = 15 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   public com.google.cloud.dialogflow.v2.Agent.Tier getTier() {
     @SuppressWarnings("deprecation")
@@ -1654,7 +1674,9 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
      * Format: `projects/&lt;Project ID&gt;`.
      * </pre>
      *
-     * <code>string parent = 1;</code>
+     * <code>
+     * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      */
     public java.lang.String getParent() {
       java.lang.Object ref = parent_;
@@ -1675,7 +1697,9 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
      * Format: `projects/&lt;Project ID&gt;`.
      * </pre>
      *
-     * <code>string parent = 1;</code>
+     * <code>
+     * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      */
     public com.google.protobuf.ByteString getParentBytes() {
       java.lang.Object ref = parent_;
@@ -1696,7 +1720,9 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
      * Format: `projects/&lt;Project ID&gt;`.
      * </pre>
      *
-     * <code>string parent = 1;</code>
+     * <code>
+     * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      */
     public Builder setParent(java.lang.String value) {
       if (value == null) {
@@ -1715,7 +1741,9 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
      * Format: `projects/&lt;Project ID&gt;`.
      * </pre>
      *
-     * <code>string parent = 1;</code>
+     * <code>
+     * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      */
     public Builder clearParent() {
 
@@ -1731,7 +1759,9 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
      * Format: `projects/&lt;Project ID&gt;`.
      * </pre>
      *
-     * <code>string parent = 1;</code>
+     * <code>
+     * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      */
     public Builder setParentBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -1752,7 +1782,7 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
      * Required. The name of this agent.
      * </pre>
      *
-     * <code>string display_name = 2;</code>
+     * <code>string display_name = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public java.lang.String getDisplayName() {
       java.lang.Object ref = displayName_;
@@ -1772,7 +1802,7 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
      * Required. The name of this agent.
      * </pre>
      *
-     * <code>string display_name = 2;</code>
+     * <code>string display_name = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public com.google.protobuf.ByteString getDisplayNameBytes() {
       java.lang.Object ref = displayName_;
@@ -1792,7 +1822,7 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
      * Required. The name of this agent.
      * </pre>
      *
-     * <code>string display_name = 2;</code>
+     * <code>string display_name = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder setDisplayName(java.lang.String value) {
       if (value == null) {
@@ -1810,7 +1840,7 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
      * Required. The name of this agent.
      * </pre>
      *
-     * <code>string display_name = 2;</code>
+     * <code>string display_name = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder clearDisplayName() {
 
@@ -1825,7 +1855,7 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
      * Required. The name of this agent.
      * </pre>
      *
-     * <code>string display_name = 2;</code>
+     * <code>string display_name = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder setDisplayNameBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -1850,7 +1880,7 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
      * set by the `Update` method.
      * </pre>
      *
-     * <code>string default_language_code = 3;</code>
+     * <code>string default_language_code = 3 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public java.lang.String getDefaultLanguageCode() {
       java.lang.Object ref = defaultLanguageCode_;
@@ -1874,7 +1904,7 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
      * set by the `Update` method.
      * </pre>
      *
-     * <code>string default_language_code = 3;</code>
+     * <code>string default_language_code = 3 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public com.google.protobuf.ByteString getDefaultLanguageCodeBytes() {
       java.lang.Object ref = defaultLanguageCode_;
@@ -1898,7 +1928,7 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
      * set by the `Update` method.
      * </pre>
      *
-     * <code>string default_language_code = 3;</code>
+     * <code>string default_language_code = 3 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder setDefaultLanguageCode(java.lang.String value) {
       if (value == null) {
@@ -1920,7 +1950,7 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
      * set by the `Update` method.
      * </pre>
      *
-     * <code>string default_language_code = 3;</code>
+     * <code>string default_language_code = 3 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder clearDefaultLanguageCode() {
 
@@ -1939,7 +1969,7 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
      * set by the `Update` method.
      * </pre>
      *
-     * <code>string default_language_code = 3;</code>
+     * <code>string default_language_code = 3 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder setDefaultLanguageCodeBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -1970,7 +2000,8 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
      * `default_language_code`).
      * </pre>
      *
-     * <code>repeated string supported_language_codes = 4;</code>
+     * <code>repeated string supported_language_codes = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public com.google.protobuf.ProtocolStringList getSupportedLanguageCodesList() {
       return supportedLanguageCodes_.getUnmodifiableView();
@@ -1983,7 +2014,8 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
      * `default_language_code`).
      * </pre>
      *
-     * <code>repeated string supported_language_codes = 4;</code>
+     * <code>repeated string supported_language_codes = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public int getSupportedLanguageCodesCount() {
       return supportedLanguageCodes_.size();
@@ -1996,7 +2028,8 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
      * `default_language_code`).
      * </pre>
      *
-     * <code>repeated string supported_language_codes = 4;</code>
+     * <code>repeated string supported_language_codes = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public java.lang.String getSupportedLanguageCodes(int index) {
       return supportedLanguageCodes_.get(index);
@@ -2009,7 +2042,8 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
      * `default_language_code`).
      * </pre>
      *
-     * <code>repeated string supported_language_codes = 4;</code>
+     * <code>repeated string supported_language_codes = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public com.google.protobuf.ByteString getSupportedLanguageCodesBytes(int index) {
       return supportedLanguageCodes_.getByteString(index);
@@ -2022,7 +2056,8 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
      * `default_language_code`).
      * </pre>
      *
-     * <code>repeated string supported_language_codes = 4;</code>
+     * <code>repeated string supported_language_codes = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder setSupportedLanguageCodes(int index, java.lang.String value) {
       if (value == null) {
@@ -2041,7 +2076,8 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
      * `default_language_code`).
      * </pre>
      *
-     * <code>repeated string supported_language_codes = 4;</code>
+     * <code>repeated string supported_language_codes = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder addSupportedLanguageCodes(java.lang.String value) {
       if (value == null) {
@@ -2060,7 +2096,8 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
      * `default_language_code`).
      * </pre>
      *
-     * <code>repeated string supported_language_codes = 4;</code>
+     * <code>repeated string supported_language_codes = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder addAllSupportedLanguageCodes(java.lang.Iterable<java.lang.String> values) {
       ensureSupportedLanguageCodesIsMutable();
@@ -2076,7 +2113,8 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
      * `default_language_code`).
      * </pre>
      *
-     * <code>repeated string supported_language_codes = 4;</code>
+     * <code>repeated string supported_language_codes = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder clearSupportedLanguageCodes() {
       supportedLanguageCodes_ = com.google.protobuf.LazyStringArrayList.EMPTY;
@@ -2092,7 +2130,8 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
      * `default_language_code`).
      * </pre>
      *
-     * <code>repeated string supported_language_codes = 4;</code>
+     * <code>repeated string supported_language_codes = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder addSupportedLanguageCodesBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -2115,7 +2154,7 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
      * America/New_York, Europe/Paris.
      * </pre>
      *
-     * <code>string time_zone = 5;</code>
+     * <code>string time_zone = 5 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public java.lang.String getTimeZone() {
       java.lang.Object ref = timeZone_;
@@ -2137,7 +2176,7 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
      * America/New_York, Europe/Paris.
      * </pre>
      *
-     * <code>string time_zone = 5;</code>
+     * <code>string time_zone = 5 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public com.google.protobuf.ByteString getTimeZoneBytes() {
       java.lang.Object ref = timeZone_;
@@ -2159,7 +2198,7 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
      * America/New_York, Europe/Paris.
      * </pre>
      *
-     * <code>string time_zone = 5;</code>
+     * <code>string time_zone = 5 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder setTimeZone(java.lang.String value) {
       if (value == null) {
@@ -2179,7 +2218,7 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
      * America/New_York, Europe/Paris.
      * </pre>
      *
-     * <code>string time_zone = 5;</code>
+     * <code>string time_zone = 5 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder clearTimeZone() {
 
@@ -2196,7 +2235,7 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
      * America/New_York, Europe/Paris.
      * </pre>
      *
-     * <code>string time_zone = 5;</code>
+     * <code>string time_zone = 5 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder setTimeZoneBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -2218,7 +2257,7 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
      * The maximum length is 500 characters. If exceeded, the request is rejected.
      * </pre>
      *
-     * <code>string description = 6;</code>
+     * <code>string description = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public java.lang.String getDescription() {
       java.lang.Object ref = description_;
@@ -2239,7 +2278,7 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
      * The maximum length is 500 characters. If exceeded, the request is rejected.
      * </pre>
      *
-     * <code>string description = 6;</code>
+     * <code>string description = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public com.google.protobuf.ByteString getDescriptionBytes() {
       java.lang.Object ref = description_;
@@ -2260,7 +2299,7 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
      * The maximum length is 500 characters. If exceeded, the request is rejected.
      * </pre>
      *
-     * <code>string description = 6;</code>
+     * <code>string description = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public Builder setDescription(java.lang.String value) {
       if (value == null) {
@@ -2279,7 +2318,7 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
      * The maximum length is 500 characters. If exceeded, the request is rejected.
      * </pre>
      *
-     * <code>string description = 6;</code>
+     * <code>string description = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public Builder clearDescription() {
 
@@ -2295,7 +2334,7 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
      * The maximum length is 500 characters. If exceeded, the request is rejected.
      * </pre>
      *
-     * <code>string description = 6;</code>
+     * <code>string description = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public Builder setDescriptionBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -2320,7 +2359,7 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
      * integration.
      * </pre>
      *
-     * <code>string avatar_uri = 7;</code>
+     * <code>string avatar_uri = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public java.lang.String getAvatarUri() {
       java.lang.Object ref = avatarUri_;
@@ -2344,7 +2383,7 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
      * integration.
      * </pre>
      *
-     * <code>string avatar_uri = 7;</code>
+     * <code>string avatar_uri = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public com.google.protobuf.ByteString getAvatarUriBytes() {
       java.lang.Object ref = avatarUri_;
@@ -2368,7 +2407,7 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
      * integration.
      * </pre>
      *
-     * <code>string avatar_uri = 7;</code>
+     * <code>string avatar_uri = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public Builder setAvatarUri(java.lang.String value) {
       if (value == null) {
@@ -2390,7 +2429,7 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
      * integration.
      * </pre>
      *
-     * <code>string avatar_uri = 7;</code>
+     * <code>string avatar_uri = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public Builder clearAvatarUri() {
 
@@ -2409,7 +2448,7 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
      * integration.
      * </pre>
      *
-     * <code>string avatar_uri = 7;</code>
+     * <code>string avatar_uri = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public Builder setAvatarUriBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -2430,7 +2469,7 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
      * Optional. Determines whether this agent should log conversation queries.
      * </pre>
      *
-     * <code>bool enable_logging = 8;</code>
+     * <code>bool enable_logging = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public boolean getEnableLogging() {
       return enableLogging_;
@@ -2442,7 +2481,7 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
      * Optional. Determines whether this agent should log conversation queries.
      * </pre>
      *
-     * <code>bool enable_logging = 8;</code>
+     * <code>bool enable_logging = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public Builder setEnableLogging(boolean value) {
 
@@ -2457,7 +2496,7 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
      * Optional. Determines whether this agent should log conversation queries.
      * </pre>
      *
-     * <code>bool enable_logging = 8;</code>
+     * <code>bool enable_logging = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public Builder clearEnableLogging() {
 
@@ -2474,7 +2513,9 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
      * Optional. Determines how intents are detected from user queries.
      * </pre>
      *
-     * <code>.google.cloud.dialogflow.v2.Agent.MatchMode match_mode = 9;</code>
+     * <code>
+     * .google.cloud.dialogflow.v2.Agent.MatchMode match_mode = 9 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public int getMatchModeValue() {
       return matchMode_;
@@ -2486,7 +2527,9 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
      * Optional. Determines how intents are detected from user queries.
      * </pre>
      *
-     * <code>.google.cloud.dialogflow.v2.Agent.MatchMode match_mode = 9;</code>
+     * <code>
+     * .google.cloud.dialogflow.v2.Agent.MatchMode match_mode = 9 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder setMatchModeValue(int value) {
       matchMode_ = value;
@@ -2500,7 +2543,9 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
      * Optional. Determines how intents are detected from user queries.
      * </pre>
      *
-     * <code>.google.cloud.dialogflow.v2.Agent.MatchMode match_mode = 9;</code>
+     * <code>
+     * .google.cloud.dialogflow.v2.Agent.MatchMode match_mode = 9 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public com.google.cloud.dialogflow.v2.Agent.MatchMode getMatchMode() {
       @SuppressWarnings("deprecation")
@@ -2515,7 +2560,9 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
      * Optional. Determines how intents are detected from user queries.
      * </pre>
      *
-     * <code>.google.cloud.dialogflow.v2.Agent.MatchMode match_mode = 9;</code>
+     * <code>
+     * .google.cloud.dialogflow.v2.Agent.MatchMode match_mode = 9 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder setMatchMode(com.google.cloud.dialogflow.v2.Agent.MatchMode value) {
       if (value == null) {
@@ -2533,7 +2580,9 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
      * Optional. Determines how intents are detected from user queries.
      * </pre>
      *
-     * <code>.google.cloud.dialogflow.v2.Agent.MatchMode match_mode = 9;</code>
+     * <code>
+     * .google.cloud.dialogflow.v2.Agent.MatchMode match_mode = 9 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder clearMatchMode() {
 
@@ -2556,7 +2605,7 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
      * If set to 0.0, the default of 0.3 is used.
      * </pre>
      *
-     * <code>float classification_threshold = 10;</code>
+     * <code>float classification_threshold = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public float getClassificationThreshold() {
       return classificationThreshold_;
@@ -2574,7 +2623,7 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
      * If set to 0.0, the default of 0.3 is used.
      * </pre>
      *
-     * <code>float classification_threshold = 10;</code>
+     * <code>float classification_threshold = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public Builder setClassificationThreshold(float value) {
 
@@ -2595,7 +2644,7 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
      * If set to 0.0, the default of 0.3 is used.
      * </pre>
      *
-     * <code>float classification_threshold = 10;</code>
+     * <code>float classification_threshold = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public Builder clearClassificationThreshold() {
 
@@ -2615,7 +2664,9 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
      * follow the specified API version.
      * </pre>
      *
-     * <code>.google.cloud.dialogflow.v2.Agent.ApiVersion api_version = 14;</code>
+     * <code>
+     * .google.cloud.dialogflow.v2.Agent.ApiVersion api_version = 14 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public int getApiVersionValue() {
       return apiVersion_;
@@ -2630,7 +2681,9 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
      * follow the specified API version.
      * </pre>
      *
-     * <code>.google.cloud.dialogflow.v2.Agent.ApiVersion api_version = 14;</code>
+     * <code>
+     * .google.cloud.dialogflow.v2.Agent.ApiVersion api_version = 14 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder setApiVersionValue(int value) {
       apiVersion_ = value;
@@ -2647,7 +2700,9 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
      * follow the specified API version.
      * </pre>
      *
-     * <code>.google.cloud.dialogflow.v2.Agent.ApiVersion api_version = 14;</code>
+     * <code>
+     * .google.cloud.dialogflow.v2.Agent.ApiVersion api_version = 14 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public com.google.cloud.dialogflow.v2.Agent.ApiVersion getApiVersion() {
       @SuppressWarnings("deprecation")
@@ -2665,7 +2720,9 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
      * follow the specified API version.
      * </pre>
      *
-     * <code>.google.cloud.dialogflow.v2.Agent.ApiVersion api_version = 14;</code>
+     * <code>
+     * .google.cloud.dialogflow.v2.Agent.ApiVersion api_version = 14 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder setApiVersion(com.google.cloud.dialogflow.v2.Agent.ApiVersion value) {
       if (value == null) {
@@ -2686,7 +2743,9 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
      * follow the specified API version.
      * </pre>
      *
-     * <code>.google.cloud.dialogflow.v2.Agent.ApiVersion api_version = 14;</code>
+     * <code>
+     * .google.cloud.dialogflow.v2.Agent.ApiVersion api_version = 14 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder clearApiVersion() {
 
@@ -2703,7 +2762,9 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
      * Optional. The agent tier. If not specified, TIER_STANDARD is assumed.
      * </pre>
      *
-     * <code>.google.cloud.dialogflow.v2.Agent.Tier tier = 15;</code>
+     * <code>
+     * .google.cloud.dialogflow.v2.Agent.Tier tier = 15 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public int getTierValue() {
       return tier_;
@@ -2715,7 +2776,9 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
      * Optional. The agent tier. If not specified, TIER_STANDARD is assumed.
      * </pre>
      *
-     * <code>.google.cloud.dialogflow.v2.Agent.Tier tier = 15;</code>
+     * <code>
+     * .google.cloud.dialogflow.v2.Agent.Tier tier = 15 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder setTierValue(int value) {
       tier_ = value;
@@ -2729,7 +2792,9 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
      * Optional. The agent tier. If not specified, TIER_STANDARD is assumed.
      * </pre>
      *
-     * <code>.google.cloud.dialogflow.v2.Agent.Tier tier = 15;</code>
+     * <code>
+     * .google.cloud.dialogflow.v2.Agent.Tier tier = 15 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public com.google.cloud.dialogflow.v2.Agent.Tier getTier() {
       @SuppressWarnings("deprecation")
@@ -2744,7 +2809,9 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
      * Optional. The agent tier. If not specified, TIER_STANDARD is assumed.
      * </pre>
      *
-     * <code>.google.cloud.dialogflow.v2.Agent.Tier tier = 15;</code>
+     * <code>
+     * .google.cloud.dialogflow.v2.Agent.Tier tier = 15 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder setTier(com.google.cloud.dialogflow.v2.Agent.Tier value) {
       if (value == null) {
@@ -2762,7 +2829,9 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
      * Optional. The agent tier. If not specified, TIER_STANDARD is assumed.
      * </pre>
      *
-     * <code>.google.cloud.dialogflow.v2.Agent.Tier tier = 15;</code>
+     * <code>
+     * .google.cloud.dialogflow.v2.Agent.Tier tier = 15 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder clearTier() {
 

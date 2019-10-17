@@ -12,7 +12,6 @@ public interface ScanRunWarningTraceOrBuilder
    *
    *
    * <pre>
-   * Output only.
    * Indicates the warning code.
    * </pre>
    *
@@ -23,7 +22,6 @@ public interface ScanRunWarningTraceOrBuilder
    *
    *
    * <pre>
-   * Output only.
    * Indicates the warning code.
    * </pre>
    *

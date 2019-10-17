@@ -32,21 +32,28 @@ public final class PhishingProtectionProto {
       "\n@google/cloud/phishingprotection/v1beta"
           + "1/phishingprotection.proto\022\'google.cloud"
           + ".phishingprotection.v1beta1\032\034google/api/"
-          + "annotations.proto\"4\n\025ReportPhishingReque"
-          + "st\022\016\n\006parent\030\001 \001(\t\022\013\n\003uri\030\002 \001(\t\"\030\n\026Repor"
-          + "tPhishingResponse2\357\001\n PhishingProtection"
-          + "ServiceV1Beta1\022\312\001\n\016ReportPhishing\022>.goog"
-          + "le.cloud.phishingprotection.v1beta1.Repo"
-          + "rtPhishingRequest\032?.google.cloud.phishin"
-          + "gprotection.v1beta1.ReportPhishingRespon"
-          + "se\"7\202\323\344\223\0021\",/v1beta1/{parent=projects/*}"
-          + "/phishing:report:\001*B\370\001\n%com.google.phish"
-          + "ingprotection.v1beta1B\027PhishingProtectio"
-          + "nProtoP\001ZYgoogle.golang.org/genproto/goo"
-          + "gleapis/cloud/phishingprotection/v1beta1"
-          + ";phishingprotection\242\002\004GCPP\252\002\'Google.Clou"
-          + "d.PhishingProtection.V1Beta1\312\002\'Google\\Cl"
-          + "oud\\PhishingProtection\\V1beta1b\006proto3"
+          + "annotations.proto\032\027google/api/client.pro"
+          + "to\032\037google/api/field_behavior.proto\032\031goo"
+          + "gle/api/resource.proto\"n\n\025ReportPhishing"
+          + "Request\022C\n\006parent\030\001 \001(\tB3\340A\002\372A-\n+cloudre"
+          + "sourcemanager.googleapis.com/Project\022\020\n\003"
+          + "uri\030\002 \001(\tB\003\340A\002\"\030\n\026ReportPhishingResponse"
+          + "2\323\002\n PhishingProtectionServiceV1Beta1\022\327\001"
+          + "\n\016ReportPhishing\022>.google.cloud.phishing"
+          + "protection.v1beta1.ReportPhishingRequest"
+          + "\032?.google.cloud.phishingprotection.v1bet"
+          + "a1.ReportPhishingResponse\"D\202\323\344\223\0021\",/v1be"
+          + "ta1/{parent=projects/*}/phishing:report:"
+          + "\001*\332A\nparent,uri\032U\312A!phishingprotection.g"
+          + "oogleapis.com\322A.https://www.googleapis.c"
+          + "om/auth/cloud-platformB\370\001\n%com.google.ph"
+          + "ishingprotection.v1beta1B\027PhishingProtec"
+          + "tionProtoP\001ZYgoogle.golang.org/genproto/"
+          + "googleapis/cloud/phishingprotection/v1be"
+          + "ta1;phishingprotection\242\002\004GCPP\252\002\'Google.C"
+          + "loud.PhishingProtection.V1Beta1\312\002\'Google"
+          + "\\Cloud\\PhishingProtection\\V1beta1b\006proto"
+          + "3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner() {
@@ -60,6 +67,9 @@ public final class PhishingProtectionProto {
         descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
           com.google.api.AnnotationsProto.getDescriptor(),
+          com.google.api.ClientProto.getDescriptor(),
+          com.google.api.FieldBehaviorProto.getDescriptor(),
+          com.google.api.ResourceProto.getDescriptor(),
         },
         assigner);
     internal_static_google_cloud_phishingprotection_v1beta1_ReportPhishingRequest_descriptor =
@@ -78,10 +88,18 @@ public final class PhishingProtectionProto {
             new java.lang.String[] {});
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();
+    registry.add(com.google.api.ClientProto.defaultHost);
+    registry.add(com.google.api.FieldBehaviorProto.fieldBehavior);
     registry.add(com.google.api.AnnotationsProto.http);
+    registry.add(com.google.api.ClientProto.methodSignature);
+    registry.add(com.google.api.ClientProto.oauthScopes);
+    registry.add(com.google.api.ResourceProto.resourceReference);
     com.google.protobuf.Descriptors.FileDescriptor.internalUpdateFileDescriptor(
         descriptor, registry);
     com.google.api.AnnotationsProto.getDescriptor();
+    com.google.api.ClientProto.getDescriptor();
+    com.google.api.FieldBehaviorProto.getDescriptor();
+    com.google.api.ResourceProto.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

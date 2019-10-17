@@ -16,7 +16,7 @@ public interface JobReferenceOrBuilder
    * belongs to.
    * </pre>
    *
-   * <code>string project_id = 1;</code>
+   * <code>string project_id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   java.lang.String getProjectId();
   /**
@@ -27,7 +27,7 @@ public interface JobReferenceOrBuilder
    * belongs to.
    * </pre>
    *
-   * <code>string project_id = 1;</code>
+   * <code>string project_id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   com.google.protobuf.ByteString getProjectIdBytes();
 

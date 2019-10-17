@@ -473,7 +473,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      * Required. The type of the training phrase.
      * </pre>
      *
-     * <code>.google.cloud.dialogflow.v2.Intent.TrainingPhrase.Type type = 2;</code>
+     * <code>
+     * .google.cloud.dialogflow.v2.Intent.TrainingPhrase.Type type = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     int getTypeValue();
     /**
@@ -483,7 +485,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      * Required. The type of the training phrase.
      * </pre>
      *
-     * <code>.google.cloud.dialogflow.v2.Intent.TrainingPhrase.Type type = 2;</code>
+     * <code>
+     * .google.cloud.dialogflow.v2.Intent.TrainingPhrase.Type type = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     com.google.cloud.dialogflow.v2.Intent.TrainingPhrase.Type getType();
 
@@ -507,7 +511,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      *     set.
      * </pre>
      *
-     * <code>repeated .google.cloud.dialogflow.v2.Intent.TrainingPhrase.Part parts = 3;</code>
+     * <code>
+     * repeated .google.cloud.dialogflow.v2.Intent.TrainingPhrase.Part parts = 3 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     java.util.List<com.google.cloud.dialogflow.v2.Intent.TrainingPhrase.Part> getPartsList();
     /**
@@ -530,7 +536,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      *     set.
      * </pre>
      *
-     * <code>repeated .google.cloud.dialogflow.v2.Intent.TrainingPhrase.Part parts = 3;</code>
+     * <code>
+     * repeated .google.cloud.dialogflow.v2.Intent.TrainingPhrase.Part parts = 3 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     com.google.cloud.dialogflow.v2.Intent.TrainingPhrase.Part getParts(int index);
     /**
@@ -553,7 +561,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      *     set.
      * </pre>
      *
-     * <code>repeated .google.cloud.dialogflow.v2.Intent.TrainingPhrase.Part parts = 3;</code>
+     * <code>
+     * repeated .google.cloud.dialogflow.v2.Intent.TrainingPhrase.Part parts = 3 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     int getPartsCount();
     /**
@@ -576,7 +586,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      *     set.
      * </pre>
      *
-     * <code>repeated .google.cloud.dialogflow.v2.Intent.TrainingPhrase.Part parts = 3;</code>
+     * <code>
+     * repeated .google.cloud.dialogflow.v2.Intent.TrainingPhrase.Part parts = 3 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     java.util.List<? extends com.google.cloud.dialogflow.v2.Intent.TrainingPhrase.PartOrBuilder>
         getPartsOrBuilderList();
@@ -600,7 +612,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      *     set.
      * </pre>
      *
-     * <code>repeated .google.cloud.dialogflow.v2.Intent.TrainingPhrase.Part parts = 3;</code>
+     * <code>
+     * repeated .google.cloud.dialogflow.v2.Intent.TrainingPhrase.Part parts = 3 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     com.google.cloud.dialogflow.v2.Intent.TrainingPhrase.PartOrBuilder getPartsOrBuilder(int index);
 
@@ -613,7 +627,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      * intent or training, this counter is increased.
      * </pre>
      *
-     * <code>int32 times_added_count = 4;</code>
+     * <code>int32 times_added_count = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     int getTimesAddedCount();
   }
@@ -930,7 +944,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        * This field is required for annotated parts of the training phrase.
        * </pre>
        *
-       * <code>string entity_type = 2;</code>
+       * <code>string entity_type = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
        */
       java.lang.String getEntityType();
       /**
@@ -941,7 +955,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        * This field is required for annotated parts of the training phrase.
        * </pre>
        *
-       * <code>string entity_type = 2;</code>
+       * <code>string entity_type = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
        */
       com.google.protobuf.ByteString getEntityTypeBytes();
 
@@ -954,7 +968,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        * This field is required for annotated parts of the training phrase.
        * </pre>
        *
-       * <code>string alias = 3;</code>
+       * <code>string alias = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
        */
       java.lang.String getAlias();
       /**
@@ -966,7 +980,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        * This field is required for annotated parts of the training phrase.
        * </pre>
        *
-       * <code>string alias = 3;</code>
+       * <code>string alias = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
        */
       com.google.protobuf.ByteString getAliasBytes();
 
@@ -980,7 +994,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        * API, you must set this to true.
        * </pre>
        *
-       * <code>bool user_defined = 4;</code>
+       * <code>bool user_defined = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
        */
       boolean getUserDefined();
     }
@@ -1147,7 +1161,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        * This field is required for annotated parts of the training phrase.
        * </pre>
        *
-       * <code>string entity_type = 2;</code>
+       * <code>string entity_type = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
        */
       public java.lang.String getEntityType() {
         java.lang.Object ref = entityType_;
@@ -1168,7 +1182,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        * This field is required for annotated parts of the training phrase.
        * </pre>
        *
-       * <code>string entity_type = 2;</code>
+       * <code>string entity_type = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
        */
       public com.google.protobuf.ByteString getEntityTypeBytes() {
         java.lang.Object ref = entityType_;
@@ -1193,7 +1207,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        * This field is required for annotated parts of the training phrase.
        * </pre>
        *
-       * <code>string alias = 3;</code>
+       * <code>string alias = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
        */
       public java.lang.String getAlias() {
         java.lang.Object ref = alias_;
@@ -1215,7 +1229,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        * This field is required for annotated parts of the training phrase.
        * </pre>
        *
-       * <code>string alias = 3;</code>
+       * <code>string alias = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
        */
       public com.google.protobuf.ByteString getAliasBytes() {
         java.lang.Object ref = alias_;
@@ -1241,7 +1255,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        * API, you must set this to true.
        * </pre>
        *
-       * <code>bool user_defined = 4;</code>
+       * <code>bool user_defined = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
        */
       public boolean getUserDefined() {
         return userDefined_;
@@ -1723,7 +1737,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * This field is required for annotated parts of the training phrase.
          * </pre>
          *
-         * <code>string entity_type = 2;</code>
+         * <code>string entity_type = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
          */
         public java.lang.String getEntityType() {
           java.lang.Object ref = entityType_;
@@ -1744,7 +1758,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * This field is required for annotated parts of the training phrase.
          * </pre>
          *
-         * <code>string entity_type = 2;</code>
+         * <code>string entity_type = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
          */
         public com.google.protobuf.ByteString getEntityTypeBytes() {
           java.lang.Object ref = entityType_;
@@ -1765,7 +1779,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * This field is required for annotated parts of the training phrase.
          * </pre>
          *
-         * <code>string entity_type = 2;</code>
+         * <code>string entity_type = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
          */
         public Builder setEntityType(java.lang.String value) {
           if (value == null) {
@@ -1784,7 +1798,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * This field is required for annotated parts of the training phrase.
          * </pre>
          *
-         * <code>string entity_type = 2;</code>
+         * <code>string entity_type = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
          */
         public Builder clearEntityType() {
 
@@ -1800,7 +1814,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * This field is required for annotated parts of the training phrase.
          * </pre>
          *
-         * <code>string entity_type = 2;</code>
+         * <code>string entity_type = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
          */
         public Builder setEntityTypeBytes(com.google.protobuf.ByteString value) {
           if (value == null) {
@@ -1823,7 +1837,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * This field is required for annotated parts of the training phrase.
          * </pre>
          *
-         * <code>string alias = 3;</code>
+         * <code>string alias = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
          */
         public java.lang.String getAlias() {
           java.lang.Object ref = alias_;
@@ -1845,7 +1859,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * This field is required for annotated parts of the training phrase.
          * </pre>
          *
-         * <code>string alias = 3;</code>
+         * <code>string alias = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
          */
         public com.google.protobuf.ByteString getAliasBytes() {
           java.lang.Object ref = alias_;
@@ -1867,7 +1881,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * This field is required for annotated parts of the training phrase.
          * </pre>
          *
-         * <code>string alias = 3;</code>
+         * <code>string alias = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
          */
         public Builder setAlias(java.lang.String value) {
           if (value == null) {
@@ -1887,7 +1901,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * This field is required for annotated parts of the training phrase.
          * </pre>
          *
-         * <code>string alias = 3;</code>
+         * <code>string alias = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
          */
         public Builder clearAlias() {
 
@@ -1904,7 +1918,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * This field is required for annotated parts of the training phrase.
          * </pre>
          *
-         * <code>string alias = 3;</code>
+         * <code>string alias = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
          */
         public Builder setAliasBytes(com.google.protobuf.ByteString value) {
           if (value == null) {
@@ -1928,7 +1942,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * API, you must set this to true.
          * </pre>
          *
-         * <code>bool user_defined = 4;</code>
+         * <code>bool user_defined = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
          */
         public boolean getUserDefined() {
           return userDefined_;
@@ -1943,7 +1957,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * API, you must set this to true.
          * </pre>
          *
-         * <code>bool user_defined = 4;</code>
+         * <code>bool user_defined = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
          */
         public Builder setUserDefined(boolean value) {
 
@@ -1961,7 +1975,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * API, you must set this to true.
          * </pre>
          *
-         * <code>bool user_defined = 4;</code>
+         * <code>bool user_defined = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
          */
         public Builder clearUserDefined() {
 
@@ -2076,7 +2090,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      * Required. The type of the training phrase.
      * </pre>
      *
-     * <code>.google.cloud.dialogflow.v2.Intent.TrainingPhrase.Type type = 2;</code>
+     * <code>
+     * .google.cloud.dialogflow.v2.Intent.TrainingPhrase.Type type = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public int getTypeValue() {
       return type_;
@@ -2088,7 +2104,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      * Required. The type of the training phrase.
      * </pre>
      *
-     * <code>.google.cloud.dialogflow.v2.Intent.TrainingPhrase.Type type = 2;</code>
+     * <code>
+     * .google.cloud.dialogflow.v2.Intent.TrainingPhrase.Type type = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public com.google.cloud.dialogflow.v2.Intent.TrainingPhrase.Type getType() {
       @SuppressWarnings("deprecation")
@@ -2121,7 +2139,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      *     set.
      * </pre>
      *
-     * <code>repeated .google.cloud.dialogflow.v2.Intent.TrainingPhrase.Part parts = 3;</code>
+     * <code>
+     * repeated .google.cloud.dialogflow.v2.Intent.TrainingPhrase.Part parts = 3 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public java.util.List<com.google.cloud.dialogflow.v2.Intent.TrainingPhrase.Part>
         getPartsList() {
@@ -2147,7 +2167,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      *     set.
      * </pre>
      *
-     * <code>repeated .google.cloud.dialogflow.v2.Intent.TrainingPhrase.Part parts = 3;</code>
+     * <code>
+     * repeated .google.cloud.dialogflow.v2.Intent.TrainingPhrase.Part parts = 3 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public java.util.List<
             ? extends com.google.cloud.dialogflow.v2.Intent.TrainingPhrase.PartOrBuilder>
@@ -2174,7 +2196,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      *     set.
      * </pre>
      *
-     * <code>repeated .google.cloud.dialogflow.v2.Intent.TrainingPhrase.Part parts = 3;</code>
+     * <code>
+     * repeated .google.cloud.dialogflow.v2.Intent.TrainingPhrase.Part parts = 3 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public int getPartsCount() {
       return parts_.size();
@@ -2199,7 +2223,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      *     set.
      * </pre>
      *
-     * <code>repeated .google.cloud.dialogflow.v2.Intent.TrainingPhrase.Part parts = 3;</code>
+     * <code>
+     * repeated .google.cloud.dialogflow.v2.Intent.TrainingPhrase.Part parts = 3 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public com.google.cloud.dialogflow.v2.Intent.TrainingPhrase.Part getParts(int index) {
       return parts_.get(index);
@@ -2224,7 +2250,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      *     set.
      * </pre>
      *
-     * <code>repeated .google.cloud.dialogflow.v2.Intent.TrainingPhrase.Part parts = 3;</code>
+     * <code>
+     * repeated .google.cloud.dialogflow.v2.Intent.TrainingPhrase.Part parts = 3 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public com.google.cloud.dialogflow.v2.Intent.TrainingPhrase.PartOrBuilder getPartsOrBuilder(
         int index) {
@@ -2242,7 +2270,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      * intent or training, this counter is increased.
      * </pre>
      *
-     * <code>int32 times_added_count = 4;</code>
+     * <code>int32 times_added_count = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public int getTimesAddedCount() {
       return timesAddedCount_;
@@ -2767,7 +2795,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        * Required. The type of the training phrase.
        * </pre>
        *
-       * <code>.google.cloud.dialogflow.v2.Intent.TrainingPhrase.Type type = 2;</code>
+       * <code>
+       * .google.cloud.dialogflow.v2.Intent.TrainingPhrase.Type type = 2 [(.google.api.field_behavior) = REQUIRED];
+       * </code>
        */
       public int getTypeValue() {
         return type_;
@@ -2779,7 +2809,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        * Required. The type of the training phrase.
        * </pre>
        *
-       * <code>.google.cloud.dialogflow.v2.Intent.TrainingPhrase.Type type = 2;</code>
+       * <code>
+       * .google.cloud.dialogflow.v2.Intent.TrainingPhrase.Type type = 2 [(.google.api.field_behavior) = REQUIRED];
+       * </code>
        */
       public Builder setTypeValue(int value) {
         type_ = value;
@@ -2793,7 +2825,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        * Required. The type of the training phrase.
        * </pre>
        *
-       * <code>.google.cloud.dialogflow.v2.Intent.TrainingPhrase.Type type = 2;</code>
+       * <code>
+       * .google.cloud.dialogflow.v2.Intent.TrainingPhrase.Type type = 2 [(.google.api.field_behavior) = REQUIRED];
+       * </code>
        */
       public com.google.cloud.dialogflow.v2.Intent.TrainingPhrase.Type getType() {
         @SuppressWarnings("deprecation")
@@ -2810,7 +2844,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        * Required. The type of the training phrase.
        * </pre>
        *
-       * <code>.google.cloud.dialogflow.v2.Intent.TrainingPhrase.Type type = 2;</code>
+       * <code>
+       * .google.cloud.dialogflow.v2.Intent.TrainingPhrase.Type type = 2 [(.google.api.field_behavior) = REQUIRED];
+       * </code>
        */
       public Builder setType(com.google.cloud.dialogflow.v2.Intent.TrainingPhrase.Type value) {
         if (value == null) {
@@ -2828,7 +2864,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        * Required. The type of the training phrase.
        * </pre>
        *
-       * <code>.google.cloud.dialogflow.v2.Intent.TrainingPhrase.Type type = 2;</code>
+       * <code>
+       * .google.cloud.dialogflow.v2.Intent.TrainingPhrase.Type type = 2 [(.google.api.field_behavior) = REQUIRED];
+       * </code>
        */
       public Builder clearType() {
 
@@ -2875,7 +2913,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        *     set.
        * </pre>
        *
-       * <code>repeated .google.cloud.dialogflow.v2.Intent.TrainingPhrase.Part parts = 3;</code>
+       * <code>
+       * repeated .google.cloud.dialogflow.v2.Intent.TrainingPhrase.Part parts = 3 [(.google.api.field_behavior) = REQUIRED];
+       * </code>
        */
       public java.util.List<com.google.cloud.dialogflow.v2.Intent.TrainingPhrase.Part>
           getPartsList() {
@@ -2905,7 +2945,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        *     set.
        * </pre>
        *
-       * <code>repeated .google.cloud.dialogflow.v2.Intent.TrainingPhrase.Part parts = 3;</code>
+       * <code>
+       * repeated .google.cloud.dialogflow.v2.Intent.TrainingPhrase.Part parts = 3 [(.google.api.field_behavior) = REQUIRED];
+       * </code>
        */
       public int getPartsCount() {
         if (partsBuilder_ == null) {
@@ -2934,7 +2976,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        *     set.
        * </pre>
        *
-       * <code>repeated .google.cloud.dialogflow.v2.Intent.TrainingPhrase.Part parts = 3;</code>
+       * <code>
+       * repeated .google.cloud.dialogflow.v2.Intent.TrainingPhrase.Part parts = 3 [(.google.api.field_behavior) = REQUIRED];
+       * </code>
        */
       public com.google.cloud.dialogflow.v2.Intent.TrainingPhrase.Part getParts(int index) {
         if (partsBuilder_ == null) {
@@ -2963,7 +3007,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        *     set.
        * </pre>
        *
-       * <code>repeated .google.cloud.dialogflow.v2.Intent.TrainingPhrase.Part parts = 3;</code>
+       * <code>
+       * repeated .google.cloud.dialogflow.v2.Intent.TrainingPhrase.Part parts = 3 [(.google.api.field_behavior) = REQUIRED];
+       * </code>
        */
       public Builder setParts(
           int index, com.google.cloud.dialogflow.v2.Intent.TrainingPhrase.Part value) {
@@ -2999,7 +3045,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        *     set.
        * </pre>
        *
-       * <code>repeated .google.cloud.dialogflow.v2.Intent.TrainingPhrase.Part parts = 3;</code>
+       * <code>
+       * repeated .google.cloud.dialogflow.v2.Intent.TrainingPhrase.Part parts = 3 [(.google.api.field_behavior) = REQUIRED];
+       * </code>
        */
       public Builder setParts(
           int index,
@@ -3033,7 +3081,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        *     set.
        * </pre>
        *
-       * <code>repeated .google.cloud.dialogflow.v2.Intent.TrainingPhrase.Part parts = 3;</code>
+       * <code>
+       * repeated .google.cloud.dialogflow.v2.Intent.TrainingPhrase.Part parts = 3 [(.google.api.field_behavior) = REQUIRED];
+       * </code>
        */
       public Builder addParts(com.google.cloud.dialogflow.v2.Intent.TrainingPhrase.Part value) {
         if (partsBuilder_ == null) {
@@ -3068,7 +3118,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        *     set.
        * </pre>
        *
-       * <code>repeated .google.cloud.dialogflow.v2.Intent.TrainingPhrase.Part parts = 3;</code>
+       * <code>
+       * repeated .google.cloud.dialogflow.v2.Intent.TrainingPhrase.Part parts = 3 [(.google.api.field_behavior) = REQUIRED];
+       * </code>
        */
       public Builder addParts(
           int index, com.google.cloud.dialogflow.v2.Intent.TrainingPhrase.Part value) {
@@ -3104,7 +3156,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        *     set.
        * </pre>
        *
-       * <code>repeated .google.cloud.dialogflow.v2.Intent.TrainingPhrase.Part parts = 3;</code>
+       * <code>
+       * repeated .google.cloud.dialogflow.v2.Intent.TrainingPhrase.Part parts = 3 [(.google.api.field_behavior) = REQUIRED];
+       * </code>
        */
       public Builder addParts(
           com.google.cloud.dialogflow.v2.Intent.TrainingPhrase.Part.Builder builderForValue) {
@@ -3137,7 +3191,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        *     set.
        * </pre>
        *
-       * <code>repeated .google.cloud.dialogflow.v2.Intent.TrainingPhrase.Part parts = 3;</code>
+       * <code>
+       * repeated .google.cloud.dialogflow.v2.Intent.TrainingPhrase.Part parts = 3 [(.google.api.field_behavior) = REQUIRED];
+       * </code>
        */
       public Builder addParts(
           int index,
@@ -3171,7 +3227,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        *     set.
        * </pre>
        *
-       * <code>repeated .google.cloud.dialogflow.v2.Intent.TrainingPhrase.Part parts = 3;</code>
+       * <code>
+       * repeated .google.cloud.dialogflow.v2.Intent.TrainingPhrase.Part parts = 3 [(.google.api.field_behavior) = REQUIRED];
+       * </code>
        */
       public Builder addAllParts(
           java.lang.Iterable<? extends com.google.cloud.dialogflow.v2.Intent.TrainingPhrase.Part>
@@ -3205,7 +3263,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        *     set.
        * </pre>
        *
-       * <code>repeated .google.cloud.dialogflow.v2.Intent.TrainingPhrase.Part parts = 3;</code>
+       * <code>
+       * repeated .google.cloud.dialogflow.v2.Intent.TrainingPhrase.Part parts = 3 [(.google.api.field_behavior) = REQUIRED];
+       * </code>
        */
       public Builder clearParts() {
         if (partsBuilder_ == null) {
@@ -3237,7 +3297,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        *     set.
        * </pre>
        *
-       * <code>repeated .google.cloud.dialogflow.v2.Intent.TrainingPhrase.Part parts = 3;</code>
+       * <code>
+       * repeated .google.cloud.dialogflow.v2.Intent.TrainingPhrase.Part parts = 3 [(.google.api.field_behavior) = REQUIRED];
+       * </code>
        */
       public Builder removeParts(int index) {
         if (partsBuilder_ == null) {
@@ -3269,7 +3331,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        *     set.
        * </pre>
        *
-       * <code>repeated .google.cloud.dialogflow.v2.Intent.TrainingPhrase.Part parts = 3;</code>
+       * <code>
+       * repeated .google.cloud.dialogflow.v2.Intent.TrainingPhrase.Part parts = 3 [(.google.api.field_behavior) = REQUIRED];
+       * </code>
        */
       public com.google.cloud.dialogflow.v2.Intent.TrainingPhrase.Part.Builder getPartsBuilder(
           int index) {
@@ -3295,7 +3359,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        *     set.
        * </pre>
        *
-       * <code>repeated .google.cloud.dialogflow.v2.Intent.TrainingPhrase.Part parts = 3;</code>
+       * <code>
+       * repeated .google.cloud.dialogflow.v2.Intent.TrainingPhrase.Part parts = 3 [(.google.api.field_behavior) = REQUIRED];
+       * </code>
        */
       public com.google.cloud.dialogflow.v2.Intent.TrainingPhrase.PartOrBuilder getPartsOrBuilder(
           int index) {
@@ -3325,7 +3391,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        *     set.
        * </pre>
        *
-       * <code>repeated .google.cloud.dialogflow.v2.Intent.TrainingPhrase.Part parts = 3;</code>
+       * <code>
+       * repeated .google.cloud.dialogflow.v2.Intent.TrainingPhrase.Part parts = 3 [(.google.api.field_behavior) = REQUIRED];
+       * </code>
        */
       public java.util.List<
               ? extends com.google.cloud.dialogflow.v2.Intent.TrainingPhrase.PartOrBuilder>
@@ -3356,7 +3424,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        *     set.
        * </pre>
        *
-       * <code>repeated .google.cloud.dialogflow.v2.Intent.TrainingPhrase.Part parts = 3;</code>
+       * <code>
+       * repeated .google.cloud.dialogflow.v2.Intent.TrainingPhrase.Part parts = 3 [(.google.api.field_behavior) = REQUIRED];
+       * </code>
        */
       public com.google.cloud.dialogflow.v2.Intent.TrainingPhrase.Part.Builder addPartsBuilder() {
         return getPartsFieldBuilder()
@@ -3383,7 +3453,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        *     set.
        * </pre>
        *
-       * <code>repeated .google.cloud.dialogflow.v2.Intent.TrainingPhrase.Part parts = 3;</code>
+       * <code>
+       * repeated .google.cloud.dialogflow.v2.Intent.TrainingPhrase.Part parts = 3 [(.google.api.field_behavior) = REQUIRED];
+       * </code>
        */
       public com.google.cloud.dialogflow.v2.Intent.TrainingPhrase.Part.Builder addPartsBuilder(
           int index) {
@@ -3412,7 +3484,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        *     set.
        * </pre>
        *
-       * <code>repeated .google.cloud.dialogflow.v2.Intent.TrainingPhrase.Part parts = 3;</code>
+       * <code>
+       * repeated .google.cloud.dialogflow.v2.Intent.TrainingPhrase.Part parts = 3 [(.google.api.field_behavior) = REQUIRED];
+       * </code>
        */
       public java.util.List<com.google.cloud.dialogflow.v2.Intent.TrainingPhrase.Part.Builder>
           getPartsBuilderList() {
@@ -3446,7 +3520,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        * intent or training, this counter is increased.
        * </pre>
        *
-       * <code>int32 times_added_count = 4;</code>
+       * <code>int32 times_added_count = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
        */
       public int getTimesAddedCount() {
         return timesAddedCount_;
@@ -3460,7 +3534,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        * intent or training, this counter is increased.
        * </pre>
        *
-       * <code>int32 times_added_count = 4;</code>
+       * <code>int32 times_added_count = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
        */
       public Builder setTimesAddedCount(int value) {
 
@@ -3477,7 +3551,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        * intent or training, this counter is increased.
        * </pre>
        *
-       * <code>int32 times_added_count = 4;</code>
+       * <code>int32 times_added_count = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
        */
       public Builder clearTimesAddedCount() {
 
@@ -3597,7 +3671,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      *   `#context_name.parameter_name`.
      * </pre>
      *
-     * <code>string value = 3;</code>
+     * <code>string value = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     java.lang.String getValue();
     /**
@@ -3612,7 +3686,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      *   `#context_name.parameter_name`.
      * </pre>
      *
-     * <code>string value = 3;</code>
+     * <code>string value = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     com.google.protobuf.ByteString getValueBytes();
 
@@ -3626,7 +3700,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      * syntax: `#context_name.parameter_name`.
      * </pre>
      *
-     * <code>string default_value = 4;</code>
+     * <code>string default_value = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     java.lang.String getDefaultValue();
     /**
@@ -3639,7 +3713,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      * syntax: `#context_name.parameter_name`.
      * </pre>
      *
-     * <code>string default_value = 4;</code>
+     * <code>string default_value = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     com.google.protobuf.ByteString getDefaultValueBytes();
 
@@ -3652,7 +3726,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      * required, this must be provided.
      * </pre>
      *
-     * <code>string entity_type_display_name = 5;</code>
+     * <code>string entity_type_display_name = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     java.lang.String getEntityTypeDisplayName();
     /**
@@ -3664,7 +3738,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      * required, this must be provided.
      * </pre>
      *
-     * <code>string entity_type_display_name = 5;</code>
+     * <code>string entity_type_display_name = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     com.google.protobuf.ByteString getEntityTypeDisplayNameBytes();
 
@@ -3677,7 +3751,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      * value.
      * </pre>
      *
-     * <code>bool mandatory = 6;</code>
+     * <code>bool mandatory = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     boolean getMandatory();
 
@@ -3689,7 +3763,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      * user in order to collect a value for the parameter.
      * </pre>
      *
-     * <code>repeated string prompts = 7;</code>
+     * <code>repeated string prompts = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     java.util.List<java.lang.String> getPromptsList();
     /**
@@ -3700,7 +3774,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      * user in order to collect a value for the parameter.
      * </pre>
      *
-     * <code>repeated string prompts = 7;</code>
+     * <code>repeated string prompts = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     int getPromptsCount();
     /**
@@ -3711,7 +3785,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      * user in order to collect a value for the parameter.
      * </pre>
      *
-     * <code>repeated string prompts = 7;</code>
+     * <code>repeated string prompts = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     java.lang.String getPrompts(int index);
     /**
@@ -3722,7 +3796,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      * user in order to collect a value for the parameter.
      * </pre>
      *
-     * <code>repeated string prompts = 7;</code>
+     * <code>repeated string prompts = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     com.google.protobuf.ByteString getPromptsBytes(int index);
 
@@ -3733,7 +3807,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      * Optional. Indicates whether the parameter represents a list of values.
      * </pre>
      *
-     * <code>bool is_list = 8;</code>
+     * <code>bool is_list = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     boolean getIsList();
   }
@@ -3982,7 +4056,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      *   `#context_name.parameter_name`.
      * </pre>
      *
-     * <code>string value = 3;</code>
+     * <code>string value = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public java.lang.String getValue() {
       java.lang.Object ref = value_;
@@ -4007,7 +4081,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      *   `#context_name.parameter_name`.
      * </pre>
      *
-     * <code>string value = 3;</code>
+     * <code>string value = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public com.google.protobuf.ByteString getValueBytes() {
       java.lang.Object ref = value_;
@@ -4033,7 +4107,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      * syntax: `#context_name.parameter_name`.
      * </pre>
      *
-     * <code>string default_value = 4;</code>
+     * <code>string default_value = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public java.lang.String getDefaultValue() {
       java.lang.Object ref = defaultValue_;
@@ -4056,7 +4130,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      * syntax: `#context_name.parameter_name`.
      * </pre>
      *
-     * <code>string default_value = 4;</code>
+     * <code>string default_value = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public com.google.protobuf.ByteString getDefaultValueBytes() {
       java.lang.Object ref = defaultValue_;
@@ -4081,7 +4155,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      * required, this must be provided.
      * </pre>
      *
-     * <code>string entity_type_display_name = 5;</code>
+     * <code>string entity_type_display_name = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public java.lang.String getEntityTypeDisplayName() {
       java.lang.Object ref = entityTypeDisplayName_;
@@ -4103,7 +4177,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      * required, this must be provided.
      * </pre>
      *
-     * <code>string entity_type_display_name = 5;</code>
+     * <code>string entity_type_display_name = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public com.google.protobuf.ByteString getEntityTypeDisplayNameBytes() {
       java.lang.Object ref = entityTypeDisplayName_;
@@ -4128,7 +4202,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      * value.
      * </pre>
      *
-     * <code>bool mandatory = 6;</code>
+     * <code>bool mandatory = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public boolean getMandatory() {
       return mandatory_;
@@ -4144,7 +4218,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      * user in order to collect a value for the parameter.
      * </pre>
      *
-     * <code>repeated string prompts = 7;</code>
+     * <code>repeated string prompts = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public com.google.protobuf.ProtocolStringList getPromptsList() {
       return prompts_;
@@ -4157,7 +4231,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      * user in order to collect a value for the parameter.
      * </pre>
      *
-     * <code>repeated string prompts = 7;</code>
+     * <code>repeated string prompts = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public int getPromptsCount() {
       return prompts_.size();
@@ -4170,7 +4244,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      * user in order to collect a value for the parameter.
      * </pre>
      *
-     * <code>repeated string prompts = 7;</code>
+     * <code>repeated string prompts = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public java.lang.String getPrompts(int index) {
       return prompts_.get(index);
@@ -4183,7 +4257,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      * user in order to collect a value for the parameter.
      * </pre>
      *
-     * <code>repeated string prompts = 7;</code>
+     * <code>repeated string prompts = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public com.google.protobuf.ByteString getPromptsBytes(int index) {
       return prompts_.getByteString(index);
@@ -4198,7 +4272,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      * Optional. Indicates whether the parameter represents a list of values.
      * </pre>
      *
-     * <code>bool is_list = 8;</code>
+     * <code>bool is_list = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public boolean getIsList() {
       return isList_;
@@ -4859,7 +4933,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        *   `#context_name.parameter_name`.
        * </pre>
        *
-       * <code>string value = 3;</code>
+       * <code>string value = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
        */
       public java.lang.String getValue() {
         java.lang.Object ref = value_;
@@ -4884,7 +4958,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        *   `#context_name.parameter_name`.
        * </pre>
        *
-       * <code>string value = 3;</code>
+       * <code>string value = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
        */
       public com.google.protobuf.ByteString getValueBytes() {
         java.lang.Object ref = value_;
@@ -4909,7 +4983,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        *   `#context_name.parameter_name`.
        * </pre>
        *
-       * <code>string value = 3;</code>
+       * <code>string value = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
        */
       public Builder setValue(java.lang.String value) {
         if (value == null) {
@@ -4932,7 +5006,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        *   `#context_name.parameter_name`.
        * </pre>
        *
-       * <code>string value = 3;</code>
+       * <code>string value = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
        */
       public Builder clearValue() {
 
@@ -4952,7 +5026,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        *   `#context_name.parameter_name`.
        * </pre>
        *
-       * <code>string value = 3;</code>
+       * <code>string value = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
        */
       public Builder setValueBytes(com.google.protobuf.ByteString value) {
         if (value == null) {
@@ -4976,7 +5050,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        * syntax: `#context_name.parameter_name`.
        * </pre>
        *
-       * <code>string default_value = 4;</code>
+       * <code>string default_value = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
        */
       public java.lang.String getDefaultValue() {
         java.lang.Object ref = defaultValue_;
@@ -4999,7 +5073,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        * syntax: `#context_name.parameter_name`.
        * </pre>
        *
-       * <code>string default_value = 4;</code>
+       * <code>string default_value = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
        */
       public com.google.protobuf.ByteString getDefaultValueBytes() {
         java.lang.Object ref = defaultValue_;
@@ -5022,7 +5096,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        * syntax: `#context_name.parameter_name`.
        * </pre>
        *
-       * <code>string default_value = 4;</code>
+       * <code>string default_value = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
        */
       public Builder setDefaultValue(java.lang.String value) {
         if (value == null) {
@@ -5043,7 +5117,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        * syntax: `#context_name.parameter_name`.
        * </pre>
        *
-       * <code>string default_value = 4;</code>
+       * <code>string default_value = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
        */
       public Builder clearDefaultValue() {
 
@@ -5061,7 +5135,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        * syntax: `#context_name.parameter_name`.
        * </pre>
        *
-       * <code>string default_value = 4;</code>
+       * <code>string default_value = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
        */
       public Builder setDefaultValueBytes(com.google.protobuf.ByteString value) {
         if (value == null) {
@@ -5084,7 +5158,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        * required, this must be provided.
        * </pre>
        *
-       * <code>string entity_type_display_name = 5;</code>
+       * <code>string entity_type_display_name = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
        */
       public java.lang.String getEntityTypeDisplayName() {
         java.lang.Object ref = entityTypeDisplayName_;
@@ -5106,7 +5180,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        * required, this must be provided.
        * </pre>
        *
-       * <code>string entity_type_display_name = 5;</code>
+       * <code>string entity_type_display_name = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
        */
       public com.google.protobuf.ByteString getEntityTypeDisplayNameBytes() {
         java.lang.Object ref = entityTypeDisplayName_;
@@ -5128,7 +5202,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        * required, this must be provided.
        * </pre>
        *
-       * <code>string entity_type_display_name = 5;</code>
+       * <code>string entity_type_display_name = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
        */
       public Builder setEntityTypeDisplayName(java.lang.String value) {
         if (value == null) {
@@ -5148,7 +5222,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        * required, this must be provided.
        * </pre>
        *
-       * <code>string entity_type_display_name = 5;</code>
+       * <code>string entity_type_display_name = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
        */
       public Builder clearEntityTypeDisplayName() {
 
@@ -5165,7 +5239,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        * required, this must be provided.
        * </pre>
        *
-       * <code>string entity_type_display_name = 5;</code>
+       * <code>string entity_type_display_name = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
        */
       public Builder setEntityTypeDisplayNameBytes(com.google.protobuf.ByteString value) {
         if (value == null) {
@@ -5188,7 +5262,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        * value.
        * </pre>
        *
-       * <code>bool mandatory = 6;</code>
+       * <code>bool mandatory = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
        */
       public boolean getMandatory() {
         return mandatory_;
@@ -5202,7 +5276,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        * value.
        * </pre>
        *
-       * <code>bool mandatory = 6;</code>
+       * <code>bool mandatory = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
        */
       public Builder setMandatory(boolean value) {
 
@@ -5219,7 +5293,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        * value.
        * </pre>
        *
-       * <code>bool mandatory = 6;</code>
+       * <code>bool mandatory = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
        */
       public Builder clearMandatory() {
 
@@ -5245,7 +5319,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        * user in order to collect a value for the parameter.
        * </pre>
        *
-       * <code>repeated string prompts = 7;</code>
+       * <code>repeated string prompts = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
        */
       public com.google.protobuf.ProtocolStringList getPromptsList() {
         return prompts_.getUnmodifiableView();
@@ -5258,7 +5332,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        * user in order to collect a value for the parameter.
        * </pre>
        *
-       * <code>repeated string prompts = 7;</code>
+       * <code>repeated string prompts = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
        */
       public int getPromptsCount() {
         return prompts_.size();
@@ -5271,7 +5345,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        * user in order to collect a value for the parameter.
        * </pre>
        *
-       * <code>repeated string prompts = 7;</code>
+       * <code>repeated string prompts = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
        */
       public java.lang.String getPrompts(int index) {
         return prompts_.get(index);
@@ -5284,7 +5358,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        * user in order to collect a value for the parameter.
        * </pre>
        *
-       * <code>repeated string prompts = 7;</code>
+       * <code>repeated string prompts = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
        */
       public com.google.protobuf.ByteString getPromptsBytes(int index) {
         return prompts_.getByteString(index);
@@ -5297,7 +5371,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        * user in order to collect a value for the parameter.
        * </pre>
        *
-       * <code>repeated string prompts = 7;</code>
+       * <code>repeated string prompts = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
        */
       public Builder setPrompts(int index, java.lang.String value) {
         if (value == null) {
@@ -5316,7 +5390,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        * user in order to collect a value for the parameter.
        * </pre>
        *
-       * <code>repeated string prompts = 7;</code>
+       * <code>repeated string prompts = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
        */
       public Builder addPrompts(java.lang.String value) {
         if (value == null) {
@@ -5335,7 +5409,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        * user in order to collect a value for the parameter.
        * </pre>
        *
-       * <code>repeated string prompts = 7;</code>
+       * <code>repeated string prompts = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
        */
       public Builder addAllPrompts(java.lang.Iterable<java.lang.String> values) {
         ensurePromptsIsMutable();
@@ -5351,7 +5425,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        * user in order to collect a value for the parameter.
        * </pre>
        *
-       * <code>repeated string prompts = 7;</code>
+       * <code>repeated string prompts = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
        */
       public Builder clearPrompts() {
         prompts_ = com.google.protobuf.LazyStringArrayList.EMPTY;
@@ -5367,7 +5441,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        * user in order to collect a value for the parameter.
        * </pre>
        *
-       * <code>repeated string prompts = 7;</code>
+       * <code>repeated string prompts = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
        */
       public Builder addPromptsBytes(com.google.protobuf.ByteString value) {
         if (value == null) {
@@ -5388,7 +5462,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        * Optional. Indicates whether the parameter represents a list of values.
        * </pre>
        *
-       * <code>bool is_list = 8;</code>
+       * <code>bool is_list = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
        */
       public boolean getIsList() {
         return isList_;
@@ -5400,7 +5474,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        * Optional. Indicates whether the parameter represents a list of values.
        * </pre>
        *
-       * <code>bool is_list = 8;</code>
+       * <code>bool is_list = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
        */
       public Builder setIsList(boolean value) {
 
@@ -5415,7 +5489,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        * Optional. Indicates whether the parameter represents a list of values.
        * </pre>
        *
-       * <code>bool is_list = 8;</code>
+       * <code>bool is_list = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
        */
       public Builder clearIsList() {
 
@@ -5841,7 +5915,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      * Optional. The platform that this message is intended for.
      * </pre>
      *
-     * <code>.google.cloud.dialogflow.v2.Intent.Message.Platform platform = 6;</code>
+     * <code>
+     * .google.cloud.dialogflow.v2.Intent.Message.Platform platform = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     int getPlatformValue();
     /**
@@ -5851,7 +5927,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      * Optional. The platform that this message is intended for.
      * </pre>
      *
-     * <code>.google.cloud.dialogflow.v2.Intent.Message.Platform platform = 6;</code>
+     * <code>
+     * .google.cloud.dialogflow.v2.Intent.Message.Platform platform = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     com.google.cloud.dialogflow.v2.Intent.Message.Platform getPlatform();
 
@@ -6592,7 +6670,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        * Optional. The collection of the agent's responses.
        * </pre>
        *
-       * <code>repeated string text = 1;</code>
+       * <code>repeated string text = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
        */
       java.util.List<java.lang.String> getTextList();
       /**
@@ -6602,7 +6680,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        * Optional. The collection of the agent's responses.
        * </pre>
        *
-       * <code>repeated string text = 1;</code>
+       * <code>repeated string text = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
        */
       int getTextCount();
       /**
@@ -6612,7 +6690,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        * Optional. The collection of the agent's responses.
        * </pre>
        *
-       * <code>repeated string text = 1;</code>
+       * <code>repeated string text = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
        */
       java.lang.String getText(int index);
       /**
@@ -6622,7 +6700,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        * Optional. The collection of the agent's responses.
        * </pre>
        *
-       * <code>repeated string text = 1;</code>
+       * <code>repeated string text = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
        */
       com.google.protobuf.ByteString getTextBytes(int index);
     }
@@ -6730,7 +6808,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        * Optional. The collection of the agent's responses.
        * </pre>
        *
-       * <code>repeated string text = 1;</code>
+       * <code>repeated string text = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
        */
       public com.google.protobuf.ProtocolStringList getTextList() {
         return text_;
@@ -6742,7 +6820,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        * Optional. The collection of the agent's responses.
        * </pre>
        *
-       * <code>repeated string text = 1;</code>
+       * <code>repeated string text = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
        */
       public int getTextCount() {
         return text_.size();
@@ -6754,7 +6832,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        * Optional. The collection of the agent's responses.
        * </pre>
        *
-       * <code>repeated string text = 1;</code>
+       * <code>repeated string text = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
        */
       public java.lang.String getText(int index) {
         return text_.get(index);
@@ -6766,7 +6844,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        * Optional. The collection of the agent's responses.
        * </pre>
        *
-       * <code>repeated string text = 1;</code>
+       * <code>repeated string text = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
        */
       public com.google.protobuf.ByteString getTextBytes(int index) {
         return text_.getByteString(index);
@@ -7131,7 +7209,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * Optional. The collection of the agent's responses.
          * </pre>
          *
-         * <code>repeated string text = 1;</code>
+         * <code>repeated string text = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
          */
         public com.google.protobuf.ProtocolStringList getTextList() {
           return text_.getUnmodifiableView();
@@ -7143,7 +7221,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * Optional. The collection of the agent's responses.
          * </pre>
          *
-         * <code>repeated string text = 1;</code>
+         * <code>repeated string text = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
          */
         public int getTextCount() {
           return text_.size();
@@ -7155,7 +7233,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * Optional. The collection of the agent's responses.
          * </pre>
          *
-         * <code>repeated string text = 1;</code>
+         * <code>repeated string text = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
          */
         public java.lang.String getText(int index) {
           return text_.get(index);
@@ -7167,7 +7245,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * Optional. The collection of the agent's responses.
          * </pre>
          *
-         * <code>repeated string text = 1;</code>
+         * <code>repeated string text = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
          */
         public com.google.protobuf.ByteString getTextBytes(int index) {
           return text_.getByteString(index);
@@ -7179,7 +7257,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * Optional. The collection of the agent's responses.
          * </pre>
          *
-         * <code>repeated string text = 1;</code>
+         * <code>repeated string text = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
          */
         public Builder setText(int index, java.lang.String value) {
           if (value == null) {
@@ -7197,7 +7275,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * Optional. The collection of the agent's responses.
          * </pre>
          *
-         * <code>repeated string text = 1;</code>
+         * <code>repeated string text = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
          */
         public Builder addText(java.lang.String value) {
           if (value == null) {
@@ -7215,7 +7293,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * Optional. The collection of the agent's responses.
          * </pre>
          *
-         * <code>repeated string text = 1;</code>
+         * <code>repeated string text = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
          */
         public Builder addAllText(java.lang.Iterable<java.lang.String> values) {
           ensureTextIsMutable();
@@ -7230,7 +7308,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * Optional. The collection of the agent's responses.
          * </pre>
          *
-         * <code>repeated string text = 1;</code>
+         * <code>repeated string text = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
          */
         public Builder clearText() {
           text_ = com.google.protobuf.LazyStringArrayList.EMPTY;
@@ -7245,7 +7323,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * Optional. The collection of the agent's responses.
          * </pre>
          *
-         * <code>repeated string text = 1;</code>
+         * <code>repeated string text = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
          */
         public Builder addTextBytes(com.google.protobuf.ByteString value) {
           if (value == null) {
@@ -7322,7 +7400,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        * Optional. The public URI to an image file.
        * </pre>
        *
-       * <code>string image_uri = 1;</code>
+       * <code>string image_uri = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
        */
       java.lang.String getImageUri();
       /**
@@ -7332,7 +7410,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        * Optional. The public URI to an image file.
        * </pre>
        *
-       * <code>string image_uri = 1;</code>
+       * <code>string image_uri = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
        */
       com.google.protobuf.ByteString getImageUriBytes();
 
@@ -7344,7 +7422,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        * e.g., screen readers.
        * </pre>
        *
-       * <code>string accessibility_text = 2;</code>
+       * <code>string accessibility_text = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
        */
       java.lang.String getAccessibilityText();
       /**
@@ -7355,7 +7433,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        * e.g., screen readers.
        * </pre>
        *
-       * <code>string accessibility_text = 2;</code>
+       * <code>string accessibility_text = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
        */
       com.google.protobuf.ByteString getAccessibilityTextBytes();
     }
@@ -7465,7 +7543,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        * Optional. The public URI to an image file.
        * </pre>
        *
-       * <code>string image_uri = 1;</code>
+       * <code>string image_uri = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
        */
       public java.lang.String getImageUri() {
         java.lang.Object ref = imageUri_;
@@ -7485,7 +7563,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        * Optional. The public URI to an image file.
        * </pre>
        *
-       * <code>string image_uri = 1;</code>
+       * <code>string image_uri = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
        */
       public com.google.protobuf.ByteString getImageUriBytes() {
         java.lang.Object ref = imageUri_;
@@ -7509,7 +7587,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        * e.g., screen readers.
        * </pre>
        *
-       * <code>string accessibility_text = 2;</code>
+       * <code>string accessibility_text = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
        */
       public java.lang.String getAccessibilityText() {
         java.lang.Object ref = accessibilityText_;
@@ -7530,7 +7608,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        * e.g., screen readers.
        * </pre>
        *
-       * <code>string accessibility_text = 2;</code>
+       * <code>string accessibility_text = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
        */
       public com.google.protobuf.ByteString getAccessibilityTextBytes() {
         java.lang.Object ref = accessibilityText_;
@@ -7891,7 +7969,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * Optional. The public URI to an image file.
          * </pre>
          *
-         * <code>string image_uri = 1;</code>
+         * <code>string image_uri = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
          */
         public java.lang.String getImageUri() {
           java.lang.Object ref = imageUri_;
@@ -7911,7 +7989,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * Optional. The public URI to an image file.
          * </pre>
          *
-         * <code>string image_uri = 1;</code>
+         * <code>string image_uri = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
          */
         public com.google.protobuf.ByteString getImageUriBytes() {
           java.lang.Object ref = imageUri_;
@@ -7931,7 +8009,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * Optional. The public URI to an image file.
          * </pre>
          *
-         * <code>string image_uri = 1;</code>
+         * <code>string image_uri = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
          */
         public Builder setImageUri(java.lang.String value) {
           if (value == null) {
@@ -7949,7 +8027,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * Optional. The public URI to an image file.
          * </pre>
          *
-         * <code>string image_uri = 1;</code>
+         * <code>string image_uri = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
          */
         public Builder clearImageUri() {
 
@@ -7964,7 +8042,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * Optional. The public URI to an image file.
          * </pre>
          *
-         * <code>string image_uri = 1;</code>
+         * <code>string image_uri = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
          */
         public Builder setImageUriBytes(com.google.protobuf.ByteString value) {
           if (value == null) {
@@ -7986,7 +8064,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * e.g., screen readers.
          * </pre>
          *
-         * <code>string accessibility_text = 2;</code>
+         * <code>string accessibility_text = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
          */
         public java.lang.String getAccessibilityText() {
           java.lang.Object ref = accessibilityText_;
@@ -8007,7 +8085,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * e.g., screen readers.
          * </pre>
          *
-         * <code>string accessibility_text = 2;</code>
+         * <code>string accessibility_text = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
          */
         public com.google.protobuf.ByteString getAccessibilityTextBytes() {
           java.lang.Object ref = accessibilityText_;
@@ -8028,7 +8106,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * e.g., screen readers.
          * </pre>
          *
-         * <code>string accessibility_text = 2;</code>
+         * <code>string accessibility_text = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
          */
         public Builder setAccessibilityText(java.lang.String value) {
           if (value == null) {
@@ -8047,7 +8125,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * e.g., screen readers.
          * </pre>
          *
-         * <code>string accessibility_text = 2;</code>
+         * <code>string accessibility_text = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
          */
         public Builder clearAccessibilityText() {
 
@@ -8063,7 +8141,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * e.g., screen readers.
          * </pre>
          *
-         * <code>string accessibility_text = 2;</code>
+         * <code>string accessibility_text = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
          */
         public Builder setAccessibilityTextBytes(com.google.protobuf.ByteString value) {
           if (value == null) {
@@ -8140,7 +8218,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        * Optional. The title of the collection of quick replies.
        * </pre>
        *
-       * <code>string title = 1;</code>
+       * <code>string title = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
        */
       java.lang.String getTitle();
       /**
@@ -8150,7 +8228,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        * Optional. The title of the collection of quick replies.
        * </pre>
        *
-       * <code>string title = 1;</code>
+       * <code>string title = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
        */
       com.google.protobuf.ByteString getTitleBytes();
 
@@ -8161,7 +8239,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        * Optional. The collection of quick replies.
        * </pre>
        *
-       * <code>repeated string quick_replies = 2;</code>
+       * <code>repeated string quick_replies = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
        */
       java.util.List<java.lang.String> getQuickRepliesList();
       /**
@@ -8171,7 +8249,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        * Optional. The collection of quick replies.
        * </pre>
        *
-       * <code>repeated string quick_replies = 2;</code>
+       * <code>repeated string quick_replies = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
        */
       int getQuickRepliesCount();
       /**
@@ -8181,7 +8259,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        * Optional. The collection of quick replies.
        * </pre>
        *
-       * <code>repeated string quick_replies = 2;</code>
+       * <code>repeated string quick_replies = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
        */
       java.lang.String getQuickReplies(int index);
       /**
@@ -8191,7 +8269,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        * Optional. The collection of quick replies.
        * </pre>
        *
-       * <code>repeated string quick_replies = 2;</code>
+       * <code>repeated string quick_replies = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
        */
       com.google.protobuf.ByteString getQuickRepliesBytes(int index);
     }
@@ -8308,7 +8386,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        * Optional. The title of the collection of quick replies.
        * </pre>
        *
-       * <code>string title = 1;</code>
+       * <code>string title = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
        */
       public java.lang.String getTitle() {
         java.lang.Object ref = title_;
@@ -8328,7 +8406,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        * Optional. The title of the collection of quick replies.
        * </pre>
        *
-       * <code>string title = 1;</code>
+       * <code>string title = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
        */
       public com.google.protobuf.ByteString getTitleBytes() {
         java.lang.Object ref = title_;
@@ -8351,7 +8429,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        * Optional. The collection of quick replies.
        * </pre>
        *
-       * <code>repeated string quick_replies = 2;</code>
+       * <code>repeated string quick_replies = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
        */
       public com.google.protobuf.ProtocolStringList getQuickRepliesList() {
         return quickReplies_;
@@ -8363,7 +8441,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        * Optional. The collection of quick replies.
        * </pre>
        *
-       * <code>repeated string quick_replies = 2;</code>
+       * <code>repeated string quick_replies = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
        */
       public int getQuickRepliesCount() {
         return quickReplies_.size();
@@ -8375,7 +8453,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        * Optional. The collection of quick replies.
        * </pre>
        *
-       * <code>repeated string quick_replies = 2;</code>
+       * <code>repeated string quick_replies = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
        */
       public java.lang.String getQuickReplies(int index) {
         return quickReplies_.get(index);
@@ -8387,7 +8465,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        * Optional. The collection of quick replies.
        * </pre>
        *
-       * <code>repeated string quick_replies = 2;</code>
+       * <code>repeated string quick_replies = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
        */
       public com.google.protobuf.ByteString getQuickRepliesBytes(int index) {
         return quickReplies_.getByteString(index);
@@ -8765,7 +8843,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * Optional. The title of the collection of quick replies.
          * </pre>
          *
-         * <code>string title = 1;</code>
+         * <code>string title = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
          */
         public java.lang.String getTitle() {
           java.lang.Object ref = title_;
@@ -8785,7 +8863,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * Optional. The title of the collection of quick replies.
          * </pre>
          *
-         * <code>string title = 1;</code>
+         * <code>string title = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
          */
         public com.google.protobuf.ByteString getTitleBytes() {
           java.lang.Object ref = title_;
@@ -8805,7 +8883,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * Optional. The title of the collection of quick replies.
          * </pre>
          *
-         * <code>string title = 1;</code>
+         * <code>string title = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
          */
         public Builder setTitle(java.lang.String value) {
           if (value == null) {
@@ -8823,7 +8901,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * Optional. The title of the collection of quick replies.
          * </pre>
          *
-         * <code>string title = 1;</code>
+         * <code>string title = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
          */
         public Builder clearTitle() {
 
@@ -8838,7 +8916,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * Optional. The title of the collection of quick replies.
          * </pre>
          *
-         * <code>string title = 1;</code>
+         * <code>string title = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
          */
         public Builder setTitleBytes(com.google.protobuf.ByteString value) {
           if (value == null) {
@@ -8867,7 +8945,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * Optional. The collection of quick replies.
          * </pre>
          *
-         * <code>repeated string quick_replies = 2;</code>
+         * <code>repeated string quick_replies = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
          */
         public com.google.protobuf.ProtocolStringList getQuickRepliesList() {
           return quickReplies_.getUnmodifiableView();
@@ -8879,7 +8957,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * Optional. The collection of quick replies.
          * </pre>
          *
-         * <code>repeated string quick_replies = 2;</code>
+         * <code>repeated string quick_replies = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
          */
         public int getQuickRepliesCount() {
           return quickReplies_.size();
@@ -8891,7 +8969,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * Optional. The collection of quick replies.
          * </pre>
          *
-         * <code>repeated string quick_replies = 2;</code>
+         * <code>repeated string quick_replies = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
          */
         public java.lang.String getQuickReplies(int index) {
           return quickReplies_.get(index);
@@ -8903,7 +8981,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * Optional. The collection of quick replies.
          * </pre>
          *
-         * <code>repeated string quick_replies = 2;</code>
+         * <code>repeated string quick_replies = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
          */
         public com.google.protobuf.ByteString getQuickRepliesBytes(int index) {
           return quickReplies_.getByteString(index);
@@ -8915,7 +8993,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * Optional. The collection of quick replies.
          * </pre>
          *
-         * <code>repeated string quick_replies = 2;</code>
+         * <code>repeated string quick_replies = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
          */
         public Builder setQuickReplies(int index, java.lang.String value) {
           if (value == null) {
@@ -8933,7 +9011,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * Optional. The collection of quick replies.
          * </pre>
          *
-         * <code>repeated string quick_replies = 2;</code>
+         * <code>repeated string quick_replies = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
          */
         public Builder addQuickReplies(java.lang.String value) {
           if (value == null) {
@@ -8951,7 +9029,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * Optional. The collection of quick replies.
          * </pre>
          *
-         * <code>repeated string quick_replies = 2;</code>
+         * <code>repeated string quick_replies = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
          */
         public Builder addAllQuickReplies(java.lang.Iterable<java.lang.String> values) {
           ensureQuickRepliesIsMutable();
@@ -8966,7 +9044,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * Optional. The collection of quick replies.
          * </pre>
          *
-         * <code>repeated string quick_replies = 2;</code>
+         * <code>repeated string quick_replies = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
          */
         public Builder clearQuickReplies() {
           quickReplies_ = com.google.protobuf.LazyStringArrayList.EMPTY;
@@ -8981,7 +9059,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * Optional. The collection of quick replies.
          * </pre>
          *
-         * <code>repeated string quick_replies = 2;</code>
+         * <code>repeated string quick_replies = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
          */
         public Builder addQuickRepliesBytes(com.google.protobuf.ByteString value) {
           if (value == null) {
@@ -9061,7 +9139,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        * Optional. The title of the card.
        * </pre>
        *
-       * <code>string title = 1;</code>
+       * <code>string title = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
        */
       java.lang.String getTitle();
       /**
@@ -9071,7 +9149,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        * Optional. The title of the card.
        * </pre>
        *
-       * <code>string title = 1;</code>
+       * <code>string title = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
        */
       com.google.protobuf.ByteString getTitleBytes();
 
@@ -9082,7 +9160,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        * Optional. The subtitle of the card.
        * </pre>
        *
-       * <code>string subtitle = 2;</code>
+       * <code>string subtitle = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
        */
       java.lang.String getSubtitle();
       /**
@@ -9092,7 +9170,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        * Optional. The subtitle of the card.
        * </pre>
        *
-       * <code>string subtitle = 2;</code>
+       * <code>string subtitle = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
        */
       com.google.protobuf.ByteString getSubtitleBytes();
 
@@ -9103,7 +9181,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        * Optional. The public URI to an image file for the card.
        * </pre>
        *
-       * <code>string image_uri = 3;</code>
+       * <code>string image_uri = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
        */
       java.lang.String getImageUri();
       /**
@@ -9113,7 +9191,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        * Optional. The public URI to an image file for the card.
        * </pre>
        *
-       * <code>string image_uri = 3;</code>
+       * <code>string image_uri = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
        */
       com.google.protobuf.ByteString getImageUriBytes();
 
@@ -9124,7 +9202,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        * Optional. The collection of card buttons.
        * </pre>
        *
-       * <code>repeated .google.cloud.dialogflow.v2.Intent.Message.Card.Button buttons = 4;</code>
+       * <code>
+       * repeated .google.cloud.dialogflow.v2.Intent.Message.Card.Button buttons = 4 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
        */
       java.util.List<com.google.cloud.dialogflow.v2.Intent.Message.Card.Button> getButtonsList();
       /**
@@ -9134,7 +9214,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        * Optional. The collection of card buttons.
        * </pre>
        *
-       * <code>repeated .google.cloud.dialogflow.v2.Intent.Message.Card.Button buttons = 4;</code>
+       * <code>
+       * repeated .google.cloud.dialogflow.v2.Intent.Message.Card.Button buttons = 4 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
        */
       com.google.cloud.dialogflow.v2.Intent.Message.Card.Button getButtons(int index);
       /**
@@ -9144,7 +9226,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        * Optional. The collection of card buttons.
        * </pre>
        *
-       * <code>repeated .google.cloud.dialogflow.v2.Intent.Message.Card.Button buttons = 4;</code>
+       * <code>
+       * repeated .google.cloud.dialogflow.v2.Intent.Message.Card.Button buttons = 4 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
        */
       int getButtonsCount();
       /**
@@ -9154,7 +9238,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        * Optional. The collection of card buttons.
        * </pre>
        *
-       * <code>repeated .google.cloud.dialogflow.v2.Intent.Message.Card.Button buttons = 4;</code>
+       * <code>
+       * repeated .google.cloud.dialogflow.v2.Intent.Message.Card.Button buttons = 4 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
        */
       java.util.List<? extends com.google.cloud.dialogflow.v2.Intent.Message.Card.ButtonOrBuilder>
           getButtonsOrBuilderList();
@@ -9165,7 +9251,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        * Optional. The collection of card buttons.
        * </pre>
        *
-       * <code>repeated .google.cloud.dialogflow.v2.Intent.Message.Card.Button buttons = 4;</code>
+       * <code>
+       * repeated .google.cloud.dialogflow.v2.Intent.Message.Card.Button buttons = 4 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
        */
       com.google.cloud.dialogflow.v2.Intent.Message.Card.ButtonOrBuilder getButtonsOrBuilder(
           int index);
@@ -9305,7 +9393,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * Optional. The text to show on the button.
          * </pre>
          *
-         * <code>string text = 1;</code>
+         * <code>string text = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
          */
         java.lang.String getText();
         /**
@@ -9315,7 +9403,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * Optional. The text to show on the button.
          * </pre>
          *
-         * <code>string text = 1;</code>
+         * <code>string text = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
          */
         com.google.protobuf.ByteString getTextBytes();
 
@@ -9327,7 +9415,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * open.
          * </pre>
          *
-         * <code>string postback = 2;</code>
+         * <code>string postback = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
          */
         java.lang.String getPostback();
         /**
@@ -9338,7 +9426,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * open.
          * </pre>
          *
-         * <code>string postback = 2;</code>
+         * <code>string postback = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
          */
         com.google.protobuf.ByteString getPostbackBytes();
       }
@@ -9346,7 +9434,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Optional. Contains information about a button.
+       * Contains information about a button.
        * </pre>
        *
        * Protobuf type {@code google.cloud.dialogflow.v2.Intent.Message.Card.Button}
@@ -9448,7 +9536,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * Optional. The text to show on the button.
          * </pre>
          *
-         * <code>string text = 1;</code>
+         * <code>string text = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
          */
         public java.lang.String getText() {
           java.lang.Object ref = text_;
@@ -9468,7 +9556,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * Optional. The text to show on the button.
          * </pre>
          *
-         * <code>string text = 1;</code>
+         * <code>string text = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
          */
         public com.google.protobuf.ByteString getTextBytes() {
           java.lang.Object ref = text_;
@@ -9492,7 +9580,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * open.
          * </pre>
          *
-         * <code>string postback = 2;</code>
+         * <code>string postback = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
          */
         public java.lang.String getPostback() {
           java.lang.Object ref = postback_;
@@ -9513,7 +9601,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * open.
          * </pre>
          *
-         * <code>string postback = 2;</code>
+         * <code>string postback = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
          */
         public com.google.protobuf.ByteString getPostbackBytes() {
           java.lang.Object ref = postback_;
@@ -9703,7 +9791,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * Optional. Contains information about a button.
+         * Contains information about a button.
          * </pre>
          *
          * Protobuf type {@code google.cloud.dialogflow.v2.Intent.Message.Card.Button}
@@ -9880,7 +9968,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
            * Optional. The text to show on the button.
            * </pre>
            *
-           * <code>string text = 1;</code>
+           * <code>string text = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
            */
           public java.lang.String getText() {
             java.lang.Object ref = text_;
@@ -9900,7 +9988,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
            * Optional. The text to show on the button.
            * </pre>
            *
-           * <code>string text = 1;</code>
+           * <code>string text = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
            */
           public com.google.protobuf.ByteString getTextBytes() {
             java.lang.Object ref = text_;
@@ -9920,7 +10008,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
            * Optional. The text to show on the button.
            * </pre>
            *
-           * <code>string text = 1;</code>
+           * <code>string text = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
            */
           public Builder setText(java.lang.String value) {
             if (value == null) {
@@ -9938,7 +10026,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
            * Optional. The text to show on the button.
            * </pre>
            *
-           * <code>string text = 1;</code>
+           * <code>string text = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
            */
           public Builder clearText() {
 
@@ -9953,7 +10041,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
            * Optional. The text to show on the button.
            * </pre>
            *
-           * <code>string text = 1;</code>
+           * <code>string text = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
            */
           public Builder setTextBytes(com.google.protobuf.ByteString value) {
             if (value == null) {
@@ -9975,7 +10063,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
            * open.
            * </pre>
            *
-           * <code>string postback = 2;</code>
+           * <code>string postback = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
            */
           public java.lang.String getPostback() {
             java.lang.Object ref = postback_;
@@ -9996,7 +10084,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
            * open.
            * </pre>
            *
-           * <code>string postback = 2;</code>
+           * <code>string postback = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
            */
           public com.google.protobuf.ByteString getPostbackBytes() {
             java.lang.Object ref = postback_;
@@ -10017,7 +10105,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
            * open.
            * </pre>
            *
-           * <code>string postback = 2;</code>
+           * <code>string postback = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
            */
           public Builder setPostback(java.lang.String value) {
             if (value == null) {
@@ -10036,7 +10124,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
            * open.
            * </pre>
            *
-           * <code>string postback = 2;</code>
+           * <code>string postback = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
            */
           public Builder clearPostback() {
 
@@ -10052,7 +10140,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
            * open.
            * </pre>
            *
-           * <code>string postback = 2;</code>
+           * <code>string postback = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
            */
           public Builder setPostbackBytes(com.google.protobuf.ByteString value) {
             if (value == null) {
@@ -10130,7 +10218,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        * Optional. The title of the card.
        * </pre>
        *
-       * <code>string title = 1;</code>
+       * <code>string title = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
        */
       public java.lang.String getTitle() {
         java.lang.Object ref = title_;
@@ -10150,7 +10238,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        * Optional. The title of the card.
        * </pre>
        *
-       * <code>string title = 1;</code>
+       * <code>string title = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
        */
       public com.google.protobuf.ByteString getTitleBytes() {
         java.lang.Object ref = title_;
@@ -10173,7 +10261,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        * Optional. The subtitle of the card.
        * </pre>
        *
-       * <code>string subtitle = 2;</code>
+       * <code>string subtitle = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
        */
       public java.lang.String getSubtitle() {
         java.lang.Object ref = subtitle_;
@@ -10193,7 +10281,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        * Optional. The subtitle of the card.
        * </pre>
        *
-       * <code>string subtitle = 2;</code>
+       * <code>string subtitle = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
        */
       public com.google.protobuf.ByteString getSubtitleBytes() {
         java.lang.Object ref = subtitle_;
@@ -10216,7 +10304,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        * Optional. The public URI to an image file for the card.
        * </pre>
        *
-       * <code>string image_uri = 3;</code>
+       * <code>string image_uri = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
        */
       public java.lang.String getImageUri() {
         java.lang.Object ref = imageUri_;
@@ -10236,7 +10324,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        * Optional. The public URI to an image file for the card.
        * </pre>
        *
-       * <code>string image_uri = 3;</code>
+       * <code>string image_uri = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
        */
       public com.google.protobuf.ByteString getImageUriBytes() {
         java.lang.Object ref = imageUri_;
@@ -10259,7 +10347,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        * Optional. The collection of card buttons.
        * </pre>
        *
-       * <code>repeated .google.cloud.dialogflow.v2.Intent.Message.Card.Button buttons = 4;</code>
+       * <code>
+       * repeated .google.cloud.dialogflow.v2.Intent.Message.Card.Button buttons = 4 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
        */
       public java.util.List<com.google.cloud.dialogflow.v2.Intent.Message.Card.Button>
           getButtonsList() {
@@ -10272,7 +10362,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        * Optional. The collection of card buttons.
        * </pre>
        *
-       * <code>repeated .google.cloud.dialogflow.v2.Intent.Message.Card.Button buttons = 4;</code>
+       * <code>
+       * repeated .google.cloud.dialogflow.v2.Intent.Message.Card.Button buttons = 4 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
        */
       public java.util.List<
               ? extends com.google.cloud.dialogflow.v2.Intent.Message.Card.ButtonOrBuilder>
@@ -10286,7 +10378,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        * Optional. The collection of card buttons.
        * </pre>
        *
-       * <code>repeated .google.cloud.dialogflow.v2.Intent.Message.Card.Button buttons = 4;</code>
+       * <code>
+       * repeated .google.cloud.dialogflow.v2.Intent.Message.Card.Button buttons = 4 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
        */
       public int getButtonsCount() {
         return buttons_.size();
@@ -10298,7 +10392,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        * Optional. The collection of card buttons.
        * </pre>
        *
-       * <code>repeated .google.cloud.dialogflow.v2.Intent.Message.Card.Button buttons = 4;</code>
+       * <code>
+       * repeated .google.cloud.dialogflow.v2.Intent.Message.Card.Button buttons = 4 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
        */
       public com.google.cloud.dialogflow.v2.Intent.Message.Card.Button getButtons(int index) {
         return buttons_.get(index);
@@ -10310,7 +10406,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        * Optional. The collection of card buttons.
        * </pre>
        *
-       * <code>repeated .google.cloud.dialogflow.v2.Intent.Message.Card.Button buttons = 4;</code>
+       * <code>
+       * repeated .google.cloud.dialogflow.v2.Intent.Message.Card.Button buttons = 4 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
        */
       public com.google.cloud.dialogflow.v2.Intent.Message.Card.ButtonOrBuilder getButtonsOrBuilder(
           int index) {
@@ -10740,7 +10838,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * Optional. The title of the card.
          * </pre>
          *
-         * <code>string title = 1;</code>
+         * <code>string title = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
          */
         public java.lang.String getTitle() {
           java.lang.Object ref = title_;
@@ -10760,7 +10858,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * Optional. The title of the card.
          * </pre>
          *
-         * <code>string title = 1;</code>
+         * <code>string title = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
          */
         public com.google.protobuf.ByteString getTitleBytes() {
           java.lang.Object ref = title_;
@@ -10780,7 +10878,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * Optional. The title of the card.
          * </pre>
          *
-         * <code>string title = 1;</code>
+         * <code>string title = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
          */
         public Builder setTitle(java.lang.String value) {
           if (value == null) {
@@ -10798,7 +10896,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * Optional. The title of the card.
          * </pre>
          *
-         * <code>string title = 1;</code>
+         * <code>string title = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
          */
         public Builder clearTitle() {
 
@@ -10813,7 +10911,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * Optional. The title of the card.
          * </pre>
          *
-         * <code>string title = 1;</code>
+         * <code>string title = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
          */
         public Builder setTitleBytes(com.google.protobuf.ByteString value) {
           if (value == null) {
@@ -10834,7 +10932,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * Optional. The subtitle of the card.
          * </pre>
          *
-         * <code>string subtitle = 2;</code>
+         * <code>string subtitle = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
          */
         public java.lang.String getSubtitle() {
           java.lang.Object ref = subtitle_;
@@ -10854,7 +10952,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * Optional. The subtitle of the card.
          * </pre>
          *
-         * <code>string subtitle = 2;</code>
+         * <code>string subtitle = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
          */
         public com.google.protobuf.ByteString getSubtitleBytes() {
           java.lang.Object ref = subtitle_;
@@ -10874,7 +10972,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * Optional. The subtitle of the card.
          * </pre>
          *
-         * <code>string subtitle = 2;</code>
+         * <code>string subtitle = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
          */
         public Builder setSubtitle(java.lang.String value) {
           if (value == null) {
@@ -10892,7 +10990,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * Optional. The subtitle of the card.
          * </pre>
          *
-         * <code>string subtitle = 2;</code>
+         * <code>string subtitle = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
          */
         public Builder clearSubtitle() {
 
@@ -10907,7 +11005,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * Optional. The subtitle of the card.
          * </pre>
          *
-         * <code>string subtitle = 2;</code>
+         * <code>string subtitle = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
          */
         public Builder setSubtitleBytes(com.google.protobuf.ByteString value) {
           if (value == null) {
@@ -10928,7 +11026,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * Optional. The public URI to an image file for the card.
          * </pre>
          *
-         * <code>string image_uri = 3;</code>
+         * <code>string image_uri = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
          */
         public java.lang.String getImageUri() {
           java.lang.Object ref = imageUri_;
@@ -10948,7 +11046,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * Optional. The public URI to an image file for the card.
          * </pre>
          *
-         * <code>string image_uri = 3;</code>
+         * <code>string image_uri = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
          */
         public com.google.protobuf.ByteString getImageUriBytes() {
           java.lang.Object ref = imageUri_;
@@ -10968,7 +11066,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * Optional. The public URI to an image file for the card.
          * </pre>
          *
-         * <code>string image_uri = 3;</code>
+         * <code>string image_uri = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
          */
         public Builder setImageUri(java.lang.String value) {
           if (value == null) {
@@ -10986,7 +11084,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * Optional. The public URI to an image file for the card.
          * </pre>
          *
-         * <code>string image_uri = 3;</code>
+         * <code>string image_uri = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
          */
         public Builder clearImageUri() {
 
@@ -11001,7 +11099,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * Optional. The public URI to an image file for the card.
          * </pre>
          *
-         * <code>string image_uri = 3;</code>
+         * <code>string image_uri = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
          */
         public Builder setImageUriBytes(com.google.protobuf.ByteString value) {
           if (value == null) {
@@ -11039,7 +11137,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * Optional. The collection of card buttons.
          * </pre>
          *
-         * <code>repeated .google.cloud.dialogflow.v2.Intent.Message.Card.Button buttons = 4;</code>
+         * <code>
+         * repeated .google.cloud.dialogflow.v2.Intent.Message.Card.Button buttons = 4 [(.google.api.field_behavior) = OPTIONAL];
+         * </code>
          */
         public java.util.List<com.google.cloud.dialogflow.v2.Intent.Message.Card.Button>
             getButtonsList() {
@@ -11056,7 +11156,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * Optional. The collection of card buttons.
          * </pre>
          *
-         * <code>repeated .google.cloud.dialogflow.v2.Intent.Message.Card.Button buttons = 4;</code>
+         * <code>
+         * repeated .google.cloud.dialogflow.v2.Intent.Message.Card.Button buttons = 4 [(.google.api.field_behavior) = OPTIONAL];
+         * </code>
          */
         public int getButtonsCount() {
           if (buttonsBuilder_ == null) {
@@ -11072,7 +11174,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * Optional. The collection of card buttons.
          * </pre>
          *
-         * <code>repeated .google.cloud.dialogflow.v2.Intent.Message.Card.Button buttons = 4;</code>
+         * <code>
+         * repeated .google.cloud.dialogflow.v2.Intent.Message.Card.Button buttons = 4 [(.google.api.field_behavior) = OPTIONAL];
+         * </code>
          */
         public com.google.cloud.dialogflow.v2.Intent.Message.Card.Button getButtons(int index) {
           if (buttonsBuilder_ == null) {
@@ -11088,7 +11192,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * Optional. The collection of card buttons.
          * </pre>
          *
-         * <code>repeated .google.cloud.dialogflow.v2.Intent.Message.Card.Button buttons = 4;</code>
+         * <code>
+         * repeated .google.cloud.dialogflow.v2.Intent.Message.Card.Button buttons = 4 [(.google.api.field_behavior) = OPTIONAL];
+         * </code>
          */
         public Builder setButtons(
             int index, com.google.cloud.dialogflow.v2.Intent.Message.Card.Button value) {
@@ -11111,7 +11217,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * Optional. The collection of card buttons.
          * </pre>
          *
-         * <code>repeated .google.cloud.dialogflow.v2.Intent.Message.Card.Button buttons = 4;</code>
+         * <code>
+         * repeated .google.cloud.dialogflow.v2.Intent.Message.Card.Button buttons = 4 [(.google.api.field_behavior) = OPTIONAL];
+         * </code>
          */
         public Builder setButtons(
             int index,
@@ -11132,7 +11240,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * Optional. The collection of card buttons.
          * </pre>
          *
-         * <code>repeated .google.cloud.dialogflow.v2.Intent.Message.Card.Button buttons = 4;</code>
+         * <code>
+         * repeated .google.cloud.dialogflow.v2.Intent.Message.Card.Button buttons = 4 [(.google.api.field_behavior) = OPTIONAL];
+         * </code>
          */
         public Builder addButtons(com.google.cloud.dialogflow.v2.Intent.Message.Card.Button value) {
           if (buttonsBuilder_ == null) {
@@ -11154,7 +11264,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * Optional. The collection of card buttons.
          * </pre>
          *
-         * <code>repeated .google.cloud.dialogflow.v2.Intent.Message.Card.Button buttons = 4;</code>
+         * <code>
+         * repeated .google.cloud.dialogflow.v2.Intent.Message.Card.Button buttons = 4 [(.google.api.field_behavior) = OPTIONAL];
+         * </code>
          */
         public Builder addButtons(
             int index, com.google.cloud.dialogflow.v2.Intent.Message.Card.Button value) {
@@ -11177,7 +11289,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * Optional. The collection of card buttons.
          * </pre>
          *
-         * <code>repeated .google.cloud.dialogflow.v2.Intent.Message.Card.Button buttons = 4;</code>
+         * <code>
+         * repeated .google.cloud.dialogflow.v2.Intent.Message.Card.Button buttons = 4 [(.google.api.field_behavior) = OPTIONAL];
+         * </code>
          */
         public Builder addButtons(
             com.google.cloud.dialogflow.v2.Intent.Message.Card.Button.Builder builderForValue) {
@@ -11197,7 +11311,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * Optional. The collection of card buttons.
          * </pre>
          *
-         * <code>repeated .google.cloud.dialogflow.v2.Intent.Message.Card.Button buttons = 4;</code>
+         * <code>
+         * repeated .google.cloud.dialogflow.v2.Intent.Message.Card.Button buttons = 4 [(.google.api.field_behavior) = OPTIONAL];
+         * </code>
          */
         public Builder addButtons(
             int index,
@@ -11218,7 +11334,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * Optional. The collection of card buttons.
          * </pre>
          *
-         * <code>repeated .google.cloud.dialogflow.v2.Intent.Message.Card.Button buttons = 4;</code>
+         * <code>
+         * repeated .google.cloud.dialogflow.v2.Intent.Message.Card.Button buttons = 4 [(.google.api.field_behavior) = OPTIONAL];
+         * </code>
          */
         public Builder addAllButtons(
             java.lang.Iterable<? extends com.google.cloud.dialogflow.v2.Intent.Message.Card.Button>
@@ -11239,7 +11357,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * Optional. The collection of card buttons.
          * </pre>
          *
-         * <code>repeated .google.cloud.dialogflow.v2.Intent.Message.Card.Button buttons = 4;</code>
+         * <code>
+         * repeated .google.cloud.dialogflow.v2.Intent.Message.Card.Button buttons = 4 [(.google.api.field_behavior) = OPTIONAL];
+         * </code>
          */
         public Builder clearButtons() {
           if (buttonsBuilder_ == null) {
@@ -11258,7 +11378,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * Optional. The collection of card buttons.
          * </pre>
          *
-         * <code>repeated .google.cloud.dialogflow.v2.Intent.Message.Card.Button buttons = 4;</code>
+         * <code>
+         * repeated .google.cloud.dialogflow.v2.Intent.Message.Card.Button buttons = 4 [(.google.api.field_behavior) = OPTIONAL];
+         * </code>
          */
         public Builder removeButtons(int index) {
           if (buttonsBuilder_ == null) {
@@ -11277,7 +11399,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * Optional. The collection of card buttons.
          * </pre>
          *
-         * <code>repeated .google.cloud.dialogflow.v2.Intent.Message.Card.Button buttons = 4;</code>
+         * <code>
+         * repeated .google.cloud.dialogflow.v2.Intent.Message.Card.Button buttons = 4 [(.google.api.field_behavior) = OPTIONAL];
+         * </code>
          */
         public com.google.cloud.dialogflow.v2.Intent.Message.Card.Button.Builder getButtonsBuilder(
             int index) {
@@ -11290,7 +11414,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * Optional. The collection of card buttons.
          * </pre>
          *
-         * <code>repeated .google.cloud.dialogflow.v2.Intent.Message.Card.Button buttons = 4;</code>
+         * <code>
+         * repeated .google.cloud.dialogflow.v2.Intent.Message.Card.Button buttons = 4 [(.google.api.field_behavior) = OPTIONAL];
+         * </code>
          */
         public com.google.cloud.dialogflow.v2.Intent.Message.Card.ButtonOrBuilder
             getButtonsOrBuilder(int index) {
@@ -11307,7 +11433,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * Optional. The collection of card buttons.
          * </pre>
          *
-         * <code>repeated .google.cloud.dialogflow.v2.Intent.Message.Card.Button buttons = 4;</code>
+         * <code>
+         * repeated .google.cloud.dialogflow.v2.Intent.Message.Card.Button buttons = 4 [(.google.api.field_behavior) = OPTIONAL];
+         * </code>
          */
         public java.util.List<
                 ? extends com.google.cloud.dialogflow.v2.Intent.Message.Card.ButtonOrBuilder>
@@ -11325,7 +11453,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * Optional. The collection of card buttons.
          * </pre>
          *
-         * <code>repeated .google.cloud.dialogflow.v2.Intent.Message.Card.Button buttons = 4;</code>
+         * <code>
+         * repeated .google.cloud.dialogflow.v2.Intent.Message.Card.Button buttons = 4 [(.google.api.field_behavior) = OPTIONAL];
+         * </code>
          */
         public com.google.cloud.dialogflow.v2.Intent.Message.Card.Button.Builder
             addButtonsBuilder() {
@@ -11340,7 +11470,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * Optional. The collection of card buttons.
          * </pre>
          *
-         * <code>repeated .google.cloud.dialogflow.v2.Intent.Message.Card.Button buttons = 4;</code>
+         * <code>
+         * repeated .google.cloud.dialogflow.v2.Intent.Message.Card.Button buttons = 4 [(.google.api.field_behavior) = OPTIONAL];
+         * </code>
          */
         public com.google.cloud.dialogflow.v2.Intent.Message.Card.Button.Builder addButtonsBuilder(
             int index) {
@@ -11356,7 +11488,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * Optional. The collection of card buttons.
          * </pre>
          *
-         * <code>repeated .google.cloud.dialogflow.v2.Intent.Message.Card.Button buttons = 4;</code>
+         * <code>
+         * repeated .google.cloud.dialogflow.v2.Intent.Message.Card.Button buttons = 4 [(.google.api.field_behavior) = OPTIONAL];
+         * </code>
          */
         public java.util.List<com.google.cloud.dialogflow.v2.Intent.Message.Card.Button.Builder>
             getButtonsBuilderList() {
@@ -11492,7 +11626,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        * Optional. The text to display.
        * </pre>
        *
-       * <code>string display_text = 3;</code>
+       * <code>string display_text = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
        */
       java.lang.String getDisplayText();
       /**
@@ -11502,7 +11636,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        * Optional. The text to display.
        * </pre>
        *
-       * <code>string display_text = 3;</code>
+       * <code>string display_text = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
        */
       com.google.protobuf.ByteString getDisplayTextBytes();
     }
@@ -11712,7 +11846,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        * Optional. The text to display.
        * </pre>
        *
-       * <code>string display_text = 3;</code>
+       * <code>string display_text = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
        */
       public java.lang.String getDisplayText() {
         java.lang.Object ref = displayText_;
@@ -11732,7 +11866,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        * Optional. The text to display.
        * </pre>
        *
-       * <code>string display_text = 3;</code>
+       * <code>string display_text = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
        */
       public com.google.protobuf.ByteString getDisplayTextBytes() {
         java.lang.Object ref = displayText_;
@@ -12316,7 +12450,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * Optional. The text to display.
          * </pre>
          *
-         * <code>string display_text = 3;</code>
+         * <code>string display_text = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
          */
         public java.lang.String getDisplayText() {
           java.lang.Object ref = displayText_;
@@ -12336,7 +12470,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * Optional. The text to display.
          * </pre>
          *
-         * <code>string display_text = 3;</code>
+         * <code>string display_text = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
          */
         public com.google.protobuf.ByteString getDisplayTextBytes() {
           java.lang.Object ref = displayText_;
@@ -12356,7 +12490,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * Optional. The text to display.
          * </pre>
          *
-         * <code>string display_text = 3;</code>
+         * <code>string display_text = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
          */
         public Builder setDisplayText(java.lang.String value) {
           if (value == null) {
@@ -12374,7 +12508,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * Optional. The text to display.
          * </pre>
          *
-         * <code>string display_text = 3;</code>
+         * <code>string display_text = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
          */
         public Builder clearDisplayText() {
 
@@ -12389,7 +12523,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * Optional. The text to display.
          * </pre>
          *
-         * <code>string display_text = 3;</code>
+         * <code>string display_text = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
          */
         public Builder setDisplayTextBytes(com.google.protobuf.ByteString value) {
           if (value == null) {
@@ -12470,7 +12604,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>
-       * repeated .google.cloud.dialogflow.v2.Intent.Message.SimpleResponse simple_responses = 1;
+       * repeated .google.cloud.dialogflow.v2.Intent.Message.SimpleResponse simple_responses = 1 [(.google.api.field_behavior) = REQUIRED];
        * </code>
        */
       java.util.List<com.google.cloud.dialogflow.v2.Intent.Message.SimpleResponse>
@@ -12483,7 +12617,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>
-       * repeated .google.cloud.dialogflow.v2.Intent.Message.SimpleResponse simple_responses = 1;
+       * repeated .google.cloud.dialogflow.v2.Intent.Message.SimpleResponse simple_responses = 1 [(.google.api.field_behavior) = REQUIRED];
        * </code>
        */
       com.google.cloud.dialogflow.v2.Intent.Message.SimpleResponse getSimpleResponses(int index);
@@ -12495,7 +12629,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>
-       * repeated .google.cloud.dialogflow.v2.Intent.Message.SimpleResponse simple_responses = 1;
+       * repeated .google.cloud.dialogflow.v2.Intent.Message.SimpleResponse simple_responses = 1 [(.google.api.field_behavior) = REQUIRED];
        * </code>
        */
       int getSimpleResponsesCount();
@@ -12507,7 +12641,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>
-       * repeated .google.cloud.dialogflow.v2.Intent.Message.SimpleResponse simple_responses = 1;
+       * repeated .google.cloud.dialogflow.v2.Intent.Message.SimpleResponse simple_responses = 1 [(.google.api.field_behavior) = REQUIRED];
        * </code>
        */
       java.util.List<
@@ -12521,7 +12655,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>
-       * repeated .google.cloud.dialogflow.v2.Intent.Message.SimpleResponse simple_responses = 1;
+       * repeated .google.cloud.dialogflow.v2.Intent.Message.SimpleResponse simple_responses = 1 [(.google.api.field_behavior) = REQUIRED];
        * </code>
        */
       com.google.cloud.dialogflow.v2.Intent.Message.SimpleResponseOrBuilder
@@ -12640,7 +12774,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>
-       * repeated .google.cloud.dialogflow.v2.Intent.Message.SimpleResponse simple_responses = 1;
+       * repeated .google.cloud.dialogflow.v2.Intent.Message.SimpleResponse simple_responses = 1 [(.google.api.field_behavior) = REQUIRED];
        * </code>
        */
       public java.util.List<com.google.cloud.dialogflow.v2.Intent.Message.SimpleResponse>
@@ -12655,7 +12789,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>
-       * repeated .google.cloud.dialogflow.v2.Intent.Message.SimpleResponse simple_responses = 1;
+       * repeated .google.cloud.dialogflow.v2.Intent.Message.SimpleResponse simple_responses = 1 [(.google.api.field_behavior) = REQUIRED];
        * </code>
        */
       public java.util.List<
@@ -12671,7 +12805,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>
-       * repeated .google.cloud.dialogflow.v2.Intent.Message.SimpleResponse simple_responses = 1;
+       * repeated .google.cloud.dialogflow.v2.Intent.Message.SimpleResponse simple_responses = 1 [(.google.api.field_behavior) = REQUIRED];
        * </code>
        */
       public int getSimpleResponsesCount() {
@@ -12685,7 +12819,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>
-       * repeated .google.cloud.dialogflow.v2.Intent.Message.SimpleResponse simple_responses = 1;
+       * repeated .google.cloud.dialogflow.v2.Intent.Message.SimpleResponse simple_responses = 1 [(.google.api.field_behavior) = REQUIRED];
        * </code>
        */
       public com.google.cloud.dialogflow.v2.Intent.Message.SimpleResponse getSimpleResponses(
@@ -12700,7 +12834,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>
-       * repeated .google.cloud.dialogflow.v2.Intent.Message.SimpleResponse simple_responses = 1;
+       * repeated .google.cloud.dialogflow.v2.Intent.Message.SimpleResponse simple_responses = 1 [(.google.api.field_behavior) = REQUIRED];
        * </code>
        */
       public com.google.cloud.dialogflow.v2.Intent.Message.SimpleResponseOrBuilder
@@ -13110,7 +13244,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * </pre>
          *
          * <code>
-         * repeated .google.cloud.dialogflow.v2.Intent.Message.SimpleResponse simple_responses = 1;
+         * repeated .google.cloud.dialogflow.v2.Intent.Message.SimpleResponse simple_responses = 1 [(.google.api.field_behavior) = REQUIRED];
          * </code>
          */
         public java.util.List<com.google.cloud.dialogflow.v2.Intent.Message.SimpleResponse>
@@ -13129,7 +13263,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * </pre>
          *
          * <code>
-         * repeated .google.cloud.dialogflow.v2.Intent.Message.SimpleResponse simple_responses = 1;
+         * repeated .google.cloud.dialogflow.v2.Intent.Message.SimpleResponse simple_responses = 1 [(.google.api.field_behavior) = REQUIRED];
          * </code>
          */
         public int getSimpleResponsesCount() {
@@ -13147,7 +13281,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * </pre>
          *
          * <code>
-         * repeated .google.cloud.dialogflow.v2.Intent.Message.SimpleResponse simple_responses = 1;
+         * repeated .google.cloud.dialogflow.v2.Intent.Message.SimpleResponse simple_responses = 1 [(.google.api.field_behavior) = REQUIRED];
          * </code>
          */
         public com.google.cloud.dialogflow.v2.Intent.Message.SimpleResponse getSimpleResponses(
@@ -13166,7 +13300,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * </pre>
          *
          * <code>
-         * repeated .google.cloud.dialogflow.v2.Intent.Message.SimpleResponse simple_responses = 1;
+         * repeated .google.cloud.dialogflow.v2.Intent.Message.SimpleResponse simple_responses = 1 [(.google.api.field_behavior) = REQUIRED];
          * </code>
          */
         public Builder setSimpleResponses(
@@ -13191,7 +13325,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * </pre>
          *
          * <code>
-         * repeated .google.cloud.dialogflow.v2.Intent.Message.SimpleResponse simple_responses = 1;
+         * repeated .google.cloud.dialogflow.v2.Intent.Message.SimpleResponse simple_responses = 1 [(.google.api.field_behavior) = REQUIRED];
          * </code>
          */
         public Builder setSimpleResponses(
@@ -13214,7 +13348,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * </pre>
          *
          * <code>
-         * repeated .google.cloud.dialogflow.v2.Intent.Message.SimpleResponse simple_responses = 1;
+         * repeated .google.cloud.dialogflow.v2.Intent.Message.SimpleResponse simple_responses = 1 [(.google.api.field_behavior) = REQUIRED];
          * </code>
          */
         public Builder addSimpleResponses(
@@ -13239,7 +13373,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * </pre>
          *
          * <code>
-         * repeated .google.cloud.dialogflow.v2.Intent.Message.SimpleResponse simple_responses = 1;
+         * repeated .google.cloud.dialogflow.v2.Intent.Message.SimpleResponse simple_responses = 1 [(.google.api.field_behavior) = REQUIRED];
          * </code>
          */
         public Builder addSimpleResponses(
@@ -13264,7 +13398,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * </pre>
          *
          * <code>
-         * repeated .google.cloud.dialogflow.v2.Intent.Message.SimpleResponse simple_responses = 1;
+         * repeated .google.cloud.dialogflow.v2.Intent.Message.SimpleResponse simple_responses = 1 [(.google.api.field_behavior) = REQUIRED];
          * </code>
          */
         public Builder addSimpleResponses(
@@ -13286,7 +13420,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * </pre>
          *
          * <code>
-         * repeated .google.cloud.dialogflow.v2.Intent.Message.SimpleResponse simple_responses = 1;
+         * repeated .google.cloud.dialogflow.v2.Intent.Message.SimpleResponse simple_responses = 1 [(.google.api.field_behavior) = REQUIRED];
          * </code>
          */
         public Builder addSimpleResponses(
@@ -13309,7 +13443,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * </pre>
          *
          * <code>
-         * repeated .google.cloud.dialogflow.v2.Intent.Message.SimpleResponse simple_responses = 1;
+         * repeated .google.cloud.dialogflow.v2.Intent.Message.SimpleResponse simple_responses = 1 [(.google.api.field_behavior) = REQUIRED];
          * </code>
          */
         public Builder addAllSimpleResponses(
@@ -13333,7 +13467,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * </pre>
          *
          * <code>
-         * repeated .google.cloud.dialogflow.v2.Intent.Message.SimpleResponse simple_responses = 1;
+         * repeated .google.cloud.dialogflow.v2.Intent.Message.SimpleResponse simple_responses = 1 [(.google.api.field_behavior) = REQUIRED];
          * </code>
          */
         public Builder clearSimpleResponses() {
@@ -13354,7 +13488,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * </pre>
          *
          * <code>
-         * repeated .google.cloud.dialogflow.v2.Intent.Message.SimpleResponse simple_responses = 1;
+         * repeated .google.cloud.dialogflow.v2.Intent.Message.SimpleResponse simple_responses = 1 [(.google.api.field_behavior) = REQUIRED];
          * </code>
          */
         public Builder removeSimpleResponses(int index) {
@@ -13375,7 +13509,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * </pre>
          *
          * <code>
-         * repeated .google.cloud.dialogflow.v2.Intent.Message.SimpleResponse simple_responses = 1;
+         * repeated .google.cloud.dialogflow.v2.Intent.Message.SimpleResponse simple_responses = 1 [(.google.api.field_behavior) = REQUIRED];
          * </code>
          */
         public com.google.cloud.dialogflow.v2.Intent.Message.SimpleResponse.Builder
@@ -13390,7 +13524,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * </pre>
          *
          * <code>
-         * repeated .google.cloud.dialogflow.v2.Intent.Message.SimpleResponse simple_responses = 1;
+         * repeated .google.cloud.dialogflow.v2.Intent.Message.SimpleResponse simple_responses = 1 [(.google.api.field_behavior) = REQUIRED];
          * </code>
          */
         public com.google.cloud.dialogflow.v2.Intent.Message.SimpleResponseOrBuilder
@@ -13409,7 +13543,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * </pre>
          *
          * <code>
-         * repeated .google.cloud.dialogflow.v2.Intent.Message.SimpleResponse simple_responses = 1;
+         * repeated .google.cloud.dialogflow.v2.Intent.Message.SimpleResponse simple_responses = 1 [(.google.api.field_behavior) = REQUIRED];
          * </code>
          */
         public java.util.List<
@@ -13429,7 +13563,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * </pre>
          *
          * <code>
-         * repeated .google.cloud.dialogflow.v2.Intent.Message.SimpleResponse simple_responses = 1;
+         * repeated .google.cloud.dialogflow.v2.Intent.Message.SimpleResponse simple_responses = 1 [(.google.api.field_behavior) = REQUIRED];
          * </code>
          */
         public com.google.cloud.dialogflow.v2.Intent.Message.SimpleResponse.Builder
@@ -13447,7 +13581,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * </pre>
          *
          * <code>
-         * repeated .google.cloud.dialogflow.v2.Intent.Message.SimpleResponse simple_responses = 1;
+         * repeated .google.cloud.dialogflow.v2.Intent.Message.SimpleResponse simple_responses = 1 [(.google.api.field_behavior) = REQUIRED];
          * </code>
          */
         public com.google.cloud.dialogflow.v2.Intent.Message.SimpleResponse.Builder
@@ -13466,7 +13600,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * </pre>
          *
          * <code>
-         * repeated .google.cloud.dialogflow.v2.Intent.Message.SimpleResponse simple_responses = 1;
+         * repeated .google.cloud.dialogflow.v2.Intent.Message.SimpleResponse simple_responses = 1 [(.google.api.field_behavior) = REQUIRED];
          * </code>
          */
         public java.util.List<com.google.cloud.dialogflow.v2.Intent.Message.SimpleResponse.Builder>
@@ -13561,7 +13695,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        * Optional. The title of the card.
        * </pre>
        *
-       * <code>string title = 1;</code>
+       * <code>string title = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
        */
       java.lang.String getTitle();
       /**
@@ -13571,7 +13705,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        * Optional. The title of the card.
        * </pre>
        *
-       * <code>string title = 1;</code>
+       * <code>string title = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
        */
       com.google.protobuf.ByteString getTitleBytes();
 
@@ -13582,7 +13716,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        * Optional. The subtitle of the card.
        * </pre>
        *
-       * <code>string subtitle = 2;</code>
+       * <code>string subtitle = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
        */
       java.lang.String getSubtitle();
       /**
@@ -13592,7 +13726,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        * Optional. The subtitle of the card.
        * </pre>
        *
-       * <code>string subtitle = 2;</code>
+       * <code>string subtitle = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
        */
       com.google.protobuf.ByteString getSubtitleBytes();
 
@@ -13624,7 +13758,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        * Optional. The image for the card.
        * </pre>
        *
-       * <code>.google.cloud.dialogflow.v2.Intent.Message.Image image = 4;</code>
+       * <code>
+       * .google.cloud.dialogflow.v2.Intent.Message.Image image = 4 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
        */
       boolean hasImage();
       /**
@@ -13634,7 +13770,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        * Optional. The image for the card.
        * </pre>
        *
-       * <code>.google.cloud.dialogflow.v2.Intent.Message.Image image = 4;</code>
+       * <code>
+       * .google.cloud.dialogflow.v2.Intent.Message.Image image = 4 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
        */
       com.google.cloud.dialogflow.v2.Intent.Message.Image getImage();
       /**
@@ -13644,7 +13782,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        * Optional. The image for the card.
        * </pre>
        *
-       * <code>.google.cloud.dialogflow.v2.Intent.Message.Image image = 4;</code>
+       * <code>
+       * .google.cloud.dialogflow.v2.Intent.Message.Image image = 4 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
        */
       com.google.cloud.dialogflow.v2.Intent.Message.ImageOrBuilder getImageOrBuilder();
 
@@ -13655,7 +13795,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        * Optional. The collection of card buttons.
        * </pre>
        *
-       * <code>repeated .google.cloud.dialogflow.v2.Intent.Message.BasicCard.Button buttons = 5;
+       * <code>
+       * repeated .google.cloud.dialogflow.v2.Intent.Message.BasicCard.Button buttons = 5 [(.google.api.field_behavior) = OPTIONAL];
        * </code>
        */
       java.util.List<com.google.cloud.dialogflow.v2.Intent.Message.BasicCard.Button>
@@ -13667,7 +13808,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        * Optional. The collection of card buttons.
        * </pre>
        *
-       * <code>repeated .google.cloud.dialogflow.v2.Intent.Message.BasicCard.Button buttons = 5;
+       * <code>
+       * repeated .google.cloud.dialogflow.v2.Intent.Message.BasicCard.Button buttons = 5 [(.google.api.field_behavior) = OPTIONAL];
        * </code>
        */
       com.google.cloud.dialogflow.v2.Intent.Message.BasicCard.Button getButtons(int index);
@@ -13678,7 +13820,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        * Optional. The collection of card buttons.
        * </pre>
        *
-       * <code>repeated .google.cloud.dialogflow.v2.Intent.Message.BasicCard.Button buttons = 5;
+       * <code>
+       * repeated .google.cloud.dialogflow.v2.Intent.Message.BasicCard.Button buttons = 5 [(.google.api.field_behavior) = OPTIONAL];
        * </code>
        */
       int getButtonsCount();
@@ -13689,7 +13832,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        * Optional. The collection of card buttons.
        * </pre>
        *
-       * <code>repeated .google.cloud.dialogflow.v2.Intent.Message.BasicCard.Button buttons = 5;
+       * <code>
+       * repeated .google.cloud.dialogflow.v2.Intent.Message.BasicCard.Button buttons = 5 [(.google.api.field_behavior) = OPTIONAL];
        * </code>
        */
       java.util.List<
@@ -13702,7 +13846,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        * Optional. The collection of card buttons.
        * </pre>
        *
-       * <code>repeated .google.cloud.dialogflow.v2.Intent.Message.BasicCard.Button buttons = 5;
+       * <code>
+       * repeated .google.cloud.dialogflow.v2.Intent.Message.BasicCard.Button buttons = 5 [(.google.api.field_behavior) = OPTIONAL];
        * </code>
        */
       com.google.cloud.dialogflow.v2.Intent.Message.BasicCard.ButtonOrBuilder getButtonsOrBuilder(
@@ -13882,7 +14027,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * </pre>
          *
          * <code>
-         * .google.cloud.dialogflow.v2.Intent.Message.BasicCard.Button.OpenUriAction open_uri_action = 2;
+         * .google.cloud.dialogflow.v2.Intent.Message.BasicCard.Button.OpenUriAction open_uri_action = 2 [(.google.api.field_behavior) = REQUIRED];
          * </code>
          */
         boolean hasOpenUriAction();
@@ -13894,7 +14039,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * </pre>
          *
          * <code>
-         * .google.cloud.dialogflow.v2.Intent.Message.BasicCard.Button.OpenUriAction open_uri_action = 2;
+         * .google.cloud.dialogflow.v2.Intent.Message.BasicCard.Button.OpenUriAction open_uri_action = 2 [(.google.api.field_behavior) = REQUIRED];
          * </code>
          */
         com.google.cloud.dialogflow.v2.Intent.Message.BasicCard.Button.OpenUriAction
@@ -13907,7 +14052,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * </pre>
          *
          * <code>
-         * .google.cloud.dialogflow.v2.Intent.Message.BasicCard.Button.OpenUriAction open_uri_action = 2;
+         * .google.cloud.dialogflow.v2.Intent.Message.BasicCard.Button.OpenUriAction open_uri_action = 2 [(.google.api.field_behavior) = REQUIRED];
          * </code>
          */
         com.google.cloud.dialogflow.v2.Intent.Message.BasicCard.Button.OpenUriActionOrBuilder
@@ -14745,7 +14890,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * </pre>
          *
          * <code>
-         * .google.cloud.dialogflow.v2.Intent.Message.BasicCard.Button.OpenUriAction open_uri_action = 2;
+         * .google.cloud.dialogflow.v2.Intent.Message.BasicCard.Button.OpenUriAction open_uri_action = 2 [(.google.api.field_behavior) = REQUIRED];
          * </code>
          */
         public boolean hasOpenUriAction() {
@@ -14759,7 +14904,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * </pre>
          *
          * <code>
-         * .google.cloud.dialogflow.v2.Intent.Message.BasicCard.Button.OpenUriAction open_uri_action = 2;
+         * .google.cloud.dialogflow.v2.Intent.Message.BasicCard.Button.OpenUriAction open_uri_action = 2 [(.google.api.field_behavior) = REQUIRED];
          * </code>
          */
         public com.google.cloud.dialogflow.v2.Intent.Message.BasicCard.Button.OpenUriAction
@@ -14777,7 +14922,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * </pre>
          *
          * <code>
-         * .google.cloud.dialogflow.v2.Intent.Message.BasicCard.Button.OpenUriAction open_uri_action = 2;
+         * .google.cloud.dialogflow.v2.Intent.Message.BasicCard.Button.OpenUriAction open_uri_action = 2 [(.google.api.field_behavior) = REQUIRED];
          * </code>
          */
         public com.google.cloud.dialogflow.v2.Intent.Message.BasicCard.Button.OpenUriActionOrBuilder
@@ -15258,7 +15403,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
            * </pre>
            *
            * <code>
-           * .google.cloud.dialogflow.v2.Intent.Message.BasicCard.Button.OpenUriAction open_uri_action = 2;
+           * .google.cloud.dialogflow.v2.Intent.Message.BasicCard.Button.OpenUriAction open_uri_action = 2 [(.google.api.field_behavior) = REQUIRED];
            * </code>
            */
           public boolean hasOpenUriAction() {
@@ -15272,7 +15417,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
            * </pre>
            *
            * <code>
-           * .google.cloud.dialogflow.v2.Intent.Message.BasicCard.Button.OpenUriAction open_uri_action = 2;
+           * .google.cloud.dialogflow.v2.Intent.Message.BasicCard.Button.OpenUriAction open_uri_action = 2 [(.google.api.field_behavior) = REQUIRED];
            * </code>
            */
           public com.google.cloud.dialogflow.v2.Intent.Message.BasicCard.Button.OpenUriAction
@@ -15294,7 +15439,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
            * </pre>
            *
            * <code>
-           * .google.cloud.dialogflow.v2.Intent.Message.BasicCard.Button.OpenUriAction open_uri_action = 2;
+           * .google.cloud.dialogflow.v2.Intent.Message.BasicCard.Button.OpenUriAction open_uri_action = 2 [(.google.api.field_behavior) = REQUIRED];
            * </code>
            */
           public Builder setOpenUriAction(
@@ -15319,7 +15464,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
            * </pre>
            *
            * <code>
-           * .google.cloud.dialogflow.v2.Intent.Message.BasicCard.Button.OpenUriAction open_uri_action = 2;
+           * .google.cloud.dialogflow.v2.Intent.Message.BasicCard.Button.OpenUriAction open_uri_action = 2 [(.google.api.field_behavior) = REQUIRED];
            * </code>
            */
           public Builder setOpenUriAction(
@@ -15342,7 +15487,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
            * </pre>
            *
            * <code>
-           * .google.cloud.dialogflow.v2.Intent.Message.BasicCard.Button.OpenUriAction open_uri_action = 2;
+           * .google.cloud.dialogflow.v2.Intent.Message.BasicCard.Button.OpenUriAction open_uri_action = 2 [(.google.api.field_behavior) = REQUIRED];
            * </code>
            */
           public Builder mergeOpenUriAction(
@@ -15372,7 +15517,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
            * </pre>
            *
            * <code>
-           * .google.cloud.dialogflow.v2.Intent.Message.BasicCard.Button.OpenUriAction open_uri_action = 2;
+           * .google.cloud.dialogflow.v2.Intent.Message.BasicCard.Button.OpenUriAction open_uri_action = 2 [(.google.api.field_behavior) = REQUIRED];
            * </code>
            */
           public Builder clearOpenUriAction() {
@@ -15394,7 +15539,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
            * </pre>
            *
            * <code>
-           * .google.cloud.dialogflow.v2.Intent.Message.BasicCard.Button.OpenUriAction open_uri_action = 2;
+           * .google.cloud.dialogflow.v2.Intent.Message.BasicCard.Button.OpenUriAction open_uri_action = 2 [(.google.api.field_behavior) = REQUIRED];
            * </code>
            */
           public com.google.cloud.dialogflow.v2.Intent.Message.BasicCard.Button.OpenUriAction
@@ -15412,7 +15557,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
            * </pre>
            *
            * <code>
-           * .google.cloud.dialogflow.v2.Intent.Message.BasicCard.Button.OpenUriAction open_uri_action = 2;
+           * .google.cloud.dialogflow.v2.Intent.Message.BasicCard.Button.OpenUriAction open_uri_action = 2 [(.google.api.field_behavior) = REQUIRED];
            * </code>
            */
           public com.google.cloud.dialogflow.v2.Intent.Message.BasicCard.Button
@@ -15435,7 +15580,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
            * </pre>
            *
            * <code>
-           * .google.cloud.dialogflow.v2.Intent.Message.BasicCard.Button.OpenUriAction open_uri_action = 2;
+           * .google.cloud.dialogflow.v2.Intent.Message.BasicCard.Button.OpenUriAction open_uri_action = 2 [(.google.api.field_behavior) = REQUIRED];
            * </code>
            */
           private com.google.protobuf.SingleFieldBuilderV3<
@@ -15524,7 +15669,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        * Optional. The title of the card.
        * </pre>
        *
-       * <code>string title = 1;</code>
+       * <code>string title = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
        */
       public java.lang.String getTitle() {
         java.lang.Object ref = title_;
@@ -15544,7 +15689,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        * Optional. The title of the card.
        * </pre>
        *
-       * <code>string title = 1;</code>
+       * <code>string title = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
        */
       public com.google.protobuf.ByteString getTitleBytes() {
         java.lang.Object ref = title_;
@@ -15567,7 +15712,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        * Optional. The subtitle of the card.
        * </pre>
        *
-       * <code>string subtitle = 2;</code>
+       * <code>string subtitle = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
        */
       public java.lang.String getSubtitle() {
         java.lang.Object ref = subtitle_;
@@ -15587,7 +15732,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        * Optional. The subtitle of the card.
        * </pre>
        *
-       * <code>string subtitle = 2;</code>
+       * <code>string subtitle = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
        */
       public com.google.protobuf.ByteString getSubtitleBytes() {
         java.lang.Object ref = subtitle_;
@@ -15653,7 +15798,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        * Optional. The image for the card.
        * </pre>
        *
-       * <code>.google.cloud.dialogflow.v2.Intent.Message.Image image = 4;</code>
+       * <code>
+       * .google.cloud.dialogflow.v2.Intent.Message.Image image = 4 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
        */
       public boolean hasImage() {
         return image_ != null;
@@ -15665,7 +15812,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        * Optional. The image for the card.
        * </pre>
        *
-       * <code>.google.cloud.dialogflow.v2.Intent.Message.Image image = 4;</code>
+       * <code>
+       * .google.cloud.dialogflow.v2.Intent.Message.Image image = 4 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
        */
       public com.google.cloud.dialogflow.v2.Intent.Message.Image getImage() {
         return image_ == null
@@ -15679,7 +15828,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        * Optional. The image for the card.
        * </pre>
        *
-       * <code>.google.cloud.dialogflow.v2.Intent.Message.Image image = 4;</code>
+       * <code>
+       * .google.cloud.dialogflow.v2.Intent.Message.Image image = 4 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
        */
       public com.google.cloud.dialogflow.v2.Intent.Message.ImageOrBuilder getImageOrBuilder() {
         return getImage();
@@ -15695,7 +15846,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        * Optional. The collection of card buttons.
        * </pre>
        *
-       * <code>repeated .google.cloud.dialogflow.v2.Intent.Message.BasicCard.Button buttons = 5;
+       * <code>
+       * repeated .google.cloud.dialogflow.v2.Intent.Message.BasicCard.Button buttons = 5 [(.google.api.field_behavior) = OPTIONAL];
        * </code>
        */
       public java.util.List<com.google.cloud.dialogflow.v2.Intent.Message.BasicCard.Button>
@@ -15709,7 +15861,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        * Optional. The collection of card buttons.
        * </pre>
        *
-       * <code>repeated .google.cloud.dialogflow.v2.Intent.Message.BasicCard.Button buttons = 5;
+       * <code>
+       * repeated .google.cloud.dialogflow.v2.Intent.Message.BasicCard.Button buttons = 5 [(.google.api.field_behavior) = OPTIONAL];
        * </code>
        */
       public java.util.List<
@@ -15724,7 +15877,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        * Optional. The collection of card buttons.
        * </pre>
        *
-       * <code>repeated .google.cloud.dialogflow.v2.Intent.Message.BasicCard.Button buttons = 5;
+       * <code>
+       * repeated .google.cloud.dialogflow.v2.Intent.Message.BasicCard.Button buttons = 5 [(.google.api.field_behavior) = OPTIONAL];
        * </code>
        */
       public int getButtonsCount() {
@@ -15737,7 +15891,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        * Optional. The collection of card buttons.
        * </pre>
        *
-       * <code>repeated .google.cloud.dialogflow.v2.Intent.Message.BasicCard.Button buttons = 5;
+       * <code>
+       * repeated .google.cloud.dialogflow.v2.Intent.Message.BasicCard.Button buttons = 5 [(.google.api.field_behavior) = OPTIONAL];
        * </code>
        */
       public com.google.cloud.dialogflow.v2.Intent.Message.BasicCard.Button getButtons(int index) {
@@ -15750,7 +15905,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        * Optional. The collection of card buttons.
        * </pre>
        *
-       * <code>repeated .google.cloud.dialogflow.v2.Intent.Message.BasicCard.Button buttons = 5;
+       * <code>
+       * repeated .google.cloud.dialogflow.v2.Intent.Message.BasicCard.Button buttons = 5 [(.google.api.field_behavior) = OPTIONAL];
        * </code>
        */
       public com.google.cloud.dialogflow.v2.Intent.Message.BasicCard.ButtonOrBuilder
@@ -16209,7 +16365,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * Optional. The title of the card.
          * </pre>
          *
-         * <code>string title = 1;</code>
+         * <code>string title = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
          */
         public java.lang.String getTitle() {
           java.lang.Object ref = title_;
@@ -16229,7 +16385,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * Optional. The title of the card.
          * </pre>
          *
-         * <code>string title = 1;</code>
+         * <code>string title = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
          */
         public com.google.protobuf.ByteString getTitleBytes() {
           java.lang.Object ref = title_;
@@ -16249,7 +16405,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * Optional. The title of the card.
          * </pre>
          *
-         * <code>string title = 1;</code>
+         * <code>string title = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
          */
         public Builder setTitle(java.lang.String value) {
           if (value == null) {
@@ -16267,7 +16423,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * Optional. The title of the card.
          * </pre>
          *
-         * <code>string title = 1;</code>
+         * <code>string title = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
          */
         public Builder clearTitle() {
 
@@ -16282,7 +16438,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * Optional. The title of the card.
          * </pre>
          *
-         * <code>string title = 1;</code>
+         * <code>string title = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
          */
         public Builder setTitleBytes(com.google.protobuf.ByteString value) {
           if (value == null) {
@@ -16303,7 +16459,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * Optional. The subtitle of the card.
          * </pre>
          *
-         * <code>string subtitle = 2;</code>
+         * <code>string subtitle = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
          */
         public java.lang.String getSubtitle() {
           java.lang.Object ref = subtitle_;
@@ -16323,7 +16479,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * Optional. The subtitle of the card.
          * </pre>
          *
-         * <code>string subtitle = 2;</code>
+         * <code>string subtitle = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
          */
         public com.google.protobuf.ByteString getSubtitleBytes() {
           java.lang.Object ref = subtitle_;
@@ -16343,7 +16499,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * Optional. The subtitle of the card.
          * </pre>
          *
-         * <code>string subtitle = 2;</code>
+         * <code>string subtitle = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
          */
         public Builder setSubtitle(java.lang.String value) {
           if (value == null) {
@@ -16361,7 +16517,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * Optional. The subtitle of the card.
          * </pre>
          *
-         * <code>string subtitle = 2;</code>
+         * <code>string subtitle = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
          */
         public Builder clearSubtitle() {
 
@@ -16376,7 +16532,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * Optional. The subtitle of the card.
          * </pre>
          *
-         * <code>string subtitle = 2;</code>
+         * <code>string subtitle = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
          */
         public Builder setSubtitleBytes(com.google.protobuf.ByteString value) {
           if (value == null) {
@@ -16496,7 +16652,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * Optional. The image for the card.
          * </pre>
          *
-         * <code>.google.cloud.dialogflow.v2.Intent.Message.Image image = 4;</code>
+         * <code>
+         * .google.cloud.dialogflow.v2.Intent.Message.Image image = 4 [(.google.api.field_behavior) = OPTIONAL];
+         * </code>
          */
         public boolean hasImage() {
           return imageBuilder_ != null || image_ != null;
@@ -16508,7 +16666,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * Optional. The image for the card.
          * </pre>
          *
-         * <code>.google.cloud.dialogflow.v2.Intent.Message.Image image = 4;</code>
+         * <code>
+         * .google.cloud.dialogflow.v2.Intent.Message.Image image = 4 [(.google.api.field_behavior) = OPTIONAL];
+         * </code>
          */
         public com.google.cloud.dialogflow.v2.Intent.Message.Image getImage() {
           if (imageBuilder_ == null) {
@@ -16526,7 +16686,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * Optional. The image for the card.
          * </pre>
          *
-         * <code>.google.cloud.dialogflow.v2.Intent.Message.Image image = 4;</code>
+         * <code>
+         * .google.cloud.dialogflow.v2.Intent.Message.Image image = 4 [(.google.api.field_behavior) = OPTIONAL];
+         * </code>
          */
         public Builder setImage(com.google.cloud.dialogflow.v2.Intent.Message.Image value) {
           if (imageBuilder_ == null) {
@@ -16548,7 +16710,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * Optional. The image for the card.
          * </pre>
          *
-         * <code>.google.cloud.dialogflow.v2.Intent.Message.Image image = 4;</code>
+         * <code>
+         * .google.cloud.dialogflow.v2.Intent.Message.Image image = 4 [(.google.api.field_behavior) = OPTIONAL];
+         * </code>
          */
         public Builder setImage(
             com.google.cloud.dialogflow.v2.Intent.Message.Image.Builder builderForValue) {
@@ -16568,7 +16732,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * Optional. The image for the card.
          * </pre>
          *
-         * <code>.google.cloud.dialogflow.v2.Intent.Message.Image image = 4;</code>
+         * <code>
+         * .google.cloud.dialogflow.v2.Intent.Message.Image image = 4 [(.google.api.field_behavior) = OPTIONAL];
+         * </code>
          */
         public Builder mergeImage(com.google.cloud.dialogflow.v2.Intent.Message.Image value) {
           if (imageBuilder_ == null) {
@@ -16594,7 +16760,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * Optional. The image for the card.
          * </pre>
          *
-         * <code>.google.cloud.dialogflow.v2.Intent.Message.Image image = 4;</code>
+         * <code>
+         * .google.cloud.dialogflow.v2.Intent.Message.Image image = 4 [(.google.api.field_behavior) = OPTIONAL];
+         * </code>
          */
         public Builder clearImage() {
           if (imageBuilder_ == null) {
@@ -16614,7 +16782,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * Optional. The image for the card.
          * </pre>
          *
-         * <code>.google.cloud.dialogflow.v2.Intent.Message.Image image = 4;</code>
+         * <code>
+         * .google.cloud.dialogflow.v2.Intent.Message.Image image = 4 [(.google.api.field_behavior) = OPTIONAL];
+         * </code>
          */
         public com.google.cloud.dialogflow.v2.Intent.Message.Image.Builder getImageBuilder() {
 
@@ -16628,7 +16798,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * Optional. The image for the card.
          * </pre>
          *
-         * <code>.google.cloud.dialogflow.v2.Intent.Message.Image image = 4;</code>
+         * <code>
+         * .google.cloud.dialogflow.v2.Intent.Message.Image image = 4 [(.google.api.field_behavior) = OPTIONAL];
+         * </code>
          */
         public com.google.cloud.dialogflow.v2.Intent.Message.ImageOrBuilder getImageOrBuilder() {
           if (imageBuilder_ != null) {
@@ -16646,7 +16818,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * Optional. The image for the card.
          * </pre>
          *
-         * <code>.google.cloud.dialogflow.v2.Intent.Message.Image image = 4;</code>
+         * <code>
+         * .google.cloud.dialogflow.v2.Intent.Message.Image image = 4 [(.google.api.field_behavior) = OPTIONAL];
+         * </code>
          */
         private com.google.protobuf.SingleFieldBuilderV3<
                 com.google.cloud.dialogflow.v2.Intent.Message.Image,
@@ -16690,7 +16864,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * Optional. The collection of card buttons.
          * </pre>
          *
-         * <code>repeated .google.cloud.dialogflow.v2.Intent.Message.BasicCard.Button buttons = 5;
+         * <code>
+         * repeated .google.cloud.dialogflow.v2.Intent.Message.BasicCard.Button buttons = 5 [(.google.api.field_behavior) = OPTIONAL];
          * </code>
          */
         public java.util.List<com.google.cloud.dialogflow.v2.Intent.Message.BasicCard.Button>
@@ -16708,7 +16883,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * Optional. The collection of card buttons.
          * </pre>
          *
-         * <code>repeated .google.cloud.dialogflow.v2.Intent.Message.BasicCard.Button buttons = 5;
+         * <code>
+         * repeated .google.cloud.dialogflow.v2.Intent.Message.BasicCard.Button buttons = 5 [(.google.api.field_behavior) = OPTIONAL];
          * </code>
          */
         public int getButtonsCount() {
@@ -16725,7 +16901,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * Optional. The collection of card buttons.
          * </pre>
          *
-         * <code>repeated .google.cloud.dialogflow.v2.Intent.Message.BasicCard.Button buttons = 5;
+         * <code>
+         * repeated .google.cloud.dialogflow.v2.Intent.Message.BasicCard.Button buttons = 5 [(.google.api.field_behavior) = OPTIONAL];
          * </code>
          */
         public com.google.cloud.dialogflow.v2.Intent.Message.BasicCard.Button getButtons(
@@ -16743,7 +16920,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * Optional. The collection of card buttons.
          * </pre>
          *
-         * <code>repeated .google.cloud.dialogflow.v2.Intent.Message.BasicCard.Button buttons = 5;
+         * <code>
+         * repeated .google.cloud.dialogflow.v2.Intent.Message.BasicCard.Button buttons = 5 [(.google.api.field_behavior) = OPTIONAL];
          * </code>
          */
         public Builder setButtons(
@@ -16767,7 +16945,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * Optional. The collection of card buttons.
          * </pre>
          *
-         * <code>repeated .google.cloud.dialogflow.v2.Intent.Message.BasicCard.Button buttons = 5;
+         * <code>
+         * repeated .google.cloud.dialogflow.v2.Intent.Message.BasicCard.Button buttons = 5 [(.google.api.field_behavior) = OPTIONAL];
          * </code>
          */
         public Builder setButtons(
@@ -16790,7 +16969,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * Optional. The collection of card buttons.
          * </pre>
          *
-         * <code>repeated .google.cloud.dialogflow.v2.Intent.Message.BasicCard.Button buttons = 5;
+         * <code>
+         * repeated .google.cloud.dialogflow.v2.Intent.Message.BasicCard.Button buttons = 5 [(.google.api.field_behavior) = OPTIONAL];
          * </code>
          */
         public Builder addButtons(
@@ -16814,7 +16994,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * Optional. The collection of card buttons.
          * </pre>
          *
-         * <code>repeated .google.cloud.dialogflow.v2.Intent.Message.BasicCard.Button buttons = 5;
+         * <code>
+         * repeated .google.cloud.dialogflow.v2.Intent.Message.BasicCard.Button buttons = 5 [(.google.api.field_behavior) = OPTIONAL];
          * </code>
          */
         public Builder addButtons(
@@ -16838,7 +17019,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * Optional. The collection of card buttons.
          * </pre>
          *
-         * <code>repeated .google.cloud.dialogflow.v2.Intent.Message.BasicCard.Button buttons = 5;
+         * <code>
+         * repeated .google.cloud.dialogflow.v2.Intent.Message.BasicCard.Button buttons = 5 [(.google.api.field_behavior) = OPTIONAL];
          * </code>
          */
         public Builder addButtons(
@@ -16860,7 +17042,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * Optional. The collection of card buttons.
          * </pre>
          *
-         * <code>repeated .google.cloud.dialogflow.v2.Intent.Message.BasicCard.Button buttons = 5;
+         * <code>
+         * repeated .google.cloud.dialogflow.v2.Intent.Message.BasicCard.Button buttons = 5 [(.google.api.field_behavior) = OPTIONAL];
          * </code>
          */
         public Builder addButtons(
@@ -16883,7 +17066,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * Optional. The collection of card buttons.
          * </pre>
          *
-         * <code>repeated .google.cloud.dialogflow.v2.Intent.Message.BasicCard.Button buttons = 5;
+         * <code>
+         * repeated .google.cloud.dialogflow.v2.Intent.Message.BasicCard.Button buttons = 5 [(.google.api.field_behavior) = OPTIONAL];
          * </code>
          */
         public Builder addAllButtons(
@@ -16906,7 +17090,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * Optional. The collection of card buttons.
          * </pre>
          *
-         * <code>repeated .google.cloud.dialogflow.v2.Intent.Message.BasicCard.Button buttons = 5;
+         * <code>
+         * repeated .google.cloud.dialogflow.v2.Intent.Message.BasicCard.Button buttons = 5 [(.google.api.field_behavior) = OPTIONAL];
          * </code>
          */
         public Builder clearButtons() {
@@ -16926,7 +17111,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * Optional. The collection of card buttons.
          * </pre>
          *
-         * <code>repeated .google.cloud.dialogflow.v2.Intent.Message.BasicCard.Button buttons = 5;
+         * <code>
+         * repeated .google.cloud.dialogflow.v2.Intent.Message.BasicCard.Button buttons = 5 [(.google.api.field_behavior) = OPTIONAL];
          * </code>
          */
         public Builder removeButtons(int index) {
@@ -16946,7 +17132,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * Optional. The collection of card buttons.
          * </pre>
          *
-         * <code>repeated .google.cloud.dialogflow.v2.Intent.Message.BasicCard.Button buttons = 5;
+         * <code>
+         * repeated .google.cloud.dialogflow.v2.Intent.Message.BasicCard.Button buttons = 5 [(.google.api.field_behavior) = OPTIONAL];
          * </code>
          */
         public com.google.cloud.dialogflow.v2.Intent.Message.BasicCard.Button.Builder
@@ -16960,7 +17147,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * Optional. The collection of card buttons.
          * </pre>
          *
-         * <code>repeated .google.cloud.dialogflow.v2.Intent.Message.BasicCard.Button buttons = 5;
+         * <code>
+         * repeated .google.cloud.dialogflow.v2.Intent.Message.BasicCard.Button buttons = 5 [(.google.api.field_behavior) = OPTIONAL];
          * </code>
          */
         public com.google.cloud.dialogflow.v2.Intent.Message.BasicCard.ButtonOrBuilder
@@ -16978,7 +17166,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * Optional. The collection of card buttons.
          * </pre>
          *
-         * <code>repeated .google.cloud.dialogflow.v2.Intent.Message.BasicCard.Button buttons = 5;
+         * <code>
+         * repeated .google.cloud.dialogflow.v2.Intent.Message.BasicCard.Button buttons = 5 [(.google.api.field_behavior) = OPTIONAL];
          * </code>
          */
         public java.util.List<
@@ -16997,7 +17186,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * Optional. The collection of card buttons.
          * </pre>
          *
-         * <code>repeated .google.cloud.dialogflow.v2.Intent.Message.BasicCard.Button buttons = 5;
+         * <code>
+         * repeated .google.cloud.dialogflow.v2.Intent.Message.BasicCard.Button buttons = 5 [(.google.api.field_behavior) = OPTIONAL];
          * </code>
          */
         public com.google.cloud.dialogflow.v2.Intent.Message.BasicCard.Button.Builder
@@ -17014,7 +17204,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * Optional. The collection of card buttons.
          * </pre>
          *
-         * <code>repeated .google.cloud.dialogflow.v2.Intent.Message.BasicCard.Button buttons = 5;
+         * <code>
+         * repeated .google.cloud.dialogflow.v2.Intent.Message.BasicCard.Button buttons = 5 [(.google.api.field_behavior) = OPTIONAL];
          * </code>
          */
         public com.google.cloud.dialogflow.v2.Intent.Message.BasicCard.Button.Builder
@@ -17032,7 +17223,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * Optional. The collection of card buttons.
          * </pre>
          *
-         * <code>repeated .google.cloud.dialogflow.v2.Intent.Message.BasicCard.Button buttons = 5;
+         * <code>
+         * repeated .google.cloud.dialogflow.v2.Intent.Message.BasicCard.Button buttons = 5 [(.google.api.field_behavior) = OPTIONAL];
          * </code>
          */
         public java.util.List<
@@ -17122,7 +17314,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        * Required. The text shown the in the suggestion chip.
        * </pre>
        *
-       * <code>string title = 1;</code>
+       * <code>string title = 1 [(.google.api.field_behavior) = REQUIRED];</code>
        */
       java.lang.String getTitle();
       /**
@@ -17132,7 +17324,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        * Required. The text shown the in the suggestion chip.
        * </pre>
        *
-       * <code>string title = 1;</code>
+       * <code>string title = 1 [(.google.api.field_behavior) = REQUIRED];</code>
        */
       com.google.protobuf.ByteString getTitleBytes();
     }
@@ -17235,7 +17427,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        * Required. The text shown the in the suggestion chip.
        * </pre>
        *
-       * <code>string title = 1;</code>
+       * <code>string title = 1 [(.google.api.field_behavior) = REQUIRED];</code>
        */
       public java.lang.String getTitle() {
         java.lang.Object ref = title_;
@@ -17255,7 +17447,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        * Required. The text shown the in the suggestion chip.
        * </pre>
        *
-       * <code>string title = 1;</code>
+       * <code>string title = 1 [(.google.api.field_behavior) = REQUIRED];</code>
        */
       public com.google.protobuf.ByteString getTitleBytes() {
         java.lang.Object ref = title_;
@@ -17603,7 +17795,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * Required. The text shown the in the suggestion chip.
          * </pre>
          *
-         * <code>string title = 1;</code>
+         * <code>string title = 1 [(.google.api.field_behavior) = REQUIRED];</code>
          */
         public java.lang.String getTitle() {
           java.lang.Object ref = title_;
@@ -17623,7 +17815,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * Required. The text shown the in the suggestion chip.
          * </pre>
          *
-         * <code>string title = 1;</code>
+         * <code>string title = 1 [(.google.api.field_behavior) = REQUIRED];</code>
          */
         public com.google.protobuf.ByteString getTitleBytes() {
           java.lang.Object ref = title_;
@@ -17643,7 +17835,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * Required. The text shown the in the suggestion chip.
          * </pre>
          *
-         * <code>string title = 1;</code>
+         * <code>string title = 1 [(.google.api.field_behavior) = REQUIRED];</code>
          */
         public Builder setTitle(java.lang.String value) {
           if (value == null) {
@@ -17661,7 +17853,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * Required. The text shown the in the suggestion chip.
          * </pre>
          *
-         * <code>string title = 1;</code>
+         * <code>string title = 1 [(.google.api.field_behavior) = REQUIRED];</code>
          */
         public Builder clearTitle() {
 
@@ -17676,7 +17868,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * Required. The text shown the in the suggestion chip.
          * </pre>
          *
-         * <code>string title = 1;</code>
+         * <code>string title = 1 [(.google.api.field_behavior) = REQUIRED];</code>
          */
         public Builder setTitleBytes(com.google.protobuf.ByteString value) {
           if (value == null) {
@@ -17754,7 +17946,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        * Required. The list of suggested replies.
        * </pre>
        *
-       * <code>repeated .google.cloud.dialogflow.v2.Intent.Message.Suggestion suggestions = 1;
+       * <code>
+       * repeated .google.cloud.dialogflow.v2.Intent.Message.Suggestion suggestions = 1 [(.google.api.field_behavior) = REQUIRED];
        * </code>
        */
       java.util.List<com.google.cloud.dialogflow.v2.Intent.Message.Suggestion> getSuggestionsList();
@@ -17765,7 +17958,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        * Required. The list of suggested replies.
        * </pre>
        *
-       * <code>repeated .google.cloud.dialogflow.v2.Intent.Message.Suggestion suggestions = 1;
+       * <code>
+       * repeated .google.cloud.dialogflow.v2.Intent.Message.Suggestion suggestions = 1 [(.google.api.field_behavior) = REQUIRED];
        * </code>
        */
       com.google.cloud.dialogflow.v2.Intent.Message.Suggestion getSuggestions(int index);
@@ -17776,7 +17970,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        * Required. The list of suggested replies.
        * </pre>
        *
-       * <code>repeated .google.cloud.dialogflow.v2.Intent.Message.Suggestion suggestions = 1;
+       * <code>
+       * repeated .google.cloud.dialogflow.v2.Intent.Message.Suggestion suggestions = 1 [(.google.api.field_behavior) = REQUIRED];
        * </code>
        */
       int getSuggestionsCount();
@@ -17787,7 +17982,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        * Required. The list of suggested replies.
        * </pre>
        *
-       * <code>repeated .google.cloud.dialogflow.v2.Intent.Message.Suggestion suggestions = 1;
+       * <code>
+       * repeated .google.cloud.dialogflow.v2.Intent.Message.Suggestion suggestions = 1 [(.google.api.field_behavior) = REQUIRED];
        * </code>
        */
       java.util.List<? extends com.google.cloud.dialogflow.v2.Intent.Message.SuggestionOrBuilder>
@@ -17799,7 +17995,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        * Required. The list of suggested replies.
        * </pre>
        *
-       * <code>repeated .google.cloud.dialogflow.v2.Intent.Message.Suggestion suggestions = 1;
+       * <code>
+       * repeated .google.cloud.dialogflow.v2.Intent.Message.Suggestion suggestions = 1 [(.google.api.field_behavior) = REQUIRED];
        * </code>
        */
       com.google.cloud.dialogflow.v2.Intent.Message.SuggestionOrBuilder getSuggestionsOrBuilder(
@@ -17913,7 +18110,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        * Required. The list of suggested replies.
        * </pre>
        *
-       * <code>repeated .google.cloud.dialogflow.v2.Intent.Message.Suggestion suggestions = 1;
+       * <code>
+       * repeated .google.cloud.dialogflow.v2.Intent.Message.Suggestion suggestions = 1 [(.google.api.field_behavior) = REQUIRED];
        * </code>
        */
       public java.util.List<com.google.cloud.dialogflow.v2.Intent.Message.Suggestion>
@@ -17927,7 +18125,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        * Required. The list of suggested replies.
        * </pre>
        *
-       * <code>repeated .google.cloud.dialogflow.v2.Intent.Message.Suggestion suggestions = 1;
+       * <code>
+       * repeated .google.cloud.dialogflow.v2.Intent.Message.Suggestion suggestions = 1 [(.google.api.field_behavior) = REQUIRED];
        * </code>
        */
       public java.util.List<
@@ -17942,7 +18141,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        * Required. The list of suggested replies.
        * </pre>
        *
-       * <code>repeated .google.cloud.dialogflow.v2.Intent.Message.Suggestion suggestions = 1;
+       * <code>
+       * repeated .google.cloud.dialogflow.v2.Intent.Message.Suggestion suggestions = 1 [(.google.api.field_behavior) = REQUIRED];
        * </code>
        */
       public int getSuggestionsCount() {
@@ -17955,7 +18155,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        * Required. The list of suggested replies.
        * </pre>
        *
-       * <code>repeated .google.cloud.dialogflow.v2.Intent.Message.Suggestion suggestions = 1;
+       * <code>
+       * repeated .google.cloud.dialogflow.v2.Intent.Message.Suggestion suggestions = 1 [(.google.api.field_behavior) = REQUIRED];
        * </code>
        */
       public com.google.cloud.dialogflow.v2.Intent.Message.Suggestion getSuggestions(int index) {
@@ -17968,7 +18169,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        * Required. The list of suggested replies.
        * </pre>
        *
-       * <code>repeated .google.cloud.dialogflow.v2.Intent.Message.Suggestion suggestions = 1;
+       * <code>
+       * repeated .google.cloud.dialogflow.v2.Intent.Message.Suggestion suggestions = 1 [(.google.api.field_behavior) = REQUIRED];
        * </code>
        */
       public com.google.cloud.dialogflow.v2.Intent.Message.SuggestionOrBuilder
@@ -18369,7 +18571,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * Required. The list of suggested replies.
          * </pre>
          *
-         * <code>repeated .google.cloud.dialogflow.v2.Intent.Message.Suggestion suggestions = 1;
+         * <code>
+         * repeated .google.cloud.dialogflow.v2.Intent.Message.Suggestion suggestions = 1 [(.google.api.field_behavior) = REQUIRED];
          * </code>
          */
         public java.util.List<com.google.cloud.dialogflow.v2.Intent.Message.Suggestion>
@@ -18387,7 +18590,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * Required. The list of suggested replies.
          * </pre>
          *
-         * <code>repeated .google.cloud.dialogflow.v2.Intent.Message.Suggestion suggestions = 1;
+         * <code>
+         * repeated .google.cloud.dialogflow.v2.Intent.Message.Suggestion suggestions = 1 [(.google.api.field_behavior) = REQUIRED];
          * </code>
          */
         public int getSuggestionsCount() {
@@ -18404,7 +18608,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * Required. The list of suggested replies.
          * </pre>
          *
-         * <code>repeated .google.cloud.dialogflow.v2.Intent.Message.Suggestion suggestions = 1;
+         * <code>
+         * repeated .google.cloud.dialogflow.v2.Intent.Message.Suggestion suggestions = 1 [(.google.api.field_behavior) = REQUIRED];
          * </code>
          */
         public com.google.cloud.dialogflow.v2.Intent.Message.Suggestion getSuggestions(int index) {
@@ -18421,7 +18626,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * Required. The list of suggested replies.
          * </pre>
          *
-         * <code>repeated .google.cloud.dialogflow.v2.Intent.Message.Suggestion suggestions = 1;
+         * <code>
+         * repeated .google.cloud.dialogflow.v2.Intent.Message.Suggestion suggestions = 1 [(.google.api.field_behavior) = REQUIRED];
          * </code>
          */
         public Builder setSuggestions(
@@ -18445,7 +18651,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * Required. The list of suggested replies.
          * </pre>
          *
-         * <code>repeated .google.cloud.dialogflow.v2.Intent.Message.Suggestion suggestions = 1;
+         * <code>
+         * repeated .google.cloud.dialogflow.v2.Intent.Message.Suggestion suggestions = 1 [(.google.api.field_behavior) = REQUIRED];
          * </code>
          */
         public Builder setSuggestions(
@@ -18467,7 +18674,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * Required. The list of suggested replies.
          * </pre>
          *
-         * <code>repeated .google.cloud.dialogflow.v2.Intent.Message.Suggestion suggestions = 1;
+         * <code>
+         * repeated .google.cloud.dialogflow.v2.Intent.Message.Suggestion suggestions = 1 [(.google.api.field_behavior) = REQUIRED];
          * </code>
          */
         public Builder addSuggestions(
@@ -18491,7 +18699,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * Required. The list of suggested replies.
          * </pre>
          *
-         * <code>repeated .google.cloud.dialogflow.v2.Intent.Message.Suggestion suggestions = 1;
+         * <code>
+         * repeated .google.cloud.dialogflow.v2.Intent.Message.Suggestion suggestions = 1 [(.google.api.field_behavior) = REQUIRED];
          * </code>
          */
         public Builder addSuggestions(
@@ -18515,7 +18724,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * Required. The list of suggested replies.
          * </pre>
          *
-         * <code>repeated .google.cloud.dialogflow.v2.Intent.Message.Suggestion suggestions = 1;
+         * <code>
+         * repeated .google.cloud.dialogflow.v2.Intent.Message.Suggestion suggestions = 1 [(.google.api.field_behavior) = REQUIRED];
          * </code>
          */
         public Builder addSuggestions(
@@ -18536,7 +18746,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * Required. The list of suggested replies.
          * </pre>
          *
-         * <code>repeated .google.cloud.dialogflow.v2.Intent.Message.Suggestion suggestions = 1;
+         * <code>
+         * repeated .google.cloud.dialogflow.v2.Intent.Message.Suggestion suggestions = 1 [(.google.api.field_behavior) = REQUIRED];
          * </code>
          */
         public Builder addSuggestions(
@@ -18558,7 +18769,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * Required. The list of suggested replies.
          * </pre>
          *
-         * <code>repeated .google.cloud.dialogflow.v2.Intent.Message.Suggestion suggestions = 1;
+         * <code>
+         * repeated .google.cloud.dialogflow.v2.Intent.Message.Suggestion suggestions = 1 [(.google.api.field_behavior) = REQUIRED];
          * </code>
          */
         public Builder addAllSuggestions(
@@ -18580,7 +18792,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * Required. The list of suggested replies.
          * </pre>
          *
-         * <code>repeated .google.cloud.dialogflow.v2.Intent.Message.Suggestion suggestions = 1;
+         * <code>
+         * repeated .google.cloud.dialogflow.v2.Intent.Message.Suggestion suggestions = 1 [(.google.api.field_behavior) = REQUIRED];
          * </code>
          */
         public Builder clearSuggestions() {
@@ -18600,7 +18813,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * Required. The list of suggested replies.
          * </pre>
          *
-         * <code>repeated .google.cloud.dialogflow.v2.Intent.Message.Suggestion suggestions = 1;
+         * <code>
+         * repeated .google.cloud.dialogflow.v2.Intent.Message.Suggestion suggestions = 1 [(.google.api.field_behavior) = REQUIRED];
          * </code>
          */
         public Builder removeSuggestions(int index) {
@@ -18620,7 +18834,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * Required. The list of suggested replies.
          * </pre>
          *
-         * <code>repeated .google.cloud.dialogflow.v2.Intent.Message.Suggestion suggestions = 1;
+         * <code>
+         * repeated .google.cloud.dialogflow.v2.Intent.Message.Suggestion suggestions = 1 [(.google.api.field_behavior) = REQUIRED];
          * </code>
          */
         public com.google.cloud.dialogflow.v2.Intent.Message.Suggestion.Builder
@@ -18634,7 +18849,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * Required. The list of suggested replies.
          * </pre>
          *
-         * <code>repeated .google.cloud.dialogflow.v2.Intent.Message.Suggestion suggestions = 1;
+         * <code>
+         * repeated .google.cloud.dialogflow.v2.Intent.Message.Suggestion suggestions = 1 [(.google.api.field_behavior) = REQUIRED];
          * </code>
          */
         public com.google.cloud.dialogflow.v2.Intent.Message.SuggestionOrBuilder
@@ -18652,7 +18868,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * Required. The list of suggested replies.
          * </pre>
          *
-         * <code>repeated .google.cloud.dialogflow.v2.Intent.Message.Suggestion suggestions = 1;
+         * <code>
+         * repeated .google.cloud.dialogflow.v2.Intent.Message.Suggestion suggestions = 1 [(.google.api.field_behavior) = REQUIRED];
          * </code>
          */
         public java.util.List<
@@ -18671,7 +18888,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * Required. The list of suggested replies.
          * </pre>
          *
-         * <code>repeated .google.cloud.dialogflow.v2.Intent.Message.Suggestion suggestions = 1;
+         * <code>
+         * repeated .google.cloud.dialogflow.v2.Intent.Message.Suggestion suggestions = 1 [(.google.api.field_behavior) = REQUIRED];
          * </code>
          */
         public com.google.cloud.dialogflow.v2.Intent.Message.Suggestion.Builder
@@ -18687,7 +18905,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * Required. The list of suggested replies.
          * </pre>
          *
-         * <code>repeated .google.cloud.dialogflow.v2.Intent.Message.Suggestion suggestions = 1;
+         * <code>
+         * repeated .google.cloud.dialogflow.v2.Intent.Message.Suggestion suggestions = 1 [(.google.api.field_behavior) = REQUIRED];
          * </code>
          */
         public com.google.cloud.dialogflow.v2.Intent.Message.Suggestion.Builder
@@ -18704,7 +18923,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * Required. The list of suggested replies.
          * </pre>
          *
-         * <code>repeated .google.cloud.dialogflow.v2.Intent.Message.Suggestion suggestions = 1;
+         * <code>
+         * repeated .google.cloud.dialogflow.v2.Intent.Message.Suggestion suggestions = 1 [(.google.api.field_behavior) = REQUIRED];
          * </code>
          */
         public java.util.List<com.google.cloud.dialogflow.v2.Intent.Message.Suggestion.Builder>
@@ -18797,7 +19017,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        * Required. The name of the app or site this chip is linking to.
        * </pre>
        *
-       * <code>string destination_name = 1;</code>
+       * <code>string destination_name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
        */
       java.lang.String getDestinationName();
       /**
@@ -18807,7 +19027,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        * Required. The name of the app or site this chip is linking to.
        * </pre>
        *
-       * <code>string destination_name = 1;</code>
+       * <code>string destination_name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
        */
       com.google.protobuf.ByteString getDestinationNameBytes();
 
@@ -18819,7 +19039,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        * suggestion chip.
        * </pre>
        *
-       * <code>string uri = 2;</code>
+       * <code>string uri = 2 [(.google.api.field_behavior) = REQUIRED];</code>
        */
       java.lang.String getUri();
       /**
@@ -18830,7 +19050,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        * suggestion chip.
        * </pre>
        *
-       * <code>string uri = 2;</code>
+       * <code>string uri = 2 [(.google.api.field_behavior) = REQUIRED];</code>
        */
       com.google.protobuf.ByteString getUriBytes();
     }
@@ -18941,7 +19161,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        * Required. The name of the app or site this chip is linking to.
        * </pre>
        *
-       * <code>string destination_name = 1;</code>
+       * <code>string destination_name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
        */
       public java.lang.String getDestinationName() {
         java.lang.Object ref = destinationName_;
@@ -18961,7 +19181,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        * Required. The name of the app or site this chip is linking to.
        * </pre>
        *
-       * <code>string destination_name = 1;</code>
+       * <code>string destination_name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
        */
       public com.google.protobuf.ByteString getDestinationNameBytes() {
         java.lang.Object ref = destinationName_;
@@ -18985,7 +19205,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        * suggestion chip.
        * </pre>
        *
-       * <code>string uri = 2;</code>
+       * <code>string uri = 2 [(.google.api.field_behavior) = REQUIRED];</code>
        */
       public java.lang.String getUri() {
         java.lang.Object ref = uri_;
@@ -19006,7 +19226,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        * suggestion chip.
        * </pre>
        *
-       * <code>string uri = 2;</code>
+       * <code>string uri = 2 [(.google.api.field_behavior) = REQUIRED];</code>
        */
       public com.google.protobuf.ByteString getUriBytes() {
         java.lang.Object ref = uri_;
@@ -19377,7 +19597,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * Required. The name of the app or site this chip is linking to.
          * </pre>
          *
-         * <code>string destination_name = 1;</code>
+         * <code>string destination_name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
          */
         public java.lang.String getDestinationName() {
           java.lang.Object ref = destinationName_;
@@ -19397,7 +19617,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * Required. The name of the app or site this chip is linking to.
          * </pre>
          *
-         * <code>string destination_name = 1;</code>
+         * <code>string destination_name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
          */
         public com.google.protobuf.ByteString getDestinationNameBytes() {
           java.lang.Object ref = destinationName_;
@@ -19417,7 +19637,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * Required. The name of the app or site this chip is linking to.
          * </pre>
          *
-         * <code>string destination_name = 1;</code>
+         * <code>string destination_name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
          */
         public Builder setDestinationName(java.lang.String value) {
           if (value == null) {
@@ -19435,7 +19655,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * Required. The name of the app or site this chip is linking to.
          * </pre>
          *
-         * <code>string destination_name = 1;</code>
+         * <code>string destination_name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
          */
         public Builder clearDestinationName() {
 
@@ -19450,7 +19670,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * Required. The name of the app or site this chip is linking to.
          * </pre>
          *
-         * <code>string destination_name = 1;</code>
+         * <code>string destination_name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
          */
         public Builder setDestinationNameBytes(com.google.protobuf.ByteString value) {
           if (value == null) {
@@ -19472,7 +19692,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * suggestion chip.
          * </pre>
          *
-         * <code>string uri = 2;</code>
+         * <code>string uri = 2 [(.google.api.field_behavior) = REQUIRED];</code>
          */
         public java.lang.String getUri() {
           java.lang.Object ref = uri_;
@@ -19493,7 +19713,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * suggestion chip.
          * </pre>
          *
-         * <code>string uri = 2;</code>
+         * <code>string uri = 2 [(.google.api.field_behavior) = REQUIRED];</code>
          */
         public com.google.protobuf.ByteString getUriBytes() {
           java.lang.Object ref = uri_;
@@ -19514,7 +19734,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * suggestion chip.
          * </pre>
          *
-         * <code>string uri = 2;</code>
+         * <code>string uri = 2 [(.google.api.field_behavior) = REQUIRED];</code>
          */
         public Builder setUri(java.lang.String value) {
           if (value == null) {
@@ -19533,7 +19753,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * suggestion chip.
          * </pre>
          *
-         * <code>string uri = 2;</code>
+         * <code>string uri = 2 [(.google.api.field_behavior) = REQUIRED];</code>
          */
         public Builder clearUri() {
 
@@ -19549,7 +19769,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * suggestion chip.
          * </pre>
          *
-         * <code>string uri = 2;</code>
+         * <code>string uri = 2 [(.google.api.field_behavior) = REQUIRED];</code>
          */
         public Builder setUriBytes(com.google.protobuf.ByteString value) {
           if (value == null) {
@@ -19629,7 +19849,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        * Optional. The overall title of the list.
        * </pre>
        *
-       * <code>string title = 1;</code>
+       * <code>string title = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
        */
       java.lang.String getTitle();
       /**
@@ -19639,7 +19859,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        * Optional. The overall title of the list.
        * </pre>
        *
-       * <code>string title = 1;</code>
+       * <code>string title = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
        */
       com.google.protobuf.ByteString getTitleBytes();
 
@@ -19650,7 +19870,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        * Required. List items.
        * </pre>
        *
-       * <code>repeated .google.cloud.dialogflow.v2.Intent.Message.ListSelect.Item items = 2;</code>
+       * <code>
+       * repeated .google.cloud.dialogflow.v2.Intent.Message.ListSelect.Item items = 2 [(.google.api.field_behavior) = REQUIRED];
+       * </code>
        */
       java.util.List<com.google.cloud.dialogflow.v2.Intent.Message.ListSelect.Item> getItemsList();
       /**
@@ -19660,7 +19882,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        * Required. List items.
        * </pre>
        *
-       * <code>repeated .google.cloud.dialogflow.v2.Intent.Message.ListSelect.Item items = 2;</code>
+       * <code>
+       * repeated .google.cloud.dialogflow.v2.Intent.Message.ListSelect.Item items = 2 [(.google.api.field_behavior) = REQUIRED];
+       * </code>
        */
       com.google.cloud.dialogflow.v2.Intent.Message.ListSelect.Item getItems(int index);
       /**
@@ -19670,7 +19894,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        * Required. List items.
        * </pre>
        *
-       * <code>repeated .google.cloud.dialogflow.v2.Intent.Message.ListSelect.Item items = 2;</code>
+       * <code>
+       * repeated .google.cloud.dialogflow.v2.Intent.Message.ListSelect.Item items = 2 [(.google.api.field_behavior) = REQUIRED];
+       * </code>
        */
       int getItemsCount();
       /**
@@ -19680,7 +19906,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        * Required. List items.
        * </pre>
        *
-       * <code>repeated .google.cloud.dialogflow.v2.Intent.Message.ListSelect.Item items = 2;</code>
+       * <code>
+       * repeated .google.cloud.dialogflow.v2.Intent.Message.ListSelect.Item items = 2 [(.google.api.field_behavior) = REQUIRED];
+       * </code>
        */
       java.util.List<
               ? extends com.google.cloud.dialogflow.v2.Intent.Message.ListSelect.ItemOrBuilder>
@@ -19692,7 +19920,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        * Required. List items.
        * </pre>
        *
-       * <code>repeated .google.cloud.dialogflow.v2.Intent.Message.ListSelect.Item items = 2;</code>
+       * <code>
+       * repeated .google.cloud.dialogflow.v2.Intent.Message.ListSelect.Item items = 2 [(.google.api.field_behavior) = REQUIRED];
+       * </code>
        */
       com.google.cloud.dialogflow.v2.Intent.Message.ListSelect.ItemOrBuilder getItemsOrBuilder(
           int index);
@@ -19816,7 +20046,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * Required. Additional information about this option.
          * </pre>
          *
-         * <code>.google.cloud.dialogflow.v2.Intent.Message.SelectItemInfo info = 1;</code>
+         * <code>
+         * .google.cloud.dialogflow.v2.Intent.Message.SelectItemInfo info = 1 [(.google.api.field_behavior) = REQUIRED];
+         * </code>
          */
         boolean hasInfo();
         /**
@@ -19826,7 +20058,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * Required. Additional information about this option.
          * </pre>
          *
-         * <code>.google.cloud.dialogflow.v2.Intent.Message.SelectItemInfo info = 1;</code>
+         * <code>
+         * .google.cloud.dialogflow.v2.Intent.Message.SelectItemInfo info = 1 [(.google.api.field_behavior) = REQUIRED];
+         * </code>
          */
         com.google.cloud.dialogflow.v2.Intent.Message.SelectItemInfo getInfo();
         /**
@@ -19836,7 +20070,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * Required. Additional information about this option.
          * </pre>
          *
-         * <code>.google.cloud.dialogflow.v2.Intent.Message.SelectItemInfo info = 1;</code>
+         * <code>
+         * .google.cloud.dialogflow.v2.Intent.Message.SelectItemInfo info = 1 [(.google.api.field_behavior) = REQUIRED];
+         * </code>
          */
         com.google.cloud.dialogflow.v2.Intent.Message.SelectItemInfoOrBuilder getInfoOrBuilder();
 
@@ -19847,7 +20083,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * Required. The title of the list item.
          * </pre>
          *
-         * <code>string title = 2;</code>
+         * <code>string title = 2 [(.google.api.field_behavior) = REQUIRED];</code>
          */
         java.lang.String getTitle();
         /**
@@ -19857,7 +20093,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * Required. The title of the list item.
          * </pre>
          *
-         * <code>string title = 2;</code>
+         * <code>string title = 2 [(.google.api.field_behavior) = REQUIRED];</code>
          */
         com.google.protobuf.ByteString getTitleBytes();
 
@@ -19868,7 +20104,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * Optional. The main text describing the item.
          * </pre>
          *
-         * <code>string description = 3;</code>
+         * <code>string description = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
          */
         java.lang.String getDescription();
         /**
@@ -19878,7 +20114,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * Optional. The main text describing the item.
          * </pre>
          *
-         * <code>string description = 3;</code>
+         * <code>string description = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
          */
         com.google.protobuf.ByteString getDescriptionBytes();
 
@@ -19889,7 +20125,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * Optional. The image to display.
          * </pre>
          *
-         * <code>.google.cloud.dialogflow.v2.Intent.Message.Image image = 4;</code>
+         * <code>
+         * .google.cloud.dialogflow.v2.Intent.Message.Image image = 4 [(.google.api.field_behavior) = OPTIONAL];
+         * </code>
          */
         boolean hasImage();
         /**
@@ -19899,7 +20137,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * Optional. The image to display.
          * </pre>
          *
-         * <code>.google.cloud.dialogflow.v2.Intent.Message.Image image = 4;</code>
+         * <code>
+         * .google.cloud.dialogflow.v2.Intent.Message.Image image = 4 [(.google.api.field_behavior) = OPTIONAL];
+         * </code>
          */
         com.google.cloud.dialogflow.v2.Intent.Message.Image getImage();
         /**
@@ -19909,7 +20149,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * Optional. The image to display.
          * </pre>
          *
-         * <code>.google.cloud.dialogflow.v2.Intent.Message.Image image = 4;</code>
+         * <code>
+         * .google.cloud.dialogflow.v2.Intent.Message.Image image = 4 [(.google.api.field_behavior) = OPTIONAL];
+         * </code>
          */
         com.google.cloud.dialogflow.v2.Intent.Message.ImageOrBuilder getImageOrBuilder();
       }
@@ -20054,7 +20296,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * Required. Additional information about this option.
          * </pre>
          *
-         * <code>.google.cloud.dialogflow.v2.Intent.Message.SelectItemInfo info = 1;</code>
+         * <code>
+         * .google.cloud.dialogflow.v2.Intent.Message.SelectItemInfo info = 1 [(.google.api.field_behavior) = REQUIRED];
+         * </code>
          */
         public boolean hasInfo() {
           return info_ != null;
@@ -20066,7 +20310,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * Required. Additional information about this option.
          * </pre>
          *
-         * <code>.google.cloud.dialogflow.v2.Intent.Message.SelectItemInfo info = 1;</code>
+         * <code>
+         * .google.cloud.dialogflow.v2.Intent.Message.SelectItemInfo info = 1 [(.google.api.field_behavior) = REQUIRED];
+         * </code>
          */
         public com.google.cloud.dialogflow.v2.Intent.Message.SelectItemInfo getInfo() {
           return info_ == null
@@ -20080,7 +20326,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * Required. Additional information about this option.
          * </pre>
          *
-         * <code>.google.cloud.dialogflow.v2.Intent.Message.SelectItemInfo info = 1;</code>
+         * <code>
+         * .google.cloud.dialogflow.v2.Intent.Message.SelectItemInfo info = 1 [(.google.api.field_behavior) = REQUIRED];
+         * </code>
          */
         public com.google.cloud.dialogflow.v2.Intent.Message.SelectItemInfoOrBuilder
             getInfoOrBuilder() {
@@ -20096,7 +20344,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * Required. The title of the list item.
          * </pre>
          *
-         * <code>string title = 2;</code>
+         * <code>string title = 2 [(.google.api.field_behavior) = REQUIRED];</code>
          */
         public java.lang.String getTitle() {
           java.lang.Object ref = title_;
@@ -20116,7 +20364,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * Required. The title of the list item.
          * </pre>
          *
-         * <code>string title = 2;</code>
+         * <code>string title = 2 [(.google.api.field_behavior) = REQUIRED];</code>
          */
         public com.google.protobuf.ByteString getTitleBytes() {
           java.lang.Object ref = title_;
@@ -20139,7 +20387,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * Optional. The main text describing the item.
          * </pre>
          *
-         * <code>string description = 3;</code>
+         * <code>string description = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
          */
         public java.lang.String getDescription() {
           java.lang.Object ref = description_;
@@ -20159,7 +20407,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * Optional. The main text describing the item.
          * </pre>
          *
-         * <code>string description = 3;</code>
+         * <code>string description = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
          */
         public com.google.protobuf.ByteString getDescriptionBytes() {
           java.lang.Object ref = description_;
@@ -20182,7 +20430,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * Optional. The image to display.
          * </pre>
          *
-         * <code>.google.cloud.dialogflow.v2.Intent.Message.Image image = 4;</code>
+         * <code>
+         * .google.cloud.dialogflow.v2.Intent.Message.Image image = 4 [(.google.api.field_behavior) = OPTIONAL];
+         * </code>
          */
         public boolean hasImage() {
           return image_ != null;
@@ -20194,7 +20444,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * Optional. The image to display.
          * </pre>
          *
-         * <code>.google.cloud.dialogflow.v2.Intent.Message.Image image = 4;</code>
+         * <code>
+         * .google.cloud.dialogflow.v2.Intent.Message.Image image = 4 [(.google.api.field_behavior) = OPTIONAL];
+         * </code>
          */
         public com.google.cloud.dialogflow.v2.Intent.Message.Image getImage() {
           return image_ == null
@@ -20208,7 +20460,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * Optional. The image to display.
          * </pre>
          *
-         * <code>.google.cloud.dialogflow.v2.Intent.Message.Image image = 4;</code>
+         * <code>
+         * .google.cloud.dialogflow.v2.Intent.Message.Image image = 4 [(.google.api.field_behavior) = OPTIONAL];
+         * </code>
          */
         public com.google.cloud.dialogflow.v2.Intent.Message.ImageOrBuilder getImageOrBuilder() {
           return getImage();
@@ -20633,7 +20887,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
            * Required. Additional information about this option.
            * </pre>
            *
-           * <code>.google.cloud.dialogflow.v2.Intent.Message.SelectItemInfo info = 1;</code>
+           * <code>
+           * .google.cloud.dialogflow.v2.Intent.Message.SelectItemInfo info = 1 [(.google.api.field_behavior) = REQUIRED];
+           * </code>
            */
           public boolean hasInfo() {
             return infoBuilder_ != null || info_ != null;
@@ -20645,7 +20901,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
            * Required. Additional information about this option.
            * </pre>
            *
-           * <code>.google.cloud.dialogflow.v2.Intent.Message.SelectItemInfo info = 1;</code>
+           * <code>
+           * .google.cloud.dialogflow.v2.Intent.Message.SelectItemInfo info = 1 [(.google.api.field_behavior) = REQUIRED];
+           * </code>
            */
           public com.google.cloud.dialogflow.v2.Intent.Message.SelectItemInfo getInfo() {
             if (infoBuilder_ == null) {
@@ -20664,7 +20922,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
            * Required. Additional information about this option.
            * </pre>
            *
-           * <code>.google.cloud.dialogflow.v2.Intent.Message.SelectItemInfo info = 1;</code>
+           * <code>
+           * .google.cloud.dialogflow.v2.Intent.Message.SelectItemInfo info = 1 [(.google.api.field_behavior) = REQUIRED];
+           * </code>
            */
           public Builder setInfo(
               com.google.cloud.dialogflow.v2.Intent.Message.SelectItemInfo value) {
@@ -20687,7 +20947,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
            * Required. Additional information about this option.
            * </pre>
            *
-           * <code>.google.cloud.dialogflow.v2.Intent.Message.SelectItemInfo info = 1;</code>
+           * <code>
+           * .google.cloud.dialogflow.v2.Intent.Message.SelectItemInfo info = 1 [(.google.api.field_behavior) = REQUIRED];
+           * </code>
            */
           public Builder setInfo(
               com.google.cloud.dialogflow.v2.Intent.Message.SelectItemInfo.Builder
@@ -20708,7 +20970,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
            * Required. Additional information about this option.
            * </pre>
            *
-           * <code>.google.cloud.dialogflow.v2.Intent.Message.SelectItemInfo info = 1;</code>
+           * <code>
+           * .google.cloud.dialogflow.v2.Intent.Message.SelectItemInfo info = 1 [(.google.api.field_behavior) = REQUIRED];
+           * </code>
            */
           public Builder mergeInfo(
               com.google.cloud.dialogflow.v2.Intent.Message.SelectItemInfo value) {
@@ -20735,7 +20999,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
            * Required. Additional information about this option.
            * </pre>
            *
-           * <code>.google.cloud.dialogflow.v2.Intent.Message.SelectItemInfo info = 1;</code>
+           * <code>
+           * .google.cloud.dialogflow.v2.Intent.Message.SelectItemInfo info = 1 [(.google.api.field_behavior) = REQUIRED];
+           * </code>
            */
           public Builder clearInfo() {
             if (infoBuilder_ == null) {
@@ -20755,7 +21021,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
            * Required. Additional information about this option.
            * </pre>
            *
-           * <code>.google.cloud.dialogflow.v2.Intent.Message.SelectItemInfo info = 1;</code>
+           * <code>
+           * .google.cloud.dialogflow.v2.Intent.Message.SelectItemInfo info = 1 [(.google.api.field_behavior) = REQUIRED];
+           * </code>
            */
           public com.google.cloud.dialogflow.v2.Intent.Message.SelectItemInfo.Builder
               getInfoBuilder() {
@@ -20770,7 +21038,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
            * Required. Additional information about this option.
            * </pre>
            *
-           * <code>.google.cloud.dialogflow.v2.Intent.Message.SelectItemInfo info = 1;</code>
+           * <code>
+           * .google.cloud.dialogflow.v2.Intent.Message.SelectItemInfo info = 1 [(.google.api.field_behavior) = REQUIRED];
+           * </code>
            */
           public com.google.cloud.dialogflow.v2.Intent.Message.SelectItemInfoOrBuilder
               getInfoOrBuilder() {
@@ -20790,7 +21060,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
            * Required. Additional information about this option.
            * </pre>
            *
-           * <code>.google.cloud.dialogflow.v2.Intent.Message.SelectItemInfo info = 1;</code>
+           * <code>
+           * .google.cloud.dialogflow.v2.Intent.Message.SelectItemInfo info = 1 [(.google.api.field_behavior) = REQUIRED];
+           * </code>
            */
           private com.google.protobuf.SingleFieldBuilderV3<
                   com.google.cloud.dialogflow.v2.Intent.Message.SelectItemInfo,
@@ -20817,7 +21089,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
            * Required. The title of the list item.
            * </pre>
            *
-           * <code>string title = 2;</code>
+           * <code>string title = 2 [(.google.api.field_behavior) = REQUIRED];</code>
            */
           public java.lang.String getTitle() {
             java.lang.Object ref = title_;
@@ -20837,7 +21109,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
            * Required. The title of the list item.
            * </pre>
            *
-           * <code>string title = 2;</code>
+           * <code>string title = 2 [(.google.api.field_behavior) = REQUIRED];</code>
            */
           public com.google.protobuf.ByteString getTitleBytes() {
             java.lang.Object ref = title_;
@@ -20857,7 +21129,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
            * Required. The title of the list item.
            * </pre>
            *
-           * <code>string title = 2;</code>
+           * <code>string title = 2 [(.google.api.field_behavior) = REQUIRED];</code>
            */
           public Builder setTitle(java.lang.String value) {
             if (value == null) {
@@ -20875,7 +21147,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
            * Required. The title of the list item.
            * </pre>
            *
-           * <code>string title = 2;</code>
+           * <code>string title = 2 [(.google.api.field_behavior) = REQUIRED];</code>
            */
           public Builder clearTitle() {
 
@@ -20890,7 +21162,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
            * Required. The title of the list item.
            * </pre>
            *
-           * <code>string title = 2;</code>
+           * <code>string title = 2 [(.google.api.field_behavior) = REQUIRED];</code>
            */
           public Builder setTitleBytes(com.google.protobuf.ByteString value) {
             if (value == null) {
@@ -20911,7 +21183,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
            * Optional. The main text describing the item.
            * </pre>
            *
-           * <code>string description = 3;</code>
+           * <code>string description = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
            */
           public java.lang.String getDescription() {
             java.lang.Object ref = description_;
@@ -20931,7 +21203,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
            * Optional. The main text describing the item.
            * </pre>
            *
-           * <code>string description = 3;</code>
+           * <code>string description = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
            */
           public com.google.protobuf.ByteString getDescriptionBytes() {
             java.lang.Object ref = description_;
@@ -20951,7 +21223,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
            * Optional. The main text describing the item.
            * </pre>
            *
-           * <code>string description = 3;</code>
+           * <code>string description = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
            */
           public Builder setDescription(java.lang.String value) {
             if (value == null) {
@@ -20969,7 +21241,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
            * Optional. The main text describing the item.
            * </pre>
            *
-           * <code>string description = 3;</code>
+           * <code>string description = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
            */
           public Builder clearDescription() {
 
@@ -20984,7 +21256,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
            * Optional. The main text describing the item.
            * </pre>
            *
-           * <code>string description = 3;</code>
+           * <code>string description = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
            */
           public Builder setDescriptionBytes(com.google.protobuf.ByteString value) {
             if (value == null) {
@@ -21010,7 +21282,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
            * Optional. The image to display.
            * </pre>
            *
-           * <code>.google.cloud.dialogflow.v2.Intent.Message.Image image = 4;</code>
+           * <code>
+           * .google.cloud.dialogflow.v2.Intent.Message.Image image = 4 [(.google.api.field_behavior) = OPTIONAL];
+           * </code>
            */
           public boolean hasImage() {
             return imageBuilder_ != null || image_ != null;
@@ -21022,7 +21296,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
            * Optional. The image to display.
            * </pre>
            *
-           * <code>.google.cloud.dialogflow.v2.Intent.Message.Image image = 4;</code>
+           * <code>
+           * .google.cloud.dialogflow.v2.Intent.Message.Image image = 4 [(.google.api.field_behavior) = OPTIONAL];
+           * </code>
            */
           public com.google.cloud.dialogflow.v2.Intent.Message.Image getImage() {
             if (imageBuilder_ == null) {
@@ -21040,7 +21316,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
            * Optional. The image to display.
            * </pre>
            *
-           * <code>.google.cloud.dialogflow.v2.Intent.Message.Image image = 4;</code>
+           * <code>
+           * .google.cloud.dialogflow.v2.Intent.Message.Image image = 4 [(.google.api.field_behavior) = OPTIONAL];
+           * </code>
            */
           public Builder setImage(com.google.cloud.dialogflow.v2.Intent.Message.Image value) {
             if (imageBuilder_ == null) {
@@ -21062,7 +21340,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
            * Optional. The image to display.
            * </pre>
            *
-           * <code>.google.cloud.dialogflow.v2.Intent.Message.Image image = 4;</code>
+           * <code>
+           * .google.cloud.dialogflow.v2.Intent.Message.Image image = 4 [(.google.api.field_behavior) = OPTIONAL];
+           * </code>
            */
           public Builder setImage(
               com.google.cloud.dialogflow.v2.Intent.Message.Image.Builder builderForValue) {
@@ -21082,7 +21362,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
            * Optional. The image to display.
            * </pre>
            *
-           * <code>.google.cloud.dialogflow.v2.Intent.Message.Image image = 4;</code>
+           * <code>
+           * .google.cloud.dialogflow.v2.Intent.Message.Image image = 4 [(.google.api.field_behavior) = OPTIONAL];
+           * </code>
            */
           public Builder mergeImage(com.google.cloud.dialogflow.v2.Intent.Message.Image value) {
             if (imageBuilder_ == null) {
@@ -21108,7 +21390,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
            * Optional. The image to display.
            * </pre>
            *
-           * <code>.google.cloud.dialogflow.v2.Intent.Message.Image image = 4;</code>
+           * <code>
+           * .google.cloud.dialogflow.v2.Intent.Message.Image image = 4 [(.google.api.field_behavior) = OPTIONAL];
+           * </code>
            */
           public Builder clearImage() {
             if (imageBuilder_ == null) {
@@ -21128,7 +21412,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
            * Optional. The image to display.
            * </pre>
            *
-           * <code>.google.cloud.dialogflow.v2.Intent.Message.Image image = 4;</code>
+           * <code>
+           * .google.cloud.dialogflow.v2.Intent.Message.Image image = 4 [(.google.api.field_behavior) = OPTIONAL];
+           * </code>
            */
           public com.google.cloud.dialogflow.v2.Intent.Message.Image.Builder getImageBuilder() {
 
@@ -21142,7 +21428,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
            * Optional. The image to display.
            * </pre>
            *
-           * <code>.google.cloud.dialogflow.v2.Intent.Message.Image image = 4;</code>
+           * <code>
+           * .google.cloud.dialogflow.v2.Intent.Message.Image image = 4 [(.google.api.field_behavior) = OPTIONAL];
+           * </code>
            */
           public com.google.cloud.dialogflow.v2.Intent.Message.ImageOrBuilder getImageOrBuilder() {
             if (imageBuilder_ != null) {
@@ -21160,7 +21448,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
            * Optional. The image to display.
            * </pre>
            *
-           * <code>.google.cloud.dialogflow.v2.Intent.Message.Image image = 4;</code>
+           * <code>
+           * .google.cloud.dialogflow.v2.Intent.Message.Image image = 4 [(.google.api.field_behavior) = OPTIONAL];
+           * </code>
            */
           private com.google.protobuf.SingleFieldBuilderV3<
                   com.google.cloud.dialogflow.v2.Intent.Message.Image,
@@ -21244,7 +21534,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        * Optional. The overall title of the list.
        * </pre>
        *
-       * <code>string title = 1;</code>
+       * <code>string title = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
        */
       public java.lang.String getTitle() {
         java.lang.Object ref = title_;
@@ -21264,7 +21554,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        * Optional. The overall title of the list.
        * </pre>
        *
-       * <code>string title = 1;</code>
+       * <code>string title = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
        */
       public com.google.protobuf.ByteString getTitleBytes() {
         java.lang.Object ref = title_;
@@ -21287,7 +21577,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        * Required. List items.
        * </pre>
        *
-       * <code>repeated .google.cloud.dialogflow.v2.Intent.Message.ListSelect.Item items = 2;</code>
+       * <code>
+       * repeated .google.cloud.dialogflow.v2.Intent.Message.ListSelect.Item items = 2 [(.google.api.field_behavior) = REQUIRED];
+       * </code>
        */
       public java.util.List<com.google.cloud.dialogflow.v2.Intent.Message.ListSelect.Item>
           getItemsList() {
@@ -21300,7 +21592,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        * Required. List items.
        * </pre>
        *
-       * <code>repeated .google.cloud.dialogflow.v2.Intent.Message.ListSelect.Item items = 2;</code>
+       * <code>
+       * repeated .google.cloud.dialogflow.v2.Intent.Message.ListSelect.Item items = 2 [(.google.api.field_behavior) = REQUIRED];
+       * </code>
        */
       public java.util.List<
               ? extends com.google.cloud.dialogflow.v2.Intent.Message.ListSelect.ItemOrBuilder>
@@ -21314,7 +21608,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        * Required. List items.
        * </pre>
        *
-       * <code>repeated .google.cloud.dialogflow.v2.Intent.Message.ListSelect.Item items = 2;</code>
+       * <code>
+       * repeated .google.cloud.dialogflow.v2.Intent.Message.ListSelect.Item items = 2 [(.google.api.field_behavior) = REQUIRED];
+       * </code>
        */
       public int getItemsCount() {
         return items_.size();
@@ -21326,7 +21622,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        * Required. List items.
        * </pre>
        *
-       * <code>repeated .google.cloud.dialogflow.v2.Intent.Message.ListSelect.Item items = 2;</code>
+       * <code>
+       * repeated .google.cloud.dialogflow.v2.Intent.Message.ListSelect.Item items = 2 [(.google.api.field_behavior) = REQUIRED];
+       * </code>
        */
       public com.google.cloud.dialogflow.v2.Intent.Message.ListSelect.Item getItems(int index) {
         return items_.get(index);
@@ -21338,7 +21636,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        * Required. List items.
        * </pre>
        *
-       * <code>repeated .google.cloud.dialogflow.v2.Intent.Message.ListSelect.Item items = 2;</code>
+       * <code>
+       * repeated .google.cloud.dialogflow.v2.Intent.Message.ListSelect.Item items = 2 [(.google.api.field_behavior) = REQUIRED];
+       * </code>
        */
       public com.google.cloud.dialogflow.v2.Intent.Message.ListSelect.ItemOrBuilder
           getItemsOrBuilder(int index) {
@@ -21738,7 +22038,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * Optional. The overall title of the list.
          * </pre>
          *
-         * <code>string title = 1;</code>
+         * <code>string title = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
          */
         public java.lang.String getTitle() {
           java.lang.Object ref = title_;
@@ -21758,7 +22058,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * Optional. The overall title of the list.
          * </pre>
          *
-         * <code>string title = 1;</code>
+         * <code>string title = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
          */
         public com.google.protobuf.ByteString getTitleBytes() {
           java.lang.Object ref = title_;
@@ -21778,7 +22078,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * Optional. The overall title of the list.
          * </pre>
          *
-         * <code>string title = 1;</code>
+         * <code>string title = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
          */
         public Builder setTitle(java.lang.String value) {
           if (value == null) {
@@ -21796,7 +22096,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * Optional. The overall title of the list.
          * </pre>
          *
-         * <code>string title = 1;</code>
+         * <code>string title = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
          */
         public Builder clearTitle() {
 
@@ -21811,7 +22111,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * Optional. The overall title of the list.
          * </pre>
          *
-         * <code>string title = 1;</code>
+         * <code>string title = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
          */
         public Builder setTitleBytes(com.google.protobuf.ByteString value) {
           if (value == null) {
@@ -21849,7 +22149,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * Required. List items.
          * </pre>
          *
-         * <code>repeated .google.cloud.dialogflow.v2.Intent.Message.ListSelect.Item items = 2;
+         * <code>
+         * repeated .google.cloud.dialogflow.v2.Intent.Message.ListSelect.Item items = 2 [(.google.api.field_behavior) = REQUIRED];
          * </code>
          */
         public java.util.List<com.google.cloud.dialogflow.v2.Intent.Message.ListSelect.Item>
@@ -21867,7 +22168,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * Required. List items.
          * </pre>
          *
-         * <code>repeated .google.cloud.dialogflow.v2.Intent.Message.ListSelect.Item items = 2;
+         * <code>
+         * repeated .google.cloud.dialogflow.v2.Intent.Message.ListSelect.Item items = 2 [(.google.api.field_behavior) = REQUIRED];
          * </code>
          */
         public int getItemsCount() {
@@ -21884,7 +22186,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * Required. List items.
          * </pre>
          *
-         * <code>repeated .google.cloud.dialogflow.v2.Intent.Message.ListSelect.Item items = 2;
+         * <code>
+         * repeated .google.cloud.dialogflow.v2.Intent.Message.ListSelect.Item items = 2 [(.google.api.field_behavior) = REQUIRED];
          * </code>
          */
         public com.google.cloud.dialogflow.v2.Intent.Message.ListSelect.Item getItems(int index) {
@@ -21901,7 +22204,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * Required. List items.
          * </pre>
          *
-         * <code>repeated .google.cloud.dialogflow.v2.Intent.Message.ListSelect.Item items = 2;
+         * <code>
+         * repeated .google.cloud.dialogflow.v2.Intent.Message.ListSelect.Item items = 2 [(.google.api.field_behavior) = REQUIRED];
          * </code>
          */
         public Builder setItems(
@@ -21925,7 +22229,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * Required. List items.
          * </pre>
          *
-         * <code>repeated .google.cloud.dialogflow.v2.Intent.Message.ListSelect.Item items = 2;
+         * <code>
+         * repeated .google.cloud.dialogflow.v2.Intent.Message.ListSelect.Item items = 2 [(.google.api.field_behavior) = REQUIRED];
          * </code>
          */
         public Builder setItems(
@@ -21947,7 +22252,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * Required. List items.
          * </pre>
          *
-         * <code>repeated .google.cloud.dialogflow.v2.Intent.Message.ListSelect.Item items = 2;
+         * <code>
+         * repeated .google.cloud.dialogflow.v2.Intent.Message.ListSelect.Item items = 2 [(.google.api.field_behavior) = REQUIRED];
          * </code>
          */
         public Builder addItems(
@@ -21971,7 +22277,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * Required. List items.
          * </pre>
          *
-         * <code>repeated .google.cloud.dialogflow.v2.Intent.Message.ListSelect.Item items = 2;
+         * <code>
+         * repeated .google.cloud.dialogflow.v2.Intent.Message.ListSelect.Item items = 2 [(.google.api.field_behavior) = REQUIRED];
          * </code>
          */
         public Builder addItems(
@@ -21995,7 +22302,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * Required. List items.
          * </pre>
          *
-         * <code>repeated .google.cloud.dialogflow.v2.Intent.Message.ListSelect.Item items = 2;
+         * <code>
+         * repeated .google.cloud.dialogflow.v2.Intent.Message.ListSelect.Item items = 2 [(.google.api.field_behavior) = REQUIRED];
          * </code>
          */
         public Builder addItems(
@@ -22016,7 +22324,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * Required. List items.
          * </pre>
          *
-         * <code>repeated .google.cloud.dialogflow.v2.Intent.Message.ListSelect.Item items = 2;
+         * <code>
+         * repeated .google.cloud.dialogflow.v2.Intent.Message.ListSelect.Item items = 2 [(.google.api.field_behavior) = REQUIRED];
          * </code>
          */
         public Builder addItems(
@@ -22038,7 +22347,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * Required. List items.
          * </pre>
          *
-         * <code>repeated .google.cloud.dialogflow.v2.Intent.Message.ListSelect.Item items = 2;
+         * <code>
+         * repeated .google.cloud.dialogflow.v2.Intent.Message.ListSelect.Item items = 2 [(.google.api.field_behavior) = REQUIRED];
          * </code>
          */
         public Builder addAllItems(
@@ -22061,7 +22371,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * Required. List items.
          * </pre>
          *
-         * <code>repeated .google.cloud.dialogflow.v2.Intent.Message.ListSelect.Item items = 2;
+         * <code>
+         * repeated .google.cloud.dialogflow.v2.Intent.Message.ListSelect.Item items = 2 [(.google.api.field_behavior) = REQUIRED];
          * </code>
          */
         public Builder clearItems() {
@@ -22081,7 +22392,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * Required. List items.
          * </pre>
          *
-         * <code>repeated .google.cloud.dialogflow.v2.Intent.Message.ListSelect.Item items = 2;
+         * <code>
+         * repeated .google.cloud.dialogflow.v2.Intent.Message.ListSelect.Item items = 2 [(.google.api.field_behavior) = REQUIRED];
          * </code>
          */
         public Builder removeItems(int index) {
@@ -22101,7 +22413,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * Required. List items.
          * </pre>
          *
-         * <code>repeated .google.cloud.dialogflow.v2.Intent.Message.ListSelect.Item items = 2;
+         * <code>
+         * repeated .google.cloud.dialogflow.v2.Intent.Message.ListSelect.Item items = 2 [(.google.api.field_behavior) = REQUIRED];
          * </code>
          */
         public com.google.cloud.dialogflow.v2.Intent.Message.ListSelect.Item.Builder
@@ -22115,7 +22428,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * Required. List items.
          * </pre>
          *
-         * <code>repeated .google.cloud.dialogflow.v2.Intent.Message.ListSelect.Item items = 2;
+         * <code>
+         * repeated .google.cloud.dialogflow.v2.Intent.Message.ListSelect.Item items = 2 [(.google.api.field_behavior) = REQUIRED];
          * </code>
          */
         public com.google.cloud.dialogflow.v2.Intent.Message.ListSelect.ItemOrBuilder
@@ -22133,7 +22447,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * Required. List items.
          * </pre>
          *
-         * <code>repeated .google.cloud.dialogflow.v2.Intent.Message.ListSelect.Item items = 2;
+         * <code>
+         * repeated .google.cloud.dialogflow.v2.Intent.Message.ListSelect.Item items = 2 [(.google.api.field_behavior) = REQUIRED];
          * </code>
          */
         public java.util.List<
@@ -22152,7 +22467,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * Required. List items.
          * </pre>
          *
-         * <code>repeated .google.cloud.dialogflow.v2.Intent.Message.ListSelect.Item items = 2;
+         * <code>
+         * repeated .google.cloud.dialogflow.v2.Intent.Message.ListSelect.Item items = 2 [(.google.api.field_behavior) = REQUIRED];
          * </code>
          */
         public com.google.cloud.dialogflow.v2.Intent.Message.ListSelect.Item.Builder
@@ -22169,7 +22485,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * Required. List items.
          * </pre>
          *
-         * <code>repeated .google.cloud.dialogflow.v2.Intent.Message.ListSelect.Item items = 2;
+         * <code>
+         * repeated .google.cloud.dialogflow.v2.Intent.Message.ListSelect.Item items = 2 [(.google.api.field_behavior) = REQUIRED];
          * </code>
          */
         public com.google.cloud.dialogflow.v2.Intent.Message.ListSelect.Item.Builder
@@ -22187,7 +22504,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * Required. List items.
          * </pre>
          *
-         * <code>repeated .google.cloud.dialogflow.v2.Intent.Message.ListSelect.Item items = 2;
+         * <code>
+         * repeated .google.cloud.dialogflow.v2.Intent.Message.ListSelect.Item items = 2 [(.google.api.field_behavior) = REQUIRED];
          * </code>
          */
         public java.util.List<com.google.cloud.dialogflow.v2.Intent.Message.ListSelect.Item.Builder>
@@ -22277,7 +22595,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        * Required. Carousel items.
        * </pre>
        *
-       * <code>repeated .google.cloud.dialogflow.v2.Intent.Message.CarouselSelect.Item items = 1;
+       * <code>
+       * repeated .google.cloud.dialogflow.v2.Intent.Message.CarouselSelect.Item items = 1 [(.google.api.field_behavior) = REQUIRED];
        * </code>
        */
       java.util.List<com.google.cloud.dialogflow.v2.Intent.Message.CarouselSelect.Item>
@@ -22289,7 +22608,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        * Required. Carousel items.
        * </pre>
        *
-       * <code>repeated .google.cloud.dialogflow.v2.Intent.Message.CarouselSelect.Item items = 1;
+       * <code>
+       * repeated .google.cloud.dialogflow.v2.Intent.Message.CarouselSelect.Item items = 1 [(.google.api.field_behavior) = REQUIRED];
        * </code>
        */
       com.google.cloud.dialogflow.v2.Intent.Message.CarouselSelect.Item getItems(int index);
@@ -22300,7 +22620,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        * Required. Carousel items.
        * </pre>
        *
-       * <code>repeated .google.cloud.dialogflow.v2.Intent.Message.CarouselSelect.Item items = 1;
+       * <code>
+       * repeated .google.cloud.dialogflow.v2.Intent.Message.CarouselSelect.Item items = 1 [(.google.api.field_behavior) = REQUIRED];
        * </code>
        */
       int getItemsCount();
@@ -22311,7 +22632,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        * Required. Carousel items.
        * </pre>
        *
-       * <code>repeated .google.cloud.dialogflow.v2.Intent.Message.CarouselSelect.Item items = 1;
+       * <code>
+       * repeated .google.cloud.dialogflow.v2.Intent.Message.CarouselSelect.Item items = 1 [(.google.api.field_behavior) = REQUIRED];
        * </code>
        */
       java.util.List<
@@ -22324,7 +22646,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        * Required. Carousel items.
        * </pre>
        *
-       * <code>repeated .google.cloud.dialogflow.v2.Intent.Message.CarouselSelect.Item items = 1;
+       * <code>
+       * repeated .google.cloud.dialogflow.v2.Intent.Message.CarouselSelect.Item items = 1 [(.google.api.field_behavior) = REQUIRED];
        * </code>
        */
       com.google.cloud.dialogflow.v2.Intent.Message.CarouselSelect.ItemOrBuilder getItemsOrBuilder(
@@ -22442,7 +22765,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * Required. Additional info about the option item.
          * </pre>
          *
-         * <code>.google.cloud.dialogflow.v2.Intent.Message.SelectItemInfo info = 1;</code>
+         * <code>
+         * .google.cloud.dialogflow.v2.Intent.Message.SelectItemInfo info = 1 [(.google.api.field_behavior) = REQUIRED];
+         * </code>
          */
         boolean hasInfo();
         /**
@@ -22452,7 +22777,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * Required. Additional info about the option item.
          * </pre>
          *
-         * <code>.google.cloud.dialogflow.v2.Intent.Message.SelectItemInfo info = 1;</code>
+         * <code>
+         * .google.cloud.dialogflow.v2.Intent.Message.SelectItemInfo info = 1 [(.google.api.field_behavior) = REQUIRED];
+         * </code>
          */
         com.google.cloud.dialogflow.v2.Intent.Message.SelectItemInfo getInfo();
         /**
@@ -22462,7 +22789,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * Required. Additional info about the option item.
          * </pre>
          *
-         * <code>.google.cloud.dialogflow.v2.Intent.Message.SelectItemInfo info = 1;</code>
+         * <code>
+         * .google.cloud.dialogflow.v2.Intent.Message.SelectItemInfo info = 1 [(.google.api.field_behavior) = REQUIRED];
+         * </code>
          */
         com.google.cloud.dialogflow.v2.Intent.Message.SelectItemInfoOrBuilder getInfoOrBuilder();
 
@@ -22473,7 +22802,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * Required. Title of the carousel item.
          * </pre>
          *
-         * <code>string title = 2;</code>
+         * <code>string title = 2 [(.google.api.field_behavior) = REQUIRED];</code>
          */
         java.lang.String getTitle();
         /**
@@ -22483,7 +22812,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * Required. Title of the carousel item.
          * </pre>
          *
-         * <code>string title = 2;</code>
+         * <code>string title = 2 [(.google.api.field_behavior) = REQUIRED];</code>
          */
         com.google.protobuf.ByteString getTitleBytes();
 
@@ -22494,7 +22823,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * Optional. The body text of the card.
          * </pre>
          *
-         * <code>string description = 3;</code>
+         * <code>string description = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
          */
         java.lang.String getDescription();
         /**
@@ -22504,7 +22833,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * Optional. The body text of the card.
          * </pre>
          *
-         * <code>string description = 3;</code>
+         * <code>string description = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
          */
         com.google.protobuf.ByteString getDescriptionBytes();
 
@@ -22515,7 +22844,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * Optional. The image to display.
          * </pre>
          *
-         * <code>.google.cloud.dialogflow.v2.Intent.Message.Image image = 4;</code>
+         * <code>
+         * .google.cloud.dialogflow.v2.Intent.Message.Image image = 4 [(.google.api.field_behavior) = OPTIONAL];
+         * </code>
          */
         boolean hasImage();
         /**
@@ -22525,7 +22856,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * Optional. The image to display.
          * </pre>
          *
-         * <code>.google.cloud.dialogflow.v2.Intent.Message.Image image = 4;</code>
+         * <code>
+         * .google.cloud.dialogflow.v2.Intent.Message.Image image = 4 [(.google.api.field_behavior) = OPTIONAL];
+         * </code>
          */
         com.google.cloud.dialogflow.v2.Intent.Message.Image getImage();
         /**
@@ -22535,7 +22868,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * Optional. The image to display.
          * </pre>
          *
-         * <code>.google.cloud.dialogflow.v2.Intent.Message.Image image = 4;</code>
+         * <code>
+         * .google.cloud.dialogflow.v2.Intent.Message.Image image = 4 [(.google.api.field_behavior) = OPTIONAL];
+         * </code>
          */
         com.google.cloud.dialogflow.v2.Intent.Message.ImageOrBuilder getImageOrBuilder();
       }
@@ -22680,7 +23015,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * Required. Additional info about the option item.
          * </pre>
          *
-         * <code>.google.cloud.dialogflow.v2.Intent.Message.SelectItemInfo info = 1;</code>
+         * <code>
+         * .google.cloud.dialogflow.v2.Intent.Message.SelectItemInfo info = 1 [(.google.api.field_behavior) = REQUIRED];
+         * </code>
          */
         public boolean hasInfo() {
           return info_ != null;
@@ -22692,7 +23029,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * Required. Additional info about the option item.
          * </pre>
          *
-         * <code>.google.cloud.dialogflow.v2.Intent.Message.SelectItemInfo info = 1;</code>
+         * <code>
+         * .google.cloud.dialogflow.v2.Intent.Message.SelectItemInfo info = 1 [(.google.api.field_behavior) = REQUIRED];
+         * </code>
          */
         public com.google.cloud.dialogflow.v2.Intent.Message.SelectItemInfo getInfo() {
           return info_ == null
@@ -22706,7 +23045,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * Required. Additional info about the option item.
          * </pre>
          *
-         * <code>.google.cloud.dialogflow.v2.Intent.Message.SelectItemInfo info = 1;</code>
+         * <code>
+         * .google.cloud.dialogflow.v2.Intent.Message.SelectItemInfo info = 1 [(.google.api.field_behavior) = REQUIRED];
+         * </code>
          */
         public com.google.cloud.dialogflow.v2.Intent.Message.SelectItemInfoOrBuilder
             getInfoOrBuilder() {
@@ -22722,7 +23063,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * Required. Title of the carousel item.
          * </pre>
          *
-         * <code>string title = 2;</code>
+         * <code>string title = 2 [(.google.api.field_behavior) = REQUIRED];</code>
          */
         public java.lang.String getTitle() {
           java.lang.Object ref = title_;
@@ -22742,7 +23083,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * Required. Title of the carousel item.
          * </pre>
          *
-         * <code>string title = 2;</code>
+         * <code>string title = 2 [(.google.api.field_behavior) = REQUIRED];</code>
          */
         public com.google.protobuf.ByteString getTitleBytes() {
           java.lang.Object ref = title_;
@@ -22765,7 +23106,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * Optional. The body text of the card.
          * </pre>
          *
-         * <code>string description = 3;</code>
+         * <code>string description = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
          */
         public java.lang.String getDescription() {
           java.lang.Object ref = description_;
@@ -22785,7 +23126,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * Optional. The body text of the card.
          * </pre>
          *
-         * <code>string description = 3;</code>
+         * <code>string description = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
          */
         public com.google.protobuf.ByteString getDescriptionBytes() {
           java.lang.Object ref = description_;
@@ -22808,7 +23149,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * Optional. The image to display.
          * </pre>
          *
-         * <code>.google.cloud.dialogflow.v2.Intent.Message.Image image = 4;</code>
+         * <code>
+         * .google.cloud.dialogflow.v2.Intent.Message.Image image = 4 [(.google.api.field_behavior) = OPTIONAL];
+         * </code>
          */
         public boolean hasImage() {
           return image_ != null;
@@ -22820,7 +23163,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * Optional. The image to display.
          * </pre>
          *
-         * <code>.google.cloud.dialogflow.v2.Intent.Message.Image image = 4;</code>
+         * <code>
+         * .google.cloud.dialogflow.v2.Intent.Message.Image image = 4 [(.google.api.field_behavior) = OPTIONAL];
+         * </code>
          */
         public com.google.cloud.dialogflow.v2.Intent.Message.Image getImage() {
           return image_ == null
@@ -22834,7 +23179,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * Optional. The image to display.
          * </pre>
          *
-         * <code>.google.cloud.dialogflow.v2.Intent.Message.Image image = 4;</code>
+         * <code>
+         * .google.cloud.dialogflow.v2.Intent.Message.Image image = 4 [(.google.api.field_behavior) = OPTIONAL];
+         * </code>
          */
         public com.google.cloud.dialogflow.v2.Intent.Message.ImageOrBuilder getImageOrBuilder() {
           return getImage();
@@ -23262,7 +23609,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
            * Required. Additional info about the option item.
            * </pre>
            *
-           * <code>.google.cloud.dialogflow.v2.Intent.Message.SelectItemInfo info = 1;</code>
+           * <code>
+           * .google.cloud.dialogflow.v2.Intent.Message.SelectItemInfo info = 1 [(.google.api.field_behavior) = REQUIRED];
+           * </code>
            */
           public boolean hasInfo() {
             return infoBuilder_ != null || info_ != null;
@@ -23274,7 +23623,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
            * Required. Additional info about the option item.
            * </pre>
            *
-           * <code>.google.cloud.dialogflow.v2.Intent.Message.SelectItemInfo info = 1;</code>
+           * <code>
+           * .google.cloud.dialogflow.v2.Intent.Message.SelectItemInfo info = 1 [(.google.api.field_behavior) = REQUIRED];
+           * </code>
            */
           public com.google.cloud.dialogflow.v2.Intent.Message.SelectItemInfo getInfo() {
             if (infoBuilder_ == null) {
@@ -23293,7 +23644,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
            * Required. Additional info about the option item.
            * </pre>
            *
-           * <code>.google.cloud.dialogflow.v2.Intent.Message.SelectItemInfo info = 1;</code>
+           * <code>
+           * .google.cloud.dialogflow.v2.Intent.Message.SelectItemInfo info = 1 [(.google.api.field_behavior) = REQUIRED];
+           * </code>
            */
           public Builder setInfo(
               com.google.cloud.dialogflow.v2.Intent.Message.SelectItemInfo value) {
@@ -23316,7 +23669,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
            * Required. Additional info about the option item.
            * </pre>
            *
-           * <code>.google.cloud.dialogflow.v2.Intent.Message.SelectItemInfo info = 1;</code>
+           * <code>
+           * .google.cloud.dialogflow.v2.Intent.Message.SelectItemInfo info = 1 [(.google.api.field_behavior) = REQUIRED];
+           * </code>
            */
           public Builder setInfo(
               com.google.cloud.dialogflow.v2.Intent.Message.SelectItemInfo.Builder
@@ -23337,7 +23692,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
            * Required. Additional info about the option item.
            * </pre>
            *
-           * <code>.google.cloud.dialogflow.v2.Intent.Message.SelectItemInfo info = 1;</code>
+           * <code>
+           * .google.cloud.dialogflow.v2.Intent.Message.SelectItemInfo info = 1 [(.google.api.field_behavior) = REQUIRED];
+           * </code>
            */
           public Builder mergeInfo(
               com.google.cloud.dialogflow.v2.Intent.Message.SelectItemInfo value) {
@@ -23364,7 +23721,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
            * Required. Additional info about the option item.
            * </pre>
            *
-           * <code>.google.cloud.dialogflow.v2.Intent.Message.SelectItemInfo info = 1;</code>
+           * <code>
+           * .google.cloud.dialogflow.v2.Intent.Message.SelectItemInfo info = 1 [(.google.api.field_behavior) = REQUIRED];
+           * </code>
            */
           public Builder clearInfo() {
             if (infoBuilder_ == null) {
@@ -23384,7 +23743,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
            * Required. Additional info about the option item.
            * </pre>
            *
-           * <code>.google.cloud.dialogflow.v2.Intent.Message.SelectItemInfo info = 1;</code>
+           * <code>
+           * .google.cloud.dialogflow.v2.Intent.Message.SelectItemInfo info = 1 [(.google.api.field_behavior) = REQUIRED];
+           * </code>
            */
           public com.google.cloud.dialogflow.v2.Intent.Message.SelectItemInfo.Builder
               getInfoBuilder() {
@@ -23399,7 +23760,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
            * Required. Additional info about the option item.
            * </pre>
            *
-           * <code>.google.cloud.dialogflow.v2.Intent.Message.SelectItemInfo info = 1;</code>
+           * <code>
+           * .google.cloud.dialogflow.v2.Intent.Message.SelectItemInfo info = 1 [(.google.api.field_behavior) = REQUIRED];
+           * </code>
            */
           public com.google.cloud.dialogflow.v2.Intent.Message.SelectItemInfoOrBuilder
               getInfoOrBuilder() {
@@ -23419,7 +23782,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
            * Required. Additional info about the option item.
            * </pre>
            *
-           * <code>.google.cloud.dialogflow.v2.Intent.Message.SelectItemInfo info = 1;</code>
+           * <code>
+           * .google.cloud.dialogflow.v2.Intent.Message.SelectItemInfo info = 1 [(.google.api.field_behavior) = REQUIRED];
+           * </code>
            */
           private com.google.protobuf.SingleFieldBuilderV3<
                   com.google.cloud.dialogflow.v2.Intent.Message.SelectItemInfo,
@@ -23446,7 +23811,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
            * Required. Title of the carousel item.
            * </pre>
            *
-           * <code>string title = 2;</code>
+           * <code>string title = 2 [(.google.api.field_behavior) = REQUIRED];</code>
            */
           public java.lang.String getTitle() {
             java.lang.Object ref = title_;
@@ -23466,7 +23831,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
            * Required. Title of the carousel item.
            * </pre>
            *
-           * <code>string title = 2;</code>
+           * <code>string title = 2 [(.google.api.field_behavior) = REQUIRED];</code>
            */
           public com.google.protobuf.ByteString getTitleBytes() {
             java.lang.Object ref = title_;
@@ -23486,7 +23851,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
            * Required. Title of the carousel item.
            * </pre>
            *
-           * <code>string title = 2;</code>
+           * <code>string title = 2 [(.google.api.field_behavior) = REQUIRED];</code>
            */
           public Builder setTitle(java.lang.String value) {
             if (value == null) {
@@ -23504,7 +23869,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
            * Required. Title of the carousel item.
            * </pre>
            *
-           * <code>string title = 2;</code>
+           * <code>string title = 2 [(.google.api.field_behavior) = REQUIRED];</code>
            */
           public Builder clearTitle() {
 
@@ -23519,7 +23884,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
            * Required. Title of the carousel item.
            * </pre>
            *
-           * <code>string title = 2;</code>
+           * <code>string title = 2 [(.google.api.field_behavior) = REQUIRED];</code>
            */
           public Builder setTitleBytes(com.google.protobuf.ByteString value) {
             if (value == null) {
@@ -23540,7 +23905,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
            * Optional. The body text of the card.
            * </pre>
            *
-           * <code>string description = 3;</code>
+           * <code>string description = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
            */
           public java.lang.String getDescription() {
             java.lang.Object ref = description_;
@@ -23560,7 +23925,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
            * Optional. The body text of the card.
            * </pre>
            *
-           * <code>string description = 3;</code>
+           * <code>string description = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
            */
           public com.google.protobuf.ByteString getDescriptionBytes() {
             java.lang.Object ref = description_;
@@ -23580,7 +23945,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
            * Optional. The body text of the card.
            * </pre>
            *
-           * <code>string description = 3;</code>
+           * <code>string description = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
            */
           public Builder setDescription(java.lang.String value) {
             if (value == null) {
@@ -23598,7 +23963,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
            * Optional. The body text of the card.
            * </pre>
            *
-           * <code>string description = 3;</code>
+           * <code>string description = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
            */
           public Builder clearDescription() {
 
@@ -23613,7 +23978,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
            * Optional. The body text of the card.
            * </pre>
            *
-           * <code>string description = 3;</code>
+           * <code>string description = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
            */
           public Builder setDescriptionBytes(com.google.protobuf.ByteString value) {
             if (value == null) {
@@ -23639,7 +24004,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
            * Optional. The image to display.
            * </pre>
            *
-           * <code>.google.cloud.dialogflow.v2.Intent.Message.Image image = 4;</code>
+           * <code>
+           * .google.cloud.dialogflow.v2.Intent.Message.Image image = 4 [(.google.api.field_behavior) = OPTIONAL];
+           * </code>
            */
           public boolean hasImage() {
             return imageBuilder_ != null || image_ != null;
@@ -23651,7 +24018,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
            * Optional. The image to display.
            * </pre>
            *
-           * <code>.google.cloud.dialogflow.v2.Intent.Message.Image image = 4;</code>
+           * <code>
+           * .google.cloud.dialogflow.v2.Intent.Message.Image image = 4 [(.google.api.field_behavior) = OPTIONAL];
+           * </code>
            */
           public com.google.cloud.dialogflow.v2.Intent.Message.Image getImage() {
             if (imageBuilder_ == null) {
@@ -23669,7 +24038,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
            * Optional. The image to display.
            * </pre>
            *
-           * <code>.google.cloud.dialogflow.v2.Intent.Message.Image image = 4;</code>
+           * <code>
+           * .google.cloud.dialogflow.v2.Intent.Message.Image image = 4 [(.google.api.field_behavior) = OPTIONAL];
+           * </code>
            */
           public Builder setImage(com.google.cloud.dialogflow.v2.Intent.Message.Image value) {
             if (imageBuilder_ == null) {
@@ -23691,7 +24062,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
            * Optional. The image to display.
            * </pre>
            *
-           * <code>.google.cloud.dialogflow.v2.Intent.Message.Image image = 4;</code>
+           * <code>
+           * .google.cloud.dialogflow.v2.Intent.Message.Image image = 4 [(.google.api.field_behavior) = OPTIONAL];
+           * </code>
            */
           public Builder setImage(
               com.google.cloud.dialogflow.v2.Intent.Message.Image.Builder builderForValue) {
@@ -23711,7 +24084,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
            * Optional. The image to display.
            * </pre>
            *
-           * <code>.google.cloud.dialogflow.v2.Intent.Message.Image image = 4;</code>
+           * <code>
+           * .google.cloud.dialogflow.v2.Intent.Message.Image image = 4 [(.google.api.field_behavior) = OPTIONAL];
+           * </code>
            */
           public Builder mergeImage(com.google.cloud.dialogflow.v2.Intent.Message.Image value) {
             if (imageBuilder_ == null) {
@@ -23737,7 +24112,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
            * Optional. The image to display.
            * </pre>
            *
-           * <code>.google.cloud.dialogflow.v2.Intent.Message.Image image = 4;</code>
+           * <code>
+           * .google.cloud.dialogflow.v2.Intent.Message.Image image = 4 [(.google.api.field_behavior) = OPTIONAL];
+           * </code>
            */
           public Builder clearImage() {
             if (imageBuilder_ == null) {
@@ -23757,7 +24134,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
            * Optional. The image to display.
            * </pre>
            *
-           * <code>.google.cloud.dialogflow.v2.Intent.Message.Image image = 4;</code>
+           * <code>
+           * .google.cloud.dialogflow.v2.Intent.Message.Image image = 4 [(.google.api.field_behavior) = OPTIONAL];
+           * </code>
            */
           public com.google.cloud.dialogflow.v2.Intent.Message.Image.Builder getImageBuilder() {
 
@@ -23771,7 +24150,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
            * Optional. The image to display.
            * </pre>
            *
-           * <code>.google.cloud.dialogflow.v2.Intent.Message.Image image = 4;</code>
+           * <code>
+           * .google.cloud.dialogflow.v2.Intent.Message.Image image = 4 [(.google.api.field_behavior) = OPTIONAL];
+           * </code>
            */
           public com.google.cloud.dialogflow.v2.Intent.Message.ImageOrBuilder getImageOrBuilder() {
             if (imageBuilder_ != null) {
@@ -23789,7 +24170,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
            * Optional. The image to display.
            * </pre>
            *
-           * <code>.google.cloud.dialogflow.v2.Intent.Message.Image image = 4;</code>
+           * <code>
+           * .google.cloud.dialogflow.v2.Intent.Message.Image image = 4 [(.google.api.field_behavior) = OPTIONAL];
+           * </code>
            */
           private com.google.protobuf.SingleFieldBuilderV3<
                   com.google.cloud.dialogflow.v2.Intent.Message.Image,
@@ -23874,7 +24257,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        * Required. Carousel items.
        * </pre>
        *
-       * <code>repeated .google.cloud.dialogflow.v2.Intent.Message.CarouselSelect.Item items = 1;
+       * <code>
+       * repeated .google.cloud.dialogflow.v2.Intent.Message.CarouselSelect.Item items = 1 [(.google.api.field_behavior) = REQUIRED];
        * </code>
        */
       public java.util.List<com.google.cloud.dialogflow.v2.Intent.Message.CarouselSelect.Item>
@@ -23888,7 +24272,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        * Required. Carousel items.
        * </pre>
        *
-       * <code>repeated .google.cloud.dialogflow.v2.Intent.Message.CarouselSelect.Item items = 1;
+       * <code>
+       * repeated .google.cloud.dialogflow.v2.Intent.Message.CarouselSelect.Item items = 1 [(.google.api.field_behavior) = REQUIRED];
        * </code>
        */
       public java.util.List<
@@ -23903,7 +24288,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        * Required. Carousel items.
        * </pre>
        *
-       * <code>repeated .google.cloud.dialogflow.v2.Intent.Message.CarouselSelect.Item items = 1;
+       * <code>
+       * repeated .google.cloud.dialogflow.v2.Intent.Message.CarouselSelect.Item items = 1 [(.google.api.field_behavior) = REQUIRED];
        * </code>
        */
       public int getItemsCount() {
@@ -23916,7 +24302,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        * Required. Carousel items.
        * </pre>
        *
-       * <code>repeated .google.cloud.dialogflow.v2.Intent.Message.CarouselSelect.Item items = 1;
+       * <code>
+       * repeated .google.cloud.dialogflow.v2.Intent.Message.CarouselSelect.Item items = 1 [(.google.api.field_behavior) = REQUIRED];
        * </code>
        */
       public com.google.cloud.dialogflow.v2.Intent.Message.CarouselSelect.Item getItems(int index) {
@@ -23929,7 +24316,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        * Required. Carousel items.
        * </pre>
        *
-       * <code>repeated .google.cloud.dialogflow.v2.Intent.Message.CarouselSelect.Item items = 1;
+       * <code>
+       * repeated .google.cloud.dialogflow.v2.Intent.Message.CarouselSelect.Item items = 1 [(.google.api.field_behavior) = REQUIRED];
        * </code>
        */
       public com.google.cloud.dialogflow.v2.Intent.Message.CarouselSelect.ItemOrBuilder
@@ -24331,7 +24719,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * Required. Carousel items.
          * </pre>
          *
-         * <code>repeated .google.cloud.dialogflow.v2.Intent.Message.CarouselSelect.Item items = 1;
+         * <code>
+         * repeated .google.cloud.dialogflow.v2.Intent.Message.CarouselSelect.Item items = 1 [(.google.api.field_behavior) = REQUIRED];
          * </code>
          */
         public java.util.List<com.google.cloud.dialogflow.v2.Intent.Message.CarouselSelect.Item>
@@ -24349,7 +24738,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * Required. Carousel items.
          * </pre>
          *
-         * <code>repeated .google.cloud.dialogflow.v2.Intent.Message.CarouselSelect.Item items = 1;
+         * <code>
+         * repeated .google.cloud.dialogflow.v2.Intent.Message.CarouselSelect.Item items = 1 [(.google.api.field_behavior) = REQUIRED];
          * </code>
          */
         public int getItemsCount() {
@@ -24366,7 +24756,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * Required. Carousel items.
          * </pre>
          *
-         * <code>repeated .google.cloud.dialogflow.v2.Intent.Message.CarouselSelect.Item items = 1;
+         * <code>
+         * repeated .google.cloud.dialogflow.v2.Intent.Message.CarouselSelect.Item items = 1 [(.google.api.field_behavior) = REQUIRED];
          * </code>
          */
         public com.google.cloud.dialogflow.v2.Intent.Message.CarouselSelect.Item getItems(
@@ -24384,7 +24775,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * Required. Carousel items.
          * </pre>
          *
-         * <code>repeated .google.cloud.dialogflow.v2.Intent.Message.CarouselSelect.Item items = 1;
+         * <code>
+         * repeated .google.cloud.dialogflow.v2.Intent.Message.CarouselSelect.Item items = 1 [(.google.api.field_behavior) = REQUIRED];
          * </code>
          */
         public Builder setItems(
@@ -24408,7 +24800,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * Required. Carousel items.
          * </pre>
          *
-         * <code>repeated .google.cloud.dialogflow.v2.Intent.Message.CarouselSelect.Item items = 1;
+         * <code>
+         * repeated .google.cloud.dialogflow.v2.Intent.Message.CarouselSelect.Item items = 1 [(.google.api.field_behavior) = REQUIRED];
          * </code>
          */
         public Builder setItems(
@@ -24431,7 +24824,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * Required. Carousel items.
          * </pre>
          *
-         * <code>repeated .google.cloud.dialogflow.v2.Intent.Message.CarouselSelect.Item items = 1;
+         * <code>
+         * repeated .google.cloud.dialogflow.v2.Intent.Message.CarouselSelect.Item items = 1 [(.google.api.field_behavior) = REQUIRED];
          * </code>
          */
         public Builder addItems(
@@ -24455,7 +24849,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * Required. Carousel items.
          * </pre>
          *
-         * <code>repeated .google.cloud.dialogflow.v2.Intent.Message.CarouselSelect.Item items = 1;
+         * <code>
+         * repeated .google.cloud.dialogflow.v2.Intent.Message.CarouselSelect.Item items = 1 [(.google.api.field_behavior) = REQUIRED];
          * </code>
          */
         public Builder addItems(
@@ -24479,7 +24874,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * Required. Carousel items.
          * </pre>
          *
-         * <code>repeated .google.cloud.dialogflow.v2.Intent.Message.CarouselSelect.Item items = 1;
+         * <code>
+         * repeated .google.cloud.dialogflow.v2.Intent.Message.CarouselSelect.Item items = 1 [(.google.api.field_behavior) = REQUIRED];
          * </code>
          */
         public Builder addItems(
@@ -24501,7 +24897,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * Required. Carousel items.
          * </pre>
          *
-         * <code>repeated .google.cloud.dialogflow.v2.Intent.Message.CarouselSelect.Item items = 1;
+         * <code>
+         * repeated .google.cloud.dialogflow.v2.Intent.Message.CarouselSelect.Item items = 1 [(.google.api.field_behavior) = REQUIRED];
          * </code>
          */
         public Builder addItems(
@@ -24524,7 +24921,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * Required. Carousel items.
          * </pre>
          *
-         * <code>repeated .google.cloud.dialogflow.v2.Intent.Message.CarouselSelect.Item items = 1;
+         * <code>
+         * repeated .google.cloud.dialogflow.v2.Intent.Message.CarouselSelect.Item items = 1 [(.google.api.field_behavior) = REQUIRED];
          * </code>
          */
         public Builder addAllItems(
@@ -24547,7 +24945,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * Required. Carousel items.
          * </pre>
          *
-         * <code>repeated .google.cloud.dialogflow.v2.Intent.Message.CarouselSelect.Item items = 1;
+         * <code>
+         * repeated .google.cloud.dialogflow.v2.Intent.Message.CarouselSelect.Item items = 1 [(.google.api.field_behavior) = REQUIRED];
          * </code>
          */
         public Builder clearItems() {
@@ -24567,7 +24966,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * Required. Carousel items.
          * </pre>
          *
-         * <code>repeated .google.cloud.dialogflow.v2.Intent.Message.CarouselSelect.Item items = 1;
+         * <code>
+         * repeated .google.cloud.dialogflow.v2.Intent.Message.CarouselSelect.Item items = 1 [(.google.api.field_behavior) = REQUIRED];
          * </code>
          */
         public Builder removeItems(int index) {
@@ -24587,7 +24987,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * Required. Carousel items.
          * </pre>
          *
-         * <code>repeated .google.cloud.dialogflow.v2.Intent.Message.CarouselSelect.Item items = 1;
+         * <code>
+         * repeated .google.cloud.dialogflow.v2.Intent.Message.CarouselSelect.Item items = 1 [(.google.api.field_behavior) = REQUIRED];
          * </code>
          */
         public com.google.cloud.dialogflow.v2.Intent.Message.CarouselSelect.Item.Builder
@@ -24601,7 +25002,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * Required. Carousel items.
          * </pre>
          *
-         * <code>repeated .google.cloud.dialogflow.v2.Intent.Message.CarouselSelect.Item items = 1;
+         * <code>
+         * repeated .google.cloud.dialogflow.v2.Intent.Message.CarouselSelect.Item items = 1 [(.google.api.field_behavior) = REQUIRED];
          * </code>
          */
         public com.google.cloud.dialogflow.v2.Intent.Message.CarouselSelect.ItemOrBuilder
@@ -24619,7 +25021,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * Required. Carousel items.
          * </pre>
          *
-         * <code>repeated .google.cloud.dialogflow.v2.Intent.Message.CarouselSelect.Item items = 1;
+         * <code>
+         * repeated .google.cloud.dialogflow.v2.Intent.Message.CarouselSelect.Item items = 1 [(.google.api.field_behavior) = REQUIRED];
          * </code>
          */
         public java.util.List<
@@ -24639,7 +25042,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * Required. Carousel items.
          * </pre>
          *
-         * <code>repeated .google.cloud.dialogflow.v2.Intent.Message.CarouselSelect.Item items = 1;
+         * <code>
+         * repeated .google.cloud.dialogflow.v2.Intent.Message.CarouselSelect.Item items = 1 [(.google.api.field_behavior) = REQUIRED];
          * </code>
          */
         public com.google.cloud.dialogflow.v2.Intent.Message.CarouselSelect.Item.Builder
@@ -24656,7 +25060,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * Required. Carousel items.
          * </pre>
          *
-         * <code>repeated .google.cloud.dialogflow.v2.Intent.Message.CarouselSelect.Item items = 1;
+         * <code>
+         * repeated .google.cloud.dialogflow.v2.Intent.Message.CarouselSelect.Item items = 1 [(.google.api.field_behavior) = REQUIRED];
          * </code>
          */
         public com.google.cloud.dialogflow.v2.Intent.Message.CarouselSelect.Item.Builder
@@ -24674,7 +25079,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * Required. Carousel items.
          * </pre>
          *
-         * <code>repeated .google.cloud.dialogflow.v2.Intent.Message.CarouselSelect.Item items = 1;
+         * <code>
+         * repeated .google.cloud.dialogflow.v2.Intent.Message.CarouselSelect.Item items = 1 [(.google.api.field_behavior) = REQUIRED];
          * </code>
          */
         public java.util.List<
@@ -24768,7 +25174,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        * response is given.
        * </pre>
        *
-       * <code>string key = 1;</code>
+       * <code>string key = 1 [(.google.api.field_behavior) = REQUIRED];</code>
        */
       java.lang.String getKey();
       /**
@@ -24779,7 +25185,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        * response is given.
        * </pre>
        *
-       * <code>string key = 1;</code>
+       * <code>string key = 1 [(.google.api.field_behavior) = REQUIRED];</code>
        */
       com.google.protobuf.ByteString getKeyBytes();
 
@@ -24791,7 +25197,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        * item in dialog.
        * </pre>
        *
-       * <code>repeated string synonyms = 2;</code>
+       * <code>repeated string synonyms = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
        */
       java.util.List<java.lang.String> getSynonymsList();
       /**
@@ -24802,7 +25208,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        * item in dialog.
        * </pre>
        *
-       * <code>repeated string synonyms = 2;</code>
+       * <code>repeated string synonyms = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
        */
       int getSynonymsCount();
       /**
@@ -24813,7 +25219,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        * item in dialog.
        * </pre>
        *
-       * <code>repeated string synonyms = 2;</code>
+       * <code>repeated string synonyms = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
        */
       java.lang.String getSynonyms(int index);
       /**
@@ -24824,7 +25230,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        * item in dialog.
        * </pre>
        *
-       * <code>repeated string synonyms = 2;</code>
+       * <code>repeated string synonyms = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
        */
       com.google.protobuf.ByteString getSynonymsBytes(int index);
     }
@@ -24943,7 +25349,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        * response is given.
        * </pre>
        *
-       * <code>string key = 1;</code>
+       * <code>string key = 1 [(.google.api.field_behavior) = REQUIRED];</code>
        */
       public java.lang.String getKey() {
         java.lang.Object ref = key_;
@@ -24964,7 +25370,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        * response is given.
        * </pre>
        *
-       * <code>string key = 1;</code>
+       * <code>string key = 1 [(.google.api.field_behavior) = REQUIRED];</code>
        */
       public com.google.protobuf.ByteString getKeyBytes() {
         java.lang.Object ref = key_;
@@ -24988,7 +25394,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        * item in dialog.
        * </pre>
        *
-       * <code>repeated string synonyms = 2;</code>
+       * <code>repeated string synonyms = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
        */
       public com.google.protobuf.ProtocolStringList getSynonymsList() {
         return synonyms_;
@@ -25001,7 +25407,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        * item in dialog.
        * </pre>
        *
-       * <code>repeated string synonyms = 2;</code>
+       * <code>repeated string synonyms = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
        */
       public int getSynonymsCount() {
         return synonyms_.size();
@@ -25014,7 +25420,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        * item in dialog.
        * </pre>
        *
-       * <code>repeated string synonyms = 2;</code>
+       * <code>repeated string synonyms = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
        */
       public java.lang.String getSynonyms(int index) {
         return synonyms_.get(index);
@@ -25027,7 +25433,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        * item in dialog.
        * </pre>
        *
-       * <code>repeated string synonyms = 2;</code>
+       * <code>repeated string synonyms = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
        */
       public com.google.protobuf.ByteString getSynonymsBytes(int index) {
         return synonyms_.getByteString(index);
@@ -25408,7 +25814,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * response is given.
          * </pre>
          *
-         * <code>string key = 1;</code>
+         * <code>string key = 1 [(.google.api.field_behavior) = REQUIRED];</code>
          */
         public java.lang.String getKey() {
           java.lang.Object ref = key_;
@@ -25429,7 +25835,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * response is given.
          * </pre>
          *
-         * <code>string key = 1;</code>
+         * <code>string key = 1 [(.google.api.field_behavior) = REQUIRED];</code>
          */
         public com.google.protobuf.ByteString getKeyBytes() {
           java.lang.Object ref = key_;
@@ -25450,7 +25856,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * response is given.
          * </pre>
          *
-         * <code>string key = 1;</code>
+         * <code>string key = 1 [(.google.api.field_behavior) = REQUIRED];</code>
          */
         public Builder setKey(java.lang.String value) {
           if (value == null) {
@@ -25469,7 +25875,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * response is given.
          * </pre>
          *
-         * <code>string key = 1;</code>
+         * <code>string key = 1 [(.google.api.field_behavior) = REQUIRED];</code>
          */
         public Builder clearKey() {
 
@@ -25485,7 +25891,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * response is given.
          * </pre>
          *
-         * <code>string key = 1;</code>
+         * <code>string key = 1 [(.google.api.field_behavior) = REQUIRED];</code>
          */
         public Builder setKeyBytes(com.google.protobuf.ByteString value) {
           if (value == null) {
@@ -25515,7 +25921,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * item in dialog.
          * </pre>
          *
-         * <code>repeated string synonyms = 2;</code>
+         * <code>repeated string synonyms = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
          */
         public com.google.protobuf.ProtocolStringList getSynonymsList() {
           return synonyms_.getUnmodifiableView();
@@ -25528,7 +25934,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * item in dialog.
          * </pre>
          *
-         * <code>repeated string synonyms = 2;</code>
+         * <code>repeated string synonyms = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
          */
         public int getSynonymsCount() {
           return synonyms_.size();
@@ -25541,7 +25947,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * item in dialog.
          * </pre>
          *
-         * <code>repeated string synonyms = 2;</code>
+         * <code>repeated string synonyms = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
          */
         public java.lang.String getSynonyms(int index) {
           return synonyms_.get(index);
@@ -25554,7 +25960,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * item in dialog.
          * </pre>
          *
-         * <code>repeated string synonyms = 2;</code>
+         * <code>repeated string synonyms = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
          */
         public com.google.protobuf.ByteString getSynonymsBytes(int index) {
           return synonyms_.getByteString(index);
@@ -25567,7 +25973,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * item in dialog.
          * </pre>
          *
-         * <code>repeated string synonyms = 2;</code>
+         * <code>repeated string synonyms = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
          */
         public Builder setSynonyms(int index, java.lang.String value) {
           if (value == null) {
@@ -25586,7 +25992,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * item in dialog.
          * </pre>
          *
-         * <code>repeated string synonyms = 2;</code>
+         * <code>repeated string synonyms = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
          */
         public Builder addSynonyms(java.lang.String value) {
           if (value == null) {
@@ -25605,7 +26011,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * item in dialog.
          * </pre>
          *
-         * <code>repeated string synonyms = 2;</code>
+         * <code>repeated string synonyms = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
          */
         public Builder addAllSynonyms(java.lang.Iterable<java.lang.String> values) {
           ensureSynonymsIsMutable();
@@ -25621,7 +26027,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * item in dialog.
          * </pre>
          *
-         * <code>repeated string synonyms = 2;</code>
+         * <code>repeated string synonyms = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
          */
         public Builder clearSynonyms() {
           synonyms_ = com.google.protobuf.LazyStringArrayList.EMPTY;
@@ -25637,7 +26043,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * item in dialog.
          * </pre>
          *
-         * <code>repeated string synonyms = 2;</code>
+         * <code>repeated string synonyms = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
          */
         public Builder addSynonymsBytes(com.google.protobuf.ByteString value) {
           if (value == null) {
@@ -26281,7 +26687,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      * Optional. The platform that this message is intended for.
      * </pre>
      *
-     * <code>.google.cloud.dialogflow.v2.Intent.Message.Platform platform = 6;</code>
+     * <code>
+     * .google.cloud.dialogflow.v2.Intent.Message.Platform platform = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public int getPlatformValue() {
       return platform_;
@@ -26293,7 +26701,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      * Optional. The platform that this message is intended for.
      * </pre>
      *
-     * <code>.google.cloud.dialogflow.v2.Intent.Message.Platform platform = 6;</code>
+     * <code>
+     * .google.cloud.dialogflow.v2.Intent.Message.Platform platform = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public com.google.cloud.dialogflow.v2.Intent.Message.Platform getPlatform() {
       @SuppressWarnings("deprecation")
@@ -29293,7 +29703,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        * Optional. The platform that this message is intended for.
        * </pre>
        *
-       * <code>.google.cloud.dialogflow.v2.Intent.Message.Platform platform = 6;</code>
+       * <code>
+       * .google.cloud.dialogflow.v2.Intent.Message.Platform platform = 6 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
        */
       public int getPlatformValue() {
         return platform_;
@@ -29305,7 +29717,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        * Optional. The platform that this message is intended for.
        * </pre>
        *
-       * <code>.google.cloud.dialogflow.v2.Intent.Message.Platform platform = 6;</code>
+       * <code>
+       * .google.cloud.dialogflow.v2.Intent.Message.Platform platform = 6 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
        */
       public Builder setPlatformValue(int value) {
         platform_ = value;
@@ -29319,7 +29733,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        * Optional. The platform that this message is intended for.
        * </pre>
        *
-       * <code>.google.cloud.dialogflow.v2.Intent.Message.Platform platform = 6;</code>
+       * <code>
+       * .google.cloud.dialogflow.v2.Intent.Message.Platform platform = 6 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
        */
       public com.google.cloud.dialogflow.v2.Intent.Message.Platform getPlatform() {
         @SuppressWarnings("deprecation")
@@ -29336,7 +29752,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        * Optional. The platform that this message is intended for.
        * </pre>
        *
-       * <code>.google.cloud.dialogflow.v2.Intent.Message.Platform platform = 6;</code>
+       * <code>
+       * .google.cloud.dialogflow.v2.Intent.Message.Platform platform = 6 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
        */
       public Builder setPlatform(com.google.cloud.dialogflow.v2.Intent.Message.Platform value) {
         if (value == null) {
@@ -29354,7 +29772,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        * Optional. The platform that this message is intended for.
        * </pre>
        *
-       * <code>.google.cloud.dialogflow.v2.Intent.Message.Platform platform = 6;</code>
+       * <code>
+       * .google.cloud.dialogflow.v2.Intent.Message.Platform platform = 6 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
        */
       public Builder clearPlatform() {
 
@@ -30301,7 +30721,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
    * Required. The name of this intent.
    * </pre>
    *
-   * <code>string display_name = 2;</code>
+   * <code>string display_name = 2 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   public java.lang.String getDisplayName() {
     java.lang.Object ref = displayName_;
@@ -30321,7 +30741,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
    * Required. The name of this intent.
    * </pre>
    *
-   * <code>string display_name = 2;</code>
+   * <code>string display_name = 2 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   public com.google.protobuf.ByteString getDisplayNameBytes() {
     java.lang.Object ref = displayName_;
@@ -30344,7 +30764,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
    * Optional. Indicates whether webhooks are enabled for the intent.
    * </pre>
    *
-   * <code>.google.cloud.dialogflow.v2.Intent.WebhookState webhook_state = 6;</code>
+   * <code>
+   * .google.cloud.dialogflow.v2.Intent.WebhookState webhook_state = 6 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   public int getWebhookStateValue() {
     return webhookState_;
@@ -30356,7 +30778,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
    * Optional. Indicates whether webhooks are enabled for the intent.
    * </pre>
    *
-   * <code>.google.cloud.dialogflow.v2.Intent.WebhookState webhook_state = 6;</code>
+   * <code>
+   * .google.cloud.dialogflow.v2.Intent.WebhookState webhook_state = 6 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   public com.google.cloud.dialogflow.v2.Intent.WebhookState getWebhookState() {
     @SuppressWarnings("deprecation")
@@ -30379,7 +30803,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
    * Negative numbers mean that the intent is disabled.
    * </pre>
    *
-   * <code>int32 priority = 3;</code>
+   * <code>int32 priority = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   public int getPriority() {
     return priority_;
@@ -30394,7 +30818,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
    * Optional. Indicates whether this is a fallback intent.
    * </pre>
    *
-   * <code>bool is_fallback = 4;</code>
+   * <code>bool is_fallback = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   public boolean getIsFallback() {
     return isFallback_;
@@ -30412,7 +30836,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
    * auto-markup in the UI is turned off.
    * </pre>
    *
-   * <code>bool ml_disabled = 19;</code>
+   * <code>bool ml_disabled = 19 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   public boolean getMlDisabled() {
     return mlDisabled_;
@@ -30429,7 +30853,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
    * Format: `projects/&lt;Project ID&gt;/agent/sessions/-/contexts/&lt;Context ID&gt;`.
    * </pre>
    *
-   * <code>repeated string input_context_names = 7;</code>
+   * <code>repeated string input_context_names = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   public com.google.protobuf.ProtocolStringList getInputContextNamesList() {
     return inputContextNames_;
@@ -30443,7 +30867,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
    * Format: `projects/&lt;Project ID&gt;/agent/sessions/-/contexts/&lt;Context ID&gt;`.
    * </pre>
    *
-   * <code>repeated string input_context_names = 7;</code>
+   * <code>repeated string input_context_names = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   public int getInputContextNamesCount() {
     return inputContextNames_.size();
@@ -30457,7 +30881,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
    * Format: `projects/&lt;Project ID&gt;/agent/sessions/-/contexts/&lt;Context ID&gt;`.
    * </pre>
    *
-   * <code>repeated string input_context_names = 7;</code>
+   * <code>repeated string input_context_names = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   public java.lang.String getInputContextNames(int index) {
     return inputContextNames_.get(index);
@@ -30471,7 +30895,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
    * Format: `projects/&lt;Project ID&gt;/agent/sessions/-/contexts/&lt;Context ID&gt;`.
    * </pre>
    *
-   * <code>repeated string input_context_names = 7;</code>
+   * <code>repeated string input_context_names = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   public com.google.protobuf.ByteString getInputContextNamesBytes(int index) {
     return inputContextNames_.getByteString(index);
@@ -30488,7 +30912,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
    * be present in the active user session for an event to trigger this intent.
    * </pre>
    *
-   * <code>repeated string events = 8;</code>
+   * <code>repeated string events = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   public com.google.protobuf.ProtocolStringList getEventsList() {
     return events_;
@@ -30502,7 +30926,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
    * be present in the active user session for an event to trigger this intent.
    * </pre>
    *
-   * <code>repeated string events = 8;</code>
+   * <code>repeated string events = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   public int getEventsCount() {
     return events_.size();
@@ -30516,7 +30940,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
    * be present in the active user session for an event to trigger this intent.
    * </pre>
    *
-   * <code>repeated string events = 8;</code>
+   * <code>repeated string events = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   public java.lang.String getEvents(int index) {
     return events_.get(index);
@@ -30530,7 +30954,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
    * be present in the active user session for an event to trigger this intent.
    * </pre>
    *
-   * <code>repeated string events = 8;</code>
+   * <code>repeated string events = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   public com.google.protobuf.ByteString getEventsBytes(int index) {
     return events_.getByteString(index);
@@ -30546,7 +30970,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
    * trained on.
    * </pre>
    *
-   * <code>repeated .google.cloud.dialogflow.v2.Intent.TrainingPhrase training_phrases = 9;</code>
+   * <code>
+   * repeated .google.cloud.dialogflow.v2.Intent.TrainingPhrase training_phrases = 9 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   public java.util.List<com.google.cloud.dialogflow.v2.Intent.TrainingPhrase>
       getTrainingPhrasesList() {
@@ -30560,7 +30986,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
    * trained on.
    * </pre>
    *
-   * <code>repeated .google.cloud.dialogflow.v2.Intent.TrainingPhrase training_phrases = 9;</code>
+   * <code>
+   * repeated .google.cloud.dialogflow.v2.Intent.TrainingPhrase training_phrases = 9 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   public java.util.List<? extends com.google.cloud.dialogflow.v2.Intent.TrainingPhraseOrBuilder>
       getTrainingPhrasesOrBuilderList() {
@@ -30574,7 +31002,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
    * trained on.
    * </pre>
    *
-   * <code>repeated .google.cloud.dialogflow.v2.Intent.TrainingPhrase training_phrases = 9;</code>
+   * <code>
+   * repeated .google.cloud.dialogflow.v2.Intent.TrainingPhrase training_phrases = 9 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   public int getTrainingPhrasesCount() {
     return trainingPhrases_.size();
@@ -30587,7 +31017,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
    * trained on.
    * </pre>
    *
-   * <code>repeated .google.cloud.dialogflow.v2.Intent.TrainingPhrase training_phrases = 9;</code>
+   * <code>
+   * repeated .google.cloud.dialogflow.v2.Intent.TrainingPhrase training_phrases = 9 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   public com.google.cloud.dialogflow.v2.Intent.TrainingPhrase getTrainingPhrases(int index) {
     return trainingPhrases_.get(index);
@@ -30600,7 +31032,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
    * trained on.
    * </pre>
    *
-   * <code>repeated .google.cloud.dialogflow.v2.Intent.TrainingPhrase training_phrases = 9;</code>
+   * <code>
+   * repeated .google.cloud.dialogflow.v2.Intent.TrainingPhrase training_phrases = 9 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   public com.google.cloud.dialogflow.v2.Intent.TrainingPhraseOrBuilder getTrainingPhrasesOrBuilder(
       int index) {
@@ -30617,7 +31051,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
    * Note: The action name must not contain whitespaces.
    * </pre>
    *
-   * <code>string action = 10;</code>
+   * <code>string action = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   public java.lang.String getAction() {
     java.lang.Object ref = action_;
@@ -30638,7 +31072,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
    * Note: The action name must not contain whitespaces.
    * </pre>
    *
-   * <code>string action = 10;</code>
+   * <code>string action = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   public com.google.protobuf.ByteString getActionBytes() {
     java.lang.Object ref = action_;
@@ -30665,7 +31099,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
    * Format: `projects/&lt;Project ID&gt;/agent/sessions/-/contexts/&lt;Context ID&gt;`.
    * </pre>
    *
-   * <code>repeated .google.cloud.dialogflow.v2.Context output_contexts = 11;</code>
+   * <code>
+   * repeated .google.cloud.dialogflow.v2.Context output_contexts = 11 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   public java.util.List<com.google.cloud.dialogflow.v2.Context> getOutputContextsList() {
     return outputContexts_;
@@ -30681,7 +31117,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
    * Format: `projects/&lt;Project ID&gt;/agent/sessions/-/contexts/&lt;Context ID&gt;`.
    * </pre>
    *
-   * <code>repeated .google.cloud.dialogflow.v2.Context output_contexts = 11;</code>
+   * <code>
+   * repeated .google.cloud.dialogflow.v2.Context output_contexts = 11 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   public java.util.List<? extends com.google.cloud.dialogflow.v2.ContextOrBuilder>
       getOutputContextsOrBuilderList() {
@@ -30698,7 +31136,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
    * Format: `projects/&lt;Project ID&gt;/agent/sessions/-/contexts/&lt;Context ID&gt;`.
    * </pre>
    *
-   * <code>repeated .google.cloud.dialogflow.v2.Context output_contexts = 11;</code>
+   * <code>
+   * repeated .google.cloud.dialogflow.v2.Context output_contexts = 11 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   public int getOutputContextsCount() {
     return outputContexts_.size();
@@ -30714,7 +31154,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
    * Format: `projects/&lt;Project ID&gt;/agent/sessions/-/contexts/&lt;Context ID&gt;`.
    * </pre>
    *
-   * <code>repeated .google.cloud.dialogflow.v2.Context output_contexts = 11;</code>
+   * <code>
+   * repeated .google.cloud.dialogflow.v2.Context output_contexts = 11 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   public com.google.cloud.dialogflow.v2.Context getOutputContexts(int index) {
     return outputContexts_.get(index);
@@ -30730,7 +31172,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
    * Format: `projects/&lt;Project ID&gt;/agent/sessions/-/contexts/&lt;Context ID&gt;`.
    * </pre>
    *
-   * <code>repeated .google.cloud.dialogflow.v2.Context output_contexts = 11;</code>
+   * <code>
+   * repeated .google.cloud.dialogflow.v2.Context output_contexts = 11 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   public com.google.cloud.dialogflow.v2.ContextOrBuilder getOutputContextsOrBuilder(int index) {
     return outputContexts_.get(index);
@@ -30746,7 +31190,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
    * session when this intent is matched.
    * </pre>
    *
-   * <code>bool reset_contexts = 12;</code>
+   * <code>bool reset_contexts = 12 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   public boolean getResetContexts() {
     return resetContexts_;
@@ -30761,7 +31205,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
    * Optional. The collection of parameters associated with the intent.
    * </pre>
    *
-   * <code>repeated .google.cloud.dialogflow.v2.Intent.Parameter parameters = 13;</code>
+   * <code>
+   * repeated .google.cloud.dialogflow.v2.Intent.Parameter parameters = 13 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   public java.util.List<com.google.cloud.dialogflow.v2.Intent.Parameter> getParametersList() {
     return parameters_;
@@ -30773,7 +31219,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
    * Optional. The collection of parameters associated with the intent.
    * </pre>
    *
-   * <code>repeated .google.cloud.dialogflow.v2.Intent.Parameter parameters = 13;</code>
+   * <code>
+   * repeated .google.cloud.dialogflow.v2.Intent.Parameter parameters = 13 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   public java.util.List<? extends com.google.cloud.dialogflow.v2.Intent.ParameterOrBuilder>
       getParametersOrBuilderList() {
@@ -30786,7 +31234,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
    * Optional. The collection of parameters associated with the intent.
    * </pre>
    *
-   * <code>repeated .google.cloud.dialogflow.v2.Intent.Parameter parameters = 13;</code>
+   * <code>
+   * repeated .google.cloud.dialogflow.v2.Intent.Parameter parameters = 13 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   public int getParametersCount() {
     return parameters_.size();
@@ -30798,7 +31248,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
    * Optional. The collection of parameters associated with the intent.
    * </pre>
    *
-   * <code>repeated .google.cloud.dialogflow.v2.Intent.Parameter parameters = 13;</code>
+   * <code>
+   * repeated .google.cloud.dialogflow.v2.Intent.Parameter parameters = 13 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   public com.google.cloud.dialogflow.v2.Intent.Parameter getParameters(int index) {
     return parameters_.get(index);
@@ -30810,7 +31262,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
    * Optional. The collection of parameters associated with the intent.
    * </pre>
    *
-   * <code>repeated .google.cloud.dialogflow.v2.Intent.Parameter parameters = 13;</code>
+   * <code>
+   * repeated .google.cloud.dialogflow.v2.Intent.Parameter parameters = 13 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   public com.google.cloud.dialogflow.v2.Intent.ParameterOrBuilder getParametersOrBuilder(
       int index) {
@@ -30827,7 +31281,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
    * `Response` field in the Dialogflow console.
    * </pre>
    *
-   * <code>repeated .google.cloud.dialogflow.v2.Intent.Message messages = 14;</code>
+   * <code>
+   * repeated .google.cloud.dialogflow.v2.Intent.Message messages = 14 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   public java.util.List<com.google.cloud.dialogflow.v2.Intent.Message> getMessagesList() {
     return messages_;
@@ -30840,7 +31296,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
    * `Response` field in the Dialogflow console.
    * </pre>
    *
-   * <code>repeated .google.cloud.dialogflow.v2.Intent.Message messages = 14;</code>
+   * <code>
+   * repeated .google.cloud.dialogflow.v2.Intent.Message messages = 14 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   public java.util.List<? extends com.google.cloud.dialogflow.v2.Intent.MessageOrBuilder>
       getMessagesOrBuilderList() {
@@ -30854,7 +31312,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
    * `Response` field in the Dialogflow console.
    * </pre>
    *
-   * <code>repeated .google.cloud.dialogflow.v2.Intent.Message messages = 14;</code>
+   * <code>
+   * repeated .google.cloud.dialogflow.v2.Intent.Message messages = 14 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   public int getMessagesCount() {
     return messages_.size();
@@ -30867,7 +31327,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
    * `Response` field in the Dialogflow console.
    * </pre>
    *
-   * <code>repeated .google.cloud.dialogflow.v2.Intent.Message messages = 14;</code>
+   * <code>
+   * repeated .google.cloud.dialogflow.v2.Intent.Message messages = 14 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   public com.google.cloud.dialogflow.v2.Intent.Message getMessages(int index) {
     return messages_.get(index);
@@ -30880,7 +31342,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
    * `Response` field in the Dialogflow console.
    * </pre>
    *
-   * <code>repeated .google.cloud.dialogflow.v2.Intent.Message messages = 14;</code>
+   * <code>
+   * repeated .google.cloud.dialogflow.v2.Intent.Message messages = 14 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   public com.google.cloud.dialogflow.v2.Intent.MessageOrBuilder getMessagesOrBuilder(int index) {
     return messages_.get(index);
@@ -30912,7 +31376,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>
-   * repeated .google.cloud.dialogflow.v2.Intent.Message.Platform default_response_platforms = 15;
+   * repeated .google.cloud.dialogflow.v2.Intent.Message.Platform default_response_platforms = 15 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    */
   public java.util.List<com.google.cloud.dialogflow.v2.Intent.Message.Platform>
@@ -30930,7 +31394,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>
-   * repeated .google.cloud.dialogflow.v2.Intent.Message.Platform default_response_platforms = 15;
+   * repeated .google.cloud.dialogflow.v2.Intent.Message.Platform default_response_platforms = 15 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    */
   public int getDefaultResponsePlatformsCount() {
@@ -30945,7 +31409,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>
-   * repeated .google.cloud.dialogflow.v2.Intent.Message.Platform default_response_platforms = 15;
+   * repeated .google.cloud.dialogflow.v2.Intent.Message.Platform default_response_platforms = 15 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    */
   public com.google.cloud.dialogflow.v2.Intent.Message.Platform getDefaultResponsePlatforms(
@@ -30961,7 +31425,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>
-   * repeated .google.cloud.dialogflow.v2.Intent.Message.Platform default_response_platforms = 15;
+   * repeated .google.cloud.dialogflow.v2.Intent.Message.Platform default_response_platforms = 15 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    */
   public java.util.List<java.lang.Integer> getDefaultResponsePlatformsValueList() {
@@ -30976,7 +31440,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>
-   * repeated .google.cloud.dialogflow.v2.Intent.Message.Platform default_response_platforms = 15;
+   * repeated .google.cloud.dialogflow.v2.Intent.Message.Platform default_response_platforms = 15 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    */
   public int getDefaultResponsePlatformsValue(int index) {
@@ -32129,7 +32593,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      * Required. The name of this intent.
      * </pre>
      *
-     * <code>string display_name = 2;</code>
+     * <code>string display_name = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public java.lang.String getDisplayName() {
       java.lang.Object ref = displayName_;
@@ -32149,7 +32613,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      * Required. The name of this intent.
      * </pre>
      *
-     * <code>string display_name = 2;</code>
+     * <code>string display_name = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public com.google.protobuf.ByteString getDisplayNameBytes() {
       java.lang.Object ref = displayName_;
@@ -32169,7 +32633,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      * Required. The name of this intent.
      * </pre>
      *
-     * <code>string display_name = 2;</code>
+     * <code>string display_name = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder setDisplayName(java.lang.String value) {
       if (value == null) {
@@ -32187,7 +32651,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      * Required. The name of this intent.
      * </pre>
      *
-     * <code>string display_name = 2;</code>
+     * <code>string display_name = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder clearDisplayName() {
 
@@ -32202,7 +32666,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      * Required. The name of this intent.
      * </pre>
      *
-     * <code>string display_name = 2;</code>
+     * <code>string display_name = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder setDisplayNameBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -32223,7 +32687,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      * Optional. Indicates whether webhooks are enabled for the intent.
      * </pre>
      *
-     * <code>.google.cloud.dialogflow.v2.Intent.WebhookState webhook_state = 6;</code>
+     * <code>
+     * .google.cloud.dialogflow.v2.Intent.WebhookState webhook_state = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public int getWebhookStateValue() {
       return webhookState_;
@@ -32235,7 +32701,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      * Optional. Indicates whether webhooks are enabled for the intent.
      * </pre>
      *
-     * <code>.google.cloud.dialogflow.v2.Intent.WebhookState webhook_state = 6;</code>
+     * <code>
+     * .google.cloud.dialogflow.v2.Intent.WebhookState webhook_state = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder setWebhookStateValue(int value) {
       webhookState_ = value;
@@ -32249,7 +32717,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      * Optional. Indicates whether webhooks are enabled for the intent.
      * </pre>
      *
-     * <code>.google.cloud.dialogflow.v2.Intent.WebhookState webhook_state = 6;</code>
+     * <code>
+     * .google.cloud.dialogflow.v2.Intent.WebhookState webhook_state = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public com.google.cloud.dialogflow.v2.Intent.WebhookState getWebhookState() {
       @SuppressWarnings("deprecation")
@@ -32266,7 +32736,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      * Optional. Indicates whether webhooks are enabled for the intent.
      * </pre>
      *
-     * <code>.google.cloud.dialogflow.v2.Intent.WebhookState webhook_state = 6;</code>
+     * <code>
+     * .google.cloud.dialogflow.v2.Intent.WebhookState webhook_state = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder setWebhookState(com.google.cloud.dialogflow.v2.Intent.WebhookState value) {
       if (value == null) {
@@ -32284,7 +32756,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      * Optional. Indicates whether webhooks are enabled for the intent.
      * </pre>
      *
-     * <code>.google.cloud.dialogflow.v2.Intent.WebhookState webhook_state = 6;</code>
+     * <code>
+     * .google.cloud.dialogflow.v2.Intent.WebhookState webhook_state = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder clearWebhookState() {
 
@@ -32304,7 +32778,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      * Negative numbers mean that the intent is disabled.
      * </pre>
      *
-     * <code>int32 priority = 3;</code>
+     * <code>int32 priority = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public int getPriority() {
       return priority_;
@@ -32319,7 +32793,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      * Negative numbers mean that the intent is disabled.
      * </pre>
      *
-     * <code>int32 priority = 3;</code>
+     * <code>int32 priority = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public Builder setPriority(int value) {
 
@@ -32337,7 +32811,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      * Negative numbers mean that the intent is disabled.
      * </pre>
      *
-     * <code>int32 priority = 3;</code>
+     * <code>int32 priority = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public Builder clearPriority() {
 
@@ -32354,7 +32828,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      * Optional. Indicates whether this is a fallback intent.
      * </pre>
      *
-     * <code>bool is_fallback = 4;</code>
+     * <code>bool is_fallback = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public boolean getIsFallback() {
       return isFallback_;
@@ -32366,7 +32840,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      * Optional. Indicates whether this is a fallback intent.
      * </pre>
      *
-     * <code>bool is_fallback = 4;</code>
+     * <code>bool is_fallback = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public Builder setIsFallback(boolean value) {
 
@@ -32381,7 +32855,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      * Optional. Indicates whether this is a fallback intent.
      * </pre>
      *
-     * <code>bool is_fallback = 4;</code>
+     * <code>bool is_fallback = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public Builder clearIsFallback() {
 
@@ -32401,7 +32875,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      * auto-markup in the UI is turned off.
      * </pre>
      *
-     * <code>bool ml_disabled = 19;</code>
+     * <code>bool ml_disabled = 19 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public boolean getMlDisabled() {
       return mlDisabled_;
@@ -32416,7 +32890,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      * auto-markup in the UI is turned off.
      * </pre>
      *
-     * <code>bool ml_disabled = 19;</code>
+     * <code>bool ml_disabled = 19 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public Builder setMlDisabled(boolean value) {
 
@@ -32434,7 +32908,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      * auto-markup in the UI is turned off.
      * </pre>
      *
-     * <code>bool ml_disabled = 19;</code>
+     * <code>bool ml_disabled = 19 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public Builder clearMlDisabled() {
 
@@ -32461,7 +32935,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      * Format: `projects/&lt;Project ID&gt;/agent/sessions/-/contexts/&lt;Context ID&gt;`.
      * </pre>
      *
-     * <code>repeated string input_context_names = 7;</code>
+     * <code>repeated string input_context_names = 7 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public com.google.protobuf.ProtocolStringList getInputContextNamesList() {
       return inputContextNames_.getUnmodifiableView();
@@ -32475,7 +32950,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      * Format: `projects/&lt;Project ID&gt;/agent/sessions/-/contexts/&lt;Context ID&gt;`.
      * </pre>
      *
-     * <code>repeated string input_context_names = 7;</code>
+     * <code>repeated string input_context_names = 7 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public int getInputContextNamesCount() {
       return inputContextNames_.size();
@@ -32489,7 +32965,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      * Format: `projects/&lt;Project ID&gt;/agent/sessions/-/contexts/&lt;Context ID&gt;`.
      * </pre>
      *
-     * <code>repeated string input_context_names = 7;</code>
+     * <code>repeated string input_context_names = 7 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public java.lang.String getInputContextNames(int index) {
       return inputContextNames_.get(index);
@@ -32503,7 +32980,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      * Format: `projects/&lt;Project ID&gt;/agent/sessions/-/contexts/&lt;Context ID&gt;`.
      * </pre>
      *
-     * <code>repeated string input_context_names = 7;</code>
+     * <code>repeated string input_context_names = 7 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public com.google.protobuf.ByteString getInputContextNamesBytes(int index) {
       return inputContextNames_.getByteString(index);
@@ -32517,7 +32995,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      * Format: `projects/&lt;Project ID&gt;/agent/sessions/-/contexts/&lt;Context ID&gt;`.
      * </pre>
      *
-     * <code>repeated string input_context_names = 7;</code>
+     * <code>repeated string input_context_names = 7 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder setInputContextNames(int index, java.lang.String value) {
       if (value == null) {
@@ -32537,7 +33016,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      * Format: `projects/&lt;Project ID&gt;/agent/sessions/-/contexts/&lt;Context ID&gt;`.
      * </pre>
      *
-     * <code>repeated string input_context_names = 7;</code>
+     * <code>repeated string input_context_names = 7 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder addInputContextNames(java.lang.String value) {
       if (value == null) {
@@ -32557,7 +33037,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      * Format: `projects/&lt;Project ID&gt;/agent/sessions/-/contexts/&lt;Context ID&gt;`.
      * </pre>
      *
-     * <code>repeated string input_context_names = 7;</code>
+     * <code>repeated string input_context_names = 7 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder addAllInputContextNames(java.lang.Iterable<java.lang.String> values) {
       ensureInputContextNamesIsMutable();
@@ -32574,7 +33055,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      * Format: `projects/&lt;Project ID&gt;/agent/sessions/-/contexts/&lt;Context ID&gt;`.
      * </pre>
      *
-     * <code>repeated string input_context_names = 7;</code>
+     * <code>repeated string input_context_names = 7 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder clearInputContextNames() {
       inputContextNames_ = com.google.protobuf.LazyStringArrayList.EMPTY;
@@ -32591,7 +33073,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      * Format: `projects/&lt;Project ID&gt;/agent/sessions/-/contexts/&lt;Context ID&gt;`.
      * </pre>
      *
-     * <code>repeated string input_context_names = 7;</code>
+     * <code>repeated string input_context_names = 7 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder addInputContextNamesBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -32622,7 +33105,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      * be present in the active user session for an event to trigger this intent.
      * </pre>
      *
-     * <code>repeated string events = 8;</code>
+     * <code>repeated string events = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public com.google.protobuf.ProtocolStringList getEventsList() {
       return events_.getUnmodifiableView();
@@ -32636,7 +33119,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      * be present in the active user session for an event to trigger this intent.
      * </pre>
      *
-     * <code>repeated string events = 8;</code>
+     * <code>repeated string events = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public int getEventsCount() {
       return events_.size();
@@ -32650,7 +33133,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      * be present in the active user session for an event to trigger this intent.
      * </pre>
      *
-     * <code>repeated string events = 8;</code>
+     * <code>repeated string events = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public java.lang.String getEvents(int index) {
       return events_.get(index);
@@ -32664,7 +33147,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      * be present in the active user session for an event to trigger this intent.
      * </pre>
      *
-     * <code>repeated string events = 8;</code>
+     * <code>repeated string events = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public com.google.protobuf.ByteString getEventsBytes(int index) {
       return events_.getByteString(index);
@@ -32678,7 +33161,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      * be present in the active user session for an event to trigger this intent.
      * </pre>
      *
-     * <code>repeated string events = 8;</code>
+     * <code>repeated string events = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public Builder setEvents(int index, java.lang.String value) {
       if (value == null) {
@@ -32698,7 +33181,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      * be present in the active user session for an event to trigger this intent.
      * </pre>
      *
-     * <code>repeated string events = 8;</code>
+     * <code>repeated string events = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public Builder addEvents(java.lang.String value) {
       if (value == null) {
@@ -32718,7 +33201,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      * be present in the active user session for an event to trigger this intent.
      * </pre>
      *
-     * <code>repeated string events = 8;</code>
+     * <code>repeated string events = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public Builder addAllEvents(java.lang.Iterable<java.lang.String> values) {
       ensureEventsIsMutable();
@@ -32735,7 +33218,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      * be present in the active user session for an event to trigger this intent.
      * </pre>
      *
-     * <code>repeated string events = 8;</code>
+     * <code>repeated string events = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public Builder clearEvents() {
       events_ = com.google.protobuf.LazyStringArrayList.EMPTY;
@@ -32752,7 +33235,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      * be present in the active user session for an event to trigger this intent.
      * </pre>
      *
-     * <code>repeated string events = 8;</code>
+     * <code>repeated string events = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public Builder addEventsBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -32791,7 +33274,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      * trained on.
      * </pre>
      *
-     * <code>repeated .google.cloud.dialogflow.v2.Intent.TrainingPhrase training_phrases = 9;</code>
+     * <code>
+     * repeated .google.cloud.dialogflow.v2.Intent.TrainingPhrase training_phrases = 9 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public java.util.List<com.google.cloud.dialogflow.v2.Intent.TrainingPhrase>
         getTrainingPhrasesList() {
@@ -32809,7 +33294,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      * trained on.
      * </pre>
      *
-     * <code>repeated .google.cloud.dialogflow.v2.Intent.TrainingPhrase training_phrases = 9;</code>
+     * <code>
+     * repeated .google.cloud.dialogflow.v2.Intent.TrainingPhrase training_phrases = 9 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public int getTrainingPhrasesCount() {
       if (trainingPhrasesBuilder_ == null) {
@@ -32826,7 +33313,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      * trained on.
      * </pre>
      *
-     * <code>repeated .google.cloud.dialogflow.v2.Intent.TrainingPhrase training_phrases = 9;</code>
+     * <code>
+     * repeated .google.cloud.dialogflow.v2.Intent.TrainingPhrase training_phrases = 9 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public com.google.cloud.dialogflow.v2.Intent.TrainingPhrase getTrainingPhrases(int index) {
       if (trainingPhrasesBuilder_ == null) {
@@ -32843,7 +33332,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      * trained on.
      * </pre>
      *
-     * <code>repeated .google.cloud.dialogflow.v2.Intent.TrainingPhrase training_phrases = 9;</code>
+     * <code>
+     * repeated .google.cloud.dialogflow.v2.Intent.TrainingPhrase training_phrases = 9 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder setTrainingPhrases(
         int index, com.google.cloud.dialogflow.v2.Intent.TrainingPhrase value) {
@@ -32867,7 +33358,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      * trained on.
      * </pre>
      *
-     * <code>repeated .google.cloud.dialogflow.v2.Intent.TrainingPhrase training_phrases = 9;</code>
+     * <code>
+     * repeated .google.cloud.dialogflow.v2.Intent.TrainingPhrase training_phrases = 9 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder setTrainingPhrases(
         int index, com.google.cloud.dialogflow.v2.Intent.TrainingPhrase.Builder builderForValue) {
@@ -32888,7 +33381,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      * trained on.
      * </pre>
      *
-     * <code>repeated .google.cloud.dialogflow.v2.Intent.TrainingPhrase training_phrases = 9;</code>
+     * <code>
+     * repeated .google.cloud.dialogflow.v2.Intent.TrainingPhrase training_phrases = 9 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder addTrainingPhrases(com.google.cloud.dialogflow.v2.Intent.TrainingPhrase value) {
       if (trainingPhrasesBuilder_ == null) {
@@ -32911,7 +33406,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      * trained on.
      * </pre>
      *
-     * <code>repeated .google.cloud.dialogflow.v2.Intent.TrainingPhrase training_phrases = 9;</code>
+     * <code>
+     * repeated .google.cloud.dialogflow.v2.Intent.TrainingPhrase training_phrases = 9 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder addTrainingPhrases(
         int index, com.google.cloud.dialogflow.v2.Intent.TrainingPhrase value) {
@@ -32935,7 +33432,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      * trained on.
      * </pre>
      *
-     * <code>repeated .google.cloud.dialogflow.v2.Intent.TrainingPhrase training_phrases = 9;</code>
+     * <code>
+     * repeated .google.cloud.dialogflow.v2.Intent.TrainingPhrase training_phrases = 9 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder addTrainingPhrases(
         com.google.cloud.dialogflow.v2.Intent.TrainingPhrase.Builder builderForValue) {
@@ -32956,7 +33455,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      * trained on.
      * </pre>
      *
-     * <code>repeated .google.cloud.dialogflow.v2.Intent.TrainingPhrase training_phrases = 9;</code>
+     * <code>
+     * repeated .google.cloud.dialogflow.v2.Intent.TrainingPhrase training_phrases = 9 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder addTrainingPhrases(
         int index, com.google.cloud.dialogflow.v2.Intent.TrainingPhrase.Builder builderForValue) {
@@ -32977,7 +33478,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      * trained on.
      * </pre>
      *
-     * <code>repeated .google.cloud.dialogflow.v2.Intent.TrainingPhrase training_phrases = 9;</code>
+     * <code>
+     * repeated .google.cloud.dialogflow.v2.Intent.TrainingPhrase training_phrases = 9 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder addAllTrainingPhrases(
         java.lang.Iterable<? extends com.google.cloud.dialogflow.v2.Intent.TrainingPhrase> values) {
@@ -32998,7 +33501,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      * trained on.
      * </pre>
      *
-     * <code>repeated .google.cloud.dialogflow.v2.Intent.TrainingPhrase training_phrases = 9;</code>
+     * <code>
+     * repeated .google.cloud.dialogflow.v2.Intent.TrainingPhrase training_phrases = 9 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder clearTrainingPhrases() {
       if (trainingPhrasesBuilder_ == null) {
@@ -33018,7 +33523,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      * trained on.
      * </pre>
      *
-     * <code>repeated .google.cloud.dialogflow.v2.Intent.TrainingPhrase training_phrases = 9;</code>
+     * <code>
+     * repeated .google.cloud.dialogflow.v2.Intent.TrainingPhrase training_phrases = 9 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder removeTrainingPhrases(int index) {
       if (trainingPhrasesBuilder_ == null) {
@@ -33038,7 +33545,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      * trained on.
      * </pre>
      *
-     * <code>repeated .google.cloud.dialogflow.v2.Intent.TrainingPhrase training_phrases = 9;</code>
+     * <code>
+     * repeated .google.cloud.dialogflow.v2.Intent.TrainingPhrase training_phrases = 9 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public com.google.cloud.dialogflow.v2.Intent.TrainingPhrase.Builder getTrainingPhrasesBuilder(
         int index) {
@@ -33052,7 +33561,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      * trained on.
      * </pre>
      *
-     * <code>repeated .google.cloud.dialogflow.v2.Intent.TrainingPhrase training_phrases = 9;</code>
+     * <code>
+     * repeated .google.cloud.dialogflow.v2.Intent.TrainingPhrase training_phrases = 9 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public com.google.cloud.dialogflow.v2.Intent.TrainingPhraseOrBuilder
         getTrainingPhrasesOrBuilder(int index) {
@@ -33070,7 +33581,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      * trained on.
      * </pre>
      *
-     * <code>repeated .google.cloud.dialogflow.v2.Intent.TrainingPhrase training_phrases = 9;</code>
+     * <code>
+     * repeated .google.cloud.dialogflow.v2.Intent.TrainingPhrase training_phrases = 9 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public java.util.List<? extends com.google.cloud.dialogflow.v2.Intent.TrainingPhraseOrBuilder>
         getTrainingPhrasesOrBuilderList() {
@@ -33088,7 +33601,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      * trained on.
      * </pre>
      *
-     * <code>repeated .google.cloud.dialogflow.v2.Intent.TrainingPhrase training_phrases = 9;</code>
+     * <code>
+     * repeated .google.cloud.dialogflow.v2.Intent.TrainingPhrase training_phrases = 9 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public com.google.cloud.dialogflow.v2.Intent.TrainingPhrase.Builder
         addTrainingPhrasesBuilder() {
@@ -33103,7 +33618,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      * trained on.
      * </pre>
      *
-     * <code>repeated .google.cloud.dialogflow.v2.Intent.TrainingPhrase training_phrases = 9;</code>
+     * <code>
+     * repeated .google.cloud.dialogflow.v2.Intent.TrainingPhrase training_phrases = 9 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public com.google.cloud.dialogflow.v2.Intent.TrainingPhrase.Builder addTrainingPhrasesBuilder(
         int index) {
@@ -33119,7 +33636,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      * trained on.
      * </pre>
      *
-     * <code>repeated .google.cloud.dialogflow.v2.Intent.TrainingPhrase training_phrases = 9;</code>
+     * <code>
+     * repeated .google.cloud.dialogflow.v2.Intent.TrainingPhrase training_phrases = 9 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public java.util.List<com.google.cloud.dialogflow.v2.Intent.TrainingPhrase.Builder>
         getTrainingPhrasesBuilderList() {
@@ -33155,7 +33674,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      * Note: The action name must not contain whitespaces.
      * </pre>
      *
-     * <code>string action = 10;</code>
+     * <code>string action = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public java.lang.String getAction() {
       java.lang.Object ref = action_;
@@ -33176,7 +33695,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      * Note: The action name must not contain whitespaces.
      * </pre>
      *
-     * <code>string action = 10;</code>
+     * <code>string action = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public com.google.protobuf.ByteString getActionBytes() {
       java.lang.Object ref = action_;
@@ -33197,7 +33716,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      * Note: The action name must not contain whitespaces.
      * </pre>
      *
-     * <code>string action = 10;</code>
+     * <code>string action = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public Builder setAction(java.lang.String value) {
       if (value == null) {
@@ -33216,7 +33735,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      * Note: The action name must not contain whitespaces.
      * </pre>
      *
-     * <code>string action = 10;</code>
+     * <code>string action = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public Builder clearAction() {
 
@@ -33232,7 +33751,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      * Note: The action name must not contain whitespaces.
      * </pre>
      *
-     * <code>string action = 10;</code>
+     * <code>string action = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public Builder setActionBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -33273,7 +33792,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      * Format: `projects/&lt;Project ID&gt;/agent/sessions/-/contexts/&lt;Context ID&gt;`.
      * </pre>
      *
-     * <code>repeated .google.cloud.dialogflow.v2.Context output_contexts = 11;</code>
+     * <code>
+     * repeated .google.cloud.dialogflow.v2.Context output_contexts = 11 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public java.util.List<com.google.cloud.dialogflow.v2.Context> getOutputContextsList() {
       if (outputContextsBuilder_ == null) {
@@ -33293,7 +33814,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      * Format: `projects/&lt;Project ID&gt;/agent/sessions/-/contexts/&lt;Context ID&gt;`.
      * </pre>
      *
-     * <code>repeated .google.cloud.dialogflow.v2.Context output_contexts = 11;</code>
+     * <code>
+     * repeated .google.cloud.dialogflow.v2.Context output_contexts = 11 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public int getOutputContextsCount() {
       if (outputContextsBuilder_ == null) {
@@ -33313,7 +33836,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      * Format: `projects/&lt;Project ID&gt;/agent/sessions/-/contexts/&lt;Context ID&gt;`.
      * </pre>
      *
-     * <code>repeated .google.cloud.dialogflow.v2.Context output_contexts = 11;</code>
+     * <code>
+     * repeated .google.cloud.dialogflow.v2.Context output_contexts = 11 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public com.google.cloud.dialogflow.v2.Context getOutputContexts(int index) {
       if (outputContextsBuilder_ == null) {
@@ -33333,7 +33858,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      * Format: `projects/&lt;Project ID&gt;/agent/sessions/-/contexts/&lt;Context ID&gt;`.
      * </pre>
      *
-     * <code>repeated .google.cloud.dialogflow.v2.Context output_contexts = 11;</code>
+     * <code>
+     * repeated .google.cloud.dialogflow.v2.Context output_contexts = 11 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder setOutputContexts(int index, com.google.cloud.dialogflow.v2.Context value) {
       if (outputContextsBuilder_ == null) {
@@ -33359,7 +33886,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      * Format: `projects/&lt;Project ID&gt;/agent/sessions/-/contexts/&lt;Context ID&gt;`.
      * </pre>
      *
-     * <code>repeated .google.cloud.dialogflow.v2.Context output_contexts = 11;</code>
+     * <code>
+     * repeated .google.cloud.dialogflow.v2.Context output_contexts = 11 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder setOutputContexts(
         int index, com.google.cloud.dialogflow.v2.Context.Builder builderForValue) {
@@ -33383,7 +33912,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      * Format: `projects/&lt;Project ID&gt;/agent/sessions/-/contexts/&lt;Context ID&gt;`.
      * </pre>
      *
-     * <code>repeated .google.cloud.dialogflow.v2.Context output_contexts = 11;</code>
+     * <code>
+     * repeated .google.cloud.dialogflow.v2.Context output_contexts = 11 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder addOutputContexts(com.google.cloud.dialogflow.v2.Context value) {
       if (outputContextsBuilder_ == null) {
@@ -33409,7 +33940,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      * Format: `projects/&lt;Project ID&gt;/agent/sessions/-/contexts/&lt;Context ID&gt;`.
      * </pre>
      *
-     * <code>repeated .google.cloud.dialogflow.v2.Context output_contexts = 11;</code>
+     * <code>
+     * repeated .google.cloud.dialogflow.v2.Context output_contexts = 11 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder addOutputContexts(int index, com.google.cloud.dialogflow.v2.Context value) {
       if (outputContextsBuilder_ == null) {
@@ -33435,7 +33968,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      * Format: `projects/&lt;Project ID&gt;/agent/sessions/-/contexts/&lt;Context ID&gt;`.
      * </pre>
      *
-     * <code>repeated .google.cloud.dialogflow.v2.Context output_contexts = 11;</code>
+     * <code>
+     * repeated .google.cloud.dialogflow.v2.Context output_contexts = 11 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder addOutputContexts(
         com.google.cloud.dialogflow.v2.Context.Builder builderForValue) {
@@ -33459,7 +33994,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      * Format: `projects/&lt;Project ID&gt;/agent/sessions/-/contexts/&lt;Context ID&gt;`.
      * </pre>
      *
-     * <code>repeated .google.cloud.dialogflow.v2.Context output_contexts = 11;</code>
+     * <code>
+     * repeated .google.cloud.dialogflow.v2.Context output_contexts = 11 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder addOutputContexts(
         int index, com.google.cloud.dialogflow.v2.Context.Builder builderForValue) {
@@ -33483,7 +34020,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      * Format: `projects/&lt;Project ID&gt;/agent/sessions/-/contexts/&lt;Context ID&gt;`.
      * </pre>
      *
-     * <code>repeated .google.cloud.dialogflow.v2.Context output_contexts = 11;</code>
+     * <code>
+     * repeated .google.cloud.dialogflow.v2.Context output_contexts = 11 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder addAllOutputContexts(
         java.lang.Iterable<? extends com.google.cloud.dialogflow.v2.Context> values) {
@@ -33507,7 +34046,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      * Format: `projects/&lt;Project ID&gt;/agent/sessions/-/contexts/&lt;Context ID&gt;`.
      * </pre>
      *
-     * <code>repeated .google.cloud.dialogflow.v2.Context output_contexts = 11;</code>
+     * <code>
+     * repeated .google.cloud.dialogflow.v2.Context output_contexts = 11 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder clearOutputContexts() {
       if (outputContextsBuilder_ == null) {
@@ -33530,7 +34071,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      * Format: `projects/&lt;Project ID&gt;/agent/sessions/-/contexts/&lt;Context ID&gt;`.
      * </pre>
      *
-     * <code>repeated .google.cloud.dialogflow.v2.Context output_contexts = 11;</code>
+     * <code>
+     * repeated .google.cloud.dialogflow.v2.Context output_contexts = 11 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder removeOutputContexts(int index) {
       if (outputContextsBuilder_ == null) {
@@ -33553,7 +34096,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      * Format: `projects/&lt;Project ID&gt;/agent/sessions/-/contexts/&lt;Context ID&gt;`.
      * </pre>
      *
-     * <code>repeated .google.cloud.dialogflow.v2.Context output_contexts = 11;</code>
+     * <code>
+     * repeated .google.cloud.dialogflow.v2.Context output_contexts = 11 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public com.google.cloud.dialogflow.v2.Context.Builder getOutputContextsBuilder(int index) {
       return getOutputContextsFieldBuilder().getBuilder(index);
@@ -33569,7 +34114,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      * Format: `projects/&lt;Project ID&gt;/agent/sessions/-/contexts/&lt;Context ID&gt;`.
      * </pre>
      *
-     * <code>repeated .google.cloud.dialogflow.v2.Context output_contexts = 11;</code>
+     * <code>
+     * repeated .google.cloud.dialogflow.v2.Context output_contexts = 11 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public com.google.cloud.dialogflow.v2.ContextOrBuilder getOutputContextsOrBuilder(int index) {
       if (outputContextsBuilder_ == null) {
@@ -33589,7 +34136,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      * Format: `projects/&lt;Project ID&gt;/agent/sessions/-/contexts/&lt;Context ID&gt;`.
      * </pre>
      *
-     * <code>repeated .google.cloud.dialogflow.v2.Context output_contexts = 11;</code>
+     * <code>
+     * repeated .google.cloud.dialogflow.v2.Context output_contexts = 11 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public java.util.List<? extends com.google.cloud.dialogflow.v2.ContextOrBuilder>
         getOutputContextsOrBuilderList() {
@@ -33610,7 +34159,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      * Format: `projects/&lt;Project ID&gt;/agent/sessions/-/contexts/&lt;Context ID&gt;`.
      * </pre>
      *
-     * <code>repeated .google.cloud.dialogflow.v2.Context output_contexts = 11;</code>
+     * <code>
+     * repeated .google.cloud.dialogflow.v2.Context output_contexts = 11 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public com.google.cloud.dialogflow.v2.Context.Builder addOutputContextsBuilder() {
       return getOutputContextsFieldBuilder()
@@ -33627,7 +34178,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      * Format: `projects/&lt;Project ID&gt;/agent/sessions/-/contexts/&lt;Context ID&gt;`.
      * </pre>
      *
-     * <code>repeated .google.cloud.dialogflow.v2.Context output_contexts = 11;</code>
+     * <code>
+     * repeated .google.cloud.dialogflow.v2.Context output_contexts = 11 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public com.google.cloud.dialogflow.v2.Context.Builder addOutputContextsBuilder(int index) {
       return getOutputContextsFieldBuilder()
@@ -33644,7 +34197,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      * Format: `projects/&lt;Project ID&gt;/agent/sessions/-/contexts/&lt;Context ID&gt;`.
      * </pre>
      *
-     * <code>repeated .google.cloud.dialogflow.v2.Context output_contexts = 11;</code>
+     * <code>
+     * repeated .google.cloud.dialogflow.v2.Context output_contexts = 11 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public java.util.List<com.google.cloud.dialogflow.v2.Context.Builder>
         getOutputContextsBuilderList() {
@@ -33680,7 +34235,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      * session when this intent is matched.
      * </pre>
      *
-     * <code>bool reset_contexts = 12;</code>
+     * <code>bool reset_contexts = 12 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public boolean getResetContexts() {
       return resetContexts_;
@@ -33693,7 +34248,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      * session when this intent is matched.
      * </pre>
      *
-     * <code>bool reset_contexts = 12;</code>
+     * <code>bool reset_contexts = 12 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public Builder setResetContexts(boolean value) {
 
@@ -33709,7 +34264,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      * session when this intent is matched.
      * </pre>
      *
-     * <code>bool reset_contexts = 12;</code>
+     * <code>bool reset_contexts = 12 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public Builder clearResetContexts() {
 
@@ -33742,7 +34297,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      * Optional. The collection of parameters associated with the intent.
      * </pre>
      *
-     * <code>repeated .google.cloud.dialogflow.v2.Intent.Parameter parameters = 13;</code>
+     * <code>
+     * repeated .google.cloud.dialogflow.v2.Intent.Parameter parameters = 13 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public java.util.List<com.google.cloud.dialogflow.v2.Intent.Parameter> getParametersList() {
       if (parametersBuilder_ == null) {
@@ -33758,7 +34315,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      * Optional. The collection of parameters associated with the intent.
      * </pre>
      *
-     * <code>repeated .google.cloud.dialogflow.v2.Intent.Parameter parameters = 13;</code>
+     * <code>
+     * repeated .google.cloud.dialogflow.v2.Intent.Parameter parameters = 13 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public int getParametersCount() {
       if (parametersBuilder_ == null) {
@@ -33774,7 +34333,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      * Optional. The collection of parameters associated with the intent.
      * </pre>
      *
-     * <code>repeated .google.cloud.dialogflow.v2.Intent.Parameter parameters = 13;</code>
+     * <code>
+     * repeated .google.cloud.dialogflow.v2.Intent.Parameter parameters = 13 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public com.google.cloud.dialogflow.v2.Intent.Parameter getParameters(int index) {
       if (parametersBuilder_ == null) {
@@ -33790,7 +34351,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      * Optional. The collection of parameters associated with the intent.
      * </pre>
      *
-     * <code>repeated .google.cloud.dialogflow.v2.Intent.Parameter parameters = 13;</code>
+     * <code>
+     * repeated .google.cloud.dialogflow.v2.Intent.Parameter parameters = 13 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder setParameters(int index, com.google.cloud.dialogflow.v2.Intent.Parameter value) {
       if (parametersBuilder_ == null) {
@@ -33812,7 +34375,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      * Optional. The collection of parameters associated with the intent.
      * </pre>
      *
-     * <code>repeated .google.cloud.dialogflow.v2.Intent.Parameter parameters = 13;</code>
+     * <code>
+     * repeated .google.cloud.dialogflow.v2.Intent.Parameter parameters = 13 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder setParameters(
         int index, com.google.cloud.dialogflow.v2.Intent.Parameter.Builder builderForValue) {
@@ -33832,7 +34397,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      * Optional. The collection of parameters associated with the intent.
      * </pre>
      *
-     * <code>repeated .google.cloud.dialogflow.v2.Intent.Parameter parameters = 13;</code>
+     * <code>
+     * repeated .google.cloud.dialogflow.v2.Intent.Parameter parameters = 13 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder addParameters(com.google.cloud.dialogflow.v2.Intent.Parameter value) {
       if (parametersBuilder_ == null) {
@@ -33854,7 +34421,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      * Optional. The collection of parameters associated with the intent.
      * </pre>
      *
-     * <code>repeated .google.cloud.dialogflow.v2.Intent.Parameter parameters = 13;</code>
+     * <code>
+     * repeated .google.cloud.dialogflow.v2.Intent.Parameter parameters = 13 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder addParameters(int index, com.google.cloud.dialogflow.v2.Intent.Parameter value) {
       if (parametersBuilder_ == null) {
@@ -33876,7 +34445,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      * Optional. The collection of parameters associated with the intent.
      * </pre>
      *
-     * <code>repeated .google.cloud.dialogflow.v2.Intent.Parameter parameters = 13;</code>
+     * <code>
+     * repeated .google.cloud.dialogflow.v2.Intent.Parameter parameters = 13 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder addParameters(
         com.google.cloud.dialogflow.v2.Intent.Parameter.Builder builderForValue) {
@@ -33896,7 +34467,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      * Optional. The collection of parameters associated with the intent.
      * </pre>
      *
-     * <code>repeated .google.cloud.dialogflow.v2.Intent.Parameter parameters = 13;</code>
+     * <code>
+     * repeated .google.cloud.dialogflow.v2.Intent.Parameter parameters = 13 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder addParameters(
         int index, com.google.cloud.dialogflow.v2.Intent.Parameter.Builder builderForValue) {
@@ -33916,7 +34489,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      * Optional. The collection of parameters associated with the intent.
      * </pre>
      *
-     * <code>repeated .google.cloud.dialogflow.v2.Intent.Parameter parameters = 13;</code>
+     * <code>
+     * repeated .google.cloud.dialogflow.v2.Intent.Parameter parameters = 13 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder addAllParameters(
         java.lang.Iterable<? extends com.google.cloud.dialogflow.v2.Intent.Parameter> values) {
@@ -33936,7 +34511,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      * Optional. The collection of parameters associated with the intent.
      * </pre>
      *
-     * <code>repeated .google.cloud.dialogflow.v2.Intent.Parameter parameters = 13;</code>
+     * <code>
+     * repeated .google.cloud.dialogflow.v2.Intent.Parameter parameters = 13 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder clearParameters() {
       if (parametersBuilder_ == null) {
@@ -33955,7 +34532,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      * Optional. The collection of parameters associated with the intent.
      * </pre>
      *
-     * <code>repeated .google.cloud.dialogflow.v2.Intent.Parameter parameters = 13;</code>
+     * <code>
+     * repeated .google.cloud.dialogflow.v2.Intent.Parameter parameters = 13 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder removeParameters(int index) {
       if (parametersBuilder_ == null) {
@@ -33974,7 +34553,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      * Optional. The collection of parameters associated with the intent.
      * </pre>
      *
-     * <code>repeated .google.cloud.dialogflow.v2.Intent.Parameter parameters = 13;</code>
+     * <code>
+     * repeated .google.cloud.dialogflow.v2.Intent.Parameter parameters = 13 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public com.google.cloud.dialogflow.v2.Intent.Parameter.Builder getParametersBuilder(int index) {
       return getParametersFieldBuilder().getBuilder(index);
@@ -33986,7 +34567,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      * Optional. The collection of parameters associated with the intent.
      * </pre>
      *
-     * <code>repeated .google.cloud.dialogflow.v2.Intent.Parameter parameters = 13;</code>
+     * <code>
+     * repeated .google.cloud.dialogflow.v2.Intent.Parameter parameters = 13 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public com.google.cloud.dialogflow.v2.Intent.ParameterOrBuilder getParametersOrBuilder(
         int index) {
@@ -34003,7 +34586,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      * Optional. The collection of parameters associated with the intent.
      * </pre>
      *
-     * <code>repeated .google.cloud.dialogflow.v2.Intent.Parameter parameters = 13;</code>
+     * <code>
+     * repeated .google.cloud.dialogflow.v2.Intent.Parameter parameters = 13 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public java.util.List<? extends com.google.cloud.dialogflow.v2.Intent.ParameterOrBuilder>
         getParametersOrBuilderList() {
@@ -34020,7 +34605,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      * Optional. The collection of parameters associated with the intent.
      * </pre>
      *
-     * <code>repeated .google.cloud.dialogflow.v2.Intent.Parameter parameters = 13;</code>
+     * <code>
+     * repeated .google.cloud.dialogflow.v2.Intent.Parameter parameters = 13 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public com.google.cloud.dialogflow.v2.Intent.Parameter.Builder addParametersBuilder() {
       return getParametersFieldBuilder()
@@ -34033,7 +34620,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      * Optional. The collection of parameters associated with the intent.
      * </pre>
      *
-     * <code>repeated .google.cloud.dialogflow.v2.Intent.Parameter parameters = 13;</code>
+     * <code>
+     * repeated .google.cloud.dialogflow.v2.Intent.Parameter parameters = 13 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public com.google.cloud.dialogflow.v2.Intent.Parameter.Builder addParametersBuilder(int index) {
       return getParametersFieldBuilder()
@@ -34046,7 +34635,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      * Optional. The collection of parameters associated with the intent.
      * </pre>
      *
-     * <code>repeated .google.cloud.dialogflow.v2.Intent.Parameter parameters = 13;</code>
+     * <code>
+     * repeated .google.cloud.dialogflow.v2.Intent.Parameter parameters = 13 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public java.util.List<com.google.cloud.dialogflow.v2.Intent.Parameter.Builder>
         getParametersBuilderList() {
@@ -34095,7 +34686,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      * `Response` field in the Dialogflow console.
      * </pre>
      *
-     * <code>repeated .google.cloud.dialogflow.v2.Intent.Message messages = 14;</code>
+     * <code>
+     * repeated .google.cloud.dialogflow.v2.Intent.Message messages = 14 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public java.util.List<com.google.cloud.dialogflow.v2.Intent.Message> getMessagesList() {
       if (messagesBuilder_ == null) {
@@ -34112,7 +34705,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      * `Response` field in the Dialogflow console.
      * </pre>
      *
-     * <code>repeated .google.cloud.dialogflow.v2.Intent.Message messages = 14;</code>
+     * <code>
+     * repeated .google.cloud.dialogflow.v2.Intent.Message messages = 14 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public int getMessagesCount() {
       if (messagesBuilder_ == null) {
@@ -34129,7 +34724,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      * `Response` field in the Dialogflow console.
      * </pre>
      *
-     * <code>repeated .google.cloud.dialogflow.v2.Intent.Message messages = 14;</code>
+     * <code>
+     * repeated .google.cloud.dialogflow.v2.Intent.Message messages = 14 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public com.google.cloud.dialogflow.v2.Intent.Message getMessages(int index) {
       if (messagesBuilder_ == null) {
@@ -34146,7 +34743,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      * `Response` field in the Dialogflow console.
      * </pre>
      *
-     * <code>repeated .google.cloud.dialogflow.v2.Intent.Message messages = 14;</code>
+     * <code>
+     * repeated .google.cloud.dialogflow.v2.Intent.Message messages = 14 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder setMessages(int index, com.google.cloud.dialogflow.v2.Intent.Message value) {
       if (messagesBuilder_ == null) {
@@ -34169,7 +34768,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      * `Response` field in the Dialogflow console.
      * </pre>
      *
-     * <code>repeated .google.cloud.dialogflow.v2.Intent.Message messages = 14;</code>
+     * <code>
+     * repeated .google.cloud.dialogflow.v2.Intent.Message messages = 14 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder setMessages(
         int index, com.google.cloud.dialogflow.v2.Intent.Message.Builder builderForValue) {
@@ -34190,7 +34791,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      * `Response` field in the Dialogflow console.
      * </pre>
      *
-     * <code>repeated .google.cloud.dialogflow.v2.Intent.Message messages = 14;</code>
+     * <code>
+     * repeated .google.cloud.dialogflow.v2.Intent.Message messages = 14 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder addMessages(com.google.cloud.dialogflow.v2.Intent.Message value) {
       if (messagesBuilder_ == null) {
@@ -34213,7 +34816,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      * `Response` field in the Dialogflow console.
      * </pre>
      *
-     * <code>repeated .google.cloud.dialogflow.v2.Intent.Message messages = 14;</code>
+     * <code>
+     * repeated .google.cloud.dialogflow.v2.Intent.Message messages = 14 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder addMessages(int index, com.google.cloud.dialogflow.v2.Intent.Message value) {
       if (messagesBuilder_ == null) {
@@ -34236,7 +34841,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      * `Response` field in the Dialogflow console.
      * </pre>
      *
-     * <code>repeated .google.cloud.dialogflow.v2.Intent.Message messages = 14;</code>
+     * <code>
+     * repeated .google.cloud.dialogflow.v2.Intent.Message messages = 14 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder addMessages(
         com.google.cloud.dialogflow.v2.Intent.Message.Builder builderForValue) {
@@ -34257,7 +34864,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      * `Response` field in the Dialogflow console.
      * </pre>
      *
-     * <code>repeated .google.cloud.dialogflow.v2.Intent.Message messages = 14;</code>
+     * <code>
+     * repeated .google.cloud.dialogflow.v2.Intent.Message messages = 14 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder addMessages(
         int index, com.google.cloud.dialogflow.v2.Intent.Message.Builder builderForValue) {
@@ -34278,7 +34887,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      * `Response` field in the Dialogflow console.
      * </pre>
      *
-     * <code>repeated .google.cloud.dialogflow.v2.Intent.Message messages = 14;</code>
+     * <code>
+     * repeated .google.cloud.dialogflow.v2.Intent.Message messages = 14 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder addAllMessages(
         java.lang.Iterable<? extends com.google.cloud.dialogflow.v2.Intent.Message> values) {
@@ -34299,7 +34910,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      * `Response` field in the Dialogflow console.
      * </pre>
      *
-     * <code>repeated .google.cloud.dialogflow.v2.Intent.Message messages = 14;</code>
+     * <code>
+     * repeated .google.cloud.dialogflow.v2.Intent.Message messages = 14 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder clearMessages() {
       if (messagesBuilder_ == null) {
@@ -34319,7 +34932,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      * `Response` field in the Dialogflow console.
      * </pre>
      *
-     * <code>repeated .google.cloud.dialogflow.v2.Intent.Message messages = 14;</code>
+     * <code>
+     * repeated .google.cloud.dialogflow.v2.Intent.Message messages = 14 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder removeMessages(int index) {
       if (messagesBuilder_ == null) {
@@ -34339,7 +34954,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      * `Response` field in the Dialogflow console.
      * </pre>
      *
-     * <code>repeated .google.cloud.dialogflow.v2.Intent.Message messages = 14;</code>
+     * <code>
+     * repeated .google.cloud.dialogflow.v2.Intent.Message messages = 14 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public com.google.cloud.dialogflow.v2.Intent.Message.Builder getMessagesBuilder(int index) {
       return getMessagesFieldBuilder().getBuilder(index);
@@ -34352,7 +34969,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      * `Response` field in the Dialogflow console.
      * </pre>
      *
-     * <code>repeated .google.cloud.dialogflow.v2.Intent.Message messages = 14;</code>
+     * <code>
+     * repeated .google.cloud.dialogflow.v2.Intent.Message messages = 14 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public com.google.cloud.dialogflow.v2.Intent.MessageOrBuilder getMessagesOrBuilder(int index) {
       if (messagesBuilder_ == null) {
@@ -34369,7 +34988,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      * `Response` field in the Dialogflow console.
      * </pre>
      *
-     * <code>repeated .google.cloud.dialogflow.v2.Intent.Message messages = 14;</code>
+     * <code>
+     * repeated .google.cloud.dialogflow.v2.Intent.Message messages = 14 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public java.util.List<? extends com.google.cloud.dialogflow.v2.Intent.MessageOrBuilder>
         getMessagesOrBuilderList() {
@@ -34387,7 +35008,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      * `Response` field in the Dialogflow console.
      * </pre>
      *
-     * <code>repeated .google.cloud.dialogflow.v2.Intent.Message messages = 14;</code>
+     * <code>
+     * repeated .google.cloud.dialogflow.v2.Intent.Message messages = 14 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public com.google.cloud.dialogflow.v2.Intent.Message.Builder addMessagesBuilder() {
       return getMessagesFieldBuilder()
@@ -34401,7 +35024,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      * `Response` field in the Dialogflow console.
      * </pre>
      *
-     * <code>repeated .google.cloud.dialogflow.v2.Intent.Message messages = 14;</code>
+     * <code>
+     * repeated .google.cloud.dialogflow.v2.Intent.Message messages = 14 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public com.google.cloud.dialogflow.v2.Intent.Message.Builder addMessagesBuilder(int index) {
       return getMessagesFieldBuilder()
@@ -34415,7 +35040,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      * `Response` field in the Dialogflow console.
      * </pre>
      *
-     * <code>repeated .google.cloud.dialogflow.v2.Intent.Message messages = 14;</code>
+     * <code>
+     * repeated .google.cloud.dialogflow.v2.Intent.Message messages = 14 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public java.util.List<com.google.cloud.dialogflow.v2.Intent.Message.Builder>
         getMessagesBuilderList() {
@@ -34458,7 +35085,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.dialogflow.v2.Intent.Message.Platform default_response_platforms = 15;
+     * repeated .google.cloud.dialogflow.v2.Intent.Message.Platform default_response_platforms = 15 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public java.util.List<com.google.cloud.dialogflow.v2.Intent.Message.Platform>
@@ -34476,7 +35103,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.dialogflow.v2.Intent.Message.Platform default_response_platforms = 15;
+     * repeated .google.cloud.dialogflow.v2.Intent.Message.Platform default_response_platforms = 15 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public int getDefaultResponsePlatformsCount() {
@@ -34491,7 +35118,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.dialogflow.v2.Intent.Message.Platform default_response_platforms = 15;
+     * repeated .google.cloud.dialogflow.v2.Intent.Message.Platform default_response_platforms = 15 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public com.google.cloud.dialogflow.v2.Intent.Message.Platform getDefaultResponsePlatforms(
@@ -34507,7 +35134,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.dialogflow.v2.Intent.Message.Platform default_response_platforms = 15;
+     * repeated .google.cloud.dialogflow.v2.Intent.Message.Platform default_response_platforms = 15 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public Builder setDefaultResponsePlatforms(
@@ -34529,7 +35156,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.dialogflow.v2.Intent.Message.Platform default_response_platforms = 15;
+     * repeated .google.cloud.dialogflow.v2.Intent.Message.Platform default_response_platforms = 15 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public Builder addDefaultResponsePlatforms(
@@ -34551,7 +35178,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.dialogflow.v2.Intent.Message.Platform default_response_platforms = 15;
+     * repeated .google.cloud.dialogflow.v2.Intent.Message.Platform default_response_platforms = 15 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public Builder addAllDefaultResponsePlatforms(
@@ -34573,7 +35200,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.dialogflow.v2.Intent.Message.Platform default_response_platforms = 15;
+     * repeated .google.cloud.dialogflow.v2.Intent.Message.Platform default_response_platforms = 15 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public Builder clearDefaultResponsePlatforms() {
@@ -34591,7 +35218,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.dialogflow.v2.Intent.Message.Platform default_response_platforms = 15;
+     * repeated .google.cloud.dialogflow.v2.Intent.Message.Platform default_response_platforms = 15 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public java.util.List<java.lang.Integer> getDefaultResponsePlatformsValueList() {
@@ -34606,7 +35233,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.dialogflow.v2.Intent.Message.Platform default_response_platforms = 15;
+     * repeated .google.cloud.dialogflow.v2.Intent.Message.Platform default_response_platforms = 15 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public int getDefaultResponsePlatformsValue(int index) {
@@ -34621,7 +35248,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.dialogflow.v2.Intent.Message.Platform default_response_platforms = 15;
+     * repeated .google.cloud.dialogflow.v2.Intent.Message.Platform default_response_platforms = 15 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public Builder setDefaultResponsePlatformsValue(int index, int value) {
@@ -34639,7 +35266,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.dialogflow.v2.Intent.Message.Platform default_response_platforms = 15;
+     * repeated .google.cloud.dialogflow.v2.Intent.Message.Platform default_response_platforms = 15 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public Builder addDefaultResponsePlatformsValue(int value) {
@@ -34657,7 +35284,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.dialogflow.v2.Intent.Message.Platform default_response_platforms = 15;
+     * repeated .google.cloud.dialogflow.v2.Intent.Message.Platform default_response_platforms = 15 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public Builder addAllDefaultResponsePlatformsValue(

@@ -1,0 +1,13 @@
+{
+  "name": "clouderrorreporting",
+  "name_pretty": "Stackdriver Error Reporting",
+  "product_documentation": "https://cloud.google.com/error-reporting",
+  "client_documentation": "https://googleapis.dev/java/google-cloud-clients/latest/index.html?com/google/cloud/errorreporting/v1beta1/package-summary.html",
+  "issue_tracker": "https://issuetracker.google.com/savedsearches/559780",
+  "release_level": "beta",
+  "language": "java",
+  "repo": "googleapis/google-cloud-java",
+  "repo_short": "google-cloud-java",
+  "distribution_name": "com.google.cloud:google-cloud-errorreporting",
+  "api_id": "clouderrorreporting.googleapis.com"
+}

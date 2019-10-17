@@ -129,11 +129,13 @@ public final class UpdateTagTemplateFieldRequest extends com.google.protobuf.Gen
    *
    *
    * <pre>
-   * Required. The name of the tag template field. For example,
-   * "projects/{project_id}/locations/{location}/tagTemplates/{tag_template_id}/fields/{tag_template_field_id}".
+   * Required. The name of the tag template field. Example:
+   * * projects/{project_id}/locations/{location}/tagTemplates/{tag_template_id}/fields/{tag_template_field_id}
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>
+   * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    */
   public java.lang.String getName() {
     java.lang.Object ref = name_;
@@ -150,11 +152,13 @@ public final class UpdateTagTemplateFieldRequest extends com.google.protobuf.Gen
    *
    *
    * <pre>
-   * Required. The name of the tag template field. For example,
-   * "projects/{project_id}/locations/{location}/tagTemplates/{tag_template_id}/fields/{tag_template_field_id}".
+   * Required. The name of the tag template field. Example:
+   * * projects/{project_id}/locations/{location}/tagTemplates/{tag_template_id}/fields/{tag_template_field_id}
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>
+   * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    */
   public com.google.protobuf.ByteString getNameBytes() {
     java.lang.Object ref = name_;
@@ -177,7 +181,9 @@ public final class UpdateTagTemplateFieldRequest extends com.google.protobuf.Gen
    * Required. The template to update.
    * </pre>
    *
-   * <code>.google.cloud.datacatalog.v1beta1.TagTemplateField tag_template_field = 2;</code>
+   * <code>
+   * .google.cloud.datacatalog.v1beta1.TagTemplateField tag_template_field = 2 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   public boolean hasTagTemplateField() {
     return tagTemplateField_ != null;
@@ -189,7 +195,9 @@ public final class UpdateTagTemplateFieldRequest extends com.google.protobuf.Gen
    * Required. The template to update.
    * </pre>
    *
-   * <code>.google.cloud.datacatalog.v1beta1.TagTemplateField tag_template_field = 2;</code>
+   * <code>
+   * .google.cloud.datacatalog.v1beta1.TagTemplateField tag_template_field = 2 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   public com.google.cloud.datacatalog.TagTemplateField getTagTemplateField() {
     return tagTemplateField_ == null
@@ -203,7 +211,9 @@ public final class UpdateTagTemplateFieldRequest extends com.google.protobuf.Gen
    * Required. The template to update.
    * </pre>
    *
-   * <code>.google.cloud.datacatalog.v1beta1.TagTemplateField tag_template_field = 2;</code>
+   * <code>
+   * .google.cloud.datacatalog.v1beta1.TagTemplateField tag_template_field = 2 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   public com.google.cloud.datacatalog.TagTemplateFieldOrBuilder getTagTemplateFieldOrBuilder() {
     return getTagTemplateField();
@@ -215,11 +225,12 @@ public final class UpdateTagTemplateFieldRequest extends com.google.protobuf.Gen
    *
    *
    * <pre>
-   * Optional. The field mask specifies the parts of the template to overwrite.
+   * Optional. The field mask specifies the parts of the template to be updated.
    * Allowed fields:
-   *   * display_name
-   *   * type.enum_type
-   * If update_mask is omitted, all of the allowed fields above will be updated.
+   *   * `display_name`
+   *   * `type.enum_type`
+   * If `update_mask` is not set or empty, all of the allowed fields above will
+   * be updated.
    * When updating an enum type, the provided values will be merged with the
    * existing values. Therefore, enum values can only be added, existing enum
    * values cannot be deleted nor renamed.
@@ -234,11 +245,12 @@ public final class UpdateTagTemplateFieldRequest extends com.google.protobuf.Gen
    *
    *
    * <pre>
-   * Optional. The field mask specifies the parts of the template to overwrite.
+   * Optional. The field mask specifies the parts of the template to be updated.
    * Allowed fields:
-   *   * display_name
-   *   * type.enum_type
-   * If update_mask is omitted, all of the allowed fields above will be updated.
+   *   * `display_name`
+   *   * `type.enum_type`
+   * If `update_mask` is not set or empty, all of the allowed fields above will
+   * be updated.
    * When updating an enum type, the provided values will be merged with the
    * existing values. Therefore, enum values can only be added, existing enum
    * values cannot be deleted nor renamed.
@@ -253,11 +265,12 @@ public final class UpdateTagTemplateFieldRequest extends com.google.protobuf.Gen
    *
    *
    * <pre>
-   * Optional. The field mask specifies the parts of the template to overwrite.
+   * Optional. The field mask specifies the parts of the template to be updated.
    * Allowed fields:
-   *   * display_name
-   *   * type.enum_type
-   * If update_mask is omitted, all of the allowed fields above will be updated.
+   *   * `display_name`
+   *   * `type.enum_type`
+   * If `update_mask` is not set or empty, all of the allowed fields above will
+   * be updated.
    * When updating an enum type, the provided values will be merged with the
    * existing values. Therefore, enum values can only be added, existing enum
    * values cannot be deleted nor renamed.
@@ -650,11 +663,13 @@ public final class UpdateTagTemplateFieldRequest extends com.google.protobuf.Gen
      *
      *
      * <pre>
-     * Required. The name of the tag template field. For example,
-     * "projects/{project_id}/locations/{location}/tagTemplates/{tag_template_id}/fields/{tag_template_field_id}".
+     * Required. The name of the tag template field. Example:
+     * * projects/{project_id}/locations/{location}/tagTemplates/{tag_template_id}/fields/{tag_template_field_id}
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>
+     * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      */
     public java.lang.String getName() {
       java.lang.Object ref = name_;
@@ -671,11 +686,13 @@ public final class UpdateTagTemplateFieldRequest extends com.google.protobuf.Gen
      *
      *
      * <pre>
-     * Required. The name of the tag template field. For example,
-     * "projects/{project_id}/locations/{location}/tagTemplates/{tag_template_id}/fields/{tag_template_field_id}".
+     * Required. The name of the tag template field. Example:
+     * * projects/{project_id}/locations/{location}/tagTemplates/{tag_template_id}/fields/{tag_template_field_id}
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>
+     * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      */
     public com.google.protobuf.ByteString getNameBytes() {
       java.lang.Object ref = name_;
@@ -692,11 +709,13 @@ public final class UpdateTagTemplateFieldRequest extends com.google.protobuf.Gen
      *
      *
      * <pre>
-     * Required. The name of the tag template field. For example,
-     * "projects/{project_id}/locations/{location}/tagTemplates/{tag_template_id}/fields/{tag_template_field_id}".
+     * Required. The name of the tag template field. Example:
+     * * projects/{project_id}/locations/{location}/tagTemplates/{tag_template_id}/fields/{tag_template_field_id}
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>
+     * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      */
     public Builder setName(java.lang.String value) {
       if (value == null) {
@@ -711,11 +730,13 @@ public final class UpdateTagTemplateFieldRequest extends com.google.protobuf.Gen
      *
      *
      * <pre>
-     * Required. The name of the tag template field. For example,
-     * "projects/{project_id}/locations/{location}/tagTemplates/{tag_template_id}/fields/{tag_template_field_id}".
+     * Required. The name of the tag template field. Example:
+     * * projects/{project_id}/locations/{location}/tagTemplates/{tag_template_id}/fields/{tag_template_field_id}
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>
+     * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      */
     public Builder clearName() {
 
@@ -727,11 +748,13 @@ public final class UpdateTagTemplateFieldRequest extends com.google.protobuf.Gen
      *
      *
      * <pre>
-     * Required. The name of the tag template field. For example,
-     * "projects/{project_id}/locations/{location}/tagTemplates/{tag_template_id}/fields/{tag_template_field_id}".
+     * Required. The name of the tag template field. Example:
+     * * projects/{project_id}/locations/{location}/tagTemplates/{tag_template_id}/fields/{tag_template_field_id}
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>
+     * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      */
     public Builder setNameBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -757,7 +780,9 @@ public final class UpdateTagTemplateFieldRequest extends com.google.protobuf.Gen
      * Required. The template to update.
      * </pre>
      *
-     * <code>.google.cloud.datacatalog.v1beta1.TagTemplateField tag_template_field = 2;</code>
+     * <code>
+     * .google.cloud.datacatalog.v1beta1.TagTemplateField tag_template_field = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public boolean hasTagTemplateField() {
       return tagTemplateFieldBuilder_ != null || tagTemplateField_ != null;
@@ -769,7 +794,9 @@ public final class UpdateTagTemplateFieldRequest extends com.google.protobuf.Gen
      * Required. The template to update.
      * </pre>
      *
-     * <code>.google.cloud.datacatalog.v1beta1.TagTemplateField tag_template_field = 2;</code>
+     * <code>
+     * .google.cloud.datacatalog.v1beta1.TagTemplateField tag_template_field = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public com.google.cloud.datacatalog.TagTemplateField getTagTemplateField() {
       if (tagTemplateFieldBuilder_ == null) {
@@ -787,7 +814,9 @@ public final class UpdateTagTemplateFieldRequest extends com.google.protobuf.Gen
      * Required. The template to update.
      * </pre>
      *
-     * <code>.google.cloud.datacatalog.v1beta1.TagTemplateField tag_template_field = 2;</code>
+     * <code>
+     * .google.cloud.datacatalog.v1beta1.TagTemplateField tag_template_field = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder setTagTemplateField(com.google.cloud.datacatalog.TagTemplateField value) {
       if (tagTemplateFieldBuilder_ == null) {
@@ -809,7 +838,9 @@ public final class UpdateTagTemplateFieldRequest extends com.google.protobuf.Gen
      * Required. The template to update.
      * </pre>
      *
-     * <code>.google.cloud.datacatalog.v1beta1.TagTemplateField tag_template_field = 2;</code>
+     * <code>
+     * .google.cloud.datacatalog.v1beta1.TagTemplateField tag_template_field = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder setTagTemplateField(
         com.google.cloud.datacatalog.TagTemplateField.Builder builderForValue) {
@@ -829,7 +860,9 @@ public final class UpdateTagTemplateFieldRequest extends com.google.protobuf.Gen
      * Required. The template to update.
      * </pre>
      *
-     * <code>.google.cloud.datacatalog.v1beta1.TagTemplateField tag_template_field = 2;</code>
+     * <code>
+     * .google.cloud.datacatalog.v1beta1.TagTemplateField tag_template_field = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder mergeTagTemplateField(com.google.cloud.datacatalog.TagTemplateField value) {
       if (tagTemplateFieldBuilder_ == null) {
@@ -855,7 +888,9 @@ public final class UpdateTagTemplateFieldRequest extends com.google.protobuf.Gen
      * Required. The template to update.
      * </pre>
      *
-     * <code>.google.cloud.datacatalog.v1beta1.TagTemplateField tag_template_field = 2;</code>
+     * <code>
+     * .google.cloud.datacatalog.v1beta1.TagTemplateField tag_template_field = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder clearTagTemplateField() {
       if (tagTemplateFieldBuilder_ == null) {
@@ -875,7 +910,9 @@ public final class UpdateTagTemplateFieldRequest extends com.google.protobuf.Gen
      * Required. The template to update.
      * </pre>
      *
-     * <code>.google.cloud.datacatalog.v1beta1.TagTemplateField tag_template_field = 2;</code>
+     * <code>
+     * .google.cloud.datacatalog.v1beta1.TagTemplateField tag_template_field = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public com.google.cloud.datacatalog.TagTemplateField.Builder getTagTemplateFieldBuilder() {
 
@@ -889,7 +926,9 @@ public final class UpdateTagTemplateFieldRequest extends com.google.protobuf.Gen
      * Required. The template to update.
      * </pre>
      *
-     * <code>.google.cloud.datacatalog.v1beta1.TagTemplateField tag_template_field = 2;</code>
+     * <code>
+     * .google.cloud.datacatalog.v1beta1.TagTemplateField tag_template_field = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public com.google.cloud.datacatalog.TagTemplateFieldOrBuilder getTagTemplateFieldOrBuilder() {
       if (tagTemplateFieldBuilder_ != null) {
@@ -907,7 +946,9 @@ public final class UpdateTagTemplateFieldRequest extends com.google.protobuf.Gen
      * Required. The template to update.
      * </pre>
      *
-     * <code>.google.cloud.datacatalog.v1beta1.TagTemplateField tag_template_field = 2;</code>
+     * <code>
+     * .google.cloud.datacatalog.v1beta1.TagTemplateField tag_template_field = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.datacatalog.TagTemplateField,
@@ -936,11 +977,12 @@ public final class UpdateTagTemplateFieldRequest extends com.google.protobuf.Gen
      *
      *
      * <pre>
-     * Optional. The field mask specifies the parts of the template to overwrite.
+     * Optional. The field mask specifies the parts of the template to be updated.
      * Allowed fields:
-     *   * display_name
-     *   * type.enum_type
-     * If update_mask is omitted, all of the allowed fields above will be updated.
+     *   * `display_name`
+     *   * `type.enum_type`
+     * If `update_mask` is not set or empty, all of the allowed fields above will
+     * be updated.
      * When updating an enum type, the provided values will be merged with the
      * existing values. Therefore, enum values can only be added, existing enum
      * values cannot be deleted nor renamed.
@@ -955,11 +997,12 @@ public final class UpdateTagTemplateFieldRequest extends com.google.protobuf.Gen
      *
      *
      * <pre>
-     * Optional. The field mask specifies the parts of the template to overwrite.
+     * Optional. The field mask specifies the parts of the template to be updated.
      * Allowed fields:
-     *   * display_name
-     *   * type.enum_type
-     * If update_mask is omitted, all of the allowed fields above will be updated.
+     *   * `display_name`
+     *   * `type.enum_type`
+     * If `update_mask` is not set or empty, all of the allowed fields above will
+     * be updated.
      * When updating an enum type, the provided values will be merged with the
      * existing values. Therefore, enum values can only be added, existing enum
      * values cannot be deleted nor renamed.
@@ -980,11 +1023,12 @@ public final class UpdateTagTemplateFieldRequest extends com.google.protobuf.Gen
      *
      *
      * <pre>
-     * Optional. The field mask specifies the parts of the template to overwrite.
+     * Optional. The field mask specifies the parts of the template to be updated.
      * Allowed fields:
-     *   * display_name
-     *   * type.enum_type
-     * If update_mask is omitted, all of the allowed fields above will be updated.
+     *   * `display_name`
+     *   * `type.enum_type`
+     * If `update_mask` is not set or empty, all of the allowed fields above will
+     * be updated.
      * When updating an enum type, the provided values will be merged with the
      * existing values. Therefore, enum values can only be added, existing enum
      * values cannot be deleted nor renamed.
@@ -1009,11 +1053,12 @@ public final class UpdateTagTemplateFieldRequest extends com.google.protobuf.Gen
      *
      *
      * <pre>
-     * Optional. The field mask specifies the parts of the template to overwrite.
+     * Optional. The field mask specifies the parts of the template to be updated.
      * Allowed fields:
-     *   * display_name
-     *   * type.enum_type
-     * If update_mask is omitted, all of the allowed fields above will be updated.
+     *   * `display_name`
+     *   * `type.enum_type`
+     * If `update_mask` is not set or empty, all of the allowed fields above will
+     * be updated.
      * When updating an enum type, the provided values will be merged with the
      * existing values. Therefore, enum values can only be added, existing enum
      * values cannot be deleted nor renamed.
@@ -1035,11 +1080,12 @@ public final class UpdateTagTemplateFieldRequest extends com.google.protobuf.Gen
      *
      *
      * <pre>
-     * Optional. The field mask specifies the parts of the template to overwrite.
+     * Optional. The field mask specifies the parts of the template to be updated.
      * Allowed fields:
-     *   * display_name
-     *   * type.enum_type
-     * If update_mask is omitted, all of the allowed fields above will be updated.
+     *   * `display_name`
+     *   * `type.enum_type`
+     * If `update_mask` is not set or empty, all of the allowed fields above will
+     * be updated.
      * When updating an enum type, the provided values will be merged with the
      * existing values. Therefore, enum values can only be added, existing enum
      * values cannot be deleted nor renamed.
@@ -1066,11 +1112,12 @@ public final class UpdateTagTemplateFieldRequest extends com.google.protobuf.Gen
      *
      *
      * <pre>
-     * Optional. The field mask specifies the parts of the template to overwrite.
+     * Optional. The field mask specifies the parts of the template to be updated.
      * Allowed fields:
-     *   * display_name
-     *   * type.enum_type
-     * If update_mask is omitted, all of the allowed fields above will be updated.
+     *   * `display_name`
+     *   * `type.enum_type`
+     * If `update_mask` is not set or empty, all of the allowed fields above will
+     * be updated.
      * When updating an enum type, the provided values will be merged with the
      * existing values. Therefore, enum values can only be added, existing enum
      * values cannot be deleted nor renamed.
@@ -1093,11 +1140,12 @@ public final class UpdateTagTemplateFieldRequest extends com.google.protobuf.Gen
      *
      *
      * <pre>
-     * Optional. The field mask specifies the parts of the template to overwrite.
+     * Optional. The field mask specifies the parts of the template to be updated.
      * Allowed fields:
-     *   * display_name
-     *   * type.enum_type
-     * If update_mask is omitted, all of the allowed fields above will be updated.
+     *   * `display_name`
+     *   * `type.enum_type`
+     * If `update_mask` is not set or empty, all of the allowed fields above will
+     * be updated.
      * When updating an enum type, the provided values will be merged with the
      * existing values. Therefore, enum values can only be added, existing enum
      * values cannot be deleted nor renamed.
@@ -1114,11 +1162,12 @@ public final class UpdateTagTemplateFieldRequest extends com.google.protobuf.Gen
      *
      *
      * <pre>
-     * Optional. The field mask specifies the parts of the template to overwrite.
+     * Optional. The field mask specifies the parts of the template to be updated.
      * Allowed fields:
-     *   * display_name
-     *   * type.enum_type
-     * If update_mask is omitted, all of the allowed fields above will be updated.
+     *   * `display_name`
+     *   * `type.enum_type`
+     * If `update_mask` is not set or empty, all of the allowed fields above will
+     * be updated.
      * When updating an enum type, the provided values will be merged with the
      * existing values. Therefore, enum values can only be added, existing enum
      * values cannot be deleted nor renamed.
@@ -1139,11 +1188,12 @@ public final class UpdateTagTemplateFieldRequest extends com.google.protobuf.Gen
      *
      *
      * <pre>
-     * Optional. The field mask specifies the parts of the template to overwrite.
+     * Optional. The field mask specifies the parts of the template to be updated.
      * Allowed fields:
-     *   * display_name
-     *   * type.enum_type
-     * If update_mask is omitted, all of the allowed fields above will be updated.
+     *   * `display_name`
+     *   * `type.enum_type`
+     * If `update_mask` is not set or empty, all of the allowed fields above will
+     * be updated.
      * When updating an enum type, the provided values will be merged with the
      * existing values. Therefore, enum values can only be added, existing enum
      * values cannot be deleted nor renamed.

@@ -54,7 +54,7 @@ import javax.annotation.Generated;
 
 // AUTO-GENERATED DOCUMENTATION AND SERVICE
 /**
- * Service Description: Service for configuring sinks used to export log entries out of Logging.
+ * Service Description: Service for configuring sinks used to route log entries.
  *
  * <p>This class provides the ability to make remote calls to the backing service through method
  * calls that map to API methods. Sample code to get started:
@@ -528,8 +528,10 @@ public class ConfigClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Updates a sink. This method replaces the following fields in the existing sink with values from
-   * the new sink: `destination`, and `filter`. The updated sink might also have a new
-   * `writer_identity`; see the `unique_writer_identity` field.
+   * the new sink: `destination`, and `filter`.
+   *
+   * <p>The updated sink might also have a new `writer_identity`; see the `unique_writer_identity`
+   * field.
    *
    * <p>Sample code:
    *
@@ -576,8 +578,10 @@ public class ConfigClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Updates a sink. This method replaces the following fields in the existing sink with values from
-   * the new sink: `destination`, and `filter`. The updated sink might also have a new
-   * `writer_identity`; see the `unique_writer_identity` field.
+   * the new sink: `destination`, and `filter`.
+   *
+   * <p>The updated sink might also have a new `writer_identity`; see the `unique_writer_identity`
+   * field.
    *
    * <p>Sample code:
    *
@@ -624,8 +628,10 @@ public class ConfigClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Updates a sink. This method replaces the following fields in the existing sink with values from
-   * the new sink: `destination`, and `filter`. The updated sink might also have a new
-   * `writer_identity`; see the `unique_writer_identity` field.
+   * the new sink: `destination`, and `filter`.
+   *
+   * <p>The updated sink might also have a new `writer_identity`; see the `unique_writer_identity`
+   * field.
    *
    * <p>Sample code:
    *
@@ -661,8 +667,10 @@ public class ConfigClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Updates a sink. This method replaces the following fields in the existing sink with values from
-   * the new sink: `destination`, and `filter`. The updated sink might also have a new
-   * `writer_identity`; see the `unique_writer_identity` field.
+   * the new sink: `destination`, and `filter`.
+   *
+   * <p>The updated sink might also have a new `writer_identity`; see the `unique_writer_identity`
+   * field.
    *
    * <p>Sample code:
    *
@@ -695,8 +703,10 @@ public class ConfigClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Updates a sink. This method replaces the following fields in the existing sink with values from
-   * the new sink: `destination`, and `filter`. The updated sink might also have a new
-   * `writer_identity`; see the `unique_writer_identity` field.
+   * the new sink: `destination`, and `filter`.
+   *
+   * <p>The updated sink might also have a new `writer_identity`; see the `unique_writer_identity`
+   * field.
    *
    * <p>Sample code:
    *
@@ -722,8 +732,10 @@ public class ConfigClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Updates a sink. This method replaces the following fields in the existing sink with values from
-   * the new sink: `destination`, and `filter`. The updated sink might also have a new
-   * `writer_identity`; see the `unique_writer_identity` field.
+   * the new sink: `destination`, and `filter`.
+   *
+   * <p>The updated sink might also have a new `writer_identity`; see the `unique_writer_identity`
+   * field.
    *
    * <p>Sample code:
    *
@@ -1225,7 +1237,7 @@ public class ConfigClient implements BackgroundResource {
    *     <p>Example: `"projects/my-project-id/exclusions/my-exclusion-id"`.
    * @param exclusion Required. New values for the existing exclusion. Only the fields specified in
    *     `update_mask` are relevant.
-   * @param updateMask Required. A nonempty list of fields to change in the existing exclusion. New
+   * @param updateMask Required. A non-empty list of fields to change in the existing exclusion. New
    *     values for the fields are taken from the corresponding fields in the
    *     [LogExclusion][google.logging.v2.LogExclusion] included in this request. Fields not
    *     mentioned in `update_mask` are not changed and are ignored in the request.
@@ -1268,7 +1280,7 @@ public class ConfigClient implements BackgroundResource {
    *     <p>Example: `"projects/my-project-id/exclusions/my-exclusion-id"`.
    * @param exclusion Required. New values for the existing exclusion. Only the fields specified in
    *     `update_mask` are relevant.
-   * @param updateMask Required. A nonempty list of fields to change in the existing exclusion. New
+   * @param updateMask Required. A non-empty list of fields to change in the existing exclusion. New
    *     values for the fields are taken from the corresponding fields in the
    *     [LogExclusion][google.logging.v2.LogExclusion] included in this request. Fields not
    *     mentioned in `update_mask` are not changed and are ignored in the request.

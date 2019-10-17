@@ -86,7 +86,7 @@ public final class Entity extends FullEntity<Key> {
     return new Builder(key, copyFrom);
   }
 
-  static Entity fromPb(com.google.datastore.v1.Entity entityPb) {
+  public static Entity fromPb(com.google.datastore.v1.Entity entityPb) {
     return new Builder().fill(entityPb).build();
   }
 }

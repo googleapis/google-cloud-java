@@ -17,9 +17,14 @@
 package com.google.cloud.spanner;
 
 import static com.google.common.truth.Truth.assertThat;
+import static org.mockito.Mockito.verify;
 import static org.mockito.MockitoAnnotations.initMocks;
 
+import com.google.cloud.Identity;
+import com.google.cloud.Policy;
+import com.google.cloud.Role;
 import com.google.common.testing.EqualsTester;
+import java.util.Arrays;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -102,5 +107,32 @@ public class InstanceTest {
     tester.addEqualityGroup(instance, instance2);
     tester.addEqualityGroup(instance3);
     tester.testEquals();
+  }
+
+  @Test
+  public void getIAMPolicy() {
+    InstanceId id = new InstanceId("test-project", "test-instance");
+    Instance instance = new Instance.Builder(instanceClient, dbClient, id).build();
+    instance.getIAMPolicy();
+    verify(instanceClient).getInstanceIAMPolicy("test-instance");
+  }
+
+  @Test
+  public void setIAMPolicy() {
+    InstanceId id = new InstanceId("test-project", "test-instance");
+    Instance instance = new Instance.Builder(instanceClient, dbClient, id).build();
+    Policy policy =
+        Policy.newBuilder().addIdentity(Role.viewer(), Identity.user("joe@example.com")).build();
+    instance.setIAMPolicy(policy);
+    verify(instanceClient).setInstanceIAMPolicy("test-instance", policy);
+  }
+
+  @Test
+  public void testIAMPermissions() {
+    InstanceId id = new InstanceId("test-project", "test-instance");
+    Instance instance = new Instance.Builder(instanceClient, dbClient, id).build();
+    Iterable<String> permissions = Arrays.asList("read");
+    instance.testIAMPermissions(permissions);
+    verify(instanceClient).testInstanceIAMPermissions("test-instance", permissions);
   }
 }

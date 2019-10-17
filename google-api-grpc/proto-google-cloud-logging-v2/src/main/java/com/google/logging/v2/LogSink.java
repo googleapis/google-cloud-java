@@ -9,9 +9,9 @@ package com.google.logging.v2;
  * <pre>
  * Describes a sink used to export log entries to one of the following
  * destinations in any project: a Cloud Storage bucket, a BigQuery dataset, or a
- * Cloud Pub/Sub topic.  A logs filter controls which log entries are
- * exported. The sink must be created within a project, organization, billing
- * account, or folder.
+ * Cloud Pub/Sub topic. A logs filter controls which log entries are exported.
+ * The sink must be created within a project, organization, billing account, or
+ * folder.
  * </pre>
  *
  * Protobuf type {@code google.logging.v2.LogSink}
@@ -124,6 +124,52 @@ public final class LogSink extends com.google.protobuf.GeneratedMessageV3
               if (subBuilder != null) {
                 subBuilder.mergeFrom(endTime_);
                 endTime_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+          case 98:
+            {
+              com.google.logging.v2.BigQueryOptions.Builder subBuilder = null;
+              if (optionsCase_ == 12) {
+                subBuilder = ((com.google.logging.v2.BigQueryOptions) options_).toBuilder();
+              }
+              options_ =
+                  input.readMessage(
+                      com.google.logging.v2.BigQueryOptions.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom((com.google.logging.v2.BigQueryOptions) options_);
+                options_ = subBuilder.buildPartial();
+              }
+              optionsCase_ = 12;
+              break;
+            }
+          case 106:
+            {
+              com.google.protobuf.Timestamp.Builder subBuilder = null;
+              if (createTime_ != null) {
+                subBuilder = createTime_.toBuilder();
+              }
+              createTime_ =
+                  input.readMessage(com.google.protobuf.Timestamp.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(createTime_);
+                createTime_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+          case 114:
+            {
+              com.google.protobuf.Timestamp.Builder subBuilder = null;
+              if (updateTime_ != null) {
+                subBuilder = updateTime_.toBuilder();
+              }
+              updateTime_ =
+                  input.readMessage(com.google.protobuf.Timestamp.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(updateTime_);
+                updateTime_ = subBuilder.buildPartial();
               }
 
               break;
@@ -308,6 +354,43 @@ public final class LogSink extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(enum_scope:google.logging.v2.LogSink.VersionFormat)
   }
 
+  private int optionsCase_ = 0;
+  private java.lang.Object options_;
+
+  public enum OptionsCase implements com.google.protobuf.Internal.EnumLite {
+    BIGQUERY_OPTIONS(12),
+    OPTIONS_NOT_SET(0);
+    private final int value;
+
+    private OptionsCase(int value) {
+      this.value = value;
+    }
+    /** @deprecated Use {@link #forNumber(int)} instead. */
+    @java.lang.Deprecated
+    public static OptionsCase valueOf(int value) {
+      return forNumber(value);
+    }
+
+    public static OptionsCase forNumber(int value) {
+      switch (value) {
+        case 12:
+          return BIGQUERY_OPTIONS;
+        case 0:
+          return OPTIONS_NOT_SET;
+        default:
+          return null;
+      }
+    }
+
+    public int getNumber() {
+      return this.value;
+    }
+  };
+
+  public OptionsCase getOptionsCase() {
+    return OptionsCase.forNumber(optionsCase_);
+  }
+
   public static final int NAME_FIELD_NUMBER = 1;
   private volatile java.lang.Object name_;
   /**
@@ -315,7 +398,7 @@ public final class LogSink extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Required. The client-assigned sink identifier, unique within the
-   * project. Example: `"my-syslog-errors-to-pubsub"`.  Sink identifiers are
+   * project. Example: `"my-syslog-errors-to-pubsub"`. Sink identifiers are
    * limited to 100 characters and can include only the following characters:
    * upper and lower-case alphanumeric characters, underscores, hyphens, and
    * periods.
@@ -339,7 +422,7 @@ public final class LogSink extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Required. The client-assigned sink identifier, unique within the
-   * project. Example: `"my-syslog-errors-to-pubsub"`.  Sink identifiers are
+   * project. Example: `"my-syslog-errors-to-pubsub"`. Sink identifiers are
    * limited to 100 characters and can include only the following characters:
    * upper and lower-case alphanumeric characters, underscores, hyphens, and
    * periods.
@@ -371,8 +454,8 @@ public final class LogSink extends com.google.protobuf.GeneratedMessageV3
    *     "pubsub.googleapis.com/projects/[PROJECT_ID]/topics/[TOPIC_ID]"
    * The sink's `writer_identity`, set when the sink is created, must
    * have permission to write to the destination or else the log
-   * entries are not exported.  For more information, see
-   * [Exporting Logs With Sinks](/logging/docs/api/tasks/exporting-logs).
+   * entries are not exported. For more information, see
+   * [Exporting Logs with Sinks](/logging/docs/api/tasks/exporting-logs).
    * </pre>
    *
    * <code>string destination = 3;</code>
@@ -398,8 +481,8 @@ public final class LogSink extends com.google.protobuf.GeneratedMessageV3
    *     "pubsub.googleapis.com/projects/[PROJECT_ID]/topics/[TOPIC_ID]"
    * The sink's `writer_identity`, set when the sink is created, must
    * have permission to write to the destination or else the log
-   * entries are not exported.  For more information, see
-   * [Exporting Logs With Sinks](/logging/docs/api/tasks/exporting-logs).
+   * entries are not exported. For more information, see
+   * [Exporting Logs with Sinks](/logging/docs/api/tasks/exporting-logs).
    * </pre>
    *
    * <code>string destination = 3;</code>
@@ -422,10 +505,9 @@ public final class LogSink extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional.
-   * An [advanced logs filter](/logging/docs/view/advanced_filters).  The only
+   * Optional. An [advanced logs filter](/logging/docs/view/advanced-queries). The only
    * exported log entries are those that are in the resource owning the sink and
-   * that match the filter.  For example:
+   * that match the filter. For example:
    *     logName="projects/[PROJECT_ID]/logs/[LOG_ID]" AND severity&gt;=ERROR
    * </pre>
    *
@@ -446,10 +528,9 @@ public final class LogSink extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional.
-   * An [advanced logs filter](/logging/docs/view/advanced_filters).  The only
+   * Optional. An [advanced logs filter](/logging/docs/view/advanced-queries). The only
    * exported log entries are those that are in the resource owning the sink and
-   * that match the filter.  For example:
+   * that match the filter. For example:
    *     logName="projects/[PROJECT_ID]/logs/[LOG_ID]" AND severity&gt;=ERROR
    * </pre>
    *
@@ -474,7 +555,7 @@ public final class LogSink extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Deprecated. The log entry format to use for this sink's exported log
-   * entries.  The v2 format is used by default and cannot be changed.
+   * entries. The v2 format is used by default and cannot be changed.
    * </pre>
    *
    * <code>.google.logging.v2.LogSink.VersionFormat output_version_format = 6 [deprecated = true];
@@ -489,7 +570,7 @@ public final class LogSink extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Deprecated. The log entry format to use for this sink's exported log
-   * entries.  The v2 format is used by default and cannot be changed.
+   * entries. The v2 format is used by default and cannot be changed.
    * </pre>
    *
    * <code>.google.logging.v2.LogSink.VersionFormat output_version_format = 6 [deprecated = true];
@@ -510,16 +591,16 @@ public final class LogSink extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Output only. An IAM identity&amp;mdash;a service account or group&amp;mdash;under
-   * which Logging writes the exported log entries to the sink's
-   * destination.  This field is set by
-   * [sinks.create](/logging/docs/api/reference/rest/v2/projects.sinks/create)
+   * which Logging writes the exported log entries to the sink's destination.
+   * This field is set by
+   * [sinks.create][google.logging.v2.ConfigServiceV2.CreateSink]
    * and
-   * [sinks.update](/logging/docs/api/reference/rest/v2/projects.sinks/update),
-   * based on the setting of `unique_writer_identity` in those methods.
+   * [sinks.update][google.logging.v2.ConfigServiceV2.UpdateSink]
+   * based on the value of `unique_writer_identity` in those methods.
    * Until you grant this identity write-access to the destination, log entry
    * exports from this sink will fail. For more information,
-   * see [Granting access for a
-   * resource](/iam/docs/granting-roles-to-service-accounts#granting_access_to_a_service_account_for_a_resource).
+   * see [Granting Access for a
+   * Resource](/iam/docs/granting-roles-to-service-accounts#granting_access_to_a_service_account_for_a_resource).
    * Consult the destination service's documentation to determine the
    * appropriate IAM roles to assign to the identity.
    * </pre>
@@ -542,16 +623,16 @@ public final class LogSink extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Output only. An IAM identity&amp;mdash;a service account or group&amp;mdash;under
-   * which Logging writes the exported log entries to the sink's
-   * destination.  This field is set by
-   * [sinks.create](/logging/docs/api/reference/rest/v2/projects.sinks/create)
+   * which Logging writes the exported log entries to the sink's destination.
+   * This field is set by
+   * [sinks.create][google.logging.v2.ConfigServiceV2.CreateSink]
    * and
-   * [sinks.update](/logging/docs/api/reference/rest/v2/projects.sinks/update),
-   * based on the setting of `unique_writer_identity` in those methods.
+   * [sinks.update][google.logging.v2.ConfigServiceV2.UpdateSink]
+   * based on the value of `unique_writer_identity` in those methods.
    * Until you grant this identity write-access to the destination, log entry
    * exports from this sink will fail. For more information,
-   * see [Granting access for a
-   * resource](/iam/docs/granting-roles-to-service-accounts#granting_access_to_a_service_account_for_a_resource).
+   * see [Granting Access for a
+   * Resource](/iam/docs/granting-roles-to-service-accounts#granting_access_to_a_service_account_for_a_resource).
    * Consult the destination service's documentation to determine the
    * appropriate IAM roles to assign to the identity.
    * </pre>
@@ -596,13 +677,141 @@ public final class LogSink extends com.google.protobuf.GeneratedMessageV3
     return includeChildren_;
   }
 
+  public static final int BIGQUERY_OPTIONS_FIELD_NUMBER = 12;
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Options that affect sinks exporting data to BigQuery.
+   * </pre>
+   *
+   * <code>.google.logging.v2.BigQueryOptions bigquery_options = 12;</code>
+   */
+  public boolean hasBigqueryOptions() {
+    return optionsCase_ == 12;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Options that affect sinks exporting data to BigQuery.
+   * </pre>
+   *
+   * <code>.google.logging.v2.BigQueryOptions bigquery_options = 12;</code>
+   */
+  public com.google.logging.v2.BigQueryOptions getBigqueryOptions() {
+    if (optionsCase_ == 12) {
+      return (com.google.logging.v2.BigQueryOptions) options_;
+    }
+    return com.google.logging.v2.BigQueryOptions.getDefaultInstance();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Options that affect sinks exporting data to BigQuery.
+   * </pre>
+   *
+   * <code>.google.logging.v2.BigQueryOptions bigquery_options = 12;</code>
+   */
+  public com.google.logging.v2.BigQueryOptionsOrBuilder getBigqueryOptionsOrBuilder() {
+    if (optionsCase_ == 12) {
+      return (com.google.logging.v2.BigQueryOptions) options_;
+    }
+    return com.google.logging.v2.BigQueryOptions.getDefaultInstance();
+  }
+
+  public static final int CREATE_TIME_FIELD_NUMBER = 13;
+  private com.google.protobuf.Timestamp createTime_;
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The creation timestamp of the sink.
+   * This field may not be present for older sinks.
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp create_time = 13;</code>
+   */
+  public boolean hasCreateTime() {
+    return createTime_ != null;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The creation timestamp of the sink.
+   * This field may not be present for older sinks.
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp create_time = 13;</code>
+   */
+  public com.google.protobuf.Timestamp getCreateTime() {
+    return createTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : createTime_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The creation timestamp of the sink.
+   * This field may not be present for older sinks.
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp create_time = 13;</code>
+   */
+  public com.google.protobuf.TimestampOrBuilder getCreateTimeOrBuilder() {
+    return getCreateTime();
+  }
+
+  public static final int UPDATE_TIME_FIELD_NUMBER = 14;
+  private com.google.protobuf.Timestamp updateTime_;
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The last update timestamp of the sink.
+   * This field may not be present for older sinks.
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp update_time = 14;</code>
+   */
+  public boolean hasUpdateTime() {
+    return updateTime_ != null;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The last update timestamp of the sink.
+   * This field may not be present for older sinks.
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp update_time = 14;</code>
+   */
+  public com.google.protobuf.Timestamp getUpdateTime() {
+    return updateTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : updateTime_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The last update timestamp of the sink.
+   * This field may not be present for older sinks.
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp update_time = 14;</code>
+   */
+  public com.google.protobuf.TimestampOrBuilder getUpdateTimeOrBuilder() {
+    return getUpdateTime();
+  }
+
   public static final int START_TIME_FIELD_NUMBER = 10;
   private com.google.protobuf.Timestamp startTime_;
   /**
    *
    *
    * <pre>
-   * Deprecated. This field is ignored when creating or updating sinks.
+   * Do not use. This field is ignored.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp start_time = 10 [deprecated = true];</code>
@@ -615,7 +824,7 @@ public final class LogSink extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Deprecated. This field is ignored when creating or updating sinks.
+   * Do not use. This field is ignored.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp start_time = 10 [deprecated = true];</code>
@@ -628,7 +837,7 @@ public final class LogSink extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Deprecated. This field is ignored when creating or updating sinks.
+   * Do not use. This field is ignored.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp start_time = 10 [deprecated = true];</code>
@@ -644,7 +853,7 @@ public final class LogSink extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Deprecated. This field is ignored when creating or updating sinks.
+   * Do not use. This field is ignored.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp end_time = 11 [deprecated = true];</code>
@@ -657,7 +866,7 @@ public final class LogSink extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Deprecated. This field is ignored when creating or updating sinks.
+   * Do not use. This field is ignored.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp end_time = 11 [deprecated = true];</code>
@@ -670,7 +879,7 @@ public final class LogSink extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Deprecated. This field is ignored when creating or updating sinks.
+   * Do not use. This field is ignored.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp end_time = 11 [deprecated = true];</code>
@@ -719,6 +928,15 @@ public final class LogSink extends com.google.protobuf.GeneratedMessageV3
     if (endTime_ != null) {
       output.writeMessage(11, getEndTime());
     }
+    if (optionsCase_ == 12) {
+      output.writeMessage(12, (com.google.logging.v2.BigQueryOptions) options_);
+    }
+    if (createTime_ != null) {
+      output.writeMessage(13, getCreateTime());
+    }
+    if (updateTime_ != null) {
+      output.writeMessage(14, getUpdateTime());
+    }
     unknownFields.writeTo(output);
   }
 
@@ -753,6 +971,17 @@ public final class LogSink extends com.google.protobuf.GeneratedMessageV3
     if (endTime_ != null) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(11, getEndTime());
     }
+    if (optionsCase_ == 12) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              12, (com.google.logging.v2.BigQueryOptions) options_);
+    }
+    if (createTime_ != null) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(13, getCreateTime());
+    }
+    if (updateTime_ != null) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(14, getUpdateTime());
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -774,6 +1003,14 @@ public final class LogSink extends com.google.protobuf.GeneratedMessageV3
     if (outputVersionFormat_ != other.outputVersionFormat_) return false;
     if (!getWriterIdentity().equals(other.getWriterIdentity())) return false;
     if (getIncludeChildren() != other.getIncludeChildren()) return false;
+    if (hasCreateTime() != other.hasCreateTime()) return false;
+    if (hasCreateTime()) {
+      if (!getCreateTime().equals(other.getCreateTime())) return false;
+    }
+    if (hasUpdateTime() != other.hasUpdateTime()) return false;
+    if (hasUpdateTime()) {
+      if (!getUpdateTime().equals(other.getUpdateTime())) return false;
+    }
     if (hasStartTime() != other.hasStartTime()) return false;
     if (hasStartTime()) {
       if (!getStartTime().equals(other.getStartTime())) return false;
@@ -781,6 +1018,14 @@ public final class LogSink extends com.google.protobuf.GeneratedMessageV3
     if (hasEndTime() != other.hasEndTime()) return false;
     if (hasEndTime()) {
       if (!getEndTime().equals(other.getEndTime())) return false;
+    }
+    if (!getOptionsCase().equals(other.getOptionsCase())) return false;
+    switch (optionsCase_) {
+      case 12:
+        if (!getBigqueryOptions().equals(other.getBigqueryOptions())) return false;
+        break;
+      case 0:
+      default:
     }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
@@ -805,6 +1050,14 @@ public final class LogSink extends com.google.protobuf.GeneratedMessageV3
     hash = (53 * hash) + getWriterIdentity().hashCode();
     hash = (37 * hash) + INCLUDE_CHILDREN_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getIncludeChildren());
+    if (hasCreateTime()) {
+      hash = (37 * hash) + CREATE_TIME_FIELD_NUMBER;
+      hash = (53 * hash) + getCreateTime().hashCode();
+    }
+    if (hasUpdateTime()) {
+      hash = (37 * hash) + UPDATE_TIME_FIELD_NUMBER;
+      hash = (53 * hash) + getUpdateTime().hashCode();
+    }
     if (hasStartTime()) {
       hash = (37 * hash) + START_TIME_FIELD_NUMBER;
       hash = (53 * hash) + getStartTime().hashCode();
@@ -812,6 +1065,14 @@ public final class LogSink extends com.google.protobuf.GeneratedMessageV3
     if (hasEndTime()) {
       hash = (37 * hash) + END_TIME_FIELD_NUMBER;
       hash = (53 * hash) + getEndTime().hashCode();
+    }
+    switch (optionsCase_) {
+      case 12:
+        hash = (37 * hash) + BIGQUERY_OPTIONS_FIELD_NUMBER;
+        hash = (53 * hash) + getBigqueryOptions().hashCode();
+        break;
+      case 0:
+      default:
     }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
@@ -918,9 +1179,9 @@ public final class LogSink extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Describes a sink used to export log entries to one of the following
    * destinations in any project: a Cloud Storage bucket, a BigQuery dataset, or a
-   * Cloud Pub/Sub topic.  A logs filter controls which log entries are
-   * exported. The sink must be created within a project, organization, billing
-   * account, or folder.
+   * Cloud Pub/Sub topic. A logs filter controls which log entries are exported.
+   * The sink must be created within a project, organization, billing account, or
+   * folder.
    * </pre>
    *
    * Protobuf type {@code google.logging.v2.LogSink}
@@ -972,6 +1233,18 @@ public final class LogSink extends com.google.protobuf.GeneratedMessageV3
 
       includeChildren_ = false;
 
+      if (createTimeBuilder_ == null) {
+        createTime_ = null;
+      } else {
+        createTime_ = null;
+        createTimeBuilder_ = null;
+      }
+      if (updateTimeBuilder_ == null) {
+        updateTime_ = null;
+      } else {
+        updateTime_ = null;
+        updateTimeBuilder_ = null;
+      }
       if (startTimeBuilder_ == null) {
         startTime_ = null;
       } else {
@@ -984,6 +1257,8 @@ public final class LogSink extends com.google.protobuf.GeneratedMessageV3
         endTime_ = null;
         endTimeBuilder_ = null;
       }
+      optionsCase_ = 0;
+      options_ = null;
       return this;
     }
 
@@ -1016,6 +1291,23 @@ public final class LogSink extends com.google.protobuf.GeneratedMessageV3
       result.outputVersionFormat_ = outputVersionFormat_;
       result.writerIdentity_ = writerIdentity_;
       result.includeChildren_ = includeChildren_;
+      if (optionsCase_ == 12) {
+        if (bigqueryOptionsBuilder_ == null) {
+          result.options_ = options_;
+        } else {
+          result.options_ = bigqueryOptionsBuilder_.build();
+        }
+      }
+      if (createTimeBuilder_ == null) {
+        result.createTime_ = createTime_;
+      } else {
+        result.createTime_ = createTimeBuilder_.build();
+      }
+      if (updateTimeBuilder_ == null) {
+        result.updateTime_ = updateTime_;
+      } else {
+        result.updateTime_ = updateTimeBuilder_.build();
+      }
       if (startTimeBuilder_ == null) {
         result.startTime_ = startTime_;
       } else {
@@ -1026,6 +1318,7 @@ public final class LogSink extends com.google.protobuf.GeneratedMessageV3
       } else {
         result.endTime_ = endTimeBuilder_.build();
       }
+      result.optionsCase_ = optionsCase_;
       onBuilt();
       return result;
     }
@@ -1097,11 +1390,28 @@ public final class LogSink extends com.google.protobuf.GeneratedMessageV3
       if (other.getIncludeChildren() != false) {
         setIncludeChildren(other.getIncludeChildren());
       }
+      if (other.hasCreateTime()) {
+        mergeCreateTime(other.getCreateTime());
+      }
+      if (other.hasUpdateTime()) {
+        mergeUpdateTime(other.getUpdateTime());
+      }
       if (other.hasStartTime()) {
         mergeStartTime(other.getStartTime());
       }
       if (other.hasEndTime()) {
         mergeEndTime(other.getEndTime());
+      }
+      switch (other.getOptionsCase()) {
+        case BIGQUERY_OPTIONS:
+          {
+            mergeBigqueryOptions(other.getBigqueryOptions());
+            break;
+          }
+        case OPTIONS_NOT_SET:
+          {
+            break;
+          }
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -1132,13 +1442,27 @@ public final class LogSink extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
+    private int optionsCase_ = 0;
+    private java.lang.Object options_;
+
+    public OptionsCase getOptionsCase() {
+      return OptionsCase.forNumber(optionsCase_);
+    }
+
+    public Builder clearOptions() {
+      optionsCase_ = 0;
+      options_ = null;
+      onChanged();
+      return this;
+    }
+
     private java.lang.Object name_ = "";
     /**
      *
      *
      * <pre>
      * Required. The client-assigned sink identifier, unique within the
-     * project. Example: `"my-syslog-errors-to-pubsub"`.  Sink identifiers are
+     * project. Example: `"my-syslog-errors-to-pubsub"`. Sink identifiers are
      * limited to 100 characters and can include only the following characters:
      * upper and lower-case alphanumeric characters, underscores, hyphens, and
      * periods.
@@ -1162,7 +1486,7 @@ public final class LogSink extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Required. The client-assigned sink identifier, unique within the
-     * project. Example: `"my-syslog-errors-to-pubsub"`.  Sink identifiers are
+     * project. Example: `"my-syslog-errors-to-pubsub"`. Sink identifiers are
      * limited to 100 characters and can include only the following characters:
      * upper and lower-case alphanumeric characters, underscores, hyphens, and
      * periods.
@@ -1186,7 +1510,7 @@ public final class LogSink extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Required. The client-assigned sink identifier, unique within the
-     * project. Example: `"my-syslog-errors-to-pubsub"`.  Sink identifiers are
+     * project. Example: `"my-syslog-errors-to-pubsub"`. Sink identifiers are
      * limited to 100 characters and can include only the following characters:
      * upper and lower-case alphanumeric characters, underscores, hyphens, and
      * periods.
@@ -1208,7 +1532,7 @@ public final class LogSink extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Required. The client-assigned sink identifier, unique within the
-     * project. Example: `"my-syslog-errors-to-pubsub"`.  Sink identifiers are
+     * project. Example: `"my-syslog-errors-to-pubsub"`. Sink identifiers are
      * limited to 100 characters and can include only the following characters:
      * upper and lower-case alphanumeric characters, underscores, hyphens, and
      * periods.
@@ -1227,7 +1551,7 @@ public final class LogSink extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Required. The client-assigned sink identifier, unique within the
-     * project. Example: `"my-syslog-errors-to-pubsub"`.  Sink identifiers are
+     * project. Example: `"my-syslog-errors-to-pubsub"`. Sink identifiers are
      * limited to 100 characters and can include only the following characters:
      * upper and lower-case alphanumeric characters, underscores, hyphens, and
      * periods.
@@ -1257,8 +1581,8 @@ public final class LogSink extends com.google.protobuf.GeneratedMessageV3
      *     "pubsub.googleapis.com/projects/[PROJECT_ID]/topics/[TOPIC_ID]"
      * The sink's `writer_identity`, set when the sink is created, must
      * have permission to write to the destination or else the log
-     * entries are not exported.  For more information, see
-     * [Exporting Logs With Sinks](/logging/docs/api/tasks/exporting-logs).
+     * entries are not exported. For more information, see
+     * [Exporting Logs with Sinks](/logging/docs/api/tasks/exporting-logs).
      * </pre>
      *
      * <code>string destination = 3;</code>
@@ -1284,8 +1608,8 @@ public final class LogSink extends com.google.protobuf.GeneratedMessageV3
      *     "pubsub.googleapis.com/projects/[PROJECT_ID]/topics/[TOPIC_ID]"
      * The sink's `writer_identity`, set when the sink is created, must
      * have permission to write to the destination or else the log
-     * entries are not exported.  For more information, see
-     * [Exporting Logs With Sinks](/logging/docs/api/tasks/exporting-logs).
+     * entries are not exported. For more information, see
+     * [Exporting Logs with Sinks](/logging/docs/api/tasks/exporting-logs).
      * </pre>
      *
      * <code>string destination = 3;</code>
@@ -1311,8 +1635,8 @@ public final class LogSink extends com.google.protobuf.GeneratedMessageV3
      *     "pubsub.googleapis.com/projects/[PROJECT_ID]/topics/[TOPIC_ID]"
      * The sink's `writer_identity`, set when the sink is created, must
      * have permission to write to the destination or else the log
-     * entries are not exported.  For more information, see
-     * [Exporting Logs With Sinks](/logging/docs/api/tasks/exporting-logs).
+     * entries are not exported. For more information, see
+     * [Exporting Logs with Sinks](/logging/docs/api/tasks/exporting-logs).
      * </pre>
      *
      * <code>string destination = 3;</code>
@@ -1336,8 +1660,8 @@ public final class LogSink extends com.google.protobuf.GeneratedMessageV3
      *     "pubsub.googleapis.com/projects/[PROJECT_ID]/topics/[TOPIC_ID]"
      * The sink's `writer_identity`, set when the sink is created, must
      * have permission to write to the destination or else the log
-     * entries are not exported.  For more information, see
-     * [Exporting Logs With Sinks](/logging/docs/api/tasks/exporting-logs).
+     * entries are not exported. For more information, see
+     * [Exporting Logs with Sinks](/logging/docs/api/tasks/exporting-logs).
      * </pre>
      *
      * <code>string destination = 3;</code>
@@ -1358,8 +1682,8 @@ public final class LogSink extends com.google.protobuf.GeneratedMessageV3
      *     "pubsub.googleapis.com/projects/[PROJECT_ID]/topics/[TOPIC_ID]"
      * The sink's `writer_identity`, set when the sink is created, must
      * have permission to write to the destination or else the log
-     * entries are not exported.  For more information, see
-     * [Exporting Logs With Sinks](/logging/docs/api/tasks/exporting-logs).
+     * entries are not exported. For more information, see
+     * [Exporting Logs with Sinks](/logging/docs/api/tasks/exporting-logs).
      * </pre>
      *
      * <code>string destination = 3;</code>
@@ -1380,10 +1704,9 @@ public final class LogSink extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional.
-     * An [advanced logs filter](/logging/docs/view/advanced_filters).  The only
+     * Optional. An [advanced logs filter](/logging/docs/view/advanced-queries). The only
      * exported log entries are those that are in the resource owning the sink and
-     * that match the filter.  For example:
+     * that match the filter. For example:
      *     logName="projects/[PROJECT_ID]/logs/[LOG_ID]" AND severity&gt;=ERROR
      * </pre>
      *
@@ -1404,10 +1727,9 @@ public final class LogSink extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional.
-     * An [advanced logs filter](/logging/docs/view/advanced_filters).  The only
+     * Optional. An [advanced logs filter](/logging/docs/view/advanced-queries). The only
      * exported log entries are those that are in the resource owning the sink and
-     * that match the filter.  For example:
+     * that match the filter. For example:
      *     logName="projects/[PROJECT_ID]/logs/[LOG_ID]" AND severity&gt;=ERROR
      * </pre>
      *
@@ -1428,10 +1750,9 @@ public final class LogSink extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional.
-     * An [advanced logs filter](/logging/docs/view/advanced_filters).  The only
+     * Optional. An [advanced logs filter](/logging/docs/view/advanced-queries). The only
      * exported log entries are those that are in the resource owning the sink and
-     * that match the filter.  For example:
+     * that match the filter. For example:
      *     logName="projects/[PROJECT_ID]/logs/[LOG_ID]" AND severity&gt;=ERROR
      * </pre>
      *
@@ -1450,10 +1771,9 @@ public final class LogSink extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional.
-     * An [advanced logs filter](/logging/docs/view/advanced_filters).  The only
+     * Optional. An [advanced logs filter](/logging/docs/view/advanced-queries). The only
      * exported log entries are those that are in the resource owning the sink and
-     * that match the filter.  For example:
+     * that match the filter. For example:
      *     logName="projects/[PROJECT_ID]/logs/[LOG_ID]" AND severity&gt;=ERROR
      * </pre>
      *
@@ -1469,10 +1789,9 @@ public final class LogSink extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional.
-     * An [advanced logs filter](/logging/docs/view/advanced_filters).  The only
+     * Optional. An [advanced logs filter](/logging/docs/view/advanced-queries). The only
      * exported log entries are those that are in the resource owning the sink and
-     * that match the filter.  For example:
+     * that match the filter. For example:
      *     logName="projects/[PROJECT_ID]/logs/[LOG_ID]" AND severity&gt;=ERROR
      * </pre>
      *
@@ -1495,7 +1814,7 @@ public final class LogSink extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Deprecated. The log entry format to use for this sink's exported log
-     * entries.  The v2 format is used by default and cannot be changed.
+     * entries. The v2 format is used by default and cannot be changed.
      * </pre>
      *
      * <code>.google.logging.v2.LogSink.VersionFormat output_version_format = 6 [deprecated = true];
@@ -1510,7 +1829,7 @@ public final class LogSink extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Deprecated. The log entry format to use for this sink's exported log
-     * entries.  The v2 format is used by default and cannot be changed.
+     * entries. The v2 format is used by default and cannot be changed.
      * </pre>
      *
      * <code>.google.logging.v2.LogSink.VersionFormat output_version_format = 6 [deprecated = true];
@@ -1527,7 +1846,7 @@ public final class LogSink extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Deprecated. The log entry format to use for this sink's exported log
-     * entries.  The v2 format is used by default and cannot be changed.
+     * entries. The v2 format is used by default and cannot be changed.
      * </pre>
      *
      * <code>.google.logging.v2.LogSink.VersionFormat output_version_format = 6 [deprecated = true];
@@ -1545,7 +1864,7 @@ public final class LogSink extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Deprecated. The log entry format to use for this sink's exported log
-     * entries.  The v2 format is used by default and cannot be changed.
+     * entries. The v2 format is used by default and cannot be changed.
      * </pre>
      *
      * <code>.google.logging.v2.LogSink.VersionFormat output_version_format = 6 [deprecated = true];
@@ -1566,7 +1885,7 @@ public final class LogSink extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Deprecated. The log entry format to use for this sink's exported log
-     * entries.  The v2 format is used by default and cannot be changed.
+     * entries. The v2 format is used by default and cannot be changed.
      * </pre>
      *
      * <code>.google.logging.v2.LogSink.VersionFormat output_version_format = 6 [deprecated = true];
@@ -1586,16 +1905,16 @@ public final class LogSink extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. An IAM identity&amp;mdash;a service account or group&amp;mdash;under
-     * which Logging writes the exported log entries to the sink's
-     * destination.  This field is set by
-     * [sinks.create](/logging/docs/api/reference/rest/v2/projects.sinks/create)
+     * which Logging writes the exported log entries to the sink's destination.
+     * This field is set by
+     * [sinks.create][google.logging.v2.ConfigServiceV2.CreateSink]
      * and
-     * [sinks.update](/logging/docs/api/reference/rest/v2/projects.sinks/update),
-     * based on the setting of `unique_writer_identity` in those methods.
+     * [sinks.update][google.logging.v2.ConfigServiceV2.UpdateSink]
+     * based on the value of `unique_writer_identity` in those methods.
      * Until you grant this identity write-access to the destination, log entry
      * exports from this sink will fail. For more information,
-     * see [Granting access for a
-     * resource](/iam/docs/granting-roles-to-service-accounts#granting_access_to_a_service_account_for_a_resource).
+     * see [Granting Access for a
+     * Resource](/iam/docs/granting-roles-to-service-accounts#granting_access_to_a_service_account_for_a_resource).
      * Consult the destination service's documentation to determine the
      * appropriate IAM roles to assign to the identity.
      * </pre>
@@ -1618,16 +1937,16 @@ public final class LogSink extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. An IAM identity&amp;mdash;a service account or group&amp;mdash;under
-     * which Logging writes the exported log entries to the sink's
-     * destination.  This field is set by
-     * [sinks.create](/logging/docs/api/reference/rest/v2/projects.sinks/create)
+     * which Logging writes the exported log entries to the sink's destination.
+     * This field is set by
+     * [sinks.create][google.logging.v2.ConfigServiceV2.CreateSink]
      * and
-     * [sinks.update](/logging/docs/api/reference/rest/v2/projects.sinks/update),
-     * based on the setting of `unique_writer_identity` in those methods.
+     * [sinks.update][google.logging.v2.ConfigServiceV2.UpdateSink]
+     * based on the value of `unique_writer_identity` in those methods.
      * Until you grant this identity write-access to the destination, log entry
      * exports from this sink will fail. For more information,
-     * see [Granting access for a
-     * resource](/iam/docs/granting-roles-to-service-accounts#granting_access_to_a_service_account_for_a_resource).
+     * see [Granting Access for a
+     * Resource](/iam/docs/granting-roles-to-service-accounts#granting_access_to_a_service_account_for_a_resource).
      * Consult the destination service's documentation to determine the
      * appropriate IAM roles to assign to the identity.
      * </pre>
@@ -1650,16 +1969,16 @@ public final class LogSink extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. An IAM identity&amp;mdash;a service account or group&amp;mdash;under
-     * which Logging writes the exported log entries to the sink's
-     * destination.  This field is set by
-     * [sinks.create](/logging/docs/api/reference/rest/v2/projects.sinks/create)
+     * which Logging writes the exported log entries to the sink's destination.
+     * This field is set by
+     * [sinks.create][google.logging.v2.ConfigServiceV2.CreateSink]
      * and
-     * [sinks.update](/logging/docs/api/reference/rest/v2/projects.sinks/update),
-     * based on the setting of `unique_writer_identity` in those methods.
+     * [sinks.update][google.logging.v2.ConfigServiceV2.UpdateSink]
+     * based on the value of `unique_writer_identity` in those methods.
      * Until you grant this identity write-access to the destination, log entry
      * exports from this sink will fail. For more information,
-     * see [Granting access for a
-     * resource](/iam/docs/granting-roles-to-service-accounts#granting_access_to_a_service_account_for_a_resource).
+     * see [Granting Access for a
+     * Resource](/iam/docs/granting-roles-to-service-accounts#granting_access_to_a_service_account_for_a_resource).
      * Consult the destination service's documentation to determine the
      * appropriate IAM roles to assign to the identity.
      * </pre>
@@ -1680,16 +1999,16 @@ public final class LogSink extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. An IAM identity&amp;mdash;a service account or group&amp;mdash;under
-     * which Logging writes the exported log entries to the sink's
-     * destination.  This field is set by
-     * [sinks.create](/logging/docs/api/reference/rest/v2/projects.sinks/create)
+     * which Logging writes the exported log entries to the sink's destination.
+     * This field is set by
+     * [sinks.create][google.logging.v2.ConfigServiceV2.CreateSink]
      * and
-     * [sinks.update](/logging/docs/api/reference/rest/v2/projects.sinks/update),
-     * based on the setting of `unique_writer_identity` in those methods.
+     * [sinks.update][google.logging.v2.ConfigServiceV2.UpdateSink]
+     * based on the value of `unique_writer_identity` in those methods.
      * Until you grant this identity write-access to the destination, log entry
      * exports from this sink will fail. For more information,
-     * see [Granting access for a
-     * resource](/iam/docs/granting-roles-to-service-accounts#granting_access_to_a_service_account_for_a_resource).
+     * see [Granting Access for a
+     * Resource](/iam/docs/granting-roles-to-service-accounts#granting_access_to_a_service_account_for_a_resource).
      * Consult the destination service's documentation to determine the
      * appropriate IAM roles to assign to the identity.
      * </pre>
@@ -1707,16 +2026,16 @@ public final class LogSink extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. An IAM identity&amp;mdash;a service account or group&amp;mdash;under
-     * which Logging writes the exported log entries to the sink's
-     * destination.  This field is set by
-     * [sinks.create](/logging/docs/api/reference/rest/v2/projects.sinks/create)
+     * which Logging writes the exported log entries to the sink's destination.
+     * This field is set by
+     * [sinks.create][google.logging.v2.ConfigServiceV2.CreateSink]
      * and
-     * [sinks.update](/logging/docs/api/reference/rest/v2/projects.sinks/update),
-     * based on the setting of `unique_writer_identity` in those methods.
+     * [sinks.update][google.logging.v2.ConfigServiceV2.UpdateSink]
+     * based on the value of `unique_writer_identity` in those methods.
      * Until you grant this identity write-access to the destination, log entry
      * exports from this sink will fail. For more information,
-     * see [Granting access for a
-     * resource](/iam/docs/granting-roles-to-service-accounts#granting_access_to_a_service_account_for_a_resource).
+     * see [Granting Access for a
+     * Resource](/iam/docs/granting-roles-to-service-accounts#granting_access_to_a_service_account_for_a_resource).
      * Consult the destination service's documentation to determine the
      * appropriate IAM roles to assign to the identity.
      * </pre>
@@ -1811,6 +2130,584 @@ public final class LogSink extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.logging.v2.BigQueryOptions,
+            com.google.logging.v2.BigQueryOptions.Builder,
+            com.google.logging.v2.BigQueryOptionsOrBuilder>
+        bigqueryOptionsBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Options that affect sinks exporting data to BigQuery.
+     * </pre>
+     *
+     * <code>.google.logging.v2.BigQueryOptions bigquery_options = 12;</code>
+     */
+    public boolean hasBigqueryOptions() {
+      return optionsCase_ == 12;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Options that affect sinks exporting data to BigQuery.
+     * </pre>
+     *
+     * <code>.google.logging.v2.BigQueryOptions bigquery_options = 12;</code>
+     */
+    public com.google.logging.v2.BigQueryOptions getBigqueryOptions() {
+      if (bigqueryOptionsBuilder_ == null) {
+        if (optionsCase_ == 12) {
+          return (com.google.logging.v2.BigQueryOptions) options_;
+        }
+        return com.google.logging.v2.BigQueryOptions.getDefaultInstance();
+      } else {
+        if (optionsCase_ == 12) {
+          return bigqueryOptionsBuilder_.getMessage();
+        }
+        return com.google.logging.v2.BigQueryOptions.getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Options that affect sinks exporting data to BigQuery.
+     * </pre>
+     *
+     * <code>.google.logging.v2.BigQueryOptions bigquery_options = 12;</code>
+     */
+    public Builder setBigqueryOptions(com.google.logging.v2.BigQueryOptions value) {
+      if (bigqueryOptionsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        options_ = value;
+        onChanged();
+      } else {
+        bigqueryOptionsBuilder_.setMessage(value);
+      }
+      optionsCase_ = 12;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Options that affect sinks exporting data to BigQuery.
+     * </pre>
+     *
+     * <code>.google.logging.v2.BigQueryOptions bigquery_options = 12;</code>
+     */
+    public Builder setBigqueryOptions(
+        com.google.logging.v2.BigQueryOptions.Builder builderForValue) {
+      if (bigqueryOptionsBuilder_ == null) {
+        options_ = builderForValue.build();
+        onChanged();
+      } else {
+        bigqueryOptionsBuilder_.setMessage(builderForValue.build());
+      }
+      optionsCase_ = 12;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Options that affect sinks exporting data to BigQuery.
+     * </pre>
+     *
+     * <code>.google.logging.v2.BigQueryOptions bigquery_options = 12;</code>
+     */
+    public Builder mergeBigqueryOptions(com.google.logging.v2.BigQueryOptions value) {
+      if (bigqueryOptionsBuilder_ == null) {
+        if (optionsCase_ == 12
+            && options_ != com.google.logging.v2.BigQueryOptions.getDefaultInstance()) {
+          options_ =
+              com.google.logging.v2.BigQueryOptions.newBuilder(
+                      (com.google.logging.v2.BigQueryOptions) options_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          options_ = value;
+        }
+        onChanged();
+      } else {
+        if (optionsCase_ == 12) {
+          bigqueryOptionsBuilder_.mergeFrom(value);
+        }
+        bigqueryOptionsBuilder_.setMessage(value);
+      }
+      optionsCase_ = 12;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Options that affect sinks exporting data to BigQuery.
+     * </pre>
+     *
+     * <code>.google.logging.v2.BigQueryOptions bigquery_options = 12;</code>
+     */
+    public Builder clearBigqueryOptions() {
+      if (bigqueryOptionsBuilder_ == null) {
+        if (optionsCase_ == 12) {
+          optionsCase_ = 0;
+          options_ = null;
+          onChanged();
+        }
+      } else {
+        if (optionsCase_ == 12) {
+          optionsCase_ = 0;
+          options_ = null;
+        }
+        bigqueryOptionsBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Options that affect sinks exporting data to BigQuery.
+     * </pre>
+     *
+     * <code>.google.logging.v2.BigQueryOptions bigquery_options = 12;</code>
+     */
+    public com.google.logging.v2.BigQueryOptions.Builder getBigqueryOptionsBuilder() {
+      return getBigqueryOptionsFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Options that affect sinks exporting data to BigQuery.
+     * </pre>
+     *
+     * <code>.google.logging.v2.BigQueryOptions bigquery_options = 12;</code>
+     */
+    public com.google.logging.v2.BigQueryOptionsOrBuilder getBigqueryOptionsOrBuilder() {
+      if ((optionsCase_ == 12) && (bigqueryOptionsBuilder_ != null)) {
+        return bigqueryOptionsBuilder_.getMessageOrBuilder();
+      } else {
+        if (optionsCase_ == 12) {
+          return (com.google.logging.v2.BigQueryOptions) options_;
+        }
+        return com.google.logging.v2.BigQueryOptions.getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Options that affect sinks exporting data to BigQuery.
+     * </pre>
+     *
+     * <code>.google.logging.v2.BigQueryOptions bigquery_options = 12;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.logging.v2.BigQueryOptions,
+            com.google.logging.v2.BigQueryOptions.Builder,
+            com.google.logging.v2.BigQueryOptionsOrBuilder>
+        getBigqueryOptionsFieldBuilder() {
+      if (bigqueryOptionsBuilder_ == null) {
+        if (!(optionsCase_ == 12)) {
+          options_ = com.google.logging.v2.BigQueryOptions.getDefaultInstance();
+        }
+        bigqueryOptionsBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.logging.v2.BigQueryOptions,
+                com.google.logging.v2.BigQueryOptions.Builder,
+                com.google.logging.v2.BigQueryOptionsOrBuilder>(
+                (com.google.logging.v2.BigQueryOptions) options_,
+                getParentForChildren(),
+                isClean());
+        options_ = null;
+      }
+      optionsCase_ = 12;
+      onChanged();
+      ;
+      return bigqueryOptionsBuilder_;
+    }
+
+    private com.google.protobuf.Timestamp createTime_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.protobuf.Timestamp,
+            com.google.protobuf.Timestamp.Builder,
+            com.google.protobuf.TimestampOrBuilder>
+        createTimeBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The creation timestamp of the sink.
+     * This field may not be present for older sinks.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp create_time = 13;</code>
+     */
+    public boolean hasCreateTime() {
+      return createTimeBuilder_ != null || createTime_ != null;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The creation timestamp of the sink.
+     * This field may not be present for older sinks.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp create_time = 13;</code>
+     */
+    public com.google.protobuf.Timestamp getCreateTime() {
+      if (createTimeBuilder_ == null) {
+        return createTime_ == null
+            ? com.google.protobuf.Timestamp.getDefaultInstance()
+            : createTime_;
+      } else {
+        return createTimeBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The creation timestamp of the sink.
+     * This field may not be present for older sinks.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp create_time = 13;</code>
+     */
+    public Builder setCreateTime(com.google.protobuf.Timestamp value) {
+      if (createTimeBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        createTime_ = value;
+        onChanged();
+      } else {
+        createTimeBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The creation timestamp of the sink.
+     * This field may not be present for older sinks.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp create_time = 13;</code>
+     */
+    public Builder setCreateTime(com.google.protobuf.Timestamp.Builder builderForValue) {
+      if (createTimeBuilder_ == null) {
+        createTime_ = builderForValue.build();
+        onChanged();
+      } else {
+        createTimeBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The creation timestamp of the sink.
+     * This field may not be present for older sinks.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp create_time = 13;</code>
+     */
+    public Builder mergeCreateTime(com.google.protobuf.Timestamp value) {
+      if (createTimeBuilder_ == null) {
+        if (createTime_ != null) {
+          createTime_ =
+              com.google.protobuf.Timestamp.newBuilder(createTime_).mergeFrom(value).buildPartial();
+        } else {
+          createTime_ = value;
+        }
+        onChanged();
+      } else {
+        createTimeBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The creation timestamp of the sink.
+     * This field may not be present for older sinks.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp create_time = 13;</code>
+     */
+    public Builder clearCreateTime() {
+      if (createTimeBuilder_ == null) {
+        createTime_ = null;
+        onChanged();
+      } else {
+        createTime_ = null;
+        createTimeBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The creation timestamp of the sink.
+     * This field may not be present for older sinks.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp create_time = 13;</code>
+     */
+    public com.google.protobuf.Timestamp.Builder getCreateTimeBuilder() {
+
+      onChanged();
+      return getCreateTimeFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The creation timestamp of the sink.
+     * This field may not be present for older sinks.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp create_time = 13;</code>
+     */
+    public com.google.protobuf.TimestampOrBuilder getCreateTimeOrBuilder() {
+      if (createTimeBuilder_ != null) {
+        return createTimeBuilder_.getMessageOrBuilder();
+      } else {
+        return createTime_ == null
+            ? com.google.protobuf.Timestamp.getDefaultInstance()
+            : createTime_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The creation timestamp of the sink.
+     * This field may not be present for older sinks.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp create_time = 13;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.protobuf.Timestamp,
+            com.google.protobuf.Timestamp.Builder,
+            com.google.protobuf.TimestampOrBuilder>
+        getCreateTimeFieldBuilder() {
+      if (createTimeBuilder_ == null) {
+        createTimeBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.protobuf.Timestamp,
+                com.google.protobuf.Timestamp.Builder,
+                com.google.protobuf.TimestampOrBuilder>(
+                getCreateTime(), getParentForChildren(), isClean());
+        createTime_ = null;
+      }
+      return createTimeBuilder_;
+    }
+
+    private com.google.protobuf.Timestamp updateTime_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.protobuf.Timestamp,
+            com.google.protobuf.Timestamp.Builder,
+            com.google.protobuf.TimestampOrBuilder>
+        updateTimeBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The last update timestamp of the sink.
+     * This field may not be present for older sinks.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp update_time = 14;</code>
+     */
+    public boolean hasUpdateTime() {
+      return updateTimeBuilder_ != null || updateTime_ != null;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The last update timestamp of the sink.
+     * This field may not be present for older sinks.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp update_time = 14;</code>
+     */
+    public com.google.protobuf.Timestamp getUpdateTime() {
+      if (updateTimeBuilder_ == null) {
+        return updateTime_ == null
+            ? com.google.protobuf.Timestamp.getDefaultInstance()
+            : updateTime_;
+      } else {
+        return updateTimeBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The last update timestamp of the sink.
+     * This field may not be present for older sinks.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp update_time = 14;</code>
+     */
+    public Builder setUpdateTime(com.google.protobuf.Timestamp value) {
+      if (updateTimeBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        updateTime_ = value;
+        onChanged();
+      } else {
+        updateTimeBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The last update timestamp of the sink.
+     * This field may not be present for older sinks.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp update_time = 14;</code>
+     */
+    public Builder setUpdateTime(com.google.protobuf.Timestamp.Builder builderForValue) {
+      if (updateTimeBuilder_ == null) {
+        updateTime_ = builderForValue.build();
+        onChanged();
+      } else {
+        updateTimeBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The last update timestamp of the sink.
+     * This field may not be present for older sinks.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp update_time = 14;</code>
+     */
+    public Builder mergeUpdateTime(com.google.protobuf.Timestamp value) {
+      if (updateTimeBuilder_ == null) {
+        if (updateTime_ != null) {
+          updateTime_ =
+              com.google.protobuf.Timestamp.newBuilder(updateTime_).mergeFrom(value).buildPartial();
+        } else {
+          updateTime_ = value;
+        }
+        onChanged();
+      } else {
+        updateTimeBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The last update timestamp of the sink.
+     * This field may not be present for older sinks.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp update_time = 14;</code>
+     */
+    public Builder clearUpdateTime() {
+      if (updateTimeBuilder_ == null) {
+        updateTime_ = null;
+        onChanged();
+      } else {
+        updateTime_ = null;
+        updateTimeBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The last update timestamp of the sink.
+     * This field may not be present for older sinks.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp update_time = 14;</code>
+     */
+    public com.google.protobuf.Timestamp.Builder getUpdateTimeBuilder() {
+
+      onChanged();
+      return getUpdateTimeFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The last update timestamp of the sink.
+     * This field may not be present for older sinks.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp update_time = 14;</code>
+     */
+    public com.google.protobuf.TimestampOrBuilder getUpdateTimeOrBuilder() {
+      if (updateTimeBuilder_ != null) {
+        return updateTimeBuilder_.getMessageOrBuilder();
+      } else {
+        return updateTime_ == null
+            ? com.google.protobuf.Timestamp.getDefaultInstance()
+            : updateTime_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The last update timestamp of the sink.
+     * This field may not be present for older sinks.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp update_time = 14;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.protobuf.Timestamp,
+            com.google.protobuf.Timestamp.Builder,
+            com.google.protobuf.TimestampOrBuilder>
+        getUpdateTimeFieldBuilder() {
+      if (updateTimeBuilder_ == null) {
+        updateTimeBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.protobuf.Timestamp,
+                com.google.protobuf.Timestamp.Builder,
+                com.google.protobuf.TimestampOrBuilder>(
+                getUpdateTime(), getParentForChildren(), isClean());
+        updateTime_ = null;
+      }
+      return updateTimeBuilder_;
+    }
+
     private com.google.protobuf.Timestamp startTime_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.protobuf.Timestamp,
@@ -1821,7 +2718,7 @@ public final class LogSink extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Deprecated. This field is ignored when creating or updating sinks.
+     * Do not use. This field is ignored.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp start_time = 10 [deprecated = true];</code>
@@ -1834,7 +2731,7 @@ public final class LogSink extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Deprecated. This field is ignored when creating or updating sinks.
+     * Do not use. This field is ignored.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp start_time = 10 [deprecated = true];</code>
@@ -1851,7 +2748,7 @@ public final class LogSink extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Deprecated. This field is ignored when creating or updating sinks.
+     * Do not use. This field is ignored.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp start_time = 10 [deprecated = true];</code>
@@ -1874,7 +2771,7 @@ public final class LogSink extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Deprecated. This field is ignored when creating or updating sinks.
+     * Do not use. This field is ignored.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp start_time = 10 [deprecated = true];</code>
@@ -1894,7 +2791,7 @@ public final class LogSink extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Deprecated. This field is ignored when creating or updating sinks.
+     * Do not use. This field is ignored.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp start_time = 10 [deprecated = true];</code>
@@ -1919,7 +2816,7 @@ public final class LogSink extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Deprecated. This field is ignored when creating or updating sinks.
+     * Do not use. This field is ignored.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp start_time = 10 [deprecated = true];</code>
@@ -1940,7 +2837,7 @@ public final class LogSink extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Deprecated. This field is ignored when creating or updating sinks.
+     * Do not use. This field is ignored.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp start_time = 10 [deprecated = true];</code>
@@ -1955,7 +2852,7 @@ public final class LogSink extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Deprecated. This field is ignored when creating or updating sinks.
+     * Do not use. This field is ignored.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp start_time = 10 [deprecated = true];</code>
@@ -1972,7 +2869,7 @@ public final class LogSink extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Deprecated. This field is ignored when creating or updating sinks.
+     * Do not use. This field is ignored.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp start_time = 10 [deprecated = true];</code>
@@ -2004,7 +2901,7 @@ public final class LogSink extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Deprecated. This field is ignored when creating or updating sinks.
+     * Do not use. This field is ignored.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp end_time = 11 [deprecated = true];</code>
@@ -2017,7 +2914,7 @@ public final class LogSink extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Deprecated. This field is ignored when creating or updating sinks.
+     * Do not use. This field is ignored.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp end_time = 11 [deprecated = true];</code>
@@ -2034,7 +2931,7 @@ public final class LogSink extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Deprecated. This field is ignored when creating or updating sinks.
+     * Do not use. This field is ignored.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp end_time = 11 [deprecated = true];</code>
@@ -2057,7 +2954,7 @@ public final class LogSink extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Deprecated. This field is ignored when creating or updating sinks.
+     * Do not use. This field is ignored.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp end_time = 11 [deprecated = true];</code>
@@ -2077,7 +2974,7 @@ public final class LogSink extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Deprecated. This field is ignored when creating or updating sinks.
+     * Do not use. This field is ignored.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp end_time = 11 [deprecated = true];</code>
@@ -2102,7 +2999,7 @@ public final class LogSink extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Deprecated. This field is ignored when creating or updating sinks.
+     * Do not use. This field is ignored.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp end_time = 11 [deprecated = true];</code>
@@ -2123,7 +3020,7 @@ public final class LogSink extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Deprecated. This field is ignored when creating or updating sinks.
+     * Do not use. This field is ignored.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp end_time = 11 [deprecated = true];</code>
@@ -2138,7 +3035,7 @@ public final class LogSink extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Deprecated. This field is ignored when creating or updating sinks.
+     * Do not use. This field is ignored.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp end_time = 11 [deprecated = true];</code>
@@ -2155,7 +3052,7 @@ public final class LogSink extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Deprecated. This field is ignored when creating or updating sinks.
+     * Do not use. This field is ignored.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp end_time = 11 [deprecated = true];</code>

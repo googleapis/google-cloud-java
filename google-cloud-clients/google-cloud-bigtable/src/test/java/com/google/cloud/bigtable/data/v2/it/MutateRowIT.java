@@ -17,11 +17,12 @@ package com.google.cloud.bigtable.data.v2.it;
 
 import static com.google.common.truth.Truth.assertThat;
 
-import com.google.cloud.bigtable.data.v2.it.env.TestEnvRule;
 import com.google.cloud.bigtable.data.v2.models.Query;
 import com.google.cloud.bigtable.data.v2.models.Row;
 import com.google.cloud.bigtable.data.v2.models.RowMutation;
+import com.google.cloud.bigtable.test_helpers.env.TestEnvRule;
 import com.google.protobuf.ByteString;
+import java.util.UUID;
 import java.util.concurrent.TimeUnit;
 import org.junit.ClassRule;
 import org.junit.Test;
@@ -34,7 +35,7 @@ public class MutateRowIT {
 
   @Test
   public void test() throws Exception {
-    String rowKey = testEnvRule.env().getRowPrefix() + "testA";
+    String rowKey = UUID.randomUUID().toString();
     String familyId = testEnvRule.env().getFamilyId();
 
     testEnvRule
@@ -44,7 +45,8 @@ public class MutateRowIT {
             RowMutation.create(testEnvRule.env().getTableId(), rowKey)
                 .setCell(familyId, "q", "myVal")
                 .setCell(familyId, "q2", "myVal2")
-                .setCell(familyId, "q3", "myVal3"))
+                .setCell(familyId, "q3", "myVal3")
+                .setCell(familyId, "q4", 0x12345678))
         .get(1, TimeUnit.MINUTES);
 
     testEnvRule
@@ -62,8 +64,10 @@ public class MutateRowIT {
             .first()
             .call(Query.create(testEnvRule.env().getTableId()).rowKey(rowKey));
 
-    assertThat(row.getCells()).hasSize(2);
+    assertThat(row.getCells()).hasSize(3);
     assertThat(row.getCells().get(0).getValue()).isEqualTo(ByteString.copyFromUtf8("myVal"));
     assertThat(row.getCells().get(1).getValue()).isEqualTo(ByteString.copyFromUtf8("myVal3"));
+    assertThat(row.getCells().get(2).getValue())
+        .isEqualTo(ByteString.copyFrom(new byte[] {0, 0, 0, 0, 0x12, 0x34, 0x56, 0x78}));
   }
 }

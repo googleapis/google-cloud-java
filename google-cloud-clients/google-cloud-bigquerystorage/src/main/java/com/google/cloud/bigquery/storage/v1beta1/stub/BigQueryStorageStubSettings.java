@@ -85,6 +85,7 @@ public class BigQueryStorageStubSettings extends StubSettings<BigQueryStorageStu
   private static final ImmutableList<String> DEFAULT_SERVICE_SCOPES =
       ImmutableList.<String>builder()
           .add("https://www.googleapis.com/auth/bigquery")
+          .add("https://www.googleapis.com/auth/bigquery.readonly")
           .add("https://www.googleapis.com/auth/cloud-platform")
           .build();
 
@@ -159,7 +160,8 @@ public class BigQueryStorageStubSettings extends StubSettings<BigQueryStorageStu
 
   /** Returns a builder for the default ChannelProvider for this service. */
   public static InstantiatingGrpcChannelProvider.Builder defaultGrpcTransportProviderBuilder() {
-    return InstantiatingGrpcChannelProvider.newBuilder();
+    return InstantiatingGrpcChannelProvider.newBuilder()
+        .setMaxInboundMessageSize(Integer.MAX_VALUE);
   }
 
   public static TransportChannelProvider defaultTransportChannelProvider() {

@@ -120,7 +120,7 @@ public final class Degree extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. ISCED degree type.
+   * ISCED degree type.
    * </pre>
    *
    * <code>.google.cloud.talent.v4beta1.DegreeType degree_type = 1;</code>
@@ -132,7 +132,7 @@ public final class Degree extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. ISCED degree type.
+   * ISCED degree type.
    * </pre>
    *
    * <code>.google.cloud.talent.v4beta1.DegreeType degree_type = 1;</code>
@@ -150,7 +150,7 @@ public final class Degree extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. Full Degree name.
+   * Full Degree name.
    * For example, "B.S.", "Master of Arts", and so on.
    * Number of characters allowed is 100.
    * </pre>
@@ -172,7 +172,7 @@ public final class Degree extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. Full Degree name.
+   * Full Degree name.
    * For example, "B.S.", "Master of Arts", and so on.
    * Number of characters allowed is 100.
    * </pre>
@@ -197,7 +197,7 @@ public final class Degree extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. Fields of study for the degree.
+   * Fields of study for the degree.
    * For example, "Computer science", "engineering".
    * Number of characters allowed is 100.
    * </pre>
@@ -211,7 +211,7 @@ public final class Degree extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. Fields of study for the degree.
+   * Fields of study for the degree.
    * For example, "Computer science", "engineering".
    * Number of characters allowed is 100.
    * </pre>
@@ -225,7 +225,7 @@ public final class Degree extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. Fields of study for the degree.
+   * Fields of study for the degree.
    * For example, "Computer science", "engineering".
    * Number of characters allowed is 100.
    * </pre>
@@ -239,7 +239,7 @@ public final class Degree extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. Fields of study for the degree.
+   * Fields of study for the degree.
    * For example, "Computer science", "engineering".
    * Number of characters allowed is 100.
    * </pre>
@@ -625,7 +625,7 @@ public final class Degree extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. ISCED degree type.
+     * ISCED degree type.
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.DegreeType degree_type = 1;</code>
@@ -637,7 +637,7 @@ public final class Degree extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. ISCED degree type.
+     * ISCED degree type.
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.DegreeType degree_type = 1;</code>
@@ -651,7 +651,7 @@ public final class Degree extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. ISCED degree type.
+     * ISCED degree type.
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.DegreeType degree_type = 1;</code>
@@ -666,7 +666,7 @@ public final class Degree extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. ISCED degree type.
+     * ISCED degree type.
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.DegreeType degree_type = 1;</code>
@@ -684,7 +684,7 @@ public final class Degree extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. ISCED degree type.
+     * ISCED degree type.
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.DegreeType degree_type = 1;</code>
@@ -701,7 +701,7 @@ public final class Degree extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Full Degree name.
+     * Full Degree name.
      * For example, "B.S.", "Master of Arts", and so on.
      * Number of characters allowed is 100.
      * </pre>
@@ -723,7 +723,7 @@ public final class Degree extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Full Degree name.
+     * Full Degree name.
      * For example, "B.S.", "Master of Arts", and so on.
      * Number of characters allowed is 100.
      * </pre>
@@ -745,7 +745,7 @@ public final class Degree extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Full Degree name.
+     * Full Degree name.
      * For example, "B.S.", "Master of Arts", and so on.
      * Number of characters allowed is 100.
      * </pre>
@@ -765,7 +765,7 @@ public final class Degree extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Full Degree name.
+     * Full Degree name.
      * For example, "B.S.", "Master of Arts", and so on.
      * Number of characters allowed is 100.
      * </pre>
@@ -782,7 +782,7 @@ public final class Degree extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Full Degree name.
+     * Full Degree name.
      * For example, "B.S.", "Master of Arts", and so on.
      * Number of characters allowed is 100.
      * </pre>
@@ -813,7 +813,7 @@ public final class Degree extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Fields of study for the degree.
+     * Fields of study for the degree.
      * For example, "Computer science", "engineering".
      * Number of characters allowed is 100.
      * </pre>
@@ -827,7 +827,7 @@ public final class Degree extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Fields of study for the degree.
+     * Fields of study for the degree.
      * For example, "Computer science", "engineering".
      * Number of characters allowed is 100.
      * </pre>
@@ -841,7 +841,7 @@ public final class Degree extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Fields of study for the degree.
+     * Fields of study for the degree.
      * For example, "Computer science", "engineering".
      * Number of characters allowed is 100.
      * </pre>
@@ -855,7 +855,7 @@ public final class Degree extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Fields of study for the degree.
+     * Fields of study for the degree.
      * For example, "Computer science", "engineering".
      * Number of characters allowed is 100.
      * </pre>
@@ -869,7 +869,7 @@ public final class Degree extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Fields of study for the degree.
+     * Fields of study for the degree.
      * For example, "Computer science", "engineering".
      * Number of characters allowed is 100.
      * </pre>
@@ -889,7 +889,7 @@ public final class Degree extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Fields of study for the degree.
+     * Fields of study for the degree.
      * For example, "Computer science", "engineering".
      * Number of characters allowed is 100.
      * </pre>
@@ -909,7 +909,7 @@ public final class Degree extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Fields of study for the degree.
+     * Fields of study for the degree.
      * For example, "Computer science", "engineering".
      * Number of characters allowed is 100.
      * </pre>
@@ -926,7 +926,7 @@ public final class Degree extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Fields of study for the degree.
+     * Fields of study for the degree.
      * For example, "Computer science", "engineering".
      * Number of characters allowed is 100.
      * </pre>
@@ -943,7 +943,7 @@ public final class Degree extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Fields of study for the degree.
+     * Fields of study for the degree.
      * For example, "Computer science", "engineering".
      * Number of characters allowed is 100.
      * </pre>

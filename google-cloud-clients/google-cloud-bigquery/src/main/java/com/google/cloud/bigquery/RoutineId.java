@@ -16,12 +16,11 @@
 
 package com.google.cloud.bigquery;
 
-import static com.google.common.base.Preconditions.checkNotNull;
+import static com.google.common.base.Preconditions.checkArgument;
+import static com.google.common.base.Strings.isNullOrEmpty;
 
 import com.google.api.services.bigquery.model.RoutineReference;
 import com.google.common.base.Function;
-import com.google.common.base.Preconditions;
-import com.google.common.base.Strings;
 import java.io.Serializable;
 import java.util.Objects;
 
@@ -63,6 +62,8 @@ public final class RoutineId implements Serializable {
   }
 
   private RoutineId(String project, String dataset, String routine) {
+    checkArgument(!isNullOrEmpty(dataset), "Provided dataset is null or empty");
+    checkArgument(!isNullOrEmpty(routine), "Provided routine is null or empty");
     this.project = project;
     this.dataset = dataset;
     this.routine = routine;
@@ -70,12 +71,12 @@ public final class RoutineId implements Serializable {
 
   /** Creates a routine identity given project, dataset, and routine identifiers. * */
   public static RoutineId of(String project, String dataset, String routine) {
-    return new RoutineId(checkNotNull(project), checkNotNull(dataset), checkNotNull(routine));
+    return new RoutineId(project, dataset, routine);
   }
 
   /** Creates a routine identity given dataset and routine identifiers. * */
   public static RoutineId of(String dataset, String routine) {
-    return new RoutineId(null, checkNotNull(dataset), checkNotNull(routine));
+    return new RoutineId(null, dataset, routine);
   }
 
   @Override
@@ -95,8 +96,7 @@ public final class RoutineId implements Serializable {
   }
 
   RoutineId setProjectId(String projectId) {
-    Preconditions.checkArgument(
-        !Strings.isNullOrEmpty(projectId), "Provided projectId is null or empty");
+    checkArgument(!isNullOrEmpty(projectId), "Provided projectId is null or empty");
     return RoutineId.of(projectId, getDataset(), getRoutine());
   }
 

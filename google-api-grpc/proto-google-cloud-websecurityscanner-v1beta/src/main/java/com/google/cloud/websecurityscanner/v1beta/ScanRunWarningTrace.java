@@ -99,7 +99,7 @@ public final class ScanRunWarningTrace extends com.google.protobuf.GeneratedMess
    * <pre>
    * Output only.
    * Defines a warning message code.
-   * Next id: 5
+   * Next id: 6
    * </pre>
    *
    * Protobuf enum {@code google.cloud.websecurityscanner.v1beta.ScanRunWarningTrace.Code}
@@ -302,7 +302,6 @@ public final class ScanRunWarningTrace extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * Output only.
    * Indicates the warning code.
    * </pre>
    *
@@ -315,7 +314,6 @@ public final class ScanRunWarningTrace extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * Output only.
    * Indicates the warning code.
    * </pre>
    *
@@ -662,7 +660,6 @@ public final class ScanRunWarningTrace extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Output only.
      * Indicates the warning code.
      * </pre>
      *
@@ -675,7 +672,6 @@ public final class ScanRunWarningTrace extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Output only.
      * Indicates the warning code.
      * </pre>
      *
@@ -690,7 +686,6 @@ public final class ScanRunWarningTrace extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Output only.
      * Indicates the warning code.
      * </pre>
      *
@@ -708,7 +703,6 @@ public final class ScanRunWarningTrace extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Output only.
      * Indicates the warning code.
      * </pre>
      *
@@ -728,7 +722,6 @@ public final class ScanRunWarningTrace extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Output only.
      * Indicates the warning code.
      * </pre>
      *

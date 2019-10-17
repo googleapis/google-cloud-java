@@ -16,7 +16,8 @@
 
 package com.google.cloud.bigquery;
 
-import static com.google.common.base.Preconditions.checkNotNull;
+import static com.google.common.base.Preconditions.checkArgument;
+import static com.google.common.base.Strings.isNullOrEmpty;
 
 import com.google.api.services.bigquery.model.DatasetReference;
 import java.io.Serializable;
@@ -41,18 +42,19 @@ public final class DatasetId implements Serializable {
   }
 
   private DatasetId(String project, String dataset) {
+    checkArgument(!isNullOrEmpty(dataset), "Provided dataset is null or empty");
     this.project = project;
     this.dataset = dataset;
   }
 
   /** Creates a dataset identity given project's and dataset's user-defined ids. */
   public static DatasetId of(String project, String dataset) {
-    return new DatasetId(checkNotNull(project), checkNotNull(dataset));
+    return new DatasetId(project, dataset);
   }
 
   /** Creates a dataset identity given only its user-defined id. */
   public static DatasetId of(String dataset) {
-    return new DatasetId(null, checkNotNull(dataset));
+    return new DatasetId(null, dataset);
   }
 
   @Override

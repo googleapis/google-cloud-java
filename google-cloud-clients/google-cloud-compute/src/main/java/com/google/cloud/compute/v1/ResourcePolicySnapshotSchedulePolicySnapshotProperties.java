@@ -90,7 +90,7 @@ public final class ResourcePolicySnapshotSchedulePolicySnapshotProperties implem
     return labels;
   }
 
-  /** GCS bucket storage location of the auto snapshot (regional or multi-regional). */
+  /** Cloud Storage bucket storage location of the auto snapshot (regional or multi-regional). */
   public List<String> getStorageLocationsList() {
     return storageLocations;
   }
@@ -174,12 +174,12 @@ public final class ResourcePolicySnapshotSchedulePolicySnapshotProperties implem
       return this;
     }
 
-    /** GCS bucket storage location of the auto snapshot (regional or multi-regional). */
+    /** Cloud Storage bucket storage location of the auto snapshot (regional or multi-regional). */
     public List<String> getStorageLocationsList() {
       return storageLocations;
     }
 
-    /** GCS bucket storage location of the auto snapshot (regional or multi-regional). */
+    /** Cloud Storage bucket storage location of the auto snapshot (regional or multi-regional). */
     public Builder addAllStorageLocations(List<String> storageLocations) {
       if (this.storageLocations == null) {
         this.storageLocations = new LinkedList<>();
@@ -188,7 +188,7 @@ public final class ResourcePolicySnapshotSchedulePolicySnapshotProperties implem
       return this;
     }
 
-    /** GCS bucket storage location of the auto snapshot (regional or multi-regional). */
+    /** Cloud Storage bucket storage location of the auto snapshot (regional or multi-regional). */
     public Builder addStorageLocations(String storageLocations) {
       if (this.storageLocations == null) {
         this.storageLocations = new LinkedList<>();

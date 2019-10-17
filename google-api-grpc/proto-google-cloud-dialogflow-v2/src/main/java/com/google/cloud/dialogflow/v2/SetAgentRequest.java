@@ -122,7 +122,8 @@ public final class SetAgentRequest extends com.google.protobuf.GeneratedMessageV
    * Required. The agent to update.
    * </pre>
    *
-   * <code>.google.cloud.dialogflow.v2.Agent agent = 1;</code>
+   * <code>.google.cloud.dialogflow.v2.Agent agent = 1 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   public boolean hasAgent() {
     return agent_ != null;
@@ -134,7 +135,8 @@ public final class SetAgentRequest extends com.google.protobuf.GeneratedMessageV
    * Required. The agent to update.
    * </pre>
    *
-   * <code>.google.cloud.dialogflow.v2.Agent agent = 1;</code>
+   * <code>.google.cloud.dialogflow.v2.Agent agent = 1 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   public com.google.cloud.dialogflow.v2.Agent getAgent() {
     return agent_ == null ? com.google.cloud.dialogflow.v2.Agent.getDefaultInstance() : agent_;
@@ -146,7 +148,8 @@ public final class SetAgentRequest extends com.google.protobuf.GeneratedMessageV
    * Required. The agent to update.
    * </pre>
    *
-   * <code>.google.cloud.dialogflow.v2.Agent agent = 1;</code>
+   * <code>.google.cloud.dialogflow.v2.Agent agent = 1 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   public com.google.cloud.dialogflow.v2.AgentOrBuilder getAgentOrBuilder() {
     return getAgent();
@@ -161,7 +164,8 @@ public final class SetAgentRequest extends com.google.protobuf.GeneratedMessageV
    * Optional. The mask to control which fields get updated.
    * </pre>
    *
-   * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+   * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   public boolean hasUpdateMask() {
     return updateMask_ != null;
@@ -173,7 +177,8 @@ public final class SetAgentRequest extends com.google.protobuf.GeneratedMessageV
    * Optional. The mask to control which fields get updated.
    * </pre>
    *
-   * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+   * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   public com.google.protobuf.FieldMask getUpdateMask() {
     return updateMask_ == null ? com.google.protobuf.FieldMask.getDefaultInstance() : updateMask_;
@@ -185,7 +190,8 @@ public final class SetAgentRequest extends com.google.protobuf.GeneratedMessageV
    * Optional. The mask to control which fields get updated.
    * </pre>
    *
-   * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+   * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   public com.google.protobuf.FieldMaskOrBuilder getUpdateMaskOrBuilder() {
     return getUpdateMask();
@@ -560,7 +566,8 @@ public final class SetAgentRequest extends com.google.protobuf.GeneratedMessageV
      * Required. The agent to update.
      * </pre>
      *
-     * <code>.google.cloud.dialogflow.v2.Agent agent = 1;</code>
+     * <code>.google.cloud.dialogflow.v2.Agent agent = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public boolean hasAgent() {
       return agentBuilder_ != null || agent_ != null;
@@ -572,7 +579,8 @@ public final class SetAgentRequest extends com.google.protobuf.GeneratedMessageV
      * Required. The agent to update.
      * </pre>
      *
-     * <code>.google.cloud.dialogflow.v2.Agent agent = 1;</code>
+     * <code>.google.cloud.dialogflow.v2.Agent agent = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public com.google.cloud.dialogflow.v2.Agent getAgent() {
       if (agentBuilder_ == null) {
@@ -588,7 +596,8 @@ public final class SetAgentRequest extends com.google.protobuf.GeneratedMessageV
      * Required. The agent to update.
      * </pre>
      *
-     * <code>.google.cloud.dialogflow.v2.Agent agent = 1;</code>
+     * <code>.google.cloud.dialogflow.v2.Agent agent = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder setAgent(com.google.cloud.dialogflow.v2.Agent value) {
       if (agentBuilder_ == null) {
@@ -610,7 +619,8 @@ public final class SetAgentRequest extends com.google.protobuf.GeneratedMessageV
      * Required. The agent to update.
      * </pre>
      *
-     * <code>.google.cloud.dialogflow.v2.Agent agent = 1;</code>
+     * <code>.google.cloud.dialogflow.v2.Agent agent = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder setAgent(com.google.cloud.dialogflow.v2.Agent.Builder builderForValue) {
       if (agentBuilder_ == null) {
@@ -629,7 +639,8 @@ public final class SetAgentRequest extends com.google.protobuf.GeneratedMessageV
      * Required. The agent to update.
      * </pre>
      *
-     * <code>.google.cloud.dialogflow.v2.Agent agent = 1;</code>
+     * <code>.google.cloud.dialogflow.v2.Agent agent = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder mergeAgent(com.google.cloud.dialogflow.v2.Agent value) {
       if (agentBuilder_ == null) {
@@ -655,7 +666,8 @@ public final class SetAgentRequest extends com.google.protobuf.GeneratedMessageV
      * Required. The agent to update.
      * </pre>
      *
-     * <code>.google.cloud.dialogflow.v2.Agent agent = 1;</code>
+     * <code>.google.cloud.dialogflow.v2.Agent agent = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder clearAgent() {
       if (agentBuilder_ == null) {
@@ -675,7 +687,8 @@ public final class SetAgentRequest extends com.google.protobuf.GeneratedMessageV
      * Required. The agent to update.
      * </pre>
      *
-     * <code>.google.cloud.dialogflow.v2.Agent agent = 1;</code>
+     * <code>.google.cloud.dialogflow.v2.Agent agent = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public com.google.cloud.dialogflow.v2.Agent.Builder getAgentBuilder() {
 
@@ -689,7 +702,8 @@ public final class SetAgentRequest extends com.google.protobuf.GeneratedMessageV
      * Required. The agent to update.
      * </pre>
      *
-     * <code>.google.cloud.dialogflow.v2.Agent agent = 1;</code>
+     * <code>.google.cloud.dialogflow.v2.Agent agent = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public com.google.cloud.dialogflow.v2.AgentOrBuilder getAgentOrBuilder() {
       if (agentBuilder_ != null) {
@@ -705,7 +719,8 @@ public final class SetAgentRequest extends com.google.protobuf.GeneratedMessageV
      * Required. The agent to update.
      * </pre>
      *
-     * <code>.google.cloud.dialogflow.v2.Agent agent = 1;</code>
+     * <code>.google.cloud.dialogflow.v2.Agent agent = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.dialogflow.v2.Agent,
@@ -737,7 +752,8 @@ public final class SetAgentRequest extends com.google.protobuf.GeneratedMessageV
      * Optional. The mask to control which fields get updated.
      * </pre>
      *
-     * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+     * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public boolean hasUpdateMask() {
       return updateMaskBuilder_ != null || updateMask_ != null;
@@ -749,7 +765,8 @@ public final class SetAgentRequest extends com.google.protobuf.GeneratedMessageV
      * Optional. The mask to control which fields get updated.
      * </pre>
      *
-     * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+     * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public com.google.protobuf.FieldMask getUpdateMask() {
       if (updateMaskBuilder_ == null) {
@@ -767,7 +784,8 @@ public final class SetAgentRequest extends com.google.protobuf.GeneratedMessageV
      * Optional. The mask to control which fields get updated.
      * </pre>
      *
-     * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+     * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder setUpdateMask(com.google.protobuf.FieldMask value) {
       if (updateMaskBuilder_ == null) {
@@ -789,7 +807,8 @@ public final class SetAgentRequest extends com.google.protobuf.GeneratedMessageV
      * Optional. The mask to control which fields get updated.
      * </pre>
      *
-     * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+     * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder setUpdateMask(com.google.protobuf.FieldMask.Builder builderForValue) {
       if (updateMaskBuilder_ == null) {
@@ -808,7 +827,8 @@ public final class SetAgentRequest extends com.google.protobuf.GeneratedMessageV
      * Optional. The mask to control which fields get updated.
      * </pre>
      *
-     * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+     * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder mergeUpdateMask(com.google.protobuf.FieldMask value) {
       if (updateMaskBuilder_ == null) {
@@ -832,7 +852,8 @@ public final class SetAgentRequest extends com.google.protobuf.GeneratedMessageV
      * Optional. The mask to control which fields get updated.
      * </pre>
      *
-     * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+     * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder clearUpdateMask() {
       if (updateMaskBuilder_ == null) {
@@ -852,7 +873,8 @@ public final class SetAgentRequest extends com.google.protobuf.GeneratedMessageV
      * Optional. The mask to control which fields get updated.
      * </pre>
      *
-     * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+     * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public com.google.protobuf.FieldMask.Builder getUpdateMaskBuilder() {
 
@@ -866,7 +888,8 @@ public final class SetAgentRequest extends com.google.protobuf.GeneratedMessageV
      * Optional. The mask to control which fields get updated.
      * </pre>
      *
-     * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+     * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public com.google.protobuf.FieldMaskOrBuilder getUpdateMaskOrBuilder() {
       if (updateMaskBuilder_ != null) {
@@ -884,7 +907,8 @@ public final class SetAgentRequest extends com.google.protobuf.GeneratedMessageV
      * Optional. The mask to control which fields get updated.
      * </pre>
      *
-     * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+     * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.protobuf.FieldMask,

@@ -71,6 +71,11 @@ public class BucketInfoTest {
           .setIsUniformBucketLevelAccessEnabled(true)
           .setUniformBucketLevelAccessLockedTime(System.currentTimeMillis())
           .build();
+  private static final BucketInfo.Logging LOGGING =
+      BucketInfo.Logging.newBuilder()
+          .setLogBucket("test-bucket")
+          .setLogObjectPrefix("test-")
+          .build();
   private static final String NOT_FOUND_PAGE = "error.html";
   private static final String LOCATION = "ASIA";
   private static final StorageClass STORAGE_CLASS = StorageClass.STANDARD;
@@ -113,6 +118,7 @@ public class BucketInfoTest {
           .setRetentionEffectiveTime(RETENTION_EFFECTIVE_TIME)
           .setRetentionPeriod(RETENTION_PERIOD)
           .setRetentionPolicyIsLocked(RETENTION_POLICY_IS_LOCKED)
+          .setLogging(LOGGING)
           .build();
 
   @Test
@@ -164,6 +170,7 @@ public class BucketInfoTest {
     assertEquals(RETENTION_PERIOD, BUCKET_INFO.getRetentionPeriod());
     assertEquals(RETENTION_POLICY_IS_LOCKED, BUCKET_INFO.retentionPolicyIsLocked());
     assertTrue(LOCATION_TYPES.contains(BUCKET_INFO.getLocationType()));
+    assertEquals(LOGGING, BUCKET_INFO.getLogging());
   }
 
   @Test
@@ -200,6 +207,7 @@ public class BucketInfoTest {
     assertEquals(expected.getRetentionEffectiveTime(), value.getRetentionEffectiveTime());
     assertEquals(expected.getRetentionPeriod(), value.getRetentionPeriod());
     assertEquals(expected.retentionPolicyIsLocked(), value.retentionPolicyIsLocked());
+    assertEquals(expected.getLogging(), value.getLogging());
   }
 
   @Test
@@ -273,5 +281,17 @@ public class BucketInfoTest {
     assertNotNull(iamConfiguration.getBucketPolicyOnly().getLockedTime());
     assertEquals(Boolean.TRUE, iamConfiguration.getUniformBucketLevelAccess().getEnabled());
     assertNotNull(iamConfiguration.getUniformBucketLevelAccess().getLockedTime());
+  }
+
+  @Test
+  public void testLogging() {
+    Bucket.Logging logging =
+        BucketInfo.Logging.newBuilder()
+            .setLogBucket("test-bucket")
+            .setLogObjectPrefix("test-")
+            .build()
+            .toPb();
+    assertEquals("test-bucket", logging.getLogBucket());
+    assertEquals("test-", logging.getLogObjectPrefix());
   }
 }

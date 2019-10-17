@@ -984,9 +984,9 @@ public final class Company extends com.google.protobuf.GeneratedMessageV3
    * company is created.
    * The format is
    * "projects/{project_id}/tenants/{tenant_id}/companies/{company_id}", for
-   * example, "projects/api-test-project/tenants/foo/companies/bar".
-   * Tenant id is optional and the default tenant is used if unspecified, for
-   * example, "projects/api-test-project/companies/bar".
+   * example, "projects/foo/tenants/bar/companies/baz".
+   * If tenant id is unspecified, the default tenant is used. For
+   * example, "projects/foo/companies/bar".
    * </pre>
    *
    * <code>string name = 1;</code>
@@ -1011,9 +1011,9 @@ public final class Company extends com.google.protobuf.GeneratedMessageV3
    * company is created.
    * The format is
    * "projects/{project_id}/tenants/{tenant_id}/companies/{company_id}", for
-   * example, "projects/api-test-project/tenants/foo/companies/bar".
-   * Tenant id is optional and the default tenant is used if unspecified, for
-   * example, "projects/api-test-project/companies/bar".
+   * example, "projects/foo/tenants/bar/companies/baz".
+   * If tenant id is unspecified, the default tenant is used. For
+   * example, "projects/foo/companies/bar".
    * </pre>
    *
    * <code>string name = 1;</code>
@@ -1039,7 +1039,7 @@ public final class Company extends com.google.protobuf.GeneratedMessageV3
    * Required. The display name of the company, for example, "Google LLC".
    * </pre>
    *
-   * <code>string display_name = 2;</code>
+   * <code>string display_name = 2 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   public java.lang.String getDisplayName() {
     java.lang.Object ref = displayName_;
@@ -1059,7 +1059,7 @@ public final class Company extends com.google.protobuf.GeneratedMessageV3
    * Required. The display name of the company, for example, "Google LLC".
    * </pre>
    *
-   * <code>string display_name = 2;</code>
+   * <code>string display_name = 2 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   public com.google.protobuf.ByteString getDisplayNameBytes() {
     java.lang.Object ref = displayName_;
@@ -1084,7 +1084,7 @@ public final class Company extends com.google.protobuf.GeneratedMessageV3
    * The maximum number of allowed characters is 255.
    * </pre>
    *
-   * <code>string external_id = 3;</code>
+   * <code>string external_id = 3 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   public java.lang.String getExternalId() {
     java.lang.Object ref = externalId_;
@@ -1106,7 +1106,7 @@ public final class Company extends com.google.protobuf.GeneratedMessageV3
    * The maximum number of allowed characters is 255.
    * </pre>
    *
-   * <code>string external_id = 3;</code>
+   * <code>string external_id = 3 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   public com.google.protobuf.ByteString getExternalIdBytes() {
     java.lang.Object ref = externalId_;
@@ -1126,7 +1126,7 @@ public final class Company extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. The employer's company size.
+   * The employer's company size.
    * </pre>
    *
    * <code>.google.cloud.talent.v4beta1.CompanySize size = 4;</code>
@@ -1138,7 +1138,7 @@ public final class Company extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. The employer's company size.
+   * The employer's company size.
    * </pre>
    *
    * <code>.google.cloud.talent.v4beta1.CompanySize size = 4;</code>
@@ -1156,10 +1156,10 @@ public final class Company extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. The street address of the company's main headquarters, which may
-   * be different from the job location. The service attempts to geolocate the
-   * provided address, and populates a more specific location wherever possible
-   * in
+   * The street address of the company's main headquarters, which may be
+   * different from the job location. The service attempts
+   * to geolocate the provided address, and populates a more specific
+   * location wherever possible in
    * [DerivedInfo.headquarters_location][google.cloud.talent.v4beta1.Company.DerivedInfo.headquarters_location].
    * </pre>
    *
@@ -1180,10 +1180,10 @@ public final class Company extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. The street address of the company's main headquarters, which may
-   * be different from the job location. The service attempts to geolocate the
-   * provided address, and populates a more specific location wherever possible
-   * in
+   * The street address of the company's main headquarters, which may be
+   * different from the job location. The service attempts
+   * to geolocate the provided address, and populates a more specific
+   * location wherever possible in
    * [DerivedInfo.headquarters_location][google.cloud.talent.v4beta1.Company.DerivedInfo.headquarters_location].
    * </pre>
    *
@@ -1207,7 +1207,7 @@ public final class Company extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. Set to true if it is the hiring agency that post jobs for other
+   * Set to true if it is the hiring agency that post jobs for other
    * employers.
    * Defaults to false if not provided.
    * </pre>
@@ -1224,7 +1224,7 @@ public final class Company extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. Equal Employment Opportunity legal disclaimer text to be
+   * Equal Employment Opportunity legal disclaimer text to be
    * associated with all jobs, and typically to be displayed in all
    * roles.
    * The maximum number of allowed characters is 500.
@@ -1247,7 +1247,7 @@ public final class Company extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. Equal Employment Opportunity legal disclaimer text to be
+   * Equal Employment Opportunity legal disclaimer text to be
    * associated with all jobs, and typically to be displayed in all
    * roles.
    * The maximum number of allowed characters is 500.
@@ -1273,7 +1273,7 @@ public final class Company extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. The URI representing the company's primary web site or home page,
+   * The URI representing the company's primary web site or home page,
    * for example, "https://www.google.com".
    * The maximum number of allowed characters is 255.
    * </pre>
@@ -1295,7 +1295,7 @@ public final class Company extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. The URI representing the company's primary web site or home page,
+   * The URI representing the company's primary web site or home page,
    * for example, "https://www.google.com".
    * The maximum number of allowed characters is 255.
    * </pre>
@@ -1320,8 +1320,8 @@ public final class Company extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. The URI to employer's career site or careers page on the
-   * employer's web site, for example, "https://careers.google.com".
+   * The URI to employer's career site or careers page on the employer's web
+   * site, for example, "https://careers.google.com".
    * </pre>
    *
    * <code>string career_site_uri = 9;</code>
@@ -1341,8 +1341,8 @@ public final class Company extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. The URI to employer's career site or careers page on the
-   * employer's web site, for example, "https://careers.google.com".
+   * The URI to employer's career site or careers page on the employer's web
+   * site, for example, "https://careers.google.com".
    * </pre>
    *
    * <code>string career_site_uri = 9;</code>
@@ -1365,7 +1365,7 @@ public final class Company extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. A URI that hosts the employer's company logo.
+   * A URI that hosts the employer's company logo.
    * </pre>
    *
    * <code>string image_uri = 10;</code>
@@ -1385,7 +1385,7 @@ public final class Company extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. A URI that hosts the employer's company logo.
+   * A URI that hosts the employer's company logo.
    * </pre>
    *
    * <code>string image_uri = 10;</code>
@@ -1408,7 +1408,7 @@ public final class Company extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. A list of keys of filterable
+   * A list of keys of filterable
    * [Job.custom_attributes][google.cloud.talent.v4beta1.Job.custom_attributes],
    * whose corresponding `string_values` are used in keyword searches. Jobs with
    * `string_values` under these specified field keys are returned if any
@@ -1426,7 +1426,7 @@ public final class Company extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. A list of keys of filterable
+   * A list of keys of filterable
    * [Job.custom_attributes][google.cloud.talent.v4beta1.Job.custom_attributes],
    * whose corresponding `string_values` are used in keyword searches. Jobs with
    * `string_values` under these specified field keys are returned if any
@@ -1444,7 +1444,7 @@ public final class Company extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. A list of keys of filterable
+   * A list of keys of filterable
    * [Job.custom_attributes][google.cloud.talent.v4beta1.Job.custom_attributes],
    * whose corresponding `string_values` are used in keyword searches. Jobs with
    * `string_values` under these specified field keys are returned if any
@@ -1462,7 +1462,7 @@ public final class Company extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. A list of keys of filterable
+   * A list of keys of filterable
    * [Job.custom_attributes][google.cloud.talent.v4beta1.Job.custom_attributes],
    * whose corresponding `string_values` are used in keyword searches. Jobs with
    * `string_values` under these specified field keys are returned if any
@@ -1486,7 +1486,9 @@ public final class Company extends com.google.protobuf.GeneratedMessageV3
    * Output only. Derived details about the company.
    * </pre>
    *
-   * <code>.google.cloud.talent.v4beta1.Company.DerivedInfo derived_info = 12;</code>
+   * <code>
+   * .google.cloud.talent.v4beta1.Company.DerivedInfo derived_info = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    */
   public boolean hasDerivedInfo() {
     return derivedInfo_ != null;
@@ -1498,7 +1500,9 @@ public final class Company extends com.google.protobuf.GeneratedMessageV3
    * Output only. Derived details about the company.
    * </pre>
    *
-   * <code>.google.cloud.talent.v4beta1.Company.DerivedInfo derived_info = 12;</code>
+   * <code>
+   * .google.cloud.talent.v4beta1.Company.DerivedInfo derived_info = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    */
   public com.google.cloud.talent.v4beta1.Company.DerivedInfo getDerivedInfo() {
     return derivedInfo_ == null
@@ -1512,7 +1516,9 @@ public final class Company extends com.google.protobuf.GeneratedMessageV3
    * Output only. Derived details about the company.
    * </pre>
    *
-   * <code>.google.cloud.talent.v4beta1.Company.DerivedInfo derived_info = 12;</code>
+   * <code>
+   * .google.cloud.talent.v4beta1.Company.DerivedInfo derived_info = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    */
   public com.google.cloud.talent.v4beta1.Company.DerivedInfoOrBuilder getDerivedInfoOrBuilder() {
     return getDerivedInfo();
@@ -1529,7 +1535,7 @@ public final class Company extends com.google.protobuf.GeneratedMessageV3
    * abusive, or spammy.
    * </pre>
    *
-   * <code>bool suspended = 13;</code>
+   * <code>bool suspended = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    */
   public boolean getSuspended() {
     return suspended_;
@@ -2088,9 +2094,9 @@ public final class Company extends com.google.protobuf.GeneratedMessageV3
      * company is created.
      * The format is
      * "projects/{project_id}/tenants/{tenant_id}/companies/{company_id}", for
-     * example, "projects/api-test-project/tenants/foo/companies/bar".
-     * Tenant id is optional and the default tenant is used if unspecified, for
-     * example, "projects/api-test-project/companies/bar".
+     * example, "projects/foo/tenants/bar/companies/baz".
+     * If tenant id is unspecified, the default tenant is used. For
+     * example, "projects/foo/companies/bar".
      * </pre>
      *
      * <code>string name = 1;</code>
@@ -2115,9 +2121,9 @@ public final class Company extends com.google.protobuf.GeneratedMessageV3
      * company is created.
      * The format is
      * "projects/{project_id}/tenants/{tenant_id}/companies/{company_id}", for
-     * example, "projects/api-test-project/tenants/foo/companies/bar".
-     * Tenant id is optional and the default tenant is used if unspecified, for
-     * example, "projects/api-test-project/companies/bar".
+     * example, "projects/foo/tenants/bar/companies/baz".
+     * If tenant id is unspecified, the default tenant is used. For
+     * example, "projects/foo/companies/bar".
      * </pre>
      *
      * <code>string name = 1;</code>
@@ -2142,9 +2148,9 @@ public final class Company extends com.google.protobuf.GeneratedMessageV3
      * company is created.
      * The format is
      * "projects/{project_id}/tenants/{tenant_id}/companies/{company_id}", for
-     * example, "projects/api-test-project/tenants/foo/companies/bar".
-     * Tenant id is optional and the default tenant is used if unspecified, for
-     * example, "projects/api-test-project/companies/bar".
+     * example, "projects/foo/tenants/bar/companies/baz".
+     * If tenant id is unspecified, the default tenant is used. For
+     * example, "projects/foo/companies/bar".
      * </pre>
      *
      * <code>string name = 1;</code>
@@ -2167,9 +2173,9 @@ public final class Company extends com.google.protobuf.GeneratedMessageV3
      * company is created.
      * The format is
      * "projects/{project_id}/tenants/{tenant_id}/companies/{company_id}", for
-     * example, "projects/api-test-project/tenants/foo/companies/bar".
-     * Tenant id is optional and the default tenant is used if unspecified, for
-     * example, "projects/api-test-project/companies/bar".
+     * example, "projects/foo/tenants/bar/companies/baz".
+     * If tenant id is unspecified, the default tenant is used. For
+     * example, "projects/foo/companies/bar".
      * </pre>
      *
      * <code>string name = 1;</code>
@@ -2189,9 +2195,9 @@ public final class Company extends com.google.protobuf.GeneratedMessageV3
      * company is created.
      * The format is
      * "projects/{project_id}/tenants/{tenant_id}/companies/{company_id}", for
-     * example, "projects/api-test-project/tenants/foo/companies/bar".
-     * Tenant id is optional and the default tenant is used if unspecified, for
-     * example, "projects/api-test-project/companies/bar".
+     * example, "projects/foo/tenants/bar/companies/baz".
+     * If tenant id is unspecified, the default tenant is used. For
+     * example, "projects/foo/companies/bar".
      * </pre>
      *
      * <code>string name = 1;</code>
@@ -2215,7 +2221,7 @@ public final class Company extends com.google.protobuf.GeneratedMessageV3
      * Required. The display name of the company, for example, "Google LLC".
      * </pre>
      *
-     * <code>string display_name = 2;</code>
+     * <code>string display_name = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public java.lang.String getDisplayName() {
       java.lang.Object ref = displayName_;
@@ -2235,7 +2241,7 @@ public final class Company extends com.google.protobuf.GeneratedMessageV3
      * Required. The display name of the company, for example, "Google LLC".
      * </pre>
      *
-     * <code>string display_name = 2;</code>
+     * <code>string display_name = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public com.google.protobuf.ByteString getDisplayNameBytes() {
       java.lang.Object ref = displayName_;
@@ -2255,7 +2261,7 @@ public final class Company extends com.google.protobuf.GeneratedMessageV3
      * Required. The display name of the company, for example, "Google LLC".
      * </pre>
      *
-     * <code>string display_name = 2;</code>
+     * <code>string display_name = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder setDisplayName(java.lang.String value) {
       if (value == null) {
@@ -2273,7 +2279,7 @@ public final class Company extends com.google.protobuf.GeneratedMessageV3
      * Required. The display name of the company, for example, "Google LLC".
      * </pre>
      *
-     * <code>string display_name = 2;</code>
+     * <code>string display_name = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder clearDisplayName() {
 
@@ -2288,7 +2294,7 @@ public final class Company extends com.google.protobuf.GeneratedMessageV3
      * Required. The display name of the company, for example, "Google LLC".
      * </pre>
      *
-     * <code>string display_name = 2;</code>
+     * <code>string display_name = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder setDisplayNameBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -2311,7 +2317,7 @@ public final class Company extends com.google.protobuf.GeneratedMessageV3
      * The maximum number of allowed characters is 255.
      * </pre>
      *
-     * <code>string external_id = 3;</code>
+     * <code>string external_id = 3 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public java.lang.String getExternalId() {
       java.lang.Object ref = externalId_;
@@ -2333,7 +2339,7 @@ public final class Company extends com.google.protobuf.GeneratedMessageV3
      * The maximum number of allowed characters is 255.
      * </pre>
      *
-     * <code>string external_id = 3;</code>
+     * <code>string external_id = 3 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public com.google.protobuf.ByteString getExternalIdBytes() {
       java.lang.Object ref = externalId_;
@@ -2355,7 +2361,7 @@ public final class Company extends com.google.protobuf.GeneratedMessageV3
      * The maximum number of allowed characters is 255.
      * </pre>
      *
-     * <code>string external_id = 3;</code>
+     * <code>string external_id = 3 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder setExternalId(java.lang.String value) {
       if (value == null) {
@@ -2375,7 +2381,7 @@ public final class Company extends com.google.protobuf.GeneratedMessageV3
      * The maximum number of allowed characters is 255.
      * </pre>
      *
-     * <code>string external_id = 3;</code>
+     * <code>string external_id = 3 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder clearExternalId() {
 
@@ -2392,7 +2398,7 @@ public final class Company extends com.google.protobuf.GeneratedMessageV3
      * The maximum number of allowed characters is 255.
      * </pre>
      *
-     * <code>string external_id = 3;</code>
+     * <code>string external_id = 3 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder setExternalIdBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -2410,7 +2416,7 @@ public final class Company extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The employer's company size.
+     * The employer's company size.
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.CompanySize size = 4;</code>
@@ -2422,7 +2428,7 @@ public final class Company extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The employer's company size.
+     * The employer's company size.
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.CompanySize size = 4;</code>
@@ -2436,7 +2442,7 @@ public final class Company extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The employer's company size.
+     * The employer's company size.
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.CompanySize size = 4;</code>
@@ -2451,7 +2457,7 @@ public final class Company extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The employer's company size.
+     * The employer's company size.
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.CompanySize size = 4;</code>
@@ -2469,7 +2475,7 @@ public final class Company extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The employer's company size.
+     * The employer's company size.
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.CompanySize size = 4;</code>
@@ -2486,10 +2492,10 @@ public final class Company extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The street address of the company's main headquarters, which may
-     * be different from the job location. The service attempts to geolocate the
-     * provided address, and populates a more specific location wherever possible
-     * in
+     * The street address of the company's main headquarters, which may be
+     * different from the job location. The service attempts
+     * to geolocate the provided address, and populates a more specific
+     * location wherever possible in
      * [DerivedInfo.headquarters_location][google.cloud.talent.v4beta1.Company.DerivedInfo.headquarters_location].
      * </pre>
      *
@@ -2510,10 +2516,10 @@ public final class Company extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The street address of the company's main headquarters, which may
-     * be different from the job location. The service attempts to geolocate the
-     * provided address, and populates a more specific location wherever possible
-     * in
+     * The street address of the company's main headquarters, which may be
+     * different from the job location. The service attempts
+     * to geolocate the provided address, and populates a more specific
+     * location wherever possible in
      * [DerivedInfo.headquarters_location][google.cloud.talent.v4beta1.Company.DerivedInfo.headquarters_location].
      * </pre>
      *
@@ -2534,10 +2540,10 @@ public final class Company extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The street address of the company's main headquarters, which may
-     * be different from the job location. The service attempts to geolocate the
-     * provided address, and populates a more specific location wherever possible
-     * in
+     * The street address of the company's main headquarters, which may be
+     * different from the job location. The service attempts
+     * to geolocate the provided address, and populates a more specific
+     * location wherever possible in
      * [DerivedInfo.headquarters_location][google.cloud.talent.v4beta1.Company.DerivedInfo.headquarters_location].
      * </pre>
      *
@@ -2556,10 +2562,10 @@ public final class Company extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The street address of the company's main headquarters, which may
-     * be different from the job location. The service attempts to geolocate the
-     * provided address, and populates a more specific location wherever possible
-     * in
+     * The street address of the company's main headquarters, which may be
+     * different from the job location. The service attempts
+     * to geolocate the provided address, and populates a more specific
+     * location wherever possible in
      * [DerivedInfo.headquarters_location][google.cloud.talent.v4beta1.Company.DerivedInfo.headquarters_location].
      * </pre>
      *
@@ -2575,10 +2581,10 @@ public final class Company extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The street address of the company's main headquarters, which may
-     * be different from the job location. The service attempts to geolocate the
-     * provided address, and populates a more specific location wherever possible
-     * in
+     * The street address of the company's main headquarters, which may be
+     * different from the job location. The service attempts
+     * to geolocate the provided address, and populates a more specific
+     * location wherever possible in
      * [DerivedInfo.headquarters_location][google.cloud.talent.v4beta1.Company.DerivedInfo.headquarters_location].
      * </pre>
      *
@@ -2600,7 +2606,7 @@ public final class Company extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Set to true if it is the hiring agency that post jobs for other
+     * Set to true if it is the hiring agency that post jobs for other
      * employers.
      * Defaults to false if not provided.
      * </pre>
@@ -2614,7 +2620,7 @@ public final class Company extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Set to true if it is the hiring agency that post jobs for other
+     * Set to true if it is the hiring agency that post jobs for other
      * employers.
      * Defaults to false if not provided.
      * </pre>
@@ -2631,7 +2637,7 @@ public final class Company extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Set to true if it is the hiring agency that post jobs for other
+     * Set to true if it is the hiring agency that post jobs for other
      * employers.
      * Defaults to false if not provided.
      * </pre>
@@ -2650,7 +2656,7 @@ public final class Company extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Equal Employment Opportunity legal disclaimer text to be
+     * Equal Employment Opportunity legal disclaimer text to be
      * associated with all jobs, and typically to be displayed in all
      * roles.
      * The maximum number of allowed characters is 500.
@@ -2673,7 +2679,7 @@ public final class Company extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Equal Employment Opportunity legal disclaimer text to be
+     * Equal Employment Opportunity legal disclaimer text to be
      * associated with all jobs, and typically to be displayed in all
      * roles.
      * The maximum number of allowed characters is 500.
@@ -2696,7 +2702,7 @@ public final class Company extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Equal Employment Opportunity legal disclaimer text to be
+     * Equal Employment Opportunity legal disclaimer text to be
      * associated with all jobs, and typically to be displayed in all
      * roles.
      * The maximum number of allowed characters is 500.
@@ -2717,7 +2723,7 @@ public final class Company extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Equal Employment Opportunity legal disclaimer text to be
+     * Equal Employment Opportunity legal disclaimer text to be
      * associated with all jobs, and typically to be displayed in all
      * roles.
      * The maximum number of allowed characters is 500.
@@ -2735,7 +2741,7 @@ public final class Company extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Equal Employment Opportunity legal disclaimer text to be
+     * Equal Employment Opportunity legal disclaimer text to be
      * associated with all jobs, and typically to be displayed in all
      * roles.
      * The maximum number of allowed characters is 500.
@@ -2759,7 +2765,7 @@ public final class Company extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The URI representing the company's primary web site or home page,
+     * The URI representing the company's primary web site or home page,
      * for example, "https://www.google.com".
      * The maximum number of allowed characters is 255.
      * </pre>
@@ -2781,7 +2787,7 @@ public final class Company extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The URI representing the company's primary web site or home page,
+     * The URI representing the company's primary web site or home page,
      * for example, "https://www.google.com".
      * The maximum number of allowed characters is 255.
      * </pre>
@@ -2803,7 +2809,7 @@ public final class Company extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The URI representing the company's primary web site or home page,
+     * The URI representing the company's primary web site or home page,
      * for example, "https://www.google.com".
      * The maximum number of allowed characters is 255.
      * </pre>
@@ -2823,7 +2829,7 @@ public final class Company extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The URI representing the company's primary web site or home page,
+     * The URI representing the company's primary web site or home page,
      * for example, "https://www.google.com".
      * The maximum number of allowed characters is 255.
      * </pre>
@@ -2840,7 +2846,7 @@ public final class Company extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The URI representing the company's primary web site or home page,
+     * The URI representing the company's primary web site or home page,
      * for example, "https://www.google.com".
      * The maximum number of allowed characters is 255.
      * </pre>
@@ -2863,8 +2869,8 @@ public final class Company extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The URI to employer's career site or careers page on the
-     * employer's web site, for example, "https://careers.google.com".
+     * The URI to employer's career site or careers page on the employer's web
+     * site, for example, "https://careers.google.com".
      * </pre>
      *
      * <code>string career_site_uri = 9;</code>
@@ -2884,8 +2890,8 @@ public final class Company extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The URI to employer's career site or careers page on the
-     * employer's web site, for example, "https://careers.google.com".
+     * The URI to employer's career site or careers page on the employer's web
+     * site, for example, "https://careers.google.com".
      * </pre>
      *
      * <code>string career_site_uri = 9;</code>
@@ -2905,8 +2911,8 @@ public final class Company extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The URI to employer's career site or careers page on the
-     * employer's web site, for example, "https://careers.google.com".
+     * The URI to employer's career site or careers page on the employer's web
+     * site, for example, "https://careers.google.com".
      * </pre>
      *
      * <code>string career_site_uri = 9;</code>
@@ -2924,8 +2930,8 @@ public final class Company extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The URI to employer's career site or careers page on the
-     * employer's web site, for example, "https://careers.google.com".
+     * The URI to employer's career site or careers page on the employer's web
+     * site, for example, "https://careers.google.com".
      * </pre>
      *
      * <code>string career_site_uri = 9;</code>
@@ -2940,8 +2946,8 @@ public final class Company extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The URI to employer's career site or careers page on the
-     * employer's web site, for example, "https://careers.google.com".
+     * The URI to employer's career site or careers page on the employer's web
+     * site, for example, "https://careers.google.com".
      * </pre>
      *
      * <code>string career_site_uri = 9;</code>
@@ -2962,7 +2968,7 @@ public final class Company extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. A URI that hosts the employer's company logo.
+     * A URI that hosts the employer's company logo.
      * </pre>
      *
      * <code>string image_uri = 10;</code>
@@ -2982,7 +2988,7 @@ public final class Company extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. A URI that hosts the employer's company logo.
+     * A URI that hosts the employer's company logo.
      * </pre>
      *
      * <code>string image_uri = 10;</code>
@@ -3002,7 +3008,7 @@ public final class Company extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. A URI that hosts the employer's company logo.
+     * A URI that hosts the employer's company logo.
      * </pre>
      *
      * <code>string image_uri = 10;</code>
@@ -3020,7 +3026,7 @@ public final class Company extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. A URI that hosts the employer's company logo.
+     * A URI that hosts the employer's company logo.
      * </pre>
      *
      * <code>string image_uri = 10;</code>
@@ -3035,7 +3041,7 @@ public final class Company extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. A URI that hosts the employer's company logo.
+     * A URI that hosts the employer's company logo.
      * </pre>
      *
      * <code>string image_uri = 10;</code>
@@ -3065,7 +3071,7 @@ public final class Company extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. A list of keys of filterable
+     * A list of keys of filterable
      * [Job.custom_attributes][google.cloud.talent.v4beta1.Job.custom_attributes],
      * whose corresponding `string_values` are used in keyword searches. Jobs with
      * `string_values` under these specified field keys are returned if any
@@ -3083,7 +3089,7 @@ public final class Company extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. A list of keys of filterable
+     * A list of keys of filterable
      * [Job.custom_attributes][google.cloud.talent.v4beta1.Job.custom_attributes],
      * whose corresponding `string_values` are used in keyword searches. Jobs with
      * `string_values` under these specified field keys are returned if any
@@ -3101,7 +3107,7 @@ public final class Company extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. A list of keys of filterable
+     * A list of keys of filterable
      * [Job.custom_attributes][google.cloud.talent.v4beta1.Job.custom_attributes],
      * whose corresponding `string_values` are used in keyword searches. Jobs with
      * `string_values` under these specified field keys are returned if any
@@ -3119,7 +3125,7 @@ public final class Company extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. A list of keys of filterable
+     * A list of keys of filterable
      * [Job.custom_attributes][google.cloud.talent.v4beta1.Job.custom_attributes],
      * whose corresponding `string_values` are used in keyword searches. Jobs with
      * `string_values` under these specified field keys are returned if any
@@ -3137,7 +3143,7 @@ public final class Company extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. A list of keys of filterable
+     * A list of keys of filterable
      * [Job.custom_attributes][google.cloud.talent.v4beta1.Job.custom_attributes],
      * whose corresponding `string_values` are used in keyword searches. Jobs with
      * `string_values` under these specified field keys are returned if any
@@ -3161,7 +3167,7 @@ public final class Company extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. A list of keys of filterable
+     * A list of keys of filterable
      * [Job.custom_attributes][google.cloud.talent.v4beta1.Job.custom_attributes],
      * whose corresponding `string_values` are used in keyword searches. Jobs with
      * `string_values` under these specified field keys are returned if any
@@ -3185,7 +3191,7 @@ public final class Company extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. A list of keys of filterable
+     * A list of keys of filterable
      * [Job.custom_attributes][google.cloud.talent.v4beta1.Job.custom_attributes],
      * whose corresponding `string_values` are used in keyword searches. Jobs with
      * `string_values` under these specified field keys are returned if any
@@ -3208,7 +3214,7 @@ public final class Company extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. A list of keys of filterable
+     * A list of keys of filterable
      * [Job.custom_attributes][google.cloud.talent.v4beta1.Job.custom_attributes],
      * whose corresponding `string_values` are used in keyword searches. Jobs with
      * `string_values` under these specified field keys are returned if any
@@ -3229,7 +3235,7 @@ public final class Company extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. A list of keys of filterable
+     * A list of keys of filterable
      * [Job.custom_attributes][google.cloud.talent.v4beta1.Job.custom_attributes],
      * whose corresponding `string_values` are used in keyword searches. Jobs with
      * `string_values` under these specified field keys are returned if any
@@ -3265,7 +3271,9 @@ public final class Company extends com.google.protobuf.GeneratedMessageV3
      * Output only. Derived details about the company.
      * </pre>
      *
-     * <code>.google.cloud.talent.v4beta1.Company.DerivedInfo derived_info = 12;</code>
+     * <code>
+     * .google.cloud.talent.v4beta1.Company.DerivedInfo derived_info = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public boolean hasDerivedInfo() {
       return derivedInfoBuilder_ != null || derivedInfo_ != null;
@@ -3277,7 +3285,9 @@ public final class Company extends com.google.protobuf.GeneratedMessageV3
      * Output only. Derived details about the company.
      * </pre>
      *
-     * <code>.google.cloud.talent.v4beta1.Company.DerivedInfo derived_info = 12;</code>
+     * <code>
+     * .google.cloud.talent.v4beta1.Company.DerivedInfo derived_info = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public com.google.cloud.talent.v4beta1.Company.DerivedInfo getDerivedInfo() {
       if (derivedInfoBuilder_ == null) {
@@ -3295,7 +3305,9 @@ public final class Company extends com.google.protobuf.GeneratedMessageV3
      * Output only. Derived details about the company.
      * </pre>
      *
-     * <code>.google.cloud.talent.v4beta1.Company.DerivedInfo derived_info = 12;</code>
+     * <code>
+     * .google.cloud.talent.v4beta1.Company.DerivedInfo derived_info = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public Builder setDerivedInfo(com.google.cloud.talent.v4beta1.Company.DerivedInfo value) {
       if (derivedInfoBuilder_ == null) {
@@ -3317,7 +3329,9 @@ public final class Company extends com.google.protobuf.GeneratedMessageV3
      * Output only. Derived details about the company.
      * </pre>
      *
-     * <code>.google.cloud.talent.v4beta1.Company.DerivedInfo derived_info = 12;</code>
+     * <code>
+     * .google.cloud.talent.v4beta1.Company.DerivedInfo derived_info = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public Builder setDerivedInfo(
         com.google.cloud.talent.v4beta1.Company.DerivedInfo.Builder builderForValue) {
@@ -3337,7 +3351,9 @@ public final class Company extends com.google.protobuf.GeneratedMessageV3
      * Output only. Derived details about the company.
      * </pre>
      *
-     * <code>.google.cloud.talent.v4beta1.Company.DerivedInfo derived_info = 12;</code>
+     * <code>
+     * .google.cloud.talent.v4beta1.Company.DerivedInfo derived_info = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public Builder mergeDerivedInfo(com.google.cloud.talent.v4beta1.Company.DerivedInfo value) {
       if (derivedInfoBuilder_ == null) {
@@ -3363,7 +3379,9 @@ public final class Company extends com.google.protobuf.GeneratedMessageV3
      * Output only. Derived details about the company.
      * </pre>
      *
-     * <code>.google.cloud.talent.v4beta1.Company.DerivedInfo derived_info = 12;</code>
+     * <code>
+     * .google.cloud.talent.v4beta1.Company.DerivedInfo derived_info = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public Builder clearDerivedInfo() {
       if (derivedInfoBuilder_ == null) {
@@ -3383,7 +3401,9 @@ public final class Company extends com.google.protobuf.GeneratedMessageV3
      * Output only. Derived details about the company.
      * </pre>
      *
-     * <code>.google.cloud.talent.v4beta1.Company.DerivedInfo derived_info = 12;</code>
+     * <code>
+     * .google.cloud.talent.v4beta1.Company.DerivedInfo derived_info = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public com.google.cloud.talent.v4beta1.Company.DerivedInfo.Builder getDerivedInfoBuilder() {
 
@@ -3397,7 +3417,9 @@ public final class Company extends com.google.protobuf.GeneratedMessageV3
      * Output only. Derived details about the company.
      * </pre>
      *
-     * <code>.google.cloud.talent.v4beta1.Company.DerivedInfo derived_info = 12;</code>
+     * <code>
+     * .google.cloud.talent.v4beta1.Company.DerivedInfo derived_info = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public com.google.cloud.talent.v4beta1.Company.DerivedInfoOrBuilder getDerivedInfoOrBuilder() {
       if (derivedInfoBuilder_ != null) {
@@ -3415,7 +3437,9 @@ public final class Company extends com.google.protobuf.GeneratedMessageV3
      * Output only. Derived details about the company.
      * </pre>
      *
-     * <code>.google.cloud.talent.v4beta1.Company.DerivedInfo derived_info = 12;</code>
+     * <code>
+     * .google.cloud.talent.v4beta1.Company.DerivedInfo derived_info = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.talent.v4beta1.Company.DerivedInfo,
@@ -3444,7 +3468,7 @@ public final class Company extends com.google.protobuf.GeneratedMessageV3
      * abusive, or spammy.
      * </pre>
      *
-     * <code>bool suspended = 13;</code>
+     * <code>bool suspended = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     public boolean getSuspended() {
       return suspended_;
@@ -3458,7 +3482,7 @@ public final class Company extends com.google.protobuf.GeneratedMessageV3
      * abusive, or spammy.
      * </pre>
      *
-     * <code>bool suspended = 13;</code>
+     * <code>bool suspended = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     public Builder setSuspended(boolean value) {
 
@@ -3475,7 +3499,7 @@ public final class Company extends com.google.protobuf.GeneratedMessageV3
      * abusive, or spammy.
      * </pre>
      *
-     * <code>bool suspended = 13;</code>
+     * <code>bool suspended = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     public Builder clearSuspended() {
 

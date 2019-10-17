@@ -15,7 +15,7 @@ public interface EmployerFilterOrBuilder
    * Required. The name of the employer, for example "Google", "Alphabet".
    * </pre>
    *
-   * <code>string employer = 1;</code>
+   * <code>string employer = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   java.lang.String getEmployer();
   /**
@@ -25,7 +25,7 @@ public interface EmployerFilterOrBuilder
    * Required. The name of the employer, for example "Google", "Alphabet".
    * </pre>
    *
-   * <code>string employer = 1;</code>
+   * <code>string employer = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   com.google.protobuf.ByteString getEmployerBytes();
 
@@ -33,7 +33,7 @@ public interface EmployerFilterOrBuilder
    *
    *
    * <pre>
-   * Optional. Define set of
+   * Define set of
    * [EmploymentRecord][google.cloud.talent.v4beta1.EmploymentRecord]s to search
    * against.
    * Defaults to
@@ -47,7 +47,7 @@ public interface EmployerFilterOrBuilder
    *
    *
    * <pre>
-   * Optional. Define set of
+   * Define set of
    * [EmploymentRecord][google.cloud.talent.v4beta1.EmploymentRecord]s to search
    * against.
    * Defaults to
@@ -62,8 +62,8 @@ public interface EmployerFilterOrBuilder
    *
    *
    * <pre>
-   * Optional. Whether to apply negation to the filter so profiles matching the
-   * filter is excluded.
+   * Whether to apply negation to the filter so profiles matching the filter
+   * is excluded.
    * </pre>
    *
    * <code>bool negated = 3;</code>

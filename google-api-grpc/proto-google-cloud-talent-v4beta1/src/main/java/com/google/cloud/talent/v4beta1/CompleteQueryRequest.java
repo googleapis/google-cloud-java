@@ -7,7 +7,6 @@ package com.google.cloud.talent.v4beta1;
  *
  *
  * <pre>
- * Input only.
  * Auto-complete parameters.
  * </pre>
  *
@@ -472,12 +471,12 @@ public final class CompleteQueryRequest extends com.google.protobuf.GeneratedMes
    * <pre>
    * Required. Resource name of tenant the completion is performed within.
    * The format is "projects/{project_id}/tenants/{tenant_id}", for example,
-   * "projects/api-test-project/tenant/foo".
-   * Tenant id is optional and the default tenant is used if unspecified, for
-   * example, "projects/api-test-project".
+   * "projects/foo/tenant/bar".
+   * If tenant id is unspecified, the default tenant is used, for
+   * example, "projects/foo".
    * </pre>
    *
-   * <code>string parent = 1;</code>
+   * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   public java.lang.String getParent() {
     java.lang.Object ref = parent_;
@@ -496,12 +495,12 @@ public final class CompleteQueryRequest extends com.google.protobuf.GeneratedMes
    * <pre>
    * Required. Resource name of tenant the completion is performed within.
    * The format is "projects/{project_id}/tenants/{tenant_id}", for example,
-   * "projects/api-test-project/tenant/foo".
-   * Tenant id is optional and the default tenant is used if unspecified, for
-   * example, "projects/api-test-project".
+   * "projects/foo/tenant/bar".
+   * If tenant id is unspecified, the default tenant is used, for
+   * example, "projects/foo".
    * </pre>
    *
-   * <code>string parent = 1;</code>
+   * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   public com.google.protobuf.ByteString getParentBytes() {
     java.lang.Object ref = parent_;
@@ -525,7 +524,7 @@ public final class CompleteQueryRequest extends com.google.protobuf.GeneratedMes
    * The maximum number of allowed characters is 255.
    * </pre>
    *
-   * <code>string query = 2;</code>
+   * <code>string query = 2 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   public java.lang.String getQuery() {
     java.lang.Object ref = query_;
@@ -546,7 +545,7 @@ public final class CompleteQueryRequest extends com.google.protobuf.GeneratedMes
    * The maximum number of allowed characters is 255.
    * </pre>
    *
-   * <code>string query = 2;</code>
+   * <code>string query = 2 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   public com.google.protobuf.ByteString getQueryBytes() {
     java.lang.Object ref = query_;
@@ -566,7 +565,7 @@ public final class CompleteQueryRequest extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * Optional. The list of languages of the query. This is
+   * The list of languages of the query. This is
    * the BCP-47 language code, such as "en-US" or "sr-Latn".
    * For more information, see
    * [Tags for Identifying Languages](https://tools.ietf.org/html/bcp47).
@@ -599,7 +598,7 @@ public final class CompleteQueryRequest extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * Optional. The list of languages of the query. This is
+   * The list of languages of the query. This is
    * the BCP-47 language code, such as "en-US" or "sr-Latn".
    * For more information, see
    * [Tags for Identifying Languages](https://tools.ietf.org/html/bcp47).
@@ -632,7 +631,7 @@ public final class CompleteQueryRequest extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * Optional. The list of languages of the query. This is
+   * The list of languages of the query. This is
    * the BCP-47 language code, such as "en-US" or "sr-Latn".
    * For more information, see
    * [Tags for Identifying Languages](https://tools.ietf.org/html/bcp47).
@@ -665,7 +664,7 @@ public final class CompleteQueryRequest extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * Optional. The list of languages of the query. This is
+   * The list of languages of the query. This is
    * the BCP-47 language code, such as "en-US" or "sr-Latn".
    * For more information, see
    * [Tags for Identifying Languages](https://tools.ietf.org/html/bcp47).
@@ -705,7 +704,7 @@ public final class CompleteQueryRequest extends com.google.protobuf.GeneratedMes
    * The maximum allowed page size is 10.
    * </pre>
    *
-   * <code>int32 page_size = 4;</code>
+   * <code>int32 page_size = 4 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   public int getPageSize() {
     return pageSize_;
@@ -717,12 +716,12 @@ public final class CompleteQueryRequest extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * Optional. If provided, restricts completion to specified company.
+   * If provided, restricts completion to specified company.
    * The format is
    * "projects/{project_id}/tenants/{tenant_id}/companies/{company_id}", for
-   * example, "projects/api-test-project/tenants/foo/companies/bar".
-   * Tenant id is optional and the default tenant is used if unspecified, for
-   * example, "projects/api-test-project/companies/bar".
+   * example, "projects/foo/tenants/bar/companies/baz".
+   * If tenant id is unspecified, the default tenant is used, for
+   * example, "projects/foo".
    * </pre>
    *
    * <code>string company = 5;</code>
@@ -742,12 +741,12 @@ public final class CompleteQueryRequest extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * Optional. If provided, restricts completion to specified company.
+   * If provided, restricts completion to specified company.
    * The format is
    * "projects/{project_id}/tenants/{tenant_id}/companies/{company_id}", for
-   * example, "projects/api-test-project/tenants/foo/companies/bar".
-   * Tenant id is optional and the default tenant is used if unspecified, for
-   * example, "projects/api-test-project/companies/bar".
+   * example, "projects/foo/tenants/bar/companies/baz".
+   * If tenant id is unspecified, the default tenant is used, for
+   * example, "projects/foo".
    * </pre>
    *
    * <code>string company = 5;</code>
@@ -770,7 +769,7 @@ public final class CompleteQueryRequest extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * Optional. The scope of the completion. The defaults is
+   * The scope of the completion. The defaults is
    * [CompletionScope.PUBLIC][google.cloud.talent.v4beta1.CompleteQueryRequest.CompletionScope.PUBLIC].
    * </pre>
    *
@@ -783,7 +782,7 @@ public final class CompleteQueryRequest extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * Optional. The scope of the completion. The defaults is
+   * The scope of the completion. The defaults is
    * [CompletionScope.PUBLIC][google.cloud.talent.v4beta1.CompleteQueryRequest.CompletionScope.PUBLIC].
    * </pre>
    *
@@ -804,7 +803,7 @@ public final class CompleteQueryRequest extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * Optional. The completion topic. The default is
+   * The completion topic. The default is
    * [CompletionType.COMBINED][google.cloud.talent.v4beta1.CompleteQueryRequest.CompletionType.COMBINED].
    * </pre>
    *
@@ -817,7 +816,7 @@ public final class CompleteQueryRequest extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * Optional. The completion topic. The default is
+   * The completion topic. The default is
    * [CompletionType.COMBINED][google.cloud.talent.v4beta1.CompleteQueryRequest.CompletionType.COMBINED].
    * </pre>
    *
@@ -1068,7 +1067,6 @@ public final class CompleteQueryRequest extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * Input only.
    * Auto-complete parameters.
    * </pre>
    *
@@ -1285,12 +1283,12 @@ public final class CompleteQueryRequest extends com.google.protobuf.GeneratedMes
      * <pre>
      * Required. Resource name of tenant the completion is performed within.
      * The format is "projects/{project_id}/tenants/{tenant_id}", for example,
-     * "projects/api-test-project/tenant/foo".
-     * Tenant id is optional and the default tenant is used if unspecified, for
-     * example, "projects/api-test-project".
+     * "projects/foo/tenant/bar".
+     * If tenant id is unspecified, the default tenant is used, for
+     * example, "projects/foo".
      * </pre>
      *
-     * <code>string parent = 1;</code>
+     * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public java.lang.String getParent() {
       java.lang.Object ref = parent_;
@@ -1309,12 +1307,12 @@ public final class CompleteQueryRequest extends com.google.protobuf.GeneratedMes
      * <pre>
      * Required. Resource name of tenant the completion is performed within.
      * The format is "projects/{project_id}/tenants/{tenant_id}", for example,
-     * "projects/api-test-project/tenant/foo".
-     * Tenant id is optional and the default tenant is used if unspecified, for
-     * example, "projects/api-test-project".
+     * "projects/foo/tenant/bar".
+     * If tenant id is unspecified, the default tenant is used, for
+     * example, "projects/foo".
      * </pre>
      *
-     * <code>string parent = 1;</code>
+     * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public com.google.protobuf.ByteString getParentBytes() {
       java.lang.Object ref = parent_;
@@ -1333,12 +1331,12 @@ public final class CompleteQueryRequest extends com.google.protobuf.GeneratedMes
      * <pre>
      * Required. Resource name of tenant the completion is performed within.
      * The format is "projects/{project_id}/tenants/{tenant_id}", for example,
-     * "projects/api-test-project/tenant/foo".
-     * Tenant id is optional and the default tenant is used if unspecified, for
-     * example, "projects/api-test-project".
+     * "projects/foo/tenant/bar".
+     * If tenant id is unspecified, the default tenant is used, for
+     * example, "projects/foo".
      * </pre>
      *
-     * <code>string parent = 1;</code>
+     * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder setParent(java.lang.String value) {
       if (value == null) {
@@ -1355,12 +1353,12 @@ public final class CompleteQueryRequest extends com.google.protobuf.GeneratedMes
      * <pre>
      * Required. Resource name of tenant the completion is performed within.
      * The format is "projects/{project_id}/tenants/{tenant_id}", for example,
-     * "projects/api-test-project/tenant/foo".
-     * Tenant id is optional and the default tenant is used if unspecified, for
-     * example, "projects/api-test-project".
+     * "projects/foo/tenant/bar".
+     * If tenant id is unspecified, the default tenant is used, for
+     * example, "projects/foo".
      * </pre>
      *
-     * <code>string parent = 1;</code>
+     * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder clearParent() {
 
@@ -1374,12 +1372,12 @@ public final class CompleteQueryRequest extends com.google.protobuf.GeneratedMes
      * <pre>
      * Required. Resource name of tenant the completion is performed within.
      * The format is "projects/{project_id}/tenants/{tenant_id}", for example,
-     * "projects/api-test-project/tenant/foo".
-     * Tenant id is optional and the default tenant is used if unspecified, for
-     * example, "projects/api-test-project".
+     * "projects/foo/tenant/bar".
+     * If tenant id is unspecified, the default tenant is used, for
+     * example, "projects/foo".
      * </pre>
      *
-     * <code>string parent = 1;</code>
+     * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder setParentBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -1401,7 +1399,7 @@ public final class CompleteQueryRequest extends com.google.protobuf.GeneratedMes
      * The maximum number of allowed characters is 255.
      * </pre>
      *
-     * <code>string query = 2;</code>
+     * <code>string query = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public java.lang.String getQuery() {
       java.lang.Object ref = query_;
@@ -1422,7 +1420,7 @@ public final class CompleteQueryRequest extends com.google.protobuf.GeneratedMes
      * The maximum number of allowed characters is 255.
      * </pre>
      *
-     * <code>string query = 2;</code>
+     * <code>string query = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public com.google.protobuf.ByteString getQueryBytes() {
       java.lang.Object ref = query_;
@@ -1443,7 +1441,7 @@ public final class CompleteQueryRequest extends com.google.protobuf.GeneratedMes
      * The maximum number of allowed characters is 255.
      * </pre>
      *
-     * <code>string query = 2;</code>
+     * <code>string query = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder setQuery(java.lang.String value) {
       if (value == null) {
@@ -1462,7 +1460,7 @@ public final class CompleteQueryRequest extends com.google.protobuf.GeneratedMes
      * The maximum number of allowed characters is 255.
      * </pre>
      *
-     * <code>string query = 2;</code>
+     * <code>string query = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder clearQuery() {
 
@@ -1478,7 +1476,7 @@ public final class CompleteQueryRequest extends com.google.protobuf.GeneratedMes
      * The maximum number of allowed characters is 255.
      * </pre>
      *
-     * <code>string query = 2;</code>
+     * <code>string query = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder setQueryBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -1504,7 +1502,7 @@ public final class CompleteQueryRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Optional. The list of languages of the query. This is
+     * The list of languages of the query. This is
      * the BCP-47 language code, such as "en-US" or "sr-Latn".
      * For more information, see
      * [Tags for Identifying Languages](https://tools.ietf.org/html/bcp47).
@@ -1537,7 +1535,7 @@ public final class CompleteQueryRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Optional. The list of languages of the query. This is
+     * The list of languages of the query. This is
      * the BCP-47 language code, such as "en-US" or "sr-Latn".
      * For more information, see
      * [Tags for Identifying Languages](https://tools.ietf.org/html/bcp47).
@@ -1570,7 +1568,7 @@ public final class CompleteQueryRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Optional. The list of languages of the query. This is
+     * The list of languages of the query. This is
      * the BCP-47 language code, such as "en-US" or "sr-Latn".
      * For more information, see
      * [Tags for Identifying Languages](https://tools.ietf.org/html/bcp47).
@@ -1603,7 +1601,7 @@ public final class CompleteQueryRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Optional. The list of languages of the query. This is
+     * The list of languages of the query. This is
      * the BCP-47 language code, such as "en-US" or "sr-Latn".
      * For more information, see
      * [Tags for Identifying Languages](https://tools.ietf.org/html/bcp47).
@@ -1636,7 +1634,7 @@ public final class CompleteQueryRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Optional. The list of languages of the query. This is
+     * The list of languages of the query. This is
      * the BCP-47 language code, such as "en-US" or "sr-Latn".
      * For more information, see
      * [Tags for Identifying Languages](https://tools.ietf.org/html/bcp47).
@@ -1675,7 +1673,7 @@ public final class CompleteQueryRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Optional. The list of languages of the query. This is
+     * The list of languages of the query. This is
      * the BCP-47 language code, such as "en-US" or "sr-Latn".
      * For more information, see
      * [Tags for Identifying Languages](https://tools.ietf.org/html/bcp47).
@@ -1714,7 +1712,7 @@ public final class CompleteQueryRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Optional. The list of languages of the query. This is
+     * The list of languages of the query. This is
      * the BCP-47 language code, such as "en-US" or "sr-Latn".
      * For more information, see
      * [Tags for Identifying Languages](https://tools.ietf.org/html/bcp47).
@@ -1750,7 +1748,7 @@ public final class CompleteQueryRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Optional. The list of languages of the query. This is
+     * The list of languages of the query. This is
      * the BCP-47 language code, such as "en-US" or "sr-Latn".
      * For more information, see
      * [Tags for Identifying Languages](https://tools.ietf.org/html/bcp47).
@@ -1786,7 +1784,7 @@ public final class CompleteQueryRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Optional. The list of languages of the query. This is
+     * The list of languages of the query. This is
      * the BCP-47 language code, such as "en-US" or "sr-Latn".
      * For more information, see
      * [Tags for Identifying Languages](https://tools.ietf.org/html/bcp47).
@@ -1832,7 +1830,7 @@ public final class CompleteQueryRequest extends com.google.protobuf.GeneratedMes
      * The maximum allowed page size is 10.
      * </pre>
      *
-     * <code>int32 page_size = 4;</code>
+     * <code>int32 page_size = 4 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public int getPageSize() {
       return pageSize_;
@@ -1845,7 +1843,7 @@ public final class CompleteQueryRequest extends com.google.protobuf.GeneratedMes
      * The maximum allowed page size is 10.
      * </pre>
      *
-     * <code>int32 page_size = 4;</code>
+     * <code>int32 page_size = 4 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder setPageSize(int value) {
 
@@ -1861,7 +1859,7 @@ public final class CompleteQueryRequest extends com.google.protobuf.GeneratedMes
      * The maximum allowed page size is 10.
      * </pre>
      *
-     * <code>int32 page_size = 4;</code>
+     * <code>int32 page_size = 4 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder clearPageSize() {
 
@@ -1875,12 +1873,12 @@ public final class CompleteQueryRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Optional. If provided, restricts completion to specified company.
+     * If provided, restricts completion to specified company.
      * The format is
      * "projects/{project_id}/tenants/{tenant_id}/companies/{company_id}", for
-     * example, "projects/api-test-project/tenants/foo/companies/bar".
-     * Tenant id is optional and the default tenant is used if unspecified, for
-     * example, "projects/api-test-project/companies/bar".
+     * example, "projects/foo/tenants/bar/companies/baz".
+     * If tenant id is unspecified, the default tenant is used, for
+     * example, "projects/foo".
      * </pre>
      *
      * <code>string company = 5;</code>
@@ -1900,12 +1898,12 @@ public final class CompleteQueryRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Optional. If provided, restricts completion to specified company.
+     * If provided, restricts completion to specified company.
      * The format is
      * "projects/{project_id}/tenants/{tenant_id}/companies/{company_id}", for
-     * example, "projects/api-test-project/tenants/foo/companies/bar".
-     * Tenant id is optional and the default tenant is used if unspecified, for
-     * example, "projects/api-test-project/companies/bar".
+     * example, "projects/foo/tenants/bar/companies/baz".
+     * If tenant id is unspecified, the default tenant is used, for
+     * example, "projects/foo".
      * </pre>
      *
      * <code>string company = 5;</code>
@@ -1925,12 +1923,12 @@ public final class CompleteQueryRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Optional. If provided, restricts completion to specified company.
+     * If provided, restricts completion to specified company.
      * The format is
      * "projects/{project_id}/tenants/{tenant_id}/companies/{company_id}", for
-     * example, "projects/api-test-project/tenants/foo/companies/bar".
-     * Tenant id is optional and the default tenant is used if unspecified, for
-     * example, "projects/api-test-project/companies/bar".
+     * example, "projects/foo/tenants/bar/companies/baz".
+     * If tenant id is unspecified, the default tenant is used, for
+     * example, "projects/foo".
      * </pre>
      *
      * <code>string company = 5;</code>
@@ -1948,12 +1946,12 @@ public final class CompleteQueryRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Optional. If provided, restricts completion to specified company.
+     * If provided, restricts completion to specified company.
      * The format is
      * "projects/{project_id}/tenants/{tenant_id}/companies/{company_id}", for
-     * example, "projects/api-test-project/tenants/foo/companies/bar".
-     * Tenant id is optional and the default tenant is used if unspecified, for
-     * example, "projects/api-test-project/companies/bar".
+     * example, "projects/foo/tenants/bar/companies/baz".
+     * If tenant id is unspecified, the default tenant is used, for
+     * example, "projects/foo".
      * </pre>
      *
      * <code>string company = 5;</code>
@@ -1968,12 +1966,12 @@ public final class CompleteQueryRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Optional. If provided, restricts completion to specified company.
+     * If provided, restricts completion to specified company.
      * The format is
      * "projects/{project_id}/tenants/{tenant_id}/companies/{company_id}", for
-     * example, "projects/api-test-project/tenants/foo/companies/bar".
-     * Tenant id is optional and the default tenant is used if unspecified, for
-     * example, "projects/api-test-project/companies/bar".
+     * example, "projects/foo/tenants/bar/companies/baz".
+     * If tenant id is unspecified, the default tenant is used, for
+     * example, "projects/foo".
      * </pre>
      *
      * <code>string company = 5;</code>
@@ -1994,7 +1992,7 @@ public final class CompleteQueryRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Optional. The scope of the completion. The defaults is
+     * The scope of the completion. The defaults is
      * [CompletionScope.PUBLIC][google.cloud.talent.v4beta1.CompleteQueryRequest.CompletionScope.PUBLIC].
      * </pre>
      *
@@ -2007,7 +2005,7 @@ public final class CompleteQueryRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Optional. The scope of the completion. The defaults is
+     * The scope of the completion. The defaults is
      * [CompletionScope.PUBLIC][google.cloud.talent.v4beta1.CompleteQueryRequest.CompletionScope.PUBLIC].
      * </pre>
      *
@@ -2022,7 +2020,7 @@ public final class CompleteQueryRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Optional. The scope of the completion. The defaults is
+     * The scope of the completion. The defaults is
      * [CompletionScope.PUBLIC][google.cloud.talent.v4beta1.CompleteQueryRequest.CompletionScope.PUBLIC].
      * </pre>
      *
@@ -2040,7 +2038,7 @@ public final class CompleteQueryRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Optional. The scope of the completion. The defaults is
+     * The scope of the completion. The defaults is
      * [CompletionScope.PUBLIC][google.cloud.talent.v4beta1.CompleteQueryRequest.CompletionScope.PUBLIC].
      * </pre>
      *
@@ -2060,7 +2058,7 @@ public final class CompleteQueryRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Optional. The scope of the completion. The defaults is
+     * The scope of the completion. The defaults is
      * [CompletionScope.PUBLIC][google.cloud.talent.v4beta1.CompleteQueryRequest.CompletionScope.PUBLIC].
      * </pre>
      *
@@ -2078,7 +2076,7 @@ public final class CompleteQueryRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Optional. The completion topic. The default is
+     * The completion topic. The default is
      * [CompletionType.COMBINED][google.cloud.talent.v4beta1.CompleteQueryRequest.CompletionType.COMBINED].
      * </pre>
      *
@@ -2091,7 +2089,7 @@ public final class CompleteQueryRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Optional. The completion topic. The default is
+     * The completion topic. The default is
      * [CompletionType.COMBINED][google.cloud.talent.v4beta1.CompleteQueryRequest.CompletionType.COMBINED].
      * </pre>
      *
@@ -2106,7 +2104,7 @@ public final class CompleteQueryRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Optional. The completion topic. The default is
+     * The completion topic. The default is
      * [CompletionType.COMBINED][google.cloud.talent.v4beta1.CompleteQueryRequest.CompletionType.COMBINED].
      * </pre>
      *
@@ -2124,7 +2122,7 @@ public final class CompleteQueryRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Optional. The completion topic. The default is
+     * The completion topic. The default is
      * [CompletionType.COMBINED][google.cloud.talent.v4beta1.CompleteQueryRequest.CompletionType.COMBINED].
      * </pre>
      *
@@ -2144,7 +2142,7 @@ public final class CompleteQueryRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Optional. The completion topic. The default is
+     * The completion topic. The default is
      * [CompletionType.COMBINED][google.cloud.talent.v4beta1.CompleteQueryRequest.CompletionType.COMBINED].
      * </pre>
      *

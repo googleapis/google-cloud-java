@@ -43,6 +43,7 @@ import io.opencensus.trace.export.SpanData;
 import java.util.Collection;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
+import org.junit.BeforeClass;
 import org.junit.Test;
 
 /** Tests for {@link OpenCensusUtil}. */
@@ -52,6 +53,11 @@ public class OpenCensusUtilTest {
   private static final TagKey TEST_TAG_KEY = TagKey.create("TEST_TAG_KEY");
   private static final TagValue TEST_TAG_VAL = TagValue.create("TEST_TAG_VAL");
   private static final String TEST_PARENT_LINK_NAME = "TEST_PARENT_LINK";
+
+  @BeforeClass
+  public static void configureOpenCensus() {
+    Tracing.getExportComponent().getRunningSpanStore().setMaxNumberOfSpans(5);
+  }
 
   // Verifies that trace contexts propagated as an attribute are set as the parent link in the
   // message receiver and that the tag context is not change (for now).
@@ -148,7 +154,7 @@ public class OpenCensusUtilTest {
         }
         Thread.yield();
         if (watch.elapsed(TimeUnit.SECONDS) >= 5) {
-          fail();
+          fail("failed to get spans in 5 seconds");
         }
       }
     }

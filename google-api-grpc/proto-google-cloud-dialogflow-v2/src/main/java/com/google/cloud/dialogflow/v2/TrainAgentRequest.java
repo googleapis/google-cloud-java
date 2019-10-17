@@ -101,7 +101,9 @@ public final class TrainAgentRequest extends com.google.protobuf.GeneratedMessag
    * Format: `projects/&lt;Project ID&gt;`.
    * </pre>
    *
-   * <code>string parent = 1;</code>
+   * <code>
+   * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    */
   public java.lang.String getParent() {
     java.lang.Object ref = parent_;
@@ -122,7 +124,9 @@ public final class TrainAgentRequest extends com.google.protobuf.GeneratedMessag
    * Format: `projects/&lt;Project ID&gt;`.
    * </pre>
    *
-   * <code>string parent = 1;</code>
+   * <code>
+   * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    */
   public com.google.protobuf.ByteString getParentBytes() {
     java.lang.Object ref = parent_;
@@ -462,7 +466,9 @@ public final class TrainAgentRequest extends com.google.protobuf.GeneratedMessag
      * Format: `projects/&lt;Project ID&gt;`.
      * </pre>
      *
-     * <code>string parent = 1;</code>
+     * <code>
+     * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      */
     public java.lang.String getParent() {
       java.lang.Object ref = parent_;
@@ -483,7 +489,9 @@ public final class TrainAgentRequest extends com.google.protobuf.GeneratedMessag
      * Format: `projects/&lt;Project ID&gt;`.
      * </pre>
      *
-     * <code>string parent = 1;</code>
+     * <code>
+     * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      */
     public com.google.protobuf.ByteString getParentBytes() {
       java.lang.Object ref = parent_;
@@ -504,7 +512,9 @@ public final class TrainAgentRequest extends com.google.protobuf.GeneratedMessag
      * Format: `projects/&lt;Project ID&gt;`.
      * </pre>
      *
-     * <code>string parent = 1;</code>
+     * <code>
+     * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      */
     public Builder setParent(java.lang.String value) {
       if (value == null) {
@@ -523,7 +533,9 @@ public final class TrainAgentRequest extends com.google.protobuf.GeneratedMessag
      * Format: `projects/&lt;Project ID&gt;`.
      * </pre>
      *
-     * <code>string parent = 1;</code>
+     * <code>
+     * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      */
     public Builder clearParent() {
 
@@ -539,7 +551,9 @@ public final class TrainAgentRequest extends com.google.protobuf.GeneratedMessag
      * Format: `projects/&lt;Project ID&gt;`.
      * </pre>
      *
-     * <code>string parent = 1;</code>
+     * <code>
+     * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      */
     public Builder setParentBytes(com.google.protobuf.ByteString value) {
       if (value == null) {

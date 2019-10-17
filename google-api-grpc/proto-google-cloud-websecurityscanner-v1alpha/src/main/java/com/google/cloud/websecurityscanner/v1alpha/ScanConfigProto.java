@@ -43,41 +43,48 @@ public final class ScanConfigProto {
     java.lang.String[] descriptorData = {
       "\n9google/cloud/websecurityscanner/v1alph"
           + "a/scan_config.proto\022\'google.cloud.websec"
-          + "urityscanner.v1alpha\032\034google/api/annotat"
-          + "ions.proto\032\037google/protobuf/timestamp.pr"
-          + "oto\"\334\010\n\nScanConfig\022\014\n\004name\030\001 \001(\t\022\024\n\014disp"
-          + "lay_name\030\002 \001(\t\022\017\n\007max_qps\030\003 \001(\005\022\025\n\rstart"
-          + "ing_urls\030\004 \003(\t\022Z\n\016authentication\030\005 \001(\0132B"
-          + ".google.cloud.websecurityscanner.v1alpha"
-          + ".ScanConfig.Authentication\022Q\n\nuser_agent"
-          + "\030\006 \001(\0162=.google.cloud.websecurityscanner"
-          + ".v1alpha.ScanConfig.UserAgent\022\032\n\022blackli"
-          + "st_patterns\030\007 \003(\t\022N\n\010schedule\030\010 \001(\0132<.go"
-          + "ogle.cloud.websecurityscanner.v1alpha.Sc"
-          + "anConfig.Schedule\022\\\n\020target_platforms\030\t "
-          + "\003(\0162B.google.cloud.websecurityscanner.v1"
-          + "alpha.ScanConfig.TargetPlatform\032\367\002\n\016Auth"
-          + "entication\022j\n\016google_account\030\001 \001(\0132P.goo"
-          + "gle.cloud.websecurityscanner.v1alpha.Sca"
-          + "nConfig.Authentication.GoogleAccountH\000\022j"
-          + "\n\016custom_account\030\002 \001(\0132P.google.cloud.we"
-          + "bsecurityscanner.v1alpha.ScanConfig.Auth"
-          + "entication.CustomAccountH\000\0323\n\rGoogleAcco"
-          + "unt\022\020\n\010username\030\001 \001(\t\022\020\n\010password\030\002 \001(\t\032"
-          + "F\n\rCustomAccount\022\020\n\010username\030\001 \001(\t\022\020\n\010pa"
-          + "ssword\030\002 \001(\t\022\021\n\tlogin_url\030\003 \001(\tB\020\n\016authe"
-          + "ntication\032]\n\010Schedule\0221\n\rschedule_time\030\001"
-          + " \001(\0132\032.google.protobuf.Timestamp\022\036\n\026inte"
-          + "rval_duration_days\030\002 \001(\005\"`\n\tUserAgent\022\032\n"
-          + "\026USER_AGENT_UNSPECIFIED\020\000\022\020\n\014CHROME_LINU"
-          + "X\020\001\022\022\n\016CHROME_ANDROID\020\002\022\021\n\rSAFARI_IPHONE"
-          + "\020\003\"N\n\016TargetPlatform\022\037\n\033TARGET_PLATFORM_"
-          + "UNSPECIFIED\020\000\022\016\n\nAPP_ENGINE\020\001\022\013\n\007COMPUTE"
-          + "\020\002B\233\001\n+com.google.cloud.websecurityscann"
-          + "er.v1alphaB\017ScanConfigProtoP\001ZYgoogle.go"
-          + "lang.org/genproto/googleapis/cloud/webse"
-          + "curityscanner/v1alpha;websecurityscanner"
-          + "b\006proto3"
+          + "urityscanner.v1alpha\032\037google/api/field_b"
+          + "ehavior.proto\032\031google/api/resource.proto"
+          + "\0326google/cloud/websecurityscanner/v1alph"
+          + "a/scan_run.proto\032\037google/protobuf/timest"
+          + "amp.proto\"\261\n\n\nScanConfig\022\014\n\004name\030\001 \001(\t\022\031"
+          + "\n\014display_name\030\002 \001(\tB\003\340A\002\022\017\n\007max_qps\030\003 \001"
+          + "(\005\022\032\n\rstarting_urls\030\004 \003(\tB\003\340A\002\022Z\n\016authen"
+          + "tication\030\005 \001(\0132B.google.cloud.websecurit"
+          + "yscanner.v1alpha.ScanConfig.Authenticati"
+          + "on\022Q\n\nuser_agent\030\006 \001(\0162=.google.cloud.we"
+          + "bsecurityscanner.v1alpha.ScanConfig.User"
+          + "Agent\022\032\n\022blacklist_patterns\030\007 \003(\t\022N\n\010sch"
+          + "edule\030\010 \001(\0132<.google.cloud.websecuritysc"
+          + "anner.v1alpha.ScanConfig.Schedule\022\\\n\020tar"
+          + "get_platforms\030\t \003(\0162B.google.cloud.webse"
+          + "curityscanner.v1alpha.ScanConfig.TargetP"
+          + "latform\022D\n\nlatest_run\030\013 \001(\01320.google.clo"
+          + "ud.websecurityscanner.v1alpha.ScanRun\032\226\003"
+          + "\n\016Authentication\022j\n\016google_account\030\001 \001(\013"
+          + "2P.google.cloud.websecurityscanner.v1alp"
+          + "ha.ScanConfig.Authentication.GoogleAccou"
+          + "ntH\000\022j\n\016custom_account\030\002 \001(\0132P.google.cl"
+          + "oud.websecurityscanner.v1alpha.ScanConfi"
+          + "g.Authentication.CustomAccountH\000\032@\n\rGoog"
+          + "leAccount\022\025\n\010username\030\001 \001(\tB\003\340A\002\022\030\n\010pass"
+          + "word\030\002 \001(\tB\006\340A\002\340A\004\032X\n\rCustomAccount\022\025\n\010u"
+          + "sername\030\001 \001(\tB\003\340A\002\022\030\n\010password\030\002 \001(\tB\006\340A"
+          + "\002\340A\004\022\026\n\tlogin_url\030\003 \001(\tB\003\340A\002B\020\n\016authenti"
+          + "cation\032b\n\010Schedule\0221\n\rschedule_time\030\001 \001("
+          + "\0132\032.google.protobuf.Timestamp\022#\n\026interva"
+          + "l_duration_days\030\002 \001(\005B\003\340A\002\"`\n\tUserAgent\022"
+          + "\032\n\026USER_AGENT_UNSPECIFIED\020\000\022\020\n\014CHROME_LI"
+          + "NUX\020\001\022\022\n\016CHROME_ANDROID\020\002\022\021\n\rSAFARI_IPHO"
+          + "NE\020\003\"N\n\016TargetPlatform\022\037\n\033TARGET_PLATFOR"
+          + "M_UNSPECIFIED\020\000\022\016\n\nAPP_ENGINE\020\001\022\013\n\007COMPU"
+          + "TE\020\002:_\352A\\\n,websecurityscanner.googleapis"
+          + ".com/ScanConfig\022,projects/{project}/scan"
+          + "Configs/{scan_config}B\233\001\n+com.google.clo"
+          + "ud.websecurityscanner.v1alphaB\017ScanConfi"
+          + "gProtoP\001ZYgoogle.golang.org/genproto/goo"
+          + "gleapis/cloud/websecurityscanner/v1alpha"
+          + ";websecurityscannerb\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner() {
@@ -90,7 +97,9 @@ public final class ScanConfigProto {
     com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
         descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
-          com.google.api.AnnotationsProto.getDescriptor(),
+          com.google.api.FieldBehaviorProto.getDescriptor(),
+          com.google.api.ResourceProto.getDescriptor(),
+          com.google.cloud.websecurityscanner.v1alpha.ScanRunProto.getDescriptor(),
           com.google.protobuf.TimestampProto.getDescriptor(),
         },
         assigner);
@@ -109,6 +118,7 @@ public final class ScanConfigProto {
               "BlacklistPatterns",
               "Schedule",
               "TargetPlatforms",
+              "LatestRun",
             });
     internal_static_google_cloud_websecurityscanner_v1alpha_ScanConfig_Authentication_descriptor =
         internal_static_google_cloud_websecurityscanner_v1alpha_ScanConfig_descriptor
@@ -150,7 +160,15 @@ public final class ScanConfigProto {
             new java.lang.String[] {
               "ScheduleTime", "IntervalDurationDays",
             });
-    com.google.api.AnnotationsProto.getDescriptor();
+    com.google.protobuf.ExtensionRegistry registry =
+        com.google.protobuf.ExtensionRegistry.newInstance();
+    registry.add(com.google.api.FieldBehaviorProto.fieldBehavior);
+    registry.add(com.google.api.ResourceProto.resource);
+    com.google.protobuf.Descriptors.FileDescriptor.internalUpdateFileDescriptor(
+        descriptor, registry);
+    com.google.api.FieldBehaviorProto.getDescriptor();
+    com.google.api.ResourceProto.getDescriptor();
+    com.google.cloud.websecurityscanner.v1alpha.ScanRunProto.getDescriptor();
     com.google.protobuf.TimestampProto.getDescriptor();
   }
 

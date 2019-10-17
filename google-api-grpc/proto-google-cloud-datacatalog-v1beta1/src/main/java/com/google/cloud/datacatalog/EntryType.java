@@ -7,8 +7,8 @@ package com.google.cloud.datacatalog;
  *
  *
  * <pre>
- * Entry resources in Data Catalog can be of different types e.g. BigQuery
- * Table entry is of type 'TABLE'. This enum describes all the possible types
+ * Entry resources in Data Catalog can be of different types e.g. a BigQuery
+ * Table entry is of type `TABLE`. This enum describes all the possible types
  * Data Catalog contains.
  * </pre>
  *
@@ -29,7 +29,8 @@ public enum EntryType implements com.google.protobuf.ProtocolMessageEnum {
    *
    *
    * <pre>
-   * The type of entry that has a GoogleSQL schema, including logical views.
+   * Output only. The type of entry that has a GoogleSQL schema, including
+   * logical views.
    * </pre>
    *
    * <code>TABLE = 2;</code>
@@ -39,12 +40,24 @@ public enum EntryType implements com.google.protobuf.ProtocolMessageEnum {
    *
    *
    * <pre>
-   * An entry type which is used for streaming entries. Example - Pub/Sub.
+   * Output only. An entry type which is used for streaming entries. Example:
+   * Cloud Pub/Sub topic.
    * </pre>
    *
    * <code>DATA_STREAM = 3;</code>
    */
   DATA_STREAM(3),
+  /**
+   *
+   *
+   * <pre>
+   * An entry type which is a set of files or objects. Example: Cloud Storage
+   * fileset.
+   * </pre>
+   *
+   * <code>FILESET = 4;</code>
+   */
+  FILESET(4),
   UNRECOGNIZED(-1),
   ;
 
@@ -62,7 +75,8 @@ public enum EntryType implements com.google.protobuf.ProtocolMessageEnum {
    *
    *
    * <pre>
-   * The type of entry that has a GoogleSQL schema, including logical views.
+   * Output only. The type of entry that has a GoogleSQL schema, including
+   * logical views.
    * </pre>
    *
    * <code>TABLE = 2;</code>
@@ -72,12 +86,24 @@ public enum EntryType implements com.google.protobuf.ProtocolMessageEnum {
    *
    *
    * <pre>
-   * An entry type which is used for streaming entries. Example - Pub/Sub.
+   * Output only. An entry type which is used for streaming entries. Example:
+   * Cloud Pub/Sub topic.
    * </pre>
    *
    * <code>DATA_STREAM = 3;</code>
    */
   public static final int DATA_STREAM_VALUE = 3;
+  /**
+   *
+   *
+   * <pre>
+   * An entry type which is a set of files or objects. Example: Cloud Storage
+   * fileset.
+   * </pre>
+   *
+   * <code>FILESET = 4;</code>
+   */
+  public static final int FILESET_VALUE = 4;
 
   public final int getNumber() {
     if (this == UNRECOGNIZED) {
@@ -101,6 +127,8 @@ public enum EntryType implements com.google.protobuf.ProtocolMessageEnum {
         return TABLE;
       case 3:
         return DATA_STREAM;
+      case 4:
+        return FILESET;
       default:
         return null;
     }

@@ -120,7 +120,8 @@ public final class ListTransferLogsResponse extends com.google.protobuf.Generate
    * Output only. The stored pipeline transfer messages.
    * </pre>
    *
-   * <code>repeated .google.cloud.bigquery.datatransfer.v1.TransferMessage transfer_messages = 1;
+   * <code>
+   * repeated .google.cloud.bigquery.datatransfer.v1.TransferMessage transfer_messages = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
    */
   public java.util.List<com.google.cloud.bigquery.datatransfer.v1.TransferMessage>
@@ -134,7 +135,8 @@ public final class ListTransferLogsResponse extends com.google.protobuf.Generate
    * Output only. The stored pipeline transfer messages.
    * </pre>
    *
-   * <code>repeated .google.cloud.bigquery.datatransfer.v1.TransferMessage transfer_messages = 1;
+   * <code>
+   * repeated .google.cloud.bigquery.datatransfer.v1.TransferMessage transfer_messages = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
    */
   public java.util.List<
@@ -149,7 +151,8 @@ public final class ListTransferLogsResponse extends com.google.protobuf.Generate
    * Output only. The stored pipeline transfer messages.
    * </pre>
    *
-   * <code>repeated .google.cloud.bigquery.datatransfer.v1.TransferMessage transfer_messages = 1;
+   * <code>
+   * repeated .google.cloud.bigquery.datatransfer.v1.TransferMessage transfer_messages = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
    */
   public int getTransferMessagesCount() {
@@ -162,7 +165,8 @@ public final class ListTransferLogsResponse extends com.google.protobuf.Generate
    * Output only. The stored pipeline transfer messages.
    * </pre>
    *
-   * <code>repeated .google.cloud.bigquery.datatransfer.v1.TransferMessage transfer_messages = 1;
+   * <code>
+   * repeated .google.cloud.bigquery.datatransfer.v1.TransferMessage transfer_messages = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
    */
   public com.google.cloud.bigquery.datatransfer.v1.TransferMessage getTransferMessages(int index) {
@@ -175,7 +179,8 @@ public final class ListTransferLogsResponse extends com.google.protobuf.Generate
    * Output only. The stored pipeline transfer messages.
    * </pre>
    *
-   * <code>repeated .google.cloud.bigquery.datatransfer.v1.TransferMessage transfer_messages = 1;
+   * <code>
+   * repeated .google.cloud.bigquery.datatransfer.v1.TransferMessage transfer_messages = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
    */
   public com.google.cloud.bigquery.datatransfer.v1.TransferMessageOrBuilder
@@ -195,7 +200,7 @@ public final class ListTransferLogsResponse extends com.google.protobuf.Generate
    * to request the next page of list results.
    * </pre>
    *
-   * <code>string next_page_token = 2;</code>
+   * <code>string next_page_token = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    */
   public java.lang.String getNextPageToken() {
     java.lang.Object ref = nextPageToken_;
@@ -218,7 +223,7 @@ public final class ListTransferLogsResponse extends com.google.protobuf.Generate
    * to request the next page of list results.
    * </pre>
    *
-   * <code>string next_page_token = 2;</code>
+   * <code>string next_page_token = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    */
   public com.google.protobuf.ByteString getNextPageTokenBytes() {
     java.lang.Object ref = nextPageToken_;
@@ -644,7 +649,8 @@ public final class ListTransferLogsResponse extends com.google.protobuf.Generate
      * Output only. The stored pipeline transfer messages.
      * </pre>
      *
-     * <code>repeated .google.cloud.bigquery.datatransfer.v1.TransferMessage transfer_messages = 1;
+     * <code>
+     * repeated .google.cloud.bigquery.datatransfer.v1.TransferMessage transfer_messages = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      */
     public java.util.List<com.google.cloud.bigquery.datatransfer.v1.TransferMessage>
@@ -662,7 +668,8 @@ public final class ListTransferLogsResponse extends com.google.protobuf.Generate
      * Output only. The stored pipeline transfer messages.
      * </pre>
      *
-     * <code>repeated .google.cloud.bigquery.datatransfer.v1.TransferMessage transfer_messages = 1;
+     * <code>
+     * repeated .google.cloud.bigquery.datatransfer.v1.TransferMessage transfer_messages = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      */
     public int getTransferMessagesCount() {
@@ -679,7 +686,8 @@ public final class ListTransferLogsResponse extends com.google.protobuf.Generate
      * Output only. The stored pipeline transfer messages.
      * </pre>
      *
-     * <code>repeated .google.cloud.bigquery.datatransfer.v1.TransferMessage transfer_messages = 1;
+     * <code>
+     * repeated .google.cloud.bigquery.datatransfer.v1.TransferMessage transfer_messages = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      */
     public com.google.cloud.bigquery.datatransfer.v1.TransferMessage getTransferMessages(
@@ -697,7 +705,8 @@ public final class ListTransferLogsResponse extends com.google.protobuf.Generate
      * Output only. The stored pipeline transfer messages.
      * </pre>
      *
-     * <code>repeated .google.cloud.bigquery.datatransfer.v1.TransferMessage transfer_messages = 1;
+     * <code>
+     * repeated .google.cloud.bigquery.datatransfer.v1.TransferMessage transfer_messages = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      */
     public Builder setTransferMessages(
@@ -721,7 +730,8 @@ public final class ListTransferLogsResponse extends com.google.protobuf.Generate
      * Output only. The stored pipeline transfer messages.
      * </pre>
      *
-     * <code>repeated .google.cloud.bigquery.datatransfer.v1.TransferMessage transfer_messages = 1;
+     * <code>
+     * repeated .google.cloud.bigquery.datatransfer.v1.TransferMessage transfer_messages = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      */
     public Builder setTransferMessages(
@@ -743,7 +753,8 @@ public final class ListTransferLogsResponse extends com.google.protobuf.Generate
      * Output only. The stored pipeline transfer messages.
      * </pre>
      *
-     * <code>repeated .google.cloud.bigquery.datatransfer.v1.TransferMessage transfer_messages = 1;
+     * <code>
+     * repeated .google.cloud.bigquery.datatransfer.v1.TransferMessage transfer_messages = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      */
     public Builder addTransferMessages(
@@ -767,7 +778,8 @@ public final class ListTransferLogsResponse extends com.google.protobuf.Generate
      * Output only. The stored pipeline transfer messages.
      * </pre>
      *
-     * <code>repeated .google.cloud.bigquery.datatransfer.v1.TransferMessage transfer_messages = 1;
+     * <code>
+     * repeated .google.cloud.bigquery.datatransfer.v1.TransferMessage transfer_messages = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      */
     public Builder addTransferMessages(
@@ -791,7 +803,8 @@ public final class ListTransferLogsResponse extends com.google.protobuf.Generate
      * Output only. The stored pipeline transfer messages.
      * </pre>
      *
-     * <code>repeated .google.cloud.bigquery.datatransfer.v1.TransferMessage transfer_messages = 1;
+     * <code>
+     * repeated .google.cloud.bigquery.datatransfer.v1.TransferMessage transfer_messages = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      */
     public Builder addTransferMessages(
@@ -812,7 +825,8 @@ public final class ListTransferLogsResponse extends com.google.protobuf.Generate
      * Output only. The stored pipeline transfer messages.
      * </pre>
      *
-     * <code>repeated .google.cloud.bigquery.datatransfer.v1.TransferMessage transfer_messages = 1;
+     * <code>
+     * repeated .google.cloud.bigquery.datatransfer.v1.TransferMessage transfer_messages = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      */
     public Builder addTransferMessages(
@@ -834,7 +848,8 @@ public final class ListTransferLogsResponse extends com.google.protobuf.Generate
      * Output only. The stored pipeline transfer messages.
      * </pre>
      *
-     * <code>repeated .google.cloud.bigquery.datatransfer.v1.TransferMessage transfer_messages = 1;
+     * <code>
+     * repeated .google.cloud.bigquery.datatransfer.v1.TransferMessage transfer_messages = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      */
     public Builder addAllTransferMessages(
@@ -856,7 +871,8 @@ public final class ListTransferLogsResponse extends com.google.protobuf.Generate
      * Output only. The stored pipeline transfer messages.
      * </pre>
      *
-     * <code>repeated .google.cloud.bigquery.datatransfer.v1.TransferMessage transfer_messages = 1;
+     * <code>
+     * repeated .google.cloud.bigquery.datatransfer.v1.TransferMessage transfer_messages = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      */
     public Builder clearTransferMessages() {
@@ -876,7 +892,8 @@ public final class ListTransferLogsResponse extends com.google.protobuf.Generate
      * Output only. The stored pipeline transfer messages.
      * </pre>
      *
-     * <code>repeated .google.cloud.bigquery.datatransfer.v1.TransferMessage transfer_messages = 1;
+     * <code>
+     * repeated .google.cloud.bigquery.datatransfer.v1.TransferMessage transfer_messages = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      */
     public Builder removeTransferMessages(int index) {
@@ -896,7 +913,8 @@ public final class ListTransferLogsResponse extends com.google.protobuf.Generate
      * Output only. The stored pipeline transfer messages.
      * </pre>
      *
-     * <code>repeated .google.cloud.bigquery.datatransfer.v1.TransferMessage transfer_messages = 1;
+     * <code>
+     * repeated .google.cloud.bigquery.datatransfer.v1.TransferMessage transfer_messages = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      */
     public com.google.cloud.bigquery.datatransfer.v1.TransferMessage.Builder
@@ -910,7 +928,8 @@ public final class ListTransferLogsResponse extends com.google.protobuf.Generate
      * Output only. The stored pipeline transfer messages.
      * </pre>
      *
-     * <code>repeated .google.cloud.bigquery.datatransfer.v1.TransferMessage transfer_messages = 1;
+     * <code>
+     * repeated .google.cloud.bigquery.datatransfer.v1.TransferMessage transfer_messages = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      */
     public com.google.cloud.bigquery.datatransfer.v1.TransferMessageOrBuilder
@@ -928,7 +947,8 @@ public final class ListTransferLogsResponse extends com.google.protobuf.Generate
      * Output only. The stored pipeline transfer messages.
      * </pre>
      *
-     * <code>repeated .google.cloud.bigquery.datatransfer.v1.TransferMessage transfer_messages = 1;
+     * <code>
+     * repeated .google.cloud.bigquery.datatransfer.v1.TransferMessage transfer_messages = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      */
     public java.util.List<
@@ -947,7 +967,8 @@ public final class ListTransferLogsResponse extends com.google.protobuf.Generate
      * Output only. The stored pipeline transfer messages.
      * </pre>
      *
-     * <code>repeated .google.cloud.bigquery.datatransfer.v1.TransferMessage transfer_messages = 1;
+     * <code>
+     * repeated .google.cloud.bigquery.datatransfer.v1.TransferMessage transfer_messages = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      */
     public com.google.cloud.bigquery.datatransfer.v1.TransferMessage.Builder
@@ -963,7 +984,8 @@ public final class ListTransferLogsResponse extends com.google.protobuf.Generate
      * Output only. The stored pipeline transfer messages.
      * </pre>
      *
-     * <code>repeated .google.cloud.bigquery.datatransfer.v1.TransferMessage transfer_messages = 1;
+     * <code>
+     * repeated .google.cloud.bigquery.datatransfer.v1.TransferMessage transfer_messages = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      */
     public com.google.cloud.bigquery.datatransfer.v1.TransferMessage.Builder
@@ -980,7 +1002,8 @@ public final class ListTransferLogsResponse extends com.google.protobuf.Generate
      * Output only. The stored pipeline transfer messages.
      * </pre>
      *
-     * <code>repeated .google.cloud.bigquery.datatransfer.v1.TransferMessage transfer_messages = 1;
+     * <code>
+     * repeated .google.cloud.bigquery.datatransfer.v1.TransferMessage transfer_messages = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      */
     public java.util.List<com.google.cloud.bigquery.datatransfer.v1.TransferMessage.Builder>
@@ -1019,7 +1042,7 @@ public final class ListTransferLogsResponse extends com.google.protobuf.Generate
      * to request the next page of list results.
      * </pre>
      *
-     * <code>string next_page_token = 2;</code>
+     * <code>string next_page_token = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     public java.lang.String getNextPageToken() {
       java.lang.Object ref = nextPageToken_;
@@ -1042,7 +1065,7 @@ public final class ListTransferLogsResponse extends com.google.protobuf.Generate
      * to request the next page of list results.
      * </pre>
      *
-     * <code>string next_page_token = 2;</code>
+     * <code>string next_page_token = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     public com.google.protobuf.ByteString getNextPageTokenBytes() {
       java.lang.Object ref = nextPageToken_;
@@ -1065,7 +1088,7 @@ public final class ListTransferLogsResponse extends com.google.protobuf.Generate
      * to request the next page of list results.
      * </pre>
      *
-     * <code>string next_page_token = 2;</code>
+     * <code>string next_page_token = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     public Builder setNextPageToken(java.lang.String value) {
       if (value == null) {
@@ -1086,7 +1109,7 @@ public final class ListTransferLogsResponse extends com.google.protobuf.Generate
      * to request the next page of list results.
      * </pre>
      *
-     * <code>string next_page_token = 2;</code>
+     * <code>string next_page_token = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     public Builder clearNextPageToken() {
 
@@ -1104,7 +1127,7 @@ public final class ListTransferLogsResponse extends com.google.protobuf.Generate
      * to request the next page of list results.
      * </pre>
      *
-     * <code>string next_page_token = 2;</code>
+     * <code>string next_page_token = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     public Builder setNextPageTokenBytes(com.google.protobuf.ByteString value) {
       if (value == null) {

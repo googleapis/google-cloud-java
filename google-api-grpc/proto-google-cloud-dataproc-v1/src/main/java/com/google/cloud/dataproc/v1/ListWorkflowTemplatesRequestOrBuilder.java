@@ -12,24 +12,38 @@ public interface ListWorkflowTemplatesRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The "resource name" of the region, as described
-   * in https://cloud.google.com/apis/design/resource_names of the form
-   * `projects/{project_id}/regions/{region}`
+   * Required. The resource name of the region or location, as described
+   * in https://cloud.google.com/apis/design/resource_names.
+   * * For `projects.regions.workflowTemplates,list`, the resource
+   *   name of the region has the following format:
+   *   `projects/{project_id}/regions/{region}`
+   * * For `projects.locations.workflowTemplates.list`, the
+   *   resource name of the location has the following format:
+   *   `projects/{project_id}/locations/{location}`
    * </pre>
    *
-   * <code>string parent = 1;</code>
+   * <code>
+   * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    */
   java.lang.String getParent();
   /**
    *
    *
    * <pre>
-   * Required. The "resource name" of the region, as described
-   * in https://cloud.google.com/apis/design/resource_names of the form
-   * `projects/{project_id}/regions/{region}`
+   * Required. The resource name of the region or location, as described
+   * in https://cloud.google.com/apis/design/resource_names.
+   * * For `projects.regions.workflowTemplates,list`, the resource
+   *   name of the region has the following format:
+   *   `projects/{project_id}/regions/{region}`
+   * * For `projects.locations.workflowTemplates.list`, the
+   *   resource name of the location has the following format:
+   *   `projects/{project_id}/locations/{location}`
    * </pre>
    *
-   * <code>string parent = 1;</code>
+   * <code>
+   * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    */
   com.google.protobuf.ByteString getParentBytes();
 
@@ -40,7 +54,7 @@ public interface ListWorkflowTemplatesRequestOrBuilder
    * Optional. The maximum number of results to return in each response.
    * </pre>
    *
-   * <code>int32 page_size = 2;</code>
+   * <code>int32 page_size = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   int getPageSize();
 
@@ -52,7 +66,7 @@ public interface ListWorkflowTemplatesRequestOrBuilder
    * next page of results.
    * </pre>
    *
-   * <code>string page_token = 3;</code>
+   * <code>string page_token = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   java.lang.String getPageToken();
   /**
@@ -63,7 +77,7 @@ public interface ListWorkflowTemplatesRequestOrBuilder
    * next page of results.
    * </pre>
    *
-   * <code>string page_token = 3;</code>
+   * <code>string page_token = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   com.google.protobuf.ByteString getPageTokenBytes();
 }

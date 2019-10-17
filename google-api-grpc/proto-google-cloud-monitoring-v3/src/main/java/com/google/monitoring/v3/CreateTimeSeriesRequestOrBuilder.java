@@ -40,6 +40,7 @@ public interface CreateTimeSeriesRequestOrBuilder
    * point must be more recent than any other point in its time series.  Each
    * `TimeSeries` value must fully specify a unique time series by supplying
    * all label values for the metric and the monitored resource.
+   * The maximum number of `TimeSeries` objects per `Create` request is 200.
    * </pre>
    *
    * <code>repeated .google.monitoring.v3.TimeSeries time_series = 2;</code>
@@ -54,6 +55,7 @@ public interface CreateTimeSeriesRequestOrBuilder
    * point must be more recent than any other point in its time series.  Each
    * `TimeSeries` value must fully specify a unique time series by supplying
    * all label values for the metric and the monitored resource.
+   * The maximum number of `TimeSeries` objects per `Create` request is 200.
    * </pre>
    *
    * <code>repeated .google.monitoring.v3.TimeSeries time_series = 2;</code>
@@ -68,6 +70,7 @@ public interface CreateTimeSeriesRequestOrBuilder
    * point must be more recent than any other point in its time series.  Each
    * `TimeSeries` value must fully specify a unique time series by supplying
    * all label values for the metric and the monitored resource.
+   * The maximum number of `TimeSeries` objects per `Create` request is 200.
    * </pre>
    *
    * <code>repeated .google.monitoring.v3.TimeSeries time_series = 2;</code>
@@ -82,6 +85,7 @@ public interface CreateTimeSeriesRequestOrBuilder
    * point must be more recent than any other point in its time series.  Each
    * `TimeSeries` value must fully specify a unique time series by supplying
    * all label values for the metric and the monitored resource.
+   * The maximum number of `TimeSeries` objects per `Create` request is 200.
    * </pre>
    *
    * <code>repeated .google.monitoring.v3.TimeSeries time_series = 2;</code>
@@ -97,6 +101,7 @@ public interface CreateTimeSeriesRequestOrBuilder
    * point must be more recent than any other point in its time series.  Each
    * `TimeSeries` value must fully specify a unique time series by supplying
    * all label values for the metric and the monitored resource.
+   * The maximum number of `TimeSeries` objects per `Create` request is 200.
    * </pre>
    *
    * <code>repeated .google.monitoring.v3.TimeSeries time_series = 2;</code>

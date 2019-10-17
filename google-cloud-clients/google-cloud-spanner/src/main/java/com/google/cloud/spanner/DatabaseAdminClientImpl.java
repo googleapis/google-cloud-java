@@ -22,6 +22,8 @@ import com.google.api.gax.longrunning.OperationFuture;
 import com.google.api.gax.longrunning.OperationFutureImpl;
 import com.google.api.gax.longrunning.OperationSnapshot;
 import com.google.api.gax.paging.Page;
+import com.google.cloud.Policy;
+import com.google.cloud.Policy.DefaultMarshaller;
 import com.google.cloud.spanner.Options.ListOption;
 import com.google.cloud.spanner.SpannerImpl.PageFetcher;
 import com.google.cloud.spanner.spi.v1.SpannerRpc;
@@ -36,8 +38,21 @@ import javax.annotation.Nullable;
 
 /** Default implementation of {@link DatabaseAdminClient}. */
 class DatabaseAdminClientImpl implements DatabaseAdminClient {
+  private static final class PolicyMarshaller extends DefaultMarshaller {
+    @Override
+    protected Policy fromPb(com.google.iam.v1.Policy policyPb) {
+      return super.fromPb(policyPb);
+    }
+
+    @Override
+    protected com.google.iam.v1.Policy toPb(Policy policy) {
+      return super.toPb(policy);
+    }
+  }
+
   private final String projectId;
   private final SpannerRpc rpc;
+  private final PolicyMarshaller policyMarshaller = new PolicyMarshaller();
 
   DatabaseAdminClientImpl(String projectId, SpannerRpc rpc) {
     this.projectId = projectId;
@@ -152,6 +167,28 @@ class DatabaseAdminClientImpl implements DatabaseAdminClient {
       pageFetcher.setNextPageToken(listOptions.pageToken());
     }
     return pageFetcher.getNextPage();
+  }
+
+  @Override
+  public Policy getDatabaseIAMPolicy(String instanceId, String databaseId) {
+    final String databaseName = DatabaseId.of(projectId, instanceId, databaseId).getName();
+    return policyMarshaller.fromPb(rpc.getDatabaseAdminIAMPolicy(databaseName));
+  }
+
+  @Override
+  public Policy setDatabaseIAMPolicy(String instanceId, String databaseId, Policy policy) {
+    Preconditions.checkNotNull(policy);
+    String databaseName = DatabaseId.of(projectId, instanceId, databaseId).getName();
+    return policyMarshaller.fromPb(
+        rpc.setDatabaseAdminIAMPolicy(databaseName, policyMarshaller.toPb(policy)));
+  }
+
+  @Override
+  public Iterable<String> testDatabaseIAMPermissions(
+      String instanceId, String databaseId, Iterable<String> permissions) {
+    Preconditions.checkNotNull(permissions);
+    String databaseName = DatabaseId.of(projectId, instanceId, databaseId).getName();
+    return rpc.testDatabaseAdminIAMPermissions(databaseName, permissions).getPermissionsList();
   }
 
   private String getInstanceName(String instanceId) {

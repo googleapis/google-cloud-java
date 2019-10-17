@@ -44,8 +44,8 @@ public interface SentenceOrBuilder
    *
    * <pre>
    * For calls to [AnalyzeSentiment][] or if
-   * [AnnotateTextRequest.Features.extract_document_sentiment][google.cloud.language.v1beta2.AnnotateTextRequest.Features.extract_document_sentiment]
-   * is set to true, this field will contain the sentiment for the sentence.
+   * [AnnotateTextRequest.Features.extract_document_sentiment][google.cloud.language.v1beta2.AnnotateTextRequest.Features.extract_document_sentiment] is set to
+   * true, this field will contain the sentiment for the sentence.
    * </pre>
    *
    * <code>.google.cloud.language.v1beta2.Sentiment sentiment = 2;</code>
@@ -56,8 +56,8 @@ public interface SentenceOrBuilder
    *
    * <pre>
    * For calls to [AnalyzeSentiment][] or if
-   * [AnnotateTextRequest.Features.extract_document_sentiment][google.cloud.language.v1beta2.AnnotateTextRequest.Features.extract_document_sentiment]
-   * is set to true, this field will contain the sentiment for the sentence.
+   * [AnnotateTextRequest.Features.extract_document_sentiment][google.cloud.language.v1beta2.AnnotateTextRequest.Features.extract_document_sentiment] is set to
+   * true, this field will contain the sentiment for the sentence.
    * </pre>
    *
    * <code>.google.cloud.language.v1beta2.Sentiment sentiment = 2;</code>
@@ -68,8 +68,8 @@ public interface SentenceOrBuilder
    *
    * <pre>
    * For calls to [AnalyzeSentiment][] or if
-   * [AnnotateTextRequest.Features.extract_document_sentiment][google.cloud.language.v1beta2.AnnotateTextRequest.Features.extract_document_sentiment]
-   * is set to true, this field will contain the sentiment for the sentence.
+   * [AnnotateTextRequest.Features.extract_document_sentiment][google.cloud.language.v1beta2.AnnotateTextRequest.Features.extract_document_sentiment] is set to
+   * true, this field will contain the sentiment for the sentence.
    * </pre>
    *
    * <code>.google.cloud.language.v1beta2.Sentiment sentiment = 2;</code>

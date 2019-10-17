@@ -17,6 +17,10 @@ public final class LoggingConfigProto {
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_logging_v2_LogSink_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_logging_v2_BigQueryOptions_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_logging_v2_BigQueryOptions_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_logging_v2_ListSinksRequest_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_logging_v2_ListSinksRequest_fieldAccessorTable;
@@ -78,131 +82,146 @@ public final class LoggingConfigProto {
   static {
     java.lang.String[] descriptorData = {
       "\n&google/logging/v2/logging_config.proto"
-          + "\022\021google.logging.v2\032\034google/api/annotati"
-          + "ons.proto\032\033google/protobuf/empty.proto\032 "
-          + "google/protobuf/field_mask.proto\032\037google"
-          + "/protobuf/timestamp.proto\"\343\002\n\007LogSink\022\014\n"
-          + "\004name\030\001 \001(\t\022\023\n\013destination\030\003 \001(\t\022\016\n\006filt"
-          + "er\030\005 \001(\t\022K\n\025output_version_format\030\006 \001(\0162"
-          + "(.google.logging.v2.LogSink.VersionForma"
-          + "tB\002\030\001\022\027\n\017writer_identity\030\010 \001(\t\022\030\n\020includ"
-          + "e_children\030\t \001(\010\0222\n\nstart_time\030\n \001(\0132\032.g"
-          + "oogle.protobuf.TimestampB\002\030\001\0220\n\010end_time"
-          + "\030\013 \001(\0132\032.google.protobuf.TimestampB\002\030\001\"?"
-          + "\n\rVersionFormat\022\036\n\032VERSION_FORMAT_UNSPEC"
-          + "IFIED\020\000\022\006\n\002V2\020\001\022\006\n\002V1\020\002\"I\n\020ListSinksRequ"
-          + "est\022\016\n\006parent\030\001 \001(\t\022\022\n\npage_token\030\002 \001(\t\022"
-          + "\021\n\tpage_size\030\003 \001(\005\"W\n\021ListSinksResponse\022"
-          + ")\n\005sinks\030\001 \003(\0132\032.google.logging.v2.LogSi"
-          + "nk\022\027\n\017next_page_token\030\002 \001(\t\"#\n\016GetSinkRe"
-          + "quest\022\021\n\tsink_name\030\001 \001(\t\"m\n\021CreateSinkRe"
-          + "quest\022\016\n\006parent\030\001 \001(\t\022(\n\004sink\030\002 \001(\0132\032.go"
-          + "ogle.logging.v2.LogSink\022\036\n\026unique_writer"
-          + "_identity\030\003 \001(\010\"\241\001\n\021UpdateSinkRequest\022\021\n"
-          + "\tsink_name\030\001 \001(\t\022(\n\004sink\030\002 \001(\0132\032.google."
-          + "logging.v2.LogSink\022\036\n\026unique_writer_iden"
-          + "tity\030\003 \001(\010\022/\n\013update_mask\030\004 \001(\0132\032.google"
-          + ".protobuf.FieldMask\"&\n\021DeleteSinkRequest"
-          + "\022\021\n\tsink_name\030\001 \001(\t\"S\n\014LogExclusion\022\014\n\004n"
-          + "ame\030\001 \001(\t\022\023\n\013description\030\002 \001(\t\022\016\n\006filter"
-          + "\030\003 \001(\t\022\020\n\010disabled\030\004 \001(\010\"N\n\025ListExclusio"
-          + "nsRequest\022\016\n\006parent\030\001 \001(\t\022\022\n\npage_token\030"
-          + "\002 \001(\t\022\021\n\tpage_size\030\003 \001(\005\"f\n\026ListExclusio"
-          + "nsResponse\0223\n\nexclusions\030\001 \003(\0132\037.google."
-          + "logging.v2.LogExclusion\022\027\n\017next_page_tok"
-          + "en\030\002 \001(\t\"#\n\023GetExclusionRequest\022\014\n\004name\030"
-          + "\001 \001(\t\"\\\n\026CreateExclusionRequest\022\016\n\006paren"
-          + "t\030\001 \001(\t\0222\n\texclusion\030\002 \001(\0132\037.google.logg"
-          + "ing.v2.LogExclusion\"\213\001\n\026UpdateExclusionR"
-          + "equest\022\014\n\004name\030\001 \001(\t\0222\n\texclusion\030\002 \001(\0132"
-          + "\037.google.logging.v2.LogExclusion\022/\n\013upda"
-          + "te_mask\030\003 \001(\0132\032.google.protobuf.FieldMas"
-          + "k\"&\n\026DeleteExclusionRequest\022\014\n\004name\030\001 \001("
-          + "\t2\224\031\n\017ConfigServiceV2\022\207\002\n\tListSinks\022#.go"
-          + "ogle.logging.v2.ListSinksRequest\032$.googl"
-          + "e.logging.v2.ListSinksResponse\"\256\001\202\323\344\223\002\247\001"
-          + "\022\026/v2/{parent=*/*}/sinksZ\037\022\035/v2/{parent="
-          + "projects/*}/sinksZ$\022\"/v2/{parent=organiz"
-          + "ations/*}/sinksZ\036\022\034/v2/{parent=folders/*"
-          + "}/sinksZ&\022$/v2/{parent=billingAccounts/*"
-          + "}/sinks\022\222\002\n\007GetSink\022!.google.logging.v2."
-          + "GetSinkRequest\032\032.google.logging.v2.LogSi"
-          + "nk\"\307\001\202\323\344\223\002\300\001\022\033/v2/{sink_name=*/*/sinks/*"
-          + "}Z$\022\"/v2/{sink_name=projects/*/sinks/*}Z"
-          + ")\022\'/v2/{sink_name=organizations/*/sinks/"
-          + "*}Z#\022!/v2/{sink_name=folders/*/sinks/*}Z"
-          + "+\022)/v2/{sink_name=billingAccounts/*/sink"
-          + "s/*}\022\235\002\n\nCreateSink\022$.google.logging.v2."
-          + "CreateSinkRequest\032\032.google.logging.v2.Lo"
-          + "gSink\"\314\001\202\323\344\223\002\305\001\"\026/v2/{parent=*/*}/sinks:"
-          + "\004sinkZ%\"\035/v2/{parent=projects/*}/sinks:\004"
-          + "sinkZ*\"\"/v2/{parent=organizations/*}/sin"
-          + "ks:\004sinkZ$\"\034/v2/{parent=folders/*}/sinks"
-          + ":\004sinkZ,\"$/v2/{parent=billingAccounts/*}"
-          + "/sinks:\004sink\022\361\003\n\nUpdateSink\022$.google.log"
-          + "ging.v2.UpdateSinkRequest\032\032.google.loggi"
-          + "ng.v2.LogSink\"\240\003\202\323\344\223\002\231\003\032\033/v2/{sink_name="
-          + "*/*/sinks/*}:\004sinkZ*\032\"/v2/{sink_name=pro"
-          + "jects/*/sinks/*}:\004sinkZ/\032\'/v2/{sink_name"
-          + "=organizations/*/sinks/*}:\004sinkZ)\032!/v2/{"
-          + "sink_name=folders/*/sinks/*}:\004sinkZ1\032)/v"
-          + "2/{sink_name=billingAccounts/*/sinks/*}:"
-          + "\004sinkZ*2\"/v2/{sink_name=projects/*/sinks"
-          + "/*}:\004sinkZ/2\'/v2/{sink_name=organization"
-          + "s/*/sinks/*}:\004sinkZ)2!/v2/{sink_name=fol"
-          + "ders/*/sinks/*}:\004sinkZ12)/v2/{sink_name="
-          + "billingAccounts/*/sinks/*}:\004sink\022\224\002\n\nDel"
-          + "eteSink\022$.google.logging.v2.DeleteSinkRe"
-          + "quest\032\026.google.protobuf.Empty\"\307\001\202\323\344\223\002\300\001*"
-          + "\033/v2/{sink_name=*/*/sinks/*}Z$*\"/v2/{sin"
-          + "k_name=projects/*/sinks/*}Z)*\'/v2/{sink_"
-          + "name=organizations/*/sinks/*}Z#*!/v2/{si"
-          + "nk_name=folders/*/sinks/*}Z+*)/v2/{sink_"
-          + "name=billingAccounts/*/sinks/*}\022\257\002\n\016List"
-          + "Exclusions\022(.google.logging.v2.ListExclu"
-          + "sionsRequest\032).google.logging.v2.ListExc"
-          + "lusionsResponse\"\307\001\202\323\344\223\002\300\001\022\033/v2/{parent=*"
-          + "/*}/exclusionsZ$\022\"/v2/{parent=projects/*"
-          + "}/exclusionsZ)\022\'/v2/{parent=organization"
-          + "s/*}/exclusionsZ#\022!/v2/{parent=folders/*"
-          + "}/exclusionsZ+\022)/v2/{parent=billingAccou"
-          + "nts/*}/exclusions\022\241\002\n\014GetExclusion\022&.goo"
-          + "gle.logging.v2.GetExclusionRequest\032\037.goo"
-          + "gle.logging.v2.LogExclusion\"\307\001\202\323\344\223\002\300\001\022\033/"
-          + "v2/{name=*/*/exclusions/*}Z$\022\"/v2/{name="
-          + "projects/*/exclusions/*}Z)\022\'/v2/{name=or"
-          + "ganizations/*/exclusions/*}Z#\022!/v2/{name"
-          + "=folders/*/exclusions/*}Z+\022)/v2/{name=bi"
-          + "llingAccounts/*/exclusions/*}\022\336\002\n\017Create"
-          + "Exclusion\022).google.logging.v2.CreateExcl"
-          + "usionRequest\032\037.google.logging.v2.LogExcl"
-          + "usion\"\376\001\202\323\344\223\002\367\001\"\033/v2/{parent=*/*}/exclus"
-          + "ions:\texclusionZ/\"\"/v2/{parent=projects/"
-          + "*}/exclusions:\texclusionZ4\"\'/v2/{parent="
-          + "organizations/*}/exclusions:\texclusionZ."
-          + "\"!/v2/{parent=folders/*}/exclusions:\texc"
-          + "lusionZ6\")/v2/{parent=billingAccounts/*}"
-          + "/exclusions:\texclusion\022\336\002\n\017UpdateExclusi"
-          + "on\022).google.logging.v2.UpdateExclusionRe"
-          + "quest\032\037.google.logging.v2.LogExclusion\"\376"
-          + "\001\202\323\344\223\002\367\0012\033/v2/{name=*/*/exclusions/*}:\te"
-          + "xclusionZ/2\"/v2/{name=projects/*/exclusi"
-          + "ons/*}:\texclusionZ42\'/v2/{name=organizat"
-          + "ions/*/exclusions/*}:\texclusionZ.2!/v2/{"
-          + "name=folders/*/exclusions/*}:\texclusionZ"
-          + "62)/v2/{name=billingAccounts/*/exclusion"
-          + "s/*}:\texclusion\022\236\002\n\017DeleteExclusion\022).go"
-          + "ogle.logging.v2.DeleteExclusionRequest\032\026"
-          + ".google.protobuf.Empty\"\307\001\202\323\344\223\002\300\001*\033/v2/{n"
-          + "ame=*/*/exclusions/*}Z$*\"/v2/{name=proje"
-          + "cts/*/exclusions/*}Z)*\'/v2/{name=organiz"
-          + "ations/*/exclusions/*}Z#*!/v2/{name=fold"
-          + "ers/*/exclusions/*}Z+*)/v2/{name=billing"
-          + "Accounts/*/exclusions/*}B\236\001\n\025com.google."
-          + "logging.v2B\022LoggingConfigProtoP\001Z8google"
-          + ".golang.org/genproto/googleapis/logging/"
-          + "v2;logging\370\001\001\252\002\027Google.Cloud.Logging.V2\312"
-          + "\002\027Google\\Cloud\\Logging\\V2b\006proto3"
+          + "\022\021google.logging.v2\032\036google/protobuf/dur"
+          + "ation.proto\032\033google/protobuf/empty.proto"
+          + "\032 google/protobuf/field_mask.proto\032\037goog"
+          + "le/protobuf/timestamp.proto\032\034google/api/"
+          + "annotations.proto\032\027google/api/client.pro"
+          + "to\"\220\004\n\007LogSink\022\014\n\004name\030\001 \001(\t\022\023\n\013destinat"
+          + "ion\030\003 \001(\t\022\016\n\006filter\030\005 \001(\t\022K\n\025output_vers"
+          + "ion_format\030\006 \001(\0162(.google.logging.v2.Log"
+          + "Sink.VersionFormatB\002\030\001\022\027\n\017writer_identit"
+          + "y\030\010 \001(\t\022\030\n\020include_children\030\t \001(\010\022>\n\020big"
+          + "query_options\030\014 \001(\0132\".google.logging.v2."
+          + "BigQueryOptionsH\000\022/\n\013create_time\030\r \001(\0132\032"
+          + ".google.protobuf.Timestamp\022/\n\013update_tim"
+          + "e\030\016 \001(\0132\032.google.protobuf.Timestamp\0222\n\ns"
+          + "tart_time\030\n \001(\0132\032.google.protobuf.Timest"
+          + "ampB\002\030\001\0220\n\010end_time\030\013 \001(\0132\032.google.proto"
+          + "buf.TimestampB\002\030\001\"?\n\rVersionFormat\022\036\n\032VE"
+          + "RSION_FORMAT_UNSPECIFIED\020\000\022\006\n\002V2\020\001\022\006\n\002V1"
+          + "\020\002B\t\n\007options\"1\n\017BigQueryOptions\022\036\n\026use_"
+          + "partitioned_tables\030\001 \001(\010\"I\n\020ListSinksReq"
+          + "uest\022\016\n\006parent\030\001 \001(\t\022\022\n\npage_token\030\002 \001(\t"
+          + "\022\021\n\tpage_size\030\003 \001(\005\"W\n\021ListSinksResponse"
+          + "\022)\n\005sinks\030\001 \003(\0132\032.google.logging.v2.LogS"
+          + "ink\022\027\n\017next_page_token\030\002 \001(\t\"#\n\016GetSinkR"
+          + "equest\022\021\n\tsink_name\030\001 \001(\t\"m\n\021CreateSinkR"
+          + "equest\022\016\n\006parent\030\001 \001(\t\022(\n\004sink\030\002 \001(\0132\032.g"
+          + "oogle.logging.v2.LogSink\022\036\n\026unique_write"
+          + "r_identity\030\003 \001(\010\"\241\001\n\021UpdateSinkRequest\022\021"
+          + "\n\tsink_name\030\001 \001(\t\022(\n\004sink\030\002 \001(\0132\032.google"
+          + ".logging.v2.LogSink\022\036\n\026unique_writer_ide"
+          + "ntity\030\003 \001(\010\022/\n\013update_mask\030\004 \001(\0132\032.googl"
+          + "e.protobuf.FieldMask\"&\n\021DeleteSinkReques"
+          + "t\022\021\n\tsink_name\030\001 \001(\t\"\265\001\n\014LogExclusion\022\014\n"
+          + "\004name\030\001 \001(\t\022\023\n\013description\030\002 \001(\t\022\016\n\006filt"
+          + "er\030\003 \001(\t\022\020\n\010disabled\030\004 \001(\010\022/\n\013create_tim"
+          + "e\030\005 \001(\0132\032.google.protobuf.Timestamp\022/\n\013u"
+          + "pdate_time\030\006 \001(\0132\032.google.protobuf.Times"
+          + "tamp\"N\n\025ListExclusionsRequest\022\016\n\006parent\030"
+          + "\001 \001(\t\022\022\n\npage_token\030\002 \001(\t\022\021\n\tpage_size\030\003"
+          + " \001(\005\"f\n\026ListExclusionsResponse\0223\n\nexclus"
+          + "ions\030\001 \003(\0132\037.google.logging.v2.LogExclus"
+          + "ion\022\027\n\017next_page_token\030\002 \001(\t\"#\n\023GetExclu"
+          + "sionRequest\022\014\n\004name\030\001 \001(\t\"\\\n\026CreateExclu"
+          + "sionRequest\022\016\n\006parent\030\001 \001(\t\0222\n\texclusion"
+          + "\030\002 \001(\0132\037.google.logging.v2.LogExclusion\""
+          + "\213\001\n\026UpdateExclusionRequest\022\014\n\004name\030\001 \001(\t"
+          + "\0222\n\texclusion\030\002 \001(\0132\037.google.logging.v2."
+          + "LogExclusion\022/\n\013update_mask\030\003 \001(\0132\032.goog"
+          + "le.protobuf.FieldMask\"&\n\026DeleteExclusion"
+          + "Request\022\014\n\004name\030\001 \001(\t2\366\032\n\017ConfigServiceV"
+          + "2\022\207\002\n\tListSinks\022#.google.logging.v2.List"
+          + "SinksRequest\032$.google.logging.v2.ListSin"
+          + "ksResponse\"\256\001\202\323\344\223\002\247\001\022\026/v2/{parent=*/*}/s"
+          + "inksZ\037\022\035/v2/{parent=projects/*}/sinksZ$\022"
+          + "\"/v2/{parent=organizations/*}/sinksZ\036\022\034/"
+          + "v2/{parent=folders/*}/sinksZ&\022$/v2/{pare"
+          + "nt=billingAccounts/*}/sinks\022\222\002\n\007GetSink\022"
+          + "!.google.logging.v2.GetSinkRequest\032\032.goo"
+          + "gle.logging.v2.LogSink\"\307\001\202\323\344\223\002\300\001\022\033/v2/{s"
+          + "ink_name=*/*/sinks/*}Z$\022\"/v2/{sink_name="
+          + "projects/*/sinks/*}Z)\022\'/v2/{sink_name=or"
+          + "ganizations/*/sinks/*}Z#\022!/v2/{sink_name"
+          + "=folders/*/sinks/*}Z+\022)/v2/{sink_name=bi"
+          + "llingAccounts/*/sinks/*}\022\235\002\n\nCreateSink\022"
+          + "$.google.logging.v2.CreateSinkRequest\032\032."
+          + "google.logging.v2.LogSink\"\314\001\202\323\344\223\002\305\001\"\026/v2"
+          + "/{parent=*/*}/sinks:\004sinkZ%\"\035/v2/{parent"
+          + "=projects/*}/sinks:\004sinkZ*\"\"/v2/{parent="
+          + "organizations/*}/sinks:\004sinkZ$\"\034/v2/{par"
+          + "ent=folders/*}/sinks:\004sinkZ,\"$/v2/{paren"
+          + "t=billingAccounts/*}/sinks:\004sink\022\361\003\n\nUpd"
+          + "ateSink\022$.google.logging.v2.UpdateSinkRe"
+          + "quest\032\032.google.logging.v2.LogSink\"\240\003\202\323\344\223"
+          + "\002\231\003\032\033/v2/{sink_name=*/*/sinks/*}:\004sinkZ*"
+          + "\032\"/v2/{sink_name=projects/*/sinks/*}:\004si"
+          + "nkZ/\032\'/v2/{sink_name=organizations/*/sin"
+          + "ks/*}:\004sinkZ)\032!/v2/{sink_name=folders/*/"
+          + "sinks/*}:\004sinkZ1\032)/v2/{sink_name=billing"
+          + "Accounts/*/sinks/*}:\004sinkZ*2\"/v2/{sink_n"
+          + "ame=projects/*/sinks/*}:\004sinkZ/2\'/v2/{si"
+          + "nk_name=organizations/*/sinks/*}:\004sinkZ)"
+          + "2!/v2/{sink_name=folders/*/sinks/*}:\004sin"
+          + "kZ12)/v2/{sink_name=billingAccounts/*/si"
+          + "nks/*}:\004sink\022\224\002\n\nDeleteSink\022$.google.log"
+          + "ging.v2.DeleteSinkRequest\032\026.google.proto"
+          + "buf.Empty\"\307\001\202\323\344\223\002\300\001*\033/v2/{sink_name=*/*/"
+          + "sinks/*}Z$*\"/v2/{sink_name=projects/*/si"
+          + "nks/*}Z)*\'/v2/{sink_name=organizations/*"
+          + "/sinks/*}Z#*!/v2/{sink_name=folders/*/si"
+          + "nks/*}Z+*)/v2/{sink_name=billingAccounts"
+          + "/*/sinks/*}\022\257\002\n\016ListExclusions\022(.google."
+          + "logging.v2.ListExclusionsRequest\032).googl"
+          + "e.logging.v2.ListExclusionsResponse\"\307\001\202\323"
+          + "\344\223\002\300\001\022\033/v2/{parent=*/*}/exclusionsZ$\022\"/v"
+          + "2/{parent=projects/*}/exclusionsZ)\022\'/v2/"
+          + "{parent=organizations/*}/exclusionsZ#\022!/"
+          + "v2/{parent=folders/*}/exclusionsZ+\022)/v2/"
+          + "{parent=billingAccounts/*}/exclusions\022\241\002"
+          + "\n\014GetExclusion\022&.google.logging.v2.GetEx"
+          + "clusionRequest\032\037.google.logging.v2.LogEx"
+          + "clusion\"\307\001\202\323\344\223\002\300\001\022\033/v2/{name=*/*/exclusi"
+          + "ons/*}Z$\022\"/v2/{name=projects/*/exclusion"
+          + "s/*}Z)\022\'/v2/{name=organizations/*/exclus"
+          + "ions/*}Z#\022!/v2/{name=folders/*/exclusion"
+          + "s/*}Z+\022)/v2/{name=billingAccounts/*/excl"
+          + "usions/*}\022\336\002\n\017CreateExclusion\022).google.l"
+          + "ogging.v2.CreateExclusionRequest\032\037.googl"
+          + "e.logging.v2.LogExclusion\"\376\001\202\323\344\223\002\367\001\"\033/v2"
+          + "/{parent=*/*}/exclusions:\texclusionZ/\"\"/"
+          + "v2/{parent=projects/*}/exclusions:\texclu"
+          + "sionZ4\"\'/v2/{parent=organizations/*}/exc"
+          + "lusions:\texclusionZ.\"!/v2/{parent=folder"
+          + "s/*}/exclusions:\texclusionZ6\")/v2/{paren"
+          + "t=billingAccounts/*}/exclusions:\texclusi"
+          + "on\022\336\002\n\017UpdateExclusion\022).google.logging."
+          + "v2.UpdateExclusionRequest\032\037.google.loggi"
+          + "ng.v2.LogExclusion\"\376\001\202\323\344\223\002\367\0012\033/v2/{name="
+          + "*/*/exclusions/*}:\texclusionZ/2\"/v2/{nam"
+          + "e=projects/*/exclusions/*}:\texclusionZ42"
+          + "\'/v2/{name=organizations/*/exclusions/*}"
+          + ":\texclusionZ.2!/v2/{name=folders/*/exclu"
+          + "sions/*}:\texclusionZ62)/v2/{name=billing"
+          + "Accounts/*/exclusions/*}:\texclusion\022\236\002\n\017"
+          + "DeleteExclusion\022).google.logging.v2.Dele"
+          + "teExclusionRequest\032\026.google.protobuf.Emp"
+          + "ty\"\307\001\202\323\344\223\002\300\001*\033/v2/{name=*/*/exclusions/*"
+          + "}Z$*\"/v2/{name=projects/*/exclusions/*}Z"
+          + ")*\'/v2/{name=organizations/*/exclusions/"
+          + "*}Z#*!/v2/{name=folders/*/exclusions/*}Z"
+          + "+*)/v2/{name=billingAccounts/*/exclusion"
+          + "s/*}\032\337\001\312A\026logging.googleapis.com\322A\302\001http"
+          + "s://www.googleapis.com/auth/cloud-platfo"
+          + "rm,https://www.googleapis.com/auth/cloud"
+          + "-platform.read-only,https://www.googleap"
+          + "is.com/auth/logging.admin,https://www.go"
+          + "ogleapis.com/auth/logging.readB\236\001\n\025com.g"
+          + "oogle.logging.v2B\022LoggingConfigProtoP\001Z8"
+          + "google.golang.org/genproto/googleapis/lo"
+          + "gging/v2;logging\370\001\001\252\002\027Google.Cloud.Loggi"
+          + "ng.V2\312\002\027Google\\Cloud\\Logging\\V2b\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner() {
@@ -215,10 +234,12 @@ public final class LoggingConfigProto {
     com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
         descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
-          com.google.api.AnnotationsProto.getDescriptor(),
+          com.google.protobuf.DurationProto.getDescriptor(),
           com.google.protobuf.EmptyProto.getDescriptor(),
           com.google.protobuf.FieldMaskProto.getDescriptor(),
           com.google.protobuf.TimestampProto.getDescriptor(),
+          com.google.api.AnnotationsProto.getDescriptor(),
+          com.google.api.ClientProto.getDescriptor(),
         },
         assigner);
     internal_static_google_logging_v2_LogSink_descriptor = getDescriptor().getMessageTypes().get(0);
@@ -232,11 +253,23 @@ public final class LoggingConfigProto {
               "OutputVersionFormat",
               "WriterIdentity",
               "IncludeChildren",
+              "BigqueryOptions",
+              "CreateTime",
+              "UpdateTime",
               "StartTime",
               "EndTime",
+              "Options",
+            });
+    internal_static_google_logging_v2_BigQueryOptions_descriptor =
+        getDescriptor().getMessageTypes().get(1);
+    internal_static_google_logging_v2_BigQueryOptions_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_logging_v2_BigQueryOptions_descriptor,
+            new java.lang.String[] {
+              "UsePartitionedTables",
             });
     internal_static_google_logging_v2_ListSinksRequest_descriptor =
-        getDescriptor().getMessageTypes().get(1);
+        getDescriptor().getMessageTypes().get(2);
     internal_static_google_logging_v2_ListSinksRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_logging_v2_ListSinksRequest_descriptor,
@@ -244,7 +277,7 @@ public final class LoggingConfigProto {
               "Parent", "PageToken", "PageSize",
             });
     internal_static_google_logging_v2_ListSinksResponse_descriptor =
-        getDescriptor().getMessageTypes().get(2);
+        getDescriptor().getMessageTypes().get(3);
     internal_static_google_logging_v2_ListSinksResponse_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_logging_v2_ListSinksResponse_descriptor,
@@ -252,7 +285,7 @@ public final class LoggingConfigProto {
               "Sinks", "NextPageToken",
             });
     internal_static_google_logging_v2_GetSinkRequest_descriptor =
-        getDescriptor().getMessageTypes().get(3);
+        getDescriptor().getMessageTypes().get(4);
     internal_static_google_logging_v2_GetSinkRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_logging_v2_GetSinkRequest_descriptor,
@@ -260,7 +293,7 @@ public final class LoggingConfigProto {
               "SinkName",
             });
     internal_static_google_logging_v2_CreateSinkRequest_descriptor =
-        getDescriptor().getMessageTypes().get(4);
+        getDescriptor().getMessageTypes().get(5);
     internal_static_google_logging_v2_CreateSinkRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_logging_v2_CreateSinkRequest_descriptor,
@@ -268,7 +301,7 @@ public final class LoggingConfigProto {
               "Parent", "Sink", "UniqueWriterIdentity",
             });
     internal_static_google_logging_v2_UpdateSinkRequest_descriptor =
-        getDescriptor().getMessageTypes().get(5);
+        getDescriptor().getMessageTypes().get(6);
     internal_static_google_logging_v2_UpdateSinkRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_logging_v2_UpdateSinkRequest_descriptor,
@@ -276,7 +309,7 @@ public final class LoggingConfigProto {
               "SinkName", "Sink", "UniqueWriterIdentity", "UpdateMask",
             });
     internal_static_google_logging_v2_DeleteSinkRequest_descriptor =
-        getDescriptor().getMessageTypes().get(6);
+        getDescriptor().getMessageTypes().get(7);
     internal_static_google_logging_v2_DeleteSinkRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_logging_v2_DeleteSinkRequest_descriptor,
@@ -284,15 +317,15 @@ public final class LoggingConfigProto {
               "SinkName",
             });
     internal_static_google_logging_v2_LogExclusion_descriptor =
-        getDescriptor().getMessageTypes().get(7);
+        getDescriptor().getMessageTypes().get(8);
     internal_static_google_logging_v2_LogExclusion_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_logging_v2_LogExclusion_descriptor,
             new java.lang.String[] {
-              "Name", "Description", "Filter", "Disabled",
+              "Name", "Description", "Filter", "Disabled", "CreateTime", "UpdateTime",
             });
     internal_static_google_logging_v2_ListExclusionsRequest_descriptor =
-        getDescriptor().getMessageTypes().get(8);
+        getDescriptor().getMessageTypes().get(9);
     internal_static_google_logging_v2_ListExclusionsRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_logging_v2_ListExclusionsRequest_descriptor,
@@ -300,7 +333,7 @@ public final class LoggingConfigProto {
               "Parent", "PageToken", "PageSize",
             });
     internal_static_google_logging_v2_ListExclusionsResponse_descriptor =
-        getDescriptor().getMessageTypes().get(9);
+        getDescriptor().getMessageTypes().get(10);
     internal_static_google_logging_v2_ListExclusionsResponse_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_logging_v2_ListExclusionsResponse_descriptor,
@@ -308,7 +341,7 @@ public final class LoggingConfigProto {
               "Exclusions", "NextPageToken",
             });
     internal_static_google_logging_v2_GetExclusionRequest_descriptor =
-        getDescriptor().getMessageTypes().get(10);
+        getDescriptor().getMessageTypes().get(11);
     internal_static_google_logging_v2_GetExclusionRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_logging_v2_GetExclusionRequest_descriptor,
@@ -316,7 +349,7 @@ public final class LoggingConfigProto {
               "Name",
             });
     internal_static_google_logging_v2_CreateExclusionRequest_descriptor =
-        getDescriptor().getMessageTypes().get(11);
+        getDescriptor().getMessageTypes().get(12);
     internal_static_google_logging_v2_CreateExclusionRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_logging_v2_CreateExclusionRequest_descriptor,
@@ -324,7 +357,7 @@ public final class LoggingConfigProto {
               "Parent", "Exclusion",
             });
     internal_static_google_logging_v2_UpdateExclusionRequest_descriptor =
-        getDescriptor().getMessageTypes().get(12);
+        getDescriptor().getMessageTypes().get(13);
     internal_static_google_logging_v2_UpdateExclusionRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_logging_v2_UpdateExclusionRequest_descriptor,
@@ -332,7 +365,7 @@ public final class LoggingConfigProto {
               "Name", "Exclusion", "UpdateMask",
             });
     internal_static_google_logging_v2_DeleteExclusionRequest_descriptor =
-        getDescriptor().getMessageTypes().get(13);
+        getDescriptor().getMessageTypes().get(14);
     internal_static_google_logging_v2_DeleteExclusionRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_logging_v2_DeleteExclusionRequest_descriptor,
@@ -341,13 +374,17 @@ public final class LoggingConfigProto {
             });
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();
+    registry.add(com.google.api.ClientProto.defaultHost);
     registry.add(com.google.api.AnnotationsProto.http);
+    registry.add(com.google.api.ClientProto.oauthScopes);
     com.google.protobuf.Descriptors.FileDescriptor.internalUpdateFileDescriptor(
         descriptor, registry);
-    com.google.api.AnnotationsProto.getDescriptor();
+    com.google.protobuf.DurationProto.getDescriptor();
     com.google.protobuf.EmptyProto.getDescriptor();
     com.google.protobuf.FieldMaskProto.getDescriptor();
     com.google.protobuf.TimestampProto.getDescriptor();
+    com.google.api.AnnotationsProto.getDescriptor();
+    com.google.api.ClientProto.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

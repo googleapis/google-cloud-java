@@ -215,7 +215,7 @@ public final class Commitment implements ApiMessage {
     return region;
   }
 
-  /** List of reservations for this commitment. */
+  /** List of reservations in this commitment. */
   public List<Reservation> getReservationsList() {
     return reservations;
   }
@@ -471,12 +471,12 @@ public final class Commitment implements ApiMessage {
       return this;
     }
 
-    /** List of reservations for this commitment. */
+    /** List of reservations in this commitment. */
     public List<Reservation> getReservationsList() {
       return reservations;
     }
 
-    /** List of reservations for this commitment. */
+    /** List of reservations in this commitment. */
     public Builder addAllReservations(List<Reservation> reservations) {
       if (this.reservations == null) {
         this.reservations = new LinkedList<>();
@@ -485,7 +485,7 @@ public final class Commitment implements ApiMessage {
       return this;
     }
 
-    /** List of reservations for this commitment. */
+    /** List of reservations in this commitment. */
     public Builder addReservations(Reservation reservations) {
       if (this.reservations == null) {
         this.reservations = new LinkedList<>();

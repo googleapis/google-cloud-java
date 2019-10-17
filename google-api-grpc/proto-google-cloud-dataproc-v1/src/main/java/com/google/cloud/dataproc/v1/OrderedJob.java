@@ -311,7 +311,7 @@ public final class OrderedJob extends com.google.protobuf.GeneratedMessageV3
    * or hyphen. Must consist of between 3 and 50 characters.
    * </pre>
    *
-   * <code>string step_id = 1;</code>
+   * <code>string step_id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   public java.lang.String getStepId() {
     java.lang.Object ref = stepId_;
@@ -339,7 +339,7 @@ public final class OrderedJob extends com.google.protobuf.GeneratedMessageV3
    * or hyphen. Must consist of between 3 and 50 characters.
    * </pre>
    *
-   * <code>string step_id = 1;</code>
+   * <code>string step_id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   public com.google.protobuf.ByteString getStepIdBytes() {
     java.lang.Object ref = stepId_;
@@ -655,7 +655,7 @@ public final class OrderedJob extends com.google.protobuf.GeneratedMessageV3
    * No more than 32 labels can be associated with a given job.
    * </pre>
    *
-   * <code>map&lt;string, string&gt; labels = 8;</code>
+   * <code>map&lt;string, string&gt; labels = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   public boolean containsLabels(java.lang.String key) {
     if (key == null) {
@@ -681,7 +681,7 @@ public final class OrderedJob extends com.google.protobuf.GeneratedMessageV3
    * No more than 32 labels can be associated with a given job.
    * </pre>
    *
-   * <code>map&lt;string, string&gt; labels = 8;</code>
+   * <code>map&lt;string, string&gt; labels = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   public java.util.Map<java.lang.String, java.lang.String> getLabelsMap() {
     return internalGetLabels().getMap();
@@ -699,7 +699,7 @@ public final class OrderedJob extends com.google.protobuf.GeneratedMessageV3
    * No more than 32 labels can be associated with a given job.
    * </pre>
    *
-   * <code>map&lt;string, string&gt; labels = 8;</code>
+   * <code>map&lt;string, string&gt; labels = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   public java.lang.String getLabelsOrDefault(java.lang.String key, java.lang.String defaultValue) {
     if (key == null) {
@@ -721,7 +721,7 @@ public final class OrderedJob extends com.google.protobuf.GeneratedMessageV3
    * No more than 32 labels can be associated with a given job.
    * </pre>
    *
-   * <code>map&lt;string, string&gt; labels = 8;</code>
+   * <code>map&lt;string, string&gt; labels = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   public java.lang.String getLabelsOrThrow(java.lang.String key) {
     if (key == null) {
@@ -743,7 +743,9 @@ public final class OrderedJob extends com.google.protobuf.GeneratedMessageV3
    * Optional. Job scheduling configuration.
    * </pre>
    *
-   * <code>.google.cloud.dataproc.v1.JobScheduling scheduling = 9;</code>
+   * <code>
+   * .google.cloud.dataproc.v1.JobScheduling scheduling = 9 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   public boolean hasScheduling() {
     return scheduling_ != null;
@@ -755,7 +757,9 @@ public final class OrderedJob extends com.google.protobuf.GeneratedMessageV3
    * Optional. Job scheduling configuration.
    * </pre>
    *
-   * <code>.google.cloud.dataproc.v1.JobScheduling scheduling = 9;</code>
+   * <code>
+   * .google.cloud.dataproc.v1.JobScheduling scheduling = 9 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   public com.google.cloud.dataproc.v1.JobScheduling getScheduling() {
     return scheduling_ == null
@@ -769,7 +773,9 @@ public final class OrderedJob extends com.google.protobuf.GeneratedMessageV3
    * Optional. Job scheduling configuration.
    * </pre>
    *
-   * <code>.google.cloud.dataproc.v1.JobScheduling scheduling = 9;</code>
+   * <code>
+   * .google.cloud.dataproc.v1.JobScheduling scheduling = 9 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   public com.google.cloud.dataproc.v1.JobSchedulingOrBuilder getSchedulingOrBuilder() {
     return getScheduling();
@@ -785,7 +791,8 @@ public final class OrderedJob extends com.google.protobuf.GeneratedMessageV3
    * If not specified, the job will start at the beginning of workflow.
    * </pre>
    *
-   * <code>repeated string prerequisite_step_ids = 10;</code>
+   * <code>repeated string prerequisite_step_ids = 10 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   public com.google.protobuf.ProtocolStringList getPrerequisiteStepIdsList() {
     return prerequisiteStepIds_;
@@ -798,7 +805,8 @@ public final class OrderedJob extends com.google.protobuf.GeneratedMessageV3
    * If not specified, the job will start at the beginning of workflow.
    * </pre>
    *
-   * <code>repeated string prerequisite_step_ids = 10;</code>
+   * <code>repeated string prerequisite_step_ids = 10 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   public int getPrerequisiteStepIdsCount() {
     return prerequisiteStepIds_.size();
@@ -811,7 +819,8 @@ public final class OrderedJob extends com.google.protobuf.GeneratedMessageV3
    * If not specified, the job will start at the beginning of workflow.
    * </pre>
    *
-   * <code>repeated string prerequisite_step_ids = 10;</code>
+   * <code>repeated string prerequisite_step_ids = 10 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   public java.lang.String getPrerequisiteStepIds(int index) {
     return prerequisiteStepIds_.get(index);
@@ -824,7 +833,8 @@ public final class OrderedJob extends com.google.protobuf.GeneratedMessageV3
    * If not specified, the job will start at the beginning of workflow.
    * </pre>
    *
-   * <code>repeated string prerequisite_step_ids = 10;</code>
+   * <code>repeated string prerequisite_step_ids = 10 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   public com.google.protobuf.ByteString getPrerequisiteStepIdsBytes(int index) {
     return prerequisiteStepIds_.getByteString(index);
@@ -1463,7 +1473,7 @@ public final class OrderedJob extends com.google.protobuf.GeneratedMessageV3
      * or hyphen. Must consist of between 3 and 50 characters.
      * </pre>
      *
-     * <code>string step_id = 1;</code>
+     * <code>string step_id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public java.lang.String getStepId() {
       java.lang.Object ref = stepId_;
@@ -1491,7 +1501,7 @@ public final class OrderedJob extends com.google.protobuf.GeneratedMessageV3
      * or hyphen. Must consist of between 3 and 50 characters.
      * </pre>
      *
-     * <code>string step_id = 1;</code>
+     * <code>string step_id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public com.google.protobuf.ByteString getStepIdBytes() {
       java.lang.Object ref = stepId_;
@@ -1519,7 +1529,7 @@ public final class OrderedJob extends com.google.protobuf.GeneratedMessageV3
      * or hyphen. Must consist of between 3 and 50 characters.
      * </pre>
      *
-     * <code>string step_id = 1;</code>
+     * <code>string step_id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder setStepId(java.lang.String value) {
       if (value == null) {
@@ -1545,7 +1555,7 @@ public final class OrderedJob extends com.google.protobuf.GeneratedMessageV3
      * or hyphen. Must consist of between 3 and 50 characters.
      * </pre>
      *
-     * <code>string step_id = 1;</code>
+     * <code>string step_id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder clearStepId() {
 
@@ -1568,7 +1578,7 @@ public final class OrderedJob extends com.google.protobuf.GeneratedMessageV3
      * or hyphen. Must consist of between 3 and 50 characters.
      * </pre>
      *
-     * <code>string step_id = 1;</code>
+     * <code>string step_id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder setStepIdBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -2822,7 +2832,7 @@ public final class OrderedJob extends com.google.protobuf.GeneratedMessageV3
      * No more than 32 labels can be associated with a given job.
      * </pre>
      *
-     * <code>map&lt;string, string&gt; labels = 8;</code>
+     * <code>map&lt;string, string&gt; labels = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public boolean containsLabels(java.lang.String key) {
       if (key == null) {
@@ -2848,7 +2858,7 @@ public final class OrderedJob extends com.google.protobuf.GeneratedMessageV3
      * No more than 32 labels can be associated with a given job.
      * </pre>
      *
-     * <code>map&lt;string, string&gt; labels = 8;</code>
+     * <code>map&lt;string, string&gt; labels = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public java.util.Map<java.lang.String, java.lang.String> getLabelsMap() {
       return internalGetLabels().getMap();
@@ -2866,7 +2876,7 @@ public final class OrderedJob extends com.google.protobuf.GeneratedMessageV3
      * No more than 32 labels can be associated with a given job.
      * </pre>
      *
-     * <code>map&lt;string, string&gt; labels = 8;</code>
+     * <code>map&lt;string, string&gt; labels = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public java.lang.String getLabelsOrDefault(
         java.lang.String key, java.lang.String defaultValue) {
@@ -2889,7 +2899,7 @@ public final class OrderedJob extends com.google.protobuf.GeneratedMessageV3
      * No more than 32 labels can be associated with a given job.
      * </pre>
      *
-     * <code>map&lt;string, string&gt; labels = 8;</code>
+     * <code>map&lt;string, string&gt; labels = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public java.lang.String getLabelsOrThrow(java.lang.String key) {
       if (key == null) {
@@ -2919,7 +2929,7 @@ public final class OrderedJob extends com.google.protobuf.GeneratedMessageV3
      * No more than 32 labels can be associated with a given job.
      * </pre>
      *
-     * <code>map&lt;string, string&gt; labels = 8;</code>
+     * <code>map&lt;string, string&gt; labels = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public Builder removeLabels(java.lang.String key) {
       if (key == null) {
@@ -2946,7 +2956,7 @@ public final class OrderedJob extends com.google.protobuf.GeneratedMessageV3
      * No more than 32 labels can be associated with a given job.
      * </pre>
      *
-     * <code>map&lt;string, string&gt; labels = 8;</code>
+     * <code>map&lt;string, string&gt; labels = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public Builder putLabels(java.lang.String key, java.lang.String value) {
       if (key == null) {
@@ -2971,7 +2981,7 @@ public final class OrderedJob extends com.google.protobuf.GeneratedMessageV3
      * No more than 32 labels can be associated with a given job.
      * </pre>
      *
-     * <code>map&lt;string, string&gt; labels = 8;</code>
+     * <code>map&lt;string, string&gt; labels = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public Builder putAllLabels(java.util.Map<java.lang.String, java.lang.String> values) {
       internalGetMutableLabels().getMutableMap().putAll(values);
@@ -2991,7 +3001,9 @@ public final class OrderedJob extends com.google.protobuf.GeneratedMessageV3
      * Optional. Job scheduling configuration.
      * </pre>
      *
-     * <code>.google.cloud.dataproc.v1.JobScheduling scheduling = 9;</code>
+     * <code>
+     * .google.cloud.dataproc.v1.JobScheduling scheduling = 9 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public boolean hasScheduling() {
       return schedulingBuilder_ != null || scheduling_ != null;
@@ -3003,7 +3015,9 @@ public final class OrderedJob extends com.google.protobuf.GeneratedMessageV3
      * Optional. Job scheduling configuration.
      * </pre>
      *
-     * <code>.google.cloud.dataproc.v1.JobScheduling scheduling = 9;</code>
+     * <code>
+     * .google.cloud.dataproc.v1.JobScheduling scheduling = 9 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public com.google.cloud.dataproc.v1.JobScheduling getScheduling() {
       if (schedulingBuilder_ == null) {
@@ -3021,7 +3035,9 @@ public final class OrderedJob extends com.google.protobuf.GeneratedMessageV3
      * Optional. Job scheduling configuration.
      * </pre>
      *
-     * <code>.google.cloud.dataproc.v1.JobScheduling scheduling = 9;</code>
+     * <code>
+     * .google.cloud.dataproc.v1.JobScheduling scheduling = 9 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder setScheduling(com.google.cloud.dataproc.v1.JobScheduling value) {
       if (schedulingBuilder_ == null) {
@@ -3043,7 +3059,9 @@ public final class OrderedJob extends com.google.protobuf.GeneratedMessageV3
      * Optional. Job scheduling configuration.
      * </pre>
      *
-     * <code>.google.cloud.dataproc.v1.JobScheduling scheduling = 9;</code>
+     * <code>
+     * .google.cloud.dataproc.v1.JobScheduling scheduling = 9 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder setScheduling(
         com.google.cloud.dataproc.v1.JobScheduling.Builder builderForValue) {
@@ -3063,7 +3081,9 @@ public final class OrderedJob extends com.google.protobuf.GeneratedMessageV3
      * Optional. Job scheduling configuration.
      * </pre>
      *
-     * <code>.google.cloud.dataproc.v1.JobScheduling scheduling = 9;</code>
+     * <code>
+     * .google.cloud.dataproc.v1.JobScheduling scheduling = 9 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder mergeScheduling(com.google.cloud.dataproc.v1.JobScheduling value) {
       if (schedulingBuilder_ == null) {
@@ -3089,7 +3109,9 @@ public final class OrderedJob extends com.google.protobuf.GeneratedMessageV3
      * Optional. Job scheduling configuration.
      * </pre>
      *
-     * <code>.google.cloud.dataproc.v1.JobScheduling scheduling = 9;</code>
+     * <code>
+     * .google.cloud.dataproc.v1.JobScheduling scheduling = 9 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder clearScheduling() {
       if (schedulingBuilder_ == null) {
@@ -3109,7 +3131,9 @@ public final class OrderedJob extends com.google.protobuf.GeneratedMessageV3
      * Optional. Job scheduling configuration.
      * </pre>
      *
-     * <code>.google.cloud.dataproc.v1.JobScheduling scheduling = 9;</code>
+     * <code>
+     * .google.cloud.dataproc.v1.JobScheduling scheduling = 9 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public com.google.cloud.dataproc.v1.JobScheduling.Builder getSchedulingBuilder() {
 
@@ -3123,7 +3147,9 @@ public final class OrderedJob extends com.google.protobuf.GeneratedMessageV3
      * Optional. Job scheduling configuration.
      * </pre>
      *
-     * <code>.google.cloud.dataproc.v1.JobScheduling scheduling = 9;</code>
+     * <code>
+     * .google.cloud.dataproc.v1.JobScheduling scheduling = 9 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public com.google.cloud.dataproc.v1.JobSchedulingOrBuilder getSchedulingOrBuilder() {
       if (schedulingBuilder_ != null) {
@@ -3141,7 +3167,9 @@ public final class OrderedJob extends com.google.protobuf.GeneratedMessageV3
      * Optional. Job scheduling configuration.
      * </pre>
      *
-     * <code>.google.cloud.dataproc.v1.JobScheduling scheduling = 9;</code>
+     * <code>
+     * .google.cloud.dataproc.v1.JobScheduling scheduling = 9 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.dataproc.v1.JobScheduling,
@@ -3177,7 +3205,8 @@ public final class OrderedJob extends com.google.protobuf.GeneratedMessageV3
      * If not specified, the job will start at the beginning of workflow.
      * </pre>
      *
-     * <code>repeated string prerequisite_step_ids = 10;</code>
+     * <code>repeated string prerequisite_step_ids = 10 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public com.google.protobuf.ProtocolStringList getPrerequisiteStepIdsList() {
       return prerequisiteStepIds_.getUnmodifiableView();
@@ -3190,7 +3219,8 @@ public final class OrderedJob extends com.google.protobuf.GeneratedMessageV3
      * If not specified, the job will start at the beginning of workflow.
      * </pre>
      *
-     * <code>repeated string prerequisite_step_ids = 10;</code>
+     * <code>repeated string prerequisite_step_ids = 10 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public int getPrerequisiteStepIdsCount() {
       return prerequisiteStepIds_.size();
@@ -3203,7 +3233,8 @@ public final class OrderedJob extends com.google.protobuf.GeneratedMessageV3
      * If not specified, the job will start at the beginning of workflow.
      * </pre>
      *
-     * <code>repeated string prerequisite_step_ids = 10;</code>
+     * <code>repeated string prerequisite_step_ids = 10 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public java.lang.String getPrerequisiteStepIds(int index) {
       return prerequisiteStepIds_.get(index);
@@ -3216,7 +3247,8 @@ public final class OrderedJob extends com.google.protobuf.GeneratedMessageV3
      * If not specified, the job will start at the beginning of workflow.
      * </pre>
      *
-     * <code>repeated string prerequisite_step_ids = 10;</code>
+     * <code>repeated string prerequisite_step_ids = 10 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public com.google.protobuf.ByteString getPrerequisiteStepIdsBytes(int index) {
       return prerequisiteStepIds_.getByteString(index);
@@ -3229,7 +3261,8 @@ public final class OrderedJob extends com.google.protobuf.GeneratedMessageV3
      * If not specified, the job will start at the beginning of workflow.
      * </pre>
      *
-     * <code>repeated string prerequisite_step_ids = 10;</code>
+     * <code>repeated string prerequisite_step_ids = 10 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder setPrerequisiteStepIds(int index, java.lang.String value) {
       if (value == null) {
@@ -3248,7 +3281,8 @@ public final class OrderedJob extends com.google.protobuf.GeneratedMessageV3
      * If not specified, the job will start at the beginning of workflow.
      * </pre>
      *
-     * <code>repeated string prerequisite_step_ids = 10;</code>
+     * <code>repeated string prerequisite_step_ids = 10 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder addPrerequisiteStepIds(java.lang.String value) {
       if (value == null) {
@@ -3267,7 +3301,8 @@ public final class OrderedJob extends com.google.protobuf.GeneratedMessageV3
      * If not specified, the job will start at the beginning of workflow.
      * </pre>
      *
-     * <code>repeated string prerequisite_step_ids = 10;</code>
+     * <code>repeated string prerequisite_step_ids = 10 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder addAllPrerequisiteStepIds(java.lang.Iterable<java.lang.String> values) {
       ensurePrerequisiteStepIdsIsMutable();
@@ -3283,7 +3318,8 @@ public final class OrderedJob extends com.google.protobuf.GeneratedMessageV3
      * If not specified, the job will start at the beginning of workflow.
      * </pre>
      *
-     * <code>repeated string prerequisite_step_ids = 10;</code>
+     * <code>repeated string prerequisite_step_ids = 10 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder clearPrerequisiteStepIds() {
       prerequisiteStepIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
@@ -3299,7 +3335,8 @@ public final class OrderedJob extends com.google.protobuf.GeneratedMessageV3
      * If not specified, the job will start at the beginning of workflow.
      * </pre>
      *
-     * <code>repeated string prerequisite_step_ids = 10;</code>
+     * <code>repeated string prerequisite_step_ids = 10 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder addPrerequisiteStepIdsBytes(com.google.protobuf.ByteString value) {
       if (value == null) {

@@ -12,22 +12,26 @@ public interface ListProductSetsRequestOrBuilder
    *
    *
    * <pre>
-   * The project from which ProductSets should be listed.
+   * Required. The project from which ProductSets should be listed.
    * Format is `projects/PROJECT_ID/locations/LOC_ID`.
    * </pre>
    *
-   * <code>string parent = 1;</code>
+   * <code>
+   * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    */
   java.lang.String getParent();
   /**
    *
    *
    * <pre>
-   * The project from which ProductSets should be listed.
+   * Required. The project from which ProductSets should be listed.
    * Format is `projects/PROJECT_ID/locations/LOC_ID`.
    * </pre>
    *
-   * <code>string parent = 1;</code>
+   * <code>
+   * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    */
   com.google.protobuf.ByteString getParentBytes();
 

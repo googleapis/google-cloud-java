@@ -12,24 +12,38 @@ public interface DeleteWorkflowTemplateRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The "resource name" of the workflow template, as described
-   * in https://cloud.google.com/apis/design/resource_names of the form
-   * `projects/{project_id}/regions/{region}/workflowTemplates/{template_id}`
+   * Required. The resource name of the workflow template, as described
+   * in https://cloud.google.com/apis/design/resource_names.
+   * * For `projects.regions.workflowTemplates.delete`, the resource name
+   * of the template has the following format:
+   *   `projects/{project_id}/regions/{region}/workflowTemplates/{template_id}`
+   * * For `projects.locations.workflowTemplates.instantiate`, the resource name
+   *   of the template has the following format:
+   *   `projects/{project_id}/locations/{location}/workflowTemplates/{template_id}`
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>
+   * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    */
   java.lang.String getName();
   /**
    *
    *
    * <pre>
-   * Required. The "resource name" of the workflow template, as described
-   * in https://cloud.google.com/apis/design/resource_names of the form
-   * `projects/{project_id}/regions/{region}/workflowTemplates/{template_id}`
+   * Required. The resource name of the workflow template, as described
+   * in https://cloud.google.com/apis/design/resource_names.
+   * * For `projects.regions.workflowTemplates.delete`, the resource name
+   * of the template has the following format:
+   *   `projects/{project_id}/regions/{region}/workflowTemplates/{template_id}`
+   * * For `projects.locations.workflowTemplates.instantiate`, the resource name
+   *   of the template has the following format:
+   *   `projects/{project_id}/locations/{location}/workflowTemplates/{template_id}`
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>
+   * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    */
   com.google.protobuf.ByteString getNameBytes();
 
@@ -42,7 +56,7 @@ public interface DeleteWorkflowTemplateRequestOrBuilder
    * specified version.
    * </pre>
    *
-   * <code>int32 version = 2;</code>
+   * <code>int32 version = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   int getVersion();
 }

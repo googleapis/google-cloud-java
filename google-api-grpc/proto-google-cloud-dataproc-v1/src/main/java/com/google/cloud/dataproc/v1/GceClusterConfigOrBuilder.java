@@ -23,7 +23,7 @@ public interface GceClusterConfigOrBuilder
    * * `us-central1-f`
    * </pre>
    *
-   * <code>string zone_uri = 1;</code>
+   * <code>string zone_uri = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   java.lang.String getZoneUri();
   /**
@@ -41,7 +41,7 @@ public interface GceClusterConfigOrBuilder
    * * `us-central1-f`
    * </pre>
    *
-   * <code>string zone_uri = 1;</code>
+   * <code>string zone_uri = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   com.google.protobuf.ByteString getZoneUriBytes();
 
@@ -60,7 +60,7 @@ public interface GceClusterConfigOrBuilder
    * * `default`
    * </pre>
    *
-   * <code>string network_uri = 2;</code>
+   * <code>string network_uri = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   java.lang.String getNetworkUri();
   /**
@@ -78,7 +78,7 @@ public interface GceClusterConfigOrBuilder
    * * `default`
    * </pre>
    *
-   * <code>string network_uri = 2;</code>
+   * <code>string network_uri = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   com.google.protobuf.ByteString getNetworkUriBytes();
 
@@ -94,7 +94,7 @@ public interface GceClusterConfigOrBuilder
    * * `sub0`
    * </pre>
    *
-   * <code>string subnetwork_uri = 6;</code>
+   * <code>string subnetwork_uri = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   java.lang.String getSubnetworkUri();
   /**
@@ -109,7 +109,7 @@ public interface GceClusterConfigOrBuilder
    * * `sub0`
    * </pre>
    *
-   * <code>string subnetwork_uri = 6;</code>
+   * <code>string subnetwork_uri = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   com.google.protobuf.ByteString getSubnetworkUriBytes();
 
@@ -125,7 +125,7 @@ public interface GceClusterConfigOrBuilder
    * configured to be accessible without external IP addresses.
    * </pre>
    *
-   * <code>bool internal_ip_only = 7;</code>
+   * <code>bool internal_ip_only = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   boolean getInternalIpOnly();
 
@@ -144,7 +144,7 @@ public interface GceClusterConfigOrBuilder
    * Example: `[account_id]&#64;[project_id].iam.gserviceaccount.com`
    * </pre>
    *
-   * <code>string service_account = 8;</code>
+   * <code>string service_account = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   java.lang.String getServiceAccount();
   /**
@@ -162,7 +162,7 @@ public interface GceClusterConfigOrBuilder
    * Example: `[account_id]&#64;[project_id].iam.gserviceaccount.com`
    * </pre>
    *
-   * <code>string service_account = 8;</code>
+   * <code>string service_account = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   com.google.protobuf.ByteString getServiceAccountBytes();
 
@@ -183,7 +183,8 @@ public interface GceClusterConfigOrBuilder
    * * https://www.googleapis.com/auth/devstorage.full_control
    * </pre>
    *
-   * <code>repeated string service_account_scopes = 3;</code>
+   * <code>repeated string service_account_scopes = 3 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   java.util.List<java.lang.String> getServiceAccountScopesList();
   /**
@@ -203,7 +204,8 @@ public interface GceClusterConfigOrBuilder
    * * https://www.googleapis.com/auth/devstorage.full_control
    * </pre>
    *
-   * <code>repeated string service_account_scopes = 3;</code>
+   * <code>repeated string service_account_scopes = 3 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   int getServiceAccountScopesCount();
   /**
@@ -223,7 +225,8 @@ public interface GceClusterConfigOrBuilder
    * * https://www.googleapis.com/auth/devstorage.full_control
    * </pre>
    *
-   * <code>repeated string service_account_scopes = 3;</code>
+   * <code>repeated string service_account_scopes = 3 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   java.lang.String getServiceAccountScopes(int index);
   /**
@@ -243,7 +246,8 @@ public interface GceClusterConfigOrBuilder
    * * https://www.googleapis.com/auth/devstorage.full_control
    * </pre>
    *
-   * <code>repeated string service_account_scopes = 3;</code>
+   * <code>repeated string service_account_scopes = 3 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   com.google.protobuf.ByteString getServiceAccountScopesBytes(int index);
 

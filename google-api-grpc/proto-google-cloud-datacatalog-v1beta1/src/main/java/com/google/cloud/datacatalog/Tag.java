@@ -186,10 +186,10 @@ public final class Tag extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Required when used in
    * [UpdateTagRequest][google.cloud.datacatalog.v1beta1.UpdateTagRequest]. The
-   * resource name of the tag in URL format. For example,
-   * projects/{project_id}/locations/{location}/entrygroups/{entry_group_id}/entries/{entry_id}/tags/{tag_id}",
-   * where tag_id is a system-generated identifier. Note that this Tag may not
-   * actually be stored in the location in this name.
+   * resource name of the tag in URL format. Example:
+   * * projects/{project_id}/locations/{location}/entrygroups/{entry_group_id}/entries/{entry_id}/tags/{tag_id}
+   * where `tag_id` is a system-generated identifier.
+   * Note that this Tag may not actually be stored in the location in this name.
    * </pre>
    *
    * <code>string name = 1;</code>
@@ -211,10 +211,10 @@ public final class Tag extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Required when used in
    * [UpdateTagRequest][google.cloud.datacatalog.v1beta1.UpdateTagRequest]. The
-   * resource name of the tag in URL format. For example,
-   * projects/{project_id}/locations/{location}/entrygroups/{entry_group_id}/entries/{entry_id}/tags/{tag_id}",
-   * where tag_id is a system-generated identifier. Note that this Tag may not
-   * actually be stored in the location in this name.
+   * resource name of the tag in URL format. Example:
+   * * projects/{project_id}/locations/{location}/entrygroups/{entry_group_id}/entries/{entry_id}/tags/{tag_id}
+   * where `tag_id` is a system-generated identifier.
+   * Note that this Tag may not actually be stored in the location in this name.
    * </pre>
    *
    * <code>string name = 1;</code>
@@ -237,13 +237,13 @@ public final class Tag extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Required. The resource name of the tag template that this tag uses. For
-   * example,
-   * projects/{project_id}/locations/{location}/tagTemplates/{tag_template_id}.
+   * Required. The resource name of the tag template that this tag uses.
+   * Example:
+   * * projects/{project_id}/locations/{location}/tagTemplates/{tag_template_id}
    * This field cannot be modified after creation.
    * </pre>
    *
-   * <code>string template = 2;</code>
+   * <code>string template = 2 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   public java.lang.String getTemplate() {
     java.lang.Object ref = template_;
@@ -260,13 +260,13 @@ public final class Tag extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Required. The resource name of the tag template that this tag uses. For
-   * example,
-   * projects/{project_id}/locations/{location}/tagTemplates/{tag_template_id}.
+   * Required. The resource name of the tag template that this tag uses.
+   * Example:
+   * * projects/{project_id}/locations/{location}/tagTemplates/{tag_template_id}
    * This field cannot be modified after creation.
    * </pre>
    *
-   * <code>string template = 2;</code>
+   * <code>string template = 2 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   public com.google.protobuf.ByteString getTemplateBytes() {
     java.lang.Object ref = template_;
@@ -289,7 +289,7 @@ public final class Tag extends com.google.protobuf.GeneratedMessageV3
    * Output only. The display name of the tag template.
    * </pre>
    *
-   * <code>string template_display_name = 5;</code>
+   * <code>string template_display_name = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    */
   public java.lang.String getTemplateDisplayName() {
     java.lang.Object ref = templateDisplayName_;
@@ -309,7 +309,7 @@ public final class Tag extends com.google.protobuf.GeneratedMessageV3
    * Output only. The display name of the tag template.
    * </pre>
    *
-   * <code>string template_display_name = 5;</code>
+   * <code>string template_display_name = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    */
   public com.google.protobuf.ByteString getTemplateDisplayNameBytes() {
     java.lang.Object ref = templateDisplayName_;
@@ -330,8 +330,9 @@ public final class Tag extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Resources like Entry can have schemas associated with them. This scope
    * allows users to attach tags to an individual column based on that schema.
-   * For attaching a tag to a nested column, use '.' to separate the column
-   * names: "outer_column.inner_column".
+   * For attaching a tag to a nested column, use `.` to separate the column
+   * names. Example:
+   * * `outer_column.inner_column`
    * </pre>
    *
    * <code>string column = 4;</code>
@@ -358,8 +359,9 @@ public final class Tag extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Resources like Entry can have schemas associated with them. This scope
    * allows users to attach tags to an individual column based on that schema.
-   * For attaching a tag to a nested column, use '.' to separate the column
-   * names: "outer_column.inner_column".
+   * For attaching a tag to a nested column, use `.` to separate the column
+   * names. Example:
+   * * `outer_column.inner_column`
    * </pre>
    *
    * <code>string column = 4;</code>
@@ -415,12 +417,14 @@ public final class Tag extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Required. This maps the id of a tag field to the value of &amp; additional
+   * Required. This maps the ID of a tag field to the value of and additional
    * information about that field. Valid field IDs are defined by the tag's
    * template. A tag must have at least 1 field and at most 500 fields.
    * </pre>
    *
-   * <code>map&lt;string, .google.cloud.datacatalog.v1beta1.TagField&gt; fields = 3;</code>
+   * <code>
+   * map&lt;string, .google.cloud.datacatalog.v1beta1.TagField&gt; fields = 3 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   public boolean containsFields(java.lang.String key) {
     if (key == null) {
@@ -437,12 +441,14 @@ public final class Tag extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Required. This maps the id of a tag field to the value of &amp; additional
+   * Required. This maps the ID of a tag field to the value of and additional
    * information about that field. Valid field IDs are defined by the tag's
    * template. A tag must have at least 1 field and at most 500 fields.
    * </pre>
    *
-   * <code>map&lt;string, .google.cloud.datacatalog.v1beta1.TagField&gt; fields = 3;</code>
+   * <code>
+   * map&lt;string, .google.cloud.datacatalog.v1beta1.TagField&gt; fields = 3 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   public java.util.Map<java.lang.String, com.google.cloud.datacatalog.TagField> getFieldsMap() {
     return internalGetFields().getMap();
@@ -451,12 +457,14 @@ public final class Tag extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Required. This maps the id of a tag field to the value of &amp; additional
+   * Required. This maps the ID of a tag field to the value of and additional
    * information about that field. Valid field IDs are defined by the tag's
    * template. A tag must have at least 1 field and at most 500 fields.
    * </pre>
    *
-   * <code>map&lt;string, .google.cloud.datacatalog.v1beta1.TagField&gt; fields = 3;</code>
+   * <code>
+   * map&lt;string, .google.cloud.datacatalog.v1beta1.TagField&gt; fields = 3 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   public com.google.cloud.datacatalog.TagField getFieldsOrDefault(
       java.lang.String key, com.google.cloud.datacatalog.TagField defaultValue) {
@@ -471,12 +479,14 @@ public final class Tag extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Required. This maps the id of a tag field to the value of &amp; additional
+   * Required. This maps the ID of a tag field to the value of and additional
    * information about that field. Valid field IDs are defined by the tag's
    * template. A tag must have at least 1 field and at most 500 fields.
    * </pre>
    *
-   * <code>map&lt;string, .google.cloud.datacatalog.v1beta1.TagField&gt; fields = 3;</code>
+   * <code>
+   * map&lt;string, .google.cloud.datacatalog.v1beta1.TagField&gt; fields = 3 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   public com.google.cloud.datacatalog.TagField getFieldsOrThrow(java.lang.String key) {
     if (key == null) {
@@ -945,10 +955,10 @@ public final class Tag extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Required when used in
      * [UpdateTagRequest][google.cloud.datacatalog.v1beta1.UpdateTagRequest]. The
-     * resource name of the tag in URL format. For example,
-     * projects/{project_id}/locations/{location}/entrygroups/{entry_group_id}/entries/{entry_id}/tags/{tag_id}",
-     * where tag_id is a system-generated identifier. Note that this Tag may not
-     * actually be stored in the location in this name.
+     * resource name of the tag in URL format. Example:
+     * * projects/{project_id}/locations/{location}/entrygroups/{entry_group_id}/entries/{entry_id}/tags/{tag_id}
+     * where `tag_id` is a system-generated identifier.
+     * Note that this Tag may not actually be stored in the location in this name.
      * </pre>
      *
      * <code>string name = 1;</code>
@@ -970,10 +980,10 @@ public final class Tag extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Required when used in
      * [UpdateTagRequest][google.cloud.datacatalog.v1beta1.UpdateTagRequest]. The
-     * resource name of the tag in URL format. For example,
-     * projects/{project_id}/locations/{location}/entrygroups/{entry_group_id}/entries/{entry_id}/tags/{tag_id}",
-     * where tag_id is a system-generated identifier. Note that this Tag may not
-     * actually be stored in the location in this name.
+     * resource name of the tag in URL format. Example:
+     * * projects/{project_id}/locations/{location}/entrygroups/{entry_group_id}/entries/{entry_id}/tags/{tag_id}
+     * where `tag_id` is a system-generated identifier.
+     * Note that this Tag may not actually be stored in the location in this name.
      * </pre>
      *
      * <code>string name = 1;</code>
@@ -995,10 +1005,10 @@ public final class Tag extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Required when used in
      * [UpdateTagRequest][google.cloud.datacatalog.v1beta1.UpdateTagRequest]. The
-     * resource name of the tag in URL format. For example,
-     * projects/{project_id}/locations/{location}/entrygroups/{entry_group_id}/entries/{entry_id}/tags/{tag_id}",
-     * where tag_id is a system-generated identifier. Note that this Tag may not
-     * actually be stored in the location in this name.
+     * resource name of the tag in URL format. Example:
+     * * projects/{project_id}/locations/{location}/entrygroups/{entry_group_id}/entries/{entry_id}/tags/{tag_id}
+     * where `tag_id` is a system-generated identifier.
+     * Note that this Tag may not actually be stored in the location in this name.
      * </pre>
      *
      * <code>string name = 1;</code>
@@ -1018,10 +1028,10 @@ public final class Tag extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Required when used in
      * [UpdateTagRequest][google.cloud.datacatalog.v1beta1.UpdateTagRequest]. The
-     * resource name of the tag in URL format. For example,
-     * projects/{project_id}/locations/{location}/entrygroups/{entry_group_id}/entries/{entry_id}/tags/{tag_id}",
-     * where tag_id is a system-generated identifier. Note that this Tag may not
-     * actually be stored in the location in this name.
+     * resource name of the tag in URL format. Example:
+     * * projects/{project_id}/locations/{location}/entrygroups/{entry_group_id}/entries/{entry_id}/tags/{tag_id}
+     * where `tag_id` is a system-generated identifier.
+     * Note that this Tag may not actually be stored in the location in this name.
      * </pre>
      *
      * <code>string name = 1;</code>
@@ -1038,10 +1048,10 @@ public final class Tag extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Required when used in
      * [UpdateTagRequest][google.cloud.datacatalog.v1beta1.UpdateTagRequest]. The
-     * resource name of the tag in URL format. For example,
-     * projects/{project_id}/locations/{location}/entrygroups/{entry_group_id}/entries/{entry_id}/tags/{tag_id}",
-     * where tag_id is a system-generated identifier. Note that this Tag may not
-     * actually be stored in the location in this name.
+     * resource name of the tag in URL format. Example:
+     * * projects/{project_id}/locations/{location}/entrygroups/{entry_group_id}/entries/{entry_id}/tags/{tag_id}
+     * where `tag_id` is a system-generated identifier.
+     * Note that this Tag may not actually be stored in the location in this name.
      * </pre>
      *
      * <code>string name = 1;</code>
@@ -1062,13 +1072,13 @@ public final class Tag extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The resource name of the tag template that this tag uses. For
-     * example,
-     * projects/{project_id}/locations/{location}/tagTemplates/{tag_template_id}.
+     * Required. The resource name of the tag template that this tag uses.
+     * Example:
+     * * projects/{project_id}/locations/{location}/tagTemplates/{tag_template_id}
      * This field cannot be modified after creation.
      * </pre>
      *
-     * <code>string template = 2;</code>
+     * <code>string template = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public java.lang.String getTemplate() {
       java.lang.Object ref = template_;
@@ -1085,13 +1095,13 @@ public final class Tag extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The resource name of the tag template that this tag uses. For
-     * example,
-     * projects/{project_id}/locations/{location}/tagTemplates/{tag_template_id}.
+     * Required. The resource name of the tag template that this tag uses.
+     * Example:
+     * * projects/{project_id}/locations/{location}/tagTemplates/{tag_template_id}
      * This field cannot be modified after creation.
      * </pre>
      *
-     * <code>string template = 2;</code>
+     * <code>string template = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public com.google.protobuf.ByteString getTemplateBytes() {
       java.lang.Object ref = template_;
@@ -1108,13 +1118,13 @@ public final class Tag extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The resource name of the tag template that this tag uses. For
-     * example,
-     * projects/{project_id}/locations/{location}/tagTemplates/{tag_template_id}.
+     * Required. The resource name of the tag template that this tag uses.
+     * Example:
+     * * projects/{project_id}/locations/{location}/tagTemplates/{tag_template_id}
      * This field cannot be modified after creation.
      * </pre>
      *
-     * <code>string template = 2;</code>
+     * <code>string template = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder setTemplate(java.lang.String value) {
       if (value == null) {
@@ -1129,13 +1139,13 @@ public final class Tag extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The resource name of the tag template that this tag uses. For
-     * example,
-     * projects/{project_id}/locations/{location}/tagTemplates/{tag_template_id}.
+     * Required. The resource name of the tag template that this tag uses.
+     * Example:
+     * * projects/{project_id}/locations/{location}/tagTemplates/{tag_template_id}
      * This field cannot be modified after creation.
      * </pre>
      *
-     * <code>string template = 2;</code>
+     * <code>string template = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder clearTemplate() {
 
@@ -1147,13 +1157,13 @@ public final class Tag extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The resource name of the tag template that this tag uses. For
-     * example,
-     * projects/{project_id}/locations/{location}/tagTemplates/{tag_template_id}.
+     * Required. The resource name of the tag template that this tag uses.
+     * Example:
+     * * projects/{project_id}/locations/{location}/tagTemplates/{tag_template_id}
      * This field cannot be modified after creation.
      * </pre>
      *
-     * <code>string template = 2;</code>
+     * <code>string template = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder setTemplateBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -1174,7 +1184,7 @@ public final class Tag extends com.google.protobuf.GeneratedMessageV3
      * Output only. The display name of the tag template.
      * </pre>
      *
-     * <code>string template_display_name = 5;</code>
+     * <code>string template_display_name = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     public java.lang.String getTemplateDisplayName() {
       java.lang.Object ref = templateDisplayName_;
@@ -1194,7 +1204,7 @@ public final class Tag extends com.google.protobuf.GeneratedMessageV3
      * Output only. The display name of the tag template.
      * </pre>
      *
-     * <code>string template_display_name = 5;</code>
+     * <code>string template_display_name = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     public com.google.protobuf.ByteString getTemplateDisplayNameBytes() {
       java.lang.Object ref = templateDisplayName_;
@@ -1214,7 +1224,7 @@ public final class Tag extends com.google.protobuf.GeneratedMessageV3
      * Output only. The display name of the tag template.
      * </pre>
      *
-     * <code>string template_display_name = 5;</code>
+     * <code>string template_display_name = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     public Builder setTemplateDisplayName(java.lang.String value) {
       if (value == null) {
@@ -1232,7 +1242,7 @@ public final class Tag extends com.google.protobuf.GeneratedMessageV3
      * Output only. The display name of the tag template.
      * </pre>
      *
-     * <code>string template_display_name = 5;</code>
+     * <code>string template_display_name = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     public Builder clearTemplateDisplayName() {
 
@@ -1247,7 +1257,7 @@ public final class Tag extends com.google.protobuf.GeneratedMessageV3
      * Output only. The display name of the tag template.
      * </pre>
      *
-     * <code>string template_display_name = 5;</code>
+     * <code>string template_display_name = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     public Builder setTemplateDisplayNameBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -1266,8 +1276,9 @@ public final class Tag extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Resources like Entry can have schemas associated with them. This scope
      * allows users to attach tags to an individual column based on that schema.
-     * For attaching a tag to a nested column, use '.' to separate the column
-     * names: "outer_column.inner_column".
+     * For attaching a tag to a nested column, use `.` to separate the column
+     * names. Example:
+     * * `outer_column.inner_column`
      * </pre>
      *
      * <code>string column = 4;</code>
@@ -1294,8 +1305,9 @@ public final class Tag extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Resources like Entry can have schemas associated with them. This scope
      * allows users to attach tags to an individual column based on that schema.
-     * For attaching a tag to a nested column, use '.' to separate the column
-     * names: "outer_column.inner_column".
+     * For attaching a tag to a nested column, use `.` to separate the column
+     * names. Example:
+     * * `outer_column.inner_column`
      * </pre>
      *
      * <code>string column = 4;</code>
@@ -1322,8 +1334,9 @@ public final class Tag extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Resources like Entry can have schemas associated with them. This scope
      * allows users to attach tags to an individual column based on that schema.
-     * For attaching a tag to a nested column, use '.' to separate the column
-     * names: "outer_column.inner_column".
+     * For attaching a tag to a nested column, use `.` to separate the column
+     * names. Example:
+     * * `outer_column.inner_column`
      * </pre>
      *
      * <code>string column = 4;</code>
@@ -1343,8 +1356,9 @@ public final class Tag extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Resources like Entry can have schemas associated with them. This scope
      * allows users to attach tags to an individual column based on that schema.
-     * For attaching a tag to a nested column, use '.' to separate the column
-     * names: "outer_column.inner_column".
+     * For attaching a tag to a nested column, use `.` to separate the column
+     * names. Example:
+     * * `outer_column.inner_column`
      * </pre>
      *
      * <code>string column = 4;</code>
@@ -1363,8 +1377,9 @@ public final class Tag extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Resources like Entry can have schemas associated with them. This scope
      * allows users to attach tags to an individual column based on that schema.
-     * For attaching a tag to a nested column, use '.' to separate the column
-     * names: "outer_column.inner_column".
+     * For attaching a tag to a nested column, use `.` to separate the column
+     * names. Example:
+     * * `outer_column.inner_column`
      * </pre>
      *
      * <code>string column = 4;</code>
@@ -1411,12 +1426,14 @@ public final class Tag extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. This maps the id of a tag field to the value of &amp; additional
+     * Required. This maps the ID of a tag field to the value of and additional
      * information about that field. Valid field IDs are defined by the tag's
      * template. A tag must have at least 1 field and at most 500 fields.
      * </pre>
      *
-     * <code>map&lt;string, .google.cloud.datacatalog.v1beta1.TagField&gt; fields = 3;</code>
+     * <code>
+     * map&lt;string, .google.cloud.datacatalog.v1beta1.TagField&gt; fields = 3 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public boolean containsFields(java.lang.String key) {
       if (key == null) {
@@ -1433,12 +1450,14 @@ public final class Tag extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. This maps the id of a tag field to the value of &amp; additional
+     * Required. This maps the ID of a tag field to the value of and additional
      * information about that field. Valid field IDs are defined by the tag's
      * template. A tag must have at least 1 field and at most 500 fields.
      * </pre>
      *
-     * <code>map&lt;string, .google.cloud.datacatalog.v1beta1.TagField&gt; fields = 3;</code>
+     * <code>
+     * map&lt;string, .google.cloud.datacatalog.v1beta1.TagField&gt; fields = 3 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public java.util.Map<java.lang.String, com.google.cloud.datacatalog.TagField> getFieldsMap() {
       return internalGetFields().getMap();
@@ -1447,12 +1466,14 @@ public final class Tag extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. This maps the id of a tag field to the value of &amp; additional
+     * Required. This maps the ID of a tag field to the value of and additional
      * information about that field. Valid field IDs are defined by the tag's
      * template. A tag must have at least 1 field and at most 500 fields.
      * </pre>
      *
-     * <code>map&lt;string, .google.cloud.datacatalog.v1beta1.TagField&gt; fields = 3;</code>
+     * <code>
+     * map&lt;string, .google.cloud.datacatalog.v1beta1.TagField&gt; fields = 3 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public com.google.cloud.datacatalog.TagField getFieldsOrDefault(
         java.lang.String key, com.google.cloud.datacatalog.TagField defaultValue) {
@@ -1467,12 +1488,14 @@ public final class Tag extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. This maps the id of a tag field to the value of &amp; additional
+     * Required. This maps the ID of a tag field to the value of and additional
      * information about that field. Valid field IDs are defined by the tag's
      * template. A tag must have at least 1 field and at most 500 fields.
      * </pre>
      *
-     * <code>map&lt;string, .google.cloud.datacatalog.v1beta1.TagField&gt; fields = 3;</code>
+     * <code>
+     * map&lt;string, .google.cloud.datacatalog.v1beta1.TagField&gt; fields = 3 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public com.google.cloud.datacatalog.TagField getFieldsOrThrow(java.lang.String key) {
       if (key == null) {
@@ -1494,12 +1517,14 @@ public final class Tag extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. This maps the id of a tag field to the value of &amp; additional
+     * Required. This maps the ID of a tag field to the value of and additional
      * information about that field. Valid field IDs are defined by the tag's
      * template. A tag must have at least 1 field and at most 500 fields.
      * </pre>
      *
-     * <code>map&lt;string, .google.cloud.datacatalog.v1beta1.TagField&gt; fields = 3;</code>
+     * <code>
+     * map&lt;string, .google.cloud.datacatalog.v1beta1.TagField&gt; fields = 3 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder removeFields(java.lang.String key) {
       if (key == null) {
@@ -1518,12 +1543,14 @@ public final class Tag extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. This maps the id of a tag field to the value of &amp; additional
+     * Required. This maps the ID of a tag field to the value of and additional
      * information about that field. Valid field IDs are defined by the tag's
      * template. A tag must have at least 1 field and at most 500 fields.
      * </pre>
      *
-     * <code>map&lt;string, .google.cloud.datacatalog.v1beta1.TagField&gt; fields = 3;</code>
+     * <code>
+     * map&lt;string, .google.cloud.datacatalog.v1beta1.TagField&gt; fields = 3 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder putFields(java.lang.String key, com.google.cloud.datacatalog.TagField value) {
       if (key == null) {
@@ -1539,12 +1566,14 @@ public final class Tag extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. This maps the id of a tag field to the value of &amp; additional
+     * Required. This maps the ID of a tag field to the value of and additional
      * information about that field. Valid field IDs are defined by the tag's
      * template. A tag must have at least 1 field and at most 500 fields.
      * </pre>
      *
-     * <code>map&lt;string, .google.cloud.datacatalog.v1beta1.TagField&gt; fields = 3;</code>
+     * <code>
+     * map&lt;string, .google.cloud.datacatalog.v1beta1.TagField&gt; fields = 3 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder putAllFields(
         java.util.Map<java.lang.String, com.google.cloud.datacatalog.TagField> values) {

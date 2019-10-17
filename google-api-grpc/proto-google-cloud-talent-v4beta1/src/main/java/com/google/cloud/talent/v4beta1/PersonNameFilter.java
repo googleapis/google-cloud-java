@@ -7,7 +7,6 @@ package com.google.cloud.talent.v4beta1;
  *
  *
  * <pre>
- * Input only.
  * Filter on person name.
  * </pre>
  *
@@ -105,7 +104,7 @@ public final class PersonNameFilter extends com.google.protobuf.GeneratedMessage
    * [PersonName.formatted_name][google.cloud.talent.v4beta1.PersonName.formatted_name].
    * </pre>
    *
-   * <code>string person_name = 1;</code>
+   * <code>string person_name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   public java.lang.String getPersonName() {
     java.lang.Object ref = personName_;
@@ -129,7 +128,7 @@ public final class PersonNameFilter extends com.google.protobuf.GeneratedMessage
    * [PersonName.formatted_name][google.cloud.talent.v4beta1.PersonName.formatted_name].
    * </pre>
    *
-   * <code>string person_name = 1;</code>
+   * <code>string person_name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   public com.google.protobuf.ByteString getPersonNameBytes() {
     java.lang.Object ref = personName_;
@@ -306,7 +305,6 @@ public final class PersonNameFilter extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Input only.
    * Filter on person name.
    * </pre>
    *
@@ -473,7 +471,7 @@ public final class PersonNameFilter extends com.google.protobuf.GeneratedMessage
      * [PersonName.formatted_name][google.cloud.talent.v4beta1.PersonName.formatted_name].
      * </pre>
      *
-     * <code>string person_name = 1;</code>
+     * <code>string person_name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public java.lang.String getPersonName() {
       java.lang.Object ref = personName_;
@@ -497,7 +495,7 @@ public final class PersonNameFilter extends com.google.protobuf.GeneratedMessage
      * [PersonName.formatted_name][google.cloud.talent.v4beta1.PersonName.formatted_name].
      * </pre>
      *
-     * <code>string person_name = 1;</code>
+     * <code>string person_name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public com.google.protobuf.ByteString getPersonNameBytes() {
       java.lang.Object ref = personName_;
@@ -521,7 +519,7 @@ public final class PersonNameFilter extends com.google.protobuf.GeneratedMessage
      * [PersonName.formatted_name][google.cloud.talent.v4beta1.PersonName.formatted_name].
      * </pre>
      *
-     * <code>string person_name = 1;</code>
+     * <code>string person_name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder setPersonName(java.lang.String value) {
       if (value == null) {
@@ -543,7 +541,7 @@ public final class PersonNameFilter extends com.google.protobuf.GeneratedMessage
      * [PersonName.formatted_name][google.cloud.talent.v4beta1.PersonName.formatted_name].
      * </pre>
      *
-     * <code>string person_name = 1;</code>
+     * <code>string person_name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder clearPersonName() {
 
@@ -562,7 +560,7 @@ public final class PersonNameFilter extends com.google.protobuf.GeneratedMessage
      * [PersonName.formatted_name][google.cloud.talent.v4beta1.PersonName.formatted_name].
      * </pre>
      *
-     * <code>string person_name = 1;</code>
+     * <code>string person_name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder setPersonNameBytes(com.google.protobuf.ByteString value) {
       if (value == null) {

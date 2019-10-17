@@ -69,6 +69,12 @@ public final class TestDefinition {
     }
 
     @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new TestFile();
+    }
+
+    @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
       return this.unknownFields;
     }
@@ -956,6 +962,12 @@ public final class TestDefinition {
     }
 
     @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new Test();
+    }
+
+    @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
       return this.unknownFields;
     }
@@ -968,7 +980,6 @@ public final class TestDefinition {
       if (extensionRegistry == null) {
         throw new java.lang.NullPointerException();
       }
-      int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
@@ -3590,6 +3601,12 @@ public final class TestDefinition {
     }
 
     @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new GetTest();
+    }
+
+    @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
       return this.unknownFields;
     }
@@ -3602,7 +3619,6 @@ public final class TestDefinition {
       if (extensionRegistry == null) {
         throw new java.lang.NullPointerException();
       }
-      int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
@@ -4563,6 +4579,12 @@ public final class TestDefinition {
     }
 
     @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new CreateTest();
+    }
+
+    @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
       return this.unknownFields;
     }
@@ -4575,7 +4597,6 @@ public final class TestDefinition {
       if (extensionRegistry == null) {
         throw new java.lang.NullPointerException();
       }
-      int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
@@ -5819,6 +5840,12 @@ public final class TestDefinition {
     }
 
     @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new SetTest();
+    }
+
+    @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
       return this.unknownFields;
     }
@@ -5831,7 +5858,6 @@ public final class TestDefinition {
       if (extensionRegistry == null) {
         throw new java.lang.NullPointerException();
       }
-      int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
@@ -7335,6 +7361,12 @@ public final class TestDefinition {
     }
 
     @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new UpdateTest();
+    }
+
+    @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
       return this.unknownFields;
     }
@@ -7347,7 +7379,6 @@ public final class TestDefinition {
       if (extensionRegistry == null) {
         throw new java.lang.NullPointerException();
       }
-      int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
@@ -8916,6 +8947,12 @@ public final class TestDefinition {
     }
 
     @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new UpdatePathsTest();
+    }
+
+    @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
       return this.unknownFields;
     }
@@ -8964,11 +9001,11 @@ public final class TestDefinition {
               }
             case 26:
               {
-                if (!((mutable_bitField0_ & 0x00000004) != 0)) {
+                if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                   fieldPaths_ =
                       new java.util.ArrayList<
                           com.google.cloud.conformance.firestore.v1.TestDefinition.FieldPath>();
-                  mutable_bitField0_ |= 0x00000004;
+                  mutable_bitField0_ |= 0x00000001;
                 }
                 fieldPaths_.add(
                     input.readMessage(
@@ -8979,9 +9016,9 @@ public final class TestDefinition {
             case 34:
               {
                 java.lang.String s = input.readStringRequireUtf8();
-                if (!((mutable_bitField0_ & 0x00000008) != 0)) {
+                if (!((mutable_bitField0_ & 0x00000002) != 0)) {
                   jsonValues_ = new com.google.protobuf.LazyStringArrayList();
-                  mutable_bitField0_ |= 0x00000008;
+                  mutable_bitField0_ |= 0x00000002;
                 }
                 jsonValues_.add(s);
                 break;
@@ -9021,10 +9058,10 @@ public final class TestDefinition {
       } catch (java.io.IOException e) {
         throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
       } finally {
-        if (((mutable_bitField0_ & 0x00000004) != 0)) {
+        if (((mutable_bitField0_ & 0x00000001) != 0)) {
           fieldPaths_ = java.util.Collections.unmodifiableList(fieldPaths_);
         }
-        if (((mutable_bitField0_ & 0x00000008) != 0)) {
+        if (((mutable_bitField0_ & 0x00000002) != 0)) {
           jsonValues_ = jsonValues_.getUnmodifiableView();
         }
         this.unknownFields = unknownFields.build();
@@ -9048,7 +9085,6 @@ public final class TestDefinition {
                   .class);
     }
 
-    private int bitField0_;
     public static final int DOC_REF_PATH_FIELD_NUMBER = 1;
     private volatile java.lang.Object docRefPath_;
     /**
@@ -9602,12 +9638,12 @@ public final class TestDefinition {
         }
         if (fieldPathsBuilder_ == null) {
           fieldPaths_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000004);
+          bitField0_ = (bitField0_ & ~0x00000001);
         } else {
           fieldPathsBuilder_.clear();
         }
         jsonValues_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-        bitField0_ = (bitField0_ & ~0x00000008);
+        bitField0_ = (bitField0_ & ~0x00000002);
         if (requestBuilder_ == null) {
           request_ = null;
         } else {
@@ -9648,7 +9684,6 @@ public final class TestDefinition {
         com.google.cloud.conformance.firestore.v1.TestDefinition.UpdatePathsTest result =
             new com.google.cloud.conformance.firestore.v1.TestDefinition.UpdatePathsTest(this);
         int from_bitField0_ = bitField0_;
-        int to_bitField0_ = 0;
         result.docRefPath_ = docRefPath_;
         if (preconditionBuilder_ == null) {
           result.precondition_ = precondition_;
@@ -9656,17 +9691,17 @@ public final class TestDefinition {
           result.precondition_ = preconditionBuilder_.build();
         }
         if (fieldPathsBuilder_ == null) {
-          if (((bitField0_ & 0x00000004) != 0)) {
+          if (((bitField0_ & 0x00000001) != 0)) {
             fieldPaths_ = java.util.Collections.unmodifiableList(fieldPaths_);
-            bitField0_ = (bitField0_ & ~0x00000004);
+            bitField0_ = (bitField0_ & ~0x00000001);
           }
           result.fieldPaths_ = fieldPaths_;
         } else {
           result.fieldPaths_ = fieldPathsBuilder_.build();
         }
-        if (((bitField0_ & 0x00000008) != 0)) {
+        if (((bitField0_ & 0x00000002) != 0)) {
           jsonValues_ = jsonValues_.getUnmodifiableView();
-          bitField0_ = (bitField0_ & ~0x00000008);
+          bitField0_ = (bitField0_ & ~0x00000002);
         }
         result.jsonValues_ = jsonValues_;
         if (requestBuilder_ == null) {
@@ -9675,7 +9710,6 @@ public final class TestDefinition {
           result.request_ = requestBuilder_.build();
         }
         result.isError_ = isError_;
-        result.bitField0_ = to_bitField0_;
         onBuilt();
         return result;
       }
@@ -9743,7 +9777,7 @@ public final class TestDefinition {
           if (!other.fieldPaths_.isEmpty()) {
             if (fieldPaths_.isEmpty()) {
               fieldPaths_ = other.fieldPaths_;
-              bitField0_ = (bitField0_ & ~0x00000004);
+              bitField0_ = (bitField0_ & ~0x00000001);
             } else {
               ensureFieldPathsIsMutable();
               fieldPaths_.addAll(other.fieldPaths_);
@@ -9756,7 +9790,7 @@ public final class TestDefinition {
               fieldPathsBuilder_.dispose();
               fieldPathsBuilder_ = null;
               fieldPaths_ = other.fieldPaths_;
-              bitField0_ = (bitField0_ & ~0x00000004);
+              bitField0_ = (bitField0_ & ~0x00000001);
               fieldPathsBuilder_ =
                   com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                       ? getFieldPathsFieldBuilder()
@@ -9769,7 +9803,7 @@ public final class TestDefinition {
         if (!other.jsonValues_.isEmpty()) {
           if (jsonValues_.isEmpty()) {
             jsonValues_ = other.jsonValues_;
-            bitField0_ = (bitField0_ & ~0x00000008);
+            bitField0_ = (bitField0_ & ~0x00000002);
           } else {
             ensureJsonValuesIsMutable();
             jsonValues_.addAll(other.jsonValues_);
@@ -10095,11 +10129,11 @@ public final class TestDefinition {
           fieldPaths_ = java.util.Collections.emptyList();
 
       private void ensureFieldPathsIsMutable() {
-        if (!((bitField0_ & 0x00000004) != 0)) {
+        if (!((bitField0_ & 0x00000001) != 0)) {
           fieldPaths_ =
               new java.util.ArrayList<
                   com.google.cloud.conformance.firestore.v1.TestDefinition.FieldPath>(fieldPaths_);
-          bitField0_ |= 0x00000004;
+          bitField0_ |= 0x00000001;
         }
       }
 
@@ -10327,7 +10361,7 @@ public final class TestDefinition {
       public Builder clearFieldPaths() {
         if (fieldPathsBuilder_ == null) {
           fieldPaths_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000004);
+          bitField0_ = (bitField0_ & ~0x00000001);
           onChanged();
         } else {
           fieldPathsBuilder_.clear();
@@ -10460,7 +10494,7 @@ public final class TestDefinition {
                   com.google.cloud.conformance.firestore.v1.TestDefinition.FieldPath,
                   com.google.cloud.conformance.firestore.v1.TestDefinition.FieldPath.Builder,
                   com.google.cloud.conformance.firestore.v1.TestDefinition.FieldPathOrBuilder>(
-                  fieldPaths_, ((bitField0_ & 0x00000004) != 0), getParentForChildren(), isClean());
+                  fieldPaths_, ((bitField0_ & 0x00000001) != 0), getParentForChildren(), isClean());
           fieldPaths_ = null;
         }
         return fieldPathsBuilder_;
@@ -10470,9 +10504,9 @@ public final class TestDefinition {
           com.google.protobuf.LazyStringArrayList.EMPTY;
 
       private void ensureJsonValuesIsMutable() {
-        if (!((bitField0_ & 0x00000008) != 0)) {
+        if (!((bitField0_ & 0x00000002) != 0)) {
           jsonValues_ = new com.google.protobuf.LazyStringArrayList(jsonValues_);
-          bitField0_ |= 0x00000008;
+          bitField0_ |= 0x00000002;
         }
       }
       /**
@@ -10585,7 +10619,7 @@ public final class TestDefinition {
        */
       public Builder clearJsonValues() {
         jsonValues_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-        bitField0_ = (bitField0_ & ~0x00000008);
+        bitField0_ = (bitField0_ & ~0x00000002);
         onChanged();
         return this;
       }
@@ -10989,6 +11023,12 @@ public final class TestDefinition {
     }
 
     @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new DeleteTest();
+    }
+
+    @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
       return this.unknownFields;
     }
@@ -11001,7 +11041,6 @@ public final class TestDefinition {
       if (extensionRegistry == null) {
         throw new java.lang.NullPointerException();
       }
-      int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
@@ -12186,6 +12225,12 @@ public final class TestDefinition {
     }
 
     @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new SetOption();
+    }
+
+    @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
       return this.unknownFields;
     }
@@ -12216,11 +12261,11 @@ public final class TestDefinition {
               }
             case 18:
               {
-                if (!((mutable_bitField0_ & 0x00000002) != 0)) {
+                if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                   fields_ =
                       new java.util.ArrayList<
                           com.google.cloud.conformance.firestore.v1.TestDefinition.FieldPath>();
-                  mutable_bitField0_ |= 0x00000002;
+                  mutable_bitField0_ |= 0x00000001;
                 }
                 fields_.add(
                     input.readMessage(
@@ -12242,7 +12287,7 @@ public final class TestDefinition {
       } catch (java.io.IOException e) {
         throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
       } finally {
-        if (((mutable_bitField0_ & 0x00000002) != 0)) {
+        if (((mutable_bitField0_ & 0x00000001) != 0)) {
           fields_ = java.util.Collections.unmodifiableList(fields_);
         }
         this.unknownFields = unknownFields.build();
@@ -12265,7 +12310,6 @@ public final class TestDefinition {
               com.google.cloud.conformance.firestore.v1.TestDefinition.SetOption.Builder.class);
     }
 
-    private int bitField0_;
     public static final int ALL_FIELD_NUMBER = 1;
     private boolean all_;
     /**
@@ -12575,7 +12619,7 @@ public final class TestDefinition {
 
         if (fieldsBuilder_ == null) {
           fields_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000002);
+          bitField0_ = (bitField0_ & ~0x00000001);
         } else {
           fieldsBuilder_.clear();
         }
@@ -12609,18 +12653,16 @@ public final class TestDefinition {
         com.google.cloud.conformance.firestore.v1.TestDefinition.SetOption result =
             new com.google.cloud.conformance.firestore.v1.TestDefinition.SetOption(this);
         int from_bitField0_ = bitField0_;
-        int to_bitField0_ = 0;
         result.all_ = all_;
         if (fieldsBuilder_ == null) {
-          if (((bitField0_ & 0x00000002) != 0)) {
+          if (((bitField0_ & 0x00000001) != 0)) {
             fields_ = java.util.Collections.unmodifiableList(fields_);
-            bitField0_ = (bitField0_ & ~0x00000002);
+            bitField0_ = (bitField0_ & ~0x00000001);
           }
           result.fields_ = fields_;
         } else {
           result.fields_ = fieldsBuilder_.build();
         }
-        result.bitField0_ = to_bitField0_;
         onBuilt();
         return result;
       }
@@ -12683,7 +12725,7 @@ public final class TestDefinition {
           if (!other.fields_.isEmpty()) {
             if (fields_.isEmpty()) {
               fields_ = other.fields_;
-              bitField0_ = (bitField0_ & ~0x00000002);
+              bitField0_ = (bitField0_ & ~0x00000001);
             } else {
               ensureFieldsIsMutable();
               fields_.addAll(other.fields_);
@@ -12696,7 +12738,7 @@ public final class TestDefinition {
               fieldsBuilder_.dispose();
               fieldsBuilder_ = null;
               fields_ = other.fields_;
-              bitField0_ = (bitField0_ & ~0x00000002);
+              bitField0_ = (bitField0_ & ~0x00000001);
               fieldsBuilder_ =
                   com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                       ? getFieldsFieldBuilder()
@@ -12787,11 +12829,11 @@ public final class TestDefinition {
           fields_ = java.util.Collections.emptyList();
 
       private void ensureFieldsIsMutable() {
-        if (!((bitField0_ & 0x00000002) != 0)) {
+        if (!((bitField0_ & 0x00000001) != 0)) {
           fields_ =
               new java.util.ArrayList<
                   com.google.cloud.conformance.firestore.v1.TestDefinition.FieldPath>(fields_);
-          bitField0_ |= 0x00000002;
+          bitField0_ |= 0x00000001;
         }
       }
 
@@ -13019,7 +13061,7 @@ public final class TestDefinition {
       public Builder clearFields() {
         if (fieldsBuilder_ == null) {
           fields_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000002);
+          bitField0_ = (bitField0_ & ~0x00000001);
           onChanged();
         } else {
           fieldsBuilder_.clear();
@@ -13152,7 +13194,7 @@ public final class TestDefinition {
                   com.google.cloud.conformance.firestore.v1.TestDefinition.FieldPath,
                   com.google.cloud.conformance.firestore.v1.TestDefinition.FieldPath.Builder,
                   com.google.cloud.conformance.firestore.v1.TestDefinition.FieldPathOrBuilder>(
-                  fields_, ((bitField0_ & 0x00000002) != 0), getParentForChildren(), isClean());
+                  fields_, ((bitField0_ & 0x00000001) != 0), getParentForChildren(), isClean());
           fields_ = null;
         }
         return fieldsBuilder_;
@@ -13281,6 +13323,12 @@ public final class TestDefinition {
     }
 
     @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new QueryTest();
+    }
+
+    @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
       return this.unknownFields;
     }
@@ -13313,11 +13361,11 @@ public final class TestDefinition {
               }
             case 18:
               {
-                if (!((mutable_bitField0_ & 0x00000002) != 0)) {
+                if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                   clauses_ =
                       new java.util.ArrayList<
                           com.google.cloud.conformance.firestore.v1.TestDefinition.Clause>();
-                  mutable_bitField0_ |= 0x00000002;
+                  mutable_bitField0_ |= 0x00000001;
                 }
                 clauses_.add(
                     input.readMessage(
@@ -13360,7 +13408,7 @@ public final class TestDefinition {
       } catch (java.io.IOException e) {
         throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
       } finally {
-        if (((mutable_bitField0_ & 0x00000002) != 0)) {
+        if (((mutable_bitField0_ & 0x00000001) != 0)) {
           clauses_ = java.util.Collections.unmodifiableList(clauses_);
         }
         this.unknownFields = unknownFields.build();
@@ -13383,7 +13431,6 @@ public final class TestDefinition {
               com.google.cloud.conformance.firestore.v1.TestDefinition.QueryTest.Builder.class);
     }
 
-    private int bitField0_;
     public static final int COLL_PATH_FIELD_NUMBER = 1;
     private volatile java.lang.Object collPath_;
     /**
@@ -13718,7 +13765,7 @@ public final class TestDefinition {
 
         if (clausesBuilder_ == null) {
           clauses_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000002);
+          bitField0_ = (bitField0_ & ~0x00000001);
         } else {
           clausesBuilder_.clear();
         }
@@ -13760,12 +13807,11 @@ public final class TestDefinition {
         com.google.cloud.conformance.firestore.v1.TestDefinition.QueryTest result =
             new com.google.cloud.conformance.firestore.v1.TestDefinition.QueryTest(this);
         int from_bitField0_ = bitField0_;
-        int to_bitField0_ = 0;
         result.collPath_ = collPath_;
         if (clausesBuilder_ == null) {
-          if (((bitField0_ & 0x00000002) != 0)) {
+          if (((bitField0_ & 0x00000001) != 0)) {
             clauses_ = java.util.Collections.unmodifiableList(clauses_);
-            bitField0_ = (bitField0_ & ~0x00000002);
+            bitField0_ = (bitField0_ & ~0x00000001);
           }
           result.clauses_ = clauses_;
         } else {
@@ -13777,7 +13823,6 @@ public final class TestDefinition {
           result.query_ = queryBuilder_.build();
         }
         result.isError_ = isError_;
-        result.bitField0_ = to_bitField0_;
         onBuilt();
         return result;
       }
@@ -13841,7 +13886,7 @@ public final class TestDefinition {
           if (!other.clauses_.isEmpty()) {
             if (clauses_.isEmpty()) {
               clauses_ = other.clauses_;
-              bitField0_ = (bitField0_ & ~0x00000002);
+              bitField0_ = (bitField0_ & ~0x00000001);
             } else {
               ensureClausesIsMutable();
               clauses_.addAll(other.clauses_);
@@ -13854,7 +13899,7 @@ public final class TestDefinition {
               clausesBuilder_.dispose();
               clausesBuilder_ = null;
               clauses_ = other.clauses_;
-              bitField0_ = (bitField0_ & ~0x00000002);
+              bitField0_ = (bitField0_ & ~0x00000001);
               clausesBuilder_ =
                   com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                       ? getClausesFieldBuilder()
@@ -14001,11 +14046,11 @@ public final class TestDefinition {
           clauses_ = java.util.Collections.emptyList();
 
       private void ensureClausesIsMutable() {
-        if (!((bitField0_ & 0x00000002) != 0)) {
+        if (!((bitField0_ & 0x00000001) != 0)) {
           clauses_ =
               new java.util.ArrayList<
                   com.google.cloud.conformance.firestore.v1.TestDefinition.Clause>(clauses_);
-          bitField0_ |= 0x00000002;
+          bitField0_ |= 0x00000001;
         }
       }
 
@@ -14141,7 +14186,7 @@ public final class TestDefinition {
       public Builder clearClauses() {
         if (clausesBuilder_ == null) {
           clauses_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000002);
+          bitField0_ = (bitField0_ & ~0x00000001);
           onChanged();
         } else {
           clausesBuilder_.clear();
@@ -14217,7 +14262,7 @@ public final class TestDefinition {
                   com.google.cloud.conformance.firestore.v1.TestDefinition.Clause,
                   com.google.cloud.conformance.firestore.v1.TestDefinition.Clause.Builder,
                   com.google.cloud.conformance.firestore.v1.TestDefinition.ClauseOrBuilder>(
-                  clauses_, ((bitField0_ & 0x00000002) != 0), getParentForChildren(), isClean());
+                  clauses_, ((bitField0_ & 0x00000001) != 0), getParentForChildren(), isClean());
           clauses_ = null;
         }
         return clausesBuilder_;
@@ -14486,6 +14531,12 @@ public final class TestDefinition {
     private Clause() {}
 
     @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new Clause();
+    }
+
+    @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
       return this.unknownFields;
     }
@@ -14498,7 +14549,6 @@ public final class TestDefinition {
       if (extensionRegistry == null) {
         throw new java.lang.NullPointerException();
       }
-      int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
@@ -16633,6 +16683,12 @@ public final class TestDefinition {
     }
 
     @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new Select();
+    }
+
+    @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
       return this.unknownFields;
     }
@@ -17423,6 +17479,12 @@ public final class TestDefinition {
     }
 
     @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new Where();
+    }
+
+    @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
       return this.unknownFields;
     }
@@ -17435,7 +17497,6 @@ public final class TestDefinition {
       if (extensionRegistry == null) {
         throw new java.lang.NullPointerException();
       }
-      int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
@@ -18276,6 +18337,12 @@ public final class TestDefinition {
     }
 
     @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new OrderBy();
+    }
+
+    @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
       return this.unknownFields;
     }
@@ -18288,7 +18355,6 @@ public final class TestDefinition {
       if (extensionRegistry == null) {
         throw new java.lang.NullPointerException();
       }
-      int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
@@ -19098,6 +19164,12 @@ public final class TestDefinition {
     }
 
     @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new Cursor();
+    }
+
+    @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
       return this.unknownFields;
     }
@@ -19143,9 +19215,9 @@ public final class TestDefinition {
             case 18:
               {
                 java.lang.String s = input.readStringRequireUtf8();
-                if (!((mutable_bitField0_ & 0x00000002) != 0)) {
+                if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                   jsonValues_ = new com.google.protobuf.LazyStringArrayList();
-                  mutable_bitField0_ |= 0x00000002;
+                  mutable_bitField0_ |= 0x00000001;
                 }
                 jsonValues_.add(s);
                 break;
@@ -19164,7 +19236,7 @@ public final class TestDefinition {
       } catch (java.io.IOException e) {
         throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
       } finally {
-        if (((mutable_bitField0_ & 0x00000002) != 0)) {
+        if (((mutable_bitField0_ & 0x00000001) != 0)) {
           jsonValues_ = jsonValues_.getUnmodifiableView();
         }
         this.unknownFields = unknownFields.build();
@@ -19187,7 +19259,6 @@ public final class TestDefinition {
               com.google.cloud.conformance.firestore.v1.TestDefinition.Cursor.Builder.class);
     }
 
-    private int bitField0_;
     public static final int DOC_SNAPSHOT_FIELD_NUMBER = 1;
     private com.google.cloud.conformance.firestore.v1.TestDefinition.DocSnapshot docSnapshot_;
     /**
@@ -19479,7 +19550,7 @@ public final class TestDefinition {
           docSnapshotBuilder_ = null;
         }
         jsonValues_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-        bitField0_ = (bitField0_ & ~0x00000002);
+        bitField0_ = (bitField0_ & ~0x00000001);
         return this;
       }
 
@@ -19509,18 +19580,16 @@ public final class TestDefinition {
         com.google.cloud.conformance.firestore.v1.TestDefinition.Cursor result =
             new com.google.cloud.conformance.firestore.v1.TestDefinition.Cursor(this);
         int from_bitField0_ = bitField0_;
-        int to_bitField0_ = 0;
         if (docSnapshotBuilder_ == null) {
           result.docSnapshot_ = docSnapshot_;
         } else {
           result.docSnapshot_ = docSnapshotBuilder_.build();
         }
-        if (((bitField0_ & 0x00000002) != 0)) {
+        if (((bitField0_ & 0x00000001) != 0)) {
           jsonValues_ = jsonValues_.getUnmodifiableView();
-          bitField0_ = (bitField0_ & ~0x00000002);
+          bitField0_ = (bitField0_ & ~0x00000001);
         }
         result.jsonValues_ = jsonValues_;
-        result.bitField0_ = to_bitField0_;
         onBuilt();
         return result;
       }
@@ -19581,7 +19650,7 @@ public final class TestDefinition {
         if (!other.jsonValues_.isEmpty()) {
           if (jsonValues_.isEmpty()) {
             jsonValues_ = other.jsonValues_;
-            bitField0_ = (bitField0_ & ~0x00000002);
+            bitField0_ = (bitField0_ & ~0x00000001);
           } else {
             ensureJsonValuesIsMutable();
             jsonValues_.addAll(other.jsonValues_);
@@ -19815,9 +19884,9 @@ public final class TestDefinition {
           com.google.protobuf.LazyStringArrayList.EMPTY;
 
       private void ensureJsonValuesIsMutable() {
-        if (!((bitField0_ & 0x00000002) != 0)) {
+        if (!((bitField0_ & 0x00000001) != 0)) {
           jsonValues_ = new com.google.protobuf.LazyStringArrayList(jsonValues_);
-          bitField0_ |= 0x00000002;
+          bitField0_ |= 0x00000001;
         }
       }
       /** <code>repeated string json_values = 2;</code> */
@@ -19866,7 +19935,7 @@ public final class TestDefinition {
       /** <code>repeated string json_values = 2;</code> */
       public Builder clearJsonValues() {
         jsonValues_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-        bitField0_ = (bitField0_ & ~0x00000002);
+        bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
         return this;
       }
@@ -19969,6 +20038,12 @@ public final class TestDefinition {
     }
 
     @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new DocSnapshot();
+    }
+
+    @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
       return this.unknownFields;
     }
@@ -19981,7 +20056,6 @@ public final class TestDefinition {
       if (extensionRegistry == null) {
         throw new java.lang.NullPointerException();
       }
-      int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
@@ -20627,6 +20701,12 @@ public final class TestDefinition {
     }
 
     @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new FieldPath();
+    }
+
+    @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
       return this.unknownFields;
     }
@@ -21253,6 +21333,12 @@ public final class TestDefinition {
     }
 
     @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new ListenTest();
+    }
+
+    @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
       return this.unknownFields;
     }
@@ -21346,7 +21432,6 @@ public final class TestDefinition {
               com.google.cloud.conformance.firestore.v1.TestDefinition.ListenTest.Builder.class);
     }
 
-    private int bitField0_;
     public static final int RESPONSES_FIELD_NUMBER = 1;
     private java.util.List<com.google.firestore.v1.ListenResponse> responses_;
     /** <code>repeated .google.firestore.v1.ListenResponse responses = 1;</code> */
@@ -21693,7 +21778,6 @@ public final class TestDefinition {
         com.google.cloud.conformance.firestore.v1.TestDefinition.ListenTest result =
             new com.google.cloud.conformance.firestore.v1.TestDefinition.ListenTest(this);
         int from_bitField0_ = bitField0_;
-        int to_bitField0_ = 0;
         if (responsesBuilder_ == null) {
           if (((bitField0_ & 0x00000001) != 0)) {
             responses_ = java.util.Collections.unmodifiableList(responses_);
@@ -21713,7 +21797,6 @@ public final class TestDefinition {
           result.snapshots_ = snapshotsBuilder_.build();
         }
         result.isError_ = isError_;
-        result.bitField0_ = to_bitField0_;
         onBuilt();
         return result;
       }
@@ -22425,6 +22508,12 @@ public final class TestDefinition {
     }
 
     @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new Snapshot();
+    }
+
+    @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
       return this.unknownFields;
     }
@@ -22528,7 +22617,6 @@ public final class TestDefinition {
               com.google.cloud.conformance.firestore.v1.TestDefinition.Snapshot.Builder.class);
     }
 
-    private int bitField0_;
     public static final int DOCS_FIELD_NUMBER = 1;
     private java.util.List<com.google.firestore.v1.Document> docs_;
     /** <code>repeated .google.firestore.v1.Document docs = 1;</code> */
@@ -22876,7 +22964,6 @@ public final class TestDefinition {
         com.google.cloud.conformance.firestore.v1.TestDefinition.Snapshot result =
             new com.google.cloud.conformance.firestore.v1.TestDefinition.Snapshot(this);
         int from_bitField0_ = bitField0_;
-        int to_bitField0_ = 0;
         if (docsBuilder_ == null) {
           if (((bitField0_ & 0x00000001) != 0)) {
             docs_ = java.util.Collections.unmodifiableList(docs_);
@@ -22900,7 +22987,6 @@ public final class TestDefinition {
         } else {
           result.readTime_ = readTimeBuilder_.build();
         }
-        result.bitField0_ = to_bitField0_;
         onBuilt();
         return result;
       }
@@ -23676,6 +23762,12 @@ public final class TestDefinition {
     }
 
     @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new DocChange();
+    }
+
+    @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
       return this.unknownFields;
     }
@@ -23688,7 +23780,6 @@ public final class TestDefinition {
       if (extensionRegistry == null) {
         throw new java.lang.NullPointerException();
       }
-      int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
@@ -24718,24 +24809,16 @@ public final class TestDefinition {
           + "store.Tests.Proto\312\002(Google\\Cloud\\Firesto"
           + "re\\Tests\\Conformanceb\006proto3"
     };
-    com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
-        new com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner() {
-          public com.google.protobuf.ExtensionRegistry assignDescriptors(
-              com.google.protobuf.Descriptors.FileDescriptor root) {
-            descriptor = root;
-            return null;
-          }
-        };
-    com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
-        descriptorData,
-        new com.google.protobuf.Descriptors.FileDescriptor[] {
-          com.google.firestore.v1.CommonProto.getDescriptor(),
-          com.google.firestore.v1.DocumentProto.getDescriptor(),
-          com.google.firestore.v1.FirestoreProto.getDescriptor(),
-          com.google.firestore.v1.QueryProto.getDescriptor(),
-          com.google.protobuf.TimestampProto.getDescriptor(),
-        },
-        assigner);
+    descriptor =
+        com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
+            descriptorData,
+            new com.google.protobuf.Descriptors.FileDescriptor[] {
+              com.google.firestore.v1.CommonProto.getDescriptor(),
+              com.google.firestore.v1.DocumentProto.getDescriptor(),
+              com.google.firestore.v1.FirestoreProto.getDescriptor(),
+              com.google.firestore.v1.QueryProto.getDescriptor(),
+              com.google.protobuf.TimestampProto.getDescriptor(),
+            });
     internal_static_google_cloud_conformance_firestore_v1_TestFile_descriptor =
         getDescriptor().getMessageTypes().get(0);
     internal_static_google_cloud_conformance_firestore_v1_TestFile_fieldAccessorTable =

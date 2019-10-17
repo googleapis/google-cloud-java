@@ -158,7 +158,7 @@ public final class DetectIntentRequest extends com.google.protobuf.GeneratedMess
    * ID must not exceed 36 bytes.
    * </pre>
    *
-   * <code>string session = 1;</code>
+   * <code>string session = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   public java.lang.String getSession() {
     java.lang.Object ref = session_;
@@ -182,7 +182,7 @@ public final class DetectIntentRequest extends com.google.protobuf.GeneratedMess
    * ID must not exceed 36 bytes.
    * </pre>
    *
-   * <code>string session = 1;</code>
+   * <code>string session = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   public com.google.protobuf.ByteString getSessionBytes() {
     java.lang.Object ref = session_;
@@ -205,7 +205,9 @@ public final class DetectIntentRequest extends com.google.protobuf.GeneratedMess
    * Optional. The parameters of this query.
    * </pre>
    *
-   * <code>.google.cloud.dialogflow.v2.QueryParameters query_params = 2;</code>
+   * <code>
+   * .google.cloud.dialogflow.v2.QueryParameters query_params = 2 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   public boolean hasQueryParams() {
     return queryParams_ != null;
@@ -217,7 +219,9 @@ public final class DetectIntentRequest extends com.google.protobuf.GeneratedMess
    * Optional. The parameters of this query.
    * </pre>
    *
-   * <code>.google.cloud.dialogflow.v2.QueryParameters query_params = 2;</code>
+   * <code>
+   * .google.cloud.dialogflow.v2.QueryParameters query_params = 2 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   public com.google.cloud.dialogflow.v2.QueryParameters getQueryParams() {
     return queryParams_ == null
@@ -231,7 +235,9 @@ public final class DetectIntentRequest extends com.google.protobuf.GeneratedMess
    * Optional. The parameters of this query.
    * </pre>
    *
-   * <code>.google.cloud.dialogflow.v2.QueryParameters query_params = 2;</code>
+   * <code>
+   * .google.cloud.dialogflow.v2.QueryParameters query_params = 2 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   public com.google.cloud.dialogflow.v2.QueryParametersOrBuilder getQueryParamsOrBuilder() {
     return getQueryParams();
@@ -250,7 +256,9 @@ public final class DetectIntentRequest extends com.google.protobuf.GeneratedMess
    * 3.  an event that specifies which intent to trigger.
    * </pre>
    *
-   * <code>.google.cloud.dialogflow.v2.QueryInput query_input = 3;</code>
+   * <code>
+   * .google.cloud.dialogflow.v2.QueryInput query_input = 3 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   public boolean hasQueryInput() {
     return queryInput_ != null;
@@ -266,7 +274,9 @@ public final class DetectIntentRequest extends com.google.protobuf.GeneratedMess
    * 3.  an event that specifies which intent to trigger.
    * </pre>
    *
-   * <code>.google.cloud.dialogflow.v2.QueryInput query_input = 3;</code>
+   * <code>
+   * .google.cloud.dialogflow.v2.QueryInput query_input = 3 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   public com.google.cloud.dialogflow.v2.QueryInput getQueryInput() {
     return queryInput_ == null
@@ -284,7 +294,9 @@ public final class DetectIntentRequest extends com.google.protobuf.GeneratedMess
    * 3.  an event that specifies which intent to trigger.
    * </pre>
    *
-   * <code>.google.cloud.dialogflow.v2.QueryInput query_input = 3;</code>
+   * <code>
+   * .google.cloud.dialogflow.v2.QueryInput query_input = 3 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   public com.google.cloud.dialogflow.v2.QueryInputOrBuilder getQueryInputOrBuilder() {
     return getQueryInput();
@@ -301,7 +313,9 @@ public final class DetectIntentRequest extends com.google.protobuf.GeneratedMess
    * configured, no output audio is generated.
    * </pre>
    *
-   * <code>.google.cloud.dialogflow.v2.OutputAudioConfig output_audio_config = 4;</code>
+   * <code>
+   * .google.cloud.dialogflow.v2.OutputAudioConfig output_audio_config = 4 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   public boolean hasOutputAudioConfig() {
     return outputAudioConfig_ != null;
@@ -315,7 +329,9 @@ public final class DetectIntentRequest extends com.google.protobuf.GeneratedMess
    * configured, no output audio is generated.
    * </pre>
    *
-   * <code>.google.cloud.dialogflow.v2.OutputAudioConfig output_audio_config = 4;</code>
+   * <code>
+   * .google.cloud.dialogflow.v2.OutputAudioConfig output_audio_config = 4 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   public com.google.cloud.dialogflow.v2.OutputAudioConfig getOutputAudioConfig() {
     return outputAudioConfig_ == null
@@ -331,7 +347,9 @@ public final class DetectIntentRequest extends com.google.protobuf.GeneratedMess
    * configured, no output audio is generated.
    * </pre>
    *
-   * <code>.google.cloud.dialogflow.v2.OutputAudioConfig output_audio_config = 4;</code>
+   * <code>
+   * .google.cloud.dialogflow.v2.OutputAudioConfig output_audio_config = 4 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   public com.google.cloud.dialogflow.v2.OutputAudioConfigOrBuilder getOutputAudioConfigOrBuilder() {
     return getOutputAudioConfig();
@@ -348,7 +366,7 @@ public final class DetectIntentRequest extends com.google.protobuf.GeneratedMess
    * A single request can contain up to 1 minute of speech audio data.
    * </pre>
    *
-   * <code>bytes input_audio = 5;</code>
+   * <code>bytes input_audio = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   public com.google.protobuf.ByteString getInputAudio() {
     return inputAudio_;
@@ -783,7 +801,7 @@ public final class DetectIntentRequest extends com.google.protobuf.GeneratedMess
      * ID must not exceed 36 bytes.
      * </pre>
      *
-     * <code>string session = 1;</code>
+     * <code>string session = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public java.lang.String getSession() {
       java.lang.Object ref = session_;
@@ -807,7 +825,7 @@ public final class DetectIntentRequest extends com.google.protobuf.GeneratedMess
      * ID must not exceed 36 bytes.
      * </pre>
      *
-     * <code>string session = 1;</code>
+     * <code>string session = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public com.google.protobuf.ByteString getSessionBytes() {
       java.lang.Object ref = session_;
@@ -831,7 +849,7 @@ public final class DetectIntentRequest extends com.google.protobuf.GeneratedMess
      * ID must not exceed 36 bytes.
      * </pre>
      *
-     * <code>string session = 1;</code>
+     * <code>string session = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder setSession(java.lang.String value) {
       if (value == null) {
@@ -853,7 +871,7 @@ public final class DetectIntentRequest extends com.google.protobuf.GeneratedMess
      * ID must not exceed 36 bytes.
      * </pre>
      *
-     * <code>string session = 1;</code>
+     * <code>string session = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder clearSession() {
 
@@ -872,7 +890,7 @@ public final class DetectIntentRequest extends com.google.protobuf.GeneratedMess
      * ID must not exceed 36 bytes.
      * </pre>
      *
-     * <code>string session = 1;</code>
+     * <code>string session = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder setSessionBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -898,7 +916,9 @@ public final class DetectIntentRequest extends com.google.protobuf.GeneratedMess
      * Optional. The parameters of this query.
      * </pre>
      *
-     * <code>.google.cloud.dialogflow.v2.QueryParameters query_params = 2;</code>
+     * <code>
+     * .google.cloud.dialogflow.v2.QueryParameters query_params = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public boolean hasQueryParams() {
       return queryParamsBuilder_ != null || queryParams_ != null;
@@ -910,7 +930,9 @@ public final class DetectIntentRequest extends com.google.protobuf.GeneratedMess
      * Optional. The parameters of this query.
      * </pre>
      *
-     * <code>.google.cloud.dialogflow.v2.QueryParameters query_params = 2;</code>
+     * <code>
+     * .google.cloud.dialogflow.v2.QueryParameters query_params = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public com.google.cloud.dialogflow.v2.QueryParameters getQueryParams() {
       if (queryParamsBuilder_ == null) {
@@ -928,7 +950,9 @@ public final class DetectIntentRequest extends com.google.protobuf.GeneratedMess
      * Optional. The parameters of this query.
      * </pre>
      *
-     * <code>.google.cloud.dialogflow.v2.QueryParameters query_params = 2;</code>
+     * <code>
+     * .google.cloud.dialogflow.v2.QueryParameters query_params = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder setQueryParams(com.google.cloud.dialogflow.v2.QueryParameters value) {
       if (queryParamsBuilder_ == null) {
@@ -950,7 +974,9 @@ public final class DetectIntentRequest extends com.google.protobuf.GeneratedMess
      * Optional. The parameters of this query.
      * </pre>
      *
-     * <code>.google.cloud.dialogflow.v2.QueryParameters query_params = 2;</code>
+     * <code>
+     * .google.cloud.dialogflow.v2.QueryParameters query_params = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder setQueryParams(
         com.google.cloud.dialogflow.v2.QueryParameters.Builder builderForValue) {
@@ -970,7 +996,9 @@ public final class DetectIntentRequest extends com.google.protobuf.GeneratedMess
      * Optional. The parameters of this query.
      * </pre>
      *
-     * <code>.google.cloud.dialogflow.v2.QueryParameters query_params = 2;</code>
+     * <code>
+     * .google.cloud.dialogflow.v2.QueryParameters query_params = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder mergeQueryParams(com.google.cloud.dialogflow.v2.QueryParameters value) {
       if (queryParamsBuilder_ == null) {
@@ -996,7 +1024,9 @@ public final class DetectIntentRequest extends com.google.protobuf.GeneratedMess
      * Optional. The parameters of this query.
      * </pre>
      *
-     * <code>.google.cloud.dialogflow.v2.QueryParameters query_params = 2;</code>
+     * <code>
+     * .google.cloud.dialogflow.v2.QueryParameters query_params = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder clearQueryParams() {
       if (queryParamsBuilder_ == null) {
@@ -1016,7 +1046,9 @@ public final class DetectIntentRequest extends com.google.protobuf.GeneratedMess
      * Optional. The parameters of this query.
      * </pre>
      *
-     * <code>.google.cloud.dialogflow.v2.QueryParameters query_params = 2;</code>
+     * <code>
+     * .google.cloud.dialogflow.v2.QueryParameters query_params = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public com.google.cloud.dialogflow.v2.QueryParameters.Builder getQueryParamsBuilder() {
 
@@ -1030,7 +1062,9 @@ public final class DetectIntentRequest extends com.google.protobuf.GeneratedMess
      * Optional. The parameters of this query.
      * </pre>
      *
-     * <code>.google.cloud.dialogflow.v2.QueryParameters query_params = 2;</code>
+     * <code>
+     * .google.cloud.dialogflow.v2.QueryParameters query_params = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public com.google.cloud.dialogflow.v2.QueryParametersOrBuilder getQueryParamsOrBuilder() {
       if (queryParamsBuilder_ != null) {
@@ -1048,7 +1082,9 @@ public final class DetectIntentRequest extends com.google.protobuf.GeneratedMess
      * Optional. The parameters of this query.
      * </pre>
      *
-     * <code>.google.cloud.dialogflow.v2.QueryParameters query_params = 2;</code>
+     * <code>
+     * .google.cloud.dialogflow.v2.QueryParameters query_params = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.dialogflow.v2.QueryParameters,
@@ -1084,7 +1120,9 @@ public final class DetectIntentRequest extends com.google.protobuf.GeneratedMess
      * 3.  an event that specifies which intent to trigger.
      * </pre>
      *
-     * <code>.google.cloud.dialogflow.v2.QueryInput query_input = 3;</code>
+     * <code>
+     * .google.cloud.dialogflow.v2.QueryInput query_input = 3 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public boolean hasQueryInput() {
       return queryInputBuilder_ != null || queryInput_ != null;
@@ -1100,7 +1138,9 @@ public final class DetectIntentRequest extends com.google.protobuf.GeneratedMess
      * 3.  an event that specifies which intent to trigger.
      * </pre>
      *
-     * <code>.google.cloud.dialogflow.v2.QueryInput query_input = 3;</code>
+     * <code>
+     * .google.cloud.dialogflow.v2.QueryInput query_input = 3 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public com.google.cloud.dialogflow.v2.QueryInput getQueryInput() {
       if (queryInputBuilder_ == null) {
@@ -1122,7 +1162,9 @@ public final class DetectIntentRequest extends com.google.protobuf.GeneratedMess
      * 3.  an event that specifies which intent to trigger.
      * </pre>
      *
-     * <code>.google.cloud.dialogflow.v2.QueryInput query_input = 3;</code>
+     * <code>
+     * .google.cloud.dialogflow.v2.QueryInput query_input = 3 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder setQueryInput(com.google.cloud.dialogflow.v2.QueryInput value) {
       if (queryInputBuilder_ == null) {
@@ -1148,7 +1190,9 @@ public final class DetectIntentRequest extends com.google.protobuf.GeneratedMess
      * 3.  an event that specifies which intent to trigger.
      * </pre>
      *
-     * <code>.google.cloud.dialogflow.v2.QueryInput query_input = 3;</code>
+     * <code>
+     * .google.cloud.dialogflow.v2.QueryInput query_input = 3 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder setQueryInput(
         com.google.cloud.dialogflow.v2.QueryInput.Builder builderForValue) {
@@ -1172,7 +1216,9 @@ public final class DetectIntentRequest extends com.google.protobuf.GeneratedMess
      * 3.  an event that specifies which intent to trigger.
      * </pre>
      *
-     * <code>.google.cloud.dialogflow.v2.QueryInput query_input = 3;</code>
+     * <code>
+     * .google.cloud.dialogflow.v2.QueryInput query_input = 3 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder mergeQueryInput(com.google.cloud.dialogflow.v2.QueryInput value) {
       if (queryInputBuilder_ == null) {
@@ -1202,7 +1248,9 @@ public final class DetectIntentRequest extends com.google.protobuf.GeneratedMess
      * 3.  an event that specifies which intent to trigger.
      * </pre>
      *
-     * <code>.google.cloud.dialogflow.v2.QueryInput query_input = 3;</code>
+     * <code>
+     * .google.cloud.dialogflow.v2.QueryInput query_input = 3 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder clearQueryInput() {
       if (queryInputBuilder_ == null) {
@@ -1226,7 +1274,9 @@ public final class DetectIntentRequest extends com.google.protobuf.GeneratedMess
      * 3.  an event that specifies which intent to trigger.
      * </pre>
      *
-     * <code>.google.cloud.dialogflow.v2.QueryInput query_input = 3;</code>
+     * <code>
+     * .google.cloud.dialogflow.v2.QueryInput query_input = 3 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public com.google.cloud.dialogflow.v2.QueryInput.Builder getQueryInputBuilder() {
 
@@ -1244,7 +1294,9 @@ public final class DetectIntentRequest extends com.google.protobuf.GeneratedMess
      * 3.  an event that specifies which intent to trigger.
      * </pre>
      *
-     * <code>.google.cloud.dialogflow.v2.QueryInput query_input = 3;</code>
+     * <code>
+     * .google.cloud.dialogflow.v2.QueryInput query_input = 3 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public com.google.cloud.dialogflow.v2.QueryInputOrBuilder getQueryInputOrBuilder() {
       if (queryInputBuilder_ != null) {
@@ -1266,7 +1318,9 @@ public final class DetectIntentRequest extends com.google.protobuf.GeneratedMess
      * 3.  an event that specifies which intent to trigger.
      * </pre>
      *
-     * <code>.google.cloud.dialogflow.v2.QueryInput query_input = 3;</code>
+     * <code>
+     * .google.cloud.dialogflow.v2.QueryInput query_input = 3 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.dialogflow.v2.QueryInput,
@@ -1300,7 +1354,9 @@ public final class DetectIntentRequest extends com.google.protobuf.GeneratedMess
      * configured, no output audio is generated.
      * </pre>
      *
-     * <code>.google.cloud.dialogflow.v2.OutputAudioConfig output_audio_config = 4;</code>
+     * <code>
+     * .google.cloud.dialogflow.v2.OutputAudioConfig output_audio_config = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public boolean hasOutputAudioConfig() {
       return outputAudioConfigBuilder_ != null || outputAudioConfig_ != null;
@@ -1314,7 +1370,9 @@ public final class DetectIntentRequest extends com.google.protobuf.GeneratedMess
      * configured, no output audio is generated.
      * </pre>
      *
-     * <code>.google.cloud.dialogflow.v2.OutputAudioConfig output_audio_config = 4;</code>
+     * <code>
+     * .google.cloud.dialogflow.v2.OutputAudioConfig output_audio_config = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public com.google.cloud.dialogflow.v2.OutputAudioConfig getOutputAudioConfig() {
       if (outputAudioConfigBuilder_ == null) {
@@ -1334,7 +1392,9 @@ public final class DetectIntentRequest extends com.google.protobuf.GeneratedMess
      * configured, no output audio is generated.
      * </pre>
      *
-     * <code>.google.cloud.dialogflow.v2.OutputAudioConfig output_audio_config = 4;</code>
+     * <code>
+     * .google.cloud.dialogflow.v2.OutputAudioConfig output_audio_config = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder setOutputAudioConfig(com.google.cloud.dialogflow.v2.OutputAudioConfig value) {
       if (outputAudioConfigBuilder_ == null) {
@@ -1358,7 +1418,9 @@ public final class DetectIntentRequest extends com.google.protobuf.GeneratedMess
      * configured, no output audio is generated.
      * </pre>
      *
-     * <code>.google.cloud.dialogflow.v2.OutputAudioConfig output_audio_config = 4;</code>
+     * <code>
+     * .google.cloud.dialogflow.v2.OutputAudioConfig output_audio_config = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder setOutputAudioConfig(
         com.google.cloud.dialogflow.v2.OutputAudioConfig.Builder builderForValue) {
@@ -1380,7 +1442,9 @@ public final class DetectIntentRequest extends com.google.protobuf.GeneratedMess
      * configured, no output audio is generated.
      * </pre>
      *
-     * <code>.google.cloud.dialogflow.v2.OutputAudioConfig output_audio_config = 4;</code>
+     * <code>
+     * .google.cloud.dialogflow.v2.OutputAudioConfig output_audio_config = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder mergeOutputAudioConfig(com.google.cloud.dialogflow.v2.OutputAudioConfig value) {
       if (outputAudioConfigBuilder_ == null) {
@@ -1408,7 +1472,9 @@ public final class DetectIntentRequest extends com.google.protobuf.GeneratedMess
      * configured, no output audio is generated.
      * </pre>
      *
-     * <code>.google.cloud.dialogflow.v2.OutputAudioConfig output_audio_config = 4;</code>
+     * <code>
+     * .google.cloud.dialogflow.v2.OutputAudioConfig output_audio_config = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder clearOutputAudioConfig() {
       if (outputAudioConfigBuilder_ == null) {
@@ -1430,7 +1496,9 @@ public final class DetectIntentRequest extends com.google.protobuf.GeneratedMess
      * configured, no output audio is generated.
      * </pre>
      *
-     * <code>.google.cloud.dialogflow.v2.OutputAudioConfig output_audio_config = 4;</code>
+     * <code>
+     * .google.cloud.dialogflow.v2.OutputAudioConfig output_audio_config = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public com.google.cloud.dialogflow.v2.OutputAudioConfig.Builder getOutputAudioConfigBuilder() {
 
@@ -1446,7 +1514,9 @@ public final class DetectIntentRequest extends com.google.protobuf.GeneratedMess
      * configured, no output audio is generated.
      * </pre>
      *
-     * <code>.google.cloud.dialogflow.v2.OutputAudioConfig output_audio_config = 4;</code>
+     * <code>
+     * .google.cloud.dialogflow.v2.OutputAudioConfig output_audio_config = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public com.google.cloud.dialogflow.v2.OutputAudioConfigOrBuilder
         getOutputAudioConfigOrBuilder() {
@@ -1467,7 +1537,9 @@ public final class DetectIntentRequest extends com.google.protobuf.GeneratedMess
      * configured, no output audio is generated.
      * </pre>
      *
-     * <code>.google.cloud.dialogflow.v2.OutputAudioConfig output_audio_config = 4;</code>
+     * <code>
+     * .google.cloud.dialogflow.v2.OutputAudioConfig output_audio_config = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.dialogflow.v2.OutputAudioConfig,
@@ -1496,7 +1568,7 @@ public final class DetectIntentRequest extends com.google.protobuf.GeneratedMess
      * A single request can contain up to 1 minute of speech audio data.
      * </pre>
      *
-     * <code>bytes input_audio = 5;</code>
+     * <code>bytes input_audio = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public com.google.protobuf.ByteString getInputAudio() {
       return inputAudio_;
@@ -1510,7 +1582,7 @@ public final class DetectIntentRequest extends com.google.protobuf.GeneratedMess
      * A single request can contain up to 1 minute of speech audio data.
      * </pre>
      *
-     * <code>bytes input_audio = 5;</code>
+     * <code>bytes input_audio = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public Builder setInputAudio(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -1530,7 +1602,7 @@ public final class DetectIntentRequest extends com.google.protobuf.GeneratedMess
      * A single request can contain up to 1 minute of speech audio data.
      * </pre>
      *
-     * <code>bytes input_audio = 5;</code>
+     * <code>bytes input_audio = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public Builder clearInputAudio() {
 

@@ -13,7 +13,7 @@ public interface LogSinkOrBuilder
    *
    * <pre>
    * Required. The client-assigned sink identifier, unique within the
-   * project. Example: `"my-syslog-errors-to-pubsub"`.  Sink identifiers are
+   * project. Example: `"my-syslog-errors-to-pubsub"`. Sink identifiers are
    * limited to 100 characters and can include only the following characters:
    * upper and lower-case alphanumeric characters, underscores, hyphens, and
    * periods.
@@ -27,7 +27,7 @@ public interface LogSinkOrBuilder
    *
    * <pre>
    * Required. The client-assigned sink identifier, unique within the
-   * project. Example: `"my-syslog-errors-to-pubsub"`.  Sink identifiers are
+   * project. Example: `"my-syslog-errors-to-pubsub"`. Sink identifiers are
    * limited to 100 characters and can include only the following characters:
    * upper and lower-case alphanumeric characters, underscores, hyphens, and
    * periods.
@@ -47,8 +47,8 @@ public interface LogSinkOrBuilder
    *     "pubsub.googleapis.com/projects/[PROJECT_ID]/topics/[TOPIC_ID]"
    * The sink's `writer_identity`, set when the sink is created, must
    * have permission to write to the destination or else the log
-   * entries are not exported.  For more information, see
-   * [Exporting Logs With Sinks](/logging/docs/api/tasks/exporting-logs).
+   * entries are not exported. For more information, see
+   * [Exporting Logs with Sinks](/logging/docs/api/tasks/exporting-logs).
    * </pre>
    *
    * <code>string destination = 3;</code>
@@ -64,8 +64,8 @@ public interface LogSinkOrBuilder
    *     "pubsub.googleapis.com/projects/[PROJECT_ID]/topics/[TOPIC_ID]"
    * The sink's `writer_identity`, set when the sink is created, must
    * have permission to write to the destination or else the log
-   * entries are not exported.  For more information, see
-   * [Exporting Logs With Sinks](/logging/docs/api/tasks/exporting-logs).
+   * entries are not exported. For more information, see
+   * [Exporting Logs with Sinks](/logging/docs/api/tasks/exporting-logs).
    * </pre>
    *
    * <code>string destination = 3;</code>
@@ -76,10 +76,9 @@ public interface LogSinkOrBuilder
    *
    *
    * <pre>
-   * Optional.
-   * An [advanced logs filter](/logging/docs/view/advanced_filters).  The only
+   * Optional. An [advanced logs filter](/logging/docs/view/advanced-queries). The only
    * exported log entries are those that are in the resource owning the sink and
-   * that match the filter.  For example:
+   * that match the filter. For example:
    *     logName="projects/[PROJECT_ID]/logs/[LOG_ID]" AND severity&gt;=ERROR
    * </pre>
    *
@@ -90,10 +89,9 @@ public interface LogSinkOrBuilder
    *
    *
    * <pre>
-   * Optional.
-   * An [advanced logs filter](/logging/docs/view/advanced_filters).  The only
+   * Optional. An [advanced logs filter](/logging/docs/view/advanced-queries). The only
    * exported log entries are those that are in the resource owning the sink and
-   * that match the filter.  For example:
+   * that match the filter. For example:
    *     logName="projects/[PROJECT_ID]/logs/[LOG_ID]" AND severity&gt;=ERROR
    * </pre>
    *
@@ -106,7 +104,7 @@ public interface LogSinkOrBuilder
    *
    * <pre>
    * Deprecated. The log entry format to use for this sink's exported log
-   * entries.  The v2 format is used by default and cannot be changed.
+   * entries. The v2 format is used by default and cannot be changed.
    * </pre>
    *
    * <code>.google.logging.v2.LogSink.VersionFormat output_version_format = 6 [deprecated = true];
@@ -119,7 +117,7 @@ public interface LogSinkOrBuilder
    *
    * <pre>
    * Deprecated. The log entry format to use for this sink's exported log
-   * entries.  The v2 format is used by default and cannot be changed.
+   * entries. The v2 format is used by default and cannot be changed.
    * </pre>
    *
    * <code>.google.logging.v2.LogSink.VersionFormat output_version_format = 6 [deprecated = true];
@@ -133,16 +131,16 @@ public interface LogSinkOrBuilder
    *
    * <pre>
    * Output only. An IAM identity&amp;mdash;a service account or group&amp;mdash;under
-   * which Logging writes the exported log entries to the sink's
-   * destination.  This field is set by
-   * [sinks.create](/logging/docs/api/reference/rest/v2/projects.sinks/create)
+   * which Logging writes the exported log entries to the sink's destination.
+   * This field is set by
+   * [sinks.create][google.logging.v2.ConfigServiceV2.CreateSink]
    * and
-   * [sinks.update](/logging/docs/api/reference/rest/v2/projects.sinks/update),
-   * based on the setting of `unique_writer_identity` in those methods.
+   * [sinks.update][google.logging.v2.ConfigServiceV2.UpdateSink]
+   * based on the value of `unique_writer_identity` in those methods.
    * Until you grant this identity write-access to the destination, log entry
    * exports from this sink will fail. For more information,
-   * see [Granting access for a
-   * resource](/iam/docs/granting-roles-to-service-accounts#granting_access_to_a_service_account_for_a_resource).
+   * see [Granting Access for a
+   * Resource](/iam/docs/granting-roles-to-service-accounts#granting_access_to_a_service_account_for_a_resource).
    * Consult the destination service's documentation to determine the
    * appropriate IAM roles to assign to the identity.
    * </pre>
@@ -155,16 +153,16 @@ public interface LogSinkOrBuilder
    *
    * <pre>
    * Output only. An IAM identity&amp;mdash;a service account or group&amp;mdash;under
-   * which Logging writes the exported log entries to the sink's
-   * destination.  This field is set by
-   * [sinks.create](/logging/docs/api/reference/rest/v2/projects.sinks/create)
+   * which Logging writes the exported log entries to the sink's destination.
+   * This field is set by
+   * [sinks.create][google.logging.v2.ConfigServiceV2.CreateSink]
    * and
-   * [sinks.update](/logging/docs/api/reference/rest/v2/projects.sinks/update),
-   * based on the setting of `unique_writer_identity` in those methods.
+   * [sinks.update][google.logging.v2.ConfigServiceV2.UpdateSink]
+   * based on the value of `unique_writer_identity` in those methods.
    * Until you grant this identity write-access to the destination, log entry
    * exports from this sink will fail. For more information,
-   * see [Granting access for a
-   * resource](/iam/docs/granting-roles-to-service-accounts#granting_access_to_a_service_account_for_a_resource).
+   * see [Granting Access for a
+   * Resource](/iam/docs/granting-roles-to-service-accounts#granting_access_to_a_service_account_for_a_resource).
    * Consult the destination service's documentation to determine the
    * appropriate IAM roles to assign to the identity.
    * </pre>
@@ -199,7 +197,106 @@ public interface LogSinkOrBuilder
    *
    *
    * <pre>
-   * Deprecated. This field is ignored when creating or updating sinks.
+   * Optional. Options that affect sinks exporting data to BigQuery.
+   * </pre>
+   *
+   * <code>.google.logging.v2.BigQueryOptions bigquery_options = 12;</code>
+   */
+  boolean hasBigqueryOptions();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Options that affect sinks exporting data to BigQuery.
+   * </pre>
+   *
+   * <code>.google.logging.v2.BigQueryOptions bigquery_options = 12;</code>
+   */
+  com.google.logging.v2.BigQueryOptions getBigqueryOptions();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Options that affect sinks exporting data to BigQuery.
+   * </pre>
+   *
+   * <code>.google.logging.v2.BigQueryOptions bigquery_options = 12;</code>
+   */
+  com.google.logging.v2.BigQueryOptionsOrBuilder getBigqueryOptionsOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The creation timestamp of the sink.
+   * This field may not be present for older sinks.
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp create_time = 13;</code>
+   */
+  boolean hasCreateTime();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The creation timestamp of the sink.
+   * This field may not be present for older sinks.
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp create_time = 13;</code>
+   */
+  com.google.protobuf.Timestamp getCreateTime();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The creation timestamp of the sink.
+   * This field may not be present for older sinks.
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp create_time = 13;</code>
+   */
+  com.google.protobuf.TimestampOrBuilder getCreateTimeOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The last update timestamp of the sink.
+   * This field may not be present for older sinks.
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp update_time = 14;</code>
+   */
+  boolean hasUpdateTime();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The last update timestamp of the sink.
+   * This field may not be present for older sinks.
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp update_time = 14;</code>
+   */
+  com.google.protobuf.Timestamp getUpdateTime();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The last update timestamp of the sink.
+   * This field may not be present for older sinks.
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp update_time = 14;</code>
+   */
+  com.google.protobuf.TimestampOrBuilder getUpdateTimeOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Do not use. This field is ignored.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp start_time = 10 [deprecated = true];</code>
@@ -210,7 +307,7 @@ public interface LogSinkOrBuilder
    *
    *
    * <pre>
-   * Deprecated. This field is ignored when creating or updating sinks.
+   * Do not use. This field is ignored.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp start_time = 10 [deprecated = true];</code>
@@ -221,7 +318,7 @@ public interface LogSinkOrBuilder
    *
    *
    * <pre>
-   * Deprecated. This field is ignored when creating or updating sinks.
+   * Do not use. This field is ignored.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp start_time = 10 [deprecated = true];</code>
@@ -233,7 +330,7 @@ public interface LogSinkOrBuilder
    *
    *
    * <pre>
-   * Deprecated. This field is ignored when creating or updating sinks.
+   * Do not use. This field is ignored.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp end_time = 11 [deprecated = true];</code>
@@ -244,7 +341,7 @@ public interface LogSinkOrBuilder
    *
    *
    * <pre>
-   * Deprecated. This field is ignored when creating or updating sinks.
+   * Do not use. This field is ignored.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp end_time = 11 [deprecated = true];</code>
@@ -255,11 +352,13 @@ public interface LogSinkOrBuilder
    *
    *
    * <pre>
-   * Deprecated. This field is ignored when creating or updating sinks.
+   * Do not use. This field is ignored.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp end_time = 11 [deprecated = true];</code>
    */
   @java.lang.Deprecated
   com.google.protobuf.TimestampOrBuilder getEndTimeOrBuilder();
+
+  public com.google.logging.v2.LogSink.OptionsCase getOptionsCase();
 }

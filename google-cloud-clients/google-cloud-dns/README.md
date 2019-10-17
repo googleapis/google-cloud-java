@@ -22,16 +22,16 @@ If you are using Maven, add this to your pom.xml file
 <dependency>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-dns</artifactId>
-  <version>0.102.0-alpha</version>
+  <version>0.116.0-alpha</version>
 </dependency>
 ```
 If you are using Gradle, add this to your dependencies
 ```Groovy
-compile 'com.google.cloud:google-cloud-dns:0.102.0-alpha'
+compile 'com.google.cloud:google-cloud-dns:0.116.0-alpha'
 ```
 If you are using SBT, add this to your dependencies
 ```Scala
-libraryDependencies += "com.google.cloud" % "google-cloud-dns" % "0.102.0-alpha"
+libraryDependencies += "com.google.cloud" % "google-cloud-dns" % "0.116.0-alpha"
 ```
 [//]: # ({x-version-update-end})
 
@@ -41,7 +41,7 @@ Example Application
 [`DnsExample`](../../google-cloud-examples/src/main/java/com/google/cloud/examples/dns/DnsExample.java)
 is a simple command line interface that provides some of Google Cloud DNS's functionality.  Read
 more about using the application on the
-[`DnsExample` docs page](https://googleapis.github.io/google-cloud-java/apidocs/?com/google/cloud/examples/dns/DnsExample.html).
+[`DnsExample` docs page](https://googleapis.dev/java/google-cloud-clients/latest/index.html?com/google/cloud/examples/dns/DnsExample.html).
 
 Authentication
 --------------
@@ -392,4 +392,4 @@ Apache 2.0 - See [LICENSE] for more information.
 [cloud-dns]: https://cloud.google.com/dns/
 [cloud-dns-activate]: https://cloud.google.com/dns/getting-started#prerequisites
 [dns-product-docs]: https://cloud.google.com/dns/docs/
-[dns-client-lib-docs]: https://googleapis.github.io/google-cloud-java/google-cloud-clients/apidocs/index.html?com/google/cloud/dns/package-summary.html
+[dns-client-lib-docs]: https://googleapis.dev/java/google-cloud-clients/latest/index.html?com/google/cloud/dns/package-summary.html

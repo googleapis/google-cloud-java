@@ -37,22 +37,20 @@ public interface ScanConfigOrBuilder
    *
    *
    * <pre>
-   * Required.
-   * The user provided display name of the ScanConfig.
+   * Required. The user provided display name of the ScanConfig.
    * </pre>
    *
-   * <code>string display_name = 2;</code>
+   * <code>string display_name = 2 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   java.lang.String getDisplayName();
   /**
    *
    *
    * <pre>
-   * Required.
-   * The user provided display name of the ScanConfig.
+   * Required. The user provided display name of the ScanConfig.
    * </pre>
    *
-   * <code>string display_name = 2;</code>
+   * <code>string display_name = 2 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   com.google.protobuf.ByteString getDisplayNameBytes();
 
@@ -74,44 +72,40 @@ public interface ScanConfigOrBuilder
    *
    *
    * <pre>
-   * Required.
-   * The starting URLs from which the scanner finds site pages.
+   * Required. The starting URLs from which the scanner finds site pages.
    * </pre>
    *
-   * <code>repeated string starting_urls = 4;</code>
+   * <code>repeated string starting_urls = 4 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   java.util.List<java.lang.String> getStartingUrlsList();
   /**
    *
    *
    * <pre>
-   * Required.
-   * The starting URLs from which the scanner finds site pages.
+   * Required. The starting URLs from which the scanner finds site pages.
    * </pre>
    *
-   * <code>repeated string starting_urls = 4;</code>
+   * <code>repeated string starting_urls = 4 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   int getStartingUrlsCount();
   /**
    *
    *
    * <pre>
-   * Required.
-   * The starting URLs from which the scanner finds site pages.
+   * Required. The starting URLs from which the scanner finds site pages.
    * </pre>
    *
-   * <code>repeated string starting_urls = 4;</code>
+   * <code>repeated string starting_urls = 4 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   java.lang.String getStartingUrls(int index);
   /**
    *
    *
    * <pre>
-   * Required.
-   * The starting URLs from which the scanner finds site pages.
+   * Required. The starting URLs from which the scanner finds site pages.
    * </pre>
    *
-   * <code>repeated string starting_urls = 4;</code>
+   * <code>repeated string starting_urls = 4 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   com.google.protobuf.ByteString getStartingUrlsBytes(int index);
 

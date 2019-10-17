@@ -83,9 +83,7 @@ public class OsLoginServiceStubSettings extends StubSettings<OsLoginServiceStubS
   private static final ImmutableList<String> DEFAULT_SERVICE_SCOPES =
       ImmutableList.<String>builder()
           .add("https://www.googleapis.com/auth/cloud-platform")
-          .add("https://www.googleapis.com/auth/cloud-platform.read-only")
           .add("https://www.googleapis.com/auth/compute")
-          .add("https://www.googleapis.com/auth/compute.readonly")
           .build();
 
   private final UnaryCallSettings<DeletePosixAccountRequest, Empty> deletePosixAccountSettings;
@@ -162,7 +160,8 @@ public class OsLoginServiceStubSettings extends StubSettings<OsLoginServiceStubS
 
   /** Returns a builder for the default ChannelProvider for this service. */
   public static InstantiatingGrpcChannelProvider.Builder defaultGrpcTransportProviderBuilder() {
-    return InstantiatingGrpcChannelProvider.newBuilder();
+    return InstantiatingGrpcChannelProvider.newBuilder()
+        .setMaxInboundMessageSize(Integer.MAX_VALUE);
   }
 
   public static TransportChannelProvider defaultTransportChannelProvider() {

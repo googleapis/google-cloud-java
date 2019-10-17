@@ -132,7 +132,7 @@ public final class ClusterSelector extends com.google.protobuf.GeneratedMessageV
    * is used.
    * </pre>
    *
-   * <code>string zone = 1;</code>
+   * <code>string zone = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   public java.lang.String getZone() {
     java.lang.Object ref = zone_;
@@ -155,7 +155,7 @@ public final class ClusterSelector extends com.google.protobuf.GeneratedMessageV
    * is used.
    * </pre>
    *
-   * <code>string zone = 1;</code>
+   * <code>string zone = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   public com.google.protobuf.ByteString getZoneBytes() {
     java.lang.Object ref = zone_;
@@ -204,7 +204,8 @@ public final class ClusterSelector extends com.google.protobuf.GeneratedMessageV
    * to match.
    * </pre>
    *
-   * <code>map&lt;string, string&gt; cluster_labels = 2;</code>
+   * <code>map&lt;string, string&gt; cluster_labels = 2 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   public boolean containsClusterLabels(java.lang.String key) {
     if (key == null) {
@@ -225,7 +226,8 @@ public final class ClusterSelector extends com.google.protobuf.GeneratedMessageV
    * to match.
    * </pre>
    *
-   * <code>map&lt;string, string&gt; cluster_labels = 2;</code>
+   * <code>map&lt;string, string&gt; cluster_labels = 2 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   public java.util.Map<java.lang.String, java.lang.String> getClusterLabelsMap() {
     return internalGetClusterLabels().getMap();
@@ -238,7 +240,8 @@ public final class ClusterSelector extends com.google.protobuf.GeneratedMessageV
    * to match.
    * </pre>
    *
-   * <code>map&lt;string, string&gt; cluster_labels = 2;</code>
+   * <code>map&lt;string, string&gt; cluster_labels = 2 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   public java.lang.String getClusterLabelsOrDefault(
       java.lang.String key, java.lang.String defaultValue) {
@@ -256,7 +259,8 @@ public final class ClusterSelector extends com.google.protobuf.GeneratedMessageV
    * to match.
    * </pre>
    *
-   * <code>map&lt;string, string&gt; cluster_labels = 2;</code>
+   * <code>map&lt;string, string&gt; cluster_labels = 2 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   public java.lang.String getClusterLabelsOrThrow(java.lang.String key) {
     if (key == null) {
@@ -642,7 +646,7 @@ public final class ClusterSelector extends com.google.protobuf.GeneratedMessageV
      * is used.
      * </pre>
      *
-     * <code>string zone = 1;</code>
+     * <code>string zone = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public java.lang.String getZone() {
       java.lang.Object ref = zone_;
@@ -665,7 +669,7 @@ public final class ClusterSelector extends com.google.protobuf.GeneratedMessageV
      * is used.
      * </pre>
      *
-     * <code>string zone = 1;</code>
+     * <code>string zone = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public com.google.protobuf.ByteString getZoneBytes() {
       java.lang.Object ref = zone_;
@@ -688,7 +692,7 @@ public final class ClusterSelector extends com.google.protobuf.GeneratedMessageV
      * is used.
      * </pre>
      *
-     * <code>string zone = 1;</code>
+     * <code>string zone = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public Builder setZone(java.lang.String value) {
       if (value == null) {
@@ -709,7 +713,7 @@ public final class ClusterSelector extends com.google.protobuf.GeneratedMessageV
      * is used.
      * </pre>
      *
-     * <code>string zone = 1;</code>
+     * <code>string zone = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public Builder clearZone() {
 
@@ -727,7 +731,7 @@ public final class ClusterSelector extends com.google.protobuf.GeneratedMessageV
      * is used.
      * </pre>
      *
-     * <code>string zone = 1;</code>
+     * <code>string zone = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public Builder setZoneBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -776,7 +780,8 @@ public final class ClusterSelector extends com.google.protobuf.GeneratedMessageV
      * to match.
      * </pre>
      *
-     * <code>map&lt;string, string&gt; cluster_labels = 2;</code>
+     * <code>map&lt;string, string&gt; cluster_labels = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public boolean containsClusterLabels(java.lang.String key) {
       if (key == null) {
@@ -797,7 +802,8 @@ public final class ClusterSelector extends com.google.protobuf.GeneratedMessageV
      * to match.
      * </pre>
      *
-     * <code>map&lt;string, string&gt; cluster_labels = 2;</code>
+     * <code>map&lt;string, string&gt; cluster_labels = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public java.util.Map<java.lang.String, java.lang.String> getClusterLabelsMap() {
       return internalGetClusterLabels().getMap();
@@ -810,7 +816,8 @@ public final class ClusterSelector extends com.google.protobuf.GeneratedMessageV
      * to match.
      * </pre>
      *
-     * <code>map&lt;string, string&gt; cluster_labels = 2;</code>
+     * <code>map&lt;string, string&gt; cluster_labels = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public java.lang.String getClusterLabelsOrDefault(
         java.lang.String key, java.lang.String defaultValue) {
@@ -828,7 +835,8 @@ public final class ClusterSelector extends com.google.protobuf.GeneratedMessageV
      * to match.
      * </pre>
      *
-     * <code>map&lt;string, string&gt; cluster_labels = 2;</code>
+     * <code>map&lt;string, string&gt; cluster_labels = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public java.lang.String getClusterLabelsOrThrow(java.lang.String key) {
       if (key == null) {
@@ -853,7 +861,8 @@ public final class ClusterSelector extends com.google.protobuf.GeneratedMessageV
      * to match.
      * </pre>
      *
-     * <code>map&lt;string, string&gt; cluster_labels = 2;</code>
+     * <code>map&lt;string, string&gt; cluster_labels = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder removeClusterLabels(java.lang.String key) {
       if (key == null) {
@@ -875,7 +884,8 @@ public final class ClusterSelector extends com.google.protobuf.GeneratedMessageV
      * to match.
      * </pre>
      *
-     * <code>map&lt;string, string&gt; cluster_labels = 2;</code>
+     * <code>map&lt;string, string&gt; cluster_labels = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder putClusterLabels(java.lang.String key, java.lang.String value) {
       if (key == null) {
@@ -895,7 +905,8 @@ public final class ClusterSelector extends com.google.protobuf.GeneratedMessageV
      * to match.
      * </pre>
      *
-     * <code>map&lt;string, string&gt; cluster_labels = 2;</code>
+     * <code>map&lt;string, string&gt; cluster_labels = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder putAllClusterLabels(java.util.Map<java.lang.String, java.lang.String> values) {
       internalGetMutableClusterLabels().getMutableMap().putAll(values);

@@ -1104,12 +1104,9 @@ public final class Product extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * The category for the product identified by the reference image. This should
-   * be either "homegoods-v2", "apparel-v2", "toys-v2", or "packagedgoods-v1".
-   * The legacy categories "homegoods", "apparel", and "toys" are still
-   * supported but will be deprecated. For new products, please use
-   * "homegoods-v2", "apparel-v2", or "toys-v2" for better product search
-   * accuracy. It is recommended to migrate existing products to these
-   * categories as well.
+   * be either "homegoods-v2", "apparel-v2", "toys-v2", "packagedgoods-v1", or
+   * "general-v1" The legacy categories "homegoods", "apparel", and "toys" are
+   * still supported, but these should not be used for new products.
    * This field is immutable.
    * </pre>
    *
@@ -1131,12 +1128,9 @@ public final class Product extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * The category for the product identified by the reference image. This should
-   * be either "homegoods-v2", "apparel-v2", "toys-v2", or "packagedgoods-v1".
-   * The legacy categories "homegoods", "apparel", and "toys" are still
-   * supported but will be deprecated. For new products, please use
-   * "homegoods-v2", "apparel-v2", or "toys-v2" for better product search
-   * accuracy. It is recommended to migrate existing products to these
-   * categories as well.
+   * be either "homegoods-v2", "apparel-v2", "toys-v2", "packagedgoods-v1", or
+   * "general-v1" The legacy categories "homegoods", "apparel", and "toys" are
+   * still supported, but these should not be used for new products.
    * This field is immutable.
    * </pre>
    *
@@ -1986,12 +1980,9 @@ public final class Product extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The category for the product identified by the reference image. This should
-     * be either "homegoods-v2", "apparel-v2", "toys-v2", or "packagedgoods-v1".
-     * The legacy categories "homegoods", "apparel", and "toys" are still
-     * supported but will be deprecated. For new products, please use
-     * "homegoods-v2", "apparel-v2", or "toys-v2" for better product search
-     * accuracy. It is recommended to migrate existing products to these
-     * categories as well.
+     * be either "homegoods-v2", "apparel-v2", "toys-v2", "packagedgoods-v1", or
+     * "general-v1" The legacy categories "homegoods", "apparel", and "toys" are
+     * still supported, but these should not be used for new products.
      * This field is immutable.
      * </pre>
      *
@@ -2013,12 +2004,9 @@ public final class Product extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The category for the product identified by the reference image. This should
-     * be either "homegoods-v2", "apparel-v2", "toys-v2", or "packagedgoods-v1".
-     * The legacy categories "homegoods", "apparel", and "toys" are still
-     * supported but will be deprecated. For new products, please use
-     * "homegoods-v2", "apparel-v2", or "toys-v2" for better product search
-     * accuracy. It is recommended to migrate existing products to these
-     * categories as well.
+     * be either "homegoods-v2", "apparel-v2", "toys-v2", "packagedgoods-v1", or
+     * "general-v1" The legacy categories "homegoods", "apparel", and "toys" are
+     * still supported, but these should not be used for new products.
      * This field is immutable.
      * </pre>
      *
@@ -2040,12 +2028,9 @@ public final class Product extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The category for the product identified by the reference image. This should
-     * be either "homegoods-v2", "apparel-v2", "toys-v2", or "packagedgoods-v1".
-     * The legacy categories "homegoods", "apparel", and "toys" are still
-     * supported but will be deprecated. For new products, please use
-     * "homegoods-v2", "apparel-v2", or "toys-v2" for better product search
-     * accuracy. It is recommended to migrate existing products to these
-     * categories as well.
+     * be either "homegoods-v2", "apparel-v2", "toys-v2", "packagedgoods-v1", or
+     * "general-v1" The legacy categories "homegoods", "apparel", and "toys" are
+     * still supported, but these should not be used for new products.
      * This field is immutable.
      * </pre>
      *
@@ -2065,12 +2050,9 @@ public final class Product extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The category for the product identified by the reference image. This should
-     * be either "homegoods-v2", "apparel-v2", "toys-v2", or "packagedgoods-v1".
-     * The legacy categories "homegoods", "apparel", and "toys" are still
-     * supported but will be deprecated. For new products, please use
-     * "homegoods-v2", "apparel-v2", or "toys-v2" for better product search
-     * accuracy. It is recommended to migrate existing products to these
-     * categories as well.
+     * be either "homegoods-v2", "apparel-v2", "toys-v2", "packagedgoods-v1", or
+     * "general-v1" The legacy categories "homegoods", "apparel", and "toys" are
+     * still supported, but these should not be used for new products.
      * This field is immutable.
      * </pre>
      *
@@ -2087,12 +2069,9 @@ public final class Product extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The category for the product identified by the reference image. This should
-     * be either "homegoods-v2", "apparel-v2", "toys-v2", or "packagedgoods-v1".
-     * The legacy categories "homegoods", "apparel", and "toys" are still
-     * supported but will be deprecated. For new products, please use
-     * "homegoods-v2", "apparel-v2", or "toys-v2" for better product search
-     * accuracy. It is recommended to migrate existing products to these
-     * categories as well.
+     * be either "homegoods-v2", "apparel-v2", "toys-v2", "packagedgoods-v1", or
+     * "general-v1" The legacy categories "homegoods", "apparel", and "toys" are
+     * still supported, but these should not be used for new products.
      * This field is immutable.
      * </pre>
      *

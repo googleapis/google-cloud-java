@@ -115,12 +115,19 @@ public final class CreateAutoscalingPolicyRequest extends com.google.protobuf.Ge
    *
    *
    * <pre>
-   * Required. The "resource name" of the region, as described
-   * in https://cloud.google.com/apis/design/resource_names of the form
-   * `projects/{project_id}/regions/{region}`.
+   * Required. The "resource name" of the region or location, as described
+   * in https://cloud.google.com/apis/design/resource_names.
+   * * For `projects.regions.autoscalingPolicies.create`, the resource name
+   *   has the following format:
+   *   `projects/{project_id}/regions/{region}`
+   * * For `projects.locations.autoscalingPolicies.create`, the resource name
+   *   has the following format:
+   *   `projects/{project_id}/locations/{location}`
    * </pre>
    *
-   * <code>string parent = 1;</code>
+   * <code>
+   * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    */
   public java.lang.String getParent() {
     java.lang.Object ref = parent_;
@@ -137,12 +144,19 @@ public final class CreateAutoscalingPolicyRequest extends com.google.protobuf.Ge
    *
    *
    * <pre>
-   * Required. The "resource name" of the region, as described
-   * in https://cloud.google.com/apis/design/resource_names of the form
-   * `projects/{project_id}/regions/{region}`.
+   * Required. The "resource name" of the region or location, as described
+   * in https://cloud.google.com/apis/design/resource_names.
+   * * For `projects.regions.autoscalingPolicies.create`, the resource name
+   *   has the following format:
+   *   `projects/{project_id}/regions/{region}`
+   * * For `projects.locations.autoscalingPolicies.create`, the resource name
+   *   has the following format:
+   *   `projects/{project_id}/locations/{location}`
    * </pre>
    *
-   * <code>string parent = 1;</code>
+   * <code>
+   * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    */
   public com.google.protobuf.ByteString getParentBytes() {
     java.lang.Object ref = parent_;
@@ -162,10 +176,12 @@ public final class CreateAutoscalingPolicyRequest extends com.google.protobuf.Ge
    *
    *
    * <pre>
-   * The autoscaling policy to create.
+   * Required. The autoscaling policy to create.
    * </pre>
    *
-   * <code>.google.cloud.dataproc.v1beta2.AutoscalingPolicy policy = 2;</code>
+   * <code>
+   * .google.cloud.dataproc.v1beta2.AutoscalingPolicy policy = 2 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   public boolean hasPolicy() {
     return policy_ != null;
@@ -174,10 +190,12 @@ public final class CreateAutoscalingPolicyRequest extends com.google.protobuf.Ge
    *
    *
    * <pre>
-   * The autoscaling policy to create.
+   * Required. The autoscaling policy to create.
    * </pre>
    *
-   * <code>.google.cloud.dataproc.v1beta2.AutoscalingPolicy policy = 2;</code>
+   * <code>
+   * .google.cloud.dataproc.v1beta2.AutoscalingPolicy policy = 2 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   public com.google.cloud.dataproc.v1beta2.AutoscalingPolicy getPolicy() {
     return policy_ == null
@@ -188,10 +206,12 @@ public final class CreateAutoscalingPolicyRequest extends com.google.protobuf.Ge
    *
    *
    * <pre>
-   * The autoscaling policy to create.
+   * Required. The autoscaling policy to create.
    * </pre>
    *
-   * <code>.google.cloud.dataproc.v1beta2.AutoscalingPolicy policy = 2;</code>
+   * <code>
+   * .google.cloud.dataproc.v1beta2.AutoscalingPolicy policy = 2 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   public com.google.cloud.dataproc.v1beta2.AutoscalingPolicyOrBuilder getPolicyOrBuilder() {
     return getPolicy();
@@ -553,12 +573,19 @@ public final class CreateAutoscalingPolicyRequest extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * Required. The "resource name" of the region, as described
-     * in https://cloud.google.com/apis/design/resource_names of the form
-     * `projects/{project_id}/regions/{region}`.
+     * Required. The "resource name" of the region or location, as described
+     * in https://cloud.google.com/apis/design/resource_names.
+     * * For `projects.regions.autoscalingPolicies.create`, the resource name
+     *   has the following format:
+     *   `projects/{project_id}/regions/{region}`
+     * * For `projects.locations.autoscalingPolicies.create`, the resource name
+     *   has the following format:
+     *   `projects/{project_id}/locations/{location}`
      * </pre>
      *
-     * <code>string parent = 1;</code>
+     * <code>
+     * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      */
     public java.lang.String getParent() {
       java.lang.Object ref = parent_;
@@ -575,12 +602,19 @@ public final class CreateAutoscalingPolicyRequest extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * Required. The "resource name" of the region, as described
-     * in https://cloud.google.com/apis/design/resource_names of the form
-     * `projects/{project_id}/regions/{region}`.
+     * Required. The "resource name" of the region or location, as described
+     * in https://cloud.google.com/apis/design/resource_names.
+     * * For `projects.regions.autoscalingPolicies.create`, the resource name
+     *   has the following format:
+     *   `projects/{project_id}/regions/{region}`
+     * * For `projects.locations.autoscalingPolicies.create`, the resource name
+     *   has the following format:
+     *   `projects/{project_id}/locations/{location}`
      * </pre>
      *
-     * <code>string parent = 1;</code>
+     * <code>
+     * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      */
     public com.google.protobuf.ByteString getParentBytes() {
       java.lang.Object ref = parent_;
@@ -597,12 +631,19 @@ public final class CreateAutoscalingPolicyRequest extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * Required. The "resource name" of the region, as described
-     * in https://cloud.google.com/apis/design/resource_names of the form
-     * `projects/{project_id}/regions/{region}`.
+     * Required. The "resource name" of the region or location, as described
+     * in https://cloud.google.com/apis/design/resource_names.
+     * * For `projects.regions.autoscalingPolicies.create`, the resource name
+     *   has the following format:
+     *   `projects/{project_id}/regions/{region}`
+     * * For `projects.locations.autoscalingPolicies.create`, the resource name
+     *   has the following format:
+     *   `projects/{project_id}/locations/{location}`
      * </pre>
      *
-     * <code>string parent = 1;</code>
+     * <code>
+     * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      */
     public Builder setParent(java.lang.String value) {
       if (value == null) {
@@ -617,12 +658,19 @@ public final class CreateAutoscalingPolicyRequest extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * Required. The "resource name" of the region, as described
-     * in https://cloud.google.com/apis/design/resource_names of the form
-     * `projects/{project_id}/regions/{region}`.
+     * Required. The "resource name" of the region or location, as described
+     * in https://cloud.google.com/apis/design/resource_names.
+     * * For `projects.regions.autoscalingPolicies.create`, the resource name
+     *   has the following format:
+     *   `projects/{project_id}/regions/{region}`
+     * * For `projects.locations.autoscalingPolicies.create`, the resource name
+     *   has the following format:
+     *   `projects/{project_id}/locations/{location}`
      * </pre>
      *
-     * <code>string parent = 1;</code>
+     * <code>
+     * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      */
     public Builder clearParent() {
 
@@ -634,12 +682,19 @@ public final class CreateAutoscalingPolicyRequest extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * Required. The "resource name" of the region, as described
-     * in https://cloud.google.com/apis/design/resource_names of the form
-     * `projects/{project_id}/regions/{region}`.
+     * Required. The "resource name" of the region or location, as described
+     * in https://cloud.google.com/apis/design/resource_names.
+     * * For `projects.regions.autoscalingPolicies.create`, the resource name
+     *   has the following format:
+     *   `projects/{project_id}/regions/{region}`
+     * * For `projects.locations.autoscalingPolicies.create`, the resource name
+     *   has the following format:
+     *   `projects/{project_id}/locations/{location}`
      * </pre>
      *
-     * <code>string parent = 1;</code>
+     * <code>
+     * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      */
     public Builder setParentBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -662,10 +717,12 @@ public final class CreateAutoscalingPolicyRequest extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * The autoscaling policy to create.
+     * Required. The autoscaling policy to create.
      * </pre>
      *
-     * <code>.google.cloud.dataproc.v1beta2.AutoscalingPolicy policy = 2;</code>
+     * <code>
+     * .google.cloud.dataproc.v1beta2.AutoscalingPolicy policy = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public boolean hasPolicy() {
       return policyBuilder_ != null || policy_ != null;
@@ -674,10 +731,12 @@ public final class CreateAutoscalingPolicyRequest extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * The autoscaling policy to create.
+     * Required. The autoscaling policy to create.
      * </pre>
      *
-     * <code>.google.cloud.dataproc.v1beta2.AutoscalingPolicy policy = 2;</code>
+     * <code>
+     * .google.cloud.dataproc.v1beta2.AutoscalingPolicy policy = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public com.google.cloud.dataproc.v1beta2.AutoscalingPolicy getPolicy() {
       if (policyBuilder_ == null) {
@@ -692,10 +751,12 @@ public final class CreateAutoscalingPolicyRequest extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * The autoscaling policy to create.
+     * Required. The autoscaling policy to create.
      * </pre>
      *
-     * <code>.google.cloud.dataproc.v1beta2.AutoscalingPolicy policy = 2;</code>
+     * <code>
+     * .google.cloud.dataproc.v1beta2.AutoscalingPolicy policy = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder setPolicy(com.google.cloud.dataproc.v1beta2.AutoscalingPolicy value) {
       if (policyBuilder_ == null) {
@@ -714,10 +775,12 @@ public final class CreateAutoscalingPolicyRequest extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * The autoscaling policy to create.
+     * Required. The autoscaling policy to create.
      * </pre>
      *
-     * <code>.google.cloud.dataproc.v1beta2.AutoscalingPolicy policy = 2;</code>
+     * <code>
+     * .google.cloud.dataproc.v1beta2.AutoscalingPolicy policy = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder setPolicy(
         com.google.cloud.dataproc.v1beta2.AutoscalingPolicy.Builder builderForValue) {
@@ -734,10 +797,12 @@ public final class CreateAutoscalingPolicyRequest extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * The autoscaling policy to create.
+     * Required. The autoscaling policy to create.
      * </pre>
      *
-     * <code>.google.cloud.dataproc.v1beta2.AutoscalingPolicy policy = 2;</code>
+     * <code>
+     * .google.cloud.dataproc.v1beta2.AutoscalingPolicy policy = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder mergePolicy(com.google.cloud.dataproc.v1beta2.AutoscalingPolicy value) {
       if (policyBuilder_ == null) {
@@ -760,10 +825,12 @@ public final class CreateAutoscalingPolicyRequest extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * The autoscaling policy to create.
+     * Required. The autoscaling policy to create.
      * </pre>
      *
-     * <code>.google.cloud.dataproc.v1beta2.AutoscalingPolicy policy = 2;</code>
+     * <code>
+     * .google.cloud.dataproc.v1beta2.AutoscalingPolicy policy = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder clearPolicy() {
       if (policyBuilder_ == null) {
@@ -780,10 +847,12 @@ public final class CreateAutoscalingPolicyRequest extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * The autoscaling policy to create.
+     * Required. The autoscaling policy to create.
      * </pre>
      *
-     * <code>.google.cloud.dataproc.v1beta2.AutoscalingPolicy policy = 2;</code>
+     * <code>
+     * .google.cloud.dataproc.v1beta2.AutoscalingPolicy policy = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public com.google.cloud.dataproc.v1beta2.AutoscalingPolicy.Builder getPolicyBuilder() {
 
@@ -794,10 +863,12 @@ public final class CreateAutoscalingPolicyRequest extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * The autoscaling policy to create.
+     * Required. The autoscaling policy to create.
      * </pre>
      *
-     * <code>.google.cloud.dataproc.v1beta2.AutoscalingPolicy policy = 2;</code>
+     * <code>
+     * .google.cloud.dataproc.v1beta2.AutoscalingPolicy policy = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public com.google.cloud.dataproc.v1beta2.AutoscalingPolicyOrBuilder getPolicyOrBuilder() {
       if (policyBuilder_ != null) {
@@ -812,10 +883,12 @@ public final class CreateAutoscalingPolicyRequest extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * The autoscaling policy to create.
+     * Required. The autoscaling policy to create.
      * </pre>
      *
-     * <code>.google.cloud.dataproc.v1beta2.AutoscalingPolicy policy = 2;</code>
+     * <code>
+     * .google.cloud.dataproc.v1beta2.AutoscalingPolicy policy = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.dataproc.v1beta2.AutoscalingPolicy,

@@ -7,7 +7,6 @@ package com.google.cloud.talent.v4beta1;
  *
  *
  * <pre>
- * Output only.
  * Response for SearchJob method.
  * </pre>
  *
@@ -350,7 +349,6 @@ public final class SearchJobsResponse extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * Output only.
    * Job entry with metadata inside
    * [SearchJobsResponse][google.cloud.talent.v4beta1.SearchJobsResponse].
    * </pre>
@@ -931,7 +929,6 @@ public final class SearchJobsResponse extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Output only.
      * Job entry with metadata inside
      * [SearchJobsResponse][google.cloud.talent.v4beta1.SearchJobsResponse].
      * </pre>
@@ -1981,7 +1978,6 @@ public final class SearchJobsResponse extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * Output only.
    * Commute details related to this job.
    * </pre>
    *
@@ -2363,7 +2359,6 @@ public final class SearchJobsResponse extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Output only.
      * Commute details related to this job.
      * </pre>
      *
@@ -3672,7 +3667,6 @@ public final class SearchJobsResponse extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * Output only.
    * Response for SearchJob method.
    * </pre>
    *

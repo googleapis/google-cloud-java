@@ -19,6 +19,9 @@ import static io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall;
  * entities that are built for an individual user such as
  * favorites, preferences, playlists, and so on. You can redefine a session
  * entity type at the session level.
+ * Session entity methods do not work with Google Assistant integration.
+ * Contact Dialogflow support if you need to use session entities
+ * with Google Assistant integration.
  * For more information about entity types, see the
  * [Dialogflow
  * documentation](https://cloud.google.com/dialogflow/docs/entities-overview).
@@ -376,6 +379,9 @@ public final class SessionEntityTypesGrpc {
    * entities that are built for an individual user such as
    * favorites, preferences, playlists, and so on. You can redefine a session
    * entity type at the session level.
+   * Session entity methods do not work with Google Assistant integration.
+   * Contact Dialogflow support if you need to use session entities
+   * with Google Assistant integration.
    * For more information about entity types, see the
    * [Dialogflow
    * documentation](https://cloud.google.com/dialogflow/docs/entities-overview).
@@ -388,6 +394,9 @@ public final class SessionEntityTypesGrpc {
      *
      * <pre>
      * Returns the list of all session entity types in the specified session.
+     * This method doesn't work with Google Assistant integration.
+     * Contact Dialogflow support if you need to use session entities
+     * with Google Assistant integration.
      * </pre>
      */
     public void listSessionEntityTypes(
@@ -403,6 +412,9 @@ public final class SessionEntityTypesGrpc {
      *
      * <pre>
      * Retrieves the specified session entity type.
+     * This method doesn't work with Google Assistant integration.
+     * Contact Dialogflow support if you need to use session entities
+     * with Google Assistant integration.
      * </pre>
      */
     public void getSessionEntityType(
@@ -419,6 +431,9 @@ public final class SessionEntityTypesGrpc {
      * Creates a session entity type.
      * If the specified session entity type already exists, overrides the
      * session entity type.
+     * This method doesn't work with Google Assistant integration.
+     * Contact Dialogflow support if you need to use session entities
+     * with Google Assistant integration.
      * </pre>
      */
     public void createSessionEntityType(
@@ -433,6 +448,9 @@ public final class SessionEntityTypesGrpc {
      *
      * <pre>
      * Updates the specified session entity type.
+     * This method doesn't work with Google Assistant integration.
+     * Contact Dialogflow support if you need to use session entities
+     * with Google Assistant integration.
      * </pre>
      */
     public void updateSessionEntityType(
@@ -447,6 +465,9 @@ public final class SessionEntityTypesGrpc {
      *
      * <pre>
      * Deletes the specified session entity type.
+     * This method doesn't work with Google Assistant integration.
+     * Contact Dialogflow support if you need to use session entities
+     * with Google Assistant integration.
      * </pre>
      */
     public void deleteSessionEntityType(
@@ -508,6 +529,9 @@ public final class SessionEntityTypesGrpc {
    * entities that are built for an individual user such as
    * favorites, preferences, playlists, and so on. You can redefine a session
    * entity type at the session level.
+   * Session entity methods do not work with Google Assistant integration.
+   * Contact Dialogflow support if you need to use session entities
+   * with Google Assistant integration.
    * For more information about entity types, see the
    * [Dialogflow
    * documentation](https://cloud.google.com/dialogflow/docs/entities-overview).
@@ -534,6 +558,9 @@ public final class SessionEntityTypesGrpc {
      *
      * <pre>
      * Returns the list of all session entity types in the specified session.
+     * This method doesn't work with Google Assistant integration.
+     * Contact Dialogflow support if you need to use session entities
+     * with Google Assistant integration.
      * </pre>
      */
     public void listSessionEntityTypes(
@@ -552,6 +579,9 @@ public final class SessionEntityTypesGrpc {
      *
      * <pre>
      * Retrieves the specified session entity type.
+     * This method doesn't work with Google Assistant integration.
+     * Contact Dialogflow support if you need to use session entities
+     * with Google Assistant integration.
      * </pre>
      */
     public void getSessionEntityType(
@@ -571,6 +601,9 @@ public final class SessionEntityTypesGrpc {
      * Creates a session entity type.
      * If the specified session entity type already exists, overrides the
      * session entity type.
+     * This method doesn't work with Google Assistant integration.
+     * Contact Dialogflow support if you need to use session entities
+     * with Google Assistant integration.
      * </pre>
      */
     public void createSessionEntityType(
@@ -588,6 +621,9 @@ public final class SessionEntityTypesGrpc {
      *
      * <pre>
      * Updates the specified session entity type.
+     * This method doesn't work with Google Assistant integration.
+     * Contact Dialogflow support if you need to use session entities
+     * with Google Assistant integration.
      * </pre>
      */
     public void updateSessionEntityType(
@@ -605,6 +641,9 @@ public final class SessionEntityTypesGrpc {
      *
      * <pre>
      * Deletes the specified session entity type.
+     * This method doesn't work with Google Assistant integration.
+     * Contact Dialogflow support if you need to use session entities
+     * with Google Assistant integration.
      * </pre>
      */
     public void deleteSessionEntityType(
@@ -629,6 +668,9 @@ public final class SessionEntityTypesGrpc {
    * entities that are built for an individual user such as
    * favorites, preferences, playlists, and so on. You can redefine a session
    * entity type at the session level.
+   * Session entity methods do not work with Google Assistant integration.
+   * Contact Dialogflow support if you need to use session entities
+   * with Google Assistant integration.
    * For more information about entity types, see the
    * [Dialogflow
    * documentation](https://cloud.google.com/dialogflow/docs/entities-overview).
@@ -656,6 +698,9 @@ public final class SessionEntityTypesGrpc {
      *
      * <pre>
      * Returns the list of all session entity types in the specified session.
+     * This method doesn't work with Google Assistant integration.
+     * Contact Dialogflow support if you need to use session entities
+     * with Google Assistant integration.
      * </pre>
      */
     public com.google.cloud.dialogflow.v2beta1.ListSessionEntityTypesResponse
@@ -670,6 +715,9 @@ public final class SessionEntityTypesGrpc {
      *
      * <pre>
      * Retrieves the specified session entity type.
+     * This method doesn't work with Google Assistant integration.
+     * Contact Dialogflow support if you need to use session entities
+     * with Google Assistant integration.
      * </pre>
      */
     public com.google.cloud.dialogflow.v2beta1.SessionEntityType getSessionEntityType(
@@ -685,6 +733,9 @@ public final class SessionEntityTypesGrpc {
      * Creates a session entity type.
      * If the specified session entity type already exists, overrides the
      * session entity type.
+     * This method doesn't work with Google Assistant integration.
+     * Contact Dialogflow support if you need to use session entities
+     * with Google Assistant integration.
      * </pre>
      */
     public com.google.cloud.dialogflow.v2beta1.SessionEntityType createSessionEntityType(
@@ -698,6 +749,9 @@ public final class SessionEntityTypesGrpc {
      *
      * <pre>
      * Updates the specified session entity type.
+     * This method doesn't work with Google Assistant integration.
+     * Contact Dialogflow support if you need to use session entities
+     * with Google Assistant integration.
      * </pre>
      */
     public com.google.cloud.dialogflow.v2beta1.SessionEntityType updateSessionEntityType(
@@ -711,6 +765,9 @@ public final class SessionEntityTypesGrpc {
      *
      * <pre>
      * Deletes the specified session entity type.
+     * This method doesn't work with Google Assistant integration.
+     * Contact Dialogflow support if you need to use session entities
+     * with Google Assistant integration.
      * </pre>
      */
     public com.google.protobuf.Empty deleteSessionEntityType(
@@ -732,6 +789,9 @@ public final class SessionEntityTypesGrpc {
    * entities that are built for an individual user such as
    * favorites, preferences, playlists, and so on. You can redefine a session
    * entity type at the session level.
+   * Session entity methods do not work with Google Assistant integration.
+   * Contact Dialogflow support if you need to use session entities
+   * with Google Assistant integration.
    * For more information about entity types, see the
    * [Dialogflow
    * documentation](https://cloud.google.com/dialogflow/docs/entities-overview).
@@ -758,6 +818,9 @@ public final class SessionEntityTypesGrpc {
      *
      * <pre>
      * Returns the list of all session entity types in the specified session.
+     * This method doesn't work with Google Assistant integration.
+     * Contact Dialogflow support if you need to use session entities
+     * with Google Assistant integration.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<
@@ -773,6 +836,9 @@ public final class SessionEntityTypesGrpc {
      *
      * <pre>
      * Retrieves the specified session entity type.
+     * This method doesn't work with Google Assistant integration.
+     * Contact Dialogflow support if you need to use session entities
+     * with Google Assistant integration.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<
@@ -790,6 +856,9 @@ public final class SessionEntityTypesGrpc {
      * Creates a session entity type.
      * If the specified session entity type already exists, overrides the
      * session entity type.
+     * This method doesn't work with Google Assistant integration.
+     * Contact Dialogflow support if you need to use session entities
+     * with Google Assistant integration.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<
@@ -806,6 +875,9 @@ public final class SessionEntityTypesGrpc {
      *
      * <pre>
      * Updates the specified session entity type.
+     * This method doesn't work with Google Assistant integration.
+     * Contact Dialogflow support if you need to use session entities
+     * with Google Assistant integration.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<
@@ -822,6 +894,9 @@ public final class SessionEntityTypesGrpc {
      *
      * <pre>
      * Deletes the specified session entity type.
+     * This method doesn't work with Google Assistant integration.
+     * Contact Dialogflow support if you need to use session entities
+     * with Google Assistant integration.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.protobuf.Empty>

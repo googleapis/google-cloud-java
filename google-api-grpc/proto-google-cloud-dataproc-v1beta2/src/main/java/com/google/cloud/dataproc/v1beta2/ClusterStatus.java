@@ -497,7 +497,9 @@ public final class ClusterStatus extends com.google.protobuf.GeneratedMessageV3
    * Output only. The cluster's state.
    * </pre>
    *
-   * <code>.google.cloud.dataproc.v1beta2.ClusterStatus.State state = 1;</code>
+   * <code>
+   * .google.cloud.dataproc.v1beta2.ClusterStatus.State state = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    */
   public int getStateValue() {
     return state_;
@@ -509,7 +511,9 @@ public final class ClusterStatus extends com.google.protobuf.GeneratedMessageV3
    * Output only. The cluster's state.
    * </pre>
    *
-   * <code>.google.cloud.dataproc.v1beta2.ClusterStatus.State state = 1;</code>
+   * <code>
+   * .google.cloud.dataproc.v1beta2.ClusterStatus.State state = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    */
   public com.google.cloud.dataproc.v1beta2.ClusterStatus.State getState() {
     @SuppressWarnings("deprecation")
@@ -529,7 +533,7 @@ public final class ClusterStatus extends com.google.protobuf.GeneratedMessageV3
    * Output only. Optional details of cluster's state.
    * </pre>
    *
-   * <code>string detail = 2;</code>
+   * <code>string detail = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    */
   public java.lang.String getDetail() {
     java.lang.Object ref = detail_;
@@ -549,7 +553,7 @@ public final class ClusterStatus extends com.google.protobuf.GeneratedMessageV3
    * Output only. Optional details of cluster's state.
    * </pre>
    *
-   * <code>string detail = 2;</code>
+   * <code>string detail = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    */
   public com.google.protobuf.ByteString getDetailBytes() {
     java.lang.Object ref = detail_;
@@ -572,7 +576,9 @@ public final class ClusterStatus extends com.google.protobuf.GeneratedMessageV3
    * Output only. Time when this state was entered.
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp state_start_time = 3;</code>
+   * <code>
+   * .google.protobuf.Timestamp state_start_time = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    */
   public boolean hasStateStartTime() {
     return stateStartTime_ != null;
@@ -584,7 +590,9 @@ public final class ClusterStatus extends com.google.protobuf.GeneratedMessageV3
    * Output only. Time when this state was entered.
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp state_start_time = 3;</code>
+   * <code>
+   * .google.protobuf.Timestamp state_start_time = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    */
   public com.google.protobuf.Timestamp getStateStartTime() {
     return stateStartTime_ == null
@@ -598,7 +606,9 @@ public final class ClusterStatus extends com.google.protobuf.GeneratedMessageV3
    * Output only. Time when this state was entered.
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp state_start_time = 3;</code>
+   * <code>
+   * .google.protobuf.Timestamp state_start_time = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    */
   public com.google.protobuf.TimestampOrBuilder getStateStartTimeOrBuilder() {
     return getStateStartTime();
@@ -614,7 +624,9 @@ public final class ClusterStatus extends com.google.protobuf.GeneratedMessageV3
    * status reported by the agent.
    * </pre>
    *
-   * <code>.google.cloud.dataproc.v1beta2.ClusterStatus.Substate substate = 4;</code>
+   * <code>
+   * .google.cloud.dataproc.v1beta2.ClusterStatus.Substate substate = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    */
   public int getSubstateValue() {
     return substate_;
@@ -627,7 +639,9 @@ public final class ClusterStatus extends com.google.protobuf.GeneratedMessageV3
    * status reported by the agent.
    * </pre>
    *
-   * <code>.google.cloud.dataproc.v1beta2.ClusterStatus.Substate substate = 4;</code>
+   * <code>
+   * .google.cloud.dataproc.v1beta2.ClusterStatus.Substate substate = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    */
   public com.google.cloud.dataproc.v1beta2.ClusterStatus.Substate getSubstate() {
     @SuppressWarnings("deprecation")
@@ -1023,7 +1037,9 @@ public final class ClusterStatus extends com.google.protobuf.GeneratedMessageV3
      * Output only. The cluster's state.
      * </pre>
      *
-     * <code>.google.cloud.dataproc.v1beta2.ClusterStatus.State state = 1;</code>
+     * <code>
+     * .google.cloud.dataproc.v1beta2.ClusterStatus.State state = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public int getStateValue() {
       return state_;
@@ -1035,7 +1051,9 @@ public final class ClusterStatus extends com.google.protobuf.GeneratedMessageV3
      * Output only. The cluster's state.
      * </pre>
      *
-     * <code>.google.cloud.dataproc.v1beta2.ClusterStatus.State state = 1;</code>
+     * <code>
+     * .google.cloud.dataproc.v1beta2.ClusterStatus.State state = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public Builder setStateValue(int value) {
       state_ = value;
@@ -1049,7 +1067,9 @@ public final class ClusterStatus extends com.google.protobuf.GeneratedMessageV3
      * Output only. The cluster's state.
      * </pre>
      *
-     * <code>.google.cloud.dataproc.v1beta2.ClusterStatus.State state = 1;</code>
+     * <code>
+     * .google.cloud.dataproc.v1beta2.ClusterStatus.State state = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public com.google.cloud.dataproc.v1beta2.ClusterStatus.State getState() {
       @SuppressWarnings("deprecation")
@@ -1066,7 +1086,9 @@ public final class ClusterStatus extends com.google.protobuf.GeneratedMessageV3
      * Output only. The cluster's state.
      * </pre>
      *
-     * <code>.google.cloud.dataproc.v1beta2.ClusterStatus.State state = 1;</code>
+     * <code>
+     * .google.cloud.dataproc.v1beta2.ClusterStatus.State state = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public Builder setState(com.google.cloud.dataproc.v1beta2.ClusterStatus.State value) {
       if (value == null) {
@@ -1084,7 +1106,9 @@ public final class ClusterStatus extends com.google.protobuf.GeneratedMessageV3
      * Output only. The cluster's state.
      * </pre>
      *
-     * <code>.google.cloud.dataproc.v1beta2.ClusterStatus.State state = 1;</code>
+     * <code>
+     * .google.cloud.dataproc.v1beta2.ClusterStatus.State state = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public Builder clearState() {
 
@@ -1101,7 +1125,7 @@ public final class ClusterStatus extends com.google.protobuf.GeneratedMessageV3
      * Output only. Optional details of cluster's state.
      * </pre>
      *
-     * <code>string detail = 2;</code>
+     * <code>string detail = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     public java.lang.String getDetail() {
       java.lang.Object ref = detail_;
@@ -1121,7 +1145,7 @@ public final class ClusterStatus extends com.google.protobuf.GeneratedMessageV3
      * Output only. Optional details of cluster's state.
      * </pre>
      *
-     * <code>string detail = 2;</code>
+     * <code>string detail = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     public com.google.protobuf.ByteString getDetailBytes() {
       java.lang.Object ref = detail_;
@@ -1141,7 +1165,7 @@ public final class ClusterStatus extends com.google.protobuf.GeneratedMessageV3
      * Output only. Optional details of cluster's state.
      * </pre>
      *
-     * <code>string detail = 2;</code>
+     * <code>string detail = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     public Builder setDetail(java.lang.String value) {
       if (value == null) {
@@ -1159,7 +1183,7 @@ public final class ClusterStatus extends com.google.protobuf.GeneratedMessageV3
      * Output only. Optional details of cluster's state.
      * </pre>
      *
-     * <code>string detail = 2;</code>
+     * <code>string detail = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     public Builder clearDetail() {
 
@@ -1174,7 +1198,7 @@ public final class ClusterStatus extends com.google.protobuf.GeneratedMessageV3
      * Output only. Optional details of cluster's state.
      * </pre>
      *
-     * <code>string detail = 2;</code>
+     * <code>string detail = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     public Builder setDetailBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -1200,7 +1224,9 @@ public final class ClusterStatus extends com.google.protobuf.GeneratedMessageV3
      * Output only. Time when this state was entered.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp state_start_time = 3;</code>
+     * <code>
+     * .google.protobuf.Timestamp state_start_time = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public boolean hasStateStartTime() {
       return stateStartTimeBuilder_ != null || stateStartTime_ != null;
@@ -1212,7 +1238,9 @@ public final class ClusterStatus extends com.google.protobuf.GeneratedMessageV3
      * Output only. Time when this state was entered.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp state_start_time = 3;</code>
+     * <code>
+     * .google.protobuf.Timestamp state_start_time = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public com.google.protobuf.Timestamp getStateStartTime() {
       if (stateStartTimeBuilder_ == null) {
@@ -1230,7 +1258,9 @@ public final class ClusterStatus extends com.google.protobuf.GeneratedMessageV3
      * Output only. Time when this state was entered.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp state_start_time = 3;</code>
+     * <code>
+     * .google.protobuf.Timestamp state_start_time = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public Builder setStateStartTime(com.google.protobuf.Timestamp value) {
       if (stateStartTimeBuilder_ == null) {
@@ -1252,7 +1282,9 @@ public final class ClusterStatus extends com.google.protobuf.GeneratedMessageV3
      * Output only. Time when this state was entered.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp state_start_time = 3;</code>
+     * <code>
+     * .google.protobuf.Timestamp state_start_time = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public Builder setStateStartTime(com.google.protobuf.Timestamp.Builder builderForValue) {
       if (stateStartTimeBuilder_ == null) {
@@ -1271,7 +1303,9 @@ public final class ClusterStatus extends com.google.protobuf.GeneratedMessageV3
      * Output only. Time when this state was entered.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp state_start_time = 3;</code>
+     * <code>
+     * .google.protobuf.Timestamp state_start_time = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public Builder mergeStateStartTime(com.google.protobuf.Timestamp value) {
       if (stateStartTimeBuilder_ == null) {
@@ -1297,7 +1331,9 @@ public final class ClusterStatus extends com.google.protobuf.GeneratedMessageV3
      * Output only. Time when this state was entered.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp state_start_time = 3;</code>
+     * <code>
+     * .google.protobuf.Timestamp state_start_time = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public Builder clearStateStartTime() {
       if (stateStartTimeBuilder_ == null) {
@@ -1317,7 +1353,9 @@ public final class ClusterStatus extends com.google.protobuf.GeneratedMessageV3
      * Output only. Time when this state was entered.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp state_start_time = 3;</code>
+     * <code>
+     * .google.protobuf.Timestamp state_start_time = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public com.google.protobuf.Timestamp.Builder getStateStartTimeBuilder() {
 
@@ -1331,7 +1369,9 @@ public final class ClusterStatus extends com.google.protobuf.GeneratedMessageV3
      * Output only. Time when this state was entered.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp state_start_time = 3;</code>
+     * <code>
+     * .google.protobuf.Timestamp state_start_time = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public com.google.protobuf.TimestampOrBuilder getStateStartTimeOrBuilder() {
       if (stateStartTimeBuilder_ != null) {
@@ -1349,7 +1389,9 @@ public final class ClusterStatus extends com.google.protobuf.GeneratedMessageV3
      * Output only. Time when this state was entered.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp state_start_time = 3;</code>
+     * <code>
+     * .google.protobuf.Timestamp state_start_time = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.protobuf.Timestamp,
@@ -1377,7 +1419,9 @@ public final class ClusterStatus extends com.google.protobuf.GeneratedMessageV3
      * status reported by the agent.
      * </pre>
      *
-     * <code>.google.cloud.dataproc.v1beta2.ClusterStatus.Substate substate = 4;</code>
+     * <code>
+     * .google.cloud.dataproc.v1beta2.ClusterStatus.Substate substate = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public int getSubstateValue() {
       return substate_;
@@ -1390,7 +1434,9 @@ public final class ClusterStatus extends com.google.protobuf.GeneratedMessageV3
      * status reported by the agent.
      * </pre>
      *
-     * <code>.google.cloud.dataproc.v1beta2.ClusterStatus.Substate substate = 4;</code>
+     * <code>
+     * .google.cloud.dataproc.v1beta2.ClusterStatus.Substate substate = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public Builder setSubstateValue(int value) {
       substate_ = value;
@@ -1405,7 +1451,9 @@ public final class ClusterStatus extends com.google.protobuf.GeneratedMessageV3
      * status reported by the agent.
      * </pre>
      *
-     * <code>.google.cloud.dataproc.v1beta2.ClusterStatus.Substate substate = 4;</code>
+     * <code>
+     * .google.cloud.dataproc.v1beta2.ClusterStatus.Substate substate = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public com.google.cloud.dataproc.v1beta2.ClusterStatus.Substate getSubstate() {
       @SuppressWarnings("deprecation")
@@ -1423,7 +1471,9 @@ public final class ClusterStatus extends com.google.protobuf.GeneratedMessageV3
      * status reported by the agent.
      * </pre>
      *
-     * <code>.google.cloud.dataproc.v1beta2.ClusterStatus.Substate substate = 4;</code>
+     * <code>
+     * .google.cloud.dataproc.v1beta2.ClusterStatus.Substate substate = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public Builder setSubstate(com.google.cloud.dataproc.v1beta2.ClusterStatus.Substate value) {
       if (value == null) {
@@ -1442,7 +1492,9 @@ public final class ClusterStatus extends com.google.protobuf.GeneratedMessageV3
      * status reported by the agent.
      * </pre>
      *
-     * <code>.google.cloud.dataproc.v1beta2.ClusterStatus.Substate substate = 4;</code>
+     * <code>
+     * .google.cloud.dataproc.v1beta2.ClusterStatus.Substate substate = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public Builder clearSubstate() {
 

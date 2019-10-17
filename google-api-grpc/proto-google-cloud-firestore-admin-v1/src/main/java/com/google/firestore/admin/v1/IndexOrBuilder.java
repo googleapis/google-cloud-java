@@ -12,8 +12,7 @@ public interface IndexOrBuilder
    *
    *
    * <pre>
-   * Output only.
-   * A server defined name for this index.
+   * Output only. A server defined name for this index.
    * The form of this name for composite indexes will be:
    * `projects/{project_id}/databases/{database_id}/collectionGroups/{collection_id}/indexes/{composite_index_id}`
    * For single field indexes, this field will be empty.
@@ -26,8 +25,7 @@ public interface IndexOrBuilder
    *
    *
    * <pre>
-   * Output only.
-   * A server defined name for this index.
+   * Output only. A server defined name for this index.
    * The form of this name for composite indexes will be:
    * `projects/{project_id}/databases/{database_id}/collectionGroups/{collection_id}/indexes/{composite_index_id}`
    * For single field indexes, this field will be empty.
@@ -164,8 +162,7 @@ public interface IndexOrBuilder
    *
    *
    * <pre>
-   * Output only.
-   * The serving state of the index.
+   * Output only. The serving state of the index.
    * </pre>
    *
    * <code>.google.firestore.admin.v1.Index.State state = 4;</code>
@@ -175,8 +172,7 @@ public interface IndexOrBuilder
    *
    *
    * <pre>
-   * Output only.
-   * The serving state of the index.
+   * Output only. The serving state of the index.
    * </pre>
    *
    * <code>.google.firestore.admin.v1.Index.State state = 4;</code>

@@ -118,7 +118,7 @@ public final class ImportInstanceRequest extends com.google.protobuf.GeneratedMe
    * where `location_id` refers to a GCP region.
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   public java.lang.String getName() {
     java.lang.Object ref = name_;
@@ -140,7 +140,7 @@ public final class ImportInstanceRequest extends com.google.protobuf.GeneratedMe
    * where `location_id` refers to a GCP region.
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   public com.google.protobuf.ByteString getNameBytes() {
     java.lang.Object ref = name_;
@@ -163,7 +163,9 @@ public final class ImportInstanceRequest extends com.google.protobuf.GeneratedMe
    * Required. Specify data to be imported.
    * </pre>
    *
-   * <code>.google.cloud.redis.v1beta1.InputConfig input_config = 3;</code>
+   * <code>
+   * .google.cloud.redis.v1beta1.InputConfig input_config = 3 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   public boolean hasInputConfig() {
     return inputConfig_ != null;
@@ -175,7 +177,9 @@ public final class ImportInstanceRequest extends com.google.protobuf.GeneratedMe
    * Required. Specify data to be imported.
    * </pre>
    *
-   * <code>.google.cloud.redis.v1beta1.InputConfig input_config = 3;</code>
+   * <code>
+   * .google.cloud.redis.v1beta1.InputConfig input_config = 3 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   public com.google.cloud.redis.v1beta1.InputConfig getInputConfig() {
     return inputConfig_ == null
@@ -189,7 +193,9 @@ public final class ImportInstanceRequest extends com.google.protobuf.GeneratedMe
    * Required. Specify data to be imported.
    * </pre>
    *
-   * <code>.google.cloud.redis.v1beta1.InputConfig input_config = 3;</code>
+   * <code>
+   * .google.cloud.redis.v1beta1.InputConfig input_config = 3 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   public com.google.cloud.redis.v1beta1.InputConfigOrBuilder getInputConfigOrBuilder() {
     return getInputConfig();
@@ -551,7 +557,7 @@ public final class ImportInstanceRequest extends com.google.protobuf.GeneratedMe
      * where `location_id` refers to a GCP region.
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public java.lang.String getName() {
       java.lang.Object ref = name_;
@@ -573,7 +579,7 @@ public final class ImportInstanceRequest extends com.google.protobuf.GeneratedMe
      * where `location_id` refers to a GCP region.
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public com.google.protobuf.ByteString getNameBytes() {
       java.lang.Object ref = name_;
@@ -595,7 +601,7 @@ public final class ImportInstanceRequest extends com.google.protobuf.GeneratedMe
      * where `location_id` refers to a GCP region.
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder setName(java.lang.String value) {
       if (value == null) {
@@ -615,7 +621,7 @@ public final class ImportInstanceRequest extends com.google.protobuf.GeneratedMe
      * where `location_id` refers to a GCP region.
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder clearName() {
 
@@ -632,7 +638,7 @@ public final class ImportInstanceRequest extends com.google.protobuf.GeneratedMe
      * where `location_id` refers to a GCP region.
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder setNameBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -658,7 +664,9 @@ public final class ImportInstanceRequest extends com.google.protobuf.GeneratedMe
      * Required. Specify data to be imported.
      * </pre>
      *
-     * <code>.google.cloud.redis.v1beta1.InputConfig input_config = 3;</code>
+     * <code>
+     * .google.cloud.redis.v1beta1.InputConfig input_config = 3 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public boolean hasInputConfig() {
       return inputConfigBuilder_ != null || inputConfig_ != null;
@@ -670,7 +678,9 @@ public final class ImportInstanceRequest extends com.google.protobuf.GeneratedMe
      * Required. Specify data to be imported.
      * </pre>
      *
-     * <code>.google.cloud.redis.v1beta1.InputConfig input_config = 3;</code>
+     * <code>
+     * .google.cloud.redis.v1beta1.InputConfig input_config = 3 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public com.google.cloud.redis.v1beta1.InputConfig getInputConfig() {
       if (inputConfigBuilder_ == null) {
@@ -688,7 +698,9 @@ public final class ImportInstanceRequest extends com.google.protobuf.GeneratedMe
      * Required. Specify data to be imported.
      * </pre>
      *
-     * <code>.google.cloud.redis.v1beta1.InputConfig input_config = 3;</code>
+     * <code>
+     * .google.cloud.redis.v1beta1.InputConfig input_config = 3 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder setInputConfig(com.google.cloud.redis.v1beta1.InputConfig value) {
       if (inputConfigBuilder_ == null) {
@@ -710,7 +722,9 @@ public final class ImportInstanceRequest extends com.google.protobuf.GeneratedMe
      * Required. Specify data to be imported.
      * </pre>
      *
-     * <code>.google.cloud.redis.v1beta1.InputConfig input_config = 3;</code>
+     * <code>
+     * .google.cloud.redis.v1beta1.InputConfig input_config = 3 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder setInputConfig(
         com.google.cloud.redis.v1beta1.InputConfig.Builder builderForValue) {
@@ -730,7 +744,9 @@ public final class ImportInstanceRequest extends com.google.protobuf.GeneratedMe
      * Required. Specify data to be imported.
      * </pre>
      *
-     * <code>.google.cloud.redis.v1beta1.InputConfig input_config = 3;</code>
+     * <code>
+     * .google.cloud.redis.v1beta1.InputConfig input_config = 3 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder mergeInputConfig(com.google.cloud.redis.v1beta1.InputConfig value) {
       if (inputConfigBuilder_ == null) {
@@ -756,7 +772,9 @@ public final class ImportInstanceRequest extends com.google.protobuf.GeneratedMe
      * Required. Specify data to be imported.
      * </pre>
      *
-     * <code>.google.cloud.redis.v1beta1.InputConfig input_config = 3;</code>
+     * <code>
+     * .google.cloud.redis.v1beta1.InputConfig input_config = 3 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder clearInputConfig() {
       if (inputConfigBuilder_ == null) {
@@ -776,7 +794,9 @@ public final class ImportInstanceRequest extends com.google.protobuf.GeneratedMe
      * Required. Specify data to be imported.
      * </pre>
      *
-     * <code>.google.cloud.redis.v1beta1.InputConfig input_config = 3;</code>
+     * <code>
+     * .google.cloud.redis.v1beta1.InputConfig input_config = 3 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public com.google.cloud.redis.v1beta1.InputConfig.Builder getInputConfigBuilder() {
 
@@ -790,7 +810,9 @@ public final class ImportInstanceRequest extends com.google.protobuf.GeneratedMe
      * Required. Specify data to be imported.
      * </pre>
      *
-     * <code>.google.cloud.redis.v1beta1.InputConfig input_config = 3;</code>
+     * <code>
+     * .google.cloud.redis.v1beta1.InputConfig input_config = 3 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public com.google.cloud.redis.v1beta1.InputConfigOrBuilder getInputConfigOrBuilder() {
       if (inputConfigBuilder_ != null) {
@@ -808,7 +830,9 @@ public final class ImportInstanceRequest extends com.google.protobuf.GeneratedMe
      * Required. Specify data to be imported.
      * </pre>
      *
-     * <code>.google.cloud.redis.v1beta1.InputConfig input_config = 3;</code>
+     * <code>
+     * .google.cloud.redis.v1beta1.InputConfig input_config = 3 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.redis.v1beta1.InputConfig,

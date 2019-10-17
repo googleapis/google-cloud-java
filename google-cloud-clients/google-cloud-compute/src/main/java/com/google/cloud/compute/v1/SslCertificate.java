@@ -40,6 +40,7 @@ public final class SslCertificate implements ApiMessage {
   private final String kind;
   private final String name;
   private final String privateKey;
+  private final String region;
   private final String selfLink;
 
   private SslCertificate() {
@@ -50,6 +51,7 @@ public final class SslCertificate implements ApiMessage {
     this.kind = null;
     this.name = null;
     this.privateKey = null;
+    this.region = null;
     this.selfLink = null;
   }
 
@@ -61,6 +63,7 @@ public final class SslCertificate implements ApiMessage {
       String kind,
       String name,
       String privateKey,
+      String region,
       String selfLink) {
     this.certificate = certificate;
     this.creationTimestamp = creationTimestamp;
@@ -69,6 +72,7 @@ public final class SslCertificate implements ApiMessage {
     this.kind = kind;
     this.name = name;
     this.privateKey = privateKey;
+    this.region = region;
     this.selfLink = selfLink;
   }
 
@@ -94,6 +98,9 @@ public final class SslCertificate implements ApiMessage {
     }
     if ("privateKey".equals(fieldName)) {
       return privateKey;
+    }
+    if ("region".equals(fieldName)) {
+      return region;
     }
     if ("selfLink".equals(fieldName)) {
       return selfLink;
@@ -167,6 +174,14 @@ public final class SslCertificate implements ApiMessage {
     return privateKey;
   }
 
+  /**
+   * [Output Only] URL of the region where the regional SSL Certificate resides. This field is not
+   * applicable to global SSL Certificate.
+   */
+  public String getRegion() {
+    return region;
+  }
+
   /** [Output only] Server-defined URL for the resource. */
   public String getSelfLink() {
     return selfLink;
@@ -202,6 +217,7 @@ public final class SslCertificate implements ApiMessage {
     private String kind;
     private String name;
     private String privateKey;
+    private String region;
     private String selfLink;
 
     Builder() {}
@@ -229,6 +245,9 @@ public final class SslCertificate implements ApiMessage {
       if (other.getPrivateKey() != null) {
         this.privateKey = other.privateKey;
       }
+      if (other.getRegion() != null) {
+        this.region = other.region;
+      }
       if (other.getSelfLink() != null) {
         this.selfLink = other.selfLink;
       }
@@ -243,6 +262,7 @@ public final class SslCertificate implements ApiMessage {
       this.kind = source.kind;
       this.name = source.name;
       this.privateKey = source.privateKey;
+      this.region = source.region;
       this.selfLink = source.selfLink;
     }
 
@@ -351,6 +371,23 @@ public final class SslCertificate implements ApiMessage {
       return this;
     }
 
+    /**
+     * [Output Only] URL of the region where the regional SSL Certificate resides. This field is not
+     * applicable to global SSL Certificate.
+     */
+    public String getRegion() {
+      return region;
+    }
+
+    /**
+     * [Output Only] URL of the region where the regional SSL Certificate resides. This field is not
+     * applicable to global SSL Certificate.
+     */
+    public Builder setRegion(String region) {
+      this.region = region;
+      return this;
+    }
+
     /** [Output only] Server-defined URL for the resource. */
     public String getSelfLink() {
       return selfLink;
@@ -365,7 +402,15 @@ public final class SslCertificate implements ApiMessage {
     public SslCertificate build() {
 
       return new SslCertificate(
-          certificate, creationTimestamp, description, id, kind, name, privateKey, selfLink);
+          certificate,
+          creationTimestamp,
+          description,
+          id,
+          kind,
+          name,
+          privateKey,
+          region,
+          selfLink);
     }
 
     public Builder clone() {
@@ -377,6 +422,7 @@ public final class SslCertificate implements ApiMessage {
       newBuilder.setKind(this.kind);
       newBuilder.setName(this.name);
       newBuilder.setPrivateKey(this.privateKey);
+      newBuilder.setRegion(this.region);
       newBuilder.setSelfLink(this.selfLink);
       return newBuilder;
     }
@@ -406,6 +452,9 @@ public final class SslCertificate implements ApiMessage {
         + "privateKey="
         + privateKey
         + ", "
+        + "region="
+        + region
+        + ", "
         + "selfLink="
         + selfLink
         + "}";
@@ -425,6 +474,7 @@ public final class SslCertificate implements ApiMessage {
           && Objects.equals(this.kind, that.getKind())
           && Objects.equals(this.name, that.getName())
           && Objects.equals(this.privateKey, that.getPrivateKey())
+          && Objects.equals(this.region, that.getRegion())
           && Objects.equals(this.selfLink, that.getSelfLink());
     }
     return false;
@@ -433,6 +483,6 @@ public final class SslCertificate implements ApiMessage {
   @Override
   public int hashCode() {
     return Objects.hash(
-        certificate, creationTimestamp, description, id, kind, name, privateKey, selfLink);
+        certificate, creationTimestamp, description, id, kind, name, privateKey, region, selfLink);
   }
 }

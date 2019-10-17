@@ -15,11 +15,13 @@
  */
 package com.google.cloud.compute.v1.stub;
 
+import static com.google.cloud.compute.v1.UrlMapClient.AggregatedListUrlMapsPagedResponse;
 import static com.google.cloud.compute.v1.UrlMapClient.ListUrlMapsPagedResponse;
 
 import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.rpc.UnaryCallable;
+import com.google.cloud.compute.v1.AggregatedListUrlMapsHttpRequest;
 import com.google.cloud.compute.v1.DeleteUrlMapHttpRequest;
 import com.google.cloud.compute.v1.GetUrlMapHttpRequest;
 import com.google.cloud.compute.v1.InsertUrlMapHttpRequest;
@@ -30,6 +32,7 @@ import com.google.cloud.compute.v1.PatchUrlMapHttpRequest;
 import com.google.cloud.compute.v1.UpdateUrlMapHttpRequest;
 import com.google.cloud.compute.v1.UrlMap;
 import com.google.cloud.compute.v1.UrlMapList;
+import com.google.cloud.compute.v1.UrlMapsAggregatedList;
 import com.google.cloud.compute.v1.UrlMapsValidateResponse;
 import com.google.cloud.compute.v1.ValidateUrlMapHttpRequest;
 import javax.annotation.Generated;
@@ -43,6 +46,19 @@ import javax.annotation.Generated;
 @Generated("by gapic-generator")
 @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
 public abstract class UrlMapStub implements BackgroundResource {
+
+  @BetaApi
+  public UnaryCallable<AggregatedListUrlMapsHttpRequest, AggregatedListUrlMapsPagedResponse>
+      aggregatedListUrlMapsPagedCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: aggregatedListUrlMapsPagedCallable()");
+  }
+
+  @BetaApi
+  public UnaryCallable<AggregatedListUrlMapsHttpRequest, UrlMapsAggregatedList>
+      aggregatedListUrlMapsCallable() {
+    throw new UnsupportedOperationException("Not implemented: aggregatedListUrlMapsCallable()");
+  }
 
   @BetaApi
   public UnaryCallable<DeleteUrlMapHttpRequest, Operation> deleteUrlMapCallable() {

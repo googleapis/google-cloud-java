@@ -14,8 +14,8 @@ public interface TagTemplateOrBuilder
    * <pre>
    * Required when used in
    * [UpdateTagTemplateRequest][google.cloud.datacatalog.v1beta1.UpdateTagTemplateRequest].
-   * The resource name of the tag template in URL format. For example,
-   * projects/{project_id}/locations/{location}/tagTemplates/{tag_template_id}.
+   * The resource name of the tag template in URL format. Example:
+   * * projects/{project_id}/locations/{location}/tagTemplates/{tag_template_id}
    * Note that this TagTemplate and its child resources may not actually be
    * stored in the location in this name.
    * </pre>
@@ -29,8 +29,8 @@ public interface TagTemplateOrBuilder
    * <pre>
    * Required when used in
    * [UpdateTagTemplateRequest][google.cloud.datacatalog.v1beta1.UpdateTagTemplateRequest].
-   * The resource name of the tag template in URL format. For example,
-   * projects/{project_id}/locations/{location}/tagTemplates/{tag_template_id}.
+   * The resource name of the tag template in URL format. Example:
+   * * projects/{project_id}/locations/{location}/tagTemplates/{tag_template_id}
    * Note that this TagTemplate and its child resources may not actually be
    * stored in the location in this name.
    * </pre>
@@ -43,8 +43,7 @@ public interface TagTemplateOrBuilder
    *
    *
    * <pre>
-   * Optional. The display name for this template. Default value is an empty
-   * string.
+   * Optional. The display name for this template. Defaults to an empty string.
    * </pre>
    *
    * <code>string display_name = 2;</code>
@@ -54,8 +53,7 @@ public interface TagTemplateOrBuilder
    *
    *
    * <pre>
-   * Optional. The display name for this template. Default value is an empty
-   * string.
+   * Optional. The display name for this template. Defaults to an empty string.
    * </pre>
    *
    * <code>string display_name = 2;</code>
@@ -66,32 +64,36 @@ public interface TagTemplateOrBuilder
    *
    *
    * <pre>
-   * Required. Map of tag template field ids to the settings for the field.
+   * Required. Map of tag template field IDs to the settings for the field.
    * This map is an exhaustive list of the allowed fields. This map must contain
    * at least one field and at most 500 fields.
    * The keys to this map are tag template field IDs. Field IDs can contain
    * letters (both uppercase and lowercase), numbers (0-9) and underscores (_).
-   * Field IDs must be at least 1 character long and at most 64 characters long.
-   * Field IDs must start with a letter or underscore.
+   * Field IDs must be at least 1 character long and at most
+   * 64 characters long. Field IDs must start with a letter or underscore.
    * </pre>
    *
-   * <code>map&lt;string, .google.cloud.datacatalog.v1beta1.TagTemplateField&gt; fields = 3;</code>
+   * <code>
+   * map&lt;string, .google.cloud.datacatalog.v1beta1.TagTemplateField&gt; fields = 3 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   int getFieldsCount();
   /**
    *
    *
    * <pre>
-   * Required. Map of tag template field ids to the settings for the field.
+   * Required. Map of tag template field IDs to the settings for the field.
    * This map is an exhaustive list of the allowed fields. This map must contain
    * at least one field and at most 500 fields.
    * The keys to this map are tag template field IDs. Field IDs can contain
    * letters (both uppercase and lowercase), numbers (0-9) and underscores (_).
-   * Field IDs must be at least 1 character long and at most 64 characters long.
-   * Field IDs must start with a letter or underscore.
+   * Field IDs must be at least 1 character long and at most
+   * 64 characters long. Field IDs must start with a letter or underscore.
    * </pre>
    *
-   * <code>map&lt;string, .google.cloud.datacatalog.v1beta1.TagTemplateField&gt; fields = 3;</code>
+   * <code>
+   * map&lt;string, .google.cloud.datacatalog.v1beta1.TagTemplateField&gt; fields = 3 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   boolean containsFields(java.lang.String key);
   /** Use {@link #getFieldsMap()} instead. */
@@ -101,32 +103,36 @@ public interface TagTemplateOrBuilder
    *
    *
    * <pre>
-   * Required. Map of tag template field ids to the settings for the field.
+   * Required. Map of tag template field IDs to the settings for the field.
    * This map is an exhaustive list of the allowed fields. This map must contain
    * at least one field and at most 500 fields.
    * The keys to this map are tag template field IDs. Field IDs can contain
    * letters (both uppercase and lowercase), numbers (0-9) and underscores (_).
-   * Field IDs must be at least 1 character long and at most 64 characters long.
-   * Field IDs must start with a letter or underscore.
+   * Field IDs must be at least 1 character long and at most
+   * 64 characters long. Field IDs must start with a letter or underscore.
    * </pre>
    *
-   * <code>map&lt;string, .google.cloud.datacatalog.v1beta1.TagTemplateField&gt; fields = 3;</code>
+   * <code>
+   * map&lt;string, .google.cloud.datacatalog.v1beta1.TagTemplateField&gt; fields = 3 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   java.util.Map<java.lang.String, com.google.cloud.datacatalog.TagTemplateField> getFieldsMap();
   /**
    *
    *
    * <pre>
-   * Required. Map of tag template field ids to the settings for the field.
+   * Required. Map of tag template field IDs to the settings for the field.
    * This map is an exhaustive list of the allowed fields. This map must contain
    * at least one field and at most 500 fields.
    * The keys to this map are tag template field IDs. Field IDs can contain
    * letters (both uppercase and lowercase), numbers (0-9) and underscores (_).
-   * Field IDs must be at least 1 character long and at most 64 characters long.
-   * Field IDs must start with a letter or underscore.
+   * Field IDs must be at least 1 character long and at most
+   * 64 characters long. Field IDs must start with a letter or underscore.
    * </pre>
    *
-   * <code>map&lt;string, .google.cloud.datacatalog.v1beta1.TagTemplateField&gt; fields = 3;</code>
+   * <code>
+   * map&lt;string, .google.cloud.datacatalog.v1beta1.TagTemplateField&gt; fields = 3 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   com.google.cloud.datacatalog.TagTemplateField getFieldsOrDefault(
       java.lang.String key, com.google.cloud.datacatalog.TagTemplateField defaultValue);
@@ -134,16 +140,18 @@ public interface TagTemplateOrBuilder
    *
    *
    * <pre>
-   * Required. Map of tag template field ids to the settings for the field.
+   * Required. Map of tag template field IDs to the settings for the field.
    * This map is an exhaustive list of the allowed fields. This map must contain
    * at least one field and at most 500 fields.
    * The keys to this map are tag template field IDs. Field IDs can contain
    * letters (both uppercase and lowercase), numbers (0-9) and underscores (_).
-   * Field IDs must be at least 1 character long and at most 64 characters long.
-   * Field IDs must start with a letter or underscore.
+   * Field IDs must be at least 1 character long and at most
+   * 64 characters long. Field IDs must start with a letter or underscore.
    * </pre>
    *
-   * <code>map&lt;string, .google.cloud.datacatalog.v1beta1.TagTemplateField&gt; fields = 3;</code>
+   * <code>
+   * map&lt;string, .google.cloud.datacatalog.v1beta1.TagTemplateField&gt; fields = 3 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   com.google.cloud.datacatalog.TagTemplateField getFieldsOrThrow(java.lang.String key);
 }

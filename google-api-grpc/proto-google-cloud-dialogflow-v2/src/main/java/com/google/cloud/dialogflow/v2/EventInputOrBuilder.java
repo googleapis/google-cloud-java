@@ -15,7 +15,7 @@ public interface EventInputOrBuilder
    * Required. The unique identifier of the event.
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   java.lang.String getName();
   /**
@@ -25,7 +25,7 @@ public interface EventInputOrBuilder
    * Required. The unique identifier of the event.
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   com.google.protobuf.ByteString getNameBytes();
 
@@ -36,7 +36,7 @@ public interface EventInputOrBuilder
    * Optional. The collection of parameters associated with the event.
    * </pre>
    *
-   * <code>.google.protobuf.Struct parameters = 2;</code>
+   * <code>.google.protobuf.Struct parameters = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   boolean hasParameters();
   /**
@@ -46,7 +46,7 @@ public interface EventInputOrBuilder
    * Optional. The collection of parameters associated with the event.
    * </pre>
    *
-   * <code>.google.protobuf.Struct parameters = 2;</code>
+   * <code>.google.protobuf.Struct parameters = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   com.google.protobuf.Struct getParameters();
   /**
@@ -56,7 +56,7 @@ public interface EventInputOrBuilder
    * Optional. The collection of parameters associated with the event.
    * </pre>
    *
-   * <code>.google.protobuf.Struct parameters = 2;</code>
+   * <code>.google.protobuf.Struct parameters = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   com.google.protobuf.StructOrBuilder getParametersOrBuilder();
 
@@ -70,7 +70,7 @@ public interface EventInputOrBuilder
    * the same session do not necessarily need to specify the same language.
    * </pre>
    *
-   * <code>string language_code = 3;</code>
+   * <code>string language_code = 3 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   java.lang.String getLanguageCode();
   /**
@@ -83,7 +83,7 @@ public interface EventInputOrBuilder
    * the same session do not necessarily need to specify the same language.
    * </pre>
    *
-   * <code>string language_code = 3;</code>
+   * <code>string language_code = 3 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   com.google.protobuf.ByteString getLanguageCodeBytes();
 }
