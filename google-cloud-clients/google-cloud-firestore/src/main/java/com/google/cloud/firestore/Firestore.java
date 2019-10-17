@@ -17,6 +17,7 @@
 package com.google.cloud.firestore;
 
 import com.google.api.core.ApiFuture;
+import com.google.api.gax.rpc.ApiStreamObserver;
 import com.google.cloud.Service;
 import java.util.List;
 import javax.annotation.Nonnull;
@@ -55,10 +56,11 @@ public interface Firestore extends Service<FirestoreOptions>, AutoCloseable {
   /**
    * Fetches the root collections that are associated with this Firestore database.
    *
-   * @deprecated Use `listCollections()`.
+   * @deprecated Use {@link #listCollections()}.
    * @throws FirestoreException if the Iterable could not be initialized.
    * @return An Iterable that can be used to fetch all collections.
    */
+  @Deprecated
   @Nonnull
   Iterable<CollectionReference> getCollections();
 
@@ -115,6 +117,20 @@ public interface Firestore extends Service<FirestoreOptions>, AutoCloseable {
   @Nonnull
   ApiFuture<List<DocumentSnapshot>> getAll(
       @Nonnull DocumentReference[] documentReferences, @Nullable FieldMask fieldMask);
+
+  /**
+   * Retrieves multiple documents from Firestore while optionally applying a field mask to reduce
+   * the amount of data transmitted. Returned documents will be out of order.
+   *
+   * @param documentReferences Array with Document References to fetch.
+   * @param fieldMask If not null, specifies the subset of fields to return.
+   * @param responseObserver The observer to be notified when {@link DocumentSnapshot} details
+   *     arrive.
+   */
+  void getAll(
+      @Nonnull DocumentReference[] documentReferences,
+      @Nullable FieldMask fieldMask,
+      final ApiStreamObserver<DocumentSnapshot> responseObserver);
 
   /**
    * Gets a Firestore {@link WriteBatch} instance that can be used to combine multiple writes.

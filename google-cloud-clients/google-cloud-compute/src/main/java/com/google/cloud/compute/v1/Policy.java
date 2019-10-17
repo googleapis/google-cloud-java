@@ -143,7 +143,7 @@ public final class Policy implements ApiMessage {
    * to the same version of the policy.
    *
    * <p>If no `etag` is provided in the call to `setIamPolicy`, then the existing policy is
-   * overwritten blindly.
+   * overwritten.
    */
   public String getEtag() {
     return etag;
@@ -164,7 +164,14 @@ public final class Policy implements ApiMessage {
     return rules;
   }
 
-  /** Deprecated. */
+  /**
+   * Specifies the format of the policy.
+   *
+   * <p>Valid values are 0, 1, and 3. Requests specifying an invalid value will be rejected.
+   *
+   * <p>Policies with any conditional bindings must specify version 3. Policies without any
+   * conditional bindings may specify any valid value or leave the field unset.
+   */
   public Integer getVersion() {
     return version;
   }
@@ -297,7 +304,7 @@ public final class Policy implements ApiMessage {
      * be applied to the same version of the policy.
      *
      * <p>If no `etag` is provided in the call to `setIamPolicy`, then the existing policy is
-     * overwritten blindly.
+     * overwritten.
      */
     public String getEtag() {
       return etag;
@@ -312,7 +319,7 @@ public final class Policy implements ApiMessage {
      * be applied to the same version of the policy.
      *
      * <p>If no `etag` is provided in the call to `setIamPolicy`, then the existing policy is
-     * overwritten blindly.
+     * overwritten.
      */
     public Builder setEtag(String etag) {
       this.etag = etag;
@@ -372,12 +379,26 @@ public final class Policy implements ApiMessage {
       return this;
     }
 
-    /** Deprecated. */
+    /**
+     * Specifies the format of the policy.
+     *
+     * <p>Valid values are 0, 1, and 3. Requests specifying an invalid value will be rejected.
+     *
+     * <p>Policies with any conditional bindings must specify version 3. Policies without any
+     * conditional bindings may specify any valid value or leave the field unset.
+     */
     public Integer getVersion() {
       return version;
     }
 
-    /** Deprecated. */
+    /**
+     * Specifies the format of the policy.
+     *
+     * <p>Valid values are 0, 1, and 3. Requests specifying an invalid value will be rejected.
+     *
+     * <p>Policies with any conditional bindings must specify version 3. Policies without any
+     * conditional bindings may specify any valid value or leave the field unset.
+     */
     public Builder setVersion(Integer version) {
       this.version = version;
       return this;

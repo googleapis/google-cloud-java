@@ -25,6 +25,7 @@ import com.google.common.base.Strings;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.Lists;
 import java.util.List;
+import java.util.Map;
 import java.util.Objects;
 
 /**
@@ -40,6 +41,8 @@ public final class CopyJobConfiguration extends JobConfiguration {
   private final JobInfo.CreateDisposition createDisposition;
   private final JobInfo.WriteDisposition writeDisposition;
   private final EncryptionConfiguration destinationEncryptionConfiguration;
+  private final Map<String, String> labels;
+  private final Long jobTimeoutMs;
 
   public static final class Builder
       extends JobConfiguration.Builder<CopyJobConfiguration, Builder> {
@@ -49,6 +52,8 @@ public final class CopyJobConfiguration extends JobConfiguration {
     private JobInfo.CreateDisposition createDisposition;
     private JobInfo.WriteDisposition writeDisposition;
     private EncryptionConfiguration destinationEncryptionConfiguration;
+    private Map<String, String> labels;
+    private Long jobTimeoutMs;
 
     private Builder() {
       super(Type.COPY);
@@ -61,6 +66,8 @@ public final class CopyJobConfiguration extends JobConfiguration {
       this.createDisposition = jobConfiguration.createDisposition;
       this.writeDisposition = jobConfiguration.writeDisposition;
       this.destinationEncryptionConfiguration = jobConfiguration.destinationEncryptionConfiguration;
+      this.labels = jobConfiguration.labels;
+      this.jobTimeoutMs = jobConfiguration.jobTimeoutMs;
     }
 
     private Builder(com.google.api.services.bigquery.model.JobConfiguration configurationPb) {
@@ -86,6 +93,12 @@ public final class CopyJobConfiguration extends JobConfiguration {
             new EncryptionConfiguration.Builder(
                     copyConfigurationPb.getDestinationEncryptionConfiguration())
                 .build();
+      }
+      if (configurationPb.getLabels() != null) {
+        this.labels = configurationPb.getLabels();
+      }
+      if (configurationPb.getJobTimeoutMs() != null) {
+        this.jobTimeoutMs = configurationPb.getJobTimeoutMs();
       }
     }
 
@@ -131,6 +144,31 @@ public final class CopyJobConfiguration extends JobConfiguration {
       return this;
     }
 
+    /**
+     * The labels associated with this job. You can use these to organize and group your jobs. Label
+     * keys and values can be no longer than 63 characters, can only contain lowercase letters,
+     * numeric characters, underscores and dashes. International characters are allowed. Label
+     * values are optional. Label keys must start with a letter and each label in the list must have
+     * a different key.
+     *
+     * @param labels labels or {@code null} for none
+     */
+    public Builder setLabels(Map<String, String> labels) {
+      this.labels = labels;
+      return this;
+    }
+
+    /**
+     * [Optional] Job timeout in milliseconds. If this time limit is exceeded, BigQuery may attempt
+     * to terminate the job.
+     *
+     * @param jobTimeoutMs jobTimeoutMs or {@code null} for none
+     */
+    public Builder setJobTimeoutMs(Long jobTimeoutMs) {
+      this.jobTimeoutMs = jobTimeoutMs;
+      return this;
+    }
+
     public CopyJobConfiguration build() {
       return new CopyJobConfiguration(this);
     }
@@ -143,6 +181,8 @@ public final class CopyJobConfiguration extends JobConfiguration {
     this.createDisposition = builder.createDisposition;
     this.writeDisposition = builder.writeDisposition;
     this.destinationEncryptionConfiguration = builder.destinationEncryptionConfiguration;
+    this.labels = builder.labels;
+    this.jobTimeoutMs = builder.jobTimeoutMs;
   }
 
   /** Returns the source tables to copy. */
@@ -181,6 +221,16 @@ public final class CopyJobConfiguration extends JobConfiguration {
     return writeDisposition;
   }
 
+  /** Returns the labels associated with this job */
+  public Map<String, String> getLabels() {
+    return labels;
+  }
+
+  /** Returns the timeout associated with this job */
+  public Long getJobTimeoutMs() {
+    return jobTimeoutMs;
+  }
+
   @Override
   public Builder toBuilder() {
     return new Builder(this);
@@ -193,7 +243,9 @@ public final class CopyJobConfiguration extends JobConfiguration {
         .add("destinationTable", destinationTable)
         .add("destinationEncryptionConfiguration", destinationEncryptionConfiguration)
         .add("createDisposition", createDisposition)
-        .add("writeDisposition", writeDisposition);
+        .add("writeDisposition", writeDisposition)
+        .add("labels", labels)
+        .add("jobTimeoutMs", jobTimeoutMs);
   }
 
   @Override
@@ -205,7 +257,13 @@ public final class CopyJobConfiguration extends JobConfiguration {
   @Override
   public int hashCode() {
     return Objects.hash(
-        baseHashCode(), sourceTables, destinationTable, createDisposition, writeDisposition);
+        baseHashCode(),
+        sourceTables,
+        destinationTable,
+        createDisposition,
+        writeDisposition,
+        labels,
+        jobTimeoutMs);
   }
 
   @Override
@@ -232,6 +290,8 @@ public final class CopyJobConfiguration extends JobConfiguration {
   @Override
   com.google.api.services.bigquery.model.JobConfiguration toPb() {
     JobConfigurationTableCopy configurationPb = new JobConfigurationTableCopy();
+    com.google.api.services.bigquery.model.JobConfiguration jobConfiguration =
+        new com.google.api.services.bigquery.model.JobConfiguration();
     configurationPb.setDestinationTable(destinationTable.toPb());
     if (sourceTables.size() == 1) {
       configurationPb.setSourceTable(sourceTables.get(0).toPb());
@@ -248,7 +308,14 @@ public final class CopyJobConfiguration extends JobConfiguration {
       configurationPb.setDestinationEncryptionConfiguration(
           destinationEncryptionConfiguration.toPb());
     }
-    return new com.google.api.services.bigquery.model.JobConfiguration().setCopy(configurationPb);
+    if (labels != null) {
+      jobConfiguration.setLabels(labels);
+    }
+    if (jobTimeoutMs != null) {
+      jobConfiguration.setJobTimeoutMs(jobTimeoutMs);
+    }
+    jobConfiguration.setCopy(configurationPb);
+    return jobConfiguration;
   }
 
   /** Creates a builder for a BigQuery Copy Job configuration given destination and source table. */

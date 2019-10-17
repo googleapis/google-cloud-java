@@ -17,7 +17,7 @@ public interface DiskConfigOrBuilder
    * "pd-standard" (Persistent Disk Hard Disk Drive).
    * </pre>
    *
-   * <code>string boot_disk_type = 3;</code>
+   * <code>string boot_disk_type = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   java.lang.String getBootDiskType();
   /**
@@ -29,7 +29,7 @@ public interface DiskConfigOrBuilder
    * "pd-standard" (Persistent Disk Hard Disk Drive).
    * </pre>
    *
-   * <code>string boot_disk_type = 3;</code>
+   * <code>string boot_disk_type = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   com.google.protobuf.ByteString getBootDiskTypeBytes();
 
@@ -40,7 +40,7 @@ public interface DiskConfigOrBuilder
    * Optional. Size in GB of the boot disk (default is 500GB).
    * </pre>
    *
-   * <code>int32 boot_disk_size_gb = 1;</code>
+   * <code>int32 boot_disk_size_gb = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   int getBootDiskSizeGb();
 
@@ -56,7 +56,7 @@ public interface DiskConfigOrBuilder
    * config and installed binaries.
    * </pre>
    *
-   * <code>int32 num_local_ssds = 2;</code>
+   * <code>int32 num_local_ssds = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   int getNumLocalSsds();
 }

@@ -1,0 +1,13 @@
+{
+  "name": "dataproc",
+  "name_pretty": "Google Cloud Dataproc",
+  "product_documentation": "https://cloud.google.com/dataproc",
+  "client_documentation": "https://googleapis.dev/java/google-cloud-clients/latest/index.html?com/google/cloud/dataproc/v1/package-summary.html",
+  "issue_tracker": "https://issuetracker.google.com/savedsearches/559745",
+  "release_level": "beta",
+  "language": "java",
+  "repo": "googleapis/google-cloud-java",
+  "repo_short": "google-cloud-java",
+  "distribution_name": "com.google.cloud:google-cloud-dataproc",
+  "api_id": "dataproc.googleapis.com"
+}

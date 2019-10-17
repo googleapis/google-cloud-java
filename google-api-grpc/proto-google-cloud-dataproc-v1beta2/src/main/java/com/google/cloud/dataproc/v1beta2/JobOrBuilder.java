@@ -56,7 +56,9 @@ public interface JobOrBuilder
    * run the job.
    * </pre>
    *
-   * <code>.google.cloud.dataproc.v1beta2.JobPlacement placement = 2;</code>
+   * <code>
+   * .google.cloud.dataproc.v1beta2.JobPlacement placement = 2 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   boolean hasPlacement();
   /**
@@ -67,7 +69,9 @@ public interface JobOrBuilder
    * run the job.
    * </pre>
    *
-   * <code>.google.cloud.dataproc.v1beta2.JobPlacement placement = 2;</code>
+   * <code>
+   * .google.cloud.dataproc.v1beta2.JobPlacement placement = 2 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   com.google.cloud.dataproc.v1beta2.JobPlacement getPlacement();
   /**
@@ -78,7 +82,9 @@ public interface JobOrBuilder
    * run the job.
    * </pre>
    *
-   * <code>.google.cloud.dataproc.v1beta2.JobPlacement placement = 2;</code>
+   * <code>
+   * .google.cloud.dataproc.v1beta2.JobPlacement placement = 2 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   com.google.cloud.dataproc.v1beta2.JobPlacementOrBuilder getPlacementOrBuilder();
 

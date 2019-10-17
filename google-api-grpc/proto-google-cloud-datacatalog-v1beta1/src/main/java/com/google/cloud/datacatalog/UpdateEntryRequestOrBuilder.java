@@ -12,30 +12,36 @@ public interface UpdateEntryRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The updated Entry.
+   * Required. The updated entry.
    * </pre>
    *
-   * <code>.google.cloud.datacatalog.v1beta1.Entry entry = 1;</code>
+   * <code>
+   * .google.cloud.datacatalog.v1beta1.Entry entry = 1 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   boolean hasEntry();
   /**
    *
    *
    * <pre>
-   * Required. The updated Entry.
+   * Required. The updated entry.
    * </pre>
    *
-   * <code>.google.cloud.datacatalog.v1beta1.Entry entry = 1;</code>
+   * <code>
+   * .google.cloud.datacatalog.v1beta1.Entry entry = 1 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   com.google.cloud.datacatalog.Entry getEntry();
   /**
    *
    *
    * <pre>
-   * Required. The updated Entry.
+   * Required. The updated entry.
    * </pre>
    *
-   * <code>.google.cloud.datacatalog.v1beta1.Entry entry = 1;</code>
+   * <code>
+   * .google.cloud.datacatalog.v1beta1.Entry entry = 1 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   com.google.cloud.datacatalog.EntryOrBuilder getEntryOrBuilder();
 
@@ -43,14 +49,9 @@ public interface UpdateEntryRequestOrBuilder
    *
    *
    * <pre>
-   * Optional. The fields to update on the entry.  If absent or empty, all
+   * Optional. The fields to update on the entry. If absent or empty, all
    * modifiable fields are updated.
-   * Modifiable fields in synced entries:
-   * 1. schema (Pub/Sub topics only)
-   * Modifiable fields in native entries:
-   * 1. display_name
-   * 2. description
-   * 3. schema
+   * Currently only `schema` field in Cloud Pub/Sub topic entries is modifiable.
    * </pre>
    *
    * <code>.google.protobuf.FieldMask update_mask = 2;</code>
@@ -60,14 +61,9 @@ public interface UpdateEntryRequestOrBuilder
    *
    *
    * <pre>
-   * Optional. The fields to update on the entry.  If absent or empty, all
+   * Optional. The fields to update on the entry. If absent or empty, all
    * modifiable fields are updated.
-   * Modifiable fields in synced entries:
-   * 1. schema (Pub/Sub topics only)
-   * Modifiable fields in native entries:
-   * 1. display_name
-   * 2. description
-   * 3. schema
+   * Currently only `schema` field in Cloud Pub/Sub topic entries is modifiable.
    * </pre>
    *
    * <code>.google.protobuf.FieldMask update_mask = 2;</code>
@@ -77,14 +73,9 @@ public interface UpdateEntryRequestOrBuilder
    *
    *
    * <pre>
-   * Optional. The fields to update on the entry.  If absent or empty, all
+   * Optional. The fields to update on the entry. If absent or empty, all
    * modifiable fields are updated.
-   * Modifiable fields in synced entries:
-   * 1. schema (Pub/Sub topics only)
-   * Modifiable fields in native entries:
-   * 1. display_name
-   * 2. description
-   * 3. schema
+   * Currently only `schema` field in Cloud Pub/Sub topic entries is modifiable.
    * </pre>
    *
    * <code>.google.protobuf.FieldMask update_mask = 2;</code>

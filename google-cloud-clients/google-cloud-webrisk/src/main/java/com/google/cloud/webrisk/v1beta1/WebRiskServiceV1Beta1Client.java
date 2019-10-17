@@ -172,10 +172,10 @@ public class WebRiskServiceV1Beta1Client implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param threatType Required. The ThreatList to update.
+   * @param threatType The ThreatList to update.
    * @param versionToken The current version token of the client for the requested list (the client
    *     version that was received from the last successful diff).
-   * @param constraints The constraints associated with this request.
+   * @param constraints Required. The constraints associated with this request.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ComputeThreatListDiffResponse computeThreatListDiff(
@@ -257,7 +257,7 @@ public class WebRiskServiceV1Beta1Client implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param uri The URI to be checked for matches.
+   * @param uri Required. The URI to be checked for matches.
    * @param threatTypes Required. The ThreatLists to search in.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -361,7 +361,10 @@ public class WebRiskServiceV1Beta1Client implements BackgroundResource {
    *
    * <pre><code>
    * try (WebRiskServiceV1Beta1Client webRiskServiceV1Beta1Client = WebRiskServiceV1Beta1Client.create()) {
-   *   SearchHashesRequest request = SearchHashesRequest.newBuilder().build();
+   *   List&lt;ThreatType&gt; threatTypes = new ArrayList&lt;&gt;();
+   *   SearchHashesRequest request = SearchHashesRequest.newBuilder()
+   *     .addAllThreatTypes(threatTypes)
+   *     .build();
    *   SearchHashesResponse response = webRiskServiceV1Beta1Client.searchHashes(request);
    * }
    * </code></pre>
@@ -384,7 +387,10 @@ public class WebRiskServiceV1Beta1Client implements BackgroundResource {
    *
    * <pre><code>
    * try (WebRiskServiceV1Beta1Client webRiskServiceV1Beta1Client = WebRiskServiceV1Beta1Client.create()) {
-   *   SearchHashesRequest request = SearchHashesRequest.newBuilder().build();
+   *   List&lt;ThreatType&gt; threatTypes = new ArrayList&lt;&gt;();
+   *   SearchHashesRequest request = SearchHashesRequest.newBuilder()
+   *     .addAllThreatTypes(threatTypes)
+   *     .build();
    *   ApiFuture&lt;SearchHashesResponse&gt; future = webRiskServiceV1Beta1Client.searchHashesCallable().futureCall(request);
    *   // Do something
    *   SearchHashesResponse response = future.get();

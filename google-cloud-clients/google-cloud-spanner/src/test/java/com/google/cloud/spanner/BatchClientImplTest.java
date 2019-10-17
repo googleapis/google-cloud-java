@@ -19,18 +19,22 @@ package com.google.cloud.spanner;
 import static com.google.common.truth.Truth.assertThat;
 import static org.mockito.Mockito.anyMap;
 import static org.mockito.Mockito.eq;
+import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.when;
 import static org.mockito.MockitoAnnotations.initMocks;
 
 import com.google.api.core.NanoClock;
 import com.google.api.gax.retrying.RetrySettings;
 import com.google.cloud.Timestamp;
+import com.google.cloud.grpc.GrpcTransportOptions;
+import com.google.cloud.grpc.GrpcTransportOptions.ExecutorFactory;
 import com.google.cloud.spanner.spi.v1.SpannerRpc;
 import com.google.protobuf.ByteString;
 import com.google.protobuf.util.Timestamps;
 import com.google.spanner.v1.BeginTransactionRequest;
 import com.google.spanner.v1.Session;
 import com.google.spanner.v1.Transaction;
+import java.util.Collections;
 import java.util.Map;
 import org.junit.Before;
 import org.junit.Test;
@@ -57,27 +61,34 @@ public final class BatchClientImplTest {
 
   private BatchClient client;
 
+  @SuppressWarnings("unchecked")
   @Before
   public void setUp() {
     initMocks(this);
     DatabaseId db = DatabaseId.of(DB_NAME);
+    when(spannerOptions.getNumChannels()).thenReturn(4);
     when(spannerOptions.getPrefetchChunks()).thenReturn(1);
     when(spannerOptions.getRetrySettings()).thenReturn(RetrySettings.newBuilder().build());
     when(spannerOptions.getClock()).thenReturn(NanoClock.getDefaultClock());
+    when(spannerOptions.getSpannerRpcV1()).thenReturn(gapicRpc);
+    when(spannerOptions.getSessionLabels()).thenReturn(Collections.<String, String>emptyMap());
+    GrpcTransportOptions transportOptions = mock(GrpcTransportOptions.class);
+    when(transportOptions.getExecutorFactory()).thenReturn(mock(ExecutorFactory.class));
+    when(spannerOptions.getTransportOptions()).thenReturn(transportOptions);
+    @SuppressWarnings("resource")
     SpannerImpl spanner = new SpannerImpl(gapicRpc, spannerOptions);
-    client = new BatchClientImpl(db, spanner);
+    client = new BatchClientImpl(spanner.getSessionClient(db));
   }
 
+  @SuppressWarnings("unchecked")
   @Test
   public void testBatchReadOnlyTxnWithBound() throws Exception {
     Session sessionProto = Session.newBuilder().setName(SESSION_NAME).build();
-    when(gapicRpc.createSession(
-            eq(DB_NAME), (Map<String, String>) anyMap(), optionsCaptor.capture()))
+    when(gapicRpc.createSession(eq(DB_NAME), anyMap(), optionsCaptor.capture()))
         .thenReturn(sessionProto);
     com.google.protobuf.Timestamp timestamp = Timestamps.parse(TIMESTAMP);
     Transaction txnMetadata =
         Transaction.newBuilder().setId(TXN_ID).setReadTimestamp(timestamp).build();
-    when(spannerOptions.getSpannerRpcV1()).thenReturn(gapicRpc);
     when(gapicRpc.beginTransaction(Mockito.<BeginTransactionRequest>any(), optionsCaptor.capture()))
         .thenReturn(txnMetadata);
 

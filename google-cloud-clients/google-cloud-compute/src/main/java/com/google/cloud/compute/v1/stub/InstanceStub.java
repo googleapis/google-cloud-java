@@ -65,6 +65,7 @@ import com.google.cloud.compute.v1.StopInstanceHttpRequest;
 import com.google.cloud.compute.v1.TestIamPermissionsInstanceHttpRequest;
 import com.google.cloud.compute.v1.TestPermissionsResponse;
 import com.google.cloud.compute.v1.UpdateAccessConfigInstanceHttpRequest;
+import com.google.cloud.compute.v1.UpdateDisplayDeviceInstanceHttpRequest;
 import com.google.cloud.compute.v1.UpdateNetworkInterfaceInstanceHttpRequest;
 import com.google.cloud.compute.v1.UpdateShieldedInstanceConfigInstanceHttpRequest;
 import javax.annotation.Generated;
@@ -292,6 +293,13 @@ public abstract class InstanceStub implements BackgroundResource {
       updateAccessConfigInstanceCallable() {
     throw new UnsupportedOperationException(
         "Not implemented: updateAccessConfigInstanceCallable()");
+  }
+
+  @BetaApi
+  public UnaryCallable<UpdateDisplayDeviceInstanceHttpRequest, Operation>
+      updateDisplayDeviceInstanceCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: updateDisplayDeviceInstanceCallable()");
   }
 
   @BetaApi

@@ -16,7 +16,7 @@ public interface UpdateJobRequestOrBuilder
    * belongs to.
    * </pre>
    *
-   * <code>string project_id = 1;</code>
+   * <code>string project_id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   java.lang.String getProjectId();
   /**
@@ -27,7 +27,7 @@ public interface UpdateJobRequestOrBuilder
    * belongs to.
    * </pre>
    *
-   * <code>string project_id = 1;</code>
+   * <code>string project_id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   com.google.protobuf.ByteString getProjectIdBytes();
 
@@ -38,7 +38,7 @@ public interface UpdateJobRequestOrBuilder
    * Required. The Cloud Dataproc region in which to handle the request.
    * </pre>
    *
-   * <code>string region = 2;</code>
+   * <code>string region = 2 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   java.lang.String getRegion();
   /**
@@ -48,7 +48,7 @@ public interface UpdateJobRequestOrBuilder
    * Required. The Cloud Dataproc region in which to handle the request.
    * </pre>
    *
-   * <code>string region = 2;</code>
+   * <code>string region = 2 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   com.google.protobuf.ByteString getRegionBytes();
 
@@ -59,7 +59,7 @@ public interface UpdateJobRequestOrBuilder
    * Required. The job ID.
    * </pre>
    *
-   * <code>string job_id = 3;</code>
+   * <code>string job_id = 3 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   java.lang.String getJobId();
   /**
@@ -69,7 +69,7 @@ public interface UpdateJobRequestOrBuilder
    * Required. The job ID.
    * </pre>
    *
-   * <code>string job_id = 3;</code>
+   * <code>string job_id = 3 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   com.google.protobuf.ByteString getJobIdBytes();
 
@@ -80,7 +80,7 @@ public interface UpdateJobRequestOrBuilder
    * Required. The changes to the job.
    * </pre>
    *
-   * <code>.google.cloud.dataproc.v1.Job job = 4;</code>
+   * <code>.google.cloud.dataproc.v1.Job job = 4 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   boolean hasJob();
   /**
@@ -90,7 +90,7 @@ public interface UpdateJobRequestOrBuilder
    * Required. The changes to the job.
    * </pre>
    *
-   * <code>.google.cloud.dataproc.v1.Job job = 4;</code>
+   * <code>.google.cloud.dataproc.v1.Job job = 4 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   com.google.cloud.dataproc.v1.Job getJob();
   /**
@@ -100,7 +100,7 @@ public interface UpdateJobRequestOrBuilder
    * Required. The changes to the job.
    * </pre>
    *
-   * <code>.google.cloud.dataproc.v1.Job job = 4;</code>
+   * <code>.google.cloud.dataproc.v1.Job job = 4 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   com.google.cloud.dataproc.v1.JobOrBuilder getJobOrBuilder();
 
@@ -116,7 +116,8 @@ public interface UpdateJobRequestOrBuilder
    * field that can be updated.
    * </pre>
    *
-   * <code>.google.protobuf.FieldMask update_mask = 5;</code>
+   * <code>.google.protobuf.FieldMask update_mask = 5 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   boolean hasUpdateMask();
   /**
@@ -131,7 +132,8 @@ public interface UpdateJobRequestOrBuilder
    * field that can be updated.
    * </pre>
    *
-   * <code>.google.protobuf.FieldMask update_mask = 5;</code>
+   * <code>.google.protobuf.FieldMask update_mask = 5 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   com.google.protobuf.FieldMask getUpdateMask();
   /**
@@ -146,7 +148,8 @@ public interface UpdateJobRequestOrBuilder
    * field that can be updated.
    * </pre>
    *
-   * <code>.google.protobuf.FieldMask update_mask = 5;</code>
+   * <code>.google.protobuf.FieldMask update_mask = 5 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   com.google.protobuf.FieldMaskOrBuilder getUpdateMaskOrBuilder();
 }

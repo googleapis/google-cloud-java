@@ -15,6 +15,7 @@
  */
 package com.google.cloud.compute.v1;
 
+import static com.google.cloud.compute.v1.TargetHttpProxyClient.AggregatedListTargetHttpProxiesPagedResponse;
 import static com.google.cloud.compute.v1.TargetHttpProxyClient.ListTargetHttpProxiesPagedResponse;
 
 import com.google.api.core.ApiFunction;
@@ -40,15 +41,16 @@ import javax.annotation.Generated;
  * <p>The default instance has everything set to sensible defaults:
  *
  * <ul>
- *   <li>The default service address (https://www.googleapis.com/compute/v1/projects/) and default
- *       port (443) are used.
+ *   <li>The default service address (https://compute.googleapis.com/compute/v1/projects/) and
+ *       default port (443) are used.
  *   <li>Credentials are acquired automatically through Application Default Credentials.
  *   <li>Retries are configured for idempotent methods but not for non-idempotent methods.
  * </ul>
  *
  * <p>The builder of this class is recursive, so contained classes are themselves builders. When
- * build() is called, the tree of builders is called to create the complete settings object. For
- * example, to set the total timeout of deleteTargetHttpProxy to 30 seconds:
+ * build() is called, the tree of builders is called to create the complete settings object.
+ *
+ * <p>For example, to set the total timeout of deleteTargetHttpProxy to 30 seconds:
  *
  * <pre>
  * <code>
@@ -63,6 +65,16 @@ import javax.annotation.Generated;
 @Generated("by gapic-generator")
 @BetaApi
 public class TargetHttpProxySettings extends ClientSettings<TargetHttpProxySettings> {
+  /** Returns the object with the settings used for calls to aggregatedListTargetHttpProxies. */
+  public PagedCallSettings<
+          AggregatedListTargetHttpProxiesHttpRequest,
+          TargetHttpProxyAggregatedList,
+          AggregatedListTargetHttpProxiesPagedResponse>
+      aggregatedListTargetHttpProxiesSettings() {
+    return ((TargetHttpProxyStubSettings) getStubSettings())
+        .aggregatedListTargetHttpProxiesSettings();
+  }
+
   /** Returns the object with the settings used for calls to deleteTargetHttpProxy. */
   public UnaryCallSettings<DeleteTargetHttpProxyHttpRequest, Operation>
       deleteTargetHttpProxySettings() {
@@ -194,6 +206,15 @@ public class TargetHttpProxySettings extends ClientSettings<TargetHttpProxySetti
       super.applyToAllUnaryMethods(
           getStubSettingsBuilder().unaryMethodSettingsBuilders(), settingsUpdater);
       return this;
+    }
+
+    /** Returns the builder for the settings used for calls to aggregatedListTargetHttpProxies. */
+    public PagedCallSettings.Builder<
+            AggregatedListTargetHttpProxiesHttpRequest,
+            TargetHttpProxyAggregatedList,
+            AggregatedListTargetHttpProxiesPagedResponse>
+        aggregatedListTargetHttpProxiesSettings() {
+      return getStubSettingsBuilder().aggregatedListTargetHttpProxiesSettings();
     }
 
     /** Returns the builder for the settings used for calls to deleteTargetHttpProxy. */

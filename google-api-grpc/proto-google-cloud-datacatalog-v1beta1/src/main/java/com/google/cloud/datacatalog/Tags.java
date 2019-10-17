@@ -63,42 +63,55 @@ public final class Tags {
     java.lang.String[] descriptorData = {
       "\n+google/cloud/datacatalog/v1beta1/tags."
           + "proto\022 google.cloud.datacatalog.v1beta1\032"
-          + "\037google/protobuf/timestamp.proto\"\375\001\n\003Tag"
-          + "\022\014\n\004name\030\001 \001(\t\022\020\n\010template\030\002 \001(\t\022\035\n\025temp"
-          + "late_display_name\030\005 \001(\t\022\020\n\006column\030\004 \001(\tH"
-          + "\000\022A\n\006fields\030\003 \003(\01321.google.cloud.datacat"
-          + "alog.v1beta1.Tag.FieldsEntry\032Y\n\013FieldsEn"
-          + "try\022\013\n\003key\030\001 \001(\t\0229\n\005value\030\002 \001(\0132*.google"
-          + ".cloud.datacatalog.v1beta1.TagField:\0028\001B"
-          + "\007\n\005scope\"\224\002\n\010TagField\022\024\n\014display_name\030\001 "
-          + "\001(\t\022\026\n\014double_value\030\002 \001(\001H\000\022\026\n\014string_va"
-          + "lue\030\003 \001(\tH\000\022\024\n\nbool_value\030\004 \001(\010H\000\0225\n\017tim"
-          + "estamp_value\030\005 \001(\0132\032.google.protobuf.Tim"
-          + "estampH\000\022J\n\nenum_value\030\006 \001(\01324.google.cl"
-          + "oud.datacatalog.v1beta1.TagField.EnumVal"
-          + "ueH\000\032!\n\tEnumValue\022\024\n\014display_name\030\001 \001(\tB"
-          + "\006\n\004kind\"\337\001\n\013TagTemplate\022\014\n\004name\030\001 \001(\t\022\024\n"
-          + "\014display_name\030\002 \001(\t\022I\n\006fields\030\003 \003(\01329.go"
-          + "ogle.cloud.datacatalog.v1beta1.TagTempla"
-          + "te.FieldsEntry\032a\n\013FieldsEntry\022\013\n\003key\030\001 \001"
-          + "(\t\022A\n\005value\030\002 \001(\01322.google.cloud.datacat"
-          + "alog.v1beta1.TagTemplateField:\0028\001\"c\n\020Tag"
-          + "TemplateField\022\024\n\014display_name\030\001 \001(\t\0229\n\004t"
-          + "ype\030\002 \001(\0132+.google.cloud.datacatalog.v1b"
-          + "eta1.FieldType\"\242\003\n\tFieldType\022S\n\016primitiv"
-          + "e_type\030\001 \001(\01629.google.cloud.datacatalog."
-          + "v1beta1.FieldType.PrimitiveTypeH\000\022I\n\tenu"
-          + "m_type\030\002 \001(\01324.google.cloud.datacatalog."
-          + "v1beta1.FieldType.EnumTypeH\000\032\205\001\n\010EnumTyp"
-          + "e\022V\n\016allowed_values\030\001 \003(\0132>.google.cloud"
-          + ".datacatalog.v1beta1.FieldType.EnumType."
-          + "EnumValue\032!\n\tEnumValue\022\024\n\014display_name\030\001"
-          + " \001(\t\"`\n\rPrimitiveType\022\036\n\032PRIMITIVE_TYPE_"
-          + "UNSPECIFIED\020\000\022\n\n\006DOUBLE\020\001\022\n\n\006STRING\020\002\022\010\n"
-          + "\004BOOL\020\003\022\r\n\tTIMESTAMP\020\004B\013\n\ttype_declBp\n\034c"
-          + "om.google.cloud.datacatalogP\001ZKgoogle.go"
-          + "lang.org/genproto/googleapis/cloud/datac"
-          + "atalog/v1beta1;datacatalog\370\001\001b\006proto3"
+          + "\037google/api/field_behavior.proto\032\031google"
+          + "/api/resource.proto\032\037google/protobuf/tim"
+          + "estamp.proto\"\220\003\n\003Tag\022\014\n\004name\030\001 \001(\t\022\025\n\010te"
+          + "mplate\030\002 \001(\tB\003\340A\002\022\"\n\025template_display_na"
+          + "me\030\005 \001(\tB\003\340A\003\022\020\n\006column\030\004 \001(\tH\000\022F\n\006field"
+          + "s\030\003 \003(\01321.google.cloud.datacatalog.v1bet"
+          + "a1.Tag.FieldsEntryB\003\340A\002\032Y\n\013FieldsEntry\022\013"
+          + "\n\003key\030\001 \001(\t\0229\n\005value\030\002 \001(\0132*.google.clou"
+          + "d.datacatalog.v1beta1.TagField:\0028\001:\201\001\352A~"
+          + "\n\036datacatalog.googleapis.com/Tag\022\\projec"
+          + "ts/{project}/locations/{location}/entryG"
+          + "roups/{entry_group}/entries/{entry}/tags"
+          + "/{tag}B\007\n\005scope\"\231\002\n\010TagField\022\031\n\014display_"
+          + "name\030\001 \001(\tB\003\340A\003\022\026\n\014double_value\030\002 \001(\001H\000\022"
+          + "\026\n\014string_value\030\003 \001(\tH\000\022\024\n\nbool_value\030\004 "
+          + "\001(\010H\000\0225\n\017timestamp_value\030\005 \001(\0132\032.google."
+          + "protobuf.TimestampH\000\022J\n\nenum_value\030\006 \001(\013"
+          + "24.google.cloud.datacatalog.v1beta1.TagF"
+          + "ield.EnumValueH\000\032!\n\tEnumValue\022\024\n\014display"
+          + "_name\030\001 \001(\tB\006\n\004kind\"\326\002\n\013TagTemplate\022\014\n\004n"
+          + "ame\030\001 \001(\t\022\024\n\014display_name\030\002 \001(\t\022N\n\006field"
+          + "s\030\003 \003(\01329.google.cloud.datacatalog.v1bet"
+          + "a1.TagTemplate.FieldsEntryB\003\340A\002\032a\n\013Field"
+          + "sEntry\022\013\n\003key\030\001 \001(\t\022A\n\005value\030\002 \001(\01322.goo"
+          + "gle.cloud.datacatalog.v1beta1.TagTemplat"
+          + "eField:\0028\001:p\352Am\n&datacatalog.googleapis."
+          + "com/TagTemplate\022Cprojects/{project}/loca"
+          + "tions/{location}/tagTemplates/{tag_templ"
+          + "ate}\"\376\001\n\020TagTemplateField\022\014\n\004name\030\006 \001(\t\022"
+          + "\024\n\014display_name\030\001 \001(\t\022>\n\004type\030\002 \001(\0132+.go"
+          + "ogle.cloud.datacatalog.v1beta1.FieldType"
+          + "B\003\340A\002:\205\001\352A\201\001\n+datacatalog.googleapis.com"
+          + "/TagTemplateField\022Rprojects/{project}/lo"
+          + "cations/{location}/tagTemplates/{tag_tem"
+          + "plate}/fields/{field}\"\247\003\n\tFieldType\022S\n\016p"
+          + "rimitive_type\030\001 \001(\01629.google.cloud.datac"
+          + "atalog.v1beta1.FieldType.PrimitiveTypeH\000"
+          + "\022I\n\tenum_type\030\002 \001(\01324.google.cloud.datac"
+          + "atalog.v1beta1.FieldType.EnumTypeH\000\032\212\001\n\010"
+          + "EnumType\022V\n\016allowed_values\030\001 \003(\0132>.googl"
+          + "e.cloud.datacatalog.v1beta1.FieldType.En"
+          + "umType.EnumValue\032&\n\tEnumValue\022\031\n\014display"
+          + "_name\030\001 \001(\tB\003\340A\002\"`\n\rPrimitiveType\022\036\n\032PRI"
+          + "MITIVE_TYPE_UNSPECIFIED\020\000\022\n\n\006DOUBLE\020\001\022\n\n"
+          + "\006STRING\020\002\022\010\n\004BOOL\020\003\022\r\n\tTIMESTAMP\020\004B\013\n\tty"
+          + "pe_declBp\n\034com.google.cloud.datacatalogP"
+          + "\001ZKgoogle.golang.org/genproto/googleapis"
+          + "/cloud/datacatalog/v1beta1;datacatalog\370\001"
+          + "\001b\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner() {
@@ -111,6 +124,8 @@ public final class Tags {
     com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
         descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
+          com.google.api.FieldBehaviorProto.getDescriptor(),
+          com.google.api.ResourceProto.getDescriptor(),
           com.google.protobuf.TimestampProto.getDescriptor(),
         },
         assigner);
@@ -178,7 +193,7 @@ public final class Tags {
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_datacatalog_v1beta1_TagTemplateField_descriptor,
             new java.lang.String[] {
-              "DisplayName", "Type",
+              "Name", "DisplayName", "Type",
             });
     internal_static_google_cloud_datacatalog_v1beta1_FieldType_descriptor =
         getDescriptor().getMessageTypes().get(4);
@@ -208,6 +223,14 @@ public final class Tags {
             new java.lang.String[] {
               "DisplayName",
             });
+    com.google.protobuf.ExtensionRegistry registry =
+        com.google.protobuf.ExtensionRegistry.newInstance();
+    registry.add(com.google.api.FieldBehaviorProto.fieldBehavior);
+    registry.add(com.google.api.ResourceProto.resource);
+    com.google.protobuf.Descriptors.FileDescriptor.internalUpdateFileDescriptor(
+        descriptor, registry);
+    com.google.api.FieldBehaviorProto.getDescriptor();
+    com.google.api.ResourceProto.getDescriptor();
     com.google.protobuf.TimestampProto.getDescriptor();
   }
 

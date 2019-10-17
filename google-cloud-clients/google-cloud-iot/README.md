@@ -16,24 +16,22 @@ Java idiomatic client for [IoT Core][cloud-iot].
 Quickstart
 ----------
 
-[//]: # ({x-version-update-start:google-cloud-iot:released})
 If you are using Maven, add this to your pom.xml file
 ```xml
 <dependency>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-iot</artifactId>
-  <version>0.101.0-beta</version>
+  <version>0.115.0-beta</version>
 </dependency>
 ```
 If you are using Gradle, add this to your dependencies
 ```Groovy
-compile 'com.google.cloud:google-cloud-iot:0.101.0-beta'
+compile 'com.google.cloud:google-cloud-iot:0.115.0-beta'
 ```
 If you are using SBT, add this to your dependencies
 ```Scala
-libraryDependencies += "com.google.cloud" % "google-cloud-iot" % "0.101.0-beta"
+libraryDependencies += "com.google.cloud" % "google-cloud-iot" % "0.115.0-beta"
 ```
-[//]: # ({x-version-update-end})
 
 Authentication
 --------------
@@ -97,4 +95,4 @@ Apache 2.0 - See [LICENSE] for more information.
 [cloud-platform]: https://cloud.google.com/
 [cloud-iot]: https://cloud.google.com/iot-core
 [iot-product-docs]: https://cloud.google.com/iot-core/docs
-[iot-client-lib-docs]: https://googleapis.github.io/google-cloud-java/google-cloud-clients/apidocs/index.html?com/google/cloud/iot/v1/package-summary.html
+[iot-client-lib-docs]: https://googleapis.dev/java/google-cloud-clients/latest/index.html?com/google/cloud/iot/v1/package-summary.html

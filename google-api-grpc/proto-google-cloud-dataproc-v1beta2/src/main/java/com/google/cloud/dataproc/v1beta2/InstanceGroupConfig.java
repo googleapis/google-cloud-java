@@ -7,7 +7,7 @@ package com.google.cloud.dataproc.v1beta2;
  *
  *
  * <pre>
- * Optional. The config settings for Compute Engine resources in
+ * The config settings for Compute Engine resources in
  * an instance group, such as a master or worker group.
  * </pre>
  *
@@ -193,7 +193,7 @@ public final class InstanceGroupConfig extends com.google.protobuf.GeneratedMess
    * For master instance groups, must be set to 1.
    * </pre>
    *
-   * <code>int32 num_instances = 1;</code>
+   * <code>int32 num_instances = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   public int getNumInstances() {
     return numInstances_;
@@ -209,7 +209,7 @@ public final class InstanceGroupConfig extends com.google.protobuf.GeneratedMess
    * from `cluster_name`, `num_instances`, and the instance group.
    * </pre>
    *
-   * <code>repeated string instance_names = 2;</code>
+   * <code>repeated string instance_names = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    */
   public com.google.protobuf.ProtocolStringList getInstanceNamesList() {
     return instanceNames_;
@@ -222,7 +222,7 @@ public final class InstanceGroupConfig extends com.google.protobuf.GeneratedMess
    * from `cluster_name`, `num_instances`, and the instance group.
    * </pre>
    *
-   * <code>repeated string instance_names = 2;</code>
+   * <code>repeated string instance_names = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    */
   public int getInstanceNamesCount() {
     return instanceNames_.size();
@@ -235,7 +235,7 @@ public final class InstanceGroupConfig extends com.google.protobuf.GeneratedMess
    * from `cluster_name`, `num_instances`, and the instance group.
    * </pre>
    *
-   * <code>repeated string instance_names = 2;</code>
+   * <code>repeated string instance_names = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    */
   public java.lang.String getInstanceNames(int index) {
     return instanceNames_.get(index);
@@ -248,7 +248,7 @@ public final class InstanceGroupConfig extends com.google.protobuf.GeneratedMess
    * from `cluster_name`, `num_instances`, and the instance group.
    * </pre>
    *
-   * <code>repeated string instance_names = 2;</code>
+   * <code>repeated string instance_names = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    */
   public com.google.protobuf.ByteString getInstanceNamesBytes(int index) {
     return instanceNames_.getByteString(index);
@@ -265,7 +265,7 @@ public final class InstanceGroupConfig extends com.google.protobuf.GeneratedMess
    * `SoftwareConfig.image_version`.
    * </pre>
    *
-   * <code>string image_uri = 3;</code>
+   * <code>string image_uri = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   public java.lang.String getImageUri() {
     java.lang.Object ref = imageUri_;
@@ -287,7 +287,7 @@ public final class InstanceGroupConfig extends com.google.protobuf.GeneratedMess
    * `SoftwareConfig.image_version`.
    * </pre>
    *
-   * <code>string image_uri = 3;</code>
+   * <code>string image_uri = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   public com.google.protobuf.ByteString getImageUriBytes() {
     java.lang.Object ref = imageUri_;
@@ -319,7 +319,7 @@ public final class InstanceGroupConfig extends com.google.protobuf.GeneratedMess
    * resource, for example, `n1-standard-2`.
    * </pre>
    *
-   * <code>string machine_type_uri = 4;</code>
+   * <code>string machine_type_uri = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   public java.lang.String getMachineTypeUri() {
     java.lang.Object ref = machineTypeUri_;
@@ -348,7 +348,7 @@ public final class InstanceGroupConfig extends com.google.protobuf.GeneratedMess
    * resource, for example, `n1-standard-2`.
    * </pre>
    *
-   * <code>string machine_type_uri = 4;</code>
+   * <code>string machine_type_uri = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   public com.google.protobuf.ByteString getMachineTypeUriBytes() {
     java.lang.Object ref = machineTypeUri_;
@@ -371,7 +371,9 @@ public final class InstanceGroupConfig extends com.google.protobuf.GeneratedMess
    * Optional. Disk option config settings.
    * </pre>
    *
-   * <code>.google.cloud.dataproc.v1beta2.DiskConfig disk_config = 5;</code>
+   * <code>
+   * .google.cloud.dataproc.v1beta2.DiskConfig disk_config = 5 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   public boolean hasDiskConfig() {
     return diskConfig_ != null;
@@ -383,7 +385,9 @@ public final class InstanceGroupConfig extends com.google.protobuf.GeneratedMess
    * Optional. Disk option config settings.
    * </pre>
    *
-   * <code>.google.cloud.dataproc.v1beta2.DiskConfig disk_config = 5;</code>
+   * <code>
+   * .google.cloud.dataproc.v1beta2.DiskConfig disk_config = 5 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   public com.google.cloud.dataproc.v1beta2.DiskConfig getDiskConfig() {
     return diskConfig_ == null
@@ -397,7 +401,9 @@ public final class InstanceGroupConfig extends com.google.protobuf.GeneratedMess
    * Optional. Disk option config settings.
    * </pre>
    *
-   * <code>.google.cloud.dataproc.v1beta2.DiskConfig disk_config = 5;</code>
+   * <code>
+   * .google.cloud.dataproc.v1beta2.DiskConfig disk_config = 5 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   public com.google.cloud.dataproc.v1beta2.DiskConfigOrBuilder getDiskConfigOrBuilder() {
     return getDiskConfig();
@@ -413,7 +419,7 @@ public final class InstanceGroupConfig extends com.google.protobuf.GeneratedMess
    * instances.
    * </pre>
    *
-   * <code>bool is_preemptible = 6;</code>
+   * <code>bool is_preemptible = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   public boolean getIsPreemptible() {
     return isPreemptible_;
@@ -430,7 +436,9 @@ public final class InstanceGroupConfig extends com.google.protobuf.GeneratedMess
    * This is only used for preemptible instance groups.
    * </pre>
    *
-   * <code>.google.cloud.dataproc.v1beta2.ManagedGroupConfig managed_group_config = 7;</code>
+   * <code>
+   * .google.cloud.dataproc.v1beta2.ManagedGroupConfig managed_group_config = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    */
   public boolean hasManagedGroupConfig() {
     return managedGroupConfig_ != null;
@@ -444,7 +452,9 @@ public final class InstanceGroupConfig extends com.google.protobuf.GeneratedMess
    * This is only used for preemptible instance groups.
    * </pre>
    *
-   * <code>.google.cloud.dataproc.v1beta2.ManagedGroupConfig managed_group_config = 7;</code>
+   * <code>
+   * .google.cloud.dataproc.v1beta2.ManagedGroupConfig managed_group_config = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    */
   public com.google.cloud.dataproc.v1beta2.ManagedGroupConfig getManagedGroupConfig() {
     return managedGroupConfig_ == null
@@ -460,7 +470,9 @@ public final class InstanceGroupConfig extends com.google.protobuf.GeneratedMess
    * This is only used for preemptible instance groups.
    * </pre>
    *
-   * <code>.google.cloud.dataproc.v1beta2.ManagedGroupConfig managed_group_config = 7;</code>
+   * <code>
+   * .google.cloud.dataproc.v1beta2.ManagedGroupConfig managed_group_config = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    */
   public com.google.cloud.dataproc.v1beta2.ManagedGroupConfigOrBuilder
       getManagedGroupConfigOrBuilder() {
@@ -475,11 +487,11 @@ public final class InstanceGroupConfig extends com.google.protobuf.GeneratedMess
    * <pre>
    * Optional. The Compute Engine accelerator configuration for these
    * instances.
-   * **Beta Feature**: This feature is still under development. It may be
-   * changed before final release.
    * </pre>
    *
-   * <code>repeated .google.cloud.dataproc.v1beta2.AcceleratorConfig accelerators = 8;</code>
+   * <code>
+   * repeated .google.cloud.dataproc.v1beta2.AcceleratorConfig accelerators = 8 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   public java.util.List<com.google.cloud.dataproc.v1beta2.AcceleratorConfig> getAcceleratorsList() {
     return accelerators_;
@@ -490,11 +502,11 @@ public final class InstanceGroupConfig extends com.google.protobuf.GeneratedMess
    * <pre>
    * Optional. The Compute Engine accelerator configuration for these
    * instances.
-   * **Beta Feature**: This feature is still under development. It may be
-   * changed before final release.
    * </pre>
    *
-   * <code>repeated .google.cloud.dataproc.v1beta2.AcceleratorConfig accelerators = 8;</code>
+   * <code>
+   * repeated .google.cloud.dataproc.v1beta2.AcceleratorConfig accelerators = 8 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   public java.util.List<? extends com.google.cloud.dataproc.v1beta2.AcceleratorConfigOrBuilder>
       getAcceleratorsOrBuilderList() {
@@ -506,11 +518,11 @@ public final class InstanceGroupConfig extends com.google.protobuf.GeneratedMess
    * <pre>
    * Optional. The Compute Engine accelerator configuration for these
    * instances.
-   * **Beta Feature**: This feature is still under development. It may be
-   * changed before final release.
    * </pre>
    *
-   * <code>repeated .google.cloud.dataproc.v1beta2.AcceleratorConfig accelerators = 8;</code>
+   * <code>
+   * repeated .google.cloud.dataproc.v1beta2.AcceleratorConfig accelerators = 8 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   public int getAcceleratorsCount() {
     return accelerators_.size();
@@ -521,11 +533,11 @@ public final class InstanceGroupConfig extends com.google.protobuf.GeneratedMess
    * <pre>
    * Optional. The Compute Engine accelerator configuration for these
    * instances.
-   * **Beta Feature**: This feature is still under development. It may be
-   * changed before final release.
    * </pre>
    *
-   * <code>repeated .google.cloud.dataproc.v1beta2.AcceleratorConfig accelerators = 8;</code>
+   * <code>
+   * repeated .google.cloud.dataproc.v1beta2.AcceleratorConfig accelerators = 8 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   public com.google.cloud.dataproc.v1beta2.AcceleratorConfig getAccelerators(int index) {
     return accelerators_.get(index);
@@ -536,11 +548,11 @@ public final class InstanceGroupConfig extends com.google.protobuf.GeneratedMess
    * <pre>
    * Optional. The Compute Engine accelerator configuration for these
    * instances.
-   * **Beta Feature**: This feature is still under development. It may be
-   * changed before final release.
    * </pre>
    *
-   * <code>repeated .google.cloud.dataproc.v1beta2.AcceleratorConfig accelerators = 8;</code>
+   * <code>
+   * repeated .google.cloud.dataproc.v1beta2.AcceleratorConfig accelerators = 8 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   public com.google.cloud.dataproc.v1beta2.AcceleratorConfigOrBuilder getAcceleratorsOrBuilder(
       int index) {
@@ -553,7 +565,7 @@ public final class InstanceGroupConfig extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * Optional. Specifies the minimum cpu platform for the Instance Group.
+   * Specifies the minimum cpu platform for the Instance Group.
    * See [Cloud Dataproc&amp;rarr;Minimum CPU Platform]
    * (/dataproc/docs/concepts/compute/dataproc-min-cpu).
    * </pre>
@@ -575,7 +587,7 @@ public final class InstanceGroupConfig extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * Optional. Specifies the minimum cpu platform for the Instance Group.
+   * Specifies the minimum cpu platform for the Instance Group.
    * See [Cloud Dataproc&amp;rarr;Minimum CPU Platform]
    * (/dataproc/docs/concepts/compute/dataproc-min-cpu).
    * </pre>
@@ -849,7 +861,7 @@ public final class InstanceGroupConfig extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * Optional. The config settings for Compute Engine resources in
+   * The config settings for Compute Engine resources in
    * an instance group, such as a master or worker group.
    * </pre>
    *
@@ -1134,7 +1146,7 @@ public final class InstanceGroupConfig extends com.google.protobuf.GeneratedMess
      * For master instance groups, must be set to 1.
      * </pre>
      *
-     * <code>int32 num_instances = 1;</code>
+     * <code>int32 num_instances = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public int getNumInstances() {
       return numInstances_;
@@ -1147,7 +1159,7 @@ public final class InstanceGroupConfig extends com.google.protobuf.GeneratedMess
      * For master instance groups, must be set to 1.
      * </pre>
      *
-     * <code>int32 num_instances = 1;</code>
+     * <code>int32 num_instances = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public Builder setNumInstances(int value) {
 
@@ -1163,7 +1175,7 @@ public final class InstanceGroupConfig extends com.google.protobuf.GeneratedMess
      * For master instance groups, must be set to 1.
      * </pre>
      *
-     * <code>int32 num_instances = 1;</code>
+     * <code>int32 num_instances = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public Builder clearNumInstances() {
 
@@ -1189,7 +1201,7 @@ public final class InstanceGroupConfig extends com.google.protobuf.GeneratedMess
      * from `cluster_name`, `num_instances`, and the instance group.
      * </pre>
      *
-     * <code>repeated string instance_names = 2;</code>
+     * <code>repeated string instance_names = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     public com.google.protobuf.ProtocolStringList getInstanceNamesList() {
       return instanceNames_.getUnmodifiableView();
@@ -1202,7 +1214,7 @@ public final class InstanceGroupConfig extends com.google.protobuf.GeneratedMess
      * from `cluster_name`, `num_instances`, and the instance group.
      * </pre>
      *
-     * <code>repeated string instance_names = 2;</code>
+     * <code>repeated string instance_names = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     public int getInstanceNamesCount() {
       return instanceNames_.size();
@@ -1215,7 +1227,7 @@ public final class InstanceGroupConfig extends com.google.protobuf.GeneratedMess
      * from `cluster_name`, `num_instances`, and the instance group.
      * </pre>
      *
-     * <code>repeated string instance_names = 2;</code>
+     * <code>repeated string instance_names = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     public java.lang.String getInstanceNames(int index) {
       return instanceNames_.get(index);
@@ -1228,7 +1240,7 @@ public final class InstanceGroupConfig extends com.google.protobuf.GeneratedMess
      * from `cluster_name`, `num_instances`, and the instance group.
      * </pre>
      *
-     * <code>repeated string instance_names = 2;</code>
+     * <code>repeated string instance_names = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     public com.google.protobuf.ByteString getInstanceNamesBytes(int index) {
       return instanceNames_.getByteString(index);
@@ -1241,7 +1253,7 @@ public final class InstanceGroupConfig extends com.google.protobuf.GeneratedMess
      * from `cluster_name`, `num_instances`, and the instance group.
      * </pre>
      *
-     * <code>repeated string instance_names = 2;</code>
+     * <code>repeated string instance_names = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     public Builder setInstanceNames(int index, java.lang.String value) {
       if (value == null) {
@@ -1260,7 +1272,7 @@ public final class InstanceGroupConfig extends com.google.protobuf.GeneratedMess
      * from `cluster_name`, `num_instances`, and the instance group.
      * </pre>
      *
-     * <code>repeated string instance_names = 2;</code>
+     * <code>repeated string instance_names = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     public Builder addInstanceNames(java.lang.String value) {
       if (value == null) {
@@ -1279,7 +1291,7 @@ public final class InstanceGroupConfig extends com.google.protobuf.GeneratedMess
      * from `cluster_name`, `num_instances`, and the instance group.
      * </pre>
      *
-     * <code>repeated string instance_names = 2;</code>
+     * <code>repeated string instance_names = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     public Builder addAllInstanceNames(java.lang.Iterable<java.lang.String> values) {
       ensureInstanceNamesIsMutable();
@@ -1295,7 +1307,7 @@ public final class InstanceGroupConfig extends com.google.protobuf.GeneratedMess
      * from `cluster_name`, `num_instances`, and the instance group.
      * </pre>
      *
-     * <code>repeated string instance_names = 2;</code>
+     * <code>repeated string instance_names = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     public Builder clearInstanceNames() {
       instanceNames_ = com.google.protobuf.LazyStringArrayList.EMPTY;
@@ -1311,7 +1323,7 @@ public final class InstanceGroupConfig extends com.google.protobuf.GeneratedMess
      * from `cluster_name`, `num_instances`, and the instance group.
      * </pre>
      *
-     * <code>repeated string instance_names = 2;</code>
+     * <code>repeated string instance_names = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     public Builder addInstanceNamesBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -1334,7 +1346,7 @@ public final class InstanceGroupConfig extends com.google.protobuf.GeneratedMess
      * `SoftwareConfig.image_version`.
      * </pre>
      *
-     * <code>string image_uri = 3;</code>
+     * <code>string image_uri = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public java.lang.String getImageUri() {
       java.lang.Object ref = imageUri_;
@@ -1356,7 +1368,7 @@ public final class InstanceGroupConfig extends com.google.protobuf.GeneratedMess
      * `SoftwareConfig.image_version`.
      * </pre>
      *
-     * <code>string image_uri = 3;</code>
+     * <code>string image_uri = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public com.google.protobuf.ByteString getImageUriBytes() {
       java.lang.Object ref = imageUri_;
@@ -1378,7 +1390,7 @@ public final class InstanceGroupConfig extends com.google.protobuf.GeneratedMess
      * `SoftwareConfig.image_version`.
      * </pre>
      *
-     * <code>string image_uri = 3;</code>
+     * <code>string image_uri = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public Builder setImageUri(java.lang.String value) {
       if (value == null) {
@@ -1398,7 +1410,7 @@ public final class InstanceGroupConfig extends com.google.protobuf.GeneratedMess
      * `SoftwareConfig.image_version`.
      * </pre>
      *
-     * <code>string image_uri = 3;</code>
+     * <code>string image_uri = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public Builder clearImageUri() {
 
@@ -1415,7 +1427,7 @@ public final class InstanceGroupConfig extends com.google.protobuf.GeneratedMess
      * `SoftwareConfig.image_version`.
      * </pre>
      *
-     * <code>string image_uri = 3;</code>
+     * <code>string image_uri = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public Builder setImageUriBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -1445,7 +1457,7 @@ public final class InstanceGroupConfig extends com.google.protobuf.GeneratedMess
      * resource, for example, `n1-standard-2`.
      * </pre>
      *
-     * <code>string machine_type_uri = 4;</code>
+     * <code>string machine_type_uri = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public java.lang.String getMachineTypeUri() {
       java.lang.Object ref = machineTypeUri_;
@@ -1474,7 +1486,7 @@ public final class InstanceGroupConfig extends com.google.protobuf.GeneratedMess
      * resource, for example, `n1-standard-2`.
      * </pre>
      *
-     * <code>string machine_type_uri = 4;</code>
+     * <code>string machine_type_uri = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public com.google.protobuf.ByteString getMachineTypeUriBytes() {
       java.lang.Object ref = machineTypeUri_;
@@ -1503,7 +1515,7 @@ public final class InstanceGroupConfig extends com.google.protobuf.GeneratedMess
      * resource, for example, `n1-standard-2`.
      * </pre>
      *
-     * <code>string machine_type_uri = 4;</code>
+     * <code>string machine_type_uri = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public Builder setMachineTypeUri(java.lang.String value) {
       if (value == null) {
@@ -1530,7 +1542,7 @@ public final class InstanceGroupConfig extends com.google.protobuf.GeneratedMess
      * resource, for example, `n1-standard-2`.
      * </pre>
      *
-     * <code>string machine_type_uri = 4;</code>
+     * <code>string machine_type_uri = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public Builder clearMachineTypeUri() {
 
@@ -1554,7 +1566,7 @@ public final class InstanceGroupConfig extends com.google.protobuf.GeneratedMess
      * resource, for example, `n1-standard-2`.
      * </pre>
      *
-     * <code>string machine_type_uri = 4;</code>
+     * <code>string machine_type_uri = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public Builder setMachineTypeUriBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -1580,7 +1592,9 @@ public final class InstanceGroupConfig extends com.google.protobuf.GeneratedMess
      * Optional. Disk option config settings.
      * </pre>
      *
-     * <code>.google.cloud.dataproc.v1beta2.DiskConfig disk_config = 5;</code>
+     * <code>
+     * .google.cloud.dataproc.v1beta2.DiskConfig disk_config = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public boolean hasDiskConfig() {
       return diskConfigBuilder_ != null || diskConfig_ != null;
@@ -1592,7 +1606,9 @@ public final class InstanceGroupConfig extends com.google.protobuf.GeneratedMess
      * Optional. Disk option config settings.
      * </pre>
      *
-     * <code>.google.cloud.dataproc.v1beta2.DiskConfig disk_config = 5;</code>
+     * <code>
+     * .google.cloud.dataproc.v1beta2.DiskConfig disk_config = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public com.google.cloud.dataproc.v1beta2.DiskConfig getDiskConfig() {
       if (diskConfigBuilder_ == null) {
@@ -1610,7 +1626,9 @@ public final class InstanceGroupConfig extends com.google.protobuf.GeneratedMess
      * Optional. Disk option config settings.
      * </pre>
      *
-     * <code>.google.cloud.dataproc.v1beta2.DiskConfig disk_config = 5;</code>
+     * <code>
+     * .google.cloud.dataproc.v1beta2.DiskConfig disk_config = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder setDiskConfig(com.google.cloud.dataproc.v1beta2.DiskConfig value) {
       if (diskConfigBuilder_ == null) {
@@ -1632,7 +1650,9 @@ public final class InstanceGroupConfig extends com.google.protobuf.GeneratedMess
      * Optional. Disk option config settings.
      * </pre>
      *
-     * <code>.google.cloud.dataproc.v1beta2.DiskConfig disk_config = 5;</code>
+     * <code>
+     * .google.cloud.dataproc.v1beta2.DiskConfig disk_config = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder setDiskConfig(
         com.google.cloud.dataproc.v1beta2.DiskConfig.Builder builderForValue) {
@@ -1652,7 +1672,9 @@ public final class InstanceGroupConfig extends com.google.protobuf.GeneratedMess
      * Optional. Disk option config settings.
      * </pre>
      *
-     * <code>.google.cloud.dataproc.v1beta2.DiskConfig disk_config = 5;</code>
+     * <code>
+     * .google.cloud.dataproc.v1beta2.DiskConfig disk_config = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder mergeDiskConfig(com.google.cloud.dataproc.v1beta2.DiskConfig value) {
       if (diskConfigBuilder_ == null) {
@@ -1678,7 +1700,9 @@ public final class InstanceGroupConfig extends com.google.protobuf.GeneratedMess
      * Optional. Disk option config settings.
      * </pre>
      *
-     * <code>.google.cloud.dataproc.v1beta2.DiskConfig disk_config = 5;</code>
+     * <code>
+     * .google.cloud.dataproc.v1beta2.DiskConfig disk_config = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder clearDiskConfig() {
       if (diskConfigBuilder_ == null) {
@@ -1698,7 +1722,9 @@ public final class InstanceGroupConfig extends com.google.protobuf.GeneratedMess
      * Optional. Disk option config settings.
      * </pre>
      *
-     * <code>.google.cloud.dataproc.v1beta2.DiskConfig disk_config = 5;</code>
+     * <code>
+     * .google.cloud.dataproc.v1beta2.DiskConfig disk_config = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public com.google.cloud.dataproc.v1beta2.DiskConfig.Builder getDiskConfigBuilder() {
 
@@ -1712,7 +1738,9 @@ public final class InstanceGroupConfig extends com.google.protobuf.GeneratedMess
      * Optional. Disk option config settings.
      * </pre>
      *
-     * <code>.google.cloud.dataproc.v1beta2.DiskConfig disk_config = 5;</code>
+     * <code>
+     * .google.cloud.dataproc.v1beta2.DiskConfig disk_config = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public com.google.cloud.dataproc.v1beta2.DiskConfigOrBuilder getDiskConfigOrBuilder() {
       if (diskConfigBuilder_ != null) {
@@ -1730,7 +1758,9 @@ public final class InstanceGroupConfig extends com.google.protobuf.GeneratedMess
      * Optional. Disk option config settings.
      * </pre>
      *
-     * <code>.google.cloud.dataproc.v1beta2.DiskConfig disk_config = 5;</code>
+     * <code>
+     * .google.cloud.dataproc.v1beta2.DiskConfig disk_config = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.dataproc.v1beta2.DiskConfig,
@@ -1758,7 +1788,7 @@ public final class InstanceGroupConfig extends com.google.protobuf.GeneratedMess
      * instances.
      * </pre>
      *
-     * <code>bool is_preemptible = 6;</code>
+     * <code>bool is_preemptible = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public boolean getIsPreemptible() {
       return isPreemptible_;
@@ -1771,7 +1801,7 @@ public final class InstanceGroupConfig extends com.google.protobuf.GeneratedMess
      * instances.
      * </pre>
      *
-     * <code>bool is_preemptible = 6;</code>
+     * <code>bool is_preemptible = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public Builder setIsPreemptible(boolean value) {
 
@@ -1787,7 +1817,7 @@ public final class InstanceGroupConfig extends com.google.protobuf.GeneratedMess
      * instances.
      * </pre>
      *
-     * <code>bool is_preemptible = 6;</code>
+     * <code>bool is_preemptible = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public Builder clearIsPreemptible() {
 
@@ -1811,7 +1841,9 @@ public final class InstanceGroupConfig extends com.google.protobuf.GeneratedMess
      * This is only used for preemptible instance groups.
      * </pre>
      *
-     * <code>.google.cloud.dataproc.v1beta2.ManagedGroupConfig managed_group_config = 7;</code>
+     * <code>
+     * .google.cloud.dataproc.v1beta2.ManagedGroupConfig managed_group_config = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public boolean hasManagedGroupConfig() {
       return managedGroupConfigBuilder_ != null || managedGroupConfig_ != null;
@@ -1825,7 +1857,9 @@ public final class InstanceGroupConfig extends com.google.protobuf.GeneratedMess
      * This is only used for preemptible instance groups.
      * </pre>
      *
-     * <code>.google.cloud.dataproc.v1beta2.ManagedGroupConfig managed_group_config = 7;</code>
+     * <code>
+     * .google.cloud.dataproc.v1beta2.ManagedGroupConfig managed_group_config = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public com.google.cloud.dataproc.v1beta2.ManagedGroupConfig getManagedGroupConfig() {
       if (managedGroupConfigBuilder_ == null) {
@@ -1845,7 +1879,9 @@ public final class InstanceGroupConfig extends com.google.protobuf.GeneratedMess
      * This is only used for preemptible instance groups.
      * </pre>
      *
-     * <code>.google.cloud.dataproc.v1beta2.ManagedGroupConfig managed_group_config = 7;</code>
+     * <code>
+     * .google.cloud.dataproc.v1beta2.ManagedGroupConfig managed_group_config = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public Builder setManagedGroupConfig(
         com.google.cloud.dataproc.v1beta2.ManagedGroupConfig value) {
@@ -1870,7 +1906,9 @@ public final class InstanceGroupConfig extends com.google.protobuf.GeneratedMess
      * This is only used for preemptible instance groups.
      * </pre>
      *
-     * <code>.google.cloud.dataproc.v1beta2.ManagedGroupConfig managed_group_config = 7;</code>
+     * <code>
+     * .google.cloud.dataproc.v1beta2.ManagedGroupConfig managed_group_config = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public Builder setManagedGroupConfig(
         com.google.cloud.dataproc.v1beta2.ManagedGroupConfig.Builder builderForValue) {
@@ -1892,7 +1930,9 @@ public final class InstanceGroupConfig extends com.google.protobuf.GeneratedMess
      * This is only used for preemptible instance groups.
      * </pre>
      *
-     * <code>.google.cloud.dataproc.v1beta2.ManagedGroupConfig managed_group_config = 7;</code>
+     * <code>
+     * .google.cloud.dataproc.v1beta2.ManagedGroupConfig managed_group_config = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public Builder mergeManagedGroupConfig(
         com.google.cloud.dataproc.v1beta2.ManagedGroupConfig value) {
@@ -1921,7 +1961,9 @@ public final class InstanceGroupConfig extends com.google.protobuf.GeneratedMess
      * This is only used for preemptible instance groups.
      * </pre>
      *
-     * <code>.google.cloud.dataproc.v1beta2.ManagedGroupConfig managed_group_config = 7;</code>
+     * <code>
+     * .google.cloud.dataproc.v1beta2.ManagedGroupConfig managed_group_config = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public Builder clearManagedGroupConfig() {
       if (managedGroupConfigBuilder_ == null) {
@@ -1943,7 +1985,9 @@ public final class InstanceGroupConfig extends com.google.protobuf.GeneratedMess
      * This is only used for preemptible instance groups.
      * </pre>
      *
-     * <code>.google.cloud.dataproc.v1beta2.ManagedGroupConfig managed_group_config = 7;</code>
+     * <code>
+     * .google.cloud.dataproc.v1beta2.ManagedGroupConfig managed_group_config = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public com.google.cloud.dataproc.v1beta2.ManagedGroupConfig.Builder
         getManagedGroupConfigBuilder() {
@@ -1960,7 +2004,9 @@ public final class InstanceGroupConfig extends com.google.protobuf.GeneratedMess
      * This is only used for preemptible instance groups.
      * </pre>
      *
-     * <code>.google.cloud.dataproc.v1beta2.ManagedGroupConfig managed_group_config = 7;</code>
+     * <code>
+     * .google.cloud.dataproc.v1beta2.ManagedGroupConfig managed_group_config = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public com.google.cloud.dataproc.v1beta2.ManagedGroupConfigOrBuilder
         getManagedGroupConfigOrBuilder() {
@@ -1981,7 +2027,9 @@ public final class InstanceGroupConfig extends com.google.protobuf.GeneratedMess
      * This is only used for preemptible instance groups.
      * </pre>
      *
-     * <code>.google.cloud.dataproc.v1beta2.ManagedGroupConfig managed_group_config = 7;</code>
+     * <code>
+     * .google.cloud.dataproc.v1beta2.ManagedGroupConfig managed_group_config = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.dataproc.v1beta2.ManagedGroupConfig,
@@ -2024,11 +2072,11 @@ public final class InstanceGroupConfig extends com.google.protobuf.GeneratedMess
      * <pre>
      * Optional. The Compute Engine accelerator configuration for these
      * instances.
-     * **Beta Feature**: This feature is still under development. It may be
-     * changed before final release.
      * </pre>
      *
-     * <code>repeated .google.cloud.dataproc.v1beta2.AcceleratorConfig accelerators = 8;</code>
+     * <code>
+     * repeated .google.cloud.dataproc.v1beta2.AcceleratorConfig accelerators = 8 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public java.util.List<com.google.cloud.dataproc.v1beta2.AcceleratorConfig>
         getAcceleratorsList() {
@@ -2044,11 +2092,11 @@ public final class InstanceGroupConfig extends com.google.protobuf.GeneratedMess
      * <pre>
      * Optional. The Compute Engine accelerator configuration for these
      * instances.
-     * **Beta Feature**: This feature is still under development. It may be
-     * changed before final release.
      * </pre>
      *
-     * <code>repeated .google.cloud.dataproc.v1beta2.AcceleratorConfig accelerators = 8;</code>
+     * <code>
+     * repeated .google.cloud.dataproc.v1beta2.AcceleratorConfig accelerators = 8 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public int getAcceleratorsCount() {
       if (acceleratorsBuilder_ == null) {
@@ -2063,11 +2111,11 @@ public final class InstanceGroupConfig extends com.google.protobuf.GeneratedMess
      * <pre>
      * Optional. The Compute Engine accelerator configuration for these
      * instances.
-     * **Beta Feature**: This feature is still under development. It may be
-     * changed before final release.
      * </pre>
      *
-     * <code>repeated .google.cloud.dataproc.v1beta2.AcceleratorConfig accelerators = 8;</code>
+     * <code>
+     * repeated .google.cloud.dataproc.v1beta2.AcceleratorConfig accelerators = 8 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public com.google.cloud.dataproc.v1beta2.AcceleratorConfig getAccelerators(int index) {
       if (acceleratorsBuilder_ == null) {
@@ -2082,11 +2130,11 @@ public final class InstanceGroupConfig extends com.google.protobuf.GeneratedMess
      * <pre>
      * Optional. The Compute Engine accelerator configuration for these
      * instances.
-     * **Beta Feature**: This feature is still under development. It may be
-     * changed before final release.
      * </pre>
      *
-     * <code>repeated .google.cloud.dataproc.v1beta2.AcceleratorConfig accelerators = 8;</code>
+     * <code>
+     * repeated .google.cloud.dataproc.v1beta2.AcceleratorConfig accelerators = 8 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder setAccelerators(
         int index, com.google.cloud.dataproc.v1beta2.AcceleratorConfig value) {
@@ -2108,11 +2156,11 @@ public final class InstanceGroupConfig extends com.google.protobuf.GeneratedMess
      * <pre>
      * Optional. The Compute Engine accelerator configuration for these
      * instances.
-     * **Beta Feature**: This feature is still under development. It may be
-     * changed before final release.
      * </pre>
      *
-     * <code>repeated .google.cloud.dataproc.v1beta2.AcceleratorConfig accelerators = 8;</code>
+     * <code>
+     * repeated .google.cloud.dataproc.v1beta2.AcceleratorConfig accelerators = 8 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder setAccelerators(
         int index, com.google.cloud.dataproc.v1beta2.AcceleratorConfig.Builder builderForValue) {
@@ -2131,11 +2179,11 @@ public final class InstanceGroupConfig extends com.google.protobuf.GeneratedMess
      * <pre>
      * Optional. The Compute Engine accelerator configuration for these
      * instances.
-     * **Beta Feature**: This feature is still under development. It may be
-     * changed before final release.
      * </pre>
      *
-     * <code>repeated .google.cloud.dataproc.v1beta2.AcceleratorConfig accelerators = 8;</code>
+     * <code>
+     * repeated .google.cloud.dataproc.v1beta2.AcceleratorConfig accelerators = 8 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder addAccelerators(com.google.cloud.dataproc.v1beta2.AcceleratorConfig value) {
       if (acceleratorsBuilder_ == null) {
@@ -2156,11 +2204,11 @@ public final class InstanceGroupConfig extends com.google.protobuf.GeneratedMess
      * <pre>
      * Optional. The Compute Engine accelerator configuration for these
      * instances.
-     * **Beta Feature**: This feature is still under development. It may be
-     * changed before final release.
      * </pre>
      *
-     * <code>repeated .google.cloud.dataproc.v1beta2.AcceleratorConfig accelerators = 8;</code>
+     * <code>
+     * repeated .google.cloud.dataproc.v1beta2.AcceleratorConfig accelerators = 8 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder addAccelerators(
         int index, com.google.cloud.dataproc.v1beta2.AcceleratorConfig value) {
@@ -2182,11 +2230,11 @@ public final class InstanceGroupConfig extends com.google.protobuf.GeneratedMess
      * <pre>
      * Optional. The Compute Engine accelerator configuration for these
      * instances.
-     * **Beta Feature**: This feature is still under development. It may be
-     * changed before final release.
      * </pre>
      *
-     * <code>repeated .google.cloud.dataproc.v1beta2.AcceleratorConfig accelerators = 8;</code>
+     * <code>
+     * repeated .google.cloud.dataproc.v1beta2.AcceleratorConfig accelerators = 8 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder addAccelerators(
         com.google.cloud.dataproc.v1beta2.AcceleratorConfig.Builder builderForValue) {
@@ -2205,11 +2253,11 @@ public final class InstanceGroupConfig extends com.google.protobuf.GeneratedMess
      * <pre>
      * Optional. The Compute Engine accelerator configuration for these
      * instances.
-     * **Beta Feature**: This feature is still under development. It may be
-     * changed before final release.
      * </pre>
      *
-     * <code>repeated .google.cloud.dataproc.v1beta2.AcceleratorConfig accelerators = 8;</code>
+     * <code>
+     * repeated .google.cloud.dataproc.v1beta2.AcceleratorConfig accelerators = 8 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder addAccelerators(
         int index, com.google.cloud.dataproc.v1beta2.AcceleratorConfig.Builder builderForValue) {
@@ -2228,11 +2276,11 @@ public final class InstanceGroupConfig extends com.google.protobuf.GeneratedMess
      * <pre>
      * Optional. The Compute Engine accelerator configuration for these
      * instances.
-     * **Beta Feature**: This feature is still under development. It may be
-     * changed before final release.
      * </pre>
      *
-     * <code>repeated .google.cloud.dataproc.v1beta2.AcceleratorConfig accelerators = 8;</code>
+     * <code>
+     * repeated .google.cloud.dataproc.v1beta2.AcceleratorConfig accelerators = 8 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder addAllAccelerators(
         java.lang.Iterable<? extends com.google.cloud.dataproc.v1beta2.AcceleratorConfig> values) {
@@ -2251,11 +2299,11 @@ public final class InstanceGroupConfig extends com.google.protobuf.GeneratedMess
      * <pre>
      * Optional. The Compute Engine accelerator configuration for these
      * instances.
-     * **Beta Feature**: This feature is still under development. It may be
-     * changed before final release.
      * </pre>
      *
-     * <code>repeated .google.cloud.dataproc.v1beta2.AcceleratorConfig accelerators = 8;</code>
+     * <code>
+     * repeated .google.cloud.dataproc.v1beta2.AcceleratorConfig accelerators = 8 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder clearAccelerators() {
       if (acceleratorsBuilder_ == null) {
@@ -2273,11 +2321,11 @@ public final class InstanceGroupConfig extends com.google.protobuf.GeneratedMess
      * <pre>
      * Optional. The Compute Engine accelerator configuration for these
      * instances.
-     * **Beta Feature**: This feature is still under development. It may be
-     * changed before final release.
      * </pre>
      *
-     * <code>repeated .google.cloud.dataproc.v1beta2.AcceleratorConfig accelerators = 8;</code>
+     * <code>
+     * repeated .google.cloud.dataproc.v1beta2.AcceleratorConfig accelerators = 8 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder removeAccelerators(int index) {
       if (acceleratorsBuilder_ == null) {
@@ -2295,11 +2343,11 @@ public final class InstanceGroupConfig extends com.google.protobuf.GeneratedMess
      * <pre>
      * Optional. The Compute Engine accelerator configuration for these
      * instances.
-     * **Beta Feature**: This feature is still under development. It may be
-     * changed before final release.
      * </pre>
      *
-     * <code>repeated .google.cloud.dataproc.v1beta2.AcceleratorConfig accelerators = 8;</code>
+     * <code>
+     * repeated .google.cloud.dataproc.v1beta2.AcceleratorConfig accelerators = 8 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public com.google.cloud.dataproc.v1beta2.AcceleratorConfig.Builder getAcceleratorsBuilder(
         int index) {
@@ -2311,11 +2359,11 @@ public final class InstanceGroupConfig extends com.google.protobuf.GeneratedMess
      * <pre>
      * Optional. The Compute Engine accelerator configuration for these
      * instances.
-     * **Beta Feature**: This feature is still under development. It may be
-     * changed before final release.
      * </pre>
      *
-     * <code>repeated .google.cloud.dataproc.v1beta2.AcceleratorConfig accelerators = 8;</code>
+     * <code>
+     * repeated .google.cloud.dataproc.v1beta2.AcceleratorConfig accelerators = 8 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public com.google.cloud.dataproc.v1beta2.AcceleratorConfigOrBuilder getAcceleratorsOrBuilder(
         int index) {
@@ -2331,11 +2379,11 @@ public final class InstanceGroupConfig extends com.google.protobuf.GeneratedMess
      * <pre>
      * Optional. The Compute Engine accelerator configuration for these
      * instances.
-     * **Beta Feature**: This feature is still under development. It may be
-     * changed before final release.
      * </pre>
      *
-     * <code>repeated .google.cloud.dataproc.v1beta2.AcceleratorConfig accelerators = 8;</code>
+     * <code>
+     * repeated .google.cloud.dataproc.v1beta2.AcceleratorConfig accelerators = 8 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public java.util.List<? extends com.google.cloud.dataproc.v1beta2.AcceleratorConfigOrBuilder>
         getAcceleratorsOrBuilderList() {
@@ -2351,11 +2399,11 @@ public final class InstanceGroupConfig extends com.google.protobuf.GeneratedMess
      * <pre>
      * Optional. The Compute Engine accelerator configuration for these
      * instances.
-     * **Beta Feature**: This feature is still under development. It may be
-     * changed before final release.
      * </pre>
      *
-     * <code>repeated .google.cloud.dataproc.v1beta2.AcceleratorConfig accelerators = 8;</code>
+     * <code>
+     * repeated .google.cloud.dataproc.v1beta2.AcceleratorConfig accelerators = 8 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public com.google.cloud.dataproc.v1beta2.AcceleratorConfig.Builder addAcceleratorsBuilder() {
       return getAcceleratorsFieldBuilder()
@@ -2367,11 +2415,11 @@ public final class InstanceGroupConfig extends com.google.protobuf.GeneratedMess
      * <pre>
      * Optional. The Compute Engine accelerator configuration for these
      * instances.
-     * **Beta Feature**: This feature is still under development. It may be
-     * changed before final release.
      * </pre>
      *
-     * <code>repeated .google.cloud.dataproc.v1beta2.AcceleratorConfig accelerators = 8;</code>
+     * <code>
+     * repeated .google.cloud.dataproc.v1beta2.AcceleratorConfig accelerators = 8 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public com.google.cloud.dataproc.v1beta2.AcceleratorConfig.Builder addAcceleratorsBuilder(
         int index) {
@@ -2385,11 +2433,11 @@ public final class InstanceGroupConfig extends com.google.protobuf.GeneratedMess
      * <pre>
      * Optional. The Compute Engine accelerator configuration for these
      * instances.
-     * **Beta Feature**: This feature is still under development. It may be
-     * changed before final release.
      * </pre>
      *
-     * <code>repeated .google.cloud.dataproc.v1beta2.AcceleratorConfig accelerators = 8;</code>
+     * <code>
+     * repeated .google.cloud.dataproc.v1beta2.AcceleratorConfig accelerators = 8 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public java.util.List<com.google.cloud.dataproc.v1beta2.AcceleratorConfig.Builder>
         getAcceleratorsBuilderList() {
@@ -2418,7 +2466,7 @@ public final class InstanceGroupConfig extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Optional. Specifies the minimum cpu platform for the Instance Group.
+     * Specifies the minimum cpu platform for the Instance Group.
      * See [Cloud Dataproc&amp;rarr;Minimum CPU Platform]
      * (/dataproc/docs/concepts/compute/dataproc-min-cpu).
      * </pre>
@@ -2440,7 +2488,7 @@ public final class InstanceGroupConfig extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Optional. Specifies the minimum cpu platform for the Instance Group.
+     * Specifies the minimum cpu platform for the Instance Group.
      * See [Cloud Dataproc&amp;rarr;Minimum CPU Platform]
      * (/dataproc/docs/concepts/compute/dataproc-min-cpu).
      * </pre>
@@ -2462,7 +2510,7 @@ public final class InstanceGroupConfig extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Optional. Specifies the minimum cpu platform for the Instance Group.
+     * Specifies the minimum cpu platform for the Instance Group.
      * See [Cloud Dataproc&amp;rarr;Minimum CPU Platform]
      * (/dataproc/docs/concepts/compute/dataproc-min-cpu).
      * </pre>
@@ -2482,7 +2530,7 @@ public final class InstanceGroupConfig extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Optional. Specifies the minimum cpu platform for the Instance Group.
+     * Specifies the minimum cpu platform for the Instance Group.
      * See [Cloud Dataproc&amp;rarr;Minimum CPU Platform]
      * (/dataproc/docs/concepts/compute/dataproc-min-cpu).
      * </pre>
@@ -2499,7 +2547,7 @@ public final class InstanceGroupConfig extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Optional. Specifies the minimum cpu platform for the Instance Group.
+     * Specifies the minimum cpu platform for the Instance Group.
      * See [Cloud Dataproc&amp;rarr;Minimum CPU Platform]
      * (/dataproc/docs/concepts/compute/dataproc-min-cpu).
      * </pre>

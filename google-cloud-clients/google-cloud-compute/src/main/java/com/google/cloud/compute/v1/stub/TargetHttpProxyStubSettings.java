@@ -15,6 +15,7 @@
  */
 package com.google.cloud.compute.v1.stub;
 
+import static com.google.cloud.compute.v1.TargetHttpProxyClient.AggregatedListTargetHttpProxiesPagedResponse;
 import static com.google.cloud.compute.v1.TargetHttpProxyClient.ListTargetHttpProxiesPagedResponse;
 
 import com.google.api.core.ApiFunction;
@@ -39,13 +40,16 @@ import com.google.api.gax.rpc.StubSettings;
 import com.google.api.gax.rpc.TransportChannelProvider;
 import com.google.api.gax.rpc.UnaryCallSettings;
 import com.google.api.gax.rpc.UnaryCallable;
+import com.google.cloud.compute.v1.AggregatedListTargetHttpProxiesHttpRequest;
 import com.google.cloud.compute.v1.DeleteTargetHttpProxyHttpRequest;
 import com.google.cloud.compute.v1.GetTargetHttpProxyHttpRequest;
 import com.google.cloud.compute.v1.InsertTargetHttpProxyHttpRequest;
 import com.google.cloud.compute.v1.ListTargetHttpProxiesHttpRequest;
 import com.google.cloud.compute.v1.Operation;
 import com.google.cloud.compute.v1.SetUrlMapTargetHttpProxyHttpRequest;
+import com.google.cloud.compute.v1.TargetHttpProxiesScopedList;
 import com.google.cloud.compute.v1.TargetHttpProxy;
+import com.google.cloud.compute.v1.TargetHttpProxyAggregatedList;
 import com.google.cloud.compute.v1.TargetHttpProxyList;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
@@ -63,15 +67,16 @@ import org.threeten.bp.Duration;
  * <p>The default instance has everything set to sensible defaults:
  *
  * <ul>
- *   <li>The default service address (https://www.googleapis.com/compute/v1/projects/) and default
- *       port (443) are used.
+ *   <li>The default service address (https://compute.googleapis.com/compute/v1/projects/) and
+ *       default port (443) are used.
  *   <li>Credentials are acquired automatically through Application Default Credentials.
  *   <li>Retries are configured for idempotent methods but not for non-idempotent methods.
  * </ul>
  *
  * <p>The builder of this class is recursive, so contained classes are themselves builders. When
- * build() is called, the tree of builders is called to create the complete settings object. For
- * example, to set the total timeout of deleteTargetHttpProxy to 30 seconds:
+ * build() is called, the tree of builders is called to create the complete settings object.
+ *
+ * <p>For example, to set the total timeout of deleteTargetHttpProxy to 30 seconds:
  *
  * <pre>
  * <code>
@@ -97,6 +102,11 @@ public class TargetHttpProxyStubSettings extends StubSettings<TargetHttpProxyStu
           .add("https://www.googleapis.com/auth/devstorage.read_write")
           .build();
 
+  private final PagedCallSettings<
+          AggregatedListTargetHttpProxiesHttpRequest,
+          TargetHttpProxyAggregatedList,
+          AggregatedListTargetHttpProxiesPagedResponse>
+      aggregatedListTargetHttpProxiesSettings;
   private final UnaryCallSettings<DeleteTargetHttpProxyHttpRequest, Operation>
       deleteTargetHttpProxySettings;
   private final UnaryCallSettings<GetTargetHttpProxyHttpRequest, TargetHttpProxy>
@@ -108,6 +118,15 @@ public class TargetHttpProxyStubSettings extends StubSettings<TargetHttpProxyStu
       listTargetHttpProxiesSettings;
   private final UnaryCallSettings<SetUrlMapTargetHttpProxyHttpRequest, Operation>
       setUrlMapTargetHttpProxySettings;
+
+  /** Returns the object with the settings used for calls to aggregatedListTargetHttpProxies. */
+  public PagedCallSettings<
+          AggregatedListTargetHttpProxiesHttpRequest,
+          TargetHttpProxyAggregatedList,
+          AggregatedListTargetHttpProxiesPagedResponse>
+      aggregatedListTargetHttpProxiesSettings() {
+    return aggregatedListTargetHttpProxiesSettings;
+  }
 
   /** Returns the object with the settings used for calls to deleteTargetHttpProxy. */
   public UnaryCallSettings<DeleteTargetHttpProxyHttpRequest, Operation>
@@ -159,7 +178,7 @@ public class TargetHttpProxyStubSettings extends StubSettings<TargetHttpProxyStu
 
   /** Returns the default service endpoint. */
   public static String getDefaultEndpoint() {
-    return "https://www.googleapis.com/compute/v1/projects/";
+    return "https://compute.googleapis.com/compute/v1/projects/";
   }
 
   /** Returns the default service port. */
@@ -215,12 +234,63 @@ public class TargetHttpProxyStubSettings extends StubSettings<TargetHttpProxyStu
   protected TargetHttpProxyStubSettings(Builder settingsBuilder) throws IOException {
     super(settingsBuilder);
 
+    aggregatedListTargetHttpProxiesSettings =
+        settingsBuilder.aggregatedListTargetHttpProxiesSettings().build();
     deleteTargetHttpProxySettings = settingsBuilder.deleteTargetHttpProxySettings().build();
     getTargetHttpProxySettings = settingsBuilder.getTargetHttpProxySettings().build();
     insertTargetHttpProxySettings = settingsBuilder.insertTargetHttpProxySettings().build();
     listTargetHttpProxiesSettings = settingsBuilder.listTargetHttpProxiesSettings().build();
     setUrlMapTargetHttpProxySettings = settingsBuilder.setUrlMapTargetHttpProxySettings().build();
   }
+
+  private static final PagedListDescriptor<
+          AggregatedListTargetHttpProxiesHttpRequest,
+          TargetHttpProxyAggregatedList,
+          TargetHttpProxiesScopedList>
+      AGGREGATED_LIST_TARGET_HTTP_PROXIES_PAGE_STR_DESC =
+          new PagedListDescriptor<
+              AggregatedListTargetHttpProxiesHttpRequest,
+              TargetHttpProxyAggregatedList,
+              TargetHttpProxiesScopedList>() {
+            @Override
+            public String emptyToken() {
+              return "";
+            }
+
+            @Override
+            public AggregatedListTargetHttpProxiesHttpRequest injectToken(
+                AggregatedListTargetHttpProxiesHttpRequest payload, String token) {
+              return AggregatedListTargetHttpProxiesHttpRequest.newBuilder(payload)
+                  .setPageToken(token)
+                  .build();
+            }
+
+            @Override
+            public AggregatedListTargetHttpProxiesHttpRequest injectPageSize(
+                AggregatedListTargetHttpProxiesHttpRequest payload, int pageSize) {
+              return AggregatedListTargetHttpProxiesHttpRequest.newBuilder(payload)
+                  .setMaxResults(pageSize)
+                  .build();
+            }
+
+            @Override
+            public Integer extractPageSize(AggregatedListTargetHttpProxiesHttpRequest payload) {
+              return payload.getMaxResults();
+            }
+
+            @Override
+            public String extractNextToken(TargetHttpProxyAggregatedList payload) {
+              return payload.getNextPageToken();
+            }
+
+            @Override
+            public Iterable<TargetHttpProxiesScopedList> extractResources(
+                TargetHttpProxyAggregatedList payload) {
+              return payload.getItemsMap() != null
+                  ? payload.getItemsMap().values()
+                  : ImmutableList.<TargetHttpProxiesScopedList>of();
+            }
+          };
 
   private static final PagedListDescriptor<
           ListTargetHttpProxiesHttpRequest, TargetHttpProxyList, TargetHttpProxy>
@@ -267,6 +337,38 @@ public class TargetHttpProxyStubSettings extends StubSettings<TargetHttpProxyStu
           };
 
   private static final PagedListResponseFactory<
+          AggregatedListTargetHttpProxiesHttpRequest,
+          TargetHttpProxyAggregatedList,
+          AggregatedListTargetHttpProxiesPagedResponse>
+      AGGREGATED_LIST_TARGET_HTTP_PROXIES_PAGE_STR_FACT =
+          new PagedListResponseFactory<
+              AggregatedListTargetHttpProxiesHttpRequest,
+              TargetHttpProxyAggregatedList,
+              AggregatedListTargetHttpProxiesPagedResponse>() {
+            @Override
+            public ApiFuture<AggregatedListTargetHttpProxiesPagedResponse> getFuturePagedResponse(
+                UnaryCallable<
+                        AggregatedListTargetHttpProxiesHttpRequest, TargetHttpProxyAggregatedList>
+                    callable,
+                AggregatedListTargetHttpProxiesHttpRequest request,
+                ApiCallContext context,
+                ApiFuture<TargetHttpProxyAggregatedList> futureResponse) {
+              PageContext<
+                      AggregatedListTargetHttpProxiesHttpRequest,
+                      TargetHttpProxyAggregatedList,
+                      TargetHttpProxiesScopedList>
+                  pageContext =
+                      PageContext.create(
+                          callable,
+                          AGGREGATED_LIST_TARGET_HTTP_PROXIES_PAGE_STR_DESC,
+                          request,
+                          context);
+              return AggregatedListTargetHttpProxiesPagedResponse.createAsync(
+                  pageContext, futureResponse);
+            }
+          };
+
+  private static final PagedListResponseFactory<
           ListTargetHttpProxiesHttpRequest, TargetHttpProxyList, ListTargetHttpProxiesPagedResponse>
       LIST_TARGET_HTTP_PROXIES_PAGE_STR_FACT =
           new PagedListResponseFactory<
@@ -291,6 +393,11 @@ public class TargetHttpProxyStubSettings extends StubSettings<TargetHttpProxyStu
   public static class Builder extends StubSettings.Builder<TargetHttpProxyStubSettings, Builder> {
     private final ImmutableList<UnaryCallSettings.Builder<?, ?>> unaryMethodSettingsBuilders;
 
+    private final PagedCallSettings.Builder<
+            AggregatedListTargetHttpProxiesHttpRequest,
+            TargetHttpProxyAggregatedList,
+            AggregatedListTargetHttpProxiesPagedResponse>
+        aggregatedListTargetHttpProxiesSettings;
     private final UnaryCallSettings.Builder<DeleteTargetHttpProxyHttpRequest, Operation>
         deleteTargetHttpProxySettings;
     private final UnaryCallSettings.Builder<GetTargetHttpProxyHttpRequest, TargetHttpProxy>
@@ -346,6 +453,9 @@ public class TargetHttpProxyStubSettings extends StubSettings<TargetHttpProxyStu
     protected Builder(ClientContext clientContext) {
       super(clientContext);
 
+      aggregatedListTargetHttpProxiesSettings =
+          PagedCallSettings.newBuilder(AGGREGATED_LIST_TARGET_HTTP_PROXIES_PAGE_STR_FACT);
+
       deleteTargetHttpProxySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
       getTargetHttpProxySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
@@ -359,6 +469,7 @@ public class TargetHttpProxyStubSettings extends StubSettings<TargetHttpProxyStu
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
+              aggregatedListTargetHttpProxiesSettings,
               deleteTargetHttpProxySettings,
               getTargetHttpProxySettings,
               insertTargetHttpProxySettings,
@@ -378,6 +489,11 @@ public class TargetHttpProxyStubSettings extends StubSettings<TargetHttpProxyStu
     }
 
     private static Builder initDefaults(Builder builder) {
+
+      builder
+          .aggregatedListTargetHttpProxiesSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
 
       builder
           .deleteTargetHttpProxySettings()
@@ -410,6 +526,8 @@ public class TargetHttpProxyStubSettings extends StubSettings<TargetHttpProxyStu
     protected Builder(TargetHttpProxyStubSettings settings) {
       super(settings);
 
+      aggregatedListTargetHttpProxiesSettings =
+          settings.aggregatedListTargetHttpProxiesSettings.toBuilder();
       deleteTargetHttpProxySettings = settings.deleteTargetHttpProxySettings.toBuilder();
       getTargetHttpProxySettings = settings.getTargetHttpProxySettings.toBuilder();
       insertTargetHttpProxySettings = settings.insertTargetHttpProxySettings.toBuilder();
@@ -418,6 +536,7 @@ public class TargetHttpProxyStubSettings extends StubSettings<TargetHttpProxyStu
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
+              aggregatedListTargetHttpProxiesSettings,
               deleteTargetHttpProxySettings,
               getTargetHttpProxySettings,
               insertTargetHttpProxySettings,
@@ -439,6 +558,15 @@ public class TargetHttpProxyStubSettings extends StubSettings<TargetHttpProxyStu
 
     public ImmutableList<UnaryCallSettings.Builder<?, ?>> unaryMethodSettingsBuilders() {
       return unaryMethodSettingsBuilders;
+    }
+
+    /** Returns the builder for the settings used for calls to aggregatedListTargetHttpProxies. */
+    public PagedCallSettings.Builder<
+            AggregatedListTargetHttpProxiesHttpRequest,
+            TargetHttpProxyAggregatedList,
+            AggregatedListTargetHttpProxiesPagedResponse>
+        aggregatedListTargetHttpProxiesSettings() {
+      return aggregatedListTargetHttpProxiesSettings;
     }
 
     /** Returns the builder for the settings used for calls to deleteTargetHttpProxy. */

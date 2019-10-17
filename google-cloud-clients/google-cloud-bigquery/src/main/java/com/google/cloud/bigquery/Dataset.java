@@ -133,6 +133,13 @@ public class Dataset extends DatasetInfo {
     }
 
     @Override
+    public Builder setDefaultEncryptionConfiguration(
+        EncryptionConfiguration defaultEncryptionConfiguration) {
+      infoBuilder.setDefaultEncryptionConfiguration(defaultEncryptionConfiguration);
+      return this;
+    }
+
+    @Override
     public Dataset build() {
       return new Dataset(bigquery, infoBuilder);
     }

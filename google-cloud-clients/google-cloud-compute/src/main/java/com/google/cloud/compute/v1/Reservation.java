@@ -27,7 +27,7 @@ import javax.annotation.Nullable;
 /**
  * Represents a reservation resource. A reservation ensures that capacity is held in a specific zone
  * even if the reserved VMs are not running. For more information, read Reserving zonal resources.
- * (== resource_for beta.reservations ==) (== resource_for v1.reservations ==) (== NextID: 13 ==)
+ * (== resource_for beta.reservations ==) (== resource_for v1.reservations ==)
  */
 public final class Reservation implements ApiMessage {
   private final String commitment;
@@ -138,8 +138,8 @@ public final class Reservation implements ApiMessage {
   }
 
   /**
-   * [OutputOnly] Full or partial url for parent commitment for reservations which are tied to a
-   * commitment.
+   * [OutputOnly] Full or partial URL to a parent commitment. This field displays for reservations
+   * that are tied to a commitment.
    */
   public String getCommitment() {
     return commitment;
@@ -205,8 +205,8 @@ public final class Reservation implements ApiMessage {
   }
 
   /**
-   * Zone in which the reservation resides, must be provided if reservation is created with
-   * commitment creation.
+   * Zone in which the reservation resides. A zone must be provided if the reservation is created
+   * within a commitment.
    */
   public String getZone() {
     return zone;
@@ -302,16 +302,16 @@ public final class Reservation implements ApiMessage {
     }
 
     /**
-     * [OutputOnly] Full or partial url for parent commitment for reservations which are tied to a
-     * commitment.
+     * [OutputOnly] Full or partial URL to a parent commitment. This field displays for reservations
+     * that are tied to a commitment.
      */
     public String getCommitment() {
       return commitment;
     }
 
     /**
-     * [OutputOnly] Full or partial url for parent commitment for reservations which are tied to a
-     * commitment.
+     * [OutputOnly] Full or partial URL to a parent commitment. This field displays for reservations
+     * that are tied to a commitment.
      */
     public Builder setCommitment(String commitment) {
       this.commitment = commitment;
@@ -450,16 +450,16 @@ public final class Reservation implements ApiMessage {
     }
 
     /**
-     * Zone in which the reservation resides, must be provided if reservation is created with
-     * commitment creation.
+     * Zone in which the reservation resides. A zone must be provided if the reservation is created
+     * within a commitment.
      */
     public String getZone() {
       return zone;
     }
 
     /**
-     * Zone in which the reservation resides, must be provided if reservation is created with
-     * commitment creation.
+     * Zone in which the reservation resides. A zone must be provided if the reservation is created
+     * within a commitment.
      */
     public Builder setZone(String zone) {
       this.zone = zone;

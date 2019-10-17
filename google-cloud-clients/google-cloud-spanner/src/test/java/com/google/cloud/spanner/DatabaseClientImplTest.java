@@ -219,7 +219,7 @@ public class DatabaseClientImplTest {
 
   @Test
   public void testPartitionedDmlWithTimeout() throws Exception {
-    mockSpanner.setExecuteSqlExecutionTime(SimulatedExecutionTime.ofMinimumAndRandomTime(10, 0));
+    mockSpanner.setExecuteSqlExecutionTime(SimulatedExecutionTime.ofMinimumAndRandomTime(100, 0));
     SpannerOptions.Builder builder =
         SpannerOptions.newBuilder()
             .setProjectId("[PROJECT]")
@@ -230,10 +230,8 @@ public class DatabaseClientImplTest {
     try (Spanner spanner = builder.build().getService()) {
       DatabaseClient client =
           spanner.getDatabaseClient(DatabaseId.of("[PROJECT]", "[INSTANCE]", "[DATABASE]"));
-
       assertThat(
           spanner.getOptions().getPartitionedDmlTimeout(), is(equalTo(Duration.ofMillis(1L))));
-
       // PDML should timeout with these settings.
       try {
         client.executePartitionedUpdate(UPDATE_STATEMENT);
@@ -245,6 +243,7 @@ public class DatabaseClientImplTest {
       }
 
       // Normal DML should not timeout.
+      mockSpanner.setExecuteSqlExecutionTime(SimulatedExecutionTime.ofMinimumAndRandomTime(10, 0));
       long updateCount =
           client
               .readWriteTransaction()

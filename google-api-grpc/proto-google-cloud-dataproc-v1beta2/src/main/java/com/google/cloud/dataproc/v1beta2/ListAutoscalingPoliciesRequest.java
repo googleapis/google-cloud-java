@@ -111,12 +111,19 @@ public final class ListAutoscalingPoliciesRequest extends com.google.protobuf.Ge
    *
    *
    * <pre>
-   * Required. The "resource name" of the region, as described
-   * in https://cloud.google.com/apis/design/resource_names of the form
-   * `projects/{project_id}/regions/{region}`
+   * Required. The "resource name" of the region or location, as described
+   * in https://cloud.google.com/apis/design/resource_names.
+   * * For `projects.regions.autoscalingPolicies.list`, the resource name
+   *   of the region has the following format:
+   *   `projects/{project_id}/regions/{region}`
+   * * For `projects.locations.autoscalingPolicies.list`, the resource name
+   *   of the location has the following format:
+   *   `projects/{project_id}/locations/{location}`
    * </pre>
    *
-   * <code>string parent = 1;</code>
+   * <code>
+   * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    */
   public java.lang.String getParent() {
     java.lang.Object ref = parent_;
@@ -133,12 +140,19 @@ public final class ListAutoscalingPoliciesRequest extends com.google.protobuf.Ge
    *
    *
    * <pre>
-   * Required. The "resource name" of the region, as described
-   * in https://cloud.google.com/apis/design/resource_names of the form
-   * `projects/{project_id}/regions/{region}`
+   * Required. The "resource name" of the region or location, as described
+   * in https://cloud.google.com/apis/design/resource_names.
+   * * For `projects.regions.autoscalingPolicies.list`, the resource name
+   *   of the region has the following format:
+   *   `projects/{project_id}/regions/{region}`
+   * * For `projects.locations.autoscalingPolicies.list`, the resource name
+   *   of the location has the following format:
+   *   `projects/{project_id}/locations/{location}`
    * </pre>
    *
-   * <code>string parent = 1;</code>
+   * <code>
+   * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    */
   public com.google.protobuf.ByteString getParentBytes() {
     java.lang.Object ref = parent_;
@@ -159,9 +173,10 @@ public final class ListAutoscalingPoliciesRequest extends com.google.protobuf.Ge
    *
    * <pre>
    * Optional. The maximum number of results to return in each response.
+   * Must be less than or equal to 1000. Defaults to 100.
    * </pre>
    *
-   * <code>int32 page_size = 2;</code>
+   * <code>int32 page_size = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   public int getPageSize() {
     return pageSize_;
@@ -177,7 +192,7 @@ public final class ListAutoscalingPoliciesRequest extends com.google.protobuf.Ge
    * next page of results.
    * </pre>
    *
-   * <code>string page_token = 3;</code>
+   * <code>string page_token = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   public java.lang.String getPageToken() {
     java.lang.Object ref = pageToken_;
@@ -198,7 +213,7 @@ public final class ListAutoscalingPoliciesRequest extends com.google.protobuf.Ge
    * next page of results.
    * </pre>
    *
-   * <code>string page_token = 3;</code>
+   * <code>string page_token = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   public com.google.protobuf.ByteString getPageTokenBytes() {
     java.lang.Object ref = pageToken_;
@@ -571,12 +586,19 @@ public final class ListAutoscalingPoliciesRequest extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * Required. The "resource name" of the region, as described
-     * in https://cloud.google.com/apis/design/resource_names of the form
-     * `projects/{project_id}/regions/{region}`
+     * Required. The "resource name" of the region or location, as described
+     * in https://cloud.google.com/apis/design/resource_names.
+     * * For `projects.regions.autoscalingPolicies.list`, the resource name
+     *   of the region has the following format:
+     *   `projects/{project_id}/regions/{region}`
+     * * For `projects.locations.autoscalingPolicies.list`, the resource name
+     *   of the location has the following format:
+     *   `projects/{project_id}/locations/{location}`
      * </pre>
      *
-     * <code>string parent = 1;</code>
+     * <code>
+     * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      */
     public java.lang.String getParent() {
       java.lang.Object ref = parent_;
@@ -593,12 +615,19 @@ public final class ListAutoscalingPoliciesRequest extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * Required. The "resource name" of the region, as described
-     * in https://cloud.google.com/apis/design/resource_names of the form
-     * `projects/{project_id}/regions/{region}`
+     * Required. The "resource name" of the region or location, as described
+     * in https://cloud.google.com/apis/design/resource_names.
+     * * For `projects.regions.autoscalingPolicies.list`, the resource name
+     *   of the region has the following format:
+     *   `projects/{project_id}/regions/{region}`
+     * * For `projects.locations.autoscalingPolicies.list`, the resource name
+     *   of the location has the following format:
+     *   `projects/{project_id}/locations/{location}`
      * </pre>
      *
-     * <code>string parent = 1;</code>
+     * <code>
+     * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      */
     public com.google.protobuf.ByteString getParentBytes() {
       java.lang.Object ref = parent_;
@@ -615,12 +644,19 @@ public final class ListAutoscalingPoliciesRequest extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * Required. The "resource name" of the region, as described
-     * in https://cloud.google.com/apis/design/resource_names of the form
-     * `projects/{project_id}/regions/{region}`
+     * Required. The "resource name" of the region or location, as described
+     * in https://cloud.google.com/apis/design/resource_names.
+     * * For `projects.regions.autoscalingPolicies.list`, the resource name
+     *   of the region has the following format:
+     *   `projects/{project_id}/regions/{region}`
+     * * For `projects.locations.autoscalingPolicies.list`, the resource name
+     *   of the location has the following format:
+     *   `projects/{project_id}/locations/{location}`
      * </pre>
      *
-     * <code>string parent = 1;</code>
+     * <code>
+     * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      */
     public Builder setParent(java.lang.String value) {
       if (value == null) {
@@ -635,12 +671,19 @@ public final class ListAutoscalingPoliciesRequest extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * Required. The "resource name" of the region, as described
-     * in https://cloud.google.com/apis/design/resource_names of the form
-     * `projects/{project_id}/regions/{region}`
+     * Required. The "resource name" of the region or location, as described
+     * in https://cloud.google.com/apis/design/resource_names.
+     * * For `projects.regions.autoscalingPolicies.list`, the resource name
+     *   of the region has the following format:
+     *   `projects/{project_id}/regions/{region}`
+     * * For `projects.locations.autoscalingPolicies.list`, the resource name
+     *   of the location has the following format:
+     *   `projects/{project_id}/locations/{location}`
      * </pre>
      *
-     * <code>string parent = 1;</code>
+     * <code>
+     * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      */
     public Builder clearParent() {
 
@@ -652,12 +695,19 @@ public final class ListAutoscalingPoliciesRequest extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * Required. The "resource name" of the region, as described
-     * in https://cloud.google.com/apis/design/resource_names of the form
-     * `projects/{project_id}/regions/{region}`
+     * Required. The "resource name" of the region or location, as described
+     * in https://cloud.google.com/apis/design/resource_names.
+     * * For `projects.regions.autoscalingPolicies.list`, the resource name
+     *   of the region has the following format:
+     *   `projects/{project_id}/regions/{region}`
+     * * For `projects.locations.autoscalingPolicies.list`, the resource name
+     *   of the location has the following format:
+     *   `projects/{project_id}/locations/{location}`
      * </pre>
      *
-     * <code>string parent = 1;</code>
+     * <code>
+     * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      */
     public Builder setParentBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -676,9 +726,10 @@ public final class ListAutoscalingPoliciesRequest extends com.google.protobuf.Ge
      *
      * <pre>
      * Optional. The maximum number of results to return in each response.
+     * Must be less than or equal to 1000. Defaults to 100.
      * </pre>
      *
-     * <code>int32 page_size = 2;</code>
+     * <code>int32 page_size = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public int getPageSize() {
       return pageSize_;
@@ -688,9 +739,10 @@ public final class ListAutoscalingPoliciesRequest extends com.google.protobuf.Ge
      *
      * <pre>
      * Optional. The maximum number of results to return in each response.
+     * Must be less than or equal to 1000. Defaults to 100.
      * </pre>
      *
-     * <code>int32 page_size = 2;</code>
+     * <code>int32 page_size = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public Builder setPageSize(int value) {
 
@@ -703,9 +755,10 @@ public final class ListAutoscalingPoliciesRequest extends com.google.protobuf.Ge
      *
      * <pre>
      * Optional. The maximum number of results to return in each response.
+     * Must be less than or equal to 1000. Defaults to 100.
      * </pre>
      *
-     * <code>int32 page_size = 2;</code>
+     * <code>int32 page_size = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public Builder clearPageSize() {
 
@@ -723,7 +776,7 @@ public final class ListAutoscalingPoliciesRequest extends com.google.protobuf.Ge
      * next page of results.
      * </pre>
      *
-     * <code>string page_token = 3;</code>
+     * <code>string page_token = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public java.lang.String getPageToken() {
       java.lang.Object ref = pageToken_;
@@ -744,7 +797,7 @@ public final class ListAutoscalingPoliciesRequest extends com.google.protobuf.Ge
      * next page of results.
      * </pre>
      *
-     * <code>string page_token = 3;</code>
+     * <code>string page_token = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public com.google.protobuf.ByteString getPageTokenBytes() {
       java.lang.Object ref = pageToken_;
@@ -765,7 +818,7 @@ public final class ListAutoscalingPoliciesRequest extends com.google.protobuf.Ge
      * next page of results.
      * </pre>
      *
-     * <code>string page_token = 3;</code>
+     * <code>string page_token = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public Builder setPageToken(java.lang.String value) {
       if (value == null) {
@@ -784,7 +837,7 @@ public final class ListAutoscalingPoliciesRequest extends com.google.protobuf.Ge
      * next page of results.
      * </pre>
      *
-     * <code>string page_token = 3;</code>
+     * <code>string page_token = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public Builder clearPageToken() {
 
@@ -800,7 +853,7 @@ public final class ListAutoscalingPoliciesRequest extends com.google.protobuf.Ge
      * next page of results.
      * </pre>
      *
-     * <code>string page_token = 3;</code>
+     * <code>string page_token = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public Builder setPageTokenBytes(com.google.protobuf.ByteString value) {
       if (value == null) {

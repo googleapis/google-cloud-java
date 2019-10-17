@@ -126,6 +126,12 @@ public class Model extends ModelInfo {
       return this;
     }
 
+    @Override
+    public Builder setEncryptionConfiguration(EncryptionConfiguration configuration) {
+      infoBuilder.setEncryptionConfiguration(configuration);
+      return this;
+    }
+
     public Model build() {
       return new Model(bigquery, infoBuilder);
     }

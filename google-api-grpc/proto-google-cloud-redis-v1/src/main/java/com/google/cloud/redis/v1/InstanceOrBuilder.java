@@ -22,7 +22,7 @@ public interface InstanceOrBuilder
    * [alternative_location_id] fields for more details.
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   java.lang.String getName();
   /**
@@ -39,7 +39,7 @@ public interface InstanceOrBuilder
    * [alternative_location_id] fields for more details.
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   com.google.protobuf.ByteString getNameBytes();
 
@@ -129,7 +129,7 @@ public interface InstanceOrBuilder
    * different from [location_id].
    * </pre>
    *
-   * <code>string location_id = 4;</code>
+   * <code>string location_id = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   java.lang.String getLocationId();
   /**
@@ -143,7 +143,7 @@ public interface InstanceOrBuilder
    * different from [location_id].
    * </pre>
    *
-   * <code>string location_id = 4;</code>
+   * <code>string location_id = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   com.google.protobuf.ByteString getLocationIdBytes();
 
@@ -156,7 +156,7 @@ public interface InstanceOrBuilder
    * must be a different zone from the one provided in [location_id].
    * </pre>
    *
-   * <code>string alternative_location_id = 5;</code>
+   * <code>string alternative_location_id = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   java.lang.String getAlternativeLocationId();
   /**
@@ -168,7 +168,7 @@ public interface InstanceOrBuilder
    * must be a different zone from the one provided in [location_id].
    * </pre>
    *
-   * <code>string alternative_location_id = 5;</code>
+   * <code>string alternative_location_id = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   com.google.protobuf.ByteString getAlternativeLocationIdBytes();
 
@@ -184,7 +184,7 @@ public interface InstanceOrBuilder
    *  *   `REDIS_3_2` for Redis 3.2 compatibility
    * </pre>
    *
-   * <code>string redis_version = 7;</code>
+   * <code>string redis_version = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   java.lang.String getRedisVersion();
   /**
@@ -199,7 +199,7 @@ public interface InstanceOrBuilder
    *  *   `REDIS_3_2` for Redis 3.2 compatibility
    * </pre>
    *
-   * <code>string redis_version = 7;</code>
+   * <code>string redis_version = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   com.google.protobuf.ByteString getRedisVersionBytes();
 
@@ -213,7 +213,7 @@ public interface InstanceOrBuilder
    * and non-overlapping with existing subnets in an authorized network.
    * </pre>
    *
-   * <code>string reserved_ip_range = 9;</code>
+   * <code>string reserved_ip_range = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   java.lang.String getReservedIpRange();
   /**
@@ -226,7 +226,7 @@ public interface InstanceOrBuilder
    * and non-overlapping with existing subnets in an authorized network.
    * </pre>
    *
-   * <code>string reserved_ip_range = 9;</code>
+   * <code>string reserved_ip_range = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   com.google.protobuf.ByteString getReservedIpRangeBytes();
 
@@ -238,7 +238,7 @@ public interface InstanceOrBuilder
    * clients to connect to the service.
    * </pre>
    *
-   * <code>string host = 10;</code>
+   * <code>string host = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    */
   java.lang.String getHost();
   /**
@@ -249,7 +249,7 @@ public interface InstanceOrBuilder
    * clients to connect to the service.
    * </pre>
    *
-   * <code>string host = 10;</code>
+   * <code>string host = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    */
   com.google.protobuf.ByteString getHostBytes();
 
@@ -260,7 +260,7 @@ public interface InstanceOrBuilder
    * Output only. The port number of the exposed Redis endpoint.
    * </pre>
    *
-   * <code>int32 port = 11;</code>
+   * <code>int32 port = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    */
   int getPort();
 
@@ -275,7 +275,7 @@ public interface InstanceOrBuilder
    * change after a failover event.
    * </pre>
    *
-   * <code>string current_location_id = 12;</code>
+   * <code>string current_location_id = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    */
   java.lang.String getCurrentLocationId();
   /**
@@ -289,7 +289,7 @@ public interface InstanceOrBuilder
    * change after a failover event.
    * </pre>
    *
-   * <code>string current_location_id = 12;</code>
+   * <code>string current_location_id = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    */
   com.google.protobuf.ByteString getCurrentLocationIdBytes();
 
@@ -300,7 +300,8 @@ public interface InstanceOrBuilder
    * Output only. The time the instance was created.
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp create_time = 13;</code>
+   * <code>.google.protobuf.Timestamp create_time = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    */
   boolean hasCreateTime();
   /**
@@ -310,7 +311,8 @@ public interface InstanceOrBuilder
    * Output only. The time the instance was created.
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp create_time = 13;</code>
+   * <code>.google.protobuf.Timestamp create_time = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    */
   com.google.protobuf.Timestamp getCreateTime();
   /**
@@ -320,7 +322,8 @@ public interface InstanceOrBuilder
    * Output only. The time the instance was created.
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp create_time = 13;</code>
+   * <code>.google.protobuf.Timestamp create_time = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    */
   com.google.protobuf.TimestampOrBuilder getCreateTimeOrBuilder();
 
@@ -331,7 +334,9 @@ public interface InstanceOrBuilder
    * Output only. The current state of this instance.
    * </pre>
    *
-   * <code>.google.cloud.redis.v1.Instance.State state = 14;</code>
+   * <code>
+   * .google.cloud.redis.v1.Instance.State state = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    */
   int getStateValue();
   /**
@@ -341,7 +346,9 @@ public interface InstanceOrBuilder
    * Output only. The current state of this instance.
    * </pre>
    *
-   * <code>.google.cloud.redis.v1.Instance.State state = 14;</code>
+   * <code>
+   * .google.cloud.redis.v1.Instance.State state = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    */
   com.google.cloud.redis.v1.Instance.State getState();
 
@@ -353,7 +360,7 @@ public interface InstanceOrBuilder
    * instance, if available.
    * </pre>
    *
-   * <code>string status_message = 15;</code>
+   * <code>string status_message = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    */
   java.lang.String getStatusMessage();
   /**
@@ -364,7 +371,7 @@ public interface InstanceOrBuilder
    * instance, if available.
    * </pre>
    *
-   * <code>string status_message = 15;</code>
+   * <code>string status_message = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    */
   com.google.protobuf.ByteString getStatusMessageBytes();
 
@@ -384,7 +391,8 @@ public interface InstanceOrBuilder
    *  *   lfu-decay-time
    * </pre>
    *
-   * <code>map&lt;string, string&gt; redis_configs = 16;</code>
+   * <code>map&lt;string, string&gt; redis_configs = 16 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   int getRedisConfigsCount();
   /**
@@ -403,7 +411,8 @@ public interface InstanceOrBuilder
    *  *   lfu-decay-time
    * </pre>
    *
-   * <code>map&lt;string, string&gt; redis_configs = 16;</code>
+   * <code>map&lt;string, string&gt; redis_configs = 16 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   boolean containsRedisConfigs(java.lang.String key);
   /** Use {@link #getRedisConfigsMap()} instead. */
@@ -425,7 +434,8 @@ public interface InstanceOrBuilder
    *  *   lfu-decay-time
    * </pre>
    *
-   * <code>map&lt;string, string&gt; redis_configs = 16;</code>
+   * <code>map&lt;string, string&gt; redis_configs = 16 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   java.util.Map<java.lang.String, java.lang.String> getRedisConfigsMap();
   /**
@@ -444,7 +454,8 @@ public interface InstanceOrBuilder
    *  *   lfu-decay-time
    * </pre>
    *
-   * <code>map&lt;string, string&gt; redis_configs = 16;</code>
+   * <code>map&lt;string, string&gt; redis_configs = 16 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   java.lang.String getRedisConfigsOrDefault(java.lang.String key, java.lang.String defaultValue);
   /**
@@ -463,7 +474,8 @@ public interface InstanceOrBuilder
    *  *   lfu-decay-time
    * </pre>
    *
-   * <code>map&lt;string, string&gt; redis_configs = 16;</code>
+   * <code>map&lt;string, string&gt; redis_configs = 16 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   java.lang.String getRedisConfigsOrThrow(java.lang.String key);
 
@@ -474,7 +486,8 @@ public interface InstanceOrBuilder
    * Required. The service tier of the instance.
    * </pre>
    *
-   * <code>.google.cloud.redis.v1.Instance.Tier tier = 17;</code>
+   * <code>.google.cloud.redis.v1.Instance.Tier tier = 17 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   int getTierValue();
   /**
@@ -484,7 +497,8 @@ public interface InstanceOrBuilder
    * Required. The service tier of the instance.
    * </pre>
    *
-   * <code>.google.cloud.redis.v1.Instance.Tier tier = 17;</code>
+   * <code>.google.cloud.redis.v1.Instance.Tier tier = 17 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   com.google.cloud.redis.v1.Instance.Tier getTier();
 
@@ -495,7 +509,7 @@ public interface InstanceOrBuilder
    * Required. Redis memory size in GiB.
    * </pre>
    *
-   * <code>int32 memory_size_gb = 18;</code>
+   * <code>int32 memory_size_gb = 18 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   int getMemorySizeGb();
 
@@ -509,7 +523,7 @@ public interface InstanceOrBuilder
    * will be used.
    * </pre>
    *
-   * <code>string authorized_network = 20;</code>
+   * <code>string authorized_network = 20 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   java.lang.String getAuthorizedNetwork();
   /**
@@ -522,7 +536,7 @@ public interface InstanceOrBuilder
    * will be used.
    * </pre>
    *
-   * <code>string authorized_network = 20;</code>
+   * <code>string authorized_network = 20 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   com.google.protobuf.ByteString getAuthorizedNetworkBytes();
 
@@ -537,7 +551,7 @@ public interface InstanceOrBuilder
    * operation.
    * </pre>
    *
-   * <code>string persistence_iam_identity = 21;</code>
+   * <code>string persistence_iam_identity = 21 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    */
   java.lang.String getPersistenceIamIdentity();
   /**
@@ -551,7 +565,7 @@ public interface InstanceOrBuilder
    * operation.
    * </pre>
    *
-   * <code>string persistence_iam_identity = 21;</code>
+   * <code>string persistence_iam_identity = 21 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    */
   com.google.protobuf.ByteString getPersistenceIamIdentityBytes();
 }

@@ -119,7 +119,8 @@ public final class ListTransferConfigsResponse extends com.google.protobuf.Gener
    * Output only. The stored pipeline transfer configurations.
    * </pre>
    *
-   * <code>repeated .google.cloud.bigquery.datatransfer.v1.TransferConfig transfer_configs = 1;
+   * <code>
+   * repeated .google.cloud.bigquery.datatransfer.v1.TransferConfig transfer_configs = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
    */
   public java.util.List<com.google.cloud.bigquery.datatransfer.v1.TransferConfig>
@@ -133,7 +134,8 @@ public final class ListTransferConfigsResponse extends com.google.protobuf.Gener
    * Output only. The stored pipeline transfer configurations.
    * </pre>
    *
-   * <code>repeated .google.cloud.bigquery.datatransfer.v1.TransferConfig transfer_configs = 1;
+   * <code>
+   * repeated .google.cloud.bigquery.datatransfer.v1.TransferConfig transfer_configs = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
    */
   public java.util.List<? extends com.google.cloud.bigquery.datatransfer.v1.TransferConfigOrBuilder>
@@ -147,7 +149,8 @@ public final class ListTransferConfigsResponse extends com.google.protobuf.Gener
    * Output only. The stored pipeline transfer configurations.
    * </pre>
    *
-   * <code>repeated .google.cloud.bigquery.datatransfer.v1.TransferConfig transfer_configs = 1;
+   * <code>
+   * repeated .google.cloud.bigquery.datatransfer.v1.TransferConfig transfer_configs = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
    */
   public int getTransferConfigsCount() {
@@ -160,7 +163,8 @@ public final class ListTransferConfigsResponse extends com.google.protobuf.Gener
    * Output only. The stored pipeline transfer configurations.
    * </pre>
    *
-   * <code>repeated .google.cloud.bigquery.datatransfer.v1.TransferConfig transfer_configs = 1;
+   * <code>
+   * repeated .google.cloud.bigquery.datatransfer.v1.TransferConfig transfer_configs = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
    */
   public com.google.cloud.bigquery.datatransfer.v1.TransferConfig getTransferConfigs(int index) {
@@ -173,7 +177,8 @@ public final class ListTransferConfigsResponse extends com.google.protobuf.Gener
    * Output only. The stored pipeline transfer configurations.
    * </pre>
    *
-   * <code>repeated .google.cloud.bigquery.datatransfer.v1.TransferConfig transfer_configs = 1;
+   * <code>
+   * repeated .google.cloud.bigquery.datatransfer.v1.TransferConfig transfer_configs = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
    */
   public com.google.cloud.bigquery.datatransfer.v1.TransferConfigOrBuilder
@@ -193,7 +198,7 @@ public final class ListTransferConfigsResponse extends com.google.protobuf.Gener
    * to request the next page of list results.
    * </pre>
    *
-   * <code>string next_page_token = 2;</code>
+   * <code>string next_page_token = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    */
   public java.lang.String getNextPageToken() {
     java.lang.Object ref = nextPageToken_;
@@ -216,7 +221,7 @@ public final class ListTransferConfigsResponse extends com.google.protobuf.Gener
    * to request the next page of list results.
    * </pre>
    *
-   * <code>string next_page_token = 2;</code>
+   * <code>string next_page_token = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    */
   public com.google.protobuf.ByteString getNextPageTokenBytes() {
     java.lang.Object ref = nextPageToken_;
@@ -642,7 +647,8 @@ public final class ListTransferConfigsResponse extends com.google.protobuf.Gener
      * Output only. The stored pipeline transfer configurations.
      * </pre>
      *
-     * <code>repeated .google.cloud.bigquery.datatransfer.v1.TransferConfig transfer_configs = 1;
+     * <code>
+     * repeated .google.cloud.bigquery.datatransfer.v1.TransferConfig transfer_configs = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      */
     public java.util.List<com.google.cloud.bigquery.datatransfer.v1.TransferConfig>
@@ -660,7 +666,8 @@ public final class ListTransferConfigsResponse extends com.google.protobuf.Gener
      * Output only. The stored pipeline transfer configurations.
      * </pre>
      *
-     * <code>repeated .google.cloud.bigquery.datatransfer.v1.TransferConfig transfer_configs = 1;
+     * <code>
+     * repeated .google.cloud.bigquery.datatransfer.v1.TransferConfig transfer_configs = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      */
     public int getTransferConfigsCount() {
@@ -677,7 +684,8 @@ public final class ListTransferConfigsResponse extends com.google.protobuf.Gener
      * Output only. The stored pipeline transfer configurations.
      * </pre>
      *
-     * <code>repeated .google.cloud.bigquery.datatransfer.v1.TransferConfig transfer_configs = 1;
+     * <code>
+     * repeated .google.cloud.bigquery.datatransfer.v1.TransferConfig transfer_configs = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      */
     public com.google.cloud.bigquery.datatransfer.v1.TransferConfig getTransferConfigs(int index) {
@@ -694,7 +702,8 @@ public final class ListTransferConfigsResponse extends com.google.protobuf.Gener
      * Output only. The stored pipeline transfer configurations.
      * </pre>
      *
-     * <code>repeated .google.cloud.bigquery.datatransfer.v1.TransferConfig transfer_configs = 1;
+     * <code>
+     * repeated .google.cloud.bigquery.datatransfer.v1.TransferConfig transfer_configs = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      */
     public Builder setTransferConfigs(
@@ -718,7 +727,8 @@ public final class ListTransferConfigsResponse extends com.google.protobuf.Gener
      * Output only. The stored pipeline transfer configurations.
      * </pre>
      *
-     * <code>repeated .google.cloud.bigquery.datatransfer.v1.TransferConfig transfer_configs = 1;
+     * <code>
+     * repeated .google.cloud.bigquery.datatransfer.v1.TransferConfig transfer_configs = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      */
     public Builder setTransferConfigs(
@@ -740,7 +750,8 @@ public final class ListTransferConfigsResponse extends com.google.protobuf.Gener
      * Output only. The stored pipeline transfer configurations.
      * </pre>
      *
-     * <code>repeated .google.cloud.bigquery.datatransfer.v1.TransferConfig transfer_configs = 1;
+     * <code>
+     * repeated .google.cloud.bigquery.datatransfer.v1.TransferConfig transfer_configs = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      */
     public Builder addTransferConfigs(
@@ -764,7 +775,8 @@ public final class ListTransferConfigsResponse extends com.google.protobuf.Gener
      * Output only. The stored pipeline transfer configurations.
      * </pre>
      *
-     * <code>repeated .google.cloud.bigquery.datatransfer.v1.TransferConfig transfer_configs = 1;
+     * <code>
+     * repeated .google.cloud.bigquery.datatransfer.v1.TransferConfig transfer_configs = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      */
     public Builder addTransferConfigs(
@@ -788,7 +800,8 @@ public final class ListTransferConfigsResponse extends com.google.protobuf.Gener
      * Output only. The stored pipeline transfer configurations.
      * </pre>
      *
-     * <code>repeated .google.cloud.bigquery.datatransfer.v1.TransferConfig transfer_configs = 1;
+     * <code>
+     * repeated .google.cloud.bigquery.datatransfer.v1.TransferConfig transfer_configs = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      */
     public Builder addTransferConfigs(
@@ -809,7 +822,8 @@ public final class ListTransferConfigsResponse extends com.google.protobuf.Gener
      * Output only. The stored pipeline transfer configurations.
      * </pre>
      *
-     * <code>repeated .google.cloud.bigquery.datatransfer.v1.TransferConfig transfer_configs = 1;
+     * <code>
+     * repeated .google.cloud.bigquery.datatransfer.v1.TransferConfig transfer_configs = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      */
     public Builder addTransferConfigs(
@@ -831,7 +845,8 @@ public final class ListTransferConfigsResponse extends com.google.protobuf.Gener
      * Output only. The stored pipeline transfer configurations.
      * </pre>
      *
-     * <code>repeated .google.cloud.bigquery.datatransfer.v1.TransferConfig transfer_configs = 1;
+     * <code>
+     * repeated .google.cloud.bigquery.datatransfer.v1.TransferConfig transfer_configs = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      */
     public Builder addAllTransferConfigs(
@@ -853,7 +868,8 @@ public final class ListTransferConfigsResponse extends com.google.protobuf.Gener
      * Output only. The stored pipeline transfer configurations.
      * </pre>
      *
-     * <code>repeated .google.cloud.bigquery.datatransfer.v1.TransferConfig transfer_configs = 1;
+     * <code>
+     * repeated .google.cloud.bigquery.datatransfer.v1.TransferConfig transfer_configs = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      */
     public Builder clearTransferConfigs() {
@@ -873,7 +889,8 @@ public final class ListTransferConfigsResponse extends com.google.protobuf.Gener
      * Output only. The stored pipeline transfer configurations.
      * </pre>
      *
-     * <code>repeated .google.cloud.bigquery.datatransfer.v1.TransferConfig transfer_configs = 1;
+     * <code>
+     * repeated .google.cloud.bigquery.datatransfer.v1.TransferConfig transfer_configs = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      */
     public Builder removeTransferConfigs(int index) {
@@ -893,7 +910,8 @@ public final class ListTransferConfigsResponse extends com.google.protobuf.Gener
      * Output only. The stored pipeline transfer configurations.
      * </pre>
      *
-     * <code>repeated .google.cloud.bigquery.datatransfer.v1.TransferConfig transfer_configs = 1;
+     * <code>
+     * repeated .google.cloud.bigquery.datatransfer.v1.TransferConfig transfer_configs = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      */
     public com.google.cloud.bigquery.datatransfer.v1.TransferConfig.Builder
@@ -907,7 +925,8 @@ public final class ListTransferConfigsResponse extends com.google.protobuf.Gener
      * Output only. The stored pipeline transfer configurations.
      * </pre>
      *
-     * <code>repeated .google.cloud.bigquery.datatransfer.v1.TransferConfig transfer_configs = 1;
+     * <code>
+     * repeated .google.cloud.bigquery.datatransfer.v1.TransferConfig transfer_configs = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      */
     public com.google.cloud.bigquery.datatransfer.v1.TransferConfigOrBuilder
@@ -925,7 +944,8 @@ public final class ListTransferConfigsResponse extends com.google.protobuf.Gener
      * Output only. The stored pipeline transfer configurations.
      * </pre>
      *
-     * <code>repeated .google.cloud.bigquery.datatransfer.v1.TransferConfig transfer_configs = 1;
+     * <code>
+     * repeated .google.cloud.bigquery.datatransfer.v1.TransferConfig transfer_configs = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      */
     public java.util.List<
@@ -944,7 +964,8 @@ public final class ListTransferConfigsResponse extends com.google.protobuf.Gener
      * Output only. The stored pipeline transfer configurations.
      * </pre>
      *
-     * <code>repeated .google.cloud.bigquery.datatransfer.v1.TransferConfig transfer_configs = 1;
+     * <code>
+     * repeated .google.cloud.bigquery.datatransfer.v1.TransferConfig transfer_configs = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      */
     public com.google.cloud.bigquery.datatransfer.v1.TransferConfig.Builder
@@ -960,7 +981,8 @@ public final class ListTransferConfigsResponse extends com.google.protobuf.Gener
      * Output only. The stored pipeline transfer configurations.
      * </pre>
      *
-     * <code>repeated .google.cloud.bigquery.datatransfer.v1.TransferConfig transfer_configs = 1;
+     * <code>
+     * repeated .google.cloud.bigquery.datatransfer.v1.TransferConfig transfer_configs = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      */
     public com.google.cloud.bigquery.datatransfer.v1.TransferConfig.Builder
@@ -976,7 +998,8 @@ public final class ListTransferConfigsResponse extends com.google.protobuf.Gener
      * Output only. The stored pipeline transfer configurations.
      * </pre>
      *
-     * <code>repeated .google.cloud.bigquery.datatransfer.v1.TransferConfig transfer_configs = 1;
+     * <code>
+     * repeated .google.cloud.bigquery.datatransfer.v1.TransferConfig transfer_configs = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      */
     public java.util.List<com.google.cloud.bigquery.datatransfer.v1.TransferConfig.Builder>
@@ -1015,7 +1038,7 @@ public final class ListTransferConfigsResponse extends com.google.protobuf.Gener
      * to request the next page of list results.
      * </pre>
      *
-     * <code>string next_page_token = 2;</code>
+     * <code>string next_page_token = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     public java.lang.String getNextPageToken() {
       java.lang.Object ref = nextPageToken_;
@@ -1038,7 +1061,7 @@ public final class ListTransferConfigsResponse extends com.google.protobuf.Gener
      * to request the next page of list results.
      * </pre>
      *
-     * <code>string next_page_token = 2;</code>
+     * <code>string next_page_token = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     public com.google.protobuf.ByteString getNextPageTokenBytes() {
       java.lang.Object ref = nextPageToken_;
@@ -1061,7 +1084,7 @@ public final class ListTransferConfigsResponse extends com.google.protobuf.Gener
      * to request the next page of list results.
      * </pre>
      *
-     * <code>string next_page_token = 2;</code>
+     * <code>string next_page_token = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     public Builder setNextPageToken(java.lang.String value) {
       if (value == null) {
@@ -1082,7 +1105,7 @@ public final class ListTransferConfigsResponse extends com.google.protobuf.Gener
      * to request the next page of list results.
      * </pre>
      *
-     * <code>string next_page_token = 2;</code>
+     * <code>string next_page_token = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     public Builder clearNextPageToken() {
 
@@ -1100,7 +1123,7 @@ public final class ListTransferConfigsResponse extends com.google.protobuf.Gener
      * to request the next page of list results.
      * </pre>
      *
-     * <code>string next_page_token = 2;</code>
+     * <code>string next_page_token = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     public Builder setNextPageTokenBytes(com.google.protobuf.ByteString value) {
       if (value == null) {

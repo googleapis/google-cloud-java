@@ -12,20 +12,66 @@ public interface GetLoginProfileRequestOrBuilder
    *
    *
    * <pre>
-   * The unique ID for the user in format `users/{user}`.
+   * Required. The unique ID for the user in format `users/{user}`.
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>
+   * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    */
   java.lang.String getName();
   /**
    *
    *
    * <pre>
-   * The unique ID for the user in format `users/{user}`.
+   * Required. The unique ID for the user in format `users/{user}`.
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>
+   * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    */
   com.google.protobuf.ByteString getNameBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * The project ID of the Google Cloud Platform project.
+   * </pre>
+   *
+   * <code>string project_id = 2;</code>
+   */
+  java.lang.String getProjectId();
+  /**
+   *
+   *
+   * <pre>
+   * The project ID of the Google Cloud Platform project.
+   * </pre>
+   *
+   * <code>string project_id = 2;</code>
+   */
+  com.google.protobuf.ByteString getProjectIdBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * A system ID for filtering the results of the request.
+   * </pre>
+   *
+   * <code>string system_id = 3;</code>
+   */
+  java.lang.String getSystemId();
+  /**
+   *
+   *
+   * <pre>
+   * A system ID for filtering the results of the request.
+   * </pre>
+   *
+   * <code>string system_id = 3;</code>
+   */
+  com.google.protobuf.ByteString getSystemIdBytes();
 }

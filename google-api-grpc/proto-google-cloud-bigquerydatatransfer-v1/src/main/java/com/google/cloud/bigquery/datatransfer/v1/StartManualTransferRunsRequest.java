@@ -1337,7 +1337,7 @@ public final class StartManualTransferRunsRequest extends com.google.protobuf.Ge
    * `projects/{project_id}/transferConfigs/{config_id}`.
    * </pre>
    *
-   * <code>string parent = 1;</code>
+   * <code>string parent = 1 [(.google.api.resource_reference) = { ... }</code>
    */
   public java.lang.String getParent() {
     java.lang.Object ref = parent_;
@@ -1358,7 +1358,7 @@ public final class StartManualTransferRunsRequest extends com.google.protobuf.Ge
    * `projects/{project_id}/transferConfigs/{config_id}`.
    * </pre>
    *
-   * <code>string parent = 1;</code>
+   * <code>string parent = 1 [(.google.api.resource_reference) = { ... }</code>
    */
   public com.google.protobuf.ByteString getParentBytes() {
     java.lang.Object ref = parent_;
@@ -1906,7 +1906,7 @@ public final class StartManualTransferRunsRequest extends com.google.protobuf.Ge
      * `projects/{project_id}/transferConfigs/{config_id}`.
      * </pre>
      *
-     * <code>string parent = 1;</code>
+     * <code>string parent = 1 [(.google.api.resource_reference) = { ... }</code>
      */
     public java.lang.String getParent() {
       java.lang.Object ref = parent_;
@@ -1927,7 +1927,7 @@ public final class StartManualTransferRunsRequest extends com.google.protobuf.Ge
      * `projects/{project_id}/transferConfigs/{config_id}`.
      * </pre>
      *
-     * <code>string parent = 1;</code>
+     * <code>string parent = 1 [(.google.api.resource_reference) = { ... }</code>
      */
     public com.google.protobuf.ByteString getParentBytes() {
       java.lang.Object ref = parent_;
@@ -1948,7 +1948,7 @@ public final class StartManualTransferRunsRequest extends com.google.protobuf.Ge
      * `projects/{project_id}/transferConfigs/{config_id}`.
      * </pre>
      *
-     * <code>string parent = 1;</code>
+     * <code>string parent = 1 [(.google.api.resource_reference) = { ... }</code>
      */
     public Builder setParent(java.lang.String value) {
       if (value == null) {
@@ -1967,7 +1967,7 @@ public final class StartManualTransferRunsRequest extends com.google.protobuf.Ge
      * `projects/{project_id}/transferConfigs/{config_id}`.
      * </pre>
      *
-     * <code>string parent = 1;</code>
+     * <code>string parent = 1 [(.google.api.resource_reference) = { ... }</code>
      */
     public Builder clearParent() {
 
@@ -1983,7 +1983,7 @@ public final class StartManualTransferRunsRequest extends com.google.protobuf.Ge
      * `projects/{project_id}/transferConfigs/{config_id}`.
      * </pre>
      *
-     * <code>string parent = 1;</code>
+     * <code>string parent = 1 [(.google.api.resource_reference) = { ... }</code>
      */
     public Builder setParentBytes(com.google.protobuf.ByteString value) {
       if (value == null) {

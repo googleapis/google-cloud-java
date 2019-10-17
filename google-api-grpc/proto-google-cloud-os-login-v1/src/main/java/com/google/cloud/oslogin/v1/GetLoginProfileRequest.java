@@ -24,6 +24,8 @@ public final class GetLoginProfileRequest extends com.google.protobuf.GeneratedM
 
   private GetLoginProfileRequest() {
     name_ = "";
+    projectId_ = "";
+    systemId_ = "";
   }
 
   @java.lang.Override
@@ -55,6 +57,20 @@ public final class GetLoginProfileRequest extends com.google.protobuf.GeneratedM
               java.lang.String s = input.readStringRequireUtf8();
 
               name_ = s;
+              break;
+            }
+          case 18:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              projectId_ = s;
+              break;
+            }
+          case 26:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              systemId_ = s;
               break;
             }
           default:
@@ -97,10 +113,12 @@ public final class GetLoginProfileRequest extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * The unique ID for the user in format `users/{user}`.
+   * Required. The unique ID for the user in format `users/{user}`.
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>
+   * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    */
   public java.lang.String getName() {
     java.lang.Object ref = name_;
@@ -117,10 +135,12 @@ public final class GetLoginProfileRequest extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * The unique ID for the user in format `users/{user}`.
+   * Required. The unique ID for the user in format `users/{user}`.
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>
+   * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    */
   public com.google.protobuf.ByteString getNameBytes() {
     java.lang.Object ref = name_;
@@ -128,6 +148,92 @@ public final class GetLoginProfileRequest extends com.google.protobuf.GeneratedM
       com.google.protobuf.ByteString b =
           com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
       name_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int PROJECT_ID_FIELD_NUMBER = 2;
+  private volatile java.lang.Object projectId_;
+  /**
+   *
+   *
+   * <pre>
+   * The project ID of the Google Cloud Platform project.
+   * </pre>
+   *
+   * <code>string project_id = 2;</code>
+   */
+  public java.lang.String getProjectId() {
+    java.lang.Object ref = projectId_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      projectId_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The project ID of the Google Cloud Platform project.
+   * </pre>
+   *
+   * <code>string project_id = 2;</code>
+   */
+  public com.google.protobuf.ByteString getProjectIdBytes() {
+    java.lang.Object ref = projectId_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      projectId_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int SYSTEM_ID_FIELD_NUMBER = 3;
+  private volatile java.lang.Object systemId_;
+  /**
+   *
+   *
+   * <pre>
+   * A system ID for filtering the results of the request.
+   * </pre>
+   *
+   * <code>string system_id = 3;</code>
+   */
+  public java.lang.String getSystemId() {
+    java.lang.Object ref = systemId_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      systemId_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * A system ID for filtering the results of the request.
+   * </pre>
+   *
+   * <code>string system_id = 3;</code>
+   */
+  public com.google.protobuf.ByteString getSystemIdBytes() {
+    java.lang.Object ref = systemId_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      systemId_ = b;
       return b;
     } else {
       return (com.google.protobuf.ByteString) ref;
@@ -151,6 +257,12 @@ public final class GetLoginProfileRequest extends com.google.protobuf.GeneratedM
     if (!getNameBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, name_);
     }
+    if (!getProjectIdBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 2, projectId_);
+    }
+    if (!getSystemIdBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 3, systemId_);
+    }
     unknownFields.writeTo(output);
   }
 
@@ -162,6 +274,12 @@ public final class GetLoginProfileRequest extends com.google.protobuf.GeneratedM
     size = 0;
     if (!getNameBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, name_);
+    }
+    if (!getProjectIdBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, projectId_);
+    }
+    if (!getSystemIdBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, systemId_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -180,6 +298,8 @@ public final class GetLoginProfileRequest extends com.google.protobuf.GeneratedM
         (com.google.cloud.oslogin.v1.GetLoginProfileRequest) obj;
 
     if (!getName().equals(other.getName())) return false;
+    if (!getProjectId().equals(other.getProjectId())) return false;
+    if (!getSystemId().equals(other.getSystemId())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -193,6 +313,10 @@ public final class GetLoginProfileRequest extends com.google.protobuf.GeneratedM
     hash = (19 * hash) + getDescriptor().hashCode();
     hash = (37 * hash) + NAME_FIELD_NUMBER;
     hash = (53 * hash) + getName().hashCode();
+    hash = (37 * hash) + PROJECT_ID_FIELD_NUMBER;
+    hash = (53 * hash) + getProjectId().hashCode();
+    hash = (37 * hash) + SYSTEM_ID_FIELD_NUMBER;
+    hash = (53 * hash) + getSystemId().hashCode();
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -340,6 +464,10 @@ public final class GetLoginProfileRequest extends com.google.protobuf.GeneratedM
       super.clear();
       name_ = "";
 
+      projectId_ = "";
+
+      systemId_ = "";
+
       return this;
     }
 
@@ -368,6 +496,8 @@ public final class GetLoginProfileRequest extends com.google.protobuf.GeneratedM
       com.google.cloud.oslogin.v1.GetLoginProfileRequest result =
           new com.google.cloud.oslogin.v1.GetLoginProfileRequest(this);
       result.name_ = name_;
+      result.projectId_ = projectId_;
+      result.systemId_ = systemId_;
       onBuilt();
       return result;
     }
@@ -422,6 +552,14 @@ public final class GetLoginProfileRequest extends com.google.protobuf.GeneratedM
         name_ = other.name_;
         onChanged();
       }
+      if (!other.getProjectId().isEmpty()) {
+        projectId_ = other.projectId_;
+        onChanged();
+      }
+      if (!other.getSystemId().isEmpty()) {
+        systemId_ = other.systemId_;
+        onChanged();
+      }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
       return this;
@@ -457,10 +595,12 @@ public final class GetLoginProfileRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * The unique ID for the user in format `users/{user}`.
+     * Required. The unique ID for the user in format `users/{user}`.
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>
+     * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      */
     public java.lang.String getName() {
       java.lang.Object ref = name_;
@@ -477,10 +617,12 @@ public final class GetLoginProfileRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * The unique ID for the user in format `users/{user}`.
+     * Required. The unique ID for the user in format `users/{user}`.
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>
+     * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      */
     public com.google.protobuf.ByteString getNameBytes() {
       java.lang.Object ref = name_;
@@ -497,10 +639,12 @@ public final class GetLoginProfileRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * The unique ID for the user in format `users/{user}`.
+     * Required. The unique ID for the user in format `users/{user}`.
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>
+     * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      */
     public Builder setName(java.lang.String value) {
       if (value == null) {
@@ -515,10 +659,12 @@ public final class GetLoginProfileRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * The unique ID for the user in format `users/{user}`.
+     * Required. The unique ID for the user in format `users/{user}`.
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>
+     * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      */
     public Builder clearName() {
 
@@ -530,10 +676,12 @@ public final class GetLoginProfileRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * The unique ID for the user in format `users/{user}`.
+     * Required. The unique ID for the user in format `users/{user}`.
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>
+     * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      */
     public Builder setNameBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -542,6 +690,194 @@ public final class GetLoginProfileRequest extends com.google.protobuf.GeneratedM
       checkByteStringIsUtf8(value);
 
       name_ = value;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object projectId_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * The project ID of the Google Cloud Platform project.
+     * </pre>
+     *
+     * <code>string project_id = 2;</code>
+     */
+    public java.lang.String getProjectId() {
+      java.lang.Object ref = projectId_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        projectId_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The project ID of the Google Cloud Platform project.
+     * </pre>
+     *
+     * <code>string project_id = 2;</code>
+     */
+    public com.google.protobuf.ByteString getProjectIdBytes() {
+      java.lang.Object ref = projectId_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        projectId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The project ID of the Google Cloud Platform project.
+     * </pre>
+     *
+     * <code>string project_id = 2;</code>
+     */
+    public Builder setProjectId(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+
+      projectId_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The project ID of the Google Cloud Platform project.
+     * </pre>
+     *
+     * <code>string project_id = 2;</code>
+     */
+    public Builder clearProjectId() {
+
+      projectId_ = getDefaultInstance().getProjectId();
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The project ID of the Google Cloud Platform project.
+     * </pre>
+     *
+     * <code>string project_id = 2;</code>
+     */
+    public Builder setProjectIdBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
+      projectId_ = value;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object systemId_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * A system ID for filtering the results of the request.
+     * </pre>
+     *
+     * <code>string system_id = 3;</code>
+     */
+    public java.lang.String getSystemId() {
+      java.lang.Object ref = systemId_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        systemId_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A system ID for filtering the results of the request.
+     * </pre>
+     *
+     * <code>string system_id = 3;</code>
+     */
+    public com.google.protobuf.ByteString getSystemIdBytes() {
+      java.lang.Object ref = systemId_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        systemId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A system ID for filtering the results of the request.
+     * </pre>
+     *
+     * <code>string system_id = 3;</code>
+     */
+    public Builder setSystemId(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+
+      systemId_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A system ID for filtering the results of the request.
+     * </pre>
+     *
+     * <code>string system_id = 3;</code>
+     */
+    public Builder clearSystemId() {
+
+      systemId_ = getDefaultInstance().getSystemId();
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A system ID for filtering the results of the request.
+     * </pre>
+     *
+     * <code>string system_id = 3;</code>
+     */
+    public Builder setSystemIdBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
+      systemId_ = value;
       onChanged();
       return this;
     }

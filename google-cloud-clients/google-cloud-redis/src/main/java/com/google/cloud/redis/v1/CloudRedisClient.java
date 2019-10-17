@@ -703,7 +703,7 @@ public class CloudRedisClient implements BackgroundResource {
    *   FieldMask updateMask = FieldMask.newBuilder()
    *     .addAllPaths(paths)
    *     .build();
-   *   String displayName = " instance.memory_size_gb=4";
+   *   String displayName = "￼ instance.memory_size_gb=4";
    *   Instance instance = Instance.newBuilder()
    *     .setDisplayName(displayName)
    *     .build();
@@ -746,7 +746,7 @@ public class CloudRedisClient implements BackgroundResource {
    *   FieldMask updateMask = FieldMask.newBuilder()
    *     .addAllPaths(paths)
    *     .build();
-   *   String displayName = " instance.memory_size_gb=4";
+   *   String displayName = "￼ instance.memory_size_gb=4";
    *   Instance instance = Instance.newBuilder()
    *     .setDisplayName(displayName)
    *     .build();
@@ -786,7 +786,7 @@ public class CloudRedisClient implements BackgroundResource {
    *   FieldMask updateMask = FieldMask.newBuilder()
    *     .addAllPaths(paths)
    *     .build();
-   *   String displayName = " instance.memory_size_gb=4";
+   *   String displayName = "￼ instance.memory_size_gb=4";
    *   Instance instance = Instance.newBuilder()
    *     .setDisplayName(displayName)
    *     .build();
@@ -824,7 +824,7 @@ public class CloudRedisClient implements BackgroundResource {
    *   FieldMask updateMask = FieldMask.newBuilder()
    *     .addAllPaths(paths)
    *     .build();
-   *   String displayName = " instance.memory_size_gb=4";
+   *   String displayName = "￼ instance.memory_size_gb=4";
    *   Instance instance = Instance.newBuilder()
    *     .setDisplayName(displayName)
    *     .build();
@@ -856,9 +856,9 @@ public class CloudRedisClient implements BackgroundResource {
    *
    * <pre><code>
    * try (CloudRedisClient cloudRedisClient = CloudRedisClient.create()) {
-   *   String formattedName = InstanceName.format("[PROJECT]", "[LOCATION]", "[INSTANCE]");
+   *   String name = "";
    *   InputConfig inputConfig = InputConfig.newBuilder().build();
-   *   Instance response = cloudRedisClient.importInstanceAsync(formattedName, inputConfig).get();
+   *   Instance response = cloudRedisClient.importInstanceAsync(name, inputConfig).get();
    * }
    * </code></pre>
    *
@@ -892,10 +892,10 @@ public class CloudRedisClient implements BackgroundResource {
    *
    * <pre><code>
    * try (CloudRedisClient cloudRedisClient = CloudRedisClient.create()) {
-   *   String formattedName = InstanceName.format("[PROJECT]", "[LOCATION]", "[INSTANCE]");
+   *   String name = "";
    *   InputConfig inputConfig = InputConfig.newBuilder().build();
    *   ImportInstanceRequest request = ImportInstanceRequest.newBuilder()
-   *     .setName(formattedName)
+   *     .setName(name)
    *     .setInputConfig(inputConfig)
    *     .build();
    *   Instance response = cloudRedisClient.importInstanceAsync(request).get();
@@ -926,10 +926,10 @@ public class CloudRedisClient implements BackgroundResource {
    *
    * <pre><code>
    * try (CloudRedisClient cloudRedisClient = CloudRedisClient.create()) {
-   *   String formattedName = InstanceName.format("[PROJECT]", "[LOCATION]", "[INSTANCE]");
+   *   String name = "";
    *   InputConfig inputConfig = InputConfig.newBuilder().build();
    *   ImportInstanceRequest request = ImportInstanceRequest.newBuilder()
-   *     .setName(formattedName)
+   *     .setName(name)
    *     .setInputConfig(inputConfig)
    *     .build();
    *   OperationFuture&lt;Instance, OperationMetadata&gt; future = cloudRedisClient.importInstanceOperationCallable().futureCall(request);
@@ -958,10 +958,10 @@ public class CloudRedisClient implements BackgroundResource {
    *
    * <pre><code>
    * try (CloudRedisClient cloudRedisClient = CloudRedisClient.create()) {
-   *   String formattedName = InstanceName.format("[PROJECT]", "[LOCATION]", "[INSTANCE]");
+   *   String name = "";
    *   InputConfig inputConfig = InputConfig.newBuilder().build();
    *   ImportInstanceRequest request = ImportInstanceRequest.newBuilder()
-   *     .setName(formattedName)
+   *     .setName(name)
    *     .setInputConfig(inputConfig)
    *     .build();
    *   ApiFuture&lt;Operation&gt; future = cloudRedisClient.importInstanceCallable().futureCall(request);
@@ -987,9 +987,9 @@ public class CloudRedisClient implements BackgroundResource {
    *
    * <pre><code>
    * try (CloudRedisClient cloudRedisClient = CloudRedisClient.create()) {
-   *   String formattedName = InstanceName.format("[PROJECT]", "[LOCATION]", "[INSTANCE]");
+   *   String name = "";
    *   OutputConfig outputConfig = OutputConfig.newBuilder().build();
-   *   Instance response = cloudRedisClient.exportInstanceAsync(formattedName, outputConfig).get();
+   *   Instance response = cloudRedisClient.exportInstanceAsync(name, outputConfig).get();
    * }
    * </code></pre>
    *
@@ -1022,10 +1022,10 @@ public class CloudRedisClient implements BackgroundResource {
    *
    * <pre><code>
    * try (CloudRedisClient cloudRedisClient = CloudRedisClient.create()) {
-   *   String formattedName = InstanceName.format("[PROJECT]", "[LOCATION]", "[INSTANCE]");
+   *   String name = "";
    *   OutputConfig outputConfig = OutputConfig.newBuilder().build();
    *   ExportInstanceRequest request = ExportInstanceRequest.newBuilder()
-   *     .setName(formattedName)
+   *     .setName(name)
    *     .setOutputConfig(outputConfig)
    *     .build();
    *   Instance response = cloudRedisClient.exportInstanceAsync(request).get();
@@ -1055,10 +1055,10 @@ public class CloudRedisClient implements BackgroundResource {
    *
    * <pre><code>
    * try (CloudRedisClient cloudRedisClient = CloudRedisClient.create()) {
-   *   String formattedName = InstanceName.format("[PROJECT]", "[LOCATION]", "[INSTANCE]");
+   *   String name = "";
    *   OutputConfig outputConfig = OutputConfig.newBuilder().build();
    *   ExportInstanceRequest request = ExportInstanceRequest.newBuilder()
-   *     .setName(formattedName)
+   *     .setName(name)
    *     .setOutputConfig(outputConfig)
    *     .build();
    *   OperationFuture&lt;Instance, OperationMetadata&gt; future = cloudRedisClient.exportInstanceOperationCallable().futureCall(request);
@@ -1086,10 +1086,10 @@ public class CloudRedisClient implements BackgroundResource {
    *
    * <pre><code>
    * try (CloudRedisClient cloudRedisClient = CloudRedisClient.create()) {
-   *   String formattedName = InstanceName.format("[PROJECT]", "[LOCATION]", "[INSTANCE]");
+   *   String name = "";
    *   OutputConfig outputConfig = OutputConfig.newBuilder().build();
    *   ExportInstanceRequest request = ExportInstanceRequest.newBuilder()
-   *     .setName(formattedName)
+   *     .setName(name)
    *     .setOutputConfig(outputConfig)
    *     .build();
    *   ApiFuture&lt;Operation&gt; future = cloudRedisClient.exportInstanceCallable().futureCall(request);
@@ -1182,10 +1182,8 @@ public class CloudRedisClient implements BackgroundResource {
    * <pre><code>
    * try (CloudRedisClient cloudRedisClient = CloudRedisClient.create()) {
    *   InstanceName name = InstanceName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]");
-   *   FailoverInstanceRequest.DataProtectionMode dataProtectionMode = FailoverInstanceRequest.DataProtectionMode.DATA_PROTECTION_MODE_UNSPECIFIED;
    *   FailoverInstanceRequest request = FailoverInstanceRequest.newBuilder()
    *     .setName(name.toString())
-   *     .setDataProtectionMode(dataProtectionMode)
    *     .build();
    *   Instance response = cloudRedisClient.failoverInstanceAsync(request).get();
    * }
@@ -1211,10 +1209,8 @@ public class CloudRedisClient implements BackgroundResource {
    * <pre><code>
    * try (CloudRedisClient cloudRedisClient = CloudRedisClient.create()) {
    *   InstanceName name = InstanceName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]");
-   *   FailoverInstanceRequest.DataProtectionMode dataProtectionMode = FailoverInstanceRequest.DataProtectionMode.DATA_PROTECTION_MODE_UNSPECIFIED;
    *   FailoverInstanceRequest request = FailoverInstanceRequest.newBuilder()
    *     .setName(name.toString())
-   *     .setDataProtectionMode(dataProtectionMode)
    *     .build();
    *   OperationFuture&lt;Instance, OperationMetadata&gt; future = cloudRedisClient.failoverInstanceOperationCallable().futureCall(request);
    *   // Do something
@@ -1238,10 +1234,8 @@ public class CloudRedisClient implements BackgroundResource {
    * <pre><code>
    * try (CloudRedisClient cloudRedisClient = CloudRedisClient.create()) {
    *   InstanceName name = InstanceName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]");
-   *   FailoverInstanceRequest.DataProtectionMode dataProtectionMode = FailoverInstanceRequest.DataProtectionMode.DATA_PROTECTION_MODE_UNSPECIFIED;
    *   FailoverInstanceRequest request = FailoverInstanceRequest.newBuilder()
    *     .setName(name.toString())
-   *     .setDataProtectionMode(dataProtectionMode)
    *     .build();
    *   ApiFuture&lt;Operation&gt; future = cloudRedisClient.failoverInstanceCallable().futureCall(request);
    *   // Do something

@@ -62,8 +62,9 @@ import org.threeten.bp.Duration;
  * </ul>
  *
  * <p>The builder of this class is recursive, so contained classes are themselves builders. When
- * build() is called, the tree of builders is called to create the complete settings object. For
- * example, to set the total timeout of deletePosixAccount to 30 seconds:
+ * build() is called, the tree of builders is called to create the complete settings object.
+ *
+ * <p>For example, to set the total timeout of deletePosixAccount to 30 seconds:
  *
  * <pre>
  * <code>
@@ -82,9 +83,7 @@ public class OsLoginServiceStubSettings extends StubSettings<OsLoginServiceStubS
   private static final ImmutableList<String> DEFAULT_SERVICE_SCOPES =
       ImmutableList.<String>builder()
           .add("https://www.googleapis.com/auth/cloud-platform")
-          .add("https://www.googleapis.com/auth/cloud-platform.read-only")
           .add("https://www.googleapis.com/auth/compute")
-          .add("https://www.googleapis.com/auth/compute.readonly")
           .build();
 
   private final UnaryCallSettings<DeletePosixAccountRequest, Empty> deletePosixAccountSettings;
@@ -161,7 +160,8 @@ public class OsLoginServiceStubSettings extends StubSettings<OsLoginServiceStubS
 
   /** Returns a builder for the default ChannelProvider for this service. */
   public static InstantiatingGrpcChannelProvider.Builder defaultGrpcTransportProviderBuilder() {
-    return InstantiatingGrpcChannelProvider.newBuilder();
+    return InstantiatingGrpcChannelProvider.newBuilder()
+        .setMaxInboundMessageSize(Integer.MAX_VALUE);
   }
 
   public static TransportChannelProvider defaultTransportChannelProvider() {

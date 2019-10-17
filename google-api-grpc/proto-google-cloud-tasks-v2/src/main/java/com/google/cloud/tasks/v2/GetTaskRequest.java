@@ -105,12 +105,13 @@ public final class GetTaskRequest extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Required.
-   * The task name. For example:
+   * Required. The task name. For example:
    * `projects/PROJECT_ID/locations/LOCATION_ID/queues/QUEUE_ID/tasks/TASK_ID`
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>
+   * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    */
   public java.lang.String getName() {
     java.lang.Object ref = name_;
@@ -127,12 +128,13 @@ public final class GetTaskRequest extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Required.
-   * The task name. For example:
+   * Required. The task name. For example:
    * `projects/PROJECT_ID/locations/LOCATION_ID/queues/QUEUE_ID/tasks/TASK_ID`
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>
+   * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    */
   public com.google.protobuf.ByteString getNameBytes() {
     java.lang.Object ref = name_;
@@ -529,12 +531,13 @@ public final class GetTaskRequest extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required.
-     * The task name. For example:
+     * Required. The task name. For example:
      * `projects/PROJECT_ID/locations/LOCATION_ID/queues/QUEUE_ID/tasks/TASK_ID`
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>
+     * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      */
     public java.lang.String getName() {
       java.lang.Object ref = name_;
@@ -551,12 +554,13 @@ public final class GetTaskRequest extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required.
-     * The task name. For example:
+     * Required. The task name. For example:
      * `projects/PROJECT_ID/locations/LOCATION_ID/queues/QUEUE_ID/tasks/TASK_ID`
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>
+     * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      */
     public com.google.protobuf.ByteString getNameBytes() {
       java.lang.Object ref = name_;
@@ -573,12 +577,13 @@ public final class GetTaskRequest extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required.
-     * The task name. For example:
+     * Required. The task name. For example:
      * `projects/PROJECT_ID/locations/LOCATION_ID/queues/QUEUE_ID/tasks/TASK_ID`
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>
+     * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      */
     public Builder setName(java.lang.String value) {
       if (value == null) {
@@ -593,12 +598,13 @@ public final class GetTaskRequest extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required.
-     * The task name. For example:
+     * Required. The task name. For example:
      * `projects/PROJECT_ID/locations/LOCATION_ID/queues/QUEUE_ID/tasks/TASK_ID`
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>
+     * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      */
     public Builder clearName() {
 
@@ -610,12 +616,13 @@ public final class GetTaskRequest extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required.
-     * The task name. For example:
+     * Required. The task name. For example:
      * `projects/PROJECT_ID/locations/LOCATION_ID/queues/QUEUE_ID/tasks/TASK_ID`
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>
+     * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      */
     public Builder setNameBytes(com.google.protobuf.ByteString value) {
       if (value == null) {

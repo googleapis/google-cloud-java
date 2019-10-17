@@ -5,7 +5,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-testing</artifactId>
-  <version>0.101.0-alpha</version><!-- {x-version-update:google-cloud-testing:current} -->
+  <version>0.116.0-alpha</version><!-- {x-version-update:google-cloud-testing:current} -->
   <packaging>pom</packaging>
 
   <name>Google Cloud Testing</name>
@@ -24,8 +24,6 @@
     <module>google-cloud-appengineflexjava</module>
     <module>google-cloud-appenginejava8</module>
     <module>google-cloud-managedtest</module>
-    <module>google-cloud-gcloud-maven-plugin</module>
-    <module>google-cloud-bigtable-emulator</module>
     <module>google-cloud-conformance-tests</module>
   </modules>
   <dependencyManagement>
@@ -33,14 +31,14 @@
       <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-bom</artifactId>
-        <version>0.101.0-alpha</version><!-- {x-version-update:google-cloud-bom:current} -->
+        <version>0.116.0-alpha</version><!-- {x-version-update:google-cloud-bom:current} -->
         <type>pom</type>
         <scope>import</scope>
       </dependency>
       <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-core</artifactId>
-        <version>1.83.0</version><!-- {x-version-update:google-cloud-core:current} -->
+        <version>1.90.0</version>
         <type>test-jar</type>
       </dependency>
       <dependency>
@@ -59,7 +57,7 @@
         <groupId>com.google.guava</groupId>
         <artifactId>guava-testlib</artifactId>
         <!-- We are currently using the *-android version to support JDK7. -->
-        <version>26.0-android</version>
+        <version>28.1-android</version>
       </dependency>
       <dependency>
         <groupId>junit</groupId>
@@ -106,7 +104,7 @@
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-site-plugin</artifactId>
-        <version>3.7.1</version>
+        <version>3.8.2</version>
         <configuration>
           <skip>true</skip>
         </configuration>

@@ -237,7 +237,8 @@ public final class ProductSet extends com.google.protobuf.GeneratedMessageV3
    * This field is ignored when creating a ProductSet.
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp index_time = 3;</code>
+   * <code>.google.protobuf.Timestamp index_time = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    */
   public boolean hasIndexTime() {
     return indexTime_ != null;
@@ -253,7 +254,8 @@ public final class ProductSet extends com.google.protobuf.GeneratedMessageV3
    * This field is ignored when creating a ProductSet.
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp index_time = 3;</code>
+   * <code>.google.protobuf.Timestamp index_time = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    */
   public com.google.protobuf.Timestamp getIndexTime() {
     return indexTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : indexTime_;
@@ -269,7 +271,8 @@ public final class ProductSet extends com.google.protobuf.GeneratedMessageV3
    * This field is ignored when creating a ProductSet.
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp index_time = 3;</code>
+   * <code>.google.protobuf.Timestamp index_time = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    */
   public com.google.protobuf.TimestampOrBuilder getIndexTimeOrBuilder() {
     return getIndexTime();
@@ -286,7 +289,7 @@ public final class ProductSet extends com.google.protobuf.GeneratedMessageV3
    * This field is ignored when creating a ProductSet.
    * </pre>
    *
-   * <code>.google.rpc.Status index_error = 4;</code>
+   * <code>.google.rpc.Status index_error = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    */
   public boolean hasIndexError() {
     return indexError_ != null;
@@ -300,7 +303,7 @@ public final class ProductSet extends com.google.protobuf.GeneratedMessageV3
    * This field is ignored when creating a ProductSet.
    * </pre>
    *
-   * <code>.google.rpc.Status index_error = 4;</code>
+   * <code>.google.rpc.Status index_error = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    */
   public com.google.rpc.Status getIndexError() {
     return indexError_ == null ? com.google.rpc.Status.getDefaultInstance() : indexError_;
@@ -314,7 +317,7 @@ public final class ProductSet extends com.google.protobuf.GeneratedMessageV3
    * This field is ignored when creating a ProductSet.
    * </pre>
    *
-   * <code>.google.rpc.Status index_error = 4;</code>
+   * <code>.google.rpc.Status index_error = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    */
   public com.google.rpc.StatusOrBuilder getIndexErrorOrBuilder() {
     return getIndexError();
@@ -933,7 +936,8 @@ public final class ProductSet extends com.google.protobuf.GeneratedMessageV3
      * This field is ignored when creating a ProductSet.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp index_time = 3;</code>
+     * <code>.google.protobuf.Timestamp index_time = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public boolean hasIndexTime() {
       return indexTimeBuilder_ != null || indexTime_ != null;
@@ -949,7 +953,8 @@ public final class ProductSet extends com.google.protobuf.GeneratedMessageV3
      * This field is ignored when creating a ProductSet.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp index_time = 3;</code>
+     * <code>.google.protobuf.Timestamp index_time = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public com.google.protobuf.Timestamp getIndexTime() {
       if (indexTimeBuilder_ == null) {
@@ -969,7 +974,8 @@ public final class ProductSet extends com.google.protobuf.GeneratedMessageV3
      * This field is ignored when creating a ProductSet.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp index_time = 3;</code>
+     * <code>.google.protobuf.Timestamp index_time = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public Builder setIndexTime(com.google.protobuf.Timestamp value) {
       if (indexTimeBuilder_ == null) {
@@ -995,7 +1001,8 @@ public final class ProductSet extends com.google.protobuf.GeneratedMessageV3
      * This field is ignored when creating a ProductSet.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp index_time = 3;</code>
+     * <code>.google.protobuf.Timestamp index_time = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public Builder setIndexTime(com.google.protobuf.Timestamp.Builder builderForValue) {
       if (indexTimeBuilder_ == null) {
@@ -1018,7 +1025,8 @@ public final class ProductSet extends com.google.protobuf.GeneratedMessageV3
      * This field is ignored when creating a ProductSet.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp index_time = 3;</code>
+     * <code>.google.protobuf.Timestamp index_time = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public Builder mergeIndexTime(com.google.protobuf.Timestamp value) {
       if (indexTimeBuilder_ == null) {
@@ -1046,7 +1054,8 @@ public final class ProductSet extends com.google.protobuf.GeneratedMessageV3
      * This field is ignored when creating a ProductSet.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp index_time = 3;</code>
+     * <code>.google.protobuf.Timestamp index_time = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public Builder clearIndexTime() {
       if (indexTimeBuilder_ == null) {
@@ -1070,7 +1079,8 @@ public final class ProductSet extends com.google.protobuf.GeneratedMessageV3
      * This field is ignored when creating a ProductSet.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp index_time = 3;</code>
+     * <code>.google.protobuf.Timestamp index_time = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public com.google.protobuf.Timestamp.Builder getIndexTimeBuilder() {
 
@@ -1088,7 +1098,8 @@ public final class ProductSet extends com.google.protobuf.GeneratedMessageV3
      * This field is ignored when creating a ProductSet.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp index_time = 3;</code>
+     * <code>.google.protobuf.Timestamp index_time = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public com.google.protobuf.TimestampOrBuilder getIndexTimeOrBuilder() {
       if (indexTimeBuilder_ != null) {
@@ -1108,7 +1119,8 @@ public final class ProductSet extends com.google.protobuf.GeneratedMessageV3
      * This field is ignored when creating a ProductSet.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp index_time = 3;</code>
+     * <code>.google.protobuf.Timestamp index_time = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.protobuf.Timestamp,
@@ -1140,7 +1152,7 @@ public final class ProductSet extends com.google.protobuf.GeneratedMessageV3
      * This field is ignored when creating a ProductSet.
      * </pre>
      *
-     * <code>.google.rpc.Status index_error = 4;</code>
+     * <code>.google.rpc.Status index_error = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     public boolean hasIndexError() {
       return indexErrorBuilder_ != null || indexError_ != null;
@@ -1154,7 +1166,7 @@ public final class ProductSet extends com.google.protobuf.GeneratedMessageV3
      * This field is ignored when creating a ProductSet.
      * </pre>
      *
-     * <code>.google.rpc.Status index_error = 4;</code>
+     * <code>.google.rpc.Status index_error = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     public com.google.rpc.Status getIndexError() {
       if (indexErrorBuilder_ == null) {
@@ -1172,7 +1184,7 @@ public final class ProductSet extends com.google.protobuf.GeneratedMessageV3
      * This field is ignored when creating a ProductSet.
      * </pre>
      *
-     * <code>.google.rpc.Status index_error = 4;</code>
+     * <code>.google.rpc.Status index_error = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     public Builder setIndexError(com.google.rpc.Status value) {
       if (indexErrorBuilder_ == null) {
@@ -1196,7 +1208,7 @@ public final class ProductSet extends com.google.protobuf.GeneratedMessageV3
      * This field is ignored when creating a ProductSet.
      * </pre>
      *
-     * <code>.google.rpc.Status index_error = 4;</code>
+     * <code>.google.rpc.Status index_error = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     public Builder setIndexError(com.google.rpc.Status.Builder builderForValue) {
       if (indexErrorBuilder_ == null) {
@@ -1217,7 +1229,7 @@ public final class ProductSet extends com.google.protobuf.GeneratedMessageV3
      * This field is ignored when creating a ProductSet.
      * </pre>
      *
-     * <code>.google.rpc.Status index_error = 4;</code>
+     * <code>.google.rpc.Status index_error = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     public Builder mergeIndexError(com.google.rpc.Status value) {
       if (indexErrorBuilder_ == null) {
@@ -1243,7 +1255,7 @@ public final class ProductSet extends com.google.protobuf.GeneratedMessageV3
      * This field is ignored when creating a ProductSet.
      * </pre>
      *
-     * <code>.google.rpc.Status index_error = 4;</code>
+     * <code>.google.rpc.Status index_error = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     public Builder clearIndexError() {
       if (indexErrorBuilder_ == null) {
@@ -1265,7 +1277,7 @@ public final class ProductSet extends com.google.protobuf.GeneratedMessageV3
      * This field is ignored when creating a ProductSet.
      * </pre>
      *
-     * <code>.google.rpc.Status index_error = 4;</code>
+     * <code>.google.rpc.Status index_error = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     public com.google.rpc.Status.Builder getIndexErrorBuilder() {
 
@@ -1281,7 +1293,7 @@ public final class ProductSet extends com.google.protobuf.GeneratedMessageV3
      * This field is ignored when creating a ProductSet.
      * </pre>
      *
-     * <code>.google.rpc.Status index_error = 4;</code>
+     * <code>.google.rpc.Status index_error = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     public com.google.rpc.StatusOrBuilder getIndexErrorOrBuilder() {
       if (indexErrorBuilder_ != null) {
@@ -1299,7 +1311,7 @@ public final class ProductSet extends com.google.protobuf.GeneratedMessageV3
      * This field is ignored when creating a ProductSet.
      * </pre>
      *
-     * <code>.google.rpc.Status index_error = 4;</code>
+     * <code>.google.rpc.Status index_error = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.rpc.Status, com.google.rpc.Status.Builder, com.google.rpc.StatusOrBuilder>

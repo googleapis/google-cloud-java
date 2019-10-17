@@ -15,6 +15,7 @@
  */
 package com.google.cloud.compute.v1;
 
+import static com.google.cloud.compute.v1.SslCertificateClient.AggregatedListSslCertificatesPagedResponse;
 import static com.google.cloud.compute.v1.SslCertificateClient.ListSslCertificatesPagedResponse;
 
 import com.google.api.core.ApiFunction;
@@ -40,15 +41,16 @@ import javax.annotation.Generated;
  * <p>The default instance has everything set to sensible defaults:
  *
  * <ul>
- *   <li>The default service address (https://www.googleapis.com/compute/v1/projects/) and default
- *       port (443) are used.
+ *   <li>The default service address (https://compute.googleapis.com/compute/v1/projects/) and
+ *       default port (443) are used.
  *   <li>Credentials are acquired automatically through Application Default Credentials.
  *   <li>Retries are configured for idempotent methods but not for non-idempotent methods.
  * </ul>
  *
  * <p>The builder of this class is recursive, so contained classes are themselves builders. When
- * build() is called, the tree of builders is called to create the complete settings object. For
- * example, to set the total timeout of deleteSslCertificate to 30 seconds:
+ * build() is called, the tree of builders is called to create the complete settings object.
+ *
+ * <p>For example, to set the total timeout of deleteSslCertificate to 30 seconds:
  *
  * <pre>
  * <code>
@@ -63,6 +65,15 @@ import javax.annotation.Generated;
 @Generated("by gapic-generator")
 @BetaApi
 public class SslCertificateSettings extends ClientSettings<SslCertificateSettings> {
+  /** Returns the object with the settings used for calls to aggregatedListSslCertificates. */
+  public PagedCallSettings<
+          AggregatedListSslCertificatesHttpRequest,
+          SslCertificateAggregatedList,
+          AggregatedListSslCertificatesPagedResponse>
+      aggregatedListSslCertificatesSettings() {
+    return ((SslCertificateStubSettings) getStubSettings()).aggregatedListSslCertificatesSettings();
+  }
+
   /** Returns the object with the settings used for calls to deleteSslCertificate. */
   public UnaryCallSettings<DeleteSslCertificateHttpRequest, Operation>
       deleteSslCertificateSettings() {
@@ -188,6 +199,15 @@ public class SslCertificateSettings extends ClientSettings<SslCertificateSetting
       super.applyToAllUnaryMethods(
           getStubSettingsBuilder().unaryMethodSettingsBuilders(), settingsUpdater);
       return this;
+    }
+
+    /** Returns the builder for the settings used for calls to aggregatedListSslCertificates. */
+    public PagedCallSettings.Builder<
+            AggregatedListSslCertificatesHttpRequest,
+            SslCertificateAggregatedList,
+            AggregatedListSslCertificatesPagedResponse>
+        aggregatedListSslCertificatesSettings() {
+      return getStubSettingsBuilder().aggregatedListSslCertificatesSettings();
     }
 
     /** Returns the builder for the settings used for calls to deleteSslCertificate. */

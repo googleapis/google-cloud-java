@@ -16,24 +16,22 @@ Java idiomatic client for [Google Cloud Video Intelligence][cloud-video-intellig
 Quickstart
 ----------
 
-[//]: # ({x-version-update-start:google-cloud-video-intelligence:released})
 If you are using Maven, add this to your pom.xml file
 ```xml
 <dependency>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-video-intelligence</artifactId>
-  <version>0.101.0-beta</version>
+  <version>0.115.0-beta</version>
 </dependency>
 ```
 If you are using Gradle, add this to your dependencies
 ```Groovy
-compile 'com.google.cloud:google-cloud-video-intelligence:0.101.0-beta'
+compile 'com.google.cloud:google-cloud-video-intelligence:0.115.0-beta'
 ```
 If you are using SBT, add this to your dependencies
 ```Scala
-libraryDependencies += "com.google.cloud" % "google-cloud-video-intelligence" % "0.101.0-beta"
+libraryDependencies += "com.google.cloud" % "google-cloud-video-intelligence" % "0.115.0-beta"
 ```
-[//]: # ({x-version-update-end})
 
 Authentication
 --------------
@@ -101,4 +99,4 @@ Apache 2.0 - See [LICENSE] for more information.
 [cloud-platform]: https://cloud.google.com/
 [cloud-video-intelligence]: https://cloud.google.com/video-intelligence/
 [video-product-docs]: https://cloud.google.com/video-intelligence/docs/
-[video-client-lib-docs]: https://googleapis.github.io/google-cloud-java/google-cloud-clients/apidocs/index.html?com/google/cloud/videointelligence/v1/package-summary.html
+[video-client-lib-docs]: https://googleapis.dev/java/google-cloud-clients/latest/index.html?com/google/cloud/videointelligence/v1/package-summary.html

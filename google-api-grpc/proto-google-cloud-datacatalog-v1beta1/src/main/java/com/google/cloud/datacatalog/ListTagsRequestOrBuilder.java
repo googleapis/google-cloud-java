@@ -16,7 +16,9 @@ public interface ListTagsRequestOrBuilder
    * resource could be an [Entry][google.cloud.datacatalog.v1beta1.Entry].
    * </pre>
    *
-   * <code>string parent = 1;</code>
+   * <code>
+   * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    */
   java.lang.String getParent();
   /**
@@ -27,7 +29,9 @@ public interface ListTagsRequestOrBuilder
    * resource could be an [Entry][google.cloud.datacatalog.v1beta1.Entry].
    * </pre>
    *
-   * <code>string parent = 1;</code>
+   * <code>
+   * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    */
   com.google.protobuf.ByteString getParentBytes();
 

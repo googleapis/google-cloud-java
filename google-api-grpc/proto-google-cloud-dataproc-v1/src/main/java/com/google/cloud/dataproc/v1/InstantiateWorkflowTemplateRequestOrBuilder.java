@@ -12,24 +12,38 @@ public interface InstantiateWorkflowTemplateRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The "resource name" of the workflow template, as described
-   * in https://cloud.google.com/apis/design/resource_names of the form
-   * `projects/{project_id}/regions/{region}/workflowTemplates/{template_id}`
+   * Required. The resource name of the workflow template, as described
+   * in https://cloud.google.com/apis/design/resource_names.
+   * * For `projects.regions.workflowTemplates.instantiate`, the resource name
+   * of the template has the following format:
+   *   `projects/{project_id}/regions/{region}/workflowTemplates/{template_id}`
+   * * For `projects.locations.workflowTemplates.instantiate`, the resource name
+   *   of the template has the following format:
+   *   `projects/{project_id}/locations/{location}/workflowTemplates/{template_id}`
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>
+   * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    */
   java.lang.String getName();
   /**
    *
    *
    * <pre>
-   * Required. The "resource name" of the workflow template, as described
-   * in https://cloud.google.com/apis/design/resource_names of the form
-   * `projects/{project_id}/regions/{region}/workflowTemplates/{template_id}`
+   * Required. The resource name of the workflow template, as described
+   * in https://cloud.google.com/apis/design/resource_names.
+   * * For `projects.regions.workflowTemplates.instantiate`, the resource name
+   * of the template has the following format:
+   *   `projects/{project_id}/regions/{region}/workflowTemplates/{template_id}`
+   * * For `projects.locations.workflowTemplates.instantiate`, the resource name
+   *   of the template has the following format:
+   *   `projects/{project_id}/locations/{location}/workflowTemplates/{template_id}`
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>
+   * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    */
   com.google.protobuf.ByteString getNameBytes();
 
@@ -44,7 +58,7 @@ public interface InstantiateWorkflowTemplateRequestOrBuilder
    * workflow template.
    * </pre>
    *
-   * <code>int32 version = 2;</code>
+   * <code>int32 version = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   int getVersion();
 
@@ -61,7 +75,7 @@ public interface InstantiateWorkflowTemplateRequestOrBuilder
    * underscores (_), and hyphens (-). The maximum length is 40 characters.
    * </pre>
    *
-   * <code>string request_id = 5;</code>
+   * <code>string request_id = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   java.lang.String getRequestId();
   /**
@@ -77,7 +91,7 @@ public interface InstantiateWorkflowTemplateRequestOrBuilder
    * underscores (_), and hyphens (-). The maximum length is 40 characters.
    * </pre>
    *
-   * <code>string request_id = 5;</code>
+   * <code>string request_id = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   com.google.protobuf.ByteString getRequestIdBytes();
 
@@ -89,7 +103,8 @@ public interface InstantiateWorkflowTemplateRequestOrBuilder
    * parameters. Values may not exceed 100 characters.
    * </pre>
    *
-   * <code>map&lt;string, string&gt; parameters = 6;</code>
+   * <code>map&lt;string, string&gt; parameters = 6 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   int getParametersCount();
   /**
@@ -100,7 +115,8 @@ public interface InstantiateWorkflowTemplateRequestOrBuilder
    * parameters. Values may not exceed 100 characters.
    * </pre>
    *
-   * <code>map&lt;string, string&gt; parameters = 6;</code>
+   * <code>map&lt;string, string&gt; parameters = 6 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   boolean containsParameters(java.lang.String key);
   /** Use {@link #getParametersMap()} instead. */
@@ -114,7 +130,8 @@ public interface InstantiateWorkflowTemplateRequestOrBuilder
    * parameters. Values may not exceed 100 characters.
    * </pre>
    *
-   * <code>map&lt;string, string&gt; parameters = 6;</code>
+   * <code>map&lt;string, string&gt; parameters = 6 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   java.util.Map<java.lang.String, java.lang.String> getParametersMap();
   /**
@@ -125,7 +142,8 @@ public interface InstantiateWorkflowTemplateRequestOrBuilder
    * parameters. Values may not exceed 100 characters.
    * </pre>
    *
-   * <code>map&lt;string, string&gt; parameters = 6;</code>
+   * <code>map&lt;string, string&gt; parameters = 6 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   java.lang.String getParametersOrDefault(java.lang.String key, java.lang.String defaultValue);
   /**
@@ -136,7 +154,8 @@ public interface InstantiateWorkflowTemplateRequestOrBuilder
    * parameters. Values may not exceed 100 characters.
    * </pre>
    *
-   * <code>map&lt;string, string&gt; parameters = 6;</code>
+   * <code>map&lt;string, string&gt; parameters = 6 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   java.lang.String getParametersOrThrow(java.lang.String key);
 }

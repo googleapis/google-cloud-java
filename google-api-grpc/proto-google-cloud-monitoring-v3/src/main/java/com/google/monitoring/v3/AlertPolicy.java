@@ -142,9 +142,9 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
           case 114:
             {
               java.lang.String s = input.readStringRequireUtf8();
-              if (!((mutable_bitField0_ & 0x00000080) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000100) != 0)) {
                 notificationChannels_ = new com.google.protobuf.LazyStringArrayList();
-                mutable_bitField0_ |= 0x00000080;
+                mutable_bitField0_ |= 0x00000100;
               }
               notificationChannels_.add(s);
               break;
@@ -179,6 +179,20 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
 
               break;
             }
+          case 146:
+            {
+              com.google.rpc.Status.Builder subBuilder = null;
+              if (validity_ != null) {
+                subBuilder = validity_.toBuilder();
+              }
+              validity_ = input.readMessage(com.google.rpc.Status.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(validity_);
+                validity_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
           default:
             {
               if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -196,7 +210,7 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
       if (((mutable_bitField0_ & 0x00000010) != 0)) {
         conditions_ = java.util.Collections.unmodifiableList(conditions_);
       }
-      if (((mutable_bitField0_ & 0x00000080) != 0)) {
+      if (((mutable_bitField0_ & 0x00000100) != 0)) {
         notificationChannels_ = notificationChannels_.getUnmodifiableView();
       }
       this.unknownFields = unknownFields.build();
@@ -2464,11 +2478,7 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
        * compared with the threshold. If a `denominator_filter` is specified,
        * the time series specified by the `filter` field will be used as the
        * numerator.
-       * The filter is similar to the one that is specified in the
-       * [`MetricService.ListTimeSeries`
-       * request](/monitoring/api/ref_v3/rest/v3/projects.timeSeries/list) (that
-       * call is useful to verify the time series that will be retrieved /
-       * processed) and must specify the metric type and optionally may contain
+       * The filter must specify the metric type and optionally may contain
        * restrictions on resource type, resource labels, and metric labels.
        * This field may not exceed 2048 Unicode characters in length.
        * </pre>
@@ -2485,11 +2495,7 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
        * compared with the threshold. If a `denominator_filter` is specified,
        * the time series specified by the `filter` field will be used as the
        * numerator.
-       * The filter is similar to the one that is specified in the
-       * [`MetricService.ListTimeSeries`
-       * request](/monitoring/api/ref_v3/rest/v3/projects.timeSeries/list) (that
-       * call is useful to verify the time series that will be retrieved /
-       * processed) and must specify the metric type and optionally may contain
+       * The filter must specify the metric type and optionally may contain
        * restrictions on resource type, resource labels, and metric labels.
        * This field may not exceed 2048 Unicode characters in length.
        * </pre>
@@ -2511,11 +2517,6 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
        * When computing ratios, the `aggregations` and
        * `denominator_aggregations` fields must use the same alignment period
        * and produce time series that have the same periodicity and labels.
-       * This field is similar to the one in the
-       * [`MetricService.ListTimeSeries`
-       * request](/monitoring/api/ref_v3/rest/v3/projects.timeSeries/list). It
-       * is advisable to use the `ListTimeSeries` method when debugging this
-       * field.
        * </pre>
        *
        * <code>repeated .google.monitoring.v3.Aggregation denominator_aggregations = 10;</code>
@@ -2534,11 +2535,6 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
        * When computing ratios, the `aggregations` and
        * `denominator_aggregations` fields must use the same alignment period
        * and produce time series that have the same periodicity and labels.
-       * This field is similar to the one in the
-       * [`MetricService.ListTimeSeries`
-       * request](/monitoring/api/ref_v3/rest/v3/projects.timeSeries/list). It
-       * is advisable to use the `ListTimeSeries` method when debugging this
-       * field.
        * </pre>
        *
        * <code>repeated .google.monitoring.v3.Aggregation denominator_aggregations = 10;</code>
@@ -2557,11 +2553,6 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
        * When computing ratios, the `aggregations` and
        * `denominator_aggregations` fields must use the same alignment period
        * and produce time series that have the same periodicity and labels.
-       * This field is similar to the one in the
-       * [`MetricService.ListTimeSeries`
-       * request](/monitoring/api/ref_v3/rest/v3/projects.timeSeries/list). It
-       * is advisable to use the `ListTimeSeries` method when debugging this
-       * field.
        * </pre>
        *
        * <code>repeated .google.monitoring.v3.Aggregation denominator_aggregations = 10;</code>
@@ -2580,11 +2571,6 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
        * When computing ratios, the `aggregations` and
        * `denominator_aggregations` fields must use the same alignment period
        * and produce time series that have the same periodicity and labels.
-       * This field is similar to the one in the
-       * [`MetricService.ListTimeSeries`
-       * request](/monitoring/api/ref_v3/rest/v3/projects.timeSeries/list). It
-       * is advisable to use the `ListTimeSeries` method when debugging this
-       * field.
        * </pre>
        *
        * <code>repeated .google.monitoring.v3.Aggregation denominator_aggregations = 10;</code>
@@ -2604,11 +2590,6 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
        * When computing ratios, the `aggregations` and
        * `denominator_aggregations` fields must use the same alignment period
        * and produce time series that have the same periodicity and labels.
-       * This field is similar to the one in the
-       * [`MetricService.ListTimeSeries`
-       * request](/monitoring/api/ref_v3/rest/v3/projects.timeSeries/list). It
-       * is advisable to use the `ListTimeSeries` method when debugging this
-       * field.
        * </pre>
        *
        * <code>repeated .google.monitoring.v3.Aggregation denominator_aggregations = 10;</code>
@@ -3119,11 +3100,7 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
        * compared with the threshold. If a `denominator_filter` is specified,
        * the time series specified by the `filter` field will be used as the
        * numerator.
-       * The filter is similar to the one that is specified in the
-       * [`MetricService.ListTimeSeries`
-       * request](/monitoring/api/ref_v3/rest/v3/projects.timeSeries/list) (that
-       * call is useful to verify the time series that will be retrieved /
-       * processed) and must specify the metric type and optionally may contain
+       * The filter must specify the metric type and optionally may contain
        * restrictions on resource type, resource labels, and metric labels.
        * This field may not exceed 2048 Unicode characters in length.
        * </pre>
@@ -3150,11 +3127,7 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
        * compared with the threshold. If a `denominator_filter` is specified,
        * the time series specified by the `filter` field will be used as the
        * numerator.
-       * The filter is similar to the one that is specified in the
-       * [`MetricService.ListTimeSeries`
-       * request](/monitoring/api/ref_v3/rest/v3/projects.timeSeries/list) (that
-       * call is useful to verify the time series that will be retrieved /
-       * processed) and must specify the metric type and optionally may contain
+       * The filter must specify the metric type and optionally may contain
        * restrictions on resource type, resource labels, and metric labels.
        * This field may not exceed 2048 Unicode characters in length.
        * </pre>
@@ -3188,11 +3161,6 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
        * When computing ratios, the `aggregations` and
        * `denominator_aggregations` fields must use the same alignment period
        * and produce time series that have the same periodicity and labels.
-       * This field is similar to the one in the
-       * [`MetricService.ListTimeSeries`
-       * request](/monitoring/api/ref_v3/rest/v3/projects.timeSeries/list). It
-       * is advisable to use the `ListTimeSeries` method when debugging this
-       * field.
        * </pre>
        *
        * <code>repeated .google.monitoring.v3.Aggregation denominator_aggregations = 10;</code>
@@ -3213,11 +3181,6 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
        * When computing ratios, the `aggregations` and
        * `denominator_aggregations` fields must use the same alignment period
        * and produce time series that have the same periodicity and labels.
-       * This field is similar to the one in the
-       * [`MetricService.ListTimeSeries`
-       * request](/monitoring/api/ref_v3/rest/v3/projects.timeSeries/list). It
-       * is advisable to use the `ListTimeSeries` method when debugging this
-       * field.
        * </pre>
        *
        * <code>repeated .google.monitoring.v3.Aggregation denominator_aggregations = 10;</code>
@@ -3239,11 +3202,6 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
        * When computing ratios, the `aggregations` and
        * `denominator_aggregations` fields must use the same alignment period
        * and produce time series that have the same periodicity and labels.
-       * This field is similar to the one in the
-       * [`MetricService.ListTimeSeries`
-       * request](/monitoring/api/ref_v3/rest/v3/projects.timeSeries/list). It
-       * is advisable to use the `ListTimeSeries` method when debugging this
-       * field.
        * </pre>
        *
        * <code>repeated .google.monitoring.v3.Aggregation denominator_aggregations = 10;</code>
@@ -3264,11 +3222,6 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
        * When computing ratios, the `aggregations` and
        * `denominator_aggregations` fields must use the same alignment period
        * and produce time series that have the same periodicity and labels.
-       * This field is similar to the one in the
-       * [`MetricService.ListTimeSeries`
-       * request](/monitoring/api/ref_v3/rest/v3/projects.timeSeries/list). It
-       * is advisable to use the `ListTimeSeries` method when debugging this
-       * field.
        * </pre>
        *
        * <code>repeated .google.monitoring.v3.Aggregation denominator_aggregations = 10;</code>
@@ -3289,11 +3242,6 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
        * When computing ratios, the `aggregations` and
        * `denominator_aggregations` fields must use the same alignment period
        * and produce time series that have the same periodicity and labels.
-       * This field is similar to the one in the
-       * [`MetricService.ListTimeSeries`
-       * request](/monitoring/api/ref_v3/rest/v3/projects.timeSeries/list). It
-       * is advisable to use the `ListTimeSeries` method when debugging this
-       * field.
        * </pre>
        *
        * <code>repeated .google.monitoring.v3.Aggregation denominator_aggregations = 10;</code>
@@ -4715,11 +4663,7 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
          * compared with the threshold. If a `denominator_filter` is specified,
          * the time series specified by the `filter` field will be used as the
          * numerator.
-         * The filter is similar to the one that is specified in the
-         * [`MetricService.ListTimeSeries`
-         * request](/monitoring/api/ref_v3/rest/v3/projects.timeSeries/list) (that
-         * call is useful to verify the time series that will be retrieved /
-         * processed) and must specify the metric type and optionally may contain
+         * The filter must specify the metric type and optionally may contain
          * restrictions on resource type, resource labels, and metric labels.
          * This field may not exceed 2048 Unicode characters in length.
          * </pre>
@@ -4746,11 +4690,7 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
          * compared with the threshold. If a `denominator_filter` is specified,
          * the time series specified by the `filter` field will be used as the
          * numerator.
-         * The filter is similar to the one that is specified in the
-         * [`MetricService.ListTimeSeries`
-         * request](/monitoring/api/ref_v3/rest/v3/projects.timeSeries/list) (that
-         * call is useful to verify the time series that will be retrieved /
-         * processed) and must specify the metric type and optionally may contain
+         * The filter must specify the metric type and optionally may contain
          * restrictions on resource type, resource labels, and metric labels.
          * This field may not exceed 2048 Unicode characters in length.
          * </pre>
@@ -4777,11 +4717,7 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
          * compared with the threshold. If a `denominator_filter` is specified,
          * the time series specified by the `filter` field will be used as the
          * numerator.
-         * The filter is similar to the one that is specified in the
-         * [`MetricService.ListTimeSeries`
-         * request](/monitoring/api/ref_v3/rest/v3/projects.timeSeries/list) (that
-         * call is useful to verify the time series that will be retrieved /
-         * processed) and must specify the metric type and optionally may contain
+         * The filter must specify the metric type and optionally may contain
          * restrictions on resource type, resource labels, and metric labels.
          * This field may not exceed 2048 Unicode characters in length.
          * </pre>
@@ -4806,11 +4742,7 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
          * compared with the threshold. If a `denominator_filter` is specified,
          * the time series specified by the `filter` field will be used as the
          * numerator.
-         * The filter is similar to the one that is specified in the
-         * [`MetricService.ListTimeSeries`
-         * request](/monitoring/api/ref_v3/rest/v3/projects.timeSeries/list) (that
-         * call is useful to verify the time series that will be retrieved /
-         * processed) and must specify the metric type and optionally may contain
+         * The filter must specify the metric type and optionally may contain
          * restrictions on resource type, resource labels, and metric labels.
          * This field may not exceed 2048 Unicode characters in length.
          * </pre>
@@ -4832,11 +4764,7 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
          * compared with the threshold. If a `denominator_filter` is specified,
          * the time series specified by the `filter` field will be used as the
          * numerator.
-         * The filter is similar to the one that is specified in the
-         * [`MetricService.ListTimeSeries`
-         * request](/monitoring/api/ref_v3/rest/v3/projects.timeSeries/list) (that
-         * call is useful to verify the time series that will be retrieved /
-         * processed) and must specify the metric type and optionally may contain
+         * The filter must specify the metric type and optionally may contain
          * restrictions on resource type, resource labels, and metric labels.
          * This field may not exceed 2048 Unicode characters in length.
          * </pre>
@@ -4885,11 +4813,6 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
          * When computing ratios, the `aggregations` and
          * `denominator_aggregations` fields must use the same alignment period
          * and produce time series that have the same periodicity and labels.
-         * This field is similar to the one in the
-         * [`MetricService.ListTimeSeries`
-         * request](/monitoring/api/ref_v3/rest/v3/projects.timeSeries/list). It
-         * is advisable to use the `ListTimeSeries` method when debugging this
-         * field.
          * </pre>
          *
          * <code>repeated .google.monitoring.v3.Aggregation denominator_aggregations = 10;</code>
@@ -4915,11 +4838,6 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
          * When computing ratios, the `aggregations` and
          * `denominator_aggregations` fields must use the same alignment period
          * and produce time series that have the same periodicity and labels.
-         * This field is similar to the one in the
-         * [`MetricService.ListTimeSeries`
-         * request](/monitoring/api/ref_v3/rest/v3/projects.timeSeries/list). It
-         * is advisable to use the `ListTimeSeries` method when debugging this
-         * field.
          * </pre>
          *
          * <code>repeated .google.monitoring.v3.Aggregation denominator_aggregations = 10;</code>
@@ -4944,11 +4862,6 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
          * When computing ratios, the `aggregations` and
          * `denominator_aggregations` fields must use the same alignment period
          * and produce time series that have the same periodicity and labels.
-         * This field is similar to the one in the
-         * [`MetricService.ListTimeSeries`
-         * request](/monitoring/api/ref_v3/rest/v3/projects.timeSeries/list). It
-         * is advisable to use the `ListTimeSeries` method when debugging this
-         * field.
          * </pre>
          *
          * <code>repeated .google.monitoring.v3.Aggregation denominator_aggregations = 10;</code>
@@ -4973,11 +4886,6 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
          * When computing ratios, the `aggregations` and
          * `denominator_aggregations` fields must use the same alignment period
          * and produce time series that have the same periodicity and labels.
-         * This field is similar to the one in the
-         * [`MetricService.ListTimeSeries`
-         * request](/monitoring/api/ref_v3/rest/v3/projects.timeSeries/list). It
-         * is advisable to use the `ListTimeSeries` method when debugging this
-         * field.
          * </pre>
          *
          * <code>repeated .google.monitoring.v3.Aggregation denominator_aggregations = 10;</code>
@@ -5009,11 +4917,6 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
          * When computing ratios, the `aggregations` and
          * `denominator_aggregations` fields must use the same alignment period
          * and produce time series that have the same periodicity and labels.
-         * This field is similar to the one in the
-         * [`MetricService.ListTimeSeries`
-         * request](/monitoring/api/ref_v3/rest/v3/projects.timeSeries/list). It
-         * is advisable to use the `ListTimeSeries` method when debugging this
-         * field.
          * </pre>
          *
          * <code>repeated .google.monitoring.v3.Aggregation denominator_aggregations = 10;</code>
@@ -5042,11 +4945,6 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
          * When computing ratios, the `aggregations` and
          * `denominator_aggregations` fields must use the same alignment period
          * and produce time series that have the same periodicity and labels.
-         * This field is similar to the one in the
-         * [`MetricService.ListTimeSeries`
-         * request](/monitoring/api/ref_v3/rest/v3/projects.timeSeries/list). It
-         * is advisable to use the `ListTimeSeries` method when debugging this
-         * field.
          * </pre>
          *
          * <code>repeated .google.monitoring.v3.Aggregation denominator_aggregations = 10;</code>
@@ -5077,11 +4975,6 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
          * When computing ratios, the `aggregations` and
          * `denominator_aggregations` fields must use the same alignment period
          * and produce time series that have the same periodicity and labels.
-         * This field is similar to the one in the
-         * [`MetricService.ListTimeSeries`
-         * request](/monitoring/api/ref_v3/rest/v3/projects.timeSeries/list). It
-         * is advisable to use the `ListTimeSeries` method when debugging this
-         * field.
          * </pre>
          *
          * <code>repeated .google.monitoring.v3.Aggregation denominator_aggregations = 10;</code>
@@ -5113,11 +5006,6 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
          * When computing ratios, the `aggregations` and
          * `denominator_aggregations` fields must use the same alignment period
          * and produce time series that have the same periodicity and labels.
-         * This field is similar to the one in the
-         * [`MetricService.ListTimeSeries`
-         * request](/monitoring/api/ref_v3/rest/v3/projects.timeSeries/list). It
-         * is advisable to use the `ListTimeSeries` method when debugging this
-         * field.
          * </pre>
          *
          * <code>repeated .google.monitoring.v3.Aggregation denominator_aggregations = 10;</code>
@@ -5146,11 +5034,6 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
          * When computing ratios, the `aggregations` and
          * `denominator_aggregations` fields must use the same alignment period
          * and produce time series that have the same periodicity and labels.
-         * This field is similar to the one in the
-         * [`MetricService.ListTimeSeries`
-         * request](/monitoring/api/ref_v3/rest/v3/projects.timeSeries/list). It
-         * is advisable to use the `ListTimeSeries` method when debugging this
-         * field.
          * </pre>
          *
          * <code>repeated .google.monitoring.v3.Aggregation denominator_aggregations = 10;</code>
@@ -5179,11 +5062,6 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
          * When computing ratios, the `aggregations` and
          * `denominator_aggregations` fields must use the same alignment period
          * and produce time series that have the same periodicity and labels.
-         * This field is similar to the one in the
-         * [`MetricService.ListTimeSeries`
-         * request](/monitoring/api/ref_v3/rest/v3/projects.timeSeries/list). It
-         * is advisable to use the `ListTimeSeries` method when debugging this
-         * field.
          * </pre>
          *
          * <code>repeated .google.monitoring.v3.Aggregation denominator_aggregations = 10;</code>
@@ -5213,11 +5091,6 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
          * When computing ratios, the `aggregations` and
          * `denominator_aggregations` fields must use the same alignment period
          * and produce time series that have the same periodicity and labels.
-         * This field is similar to the one in the
-         * [`MetricService.ListTimeSeries`
-         * request](/monitoring/api/ref_v3/rest/v3/projects.timeSeries/list). It
-         * is advisable to use the `ListTimeSeries` method when debugging this
-         * field.
          * </pre>
          *
          * <code>repeated .google.monitoring.v3.Aggregation denominator_aggregations = 10;</code>
@@ -5245,11 +5118,6 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
          * When computing ratios, the `aggregations` and
          * `denominator_aggregations` fields must use the same alignment period
          * and produce time series that have the same periodicity and labels.
-         * This field is similar to the one in the
-         * [`MetricService.ListTimeSeries`
-         * request](/monitoring/api/ref_v3/rest/v3/projects.timeSeries/list). It
-         * is advisable to use the `ListTimeSeries` method when debugging this
-         * field.
          * </pre>
          *
          * <code>repeated .google.monitoring.v3.Aggregation denominator_aggregations = 10;</code>
@@ -5277,11 +5145,6 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
          * When computing ratios, the `aggregations` and
          * `denominator_aggregations` fields must use the same alignment period
          * and produce time series that have the same periodicity and labels.
-         * This field is similar to the one in the
-         * [`MetricService.ListTimeSeries`
-         * request](/monitoring/api/ref_v3/rest/v3/projects.timeSeries/list). It
-         * is advisable to use the `ListTimeSeries` method when debugging this
-         * field.
          * </pre>
          *
          * <code>repeated .google.monitoring.v3.Aggregation denominator_aggregations = 10;</code>
@@ -5303,11 +5166,6 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
          * When computing ratios, the `aggregations` and
          * `denominator_aggregations` fields must use the same alignment period
          * and produce time series that have the same periodicity and labels.
-         * This field is similar to the one in the
-         * [`MetricService.ListTimeSeries`
-         * request](/monitoring/api/ref_v3/rest/v3/projects.timeSeries/list). It
-         * is advisable to use the `ListTimeSeries` method when debugging this
-         * field.
          * </pre>
          *
          * <code>repeated .google.monitoring.v3.Aggregation denominator_aggregations = 10;</code>
@@ -5333,11 +5191,6 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
          * When computing ratios, the `aggregations` and
          * `denominator_aggregations` fields must use the same alignment period
          * and produce time series that have the same periodicity and labels.
-         * This field is similar to the one in the
-         * [`MetricService.ListTimeSeries`
-         * request](/monitoring/api/ref_v3/rest/v3/projects.timeSeries/list). It
-         * is advisable to use the `ListTimeSeries` method when debugging this
-         * field.
          * </pre>
          *
          * <code>repeated .google.monitoring.v3.Aggregation denominator_aggregations = 10;</code>
@@ -5363,11 +5216,6 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
          * When computing ratios, the `aggregations` and
          * `denominator_aggregations` fields must use the same alignment period
          * and produce time series that have the same periodicity and labels.
-         * This field is similar to the one in the
-         * [`MetricService.ListTimeSeries`
-         * request](/monitoring/api/ref_v3/rest/v3/projects.timeSeries/list). It
-         * is advisable to use the `ListTimeSeries` method when debugging this
-         * field.
          * </pre>
          *
          * <code>repeated .google.monitoring.v3.Aggregation denominator_aggregations = 10;</code>
@@ -5389,11 +5237,6 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
          * When computing ratios, the `aggregations` and
          * `denominator_aggregations` fields must use the same alignment period
          * and produce time series that have the same periodicity and labels.
-         * This field is similar to the one in the
-         * [`MetricService.ListTimeSeries`
-         * request](/monitoring/api/ref_v3/rest/v3/projects.timeSeries/list). It
-         * is advisable to use the `ListTimeSeries` method when debugging this
-         * field.
          * </pre>
          *
          * <code>repeated .google.monitoring.v3.Aggregation denominator_aggregations = 10;</code>
@@ -5416,11 +5259,6 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
          * When computing ratios, the `aggregations` and
          * `denominator_aggregations` fields must use the same alignment period
          * and produce time series that have the same periodicity and labels.
-         * This field is similar to the one in the
-         * [`MetricService.ListTimeSeries`
-         * request](/monitoring/api/ref_v3/rest/v3/projects.timeSeries/list). It
-         * is advisable to use the `ListTimeSeries` method when debugging this
-         * field.
          * </pre>
          *
          * <code>repeated .google.monitoring.v3.Aggregation denominator_aggregations = 10;</code>
@@ -10312,6 +10150,48 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
     return getEnabled();
   }
 
+  public static final int VALIDITY_FIELD_NUMBER = 18;
+  private com.google.rpc.Status validity_;
+  /**
+   *
+   *
+   * <pre>
+   * Read-only description of how the alert policy is invalid. OK if the alert
+   * policy is valid. If not OK, the alert policy will not generate incidents.
+   * </pre>
+   *
+   * <code>.google.rpc.Status validity = 18;</code>
+   */
+  public boolean hasValidity() {
+    return validity_ != null;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Read-only description of how the alert policy is invalid. OK if the alert
+   * policy is valid. If not OK, the alert policy will not generate incidents.
+   * </pre>
+   *
+   * <code>.google.rpc.Status validity = 18;</code>
+   */
+  public com.google.rpc.Status getValidity() {
+    return validity_ == null ? com.google.rpc.Status.getDefaultInstance() : validity_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Read-only description of how the alert policy is invalid. OK if the alert
+   * policy is valid. If not OK, the alert policy will not generate incidents.
+   * </pre>
+   *
+   * <code>.google.rpc.Status validity = 18;</code>
+   */
+  public com.google.rpc.StatusOrBuilder getValidityOrBuilder() {
+    return getValidity();
+  }
+
   public static final int NOTIFICATION_CHANNELS_FIELD_NUMBER = 14;
   private com.google.protobuf.LazyStringList notificationChannels_;
   /**
@@ -10529,6 +10409,9 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
     if (enabled_ != null) {
       output.writeMessage(17, getEnabled());
     }
+    if (validity_ != null) {
+      output.writeMessage(18, getValidity());
+    }
     unknownFields.writeTo(output);
   }
 
@@ -10582,6 +10465,9 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
     if (enabled_ != null) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(17, getEnabled());
     }
+    if (validity_ != null) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(18, getValidity());
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -10609,6 +10495,10 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
     if (hasEnabled() != other.hasEnabled()) return false;
     if (hasEnabled()) {
       if (!getEnabled().equals(other.getEnabled())) return false;
+    }
+    if (hasValidity() != other.hasValidity()) return false;
+    if (hasValidity()) {
+      if (!getValidity().equals(other.getValidity())) return false;
     }
     if (!getNotificationChannelsList().equals(other.getNotificationChannelsList())) return false;
     if (hasCreationRecord() != other.hasCreationRecord()) return false;
@@ -10651,6 +10541,10 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
     if (hasEnabled()) {
       hash = (37 * hash) + ENABLED_FIELD_NUMBER;
       hash = (53 * hash) + getEnabled().hashCode();
+    }
+    if (hasValidity()) {
+      hash = (37 * hash) + VALIDITY_FIELD_NUMBER;
+      hash = (53 * hash) + getValidity().hashCode();
     }
     if (getNotificationChannelsCount() > 0) {
       hash = (37 * hash) + NOTIFICATION_CHANNELS_FIELD_NUMBER;
@@ -10858,8 +10752,14 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
         enabled_ = null;
         enabledBuilder_ = null;
       }
+      if (validityBuilder_ == null) {
+        validity_ = null;
+      } else {
+        validity_ = null;
+        validityBuilder_ = null;
+      }
       notificationChannels_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000080);
+      bitField0_ = (bitField0_ & ~0x00000100);
       if (creationRecordBuilder_ == null) {
         creationRecord_ = null;
       } else {
@@ -10924,9 +10824,14 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
       } else {
         result.enabled_ = enabledBuilder_.build();
       }
-      if (((bitField0_ & 0x00000080) != 0)) {
+      if (validityBuilder_ == null) {
+        result.validity_ = validity_;
+      } else {
+        result.validity_ = validityBuilder_.build();
+      }
+      if (((bitField0_ & 0x00000100) != 0)) {
         notificationChannels_ = notificationChannels_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000080);
+        bitField0_ = (bitField0_ & ~0x00000100);
       }
       result.notificationChannels_ = notificationChannels_;
       if (creationRecordBuilder_ == null) {
@@ -11034,10 +10939,13 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
       if (other.hasEnabled()) {
         mergeEnabled(other.getEnabled());
       }
+      if (other.hasValidity()) {
+        mergeValidity(other.getValidity());
+      }
       if (!other.notificationChannels_.isEmpty()) {
         if (notificationChannels_.isEmpty()) {
           notificationChannels_ = other.notificationChannels_;
-          bitField0_ = (bitField0_ & ~0x00000080);
+          bitField0_ = (bitField0_ & ~0x00000100);
         } else {
           ensureNotificationChannelsIsMutable();
           notificationChannels_.addAll(other.notificationChannels_);
@@ -12427,13 +12335,191 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
       return enabledBuilder_;
     }
 
+    private com.google.rpc.Status validity_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.rpc.Status, com.google.rpc.Status.Builder, com.google.rpc.StatusOrBuilder>
+        validityBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Read-only description of how the alert policy is invalid. OK if the alert
+     * policy is valid. If not OK, the alert policy will not generate incidents.
+     * </pre>
+     *
+     * <code>.google.rpc.Status validity = 18;</code>
+     */
+    public boolean hasValidity() {
+      return validityBuilder_ != null || validity_ != null;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Read-only description of how the alert policy is invalid. OK if the alert
+     * policy is valid. If not OK, the alert policy will not generate incidents.
+     * </pre>
+     *
+     * <code>.google.rpc.Status validity = 18;</code>
+     */
+    public com.google.rpc.Status getValidity() {
+      if (validityBuilder_ == null) {
+        return validity_ == null ? com.google.rpc.Status.getDefaultInstance() : validity_;
+      } else {
+        return validityBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Read-only description of how the alert policy is invalid. OK if the alert
+     * policy is valid. If not OK, the alert policy will not generate incidents.
+     * </pre>
+     *
+     * <code>.google.rpc.Status validity = 18;</code>
+     */
+    public Builder setValidity(com.google.rpc.Status value) {
+      if (validityBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        validity_ = value;
+        onChanged();
+      } else {
+        validityBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Read-only description of how the alert policy is invalid. OK if the alert
+     * policy is valid. If not OK, the alert policy will not generate incidents.
+     * </pre>
+     *
+     * <code>.google.rpc.Status validity = 18;</code>
+     */
+    public Builder setValidity(com.google.rpc.Status.Builder builderForValue) {
+      if (validityBuilder_ == null) {
+        validity_ = builderForValue.build();
+        onChanged();
+      } else {
+        validityBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Read-only description of how the alert policy is invalid. OK if the alert
+     * policy is valid. If not OK, the alert policy will not generate incidents.
+     * </pre>
+     *
+     * <code>.google.rpc.Status validity = 18;</code>
+     */
+    public Builder mergeValidity(com.google.rpc.Status value) {
+      if (validityBuilder_ == null) {
+        if (validity_ != null) {
+          validity_ = com.google.rpc.Status.newBuilder(validity_).mergeFrom(value).buildPartial();
+        } else {
+          validity_ = value;
+        }
+        onChanged();
+      } else {
+        validityBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Read-only description of how the alert policy is invalid. OK if the alert
+     * policy is valid. If not OK, the alert policy will not generate incidents.
+     * </pre>
+     *
+     * <code>.google.rpc.Status validity = 18;</code>
+     */
+    public Builder clearValidity() {
+      if (validityBuilder_ == null) {
+        validity_ = null;
+        onChanged();
+      } else {
+        validity_ = null;
+        validityBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Read-only description of how the alert policy is invalid. OK if the alert
+     * policy is valid. If not OK, the alert policy will not generate incidents.
+     * </pre>
+     *
+     * <code>.google.rpc.Status validity = 18;</code>
+     */
+    public com.google.rpc.Status.Builder getValidityBuilder() {
+
+      onChanged();
+      return getValidityFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Read-only description of how the alert policy is invalid. OK if the alert
+     * policy is valid. If not OK, the alert policy will not generate incidents.
+     * </pre>
+     *
+     * <code>.google.rpc.Status validity = 18;</code>
+     */
+    public com.google.rpc.StatusOrBuilder getValidityOrBuilder() {
+      if (validityBuilder_ != null) {
+        return validityBuilder_.getMessageOrBuilder();
+      } else {
+        return validity_ == null ? com.google.rpc.Status.getDefaultInstance() : validity_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Read-only description of how the alert policy is invalid. OK if the alert
+     * policy is valid. If not OK, the alert policy will not generate incidents.
+     * </pre>
+     *
+     * <code>.google.rpc.Status validity = 18;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.rpc.Status, com.google.rpc.Status.Builder, com.google.rpc.StatusOrBuilder>
+        getValidityFieldBuilder() {
+      if (validityBuilder_ == null) {
+        validityBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.rpc.Status,
+                com.google.rpc.Status.Builder,
+                com.google.rpc.StatusOrBuilder>(getValidity(), getParentForChildren(), isClean());
+        validity_ = null;
+      }
+      return validityBuilder_;
+    }
+
     private com.google.protobuf.LazyStringList notificationChannels_ =
         com.google.protobuf.LazyStringArrayList.EMPTY;
 
     private void ensureNotificationChannelsIsMutable() {
-      if (!((bitField0_ & 0x00000080) != 0)) {
+      if (!((bitField0_ & 0x00000100) != 0)) {
         notificationChannels_ = new com.google.protobuf.LazyStringArrayList(notificationChannels_);
-        bitField0_ |= 0x00000080;
+        bitField0_ |= 0x00000100;
       }
     }
     /**
@@ -12610,7 +12696,7 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearNotificationChannels() {
       notificationChannels_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000080);
+      bitField0_ = (bitField0_ & ~0x00000100);
       onChanged();
       return this;
     }

@@ -188,7 +188,7 @@ public final class SparkRJob extends com.google.protobuf.GeneratedMessageV3
    * Must be a .R file.
    * </pre>
    *
-   * <code>string main_r_file_uri = 1;</code>
+   * <code>string main_r_file_uri = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   public java.lang.String getMainRFileUri() {
     java.lang.Object ref = mainRFileUri_;
@@ -209,7 +209,7 @@ public final class SparkRJob extends com.google.protobuf.GeneratedMessageV3
    * Must be a .R file.
    * </pre>
    *
-   * <code>string main_r_file_uri = 1;</code>
+   * <code>string main_r_file_uri = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   public com.google.protobuf.ByteString getMainRFileUriBytes() {
     java.lang.Object ref = mainRFileUri_;
@@ -1043,7 +1043,7 @@ public final class SparkRJob extends com.google.protobuf.GeneratedMessageV3
      * Must be a .R file.
      * </pre>
      *
-     * <code>string main_r_file_uri = 1;</code>
+     * <code>string main_r_file_uri = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public java.lang.String getMainRFileUri() {
       java.lang.Object ref = mainRFileUri_;
@@ -1064,7 +1064,7 @@ public final class SparkRJob extends com.google.protobuf.GeneratedMessageV3
      * Must be a .R file.
      * </pre>
      *
-     * <code>string main_r_file_uri = 1;</code>
+     * <code>string main_r_file_uri = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public com.google.protobuf.ByteString getMainRFileUriBytes() {
       java.lang.Object ref = mainRFileUri_;
@@ -1085,7 +1085,7 @@ public final class SparkRJob extends com.google.protobuf.GeneratedMessageV3
      * Must be a .R file.
      * </pre>
      *
-     * <code>string main_r_file_uri = 1;</code>
+     * <code>string main_r_file_uri = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder setMainRFileUri(java.lang.String value) {
       if (value == null) {
@@ -1104,7 +1104,7 @@ public final class SparkRJob extends com.google.protobuf.GeneratedMessageV3
      * Must be a .R file.
      * </pre>
      *
-     * <code>string main_r_file_uri = 1;</code>
+     * <code>string main_r_file_uri = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder clearMainRFileUri() {
 
@@ -1120,7 +1120,7 @@ public final class SparkRJob extends com.google.protobuf.GeneratedMessageV3
      * Must be a .R file.
      * </pre>
      *
-     * <code>string main_r_file_uri = 1;</code>
+     * <code>string main_r_file_uri = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder setMainRFileUriBytes(com.google.protobuf.ByteString value) {
       if (value == null) {

@@ -69,7 +69,7 @@ public interface HiveJobOrBuilder
    * executing independent parallel queries.
    * </pre>
    *
-   * <code>bool continue_on_failure = 3;</code>
+   * <code>bool continue_on_failure = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   boolean getContinueOnFailure();
 
@@ -81,7 +81,8 @@ public interface HiveJobOrBuilder
    * Hive command: `SET name="value";`).
    * </pre>
    *
-   * <code>map&lt;string, string&gt; script_variables = 4;</code>
+   * <code>map&lt;string, string&gt; script_variables = 4 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   int getScriptVariablesCount();
   /**
@@ -92,7 +93,8 @@ public interface HiveJobOrBuilder
    * Hive command: `SET name="value";`).
    * </pre>
    *
-   * <code>map&lt;string, string&gt; script_variables = 4;</code>
+   * <code>map&lt;string, string&gt; script_variables = 4 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   boolean containsScriptVariables(java.lang.String key);
   /** Use {@link #getScriptVariablesMap()} instead. */
@@ -106,7 +108,8 @@ public interface HiveJobOrBuilder
    * Hive command: `SET name="value";`).
    * </pre>
    *
-   * <code>map&lt;string, string&gt; script_variables = 4;</code>
+   * <code>map&lt;string, string&gt; script_variables = 4 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   java.util.Map<java.lang.String, java.lang.String> getScriptVariablesMap();
   /**
@@ -117,7 +120,8 @@ public interface HiveJobOrBuilder
    * Hive command: `SET name="value";`).
    * </pre>
    *
-   * <code>map&lt;string, string&gt; script_variables = 4;</code>
+   * <code>map&lt;string, string&gt; script_variables = 4 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   java.lang.String getScriptVariablesOrDefault(java.lang.String key, java.lang.String defaultValue);
   /**
@@ -128,7 +132,8 @@ public interface HiveJobOrBuilder
    * Hive command: `SET name="value";`).
    * </pre>
    *
-   * <code>map&lt;string, string&gt; script_variables = 4;</code>
+   * <code>map&lt;string, string&gt; script_variables = 4 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   java.lang.String getScriptVariablesOrThrow(java.lang.String key);
 
@@ -142,7 +147,8 @@ public interface HiveJobOrBuilder
    * /etc/hive/conf/hive-site.xml, and classes in user code.
    * </pre>
    *
-   * <code>map&lt;string, string&gt; properties = 5;</code>
+   * <code>map&lt;string, string&gt; properties = 5 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   int getPropertiesCount();
   /**
@@ -155,7 +161,8 @@ public interface HiveJobOrBuilder
    * /etc/hive/conf/hive-site.xml, and classes in user code.
    * </pre>
    *
-   * <code>map&lt;string, string&gt; properties = 5;</code>
+   * <code>map&lt;string, string&gt; properties = 5 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   boolean containsProperties(java.lang.String key);
   /** Use {@link #getPropertiesMap()} instead. */
@@ -171,7 +178,8 @@ public interface HiveJobOrBuilder
    * /etc/hive/conf/hive-site.xml, and classes in user code.
    * </pre>
    *
-   * <code>map&lt;string, string&gt; properties = 5;</code>
+   * <code>map&lt;string, string&gt; properties = 5 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   java.util.Map<java.lang.String, java.lang.String> getPropertiesMap();
   /**
@@ -184,7 +192,8 @@ public interface HiveJobOrBuilder
    * /etc/hive/conf/hive-site.xml, and classes in user code.
    * </pre>
    *
-   * <code>map&lt;string, string&gt; properties = 5;</code>
+   * <code>map&lt;string, string&gt; properties = 5 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   java.lang.String getPropertiesOrDefault(java.lang.String key, java.lang.String defaultValue);
   /**
@@ -197,7 +206,8 @@ public interface HiveJobOrBuilder
    * /etc/hive/conf/hive-site.xml, and classes in user code.
    * </pre>
    *
-   * <code>map&lt;string, string&gt; properties = 5;</code>
+   * <code>map&lt;string, string&gt; properties = 5 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   java.lang.String getPropertiesOrThrow(java.lang.String key);
 
@@ -210,7 +220,7 @@ public interface HiveJobOrBuilder
    * and UDFs.
    * </pre>
    *
-   * <code>repeated string jar_file_uris = 6;</code>
+   * <code>repeated string jar_file_uris = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   java.util.List<java.lang.String> getJarFileUrisList();
   /**
@@ -222,7 +232,7 @@ public interface HiveJobOrBuilder
    * and UDFs.
    * </pre>
    *
-   * <code>repeated string jar_file_uris = 6;</code>
+   * <code>repeated string jar_file_uris = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   int getJarFileUrisCount();
   /**
@@ -234,7 +244,7 @@ public interface HiveJobOrBuilder
    * and UDFs.
    * </pre>
    *
-   * <code>repeated string jar_file_uris = 6;</code>
+   * <code>repeated string jar_file_uris = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   java.lang.String getJarFileUris(int index);
   /**
@@ -246,7 +256,7 @@ public interface HiveJobOrBuilder
    * and UDFs.
    * </pre>
    *
-   * <code>repeated string jar_file_uris = 6;</code>
+   * <code>repeated string jar_file_uris = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   com.google.protobuf.ByteString getJarFileUrisBytes(int index);
 

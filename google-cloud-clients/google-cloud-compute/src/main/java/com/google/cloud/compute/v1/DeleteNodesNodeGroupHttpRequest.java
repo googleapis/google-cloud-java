@@ -150,7 +150,7 @@ public final class DeleteNodesNodeGroupHttpRequest implements ApiMessage {
   }
 
   /**
-   * Name of the NodeGroup resource to delete. It must have the format
+   * Name of the NodeGroup resource whose nodes will be deleted. It must have the format
    * `{project}/zones/{zone}/nodeGroups/{nodeGroup}/deleteNodes`. \`{nodeGroup}\` must start with a
    * letter, and contain only letters (\`[A-Za-z]\`), numbers (\`[0-9]\`), dashes (\`-\`), &#42;
    * underscores (\`_\`), periods (\`.\`), tildes (\`~\`), plus (\`+\`) or percent &#42; signs
@@ -326,7 +326,7 @@ public final class DeleteNodesNodeGroupHttpRequest implements ApiMessage {
     }
 
     /**
-     * Name of the NodeGroup resource to delete. It must have the format
+     * Name of the NodeGroup resource whose nodes will be deleted. It must have the format
      * `{project}/zones/{zone}/nodeGroups/{nodeGroup}/deleteNodes`. \`{nodeGroup}\` must start with
      * a letter, and contain only letters (\`[A-Za-z]\`), numbers (\`[0-9]\`), dashes (\`-\`), &#42;
      * underscores (\`_\`), periods (\`.\`), tildes (\`~\`), plus (\`+\`) or percent &#42; signs
@@ -338,7 +338,7 @@ public final class DeleteNodesNodeGroupHttpRequest implements ApiMessage {
     }
 
     /**
-     * Name of the NodeGroup resource to delete. It must have the format
+     * Name of the NodeGroup resource whose nodes will be deleted. It must have the format
      * `{project}/zones/{zone}/nodeGroups/{nodeGroup}/deleteNodes`. \`{nodeGroup}\` must start with
      * a letter, and contain only letters (\`[A-Za-z]\`), numbers (\`[0-9]\`), dashes (\`-\`), &#42;
      * underscores (\`_\`), periods (\`.\`), tildes (\`~\`), plus (\`+\`) or percent &#42; signs

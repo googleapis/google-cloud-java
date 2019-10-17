@@ -126,4 +126,76 @@ public interface SafeSearchAnnotationOrBuilder
    * <code>.google.cloud.vision.v1.Likelihood racy = 9;</code>
    */
   com.google.cloud.vision.v1.Likelihood getRacy();
+
+  /**
+   *
+   *
+   * <pre>
+   * Confidence of adult_score. Range [0, 1]. 0 means not confident, 1 means
+   * very confident.
+   * </pre>
+   *
+   * <code>float adult_confidence = 16;</code>
+   */
+  float getAdultConfidence();
+
+  /**
+   *
+   *
+   * <pre>
+   * Confidence of spoof_score. Range [0, 1]. 0 means not confident, 1 means
+   * very confident.
+   * </pre>
+   *
+   * <code>float spoof_confidence = 18;</code>
+   */
+  float getSpoofConfidence();
+
+  /**
+   *
+   *
+   * <pre>
+   * Confidence of medical_score. Range [0, 1]. 0 means not confident, 1 means
+   * very confident.
+   * </pre>
+   *
+   * <code>float medical_confidence = 20;</code>
+   */
+  float getMedicalConfidence();
+
+  /**
+   *
+   *
+   * <pre>
+   * Confidence of violence_score. Range [0, 1]. 0 means not confident, 1 means
+   * very confident.
+   * </pre>
+   *
+   * <code>float violence_confidence = 22;</code>
+   */
+  float getViolenceConfidence();
+
+  /**
+   *
+   *
+   * <pre>
+   * Confidence of racy_score. Range [0, 1]. 0 means not confident, 1 means very
+   * confident.
+   * </pre>
+   *
+   * <code>float racy_confidence = 24;</code>
+   */
+  float getRacyConfidence();
+
+  /**
+   *
+   *
+   * <pre>
+   * Confidence of nsfw_score. Range [0, 1]. 0 means not confident, 1 means very
+   * confident.
+   * </pre>
+   *
+   * <code>float nsfw_confidence = 26;</code>
+   */
+  float getNsfwConfidence();
 }

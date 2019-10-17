@@ -12,14 +12,22 @@ Here are some guidelines for hacking on google-cloud-java.
 
 Using maven for build/test
 --------------------------
-After you clone the repository use Maven for building and running the tests. 
+
+To run the tests, you must have application default credentials in a JSON file on your development machine. 
+[Generate a JSON service account key](https://cloud.google.com/storage/docs/authentication?hl=en#service_accounts)
+in the cloud console and download they key to a secure location on your development box.
+Then set the environment variable GOOGLE_APPLICATION_CREDENTIALS to the location of the JSON file.
+For example:
+
+  ```bash
+  export GOOGLE_APPLICATION_CREDENTIALS=/path/to/my/key.json
+   ```
+
+After you clone the repository, use Maven for building and running the tests.
+
 Integration tests run tests against real services and take a long time to run.
 Consider `mvn install -DskipITs` to skip them when installing.
 Maven 3.0+ is required.
-
-When downloading the source, we recommend you obtain service account credentials. 
-These credentials will allow you to run integration tests using `mvn verify` in command line. 
-Follow step 2 of the [authentication instructions](https://github.com/googleapis/google-cloud-java#authentication) to generate and use JSON service account credentials.
 
 It's also important to test that changes don't break compatibility with App/Compute Engine and when running elsewhere. 
 To run tests on different platforms, try deploying the apps available on the [google-cloud-examples](https://github.com/googleapis/google-cloud-examples) repository.

@@ -19,7 +19,7 @@ public interface DetectIntentRequestOrBuilder
    * ID must not exceed 36 bytes.
    * </pre>
    *
-   * <code>string session = 1;</code>
+   * <code>string session = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   java.lang.String getSession();
   /**
@@ -33,7 +33,7 @@ public interface DetectIntentRequestOrBuilder
    * ID must not exceed 36 bytes.
    * </pre>
    *
-   * <code>string session = 1;</code>
+   * <code>string session = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   com.google.protobuf.ByteString getSessionBytes();
 
@@ -44,7 +44,9 @@ public interface DetectIntentRequestOrBuilder
    * Optional. The parameters of this query.
    * </pre>
    *
-   * <code>.google.cloud.dialogflow.v2.QueryParameters query_params = 2;</code>
+   * <code>
+   * .google.cloud.dialogflow.v2.QueryParameters query_params = 2 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   boolean hasQueryParams();
   /**
@@ -54,7 +56,9 @@ public interface DetectIntentRequestOrBuilder
    * Optional. The parameters of this query.
    * </pre>
    *
-   * <code>.google.cloud.dialogflow.v2.QueryParameters query_params = 2;</code>
+   * <code>
+   * .google.cloud.dialogflow.v2.QueryParameters query_params = 2 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   com.google.cloud.dialogflow.v2.QueryParameters getQueryParams();
   /**
@@ -64,7 +68,9 @@ public interface DetectIntentRequestOrBuilder
    * Optional. The parameters of this query.
    * </pre>
    *
-   * <code>.google.cloud.dialogflow.v2.QueryParameters query_params = 2;</code>
+   * <code>
+   * .google.cloud.dialogflow.v2.QueryParameters query_params = 2 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   com.google.cloud.dialogflow.v2.QueryParametersOrBuilder getQueryParamsOrBuilder();
 
@@ -79,7 +85,9 @@ public interface DetectIntentRequestOrBuilder
    * 3.  an event that specifies which intent to trigger.
    * </pre>
    *
-   * <code>.google.cloud.dialogflow.v2.QueryInput query_input = 3;</code>
+   * <code>
+   * .google.cloud.dialogflow.v2.QueryInput query_input = 3 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   boolean hasQueryInput();
   /**
@@ -93,7 +101,9 @@ public interface DetectIntentRequestOrBuilder
    * 3.  an event that specifies which intent to trigger.
    * </pre>
    *
-   * <code>.google.cloud.dialogflow.v2.QueryInput query_input = 3;</code>
+   * <code>
+   * .google.cloud.dialogflow.v2.QueryInput query_input = 3 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   com.google.cloud.dialogflow.v2.QueryInput getQueryInput();
   /**
@@ -107,7 +117,9 @@ public interface DetectIntentRequestOrBuilder
    * 3.  an event that specifies which intent to trigger.
    * </pre>
    *
-   * <code>.google.cloud.dialogflow.v2.QueryInput query_input = 3;</code>
+   * <code>
+   * .google.cloud.dialogflow.v2.QueryInput query_input = 3 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   com.google.cloud.dialogflow.v2.QueryInputOrBuilder getQueryInputOrBuilder();
 
@@ -120,7 +132,9 @@ public interface DetectIntentRequestOrBuilder
    * configured, no output audio is generated.
    * </pre>
    *
-   * <code>.google.cloud.dialogflow.v2.OutputAudioConfig output_audio_config = 4;</code>
+   * <code>
+   * .google.cloud.dialogflow.v2.OutputAudioConfig output_audio_config = 4 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   boolean hasOutputAudioConfig();
   /**
@@ -132,7 +146,9 @@ public interface DetectIntentRequestOrBuilder
    * configured, no output audio is generated.
    * </pre>
    *
-   * <code>.google.cloud.dialogflow.v2.OutputAudioConfig output_audio_config = 4;</code>
+   * <code>
+   * .google.cloud.dialogflow.v2.OutputAudioConfig output_audio_config = 4 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   com.google.cloud.dialogflow.v2.OutputAudioConfig getOutputAudioConfig();
   /**
@@ -144,7 +160,9 @@ public interface DetectIntentRequestOrBuilder
    * configured, no output audio is generated.
    * </pre>
    *
-   * <code>.google.cloud.dialogflow.v2.OutputAudioConfig output_audio_config = 4;</code>
+   * <code>
+   * .google.cloud.dialogflow.v2.OutputAudioConfig output_audio_config = 4 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   com.google.cloud.dialogflow.v2.OutputAudioConfigOrBuilder getOutputAudioConfigOrBuilder();
 
@@ -157,7 +175,7 @@ public interface DetectIntentRequestOrBuilder
    * A single request can contain up to 1 minute of speech audio data.
    * </pre>
    *
-   * <code>bytes input_audio = 5;</code>
+   * <code>bytes input_audio = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   com.google.protobuf.ByteString getInputAudio();
 }

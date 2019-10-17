@@ -122,10 +122,12 @@ public final class ImportSshPublicKeyRequest extends com.google.protobuf.Generat
    *
    *
    * <pre>
-   * The unique ID for the user in format `users/{user}`.
+   * Required. The unique ID for the user in format `users/{user}`.
    * </pre>
    *
-   * <code>string parent = 1;</code>
+   * <code>
+   * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    */
   public java.lang.String getParent() {
     java.lang.Object ref = parent_;
@@ -142,10 +144,12 @@ public final class ImportSshPublicKeyRequest extends com.google.protobuf.Generat
    *
    *
    * <pre>
-   * The unique ID for the user in format `users/{user}`.
+   * Required. The unique ID for the user in format `users/{user}`.
    * </pre>
    *
-   * <code>string parent = 1;</code>
+   * <code>
+   * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    */
   public com.google.protobuf.ByteString getParentBytes() {
     java.lang.Object ref = parent_;
@@ -165,10 +169,12 @@ public final class ImportSshPublicKeyRequest extends com.google.protobuf.Generat
    *
    *
    * <pre>
-   * The SSH public key and expiration time.
+   * Optional. The SSH public key and expiration time.
    * </pre>
    *
-   * <code>.google.cloud.oslogin.common.SshPublicKey ssh_public_key = 2;</code>
+   * <code>
+   * .google.cloud.oslogin.common.SshPublicKey ssh_public_key = 2 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   public boolean hasSshPublicKey() {
     return sshPublicKey_ != null;
@@ -177,10 +183,12 @@ public final class ImportSshPublicKeyRequest extends com.google.protobuf.Generat
    *
    *
    * <pre>
-   * The SSH public key and expiration time.
+   * Optional. The SSH public key and expiration time.
    * </pre>
    *
-   * <code>.google.cloud.oslogin.common.SshPublicKey ssh_public_key = 2;</code>
+   * <code>
+   * .google.cloud.oslogin.common.SshPublicKey ssh_public_key = 2 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   public com.google.cloud.oslogin.common.OsLoginProto.SshPublicKey getSshPublicKey() {
     return sshPublicKey_ == null
@@ -191,10 +199,12 @@ public final class ImportSshPublicKeyRequest extends com.google.protobuf.Generat
    *
    *
    * <pre>
-   * The SSH public key and expiration time.
+   * Optional. The SSH public key and expiration time.
    * </pre>
    *
-   * <code>.google.cloud.oslogin.common.SshPublicKey ssh_public_key = 2;</code>
+   * <code>
+   * .google.cloud.oslogin.common.SshPublicKey ssh_public_key = 2 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   public com.google.cloud.oslogin.common.OsLoginProto.SshPublicKeyOrBuilder
       getSshPublicKeyOrBuilder() {
@@ -612,10 +622,12 @@ public final class ImportSshPublicKeyRequest extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * The unique ID for the user in format `users/{user}`.
+     * Required. The unique ID for the user in format `users/{user}`.
      * </pre>
      *
-     * <code>string parent = 1;</code>
+     * <code>
+     * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      */
     public java.lang.String getParent() {
       java.lang.Object ref = parent_;
@@ -632,10 +644,12 @@ public final class ImportSshPublicKeyRequest extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * The unique ID for the user in format `users/{user}`.
+     * Required. The unique ID for the user in format `users/{user}`.
      * </pre>
      *
-     * <code>string parent = 1;</code>
+     * <code>
+     * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      */
     public com.google.protobuf.ByteString getParentBytes() {
       java.lang.Object ref = parent_;
@@ -652,10 +666,12 @@ public final class ImportSshPublicKeyRequest extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * The unique ID for the user in format `users/{user}`.
+     * Required. The unique ID for the user in format `users/{user}`.
      * </pre>
      *
-     * <code>string parent = 1;</code>
+     * <code>
+     * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      */
     public Builder setParent(java.lang.String value) {
       if (value == null) {
@@ -670,10 +686,12 @@ public final class ImportSshPublicKeyRequest extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * The unique ID for the user in format `users/{user}`.
+     * Required. The unique ID for the user in format `users/{user}`.
      * </pre>
      *
-     * <code>string parent = 1;</code>
+     * <code>
+     * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      */
     public Builder clearParent() {
 
@@ -685,10 +703,12 @@ public final class ImportSshPublicKeyRequest extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * The unique ID for the user in format `users/{user}`.
+     * Required. The unique ID for the user in format `users/{user}`.
      * </pre>
      *
-     * <code>string parent = 1;</code>
+     * <code>
+     * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      */
     public Builder setParentBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -711,10 +731,12 @@ public final class ImportSshPublicKeyRequest extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * The SSH public key and expiration time.
+     * Optional. The SSH public key and expiration time.
      * </pre>
      *
-     * <code>.google.cloud.oslogin.common.SshPublicKey ssh_public_key = 2;</code>
+     * <code>
+     * .google.cloud.oslogin.common.SshPublicKey ssh_public_key = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public boolean hasSshPublicKey() {
       return sshPublicKeyBuilder_ != null || sshPublicKey_ != null;
@@ -723,10 +745,12 @@ public final class ImportSshPublicKeyRequest extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * The SSH public key and expiration time.
+     * Optional. The SSH public key and expiration time.
      * </pre>
      *
-     * <code>.google.cloud.oslogin.common.SshPublicKey ssh_public_key = 2;</code>
+     * <code>
+     * .google.cloud.oslogin.common.SshPublicKey ssh_public_key = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public com.google.cloud.oslogin.common.OsLoginProto.SshPublicKey getSshPublicKey() {
       if (sshPublicKeyBuilder_ == null) {
@@ -741,10 +765,12 @@ public final class ImportSshPublicKeyRequest extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * The SSH public key and expiration time.
+     * Optional. The SSH public key and expiration time.
      * </pre>
      *
-     * <code>.google.cloud.oslogin.common.SshPublicKey ssh_public_key = 2;</code>
+     * <code>
+     * .google.cloud.oslogin.common.SshPublicKey ssh_public_key = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder setSshPublicKey(
         com.google.cloud.oslogin.common.OsLoginProto.SshPublicKey value) {
@@ -764,10 +790,12 @@ public final class ImportSshPublicKeyRequest extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * The SSH public key and expiration time.
+     * Optional. The SSH public key and expiration time.
      * </pre>
      *
-     * <code>.google.cloud.oslogin.common.SshPublicKey ssh_public_key = 2;</code>
+     * <code>
+     * .google.cloud.oslogin.common.SshPublicKey ssh_public_key = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder setSshPublicKey(
         com.google.cloud.oslogin.common.OsLoginProto.SshPublicKey.Builder builderForValue) {
@@ -784,10 +812,12 @@ public final class ImportSshPublicKeyRequest extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * The SSH public key and expiration time.
+     * Optional. The SSH public key and expiration time.
      * </pre>
      *
-     * <code>.google.cloud.oslogin.common.SshPublicKey ssh_public_key = 2;</code>
+     * <code>
+     * .google.cloud.oslogin.common.SshPublicKey ssh_public_key = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder mergeSshPublicKey(
         com.google.cloud.oslogin.common.OsLoginProto.SshPublicKey value) {
@@ -811,10 +841,12 @@ public final class ImportSshPublicKeyRequest extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * The SSH public key and expiration time.
+     * Optional. The SSH public key and expiration time.
      * </pre>
      *
-     * <code>.google.cloud.oslogin.common.SshPublicKey ssh_public_key = 2;</code>
+     * <code>
+     * .google.cloud.oslogin.common.SshPublicKey ssh_public_key = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder clearSshPublicKey() {
       if (sshPublicKeyBuilder_ == null) {
@@ -831,10 +863,12 @@ public final class ImportSshPublicKeyRequest extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * The SSH public key and expiration time.
+     * Optional. The SSH public key and expiration time.
      * </pre>
      *
-     * <code>.google.cloud.oslogin.common.SshPublicKey ssh_public_key = 2;</code>
+     * <code>
+     * .google.cloud.oslogin.common.SshPublicKey ssh_public_key = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public com.google.cloud.oslogin.common.OsLoginProto.SshPublicKey.Builder
         getSshPublicKeyBuilder() {
@@ -846,10 +880,12 @@ public final class ImportSshPublicKeyRequest extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * The SSH public key and expiration time.
+     * Optional. The SSH public key and expiration time.
      * </pre>
      *
-     * <code>.google.cloud.oslogin.common.SshPublicKey ssh_public_key = 2;</code>
+     * <code>
+     * .google.cloud.oslogin.common.SshPublicKey ssh_public_key = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public com.google.cloud.oslogin.common.OsLoginProto.SshPublicKeyOrBuilder
         getSshPublicKeyOrBuilder() {
@@ -865,10 +901,12 @@ public final class ImportSshPublicKeyRequest extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * The SSH public key and expiration time.
+     * Optional. The SSH public key and expiration time.
      * </pre>
      *
-     * <code>.google.cloud.oslogin.common.SshPublicKey ssh_public_key = 2;</code>
+     * <code>
+     * .google.cloud.oslogin.common.SshPublicKey ssh_public_key = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.oslogin.common.OsLoginProto.SshPublicKey,

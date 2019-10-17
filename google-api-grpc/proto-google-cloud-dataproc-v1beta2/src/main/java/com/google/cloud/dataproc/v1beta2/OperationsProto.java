@@ -35,8 +35,8 @@ public final class OperationsProto {
     java.lang.String[] descriptorData = {
       "\n.google/cloud/dataproc/v1beta2/operatio"
           + "ns.proto\022\035google.cloud.dataproc.v1beta2\032"
-          + "\034google/api/annotations.proto\032\037google/pr"
-          + "otobuf/timestamp.proto\"\372\001\n\026ClusterOperat"
+          + "\037google/protobuf/timestamp.proto\032\034google"
+          + "/api/annotations.proto\"\372\001\n\026ClusterOperat"
           + "ionStatus\022J\n\005state\030\001 \001(\0162;.google.cloud."
           + "dataproc.v1beta2.ClusterOperationStatus."
           + "State\022\023\n\013inner_state\030\002 \001(\t\022\017\n\007details\030\003 "
@@ -69,8 +69,8 @@ public final class OperationsProto {
     com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
         descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
-          com.google.api.AnnotationsProto.getDescriptor(),
           com.google.protobuf.TimestampProto.getDescriptor(),
+          com.google.api.AnnotationsProto.getDescriptor(),
         },
         assigner);
     internal_static_google_cloud_dataproc_v1beta2_ClusterOperationStatus_descriptor =
@@ -106,8 +106,8 @@ public final class OperationsProto {
             new java.lang.String[] {
               "Key", "Value",
             });
-    com.google.api.AnnotationsProto.getDescriptor();
     com.google.protobuf.TimestampProto.getDescriptor();
+    com.google.api.AnnotationsProto.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

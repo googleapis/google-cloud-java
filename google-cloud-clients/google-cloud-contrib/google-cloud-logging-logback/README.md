@@ -6,8 +6,7 @@ Logback appender `com.google.cloud.logging.logback.LoggingAppender` for
 
 This library allows you to use [Logback](https://logback.qos.ch/) configuration and the [Slf4j](https://www.slf4j.org/) interface to log via Google Cloud logging.
 
--  [Homepage](https://googleapis.github.io/google-cloud-java/)
--  [API Documentation](https://googleapis.github.io/google-cloud-java/google-cloud-clients/apidocs/index.html?com/google/cloud/logging/logback/LoggingAppender.html)
+-  [API Documentation](https://googleapis.dev/java/google-cloud-clients/latest/index.html?com/google/cloud/logging/logback/LoggingAppender.html)
 
 > Note: This client is a work-in-progress, and may occasionally
 > make backwards-incompatible changes.
@@ -21,16 +20,16 @@ If you are using Maven, add this to your pom.xml file
 <dependency>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-logging-logback</artifactId>
-  <version>0.101.0-alpha</version>
+  <version>0.116.0-alpha</version>
 </dependency>
 ```
 If you are using Gradle, add this to your dependencies
 ```Groovy
-compile 'com.google.cloud:google-cloud-logging-logback:0.101.0-alpha'
+compile 'com.google.cloud:google-cloud-logging-logback:0.116.0-alpha'
 ```
 If you are using SBT, add this to your dependencies
 ```Scala
-libraryDependencies += "com.google.cloud" % "google-cloud-logging-logback" % "0.101.0-alpha"
+libraryDependencies += "com.google.cloud" % "google-cloud-logging-logback" % "0.116.0-alpha"
 ```
 [//]: # ({x-version-update-end})
 

@@ -18,11 +18,14 @@ package com.google.cloud.spanner;
 
 import static com.google.common.truth.Truth.assertThat;
 import static org.junit.Assert.fail;
+import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.when;
 
 import com.google.api.core.NanoClock;
 import com.google.api.gax.retrying.RetrySettings;
 import com.google.cloud.Timestamp;
+import com.google.cloud.grpc.GrpcTransportOptions;
+import com.google.cloud.grpc.GrpcTransportOptions.ExecutorFactory;
 import com.google.cloud.spanner.TransactionRunner.TransactionCallable;
 import com.google.cloud.spanner.spi.v1.SpannerRpc;
 import com.google.protobuf.ByteString;
@@ -40,6 +43,7 @@ import com.google.spanner.v1.Transaction;
 import java.text.ParseException;
 import java.util.Arrays;
 import java.util.Calendar;
+import java.util.Collections;
 import java.util.GregorianCalendar;
 import java.util.Map;
 import java.util.TimeZone;
@@ -74,9 +78,14 @@ public class SessionImplTest {
   @Before
   public void setUp() {
     MockitoAnnotations.initMocks(this);
+    when(spannerOptions.getNumChannels()).thenReturn(4);
     when(spannerOptions.getPrefetchChunks()).thenReturn(1);
     when(spannerOptions.getRetrySettings()).thenReturn(RetrySettings.newBuilder().build());
     when(spannerOptions.getClock()).thenReturn(NanoClock.getDefaultClock());
+    when(spannerOptions.getSessionLabels()).thenReturn(Collections.<String, String>emptyMap());
+    GrpcTransportOptions transportOptions = mock(GrpcTransportOptions.class);
+    when(transportOptions.getExecutorFactory()).thenReturn(mock(ExecutorFactory.class));
+    when(spannerOptions.getTransportOptions()).thenReturn(transportOptions);
     @SuppressWarnings("resource")
     SpannerImpl spanner = new SpannerImpl(rpc, spannerOptions);
     String dbName = "projects/p1/instances/i1/databases/d1";
@@ -101,7 +110,7 @@ public class SessionImplTest {
             .build();
     Mockito.when(rpc.commit(Mockito.any(CommitRequest.class), Mockito.any(Map.class)))
         .thenReturn(commitResponse);
-    session = spanner.createSession(db);
+    session = spanner.getSessionClient(db).createSession();
     // We expect the same options, "options", on all calls on "session".
     options = optionsCaptor.getValue();
   }

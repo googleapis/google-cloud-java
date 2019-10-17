@@ -161,11 +161,11 @@ public final class SpeechRecognitionAlternative extends com.google.protobuf.Gene
    *
    *
    * <pre>
-   * The confidence estimate between 0.0 and 1.0. A higher number
+   * Output only. The confidence estimate between 0.0 and 1.0. A higher number
    * indicates an estimated greater likelihood that the recognized words are
-   * correct. This field is typically provided only for the top hypothesis, and
-   * only for `is_final=true` results. Clients should not rely on the
-   * `confidence` field as it is not guaranteed to be accurate or consistent.
+   * correct. This field is set only for the top alternative.
+   * This field is not guaranteed to be accurate and users should not rely on it
+   * to be always provided.
    * The default of 0.0 is a sentinel value indicating `confidence` was not set.
    * </pre>
    *
@@ -181,7 +181,9 @@ public final class SpeechRecognitionAlternative extends com.google.protobuf.Gene
    *
    *
    * <pre>
-   * A list of word-specific information for each recognized word.
+   * Output only. A list of word-specific information for each recognized word.
+   * Note: When `enable_speaker_diarization` is true, you will see all the words
+   * from the beginning of the audio.
    * </pre>
    *
    * <code>repeated .google.cloud.videointelligence.v1.WordInfo words = 3;</code>
@@ -193,7 +195,9 @@ public final class SpeechRecognitionAlternative extends com.google.protobuf.Gene
    *
    *
    * <pre>
-   * A list of word-specific information for each recognized word.
+   * Output only. A list of word-specific information for each recognized word.
+   * Note: When `enable_speaker_diarization` is true, you will see all the words
+   * from the beginning of the audio.
    * </pre>
    *
    * <code>repeated .google.cloud.videointelligence.v1.WordInfo words = 3;</code>
@@ -206,7 +210,9 @@ public final class SpeechRecognitionAlternative extends com.google.protobuf.Gene
    *
    *
    * <pre>
-   * A list of word-specific information for each recognized word.
+   * Output only. A list of word-specific information for each recognized word.
+   * Note: When `enable_speaker_diarization` is true, you will see all the words
+   * from the beginning of the audio.
    * </pre>
    *
    * <code>repeated .google.cloud.videointelligence.v1.WordInfo words = 3;</code>
@@ -218,7 +224,9 @@ public final class SpeechRecognitionAlternative extends com.google.protobuf.Gene
    *
    *
    * <pre>
-   * A list of word-specific information for each recognized word.
+   * Output only. A list of word-specific information for each recognized word.
+   * Note: When `enable_speaker_diarization` is true, you will see all the words
+   * from the beginning of the audio.
    * </pre>
    *
    * <code>repeated .google.cloud.videointelligence.v1.WordInfo words = 3;</code>
@@ -230,7 +238,9 @@ public final class SpeechRecognitionAlternative extends com.google.protobuf.Gene
    *
    *
    * <pre>
-   * A list of word-specific information for each recognized word.
+   * Output only. A list of word-specific information for each recognized word.
+   * Note: When `enable_speaker_diarization` is true, you will see all the words
+   * from the beginning of the audio.
    * </pre>
    *
    * <code>repeated .google.cloud.videointelligence.v1.WordInfo words = 3;</code>
@@ -741,11 +751,11 @@ public final class SpeechRecognitionAlternative extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * The confidence estimate between 0.0 and 1.0. A higher number
+     * Output only. The confidence estimate between 0.0 and 1.0. A higher number
      * indicates an estimated greater likelihood that the recognized words are
-     * correct. This field is typically provided only for the top hypothesis, and
-     * only for `is_final=true` results. Clients should not rely on the
-     * `confidence` field as it is not guaranteed to be accurate or consistent.
+     * correct. This field is set only for the top alternative.
+     * This field is not guaranteed to be accurate and users should not rely on it
+     * to be always provided.
      * The default of 0.0 is a sentinel value indicating `confidence` was not set.
      * </pre>
      *
@@ -758,11 +768,11 @@ public final class SpeechRecognitionAlternative extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * The confidence estimate between 0.0 and 1.0. A higher number
+     * Output only. The confidence estimate between 0.0 and 1.0. A higher number
      * indicates an estimated greater likelihood that the recognized words are
-     * correct. This field is typically provided only for the top hypothesis, and
-     * only for `is_final=true` results. Clients should not rely on the
-     * `confidence` field as it is not guaranteed to be accurate or consistent.
+     * correct. This field is set only for the top alternative.
+     * This field is not guaranteed to be accurate and users should not rely on it
+     * to be always provided.
      * The default of 0.0 is a sentinel value indicating `confidence` was not set.
      * </pre>
      *
@@ -778,11 +788,11 @@ public final class SpeechRecognitionAlternative extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * The confidence estimate between 0.0 and 1.0. A higher number
+     * Output only. The confidence estimate between 0.0 and 1.0. A higher number
      * indicates an estimated greater likelihood that the recognized words are
-     * correct. This field is typically provided only for the top hypothesis, and
-     * only for `is_final=true` results. Clients should not rely on the
-     * `confidence` field as it is not guaranteed to be accurate or consistent.
+     * correct. This field is set only for the top alternative.
+     * This field is not guaranteed to be accurate and users should not rely on it
+     * to be always provided.
      * The default of 0.0 is a sentinel value indicating `confidence` was not set.
      * </pre>
      *
@@ -815,7 +825,9 @@ public final class SpeechRecognitionAlternative extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * A list of word-specific information for each recognized word.
+     * Output only. A list of word-specific information for each recognized word.
+     * Note: When `enable_speaker_diarization` is true, you will see all the words
+     * from the beginning of the audio.
      * </pre>
      *
      * <code>repeated .google.cloud.videointelligence.v1.WordInfo words = 3;</code>
@@ -831,7 +843,9 @@ public final class SpeechRecognitionAlternative extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * A list of word-specific information for each recognized word.
+     * Output only. A list of word-specific information for each recognized word.
+     * Note: When `enable_speaker_diarization` is true, you will see all the words
+     * from the beginning of the audio.
      * </pre>
      *
      * <code>repeated .google.cloud.videointelligence.v1.WordInfo words = 3;</code>
@@ -847,7 +861,9 @@ public final class SpeechRecognitionAlternative extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * A list of word-specific information for each recognized word.
+     * Output only. A list of word-specific information for each recognized word.
+     * Note: When `enable_speaker_diarization` is true, you will see all the words
+     * from the beginning of the audio.
      * </pre>
      *
      * <code>repeated .google.cloud.videointelligence.v1.WordInfo words = 3;</code>
@@ -863,7 +879,9 @@ public final class SpeechRecognitionAlternative extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * A list of word-specific information for each recognized word.
+     * Output only. A list of word-specific information for each recognized word.
+     * Note: When `enable_speaker_diarization` is true, you will see all the words
+     * from the beginning of the audio.
      * </pre>
      *
      * <code>repeated .google.cloud.videointelligence.v1.WordInfo words = 3;</code>
@@ -885,7 +903,9 @@ public final class SpeechRecognitionAlternative extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * A list of word-specific information for each recognized word.
+     * Output only. A list of word-specific information for each recognized word.
+     * Note: When `enable_speaker_diarization` is true, you will see all the words
+     * from the beginning of the audio.
      * </pre>
      *
      * <code>repeated .google.cloud.videointelligence.v1.WordInfo words = 3;</code>
@@ -905,7 +925,9 @@ public final class SpeechRecognitionAlternative extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * A list of word-specific information for each recognized word.
+     * Output only. A list of word-specific information for each recognized word.
+     * Note: When `enable_speaker_diarization` is true, you will see all the words
+     * from the beginning of the audio.
      * </pre>
      *
      * <code>repeated .google.cloud.videointelligence.v1.WordInfo words = 3;</code>
@@ -927,7 +949,9 @@ public final class SpeechRecognitionAlternative extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * A list of word-specific information for each recognized word.
+     * Output only. A list of word-specific information for each recognized word.
+     * Note: When `enable_speaker_diarization` is true, you will see all the words
+     * from the beginning of the audio.
      * </pre>
      *
      * <code>repeated .google.cloud.videointelligence.v1.WordInfo words = 3;</code>
@@ -949,7 +973,9 @@ public final class SpeechRecognitionAlternative extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * A list of word-specific information for each recognized word.
+     * Output only. A list of word-specific information for each recognized word.
+     * Note: When `enable_speaker_diarization` is true, you will see all the words
+     * from the beginning of the audio.
      * </pre>
      *
      * <code>repeated .google.cloud.videointelligence.v1.WordInfo words = 3;</code>
@@ -969,7 +995,9 @@ public final class SpeechRecognitionAlternative extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * A list of word-specific information for each recognized word.
+     * Output only. A list of word-specific information for each recognized word.
+     * Note: When `enable_speaker_diarization` is true, you will see all the words
+     * from the beginning of the audio.
      * </pre>
      *
      * <code>repeated .google.cloud.videointelligence.v1.WordInfo words = 3;</code>
@@ -989,7 +1017,9 @@ public final class SpeechRecognitionAlternative extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * A list of word-specific information for each recognized word.
+     * Output only. A list of word-specific information for each recognized word.
+     * Note: When `enable_speaker_diarization` is true, you will see all the words
+     * from the beginning of the audio.
      * </pre>
      *
      * <code>repeated .google.cloud.videointelligence.v1.WordInfo words = 3;</code>
@@ -1009,7 +1039,9 @@ public final class SpeechRecognitionAlternative extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * A list of word-specific information for each recognized word.
+     * Output only. A list of word-specific information for each recognized word.
+     * Note: When `enable_speaker_diarization` is true, you will see all the words
+     * from the beginning of the audio.
      * </pre>
      *
      * <code>repeated .google.cloud.videointelligence.v1.WordInfo words = 3;</code>
@@ -1028,7 +1060,9 @@ public final class SpeechRecognitionAlternative extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * A list of word-specific information for each recognized word.
+     * Output only. A list of word-specific information for each recognized word.
+     * Note: When `enable_speaker_diarization` is true, you will see all the words
+     * from the beginning of the audio.
      * </pre>
      *
      * <code>repeated .google.cloud.videointelligence.v1.WordInfo words = 3;</code>
@@ -1047,7 +1081,9 @@ public final class SpeechRecognitionAlternative extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * A list of word-specific information for each recognized word.
+     * Output only. A list of word-specific information for each recognized word.
+     * Note: When `enable_speaker_diarization` is true, you will see all the words
+     * from the beginning of the audio.
      * </pre>
      *
      * <code>repeated .google.cloud.videointelligence.v1.WordInfo words = 3;</code>
@@ -1059,7 +1095,9 @@ public final class SpeechRecognitionAlternative extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * A list of word-specific information for each recognized word.
+     * Output only. A list of word-specific information for each recognized word.
+     * Note: When `enable_speaker_diarization` is true, you will see all the words
+     * from the beginning of the audio.
      * </pre>
      *
      * <code>repeated .google.cloud.videointelligence.v1.WordInfo words = 3;</code>
@@ -1075,7 +1113,9 @@ public final class SpeechRecognitionAlternative extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * A list of word-specific information for each recognized word.
+     * Output only. A list of word-specific information for each recognized word.
+     * Note: When `enable_speaker_diarization` is true, you will see all the words
+     * from the beginning of the audio.
      * </pre>
      *
      * <code>repeated .google.cloud.videointelligence.v1.WordInfo words = 3;</code>
@@ -1092,7 +1132,9 @@ public final class SpeechRecognitionAlternative extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * A list of word-specific information for each recognized word.
+     * Output only. A list of word-specific information for each recognized word.
+     * Note: When `enable_speaker_diarization` is true, you will see all the words
+     * from the beginning of the audio.
      * </pre>
      *
      * <code>repeated .google.cloud.videointelligence.v1.WordInfo words = 3;</code>
@@ -1105,7 +1147,9 @@ public final class SpeechRecognitionAlternative extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * A list of word-specific information for each recognized word.
+     * Output only. A list of word-specific information for each recognized word.
+     * Note: When `enable_speaker_diarization` is true, you will see all the words
+     * from the beginning of the audio.
      * </pre>
      *
      * <code>repeated .google.cloud.videointelligence.v1.WordInfo words = 3;</code>
@@ -1118,7 +1162,9 @@ public final class SpeechRecognitionAlternative extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * A list of word-specific information for each recognized word.
+     * Output only. A list of word-specific information for each recognized word.
+     * Note: When `enable_speaker_diarization` is true, you will see all the words
+     * from the beginning of the audio.
      * </pre>
      *
      * <code>repeated .google.cloud.videointelligence.v1.WordInfo words = 3;</code>

@@ -196,11 +196,13 @@ public class OsLoginServiceClientTest {
     String key = "key106079";
     long expirationTimeUsec = 2058878882L;
     String fingerprint = "fingerprint-1375934236";
+    String name2 = "name2-1052831874";
     SshPublicKey expectedResponse =
         SshPublicKey.newBuilder()
             .setKey(key)
             .setExpirationTimeUsec(expirationTimeUsec)
             .setFingerprint(fingerprint)
+            .setName(name2)
             .build();
     mockOsLoginService.addResponse(expectedResponse);
 
@@ -328,11 +330,13 @@ public class OsLoginServiceClientTest {
     String key = "key106079";
     long expirationTimeUsec = 2058878882L;
     String fingerprint = "fingerprint-1375934236";
+    String name2 = "name2-1052831874";
     SshPublicKey expectedResponse =
         SshPublicKey.newBuilder()
             .setKey(key)
             .setExpirationTimeUsec(expirationTimeUsec)
             .setFingerprint(fingerprint)
+            .setName(name2)
             .build();
     mockOsLoginService.addResponse(expectedResponse);
 
@@ -377,11 +381,13 @@ public class OsLoginServiceClientTest {
     String key = "key106079";
     long expirationTimeUsec = 2058878882L;
     String fingerprint = "fingerprint-1375934236";
+    String name2 = "name2-1052831874";
     SshPublicKey expectedResponse =
         SshPublicKey.newBuilder()
             .setKey(key)
             .setExpirationTimeUsec(expirationTimeUsec)
             .setFingerprint(fingerprint)
+            .setName(name2)
             .build();
     mockOsLoginService.addResponse(expectedResponse);
 

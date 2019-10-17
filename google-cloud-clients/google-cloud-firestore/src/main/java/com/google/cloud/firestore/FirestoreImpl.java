@@ -140,23 +140,30 @@ class FirestoreImpl implements Firestore {
   @Override
   public ApiFuture<List<DocumentSnapshot>> getAll(
       @Nonnull DocumentReference... documentReferences) {
-    return this.getAll(documentReferences, null, null);
+    return this.getAll(documentReferences, null, (ByteString) null);
   }
 
   @Nonnull
   @Override
   public ApiFuture<List<DocumentSnapshot>> getAll(
       @Nonnull DocumentReference[] documentReferences, @Nullable FieldMask fieldMask) {
-    return this.getAll(documentReferences, fieldMask, null);
+    return this.getAll(documentReferences, fieldMask, (ByteString) null);
   }
 
-  /** Internal getAll() method that accepts an optional transaction id. */
-  ApiFuture<List<DocumentSnapshot>> getAll(
-      final DocumentReference[] documentReferences,
+  @Nonnull
+  @Override
+  public void getAll(
+      final @Nonnull DocumentReference[] documentReferences,
       @Nullable FieldMask fieldMask,
-      @Nullable ByteString transactionId) {
-    final SettableApiFuture<List<DocumentSnapshot>> futureList = SettableApiFuture.create();
-    final Map<DocumentReference, DocumentSnapshot> resultMap = new HashMap<>();
+      @Nonnull final ApiStreamObserver<DocumentSnapshot> apiStreamObserver) {
+    this.getAll(documentReferences, fieldMask, null, apiStreamObserver);
+  }
+
+  void getAll(
+      final @Nonnull DocumentReference[] documentReferences,
+      @Nullable FieldMask fieldMask,
+      @Nullable ByteString transactionId,
+      final ApiStreamObserver<DocumentSnapshot> apiStreamObserver) {
 
     ApiStreamObserver<BatchGetDocumentsResponse> responseObserver =
         new ApiStreamObserver<BatchGetDocumentsResponse>() {
@@ -176,9 +183,6 @@ class FirestoreImpl implements Firestore {
 
             switch (response.getResultCase()) {
               case FOUND:
-                documentReference =
-                    new DocumentReference(
-                        FirestoreImpl.this, ResourcePath.create(response.getFound().getName()));
                 documentSnapshot =
                     DocumentSnapshot.fromDocument(
                         FirestoreImpl.this,
@@ -198,26 +202,19 @@ class FirestoreImpl implements Firestore {
               default:
                 return;
             }
-
-            resultMap.put(documentReference, documentSnapshot);
+            apiStreamObserver.onNext(documentSnapshot);
           }
 
           @Override
           public void onError(Throwable throwable) {
             tracer.getCurrentSpan().addAnnotation("Firestore.BatchGet: Error");
-            futureList.setException(throwable);
+            apiStreamObserver.onError(throwable);
           }
 
           @Override
           public void onCompleted() {
             tracer.getCurrentSpan().addAnnotation("Firestore.BatchGet: Complete");
-            List<DocumentSnapshot> documentSnapshots = new ArrayList<>();
-
-            for (DocumentReference documentReference : documentReferences) {
-              documentSnapshots.add(resultMap.get(documentReference));
-            }
-
-            futureList.set(documentSnapshots);
+            apiStreamObserver.onCompleted();
           }
         };
 
@@ -244,7 +241,39 @@ class FirestoreImpl implements Firestore {
                 "numDocuments", AttributeValue.longAttributeValue(documentReferences.length)));
 
     streamRequest(request.build(), responseObserver, firestoreClient.batchGetDocumentsCallable());
+  }
 
+  /** Internal getAll() method that accepts an optional transaction id. */
+  ApiFuture<List<DocumentSnapshot>> getAll(
+      final @Nonnull DocumentReference[] documentReferences,
+      @Nullable FieldMask fieldMask,
+      @Nullable ByteString transactionId) {
+    final SettableApiFuture<List<DocumentSnapshot>> futureList = SettableApiFuture.create();
+    final Map<DocumentReference, DocumentSnapshot> documentSnapshotMap = new HashMap<>();
+    getAll(
+        documentReferences,
+        fieldMask,
+        transactionId,
+        new ApiStreamObserver<DocumentSnapshot>() {
+          @Override
+          public void onNext(DocumentSnapshot documentSnapshot) {
+            documentSnapshotMap.put(documentSnapshot.getReference(), documentSnapshot);
+          }
+
+          @Override
+          public void onError(Throwable throwable) {
+            futureList.setException(throwable);
+          }
+
+          @Override
+          public void onCompleted() {
+            List<DocumentSnapshot> documentSnapshotsList = new ArrayList<>();
+            for (DocumentReference documentReference : documentReferences) {
+              documentSnapshotsList.add(documentSnapshotMap.get(documentReference));
+            }
+            futureList.set(documentSnapshotsList);
+          }
+        });
     return futureList;
   }
 

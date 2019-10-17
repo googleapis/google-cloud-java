@@ -84,6 +84,225 @@ public final class DataCatalogGrpc {
   }
 
   @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
+  @java.lang.Deprecated // Use {@link #getCreateEntryGroupMethod()} instead.
+  public static final io.grpc.MethodDescriptor<
+          com.google.cloud.datacatalog.CreateEntryGroupRequest,
+          com.google.cloud.datacatalog.EntryGroup>
+      METHOD_CREATE_ENTRY_GROUP = getCreateEntryGroupMethodHelper();
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.datacatalog.CreateEntryGroupRequest,
+          com.google.cloud.datacatalog.EntryGroup>
+      getCreateEntryGroupMethod;
+
+  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.datacatalog.CreateEntryGroupRequest,
+          com.google.cloud.datacatalog.EntryGroup>
+      getCreateEntryGroupMethod() {
+    return getCreateEntryGroupMethodHelper();
+  }
+
+  private static io.grpc.MethodDescriptor<
+          com.google.cloud.datacatalog.CreateEntryGroupRequest,
+          com.google.cloud.datacatalog.EntryGroup>
+      getCreateEntryGroupMethodHelper() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.datacatalog.CreateEntryGroupRequest,
+            com.google.cloud.datacatalog.EntryGroup>
+        getCreateEntryGroupMethod;
+    if ((getCreateEntryGroupMethod = DataCatalogGrpc.getCreateEntryGroupMethod) == null) {
+      synchronized (DataCatalogGrpc.class) {
+        if ((getCreateEntryGroupMethod = DataCatalogGrpc.getCreateEntryGroupMethod) == null) {
+          DataCatalogGrpc.getCreateEntryGroupMethod =
+              getCreateEntryGroupMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.datacatalog.CreateEntryGroupRequest,
+                          com.google.cloud.datacatalog.EntryGroup>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(
+                              "google.cloud.datacatalog.v1beta1.DataCatalog", "CreateEntryGroup"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.datacatalog.CreateEntryGroupRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.datacatalog.EntryGroup.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new DataCatalogMethodDescriptorSupplier("CreateEntryGroup"))
+                      .build();
+        }
+      }
+    }
+    return getCreateEntryGroupMethod;
+  }
+
+  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
+  @java.lang.Deprecated // Use {@link #getGetEntryGroupMethod()} instead.
+  public static final io.grpc.MethodDescriptor<
+          com.google.cloud.datacatalog.GetEntryGroupRequest,
+          com.google.cloud.datacatalog.EntryGroup>
+      METHOD_GET_ENTRY_GROUP = getGetEntryGroupMethodHelper();
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.datacatalog.GetEntryGroupRequest,
+          com.google.cloud.datacatalog.EntryGroup>
+      getGetEntryGroupMethod;
+
+  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.datacatalog.GetEntryGroupRequest,
+          com.google.cloud.datacatalog.EntryGroup>
+      getGetEntryGroupMethod() {
+    return getGetEntryGroupMethodHelper();
+  }
+
+  private static io.grpc.MethodDescriptor<
+          com.google.cloud.datacatalog.GetEntryGroupRequest,
+          com.google.cloud.datacatalog.EntryGroup>
+      getGetEntryGroupMethodHelper() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.datacatalog.GetEntryGroupRequest,
+            com.google.cloud.datacatalog.EntryGroup>
+        getGetEntryGroupMethod;
+    if ((getGetEntryGroupMethod = DataCatalogGrpc.getGetEntryGroupMethod) == null) {
+      synchronized (DataCatalogGrpc.class) {
+        if ((getGetEntryGroupMethod = DataCatalogGrpc.getGetEntryGroupMethod) == null) {
+          DataCatalogGrpc.getGetEntryGroupMethod =
+              getGetEntryGroupMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.datacatalog.GetEntryGroupRequest,
+                          com.google.cloud.datacatalog.EntryGroup>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(
+                              "google.cloud.datacatalog.v1beta1.DataCatalog", "GetEntryGroup"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.datacatalog.GetEntryGroupRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.datacatalog.EntryGroup.getDefaultInstance()))
+                      .setSchemaDescriptor(new DataCatalogMethodDescriptorSupplier("GetEntryGroup"))
+                      .build();
+        }
+      }
+    }
+    return getGetEntryGroupMethod;
+  }
+
+  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
+  @java.lang.Deprecated // Use {@link #getDeleteEntryGroupMethod()} instead.
+  public static final io.grpc.MethodDescriptor<
+          com.google.cloud.datacatalog.DeleteEntryGroupRequest, com.google.protobuf.Empty>
+      METHOD_DELETE_ENTRY_GROUP = getDeleteEntryGroupMethodHelper();
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.datacatalog.DeleteEntryGroupRequest, com.google.protobuf.Empty>
+      getDeleteEntryGroupMethod;
+
+  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.datacatalog.DeleteEntryGroupRequest, com.google.protobuf.Empty>
+      getDeleteEntryGroupMethod() {
+    return getDeleteEntryGroupMethodHelper();
+  }
+
+  private static io.grpc.MethodDescriptor<
+          com.google.cloud.datacatalog.DeleteEntryGroupRequest, com.google.protobuf.Empty>
+      getDeleteEntryGroupMethodHelper() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.datacatalog.DeleteEntryGroupRequest, com.google.protobuf.Empty>
+        getDeleteEntryGroupMethod;
+    if ((getDeleteEntryGroupMethod = DataCatalogGrpc.getDeleteEntryGroupMethod) == null) {
+      synchronized (DataCatalogGrpc.class) {
+        if ((getDeleteEntryGroupMethod = DataCatalogGrpc.getDeleteEntryGroupMethod) == null) {
+          DataCatalogGrpc.getDeleteEntryGroupMethod =
+              getDeleteEntryGroupMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.datacatalog.DeleteEntryGroupRequest,
+                          com.google.protobuf.Empty>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(
+                              "google.cloud.datacatalog.v1beta1.DataCatalog", "DeleteEntryGroup"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.datacatalog.DeleteEntryGroupRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.protobuf.Empty.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new DataCatalogMethodDescriptorSupplier("DeleteEntryGroup"))
+                      .build();
+        }
+      }
+    }
+    return getDeleteEntryGroupMethod;
+  }
+
+  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
+  @java.lang.Deprecated // Use {@link #getCreateEntryMethod()} instead.
+  public static final io.grpc.MethodDescriptor<
+          com.google.cloud.datacatalog.CreateEntryRequest, com.google.cloud.datacatalog.Entry>
+      METHOD_CREATE_ENTRY = getCreateEntryMethodHelper();
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.datacatalog.CreateEntryRequest, com.google.cloud.datacatalog.Entry>
+      getCreateEntryMethod;
+
+  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.datacatalog.CreateEntryRequest, com.google.cloud.datacatalog.Entry>
+      getCreateEntryMethod() {
+    return getCreateEntryMethodHelper();
+  }
+
+  private static io.grpc.MethodDescriptor<
+          com.google.cloud.datacatalog.CreateEntryRequest, com.google.cloud.datacatalog.Entry>
+      getCreateEntryMethodHelper() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.datacatalog.CreateEntryRequest, com.google.cloud.datacatalog.Entry>
+        getCreateEntryMethod;
+    if ((getCreateEntryMethod = DataCatalogGrpc.getCreateEntryMethod) == null) {
+      synchronized (DataCatalogGrpc.class) {
+        if ((getCreateEntryMethod = DataCatalogGrpc.getCreateEntryMethod) == null) {
+          DataCatalogGrpc.getCreateEntryMethod =
+              getCreateEntryMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.datacatalog.CreateEntryRequest,
+                          com.google.cloud.datacatalog.Entry>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(
+                              "google.cloud.datacatalog.v1beta1.DataCatalog", "CreateEntry"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.datacatalog.CreateEntryRequest.getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.datacatalog.Entry.getDefaultInstance()))
+                      .setSchemaDescriptor(new DataCatalogMethodDescriptorSupplier("CreateEntry"))
+                      .build();
+        }
+      }
+    }
+    return getCreateEntryMethod;
+  }
+
+  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
   @java.lang.Deprecated // Use {@link #getUpdateEntryMethod()} instead.
   public static final io.grpc.MethodDescriptor<
           com.google.cloud.datacatalog.UpdateEntryRequest, com.google.cloud.datacatalog.Entry>
@@ -132,6 +351,56 @@ public final class DataCatalogGrpc {
       }
     }
     return getUpdateEntryMethod;
+  }
+
+  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
+  @java.lang.Deprecated // Use {@link #getDeleteEntryMethod()} instead.
+  public static final io.grpc.MethodDescriptor<
+          com.google.cloud.datacatalog.DeleteEntryRequest, com.google.protobuf.Empty>
+      METHOD_DELETE_ENTRY = getDeleteEntryMethodHelper();
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.datacatalog.DeleteEntryRequest, com.google.protobuf.Empty>
+      getDeleteEntryMethod;
+
+  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.datacatalog.DeleteEntryRequest, com.google.protobuf.Empty>
+      getDeleteEntryMethod() {
+    return getDeleteEntryMethodHelper();
+  }
+
+  private static io.grpc.MethodDescriptor<
+          com.google.cloud.datacatalog.DeleteEntryRequest, com.google.protobuf.Empty>
+      getDeleteEntryMethodHelper() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.datacatalog.DeleteEntryRequest, com.google.protobuf.Empty>
+        getDeleteEntryMethod;
+    if ((getDeleteEntryMethod = DataCatalogGrpc.getDeleteEntryMethod) == null) {
+      synchronized (DataCatalogGrpc.class) {
+        if ((getDeleteEntryMethod = DataCatalogGrpc.getDeleteEntryMethod) == null) {
+          DataCatalogGrpc.getDeleteEntryMethod =
+              getDeleteEntryMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.datacatalog.DeleteEntryRequest, com.google.protobuf.Empty>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(
+                              "google.cloud.datacatalog.v1beta1.DataCatalog", "DeleteEntry"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.datacatalog.DeleteEntryRequest.getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.protobuf.Empty.getDefaultInstance()))
+                      .setSchemaDescriptor(new DataCatalogMethodDescriptorSupplier("DeleteEntry"))
+                      .build();
+        }
+      }
+    }
+    return getDeleteEntryMethod;
   }
 
   @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
@@ -1095,7 +1364,7 @@ public final class DataCatalogGrpc {
      * This is a custom method
      * (https://cloud.google.com/apis/design/custom_methods) and does not return
      * the complete resource, only the resource identifier and high level
-     * fields. Clients can subsequentally call Get methods.
+     * fields. Clients can subsequentally call `Get` methods.
      * Note that searches do not have full recall. There may be results that match
      * your query but are not returned, even in subsequent pages of results. These
      * missing results may vary across repeated calls to search. Do not rely on
@@ -1115,13 +1384,100 @@ public final class DataCatalogGrpc {
      *
      *
      * <pre>
+     * Alpha feature.
+     * Creates an EntryGroup.
+     * The user should enable the Data Catalog API in the project identified by
+     * the `parent` parameter (see [Data Catalog Resource Project]
+     * (/data-catalog/docs/concepts/resource-project) for more information).
+     * </pre>
+     */
+    public void createEntryGroup(
+        com.google.cloud.datacatalog.CreateEntryGroupRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.datacatalog.EntryGroup> responseObserver) {
+      asyncUnimplementedUnaryCall(getCreateEntryGroupMethodHelper(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Alpha feature.
+     * Gets an EntryGroup.
+     * </pre>
+     */
+    public void getEntryGroup(
+        com.google.cloud.datacatalog.GetEntryGroupRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.datacatalog.EntryGroup> responseObserver) {
+      asyncUnimplementedUnaryCall(getGetEntryGroupMethodHelper(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Alpha feature.
+     * Deletes an EntryGroup. Only entry groups that do not contain entries can be
+     * deleted. The user should enable the Data Catalog API in the project
+     * identified by the `name` parameter (see [Data Catalog Resource Project]
+     * (/data-catalog/docs/concepts/resource-project) for more information).
+     * </pre>
+     */
+    public void deleteEntryGroup(
+        com.google.cloud.datacatalog.DeleteEntryGroupRequest request,
+        io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
+      asyncUnimplementedUnaryCall(getDeleteEntryGroupMethodHelper(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Alpha feature.
+     * Creates an entry. Currently only entries of 'FILESET' type can be created.
+     * The user should enable the Data Catalog API in the project identified by
+     * the `parent` parameter (see [Data Catalog Resource Project]
+     * (/data-catalog/docs/concepts/resource-project) for more information).
+     * </pre>
+     */
+    public void createEntry(
+        com.google.cloud.datacatalog.CreateEntryRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.datacatalog.Entry> responseObserver) {
+      asyncUnimplementedUnaryCall(getCreateEntryMethodHelper(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Updates an existing entry.
+     * The user should enable the Data Catalog API in the project identified by
+     * the `entry.name` parameter (see [Data Catalog Resource Project]
+     * (/data-catalog/docs/concepts/resource-project) for more information).
      * </pre>
      */
     public void updateEntry(
         com.google.cloud.datacatalog.UpdateEntryRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.datacatalog.Entry> responseObserver) {
       asyncUnimplementedUnaryCall(getUpdateEntryMethodHelper(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Alpha feature.
+     * Deletes an existing entry. Only entries created through
+     * [CreateEntry][google.cloud.datacatalog.v1beta1.DataCatalog.CreateEntry]
+     * method can be deleted.
+     * The user should enable the Data Catalog API in the project identified by
+     * the `name` parameter (see [Data Catalog Resource Project]
+     * (/data-catalog/docs/concepts/resource-project) for more information).
+     * </pre>
+     */
+    public void deleteEntry(
+        com.google.cloud.datacatalog.DeleteEntryRequest request,
+        io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
+      asyncUnimplementedUnaryCall(getDeleteEntryMethodHelper(), responseObserver);
     }
 
     /**
@@ -1156,7 +1512,10 @@ public final class DataCatalogGrpc {
      *
      *
      * <pre>
-     * Creates a tag template.
+     * Creates a tag template. The user should enable the Data Catalog API in
+     * the project identified by the `parent` parameter (see [Data Catalog
+     * Resource Project](/data-catalog/docs/concepts/resource-project) for more
+     * information).
      * </pre>
      */
     public void createTagTemplate(
@@ -1185,6 +1544,9 @@ public final class DataCatalogGrpc {
      * Updates a tag template. This method cannot be used to update the fields of
      * a template. The tag template fields are represented as separate resources
      * and should be updated using their own create/update/delete methods.
+     * The user should enable the Data Catalog API in the project identified by
+     * the `tag_template.name` parameter (see [Data Catalog Resource Project]
+     * (/data-catalog/docs/concepts/resource-project) for more information).
      * </pre>
      */
     public void updateTagTemplate(
@@ -1198,6 +1560,9 @@ public final class DataCatalogGrpc {
      *
      * <pre>
      * Deletes a tag template and all tags using the template.
+     * The user should enable the Data Catalog API in the project identified by
+     * the `name` parameter (see [Data Catalog Resource Project]
+     * (/data-catalog/docs/concepts/resource-project) for more information).
      * </pre>
      */
     public void deleteTagTemplate(
@@ -1210,7 +1575,11 @@ public final class DataCatalogGrpc {
      *
      *
      * <pre>
-     * Creates a field in a tag template.
+     * Creates a field in a tag template. The user should enable the Data Catalog
+     * API in the project identified by the `parent` parameter (see
+     * [Data Catalog Resource
+     * Project](/data-catalog/docs/concepts/resource-project) for more
+     * information).
      * </pre>
      */
     public void createTagTemplateField(
@@ -1225,7 +1594,9 @@ public final class DataCatalogGrpc {
      *
      * <pre>
      * Updates a field in a tag template. This method cannot be used to update the
-     * field type.
+     * field type. The user should enable the Data Catalog API in the project
+     * identified by the `name` parameter (see [Data Catalog Resource Project]
+     * (/data-catalog/docs/concepts/resource-project) for more information).
      * </pre>
      */
     public void updateTagTemplateField(
@@ -1239,7 +1610,10 @@ public final class DataCatalogGrpc {
      *
      *
      * <pre>
-     * Renames a field in a tag template.
+     * Renames a field in a tag template. The user should enable the Data Catalog
+     * API in the project identified by the `name` parameter (see [Data Catalog
+     * Resource Project](/data-catalog/docs/concepts/resource-project) for more
+     * information).
      * </pre>
      */
     public void renameTagTemplateField(
@@ -1254,6 +1628,9 @@ public final class DataCatalogGrpc {
      *
      * <pre>
      * Deletes a field in a tag template and all uses of that field.
+     * The user should enable the Data Catalog API in the project identified by
+     * the `name` parameter (see [Data Catalog Resource Project]
+     * (/data-catalog/docs/concepts/resource-project) for more information).
      * </pre>
      */
     public void deleteTagTemplateField(
@@ -1267,6 +1644,12 @@ public final class DataCatalogGrpc {
      *
      * <pre>
      * Creates a tag on an [Entry][google.cloud.datacatalog.v1beta1.Entry].
+     * Note: The project identified by the `parent` parameter for the
+     * [tag](/data-catalog/docs/reference/rest/v1beta1/projects.locations.entryGroups.entries.tags/create#path-parameters)
+     * and the
+     * [tag
+     * template](/data-catalog/docs/reference/rest/v1beta1/projects.locations.tagTemplates/create#path-parameters)
+     * used to create the tag must be from the same organization.
      * </pre>
      */
     public void createTag(
@@ -1323,11 +1706,16 @@ public final class DataCatalogGrpc {
      * policy.
      * Supported resources are:
      *   - Tag templates.
+     *   - Entries.
+     *   - Entry groups.
      * Note, this method cannot be used to manage policies for BigQuery, Cloud
      * Pub/Sub and any external Google Cloud Platform resources synced to Cloud
      * Data Catalog.
      * Callers must have following Google IAM permission
-     * `datacatalog.tagTemplates.setIamPolicy` to set policies on tag templates.
+     *   - `datacatalog.tagTemplates.setIamPolicy` to set policies on tag
+     *     templates.
+     *   - `datacatalog.entries.setIamPolicy` to set policies on entries.
+     *   - `datacatalog.entryGroups.setIamPolicy` to set policies on entry groups.
      * </pre>
      */
     public void setIamPolicy(
@@ -1345,11 +1733,16 @@ public final class DataCatalogGrpc {
      * if the resource exists but does not have a policy set on it.
      * Supported resources are:
      *   - Tag templates.
+     *   - Entries.
+     *   - Entry groups.
      * Note, this method cannot be used to manage policies for BigQuery, Cloud
      * Pub/Sub and any external Google Cloud Platform resources synced to Cloud
      * Data Catalog.
      * Callers must have following Google IAM permission
-     * `datacatalog.tagTemplates.getIamPolicy` to get policies on tag templates.
+     *   - `datacatalog.tagTemplates.getIamPolicy` to get policies on tag
+     *     templates.
+     *   - `datacatalog.entries.getIamPolicy` to get policies on entries.
+     *   - `datacatalog.entryGroups.getIamPolicy` to get policies on entry groups.
      * </pre>
      */
     public void getIamPolicy(
@@ -1365,8 +1758,10 @@ public final class DataCatalogGrpc {
      * Returns the caller's permissions on a resource.
      * If the resource does not exist, an empty set of permissions is returned
      * (We don't return a `NOT_FOUND` error).
-     * Supported resource are:
-     *   - tag templates.
+     * Supported resources are:
+     *   - Tag templates.
+     *   - Entries.
+     *   - Entry groups.
      * Note, this method cannot be used to manage policies for BigQuery, Cloud
      * Pub/Sub and any external Google Cloud Platform resources synced to Cloud
      * Data Catalog.
@@ -1392,11 +1787,41 @@ public final class DataCatalogGrpc {
                       com.google.cloud.datacatalog.SearchCatalogResponse>(
                       this, METHODID_SEARCH_CATALOG)))
           .addMethod(
+              getCreateEntryGroupMethodHelper(),
+              asyncUnaryCall(
+                  new MethodHandlers<
+                      com.google.cloud.datacatalog.CreateEntryGroupRequest,
+                      com.google.cloud.datacatalog.EntryGroup>(this, METHODID_CREATE_ENTRY_GROUP)))
+          .addMethod(
+              getGetEntryGroupMethodHelper(),
+              asyncUnaryCall(
+                  new MethodHandlers<
+                      com.google.cloud.datacatalog.GetEntryGroupRequest,
+                      com.google.cloud.datacatalog.EntryGroup>(this, METHODID_GET_ENTRY_GROUP)))
+          .addMethod(
+              getDeleteEntryGroupMethodHelper(),
+              asyncUnaryCall(
+                  new MethodHandlers<
+                      com.google.cloud.datacatalog.DeleteEntryGroupRequest,
+                      com.google.protobuf.Empty>(this, METHODID_DELETE_ENTRY_GROUP)))
+          .addMethod(
+              getCreateEntryMethodHelper(),
+              asyncUnaryCall(
+                  new MethodHandlers<
+                      com.google.cloud.datacatalog.CreateEntryRequest,
+                      com.google.cloud.datacatalog.Entry>(this, METHODID_CREATE_ENTRY)))
+          .addMethod(
               getUpdateEntryMethodHelper(),
               asyncUnaryCall(
                   new MethodHandlers<
                       com.google.cloud.datacatalog.UpdateEntryRequest,
                       com.google.cloud.datacatalog.Entry>(this, METHODID_UPDATE_ENTRY)))
+          .addMethod(
+              getDeleteEntryMethodHelper(),
+              asyncUnaryCall(
+                  new MethodHandlers<
+                      com.google.cloud.datacatalog.DeleteEntryRequest, com.google.protobuf.Empty>(
+                      this, METHODID_DELETE_ENTRY)))
           .addMethod(
               getGetEntryMethodHelper(),
               asyncUnaryCall(
@@ -1540,7 +1965,7 @@ public final class DataCatalogGrpc {
      * This is a custom method
      * (https://cloud.google.com/apis/design/custom_methods) and does not return
      * the complete resource, only the resource identifier and high level
-     * fields. Clients can subsequentally call Get methods.
+     * fields. Clients can subsequentally call `Get` methods.
      * Note that searches do not have full recall. There may be results that match
      * your query but are not returned, even in subsequent pages of results. These
      * missing results may vary across repeated calls to search. Do not rely on
@@ -1563,7 +1988,87 @@ public final class DataCatalogGrpc {
      *
      *
      * <pre>
+     * Alpha feature.
+     * Creates an EntryGroup.
+     * The user should enable the Data Catalog API in the project identified by
+     * the `parent` parameter (see [Data Catalog Resource Project]
+     * (/data-catalog/docs/concepts/resource-project) for more information).
+     * </pre>
+     */
+    public void createEntryGroup(
+        com.google.cloud.datacatalog.CreateEntryGroupRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.datacatalog.EntryGroup> responseObserver) {
+      asyncUnaryCall(
+          getChannel().newCall(getCreateEntryGroupMethodHelper(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Alpha feature.
+     * Gets an EntryGroup.
+     * </pre>
+     */
+    public void getEntryGroup(
+        com.google.cloud.datacatalog.GetEntryGroupRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.datacatalog.EntryGroup> responseObserver) {
+      asyncUnaryCall(
+          getChannel().newCall(getGetEntryGroupMethodHelper(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Alpha feature.
+     * Deletes an EntryGroup. Only entry groups that do not contain entries can be
+     * deleted. The user should enable the Data Catalog API in the project
+     * identified by the `name` parameter (see [Data Catalog Resource Project]
+     * (/data-catalog/docs/concepts/resource-project) for more information).
+     * </pre>
+     */
+    public void deleteEntryGroup(
+        com.google.cloud.datacatalog.DeleteEntryGroupRequest request,
+        io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
+      asyncUnaryCall(
+          getChannel().newCall(getDeleteEntryGroupMethodHelper(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Alpha feature.
+     * Creates an entry. Currently only entries of 'FILESET' type can be created.
+     * The user should enable the Data Catalog API in the project identified by
+     * the `parent` parameter (see [Data Catalog Resource Project]
+     * (/data-catalog/docs/concepts/resource-project) for more information).
+     * </pre>
+     */
+    public void createEntry(
+        com.google.cloud.datacatalog.CreateEntryRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.datacatalog.Entry> responseObserver) {
+      asyncUnaryCall(
+          getChannel().newCall(getCreateEntryMethodHelper(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Updates an existing entry.
+     * The user should enable the Data Catalog API in the project identified by
+     * the `entry.name` parameter (see [Data Catalog Resource Project]
+     * (/data-catalog/docs/concepts/resource-project) for more information).
      * </pre>
      */
     public void updateEntry(
@@ -1571,6 +2076,28 @@ public final class DataCatalogGrpc {
         io.grpc.stub.StreamObserver<com.google.cloud.datacatalog.Entry> responseObserver) {
       asyncUnaryCall(
           getChannel().newCall(getUpdateEntryMethodHelper(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Alpha feature.
+     * Deletes an existing entry. Only entries created through
+     * [CreateEntry][google.cloud.datacatalog.v1beta1.DataCatalog.CreateEntry]
+     * method can be deleted.
+     * The user should enable the Data Catalog API in the project identified by
+     * the `name` parameter (see [Data Catalog Resource Project]
+     * (/data-catalog/docs/concepts/resource-project) for more information).
+     * </pre>
+     */
+    public void deleteEntry(
+        com.google.cloud.datacatalog.DeleteEntryRequest request,
+        io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
+      asyncUnaryCall(
+          getChannel().newCall(getDeleteEntryMethodHelper(), getCallOptions()),
           request,
           responseObserver);
     }
@@ -1613,7 +2140,10 @@ public final class DataCatalogGrpc {
      *
      *
      * <pre>
-     * Creates a tag template.
+     * Creates a tag template. The user should enable the Data Catalog API in
+     * the project identified by the `parent` parameter (see [Data Catalog
+     * Resource Project](/data-catalog/docs/concepts/resource-project) for more
+     * information).
      * </pre>
      */
     public void createTagTemplate(
@@ -1648,6 +2178,9 @@ public final class DataCatalogGrpc {
      * Updates a tag template. This method cannot be used to update the fields of
      * a template. The tag template fields are represented as separate resources
      * and should be updated using their own create/update/delete methods.
+     * The user should enable the Data Catalog API in the project identified by
+     * the `tag_template.name` parameter (see [Data Catalog Resource Project]
+     * (/data-catalog/docs/concepts/resource-project) for more information).
      * </pre>
      */
     public void updateTagTemplate(
@@ -1664,6 +2197,9 @@ public final class DataCatalogGrpc {
      *
      * <pre>
      * Deletes a tag template and all tags using the template.
+     * The user should enable the Data Catalog API in the project identified by
+     * the `name` parameter (see [Data Catalog Resource Project]
+     * (/data-catalog/docs/concepts/resource-project) for more information).
      * </pre>
      */
     public void deleteTagTemplate(
@@ -1679,7 +2215,11 @@ public final class DataCatalogGrpc {
      *
      *
      * <pre>
-     * Creates a field in a tag template.
+     * Creates a field in a tag template. The user should enable the Data Catalog
+     * API in the project identified by the `parent` parameter (see
+     * [Data Catalog Resource
+     * Project](/data-catalog/docs/concepts/resource-project) for more
+     * information).
      * </pre>
      */
     public void createTagTemplateField(
@@ -1697,7 +2237,9 @@ public final class DataCatalogGrpc {
      *
      * <pre>
      * Updates a field in a tag template. This method cannot be used to update the
-     * field type.
+     * field type. The user should enable the Data Catalog API in the project
+     * identified by the `name` parameter (see [Data Catalog Resource Project]
+     * (/data-catalog/docs/concepts/resource-project) for more information).
      * </pre>
      */
     public void updateTagTemplateField(
@@ -1714,7 +2256,10 @@ public final class DataCatalogGrpc {
      *
      *
      * <pre>
-     * Renames a field in a tag template.
+     * Renames a field in a tag template. The user should enable the Data Catalog
+     * API in the project identified by the `name` parameter (see [Data Catalog
+     * Resource Project](/data-catalog/docs/concepts/resource-project) for more
+     * information).
      * </pre>
      */
     public void renameTagTemplateField(
@@ -1732,6 +2277,9 @@ public final class DataCatalogGrpc {
      *
      * <pre>
      * Deletes a field in a tag template and all uses of that field.
+     * The user should enable the Data Catalog API in the project identified by
+     * the `name` parameter (see [Data Catalog Resource Project]
+     * (/data-catalog/docs/concepts/resource-project) for more information).
      * </pre>
      */
     public void deleteTagTemplateField(
@@ -1748,6 +2296,12 @@ public final class DataCatalogGrpc {
      *
      * <pre>
      * Creates a tag on an [Entry][google.cloud.datacatalog.v1beta1.Entry].
+     * Note: The project identified by the `parent` parameter for the
+     * [tag](/data-catalog/docs/reference/rest/v1beta1/projects.locations.entryGroups.entries.tags/create#path-parameters)
+     * and the
+     * [tag
+     * template](/data-catalog/docs/reference/rest/v1beta1/projects.locations.tagTemplates/create#path-parameters)
+     * used to create the tag must be from the same organization.
      * </pre>
      */
     public void createTag(
@@ -1816,11 +2370,16 @@ public final class DataCatalogGrpc {
      * policy.
      * Supported resources are:
      *   - Tag templates.
+     *   - Entries.
+     *   - Entry groups.
      * Note, this method cannot be used to manage policies for BigQuery, Cloud
      * Pub/Sub and any external Google Cloud Platform resources synced to Cloud
      * Data Catalog.
      * Callers must have following Google IAM permission
-     * `datacatalog.tagTemplates.setIamPolicy` to set policies on tag templates.
+     *   - `datacatalog.tagTemplates.setIamPolicy` to set policies on tag
+     *     templates.
+     *   - `datacatalog.entries.setIamPolicy` to set policies on entries.
+     *   - `datacatalog.entryGroups.setIamPolicy` to set policies on entry groups.
      * </pre>
      */
     public void setIamPolicy(
@@ -1841,11 +2400,16 @@ public final class DataCatalogGrpc {
      * if the resource exists but does not have a policy set on it.
      * Supported resources are:
      *   - Tag templates.
+     *   - Entries.
+     *   - Entry groups.
      * Note, this method cannot be used to manage policies for BigQuery, Cloud
      * Pub/Sub and any external Google Cloud Platform resources synced to Cloud
      * Data Catalog.
      * Callers must have following Google IAM permission
-     * `datacatalog.tagTemplates.getIamPolicy` to get policies on tag templates.
+     *   - `datacatalog.tagTemplates.getIamPolicy` to get policies on tag
+     *     templates.
+     *   - `datacatalog.entries.getIamPolicy` to get policies on entries.
+     *   - `datacatalog.entryGroups.getIamPolicy` to get policies on entry groups.
      * </pre>
      */
     public void getIamPolicy(
@@ -1864,8 +2428,10 @@ public final class DataCatalogGrpc {
      * Returns the caller's permissions on a resource.
      * If the resource does not exist, an empty set of permissions is returned
      * (We don't return a `NOT_FOUND` error).
-     * Supported resource are:
-     *   - tag templates.
+     * Supported resources are:
+     *   - Tag templates.
+     *   - Entries.
+     *   - Entry groups.
      * Note, this method cannot be used to manage policies for BigQuery, Cloud
      * Pub/Sub and any external Google Cloud Platform resources synced to Cloud
      * Data Catalog.
@@ -1917,7 +2483,7 @@ public final class DataCatalogGrpc {
      * This is a custom method
      * (https://cloud.google.com/apis/design/custom_methods) and does not return
      * the complete resource, only the resource identifier and high level
-     * fields. Clients can subsequentally call Get methods.
+     * fields. Clients can subsequentally call `Get` methods.
      * Note that searches do not have full recall. There may be results that match
      * your query but are not returned, even in subsequent pages of results. These
      * missing results may vary across repeated calls to search. Do not rely on
@@ -1936,13 +2502,100 @@ public final class DataCatalogGrpc {
      *
      *
      * <pre>
+     * Alpha feature.
+     * Creates an EntryGroup.
+     * The user should enable the Data Catalog API in the project identified by
+     * the `parent` parameter (see [Data Catalog Resource Project]
+     * (/data-catalog/docs/concepts/resource-project) for more information).
+     * </pre>
+     */
+    public com.google.cloud.datacatalog.EntryGroup createEntryGroup(
+        com.google.cloud.datacatalog.CreateEntryGroupRequest request) {
+      return blockingUnaryCall(
+          getChannel(), getCreateEntryGroupMethodHelper(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Alpha feature.
+     * Gets an EntryGroup.
+     * </pre>
+     */
+    public com.google.cloud.datacatalog.EntryGroup getEntryGroup(
+        com.google.cloud.datacatalog.GetEntryGroupRequest request) {
+      return blockingUnaryCall(
+          getChannel(), getGetEntryGroupMethodHelper(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Alpha feature.
+     * Deletes an EntryGroup. Only entry groups that do not contain entries can be
+     * deleted. The user should enable the Data Catalog API in the project
+     * identified by the `name` parameter (see [Data Catalog Resource Project]
+     * (/data-catalog/docs/concepts/resource-project) for more information).
+     * </pre>
+     */
+    public com.google.protobuf.Empty deleteEntryGroup(
+        com.google.cloud.datacatalog.DeleteEntryGroupRequest request) {
+      return blockingUnaryCall(
+          getChannel(), getDeleteEntryGroupMethodHelper(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Alpha feature.
+     * Creates an entry. Currently only entries of 'FILESET' type can be created.
+     * The user should enable the Data Catalog API in the project identified by
+     * the `parent` parameter (see [Data Catalog Resource Project]
+     * (/data-catalog/docs/concepts/resource-project) for more information).
+     * </pre>
+     */
+    public com.google.cloud.datacatalog.Entry createEntry(
+        com.google.cloud.datacatalog.CreateEntryRequest request) {
+      return blockingUnaryCall(
+          getChannel(), getCreateEntryMethodHelper(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Updates an existing entry.
+     * The user should enable the Data Catalog API in the project identified by
+     * the `entry.name` parameter (see [Data Catalog Resource Project]
+     * (/data-catalog/docs/concepts/resource-project) for more information).
      * </pre>
      */
     public com.google.cloud.datacatalog.Entry updateEntry(
         com.google.cloud.datacatalog.UpdateEntryRequest request) {
       return blockingUnaryCall(
           getChannel(), getUpdateEntryMethodHelper(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Alpha feature.
+     * Deletes an existing entry. Only entries created through
+     * [CreateEntry][google.cloud.datacatalog.v1beta1.DataCatalog.CreateEntry]
+     * method can be deleted.
+     * The user should enable the Data Catalog API in the project identified by
+     * the `name` parameter (see [Data Catalog Resource Project]
+     * (/data-catalog/docs/concepts/resource-project) for more information).
+     * </pre>
+     */
+    public com.google.protobuf.Empty deleteEntry(
+        com.google.cloud.datacatalog.DeleteEntryRequest request) {
+      return blockingUnaryCall(
+          getChannel(), getDeleteEntryMethodHelper(), getCallOptions(), request);
     }
 
     /**
@@ -1976,7 +2629,10 @@ public final class DataCatalogGrpc {
      *
      *
      * <pre>
-     * Creates a tag template.
+     * Creates a tag template. The user should enable the Data Catalog API in
+     * the project identified by the `parent` parameter (see [Data Catalog
+     * Resource Project](/data-catalog/docs/concepts/resource-project) for more
+     * information).
      * </pre>
      */
     public com.google.cloud.datacatalog.TagTemplate createTagTemplate(
@@ -2005,6 +2661,9 @@ public final class DataCatalogGrpc {
      * Updates a tag template. This method cannot be used to update the fields of
      * a template. The tag template fields are represented as separate resources
      * and should be updated using their own create/update/delete methods.
+     * The user should enable the Data Catalog API in the project identified by
+     * the `tag_template.name` parameter (see [Data Catalog Resource Project]
+     * (/data-catalog/docs/concepts/resource-project) for more information).
      * </pre>
      */
     public com.google.cloud.datacatalog.TagTemplate updateTagTemplate(
@@ -2018,6 +2677,9 @@ public final class DataCatalogGrpc {
      *
      * <pre>
      * Deletes a tag template and all tags using the template.
+     * The user should enable the Data Catalog API in the project identified by
+     * the `name` parameter (see [Data Catalog Resource Project]
+     * (/data-catalog/docs/concepts/resource-project) for more information).
      * </pre>
      */
     public com.google.protobuf.Empty deleteTagTemplate(
@@ -2030,7 +2692,11 @@ public final class DataCatalogGrpc {
      *
      *
      * <pre>
-     * Creates a field in a tag template.
+     * Creates a field in a tag template. The user should enable the Data Catalog
+     * API in the project identified by the `parent` parameter (see
+     * [Data Catalog Resource
+     * Project](/data-catalog/docs/concepts/resource-project) for more
+     * information).
      * </pre>
      */
     public com.google.cloud.datacatalog.TagTemplateField createTagTemplateField(
@@ -2044,7 +2710,9 @@ public final class DataCatalogGrpc {
      *
      * <pre>
      * Updates a field in a tag template. This method cannot be used to update the
-     * field type.
+     * field type. The user should enable the Data Catalog API in the project
+     * identified by the `name` parameter (see [Data Catalog Resource Project]
+     * (/data-catalog/docs/concepts/resource-project) for more information).
      * </pre>
      */
     public com.google.cloud.datacatalog.TagTemplateField updateTagTemplateField(
@@ -2057,7 +2725,10 @@ public final class DataCatalogGrpc {
      *
      *
      * <pre>
-     * Renames a field in a tag template.
+     * Renames a field in a tag template. The user should enable the Data Catalog
+     * API in the project identified by the `name` parameter (see [Data Catalog
+     * Resource Project](/data-catalog/docs/concepts/resource-project) for more
+     * information).
      * </pre>
      */
     public com.google.cloud.datacatalog.TagTemplateField renameTagTemplateField(
@@ -2071,6 +2742,9 @@ public final class DataCatalogGrpc {
      *
      * <pre>
      * Deletes a field in a tag template and all uses of that field.
+     * The user should enable the Data Catalog API in the project identified by
+     * the `name` parameter (see [Data Catalog Resource Project]
+     * (/data-catalog/docs/concepts/resource-project) for more information).
      * </pre>
      */
     public com.google.protobuf.Empty deleteTagTemplateField(
@@ -2084,6 +2758,12 @@ public final class DataCatalogGrpc {
      *
      * <pre>
      * Creates a tag on an [Entry][google.cloud.datacatalog.v1beta1.Entry].
+     * Note: The project identified by the `parent` parameter for the
+     * [tag](/data-catalog/docs/reference/rest/v1beta1/projects.locations.entryGroups.entries.tags/create#path-parameters)
+     * and the
+     * [tag
+     * template](/data-catalog/docs/reference/rest/v1beta1/projects.locations.tagTemplates/create#path-parameters)
+     * used to create the tag must be from the same organization.
      * </pre>
      */
     public com.google.cloud.datacatalog.Tag createTag(
@@ -2135,11 +2815,16 @@ public final class DataCatalogGrpc {
      * policy.
      * Supported resources are:
      *   - Tag templates.
+     *   - Entries.
+     *   - Entry groups.
      * Note, this method cannot be used to manage policies for BigQuery, Cloud
      * Pub/Sub and any external Google Cloud Platform resources synced to Cloud
      * Data Catalog.
      * Callers must have following Google IAM permission
-     * `datacatalog.tagTemplates.setIamPolicy` to set policies on tag templates.
+     *   - `datacatalog.tagTemplates.setIamPolicy` to set policies on tag
+     *     templates.
+     *   - `datacatalog.entries.setIamPolicy` to set policies on entries.
+     *   - `datacatalog.entryGroups.setIamPolicy` to set policies on entry groups.
      * </pre>
      */
     public com.google.iam.v1.Policy setIamPolicy(com.google.iam.v1.SetIamPolicyRequest request) {
@@ -2156,11 +2841,16 @@ public final class DataCatalogGrpc {
      * if the resource exists but does not have a policy set on it.
      * Supported resources are:
      *   - Tag templates.
+     *   - Entries.
+     *   - Entry groups.
      * Note, this method cannot be used to manage policies for BigQuery, Cloud
      * Pub/Sub and any external Google Cloud Platform resources synced to Cloud
      * Data Catalog.
      * Callers must have following Google IAM permission
-     * `datacatalog.tagTemplates.getIamPolicy` to get policies on tag templates.
+     *   - `datacatalog.tagTemplates.getIamPolicy` to get policies on tag
+     *     templates.
+     *   - `datacatalog.entries.getIamPolicy` to get policies on entries.
+     *   - `datacatalog.entryGroups.getIamPolicy` to get policies on entry groups.
      * </pre>
      */
     public com.google.iam.v1.Policy getIamPolicy(com.google.iam.v1.GetIamPolicyRequest request) {
@@ -2175,8 +2865,10 @@ public final class DataCatalogGrpc {
      * Returns the caller's permissions on a resource.
      * If the resource does not exist, an empty set of permissions is returned
      * (We don't return a `NOT_FOUND` error).
-     * Supported resource are:
-     *   - tag templates.
+     * Supported resources are:
+     *   - Tag templates.
+     *   - Entries.
+     *   - Entry groups.
      * Note, this method cannot be used to manage policies for BigQuery, Cloud
      * Pub/Sub and any external Google Cloud Platform resources synced to Cloud
      * Data Catalog.
@@ -2224,7 +2916,7 @@ public final class DataCatalogGrpc {
      * This is a custom method
      * (https://cloud.google.com/apis/design/custom_methods) and does not return
      * the complete resource, only the resource identifier and high level
-     * fields. Clients can subsequentally call Get methods.
+     * fields. Clients can subsequentally call `Get` methods.
      * Note that searches do not have full recall. There may be results that match
      * your query but are not returned, even in subsequent pages of results. These
      * missing results may vary across repeated calls to search. Do not rely on
@@ -2244,13 +2936,102 @@ public final class DataCatalogGrpc {
      *
      *
      * <pre>
+     * Alpha feature.
+     * Creates an EntryGroup.
+     * The user should enable the Data Catalog API in the project identified by
+     * the `parent` parameter (see [Data Catalog Resource Project]
+     * (/data-catalog/docs/concepts/resource-project) for more information).
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.datacatalog.EntryGroup>
+        createEntryGroup(com.google.cloud.datacatalog.CreateEntryGroupRequest request) {
+      return futureUnaryCall(
+          getChannel().newCall(getCreateEntryGroupMethodHelper(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Alpha feature.
+     * Gets an EntryGroup.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.datacatalog.EntryGroup>
+        getEntryGroup(com.google.cloud.datacatalog.GetEntryGroupRequest request) {
+      return futureUnaryCall(
+          getChannel().newCall(getGetEntryGroupMethodHelper(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Alpha feature.
+     * Deletes an EntryGroup. Only entry groups that do not contain entries can be
+     * deleted. The user should enable the Data Catalog API in the project
+     * identified by the `name` parameter (see [Data Catalog Resource Project]
+     * (/data-catalog/docs/concepts/resource-project) for more information).
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.protobuf.Empty>
+        deleteEntryGroup(com.google.cloud.datacatalog.DeleteEntryGroupRequest request) {
+      return futureUnaryCall(
+          getChannel().newCall(getDeleteEntryGroupMethodHelper(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Alpha feature.
+     * Creates an entry. Currently only entries of 'FILESET' type can be created.
+     * The user should enable the Data Catalog API in the project identified by
+     * the `parent` parameter (see [Data Catalog Resource Project]
+     * (/data-catalog/docs/concepts/resource-project) for more information).
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.cloud.datacatalog.Entry>
+        createEntry(com.google.cloud.datacatalog.CreateEntryRequest request) {
+      return futureUnaryCall(
+          getChannel().newCall(getCreateEntryMethodHelper(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Updates an existing entry.
+     * The user should enable the Data Catalog API in the project identified by
+     * the `entry.name` parameter (see [Data Catalog Resource Project]
+     * (/data-catalog/docs/concepts/resource-project) for more information).
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.cloud.datacatalog.Entry>
         updateEntry(com.google.cloud.datacatalog.UpdateEntryRequest request) {
       return futureUnaryCall(
           getChannel().newCall(getUpdateEntryMethodHelper(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Alpha feature.
+     * Deletes an existing entry. Only entries created through
+     * [CreateEntry][google.cloud.datacatalog.v1beta1.DataCatalog.CreateEntry]
+     * method can be deleted.
+     * The user should enable the Data Catalog API in the project identified by
+     * the `name` parameter (see [Data Catalog Resource Project]
+     * (/data-catalog/docs/concepts/resource-project) for more information).
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.protobuf.Empty>
+        deleteEntry(com.google.cloud.datacatalog.DeleteEntryRequest request) {
+      return futureUnaryCall(
+          getChannel().newCall(getDeleteEntryMethodHelper(), getCallOptions()), request);
     }
 
     /**
@@ -2285,7 +3066,10 @@ public final class DataCatalogGrpc {
      *
      *
      * <pre>
-     * Creates a tag template.
+     * Creates a tag template. The user should enable the Data Catalog API in
+     * the project identified by the `parent` parameter (see [Data Catalog
+     * Resource Project](/data-catalog/docs/concepts/resource-project) for more
+     * information).
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<
@@ -2316,6 +3100,9 @@ public final class DataCatalogGrpc {
      * Updates a tag template. This method cannot be used to update the fields of
      * a template. The tag template fields are represented as separate resources
      * and should be updated using their own create/update/delete methods.
+     * The user should enable the Data Catalog API in the project identified by
+     * the `tag_template.name` parameter (see [Data Catalog Resource Project]
+     * (/data-catalog/docs/concepts/resource-project) for more information).
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<
@@ -2330,6 +3117,9 @@ public final class DataCatalogGrpc {
      *
      * <pre>
      * Deletes a tag template and all tags using the template.
+     * The user should enable the Data Catalog API in the project identified by
+     * the `name` parameter (see [Data Catalog Resource Project]
+     * (/data-catalog/docs/concepts/resource-project) for more information).
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.protobuf.Empty>
@@ -2342,7 +3132,11 @@ public final class DataCatalogGrpc {
      *
      *
      * <pre>
-     * Creates a field in a tag template.
+     * Creates a field in a tag template. The user should enable the Data Catalog
+     * API in the project identified by the `parent` parameter (see
+     * [Data Catalog Resource
+     * Project](/data-catalog/docs/concepts/resource-project) for more
+     * information).
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<
@@ -2357,7 +3151,9 @@ public final class DataCatalogGrpc {
      *
      * <pre>
      * Updates a field in a tag template. This method cannot be used to update the
-     * field type.
+     * field type. The user should enable the Data Catalog API in the project
+     * identified by the `name` parameter (see [Data Catalog Resource Project]
+     * (/data-catalog/docs/concepts/resource-project) for more information).
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<
@@ -2371,7 +3167,10 @@ public final class DataCatalogGrpc {
      *
      *
      * <pre>
-     * Renames a field in a tag template.
+     * Renames a field in a tag template. The user should enable the Data Catalog
+     * API in the project identified by the `name` parameter (see [Data Catalog
+     * Resource Project](/data-catalog/docs/concepts/resource-project) for more
+     * information).
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<
@@ -2386,6 +3185,9 @@ public final class DataCatalogGrpc {
      *
      * <pre>
      * Deletes a field in a tag template and all uses of that field.
+     * The user should enable the Data Catalog API in the project identified by
+     * the `name` parameter (see [Data Catalog Resource Project]
+     * (/data-catalog/docs/concepts/resource-project) for more information).
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.protobuf.Empty>
@@ -2399,6 +3201,12 @@ public final class DataCatalogGrpc {
      *
      * <pre>
      * Creates a tag on an [Entry][google.cloud.datacatalog.v1beta1.Entry].
+     * Note: The project identified by the `parent` parameter for the
+     * [tag](/data-catalog/docs/reference/rest/v1beta1/projects.locations.entryGroups.entries.tags/create#path-parameters)
+     * and the
+     * [tag
+     * template](/data-catalog/docs/reference/rest/v1beta1/projects.locations.tagTemplates/create#path-parameters)
+     * used to create the tag must be from the same organization.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.cloud.datacatalog.Tag>
@@ -2455,11 +3263,16 @@ public final class DataCatalogGrpc {
      * policy.
      * Supported resources are:
      *   - Tag templates.
+     *   - Entries.
+     *   - Entry groups.
      * Note, this method cannot be used to manage policies for BigQuery, Cloud
      * Pub/Sub and any external Google Cloud Platform resources synced to Cloud
      * Data Catalog.
      * Callers must have following Google IAM permission
-     * `datacatalog.tagTemplates.setIamPolicy` to set policies on tag templates.
+     *   - `datacatalog.tagTemplates.setIamPolicy` to set policies on tag
+     *     templates.
+     *   - `datacatalog.entries.setIamPolicy` to set policies on entries.
+     *   - `datacatalog.entryGroups.setIamPolicy` to set policies on entry groups.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.iam.v1.Policy>
@@ -2477,11 +3290,16 @@ public final class DataCatalogGrpc {
      * if the resource exists but does not have a policy set on it.
      * Supported resources are:
      *   - Tag templates.
+     *   - Entries.
+     *   - Entry groups.
      * Note, this method cannot be used to manage policies for BigQuery, Cloud
      * Pub/Sub and any external Google Cloud Platform resources synced to Cloud
      * Data Catalog.
      * Callers must have following Google IAM permission
-     * `datacatalog.tagTemplates.getIamPolicy` to get policies on tag templates.
+     *   - `datacatalog.tagTemplates.getIamPolicy` to get policies on tag
+     *     templates.
+     *   - `datacatalog.entries.getIamPolicy` to get policies on entries.
+     *   - `datacatalog.entryGroups.getIamPolicy` to get policies on entry groups.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.iam.v1.Policy>
@@ -2497,8 +3315,10 @@ public final class DataCatalogGrpc {
      * Returns the caller's permissions on a resource.
      * If the resource does not exist, an empty set of permissions is returned
      * (We don't return a `NOT_FOUND` error).
-     * Supported resource are:
-     *   - tag templates.
+     * Supported resources are:
+     *   - Tag templates.
+     *   - Entries.
+     *   - Entry groups.
      * Note, this method cannot be used to manage policies for BigQuery, Cloud
      * Pub/Sub and any external Google Cloud Platform resources synced to Cloud
      * Data Catalog.
@@ -2515,24 +3335,29 @@ public final class DataCatalogGrpc {
   }
 
   private static final int METHODID_SEARCH_CATALOG = 0;
-  private static final int METHODID_UPDATE_ENTRY = 1;
-  private static final int METHODID_GET_ENTRY = 2;
-  private static final int METHODID_LOOKUP_ENTRY = 3;
-  private static final int METHODID_CREATE_TAG_TEMPLATE = 4;
-  private static final int METHODID_GET_TAG_TEMPLATE = 5;
-  private static final int METHODID_UPDATE_TAG_TEMPLATE = 6;
-  private static final int METHODID_DELETE_TAG_TEMPLATE = 7;
-  private static final int METHODID_CREATE_TAG_TEMPLATE_FIELD = 8;
-  private static final int METHODID_UPDATE_TAG_TEMPLATE_FIELD = 9;
-  private static final int METHODID_RENAME_TAG_TEMPLATE_FIELD = 10;
-  private static final int METHODID_DELETE_TAG_TEMPLATE_FIELD = 11;
-  private static final int METHODID_CREATE_TAG = 12;
-  private static final int METHODID_UPDATE_TAG = 13;
-  private static final int METHODID_DELETE_TAG = 14;
-  private static final int METHODID_LIST_TAGS = 15;
-  private static final int METHODID_SET_IAM_POLICY = 16;
-  private static final int METHODID_GET_IAM_POLICY = 17;
-  private static final int METHODID_TEST_IAM_PERMISSIONS = 18;
+  private static final int METHODID_CREATE_ENTRY_GROUP = 1;
+  private static final int METHODID_GET_ENTRY_GROUP = 2;
+  private static final int METHODID_DELETE_ENTRY_GROUP = 3;
+  private static final int METHODID_CREATE_ENTRY = 4;
+  private static final int METHODID_UPDATE_ENTRY = 5;
+  private static final int METHODID_DELETE_ENTRY = 6;
+  private static final int METHODID_GET_ENTRY = 7;
+  private static final int METHODID_LOOKUP_ENTRY = 8;
+  private static final int METHODID_CREATE_TAG_TEMPLATE = 9;
+  private static final int METHODID_GET_TAG_TEMPLATE = 10;
+  private static final int METHODID_UPDATE_TAG_TEMPLATE = 11;
+  private static final int METHODID_DELETE_TAG_TEMPLATE = 12;
+  private static final int METHODID_CREATE_TAG_TEMPLATE_FIELD = 13;
+  private static final int METHODID_UPDATE_TAG_TEMPLATE_FIELD = 14;
+  private static final int METHODID_RENAME_TAG_TEMPLATE_FIELD = 15;
+  private static final int METHODID_DELETE_TAG_TEMPLATE_FIELD = 16;
+  private static final int METHODID_CREATE_TAG = 17;
+  private static final int METHODID_UPDATE_TAG = 18;
+  private static final int METHODID_DELETE_TAG = 19;
+  private static final int METHODID_LIST_TAGS = 20;
+  private static final int METHODID_SET_IAM_POLICY = 21;
+  private static final int METHODID_GET_IAM_POLICY = 22;
+  private static final int METHODID_TEST_IAM_PERMISSIONS = 23;
 
   private static final class MethodHandlers<Req, Resp>
       implements io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -2557,10 +3382,37 @@ public final class DataCatalogGrpc {
               (io.grpc.stub.StreamObserver<com.google.cloud.datacatalog.SearchCatalogResponse>)
                   responseObserver);
           break;
+        case METHODID_CREATE_ENTRY_GROUP:
+          serviceImpl.createEntryGroup(
+              (com.google.cloud.datacatalog.CreateEntryGroupRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.cloud.datacatalog.EntryGroup>)
+                  responseObserver);
+          break;
+        case METHODID_GET_ENTRY_GROUP:
+          serviceImpl.getEntryGroup(
+              (com.google.cloud.datacatalog.GetEntryGroupRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.cloud.datacatalog.EntryGroup>)
+                  responseObserver);
+          break;
+        case METHODID_DELETE_ENTRY_GROUP:
+          serviceImpl.deleteEntryGroup(
+              (com.google.cloud.datacatalog.DeleteEntryGroupRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.protobuf.Empty>) responseObserver);
+          break;
+        case METHODID_CREATE_ENTRY:
+          serviceImpl.createEntry(
+              (com.google.cloud.datacatalog.CreateEntryRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.cloud.datacatalog.Entry>) responseObserver);
+          break;
         case METHODID_UPDATE_ENTRY:
           serviceImpl.updateEntry(
               (com.google.cloud.datacatalog.UpdateEntryRequest) request,
               (io.grpc.stub.StreamObserver<com.google.cloud.datacatalog.Entry>) responseObserver);
+          break;
+        case METHODID_DELETE_ENTRY:
+          serviceImpl.deleteEntry(
+              (com.google.cloud.datacatalog.DeleteEntryRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.protobuf.Empty>) responseObserver);
           break;
         case METHODID_GET_ENTRY:
           serviceImpl.getEntry(
@@ -2720,7 +3572,12 @@ public final class DataCatalogGrpc {
                   io.grpc.ServiceDescriptor.newBuilder(SERVICE_NAME)
                       .setSchemaDescriptor(new DataCatalogFileDescriptorSupplier())
                       .addMethod(getSearchCatalogMethodHelper())
+                      .addMethod(getCreateEntryGroupMethodHelper())
+                      .addMethod(getGetEntryGroupMethodHelper())
+                      .addMethod(getDeleteEntryGroupMethodHelper())
+                      .addMethod(getCreateEntryMethodHelper())
                       .addMethod(getUpdateEntryMethodHelper())
+                      .addMethod(getDeleteEntryMethodHelper())
                       .addMethod(getGetEntryMethodHelper())
                       .addMethod(getLookupEntryMethodHelper())
                       .addMethod(getCreateTagTemplateMethodHelper())

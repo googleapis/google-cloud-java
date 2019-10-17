@@ -99,7 +99,7 @@ public final class SentimentAnalysisRequestConfig extends com.google.protobuf.Ge
    * `query_text`.
    * </pre>
    *
-   * <code>bool analyze_query_text_sentiment = 1;</code>
+   * <code>bool analyze_query_text_sentiment = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   public boolean getAnalyzeQueryTextSentiment() {
     return analyzeQueryTextSentiment_;
@@ -436,7 +436,7 @@ public final class SentimentAnalysisRequestConfig extends com.google.protobuf.Ge
      * `query_text`.
      * </pre>
      *
-     * <code>bool analyze_query_text_sentiment = 1;</code>
+     * <code>bool analyze_query_text_sentiment = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public boolean getAnalyzeQueryTextSentiment() {
       return analyzeQueryTextSentiment_;
@@ -450,7 +450,7 @@ public final class SentimentAnalysisRequestConfig extends com.google.protobuf.Ge
      * `query_text`.
      * </pre>
      *
-     * <code>bool analyze_query_text_sentiment = 1;</code>
+     * <code>bool analyze_query_text_sentiment = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public Builder setAnalyzeQueryTextSentiment(boolean value) {
 
@@ -467,7 +467,7 @@ public final class SentimentAnalysisRequestConfig extends com.google.protobuf.Ge
      * `query_text`.
      * </pre>
      *
-     * <code>bool analyze_query_text_sentiment = 1;</code>
+     * <code>bool analyze_query_text_sentiment = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public Builder clearAnalyzeQueryTextSentiment() {
 

@@ -16,7 +16,8 @@
 
 package com.google.cloud.bigquery;
 
-import static com.google.common.base.Preconditions.checkNotNull;
+import static com.google.common.base.Preconditions.checkArgument;
+import static com.google.common.base.Strings.isNullOrEmpty;
 
 import com.google.common.base.MoreObjects;
 import java.io.Serializable;
@@ -116,7 +117,8 @@ public class FormatOptions implements Serializable {
 
   /** Default options for the provided format. */
   public static FormatOptions of(String format) {
-    if (checkNotNull(format).equals(CSV)) {
+    checkArgument(!isNullOrEmpty(format), "Provided format is null or empty");
+    if (format.equals(CSV)) {
       return csv();
     } else if (format.equals(DATASTORE_BACKUP)) {
       return datastoreBackup();

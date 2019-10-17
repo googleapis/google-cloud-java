@@ -82,9 +82,10 @@ public class RecaptchaEnterpriseServiceV1Beta1ClientTest {
   @Test
   @SuppressWarnings("all")
   public void createAssessmentTest() {
-    String name = "name3373707";
+    AssessmentName name = AssessmentName.of("[PROJECT]", "[ASSESSMENT]");
     float score = 1.0926453E7F;
-    Assessment expectedResponse = Assessment.newBuilder().setName(name).setScore(score).build();
+    Assessment expectedResponse =
+        Assessment.newBuilder().setName(name.toString()).setScore(score).build();
     mockRecaptchaEnterpriseServiceV1Beta1.addResponse(expectedResponse);
 
     ProjectName parent = ProjectName.of("[PROJECT]");

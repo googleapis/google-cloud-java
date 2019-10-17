@@ -7,7 +7,6 @@ package com.google.cloud.talent.v4beta1;
  *
  *
  * <pre>
- * Input only.
  * Create job request.
  * </pre>
  *
@@ -115,13 +114,12 @@ public final class CreateJobRequest extends com.google.protobuf.GeneratedMessage
    *
    * <pre>
    * Required. The resource name of the tenant under which the job is created.
-   * The format is "projects/{project_id}/tenants/{tenant_id}", for example,
-   * "projects/api-test-project/tenant/foo".
-   * Tenant id is optional and a default tenant is created if unspecified, for
-   * example, "projects/api-test-project".
+   * The format is "projects/{project_id}/tenants/{tenant_id}". For example,
+   * "projects/foo/tenant/bar". If tenant id is unspecified a default tenant
+   * is created. For example, "projects/foo".
    * </pre>
    *
-   * <code>string parent = 1;</code>
+   * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   public java.lang.String getParent() {
     java.lang.Object ref = parent_;
@@ -139,13 +137,12 @@ public final class CreateJobRequest extends com.google.protobuf.GeneratedMessage
    *
    * <pre>
    * Required. The resource name of the tenant under which the job is created.
-   * The format is "projects/{project_id}/tenants/{tenant_id}", for example,
-   * "projects/api-test-project/tenant/foo".
-   * Tenant id is optional and a default tenant is created if unspecified, for
-   * example, "projects/api-test-project".
+   * The format is "projects/{project_id}/tenants/{tenant_id}". For example,
+   * "projects/foo/tenant/bar". If tenant id is unspecified a default tenant
+   * is created. For example, "projects/foo".
    * </pre>
    *
-   * <code>string parent = 1;</code>
+   * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   public com.google.protobuf.ByteString getParentBytes() {
     java.lang.Object ref = parent_;
@@ -168,7 +165,8 @@ public final class CreateJobRequest extends com.google.protobuf.GeneratedMessage
    * Required. The Job to be created.
    * </pre>
    *
-   * <code>.google.cloud.talent.v4beta1.Job job = 2;</code>
+   * <code>.google.cloud.talent.v4beta1.Job job = 2 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   public boolean hasJob() {
     return job_ != null;
@@ -180,7 +178,8 @@ public final class CreateJobRequest extends com.google.protobuf.GeneratedMessage
    * Required. The Job to be created.
    * </pre>
    *
-   * <code>.google.cloud.talent.v4beta1.Job job = 2;</code>
+   * <code>.google.cloud.talent.v4beta1.Job job = 2 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   public com.google.cloud.talent.v4beta1.Job getJob() {
     return job_ == null ? com.google.cloud.talent.v4beta1.Job.getDefaultInstance() : job_;
@@ -192,7 +191,8 @@ public final class CreateJobRequest extends com.google.protobuf.GeneratedMessage
    * Required. The Job to be created.
    * </pre>
    *
-   * <code>.google.cloud.talent.v4beta1.Job job = 2;</code>
+   * <code>.google.cloud.talent.v4beta1.Job job = 2 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   public com.google.cloud.talent.v4beta1.JobOrBuilder getJobOrBuilder() {
     return getJob();
@@ -375,7 +375,6 @@ public final class CreateJobRequest extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Input only.
    * Create job request.
    * </pre>
    *
@@ -550,13 +549,12 @@ public final class CreateJobRequest extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Required. The resource name of the tenant under which the job is created.
-     * The format is "projects/{project_id}/tenants/{tenant_id}", for example,
-     * "projects/api-test-project/tenant/foo".
-     * Tenant id is optional and a default tenant is created if unspecified, for
-     * example, "projects/api-test-project".
+     * The format is "projects/{project_id}/tenants/{tenant_id}". For example,
+     * "projects/foo/tenant/bar". If tenant id is unspecified a default tenant
+     * is created. For example, "projects/foo".
      * </pre>
      *
-     * <code>string parent = 1;</code>
+     * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public java.lang.String getParent() {
       java.lang.Object ref = parent_;
@@ -574,13 +572,12 @@ public final class CreateJobRequest extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Required. The resource name of the tenant under which the job is created.
-     * The format is "projects/{project_id}/tenants/{tenant_id}", for example,
-     * "projects/api-test-project/tenant/foo".
-     * Tenant id is optional and a default tenant is created if unspecified, for
-     * example, "projects/api-test-project".
+     * The format is "projects/{project_id}/tenants/{tenant_id}". For example,
+     * "projects/foo/tenant/bar". If tenant id is unspecified a default tenant
+     * is created. For example, "projects/foo".
      * </pre>
      *
-     * <code>string parent = 1;</code>
+     * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public com.google.protobuf.ByteString getParentBytes() {
       java.lang.Object ref = parent_;
@@ -598,13 +595,12 @@ public final class CreateJobRequest extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Required. The resource name of the tenant under which the job is created.
-     * The format is "projects/{project_id}/tenants/{tenant_id}", for example,
-     * "projects/api-test-project/tenant/foo".
-     * Tenant id is optional and a default tenant is created if unspecified, for
-     * example, "projects/api-test-project".
+     * The format is "projects/{project_id}/tenants/{tenant_id}". For example,
+     * "projects/foo/tenant/bar". If tenant id is unspecified a default tenant
+     * is created. For example, "projects/foo".
      * </pre>
      *
-     * <code>string parent = 1;</code>
+     * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder setParent(java.lang.String value) {
       if (value == null) {
@@ -620,13 +616,12 @@ public final class CreateJobRequest extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Required. The resource name of the tenant under which the job is created.
-     * The format is "projects/{project_id}/tenants/{tenant_id}", for example,
-     * "projects/api-test-project/tenant/foo".
-     * Tenant id is optional and a default tenant is created if unspecified, for
-     * example, "projects/api-test-project".
+     * The format is "projects/{project_id}/tenants/{tenant_id}". For example,
+     * "projects/foo/tenant/bar". If tenant id is unspecified a default tenant
+     * is created. For example, "projects/foo".
      * </pre>
      *
-     * <code>string parent = 1;</code>
+     * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder clearParent() {
 
@@ -639,13 +634,12 @@ public final class CreateJobRequest extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Required. The resource name of the tenant under which the job is created.
-     * The format is "projects/{project_id}/tenants/{tenant_id}", for example,
-     * "projects/api-test-project/tenant/foo".
-     * Tenant id is optional and a default tenant is created if unspecified, for
-     * example, "projects/api-test-project".
+     * The format is "projects/{project_id}/tenants/{tenant_id}". For example,
+     * "projects/foo/tenant/bar". If tenant id is unspecified a default tenant
+     * is created. For example, "projects/foo".
      * </pre>
      *
-     * <code>string parent = 1;</code>
+     * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder setParentBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -671,7 +665,8 @@ public final class CreateJobRequest extends com.google.protobuf.GeneratedMessage
      * Required. The Job to be created.
      * </pre>
      *
-     * <code>.google.cloud.talent.v4beta1.Job job = 2;</code>
+     * <code>.google.cloud.talent.v4beta1.Job job = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public boolean hasJob() {
       return jobBuilder_ != null || job_ != null;
@@ -683,7 +678,8 @@ public final class CreateJobRequest extends com.google.protobuf.GeneratedMessage
      * Required. The Job to be created.
      * </pre>
      *
-     * <code>.google.cloud.talent.v4beta1.Job job = 2;</code>
+     * <code>.google.cloud.talent.v4beta1.Job job = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public com.google.cloud.talent.v4beta1.Job getJob() {
       if (jobBuilder_ == null) {
@@ -699,7 +695,8 @@ public final class CreateJobRequest extends com.google.protobuf.GeneratedMessage
      * Required. The Job to be created.
      * </pre>
      *
-     * <code>.google.cloud.talent.v4beta1.Job job = 2;</code>
+     * <code>.google.cloud.talent.v4beta1.Job job = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder setJob(com.google.cloud.talent.v4beta1.Job value) {
       if (jobBuilder_ == null) {
@@ -721,7 +718,8 @@ public final class CreateJobRequest extends com.google.protobuf.GeneratedMessage
      * Required. The Job to be created.
      * </pre>
      *
-     * <code>.google.cloud.talent.v4beta1.Job job = 2;</code>
+     * <code>.google.cloud.talent.v4beta1.Job job = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder setJob(com.google.cloud.talent.v4beta1.Job.Builder builderForValue) {
       if (jobBuilder_ == null) {
@@ -740,7 +738,8 @@ public final class CreateJobRequest extends com.google.protobuf.GeneratedMessage
      * Required. The Job to be created.
      * </pre>
      *
-     * <code>.google.cloud.talent.v4beta1.Job job = 2;</code>
+     * <code>.google.cloud.talent.v4beta1.Job job = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder mergeJob(com.google.cloud.talent.v4beta1.Job value) {
       if (jobBuilder_ == null) {
@@ -764,7 +763,8 @@ public final class CreateJobRequest extends com.google.protobuf.GeneratedMessage
      * Required. The Job to be created.
      * </pre>
      *
-     * <code>.google.cloud.talent.v4beta1.Job job = 2;</code>
+     * <code>.google.cloud.talent.v4beta1.Job job = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder clearJob() {
       if (jobBuilder_ == null) {
@@ -784,7 +784,8 @@ public final class CreateJobRequest extends com.google.protobuf.GeneratedMessage
      * Required. The Job to be created.
      * </pre>
      *
-     * <code>.google.cloud.talent.v4beta1.Job job = 2;</code>
+     * <code>.google.cloud.talent.v4beta1.Job job = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public com.google.cloud.talent.v4beta1.Job.Builder getJobBuilder() {
 
@@ -798,7 +799,8 @@ public final class CreateJobRequest extends com.google.protobuf.GeneratedMessage
      * Required. The Job to be created.
      * </pre>
      *
-     * <code>.google.cloud.talent.v4beta1.Job job = 2;</code>
+     * <code>.google.cloud.talent.v4beta1.Job job = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public com.google.cloud.talent.v4beta1.JobOrBuilder getJobOrBuilder() {
       if (jobBuilder_ != null) {
@@ -814,7 +816,8 @@ public final class CreateJobRequest extends com.google.protobuf.GeneratedMessage
      * Required. The Job to be created.
      * </pre>
      *
-     * <code>.google.cloud.talent.v4beta1.Job job = 2;</code>
+     * <code>.google.cloud.talent.v4beta1.Job job = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.talent.v4beta1.Job,

@@ -30,11 +30,14 @@
  * <pre>
  * <code>
  * try (WebSecurityScannerClient webSecurityScannerClient = WebSecurityScannerClient.create()) {
- *   String formattedParent = WebSecurityScannerClient.formatProjectName("[PROJECT]");
+ *   ProjectName parent = ProjectName.of("[PROJECT]");
  *   ScanConfig scanConfig = ScanConfig.newBuilder().build();
- *   ScanConfig response = webSecurityScannerClient.createScanConfig(formattedParent, scanConfig);
+ *   ScanConfig response = webSecurityScannerClient.createScanConfig(parent, scanConfig);
  * }
  * </code>
  * </pre>
  */
+@Generated("by gapic-generator")
 package com.google.cloud.websecurityscanner.v1beta;
+
+import javax.annotation.Generated;

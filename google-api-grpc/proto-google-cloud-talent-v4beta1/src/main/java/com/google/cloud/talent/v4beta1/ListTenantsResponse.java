@@ -7,7 +7,6 @@ package com.google.cloud.talent.v4beta1;
  *
  *
  * <pre>
- * Output only.
  * The List tenants response object.
  * </pre>
  *
@@ -463,7 +462,6 @@ public final class ListTenantsResponse extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * Output only.
    * The List tenants response object.
    * </pre>
    *

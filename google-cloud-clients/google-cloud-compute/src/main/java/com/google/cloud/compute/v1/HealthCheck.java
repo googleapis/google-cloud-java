@@ -44,6 +44,7 @@ public final class HealthCheck implements ApiMessage {
   private final String id;
   private final String kind;
   private final String name;
+  private final String region;
   private final String selfLink;
   private final SSLHealthCheck sslHealthCheck;
   private final TCPHealthCheck tcpHealthCheck;
@@ -62,6 +63,7 @@ public final class HealthCheck implements ApiMessage {
     this.id = null;
     this.kind = null;
     this.name = null;
+    this.region = null;
     this.selfLink = null;
     this.sslHealthCheck = null;
     this.tcpHealthCheck = null;
@@ -81,6 +83,7 @@ public final class HealthCheck implements ApiMessage {
       String id,
       String kind,
       String name,
+      String region,
       String selfLink,
       SSLHealthCheck sslHealthCheck,
       TCPHealthCheck tcpHealthCheck,
@@ -97,6 +100,7 @@ public final class HealthCheck implements ApiMessage {
     this.id = id;
     this.kind = kind;
     this.name = name;
+    this.region = region;
     this.selfLink = selfLink;
     this.sslHealthCheck = sslHealthCheck;
     this.tcpHealthCheck = tcpHealthCheck;
@@ -136,6 +140,9 @@ public final class HealthCheck implements ApiMessage {
     }
     if ("name".equals(fieldName)) {
       return name;
+    }
+    if ("region".equals(fieldName)) {
+      return region;
     }
     if ("selfLink".equals(fieldName)) {
       return selfLink;
@@ -236,6 +243,13 @@ public final class HealthCheck implements ApiMessage {
     return name;
   }
 
+  /**
+   * [Output Only] Region where the health check resides. Not applicable to global health checks.
+   */
+  public String getRegion() {
+    return region;
+  }
+
   /** [Output Only] Server-defined URL for the resource. */
   public String getSelfLink() {
     return selfLink;
@@ -307,6 +321,7 @@ public final class HealthCheck implements ApiMessage {
     private String id;
     private String kind;
     private String name;
+    private String region;
     private String selfLink;
     private SSLHealthCheck sslHealthCheck;
     private TCPHealthCheck tcpHealthCheck;
@@ -348,6 +363,9 @@ public final class HealthCheck implements ApiMessage {
       if (other.getName() != null) {
         this.name = other.name;
       }
+      if (other.getRegion() != null) {
+        this.region = other.region;
+      }
       if (other.getSelfLink() != null) {
         this.selfLink = other.selfLink;
       }
@@ -380,6 +398,7 @@ public final class HealthCheck implements ApiMessage {
       this.id = source.id;
       this.kind = source.kind;
       this.name = source.name;
+      this.region = source.region;
       this.selfLink = source.selfLink;
       this.sslHealthCheck = source.sslHealthCheck;
       this.tcpHealthCheck = source.tcpHealthCheck;
@@ -520,6 +539,21 @@ public final class HealthCheck implements ApiMessage {
       return this;
     }
 
+    /**
+     * [Output Only] Region where the health check resides. Not applicable to global health checks.
+     */
+    public String getRegion() {
+      return region;
+    }
+
+    /**
+     * [Output Only] Region where the health check resides. Not applicable to global health checks.
+     */
+    public Builder setRegion(String region) {
+      this.region = region;
+      return this;
+    }
+
     /** [Output Only] Server-defined URL for the resource. */
     public String getSelfLink() {
       return selfLink;
@@ -615,6 +649,7 @@ public final class HealthCheck implements ApiMessage {
           id,
           kind,
           name,
+          region,
           selfLink,
           sslHealthCheck,
           tcpHealthCheck,
@@ -635,6 +670,7 @@ public final class HealthCheck implements ApiMessage {
       newBuilder.setId(this.id);
       newBuilder.setKind(this.kind);
       newBuilder.setName(this.name);
+      newBuilder.setRegion(this.region);
       newBuilder.setSelfLink(this.selfLink);
       newBuilder.setSslHealthCheck(this.sslHealthCheck);
       newBuilder.setTcpHealthCheck(this.tcpHealthCheck);
@@ -678,6 +714,9 @@ public final class HealthCheck implements ApiMessage {
         + "name="
         + name
         + ", "
+        + "region="
+        + region
+        + ", "
         + "selfLink="
         + selfLink
         + ", "
@@ -715,6 +754,7 @@ public final class HealthCheck implements ApiMessage {
           && Objects.equals(this.id, that.getId())
           && Objects.equals(this.kind, that.getKind())
           && Objects.equals(this.name, that.getName())
+          && Objects.equals(this.region, that.getRegion())
           && Objects.equals(this.selfLink, that.getSelfLink())
           && Objects.equals(this.sslHealthCheck, that.getSslHealthCheck())
           && Objects.equals(this.tcpHealthCheck, that.getTcpHealthCheck())
@@ -738,6 +778,7 @@ public final class HealthCheck implements ApiMessage {
         id,
         kind,
         name,
+        region,
         selfLink,
         sslHealthCheck,
         tcpHealthCheck,

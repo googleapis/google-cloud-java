@@ -15,15 +15,18 @@
  */
 package com.google.cloud.compute.v1.stub;
 
+import static com.google.cloud.compute.v1.HealthCheckClient.AggregatedListHealthChecksPagedResponse;
 import static com.google.cloud.compute.v1.HealthCheckClient.ListHealthChecksPagedResponse;
 
 import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.rpc.UnaryCallable;
+import com.google.cloud.compute.v1.AggregatedListHealthChecksHttpRequest;
 import com.google.cloud.compute.v1.DeleteHealthCheckHttpRequest;
 import com.google.cloud.compute.v1.GetHealthCheckHttpRequest;
 import com.google.cloud.compute.v1.HealthCheck;
 import com.google.cloud.compute.v1.HealthCheckList;
+import com.google.cloud.compute.v1.HealthChecksAggregatedList;
 import com.google.cloud.compute.v1.InsertHealthCheckHttpRequest;
 import com.google.cloud.compute.v1.ListHealthChecksHttpRequest;
 import com.google.cloud.compute.v1.Operation;
@@ -40,6 +43,21 @@ import javax.annotation.Generated;
 @Generated("by gapic-generator")
 @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
 public abstract class HealthCheckStub implements BackgroundResource {
+
+  @BetaApi
+  public UnaryCallable<
+          AggregatedListHealthChecksHttpRequest, AggregatedListHealthChecksPagedResponse>
+      aggregatedListHealthChecksPagedCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: aggregatedListHealthChecksPagedCallable()");
+  }
+
+  @BetaApi
+  public UnaryCallable<AggregatedListHealthChecksHttpRequest, HealthChecksAggregatedList>
+      aggregatedListHealthChecksCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: aggregatedListHealthChecksCallable()");
+  }
 
   @BetaApi
   public UnaryCallable<DeleteHealthCheckHttpRequest, Operation> deleteHealthCheckCallable() {

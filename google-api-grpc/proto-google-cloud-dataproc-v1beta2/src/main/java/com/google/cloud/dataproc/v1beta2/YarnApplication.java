@@ -401,10 +401,10 @@ public final class YarnApplication extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * Required. The application name.
+   * Output only. The application name.
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    */
   public java.lang.String getName() {
     java.lang.Object ref = name_;
@@ -421,10 +421,10 @@ public final class YarnApplication extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * Required. The application name.
+   * Output only. The application name.
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    */
   public com.google.protobuf.ByteString getNameBytes() {
     java.lang.Object ref = name_;
@@ -444,10 +444,12 @@ public final class YarnApplication extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * Required. The application state.
+   * Output only. The application state.
    * </pre>
    *
-   * <code>.google.cloud.dataproc.v1beta2.YarnApplication.State state = 2;</code>
+   * <code>
+   * .google.cloud.dataproc.v1beta2.YarnApplication.State state = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    */
   public int getStateValue() {
     return state_;
@@ -456,10 +458,12 @@ public final class YarnApplication extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * Required. The application state.
+   * Output only. The application state.
    * </pre>
    *
-   * <code>.google.cloud.dataproc.v1beta2.YarnApplication.State state = 2;</code>
+   * <code>
+   * .google.cloud.dataproc.v1beta2.YarnApplication.State state = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    */
   public com.google.cloud.dataproc.v1beta2.YarnApplication.State getState() {
     @SuppressWarnings("deprecation")
@@ -476,10 +480,10 @@ public final class YarnApplication extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * Required. The numerical progress of the application, from 1 to 100.
+   * Output only. The numerical progress of the application, from 1 to 100.
    * </pre>
    *
-   * <code>float progress = 3;</code>
+   * <code>float progress = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    */
   public float getProgress() {
     return progress_;
@@ -491,13 +495,13 @@ public final class YarnApplication extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * Optional. The HTTP URL of the ApplicationMaster, HistoryServer, or
+   * Optional. Output only. The HTTP URL of the ApplicationMaster, HistoryServer, or
    * TimelineServer that provides application-specific information. The URL uses
    * the internal hostname, and requires a proxy server for resolution and,
    * possibly, access.
    * </pre>
    *
-   * <code>string tracking_url = 4;</code>
+   * <code>string tracking_url = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    */
   public java.lang.String getTrackingUrl() {
     java.lang.Object ref = trackingUrl_;
@@ -514,13 +518,13 @@ public final class YarnApplication extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * Optional. The HTTP URL of the ApplicationMaster, HistoryServer, or
+   * Optional. Output only. The HTTP URL of the ApplicationMaster, HistoryServer, or
    * TimelineServer that provides application-specific information. The URL uses
    * the internal hostname, and requires a proxy server for resolution and,
    * possibly, access.
    * </pre>
    *
-   * <code>string tracking_url = 4;</code>
+   * <code>string tracking_url = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    */
   public com.google.protobuf.ByteString getTrackingUrlBytes() {
     java.lang.Object ref = trackingUrl_;
@@ -909,10 +913,10 @@ public final class YarnApplication extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Required. The application name.
+     * Output only. The application name.
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     public java.lang.String getName() {
       java.lang.Object ref = name_;
@@ -929,10 +933,10 @@ public final class YarnApplication extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Required. The application name.
+     * Output only. The application name.
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     public com.google.protobuf.ByteString getNameBytes() {
       java.lang.Object ref = name_;
@@ -949,10 +953,10 @@ public final class YarnApplication extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Required. The application name.
+     * Output only. The application name.
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     public Builder setName(java.lang.String value) {
       if (value == null) {
@@ -967,10 +971,10 @@ public final class YarnApplication extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Required. The application name.
+     * Output only. The application name.
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     public Builder clearName() {
 
@@ -982,10 +986,10 @@ public final class YarnApplication extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Required. The application name.
+     * Output only. The application name.
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     public Builder setNameBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -1003,10 +1007,12 @@ public final class YarnApplication extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Required. The application state.
+     * Output only. The application state.
      * </pre>
      *
-     * <code>.google.cloud.dataproc.v1beta2.YarnApplication.State state = 2;</code>
+     * <code>
+     * .google.cloud.dataproc.v1beta2.YarnApplication.State state = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public int getStateValue() {
       return state_;
@@ -1015,10 +1021,12 @@ public final class YarnApplication extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Required. The application state.
+     * Output only. The application state.
      * </pre>
      *
-     * <code>.google.cloud.dataproc.v1beta2.YarnApplication.State state = 2;</code>
+     * <code>
+     * .google.cloud.dataproc.v1beta2.YarnApplication.State state = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public Builder setStateValue(int value) {
       state_ = value;
@@ -1029,10 +1037,12 @@ public final class YarnApplication extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Required. The application state.
+     * Output only. The application state.
      * </pre>
      *
-     * <code>.google.cloud.dataproc.v1beta2.YarnApplication.State state = 2;</code>
+     * <code>
+     * .google.cloud.dataproc.v1beta2.YarnApplication.State state = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public com.google.cloud.dataproc.v1beta2.YarnApplication.State getState() {
       @SuppressWarnings("deprecation")
@@ -1046,10 +1056,12 @@ public final class YarnApplication extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Required. The application state.
+     * Output only. The application state.
      * </pre>
      *
-     * <code>.google.cloud.dataproc.v1beta2.YarnApplication.State state = 2;</code>
+     * <code>
+     * .google.cloud.dataproc.v1beta2.YarnApplication.State state = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public Builder setState(com.google.cloud.dataproc.v1beta2.YarnApplication.State value) {
       if (value == null) {
@@ -1064,10 +1076,12 @@ public final class YarnApplication extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Required. The application state.
+     * Output only. The application state.
      * </pre>
      *
-     * <code>.google.cloud.dataproc.v1beta2.YarnApplication.State state = 2;</code>
+     * <code>
+     * .google.cloud.dataproc.v1beta2.YarnApplication.State state = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public Builder clearState() {
 
@@ -1081,10 +1095,10 @@ public final class YarnApplication extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Required. The numerical progress of the application, from 1 to 100.
+     * Output only. The numerical progress of the application, from 1 to 100.
      * </pre>
      *
-     * <code>float progress = 3;</code>
+     * <code>float progress = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     public float getProgress() {
       return progress_;
@@ -1093,10 +1107,10 @@ public final class YarnApplication extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Required. The numerical progress of the application, from 1 to 100.
+     * Output only. The numerical progress of the application, from 1 to 100.
      * </pre>
      *
-     * <code>float progress = 3;</code>
+     * <code>float progress = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     public Builder setProgress(float value) {
 
@@ -1108,10 +1122,10 @@ public final class YarnApplication extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Required. The numerical progress of the application, from 1 to 100.
+     * Output only. The numerical progress of the application, from 1 to 100.
      * </pre>
      *
-     * <code>float progress = 3;</code>
+     * <code>float progress = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     public Builder clearProgress() {
 
@@ -1125,13 +1139,13 @@ public final class YarnApplication extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Optional. The HTTP URL of the ApplicationMaster, HistoryServer, or
+     * Optional. Output only. The HTTP URL of the ApplicationMaster, HistoryServer, or
      * TimelineServer that provides application-specific information. The URL uses
      * the internal hostname, and requires a proxy server for resolution and,
      * possibly, access.
      * </pre>
      *
-     * <code>string tracking_url = 4;</code>
+     * <code>string tracking_url = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     public java.lang.String getTrackingUrl() {
       java.lang.Object ref = trackingUrl_;
@@ -1148,13 +1162,13 @@ public final class YarnApplication extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Optional. The HTTP URL of the ApplicationMaster, HistoryServer, or
+     * Optional. Output only. The HTTP URL of the ApplicationMaster, HistoryServer, or
      * TimelineServer that provides application-specific information. The URL uses
      * the internal hostname, and requires a proxy server for resolution and,
      * possibly, access.
      * </pre>
      *
-     * <code>string tracking_url = 4;</code>
+     * <code>string tracking_url = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     public com.google.protobuf.ByteString getTrackingUrlBytes() {
       java.lang.Object ref = trackingUrl_;
@@ -1171,13 +1185,13 @@ public final class YarnApplication extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Optional. The HTTP URL of the ApplicationMaster, HistoryServer, or
+     * Optional. Output only. The HTTP URL of the ApplicationMaster, HistoryServer, or
      * TimelineServer that provides application-specific information. The URL uses
      * the internal hostname, and requires a proxy server for resolution and,
      * possibly, access.
      * </pre>
      *
-     * <code>string tracking_url = 4;</code>
+     * <code>string tracking_url = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     public Builder setTrackingUrl(java.lang.String value) {
       if (value == null) {
@@ -1192,13 +1206,13 @@ public final class YarnApplication extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Optional. The HTTP URL of the ApplicationMaster, HistoryServer, or
+     * Optional. Output only. The HTTP URL of the ApplicationMaster, HistoryServer, or
      * TimelineServer that provides application-specific information. The URL uses
      * the internal hostname, and requires a proxy server for resolution and,
      * possibly, access.
      * </pre>
      *
-     * <code>string tracking_url = 4;</code>
+     * <code>string tracking_url = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     public Builder clearTrackingUrl() {
 
@@ -1210,13 +1224,13 @@ public final class YarnApplication extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Optional. The HTTP URL of the ApplicationMaster, HistoryServer, or
+     * Optional. Output only. The HTTP URL of the ApplicationMaster, HistoryServer, or
      * TimelineServer that provides application-specific information. The URL uses
      * the internal hostname, and requires a proxy server for resolution and,
      * possibly, access.
      * </pre>
      *
-     * <code>string tracking_url = 4;</code>
+     * <code>string tracking_url = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     public Builder setTrackingUrlBytes(com.google.protobuf.ByteString value) {
       if (value == null) {

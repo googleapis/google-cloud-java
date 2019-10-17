@@ -15,6 +15,7 @@
  */
 package com.google.cloud.compute.v1.stub;
 
+import static com.google.cloud.compute.v1.HealthCheckClient.AggregatedListHealthChecksPagedResponse;
 import static com.google.cloud.compute.v1.HealthCheckClient.ListHealthChecksPagedResponse;
 
 import com.google.api.core.ApiFunction;
@@ -39,10 +40,13 @@ import com.google.api.gax.rpc.StubSettings;
 import com.google.api.gax.rpc.TransportChannelProvider;
 import com.google.api.gax.rpc.UnaryCallSettings;
 import com.google.api.gax.rpc.UnaryCallable;
+import com.google.cloud.compute.v1.AggregatedListHealthChecksHttpRequest;
 import com.google.cloud.compute.v1.DeleteHealthCheckHttpRequest;
 import com.google.cloud.compute.v1.GetHealthCheckHttpRequest;
 import com.google.cloud.compute.v1.HealthCheck;
 import com.google.cloud.compute.v1.HealthCheckList;
+import com.google.cloud.compute.v1.HealthChecksAggregatedList;
+import com.google.cloud.compute.v1.HealthChecksScopedList;
 import com.google.cloud.compute.v1.InsertHealthCheckHttpRequest;
 import com.google.cloud.compute.v1.ListHealthChecksHttpRequest;
 import com.google.cloud.compute.v1.Operation;
@@ -64,15 +68,16 @@ import org.threeten.bp.Duration;
  * <p>The default instance has everything set to sensible defaults:
  *
  * <ul>
- *   <li>The default service address (https://www.googleapis.com/compute/v1/projects/) and default
- *       port (443) are used.
+ *   <li>The default service address (https://compute.googleapis.com/compute/v1/projects/) and
+ *       default port (443) are used.
  *   <li>Credentials are acquired automatically through Application Default Credentials.
  *   <li>Retries are configured for idempotent methods but not for non-idempotent methods.
  * </ul>
  *
  * <p>The builder of this class is recursive, so contained classes are themselves builders. When
- * build() is called, the tree of builders is called to create the complete settings object. For
- * example, to set the total timeout of deleteHealthCheck to 30 seconds:
+ * build() is called, the tree of builders is called to create the complete settings object.
+ *
+ * <p>For example, to set the total timeout of deleteHealthCheck to 30 seconds:
  *
  * <pre>
  * <code>
@@ -98,6 +103,11 @@ public class HealthCheckStubSettings extends StubSettings<HealthCheckStubSetting
           .add("https://www.googleapis.com/auth/devstorage.read_write")
           .build();
 
+  private final PagedCallSettings<
+          AggregatedListHealthChecksHttpRequest,
+          HealthChecksAggregatedList,
+          AggregatedListHealthChecksPagedResponse>
+      aggregatedListHealthChecksSettings;
   private final UnaryCallSettings<DeleteHealthCheckHttpRequest, Operation>
       deleteHealthCheckSettings;
   private final UnaryCallSettings<GetHealthCheckHttpRequest, HealthCheck> getHealthCheckSettings;
@@ -109,6 +119,15 @@ public class HealthCheckStubSettings extends StubSettings<HealthCheckStubSetting
   private final UnaryCallSettings<PatchHealthCheckHttpRequest, Operation> patchHealthCheckSettings;
   private final UnaryCallSettings<UpdateHealthCheckHttpRequest, Operation>
       updateHealthCheckSettings;
+
+  /** Returns the object with the settings used for calls to aggregatedListHealthChecks. */
+  public PagedCallSettings<
+          AggregatedListHealthChecksHttpRequest,
+          HealthChecksAggregatedList,
+          AggregatedListHealthChecksPagedResponse>
+      aggregatedListHealthChecksSettings() {
+    return aggregatedListHealthChecksSettings;
+  }
 
   /** Returns the object with the settings used for calls to deleteHealthCheck. */
   public UnaryCallSettings<DeleteHealthCheckHttpRequest, Operation> deleteHealthCheckSettings() {
@@ -161,7 +180,7 @@ public class HealthCheckStubSettings extends StubSettings<HealthCheckStubSetting
 
   /** Returns the default service endpoint. */
   public static String getDefaultEndpoint() {
-    return "https://www.googleapis.com/compute/v1/projects/";
+    return "https://compute.googleapis.com/compute/v1/projects/";
   }
 
   /** Returns the default service port. */
@@ -217,6 +236,8 @@ public class HealthCheckStubSettings extends StubSettings<HealthCheckStubSetting
   protected HealthCheckStubSettings(Builder settingsBuilder) throws IOException {
     super(settingsBuilder);
 
+    aggregatedListHealthChecksSettings =
+        settingsBuilder.aggregatedListHealthChecksSettings().build();
     deleteHealthCheckSettings = settingsBuilder.deleteHealthCheckSettings().build();
     getHealthCheckSettings = settingsBuilder.getHealthCheckSettings().build();
     insertHealthCheckSettings = settingsBuilder.insertHealthCheckSettings().build();
@@ -224,6 +245,53 @@ public class HealthCheckStubSettings extends StubSettings<HealthCheckStubSetting
     patchHealthCheckSettings = settingsBuilder.patchHealthCheckSettings().build();
     updateHealthCheckSettings = settingsBuilder.updateHealthCheckSettings().build();
   }
+
+  private static final PagedListDescriptor<
+          AggregatedListHealthChecksHttpRequest, HealthChecksAggregatedList, HealthChecksScopedList>
+      AGGREGATED_LIST_HEALTH_CHECKS_PAGE_STR_DESC =
+          new PagedListDescriptor<
+              AggregatedListHealthChecksHttpRequest,
+              HealthChecksAggregatedList,
+              HealthChecksScopedList>() {
+            @Override
+            public String emptyToken() {
+              return "";
+            }
+
+            @Override
+            public AggregatedListHealthChecksHttpRequest injectToken(
+                AggregatedListHealthChecksHttpRequest payload, String token) {
+              return AggregatedListHealthChecksHttpRequest.newBuilder(payload)
+                  .setPageToken(token)
+                  .build();
+            }
+
+            @Override
+            public AggregatedListHealthChecksHttpRequest injectPageSize(
+                AggregatedListHealthChecksHttpRequest payload, int pageSize) {
+              return AggregatedListHealthChecksHttpRequest.newBuilder(payload)
+                  .setMaxResults(pageSize)
+                  .build();
+            }
+
+            @Override
+            public Integer extractPageSize(AggregatedListHealthChecksHttpRequest payload) {
+              return payload.getMaxResults();
+            }
+
+            @Override
+            public String extractNextToken(HealthChecksAggregatedList payload) {
+              return payload.getNextPageToken();
+            }
+
+            @Override
+            public Iterable<HealthChecksScopedList> extractResources(
+                HealthChecksAggregatedList payload) {
+              return payload.getItemsMap() != null
+                  ? payload.getItemsMap().values()
+                  : ImmutableList.<HealthChecksScopedList>of();
+            }
+          };
 
   private static final PagedListDescriptor<
           ListHealthChecksHttpRequest, HealthCheckList, HealthCheck>
@@ -267,6 +335,34 @@ public class HealthCheckStubSettings extends StubSettings<HealthCheckStubSetting
           };
 
   private static final PagedListResponseFactory<
+          AggregatedListHealthChecksHttpRequest,
+          HealthChecksAggregatedList,
+          AggregatedListHealthChecksPagedResponse>
+      AGGREGATED_LIST_HEALTH_CHECKS_PAGE_STR_FACT =
+          new PagedListResponseFactory<
+              AggregatedListHealthChecksHttpRequest,
+              HealthChecksAggregatedList,
+              AggregatedListHealthChecksPagedResponse>() {
+            @Override
+            public ApiFuture<AggregatedListHealthChecksPagedResponse> getFuturePagedResponse(
+                UnaryCallable<AggregatedListHealthChecksHttpRequest, HealthChecksAggregatedList>
+                    callable,
+                AggregatedListHealthChecksHttpRequest request,
+                ApiCallContext context,
+                ApiFuture<HealthChecksAggregatedList> futureResponse) {
+              PageContext<
+                      AggregatedListHealthChecksHttpRequest,
+                      HealthChecksAggregatedList,
+                      HealthChecksScopedList>
+                  pageContext =
+                      PageContext.create(
+                          callable, AGGREGATED_LIST_HEALTH_CHECKS_PAGE_STR_DESC, request, context);
+              return AggregatedListHealthChecksPagedResponse.createAsync(
+                  pageContext, futureResponse);
+            }
+          };
+
+  private static final PagedListResponseFactory<
           ListHealthChecksHttpRequest, HealthCheckList, ListHealthChecksPagedResponse>
       LIST_HEALTH_CHECKS_PAGE_STR_FACT =
           new PagedListResponseFactory<
@@ -287,6 +383,11 @@ public class HealthCheckStubSettings extends StubSettings<HealthCheckStubSetting
   public static class Builder extends StubSettings.Builder<HealthCheckStubSettings, Builder> {
     private final ImmutableList<UnaryCallSettings.Builder<?, ?>> unaryMethodSettingsBuilders;
 
+    private final PagedCallSettings.Builder<
+            AggregatedListHealthChecksHttpRequest,
+            HealthChecksAggregatedList,
+            AggregatedListHealthChecksPagedResponse>
+        aggregatedListHealthChecksSettings;
     private final UnaryCallSettings.Builder<DeleteHealthCheckHttpRequest, Operation>
         deleteHealthCheckSettings;
     private final UnaryCallSettings.Builder<GetHealthCheckHttpRequest, HealthCheck>
@@ -342,6 +443,9 @@ public class HealthCheckStubSettings extends StubSettings<HealthCheckStubSetting
     protected Builder(ClientContext clientContext) {
       super(clientContext);
 
+      aggregatedListHealthChecksSettings =
+          PagedCallSettings.newBuilder(AGGREGATED_LIST_HEALTH_CHECKS_PAGE_STR_FACT);
+
       deleteHealthCheckSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
       getHealthCheckSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
@@ -356,6 +460,7 @@ public class HealthCheckStubSettings extends StubSettings<HealthCheckStubSetting
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
+              aggregatedListHealthChecksSettings,
               deleteHealthCheckSettings,
               getHealthCheckSettings,
               insertHealthCheckSettings,
@@ -376,6 +481,11 @@ public class HealthCheckStubSettings extends StubSettings<HealthCheckStubSetting
     }
 
     private static Builder initDefaults(Builder builder) {
+
+      builder
+          .aggregatedListHealthChecksSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
 
       builder
           .deleteHealthCheckSettings()
@@ -413,6 +523,7 @@ public class HealthCheckStubSettings extends StubSettings<HealthCheckStubSetting
     protected Builder(HealthCheckStubSettings settings) {
       super(settings);
 
+      aggregatedListHealthChecksSettings = settings.aggregatedListHealthChecksSettings.toBuilder();
       deleteHealthCheckSettings = settings.deleteHealthCheckSettings.toBuilder();
       getHealthCheckSettings = settings.getHealthCheckSettings.toBuilder();
       insertHealthCheckSettings = settings.insertHealthCheckSettings.toBuilder();
@@ -422,6 +533,7 @@ public class HealthCheckStubSettings extends StubSettings<HealthCheckStubSetting
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
+              aggregatedListHealthChecksSettings,
               deleteHealthCheckSettings,
               getHealthCheckSettings,
               insertHealthCheckSettings,
@@ -444,6 +556,15 @@ public class HealthCheckStubSettings extends StubSettings<HealthCheckStubSetting
 
     public ImmutableList<UnaryCallSettings.Builder<?, ?>> unaryMethodSettingsBuilders() {
       return unaryMethodSettingsBuilders;
+    }
+
+    /** Returns the builder for the settings used for calls to aggregatedListHealthChecks. */
+    public PagedCallSettings.Builder<
+            AggregatedListHealthChecksHttpRequest,
+            HealthChecksAggregatedList,
+            AggregatedListHealthChecksPagedResponse>
+        aggregatedListHealthChecksSettings() {
+      return aggregatedListHealthChecksSettings;
     }
 
     /** Returns the builder for the settings used for calls to deleteHealthCheck. */

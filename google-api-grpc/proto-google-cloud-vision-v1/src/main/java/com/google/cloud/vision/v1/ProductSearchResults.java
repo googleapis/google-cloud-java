@@ -1160,6 +1160,1116 @@ public final class ProductSearchResults extends com.google.protobuf.GeneratedMes
     }
   }
 
+  public interface ObjectAnnotationOrBuilder
+      extends
+      // @@protoc_insertion_point(interface_extends:google.cloud.vision.v1.ProductSearchResults.ObjectAnnotation)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     *
+     *
+     * <pre>
+     * Object ID that should align with EntityAnnotation mid.
+     * </pre>
+     *
+     * <code>string mid = 1;</code>
+     */
+    java.lang.String getMid();
+    /**
+     *
+     *
+     * <pre>
+     * Object ID that should align with EntityAnnotation mid.
+     * </pre>
+     *
+     * <code>string mid = 1;</code>
+     */
+    com.google.protobuf.ByteString getMidBytes();
+
+    /**
+     *
+     *
+     * <pre>
+     * The BCP-47 language code, such as "en-US" or "sr-Latn". For more
+     * information, see
+     * http://www.unicode.org/reports/tr35/#Unicode_locale_identifier.
+     * </pre>
+     *
+     * <code>string language_code = 2;</code>
+     */
+    java.lang.String getLanguageCode();
+    /**
+     *
+     *
+     * <pre>
+     * The BCP-47 language code, such as "en-US" or "sr-Latn". For more
+     * information, see
+     * http://www.unicode.org/reports/tr35/#Unicode_locale_identifier.
+     * </pre>
+     *
+     * <code>string language_code = 2;</code>
+     */
+    com.google.protobuf.ByteString getLanguageCodeBytes();
+
+    /**
+     *
+     *
+     * <pre>
+     * Object name, expressed in its `language_code` language.
+     * </pre>
+     *
+     * <code>string name = 3;</code>
+     */
+    java.lang.String getName();
+    /**
+     *
+     *
+     * <pre>
+     * Object name, expressed in its `language_code` language.
+     * </pre>
+     *
+     * <code>string name = 3;</code>
+     */
+    com.google.protobuf.ByteString getNameBytes();
+
+    /**
+     *
+     *
+     * <pre>
+     * Score of the result. Range [0, 1].
+     * </pre>
+     *
+     * <code>float score = 4;</code>
+     */
+    float getScore();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Prediction for what the object in the bounding box is.
+   * </pre>
+   *
+   * Protobuf type {@code google.cloud.vision.v1.ProductSearchResults.ObjectAnnotation}
+   */
+  public static final class ObjectAnnotation extends com.google.protobuf.GeneratedMessageV3
+      implements
+      // @@protoc_insertion_point(message_implements:google.cloud.vision.v1.ProductSearchResults.ObjectAnnotation)
+      ObjectAnnotationOrBuilder {
+    private static final long serialVersionUID = 0L;
+    // Use ObjectAnnotation.newBuilder() to construct.
+    private ObjectAnnotation(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+
+    private ObjectAnnotation() {
+      mid_ = "";
+      languageCode_ = "";
+      name_ = "";
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
+      return this.unknownFields;
+    }
+
+    private ObjectAnnotation(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10:
+              {
+                java.lang.String s = input.readStringRequireUtf8();
+
+                mid_ = s;
+                break;
+              }
+            case 18:
+              {
+                java.lang.String s = input.readStringRequireUtf8();
+
+                languageCode_ = s;
+                break;
+              }
+            case 26:
+              {
+                java.lang.String s = input.readStringRequireUtf8();
+
+                name_ = s;
+                break;
+              }
+            case 37:
+              {
+                score_ = input.readFloat();
+                break;
+              }
+            default:
+              {
+                if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
+                  done = true;
+                }
+                break;
+              }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.cloud.vision.v1.ProductSearchProto
+          .internal_static_google_cloud_vision_v1_ProductSearchResults_ObjectAnnotation_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.google.cloud.vision.v1.ProductSearchProto
+          .internal_static_google_cloud_vision_v1_ProductSearchResults_ObjectAnnotation_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.google.cloud.vision.v1.ProductSearchResults.ObjectAnnotation.class,
+              com.google.cloud.vision.v1.ProductSearchResults.ObjectAnnotation.Builder.class);
+    }
+
+    public static final int MID_FIELD_NUMBER = 1;
+    private volatile java.lang.Object mid_;
+    /**
+     *
+     *
+     * <pre>
+     * Object ID that should align with EntityAnnotation mid.
+     * </pre>
+     *
+     * <code>string mid = 1;</code>
+     */
+    public java.lang.String getMid() {
+      java.lang.Object ref = mid_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        mid_ = s;
+        return s;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Object ID that should align with EntityAnnotation mid.
+     * </pre>
+     *
+     * <code>string mid = 1;</code>
+     */
+    public com.google.protobuf.ByteString getMidBytes() {
+      java.lang.Object ref = mid_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        mid_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int LANGUAGE_CODE_FIELD_NUMBER = 2;
+    private volatile java.lang.Object languageCode_;
+    /**
+     *
+     *
+     * <pre>
+     * The BCP-47 language code, such as "en-US" or "sr-Latn". For more
+     * information, see
+     * http://www.unicode.org/reports/tr35/#Unicode_locale_identifier.
+     * </pre>
+     *
+     * <code>string language_code = 2;</code>
+     */
+    public java.lang.String getLanguageCode() {
+      java.lang.Object ref = languageCode_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        languageCode_ = s;
+        return s;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The BCP-47 language code, such as "en-US" or "sr-Latn". For more
+     * information, see
+     * http://www.unicode.org/reports/tr35/#Unicode_locale_identifier.
+     * </pre>
+     *
+     * <code>string language_code = 2;</code>
+     */
+    public com.google.protobuf.ByteString getLanguageCodeBytes() {
+      java.lang.Object ref = languageCode_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        languageCode_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int NAME_FIELD_NUMBER = 3;
+    private volatile java.lang.Object name_;
+    /**
+     *
+     *
+     * <pre>
+     * Object name, expressed in its `language_code` language.
+     * </pre>
+     *
+     * <code>string name = 3;</code>
+     */
+    public java.lang.String getName() {
+      java.lang.Object ref = name_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        name_ = s;
+        return s;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Object name, expressed in its `language_code` language.
+     * </pre>
+     *
+     * <code>string name = 3;</code>
+     */
+    public com.google.protobuf.ByteString getNameBytes() {
+      java.lang.Object ref = name_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        name_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int SCORE_FIELD_NUMBER = 4;
+    private float score_;
+    /**
+     *
+     *
+     * <pre>
+     * Score of the result. Range [0, 1].
+     * </pre>
+     *
+     * <code>float score = 4;</code>
+     */
+    public float getScore() {
+      return score_;
+    }
+
+    private byte memoizedIsInitialized = -1;
+
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+      if (!getMidBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, mid_);
+      }
+      if (!getLanguageCodeBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, languageCode_);
+      }
+      if (!getNameBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 3, name_);
+      }
+      if (score_ != 0F) {
+        output.writeFloat(4, score_);
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (!getMidBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, mid_);
+      }
+      if (!getLanguageCodeBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, languageCode_);
+      }
+      if (!getNameBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, name_);
+      }
+      if (score_ != 0F) {
+        size += com.google.protobuf.CodedOutputStream.computeFloatSize(4, score_);
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+        return true;
+      }
+      if (!(obj instanceof com.google.cloud.vision.v1.ProductSearchResults.ObjectAnnotation)) {
+        return super.equals(obj);
+      }
+      com.google.cloud.vision.v1.ProductSearchResults.ObjectAnnotation other =
+          (com.google.cloud.vision.v1.ProductSearchResults.ObjectAnnotation) obj;
+
+      if (!getMid().equals(other.getMid())) return false;
+      if (!getLanguageCode().equals(other.getLanguageCode())) return false;
+      if (!getName().equals(other.getName())) return false;
+      if (java.lang.Float.floatToIntBits(getScore())
+          != java.lang.Float.floatToIntBits(other.getScore())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + MID_FIELD_NUMBER;
+      hash = (53 * hash) + getMid().hashCode();
+      hash = (37 * hash) + LANGUAGE_CODE_FIELD_NUMBER;
+      hash = (53 * hash) + getLanguageCode().hashCode();
+      hash = (37 * hash) + NAME_FIELD_NUMBER;
+      hash = (53 * hash) + getName().hashCode();
+      hash = (37 * hash) + SCORE_FIELD_NUMBER;
+      hash = (53 * hash) + java.lang.Float.floatToIntBits(getScore());
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.google.cloud.vision.v1.ProductSearchResults.ObjectAnnotation parseFrom(
+        java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.vision.v1.ProductSearchResults.ObjectAnnotation parseFrom(
+        java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.vision.v1.ProductSearchResults.ObjectAnnotation parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.vision.v1.ProductSearchResults.ObjectAnnotation parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.vision.v1.ProductSearchResults.ObjectAnnotation parseFrom(
+        byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.vision.v1.ProductSearchResults.ObjectAnnotation parseFrom(
+        byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.vision.v1.ProductSearchResults.ObjectAnnotation parseFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.vision.v1.ProductSearchResults.ObjectAnnotation parseFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.vision.v1.ProductSearchResults.ObjectAnnotation
+        parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.vision.v1.ProductSearchResults.ObjectAnnotation
+        parseDelimitedFrom(
+            java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.vision.v1.ProductSearchResults.ObjectAnnotation parseFrom(
+        com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.vision.v1.ProductSearchResults.ObjectAnnotation parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() {
+      return newBuilder();
+    }
+
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+
+    public static Builder newBuilder(
+        com.google.cloud.vision.v1.ProductSearchResults.ObjectAnnotation prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Prediction for what the object in the bounding box is.
+     * </pre>
+     *
+     * Protobuf type {@code google.cloud.vision.v1.ProductSearchResults.ObjectAnnotation}
+     */
+    public static final class Builder
+        extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+        implements
+        // @@protoc_insertion_point(builder_implements:google.cloud.vision.v1.ProductSearchResults.ObjectAnnotation)
+        com.google.cloud.vision.v1.ProductSearchResults.ObjectAnnotationOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.cloud.vision.v1.ProductSearchProto
+            .internal_static_google_cloud_vision_v1_ProductSearchResults_ObjectAnnotation_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.cloud.vision.v1.ProductSearchProto
+            .internal_static_google_cloud_vision_v1_ProductSearchResults_ObjectAnnotation_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.cloud.vision.v1.ProductSearchResults.ObjectAnnotation.class,
+                com.google.cloud.vision.v1.ProductSearchResults.ObjectAnnotation.Builder.class);
+      }
+
+      // Construct using
+      // com.google.cloud.vision.v1.ProductSearchResults.ObjectAnnotation.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
+      }
+
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        mid_ = "";
+
+        languageCode_ = "";
+
+        name_ = "";
+
+        score_ = 0F;
+
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+        return com.google.cloud.vision.v1.ProductSearchProto
+            .internal_static_google_cloud_vision_v1_ProductSearchResults_ObjectAnnotation_descriptor;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.vision.v1.ProductSearchResults.ObjectAnnotation
+          getDefaultInstanceForType() {
+        return com.google.cloud.vision.v1.ProductSearchResults.ObjectAnnotation
+            .getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.google.cloud.vision.v1.ProductSearchResults.ObjectAnnotation build() {
+        com.google.cloud.vision.v1.ProductSearchResults.ObjectAnnotation result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.vision.v1.ProductSearchResults.ObjectAnnotation buildPartial() {
+        com.google.cloud.vision.v1.ProductSearchResults.ObjectAnnotation result =
+            new com.google.cloud.vision.v1.ProductSearchResults.ObjectAnnotation(this);
+        result.mid_ = mid_;
+        result.languageCode_ = languageCode_;
+        result.name_ = name_;
+        result.score_ = score_;
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.setField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+
+      @java.lang.Override
+      public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index,
+          java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.google.cloud.vision.v1.ProductSearchResults.ObjectAnnotation) {
+          return mergeFrom(
+              (com.google.cloud.vision.v1.ProductSearchResults.ObjectAnnotation) other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(
+          com.google.cloud.vision.v1.ProductSearchResults.ObjectAnnotation other) {
+        if (other
+            == com.google.cloud.vision.v1.ProductSearchResults.ObjectAnnotation
+                .getDefaultInstance()) return this;
+        if (!other.getMid().isEmpty()) {
+          mid_ = other.mid_;
+          onChanged();
+        }
+        if (!other.getLanguageCode().isEmpty()) {
+          languageCode_ = other.languageCode_;
+          onChanged();
+        }
+        if (!other.getName().isEmpty()) {
+          name_ = other.name_;
+          onChanged();
+        }
+        if (other.getScore() != 0F) {
+          setScore(other.getScore());
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        com.google.cloud.vision.v1.ProductSearchResults.ObjectAnnotation parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage =
+              (com.google.cloud.vision.v1.ProductSearchResults.ObjectAnnotation)
+                  e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      private java.lang.Object mid_ = "";
+      /**
+       *
+       *
+       * <pre>
+       * Object ID that should align with EntityAnnotation mid.
+       * </pre>
+       *
+       * <code>string mid = 1;</code>
+       */
+      public java.lang.String getMid() {
+        java.lang.Object ref = mid_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          mid_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Object ID that should align with EntityAnnotation mid.
+       * </pre>
+       *
+       * <code>string mid = 1;</code>
+       */
+      public com.google.protobuf.ByteString getMidBytes() {
+        java.lang.Object ref = mid_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          mid_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Object ID that should align with EntityAnnotation mid.
+       * </pre>
+       *
+       * <code>string mid = 1;</code>
+       */
+      public Builder setMid(java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+
+        mid_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Object ID that should align with EntityAnnotation mid.
+       * </pre>
+       *
+       * <code>string mid = 1;</code>
+       */
+      public Builder clearMid() {
+
+        mid_ = getDefaultInstance().getMid();
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Object ID that should align with EntityAnnotation mid.
+       * </pre>
+       *
+       * <code>string mid = 1;</code>
+       */
+      public Builder setMidBytes(com.google.protobuf.ByteString value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+
+        mid_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object languageCode_ = "";
+      /**
+       *
+       *
+       * <pre>
+       * The BCP-47 language code, such as "en-US" or "sr-Latn". For more
+       * information, see
+       * http://www.unicode.org/reports/tr35/#Unicode_locale_identifier.
+       * </pre>
+       *
+       * <code>string language_code = 2;</code>
+       */
+      public java.lang.String getLanguageCode() {
+        java.lang.Object ref = languageCode_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          languageCode_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The BCP-47 language code, such as "en-US" or "sr-Latn". For more
+       * information, see
+       * http://www.unicode.org/reports/tr35/#Unicode_locale_identifier.
+       * </pre>
+       *
+       * <code>string language_code = 2;</code>
+       */
+      public com.google.protobuf.ByteString getLanguageCodeBytes() {
+        java.lang.Object ref = languageCode_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          languageCode_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The BCP-47 language code, such as "en-US" or "sr-Latn". For more
+       * information, see
+       * http://www.unicode.org/reports/tr35/#Unicode_locale_identifier.
+       * </pre>
+       *
+       * <code>string language_code = 2;</code>
+       */
+      public Builder setLanguageCode(java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+
+        languageCode_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The BCP-47 language code, such as "en-US" or "sr-Latn". For more
+       * information, see
+       * http://www.unicode.org/reports/tr35/#Unicode_locale_identifier.
+       * </pre>
+       *
+       * <code>string language_code = 2;</code>
+       */
+      public Builder clearLanguageCode() {
+
+        languageCode_ = getDefaultInstance().getLanguageCode();
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The BCP-47 language code, such as "en-US" or "sr-Latn". For more
+       * information, see
+       * http://www.unicode.org/reports/tr35/#Unicode_locale_identifier.
+       * </pre>
+       *
+       * <code>string language_code = 2;</code>
+       */
+      public Builder setLanguageCodeBytes(com.google.protobuf.ByteString value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+
+        languageCode_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object name_ = "";
+      /**
+       *
+       *
+       * <pre>
+       * Object name, expressed in its `language_code` language.
+       * </pre>
+       *
+       * <code>string name = 3;</code>
+       */
+      public java.lang.String getName() {
+        java.lang.Object ref = name_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          name_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Object name, expressed in its `language_code` language.
+       * </pre>
+       *
+       * <code>string name = 3;</code>
+       */
+      public com.google.protobuf.ByteString getNameBytes() {
+        java.lang.Object ref = name_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          name_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Object name, expressed in its `language_code` language.
+       * </pre>
+       *
+       * <code>string name = 3;</code>
+       */
+      public Builder setName(java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+
+        name_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Object name, expressed in its `language_code` language.
+       * </pre>
+       *
+       * <code>string name = 3;</code>
+       */
+      public Builder clearName() {
+
+        name_ = getDefaultInstance().getName();
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Object name, expressed in its `language_code` language.
+       * </pre>
+       *
+       * <code>string name = 3;</code>
+       */
+      public Builder setNameBytes(com.google.protobuf.ByteString value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+
+        name_ = value;
+        onChanged();
+        return this;
+      }
+
+      private float score_;
+      /**
+       *
+       *
+       * <pre>
+       * Score of the result. Range [0, 1].
+       * </pre>
+       *
+       * <code>float score = 4;</code>
+       */
+      public float getScore() {
+        return score_;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Score of the result. Range [0, 1].
+       * </pre>
+       *
+       * <code>float score = 4;</code>
+       */
+      public Builder setScore(float value) {
+
+        score_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Score of the result. Range [0, 1].
+       * </pre>
+       *
+       * <code>float score = 4;</code>
+       */
+      public Builder clearScore() {
+
+        score_ = 0F;
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+      // @@protoc_insertion_point(builder_scope:google.cloud.vision.v1.ProductSearchResults.ObjectAnnotation)
+    }
+
+    // @@protoc_insertion_point(class_scope:google.cloud.vision.v1.ProductSearchResults.ObjectAnnotation)
+    private static final com.google.cloud.vision.v1.ProductSearchResults.ObjectAnnotation
+        DEFAULT_INSTANCE;
+
+    static {
+      DEFAULT_INSTANCE = new com.google.cloud.vision.v1.ProductSearchResults.ObjectAnnotation();
+    }
+
+    public static com.google.cloud.vision.v1.ProductSearchResults.ObjectAnnotation
+        getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<ObjectAnnotation> PARSER =
+        new com.google.protobuf.AbstractParser<ObjectAnnotation>() {
+          @java.lang.Override
+          public ObjectAnnotation parsePartialFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+            return new ObjectAnnotation(input, extensionRegistry);
+          }
+        };
+
+    public static com.google.protobuf.Parser<ObjectAnnotation> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<ObjectAnnotation> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.cloud.vision.v1.ProductSearchResults.ObjectAnnotation
+        getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+  }
+
   public interface GroupedResultOrBuilder
       extends
       // @@protoc_insertion_point(interface_extends:google.cloud.vision.v1.ProductSearchResults.GroupedResult)
@@ -1247,6 +2357,72 @@ public final class ProductSearchResults extends com.google.protobuf.GeneratedMes
      * <code>repeated .google.cloud.vision.v1.ProductSearchResults.Result results = 2;</code>
      */
     com.google.cloud.vision.v1.ProductSearchResults.ResultOrBuilder getResultsOrBuilder(int index);
+
+    /**
+     *
+     *
+     * <pre>
+     * List of generic predictions for the object in the bounding box.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.vision.v1.ProductSearchResults.ObjectAnnotation object_annotations = 3;
+     * </code>
+     */
+    java.util.List<com.google.cloud.vision.v1.ProductSearchResults.ObjectAnnotation>
+        getObjectAnnotationsList();
+    /**
+     *
+     *
+     * <pre>
+     * List of generic predictions for the object in the bounding box.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.vision.v1.ProductSearchResults.ObjectAnnotation object_annotations = 3;
+     * </code>
+     */
+    com.google.cloud.vision.v1.ProductSearchResults.ObjectAnnotation getObjectAnnotations(
+        int index);
+    /**
+     *
+     *
+     * <pre>
+     * List of generic predictions for the object in the bounding box.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.vision.v1.ProductSearchResults.ObjectAnnotation object_annotations = 3;
+     * </code>
+     */
+    int getObjectAnnotationsCount();
+    /**
+     *
+     *
+     * <pre>
+     * List of generic predictions for the object in the bounding box.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.vision.v1.ProductSearchResults.ObjectAnnotation object_annotations = 3;
+     * </code>
+     */
+    java.util.List<
+            ? extends com.google.cloud.vision.v1.ProductSearchResults.ObjectAnnotationOrBuilder>
+        getObjectAnnotationsOrBuilderList();
+    /**
+     *
+     *
+     * <pre>
+     * List of generic predictions for the object in the bounding box.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.vision.v1.ProductSearchResults.ObjectAnnotation object_annotations = 3;
+     * </code>
+     */
+    com.google.cloud.vision.v1.ProductSearchResults.ObjectAnnotationOrBuilder
+        getObjectAnnotationsOrBuilder(int index);
   }
   /**
    *
@@ -1270,6 +2446,7 @@ public final class ProductSearchResults extends com.google.protobuf.GeneratedMes
 
     private GroupedResult() {
       results_ = java.util.Collections.emptyList();
+      objectAnnotations_ = java.util.Collections.emptyList();
     }
 
     @java.lang.Override
@@ -1326,6 +2503,20 @@ public final class ProductSearchResults extends com.google.protobuf.GeneratedMes
                         extensionRegistry));
                 break;
               }
+            case 26:
+              {
+                if (!((mutable_bitField0_ & 0x00000004) != 0)) {
+                  objectAnnotations_ =
+                      new java.util.ArrayList<
+                          com.google.cloud.vision.v1.ProductSearchResults.ObjectAnnotation>();
+                  mutable_bitField0_ |= 0x00000004;
+                }
+                objectAnnotations_.add(
+                    input.readMessage(
+                        com.google.cloud.vision.v1.ProductSearchResults.ObjectAnnotation.parser(),
+                        extensionRegistry));
+                break;
+              }
             default:
               {
                 if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -1342,6 +2533,9 @@ public final class ProductSearchResults extends com.google.protobuf.GeneratedMes
       } finally {
         if (((mutable_bitField0_ & 0x00000002) != 0)) {
           results_ = java.util.Collections.unmodifiableList(results_);
+        }
+        if (((mutable_bitField0_ & 0x00000004) != 0)) {
+          objectAnnotations_ = java.util.Collections.unmodifiableList(objectAnnotations_);
         }
         this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
@@ -1470,6 +2664,85 @@ public final class ProductSearchResults extends com.google.protobuf.GeneratedMes
       return results_.get(index);
     }
 
+    public static final int OBJECT_ANNOTATIONS_FIELD_NUMBER = 3;
+    private java.util.List<com.google.cloud.vision.v1.ProductSearchResults.ObjectAnnotation>
+        objectAnnotations_;
+    /**
+     *
+     *
+     * <pre>
+     * List of generic predictions for the object in the bounding box.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.vision.v1.ProductSearchResults.ObjectAnnotation object_annotations = 3;
+     * </code>
+     */
+    public java.util.List<com.google.cloud.vision.v1.ProductSearchResults.ObjectAnnotation>
+        getObjectAnnotationsList() {
+      return objectAnnotations_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * List of generic predictions for the object in the bounding box.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.vision.v1.ProductSearchResults.ObjectAnnotation object_annotations = 3;
+     * </code>
+     */
+    public java.util.List<
+            ? extends com.google.cloud.vision.v1.ProductSearchResults.ObjectAnnotationOrBuilder>
+        getObjectAnnotationsOrBuilderList() {
+      return objectAnnotations_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * List of generic predictions for the object in the bounding box.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.vision.v1.ProductSearchResults.ObjectAnnotation object_annotations = 3;
+     * </code>
+     */
+    public int getObjectAnnotationsCount() {
+      return objectAnnotations_.size();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * List of generic predictions for the object in the bounding box.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.vision.v1.ProductSearchResults.ObjectAnnotation object_annotations = 3;
+     * </code>
+     */
+    public com.google.cloud.vision.v1.ProductSearchResults.ObjectAnnotation getObjectAnnotations(
+        int index) {
+      return objectAnnotations_.get(index);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * List of generic predictions for the object in the bounding box.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.vision.v1.ProductSearchResults.ObjectAnnotation object_annotations = 3;
+     * </code>
+     */
+    public com.google.cloud.vision.v1.ProductSearchResults.ObjectAnnotationOrBuilder
+        getObjectAnnotationsOrBuilder(int index) {
+      return objectAnnotations_.get(index);
+    }
+
     private byte memoizedIsInitialized = -1;
 
     @java.lang.Override
@@ -1490,6 +2763,9 @@ public final class ProductSearchResults extends com.google.protobuf.GeneratedMes
       for (int i = 0; i < results_.size(); i++) {
         output.writeMessage(2, results_.get(i));
       }
+      for (int i = 0; i < objectAnnotations_.size(); i++) {
+        output.writeMessage(3, objectAnnotations_.get(i));
+      }
       unknownFields.writeTo(output);
     }
 
@@ -1504,6 +2780,10 @@ public final class ProductSearchResults extends com.google.protobuf.GeneratedMes
       }
       for (int i = 0; i < results_.size(); i++) {
         size += com.google.protobuf.CodedOutputStream.computeMessageSize(2, results_.get(i));
+      }
+      for (int i = 0; i < objectAnnotations_.size(); i++) {
+        size +=
+            com.google.protobuf.CodedOutputStream.computeMessageSize(3, objectAnnotations_.get(i));
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -1526,6 +2806,7 @@ public final class ProductSearchResults extends com.google.protobuf.GeneratedMes
         if (!getBoundingPoly().equals(other.getBoundingPoly())) return false;
       }
       if (!getResultsList().equals(other.getResultsList())) return false;
+      if (!getObjectAnnotationsList().equals(other.getObjectAnnotationsList())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -1544,6 +2825,10 @@ public final class ProductSearchResults extends com.google.protobuf.GeneratedMes
       if (getResultsCount() > 0) {
         hash = (37 * hash) + RESULTS_FIELD_NUMBER;
         hash = (53 * hash) + getResultsList().hashCode();
+      }
+      if (getObjectAnnotationsCount() > 0) {
+        hash = (37 * hash) + OBJECT_ANNOTATIONS_FIELD_NUMBER;
+        hash = (53 * hash) + getObjectAnnotationsList().hashCode();
       }
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
@@ -1690,6 +2975,7 @@ public final class ProductSearchResults extends com.google.protobuf.GeneratedMes
       private void maybeForceBuilderInitialization() {
         if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
           getResultsFieldBuilder();
+          getObjectAnnotationsFieldBuilder();
         }
       }
 
@@ -1707,6 +2993,12 @@ public final class ProductSearchResults extends com.google.protobuf.GeneratedMes
           bitField0_ = (bitField0_ & ~0x00000002);
         } else {
           resultsBuilder_.clear();
+        }
+        if (objectAnnotationsBuilder_ == null) {
+          objectAnnotations_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000004);
+        } else {
+          objectAnnotationsBuilder_.clear();
         }
         return this;
       }
@@ -1751,6 +3043,15 @@ public final class ProductSearchResults extends com.google.protobuf.GeneratedMes
           result.results_ = results_;
         } else {
           result.results_ = resultsBuilder_.build();
+        }
+        if (objectAnnotationsBuilder_ == null) {
+          if (((bitField0_ & 0x00000004) != 0)) {
+            objectAnnotations_ = java.util.Collections.unmodifiableList(objectAnnotations_);
+            bitField0_ = (bitField0_ & ~0x00000004);
+          }
+          result.objectAnnotations_ = objectAnnotations_;
+        } else {
+          result.objectAnnotations_ = objectAnnotationsBuilder_.build();
         }
         result.bitField0_ = to_bitField0_;
         onBuilt();
@@ -1834,6 +3135,33 @@ public final class ProductSearchResults extends com.google.protobuf.GeneratedMes
                       : null;
             } else {
               resultsBuilder_.addAllMessages(other.results_);
+            }
+          }
+        }
+        if (objectAnnotationsBuilder_ == null) {
+          if (!other.objectAnnotations_.isEmpty()) {
+            if (objectAnnotations_.isEmpty()) {
+              objectAnnotations_ = other.objectAnnotations_;
+              bitField0_ = (bitField0_ & ~0x00000004);
+            } else {
+              ensureObjectAnnotationsIsMutable();
+              objectAnnotations_.addAll(other.objectAnnotations_);
+            }
+            onChanged();
+          }
+        } else {
+          if (!other.objectAnnotations_.isEmpty()) {
+            if (objectAnnotationsBuilder_.isEmpty()) {
+              objectAnnotationsBuilder_.dispose();
+              objectAnnotationsBuilder_ = null;
+              objectAnnotations_ = other.objectAnnotations_;
+              bitField0_ = (bitField0_ & ~0x00000004);
+              objectAnnotationsBuilder_ =
+                  com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
+                      ? getObjectAnnotationsFieldBuilder()
+                      : null;
+            } else {
+              objectAnnotationsBuilder_.addAllMessages(other.objectAnnotations_);
             }
           }
         }
@@ -2414,6 +3742,421 @@ public final class ProductSearchResults extends com.google.protobuf.GeneratedMes
           results_ = null;
         }
         return resultsBuilder_;
+      }
+
+      private java.util.List<com.google.cloud.vision.v1.ProductSearchResults.ObjectAnnotation>
+          objectAnnotations_ = java.util.Collections.emptyList();
+
+      private void ensureObjectAnnotationsIsMutable() {
+        if (!((bitField0_ & 0x00000004) != 0)) {
+          objectAnnotations_ =
+              new java.util.ArrayList<
+                  com.google.cloud.vision.v1.ProductSearchResults.ObjectAnnotation>(
+                  objectAnnotations_);
+          bitField0_ |= 0x00000004;
+        }
+      }
+
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+              com.google.cloud.vision.v1.ProductSearchResults.ObjectAnnotation,
+              com.google.cloud.vision.v1.ProductSearchResults.ObjectAnnotation.Builder,
+              com.google.cloud.vision.v1.ProductSearchResults.ObjectAnnotationOrBuilder>
+          objectAnnotationsBuilder_;
+
+      /**
+       *
+       *
+       * <pre>
+       * List of generic predictions for the object in the bounding box.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.vision.v1.ProductSearchResults.ObjectAnnotation object_annotations = 3;
+       * </code>
+       */
+      public java.util.List<com.google.cloud.vision.v1.ProductSearchResults.ObjectAnnotation>
+          getObjectAnnotationsList() {
+        if (objectAnnotationsBuilder_ == null) {
+          return java.util.Collections.unmodifiableList(objectAnnotations_);
+        } else {
+          return objectAnnotationsBuilder_.getMessageList();
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * List of generic predictions for the object in the bounding box.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.vision.v1.ProductSearchResults.ObjectAnnotation object_annotations = 3;
+       * </code>
+       */
+      public int getObjectAnnotationsCount() {
+        if (objectAnnotationsBuilder_ == null) {
+          return objectAnnotations_.size();
+        } else {
+          return objectAnnotationsBuilder_.getCount();
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * List of generic predictions for the object in the bounding box.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.vision.v1.ProductSearchResults.ObjectAnnotation object_annotations = 3;
+       * </code>
+       */
+      public com.google.cloud.vision.v1.ProductSearchResults.ObjectAnnotation getObjectAnnotations(
+          int index) {
+        if (objectAnnotationsBuilder_ == null) {
+          return objectAnnotations_.get(index);
+        } else {
+          return objectAnnotationsBuilder_.getMessage(index);
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * List of generic predictions for the object in the bounding box.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.vision.v1.ProductSearchResults.ObjectAnnotation object_annotations = 3;
+       * </code>
+       */
+      public Builder setObjectAnnotations(
+          int index, com.google.cloud.vision.v1.ProductSearchResults.ObjectAnnotation value) {
+        if (objectAnnotationsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureObjectAnnotationsIsMutable();
+          objectAnnotations_.set(index, value);
+          onChanged();
+        } else {
+          objectAnnotationsBuilder_.setMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * List of generic predictions for the object in the bounding box.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.vision.v1.ProductSearchResults.ObjectAnnotation object_annotations = 3;
+       * </code>
+       */
+      public Builder setObjectAnnotations(
+          int index,
+          com.google.cloud.vision.v1.ProductSearchResults.ObjectAnnotation.Builder
+              builderForValue) {
+        if (objectAnnotationsBuilder_ == null) {
+          ensureObjectAnnotationsIsMutable();
+          objectAnnotations_.set(index, builderForValue.build());
+          onChanged();
+        } else {
+          objectAnnotationsBuilder_.setMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * List of generic predictions for the object in the bounding box.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.vision.v1.ProductSearchResults.ObjectAnnotation object_annotations = 3;
+       * </code>
+       */
+      public Builder addObjectAnnotations(
+          com.google.cloud.vision.v1.ProductSearchResults.ObjectAnnotation value) {
+        if (objectAnnotationsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureObjectAnnotationsIsMutable();
+          objectAnnotations_.add(value);
+          onChanged();
+        } else {
+          objectAnnotationsBuilder_.addMessage(value);
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * List of generic predictions for the object in the bounding box.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.vision.v1.ProductSearchResults.ObjectAnnotation object_annotations = 3;
+       * </code>
+       */
+      public Builder addObjectAnnotations(
+          int index, com.google.cloud.vision.v1.ProductSearchResults.ObjectAnnotation value) {
+        if (objectAnnotationsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureObjectAnnotationsIsMutable();
+          objectAnnotations_.add(index, value);
+          onChanged();
+        } else {
+          objectAnnotationsBuilder_.addMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * List of generic predictions for the object in the bounding box.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.vision.v1.ProductSearchResults.ObjectAnnotation object_annotations = 3;
+       * </code>
+       */
+      public Builder addObjectAnnotations(
+          com.google.cloud.vision.v1.ProductSearchResults.ObjectAnnotation.Builder
+              builderForValue) {
+        if (objectAnnotationsBuilder_ == null) {
+          ensureObjectAnnotationsIsMutable();
+          objectAnnotations_.add(builderForValue.build());
+          onChanged();
+        } else {
+          objectAnnotationsBuilder_.addMessage(builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * List of generic predictions for the object in the bounding box.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.vision.v1.ProductSearchResults.ObjectAnnotation object_annotations = 3;
+       * </code>
+       */
+      public Builder addObjectAnnotations(
+          int index,
+          com.google.cloud.vision.v1.ProductSearchResults.ObjectAnnotation.Builder
+              builderForValue) {
+        if (objectAnnotationsBuilder_ == null) {
+          ensureObjectAnnotationsIsMutable();
+          objectAnnotations_.add(index, builderForValue.build());
+          onChanged();
+        } else {
+          objectAnnotationsBuilder_.addMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * List of generic predictions for the object in the bounding box.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.vision.v1.ProductSearchResults.ObjectAnnotation object_annotations = 3;
+       * </code>
+       */
+      public Builder addAllObjectAnnotations(
+          java.lang.Iterable<
+                  ? extends com.google.cloud.vision.v1.ProductSearchResults.ObjectAnnotation>
+              values) {
+        if (objectAnnotationsBuilder_ == null) {
+          ensureObjectAnnotationsIsMutable();
+          com.google.protobuf.AbstractMessageLite.Builder.addAll(values, objectAnnotations_);
+          onChanged();
+        } else {
+          objectAnnotationsBuilder_.addAllMessages(values);
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * List of generic predictions for the object in the bounding box.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.vision.v1.ProductSearchResults.ObjectAnnotation object_annotations = 3;
+       * </code>
+       */
+      public Builder clearObjectAnnotations() {
+        if (objectAnnotationsBuilder_ == null) {
+          objectAnnotations_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000004);
+          onChanged();
+        } else {
+          objectAnnotationsBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * List of generic predictions for the object in the bounding box.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.vision.v1.ProductSearchResults.ObjectAnnotation object_annotations = 3;
+       * </code>
+       */
+      public Builder removeObjectAnnotations(int index) {
+        if (objectAnnotationsBuilder_ == null) {
+          ensureObjectAnnotationsIsMutable();
+          objectAnnotations_.remove(index);
+          onChanged();
+        } else {
+          objectAnnotationsBuilder_.remove(index);
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * List of generic predictions for the object in the bounding box.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.vision.v1.ProductSearchResults.ObjectAnnotation object_annotations = 3;
+       * </code>
+       */
+      public com.google.cloud.vision.v1.ProductSearchResults.ObjectAnnotation.Builder
+          getObjectAnnotationsBuilder(int index) {
+        return getObjectAnnotationsFieldBuilder().getBuilder(index);
+      }
+      /**
+       *
+       *
+       * <pre>
+       * List of generic predictions for the object in the bounding box.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.vision.v1.ProductSearchResults.ObjectAnnotation object_annotations = 3;
+       * </code>
+       */
+      public com.google.cloud.vision.v1.ProductSearchResults.ObjectAnnotationOrBuilder
+          getObjectAnnotationsOrBuilder(int index) {
+        if (objectAnnotationsBuilder_ == null) {
+          return objectAnnotations_.get(index);
+        } else {
+          return objectAnnotationsBuilder_.getMessageOrBuilder(index);
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * List of generic predictions for the object in the bounding box.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.vision.v1.ProductSearchResults.ObjectAnnotation object_annotations = 3;
+       * </code>
+       */
+      public java.util.List<
+              ? extends com.google.cloud.vision.v1.ProductSearchResults.ObjectAnnotationOrBuilder>
+          getObjectAnnotationsOrBuilderList() {
+        if (objectAnnotationsBuilder_ != null) {
+          return objectAnnotationsBuilder_.getMessageOrBuilderList();
+        } else {
+          return java.util.Collections.unmodifiableList(objectAnnotations_);
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * List of generic predictions for the object in the bounding box.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.vision.v1.ProductSearchResults.ObjectAnnotation object_annotations = 3;
+       * </code>
+       */
+      public com.google.cloud.vision.v1.ProductSearchResults.ObjectAnnotation.Builder
+          addObjectAnnotationsBuilder() {
+        return getObjectAnnotationsFieldBuilder()
+            .addBuilder(
+                com.google.cloud.vision.v1.ProductSearchResults.ObjectAnnotation
+                    .getDefaultInstance());
+      }
+      /**
+       *
+       *
+       * <pre>
+       * List of generic predictions for the object in the bounding box.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.vision.v1.ProductSearchResults.ObjectAnnotation object_annotations = 3;
+       * </code>
+       */
+      public com.google.cloud.vision.v1.ProductSearchResults.ObjectAnnotation.Builder
+          addObjectAnnotationsBuilder(int index) {
+        return getObjectAnnotationsFieldBuilder()
+            .addBuilder(
+                index,
+                com.google.cloud.vision.v1.ProductSearchResults.ObjectAnnotation
+                    .getDefaultInstance());
+      }
+      /**
+       *
+       *
+       * <pre>
+       * List of generic predictions for the object in the bounding box.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.vision.v1.ProductSearchResults.ObjectAnnotation object_annotations = 3;
+       * </code>
+       */
+      public java.util.List<
+              com.google.cloud.vision.v1.ProductSearchResults.ObjectAnnotation.Builder>
+          getObjectAnnotationsBuilderList() {
+        return getObjectAnnotationsFieldBuilder().getBuilderList();
+      }
+
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+              com.google.cloud.vision.v1.ProductSearchResults.ObjectAnnotation,
+              com.google.cloud.vision.v1.ProductSearchResults.ObjectAnnotation.Builder,
+              com.google.cloud.vision.v1.ProductSearchResults.ObjectAnnotationOrBuilder>
+          getObjectAnnotationsFieldBuilder() {
+        if (objectAnnotationsBuilder_ == null) {
+          objectAnnotationsBuilder_ =
+              new com.google.protobuf.RepeatedFieldBuilderV3<
+                  com.google.cloud.vision.v1.ProductSearchResults.ObjectAnnotation,
+                  com.google.cloud.vision.v1.ProductSearchResults.ObjectAnnotation.Builder,
+                  com.google.cloud.vision.v1.ProductSearchResults.ObjectAnnotationOrBuilder>(
+                  objectAnnotations_,
+                  ((bitField0_ & 0x00000004) != 0),
+                  getParentForChildren(),
+                  isClean());
+          objectAnnotations_ = null;
+        }
+        return objectAnnotationsBuilder_;
       }
 
       @java.lang.Override

@@ -80,7 +80,7 @@ class TransactionRunnerImpl implements SessionTransaction, TransactionRunner {
     }
 
     void ensureTxn() {
-      if (transactionId == null) {
+      if (transactionId == null || isAborted()) {
         span.addAnnotation("Creating Transaction");
         try {
           transactionId = session.beginTransaction();
@@ -134,6 +134,9 @@ class TransactionRunnerImpl implements SessionTransaction, TransactionRunner {
       } catch (RuntimeException e) {
         span.addAnnotation("Commit Failed", TraceUtil.getExceptionAnnotations(e));
         TraceUtil.endSpanWithFailure(opSpan, e);
+        if (e instanceof SpannerException) {
+          onError((SpannerException) e);
+        }
         throw e;
       }
       span.addAnnotation("Commit Done");
@@ -230,39 +233,49 @@ class TransactionRunnerImpl implements SessionTransaction, TransactionRunner {
       beforeReadOrQuery();
       final ExecuteSqlRequest.Builder builder =
           getExecuteSqlRequestBuilder(statement, QueryMode.NORMAL);
-      com.google.spanner.v1.ResultSet resultSet =
-          rpc.executeQuery(builder.build(), session.getOptions());
-      if (!resultSet.hasStats()) {
-        throw new IllegalArgumentException(
-            "DML response missing stats possibly due to non-DML statement as input");
+      try {
+        com.google.spanner.v1.ResultSet resultSet =
+            rpc.executeQuery(builder.build(), session.getOptions());
+        if (!resultSet.hasStats()) {
+          throw new IllegalArgumentException(
+              "DML response missing stats possibly due to non-DML statement as input");
+        }
+        // For standard DML, using the exact row count.
+        return resultSet.getStats().getRowCountExact();
+      } catch (SpannerException e) {
+        onError(e);
+        throw e;
       }
-      // For standard DML, using the exact row count.
-      return resultSet.getStats().getRowCountExact();
     }
 
     @Override
     public long[] batchUpdate(Iterable<Statement> statements) {
       beforeReadOrQuery();
       final ExecuteBatchDmlRequest.Builder builder = getExecuteBatchDmlRequestBuilder(statements);
-      com.google.spanner.v1.ExecuteBatchDmlResponse response =
-          rpc.executeBatchDml(builder.build(), session.getOptions());
-      long[] results = new long[response.getResultSetsCount()];
-      for (int i = 0; i < response.getResultSetsCount(); ++i) {
-        results[i] = response.getResultSets(i).getStats().getRowCountExact();
-      }
+      try {
+        com.google.spanner.v1.ExecuteBatchDmlResponse response =
+            rpc.executeBatchDml(builder.build(), session.getOptions());
+        long[] results = new long[response.getResultSetsCount()];
+        for (int i = 0; i < response.getResultSetsCount(); ++i) {
+          results[i] = response.getResultSets(i).getStats().getRowCountExact();
+        }
 
-      // If one of the DML statements was aborted, we should throw an aborted exception.
-      // In all other cases, we should throw a BatchUpdateException.
-      if (response.getStatus().getCode() == Code.ABORTED_VALUE) {
-        throw newSpannerException(
-            ErrorCode.fromRpcStatus(response.getStatus()), response.getStatus().getMessage());
-      } else if (response.getStatus().getCode() != 0) {
-        throw newSpannerBatchUpdateException(
-            ErrorCode.fromRpcStatus(response.getStatus()),
-            response.getStatus().getMessage(),
-            results);
+        // If one of the DML statements was aborted, we should throw an aborted exception.
+        // In all other cases, we should throw a BatchUpdateException.
+        if (response.getStatus().getCode() == Code.ABORTED_VALUE) {
+          throw newSpannerException(
+              ErrorCode.fromRpcStatus(response.getStatus()), response.getStatus().getMessage());
+        } else if (response.getStatus().getCode() != 0) {
+          throw newSpannerBatchUpdateException(
+              ErrorCode.fromRpcStatus(response.getStatus()),
+              response.getStatus().getMessage(),
+              results);
+        }
+        return results;
+      } catch (SpannerException e) {
+        onError(e);
+        throw e;
       }
-      return results;
     }
   }
 
@@ -281,6 +294,7 @@ class TransactionRunnerImpl implements SessionTransaction, TransactionRunner {
   TransactionRunnerImpl(SessionImpl session, SpannerRpc rpc, int defaultPrefetchChunks) {
     this.session = session;
     this.span = Tracing.getTracer().getCurrentSpan();
+    this.txn = session.newTransaction();
   }
 
   @Nullable
@@ -308,7 +322,9 @@ class TransactionRunnerImpl implements SessionTransaction, TransactionRunner {
         new Callable<T>() {
           @Override
           public T call() {
-            txn = session.newTransaction();
+            if (txn.isAborted()) {
+              txn = session.newTransaction();
+            }
             checkState(
                 isValid,
                 "TransactionRunner has been invalidated by a new operation on the session");

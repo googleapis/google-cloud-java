@@ -16,11 +16,11 @@ public interface GetCompanyRequestOrBuilder
    * The format is
    * "projects/{project_id}/tenants/{tenant_id}/companies/{company_id}", for
    * example, "projects/api-test-project/tenants/foo/companies/bar".
-   * Tenant id is optional and the default tenant is used if unspecified, for
+   * If tenant id is unspecified, the default tenant is used, for
    * example, "projects/api-test-project/companies/bar".
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   java.lang.String getName();
   /**
@@ -31,11 +31,11 @@ public interface GetCompanyRequestOrBuilder
    * The format is
    * "projects/{project_id}/tenants/{tenant_id}/companies/{company_id}", for
    * example, "projects/api-test-project/tenants/foo/companies/bar".
-   * Tenant id is optional and the default tenant is used if unspecified, for
+   * If tenant id is unspecified, the default tenant is used, for
    * example, "projects/api-test-project/companies/bar".
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   com.google.protobuf.ByteString getNameBytes();
 }

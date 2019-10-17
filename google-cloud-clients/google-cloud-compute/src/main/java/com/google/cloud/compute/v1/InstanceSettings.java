@@ -42,15 +42,16 @@ import javax.annotation.Generated;
  * <p>The default instance has everything set to sensible defaults:
  *
  * <ul>
- *   <li>The default service address (https://www.googleapis.com/compute/v1/projects/) and default
- *       port (443) are used.
+ *   <li>The default service address (https://compute.googleapis.com/compute/v1/projects/) and
+ *       default port (443) are used.
  *   <li>Credentials are acquired automatically through Application Default Credentials.
  *   <li>Retries are configured for idempotent methods but not for non-idempotent methods.
  * </ul>
  *
  * <p>The builder of this class is recursive, so contained classes are themselves builders. When
- * build() is called, the tree of builders is called to create the complete settings object. For
- * example, to set the total timeout of addAccessConfigInstance to 30 seconds:
+ * build() is called, the tree of builders is called to create the complete settings object.
+ *
+ * <p>For example, to set the total timeout of addAccessConfigInstance to 30 seconds:
  *
  * <pre>
  * <code>
@@ -259,6 +260,12 @@ public class InstanceSettings extends ClientSettings<InstanceSettings> {
   public UnaryCallSettings<UpdateAccessConfigInstanceHttpRequest, Operation>
       updateAccessConfigInstanceSettings() {
     return ((InstanceStubSettings) getStubSettings()).updateAccessConfigInstanceSettings();
+  }
+
+  /** Returns the object with the settings used for calls to updateDisplayDeviceInstance. */
+  public UnaryCallSettings<UpdateDisplayDeviceInstanceHttpRequest, Operation>
+      updateDisplayDeviceInstanceSettings() {
+    return ((InstanceStubSettings) getStubSettings()).updateDisplayDeviceInstanceSettings();
   }
 
   /** Returns the object with the settings used for calls to updateNetworkInterfaceInstance. */
@@ -583,6 +590,12 @@ public class InstanceSettings extends ClientSettings<InstanceSettings> {
     public UnaryCallSettings.Builder<UpdateAccessConfigInstanceHttpRequest, Operation>
         updateAccessConfigInstanceSettings() {
       return getStubSettingsBuilder().updateAccessConfigInstanceSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to updateDisplayDeviceInstance. */
+    public UnaryCallSettings.Builder<UpdateDisplayDeviceInstanceHttpRequest, Operation>
+        updateDisplayDeviceInstanceSettings() {
+      return getStubSettingsBuilder().updateDisplayDeviceInstanceSettings();
     }
 
     /** Returns the builder for the settings used for calls to updateNetworkInterfaceInstance. */

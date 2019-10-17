@@ -2,7 +2,7 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
   <artifactId>google-cloud-bigtable</artifactId>
-  <version>0.101.0</version><!-- {x-version-update:google-cloud-bigtable:current} -->
+  <version>1.5.0</version><!-- {x-version-update:google-cloud-bigtable:current} -->
   <packaging>jar</packaging>
   <name>Google Cloud Bigtable</name>
   <url>https://github.com/googleapis/google-cloud-java/tree/master/google-cloud-clients/google-cloud-bigtable</url>
@@ -12,15 +12,31 @@
   <parent>
     <groupId>com.google.cloud</groupId>
     <artifactId>google-cloud-clients</artifactId>
-    <version>0.101.0-alpha</version><!-- {x-version-update:google-cloud-clients:current} -->
+    <version>0.116.0-alpha</version><!-- {x-version-update:google-cloud-clients:current} -->
   </parent>
   <properties>
     <site.installationModule>google-cloud-bigtable</site.installationModule>
   </properties>
   <dependencies>
+    <!-- NOTE: Dependencies are organized into two groups, production and test.
+         Within a group, dependencies are sorted by (groupId, artifactId) -->
+
+    <!-- Production dependencies -->
     <dependency>
       <groupId>${project.groupId}</groupId>
       <artifactId>google-cloud-core-grpc</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>com.google.api</groupId>
+      <artifactId>api-common</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>com.google.api</groupId>
+      <artifactId>gax-grpc</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>com.google.api</groupId>
+      <artifactId>gax</artifactId>
     </dependency>
     <dependency>
       <groupId>com.google.api.grpc</groupId>
@@ -31,12 +47,107 @@
       <artifactId>proto-google-cloud-bigtable-admin-v2</artifactId>
     </dependency>
     <dependency>
+      <groupId>com.google.api.grpc</groupId>
+      <artifactId>proto-google-common-protos</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>com.google.api.grpc</groupId>
+      <artifactId>proto-google-iam-v1</artifactId>
+    </dependency>
+    <dependency>
       <groupId>com.google.auto.value</groupId>
       <artifactId>auto-value</artifactId>
       <scope>provided</scope>
     </dependency>
+    <dependency>
+      <groupId>com.google.auto.value</groupId>
+      <artifactId>auto-value-annotations</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>com.google.cloud</groupId>
+      <artifactId>google-cloud-core</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>com.google.code.findbugs</groupId>
+      <artifactId>jsr305</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>com.google.guava</groupId>
+      <artifactId>guava</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>com.google.protobuf</groupId>
+      <artifactId>protobuf-java</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>com.google.protobuf</groupId>
+      <artifactId>protobuf-java-util</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>io.opencensus</groupId>
+      <artifactId>opencensus-api</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>io.grpc</groupId>
+      <artifactId>grpc-alts</artifactId>
+      <scope>runtime</scope>
+    </dependency>
+    <dependency>
+      <groupId>io.grpc</groupId>
+      <artifactId>grpc-api</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>io.grpc</groupId>
+      <artifactId>grpc-auth</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>io.grpc</groupId>
+      <artifactId>grpc-context</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>io.grpc</groupId>
+      <artifactId>grpc-core</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>io.grpc</groupId>
+      <artifactId>grpc-grpclb</artifactId>
+      <scope>runtime</scope>
+    </dependency>
+    <dependency>
+      <groupId>io.grpc</groupId>
+      <artifactId>grpc-netty-shaded</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>io.grpc</groupId>
+      <artifactId>grpc-protobuf</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>org.threeten</groupId>
+      <artifactId>threetenbp</artifactId>
+      <!-- For dependency convergence with gax -->
+      <version>1.3.3</version>
+    </dependency>
+    <!-- // TODO(igorbernstein): Enable grpc views once we upgrade to grpc-java 1.24.0 -->
+<!--    <dependency>-->
+<!--      <groupId>io.opencensus</groupId>-->
+<!--      <artifactId>opencensus-contrib-grpc-metrics</artifactId>-->
+<!--      <version>${opencensus.version}</version>-->
+<!--    </dependency>-->
 
     <!-- Test dependencies -->
+    <dependency>
+      <groupId>com.google.api</groupId>
+      <artifactId>gax</artifactId>
+      <classifier>testlib</classifier>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <!-- Need testing utility classes for generated gRPC clients tests -->
+      <groupId>com.google.api</groupId>
+      <artifactId>gax-grpc</artifactId>
+      <classifier>testlib</classifier>
+      <scope>test</scope>
+    </dependency>
     <dependency>
       <groupId>com.google.api.grpc</groupId>
       <artifactId>grpc-google-cloud-bigtable-v2</artifactId>
@@ -53,8 +164,8 @@
       <scope>test</scope>
     </dependency>
     <dependency>
-      <groupId>org.mockito</groupId>
-      <artifactId>mockito-all</artifactId>
+      <groupId>com.google.cloud</groupId>
+      <artifactId>google-cloud-conformance-tests</artifactId>
       <scope>test</scope>
     </dependency>
     <dependency>
@@ -63,21 +174,23 @@
       <scope>test</scope>
     </dependency>
     <dependency>
-      <groupId>com.google.api</groupId>
-      <artifactId>gax</artifactId>
-      <classifier>testlib</classifier>
-      <scope>test</scope>
-    </dependency>
-    <!-- Need testing utility classes for generated gRPC clients tests -->
-    <dependency>
-      <groupId>com.google.api</groupId>
-      <artifactId>gax-grpc</artifactId>
-      <classifier>testlib</classifier>
+      <groupId>io.grpc</groupId>
+      <artifactId>grpc-stub</artifactId>
       <scope>test</scope>
     </dependency>
     <dependency>
       <groupId>io.grpc</groupId>
       <artifactId>grpc-testing</artifactId>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.mockito</groupId>
+      <artifactId>mockito-all</artifactId>
       <scope>test</scope>
     </dependency>
   </dependencies>
@@ -105,7 +218,8 @@
                     <bigtable.env>emulator</bigtable.env>
                   </systemPropertyVariables>
                   <test>com.google.cloud.bigtable.data.v2.it.**</test>
-                  <summaryFile>target/failsafe-reports/failsafe-summary-emulator-it.xml</summaryFile>
+                  <test>com.google.cloud.bigtable.admin.v2.it.**</test>
+                  <summaryFile>${project.build.directory}/failsafe-reports/failsafe-summary-emulator-it.xml</summaryFile>
                 </configuration>
               </execution>
             </executions>
@@ -133,7 +247,7 @@
                   </systemPropertyVariables>
                   <test>com.google.cloud.bigtable.data.v2.it.**</test>
                   <test>com.google.cloud.bigtable.admin.v2.it.**</test>
-                  <summaryFile>target/failsafe-reports/failsafe-summary-prod-it.xml</summaryFile>
+                  <summaryFile>${project.build.directory}/failsafe-reports/failsafe-summary-prod-it.xml</summaryFile>
                 </configuration>
               </execution>
             </executions>
@@ -167,7 +281,7 @@
                   </environmentVariables>
                   <!-- TODO(igorbernstein): Once the control plane is accessible via directpath, add admin tests -->
                   <test>com.google.cloud.bigtable.data.v2.it.**</test>
-                  <summaryFile>target/failsafe-reports/failsafe-summary-directpath-it.xml</summaryFile>
+                  <summaryFile>${project.build.directory}/failsafe-reports/failsafe-summary-directpath-it.xml</summaryFile>
                 </configuration>
               </execution>
             </executions>
@@ -181,6 +295,50 @@
     <plugins>
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-enforcer-plugin</artifactId>
+        <version>3.0.0-M2</version>
+        <executions>
+          <execution>
+            <id>enforce-valid-profile</id>
+            <configuration>
+              <rules>
+                <requireProfileIdsExist/>
+              </rules>
+            </configuration>
+            <goals>
+              <goal>enforce</goal>
+            </goals>
+          </execution>
+        </executions>
+      </plugin>
+
+      <!-- Workaround maven failing to delete old test reports. For some reason, when using the
+        failsafe plugin in profiles, maven retains the counts from previous executions. Causing a
+        stale failure to fail the current test run. -->
+      <plugin>
+        <artifactId>maven-clean-plugin</artifactId>
+        <version>2.5</version>
+        <executions>
+          <execution>
+            <id>clean-old-reports</id>
+            <goals>
+              <goal>clean</goal>
+            </goals>
+            <phase>pre-integration-test</phase>
+            <configuration>
+              <excludeDefaultDirectories>true</excludeDefaultDirectories>
+              <filesets>
+                <fileset>
+                  <directory>${project.build.directory}/failsafe-reports</directory>
+                </fileset>
+              </filesets>
+            </configuration>
+          </execution>
+        </executions>
+      </plugin>
+
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-failsafe-plugin</artifactId>
         <version>3.0.0-M3</version>
         <configuration>
@@ -188,8 +346,6 @@
           <perCoreThreadCount>true</perCoreThreadCount>
           <threadCount>2</threadCount>
           <trimStackTrace>false</trimStackTrace>
-          <test>com.google.cloud.bigtable.data.v2.it.**</test>
-          <test>com.google.cloud.bigtable.admin.v2.it.**</test>
         </configuration>
         <dependencies>
           <dependency>
@@ -199,6 +355,7 @@
           </dependency>
         </dependencies>
       </plugin>
+
       <plugin>
         <artifactId>maven-surefire-plugin</artifactId>
         <version>3.0.0-M3</version>
@@ -265,6 +422,7 @@
             <exclude>com/google/cloud/bigtable/data/v2/stub/EnhancedBigtableStub.java</exclude>
             <exclude>com/google/cloud/bigtable/data/v2/stub/mutaterows/**</exclude>
             <exclude>com/google/cloud/bigtable/data/v2/stub/readrows/**</exclude>
+            <exclude>com/google/cloud/bigtable/data/v2/stub/metrics/**</exclude>
           </sourceFileExcludes>
 
           <offlineLinks>

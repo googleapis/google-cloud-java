@@ -12,7 +12,7 @@ public interface ActivityOrBuilder
    *
    *
    * <pre>
-   * Optional. Activity display name.
+   * Activity display name.
    * Number of characters allowed is 100.
    * </pre>
    *
@@ -23,7 +23,7 @@ public interface ActivityOrBuilder
    *
    *
    * <pre>
-   * Optional. Activity display name.
+   * Activity display name.
    * Number of characters allowed is 100.
    * </pre>
    *
@@ -35,7 +35,7 @@ public interface ActivityOrBuilder
    *
    *
    * <pre>
-   * Optional. Activity description.
+   * Activity description.
    * Number of characters allowed is 100,000.
    * </pre>
    *
@@ -46,7 +46,7 @@ public interface ActivityOrBuilder
    *
    *
    * <pre>
-   * Optional. Activity description.
+   * Activity description.
    * Number of characters allowed is 100,000.
    * </pre>
    *
@@ -58,7 +58,7 @@ public interface ActivityOrBuilder
    *
    *
    * <pre>
-   * Optional. Activity URI.
+   * Activity URI.
    * Number of characters allowed is 4,000.
    * </pre>
    *
@@ -69,7 +69,7 @@ public interface ActivityOrBuilder
    *
    *
    * <pre>
-   * Optional. Activity URI.
+   * Activity URI.
    * Number of characters allowed is 4,000.
    * </pre>
    *
@@ -81,7 +81,7 @@ public interface ActivityOrBuilder
    *
    *
    * <pre>
-   * Optional. The first creation date of the activity.
+   * The first creation date of the activity.
    * </pre>
    *
    * <code>.google.type.Date create_date = 4;</code>
@@ -91,7 +91,7 @@ public interface ActivityOrBuilder
    *
    *
    * <pre>
-   * Optional. The first creation date of the activity.
+   * The first creation date of the activity.
    * </pre>
    *
    * <code>.google.type.Date create_date = 4;</code>
@@ -101,7 +101,7 @@ public interface ActivityOrBuilder
    *
    *
    * <pre>
-   * Optional. The first creation date of the activity.
+   * The first creation date of the activity.
    * </pre>
    *
    * <code>.google.type.Date create_date = 4;</code>
@@ -112,7 +112,7 @@ public interface ActivityOrBuilder
    *
    *
    * <pre>
-   * Optional. The last update date of the activity.
+   * The last update date of the activity.
    * </pre>
    *
    * <code>.google.type.Date update_date = 5;</code>
@@ -122,7 +122,7 @@ public interface ActivityOrBuilder
    *
    *
    * <pre>
-   * Optional. The last update date of the activity.
+   * The last update date of the activity.
    * </pre>
    *
    * <code>.google.type.Date update_date = 5;</code>
@@ -132,7 +132,7 @@ public interface ActivityOrBuilder
    *
    *
    * <pre>
-   * Optional. The last update date of the activity.
+   * The last update date of the activity.
    * </pre>
    *
    * <code>.google.type.Date update_date = 5;</code>
@@ -143,7 +143,7 @@ public interface ActivityOrBuilder
    *
    *
    * <pre>
-   * Optional. A list of team members involved in this activity.
+   * A list of team members involved in this activity.
    * Number of characters allowed is 100.
    * The limitation for max number of team members is 50.
    * </pre>
@@ -155,7 +155,7 @@ public interface ActivityOrBuilder
    *
    *
    * <pre>
-   * Optional. A list of team members involved in this activity.
+   * A list of team members involved in this activity.
    * Number of characters allowed is 100.
    * The limitation for max number of team members is 50.
    * </pre>
@@ -167,7 +167,7 @@ public interface ActivityOrBuilder
    *
    *
    * <pre>
-   * Optional. A list of team members involved in this activity.
+   * A list of team members involved in this activity.
    * Number of characters allowed is 100.
    * The limitation for max number of team members is 50.
    * </pre>
@@ -179,7 +179,7 @@ public interface ActivityOrBuilder
    *
    *
    * <pre>
-   * Optional. A list of team members involved in this activity.
+   * A list of team members involved in this activity.
    * Number of characters allowed is 100.
    * The limitation for max number of team members is 50.
    * </pre>
@@ -192,7 +192,7 @@ public interface ActivityOrBuilder
    *
    *
    * <pre>
-   * Optional. A list of skills used in this activity.
+   * A list of skills used in this activity.
    * The limitation for max number of skills used is 50.
    * </pre>
    *
@@ -203,7 +203,7 @@ public interface ActivityOrBuilder
    *
    *
    * <pre>
-   * Optional. A list of skills used in this activity.
+   * A list of skills used in this activity.
    * The limitation for max number of skills used is 50.
    * </pre>
    *
@@ -214,7 +214,7 @@ public interface ActivityOrBuilder
    *
    *
    * <pre>
-   * Optional. A list of skills used in this activity.
+   * A list of skills used in this activity.
    * The limitation for max number of skills used is 50.
    * </pre>
    *
@@ -225,7 +225,7 @@ public interface ActivityOrBuilder
    *
    *
    * <pre>
-   * Optional. A list of skills used in this activity.
+   * A list of skills used in this activity.
    * The limitation for max number of skills used is 50.
    * </pre>
    *
@@ -237,7 +237,7 @@ public interface ActivityOrBuilder
    *
    *
    * <pre>
-   * Optional. A list of skills used in this activity.
+   * A list of skills used in this activity.
    * The limitation for max number of skills used is 50.
    * </pre>
    *
@@ -256,7 +256,7 @@ public interface ActivityOrBuilder
    * related to the search query.
    * </pre>
    *
-   * <code>string activity_name_snippet = 8;</code>
+   * <code>string activity_name_snippet = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    */
   java.lang.String getActivityNameSnippet();
   /**
@@ -270,7 +270,7 @@ public interface ActivityOrBuilder
    * related to the search query.
    * </pre>
    *
-   * <code>string activity_name_snippet = 8;</code>
+   * <code>string activity_name_snippet = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    */
   com.google.protobuf.ByteString getActivityNameSnippetBytes();
 
@@ -285,7 +285,8 @@ public interface ActivityOrBuilder
    * related to the search query.
    * </pre>
    *
-   * <code>string activity_description_snippet = 9;</code>
+   * <code>string activity_description_snippet = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    */
   java.lang.String getActivityDescriptionSnippet();
   /**
@@ -299,7 +300,8 @@ public interface ActivityOrBuilder
    * related to the search query.
    * </pre>
    *
-   * <code>string activity_description_snippet = 9;</code>
+   * <code>string activity_description_snippet = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    */
   com.google.protobuf.ByteString getActivityDescriptionSnippetBytes();
 
@@ -314,7 +316,8 @@ public interface ActivityOrBuilder
    * related to the search query.
    * </pre>
    *
-   * <code>repeated string skills_used_snippet = 10;</code>
+   * <code>repeated string skills_used_snippet = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    */
   java.util.List<java.lang.String> getSkillsUsedSnippetList();
   /**
@@ -328,7 +331,8 @@ public interface ActivityOrBuilder
    * related to the search query.
    * </pre>
    *
-   * <code>repeated string skills_used_snippet = 10;</code>
+   * <code>repeated string skills_used_snippet = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    */
   int getSkillsUsedSnippetCount();
   /**
@@ -342,7 +346,8 @@ public interface ActivityOrBuilder
    * related to the search query.
    * </pre>
    *
-   * <code>repeated string skills_used_snippet = 10;</code>
+   * <code>repeated string skills_used_snippet = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    */
   java.lang.String getSkillsUsedSnippet(int index);
   /**
@@ -356,7 +361,8 @@ public interface ActivityOrBuilder
    * related to the search query.
    * </pre>
    *
-   * <code>repeated string skills_used_snippet = 10;</code>
+   * <code>repeated string skills_used_snippet = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    */
   com.google.protobuf.ByteString getSkillsUsedSnippetBytes(int index);
 }

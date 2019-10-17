@@ -1,0 +1,13 @@
+{
+  "name": "talent",
+  "name_pretty": "Google Cloud Talent Solution",
+  "product_documentation": "https://cloud.google.com/solutions/talent-solution/",
+  "client_documentation": "https://googleapis.dev/java/google-cloud-clients/latest/index.html?com/google/cloud/talent/v4beta1/package-summary.html",
+  "issue_tracker": "https://issuetracker.google.com/savedsearches/559664",
+  "release_level": "beta",
+  "language": "java",
+  "repo": "googleapis/google-cloud-java",
+  "repo_short": "google-cloud-java",
+  "distribution_name": "com.google.cloud:google-cloud-talent",
+  "api_id": "jobs.googleapis.com"
+}

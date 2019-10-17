@@ -14,9 +14,7 @@ public interface ListLogEntriesRequestOrBuilder
    * <pre>
    * Deprecated. Use `resource_names` instead.  One or more project identifiers
    * or project numbers from which to retrieve log entries.  Example:
-   * `"my-project-1A"`. If present, these project identifiers are converted to
-   * resource name format and added to the list of resources in
-   * `resource_names`.
+   * `"my-project-1A"`.
    * </pre>
    *
    * <code>repeated string project_ids = 1 [deprecated = true];</code>
@@ -29,9 +27,7 @@ public interface ListLogEntriesRequestOrBuilder
    * <pre>
    * Deprecated. Use `resource_names` instead.  One or more project identifiers
    * or project numbers from which to retrieve log entries.  Example:
-   * `"my-project-1A"`. If present, these project identifiers are converted to
-   * resource name format and added to the list of resources in
-   * `resource_names`.
+   * `"my-project-1A"`.
    * </pre>
    *
    * <code>repeated string project_ids = 1 [deprecated = true];</code>
@@ -44,9 +40,7 @@ public interface ListLogEntriesRequestOrBuilder
    * <pre>
    * Deprecated. Use `resource_names` instead.  One or more project identifiers
    * or project numbers from which to retrieve log entries.  Example:
-   * `"my-project-1A"`. If present, these project identifiers are converted to
-   * resource name format and added to the list of resources in
-   * `resource_names`.
+   * `"my-project-1A"`.
    * </pre>
    *
    * <code>repeated string project_ids = 1 [deprecated = true];</code>
@@ -59,9 +53,7 @@ public interface ListLogEntriesRequestOrBuilder
    * <pre>
    * Deprecated. Use `resource_names` instead.  One or more project identifiers
    * or project numbers from which to retrieve log entries.  Example:
-   * `"my-project-1A"`. If present, these project identifiers are converted to
-   * resource name format and added to the list of resources in
-   * `resource_names`.
+   * `"my-project-1A"`.
    * </pre>
    *
    * <code>repeated string project_ids = 1 [deprecated = true];</code>

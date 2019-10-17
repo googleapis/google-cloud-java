@@ -18,6 +18,7 @@ package com.google.cloud.bigquery;
 
 import static com.google.common.base.Preconditions.checkArgument;
 import static com.google.common.base.Preconditions.checkNotNull;
+import static com.google.common.base.Strings.isNullOrEmpty;
 
 import com.google.api.services.bigquery.model.JobConfigurationQuery;
 import com.google.api.services.bigquery.model.QueryParameter;
@@ -26,7 +27,6 @@ import com.google.cloud.bigquery.JobInfo.SchemaUpdateOption;
 import com.google.cloud.bigquery.JobInfo.WriteDisposition;
 import com.google.common.base.Function;
 import com.google.common.base.MoreObjects.ToStringHelper;
-import com.google.common.base.Strings;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.Iterables;
@@ -65,6 +65,8 @@ public final class QueryJobConfiguration extends JobConfiguration {
   private final EncryptionConfiguration destinationEncryptionConfiguration;
   private final TimePartitioning timePartitioning;
   private final Clustering clustering;
+  private final Long jobTimeoutMs;
+  private final Map<String, String> labels;
 
   /**
    * Priority levels for a query. If not specified the priority is assumed to be {@link
@@ -110,6 +112,8 @@ public final class QueryJobConfiguration extends JobConfiguration {
     private EncryptionConfiguration destinationEncryptionConfiguration;
     private TimePartitioning timePartitioning;
     private Clustering clustering;
+    private Long jobTimeoutMs;
+    private Map<String, String> labels;
 
     private Builder() {
       super(Type.QUERY);
@@ -138,6 +142,8 @@ public final class QueryJobConfiguration extends JobConfiguration {
       this.destinationEncryptionConfiguration = jobConfiguration.destinationEncryptionConfiguration;
       this.timePartitioning = jobConfiguration.timePartitioning;
       this.clustering = jobConfiguration.clustering;
+      this.jobTimeoutMs = jobConfiguration.jobTimeoutMs;
+      this.labels = jobConfiguration.labels;
     }
 
     private Builder(com.google.api.services.bigquery.model.JobConfiguration configurationPb) {
@@ -220,6 +226,12 @@ public final class QueryJobConfiguration extends JobConfiguration {
       }
       if (queryConfigurationPb.getClustering() != null) {
         this.clustering = Clustering.fromPb(queryConfigurationPb.getClustering());
+      }
+      if (configurationPb.getJobTimeoutMs() != null) {
+        this.jobTimeoutMs = configurationPb.getJobTimeoutMs();
+      }
+      if (configurationPb.getLabels() != null) {
+        this.labels = configurationPb.getLabels();
       }
     }
 
@@ -524,6 +536,31 @@ public final class QueryJobConfiguration extends JobConfiguration {
       return this;
     }
 
+    /**
+     * [Optional] Job timeout in milliseconds. If this time limit is exceeded, BigQuery may attempt
+     * to terminate the job.
+     *
+     * @param jobTimeoutMs jobTimeoutMs or {@code null} for none
+     */
+    public Builder setJobTimeoutMs(Long jobTimeoutMs) {
+      this.jobTimeoutMs = jobTimeoutMs;
+      return this;
+    }
+
+    /**
+     * The labels associated with this job. You can use these to organize and group your jobs. Label
+     * keys and values can be no longer than 63 characters, can only contain lowercase letters,
+     * numeric characters, underscores and dashes. International characters are allowed. Label
+     * values are optional. Label keys must start with a letter and each label in the list must have
+     * a different key.
+     *
+     * @param labels labels or {@code null} for none
+     */
+    public Builder setLabels(Map<String, String> labels) {
+      this.labels = labels;
+      return this;
+    }
+
     public QueryJobConfiguration build() {
       return new QueryJobConfiguration(this);
     }
@@ -561,6 +598,8 @@ public final class QueryJobConfiguration extends JobConfiguration {
     this.destinationEncryptionConfiguration = builder.destinationEncryptionConfiguration;
     this.timePartitioning = builder.timePartitioning;
     this.clustering = builder.clustering;
+    this.jobTimeoutMs = builder.jobTimeoutMs;
+    this.labels = builder.labels;
   }
 
   /**
@@ -730,6 +769,16 @@ public final class QueryJobConfiguration extends JobConfiguration {
     return clustering;
   }
 
+  /** Returns the timeout associated with this job */
+  public Long getJobTimeoutMs() {
+    return jobTimeoutMs;
+  }
+
+  /** Returns the labels associated with this job */
+  public Map<String, String> getLabels() {
+    return labels;
+  }
+
   @Override
   public Builder toBuilder() {
     return new Builder(this);
@@ -758,7 +807,9 @@ public final class QueryJobConfiguration extends JobConfiguration {
         .add("maximumBytesBilled", maximumBytesBilled)
         .add("schemaUpdateOptions", schemaUpdateOptions)
         .add("timePartitioning", timePartitioning)
-        .add("clustering", clustering);
+        .add("clustering", clustering)
+        .add("jobTimeoutMs", jobTimeoutMs)
+        .add("labels", labels);
   }
 
   @Override
@@ -790,14 +841,15 @@ public final class QueryJobConfiguration extends JobConfiguration {
         maximumBytesBilled,
         schemaUpdateOptions,
         timePartitioning,
-        clustering);
+        clustering,
+        jobTimeoutMs,
+        labels);
   }
 
   @Override
   QueryJobConfiguration setProjectId(String projectId) {
     Builder builder = toBuilder();
-    if (getDestinationTable() != null
-        && Strings.isNullOrEmpty(getDestinationTable().getProject())) {
+    if (getDestinationTable() != null && isNullOrEmpty(getDestinationTable().getProject())) {
       builder.setDestinationTable(getDestinationTable().setProjectId(projectId));
     }
     if (getDefaultDataset() != null) {
@@ -881,11 +933,19 @@ public final class QueryJobConfiguration extends JobConfiguration {
     if (clustering != null) {
       queryConfigurationPb.setClustering(clustering.toPb());
     }
-    return configurationPb.setQuery(queryConfigurationPb);
+    if (jobTimeoutMs != null) {
+      configurationPb.setJobTimeoutMs(jobTimeoutMs);
+    }
+    if (labels != null) {
+      configurationPb.setLabels(labels);
+    }
+    configurationPb.setQuery(queryConfigurationPb);
+    return configurationPb;
   }
 
   /** Creates a builder for a BigQuery Query Job given the query to be run. */
   public static Builder newBuilder(String query) {
+    checkArgument(!isNullOrEmpty(query), "Provided query is null or empty");
     return new Builder().setQuery(query);
   }
 

@@ -15,6 +15,7 @@
  */
 package com.google.cloud.compute.v1.stub;
 
+import static com.google.cloud.compute.v1.SslCertificateClient.AggregatedListSslCertificatesPagedResponse;
 import static com.google.cloud.compute.v1.SslCertificateClient.ListSslCertificatesPagedResponse;
 
 import com.google.api.core.ApiFunction;
@@ -39,13 +40,16 @@ import com.google.api.gax.rpc.StubSettings;
 import com.google.api.gax.rpc.TransportChannelProvider;
 import com.google.api.gax.rpc.UnaryCallSettings;
 import com.google.api.gax.rpc.UnaryCallable;
+import com.google.cloud.compute.v1.AggregatedListSslCertificatesHttpRequest;
 import com.google.cloud.compute.v1.DeleteSslCertificateHttpRequest;
 import com.google.cloud.compute.v1.GetSslCertificateHttpRequest;
 import com.google.cloud.compute.v1.InsertSslCertificateHttpRequest;
 import com.google.cloud.compute.v1.ListSslCertificatesHttpRequest;
 import com.google.cloud.compute.v1.Operation;
 import com.google.cloud.compute.v1.SslCertificate;
+import com.google.cloud.compute.v1.SslCertificateAggregatedList;
 import com.google.cloud.compute.v1.SslCertificateList;
+import com.google.cloud.compute.v1.SslCertificatesScopedList;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.ImmutableSet;
@@ -62,15 +66,16 @@ import org.threeten.bp.Duration;
  * <p>The default instance has everything set to sensible defaults:
  *
  * <ul>
- *   <li>The default service address (https://www.googleapis.com/compute/v1/projects/) and default
- *       port (443) are used.
+ *   <li>The default service address (https://compute.googleapis.com/compute/v1/projects/) and
+ *       default port (443) are used.
  *   <li>Credentials are acquired automatically through Application Default Credentials.
  *   <li>Retries are configured for idempotent methods but not for non-idempotent methods.
  * </ul>
  *
  * <p>The builder of this class is recursive, so contained classes are themselves builders. When
- * build() is called, the tree of builders is called to create the complete settings object. For
- * example, to set the total timeout of deleteSslCertificate to 30 seconds:
+ * build() is called, the tree of builders is called to create the complete settings object.
+ *
+ * <p>For example, to set the total timeout of deleteSslCertificate to 30 seconds:
  *
  * <pre>
  * <code>
@@ -96,6 +101,11 @@ public class SslCertificateStubSettings extends StubSettings<SslCertificateStubS
           .add("https://www.googleapis.com/auth/devstorage.read_write")
           .build();
 
+  private final PagedCallSettings<
+          AggregatedListSslCertificatesHttpRequest,
+          SslCertificateAggregatedList,
+          AggregatedListSslCertificatesPagedResponse>
+      aggregatedListSslCertificatesSettings;
   private final UnaryCallSettings<DeleteSslCertificateHttpRequest, Operation>
       deleteSslCertificateSettings;
   private final UnaryCallSettings<GetSslCertificateHttpRequest, SslCertificate>
@@ -105,6 +115,15 @@ public class SslCertificateStubSettings extends StubSettings<SslCertificateStubS
   private final PagedCallSettings<
           ListSslCertificatesHttpRequest, SslCertificateList, ListSslCertificatesPagedResponse>
       listSslCertificatesSettings;
+
+  /** Returns the object with the settings used for calls to aggregatedListSslCertificates. */
+  public PagedCallSettings<
+          AggregatedListSslCertificatesHttpRequest,
+          SslCertificateAggregatedList,
+          AggregatedListSslCertificatesPagedResponse>
+      aggregatedListSslCertificatesSettings() {
+    return aggregatedListSslCertificatesSettings;
+  }
 
   /** Returns the object with the settings used for calls to deleteSslCertificate. */
   public UnaryCallSettings<DeleteSslCertificateHttpRequest, Operation>
@@ -150,7 +169,7 @@ public class SslCertificateStubSettings extends StubSettings<SslCertificateStubS
 
   /** Returns the default service endpoint. */
   public static String getDefaultEndpoint() {
-    return "https://www.googleapis.com/compute/v1/projects/";
+    return "https://compute.googleapis.com/compute/v1/projects/";
   }
 
   /** Returns the default service port. */
@@ -206,11 +225,62 @@ public class SslCertificateStubSettings extends StubSettings<SslCertificateStubS
   protected SslCertificateStubSettings(Builder settingsBuilder) throws IOException {
     super(settingsBuilder);
 
+    aggregatedListSslCertificatesSettings =
+        settingsBuilder.aggregatedListSslCertificatesSettings().build();
     deleteSslCertificateSettings = settingsBuilder.deleteSslCertificateSettings().build();
     getSslCertificateSettings = settingsBuilder.getSslCertificateSettings().build();
     insertSslCertificateSettings = settingsBuilder.insertSslCertificateSettings().build();
     listSslCertificatesSettings = settingsBuilder.listSslCertificatesSettings().build();
   }
+
+  private static final PagedListDescriptor<
+          AggregatedListSslCertificatesHttpRequest,
+          SslCertificateAggregatedList,
+          SslCertificatesScopedList>
+      AGGREGATED_LIST_SSL_CERTIFICATES_PAGE_STR_DESC =
+          new PagedListDescriptor<
+              AggregatedListSslCertificatesHttpRequest,
+              SslCertificateAggregatedList,
+              SslCertificatesScopedList>() {
+            @Override
+            public String emptyToken() {
+              return "";
+            }
+
+            @Override
+            public AggregatedListSslCertificatesHttpRequest injectToken(
+                AggregatedListSslCertificatesHttpRequest payload, String token) {
+              return AggregatedListSslCertificatesHttpRequest.newBuilder(payload)
+                  .setPageToken(token)
+                  .build();
+            }
+
+            @Override
+            public AggregatedListSslCertificatesHttpRequest injectPageSize(
+                AggregatedListSslCertificatesHttpRequest payload, int pageSize) {
+              return AggregatedListSslCertificatesHttpRequest.newBuilder(payload)
+                  .setMaxResults(pageSize)
+                  .build();
+            }
+
+            @Override
+            public Integer extractPageSize(AggregatedListSslCertificatesHttpRequest payload) {
+              return payload.getMaxResults();
+            }
+
+            @Override
+            public String extractNextToken(SslCertificateAggregatedList payload) {
+              return payload.getNextPageToken();
+            }
+
+            @Override
+            public Iterable<SslCertificatesScopedList> extractResources(
+                SslCertificateAggregatedList payload) {
+              return payload.getItemsMap() != null
+                  ? payload.getItemsMap().values()
+                  : ImmutableList.<SslCertificatesScopedList>of();
+            }
+          };
 
   private static final PagedListDescriptor<
           ListSslCertificatesHttpRequest, SslCertificateList, SslCertificate>
@@ -255,6 +325,38 @@ public class SslCertificateStubSettings extends StubSettings<SslCertificateStubS
           };
 
   private static final PagedListResponseFactory<
+          AggregatedListSslCertificatesHttpRequest,
+          SslCertificateAggregatedList,
+          AggregatedListSslCertificatesPagedResponse>
+      AGGREGATED_LIST_SSL_CERTIFICATES_PAGE_STR_FACT =
+          new PagedListResponseFactory<
+              AggregatedListSslCertificatesHttpRequest,
+              SslCertificateAggregatedList,
+              AggregatedListSslCertificatesPagedResponse>() {
+            @Override
+            public ApiFuture<AggregatedListSslCertificatesPagedResponse> getFuturePagedResponse(
+                UnaryCallable<
+                        AggregatedListSslCertificatesHttpRequest, SslCertificateAggregatedList>
+                    callable,
+                AggregatedListSslCertificatesHttpRequest request,
+                ApiCallContext context,
+                ApiFuture<SslCertificateAggregatedList> futureResponse) {
+              PageContext<
+                      AggregatedListSslCertificatesHttpRequest,
+                      SslCertificateAggregatedList,
+                      SslCertificatesScopedList>
+                  pageContext =
+                      PageContext.create(
+                          callable,
+                          AGGREGATED_LIST_SSL_CERTIFICATES_PAGE_STR_DESC,
+                          request,
+                          context);
+              return AggregatedListSslCertificatesPagedResponse.createAsync(
+                  pageContext, futureResponse);
+            }
+          };
+
+  private static final PagedListResponseFactory<
           ListSslCertificatesHttpRequest, SslCertificateList, ListSslCertificatesPagedResponse>
       LIST_SSL_CERTIFICATES_PAGE_STR_FACT =
           new PagedListResponseFactory<
@@ -279,6 +381,11 @@ public class SslCertificateStubSettings extends StubSettings<SslCertificateStubS
   public static class Builder extends StubSettings.Builder<SslCertificateStubSettings, Builder> {
     private final ImmutableList<UnaryCallSettings.Builder<?, ?>> unaryMethodSettingsBuilders;
 
+    private final PagedCallSettings.Builder<
+            AggregatedListSslCertificatesHttpRequest,
+            SslCertificateAggregatedList,
+            AggregatedListSslCertificatesPagedResponse>
+        aggregatedListSslCertificatesSettings;
     private final UnaryCallSettings.Builder<DeleteSslCertificateHttpRequest, Operation>
         deleteSslCertificateSettings;
     private final UnaryCallSettings.Builder<GetSslCertificateHttpRequest, SslCertificate>
@@ -330,6 +437,9 @@ public class SslCertificateStubSettings extends StubSettings<SslCertificateStubS
     protected Builder(ClientContext clientContext) {
       super(clientContext);
 
+      aggregatedListSslCertificatesSettings =
+          PagedCallSettings.newBuilder(AGGREGATED_LIST_SSL_CERTIFICATES_PAGE_STR_FACT);
+
       deleteSslCertificateSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
       getSslCertificateSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
@@ -341,6 +451,7 @@ public class SslCertificateStubSettings extends StubSettings<SslCertificateStubS
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
+              aggregatedListSslCertificatesSettings,
               deleteSslCertificateSettings,
               getSslCertificateSettings,
               insertSslCertificateSettings,
@@ -359,6 +470,11 @@ public class SslCertificateStubSettings extends StubSettings<SslCertificateStubS
     }
 
     private static Builder initDefaults(Builder builder) {
+
+      builder
+          .aggregatedListSslCertificatesSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
 
       builder
           .deleteSslCertificateSettings()
@@ -386,6 +502,8 @@ public class SslCertificateStubSettings extends StubSettings<SslCertificateStubS
     protected Builder(SslCertificateStubSettings settings) {
       super(settings);
 
+      aggregatedListSslCertificatesSettings =
+          settings.aggregatedListSslCertificatesSettings.toBuilder();
       deleteSslCertificateSettings = settings.deleteSslCertificateSettings.toBuilder();
       getSslCertificateSettings = settings.getSslCertificateSettings.toBuilder();
       insertSslCertificateSettings = settings.insertSslCertificateSettings.toBuilder();
@@ -393,6 +511,7 @@ public class SslCertificateStubSettings extends StubSettings<SslCertificateStubS
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
+              aggregatedListSslCertificatesSettings,
               deleteSslCertificateSettings,
               getSslCertificateSettings,
               insertSslCertificateSettings,
@@ -413,6 +532,15 @@ public class SslCertificateStubSettings extends StubSettings<SslCertificateStubS
 
     public ImmutableList<UnaryCallSettings.Builder<?, ?>> unaryMethodSettingsBuilders() {
       return unaryMethodSettingsBuilders;
+    }
+
+    /** Returns the builder for the settings used for calls to aggregatedListSslCertificates. */
+    public PagedCallSettings.Builder<
+            AggregatedListSslCertificatesHttpRequest,
+            SslCertificateAggregatedList,
+            AggregatedListSslCertificatesPagedResponse>
+        aggregatedListSslCertificatesSettings() {
+      return aggregatedListSslCertificatesSettings;
     }
 
     /** Returns the builder for the settings used for calls to deleteSslCertificate. */

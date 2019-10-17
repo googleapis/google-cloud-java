@@ -95,7 +95,7 @@ public class CreateClusterRequestTest {
     CreateInstanceRequest input =
         CreateInstanceRequest.of("my-instance")
             .setType(Instance.Type.DEVELOPMENT)
-            .addCluster("cluster1", "us-east1-c", 1, StorageType.SSD);
+            .addDevelopmentCluster("cluster1", "us-east1-c", StorageType.SSD);
 
     com.google.bigtable.admin.v2.CreateInstanceRequest actual = input.toProto("my-project");
 
@@ -111,7 +111,6 @@ public class CreateClusterRequestTest {
                 "cluster1",
                 com.google.bigtable.admin.v2.Cluster.newBuilder()
                     .setLocation("projects/my-project/locations/us-east1-c")
-                    .setServeNodes(1)
                     .setDefaultStorageType(com.google.bigtable.admin.v2.StorageType.SSD)
                     .build())
             .build();

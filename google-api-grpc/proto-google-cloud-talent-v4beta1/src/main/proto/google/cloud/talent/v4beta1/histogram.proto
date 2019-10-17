@@ -18,7 +18,6 @@ syntax = "proto3";
 package google.cloud.talent.v4beta1;
 
 import "google/api/annotations.proto";
-import "google/protobuf/wrappers.proto";
 
 option go_package = "google.golang.org/genproto/googleapis/cloud/talent/v4beta1;talent";
 option java_multiple_files = true;
@@ -26,8 +25,6 @@ option java_outer_classname = "HistogramProto";
 option java_package = "com.google.cloud.talent.v4beta1";
 option objc_class_prefix = "CTS";
 
-// Input Only.
-//
 // The histogram request.
 message HistogramQuery {
   // An expression specifies a histogram request against matching resources
@@ -41,8 +38,6 @@ message HistogramQuery {
   string histogram_query = 1;
 }
 
-// Output only.
-//
 // Histogram result that matches
 // [HistogramQuery][google.cloud.talent.v4beta1.HistogramQuery] specified in
 // searches.

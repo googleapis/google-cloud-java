@@ -12,22 +12,26 @@ public interface UpdateTagTemplateFieldRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The name of the tag template field. For example,
-   * "projects/{project_id}/locations/{location}/tagTemplates/{tag_template_id}/fields/{tag_template_field_id}".
+   * Required. The name of the tag template field. Example:
+   * * projects/{project_id}/locations/{location}/tagTemplates/{tag_template_id}/fields/{tag_template_field_id}
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>
+   * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    */
   java.lang.String getName();
   /**
    *
    *
    * <pre>
-   * Required. The name of the tag template field. For example,
-   * "projects/{project_id}/locations/{location}/tagTemplates/{tag_template_id}/fields/{tag_template_field_id}".
+   * Required. The name of the tag template field. Example:
+   * * projects/{project_id}/locations/{location}/tagTemplates/{tag_template_id}/fields/{tag_template_field_id}
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>
+   * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    */
   com.google.protobuf.ByteString getNameBytes();
 
@@ -38,7 +42,9 @@ public interface UpdateTagTemplateFieldRequestOrBuilder
    * Required. The template to update.
    * </pre>
    *
-   * <code>.google.cloud.datacatalog.v1beta1.TagTemplateField tag_template_field = 2;</code>
+   * <code>
+   * .google.cloud.datacatalog.v1beta1.TagTemplateField tag_template_field = 2 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   boolean hasTagTemplateField();
   /**
@@ -48,7 +54,9 @@ public interface UpdateTagTemplateFieldRequestOrBuilder
    * Required. The template to update.
    * </pre>
    *
-   * <code>.google.cloud.datacatalog.v1beta1.TagTemplateField tag_template_field = 2;</code>
+   * <code>
+   * .google.cloud.datacatalog.v1beta1.TagTemplateField tag_template_field = 2 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   com.google.cloud.datacatalog.TagTemplateField getTagTemplateField();
   /**
@@ -58,7 +66,9 @@ public interface UpdateTagTemplateFieldRequestOrBuilder
    * Required. The template to update.
    * </pre>
    *
-   * <code>.google.cloud.datacatalog.v1beta1.TagTemplateField tag_template_field = 2;</code>
+   * <code>
+   * .google.cloud.datacatalog.v1beta1.TagTemplateField tag_template_field = 2 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   com.google.cloud.datacatalog.TagTemplateFieldOrBuilder getTagTemplateFieldOrBuilder();
 
@@ -66,11 +76,12 @@ public interface UpdateTagTemplateFieldRequestOrBuilder
    *
    *
    * <pre>
-   * Optional. The field mask specifies the parts of the template to overwrite.
+   * Optional. The field mask specifies the parts of the template to be updated.
    * Allowed fields:
-   *   * display_name
-   *   * type.enum_type
-   * If update_mask is omitted, all of the allowed fields above will be updated.
+   *   * `display_name`
+   *   * `type.enum_type`
+   * If `update_mask` is not set or empty, all of the allowed fields above will
+   * be updated.
    * When updating an enum type, the provided values will be merged with the
    * existing values. Therefore, enum values can only be added, existing enum
    * values cannot be deleted nor renamed.
@@ -83,11 +94,12 @@ public interface UpdateTagTemplateFieldRequestOrBuilder
    *
    *
    * <pre>
-   * Optional. The field mask specifies the parts of the template to overwrite.
+   * Optional. The field mask specifies the parts of the template to be updated.
    * Allowed fields:
-   *   * display_name
-   *   * type.enum_type
-   * If update_mask is omitted, all of the allowed fields above will be updated.
+   *   * `display_name`
+   *   * `type.enum_type`
+   * If `update_mask` is not set or empty, all of the allowed fields above will
+   * be updated.
    * When updating an enum type, the provided values will be merged with the
    * existing values. Therefore, enum values can only be added, existing enum
    * values cannot be deleted nor renamed.
@@ -100,11 +112,12 @@ public interface UpdateTagTemplateFieldRequestOrBuilder
    *
    *
    * <pre>
-   * Optional. The field mask specifies the parts of the template to overwrite.
+   * Optional. The field mask specifies the parts of the template to be updated.
    * Allowed fields:
-   *   * display_name
-   *   * type.enum_type
-   * If update_mask is omitted, all of the allowed fields above will be updated.
+   *   * `display_name`
+   *   * `type.enum_type`
+   * If `update_mask` is not set or empty, all of the allowed fields above will
+   * be updated.
    * When updating an enum type, the provided values will be merged with the
    * existing values. Therefore, enum values can only be added, existing enum
    * values cannot be deleted nor renamed.

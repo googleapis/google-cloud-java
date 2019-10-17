@@ -7,8 +7,7 @@ package com.google.cloud.tasks.v2beta2;
  *
  *
  * <pre>
- * Request message for
- * [GetQueue][google.cloud.tasks.v2beta2.CloudTasks.GetQueue].
+ * Request message for [GetQueue][google.cloud.tasks.v2beta2.CloudTasks.GetQueue].
  * </pre>
  *
  * Protobuf type {@code google.cloud.tasks.v2beta2.GetQueueRequest}
@@ -98,12 +97,13 @@ public final class GetQueueRequest extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * Required.
-   * The resource name of the queue. For example:
+   * Required. The resource name of the queue. For example:
    * `projects/PROJECT_ID/locations/LOCATION_ID/queues/QUEUE_ID`
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>
+   * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    */
   public java.lang.String getName() {
     java.lang.Object ref = name_;
@@ -120,12 +120,13 @@ public final class GetQueueRequest extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * Required.
-   * The resource name of the queue. For example:
+   * Required. The resource name of the queue. For example:
    * `projects/PROJECT_ID/locations/LOCATION_ID/queues/QUEUE_ID`
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>
+   * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    */
   public com.google.protobuf.ByteString getNameBytes() {
     java.lang.Object ref = name_;
@@ -302,8 +303,7 @@ public final class GetQueueRequest extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * Request message for
-   * [GetQueue][google.cloud.tasks.v2beta2.CloudTasks.GetQueue].
+   * Request message for [GetQueue][google.cloud.tasks.v2beta2.CloudTasks.GetQueue].
    * </pre>
    *
    * Protobuf type {@code google.cloud.tasks.v2beta2.GetQueueRequest}
@@ -461,12 +461,13 @@ public final class GetQueueRequest extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Required.
-     * The resource name of the queue. For example:
+     * Required. The resource name of the queue. For example:
      * `projects/PROJECT_ID/locations/LOCATION_ID/queues/QUEUE_ID`
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>
+     * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      */
     public java.lang.String getName() {
       java.lang.Object ref = name_;
@@ -483,12 +484,13 @@ public final class GetQueueRequest extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Required.
-     * The resource name of the queue. For example:
+     * Required. The resource name of the queue. For example:
      * `projects/PROJECT_ID/locations/LOCATION_ID/queues/QUEUE_ID`
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>
+     * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      */
     public com.google.protobuf.ByteString getNameBytes() {
       java.lang.Object ref = name_;
@@ -505,12 +507,13 @@ public final class GetQueueRequest extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Required.
-     * The resource name of the queue. For example:
+     * Required. The resource name of the queue. For example:
      * `projects/PROJECT_ID/locations/LOCATION_ID/queues/QUEUE_ID`
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>
+     * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      */
     public Builder setName(java.lang.String value) {
       if (value == null) {
@@ -525,12 +528,13 @@ public final class GetQueueRequest extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Required.
-     * The resource name of the queue. For example:
+     * Required. The resource name of the queue. For example:
      * `projects/PROJECT_ID/locations/LOCATION_ID/queues/QUEUE_ID`
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>
+     * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      */
     public Builder clearName() {
 
@@ -542,12 +546,13 @@ public final class GetQueueRequest extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Required.
-     * The resource name of the queue. For example:
+     * Required. The resource name of the queue. For example:
      * `projects/PROJECT_ID/locations/LOCATION_ID/queues/QUEUE_ID`
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>
+     * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      */
     public Builder setNameBytes(com.google.protobuf.ByteString value) {
       if (value == null) {

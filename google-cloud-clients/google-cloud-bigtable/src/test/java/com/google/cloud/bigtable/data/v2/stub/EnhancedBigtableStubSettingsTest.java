@@ -21,7 +21,6 @@ import com.google.api.gax.batching.BatchingSettings;
 import com.google.api.gax.core.CredentialsProvider;
 import com.google.api.gax.grpc.InstantiatingGrpcChannelProvider;
 import com.google.api.gax.retrying.RetrySettings;
-import com.google.api.gax.rpc.BatchingCallSettings;
 import com.google.api.gax.rpc.ServerStreamingCallSettings;
 import com.google.api.gax.rpc.StatusCode.Code;
 import com.google.api.gax.rpc.UnaryCallSettings;
@@ -31,6 +30,7 @@ import com.google.cloud.bigtable.data.v2.models.KeyOffset;
 import com.google.cloud.bigtable.data.v2.models.Query;
 import com.google.cloud.bigtable.data.v2.models.Row;
 import com.google.cloud.bigtable.data.v2.models.RowMutation;
+import com.google.common.collect.ImmutableSet;
 import com.google.common.collect.Range;
 import java.util.List;
 import java.util.Set;
@@ -212,6 +212,9 @@ public class EnhancedBigtableStubSettingsTest {
         EnhancedBigtableStubSettings.newBuilder().readRowsSettings();
 
     verifyRetrySettingAreSane(builder.getRetryableCodes(), builder.getRetrySettings());
+    assertThat(builder.getRetryableCodes())
+        .containsExactlyElementsIn(
+            ImmutableSet.of(Code.DEADLINE_EXCEEDED, Code.UNAVAILABLE, Code.ABORTED));
   }
 
   @Test
@@ -260,6 +263,9 @@ public class EnhancedBigtableStubSettingsTest {
         EnhancedBigtableStubSettings.newBuilder().readRowSettings();
 
     verifyRetrySettingAreSane(builder.getRetryableCodes(), builder.getRetrySettings());
+    assertThat(builder.getRetryableCodes())
+        .containsExactlyElementsIn(
+            ImmutableSet.of(Code.DEADLINE_EXCEEDED, Code.UNAVAILABLE, Code.ABORTED));
   }
 
   @Test
@@ -438,7 +444,7 @@ public class EnhancedBigtableStubSettingsTest {
 
   @Test
   public void mutateRowsHasSaneDefaultsTest() {
-    BatchingCallSettings.Builder<RowMutation, Void> builder =
+    BigtableBatchingCallSettings.Builder builder =
         EnhancedBigtableStubSettings.newBuilder().bulkMutateRowsSettings();
 
     verifyRetrySettingAreSane(builder.getRetryableCodes(), builder.getRetrySettings());

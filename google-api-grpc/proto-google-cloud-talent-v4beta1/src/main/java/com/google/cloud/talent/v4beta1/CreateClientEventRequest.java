@@ -115,12 +115,11 @@ public final class CreateClientEventRequest extends com.google.protobuf.Generate
    * <pre>
    * Required. Resource name of the tenant under which the event is created.
    * The format is "projects/{project_id}/tenants/{tenant_id}", for example,
-   * "projects/api-test-project/tenant/foo".
-   * Tenant id is optional and a default tenant is created if unspecified, for
-   * example, "projects/api-test-project".
+   * "projects/foo/tenant/bar". If tenant id is unspecified, a default tenant
+   * is created, for example, "projects/foo".
    * </pre>
    *
-   * <code>string parent = 1;</code>
+   * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   public java.lang.String getParent() {
     java.lang.Object ref = parent_;
@@ -139,12 +138,11 @@ public final class CreateClientEventRequest extends com.google.protobuf.Generate
    * <pre>
    * Required. Resource name of the tenant under which the event is created.
    * The format is "projects/{project_id}/tenants/{tenant_id}", for example,
-   * "projects/api-test-project/tenant/foo".
-   * Tenant id is optional and a default tenant is created if unspecified, for
-   * example, "projects/api-test-project".
+   * "projects/foo/tenant/bar". If tenant id is unspecified, a default tenant
+   * is created, for example, "projects/foo".
    * </pre>
    *
-   * <code>string parent = 1;</code>
+   * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   public com.google.protobuf.ByteString getParentBytes() {
     java.lang.Object ref = parent_;
@@ -168,7 +166,9 @@ public final class CreateClientEventRequest extends com.google.protobuf.Generate
    * that uses Cloud Talent Solution.
    * </pre>
    *
-   * <code>.google.cloud.talent.v4beta1.ClientEvent client_event = 2;</code>
+   * <code>
+   * .google.cloud.talent.v4beta1.ClientEvent client_event = 2 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   public boolean hasClientEvent() {
     return clientEvent_ != null;
@@ -181,7 +181,9 @@ public final class CreateClientEventRequest extends com.google.protobuf.Generate
    * that uses Cloud Talent Solution.
    * </pre>
    *
-   * <code>.google.cloud.talent.v4beta1.ClientEvent client_event = 2;</code>
+   * <code>
+   * .google.cloud.talent.v4beta1.ClientEvent client_event = 2 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   public com.google.cloud.talent.v4beta1.ClientEvent getClientEvent() {
     return clientEvent_ == null
@@ -196,7 +198,9 @@ public final class CreateClientEventRequest extends com.google.protobuf.Generate
    * that uses Cloud Talent Solution.
    * </pre>
    *
-   * <code>.google.cloud.talent.v4beta1.ClientEvent client_event = 2;</code>
+   * <code>
+   * .google.cloud.talent.v4beta1.ClientEvent client_event = 2 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   public com.google.cloud.talent.v4beta1.ClientEventOrBuilder getClientEventOrBuilder() {
     return getClientEvent();
@@ -556,12 +560,11 @@ public final class CreateClientEventRequest extends com.google.protobuf.Generate
      * <pre>
      * Required. Resource name of the tenant under which the event is created.
      * The format is "projects/{project_id}/tenants/{tenant_id}", for example,
-     * "projects/api-test-project/tenant/foo".
-     * Tenant id is optional and a default tenant is created if unspecified, for
-     * example, "projects/api-test-project".
+     * "projects/foo/tenant/bar". If tenant id is unspecified, a default tenant
+     * is created, for example, "projects/foo".
      * </pre>
      *
-     * <code>string parent = 1;</code>
+     * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public java.lang.String getParent() {
       java.lang.Object ref = parent_;
@@ -580,12 +583,11 @@ public final class CreateClientEventRequest extends com.google.protobuf.Generate
      * <pre>
      * Required. Resource name of the tenant under which the event is created.
      * The format is "projects/{project_id}/tenants/{tenant_id}", for example,
-     * "projects/api-test-project/tenant/foo".
-     * Tenant id is optional and a default tenant is created if unspecified, for
-     * example, "projects/api-test-project".
+     * "projects/foo/tenant/bar". If tenant id is unspecified, a default tenant
+     * is created, for example, "projects/foo".
      * </pre>
      *
-     * <code>string parent = 1;</code>
+     * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public com.google.protobuf.ByteString getParentBytes() {
       java.lang.Object ref = parent_;
@@ -604,12 +606,11 @@ public final class CreateClientEventRequest extends com.google.protobuf.Generate
      * <pre>
      * Required. Resource name of the tenant under which the event is created.
      * The format is "projects/{project_id}/tenants/{tenant_id}", for example,
-     * "projects/api-test-project/tenant/foo".
-     * Tenant id is optional and a default tenant is created if unspecified, for
-     * example, "projects/api-test-project".
+     * "projects/foo/tenant/bar". If tenant id is unspecified, a default tenant
+     * is created, for example, "projects/foo".
      * </pre>
      *
-     * <code>string parent = 1;</code>
+     * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder setParent(java.lang.String value) {
       if (value == null) {
@@ -626,12 +627,11 @@ public final class CreateClientEventRequest extends com.google.protobuf.Generate
      * <pre>
      * Required. Resource name of the tenant under which the event is created.
      * The format is "projects/{project_id}/tenants/{tenant_id}", for example,
-     * "projects/api-test-project/tenant/foo".
-     * Tenant id is optional and a default tenant is created if unspecified, for
-     * example, "projects/api-test-project".
+     * "projects/foo/tenant/bar". If tenant id is unspecified, a default tenant
+     * is created, for example, "projects/foo".
      * </pre>
      *
-     * <code>string parent = 1;</code>
+     * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder clearParent() {
 
@@ -645,12 +645,11 @@ public final class CreateClientEventRequest extends com.google.protobuf.Generate
      * <pre>
      * Required. Resource name of the tenant under which the event is created.
      * The format is "projects/{project_id}/tenants/{tenant_id}", for example,
-     * "projects/api-test-project/tenant/foo".
-     * Tenant id is optional and a default tenant is created if unspecified, for
-     * example, "projects/api-test-project".
+     * "projects/foo/tenant/bar". If tenant id is unspecified, a default tenant
+     * is created, for example, "projects/foo".
      * </pre>
      *
-     * <code>string parent = 1;</code>
+     * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder setParentBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -677,7 +676,9 @@ public final class CreateClientEventRequest extends com.google.protobuf.Generate
      * that uses Cloud Talent Solution.
      * </pre>
      *
-     * <code>.google.cloud.talent.v4beta1.ClientEvent client_event = 2;</code>
+     * <code>
+     * .google.cloud.talent.v4beta1.ClientEvent client_event = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public boolean hasClientEvent() {
       return clientEventBuilder_ != null || clientEvent_ != null;
@@ -690,7 +691,9 @@ public final class CreateClientEventRequest extends com.google.protobuf.Generate
      * that uses Cloud Talent Solution.
      * </pre>
      *
-     * <code>.google.cloud.talent.v4beta1.ClientEvent client_event = 2;</code>
+     * <code>
+     * .google.cloud.talent.v4beta1.ClientEvent client_event = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public com.google.cloud.talent.v4beta1.ClientEvent getClientEvent() {
       if (clientEventBuilder_ == null) {
@@ -709,7 +712,9 @@ public final class CreateClientEventRequest extends com.google.protobuf.Generate
      * that uses Cloud Talent Solution.
      * </pre>
      *
-     * <code>.google.cloud.talent.v4beta1.ClientEvent client_event = 2;</code>
+     * <code>
+     * .google.cloud.talent.v4beta1.ClientEvent client_event = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder setClientEvent(com.google.cloud.talent.v4beta1.ClientEvent value) {
       if (clientEventBuilder_ == null) {
@@ -732,7 +737,9 @@ public final class CreateClientEventRequest extends com.google.protobuf.Generate
      * that uses Cloud Talent Solution.
      * </pre>
      *
-     * <code>.google.cloud.talent.v4beta1.ClientEvent client_event = 2;</code>
+     * <code>
+     * .google.cloud.talent.v4beta1.ClientEvent client_event = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder setClientEvent(
         com.google.cloud.talent.v4beta1.ClientEvent.Builder builderForValue) {
@@ -753,7 +760,9 @@ public final class CreateClientEventRequest extends com.google.protobuf.Generate
      * that uses Cloud Talent Solution.
      * </pre>
      *
-     * <code>.google.cloud.talent.v4beta1.ClientEvent client_event = 2;</code>
+     * <code>
+     * .google.cloud.talent.v4beta1.ClientEvent client_event = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder mergeClientEvent(com.google.cloud.talent.v4beta1.ClientEvent value) {
       if (clientEventBuilder_ == null) {
@@ -780,7 +789,9 @@ public final class CreateClientEventRequest extends com.google.protobuf.Generate
      * that uses Cloud Talent Solution.
      * </pre>
      *
-     * <code>.google.cloud.talent.v4beta1.ClientEvent client_event = 2;</code>
+     * <code>
+     * .google.cloud.talent.v4beta1.ClientEvent client_event = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder clearClientEvent() {
       if (clientEventBuilder_ == null) {
@@ -801,7 +812,9 @@ public final class CreateClientEventRequest extends com.google.protobuf.Generate
      * that uses Cloud Talent Solution.
      * </pre>
      *
-     * <code>.google.cloud.talent.v4beta1.ClientEvent client_event = 2;</code>
+     * <code>
+     * .google.cloud.talent.v4beta1.ClientEvent client_event = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public com.google.cloud.talent.v4beta1.ClientEvent.Builder getClientEventBuilder() {
 
@@ -816,7 +829,9 @@ public final class CreateClientEventRequest extends com.google.protobuf.Generate
      * that uses Cloud Talent Solution.
      * </pre>
      *
-     * <code>.google.cloud.talent.v4beta1.ClientEvent client_event = 2;</code>
+     * <code>
+     * .google.cloud.talent.v4beta1.ClientEvent client_event = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public com.google.cloud.talent.v4beta1.ClientEventOrBuilder getClientEventOrBuilder() {
       if (clientEventBuilder_ != null) {
@@ -835,7 +850,9 @@ public final class CreateClientEventRequest extends com.google.protobuf.Generate
      * that uses Cloud Talent Solution.
      * </pre>
      *
-     * <code>.google.cloud.talent.v4beta1.ClientEvent client_event = 2;</code>
+     * <code>
+     * .google.cloud.talent.v4beta1.ClientEvent client_event = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.talent.v4beta1.ClientEvent,

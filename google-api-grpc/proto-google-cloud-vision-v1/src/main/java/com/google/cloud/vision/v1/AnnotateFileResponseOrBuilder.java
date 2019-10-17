@@ -43,7 +43,8 @@ public interface AnnotateFileResponseOrBuilder
    *
    *
    * <pre>
-   * Individual responses to images found within the file.
+   * Individual responses to images found within the file. This field will be
+   * empty if the `error` field is set.
    * </pre>
    *
    * <code>repeated .google.cloud.vision.v1.AnnotateImageResponse responses = 2;</code>
@@ -53,7 +54,8 @@ public interface AnnotateFileResponseOrBuilder
    *
    *
    * <pre>
-   * Individual responses to images found within the file.
+   * Individual responses to images found within the file. This field will be
+   * empty if the `error` field is set.
    * </pre>
    *
    * <code>repeated .google.cloud.vision.v1.AnnotateImageResponse responses = 2;</code>
@@ -63,7 +65,8 @@ public interface AnnotateFileResponseOrBuilder
    *
    *
    * <pre>
-   * Individual responses to images found within the file.
+   * Individual responses to images found within the file. This field will be
+   * empty if the `error` field is set.
    * </pre>
    *
    * <code>repeated .google.cloud.vision.v1.AnnotateImageResponse responses = 2;</code>
@@ -73,7 +76,8 @@ public interface AnnotateFileResponseOrBuilder
    *
    *
    * <pre>
-   * Individual responses to images found within the file.
+   * Individual responses to images found within the file. This field will be
+   * empty if the `error` field is set.
    * </pre>
    *
    * <code>repeated .google.cloud.vision.v1.AnnotateImageResponse responses = 2;</code>
@@ -84,7 +88,8 @@ public interface AnnotateFileResponseOrBuilder
    *
    *
    * <pre>
-   * Individual responses to images found within the file.
+   * Individual responses to images found within the file. This field will be
+   * empty if the `error` field is set.
    * </pre>
    *
    * <code>repeated .google.cloud.vision.v1.AnnotateImageResponse responses = 2;</code>
@@ -101,4 +106,38 @@ public interface AnnotateFileResponseOrBuilder
    * <code>int32 total_pages = 3;</code>
    */
   int getTotalPages();
+
+  /**
+   *
+   *
+   * <pre>
+   * If set, represents the error message for the failed request. The
+   * `responses` field will not be set in this case.
+   * </pre>
+   *
+   * <code>.google.rpc.Status error = 4;</code>
+   */
+  boolean hasError();
+  /**
+   *
+   *
+   * <pre>
+   * If set, represents the error message for the failed request. The
+   * `responses` field will not be set in this case.
+   * </pre>
+   *
+   * <code>.google.rpc.Status error = 4;</code>
+   */
+  com.google.rpc.Status getError();
+  /**
+   *
+   *
+   * <pre>
+   * If set, represents the error message for the failed request. The
+   * `responses` field will not be set in this case.
+   * </pre>
+   *
+   * <code>.google.rpc.Status error = 4;</code>
+   */
+  com.google.rpc.StatusOrBuilder getErrorOrBuilder();
 }

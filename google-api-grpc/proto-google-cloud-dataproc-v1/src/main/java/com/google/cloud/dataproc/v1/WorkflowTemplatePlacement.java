@@ -161,7 +161,7 @@ public final class WorkflowTemplatePlacement extends com.google.protobuf.Generat
    *
    *
    * <pre>
-   * Optional. A cluster that is managed by the workflow.
+   * A cluster that is managed by the workflow.
    * </pre>
    *
    * <code>.google.cloud.dataproc.v1.ManagedCluster managed_cluster = 1;</code>
@@ -173,7 +173,7 @@ public final class WorkflowTemplatePlacement extends com.google.protobuf.Generat
    *
    *
    * <pre>
-   * Optional. A cluster that is managed by the workflow.
+   * A cluster that is managed by the workflow.
    * </pre>
    *
    * <code>.google.cloud.dataproc.v1.ManagedCluster managed_cluster = 1;</code>
@@ -188,7 +188,7 @@ public final class WorkflowTemplatePlacement extends com.google.protobuf.Generat
    *
    *
    * <pre>
-   * Optional. A cluster that is managed by the workflow.
+   * A cluster that is managed by the workflow.
    * </pre>
    *
    * <code>.google.cloud.dataproc.v1.ManagedCluster managed_cluster = 1;</code>
@@ -649,7 +649,7 @@ public final class WorkflowTemplatePlacement extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Optional. A cluster that is managed by the workflow.
+     * A cluster that is managed by the workflow.
      * </pre>
      *
      * <code>.google.cloud.dataproc.v1.ManagedCluster managed_cluster = 1;</code>
@@ -661,7 +661,7 @@ public final class WorkflowTemplatePlacement extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Optional. A cluster that is managed by the workflow.
+     * A cluster that is managed by the workflow.
      * </pre>
      *
      * <code>.google.cloud.dataproc.v1.ManagedCluster managed_cluster = 1;</code>
@@ -683,7 +683,7 @@ public final class WorkflowTemplatePlacement extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Optional. A cluster that is managed by the workflow.
+     * A cluster that is managed by the workflow.
      * </pre>
      *
      * <code>.google.cloud.dataproc.v1.ManagedCluster managed_cluster = 1;</code>
@@ -705,7 +705,7 @@ public final class WorkflowTemplatePlacement extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Optional. A cluster that is managed by the workflow.
+     * A cluster that is managed by the workflow.
      * </pre>
      *
      * <code>.google.cloud.dataproc.v1.ManagedCluster managed_cluster = 1;</code>
@@ -725,7 +725,7 @@ public final class WorkflowTemplatePlacement extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Optional. A cluster that is managed by the workflow.
+     * A cluster that is managed by the workflow.
      * </pre>
      *
      * <code>.google.cloud.dataproc.v1.ManagedCluster managed_cluster = 1;</code>
@@ -756,7 +756,7 @@ public final class WorkflowTemplatePlacement extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Optional. A cluster that is managed by the workflow.
+     * A cluster that is managed by the workflow.
      * </pre>
      *
      * <code>.google.cloud.dataproc.v1.ManagedCluster managed_cluster = 1;</code>
@@ -781,7 +781,7 @@ public final class WorkflowTemplatePlacement extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Optional. A cluster that is managed by the workflow.
+     * A cluster that is managed by the workflow.
      * </pre>
      *
      * <code>.google.cloud.dataproc.v1.ManagedCluster managed_cluster = 1;</code>
@@ -793,7 +793,7 @@ public final class WorkflowTemplatePlacement extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Optional. A cluster that is managed by the workflow.
+     * A cluster that is managed by the workflow.
      * </pre>
      *
      * <code>.google.cloud.dataproc.v1.ManagedCluster managed_cluster = 1;</code>
@@ -812,7 +812,7 @@ public final class WorkflowTemplatePlacement extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Optional. A cluster that is managed by the workflow.
+     * A cluster that is managed by the workflow.
      * </pre>
      *
      * <code>.google.cloud.dataproc.v1.ManagedCluster managed_cluster = 1;</code>

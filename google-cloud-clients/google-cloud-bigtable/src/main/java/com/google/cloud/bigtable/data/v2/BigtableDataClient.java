@@ -18,13 +18,13 @@ package com.google.cloud.bigtable.data.v2;
 import com.google.api.core.ApiFuture;
 import com.google.api.core.BetaApi;
 import com.google.api.core.InternalApi;
+import com.google.api.gax.batching.Batcher;
 import com.google.api.gax.rpc.ApiExceptions;
 import com.google.api.gax.rpc.ResponseObserver;
 import com.google.api.gax.rpc.ServerStream;
 import com.google.api.gax.rpc.ServerStreamingCallable;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.bigtable.data.v2.models.BulkMutation;
-import com.google.cloud.bigtable.data.v2.models.BulkMutationBatcher;
 import com.google.cloud.bigtable.data.v2.models.ConditionalRowMutation;
 import com.google.cloud.bigtable.data.v2.models.Filters.Filter;
 import com.google.cloud.bigtable.data.v2.models.KeyOffset;
@@ -33,10 +33,12 @@ import com.google.cloud.bigtable.data.v2.models.ReadModifyWriteRow;
 import com.google.cloud.bigtable.data.v2.models.Row;
 import com.google.cloud.bigtable.data.v2.models.RowAdapter;
 import com.google.cloud.bigtable.data.v2.models.RowMutation;
+import com.google.cloud.bigtable.data.v2.models.RowMutationEntry;
 import com.google.cloud.bigtable.data.v2.stub.EnhancedBigtableStub;
 import com.google.protobuf.ByteString;
 import java.io.IOException;
 import java.util.List;
+import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
 
 /**
@@ -46,15 +48,20 @@ import javax.annotation.Nullable;
  * get started:
  *
  * <pre>{@code
- * try (BigtableDataClient bigtableDataClient = BigtableDataClient.create("[PROJECT]", "[INSTANCE]")) {
- *   for(Row row : bigtableDataClient.readRows(Query.create("[TABLE]")) {
- *     // Do something with row
- *   }
+ * // One instance per application.
+ * BigtableDataClient client = BigtableDataClient.create("[PROJECT]", "[INSTANCE]")
+ *
+ * for(Row row : client.readRows(Query.create("[TABLE]")) {
+ *   // Do something with row
  * }
+ *
+ * // Cleanup during application shutdown.
+ * client.close();
  * }</pre>
  *
- * <p>Note: close() needs to be called on the bigtableDataClient object to clean up resources such
- * as threads. In the example above, try-with-resources is used, which automatically calls close().
+ * <p>Creating a new client is a very expensive operation and should only be done once and shared in
+ * an application. However, close() needs to be called on the client object to clean up resources
+ * such as threads during application shutdown.
  *
  * <p>The surface of this class includes several types of Java methods for each of the API's
  * methods:
@@ -68,6 +75,18 @@ import javax.annotation.Nullable;
  *       returns an immutable API callable object, which can be used to initiate calls to the
  *       service.
  * </ol>
+ *
+ * <p>Taking ReadRows as an example for callable:
+ *
+ * <pre>{@code
+ * // These two invocation are equivalent
+ * ServerStream<Row> stream1 = client.readRows(query);
+ * ServerStream<Row> stream2 = client.readRowsCallable().call(query);
+ *
+ * // These two invocation are also equivalent
+ * client.readRowsAsync(query, observer);
+ * client.readRowsCallable().call(query, observer);
+ * }</pre>
  *
  * <p>All RPC related errors are represented as subclasses of {@link
  * com.google.api.gax.rpc.ApiException}. For example, a nonexistent table will trigger a {@link
@@ -85,31 +104,27 @@ import javax.annotation.Nullable;
  * <p>To customize credentials:
  *
  * <pre>{@code
- * BigtableDataSettings bigtableDataSettings =
+ * BigtableDataSettings settings =
  *     BigtableDataSettings.newBuilder()
  *         .setProjectId("[PROJECT]")
  *         .setInstanceId("[INSTANCE]")
  *         .setCredentialsProvider(FixedCredentialsProvider.create(myCredentials))
  *         .build();
- * try(BigtableDataClient bigtableDataClient = BigtableDataClient.create(bigtableDataSettings)) {
- *   // ..
- * }
+ * BigtableDataClient client = BigtableDataClient.create(settings);
  * }</pre>
  *
  * To customize the endpoint:
  *
  * <pre>{@code
- * BigtableDataSettings.Builder bigtableDataSettingsBuilder =
+ * BigtableDataSettings.Builder settingsBuilder =
  *     BigtableDataSettings.newBuilder()
  *       .setProjectId("[PROJECT]")
  *       .setInstanceId("[INSTANCE]");
  *
- * bigtableDataSettingsBuilder.stubSettings()
- *       .setEndpoint(myEndpoint).build();
+ * settingsBuilder.stubSettings()
+ *     .setEndpoint(myEndpoint).build();
  *
- * try(BigtableDataClient bigtableDataClient = BigtableDataClient.create(bigtableDataSettingsBuilder.build())) {
- *   // ..
- * }
+ * BigtableDataClient client = BigtableDataClient.create(settings.build());
  * }</pre>
  */
 public class BigtableDataClient implements AutoCloseable {
@@ -151,17 +166,17 @@ public class BigtableDataClient implements AutoCloseable {
    *
    * <pre>{code
    * try (BigtableDataClient bigtableDataClient = BigtableDataClient.create("[PROJECT]", "[INSTANCE]")) {
-   *   String tableId = "[TABLE]";
+   * String tableId = "[TABLE]";
    *
-   *   Row row = bigtableDataClient.readRow(tableId, ByteString.copyFromUtf8("key"));
-   *   // Do something with row, for example, display all cells
-   *   if(row != null) {
-   *     System.out.println(row.getKey().toStringUtf8());
-   *     for(RowCell cell : row.getCells()) {
-   *        System.out.printf("Family: %s   Qualifier: %s   Value: %s", cell.getFamily(),
-   *           cell.getQualifier().toStringUtf8(), cell.getValue().toStringUtf8());
-   *     }
+   * Row row = bigtableDataClient.readRow(tableId, ByteString.copyFromUtf8("key"));
+   * // Do something with row, for example, display all cells
+   * if(row != null) {
+   *   System.out.println(row.getKey().toStringUtf8());
+   *   for(RowCell cell : row.getCells()) {
+   *      System.out.printf("Family: %s   Qualifier: %s   Value: %s", cell.getFamily(),
+   *         cell.getQualifier().toStringUtf8(), cell.getValue().toStringUtf8());
    *   }
+   * }
    * } catch(ApiException e) {
    *   e.printStackTrace();
    * }
@@ -865,36 +880,9 @@ public class BigtableDataClient implements AutoCloseable {
   }
 
   /**
-   * Mutates multiple rows in a batch. Each individual row is mutated atomically as in MutateRow,
-   * but the entire batch is not executed atomically.
-   *
-   * <p>Sample code:
-   *
-   * <pre>{@code
-   * try (BigtableDataClient bigtableDataClient = BigtableDataClient.create("[PROJECT]", "[INSTANCE]")) {
-   *   try (BulkMutationBatcher batcher = bigtableDataClient.newBulkMutationBatcher()) {
-   *     for (String someValue : someCollection) {
-   *       RowMutation mutation = RowMutation.create("[TABLE]", "[ROW KEY]")
-   *         .setCell("[FAMILY NAME]", "[QUALIFIER]", "[VALUE]");
-   *
-   *       ApiFuture<Void> entryFuture = batcher.add(mutation);
-   *     }
-   *   } catch (BulkMutationFailure failure) {
-   *     // Handle error
-   *   }
-   *   // After `batcher` is closed, all mutations have been applied
-   * }
-   * }</pre>
-   */
-  @BetaApi("This surface is likely to change as the batching surface evolves.")
-  public BulkMutationBatcher newBulkMutationBatcher() {
-    return new BulkMutationBatcher(stub.bulkMutateRowsBatchingCallable());
-  }
-
-  /**
    * Convenience method to mutate multiple rows in a batch. Each individual row is mutated
-   * atomically as in MutateRow, but the entire batch is not executed atomically. Unlike {@link
-   * #newBulkMutationBatcher()}, this method expects the mutations to be pre-batched.
+   * atomically as in MutateRow, but the entire batch is not executed atomically. This method
+   * expects the mutations to be pre-batched.
    *
    * <p>Sample code:
    *
@@ -921,9 +909,37 @@ public class BigtableDataClient implements AutoCloseable {
   }
 
   /**
+   * Mutates multiple rows in a batch. Each individual row is mutated atomically as in MutateRow,
+   * but the entire batch is not executed atomically.
+   *
+   * <p>Sample Code:
+   *
+   * <pre>{@code
+   * try (BigtableDataClient bigtableDataClient = BigtableDataClient.create("[PROJECT]", "[INSTANCE]")) {
+   *   try (Batcher<RowMutationEntry, Void> batcher = bigtableDataClient.newBulkMutationBatcher("[TABLE]")) {
+   *     for (String someValue : someCollection) {
+   *       ApiFuture<Void> entryFuture =
+   *           batcher.add(
+   *               RowMutationEntry.create("[ROW KEY]")
+   *                   .setCell("[FAMILY NAME]", "[QUALIFIER]", "[VALUE]"));
+   *     }
+   *
+   *     // Blocks until mutations are applied on all submitted row entries.
+   *     batcher.flush();
+   *   }
+   *   // Before `batcher` is closed, all remaining(If any) mutations are applied.
+   * }
+   * }</pre>
+   */
+  @BetaApi("This surface is likely to change as the batching surface evolves.")
+  public Batcher<RowMutationEntry, Void> newBulkMutationBatcher(@Nonnull String tableId) {
+    return stub.newMutateRowsBatcher(tableId);
+  }
+
+  /**
    * Convenience method to mutate multiple rows in a batch. Each individual row is mutated
-   * atomically as in MutateRow, but the entire batch is not executed atomically. Unlike {@link
-   * #newBulkMutationBatcher()}, this method expects the mutations to be pre-batched.
+   * atomically as in MutateRow, but the entire batch is not executed atomically. This method
+   * expects the mutations to be pre-batched.
    *
    * <p>Sample code:
    *
@@ -957,8 +973,8 @@ public class BigtableDataClient implements AutoCloseable {
 
   /**
    * Mutates multiple rows in a batch. Each individual row is mutated atomically as in MutateRow,
-   * but the entire batch is not executed atomically. Unlike {@link #newBulkMutationBatcher()}, this
-   * method expects the mutations to be pre-batched.
+   * but the entire batch is not executed atomically. This method expects the mutations to be
+   * pre-batched.
    *
    * <p>Sample code:
    *
@@ -1161,7 +1177,7 @@ public class BigtableDataClient implements AutoCloseable {
 
   /** Close the clients and releases all associated resources. */
   @Override
-  public void close() throws Exception {
+  public void close() {
     stub.close();
   }
 }

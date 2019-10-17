@@ -156,7 +156,9 @@ public final class SearchHashesRequest extends com.google.protobuf.GeneratedMess
    * Required. The ThreatLists to search in.
    * </pre>
    *
-   * <code>repeated .google.cloud.webrisk.v1beta1.ThreatType threat_types = 2;</code>
+   * <code>
+   * repeated .google.cloud.webrisk.v1beta1.ThreatType threat_types = 2 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   public java.util.List<com.google.webrisk.v1beta1.ThreatType> getThreatTypesList() {
     return new com.google.protobuf.Internal.ListAdapter<
@@ -170,7 +172,9 @@ public final class SearchHashesRequest extends com.google.protobuf.GeneratedMess
    * Required. The ThreatLists to search in.
    * </pre>
    *
-   * <code>repeated .google.cloud.webrisk.v1beta1.ThreatType threat_types = 2;</code>
+   * <code>
+   * repeated .google.cloud.webrisk.v1beta1.ThreatType threat_types = 2 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   public int getThreatTypesCount() {
     return threatTypes_.size();
@@ -182,7 +186,9 @@ public final class SearchHashesRequest extends com.google.protobuf.GeneratedMess
    * Required. The ThreatLists to search in.
    * </pre>
    *
-   * <code>repeated .google.cloud.webrisk.v1beta1.ThreatType threat_types = 2;</code>
+   * <code>
+   * repeated .google.cloud.webrisk.v1beta1.ThreatType threat_types = 2 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   public com.google.webrisk.v1beta1.ThreatType getThreatTypes(int index) {
     return threatTypes_converter_.convert(threatTypes_.get(index));
@@ -194,7 +200,9 @@ public final class SearchHashesRequest extends com.google.protobuf.GeneratedMess
    * Required. The ThreatLists to search in.
    * </pre>
    *
-   * <code>repeated .google.cloud.webrisk.v1beta1.ThreatType threat_types = 2;</code>
+   * <code>
+   * repeated .google.cloud.webrisk.v1beta1.ThreatType threat_types = 2 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   public java.util.List<java.lang.Integer> getThreatTypesValueList() {
     return threatTypes_;
@@ -206,7 +214,9 @@ public final class SearchHashesRequest extends com.google.protobuf.GeneratedMess
    * Required. The ThreatLists to search in.
    * </pre>
    *
-   * <code>repeated .google.cloud.webrisk.v1beta1.ThreatType threat_types = 2;</code>
+   * <code>
+   * repeated .google.cloud.webrisk.v1beta1.ThreatType threat_types = 2 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   public int getThreatTypesValue(int index) {
     return threatTypes_.get(index);
@@ -641,7 +651,9 @@ public final class SearchHashesRequest extends com.google.protobuf.GeneratedMess
      * Required. The ThreatLists to search in.
      * </pre>
      *
-     * <code>repeated .google.cloud.webrisk.v1beta1.ThreatType threat_types = 2;</code>
+     * <code>
+     * repeated .google.cloud.webrisk.v1beta1.ThreatType threat_types = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public java.util.List<com.google.webrisk.v1beta1.ThreatType> getThreatTypesList() {
       return new com.google.protobuf.Internal.ListAdapter<
@@ -655,7 +667,9 @@ public final class SearchHashesRequest extends com.google.protobuf.GeneratedMess
      * Required. The ThreatLists to search in.
      * </pre>
      *
-     * <code>repeated .google.cloud.webrisk.v1beta1.ThreatType threat_types = 2;</code>
+     * <code>
+     * repeated .google.cloud.webrisk.v1beta1.ThreatType threat_types = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public int getThreatTypesCount() {
       return threatTypes_.size();
@@ -667,7 +681,9 @@ public final class SearchHashesRequest extends com.google.protobuf.GeneratedMess
      * Required. The ThreatLists to search in.
      * </pre>
      *
-     * <code>repeated .google.cloud.webrisk.v1beta1.ThreatType threat_types = 2;</code>
+     * <code>
+     * repeated .google.cloud.webrisk.v1beta1.ThreatType threat_types = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public com.google.webrisk.v1beta1.ThreatType getThreatTypes(int index) {
       return threatTypes_converter_.convert(threatTypes_.get(index));
@@ -679,7 +695,9 @@ public final class SearchHashesRequest extends com.google.protobuf.GeneratedMess
      * Required. The ThreatLists to search in.
      * </pre>
      *
-     * <code>repeated .google.cloud.webrisk.v1beta1.ThreatType threat_types = 2;</code>
+     * <code>
+     * repeated .google.cloud.webrisk.v1beta1.ThreatType threat_types = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder setThreatTypes(int index, com.google.webrisk.v1beta1.ThreatType value) {
       if (value == null) {
@@ -697,7 +715,9 @@ public final class SearchHashesRequest extends com.google.protobuf.GeneratedMess
      * Required. The ThreatLists to search in.
      * </pre>
      *
-     * <code>repeated .google.cloud.webrisk.v1beta1.ThreatType threat_types = 2;</code>
+     * <code>
+     * repeated .google.cloud.webrisk.v1beta1.ThreatType threat_types = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder addThreatTypes(com.google.webrisk.v1beta1.ThreatType value) {
       if (value == null) {
@@ -715,7 +735,9 @@ public final class SearchHashesRequest extends com.google.protobuf.GeneratedMess
      * Required. The ThreatLists to search in.
      * </pre>
      *
-     * <code>repeated .google.cloud.webrisk.v1beta1.ThreatType threat_types = 2;</code>
+     * <code>
+     * repeated .google.cloud.webrisk.v1beta1.ThreatType threat_types = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder addAllThreatTypes(
         java.lang.Iterable<? extends com.google.webrisk.v1beta1.ThreatType> values) {
@@ -733,7 +755,9 @@ public final class SearchHashesRequest extends com.google.protobuf.GeneratedMess
      * Required. The ThreatLists to search in.
      * </pre>
      *
-     * <code>repeated .google.cloud.webrisk.v1beta1.ThreatType threat_types = 2;</code>
+     * <code>
+     * repeated .google.cloud.webrisk.v1beta1.ThreatType threat_types = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder clearThreatTypes() {
       threatTypes_ = java.util.Collections.emptyList();
@@ -748,7 +772,9 @@ public final class SearchHashesRequest extends com.google.protobuf.GeneratedMess
      * Required. The ThreatLists to search in.
      * </pre>
      *
-     * <code>repeated .google.cloud.webrisk.v1beta1.ThreatType threat_types = 2;</code>
+     * <code>
+     * repeated .google.cloud.webrisk.v1beta1.ThreatType threat_types = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public java.util.List<java.lang.Integer> getThreatTypesValueList() {
       return java.util.Collections.unmodifiableList(threatTypes_);
@@ -760,7 +786,9 @@ public final class SearchHashesRequest extends com.google.protobuf.GeneratedMess
      * Required. The ThreatLists to search in.
      * </pre>
      *
-     * <code>repeated .google.cloud.webrisk.v1beta1.ThreatType threat_types = 2;</code>
+     * <code>
+     * repeated .google.cloud.webrisk.v1beta1.ThreatType threat_types = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public int getThreatTypesValue(int index) {
       return threatTypes_.get(index);
@@ -772,7 +800,9 @@ public final class SearchHashesRequest extends com.google.protobuf.GeneratedMess
      * Required. The ThreatLists to search in.
      * </pre>
      *
-     * <code>repeated .google.cloud.webrisk.v1beta1.ThreatType threat_types = 2;</code>
+     * <code>
+     * repeated .google.cloud.webrisk.v1beta1.ThreatType threat_types = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder setThreatTypesValue(int index, int value) {
       ensureThreatTypesIsMutable();
@@ -787,7 +817,9 @@ public final class SearchHashesRequest extends com.google.protobuf.GeneratedMess
      * Required. The ThreatLists to search in.
      * </pre>
      *
-     * <code>repeated .google.cloud.webrisk.v1beta1.ThreatType threat_types = 2;</code>
+     * <code>
+     * repeated .google.cloud.webrisk.v1beta1.ThreatType threat_types = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder addThreatTypesValue(int value) {
       ensureThreatTypesIsMutable();
@@ -802,7 +834,9 @@ public final class SearchHashesRequest extends com.google.protobuf.GeneratedMess
      * Required. The ThreatLists to search in.
      * </pre>
      *
-     * <code>repeated .google.cloud.webrisk.v1beta1.ThreatType threat_types = 2;</code>
+     * <code>
+     * repeated .google.cloud.webrisk.v1beta1.ThreatType threat_types = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder addAllThreatTypesValue(java.lang.Iterable<java.lang.Integer> values) {
       ensureThreatTypesIsMutable();

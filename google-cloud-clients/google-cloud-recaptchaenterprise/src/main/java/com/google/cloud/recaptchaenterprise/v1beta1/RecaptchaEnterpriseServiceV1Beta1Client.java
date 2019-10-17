@@ -173,7 +173,7 @@ public class RecaptchaEnterpriseServiceV1Beta1Client implements BackgroundResour
    *
    * @param parent Required. The name of the project in which the assessment will be created, in the
    *     format "projects/{project_number}".
-   * @param assessment The asessment details.
+   * @param assessment Required. The assessment details.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Assessment createAssessment(ProjectName parent, Assessment assessment) {
@@ -202,7 +202,7 @@ public class RecaptchaEnterpriseServiceV1Beta1Client implements BackgroundResour
    *
    * @param parent Required. The name of the project in which the assessment will be created, in the
    *     format "projects/{project_number}".
-   * @param assessment The asessment details.
+   * @param assessment Required. The assessment details.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Assessment createAssessment(String parent, Assessment assessment) {
@@ -278,7 +278,7 @@ public class RecaptchaEnterpriseServiceV1Beta1Client implements BackgroundResour
    *
    * @param name Required. The resource name of the Assessment, in the format
    *     "projects/{project_number}/assessments/{assessment_id}".
-   * @param annotation The annotation that will be assigned to the Event.
+   * @param annotation Required. The annotation that will be assigned to the Event.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final AnnotateAssessmentResponse annotateAssessment(
@@ -309,7 +309,7 @@ public class RecaptchaEnterpriseServiceV1Beta1Client implements BackgroundResour
    *
    * @param name Required. The resource name of the Assessment, in the format
    *     "projects/{project_number}/assessments/{assessment_id}".
-   * @param annotation The annotation that will be assigned to the Event.
+   * @param annotation Required. The annotation that will be assigned to the Event.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final AnnotateAssessmentResponse annotateAssessment(

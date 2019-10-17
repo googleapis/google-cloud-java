@@ -278,7 +278,8 @@ public final class ReservationAffinity extends com.google.protobuf.GeneratedMess
    * Optional. Type of reservation to consume
    * </pre>
    *
-   * <code>.google.cloud.dataproc.v1beta2.ReservationAffinity.Type consume_reservation_type = 1;
+   * <code>
+   * .google.cloud.dataproc.v1beta2.ReservationAffinity.Type consume_reservation_type = 1 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    */
   public int getConsumeReservationTypeValue() {
@@ -291,7 +292,8 @@ public final class ReservationAffinity extends com.google.protobuf.GeneratedMess
    * Optional. Type of reservation to consume
    * </pre>
    *
-   * <code>.google.cloud.dataproc.v1beta2.ReservationAffinity.Type consume_reservation_type = 1;
+   * <code>
+   * .google.cloud.dataproc.v1beta2.ReservationAffinity.Type consume_reservation_type = 1 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    */
   public com.google.cloud.dataproc.v1beta2.ReservationAffinity.Type getConsumeReservationType() {
@@ -312,7 +314,7 @@ public final class ReservationAffinity extends com.google.protobuf.GeneratedMess
    * Optional. Corresponds to the label key of reservation resource.
    * </pre>
    *
-   * <code>string key = 2;</code>
+   * <code>string key = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   public java.lang.String getKey() {
     java.lang.Object ref = key_;
@@ -332,7 +334,7 @@ public final class ReservationAffinity extends com.google.protobuf.GeneratedMess
    * Optional. Corresponds to the label key of reservation resource.
    * </pre>
    *
-   * <code>string key = 2;</code>
+   * <code>string key = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   public com.google.protobuf.ByteString getKeyBytes() {
     java.lang.Object ref = key_;
@@ -355,7 +357,7 @@ public final class ReservationAffinity extends com.google.protobuf.GeneratedMess
    * Optional. Corresponds to the label values of reservation resource.
    * </pre>
    *
-   * <code>repeated string values = 3;</code>
+   * <code>repeated string values = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   public com.google.protobuf.ProtocolStringList getValuesList() {
     return values_;
@@ -367,7 +369,7 @@ public final class ReservationAffinity extends com.google.protobuf.GeneratedMess
    * Optional. Corresponds to the label values of reservation resource.
    * </pre>
    *
-   * <code>repeated string values = 3;</code>
+   * <code>repeated string values = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   public int getValuesCount() {
     return values_.size();
@@ -379,7 +381,7 @@ public final class ReservationAffinity extends com.google.protobuf.GeneratedMess
    * Optional. Corresponds to the label values of reservation resource.
    * </pre>
    *
-   * <code>repeated string values = 3;</code>
+   * <code>repeated string values = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   public java.lang.String getValues(int index) {
     return values_.get(index);
@@ -391,7 +393,7 @@ public final class ReservationAffinity extends com.google.protobuf.GeneratedMess
    * Optional. Corresponds to the label values of reservation resource.
    * </pre>
    *
-   * <code>repeated string values = 3;</code>
+   * <code>repeated string values = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   public com.google.protobuf.ByteString getValuesBytes(int index) {
     return values_.getByteString(index);
@@ -781,7 +783,8 @@ public final class ReservationAffinity extends com.google.protobuf.GeneratedMess
      * Optional. Type of reservation to consume
      * </pre>
      *
-     * <code>.google.cloud.dataproc.v1beta2.ReservationAffinity.Type consume_reservation_type = 1;
+     * <code>
+     * .google.cloud.dataproc.v1beta2.ReservationAffinity.Type consume_reservation_type = 1 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public int getConsumeReservationTypeValue() {
@@ -794,7 +797,8 @@ public final class ReservationAffinity extends com.google.protobuf.GeneratedMess
      * Optional. Type of reservation to consume
      * </pre>
      *
-     * <code>.google.cloud.dataproc.v1beta2.ReservationAffinity.Type consume_reservation_type = 1;
+     * <code>
+     * .google.cloud.dataproc.v1beta2.ReservationAffinity.Type consume_reservation_type = 1 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public Builder setConsumeReservationTypeValue(int value) {
@@ -809,7 +813,8 @@ public final class ReservationAffinity extends com.google.protobuf.GeneratedMess
      * Optional. Type of reservation to consume
      * </pre>
      *
-     * <code>.google.cloud.dataproc.v1beta2.ReservationAffinity.Type consume_reservation_type = 1;
+     * <code>
+     * .google.cloud.dataproc.v1beta2.ReservationAffinity.Type consume_reservation_type = 1 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public com.google.cloud.dataproc.v1beta2.ReservationAffinity.Type getConsumeReservationType() {
@@ -828,7 +833,8 @@ public final class ReservationAffinity extends com.google.protobuf.GeneratedMess
      * Optional. Type of reservation to consume
      * </pre>
      *
-     * <code>.google.cloud.dataproc.v1beta2.ReservationAffinity.Type consume_reservation_type = 1;
+     * <code>
+     * .google.cloud.dataproc.v1beta2.ReservationAffinity.Type consume_reservation_type = 1 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public Builder setConsumeReservationType(
@@ -848,7 +854,8 @@ public final class ReservationAffinity extends com.google.protobuf.GeneratedMess
      * Optional. Type of reservation to consume
      * </pre>
      *
-     * <code>.google.cloud.dataproc.v1beta2.ReservationAffinity.Type consume_reservation_type = 1;
+     * <code>
+     * .google.cloud.dataproc.v1beta2.ReservationAffinity.Type consume_reservation_type = 1 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public Builder clearConsumeReservationType() {
@@ -866,7 +873,7 @@ public final class ReservationAffinity extends com.google.protobuf.GeneratedMess
      * Optional. Corresponds to the label key of reservation resource.
      * </pre>
      *
-     * <code>string key = 2;</code>
+     * <code>string key = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public java.lang.String getKey() {
       java.lang.Object ref = key_;
@@ -886,7 +893,7 @@ public final class ReservationAffinity extends com.google.protobuf.GeneratedMess
      * Optional. Corresponds to the label key of reservation resource.
      * </pre>
      *
-     * <code>string key = 2;</code>
+     * <code>string key = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public com.google.protobuf.ByteString getKeyBytes() {
       java.lang.Object ref = key_;
@@ -906,7 +913,7 @@ public final class ReservationAffinity extends com.google.protobuf.GeneratedMess
      * Optional. Corresponds to the label key of reservation resource.
      * </pre>
      *
-     * <code>string key = 2;</code>
+     * <code>string key = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public Builder setKey(java.lang.String value) {
       if (value == null) {
@@ -924,7 +931,7 @@ public final class ReservationAffinity extends com.google.protobuf.GeneratedMess
      * Optional. Corresponds to the label key of reservation resource.
      * </pre>
      *
-     * <code>string key = 2;</code>
+     * <code>string key = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public Builder clearKey() {
 
@@ -939,7 +946,7 @@ public final class ReservationAffinity extends com.google.protobuf.GeneratedMess
      * Optional. Corresponds to the label key of reservation resource.
      * </pre>
      *
-     * <code>string key = 2;</code>
+     * <code>string key = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public Builder setKeyBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -968,7 +975,7 @@ public final class ReservationAffinity extends com.google.protobuf.GeneratedMess
      * Optional. Corresponds to the label values of reservation resource.
      * </pre>
      *
-     * <code>repeated string values = 3;</code>
+     * <code>repeated string values = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public com.google.protobuf.ProtocolStringList getValuesList() {
       return values_.getUnmodifiableView();
@@ -980,7 +987,7 @@ public final class ReservationAffinity extends com.google.protobuf.GeneratedMess
      * Optional. Corresponds to the label values of reservation resource.
      * </pre>
      *
-     * <code>repeated string values = 3;</code>
+     * <code>repeated string values = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public int getValuesCount() {
       return values_.size();
@@ -992,7 +999,7 @@ public final class ReservationAffinity extends com.google.protobuf.GeneratedMess
      * Optional. Corresponds to the label values of reservation resource.
      * </pre>
      *
-     * <code>repeated string values = 3;</code>
+     * <code>repeated string values = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public java.lang.String getValues(int index) {
       return values_.get(index);
@@ -1004,7 +1011,7 @@ public final class ReservationAffinity extends com.google.protobuf.GeneratedMess
      * Optional. Corresponds to the label values of reservation resource.
      * </pre>
      *
-     * <code>repeated string values = 3;</code>
+     * <code>repeated string values = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public com.google.protobuf.ByteString getValuesBytes(int index) {
       return values_.getByteString(index);
@@ -1016,7 +1023,7 @@ public final class ReservationAffinity extends com.google.protobuf.GeneratedMess
      * Optional. Corresponds to the label values of reservation resource.
      * </pre>
      *
-     * <code>repeated string values = 3;</code>
+     * <code>repeated string values = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public Builder setValues(int index, java.lang.String value) {
       if (value == null) {
@@ -1034,7 +1041,7 @@ public final class ReservationAffinity extends com.google.protobuf.GeneratedMess
      * Optional. Corresponds to the label values of reservation resource.
      * </pre>
      *
-     * <code>repeated string values = 3;</code>
+     * <code>repeated string values = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public Builder addValues(java.lang.String value) {
       if (value == null) {
@@ -1052,7 +1059,7 @@ public final class ReservationAffinity extends com.google.protobuf.GeneratedMess
      * Optional. Corresponds to the label values of reservation resource.
      * </pre>
      *
-     * <code>repeated string values = 3;</code>
+     * <code>repeated string values = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public Builder addAllValues(java.lang.Iterable<java.lang.String> values) {
       ensureValuesIsMutable();
@@ -1067,7 +1074,7 @@ public final class ReservationAffinity extends com.google.protobuf.GeneratedMess
      * Optional. Corresponds to the label values of reservation resource.
      * </pre>
      *
-     * <code>repeated string values = 3;</code>
+     * <code>repeated string values = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public Builder clearValues() {
       values_ = com.google.protobuf.LazyStringArrayList.EMPTY;
@@ -1082,7 +1089,7 @@ public final class ReservationAffinity extends com.google.protobuf.GeneratedMess
      * Optional. Corresponds to the label values of reservation resource.
      * </pre>
      *
-     * <code>repeated string values = 3;</code>
+     * <code>repeated string values = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public Builder addValuesBytes(com.google.protobuf.ByteString value) {
       if (value == null) {

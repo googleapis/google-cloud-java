@@ -168,7 +168,10 @@ public final class Entity extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The type of the entity.
+   * The type of the entity. For most entity types, the associated metadata is a
+   * Wikipedia URL (`wikipedia_url`) and Knowledge Graph MID (`mid`). The table
+   * below lists the associated fields for entities that have different
+   * metadata.
    * </pre>
    *
    * Protobuf enum {@code google.cloud.language.v1beta2.Entity.Type}
@@ -228,7 +231,7 @@ public final class Entity extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Work of art
+     * Artwork
      * </pre>
      *
      * <code>WORK_OF_ART = 5;</code>
@@ -238,7 +241,7 @@ public final class Entity extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Consumer goods
+     * Consumer product
      * </pre>
      *
      * <code>CONSUMER_GOOD = 6;</code>
@@ -248,12 +251,88 @@ public final class Entity extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Other types
+     * Other types of entities
      * </pre>
      *
      * <code>OTHER = 7;</code>
      */
     OTHER(7),
+    /**
+     *
+     *
+     * <pre>
+     * Phone number
+     * The metadata lists the phone number, formatted according to local
+     * convention, plus whichever additional elements appear in the text:
+     * * `number` - the actual number, broken down into sections as per local
+     * convention
+     * * `national_prefix` - country code, if detected
+     * * `area_code` - region or area code, if detected
+     * * `extension` - phone extension (to be dialed after connection), if
+     * detected
+     * </pre>
+     *
+     * <code>PHONE_NUMBER = 9;</code>
+     */
+    PHONE_NUMBER(9),
+    /**
+     *
+     *
+     * <pre>
+     * Address
+     * The metadata identifies the street number and locality plus whichever
+     * additional elements appear in the text:
+     * * `street_number` - street number
+     * * `locality` - city or town
+     * * `street_name` - street/route name, if detected
+     * * `postal_code` - postal code, if detected
+     * * `country` - country, if detected&lt;
+     * * `broad_region` - administrative area, such as the state, if detected
+     * * `narrow_region` - smaller administrative area, such as county, if
+     * detected
+     * * `sublocality` - used in Asian addresses to demark a district within a
+     * city, if detected
+     * </pre>
+     *
+     * <code>ADDRESS = 10;</code>
+     */
+    ADDRESS(10),
+    /**
+     *
+     *
+     * <pre>
+     * Date
+     * The metadata identifies the components of the date:
+     * * `year` - four digit year, if detected
+     * * `month` - two digit month number, if detected
+     * * `day` - two digit day number, if detected
+     * </pre>
+     *
+     * <code>DATE = 11;</code>
+     */
+    DATE(11),
+    /**
+     *
+     *
+     * <pre>
+     * Number
+     * The metadata is the number itself.
+     * </pre>
+     *
+     * <code>NUMBER = 12;</code>
+     */
+    NUMBER(12),
+    /**
+     *
+     *
+     * <pre>
+     * Price
+     * The metadata identifies the `value` and `currency`.
+     * </pre>
+     *
+     * <code>PRICE = 13;</code>
+     */
+    PRICE(13),
     UNRECOGNIZED(-1),
     ;
 
@@ -311,7 +390,7 @@ public final class Entity extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Work of art
+     * Artwork
      * </pre>
      *
      * <code>WORK_OF_ART = 5;</code>
@@ -321,7 +400,7 @@ public final class Entity extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Consumer goods
+     * Consumer product
      * </pre>
      *
      * <code>CONSUMER_GOOD = 6;</code>
@@ -331,12 +410,88 @@ public final class Entity extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Other types
+     * Other types of entities
      * </pre>
      *
      * <code>OTHER = 7;</code>
      */
     public static final int OTHER_VALUE = 7;
+    /**
+     *
+     *
+     * <pre>
+     * Phone number
+     * The metadata lists the phone number, formatted according to local
+     * convention, plus whichever additional elements appear in the text:
+     * * `number` - the actual number, broken down into sections as per local
+     * convention
+     * * `national_prefix` - country code, if detected
+     * * `area_code` - region or area code, if detected
+     * * `extension` - phone extension (to be dialed after connection), if
+     * detected
+     * </pre>
+     *
+     * <code>PHONE_NUMBER = 9;</code>
+     */
+    public static final int PHONE_NUMBER_VALUE = 9;
+    /**
+     *
+     *
+     * <pre>
+     * Address
+     * The metadata identifies the street number and locality plus whichever
+     * additional elements appear in the text:
+     * * `street_number` - street number
+     * * `locality` - city or town
+     * * `street_name` - street/route name, if detected
+     * * `postal_code` - postal code, if detected
+     * * `country` - country, if detected&lt;
+     * * `broad_region` - administrative area, such as the state, if detected
+     * * `narrow_region` - smaller administrative area, such as county, if
+     * detected
+     * * `sublocality` - used in Asian addresses to demark a district within a
+     * city, if detected
+     * </pre>
+     *
+     * <code>ADDRESS = 10;</code>
+     */
+    public static final int ADDRESS_VALUE = 10;
+    /**
+     *
+     *
+     * <pre>
+     * Date
+     * The metadata identifies the components of the date:
+     * * `year` - four digit year, if detected
+     * * `month` - two digit month number, if detected
+     * * `day` - two digit day number, if detected
+     * </pre>
+     *
+     * <code>DATE = 11;</code>
+     */
+    public static final int DATE_VALUE = 11;
+    /**
+     *
+     *
+     * <pre>
+     * Number
+     * The metadata is the number itself.
+     * </pre>
+     *
+     * <code>NUMBER = 12;</code>
+     */
+    public static final int NUMBER_VALUE = 12;
+    /**
+     *
+     *
+     * <pre>
+     * Price
+     * The metadata identifies the `value` and `currency`.
+     * </pre>
+     *
+     * <code>PRICE = 13;</code>
+     */
+    public static final int PRICE_VALUE = 13;
 
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
@@ -370,6 +525,16 @@ public final class Entity extends com.google.protobuf.GeneratedMessageV3
           return CONSUMER_GOOD;
         case 7:
           return OTHER;
+        case 9:
+          return PHONE_NUMBER;
+        case 10:
+          return ADDRESS;
+        case 11:
+          return DATE;
+        case 12:
+          return NUMBER;
+        case 13:
+          return PRICE;
         default:
           return null;
       }
@@ -523,8 +688,9 @@ public final class Entity extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Metadata associated with the entity.
-   * Currently, Wikipedia URLs and Knowledge Graph MIDs are provided, if
-   * available. The associated keys are "wikipedia_url" and "mid", respectively.
+   * For most entity types, the metadata is a Wikipedia URL (`wikipedia_url`)
+   * and Knowledge Graph MID (`mid`), if they are available. For the metadata
+   * associated with other entity types, see the Type table below.
    * </pre>
    *
    * <code>map&lt;string, string&gt; metadata = 3;</code>
@@ -545,8 +711,9 @@ public final class Entity extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Metadata associated with the entity.
-   * Currently, Wikipedia URLs and Knowledge Graph MIDs are provided, if
-   * available. The associated keys are "wikipedia_url" and "mid", respectively.
+   * For most entity types, the metadata is a Wikipedia URL (`wikipedia_url`)
+   * and Knowledge Graph MID (`mid`), if they are available. For the metadata
+   * associated with other entity types, see the Type table below.
    * </pre>
    *
    * <code>map&lt;string, string&gt; metadata = 3;</code>
@@ -559,8 +726,9 @@ public final class Entity extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Metadata associated with the entity.
-   * Currently, Wikipedia URLs and Knowledge Graph MIDs are provided, if
-   * available. The associated keys are "wikipedia_url" and "mid", respectively.
+   * For most entity types, the metadata is a Wikipedia URL (`wikipedia_url`)
+   * and Knowledge Graph MID (`mid`), if they are available. For the metadata
+   * associated with other entity types, see the Type table below.
    * </pre>
    *
    * <code>map&lt;string, string&gt; metadata = 3;</code>
@@ -578,8 +746,9 @@ public final class Entity extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Metadata associated with the entity.
-   * Currently, Wikipedia URLs and Knowledge Graph MIDs are provided, if
-   * available. The associated keys are "wikipedia_url" and "mid", respectively.
+   * For most entity types, the metadata is a Wikipedia URL (`wikipedia_url`)
+   * and Knowledge Graph MID (`mid`), if they are available. For the metadata
+   * associated with other entity types, see the Type table below.
    * </pre>
    *
    * <code>map&lt;string, string&gt; metadata = 3;</code>
@@ -690,9 +859,9 @@ public final class Entity extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * For calls to [AnalyzeEntitySentiment][] or if
-   * [AnnotateTextRequest.Features.extract_entity_sentiment][google.cloud.language.v1beta2.AnnotateTextRequest.Features.extract_entity_sentiment]
-   * is set to true, this field will contain the aggregate sentiment expressed
-   * for this entity in the provided document.
+   * [AnnotateTextRequest.Features.extract_entity_sentiment][google.cloud.language.v1beta2.AnnotateTextRequest.Features.extract_entity_sentiment] is set to
+   * true, this field will contain the aggregate sentiment expressed for this
+   * entity in the provided document.
    * </pre>
    *
    * <code>.google.cloud.language.v1beta2.Sentiment sentiment = 6;</code>
@@ -705,9 +874,9 @@ public final class Entity extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * For calls to [AnalyzeEntitySentiment][] or if
-   * [AnnotateTextRequest.Features.extract_entity_sentiment][google.cloud.language.v1beta2.AnnotateTextRequest.Features.extract_entity_sentiment]
-   * is set to true, this field will contain the aggregate sentiment expressed
-   * for this entity in the provided document.
+   * [AnnotateTextRequest.Features.extract_entity_sentiment][google.cloud.language.v1beta2.AnnotateTextRequest.Features.extract_entity_sentiment] is set to
+   * true, this field will contain the aggregate sentiment expressed for this
+   * entity in the provided document.
    * </pre>
    *
    * <code>.google.cloud.language.v1beta2.Sentiment sentiment = 6;</code>
@@ -722,9 +891,9 @@ public final class Entity extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * For calls to [AnalyzeEntitySentiment][] or if
-   * [AnnotateTextRequest.Features.extract_entity_sentiment][google.cloud.language.v1beta2.AnnotateTextRequest.Features.extract_entity_sentiment]
-   * is set to true, this field will contain the aggregate sentiment expressed
-   * for this entity in the provided document.
+   * [AnnotateTextRequest.Features.extract_entity_sentiment][google.cloud.language.v1beta2.AnnotateTextRequest.Features.extract_entity_sentiment] is set to
+   * true, this field will contain the aggregate sentiment expressed for this
+   * entity in the provided document.
    * </pre>
    *
    * <code>.google.cloud.language.v1beta2.Sentiment sentiment = 6;</code>
@@ -1411,8 +1580,9 @@ public final class Entity extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Metadata associated with the entity.
-     * Currently, Wikipedia URLs and Knowledge Graph MIDs are provided, if
-     * available. The associated keys are "wikipedia_url" and "mid", respectively.
+     * For most entity types, the metadata is a Wikipedia URL (`wikipedia_url`)
+     * and Knowledge Graph MID (`mid`), if they are available. For the metadata
+     * associated with other entity types, see the Type table below.
      * </pre>
      *
      * <code>map&lt;string, string&gt; metadata = 3;</code>
@@ -1433,8 +1603,9 @@ public final class Entity extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Metadata associated with the entity.
-     * Currently, Wikipedia URLs and Knowledge Graph MIDs are provided, if
-     * available. The associated keys are "wikipedia_url" and "mid", respectively.
+     * For most entity types, the metadata is a Wikipedia URL (`wikipedia_url`)
+     * and Knowledge Graph MID (`mid`), if they are available. For the metadata
+     * associated with other entity types, see the Type table below.
      * </pre>
      *
      * <code>map&lt;string, string&gt; metadata = 3;</code>
@@ -1447,8 +1618,9 @@ public final class Entity extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Metadata associated with the entity.
-     * Currently, Wikipedia URLs and Knowledge Graph MIDs are provided, if
-     * available. The associated keys are "wikipedia_url" and "mid", respectively.
+     * For most entity types, the metadata is a Wikipedia URL (`wikipedia_url`)
+     * and Knowledge Graph MID (`mid`), if they are available. For the metadata
+     * associated with other entity types, see the Type table below.
      * </pre>
      *
      * <code>map&lt;string, string&gt; metadata = 3;</code>
@@ -1466,8 +1638,9 @@ public final class Entity extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Metadata associated with the entity.
-     * Currently, Wikipedia URLs and Knowledge Graph MIDs are provided, if
-     * available. The associated keys are "wikipedia_url" and "mid", respectively.
+     * For most entity types, the metadata is a Wikipedia URL (`wikipedia_url`)
+     * and Knowledge Graph MID (`mid`), if they are available. For the metadata
+     * associated with other entity types, see the Type table below.
      * </pre>
      *
      * <code>map&lt;string, string&gt; metadata = 3;</code>
@@ -1492,8 +1665,9 @@ public final class Entity extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Metadata associated with the entity.
-     * Currently, Wikipedia URLs and Knowledge Graph MIDs are provided, if
-     * available. The associated keys are "wikipedia_url" and "mid", respectively.
+     * For most entity types, the metadata is a Wikipedia URL (`wikipedia_url`)
+     * and Knowledge Graph MID (`mid`), if they are available. For the metadata
+     * associated with other entity types, see the Type table below.
      * </pre>
      *
      * <code>map&lt;string, string&gt; metadata = 3;</code>
@@ -1515,8 +1689,9 @@ public final class Entity extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Metadata associated with the entity.
-     * Currently, Wikipedia URLs and Knowledge Graph MIDs are provided, if
-     * available. The associated keys are "wikipedia_url" and "mid", respectively.
+     * For most entity types, the metadata is a Wikipedia URL (`wikipedia_url`)
+     * and Knowledge Graph MID (`mid`), if they are available. For the metadata
+     * associated with other entity types, see the Type table below.
      * </pre>
      *
      * <code>map&lt;string, string&gt; metadata = 3;</code>
@@ -1536,8 +1711,9 @@ public final class Entity extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Metadata associated with the entity.
-     * Currently, Wikipedia URLs and Knowledge Graph MIDs are provided, if
-     * available. The associated keys are "wikipedia_url" and "mid", respectively.
+     * For most entity types, the metadata is a Wikipedia URL (`wikipedia_url`)
+     * and Knowledge Graph MID (`mid`), if they are available. For the metadata
+     * associated with other entity types, see the Type table below.
      * </pre>
      *
      * <code>map&lt;string, string&gt; metadata = 3;</code>
@@ -1984,9 +2160,9 @@ public final class Entity extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * For calls to [AnalyzeEntitySentiment][] or if
-     * [AnnotateTextRequest.Features.extract_entity_sentiment][google.cloud.language.v1beta2.AnnotateTextRequest.Features.extract_entity_sentiment]
-     * is set to true, this field will contain the aggregate sentiment expressed
-     * for this entity in the provided document.
+     * [AnnotateTextRequest.Features.extract_entity_sentiment][google.cloud.language.v1beta2.AnnotateTextRequest.Features.extract_entity_sentiment] is set to
+     * true, this field will contain the aggregate sentiment expressed for this
+     * entity in the provided document.
      * </pre>
      *
      * <code>.google.cloud.language.v1beta2.Sentiment sentiment = 6;</code>
@@ -1999,9 +2175,9 @@ public final class Entity extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * For calls to [AnalyzeEntitySentiment][] or if
-     * [AnnotateTextRequest.Features.extract_entity_sentiment][google.cloud.language.v1beta2.AnnotateTextRequest.Features.extract_entity_sentiment]
-     * is set to true, this field will contain the aggregate sentiment expressed
-     * for this entity in the provided document.
+     * [AnnotateTextRequest.Features.extract_entity_sentiment][google.cloud.language.v1beta2.AnnotateTextRequest.Features.extract_entity_sentiment] is set to
+     * true, this field will contain the aggregate sentiment expressed for this
+     * entity in the provided document.
      * </pre>
      *
      * <code>.google.cloud.language.v1beta2.Sentiment sentiment = 6;</code>
@@ -2020,9 +2196,9 @@ public final class Entity extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * For calls to [AnalyzeEntitySentiment][] or if
-     * [AnnotateTextRequest.Features.extract_entity_sentiment][google.cloud.language.v1beta2.AnnotateTextRequest.Features.extract_entity_sentiment]
-     * is set to true, this field will contain the aggregate sentiment expressed
-     * for this entity in the provided document.
+     * [AnnotateTextRequest.Features.extract_entity_sentiment][google.cloud.language.v1beta2.AnnotateTextRequest.Features.extract_entity_sentiment] is set to
+     * true, this field will contain the aggregate sentiment expressed for this
+     * entity in the provided document.
      * </pre>
      *
      * <code>.google.cloud.language.v1beta2.Sentiment sentiment = 6;</code>
@@ -2045,9 +2221,9 @@ public final class Entity extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * For calls to [AnalyzeEntitySentiment][] or if
-     * [AnnotateTextRequest.Features.extract_entity_sentiment][google.cloud.language.v1beta2.AnnotateTextRequest.Features.extract_entity_sentiment]
-     * is set to true, this field will contain the aggregate sentiment expressed
-     * for this entity in the provided document.
+     * [AnnotateTextRequest.Features.extract_entity_sentiment][google.cloud.language.v1beta2.AnnotateTextRequest.Features.extract_entity_sentiment] is set to
+     * true, this field will contain the aggregate sentiment expressed for this
+     * entity in the provided document.
      * </pre>
      *
      * <code>.google.cloud.language.v1beta2.Sentiment sentiment = 6;</code>
@@ -2068,9 +2244,9 @@ public final class Entity extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * For calls to [AnalyzeEntitySentiment][] or if
-     * [AnnotateTextRequest.Features.extract_entity_sentiment][google.cloud.language.v1beta2.AnnotateTextRequest.Features.extract_entity_sentiment]
-     * is set to true, this field will contain the aggregate sentiment expressed
-     * for this entity in the provided document.
+     * [AnnotateTextRequest.Features.extract_entity_sentiment][google.cloud.language.v1beta2.AnnotateTextRequest.Features.extract_entity_sentiment] is set to
+     * true, this field will contain the aggregate sentiment expressed for this
+     * entity in the provided document.
      * </pre>
      *
      * <code>.google.cloud.language.v1beta2.Sentiment sentiment = 6;</code>
@@ -2097,9 +2273,9 @@ public final class Entity extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * For calls to [AnalyzeEntitySentiment][] or if
-     * [AnnotateTextRequest.Features.extract_entity_sentiment][google.cloud.language.v1beta2.AnnotateTextRequest.Features.extract_entity_sentiment]
-     * is set to true, this field will contain the aggregate sentiment expressed
-     * for this entity in the provided document.
+     * [AnnotateTextRequest.Features.extract_entity_sentiment][google.cloud.language.v1beta2.AnnotateTextRequest.Features.extract_entity_sentiment] is set to
+     * true, this field will contain the aggregate sentiment expressed for this
+     * entity in the provided document.
      * </pre>
      *
      * <code>.google.cloud.language.v1beta2.Sentiment sentiment = 6;</code>
@@ -2120,9 +2296,9 @@ public final class Entity extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * For calls to [AnalyzeEntitySentiment][] or if
-     * [AnnotateTextRequest.Features.extract_entity_sentiment][google.cloud.language.v1beta2.AnnotateTextRequest.Features.extract_entity_sentiment]
-     * is set to true, this field will contain the aggregate sentiment expressed
-     * for this entity in the provided document.
+     * [AnnotateTextRequest.Features.extract_entity_sentiment][google.cloud.language.v1beta2.AnnotateTextRequest.Features.extract_entity_sentiment] is set to
+     * true, this field will contain the aggregate sentiment expressed for this
+     * entity in the provided document.
      * </pre>
      *
      * <code>.google.cloud.language.v1beta2.Sentiment sentiment = 6;</code>
@@ -2137,9 +2313,9 @@ public final class Entity extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * For calls to [AnalyzeEntitySentiment][] or if
-     * [AnnotateTextRequest.Features.extract_entity_sentiment][google.cloud.language.v1beta2.AnnotateTextRequest.Features.extract_entity_sentiment]
-     * is set to true, this field will contain the aggregate sentiment expressed
-     * for this entity in the provided document.
+     * [AnnotateTextRequest.Features.extract_entity_sentiment][google.cloud.language.v1beta2.AnnotateTextRequest.Features.extract_entity_sentiment] is set to
+     * true, this field will contain the aggregate sentiment expressed for this
+     * entity in the provided document.
      * </pre>
      *
      * <code>.google.cloud.language.v1beta2.Sentiment sentiment = 6;</code>
@@ -2158,9 +2334,9 @@ public final class Entity extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * For calls to [AnalyzeEntitySentiment][] or if
-     * [AnnotateTextRequest.Features.extract_entity_sentiment][google.cloud.language.v1beta2.AnnotateTextRequest.Features.extract_entity_sentiment]
-     * is set to true, this field will contain the aggregate sentiment expressed
-     * for this entity in the provided document.
+     * [AnnotateTextRequest.Features.extract_entity_sentiment][google.cloud.language.v1beta2.AnnotateTextRequest.Features.extract_entity_sentiment] is set to
+     * true, this field will contain the aggregate sentiment expressed for this
+     * entity in the provided document.
      * </pre>
      *
      * <code>.google.cloud.language.v1beta2.Sentiment sentiment = 6;</code>

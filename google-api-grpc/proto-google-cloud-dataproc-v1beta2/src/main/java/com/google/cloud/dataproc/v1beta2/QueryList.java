@@ -118,7 +118,7 @@ public final class QueryList extends com.google.protobuf.GeneratedMessageV3
    *     }
    * </pre>
    *
-   * <code>repeated string queries = 1;</code>
+   * <code>repeated string queries = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   public com.google.protobuf.ProtocolStringList getQueriesList() {
     return queries_;
@@ -142,7 +142,7 @@ public final class QueryList extends com.google.protobuf.GeneratedMessageV3
    *     }
    * </pre>
    *
-   * <code>repeated string queries = 1;</code>
+   * <code>repeated string queries = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   public int getQueriesCount() {
     return queries_.size();
@@ -166,7 +166,7 @@ public final class QueryList extends com.google.protobuf.GeneratedMessageV3
    *     }
    * </pre>
    *
-   * <code>repeated string queries = 1;</code>
+   * <code>repeated string queries = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   public java.lang.String getQueries(int index) {
     return queries_.get(index);
@@ -190,7 +190,7 @@ public final class QueryList extends com.google.protobuf.GeneratedMessageV3
    *     }
    * </pre>
    *
-   * <code>repeated string queries = 1;</code>
+   * <code>repeated string queries = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   public com.google.protobuf.ByteString getQueriesBytes(int index) {
     return queries_.getByteString(index);
@@ -560,7 +560,7 @@ public final class QueryList extends com.google.protobuf.GeneratedMessageV3
      *     }
      * </pre>
      *
-     * <code>repeated string queries = 1;</code>
+     * <code>repeated string queries = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public com.google.protobuf.ProtocolStringList getQueriesList() {
       return queries_.getUnmodifiableView();
@@ -584,7 +584,7 @@ public final class QueryList extends com.google.protobuf.GeneratedMessageV3
      *     }
      * </pre>
      *
-     * <code>repeated string queries = 1;</code>
+     * <code>repeated string queries = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public int getQueriesCount() {
       return queries_.size();
@@ -608,7 +608,7 @@ public final class QueryList extends com.google.protobuf.GeneratedMessageV3
      *     }
      * </pre>
      *
-     * <code>repeated string queries = 1;</code>
+     * <code>repeated string queries = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public java.lang.String getQueries(int index) {
       return queries_.get(index);
@@ -632,7 +632,7 @@ public final class QueryList extends com.google.protobuf.GeneratedMessageV3
      *     }
      * </pre>
      *
-     * <code>repeated string queries = 1;</code>
+     * <code>repeated string queries = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public com.google.protobuf.ByteString getQueriesBytes(int index) {
       return queries_.getByteString(index);
@@ -656,7 +656,7 @@ public final class QueryList extends com.google.protobuf.GeneratedMessageV3
      *     }
      * </pre>
      *
-     * <code>repeated string queries = 1;</code>
+     * <code>repeated string queries = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder setQueries(int index, java.lang.String value) {
       if (value == null) {
@@ -686,7 +686,7 @@ public final class QueryList extends com.google.protobuf.GeneratedMessageV3
      *     }
      * </pre>
      *
-     * <code>repeated string queries = 1;</code>
+     * <code>repeated string queries = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder addQueries(java.lang.String value) {
       if (value == null) {
@@ -716,7 +716,7 @@ public final class QueryList extends com.google.protobuf.GeneratedMessageV3
      *     }
      * </pre>
      *
-     * <code>repeated string queries = 1;</code>
+     * <code>repeated string queries = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder addAllQueries(java.lang.Iterable<java.lang.String> values) {
       ensureQueriesIsMutable();
@@ -743,7 +743,7 @@ public final class QueryList extends com.google.protobuf.GeneratedMessageV3
      *     }
      * </pre>
      *
-     * <code>repeated string queries = 1;</code>
+     * <code>repeated string queries = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder clearQueries() {
       queries_ = com.google.protobuf.LazyStringArrayList.EMPTY;
@@ -770,7 +770,7 @@ public final class QueryList extends com.google.protobuf.GeneratedMessageV3
      *     }
      * </pre>
      *
-     * <code>repeated string queries = 1;</code>
+     * <code>repeated string queries = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder addQueriesBytes(com.google.protobuf.ByteString value) {
       if (value == null) {

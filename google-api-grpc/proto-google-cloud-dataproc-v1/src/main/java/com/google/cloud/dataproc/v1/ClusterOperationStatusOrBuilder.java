@@ -15,7 +15,9 @@ public interface ClusterOperationStatusOrBuilder
    * Output only. A message containing the operation state.
    * </pre>
    *
-   * <code>.google.cloud.dataproc.v1.ClusterOperationStatus.State state = 1;</code>
+   * <code>
+   * .google.cloud.dataproc.v1.ClusterOperationStatus.State state = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    */
   int getStateValue();
   /**
@@ -25,7 +27,9 @@ public interface ClusterOperationStatusOrBuilder
    * Output only. A message containing the operation state.
    * </pre>
    *
-   * <code>.google.cloud.dataproc.v1.ClusterOperationStatus.State state = 1;</code>
+   * <code>
+   * .google.cloud.dataproc.v1.ClusterOperationStatus.State state = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    */
   com.google.cloud.dataproc.v1.ClusterOperationStatus.State getState();
 
@@ -36,7 +40,7 @@ public interface ClusterOperationStatusOrBuilder
    * Output only. A message containing the detailed operation state.
    * </pre>
    *
-   * <code>string inner_state = 2;</code>
+   * <code>string inner_state = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    */
   java.lang.String getInnerState();
   /**
@@ -46,7 +50,7 @@ public interface ClusterOperationStatusOrBuilder
    * Output only. A message containing the detailed operation state.
    * </pre>
    *
-   * <code>string inner_state = 2;</code>
+   * <code>string inner_state = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    */
   com.google.protobuf.ByteString getInnerStateBytes();
 
@@ -57,7 +61,7 @@ public interface ClusterOperationStatusOrBuilder
    * Output only. A message containing any operation metadata details.
    * </pre>
    *
-   * <code>string details = 3;</code>
+   * <code>string details = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    */
   java.lang.String getDetails();
   /**
@@ -67,7 +71,7 @@ public interface ClusterOperationStatusOrBuilder
    * Output only. A message containing any operation metadata details.
    * </pre>
    *
-   * <code>string details = 3;</code>
+   * <code>string details = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    */
   com.google.protobuf.ByteString getDetailsBytes();
 
@@ -78,7 +82,9 @@ public interface ClusterOperationStatusOrBuilder
    * Output only. The time this state was entered.
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp state_start_time = 4;</code>
+   * <code>
+   * .google.protobuf.Timestamp state_start_time = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    */
   boolean hasStateStartTime();
   /**
@@ -88,7 +94,9 @@ public interface ClusterOperationStatusOrBuilder
    * Output only. The time this state was entered.
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp state_start_time = 4;</code>
+   * <code>
+   * .google.protobuf.Timestamp state_start_time = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    */
   com.google.protobuf.Timestamp getStateStartTime();
   /**
@@ -98,7 +106,9 @@ public interface ClusterOperationStatusOrBuilder
    * Output only. The time this state was entered.
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp state_start_time = 4;</code>
+   * <code>
+   * .google.protobuf.Timestamp state_start_time = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    */
   com.google.protobuf.TimestampOrBuilder getStateStartTimeOrBuilder();
 }

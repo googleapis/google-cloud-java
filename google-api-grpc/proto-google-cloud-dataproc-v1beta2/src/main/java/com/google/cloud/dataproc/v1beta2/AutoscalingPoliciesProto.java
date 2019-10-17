@@ -64,85 +64,101 @@ public final class AutoscalingPoliciesProto {
       "\n8google/cloud/dataproc/v1beta2/autoscal"
           + "ing_policies.proto\022\035google.cloud.datapro"
           + "c.v1beta2\032\034google/api/annotations.proto\032"
-          + ",google/cloud/dataproc/v1beta2/clusters."
-          + "proto\032(google/cloud/dataproc/v1beta2/job"
-          + "s.proto\032#google/longrunning/operations.p"
+          + "\027google/api/client.proto\032\037google/api/fie"
+          + "ld_behavior.proto\032\031google/api/resource.p"
           + "roto\032\036google/protobuf/duration.proto\032\033go"
-          + "ogle/protobuf/empty.proto\032\037google/protob"
-          + "uf/timestamp.proto\"\321\002\n\021AutoscalingPolicy"
-          + "\022\n\n\002id\030\001 \001(\t\022\014\n\004name\030\002 \001(\t\022S\n\017basic_algo"
-          + "rithm\030\003 \001(\01328.google.cloud.dataproc.v1be"
-          + "ta2.BasicAutoscalingAlgorithmH\000\022Z\n\rworke"
-          + "r_config\030\004 \001(\0132C.google.cloud.dataproc.v"
-          + "1beta2.InstanceGroupAutoscalingPolicyCon"
-          + "fig\022d\n\027secondary_worker_config\030\005 \001(\0132C.g"
-          + "oogle.cloud.dataproc.v1beta2.InstanceGro"
-          + "upAutoscalingPolicyConfigB\013\n\talgorithm\"\237"
-          + "\001\n\031BasicAutoscalingAlgorithm\022N\n\013yarn_con"
-          + "fig\030\001 \001(\01329.google.cloud.dataproc.v1beta"
-          + "2.BasicYarnAutoscalingConfig\0222\n\017cooldown"
-          + "_period\030\002 \001(\0132\031.google.protobuf.Duration"
-          + "\"\340\001\n\032BasicYarnAutoscalingConfig\022@\n\035grace"
-          + "ful_decommission_timeout\030\005 \001(\0132\031.google."
-          + "protobuf.Duration\022\027\n\017scale_up_factor\030\001 \001"
-          + "(\001\022\031\n\021scale_down_factor\030\002 \001(\001\022$\n\034scale_u"
-          + "p_min_worker_fraction\030\003 \001(\001\022&\n\036scale_dow"
-          + "n_min_worker_fraction\030\004 \001(\001\"d\n$InstanceG"
-          + "roupAutoscalingPolicyConfig\022\025\n\rmin_insta"
-          + "nces\030\001 \001(\005\022\025\n\rmax_instances\030\002 \001(\005\022\016\n\006wei"
-          + "ght\030\003 \001(\005\"r\n\036CreateAutoscalingPolicyRequ"
-          + "est\022\016\n\006parent\030\001 \001(\t\022@\n\006policy\030\002 \001(\01320.go"
-          + "ogle.cloud.dataproc.v1beta2.AutoscalingP"
-          + "olicy\"+\n\033GetAutoscalingPolicyRequest\022\014\n\004"
-          + "name\030\001 \001(\t\"b\n\036UpdateAutoscalingPolicyReq"
-          + "uest\022@\n\006policy\030\001 \001(\01320.google.cloud.data"
-          + "proc.v1beta2.AutoscalingPolicy\".\n\036Delete"
-          + "AutoscalingPolicyRequest\022\014\n\004name\030\001 \001(\t\"W"
-          + "\n\036ListAutoscalingPoliciesRequest\022\016\n\006pare"
-          + "nt\030\001 \001(\t\022\021\n\tpage_size\030\002 \001(\005\022\022\n\npage_toke"
-          + "n\030\003 \001(\t\"~\n\037ListAutoscalingPoliciesRespon"
-          + "se\022B\n\010policies\030\001 \003(\01320.google.cloud.data"
-          + "proc.v1beta2.AutoscalingPolicy\022\027\n\017next_p"
-          + "age_token\030\002 \001(\t2\222\013\n\030AutoscalingPolicySer"
-          + "vice\022\240\002\n\027CreateAutoscalingPolicy\022=.googl"
-          + "e.cloud.dataproc.v1beta2.CreateAutoscali"
+          + "ogle/protobuf/empty.proto\"\271\004\n\021Autoscalin"
+          + "gPolicy\022\017\n\002id\030\001 \001(\tB\003\340A\002\022\021\n\004name\030\002 \001(\tB\003"
+          + "\340A\003\022S\n\017basic_algorithm\030\003 \001(\01328.google.cl"
+          + "oud.dataproc.v1beta2.BasicAutoscalingAlg"
+          + "orithmH\000\022_\n\rworker_config\030\004 \001(\0132C.google"
+          + ".cloud.dataproc.v1beta2.InstanceGroupAut"
+          + "oscalingPolicyConfigB\003\340A\002\022i\n\027secondary_w"
+          + "orker_config\030\005 \001(\0132C.google.cloud.datapr"
+          + "oc.v1beta2.InstanceGroupAutoscalingPolic"
+          + "yConfigB\003\340A\001:\321\001\352A\315\001\n)dataproc.googleapis"
+          + ".com/AutoscalingPolicy\022Lprojects/{projec"
+          + "t}/regions/{region}/autoscalingPolicies/"
+          + "{autoscaling_policy}\022Pprojects/{project}"
+          + "/locations/{location}/autoscalingPolicie"
+          + "s/{autoscaling_policy} \001B\013\n\talgorithm\"\251\001"
+          + "\n\031BasicAutoscalingAlgorithm\022S\n\013yarn_conf"
+          + "ig\030\001 \001(\01329.google.cloud.dataproc.v1beta2"
+          + ".BasicYarnAutoscalingConfigB\003\340A\002\0227\n\017cool"
+          + "down_period\030\002 \001(\0132\031.google.protobuf.Dura"
+          + "tionB\003\340A\001\"\371\001\n\032BasicYarnAutoscalingConfig"
+          + "\022E\n\035graceful_decommission_timeout\030\005 \001(\0132"
+          + "\031.google.protobuf.DurationB\003\340A\002\022\034\n\017scale"
+          + "_up_factor\030\001 \001(\001B\003\340A\002\022\036\n\021scale_down_fact"
+          + "or\030\002 \001(\001B\003\340A\002\022)\n\034scale_up_min_worker_fra"
+          + "ction\030\003 \001(\001B\003\340A\001\022+\n\036scale_down_min_worke"
+          + "r_fraction\030\004 \001(\001B\003\340A\001\"s\n$InstanceGroupAu"
+          + "toscalingPolicyConfig\022\032\n\rmin_instances\030\001"
+          + " \001(\005B\003\340A\001\022\032\n\rmax_instances\030\002 \001(\005B\003\340A\001\022\023\n"
+          + "\006weight\030\003 \001(\005B\003\340A\001\"\252\001\n\036CreateAutoscaling"
+          + "PolicyRequest\022A\n\006parent\030\001 \001(\tB1\340A\002\372A+\022)d"
+          + "ataproc.googleapis.com/AutoscalingPolicy"
+          + "\022E\n\006policy\030\002 \001(\01320.google.cloud.dataproc"
+          + ".v1beta2.AutoscalingPolicyB\003\340A\002\"^\n\033GetAu"
+          + "toscalingPolicyRequest\022?\n\004name\030\001 \001(\tB1\340A"
+          + "\002\372A+\n)dataproc.googleapis.com/Autoscalin"
+          + "gPolicy\"\225\001\n\036UpdateAutoscalingPolicyReque"
+          + "st\022s\n\006policy\030\001 \001(\01320.google.cloud.datapr"
+          + "oc.v1beta2.AutoscalingPolicyB1\340A\002\372A+\n)da"
+          + "taproc.googleapis.com/AutoscalingPolicy\""
+          + "a\n\036DeleteAutoscalingPolicyRequest\022?\n\004nam"
+          + "e\030\001 \001(\tB1\340A\002\372A+\n)dataproc.googleapis.com"
+          + "/AutoscalingPolicy\"\224\001\n\036ListAutoscalingPo"
+          + "liciesRequest\022A\n\006parent\030\001 \001(\tB1\340A\002\372A+\022)d"
+          + "ataproc.googleapis.com/AutoscalingPolicy"
+          + "\022\026\n\tpage_size\030\002 \001(\005B\003\340A\001\022\027\n\npage_token\030\003"
+          + " \001(\tB\003\340A\001\"\210\001\n\037ListAutoscalingPoliciesRes"
+          + "ponse\022G\n\010policies\030\001 \003(\01320.google.cloud.d"
+          + "ataproc.v1beta2.AutoscalingPolicyB\003\340A\003\022\034"
+          + "\n\017next_page_token\030\002 \001(\tB\003\340A\0032\217\014\n\030Autosca"
+          + "lingPolicyService\022\260\002\n\027CreateAutoscalingP"
+          + "olicy\022=.google.cloud.dataproc.v1beta2.Cr"
+          + "eateAutoscalingPolicyRequest\0320.google.cl"
+          + "oud.dataproc.v1beta2.AutoscalingPolicy\"\243"
+          + "\001\202\323\344\223\002\214\001\"</v1beta2/{parent=projects/*/lo"
+          + "cations/*}/autoscalingPolicies:\006policyZD"
+          + "\":/v1beta2/{parent=projects/*/regions/*}"
+          + "/autoscalingPolicies:\006policy\332A\rparent,po"
+          + "licy\022\267\002\n\027UpdateAutoscalingPolicy\022=.googl"
+          + "e.cloud.dataproc.v1beta2.UpdateAutoscali"
           + "ngPolicyRequest\0320.google.cloud.dataproc."
-          + "v1beta2.AutoscalingPolicy\"\223\001\202\323\344\223\002\214\001\"</v1"
-          + "beta2/{parent=projects/*/locations/*}/au"
-          + "toscalingPolicies:\006policyZD\":/v1beta2/{p"
-          + "arent=projects/*/regions/*}/autoscalingP"
-          + "olicies:\006policy\022\256\002\n\027UpdateAutoscalingPol"
-          + "icy\022=.google.cloud.dataproc.v1beta2.Upda"
-          + "teAutoscalingPolicyRequest\0320.google.clou"
-          + "d.dataproc.v1beta2.AutoscalingPolicy\"\241\001\202"
-          + "\323\344\223\002\232\001\032C/v1beta2/{policy.name=projects/*"
-          + "/locations/*/autoscalingPolicies/*}:\006pol"
-          + "icyZK\032A/v1beta2/{policy.name=projects/*/"
-          + "regions/*/autoscalingPolicies/*}:\006policy"
-          + "\022\211\002\n\024GetAutoscalingPolicy\022:.google.cloud"
-          + ".dataproc.v1beta2.GetAutoscalingPolicyRe"
-          + "quest\0320.google.cloud.dataproc.v1beta2.Au"
-          + "toscalingPolicy\"\202\001\202\323\344\223\002|\022</v1beta2/{name"
-          + "=projects/*/locations/*/autoscalingPolic"
-          + "ies/*}Z<\022:/v1beta2/{name=projects/*/regi"
-          + "ons/*/autoscalingPolicies/*}\022\235\002\n\027ListAut"
-          + "oscalingPolicies\022=.google.cloud.dataproc"
-          + ".v1beta2.ListAutoscalingPoliciesRequest\032"
-          + ">.google.cloud.dataproc.v1beta2.ListAuto"
-          + "scalingPoliciesResponse\"\202\001\202\323\344\223\002|\022</v1bet"
-          + "a2/{parent=projects/*/locations/*}/autos"
-          + "calingPoliciesZ<\022:/v1beta2/{parent=proje"
-          + "cts/*/regions/*}/autoscalingPolicies\022\365\001\n"
-          + "\027DeleteAutoscalingPolicy\022=.google.cloud."
-          + "dataproc.v1beta2.DeleteAutoscalingPolicy"
-          + "Request\032\026.google.protobuf.Empty\"\202\001\202\323\344\223\002|"
-          + "*</v1beta2/{name=projects/*/locations/*/"
-          + "autoscalingPolicies/*}Z<*:/v1beta2/{name"
-          + "=projects/*/regions/*/autoscalingPolicie"
-          + "s/*}B\206\001\n!com.google.cloud.dataproc.v1bet"
-          + "a2B\030AutoscalingPoliciesProtoP\001ZEgoogle.g"
-          + "olang.org/genproto/googleapis/cloud/data"
-          + "proc/v1beta2;dataprocb\006proto3"
+          + "v1beta2.AutoscalingPolicy\"\252\001\202\323\344\223\002\232\001\032C/v1"
+          + "beta2/{policy.name=projects/*/locations/"
+          + "*/autoscalingPolicies/*}:\006policyZK\032A/v1b"
+          + "eta2/{policy.name=projects/*/regions/*/a"
+          + "utoscalingPolicies/*}:\006policy\332A\006policy\022\220"
+          + "\002\n\024GetAutoscalingPolicy\022:.google.cloud.d"
+          + "ataproc.v1beta2.GetAutoscalingPolicyRequ"
+          + "est\0320.google.cloud.dataproc.v1beta2.Auto"
+          + "scalingPolicy\"\211\001\202\323\344\223\002|\022</v1beta2/{name=p"
+          + "rojects/*/locations/*/autoscalingPolicie"
+          + "s/*}Z<\022:/v1beta2/{name=projects/*/region"
+          + "s/*/autoscalingPolicies/*}\332A\004name\022\246\002\n\027Li"
+          + "stAutoscalingPolicies\022=.google.cloud.dat"
+          + "aproc.v1beta2.ListAutoscalingPoliciesReq"
+          + "uest\032>.google.cloud.dataproc.v1beta2.Lis"
+          + "tAutoscalingPoliciesResponse\"\213\001\202\323\344\223\002|\022</"
+          + "v1beta2/{parent=projects/*/locations/*}/"
+          + "autoscalingPoliciesZ<\022:/v1beta2/{parent="
+          + "projects/*/regions/*}/autoscalingPolicie"
+          + "s\332A\006parent\022\374\001\n\027DeleteAutoscalingPolicy\022="
+          + ".google.cloud.dataproc.v1beta2.DeleteAut"
+          + "oscalingPolicyRequest\032\026.google.protobuf."
+          + "Empty\"\211\001\202\323\344\223\002|*</v1beta2/{name=projects/"
+          + "*/locations/*/autoscalingPolicies/*}Z<*:"
+          + "/v1beta2/{name=projects/*/regions/*/auto"
+          + "scalingPolicies/*}\332A\004name\032K\312A\027dataproc.g"
+          + "oogleapis.com\322A.https://www.googleapis.c"
+          + "om/auth/cloud-platformB\206\001\n!com.google.cl"
+          + "oud.dataproc.v1beta2B\030AutoscalingPolicie"
+          + "sProtoP\001ZEgoogle.golang.org/genproto/goo"
+          + "gleapis/cloud/dataproc/v1beta2;dataprocb"
+          + "\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner() {
@@ -156,12 +172,11 @@ public final class AutoscalingPoliciesProto {
         descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
           com.google.api.AnnotationsProto.getDescriptor(),
-          com.google.cloud.dataproc.v1beta2.ClustersProto.getDescriptor(),
-          com.google.cloud.dataproc.v1beta2.JobsProto.getDescriptor(),
-          com.google.longrunning.OperationsProto.getDescriptor(),
+          com.google.api.ClientProto.getDescriptor(),
+          com.google.api.FieldBehaviorProto.getDescriptor(),
+          com.google.api.ResourceProto.getDescriptor(),
           com.google.protobuf.DurationProto.getDescriptor(),
           com.google.protobuf.EmptyProto.getDescriptor(),
-          com.google.protobuf.TimestampProto.getDescriptor(),
         },
         assigner);
     internal_static_google_cloud_dataproc_v1beta2_AutoscalingPolicy_descriptor =
@@ -250,16 +265,21 @@ public final class AutoscalingPoliciesProto {
             });
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();
+    registry.add(com.google.api.ClientProto.defaultHost);
+    registry.add(com.google.api.FieldBehaviorProto.fieldBehavior);
     registry.add(com.google.api.AnnotationsProto.http);
+    registry.add(com.google.api.ClientProto.methodSignature);
+    registry.add(com.google.api.ClientProto.oauthScopes);
+    registry.add(com.google.api.ResourceProto.resource);
+    registry.add(com.google.api.ResourceProto.resourceReference);
     com.google.protobuf.Descriptors.FileDescriptor.internalUpdateFileDescriptor(
         descriptor, registry);
     com.google.api.AnnotationsProto.getDescriptor();
-    com.google.cloud.dataproc.v1beta2.ClustersProto.getDescriptor();
-    com.google.cloud.dataproc.v1beta2.JobsProto.getDescriptor();
-    com.google.longrunning.OperationsProto.getDescriptor();
+    com.google.api.ClientProto.getDescriptor();
+    com.google.api.FieldBehaviorProto.getDescriptor();
+    com.google.api.ResourceProto.getDescriptor();
     com.google.protobuf.DurationProto.getDescriptor();
     com.google.protobuf.EmptyProto.getDescriptor();
-    com.google.protobuf.TimestampProto.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

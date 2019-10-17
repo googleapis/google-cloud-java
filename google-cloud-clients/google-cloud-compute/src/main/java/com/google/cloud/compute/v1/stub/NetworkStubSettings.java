@@ -50,6 +50,7 @@ import com.google.cloud.compute.v1.Operation;
 import com.google.cloud.compute.v1.PatchNetworkHttpRequest;
 import com.google.cloud.compute.v1.RemovePeeringNetworkHttpRequest;
 import com.google.cloud.compute.v1.SwitchToCustomModeNetworkHttpRequest;
+import com.google.cloud.compute.v1.UpdatePeeringNetworkHttpRequest;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.ImmutableSet;
@@ -66,15 +67,16 @@ import org.threeten.bp.Duration;
  * <p>The default instance has everything set to sensible defaults:
  *
  * <ul>
- *   <li>The default service address (https://www.googleapis.com/compute/v1/projects/) and default
- *       port (443) are used.
+ *   <li>The default service address (https://compute.googleapis.com/compute/v1/projects/) and
+ *       default port (443) are used.
  *   <li>Credentials are acquired automatically through Application Default Credentials.
  *   <li>Retries are configured for idempotent methods but not for non-idempotent methods.
  * </ul>
  *
  * <p>The builder of this class is recursive, so contained classes are themselves builders. When
- * build() is called, the tree of builders is called to create the complete settings object. For
- * example, to set the total timeout of addPeeringNetwork to 30 seconds:
+ * build() is called, the tree of builders is called to create the complete settings object.
+ *
+ * <p>For example, to set the total timeout of addPeeringNetwork to 30 seconds:
  *
  * <pre>
  * <code>
@@ -112,6 +114,8 @@ public class NetworkStubSettings extends StubSettings<NetworkStubSettings> {
       removePeeringNetworkSettings;
   private final UnaryCallSettings<SwitchToCustomModeNetworkHttpRequest, Operation>
       switchToCustomModeNetworkSettings;
+  private final UnaryCallSettings<UpdatePeeringNetworkHttpRequest, Operation>
+      updatePeeringNetworkSettings;
 
   /** Returns the object with the settings used for calls to addPeeringNetwork. */
   public UnaryCallSettings<AddPeeringNetworkHttpRequest, Operation> addPeeringNetworkSettings() {
@@ -156,6 +160,12 @@ public class NetworkStubSettings extends StubSettings<NetworkStubSettings> {
     return switchToCustomModeNetworkSettings;
   }
 
+  /** Returns the object with the settings used for calls to updatePeeringNetwork. */
+  public UnaryCallSettings<UpdatePeeringNetworkHttpRequest, Operation>
+      updatePeeringNetworkSettings() {
+    return updatePeeringNetworkSettings;
+  }
+
   @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public NetworkStub createStub() throws IOException {
     if (getTransportChannelProvider()
@@ -175,7 +185,7 @@ public class NetworkStubSettings extends StubSettings<NetworkStubSettings> {
 
   /** Returns the default service endpoint. */
   public static String getDefaultEndpoint() {
-    return "https://www.googleapis.com/compute/v1/projects/";
+    return "https://compute.googleapis.com/compute/v1/projects/";
   }
 
   /** Returns the default service port. */
@@ -238,6 +248,7 @@ public class NetworkStubSettings extends StubSettings<NetworkStubSettings> {
     patchNetworkSettings = settingsBuilder.patchNetworkSettings().build();
     removePeeringNetworkSettings = settingsBuilder.removePeeringNetworkSettings().build();
     switchToCustomModeNetworkSettings = settingsBuilder.switchToCustomModeNetworkSettings().build();
+    updatePeeringNetworkSettings = settingsBuilder.updatePeeringNetworkSettings().build();
   }
 
   private static final PagedListDescriptor<ListNetworksHttpRequest, NetworkList, Network>
@@ -315,6 +326,8 @@ public class NetworkStubSettings extends StubSettings<NetworkStubSettings> {
         removePeeringNetworkSettings;
     private final UnaryCallSettings.Builder<SwitchToCustomModeNetworkHttpRequest, Operation>
         switchToCustomModeNetworkSettings;
+    private final UnaryCallSettings.Builder<UpdatePeeringNetworkHttpRequest, Operation>
+        updatePeeringNetworkSettings;
 
     private static final ImmutableMap<String, ImmutableSet<StatusCode.Code>>
         RETRYABLE_CODE_DEFINITIONS;
@@ -373,6 +386,8 @@ public class NetworkStubSettings extends StubSettings<NetworkStubSettings> {
 
       switchToCustomModeNetworkSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
+      updatePeeringNetworkSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
               addPeeringNetworkSettings,
@@ -382,7 +397,8 @@ public class NetworkStubSettings extends StubSettings<NetworkStubSettings> {
               listNetworksSettings,
               patchNetworkSettings,
               removePeeringNetworkSettings,
-              switchToCustomModeNetworkSettings);
+              switchToCustomModeNetworkSettings,
+              updatePeeringNetworkSettings);
 
       initDefaults(this);
     }
@@ -438,6 +454,11 @@ public class NetworkStubSettings extends StubSettings<NetworkStubSettings> {
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
 
+      builder
+          .updatePeeringNetworkSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
+
       return builder;
     }
 
@@ -452,6 +473,7 @@ public class NetworkStubSettings extends StubSettings<NetworkStubSettings> {
       patchNetworkSettings = settings.patchNetworkSettings.toBuilder();
       removePeeringNetworkSettings = settings.removePeeringNetworkSettings.toBuilder();
       switchToCustomModeNetworkSettings = settings.switchToCustomModeNetworkSettings.toBuilder();
+      updatePeeringNetworkSettings = settings.updatePeeringNetworkSettings.toBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
@@ -462,7 +484,8 @@ public class NetworkStubSettings extends StubSettings<NetworkStubSettings> {
               listNetworksSettings,
               patchNetworkSettings,
               removePeeringNetworkSettings,
-              switchToCustomModeNetworkSettings);
+              switchToCustomModeNetworkSettings,
+              updatePeeringNetworkSettings);
     }
 
     // NEXT_MAJOR_VER: remove 'throws Exception'
@@ -524,6 +547,12 @@ public class NetworkStubSettings extends StubSettings<NetworkStubSettings> {
     public UnaryCallSettings.Builder<SwitchToCustomModeNetworkHttpRequest, Operation>
         switchToCustomModeNetworkSettings() {
       return switchToCustomModeNetworkSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to updatePeeringNetwork. */
+    public UnaryCallSettings.Builder<UpdatePeeringNetworkHttpRequest, Operation>
+        updatePeeringNetworkSettings() {
+      return updatePeeringNetworkSettings;
     }
 
     @Override

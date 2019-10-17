@@ -22,16 +22,16 @@ Add this to your pom.xml file
 <dependency>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-os-login</artifactId>
-  <version>0.101.0-alpha</version>
+  <version>0.116.0-alpha</version>
 </dependency>
 ```
 If you are using Gradle, add this to your dependencies
 ```Groovy
-compile 'com.google.cloud:google-cloud-os-login:0.101.0-alpha'
+compile 'com.google.cloud:google-cloud-os-login:0.116.0-alpha'
 ```
 If you are using SBT, add this to your dependencies
 ```Scala
-libraryDependencies += "com.google.cloud" % "google-cloud-os-login" % "0.101.0-alpha"
+libraryDependencies += "com.google.cloud" % "google-cloud-os-login" % "0.116.0-alpha"
 ```
 [//]: # ({x-version-update-end})
 
@@ -106,5 +106,5 @@ Apache 2.0 - See [LICENSE] for more information.
 [TESTING]: https://github.com/googleapis/google-cloud-java/blob/master/TESTING.md
 
 [cloud-os-login]: https://cloud.google.com/compute/docs/oslogin/rest/
-[os-login-client-lib-docs]: https://googleapis.github.io/google-cloud-java/google-cloud-clients/apidocs/index.html?com/google/cloud/oslogin/v1/package-summary.html
+[os-login-client-lib-docs]: https://googleapis.dev/java/google-cloud-clients/latest/index.html?com/google/cloud/oslogin/v1/package-summary.html
 [auth]: https://cloud.google.com/docs/authentication/getting-started

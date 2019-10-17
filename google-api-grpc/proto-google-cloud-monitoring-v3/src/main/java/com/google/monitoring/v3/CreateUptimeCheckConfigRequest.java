@@ -114,7 +114,7 @@ public final class CreateUptimeCheckConfigRequest extends com.google.protobuf.Ge
    *
    *
    * <pre>
-   * The project in which to create the uptime check. The format
+   * The project in which to create the Uptime check. The format
    *   is `projects/[PROJECT_ID]`.
    * </pre>
    *
@@ -135,7 +135,7 @@ public final class CreateUptimeCheckConfigRequest extends com.google.protobuf.Ge
    *
    *
    * <pre>
-   * The project in which to create the uptime check. The format
+   * The project in which to create the Uptime check. The format
    *   is `projects/[PROJECT_ID]`.
    * </pre>
    *
@@ -159,7 +159,7 @@ public final class CreateUptimeCheckConfigRequest extends com.google.protobuf.Ge
    *
    *
    * <pre>
-   * The new uptime check configuration.
+   * The new Uptime check configuration.
    * </pre>
    *
    * <code>.google.monitoring.v3.UptimeCheckConfig uptime_check_config = 2;</code>
@@ -171,7 +171,7 @@ public final class CreateUptimeCheckConfigRequest extends com.google.protobuf.Ge
    *
    *
    * <pre>
-   * The new uptime check configuration.
+   * The new Uptime check configuration.
    * </pre>
    *
    * <code>.google.monitoring.v3.UptimeCheckConfig uptime_check_config = 2;</code>
@@ -185,7 +185,7 @@ public final class CreateUptimeCheckConfigRequest extends com.google.protobuf.Ge
    *
    *
    * <pre>
-   * The new uptime check configuration.
+   * The new Uptime check configuration.
    * </pre>
    *
    * <code>.google.monitoring.v3.UptimeCheckConfig uptime_check_config = 2;</code>
@@ -546,7 +546,7 @@ public final class CreateUptimeCheckConfigRequest extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * The project in which to create the uptime check. The format
+     * The project in which to create the Uptime check. The format
      *   is `projects/[PROJECT_ID]`.
      * </pre>
      *
@@ -567,7 +567,7 @@ public final class CreateUptimeCheckConfigRequest extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * The project in which to create the uptime check. The format
+     * The project in which to create the Uptime check. The format
      *   is `projects/[PROJECT_ID]`.
      * </pre>
      *
@@ -588,7 +588,7 @@ public final class CreateUptimeCheckConfigRequest extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * The project in which to create the uptime check. The format
+     * The project in which to create the Uptime check. The format
      *   is `projects/[PROJECT_ID]`.
      * </pre>
      *
@@ -607,7 +607,7 @@ public final class CreateUptimeCheckConfigRequest extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * The project in which to create the uptime check. The format
+     * The project in which to create the Uptime check. The format
      *   is `projects/[PROJECT_ID]`.
      * </pre>
      *
@@ -623,7 +623,7 @@ public final class CreateUptimeCheckConfigRequest extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * The project in which to create the uptime check. The format
+     * The project in which to create the Uptime check. The format
      *   is `projects/[PROJECT_ID]`.
      * </pre>
      *
@@ -650,7 +650,7 @@ public final class CreateUptimeCheckConfigRequest extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * The new uptime check configuration.
+     * The new Uptime check configuration.
      * </pre>
      *
      * <code>.google.monitoring.v3.UptimeCheckConfig uptime_check_config = 2;</code>
@@ -662,7 +662,7 @@ public final class CreateUptimeCheckConfigRequest extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * The new uptime check configuration.
+     * The new Uptime check configuration.
      * </pre>
      *
      * <code>.google.monitoring.v3.UptimeCheckConfig uptime_check_config = 2;</code>
@@ -680,7 +680,7 @@ public final class CreateUptimeCheckConfigRequest extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * The new uptime check configuration.
+     * The new Uptime check configuration.
      * </pre>
      *
      * <code>.google.monitoring.v3.UptimeCheckConfig uptime_check_config = 2;</code>
@@ -702,7 +702,7 @@ public final class CreateUptimeCheckConfigRequest extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * The new uptime check configuration.
+     * The new Uptime check configuration.
      * </pre>
      *
      * <code>.google.monitoring.v3.UptimeCheckConfig uptime_check_config = 2;</code>
@@ -722,7 +722,7 @@ public final class CreateUptimeCheckConfigRequest extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * The new uptime check configuration.
+     * The new Uptime check configuration.
      * </pre>
      *
      * <code>.google.monitoring.v3.UptimeCheckConfig uptime_check_config = 2;</code>
@@ -748,7 +748,7 @@ public final class CreateUptimeCheckConfigRequest extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * The new uptime check configuration.
+     * The new Uptime check configuration.
      * </pre>
      *
      * <code>.google.monitoring.v3.UptimeCheckConfig uptime_check_config = 2;</code>
@@ -768,7 +768,7 @@ public final class CreateUptimeCheckConfigRequest extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * The new uptime check configuration.
+     * The new Uptime check configuration.
      * </pre>
      *
      * <code>.google.monitoring.v3.UptimeCheckConfig uptime_check_config = 2;</code>
@@ -782,7 +782,7 @@ public final class CreateUptimeCheckConfigRequest extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * The new uptime check configuration.
+     * The new Uptime check configuration.
      * </pre>
      *
      * <code>.google.monitoring.v3.UptimeCheckConfig uptime_check_config = 2;</code>
@@ -800,7 +800,7 @@ public final class CreateUptimeCheckConfigRequest extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * The new uptime check configuration.
+     * The new Uptime check configuration.
      * </pre>
      *
      * <code>.google.monitoring.v3.UptimeCheckConfig uptime_check_config = 2;</code>

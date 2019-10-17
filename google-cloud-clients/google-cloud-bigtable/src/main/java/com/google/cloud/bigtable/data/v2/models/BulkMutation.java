@@ -31,10 +31,9 @@ import javax.annotation.Nonnull;
  * Represents a list of mutations for multiple rows. Each mutation contains multiple changes that
  * will be atomically applied to each row. However, ordering between rows is not guaranteed.
  *
- * <p>This class is meant for manual batching, while {@link BulkMutationBatcher} is meant for
- * automatic batching with flow control.
+ * <p>This class is meant for manual batching.
  */
-public final class BulkMutation implements Serializable {
+public final class BulkMutation implements Serializable, Cloneable {
   private static final long serialVersionUID = 3522061250439399088L;
 
   private final String tableId;
@@ -89,6 +88,20 @@ public final class BulkMutation implements Serializable {
     return this;
   }
 
+  /**
+   * Add mutation for a particular row. The changes in the mutation will be applied atomic. However
+   * there is no guarantees about the relative ordering between mutations affecting different rows.
+   */
+  public BulkMutation add(@Nonnull RowMutationEntry entry) {
+    Preconditions.checkNotNull(entry, "Row mutation entry can't be null");
+    builder.addEntries(entry.toProto());
+    return this;
+  }
+
+  public int getEntryCount() {
+    return builder.getEntriesCount();
+  }
+
   @InternalApi
   public MutateRowsRequest toProto(RequestContext requestContext) {
     String tableName =
@@ -99,5 +112,13 @@ public final class BulkMutation implements Serializable {
         .setTableName(tableName)
         .setAppProfileId(requestContext.getAppProfileId())
         .build();
+  }
+
+  /** Creates a copy of {@link BulkMutation}. */
+  @Override
+  public BulkMutation clone() {
+    BulkMutation bulkMutation = BulkMutation.create(tableId);
+    bulkMutation.builder = this.builder.clone();
+    return bulkMutation;
   }
 }

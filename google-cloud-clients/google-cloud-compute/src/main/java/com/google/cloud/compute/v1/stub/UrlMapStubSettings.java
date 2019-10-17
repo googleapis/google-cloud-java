@@ -15,6 +15,7 @@
  */
 package com.google.cloud.compute.v1.stub;
 
+import static com.google.cloud.compute.v1.UrlMapClient.AggregatedListUrlMapsPagedResponse;
 import static com.google.cloud.compute.v1.UrlMapClient.ListUrlMapsPagedResponse;
 
 import com.google.api.core.ApiFunction;
@@ -39,6 +40,7 @@ import com.google.api.gax.rpc.StubSettings;
 import com.google.api.gax.rpc.TransportChannelProvider;
 import com.google.api.gax.rpc.UnaryCallSettings;
 import com.google.api.gax.rpc.UnaryCallable;
+import com.google.cloud.compute.v1.AggregatedListUrlMapsHttpRequest;
 import com.google.cloud.compute.v1.DeleteUrlMapHttpRequest;
 import com.google.cloud.compute.v1.GetUrlMapHttpRequest;
 import com.google.cloud.compute.v1.InsertUrlMapHttpRequest;
@@ -49,6 +51,8 @@ import com.google.cloud.compute.v1.PatchUrlMapHttpRequest;
 import com.google.cloud.compute.v1.UpdateUrlMapHttpRequest;
 import com.google.cloud.compute.v1.UrlMap;
 import com.google.cloud.compute.v1.UrlMapList;
+import com.google.cloud.compute.v1.UrlMapsAggregatedList;
+import com.google.cloud.compute.v1.UrlMapsScopedList;
 import com.google.cloud.compute.v1.UrlMapsValidateResponse;
 import com.google.cloud.compute.v1.ValidateUrlMapHttpRequest;
 import com.google.common.collect.ImmutableList;
@@ -67,15 +71,16 @@ import org.threeten.bp.Duration;
  * <p>The default instance has everything set to sensible defaults:
  *
  * <ul>
- *   <li>The default service address (https://www.googleapis.com/compute/v1/projects/) and default
- *       port (443) are used.
+ *   <li>The default service address (https://compute.googleapis.com/compute/v1/projects/) and
+ *       default port (443) are used.
  *   <li>Credentials are acquired automatically through Application Default Credentials.
  *   <li>Retries are configured for idempotent methods but not for non-idempotent methods.
  * </ul>
  *
  * <p>The builder of this class is recursive, so contained classes are themselves builders. When
- * build() is called, the tree of builders is called to create the complete settings object. For
- * example, to set the total timeout of deleteUrlMap to 30 seconds:
+ * build() is called, the tree of builders is called to create the complete settings object.
+ *
+ * <p>For example, to set the total timeout of deleteUrlMap to 30 seconds:
  *
  * <pre>
  * <code>
@@ -101,6 +106,11 @@ public class UrlMapStubSettings extends StubSettings<UrlMapStubSettings> {
           .add("https://www.googleapis.com/auth/devstorage.read_write")
           .build();
 
+  private final PagedCallSettings<
+          AggregatedListUrlMapsHttpRequest,
+          UrlMapsAggregatedList,
+          AggregatedListUrlMapsPagedResponse>
+      aggregatedListUrlMapsSettings;
   private final UnaryCallSettings<DeleteUrlMapHttpRequest, Operation> deleteUrlMapSettings;
   private final UnaryCallSettings<GetUrlMapHttpRequest, UrlMap> getUrlMapSettings;
   private final UnaryCallSettings<InsertUrlMapHttpRequest, Operation> insertUrlMapSettings;
@@ -112,6 +122,15 @@ public class UrlMapStubSettings extends StubSettings<UrlMapStubSettings> {
   private final UnaryCallSettings<UpdateUrlMapHttpRequest, Operation> updateUrlMapSettings;
   private final UnaryCallSettings<ValidateUrlMapHttpRequest, UrlMapsValidateResponse>
       validateUrlMapSettings;
+
+  /** Returns the object with the settings used for calls to aggregatedListUrlMaps. */
+  public PagedCallSettings<
+          AggregatedListUrlMapsHttpRequest,
+          UrlMapsAggregatedList,
+          AggregatedListUrlMapsPagedResponse>
+      aggregatedListUrlMapsSettings() {
+    return aggregatedListUrlMapsSettings;
+  }
 
   /** Returns the object with the settings used for calls to deleteUrlMap. */
   public UnaryCallSettings<DeleteUrlMapHttpRequest, Operation> deleteUrlMapSettings() {
@@ -175,7 +194,7 @@ public class UrlMapStubSettings extends StubSettings<UrlMapStubSettings> {
 
   /** Returns the default service endpoint. */
   public static String getDefaultEndpoint() {
-    return "https://www.googleapis.com/compute/v1/projects/";
+    return "https://compute.googleapis.com/compute/v1/projects/";
   }
 
   /** Returns the default service port. */
@@ -230,6 +249,7 @@ public class UrlMapStubSettings extends StubSettings<UrlMapStubSettings> {
   protected UrlMapStubSettings(Builder settingsBuilder) throws IOException {
     super(settingsBuilder);
 
+    aggregatedListUrlMapsSettings = settingsBuilder.aggregatedListUrlMapsSettings().build();
     deleteUrlMapSettings = settingsBuilder.deleteUrlMapSettings().build();
     getUrlMapSettings = settingsBuilder.getUrlMapSettings().build();
     insertUrlMapSettings = settingsBuilder.insertUrlMapSettings().build();
@@ -239,6 +259,50 @@ public class UrlMapStubSettings extends StubSettings<UrlMapStubSettings> {
     updateUrlMapSettings = settingsBuilder.updateUrlMapSettings().build();
     validateUrlMapSettings = settingsBuilder.validateUrlMapSettings().build();
   }
+
+  private static final PagedListDescriptor<
+          AggregatedListUrlMapsHttpRequest, UrlMapsAggregatedList, UrlMapsScopedList>
+      AGGREGATED_LIST_URL_MAPS_PAGE_STR_DESC =
+          new PagedListDescriptor<
+              AggregatedListUrlMapsHttpRequest, UrlMapsAggregatedList, UrlMapsScopedList>() {
+            @Override
+            public String emptyToken() {
+              return "";
+            }
+
+            @Override
+            public AggregatedListUrlMapsHttpRequest injectToken(
+                AggregatedListUrlMapsHttpRequest payload, String token) {
+              return AggregatedListUrlMapsHttpRequest.newBuilder(payload)
+                  .setPageToken(token)
+                  .build();
+            }
+
+            @Override
+            public AggregatedListUrlMapsHttpRequest injectPageSize(
+                AggregatedListUrlMapsHttpRequest payload, int pageSize) {
+              return AggregatedListUrlMapsHttpRequest.newBuilder(payload)
+                  .setMaxResults(pageSize)
+                  .build();
+            }
+
+            @Override
+            public Integer extractPageSize(AggregatedListUrlMapsHttpRequest payload) {
+              return payload.getMaxResults();
+            }
+
+            @Override
+            public String extractNextToken(UrlMapsAggregatedList payload) {
+              return payload.getNextPageToken();
+            }
+
+            @Override
+            public Iterable<UrlMapsScopedList> extractResources(UrlMapsAggregatedList payload) {
+              return payload.getItemsMap() != null
+                  ? payload.getItemsMap().values()
+                  : ImmutableList.<UrlMapsScopedList>of();
+            }
+          };
 
   private static final PagedListDescriptor<ListUrlMapsHttpRequest, UrlMapList, UrlMap>
       LIST_URL_MAPS_PAGE_STR_DESC =
@@ -279,6 +343,30 @@ public class UrlMapStubSettings extends StubSettings<UrlMapStubSettings> {
           };
 
   private static final PagedListResponseFactory<
+          AggregatedListUrlMapsHttpRequest,
+          UrlMapsAggregatedList,
+          AggregatedListUrlMapsPagedResponse>
+      AGGREGATED_LIST_URL_MAPS_PAGE_STR_FACT =
+          new PagedListResponseFactory<
+              AggregatedListUrlMapsHttpRequest,
+              UrlMapsAggregatedList,
+              AggregatedListUrlMapsPagedResponse>() {
+            @Override
+            public ApiFuture<AggregatedListUrlMapsPagedResponse> getFuturePagedResponse(
+                UnaryCallable<AggregatedListUrlMapsHttpRequest, UrlMapsAggregatedList> callable,
+                AggregatedListUrlMapsHttpRequest request,
+                ApiCallContext context,
+                ApiFuture<UrlMapsAggregatedList> futureResponse) {
+              PageContext<
+                      AggregatedListUrlMapsHttpRequest, UrlMapsAggregatedList, UrlMapsScopedList>
+                  pageContext =
+                      PageContext.create(
+                          callable, AGGREGATED_LIST_URL_MAPS_PAGE_STR_DESC, request, context);
+              return AggregatedListUrlMapsPagedResponse.createAsync(pageContext, futureResponse);
+            }
+          };
+
+  private static final PagedListResponseFactory<
           ListUrlMapsHttpRequest, UrlMapList, ListUrlMapsPagedResponse>
       LIST_URL_MAPS_PAGE_STR_FACT =
           new PagedListResponseFactory<
@@ -299,6 +387,11 @@ public class UrlMapStubSettings extends StubSettings<UrlMapStubSettings> {
   public static class Builder extends StubSettings.Builder<UrlMapStubSettings, Builder> {
     private final ImmutableList<UnaryCallSettings.Builder<?, ?>> unaryMethodSettingsBuilders;
 
+    private final PagedCallSettings.Builder<
+            AggregatedListUrlMapsHttpRequest,
+            UrlMapsAggregatedList,
+            AggregatedListUrlMapsPagedResponse>
+        aggregatedListUrlMapsSettings;
     private final UnaryCallSettings.Builder<DeleteUrlMapHttpRequest, Operation>
         deleteUrlMapSettings;
     private final UnaryCallSettings.Builder<GetUrlMapHttpRequest, UrlMap> getUrlMapSettings;
@@ -356,6 +449,9 @@ public class UrlMapStubSettings extends StubSettings<UrlMapStubSettings> {
     protected Builder(ClientContext clientContext) {
       super(clientContext);
 
+      aggregatedListUrlMapsSettings =
+          PagedCallSettings.newBuilder(AGGREGATED_LIST_URL_MAPS_PAGE_STR_FACT);
+
       deleteUrlMapSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
       getUrlMapSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
@@ -374,6 +470,7 @@ public class UrlMapStubSettings extends StubSettings<UrlMapStubSettings> {
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
+              aggregatedListUrlMapsSettings,
               deleteUrlMapSettings,
               getUrlMapSettings,
               insertUrlMapSettings,
@@ -396,6 +493,11 @@ public class UrlMapStubSettings extends StubSettings<UrlMapStubSettings> {
     }
 
     private static Builder initDefaults(Builder builder) {
+
+      builder
+          .aggregatedListUrlMapsSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
 
       builder
           .deleteUrlMapSettings()
@@ -443,6 +545,7 @@ public class UrlMapStubSettings extends StubSettings<UrlMapStubSettings> {
     protected Builder(UrlMapStubSettings settings) {
       super(settings);
 
+      aggregatedListUrlMapsSettings = settings.aggregatedListUrlMapsSettings.toBuilder();
       deleteUrlMapSettings = settings.deleteUrlMapSettings.toBuilder();
       getUrlMapSettings = settings.getUrlMapSettings.toBuilder();
       insertUrlMapSettings = settings.insertUrlMapSettings.toBuilder();
@@ -454,6 +557,7 @@ public class UrlMapStubSettings extends StubSettings<UrlMapStubSettings> {
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
+              aggregatedListUrlMapsSettings,
               deleteUrlMapSettings,
               getUrlMapSettings,
               insertUrlMapSettings,
@@ -478,6 +582,15 @@ public class UrlMapStubSettings extends StubSettings<UrlMapStubSettings> {
 
     public ImmutableList<UnaryCallSettings.Builder<?, ?>> unaryMethodSettingsBuilders() {
       return unaryMethodSettingsBuilders;
+    }
+
+    /** Returns the builder for the settings used for calls to aggregatedListUrlMaps. */
+    public PagedCallSettings.Builder<
+            AggregatedListUrlMapsHttpRequest,
+            UrlMapsAggregatedList,
+            AggregatedListUrlMapsPagedResponse>
+        aggregatedListUrlMapsSettings() {
+      return aggregatedListUrlMapsSettings;
     }
 
     /** Returns the builder for the settings used for calls to deleteUrlMap. */

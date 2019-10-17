@@ -12,40 +12,48 @@ public interface AsyncBatchAnnotateImagesRequestOrBuilder
    *
    *
    * <pre>
-   * Individual image annotation requests for this batch.
+   * Required. Individual image annotation requests for this batch.
    * </pre>
    *
-   * <code>repeated .google.cloud.vision.v1.AnnotateImageRequest requests = 1;</code>
+   * <code>
+   * repeated .google.cloud.vision.v1.AnnotateImageRequest requests = 1 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   java.util.List<com.google.cloud.vision.v1.AnnotateImageRequest> getRequestsList();
   /**
    *
    *
    * <pre>
-   * Individual image annotation requests for this batch.
+   * Required. Individual image annotation requests for this batch.
    * </pre>
    *
-   * <code>repeated .google.cloud.vision.v1.AnnotateImageRequest requests = 1;</code>
+   * <code>
+   * repeated .google.cloud.vision.v1.AnnotateImageRequest requests = 1 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   com.google.cloud.vision.v1.AnnotateImageRequest getRequests(int index);
   /**
    *
    *
    * <pre>
-   * Individual image annotation requests for this batch.
+   * Required. Individual image annotation requests for this batch.
    * </pre>
    *
-   * <code>repeated .google.cloud.vision.v1.AnnotateImageRequest requests = 1;</code>
+   * <code>
+   * repeated .google.cloud.vision.v1.AnnotateImageRequest requests = 1 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   int getRequestsCount();
   /**
    *
    *
    * <pre>
-   * Individual image annotation requests for this batch.
+   * Required. Individual image annotation requests for this batch.
    * </pre>
    *
-   * <code>repeated .google.cloud.vision.v1.AnnotateImageRequest requests = 1;</code>
+   * <code>
+   * repeated .google.cloud.vision.v1.AnnotateImageRequest requests = 1 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   java.util.List<? extends com.google.cloud.vision.v1.AnnotateImageRequestOrBuilder>
       getRequestsOrBuilderList();
@@ -53,10 +61,12 @@ public interface AsyncBatchAnnotateImagesRequestOrBuilder
    *
    *
    * <pre>
-   * Individual image annotation requests for this batch.
+   * Required. Individual image annotation requests for this batch.
    * </pre>
    *
-   * <code>repeated .google.cloud.vision.v1.AnnotateImageRequest requests = 1;</code>
+   * <code>
+   * repeated .google.cloud.vision.v1.AnnotateImageRequest requests = 1 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   com.google.cloud.vision.v1.AnnotateImageRequestOrBuilder getRequestsOrBuilder(int index);
 
@@ -67,7 +77,9 @@ public interface AsyncBatchAnnotateImagesRequestOrBuilder
    * Required. The desired output location and metadata (e.g. format).
    * </pre>
    *
-   * <code>.google.cloud.vision.v1.OutputConfig output_config = 2;</code>
+   * <code>
+   * .google.cloud.vision.v1.OutputConfig output_config = 2 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   boolean hasOutputConfig();
   /**
@@ -77,7 +89,9 @@ public interface AsyncBatchAnnotateImagesRequestOrBuilder
    * Required. The desired output location and metadata (e.g. format).
    * </pre>
    *
-   * <code>.google.cloud.vision.v1.OutputConfig output_config = 2;</code>
+   * <code>
+   * .google.cloud.vision.v1.OutputConfig output_config = 2 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   com.google.cloud.vision.v1.OutputConfig getOutputConfig();
   /**
@@ -87,7 +101,44 @@ public interface AsyncBatchAnnotateImagesRequestOrBuilder
    * Required. The desired output location and metadata (e.g. format).
    * </pre>
    *
-   * <code>.google.cloud.vision.v1.OutputConfig output_config = 2;</code>
+   * <code>
+   * .google.cloud.vision.v1.OutputConfig output_config = 2 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   com.google.cloud.vision.v1.OutputConfigOrBuilder getOutputConfigOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Target project and location to make a call.
+   * Format: `projects/{project-id}/locations/{location-id}`.
+   * If no parent is specified, a region will be chosen automatically.
+   * Supported location-ids:
+   *     `us`: USA country only,
+   *     `asia`: East asia areas, like Japan, Taiwan,
+   *     `eu`: The European Union.
+   * Example: `projects/project-A/locations/eu`.
+   * </pre>
+   *
+   * <code>string parent = 4;</code>
+   */
+  java.lang.String getParent();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Target project and location to make a call.
+   * Format: `projects/{project-id}/locations/{location-id}`.
+   * If no parent is specified, a region will be chosen automatically.
+   * Supported location-ids:
+   *     `us`: USA country only,
+   *     `asia`: East asia areas, like Japan, Taiwan,
+   *     `eu`: The European Union.
+   * Example: `projects/project-A/locations/eu`.
+   * </pre>
+   *
+   * <code>string parent = 4;</code>
+   */
+  com.google.protobuf.ByteString getParentBytes();
 }

@@ -71,6 +71,7 @@ public class ModelInfo implements Serializable {
   private final ImmutableList<TrainingRun> trainingRunList;
   private final ImmutableList<StandardSQLField> featureColumnList;
   private final ImmutableList<StandardSQLField> labelColumnList;
+  private final EncryptionConfiguration encryptionConfiguration;
 
   /** A builder for {@code ModelInfo} objects. */
   public abstract static class Builder {
@@ -112,6 +113,8 @@ public class ModelInfo implements Serializable {
 
     abstract Builder setFeatureColumns(List<StandardSQLField> featureColumnList);
 
+    public abstract Builder setEncryptionConfiguration(EncryptionConfiguration configuration);
+
     /** Creates a {@code ModelInfo} object. */
     public abstract ModelInfo build();
   }
@@ -130,6 +133,7 @@ public class ModelInfo implements Serializable {
     private List<TrainingRun> trainingRunList = Collections.emptyList();
     private List<StandardSQLField> labelColumnList = Collections.emptyList();
     private List<StandardSQLField> featureColumnList = Collections.emptyList();
+    private EncryptionConfiguration encryptionConfiguration;
 
     BuilderImpl() {}
 
@@ -145,6 +149,7 @@ public class ModelInfo implements Serializable {
       this.trainingRunList = modelInfo.trainingRunList;
       this.labelColumnList = modelInfo.labelColumnList;
       this.featureColumnList = modelInfo.featureColumnList;
+      this.encryptionConfiguration = modelInfo.encryptionConfiguration;
     }
 
     BuilderImpl(Model modelPb) {
@@ -170,6 +175,10 @@ public class ModelInfo implements Serializable {
       if (modelPb.getFeatureColumns() != null) {
         this.featureColumnList =
             Lists.transform(modelPb.getFeatureColumns(), StandardSQLField.FROM_PB_FUNCTION);
+      }
+      if (modelPb.getEncryptionConfiguration() != null) {
+        this.encryptionConfiguration =
+            new EncryptionConfiguration.Builder(modelPb.getEncryptionConfiguration()).build();
       }
     }
 
@@ -246,6 +255,12 @@ public class ModelInfo implements Serializable {
     }
 
     @Override
+    public Builder setEncryptionConfiguration(EncryptionConfiguration configuration) {
+      this.encryptionConfiguration = configuration;
+      return this;
+    }
+
+    @Override
     public ModelInfo build() {
       return new ModelInfo(this);
     }
@@ -264,6 +279,7 @@ public class ModelInfo implements Serializable {
     this.trainingRunList = ImmutableList.copyOf(builder.trainingRunList);
     this.labelColumnList = ImmutableList.copyOf(builder.labelColumnList);
     this.featureColumnList = ImmutableList.copyOf(builder.featureColumnList);
+    this.encryptionConfiguration = builder.encryptionConfiguration;
   }
 
   /** Returns the hash of the model resource. */
@@ -332,6 +348,10 @@ public class ModelInfo implements Serializable {
     return featureColumnList;
   }
 
+  public EncryptionConfiguration getEncryptionConfiguration() {
+    return encryptionConfiguration;
+  }
+
   public Builder toBuilder() {
     return new BuilderImpl(this);
   }
@@ -351,6 +371,7 @@ public class ModelInfo implements Serializable {
         .add("trainingRuns", trainingRunList)
         .add("labelColumns", labelColumnList)
         .add("featureColumns", featureColumnList)
+        .add("encryptionConfiguration", encryptionConfiguration)
         .toString();
   }
 
@@ -402,6 +423,9 @@ public class ModelInfo implements Serializable {
     if (featureColumnList != null) {
       modelPb.setFeatureColumns(
           Lists.transform(featureColumnList, StandardSQLField.TO_PB_FUNCTION));
+    }
+    if (encryptionConfiguration != null) {
+      modelPb.setEncryptionConfiguration(encryptionConfiguration.toPb());
     }
     return modelPb;
   }

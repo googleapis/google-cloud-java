@@ -77,11 +77,10 @@ public interface UpdateExclusionRequestOrBuilder
    *
    *
    * <pre>
-   * Required. A nonempty list of fields to change in the existing exclusion.
+   * Required. A non-empty list of fields to change in the existing exclusion.
    * New values for the fields are taken from the corresponding fields in the
-   * [LogExclusion][google.logging.v2.LogExclusion] included in this request.
-   * Fields not mentioned in `update_mask` are not changed and are ignored in
-   * the request.
+   * [LogExclusion][google.logging.v2.LogExclusion] included in this request. Fields not mentioned in
+   * `update_mask` are not changed and are ignored in the request.
    * For example, to change the filter and description of an exclusion,
    * specify an `update_mask` of `"filter,description"`.
    * </pre>
@@ -93,11 +92,10 @@ public interface UpdateExclusionRequestOrBuilder
    *
    *
    * <pre>
-   * Required. A nonempty list of fields to change in the existing exclusion.
+   * Required. A non-empty list of fields to change in the existing exclusion.
    * New values for the fields are taken from the corresponding fields in the
-   * [LogExclusion][google.logging.v2.LogExclusion] included in this request.
-   * Fields not mentioned in `update_mask` are not changed and are ignored in
-   * the request.
+   * [LogExclusion][google.logging.v2.LogExclusion] included in this request. Fields not mentioned in
+   * `update_mask` are not changed and are ignored in the request.
    * For example, to change the filter and description of an exclusion,
    * specify an `update_mask` of `"filter,description"`.
    * </pre>
@@ -109,11 +107,10 @@ public interface UpdateExclusionRequestOrBuilder
    *
    *
    * <pre>
-   * Required. A nonempty list of fields to change in the existing exclusion.
+   * Required. A non-empty list of fields to change in the existing exclusion.
    * New values for the fields are taken from the corresponding fields in the
-   * [LogExclusion][google.logging.v2.LogExclusion] included in this request.
-   * Fields not mentioned in `update_mask` are not changed and are ignored in
-   * the request.
+   * [LogExclusion][google.logging.v2.LogExclusion] included in this request. Fields not mentioned in
+   * `update_mask` are not changed and are ignored in the request.
    * For example, to change the filter and description of an exclusion,
    * specify an `update_mask` of `"filter,description"`.
    * </pre>

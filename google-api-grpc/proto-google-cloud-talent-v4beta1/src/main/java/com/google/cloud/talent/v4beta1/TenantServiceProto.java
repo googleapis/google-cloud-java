@@ -48,49 +48,51 @@ public final class TenantServiceProto {
       "\n0google/cloud/talent/v4beta1/tenant_ser"
           + "vice.proto\022\033google.cloud.talent.v4beta1\032"
           + "\034google/api/annotations.proto\032\027google/ap"
-          + "i/client.proto\032(google/cloud/talent/v4be"
-          + "ta1/common.proto\032(google/cloud/talent/v4"
-          + "beta1/tenant.proto\032\033google/protobuf/empt"
-          + "y.proto\032 google/protobuf/field_mask.prot"
-          + "o\"Z\n\023CreateTenantRequest\022\016\n\006parent\030\001 \001(\t"
-          + "\0223\n\006tenant\030\002 \001(\0132#.google.cloud.talent.v"
-          + "4beta1.Tenant\" \n\020GetTenantRequest\022\014\n\004nam"
-          + "e\030\001 \001(\t\"{\n\023UpdateTenantRequest\0223\n\006tenant"
-          + "\030\001 \001(\0132#.google.cloud.talent.v4beta1.Ten"
-          + "ant\022/\n\013update_mask\030\002 \001(\0132\032.google.protob"
-          + "uf.FieldMask\"#\n\023DeleteTenantRequest\022\014\n\004n"
-          + "ame\030\001 \001(\t\"K\n\022ListTenantsRequest\022\016\n\006paren"
-          + "t\030\001 \001(\t\022\022\n\npage_token\030\002 \001(\t\022\021\n\tpage_size"
-          + "\030\003 \001(\005\"\245\001\n\023ListTenantsResponse\0224\n\007tenant"
-          + "s\030\001 \003(\0132#.google.cloud.talent.v4beta1.Te"
-          + "nant\022\027\n\017next_page_token\030\002 \001(\t\022?\n\010metadat"
-          + "a\030\003 \001(\0132-.google.cloud.talent.v4beta1.Re"
-          + "sponseMetadata2\360\006\n\rTenantService\022\226\001\n\014Cre"
-          + "ateTenant\0220.google.cloud.talent.v4beta1."
-          + "CreateTenantRequest\032#.google.cloud.talen"
-          + "t.v4beta1.Tenant\"/\202\323\344\223\002)\"$/v4beta1/{pare"
-          + "nt=projects/*}/tenants:\001*\022\215\001\n\tGetTenant\022"
-          + "-.google.cloud.talent.v4beta1.GetTenantR"
-          + "equest\032#.google.cloud.talent.v4beta1.Ten"
-          + "ant\",\202\323\344\223\002&\022$/v4beta1/{name=projects/*/t"
-          + "enants/*}\022\235\001\n\014UpdateTenant\0220.google.clou"
-          + "d.talent.v4beta1.UpdateTenantRequest\032#.g"
-          + "oogle.cloud.talent.v4beta1.Tenant\"6\202\323\344\223\002"
-          + "02+/v4beta1/{tenant.name=projects/*/tena"
-          + "nts/*}:\001*\022\206\001\n\014DeleteTenant\0220.google.clou"
-          + "d.talent.v4beta1.DeleteTenantRequest\032\026.g"
-          + "oogle.protobuf.Empty\",\202\323\344\223\002&*$/v4beta1/{"
-          + "name=projects/*/tenants/*}\022\236\001\n\013ListTenan"
-          + "ts\022/.google.cloud.talent.v4beta1.ListTen"
-          + "antsRequest\0320.google.cloud.talent.v4beta"
-          + "1.ListTenantsResponse\",\202\323\344\223\002&\022$/v4beta1/"
-          + "{parent=projects/*}/tenants\032l\312A\023jobs.goo"
-          + "gleapis.com\322AShttps://www.googleapis.com"
-          + "/auth/cloud-platform,https://www.googlea"
-          + "pis.com/auth/jobsB\200\001\n\037com.google.cloud.t"
-          + "alent.v4beta1B\022TenantServiceProtoP\001ZAgoo"
-          + "gle.golang.org/genproto/googleapis/cloud"
-          + "/talent/v4beta1;talent\242\002\003CTSb\006proto3"
+          + "i/client.proto\032\037google/api/field_behavio"
+          + "r.proto\032(google/cloud/talent/v4beta1/com"
+          + "mon.proto\032(google/cloud/talent/v4beta1/t"
+          + "enant.proto\032\033google/protobuf/empty.proto"
+          + "\032 google/protobuf/field_mask.proto\"d\n\023Cr"
+          + "eateTenantRequest\022\023\n\006parent\030\001 \001(\tB\003\340A\002\0228"
+          + "\n\006tenant\030\002 \001(\0132#.google.cloud.talent.v4b"
+          + "eta1.TenantB\003\340A\002\"%\n\020GetTenantRequest\022\021\n\004"
+          + "name\030\001 \001(\tB\003\340A\002\"\200\001\n\023UpdateTenantRequest\022"
+          + "8\n\006tenant\030\001 \001(\0132#.google.cloud.talent.v4"
+          + "beta1.TenantB\003\340A\002\022/\n\013update_mask\030\002 \001(\0132\032"
+          + ".google.protobuf.FieldMask\"(\n\023DeleteTena"
+          + "ntRequest\022\021\n\004name\030\001 \001(\tB\003\340A\002\"P\n\022ListTena"
+          + "ntsRequest\022\023\n\006parent\030\001 \001(\tB\003\340A\002\022\022\n\npage_"
+          + "token\030\002 \001(\t\022\021\n\tpage_size\030\003 \001(\005\"\245\001\n\023ListT"
+          + "enantsResponse\0224\n\007tenants\030\001 \003(\0132#.google"
+          + ".cloud.talent.v4beta1.Tenant\022\027\n\017next_pag"
+          + "e_token\030\002 \001(\t\022?\n\010metadata\030\003 \001(\0132-.google"
+          + ".cloud.talent.v4beta1.ResponseMetadata2\360"
+          + "\006\n\rTenantService\022\226\001\n\014CreateTenant\0220.goog"
+          + "le.cloud.talent.v4beta1.CreateTenantRequ"
+          + "est\032#.google.cloud.talent.v4beta1.Tenant"
+          + "\"/\202\323\344\223\002)\"$/v4beta1/{parent=projects/*}/t"
+          + "enants:\001*\022\215\001\n\tGetTenant\022-.google.cloud.t"
+          + "alent.v4beta1.GetTenantRequest\032#.google."
+          + "cloud.talent.v4beta1.Tenant\",\202\323\344\223\002&\022$/v4"
+          + "beta1/{name=projects/*/tenants/*}\022\235\001\n\014Up"
+          + "dateTenant\0220.google.cloud.talent.v4beta1"
+          + ".UpdateTenantRequest\032#.google.cloud.tale"
+          + "nt.v4beta1.Tenant\"6\202\323\344\223\00202+/v4beta1/{ten"
+          + "ant.name=projects/*/tenants/*}:\001*\022\206\001\n\014De"
+          + "leteTenant\0220.google.cloud.talent.v4beta1"
+          + ".DeleteTenantRequest\032\026.google.protobuf.E"
+          + "mpty\",\202\323\344\223\002&*$/v4beta1/{name=projects/*/"
+          + "tenants/*}\022\236\001\n\013ListTenants\022/.google.clou"
+          + "d.talent.v4beta1.ListTenantsRequest\0320.go"
+          + "ogle.cloud.talent.v4beta1.ListTenantsRes"
+          + "ponse\",\202\323\344\223\002&\022$/v4beta1/{parent=projects"
+          + "/*}/tenants\032l\312A\023jobs.googleapis.com\322ASht"
+          + "tps://www.googleapis.com/auth/cloud-plat"
+          + "form,https://www.googleapis.com/auth/job"
+          + "sB\200\001\n\037com.google.cloud.talent.v4beta1B\022T"
+          + "enantServiceProtoP\001ZAgoogle.golang.org/g"
+          + "enproto/googleapis/cloud/talent/v4beta1;"
+          + "talent\242\002\003CTSb\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner() {
@@ -105,6 +107,7 @@ public final class TenantServiceProto {
         new com.google.protobuf.Descriptors.FileDescriptor[] {
           com.google.api.AnnotationsProto.getDescriptor(),
           com.google.api.ClientProto.getDescriptor(),
+          com.google.api.FieldBehaviorProto.getDescriptor(),
           com.google.cloud.talent.v4beta1.CommonProto.getDescriptor(),
           com.google.cloud.talent.v4beta1.TenantResourceProto.getDescriptor(),
           com.google.protobuf.EmptyProto.getDescriptor(),
@@ -162,12 +165,14 @@ public final class TenantServiceProto {
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();
     registry.add(com.google.api.ClientProto.defaultHost);
+    registry.add(com.google.api.FieldBehaviorProto.fieldBehavior);
     registry.add(com.google.api.AnnotationsProto.http);
     registry.add(com.google.api.ClientProto.oauthScopes);
     com.google.protobuf.Descriptors.FileDescriptor.internalUpdateFileDescriptor(
         descriptor, registry);
     com.google.api.AnnotationsProto.getDescriptor();
     com.google.api.ClientProto.getDescriptor();
+    com.google.api.FieldBehaviorProto.getDescriptor();
     com.google.cloud.talent.v4beta1.CommonProto.getDescriptor();
     com.google.cloud.talent.v4beta1.TenantResourceProto.getDescriptor();
     com.google.protobuf.EmptyProto.getDescriptor();

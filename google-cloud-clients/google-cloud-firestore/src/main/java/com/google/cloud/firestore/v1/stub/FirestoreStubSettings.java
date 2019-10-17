@@ -87,8 +87,9 @@ import org.threeten.bp.Duration;
  * </ul>
  *
  * <p>The builder of this class is recursive, so contained classes are themselves builders. When
- * build() is called, the tree of builders is called to create the complete settings object. For
- * example, to set the total timeout of updateDocument to 30 seconds:
+ * build() is called, the tree of builders is called to create the complete settings object.
+ *
+ * <p>For example, to set the total timeout of updateDocument to 30 seconds:
  *
  * <pre>
  * <code>
@@ -233,7 +234,8 @@ public class FirestoreStubSettings extends StubSettings<FirestoreStubSettings> {
 
   /** Returns a builder for the default ChannelProvider for this service. */
   public static InstantiatingGrpcChannelProvider.Builder defaultGrpcTransportProviderBuilder() {
-    return InstantiatingGrpcChannelProvider.newBuilder();
+    return InstantiatingGrpcChannelProvider.newBuilder()
+        .setMaxInboundMessageSize(Integer.MAX_VALUE);
   }
 
   public static TransportChannelProvider defaultTransportChannelProvider() {
@@ -428,7 +430,9 @@ public class FirestoreStubSettings extends StubSettings<FirestoreStubSettings> {
           "idempotent",
           ImmutableSet.copyOf(
               Lists.<StatusCode.Code>newArrayList(
-                  StatusCode.Code.DEADLINE_EXCEEDED, StatusCode.Code.UNAVAILABLE)));
+                  StatusCode.Code.DEADLINE_EXCEEDED,
+                  StatusCode.Code.INTERNAL,
+                  StatusCode.Code.UNAVAILABLE)));
       definitions.put("non_idempotent", ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList()));
       RETRYABLE_CODE_DEFINITIONS = definitions.build();
     }
@@ -443,9 +447,9 @@ public class FirestoreStubSettings extends StubSettings<FirestoreStubSettings> {
               .setInitialRetryDelay(Duration.ofMillis(100L))
               .setRetryDelayMultiplier(1.3)
               .setMaxRetryDelay(Duration.ofMillis(60000L))
-              .setInitialRpcTimeout(Duration.ofMillis(20000L))
+              .setInitialRpcTimeout(Duration.ofMillis(60000L))
               .setRpcTimeoutMultiplier(1.0)
-              .setMaxRpcTimeout(Duration.ofMillis(20000L))
+              .setMaxRpcTimeout(Duration.ofMillis(60000L))
               .setTotalTimeout(Duration.ofMillis(600000L))
               .build();
       definitions.put("default", settings);
@@ -454,9 +458,9 @@ public class FirestoreStubSettings extends StubSettings<FirestoreStubSettings> {
               .setInitialRetryDelay(Duration.ofMillis(100L))
               .setRetryDelayMultiplier(1.3)
               .setMaxRetryDelay(Duration.ofMillis(60000L))
-              .setInitialRpcTimeout(Duration.ofMillis(300000L))
+              .setInitialRpcTimeout(Duration.ofMillis(60000L))
               .setRpcTimeoutMultiplier(1.0)
-              .setMaxRpcTimeout(Duration.ofMillis(300000L))
+              .setMaxRpcTimeout(Duration.ofMillis(60000L))
               .setTotalTimeout(Duration.ofMillis(600000L))
               .build();
       definitions.put("streaming", settings);

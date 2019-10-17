@@ -12,20 +12,20 @@ public interface ViewSpecOrBuilder
    *
    *
    * <pre>
-   * Output only. The query that defines the table view.
+   * Required. Output only. The query that defines the table view.
    * </pre>
    *
-   * <code>string view_query = 1;</code>
+   * <code>string view_query = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   java.lang.String getViewQuery();
   /**
    *
    *
    * <pre>
-   * Output only. The query that defines the table view.
+   * Required. Output only. The query that defines the table view.
    * </pre>
    *
-   * <code>string view_query = 1;</code>
+   * <code>string view_query = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   com.google.protobuf.ByteString getViewQueryBytes();
 }

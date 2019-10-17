@@ -7,7 +7,6 @@ package com.google.cloud.talent.v4beta1;
  *
  *
  * <pre>
- * Input only.
  * Get job request.
  * </pre>
  *
@@ -100,13 +99,13 @@ public final class GetJobRequest extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Required. The resource name of the job to retrieve.
    * The format is
-   * "projects/{project_id}/tenants/{tenant_id}/jobs/{job_id}", for
-   * example, "projects/api-test-project/tenants/foo/jobs/1234".
-   * Tenant id is optional and the default tenant is used if unspecified, for
-   * example, "projects/api-test-project/jobs/1234".
+   * "projects/{project_id}/tenants/{tenant_id}/jobs/{job_id}". For
+   * example, "projects/foo/tenants/bar/jobs/baz".
+   * If tenant id is unspecified, the default tenant is used. For
+   * example, "projects/foo/jobs/bar".
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   public java.lang.String getName() {
     java.lang.Object ref = name_;
@@ -125,13 +124,13 @@ public final class GetJobRequest extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Required. The resource name of the job to retrieve.
    * The format is
-   * "projects/{project_id}/tenants/{tenant_id}/jobs/{job_id}", for
-   * example, "projects/api-test-project/tenants/foo/jobs/1234".
-   * Tenant id is optional and the default tenant is used if unspecified, for
-   * example, "projects/api-test-project/jobs/1234".
+   * "projects/{project_id}/tenants/{tenant_id}/jobs/{job_id}". For
+   * example, "projects/foo/tenants/bar/jobs/baz".
+   * If tenant id is unspecified, the default tenant is used. For
+   * example, "projects/foo/jobs/bar".
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   public com.google.protobuf.ByteString getNameBytes() {
     java.lang.Object ref = name_;
@@ -308,7 +307,6 @@ public final class GetJobRequest extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Input only.
    * Get job request.
    * </pre>
    *
@@ -469,13 +467,13 @@ public final class GetJobRequest extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Required. The resource name of the job to retrieve.
      * The format is
-     * "projects/{project_id}/tenants/{tenant_id}/jobs/{job_id}", for
-     * example, "projects/api-test-project/tenants/foo/jobs/1234".
-     * Tenant id is optional and the default tenant is used if unspecified, for
-     * example, "projects/api-test-project/jobs/1234".
+     * "projects/{project_id}/tenants/{tenant_id}/jobs/{job_id}". For
+     * example, "projects/foo/tenants/bar/jobs/baz".
+     * If tenant id is unspecified, the default tenant is used. For
+     * example, "projects/foo/jobs/bar".
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public java.lang.String getName() {
       java.lang.Object ref = name_;
@@ -494,13 +492,13 @@ public final class GetJobRequest extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Required. The resource name of the job to retrieve.
      * The format is
-     * "projects/{project_id}/tenants/{tenant_id}/jobs/{job_id}", for
-     * example, "projects/api-test-project/tenants/foo/jobs/1234".
-     * Tenant id is optional and the default tenant is used if unspecified, for
-     * example, "projects/api-test-project/jobs/1234".
+     * "projects/{project_id}/tenants/{tenant_id}/jobs/{job_id}". For
+     * example, "projects/foo/tenants/bar/jobs/baz".
+     * If tenant id is unspecified, the default tenant is used. For
+     * example, "projects/foo/jobs/bar".
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public com.google.protobuf.ByteString getNameBytes() {
       java.lang.Object ref = name_;
@@ -519,13 +517,13 @@ public final class GetJobRequest extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Required. The resource name of the job to retrieve.
      * The format is
-     * "projects/{project_id}/tenants/{tenant_id}/jobs/{job_id}", for
-     * example, "projects/api-test-project/tenants/foo/jobs/1234".
-     * Tenant id is optional and the default tenant is used if unspecified, for
-     * example, "projects/api-test-project/jobs/1234".
+     * "projects/{project_id}/tenants/{tenant_id}/jobs/{job_id}". For
+     * example, "projects/foo/tenants/bar/jobs/baz".
+     * If tenant id is unspecified, the default tenant is used. For
+     * example, "projects/foo/jobs/bar".
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder setName(java.lang.String value) {
       if (value == null) {
@@ -542,13 +540,13 @@ public final class GetJobRequest extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Required. The resource name of the job to retrieve.
      * The format is
-     * "projects/{project_id}/tenants/{tenant_id}/jobs/{job_id}", for
-     * example, "projects/api-test-project/tenants/foo/jobs/1234".
-     * Tenant id is optional and the default tenant is used if unspecified, for
-     * example, "projects/api-test-project/jobs/1234".
+     * "projects/{project_id}/tenants/{tenant_id}/jobs/{job_id}". For
+     * example, "projects/foo/tenants/bar/jobs/baz".
+     * If tenant id is unspecified, the default tenant is used. For
+     * example, "projects/foo/jobs/bar".
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder clearName() {
 
@@ -562,13 +560,13 @@ public final class GetJobRequest extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Required. The resource name of the job to retrieve.
      * The format is
-     * "projects/{project_id}/tenants/{tenant_id}/jobs/{job_id}", for
-     * example, "projects/api-test-project/tenants/foo/jobs/1234".
-     * Tenant id is optional and the default tenant is used if unspecified, for
-     * example, "projects/api-test-project/jobs/1234".
+     * "projects/{project_id}/tenants/{tenant_id}/jobs/{job_id}". For
+     * example, "projects/foo/tenants/bar/jobs/baz".
+     * If tenant id is unspecified, the default tenant is used. For
+     * example, "projects/foo/jobs/bar".
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder setNameBytes(com.google.protobuf.ByteString value) {
       if (value == null) {

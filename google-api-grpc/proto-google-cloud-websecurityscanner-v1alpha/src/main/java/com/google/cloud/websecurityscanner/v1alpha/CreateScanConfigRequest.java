@@ -114,12 +114,13 @@ public final class CreateScanConfigRequest extends com.google.protobuf.Generated
    *
    *
    * <pre>
-   * Required.
-   * The parent resource name where the scan is created, which should be a
+   * Required. The parent resource name where the scan is created, which should be a
    * project resource name in the format 'projects/{projectId}'.
    * </pre>
    *
-   * <code>string parent = 1;</code>
+   * <code>
+   * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    */
   public java.lang.String getParent() {
     java.lang.Object ref = parent_;
@@ -136,12 +137,13 @@ public final class CreateScanConfigRequest extends com.google.protobuf.Generated
    *
    *
    * <pre>
-   * Required.
-   * The parent resource name where the scan is created, which should be a
+   * Required. The parent resource name where the scan is created, which should be a
    * project resource name in the format 'projects/{projectId}'.
    * </pre>
    *
-   * <code>string parent = 1;</code>
+   * <code>
+   * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    */
   public com.google.protobuf.ByteString getParentBytes() {
     java.lang.Object ref = parent_;
@@ -161,11 +163,12 @@ public final class CreateScanConfigRequest extends com.google.protobuf.Generated
    *
    *
    * <pre>
-   * Required.
-   * The ScanConfig to be created.
+   * Required. The ScanConfig to be created.
    * </pre>
    *
-   * <code>.google.cloud.websecurityscanner.v1alpha.ScanConfig scan_config = 2;</code>
+   * <code>
+   * .google.cloud.websecurityscanner.v1alpha.ScanConfig scan_config = 2 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   public boolean hasScanConfig() {
     return scanConfig_ != null;
@@ -174,11 +177,12 @@ public final class CreateScanConfigRequest extends com.google.protobuf.Generated
    *
    *
    * <pre>
-   * Required.
-   * The ScanConfig to be created.
+   * Required. The ScanConfig to be created.
    * </pre>
    *
-   * <code>.google.cloud.websecurityscanner.v1alpha.ScanConfig scan_config = 2;</code>
+   * <code>
+   * .google.cloud.websecurityscanner.v1alpha.ScanConfig scan_config = 2 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   public com.google.cloud.websecurityscanner.v1alpha.ScanConfig getScanConfig() {
     return scanConfig_ == null
@@ -189,11 +193,12 @@ public final class CreateScanConfigRequest extends com.google.protobuf.Generated
    *
    *
    * <pre>
-   * Required.
-   * The ScanConfig to be created.
+   * Required. The ScanConfig to be created.
    * </pre>
    *
-   * <code>.google.cloud.websecurityscanner.v1alpha.ScanConfig scan_config = 2;</code>
+   * <code>
+   * .google.cloud.websecurityscanner.v1alpha.ScanConfig scan_config = 2 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   public com.google.cloud.websecurityscanner.v1alpha.ScanConfigOrBuilder getScanConfigOrBuilder() {
     return getScanConfig();
@@ -559,12 +564,13 @@ public final class CreateScanConfigRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Required.
-     * The parent resource name where the scan is created, which should be a
+     * Required. The parent resource name where the scan is created, which should be a
      * project resource name in the format 'projects/{projectId}'.
      * </pre>
      *
-     * <code>string parent = 1;</code>
+     * <code>
+     * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      */
     public java.lang.String getParent() {
       java.lang.Object ref = parent_;
@@ -581,12 +587,13 @@ public final class CreateScanConfigRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Required.
-     * The parent resource name where the scan is created, which should be a
+     * Required. The parent resource name where the scan is created, which should be a
      * project resource name in the format 'projects/{projectId}'.
      * </pre>
      *
-     * <code>string parent = 1;</code>
+     * <code>
+     * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      */
     public com.google.protobuf.ByteString getParentBytes() {
       java.lang.Object ref = parent_;
@@ -603,12 +610,13 @@ public final class CreateScanConfigRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Required.
-     * The parent resource name where the scan is created, which should be a
+     * Required. The parent resource name where the scan is created, which should be a
      * project resource name in the format 'projects/{projectId}'.
      * </pre>
      *
-     * <code>string parent = 1;</code>
+     * <code>
+     * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      */
     public Builder setParent(java.lang.String value) {
       if (value == null) {
@@ -623,12 +631,13 @@ public final class CreateScanConfigRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Required.
-     * The parent resource name where the scan is created, which should be a
+     * Required. The parent resource name where the scan is created, which should be a
      * project resource name in the format 'projects/{projectId}'.
      * </pre>
      *
-     * <code>string parent = 1;</code>
+     * <code>
+     * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      */
     public Builder clearParent() {
 
@@ -640,12 +649,13 @@ public final class CreateScanConfigRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Required.
-     * The parent resource name where the scan is created, which should be a
+     * Required. The parent resource name where the scan is created, which should be a
      * project resource name in the format 'projects/{projectId}'.
      * </pre>
      *
-     * <code>string parent = 1;</code>
+     * <code>
+     * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      */
     public Builder setParentBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -668,11 +678,12 @@ public final class CreateScanConfigRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Required.
-     * The ScanConfig to be created.
+     * Required. The ScanConfig to be created.
      * </pre>
      *
-     * <code>.google.cloud.websecurityscanner.v1alpha.ScanConfig scan_config = 2;</code>
+     * <code>
+     * .google.cloud.websecurityscanner.v1alpha.ScanConfig scan_config = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public boolean hasScanConfig() {
       return scanConfigBuilder_ != null || scanConfig_ != null;
@@ -681,11 +692,12 @@ public final class CreateScanConfigRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Required.
-     * The ScanConfig to be created.
+     * Required. The ScanConfig to be created.
      * </pre>
      *
-     * <code>.google.cloud.websecurityscanner.v1alpha.ScanConfig scan_config = 2;</code>
+     * <code>
+     * .google.cloud.websecurityscanner.v1alpha.ScanConfig scan_config = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public com.google.cloud.websecurityscanner.v1alpha.ScanConfig getScanConfig() {
       if (scanConfigBuilder_ == null) {
@@ -700,11 +712,12 @@ public final class CreateScanConfigRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Required.
-     * The ScanConfig to be created.
+     * Required. The ScanConfig to be created.
      * </pre>
      *
-     * <code>.google.cloud.websecurityscanner.v1alpha.ScanConfig scan_config = 2;</code>
+     * <code>
+     * .google.cloud.websecurityscanner.v1alpha.ScanConfig scan_config = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder setScanConfig(com.google.cloud.websecurityscanner.v1alpha.ScanConfig value) {
       if (scanConfigBuilder_ == null) {
@@ -723,11 +736,12 @@ public final class CreateScanConfigRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Required.
-     * The ScanConfig to be created.
+     * Required. The ScanConfig to be created.
      * </pre>
      *
-     * <code>.google.cloud.websecurityscanner.v1alpha.ScanConfig scan_config = 2;</code>
+     * <code>
+     * .google.cloud.websecurityscanner.v1alpha.ScanConfig scan_config = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder setScanConfig(
         com.google.cloud.websecurityscanner.v1alpha.ScanConfig.Builder builderForValue) {
@@ -744,11 +758,12 @@ public final class CreateScanConfigRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Required.
-     * The ScanConfig to be created.
+     * Required. The ScanConfig to be created.
      * </pre>
      *
-     * <code>.google.cloud.websecurityscanner.v1alpha.ScanConfig scan_config = 2;</code>
+     * <code>
+     * .google.cloud.websecurityscanner.v1alpha.ScanConfig scan_config = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder mergeScanConfig(com.google.cloud.websecurityscanner.v1alpha.ScanConfig value) {
       if (scanConfigBuilder_ == null) {
@@ -771,11 +786,12 @@ public final class CreateScanConfigRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Required.
-     * The ScanConfig to be created.
+     * Required. The ScanConfig to be created.
      * </pre>
      *
-     * <code>.google.cloud.websecurityscanner.v1alpha.ScanConfig scan_config = 2;</code>
+     * <code>
+     * .google.cloud.websecurityscanner.v1alpha.ScanConfig scan_config = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder clearScanConfig() {
       if (scanConfigBuilder_ == null) {
@@ -792,11 +808,12 @@ public final class CreateScanConfigRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Required.
-     * The ScanConfig to be created.
+     * Required. The ScanConfig to be created.
      * </pre>
      *
-     * <code>.google.cloud.websecurityscanner.v1alpha.ScanConfig scan_config = 2;</code>
+     * <code>
+     * .google.cloud.websecurityscanner.v1alpha.ScanConfig scan_config = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public com.google.cloud.websecurityscanner.v1alpha.ScanConfig.Builder getScanConfigBuilder() {
 
@@ -807,11 +824,12 @@ public final class CreateScanConfigRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Required.
-     * The ScanConfig to be created.
+     * Required. The ScanConfig to be created.
      * </pre>
      *
-     * <code>.google.cloud.websecurityscanner.v1alpha.ScanConfig scan_config = 2;</code>
+     * <code>
+     * .google.cloud.websecurityscanner.v1alpha.ScanConfig scan_config = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public com.google.cloud.websecurityscanner.v1alpha.ScanConfigOrBuilder
         getScanConfigOrBuilder() {
@@ -827,11 +845,12 @@ public final class CreateScanConfigRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Required.
-     * The ScanConfig to be created.
+     * Required. The ScanConfig to be created.
      * </pre>
      *
-     * <code>.google.cloud.websecurityscanner.v1alpha.ScanConfig scan_config = 2;</code>
+     * <code>
+     * .google.cloud.websecurityscanner.v1alpha.ScanConfig scan_config = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.websecurityscanner.v1alpha.ScanConfig,

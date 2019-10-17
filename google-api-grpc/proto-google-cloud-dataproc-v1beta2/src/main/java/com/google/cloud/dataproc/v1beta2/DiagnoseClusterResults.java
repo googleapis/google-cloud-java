@@ -102,7 +102,7 @@ public final class DiagnoseClusterResults extends com.google.protobuf.GeneratedM
    * diagnostics.
    * </pre>
    *
-   * <code>string output_uri = 1;</code>
+   * <code>string output_uri = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    */
   public java.lang.String getOutputUri() {
     java.lang.Object ref = outputUri_;
@@ -124,7 +124,7 @@ public final class DiagnoseClusterResults extends com.google.protobuf.GeneratedM
    * diagnostics.
    * </pre>
    *
-   * <code>string output_uri = 1;</code>
+   * <code>string output_uri = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    */
   public com.google.protobuf.ByteString getOutputUriBytes() {
     java.lang.Object ref = outputUri_;
@@ -467,7 +467,7 @@ public final class DiagnoseClusterResults extends com.google.protobuf.GeneratedM
      * diagnostics.
      * </pre>
      *
-     * <code>string output_uri = 1;</code>
+     * <code>string output_uri = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     public java.lang.String getOutputUri() {
       java.lang.Object ref = outputUri_;
@@ -489,7 +489,7 @@ public final class DiagnoseClusterResults extends com.google.protobuf.GeneratedM
      * diagnostics.
      * </pre>
      *
-     * <code>string output_uri = 1;</code>
+     * <code>string output_uri = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     public com.google.protobuf.ByteString getOutputUriBytes() {
       java.lang.Object ref = outputUri_;
@@ -511,7 +511,7 @@ public final class DiagnoseClusterResults extends com.google.protobuf.GeneratedM
      * diagnostics.
      * </pre>
      *
-     * <code>string output_uri = 1;</code>
+     * <code>string output_uri = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     public Builder setOutputUri(java.lang.String value) {
       if (value == null) {
@@ -531,7 +531,7 @@ public final class DiagnoseClusterResults extends com.google.protobuf.GeneratedM
      * diagnostics.
      * </pre>
      *
-     * <code>string output_uri = 1;</code>
+     * <code>string output_uri = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     public Builder clearOutputUri() {
 
@@ -548,7 +548,7 @@ public final class DiagnoseClusterResults extends com.google.protobuf.GeneratedM
      * diagnostics.
      * </pre>
      *
-     * <code>string output_uri = 1;</code>
+     * <code>string output_uri = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     public Builder setOutputUriBytes(com.google.protobuf.ByteString value) {
       if (value == null) {

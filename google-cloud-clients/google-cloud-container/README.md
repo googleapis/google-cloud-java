@@ -22,16 +22,16 @@ Add this to your pom.xml file
 <dependency>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-container</artifactId>
-  <version>0.101.0-beta</version>
+  <version>0.116.0-beta</version>
 </dependency>
 ```
 If you are using Gradle, add this to your dependencies
 ```Groovy
-compile 'com.google.cloud:google-cloud-container:0.101.0-beta'
+compile 'com.google.cloud:google-cloud-container:0.116.0-beta'
 ```
 If you are using SBT, add this to your dependencies
 ```Scala
-libraryDependencies += "com.google.cloud" % "google-cloud-container" % "0.101.0-beta"
+libraryDependencies += "com.google.cloud" % "google-cloud-container" % "0.116.0-beta"
 ```
 [//]: # ({x-version-update-end})
 
@@ -115,4 +115,4 @@ Apache 2.0 - See [LICENSE] for more information.
 [cloud-container]: https://cloud.google.com/kubernetes-engine/
 [cloud-container-quickstart]: https://cloud.google.com/kubernetes-engine/docs/quickstart
 [container-product-docs]: https://cloud.google.com/kubernetes-engine/docs/
-[container-client-lib-docs]: https://googleapis.github.io/google-cloud-java/google-cloud-clients/apidocs/index.html?com/google/cloud/container/v1/package-summary.html
+[container-client-lib-docs]: https://googleapis.dev/java/google-cloud-clients/latest/index.html?com/google/cloud/container/v1/package-summary.html

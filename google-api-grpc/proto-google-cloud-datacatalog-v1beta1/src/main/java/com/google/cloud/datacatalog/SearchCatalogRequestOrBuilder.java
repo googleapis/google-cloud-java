@@ -15,7 +15,9 @@ public interface SearchCatalogRequestOrBuilder
    * Required. The scope of this search request.
    * </pre>
    *
-   * <code>.google.cloud.datacatalog.v1beta1.SearchCatalogRequest.Scope scope = 6;</code>
+   * <code>
+   * .google.cloud.datacatalog.v1beta1.SearchCatalogRequest.Scope scope = 6 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   boolean hasScope();
   /**
@@ -25,7 +27,9 @@ public interface SearchCatalogRequestOrBuilder
    * Required. The scope of this search request.
    * </pre>
    *
-   * <code>.google.cloud.datacatalog.v1beta1.SearchCatalogRequest.Scope scope = 6;</code>
+   * <code>
+   * .google.cloud.datacatalog.v1beta1.SearchCatalogRequest.Scope scope = 6 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   com.google.cloud.datacatalog.SearchCatalogRequest.Scope getScope();
   /**
@@ -35,7 +39,9 @@ public interface SearchCatalogRequestOrBuilder
    * Required. The scope of this search request.
    * </pre>
    *
-   * <code>.google.cloud.datacatalog.v1beta1.SearchCatalogRequest.Scope scope = 6;</code>
+   * <code>
+   * .google.cloud.datacatalog.v1beta1.SearchCatalogRequest.Scope scope = 6 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   com.google.cloud.datacatalog.SearchCatalogRequest.ScopeOrBuilder getScopeOrBuilder();
 
@@ -54,7 +60,7 @@ public interface SearchCatalogRequestOrBuilder
    * Syntax](/data-catalog/docs/how-to/search-reference) for more information.
    * </pre>
    *
-   * <code>string query = 1;</code>
+   * <code>string query = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   java.lang.String getQuery();
   /**
@@ -72,7 +78,7 @@ public interface SearchCatalogRequestOrBuilder
    * Syntax](/data-catalog/docs/how-to/search-reference) for more information.
    * </pre>
    *
-   * <code>string query = 1;</code>
+   * <code>string query = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   com.google.protobuf.ByteString getQueryBytes();
 
@@ -93,11 +99,11 @@ public interface SearchCatalogRequestOrBuilder
    *
    * <pre>
    * Optional pagination token returned in an earlier
-   * [SearchCatalogResponse.next_page_token][google.cloud.datacatalog.v1beta1.DataCatalog.SearchCatalogResponse.next_page_token];
+   * [SearchCatalogResponse.next_page_token][google.cloud.datacatalog.v1beta1.SearchCatalogResponse.next_page_token], which
    * indicates that this is a continuation of a prior
-   * [SearchCatalog][google.cloud.datacatalog.v1beta1.DataCatalog.SearchCatalog]
-   * call, and that the system should return the next page of data. If empty
-   * then the first page is returned.
+   * [SearchCatalogRequest][google.cloud.datacatalog.v1beta1.DataCatalog.SearchCatalog]
+   * call, and that the system should return the next page of data. If empty,
+   * the first page is returned.
    * </pre>
    *
    * <code>string page_token = 3;</code>
@@ -108,11 +114,11 @@ public interface SearchCatalogRequestOrBuilder
    *
    * <pre>
    * Optional pagination token returned in an earlier
-   * [SearchCatalogResponse.next_page_token][google.cloud.datacatalog.v1beta1.DataCatalog.SearchCatalogResponse.next_page_token];
+   * [SearchCatalogResponse.next_page_token][google.cloud.datacatalog.v1beta1.SearchCatalogResponse.next_page_token], which
    * indicates that this is a continuation of a prior
-   * [SearchCatalog][google.cloud.datacatalog.v1beta1.DataCatalog.SearchCatalog]
-   * call, and that the system should return the next page of data. If empty
-   * then the first page is returned.
+   * [SearchCatalogRequest][google.cloud.datacatalog.v1beta1.DataCatalog.SearchCatalog]
+   * call, and that the system should return the next page of data. If empty,
+   * the first page is returned.
    * </pre>
    *
    * <code>string page_token = 3;</code>
@@ -125,13 +131,12 @@ public interface SearchCatalogRequestOrBuilder
    * <pre>
    * Specifies the ordering of results, currently supported case-sensitive
    * choices are:
-   * &lt;ul&gt;
-   *   &lt;li&gt; relevance &lt;/li&gt;
-   *   &lt;li&gt; last_access_timestamp [asc|desc], defaults to descending if not
-   *   specified, &lt;/li&gt;
-   *   &lt;li&gt; last_modified_timestamp [asc|desc], defaults to descending if not
-   *   specified. &lt;/li&gt;
-   * &lt;/ul&gt;
+   *   * `relevance`, only supports desecending
+   *   * `last_access_timestamp [asc|desc]`, defaults to descending if not
+   *     specified
+   *   * `last_modified_timestamp [asc|desc]`, defaults to descending if not
+   *     specified
+   * If not specified, defaults to `relevance` descending.
    * </pre>
    *
    * <code>string order_by = 5;</code>
@@ -143,13 +148,12 @@ public interface SearchCatalogRequestOrBuilder
    * <pre>
    * Specifies the ordering of results, currently supported case-sensitive
    * choices are:
-   * &lt;ul&gt;
-   *   &lt;li&gt; relevance &lt;/li&gt;
-   *   &lt;li&gt; last_access_timestamp [asc|desc], defaults to descending if not
-   *   specified, &lt;/li&gt;
-   *   &lt;li&gt; last_modified_timestamp [asc|desc], defaults to descending if not
-   *   specified. &lt;/li&gt;
-   * &lt;/ul&gt;
+   *   * `relevance`, only supports desecending
+   *   * `last_access_timestamp [asc|desc]`, defaults to descending if not
+   *     specified
+   *   * `last_modified_timestamp [asc|desc]`, defaults to descending if not
+   *     specified
+   * If not specified, defaults to `relevance` descending.
    * </pre>
    *
    * <code>string order_by = 5;</code>

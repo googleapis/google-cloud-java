@@ -15,6 +15,7 @@
  */
 package com.google.cloud.compute.v1;
 
+import static com.google.cloud.compute.v1.HealthCheckClient.AggregatedListHealthChecksPagedResponse;
 import static com.google.cloud.compute.v1.HealthCheckClient.ListHealthChecksPagedResponse;
 
 import com.google.api.core.ApiFunction;
@@ -40,15 +41,16 @@ import javax.annotation.Generated;
  * <p>The default instance has everything set to sensible defaults:
  *
  * <ul>
- *   <li>The default service address (https://www.googleapis.com/compute/v1/projects/) and default
- *       port (443) are used.
+ *   <li>The default service address (https://compute.googleapis.com/compute/v1/projects/) and
+ *       default port (443) are used.
  *   <li>Credentials are acquired automatically through Application Default Credentials.
  *   <li>Retries are configured for idempotent methods but not for non-idempotent methods.
  * </ul>
  *
  * <p>The builder of this class is recursive, so contained classes are themselves builders. When
- * build() is called, the tree of builders is called to create the complete settings object. For
- * example, to set the total timeout of deleteHealthCheck to 30 seconds:
+ * build() is called, the tree of builders is called to create the complete settings object.
+ *
+ * <p>For example, to set the total timeout of deleteHealthCheck to 30 seconds:
  *
  * <pre>
  * <code>
@@ -63,6 +65,15 @@ import javax.annotation.Generated;
 @Generated("by gapic-generator")
 @BetaApi
 public class HealthCheckSettings extends ClientSettings<HealthCheckSettings> {
+  /** Returns the object with the settings used for calls to aggregatedListHealthChecks. */
+  public PagedCallSettings<
+          AggregatedListHealthChecksHttpRequest,
+          HealthChecksAggregatedList,
+          AggregatedListHealthChecksPagedResponse>
+      aggregatedListHealthChecksSettings() {
+    return ((HealthCheckStubSettings) getStubSettings()).aggregatedListHealthChecksSettings();
+  }
+
   /** Returns the object with the settings used for calls to deleteHealthCheck. */
   public UnaryCallSettings<DeleteHealthCheckHttpRequest, Operation> deleteHealthCheckSettings() {
     return ((HealthCheckStubSettings) getStubSettings()).deleteHealthCheckSettings();
@@ -194,6 +205,15 @@ public class HealthCheckSettings extends ClientSettings<HealthCheckSettings> {
       super.applyToAllUnaryMethods(
           getStubSettingsBuilder().unaryMethodSettingsBuilders(), settingsUpdater);
       return this;
+    }
+
+    /** Returns the builder for the settings used for calls to aggregatedListHealthChecks. */
+    public PagedCallSettings.Builder<
+            AggregatedListHealthChecksHttpRequest,
+            HealthChecksAggregatedList,
+            AggregatedListHealthChecksPagedResponse>
+        aggregatedListHealthChecksSettings() {
+      return getStubSettingsBuilder().aggregatedListHealthChecksSettings();
     }
 
     /** Returns the builder for the settings used for calls to deleteHealthCheck. */

@@ -19,7 +19,22 @@
  *
  * <p>The interfaces provided are listed below, along with usage samples.
  *
- * <p>============= LoggingClient =============
+ * <p>============ ConfigClient ============
+ *
+ * <p>Service Description: Service for configuring sinks used to route log entries.
+ *
+ * <p>Sample for ConfigClient:
+ *
+ * <pre>
+ * <code>
+ * try (ConfigClient configClient = ConfigClient.create()) {
+ *   SinkName sinkName = ProjectSinkName.of("[PROJECT]", "[SINK]");
+ *   LogSink response = configClient.getSink(sinkName);
+ * }
+ * </code>
+ * </pre>
+ *
+ * ============= LoggingClient =============
  *
  * <p>Service Description: Service for ingesting and querying logs.
  *
@@ -30,21 +45,6 @@
  * try (LoggingClient loggingClient = LoggingClient.create()) {
  *   LogName logName = ProjectLogName.of("[PROJECT]", "[LOG]");
  *   loggingClient.deleteLog(logName);
- * }
- * </code>
- * </pre>
- *
- * ============ ConfigClient ============
- *
- * <p>Service Description: Service for configuring sinks used to export log entries out of Logging.
- *
- * <p>Sample for ConfigClient:
- *
- * <pre>
- * <code>
- * try (ConfigClient configClient = ConfigClient.create()) {
- *   SinkName sinkName = ProjectSinkName.of("[PROJECT]", "[SINK]");
- *   LogSink response = configClient.getSink(sinkName);
  * }
  * </code>
  * </pre>
@@ -64,4 +64,7 @@
  * </code>
  * </pre>
  */
+@Generated("by gapic-generator")
 package com.google.cloud.logging.v2;
+
+import javax.annotation.Generated;

@@ -7,8 +7,8 @@ package com.google.logging.v2;
  *
  *
  * <pre>
- * Describes a logs-based metric.  The value of the metric is the
- * number of log entries that match a logs filter in a given time interval.
+ * Describes a logs-based metric. The value of the metric is the number of log
+ * entries that match a logs filter in a given time interval.
  * Logs-based metric can also be used to extract values from logs and create a
  * a distribution of the values. The distribution records the statistics of the
  * extracted values along with an optional histogram of the values as specified
@@ -138,6 +138,36 @@ public final class LogMetric extends com.google.protobuf.GeneratedMessageV3
               if (subBuilder != null) {
                 subBuilder.mergeFrom(bucketOptions_);
                 bucketOptions_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+          case 74:
+            {
+              com.google.protobuf.Timestamp.Builder subBuilder = null;
+              if (createTime_ != null) {
+                subBuilder = createTime_.toBuilder();
+              }
+              createTime_ =
+                  input.readMessage(com.google.protobuf.Timestamp.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(createTime_);
+                createTime_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+          case 82:
+            {
+              com.google.protobuf.Timestamp.Builder subBuilder = null;
+              if (updateTime_ != null) {
+                subBuilder = updateTime_.toBuilder();
+              }
+              updateTime_ =
+                  input.readMessage(com.google.protobuf.Timestamp.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(updateTime_);
+                updateTime_ = subBuilder.buildPartial();
               }
 
               break;
@@ -318,17 +348,15 @@ public final class LogMetric extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Required. The client-assigned metric identifier.
    * Examples: `"error_count"`, `"nginx/requests"`.
-   * Metric identifiers are limited to 100 characters and can include
-   * only the following characters: `A-Z`, `a-z`, `0-9`, and the
-   * special characters `_-.,+!*',()%/`.  The forward-slash character
-   * (`/`) denotes a hierarchy of name pieces, and it cannot be the
-   * first character of the name.
+   * Metric identifiers are limited to 100 characters and can include only the
+   * following characters: `A-Z`, `a-z`, `0-9`, and the special characters
+   * `_-.,+!*',()%/`. The forward-slash character (`/`) denotes a hierarchy of
+   * name pieces, and it cannot be the first character of the name.
    * The metric identifier in this field must not be
    * [URL-encoded](https://en.wikipedia.org/wiki/Percent-encoding).
-   * However, when the metric identifier appears as the `[METRIC_ID]`
-   * part of a `metric_name` API parameter, then the metric identifier
-   * must be URL-encoded. Example:
-   * `"projects/my-project/metrics/nginx%2Frequests"`.
+   * However, when the metric identifier appears as the `[METRIC_ID]` part of a
+   * `metric_name` API parameter, then the metric identifier must be
+   * URL-encoded. Example: `"projects/my-project/metrics/nginx%2Frequests"`.
    * </pre>
    *
    * <code>string name = 1;</code>
@@ -350,17 +378,15 @@ public final class LogMetric extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Required. The client-assigned metric identifier.
    * Examples: `"error_count"`, `"nginx/requests"`.
-   * Metric identifiers are limited to 100 characters and can include
-   * only the following characters: `A-Z`, `a-z`, `0-9`, and the
-   * special characters `_-.,+!*',()%/`.  The forward-slash character
-   * (`/`) denotes a hierarchy of name pieces, and it cannot be the
-   * first character of the name.
+   * Metric identifiers are limited to 100 characters and can include only the
+   * following characters: `A-Z`, `a-z`, `0-9`, and the special characters
+   * `_-.,+!*',()%/`. The forward-slash character (`/`) denotes a hierarchy of
+   * name pieces, and it cannot be the first character of the name.
    * The metric identifier in this field must not be
    * [URL-encoded](https://en.wikipedia.org/wiki/Percent-encoding).
-   * However, when the metric identifier appears as the `[METRIC_ID]`
-   * part of a `metric_name` API parameter, then the metric identifier
-   * must be URL-encoded. Example:
-   * `"projects/my-project/metrics/nginx%2Frequests"`.
+   * However, when the metric identifier appears as the `[METRIC_ID]` part of a
+   * `metric_name` API parameter, then the metric identifier must be
+   * URL-encoded. Example: `"projects/my-project/metrics/nginx%2Frequests"`.
    * </pre>
    *
    * <code>string name = 1;</code>
@@ -384,6 +410,7 @@ public final class LogMetric extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Optional. A description of this metric, which is used in documentation.
+   * The maximum length of the description is 8000 characters.
    * </pre>
    *
    * <code>string description = 2;</code>
@@ -404,6 +431,7 @@ public final class LogMetric extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Optional. A description of this metric, which is used in documentation.
+   * The maximum length of the description is 8000 characters.
    * </pre>
    *
    * <code>string description = 2;</code>
@@ -822,6 +850,90 @@ public final class LogMetric extends com.google.protobuf.GeneratedMessageV3
     return getBucketOptions();
   }
 
+  public static final int CREATE_TIME_FIELD_NUMBER = 9;
+  private com.google.protobuf.Timestamp createTime_;
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The creation timestamp of the metric.
+   * This field may not be present for older metrics.
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp create_time = 9;</code>
+   */
+  public boolean hasCreateTime() {
+    return createTime_ != null;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The creation timestamp of the metric.
+   * This field may not be present for older metrics.
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp create_time = 9;</code>
+   */
+  public com.google.protobuf.Timestamp getCreateTime() {
+    return createTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : createTime_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The creation timestamp of the metric.
+   * This field may not be present for older metrics.
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp create_time = 9;</code>
+   */
+  public com.google.protobuf.TimestampOrBuilder getCreateTimeOrBuilder() {
+    return getCreateTime();
+  }
+
+  public static final int UPDATE_TIME_FIELD_NUMBER = 10;
+  private com.google.protobuf.Timestamp updateTime_;
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The last update timestamp of the metric.
+   * This field may not be present for older metrics.
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp update_time = 10;</code>
+   */
+  public boolean hasUpdateTime() {
+    return updateTime_ != null;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The last update timestamp of the metric.
+   * This field may not be present for older metrics.
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp update_time = 10;</code>
+   */
+  public com.google.protobuf.Timestamp getUpdateTime() {
+    return updateTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : updateTime_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The last update timestamp of the metric.
+   * This field may not be present for older metrics.
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp update_time = 10;</code>
+   */
+  public com.google.protobuf.TimestampOrBuilder getUpdateTimeOrBuilder() {
+    return getUpdateTime();
+  }
+
   public static final int VERSION_FIELD_NUMBER = 4;
   private int version_;
   /**
@@ -893,6 +1005,12 @@ public final class LogMetric extends com.google.protobuf.GeneratedMessageV3
     if (bucketOptions_ != null) {
       output.writeMessage(8, getBucketOptions());
     }
+    if (createTime_ != null) {
+      output.writeMessage(9, getCreateTime());
+    }
+    if (updateTime_ != null) {
+      output.writeMessage(10, getUpdateTime());
+    }
     unknownFields.writeTo(output);
   }
 
@@ -933,6 +1051,12 @@ public final class LogMetric extends com.google.protobuf.GeneratedMessageV3
     if (bucketOptions_ != null) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(8, getBucketOptions());
     }
+    if (createTime_ != null) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(9, getCreateTime());
+    }
+    if (updateTime_ != null) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(10, getUpdateTime());
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -960,6 +1084,14 @@ public final class LogMetric extends com.google.protobuf.GeneratedMessageV3
     if (hasBucketOptions() != other.hasBucketOptions()) return false;
     if (hasBucketOptions()) {
       if (!getBucketOptions().equals(other.getBucketOptions())) return false;
+    }
+    if (hasCreateTime() != other.hasCreateTime()) return false;
+    if (hasCreateTime()) {
+      if (!getCreateTime().equals(other.getCreateTime())) return false;
+    }
+    if (hasUpdateTime() != other.hasUpdateTime()) return false;
+    if (hasUpdateTime()) {
+      if (!getUpdateTime().equals(other.getUpdateTime())) return false;
     }
     if (version_ != other.version_) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
@@ -992,6 +1124,14 @@ public final class LogMetric extends com.google.protobuf.GeneratedMessageV3
     if (hasBucketOptions()) {
       hash = (37 * hash) + BUCKET_OPTIONS_FIELD_NUMBER;
       hash = (53 * hash) + getBucketOptions().hashCode();
+    }
+    if (hasCreateTime()) {
+      hash = (37 * hash) + CREATE_TIME_FIELD_NUMBER;
+      hash = (53 * hash) + getCreateTime().hashCode();
+    }
+    if (hasUpdateTime()) {
+      hash = (37 * hash) + UPDATE_TIME_FIELD_NUMBER;
+      hash = (53 * hash) + getUpdateTime().hashCode();
     }
     hash = (37 * hash) + VERSION_FIELD_NUMBER;
     hash = (53 * hash) + version_;
@@ -1098,8 +1238,8 @@ public final class LogMetric extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Describes a logs-based metric.  The value of the metric is the
-   * number of log entries that match a logs filter in a given time interval.
+   * Describes a logs-based metric. The value of the metric is the number of log
+   * entries that match a logs filter in a given time interval.
    * Logs-based metric can also be used to extract values from logs and create a
    * a distribution of the values. The distribution records the statistics of the
    * extracted values along with an optional histogram of the values as specified
@@ -1184,6 +1324,18 @@ public final class LogMetric extends com.google.protobuf.GeneratedMessageV3
         bucketOptions_ = null;
         bucketOptionsBuilder_ = null;
       }
+      if (createTimeBuilder_ == null) {
+        createTime_ = null;
+      } else {
+        createTime_ = null;
+        createTimeBuilder_ = null;
+      }
+      if (updateTimeBuilder_ == null) {
+        updateTime_ = null;
+      } else {
+        updateTime_ = null;
+        updateTimeBuilder_ = null;
+      }
       version_ = 0;
 
       return this;
@@ -1229,6 +1381,16 @@ public final class LogMetric extends com.google.protobuf.GeneratedMessageV3
         result.bucketOptions_ = bucketOptions_;
       } else {
         result.bucketOptions_ = bucketOptionsBuilder_.build();
+      }
+      if (createTimeBuilder_ == null) {
+        result.createTime_ = createTime_;
+      } else {
+        result.createTime_ = createTimeBuilder_.build();
+      }
+      if (updateTimeBuilder_ == null) {
+        result.updateTime_ = updateTime_;
+      } else {
+        result.updateTime_ = updateTimeBuilder_.build();
       }
       result.version_ = version_;
       result.bitField0_ = to_bitField0_;
@@ -1304,6 +1466,12 @@ public final class LogMetric extends com.google.protobuf.GeneratedMessageV3
       if (other.hasBucketOptions()) {
         mergeBucketOptions(other.getBucketOptions());
       }
+      if (other.hasCreateTime()) {
+        mergeCreateTime(other.getCreateTime());
+      }
+      if (other.hasUpdateTime()) {
+        mergeUpdateTime(other.getUpdateTime());
+      }
       if (other.version_ != 0) {
         setVersionValue(other.getVersionValue());
       }
@@ -1345,17 +1513,15 @@ public final class LogMetric extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Required. The client-assigned metric identifier.
      * Examples: `"error_count"`, `"nginx/requests"`.
-     * Metric identifiers are limited to 100 characters and can include
-     * only the following characters: `A-Z`, `a-z`, `0-9`, and the
-     * special characters `_-.,+!*',()%/`.  The forward-slash character
-     * (`/`) denotes a hierarchy of name pieces, and it cannot be the
-     * first character of the name.
+     * Metric identifiers are limited to 100 characters and can include only the
+     * following characters: `A-Z`, `a-z`, `0-9`, and the special characters
+     * `_-.,+!*',()%/`. The forward-slash character (`/`) denotes a hierarchy of
+     * name pieces, and it cannot be the first character of the name.
      * The metric identifier in this field must not be
      * [URL-encoded](https://en.wikipedia.org/wiki/Percent-encoding).
-     * However, when the metric identifier appears as the `[METRIC_ID]`
-     * part of a `metric_name` API parameter, then the metric identifier
-     * must be URL-encoded. Example:
-     * `"projects/my-project/metrics/nginx%2Frequests"`.
+     * However, when the metric identifier appears as the `[METRIC_ID]` part of a
+     * `metric_name` API parameter, then the metric identifier must be
+     * URL-encoded. Example: `"projects/my-project/metrics/nginx%2Frequests"`.
      * </pre>
      *
      * <code>string name = 1;</code>
@@ -1377,17 +1543,15 @@ public final class LogMetric extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Required. The client-assigned metric identifier.
      * Examples: `"error_count"`, `"nginx/requests"`.
-     * Metric identifiers are limited to 100 characters and can include
-     * only the following characters: `A-Z`, `a-z`, `0-9`, and the
-     * special characters `_-.,+!*',()%/`.  The forward-slash character
-     * (`/`) denotes a hierarchy of name pieces, and it cannot be the
-     * first character of the name.
+     * Metric identifiers are limited to 100 characters and can include only the
+     * following characters: `A-Z`, `a-z`, `0-9`, and the special characters
+     * `_-.,+!*',()%/`. The forward-slash character (`/`) denotes a hierarchy of
+     * name pieces, and it cannot be the first character of the name.
      * The metric identifier in this field must not be
      * [URL-encoded](https://en.wikipedia.org/wiki/Percent-encoding).
-     * However, when the metric identifier appears as the `[METRIC_ID]`
-     * part of a `metric_name` API parameter, then the metric identifier
-     * must be URL-encoded. Example:
-     * `"projects/my-project/metrics/nginx%2Frequests"`.
+     * However, when the metric identifier appears as the `[METRIC_ID]` part of a
+     * `metric_name` API parameter, then the metric identifier must be
+     * URL-encoded. Example: `"projects/my-project/metrics/nginx%2Frequests"`.
      * </pre>
      *
      * <code>string name = 1;</code>
@@ -1409,17 +1573,15 @@ public final class LogMetric extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Required. The client-assigned metric identifier.
      * Examples: `"error_count"`, `"nginx/requests"`.
-     * Metric identifiers are limited to 100 characters and can include
-     * only the following characters: `A-Z`, `a-z`, `0-9`, and the
-     * special characters `_-.,+!*',()%/`.  The forward-slash character
-     * (`/`) denotes a hierarchy of name pieces, and it cannot be the
-     * first character of the name.
+     * Metric identifiers are limited to 100 characters and can include only the
+     * following characters: `A-Z`, `a-z`, `0-9`, and the special characters
+     * `_-.,+!*',()%/`. The forward-slash character (`/`) denotes a hierarchy of
+     * name pieces, and it cannot be the first character of the name.
      * The metric identifier in this field must not be
      * [URL-encoded](https://en.wikipedia.org/wiki/Percent-encoding).
-     * However, when the metric identifier appears as the `[METRIC_ID]`
-     * part of a `metric_name` API parameter, then the metric identifier
-     * must be URL-encoded. Example:
-     * `"projects/my-project/metrics/nginx%2Frequests"`.
+     * However, when the metric identifier appears as the `[METRIC_ID]` part of a
+     * `metric_name` API parameter, then the metric identifier must be
+     * URL-encoded. Example: `"projects/my-project/metrics/nginx%2Frequests"`.
      * </pre>
      *
      * <code>string name = 1;</code>
@@ -1439,17 +1601,15 @@ public final class LogMetric extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Required. The client-assigned metric identifier.
      * Examples: `"error_count"`, `"nginx/requests"`.
-     * Metric identifiers are limited to 100 characters and can include
-     * only the following characters: `A-Z`, `a-z`, `0-9`, and the
-     * special characters `_-.,+!*',()%/`.  The forward-slash character
-     * (`/`) denotes a hierarchy of name pieces, and it cannot be the
-     * first character of the name.
+     * Metric identifiers are limited to 100 characters and can include only the
+     * following characters: `A-Z`, `a-z`, `0-9`, and the special characters
+     * `_-.,+!*',()%/`. The forward-slash character (`/`) denotes a hierarchy of
+     * name pieces, and it cannot be the first character of the name.
      * The metric identifier in this field must not be
      * [URL-encoded](https://en.wikipedia.org/wiki/Percent-encoding).
-     * However, when the metric identifier appears as the `[METRIC_ID]`
-     * part of a `metric_name` API parameter, then the metric identifier
-     * must be URL-encoded. Example:
-     * `"projects/my-project/metrics/nginx%2Frequests"`.
+     * However, when the metric identifier appears as the `[METRIC_ID]` part of a
+     * `metric_name` API parameter, then the metric identifier must be
+     * URL-encoded. Example: `"projects/my-project/metrics/nginx%2Frequests"`.
      * </pre>
      *
      * <code>string name = 1;</code>
@@ -1466,17 +1626,15 @@ public final class LogMetric extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Required. The client-assigned metric identifier.
      * Examples: `"error_count"`, `"nginx/requests"`.
-     * Metric identifiers are limited to 100 characters and can include
-     * only the following characters: `A-Z`, `a-z`, `0-9`, and the
-     * special characters `_-.,+!*',()%/`.  The forward-slash character
-     * (`/`) denotes a hierarchy of name pieces, and it cannot be the
-     * first character of the name.
+     * Metric identifiers are limited to 100 characters and can include only the
+     * following characters: `A-Z`, `a-z`, `0-9`, and the special characters
+     * `_-.,+!*',()%/`. The forward-slash character (`/`) denotes a hierarchy of
+     * name pieces, and it cannot be the first character of the name.
      * The metric identifier in this field must not be
      * [URL-encoded](https://en.wikipedia.org/wiki/Percent-encoding).
-     * However, when the metric identifier appears as the `[METRIC_ID]`
-     * part of a `metric_name` API parameter, then the metric identifier
-     * must be URL-encoded. Example:
-     * `"projects/my-project/metrics/nginx%2Frequests"`.
+     * However, when the metric identifier appears as the `[METRIC_ID]` part of a
+     * `metric_name` API parameter, then the metric identifier must be
+     * URL-encoded. Example: `"projects/my-project/metrics/nginx%2Frequests"`.
      * </pre>
      *
      * <code>string name = 1;</code>
@@ -1498,6 +1656,7 @@ public final class LogMetric extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. A description of this metric, which is used in documentation.
+     * The maximum length of the description is 8000 characters.
      * </pre>
      *
      * <code>string description = 2;</code>
@@ -1518,6 +1677,7 @@ public final class LogMetric extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. A description of this metric, which is used in documentation.
+     * The maximum length of the description is 8000 characters.
      * </pre>
      *
      * <code>string description = 2;</code>
@@ -1538,6 +1698,7 @@ public final class LogMetric extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. A description of this metric, which is used in documentation.
+     * The maximum length of the description is 8000 characters.
      * </pre>
      *
      * <code>string description = 2;</code>
@@ -1556,6 +1717,7 @@ public final class LogMetric extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. A description of this metric, which is used in documentation.
+     * The maximum length of the description is 8000 characters.
      * </pre>
      *
      * <code>string description = 2;</code>
@@ -1571,6 +1733,7 @@ public final class LogMetric extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. A description of this metric, which is used in documentation.
+     * The maximum length of the description is 8000 characters.
      * </pre>
      *
      * <code>string description = 2;</code>
@@ -2630,6 +2793,382 @@ public final class LogMetric extends com.google.protobuf.GeneratedMessageV3
         bucketOptions_ = null;
       }
       return bucketOptionsBuilder_;
+    }
+
+    private com.google.protobuf.Timestamp createTime_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.protobuf.Timestamp,
+            com.google.protobuf.Timestamp.Builder,
+            com.google.protobuf.TimestampOrBuilder>
+        createTimeBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The creation timestamp of the metric.
+     * This field may not be present for older metrics.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp create_time = 9;</code>
+     */
+    public boolean hasCreateTime() {
+      return createTimeBuilder_ != null || createTime_ != null;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The creation timestamp of the metric.
+     * This field may not be present for older metrics.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp create_time = 9;</code>
+     */
+    public com.google.protobuf.Timestamp getCreateTime() {
+      if (createTimeBuilder_ == null) {
+        return createTime_ == null
+            ? com.google.protobuf.Timestamp.getDefaultInstance()
+            : createTime_;
+      } else {
+        return createTimeBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The creation timestamp of the metric.
+     * This field may not be present for older metrics.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp create_time = 9;</code>
+     */
+    public Builder setCreateTime(com.google.protobuf.Timestamp value) {
+      if (createTimeBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        createTime_ = value;
+        onChanged();
+      } else {
+        createTimeBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The creation timestamp of the metric.
+     * This field may not be present for older metrics.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp create_time = 9;</code>
+     */
+    public Builder setCreateTime(com.google.protobuf.Timestamp.Builder builderForValue) {
+      if (createTimeBuilder_ == null) {
+        createTime_ = builderForValue.build();
+        onChanged();
+      } else {
+        createTimeBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The creation timestamp of the metric.
+     * This field may not be present for older metrics.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp create_time = 9;</code>
+     */
+    public Builder mergeCreateTime(com.google.protobuf.Timestamp value) {
+      if (createTimeBuilder_ == null) {
+        if (createTime_ != null) {
+          createTime_ =
+              com.google.protobuf.Timestamp.newBuilder(createTime_).mergeFrom(value).buildPartial();
+        } else {
+          createTime_ = value;
+        }
+        onChanged();
+      } else {
+        createTimeBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The creation timestamp of the metric.
+     * This field may not be present for older metrics.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp create_time = 9;</code>
+     */
+    public Builder clearCreateTime() {
+      if (createTimeBuilder_ == null) {
+        createTime_ = null;
+        onChanged();
+      } else {
+        createTime_ = null;
+        createTimeBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The creation timestamp of the metric.
+     * This field may not be present for older metrics.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp create_time = 9;</code>
+     */
+    public com.google.protobuf.Timestamp.Builder getCreateTimeBuilder() {
+
+      onChanged();
+      return getCreateTimeFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The creation timestamp of the metric.
+     * This field may not be present for older metrics.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp create_time = 9;</code>
+     */
+    public com.google.protobuf.TimestampOrBuilder getCreateTimeOrBuilder() {
+      if (createTimeBuilder_ != null) {
+        return createTimeBuilder_.getMessageOrBuilder();
+      } else {
+        return createTime_ == null
+            ? com.google.protobuf.Timestamp.getDefaultInstance()
+            : createTime_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The creation timestamp of the metric.
+     * This field may not be present for older metrics.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp create_time = 9;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.protobuf.Timestamp,
+            com.google.protobuf.Timestamp.Builder,
+            com.google.protobuf.TimestampOrBuilder>
+        getCreateTimeFieldBuilder() {
+      if (createTimeBuilder_ == null) {
+        createTimeBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.protobuf.Timestamp,
+                com.google.protobuf.Timestamp.Builder,
+                com.google.protobuf.TimestampOrBuilder>(
+                getCreateTime(), getParentForChildren(), isClean());
+        createTime_ = null;
+      }
+      return createTimeBuilder_;
+    }
+
+    private com.google.protobuf.Timestamp updateTime_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.protobuf.Timestamp,
+            com.google.protobuf.Timestamp.Builder,
+            com.google.protobuf.TimestampOrBuilder>
+        updateTimeBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The last update timestamp of the metric.
+     * This field may not be present for older metrics.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp update_time = 10;</code>
+     */
+    public boolean hasUpdateTime() {
+      return updateTimeBuilder_ != null || updateTime_ != null;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The last update timestamp of the metric.
+     * This field may not be present for older metrics.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp update_time = 10;</code>
+     */
+    public com.google.protobuf.Timestamp getUpdateTime() {
+      if (updateTimeBuilder_ == null) {
+        return updateTime_ == null
+            ? com.google.protobuf.Timestamp.getDefaultInstance()
+            : updateTime_;
+      } else {
+        return updateTimeBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The last update timestamp of the metric.
+     * This field may not be present for older metrics.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp update_time = 10;</code>
+     */
+    public Builder setUpdateTime(com.google.protobuf.Timestamp value) {
+      if (updateTimeBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        updateTime_ = value;
+        onChanged();
+      } else {
+        updateTimeBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The last update timestamp of the metric.
+     * This field may not be present for older metrics.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp update_time = 10;</code>
+     */
+    public Builder setUpdateTime(com.google.protobuf.Timestamp.Builder builderForValue) {
+      if (updateTimeBuilder_ == null) {
+        updateTime_ = builderForValue.build();
+        onChanged();
+      } else {
+        updateTimeBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The last update timestamp of the metric.
+     * This field may not be present for older metrics.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp update_time = 10;</code>
+     */
+    public Builder mergeUpdateTime(com.google.protobuf.Timestamp value) {
+      if (updateTimeBuilder_ == null) {
+        if (updateTime_ != null) {
+          updateTime_ =
+              com.google.protobuf.Timestamp.newBuilder(updateTime_).mergeFrom(value).buildPartial();
+        } else {
+          updateTime_ = value;
+        }
+        onChanged();
+      } else {
+        updateTimeBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The last update timestamp of the metric.
+     * This field may not be present for older metrics.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp update_time = 10;</code>
+     */
+    public Builder clearUpdateTime() {
+      if (updateTimeBuilder_ == null) {
+        updateTime_ = null;
+        onChanged();
+      } else {
+        updateTime_ = null;
+        updateTimeBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The last update timestamp of the metric.
+     * This field may not be present for older metrics.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp update_time = 10;</code>
+     */
+    public com.google.protobuf.Timestamp.Builder getUpdateTimeBuilder() {
+
+      onChanged();
+      return getUpdateTimeFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The last update timestamp of the metric.
+     * This field may not be present for older metrics.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp update_time = 10;</code>
+     */
+    public com.google.protobuf.TimestampOrBuilder getUpdateTimeOrBuilder() {
+      if (updateTimeBuilder_ != null) {
+        return updateTimeBuilder_.getMessageOrBuilder();
+      } else {
+        return updateTime_ == null
+            ? com.google.protobuf.Timestamp.getDefaultInstance()
+            : updateTime_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The last update timestamp of the metric.
+     * This field may not be present for older metrics.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp update_time = 10;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.protobuf.Timestamp,
+            com.google.protobuf.Timestamp.Builder,
+            com.google.protobuf.TimestampOrBuilder>
+        getUpdateTimeFieldBuilder() {
+      if (updateTimeBuilder_ == null) {
+        updateTimeBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.protobuf.Timestamp,
+                com.google.protobuf.Timestamp.Builder,
+                com.google.protobuf.TimestampOrBuilder>(
+                getUpdateTime(), getParentForChildren(), isClean());
+        updateTime_ = null;
+      }
+      return updateTimeBuilder_;
     }
 
     private int version_ = 0;

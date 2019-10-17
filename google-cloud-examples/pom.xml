@@ -3,7 +3,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-examples</artifactId>
-  <version>0.101.0-alpha</version><!-- {x-version-update:google-cloud-examples:current} -->
+  <version>0.116.0-alpha</version><!-- {x-version-update:google-cloud-examples:current} -->
   <packaging>jar</packaging>
   <name>Google Cloud Examples</name>
   <url>https://github.com/googleapis/google-cloud-java/tree/master/google-cloud-examples</url>
@@ -18,7 +18,7 @@
       <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-bom</artifactId>
-        <version>0.101.0-alpha</version><!-- {x-version-update:google-cloud-bom:current} -->
+        <version>0.116.0-alpha</version><!-- {x-version-update:google-cloud-bom:current} -->
         <type>pom</type>
         <scope>import</scope>
       </dependency>
@@ -111,7 +111,7 @@
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-site-plugin</artifactId>
-        <version>3.7.1</version>
+        <version>3.8.2</version>
         <configuration>
           <skip>true</skip>
         </configuration>
@@ -137,10 +137,6 @@
             <program>
               <mainClass>com.google.cloud.examples.bigquery.BigQueryExample</mainClass>
               <name>BigQueryExample</name>
-            </program>
-            <program>
-              <mainClass>com.google.cloud.examples.compute.deprecated.ComputeExample</mainClass>
-              <name>ComputeExample</name>
             </program>
             <program>
               <mainClass>com.google.cloud.examples.compute.v1.ComputeExample</mainClass>

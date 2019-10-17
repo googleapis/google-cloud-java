@@ -118,15 +118,13 @@ public final class ImportProductSetsGcsSource extends com.google.protobuf.Genera
    * `product-display-name` column refers to
    * [display_name][google.cloud.vision.v1.Product.display_name], the
    * `product-category` column refers to
-   * [product_category][google.cloud.vision.v1.Product.product_category], and
-   * the `labels` column refers to
-   * [product_labels][google.cloud.vision.v1.Product.product_labels].
+   * [product_category][google.cloud.vision.v1.Product.product_category], and the
+   * `labels` column refers to [product_labels][google.cloud.vision.v1.Product.product_labels].
    * The `image-id` column is optional but must be unique if provided. If it is
    * empty, the system will automatically assign a unique id to the image.
    * The `product-display-name` column is optional. If it is empty, the system
-   * sets the [display_name][google.cloud.vision.v1.Product.display_name] field
-   * for the product to a space (" "). You can update the `display_name` later
-   * by using the API.
+   * sets the [display_name][google.cloud.vision.v1.Product.display_name] field for the product to a
+   * space (" "). You can update the `display_name` later by using the API.
    * If a `Product` with the specified `product-id` already exists, then the
    * system ignores the `product-display-name`, `product-category`, and `labels`
    * columns.
@@ -186,15 +184,13 @@ public final class ImportProductSetsGcsSource extends com.google.protobuf.Genera
    * `product-display-name` column refers to
    * [display_name][google.cloud.vision.v1.Product.display_name], the
    * `product-category` column refers to
-   * [product_category][google.cloud.vision.v1.Product.product_category], and
-   * the `labels` column refers to
-   * [product_labels][google.cloud.vision.v1.Product.product_labels].
+   * [product_category][google.cloud.vision.v1.Product.product_category], and the
+   * `labels` column refers to [product_labels][google.cloud.vision.v1.Product.product_labels].
    * The `image-id` column is optional but must be unique if provided. If it is
    * empty, the system will automatically assign a unique id to the image.
    * The `product-display-name` column is optional. If it is empty, the system
-   * sets the [display_name][google.cloud.vision.v1.Product.display_name] field
-   * for the product to a space (" "). You can update the `display_name` later
-   * by using the API.
+   * sets the [display_name][google.cloud.vision.v1.Product.display_name] field for the product to a
+   * space (" "). You can update the `display_name` later by using the API.
    * If a `Product` with the specified `product-id` already exists, then the
    * system ignores the `product-display-name`, `product-category`, and `labels`
    * columns.
@@ -576,15 +572,13 @@ public final class ImportProductSetsGcsSource extends com.google.protobuf.Genera
      * `product-display-name` column refers to
      * [display_name][google.cloud.vision.v1.Product.display_name], the
      * `product-category` column refers to
-     * [product_category][google.cloud.vision.v1.Product.product_category], and
-     * the `labels` column refers to
-     * [product_labels][google.cloud.vision.v1.Product.product_labels].
+     * [product_category][google.cloud.vision.v1.Product.product_category], and the
+     * `labels` column refers to [product_labels][google.cloud.vision.v1.Product.product_labels].
      * The `image-id` column is optional but must be unique if provided. If it is
      * empty, the system will automatically assign a unique id to the image.
      * The `product-display-name` column is optional. If it is empty, the system
-     * sets the [display_name][google.cloud.vision.v1.Product.display_name] field
-     * for the product to a space (" "). You can update the `display_name` later
-     * by using the API.
+     * sets the [display_name][google.cloud.vision.v1.Product.display_name] field for the product to a
+     * space (" "). You can update the `display_name` later by using the API.
      * If a `Product` with the specified `product-id` already exists, then the
      * system ignores the `product-display-name`, `product-category`, and `labels`
      * columns.
@@ -644,15 +638,13 @@ public final class ImportProductSetsGcsSource extends com.google.protobuf.Genera
      * `product-display-name` column refers to
      * [display_name][google.cloud.vision.v1.Product.display_name], the
      * `product-category` column refers to
-     * [product_category][google.cloud.vision.v1.Product.product_category], and
-     * the `labels` column refers to
-     * [product_labels][google.cloud.vision.v1.Product.product_labels].
+     * [product_category][google.cloud.vision.v1.Product.product_category], and the
+     * `labels` column refers to [product_labels][google.cloud.vision.v1.Product.product_labels].
      * The `image-id` column is optional but must be unique if provided. If it is
      * empty, the system will automatically assign a unique id to the image.
      * The `product-display-name` column is optional. If it is empty, the system
-     * sets the [display_name][google.cloud.vision.v1.Product.display_name] field
-     * for the product to a space (" "). You can update the `display_name` later
-     * by using the API.
+     * sets the [display_name][google.cloud.vision.v1.Product.display_name] field for the product to a
+     * space (" "). You can update the `display_name` later by using the API.
      * If a `Product` with the specified `product-id` already exists, then the
      * system ignores the `product-display-name`, `product-category`, and `labels`
      * columns.
@@ -712,15 +704,13 @@ public final class ImportProductSetsGcsSource extends com.google.protobuf.Genera
      * `product-display-name` column refers to
      * [display_name][google.cloud.vision.v1.Product.display_name], the
      * `product-category` column refers to
-     * [product_category][google.cloud.vision.v1.Product.product_category], and
-     * the `labels` column refers to
-     * [product_labels][google.cloud.vision.v1.Product.product_labels].
+     * [product_category][google.cloud.vision.v1.Product.product_category], and the
+     * `labels` column refers to [product_labels][google.cloud.vision.v1.Product.product_labels].
      * The `image-id` column is optional but must be unique if provided. If it is
      * empty, the system will automatically assign a unique id to the image.
      * The `product-display-name` column is optional. If it is empty, the system
-     * sets the [display_name][google.cloud.vision.v1.Product.display_name] field
-     * for the product to a space (" "). You can update the `display_name` later
-     * by using the API.
+     * sets the [display_name][google.cloud.vision.v1.Product.display_name] field for the product to a
+     * space (" "). You can update the `display_name` later by using the API.
      * If a `Product` with the specified `product-id` already exists, then the
      * system ignores the `product-display-name`, `product-category`, and `labels`
      * columns.
@@ -778,15 +768,13 @@ public final class ImportProductSetsGcsSource extends com.google.protobuf.Genera
      * `product-display-name` column refers to
      * [display_name][google.cloud.vision.v1.Product.display_name], the
      * `product-category` column refers to
-     * [product_category][google.cloud.vision.v1.Product.product_category], and
-     * the `labels` column refers to
-     * [product_labels][google.cloud.vision.v1.Product.product_labels].
+     * [product_category][google.cloud.vision.v1.Product.product_category], and the
+     * `labels` column refers to [product_labels][google.cloud.vision.v1.Product.product_labels].
      * The `image-id` column is optional but must be unique if provided. If it is
      * empty, the system will automatically assign a unique id to the image.
      * The `product-display-name` column is optional. If it is empty, the system
-     * sets the [display_name][google.cloud.vision.v1.Product.display_name] field
-     * for the product to a space (" "). You can update the `display_name` later
-     * by using the API.
+     * sets the [display_name][google.cloud.vision.v1.Product.display_name] field for the product to a
+     * space (" "). You can update the `display_name` later by using the API.
      * If a `Product` with the specified `product-id` already exists, then the
      * system ignores the `product-display-name`, `product-category`, and `labels`
      * columns.
@@ -841,15 +829,13 @@ public final class ImportProductSetsGcsSource extends com.google.protobuf.Genera
      * `product-display-name` column refers to
      * [display_name][google.cloud.vision.v1.Product.display_name], the
      * `product-category` column refers to
-     * [product_category][google.cloud.vision.v1.Product.product_category], and
-     * the `labels` column refers to
-     * [product_labels][google.cloud.vision.v1.Product.product_labels].
+     * [product_category][google.cloud.vision.v1.Product.product_category], and the
+     * `labels` column refers to [product_labels][google.cloud.vision.v1.Product.product_labels].
      * The `image-id` column is optional but must be unique if provided. If it is
      * empty, the system will automatically assign a unique id to the image.
      * The `product-display-name` column is optional. If it is empty, the system
-     * sets the [display_name][google.cloud.vision.v1.Product.display_name] field
-     * for the product to a space (" "). You can update the `display_name` later
-     * by using the API.
+     * sets the [display_name][google.cloud.vision.v1.Product.display_name] field for the product to a
+     * space (" "). You can update the `display_name` later by using the API.
      * If a `Product` with the specified `product-id` already exists, then the
      * system ignores the `product-display-name`, `product-category`, and `labels`
      * columns.
