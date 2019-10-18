@@ -1,11 +1,11 @@
 {
-  "updateTime": "2019-10-17T18:16:12.421175Z",
+  "updateTime": "2019-10-18T07:55:47.191057Z",
   "sources": [
     {
       "template": {
         "name": "java_library",
         "origin": "synthtool.gcp",
-        "version": "2019.5.2"
+        "version": "2019.10.17"
       }
     }
   ]
