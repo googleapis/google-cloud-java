@@ -1298,8 +1298,9 @@ public final class RecognitionMetadata extends com.google.protobuf.GeneratedMess
    * unique users using the service.
    * </pre>
    *
-   * <code>int64 obfuscated_id = 9;</code>
+   * <code>int64 obfuscated_id = 9 [deprecated = true];</code>
    */
+  @java.lang.Deprecated
   public long getObfuscatedId() {
     return obfuscatedId_;
   }
@@ -2453,8 +2454,9 @@ public final class RecognitionMetadata extends com.google.protobuf.GeneratedMess
      * unique users using the service.
      * </pre>
      *
-     * <code>int64 obfuscated_id = 9;</code>
+     * <code>int64 obfuscated_id = 9 [deprecated = true];</code>
      */
+    @java.lang.Deprecated
     public long getObfuscatedId() {
       return obfuscatedId_;
     }
@@ -2466,8 +2468,9 @@ public final class RecognitionMetadata extends com.google.protobuf.GeneratedMess
      * unique users using the service.
      * </pre>
      *
-     * <code>int64 obfuscated_id = 9;</code>
+     * <code>int64 obfuscated_id = 9 [deprecated = true];</code>
      */
+    @java.lang.Deprecated
     public Builder setObfuscatedId(long value) {
 
       obfuscatedId_ = value;
@@ -2482,8 +2485,9 @@ public final class RecognitionMetadata extends com.google.protobuf.GeneratedMess
      * unique users using the service.
      * </pre>
      *
-     * <code>int64 obfuscated_id = 9;</code>
+     * <code>int64 obfuscated_id = 9 [deprecated = true];</code>
      */
+    @java.lang.Deprecated
     public Builder clearObfuscatedId() {
 
       obfuscatedId_ = 0L;

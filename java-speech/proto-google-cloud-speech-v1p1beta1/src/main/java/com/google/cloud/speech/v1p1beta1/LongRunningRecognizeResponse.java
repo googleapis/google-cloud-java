@@ -126,7 +126,7 @@ public final class LongRunningRecognizeResponse extends com.google.protobuf.Gene
    *
    *
    * <pre>
-   * Output only. Sequential list of transcription results corresponding to
+   * Sequential list of transcription results corresponding to
    * sequential portions of audio.
    * </pre>
    *
@@ -140,7 +140,7 @@ public final class LongRunningRecognizeResponse extends com.google.protobuf.Gene
    *
    *
    * <pre>
-   * Output only. Sequential list of transcription results corresponding to
+   * Sequential list of transcription results corresponding to
    * sequential portions of audio.
    * </pre>
    *
@@ -155,7 +155,7 @@ public final class LongRunningRecognizeResponse extends com.google.protobuf.Gene
    *
    *
    * <pre>
-   * Output only. Sequential list of transcription results corresponding to
+   * Sequential list of transcription results corresponding to
    * sequential portions of audio.
    * </pre>
    *
@@ -168,7 +168,7 @@ public final class LongRunningRecognizeResponse extends com.google.protobuf.Gene
    *
    *
    * <pre>
-   * Output only. Sequential list of transcription results corresponding to
+   * Sequential list of transcription results corresponding to
    * sequential portions of audio.
    * </pre>
    *
@@ -181,7 +181,7 @@ public final class LongRunningRecognizeResponse extends com.google.protobuf.Gene
    *
    *
    * <pre>
-   * Output only. Sequential list of transcription results corresponding to
+   * Sequential list of transcription results corresponding to
    * sequential portions of audio.
    * </pre>
    *
@@ -582,7 +582,7 @@ public final class LongRunningRecognizeResponse extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * Output only. Sequential list of transcription results corresponding to
+     * Sequential list of transcription results corresponding to
      * sequential portions of audio.
      * </pre>
      *
@@ -600,7 +600,7 @@ public final class LongRunningRecognizeResponse extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * Output only. Sequential list of transcription results corresponding to
+     * Sequential list of transcription results corresponding to
      * sequential portions of audio.
      * </pre>
      *
@@ -617,7 +617,7 @@ public final class LongRunningRecognizeResponse extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * Output only. Sequential list of transcription results corresponding to
+     * Sequential list of transcription results corresponding to
      * sequential portions of audio.
      * </pre>
      *
@@ -634,7 +634,7 @@ public final class LongRunningRecognizeResponse extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * Output only. Sequential list of transcription results corresponding to
+     * Sequential list of transcription results corresponding to
      * sequential portions of audio.
      * </pre>
      *
@@ -658,7 +658,7 @@ public final class LongRunningRecognizeResponse extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * Output only. Sequential list of transcription results corresponding to
+     * Sequential list of transcription results corresponding to
      * sequential portions of audio.
      * </pre>
      *
@@ -680,7 +680,7 @@ public final class LongRunningRecognizeResponse extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * Output only. Sequential list of transcription results corresponding to
+     * Sequential list of transcription results corresponding to
      * sequential portions of audio.
      * </pre>
      *
@@ -703,7 +703,7 @@ public final class LongRunningRecognizeResponse extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * Output only. Sequential list of transcription results corresponding to
+     * Sequential list of transcription results corresponding to
      * sequential portions of audio.
      * </pre>
      *
@@ -727,7 +727,7 @@ public final class LongRunningRecognizeResponse extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * Output only. Sequential list of transcription results corresponding to
+     * Sequential list of transcription results corresponding to
      * sequential portions of audio.
      * </pre>
      *
@@ -748,7 +748,7 @@ public final class LongRunningRecognizeResponse extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * Output only. Sequential list of transcription results corresponding to
+     * Sequential list of transcription results corresponding to
      * sequential portions of audio.
      * </pre>
      *
@@ -770,7 +770,7 @@ public final class LongRunningRecognizeResponse extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * Output only. Sequential list of transcription results corresponding to
+     * Sequential list of transcription results corresponding to
      * sequential portions of audio.
      * </pre>
      *
@@ -792,7 +792,7 @@ public final class LongRunningRecognizeResponse extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * Output only. Sequential list of transcription results corresponding to
+     * Sequential list of transcription results corresponding to
      * sequential portions of audio.
      * </pre>
      *
@@ -812,7 +812,7 @@ public final class LongRunningRecognizeResponse extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * Output only. Sequential list of transcription results corresponding to
+     * Sequential list of transcription results corresponding to
      * sequential portions of audio.
      * </pre>
      *
@@ -832,7 +832,7 @@ public final class LongRunningRecognizeResponse extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * Output only. Sequential list of transcription results corresponding to
+     * Sequential list of transcription results corresponding to
      * sequential portions of audio.
      * </pre>
      *
@@ -846,7 +846,7 @@ public final class LongRunningRecognizeResponse extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * Output only. Sequential list of transcription results corresponding to
+     * Sequential list of transcription results corresponding to
      * sequential portions of audio.
      * </pre>
      *
@@ -864,7 +864,7 @@ public final class LongRunningRecognizeResponse extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * Output only. Sequential list of transcription results corresponding to
+     * Sequential list of transcription results corresponding to
      * sequential portions of audio.
      * </pre>
      *
@@ -883,7 +883,7 @@ public final class LongRunningRecognizeResponse extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * Output only. Sequential list of transcription results corresponding to
+     * Sequential list of transcription results corresponding to
      * sequential portions of audio.
      * </pre>
      *
@@ -898,7 +898,7 @@ public final class LongRunningRecognizeResponse extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * Output only. Sequential list of transcription results corresponding to
+     * Sequential list of transcription results corresponding to
      * sequential portions of audio.
      * </pre>
      *
@@ -915,7 +915,7 @@ public final class LongRunningRecognizeResponse extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * Output only. Sequential list of transcription results corresponding to
+     * Sequential list of transcription results corresponding to
      * sequential portions of audio.
      * </pre>
      *

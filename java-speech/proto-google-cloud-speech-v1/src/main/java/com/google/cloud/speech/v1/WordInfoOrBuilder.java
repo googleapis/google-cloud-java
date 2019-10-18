@@ -27,7 +27,7 @@ public interface WordInfoOrBuilder
    *
    *
    * <pre>
-   * Output only. Time offset relative to the beginning of the audio,
+   * Time offset relative to the beginning of the audio,
    * and corresponding to the start of the spoken word.
    * This field is only set if `enable_word_time_offsets=true` and only
    * in the top hypothesis.
@@ -42,7 +42,7 @@ public interface WordInfoOrBuilder
    *
    *
    * <pre>
-   * Output only. Time offset relative to the beginning of the audio,
+   * Time offset relative to the beginning of the audio,
    * and corresponding to the start of the spoken word.
    * This field is only set if `enable_word_time_offsets=true` and only
    * in the top hypothesis.
@@ -57,7 +57,7 @@ public interface WordInfoOrBuilder
    *
    *
    * <pre>
-   * Output only. Time offset relative to the beginning of the audio,
+   * Time offset relative to the beginning of the audio,
    * and corresponding to the start of the spoken word.
    * This field is only set if `enable_word_time_offsets=true` and only
    * in the top hypothesis.
@@ -73,7 +73,7 @@ public interface WordInfoOrBuilder
    *
    *
    * <pre>
-   * Output only. Time offset relative to the beginning of the audio,
+   * Time offset relative to the beginning of the audio,
    * and corresponding to the end of the spoken word.
    * This field is only set if `enable_word_time_offsets=true` and only
    * in the top hypothesis.
@@ -88,7 +88,7 @@ public interface WordInfoOrBuilder
    *
    *
    * <pre>
-   * Output only. Time offset relative to the beginning of the audio,
+   * Time offset relative to the beginning of the audio,
    * and corresponding to the end of the spoken word.
    * This field is only set if `enable_word_time_offsets=true` and only
    * in the top hypothesis.
@@ -103,7 +103,7 @@ public interface WordInfoOrBuilder
    *
    *
    * <pre>
-   * Output only. Time offset relative to the beginning of the audio,
+   * Time offset relative to the beginning of the audio,
    * and corresponding to the end of the spoken word.
    * This field is only set if `enable_word_time_offsets=true` and only
    * in the top hypothesis.
@@ -119,7 +119,7 @@ public interface WordInfoOrBuilder
    *
    *
    * <pre>
-   * Output only. The word corresponding to this set of information.
+   * The word corresponding to this set of information.
    * </pre>
    *
    * <code>string word = 3;</code>
@@ -129,7 +129,7 @@ public interface WordInfoOrBuilder
    *
    *
    * <pre>
-   * Output only. The word corresponding to this set of information.
+   * The word corresponding to this set of information.
    * </pre>
    *
    * <code>string word = 3;</code>

@@ -70,9 +70,9 @@ public interface StreamingRecognizeRequestOrBuilder
    * `StreamingRecognizeRequest` message must not contain `audio_content` data
    * and all subsequent `StreamingRecognizeRequest` messages must contain
    * `audio_content` data. The audio bytes must be encoded as specified in
-   * `RecognitionConfig`. Note: as with all bytes fields, protobuffers use a
+   * `RecognitionConfig`. Note: as with all bytes fields, proto buffers use a
    * pure binary representation (not base64). See
-   * [content limits](/speech-to-text/quotas#content).
+   * [content limits](https://cloud.google.com/speech-to-text/quotas#content).
    * </pre>
    *
    * <code>bytes audio_content = 2;</code>

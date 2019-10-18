@@ -41,7 +41,7 @@ import javax.annotation.Generated;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS
 /**
- * gRPC stub implementation for Cloud Speech API.
+ * gRPC stub implementation for Cloud Speech-to-Text API.
  *
  * <p>This class is for advanced usage and reflects the underlying API directly.
  */

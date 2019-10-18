@@ -27,7 +27,7 @@ public interface SpeakerDiarizationConfigOrBuilder
    *
    *
    * <pre>
-   * *Optional* If 'true', enables speaker detection for each recognized word in
+   * If 'true', enables speaker detection for each recognized word in
    * the top alternative of the recognition result using a speaker_tag provided
    * in the WordInfo.
    * </pre>
@@ -40,7 +40,6 @@ public interface SpeakerDiarizationConfigOrBuilder
    *
    *
    * <pre>
-   * *Optional*
    * Minimum number of speakers in the conversation. This range gives you more
    * flexibility by allowing the system to automatically determine the correct
    * number of speakers. If not set, the default value is 2.
@@ -54,7 +53,6 @@ public interface SpeakerDiarizationConfigOrBuilder
    *
    *
    * <pre>
-   * *Optional*
    * Maximum number of speakers in the conversation. This range gives you more
    * flexibility by allowing the system to automatically determine the correct
    * number of speakers. If not set, the default value is 6.
@@ -68,14 +66,14 @@ public interface SpeakerDiarizationConfigOrBuilder
    *
    *
    * <pre>
-   * Output only. A distinct integer value is assigned for every speaker within
+   * A distinct integer value is assigned for every speaker within
    * the audio. This field specifies which one of those speakers was detected to
    * have spoken this word. Value ranges from '1' to diarization_speaker_count.
    * speaker_tag is set if enable_speaker_diarization = 'true' and only in the
    * top alternative.
    * </pre>
    *
-   * <code>int32 speaker_tag = 5;</code>
+   * <code>int32 speaker_tag = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    */
   int getSpeakerTag();
 }

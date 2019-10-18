@@ -22,7 +22,7 @@ package com.google.cloud.speech.v1p1beta1;
  *
  *
  * <pre>
- * *Optional* Config to enable speaker diarization.
+ * Config to enable speaker diarization.
  * </pre>
  *
  * Protobuf type {@code google.cloud.speech.v1p1beta1.SpeakerDiarizationConfig}
@@ -118,7 +118,7 @@ public final class SpeakerDiarizationConfig extends com.google.protobuf.Generate
    *
    *
    * <pre>
-   * *Optional* If 'true', enables speaker detection for each recognized word in
+   * If 'true', enables speaker detection for each recognized word in
    * the top alternative of the recognition result using a speaker_tag provided
    * in the WordInfo.
    * </pre>
@@ -135,7 +135,6 @@ public final class SpeakerDiarizationConfig extends com.google.protobuf.Generate
    *
    *
    * <pre>
-   * *Optional*
    * Minimum number of speakers in the conversation. This range gives you more
    * flexibility by allowing the system to automatically determine the correct
    * number of speakers. If not set, the default value is 2.
@@ -153,7 +152,6 @@ public final class SpeakerDiarizationConfig extends com.google.protobuf.Generate
    *
    *
    * <pre>
-   * *Optional*
    * Maximum number of speakers in the conversation. This range gives you more
    * flexibility by allowing the system to automatically determine the correct
    * number of speakers. If not set, the default value is 6.
@@ -347,7 +345,7 @@ public final class SpeakerDiarizationConfig extends com.google.protobuf.Generate
    *
    *
    * <pre>
-   * *Optional* Config to enable speaker diarization.
+   * Config to enable speaker diarization.
    * </pre>
    *
    * Protobuf type {@code google.cloud.speech.v1p1beta1.SpeakerDiarizationConfig}
@@ -518,7 +516,7 @@ public final class SpeakerDiarizationConfig extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * *Optional* If 'true', enables speaker detection for each recognized word in
+     * If 'true', enables speaker detection for each recognized word in
      * the top alternative of the recognition result using a speaker_tag provided
      * in the WordInfo.
      * </pre>
@@ -532,7 +530,7 @@ public final class SpeakerDiarizationConfig extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * *Optional* If 'true', enables speaker detection for each recognized word in
+     * If 'true', enables speaker detection for each recognized word in
      * the top alternative of the recognition result using a speaker_tag provided
      * in the WordInfo.
      * </pre>
@@ -549,7 +547,7 @@ public final class SpeakerDiarizationConfig extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * *Optional* If 'true', enables speaker detection for each recognized word in
+     * If 'true', enables speaker detection for each recognized word in
      * the top alternative of the recognition result using a speaker_tag provided
      * in the WordInfo.
      * </pre>
@@ -568,7 +566,6 @@ public final class SpeakerDiarizationConfig extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * *Optional*
      * Minimum number of speakers in the conversation. This range gives you more
      * flexibility by allowing the system to automatically determine the correct
      * number of speakers. If not set, the default value is 2.
@@ -583,7 +580,6 @@ public final class SpeakerDiarizationConfig extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * *Optional*
      * Minimum number of speakers in the conversation. This range gives you more
      * flexibility by allowing the system to automatically determine the correct
      * number of speakers. If not set, the default value is 2.
@@ -601,7 +597,6 @@ public final class SpeakerDiarizationConfig extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * *Optional*
      * Minimum number of speakers in the conversation. This range gives you more
      * flexibility by allowing the system to automatically determine the correct
      * number of speakers. If not set, the default value is 2.
@@ -621,7 +616,6 @@ public final class SpeakerDiarizationConfig extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * *Optional*
      * Maximum number of speakers in the conversation. This range gives you more
      * flexibility by allowing the system to automatically determine the correct
      * number of speakers. If not set, the default value is 6.
@@ -636,7 +630,6 @@ public final class SpeakerDiarizationConfig extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * *Optional*
      * Maximum number of speakers in the conversation. This range gives you more
      * flexibility by allowing the system to automatically determine the correct
      * number of speakers. If not set, the default value is 6.
@@ -654,7 +647,6 @@ public final class SpeakerDiarizationConfig extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * *Optional*
      * Maximum number of speakers in the conversation. This range gives you more
      * flexibility by allowing the system to automatically determine the correct
      * number of speakers. If not set, the default value is 6.

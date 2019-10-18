@@ -106,46 +106,49 @@ public final class SpeechProto {
     java.lang.String[] descriptorData = {
       "\n)google/cloud/speech/v1/cloud_speech.pr"
           + "oto\022\026google.cloud.speech.v1\032\034google/api/"
-          + "annotations.proto\032#google/longrunning/op"
-          + "erations.proto\032\036google/protobuf/duration"
-          + ".proto\032\037google/protobuf/timestamp.proto\032"
-          + "\027google/rpc/status.proto\"\206\001\n\020RecognizeRe"
-          + "quest\0229\n\006config\030\001 \001(\0132).google.cloud.spe"
-          + "ech.v1.RecognitionConfig\0227\n\005audio\030\002 \001(\0132"
-          + "(.google.cloud.speech.v1.RecognitionAudi"
-          + "o\"\221\001\n\033LongRunningRecognizeRequest\0229\n\006con"
-          + "fig\030\001 \001(\0132).google.cloud.speech.v1.Recog"
-          + "nitionConfig\0227\n\005audio\030\002 \001(\0132(.google.clo"
-          + "ud.speech.v1.RecognitionAudio\"\231\001\n\031Stream"
-          + "ingRecognizeRequest\022N\n\020streaming_config\030"
-          + "\001 \001(\01322.google.cloud.speech.v1.Streaming"
-          + "RecognitionConfigH\000\022\027\n\raudio_content\030\002 \001"
-          + "(\014H\000B\023\n\021streaming_request\"\212\001\n\032StreamingR"
-          + "ecognitionConfig\0229\n\006config\030\001 \001(\0132).googl"
-          + "e.cloud.speech.v1.RecognitionConfig\022\030\n\020s"
-          + "ingle_utterance\030\002 \001(\010\022\027\n\017interim_results"
-          + "\030\003 \001(\010\"\332\005\n\021RecognitionConfig\022I\n\010encoding"
-          + "\030\001 \001(\01627.google.cloud.speech.v1.Recognit"
-          + "ionConfig.AudioEncoding\022\031\n\021sample_rate_h"
-          + "ertz\030\002 \001(\005\022\033\n\023audio_channel_count\030\007 \001(\005\022"
-          + "/\n\'enable_separate_recognition_per_chann"
-          + "el\030\014 \001(\010\022\025\n\rlanguage_code\030\003 \001(\t\022\030\n\020max_a"
-          + "lternatives\030\004 \001(\005\022\030\n\020profanity_filter\030\005 "
-          + "\001(\010\022>\n\017speech_contexts\030\006 \003(\0132%.google.cl"
-          + "oud.speech.v1.SpeechContext\022 \n\030enable_wo"
-          + "rd_time_offsets\030\010 \001(\010\022$\n\034enable_automati"
-          + "c_punctuation\030\013 \001(\010\022L\n\022diarization_confi"
-          + "g\030\023 \001(\01320.google.cloud.speech.v1.Speaker"
-          + "DiarizationConfig\022=\n\010metadata\030\t \001(\0132+.go"
-          + "ogle.cloud.speech.v1.RecognitionMetadata"
-          + "\022\r\n\005model\030\r \001(\t\022\024\n\014use_enhanced\030\016 \001(\010\"\213\001"
-          + "\n\rAudioEncoding\022\030\n\024ENCODING_UNSPECIFIED\020"
-          + "\000\022\014\n\010LINEAR16\020\001\022\010\n\004FLAC\020\002\022\t\n\005MULAW\020\003\022\007\n\003"
-          + "AMR\020\004\022\n\n\006AMR_WB\020\005\022\014\n\010OGG_OPUS\020\006\022\032\n\026SPEEX"
-          + "_WITH_HEADER_BYTE\020\007\"\211\001\n\030SpeakerDiarizati"
-          + "onConfig\022\"\n\032enable_speaker_diarization\030\001"
-          + " \001(\010\022\031\n\021min_speaker_count\030\002 \001(\005\022\031\n\021max_s"
-          + "peaker_count\030\003 \001(\005\022\023\n\013speaker_tag\030\005 \001(\005\""
+          + "annotations.proto\032\027google/api/client.pro"
+          + "to\032\037google/api/field_behavior.proto\032#goo"
+          + "gle/longrunning/operations.proto\032\031google"
+          + "/protobuf/any.proto\032\036google/protobuf/dur"
+          + "ation.proto\032\037google/protobuf/timestamp.p"
+          + "roto\032\027google/rpc/status.proto\"\220\001\n\020Recogn"
+          + "izeRequest\022>\n\006config\030\001 \001(\0132).google.clou"
+          + "d.speech.v1.RecognitionConfigB\003\340A\002\022<\n\005au"
+          + "dio\030\002 \001(\0132(.google.cloud.speech.v1.Recog"
+          + "nitionAudioB\003\340A\002\"\233\001\n\033LongRunningRecogniz"
+          + "eRequest\022>\n\006config\030\001 \001(\0132).google.cloud."
+          + "speech.v1.RecognitionConfigB\003\340A\002\022<\n\005audi"
+          + "o\030\002 \001(\0132(.google.cloud.speech.v1.Recogni"
+          + "tionAudioB\003\340A\002\"\231\001\n\031StreamingRecognizeReq"
+          + "uest\022N\n\020streaming_config\030\001 \001(\01322.google."
+          + "cloud.speech.v1.StreamingRecognitionConf"
+          + "igH\000\022\027\n\raudio_content\030\002 \001(\014H\000B\023\n\021streami"
+          + "ng_request\"\217\001\n\032StreamingRecognitionConfi"
+          + "g\022>\n\006config\030\001 \001(\0132).google.cloud.speech."
+          + "v1.RecognitionConfigB\003\340A\002\022\030\n\020single_utte"
+          + "rance\030\002 \001(\010\022\027\n\017interim_results\030\003 \001(\010\"\337\005\n"
+          + "\021RecognitionConfig\022I\n\010encoding\030\001 \001(\01627.g"
+          + "oogle.cloud.speech.v1.RecognitionConfig."
+          + "AudioEncoding\022\031\n\021sample_rate_hertz\030\002 \001(\005"
+          + "\022\033\n\023audio_channel_count\030\007 \001(\005\022/\n\'enable_"
+          + "separate_recognition_per_channel\030\014 \001(\010\022\032"
+          + "\n\rlanguage_code\030\003 \001(\tB\003\340A\002\022\030\n\020max_altern"
+          + "atives\030\004 \001(\005\022\030\n\020profanity_filter\030\005 \001(\010\022>"
+          + "\n\017speech_contexts\030\006 \003(\0132%.google.cloud.s"
+          + "peech.v1.SpeechContext\022 \n\030enable_word_ti"
+          + "me_offsets\030\010 \001(\010\022$\n\034enable_automatic_pun"
+          + "ctuation\030\013 \001(\010\022L\n\022diarization_config\030\023 \001"
+          + "(\01320.google.cloud.speech.v1.SpeakerDiari"
+          + "zationConfig\022=\n\010metadata\030\t \001(\0132+.google."
+          + "cloud.speech.v1.RecognitionMetadata\022\r\n\005m"
+          + "odel\030\r \001(\t\022\024\n\014use_enhanced\030\016 \001(\010\"\213\001\n\rAud"
+          + "ioEncoding\022\030\n\024ENCODING_UNSPECIFIED\020\000\022\014\n\010"
+          + "LINEAR16\020\001\022\010\n\004FLAC\020\002\022\t\n\005MULAW\020\003\022\007\n\003AMR\020\004"
+          + "\022\n\n\006AMR_WB\020\005\022\014\n\010OGG_OPUS\020\006\022\032\n\026SPEEX_WITH"
+          + "_HEADER_BYTE\020\007\"\216\001\n\030SpeakerDiarizationCon"
+          + "fig\022\"\n\032enable_speaker_diarization\030\001 \001(\010\022"
+          + "\031\n\021min_speaker_count\030\002 \001(\005\022\031\n\021max_speake"
+          + "r_count\030\003 \001(\005\022\030\n\013speaker_tag\030\005 \001(\005B\003\340A\003\""
           + "\240\010\n\023RecognitionMetadata\022U\n\020interaction_t"
           + "ype\030\001 \001(\0162;.google.cloud.speech.v1.Recog"
           + "nitionMetadata.InteractionType\022$\n\034indust"
@@ -191,36 +194,40 @@ public final class SpeechProto {
           + "cloud.speech.v1.StreamingRecognizeRespon"
           + "se.SpeechEventType\"L\n\017SpeechEventType\022\034\n"
           + "\030SPEECH_EVENT_UNSPECIFIED\020\000\022\033\n\027END_OF_SI"
-          + "NGLE_UTTERANCE\020\001\"\355\001\n\032StreamingRecognitio"
+          + "NGLE_UTTERANCE\020\001\"\362\001\n\032StreamingRecognitio"
           + "nResult\022J\n\014alternatives\030\001 \003(\01324.google.c"
           + "loud.speech.v1.SpeechRecognitionAlternat"
           + "ive\022\020\n\010is_final\030\002 \001(\010\022\021\n\tstability\030\003 \001(\002"
           + "\0222\n\017result_end_time\030\004 \001(\0132\031.google.proto"
-          + "buf.Duration\022\023\n\013channel_tag\030\005 \001(\005\022\025\n\rlan"
-          + "guage_code\030\006 \001(\t\"z\n\027SpeechRecognitionRes"
-          + "ult\022J\n\014alternatives\030\001 \003(\01324.google.cloud"
-          + ".speech.v1.SpeechRecognitionAlternative\022"
-          + "\023\n\013channel_tag\030\002 \001(\005\"w\n\034SpeechRecognitio"
-          + "nAlternative\022\022\n\ntranscript\030\001 \001(\t\022\022\n\nconf"
-          + "idence\030\002 \001(\002\022/\n\005words\030\003 \003(\0132 .google.clo"
-          + "ud.speech.v1.WordInfo\"t\n\010WordInfo\022-\n\nsta"
-          + "rt_time\030\001 \001(\0132\031.google.protobuf.Duration"
-          + "\022+\n\010end_time\030\002 \001(\0132\031.google.protobuf.Dur"
-          + "ation\022\014\n\004word\030\003 \001(\t2\251\003\n\006Speech\022\201\001\n\tRecog"
-          + "nize\022(.google.cloud.speech.v1.RecognizeR"
-          + "equest\032).google.cloud.speech.v1.Recogniz"
-          + "eResponse\"\037\202\323\344\223\002\031\"\024/v1/speech:recognize:"
-          + "\001*\022\226\001\n\024LongRunningRecognize\0223.google.clo"
-          + "ud.speech.v1.LongRunningRecognizeRequest"
-          + "\032\035.google.longrunning.Operation\"*\202\323\344\223\002$\""
-          + "\037/v1/speech:longrunningrecognize:\001*\022\201\001\n\022"
-          + "StreamingRecognize\0221.google.cloud.speech"
-          + ".v1.StreamingRecognizeRequest\0322.google.c"
-          + "loud.speech.v1.StreamingRecognizeRespons"
-          + "e\"\000(\0010\001Bl\n\032com.google.cloud.speech.v1B\013S"
-          + "peechProtoP\001Z<google.golang.org/genproto"
-          + "/googleapis/cloud/speech/v1;speech\370\001\001b\006p"
-          + "roto3"
+          + "buf.Duration\022\023\n\013channel_tag\030\005 \001(\005\022\032\n\rlan"
+          + "guage_code\030\006 \001(\tB\003\340A\003\"z\n\027SpeechRecogniti"
+          + "onResult\022J\n\014alternatives\030\001 \003(\01324.google."
+          + "cloud.speech.v1.SpeechRecognitionAlterna"
+          + "tive\022\023\n\013channel_tag\030\002 \001(\005\"w\n\034SpeechRecog"
+          + "nitionAlternative\022\022\n\ntranscript\030\001 \001(\t\022\022\n"
+          + "\nconfidence\030\002 \001(\002\022/\n\005words\030\003 \003(\0132 .googl"
+          + "e.cloud.speech.v1.WordInfo\"t\n\010WordInfo\022-"
+          + "\n\nstart_time\030\001 \001(\0132\031.google.protobuf.Dur"
+          + "ation\022+\n\010end_time\030\002 \001(\0132\031.google.protobu"
+          + "f.Duration\022\014\n\004word\030\003 \001(\t2\321\004\n\006Speech\022\220\001\n\t"
+          + "Recognize\022(.google.cloud.speech.v1.Recog"
+          + "nizeRequest\032).google.cloud.speech.v1.Rec"
+          + "ognizeResponse\".\202\323\344\223\002\031\"\024/v1/speech:recog"
+          + "nize:\001*\332A\014config,audio\022\344\001\n\024LongRunningRe"
+          + "cognize\0223.google.cloud.speech.v1.LongRun"
+          + "ningRecognizeRequest\032\035.google.longrunnin"
+          + "g.Operation\"x\202\323\344\223\002$\"\037/v1/speech:longrunn"
+          + "ingrecognize:\001*\332A\014config,audio\312A<\n\034LongR"
+          + "unningRecognizeResponse\022\034LongRunningReco"
+          + "gnizeMetadata\022\201\001\n\022StreamingRecognize\0221.g"
+          + "oogle.cloud.speech.v1.StreamingRecognize"
+          + "Request\0322.google.cloud.speech.v1.Streami"
+          + "ngRecognizeResponse\"\000(\0010\001\032I\312A\025speech.goo"
+          + "gleapis.com\322A.https://www.googleapis.com"
+          + "/auth/cloud-platformBr\n\032com.google.cloud"
+          + ".speech.v1B\013SpeechProtoP\001Z<google.golang"
+          + ".org/genproto/googleapis/cloud/speech/v1"
+          + ";speech\370\001\001\242\002\003GCSb\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner() {
@@ -234,7 +241,10 @@ public final class SpeechProto {
         descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
           com.google.api.AnnotationsProto.getDescriptor(),
+          com.google.api.ClientProto.getDescriptor(),
+          com.google.api.FieldBehaviorProto.getDescriptor(),
           com.google.longrunning.OperationsProto.getDescriptor(),
+          com.google.protobuf.AnyProto.getDescriptor(),
           com.google.protobuf.DurationProto.getDescriptor(),
           com.google.protobuf.TimestampProto.getDescriptor(),
           com.google.rpc.StatusProto.getDescriptor(),
@@ -398,11 +408,19 @@ public final class SpeechProto {
             });
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();
+    registry.add(com.google.api.ClientProto.defaultHost);
+    registry.add(com.google.api.FieldBehaviorProto.fieldBehavior);
     registry.add(com.google.api.AnnotationsProto.http);
+    registry.add(com.google.api.ClientProto.methodSignature);
+    registry.add(com.google.api.ClientProto.oauthScopes);
+    registry.add(com.google.longrunning.OperationsProto.operationInfo);
     com.google.protobuf.Descriptors.FileDescriptor.internalUpdateFileDescriptor(
         descriptor, registry);
     com.google.api.AnnotationsProto.getDescriptor();
+    com.google.api.ClientProto.getDescriptor();
+    com.google.api.FieldBehaviorProto.getDescriptor();
     com.google.longrunning.OperationsProto.getDescriptor();
+    com.google.protobuf.AnyProto.getDescriptor();
     com.google.protobuf.DurationProto.getDescriptor();
     com.google.protobuf.TimestampProto.getDescriptor();
     com.google.rpc.StatusProto.getDescriptor();

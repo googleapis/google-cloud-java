@@ -27,7 +27,7 @@ public interface SpeechRecognitionResultOrBuilder
    *
    *
    * <pre>
-   * Output only. May contain one or more recognition hypotheses (up to the
+   * May contain one or more recognition hypotheses (up to the
    * maximum specified in `max_alternatives`).
    * These alternatives are ordered in terms of accuracy, with the top (first)
    * alternative being the most probable, as ranked by the recognizer.
@@ -40,7 +40,7 @@ public interface SpeechRecognitionResultOrBuilder
    *
    *
    * <pre>
-   * Output only. May contain one or more recognition hypotheses (up to the
+   * May contain one or more recognition hypotheses (up to the
    * maximum specified in `max_alternatives`).
    * These alternatives are ordered in terms of accuracy, with the top (first)
    * alternative being the most probable, as ranked by the recognizer.
@@ -53,7 +53,7 @@ public interface SpeechRecognitionResultOrBuilder
    *
    *
    * <pre>
-   * Output only. May contain one or more recognition hypotheses (up to the
+   * May contain one or more recognition hypotheses (up to the
    * maximum specified in `max_alternatives`).
    * These alternatives are ordered in terms of accuracy, with the top (first)
    * alternative being the most probable, as ranked by the recognizer.
@@ -66,7 +66,7 @@ public interface SpeechRecognitionResultOrBuilder
    *
    *
    * <pre>
-   * Output only. May contain one or more recognition hypotheses (up to the
+   * May contain one or more recognition hypotheses (up to the
    * maximum specified in `max_alternatives`).
    * These alternatives are ordered in terms of accuracy, with the top (first)
    * alternative being the most probable, as ranked by the recognizer.
@@ -80,7 +80,7 @@ public interface SpeechRecognitionResultOrBuilder
    *
    *
    * <pre>
-   * Output only. May contain one or more recognition hypotheses (up to the
+   * May contain one or more recognition hypotheses (up to the
    * maximum specified in `max_alternatives`).
    * These alternatives are ordered in terms of accuracy, with the top (first)
    * alternative being the most probable, as ranked by the recognizer.

@@ -162,7 +162,7 @@ public final class StreamingRecognitionResult extends com.google.protobuf.Genera
    *
    *
    * <pre>
-   * Output only. May contain one or more recognition hypotheses (up to the
+   * May contain one or more recognition hypotheses (up to the
    * maximum specified in `max_alternatives`).
    * These alternatives are ordered in terms of accuracy, with the top (first)
    * alternative being the most probable, as ranked by the recognizer.
@@ -178,7 +178,7 @@ public final class StreamingRecognitionResult extends com.google.protobuf.Genera
    *
    *
    * <pre>
-   * Output only. May contain one or more recognition hypotheses (up to the
+   * May contain one or more recognition hypotheses (up to the
    * maximum specified in `max_alternatives`).
    * These alternatives are ordered in terms of accuracy, with the top (first)
    * alternative being the most probable, as ranked by the recognizer.
@@ -194,7 +194,7 @@ public final class StreamingRecognitionResult extends com.google.protobuf.Genera
    *
    *
    * <pre>
-   * Output only. May contain one or more recognition hypotheses (up to the
+   * May contain one or more recognition hypotheses (up to the
    * maximum specified in `max_alternatives`).
    * These alternatives are ordered in terms of accuracy, with the top (first)
    * alternative being the most probable, as ranked by the recognizer.
@@ -209,7 +209,7 @@ public final class StreamingRecognitionResult extends com.google.protobuf.Genera
    *
    *
    * <pre>
-   * Output only. May contain one or more recognition hypotheses (up to the
+   * May contain one or more recognition hypotheses (up to the
    * maximum specified in `max_alternatives`).
    * These alternatives are ordered in terms of accuracy, with the top (first)
    * alternative being the most probable, as ranked by the recognizer.
@@ -224,7 +224,7 @@ public final class StreamingRecognitionResult extends com.google.protobuf.Genera
    *
    *
    * <pre>
-   * Output only. May contain one or more recognition hypotheses (up to the
+   * May contain one or more recognition hypotheses (up to the
    * maximum specified in `max_alternatives`).
    * These alternatives are ordered in terms of accuracy, with the top (first)
    * alternative being the most probable, as ranked by the recognizer.
@@ -243,7 +243,7 @@ public final class StreamingRecognitionResult extends com.google.protobuf.Genera
    *
    *
    * <pre>
-   * Output only. If `false`, this `StreamingRecognitionResult` represents an
+   * If `false`, this `StreamingRecognitionResult` represents an
    * interim result that may change. If `true`, this is the final time the
    * speech service will return this particular `StreamingRecognitionResult`,
    * the recognizer will not return any further hypotheses for this portion of
@@ -262,7 +262,7 @@ public final class StreamingRecognitionResult extends com.google.protobuf.Genera
    *
    *
    * <pre>
-   * Output only. An estimate of the likelihood that the recognizer will not
+   * An estimate of the likelihood that the recognizer will not
    * change its guess about this interim result. Values range from 0.0
    * (completely unstable) to 1.0 (completely stable).
    * This field is only provided for interim results (`is_final=false`).
@@ -281,7 +281,7 @@ public final class StreamingRecognitionResult extends com.google.protobuf.Genera
    *
    *
    * <pre>
-   * Output only. Time offset of the end of this result relative to the
+   * Time offset of the end of this result relative to the
    * beginning of the audio.
    * </pre>
    *
@@ -294,7 +294,7 @@ public final class StreamingRecognitionResult extends com.google.protobuf.Genera
    *
    *
    * <pre>
-   * Output only. Time offset of the end of this result relative to the
+   * Time offset of the end of this result relative to the
    * beginning of the audio.
    * </pre>
    *
@@ -309,7 +309,7 @@ public final class StreamingRecognitionResult extends com.google.protobuf.Genera
    *
    *
    * <pre>
-   * Output only. Time offset of the end of this result relative to the
+   * Time offset of the end of this result relative to the
    * beginning of the audio.
    * </pre>
    *
@@ -342,13 +342,12 @@ public final class StreamingRecognitionResult extends com.google.protobuf.Genera
    *
    *
    * <pre>
-   * Output only. The
-   * [BCP-47](https://www.rfc-editor.org/rfc/bcp/bcp47.txt) language tag of the
-   * language in this result. This language code was detected to have the most
-   * likelihood of being spoken in the audio.
+   * The [BCP-47](https://www.rfc-editor.org/rfc/bcp/bcp47.txt) language tag of
+   * the language in this result. This language code was detected to have the
+   * most likelihood of being spoken in the audio.
    * </pre>
    *
-   * <code>string language_code = 6;</code>
+   * <code>string language_code = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    */
   public java.lang.String getLanguageCode() {
     java.lang.Object ref = languageCode_;
@@ -365,13 +364,12 @@ public final class StreamingRecognitionResult extends com.google.protobuf.Genera
    *
    *
    * <pre>
-   * Output only. The
-   * [BCP-47](https://www.rfc-editor.org/rfc/bcp/bcp47.txt) language tag of the
-   * language in this result. This language code was detected to have the most
-   * likelihood of being spoken in the audio.
+   * The [BCP-47](https://www.rfc-editor.org/rfc/bcp/bcp47.txt) language tag of
+   * the language in this result. This language code was detected to have the
+   * most likelihood of being spoken in the audio.
    * </pre>
    *
-   * <code>string language_code = 6;</code>
+   * <code>string language_code = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    */
   public com.google.protobuf.ByteString getLanguageCodeBytes() {
     java.lang.Object ref = languageCode_;
@@ -861,7 +859,7 @@ public final class StreamingRecognitionResult extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * Output only. May contain one or more recognition hypotheses (up to the
+     * May contain one or more recognition hypotheses (up to the
      * maximum specified in `max_alternatives`).
      * These alternatives are ordered in terms of accuracy, with the top (first)
      * alternative being the most probable, as ranked by the recognizer.
@@ -881,7 +879,7 @@ public final class StreamingRecognitionResult extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * Output only. May contain one or more recognition hypotheses (up to the
+     * May contain one or more recognition hypotheses (up to the
      * maximum specified in `max_alternatives`).
      * These alternatives are ordered in terms of accuracy, with the top (first)
      * alternative being the most probable, as ranked by the recognizer.
@@ -900,7 +898,7 @@ public final class StreamingRecognitionResult extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * Output only. May contain one or more recognition hypotheses (up to the
+     * May contain one or more recognition hypotheses (up to the
      * maximum specified in `max_alternatives`).
      * These alternatives are ordered in terms of accuracy, with the top (first)
      * alternative being the most probable, as ranked by the recognizer.
@@ -919,7 +917,7 @@ public final class StreamingRecognitionResult extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * Output only. May contain one or more recognition hypotheses (up to the
+     * May contain one or more recognition hypotheses (up to the
      * maximum specified in `max_alternatives`).
      * These alternatives are ordered in terms of accuracy, with the top (first)
      * alternative being the most probable, as ranked by the recognizer.
@@ -945,7 +943,7 @@ public final class StreamingRecognitionResult extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * Output only. May contain one or more recognition hypotheses (up to the
+     * May contain one or more recognition hypotheses (up to the
      * maximum specified in `max_alternatives`).
      * These alternatives are ordered in terms of accuracy, with the top (first)
      * alternative being the most probable, as ranked by the recognizer.
@@ -969,7 +967,7 @@ public final class StreamingRecognitionResult extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * Output only. May contain one or more recognition hypotheses (up to the
+     * May contain one or more recognition hypotheses (up to the
      * maximum specified in `max_alternatives`).
      * These alternatives are ordered in terms of accuracy, with the top (first)
      * alternative being the most probable, as ranked by the recognizer.
@@ -994,7 +992,7 @@ public final class StreamingRecognitionResult extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * Output only. May contain one or more recognition hypotheses (up to the
+     * May contain one or more recognition hypotheses (up to the
      * maximum specified in `max_alternatives`).
      * These alternatives are ordered in terms of accuracy, with the top (first)
      * alternative being the most probable, as ranked by the recognizer.
@@ -1020,7 +1018,7 @@ public final class StreamingRecognitionResult extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * Output only. May contain one or more recognition hypotheses (up to the
+     * May contain one or more recognition hypotheses (up to the
      * maximum specified in `max_alternatives`).
      * These alternatives are ordered in terms of accuracy, with the top (first)
      * alternative being the most probable, as ranked by the recognizer.
@@ -1043,7 +1041,7 @@ public final class StreamingRecognitionResult extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * Output only. May contain one or more recognition hypotheses (up to the
+     * May contain one or more recognition hypotheses (up to the
      * maximum specified in `max_alternatives`).
      * These alternatives are ordered in terms of accuracy, with the top (first)
      * alternative being the most probable, as ranked by the recognizer.
@@ -1067,7 +1065,7 @@ public final class StreamingRecognitionResult extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * Output only. May contain one or more recognition hypotheses (up to the
+     * May contain one or more recognition hypotheses (up to the
      * maximum specified in `max_alternatives`).
      * These alternatives are ordered in terms of accuracy, with the top (first)
      * alternative being the most probable, as ranked by the recognizer.
@@ -1091,7 +1089,7 @@ public final class StreamingRecognitionResult extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * Output only. May contain one or more recognition hypotheses (up to the
+     * May contain one or more recognition hypotheses (up to the
      * maximum specified in `max_alternatives`).
      * These alternatives are ordered in terms of accuracy, with the top (first)
      * alternative being the most probable, as ranked by the recognizer.
@@ -1113,7 +1111,7 @@ public final class StreamingRecognitionResult extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * Output only. May contain one or more recognition hypotheses (up to the
+     * May contain one or more recognition hypotheses (up to the
      * maximum specified in `max_alternatives`).
      * These alternatives are ordered in terms of accuracy, with the top (first)
      * alternative being the most probable, as ranked by the recognizer.
@@ -1135,7 +1133,7 @@ public final class StreamingRecognitionResult extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * Output only. May contain one or more recognition hypotheses (up to the
+     * May contain one or more recognition hypotheses (up to the
      * maximum specified in `max_alternatives`).
      * These alternatives are ordered in terms of accuracy, with the top (first)
      * alternative being the most probable, as ranked by the recognizer.
@@ -1151,7 +1149,7 @@ public final class StreamingRecognitionResult extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * Output only. May contain one or more recognition hypotheses (up to the
+     * May contain one or more recognition hypotheses (up to the
      * maximum specified in `max_alternatives`).
      * These alternatives are ordered in terms of accuracy, with the top (first)
      * alternative being the most probable, as ranked by the recognizer.
@@ -1171,7 +1169,7 @@ public final class StreamingRecognitionResult extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * Output only. May contain one or more recognition hypotheses (up to the
+     * May contain one or more recognition hypotheses (up to the
      * maximum specified in `max_alternatives`).
      * These alternatives are ordered in terms of accuracy, with the top (first)
      * alternative being the most probable, as ranked by the recognizer.
@@ -1192,7 +1190,7 @@ public final class StreamingRecognitionResult extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * Output only. May contain one or more recognition hypotheses (up to the
+     * May contain one or more recognition hypotheses (up to the
      * maximum specified in `max_alternatives`).
      * These alternatives are ordered in terms of accuracy, with the top (first)
      * alternative being the most probable, as ranked by the recognizer.
@@ -1209,7 +1207,7 @@ public final class StreamingRecognitionResult extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * Output only. May contain one or more recognition hypotheses (up to the
+     * May contain one or more recognition hypotheses (up to the
      * maximum specified in `max_alternatives`).
      * These alternatives are ordered in terms of accuracy, with the top (first)
      * alternative being the most probable, as ranked by the recognizer.
@@ -1227,7 +1225,7 @@ public final class StreamingRecognitionResult extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * Output only. May contain one or more recognition hypotheses (up to the
+     * May contain one or more recognition hypotheses (up to the
      * maximum specified in `max_alternatives`).
      * These alternatives are ordered in terms of accuracy, with the top (first)
      * alternative being the most probable, as ranked by the recognizer.
@@ -1262,7 +1260,7 @@ public final class StreamingRecognitionResult extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * Output only. If `false`, this `StreamingRecognitionResult` represents an
+     * If `false`, this `StreamingRecognitionResult` represents an
      * interim result that may change. If `true`, this is the final time the
      * speech service will return this particular `StreamingRecognitionResult`,
      * the recognizer will not return any further hypotheses for this portion of
@@ -1278,7 +1276,7 @@ public final class StreamingRecognitionResult extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * Output only. If `false`, this `StreamingRecognitionResult` represents an
+     * If `false`, this `StreamingRecognitionResult` represents an
      * interim result that may change. If `true`, this is the final time the
      * speech service will return this particular `StreamingRecognitionResult`,
      * the recognizer will not return any further hypotheses for this portion of
@@ -1297,7 +1295,7 @@ public final class StreamingRecognitionResult extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * Output only. If `false`, this `StreamingRecognitionResult` represents an
+     * If `false`, this `StreamingRecognitionResult` represents an
      * interim result that may change. If `true`, this is the final time the
      * speech service will return this particular `StreamingRecognitionResult`,
      * the recognizer will not return any further hypotheses for this portion of
@@ -1318,7 +1316,7 @@ public final class StreamingRecognitionResult extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * Output only. An estimate of the likelihood that the recognizer will not
+     * An estimate of the likelihood that the recognizer will not
      * change its guess about this interim result. Values range from 0.0
      * (completely unstable) to 1.0 (completely stable).
      * This field is only provided for interim results (`is_final=false`).
@@ -1334,7 +1332,7 @@ public final class StreamingRecognitionResult extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * Output only. An estimate of the likelihood that the recognizer will not
+     * An estimate of the likelihood that the recognizer will not
      * change its guess about this interim result. Values range from 0.0
      * (completely unstable) to 1.0 (completely stable).
      * This field is only provided for interim results (`is_final=false`).
@@ -1353,7 +1351,7 @@ public final class StreamingRecognitionResult extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * Output only. An estimate of the likelihood that the recognizer will not
+     * An estimate of the likelihood that the recognizer will not
      * change its guess about this interim result. Values range from 0.0
      * (completely unstable) to 1.0 (completely stable).
      * This field is only provided for interim results (`is_final=false`).
@@ -1379,7 +1377,7 @@ public final class StreamingRecognitionResult extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * Output only. Time offset of the end of this result relative to the
+     * Time offset of the end of this result relative to the
      * beginning of the audio.
      * </pre>
      *
@@ -1392,7 +1390,7 @@ public final class StreamingRecognitionResult extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * Output only. Time offset of the end of this result relative to the
+     * Time offset of the end of this result relative to the
      * beginning of the audio.
      * </pre>
      *
@@ -1411,7 +1409,7 @@ public final class StreamingRecognitionResult extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * Output only. Time offset of the end of this result relative to the
+     * Time offset of the end of this result relative to the
      * beginning of the audio.
      * </pre>
      *
@@ -1434,7 +1432,7 @@ public final class StreamingRecognitionResult extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * Output only. Time offset of the end of this result relative to the
+     * Time offset of the end of this result relative to the
      * beginning of the audio.
      * </pre>
      *
@@ -1454,7 +1452,7 @@ public final class StreamingRecognitionResult extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * Output only. Time offset of the end of this result relative to the
+     * Time offset of the end of this result relative to the
      * beginning of the audio.
      * </pre>
      *
@@ -1481,7 +1479,7 @@ public final class StreamingRecognitionResult extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * Output only. Time offset of the end of this result relative to the
+     * Time offset of the end of this result relative to the
      * beginning of the audio.
      * </pre>
      *
@@ -1502,7 +1500,7 @@ public final class StreamingRecognitionResult extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * Output only. Time offset of the end of this result relative to the
+     * Time offset of the end of this result relative to the
      * beginning of the audio.
      * </pre>
      *
@@ -1517,7 +1515,7 @@ public final class StreamingRecognitionResult extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * Output only. Time offset of the end of this result relative to the
+     * Time offset of the end of this result relative to the
      * beginning of the audio.
      * </pre>
      *
@@ -1536,7 +1534,7 @@ public final class StreamingRecognitionResult extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * Output only. Time offset of the end of this result relative to the
+     * Time offset of the end of this result relative to the
      * beginning of the audio.
      * </pre>
      *
@@ -1614,13 +1612,12 @@ public final class StreamingRecognitionResult extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * Output only. The
-     * [BCP-47](https://www.rfc-editor.org/rfc/bcp/bcp47.txt) language tag of the
-     * language in this result. This language code was detected to have the most
-     * likelihood of being spoken in the audio.
+     * The [BCP-47](https://www.rfc-editor.org/rfc/bcp/bcp47.txt) language tag of
+     * the language in this result. This language code was detected to have the
+     * most likelihood of being spoken in the audio.
      * </pre>
      *
-     * <code>string language_code = 6;</code>
+     * <code>string language_code = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     public java.lang.String getLanguageCode() {
       java.lang.Object ref = languageCode_;
@@ -1637,13 +1634,12 @@ public final class StreamingRecognitionResult extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * Output only. The
-     * [BCP-47](https://www.rfc-editor.org/rfc/bcp/bcp47.txt) language tag of the
-     * language in this result. This language code was detected to have the most
-     * likelihood of being spoken in the audio.
+     * The [BCP-47](https://www.rfc-editor.org/rfc/bcp/bcp47.txt) language tag of
+     * the language in this result. This language code was detected to have the
+     * most likelihood of being spoken in the audio.
      * </pre>
      *
-     * <code>string language_code = 6;</code>
+     * <code>string language_code = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     public com.google.protobuf.ByteString getLanguageCodeBytes() {
       java.lang.Object ref = languageCode_;
@@ -1660,13 +1656,12 @@ public final class StreamingRecognitionResult extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * Output only. The
-     * [BCP-47](https://www.rfc-editor.org/rfc/bcp/bcp47.txt) language tag of the
-     * language in this result. This language code was detected to have the most
-     * likelihood of being spoken in the audio.
+     * The [BCP-47](https://www.rfc-editor.org/rfc/bcp/bcp47.txt) language tag of
+     * the language in this result. This language code was detected to have the
+     * most likelihood of being spoken in the audio.
      * </pre>
      *
-     * <code>string language_code = 6;</code>
+     * <code>string language_code = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     public Builder setLanguageCode(java.lang.String value) {
       if (value == null) {
@@ -1681,13 +1676,12 @@ public final class StreamingRecognitionResult extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * Output only. The
-     * [BCP-47](https://www.rfc-editor.org/rfc/bcp/bcp47.txt) language tag of the
-     * language in this result. This language code was detected to have the most
-     * likelihood of being spoken in the audio.
+     * The [BCP-47](https://www.rfc-editor.org/rfc/bcp/bcp47.txt) language tag of
+     * the language in this result. This language code was detected to have the
+     * most likelihood of being spoken in the audio.
      * </pre>
      *
-     * <code>string language_code = 6;</code>
+     * <code>string language_code = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     public Builder clearLanguageCode() {
 
@@ -1699,13 +1693,12 @@ public final class StreamingRecognitionResult extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * Output only. The
-     * [BCP-47](https://www.rfc-editor.org/rfc/bcp/bcp47.txt) language tag of the
-     * language in this result. This language code was detected to have the most
-     * likelihood of being spoken in the audio.
+     * The [BCP-47](https://www.rfc-editor.org/rfc/bcp/bcp47.txt) language tag of
+     * the language in this result. This language code was detected to have the
+     * most likelihood of being spoken in the audio.
      * </pre>
      *
-     * <code>string language_code = 6;</code>
+     * <code>string language_code = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     public Builder setLanguageCodeBytes(com.google.protobuf.ByteString value) {
       if (value == null) {

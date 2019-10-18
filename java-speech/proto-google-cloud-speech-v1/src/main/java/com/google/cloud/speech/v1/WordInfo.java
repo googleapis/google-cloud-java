@@ -142,7 +142,7 @@ public final class WordInfo extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. Time offset relative to the beginning of the audio,
+   * Time offset relative to the beginning of the audio,
    * and corresponding to the start of the spoken word.
    * This field is only set if `enable_word_time_offsets=true` and only
    * in the top hypothesis.
@@ -159,7 +159,7 @@ public final class WordInfo extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. Time offset relative to the beginning of the audio,
+   * Time offset relative to the beginning of the audio,
    * and corresponding to the start of the spoken word.
    * This field is only set if `enable_word_time_offsets=true` and only
    * in the top hypothesis.
@@ -176,7 +176,7 @@ public final class WordInfo extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. Time offset relative to the beginning of the audio,
+   * Time offset relative to the beginning of the audio,
    * and corresponding to the start of the spoken word.
    * This field is only set if `enable_word_time_offsets=true` and only
    * in the top hypothesis.
@@ -196,7 +196,7 @@ public final class WordInfo extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. Time offset relative to the beginning of the audio,
+   * Time offset relative to the beginning of the audio,
    * and corresponding to the end of the spoken word.
    * This field is only set if `enable_word_time_offsets=true` and only
    * in the top hypothesis.
@@ -213,7 +213,7 @@ public final class WordInfo extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. Time offset relative to the beginning of the audio,
+   * Time offset relative to the beginning of the audio,
    * and corresponding to the end of the spoken word.
    * This field is only set if `enable_word_time_offsets=true` and only
    * in the top hypothesis.
@@ -230,7 +230,7 @@ public final class WordInfo extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. Time offset relative to the beginning of the audio,
+   * Time offset relative to the beginning of the audio,
    * and corresponding to the end of the spoken word.
    * This field is only set if `enable_word_time_offsets=true` and only
    * in the top hypothesis.
@@ -250,7 +250,7 @@ public final class WordInfo extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. The word corresponding to this set of information.
+   * The word corresponding to this set of information.
    * </pre>
    *
    * <code>string word = 3;</code>
@@ -270,7 +270,7 @@ public final class WordInfo extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. The word corresponding to this set of information.
+   * The word corresponding to this set of information.
    * </pre>
    *
    * <code>string word = 3;</code>
@@ -666,7 +666,7 @@ public final class WordInfo extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Time offset relative to the beginning of the audio,
+     * Time offset relative to the beginning of the audio,
      * and corresponding to the start of the spoken word.
      * This field is only set if `enable_word_time_offsets=true` and only
      * in the top hypothesis.
@@ -683,7 +683,7 @@ public final class WordInfo extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Time offset relative to the beginning of the audio,
+     * Time offset relative to the beginning of the audio,
      * and corresponding to the start of the spoken word.
      * This field is only set if `enable_word_time_offsets=true` and only
      * in the top hypothesis.
@@ -704,7 +704,7 @@ public final class WordInfo extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Time offset relative to the beginning of the audio,
+     * Time offset relative to the beginning of the audio,
      * and corresponding to the start of the spoken word.
      * This field is only set if `enable_word_time_offsets=true` and only
      * in the top hypothesis.
@@ -731,7 +731,7 @@ public final class WordInfo extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Time offset relative to the beginning of the audio,
+     * Time offset relative to the beginning of the audio,
      * and corresponding to the start of the spoken word.
      * This field is only set if `enable_word_time_offsets=true` and only
      * in the top hypothesis.
@@ -755,7 +755,7 @@ public final class WordInfo extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Time offset relative to the beginning of the audio,
+     * Time offset relative to the beginning of the audio,
      * and corresponding to the start of the spoken word.
      * This field is only set if `enable_word_time_offsets=true` and only
      * in the top hypothesis.
@@ -784,7 +784,7 @@ public final class WordInfo extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Time offset relative to the beginning of the audio,
+     * Time offset relative to the beginning of the audio,
      * and corresponding to the start of the spoken word.
      * This field is only set if `enable_word_time_offsets=true` and only
      * in the top hypothesis.
@@ -809,7 +809,7 @@ public final class WordInfo extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Time offset relative to the beginning of the audio,
+     * Time offset relative to the beginning of the audio,
      * and corresponding to the start of the spoken word.
      * This field is only set if `enable_word_time_offsets=true` and only
      * in the top hypothesis.
@@ -828,7 +828,7 @@ public final class WordInfo extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Time offset relative to the beginning of the audio,
+     * Time offset relative to the beginning of the audio,
      * and corresponding to the start of the spoken word.
      * This field is only set if `enable_word_time_offsets=true` and only
      * in the top hypothesis.
@@ -849,7 +849,7 @@ public final class WordInfo extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Time offset relative to the beginning of the audio,
+     * Time offset relative to the beginning of the audio,
      * and corresponding to the start of the spoken word.
      * This field is only set if `enable_word_time_offsets=true` and only
      * in the top hypothesis.
@@ -886,7 +886,7 @@ public final class WordInfo extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Time offset relative to the beginning of the audio,
+     * Time offset relative to the beginning of the audio,
      * and corresponding to the end of the spoken word.
      * This field is only set if `enable_word_time_offsets=true` and only
      * in the top hypothesis.
@@ -903,7 +903,7 @@ public final class WordInfo extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Time offset relative to the beginning of the audio,
+     * Time offset relative to the beginning of the audio,
      * and corresponding to the end of the spoken word.
      * This field is only set if `enable_word_time_offsets=true` and only
      * in the top hypothesis.
@@ -924,7 +924,7 @@ public final class WordInfo extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Time offset relative to the beginning of the audio,
+     * Time offset relative to the beginning of the audio,
      * and corresponding to the end of the spoken word.
      * This field is only set if `enable_word_time_offsets=true` and only
      * in the top hypothesis.
@@ -951,7 +951,7 @@ public final class WordInfo extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Time offset relative to the beginning of the audio,
+     * Time offset relative to the beginning of the audio,
      * and corresponding to the end of the spoken word.
      * This field is only set if `enable_word_time_offsets=true` and only
      * in the top hypothesis.
@@ -975,7 +975,7 @@ public final class WordInfo extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Time offset relative to the beginning of the audio,
+     * Time offset relative to the beginning of the audio,
      * and corresponding to the end of the spoken word.
      * This field is only set if `enable_word_time_offsets=true` and only
      * in the top hypothesis.
@@ -1004,7 +1004,7 @@ public final class WordInfo extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Time offset relative to the beginning of the audio,
+     * Time offset relative to the beginning of the audio,
      * and corresponding to the end of the spoken word.
      * This field is only set if `enable_word_time_offsets=true` and only
      * in the top hypothesis.
@@ -1029,7 +1029,7 @@ public final class WordInfo extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Time offset relative to the beginning of the audio,
+     * Time offset relative to the beginning of the audio,
      * and corresponding to the end of the spoken word.
      * This field is only set if `enable_word_time_offsets=true` and only
      * in the top hypothesis.
@@ -1048,7 +1048,7 @@ public final class WordInfo extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Time offset relative to the beginning of the audio,
+     * Time offset relative to the beginning of the audio,
      * and corresponding to the end of the spoken word.
      * This field is only set if `enable_word_time_offsets=true` and only
      * in the top hypothesis.
@@ -1069,7 +1069,7 @@ public final class WordInfo extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Time offset relative to the beginning of the audio,
+     * Time offset relative to the beginning of the audio,
      * and corresponding to the end of the spoken word.
      * This field is only set if `enable_word_time_offsets=true` and only
      * in the top hypothesis.
@@ -1101,7 +1101,7 @@ public final class WordInfo extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The word corresponding to this set of information.
+     * The word corresponding to this set of information.
      * </pre>
      *
      * <code>string word = 3;</code>
@@ -1121,7 +1121,7 @@ public final class WordInfo extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The word corresponding to this set of information.
+     * The word corresponding to this set of information.
      * </pre>
      *
      * <code>string word = 3;</code>
@@ -1141,7 +1141,7 @@ public final class WordInfo extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The word corresponding to this set of information.
+     * The word corresponding to this set of information.
      * </pre>
      *
      * <code>string word = 3;</code>
@@ -1159,7 +1159,7 @@ public final class WordInfo extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The word corresponding to this set of information.
+     * The word corresponding to this set of information.
      * </pre>
      *
      * <code>string word = 3;</code>
@@ -1174,7 +1174,7 @@ public final class WordInfo extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The word corresponding to this set of information.
+     * The word corresponding to this set of information.
      * </pre>
      *
      * <code>string word = 3;</code>

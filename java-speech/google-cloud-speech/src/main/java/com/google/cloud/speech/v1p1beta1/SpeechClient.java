@@ -196,9 +196,9 @@ public class SpeechClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param config &#42;Required&#42; Provides information to the recognizer that specifies how to
-   *     process the request.
-   * @param audio &#42;Required&#42; The audio data to be recognized.
+   * @param config Required. Provides information to the recognizer that specifies how to process
+   *     the request.
+   * @param audio Required. The audio data to be recognized.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final RecognizeResponse recognize(RecognitionConfig config, RecognitionAudio audio) {
@@ -283,7 +283,8 @@ public class SpeechClient implements BackgroundResource {
   /**
    * Performs asynchronous speech recognition: receive results via the google.longrunning.Operations
    * interface. Returns either an `Operation.error` or an `Operation.response` which contains a
-   * `LongRunningRecognizeResponse` message.
+   * `LongRunningRecognizeResponse` message. For more information on asynchronous speech
+   * recognition, see the [how-to](https://cloud.google.com/speech-to-text/docs/async-recognize).
    *
    * <p>Sample code:
    *
@@ -305,9 +306,9 @@ public class SpeechClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param config &#42;Required&#42; Provides information to the recognizer that specifies how to
-   *     process the request.
-   * @param audio &#42;Required&#42; The audio data to be recognized.
+   * @param config Required. Provides information to the recognizer that specifies how to process
+   *     the request.
+   * @param audio Required. The audio data to be recognized.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi(
@@ -324,7 +325,8 @@ public class SpeechClient implements BackgroundResource {
   /**
    * Performs asynchronous speech recognition: receive results via the google.longrunning.Operations
    * interface. Returns either an `Operation.error` or an `Operation.response` which contains a
-   * `LongRunningRecognizeResponse` message.
+   * `LongRunningRecognizeResponse` message. For more information on asynchronous speech
+   * recognition, see the [how-to](https://cloud.google.com/speech-to-text/docs/async-recognize).
    *
    * <p>Sample code:
    *
@@ -364,7 +366,8 @@ public class SpeechClient implements BackgroundResource {
   /**
    * Performs asynchronous speech recognition: receive results via the google.longrunning.Operations
    * interface. Returns either an `Operation.error` or an `Operation.response` which contains a
-   * `LongRunningRecognizeResponse` message.
+   * `LongRunningRecognizeResponse` message. For more information on asynchronous speech
+   * recognition, see the [how-to](https://cloud.google.com/speech-to-text/docs/async-recognize).
    *
    * <p>Sample code:
    *
@@ -403,7 +406,8 @@ public class SpeechClient implements BackgroundResource {
   /**
    * Performs asynchronous speech recognition: receive results via the google.longrunning.Operations
    * interface. Returns either an `Operation.error` or an `Operation.response` which contains a
-   * `LongRunningRecognizeResponse` message.
+   * `LongRunningRecognizeResponse` message. For more information on asynchronous speech
+   * recognition, see the [how-to](https://cloud.google.com/speech-to-text/docs/async-recognize).
    *
    * <p>Sample code:
    *

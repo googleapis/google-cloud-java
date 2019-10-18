@@ -29,8 +29,7 @@ public interface RecognitionConfigOrBuilder
    * <pre>
    * Encoding of audio data sent in all `RecognitionAudio` messages.
    * This field is optional for `FLAC` and `WAV` audio files and required
-   * for all other audio formats. For details, see
-   * [AudioEncoding][google.cloud.speech.v1.RecognitionConfig.AudioEncoding].
+   * for all other audio formats. For details, see [AudioEncoding][google.cloud.speech.v1.RecognitionConfig.AudioEncoding].
    * </pre>
    *
    * <code>.google.cloud.speech.v1.RecognitionConfig.AudioEncoding encoding = 1;</code>
@@ -42,8 +41,7 @@ public interface RecognitionConfigOrBuilder
    * <pre>
    * Encoding of audio data sent in all `RecognitionAudio` messages.
    * This field is optional for `FLAC` and `WAV` audio files and required
-   * for all other audio formats. For details, see
-   * [AudioEncoding][google.cloud.speech.v1.RecognitionConfig.AudioEncoding].
+   * for all other audio formats. For details, see [AudioEncoding][google.cloud.speech.v1.RecognitionConfig.AudioEncoding].
    * </pre>
    *
    * <code>.google.cloud.speech.v1.RecognitionConfig.AudioEncoding encoding = 1;</code>
@@ -59,9 +57,8 @@ public interface RecognitionConfigOrBuilder
    * 16000 is optimal. For best results, set the sampling rate of the audio
    * source to 16000 Hz. If that's not possible, use the native sample rate of
    * the audio source (instead of re-sampling).
-   * This field is optional for `FLAC` and `WAV` audio files and required
-   * for all other audio formats. For details, see
-   * [AudioEncoding][google.cloud.speech.v1.RecognitionConfig.AudioEncoding].
+   * This field is optional for FLAC and WAV audio files, but is
+   * required for all other audio formats. For details, see [AudioEncoding][google.cloud.speech.v1.RecognitionConfig.AudioEncoding].
    * </pre>
    *
    * <code>int32 sample_rate_hertz = 2;</code>
@@ -72,7 +69,7 @@ public interface RecognitionConfigOrBuilder
    *
    *
    * <pre>
-   * *Optional* The number of channels in the input audio data.
+   * The number of channels in the input audio data.
    * ONLY set this for MULTI-CHANNEL recognition.
    * Valid values for LINEAR16 and FLAC are `1`-`8`.
    * Valid values for OGG_OPUS are '1'-'254'.
@@ -107,28 +104,30 @@ public interface RecognitionConfigOrBuilder
    *
    *
    * <pre>
-   * *Required* The language of the supplied audio as a
+   * Required. The language of the supplied audio as a
    * [BCP-47](https://www.rfc-editor.org/rfc/bcp/bcp47.txt) language tag.
    * Example: "en-US".
-   * See [Language Support](/speech-to-text/docs/languages)
-   * for a list of the currently supported language codes.
+   * See [Language
+   * Support](https://cloud.google.com/speech-to-text/docs/languages) for a list
+   * of the currently supported language codes.
    * </pre>
    *
-   * <code>string language_code = 3;</code>
+   * <code>string language_code = 3 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   java.lang.String getLanguageCode();
   /**
    *
    *
    * <pre>
-   * *Required* The language of the supplied audio as a
+   * Required. The language of the supplied audio as a
    * [BCP-47](https://www.rfc-editor.org/rfc/bcp/bcp47.txt) language tag.
    * Example: "en-US".
-   * See [Language Support](/speech-to-text/docs/languages)
-   * for a list of the currently supported language codes.
+   * See [Language
+   * Support](https://cloud.google.com/speech-to-text/docs/languages) for a list
+   * of the currently supported language codes.
    * </pre>
    *
-   * <code>string language_code = 3;</code>
+   * <code>string language_code = 3 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   com.google.protobuf.ByteString getLanguageCodeBytes();
 
@@ -136,7 +135,7 @@ public interface RecognitionConfigOrBuilder
    *
    *
    * <pre>
-   * *Optional* Maximum number of recognition hypotheses to be returned.
+   * Maximum number of recognition hypotheses to be returned.
    * Specifically, the maximum number of `SpeechRecognitionAlternative` messages
    * within each `SpeechRecognitionResult`.
    * The server may return fewer than `max_alternatives`.
@@ -152,7 +151,7 @@ public interface RecognitionConfigOrBuilder
    *
    *
    * <pre>
-   * *Optional* If set to `true`, the server will attempt to filter out
+   * If set to `true`, the server will attempt to filter out
    * profanities, replacing all but the initial character in each filtered word
    * with asterisks, e.g. "f***". If set to `false` or omitted, profanities
    * won't be filtered out.
@@ -166,9 +165,11 @@ public interface RecognitionConfigOrBuilder
    *
    *
    * <pre>
-   * *Optional* array of [SpeechContext][google.cloud.speech.v1.SpeechContext].
+   * Array of [SpeechContext][google.cloud.speech.v1.SpeechContext].
    * A means to provide context to assist the speech recognition. For more
-   * information, see [Phrase Hints](/speech-to-text/docs/basics#phrase-hints).
+   * information, see
+   * [speech
+   * adaptation](https://cloud.google.com/speech-to-text/docs/context-strength).
    * </pre>
    *
    * <code>repeated .google.cloud.speech.v1.SpeechContext speech_contexts = 6;</code>
@@ -178,9 +179,11 @@ public interface RecognitionConfigOrBuilder
    *
    *
    * <pre>
-   * *Optional* array of [SpeechContext][google.cloud.speech.v1.SpeechContext].
+   * Array of [SpeechContext][google.cloud.speech.v1.SpeechContext].
    * A means to provide context to assist the speech recognition. For more
-   * information, see [Phrase Hints](/speech-to-text/docs/basics#phrase-hints).
+   * information, see
+   * [speech
+   * adaptation](https://cloud.google.com/speech-to-text/docs/context-strength).
    * </pre>
    *
    * <code>repeated .google.cloud.speech.v1.SpeechContext speech_contexts = 6;</code>
@@ -190,9 +193,11 @@ public interface RecognitionConfigOrBuilder
    *
    *
    * <pre>
-   * *Optional* array of [SpeechContext][google.cloud.speech.v1.SpeechContext].
+   * Array of [SpeechContext][google.cloud.speech.v1.SpeechContext].
    * A means to provide context to assist the speech recognition. For more
-   * information, see [Phrase Hints](/speech-to-text/docs/basics#phrase-hints).
+   * information, see
+   * [speech
+   * adaptation](https://cloud.google.com/speech-to-text/docs/context-strength).
    * </pre>
    *
    * <code>repeated .google.cloud.speech.v1.SpeechContext speech_contexts = 6;</code>
@@ -202,9 +207,11 @@ public interface RecognitionConfigOrBuilder
    *
    *
    * <pre>
-   * *Optional* array of [SpeechContext][google.cloud.speech.v1.SpeechContext].
+   * Array of [SpeechContext][google.cloud.speech.v1.SpeechContext].
    * A means to provide context to assist the speech recognition. For more
-   * information, see [Phrase Hints](/speech-to-text/docs/basics#phrase-hints).
+   * information, see
+   * [speech
+   * adaptation](https://cloud.google.com/speech-to-text/docs/context-strength).
    * </pre>
    *
    * <code>repeated .google.cloud.speech.v1.SpeechContext speech_contexts = 6;</code>
@@ -215,9 +222,11 @@ public interface RecognitionConfigOrBuilder
    *
    *
    * <pre>
-   * *Optional* array of [SpeechContext][google.cloud.speech.v1.SpeechContext].
+   * Array of [SpeechContext][google.cloud.speech.v1.SpeechContext].
    * A means to provide context to assist the speech recognition. For more
-   * information, see [Phrase Hints](/speech-to-text/docs/basics#phrase-hints).
+   * information, see
+   * [speech
+   * adaptation](https://cloud.google.com/speech-to-text/docs/context-strength).
    * </pre>
    *
    * <code>repeated .google.cloud.speech.v1.SpeechContext speech_contexts = 6;</code>
@@ -228,7 +237,7 @@ public interface RecognitionConfigOrBuilder
    *
    *
    * <pre>
-   * *Optional* If `true`, the top result includes a list of words and
+   * If `true`, the top result includes a list of words and
    * the start and end time offsets (timestamps) for those words. If
    * `false`, no word-level time offset information is returned. The default is
    * `false`.
@@ -242,7 +251,7 @@ public interface RecognitionConfigOrBuilder
    *
    *
    * <pre>
-   * *Optional* If 'true', adds punctuation to recognition result hypotheses.
+   * If 'true', adds punctuation to recognition result hypotheses.
    * This feature is only available in select languages. Setting this for
    * requests in other languages has no effect at all.
    * The default 'false' value does not add punctuation to result hypotheses.
@@ -259,7 +268,7 @@ public interface RecognitionConfigOrBuilder
    *
    *
    * <pre>
-   * *Optional* Config to enable speaker diarization and set additional
+   * Config to enable speaker diarization and set additional
    * parameters to make diarization better suited for your application.
    * Note: When this is enabled, we send all the words from the beginning of the
    * audio for the top alternative in every consecutive STREAMING responses.
@@ -276,7 +285,7 @@ public interface RecognitionConfigOrBuilder
    *
    *
    * <pre>
-   * *Optional* Config to enable speaker diarization and set additional
+   * Config to enable speaker diarization and set additional
    * parameters to make diarization better suited for your application.
    * Note: When this is enabled, we send all the words from the beginning of the
    * audio for the top alternative in every consecutive STREAMING responses.
@@ -293,7 +302,7 @@ public interface RecognitionConfigOrBuilder
    *
    *
    * <pre>
-   * *Optional* Config to enable speaker diarization and set additional
+   * Config to enable speaker diarization and set additional
    * parameters to make diarization better suited for your application.
    * Note: When this is enabled, we send all the words from the beginning of the
    * audio for the top alternative in every consecutive STREAMING responses.
@@ -311,7 +320,7 @@ public interface RecognitionConfigOrBuilder
    *
    *
    * <pre>
-   * *Optional* Metadata regarding this request.
+   * Metadata regarding this request.
    * </pre>
    *
    * <code>.google.cloud.speech.v1.RecognitionMetadata metadata = 9;</code>
@@ -321,7 +330,7 @@ public interface RecognitionConfigOrBuilder
    *
    *
    * <pre>
-   * *Optional* Metadata regarding this request.
+   * Metadata regarding this request.
    * </pre>
    *
    * <code>.google.cloud.speech.v1.RecognitionMetadata metadata = 9;</code>
@@ -331,7 +340,7 @@ public interface RecognitionConfigOrBuilder
    *
    *
    * <pre>
-   * *Optional* Metadata regarding this request.
+   * Metadata regarding this request.
    * </pre>
    *
    * <code>.google.cloud.speech.v1.RecognitionMetadata metadata = 9;</code>
@@ -342,7 +351,7 @@ public interface RecognitionConfigOrBuilder
    *
    *
    * <pre>
-   * *Optional* Which model to select for the given request. Select the model
+   * Which model to select for the given request. Select the model
    * best suited to your domain to get best results. If a model is not
    * explicitly specified, then we auto-select a model based on the parameters
    * in the RecognitionConfig.
@@ -383,7 +392,7 @@ public interface RecognitionConfigOrBuilder
    *
    *
    * <pre>
-   * *Optional* Which model to select for the given request. Select the model
+   * Which model to select for the given request. Select the model
    * best suited to your domain to get best results. If a model is not
    * explicitly specified, then we auto-select a model based on the parameters
    * in the RecognitionConfig.
@@ -425,7 +434,7 @@ public interface RecognitionConfigOrBuilder
    *
    *
    * <pre>
-   * *Optional* Set to true to use an enhanced model for speech recognition.
+   * Set to true to use an enhanced model for speech recognition.
    * If `use_enhanced` is set to true and the `model` field is not set, then
    * an appropriate enhanced model is chosen if an enhanced model exists for
    * the audio.

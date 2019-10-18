@@ -136,11 +136,13 @@ public final class LongRunningRecognizeRequest extends com.google.protobuf.Gener
    *
    *
    * <pre>
-   * *Required* Provides information to the recognizer that specifies how to
+   * Required. Provides information to the recognizer that specifies how to
    * process the request.
    * </pre>
    *
-   * <code>.google.cloud.speech.v1.RecognitionConfig config = 1;</code>
+   * <code>
+   * .google.cloud.speech.v1.RecognitionConfig config = 1 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   public boolean hasConfig() {
     return config_ != null;
@@ -149,11 +151,13 @@ public final class LongRunningRecognizeRequest extends com.google.protobuf.Gener
    *
    *
    * <pre>
-   * *Required* Provides information to the recognizer that specifies how to
+   * Required. Provides information to the recognizer that specifies how to
    * process the request.
    * </pre>
    *
-   * <code>.google.cloud.speech.v1.RecognitionConfig config = 1;</code>
+   * <code>
+   * .google.cloud.speech.v1.RecognitionConfig config = 1 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   public com.google.cloud.speech.v1.RecognitionConfig getConfig() {
     return config_ == null
@@ -164,11 +168,13 @@ public final class LongRunningRecognizeRequest extends com.google.protobuf.Gener
    *
    *
    * <pre>
-   * *Required* Provides information to the recognizer that specifies how to
+   * Required. Provides information to the recognizer that specifies how to
    * process the request.
    * </pre>
    *
-   * <code>.google.cloud.speech.v1.RecognitionConfig config = 1;</code>
+   * <code>
+   * .google.cloud.speech.v1.RecognitionConfig config = 1 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   public com.google.cloud.speech.v1.RecognitionConfigOrBuilder getConfigOrBuilder() {
     return getConfig();
@@ -180,10 +186,12 @@ public final class LongRunningRecognizeRequest extends com.google.protobuf.Gener
    *
    *
    * <pre>
-   * *Required* The audio data to be recognized.
+   * Required. The audio data to be recognized.
    * </pre>
    *
-   * <code>.google.cloud.speech.v1.RecognitionAudio audio = 2;</code>
+   * <code>
+   * .google.cloud.speech.v1.RecognitionAudio audio = 2 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   public boolean hasAudio() {
     return audio_ != null;
@@ -192,10 +200,12 @@ public final class LongRunningRecognizeRequest extends com.google.protobuf.Gener
    *
    *
    * <pre>
-   * *Required* The audio data to be recognized.
+   * Required. The audio data to be recognized.
    * </pre>
    *
-   * <code>.google.cloud.speech.v1.RecognitionAudio audio = 2;</code>
+   * <code>
+   * .google.cloud.speech.v1.RecognitionAudio audio = 2 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   public com.google.cloud.speech.v1.RecognitionAudio getAudio() {
     return audio_ == null
@@ -206,10 +216,12 @@ public final class LongRunningRecognizeRequest extends com.google.protobuf.Gener
    *
    *
    * <pre>
-   * *Required* The audio data to be recognized.
+   * Required. The audio data to be recognized.
    * </pre>
    *
-   * <code>.google.cloud.speech.v1.RecognitionAudio audio = 2;</code>
+   * <code>
+   * .google.cloud.speech.v1.RecognitionAudio audio = 2 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   public com.google.cloud.speech.v1.RecognitionAudioOrBuilder getAudioOrBuilder() {
     return getAudio();
@@ -585,11 +597,13 @@ public final class LongRunningRecognizeRequest extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * *Required* Provides information to the recognizer that specifies how to
+     * Required. Provides information to the recognizer that specifies how to
      * process the request.
      * </pre>
      *
-     * <code>.google.cloud.speech.v1.RecognitionConfig config = 1;</code>
+     * <code>
+     * .google.cloud.speech.v1.RecognitionConfig config = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public boolean hasConfig() {
       return configBuilder_ != null || config_ != null;
@@ -598,11 +612,13 @@ public final class LongRunningRecognizeRequest extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * *Required* Provides information to the recognizer that specifies how to
+     * Required. Provides information to the recognizer that specifies how to
      * process the request.
      * </pre>
      *
-     * <code>.google.cloud.speech.v1.RecognitionConfig config = 1;</code>
+     * <code>
+     * .google.cloud.speech.v1.RecognitionConfig config = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public com.google.cloud.speech.v1.RecognitionConfig getConfig() {
       if (configBuilder_ == null) {
@@ -617,11 +633,13 @@ public final class LongRunningRecognizeRequest extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * *Required* Provides information to the recognizer that specifies how to
+     * Required. Provides information to the recognizer that specifies how to
      * process the request.
      * </pre>
      *
-     * <code>.google.cloud.speech.v1.RecognitionConfig config = 1;</code>
+     * <code>
+     * .google.cloud.speech.v1.RecognitionConfig config = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder setConfig(com.google.cloud.speech.v1.RecognitionConfig value) {
       if (configBuilder_ == null) {
@@ -640,11 +658,13 @@ public final class LongRunningRecognizeRequest extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * *Required* Provides information to the recognizer that specifies how to
+     * Required. Provides information to the recognizer that specifies how to
      * process the request.
      * </pre>
      *
-     * <code>.google.cloud.speech.v1.RecognitionConfig config = 1;</code>
+     * <code>
+     * .google.cloud.speech.v1.RecognitionConfig config = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder setConfig(com.google.cloud.speech.v1.RecognitionConfig.Builder builderForValue) {
       if (configBuilder_ == null) {
@@ -660,11 +680,13 @@ public final class LongRunningRecognizeRequest extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * *Required* Provides information to the recognizer that specifies how to
+     * Required. Provides information to the recognizer that specifies how to
      * process the request.
      * </pre>
      *
-     * <code>.google.cloud.speech.v1.RecognitionConfig config = 1;</code>
+     * <code>
+     * .google.cloud.speech.v1.RecognitionConfig config = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder mergeConfig(com.google.cloud.speech.v1.RecognitionConfig value) {
       if (configBuilder_ == null) {
@@ -687,11 +709,13 @@ public final class LongRunningRecognizeRequest extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * *Required* Provides information to the recognizer that specifies how to
+     * Required. Provides information to the recognizer that specifies how to
      * process the request.
      * </pre>
      *
-     * <code>.google.cloud.speech.v1.RecognitionConfig config = 1;</code>
+     * <code>
+     * .google.cloud.speech.v1.RecognitionConfig config = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder clearConfig() {
       if (configBuilder_ == null) {
@@ -708,11 +732,13 @@ public final class LongRunningRecognizeRequest extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * *Required* Provides information to the recognizer that specifies how to
+     * Required. Provides information to the recognizer that specifies how to
      * process the request.
      * </pre>
      *
-     * <code>.google.cloud.speech.v1.RecognitionConfig config = 1;</code>
+     * <code>
+     * .google.cloud.speech.v1.RecognitionConfig config = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public com.google.cloud.speech.v1.RecognitionConfig.Builder getConfigBuilder() {
 
@@ -723,11 +749,13 @@ public final class LongRunningRecognizeRequest extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * *Required* Provides information to the recognizer that specifies how to
+     * Required. Provides information to the recognizer that specifies how to
      * process the request.
      * </pre>
      *
-     * <code>.google.cloud.speech.v1.RecognitionConfig config = 1;</code>
+     * <code>
+     * .google.cloud.speech.v1.RecognitionConfig config = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public com.google.cloud.speech.v1.RecognitionConfigOrBuilder getConfigOrBuilder() {
       if (configBuilder_ != null) {
@@ -742,11 +770,13 @@ public final class LongRunningRecognizeRequest extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * *Required* Provides information to the recognizer that specifies how to
+     * Required. Provides information to the recognizer that specifies how to
      * process the request.
      * </pre>
      *
-     * <code>.google.cloud.speech.v1.RecognitionConfig config = 1;</code>
+     * <code>
+     * .google.cloud.speech.v1.RecognitionConfig config = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.speech.v1.RecognitionConfig,
@@ -775,10 +805,12 @@ public final class LongRunningRecognizeRequest extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * *Required* The audio data to be recognized.
+     * Required. The audio data to be recognized.
      * </pre>
      *
-     * <code>.google.cloud.speech.v1.RecognitionAudio audio = 2;</code>
+     * <code>
+     * .google.cloud.speech.v1.RecognitionAudio audio = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public boolean hasAudio() {
       return audioBuilder_ != null || audio_ != null;
@@ -787,10 +819,12 @@ public final class LongRunningRecognizeRequest extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * *Required* The audio data to be recognized.
+     * Required. The audio data to be recognized.
      * </pre>
      *
-     * <code>.google.cloud.speech.v1.RecognitionAudio audio = 2;</code>
+     * <code>
+     * .google.cloud.speech.v1.RecognitionAudio audio = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public com.google.cloud.speech.v1.RecognitionAudio getAudio() {
       if (audioBuilder_ == null) {
@@ -805,10 +839,12 @@ public final class LongRunningRecognizeRequest extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * *Required* The audio data to be recognized.
+     * Required. The audio data to be recognized.
      * </pre>
      *
-     * <code>.google.cloud.speech.v1.RecognitionAudio audio = 2;</code>
+     * <code>
+     * .google.cloud.speech.v1.RecognitionAudio audio = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder setAudio(com.google.cloud.speech.v1.RecognitionAudio value) {
       if (audioBuilder_ == null) {
@@ -827,10 +863,12 @@ public final class LongRunningRecognizeRequest extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * *Required* The audio data to be recognized.
+     * Required. The audio data to be recognized.
      * </pre>
      *
-     * <code>.google.cloud.speech.v1.RecognitionAudio audio = 2;</code>
+     * <code>
+     * .google.cloud.speech.v1.RecognitionAudio audio = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder setAudio(com.google.cloud.speech.v1.RecognitionAudio.Builder builderForValue) {
       if (audioBuilder_ == null) {
@@ -846,10 +884,12 @@ public final class LongRunningRecognizeRequest extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * *Required* The audio data to be recognized.
+     * Required. The audio data to be recognized.
      * </pre>
      *
-     * <code>.google.cloud.speech.v1.RecognitionAudio audio = 2;</code>
+     * <code>
+     * .google.cloud.speech.v1.RecognitionAudio audio = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder mergeAudio(com.google.cloud.speech.v1.RecognitionAudio value) {
       if (audioBuilder_ == null) {
@@ -872,10 +912,12 @@ public final class LongRunningRecognizeRequest extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * *Required* The audio data to be recognized.
+     * Required. The audio data to be recognized.
      * </pre>
      *
-     * <code>.google.cloud.speech.v1.RecognitionAudio audio = 2;</code>
+     * <code>
+     * .google.cloud.speech.v1.RecognitionAudio audio = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder clearAudio() {
       if (audioBuilder_ == null) {
@@ -892,10 +934,12 @@ public final class LongRunningRecognizeRequest extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * *Required* The audio data to be recognized.
+     * Required. The audio data to be recognized.
      * </pre>
      *
-     * <code>.google.cloud.speech.v1.RecognitionAudio audio = 2;</code>
+     * <code>
+     * .google.cloud.speech.v1.RecognitionAudio audio = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public com.google.cloud.speech.v1.RecognitionAudio.Builder getAudioBuilder() {
 
@@ -906,10 +950,12 @@ public final class LongRunningRecognizeRequest extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * *Required* The audio data to be recognized.
+     * Required. The audio data to be recognized.
      * </pre>
      *
-     * <code>.google.cloud.speech.v1.RecognitionAudio audio = 2;</code>
+     * <code>
+     * .google.cloud.speech.v1.RecognitionAudio audio = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public com.google.cloud.speech.v1.RecognitionAudioOrBuilder getAudioOrBuilder() {
       if (audioBuilder_ != null) {
@@ -924,10 +970,12 @@ public final class LongRunningRecognizeRequest extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * *Required* The audio data to be recognized.
+     * Required. The audio data to be recognized.
      * </pre>
      *
-     * <code>.google.cloud.speech.v1.RecognitionAudio audio = 2;</code>
+     * <code>
+     * .google.cloud.speech.v1.RecognitionAudio audio = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.speech.v1.RecognitionAudio,

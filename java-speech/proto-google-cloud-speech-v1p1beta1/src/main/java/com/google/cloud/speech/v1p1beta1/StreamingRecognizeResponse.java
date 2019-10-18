@@ -319,8 +319,8 @@ public final class StreamingRecognizeResponse extends com.google.protobuf.Genera
    *
    *
    * <pre>
-   * Output only. If set, returns a [google.rpc.Status][google.rpc.Status]
-   * message that specifies the error for the operation.
+   * If set, returns a [google.rpc.Status][google.rpc.Status] message that
+   * specifies the error for the operation.
    * </pre>
    *
    * <code>.google.rpc.Status error = 1;</code>
@@ -332,8 +332,8 @@ public final class StreamingRecognizeResponse extends com.google.protobuf.Genera
    *
    *
    * <pre>
-   * Output only. If set, returns a [google.rpc.Status][google.rpc.Status]
-   * message that specifies the error for the operation.
+   * If set, returns a [google.rpc.Status][google.rpc.Status] message that
+   * specifies the error for the operation.
    * </pre>
    *
    * <code>.google.rpc.Status error = 1;</code>
@@ -345,8 +345,8 @@ public final class StreamingRecognizeResponse extends com.google.protobuf.Genera
    *
    *
    * <pre>
-   * Output only. If set, returns a [google.rpc.Status][google.rpc.Status]
-   * message that specifies the error for the operation.
+   * If set, returns a [google.rpc.Status][google.rpc.Status] message that
+   * specifies the error for the operation.
    * </pre>
    *
    * <code>.google.rpc.Status error = 1;</code>
@@ -361,7 +361,7 @@ public final class StreamingRecognizeResponse extends com.google.protobuf.Genera
    *
    *
    * <pre>
-   * Output only. This repeated list contains zero or more results that
+   * This repeated list contains zero or more results that
    * correspond to consecutive portions of the audio currently being processed.
    * It contains zero or one `is_final=true` result (the newly settled portion),
    * followed by zero or more `is_final=false` results (the interim results).
@@ -377,7 +377,7 @@ public final class StreamingRecognizeResponse extends com.google.protobuf.Genera
    *
    *
    * <pre>
-   * Output only. This repeated list contains zero or more results that
+   * This repeated list contains zero or more results that
    * correspond to consecutive portions of the audio currently being processed.
    * It contains zero or one `is_final=true` result (the newly settled portion),
    * followed by zero or more `is_final=false` results (the interim results).
@@ -394,7 +394,7 @@ public final class StreamingRecognizeResponse extends com.google.protobuf.Genera
    *
    *
    * <pre>
-   * Output only. This repeated list contains zero or more results that
+   * This repeated list contains zero or more results that
    * correspond to consecutive portions of the audio currently being processed.
    * It contains zero or one `is_final=true` result (the newly settled portion),
    * followed by zero or more `is_final=false` results (the interim results).
@@ -409,7 +409,7 @@ public final class StreamingRecognizeResponse extends com.google.protobuf.Genera
    *
    *
    * <pre>
-   * Output only. This repeated list contains zero or more results that
+   * This repeated list contains zero or more results that
    * correspond to consecutive portions of the audio currently being processed.
    * It contains zero or one `is_final=true` result (the newly settled portion),
    * followed by zero or more `is_final=false` results (the interim results).
@@ -424,7 +424,7 @@ public final class StreamingRecognizeResponse extends com.google.protobuf.Genera
    *
    *
    * <pre>
-   * Output only. This repeated list contains zero or more results that
+   * This repeated list contains zero or more results that
    * correspond to consecutive portions of the audio currently being processed.
    * It contains zero or one `is_final=true` result (the newly settled portion),
    * followed by zero or more `is_final=false` results (the interim results).
@@ -443,7 +443,7 @@ public final class StreamingRecognizeResponse extends com.google.protobuf.Genera
    *
    *
    * <pre>
-   * Output only. Indicates the type of speech event.
+   * Indicates the type of speech event.
    * </pre>
    *
    * <code>
@@ -457,7 +457,7 @@ public final class StreamingRecognizeResponse extends com.google.protobuf.Genera
    *
    *
    * <pre>
-   * Output only. Indicates the type of speech event.
+   * Indicates the type of speech event.
    * </pre>
    *
    * <code>
@@ -932,8 +932,8 @@ public final class StreamingRecognizeResponse extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * Output only. If set, returns a [google.rpc.Status][google.rpc.Status]
-     * message that specifies the error for the operation.
+     * If set, returns a [google.rpc.Status][google.rpc.Status] message that
+     * specifies the error for the operation.
      * </pre>
      *
      * <code>.google.rpc.Status error = 1;</code>
@@ -945,8 +945,8 @@ public final class StreamingRecognizeResponse extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * Output only. If set, returns a [google.rpc.Status][google.rpc.Status]
-     * message that specifies the error for the operation.
+     * If set, returns a [google.rpc.Status][google.rpc.Status] message that
+     * specifies the error for the operation.
      * </pre>
      *
      * <code>.google.rpc.Status error = 1;</code>
@@ -962,8 +962,8 @@ public final class StreamingRecognizeResponse extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * Output only. If set, returns a [google.rpc.Status][google.rpc.Status]
-     * message that specifies the error for the operation.
+     * If set, returns a [google.rpc.Status][google.rpc.Status] message that
+     * specifies the error for the operation.
      * </pre>
      *
      * <code>.google.rpc.Status error = 1;</code>
@@ -985,8 +985,8 @@ public final class StreamingRecognizeResponse extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * Output only. If set, returns a [google.rpc.Status][google.rpc.Status]
-     * message that specifies the error for the operation.
+     * If set, returns a [google.rpc.Status][google.rpc.Status] message that
+     * specifies the error for the operation.
      * </pre>
      *
      * <code>.google.rpc.Status error = 1;</code>
@@ -1005,8 +1005,8 @@ public final class StreamingRecognizeResponse extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * Output only. If set, returns a [google.rpc.Status][google.rpc.Status]
-     * message that specifies the error for the operation.
+     * If set, returns a [google.rpc.Status][google.rpc.Status] message that
+     * specifies the error for the operation.
      * </pre>
      *
      * <code>.google.rpc.Status error = 1;</code>
@@ -1029,8 +1029,8 @@ public final class StreamingRecognizeResponse extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * Output only. If set, returns a [google.rpc.Status][google.rpc.Status]
-     * message that specifies the error for the operation.
+     * If set, returns a [google.rpc.Status][google.rpc.Status] message that
+     * specifies the error for the operation.
      * </pre>
      *
      * <code>.google.rpc.Status error = 1;</code>
@@ -1050,8 +1050,8 @@ public final class StreamingRecognizeResponse extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * Output only. If set, returns a [google.rpc.Status][google.rpc.Status]
-     * message that specifies the error for the operation.
+     * If set, returns a [google.rpc.Status][google.rpc.Status] message that
+     * specifies the error for the operation.
      * </pre>
      *
      * <code>.google.rpc.Status error = 1;</code>
@@ -1065,8 +1065,8 @@ public final class StreamingRecognizeResponse extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * Output only. If set, returns a [google.rpc.Status][google.rpc.Status]
-     * message that specifies the error for the operation.
+     * If set, returns a [google.rpc.Status][google.rpc.Status] message that
+     * specifies the error for the operation.
      * </pre>
      *
      * <code>.google.rpc.Status error = 1;</code>
@@ -1082,8 +1082,8 @@ public final class StreamingRecognizeResponse extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * Output only. If set, returns a [google.rpc.Status][google.rpc.Status]
-     * message that specifies the error for the operation.
+     * If set, returns a [google.rpc.Status][google.rpc.Status] message that
+     * specifies the error for the operation.
      * </pre>
      *
      * <code>.google.rpc.Status error = 1;</code>
@@ -1124,7 +1124,7 @@ public final class StreamingRecognizeResponse extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * Output only. This repeated list contains zero or more results that
+     * This repeated list contains zero or more results that
      * correspond to consecutive portions of the audio currently being processed.
      * It contains zero or one `is_final=true` result (the newly settled portion),
      * followed by zero or more `is_final=false` results (the interim results).
@@ -1144,7 +1144,7 @@ public final class StreamingRecognizeResponse extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * Output only. This repeated list contains zero or more results that
+     * This repeated list contains zero or more results that
      * correspond to consecutive portions of the audio currently being processed.
      * It contains zero or one `is_final=true` result (the newly settled portion),
      * followed by zero or more `is_final=false` results (the interim results).
@@ -1163,7 +1163,7 @@ public final class StreamingRecognizeResponse extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * Output only. This repeated list contains zero or more results that
+     * This repeated list contains zero or more results that
      * correspond to consecutive portions of the audio currently being processed.
      * It contains zero or one `is_final=true` result (the newly settled portion),
      * followed by zero or more `is_final=false` results (the interim results).
@@ -1182,7 +1182,7 @@ public final class StreamingRecognizeResponse extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * Output only. This repeated list contains zero or more results that
+     * This repeated list contains zero or more results that
      * correspond to consecutive portions of the audio currently being processed.
      * It contains zero or one `is_final=true` result (the newly settled portion),
      * followed by zero or more `is_final=false` results (the interim results).
@@ -1208,7 +1208,7 @@ public final class StreamingRecognizeResponse extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * Output only. This repeated list contains zero or more results that
+     * This repeated list contains zero or more results that
      * correspond to consecutive portions of the audio currently being processed.
      * It contains zero or one `is_final=true` result (the newly settled portion),
      * followed by zero or more `is_final=false` results (the interim results).
@@ -1232,7 +1232,7 @@ public final class StreamingRecognizeResponse extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * Output only. This repeated list contains zero or more results that
+     * This repeated list contains zero or more results that
      * correspond to consecutive portions of the audio currently being processed.
      * It contains zero or one `is_final=true` result (the newly settled portion),
      * followed by zero or more `is_final=false` results (the interim results).
@@ -1257,7 +1257,7 @@ public final class StreamingRecognizeResponse extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * Output only. This repeated list contains zero or more results that
+     * This repeated list contains zero or more results that
      * correspond to consecutive portions of the audio currently being processed.
      * It contains zero or one `is_final=true` result (the newly settled portion),
      * followed by zero or more `is_final=false` results (the interim results).
@@ -1283,7 +1283,7 @@ public final class StreamingRecognizeResponse extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * Output only. This repeated list contains zero or more results that
+     * This repeated list contains zero or more results that
      * correspond to consecutive portions of the audio currently being processed.
      * It contains zero or one `is_final=true` result (the newly settled portion),
      * followed by zero or more `is_final=false` results (the interim results).
@@ -1306,7 +1306,7 @@ public final class StreamingRecognizeResponse extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * Output only. This repeated list contains zero or more results that
+     * This repeated list contains zero or more results that
      * correspond to consecutive portions of the audio currently being processed.
      * It contains zero or one `is_final=true` result (the newly settled portion),
      * followed by zero or more `is_final=false` results (the interim results).
@@ -1330,7 +1330,7 @@ public final class StreamingRecognizeResponse extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * Output only. This repeated list contains zero or more results that
+     * This repeated list contains zero or more results that
      * correspond to consecutive portions of the audio currently being processed.
      * It contains zero or one `is_final=true` result (the newly settled portion),
      * followed by zero or more `is_final=false` results (the interim results).
@@ -1354,7 +1354,7 @@ public final class StreamingRecognizeResponse extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * Output only. This repeated list contains zero or more results that
+     * This repeated list contains zero or more results that
      * correspond to consecutive portions of the audio currently being processed.
      * It contains zero or one `is_final=true` result (the newly settled portion),
      * followed by zero or more `is_final=false` results (the interim results).
@@ -1376,7 +1376,7 @@ public final class StreamingRecognizeResponse extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * Output only. This repeated list contains zero or more results that
+     * This repeated list contains zero or more results that
      * correspond to consecutive portions of the audio currently being processed.
      * It contains zero or one `is_final=true` result (the newly settled portion),
      * followed by zero or more `is_final=false` results (the interim results).
@@ -1398,7 +1398,7 @@ public final class StreamingRecognizeResponse extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * Output only. This repeated list contains zero or more results that
+     * This repeated list contains zero or more results that
      * correspond to consecutive portions of the audio currently being processed.
      * It contains zero or one `is_final=true` result (the newly settled portion),
      * followed by zero or more `is_final=false` results (the interim results).
@@ -1414,7 +1414,7 @@ public final class StreamingRecognizeResponse extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * Output only. This repeated list contains zero or more results that
+     * This repeated list contains zero or more results that
      * correspond to consecutive portions of the audio currently being processed.
      * It contains zero or one `is_final=true` result (the newly settled portion),
      * followed by zero or more `is_final=false` results (the interim results).
@@ -1434,7 +1434,7 @@ public final class StreamingRecognizeResponse extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * Output only. This repeated list contains zero or more results that
+     * This repeated list contains zero or more results that
      * correspond to consecutive portions of the audio currently being processed.
      * It contains zero or one `is_final=true` result (the newly settled portion),
      * followed by zero or more `is_final=false` results (the interim results).
@@ -1455,7 +1455,7 @@ public final class StreamingRecognizeResponse extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * Output only. This repeated list contains zero or more results that
+     * This repeated list contains zero or more results that
      * correspond to consecutive portions of the audio currently being processed.
      * It contains zero or one `is_final=true` result (the newly settled portion),
      * followed by zero or more `is_final=false` results (the interim results).
@@ -1473,7 +1473,7 @@ public final class StreamingRecognizeResponse extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * Output only. This repeated list contains zero or more results that
+     * This repeated list contains zero or more results that
      * correspond to consecutive portions of the audio currently being processed.
      * It contains zero or one `is_final=true` result (the newly settled portion),
      * followed by zero or more `is_final=false` results (the interim results).
@@ -1492,7 +1492,7 @@ public final class StreamingRecognizeResponse extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * Output only. This repeated list contains zero or more results that
+     * This repeated list contains zero or more results that
      * correspond to consecutive portions of the audio currently being processed.
      * It contains zero or one `is_final=true` result (the newly settled portion),
      * followed by zero or more `is_final=false` results (the interim results).
@@ -1527,7 +1527,7 @@ public final class StreamingRecognizeResponse extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * Output only. Indicates the type of speech event.
+     * Indicates the type of speech event.
      * </pre>
      *
      * <code>
@@ -1541,7 +1541,7 @@ public final class StreamingRecognizeResponse extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * Output only. Indicates the type of speech event.
+     * Indicates the type of speech event.
      * </pre>
      *
      * <code>
@@ -1557,7 +1557,7 @@ public final class StreamingRecognizeResponse extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * Output only. Indicates the type of speech event.
+     * Indicates the type of speech event.
      * </pre>
      *
      * <code>
@@ -1579,7 +1579,7 @@ public final class StreamingRecognizeResponse extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * Output only. Indicates the type of speech event.
+     * Indicates the type of speech event.
      * </pre>
      *
      * <code>
@@ -1600,7 +1600,7 @@ public final class StreamingRecognizeResponse extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * Output only. Indicates the type of speech event.
+     * Indicates the type of speech event.
      * </pre>
      *
      * <code>

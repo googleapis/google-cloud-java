@@ -27,33 +27,39 @@ public interface StreamingRecognitionConfigOrBuilder
    *
    *
    * <pre>
-   * *Required* Provides information to the recognizer that specifies how to
+   * Required. Provides information to the recognizer that specifies how to
    * process the request.
    * </pre>
    *
-   * <code>.google.cloud.speech.v1.RecognitionConfig config = 1;</code>
+   * <code>
+   * .google.cloud.speech.v1.RecognitionConfig config = 1 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   boolean hasConfig();
   /**
    *
    *
    * <pre>
-   * *Required* Provides information to the recognizer that specifies how to
+   * Required. Provides information to the recognizer that specifies how to
    * process the request.
    * </pre>
    *
-   * <code>.google.cloud.speech.v1.RecognitionConfig config = 1;</code>
+   * <code>
+   * .google.cloud.speech.v1.RecognitionConfig config = 1 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   com.google.cloud.speech.v1.RecognitionConfig getConfig();
   /**
    *
    *
    * <pre>
-   * *Required* Provides information to the recognizer that specifies how to
+   * Required. Provides information to the recognizer that specifies how to
    * process the request.
    * </pre>
    *
-   * <code>.google.cloud.speech.v1.RecognitionConfig config = 1;</code>
+   * <code>
+   * .google.cloud.speech.v1.RecognitionConfig config = 1 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   com.google.cloud.speech.v1.RecognitionConfigOrBuilder getConfigOrBuilder();
 
@@ -61,7 +67,7 @@ public interface StreamingRecognitionConfigOrBuilder
    *
    *
    * <pre>
-   * *Optional* If `false` or omitted, the recognizer will perform continuous
+   * If `false` or omitted, the recognizer will perform continuous
    * recognition (continuing to wait for and process audio even if the user
    * pauses speaking) until the client closes the input stream (gRPC API) or
    * until the maximum time limit has been reached. May return multiple
@@ -81,7 +87,7 @@ public interface StreamingRecognitionConfigOrBuilder
    *
    *
    * <pre>
-   * *Optional* If `true`, interim results (tentative hypotheses) may be
+   * If `true`, interim results (tentative hypotheses) may be
    * returned as they become available (these interim results are indicated with
    * the `is_final=false` flag).
    * If `false` or omitted, only `is_final=true` result(s) are returned.

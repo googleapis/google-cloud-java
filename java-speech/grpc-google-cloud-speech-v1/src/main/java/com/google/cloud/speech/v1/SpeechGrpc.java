@@ -254,6 +254,8 @@ public final class SpeechGrpc {
      * google.longrunning.Operations interface. Returns either an
      * `Operation.error` or an `Operation.response` which contains
      * a `LongRunningRecognizeResponse` message.
+     * For more information on asynchronous speech recognition, see the
+     * [how-to](https://cloud.google.com/speech-to-text/docs/async-recognize).
      * </pre>
      */
     public void longRunningRecognize(
@@ -350,6 +352,8 @@ public final class SpeechGrpc {
      * google.longrunning.Operations interface. Returns either an
      * `Operation.error` or an `Operation.response` which contains
      * a `LongRunningRecognizeResponse` message.
+     * For more information on asynchronous speech recognition, see the
+     * [how-to](https://cloud.google.com/speech-to-text/docs/async-recognize).
      * </pre>
      */
     public void longRunningRecognize(
@@ -422,6 +426,8 @@ public final class SpeechGrpc {
      * google.longrunning.Operations interface. Returns either an
      * `Operation.error` or an `Operation.response` which contains
      * a `LongRunningRecognizeResponse` message.
+     * For more information on asynchronous speech recognition, see the
+     * [how-to](https://cloud.google.com/speech-to-text/docs/async-recognize).
      * </pre>
      */
     public com.google.longrunning.Operation longRunningRecognize(
@@ -475,6 +481,8 @@ public final class SpeechGrpc {
      * google.longrunning.Operations interface. Returns either an
      * `Operation.error` or an `Operation.response` which contains
      * a `LongRunningRecognizeResponse` message.
+     * For more information on asynchronous speech recognition, see the
+     * [how-to](https://cloud.google.com/speech-to-text/docs/async-recognize).
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>

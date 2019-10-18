@@ -196,8 +196,9 @@ public interface RecognitionMetadataOrBuilder
    * unique users using the service.
    * </pre>
    *
-   * <code>int64 obfuscated_id = 9;</code>
+   * <code>int64 obfuscated_id = 9 [deprecated = true];</code>
    */
+  @java.lang.Deprecated
   long getObfuscatedId();
 
   /**

@@ -27,33 +27,39 @@ public interface LongRunningRecognizeRequestOrBuilder
    *
    *
    * <pre>
-   * *Required* Provides information to the recognizer that specifies how to
+   * Required. Provides information to the recognizer that specifies how to
    * process the request.
    * </pre>
    *
-   * <code>.google.cloud.speech.v1.RecognitionConfig config = 1;</code>
+   * <code>
+   * .google.cloud.speech.v1.RecognitionConfig config = 1 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   boolean hasConfig();
   /**
    *
    *
    * <pre>
-   * *Required* Provides information to the recognizer that specifies how to
+   * Required. Provides information to the recognizer that specifies how to
    * process the request.
    * </pre>
    *
-   * <code>.google.cloud.speech.v1.RecognitionConfig config = 1;</code>
+   * <code>
+   * .google.cloud.speech.v1.RecognitionConfig config = 1 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   com.google.cloud.speech.v1.RecognitionConfig getConfig();
   /**
    *
    *
    * <pre>
-   * *Required* Provides information to the recognizer that specifies how to
+   * Required. Provides information to the recognizer that specifies how to
    * process the request.
    * </pre>
    *
-   * <code>.google.cloud.speech.v1.RecognitionConfig config = 1;</code>
+   * <code>
+   * .google.cloud.speech.v1.RecognitionConfig config = 1 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   com.google.cloud.speech.v1.RecognitionConfigOrBuilder getConfigOrBuilder();
 
@@ -61,30 +67,36 @@ public interface LongRunningRecognizeRequestOrBuilder
    *
    *
    * <pre>
-   * *Required* The audio data to be recognized.
+   * Required. The audio data to be recognized.
    * </pre>
    *
-   * <code>.google.cloud.speech.v1.RecognitionAudio audio = 2;</code>
+   * <code>
+   * .google.cloud.speech.v1.RecognitionAudio audio = 2 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   boolean hasAudio();
   /**
    *
    *
    * <pre>
-   * *Required* The audio data to be recognized.
+   * Required. The audio data to be recognized.
    * </pre>
    *
-   * <code>.google.cloud.speech.v1.RecognitionAudio audio = 2;</code>
+   * <code>
+   * .google.cloud.speech.v1.RecognitionAudio audio = 2 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   com.google.cloud.speech.v1.RecognitionAudio getAudio();
   /**
    *
    *
    * <pre>
-   * *Required* The audio data to be recognized.
+   * Required. The audio data to be recognized.
    * </pre>
    *
-   * <code>.google.cloud.speech.v1.RecognitionAudio audio = 2;</code>
+   * <code>
+   * .google.cloud.speech.v1.RecognitionAudio audio = 2 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   com.google.cloud.speech.v1.RecognitionAudioOrBuilder getAudioOrBuilder();
 }

@@ -27,7 +27,7 @@ public interface LongRunningRecognizeResponseOrBuilder
    *
    *
    * <pre>
-   * Output only. Sequential list of transcription results corresponding to
+   * Sequential list of transcription results corresponding to
    * sequential portions of audio.
    * </pre>
    *
@@ -38,7 +38,7 @@ public interface LongRunningRecognizeResponseOrBuilder
    *
    *
    * <pre>
-   * Output only. Sequential list of transcription results corresponding to
+   * Sequential list of transcription results corresponding to
    * sequential portions of audio.
    * </pre>
    *
@@ -49,7 +49,7 @@ public interface LongRunningRecognizeResponseOrBuilder
    *
    *
    * <pre>
-   * Output only. Sequential list of transcription results corresponding to
+   * Sequential list of transcription results corresponding to
    * sequential portions of audio.
    * </pre>
    *
@@ -60,7 +60,7 @@ public interface LongRunningRecognizeResponseOrBuilder
    *
    *
    * <pre>
-   * Output only. Sequential list of transcription results corresponding to
+   * Sequential list of transcription results corresponding to
    * sequential portions of audio.
    * </pre>
    *
@@ -72,7 +72,7 @@ public interface LongRunningRecognizeResponseOrBuilder
    *
    *
    * <pre>
-   * Output only. Sequential list of transcription results corresponding to
+   * Sequential list of transcription results corresponding to
    * sequential portions of audio.
    * </pre>
    *

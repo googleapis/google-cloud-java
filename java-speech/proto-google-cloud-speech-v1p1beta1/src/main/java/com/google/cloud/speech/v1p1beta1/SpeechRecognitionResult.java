@@ -137,7 +137,7 @@ public final class SpeechRecognitionResult extends com.google.protobuf.Generated
    *
    *
    * <pre>
-   * Output only. May contain one or more recognition hypotheses (up to the
+   * May contain one or more recognition hypotheses (up to the
    * maximum specified in `max_alternatives`).
    * These alternatives are ordered in terms of accuracy, with the top (first)
    * alternative being the most probable, as ranked by the recognizer.
@@ -154,7 +154,7 @@ public final class SpeechRecognitionResult extends com.google.protobuf.Generated
    *
    *
    * <pre>
-   * Output only. May contain one or more recognition hypotheses (up to the
+   * May contain one or more recognition hypotheses (up to the
    * maximum specified in `max_alternatives`).
    * These alternatives are ordered in terms of accuracy, with the top (first)
    * alternative being the most probable, as ranked by the recognizer.
@@ -172,7 +172,7 @@ public final class SpeechRecognitionResult extends com.google.protobuf.Generated
    *
    *
    * <pre>
-   * Output only. May contain one or more recognition hypotheses (up to the
+   * May contain one or more recognition hypotheses (up to the
    * maximum specified in `max_alternatives`).
    * These alternatives are ordered in terms of accuracy, with the top (first)
    * alternative being the most probable, as ranked by the recognizer.
@@ -188,7 +188,7 @@ public final class SpeechRecognitionResult extends com.google.protobuf.Generated
    *
    *
    * <pre>
-   * Output only. May contain one or more recognition hypotheses (up to the
+   * May contain one or more recognition hypotheses (up to the
    * maximum specified in `max_alternatives`).
    * These alternatives are ordered in terms of accuracy, with the top (first)
    * alternative being the most probable, as ranked by the recognizer.
@@ -204,7 +204,7 @@ public final class SpeechRecognitionResult extends com.google.protobuf.Generated
    *
    *
    * <pre>
-   * Output only. May contain one or more recognition hypotheses (up to the
+   * May contain one or more recognition hypotheses (up to the
    * maximum specified in `max_alternatives`).
    * These alternatives are ordered in terms of accuracy, with the top (first)
    * alternative being the most probable, as ranked by the recognizer.
@@ -241,10 +241,9 @@ public final class SpeechRecognitionResult extends com.google.protobuf.Generated
    *
    *
    * <pre>
-   * Output only. The
-   * [BCP-47](https://www.rfc-editor.org/rfc/bcp/bcp47.txt) language tag of the
-   * language in this result. This language code was detected to have the most
-   * likelihood of being spoken in the audio.
+   * The [BCP-47](https://www.rfc-editor.org/rfc/bcp/bcp47.txt) language tag
+   * of the language in this result. This language code was detected to have
+   * the most likelihood of being spoken in the audio.
    * </pre>
    *
    * <code>string language_code = 5;</code>
@@ -264,10 +263,9 @@ public final class SpeechRecognitionResult extends com.google.protobuf.Generated
    *
    *
    * <pre>
-   * Output only. The
-   * [BCP-47](https://www.rfc-editor.org/rfc/bcp/bcp47.txt) language tag of the
-   * language in this result. This language code was detected to have the most
-   * likelihood of being spoken in the audio.
+   * The [BCP-47](https://www.rfc-editor.org/rfc/bcp/bcp47.txt) language tag
+   * of the language in this result. This language code was detected to have
+   * the most likelihood of being spoken in the audio.
    * </pre>
    *
    * <code>string language_code = 5;</code>
@@ -700,7 +698,7 @@ public final class SpeechRecognitionResult extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Output only. May contain one or more recognition hypotheses (up to the
+     * May contain one or more recognition hypotheses (up to the
      * maximum specified in `max_alternatives`).
      * These alternatives are ordered in terms of accuracy, with the top (first)
      * alternative being the most probable, as ranked by the recognizer.
@@ -721,7 +719,7 @@ public final class SpeechRecognitionResult extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Output only. May contain one or more recognition hypotheses (up to the
+     * May contain one or more recognition hypotheses (up to the
      * maximum specified in `max_alternatives`).
      * These alternatives are ordered in terms of accuracy, with the top (first)
      * alternative being the most probable, as ranked by the recognizer.
@@ -741,7 +739,7 @@ public final class SpeechRecognitionResult extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Output only. May contain one or more recognition hypotheses (up to the
+     * May contain one or more recognition hypotheses (up to the
      * maximum specified in `max_alternatives`).
      * These alternatives are ordered in terms of accuracy, with the top (first)
      * alternative being the most probable, as ranked by the recognizer.
@@ -762,7 +760,7 @@ public final class SpeechRecognitionResult extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Output only. May contain one or more recognition hypotheses (up to the
+     * May contain one or more recognition hypotheses (up to the
      * maximum specified in `max_alternatives`).
      * These alternatives are ordered in terms of accuracy, with the top (first)
      * alternative being the most probable, as ranked by the recognizer.
@@ -789,7 +787,7 @@ public final class SpeechRecognitionResult extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Output only. May contain one or more recognition hypotheses (up to the
+     * May contain one or more recognition hypotheses (up to the
      * maximum specified in `max_alternatives`).
      * These alternatives are ordered in terms of accuracy, with the top (first)
      * alternative being the most probable, as ranked by the recognizer.
@@ -814,7 +812,7 @@ public final class SpeechRecognitionResult extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Output only. May contain one or more recognition hypotheses (up to the
+     * May contain one or more recognition hypotheses (up to the
      * maximum specified in `max_alternatives`).
      * These alternatives are ordered in terms of accuracy, with the top (first)
      * alternative being the most probable, as ranked by the recognizer.
@@ -841,7 +839,7 @@ public final class SpeechRecognitionResult extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Output only. May contain one or more recognition hypotheses (up to the
+     * May contain one or more recognition hypotheses (up to the
      * maximum specified in `max_alternatives`).
      * These alternatives are ordered in terms of accuracy, with the top (first)
      * alternative being the most probable, as ranked by the recognizer.
@@ -868,7 +866,7 @@ public final class SpeechRecognitionResult extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Output only. May contain one or more recognition hypotheses (up to the
+     * May contain one or more recognition hypotheses (up to the
      * maximum specified in `max_alternatives`).
      * These alternatives are ordered in terms of accuracy, with the top (first)
      * alternative being the most probable, as ranked by the recognizer.
@@ -892,7 +890,7 @@ public final class SpeechRecognitionResult extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Output only. May contain one or more recognition hypotheses (up to the
+     * May contain one or more recognition hypotheses (up to the
      * maximum specified in `max_alternatives`).
      * These alternatives are ordered in terms of accuracy, with the top (first)
      * alternative being the most probable, as ranked by the recognizer.
@@ -917,7 +915,7 @@ public final class SpeechRecognitionResult extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Output only. May contain one or more recognition hypotheses (up to the
+     * May contain one or more recognition hypotheses (up to the
      * maximum specified in `max_alternatives`).
      * These alternatives are ordered in terms of accuracy, with the top (first)
      * alternative being the most probable, as ranked by the recognizer.
@@ -942,7 +940,7 @@ public final class SpeechRecognitionResult extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Output only. May contain one or more recognition hypotheses (up to the
+     * May contain one or more recognition hypotheses (up to the
      * maximum specified in `max_alternatives`).
      * These alternatives are ordered in terms of accuracy, with the top (first)
      * alternative being the most probable, as ranked by the recognizer.
@@ -965,7 +963,7 @@ public final class SpeechRecognitionResult extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Output only. May contain one or more recognition hypotheses (up to the
+     * May contain one or more recognition hypotheses (up to the
      * maximum specified in `max_alternatives`).
      * These alternatives are ordered in terms of accuracy, with the top (first)
      * alternative being the most probable, as ranked by the recognizer.
@@ -988,7 +986,7 @@ public final class SpeechRecognitionResult extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Output only. May contain one or more recognition hypotheses (up to the
+     * May contain one or more recognition hypotheses (up to the
      * maximum specified in `max_alternatives`).
      * These alternatives are ordered in terms of accuracy, with the top (first)
      * alternative being the most probable, as ranked by the recognizer.
@@ -1005,7 +1003,7 @@ public final class SpeechRecognitionResult extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Output only. May contain one or more recognition hypotheses (up to the
+     * May contain one or more recognition hypotheses (up to the
      * maximum specified in `max_alternatives`).
      * These alternatives are ordered in terms of accuracy, with the top (first)
      * alternative being the most probable, as ranked by the recognizer.
@@ -1026,7 +1024,7 @@ public final class SpeechRecognitionResult extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Output only. May contain one or more recognition hypotheses (up to the
+     * May contain one or more recognition hypotheses (up to the
      * maximum specified in `max_alternatives`).
      * These alternatives are ordered in terms of accuracy, with the top (first)
      * alternative being the most probable, as ranked by the recognizer.
@@ -1048,7 +1046,7 @@ public final class SpeechRecognitionResult extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Output only. May contain one or more recognition hypotheses (up to the
+     * May contain one or more recognition hypotheses (up to the
      * maximum specified in `max_alternatives`).
      * These alternatives are ordered in terms of accuracy, with the top (first)
      * alternative being the most probable, as ranked by the recognizer.
@@ -1067,7 +1065,7 @@ public final class SpeechRecognitionResult extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Output only. May contain one or more recognition hypotheses (up to the
+     * May contain one or more recognition hypotheses (up to the
      * maximum specified in `max_alternatives`).
      * These alternatives are ordered in terms of accuracy, with the top (first)
      * alternative being the most probable, as ranked by the recognizer.
@@ -1087,7 +1085,7 @@ public final class SpeechRecognitionResult extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Output only. May contain one or more recognition hypotheses (up to the
+     * May contain one or more recognition hypotheses (up to the
      * maximum specified in `max_alternatives`).
      * These alternatives are ordered in terms of accuracy, with the top (first)
      * alternative being the most probable, as ranked by the recognizer.
@@ -1173,10 +1171,9 @@ public final class SpeechRecognitionResult extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Output only. The
-     * [BCP-47](https://www.rfc-editor.org/rfc/bcp/bcp47.txt) language tag of the
-     * language in this result. This language code was detected to have the most
-     * likelihood of being spoken in the audio.
+     * The [BCP-47](https://www.rfc-editor.org/rfc/bcp/bcp47.txt) language tag
+     * of the language in this result. This language code was detected to have
+     * the most likelihood of being spoken in the audio.
      * </pre>
      *
      * <code>string language_code = 5;</code>
@@ -1196,10 +1193,9 @@ public final class SpeechRecognitionResult extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Output only. The
-     * [BCP-47](https://www.rfc-editor.org/rfc/bcp/bcp47.txt) language tag of the
-     * language in this result. This language code was detected to have the most
-     * likelihood of being spoken in the audio.
+     * The [BCP-47](https://www.rfc-editor.org/rfc/bcp/bcp47.txt) language tag
+     * of the language in this result. This language code was detected to have
+     * the most likelihood of being spoken in the audio.
      * </pre>
      *
      * <code>string language_code = 5;</code>
@@ -1219,10 +1215,9 @@ public final class SpeechRecognitionResult extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Output only. The
-     * [BCP-47](https://www.rfc-editor.org/rfc/bcp/bcp47.txt) language tag of the
-     * language in this result. This language code was detected to have the most
-     * likelihood of being spoken in the audio.
+     * The [BCP-47](https://www.rfc-editor.org/rfc/bcp/bcp47.txt) language tag
+     * of the language in this result. This language code was detected to have
+     * the most likelihood of being spoken in the audio.
      * </pre>
      *
      * <code>string language_code = 5;</code>
@@ -1240,10 +1235,9 @@ public final class SpeechRecognitionResult extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Output only. The
-     * [BCP-47](https://www.rfc-editor.org/rfc/bcp/bcp47.txt) language tag of the
-     * language in this result. This language code was detected to have the most
-     * likelihood of being spoken in the audio.
+     * The [BCP-47](https://www.rfc-editor.org/rfc/bcp/bcp47.txt) language tag
+     * of the language in this result. This language code was detected to have
+     * the most likelihood of being spoken in the audio.
      * </pre>
      *
      * <code>string language_code = 5;</code>
@@ -1258,10 +1252,9 @@ public final class SpeechRecognitionResult extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Output only. The
-     * [BCP-47](https://www.rfc-editor.org/rfc/bcp/bcp47.txt) language tag of the
-     * language in this result. This language code was detected to have the most
-     * likelihood of being spoken in the audio.
+     * The [BCP-47](https://www.rfc-editor.org/rfc/bcp/bcp47.txt) language tag
+     * of the language in this result. This language code was detected to have
+     * the most likelihood of being spoken in the audio.
      * </pre>
      *
      * <code>string language_code = 5;</code>

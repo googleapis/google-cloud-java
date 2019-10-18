@@ -27,7 +27,7 @@ public interface SpeakerDiarizationConfigOrBuilder
    *
    *
    * <pre>
-   * *Optional* If 'true', enables speaker detection for each recognized word in
+   * If 'true', enables speaker detection for each recognized word in
    * the top alternative of the recognition result using a speaker_tag provided
    * in the WordInfo.
    * </pre>
@@ -40,7 +40,6 @@ public interface SpeakerDiarizationConfigOrBuilder
    *
    *
    * <pre>
-   * *Optional*
    * Minimum number of speakers in the conversation. This range gives you more
    * flexibility by allowing the system to automatically determine the correct
    * number of speakers. If not set, the default value is 2.
@@ -54,7 +53,6 @@ public interface SpeakerDiarizationConfigOrBuilder
    *
    *
    * <pre>
-   * *Optional*
    * Maximum number of speakers in the conversation. This range gives you more
    * flexibility by allowing the system to automatically determine the correct
    * number of speakers. If not set, the default value is 6.

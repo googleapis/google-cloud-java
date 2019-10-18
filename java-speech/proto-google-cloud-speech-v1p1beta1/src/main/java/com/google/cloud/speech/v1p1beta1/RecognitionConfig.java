@@ -247,12 +247,14 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
    *
    * <pre>
    * The encoding of the audio data sent in the request.
-   * All encodings support only 1 channel (mono) audio.
+   * All encodings support only 1 channel (mono) audio, unless the
+   * `audio_channel_count` and `enable_separate_recognition_per_channel` fields
+   * are set.
    * For best results, the audio source should be captured and transmitted using
    * a lossless encoding (`FLAC` or `LINEAR16`). The accuracy of the speech
    * recognition can be reduced if lossy codecs are used to capture or transmit
    * audio, particularly if background noise is present. Lossy codecs include
-   * `MULAW`, `AMR`, `AMR_WB`, `OGG_OPUS`, and `SPEEX_WITH_HEADER_BYTE`.
+   * `MULAW`, `AMR`, `AMR_WB`, `OGG_OPUS`, `SPEEX_WITH_HEADER_BYTE`, and `MP3`.
    * The `FLAC` and `WAV` audio file formats include a header that describes the
    * included audio content. You can request recognition for `WAV` files that
    * contain either `LINEAR16` or `MULAW` encoded audio.
@@ -262,8 +264,7 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
    * an `AudioEncoding` when you send  send `FLAC` or `WAV` audio, the
    * encoding configuration must match the encoding described in the audio
    * header; otherwise the request returns an
-   * [google.rpc.Code.INVALID_ARGUMENT][google.rpc.Code.INVALID_ARGUMENT] error
-   * code.
+   * [google.rpc.Code.INVALID_ARGUMENT][google.rpc.Code.INVALID_ARGUMENT] error code.
    * </pre>
    *
    * Protobuf enum {@code google.cloud.speech.v1p1beta1.RecognitionConfig.AudioEncoding}
@@ -589,8 +590,7 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
    * <pre>
    * Encoding of audio data sent in all `RecognitionAudio` messages.
    * This field is optional for `FLAC` and `WAV` audio files and required
-   * for all other audio formats. For details, see
-   * [AudioEncoding][google.cloud.speech.v1p1beta1.RecognitionConfig.AudioEncoding].
+   * for all other audio formats. For details, see [AudioEncoding][google.cloud.speech.v1p1beta1.RecognitionConfig.AudioEncoding].
    * </pre>
    *
    * <code>.google.cloud.speech.v1p1beta1.RecognitionConfig.AudioEncoding encoding = 1;</code>
@@ -604,8 +604,7 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
    * <pre>
    * Encoding of audio data sent in all `RecognitionAudio` messages.
    * This field is optional for `FLAC` and `WAV` audio files and required
-   * for all other audio formats. For details, see
-   * [AudioEncoding][google.cloud.speech.v1p1beta1.RecognitionConfig.AudioEncoding].
+   * for all other audio formats. For details, see [AudioEncoding][google.cloud.speech.v1p1beta1.RecognitionConfig.AudioEncoding].
    * </pre>
    *
    * <code>.google.cloud.speech.v1p1beta1.RecognitionConfig.AudioEncoding encoding = 1;</code>
@@ -630,9 +629,8 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
    * 16000 is optimal. For best results, set the sampling rate of the audio
    * source to 16000 Hz. If that's not possible, use the native sample rate of
    * the audio source (instead of re-sampling).
-   * This field is optional for `FLAC` and `WAV` audio files and required
-   * for all other audio formats. For details, see
-   * [AudioEncoding][google.cloud.speech.v1p1beta1.RecognitionConfig.AudioEncoding].
+   * This field is optional for FLAC and WAV audio files, but is
+   * required for all other audio formats. For details, see [AudioEncoding][google.cloud.speech.v1p1beta1.RecognitionConfig.AudioEncoding].
    * </pre>
    *
    * <code>int32 sample_rate_hertz = 2;</code>
@@ -647,7 +645,7 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * *Optional* The number of channels in the input audio data.
+   * The number of channels in the input audio data.
    * ONLY set this for MULTI-CHANNEL recognition.
    * Valid values for LINEAR16 and FLAC are `1`-`8`.
    * Valid values for OGG_OPUS are '1'-'254'.
@@ -670,7 +668,7 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * This needs to be set to ‘true’ explicitly and `audio_channel_count` &gt; 1
+   * This needs to be set to `true` explicitly and `audio_channel_count` &gt; 1
    * to get each channel recognized separately. The recognition result will
    * contain a `channel_tag` field to state which channel that result belongs
    * to. If this is not true, we will only recognize the first channel. The
@@ -690,14 +688,15 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * *Required* The language of the supplied audio as a
+   * Required. The language of the supplied audio as a
    * [BCP-47](https://www.rfc-editor.org/rfc/bcp/bcp47.txt) language tag.
    * Example: "en-US".
-   * See [Language Support](/speech-to-text/docs/languages)
-   * for a list of the currently supported language codes.
+   * See [Language
+   * Support](https://cloud.google.com/speech-to-text/docs/languages) for a list
+   * of the currently supported language codes.
    * </pre>
    *
-   * <code>string language_code = 3;</code>
+   * <code>string language_code = 3 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   public java.lang.String getLanguageCode() {
     java.lang.Object ref = languageCode_;
@@ -714,14 +713,15 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * *Required* The language of the supplied audio as a
+   * Required. The language of the supplied audio as a
    * [BCP-47](https://www.rfc-editor.org/rfc/bcp/bcp47.txt) language tag.
    * Example: "en-US".
-   * See [Language Support](/speech-to-text/docs/languages)
-   * for a list of the currently supported language codes.
+   * See [Language
+   * Support](https://cloud.google.com/speech-to-text/docs/languages) for a list
+   * of the currently supported language codes.
    * </pre>
    *
-   * <code>string language_code = 3;</code>
+   * <code>string language_code = 3 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   public com.google.protobuf.ByteString getLanguageCodeBytes() {
     java.lang.Object ref = languageCode_;
@@ -741,17 +741,17 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * *Optional* A list of up to 3 additional
+   * A list of up to 3 additional
    * [BCP-47](https://www.rfc-editor.org/rfc/bcp/bcp47.txt) language tags,
    * listing possible alternative languages of the supplied audio.
-   * See [Language Support](/speech-to-text/docs/languages)
-   * for a list of the currently supported language codes.
-   * If alternative languages are listed, recognition result will contain
-   * recognition in the most likely language detected including the main
-   * language_code. The recognition result will include the language tag
-   * of the language detected in the audio.
-   * Note: This feature is only supported for Voice Command and Voice Search
-   * use cases and performance may vary for other use cases (e.g., phone call
+   * See [Language
+   * Support](https://cloud.google.com/speech-to-text/docs/languages) for a list
+   * of the currently supported language codes. If alternative languages are
+   * listed, recognition result will contain recognition in the most likely
+   * language detected including the main language_code. The recognition result
+   * will include the language tag of the language detected in the audio. Note:
+   * This feature is only supported for Voice Command and Voice Search use cases
+   * and performance may vary for other use cases (e.g., phone call
    * transcription).
    * </pre>
    *
@@ -764,17 +764,17 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * *Optional* A list of up to 3 additional
+   * A list of up to 3 additional
    * [BCP-47](https://www.rfc-editor.org/rfc/bcp/bcp47.txt) language tags,
    * listing possible alternative languages of the supplied audio.
-   * See [Language Support](/speech-to-text/docs/languages)
-   * for a list of the currently supported language codes.
-   * If alternative languages are listed, recognition result will contain
-   * recognition in the most likely language detected including the main
-   * language_code. The recognition result will include the language tag
-   * of the language detected in the audio.
-   * Note: This feature is only supported for Voice Command and Voice Search
-   * use cases and performance may vary for other use cases (e.g., phone call
+   * See [Language
+   * Support](https://cloud.google.com/speech-to-text/docs/languages) for a list
+   * of the currently supported language codes. If alternative languages are
+   * listed, recognition result will contain recognition in the most likely
+   * language detected including the main language_code. The recognition result
+   * will include the language tag of the language detected in the audio. Note:
+   * This feature is only supported for Voice Command and Voice Search use cases
+   * and performance may vary for other use cases (e.g., phone call
    * transcription).
    * </pre>
    *
@@ -787,17 +787,17 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * *Optional* A list of up to 3 additional
+   * A list of up to 3 additional
    * [BCP-47](https://www.rfc-editor.org/rfc/bcp/bcp47.txt) language tags,
    * listing possible alternative languages of the supplied audio.
-   * See [Language Support](/speech-to-text/docs/languages)
-   * for a list of the currently supported language codes.
-   * If alternative languages are listed, recognition result will contain
-   * recognition in the most likely language detected including the main
-   * language_code. The recognition result will include the language tag
-   * of the language detected in the audio.
-   * Note: This feature is only supported for Voice Command and Voice Search
-   * use cases and performance may vary for other use cases (e.g., phone call
+   * See [Language
+   * Support](https://cloud.google.com/speech-to-text/docs/languages) for a list
+   * of the currently supported language codes. If alternative languages are
+   * listed, recognition result will contain recognition in the most likely
+   * language detected including the main language_code. The recognition result
+   * will include the language tag of the language detected in the audio. Note:
+   * This feature is only supported for Voice Command and Voice Search use cases
+   * and performance may vary for other use cases (e.g., phone call
    * transcription).
    * </pre>
    *
@@ -810,17 +810,17 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * *Optional* A list of up to 3 additional
+   * A list of up to 3 additional
    * [BCP-47](https://www.rfc-editor.org/rfc/bcp/bcp47.txt) language tags,
    * listing possible alternative languages of the supplied audio.
-   * See [Language Support](/speech-to-text/docs/languages)
-   * for a list of the currently supported language codes.
-   * If alternative languages are listed, recognition result will contain
-   * recognition in the most likely language detected including the main
-   * language_code. The recognition result will include the language tag
-   * of the language detected in the audio.
-   * Note: This feature is only supported for Voice Command and Voice Search
-   * use cases and performance may vary for other use cases (e.g., phone call
+   * See [Language
+   * Support](https://cloud.google.com/speech-to-text/docs/languages) for a list
+   * of the currently supported language codes. If alternative languages are
+   * listed, recognition result will contain recognition in the most likely
+   * language detected including the main language_code. The recognition result
+   * will include the language tag of the language detected in the audio. Note:
+   * This feature is only supported for Voice Command and Voice Search use cases
+   * and performance may vary for other use cases (e.g., phone call
    * transcription).
    * </pre>
    *
@@ -836,7 +836,7 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * *Optional* Maximum number of recognition hypotheses to be returned.
+   * Maximum number of recognition hypotheses to be returned.
    * Specifically, the maximum number of `SpeechRecognitionAlternative` messages
    * within each `SpeechRecognitionResult`.
    * The server may return fewer than `max_alternatives`.
@@ -856,7 +856,7 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * *Optional* If set to `true`, the server will attempt to filter out
+   * If set to `true`, the server will attempt to filter out
    * profanities, replacing all but the initial character in each filtered word
    * with asterisks, e.g. "f***". If set to `false` or omitted, profanities
    * won't be filtered out.
@@ -874,10 +874,11 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * *Optional* array of
-   * [SpeechContext][google.cloud.speech.v1p1beta1.SpeechContext]. A means to
-   * provide context to assist the speech recognition. For more information, see
-   * [Phrase Hints](/speech-to-text/docs/basics#phrase-hints).
+   * Array of [SpeechContext][google.cloud.speech.v1p1beta1.SpeechContext].
+   * A means to provide context to assist the speech recognition. For more
+   * information, see
+   * [speech
+   * adaptation](https://cloud.google.com/speech-to-text/docs/context-strength).
    * </pre>
    *
    * <code>repeated .google.cloud.speech.v1p1beta1.SpeechContext speech_contexts = 6;</code>
@@ -889,10 +890,11 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * *Optional* array of
-   * [SpeechContext][google.cloud.speech.v1p1beta1.SpeechContext]. A means to
-   * provide context to assist the speech recognition. For more information, see
-   * [Phrase Hints](/speech-to-text/docs/basics#phrase-hints).
+   * Array of [SpeechContext][google.cloud.speech.v1p1beta1.SpeechContext].
+   * A means to provide context to assist the speech recognition. For more
+   * information, see
+   * [speech
+   * adaptation](https://cloud.google.com/speech-to-text/docs/context-strength).
    * </pre>
    *
    * <code>repeated .google.cloud.speech.v1p1beta1.SpeechContext speech_contexts = 6;</code>
@@ -905,10 +907,11 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * *Optional* array of
-   * [SpeechContext][google.cloud.speech.v1p1beta1.SpeechContext]. A means to
-   * provide context to assist the speech recognition. For more information, see
-   * [Phrase Hints](/speech-to-text/docs/basics#phrase-hints).
+   * Array of [SpeechContext][google.cloud.speech.v1p1beta1.SpeechContext].
+   * A means to provide context to assist the speech recognition. For more
+   * information, see
+   * [speech
+   * adaptation](https://cloud.google.com/speech-to-text/docs/context-strength).
    * </pre>
    *
    * <code>repeated .google.cloud.speech.v1p1beta1.SpeechContext speech_contexts = 6;</code>
@@ -920,10 +923,11 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * *Optional* array of
-   * [SpeechContext][google.cloud.speech.v1p1beta1.SpeechContext]. A means to
-   * provide context to assist the speech recognition. For more information, see
-   * [Phrase Hints](/speech-to-text/docs/basics#phrase-hints).
+   * Array of [SpeechContext][google.cloud.speech.v1p1beta1.SpeechContext].
+   * A means to provide context to assist the speech recognition. For more
+   * information, see
+   * [speech
+   * adaptation](https://cloud.google.com/speech-to-text/docs/context-strength).
    * </pre>
    *
    * <code>repeated .google.cloud.speech.v1p1beta1.SpeechContext speech_contexts = 6;</code>
@@ -935,10 +939,11 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * *Optional* array of
-   * [SpeechContext][google.cloud.speech.v1p1beta1.SpeechContext]. A means to
-   * provide context to assist the speech recognition. For more information, see
-   * [Phrase Hints](/speech-to-text/docs/basics#phrase-hints).
+   * Array of [SpeechContext][google.cloud.speech.v1p1beta1.SpeechContext].
+   * A means to provide context to assist the speech recognition. For more
+   * information, see
+   * [speech
+   * adaptation](https://cloud.google.com/speech-to-text/docs/context-strength).
    * </pre>
    *
    * <code>repeated .google.cloud.speech.v1p1beta1.SpeechContext speech_contexts = 6;</code>
@@ -954,7 +959,7 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * *Optional* If `true`, the top result includes a list of words and
+   * If `true`, the top result includes a list of words and
    * the start and end time offsets (timestamps) for those words. If
    * `false`, no word-level time offset information is returned. The default is
    * `false`.
@@ -972,7 +977,7 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * *Optional* If `true`, the top result includes a list of words and the
+   * If `true`, the top result includes a list of words and the
    * confidence for those words. If `false`, no word-level confidence
    * information is returned. The default is `false`.
    * </pre>
@@ -989,7 +994,7 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * *Optional* If 'true', adds punctuation to recognition result hypotheses.
+   * If 'true', adds punctuation to recognition result hypotheses.
    * This feature is only available in select languages. Setting this for
    * requests in other languages has no effect at all.
    * The default 'false' value does not add punctuation to result hypotheses.
@@ -1010,7 +1015,7 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * *Optional* If 'true', enables speaker detection for each recognized word in
+   * If 'true', enables speaker detection for each recognized word in
    * the top alternative of the recognition result using a speaker_tag provided
    * in the WordInfo.
    * Note: Use diarization_config instead.
@@ -1029,7 +1034,6 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * *Optional*
    * If set, specifies the estimated number of speakers in the conversation.
    * Defaults to '2'. Ignored unless enable_speaker_diarization is set to true.
    * Note: Use diarization_config instead.
@@ -1048,7 +1052,7 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * *Optional* Config to enable speaker diarization and set additional
+   * Config to enable speaker diarization and set additional
    * parameters to make diarization better suited for your application.
    * Note: When this is enabled, we send all the words from the beginning of the
    * audio for the top alternative in every consecutive STREAMING responses.
@@ -1067,7 +1071,7 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * *Optional* Config to enable speaker diarization and set additional
+   * Config to enable speaker diarization and set additional
    * parameters to make diarization better suited for your application.
    * Note: When this is enabled, we send all the words from the beginning of the
    * audio for the top alternative in every consecutive STREAMING responses.
@@ -1088,7 +1092,7 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * *Optional* Config to enable speaker diarization and set additional
+   * Config to enable speaker diarization and set additional
    * parameters to make diarization better suited for your application.
    * Note: When this is enabled, we send all the words from the beginning of the
    * audio for the top alternative in every consecutive STREAMING responses.
@@ -1111,7 +1115,7 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * *Optional* Metadata regarding this request.
+   * Metadata regarding this request.
    * </pre>
    *
    * <code>.google.cloud.speech.v1p1beta1.RecognitionMetadata metadata = 9;</code>
@@ -1123,7 +1127,7 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * *Optional* Metadata regarding this request.
+   * Metadata regarding this request.
    * </pre>
    *
    * <code>.google.cloud.speech.v1p1beta1.RecognitionMetadata metadata = 9;</code>
@@ -1137,7 +1141,7 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * *Optional* Metadata regarding this request.
+   * Metadata regarding this request.
    * </pre>
    *
    * <code>.google.cloud.speech.v1p1beta1.RecognitionMetadata metadata = 9;</code>
@@ -1152,7 +1156,7 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * *Optional* Which model to select for the given request. Select the model
+   * Which model to select for the given request. Select the model
    * best suited to your domain to get best results. If a model is not
    * explicitly specified, then we auto-select a model based on the parameters
    * in the RecognitionConfig.
@@ -1203,7 +1207,7 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * *Optional* Which model to select for the given request. Select the model
+   * Which model to select for the given request. Select the model
    * best suited to your domain to get best results. If a model is not
    * explicitly specified, then we auto-select a model based on the parameters
    * in the RecognitionConfig.
@@ -1257,7 +1261,7 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * *Optional* Set to true to use an enhanced model for speech recognition.
+   * Set to true to use an enhanced model for speech recognition.
    * If `use_enhanced` is set to true and the `model` field is not set, then
    * an appropriate enhanced model is chosen if an enhanced model exists for
    * the audio.
@@ -1955,8 +1959,7 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
      * <pre>
      * Encoding of audio data sent in all `RecognitionAudio` messages.
      * This field is optional for `FLAC` and `WAV` audio files and required
-     * for all other audio formats. For details, see
-     * [AudioEncoding][google.cloud.speech.v1p1beta1.RecognitionConfig.AudioEncoding].
+     * for all other audio formats. For details, see [AudioEncoding][google.cloud.speech.v1p1beta1.RecognitionConfig.AudioEncoding].
      * </pre>
      *
      * <code>.google.cloud.speech.v1p1beta1.RecognitionConfig.AudioEncoding encoding = 1;</code>
@@ -1970,8 +1973,7 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
      * <pre>
      * Encoding of audio data sent in all `RecognitionAudio` messages.
      * This field is optional for `FLAC` and `WAV` audio files and required
-     * for all other audio formats. For details, see
-     * [AudioEncoding][google.cloud.speech.v1p1beta1.RecognitionConfig.AudioEncoding].
+     * for all other audio formats. For details, see [AudioEncoding][google.cloud.speech.v1p1beta1.RecognitionConfig.AudioEncoding].
      * </pre>
      *
      * <code>.google.cloud.speech.v1p1beta1.RecognitionConfig.AudioEncoding encoding = 1;</code>
@@ -1987,8 +1989,7 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
      * <pre>
      * Encoding of audio data sent in all `RecognitionAudio` messages.
      * This field is optional for `FLAC` and `WAV` audio files and required
-     * for all other audio formats. For details, see
-     * [AudioEncoding][google.cloud.speech.v1p1beta1.RecognitionConfig.AudioEncoding].
+     * for all other audio formats. For details, see [AudioEncoding][google.cloud.speech.v1p1beta1.RecognitionConfig.AudioEncoding].
      * </pre>
      *
      * <code>.google.cloud.speech.v1p1beta1.RecognitionConfig.AudioEncoding encoding = 1;</code>
@@ -2007,8 +2008,7 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
      * <pre>
      * Encoding of audio data sent in all `RecognitionAudio` messages.
      * This field is optional for `FLAC` and `WAV` audio files and required
-     * for all other audio formats. For details, see
-     * [AudioEncoding][google.cloud.speech.v1p1beta1.RecognitionConfig.AudioEncoding].
+     * for all other audio formats. For details, see [AudioEncoding][google.cloud.speech.v1p1beta1.RecognitionConfig.AudioEncoding].
      * </pre>
      *
      * <code>.google.cloud.speech.v1p1beta1.RecognitionConfig.AudioEncoding encoding = 1;</code>
@@ -2029,8 +2029,7 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
      * <pre>
      * Encoding of audio data sent in all `RecognitionAudio` messages.
      * This field is optional for `FLAC` and `WAV` audio files and required
-     * for all other audio formats. For details, see
-     * [AudioEncoding][google.cloud.speech.v1p1beta1.RecognitionConfig.AudioEncoding].
+     * for all other audio formats. For details, see [AudioEncoding][google.cloud.speech.v1p1beta1.RecognitionConfig.AudioEncoding].
      * </pre>
      *
      * <code>.google.cloud.speech.v1p1beta1.RecognitionConfig.AudioEncoding encoding = 1;</code>
@@ -2052,9 +2051,8 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
      * 16000 is optimal. For best results, set the sampling rate of the audio
      * source to 16000 Hz. If that's not possible, use the native sample rate of
      * the audio source (instead of re-sampling).
-     * This field is optional for `FLAC` and `WAV` audio files and required
-     * for all other audio formats. For details, see
-     * [AudioEncoding][google.cloud.speech.v1p1beta1.RecognitionConfig.AudioEncoding].
+     * This field is optional for FLAC and WAV audio files, but is
+     * required for all other audio formats. For details, see [AudioEncoding][google.cloud.speech.v1p1beta1.RecognitionConfig.AudioEncoding].
      * </pre>
      *
      * <code>int32 sample_rate_hertz = 2;</code>
@@ -2071,9 +2069,8 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
      * 16000 is optimal. For best results, set the sampling rate of the audio
      * source to 16000 Hz. If that's not possible, use the native sample rate of
      * the audio source (instead of re-sampling).
-     * This field is optional for `FLAC` and `WAV` audio files and required
-     * for all other audio formats. For details, see
-     * [AudioEncoding][google.cloud.speech.v1p1beta1.RecognitionConfig.AudioEncoding].
+     * This field is optional for FLAC and WAV audio files, but is
+     * required for all other audio formats. For details, see [AudioEncoding][google.cloud.speech.v1p1beta1.RecognitionConfig.AudioEncoding].
      * </pre>
      *
      * <code>int32 sample_rate_hertz = 2;</code>
@@ -2093,9 +2090,8 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
      * 16000 is optimal. For best results, set the sampling rate of the audio
      * source to 16000 Hz. If that's not possible, use the native sample rate of
      * the audio source (instead of re-sampling).
-     * This field is optional for `FLAC` and `WAV` audio files and required
-     * for all other audio formats. For details, see
-     * [AudioEncoding][google.cloud.speech.v1p1beta1.RecognitionConfig.AudioEncoding].
+     * This field is optional for FLAC and WAV audio files, but is
+     * required for all other audio formats. For details, see [AudioEncoding][google.cloud.speech.v1p1beta1.RecognitionConfig.AudioEncoding].
      * </pre>
      *
      * <code>int32 sample_rate_hertz = 2;</code>
@@ -2112,7 +2108,7 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * *Optional* The number of channels in the input audio data.
+     * The number of channels in the input audio data.
      * ONLY set this for MULTI-CHANNEL recognition.
      * Valid values for LINEAR16 and FLAC are `1`-`8`.
      * Valid values for OGG_OPUS are '1'-'254'.
@@ -2132,7 +2128,7 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * *Optional* The number of channels in the input audio data.
+     * The number of channels in the input audio data.
      * ONLY set this for MULTI-CHANNEL recognition.
      * Valid values for LINEAR16 and FLAC are `1`-`8`.
      * Valid values for OGG_OPUS are '1'-'254'.
@@ -2155,7 +2151,7 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * *Optional* The number of channels in the input audio data.
+     * The number of channels in the input audio data.
      * ONLY set this for MULTI-CHANNEL recognition.
      * Valid values for LINEAR16 and FLAC are `1`-`8`.
      * Valid values for OGG_OPUS are '1'-'254'.
@@ -2180,7 +2176,7 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * This needs to be set to ‘true’ explicitly and `audio_channel_count` &gt; 1
+     * This needs to be set to `true` explicitly and `audio_channel_count` &gt; 1
      * to get each channel recognized separately. The recognition result will
      * contain a `channel_tag` field to state which channel that result belongs
      * to. If this is not true, we will only recognize the first channel. The
@@ -2197,7 +2193,7 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * This needs to be set to ‘true’ explicitly and `audio_channel_count` &gt; 1
+     * This needs to be set to `true` explicitly and `audio_channel_count` &gt; 1
      * to get each channel recognized separately. The recognition result will
      * contain a `channel_tag` field to state which channel that result belongs
      * to. If this is not true, we will only recognize the first channel. The
@@ -2217,7 +2213,7 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * This needs to be set to ‘true’ explicitly and `audio_channel_count` &gt; 1
+     * This needs to be set to `true` explicitly and `audio_channel_count` &gt; 1
      * to get each channel recognized separately. The recognition result will
      * contain a `channel_tag` field to state which channel that result belongs
      * to. If this is not true, we will only recognize the first channel. The
@@ -2239,14 +2235,15 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * *Required* The language of the supplied audio as a
+     * Required. The language of the supplied audio as a
      * [BCP-47](https://www.rfc-editor.org/rfc/bcp/bcp47.txt) language tag.
      * Example: "en-US".
-     * See [Language Support](/speech-to-text/docs/languages)
-     * for a list of the currently supported language codes.
+     * See [Language
+     * Support](https://cloud.google.com/speech-to-text/docs/languages) for a list
+     * of the currently supported language codes.
      * </pre>
      *
-     * <code>string language_code = 3;</code>
+     * <code>string language_code = 3 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public java.lang.String getLanguageCode() {
       java.lang.Object ref = languageCode_;
@@ -2263,14 +2260,15 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * *Required* The language of the supplied audio as a
+     * Required. The language of the supplied audio as a
      * [BCP-47](https://www.rfc-editor.org/rfc/bcp/bcp47.txt) language tag.
      * Example: "en-US".
-     * See [Language Support](/speech-to-text/docs/languages)
-     * for a list of the currently supported language codes.
+     * See [Language
+     * Support](https://cloud.google.com/speech-to-text/docs/languages) for a list
+     * of the currently supported language codes.
      * </pre>
      *
-     * <code>string language_code = 3;</code>
+     * <code>string language_code = 3 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public com.google.protobuf.ByteString getLanguageCodeBytes() {
       java.lang.Object ref = languageCode_;
@@ -2287,14 +2285,15 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * *Required* The language of the supplied audio as a
+     * Required. The language of the supplied audio as a
      * [BCP-47](https://www.rfc-editor.org/rfc/bcp/bcp47.txt) language tag.
      * Example: "en-US".
-     * See [Language Support](/speech-to-text/docs/languages)
-     * for a list of the currently supported language codes.
+     * See [Language
+     * Support](https://cloud.google.com/speech-to-text/docs/languages) for a list
+     * of the currently supported language codes.
      * </pre>
      *
-     * <code>string language_code = 3;</code>
+     * <code>string language_code = 3 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder setLanguageCode(java.lang.String value) {
       if (value == null) {
@@ -2309,14 +2308,15 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * *Required* The language of the supplied audio as a
+     * Required. The language of the supplied audio as a
      * [BCP-47](https://www.rfc-editor.org/rfc/bcp/bcp47.txt) language tag.
      * Example: "en-US".
-     * See [Language Support](/speech-to-text/docs/languages)
-     * for a list of the currently supported language codes.
+     * See [Language
+     * Support](https://cloud.google.com/speech-to-text/docs/languages) for a list
+     * of the currently supported language codes.
      * </pre>
      *
-     * <code>string language_code = 3;</code>
+     * <code>string language_code = 3 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder clearLanguageCode() {
 
@@ -2328,14 +2328,15 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * *Required* The language of the supplied audio as a
+     * Required. The language of the supplied audio as a
      * [BCP-47](https://www.rfc-editor.org/rfc/bcp/bcp47.txt) language tag.
      * Example: "en-US".
-     * See [Language Support](/speech-to-text/docs/languages)
-     * for a list of the currently supported language codes.
+     * See [Language
+     * Support](https://cloud.google.com/speech-to-text/docs/languages) for a list
+     * of the currently supported language codes.
      * </pre>
      *
-     * <code>string language_code = 3;</code>
+     * <code>string language_code = 3 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder setLanguageCodeBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -2362,17 +2363,17 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * *Optional* A list of up to 3 additional
+     * A list of up to 3 additional
      * [BCP-47](https://www.rfc-editor.org/rfc/bcp/bcp47.txt) language tags,
      * listing possible alternative languages of the supplied audio.
-     * See [Language Support](/speech-to-text/docs/languages)
-     * for a list of the currently supported language codes.
-     * If alternative languages are listed, recognition result will contain
-     * recognition in the most likely language detected including the main
-     * language_code. The recognition result will include the language tag
-     * of the language detected in the audio.
-     * Note: This feature is only supported for Voice Command and Voice Search
-     * use cases and performance may vary for other use cases (e.g., phone call
+     * See [Language
+     * Support](https://cloud.google.com/speech-to-text/docs/languages) for a list
+     * of the currently supported language codes. If alternative languages are
+     * listed, recognition result will contain recognition in the most likely
+     * language detected including the main language_code. The recognition result
+     * will include the language tag of the language detected in the audio. Note:
+     * This feature is only supported for Voice Command and Voice Search use cases
+     * and performance may vary for other use cases (e.g., phone call
      * transcription).
      * </pre>
      *
@@ -2385,17 +2386,17 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * *Optional* A list of up to 3 additional
+     * A list of up to 3 additional
      * [BCP-47](https://www.rfc-editor.org/rfc/bcp/bcp47.txt) language tags,
      * listing possible alternative languages of the supplied audio.
-     * See [Language Support](/speech-to-text/docs/languages)
-     * for a list of the currently supported language codes.
-     * If alternative languages are listed, recognition result will contain
-     * recognition in the most likely language detected including the main
-     * language_code. The recognition result will include the language tag
-     * of the language detected in the audio.
-     * Note: This feature is only supported for Voice Command and Voice Search
-     * use cases and performance may vary for other use cases (e.g., phone call
+     * See [Language
+     * Support](https://cloud.google.com/speech-to-text/docs/languages) for a list
+     * of the currently supported language codes. If alternative languages are
+     * listed, recognition result will contain recognition in the most likely
+     * language detected including the main language_code. The recognition result
+     * will include the language tag of the language detected in the audio. Note:
+     * This feature is only supported for Voice Command and Voice Search use cases
+     * and performance may vary for other use cases (e.g., phone call
      * transcription).
      * </pre>
      *
@@ -2408,17 +2409,17 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * *Optional* A list of up to 3 additional
+     * A list of up to 3 additional
      * [BCP-47](https://www.rfc-editor.org/rfc/bcp/bcp47.txt) language tags,
      * listing possible alternative languages of the supplied audio.
-     * See [Language Support](/speech-to-text/docs/languages)
-     * for a list of the currently supported language codes.
-     * If alternative languages are listed, recognition result will contain
-     * recognition in the most likely language detected including the main
-     * language_code. The recognition result will include the language tag
-     * of the language detected in the audio.
-     * Note: This feature is only supported for Voice Command and Voice Search
-     * use cases and performance may vary for other use cases (e.g., phone call
+     * See [Language
+     * Support](https://cloud.google.com/speech-to-text/docs/languages) for a list
+     * of the currently supported language codes. If alternative languages are
+     * listed, recognition result will contain recognition in the most likely
+     * language detected including the main language_code. The recognition result
+     * will include the language tag of the language detected in the audio. Note:
+     * This feature is only supported for Voice Command and Voice Search use cases
+     * and performance may vary for other use cases (e.g., phone call
      * transcription).
      * </pre>
      *
@@ -2431,17 +2432,17 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * *Optional* A list of up to 3 additional
+     * A list of up to 3 additional
      * [BCP-47](https://www.rfc-editor.org/rfc/bcp/bcp47.txt) language tags,
      * listing possible alternative languages of the supplied audio.
-     * See [Language Support](/speech-to-text/docs/languages)
-     * for a list of the currently supported language codes.
-     * If alternative languages are listed, recognition result will contain
-     * recognition in the most likely language detected including the main
-     * language_code. The recognition result will include the language tag
-     * of the language detected in the audio.
-     * Note: This feature is only supported for Voice Command and Voice Search
-     * use cases and performance may vary for other use cases (e.g., phone call
+     * See [Language
+     * Support](https://cloud.google.com/speech-to-text/docs/languages) for a list
+     * of the currently supported language codes. If alternative languages are
+     * listed, recognition result will contain recognition in the most likely
+     * language detected including the main language_code. The recognition result
+     * will include the language tag of the language detected in the audio. Note:
+     * This feature is only supported for Voice Command and Voice Search use cases
+     * and performance may vary for other use cases (e.g., phone call
      * transcription).
      * </pre>
      *
@@ -2454,17 +2455,17 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * *Optional* A list of up to 3 additional
+     * A list of up to 3 additional
      * [BCP-47](https://www.rfc-editor.org/rfc/bcp/bcp47.txt) language tags,
      * listing possible alternative languages of the supplied audio.
-     * See [Language Support](/speech-to-text/docs/languages)
-     * for a list of the currently supported language codes.
-     * If alternative languages are listed, recognition result will contain
-     * recognition in the most likely language detected including the main
-     * language_code. The recognition result will include the language tag
-     * of the language detected in the audio.
-     * Note: This feature is only supported for Voice Command and Voice Search
-     * use cases and performance may vary for other use cases (e.g., phone call
+     * See [Language
+     * Support](https://cloud.google.com/speech-to-text/docs/languages) for a list
+     * of the currently supported language codes. If alternative languages are
+     * listed, recognition result will contain recognition in the most likely
+     * language detected including the main language_code. The recognition result
+     * will include the language tag of the language detected in the audio. Note:
+     * This feature is only supported for Voice Command and Voice Search use cases
+     * and performance may vary for other use cases (e.g., phone call
      * transcription).
      * </pre>
      *
@@ -2483,17 +2484,17 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * *Optional* A list of up to 3 additional
+     * A list of up to 3 additional
      * [BCP-47](https://www.rfc-editor.org/rfc/bcp/bcp47.txt) language tags,
      * listing possible alternative languages of the supplied audio.
-     * See [Language Support](/speech-to-text/docs/languages)
-     * for a list of the currently supported language codes.
-     * If alternative languages are listed, recognition result will contain
-     * recognition in the most likely language detected including the main
-     * language_code. The recognition result will include the language tag
-     * of the language detected in the audio.
-     * Note: This feature is only supported for Voice Command and Voice Search
-     * use cases and performance may vary for other use cases (e.g., phone call
+     * See [Language
+     * Support](https://cloud.google.com/speech-to-text/docs/languages) for a list
+     * of the currently supported language codes. If alternative languages are
+     * listed, recognition result will contain recognition in the most likely
+     * language detected including the main language_code. The recognition result
+     * will include the language tag of the language detected in the audio. Note:
+     * This feature is only supported for Voice Command and Voice Search use cases
+     * and performance may vary for other use cases (e.g., phone call
      * transcription).
      * </pre>
      *
@@ -2512,17 +2513,17 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * *Optional* A list of up to 3 additional
+     * A list of up to 3 additional
      * [BCP-47](https://www.rfc-editor.org/rfc/bcp/bcp47.txt) language tags,
      * listing possible alternative languages of the supplied audio.
-     * See [Language Support](/speech-to-text/docs/languages)
-     * for a list of the currently supported language codes.
-     * If alternative languages are listed, recognition result will contain
-     * recognition in the most likely language detected including the main
-     * language_code. The recognition result will include the language tag
-     * of the language detected in the audio.
-     * Note: This feature is only supported for Voice Command and Voice Search
-     * use cases and performance may vary for other use cases (e.g., phone call
+     * See [Language
+     * Support](https://cloud.google.com/speech-to-text/docs/languages) for a list
+     * of the currently supported language codes. If alternative languages are
+     * listed, recognition result will contain recognition in the most likely
+     * language detected including the main language_code. The recognition result
+     * will include the language tag of the language detected in the audio. Note:
+     * This feature is only supported for Voice Command and Voice Search use cases
+     * and performance may vary for other use cases (e.g., phone call
      * transcription).
      * </pre>
      *
@@ -2538,17 +2539,17 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * *Optional* A list of up to 3 additional
+     * A list of up to 3 additional
      * [BCP-47](https://www.rfc-editor.org/rfc/bcp/bcp47.txt) language tags,
      * listing possible alternative languages of the supplied audio.
-     * See [Language Support](/speech-to-text/docs/languages)
-     * for a list of the currently supported language codes.
-     * If alternative languages are listed, recognition result will contain
-     * recognition in the most likely language detected including the main
-     * language_code. The recognition result will include the language tag
-     * of the language detected in the audio.
-     * Note: This feature is only supported for Voice Command and Voice Search
-     * use cases and performance may vary for other use cases (e.g., phone call
+     * See [Language
+     * Support](https://cloud.google.com/speech-to-text/docs/languages) for a list
+     * of the currently supported language codes. If alternative languages are
+     * listed, recognition result will contain recognition in the most likely
+     * language detected including the main language_code. The recognition result
+     * will include the language tag of the language detected in the audio. Note:
+     * This feature is only supported for Voice Command and Voice Search use cases
+     * and performance may vary for other use cases (e.g., phone call
      * transcription).
      * </pre>
      *
@@ -2564,17 +2565,17 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * *Optional* A list of up to 3 additional
+     * A list of up to 3 additional
      * [BCP-47](https://www.rfc-editor.org/rfc/bcp/bcp47.txt) language tags,
      * listing possible alternative languages of the supplied audio.
-     * See [Language Support](/speech-to-text/docs/languages)
-     * for a list of the currently supported language codes.
-     * If alternative languages are listed, recognition result will contain
-     * recognition in the most likely language detected including the main
-     * language_code. The recognition result will include the language tag
-     * of the language detected in the audio.
-     * Note: This feature is only supported for Voice Command and Voice Search
-     * use cases and performance may vary for other use cases (e.g., phone call
+     * See [Language
+     * Support](https://cloud.google.com/speech-to-text/docs/languages) for a list
+     * of the currently supported language codes. If alternative languages are
+     * listed, recognition result will contain recognition in the most likely
+     * language detected including the main language_code. The recognition result
+     * will include the language tag of the language detected in the audio. Note:
+     * This feature is only supported for Voice Command and Voice Search use cases
+     * and performance may vary for other use cases (e.g., phone call
      * transcription).
      * </pre>
      *
@@ -2596,7 +2597,7 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * *Optional* Maximum number of recognition hypotheses to be returned.
+     * Maximum number of recognition hypotheses to be returned.
      * Specifically, the maximum number of `SpeechRecognitionAlternative` messages
      * within each `SpeechRecognitionResult`.
      * The server may return fewer than `max_alternatives`.
@@ -2613,7 +2614,7 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * *Optional* Maximum number of recognition hypotheses to be returned.
+     * Maximum number of recognition hypotheses to be returned.
      * Specifically, the maximum number of `SpeechRecognitionAlternative` messages
      * within each `SpeechRecognitionResult`.
      * The server may return fewer than `max_alternatives`.
@@ -2633,7 +2634,7 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * *Optional* Maximum number of recognition hypotheses to be returned.
+     * Maximum number of recognition hypotheses to be returned.
      * Specifically, the maximum number of `SpeechRecognitionAlternative` messages
      * within each `SpeechRecognitionResult`.
      * The server may return fewer than `max_alternatives`.
@@ -2655,7 +2656,7 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * *Optional* If set to `true`, the server will attempt to filter out
+     * If set to `true`, the server will attempt to filter out
      * profanities, replacing all but the initial character in each filtered word
      * with asterisks, e.g. "f***". If set to `false` or omitted, profanities
      * won't be filtered out.
@@ -2670,7 +2671,7 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * *Optional* If set to `true`, the server will attempt to filter out
+     * If set to `true`, the server will attempt to filter out
      * profanities, replacing all but the initial character in each filtered word
      * with asterisks, e.g. "f***". If set to `false` or omitted, profanities
      * won't be filtered out.
@@ -2688,7 +2689,7 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * *Optional* If set to `true`, the server will attempt to filter out
+     * If set to `true`, the server will attempt to filter out
      * profanities, replacing all but the initial character in each filtered word
      * with asterisks, e.g. "f***". If set to `false` or omitted, profanities
      * won't be filtered out.
@@ -2725,10 +2726,11 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * *Optional* array of
-     * [SpeechContext][google.cloud.speech.v1p1beta1.SpeechContext]. A means to
-     * provide context to assist the speech recognition. For more information, see
-     * [Phrase Hints](/speech-to-text/docs/basics#phrase-hints).
+     * Array of [SpeechContext][google.cloud.speech.v1p1beta1.SpeechContext].
+     * A means to provide context to assist the speech recognition. For more
+     * information, see
+     * [speech
+     * adaptation](https://cloud.google.com/speech-to-text/docs/context-strength).
      * </pre>
      *
      * <code>repeated .google.cloud.speech.v1p1beta1.SpeechContext speech_contexts = 6;</code>
@@ -2744,10 +2746,11 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * *Optional* array of
-     * [SpeechContext][google.cloud.speech.v1p1beta1.SpeechContext]. A means to
-     * provide context to assist the speech recognition. For more information, see
-     * [Phrase Hints](/speech-to-text/docs/basics#phrase-hints).
+     * Array of [SpeechContext][google.cloud.speech.v1p1beta1.SpeechContext].
+     * A means to provide context to assist the speech recognition. For more
+     * information, see
+     * [speech
+     * adaptation](https://cloud.google.com/speech-to-text/docs/context-strength).
      * </pre>
      *
      * <code>repeated .google.cloud.speech.v1p1beta1.SpeechContext speech_contexts = 6;</code>
@@ -2763,10 +2766,11 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * *Optional* array of
-     * [SpeechContext][google.cloud.speech.v1p1beta1.SpeechContext]. A means to
-     * provide context to assist the speech recognition. For more information, see
-     * [Phrase Hints](/speech-to-text/docs/basics#phrase-hints).
+     * Array of [SpeechContext][google.cloud.speech.v1p1beta1.SpeechContext].
+     * A means to provide context to assist the speech recognition. For more
+     * information, see
+     * [speech
+     * adaptation](https://cloud.google.com/speech-to-text/docs/context-strength).
      * </pre>
      *
      * <code>repeated .google.cloud.speech.v1p1beta1.SpeechContext speech_contexts = 6;</code>
@@ -2782,10 +2786,11 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * *Optional* array of
-     * [SpeechContext][google.cloud.speech.v1p1beta1.SpeechContext]. A means to
-     * provide context to assist the speech recognition. For more information, see
-     * [Phrase Hints](/speech-to-text/docs/basics#phrase-hints).
+     * Array of [SpeechContext][google.cloud.speech.v1p1beta1.SpeechContext].
+     * A means to provide context to assist the speech recognition. For more
+     * information, see
+     * [speech
+     * adaptation](https://cloud.google.com/speech-to-text/docs/context-strength).
      * </pre>
      *
      * <code>repeated .google.cloud.speech.v1p1beta1.SpeechContext speech_contexts = 6;</code>
@@ -2808,10 +2813,11 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * *Optional* array of
-     * [SpeechContext][google.cloud.speech.v1p1beta1.SpeechContext]. A means to
-     * provide context to assist the speech recognition. For more information, see
-     * [Phrase Hints](/speech-to-text/docs/basics#phrase-hints).
+     * Array of [SpeechContext][google.cloud.speech.v1p1beta1.SpeechContext].
+     * A means to provide context to assist the speech recognition. For more
+     * information, see
+     * [speech
+     * adaptation](https://cloud.google.com/speech-to-text/docs/context-strength).
      * </pre>
      *
      * <code>repeated .google.cloud.speech.v1p1beta1.SpeechContext speech_contexts = 6;</code>
@@ -2831,10 +2837,11 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * *Optional* array of
-     * [SpeechContext][google.cloud.speech.v1p1beta1.SpeechContext]. A means to
-     * provide context to assist the speech recognition. For more information, see
-     * [Phrase Hints](/speech-to-text/docs/basics#phrase-hints).
+     * Array of [SpeechContext][google.cloud.speech.v1p1beta1.SpeechContext].
+     * A means to provide context to assist the speech recognition. For more
+     * information, see
+     * [speech
+     * adaptation](https://cloud.google.com/speech-to-text/docs/context-strength).
      * </pre>
      *
      * <code>repeated .google.cloud.speech.v1p1beta1.SpeechContext speech_contexts = 6;</code>
@@ -2856,10 +2863,11 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * *Optional* array of
-     * [SpeechContext][google.cloud.speech.v1p1beta1.SpeechContext]. A means to
-     * provide context to assist the speech recognition. For more information, see
-     * [Phrase Hints](/speech-to-text/docs/basics#phrase-hints).
+     * Array of [SpeechContext][google.cloud.speech.v1p1beta1.SpeechContext].
+     * A means to provide context to assist the speech recognition. For more
+     * information, see
+     * [speech
+     * adaptation](https://cloud.google.com/speech-to-text/docs/context-strength).
      * </pre>
      *
      * <code>repeated .google.cloud.speech.v1p1beta1.SpeechContext speech_contexts = 6;</code>
@@ -2882,10 +2890,11 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * *Optional* array of
-     * [SpeechContext][google.cloud.speech.v1p1beta1.SpeechContext]. A means to
-     * provide context to assist the speech recognition. For more information, see
-     * [Phrase Hints](/speech-to-text/docs/basics#phrase-hints).
+     * Array of [SpeechContext][google.cloud.speech.v1p1beta1.SpeechContext].
+     * A means to provide context to assist the speech recognition. For more
+     * information, see
+     * [speech
+     * adaptation](https://cloud.google.com/speech-to-text/docs/context-strength).
      * </pre>
      *
      * <code>repeated .google.cloud.speech.v1p1beta1.SpeechContext speech_contexts = 6;</code>
@@ -2905,10 +2914,11 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * *Optional* array of
-     * [SpeechContext][google.cloud.speech.v1p1beta1.SpeechContext]. A means to
-     * provide context to assist the speech recognition. For more information, see
-     * [Phrase Hints](/speech-to-text/docs/basics#phrase-hints).
+     * Array of [SpeechContext][google.cloud.speech.v1p1beta1.SpeechContext].
+     * A means to provide context to assist the speech recognition. For more
+     * information, see
+     * [speech
+     * adaptation](https://cloud.google.com/speech-to-text/docs/context-strength).
      * </pre>
      *
      * <code>repeated .google.cloud.speech.v1p1beta1.SpeechContext speech_contexts = 6;</code>
@@ -2928,10 +2938,11 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * *Optional* array of
-     * [SpeechContext][google.cloud.speech.v1p1beta1.SpeechContext]. A means to
-     * provide context to assist the speech recognition. For more information, see
-     * [Phrase Hints](/speech-to-text/docs/basics#phrase-hints).
+     * Array of [SpeechContext][google.cloud.speech.v1p1beta1.SpeechContext].
+     * A means to provide context to assist the speech recognition. For more
+     * information, see
+     * [speech
+     * adaptation](https://cloud.google.com/speech-to-text/docs/context-strength).
      * </pre>
      *
      * <code>repeated .google.cloud.speech.v1p1beta1.SpeechContext speech_contexts = 6;</code>
@@ -2951,10 +2962,11 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * *Optional* array of
-     * [SpeechContext][google.cloud.speech.v1p1beta1.SpeechContext]. A means to
-     * provide context to assist the speech recognition. For more information, see
-     * [Phrase Hints](/speech-to-text/docs/basics#phrase-hints).
+     * Array of [SpeechContext][google.cloud.speech.v1p1beta1.SpeechContext].
+     * A means to provide context to assist the speech recognition. For more
+     * information, see
+     * [speech
+     * adaptation](https://cloud.google.com/speech-to-text/docs/context-strength).
      * </pre>
      *
      * <code>repeated .google.cloud.speech.v1p1beta1.SpeechContext speech_contexts = 6;</code>
@@ -2973,10 +2985,11 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * *Optional* array of
-     * [SpeechContext][google.cloud.speech.v1p1beta1.SpeechContext]. A means to
-     * provide context to assist the speech recognition. For more information, see
-     * [Phrase Hints](/speech-to-text/docs/basics#phrase-hints).
+     * Array of [SpeechContext][google.cloud.speech.v1p1beta1.SpeechContext].
+     * A means to provide context to assist the speech recognition. For more
+     * information, see
+     * [speech
+     * adaptation](https://cloud.google.com/speech-to-text/docs/context-strength).
      * </pre>
      *
      * <code>repeated .google.cloud.speech.v1p1beta1.SpeechContext speech_contexts = 6;</code>
@@ -2995,10 +3008,11 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * *Optional* array of
-     * [SpeechContext][google.cloud.speech.v1p1beta1.SpeechContext]. A means to
-     * provide context to assist the speech recognition. For more information, see
-     * [Phrase Hints](/speech-to-text/docs/basics#phrase-hints).
+     * Array of [SpeechContext][google.cloud.speech.v1p1beta1.SpeechContext].
+     * A means to provide context to assist the speech recognition. For more
+     * information, see
+     * [speech
+     * adaptation](https://cloud.google.com/speech-to-text/docs/context-strength).
      * </pre>
      *
      * <code>repeated .google.cloud.speech.v1p1beta1.SpeechContext speech_contexts = 6;</code>
@@ -3011,10 +3025,11 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * *Optional* array of
-     * [SpeechContext][google.cloud.speech.v1p1beta1.SpeechContext]. A means to
-     * provide context to assist the speech recognition. For more information, see
-     * [Phrase Hints](/speech-to-text/docs/basics#phrase-hints).
+     * Array of [SpeechContext][google.cloud.speech.v1p1beta1.SpeechContext].
+     * A means to provide context to assist the speech recognition. For more
+     * information, see
+     * [speech
+     * adaptation](https://cloud.google.com/speech-to-text/docs/context-strength).
      * </pre>
      *
      * <code>repeated .google.cloud.speech.v1p1beta1.SpeechContext speech_contexts = 6;</code>
@@ -3031,10 +3046,11 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * *Optional* array of
-     * [SpeechContext][google.cloud.speech.v1p1beta1.SpeechContext]. A means to
-     * provide context to assist the speech recognition. For more information, see
-     * [Phrase Hints](/speech-to-text/docs/basics#phrase-hints).
+     * Array of [SpeechContext][google.cloud.speech.v1p1beta1.SpeechContext].
+     * A means to provide context to assist the speech recognition. For more
+     * information, see
+     * [speech
+     * adaptation](https://cloud.google.com/speech-to-text/docs/context-strength).
      * </pre>
      *
      * <code>repeated .google.cloud.speech.v1p1beta1.SpeechContext speech_contexts = 6;</code>
@@ -3051,10 +3067,11 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * *Optional* array of
-     * [SpeechContext][google.cloud.speech.v1p1beta1.SpeechContext]. A means to
-     * provide context to assist the speech recognition. For more information, see
-     * [Phrase Hints](/speech-to-text/docs/basics#phrase-hints).
+     * Array of [SpeechContext][google.cloud.speech.v1p1beta1.SpeechContext].
+     * A means to provide context to assist the speech recognition. For more
+     * information, see
+     * [speech
+     * adaptation](https://cloud.google.com/speech-to-text/docs/context-strength).
      * </pre>
      *
      * <code>repeated .google.cloud.speech.v1p1beta1.SpeechContext speech_contexts = 6;</code>
@@ -3067,10 +3084,11 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * *Optional* array of
-     * [SpeechContext][google.cloud.speech.v1p1beta1.SpeechContext]. A means to
-     * provide context to assist the speech recognition. For more information, see
-     * [Phrase Hints](/speech-to-text/docs/basics#phrase-hints).
+     * Array of [SpeechContext][google.cloud.speech.v1p1beta1.SpeechContext].
+     * A means to provide context to assist the speech recognition. For more
+     * information, see
+     * [speech
+     * adaptation](https://cloud.google.com/speech-to-text/docs/context-strength).
      * </pre>
      *
      * <code>repeated .google.cloud.speech.v1p1beta1.SpeechContext speech_contexts = 6;</code>
@@ -3084,10 +3102,11 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * *Optional* array of
-     * [SpeechContext][google.cloud.speech.v1p1beta1.SpeechContext]. A means to
-     * provide context to assist the speech recognition. For more information, see
-     * [Phrase Hints](/speech-to-text/docs/basics#phrase-hints).
+     * Array of [SpeechContext][google.cloud.speech.v1p1beta1.SpeechContext].
+     * A means to provide context to assist the speech recognition. For more
+     * information, see
+     * [speech
+     * adaptation](https://cloud.google.com/speech-to-text/docs/context-strength).
      * </pre>
      *
      * <code>repeated .google.cloud.speech.v1p1beta1.SpeechContext speech_contexts = 6;</code>
@@ -3122,7 +3141,7 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * *Optional* If `true`, the top result includes a list of words and
+     * If `true`, the top result includes a list of words and
      * the start and end time offsets (timestamps) for those words. If
      * `false`, no word-level time offset information is returned. The default is
      * `false`.
@@ -3137,7 +3156,7 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * *Optional* If `true`, the top result includes a list of words and
+     * If `true`, the top result includes a list of words and
      * the start and end time offsets (timestamps) for those words. If
      * `false`, no word-level time offset information is returned. The default is
      * `false`.
@@ -3155,7 +3174,7 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * *Optional* If `true`, the top result includes a list of words and
+     * If `true`, the top result includes a list of words and
      * the start and end time offsets (timestamps) for those words. If
      * `false`, no word-level time offset information is returned. The default is
      * `false`.
@@ -3175,7 +3194,7 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * *Optional* If `true`, the top result includes a list of words and the
+     * If `true`, the top result includes a list of words and the
      * confidence for those words. If `false`, no word-level confidence
      * information is returned. The default is `false`.
      * </pre>
@@ -3189,7 +3208,7 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * *Optional* If `true`, the top result includes a list of words and the
+     * If `true`, the top result includes a list of words and the
      * confidence for those words. If `false`, no word-level confidence
      * information is returned. The default is `false`.
      * </pre>
@@ -3206,7 +3225,7 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * *Optional* If `true`, the top result includes a list of words and the
+     * If `true`, the top result includes a list of words and the
      * confidence for those words. If `false`, no word-level confidence
      * information is returned. The default is `false`.
      * </pre>
@@ -3225,7 +3244,7 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * *Optional* If 'true', adds punctuation to recognition result hypotheses.
+     * If 'true', adds punctuation to recognition result hypotheses.
      * This feature is only available in select languages. Setting this for
      * requests in other languages has no effect at all.
      * The default 'false' value does not add punctuation to result hypotheses.
@@ -3243,7 +3262,7 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * *Optional* If 'true', adds punctuation to recognition result hypotheses.
+     * If 'true', adds punctuation to recognition result hypotheses.
      * This feature is only available in select languages. Setting this for
      * requests in other languages has no effect at all.
      * The default 'false' value does not add punctuation to result hypotheses.
@@ -3264,7 +3283,7 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * *Optional* If 'true', adds punctuation to recognition result hypotheses.
+     * If 'true', adds punctuation to recognition result hypotheses.
      * This feature is only available in select languages. Setting this for
      * requests in other languages has no effect at all.
      * The default 'false' value does not add punctuation to result hypotheses.
@@ -3287,7 +3306,7 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * *Optional* If 'true', enables speaker detection for each recognized word in
+     * If 'true', enables speaker detection for each recognized word in
      * the top alternative of the recognition result using a speaker_tag provided
      * in the WordInfo.
      * Note: Use diarization_config instead.
@@ -3303,7 +3322,7 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * *Optional* If 'true', enables speaker detection for each recognized word in
+     * If 'true', enables speaker detection for each recognized word in
      * the top alternative of the recognition result using a speaker_tag provided
      * in the WordInfo.
      * Note: Use diarization_config instead.
@@ -3322,7 +3341,7 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * *Optional* If 'true', enables speaker detection for each recognized word in
+     * If 'true', enables speaker detection for each recognized word in
      * the top alternative of the recognition result using a speaker_tag provided
      * in the WordInfo.
      * Note: Use diarization_config instead.
@@ -3343,7 +3362,6 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * *Optional*
      * If set, specifies the estimated number of speakers in the conversation.
      * Defaults to '2'. Ignored unless enable_speaker_diarization is set to true.
      * Note: Use diarization_config instead.
@@ -3359,7 +3377,6 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * *Optional*
      * If set, specifies the estimated number of speakers in the conversation.
      * Defaults to '2'. Ignored unless enable_speaker_diarization is set to true.
      * Note: Use diarization_config instead.
@@ -3378,7 +3395,6 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * *Optional*
      * If set, specifies the estimated number of speakers in the conversation.
      * Defaults to '2'. Ignored unless enable_speaker_diarization is set to true.
      * Note: Use diarization_config instead.
@@ -3404,7 +3420,7 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * *Optional* Config to enable speaker diarization and set additional
+     * Config to enable speaker diarization and set additional
      * parameters to make diarization better suited for your application.
      * Note: When this is enabled, we send all the words from the beginning of the
      * audio for the top alternative in every consecutive STREAMING responses.
@@ -3423,7 +3439,7 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * *Optional* Config to enable speaker diarization and set additional
+     * Config to enable speaker diarization and set additional
      * parameters to make diarization better suited for your application.
      * Note: When this is enabled, we send all the words from the beginning of the
      * audio for the top alternative in every consecutive STREAMING responses.
@@ -3448,7 +3464,7 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * *Optional* Config to enable speaker diarization and set additional
+     * Config to enable speaker diarization and set additional
      * parameters to make diarization better suited for your application.
      * Note: When this is enabled, we send all the words from the beginning of the
      * audio for the top alternative in every consecutive STREAMING responses.
@@ -3478,7 +3494,7 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * *Optional* Config to enable speaker diarization and set additional
+     * Config to enable speaker diarization and set additional
      * parameters to make diarization better suited for your application.
      * Note: When this is enabled, we send all the words from the beginning of the
      * audio for the top alternative in every consecutive STREAMING responses.
@@ -3505,7 +3521,7 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * *Optional* Config to enable speaker diarization and set additional
+     * Config to enable speaker diarization and set additional
      * parameters to make diarization better suited for your application.
      * Note: When this is enabled, we send all the words from the beginning of the
      * audio for the top alternative in every consecutive STREAMING responses.
@@ -3540,7 +3556,7 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * *Optional* Config to enable speaker diarization and set additional
+     * Config to enable speaker diarization and set additional
      * parameters to make diarization better suited for your application.
      * Note: When this is enabled, we send all the words from the beginning of the
      * audio for the top alternative in every consecutive STREAMING responses.
@@ -3567,7 +3583,7 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * *Optional* Config to enable speaker diarization and set additional
+     * Config to enable speaker diarization and set additional
      * parameters to make diarization better suited for your application.
      * Note: When this is enabled, we send all the words from the beginning of the
      * audio for the top alternative in every consecutive STREAMING responses.
@@ -3589,7 +3605,7 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * *Optional* Config to enable speaker diarization and set additional
+     * Config to enable speaker diarization and set additional
      * parameters to make diarization better suited for your application.
      * Note: When this is enabled, we send all the words from the beginning of the
      * audio for the top alternative in every consecutive STREAMING responses.
@@ -3615,7 +3631,7 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * *Optional* Config to enable speaker diarization and set additional
+     * Config to enable speaker diarization and set additional
      * parameters to make diarization better suited for your application.
      * Note: When this is enabled, we send all the words from the beginning of the
      * audio for the top alternative in every consecutive STREAMING responses.
@@ -3654,7 +3670,7 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * *Optional* Metadata regarding this request.
+     * Metadata regarding this request.
      * </pre>
      *
      * <code>.google.cloud.speech.v1p1beta1.RecognitionMetadata metadata = 9;</code>
@@ -3666,7 +3682,7 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * *Optional* Metadata regarding this request.
+     * Metadata regarding this request.
      * </pre>
      *
      * <code>.google.cloud.speech.v1p1beta1.RecognitionMetadata metadata = 9;</code>
@@ -3684,7 +3700,7 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * *Optional* Metadata regarding this request.
+     * Metadata regarding this request.
      * </pre>
      *
      * <code>.google.cloud.speech.v1p1beta1.RecognitionMetadata metadata = 9;</code>
@@ -3706,7 +3722,7 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * *Optional* Metadata regarding this request.
+     * Metadata regarding this request.
      * </pre>
      *
      * <code>.google.cloud.speech.v1p1beta1.RecognitionMetadata metadata = 9;</code>
@@ -3726,7 +3742,7 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * *Optional* Metadata regarding this request.
+     * Metadata regarding this request.
      * </pre>
      *
      * <code>.google.cloud.speech.v1p1beta1.RecognitionMetadata metadata = 9;</code>
@@ -3752,7 +3768,7 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * *Optional* Metadata regarding this request.
+     * Metadata regarding this request.
      * </pre>
      *
      * <code>.google.cloud.speech.v1p1beta1.RecognitionMetadata metadata = 9;</code>
@@ -3772,7 +3788,7 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * *Optional* Metadata regarding this request.
+     * Metadata regarding this request.
      * </pre>
      *
      * <code>.google.cloud.speech.v1p1beta1.RecognitionMetadata metadata = 9;</code>
@@ -3786,7 +3802,7 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * *Optional* Metadata regarding this request.
+     * Metadata regarding this request.
      * </pre>
      *
      * <code>.google.cloud.speech.v1p1beta1.RecognitionMetadata metadata = 9;</code>
@@ -3804,7 +3820,7 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * *Optional* Metadata regarding this request.
+     * Metadata regarding this request.
      * </pre>
      *
      * <code>.google.cloud.speech.v1p1beta1.RecognitionMetadata metadata = 9;</code>
@@ -3831,7 +3847,7 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * *Optional* Which model to select for the given request. Select the model
+     * Which model to select for the given request. Select the model
      * best suited to your domain to get best results. If a model is not
      * explicitly specified, then we auto-select a model based on the parameters
      * in the RecognitionConfig.
@@ -3882,7 +3898,7 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * *Optional* Which model to select for the given request. Select the model
+     * Which model to select for the given request. Select the model
      * best suited to your domain to get best results. If a model is not
      * explicitly specified, then we auto-select a model based on the parameters
      * in the RecognitionConfig.
@@ -3933,7 +3949,7 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * *Optional* Which model to select for the given request. Select the model
+     * Which model to select for the given request. Select the model
      * best suited to your domain to get best results. If a model is not
      * explicitly specified, then we auto-select a model based on the parameters
      * in the RecognitionConfig.
@@ -3982,7 +3998,7 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * *Optional* Which model to select for the given request. Select the model
+     * Which model to select for the given request. Select the model
      * best suited to your domain to get best results. If a model is not
      * explicitly specified, then we auto-select a model based on the parameters
      * in the RecognitionConfig.
@@ -4028,7 +4044,7 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * *Optional* Which model to select for the given request. Select the model
+     * Which model to select for the given request. Select the model
      * best suited to your domain to get best results. If a model is not
      * explicitly specified, then we auto-select a model based on the parameters
      * in the RecognitionConfig.
@@ -4080,7 +4096,7 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * *Optional* Set to true to use an enhanced model for speech recognition.
+     * Set to true to use an enhanced model for speech recognition.
      * If `use_enhanced` is set to true and the `model` field is not set, then
      * an appropriate enhanced model is chosen if an enhanced model exists for
      * the audio.
@@ -4098,7 +4114,7 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * *Optional* Set to true to use an enhanced model for speech recognition.
+     * Set to true to use an enhanced model for speech recognition.
      * If `use_enhanced` is set to true and the `model` field is not set, then
      * an appropriate enhanced model is chosen if an enhanced model exists for
      * the audio.
@@ -4119,7 +4135,7 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * *Optional* Set to true to use an enhanced model for speech recognition.
+     * Set to true to use an enhanced model for speech recognition.
      * If `use_enhanced` is set to true and the `model` field is not set, then
      * an appropriate enhanced model is chosen if an enhanced model exists for
      * the audio.

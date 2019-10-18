@@ -131,11 +131,13 @@ public final class StreamingRecognitionConfig extends com.google.protobuf.Genera
    *
    *
    * <pre>
-   * *Required* Provides information to the recognizer that specifies how to
+   * Required. Provides information to the recognizer that specifies how to
    * process the request.
    * </pre>
    *
-   * <code>.google.cloud.speech.v1p1beta1.RecognitionConfig config = 1;</code>
+   * <code>
+   * .google.cloud.speech.v1p1beta1.RecognitionConfig config = 1 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   public boolean hasConfig() {
     return config_ != null;
@@ -144,11 +146,13 @@ public final class StreamingRecognitionConfig extends com.google.protobuf.Genera
    *
    *
    * <pre>
-   * *Required* Provides information to the recognizer that specifies how to
+   * Required. Provides information to the recognizer that specifies how to
    * process the request.
    * </pre>
    *
-   * <code>.google.cloud.speech.v1p1beta1.RecognitionConfig config = 1;</code>
+   * <code>
+   * .google.cloud.speech.v1p1beta1.RecognitionConfig config = 1 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   public com.google.cloud.speech.v1p1beta1.RecognitionConfig getConfig() {
     return config_ == null
@@ -159,11 +163,13 @@ public final class StreamingRecognitionConfig extends com.google.protobuf.Genera
    *
    *
    * <pre>
-   * *Required* Provides information to the recognizer that specifies how to
+   * Required. Provides information to the recognizer that specifies how to
    * process the request.
    * </pre>
    *
-   * <code>.google.cloud.speech.v1p1beta1.RecognitionConfig config = 1;</code>
+   * <code>
+   * .google.cloud.speech.v1p1beta1.RecognitionConfig config = 1 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   public com.google.cloud.speech.v1p1beta1.RecognitionConfigOrBuilder getConfigOrBuilder() {
     return getConfig();
@@ -175,7 +181,7 @@ public final class StreamingRecognitionConfig extends com.google.protobuf.Genera
    *
    *
    * <pre>
-   * *Optional* If `false` or omitted, the recognizer will perform continuous
+   * If `false` or omitted, the recognizer will perform continuous
    * recognition (continuing to wait for and process audio even if the user
    * pauses speaking) until the client closes the input stream (gRPC API) or
    * until the maximum time limit has been reached. May return multiple
@@ -199,7 +205,7 @@ public final class StreamingRecognitionConfig extends com.google.protobuf.Genera
    *
    *
    * <pre>
-   * *Optional* If `true`, interim results (tentative hypotheses) may be
+   * If `true`, interim results (tentative hypotheses) may be
    * returned as they become available (these interim results are indicated with
    * the `is_final=false` flag).
    * If `false` or omitted, only `is_final=true` result(s) are returned.
@@ -585,11 +591,13 @@ public final class StreamingRecognitionConfig extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * *Required* Provides information to the recognizer that specifies how to
+     * Required. Provides information to the recognizer that specifies how to
      * process the request.
      * </pre>
      *
-     * <code>.google.cloud.speech.v1p1beta1.RecognitionConfig config = 1;</code>
+     * <code>
+     * .google.cloud.speech.v1p1beta1.RecognitionConfig config = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public boolean hasConfig() {
       return configBuilder_ != null || config_ != null;
@@ -598,11 +606,13 @@ public final class StreamingRecognitionConfig extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * *Required* Provides information to the recognizer that specifies how to
+     * Required. Provides information to the recognizer that specifies how to
      * process the request.
      * </pre>
      *
-     * <code>.google.cloud.speech.v1p1beta1.RecognitionConfig config = 1;</code>
+     * <code>
+     * .google.cloud.speech.v1p1beta1.RecognitionConfig config = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public com.google.cloud.speech.v1p1beta1.RecognitionConfig getConfig() {
       if (configBuilder_ == null) {
@@ -617,11 +627,13 @@ public final class StreamingRecognitionConfig extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * *Required* Provides information to the recognizer that specifies how to
+     * Required. Provides information to the recognizer that specifies how to
      * process the request.
      * </pre>
      *
-     * <code>.google.cloud.speech.v1p1beta1.RecognitionConfig config = 1;</code>
+     * <code>
+     * .google.cloud.speech.v1p1beta1.RecognitionConfig config = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder setConfig(com.google.cloud.speech.v1p1beta1.RecognitionConfig value) {
       if (configBuilder_ == null) {
@@ -640,11 +652,13 @@ public final class StreamingRecognitionConfig extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * *Required* Provides information to the recognizer that specifies how to
+     * Required. Provides information to the recognizer that specifies how to
      * process the request.
      * </pre>
      *
-     * <code>.google.cloud.speech.v1p1beta1.RecognitionConfig config = 1;</code>
+     * <code>
+     * .google.cloud.speech.v1p1beta1.RecognitionConfig config = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder setConfig(
         com.google.cloud.speech.v1p1beta1.RecognitionConfig.Builder builderForValue) {
@@ -661,11 +675,13 @@ public final class StreamingRecognitionConfig extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * *Required* Provides information to the recognizer that specifies how to
+     * Required. Provides information to the recognizer that specifies how to
      * process the request.
      * </pre>
      *
-     * <code>.google.cloud.speech.v1p1beta1.RecognitionConfig config = 1;</code>
+     * <code>
+     * .google.cloud.speech.v1p1beta1.RecognitionConfig config = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder mergeConfig(com.google.cloud.speech.v1p1beta1.RecognitionConfig value) {
       if (configBuilder_ == null) {
@@ -688,11 +704,13 @@ public final class StreamingRecognitionConfig extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * *Required* Provides information to the recognizer that specifies how to
+     * Required. Provides information to the recognizer that specifies how to
      * process the request.
      * </pre>
      *
-     * <code>.google.cloud.speech.v1p1beta1.RecognitionConfig config = 1;</code>
+     * <code>
+     * .google.cloud.speech.v1p1beta1.RecognitionConfig config = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder clearConfig() {
       if (configBuilder_ == null) {
@@ -709,11 +727,13 @@ public final class StreamingRecognitionConfig extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * *Required* Provides information to the recognizer that specifies how to
+     * Required. Provides information to the recognizer that specifies how to
      * process the request.
      * </pre>
      *
-     * <code>.google.cloud.speech.v1p1beta1.RecognitionConfig config = 1;</code>
+     * <code>
+     * .google.cloud.speech.v1p1beta1.RecognitionConfig config = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public com.google.cloud.speech.v1p1beta1.RecognitionConfig.Builder getConfigBuilder() {
 
@@ -724,11 +744,13 @@ public final class StreamingRecognitionConfig extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * *Required* Provides information to the recognizer that specifies how to
+     * Required. Provides information to the recognizer that specifies how to
      * process the request.
      * </pre>
      *
-     * <code>.google.cloud.speech.v1p1beta1.RecognitionConfig config = 1;</code>
+     * <code>
+     * .google.cloud.speech.v1p1beta1.RecognitionConfig config = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public com.google.cloud.speech.v1p1beta1.RecognitionConfigOrBuilder getConfigOrBuilder() {
       if (configBuilder_ != null) {
@@ -743,11 +765,13 @@ public final class StreamingRecognitionConfig extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * *Required* Provides information to the recognizer that specifies how to
+     * Required. Provides information to the recognizer that specifies how to
      * process the request.
      * </pre>
      *
-     * <code>.google.cloud.speech.v1p1beta1.RecognitionConfig config = 1;</code>
+     * <code>
+     * .google.cloud.speech.v1p1beta1.RecognitionConfig config = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.speech.v1p1beta1.RecognitionConfig,
@@ -771,7 +795,7 @@ public final class StreamingRecognitionConfig extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * *Optional* If `false` or omitted, the recognizer will perform continuous
+     * If `false` or omitted, the recognizer will perform continuous
      * recognition (continuing to wait for and process audio even if the user
      * pauses speaking) until the client closes the input stream (gRPC API) or
      * until the maximum time limit has been reached. May return multiple
@@ -792,7 +816,7 @@ public final class StreamingRecognitionConfig extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * *Optional* If `false` or omitted, the recognizer will perform continuous
+     * If `false` or omitted, the recognizer will perform continuous
      * recognition (continuing to wait for and process audio even if the user
      * pauses speaking) until the client closes the input stream (gRPC API) or
      * until the maximum time limit has been reached. May return multiple
@@ -816,7 +840,7 @@ public final class StreamingRecognitionConfig extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * *Optional* If `false` or omitted, the recognizer will perform continuous
+     * If `false` or omitted, the recognizer will perform continuous
      * recognition (continuing to wait for and process audio even if the user
      * pauses speaking) until the client closes the input stream (gRPC API) or
      * until the maximum time limit has been reached. May return multiple
@@ -842,7 +866,7 @@ public final class StreamingRecognitionConfig extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * *Optional* If `true`, interim results (tentative hypotheses) may be
+     * If `true`, interim results (tentative hypotheses) may be
      * returned as they become available (these interim results are indicated with
      * the `is_final=false` flag).
      * If `false` or omitted, only `is_final=true` result(s) are returned.
@@ -857,7 +881,7 @@ public final class StreamingRecognitionConfig extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * *Optional* If `true`, interim results (tentative hypotheses) may be
+     * If `true`, interim results (tentative hypotheses) may be
      * returned as they become available (these interim results are indicated with
      * the `is_final=false` flag).
      * If `false` or omitted, only `is_final=true` result(s) are returned.
@@ -875,7 +899,7 @@ public final class StreamingRecognitionConfig extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * *Optional* If `true`, interim results (tentative hypotheses) may be
+     * If `true`, interim results (tentative hypotheses) may be
      * returned as they become available (these interim results are indicated with
      * the `is_final=false` flag).
      * If `false` or omitted, only `is_final=true` result(s) are returned.

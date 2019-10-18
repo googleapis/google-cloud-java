@@ -124,7 +124,7 @@ public final class RecognizeResponse extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * Output only. Sequential list of transcription results corresponding to
+   * Sequential list of transcription results corresponding to
    * sequential portions of audio.
    * </pre>
    *
@@ -138,7 +138,7 @@ public final class RecognizeResponse extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * Output only. Sequential list of transcription results corresponding to
+   * Sequential list of transcription results corresponding to
    * sequential portions of audio.
    * </pre>
    *
@@ -153,7 +153,7 @@ public final class RecognizeResponse extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * Output only. Sequential list of transcription results corresponding to
+   * Sequential list of transcription results corresponding to
    * sequential portions of audio.
    * </pre>
    *
@@ -166,7 +166,7 @@ public final class RecognizeResponse extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * Output only. Sequential list of transcription results corresponding to
+   * Sequential list of transcription results corresponding to
    * sequential portions of audio.
    * </pre>
    *
@@ -179,7 +179,7 @@ public final class RecognizeResponse extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * Output only. Sequential list of transcription results corresponding to
+   * Sequential list of transcription results corresponding to
    * sequential portions of audio.
    * </pre>
    *
@@ -574,7 +574,7 @@ public final class RecognizeResponse extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Output only. Sequential list of transcription results corresponding to
+     * Sequential list of transcription results corresponding to
      * sequential portions of audio.
      * </pre>
      *
@@ -592,7 +592,7 @@ public final class RecognizeResponse extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Output only. Sequential list of transcription results corresponding to
+     * Sequential list of transcription results corresponding to
      * sequential portions of audio.
      * </pre>
      *
@@ -609,7 +609,7 @@ public final class RecognizeResponse extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Output only. Sequential list of transcription results corresponding to
+     * Sequential list of transcription results corresponding to
      * sequential portions of audio.
      * </pre>
      *
@@ -626,7 +626,7 @@ public final class RecognizeResponse extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Output only. Sequential list of transcription results corresponding to
+     * Sequential list of transcription results corresponding to
      * sequential portions of audio.
      * </pre>
      *
@@ -650,7 +650,7 @@ public final class RecognizeResponse extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Output only. Sequential list of transcription results corresponding to
+     * Sequential list of transcription results corresponding to
      * sequential portions of audio.
      * </pre>
      *
@@ -672,7 +672,7 @@ public final class RecognizeResponse extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Output only. Sequential list of transcription results corresponding to
+     * Sequential list of transcription results corresponding to
      * sequential portions of audio.
      * </pre>
      *
@@ -695,7 +695,7 @@ public final class RecognizeResponse extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Output only. Sequential list of transcription results corresponding to
+     * Sequential list of transcription results corresponding to
      * sequential portions of audio.
      * </pre>
      *
@@ -719,7 +719,7 @@ public final class RecognizeResponse extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Output only. Sequential list of transcription results corresponding to
+     * Sequential list of transcription results corresponding to
      * sequential portions of audio.
      * </pre>
      *
@@ -740,7 +740,7 @@ public final class RecognizeResponse extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Output only. Sequential list of transcription results corresponding to
+     * Sequential list of transcription results corresponding to
      * sequential portions of audio.
      * </pre>
      *
@@ -762,7 +762,7 @@ public final class RecognizeResponse extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Output only. Sequential list of transcription results corresponding to
+     * Sequential list of transcription results corresponding to
      * sequential portions of audio.
      * </pre>
      *
@@ -784,7 +784,7 @@ public final class RecognizeResponse extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Output only. Sequential list of transcription results corresponding to
+     * Sequential list of transcription results corresponding to
      * sequential portions of audio.
      * </pre>
      *
@@ -804,7 +804,7 @@ public final class RecognizeResponse extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Output only. Sequential list of transcription results corresponding to
+     * Sequential list of transcription results corresponding to
      * sequential portions of audio.
      * </pre>
      *
@@ -824,7 +824,7 @@ public final class RecognizeResponse extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Output only. Sequential list of transcription results corresponding to
+     * Sequential list of transcription results corresponding to
      * sequential portions of audio.
      * </pre>
      *
@@ -838,7 +838,7 @@ public final class RecognizeResponse extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Output only. Sequential list of transcription results corresponding to
+     * Sequential list of transcription results corresponding to
      * sequential portions of audio.
      * </pre>
      *
@@ -856,7 +856,7 @@ public final class RecognizeResponse extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Output only. Sequential list of transcription results corresponding to
+     * Sequential list of transcription results corresponding to
      * sequential portions of audio.
      * </pre>
      *
@@ -875,7 +875,7 @@ public final class RecognizeResponse extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Output only. Sequential list of transcription results corresponding to
+     * Sequential list of transcription results corresponding to
      * sequential portions of audio.
      * </pre>
      *
@@ -890,7 +890,7 @@ public final class RecognizeResponse extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Output only. Sequential list of transcription results corresponding to
+     * Sequential list of transcription results corresponding to
      * sequential portions of audio.
      * </pre>
      *
@@ -907,7 +907,7 @@ public final class RecognizeResponse extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Output only. Sequential list of transcription results corresponding to
+     * Sequential list of transcription results corresponding to
      * sequential portions of audio.
      * </pre>
      *
