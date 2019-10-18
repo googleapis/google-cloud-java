@@ -109,7 +109,7 @@ public final class TextInput extends com.google.protobuf.GeneratedMessageV3
    * Text length must not exceed 256 characters.
    * </pre>
    *
-   * <code>string text = 1;</code>
+   * <code>string text = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   public java.lang.String getText() {
     java.lang.Object ref = text_;
@@ -130,7 +130,7 @@ public final class TextInput extends com.google.protobuf.GeneratedMessageV3
    * Text length must not exceed 256 characters.
    * </pre>
    *
-   * <code>string text = 1;</code>
+   * <code>string text = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   public com.google.protobuf.ByteString getTextBytes() {
     java.lang.Object ref = text_;
@@ -156,7 +156,7 @@ public final class TextInput extends com.google.protobuf.GeneratedMessageV3
    * the same session do not necessarily need to specify the same language.
    * </pre>
    *
-   * <code>string language_code = 2;</code>
+   * <code>string language_code = 2 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   public java.lang.String getLanguageCode() {
     java.lang.Object ref = languageCode_;
@@ -179,7 +179,7 @@ public final class TextInput extends com.google.protobuf.GeneratedMessageV3
    * the same session do not necessarily need to specify the same language.
    * </pre>
    *
-   * <code>string language_code = 2;</code>
+   * <code>string language_code = 2 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   public com.google.protobuf.ByteString getLanguageCodeBytes() {
     java.lang.Object ref = languageCode_;
@@ -533,7 +533,7 @@ public final class TextInput extends com.google.protobuf.GeneratedMessageV3
      * Text length must not exceed 256 characters.
      * </pre>
      *
-     * <code>string text = 1;</code>
+     * <code>string text = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public java.lang.String getText() {
       java.lang.Object ref = text_;
@@ -554,7 +554,7 @@ public final class TextInput extends com.google.protobuf.GeneratedMessageV3
      * Text length must not exceed 256 characters.
      * </pre>
      *
-     * <code>string text = 1;</code>
+     * <code>string text = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public com.google.protobuf.ByteString getTextBytes() {
       java.lang.Object ref = text_;
@@ -575,7 +575,7 @@ public final class TextInput extends com.google.protobuf.GeneratedMessageV3
      * Text length must not exceed 256 characters.
      * </pre>
      *
-     * <code>string text = 1;</code>
+     * <code>string text = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder setText(java.lang.String value) {
       if (value == null) {
@@ -594,7 +594,7 @@ public final class TextInput extends com.google.protobuf.GeneratedMessageV3
      * Text length must not exceed 256 characters.
      * </pre>
      *
-     * <code>string text = 1;</code>
+     * <code>string text = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder clearText() {
 
@@ -610,7 +610,7 @@ public final class TextInput extends com.google.protobuf.GeneratedMessageV3
      * Text length must not exceed 256 characters.
      * </pre>
      *
-     * <code>string text = 1;</code>
+     * <code>string text = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder setTextBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -634,7 +634,7 @@ public final class TextInput extends com.google.protobuf.GeneratedMessageV3
      * the same session do not necessarily need to specify the same language.
      * </pre>
      *
-     * <code>string language_code = 2;</code>
+     * <code>string language_code = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public java.lang.String getLanguageCode() {
       java.lang.Object ref = languageCode_;
@@ -657,7 +657,7 @@ public final class TextInput extends com.google.protobuf.GeneratedMessageV3
      * the same session do not necessarily need to specify the same language.
      * </pre>
      *
-     * <code>string language_code = 2;</code>
+     * <code>string language_code = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public com.google.protobuf.ByteString getLanguageCodeBytes() {
       java.lang.Object ref = languageCode_;
@@ -680,7 +680,7 @@ public final class TextInput extends com.google.protobuf.GeneratedMessageV3
      * the same session do not necessarily need to specify the same language.
      * </pre>
      *
-     * <code>string language_code = 2;</code>
+     * <code>string language_code = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder setLanguageCode(java.lang.String value) {
       if (value == null) {
@@ -701,7 +701,7 @@ public final class TextInput extends com.google.protobuf.GeneratedMessageV3
      * the same session do not necessarily need to specify the same language.
      * </pre>
      *
-     * <code>string language_code = 2;</code>
+     * <code>string language_code = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder clearLanguageCode() {
 
@@ -719,7 +719,7 @@ public final class TextInput extends com.google.protobuf.GeneratedMessageV3
      * the same session do not necessarily need to specify the same language.
      * </pre>
      *
-     * <code>string language_code = 2;</code>
+     * <code>string language_code = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder setLanguageCodeBytes(com.google.protobuf.ByteString value) {
       if (value == null) {

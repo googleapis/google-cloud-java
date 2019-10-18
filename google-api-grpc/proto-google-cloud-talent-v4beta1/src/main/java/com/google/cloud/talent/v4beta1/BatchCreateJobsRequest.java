@@ -114,13 +114,12 @@ public final class BatchCreateJobsRequest extends com.google.protobuf.GeneratedM
    *
    * <pre>
    * Required. The resource name of the tenant under which the job is created.
-   * The format is "projects/{project_id}/tenants/{tenant_id}", for example,
-   * "projects/api-test-project/tenant/foo".
-   * Tenant id is optional and a default tenant is created if unspecified, for
-   * example, "projects/api-test-project".
+   * The format is "projects/{project_id}/tenants/{tenant_id}". For example,
+   * "projects/foo/tenant/bar". If tenant id is unspecified, a default tenant
+   * is created. For example, "projects/foo".
    * </pre>
    *
-   * <code>string parent = 1;</code>
+   * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   public java.lang.String getParent() {
     java.lang.Object ref = parent_;
@@ -138,13 +137,12 @@ public final class BatchCreateJobsRequest extends com.google.protobuf.GeneratedM
    *
    * <pre>
    * Required. The resource name of the tenant under which the job is created.
-   * The format is "projects/{project_id}/tenants/{tenant_id}", for example,
-   * "projects/api-test-project/tenant/foo".
-   * Tenant id is optional and a default tenant is created if unspecified, for
-   * example, "projects/api-test-project".
+   * The format is "projects/{project_id}/tenants/{tenant_id}". For example,
+   * "projects/foo/tenant/bar". If tenant id is unspecified, a default tenant
+   * is created. For example, "projects/foo".
    * </pre>
    *
-   * <code>string parent = 1;</code>
+   * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   public com.google.protobuf.ByteString getParentBytes() {
     java.lang.Object ref = parent_;
@@ -167,7 +165,9 @@ public final class BatchCreateJobsRequest extends com.google.protobuf.GeneratedM
    * Required. The jobs to be created.
    * </pre>
    *
-   * <code>repeated .google.cloud.talent.v4beta1.Job jobs = 2;</code>
+   * <code>
+   * repeated .google.cloud.talent.v4beta1.Job jobs = 2 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   public java.util.List<com.google.cloud.talent.v4beta1.Job> getJobsList() {
     return jobs_;
@@ -179,7 +179,9 @@ public final class BatchCreateJobsRequest extends com.google.protobuf.GeneratedM
    * Required. The jobs to be created.
    * </pre>
    *
-   * <code>repeated .google.cloud.talent.v4beta1.Job jobs = 2;</code>
+   * <code>
+   * repeated .google.cloud.talent.v4beta1.Job jobs = 2 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   public java.util.List<? extends com.google.cloud.talent.v4beta1.JobOrBuilder>
       getJobsOrBuilderList() {
@@ -192,7 +194,9 @@ public final class BatchCreateJobsRequest extends com.google.protobuf.GeneratedM
    * Required. The jobs to be created.
    * </pre>
    *
-   * <code>repeated .google.cloud.talent.v4beta1.Job jobs = 2;</code>
+   * <code>
+   * repeated .google.cloud.talent.v4beta1.Job jobs = 2 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   public int getJobsCount() {
     return jobs_.size();
@@ -204,7 +208,9 @@ public final class BatchCreateJobsRequest extends com.google.protobuf.GeneratedM
    * Required. The jobs to be created.
    * </pre>
    *
-   * <code>repeated .google.cloud.talent.v4beta1.Job jobs = 2;</code>
+   * <code>
+   * repeated .google.cloud.talent.v4beta1.Job jobs = 2 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   public com.google.cloud.talent.v4beta1.Job getJobs(int index) {
     return jobs_.get(index);
@@ -216,7 +222,9 @@ public final class BatchCreateJobsRequest extends com.google.protobuf.GeneratedM
    * Required. The jobs to be created.
    * </pre>
    *
-   * <code>repeated .google.cloud.talent.v4beta1.Job jobs = 2;</code>
+   * <code>
+   * repeated .google.cloud.talent.v4beta1.Job jobs = 2 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   public com.google.cloud.talent.v4beta1.JobOrBuilder getJobsOrBuilder(int index) {
     return jobs_.get(index);
@@ -607,13 +615,12 @@ public final class BatchCreateJobsRequest extends com.google.protobuf.GeneratedM
      *
      * <pre>
      * Required. The resource name of the tenant under which the job is created.
-     * The format is "projects/{project_id}/tenants/{tenant_id}", for example,
-     * "projects/api-test-project/tenant/foo".
-     * Tenant id is optional and a default tenant is created if unspecified, for
-     * example, "projects/api-test-project".
+     * The format is "projects/{project_id}/tenants/{tenant_id}". For example,
+     * "projects/foo/tenant/bar". If tenant id is unspecified, a default tenant
+     * is created. For example, "projects/foo".
      * </pre>
      *
-     * <code>string parent = 1;</code>
+     * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public java.lang.String getParent() {
       java.lang.Object ref = parent_;
@@ -631,13 +638,12 @@ public final class BatchCreateJobsRequest extends com.google.protobuf.GeneratedM
      *
      * <pre>
      * Required. The resource name of the tenant under which the job is created.
-     * The format is "projects/{project_id}/tenants/{tenant_id}", for example,
-     * "projects/api-test-project/tenant/foo".
-     * Tenant id is optional and a default tenant is created if unspecified, for
-     * example, "projects/api-test-project".
+     * The format is "projects/{project_id}/tenants/{tenant_id}". For example,
+     * "projects/foo/tenant/bar". If tenant id is unspecified, a default tenant
+     * is created. For example, "projects/foo".
      * </pre>
      *
-     * <code>string parent = 1;</code>
+     * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public com.google.protobuf.ByteString getParentBytes() {
       java.lang.Object ref = parent_;
@@ -655,13 +661,12 @@ public final class BatchCreateJobsRequest extends com.google.protobuf.GeneratedM
      *
      * <pre>
      * Required. The resource name of the tenant under which the job is created.
-     * The format is "projects/{project_id}/tenants/{tenant_id}", for example,
-     * "projects/api-test-project/tenant/foo".
-     * Tenant id is optional and a default tenant is created if unspecified, for
-     * example, "projects/api-test-project".
+     * The format is "projects/{project_id}/tenants/{tenant_id}". For example,
+     * "projects/foo/tenant/bar". If tenant id is unspecified, a default tenant
+     * is created. For example, "projects/foo".
      * </pre>
      *
-     * <code>string parent = 1;</code>
+     * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder setParent(java.lang.String value) {
       if (value == null) {
@@ -677,13 +682,12 @@ public final class BatchCreateJobsRequest extends com.google.protobuf.GeneratedM
      *
      * <pre>
      * Required. The resource name of the tenant under which the job is created.
-     * The format is "projects/{project_id}/tenants/{tenant_id}", for example,
-     * "projects/api-test-project/tenant/foo".
-     * Tenant id is optional and a default tenant is created if unspecified, for
-     * example, "projects/api-test-project".
+     * The format is "projects/{project_id}/tenants/{tenant_id}". For example,
+     * "projects/foo/tenant/bar". If tenant id is unspecified, a default tenant
+     * is created. For example, "projects/foo".
      * </pre>
      *
-     * <code>string parent = 1;</code>
+     * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder clearParent() {
 
@@ -696,13 +700,12 @@ public final class BatchCreateJobsRequest extends com.google.protobuf.GeneratedM
      *
      * <pre>
      * Required. The resource name of the tenant under which the job is created.
-     * The format is "projects/{project_id}/tenants/{tenant_id}", for example,
-     * "projects/api-test-project/tenant/foo".
-     * Tenant id is optional and a default tenant is created if unspecified, for
-     * example, "projects/api-test-project".
+     * The format is "projects/{project_id}/tenants/{tenant_id}". For example,
+     * "projects/foo/tenant/bar". If tenant id is unspecified, a default tenant
+     * is created. For example, "projects/foo".
      * </pre>
      *
-     * <code>string parent = 1;</code>
+     * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder setParentBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -738,7 +741,9 @@ public final class BatchCreateJobsRequest extends com.google.protobuf.GeneratedM
      * Required. The jobs to be created.
      * </pre>
      *
-     * <code>repeated .google.cloud.talent.v4beta1.Job jobs = 2;</code>
+     * <code>
+     * repeated .google.cloud.talent.v4beta1.Job jobs = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public java.util.List<com.google.cloud.talent.v4beta1.Job> getJobsList() {
       if (jobsBuilder_ == null) {
@@ -754,7 +759,9 @@ public final class BatchCreateJobsRequest extends com.google.protobuf.GeneratedM
      * Required. The jobs to be created.
      * </pre>
      *
-     * <code>repeated .google.cloud.talent.v4beta1.Job jobs = 2;</code>
+     * <code>
+     * repeated .google.cloud.talent.v4beta1.Job jobs = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public int getJobsCount() {
       if (jobsBuilder_ == null) {
@@ -770,7 +777,9 @@ public final class BatchCreateJobsRequest extends com.google.protobuf.GeneratedM
      * Required. The jobs to be created.
      * </pre>
      *
-     * <code>repeated .google.cloud.talent.v4beta1.Job jobs = 2;</code>
+     * <code>
+     * repeated .google.cloud.talent.v4beta1.Job jobs = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public com.google.cloud.talent.v4beta1.Job getJobs(int index) {
       if (jobsBuilder_ == null) {
@@ -786,7 +795,9 @@ public final class BatchCreateJobsRequest extends com.google.protobuf.GeneratedM
      * Required. The jobs to be created.
      * </pre>
      *
-     * <code>repeated .google.cloud.talent.v4beta1.Job jobs = 2;</code>
+     * <code>
+     * repeated .google.cloud.talent.v4beta1.Job jobs = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder setJobs(int index, com.google.cloud.talent.v4beta1.Job value) {
       if (jobsBuilder_ == null) {
@@ -808,7 +819,9 @@ public final class BatchCreateJobsRequest extends com.google.protobuf.GeneratedM
      * Required. The jobs to be created.
      * </pre>
      *
-     * <code>repeated .google.cloud.talent.v4beta1.Job jobs = 2;</code>
+     * <code>
+     * repeated .google.cloud.talent.v4beta1.Job jobs = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder setJobs(int index, com.google.cloud.talent.v4beta1.Job.Builder builderForValue) {
       if (jobsBuilder_ == null) {
@@ -827,7 +840,9 @@ public final class BatchCreateJobsRequest extends com.google.protobuf.GeneratedM
      * Required. The jobs to be created.
      * </pre>
      *
-     * <code>repeated .google.cloud.talent.v4beta1.Job jobs = 2;</code>
+     * <code>
+     * repeated .google.cloud.talent.v4beta1.Job jobs = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder addJobs(com.google.cloud.talent.v4beta1.Job value) {
       if (jobsBuilder_ == null) {
@@ -849,7 +864,9 @@ public final class BatchCreateJobsRequest extends com.google.protobuf.GeneratedM
      * Required. The jobs to be created.
      * </pre>
      *
-     * <code>repeated .google.cloud.talent.v4beta1.Job jobs = 2;</code>
+     * <code>
+     * repeated .google.cloud.talent.v4beta1.Job jobs = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder addJobs(int index, com.google.cloud.talent.v4beta1.Job value) {
       if (jobsBuilder_ == null) {
@@ -871,7 +888,9 @@ public final class BatchCreateJobsRequest extends com.google.protobuf.GeneratedM
      * Required. The jobs to be created.
      * </pre>
      *
-     * <code>repeated .google.cloud.talent.v4beta1.Job jobs = 2;</code>
+     * <code>
+     * repeated .google.cloud.talent.v4beta1.Job jobs = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder addJobs(com.google.cloud.talent.v4beta1.Job.Builder builderForValue) {
       if (jobsBuilder_ == null) {
@@ -890,7 +909,9 @@ public final class BatchCreateJobsRequest extends com.google.protobuf.GeneratedM
      * Required. The jobs to be created.
      * </pre>
      *
-     * <code>repeated .google.cloud.talent.v4beta1.Job jobs = 2;</code>
+     * <code>
+     * repeated .google.cloud.talent.v4beta1.Job jobs = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder addJobs(int index, com.google.cloud.talent.v4beta1.Job.Builder builderForValue) {
       if (jobsBuilder_ == null) {
@@ -909,7 +930,9 @@ public final class BatchCreateJobsRequest extends com.google.protobuf.GeneratedM
      * Required. The jobs to be created.
      * </pre>
      *
-     * <code>repeated .google.cloud.talent.v4beta1.Job jobs = 2;</code>
+     * <code>
+     * repeated .google.cloud.talent.v4beta1.Job jobs = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder addAllJobs(
         java.lang.Iterable<? extends com.google.cloud.talent.v4beta1.Job> values) {
@@ -929,7 +952,9 @@ public final class BatchCreateJobsRequest extends com.google.protobuf.GeneratedM
      * Required. The jobs to be created.
      * </pre>
      *
-     * <code>repeated .google.cloud.talent.v4beta1.Job jobs = 2;</code>
+     * <code>
+     * repeated .google.cloud.talent.v4beta1.Job jobs = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder clearJobs() {
       if (jobsBuilder_ == null) {
@@ -948,7 +973,9 @@ public final class BatchCreateJobsRequest extends com.google.protobuf.GeneratedM
      * Required. The jobs to be created.
      * </pre>
      *
-     * <code>repeated .google.cloud.talent.v4beta1.Job jobs = 2;</code>
+     * <code>
+     * repeated .google.cloud.talent.v4beta1.Job jobs = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder removeJobs(int index) {
       if (jobsBuilder_ == null) {
@@ -967,7 +994,9 @@ public final class BatchCreateJobsRequest extends com.google.protobuf.GeneratedM
      * Required. The jobs to be created.
      * </pre>
      *
-     * <code>repeated .google.cloud.talent.v4beta1.Job jobs = 2;</code>
+     * <code>
+     * repeated .google.cloud.talent.v4beta1.Job jobs = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public com.google.cloud.talent.v4beta1.Job.Builder getJobsBuilder(int index) {
       return getJobsFieldBuilder().getBuilder(index);
@@ -979,7 +1008,9 @@ public final class BatchCreateJobsRequest extends com.google.protobuf.GeneratedM
      * Required. The jobs to be created.
      * </pre>
      *
-     * <code>repeated .google.cloud.talent.v4beta1.Job jobs = 2;</code>
+     * <code>
+     * repeated .google.cloud.talent.v4beta1.Job jobs = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public com.google.cloud.talent.v4beta1.JobOrBuilder getJobsOrBuilder(int index) {
       if (jobsBuilder_ == null) {
@@ -995,7 +1026,9 @@ public final class BatchCreateJobsRequest extends com.google.protobuf.GeneratedM
      * Required. The jobs to be created.
      * </pre>
      *
-     * <code>repeated .google.cloud.talent.v4beta1.Job jobs = 2;</code>
+     * <code>
+     * repeated .google.cloud.talent.v4beta1.Job jobs = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public java.util.List<? extends com.google.cloud.talent.v4beta1.JobOrBuilder>
         getJobsOrBuilderList() {
@@ -1012,7 +1045,9 @@ public final class BatchCreateJobsRequest extends com.google.protobuf.GeneratedM
      * Required. The jobs to be created.
      * </pre>
      *
-     * <code>repeated .google.cloud.talent.v4beta1.Job jobs = 2;</code>
+     * <code>
+     * repeated .google.cloud.talent.v4beta1.Job jobs = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public com.google.cloud.talent.v4beta1.Job.Builder addJobsBuilder() {
       return getJobsFieldBuilder()
@@ -1025,7 +1060,9 @@ public final class BatchCreateJobsRequest extends com.google.protobuf.GeneratedM
      * Required. The jobs to be created.
      * </pre>
      *
-     * <code>repeated .google.cloud.talent.v4beta1.Job jobs = 2;</code>
+     * <code>
+     * repeated .google.cloud.talent.v4beta1.Job jobs = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public com.google.cloud.talent.v4beta1.Job.Builder addJobsBuilder(int index) {
       return getJobsFieldBuilder()
@@ -1038,7 +1075,9 @@ public final class BatchCreateJobsRequest extends com.google.protobuf.GeneratedM
      * Required. The jobs to be created.
      * </pre>
      *
-     * <code>repeated .google.cloud.talent.v4beta1.Job jobs = 2;</code>
+     * <code>
+     * repeated .google.cloud.talent.v4beta1.Job jobs = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public java.util.List<com.google.cloud.talent.v4beta1.Job.Builder> getJobsBuilderList() {
       return getJobsFieldBuilder().getBuilderList();

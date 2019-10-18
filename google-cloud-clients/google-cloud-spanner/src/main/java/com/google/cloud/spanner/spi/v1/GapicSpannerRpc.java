@@ -36,7 +36,6 @@ import com.google.api.gax.rpc.StreamController;
 import com.google.api.gax.rpc.TransportChannelProvider;
 import com.google.api.gax.rpc.WatchdogProvider;
 import com.google.api.pathtemplate.PathTemplate;
-import com.google.cloud.ServiceOptions;
 import com.google.cloud.grpc.GrpcTransportOptions;
 import com.google.cloud.spanner.SpannerException;
 import com.google.cloud.spanner.SpannerExceptionFactory;
@@ -50,6 +49,11 @@ import com.google.cloud.spanner.v1.stub.SpannerStub;
 import com.google.common.base.MoreObjects;
 import com.google.common.base.Preconditions;
 import com.google.common.util.concurrent.ThreadFactoryBuilder;
+import com.google.iam.v1.GetIamPolicyRequest;
+import com.google.iam.v1.Policy;
+import com.google.iam.v1.SetIamPolicyRequest;
+import com.google.iam.v1.TestIamPermissionsRequest;
+import com.google.iam.v1.TestIamPermissionsResponse;
 import com.google.longrunning.GetOperationRequest;
 import com.google.longrunning.Operation;
 import com.google.protobuf.Empty;
@@ -77,6 +81,7 @@ import com.google.spanner.admin.instance.v1.ListInstancesRequest;
 import com.google.spanner.admin.instance.v1.ListInstancesResponse;
 import com.google.spanner.admin.instance.v1.UpdateInstanceMetadata;
 import com.google.spanner.admin.instance.v1.UpdateInstanceRequest;
+import com.google.spanner.v1.BatchCreateSessionsRequest;
 import com.google.spanner.v1.BeginTransactionRequest;
 import com.google.spanner.v1.CommitRequest;
 import com.google.spanner.v1.CommitResponse;
@@ -191,8 +196,7 @@ public class GapicSpannerRpc implements SpannerRpc {
     ApiClientHeaderProvider internalHeaderProvider =
         internalHeaderProviderBuilder
             .setClientLibToken(
-                ServiceOptions.getGoogApiClientLibName(),
-                GaxProperties.getLibraryVersion(options.getClass()))
+                options.getClientLibToken(), GaxProperties.getLibraryVersion(options.getClass()))
             .setTransportToken(
                 GaxGrpcProperties.getGrpcTokenName(), GaxGrpcProperties.getGrpcVersion())
             .build();
@@ -461,6 +465,27 @@ public class GapicSpannerRpc implements SpannerRpc {
   }
 
   @Override
+  public List<Session> batchCreateSessions(
+      String databaseName,
+      int sessionCount,
+      @Nullable Map<String, String> labels,
+      @Nullable Map<Option, ?> options)
+      throws SpannerException {
+    BatchCreateSessionsRequest.Builder requestBuilder =
+        BatchCreateSessionsRequest.newBuilder()
+            .setDatabase(databaseName)
+            .setSessionCount(sessionCount);
+    if (labels != null && !labels.isEmpty()) {
+      Session.Builder session = Session.newBuilder().putAllLabels(labels);
+      requestBuilder.setSessionTemplate(session);
+    }
+    BatchCreateSessionsRequest request = requestBuilder.build();
+    GrpcCallContext context = newCallContext(options, databaseName);
+    return get(spannerStub.batchCreateSessionsCallable().futureCall(request, context))
+        .getSessionList();
+  }
+
+  @Override
   public Session createSession(
       String databaseName, @Nullable Map<String, String> labels, @Nullable Map<Option, ?> options)
       throws SpannerException {
@@ -581,6 +606,76 @@ public class GapicSpannerRpc implements SpannerRpc {
       PartitionReadRequest request, @Nullable Map<Option, ?> options) throws SpannerException {
     GrpcCallContext context = newCallContext(options, request.getSession());
     return get(spannerStub.partitionReadCallable().futureCall(request, context));
+  }
+
+  @Override
+  public Policy getDatabaseAdminIAMPolicy(String resource) {
+    GrpcCallContext context = newCallContext(null, resource);
+    return get(
+        databaseAdminStub
+            .getIamPolicyCallable()
+            .futureCall(GetIamPolicyRequest.newBuilder().setResource(resource).build(), context));
+  }
+
+  @Override
+  public Policy setDatabaseAdminIAMPolicy(String resource, Policy policy) {
+    GrpcCallContext context = newCallContext(null, resource);
+    return get(
+        databaseAdminStub
+            .setIamPolicyCallable()
+            .futureCall(
+                SetIamPolicyRequest.newBuilder().setResource(resource).setPolicy(policy).build(),
+                context));
+  }
+
+  @Override
+  public TestIamPermissionsResponse testDatabaseAdminIAMPermissions(
+      String resource, Iterable<String> permissions) {
+    GrpcCallContext context = newCallContext(null, resource);
+    return get(
+        databaseAdminStub
+            .testIamPermissionsCallable()
+            .futureCall(
+                TestIamPermissionsRequest.newBuilder()
+                    .setResource(resource)
+                    .addAllPermissions(permissions)
+                    .build(),
+                context));
+  }
+
+  @Override
+  public Policy getInstanceAdminIAMPolicy(String resource) {
+    GrpcCallContext context = newCallContext(null, resource);
+    return get(
+        instanceAdminStub
+            .getIamPolicyCallable()
+            .futureCall(GetIamPolicyRequest.newBuilder().setResource(resource).build(), context));
+  }
+
+  @Override
+  public Policy setInstanceAdminIAMPolicy(String resource, Policy policy) {
+    GrpcCallContext context = newCallContext(null, resource);
+    return get(
+        instanceAdminStub
+            .setIamPolicyCallable()
+            .futureCall(
+                SetIamPolicyRequest.newBuilder().setResource(resource).setPolicy(policy).build(),
+                context));
+  }
+
+  @Override
+  public TestIamPermissionsResponse testInstanceAdminIAMPermissions(
+      String resource, Iterable<String> permissions) {
+    GrpcCallContext context = newCallContext(null, resource);
+    return get(
+        instanceAdminStub
+            .testIamPermissionsCallable()
+            .futureCall(
+                TestIamPermissionsRequest.newBuilder()
+                    .setResource(resource)
+                    .addAllPermissions(permissions)
+                    .build(),
+                context));
   }
 
   /** Gets the result of an async RPC call, handling any exceptions encountered. */

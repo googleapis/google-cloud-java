@@ -49,6 +49,8 @@ import org.threeten.bp.Duration;
 public class SpannerOptions extends ServiceOptions<Spanner, SpannerOptions> {
   private static final long serialVersionUID = 2789571558532701170L;
 
+  private static final String JDBC_API_CLIENT_LIB_TOKEN = "sp-jdbc";
+  private static final String HIBERNATE_API_CLIENT_LIB_TOKEN = "sp-hib";
   private static final String API_SHORT_NAME = "Spanner";
   private static final String DEFAULT_HOST = "https://spanner.googleapis.com";
   private static final ImmutableSet<String> SCOPES =
@@ -123,6 +125,11 @@ public class SpannerOptions extends ServiceOptions<Spanner, SpannerOptions> {
   public static class Builder
       extends ServiceOptions.Builder<Spanner, SpannerOptions, SpannerOptions.Builder> {
     private static final int DEFAULT_PREFETCH_CHUNKS = 4;
+    private final ImmutableSet<String> allowedClientLibTokens =
+        ImmutableSet.of(
+            ServiceOptions.getGoogApiClientLibName(),
+            JDBC_API_CLIENT_LIB_TOKEN,
+            HIBERNATE_API_CLIENT_LIB_TOKEN);
     private TransportChannelProvider channelProvider;
 
     @SuppressWarnings("rawtypes")
@@ -168,6 +175,11 @@ public class SpannerOptions extends ServiceOptions<Spanner, SpannerOptions> {
             "Only grpc transport is allowed for " + API_SHORT_NAME + ".");
       }
       return super.setTransportOptions(transportOptions);
+    }
+
+    @Override
+    protected Set<String> getAllowedClientLibTokens() {
+      return allowedClientLibTokens;
     }
 
     /**

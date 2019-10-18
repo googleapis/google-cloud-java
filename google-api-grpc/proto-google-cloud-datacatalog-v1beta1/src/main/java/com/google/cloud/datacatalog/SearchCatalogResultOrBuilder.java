@@ -37,8 +37,8 @@ public interface SearchCatalogResultOrBuilder
    * <pre>
    * Sub-type of the search result. This is a dot-delimited description of the
    * resource's full type, and is the same as the value callers would provide in
-   * the "type" search facet.  Examples: "entry.table", "entry.dataStream",
-   * "tagTemplate"
+   * the "type" search facet.  Examples: `entry.table`, `entry.dataStream`,
+   * `tagTemplate`.
    * </pre>
    *
    * <code>string search_result_subtype = 2;</code>
@@ -50,8 +50,8 @@ public interface SearchCatalogResultOrBuilder
    * <pre>
    * Sub-type of the search result. This is a dot-delimited description of the
    * resource's full type, and is the same as the value callers would provide in
-   * the "type" search facet.  Examples: "entry.table", "entry.dataStream",
-   * "tagTemplate"
+   * the "type" search facet.  Examples: `entry.table`, `entry.dataStream`,
+   * `tagTemplate`.
    * </pre>
    *
    * <code>string search_result_subtype = 2;</code>
@@ -64,8 +64,8 @@ public interface SearchCatalogResultOrBuilder
    * <pre>
    * The relative resource name of the resource in URL format.
    * Examples:
-   * "projects/{project_id}/locations/{location_id}/entryGroups/{entry_group_id}/entries/{entry_id}".
-   * "projects/{project_id}/tagTemplates/{tag_template_id}".
+   *  * `projects/{project_id}/locations/{location_id}/entryGroups/{entry_group_id}/entries/{entry_id}`
+   *  * `projects/{project_id}/tagTemplates/{tag_template_id}`
    * </pre>
    *
    * <code>string relative_resource_name = 3;</code>
@@ -77,8 +77,8 @@ public interface SearchCatalogResultOrBuilder
    * <pre>
    * The relative resource name of the resource in URL format.
    * Examples:
-   * "projects/{project_id}/locations/{location_id}/entryGroups/{entry_group_id}/entries/{entry_id}".
-   * "projects/{project_id}/tagTemplates/{tag_template_id}".
+   *  * `projects/{project_id}/locations/{location_id}/entryGroups/{entry_group_id}/entries/{entry_id}`
+   *  * `projects/{project_id}/tagTemplates/{tag_template_id}`
    * </pre>
    *
    * <code>string relative_resource_name = 3;</code>
@@ -90,9 +90,9 @@ public interface SearchCatalogResultOrBuilder
    *
    * <pre>
    * The full name of the cloud resource the entry belongs to. See:
-   * https://cloud.google.com/apis/design/resource_names#full_resource_name
+   * https://cloud.google.com/apis/design/resource_names#full_resource_name.
    * Example:
-   * "//bigquery.googleapis.com/projects/projectId/datasets/datasetId/tables/tableId".
+   *  * `//bigquery.googleapis.com/projects/projectId/datasets/datasetId/tables/tableId`
    * </pre>
    *
    * <code>string linked_resource = 4;</code>
@@ -103,9 +103,9 @@ public interface SearchCatalogResultOrBuilder
    *
    * <pre>
    * The full name of the cloud resource the entry belongs to. See:
-   * https://cloud.google.com/apis/design/resource_names#full_resource_name
+   * https://cloud.google.com/apis/design/resource_names#full_resource_name.
    * Example:
-   * "//bigquery.googleapis.com/projects/projectId/datasets/datasetId/tables/tableId".
+   *  * `//bigquery.googleapis.com/projects/projectId/datasets/datasetId/tables/tableId`
    * </pre>
    *
    * <code>string linked_resource = 4;</code>

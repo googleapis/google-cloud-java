@@ -31,15 +31,25 @@ public class RecordSetTest {
   private static final TimeUnit UNIT = TimeUnit.HOURS;
   private static final Integer UNIT_TTL = 1;
   private static final RecordSet.Type TYPE = RecordSet.Type.AAAA;
+  private static final RecordSet.Type CAA_TYPE = RecordSet.Type.CAA;
   private static final RecordSet RECORD_SET =
       RecordSet.newBuilder(NAME, TYPE).setTtl(UNIT_TTL, UNIT).build();
+  private static final RecordSet CAA_RECORD_SET =
+      RecordSet.newBuilder(NAME, CAA_TYPE)
+          .setTtl(UNIT_TTL, UNIT)
+          .addRecord("0 issue \"ca.example.com\"")
+          .build();
 
   @Test
   public void testDefaultDnsRecord() {
     RecordSet recordSet = RecordSet.newBuilder(NAME, TYPE).build();
+    RecordSet caaRecordSet = RecordSet.newBuilder(NAME, CAA_TYPE).build();
     assertEquals(0, recordSet.getRecords().size());
+    assertEquals(0, caaRecordSet.getRecords().size());
     assertEquals(TYPE, recordSet.getType());
     assertEquals(NAME, recordSet.getName());
+    assertEquals(CAA_TYPE, caaRecordSet.getType());
+    assertEquals(NAME, caaRecordSet.getName());
   }
 
   @Test
@@ -56,6 +66,9 @@ public class RecordSetTest {
     assertEquals(2, anotherRecord.getRecords().size());
     assertTrue(anotherRecord.getRecords().contains(testingRecord));
     assertTrue(anotherRecord.getRecords().contains(anotherTestingRecord));
+    assertEquals(NAME, CAA_RECORD_SET.getName());
+    assertEquals(CAA_TYPE, CAA_RECORD_SET.getType());
+    assertEquals(1, CAA_RECORD_SET.getRecords().size());
   }
 
   @Test

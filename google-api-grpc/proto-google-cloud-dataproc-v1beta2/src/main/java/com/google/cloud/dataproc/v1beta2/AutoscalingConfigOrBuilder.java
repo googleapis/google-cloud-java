@@ -20,7 +20,7 @@ public interface AutoscalingConfigOrBuilder
    * Note that the policy must be in the same project and Cloud Dataproc region.
    * </pre>
    *
-   * <code>string policy_uri = 1;</code>
+   * <code>string policy_uri = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   java.lang.String getPolicyUri();
   /**
@@ -35,7 +35,7 @@ public interface AutoscalingConfigOrBuilder
    * Note that the policy must be in the same project and Cloud Dataproc region.
    * </pre>
    *
-   * <code>string policy_uri = 1;</code>
+   * <code>string policy_uri = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   com.google.protobuf.ByteString getPolicyUriBytes();
 }

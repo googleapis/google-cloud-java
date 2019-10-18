@@ -152,10 +152,10 @@ public final class LoginProfile extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The primary email address that uniquely identifies the user.
+   * Required. A unique user ID.
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   public java.lang.String getName() {
     java.lang.Object ref = name_;
@@ -172,10 +172,10 @@ public final class LoginProfile extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The primary email address that uniquely identifies the user.
+   * Required. A unique user ID.
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   public com.google.protobuf.ByteString getNameBytes() {
     java.lang.Object ref = name_;
@@ -822,10 +822,10 @@ public final class LoginProfile extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The primary email address that uniquely identifies the user.
+     * Required. A unique user ID.
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public java.lang.String getName() {
       java.lang.Object ref = name_;
@@ -842,10 +842,10 @@ public final class LoginProfile extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The primary email address that uniquely identifies the user.
+     * Required. A unique user ID.
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public com.google.protobuf.ByteString getNameBytes() {
       java.lang.Object ref = name_;
@@ -862,10 +862,10 @@ public final class LoginProfile extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The primary email address that uniquely identifies the user.
+     * Required. A unique user ID.
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder setName(java.lang.String value) {
       if (value == null) {
@@ -880,10 +880,10 @@ public final class LoginProfile extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The primary email address that uniquely identifies the user.
+     * Required. A unique user ID.
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder clearName() {
 
@@ -895,10 +895,10 @@ public final class LoginProfile extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The primary email address that uniquely identifies the user.
+     * Required. A unique user ID.
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder setNameBytes(com.google.protobuf.ByteString value) {
       if (value == null) {

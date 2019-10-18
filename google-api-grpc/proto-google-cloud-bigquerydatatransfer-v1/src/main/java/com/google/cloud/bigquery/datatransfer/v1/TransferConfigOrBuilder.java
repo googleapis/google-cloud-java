@@ -244,7 +244,8 @@ public interface TransferConfigOrBuilder
    * Output only. Data transfer modification time. Ignored by server on input.
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp update_time = 4;</code>
+   * <code>.google.protobuf.Timestamp update_time = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    */
   boolean hasUpdateTime();
   /**
@@ -254,7 +255,8 @@ public interface TransferConfigOrBuilder
    * Output only. Data transfer modification time. Ignored by server on input.
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp update_time = 4;</code>
+   * <code>.google.protobuf.Timestamp update_time = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    */
   com.google.protobuf.Timestamp getUpdateTime();
   /**
@@ -264,7 +266,8 @@ public interface TransferConfigOrBuilder
    * Output only. Data transfer modification time. Ignored by server on input.
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp update_time = 4;</code>
+   * <code>.google.protobuf.Timestamp update_time = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    */
   com.google.protobuf.TimestampOrBuilder getUpdateTimeOrBuilder();
 
@@ -275,7 +278,9 @@ public interface TransferConfigOrBuilder
    * Output only. Next time when data transfer will run.
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp next_run_time = 8;</code>
+   * <code>
+   * .google.protobuf.Timestamp next_run_time = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    */
   boolean hasNextRunTime();
   /**
@@ -285,7 +290,9 @@ public interface TransferConfigOrBuilder
    * Output only. Next time when data transfer will run.
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp next_run_time = 8;</code>
+   * <code>
+   * .google.protobuf.Timestamp next_run_time = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    */
   com.google.protobuf.Timestamp getNextRunTime();
   /**
@@ -295,7 +302,9 @@ public interface TransferConfigOrBuilder
    * Output only. Next time when data transfer will run.
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp next_run_time = 8;</code>
+   * <code>
+   * .google.protobuf.Timestamp next_run_time = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    */
   com.google.protobuf.TimestampOrBuilder getNextRunTimeOrBuilder();
 
@@ -306,7 +315,9 @@ public interface TransferConfigOrBuilder
    * Output only. State of the most recently updated transfer run.
    * </pre>
    *
-   * <code>.google.cloud.bigquery.datatransfer.v1.TransferState state = 10;</code>
+   * <code>
+   * .google.cloud.bigquery.datatransfer.v1.TransferState state = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    */
   int getStateValue();
   /**
@@ -316,7 +327,9 @@ public interface TransferConfigOrBuilder
    * Output only. State of the most recently updated transfer run.
    * </pre>
    *
-   * <code>.google.cloud.bigquery.datatransfer.v1.TransferState state = 10;</code>
+   * <code>
+   * .google.cloud.bigquery.datatransfer.v1.TransferState state = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    */
   com.google.cloud.bigquery.datatransfer.v1.TransferState getState();
 
@@ -338,7 +351,7 @@ public interface TransferConfigOrBuilder
    * Output only. Region in which BigQuery dataset is located.
    * </pre>
    *
-   * <code>string dataset_region = 14;</code>
+   * <code>string dataset_region = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    */
   java.lang.String getDatasetRegion();
   /**
@@ -348,7 +361,10 @@ public interface TransferConfigOrBuilder
    * Output only. Region in which BigQuery dataset is located.
    * </pre>
    *
-   * <code>string dataset_region = 14;</code>
+   * <code>string dataset_region = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    */
   com.google.protobuf.ByteString getDatasetRegionBytes();
+
+  public com.google.cloud.bigquery.datatransfer.v1.TransferConfig.DestinationCase
+      getDestinationCase();
 }

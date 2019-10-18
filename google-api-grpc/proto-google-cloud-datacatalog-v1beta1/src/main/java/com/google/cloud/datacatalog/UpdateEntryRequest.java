@@ -119,10 +119,12 @@ public final class UpdateEntryRequest extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * Required. The updated Entry.
+   * Required. The updated entry.
    * </pre>
    *
-   * <code>.google.cloud.datacatalog.v1beta1.Entry entry = 1;</code>
+   * <code>
+   * .google.cloud.datacatalog.v1beta1.Entry entry = 1 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   public boolean hasEntry() {
     return entry_ != null;
@@ -131,10 +133,12 @@ public final class UpdateEntryRequest extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * Required. The updated Entry.
+   * Required. The updated entry.
    * </pre>
    *
-   * <code>.google.cloud.datacatalog.v1beta1.Entry entry = 1;</code>
+   * <code>
+   * .google.cloud.datacatalog.v1beta1.Entry entry = 1 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   public com.google.cloud.datacatalog.Entry getEntry() {
     return entry_ == null ? com.google.cloud.datacatalog.Entry.getDefaultInstance() : entry_;
@@ -143,10 +147,12 @@ public final class UpdateEntryRequest extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * Required. The updated Entry.
+   * Required. The updated entry.
    * </pre>
    *
-   * <code>.google.cloud.datacatalog.v1beta1.Entry entry = 1;</code>
+   * <code>
+   * .google.cloud.datacatalog.v1beta1.Entry entry = 1 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   public com.google.cloud.datacatalog.EntryOrBuilder getEntryOrBuilder() {
     return getEntry();
@@ -158,14 +164,9 @@ public final class UpdateEntryRequest extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * Optional. The fields to update on the entry.  If absent or empty, all
+   * Optional. The fields to update on the entry. If absent or empty, all
    * modifiable fields are updated.
-   * Modifiable fields in synced entries:
-   * 1. schema (Pub/Sub topics only)
-   * Modifiable fields in native entries:
-   * 1. display_name
-   * 2. description
-   * 3. schema
+   * Currently only `schema` field in Cloud Pub/Sub topic entries is modifiable.
    * </pre>
    *
    * <code>.google.protobuf.FieldMask update_mask = 2;</code>
@@ -177,14 +178,9 @@ public final class UpdateEntryRequest extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * Optional. The fields to update on the entry.  If absent or empty, all
+   * Optional. The fields to update on the entry. If absent or empty, all
    * modifiable fields are updated.
-   * Modifiable fields in synced entries:
-   * 1. schema (Pub/Sub topics only)
-   * Modifiable fields in native entries:
-   * 1. display_name
-   * 2. description
-   * 3. schema
+   * Currently only `schema` field in Cloud Pub/Sub topic entries is modifiable.
    * </pre>
    *
    * <code>.google.protobuf.FieldMask update_mask = 2;</code>
@@ -196,14 +192,9 @@ public final class UpdateEntryRequest extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * Optional. The fields to update on the entry.  If absent or empty, all
+   * Optional. The fields to update on the entry. If absent or empty, all
    * modifiable fields are updated.
-   * Modifiable fields in synced entries:
-   * 1. schema (Pub/Sub topics only)
-   * Modifiable fields in native entries:
-   * 1. display_name
-   * 2. description
-   * 3. schema
+   * Currently only `schema` field in Cloud Pub/Sub topic entries is modifiable.
    * </pre>
    *
    * <code>.google.protobuf.FieldMask update_mask = 2;</code>
@@ -580,10 +571,12 @@ public final class UpdateEntryRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Required. The updated Entry.
+     * Required. The updated entry.
      * </pre>
      *
-     * <code>.google.cloud.datacatalog.v1beta1.Entry entry = 1;</code>
+     * <code>
+     * .google.cloud.datacatalog.v1beta1.Entry entry = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public boolean hasEntry() {
       return entryBuilder_ != null || entry_ != null;
@@ -592,10 +585,12 @@ public final class UpdateEntryRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Required. The updated Entry.
+     * Required. The updated entry.
      * </pre>
      *
-     * <code>.google.cloud.datacatalog.v1beta1.Entry entry = 1;</code>
+     * <code>
+     * .google.cloud.datacatalog.v1beta1.Entry entry = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public com.google.cloud.datacatalog.Entry getEntry() {
       if (entryBuilder_ == null) {
@@ -608,10 +603,12 @@ public final class UpdateEntryRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Required. The updated Entry.
+     * Required. The updated entry.
      * </pre>
      *
-     * <code>.google.cloud.datacatalog.v1beta1.Entry entry = 1;</code>
+     * <code>
+     * .google.cloud.datacatalog.v1beta1.Entry entry = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder setEntry(com.google.cloud.datacatalog.Entry value) {
       if (entryBuilder_ == null) {
@@ -630,10 +627,12 @@ public final class UpdateEntryRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Required. The updated Entry.
+     * Required. The updated entry.
      * </pre>
      *
-     * <code>.google.cloud.datacatalog.v1beta1.Entry entry = 1;</code>
+     * <code>
+     * .google.cloud.datacatalog.v1beta1.Entry entry = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder setEntry(com.google.cloud.datacatalog.Entry.Builder builderForValue) {
       if (entryBuilder_ == null) {
@@ -649,10 +648,12 @@ public final class UpdateEntryRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Required. The updated Entry.
+     * Required. The updated entry.
      * </pre>
      *
-     * <code>.google.cloud.datacatalog.v1beta1.Entry entry = 1;</code>
+     * <code>
+     * .google.cloud.datacatalog.v1beta1.Entry entry = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder mergeEntry(com.google.cloud.datacatalog.Entry value) {
       if (entryBuilder_ == null) {
@@ -673,10 +674,12 @@ public final class UpdateEntryRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Required. The updated Entry.
+     * Required. The updated entry.
      * </pre>
      *
-     * <code>.google.cloud.datacatalog.v1beta1.Entry entry = 1;</code>
+     * <code>
+     * .google.cloud.datacatalog.v1beta1.Entry entry = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder clearEntry() {
       if (entryBuilder_ == null) {
@@ -693,10 +696,12 @@ public final class UpdateEntryRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Required. The updated Entry.
+     * Required. The updated entry.
      * </pre>
      *
-     * <code>.google.cloud.datacatalog.v1beta1.Entry entry = 1;</code>
+     * <code>
+     * .google.cloud.datacatalog.v1beta1.Entry entry = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public com.google.cloud.datacatalog.Entry.Builder getEntryBuilder() {
 
@@ -707,10 +712,12 @@ public final class UpdateEntryRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Required. The updated Entry.
+     * Required. The updated entry.
      * </pre>
      *
-     * <code>.google.cloud.datacatalog.v1beta1.Entry entry = 1;</code>
+     * <code>
+     * .google.cloud.datacatalog.v1beta1.Entry entry = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public com.google.cloud.datacatalog.EntryOrBuilder getEntryOrBuilder() {
       if (entryBuilder_ != null) {
@@ -723,10 +730,12 @@ public final class UpdateEntryRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Required. The updated Entry.
+     * Required. The updated entry.
      * </pre>
      *
-     * <code>.google.cloud.datacatalog.v1beta1.Entry entry = 1;</code>
+     * <code>
+     * .google.cloud.datacatalog.v1beta1.Entry entry = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.datacatalog.Entry,
@@ -755,14 +764,9 @@ public final class UpdateEntryRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Optional. The fields to update on the entry.  If absent or empty, all
+     * Optional. The fields to update on the entry. If absent or empty, all
      * modifiable fields are updated.
-     * Modifiable fields in synced entries:
-     * 1. schema (Pub/Sub topics only)
-     * Modifiable fields in native entries:
-     * 1. display_name
-     * 2. description
-     * 3. schema
+     * Currently only `schema` field in Cloud Pub/Sub topic entries is modifiable.
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 2;</code>
@@ -774,14 +778,9 @@ public final class UpdateEntryRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Optional. The fields to update on the entry.  If absent or empty, all
+     * Optional. The fields to update on the entry. If absent or empty, all
      * modifiable fields are updated.
-     * Modifiable fields in synced entries:
-     * 1. schema (Pub/Sub topics only)
-     * Modifiable fields in native entries:
-     * 1. display_name
-     * 2. description
-     * 3. schema
+     * Currently only `schema` field in Cloud Pub/Sub topic entries is modifiable.
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 2;</code>
@@ -799,14 +798,9 @@ public final class UpdateEntryRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Optional. The fields to update on the entry.  If absent or empty, all
+     * Optional. The fields to update on the entry. If absent or empty, all
      * modifiable fields are updated.
-     * Modifiable fields in synced entries:
-     * 1. schema (Pub/Sub topics only)
-     * Modifiable fields in native entries:
-     * 1. display_name
-     * 2. description
-     * 3. schema
+     * Currently only `schema` field in Cloud Pub/Sub topic entries is modifiable.
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 2;</code>
@@ -828,14 +822,9 @@ public final class UpdateEntryRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Optional. The fields to update on the entry.  If absent or empty, all
+     * Optional. The fields to update on the entry. If absent or empty, all
      * modifiable fields are updated.
-     * Modifiable fields in synced entries:
-     * 1. schema (Pub/Sub topics only)
-     * Modifiable fields in native entries:
-     * 1. display_name
-     * 2. description
-     * 3. schema
+     * Currently only `schema` field in Cloud Pub/Sub topic entries is modifiable.
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 2;</code>
@@ -854,14 +843,9 @@ public final class UpdateEntryRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Optional. The fields to update on the entry.  If absent or empty, all
+     * Optional. The fields to update on the entry. If absent or empty, all
      * modifiable fields are updated.
-     * Modifiable fields in synced entries:
-     * 1. schema (Pub/Sub topics only)
-     * Modifiable fields in native entries:
-     * 1. display_name
-     * 2. description
-     * 3. schema
+     * Currently only `schema` field in Cloud Pub/Sub topic entries is modifiable.
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 2;</code>
@@ -885,14 +869,9 @@ public final class UpdateEntryRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Optional. The fields to update on the entry.  If absent or empty, all
+     * Optional. The fields to update on the entry. If absent or empty, all
      * modifiable fields are updated.
-     * Modifiable fields in synced entries:
-     * 1. schema (Pub/Sub topics only)
-     * Modifiable fields in native entries:
-     * 1. display_name
-     * 2. description
-     * 3. schema
+     * Currently only `schema` field in Cloud Pub/Sub topic entries is modifiable.
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 2;</code>
@@ -912,14 +891,9 @@ public final class UpdateEntryRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Optional. The fields to update on the entry.  If absent or empty, all
+     * Optional. The fields to update on the entry. If absent or empty, all
      * modifiable fields are updated.
-     * Modifiable fields in synced entries:
-     * 1. schema (Pub/Sub topics only)
-     * Modifiable fields in native entries:
-     * 1. display_name
-     * 2. description
-     * 3. schema
+     * Currently only `schema` field in Cloud Pub/Sub topic entries is modifiable.
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 2;</code>
@@ -933,14 +907,9 @@ public final class UpdateEntryRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Optional. The fields to update on the entry.  If absent or empty, all
+     * Optional. The fields to update on the entry. If absent or empty, all
      * modifiable fields are updated.
-     * Modifiable fields in synced entries:
-     * 1. schema (Pub/Sub topics only)
-     * Modifiable fields in native entries:
-     * 1. display_name
-     * 2. description
-     * 3. schema
+     * Currently only `schema` field in Cloud Pub/Sub topic entries is modifiable.
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 2;</code>
@@ -958,14 +927,9 @@ public final class UpdateEntryRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Optional. The fields to update on the entry.  If absent or empty, all
+     * Optional. The fields to update on the entry. If absent or empty, all
      * modifiable fields are updated.
-     * Modifiable fields in synced entries:
-     * 1. schema (Pub/Sub topics only)
-     * Modifiable fields in native entries:
-     * 1. display_name
-     * 2. description
-     * 3. schema
+     * Currently only `schema` field in Cloud Pub/Sub topic entries is modifiable.
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 2;</code>

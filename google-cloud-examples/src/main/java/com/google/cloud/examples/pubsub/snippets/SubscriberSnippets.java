@@ -91,7 +91,7 @@ public class SubscriberSnippets {
     //   for (;;) {
     //     Thread.sleep(Long.MAX_VALUE);
     //   }
-    // at the end of main() to previent the main thread from exiting.
+    // at the end of main() to prevent the main thread from exiting.
     done.get();
     pool.shutdown();
     subscriber.stopAsync().awaitTerminated();
@@ -120,10 +120,11 @@ public class SubscriberSnippets {
     try {
       // Create a subscriber for "my-subscription-id" bound to the message receiver
       subscriber = Subscriber.newBuilder(subscriptionName, receiver).build();
-      subscriber.startAsync();
-      // ...
+      subscriber.startAsync().awaitRunning();
+      // Allow the subscriber to run indefinitely unless an unrecoverable error occurs
+      subscriber.awaitTerminated();
     } finally {
-      // stop receiving messages
+      // Stop receiving messages
       if (subscriber != null) {
         subscriber.stopAsync();
       }

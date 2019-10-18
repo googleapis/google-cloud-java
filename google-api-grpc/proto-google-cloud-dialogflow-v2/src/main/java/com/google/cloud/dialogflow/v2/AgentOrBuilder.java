@@ -16,7 +16,9 @@ public interface AgentOrBuilder
    * Format: `projects/&lt;Project ID&gt;`.
    * </pre>
    *
-   * <code>string parent = 1;</code>
+   * <code>
+   * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    */
   java.lang.String getParent();
   /**
@@ -27,7 +29,9 @@ public interface AgentOrBuilder
    * Format: `projects/&lt;Project ID&gt;`.
    * </pre>
    *
-   * <code>string parent = 1;</code>
+   * <code>
+   * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    */
   com.google.protobuf.ByteString getParentBytes();
 
@@ -38,7 +42,7 @@ public interface AgentOrBuilder
    * Required. The name of this agent.
    * </pre>
    *
-   * <code>string display_name = 2;</code>
+   * <code>string display_name = 2 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   java.lang.String getDisplayName();
   /**
@@ -48,7 +52,7 @@ public interface AgentOrBuilder
    * Required. The name of this agent.
    * </pre>
    *
-   * <code>string display_name = 2;</code>
+   * <code>string display_name = 2 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   com.google.protobuf.ByteString getDisplayNameBytes();
 
@@ -63,7 +67,7 @@ public interface AgentOrBuilder
    * set by the `Update` method.
    * </pre>
    *
-   * <code>string default_language_code = 3;</code>
+   * <code>string default_language_code = 3 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   java.lang.String getDefaultLanguageCode();
   /**
@@ -77,7 +81,7 @@ public interface AgentOrBuilder
    * set by the `Update` method.
    * </pre>
    *
-   * <code>string default_language_code = 3;</code>
+   * <code>string default_language_code = 3 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   com.google.protobuf.ByteString getDefaultLanguageCodeBytes();
 
@@ -89,7 +93,8 @@ public interface AgentOrBuilder
    * `default_language_code`).
    * </pre>
    *
-   * <code>repeated string supported_language_codes = 4;</code>
+   * <code>repeated string supported_language_codes = 4 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   java.util.List<java.lang.String> getSupportedLanguageCodesList();
   /**
@@ -100,7 +105,8 @@ public interface AgentOrBuilder
    * `default_language_code`).
    * </pre>
    *
-   * <code>repeated string supported_language_codes = 4;</code>
+   * <code>repeated string supported_language_codes = 4 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   int getSupportedLanguageCodesCount();
   /**
@@ -111,7 +117,8 @@ public interface AgentOrBuilder
    * `default_language_code`).
    * </pre>
    *
-   * <code>repeated string supported_language_codes = 4;</code>
+   * <code>repeated string supported_language_codes = 4 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   java.lang.String getSupportedLanguageCodes(int index);
   /**
@@ -122,7 +129,8 @@ public interface AgentOrBuilder
    * `default_language_code`).
    * </pre>
    *
-   * <code>repeated string supported_language_codes = 4;</code>
+   * <code>repeated string supported_language_codes = 4 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   com.google.protobuf.ByteString getSupportedLanguageCodesBytes(int index);
 
@@ -135,7 +143,7 @@ public interface AgentOrBuilder
    * America/New_York, Europe/Paris.
    * </pre>
    *
-   * <code>string time_zone = 5;</code>
+   * <code>string time_zone = 5 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   java.lang.String getTimeZone();
   /**
@@ -147,7 +155,7 @@ public interface AgentOrBuilder
    * America/New_York, Europe/Paris.
    * </pre>
    *
-   * <code>string time_zone = 5;</code>
+   * <code>string time_zone = 5 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   com.google.protobuf.ByteString getTimeZoneBytes();
 
@@ -159,7 +167,7 @@ public interface AgentOrBuilder
    * The maximum length is 500 characters. If exceeded, the request is rejected.
    * </pre>
    *
-   * <code>string description = 6;</code>
+   * <code>string description = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   java.lang.String getDescription();
   /**
@@ -170,7 +178,7 @@ public interface AgentOrBuilder
    * The maximum length is 500 characters. If exceeded, the request is rejected.
    * </pre>
    *
-   * <code>string description = 6;</code>
+   * <code>string description = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   com.google.protobuf.ByteString getDescriptionBytes();
 
@@ -185,7 +193,7 @@ public interface AgentOrBuilder
    * integration.
    * </pre>
    *
-   * <code>string avatar_uri = 7;</code>
+   * <code>string avatar_uri = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   java.lang.String getAvatarUri();
   /**
@@ -199,7 +207,7 @@ public interface AgentOrBuilder
    * integration.
    * </pre>
    *
-   * <code>string avatar_uri = 7;</code>
+   * <code>string avatar_uri = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   com.google.protobuf.ByteString getAvatarUriBytes();
 
@@ -210,7 +218,7 @@ public interface AgentOrBuilder
    * Optional. Determines whether this agent should log conversation queries.
    * </pre>
    *
-   * <code>bool enable_logging = 8;</code>
+   * <code>bool enable_logging = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   boolean getEnableLogging();
 
@@ -221,7 +229,9 @@ public interface AgentOrBuilder
    * Optional. Determines how intents are detected from user queries.
    * </pre>
    *
-   * <code>.google.cloud.dialogflow.v2.Agent.MatchMode match_mode = 9;</code>
+   * <code>
+   * .google.cloud.dialogflow.v2.Agent.MatchMode match_mode = 9 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   int getMatchModeValue();
   /**
@@ -231,7 +241,9 @@ public interface AgentOrBuilder
    * Optional. Determines how intents are detected from user queries.
    * </pre>
    *
-   * <code>.google.cloud.dialogflow.v2.Agent.MatchMode match_mode = 9;</code>
+   * <code>
+   * .google.cloud.dialogflow.v2.Agent.MatchMode match_mode = 9 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   com.google.cloud.dialogflow.v2.Agent.MatchMode getMatchMode();
 
@@ -248,7 +260,7 @@ public interface AgentOrBuilder
    * If set to 0.0, the default of 0.3 is used.
    * </pre>
    *
-   * <code>float classification_threshold = 10;</code>
+   * <code>float classification_threshold = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   float getClassificationThreshold();
 
@@ -262,7 +274,9 @@ public interface AgentOrBuilder
    * follow the specified API version.
    * </pre>
    *
-   * <code>.google.cloud.dialogflow.v2.Agent.ApiVersion api_version = 14;</code>
+   * <code>
+   * .google.cloud.dialogflow.v2.Agent.ApiVersion api_version = 14 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   int getApiVersionValue();
   /**
@@ -275,7 +289,9 @@ public interface AgentOrBuilder
    * follow the specified API version.
    * </pre>
    *
-   * <code>.google.cloud.dialogflow.v2.Agent.ApiVersion api_version = 14;</code>
+   * <code>
+   * .google.cloud.dialogflow.v2.Agent.ApiVersion api_version = 14 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   com.google.cloud.dialogflow.v2.Agent.ApiVersion getApiVersion();
 
@@ -286,7 +302,9 @@ public interface AgentOrBuilder
    * Optional. The agent tier. If not specified, TIER_STANDARD is assumed.
    * </pre>
    *
-   * <code>.google.cloud.dialogflow.v2.Agent.Tier tier = 15;</code>
+   * <code>
+   * .google.cloud.dialogflow.v2.Agent.Tier tier = 15 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   int getTierValue();
   /**
@@ -296,7 +314,9 @@ public interface AgentOrBuilder
    * Optional. The agent tier. If not specified, TIER_STANDARD is assumed.
    * </pre>
    *
-   * <code>.google.cloud.dialogflow.v2.Agent.Tier tier = 15;</code>
+   * <code>
+   * .google.cloud.dialogflow.v2.Agent.Tier tier = 15 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   com.google.cloud.dialogflow.v2.Agent.Tier getTier();
 }

@@ -79,6 +79,65 @@ public final class SpannerGrpc {
   }
 
   @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
+  @java.lang.Deprecated // Use {@link #getBatchCreateSessionsMethod()} instead.
+  public static final io.grpc.MethodDescriptor<
+          com.google.spanner.v1.BatchCreateSessionsRequest,
+          com.google.spanner.v1.BatchCreateSessionsResponse>
+      METHOD_BATCH_CREATE_SESSIONS = getBatchCreateSessionsMethodHelper();
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.spanner.v1.BatchCreateSessionsRequest,
+          com.google.spanner.v1.BatchCreateSessionsResponse>
+      getBatchCreateSessionsMethod;
+
+  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
+  public static io.grpc.MethodDescriptor<
+          com.google.spanner.v1.BatchCreateSessionsRequest,
+          com.google.spanner.v1.BatchCreateSessionsResponse>
+      getBatchCreateSessionsMethod() {
+    return getBatchCreateSessionsMethodHelper();
+  }
+
+  private static io.grpc.MethodDescriptor<
+          com.google.spanner.v1.BatchCreateSessionsRequest,
+          com.google.spanner.v1.BatchCreateSessionsResponse>
+      getBatchCreateSessionsMethodHelper() {
+    io.grpc.MethodDescriptor<
+            com.google.spanner.v1.BatchCreateSessionsRequest,
+            com.google.spanner.v1.BatchCreateSessionsResponse>
+        getBatchCreateSessionsMethod;
+    if ((getBatchCreateSessionsMethod = SpannerGrpc.getBatchCreateSessionsMethod) == null) {
+      synchronized (SpannerGrpc.class) {
+        if ((getBatchCreateSessionsMethod = SpannerGrpc.getBatchCreateSessionsMethod) == null) {
+          SpannerGrpc.getBatchCreateSessionsMethod =
+              getBatchCreateSessionsMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.spanner.v1.BatchCreateSessionsRequest,
+                          com.google.spanner.v1.BatchCreateSessionsResponse>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(
+                              "google.spanner.v1.Spanner", "BatchCreateSessions"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.spanner.v1.BatchCreateSessionsRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.spanner.v1.BatchCreateSessionsResponse
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new SpannerMethodDescriptorSupplier("BatchCreateSessions"))
+                      .build();
+        }
+      }
+    }
+    return getBatchCreateSessionsMethod;
+  }
+
+  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
   @java.lang.Deprecated // Use {@link #getGetSessionMethod()} instead.
   public static final io.grpc.MethodDescriptor<
           com.google.spanner.v1.GetSessionRequest, com.google.spanner.v1.Session>
@@ -784,6 +843,22 @@ public final class SpannerGrpc {
      *
      *
      * <pre>
+     * Creates multiple new sessions.
+     * This API can be used to initialize a session cache on the clients.
+     * See https://goo.gl/TgSFN2 for best practices on session cache management.
+     * </pre>
+     */
+    public void batchCreateSessions(
+        com.google.spanner.v1.BatchCreateSessionsRequest request,
+        io.grpc.stub.StreamObserver<com.google.spanner.v1.BatchCreateSessionsResponse>
+            responseObserver) {
+      asyncUnimplementedUnaryCall(getBatchCreateSessionsMethodHelper(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Gets a session. Returns `NOT_FOUND` if the session does not exist.
      * This is mainly useful for determining whether a session is still
      * alive.
@@ -872,8 +947,9 @@ public final class SpannerGrpc {
      * [ExecuteSql][google.spanner.v1.Spanner.ExecuteSql].
      * Statements are executed in order, sequentially.
      * [ExecuteBatchDmlResponse][Spanner.ExecuteBatchDmlResponse] will contain a
-     * [ResultSet][google.spanner.v1.ResultSet] for each DML statement that has successfully executed. If a
-     * statement fails, its error status will be returned as part of the
+     * [ResultSet][google.spanner.v1.ResultSet] for each DML statement that has
+     * successfully executed. If a statement fails, its error status will be
+     * returned as part of the
      * [ExecuteBatchDmlResponse][Spanner.ExecuteBatchDmlResponse]. Execution will
      * stop at the first failed statement; the remaining statements will not run.
      * ExecuteBatchDml is expected to return an OK status with a response even if
@@ -1047,6 +1123,13 @@ public final class SpannerGrpc {
                       com.google.spanner.v1.CreateSessionRequest, com.google.spanner.v1.Session>(
                       this, METHODID_CREATE_SESSION)))
           .addMethod(
+              getBatchCreateSessionsMethodHelper(),
+              asyncUnaryCall(
+                  new MethodHandlers<
+                      com.google.spanner.v1.BatchCreateSessionsRequest,
+                      com.google.spanner.v1.BatchCreateSessionsResponse>(
+                      this, METHODID_BATCH_CREATE_SESSIONS)))
+          .addMethod(
               getGetSessionMethodHelper(),
               asyncUnaryCall(
                   new MethodHandlers<
@@ -1188,6 +1271,25 @@ public final class SpannerGrpc {
      *
      *
      * <pre>
+     * Creates multiple new sessions.
+     * This API can be used to initialize a session cache on the clients.
+     * See https://goo.gl/TgSFN2 for best practices on session cache management.
+     * </pre>
+     */
+    public void batchCreateSessions(
+        com.google.spanner.v1.BatchCreateSessionsRequest request,
+        io.grpc.stub.StreamObserver<com.google.spanner.v1.BatchCreateSessionsResponse>
+            responseObserver) {
+      asyncUnaryCall(
+          getChannel().newCall(getBatchCreateSessionsMethodHelper(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Gets a session. Returns `NOT_FOUND` if the session does not exist.
      * This is mainly useful for determining whether a session is still
      * alive.
@@ -1291,8 +1393,9 @@ public final class SpannerGrpc {
      * [ExecuteSql][google.spanner.v1.Spanner.ExecuteSql].
      * Statements are executed in order, sequentially.
      * [ExecuteBatchDmlResponse][Spanner.ExecuteBatchDmlResponse] will contain a
-     * [ResultSet][google.spanner.v1.ResultSet] for each DML statement that has successfully executed. If a
-     * statement fails, its error status will be returned as part of the
+     * [ResultSet][google.spanner.v1.ResultSet] for each DML statement that has
+     * successfully executed. If a statement fails, its error status will be
+     * returned as part of the
      * [ExecuteBatchDmlResponse][Spanner.ExecuteBatchDmlResponse]. Execution will
      * stop at the first failed statement; the remaining statements will not run.
      * ExecuteBatchDml is expected to return an OK status with a response even if
@@ -1535,6 +1638,21 @@ public final class SpannerGrpc {
      *
      *
      * <pre>
+     * Creates multiple new sessions.
+     * This API can be used to initialize a session cache on the clients.
+     * See https://goo.gl/TgSFN2 for best practices on session cache management.
+     * </pre>
+     */
+    public com.google.spanner.v1.BatchCreateSessionsResponse batchCreateSessions(
+        com.google.spanner.v1.BatchCreateSessionsRequest request) {
+      return blockingUnaryCall(
+          getChannel(), getBatchCreateSessionsMethodHelper(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Gets a session. Returns `NOT_FOUND` if the session does not exist.
      * This is mainly useful for determining whether a session is still
      * alive.
@@ -1623,8 +1741,9 @@ public final class SpannerGrpc {
      * [ExecuteSql][google.spanner.v1.Spanner.ExecuteSql].
      * Statements are executed in order, sequentially.
      * [ExecuteBatchDmlResponse][Spanner.ExecuteBatchDmlResponse] will contain a
-     * [ResultSet][google.spanner.v1.ResultSet] for each DML statement that has successfully executed. If a
-     * statement fails, its error status will be returned as part of the
+     * [ResultSet][google.spanner.v1.ResultSet] for each DML statement that has
+     * successfully executed. If a statement fails, its error status will be
+     * returned as part of the
      * [ExecuteBatchDmlResponse][Spanner.ExecuteBatchDmlResponse]. Execution will
      * stop at the first failed statement; the remaining statements will not run.
      * ExecuteBatchDml is expected to return an OK status with a response even if
@@ -1838,6 +1957,22 @@ public final class SpannerGrpc {
      *
      *
      * <pre>
+     * Creates multiple new sessions.
+     * This API can be used to initialize a session cache on the clients.
+     * See https://goo.gl/TgSFN2 for best practices on session cache management.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.spanner.v1.BatchCreateSessionsResponse>
+        batchCreateSessions(com.google.spanner.v1.BatchCreateSessionsRequest request) {
+      return futureUnaryCall(
+          getChannel().newCall(getBatchCreateSessionsMethodHelper(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Gets a session. Returns `NOT_FOUND` if the session does not exist.
      * This is mainly useful for determining whether a session is still
      * alive.
@@ -1910,8 +2045,9 @@ public final class SpannerGrpc {
      * [ExecuteSql][google.spanner.v1.Spanner.ExecuteSql].
      * Statements are executed in order, sequentially.
      * [ExecuteBatchDmlResponse][Spanner.ExecuteBatchDmlResponse] will contain a
-     * [ResultSet][google.spanner.v1.ResultSet] for each DML statement that has successfully executed. If a
-     * statement fails, its error status will be returned as part of the
+     * [ResultSet][google.spanner.v1.ResultSet] for each DML statement that has
+     * successfully executed. If a statement fails, its error status will be
+     * returned as part of the
      * [ExecuteBatchDmlResponse][Spanner.ExecuteBatchDmlResponse]. Execution will
      * stop at the first failed statement; the remaining statements will not run.
      * ExecuteBatchDml is expected to return an OK status with a response even if
@@ -2062,19 +2198,20 @@ public final class SpannerGrpc {
   }
 
   private static final int METHODID_CREATE_SESSION = 0;
-  private static final int METHODID_GET_SESSION = 1;
-  private static final int METHODID_LIST_SESSIONS = 2;
-  private static final int METHODID_DELETE_SESSION = 3;
-  private static final int METHODID_EXECUTE_SQL = 4;
-  private static final int METHODID_EXECUTE_STREAMING_SQL = 5;
-  private static final int METHODID_EXECUTE_BATCH_DML = 6;
-  private static final int METHODID_READ = 7;
-  private static final int METHODID_STREAMING_READ = 8;
-  private static final int METHODID_BEGIN_TRANSACTION = 9;
-  private static final int METHODID_COMMIT = 10;
-  private static final int METHODID_ROLLBACK = 11;
-  private static final int METHODID_PARTITION_QUERY = 12;
-  private static final int METHODID_PARTITION_READ = 13;
+  private static final int METHODID_BATCH_CREATE_SESSIONS = 1;
+  private static final int METHODID_GET_SESSION = 2;
+  private static final int METHODID_LIST_SESSIONS = 3;
+  private static final int METHODID_DELETE_SESSION = 4;
+  private static final int METHODID_EXECUTE_SQL = 5;
+  private static final int METHODID_EXECUTE_STREAMING_SQL = 6;
+  private static final int METHODID_EXECUTE_BATCH_DML = 7;
+  private static final int METHODID_READ = 8;
+  private static final int METHODID_STREAMING_READ = 9;
+  private static final int METHODID_BEGIN_TRANSACTION = 10;
+  private static final int METHODID_COMMIT = 11;
+  private static final int METHODID_ROLLBACK = 12;
+  private static final int METHODID_PARTITION_QUERY = 13;
+  private static final int METHODID_PARTITION_READ = 14;
 
   private static final class MethodHandlers<Req, Resp>
       implements io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -2097,6 +2234,12 @@ public final class SpannerGrpc {
           serviceImpl.createSession(
               (com.google.spanner.v1.CreateSessionRequest) request,
               (io.grpc.stub.StreamObserver<com.google.spanner.v1.Session>) responseObserver);
+          break;
+        case METHODID_BATCH_CREATE_SESSIONS:
+          serviceImpl.batchCreateSessions(
+              (com.google.spanner.v1.BatchCreateSessionsRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.spanner.v1.BatchCreateSessionsResponse>)
+                  responseObserver);
           break;
         case METHODID_GET_SESSION:
           serviceImpl.getSession(
@@ -2232,6 +2375,7 @@ public final class SpannerGrpc {
                   io.grpc.ServiceDescriptor.newBuilder(SERVICE_NAME)
                       .setSchemaDescriptor(new SpannerFileDescriptorSupplier())
                       .addMethod(getCreateSessionMethodHelper())
+                      .addMethod(getBatchCreateSessionsMethodHelper())
                       .addMethod(getGetSessionMethodHelper())
                       .addMethod(getListSessionsMethodHelper())
                       .addMethod(getDeleteSessionMethodHelper())

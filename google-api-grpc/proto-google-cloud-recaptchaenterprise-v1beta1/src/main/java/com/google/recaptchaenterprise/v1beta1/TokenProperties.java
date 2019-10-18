@@ -123,6 +123,7 @@ public final class TokenProperties extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
+   * LINT.IfChange
    * Enum that represents the types of invalid token reasons.
    * </pre>
    *
@@ -183,7 +184,7 @@ public final class TokenProperties extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * The user verification token did not match the provided site secret.
+     * The user verification token did not match the provided site key.
      * This may be a configuration error (e.g. development keys used in
      * production) or end users trying to use verification tokens from other
      * sites.
@@ -259,7 +260,7 @@ public final class TokenProperties extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * The user verification token did not match the provided site secret.
+     * The user verification token did not match the provided site key.
      * This may be a configuration error (e.g. development keys used in
      * production) or end users trying to use verification tokens from other
      * sites.
@@ -366,7 +367,7 @@ public final class TokenProperties extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * Output only. Whether the provided user response token is valid.
+   * Whether the provided user response token is valid.
    * </pre>
    *
    * <code>bool valid = 1;</code>
@@ -381,7 +382,7 @@ public final class TokenProperties extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * Output only. Reason associated with the response when valid = false.
+   * Reason associated with the response when valid = false.
    * </pre>
    *
    * <code>
@@ -395,7 +396,7 @@ public final class TokenProperties extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * Output only. Reason associated with the response when valid = false.
+   * Reason associated with the response when valid = false.
    * </pre>
    *
    * <code>
@@ -418,7 +419,7 @@ public final class TokenProperties extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * Output only. The timestamp corresponding to the generation of the token.
+   * The timestamp corresponding to the generation of the token.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp create_time = 3;</code>
@@ -430,7 +431,7 @@ public final class TokenProperties extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * Output only. The timestamp corresponding to the generation of the token.
+   * The timestamp corresponding to the generation of the token.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp create_time = 3;</code>
@@ -442,7 +443,7 @@ public final class TokenProperties extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * Output only. The timestamp corresponding to the generation of the token.
+   * The timestamp corresponding to the generation of the token.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp create_time = 3;</code>
@@ -457,7 +458,7 @@ public final class TokenProperties extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * Output only. The hostname of the page on which the token was generated.
+   * The hostname of the page on which the token was generated.
    * </pre>
    *
    * <code>string hostname = 4;</code>
@@ -477,7 +478,7 @@ public final class TokenProperties extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * Output only. The hostname of the page on which the token was generated.
+   * The hostname of the page on which the token was generated.
    * </pre>
    *
    * <code>string hostname = 4;</code>
@@ -500,7 +501,7 @@ public final class TokenProperties extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * Output only. Action name provided at token generation.
+   * Action name provided at token generation.
    * </pre>
    *
    * <code>string action = 5;</code>
@@ -520,7 +521,7 @@ public final class TokenProperties extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * Output only. Action name provided at token generation.
+   * Action name provided at token generation.
    * </pre>
    *
    * <code>string action = 5;</code>
@@ -933,7 +934,7 @@ public final class TokenProperties extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Output only. Whether the provided user response token is valid.
+     * Whether the provided user response token is valid.
      * </pre>
      *
      * <code>bool valid = 1;</code>
@@ -945,7 +946,7 @@ public final class TokenProperties extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Output only. Whether the provided user response token is valid.
+     * Whether the provided user response token is valid.
      * </pre>
      *
      * <code>bool valid = 1;</code>
@@ -960,7 +961,7 @@ public final class TokenProperties extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Output only. Whether the provided user response token is valid.
+     * Whether the provided user response token is valid.
      * </pre>
      *
      * <code>bool valid = 1;</code>
@@ -977,7 +978,7 @@ public final class TokenProperties extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Output only. Reason associated with the response when valid = false.
+     * Reason associated with the response when valid = false.
      * </pre>
      *
      * <code>
@@ -991,7 +992,7 @@ public final class TokenProperties extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Output only. Reason associated with the response when valid = false.
+     * Reason associated with the response when valid = false.
      * </pre>
      *
      * <code>
@@ -1007,7 +1008,7 @@ public final class TokenProperties extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Output only. Reason associated with the response when valid = false.
+     * Reason associated with the response when valid = false.
      * </pre>
      *
      * <code>
@@ -1027,7 +1028,7 @@ public final class TokenProperties extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Output only. Reason associated with the response when valid = false.
+     * Reason associated with the response when valid = false.
      * </pre>
      *
      * <code>
@@ -1048,7 +1049,7 @@ public final class TokenProperties extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Output only. Reason associated with the response when valid = false.
+     * Reason associated with the response when valid = false.
      * </pre>
      *
      * <code>
@@ -1072,7 +1073,7 @@ public final class TokenProperties extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Output only. The timestamp corresponding to the generation of the token.
+     * The timestamp corresponding to the generation of the token.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp create_time = 3;</code>
@@ -1084,7 +1085,7 @@ public final class TokenProperties extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Output only. The timestamp corresponding to the generation of the token.
+     * The timestamp corresponding to the generation of the token.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp create_time = 3;</code>
@@ -1102,7 +1103,7 @@ public final class TokenProperties extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Output only. The timestamp corresponding to the generation of the token.
+     * The timestamp corresponding to the generation of the token.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp create_time = 3;</code>
@@ -1124,7 +1125,7 @@ public final class TokenProperties extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Output only. The timestamp corresponding to the generation of the token.
+     * The timestamp corresponding to the generation of the token.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp create_time = 3;</code>
@@ -1143,7 +1144,7 @@ public final class TokenProperties extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Output only. The timestamp corresponding to the generation of the token.
+     * The timestamp corresponding to the generation of the token.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp create_time = 3;</code>
@@ -1167,7 +1168,7 @@ public final class TokenProperties extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Output only. The timestamp corresponding to the generation of the token.
+     * The timestamp corresponding to the generation of the token.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp create_time = 3;</code>
@@ -1187,7 +1188,7 @@ public final class TokenProperties extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Output only. The timestamp corresponding to the generation of the token.
+     * The timestamp corresponding to the generation of the token.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp create_time = 3;</code>
@@ -1201,7 +1202,7 @@ public final class TokenProperties extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Output only. The timestamp corresponding to the generation of the token.
+     * The timestamp corresponding to the generation of the token.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp create_time = 3;</code>
@@ -1219,7 +1220,7 @@ public final class TokenProperties extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Output only. The timestamp corresponding to the generation of the token.
+     * The timestamp corresponding to the generation of the token.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp create_time = 3;</code>
@@ -1246,7 +1247,7 @@ public final class TokenProperties extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Output only. The hostname of the page on which the token was generated.
+     * The hostname of the page on which the token was generated.
      * </pre>
      *
      * <code>string hostname = 4;</code>
@@ -1266,7 +1267,7 @@ public final class TokenProperties extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Output only. The hostname of the page on which the token was generated.
+     * The hostname of the page on which the token was generated.
      * </pre>
      *
      * <code>string hostname = 4;</code>
@@ -1286,7 +1287,7 @@ public final class TokenProperties extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Output only. The hostname of the page on which the token was generated.
+     * The hostname of the page on which the token was generated.
      * </pre>
      *
      * <code>string hostname = 4;</code>
@@ -1304,7 +1305,7 @@ public final class TokenProperties extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Output only. The hostname of the page on which the token was generated.
+     * The hostname of the page on which the token was generated.
      * </pre>
      *
      * <code>string hostname = 4;</code>
@@ -1319,7 +1320,7 @@ public final class TokenProperties extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Output only. The hostname of the page on which the token was generated.
+     * The hostname of the page on which the token was generated.
      * </pre>
      *
      * <code>string hostname = 4;</code>
@@ -1340,7 +1341,7 @@ public final class TokenProperties extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Output only. Action name provided at token generation.
+     * Action name provided at token generation.
      * </pre>
      *
      * <code>string action = 5;</code>
@@ -1360,7 +1361,7 @@ public final class TokenProperties extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Output only. Action name provided at token generation.
+     * Action name provided at token generation.
      * </pre>
      *
      * <code>string action = 5;</code>
@@ -1380,7 +1381,7 @@ public final class TokenProperties extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Output only. Action name provided at token generation.
+     * Action name provided at token generation.
      * </pre>
      *
      * <code>string action = 5;</code>
@@ -1398,7 +1399,7 @@ public final class TokenProperties extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Output only. Action name provided at token generation.
+     * Action name provided at token generation.
      * </pre>
      *
      * <code>string action = 5;</code>
@@ -1413,7 +1414,7 @@ public final class TokenProperties extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Output only. Action name provided at token generation.
+     * Action name provided at token generation.
      * </pre>
      *
      * <code>string action = 5;</code>

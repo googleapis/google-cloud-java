@@ -15,7 +15,9 @@ public interface UpdateProfileRequestOrBuilder
    * Required. Profile to be updated.
    * </pre>
    *
-   * <code>.google.cloud.talent.v4beta1.Profile profile = 1;</code>
+   * <code>
+   * .google.cloud.talent.v4beta1.Profile profile = 1 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   boolean hasProfile();
   /**
@@ -25,7 +27,9 @@ public interface UpdateProfileRequestOrBuilder
    * Required. Profile to be updated.
    * </pre>
    *
-   * <code>.google.cloud.talent.v4beta1.Profile profile = 1;</code>
+   * <code>
+   * .google.cloud.talent.v4beta1.Profile profile = 1 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   com.google.cloud.talent.v4beta1.Profile getProfile();
   /**
@@ -35,7 +39,9 @@ public interface UpdateProfileRequestOrBuilder
    * Required. Profile to be updated.
    * </pre>
    *
-   * <code>.google.cloud.talent.v4beta1.Profile profile = 1;</code>
+   * <code>
+   * .google.cloud.talent.v4beta1.Profile profile = 1 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   com.google.cloud.talent.v4beta1.ProfileOrBuilder getProfileOrBuilder();
 
@@ -43,15 +49,18 @@ public interface UpdateProfileRequestOrBuilder
    *
    *
    * <pre>
-   * Optional. A field mask to specify the profile fields to update.
+   * A field mask to specify the profile fields to update.
    * A full update is performed if it is unset.
    * Valid values are:
    * * external_id
    * * source
+   * * source_types
    * * uri
    * * is_hirable
    * * create_time
    * * update_time
+   * * candidate_update_time
+   * * resume_update_time
    * * resume
    * * person_names
    * * addresses
@@ -62,13 +71,33 @@ public interface UpdateProfileRequestOrBuilder
    * * employment_records
    * * education_records
    * * skills
-   * * projects
+   * * activities
    * * publications
    * * patents
    * * certifications
    * * recruiting_notes
    * * custom_attributes
    * * group_id
+   * * external_system
+   * * source_note
+   * * primary_responsibilities
+   * * citizenships
+   * * work_authorizations
+   * * employee_types
+   * * language_code
+   * * qualification_summary
+   * * allowed_contact_types
+   * * preferred_contact_types
+   * * contact_availability
+   * * language_fluencies
+   * * work_preference
+   * * industry_experiences
+   * * work_environment_experiences
+   * * work_availability
+   * * security_clearances
+   * * references
+   * * assessments
+   * * interviews
    * </pre>
    *
    * <code>.google.protobuf.FieldMask update_mask = 2;</code>
@@ -78,15 +107,18 @@ public interface UpdateProfileRequestOrBuilder
    *
    *
    * <pre>
-   * Optional. A field mask to specify the profile fields to update.
+   * A field mask to specify the profile fields to update.
    * A full update is performed if it is unset.
    * Valid values are:
    * * external_id
    * * source
+   * * source_types
    * * uri
    * * is_hirable
    * * create_time
    * * update_time
+   * * candidate_update_time
+   * * resume_update_time
    * * resume
    * * person_names
    * * addresses
@@ -97,13 +129,33 @@ public interface UpdateProfileRequestOrBuilder
    * * employment_records
    * * education_records
    * * skills
-   * * projects
+   * * activities
    * * publications
    * * patents
    * * certifications
    * * recruiting_notes
    * * custom_attributes
    * * group_id
+   * * external_system
+   * * source_note
+   * * primary_responsibilities
+   * * citizenships
+   * * work_authorizations
+   * * employee_types
+   * * language_code
+   * * qualification_summary
+   * * allowed_contact_types
+   * * preferred_contact_types
+   * * contact_availability
+   * * language_fluencies
+   * * work_preference
+   * * industry_experiences
+   * * work_environment_experiences
+   * * work_availability
+   * * security_clearances
+   * * references
+   * * assessments
+   * * interviews
    * </pre>
    *
    * <code>.google.protobuf.FieldMask update_mask = 2;</code>
@@ -113,15 +165,18 @@ public interface UpdateProfileRequestOrBuilder
    *
    *
    * <pre>
-   * Optional. A field mask to specify the profile fields to update.
+   * A field mask to specify the profile fields to update.
    * A full update is performed if it is unset.
    * Valid values are:
    * * external_id
    * * source
+   * * source_types
    * * uri
    * * is_hirable
    * * create_time
    * * update_time
+   * * candidate_update_time
+   * * resume_update_time
    * * resume
    * * person_names
    * * addresses
@@ -132,13 +187,33 @@ public interface UpdateProfileRequestOrBuilder
    * * employment_records
    * * education_records
    * * skills
-   * * projects
+   * * activities
    * * publications
    * * patents
    * * certifications
    * * recruiting_notes
    * * custom_attributes
    * * group_id
+   * * external_system
+   * * source_note
+   * * primary_responsibilities
+   * * citizenships
+   * * work_authorizations
+   * * employee_types
+   * * language_code
+   * * qualification_summary
+   * * allowed_contact_types
+   * * preferred_contact_types
+   * * contact_availability
+   * * language_fluencies
+   * * work_preference
+   * * industry_experiences
+   * * work_environment_experiences
+   * * work_availability
+   * * security_clearances
+   * * references
+   * * assessments
+   * * interviews
    * </pre>
    *
    * <code>.google.protobuf.FieldMask update_mask = 2;</code>

@@ -109,7 +109,9 @@ public final class ExportAgentRequest extends com.google.protobuf.GeneratedMessa
    * Format: `projects/&lt;Project ID&gt;`.
    * </pre>
    *
-   * <code>string parent = 1;</code>
+   * <code>
+   * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    */
   public java.lang.String getParent() {
     java.lang.Object ref = parent_;
@@ -130,7 +132,9 @@ public final class ExportAgentRequest extends com.google.protobuf.GeneratedMessa
    * Format: `projects/&lt;Project ID&gt;`.
    * </pre>
    *
-   * <code>string parent = 1;</code>
+   * <code>
+   * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    */
   public com.google.protobuf.ByteString getParentBytes() {
     java.lang.Object ref = parent_;
@@ -150,14 +154,13 @@ public final class ExportAgentRequest extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * Optional. The
-   * [Google Cloud Storage](https://cloud.google.com/storage/docs/)
+   * Required. The [Google Cloud Storage](https://cloud.google.com/storage/docs/)
    * URI to export the agent to.
    * The format of this URI must be `gs://&lt;bucket-name&gt;/&lt;object-name&gt;`.
    * If left unspecified, the serialized agent is returned inline.
    * </pre>
    *
-   * <code>string agent_uri = 2;</code>
+   * <code>string agent_uri = 2 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   public java.lang.String getAgentUri() {
     java.lang.Object ref = agentUri_;
@@ -174,14 +177,13 @@ public final class ExportAgentRequest extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * Optional. The
-   * [Google Cloud Storage](https://cloud.google.com/storage/docs/)
+   * Required. The [Google Cloud Storage](https://cloud.google.com/storage/docs/)
    * URI to export the agent to.
    * The format of this URI must be `gs://&lt;bucket-name&gt;/&lt;object-name&gt;`.
    * If left unspecified, the serialized agent is returned inline.
    * </pre>
    *
-   * <code>string agent_uri = 2;</code>
+   * <code>string agent_uri = 2 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   public com.google.protobuf.ByteString getAgentUriBytes() {
     java.lang.Object ref = agentUri_;
@@ -538,7 +540,9 @@ public final class ExportAgentRequest extends com.google.protobuf.GeneratedMessa
      * Format: `projects/&lt;Project ID&gt;`.
      * </pre>
      *
-     * <code>string parent = 1;</code>
+     * <code>
+     * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      */
     public java.lang.String getParent() {
       java.lang.Object ref = parent_;
@@ -559,7 +563,9 @@ public final class ExportAgentRequest extends com.google.protobuf.GeneratedMessa
      * Format: `projects/&lt;Project ID&gt;`.
      * </pre>
      *
-     * <code>string parent = 1;</code>
+     * <code>
+     * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      */
     public com.google.protobuf.ByteString getParentBytes() {
       java.lang.Object ref = parent_;
@@ -580,7 +586,9 @@ public final class ExportAgentRequest extends com.google.protobuf.GeneratedMessa
      * Format: `projects/&lt;Project ID&gt;`.
      * </pre>
      *
-     * <code>string parent = 1;</code>
+     * <code>
+     * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      */
     public Builder setParent(java.lang.String value) {
       if (value == null) {
@@ -599,7 +607,9 @@ public final class ExportAgentRequest extends com.google.protobuf.GeneratedMessa
      * Format: `projects/&lt;Project ID&gt;`.
      * </pre>
      *
-     * <code>string parent = 1;</code>
+     * <code>
+     * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      */
     public Builder clearParent() {
 
@@ -615,7 +625,9 @@ public final class ExportAgentRequest extends com.google.protobuf.GeneratedMessa
      * Format: `projects/&lt;Project ID&gt;`.
      * </pre>
      *
-     * <code>string parent = 1;</code>
+     * <code>
+     * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      */
     public Builder setParentBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -633,14 +645,13 @@ public final class ExportAgentRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Optional. The
-     * [Google Cloud Storage](https://cloud.google.com/storage/docs/)
+     * Required. The [Google Cloud Storage](https://cloud.google.com/storage/docs/)
      * URI to export the agent to.
      * The format of this URI must be `gs://&lt;bucket-name&gt;/&lt;object-name&gt;`.
      * If left unspecified, the serialized agent is returned inline.
      * </pre>
      *
-     * <code>string agent_uri = 2;</code>
+     * <code>string agent_uri = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public java.lang.String getAgentUri() {
       java.lang.Object ref = agentUri_;
@@ -657,14 +668,13 @@ public final class ExportAgentRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Optional. The
-     * [Google Cloud Storage](https://cloud.google.com/storage/docs/)
+     * Required. The [Google Cloud Storage](https://cloud.google.com/storage/docs/)
      * URI to export the agent to.
      * The format of this URI must be `gs://&lt;bucket-name&gt;/&lt;object-name&gt;`.
      * If left unspecified, the serialized agent is returned inline.
      * </pre>
      *
-     * <code>string agent_uri = 2;</code>
+     * <code>string agent_uri = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public com.google.protobuf.ByteString getAgentUriBytes() {
       java.lang.Object ref = agentUri_;
@@ -681,14 +691,13 @@ public final class ExportAgentRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Optional. The
-     * [Google Cloud Storage](https://cloud.google.com/storage/docs/)
+     * Required. The [Google Cloud Storage](https://cloud.google.com/storage/docs/)
      * URI to export the agent to.
      * The format of this URI must be `gs://&lt;bucket-name&gt;/&lt;object-name&gt;`.
      * If left unspecified, the serialized agent is returned inline.
      * </pre>
      *
-     * <code>string agent_uri = 2;</code>
+     * <code>string agent_uri = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder setAgentUri(java.lang.String value) {
       if (value == null) {
@@ -703,14 +712,13 @@ public final class ExportAgentRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Optional. The
-     * [Google Cloud Storage](https://cloud.google.com/storage/docs/)
+     * Required. The [Google Cloud Storage](https://cloud.google.com/storage/docs/)
      * URI to export the agent to.
      * The format of this URI must be `gs://&lt;bucket-name&gt;/&lt;object-name&gt;`.
      * If left unspecified, the serialized agent is returned inline.
      * </pre>
      *
-     * <code>string agent_uri = 2;</code>
+     * <code>string agent_uri = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder clearAgentUri() {
 
@@ -722,14 +730,13 @@ public final class ExportAgentRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Optional. The
-     * [Google Cloud Storage](https://cloud.google.com/storage/docs/)
+     * Required. The [Google Cloud Storage](https://cloud.google.com/storage/docs/)
      * URI to export the agent to.
      * The format of this URI must be `gs://&lt;bucket-name&gt;/&lt;object-name&gt;`.
      * If left unspecified, the serialized agent is returned inline.
      * </pre>
      *
-     * <code>string agent_uri = 2;</code>
+     * <code>string agent_uri = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder setAgentUriBytes(com.google.protobuf.ByteString value) {
       if (value == null) {

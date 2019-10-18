@@ -91,6 +91,36 @@ public final class SafeSearchAnnotation extends com.google.protobuf.GeneratedMes
               racy_ = rawValue;
               break;
             }
+          case 133:
+            {
+              adultConfidence_ = input.readFloat();
+              break;
+            }
+          case 149:
+            {
+              spoofConfidence_ = input.readFloat();
+              break;
+            }
+          case 165:
+            {
+              medicalConfidence_ = input.readFloat();
+              break;
+            }
+          case 181:
+            {
+              violenceConfidence_ = input.readFloat();
+              break;
+            }
+          case 197:
+            {
+              racyConfidence_ = input.readFloat();
+              break;
+            }
+          case 213:
+            {
+              nsfwConfidence_ = input.readFloat();
+              break;
+            }
           default:
             {
               if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -289,6 +319,102 @@ public final class SafeSearchAnnotation extends com.google.protobuf.GeneratedMes
     return result == null ? com.google.cloud.vision.v1.Likelihood.UNRECOGNIZED : result;
   }
 
+  public static final int ADULT_CONFIDENCE_FIELD_NUMBER = 16;
+  private float adultConfidence_;
+  /**
+   *
+   *
+   * <pre>
+   * Confidence of adult_score. Range [0, 1]. 0 means not confident, 1 means
+   * very confident.
+   * </pre>
+   *
+   * <code>float adult_confidence = 16;</code>
+   */
+  public float getAdultConfidence() {
+    return adultConfidence_;
+  }
+
+  public static final int SPOOF_CONFIDENCE_FIELD_NUMBER = 18;
+  private float spoofConfidence_;
+  /**
+   *
+   *
+   * <pre>
+   * Confidence of spoof_score. Range [0, 1]. 0 means not confident, 1 means
+   * very confident.
+   * </pre>
+   *
+   * <code>float spoof_confidence = 18;</code>
+   */
+  public float getSpoofConfidence() {
+    return spoofConfidence_;
+  }
+
+  public static final int MEDICAL_CONFIDENCE_FIELD_NUMBER = 20;
+  private float medicalConfidence_;
+  /**
+   *
+   *
+   * <pre>
+   * Confidence of medical_score. Range [0, 1]. 0 means not confident, 1 means
+   * very confident.
+   * </pre>
+   *
+   * <code>float medical_confidence = 20;</code>
+   */
+  public float getMedicalConfidence() {
+    return medicalConfidence_;
+  }
+
+  public static final int VIOLENCE_CONFIDENCE_FIELD_NUMBER = 22;
+  private float violenceConfidence_;
+  /**
+   *
+   *
+   * <pre>
+   * Confidence of violence_score. Range [0, 1]. 0 means not confident, 1 means
+   * very confident.
+   * </pre>
+   *
+   * <code>float violence_confidence = 22;</code>
+   */
+  public float getViolenceConfidence() {
+    return violenceConfidence_;
+  }
+
+  public static final int RACY_CONFIDENCE_FIELD_NUMBER = 24;
+  private float racyConfidence_;
+  /**
+   *
+   *
+   * <pre>
+   * Confidence of racy_score. Range [0, 1]. 0 means not confident, 1 means very
+   * confident.
+   * </pre>
+   *
+   * <code>float racy_confidence = 24;</code>
+   */
+  public float getRacyConfidence() {
+    return racyConfidence_;
+  }
+
+  public static final int NSFW_CONFIDENCE_FIELD_NUMBER = 26;
+  private float nsfwConfidence_;
+  /**
+   *
+   *
+   * <pre>
+   * Confidence of nsfw_score. Range [0, 1]. 0 means not confident, 1 means very
+   * confident.
+   * </pre>
+   *
+   * <code>float nsfw_confidence = 26;</code>
+   */
+  public float getNsfwConfidence() {
+    return nsfwConfidence_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -318,6 +444,24 @@ public final class SafeSearchAnnotation extends com.google.protobuf.GeneratedMes
     if (racy_ != com.google.cloud.vision.v1.Likelihood.UNKNOWN.getNumber()) {
       output.writeEnum(9, racy_);
     }
+    if (adultConfidence_ != 0F) {
+      output.writeFloat(16, adultConfidence_);
+    }
+    if (spoofConfidence_ != 0F) {
+      output.writeFloat(18, spoofConfidence_);
+    }
+    if (medicalConfidence_ != 0F) {
+      output.writeFloat(20, medicalConfidence_);
+    }
+    if (violenceConfidence_ != 0F) {
+      output.writeFloat(22, violenceConfidence_);
+    }
+    if (racyConfidence_ != 0F) {
+      output.writeFloat(24, racyConfidence_);
+    }
+    if (nsfwConfidence_ != 0F) {
+      output.writeFloat(26, nsfwConfidence_);
+    }
     unknownFields.writeTo(output);
   }
 
@@ -342,6 +486,24 @@ public final class SafeSearchAnnotation extends com.google.protobuf.GeneratedMes
     if (racy_ != com.google.cloud.vision.v1.Likelihood.UNKNOWN.getNumber()) {
       size += com.google.protobuf.CodedOutputStream.computeEnumSize(9, racy_);
     }
+    if (adultConfidence_ != 0F) {
+      size += com.google.protobuf.CodedOutputStream.computeFloatSize(16, adultConfidence_);
+    }
+    if (spoofConfidence_ != 0F) {
+      size += com.google.protobuf.CodedOutputStream.computeFloatSize(18, spoofConfidence_);
+    }
+    if (medicalConfidence_ != 0F) {
+      size += com.google.protobuf.CodedOutputStream.computeFloatSize(20, medicalConfidence_);
+    }
+    if (violenceConfidence_ != 0F) {
+      size += com.google.protobuf.CodedOutputStream.computeFloatSize(22, violenceConfidence_);
+    }
+    if (racyConfidence_ != 0F) {
+      size += com.google.protobuf.CodedOutputStream.computeFloatSize(24, racyConfidence_);
+    }
+    if (nsfwConfidence_ != 0F) {
+      size += com.google.protobuf.CodedOutputStream.computeFloatSize(26, nsfwConfidence_);
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -363,6 +525,18 @@ public final class SafeSearchAnnotation extends com.google.protobuf.GeneratedMes
     if (medical_ != other.medical_) return false;
     if (violence_ != other.violence_) return false;
     if (racy_ != other.racy_) return false;
+    if (java.lang.Float.floatToIntBits(getAdultConfidence())
+        != java.lang.Float.floatToIntBits(other.getAdultConfidence())) return false;
+    if (java.lang.Float.floatToIntBits(getSpoofConfidence())
+        != java.lang.Float.floatToIntBits(other.getSpoofConfidence())) return false;
+    if (java.lang.Float.floatToIntBits(getMedicalConfidence())
+        != java.lang.Float.floatToIntBits(other.getMedicalConfidence())) return false;
+    if (java.lang.Float.floatToIntBits(getViolenceConfidence())
+        != java.lang.Float.floatToIntBits(other.getViolenceConfidence())) return false;
+    if (java.lang.Float.floatToIntBits(getRacyConfidence())
+        != java.lang.Float.floatToIntBits(other.getRacyConfidence())) return false;
+    if (java.lang.Float.floatToIntBits(getNsfwConfidence())
+        != java.lang.Float.floatToIntBits(other.getNsfwConfidence())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -384,6 +558,18 @@ public final class SafeSearchAnnotation extends com.google.protobuf.GeneratedMes
     hash = (53 * hash) + violence_;
     hash = (37 * hash) + RACY_FIELD_NUMBER;
     hash = (53 * hash) + racy_;
+    hash = (37 * hash) + ADULT_CONFIDENCE_FIELD_NUMBER;
+    hash = (53 * hash) + java.lang.Float.floatToIntBits(getAdultConfidence());
+    hash = (37 * hash) + SPOOF_CONFIDENCE_FIELD_NUMBER;
+    hash = (53 * hash) + java.lang.Float.floatToIntBits(getSpoofConfidence());
+    hash = (37 * hash) + MEDICAL_CONFIDENCE_FIELD_NUMBER;
+    hash = (53 * hash) + java.lang.Float.floatToIntBits(getMedicalConfidence());
+    hash = (37 * hash) + VIOLENCE_CONFIDENCE_FIELD_NUMBER;
+    hash = (53 * hash) + java.lang.Float.floatToIntBits(getViolenceConfidence());
+    hash = (37 * hash) + RACY_CONFIDENCE_FIELD_NUMBER;
+    hash = (53 * hash) + java.lang.Float.floatToIntBits(getRacyConfidence());
+    hash = (37 * hash) + NSFW_CONFIDENCE_FIELD_NUMBER;
+    hash = (53 * hash) + java.lang.Float.floatToIntBits(getNsfwConfidence());
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -541,6 +727,18 @@ public final class SafeSearchAnnotation extends com.google.protobuf.GeneratedMes
 
       racy_ = 0;
 
+      adultConfidence_ = 0F;
+
+      spoofConfidence_ = 0F;
+
+      medicalConfidence_ = 0F;
+
+      violenceConfidence_ = 0F;
+
+      racyConfidence_ = 0F;
+
+      nsfwConfidence_ = 0F;
+
       return this;
     }
 
@@ -573,6 +771,12 @@ public final class SafeSearchAnnotation extends com.google.protobuf.GeneratedMes
       result.medical_ = medical_;
       result.violence_ = violence_;
       result.racy_ = racy_;
+      result.adultConfidence_ = adultConfidence_;
+      result.spoofConfidence_ = spoofConfidence_;
+      result.medicalConfidence_ = medicalConfidence_;
+      result.violenceConfidence_ = violenceConfidence_;
+      result.racyConfidence_ = racyConfidence_;
+      result.nsfwConfidence_ = nsfwConfidence_;
       onBuilt();
       return result;
     }
@@ -637,6 +841,24 @@ public final class SafeSearchAnnotation extends com.google.protobuf.GeneratedMes
       }
       if (other.racy_ != 0) {
         setRacyValue(other.getRacyValue());
+      }
+      if (other.getAdultConfidence() != 0F) {
+        setAdultConfidence(other.getAdultConfidence());
+      }
+      if (other.getSpoofConfidence() != 0F) {
+        setSpoofConfidence(other.getSpoofConfidence());
+      }
+      if (other.getMedicalConfidence() != 0F) {
+        setMedicalConfidence(other.getMedicalConfidence());
+      }
+      if (other.getViolenceConfidence() != 0F) {
+        setViolenceConfidence(other.getViolenceConfidence());
+      }
+      if (other.getRacyConfidence() != 0F) {
+        setRacyConfidence(other.getRacyConfidence());
+      }
+      if (other.getNsfwConfidence() != 0F) {
+        setNsfwConfidence(other.getNsfwConfidence());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -1078,6 +1300,288 @@ public final class SafeSearchAnnotation extends com.google.protobuf.GeneratedMes
     public Builder clearRacy() {
 
       racy_ = 0;
+      onChanged();
+      return this;
+    }
+
+    private float adultConfidence_;
+    /**
+     *
+     *
+     * <pre>
+     * Confidence of adult_score. Range [0, 1]. 0 means not confident, 1 means
+     * very confident.
+     * </pre>
+     *
+     * <code>float adult_confidence = 16;</code>
+     */
+    public float getAdultConfidence() {
+      return adultConfidence_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Confidence of adult_score. Range [0, 1]. 0 means not confident, 1 means
+     * very confident.
+     * </pre>
+     *
+     * <code>float adult_confidence = 16;</code>
+     */
+    public Builder setAdultConfidence(float value) {
+
+      adultConfidence_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Confidence of adult_score. Range [0, 1]. 0 means not confident, 1 means
+     * very confident.
+     * </pre>
+     *
+     * <code>float adult_confidence = 16;</code>
+     */
+    public Builder clearAdultConfidence() {
+
+      adultConfidence_ = 0F;
+      onChanged();
+      return this;
+    }
+
+    private float spoofConfidence_;
+    /**
+     *
+     *
+     * <pre>
+     * Confidence of spoof_score. Range [0, 1]. 0 means not confident, 1 means
+     * very confident.
+     * </pre>
+     *
+     * <code>float spoof_confidence = 18;</code>
+     */
+    public float getSpoofConfidence() {
+      return spoofConfidence_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Confidence of spoof_score. Range [0, 1]. 0 means not confident, 1 means
+     * very confident.
+     * </pre>
+     *
+     * <code>float spoof_confidence = 18;</code>
+     */
+    public Builder setSpoofConfidence(float value) {
+
+      spoofConfidence_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Confidence of spoof_score. Range [0, 1]. 0 means not confident, 1 means
+     * very confident.
+     * </pre>
+     *
+     * <code>float spoof_confidence = 18;</code>
+     */
+    public Builder clearSpoofConfidence() {
+
+      spoofConfidence_ = 0F;
+      onChanged();
+      return this;
+    }
+
+    private float medicalConfidence_;
+    /**
+     *
+     *
+     * <pre>
+     * Confidence of medical_score. Range [0, 1]. 0 means not confident, 1 means
+     * very confident.
+     * </pre>
+     *
+     * <code>float medical_confidence = 20;</code>
+     */
+    public float getMedicalConfidence() {
+      return medicalConfidence_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Confidence of medical_score. Range [0, 1]. 0 means not confident, 1 means
+     * very confident.
+     * </pre>
+     *
+     * <code>float medical_confidence = 20;</code>
+     */
+    public Builder setMedicalConfidence(float value) {
+
+      medicalConfidence_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Confidence of medical_score. Range [0, 1]. 0 means not confident, 1 means
+     * very confident.
+     * </pre>
+     *
+     * <code>float medical_confidence = 20;</code>
+     */
+    public Builder clearMedicalConfidence() {
+
+      medicalConfidence_ = 0F;
+      onChanged();
+      return this;
+    }
+
+    private float violenceConfidence_;
+    /**
+     *
+     *
+     * <pre>
+     * Confidence of violence_score. Range [0, 1]. 0 means not confident, 1 means
+     * very confident.
+     * </pre>
+     *
+     * <code>float violence_confidence = 22;</code>
+     */
+    public float getViolenceConfidence() {
+      return violenceConfidence_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Confidence of violence_score. Range [0, 1]. 0 means not confident, 1 means
+     * very confident.
+     * </pre>
+     *
+     * <code>float violence_confidence = 22;</code>
+     */
+    public Builder setViolenceConfidence(float value) {
+
+      violenceConfidence_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Confidence of violence_score. Range [0, 1]. 0 means not confident, 1 means
+     * very confident.
+     * </pre>
+     *
+     * <code>float violence_confidence = 22;</code>
+     */
+    public Builder clearViolenceConfidence() {
+
+      violenceConfidence_ = 0F;
+      onChanged();
+      return this;
+    }
+
+    private float racyConfidence_;
+    /**
+     *
+     *
+     * <pre>
+     * Confidence of racy_score. Range [0, 1]. 0 means not confident, 1 means very
+     * confident.
+     * </pre>
+     *
+     * <code>float racy_confidence = 24;</code>
+     */
+    public float getRacyConfidence() {
+      return racyConfidence_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Confidence of racy_score. Range [0, 1]. 0 means not confident, 1 means very
+     * confident.
+     * </pre>
+     *
+     * <code>float racy_confidence = 24;</code>
+     */
+    public Builder setRacyConfidence(float value) {
+
+      racyConfidence_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Confidence of racy_score. Range [0, 1]. 0 means not confident, 1 means very
+     * confident.
+     * </pre>
+     *
+     * <code>float racy_confidence = 24;</code>
+     */
+    public Builder clearRacyConfidence() {
+
+      racyConfidence_ = 0F;
+      onChanged();
+      return this;
+    }
+
+    private float nsfwConfidence_;
+    /**
+     *
+     *
+     * <pre>
+     * Confidence of nsfw_score. Range [0, 1]. 0 means not confident, 1 means very
+     * confident.
+     * </pre>
+     *
+     * <code>float nsfw_confidence = 26;</code>
+     */
+    public float getNsfwConfidence() {
+      return nsfwConfidence_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Confidence of nsfw_score. Range [0, 1]. 0 means not confident, 1 means very
+     * confident.
+     * </pre>
+     *
+     * <code>float nsfw_confidence = 26;</code>
+     */
+    public Builder setNsfwConfidence(float value) {
+
+      nsfwConfidence_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Confidence of nsfw_score. Range [0, 1]. 0 means not confident, 1 means very
+     * confident.
+     * </pre>
+     *
+     * <code>float nsfw_confidence = 26;</code>
+     */
+    public Builder clearNsfwConfidence() {
+
+      nsfwConfidence_ = 0F;
       onChanged();
       return this;
     }

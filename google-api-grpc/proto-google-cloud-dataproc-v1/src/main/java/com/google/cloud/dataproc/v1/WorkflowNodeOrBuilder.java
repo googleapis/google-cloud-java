@@ -15,7 +15,7 @@ public interface WorkflowNodeOrBuilder
    * Output only. The name of the node.
    * </pre>
    *
-   * <code>string step_id = 1;</code>
+   * <code>string step_id = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    */
   java.lang.String getStepId();
   /**
@@ -25,7 +25,7 @@ public interface WorkflowNodeOrBuilder
    * Output only. The name of the node.
    * </pre>
    *
-   * <code>string step_id = 1;</code>
+   * <code>string step_id = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    */
   com.google.protobuf.ByteString getStepIdBytes();
 
@@ -36,7 +36,8 @@ public interface WorkflowNodeOrBuilder
    * Output only. Node's prerequisite nodes.
    * </pre>
    *
-   * <code>repeated string prerequisite_step_ids = 2;</code>
+   * <code>repeated string prerequisite_step_ids = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    */
   java.util.List<java.lang.String> getPrerequisiteStepIdsList();
   /**
@@ -46,7 +47,8 @@ public interface WorkflowNodeOrBuilder
    * Output only. Node's prerequisite nodes.
    * </pre>
    *
-   * <code>repeated string prerequisite_step_ids = 2;</code>
+   * <code>repeated string prerequisite_step_ids = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    */
   int getPrerequisiteStepIdsCount();
   /**
@@ -56,7 +58,8 @@ public interface WorkflowNodeOrBuilder
    * Output only. Node's prerequisite nodes.
    * </pre>
    *
-   * <code>repeated string prerequisite_step_ids = 2;</code>
+   * <code>repeated string prerequisite_step_ids = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    */
   java.lang.String getPrerequisiteStepIds(int index);
   /**
@@ -66,7 +69,8 @@ public interface WorkflowNodeOrBuilder
    * Output only. Node's prerequisite nodes.
    * </pre>
    *
-   * <code>repeated string prerequisite_step_ids = 2;</code>
+   * <code>repeated string prerequisite_step_ids = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    */
   com.google.protobuf.ByteString getPrerequisiteStepIdsBytes(int index);
 
@@ -77,7 +81,7 @@ public interface WorkflowNodeOrBuilder
    * Output only. The job id; populated after the node enters RUNNING state.
    * </pre>
    *
-   * <code>string job_id = 3;</code>
+   * <code>string job_id = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    */
   java.lang.String getJobId();
   /**
@@ -87,7 +91,7 @@ public interface WorkflowNodeOrBuilder
    * Output only. The job id; populated after the node enters RUNNING state.
    * </pre>
    *
-   * <code>string job_id = 3;</code>
+   * <code>string job_id = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    */
   com.google.protobuf.ByteString getJobIdBytes();
 
@@ -98,7 +102,9 @@ public interface WorkflowNodeOrBuilder
    * Output only. The node state.
    * </pre>
    *
-   * <code>.google.cloud.dataproc.v1.WorkflowNode.NodeState state = 5;</code>
+   * <code>
+   * .google.cloud.dataproc.v1.WorkflowNode.NodeState state = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    */
   int getStateValue();
   /**
@@ -108,7 +114,9 @@ public interface WorkflowNodeOrBuilder
    * Output only. The node state.
    * </pre>
    *
-   * <code>.google.cloud.dataproc.v1.WorkflowNode.NodeState state = 5;</code>
+   * <code>
+   * .google.cloud.dataproc.v1.WorkflowNode.NodeState state = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    */
   com.google.cloud.dataproc.v1.WorkflowNode.NodeState getState();
 
@@ -119,7 +127,7 @@ public interface WorkflowNodeOrBuilder
    * Output only. The error detail.
    * </pre>
    *
-   * <code>string error = 6;</code>
+   * <code>string error = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    */
   java.lang.String getError();
   /**
@@ -129,7 +137,7 @@ public interface WorkflowNodeOrBuilder
    * Output only. The error detail.
    * </pre>
    *
-   * <code>string error = 6;</code>
+   * <code>string error = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    */
   com.google.protobuf.ByteString getErrorBytes();
 }

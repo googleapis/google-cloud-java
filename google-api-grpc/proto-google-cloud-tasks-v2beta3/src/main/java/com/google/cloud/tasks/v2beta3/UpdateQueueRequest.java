@@ -119,15 +119,15 @@ public final class UpdateQueueRequest extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * Required.
-   * The queue to create or update.
+   * Required. The queue to create or update.
    * The queue's [name][google.cloud.tasks.v2beta3.Queue.name] must be specified.
    * Output only fields cannot be modified using UpdateQueue.
    * Any value specified for an output only field will be ignored.
    * The queue's [name][google.cloud.tasks.v2beta3.Queue.name] cannot be changed.
    * </pre>
    *
-   * <code>.google.cloud.tasks.v2beta3.Queue queue = 1;</code>
+   * <code>.google.cloud.tasks.v2beta3.Queue queue = 1 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   public boolean hasQueue() {
     return queue_ != null;
@@ -136,15 +136,15 @@ public final class UpdateQueueRequest extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * Required.
-   * The queue to create or update.
+   * Required. The queue to create or update.
    * The queue's [name][google.cloud.tasks.v2beta3.Queue.name] must be specified.
    * Output only fields cannot be modified using UpdateQueue.
    * Any value specified for an output only field will be ignored.
    * The queue's [name][google.cloud.tasks.v2beta3.Queue.name] cannot be changed.
    * </pre>
    *
-   * <code>.google.cloud.tasks.v2beta3.Queue queue = 1;</code>
+   * <code>.google.cloud.tasks.v2beta3.Queue queue = 1 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   public com.google.cloud.tasks.v2beta3.Queue getQueue() {
     return queue_ == null ? com.google.cloud.tasks.v2beta3.Queue.getDefaultInstance() : queue_;
@@ -153,15 +153,15 @@ public final class UpdateQueueRequest extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * Required.
-   * The queue to create or update.
+   * Required. The queue to create or update.
    * The queue's [name][google.cloud.tasks.v2beta3.Queue.name] must be specified.
    * Output only fields cannot be modified using UpdateQueue.
    * Any value specified for an output only field will be ignored.
    * The queue's [name][google.cloud.tasks.v2beta3.Queue.name] cannot be changed.
    * </pre>
    *
-   * <code>.google.cloud.tasks.v2beta3.Queue queue = 1;</code>
+   * <code>.google.cloud.tasks.v2beta3.Queue queue = 1 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   public com.google.cloud.tasks.v2beta3.QueueOrBuilder getQueueOrBuilder() {
     return getQueue();
@@ -577,15 +577,15 @@ public final class UpdateQueueRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Required.
-     * The queue to create or update.
+     * Required. The queue to create or update.
      * The queue's [name][google.cloud.tasks.v2beta3.Queue.name] must be specified.
      * Output only fields cannot be modified using UpdateQueue.
      * Any value specified for an output only field will be ignored.
      * The queue's [name][google.cloud.tasks.v2beta3.Queue.name] cannot be changed.
      * </pre>
      *
-     * <code>.google.cloud.tasks.v2beta3.Queue queue = 1;</code>
+     * <code>.google.cloud.tasks.v2beta3.Queue queue = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public boolean hasQueue() {
       return queueBuilder_ != null || queue_ != null;
@@ -594,15 +594,15 @@ public final class UpdateQueueRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Required.
-     * The queue to create or update.
+     * Required. The queue to create or update.
      * The queue's [name][google.cloud.tasks.v2beta3.Queue.name] must be specified.
      * Output only fields cannot be modified using UpdateQueue.
      * Any value specified for an output only field will be ignored.
      * The queue's [name][google.cloud.tasks.v2beta3.Queue.name] cannot be changed.
      * </pre>
      *
-     * <code>.google.cloud.tasks.v2beta3.Queue queue = 1;</code>
+     * <code>.google.cloud.tasks.v2beta3.Queue queue = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public com.google.cloud.tasks.v2beta3.Queue getQueue() {
       if (queueBuilder_ == null) {
@@ -615,15 +615,15 @@ public final class UpdateQueueRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Required.
-     * The queue to create or update.
+     * Required. The queue to create or update.
      * The queue's [name][google.cloud.tasks.v2beta3.Queue.name] must be specified.
      * Output only fields cannot be modified using UpdateQueue.
      * Any value specified for an output only field will be ignored.
      * The queue's [name][google.cloud.tasks.v2beta3.Queue.name] cannot be changed.
      * </pre>
      *
-     * <code>.google.cloud.tasks.v2beta3.Queue queue = 1;</code>
+     * <code>.google.cloud.tasks.v2beta3.Queue queue = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder setQueue(com.google.cloud.tasks.v2beta3.Queue value) {
       if (queueBuilder_ == null) {
@@ -642,15 +642,15 @@ public final class UpdateQueueRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Required.
-     * The queue to create or update.
+     * Required. The queue to create or update.
      * The queue's [name][google.cloud.tasks.v2beta3.Queue.name] must be specified.
      * Output only fields cannot be modified using UpdateQueue.
      * Any value specified for an output only field will be ignored.
      * The queue's [name][google.cloud.tasks.v2beta3.Queue.name] cannot be changed.
      * </pre>
      *
-     * <code>.google.cloud.tasks.v2beta3.Queue queue = 1;</code>
+     * <code>.google.cloud.tasks.v2beta3.Queue queue = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder setQueue(com.google.cloud.tasks.v2beta3.Queue.Builder builderForValue) {
       if (queueBuilder_ == null) {
@@ -666,15 +666,15 @@ public final class UpdateQueueRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Required.
-     * The queue to create or update.
+     * Required. The queue to create or update.
      * The queue's [name][google.cloud.tasks.v2beta3.Queue.name] must be specified.
      * Output only fields cannot be modified using UpdateQueue.
      * Any value specified for an output only field will be ignored.
      * The queue's [name][google.cloud.tasks.v2beta3.Queue.name] cannot be changed.
      * </pre>
      *
-     * <code>.google.cloud.tasks.v2beta3.Queue queue = 1;</code>
+     * <code>.google.cloud.tasks.v2beta3.Queue queue = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder mergeQueue(com.google.cloud.tasks.v2beta3.Queue value) {
       if (queueBuilder_ == null) {
@@ -697,15 +697,15 @@ public final class UpdateQueueRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Required.
-     * The queue to create or update.
+     * Required. The queue to create or update.
      * The queue's [name][google.cloud.tasks.v2beta3.Queue.name] must be specified.
      * Output only fields cannot be modified using UpdateQueue.
      * Any value specified for an output only field will be ignored.
      * The queue's [name][google.cloud.tasks.v2beta3.Queue.name] cannot be changed.
      * </pre>
      *
-     * <code>.google.cloud.tasks.v2beta3.Queue queue = 1;</code>
+     * <code>.google.cloud.tasks.v2beta3.Queue queue = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder clearQueue() {
       if (queueBuilder_ == null) {
@@ -722,15 +722,15 @@ public final class UpdateQueueRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Required.
-     * The queue to create or update.
+     * Required. The queue to create or update.
      * The queue's [name][google.cloud.tasks.v2beta3.Queue.name] must be specified.
      * Output only fields cannot be modified using UpdateQueue.
      * Any value specified for an output only field will be ignored.
      * The queue's [name][google.cloud.tasks.v2beta3.Queue.name] cannot be changed.
      * </pre>
      *
-     * <code>.google.cloud.tasks.v2beta3.Queue queue = 1;</code>
+     * <code>.google.cloud.tasks.v2beta3.Queue queue = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public com.google.cloud.tasks.v2beta3.Queue.Builder getQueueBuilder() {
 
@@ -741,15 +741,15 @@ public final class UpdateQueueRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Required.
-     * The queue to create or update.
+     * Required. The queue to create or update.
      * The queue's [name][google.cloud.tasks.v2beta3.Queue.name] must be specified.
      * Output only fields cannot be modified using UpdateQueue.
      * Any value specified for an output only field will be ignored.
      * The queue's [name][google.cloud.tasks.v2beta3.Queue.name] cannot be changed.
      * </pre>
      *
-     * <code>.google.cloud.tasks.v2beta3.Queue queue = 1;</code>
+     * <code>.google.cloud.tasks.v2beta3.Queue queue = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public com.google.cloud.tasks.v2beta3.QueueOrBuilder getQueueOrBuilder() {
       if (queueBuilder_ != null) {
@@ -762,15 +762,15 @@ public final class UpdateQueueRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Required.
-     * The queue to create or update.
+     * Required. The queue to create or update.
      * The queue's [name][google.cloud.tasks.v2beta3.Queue.name] must be specified.
      * Output only fields cannot be modified using UpdateQueue.
      * Any value specified for an output only field will be ignored.
      * The queue's [name][google.cloud.tasks.v2beta3.Queue.name] cannot be changed.
      * </pre>
      *
-     * <code>.google.cloud.tasks.v2beta3.Queue queue = 1;</code>
+     * <code>.google.cloud.tasks.v2beta3.Queue queue = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.tasks.v2beta3.Queue,

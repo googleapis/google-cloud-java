@@ -29,9 +29,10 @@
  * <pre>
  * <code>
  * try (DataCatalogClient dataCatalogClient = DataCatalogClient.create()) {
- *   Entry entry = Entry.newBuilder().build();
- *   FieldMask updateMask = FieldMask.newBuilder().build();
- *   Entry response = dataCatalogClient.updateEntry(entry, updateMask);
+ *   String formattedParent = DataCatalogClient.formatLocationName("[PROJECT]", "[LOCATION]");
+ *   String entryGroupId = "";
+ *   EntryGroup entryGroup = EntryGroup.newBuilder().build();
+ *   EntryGroup response = dataCatalogClient.createEntryGroup(formattedParent, entryGroupId, entryGroup);
  * }
  * </code>
  * </pre>

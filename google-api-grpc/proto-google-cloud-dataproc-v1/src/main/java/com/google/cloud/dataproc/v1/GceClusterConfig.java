@@ -193,7 +193,7 @@ public final class GceClusterConfig extends com.google.protobuf.GeneratedMessage
    * * `us-central1-f`
    * </pre>
    *
-   * <code>string zone_uri = 1;</code>
+   * <code>string zone_uri = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   public java.lang.String getZoneUri() {
     java.lang.Object ref = zoneUri_;
@@ -221,7 +221,7 @@ public final class GceClusterConfig extends com.google.protobuf.GeneratedMessage
    * * `us-central1-f`
    * </pre>
    *
-   * <code>string zone_uri = 1;</code>
+   * <code>string zone_uri = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   public com.google.protobuf.ByteString getZoneUriBytes() {
     java.lang.Object ref = zoneUri_;
@@ -252,7 +252,7 @@ public final class GceClusterConfig extends com.google.protobuf.GeneratedMessage
    * * `default`
    * </pre>
    *
-   * <code>string network_uri = 2;</code>
+   * <code>string network_uri = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   public java.lang.String getNetworkUri() {
     java.lang.Object ref = networkUri_;
@@ -280,7 +280,7 @@ public final class GceClusterConfig extends com.google.protobuf.GeneratedMessage
    * * `default`
    * </pre>
    *
-   * <code>string network_uri = 2;</code>
+   * <code>string network_uri = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   public com.google.protobuf.ByteString getNetworkUriBytes() {
     java.lang.Object ref = networkUri_;
@@ -308,7 +308,7 @@ public final class GceClusterConfig extends com.google.protobuf.GeneratedMessage
    * * `sub0`
    * </pre>
    *
-   * <code>string subnetwork_uri = 6;</code>
+   * <code>string subnetwork_uri = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   public java.lang.String getSubnetworkUri() {
     java.lang.Object ref = subnetworkUri_;
@@ -333,7 +333,7 @@ public final class GceClusterConfig extends com.google.protobuf.GeneratedMessage
    * * `sub0`
    * </pre>
    *
-   * <code>string subnetwork_uri = 6;</code>
+   * <code>string subnetwork_uri = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   public com.google.protobuf.ByteString getSubnetworkUriBytes() {
     java.lang.Object ref = subnetworkUri_;
@@ -361,7 +361,7 @@ public final class GceClusterConfig extends com.google.protobuf.GeneratedMessage
    * configured to be accessible without external IP addresses.
    * </pre>
    *
-   * <code>bool internal_ip_only = 7;</code>
+   * <code>bool internal_ip_only = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   public boolean getInternalIpOnly() {
     return internalIpOnly_;
@@ -384,7 +384,7 @@ public final class GceClusterConfig extends com.google.protobuf.GeneratedMessage
    * Example: `[account_id]&#64;[project_id].iam.gserviceaccount.com`
    * </pre>
    *
-   * <code>string service_account = 8;</code>
+   * <code>string service_account = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   public java.lang.String getServiceAccount() {
     java.lang.Object ref = serviceAccount_;
@@ -412,7 +412,7 @@ public final class GceClusterConfig extends com.google.protobuf.GeneratedMessage
    * Example: `[account_id]&#64;[project_id].iam.gserviceaccount.com`
    * </pre>
    *
-   * <code>string service_account = 8;</code>
+   * <code>string service_account = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   public com.google.protobuf.ByteString getServiceAccountBytes() {
     java.lang.Object ref = serviceAccount_;
@@ -445,7 +445,8 @@ public final class GceClusterConfig extends com.google.protobuf.GeneratedMessage
    * * https://www.googleapis.com/auth/devstorage.full_control
    * </pre>
    *
-   * <code>repeated string service_account_scopes = 3;</code>
+   * <code>repeated string service_account_scopes = 3 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   public com.google.protobuf.ProtocolStringList getServiceAccountScopesList() {
     return serviceAccountScopes_;
@@ -467,7 +468,8 @@ public final class GceClusterConfig extends com.google.protobuf.GeneratedMessage
    * * https://www.googleapis.com/auth/devstorage.full_control
    * </pre>
    *
-   * <code>repeated string service_account_scopes = 3;</code>
+   * <code>repeated string service_account_scopes = 3 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   public int getServiceAccountScopesCount() {
     return serviceAccountScopes_.size();
@@ -489,7 +491,8 @@ public final class GceClusterConfig extends com.google.protobuf.GeneratedMessage
    * * https://www.googleapis.com/auth/devstorage.full_control
    * </pre>
    *
-   * <code>repeated string service_account_scopes = 3;</code>
+   * <code>repeated string service_account_scopes = 3 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   public java.lang.String getServiceAccountScopes(int index) {
     return serviceAccountScopes_.get(index);
@@ -511,7 +514,8 @@ public final class GceClusterConfig extends com.google.protobuf.GeneratedMessage
    * * https://www.googleapis.com/auth/devstorage.full_control
    * </pre>
    *
-   * <code>repeated string service_account_scopes = 3;</code>
+   * <code>repeated string service_account_scopes = 3 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   public com.google.protobuf.ByteString getServiceAccountScopesBytes(int index) {
     return serviceAccountScopes_.getByteString(index);
@@ -1183,7 +1187,7 @@ public final class GceClusterConfig extends com.google.protobuf.GeneratedMessage
      * * `us-central1-f`
      * </pre>
      *
-     * <code>string zone_uri = 1;</code>
+     * <code>string zone_uri = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public java.lang.String getZoneUri() {
       java.lang.Object ref = zoneUri_;
@@ -1211,7 +1215,7 @@ public final class GceClusterConfig extends com.google.protobuf.GeneratedMessage
      * * `us-central1-f`
      * </pre>
      *
-     * <code>string zone_uri = 1;</code>
+     * <code>string zone_uri = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public com.google.protobuf.ByteString getZoneUriBytes() {
       java.lang.Object ref = zoneUri_;
@@ -1239,7 +1243,7 @@ public final class GceClusterConfig extends com.google.protobuf.GeneratedMessage
      * * `us-central1-f`
      * </pre>
      *
-     * <code>string zone_uri = 1;</code>
+     * <code>string zone_uri = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public Builder setZoneUri(java.lang.String value) {
       if (value == null) {
@@ -1265,7 +1269,7 @@ public final class GceClusterConfig extends com.google.protobuf.GeneratedMessage
      * * `us-central1-f`
      * </pre>
      *
-     * <code>string zone_uri = 1;</code>
+     * <code>string zone_uri = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public Builder clearZoneUri() {
 
@@ -1288,7 +1292,7 @@ public final class GceClusterConfig extends com.google.protobuf.GeneratedMessage
      * * `us-central1-f`
      * </pre>
      *
-     * <code>string zone_uri = 1;</code>
+     * <code>string zone_uri = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public Builder setZoneUriBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -1317,7 +1321,7 @@ public final class GceClusterConfig extends com.google.protobuf.GeneratedMessage
      * * `default`
      * </pre>
      *
-     * <code>string network_uri = 2;</code>
+     * <code>string network_uri = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public java.lang.String getNetworkUri() {
       java.lang.Object ref = networkUri_;
@@ -1345,7 +1349,7 @@ public final class GceClusterConfig extends com.google.protobuf.GeneratedMessage
      * * `default`
      * </pre>
      *
-     * <code>string network_uri = 2;</code>
+     * <code>string network_uri = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public com.google.protobuf.ByteString getNetworkUriBytes() {
       java.lang.Object ref = networkUri_;
@@ -1373,7 +1377,7 @@ public final class GceClusterConfig extends com.google.protobuf.GeneratedMessage
      * * `default`
      * </pre>
      *
-     * <code>string network_uri = 2;</code>
+     * <code>string network_uri = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public Builder setNetworkUri(java.lang.String value) {
       if (value == null) {
@@ -1399,7 +1403,7 @@ public final class GceClusterConfig extends com.google.protobuf.GeneratedMessage
      * * `default`
      * </pre>
      *
-     * <code>string network_uri = 2;</code>
+     * <code>string network_uri = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public Builder clearNetworkUri() {
 
@@ -1422,7 +1426,7 @@ public final class GceClusterConfig extends com.google.protobuf.GeneratedMessage
      * * `default`
      * </pre>
      *
-     * <code>string network_uri = 2;</code>
+     * <code>string network_uri = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public Builder setNetworkUriBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -1448,7 +1452,7 @@ public final class GceClusterConfig extends com.google.protobuf.GeneratedMessage
      * * `sub0`
      * </pre>
      *
-     * <code>string subnetwork_uri = 6;</code>
+     * <code>string subnetwork_uri = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public java.lang.String getSubnetworkUri() {
       java.lang.Object ref = subnetworkUri_;
@@ -1473,7 +1477,7 @@ public final class GceClusterConfig extends com.google.protobuf.GeneratedMessage
      * * `sub0`
      * </pre>
      *
-     * <code>string subnetwork_uri = 6;</code>
+     * <code>string subnetwork_uri = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public com.google.protobuf.ByteString getSubnetworkUriBytes() {
       java.lang.Object ref = subnetworkUri_;
@@ -1498,7 +1502,7 @@ public final class GceClusterConfig extends com.google.protobuf.GeneratedMessage
      * * `sub0`
      * </pre>
      *
-     * <code>string subnetwork_uri = 6;</code>
+     * <code>string subnetwork_uri = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public Builder setSubnetworkUri(java.lang.String value) {
       if (value == null) {
@@ -1521,7 +1525,7 @@ public final class GceClusterConfig extends com.google.protobuf.GeneratedMessage
      * * `sub0`
      * </pre>
      *
-     * <code>string subnetwork_uri = 6;</code>
+     * <code>string subnetwork_uri = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public Builder clearSubnetworkUri() {
 
@@ -1541,7 +1545,7 @@ public final class GceClusterConfig extends com.google.protobuf.GeneratedMessage
      * * `sub0`
      * </pre>
      *
-     * <code>string subnetwork_uri = 6;</code>
+     * <code>string subnetwork_uri = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public Builder setSubnetworkUriBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -1567,7 +1571,7 @@ public final class GceClusterConfig extends com.google.protobuf.GeneratedMessage
      * configured to be accessible without external IP addresses.
      * </pre>
      *
-     * <code>bool internal_ip_only = 7;</code>
+     * <code>bool internal_ip_only = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public boolean getInternalIpOnly() {
       return internalIpOnly_;
@@ -1584,7 +1588,7 @@ public final class GceClusterConfig extends com.google.protobuf.GeneratedMessage
      * configured to be accessible without external IP addresses.
      * </pre>
      *
-     * <code>bool internal_ip_only = 7;</code>
+     * <code>bool internal_ip_only = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public Builder setInternalIpOnly(boolean value) {
 
@@ -1604,7 +1608,7 @@ public final class GceClusterConfig extends com.google.protobuf.GeneratedMessage
      * configured to be accessible without external IP addresses.
      * </pre>
      *
-     * <code>bool internal_ip_only = 7;</code>
+     * <code>bool internal_ip_only = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public Builder clearInternalIpOnly() {
 
@@ -1629,7 +1633,7 @@ public final class GceClusterConfig extends com.google.protobuf.GeneratedMessage
      * Example: `[account_id]&#64;[project_id].iam.gserviceaccount.com`
      * </pre>
      *
-     * <code>string service_account = 8;</code>
+     * <code>string service_account = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public java.lang.String getServiceAccount() {
       java.lang.Object ref = serviceAccount_;
@@ -1657,7 +1661,7 @@ public final class GceClusterConfig extends com.google.protobuf.GeneratedMessage
      * Example: `[account_id]&#64;[project_id].iam.gserviceaccount.com`
      * </pre>
      *
-     * <code>string service_account = 8;</code>
+     * <code>string service_account = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public com.google.protobuf.ByteString getServiceAccountBytes() {
       java.lang.Object ref = serviceAccount_;
@@ -1685,7 +1689,7 @@ public final class GceClusterConfig extends com.google.protobuf.GeneratedMessage
      * Example: `[account_id]&#64;[project_id].iam.gserviceaccount.com`
      * </pre>
      *
-     * <code>string service_account = 8;</code>
+     * <code>string service_account = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public Builder setServiceAccount(java.lang.String value) {
       if (value == null) {
@@ -1711,7 +1715,7 @@ public final class GceClusterConfig extends com.google.protobuf.GeneratedMessage
      * Example: `[account_id]&#64;[project_id].iam.gserviceaccount.com`
      * </pre>
      *
-     * <code>string service_account = 8;</code>
+     * <code>string service_account = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public Builder clearServiceAccount() {
 
@@ -1734,7 +1738,7 @@ public final class GceClusterConfig extends com.google.protobuf.GeneratedMessage
      * Example: `[account_id]&#64;[project_id].iam.gserviceaccount.com`
      * </pre>
      *
-     * <code>string service_account = 8;</code>
+     * <code>string service_account = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public Builder setServiceAccountBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -1773,7 +1777,8 @@ public final class GceClusterConfig extends com.google.protobuf.GeneratedMessage
      * * https://www.googleapis.com/auth/devstorage.full_control
      * </pre>
      *
-     * <code>repeated string service_account_scopes = 3;</code>
+     * <code>repeated string service_account_scopes = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public com.google.protobuf.ProtocolStringList getServiceAccountScopesList() {
       return serviceAccountScopes_.getUnmodifiableView();
@@ -1795,7 +1800,8 @@ public final class GceClusterConfig extends com.google.protobuf.GeneratedMessage
      * * https://www.googleapis.com/auth/devstorage.full_control
      * </pre>
      *
-     * <code>repeated string service_account_scopes = 3;</code>
+     * <code>repeated string service_account_scopes = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public int getServiceAccountScopesCount() {
       return serviceAccountScopes_.size();
@@ -1817,7 +1823,8 @@ public final class GceClusterConfig extends com.google.protobuf.GeneratedMessage
      * * https://www.googleapis.com/auth/devstorage.full_control
      * </pre>
      *
-     * <code>repeated string service_account_scopes = 3;</code>
+     * <code>repeated string service_account_scopes = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public java.lang.String getServiceAccountScopes(int index) {
       return serviceAccountScopes_.get(index);
@@ -1839,7 +1846,8 @@ public final class GceClusterConfig extends com.google.protobuf.GeneratedMessage
      * * https://www.googleapis.com/auth/devstorage.full_control
      * </pre>
      *
-     * <code>repeated string service_account_scopes = 3;</code>
+     * <code>repeated string service_account_scopes = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public com.google.protobuf.ByteString getServiceAccountScopesBytes(int index) {
       return serviceAccountScopes_.getByteString(index);
@@ -1861,7 +1869,8 @@ public final class GceClusterConfig extends com.google.protobuf.GeneratedMessage
      * * https://www.googleapis.com/auth/devstorage.full_control
      * </pre>
      *
-     * <code>repeated string service_account_scopes = 3;</code>
+     * <code>repeated string service_account_scopes = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder setServiceAccountScopes(int index, java.lang.String value) {
       if (value == null) {
@@ -1889,7 +1898,8 @@ public final class GceClusterConfig extends com.google.protobuf.GeneratedMessage
      * * https://www.googleapis.com/auth/devstorage.full_control
      * </pre>
      *
-     * <code>repeated string service_account_scopes = 3;</code>
+     * <code>repeated string service_account_scopes = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder addServiceAccountScopes(java.lang.String value) {
       if (value == null) {
@@ -1917,7 +1927,8 @@ public final class GceClusterConfig extends com.google.protobuf.GeneratedMessage
      * * https://www.googleapis.com/auth/devstorage.full_control
      * </pre>
      *
-     * <code>repeated string service_account_scopes = 3;</code>
+     * <code>repeated string service_account_scopes = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder addAllServiceAccountScopes(java.lang.Iterable<java.lang.String> values) {
       ensureServiceAccountScopesIsMutable();
@@ -1942,7 +1953,8 @@ public final class GceClusterConfig extends com.google.protobuf.GeneratedMessage
      * * https://www.googleapis.com/auth/devstorage.full_control
      * </pre>
      *
-     * <code>repeated string service_account_scopes = 3;</code>
+     * <code>repeated string service_account_scopes = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder clearServiceAccountScopes() {
       serviceAccountScopes_ = com.google.protobuf.LazyStringArrayList.EMPTY;
@@ -1967,7 +1979,8 @@ public final class GceClusterConfig extends com.google.protobuf.GeneratedMessage
      * * https://www.googleapis.com/auth/devstorage.full_control
      * </pre>
      *
-     * <code>repeated string service_account_scopes = 3;</code>
+     * <code>repeated string service_account_scopes = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder addServiceAccountScopesBytes(com.google.protobuf.ByteString value) {
       if (value == null) {

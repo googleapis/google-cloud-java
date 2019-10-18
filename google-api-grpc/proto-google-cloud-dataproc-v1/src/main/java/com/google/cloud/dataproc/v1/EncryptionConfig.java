@@ -101,7 +101,7 @@ public final class EncryptionConfig extends com.google.protobuf.GeneratedMessage
    * instances in the cluster.
    * </pre>
    *
-   * <code>string gce_pd_kms_key_name = 1;</code>
+   * <code>string gce_pd_kms_key_name = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   public java.lang.String getGcePdKmsKeyName() {
     java.lang.Object ref = gcePdKmsKeyName_;
@@ -122,7 +122,7 @@ public final class EncryptionConfig extends com.google.protobuf.GeneratedMessage
    * instances in the cluster.
    * </pre>
    *
-   * <code>string gce_pd_kms_key_name = 1;</code>
+   * <code>string gce_pd_kms_key_name = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   public com.google.protobuf.ByteString getGcePdKmsKeyNameBytes() {
     java.lang.Object ref = gcePdKmsKeyName_;
@@ -461,7 +461,7 @@ public final class EncryptionConfig extends com.google.protobuf.GeneratedMessage
      * instances in the cluster.
      * </pre>
      *
-     * <code>string gce_pd_kms_key_name = 1;</code>
+     * <code>string gce_pd_kms_key_name = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public java.lang.String getGcePdKmsKeyName() {
       java.lang.Object ref = gcePdKmsKeyName_;
@@ -482,7 +482,7 @@ public final class EncryptionConfig extends com.google.protobuf.GeneratedMessage
      * instances in the cluster.
      * </pre>
      *
-     * <code>string gce_pd_kms_key_name = 1;</code>
+     * <code>string gce_pd_kms_key_name = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public com.google.protobuf.ByteString getGcePdKmsKeyNameBytes() {
       java.lang.Object ref = gcePdKmsKeyName_;
@@ -503,7 +503,7 @@ public final class EncryptionConfig extends com.google.protobuf.GeneratedMessage
      * instances in the cluster.
      * </pre>
      *
-     * <code>string gce_pd_kms_key_name = 1;</code>
+     * <code>string gce_pd_kms_key_name = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public Builder setGcePdKmsKeyName(java.lang.String value) {
       if (value == null) {
@@ -522,7 +522,7 @@ public final class EncryptionConfig extends com.google.protobuf.GeneratedMessage
      * instances in the cluster.
      * </pre>
      *
-     * <code>string gce_pd_kms_key_name = 1;</code>
+     * <code>string gce_pd_kms_key_name = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public Builder clearGcePdKmsKeyName() {
 
@@ -538,7 +538,7 @@ public final class EncryptionConfig extends com.google.protobuf.GeneratedMessage
      * instances in the cluster.
      * </pre>
      *
-     * <code>string gce_pd_kms_key_name = 1;</code>
+     * <code>string gce_pd_kms_key_name = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public Builder setGcePdKmsKeyNameBytes(com.google.protobuf.ByteString value) {
       if (value == null) {

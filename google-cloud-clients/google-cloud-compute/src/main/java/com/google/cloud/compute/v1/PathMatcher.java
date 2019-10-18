@@ -30,39 +30,70 @@ import javax.annotation.Nullable;
  * serve the URL. If no rule was matched, the default service will be used.
  */
 public final class PathMatcher implements ApiMessage {
+  private final HttpRouteAction defaultRouteAction;
   private final String defaultService;
+  private final HttpRedirectAction defaultUrlRedirect;
   private final String description;
+  private final HttpHeaderAction headerAction;
   private final String name;
   private final List<PathRule> pathRules;
+  private final List<HttpRouteRule> routeRules;
 
   private PathMatcher() {
+    this.defaultRouteAction = null;
     this.defaultService = null;
+    this.defaultUrlRedirect = null;
     this.description = null;
+    this.headerAction = null;
     this.name = null;
     this.pathRules = null;
+    this.routeRules = null;
   }
 
   private PathMatcher(
-      String defaultService, String description, String name, List<PathRule> pathRules) {
+      HttpRouteAction defaultRouteAction,
+      String defaultService,
+      HttpRedirectAction defaultUrlRedirect,
+      String description,
+      HttpHeaderAction headerAction,
+      String name,
+      List<PathRule> pathRules,
+      List<HttpRouteRule> routeRules) {
+    this.defaultRouteAction = defaultRouteAction;
     this.defaultService = defaultService;
+    this.defaultUrlRedirect = defaultUrlRedirect;
     this.description = description;
+    this.headerAction = headerAction;
     this.name = name;
     this.pathRules = pathRules;
+    this.routeRules = routeRules;
   }
 
   @Override
   public Object getFieldValue(String fieldName) {
+    if ("defaultRouteAction".equals(fieldName)) {
+      return defaultRouteAction;
+    }
     if ("defaultService".equals(fieldName)) {
       return defaultService;
     }
+    if ("defaultUrlRedirect".equals(fieldName)) {
+      return defaultUrlRedirect;
+    }
     if ("description".equals(fieldName)) {
       return description;
+    }
+    if ("headerAction".equals(fieldName)) {
+      return headerAction;
     }
     if ("name".equals(fieldName)) {
       return name;
     }
     if ("pathRules".equals(fieldName)) {
       return pathRules;
+    }
+    if ("routeRules".equals(fieldName)) {
+      return routeRules;
     }
     return null;
   }
@@ -86,6 +117,18 @@ public final class PathMatcher implements ApiMessage {
   }
 
   /**
+   * defaultRouteAction takes effect when none of the pathRules or routeRules match. The load
+   * balancer performs advanced routing actions like URL rewrites, header transformations, etc.
+   * prior to forwarding the request to the selected backend. If defaultRouteAction specifies any
+   * weightedBackendServices, defaultService must not be set. Conversely if defaultService is set,
+   * defaultRouteAction cannot contain any weightedBackendServices. Only one of defaultRouteAction
+   * or defaultUrlRedirect must be set.
+   */
+  public HttpRouteAction getDefaultRouteAction() {
+    return defaultRouteAction;
+  }
+
+  /**
    * The full or partial URL to the BackendService resource. This will be used if none of the
    * pathRules or routeRules defined by this PathMatcher are matched. For example, the following are
    * all valid URLs to a BackendService resource: -
@@ -105,10 +148,28 @@ public final class PathMatcher implements ApiMessage {
   }
 
   /**
+   * When when none of the specified pathRules or routeRules match, the request is redirected to a
+   * URL specified by defaultUrlRedirect. If defaultUrlRedirect is specified, defaultService or
+   * defaultRouteAction must not be set.
+   */
+  public HttpRedirectAction getDefaultUrlRedirect() {
+    return defaultUrlRedirect;
+  }
+
+  /**
    * An optional description of this resource. Provide this property when you create the resource.
    */
   public String getDescription() {
     return description;
+  }
+
+  /**
+   * Specifies changes to request and response headers that need to take effect for the selected
+   * backendService. HeaderAction specified here are applied after the matching HttpRouteRule
+   * HeaderAction and before the HeaderAction in the UrlMap
+   */
+  public HttpHeaderAction getHeaderAction() {
+    return headerAction;
   }
 
   /** The name to which this PathMatcher is referred by the HostRule. */
@@ -121,10 +182,21 @@ public final class PathMatcher implements ApiMessage {
    * matching is all that's required. The order by which path rules are specified does not matter.
    * Matches are always done on the longest-path-first basis. For example: a pathRule with a path
    * /a/b/c/&#42; will match before /a/b/&#42; irrespective of the order in which those paths appear
-   * in this list. Only one of pathRules or routeRules must be set.
+   * in this list. Within a given pathMatcher, only one of pathRules or routeRules must be set.
    */
   public List<PathRule> getPathRulesList() {
     return pathRules;
+  }
+
+  /**
+   * The list of ordered HTTP route rules. Use this list instead of pathRules when advanced route
+   * matching and routing actions are desired. The order of specifying routeRules matters: the first
+   * rule that matches will cause its specified routing action to take effect. Within a given
+   * pathMatcher, only one of pathRules or routeRules must be set. routeRules are not supported in
+   * UrlMaps intended for External Load balancers.
+   */
+  public List<HttpRouteRule> getRouteRulesList() {
+    return routeRules;
   }
 
   public static Builder newBuilder() {
@@ -150,20 +222,33 @@ public final class PathMatcher implements ApiMessage {
   }
 
   public static class Builder {
+    private HttpRouteAction defaultRouteAction;
     private String defaultService;
+    private HttpRedirectAction defaultUrlRedirect;
     private String description;
+    private HttpHeaderAction headerAction;
     private String name;
     private List<PathRule> pathRules;
+    private List<HttpRouteRule> routeRules;
 
     Builder() {}
 
     public Builder mergeFrom(PathMatcher other) {
       if (other == PathMatcher.getDefaultInstance()) return this;
+      if (other.getDefaultRouteAction() != null) {
+        this.defaultRouteAction = other.defaultRouteAction;
+      }
       if (other.getDefaultService() != null) {
         this.defaultService = other.defaultService;
       }
+      if (other.getDefaultUrlRedirect() != null) {
+        this.defaultUrlRedirect = other.defaultUrlRedirect;
+      }
       if (other.getDescription() != null) {
         this.description = other.description;
+      }
+      if (other.getHeaderAction() != null) {
+        this.headerAction = other.headerAction;
       }
       if (other.getName() != null) {
         this.name = other.name;
@@ -171,14 +256,46 @@ public final class PathMatcher implements ApiMessage {
       if (other.getPathRulesList() != null) {
         this.pathRules = other.pathRules;
       }
+      if (other.getRouteRulesList() != null) {
+        this.routeRules = other.routeRules;
+      }
       return this;
     }
 
     Builder(PathMatcher source) {
+      this.defaultRouteAction = source.defaultRouteAction;
       this.defaultService = source.defaultService;
+      this.defaultUrlRedirect = source.defaultUrlRedirect;
       this.description = source.description;
+      this.headerAction = source.headerAction;
       this.name = source.name;
       this.pathRules = source.pathRules;
+      this.routeRules = source.routeRules;
+    }
+
+    /**
+     * defaultRouteAction takes effect when none of the pathRules or routeRules match. The load
+     * balancer performs advanced routing actions like URL rewrites, header transformations, etc.
+     * prior to forwarding the request to the selected backend. If defaultRouteAction specifies any
+     * weightedBackendServices, defaultService must not be set. Conversely if defaultService is set,
+     * defaultRouteAction cannot contain any weightedBackendServices. Only one of defaultRouteAction
+     * or defaultUrlRedirect must be set.
+     */
+    public HttpRouteAction getDefaultRouteAction() {
+      return defaultRouteAction;
+    }
+
+    /**
+     * defaultRouteAction takes effect when none of the pathRules or routeRules match. The load
+     * balancer performs advanced routing actions like URL rewrites, header transformations, etc.
+     * prior to forwarding the request to the selected backend. If defaultRouteAction specifies any
+     * weightedBackendServices, defaultService must not be set. Conversely if defaultService is set,
+     * defaultRouteAction cannot contain any weightedBackendServices. Only one of defaultRouteAction
+     * or defaultUrlRedirect must be set.
+     */
+    public Builder setDefaultRouteAction(HttpRouteAction defaultRouteAction) {
+      this.defaultRouteAction = defaultRouteAction;
+      return this;
     }
 
     /**
@@ -221,6 +338,25 @@ public final class PathMatcher implements ApiMessage {
     }
 
     /**
+     * When when none of the specified pathRules or routeRules match, the request is redirected to a
+     * URL specified by defaultUrlRedirect. If defaultUrlRedirect is specified, defaultService or
+     * defaultRouteAction must not be set.
+     */
+    public HttpRedirectAction getDefaultUrlRedirect() {
+      return defaultUrlRedirect;
+    }
+
+    /**
+     * When when none of the specified pathRules or routeRules match, the request is redirected to a
+     * URL specified by defaultUrlRedirect. If defaultUrlRedirect is specified, defaultService or
+     * defaultRouteAction must not be set.
+     */
+    public Builder setDefaultUrlRedirect(HttpRedirectAction defaultUrlRedirect) {
+      this.defaultUrlRedirect = defaultUrlRedirect;
+      return this;
+    }
+
+    /**
      * An optional description of this resource. Provide this property when you create the resource.
      */
     public String getDescription() {
@@ -232,6 +368,25 @@ public final class PathMatcher implements ApiMessage {
      */
     public Builder setDescription(String description) {
       this.description = description;
+      return this;
+    }
+
+    /**
+     * Specifies changes to request and response headers that need to take effect for the selected
+     * backendService. HeaderAction specified here are applied after the matching HttpRouteRule
+     * HeaderAction and before the HeaderAction in the UrlMap
+     */
+    public HttpHeaderAction getHeaderAction() {
+      return headerAction;
+    }
+
+    /**
+     * Specifies changes to request and response headers that need to take effect for the selected
+     * backendService. HeaderAction specified here are applied after the matching HttpRouteRule
+     * HeaderAction and before the HeaderAction in the UrlMap
+     */
+    public Builder setHeaderAction(HttpHeaderAction headerAction) {
+      this.headerAction = headerAction;
       return this;
     }
 
@@ -251,7 +406,8 @@ public final class PathMatcher implements ApiMessage {
      * matching is all that's required. The order by which path rules are specified does not matter.
      * Matches are always done on the longest-path-first basis. For example: a pathRule with a path
      * /a/b/c/&#42; will match before /a/b/&#42; irrespective of the order in which those paths
-     * appear in this list. Only one of pathRules or routeRules must be set.
+     * appear in this list. Within a given pathMatcher, only one of pathRules or routeRules must be
+     * set.
      */
     public List<PathRule> getPathRulesList() {
       return pathRules;
@@ -262,7 +418,8 @@ public final class PathMatcher implements ApiMessage {
      * matching is all that's required. The order by which path rules are specified does not matter.
      * Matches are always done on the longest-path-first basis. For example: a pathRule with a path
      * /a/b/c/&#42; will match before /a/b/&#42; irrespective of the order in which those paths
-     * appear in this list. Only one of pathRules or routeRules must be set.
+     * appear in this list. Within a given pathMatcher, only one of pathRules or routeRules must be
+     * set.
      */
     public Builder addAllPathRules(List<PathRule> pathRules) {
       if (this.pathRules == null) {
@@ -277,7 +434,8 @@ public final class PathMatcher implements ApiMessage {
      * matching is all that's required. The order by which path rules are specified does not matter.
      * Matches are always done on the longest-path-first basis. For example: a pathRule with a path
      * /a/b/c/&#42; will match before /a/b/&#42; irrespective of the order in which those paths
-     * appear in this list. Only one of pathRules or routeRules must be set.
+     * appear in this list. Within a given pathMatcher, only one of pathRules or routeRules must be
+     * set.
      */
     public Builder addPathRules(PathRule pathRules) {
       if (this.pathRules == null) {
@@ -287,17 +445,70 @@ public final class PathMatcher implements ApiMessage {
       return this;
     }
 
+    /**
+     * The list of ordered HTTP route rules. Use this list instead of pathRules when advanced route
+     * matching and routing actions are desired. The order of specifying routeRules matters: the
+     * first rule that matches will cause its specified routing action to take effect. Within a
+     * given pathMatcher, only one of pathRules or routeRules must be set. routeRules are not
+     * supported in UrlMaps intended for External Load balancers.
+     */
+    public List<HttpRouteRule> getRouteRulesList() {
+      return routeRules;
+    }
+
+    /**
+     * The list of ordered HTTP route rules. Use this list instead of pathRules when advanced route
+     * matching and routing actions are desired. The order of specifying routeRules matters: the
+     * first rule that matches will cause its specified routing action to take effect. Within a
+     * given pathMatcher, only one of pathRules or routeRules must be set. routeRules are not
+     * supported in UrlMaps intended for External Load balancers.
+     */
+    public Builder addAllRouteRules(List<HttpRouteRule> routeRules) {
+      if (this.routeRules == null) {
+        this.routeRules = new LinkedList<>();
+      }
+      this.routeRules.addAll(routeRules);
+      return this;
+    }
+
+    /**
+     * The list of ordered HTTP route rules. Use this list instead of pathRules when advanced route
+     * matching and routing actions are desired. The order of specifying routeRules matters: the
+     * first rule that matches will cause its specified routing action to take effect. Within a
+     * given pathMatcher, only one of pathRules or routeRules must be set. routeRules are not
+     * supported in UrlMaps intended for External Load balancers.
+     */
+    public Builder addRouteRules(HttpRouteRule routeRules) {
+      if (this.routeRules == null) {
+        this.routeRules = new LinkedList<>();
+      }
+      this.routeRules.add(routeRules);
+      return this;
+    }
+
     public PathMatcher build() {
 
-      return new PathMatcher(defaultService, description, name, pathRules);
+      return new PathMatcher(
+          defaultRouteAction,
+          defaultService,
+          defaultUrlRedirect,
+          description,
+          headerAction,
+          name,
+          pathRules,
+          routeRules);
     }
 
     public Builder clone() {
       Builder newBuilder = new Builder();
+      newBuilder.setDefaultRouteAction(this.defaultRouteAction);
       newBuilder.setDefaultService(this.defaultService);
+      newBuilder.setDefaultUrlRedirect(this.defaultUrlRedirect);
       newBuilder.setDescription(this.description);
+      newBuilder.setHeaderAction(this.headerAction);
       newBuilder.setName(this.name);
       newBuilder.addAllPathRules(this.pathRules);
+      newBuilder.addAllRouteRules(this.routeRules);
       return newBuilder;
     }
   }
@@ -305,17 +516,29 @@ public final class PathMatcher implements ApiMessage {
   @Override
   public String toString() {
     return "PathMatcher{"
+        + "defaultRouteAction="
+        + defaultRouteAction
+        + ", "
         + "defaultService="
         + defaultService
         + ", "
+        + "defaultUrlRedirect="
+        + defaultUrlRedirect
+        + ", "
         + "description="
         + description
+        + ", "
+        + "headerAction="
+        + headerAction
         + ", "
         + "name="
         + name
         + ", "
         + "pathRules="
         + pathRules
+        + ", "
+        + "routeRules="
+        + routeRules
         + "}";
   }
 
@@ -326,16 +549,28 @@ public final class PathMatcher implements ApiMessage {
     }
     if (o instanceof PathMatcher) {
       PathMatcher that = (PathMatcher) o;
-      return Objects.equals(this.defaultService, that.getDefaultService())
+      return Objects.equals(this.defaultRouteAction, that.getDefaultRouteAction())
+          && Objects.equals(this.defaultService, that.getDefaultService())
+          && Objects.equals(this.defaultUrlRedirect, that.getDefaultUrlRedirect())
           && Objects.equals(this.description, that.getDescription())
+          && Objects.equals(this.headerAction, that.getHeaderAction())
           && Objects.equals(this.name, that.getName())
-          && Objects.equals(this.pathRules, that.getPathRulesList());
+          && Objects.equals(this.pathRules, that.getPathRulesList())
+          && Objects.equals(this.routeRules, that.getRouteRulesList());
     }
     return false;
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(defaultService, description, name, pathRules);
+    return Objects.hash(
+        defaultRouteAction,
+        defaultService,
+        defaultUrlRedirect,
+        description,
+        headerAction,
+        name,
+        pathRules,
+        routeRules);
   }
 }

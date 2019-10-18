@@ -12,30 +12,32 @@ public interface CreateTagRequestOrBuilder
    *
    *
    * <pre>
-   * Required.
-   * The name of the resource to attach this tag to. Tags can be attached to
-   * Entries. (example:
-   * "projects/{project_id}/locations/{location}/entryGroups/{entry_group_id}/entries/{entry_id}").
+   * Required. The name of the resource to attach this tag to. Tags can be attached to
+   * Entries. Example:
+   * * projects/{project_id}/locations/{location}/entryGroups/{entry_group_id}/entries/{entry_id}
    * Note that this Tag and its child resources may not actually be stored in
    * the location in this name.
    * </pre>
    *
-   * <code>string parent = 1;</code>
+   * <code>
+   * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    */
   java.lang.String getParent();
   /**
    *
    *
    * <pre>
-   * Required.
-   * The name of the resource to attach this tag to. Tags can be attached to
-   * Entries. (example:
-   * "projects/{project_id}/locations/{location}/entryGroups/{entry_group_id}/entries/{entry_id}").
+   * Required. The name of the resource to attach this tag to. Tags can be attached to
+   * Entries. Example:
+   * * projects/{project_id}/locations/{location}/entryGroups/{entry_group_id}/entries/{entry_id}
    * Note that this Tag and its child resources may not actually be stored in
    * the location in this name.
    * </pre>
    *
-   * <code>string parent = 1;</code>
+   * <code>
+   * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    */
   com.google.protobuf.ByteString getParentBytes();
 
@@ -46,7 +48,8 @@ public interface CreateTagRequestOrBuilder
    * Required. The tag to create.
    * </pre>
    *
-   * <code>.google.cloud.datacatalog.v1beta1.Tag tag = 2;</code>
+   * <code>.google.cloud.datacatalog.v1beta1.Tag tag = 2 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   boolean hasTag();
   /**
@@ -56,7 +59,8 @@ public interface CreateTagRequestOrBuilder
    * Required. The tag to create.
    * </pre>
    *
-   * <code>.google.cloud.datacatalog.v1beta1.Tag tag = 2;</code>
+   * <code>.google.cloud.datacatalog.v1beta1.Tag tag = 2 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   com.google.cloud.datacatalog.Tag getTag();
   /**
@@ -66,7 +70,8 @@ public interface CreateTagRequestOrBuilder
    * Required. The tag to create.
    * </pre>
    *
-   * <code>.google.cloud.datacatalog.v1beta1.Tag tag = 2;</code>
+   * <code>.google.cloud.datacatalog.v1beta1.Tag tag = 2 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   com.google.cloud.datacatalog.TagOrBuilder getTagOrBuilder();
 }

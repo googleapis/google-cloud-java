@@ -135,13 +135,15 @@ public final class CreateTransferConfigRequest extends com.google.protobuf.Gener
    *
    *
    * <pre>
-   * The BigQuery project id where the transfer configuration should be created.
+   * Required. The BigQuery project id where the transfer configuration should be created.
    * Must be in the format projects/{project_id}/locations/{location_id}
    * If specified location and location of the destination bigquery dataset
    * do not match - the request will fail.
    * </pre>
    *
-   * <code>string parent = 1;</code>
+   * <code>
+   * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    */
   public java.lang.String getParent() {
     java.lang.Object ref = parent_;
@@ -158,13 +160,15 @@ public final class CreateTransferConfigRequest extends com.google.protobuf.Gener
    *
    *
    * <pre>
-   * The BigQuery project id where the transfer configuration should be created.
+   * Required. The BigQuery project id where the transfer configuration should be created.
    * Must be in the format projects/{project_id}/locations/{location_id}
    * If specified location and location of the destination bigquery dataset
    * do not match - the request will fail.
    * </pre>
    *
-   * <code>string parent = 1;</code>
+   * <code>
+   * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    */
   public com.google.protobuf.ByteString getParentBytes() {
     java.lang.Object ref = parent_;
@@ -184,10 +188,12 @@ public final class CreateTransferConfigRequest extends com.google.protobuf.Gener
    *
    *
    * <pre>
-   * Data transfer configuration to create.
+   * Required. Data transfer configuration to create.
    * </pre>
    *
-   * <code>.google.cloud.bigquery.datatransfer.v1.TransferConfig transfer_config = 2;</code>
+   * <code>
+   * .google.cloud.bigquery.datatransfer.v1.TransferConfig transfer_config = 2 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   public boolean hasTransferConfig() {
     return transferConfig_ != null;
@@ -196,10 +202,12 @@ public final class CreateTransferConfigRequest extends com.google.protobuf.Gener
    *
    *
    * <pre>
-   * Data transfer configuration to create.
+   * Required. Data transfer configuration to create.
    * </pre>
    *
-   * <code>.google.cloud.bigquery.datatransfer.v1.TransferConfig transfer_config = 2;</code>
+   * <code>
+   * .google.cloud.bigquery.datatransfer.v1.TransferConfig transfer_config = 2 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   public com.google.cloud.bigquery.datatransfer.v1.TransferConfig getTransferConfig() {
     return transferConfig_ == null
@@ -210,10 +218,12 @@ public final class CreateTransferConfigRequest extends com.google.protobuf.Gener
    *
    *
    * <pre>
-   * Data transfer configuration to create.
+   * Required. Data transfer configuration to create.
    * </pre>
    *
-   * <code>.google.cloud.bigquery.datatransfer.v1.TransferConfig transfer_config = 2;</code>
+   * <code>
+   * .google.cloud.bigquery.datatransfer.v1.TransferConfig transfer_config = 2 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   public com.google.cloud.bigquery.datatransfer.v1.TransferConfigOrBuilder
       getTransferConfigOrBuilder() {
@@ -741,13 +751,15 @@ public final class CreateTransferConfigRequest extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * The BigQuery project id where the transfer configuration should be created.
+     * Required. The BigQuery project id where the transfer configuration should be created.
      * Must be in the format projects/{project_id}/locations/{location_id}
      * If specified location and location of the destination bigquery dataset
      * do not match - the request will fail.
      * </pre>
      *
-     * <code>string parent = 1;</code>
+     * <code>
+     * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      */
     public java.lang.String getParent() {
       java.lang.Object ref = parent_;
@@ -764,13 +776,15 @@ public final class CreateTransferConfigRequest extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * The BigQuery project id where the transfer configuration should be created.
+     * Required. The BigQuery project id where the transfer configuration should be created.
      * Must be in the format projects/{project_id}/locations/{location_id}
      * If specified location and location of the destination bigquery dataset
      * do not match - the request will fail.
      * </pre>
      *
-     * <code>string parent = 1;</code>
+     * <code>
+     * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      */
     public com.google.protobuf.ByteString getParentBytes() {
       java.lang.Object ref = parent_;
@@ -787,13 +801,15 @@ public final class CreateTransferConfigRequest extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * The BigQuery project id where the transfer configuration should be created.
+     * Required. The BigQuery project id where the transfer configuration should be created.
      * Must be in the format projects/{project_id}/locations/{location_id}
      * If specified location and location of the destination bigquery dataset
      * do not match - the request will fail.
      * </pre>
      *
-     * <code>string parent = 1;</code>
+     * <code>
+     * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      */
     public Builder setParent(java.lang.String value) {
       if (value == null) {
@@ -808,13 +824,15 @@ public final class CreateTransferConfigRequest extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * The BigQuery project id where the transfer configuration should be created.
+     * Required. The BigQuery project id where the transfer configuration should be created.
      * Must be in the format projects/{project_id}/locations/{location_id}
      * If specified location and location of the destination bigquery dataset
      * do not match - the request will fail.
      * </pre>
      *
-     * <code>string parent = 1;</code>
+     * <code>
+     * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      */
     public Builder clearParent() {
 
@@ -826,13 +844,15 @@ public final class CreateTransferConfigRequest extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * The BigQuery project id where the transfer configuration should be created.
+     * Required. The BigQuery project id where the transfer configuration should be created.
      * Must be in the format projects/{project_id}/locations/{location_id}
      * If specified location and location of the destination bigquery dataset
      * do not match - the request will fail.
      * </pre>
      *
-     * <code>string parent = 1;</code>
+     * <code>
+     * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      */
     public Builder setParentBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -855,10 +875,12 @@ public final class CreateTransferConfigRequest extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * Data transfer configuration to create.
+     * Required. Data transfer configuration to create.
      * </pre>
      *
-     * <code>.google.cloud.bigquery.datatransfer.v1.TransferConfig transfer_config = 2;</code>
+     * <code>
+     * .google.cloud.bigquery.datatransfer.v1.TransferConfig transfer_config = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public boolean hasTransferConfig() {
       return transferConfigBuilder_ != null || transferConfig_ != null;
@@ -867,10 +889,12 @@ public final class CreateTransferConfigRequest extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * Data transfer configuration to create.
+     * Required. Data transfer configuration to create.
      * </pre>
      *
-     * <code>.google.cloud.bigquery.datatransfer.v1.TransferConfig transfer_config = 2;</code>
+     * <code>
+     * .google.cloud.bigquery.datatransfer.v1.TransferConfig transfer_config = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public com.google.cloud.bigquery.datatransfer.v1.TransferConfig getTransferConfig() {
       if (transferConfigBuilder_ == null) {
@@ -885,10 +909,12 @@ public final class CreateTransferConfigRequest extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * Data transfer configuration to create.
+     * Required. Data transfer configuration to create.
      * </pre>
      *
-     * <code>.google.cloud.bigquery.datatransfer.v1.TransferConfig transfer_config = 2;</code>
+     * <code>
+     * .google.cloud.bigquery.datatransfer.v1.TransferConfig transfer_config = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder setTransferConfig(
         com.google.cloud.bigquery.datatransfer.v1.TransferConfig value) {
@@ -908,10 +934,12 @@ public final class CreateTransferConfigRequest extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * Data transfer configuration to create.
+     * Required. Data transfer configuration to create.
      * </pre>
      *
-     * <code>.google.cloud.bigquery.datatransfer.v1.TransferConfig transfer_config = 2;</code>
+     * <code>
+     * .google.cloud.bigquery.datatransfer.v1.TransferConfig transfer_config = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder setTransferConfig(
         com.google.cloud.bigquery.datatransfer.v1.TransferConfig.Builder builderForValue) {
@@ -928,10 +956,12 @@ public final class CreateTransferConfigRequest extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * Data transfer configuration to create.
+     * Required. Data transfer configuration to create.
      * </pre>
      *
-     * <code>.google.cloud.bigquery.datatransfer.v1.TransferConfig transfer_config = 2;</code>
+     * <code>
+     * .google.cloud.bigquery.datatransfer.v1.TransferConfig transfer_config = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder mergeTransferConfig(
         com.google.cloud.bigquery.datatransfer.v1.TransferConfig value) {
@@ -955,10 +985,12 @@ public final class CreateTransferConfigRequest extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * Data transfer configuration to create.
+     * Required. Data transfer configuration to create.
      * </pre>
      *
-     * <code>.google.cloud.bigquery.datatransfer.v1.TransferConfig transfer_config = 2;</code>
+     * <code>
+     * .google.cloud.bigquery.datatransfer.v1.TransferConfig transfer_config = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder clearTransferConfig() {
       if (transferConfigBuilder_ == null) {
@@ -975,10 +1007,12 @@ public final class CreateTransferConfigRequest extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * Data transfer configuration to create.
+     * Required. Data transfer configuration to create.
      * </pre>
      *
-     * <code>.google.cloud.bigquery.datatransfer.v1.TransferConfig transfer_config = 2;</code>
+     * <code>
+     * .google.cloud.bigquery.datatransfer.v1.TransferConfig transfer_config = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public com.google.cloud.bigquery.datatransfer.v1.TransferConfig.Builder
         getTransferConfigBuilder() {
@@ -990,10 +1024,12 @@ public final class CreateTransferConfigRequest extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * Data transfer configuration to create.
+     * Required. Data transfer configuration to create.
      * </pre>
      *
-     * <code>.google.cloud.bigquery.datatransfer.v1.TransferConfig transfer_config = 2;</code>
+     * <code>
+     * .google.cloud.bigquery.datatransfer.v1.TransferConfig transfer_config = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public com.google.cloud.bigquery.datatransfer.v1.TransferConfigOrBuilder
         getTransferConfigOrBuilder() {
@@ -1009,10 +1045,12 @@ public final class CreateTransferConfigRequest extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * Data transfer configuration to create.
+     * Required. Data transfer configuration to create.
      * </pre>
      *
-     * <code>.google.cloud.bigquery.datatransfer.v1.TransferConfig transfer_config = 2;</code>
+     * <code>
+     * .google.cloud.bigquery.datatransfer.v1.TransferConfig transfer_config = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.bigquery.datatransfer.v1.TransferConfig,

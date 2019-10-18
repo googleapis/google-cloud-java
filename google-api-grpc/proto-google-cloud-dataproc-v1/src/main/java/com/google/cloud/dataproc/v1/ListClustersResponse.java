@@ -116,7 +116,9 @@ public final class ListClustersResponse extends com.google.protobuf.GeneratedMes
    * Output only. The clusters in the project.
    * </pre>
    *
-   * <code>repeated .google.cloud.dataproc.v1.Cluster clusters = 1;</code>
+   * <code>
+   * repeated .google.cloud.dataproc.v1.Cluster clusters = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    */
   public java.util.List<com.google.cloud.dataproc.v1.Cluster> getClustersList() {
     return clusters_;
@@ -128,7 +130,9 @@ public final class ListClustersResponse extends com.google.protobuf.GeneratedMes
    * Output only. The clusters in the project.
    * </pre>
    *
-   * <code>repeated .google.cloud.dataproc.v1.Cluster clusters = 1;</code>
+   * <code>
+   * repeated .google.cloud.dataproc.v1.Cluster clusters = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    */
   public java.util.List<? extends com.google.cloud.dataproc.v1.ClusterOrBuilder>
       getClustersOrBuilderList() {
@@ -141,7 +145,9 @@ public final class ListClustersResponse extends com.google.protobuf.GeneratedMes
    * Output only. The clusters in the project.
    * </pre>
    *
-   * <code>repeated .google.cloud.dataproc.v1.Cluster clusters = 1;</code>
+   * <code>
+   * repeated .google.cloud.dataproc.v1.Cluster clusters = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    */
   public int getClustersCount() {
     return clusters_.size();
@@ -153,7 +159,9 @@ public final class ListClustersResponse extends com.google.protobuf.GeneratedMes
    * Output only. The clusters in the project.
    * </pre>
    *
-   * <code>repeated .google.cloud.dataproc.v1.Cluster clusters = 1;</code>
+   * <code>
+   * repeated .google.cloud.dataproc.v1.Cluster clusters = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    */
   public com.google.cloud.dataproc.v1.Cluster getClusters(int index) {
     return clusters_.get(index);
@@ -165,7 +173,9 @@ public final class ListClustersResponse extends com.google.protobuf.GeneratedMes
    * Output only. The clusters in the project.
    * </pre>
    *
-   * <code>repeated .google.cloud.dataproc.v1.Cluster clusters = 1;</code>
+   * <code>
+   * repeated .google.cloud.dataproc.v1.Cluster clusters = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    */
   public com.google.cloud.dataproc.v1.ClusterOrBuilder getClustersOrBuilder(int index) {
     return clusters_.get(index);
@@ -182,7 +192,7 @@ public final class ListClustersResponse extends com.google.protobuf.GeneratedMes
    * `page_token` in a subsequent `ListClustersRequest`.
    * </pre>
    *
-   * <code>string next_page_token = 2;</code>
+   * <code>string next_page_token = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    */
   public java.lang.String getNextPageToken() {
     java.lang.Object ref = nextPageToken_;
@@ -204,7 +214,7 @@ public final class ListClustersResponse extends com.google.protobuf.GeneratedMes
    * `page_token` in a subsequent `ListClustersRequest`.
    * </pre>
    *
-   * <code>string next_page_token = 2;</code>
+   * <code>string next_page_token = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    */
   public com.google.protobuf.ByteString getNextPageTokenBytes() {
     java.lang.Object ref = nextPageToken_;
@@ -619,7 +629,9 @@ public final class ListClustersResponse extends com.google.protobuf.GeneratedMes
      * Output only. The clusters in the project.
      * </pre>
      *
-     * <code>repeated .google.cloud.dataproc.v1.Cluster clusters = 1;</code>
+     * <code>
+     * repeated .google.cloud.dataproc.v1.Cluster clusters = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public java.util.List<com.google.cloud.dataproc.v1.Cluster> getClustersList() {
       if (clustersBuilder_ == null) {
@@ -635,7 +647,9 @@ public final class ListClustersResponse extends com.google.protobuf.GeneratedMes
      * Output only. The clusters in the project.
      * </pre>
      *
-     * <code>repeated .google.cloud.dataproc.v1.Cluster clusters = 1;</code>
+     * <code>
+     * repeated .google.cloud.dataproc.v1.Cluster clusters = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public int getClustersCount() {
       if (clustersBuilder_ == null) {
@@ -651,7 +665,9 @@ public final class ListClustersResponse extends com.google.protobuf.GeneratedMes
      * Output only. The clusters in the project.
      * </pre>
      *
-     * <code>repeated .google.cloud.dataproc.v1.Cluster clusters = 1;</code>
+     * <code>
+     * repeated .google.cloud.dataproc.v1.Cluster clusters = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public com.google.cloud.dataproc.v1.Cluster getClusters(int index) {
       if (clustersBuilder_ == null) {
@@ -667,7 +683,9 @@ public final class ListClustersResponse extends com.google.protobuf.GeneratedMes
      * Output only. The clusters in the project.
      * </pre>
      *
-     * <code>repeated .google.cloud.dataproc.v1.Cluster clusters = 1;</code>
+     * <code>
+     * repeated .google.cloud.dataproc.v1.Cluster clusters = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public Builder setClusters(int index, com.google.cloud.dataproc.v1.Cluster value) {
       if (clustersBuilder_ == null) {
@@ -689,7 +707,9 @@ public final class ListClustersResponse extends com.google.protobuf.GeneratedMes
      * Output only. The clusters in the project.
      * </pre>
      *
-     * <code>repeated .google.cloud.dataproc.v1.Cluster clusters = 1;</code>
+     * <code>
+     * repeated .google.cloud.dataproc.v1.Cluster clusters = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public Builder setClusters(
         int index, com.google.cloud.dataproc.v1.Cluster.Builder builderForValue) {
@@ -709,7 +729,9 @@ public final class ListClustersResponse extends com.google.protobuf.GeneratedMes
      * Output only. The clusters in the project.
      * </pre>
      *
-     * <code>repeated .google.cloud.dataproc.v1.Cluster clusters = 1;</code>
+     * <code>
+     * repeated .google.cloud.dataproc.v1.Cluster clusters = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public Builder addClusters(com.google.cloud.dataproc.v1.Cluster value) {
       if (clustersBuilder_ == null) {
@@ -731,7 +753,9 @@ public final class ListClustersResponse extends com.google.protobuf.GeneratedMes
      * Output only. The clusters in the project.
      * </pre>
      *
-     * <code>repeated .google.cloud.dataproc.v1.Cluster clusters = 1;</code>
+     * <code>
+     * repeated .google.cloud.dataproc.v1.Cluster clusters = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public Builder addClusters(int index, com.google.cloud.dataproc.v1.Cluster value) {
       if (clustersBuilder_ == null) {
@@ -753,7 +777,9 @@ public final class ListClustersResponse extends com.google.protobuf.GeneratedMes
      * Output only. The clusters in the project.
      * </pre>
      *
-     * <code>repeated .google.cloud.dataproc.v1.Cluster clusters = 1;</code>
+     * <code>
+     * repeated .google.cloud.dataproc.v1.Cluster clusters = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public Builder addClusters(com.google.cloud.dataproc.v1.Cluster.Builder builderForValue) {
       if (clustersBuilder_ == null) {
@@ -772,7 +798,9 @@ public final class ListClustersResponse extends com.google.protobuf.GeneratedMes
      * Output only. The clusters in the project.
      * </pre>
      *
-     * <code>repeated .google.cloud.dataproc.v1.Cluster clusters = 1;</code>
+     * <code>
+     * repeated .google.cloud.dataproc.v1.Cluster clusters = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public Builder addClusters(
         int index, com.google.cloud.dataproc.v1.Cluster.Builder builderForValue) {
@@ -792,7 +820,9 @@ public final class ListClustersResponse extends com.google.protobuf.GeneratedMes
      * Output only. The clusters in the project.
      * </pre>
      *
-     * <code>repeated .google.cloud.dataproc.v1.Cluster clusters = 1;</code>
+     * <code>
+     * repeated .google.cloud.dataproc.v1.Cluster clusters = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public Builder addAllClusters(
         java.lang.Iterable<? extends com.google.cloud.dataproc.v1.Cluster> values) {
@@ -812,7 +842,9 @@ public final class ListClustersResponse extends com.google.protobuf.GeneratedMes
      * Output only. The clusters in the project.
      * </pre>
      *
-     * <code>repeated .google.cloud.dataproc.v1.Cluster clusters = 1;</code>
+     * <code>
+     * repeated .google.cloud.dataproc.v1.Cluster clusters = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public Builder clearClusters() {
       if (clustersBuilder_ == null) {
@@ -831,7 +863,9 @@ public final class ListClustersResponse extends com.google.protobuf.GeneratedMes
      * Output only. The clusters in the project.
      * </pre>
      *
-     * <code>repeated .google.cloud.dataproc.v1.Cluster clusters = 1;</code>
+     * <code>
+     * repeated .google.cloud.dataproc.v1.Cluster clusters = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public Builder removeClusters(int index) {
       if (clustersBuilder_ == null) {
@@ -850,7 +884,9 @@ public final class ListClustersResponse extends com.google.protobuf.GeneratedMes
      * Output only. The clusters in the project.
      * </pre>
      *
-     * <code>repeated .google.cloud.dataproc.v1.Cluster clusters = 1;</code>
+     * <code>
+     * repeated .google.cloud.dataproc.v1.Cluster clusters = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public com.google.cloud.dataproc.v1.Cluster.Builder getClustersBuilder(int index) {
       return getClustersFieldBuilder().getBuilder(index);
@@ -862,7 +898,9 @@ public final class ListClustersResponse extends com.google.protobuf.GeneratedMes
      * Output only. The clusters in the project.
      * </pre>
      *
-     * <code>repeated .google.cloud.dataproc.v1.Cluster clusters = 1;</code>
+     * <code>
+     * repeated .google.cloud.dataproc.v1.Cluster clusters = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public com.google.cloud.dataproc.v1.ClusterOrBuilder getClustersOrBuilder(int index) {
       if (clustersBuilder_ == null) {
@@ -878,7 +916,9 @@ public final class ListClustersResponse extends com.google.protobuf.GeneratedMes
      * Output only. The clusters in the project.
      * </pre>
      *
-     * <code>repeated .google.cloud.dataproc.v1.Cluster clusters = 1;</code>
+     * <code>
+     * repeated .google.cloud.dataproc.v1.Cluster clusters = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public java.util.List<? extends com.google.cloud.dataproc.v1.ClusterOrBuilder>
         getClustersOrBuilderList() {
@@ -895,7 +935,9 @@ public final class ListClustersResponse extends com.google.protobuf.GeneratedMes
      * Output only. The clusters in the project.
      * </pre>
      *
-     * <code>repeated .google.cloud.dataproc.v1.Cluster clusters = 1;</code>
+     * <code>
+     * repeated .google.cloud.dataproc.v1.Cluster clusters = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public com.google.cloud.dataproc.v1.Cluster.Builder addClustersBuilder() {
       return getClustersFieldBuilder()
@@ -908,7 +950,9 @@ public final class ListClustersResponse extends com.google.protobuf.GeneratedMes
      * Output only. The clusters in the project.
      * </pre>
      *
-     * <code>repeated .google.cloud.dataproc.v1.Cluster clusters = 1;</code>
+     * <code>
+     * repeated .google.cloud.dataproc.v1.Cluster clusters = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public com.google.cloud.dataproc.v1.Cluster.Builder addClustersBuilder(int index) {
       return getClustersFieldBuilder()
@@ -921,7 +965,9 @@ public final class ListClustersResponse extends com.google.protobuf.GeneratedMes
      * Output only. The clusters in the project.
      * </pre>
      *
-     * <code>repeated .google.cloud.dataproc.v1.Cluster clusters = 1;</code>
+     * <code>
+     * repeated .google.cloud.dataproc.v1.Cluster clusters = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public java.util.List<com.google.cloud.dataproc.v1.Cluster.Builder> getClustersBuilderList() {
       return getClustersFieldBuilder().getBuilderList();
@@ -954,7 +1000,7 @@ public final class ListClustersResponse extends com.google.protobuf.GeneratedMes
      * `page_token` in a subsequent `ListClustersRequest`.
      * </pre>
      *
-     * <code>string next_page_token = 2;</code>
+     * <code>string next_page_token = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     public java.lang.String getNextPageToken() {
       java.lang.Object ref = nextPageToken_;
@@ -976,7 +1022,7 @@ public final class ListClustersResponse extends com.google.protobuf.GeneratedMes
      * `page_token` in a subsequent `ListClustersRequest`.
      * </pre>
      *
-     * <code>string next_page_token = 2;</code>
+     * <code>string next_page_token = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     public com.google.protobuf.ByteString getNextPageTokenBytes() {
       java.lang.Object ref = nextPageToken_;
@@ -998,7 +1044,7 @@ public final class ListClustersResponse extends com.google.protobuf.GeneratedMes
      * `page_token` in a subsequent `ListClustersRequest`.
      * </pre>
      *
-     * <code>string next_page_token = 2;</code>
+     * <code>string next_page_token = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     public Builder setNextPageToken(java.lang.String value) {
       if (value == null) {
@@ -1018,7 +1064,7 @@ public final class ListClustersResponse extends com.google.protobuf.GeneratedMes
      * `page_token` in a subsequent `ListClustersRequest`.
      * </pre>
      *
-     * <code>string next_page_token = 2;</code>
+     * <code>string next_page_token = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     public Builder clearNextPageToken() {
 
@@ -1035,7 +1081,7 @@ public final class ListClustersResponse extends com.google.protobuf.GeneratedMes
      * `page_token` in a subsequent `ListClustersRequest`.
      * </pre>
      *
-     * <code>string next_page_token = 2;</code>
+     * <code>string next_page_token = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     public Builder setNextPageTokenBytes(com.google.protobuf.ByteString value) {
       if (value == null) {

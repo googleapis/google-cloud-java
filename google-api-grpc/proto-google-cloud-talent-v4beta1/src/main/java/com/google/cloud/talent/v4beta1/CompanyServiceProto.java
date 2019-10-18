@@ -48,58 +48,60 @@ public final class CompanyServiceProto {
       "\n1google/cloud/talent/v4beta1/company_se"
           + "rvice.proto\022\033google.cloud.talent.v4beta1"
           + "\032\034google/api/annotations.proto\032\027google/a"
-          + "pi/client.proto\032(google/cloud/talent/v4b"
-          + "eta1/common.proto\032)google/cloud/talent/v"
-          + "4beta1/company.proto\032\033google/protobuf/em"
-          + "pty.proto\032 google/protobuf/field_mask.pr"
-          + "oto\"]\n\024CreateCompanyRequest\022\016\n\006parent\030\001 "
-          + "\001(\t\0225\n\007company\030\002 \001(\0132$.google.cloud.tale"
-          + "nt.v4beta1.Company\"!\n\021GetCompanyRequest\022"
-          + "\014\n\004name\030\001 \001(\t\"~\n\024UpdateCompanyRequest\0225\n"
-          + "\007company\030\001 \001(\0132$.google.cloud.talent.v4b"
-          + "eta1.Company\022/\n\013update_mask\030\002 \001(\0132\032.goog"
-          + "le.protobuf.FieldMask\"$\n\024DeleteCompanyRe"
-          + "quest\022\014\n\004name\030\001 \001(\t\"h\n\024ListCompaniesRequ"
-          + "est\022\016\n\006parent\030\001 \001(\t\022\022\n\npage_token\030\002 \001(\t\022"
-          + "\021\n\tpage_size\030\003 \001(\005\022\031\n\021require_open_jobs\030"
-          + "\004 \001(\010\"\252\001\n\025ListCompaniesResponse\0227\n\tcompa"
-          + "nies\030\001 \003(\0132$.google.cloud.talent.v4beta1"
-          + ".Company\022\027\n\017next_page_token\030\002 \001(\t\022?\n\010met"
-          + "adata\030\003 \001(\0132-.google.cloud.talent.v4beta"
-          + "1.ResponseMetadata2\237\t\n\016CompanyService\022\322\001"
-          + "\n\rCreateCompany\0221.google.cloud.talent.v4"
-          + "beta1.CreateCompanyRequest\032$.google.clou"
-          + "d.talent.v4beta1.Company\"h\202\323\344\223\002b\"0/v4bet"
-          + "a1/{parent=projects/*/tenants/*}/compani"
-          + "es:\001*Z+\"&/v4beta1/{parent=projects/*}/co"
-          + "mpanies:\001*\022\306\001\n\nGetCompany\022..google.cloud"
-          + ".talent.v4beta1.GetCompanyRequest\032$.goog"
-          + "le.cloud.talent.v4beta1.Company\"b\202\323\344\223\002\\\022"
-          + "0/v4beta1/{name=projects/*/tenants/*/com"
-          + "panies/*}Z(\022&/v4beta1/{name=projects/*/c"
-          + "ompanies/*}\022\342\001\n\rUpdateCompany\0221.google.c"
-          + "loud.talent.v4beta1.UpdateCompanyRequest"
-          + "\032$.google.cloud.talent.v4beta1.Company\"x"
-          + "\202\323\344\223\002r28/v4beta1/{company.name=projects/"
-          + "*/tenants/*/companies/*}:\001*Z32./v4beta1/"
-          + "{company.name=projects/*/companies/*}:\001*"
-          + "\022\276\001\n\rDeleteCompany\0221.google.cloud.talent"
-          + ".v4beta1.DeleteCompanyRequest\032\026.google.p"
-          + "rotobuf.Empty\"b\202\323\344\223\002\\*0/v4beta1/{name=pr"
-          + "ojects/*/tenants/*/companies/*}Z(*&/v4be"
-          + "ta1/{name=projects/*/companies/*}\022\332\001\n\rLi"
-          + "stCompanies\0221.google.cloud.talent.v4beta"
-          + "1.ListCompaniesRequest\0322.google.cloud.ta"
-          + "lent.v4beta1.ListCompaniesResponse\"b\202\323\344\223"
-          + "\002\\\0220/v4beta1/{parent=projects/*/tenants/"
-          + "*}/companiesZ(\022&/v4beta1/{parent=project"
-          + "s/*}/companies\032l\312A\023jobs.googleapis.com\322A"
-          + "Shttps://www.googleapis.com/auth/cloud-p"
-          + "latform,https://www.googleapis.com/auth/"
-          + "jobsB\201\001\n\037com.google.cloud.talent.v4beta1"
-          + "B\023CompanyServiceProtoP\001ZAgoogle.golang.o"
-          + "rg/genproto/googleapis/cloud/talent/v4be"
-          + "ta1;talent\242\002\003CTSb\006proto3"
+          + "pi/client.proto\032\037google/api/field_behavi"
+          + "or.proto\032(google/cloud/talent/v4beta1/co"
+          + "mmon.proto\032)google/cloud/talent/v4beta1/"
+          + "company.proto\032\033google/protobuf/empty.pro"
+          + "to\032 google/protobuf/field_mask.proto\"g\n\024"
+          + "CreateCompanyRequest\022\023\n\006parent\030\001 \001(\tB\003\340A"
+          + "\002\022:\n\007company\030\002 \001(\0132$.google.cloud.talent"
+          + ".v4beta1.CompanyB\003\340A\002\"&\n\021GetCompanyReque"
+          + "st\022\021\n\004name\030\001 \001(\tB\003\340A\002\"\203\001\n\024UpdateCompanyR"
+          + "equest\022:\n\007company\030\001 \001(\0132$.google.cloud.t"
+          + "alent.v4beta1.CompanyB\003\340A\002\022/\n\013update_mas"
+          + "k\030\002 \001(\0132\032.google.protobuf.FieldMask\")\n\024D"
+          + "eleteCompanyRequest\022\021\n\004name\030\001 \001(\tB\003\340A\002\"m"
+          + "\n\024ListCompaniesRequest\022\023\n\006parent\030\001 \001(\tB\003"
+          + "\340A\002\022\022\n\npage_token\030\002 \001(\t\022\021\n\tpage_size\030\003 \001"
+          + "(\005\022\031\n\021require_open_jobs\030\004 \001(\010\"\252\001\n\025ListCo"
+          + "mpaniesResponse\0227\n\tcompanies\030\001 \003(\0132$.goo"
+          + "gle.cloud.talent.v4beta1.Company\022\027\n\017next"
+          + "_page_token\030\002 \001(\t\022?\n\010metadata\030\003 \001(\0132-.go"
+          + "ogle.cloud.talent.v4beta1.ResponseMetada"
+          + "ta2\237\t\n\016CompanyService\022\322\001\n\rCreateCompany\022"
+          + "1.google.cloud.talent.v4beta1.CreateComp"
+          + "anyRequest\032$.google.cloud.talent.v4beta1"
+          + ".Company\"h\202\323\344\223\002b\"0/v4beta1/{parent=proje"
+          + "cts/*/tenants/*}/companies:\001*Z+\"&/v4beta"
+          + "1/{parent=projects/*}/companies:\001*\022\306\001\n\nG"
+          + "etCompany\022..google.cloud.talent.v4beta1."
+          + "GetCompanyRequest\032$.google.cloud.talent."
+          + "v4beta1.Company\"b\202\323\344\223\002\\\0220/v4beta1/{name="
+          + "projects/*/tenants/*/companies/*}Z(\022&/v4"
+          + "beta1/{name=projects/*/companies/*}\022\342\001\n\r"
+          + "UpdateCompany\0221.google.cloud.talent.v4be"
+          + "ta1.UpdateCompanyRequest\032$.google.cloud."
+          + "talent.v4beta1.Company\"x\202\323\344\223\002r28/v4beta1"
+          + "/{company.name=projects/*/tenants/*/comp"
+          + "anies/*}:\001*Z32./v4beta1/{company.name=pr"
+          + "ojects/*/companies/*}:\001*\022\276\001\n\rDeleteCompa"
+          + "ny\0221.google.cloud.talent.v4beta1.DeleteC"
+          + "ompanyRequest\032\026.google.protobuf.Empty\"b\202"
+          + "\323\344\223\002\\*0/v4beta1/{name=projects/*/tenants"
+          + "/*/companies/*}Z(*&/v4beta1/{name=projec"
+          + "ts/*/companies/*}\022\332\001\n\rListCompanies\0221.go"
+          + "ogle.cloud.talent.v4beta1.ListCompaniesR"
+          + "equest\0322.google.cloud.talent.v4beta1.Lis"
+          + "tCompaniesResponse\"b\202\323\344\223\002\\\0220/v4beta1/{pa"
+          + "rent=projects/*/tenants/*}/companiesZ(\022&"
+          + "/v4beta1/{parent=projects/*}/companies\032l"
+          + "\312A\023jobs.googleapis.com\322AShttps://www.goo"
+          + "gleapis.com/auth/cloud-platform,https://"
+          + "www.googleapis.com/auth/jobsB\201\001\n\037com.goo"
+          + "gle.cloud.talent.v4beta1B\023CompanyService"
+          + "ProtoP\001ZAgoogle.golang.org/genproto/goog"
+          + "leapis/cloud/talent/v4beta1;talent\242\002\003CTS"
+          + "b\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner() {
@@ -114,6 +116,7 @@ public final class CompanyServiceProto {
         new com.google.protobuf.Descriptors.FileDescriptor[] {
           com.google.api.AnnotationsProto.getDescriptor(),
           com.google.api.ClientProto.getDescriptor(),
+          com.google.api.FieldBehaviorProto.getDescriptor(),
           com.google.cloud.talent.v4beta1.CommonProto.getDescriptor(),
           com.google.cloud.talent.v4beta1.CompanyResourceProto.getDescriptor(),
           com.google.protobuf.EmptyProto.getDescriptor(),
@@ -171,12 +174,14 @@ public final class CompanyServiceProto {
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();
     registry.add(com.google.api.ClientProto.defaultHost);
+    registry.add(com.google.api.FieldBehaviorProto.fieldBehavior);
     registry.add(com.google.api.AnnotationsProto.http);
     registry.add(com.google.api.ClientProto.oauthScopes);
     com.google.protobuf.Descriptors.FileDescriptor.internalUpdateFileDescriptor(
         descriptor, registry);
     com.google.api.AnnotationsProto.getDescriptor();
     com.google.api.ClientProto.getDescriptor();
+    com.google.api.FieldBehaviorProto.getDescriptor();
     com.google.cloud.talent.v4beta1.CommonProto.getDescriptor();
     com.google.cloud.talent.v4beta1.CompanyResourceProto.getDescriptor();
     com.google.protobuf.EmptyProto.getDescriptor();

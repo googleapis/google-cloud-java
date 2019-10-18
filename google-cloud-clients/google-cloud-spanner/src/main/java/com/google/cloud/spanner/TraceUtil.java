@@ -53,7 +53,7 @@ class TraceUtil {
         "Status", AttributeValue.stringAttributeValue(e.getErrorCode().toString()));
   }
 
-  static void endSpanWithFailure(Span span, Exception e) {
+  static void endSpanWithFailure(Span span, Throwable e) {
     if (e instanceof SpannerException) {
       endSpanWithFailure(span, (SpannerException) e);
     } else {

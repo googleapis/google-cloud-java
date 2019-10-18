@@ -44,6 +44,9 @@ import javax.annotation.Generated;
  * that are built for an individual user such as favorites, preferences, playlists, and so on. You
  * can redefine a session entity type at the session level.
  *
+ * <p>Session entity methods do not work with Google Assistant integration. Contact Dialogflow
+ * support if you need to use session entities with Google Assistant integration.
+ *
  * <p>For more information about entity types, see the [Dialogflow
  * documentation](https://cloud.google.com/dialogflow/docs/entities-overview).
  *
@@ -168,6 +171,9 @@ public class SessionEntityTypesClient implements BackgroundResource {
   /**
    * Returns the list of all session entity types in the specified session.
    *
+   * <p>This method doesn't work with Google Assistant integration. Contact Dialogflow support if
+   * you need to use session entities with Google Assistant integration.
+   *
    * <p>Sample code:
    *
    * <pre><code>
@@ -195,6 +201,9 @@ public class SessionEntityTypesClient implements BackgroundResource {
   /**
    * Returns the list of all session entity types in the specified session.
    *
+   * <p>This method doesn't work with Google Assistant integration. Contact Dialogflow support if
+   * you need to use session entities with Google Assistant integration.
+   *
    * <p>Sample code:
    *
    * <pre><code>
@@ -219,6 +228,9 @@ public class SessionEntityTypesClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Returns the list of all session entity types in the specified session.
+   *
+   * <p>This method doesn't work with Google Assistant integration. Contact Dialogflow support if
+   * you need to use session entities with Google Assistant integration.
    *
    * <p>Sample code:
    *
@@ -246,6 +258,9 @@ public class SessionEntityTypesClient implements BackgroundResource {
   /**
    * Returns the list of all session entity types in the specified session.
    *
+   * <p>This method doesn't work with Google Assistant integration. Contact Dialogflow support if
+   * you need to use session entities with Google Assistant integration.
+   *
    * <p>Sample code:
    *
    * <pre><code>
@@ -270,6 +285,9 @@ public class SessionEntityTypesClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Returns the list of all session entity types in the specified session.
+   *
+   * <p>This method doesn't work with Google Assistant integration. Contact Dialogflow support if
+   * you need to use session entities with Google Assistant integration.
    *
    * <p>Sample code:
    *
@@ -303,6 +321,9 @@ public class SessionEntityTypesClient implements BackgroundResource {
   /**
    * Retrieves the specified session entity type.
    *
+   * <p>This method doesn't work with Google Assistant integration. Contact Dialogflow support if
+   * you need to use session entities with Google Assistant integration.
+   *
    * <p>Sample code:
    *
    * <pre><code>
@@ -329,6 +350,9 @@ public class SessionEntityTypesClient implements BackgroundResource {
   /**
    * Retrieves the specified session entity type.
    *
+   * <p>This method doesn't work with Google Assistant integration. Contact Dialogflow support if
+   * you need to use session entities with Google Assistant integration.
+   *
    * <p>Sample code:
    *
    * <pre><code>
@@ -353,6 +377,9 @@ public class SessionEntityTypesClient implements BackgroundResource {
   /**
    * Retrieves the specified session entity type.
    *
+   * <p>This method doesn't work with Google Assistant integration. Contact Dialogflow support if
+   * you need to use session entities with Google Assistant integration.
+   *
    * <p>Sample code:
    *
    * <pre><code>
@@ -375,6 +402,9 @@ public class SessionEntityTypesClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Retrieves the specified session entity type.
+   *
+   * <p>This method doesn't work with Google Assistant integration. Contact Dialogflow support if
+   * you need to use session entities with Google Assistant integration.
    *
    * <p>Sample code:
    *
@@ -400,6 +430,9 @@ public class SessionEntityTypesClient implements BackgroundResource {
    * Creates a session entity type.
    *
    * <p>If the specified session entity type already exists, overrides the session entity type.
+   *
+   * <p>This method doesn't work with Google Assistant integration. Contact Dialogflow support if
+   * you need to use session entities with Google Assistant integration.
    *
    * <p>Sample code:
    *
@@ -433,6 +466,9 @@ public class SessionEntityTypesClient implements BackgroundResource {
    *
    * <p>If the specified session entity type already exists, overrides the session entity type.
    *
+   * <p>This method doesn't work with Google Assistant integration. Contact Dialogflow support if
+   * you need to use session entities with Google Assistant integration.
+   *
    * <p>Sample code:
    *
    * <pre><code>
@@ -465,6 +501,9 @@ public class SessionEntityTypesClient implements BackgroundResource {
    *
    * <p>If the specified session entity type already exists, overrides the session entity type.
    *
+   * <p>This method doesn't work with Google Assistant integration. Contact Dialogflow support if
+   * you need to use session entities with Google Assistant integration.
+   *
    * <p>Sample code:
    *
    * <pre><code>
@@ -492,6 +531,9 @@ public class SessionEntityTypesClient implements BackgroundResource {
    *
    * <p>If the specified session entity type already exists, overrides the session entity type.
    *
+   * <p>This method doesn't work with Google Assistant integration. Contact Dialogflow support if
+   * you need to use session entities with Google Assistant integration.
+   *
    * <p>Sample code:
    *
    * <pre><code>
@@ -517,6 +559,9 @@ public class SessionEntityTypesClient implements BackgroundResource {
   /**
    * Updates the specified session entity type.
    *
+   * <p>This method doesn't work with Google Assistant integration. Contact Dialogflow support if
+   * you need to use session entities with Google Assistant integration.
+   *
    * <p>Sample code:
    *
    * <pre><code>
@@ -541,6 +586,9 @@ public class SessionEntityTypesClient implements BackgroundResource {
   /**
    * Updates the specified session entity type.
    *
+   * <p>This method doesn't work with Google Assistant integration. Contact Dialogflow support if
+   * you need to use session entities with Google Assistant integration.
+   *
    * <p>Sample code:
    *
    * <pre><code>
@@ -564,6 +612,9 @@ public class SessionEntityTypesClient implements BackgroundResource {
   /**
    * Updates the specified session entity type.
    *
+   * <p>This method doesn't work with Google Assistant integration. Contact Dialogflow support if
+   * you need to use session entities with Google Assistant integration.
+   *
    * <p>Sample code:
    *
    * <pre><code>
@@ -586,6 +637,9 @@ public class SessionEntityTypesClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Deletes the specified session entity type.
+   *
+   * <p>This method doesn't work with Google Assistant integration. Contact Dialogflow support if
+   * you need to use session entities with Google Assistant integration.
    *
    * <p>Sample code:
    *
@@ -613,6 +667,9 @@ public class SessionEntityTypesClient implements BackgroundResource {
   /**
    * Deletes the specified session entity type.
    *
+   * <p>This method doesn't work with Google Assistant integration. Contact Dialogflow support if
+   * you need to use session entities with Google Assistant integration.
+   *
    * <p>Sample code:
    *
    * <pre><code>
@@ -637,6 +694,9 @@ public class SessionEntityTypesClient implements BackgroundResource {
   /**
    * Deletes the specified session entity type.
    *
+   * <p>This method doesn't work with Google Assistant integration. Contact Dialogflow support if
+   * you need to use session entities with Google Assistant integration.
+   *
    * <p>Sample code:
    *
    * <pre><code>
@@ -659,6 +719,9 @@ public class SessionEntityTypesClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Deletes the specified session entity type.
+   *
+   * <p>This method doesn't work with Google Assistant integration. Contact Dialogflow support if
+   * you need to use session entities with Google Assistant integration.
    *
    * <p>Sample code:
    *

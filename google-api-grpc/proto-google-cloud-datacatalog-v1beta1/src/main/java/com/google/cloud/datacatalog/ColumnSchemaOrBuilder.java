@@ -15,7 +15,7 @@ public interface ColumnSchemaOrBuilder
    * Required. Name of the column.
    * </pre>
    *
-   * <code>string column = 6;</code>
+   * <code>string column = 6 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   java.lang.String getColumn();
   /**
@@ -25,7 +25,7 @@ public interface ColumnSchemaOrBuilder
    * Required. Name of the column.
    * </pre>
    *
-   * <code>string column = 6;</code>
+   * <code>string column = 6 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   com.google.protobuf.ByteString getColumnBytes();
 
@@ -36,7 +36,7 @@ public interface ColumnSchemaOrBuilder
    * Required. Type of the column.
    * </pre>
    *
-   * <code>string type = 1;</code>
+   * <code>string type = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   java.lang.String getType();
   /**
@@ -46,7 +46,7 @@ public interface ColumnSchemaOrBuilder
    * Required. Type of the column.
    * </pre>
    *
-   * <code>string type = 1;</code>
+   * <code>string type = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   com.google.protobuf.ByteString getTypeBytes();
 
@@ -76,8 +76,8 @@ public interface ColumnSchemaOrBuilder
    *
    * <pre>
    * Optional. A column's mode indicates whether the values in this column are
-   * required, nullable, etc. Only 'NULLABLE', 'REQUIRED' and 'REPEATED' are
-   * supported. Default mode is 'NULLABLE'.
+   * required, nullable, etc. Only `NULLABLE`, `REQUIRED` and `REPEATED` are
+   * supported. Default mode is `NULLABLE`.
    * </pre>
    *
    * <code>string mode = 3;</code>
@@ -88,8 +88,8 @@ public interface ColumnSchemaOrBuilder
    *
    * <pre>
    * Optional. A column's mode indicates whether the values in this column are
-   * required, nullable, etc. Only 'NULLABLE', 'REQUIRED' and 'REPEATED' are
-   * supported. Default mode is 'NULLABLE'.
+   * required, nullable, etc. Only `NULLABLE`, `REQUIRED` and `REPEATED` are
+   * supported. Default mode is `NULLABLE`.
    * </pre>
    *
    * <code>string mode = 3;</code>

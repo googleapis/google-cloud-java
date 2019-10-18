@@ -31,15 +31,16 @@ public final class SchemaOuterClass {
     java.lang.String[] descriptorData = {
       "\n-google/cloud/datacatalog/v1beta1/schem"
           + "a.proto\022 google.cloud.datacatalog.v1beta"
-          + "1\"I\n\006Schema\022?\n\007columns\030\002 \003(\0132..google.cl"
-          + "oud.datacatalog.v1beta1.ColumnSchema\"\223\001\n"
-          + "\014ColumnSchema\022\016\n\006column\030\006 \001(\t\022\014\n\004type\030\001 "
-          + "\001(\t\022\023\n\013description\030\002 \001(\t\022\014\n\004mode\030\003 \001(\t\022B"
-          + "\n\nsubcolumns\030\007 \003(\0132..google.cloud.dataca"
-          + "talog.v1beta1.ColumnSchemaBp\n\034com.google"
-          + ".cloud.datacatalogP\001ZKgoogle.golang.org/"
-          + "genproto/googleapis/cloud/datacatalog/v1"
-          + "beta1;datacatalog\370\001\001b\006proto3"
+          + "1\032\037google/api/field_behavior.proto\"N\n\006Sc"
+          + "hema\022D\n\007columns\030\002 \003(\0132..google.cloud.dat"
+          + "acatalog.v1beta1.ColumnSchemaB\003\340A\002\"\235\001\n\014C"
+          + "olumnSchema\022\023\n\006column\030\006 \001(\tB\003\340A\002\022\021\n\004type"
+          + "\030\001 \001(\tB\003\340A\002\022\023\n\013description\030\002 \001(\t\022\014\n\004mode"
+          + "\030\003 \001(\t\022B\n\nsubcolumns\030\007 \003(\0132..google.clou"
+          + "d.datacatalog.v1beta1.ColumnSchemaBp\n\034co"
+          + "m.google.cloud.datacatalogP\001ZKgoogle.gol"
+          + "ang.org/genproto/googleapis/cloud/dataca"
+          + "talog/v1beta1;datacatalog\370\001\001b\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner() {
@@ -50,7 +51,11 @@ public final class SchemaOuterClass {
           }
         };
     com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
-        descriptorData, new com.google.protobuf.Descriptors.FileDescriptor[] {}, assigner);
+        descriptorData,
+        new com.google.protobuf.Descriptors.FileDescriptor[] {
+          com.google.api.FieldBehaviorProto.getDescriptor(),
+        },
+        assigner);
     internal_static_google_cloud_datacatalog_v1beta1_Schema_descriptor =
         getDescriptor().getMessageTypes().get(0);
     internal_static_google_cloud_datacatalog_v1beta1_Schema_fieldAccessorTable =
@@ -67,6 +72,12 @@ public final class SchemaOuterClass {
             new java.lang.String[] {
               "Column", "Type", "Description", "Mode", "Subcolumns",
             });
+    com.google.protobuf.ExtensionRegistry registry =
+        com.google.protobuf.ExtensionRegistry.newInstance();
+    registry.add(com.google.api.FieldBehaviorProto.fieldBehavior);
+    com.google.protobuf.Descriptors.FileDescriptor.internalUpdateFileDescriptor(
+        descriptor, registry);
+    com.google.api.FieldBehaviorProto.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

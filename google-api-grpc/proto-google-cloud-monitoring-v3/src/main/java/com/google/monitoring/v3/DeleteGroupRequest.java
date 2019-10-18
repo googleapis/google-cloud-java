@@ -7,7 +7,8 @@ package com.google.monitoring.v3;
  *
  *
  * <pre>
- * The `DeleteGroup` request. You can only delete a group if it has no children.
+ * The `DeleteGroup` request. The default behavior is to be able to delete a
+ * single group without any descendants.
  * </pre>
  *
  * Protobuf type {@code google.monitoring.v3.DeleteGroupRequest}
@@ -55,6 +56,11 @@ public final class DeleteGroupRequest extends com.google.protobuf.GeneratedMessa
               java.lang.String s = input.readStringRequireUtf8();
 
               name_ = s;
+              break;
+            }
+          case 32:
+            {
+              recursive_ = input.readBool();
               break;
             }
           default:
@@ -136,6 +142,23 @@ public final class DeleteGroupRequest extends com.google.protobuf.GeneratedMessa
     }
   }
 
+  public static final int RECURSIVE_FIELD_NUMBER = 4;
+  private boolean recursive_;
+  /**
+   *
+   *
+   * <pre>
+   * If this field is true, then the request means to delete a group with all
+   * its descendants. Otherwise, the request means to delete a group only when
+   * it has no descendants. The default value is false.
+   * </pre>
+   *
+   * <code>bool recursive = 4;</code>
+   */
+  public boolean getRecursive() {
+    return recursive_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -153,6 +176,9 @@ public final class DeleteGroupRequest extends com.google.protobuf.GeneratedMessa
     if (!getNameBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3, name_);
     }
+    if (recursive_ != false) {
+      output.writeBool(4, recursive_);
+    }
     unknownFields.writeTo(output);
   }
 
@@ -164,6 +190,9 @@ public final class DeleteGroupRequest extends com.google.protobuf.GeneratedMessa
     size = 0;
     if (!getNameBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, name_);
+    }
+    if (recursive_ != false) {
+      size += com.google.protobuf.CodedOutputStream.computeBoolSize(4, recursive_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -182,6 +211,7 @@ public final class DeleteGroupRequest extends com.google.protobuf.GeneratedMessa
         (com.google.monitoring.v3.DeleteGroupRequest) obj;
 
     if (!getName().equals(other.getName())) return false;
+    if (getRecursive() != other.getRecursive()) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -195,6 +225,8 @@ public final class DeleteGroupRequest extends com.google.protobuf.GeneratedMessa
     hash = (19 * hash) + getDescriptor().hashCode();
     hash = (37 * hash) + NAME_FIELD_NUMBER;
     hash = (53 * hash) + getName().hashCode();
+    hash = (37 * hash) + RECURSIVE_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getRecursive());
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -299,7 +331,8 @@ public final class DeleteGroupRequest extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * The `DeleteGroup` request. You can only delete a group if it has no children.
+   * The `DeleteGroup` request. The default behavior is to be able to delete a
+   * single group without any descendants.
    * </pre>
    *
    * Protobuf type {@code google.monitoring.v3.DeleteGroupRequest}
@@ -342,6 +375,8 @@ public final class DeleteGroupRequest extends com.google.protobuf.GeneratedMessa
       super.clear();
       name_ = "";
 
+      recursive_ = false;
+
       return this;
     }
 
@@ -370,6 +405,7 @@ public final class DeleteGroupRequest extends com.google.protobuf.GeneratedMessa
       com.google.monitoring.v3.DeleteGroupRequest result =
           new com.google.monitoring.v3.DeleteGroupRequest(this);
       result.name_ = name_;
+      result.recursive_ = recursive_;
       onBuilt();
       return result;
     }
@@ -422,6 +458,9 @@ public final class DeleteGroupRequest extends com.google.protobuf.GeneratedMessa
       if (!other.getName().isEmpty()) {
         name_ = other.name_;
         onChanged();
+      }
+      if (other.getRecursive() != false) {
+        setRecursive(other.getRecursive());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -547,6 +586,56 @@ public final class DeleteGroupRequest extends com.google.protobuf.GeneratedMessa
       checkByteStringIsUtf8(value);
 
       name_ = value;
+      onChanged();
+      return this;
+    }
+
+    private boolean recursive_;
+    /**
+     *
+     *
+     * <pre>
+     * If this field is true, then the request means to delete a group with all
+     * its descendants. Otherwise, the request means to delete a group only when
+     * it has no descendants. The default value is false.
+     * </pre>
+     *
+     * <code>bool recursive = 4;</code>
+     */
+    public boolean getRecursive() {
+      return recursive_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * If this field is true, then the request means to delete a group with all
+     * its descendants. Otherwise, the request means to delete a group only when
+     * it has no descendants. The default value is false.
+     * </pre>
+     *
+     * <code>bool recursive = 4;</code>
+     */
+    public Builder setRecursive(boolean value) {
+
+      recursive_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * If this field is true, then the request means to delete a group with all
+     * its descendants. Otherwise, the request means to delete a group only when
+     * it has no descendants. The default value is false.
+     * </pre>
+     *
+     * <code>bool recursive = 4;</code>
+     */
+    public Builder clearRecursive() {
+
+      recursive_ = false;
       onChanged();
       return this;
     }

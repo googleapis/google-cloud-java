@@ -7,7 +7,6 @@ package com.google.cloud.talent.v4beta1;
  *
  *
  * <pre>
- * Output only.
  * Response of auto-complete query.
  * </pre>
  *
@@ -193,7 +192,6 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * Output only.
    * Resource that represents completion results.
    * </pre>
    *
@@ -605,7 +603,6 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Output only.
      * Resource that represents completion results.
      * </pre>
      *
@@ -1420,7 +1417,6 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * Output only.
    * Response of auto-complete query.
    * </pre>
    *

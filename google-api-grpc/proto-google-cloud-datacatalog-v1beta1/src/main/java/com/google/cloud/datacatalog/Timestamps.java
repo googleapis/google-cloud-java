@@ -27,15 +27,16 @@ public final class Timestamps {
     java.lang.String[] descriptorData = {
       "\n1google/cloud/datacatalog/v1beta1/times"
           + "tamps.proto\022 google.cloud.datacatalog.v1"
-          + "beta1\032\037google/protobuf/timestamp.proto\"\245"
-          + "\001\n\020SystemTimestamps\022/\n\013create_time\030\001 \001(\013"
-          + "2\032.google.protobuf.Timestamp\022/\n\013update_t"
-          + "ime\030\002 \001(\0132\032.google.protobuf.Timestamp\022/\n"
-          + "\013expire_time\030\003 \001(\0132\032.google.protobuf.Tim"
-          + "estampBp\n\034com.google.cloud.datacatalogP\001"
-          + "ZKgoogle.golang.org/genproto/googleapis/"
-          + "cloud/datacatalog/v1beta1;datacatalog\370\001\001"
-          + "b\006proto3"
+          + "beta1\032\037google/api/field_behavior.proto\032\037"
+          + "google/protobuf/timestamp.proto\"\252\001\n\020Syst"
+          + "emTimestamps\022/\n\013create_time\030\001 \001(\0132\032.goog"
+          + "le.protobuf.Timestamp\022/\n\013update_time\030\002 \001"
+          + "(\0132\032.google.protobuf.Timestamp\0224\n\013expire"
+          + "_time\030\003 \001(\0132\032.google.protobuf.TimestampB"
+          + "\003\340A\003Bp\n\034com.google.cloud.datacatalogP\001ZK"
+          + "google.golang.org/genproto/googleapis/cl"
+          + "oud/datacatalog/v1beta1;datacatalog\370\001\001b\006"
+          + "proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner() {
@@ -48,6 +49,7 @@ public final class Timestamps {
     com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
         descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
+          com.google.api.FieldBehaviorProto.getDescriptor(),
           com.google.protobuf.TimestampProto.getDescriptor(),
         },
         assigner);
@@ -59,6 +61,12 @@ public final class Timestamps {
             new java.lang.String[] {
               "CreateTime", "UpdateTime", "ExpireTime",
             });
+    com.google.protobuf.ExtensionRegistry registry =
+        com.google.protobuf.ExtensionRegistry.newInstance();
+    registry.add(com.google.api.FieldBehaviorProto.fieldBehavior);
+    com.google.protobuf.Descriptors.FileDescriptor.internalUpdateFileDescriptor(
+        descriptor, registry);
+    com.google.api.FieldBehaviorProto.getDescriptor();
     com.google.protobuf.TimestampProto.getDescriptor();
   }
 

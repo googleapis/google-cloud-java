@@ -22,16 +22,25 @@ import static org.mockito.Mockito.when;
 import static org.mockito.MockitoAnnotations.initMocks;
 
 import com.google.api.gax.longrunning.OperationFuture;
+import com.google.cloud.Identity;
+import com.google.cloud.Role;
 import com.google.cloud.spanner.spi.v1.SpannerRpc;
 import com.google.cloud.spanner.spi.v1.SpannerRpc.Paginated;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.Lists;
+import com.google.common.collect.Sets;
+import com.google.common.io.BaseEncoding;
+import com.google.iam.v1.Binding;
+import com.google.iam.v1.Policy;
+import com.google.iam.v1.TestIamPermissionsResponse;
 import com.google.protobuf.Any;
+import com.google.protobuf.ByteString;
 import com.google.protobuf.Empty;
 import com.google.protobuf.Message;
 import com.google.spanner.admin.database.v1.CreateDatabaseMetadata;
 import com.google.spanner.admin.database.v1.Database;
 import com.google.spanner.admin.database.v1.UpdateDatabaseDdlMetadata;
+import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 import org.junit.Before;
@@ -159,5 +168,72 @@ public class DatabaseAdminClientImplTest {
     assertThat(dbs.get(0).getId().getName()).isEqualTo(DB_NAME);
     assertThat(dbs.get(1).getId().getName()).isEqualTo(DB_NAME2);
     assertThat(dbs.size()).isEqualTo(2);
+  }
+
+  @Test
+  public void getDatabaseIAMPolicy() {
+    when(rpc.getDatabaseAdminIAMPolicy(DB_NAME))
+        .thenReturn(
+            Policy.newBuilder()
+                .addBindings(
+                    Binding.newBuilder()
+                        .addMembers("user:joe@example.com")
+                        .setRole("roles/viewer")
+                        .build())
+                .build());
+    com.google.cloud.Policy policy = client.getDatabaseIAMPolicy(INSTANCE_ID, DB_ID);
+    assertThat(policy.getBindings())
+        .containsExactly(Role.viewer(), Sets.newHashSet(Identity.user("joe@example.com")));
+
+    when(rpc.getDatabaseAdminIAMPolicy(DB_NAME))
+        .thenReturn(
+            Policy.newBuilder()
+                .addBindings(
+                    Binding.newBuilder()
+                        .addAllMembers(Arrays.asList("allAuthenticatedUsers", "domain:google.com"))
+                        .setRole("roles/viewer")
+                        .build())
+                .build());
+    policy = client.getDatabaseIAMPolicy(INSTANCE_ID, DB_ID);
+    assertThat(policy.getBindings())
+        .containsExactly(
+            Role.viewer(),
+            Sets.newHashSet(Identity.allAuthenticatedUsers(), Identity.domain("google.com")));
+  }
+
+  @Test
+  public void setDatabaseIAMPolicy() {
+    ByteString etag = ByteString.copyFrom(BaseEncoding.base64().decode("v1"));
+    String etagEncoded = BaseEncoding.base64().encode(etag.toByteArray());
+    Policy proto =
+        Policy.newBuilder()
+            .addBindings(
+                Binding.newBuilder()
+                    .setRole("roles/viewer")
+                    .addMembers("user:joe@example.com")
+                    .build())
+            .setEtag(etag)
+            .build();
+    when(rpc.setDatabaseAdminIAMPolicy(DB_NAME, proto)).thenReturn(proto);
+    com.google.cloud.Policy policy =
+        com.google.cloud.Policy.newBuilder()
+            .addIdentity(Role.viewer(), Identity.user("joe@example.com"))
+            .setEtag(etagEncoded)
+            .build();
+    com.google.cloud.Policy updated = client.setDatabaseIAMPolicy(INSTANCE_ID, DB_ID, policy);
+    assertThat(updated).isEqualTo(policy);
+  }
+
+  @Test
+  public void testDatabaseIAMPermissions() {
+    Iterable<String> permissions =
+        Arrays.asList("spanner.databases.select", "spanner.databases.write");
+    when(rpc.testDatabaseAdminIAMPermissions(DB_NAME, permissions))
+        .thenReturn(
+            TestIamPermissionsResponse.newBuilder()
+                .addPermissions("spanner.databases.select")
+                .build());
+    Iterable<String> allowed = client.testDatabaseIAMPermissions(INSTANCE_ID, DB_ID, permissions);
+    assertThat(allowed).containsExactly("spanner.databases.select");
   }
 }

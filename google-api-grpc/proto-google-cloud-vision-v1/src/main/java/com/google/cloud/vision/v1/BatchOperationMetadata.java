@@ -398,8 +398,7 @@ public final class BatchOperationMetadata extends com.google.protobuf.GeneratedM
    *
    * <pre>
    * The time when the batch request is finished and
-   * [google.longrunning.Operation.done][google.longrunning.Operation.done] is
-   * set to true.
+   * [google.longrunning.Operation.done][google.longrunning.Operation.done] is set to true.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp end_time = 3;</code>
@@ -412,8 +411,7 @@ public final class BatchOperationMetadata extends com.google.protobuf.GeneratedM
    *
    * <pre>
    * The time when the batch request is finished and
-   * [google.longrunning.Operation.done][google.longrunning.Operation.done] is
-   * set to true.
+   * [google.longrunning.Operation.done][google.longrunning.Operation.done] is set to true.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp end_time = 3;</code>
@@ -426,8 +424,7 @@ public final class BatchOperationMetadata extends com.google.protobuf.GeneratedM
    *
    * <pre>
    * The time when the batch request is finished and
-   * [google.longrunning.Operation.done][google.longrunning.Operation.done] is
-   * set to true.
+   * [google.longrunning.Operation.done][google.longrunning.Operation.done] is set to true.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp end_time = 3;</code>
@@ -1081,8 +1078,7 @@ public final class BatchOperationMetadata extends com.google.protobuf.GeneratedM
      *
      * <pre>
      * The time when the batch request is finished and
-     * [google.longrunning.Operation.done][google.longrunning.Operation.done] is
-     * set to true.
+     * [google.longrunning.Operation.done][google.longrunning.Operation.done] is set to true.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp end_time = 3;</code>
@@ -1095,8 +1091,7 @@ public final class BatchOperationMetadata extends com.google.protobuf.GeneratedM
      *
      * <pre>
      * The time when the batch request is finished and
-     * [google.longrunning.Operation.done][google.longrunning.Operation.done] is
-     * set to true.
+     * [google.longrunning.Operation.done][google.longrunning.Operation.done] is set to true.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp end_time = 3;</code>
@@ -1113,8 +1108,7 @@ public final class BatchOperationMetadata extends com.google.protobuf.GeneratedM
      *
      * <pre>
      * The time when the batch request is finished and
-     * [google.longrunning.Operation.done][google.longrunning.Operation.done] is
-     * set to true.
+     * [google.longrunning.Operation.done][google.longrunning.Operation.done] is set to true.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp end_time = 3;</code>
@@ -1137,8 +1131,7 @@ public final class BatchOperationMetadata extends com.google.protobuf.GeneratedM
      *
      * <pre>
      * The time when the batch request is finished and
-     * [google.longrunning.Operation.done][google.longrunning.Operation.done] is
-     * set to true.
+     * [google.longrunning.Operation.done][google.longrunning.Operation.done] is set to true.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp end_time = 3;</code>
@@ -1158,8 +1151,7 @@ public final class BatchOperationMetadata extends com.google.protobuf.GeneratedM
      *
      * <pre>
      * The time when the batch request is finished and
-     * [google.longrunning.Operation.done][google.longrunning.Operation.done] is
-     * set to true.
+     * [google.longrunning.Operation.done][google.longrunning.Operation.done] is set to true.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp end_time = 3;</code>
@@ -1184,8 +1176,7 @@ public final class BatchOperationMetadata extends com.google.protobuf.GeneratedM
      *
      * <pre>
      * The time when the batch request is finished and
-     * [google.longrunning.Operation.done][google.longrunning.Operation.done] is
-     * set to true.
+     * [google.longrunning.Operation.done][google.longrunning.Operation.done] is set to true.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp end_time = 3;</code>
@@ -1206,8 +1197,7 @@ public final class BatchOperationMetadata extends com.google.protobuf.GeneratedM
      *
      * <pre>
      * The time when the batch request is finished and
-     * [google.longrunning.Operation.done][google.longrunning.Operation.done] is
-     * set to true.
+     * [google.longrunning.Operation.done][google.longrunning.Operation.done] is set to true.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp end_time = 3;</code>
@@ -1222,8 +1212,7 @@ public final class BatchOperationMetadata extends com.google.protobuf.GeneratedM
      *
      * <pre>
      * The time when the batch request is finished and
-     * [google.longrunning.Operation.done][google.longrunning.Operation.done] is
-     * set to true.
+     * [google.longrunning.Operation.done][google.longrunning.Operation.done] is set to true.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp end_time = 3;</code>
@@ -1240,8 +1229,7 @@ public final class BatchOperationMetadata extends com.google.protobuf.GeneratedM
      *
      * <pre>
      * The time when the batch request is finished and
-     * [google.longrunning.Operation.done][google.longrunning.Operation.done] is
-     * set to true.
+     * [google.longrunning.Operation.done][google.longrunning.Operation.done] is set to true.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp end_time = 3;</code>

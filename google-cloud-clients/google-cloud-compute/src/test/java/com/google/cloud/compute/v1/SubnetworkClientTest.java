@@ -365,8 +365,11 @@ public class SubnetworkClientTest {
     String name = "name3373707";
     ProjectGlobalNetworkName network = ProjectGlobalNetworkName.of("[PROJECT]", "[NETWORK]");
     Boolean privateIpGoogleAccess = true;
+    String purpose = "purpose-220463842";
     ProjectRegionName region = ProjectRegionName.of("[PROJECT]", "[REGION]");
+    String role = "role3506294";
     String selfLink = "selfLink-1691268851";
+    String state = "state109757585";
     Subnetwork expectedResponse =
         Subnetwork.newBuilder()
             .setCreationTimestamp(creationTimestamp)
@@ -380,8 +383,11 @@ public class SubnetworkClientTest {
             .setName(name)
             .setNetwork(network.toString())
             .setPrivateIpGoogleAccess(privateIpGoogleAccess)
+            .setPurpose(purpose)
             .setRegion(region.toString())
+            .setRole(role)
             .setSelfLink(selfLink)
+            .setState(state)
             .build();
     mockService.addResponse(expectedResponse);
 

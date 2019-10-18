@@ -133,7 +133,7 @@ public final class SubmitJobRequest extends com.google.protobuf.GeneratedMessage
    * belongs to.
    * </pre>
    *
-   * <code>string project_id = 1;</code>
+   * <code>string project_id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   public java.lang.String getProjectId() {
     java.lang.Object ref = projectId_;
@@ -154,7 +154,7 @@ public final class SubmitJobRequest extends com.google.protobuf.GeneratedMessage
    * belongs to.
    * </pre>
    *
-   * <code>string project_id = 1;</code>
+   * <code>string project_id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   public com.google.protobuf.ByteString getProjectIdBytes() {
     java.lang.Object ref = projectId_;
@@ -177,7 +177,7 @@ public final class SubmitJobRequest extends com.google.protobuf.GeneratedMessage
    * Required. The Cloud Dataproc region in which to handle the request.
    * </pre>
    *
-   * <code>string region = 3;</code>
+   * <code>string region = 3 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   public java.lang.String getRegion() {
     java.lang.Object ref = region_;
@@ -197,7 +197,7 @@ public final class SubmitJobRequest extends com.google.protobuf.GeneratedMessage
    * Required. The Cloud Dataproc region in which to handle the request.
    * </pre>
    *
-   * <code>string region = 3;</code>
+   * <code>string region = 3 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   public com.google.protobuf.ByteString getRegionBytes() {
     java.lang.Object ref = region_;
@@ -220,7 +220,8 @@ public final class SubmitJobRequest extends com.google.protobuf.GeneratedMessage
    * Required. The job resource.
    * </pre>
    *
-   * <code>.google.cloud.dataproc.v1beta2.Job job = 2;</code>
+   * <code>.google.cloud.dataproc.v1beta2.Job job = 2 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   public boolean hasJob() {
     return job_ != null;
@@ -232,7 +233,8 @@ public final class SubmitJobRequest extends com.google.protobuf.GeneratedMessage
    * Required. The job resource.
    * </pre>
    *
-   * <code>.google.cloud.dataproc.v1beta2.Job job = 2;</code>
+   * <code>.google.cloud.dataproc.v1beta2.Job job = 2 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   public com.google.cloud.dataproc.v1beta2.Job getJob() {
     return job_ == null ? com.google.cloud.dataproc.v1beta2.Job.getDefaultInstance() : job_;
@@ -244,7 +246,8 @@ public final class SubmitJobRequest extends com.google.protobuf.GeneratedMessage
    * Required. The job resource.
    * </pre>
    *
-   * <code>.google.cloud.dataproc.v1beta2.Job job = 2;</code>
+   * <code>.google.cloud.dataproc.v1beta2.Job job = 2 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   public com.google.cloud.dataproc.v1beta2.JobOrBuilder getJobOrBuilder() {
     return getJob();
@@ -696,7 +699,7 @@ public final class SubmitJobRequest extends com.google.protobuf.GeneratedMessage
      * belongs to.
      * </pre>
      *
-     * <code>string project_id = 1;</code>
+     * <code>string project_id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public java.lang.String getProjectId() {
       java.lang.Object ref = projectId_;
@@ -717,7 +720,7 @@ public final class SubmitJobRequest extends com.google.protobuf.GeneratedMessage
      * belongs to.
      * </pre>
      *
-     * <code>string project_id = 1;</code>
+     * <code>string project_id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public com.google.protobuf.ByteString getProjectIdBytes() {
       java.lang.Object ref = projectId_;
@@ -738,7 +741,7 @@ public final class SubmitJobRequest extends com.google.protobuf.GeneratedMessage
      * belongs to.
      * </pre>
      *
-     * <code>string project_id = 1;</code>
+     * <code>string project_id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder setProjectId(java.lang.String value) {
       if (value == null) {
@@ -757,7 +760,7 @@ public final class SubmitJobRequest extends com.google.protobuf.GeneratedMessage
      * belongs to.
      * </pre>
      *
-     * <code>string project_id = 1;</code>
+     * <code>string project_id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder clearProjectId() {
 
@@ -773,7 +776,7 @@ public final class SubmitJobRequest extends com.google.protobuf.GeneratedMessage
      * belongs to.
      * </pre>
      *
-     * <code>string project_id = 1;</code>
+     * <code>string project_id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder setProjectIdBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -794,7 +797,7 @@ public final class SubmitJobRequest extends com.google.protobuf.GeneratedMessage
      * Required. The Cloud Dataproc region in which to handle the request.
      * </pre>
      *
-     * <code>string region = 3;</code>
+     * <code>string region = 3 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public java.lang.String getRegion() {
       java.lang.Object ref = region_;
@@ -814,7 +817,7 @@ public final class SubmitJobRequest extends com.google.protobuf.GeneratedMessage
      * Required. The Cloud Dataproc region in which to handle the request.
      * </pre>
      *
-     * <code>string region = 3;</code>
+     * <code>string region = 3 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public com.google.protobuf.ByteString getRegionBytes() {
       java.lang.Object ref = region_;
@@ -834,7 +837,7 @@ public final class SubmitJobRequest extends com.google.protobuf.GeneratedMessage
      * Required. The Cloud Dataproc region in which to handle the request.
      * </pre>
      *
-     * <code>string region = 3;</code>
+     * <code>string region = 3 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder setRegion(java.lang.String value) {
       if (value == null) {
@@ -852,7 +855,7 @@ public final class SubmitJobRequest extends com.google.protobuf.GeneratedMessage
      * Required. The Cloud Dataproc region in which to handle the request.
      * </pre>
      *
-     * <code>string region = 3;</code>
+     * <code>string region = 3 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder clearRegion() {
 
@@ -867,7 +870,7 @@ public final class SubmitJobRequest extends com.google.protobuf.GeneratedMessage
      * Required. The Cloud Dataproc region in which to handle the request.
      * </pre>
      *
-     * <code>string region = 3;</code>
+     * <code>string region = 3 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder setRegionBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -893,7 +896,8 @@ public final class SubmitJobRequest extends com.google.protobuf.GeneratedMessage
      * Required. The job resource.
      * </pre>
      *
-     * <code>.google.cloud.dataproc.v1beta2.Job job = 2;</code>
+     * <code>.google.cloud.dataproc.v1beta2.Job job = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public boolean hasJob() {
       return jobBuilder_ != null || job_ != null;
@@ -905,7 +909,8 @@ public final class SubmitJobRequest extends com.google.protobuf.GeneratedMessage
      * Required. The job resource.
      * </pre>
      *
-     * <code>.google.cloud.dataproc.v1beta2.Job job = 2;</code>
+     * <code>.google.cloud.dataproc.v1beta2.Job job = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public com.google.cloud.dataproc.v1beta2.Job getJob() {
       if (jobBuilder_ == null) {
@@ -921,7 +926,8 @@ public final class SubmitJobRequest extends com.google.protobuf.GeneratedMessage
      * Required. The job resource.
      * </pre>
      *
-     * <code>.google.cloud.dataproc.v1beta2.Job job = 2;</code>
+     * <code>.google.cloud.dataproc.v1beta2.Job job = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder setJob(com.google.cloud.dataproc.v1beta2.Job value) {
       if (jobBuilder_ == null) {
@@ -943,7 +949,8 @@ public final class SubmitJobRequest extends com.google.protobuf.GeneratedMessage
      * Required. The job resource.
      * </pre>
      *
-     * <code>.google.cloud.dataproc.v1beta2.Job job = 2;</code>
+     * <code>.google.cloud.dataproc.v1beta2.Job job = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder setJob(com.google.cloud.dataproc.v1beta2.Job.Builder builderForValue) {
       if (jobBuilder_ == null) {
@@ -962,7 +969,8 @@ public final class SubmitJobRequest extends com.google.protobuf.GeneratedMessage
      * Required. The job resource.
      * </pre>
      *
-     * <code>.google.cloud.dataproc.v1beta2.Job job = 2;</code>
+     * <code>.google.cloud.dataproc.v1beta2.Job job = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder mergeJob(com.google.cloud.dataproc.v1beta2.Job value) {
       if (jobBuilder_ == null) {
@@ -988,7 +996,8 @@ public final class SubmitJobRequest extends com.google.protobuf.GeneratedMessage
      * Required. The job resource.
      * </pre>
      *
-     * <code>.google.cloud.dataproc.v1beta2.Job job = 2;</code>
+     * <code>.google.cloud.dataproc.v1beta2.Job job = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder clearJob() {
       if (jobBuilder_ == null) {
@@ -1008,7 +1017,8 @@ public final class SubmitJobRequest extends com.google.protobuf.GeneratedMessage
      * Required. The job resource.
      * </pre>
      *
-     * <code>.google.cloud.dataproc.v1beta2.Job job = 2;</code>
+     * <code>.google.cloud.dataproc.v1beta2.Job job = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public com.google.cloud.dataproc.v1beta2.Job.Builder getJobBuilder() {
 
@@ -1022,7 +1032,8 @@ public final class SubmitJobRequest extends com.google.protobuf.GeneratedMessage
      * Required. The job resource.
      * </pre>
      *
-     * <code>.google.cloud.dataproc.v1beta2.Job job = 2;</code>
+     * <code>.google.cloud.dataproc.v1beta2.Job job = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public com.google.cloud.dataproc.v1beta2.JobOrBuilder getJobOrBuilder() {
       if (jobBuilder_ != null) {
@@ -1038,7 +1049,8 @@ public final class SubmitJobRequest extends com.google.protobuf.GeneratedMessage
      * Required. The job resource.
      * </pre>
      *
-     * <code>.google.cloud.dataproc.v1beta2.Job job = 2;</code>
+     * <code>.google.cloud.dataproc.v1beta2.Job job = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.dataproc.v1beta2.Job,

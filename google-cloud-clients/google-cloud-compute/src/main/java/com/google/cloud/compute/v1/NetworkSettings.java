@@ -40,8 +40,8 @@ import javax.annotation.Generated;
  * <p>The default instance has everything set to sensible defaults:
  *
  * <ul>
- *   <li>The default service address (https://www.googleapis.com/compute/v1/projects/) and default
- *       port (443) are used.
+ *   <li>The default service address (https://compute.googleapis.com/compute/v1/projects/) and
+ *       default port (443) are used.
  *   <li>Credentials are acquired automatically through Application Default Credentials.
  *   <li>Retries are configured for idempotent methods but not for non-idempotent methods.
  * </ul>
@@ -105,6 +105,12 @@ public class NetworkSettings extends ClientSettings<NetworkSettings> {
   public UnaryCallSettings<SwitchToCustomModeNetworkHttpRequest, Operation>
       switchToCustomModeNetworkSettings() {
     return ((NetworkStubSettings) getStubSettings()).switchToCustomModeNetworkSettings();
+  }
+
+  /** Returns the object with the settings used for calls to updatePeeringNetwork. */
+  public UnaryCallSettings<UpdatePeeringNetworkHttpRequest, Operation>
+      updatePeeringNetworkSettings() {
+    return ((NetworkStubSettings) getStubSettings()).updatePeeringNetworkSettings();
   }
 
   public static final NetworkSettings create(NetworkStubSettings stub) throws IOException {
@@ -251,6 +257,12 @@ public class NetworkSettings extends ClientSettings<NetworkSettings> {
     public UnaryCallSettings.Builder<SwitchToCustomModeNetworkHttpRequest, Operation>
         switchToCustomModeNetworkSettings() {
       return getStubSettingsBuilder().switchToCustomModeNetworkSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to updatePeeringNetwork. */
+    public UnaryCallSettings.Builder<UpdatePeeringNetworkHttpRequest, Operation>
+        updatePeeringNetworkSettings() {
+      return getStubSettingsBuilder().updatePeeringNetworkSettings();
     }
 
     @Override

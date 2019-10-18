@@ -195,11 +195,6 @@ public class DocumentSnapshot {
     return fields != null;
   }
 
-  /** Checks whether this DocumentSnapshot contains any fields. */
-  boolean isEmpty() {
-    return fields == null || fields.isEmpty();
-  }
-
   /**
    * Returns the fields of the document as a Map or null if the document doesn't exist. Field values
    * will be converted to their native Java representation.
@@ -426,6 +421,15 @@ public class DocumentSnapshot {
   @Nonnull
   public DocumentReference getReference() {
     return docRef;
+  }
+
+  /** Checks whether this DocumentSnapshot contains any fields. */
+  boolean isEmpty() {
+    return fields == null || fields.isEmpty();
+  }
+
+  Map<String, Value> getProtoFields() {
+    return fields;
   }
 
   Write.Builder toPb() {

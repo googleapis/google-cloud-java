@@ -263,8 +263,8 @@ public final class AttachedDisk implements ApiMessage {
 
   /**
    * Specifies a valid partial or full URL to an existing Persistent Disk resource. When creating a
-   * new instance, one of initializeParams.sourceImage or disks.source is required except for local
-   * SSD.
+   * new instance, one of initializeParams.sourceImage or initializeParams.sourceSnapshot or
+   * disks.source is required except for local SSD.
    *
    * <p>If desired, you can also attach existing non-root persistent disks using this property. This
    * field is only applicable for persistent disks.
@@ -640,8 +640,8 @@ public final class AttachedDisk implements ApiMessage {
 
     /**
      * Specifies a valid partial or full URL to an existing Persistent Disk resource. When creating
-     * a new instance, one of initializeParams.sourceImage or disks.source is required except for
-     * local SSD.
+     * a new instance, one of initializeParams.sourceImage or initializeParams.sourceSnapshot or
+     * disks.source is required except for local SSD.
      *
      * <p>If desired, you can also attach existing non-root persistent disks using this property.
      * This field is only applicable for persistent disks.
@@ -654,8 +654,8 @@ public final class AttachedDisk implements ApiMessage {
 
     /**
      * Specifies a valid partial or full URL to an existing Persistent Disk resource. When creating
-     * a new instance, one of initializeParams.sourceImage or disks.source is required except for
-     * local SSD.
+     * a new instance, one of initializeParams.sourceImage or initializeParams.sourceSnapshot or
+     * disks.source is required except for local SSD.
      *
      * <p>If desired, you can also attach existing non-root persistent disks using this property.
      * This field is only applicable for persistent disks.

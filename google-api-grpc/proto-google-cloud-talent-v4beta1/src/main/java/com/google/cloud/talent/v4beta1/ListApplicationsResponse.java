@@ -7,7 +7,6 @@ package com.google.cloud.talent.v4beta1;
  *
  *
  * <pre>
- * Output only.
  * The List applications response object.
  * </pre>
  *
@@ -465,7 +464,6 @@ public final class ListApplicationsResponse extends com.google.protobuf.Generate
    *
    *
    * <pre>
-   * Output only.
    * The List applications response object.
    * </pre>
    *

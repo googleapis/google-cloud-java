@@ -12,7 +12,7 @@ public interface SystemTimestampsOrBuilder
    *
    *
    * <pre>
-   * Output only. The creation time of the resource within the given system.
+   * The creation time of the resource within the given system.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp create_time = 1;</code>
@@ -22,7 +22,7 @@ public interface SystemTimestampsOrBuilder
    *
    *
    * <pre>
-   * Output only. The creation time of the resource within the given system.
+   * The creation time of the resource within the given system.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp create_time = 1;</code>
@@ -32,7 +32,7 @@ public interface SystemTimestampsOrBuilder
    *
    *
    * <pre>
-   * Output only. The creation time of the resource within the given system.
+   * The creation time of the resource within the given system.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp create_time = 1;</code>
@@ -43,8 +43,7 @@ public interface SystemTimestampsOrBuilder
    *
    *
    * <pre>
-   * Output only. The last-modified time of the resource within the given
-   * system.
+   * The last-modified time of the resource within the given system.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp update_time = 2;</code>
@@ -54,8 +53,7 @@ public interface SystemTimestampsOrBuilder
    *
    *
    * <pre>
-   * Output only. The last-modified time of the resource within the given
-   * system.
+   * The last-modified time of the resource within the given system.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp update_time = 2;</code>
@@ -65,8 +63,7 @@ public interface SystemTimestampsOrBuilder
    *
    *
    * <pre>
-   * Output only. The last-modified time of the resource within the given
-   * system.
+   * The last-modified time of the resource within the given system.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp update_time = 2;</code>
@@ -78,9 +75,11 @@ public interface SystemTimestampsOrBuilder
    *
    * <pre>
    * Output only. The expiration time of the resource within the given system.
+   * Currently only apllicable to BigQuery resources.
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp expire_time = 3;</code>
+   * <code>.google.protobuf.Timestamp expire_time = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    */
   boolean hasExpireTime();
   /**
@@ -88,9 +87,11 @@ public interface SystemTimestampsOrBuilder
    *
    * <pre>
    * Output only. The expiration time of the resource within the given system.
+   * Currently only apllicable to BigQuery resources.
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp expire_time = 3;</code>
+   * <code>.google.protobuf.Timestamp expire_time = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    */
   com.google.protobuf.Timestamp getExpireTime();
   /**
@@ -98,9 +99,11 @@ public interface SystemTimestampsOrBuilder
    *
    * <pre>
    * Output only. The expiration time of the resource within the given system.
+   * Currently only apllicable to BigQuery resources.
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp expire_time = 3;</code>
+   * <code>.google.protobuf.Timestamp expire_time = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    */
   com.google.protobuf.TimestampOrBuilder getExpireTimeOrBuilder();
 }

@@ -15,6 +15,7 @@
  */
 package com.google.cloud.compute.v1.stub;
 
+import static com.google.cloud.compute.v1.HealthCheckClient.AggregatedListHealthChecksPagedResponse;
 import static com.google.cloud.compute.v1.HealthCheckClient.ListHealthChecksPagedResponse;
 
 import com.google.api.client.http.HttpMethods;
@@ -30,10 +31,12 @@ import com.google.api.gax.httpjson.HttpJsonStubCallableFactory;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.api.pathtemplate.PathTemplate;
+import com.google.cloud.compute.v1.AggregatedListHealthChecksHttpRequest;
 import com.google.cloud.compute.v1.DeleteHealthCheckHttpRequest;
 import com.google.cloud.compute.v1.GetHealthCheckHttpRequest;
 import com.google.cloud.compute.v1.HealthCheck;
 import com.google.cloud.compute.v1.HealthCheckList;
+import com.google.cloud.compute.v1.HealthChecksAggregatedList;
 import com.google.cloud.compute.v1.InsertHealthCheckHttpRequest;
 import com.google.cloud.compute.v1.ListHealthChecksHttpRequest;
 import com.google.cloud.compute.v1.Operation;
@@ -55,6 +58,28 @@ import javax.annotation.Generated;
 @Generated("by gapic-generator")
 @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
 public class HttpJsonHealthCheckStub extends HealthCheckStub {
+  @InternalApi
+  public static final ApiMethodDescriptor<
+          AggregatedListHealthChecksHttpRequest, HealthChecksAggregatedList>
+      aggregatedListHealthChecksMethodDescriptor =
+          ApiMethodDescriptor
+              .<AggregatedListHealthChecksHttpRequest, HealthChecksAggregatedList>newBuilder()
+              .setFullMethodName("compute.healthChecks.aggregatedList")
+              .setHttpMethod(HttpMethods.GET)
+              .setRequestFormatter(
+                  ApiMessageHttpRequestFormatter.<AggregatedListHealthChecksHttpRequest>newBuilder()
+                      .setPathTemplate(PathTemplate.create("{project}/aggregated/healthChecks"))
+                      .setQueryParams(
+                          Sets.<String>newHashSet("filter", "maxResults", "orderBy", "pageToken"))
+                      .setResourceNameFactory(ProjectName.newFactory())
+                      .setResourceNameField("project")
+                      .build())
+              .setResponseParser(
+                  ApiMessageHttpResponseParser.<HealthChecksAggregatedList>newBuilder()
+                      .setResponseInstance(HealthChecksAggregatedList.getDefaultInstance())
+                      .build())
+              .build();
+
   @InternalApi
   public static final ApiMethodDescriptor<DeleteHealthCheckHttpRequest, Operation>
       deleteHealthCheckMethodDescriptor =
@@ -176,6 +201,11 @@ public class HttpJsonHealthCheckStub extends HealthCheckStub {
 
   private final BackgroundResource backgroundResources;
 
+  private final UnaryCallable<AggregatedListHealthChecksHttpRequest, HealthChecksAggregatedList>
+      aggregatedListHealthChecksCallable;
+  private final UnaryCallable<
+          AggregatedListHealthChecksHttpRequest, AggregatedListHealthChecksPagedResponse>
+      aggregatedListHealthChecksPagedCallable;
   private final UnaryCallable<DeleteHealthCheckHttpRequest, Operation> deleteHealthCheckCallable;
   private final UnaryCallable<GetHealthCheckHttpRequest, HealthCheck> getHealthCheckCallable;
   private final UnaryCallable<InsertHealthCheckHttpRequest, Operation> insertHealthCheckCallable;
@@ -226,6 +256,12 @@ public class HttpJsonHealthCheckStub extends HealthCheckStub {
       throws IOException {
     this.callableFactory = callableFactory;
 
+    HttpJsonCallSettings<AggregatedListHealthChecksHttpRequest, HealthChecksAggregatedList>
+        aggregatedListHealthChecksTransportSettings =
+            HttpJsonCallSettings
+                .<AggregatedListHealthChecksHttpRequest, HealthChecksAggregatedList>newBuilder()
+                .setMethodDescriptor(aggregatedListHealthChecksMethodDescriptor)
+                .build();
     HttpJsonCallSettings<DeleteHealthCheckHttpRequest, Operation>
         deleteHealthCheckTransportSettings =
             HttpJsonCallSettings.<DeleteHealthCheckHttpRequest, Operation>newBuilder()
@@ -255,6 +291,16 @@ public class HttpJsonHealthCheckStub extends HealthCheckStub {
                 .setMethodDescriptor(updateHealthCheckMethodDescriptor)
                 .build();
 
+    this.aggregatedListHealthChecksCallable =
+        callableFactory.createUnaryCallable(
+            aggregatedListHealthChecksTransportSettings,
+            settings.aggregatedListHealthChecksSettings(),
+            clientContext);
+    this.aggregatedListHealthChecksPagedCallable =
+        callableFactory.createPagedCallable(
+            aggregatedListHealthChecksTransportSettings,
+            settings.aggregatedListHealthChecksSettings(),
+            clientContext);
     this.deleteHealthCheckCallable =
         callableFactory.createUnaryCallable(
             deleteHealthCheckTransportSettings,
@@ -284,6 +330,19 @@ public class HttpJsonHealthCheckStub extends HealthCheckStub {
             clientContext);
 
     backgroundResources = new BackgroundResourceAggregation(clientContext.getBackgroundResources());
+  }
+
+  @BetaApi
+  public UnaryCallable<
+          AggregatedListHealthChecksHttpRequest, AggregatedListHealthChecksPagedResponse>
+      aggregatedListHealthChecksPagedCallable() {
+    return aggregatedListHealthChecksPagedCallable;
+  }
+
+  @BetaApi
+  public UnaryCallable<AggregatedListHealthChecksHttpRequest, HealthChecksAggregatedList>
+      aggregatedListHealthChecksCallable() {
+    return aggregatedListHealthChecksCallable;
   }
 
   @BetaApi

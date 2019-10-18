@@ -31,6 +31,8 @@ import com.google.cloud.spanner.v1.stub.SpannerStubSettings;
 import com.google.common.util.concurrent.MoreExecutors;
 import com.google.protobuf.ByteString;
 import com.google.protobuf.Empty;
+import com.google.spanner.v1.BatchCreateSessionsRequest;
+import com.google.spanner.v1.BatchCreateSessionsResponse;
 import com.google.spanner.v1.BeginTransactionRequest;
 import com.google.spanner.v1.CommitRequest;
 import com.google.spanner.v1.CommitResponse;
@@ -326,6 +328,131 @@ public class SpannerClient implements BackgroundResource {
    */
   public final UnaryCallable<CreateSessionRequest, Session> createSessionCallable() {
     return stub.createSessionCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Creates multiple new sessions.
+   *
+   * <p>This API can be used to initialize a session cache on the clients. See https://goo.gl/TgSFN2
+   * for best practices on session cache management.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (SpannerClient spannerClient = SpannerClient.create()) {
+   *   DatabaseName database = DatabaseName.of("[PROJECT]", "[INSTANCE]", "[DATABASE]");
+   *   int sessionCount = 0;
+   *   BatchCreateSessionsResponse response = spannerClient.batchCreateSessions(database, sessionCount);
+   * }
+   * </code></pre>
+   *
+   * @param database Required. The database in which the new sessions are created.
+   * @param sessionCount Required. The number of sessions to be created in this batch call. The API
+   *     may return fewer than the requested number of sessions. If a specific number of sessions
+   *     are desired, the client can make additional calls to BatchCreateSessions (adjusting
+   *     [session_count][google.spanner.v1.BatchCreateSessionsRequest.session_count] as necessary).
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final BatchCreateSessionsResponse batchCreateSessions(
+      DatabaseName database, int sessionCount) {
+
+    BatchCreateSessionsRequest request =
+        BatchCreateSessionsRequest.newBuilder()
+            .setDatabase(database == null ? null : database.toString())
+            .setSessionCount(sessionCount)
+            .build();
+    return batchCreateSessions(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Creates multiple new sessions.
+   *
+   * <p>This API can be used to initialize a session cache on the clients. See https://goo.gl/TgSFN2
+   * for best practices on session cache management.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (SpannerClient spannerClient = SpannerClient.create()) {
+   *   DatabaseName database = DatabaseName.of("[PROJECT]", "[INSTANCE]", "[DATABASE]");
+   *   int sessionCount = 0;
+   *   BatchCreateSessionsResponse response = spannerClient.batchCreateSessions(database.toString(), sessionCount);
+   * }
+   * </code></pre>
+   *
+   * @param database Required. The database in which the new sessions are created.
+   * @param sessionCount Required. The number of sessions to be created in this batch call. The API
+   *     may return fewer than the requested number of sessions. If a specific number of sessions
+   *     are desired, the client can make additional calls to BatchCreateSessions (adjusting
+   *     [session_count][google.spanner.v1.BatchCreateSessionsRequest.session_count] as necessary).
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final BatchCreateSessionsResponse batchCreateSessions(String database, int sessionCount) {
+
+    BatchCreateSessionsRequest request =
+        BatchCreateSessionsRequest.newBuilder()
+            .setDatabase(database)
+            .setSessionCount(sessionCount)
+            .build();
+    return batchCreateSessions(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Creates multiple new sessions.
+   *
+   * <p>This API can be used to initialize a session cache on the clients. See https://goo.gl/TgSFN2
+   * for best practices on session cache management.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (SpannerClient spannerClient = SpannerClient.create()) {
+   *   DatabaseName database = DatabaseName.of("[PROJECT]", "[INSTANCE]", "[DATABASE]");
+   *   int sessionCount = 0;
+   *   BatchCreateSessionsRequest request = BatchCreateSessionsRequest.newBuilder()
+   *     .setDatabase(database.toString())
+   *     .setSessionCount(sessionCount)
+   *     .build();
+   *   BatchCreateSessionsResponse response = spannerClient.batchCreateSessions(request);
+   * }
+   * </code></pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final BatchCreateSessionsResponse batchCreateSessions(BatchCreateSessionsRequest request) {
+    return batchCreateSessionsCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Creates multiple new sessions.
+   *
+   * <p>This API can be used to initialize a session cache on the clients. See https://goo.gl/TgSFN2
+   * for best practices on session cache management.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (SpannerClient spannerClient = SpannerClient.create()) {
+   *   DatabaseName database = DatabaseName.of("[PROJECT]", "[INSTANCE]", "[DATABASE]");
+   *   int sessionCount = 0;
+   *   BatchCreateSessionsRequest request = BatchCreateSessionsRequest.newBuilder()
+   *     .setDatabase(database.toString())
+   *     .setSessionCount(sessionCount)
+   *     .build();
+   *   ApiFuture&lt;BatchCreateSessionsResponse&gt; future = spannerClient.batchCreateSessionsCallable().futureCall(request);
+   *   // Do something
+   *   BatchCreateSessionsResponse response = future.get();
+   * }
+   * </code></pre>
+   */
+  public final UnaryCallable<BatchCreateSessionsRequest, BatchCreateSessionsResponse>
+      batchCreateSessionsCallable() {
+    return stub.batchCreateSessionsCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD

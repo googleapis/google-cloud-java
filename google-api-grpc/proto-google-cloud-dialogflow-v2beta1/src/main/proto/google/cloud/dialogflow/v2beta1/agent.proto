@@ -21,7 +21,6 @@ import "google/api/annotations.proto";
 import "google/longrunning/operations.proto";
 import "google/protobuf/empty.proto";
 import "google/protobuf/field_mask.proto";
-import "google/protobuf/struct.proto";
 import "google/api/client.proto";
 
 option cc_enable_arenas = true;
@@ -70,6 +69,9 @@ service Agents {
   rpc GetAgent(GetAgentRequest) returns (Agent) {
     option (google.api.http) = {
       get: "/v2beta1/{parent=projects/*}/agent"
+      additional_bindings {
+        get: "/v2beta1/{parent=projects/*/locations/*}/agent"
+      }
     };
   }
 
@@ -78,6 +80,10 @@ service Agents {
     option (google.api.http) = {
       post: "/v2beta1/{agent.parent=projects/*}/agent"
       body: "agent"
+      additional_bindings {
+        post: "/v2beta1/{agent.parent=projects/*/locations/*}/agent"
+        body: "agent"
+      }
     };
   }
 
@@ -85,6 +91,9 @@ service Agents {
   rpc DeleteAgent(DeleteAgentRequest) returns (google.protobuf.Empty) {
     option (google.api.http) = {
       delete: "/v2beta1/{parent=projects/*}/agent"
+      additional_bindings {
+        delete: "/v2beta1/{parent=projects/*/locations/*}/agent"
+      }
     };
   }
 
@@ -109,6 +118,10 @@ service Agents {
     option (google.api.http) = {
       post: "/v2beta1/{parent=projects/*}/agent:train"
       body: "*"
+      additional_bindings {
+        post: "/v2beta1/{parent=projects/*/locations/*}/agent:train"
+        body: "*"
+      }
     };
   }
 
@@ -120,6 +133,10 @@ service Agents {
     option (google.api.http) = {
       post: "/v2beta1/{parent=projects/*}/agent:export"
       body: "*"
+      additional_bindings {
+        post: "/v2beta1/{parent=projects/*/locations/*}/agent:export"
+        body: "*"
+      }
     };
   }
 
@@ -135,6 +152,10 @@ service Agents {
     option (google.api.http) = {
       post: "/v2beta1/{parent=projects/*}/agent:import"
       body: "*"
+      additional_bindings {
+        post: "/v2beta1/{parent=projects/*/locations/*}/agent:import"
+        body: "*"
+      }
     };
   }
 
@@ -149,6 +170,10 @@ service Agents {
     option (google.api.http) = {
       post: "/v2beta1/{parent=projects/*}/agent:restore"
       body: "*"
+      additional_bindings {
+        post: "/v2beta1/{parent=projects/*/locations/*}/agent:restore"
+        body: "*"
+      }
     };
   }
 }

@@ -15,6 +15,8 @@
  */
 package com.google.cloud.bigtable.admin.v2;
 
+import static com.google.cloud.bigtable.admin.v2.BigtableTableAdminSettings.BIGTABLE_EMULATOR_HOST_ENV_VAR;
+
 import com.google.api.gax.core.CredentialsProvider;
 import com.google.cloud.bigtable.admin.v2.stub.BigtableInstanceAdminStubSettings;
 import com.google.common.base.Preconditions;
@@ -79,6 +81,9 @@ public final class BigtableInstanceAdminSettings {
 
   /** Returns a new builder for this class. */
   public static Builder newBuilder() {
+    Preconditions.checkState(
+        System.getenv(BIGTABLE_EMULATOR_HOST_ENV_VAR) == null,
+        "BigtableInstanceAdminSettings doesn't supported on Emulator");
     return new Builder();
   }
 

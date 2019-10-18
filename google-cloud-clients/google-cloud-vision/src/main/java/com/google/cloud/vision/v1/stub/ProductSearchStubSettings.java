@@ -69,6 +69,7 @@ import com.google.cloud.vision.v1.ListReferenceImagesRequest;
 import com.google.cloud.vision.v1.ListReferenceImagesResponse;
 import com.google.cloud.vision.v1.Product;
 import com.google.cloud.vision.v1.ProductSet;
+import com.google.cloud.vision.v1.PurgeProductsRequest;
 import com.google.cloud.vision.v1.ReferenceImage;
 import com.google.cloud.vision.v1.RemoveProductFromProductSetRequest;
 import com.google.cloud.vision.v1.UpdateProductRequest;
@@ -155,6 +156,9 @@ public class ProductSearchStubSettings extends StubSettings<ProductSearchStubSet
   private final OperationCallSettings<
           ImportProductSetsRequest, ImportProductSetsResponse, BatchOperationMetadata>
       importProductSetsOperationSettings;
+  private final UnaryCallSettings<PurgeProductsRequest, Operation> purgeProductsSettings;
+  private final OperationCallSettings<PurgeProductsRequest, Empty, BatchOperationMetadata>
+      purgeProductsOperationSettings;
 
   /** Returns the object with the settings used for calls to createProductSet. */
   public UnaryCallSettings<CreateProductSetRequest, ProductSet> createProductSetSettings() {
@@ -265,6 +269,18 @@ public class ProductSearchStubSettings extends StubSettings<ProductSearchStubSet
     return importProductSetsOperationSettings;
   }
 
+  /** Returns the object with the settings used for calls to purgeProducts. */
+  public UnaryCallSettings<PurgeProductsRequest, Operation> purgeProductsSettings() {
+    return purgeProductsSettings;
+  }
+
+  /** Returns the object with the settings used for calls to purgeProducts. */
+  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
+  public OperationCallSettings<PurgeProductsRequest, Empty, BatchOperationMetadata>
+      purgeProductsOperationSettings() {
+    return purgeProductsOperationSettings;
+  }
+
   @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public ProductSearchStub createStub() throws IOException {
     if (getTransportChannelProvider()
@@ -299,7 +315,8 @@ public class ProductSearchStubSettings extends StubSettings<ProductSearchStubSet
 
   /** Returns a builder for the default ChannelProvider for this service. */
   public static InstantiatingGrpcChannelProvider.Builder defaultGrpcTransportProviderBuilder() {
-    return InstantiatingGrpcChannelProvider.newBuilder();
+    return InstantiatingGrpcChannelProvider.newBuilder()
+        .setMaxInboundMessageSize(Integer.MAX_VALUE);
   }
 
   public static TransportChannelProvider defaultTransportChannelProvider() {
@@ -354,6 +371,8 @@ public class ProductSearchStubSettings extends StubSettings<ProductSearchStubSet
     importProductSetsSettings = settingsBuilder.importProductSetsSettings().build();
     importProductSetsOperationSettings =
         settingsBuilder.importProductSetsOperationSettings().build();
+    purgeProductsSettings = settingsBuilder.purgeProductsSettings().build();
+    purgeProductsOperationSettings = settingsBuilder.purgeProductsOperationSettings().build();
   }
 
   private static final PagedListDescriptor<
@@ -641,6 +660,9 @@ public class ProductSearchStubSettings extends StubSettings<ProductSearchStubSet
     private final OperationCallSettings.Builder<
             ImportProductSetsRequest, ImportProductSetsResponse, BatchOperationMetadata>
         importProductSetsOperationSettings;
+    private final UnaryCallSettings.Builder<PurgeProductsRequest, Operation> purgeProductsSettings;
+    private final OperationCallSettings.Builder<PurgeProductsRequest, Empty, BatchOperationMetadata>
+        purgeProductsOperationSettings;
 
     private static final ImmutableMap<String, ImmutableSet<StatusCode.Code>>
         RETRYABLE_CODE_DEFINITIONS;
@@ -723,6 +745,10 @@ public class ProductSearchStubSettings extends StubSettings<ProductSearchStubSet
 
       importProductSetsOperationSettings = OperationCallSettings.newBuilder();
 
+      purgeProductsSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+
+      purgeProductsOperationSettings = OperationCallSettings.newBuilder();
+
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
               createProductSetSettings,
@@ -742,7 +768,8 @@ public class ProductSearchStubSettings extends StubSettings<ProductSearchStubSet
               addProductToProductSetSettings,
               removeProductFromProductSetSettings,
               listProductsInProductSetSettings,
-              importProductSetsSettings);
+              importProductSetsSettings,
+              purgeProductsSettings);
 
       initDefaults(this);
     }
@@ -847,6 +874,11 @@ public class ProductSearchStubSettings extends StubSettings<ProductSearchStubSet
           .importProductSetsSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
+
+      builder
+          .purgeProductsSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
       builder
           .importProductSetsOperationSettings()
           .setInitialCallSettings(
@@ -858,6 +890,29 @@ public class ProductSearchStubSettings extends StubSettings<ProductSearchStubSet
           .setResponseTransformer(
               ProtoOperationTransformers.ResponseTransformer.create(
                   ImportProductSetsResponse.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(BatchOperationMetadata.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelay(Duration.ofMillis(20000L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelay(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeout(Duration.ZERO) // ignored
+                      .setRpcTimeoutMultiplier(1.0) // ignored
+                      .setMaxRpcTimeout(Duration.ZERO) // ignored
+                      .setTotalTimeout(Duration.ofMillis(86400000L))
+                      .build()));
+      builder
+          .purgeProductsOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<PurgeProductsRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(Empty.class))
           .setMetadataTransformer(
               ProtoOperationTransformers.MetadataTransformer.create(BatchOperationMetadata.class))
           .setPollingAlgorithm(
@@ -898,6 +953,8 @@ public class ProductSearchStubSettings extends StubSettings<ProductSearchStubSet
       listProductsInProductSetSettings = settings.listProductsInProductSetSettings.toBuilder();
       importProductSetsSettings = settings.importProductSetsSettings.toBuilder();
       importProductSetsOperationSettings = settings.importProductSetsOperationSettings.toBuilder();
+      purgeProductsSettings = settings.purgeProductsSettings.toBuilder();
+      purgeProductsOperationSettings = settings.purgeProductsOperationSettings.toBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
@@ -918,7 +975,8 @@ public class ProductSearchStubSettings extends StubSettings<ProductSearchStubSet
               addProductToProductSetSettings,
               removeProductFromProductSetSettings,
               listProductsInProductSetSettings,
-              importProductSetsSettings);
+              importProductSetsSettings,
+              purgeProductsSettings);
     }
 
     // NEXT_MAJOR_VER: remove 'throws Exception'
@@ -1054,6 +1112,19 @@ public class ProductSearchStubSettings extends StubSettings<ProductSearchStubSet
             ImportProductSetsRequest, ImportProductSetsResponse, BatchOperationMetadata>
         importProductSetsOperationSettings() {
       return importProductSetsOperationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to purgeProducts. */
+    public UnaryCallSettings.Builder<PurgeProductsRequest, Operation> purgeProductsSettings() {
+      return purgeProductsSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to purgeProducts. */
+    @BetaApi(
+        "The surface for use by generated code is not stable yet and may change in the future.")
+    public OperationCallSettings.Builder<PurgeProductsRequest, Empty, BatchOperationMetadata>
+        purgeProductsOperationSettings() {
+      return purgeProductsOperationSettings;
     }
 
     @Override

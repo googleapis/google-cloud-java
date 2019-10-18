@@ -55,8 +55,9 @@ public interface EntityOrBuilder
    *
    * <pre>
    * Metadata associated with the entity.
-   * Currently, Wikipedia URLs and Knowledge Graph MIDs are provided, if
-   * available. The associated keys are "wikipedia_url" and "mid", respectively.
+   * For most entity types, the metadata is a Wikipedia URL (`wikipedia_url`)
+   * and Knowledge Graph MID (`mid`), if they are available. For the metadata
+   * associated with other entity types, see the Type table below.
    * </pre>
    *
    * <code>map&lt;string, string&gt; metadata = 3;</code>
@@ -67,8 +68,9 @@ public interface EntityOrBuilder
    *
    * <pre>
    * Metadata associated with the entity.
-   * Currently, Wikipedia URLs and Knowledge Graph MIDs are provided, if
-   * available. The associated keys are "wikipedia_url" and "mid", respectively.
+   * For most entity types, the metadata is a Wikipedia URL (`wikipedia_url`)
+   * and Knowledge Graph MID (`mid`), if they are available. For the metadata
+   * associated with other entity types, see the Type table below.
    * </pre>
    *
    * <code>map&lt;string, string&gt; metadata = 3;</code>
@@ -82,8 +84,9 @@ public interface EntityOrBuilder
    *
    * <pre>
    * Metadata associated with the entity.
-   * Currently, Wikipedia URLs and Knowledge Graph MIDs are provided, if
-   * available. The associated keys are "wikipedia_url" and "mid", respectively.
+   * For most entity types, the metadata is a Wikipedia URL (`wikipedia_url`)
+   * and Knowledge Graph MID (`mid`), if they are available. For the metadata
+   * associated with other entity types, see the Type table below.
    * </pre>
    *
    * <code>map&lt;string, string&gt; metadata = 3;</code>
@@ -94,8 +97,9 @@ public interface EntityOrBuilder
    *
    * <pre>
    * Metadata associated with the entity.
-   * Currently, Wikipedia URLs and Knowledge Graph MIDs are provided, if
-   * available. The associated keys are "wikipedia_url" and "mid", respectively.
+   * For most entity types, the metadata is a Wikipedia URL (`wikipedia_url`)
+   * and Knowledge Graph MID (`mid`), if they are available. For the metadata
+   * associated with other entity types, see the Type table below.
    * </pre>
    *
    * <code>map&lt;string, string&gt; metadata = 3;</code>
@@ -106,8 +110,9 @@ public interface EntityOrBuilder
    *
    * <pre>
    * Metadata associated with the entity.
-   * Currently, Wikipedia URLs and Knowledge Graph MIDs are provided, if
-   * available. The associated keys are "wikipedia_url" and "mid", respectively.
+   * For most entity types, the metadata is a Wikipedia URL (`wikipedia_url`)
+   * and Knowledge Graph MID (`mid`), if they are available. For the metadata
+   * associated with other entity types, see the Type table below.
    * </pre>
    *
    * <code>map&lt;string, string&gt; metadata = 3;</code>
@@ -191,9 +196,9 @@ public interface EntityOrBuilder
    *
    * <pre>
    * For calls to [AnalyzeEntitySentiment][] or if
-   * [AnnotateTextRequest.Features.extract_entity_sentiment][google.cloud.language.v1beta2.AnnotateTextRequest.Features.extract_entity_sentiment]
-   * is set to true, this field will contain the aggregate sentiment expressed
-   * for this entity in the provided document.
+   * [AnnotateTextRequest.Features.extract_entity_sentiment][google.cloud.language.v1beta2.AnnotateTextRequest.Features.extract_entity_sentiment] is set to
+   * true, this field will contain the aggregate sentiment expressed for this
+   * entity in the provided document.
    * </pre>
    *
    * <code>.google.cloud.language.v1beta2.Sentiment sentiment = 6;</code>
@@ -204,9 +209,9 @@ public interface EntityOrBuilder
    *
    * <pre>
    * For calls to [AnalyzeEntitySentiment][] or if
-   * [AnnotateTextRequest.Features.extract_entity_sentiment][google.cloud.language.v1beta2.AnnotateTextRequest.Features.extract_entity_sentiment]
-   * is set to true, this field will contain the aggregate sentiment expressed
-   * for this entity in the provided document.
+   * [AnnotateTextRequest.Features.extract_entity_sentiment][google.cloud.language.v1beta2.AnnotateTextRequest.Features.extract_entity_sentiment] is set to
+   * true, this field will contain the aggregate sentiment expressed for this
+   * entity in the provided document.
    * </pre>
    *
    * <code>.google.cloud.language.v1beta2.Sentiment sentiment = 6;</code>
@@ -217,9 +222,9 @@ public interface EntityOrBuilder
    *
    * <pre>
    * For calls to [AnalyzeEntitySentiment][] or if
-   * [AnnotateTextRequest.Features.extract_entity_sentiment][google.cloud.language.v1beta2.AnnotateTextRequest.Features.extract_entity_sentiment]
-   * is set to true, this field will contain the aggregate sentiment expressed
-   * for this entity in the provided document.
+   * [AnnotateTextRequest.Features.extract_entity_sentiment][google.cloud.language.v1beta2.AnnotateTextRequest.Features.extract_entity_sentiment] is set to
+   * true, this field will contain the aggregate sentiment expressed for this
+   * entity in the provided document.
    * </pre>
    *
    * <code>.google.cloud.language.v1beta2.Sentiment sentiment = 6;</code>

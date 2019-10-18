@@ -132,10 +132,12 @@ public final class AudioConfig extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Required. The format of the requested audio byte stream.
+   * Required. The format of the audio byte stream.
    * </pre>
    *
-   * <code>.google.cloud.texttospeech.v1.AudioEncoding audio_encoding = 1;</code>
+   * <code>
+   * .google.cloud.texttospeech.v1.AudioEncoding audio_encoding = 1 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   public int getAudioEncodingValue() {
     return audioEncoding_;
@@ -144,10 +146,12 @@ public final class AudioConfig extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Required. The format of the requested audio byte stream.
+   * Required. The format of the audio byte stream.
    * </pre>
    *
-   * <code>.google.cloud.texttospeech.v1.AudioEncoding audio_encoding = 1;</code>
+   * <code>
+   * .google.cloud.texttospeech.v1.AudioEncoding audio_encoding = 1 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   public com.google.cloud.texttospeech.v1.AudioEncoding getAudioEncoding() {
     @SuppressWarnings("deprecation")
@@ -162,13 +166,15 @@ public final class AudioConfig extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional speaking rate/speed, in the range [0.25, 4.0]. 1.0 is the normal
-   * native speed supported by the specific voice. 2.0 is twice as fast, and
-   * 0.5 is half as fast. If unset(0.0), defaults to the native 1.0 speed. Any
-   * other values &lt; 0.25 or &gt; 4.0 will return an error.
+   * Optional. Input only. Speaking rate/speed, in the range [0.25, 4.0]. 1.0 is
+   * the normal native speed supported by the specific voice. 2.0 is twice as
+   * fast, and 0.5 is half as fast. If unset(0.0), defaults to the native 1.0
+   * speed. Any other values &lt; 0.25 or &gt; 4.0 will return an error.
    * </pre>
    *
-   * <code>double speaking_rate = 2;</code>
+   * <code>
+   * double speaking_rate = 2 [(.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   public double getSpeakingRate() {
     return speakingRate_;
@@ -180,12 +186,14 @@ public final class AudioConfig extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional speaking pitch, in the range [-20.0, 20.0]. 20 means increase 20
-   * semitones from the original pitch. -20 means decrease 20 semitones from the
-   * original pitch.
+   * Optional. Input only. Speaking pitch, in the range [-20.0, 20.0]. 20 means
+   * increase 20 semitones from the original pitch. -20 means decrease 20
+   * semitones from the original pitch.
    * </pre>
    *
-   * <code>double pitch = 3;</code>
+   * <code>
+   * double pitch = 3 [(.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   public double getPitch() {
     return pitch_;
@@ -197,17 +205,19 @@ public final class AudioConfig extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional volume gain (in dB) of the normal native volume supported by the
-   * specific voice, in the range [-96.0, 16.0]. If unset, or set to a value of
-   * 0.0 (dB), will play at normal native signal amplitude. A value of -6.0 (dB)
-   * will play at approximately half the amplitude of the normal native signal
-   * amplitude. A value of +6.0 (dB) will play at approximately twice the
-   * amplitude of the normal native signal amplitude. Strongly recommend not to
-   * exceed +10 (dB) as there's usually no effective increase in loudness for
-   * any value greater than that.
+   * Optional. Input only. Volume gain (in dB) of the normal native volume
+   * supported by the specific voice, in the range [-96.0, 16.0]. If unset, or
+   * set to a value of 0.0 (dB), will play at normal native signal amplitude. A
+   * value of -6.0 (dB) will play at approximately half the amplitude of the
+   * normal native signal amplitude. A value of +6.0 (dB) will play at
+   * approximately twice the amplitude of the normal native signal amplitude.
+   * Strongly recommend not to exceed +10 (dB) as there's usually no effective
+   * increase in loudness for any value greater than that.
    * </pre>
    *
-   * <code>double volume_gain_db = 4;</code>
+   * <code>
+   * double volume_gain_db = 4 [(.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   public double getVolumeGainDb() {
     return volumeGainDb_;
@@ -219,15 +229,16 @@ public final class AudioConfig extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The synthesis sample rate (in hertz) for this audio. Optional.  If this is
-   * different from the voice's natural sample rate, then the synthesizer will
-   * honor this request by converting to the desired sample rate (which might
-   * result in worse audio quality), unless the specified sample rate is not
-   * supported for the encoding chosen, in which case it will fail the request
-   * and return [google.rpc.Code.INVALID_ARGUMENT][].
+   * Optional. The synthesis sample rate (in hertz) for this audio. When this is
+   * specified in SynthesizeSpeechRequest, if this is different from the voice's
+   * natural sample rate, then the synthesizer will honor this request by
+   * converting to the desired sample rate (which might result in worse audio
+   * quality), unless the specified sample rate is not supported for the
+   * encoding chosen, in which case it will fail the request and return
+   * [google.rpc.Code.INVALID_ARGUMENT][].
    * </pre>
    *
-   * <code>int32 sample_rate_hertz = 5;</code>
+   * <code>int32 sample_rate_hertz = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   public int getSampleRateHertz() {
     return sampleRateHertz_;
@@ -239,16 +250,17 @@ public final class AudioConfig extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * An identifier which selects 'audio effects' profiles that are applied on
-   * (post synthesized) text to speech.
-   * Effects are applied on top of each other in the order they are given.
-   * See
-   * [audio-profiles](https:
-   * //cloud.google.com/text-to-speech/docs/audio-profiles)
-   * for current supported profile ids.
+   * Optional. Input only. An identifier which selects 'audio effects' profiles
+   * that are applied on (post synthesized) text to speech. Effects are applied
+   * on top of each other in the order they are given. See
+   * [audio
+   * profiles](https://cloud.google.com/text-to-speech/docs/audio-profiles) for
+   * current supported profile ids.
    * </pre>
    *
-   * <code>repeated string effects_profile_id = 6;</code>
+   * <code>
+   * repeated string effects_profile_id = 6 [(.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   public com.google.protobuf.ProtocolStringList getEffectsProfileIdList() {
     return effectsProfileId_;
@@ -257,16 +269,17 @@ public final class AudioConfig extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * An identifier which selects 'audio effects' profiles that are applied on
-   * (post synthesized) text to speech.
-   * Effects are applied on top of each other in the order they are given.
-   * See
-   * [audio-profiles](https:
-   * //cloud.google.com/text-to-speech/docs/audio-profiles)
-   * for current supported profile ids.
+   * Optional. Input only. An identifier which selects 'audio effects' profiles
+   * that are applied on (post synthesized) text to speech. Effects are applied
+   * on top of each other in the order they are given. See
+   * [audio
+   * profiles](https://cloud.google.com/text-to-speech/docs/audio-profiles) for
+   * current supported profile ids.
    * </pre>
    *
-   * <code>repeated string effects_profile_id = 6;</code>
+   * <code>
+   * repeated string effects_profile_id = 6 [(.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   public int getEffectsProfileIdCount() {
     return effectsProfileId_.size();
@@ -275,16 +288,17 @@ public final class AudioConfig extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * An identifier which selects 'audio effects' profiles that are applied on
-   * (post synthesized) text to speech.
-   * Effects are applied on top of each other in the order they are given.
-   * See
-   * [audio-profiles](https:
-   * //cloud.google.com/text-to-speech/docs/audio-profiles)
-   * for current supported profile ids.
+   * Optional. Input only. An identifier which selects 'audio effects' profiles
+   * that are applied on (post synthesized) text to speech. Effects are applied
+   * on top of each other in the order they are given. See
+   * [audio
+   * profiles](https://cloud.google.com/text-to-speech/docs/audio-profiles) for
+   * current supported profile ids.
    * </pre>
    *
-   * <code>repeated string effects_profile_id = 6;</code>
+   * <code>
+   * repeated string effects_profile_id = 6 [(.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   public java.lang.String getEffectsProfileId(int index) {
     return effectsProfileId_.get(index);
@@ -293,16 +307,17 @@ public final class AudioConfig extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * An identifier which selects 'audio effects' profiles that are applied on
-   * (post synthesized) text to speech.
-   * Effects are applied on top of each other in the order they are given.
-   * See
-   * [audio-profiles](https:
-   * //cloud.google.com/text-to-speech/docs/audio-profiles)
-   * for current supported profile ids.
+   * Optional. Input only. An identifier which selects 'audio effects' profiles
+   * that are applied on (post synthesized) text to speech. Effects are applied
+   * on top of each other in the order they are given. See
+   * [audio
+   * profiles](https://cloud.google.com/text-to-speech/docs/audio-profiles) for
+   * current supported profile ids.
    * </pre>
    *
-   * <code>repeated string effects_profile_id = 6;</code>
+   * <code>
+   * repeated string effects_profile_id = 6 [(.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   public com.google.protobuf.ByteString getEffectsProfileIdBytes(int index) {
     return effectsProfileId_.getByteString(index);
@@ -739,10 +754,12 @@ public final class AudioConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The format of the requested audio byte stream.
+     * Required. The format of the audio byte stream.
      * </pre>
      *
-     * <code>.google.cloud.texttospeech.v1.AudioEncoding audio_encoding = 1;</code>
+     * <code>
+     * .google.cloud.texttospeech.v1.AudioEncoding audio_encoding = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public int getAudioEncodingValue() {
       return audioEncoding_;
@@ -751,10 +768,12 @@ public final class AudioConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The format of the requested audio byte stream.
+     * Required. The format of the audio byte stream.
      * </pre>
      *
-     * <code>.google.cloud.texttospeech.v1.AudioEncoding audio_encoding = 1;</code>
+     * <code>
+     * .google.cloud.texttospeech.v1.AudioEncoding audio_encoding = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder setAudioEncodingValue(int value) {
       audioEncoding_ = value;
@@ -765,10 +784,12 @@ public final class AudioConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The format of the requested audio byte stream.
+     * Required. The format of the audio byte stream.
      * </pre>
      *
-     * <code>.google.cloud.texttospeech.v1.AudioEncoding audio_encoding = 1;</code>
+     * <code>
+     * .google.cloud.texttospeech.v1.AudioEncoding audio_encoding = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public com.google.cloud.texttospeech.v1.AudioEncoding getAudioEncoding() {
       @SuppressWarnings("deprecation")
@@ -780,10 +801,12 @@ public final class AudioConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The format of the requested audio byte stream.
+     * Required. The format of the audio byte stream.
      * </pre>
      *
-     * <code>.google.cloud.texttospeech.v1.AudioEncoding audio_encoding = 1;</code>
+     * <code>
+     * .google.cloud.texttospeech.v1.AudioEncoding audio_encoding = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder setAudioEncoding(com.google.cloud.texttospeech.v1.AudioEncoding value) {
       if (value == null) {
@@ -798,10 +821,12 @@ public final class AudioConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The format of the requested audio byte stream.
+     * Required. The format of the audio byte stream.
      * </pre>
      *
-     * <code>.google.cloud.texttospeech.v1.AudioEncoding audio_encoding = 1;</code>
+     * <code>
+     * .google.cloud.texttospeech.v1.AudioEncoding audio_encoding = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder clearAudioEncoding() {
 
@@ -815,13 +840,15 @@ public final class AudioConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional speaking rate/speed, in the range [0.25, 4.0]. 1.0 is the normal
-     * native speed supported by the specific voice. 2.0 is twice as fast, and
-     * 0.5 is half as fast. If unset(0.0), defaults to the native 1.0 speed. Any
-     * other values &lt; 0.25 or &gt; 4.0 will return an error.
+     * Optional. Input only. Speaking rate/speed, in the range [0.25, 4.0]. 1.0 is
+     * the normal native speed supported by the specific voice. 2.0 is twice as
+     * fast, and 0.5 is half as fast. If unset(0.0), defaults to the native 1.0
+     * speed. Any other values &lt; 0.25 or &gt; 4.0 will return an error.
      * </pre>
      *
-     * <code>double speaking_rate = 2;</code>
+     * <code>
+     * double speaking_rate = 2 [(.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public double getSpeakingRate() {
       return speakingRate_;
@@ -830,13 +857,15 @@ public final class AudioConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional speaking rate/speed, in the range [0.25, 4.0]. 1.0 is the normal
-     * native speed supported by the specific voice. 2.0 is twice as fast, and
-     * 0.5 is half as fast. If unset(0.0), defaults to the native 1.0 speed. Any
-     * other values &lt; 0.25 or &gt; 4.0 will return an error.
+     * Optional. Input only. Speaking rate/speed, in the range [0.25, 4.0]. 1.0 is
+     * the normal native speed supported by the specific voice. 2.0 is twice as
+     * fast, and 0.5 is half as fast. If unset(0.0), defaults to the native 1.0
+     * speed. Any other values &lt; 0.25 or &gt; 4.0 will return an error.
      * </pre>
      *
-     * <code>double speaking_rate = 2;</code>
+     * <code>
+     * double speaking_rate = 2 [(.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder setSpeakingRate(double value) {
 
@@ -848,13 +877,15 @@ public final class AudioConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional speaking rate/speed, in the range [0.25, 4.0]. 1.0 is the normal
-     * native speed supported by the specific voice. 2.0 is twice as fast, and
-     * 0.5 is half as fast. If unset(0.0), defaults to the native 1.0 speed. Any
-     * other values &lt; 0.25 or &gt; 4.0 will return an error.
+     * Optional. Input only. Speaking rate/speed, in the range [0.25, 4.0]. 1.0 is
+     * the normal native speed supported by the specific voice. 2.0 is twice as
+     * fast, and 0.5 is half as fast. If unset(0.0), defaults to the native 1.0
+     * speed. Any other values &lt; 0.25 or &gt; 4.0 will return an error.
      * </pre>
      *
-     * <code>double speaking_rate = 2;</code>
+     * <code>
+     * double speaking_rate = 2 [(.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder clearSpeakingRate() {
 
@@ -868,12 +899,14 @@ public final class AudioConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional speaking pitch, in the range [-20.0, 20.0]. 20 means increase 20
-     * semitones from the original pitch. -20 means decrease 20 semitones from the
-     * original pitch.
+     * Optional. Input only. Speaking pitch, in the range [-20.0, 20.0]. 20 means
+     * increase 20 semitones from the original pitch. -20 means decrease 20
+     * semitones from the original pitch.
      * </pre>
      *
-     * <code>double pitch = 3;</code>
+     * <code>
+     * double pitch = 3 [(.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public double getPitch() {
       return pitch_;
@@ -882,12 +915,14 @@ public final class AudioConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional speaking pitch, in the range [-20.0, 20.0]. 20 means increase 20
-     * semitones from the original pitch. -20 means decrease 20 semitones from the
-     * original pitch.
+     * Optional. Input only. Speaking pitch, in the range [-20.0, 20.0]. 20 means
+     * increase 20 semitones from the original pitch. -20 means decrease 20
+     * semitones from the original pitch.
      * </pre>
      *
-     * <code>double pitch = 3;</code>
+     * <code>
+     * double pitch = 3 [(.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder setPitch(double value) {
 
@@ -899,12 +934,14 @@ public final class AudioConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional speaking pitch, in the range [-20.0, 20.0]. 20 means increase 20
-     * semitones from the original pitch. -20 means decrease 20 semitones from the
-     * original pitch.
+     * Optional. Input only. Speaking pitch, in the range [-20.0, 20.0]. 20 means
+     * increase 20 semitones from the original pitch. -20 means decrease 20
+     * semitones from the original pitch.
      * </pre>
      *
-     * <code>double pitch = 3;</code>
+     * <code>
+     * double pitch = 3 [(.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder clearPitch() {
 
@@ -918,17 +955,19 @@ public final class AudioConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional volume gain (in dB) of the normal native volume supported by the
-     * specific voice, in the range [-96.0, 16.0]. If unset, or set to a value of
-     * 0.0 (dB), will play at normal native signal amplitude. A value of -6.0 (dB)
-     * will play at approximately half the amplitude of the normal native signal
-     * amplitude. A value of +6.0 (dB) will play at approximately twice the
-     * amplitude of the normal native signal amplitude. Strongly recommend not to
-     * exceed +10 (dB) as there's usually no effective increase in loudness for
-     * any value greater than that.
+     * Optional. Input only. Volume gain (in dB) of the normal native volume
+     * supported by the specific voice, in the range [-96.0, 16.0]. If unset, or
+     * set to a value of 0.0 (dB), will play at normal native signal amplitude. A
+     * value of -6.0 (dB) will play at approximately half the amplitude of the
+     * normal native signal amplitude. A value of +6.0 (dB) will play at
+     * approximately twice the amplitude of the normal native signal amplitude.
+     * Strongly recommend not to exceed +10 (dB) as there's usually no effective
+     * increase in loudness for any value greater than that.
      * </pre>
      *
-     * <code>double volume_gain_db = 4;</code>
+     * <code>
+     * double volume_gain_db = 4 [(.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public double getVolumeGainDb() {
       return volumeGainDb_;
@@ -937,17 +976,19 @@ public final class AudioConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional volume gain (in dB) of the normal native volume supported by the
-     * specific voice, in the range [-96.0, 16.0]. If unset, or set to a value of
-     * 0.0 (dB), will play at normal native signal amplitude. A value of -6.0 (dB)
-     * will play at approximately half the amplitude of the normal native signal
-     * amplitude. A value of +6.0 (dB) will play at approximately twice the
-     * amplitude of the normal native signal amplitude. Strongly recommend not to
-     * exceed +10 (dB) as there's usually no effective increase in loudness for
-     * any value greater than that.
+     * Optional. Input only. Volume gain (in dB) of the normal native volume
+     * supported by the specific voice, in the range [-96.0, 16.0]. If unset, or
+     * set to a value of 0.0 (dB), will play at normal native signal amplitude. A
+     * value of -6.0 (dB) will play at approximately half the amplitude of the
+     * normal native signal amplitude. A value of +6.0 (dB) will play at
+     * approximately twice the amplitude of the normal native signal amplitude.
+     * Strongly recommend not to exceed +10 (dB) as there's usually no effective
+     * increase in loudness for any value greater than that.
      * </pre>
      *
-     * <code>double volume_gain_db = 4;</code>
+     * <code>
+     * double volume_gain_db = 4 [(.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder setVolumeGainDb(double value) {
 
@@ -959,17 +1000,19 @@ public final class AudioConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional volume gain (in dB) of the normal native volume supported by the
-     * specific voice, in the range [-96.0, 16.0]. If unset, or set to a value of
-     * 0.0 (dB), will play at normal native signal amplitude. A value of -6.0 (dB)
-     * will play at approximately half the amplitude of the normal native signal
-     * amplitude. A value of +6.0 (dB) will play at approximately twice the
-     * amplitude of the normal native signal amplitude. Strongly recommend not to
-     * exceed +10 (dB) as there's usually no effective increase in loudness for
-     * any value greater than that.
+     * Optional. Input only. Volume gain (in dB) of the normal native volume
+     * supported by the specific voice, in the range [-96.0, 16.0]. If unset, or
+     * set to a value of 0.0 (dB), will play at normal native signal amplitude. A
+     * value of -6.0 (dB) will play at approximately half the amplitude of the
+     * normal native signal amplitude. A value of +6.0 (dB) will play at
+     * approximately twice the amplitude of the normal native signal amplitude.
+     * Strongly recommend not to exceed +10 (dB) as there's usually no effective
+     * increase in loudness for any value greater than that.
      * </pre>
      *
-     * <code>double volume_gain_db = 4;</code>
+     * <code>
+     * double volume_gain_db = 4 [(.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder clearVolumeGainDb() {
 
@@ -983,15 +1026,16 @@ public final class AudioConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The synthesis sample rate (in hertz) for this audio. Optional.  If this is
-     * different from the voice's natural sample rate, then the synthesizer will
-     * honor this request by converting to the desired sample rate (which might
-     * result in worse audio quality), unless the specified sample rate is not
-     * supported for the encoding chosen, in which case it will fail the request
-     * and return [google.rpc.Code.INVALID_ARGUMENT][].
+     * Optional. The synthesis sample rate (in hertz) for this audio. When this is
+     * specified in SynthesizeSpeechRequest, if this is different from the voice's
+     * natural sample rate, then the synthesizer will honor this request by
+     * converting to the desired sample rate (which might result in worse audio
+     * quality), unless the specified sample rate is not supported for the
+     * encoding chosen, in which case it will fail the request and return
+     * [google.rpc.Code.INVALID_ARGUMENT][].
      * </pre>
      *
-     * <code>int32 sample_rate_hertz = 5;</code>
+     * <code>int32 sample_rate_hertz = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public int getSampleRateHertz() {
       return sampleRateHertz_;
@@ -1000,15 +1044,16 @@ public final class AudioConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The synthesis sample rate (in hertz) for this audio. Optional.  If this is
-     * different from the voice's natural sample rate, then the synthesizer will
-     * honor this request by converting to the desired sample rate (which might
-     * result in worse audio quality), unless the specified sample rate is not
-     * supported for the encoding chosen, in which case it will fail the request
-     * and return [google.rpc.Code.INVALID_ARGUMENT][].
+     * Optional. The synthesis sample rate (in hertz) for this audio. When this is
+     * specified in SynthesizeSpeechRequest, if this is different from the voice's
+     * natural sample rate, then the synthesizer will honor this request by
+     * converting to the desired sample rate (which might result in worse audio
+     * quality), unless the specified sample rate is not supported for the
+     * encoding chosen, in which case it will fail the request and return
+     * [google.rpc.Code.INVALID_ARGUMENT][].
      * </pre>
      *
-     * <code>int32 sample_rate_hertz = 5;</code>
+     * <code>int32 sample_rate_hertz = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public Builder setSampleRateHertz(int value) {
 
@@ -1020,15 +1065,16 @@ public final class AudioConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The synthesis sample rate (in hertz) for this audio. Optional.  If this is
-     * different from the voice's natural sample rate, then the synthesizer will
-     * honor this request by converting to the desired sample rate (which might
-     * result in worse audio quality), unless the specified sample rate is not
-     * supported for the encoding chosen, in which case it will fail the request
-     * and return [google.rpc.Code.INVALID_ARGUMENT][].
+     * Optional. The synthesis sample rate (in hertz) for this audio. When this is
+     * specified in SynthesizeSpeechRequest, if this is different from the voice's
+     * natural sample rate, then the synthesizer will honor this request by
+     * converting to the desired sample rate (which might result in worse audio
+     * quality), unless the specified sample rate is not supported for the
+     * encoding chosen, in which case it will fail the request and return
+     * [google.rpc.Code.INVALID_ARGUMENT][].
      * </pre>
      *
-     * <code>int32 sample_rate_hertz = 5;</code>
+     * <code>int32 sample_rate_hertz = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public Builder clearSampleRateHertz() {
 
@@ -1050,16 +1096,17 @@ public final class AudioConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * An identifier which selects 'audio effects' profiles that are applied on
-     * (post synthesized) text to speech.
-     * Effects are applied on top of each other in the order they are given.
-     * See
-     * [audio-profiles](https:
-     * //cloud.google.com/text-to-speech/docs/audio-profiles)
-     * for current supported profile ids.
+     * Optional. Input only. An identifier which selects 'audio effects' profiles
+     * that are applied on (post synthesized) text to speech. Effects are applied
+     * on top of each other in the order they are given. See
+     * [audio
+     * profiles](https://cloud.google.com/text-to-speech/docs/audio-profiles) for
+     * current supported profile ids.
      * </pre>
      *
-     * <code>repeated string effects_profile_id = 6;</code>
+     * <code>
+     * repeated string effects_profile_id = 6 [(.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public com.google.protobuf.ProtocolStringList getEffectsProfileIdList() {
       return effectsProfileId_.getUnmodifiableView();
@@ -1068,16 +1115,17 @@ public final class AudioConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * An identifier which selects 'audio effects' profiles that are applied on
-     * (post synthesized) text to speech.
-     * Effects are applied on top of each other in the order they are given.
-     * See
-     * [audio-profiles](https:
-     * //cloud.google.com/text-to-speech/docs/audio-profiles)
-     * for current supported profile ids.
+     * Optional. Input only. An identifier which selects 'audio effects' profiles
+     * that are applied on (post synthesized) text to speech. Effects are applied
+     * on top of each other in the order they are given. See
+     * [audio
+     * profiles](https://cloud.google.com/text-to-speech/docs/audio-profiles) for
+     * current supported profile ids.
      * </pre>
      *
-     * <code>repeated string effects_profile_id = 6;</code>
+     * <code>
+     * repeated string effects_profile_id = 6 [(.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public int getEffectsProfileIdCount() {
       return effectsProfileId_.size();
@@ -1086,16 +1134,17 @@ public final class AudioConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * An identifier which selects 'audio effects' profiles that are applied on
-     * (post synthesized) text to speech.
-     * Effects are applied on top of each other in the order they are given.
-     * See
-     * [audio-profiles](https:
-     * //cloud.google.com/text-to-speech/docs/audio-profiles)
-     * for current supported profile ids.
+     * Optional. Input only. An identifier which selects 'audio effects' profiles
+     * that are applied on (post synthesized) text to speech. Effects are applied
+     * on top of each other in the order they are given. See
+     * [audio
+     * profiles](https://cloud.google.com/text-to-speech/docs/audio-profiles) for
+     * current supported profile ids.
      * </pre>
      *
-     * <code>repeated string effects_profile_id = 6;</code>
+     * <code>
+     * repeated string effects_profile_id = 6 [(.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public java.lang.String getEffectsProfileId(int index) {
       return effectsProfileId_.get(index);
@@ -1104,16 +1153,17 @@ public final class AudioConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * An identifier which selects 'audio effects' profiles that are applied on
-     * (post synthesized) text to speech.
-     * Effects are applied on top of each other in the order they are given.
-     * See
-     * [audio-profiles](https:
-     * //cloud.google.com/text-to-speech/docs/audio-profiles)
-     * for current supported profile ids.
+     * Optional. Input only. An identifier which selects 'audio effects' profiles
+     * that are applied on (post synthesized) text to speech. Effects are applied
+     * on top of each other in the order they are given. See
+     * [audio
+     * profiles](https://cloud.google.com/text-to-speech/docs/audio-profiles) for
+     * current supported profile ids.
      * </pre>
      *
-     * <code>repeated string effects_profile_id = 6;</code>
+     * <code>
+     * repeated string effects_profile_id = 6 [(.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public com.google.protobuf.ByteString getEffectsProfileIdBytes(int index) {
       return effectsProfileId_.getByteString(index);
@@ -1122,16 +1172,17 @@ public final class AudioConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * An identifier which selects 'audio effects' profiles that are applied on
-     * (post synthesized) text to speech.
-     * Effects are applied on top of each other in the order they are given.
-     * See
-     * [audio-profiles](https:
-     * //cloud.google.com/text-to-speech/docs/audio-profiles)
-     * for current supported profile ids.
+     * Optional. Input only. An identifier which selects 'audio effects' profiles
+     * that are applied on (post synthesized) text to speech. Effects are applied
+     * on top of each other in the order they are given. See
+     * [audio
+     * profiles](https://cloud.google.com/text-to-speech/docs/audio-profiles) for
+     * current supported profile ids.
      * </pre>
      *
-     * <code>repeated string effects_profile_id = 6;</code>
+     * <code>
+     * repeated string effects_profile_id = 6 [(.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder setEffectsProfileId(int index, java.lang.String value) {
       if (value == null) {
@@ -1146,16 +1197,17 @@ public final class AudioConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * An identifier which selects 'audio effects' profiles that are applied on
-     * (post synthesized) text to speech.
-     * Effects are applied on top of each other in the order they are given.
-     * See
-     * [audio-profiles](https:
-     * //cloud.google.com/text-to-speech/docs/audio-profiles)
-     * for current supported profile ids.
+     * Optional. Input only. An identifier which selects 'audio effects' profiles
+     * that are applied on (post synthesized) text to speech. Effects are applied
+     * on top of each other in the order they are given. See
+     * [audio
+     * profiles](https://cloud.google.com/text-to-speech/docs/audio-profiles) for
+     * current supported profile ids.
      * </pre>
      *
-     * <code>repeated string effects_profile_id = 6;</code>
+     * <code>
+     * repeated string effects_profile_id = 6 [(.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder addEffectsProfileId(java.lang.String value) {
       if (value == null) {
@@ -1170,16 +1222,17 @@ public final class AudioConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * An identifier which selects 'audio effects' profiles that are applied on
-     * (post synthesized) text to speech.
-     * Effects are applied on top of each other in the order they are given.
-     * See
-     * [audio-profiles](https:
-     * //cloud.google.com/text-to-speech/docs/audio-profiles)
-     * for current supported profile ids.
+     * Optional. Input only. An identifier which selects 'audio effects' profiles
+     * that are applied on (post synthesized) text to speech. Effects are applied
+     * on top of each other in the order they are given. See
+     * [audio
+     * profiles](https://cloud.google.com/text-to-speech/docs/audio-profiles) for
+     * current supported profile ids.
      * </pre>
      *
-     * <code>repeated string effects_profile_id = 6;</code>
+     * <code>
+     * repeated string effects_profile_id = 6 [(.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder addAllEffectsProfileId(java.lang.Iterable<java.lang.String> values) {
       ensureEffectsProfileIdIsMutable();
@@ -1191,16 +1244,17 @@ public final class AudioConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * An identifier which selects 'audio effects' profiles that are applied on
-     * (post synthesized) text to speech.
-     * Effects are applied on top of each other in the order they are given.
-     * See
-     * [audio-profiles](https:
-     * //cloud.google.com/text-to-speech/docs/audio-profiles)
-     * for current supported profile ids.
+     * Optional. Input only. An identifier which selects 'audio effects' profiles
+     * that are applied on (post synthesized) text to speech. Effects are applied
+     * on top of each other in the order they are given. See
+     * [audio
+     * profiles](https://cloud.google.com/text-to-speech/docs/audio-profiles) for
+     * current supported profile ids.
      * </pre>
      *
-     * <code>repeated string effects_profile_id = 6;</code>
+     * <code>
+     * repeated string effects_profile_id = 6 [(.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder clearEffectsProfileId() {
       effectsProfileId_ = com.google.protobuf.LazyStringArrayList.EMPTY;
@@ -1212,16 +1266,17 @@ public final class AudioConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * An identifier which selects 'audio effects' profiles that are applied on
-     * (post synthesized) text to speech.
-     * Effects are applied on top of each other in the order they are given.
-     * See
-     * [audio-profiles](https:
-     * //cloud.google.com/text-to-speech/docs/audio-profiles)
-     * for current supported profile ids.
+     * Optional. Input only. An identifier which selects 'audio effects' profiles
+     * that are applied on (post synthesized) text to speech. Effects are applied
+     * on top of each other in the order they are given. See
+     * [audio
+     * profiles](https://cloud.google.com/text-to-speech/docs/audio-profiles) for
+     * current supported profile ids.
      * </pre>
      *
-     * <code>repeated string effects_profile_id = 6;</code>
+     * <code>
+     * repeated string effects_profile_id = 6 [(.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder addEffectsProfileIdBytes(com.google.protobuf.ByteString value) {
       if (value == null) {

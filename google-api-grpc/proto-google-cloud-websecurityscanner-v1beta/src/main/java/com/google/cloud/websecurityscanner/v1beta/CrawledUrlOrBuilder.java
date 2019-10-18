@@ -12,7 +12,6 @@ public interface CrawledUrlOrBuilder
    *
    *
    * <pre>
-   * Output only.
    * The http method of the request that was used to visit the URL, in
    * uppercase.
    * </pre>
@@ -24,7 +23,6 @@ public interface CrawledUrlOrBuilder
    *
    *
    * <pre>
-   * Output only.
    * The http method of the request that was used to visit the URL, in
    * uppercase.
    * </pre>
@@ -37,7 +35,6 @@ public interface CrawledUrlOrBuilder
    *
    *
    * <pre>
-   * Output only.
    * The URL that was crawled.
    * </pre>
    *
@@ -48,7 +45,6 @@ public interface CrawledUrlOrBuilder
    *
    *
    * <pre>
-   * Output only.
    * The URL that was crawled.
    * </pre>
    *
@@ -60,7 +56,6 @@ public interface CrawledUrlOrBuilder
    *
    *
    * <pre>
-   * Output only.
    * The body of the request that was used to visit the URL.
    * </pre>
    *
@@ -71,7 +66,6 @@ public interface CrawledUrlOrBuilder
    *
    *
    * <pre>
-   * Output only.
    * The body of the request that was used to visit the URL.
    * </pre>
    *

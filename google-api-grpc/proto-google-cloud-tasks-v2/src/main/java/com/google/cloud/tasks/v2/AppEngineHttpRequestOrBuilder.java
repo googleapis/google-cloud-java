@@ -52,10 +52,10 @@ public interface AppEngineHttpRequestOrBuilder
    *
    * <pre>
    * Task-level setting for App Engine routing.
-   * If set,
-   * [app_engine_routing_override][google.cloud.tasks.v2.AppEngineHttpQueue.app_engine_routing_override]
-   * is used for all tasks in the queue, no matter what the setting is for the
-   * [task-level app_engine_routing][google.cloud.tasks.v2.AppEngineHttpRequest.app_engine_routing].
+   * * If [app_engine_routing_override is set on the
+   *    queue][Queue.app_engine_routing_override], this value is used for all
+   *    tasks in the queue, no matter what the setting is for the [task-level
+   *    app_engine_routing][AppEngineHttpRequest.app_engine_routing].
    * </pre>
    *
    * <code>.google.cloud.tasks.v2.AppEngineRouting app_engine_routing = 2;</code>
@@ -66,10 +66,10 @@ public interface AppEngineHttpRequestOrBuilder
    *
    * <pre>
    * Task-level setting for App Engine routing.
-   * If set,
-   * [app_engine_routing_override][google.cloud.tasks.v2.AppEngineHttpQueue.app_engine_routing_override]
-   * is used for all tasks in the queue, no matter what the setting is for the
-   * [task-level app_engine_routing][google.cloud.tasks.v2.AppEngineHttpRequest.app_engine_routing].
+   * * If [app_engine_routing_override is set on the
+   *    queue][Queue.app_engine_routing_override], this value is used for all
+   *    tasks in the queue, no matter what the setting is for the [task-level
+   *    app_engine_routing][AppEngineHttpRequest.app_engine_routing].
    * </pre>
    *
    * <code>.google.cloud.tasks.v2.AppEngineRouting app_engine_routing = 2;</code>
@@ -80,10 +80,10 @@ public interface AppEngineHttpRequestOrBuilder
    *
    * <pre>
    * Task-level setting for App Engine routing.
-   * If set,
-   * [app_engine_routing_override][google.cloud.tasks.v2.AppEngineHttpQueue.app_engine_routing_override]
-   * is used for all tasks in the queue, no matter what the setting is for the
-   * [task-level app_engine_routing][google.cloud.tasks.v2.AppEngineHttpRequest.app_engine_routing].
+   * * If [app_engine_routing_override is set on the
+   *    queue][Queue.app_engine_routing_override], this value is used for all
+   *    tasks in the queue, no matter what the setting is for the [task-level
+   *    app_engine_routing][AppEngineHttpRequest.app_engine_routing].
    * </pre>
    *
    * <code>.google.cloud.tasks.v2.AppEngineRouting app_engine_routing = 2;</code>

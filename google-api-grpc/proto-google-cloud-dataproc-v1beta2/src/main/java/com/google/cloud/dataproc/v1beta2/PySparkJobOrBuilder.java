@@ -16,7 +16,7 @@ public interface PySparkJobOrBuilder
    * be a .py file.
    * </pre>
    *
-   * <code>string main_python_file_uri = 1;</code>
+   * <code>string main_python_file_uri = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   java.lang.String getMainPythonFileUri();
   /**
@@ -27,7 +27,7 @@ public interface PySparkJobOrBuilder
    * be a .py file.
    * </pre>
    *
-   * <code>string main_python_file_uri = 1;</code>
+   * <code>string main_python_file_uri = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   com.google.protobuf.ByteString getMainPythonFileUriBytes();
 

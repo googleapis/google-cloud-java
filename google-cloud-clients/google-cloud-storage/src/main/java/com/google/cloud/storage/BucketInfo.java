@@ -97,6 +97,7 @@ public class BucketInfo implements Serializable {
   private final Long retentionPeriod;
   private final IamConfiguration iamConfiguration;
   private final String locationType;
+  private final Logging logging;
 
   /**
    * The Bucket's IAM Configuration.
@@ -235,6 +236,92 @@ public class BucketInfo implements Serializable {
       /** Builds an {@code IamConfiguration} object */
       public IamConfiguration build() {
         return new IamConfiguration(this);
+      }
+    }
+  }
+
+  /**
+   * The bucket's logging configuration, which defines the destination bucket and optional name
+   * prefix for the current bucket's logs.
+   */
+  public static class Logging implements Serializable {
+
+    private static final long serialVersionUID = -708892101216778492L;
+    private String logBucket;
+    private String logObjectPrefix;
+
+    @Override
+    public boolean equals(Object o) {
+      if (this == o) return true;
+      if (o == null || getClass() != o.getClass()) {
+        return false;
+      }
+      Logging other = (Logging) o;
+      return Objects.equals(toPb(), other.toPb());
+    }
+
+    @Override
+    public int hashCode() {
+      return Objects.hash(logBucket, logObjectPrefix);
+    }
+
+    public static Builder newBuilder() {
+      return new Builder();
+    }
+
+    public Builder toBuilder() {
+      Builder builder = new Builder();
+      builder.logBucket = logBucket;
+      builder.logObjectPrefix = logObjectPrefix;
+      return builder;
+    }
+
+    public String getLogBucket() {
+      return logBucket;
+    }
+
+    public String getLogObjectPrefix() {
+      return logObjectPrefix;
+    }
+
+    Bucket.Logging toPb() {
+      Bucket.Logging logging = new Bucket.Logging();
+      logging.setLogBucket(logBucket);
+      logging.setLogObjectPrefix(logObjectPrefix);
+      return logging;
+    }
+
+    static Logging fromPb(Bucket.Logging logging) {
+      return newBuilder()
+          .setLogBucket(logging.getLogBucket())
+          .setLogObjectPrefix(logging.getLogObjectPrefix())
+          .build();
+    }
+
+    private Logging(Builder builder) {
+      this.logBucket = builder.logBucket;
+      this.logObjectPrefix = builder.logObjectPrefix;
+    }
+
+    public static class Builder {
+      private String logBucket;
+      private String logObjectPrefix;
+
+      /** The destination bucket where the current bucket's logs should be placed. */
+      public Builder setLogBucket(String logBucket) {
+        this.logBucket = logBucket;
+        return this;
+      }
+
+      /** A prefix for log object names. */
+      public Builder setLogObjectPrefix(String logObjectPrefix) {
+        this.logObjectPrefix = logObjectPrefix;
+        return this;
+      }
+
+      /** Builds an {@code Logging} object */
+      public Logging build() {
+        return new Logging(this);
       }
     }
   }
@@ -940,6 +1027,8 @@ public class BucketInfo implements Serializable {
     @BetaApi
     public abstract Builder setIamConfiguration(IamConfiguration iamConfiguration);
 
+    public abstract Builder setLogging(Logging logging);
+
     /** Creates a {@code BucketInfo} object. */
     public abstract BucketInfo build();
   }
@@ -972,6 +1061,7 @@ public class BucketInfo implements Serializable {
     private Long retentionPeriod;
     private IamConfiguration iamConfiguration;
     private String locationType;
+    private Logging logging;
 
     BuilderImpl(String name) {
       this.name = name;
@@ -1004,6 +1094,7 @@ public class BucketInfo implements Serializable {
       retentionPeriod = bucketInfo.retentionPeriod;
       iamConfiguration = bucketInfo.iamConfiguration;
       locationType = bucketInfo.locationType;
+      logging = bucketInfo.logging;
     }
 
     @Override
@@ -1163,6 +1254,12 @@ public class BucketInfo implements Serializable {
     }
 
     @Override
+    public Builder setLogging(Logging logging) {
+      this.logging = logging;
+      return this;
+    }
+
+    @Override
     Builder setLocationType(String locationType) {
       this.locationType = locationType;
       return this;
@@ -1202,6 +1299,7 @@ public class BucketInfo implements Serializable {
     retentionPeriod = builder.retentionPeriod;
     iamConfiguration = builder.iamConfiguration;
     locationType = builder.locationType;
+    logging = builder.logging;
   }
 
   /** Returns the service-generated id for the bucket. */
@@ -1455,6 +1553,11 @@ public class BucketInfo implements Serializable {
     return iamConfiguration;
   }
 
+  /** Returns the Logging */
+  public Logging getLogging() {
+    return logging;
+  }
+
   /** Returns a builder for the current bucket. */
   public Builder toBuilder() {
     return new BuilderImpl(this);
@@ -1598,7 +1701,9 @@ public class BucketInfo implements Serializable {
     if (iamConfiguration != null) {
       bucketPb.setIamConfiguration(iamConfiguration.toPb());
     }
-
+    if (logging != null) {
+      bucketPb.setLogging(logging.toPb());
+    }
     return bucketPb;
   }
 
@@ -1727,6 +1832,10 @@ public class BucketInfo implements Serializable {
 
     if (iamConfiguration != null) {
       builder.setIamConfiguration(IamConfiguration.fromPb(iamConfiguration));
+    }
+    Bucket.Logging logging = bucketPb.getLogging();
+    if (logging != null) {
+      builder.setLogging(Logging.fromPb(logging));
     }
     return builder.build();
   }

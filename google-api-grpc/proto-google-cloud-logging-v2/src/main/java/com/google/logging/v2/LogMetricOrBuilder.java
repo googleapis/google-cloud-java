@@ -14,17 +14,15 @@ public interface LogMetricOrBuilder
    * <pre>
    * Required. The client-assigned metric identifier.
    * Examples: `"error_count"`, `"nginx/requests"`.
-   * Metric identifiers are limited to 100 characters and can include
-   * only the following characters: `A-Z`, `a-z`, `0-9`, and the
-   * special characters `_-.,+!*',()%/`.  The forward-slash character
-   * (`/`) denotes a hierarchy of name pieces, and it cannot be the
-   * first character of the name.
+   * Metric identifiers are limited to 100 characters and can include only the
+   * following characters: `A-Z`, `a-z`, `0-9`, and the special characters
+   * `_-.,+!*',()%/`. The forward-slash character (`/`) denotes a hierarchy of
+   * name pieces, and it cannot be the first character of the name.
    * The metric identifier in this field must not be
    * [URL-encoded](https://en.wikipedia.org/wiki/Percent-encoding).
-   * However, when the metric identifier appears as the `[METRIC_ID]`
-   * part of a `metric_name` API parameter, then the metric identifier
-   * must be URL-encoded. Example:
-   * `"projects/my-project/metrics/nginx%2Frequests"`.
+   * However, when the metric identifier appears as the `[METRIC_ID]` part of a
+   * `metric_name` API parameter, then the metric identifier must be
+   * URL-encoded. Example: `"projects/my-project/metrics/nginx%2Frequests"`.
    * </pre>
    *
    * <code>string name = 1;</code>
@@ -36,17 +34,15 @@ public interface LogMetricOrBuilder
    * <pre>
    * Required. The client-assigned metric identifier.
    * Examples: `"error_count"`, `"nginx/requests"`.
-   * Metric identifiers are limited to 100 characters and can include
-   * only the following characters: `A-Z`, `a-z`, `0-9`, and the
-   * special characters `_-.,+!*',()%/`.  The forward-slash character
-   * (`/`) denotes a hierarchy of name pieces, and it cannot be the
-   * first character of the name.
+   * Metric identifiers are limited to 100 characters and can include only the
+   * following characters: `A-Z`, `a-z`, `0-9`, and the special characters
+   * `_-.,+!*',()%/`. The forward-slash character (`/`) denotes a hierarchy of
+   * name pieces, and it cannot be the first character of the name.
    * The metric identifier in this field must not be
    * [URL-encoded](https://en.wikipedia.org/wiki/Percent-encoding).
-   * However, when the metric identifier appears as the `[METRIC_ID]`
-   * part of a `metric_name` API parameter, then the metric identifier
-   * must be URL-encoded. Example:
-   * `"projects/my-project/metrics/nginx%2Frequests"`.
+   * However, when the metric identifier appears as the `[METRIC_ID]` part of a
+   * `metric_name` API parameter, then the metric identifier must be
+   * URL-encoded. Example: `"projects/my-project/metrics/nginx%2Frequests"`.
    * </pre>
    *
    * <code>string name = 1;</code>
@@ -58,6 +54,7 @@ public interface LogMetricOrBuilder
    *
    * <pre>
    * Optional. A description of this metric, which is used in documentation.
+   * The maximum length of the description is 8000 characters.
    * </pre>
    *
    * <code>string description = 2;</code>
@@ -68,6 +65,7 @@ public interface LogMetricOrBuilder
    *
    * <pre>
    * Optional. A description of this metric, which is used in documentation.
+   * The maximum length of the description is 8000 characters.
    * </pre>
    *
    * <code>string description = 2;</code>
@@ -380,6 +378,74 @@ public interface LogMetricOrBuilder
    * <code>.google.api.Distribution.BucketOptions bucket_options = 8;</code>
    */
   com.google.api.Distribution.BucketOptionsOrBuilder getBucketOptionsOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The creation timestamp of the metric.
+   * This field may not be present for older metrics.
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp create_time = 9;</code>
+   */
+  boolean hasCreateTime();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The creation timestamp of the metric.
+   * This field may not be present for older metrics.
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp create_time = 9;</code>
+   */
+  com.google.protobuf.Timestamp getCreateTime();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The creation timestamp of the metric.
+   * This field may not be present for older metrics.
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp create_time = 9;</code>
+   */
+  com.google.protobuf.TimestampOrBuilder getCreateTimeOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The last update timestamp of the metric.
+   * This field may not be present for older metrics.
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp update_time = 10;</code>
+   */
+  boolean hasUpdateTime();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The last update timestamp of the metric.
+   * This field may not be present for older metrics.
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp update_time = 10;</code>
+   */
+  com.google.protobuf.Timestamp getUpdateTime();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The last update timestamp of the metric.
+   * This field may not be present for older metrics.
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp update_time = 10;</code>
+   */
+  com.google.protobuf.TimestampOrBuilder getUpdateTimeOrBuilder();
 
   /**
    *

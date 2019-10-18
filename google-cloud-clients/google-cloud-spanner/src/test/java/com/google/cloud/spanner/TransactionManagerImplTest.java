@@ -19,12 +19,28 @@ package com.google.cloud.spanner;
 import static com.google.common.truth.Truth.assertThat;
 import static org.junit.Assert.fail;
 import static org.mockito.Mockito.doThrow;
+import static org.mockito.Mockito.mock;
+import static org.mockito.Mockito.times;
 import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
 import static org.mockito.MockitoAnnotations.initMocks;
 
 import com.google.cloud.Timestamp;
+import com.google.cloud.grpc.GrpcTransportOptions;
+import com.google.cloud.grpc.GrpcTransportOptions.ExecutorFactory;
 import com.google.cloud.spanner.TransactionManager.TransactionState;
+import com.google.cloud.spanner.spi.v1.SpannerRpc;
+import com.google.protobuf.ByteString;
+import com.google.spanner.v1.BeginTransactionRequest;
+import com.google.spanner.v1.CommitRequest;
+import com.google.spanner.v1.CommitResponse;
+import com.google.spanner.v1.Transaction;
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.List;
+import java.util.UUID;
+import java.util.concurrent.Executors;
+import java.util.concurrent.ScheduledExecutorService;
 import org.junit.Before;
 import org.junit.Rule;
 import org.junit.Test;
@@ -33,9 +49,23 @@ import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
 import org.mockito.Mock;
 import org.mockito.Mockito;
+import org.mockito.invocation.InvocationOnMock;
+import org.mockito.stubbing.Answer;
 
 @RunWith(JUnit4.class)
 public class TransactionManagerImplTest {
+  private static final class TestExecutorFactory
+      implements ExecutorFactory<ScheduledExecutorService> {
+    @Override
+    public ScheduledExecutorService get() {
+      return Executors.newSingleThreadScheduledExecutor();
+    }
+
+    @Override
+    public void release(ScheduledExecutorService exec) {
+      exec.shutdown();
+    }
+  }
 
   @Rule public ExpectedException exception = ExpectedException.none();
 
@@ -153,5 +183,68 @@ public class TransactionManagerImplTest {
     manager.rollback();
     exception.expect(IllegalStateException.class);
     manager.commit();
+  }
+
+  @SuppressWarnings("unchecked")
+  @Test
+  public void usesPreparedTransaction() {
+    SpannerOptions options = mock(SpannerOptions.class);
+    when(options.getNumChannels()).thenReturn(4);
+    GrpcTransportOptions transportOptions = mock(GrpcTransportOptions.class);
+    when(transportOptions.getExecutorFactory()).thenReturn(new TestExecutorFactory());
+    when(options.getTransportOptions()).thenReturn(transportOptions);
+    SessionPoolOptions sessionPoolOptions =
+        SessionPoolOptions.newBuilder().setMinSessions(0).build();
+    when(options.getSessionPoolOptions()).thenReturn(sessionPoolOptions);
+    when(options.getSessionLabels()).thenReturn(Collections.<String, String>emptyMap());
+    SpannerRpc rpc = mock(SpannerRpc.class);
+    when(rpc.batchCreateSessions(
+            Mockito.anyString(), Mockito.eq(1), Mockito.anyMap(), Mockito.anyMap()))
+        .thenAnswer(
+            new Answer<List<com.google.spanner.v1.Session>>() {
+              @Override
+              public List<com.google.spanner.v1.Session> answer(InvocationOnMock invocation)
+                  throws Throwable {
+                return Arrays.asList(
+                    com.google.spanner.v1.Session.newBuilder()
+                        .setName((String) invocation.getArguments()[0])
+                        .setCreateTime(
+                            com.google.protobuf.Timestamp.newBuilder()
+                                .setSeconds(System.currentTimeMillis() * 1000))
+                        .build());
+              }
+            });
+    when(rpc.beginTransaction(Mockito.any(BeginTransactionRequest.class), Mockito.anyMap()))
+        .thenAnswer(
+            new Answer<Transaction>() {
+              @Override
+              public Transaction answer(InvocationOnMock invocation) throws Throwable {
+                return Transaction.newBuilder()
+                    .setId(ByteString.copyFromUtf8(UUID.randomUUID().toString()))
+                    .build();
+              }
+            });
+    when(rpc.commit(Mockito.any(CommitRequest.class), Mockito.anyMap()))
+        .thenAnswer(
+            new Answer<CommitResponse>() {
+              @Override
+              public CommitResponse answer(InvocationOnMock invocation) throws Throwable {
+                return CommitResponse.newBuilder()
+                    .setCommitTimestamp(
+                        com.google.protobuf.Timestamp.newBuilder()
+                            .setSeconds(System.currentTimeMillis() * 1000))
+                    .build();
+              }
+            });
+    DatabaseId db = DatabaseId.of("test", "test", "test");
+    try (SpannerImpl spanner = new SpannerImpl(rpc, options)) {
+      DatabaseClient client = spanner.getDatabaseClient(db);
+      try (TransactionManager mgr = client.transactionManager()) {
+        mgr.begin();
+        mgr.commit();
+      }
+      verify(rpc, times(1))
+          .beginTransaction(Mockito.any(BeginTransactionRequest.class), Mockito.anyMap());
+    }
   }
 }

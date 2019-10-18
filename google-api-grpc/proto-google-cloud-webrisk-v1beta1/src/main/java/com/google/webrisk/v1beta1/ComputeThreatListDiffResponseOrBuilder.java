@@ -12,7 +12,7 @@ public interface ComputeThreatListDiffResponseOrBuilder
    *
    *
    * <pre>
-   * The type of response. This may indicate that an action is required by the
+   * The type of response. This may indicate that an action must be taken by the
    * client when the response is received.
    * </pre>
    *
@@ -25,7 +25,7 @@ public interface ComputeThreatListDiffResponseOrBuilder
    *
    *
    * <pre>
-   * The type of response. This may indicate that an action is required by the
+   * The type of response. This may indicate that an action must be taken by the
    * client when the response is received.
    * </pre>
    *

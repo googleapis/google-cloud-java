@@ -16,7 +16,7 @@ public interface UpdateClusterRequestOrBuilder
    * cluster belongs to.
    * </pre>
    *
-   * <code>string project_id = 1;</code>
+   * <code>string project_id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   java.lang.String getProjectId();
   /**
@@ -27,7 +27,7 @@ public interface UpdateClusterRequestOrBuilder
    * cluster belongs to.
    * </pre>
    *
-   * <code>string project_id = 1;</code>
+   * <code>string project_id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   com.google.protobuf.ByteString getProjectIdBytes();
 
@@ -38,7 +38,7 @@ public interface UpdateClusterRequestOrBuilder
    * Required. The Cloud Dataproc region in which to handle the request.
    * </pre>
    *
-   * <code>string region = 5;</code>
+   * <code>string region = 5 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   java.lang.String getRegion();
   /**
@@ -48,7 +48,7 @@ public interface UpdateClusterRequestOrBuilder
    * Required. The Cloud Dataproc region in which to handle the request.
    * </pre>
    *
-   * <code>string region = 5;</code>
+   * <code>string region = 5 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   com.google.protobuf.ByteString getRegionBytes();
 
@@ -59,7 +59,7 @@ public interface UpdateClusterRequestOrBuilder
    * Required. The cluster name.
    * </pre>
    *
-   * <code>string cluster_name = 2;</code>
+   * <code>string cluster_name = 2 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   java.lang.String getClusterName();
   /**
@@ -69,7 +69,7 @@ public interface UpdateClusterRequestOrBuilder
    * Required. The cluster name.
    * </pre>
    *
-   * <code>string cluster_name = 2;</code>
+   * <code>string cluster_name = 2 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   com.google.protobuf.ByteString getClusterNameBytes();
 
@@ -80,7 +80,8 @@ public interface UpdateClusterRequestOrBuilder
    * Required. The changes to the cluster.
    * </pre>
    *
-   * <code>.google.cloud.dataproc.v1.Cluster cluster = 3;</code>
+   * <code>.google.cloud.dataproc.v1.Cluster cluster = 3 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   boolean hasCluster();
   /**
@@ -90,7 +91,8 @@ public interface UpdateClusterRequestOrBuilder
    * Required. The changes to the cluster.
    * </pre>
    *
-   * <code>.google.cloud.dataproc.v1.Cluster cluster = 3;</code>
+   * <code>.google.cloud.dataproc.v1.Cluster cluster = 3 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   com.google.cloud.dataproc.v1.Cluster getCluster();
   /**
@@ -100,7 +102,8 @@ public interface UpdateClusterRequestOrBuilder
    * Required. The changes to the cluster.
    * </pre>
    *
-   * <code>.google.cloud.dataproc.v1.Cluster cluster = 3;</code>
+   * <code>.google.cloud.dataproc.v1.Cluster cluster = 3 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   com.google.cloud.dataproc.v1.ClusterOrBuilder getClusterOrBuilder();
 
@@ -117,7 +120,9 @@ public interface UpdateClusterRequestOrBuilder
    * Only supported on Dataproc image versions 1.2 and higher.
    * </pre>
    *
-   * <code>.google.protobuf.Duration graceful_decommission_timeout = 6;</code>
+   * <code>
+   * .google.protobuf.Duration graceful_decommission_timeout = 6 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   boolean hasGracefulDecommissionTimeout();
   /**
@@ -133,7 +138,9 @@ public interface UpdateClusterRequestOrBuilder
    * Only supported on Dataproc image versions 1.2 and higher.
    * </pre>
    *
-   * <code>.google.protobuf.Duration graceful_decommission_timeout = 6;</code>
+   * <code>
+   * .google.protobuf.Duration graceful_decommission_timeout = 6 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   com.google.protobuf.Duration getGracefulDecommissionTimeout();
   /**
@@ -149,7 +156,9 @@ public interface UpdateClusterRequestOrBuilder
    * Only supported on Dataproc image versions 1.2 and higher.
    * </pre>
    *
-   * <code>.google.protobuf.Duration graceful_decommission_timeout = 6;</code>
+   * <code>
+   * .google.protobuf.Duration graceful_decommission_timeout = 6 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   com.google.protobuf.DurationOrBuilder getGracefulDecommissionTimeoutOrBuilder();
 
@@ -199,11 +208,16 @@ public interface UpdateClusterRequestOrBuilder
    *  &lt;td&gt;&lt;strong&gt;&lt;em&gt;config.secondary_worker_config.num_instances&lt;/em&gt;&lt;/strong&gt;&lt;/td&gt;
    *  &lt;td&gt;Resize secondary worker group&lt;/td&gt;
    *  &lt;/tr&gt;
+   *  &lt;tr&gt;
+   *  &lt;td&gt;config.autoscaling_config.policy_uri&lt;/td&gt;&lt;td&gt;Use, stop using, or
+   *  change autoscaling policies&lt;/td&gt;
+   *  &lt;/tr&gt;
    *  &lt;/tbody&gt;
    *  &lt;/table&gt;
    * </pre>
    *
-   * <code>.google.protobuf.FieldMask update_mask = 4;</code>
+   * <code>.google.protobuf.FieldMask update_mask = 4 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   boolean hasUpdateMask();
   /**
@@ -252,11 +266,16 @@ public interface UpdateClusterRequestOrBuilder
    *  &lt;td&gt;&lt;strong&gt;&lt;em&gt;config.secondary_worker_config.num_instances&lt;/em&gt;&lt;/strong&gt;&lt;/td&gt;
    *  &lt;td&gt;Resize secondary worker group&lt;/td&gt;
    *  &lt;/tr&gt;
+   *  &lt;tr&gt;
+   *  &lt;td&gt;config.autoscaling_config.policy_uri&lt;/td&gt;&lt;td&gt;Use, stop using, or
+   *  change autoscaling policies&lt;/td&gt;
+   *  &lt;/tr&gt;
    *  &lt;/tbody&gt;
    *  &lt;/table&gt;
    * </pre>
    *
-   * <code>.google.protobuf.FieldMask update_mask = 4;</code>
+   * <code>.google.protobuf.FieldMask update_mask = 4 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   com.google.protobuf.FieldMask getUpdateMask();
   /**
@@ -305,11 +324,16 @@ public interface UpdateClusterRequestOrBuilder
    *  &lt;td&gt;&lt;strong&gt;&lt;em&gt;config.secondary_worker_config.num_instances&lt;/em&gt;&lt;/strong&gt;&lt;/td&gt;
    *  &lt;td&gt;Resize secondary worker group&lt;/td&gt;
    *  &lt;/tr&gt;
+   *  &lt;tr&gt;
+   *  &lt;td&gt;config.autoscaling_config.policy_uri&lt;/td&gt;&lt;td&gt;Use, stop using, or
+   *  change autoscaling policies&lt;/td&gt;
+   *  &lt;/tr&gt;
    *  &lt;/tbody&gt;
    *  &lt;/table&gt;
    * </pre>
    *
-   * <code>.google.protobuf.FieldMask update_mask = 4;</code>
+   * <code>.google.protobuf.FieldMask update_mask = 4 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   com.google.protobuf.FieldMaskOrBuilder getUpdateMaskOrBuilder();
 
@@ -328,7 +352,7 @@ public interface UpdateClusterRequestOrBuilder
    * underscores (_), and hyphens (-). The maximum length is 40 characters.
    * </pre>
    *
-   * <code>string request_id = 7;</code>
+   * <code>string request_id = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   java.lang.String getRequestId();
   /**
@@ -346,7 +370,7 @@ public interface UpdateClusterRequestOrBuilder
    * underscores (_), and hyphens (-). The maximum length is 40 characters.
    * </pre>
    *
-   * <code>string request_id = 7;</code>
+   * <code>string request_id = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   com.google.protobuf.ByteString getRequestIdBytes();
 }

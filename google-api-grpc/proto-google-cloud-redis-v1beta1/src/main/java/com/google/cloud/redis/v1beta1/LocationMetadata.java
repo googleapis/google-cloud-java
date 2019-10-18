@@ -158,7 +158,9 @@ public final class LocationMetadata extends com.google.protobuf.GeneratedMessage
    * creating a Redis instance.
    * </pre>
    *
-   * <code>map&lt;string, .google.cloud.redis.v1beta1.ZoneMetadata&gt; available_zones = 1;</code>
+   * <code>
+   * map&lt;string, .google.cloud.redis.v1beta1.ZoneMetadata&gt; available_zones = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    */
   public boolean containsAvailableZones(java.lang.String key) {
     if (key == null) {
@@ -182,7 +184,9 @@ public final class LocationMetadata extends com.google.protobuf.GeneratedMessage
    * creating a Redis instance.
    * </pre>
    *
-   * <code>map&lt;string, .google.cloud.redis.v1beta1.ZoneMetadata&gt; available_zones = 1;</code>
+   * <code>
+   * map&lt;string, .google.cloud.redis.v1beta1.ZoneMetadata&gt; available_zones = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    */
   public java.util.Map<java.lang.String, com.google.cloud.redis.v1beta1.ZoneMetadata>
       getAvailableZonesMap() {
@@ -198,7 +202,9 @@ public final class LocationMetadata extends com.google.protobuf.GeneratedMessage
    * creating a Redis instance.
    * </pre>
    *
-   * <code>map&lt;string, .google.cloud.redis.v1beta1.ZoneMetadata&gt; available_zones = 1;</code>
+   * <code>
+   * map&lt;string, .google.cloud.redis.v1beta1.ZoneMetadata&gt; available_zones = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    */
   public com.google.cloud.redis.v1beta1.ZoneMetadata getAvailableZonesOrDefault(
       java.lang.String key, com.google.cloud.redis.v1beta1.ZoneMetadata defaultValue) {
@@ -219,7 +225,9 @@ public final class LocationMetadata extends com.google.protobuf.GeneratedMessage
    * creating a Redis instance.
    * </pre>
    *
-   * <code>map&lt;string, .google.cloud.redis.v1beta1.ZoneMetadata&gt; available_zones = 1;</code>
+   * <code>
+   * map&lt;string, .google.cloud.redis.v1beta1.ZoneMetadata&gt; available_zones = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    */
   public com.google.cloud.redis.v1beta1.ZoneMetadata getAvailableZonesOrThrow(
       java.lang.String key) {
@@ -625,7 +633,9 @@ public final class LocationMetadata extends com.google.protobuf.GeneratedMessage
      * creating a Redis instance.
      * </pre>
      *
-     * <code>map&lt;string, .google.cloud.redis.v1beta1.ZoneMetadata&gt; available_zones = 1;</code>
+     * <code>
+     * map&lt;string, .google.cloud.redis.v1beta1.ZoneMetadata&gt; available_zones = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public boolean containsAvailableZones(java.lang.String key) {
       if (key == null) {
@@ -649,7 +659,9 @@ public final class LocationMetadata extends com.google.protobuf.GeneratedMessage
      * creating a Redis instance.
      * </pre>
      *
-     * <code>map&lt;string, .google.cloud.redis.v1beta1.ZoneMetadata&gt; available_zones = 1;</code>
+     * <code>
+     * map&lt;string, .google.cloud.redis.v1beta1.ZoneMetadata&gt; available_zones = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public java.util.Map<java.lang.String, com.google.cloud.redis.v1beta1.ZoneMetadata>
         getAvailableZonesMap() {
@@ -665,7 +677,9 @@ public final class LocationMetadata extends com.google.protobuf.GeneratedMessage
      * creating a Redis instance.
      * </pre>
      *
-     * <code>map&lt;string, .google.cloud.redis.v1beta1.ZoneMetadata&gt; available_zones = 1;</code>
+     * <code>
+     * map&lt;string, .google.cloud.redis.v1beta1.ZoneMetadata&gt; available_zones = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public com.google.cloud.redis.v1beta1.ZoneMetadata getAvailableZonesOrDefault(
         java.lang.String key, com.google.cloud.redis.v1beta1.ZoneMetadata defaultValue) {
@@ -686,7 +700,9 @@ public final class LocationMetadata extends com.google.protobuf.GeneratedMessage
      * creating a Redis instance.
      * </pre>
      *
-     * <code>map&lt;string, .google.cloud.redis.v1beta1.ZoneMetadata&gt; available_zones = 1;</code>
+     * <code>
+     * map&lt;string, .google.cloud.redis.v1beta1.ZoneMetadata&gt; available_zones = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public com.google.cloud.redis.v1beta1.ZoneMetadata getAvailableZonesOrThrow(
         java.lang.String key) {
@@ -715,7 +731,9 @@ public final class LocationMetadata extends com.google.protobuf.GeneratedMessage
      * creating a Redis instance.
      * </pre>
      *
-     * <code>map&lt;string, .google.cloud.redis.v1beta1.ZoneMetadata&gt; available_zones = 1;</code>
+     * <code>
+     * map&lt;string, .google.cloud.redis.v1beta1.ZoneMetadata&gt; available_zones = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public Builder removeAvailableZones(java.lang.String key) {
       if (key == null) {
@@ -740,7 +758,9 @@ public final class LocationMetadata extends com.google.protobuf.GeneratedMessage
      * creating a Redis instance.
      * </pre>
      *
-     * <code>map&lt;string, .google.cloud.redis.v1beta1.ZoneMetadata&gt; available_zones = 1;</code>
+     * <code>
+     * map&lt;string, .google.cloud.redis.v1beta1.ZoneMetadata&gt; available_zones = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public Builder putAvailableZones(
         java.lang.String key, com.google.cloud.redis.v1beta1.ZoneMetadata value) {
@@ -763,7 +783,9 @@ public final class LocationMetadata extends com.google.protobuf.GeneratedMessage
      * creating a Redis instance.
      * </pre>
      *
-     * <code>map&lt;string, .google.cloud.redis.v1beta1.ZoneMetadata&gt; available_zones = 1;</code>
+     * <code>
+     * map&lt;string, .google.cloud.redis.v1beta1.ZoneMetadata&gt; available_zones = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public Builder putAllAvailableZones(
         java.util.Map<java.lang.String, com.google.cloud.redis.v1beta1.ZoneMetadata> values) {

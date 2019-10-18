@@ -15,17 +15,20 @@
  */
 package com.google.cloud.compute.v1.stub;
 
+import static com.google.cloud.compute.v1.SslCertificateClient.AggregatedListSslCertificatesPagedResponse;
 import static com.google.cloud.compute.v1.SslCertificateClient.ListSslCertificatesPagedResponse;
 
 import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.rpc.UnaryCallable;
+import com.google.cloud.compute.v1.AggregatedListSslCertificatesHttpRequest;
 import com.google.cloud.compute.v1.DeleteSslCertificateHttpRequest;
 import com.google.cloud.compute.v1.GetSslCertificateHttpRequest;
 import com.google.cloud.compute.v1.InsertSslCertificateHttpRequest;
 import com.google.cloud.compute.v1.ListSslCertificatesHttpRequest;
 import com.google.cloud.compute.v1.Operation;
 import com.google.cloud.compute.v1.SslCertificate;
+import com.google.cloud.compute.v1.SslCertificateAggregatedList;
 import com.google.cloud.compute.v1.SslCertificateList;
 import javax.annotation.Generated;
 
@@ -38,6 +41,21 @@ import javax.annotation.Generated;
 @Generated("by gapic-generator")
 @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
 public abstract class SslCertificateStub implements BackgroundResource {
+
+  @BetaApi
+  public UnaryCallable<
+          AggregatedListSslCertificatesHttpRequest, AggregatedListSslCertificatesPagedResponse>
+      aggregatedListSslCertificatesPagedCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: aggregatedListSslCertificatesPagedCallable()");
+  }
+
+  @BetaApi
+  public UnaryCallable<AggregatedListSslCertificatesHttpRequest, SslCertificateAggregatedList>
+      aggregatedListSslCertificatesCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: aggregatedListSslCertificatesCallable()");
+  }
 
   @BetaApi
   public UnaryCallable<DeleteSslCertificateHttpRequest, Operation> deleteSslCertificateCallable() {

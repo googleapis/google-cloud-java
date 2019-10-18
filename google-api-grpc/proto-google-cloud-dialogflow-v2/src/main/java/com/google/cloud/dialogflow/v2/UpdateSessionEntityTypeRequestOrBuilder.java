@@ -17,7 +17,9 @@ public interface UpdateSessionEntityTypeRequestOrBuilder
    * Display Name&gt;`.
    * </pre>
    *
-   * <code>.google.cloud.dialogflow.v2.SessionEntityType session_entity_type = 1;</code>
+   * <code>
+   * .google.cloud.dialogflow.v2.SessionEntityType session_entity_type = 1 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   boolean hasSessionEntityType();
   /**
@@ -29,7 +31,9 @@ public interface UpdateSessionEntityTypeRequestOrBuilder
    * Display Name&gt;`.
    * </pre>
    *
-   * <code>.google.cloud.dialogflow.v2.SessionEntityType session_entity_type = 1;</code>
+   * <code>
+   * .google.cloud.dialogflow.v2.SessionEntityType session_entity_type = 1 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   com.google.cloud.dialogflow.v2.SessionEntityType getSessionEntityType();
   /**
@@ -41,7 +45,9 @@ public interface UpdateSessionEntityTypeRequestOrBuilder
    * Display Name&gt;`.
    * </pre>
    *
-   * <code>.google.cloud.dialogflow.v2.SessionEntityType session_entity_type = 1;</code>
+   * <code>
+   * .google.cloud.dialogflow.v2.SessionEntityType session_entity_type = 1 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   com.google.cloud.dialogflow.v2.SessionEntityTypeOrBuilder getSessionEntityTypeOrBuilder();
 
@@ -52,7 +58,8 @@ public interface UpdateSessionEntityTypeRequestOrBuilder
    * Optional. The mask to control which fields get updated.
    * </pre>
    *
-   * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+   * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   boolean hasUpdateMask();
   /**
@@ -62,7 +69,8 @@ public interface UpdateSessionEntityTypeRequestOrBuilder
    * Optional. The mask to control which fields get updated.
    * </pre>
    *
-   * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+   * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   com.google.protobuf.FieldMask getUpdateMask();
   /**
@@ -72,7 +80,8 @@ public interface UpdateSessionEntityTypeRequestOrBuilder
    * Optional. The mask to control which fields get updated.
    * </pre>
    *
-   * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+   * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   com.google.protobuf.FieldMaskOrBuilder getUpdateMaskOrBuilder();
 }

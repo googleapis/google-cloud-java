@@ -27,27 +27,30 @@ public final class ScanRunProto {
     java.lang.String[] descriptorData = {
       "\n6google/cloud/websecurityscanner/v1alph"
           + "a/scan_run.proto\022\'google.cloud.websecuri"
-          + "tyscanner.v1alpha\032\034google/api/annotation"
-          + "s.proto\032\037google/protobuf/timestamp.proto"
-          + "\"\275\004\n\007ScanRun\022\014\n\004name\030\001 \001(\t\022X\n\017execution_"
-          + "state\030\002 \001(\0162?.google.cloud.websecuritysc"
-          + "anner.v1alpha.ScanRun.ExecutionState\022R\n\014"
-          + "result_state\030\003 \001(\0162<.google.cloud.websec"
-          + "urityscanner.v1alpha.ScanRun.ResultState"
-          + "\022.\n\nstart_time\030\004 \001(\0132\032.google.protobuf.T"
-          + "imestamp\022,\n\010end_time\030\005 \001(\0132\032.google.prot"
-          + "obuf.Timestamp\022\032\n\022urls_crawled_count\030\006 \001"
-          + "(\003\022\031\n\021urls_tested_count\030\007 \001(\003\022\033\n\023has_vul"
-          + "nerabilities\030\010 \001(\010\022\030\n\020progress_percent\030\t"
-          + " \001(\005\"Y\n\016ExecutionState\022\037\n\033EXECUTION_STAT"
-          + "E_UNSPECIFIED\020\000\022\n\n\006QUEUED\020\001\022\014\n\010SCANNING\020"
-          + "\002\022\014\n\010FINISHED\020\003\"O\n\013ResultState\022\034\n\030RESULT"
-          + "_STATE_UNSPECIFIED\020\000\022\013\n\007SUCCESS\020\001\022\t\n\005ERR"
-          + "OR\020\002\022\n\n\006KILLED\020\003B\230\001\n+com.google.cloud.we"
-          + "bsecurityscanner.v1alphaB\014ScanRunProtoP\001"
-          + "ZYgoogle.golang.org/genproto/googleapis/"
-          + "cloud/websecurityscanner/v1alpha;websecu"
-          + "rityscannerb\006proto3"
+          + "tyscanner.v1alpha\032\031google/api/resource.p"
+          + "roto\032\037google/protobuf/timestamp.proto\"\257\005"
+          + "\n\007ScanRun\022\014\n\004name\030\001 \001(\t\022X\n\017execution_sta"
+          + "te\030\002 \001(\0162?.google.cloud.websecurityscann"
+          + "er.v1alpha.ScanRun.ExecutionState\022R\n\014res"
+          + "ult_state\030\003 \001(\0162<.google.cloud.websecuri"
+          + "tyscanner.v1alpha.ScanRun.ResultState\022.\n"
+          + "\nstart_time\030\004 \001(\0132\032.google.protobuf.Time"
+          + "stamp\022,\n\010end_time\030\005 \001(\0132\032.google.protobu"
+          + "f.Timestamp\022\032\n\022urls_crawled_count\030\006 \001(\003\022"
+          + "\031\n\021urls_tested_count\030\007 \001(\003\022\033\n\023has_vulner"
+          + "abilities\030\010 \001(\010\022\030\n\020progress_percent\030\t \001("
+          + "\005\"Y\n\016ExecutionState\022\037\n\033EXECUTION_STATE_U"
+          + "NSPECIFIED\020\000\022\n\n\006QUEUED\020\001\022\014\n\010SCANNING\020\002\022\014"
+          + "\n\010FINISHED\020\003\"O\n\013ResultState\022\034\n\030RESULT_ST"
+          + "ATE_UNSPECIFIED\020\000\022\013\n\007SUCCESS\020\001\022\t\n\005ERROR\020"
+          + "\002\022\n\n\006KILLED\020\003:p\352Am\n)websecurityscanner.g"
+          + "oogleapis.com/ScanRun\022@projects/{project"
+          + "}/scanConfigs/{scan_config}/scanRuns/{sc"
+          + "an_run}B\230\001\n+com.google.cloud.websecurity"
+          + "scanner.v1alphaB\014ScanRunProtoP\001ZYgoogle."
+          + "golang.org/genproto/googleapis/cloud/web"
+          + "securityscanner/v1alpha;websecurityscann"
+          + "erb\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner() {
@@ -60,7 +63,7 @@ public final class ScanRunProto {
     com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
         descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
-          com.google.api.AnnotationsProto.getDescriptor(),
+          com.google.api.ResourceProto.getDescriptor(),
           com.google.protobuf.TimestampProto.getDescriptor(),
         },
         assigner);
@@ -80,7 +83,12 @@ public final class ScanRunProto {
               "HasVulnerabilities",
               "ProgressPercent",
             });
-    com.google.api.AnnotationsProto.getDescriptor();
+    com.google.protobuf.ExtensionRegistry registry =
+        com.google.protobuf.ExtensionRegistry.newInstance();
+    registry.add(com.google.api.ResourceProto.resource);
+    com.google.protobuf.Descriptors.FileDescriptor.internalUpdateFileDescriptor(
+        descriptor, registry);
+    com.google.api.ResourceProto.getDescriptor();
     com.google.protobuf.TimestampProto.getDescriptor();
   }
 

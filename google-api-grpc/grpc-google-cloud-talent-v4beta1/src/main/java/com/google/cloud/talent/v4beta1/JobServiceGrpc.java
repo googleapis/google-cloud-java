@@ -77,6 +77,60 @@ public final class JobServiceGrpc {
   }
 
   @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
+  @java.lang.Deprecated // Use {@link #getBatchCreateJobsMethod()} instead.
+  public static final io.grpc.MethodDescriptor<
+          com.google.cloud.talent.v4beta1.BatchCreateJobsRequest, com.google.longrunning.Operation>
+      METHOD_BATCH_CREATE_JOBS = getBatchCreateJobsMethodHelper();
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.talent.v4beta1.BatchCreateJobsRequest, com.google.longrunning.Operation>
+      getBatchCreateJobsMethod;
+
+  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.talent.v4beta1.BatchCreateJobsRequest, com.google.longrunning.Operation>
+      getBatchCreateJobsMethod() {
+    return getBatchCreateJobsMethodHelper();
+  }
+
+  private static io.grpc.MethodDescriptor<
+          com.google.cloud.talent.v4beta1.BatchCreateJobsRequest, com.google.longrunning.Operation>
+      getBatchCreateJobsMethodHelper() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.talent.v4beta1.BatchCreateJobsRequest,
+            com.google.longrunning.Operation>
+        getBatchCreateJobsMethod;
+    if ((getBatchCreateJobsMethod = JobServiceGrpc.getBatchCreateJobsMethod) == null) {
+      synchronized (JobServiceGrpc.class) {
+        if ((getBatchCreateJobsMethod = JobServiceGrpc.getBatchCreateJobsMethod) == null) {
+          JobServiceGrpc.getBatchCreateJobsMethod =
+              getBatchCreateJobsMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.talent.v4beta1.BatchCreateJobsRequest,
+                          com.google.longrunning.Operation>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(
+                              "google.cloud.talent.v4beta1.JobService", "BatchCreateJobs"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.talent.v4beta1.BatchCreateJobsRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.longrunning.Operation.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new JobServiceMethodDescriptorSupplier("BatchCreateJobs"))
+                      .build();
+        }
+      }
+    }
+    return getBatchCreateJobsMethod;
+  }
+
+  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
   @java.lang.Deprecated // Use {@link #getGetJobMethod()} instead.
   public static final io.grpc.MethodDescriptor<
           com.google.cloud.talent.v4beta1.GetJobRequest, com.google.cloud.talent.v4beta1.Job>
@@ -180,6 +234,60 @@ public final class JobServiceGrpc {
   }
 
   @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
+  @java.lang.Deprecated // Use {@link #getBatchUpdateJobsMethod()} instead.
+  public static final io.grpc.MethodDescriptor<
+          com.google.cloud.talent.v4beta1.BatchUpdateJobsRequest, com.google.longrunning.Operation>
+      METHOD_BATCH_UPDATE_JOBS = getBatchUpdateJobsMethodHelper();
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.talent.v4beta1.BatchUpdateJobsRequest, com.google.longrunning.Operation>
+      getBatchUpdateJobsMethod;
+
+  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.talent.v4beta1.BatchUpdateJobsRequest, com.google.longrunning.Operation>
+      getBatchUpdateJobsMethod() {
+    return getBatchUpdateJobsMethodHelper();
+  }
+
+  private static io.grpc.MethodDescriptor<
+          com.google.cloud.talent.v4beta1.BatchUpdateJobsRequest, com.google.longrunning.Operation>
+      getBatchUpdateJobsMethodHelper() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.talent.v4beta1.BatchUpdateJobsRequest,
+            com.google.longrunning.Operation>
+        getBatchUpdateJobsMethod;
+    if ((getBatchUpdateJobsMethod = JobServiceGrpc.getBatchUpdateJobsMethod) == null) {
+      synchronized (JobServiceGrpc.class) {
+        if ((getBatchUpdateJobsMethod = JobServiceGrpc.getBatchUpdateJobsMethod) == null) {
+          JobServiceGrpc.getBatchUpdateJobsMethod =
+              getBatchUpdateJobsMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.talent.v4beta1.BatchUpdateJobsRequest,
+                          com.google.longrunning.Operation>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(
+                              "google.cloud.talent.v4beta1.JobService", "BatchUpdateJobs"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.talent.v4beta1.BatchUpdateJobsRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.longrunning.Operation.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new JobServiceMethodDescriptorSupplier("BatchUpdateJobs"))
+                      .build();
+        }
+      }
+    }
+    return getBatchUpdateJobsMethod;
+  }
+
+  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
   @java.lang.Deprecated // Use {@link #getDeleteJobMethod()} instead.
   public static final io.grpc.MethodDescriptor<
           com.google.cloud.talent.v4beta1.DeleteJobRequest, com.google.protobuf.Empty>
@@ -228,6 +336,59 @@ public final class JobServiceGrpc {
       }
     }
     return getDeleteJobMethod;
+  }
+
+  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
+  @java.lang.Deprecated // Use {@link #getBatchDeleteJobsMethod()} instead.
+  public static final io.grpc.MethodDescriptor<
+          com.google.cloud.talent.v4beta1.BatchDeleteJobsRequest, com.google.protobuf.Empty>
+      METHOD_BATCH_DELETE_JOBS = getBatchDeleteJobsMethodHelper();
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.talent.v4beta1.BatchDeleteJobsRequest, com.google.protobuf.Empty>
+      getBatchDeleteJobsMethod;
+
+  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.talent.v4beta1.BatchDeleteJobsRequest, com.google.protobuf.Empty>
+      getBatchDeleteJobsMethod() {
+    return getBatchDeleteJobsMethodHelper();
+  }
+
+  private static io.grpc.MethodDescriptor<
+          com.google.cloud.talent.v4beta1.BatchDeleteJobsRequest, com.google.protobuf.Empty>
+      getBatchDeleteJobsMethodHelper() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.talent.v4beta1.BatchDeleteJobsRequest, com.google.protobuf.Empty>
+        getBatchDeleteJobsMethod;
+    if ((getBatchDeleteJobsMethod = JobServiceGrpc.getBatchDeleteJobsMethod) == null) {
+      synchronized (JobServiceGrpc.class) {
+        if ((getBatchDeleteJobsMethod = JobServiceGrpc.getBatchDeleteJobsMethod) == null) {
+          JobServiceGrpc.getBatchDeleteJobsMethod =
+              getBatchDeleteJobsMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.talent.v4beta1.BatchDeleteJobsRequest,
+                          com.google.protobuf.Empty>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(
+                              "google.cloud.talent.v4beta1.JobService", "BatchDeleteJobs"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.talent.v4beta1.BatchDeleteJobsRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.protobuf.Empty.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new JobServiceMethodDescriptorSupplier("BatchDeleteJobs"))
+                      .build();
+        }
+      }
+    }
+    return getBatchDeleteJobsMethod;
   }
 
   @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
@@ -285,59 +446,6 @@ public final class JobServiceGrpc {
       }
     }
     return getListJobsMethod;
-  }
-
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
-  @java.lang.Deprecated // Use {@link #getBatchDeleteJobsMethod()} instead.
-  public static final io.grpc.MethodDescriptor<
-          com.google.cloud.talent.v4beta1.BatchDeleteJobsRequest, com.google.protobuf.Empty>
-      METHOD_BATCH_DELETE_JOBS = getBatchDeleteJobsMethodHelper();
-
-  private static volatile io.grpc.MethodDescriptor<
-          com.google.cloud.talent.v4beta1.BatchDeleteJobsRequest, com.google.protobuf.Empty>
-      getBatchDeleteJobsMethod;
-
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
-  public static io.grpc.MethodDescriptor<
-          com.google.cloud.talent.v4beta1.BatchDeleteJobsRequest, com.google.protobuf.Empty>
-      getBatchDeleteJobsMethod() {
-    return getBatchDeleteJobsMethodHelper();
-  }
-
-  private static io.grpc.MethodDescriptor<
-          com.google.cloud.talent.v4beta1.BatchDeleteJobsRequest, com.google.protobuf.Empty>
-      getBatchDeleteJobsMethodHelper() {
-    io.grpc.MethodDescriptor<
-            com.google.cloud.talent.v4beta1.BatchDeleteJobsRequest, com.google.protobuf.Empty>
-        getBatchDeleteJobsMethod;
-    if ((getBatchDeleteJobsMethod = JobServiceGrpc.getBatchDeleteJobsMethod) == null) {
-      synchronized (JobServiceGrpc.class) {
-        if ((getBatchDeleteJobsMethod = JobServiceGrpc.getBatchDeleteJobsMethod) == null) {
-          JobServiceGrpc.getBatchDeleteJobsMethod =
-              getBatchDeleteJobsMethod =
-                  io.grpc.MethodDescriptor
-                      .<com.google.cloud.talent.v4beta1.BatchDeleteJobsRequest,
-                          com.google.protobuf.Empty>
-                          newBuilder()
-                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-                      .setFullMethodName(
-                          generateFullMethodName(
-                              "google.cloud.talent.v4beta1.JobService", "BatchDeleteJobs"))
-                      .setSampledToLocalTracing(true)
-                      .setRequestMarshaller(
-                          io.grpc.protobuf.ProtoUtils.marshaller(
-                              com.google.cloud.talent.v4beta1.BatchDeleteJobsRequest
-                                  .getDefaultInstance()))
-                      .setResponseMarshaller(
-                          io.grpc.protobuf.ProtoUtils.marshaller(
-                              com.google.protobuf.Empty.getDefaultInstance()))
-                      .setSchemaDescriptor(
-                          new JobServiceMethodDescriptorSupplier("BatchDeleteJobs"))
-                      .build();
-        }
-      }
-    }
-    return getBatchDeleteJobsMethod;
   }
 
   @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
@@ -457,114 +565,6 @@ public final class JobServiceGrpc {
     return getSearchJobsForAlertMethod;
   }
 
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
-  @java.lang.Deprecated // Use {@link #getBatchCreateJobsMethod()} instead.
-  public static final io.grpc.MethodDescriptor<
-          com.google.cloud.talent.v4beta1.BatchCreateJobsRequest, com.google.longrunning.Operation>
-      METHOD_BATCH_CREATE_JOBS = getBatchCreateJobsMethodHelper();
-
-  private static volatile io.grpc.MethodDescriptor<
-          com.google.cloud.talent.v4beta1.BatchCreateJobsRequest, com.google.longrunning.Operation>
-      getBatchCreateJobsMethod;
-
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
-  public static io.grpc.MethodDescriptor<
-          com.google.cloud.talent.v4beta1.BatchCreateJobsRequest, com.google.longrunning.Operation>
-      getBatchCreateJobsMethod() {
-    return getBatchCreateJobsMethodHelper();
-  }
-
-  private static io.grpc.MethodDescriptor<
-          com.google.cloud.talent.v4beta1.BatchCreateJobsRequest, com.google.longrunning.Operation>
-      getBatchCreateJobsMethodHelper() {
-    io.grpc.MethodDescriptor<
-            com.google.cloud.talent.v4beta1.BatchCreateJobsRequest,
-            com.google.longrunning.Operation>
-        getBatchCreateJobsMethod;
-    if ((getBatchCreateJobsMethod = JobServiceGrpc.getBatchCreateJobsMethod) == null) {
-      synchronized (JobServiceGrpc.class) {
-        if ((getBatchCreateJobsMethod = JobServiceGrpc.getBatchCreateJobsMethod) == null) {
-          JobServiceGrpc.getBatchCreateJobsMethod =
-              getBatchCreateJobsMethod =
-                  io.grpc.MethodDescriptor
-                      .<com.google.cloud.talent.v4beta1.BatchCreateJobsRequest,
-                          com.google.longrunning.Operation>
-                          newBuilder()
-                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-                      .setFullMethodName(
-                          generateFullMethodName(
-                              "google.cloud.talent.v4beta1.JobService", "BatchCreateJobs"))
-                      .setSampledToLocalTracing(true)
-                      .setRequestMarshaller(
-                          io.grpc.protobuf.ProtoUtils.marshaller(
-                              com.google.cloud.talent.v4beta1.BatchCreateJobsRequest
-                                  .getDefaultInstance()))
-                      .setResponseMarshaller(
-                          io.grpc.protobuf.ProtoUtils.marshaller(
-                              com.google.longrunning.Operation.getDefaultInstance()))
-                      .setSchemaDescriptor(
-                          new JobServiceMethodDescriptorSupplier("BatchCreateJobs"))
-                      .build();
-        }
-      }
-    }
-    return getBatchCreateJobsMethod;
-  }
-
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
-  @java.lang.Deprecated // Use {@link #getBatchUpdateJobsMethod()} instead.
-  public static final io.grpc.MethodDescriptor<
-          com.google.cloud.talent.v4beta1.BatchUpdateJobsRequest, com.google.longrunning.Operation>
-      METHOD_BATCH_UPDATE_JOBS = getBatchUpdateJobsMethodHelper();
-
-  private static volatile io.grpc.MethodDescriptor<
-          com.google.cloud.talent.v4beta1.BatchUpdateJobsRequest, com.google.longrunning.Operation>
-      getBatchUpdateJobsMethod;
-
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
-  public static io.grpc.MethodDescriptor<
-          com.google.cloud.talent.v4beta1.BatchUpdateJobsRequest, com.google.longrunning.Operation>
-      getBatchUpdateJobsMethod() {
-    return getBatchUpdateJobsMethodHelper();
-  }
-
-  private static io.grpc.MethodDescriptor<
-          com.google.cloud.talent.v4beta1.BatchUpdateJobsRequest, com.google.longrunning.Operation>
-      getBatchUpdateJobsMethodHelper() {
-    io.grpc.MethodDescriptor<
-            com.google.cloud.talent.v4beta1.BatchUpdateJobsRequest,
-            com.google.longrunning.Operation>
-        getBatchUpdateJobsMethod;
-    if ((getBatchUpdateJobsMethod = JobServiceGrpc.getBatchUpdateJobsMethod) == null) {
-      synchronized (JobServiceGrpc.class) {
-        if ((getBatchUpdateJobsMethod = JobServiceGrpc.getBatchUpdateJobsMethod) == null) {
-          JobServiceGrpc.getBatchUpdateJobsMethod =
-              getBatchUpdateJobsMethod =
-                  io.grpc.MethodDescriptor
-                      .<com.google.cloud.talent.v4beta1.BatchUpdateJobsRequest,
-                          com.google.longrunning.Operation>
-                          newBuilder()
-                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-                      .setFullMethodName(
-                          generateFullMethodName(
-                              "google.cloud.talent.v4beta1.JobService", "BatchUpdateJobs"))
-                      .setSampledToLocalTracing(true)
-                      .setRequestMarshaller(
-                          io.grpc.protobuf.ProtoUtils.marshaller(
-                              com.google.cloud.talent.v4beta1.BatchUpdateJobsRequest
-                                  .getDefaultInstance()))
-                      .setResponseMarshaller(
-                          io.grpc.protobuf.ProtoUtils.marshaller(
-                              com.google.longrunning.Operation.getDefaultInstance()))
-                      .setSchemaDescriptor(
-                          new JobServiceMethodDescriptorSupplier("BatchUpdateJobs"))
-                      .build();
-        }
-      }
-    }
-    return getBatchUpdateJobsMethod;
-  }
-
   /** Creates a new async stub that supports all call types for the service */
   public static JobServiceStub newStub(io.grpc.Channel channel) {
     return new JobServiceStub(channel);
@@ -610,6 +610,19 @@ public final class JobServiceGrpc {
      *
      *
      * <pre>
+     * Begins executing a batch create jobs operation.
+     * </pre>
+     */
+    public void batchCreateJobs(
+        com.google.cloud.talent.v4beta1.BatchCreateJobsRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      asyncUnimplementedUnaryCall(getBatchCreateJobsMethodHelper(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Retrieves the specified job, whose status is OPEN or recently EXPIRED
      * within the last 90 days.
      * </pre>
@@ -639,6 +652,19 @@ public final class JobServiceGrpc {
      *
      *
      * <pre>
+     * Begins executing a batch update jobs operation.
+     * </pre>
+     */
+    public void batchUpdateJobs(
+        com.google.cloud.talent.v4beta1.BatchUpdateJobsRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      asyncUnimplementedUnaryCall(getBatchUpdateJobsMethodHelper(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Deletes the specified job.
      * Typically, the job becomes unsearchable within 10 seconds, but it may take
      * up to 5 minutes.
@@ -654,6 +680,19 @@ public final class JobServiceGrpc {
      *
      *
      * <pre>
+     * Deletes a list of [Job][google.cloud.talent.v4beta1.Job]s by filter.
+     * </pre>
+     */
+    public void batchDeleteJobs(
+        com.google.cloud.talent.v4beta1.BatchDeleteJobsRequest request,
+        io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
+      asyncUnimplementedUnaryCall(getBatchDeleteJobsMethodHelper(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Lists jobs by filter.
      * </pre>
      */
@@ -662,19 +701,6 @@ public final class JobServiceGrpc {
         io.grpc.stub.StreamObserver<com.google.cloud.talent.v4beta1.ListJobsResponse>
             responseObserver) {
       asyncUnimplementedUnaryCall(getListJobsMethodHelper(), responseObserver);
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Deletes a list of [Job][google.cloud.talent.v4beta1.Job]s by filter.
-     * </pre>
-     */
-    public void batchDeleteJobs(
-        com.google.cloud.talent.v4beta1.BatchDeleteJobsRequest request,
-        io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
-      asyncUnimplementedUnaryCall(getBatchDeleteJobsMethodHelper(), responseObserver);
     }
 
     /**
@@ -719,32 +745,6 @@ public final class JobServiceGrpc {
       asyncUnimplementedUnaryCall(getSearchJobsForAlertMethodHelper(), responseObserver);
     }
 
-    /**
-     *
-     *
-     * <pre>
-     * Begins executing a batch create jobs operation.
-     * </pre>
-     */
-    public void batchCreateJobs(
-        com.google.cloud.talent.v4beta1.BatchCreateJobsRequest request,
-        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
-      asyncUnimplementedUnaryCall(getBatchCreateJobsMethodHelper(), responseObserver);
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Begins executing a batch update jobs operation.
-     * </pre>
-     */
-    public void batchUpdateJobs(
-        com.google.cloud.talent.v4beta1.BatchUpdateJobsRequest request,
-        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
-      asyncUnimplementedUnaryCall(getBatchUpdateJobsMethodHelper(), responseObserver);
-    }
-
     @java.lang.Override
     public final io.grpc.ServerServiceDefinition bindService() {
       return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
@@ -754,6 +754,12 @@ public final class JobServiceGrpc {
                   new MethodHandlers<
                       com.google.cloud.talent.v4beta1.CreateJobRequest,
                       com.google.cloud.talent.v4beta1.Job>(this, METHODID_CREATE_JOB)))
+          .addMethod(
+              getBatchCreateJobsMethodHelper(),
+              asyncUnaryCall(
+                  new MethodHandlers<
+                      com.google.cloud.talent.v4beta1.BatchCreateJobsRequest,
+                      com.google.longrunning.Operation>(this, METHODID_BATCH_CREATE_JOBS)))
           .addMethod(
               getGetJobMethodHelper(),
               asyncUnaryCall(
@@ -767,23 +773,29 @@ public final class JobServiceGrpc {
                       com.google.cloud.talent.v4beta1.UpdateJobRequest,
                       com.google.cloud.talent.v4beta1.Job>(this, METHODID_UPDATE_JOB)))
           .addMethod(
+              getBatchUpdateJobsMethodHelper(),
+              asyncUnaryCall(
+                  new MethodHandlers<
+                      com.google.cloud.talent.v4beta1.BatchUpdateJobsRequest,
+                      com.google.longrunning.Operation>(this, METHODID_BATCH_UPDATE_JOBS)))
+          .addMethod(
               getDeleteJobMethodHelper(),
               asyncUnaryCall(
                   new MethodHandlers<
                       com.google.cloud.talent.v4beta1.DeleteJobRequest, com.google.protobuf.Empty>(
                       this, METHODID_DELETE_JOB)))
           .addMethod(
-              getListJobsMethodHelper(),
-              asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.talent.v4beta1.ListJobsRequest,
-                      com.google.cloud.talent.v4beta1.ListJobsResponse>(this, METHODID_LIST_JOBS)))
-          .addMethod(
               getBatchDeleteJobsMethodHelper(),
               asyncUnaryCall(
                   new MethodHandlers<
                       com.google.cloud.talent.v4beta1.BatchDeleteJobsRequest,
                       com.google.protobuf.Empty>(this, METHODID_BATCH_DELETE_JOBS)))
+          .addMethod(
+              getListJobsMethodHelper(),
+              asyncUnaryCall(
+                  new MethodHandlers<
+                      com.google.cloud.talent.v4beta1.ListJobsRequest,
+                      com.google.cloud.talent.v4beta1.ListJobsResponse>(this, METHODID_LIST_JOBS)))
           .addMethod(
               getSearchJobsMethodHelper(),
               asyncUnaryCall(
@@ -798,18 +810,6 @@ public final class JobServiceGrpc {
                       com.google.cloud.talent.v4beta1.SearchJobsRequest,
                       com.google.cloud.talent.v4beta1.SearchJobsResponse>(
                       this, METHODID_SEARCH_JOBS_FOR_ALERT)))
-          .addMethod(
-              getBatchCreateJobsMethodHelper(),
-              asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.talent.v4beta1.BatchCreateJobsRequest,
-                      com.google.longrunning.Operation>(this, METHODID_BATCH_CREATE_JOBS)))
-          .addMethod(
-              getBatchUpdateJobsMethodHelper(),
-              asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.talent.v4beta1.BatchUpdateJobsRequest,
-                      com.google.longrunning.Operation>(this, METHODID_BATCH_UPDATE_JOBS)))
           .build();
     }
   }
@@ -857,6 +857,22 @@ public final class JobServiceGrpc {
      *
      *
      * <pre>
+     * Begins executing a batch create jobs operation.
+     * </pre>
+     */
+    public void batchCreateJobs(
+        com.google.cloud.talent.v4beta1.BatchCreateJobsRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      asyncUnaryCall(
+          getChannel().newCall(getBatchCreateJobsMethodHelper(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Retrieves the specified job, whose status is OPEN or recently EXPIRED
      * within the last 90 days.
      * </pre>
@@ -892,6 +908,22 @@ public final class JobServiceGrpc {
      *
      *
      * <pre>
+     * Begins executing a batch update jobs operation.
+     * </pre>
+     */
+    public void batchUpdateJobs(
+        com.google.cloud.talent.v4beta1.BatchUpdateJobsRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      asyncUnaryCall(
+          getChannel().newCall(getBatchUpdateJobsMethodHelper(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Deletes the specified job.
      * Typically, the job becomes unsearchable within 10 seconds, but it may take
      * up to 5 minutes.
@@ -910,6 +942,22 @@ public final class JobServiceGrpc {
      *
      *
      * <pre>
+     * Deletes a list of [Job][google.cloud.talent.v4beta1.Job]s by filter.
+     * </pre>
+     */
+    public void batchDeleteJobs(
+        com.google.cloud.talent.v4beta1.BatchDeleteJobsRequest request,
+        io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
+      asyncUnaryCall(
+          getChannel().newCall(getBatchDeleteJobsMethodHelper(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Lists jobs by filter.
      * </pre>
      */
@@ -919,22 +967,6 @@ public final class JobServiceGrpc {
             responseObserver) {
       asyncUnaryCall(
           getChannel().newCall(getListJobsMethodHelper(), getCallOptions()),
-          request,
-          responseObserver);
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Deletes a list of [Job][google.cloud.talent.v4beta1.Job]s by filter.
-     * </pre>
-     */
-    public void batchDeleteJobs(
-        com.google.cloud.talent.v4beta1.BatchDeleteJobsRequest request,
-        io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
-      asyncUnaryCall(
-          getChannel().newCall(getBatchDeleteJobsMethodHelper(), getCallOptions()),
           request,
           responseObserver);
     }
@@ -986,38 +1018,6 @@ public final class JobServiceGrpc {
           request,
           responseObserver);
     }
-
-    /**
-     *
-     *
-     * <pre>
-     * Begins executing a batch create jobs operation.
-     * </pre>
-     */
-    public void batchCreateJobs(
-        com.google.cloud.talent.v4beta1.BatchCreateJobsRequest request,
-        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
-      asyncUnaryCall(
-          getChannel().newCall(getBatchCreateJobsMethodHelper(), getCallOptions()),
-          request,
-          responseObserver);
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Begins executing a batch update jobs operation.
-     * </pre>
-     */
-    public void batchUpdateJobs(
-        com.google.cloud.talent.v4beta1.BatchUpdateJobsRequest request,
-        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
-      asyncUnaryCall(
-          getChannel().newCall(getBatchUpdateJobsMethodHelper(), getCallOptions()),
-          request,
-          responseObserver);
-    }
   }
 
   /**
@@ -1061,6 +1061,19 @@ public final class JobServiceGrpc {
      *
      *
      * <pre>
+     * Begins executing a batch create jobs operation.
+     * </pre>
+     */
+    public com.google.longrunning.Operation batchCreateJobs(
+        com.google.cloud.talent.v4beta1.BatchCreateJobsRequest request) {
+      return blockingUnaryCall(
+          getChannel(), getBatchCreateJobsMethodHelper(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Retrieves the specified job, whose status is OPEN or recently EXPIRED
      * within the last 90 days.
      * </pre>
@@ -1088,6 +1101,19 @@ public final class JobServiceGrpc {
      *
      *
      * <pre>
+     * Begins executing a batch update jobs operation.
+     * </pre>
+     */
+    public com.google.longrunning.Operation batchUpdateJobs(
+        com.google.cloud.talent.v4beta1.BatchUpdateJobsRequest request) {
+      return blockingUnaryCall(
+          getChannel(), getBatchUpdateJobsMethodHelper(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Deletes the specified job.
      * Typically, the job becomes unsearchable within 10 seconds, but it may take
      * up to 5 minutes.
@@ -1102,18 +1128,6 @@ public final class JobServiceGrpc {
      *
      *
      * <pre>
-     * Lists jobs by filter.
-     * </pre>
-     */
-    public com.google.cloud.talent.v4beta1.ListJobsResponse listJobs(
-        com.google.cloud.talent.v4beta1.ListJobsRequest request) {
-      return blockingUnaryCall(getChannel(), getListJobsMethodHelper(), getCallOptions(), request);
-    }
-
-    /**
-     *
-     *
-     * <pre>
      * Deletes a list of [Job][google.cloud.talent.v4beta1.Job]s by filter.
      * </pre>
      */
@@ -1121,6 +1135,18 @@ public final class JobServiceGrpc {
         com.google.cloud.talent.v4beta1.BatchDeleteJobsRequest request) {
       return blockingUnaryCall(
           getChannel(), getBatchDeleteJobsMethodHelper(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists jobs by filter.
+     * </pre>
+     */
+    public com.google.cloud.talent.v4beta1.ListJobsResponse listJobs(
+        com.google.cloud.talent.v4beta1.ListJobsRequest request) {
+      return blockingUnaryCall(getChannel(), getListJobsMethodHelper(), getCallOptions(), request);
     }
 
     /**
@@ -1161,32 +1187,6 @@ public final class JobServiceGrpc {
         com.google.cloud.talent.v4beta1.SearchJobsRequest request) {
       return blockingUnaryCall(
           getChannel(), getSearchJobsForAlertMethodHelper(), getCallOptions(), request);
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Begins executing a batch create jobs operation.
-     * </pre>
-     */
-    public com.google.longrunning.Operation batchCreateJobs(
-        com.google.cloud.talent.v4beta1.BatchCreateJobsRequest request) {
-      return blockingUnaryCall(
-          getChannel(), getBatchCreateJobsMethodHelper(), getCallOptions(), request);
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Begins executing a batch update jobs operation.
-     * </pre>
-     */
-    public com.google.longrunning.Operation batchUpdateJobs(
-        com.google.cloud.talent.v4beta1.BatchUpdateJobsRequest request) {
-      return blockingUnaryCall(
-          getChannel(), getBatchUpdateJobsMethodHelper(), getCallOptions(), request);
     }
   }
 
@@ -1231,6 +1231,19 @@ public final class JobServiceGrpc {
      *
      *
      * <pre>
+     * Begins executing a batch create jobs operation.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
+        batchCreateJobs(com.google.cloud.talent.v4beta1.BatchCreateJobsRequest request) {
+      return futureUnaryCall(
+          getChannel().newCall(getBatchCreateJobsMethodHelper(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Retrieves the specified job, whose status is OPEN or recently EXPIRED
      * within the last 90 days.
      * </pre>
@@ -1260,6 +1273,19 @@ public final class JobServiceGrpc {
      *
      *
      * <pre>
+     * Begins executing a batch update jobs operation.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
+        batchUpdateJobs(com.google.cloud.talent.v4beta1.BatchUpdateJobsRequest request) {
+      return futureUnaryCall(
+          getChannel().newCall(getBatchUpdateJobsMethodHelper(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Deletes the specified job.
      * Typically, the job becomes unsearchable within 10 seconds, but it may take
      * up to 5 minutes.
@@ -1275,6 +1301,19 @@ public final class JobServiceGrpc {
      *
      *
      * <pre>
+     * Deletes a list of [Job][google.cloud.talent.v4beta1.Job]s by filter.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.protobuf.Empty>
+        batchDeleteJobs(com.google.cloud.talent.v4beta1.BatchDeleteJobsRequest request) {
+      return futureUnaryCall(
+          getChannel().newCall(getBatchDeleteJobsMethodHelper(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Lists jobs by filter.
      * </pre>
      */
@@ -1283,19 +1322,6 @@ public final class JobServiceGrpc {
         listJobs(com.google.cloud.talent.v4beta1.ListJobsRequest request) {
       return futureUnaryCall(
           getChannel().newCall(getListJobsMethodHelper(), getCallOptions()), request);
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Deletes a list of [Job][google.cloud.talent.v4beta1.Job]s by filter.
-     * </pre>
-     */
-    public com.google.common.util.concurrent.ListenableFuture<com.google.protobuf.Empty>
-        batchDeleteJobs(com.google.cloud.talent.v4beta1.BatchDeleteJobsRequest request) {
-      return futureUnaryCall(
-          getChannel().newCall(getBatchDeleteJobsMethodHelper(), getCallOptions()), request);
     }
 
     /**
@@ -1339,44 +1365,18 @@ public final class JobServiceGrpc {
       return futureUnaryCall(
           getChannel().newCall(getSearchJobsForAlertMethodHelper(), getCallOptions()), request);
     }
-
-    /**
-     *
-     *
-     * <pre>
-     * Begins executing a batch create jobs operation.
-     * </pre>
-     */
-    public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
-        batchCreateJobs(com.google.cloud.talent.v4beta1.BatchCreateJobsRequest request) {
-      return futureUnaryCall(
-          getChannel().newCall(getBatchCreateJobsMethodHelper(), getCallOptions()), request);
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Begins executing a batch update jobs operation.
-     * </pre>
-     */
-    public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
-        batchUpdateJobs(com.google.cloud.talent.v4beta1.BatchUpdateJobsRequest request) {
-      return futureUnaryCall(
-          getChannel().newCall(getBatchUpdateJobsMethodHelper(), getCallOptions()), request);
-    }
   }
 
   private static final int METHODID_CREATE_JOB = 0;
-  private static final int METHODID_GET_JOB = 1;
-  private static final int METHODID_UPDATE_JOB = 2;
-  private static final int METHODID_DELETE_JOB = 3;
-  private static final int METHODID_LIST_JOBS = 4;
-  private static final int METHODID_BATCH_DELETE_JOBS = 5;
-  private static final int METHODID_SEARCH_JOBS = 6;
-  private static final int METHODID_SEARCH_JOBS_FOR_ALERT = 7;
-  private static final int METHODID_BATCH_CREATE_JOBS = 8;
-  private static final int METHODID_BATCH_UPDATE_JOBS = 9;
+  private static final int METHODID_BATCH_CREATE_JOBS = 1;
+  private static final int METHODID_GET_JOB = 2;
+  private static final int METHODID_UPDATE_JOB = 3;
+  private static final int METHODID_BATCH_UPDATE_JOBS = 4;
+  private static final int METHODID_DELETE_JOB = 5;
+  private static final int METHODID_BATCH_DELETE_JOBS = 6;
+  private static final int METHODID_LIST_JOBS = 7;
+  private static final int METHODID_SEARCH_JOBS = 8;
+  private static final int METHODID_SEARCH_JOBS_FOR_ALERT = 9;
 
   private static final class MethodHandlers<Req, Resp>
       implements io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -1400,6 +1400,11 @@ public final class JobServiceGrpc {
               (com.google.cloud.talent.v4beta1.CreateJobRequest) request,
               (io.grpc.stub.StreamObserver<com.google.cloud.talent.v4beta1.Job>) responseObserver);
           break;
+        case METHODID_BATCH_CREATE_JOBS:
+          serviceImpl.batchCreateJobs(
+              (com.google.cloud.talent.v4beta1.BatchCreateJobsRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
+          break;
         case METHODID_GET_JOB:
           serviceImpl.getJob(
               (com.google.cloud.talent.v4beta1.GetJobRequest) request,
@@ -1410,9 +1415,19 @@ public final class JobServiceGrpc {
               (com.google.cloud.talent.v4beta1.UpdateJobRequest) request,
               (io.grpc.stub.StreamObserver<com.google.cloud.talent.v4beta1.Job>) responseObserver);
           break;
+        case METHODID_BATCH_UPDATE_JOBS:
+          serviceImpl.batchUpdateJobs(
+              (com.google.cloud.talent.v4beta1.BatchUpdateJobsRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
+          break;
         case METHODID_DELETE_JOB:
           serviceImpl.deleteJob(
               (com.google.cloud.talent.v4beta1.DeleteJobRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.protobuf.Empty>) responseObserver);
+          break;
+        case METHODID_BATCH_DELETE_JOBS:
+          serviceImpl.batchDeleteJobs(
+              (com.google.cloud.talent.v4beta1.BatchDeleteJobsRequest) request,
               (io.grpc.stub.StreamObserver<com.google.protobuf.Empty>) responseObserver);
           break;
         case METHODID_LIST_JOBS:
@@ -1420,11 +1435,6 @@ public final class JobServiceGrpc {
               (com.google.cloud.talent.v4beta1.ListJobsRequest) request,
               (io.grpc.stub.StreamObserver<com.google.cloud.talent.v4beta1.ListJobsResponse>)
                   responseObserver);
-          break;
-        case METHODID_BATCH_DELETE_JOBS:
-          serviceImpl.batchDeleteJobs(
-              (com.google.cloud.talent.v4beta1.BatchDeleteJobsRequest) request,
-              (io.grpc.stub.StreamObserver<com.google.protobuf.Empty>) responseObserver);
           break;
         case METHODID_SEARCH_JOBS:
           serviceImpl.searchJobs(
@@ -1437,16 +1447,6 @@ public final class JobServiceGrpc {
               (com.google.cloud.talent.v4beta1.SearchJobsRequest) request,
               (io.grpc.stub.StreamObserver<com.google.cloud.talent.v4beta1.SearchJobsResponse>)
                   responseObserver);
-          break;
-        case METHODID_BATCH_CREATE_JOBS:
-          serviceImpl.batchCreateJobs(
-              (com.google.cloud.talent.v4beta1.BatchCreateJobsRequest) request,
-              (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
-          break;
-        case METHODID_BATCH_UPDATE_JOBS:
-          serviceImpl.batchUpdateJobs(
-              (com.google.cloud.talent.v4beta1.BatchUpdateJobsRequest) request,
-              (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
           break;
         default:
           throw new AssertionError();
@@ -1513,15 +1513,15 @@ public final class JobServiceGrpc {
                   io.grpc.ServiceDescriptor.newBuilder(SERVICE_NAME)
                       .setSchemaDescriptor(new JobServiceFileDescriptorSupplier())
                       .addMethod(getCreateJobMethodHelper())
+                      .addMethod(getBatchCreateJobsMethodHelper())
                       .addMethod(getGetJobMethodHelper())
                       .addMethod(getUpdateJobMethodHelper())
+                      .addMethod(getBatchUpdateJobsMethodHelper())
                       .addMethod(getDeleteJobMethodHelper())
-                      .addMethod(getListJobsMethodHelper())
                       .addMethod(getBatchDeleteJobsMethodHelper())
+                      .addMethod(getListJobsMethodHelper())
                       .addMethod(getSearchJobsMethodHelper())
                       .addMethod(getSearchJobsForAlertMethodHelper())
-                      .addMethod(getBatchCreateJobsMethodHelper())
-                      .addMethod(getBatchUpdateJobsMethodHelper())
                       .build();
         }
       }

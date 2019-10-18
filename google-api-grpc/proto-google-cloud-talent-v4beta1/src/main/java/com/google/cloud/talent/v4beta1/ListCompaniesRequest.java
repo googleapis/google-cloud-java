@@ -117,12 +117,12 @@ public final class ListCompaniesRequest extends com.google.protobuf.GeneratedMes
    * <pre>
    * Required. Resource name of the tenant under which the company is created.
    * The format is "projects/{project_id}/tenants/{tenant_id}", for example,
-   * "projects/api-test-project/tenant/foo".
-   * Tenant id is optional and the default tenant is used if unspecified, for
-   * example, "projects/api-test-project".
+   * "projects/foo/tenant/bar".
+   * If tenant id is unspecified, the default tenant will be used, for
+   * example, "projects/foo".
    * </pre>
    *
-   * <code>string parent = 1;</code>
+   * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   public java.lang.String getParent() {
     java.lang.Object ref = parent_;
@@ -141,12 +141,12 @@ public final class ListCompaniesRequest extends com.google.protobuf.GeneratedMes
    * <pre>
    * Required. Resource name of the tenant under which the company is created.
    * The format is "projects/{project_id}/tenants/{tenant_id}", for example,
-   * "projects/api-test-project/tenant/foo".
-   * Tenant id is optional and the default tenant is used if unspecified, for
-   * example, "projects/api-test-project".
+   * "projects/foo/tenant/bar".
+   * If tenant id is unspecified, the default tenant will be used, for
+   * example, "projects/foo".
    * </pre>
    *
-   * <code>string parent = 1;</code>
+   * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   public com.google.protobuf.ByteString getParentBytes() {
     java.lang.Object ref = parent_;
@@ -166,7 +166,7 @@ public final class ListCompaniesRequest extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * Optional. The starting indicator from which to return results.
+   * The starting indicator from which to return results.
    * </pre>
    *
    * <code>string page_token = 2;</code>
@@ -186,7 +186,7 @@ public final class ListCompaniesRequest extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * Optional. The starting indicator from which to return results.
+   * The starting indicator from which to return results.
    * </pre>
    *
    * <code>string page_token = 2;</code>
@@ -209,7 +209,7 @@ public final class ListCompaniesRequest extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * Optional. The maximum number of companies to be returned, at most 100.
+   * The maximum number of companies to be returned, at most 100.
    * Default is 100 if a non-positive number is provided.
    * </pre>
    *
@@ -225,7 +225,7 @@ public final class ListCompaniesRequest extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * Optional. Set to true if the companies requested must have open jobs.
+   * Set to true if the companies requested must have open jobs.
    * Defaults to false.
    * If true, at most
    * [page_size][google.cloud.talent.v4beta1.ListCompaniesRequest.page_size] of
@@ -609,12 +609,12 @@ public final class ListCompaniesRequest extends com.google.protobuf.GeneratedMes
      * <pre>
      * Required. Resource name of the tenant under which the company is created.
      * The format is "projects/{project_id}/tenants/{tenant_id}", for example,
-     * "projects/api-test-project/tenant/foo".
-     * Tenant id is optional and the default tenant is used if unspecified, for
-     * example, "projects/api-test-project".
+     * "projects/foo/tenant/bar".
+     * If tenant id is unspecified, the default tenant will be used, for
+     * example, "projects/foo".
      * </pre>
      *
-     * <code>string parent = 1;</code>
+     * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public java.lang.String getParent() {
       java.lang.Object ref = parent_;
@@ -633,12 +633,12 @@ public final class ListCompaniesRequest extends com.google.protobuf.GeneratedMes
      * <pre>
      * Required. Resource name of the tenant under which the company is created.
      * The format is "projects/{project_id}/tenants/{tenant_id}", for example,
-     * "projects/api-test-project/tenant/foo".
-     * Tenant id is optional and the default tenant is used if unspecified, for
-     * example, "projects/api-test-project".
+     * "projects/foo/tenant/bar".
+     * If tenant id is unspecified, the default tenant will be used, for
+     * example, "projects/foo".
      * </pre>
      *
-     * <code>string parent = 1;</code>
+     * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public com.google.protobuf.ByteString getParentBytes() {
       java.lang.Object ref = parent_;
@@ -657,12 +657,12 @@ public final class ListCompaniesRequest extends com.google.protobuf.GeneratedMes
      * <pre>
      * Required. Resource name of the tenant under which the company is created.
      * The format is "projects/{project_id}/tenants/{tenant_id}", for example,
-     * "projects/api-test-project/tenant/foo".
-     * Tenant id is optional and the default tenant is used if unspecified, for
-     * example, "projects/api-test-project".
+     * "projects/foo/tenant/bar".
+     * If tenant id is unspecified, the default tenant will be used, for
+     * example, "projects/foo".
      * </pre>
      *
-     * <code>string parent = 1;</code>
+     * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder setParent(java.lang.String value) {
       if (value == null) {
@@ -679,12 +679,12 @@ public final class ListCompaniesRequest extends com.google.protobuf.GeneratedMes
      * <pre>
      * Required. Resource name of the tenant under which the company is created.
      * The format is "projects/{project_id}/tenants/{tenant_id}", for example,
-     * "projects/api-test-project/tenant/foo".
-     * Tenant id is optional and the default tenant is used if unspecified, for
-     * example, "projects/api-test-project".
+     * "projects/foo/tenant/bar".
+     * If tenant id is unspecified, the default tenant will be used, for
+     * example, "projects/foo".
      * </pre>
      *
-     * <code>string parent = 1;</code>
+     * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder clearParent() {
 
@@ -698,12 +698,12 @@ public final class ListCompaniesRequest extends com.google.protobuf.GeneratedMes
      * <pre>
      * Required. Resource name of the tenant under which the company is created.
      * The format is "projects/{project_id}/tenants/{tenant_id}", for example,
-     * "projects/api-test-project/tenant/foo".
-     * Tenant id is optional and the default tenant is used if unspecified, for
-     * example, "projects/api-test-project".
+     * "projects/foo/tenant/bar".
+     * If tenant id is unspecified, the default tenant will be used, for
+     * example, "projects/foo".
      * </pre>
      *
-     * <code>string parent = 1;</code>
+     * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder setParentBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -721,7 +721,7 @@ public final class ListCompaniesRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Optional. The starting indicator from which to return results.
+     * The starting indicator from which to return results.
      * </pre>
      *
      * <code>string page_token = 2;</code>
@@ -741,7 +741,7 @@ public final class ListCompaniesRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Optional. The starting indicator from which to return results.
+     * The starting indicator from which to return results.
      * </pre>
      *
      * <code>string page_token = 2;</code>
@@ -761,7 +761,7 @@ public final class ListCompaniesRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Optional. The starting indicator from which to return results.
+     * The starting indicator from which to return results.
      * </pre>
      *
      * <code>string page_token = 2;</code>
@@ -779,7 +779,7 @@ public final class ListCompaniesRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Optional. The starting indicator from which to return results.
+     * The starting indicator from which to return results.
      * </pre>
      *
      * <code>string page_token = 2;</code>
@@ -794,7 +794,7 @@ public final class ListCompaniesRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Optional. The starting indicator from which to return results.
+     * The starting indicator from which to return results.
      * </pre>
      *
      * <code>string page_token = 2;</code>
@@ -815,7 +815,7 @@ public final class ListCompaniesRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Optional. The maximum number of companies to be returned, at most 100.
+     * The maximum number of companies to be returned, at most 100.
      * Default is 100 if a non-positive number is provided.
      * </pre>
      *
@@ -828,7 +828,7 @@ public final class ListCompaniesRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Optional. The maximum number of companies to be returned, at most 100.
+     * The maximum number of companies to be returned, at most 100.
      * Default is 100 if a non-positive number is provided.
      * </pre>
      *
@@ -844,7 +844,7 @@ public final class ListCompaniesRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Optional. The maximum number of companies to be returned, at most 100.
+     * The maximum number of companies to be returned, at most 100.
      * Default is 100 if a non-positive number is provided.
      * </pre>
      *
@@ -862,7 +862,7 @@ public final class ListCompaniesRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Optional. Set to true if the companies requested must have open jobs.
+     * Set to true if the companies requested must have open jobs.
      * Defaults to false.
      * If true, at most
      * [page_size][google.cloud.talent.v4beta1.ListCompaniesRequest.page_size] of
@@ -878,7 +878,7 @@ public final class ListCompaniesRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Optional. Set to true if the companies requested must have open jobs.
+     * Set to true if the companies requested must have open jobs.
      * Defaults to false.
      * If true, at most
      * [page_size][google.cloud.talent.v4beta1.ListCompaniesRequest.page_size] of
@@ -897,7 +897,7 @@ public final class ListCompaniesRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Optional. Set to true if the companies requested must have open jobs.
+     * Set to true if the companies requested must have open jobs.
      * Defaults to false.
      * If true, at most
      * [page_size][google.cloud.talent.v4beta1.ListCompaniesRequest.page_size] of

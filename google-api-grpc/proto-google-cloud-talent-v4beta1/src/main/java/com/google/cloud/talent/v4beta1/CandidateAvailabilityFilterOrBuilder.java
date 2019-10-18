@@ -3,6 +3,7 @@
 
 package com.google.cloud.talent.v4beta1;
 
+@java.lang.Deprecated
 public interface CandidateAvailabilityFilterOrBuilder
     extends
     // @@protoc_insertion_point(interface_extends:google.cloud.talent.v4beta1.CandidateAvailabilityFilter)
@@ -12,8 +13,8 @@ public interface CandidateAvailabilityFilterOrBuilder
    *
    *
    * <pre>
-   * Optional. It is false by default. If true, API excludes all the potential
-   * available profiles.
+   * It is false by default. If true, API excludes all the potential available
+   * profiles.
    * </pre>
    *
    * <code>bool negated = 1;</code>

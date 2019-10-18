@@ -18,6 +18,8 @@ package com.google.cloud.storage.contrib.nio.testing;
 
 import com.google.api.services.storage.model.Bucket;
 import com.google.api.services.storage.model.BucketAccessControl;
+import com.google.api.services.storage.model.HmacKey;
+import com.google.api.services.storage.model.HmacKeyMetadata;
 import com.google.api.services.storage.model.Notification;
 import com.google.api.services.storage.model.ObjectAccessControl;
 import com.google.api.services.storage.model.Policy;
@@ -68,6 +70,7 @@ import javax.annotation.concurrent.NotThreadSafe;
  *         <li>checksums, etags
  *         <li>IAM operations
  *         <li>BucketLock operations
+ *         <li>HMAC key operations
  *       </ul>
  * </ul>
  */
@@ -458,6 +461,31 @@ class FakeStorageRpc implements StorageRpc {
 
   @Override
   public List<BucketAccessControl> listAcls(String bucket, Map<Option, ?> options) {
+    throw new UnsupportedOperationException();
+  }
+
+  @Override
+  public HmacKey createHmacKey(String serviceAccountEmail, Map<Option, ?> options) {
+    throw new UnsupportedOperationException();
+  }
+
+  @Override
+  public Tuple<String, Iterable<HmacKeyMetadata>> listHmacKeys(Map<Option, ?> options) {
+    throw new UnsupportedOperationException();
+  }
+
+  @Override
+  public HmacKeyMetadata updateHmacKey(HmacKeyMetadata hmacKeyMetadata, Map<Option, ?> options) {
+    throw new UnsupportedOperationException();
+  }
+
+  @Override
+  public HmacKeyMetadata getHmacKey(String accessId, Map<Option, ?> options) {
+    throw new UnsupportedOperationException();
+  }
+
+  @Override
+  public void deleteHmacKey(HmacKeyMetadata hmacKeyMetadata, Map<Option, ?> options) {
     throw new UnsupportedOperationException();
   }
 

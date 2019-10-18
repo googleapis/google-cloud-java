@@ -125,7 +125,9 @@ public final class CreateEntityTypeRequest extends com.google.protobuf.Generated
    * Format: `projects/&lt;Project ID&gt;/agent`.
    * </pre>
    *
-   * <code>string parent = 1;</code>
+   * <code>
+   * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    */
   public java.lang.String getParent() {
     java.lang.Object ref = parent_;
@@ -146,7 +148,9 @@ public final class CreateEntityTypeRequest extends com.google.protobuf.Generated
    * Format: `projects/&lt;Project ID&gt;/agent`.
    * </pre>
    *
-   * <code>string parent = 1;</code>
+   * <code>
+   * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    */
   public com.google.protobuf.ByteString getParentBytes() {
     java.lang.Object ref = parent_;
@@ -169,7 +173,9 @@ public final class CreateEntityTypeRequest extends com.google.protobuf.Generated
    * Required. The entity type to create.
    * </pre>
    *
-   * <code>.google.cloud.dialogflow.v2.EntityType entity_type = 2;</code>
+   * <code>
+   * .google.cloud.dialogflow.v2.EntityType entity_type = 2 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   public boolean hasEntityType() {
     return entityType_ != null;
@@ -181,7 +187,9 @@ public final class CreateEntityTypeRequest extends com.google.protobuf.Generated
    * Required. The entity type to create.
    * </pre>
    *
-   * <code>.google.cloud.dialogflow.v2.EntityType entity_type = 2;</code>
+   * <code>
+   * .google.cloud.dialogflow.v2.EntityType entity_type = 2 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   public com.google.cloud.dialogflow.v2.EntityType getEntityType() {
     return entityType_ == null
@@ -195,7 +203,9 @@ public final class CreateEntityTypeRequest extends com.google.protobuf.Generated
    * Required. The entity type to create.
    * </pre>
    *
-   * <code>.google.cloud.dialogflow.v2.EntityType entity_type = 2;</code>
+   * <code>
+   * .google.cloud.dialogflow.v2.EntityType entity_type = 2 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   public com.google.cloud.dialogflow.v2.EntityTypeOrBuilder getEntityTypeOrBuilder() {
     return getEntityType();
@@ -215,7 +225,7 @@ public final class CreateEntityTypeRequest extends com.google.protobuf.Generated
    * be used.
    * </pre>
    *
-   * <code>string language_code = 3;</code>
+   * <code>string language_code = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   public java.lang.String getLanguageCode() {
     java.lang.Object ref = languageCode_;
@@ -240,7 +250,7 @@ public final class CreateEntityTypeRequest extends com.google.protobuf.Generated
    * be used.
    * </pre>
    *
-   * <code>string language_code = 3;</code>
+   * <code>string language_code = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   public com.google.protobuf.ByteString getLanguageCodeBytes() {
     java.lang.Object ref = languageCode_;
@@ -626,7 +636,9 @@ public final class CreateEntityTypeRequest extends com.google.protobuf.Generated
      * Format: `projects/&lt;Project ID&gt;/agent`.
      * </pre>
      *
-     * <code>string parent = 1;</code>
+     * <code>
+     * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      */
     public java.lang.String getParent() {
       java.lang.Object ref = parent_;
@@ -647,7 +659,9 @@ public final class CreateEntityTypeRequest extends com.google.protobuf.Generated
      * Format: `projects/&lt;Project ID&gt;/agent`.
      * </pre>
      *
-     * <code>string parent = 1;</code>
+     * <code>
+     * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      */
     public com.google.protobuf.ByteString getParentBytes() {
       java.lang.Object ref = parent_;
@@ -668,7 +682,9 @@ public final class CreateEntityTypeRequest extends com.google.protobuf.Generated
      * Format: `projects/&lt;Project ID&gt;/agent`.
      * </pre>
      *
-     * <code>string parent = 1;</code>
+     * <code>
+     * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      */
     public Builder setParent(java.lang.String value) {
       if (value == null) {
@@ -687,7 +703,9 @@ public final class CreateEntityTypeRequest extends com.google.protobuf.Generated
      * Format: `projects/&lt;Project ID&gt;/agent`.
      * </pre>
      *
-     * <code>string parent = 1;</code>
+     * <code>
+     * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      */
     public Builder clearParent() {
 
@@ -703,7 +721,9 @@ public final class CreateEntityTypeRequest extends com.google.protobuf.Generated
      * Format: `projects/&lt;Project ID&gt;/agent`.
      * </pre>
      *
-     * <code>string parent = 1;</code>
+     * <code>
+     * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      */
     public Builder setParentBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -729,7 +749,9 @@ public final class CreateEntityTypeRequest extends com.google.protobuf.Generated
      * Required. The entity type to create.
      * </pre>
      *
-     * <code>.google.cloud.dialogflow.v2.EntityType entity_type = 2;</code>
+     * <code>
+     * .google.cloud.dialogflow.v2.EntityType entity_type = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public boolean hasEntityType() {
       return entityTypeBuilder_ != null || entityType_ != null;
@@ -741,7 +763,9 @@ public final class CreateEntityTypeRequest extends com.google.protobuf.Generated
      * Required. The entity type to create.
      * </pre>
      *
-     * <code>.google.cloud.dialogflow.v2.EntityType entity_type = 2;</code>
+     * <code>
+     * .google.cloud.dialogflow.v2.EntityType entity_type = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public com.google.cloud.dialogflow.v2.EntityType getEntityType() {
       if (entityTypeBuilder_ == null) {
@@ -759,7 +783,9 @@ public final class CreateEntityTypeRequest extends com.google.protobuf.Generated
      * Required. The entity type to create.
      * </pre>
      *
-     * <code>.google.cloud.dialogflow.v2.EntityType entity_type = 2;</code>
+     * <code>
+     * .google.cloud.dialogflow.v2.EntityType entity_type = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder setEntityType(com.google.cloud.dialogflow.v2.EntityType value) {
       if (entityTypeBuilder_ == null) {
@@ -781,7 +807,9 @@ public final class CreateEntityTypeRequest extends com.google.protobuf.Generated
      * Required. The entity type to create.
      * </pre>
      *
-     * <code>.google.cloud.dialogflow.v2.EntityType entity_type = 2;</code>
+     * <code>
+     * .google.cloud.dialogflow.v2.EntityType entity_type = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder setEntityType(
         com.google.cloud.dialogflow.v2.EntityType.Builder builderForValue) {
@@ -801,7 +829,9 @@ public final class CreateEntityTypeRequest extends com.google.protobuf.Generated
      * Required. The entity type to create.
      * </pre>
      *
-     * <code>.google.cloud.dialogflow.v2.EntityType entity_type = 2;</code>
+     * <code>
+     * .google.cloud.dialogflow.v2.EntityType entity_type = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder mergeEntityType(com.google.cloud.dialogflow.v2.EntityType value) {
       if (entityTypeBuilder_ == null) {
@@ -827,7 +857,9 @@ public final class CreateEntityTypeRequest extends com.google.protobuf.Generated
      * Required. The entity type to create.
      * </pre>
      *
-     * <code>.google.cloud.dialogflow.v2.EntityType entity_type = 2;</code>
+     * <code>
+     * .google.cloud.dialogflow.v2.EntityType entity_type = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder clearEntityType() {
       if (entityTypeBuilder_ == null) {
@@ -847,7 +879,9 @@ public final class CreateEntityTypeRequest extends com.google.protobuf.Generated
      * Required. The entity type to create.
      * </pre>
      *
-     * <code>.google.cloud.dialogflow.v2.EntityType entity_type = 2;</code>
+     * <code>
+     * .google.cloud.dialogflow.v2.EntityType entity_type = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public com.google.cloud.dialogflow.v2.EntityType.Builder getEntityTypeBuilder() {
 
@@ -861,7 +895,9 @@ public final class CreateEntityTypeRequest extends com.google.protobuf.Generated
      * Required. The entity type to create.
      * </pre>
      *
-     * <code>.google.cloud.dialogflow.v2.EntityType entity_type = 2;</code>
+     * <code>
+     * .google.cloud.dialogflow.v2.EntityType entity_type = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public com.google.cloud.dialogflow.v2.EntityTypeOrBuilder getEntityTypeOrBuilder() {
       if (entityTypeBuilder_ != null) {
@@ -879,7 +915,9 @@ public final class CreateEntityTypeRequest extends com.google.protobuf.Generated
      * Required. The entity type to create.
      * </pre>
      *
-     * <code>.google.cloud.dialogflow.v2.EntityType entity_type = 2;</code>
+     * <code>
+     * .google.cloud.dialogflow.v2.EntityType entity_type = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.dialogflow.v2.EntityType,
@@ -911,7 +949,7 @@ public final class CreateEntityTypeRequest extends com.google.protobuf.Generated
      * be used.
      * </pre>
      *
-     * <code>string language_code = 3;</code>
+     * <code>string language_code = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public java.lang.String getLanguageCode() {
       java.lang.Object ref = languageCode_;
@@ -936,7 +974,7 @@ public final class CreateEntityTypeRequest extends com.google.protobuf.Generated
      * be used.
      * </pre>
      *
-     * <code>string language_code = 3;</code>
+     * <code>string language_code = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public com.google.protobuf.ByteString getLanguageCodeBytes() {
       java.lang.Object ref = languageCode_;
@@ -961,7 +999,7 @@ public final class CreateEntityTypeRequest extends com.google.protobuf.Generated
      * be used.
      * </pre>
      *
-     * <code>string language_code = 3;</code>
+     * <code>string language_code = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public Builder setLanguageCode(java.lang.String value) {
       if (value == null) {
@@ -984,7 +1022,7 @@ public final class CreateEntityTypeRequest extends com.google.protobuf.Generated
      * be used.
      * </pre>
      *
-     * <code>string language_code = 3;</code>
+     * <code>string language_code = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public Builder clearLanguageCode() {
 
@@ -1004,7 +1042,7 @@ public final class CreateEntityTypeRequest extends com.google.protobuf.Generated
      * be used.
      * </pre>
      *
-     * <code>string language_code = 3;</code>
+     * <code>string language_code = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public Builder setLanguageCodeBytes(com.google.protobuf.ByteString value) {
       if (value == null) {

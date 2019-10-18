@@ -129,13 +129,12 @@ public final class BatchUpdateJobsRequest extends com.google.protobuf.GeneratedM
    *
    * <pre>
    * Required. The resource name of the tenant under which the job is created.
-   * The format is "projects/{project_id}/tenants/{tenant_id}", for example,
-   * "projects/api-test-project/tenant/foo".
-   * Tenant id is optional and the default tenant is used if unspecified, for
-   * example, "projects/api-test-project".
+   * The format is "projects/{project_id}/tenants/{tenant_id}". For example,
+   * "projects/foo/tenant/bar". If tenant id is unspecified, a default tenant
+   * is created. For example, "projects/foo".
    * </pre>
    *
-   * <code>string parent = 1;</code>
+   * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   public java.lang.String getParent() {
     java.lang.Object ref = parent_;
@@ -153,13 +152,12 @@ public final class BatchUpdateJobsRequest extends com.google.protobuf.GeneratedM
    *
    * <pre>
    * Required. The resource name of the tenant under which the job is created.
-   * The format is "projects/{project_id}/tenants/{tenant_id}", for example,
-   * "projects/api-test-project/tenant/foo".
-   * Tenant id is optional and the default tenant is used if unspecified, for
-   * example, "projects/api-test-project".
+   * The format is "projects/{project_id}/tenants/{tenant_id}". For example,
+   * "projects/foo/tenant/bar". If tenant id is unspecified, a default tenant
+   * is created. For example, "projects/foo".
    * </pre>
    *
-   * <code>string parent = 1;</code>
+   * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   public com.google.protobuf.ByteString getParentBytes() {
     java.lang.Object ref = parent_;
@@ -179,7 +177,7 @@ public final class BatchUpdateJobsRequest extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * Required. The jobs to be updated.
+   * The jobs to be updated.
    * </pre>
    *
    * <code>repeated .google.cloud.talent.v4beta1.Job jobs = 2;</code>
@@ -191,7 +189,7 @@ public final class BatchUpdateJobsRequest extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * Required. The jobs to be updated.
+   * The jobs to be updated.
    * </pre>
    *
    * <code>repeated .google.cloud.talent.v4beta1.Job jobs = 2;</code>
@@ -204,7 +202,7 @@ public final class BatchUpdateJobsRequest extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * Required. The jobs to be updated.
+   * The jobs to be updated.
    * </pre>
    *
    * <code>repeated .google.cloud.talent.v4beta1.Job jobs = 2;</code>
@@ -216,7 +214,7 @@ public final class BatchUpdateJobsRequest extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * Required. The jobs to be updated.
+   * The jobs to be updated.
    * </pre>
    *
    * <code>repeated .google.cloud.talent.v4beta1.Job jobs = 2;</code>
@@ -228,7 +226,7 @@ public final class BatchUpdateJobsRequest extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * Required. The jobs to be updated.
+   * The jobs to be updated.
    * </pre>
    *
    * <code>repeated .google.cloud.talent.v4beta1.Job jobs = 2;</code>
@@ -243,8 +241,8 @@ public final class BatchUpdateJobsRequest extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * Optional but strongly recommended to be provided for the best service
-   * experience, also increase latency when checking status of batch operation.
+   * Strongly recommended for the best service experience. Be aware that it will
+   * also increase latency when checking the status of a batch operation.
    * If
    * [update_mask][google.cloud.talent.v4beta1.BatchUpdateJobsRequest.update_mask]
    * is provided, only the specified fields in
@@ -270,8 +268,8 @@ public final class BatchUpdateJobsRequest extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * Optional but strongly recommended to be provided for the best service
-   * experience, also increase latency when checking status of batch operation.
+   * Strongly recommended for the best service experience. Be aware that it will
+   * also increase latency when checking the status of a batch operation.
    * If
    * [update_mask][google.cloud.talent.v4beta1.BatchUpdateJobsRequest.update_mask]
    * is provided, only the specified fields in
@@ -297,8 +295,8 @@ public final class BatchUpdateJobsRequest extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * Optional but strongly recommended to be provided for the best service
-   * experience, also increase latency when checking status of batch operation.
+   * Strongly recommended for the best service experience. Be aware that it will
+   * also increase latency when checking the status of a batch operation.
    * If
    * [update_mask][google.cloud.talent.v4beta1.BatchUpdateJobsRequest.update_mask]
    * is provided, only the specified fields in
@@ -734,13 +732,12 @@ public final class BatchUpdateJobsRequest extends com.google.protobuf.GeneratedM
      *
      * <pre>
      * Required. The resource name of the tenant under which the job is created.
-     * The format is "projects/{project_id}/tenants/{tenant_id}", for example,
-     * "projects/api-test-project/tenant/foo".
-     * Tenant id is optional and the default tenant is used if unspecified, for
-     * example, "projects/api-test-project".
+     * The format is "projects/{project_id}/tenants/{tenant_id}". For example,
+     * "projects/foo/tenant/bar". If tenant id is unspecified, a default tenant
+     * is created. For example, "projects/foo".
      * </pre>
      *
-     * <code>string parent = 1;</code>
+     * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public java.lang.String getParent() {
       java.lang.Object ref = parent_;
@@ -758,13 +755,12 @@ public final class BatchUpdateJobsRequest extends com.google.protobuf.GeneratedM
      *
      * <pre>
      * Required. The resource name of the tenant under which the job is created.
-     * The format is "projects/{project_id}/tenants/{tenant_id}", for example,
-     * "projects/api-test-project/tenant/foo".
-     * Tenant id is optional and the default tenant is used if unspecified, for
-     * example, "projects/api-test-project".
+     * The format is "projects/{project_id}/tenants/{tenant_id}". For example,
+     * "projects/foo/tenant/bar". If tenant id is unspecified, a default tenant
+     * is created. For example, "projects/foo".
      * </pre>
      *
-     * <code>string parent = 1;</code>
+     * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public com.google.protobuf.ByteString getParentBytes() {
       java.lang.Object ref = parent_;
@@ -782,13 +778,12 @@ public final class BatchUpdateJobsRequest extends com.google.protobuf.GeneratedM
      *
      * <pre>
      * Required. The resource name of the tenant under which the job is created.
-     * The format is "projects/{project_id}/tenants/{tenant_id}", for example,
-     * "projects/api-test-project/tenant/foo".
-     * Tenant id is optional and the default tenant is used if unspecified, for
-     * example, "projects/api-test-project".
+     * The format is "projects/{project_id}/tenants/{tenant_id}". For example,
+     * "projects/foo/tenant/bar". If tenant id is unspecified, a default tenant
+     * is created. For example, "projects/foo".
      * </pre>
      *
-     * <code>string parent = 1;</code>
+     * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder setParent(java.lang.String value) {
       if (value == null) {
@@ -804,13 +799,12 @@ public final class BatchUpdateJobsRequest extends com.google.protobuf.GeneratedM
      *
      * <pre>
      * Required. The resource name of the tenant under which the job is created.
-     * The format is "projects/{project_id}/tenants/{tenant_id}", for example,
-     * "projects/api-test-project/tenant/foo".
-     * Tenant id is optional and the default tenant is used if unspecified, for
-     * example, "projects/api-test-project".
+     * The format is "projects/{project_id}/tenants/{tenant_id}". For example,
+     * "projects/foo/tenant/bar". If tenant id is unspecified, a default tenant
+     * is created. For example, "projects/foo".
      * </pre>
      *
-     * <code>string parent = 1;</code>
+     * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder clearParent() {
 
@@ -823,13 +817,12 @@ public final class BatchUpdateJobsRequest extends com.google.protobuf.GeneratedM
      *
      * <pre>
      * Required. The resource name of the tenant under which the job is created.
-     * The format is "projects/{project_id}/tenants/{tenant_id}", for example,
-     * "projects/api-test-project/tenant/foo".
-     * Tenant id is optional and the default tenant is used if unspecified, for
-     * example, "projects/api-test-project".
+     * The format is "projects/{project_id}/tenants/{tenant_id}". For example,
+     * "projects/foo/tenant/bar". If tenant id is unspecified, a default tenant
+     * is created. For example, "projects/foo".
      * </pre>
      *
-     * <code>string parent = 1;</code>
+     * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder setParentBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -862,7 +855,7 @@ public final class BatchUpdateJobsRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Required. The jobs to be updated.
+     * The jobs to be updated.
      * </pre>
      *
      * <code>repeated .google.cloud.talent.v4beta1.Job jobs = 2;</code>
@@ -878,7 +871,7 @@ public final class BatchUpdateJobsRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Required. The jobs to be updated.
+     * The jobs to be updated.
      * </pre>
      *
      * <code>repeated .google.cloud.talent.v4beta1.Job jobs = 2;</code>
@@ -894,7 +887,7 @@ public final class BatchUpdateJobsRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Required. The jobs to be updated.
+     * The jobs to be updated.
      * </pre>
      *
      * <code>repeated .google.cloud.talent.v4beta1.Job jobs = 2;</code>
@@ -910,7 +903,7 @@ public final class BatchUpdateJobsRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Required. The jobs to be updated.
+     * The jobs to be updated.
      * </pre>
      *
      * <code>repeated .google.cloud.talent.v4beta1.Job jobs = 2;</code>
@@ -932,7 +925,7 @@ public final class BatchUpdateJobsRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Required. The jobs to be updated.
+     * The jobs to be updated.
      * </pre>
      *
      * <code>repeated .google.cloud.talent.v4beta1.Job jobs = 2;</code>
@@ -951,7 +944,7 @@ public final class BatchUpdateJobsRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Required. The jobs to be updated.
+     * The jobs to be updated.
      * </pre>
      *
      * <code>repeated .google.cloud.talent.v4beta1.Job jobs = 2;</code>
@@ -973,7 +966,7 @@ public final class BatchUpdateJobsRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Required. The jobs to be updated.
+     * The jobs to be updated.
      * </pre>
      *
      * <code>repeated .google.cloud.talent.v4beta1.Job jobs = 2;</code>
@@ -995,7 +988,7 @@ public final class BatchUpdateJobsRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Required. The jobs to be updated.
+     * The jobs to be updated.
      * </pre>
      *
      * <code>repeated .google.cloud.talent.v4beta1.Job jobs = 2;</code>
@@ -1014,7 +1007,7 @@ public final class BatchUpdateJobsRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Required. The jobs to be updated.
+     * The jobs to be updated.
      * </pre>
      *
      * <code>repeated .google.cloud.talent.v4beta1.Job jobs = 2;</code>
@@ -1033,7 +1026,7 @@ public final class BatchUpdateJobsRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Required. The jobs to be updated.
+     * The jobs to be updated.
      * </pre>
      *
      * <code>repeated .google.cloud.talent.v4beta1.Job jobs = 2;</code>
@@ -1053,7 +1046,7 @@ public final class BatchUpdateJobsRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Required. The jobs to be updated.
+     * The jobs to be updated.
      * </pre>
      *
      * <code>repeated .google.cloud.talent.v4beta1.Job jobs = 2;</code>
@@ -1072,7 +1065,7 @@ public final class BatchUpdateJobsRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Required. The jobs to be updated.
+     * The jobs to be updated.
      * </pre>
      *
      * <code>repeated .google.cloud.talent.v4beta1.Job jobs = 2;</code>
@@ -1091,7 +1084,7 @@ public final class BatchUpdateJobsRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Required. The jobs to be updated.
+     * The jobs to be updated.
      * </pre>
      *
      * <code>repeated .google.cloud.talent.v4beta1.Job jobs = 2;</code>
@@ -1103,7 +1096,7 @@ public final class BatchUpdateJobsRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Required. The jobs to be updated.
+     * The jobs to be updated.
      * </pre>
      *
      * <code>repeated .google.cloud.talent.v4beta1.Job jobs = 2;</code>
@@ -1119,7 +1112,7 @@ public final class BatchUpdateJobsRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Required. The jobs to be updated.
+     * The jobs to be updated.
      * </pre>
      *
      * <code>repeated .google.cloud.talent.v4beta1.Job jobs = 2;</code>
@@ -1136,7 +1129,7 @@ public final class BatchUpdateJobsRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Required. The jobs to be updated.
+     * The jobs to be updated.
      * </pre>
      *
      * <code>repeated .google.cloud.talent.v4beta1.Job jobs = 2;</code>
@@ -1149,7 +1142,7 @@ public final class BatchUpdateJobsRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Required. The jobs to be updated.
+     * The jobs to be updated.
      * </pre>
      *
      * <code>repeated .google.cloud.talent.v4beta1.Job jobs = 2;</code>
@@ -1162,7 +1155,7 @@ public final class BatchUpdateJobsRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Required. The jobs to be updated.
+     * The jobs to be updated.
      * </pre>
      *
      * <code>repeated .google.cloud.talent.v4beta1.Job jobs = 2;</code>
@@ -1198,8 +1191,8 @@ public final class BatchUpdateJobsRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Optional but strongly recommended to be provided for the best service
-     * experience, also increase latency when checking status of batch operation.
+     * Strongly recommended for the best service experience. Be aware that it will
+     * also increase latency when checking the status of a batch operation.
      * If
      * [update_mask][google.cloud.talent.v4beta1.BatchUpdateJobsRequest.update_mask]
      * is provided, only the specified fields in
@@ -1225,8 +1218,8 @@ public final class BatchUpdateJobsRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Optional but strongly recommended to be provided for the best service
-     * experience, also increase latency when checking status of batch operation.
+     * Strongly recommended for the best service experience. Be aware that it will
+     * also increase latency when checking the status of a batch operation.
      * If
      * [update_mask][google.cloud.talent.v4beta1.BatchUpdateJobsRequest.update_mask]
      * is provided, only the specified fields in
@@ -1258,8 +1251,8 @@ public final class BatchUpdateJobsRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Optional but strongly recommended to be provided for the best service
-     * experience, also increase latency when checking status of batch operation.
+     * Strongly recommended for the best service experience. Be aware that it will
+     * also increase latency when checking the status of a batch operation.
      * If
      * [update_mask][google.cloud.talent.v4beta1.BatchUpdateJobsRequest.update_mask]
      * is provided, only the specified fields in
@@ -1295,8 +1288,8 @@ public final class BatchUpdateJobsRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Optional but strongly recommended to be provided for the best service
-     * experience, also increase latency when checking status of batch operation.
+     * Strongly recommended for the best service experience. Be aware that it will
+     * also increase latency when checking the status of a batch operation.
      * If
      * [update_mask][google.cloud.talent.v4beta1.BatchUpdateJobsRequest.update_mask]
      * is provided, only the specified fields in
@@ -1329,8 +1322,8 @@ public final class BatchUpdateJobsRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Optional but strongly recommended to be provided for the best service
-     * experience, also increase latency when checking status of batch operation.
+     * Strongly recommended for the best service experience. Be aware that it will
+     * also increase latency when checking the status of a batch operation.
      * If
      * [update_mask][google.cloud.talent.v4beta1.BatchUpdateJobsRequest.update_mask]
      * is provided, only the specified fields in
@@ -1368,8 +1361,8 @@ public final class BatchUpdateJobsRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Optional but strongly recommended to be provided for the best service
-     * experience, also increase latency when checking status of batch operation.
+     * Strongly recommended for the best service experience. Be aware that it will
+     * also increase latency when checking the status of a batch operation.
      * If
      * [update_mask][google.cloud.talent.v4beta1.BatchUpdateJobsRequest.update_mask]
      * is provided, only the specified fields in
@@ -1403,8 +1396,8 @@ public final class BatchUpdateJobsRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Optional but strongly recommended to be provided for the best service
-     * experience, also increase latency when checking status of batch operation.
+     * Strongly recommended for the best service experience. Be aware that it will
+     * also increase latency when checking the status of a batch operation.
      * If
      * [update_mask][google.cloud.talent.v4beta1.BatchUpdateJobsRequest.update_mask]
      * is provided, only the specified fields in
@@ -1432,8 +1425,8 @@ public final class BatchUpdateJobsRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Optional but strongly recommended to be provided for the best service
-     * experience, also increase latency when checking status of batch operation.
+     * Strongly recommended for the best service experience. Be aware that it will
+     * also increase latency when checking the status of a batch operation.
      * If
      * [update_mask][google.cloud.talent.v4beta1.BatchUpdateJobsRequest.update_mask]
      * is provided, only the specified fields in
@@ -1465,8 +1458,8 @@ public final class BatchUpdateJobsRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Optional but strongly recommended to be provided for the best service
-     * experience, also increase latency when checking status of batch operation.
+     * Strongly recommended for the best service experience. Be aware that it will
+     * also increase latency when checking the status of a batch operation.
      * If
      * [update_mask][google.cloud.talent.v4beta1.BatchUpdateJobsRequest.update_mask]
      * is provided, only the specified fields in

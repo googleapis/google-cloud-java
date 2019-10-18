@@ -16,7 +16,7 @@ public interface GcsDestinationOrBuilder
    * 'gs://my_bucket/my_object'). Existing files will be overwritten.
    * </pre>
    *
-   * <code>string uri = 1;</code>
+   * <code>string uri = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   java.lang.String getUri();
   /**
@@ -27,7 +27,7 @@ public interface GcsDestinationOrBuilder
    * 'gs://my_bucket/my_object'). Existing files will be overwritten.
    * </pre>
    *
-   * <code>string uri = 1;</code>
+   * <code>string uri = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   com.google.protobuf.ByteString getUriBytes();
 }

@@ -14,12 +14,11 @@ public interface CreateClientEventRequestOrBuilder
    * <pre>
    * Required. Resource name of the tenant under which the event is created.
    * The format is "projects/{project_id}/tenants/{tenant_id}", for example,
-   * "projects/api-test-project/tenant/foo".
-   * Tenant id is optional and a default tenant is created if unspecified, for
-   * example, "projects/api-test-project".
+   * "projects/foo/tenant/bar". If tenant id is unspecified, a default tenant
+   * is created, for example, "projects/foo".
    * </pre>
    *
-   * <code>string parent = 1;</code>
+   * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   java.lang.String getParent();
   /**
@@ -28,12 +27,11 @@ public interface CreateClientEventRequestOrBuilder
    * <pre>
    * Required. Resource name of the tenant under which the event is created.
    * The format is "projects/{project_id}/tenants/{tenant_id}", for example,
-   * "projects/api-test-project/tenant/foo".
-   * Tenant id is optional and a default tenant is created if unspecified, for
-   * example, "projects/api-test-project".
+   * "projects/foo/tenant/bar". If tenant id is unspecified, a default tenant
+   * is created, for example, "projects/foo".
    * </pre>
    *
-   * <code>string parent = 1;</code>
+   * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   com.google.protobuf.ByteString getParentBytes();
 
@@ -45,7 +43,9 @@ public interface CreateClientEventRequestOrBuilder
    * that uses Cloud Talent Solution.
    * </pre>
    *
-   * <code>.google.cloud.talent.v4beta1.ClientEvent client_event = 2;</code>
+   * <code>
+   * .google.cloud.talent.v4beta1.ClientEvent client_event = 2 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   boolean hasClientEvent();
   /**
@@ -56,7 +56,9 @@ public interface CreateClientEventRequestOrBuilder
    * that uses Cloud Talent Solution.
    * </pre>
    *
-   * <code>.google.cloud.talent.v4beta1.ClientEvent client_event = 2;</code>
+   * <code>
+   * .google.cloud.talent.v4beta1.ClientEvent client_event = 2 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   com.google.cloud.talent.v4beta1.ClientEvent getClientEvent();
   /**
@@ -67,7 +69,9 @@ public interface CreateClientEventRequestOrBuilder
    * that uses Cloud Talent Solution.
    * </pre>
    *
-   * <code>.google.cloud.talent.v4beta1.ClientEvent client_event = 2;</code>
+   * <code>
+   * .google.cloud.talent.v4beta1.ClientEvent client_event = 2 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   com.google.cloud.talent.v4beta1.ClientEventOrBuilder getClientEventOrBuilder();
 }

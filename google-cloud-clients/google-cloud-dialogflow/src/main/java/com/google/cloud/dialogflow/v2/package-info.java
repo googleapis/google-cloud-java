@@ -176,6 +176,9 @@
  * that are built for an individual user such as favorites, preferences, playlists, and so on. You
  * can redefine a session entity type at the session level.
  *
+ * <p>Session entity methods do not work with Google Assistant integration. Contact Dialogflow
+ * support if you need to use session entities with Google Assistant integration.
+ *
  * <p>For more information about entity types, see the [Dialogflow
  * documentation](https://cloud.google.com/dialogflow/docs/entities-overview).
  *

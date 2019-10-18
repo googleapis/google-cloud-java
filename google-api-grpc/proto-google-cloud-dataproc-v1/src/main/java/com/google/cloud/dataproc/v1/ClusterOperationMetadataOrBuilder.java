@@ -15,7 +15,7 @@ public interface ClusterOperationMetadataOrBuilder
    * Output only. Name of the cluster for the operation.
    * </pre>
    *
-   * <code>string cluster_name = 7;</code>
+   * <code>string cluster_name = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    */
   java.lang.String getClusterName();
   /**
@@ -25,7 +25,7 @@ public interface ClusterOperationMetadataOrBuilder
    * Output only. Name of the cluster for the operation.
    * </pre>
    *
-   * <code>string cluster_name = 7;</code>
+   * <code>string cluster_name = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    */
   com.google.protobuf.ByteString getClusterNameBytes();
 
@@ -36,7 +36,7 @@ public interface ClusterOperationMetadataOrBuilder
    * Output only. Cluster UUID for the operation.
    * </pre>
    *
-   * <code>string cluster_uuid = 8;</code>
+   * <code>string cluster_uuid = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    */
   java.lang.String getClusterUuid();
   /**
@@ -46,7 +46,7 @@ public interface ClusterOperationMetadataOrBuilder
    * Output only. Cluster UUID for the operation.
    * </pre>
    *
-   * <code>string cluster_uuid = 8;</code>
+   * <code>string cluster_uuid = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    */
   com.google.protobuf.ByteString getClusterUuidBytes();
 
@@ -57,7 +57,9 @@ public interface ClusterOperationMetadataOrBuilder
    * Output only. Current operation status.
    * </pre>
    *
-   * <code>.google.cloud.dataproc.v1.ClusterOperationStatus status = 9;</code>
+   * <code>
+   * .google.cloud.dataproc.v1.ClusterOperationStatus status = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    */
   boolean hasStatus();
   /**
@@ -67,7 +69,9 @@ public interface ClusterOperationMetadataOrBuilder
    * Output only. Current operation status.
    * </pre>
    *
-   * <code>.google.cloud.dataproc.v1.ClusterOperationStatus status = 9;</code>
+   * <code>
+   * .google.cloud.dataproc.v1.ClusterOperationStatus status = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    */
   com.google.cloud.dataproc.v1.ClusterOperationStatus getStatus();
   /**
@@ -77,7 +81,9 @@ public interface ClusterOperationMetadataOrBuilder
    * Output only. Current operation status.
    * </pre>
    *
-   * <code>.google.cloud.dataproc.v1.ClusterOperationStatus status = 9;</code>
+   * <code>
+   * .google.cloud.dataproc.v1.ClusterOperationStatus status = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    */
   com.google.cloud.dataproc.v1.ClusterOperationStatusOrBuilder getStatusOrBuilder();
 
@@ -88,7 +94,9 @@ public interface ClusterOperationMetadataOrBuilder
    * Output only. The previous operation status.
    * </pre>
    *
-   * <code>repeated .google.cloud.dataproc.v1.ClusterOperationStatus status_history = 10;</code>
+   * <code>
+   * repeated .google.cloud.dataproc.v1.ClusterOperationStatus status_history = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    */
   java.util.List<com.google.cloud.dataproc.v1.ClusterOperationStatus> getStatusHistoryList();
   /**
@@ -98,7 +106,9 @@ public interface ClusterOperationMetadataOrBuilder
    * Output only. The previous operation status.
    * </pre>
    *
-   * <code>repeated .google.cloud.dataproc.v1.ClusterOperationStatus status_history = 10;</code>
+   * <code>
+   * repeated .google.cloud.dataproc.v1.ClusterOperationStatus status_history = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    */
   com.google.cloud.dataproc.v1.ClusterOperationStatus getStatusHistory(int index);
   /**
@@ -108,7 +118,9 @@ public interface ClusterOperationMetadataOrBuilder
    * Output only. The previous operation status.
    * </pre>
    *
-   * <code>repeated .google.cloud.dataproc.v1.ClusterOperationStatus status_history = 10;</code>
+   * <code>
+   * repeated .google.cloud.dataproc.v1.ClusterOperationStatus status_history = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    */
   int getStatusHistoryCount();
   /**
@@ -118,7 +130,9 @@ public interface ClusterOperationMetadataOrBuilder
    * Output only. The previous operation status.
    * </pre>
    *
-   * <code>repeated .google.cloud.dataproc.v1.ClusterOperationStatus status_history = 10;</code>
+   * <code>
+   * repeated .google.cloud.dataproc.v1.ClusterOperationStatus status_history = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    */
   java.util.List<? extends com.google.cloud.dataproc.v1.ClusterOperationStatusOrBuilder>
       getStatusHistoryOrBuilderList();
@@ -129,7 +143,9 @@ public interface ClusterOperationMetadataOrBuilder
    * Output only. The previous operation status.
    * </pre>
    *
-   * <code>repeated .google.cloud.dataproc.v1.ClusterOperationStatus status_history = 10;</code>
+   * <code>
+   * repeated .google.cloud.dataproc.v1.ClusterOperationStatus status_history = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    */
   com.google.cloud.dataproc.v1.ClusterOperationStatusOrBuilder getStatusHistoryOrBuilder(int index);
 
@@ -140,7 +156,7 @@ public interface ClusterOperationMetadataOrBuilder
    * Output only. The operation type.
    * </pre>
    *
-   * <code>string operation_type = 11;</code>
+   * <code>string operation_type = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    */
   java.lang.String getOperationType();
   /**
@@ -150,7 +166,7 @@ public interface ClusterOperationMetadataOrBuilder
    * Output only. The operation type.
    * </pre>
    *
-   * <code>string operation_type = 11;</code>
+   * <code>string operation_type = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    */
   com.google.protobuf.ByteString getOperationTypeBytes();
 
@@ -161,7 +177,7 @@ public interface ClusterOperationMetadataOrBuilder
    * Output only. Short description of operation.
    * </pre>
    *
-   * <code>string description = 12;</code>
+   * <code>string description = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    */
   java.lang.String getDescription();
   /**
@@ -171,7 +187,7 @@ public interface ClusterOperationMetadataOrBuilder
    * Output only. Short description of operation.
    * </pre>
    *
-   * <code>string description = 12;</code>
+   * <code>string description = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    */
   com.google.protobuf.ByteString getDescriptionBytes();
 
@@ -182,7 +198,8 @@ public interface ClusterOperationMetadataOrBuilder
    * Output only. Labels associated with the operation
    * </pre>
    *
-   * <code>map&lt;string, string&gt; labels = 13;</code>
+   * <code>map&lt;string, string&gt; labels = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    */
   int getLabelsCount();
   /**
@@ -192,7 +209,8 @@ public interface ClusterOperationMetadataOrBuilder
    * Output only. Labels associated with the operation
    * </pre>
    *
-   * <code>map&lt;string, string&gt; labels = 13;</code>
+   * <code>map&lt;string, string&gt; labels = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    */
   boolean containsLabels(java.lang.String key);
   /** Use {@link #getLabelsMap()} instead. */
@@ -205,7 +223,8 @@ public interface ClusterOperationMetadataOrBuilder
    * Output only. Labels associated with the operation
    * </pre>
    *
-   * <code>map&lt;string, string&gt; labels = 13;</code>
+   * <code>map&lt;string, string&gt; labels = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    */
   java.util.Map<java.lang.String, java.lang.String> getLabelsMap();
   /**
@@ -215,7 +234,8 @@ public interface ClusterOperationMetadataOrBuilder
    * Output only. Labels associated with the operation
    * </pre>
    *
-   * <code>map&lt;string, string&gt; labels = 13;</code>
+   * <code>map&lt;string, string&gt; labels = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    */
   java.lang.String getLabelsOrDefault(java.lang.String key, java.lang.String defaultValue);
   /**
@@ -225,7 +245,8 @@ public interface ClusterOperationMetadataOrBuilder
    * Output only. Labels associated with the operation
    * </pre>
    *
-   * <code>map&lt;string, string&gt; labels = 13;</code>
+   * <code>map&lt;string, string&gt; labels = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    */
   java.lang.String getLabelsOrThrow(java.lang.String key);
 
@@ -236,7 +257,7 @@ public interface ClusterOperationMetadataOrBuilder
    * Output only. Errors encountered during operation execution.
    * </pre>
    *
-   * <code>repeated string warnings = 14;</code>
+   * <code>repeated string warnings = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    */
   java.util.List<java.lang.String> getWarningsList();
   /**
@@ -246,7 +267,7 @@ public interface ClusterOperationMetadataOrBuilder
    * Output only. Errors encountered during operation execution.
    * </pre>
    *
-   * <code>repeated string warnings = 14;</code>
+   * <code>repeated string warnings = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    */
   int getWarningsCount();
   /**
@@ -256,7 +277,7 @@ public interface ClusterOperationMetadataOrBuilder
    * Output only. Errors encountered during operation execution.
    * </pre>
    *
-   * <code>repeated string warnings = 14;</code>
+   * <code>repeated string warnings = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    */
   java.lang.String getWarnings(int index);
   /**
@@ -266,7 +287,7 @@ public interface ClusterOperationMetadataOrBuilder
    * Output only. Errors encountered during operation execution.
    * </pre>
    *
-   * <code>repeated string warnings = 14;</code>
+   * <code>repeated string warnings = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    */
   com.google.protobuf.ByteString getWarningsBytes(int index);
 }

@@ -123,12 +123,19 @@ public final class InstantiateInlineWorkflowTemplateRequest
    *
    *
    * <pre>
-   * Required. The "resource name" of the workflow template region, as described
-   * in https://cloud.google.com/apis/design/resource_names of the form
-   * `projects/{project_id}/regions/{region}`
+   * Required. The resource name of the region or location, as described
+   * in https://cloud.google.com/apis/design/resource_names.
+   * * For `projects.regions.workflowTemplates,instantiateinline`, the resource
+   *   name of the region has the following format:
+   *   `projects/{project_id}/regions/{region}`
+   * * For `projects.locations.workflowTemplates.instantiateinline`, the
+   *   resource name of the location has the following format:
+   *   `projects/{project_id}/locations/{location}`
    * </pre>
    *
-   * <code>string parent = 1;</code>
+   * <code>
+   * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    */
   public java.lang.String getParent() {
     java.lang.Object ref = parent_;
@@ -145,12 +152,19 @@ public final class InstantiateInlineWorkflowTemplateRequest
    *
    *
    * <pre>
-   * Required. The "resource name" of the workflow template region, as described
-   * in https://cloud.google.com/apis/design/resource_names of the form
-   * `projects/{project_id}/regions/{region}`
+   * Required. The resource name of the region or location, as described
+   * in https://cloud.google.com/apis/design/resource_names.
+   * * For `projects.regions.workflowTemplates,instantiateinline`, the resource
+   *   name of the region has the following format:
+   *   `projects/{project_id}/regions/{region}`
+   * * For `projects.locations.workflowTemplates.instantiateinline`, the
+   *   resource name of the location has the following format:
+   *   `projects/{project_id}/locations/{location}`
    * </pre>
    *
-   * <code>string parent = 1;</code>
+   * <code>
+   * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    */
   public com.google.protobuf.ByteString getParentBytes() {
     java.lang.Object ref = parent_;
@@ -173,7 +187,9 @@ public final class InstantiateInlineWorkflowTemplateRequest
    * Required. The workflow template to instantiate.
    * </pre>
    *
-   * <code>.google.cloud.dataproc.v1.WorkflowTemplate template = 2;</code>
+   * <code>
+   * .google.cloud.dataproc.v1.WorkflowTemplate template = 2 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   public boolean hasTemplate() {
     return template_ != null;
@@ -185,7 +201,9 @@ public final class InstantiateInlineWorkflowTemplateRequest
    * Required. The workflow template to instantiate.
    * </pre>
    *
-   * <code>.google.cloud.dataproc.v1.WorkflowTemplate template = 2;</code>
+   * <code>
+   * .google.cloud.dataproc.v1.WorkflowTemplate template = 2 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   public com.google.cloud.dataproc.v1.WorkflowTemplate getTemplate() {
     return template_ == null
@@ -199,7 +217,9 @@ public final class InstantiateInlineWorkflowTemplateRequest
    * Required. The workflow template to instantiate.
    * </pre>
    *
-   * <code>.google.cloud.dataproc.v1.WorkflowTemplate template = 2;</code>
+   * <code>
+   * .google.cloud.dataproc.v1.WorkflowTemplate template = 2 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   public com.google.cloud.dataproc.v1.WorkflowTemplateOrBuilder getTemplateOrBuilder() {
     return getTemplate();
@@ -220,7 +240,7 @@ public final class InstantiateInlineWorkflowTemplateRequest
    * underscores (_), and hyphens (-). The maximum length is 40 characters.
    * </pre>
    *
-   * <code>string request_id = 3;</code>
+   * <code>string request_id = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   public java.lang.String getRequestId() {
     java.lang.Object ref = requestId_;
@@ -246,7 +266,7 @@ public final class InstantiateInlineWorkflowTemplateRequest
    * underscores (_), and hyphens (-). The maximum length is 40 characters.
    * </pre>
    *
-   * <code>string request_id = 3;</code>
+   * <code>string request_id = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   public com.google.protobuf.ByteString getRequestIdBytes() {
     java.lang.Object ref = requestId_;
@@ -636,12 +656,19 @@ public final class InstantiateInlineWorkflowTemplateRequest
      *
      *
      * <pre>
-     * Required. The "resource name" of the workflow template region, as described
-     * in https://cloud.google.com/apis/design/resource_names of the form
-     * `projects/{project_id}/regions/{region}`
+     * Required. The resource name of the region or location, as described
+     * in https://cloud.google.com/apis/design/resource_names.
+     * * For `projects.regions.workflowTemplates,instantiateinline`, the resource
+     *   name of the region has the following format:
+     *   `projects/{project_id}/regions/{region}`
+     * * For `projects.locations.workflowTemplates.instantiateinline`, the
+     *   resource name of the location has the following format:
+     *   `projects/{project_id}/locations/{location}`
      * </pre>
      *
-     * <code>string parent = 1;</code>
+     * <code>
+     * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      */
     public java.lang.String getParent() {
       java.lang.Object ref = parent_;
@@ -658,12 +685,19 @@ public final class InstantiateInlineWorkflowTemplateRequest
      *
      *
      * <pre>
-     * Required. The "resource name" of the workflow template region, as described
-     * in https://cloud.google.com/apis/design/resource_names of the form
-     * `projects/{project_id}/regions/{region}`
+     * Required. The resource name of the region or location, as described
+     * in https://cloud.google.com/apis/design/resource_names.
+     * * For `projects.regions.workflowTemplates,instantiateinline`, the resource
+     *   name of the region has the following format:
+     *   `projects/{project_id}/regions/{region}`
+     * * For `projects.locations.workflowTemplates.instantiateinline`, the
+     *   resource name of the location has the following format:
+     *   `projects/{project_id}/locations/{location}`
      * </pre>
      *
-     * <code>string parent = 1;</code>
+     * <code>
+     * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      */
     public com.google.protobuf.ByteString getParentBytes() {
       java.lang.Object ref = parent_;
@@ -680,12 +714,19 @@ public final class InstantiateInlineWorkflowTemplateRequest
      *
      *
      * <pre>
-     * Required. The "resource name" of the workflow template region, as described
-     * in https://cloud.google.com/apis/design/resource_names of the form
-     * `projects/{project_id}/regions/{region}`
+     * Required. The resource name of the region or location, as described
+     * in https://cloud.google.com/apis/design/resource_names.
+     * * For `projects.regions.workflowTemplates,instantiateinline`, the resource
+     *   name of the region has the following format:
+     *   `projects/{project_id}/regions/{region}`
+     * * For `projects.locations.workflowTemplates.instantiateinline`, the
+     *   resource name of the location has the following format:
+     *   `projects/{project_id}/locations/{location}`
      * </pre>
      *
-     * <code>string parent = 1;</code>
+     * <code>
+     * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      */
     public Builder setParent(java.lang.String value) {
       if (value == null) {
@@ -700,12 +741,19 @@ public final class InstantiateInlineWorkflowTemplateRequest
      *
      *
      * <pre>
-     * Required. The "resource name" of the workflow template region, as described
-     * in https://cloud.google.com/apis/design/resource_names of the form
-     * `projects/{project_id}/regions/{region}`
+     * Required. The resource name of the region or location, as described
+     * in https://cloud.google.com/apis/design/resource_names.
+     * * For `projects.regions.workflowTemplates,instantiateinline`, the resource
+     *   name of the region has the following format:
+     *   `projects/{project_id}/regions/{region}`
+     * * For `projects.locations.workflowTemplates.instantiateinline`, the
+     *   resource name of the location has the following format:
+     *   `projects/{project_id}/locations/{location}`
      * </pre>
      *
-     * <code>string parent = 1;</code>
+     * <code>
+     * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      */
     public Builder clearParent() {
 
@@ -717,12 +765,19 @@ public final class InstantiateInlineWorkflowTemplateRequest
      *
      *
      * <pre>
-     * Required. The "resource name" of the workflow template region, as described
-     * in https://cloud.google.com/apis/design/resource_names of the form
-     * `projects/{project_id}/regions/{region}`
+     * Required. The resource name of the region or location, as described
+     * in https://cloud.google.com/apis/design/resource_names.
+     * * For `projects.regions.workflowTemplates,instantiateinline`, the resource
+     *   name of the region has the following format:
+     *   `projects/{project_id}/regions/{region}`
+     * * For `projects.locations.workflowTemplates.instantiateinline`, the
+     *   resource name of the location has the following format:
+     *   `projects/{project_id}/locations/{location}`
      * </pre>
      *
-     * <code>string parent = 1;</code>
+     * <code>
+     * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      */
     public Builder setParentBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -748,7 +803,9 @@ public final class InstantiateInlineWorkflowTemplateRequest
      * Required. The workflow template to instantiate.
      * </pre>
      *
-     * <code>.google.cloud.dataproc.v1.WorkflowTemplate template = 2;</code>
+     * <code>
+     * .google.cloud.dataproc.v1.WorkflowTemplate template = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public boolean hasTemplate() {
       return templateBuilder_ != null || template_ != null;
@@ -760,7 +817,9 @@ public final class InstantiateInlineWorkflowTemplateRequest
      * Required. The workflow template to instantiate.
      * </pre>
      *
-     * <code>.google.cloud.dataproc.v1.WorkflowTemplate template = 2;</code>
+     * <code>
+     * .google.cloud.dataproc.v1.WorkflowTemplate template = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public com.google.cloud.dataproc.v1.WorkflowTemplate getTemplate() {
       if (templateBuilder_ == null) {
@@ -778,7 +837,9 @@ public final class InstantiateInlineWorkflowTemplateRequest
      * Required. The workflow template to instantiate.
      * </pre>
      *
-     * <code>.google.cloud.dataproc.v1.WorkflowTemplate template = 2;</code>
+     * <code>
+     * .google.cloud.dataproc.v1.WorkflowTemplate template = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder setTemplate(com.google.cloud.dataproc.v1.WorkflowTemplate value) {
       if (templateBuilder_ == null) {
@@ -800,7 +861,9 @@ public final class InstantiateInlineWorkflowTemplateRequest
      * Required. The workflow template to instantiate.
      * </pre>
      *
-     * <code>.google.cloud.dataproc.v1.WorkflowTemplate template = 2;</code>
+     * <code>
+     * .google.cloud.dataproc.v1.WorkflowTemplate template = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder setTemplate(
         com.google.cloud.dataproc.v1.WorkflowTemplate.Builder builderForValue) {
@@ -820,7 +883,9 @@ public final class InstantiateInlineWorkflowTemplateRequest
      * Required. The workflow template to instantiate.
      * </pre>
      *
-     * <code>.google.cloud.dataproc.v1.WorkflowTemplate template = 2;</code>
+     * <code>
+     * .google.cloud.dataproc.v1.WorkflowTemplate template = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder mergeTemplate(com.google.cloud.dataproc.v1.WorkflowTemplate value) {
       if (templateBuilder_ == null) {
@@ -846,7 +911,9 @@ public final class InstantiateInlineWorkflowTemplateRequest
      * Required. The workflow template to instantiate.
      * </pre>
      *
-     * <code>.google.cloud.dataproc.v1.WorkflowTemplate template = 2;</code>
+     * <code>
+     * .google.cloud.dataproc.v1.WorkflowTemplate template = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder clearTemplate() {
       if (templateBuilder_ == null) {
@@ -866,7 +933,9 @@ public final class InstantiateInlineWorkflowTemplateRequest
      * Required. The workflow template to instantiate.
      * </pre>
      *
-     * <code>.google.cloud.dataproc.v1.WorkflowTemplate template = 2;</code>
+     * <code>
+     * .google.cloud.dataproc.v1.WorkflowTemplate template = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public com.google.cloud.dataproc.v1.WorkflowTemplate.Builder getTemplateBuilder() {
 
@@ -880,7 +949,9 @@ public final class InstantiateInlineWorkflowTemplateRequest
      * Required. The workflow template to instantiate.
      * </pre>
      *
-     * <code>.google.cloud.dataproc.v1.WorkflowTemplate template = 2;</code>
+     * <code>
+     * .google.cloud.dataproc.v1.WorkflowTemplate template = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public com.google.cloud.dataproc.v1.WorkflowTemplateOrBuilder getTemplateOrBuilder() {
       if (templateBuilder_ != null) {
@@ -898,7 +969,9 @@ public final class InstantiateInlineWorkflowTemplateRequest
      * Required. The workflow template to instantiate.
      * </pre>
      *
-     * <code>.google.cloud.dataproc.v1.WorkflowTemplate template = 2;</code>
+     * <code>
+     * .google.cloud.dataproc.v1.WorkflowTemplate template = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.dataproc.v1.WorkflowTemplate,
@@ -931,7 +1004,7 @@ public final class InstantiateInlineWorkflowTemplateRequest
      * underscores (_), and hyphens (-). The maximum length is 40 characters.
      * </pre>
      *
-     * <code>string request_id = 3;</code>
+     * <code>string request_id = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public java.lang.String getRequestId() {
       java.lang.Object ref = requestId_;
@@ -957,7 +1030,7 @@ public final class InstantiateInlineWorkflowTemplateRequest
      * underscores (_), and hyphens (-). The maximum length is 40 characters.
      * </pre>
      *
-     * <code>string request_id = 3;</code>
+     * <code>string request_id = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public com.google.protobuf.ByteString getRequestIdBytes() {
       java.lang.Object ref = requestId_;
@@ -983,7 +1056,7 @@ public final class InstantiateInlineWorkflowTemplateRequest
      * underscores (_), and hyphens (-). The maximum length is 40 characters.
      * </pre>
      *
-     * <code>string request_id = 3;</code>
+     * <code>string request_id = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public Builder setRequestId(java.lang.String value) {
       if (value == null) {
@@ -1007,7 +1080,7 @@ public final class InstantiateInlineWorkflowTemplateRequest
      * underscores (_), and hyphens (-). The maximum length is 40 characters.
      * </pre>
      *
-     * <code>string request_id = 3;</code>
+     * <code>string request_id = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public Builder clearRequestId() {
 
@@ -1028,7 +1101,7 @@ public final class InstantiateInlineWorkflowTemplateRequest
      * underscores (_), and hyphens (-). The maximum length is 40 characters.
      * </pre>
      *
-     * <code>string request_id = 3;</code>
+     * <code>string request_id = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public Builder setRequestIdBytes(com.google.protobuf.ByteString value) {
       if (value == null) {

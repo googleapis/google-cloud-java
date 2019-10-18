@@ -118,7 +118,7 @@ public final class ExportInstanceRequest extends com.google.protobuf.GeneratedMe
    * where `location_id` refers to a GCP region.
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   public java.lang.String getName() {
     java.lang.Object ref = name_;
@@ -140,7 +140,7 @@ public final class ExportInstanceRequest extends com.google.protobuf.GeneratedMe
    * where `location_id` refers to a GCP region.
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   public com.google.protobuf.ByteString getNameBytes() {
     java.lang.Object ref = name_;
@@ -163,7 +163,9 @@ public final class ExportInstanceRequest extends com.google.protobuf.GeneratedMe
    * Required. Specify data to be exported.
    * </pre>
    *
-   * <code>.google.cloud.redis.v1.OutputConfig output_config = 3;</code>
+   * <code>
+   * .google.cloud.redis.v1.OutputConfig output_config = 3 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   public boolean hasOutputConfig() {
     return outputConfig_ != null;
@@ -175,7 +177,9 @@ public final class ExportInstanceRequest extends com.google.protobuf.GeneratedMe
    * Required. Specify data to be exported.
    * </pre>
    *
-   * <code>.google.cloud.redis.v1.OutputConfig output_config = 3;</code>
+   * <code>
+   * .google.cloud.redis.v1.OutputConfig output_config = 3 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   public com.google.cloud.redis.v1.OutputConfig getOutputConfig() {
     return outputConfig_ == null
@@ -189,7 +193,9 @@ public final class ExportInstanceRequest extends com.google.protobuf.GeneratedMe
    * Required. Specify data to be exported.
    * </pre>
    *
-   * <code>.google.cloud.redis.v1.OutputConfig output_config = 3;</code>
+   * <code>
+   * .google.cloud.redis.v1.OutputConfig output_config = 3 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   public com.google.cloud.redis.v1.OutputConfigOrBuilder getOutputConfigOrBuilder() {
     return getOutputConfig();
@@ -550,7 +556,7 @@ public final class ExportInstanceRequest extends com.google.protobuf.GeneratedMe
      * where `location_id` refers to a GCP region.
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public java.lang.String getName() {
       java.lang.Object ref = name_;
@@ -572,7 +578,7 @@ public final class ExportInstanceRequest extends com.google.protobuf.GeneratedMe
      * where `location_id` refers to a GCP region.
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public com.google.protobuf.ByteString getNameBytes() {
       java.lang.Object ref = name_;
@@ -594,7 +600,7 @@ public final class ExportInstanceRequest extends com.google.protobuf.GeneratedMe
      * where `location_id` refers to a GCP region.
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder setName(java.lang.String value) {
       if (value == null) {
@@ -614,7 +620,7 @@ public final class ExportInstanceRequest extends com.google.protobuf.GeneratedMe
      * where `location_id` refers to a GCP region.
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder clearName() {
 
@@ -631,7 +637,7 @@ public final class ExportInstanceRequest extends com.google.protobuf.GeneratedMe
      * where `location_id` refers to a GCP region.
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder setNameBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -657,7 +663,9 @@ public final class ExportInstanceRequest extends com.google.protobuf.GeneratedMe
      * Required. Specify data to be exported.
      * </pre>
      *
-     * <code>.google.cloud.redis.v1.OutputConfig output_config = 3;</code>
+     * <code>
+     * .google.cloud.redis.v1.OutputConfig output_config = 3 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public boolean hasOutputConfig() {
       return outputConfigBuilder_ != null || outputConfig_ != null;
@@ -669,7 +677,9 @@ public final class ExportInstanceRequest extends com.google.protobuf.GeneratedMe
      * Required. Specify data to be exported.
      * </pre>
      *
-     * <code>.google.cloud.redis.v1.OutputConfig output_config = 3;</code>
+     * <code>
+     * .google.cloud.redis.v1.OutputConfig output_config = 3 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public com.google.cloud.redis.v1.OutputConfig getOutputConfig() {
       if (outputConfigBuilder_ == null) {
@@ -687,7 +697,9 @@ public final class ExportInstanceRequest extends com.google.protobuf.GeneratedMe
      * Required. Specify data to be exported.
      * </pre>
      *
-     * <code>.google.cloud.redis.v1.OutputConfig output_config = 3;</code>
+     * <code>
+     * .google.cloud.redis.v1.OutputConfig output_config = 3 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder setOutputConfig(com.google.cloud.redis.v1.OutputConfig value) {
       if (outputConfigBuilder_ == null) {
@@ -709,7 +721,9 @@ public final class ExportInstanceRequest extends com.google.protobuf.GeneratedMe
      * Required. Specify data to be exported.
      * </pre>
      *
-     * <code>.google.cloud.redis.v1.OutputConfig output_config = 3;</code>
+     * <code>
+     * .google.cloud.redis.v1.OutputConfig output_config = 3 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder setOutputConfig(com.google.cloud.redis.v1.OutputConfig.Builder builderForValue) {
       if (outputConfigBuilder_ == null) {
@@ -728,7 +742,9 @@ public final class ExportInstanceRequest extends com.google.protobuf.GeneratedMe
      * Required. Specify data to be exported.
      * </pre>
      *
-     * <code>.google.cloud.redis.v1.OutputConfig output_config = 3;</code>
+     * <code>
+     * .google.cloud.redis.v1.OutputConfig output_config = 3 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder mergeOutputConfig(com.google.cloud.redis.v1.OutputConfig value) {
       if (outputConfigBuilder_ == null) {
@@ -754,7 +770,9 @@ public final class ExportInstanceRequest extends com.google.protobuf.GeneratedMe
      * Required. Specify data to be exported.
      * </pre>
      *
-     * <code>.google.cloud.redis.v1.OutputConfig output_config = 3;</code>
+     * <code>
+     * .google.cloud.redis.v1.OutputConfig output_config = 3 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder clearOutputConfig() {
       if (outputConfigBuilder_ == null) {
@@ -774,7 +792,9 @@ public final class ExportInstanceRequest extends com.google.protobuf.GeneratedMe
      * Required. Specify data to be exported.
      * </pre>
      *
-     * <code>.google.cloud.redis.v1.OutputConfig output_config = 3;</code>
+     * <code>
+     * .google.cloud.redis.v1.OutputConfig output_config = 3 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public com.google.cloud.redis.v1.OutputConfig.Builder getOutputConfigBuilder() {
 
@@ -788,7 +808,9 @@ public final class ExportInstanceRequest extends com.google.protobuf.GeneratedMe
      * Required. Specify data to be exported.
      * </pre>
      *
-     * <code>.google.cloud.redis.v1.OutputConfig output_config = 3;</code>
+     * <code>
+     * .google.cloud.redis.v1.OutputConfig output_config = 3 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public com.google.cloud.redis.v1.OutputConfigOrBuilder getOutputConfigOrBuilder() {
       if (outputConfigBuilder_ != null) {
@@ -806,7 +828,9 @@ public final class ExportInstanceRequest extends com.google.protobuf.GeneratedMe
      * Required. Specify data to be exported.
      * </pre>
      *
-     * <code>.google.cloud.redis.v1.OutputConfig output_config = 3;</code>
+     * <code>
+     * .google.cloud.redis.v1.OutputConfig output_config = 3 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.redis.v1.OutputConfig,

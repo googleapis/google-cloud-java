@@ -366,7 +366,7 @@ public final class HadoopJob extends com.google.protobuf.GeneratedMessageV3
    * submission.
    * </pre>
    *
-   * <code>repeated string args = 3;</code>
+   * <code>repeated string args = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   public com.google.protobuf.ProtocolStringList getArgsList() {
     return args_;
@@ -381,7 +381,7 @@ public final class HadoopJob extends com.google.protobuf.GeneratedMessageV3
    * submission.
    * </pre>
    *
-   * <code>repeated string args = 3;</code>
+   * <code>repeated string args = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   public int getArgsCount() {
     return args_.size();
@@ -396,7 +396,7 @@ public final class HadoopJob extends com.google.protobuf.GeneratedMessageV3
    * submission.
    * </pre>
    *
-   * <code>repeated string args = 3;</code>
+   * <code>repeated string args = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   public java.lang.String getArgs(int index) {
     return args_.get(index);
@@ -411,7 +411,7 @@ public final class HadoopJob extends com.google.protobuf.GeneratedMessageV3
    * submission.
    * </pre>
    *
-   * <code>repeated string args = 3;</code>
+   * <code>repeated string args = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   public com.google.protobuf.ByteString getArgsBytes(int index) {
     return args_.getByteString(index);
@@ -427,7 +427,7 @@ public final class HadoopJob extends com.google.protobuf.GeneratedMessageV3
    * Hadoop driver and tasks.
    * </pre>
    *
-   * <code>repeated string jar_file_uris = 4;</code>
+   * <code>repeated string jar_file_uris = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   public com.google.protobuf.ProtocolStringList getJarFileUrisList() {
     return jarFileUris_;
@@ -440,7 +440,7 @@ public final class HadoopJob extends com.google.protobuf.GeneratedMessageV3
    * Hadoop driver and tasks.
    * </pre>
    *
-   * <code>repeated string jar_file_uris = 4;</code>
+   * <code>repeated string jar_file_uris = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   public int getJarFileUrisCount() {
     return jarFileUris_.size();
@@ -453,7 +453,7 @@ public final class HadoopJob extends com.google.protobuf.GeneratedMessageV3
    * Hadoop driver and tasks.
    * </pre>
    *
-   * <code>repeated string jar_file_uris = 4;</code>
+   * <code>repeated string jar_file_uris = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   public java.lang.String getJarFileUris(int index) {
     return jarFileUris_.get(index);
@@ -466,7 +466,7 @@ public final class HadoopJob extends com.google.protobuf.GeneratedMessageV3
    * Hadoop driver and tasks.
    * </pre>
    *
-   * <code>repeated string jar_file_uris = 4;</code>
+   * <code>repeated string jar_file_uris = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   public com.google.protobuf.ByteString getJarFileUrisBytes(int index) {
     return jarFileUris_.getByteString(index);
@@ -483,7 +483,7 @@ public final class HadoopJob extends com.google.protobuf.GeneratedMessageV3
    * for naively parallel tasks.
    * </pre>
    *
-   * <code>repeated string file_uris = 5;</code>
+   * <code>repeated string file_uris = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   public com.google.protobuf.ProtocolStringList getFileUrisList() {
     return fileUris_;
@@ -497,7 +497,7 @@ public final class HadoopJob extends com.google.protobuf.GeneratedMessageV3
    * for naively parallel tasks.
    * </pre>
    *
-   * <code>repeated string file_uris = 5;</code>
+   * <code>repeated string file_uris = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   public int getFileUrisCount() {
     return fileUris_.size();
@@ -511,7 +511,7 @@ public final class HadoopJob extends com.google.protobuf.GeneratedMessageV3
    * for naively parallel tasks.
    * </pre>
    *
-   * <code>repeated string file_uris = 5;</code>
+   * <code>repeated string file_uris = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   public java.lang.String getFileUris(int index) {
     return fileUris_.get(index);
@@ -525,7 +525,7 @@ public final class HadoopJob extends com.google.protobuf.GeneratedMessageV3
    * for naively parallel tasks.
    * </pre>
    *
-   * <code>repeated string file_uris = 5;</code>
+   * <code>repeated string file_uris = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   public com.google.protobuf.ByteString getFileUrisBytes(int index) {
     return fileUris_.getByteString(index);
@@ -542,7 +542,7 @@ public final class HadoopJob extends com.google.protobuf.GeneratedMessageV3
    * .jar, .tar, .tar.gz, .tgz, or .zip.
    * </pre>
    *
-   * <code>repeated string archive_uris = 6;</code>
+   * <code>repeated string archive_uris = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   public com.google.protobuf.ProtocolStringList getArchiveUrisList() {
     return archiveUris_;
@@ -556,7 +556,7 @@ public final class HadoopJob extends com.google.protobuf.GeneratedMessageV3
    * .jar, .tar, .tar.gz, .tgz, or .zip.
    * </pre>
    *
-   * <code>repeated string archive_uris = 6;</code>
+   * <code>repeated string archive_uris = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   public int getArchiveUrisCount() {
     return archiveUris_.size();
@@ -570,7 +570,7 @@ public final class HadoopJob extends com.google.protobuf.GeneratedMessageV3
    * .jar, .tar, .tar.gz, .tgz, or .zip.
    * </pre>
    *
-   * <code>repeated string archive_uris = 6;</code>
+   * <code>repeated string archive_uris = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   public java.lang.String getArchiveUris(int index) {
     return archiveUris_.get(index);
@@ -584,7 +584,7 @@ public final class HadoopJob extends com.google.protobuf.GeneratedMessageV3
    * .jar, .tar, .tar.gz, .tgz, or .zip.
    * </pre>
    *
-   * <code>repeated string archive_uris = 6;</code>
+   * <code>repeated string archive_uris = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   public com.google.protobuf.ByteString getArchiveUrisBytes(int index) {
     return archiveUris_.getByteString(index);
@@ -625,7 +625,8 @@ public final class HadoopJob extends com.google.protobuf.GeneratedMessageV3
    * classes in user code.
    * </pre>
    *
-   * <code>map&lt;string, string&gt; properties = 7;</code>
+   * <code>map&lt;string, string&gt; properties = 7 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   public boolean containsProperties(java.lang.String key) {
     if (key == null) {
@@ -648,7 +649,8 @@ public final class HadoopJob extends com.google.protobuf.GeneratedMessageV3
    * classes in user code.
    * </pre>
    *
-   * <code>map&lt;string, string&gt; properties = 7;</code>
+   * <code>map&lt;string, string&gt; properties = 7 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   public java.util.Map<java.lang.String, java.lang.String> getPropertiesMap() {
     return internalGetProperties().getMap();
@@ -663,7 +665,8 @@ public final class HadoopJob extends com.google.protobuf.GeneratedMessageV3
    * classes in user code.
    * </pre>
    *
-   * <code>map&lt;string, string&gt; properties = 7;</code>
+   * <code>map&lt;string, string&gt; properties = 7 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   public java.lang.String getPropertiesOrDefault(
       java.lang.String key, java.lang.String defaultValue) {
@@ -683,7 +686,8 @@ public final class HadoopJob extends com.google.protobuf.GeneratedMessageV3
    * classes in user code.
    * </pre>
    *
-   * <code>map&lt;string, string&gt; properties = 7;</code>
+   * <code>map&lt;string, string&gt; properties = 7 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   public java.lang.String getPropertiesOrThrow(java.lang.String key) {
     if (key == null) {
@@ -705,7 +709,9 @@ public final class HadoopJob extends com.google.protobuf.GeneratedMessageV3
    * Optional. The runtime log config for job execution.
    * </pre>
    *
-   * <code>.google.cloud.dataproc.v1.LoggingConfig logging_config = 8;</code>
+   * <code>
+   * .google.cloud.dataproc.v1.LoggingConfig logging_config = 8 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   public boolean hasLoggingConfig() {
     return loggingConfig_ != null;
@@ -717,7 +723,9 @@ public final class HadoopJob extends com.google.protobuf.GeneratedMessageV3
    * Optional. The runtime log config for job execution.
    * </pre>
    *
-   * <code>.google.cloud.dataproc.v1.LoggingConfig logging_config = 8;</code>
+   * <code>
+   * .google.cloud.dataproc.v1.LoggingConfig logging_config = 8 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   public com.google.cloud.dataproc.v1.LoggingConfig getLoggingConfig() {
     return loggingConfig_ == null
@@ -731,7 +739,9 @@ public final class HadoopJob extends com.google.protobuf.GeneratedMessageV3
    * Optional. The runtime log config for job execution.
    * </pre>
    *
-   * <code>.google.cloud.dataproc.v1.LoggingConfig logging_config = 8;</code>
+   * <code>
+   * .google.cloud.dataproc.v1.LoggingConfig logging_config = 8 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   public com.google.cloud.dataproc.v1.LoggingConfigOrBuilder getLoggingConfigOrBuilder() {
     return getLoggingConfig();
@@ -1578,7 +1588,7 @@ public final class HadoopJob extends com.google.protobuf.GeneratedMessageV3
      * submission.
      * </pre>
      *
-     * <code>repeated string args = 3;</code>
+     * <code>repeated string args = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public com.google.protobuf.ProtocolStringList getArgsList() {
       return args_.getUnmodifiableView();
@@ -1593,7 +1603,7 @@ public final class HadoopJob extends com.google.protobuf.GeneratedMessageV3
      * submission.
      * </pre>
      *
-     * <code>repeated string args = 3;</code>
+     * <code>repeated string args = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public int getArgsCount() {
       return args_.size();
@@ -1608,7 +1618,7 @@ public final class HadoopJob extends com.google.protobuf.GeneratedMessageV3
      * submission.
      * </pre>
      *
-     * <code>repeated string args = 3;</code>
+     * <code>repeated string args = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public java.lang.String getArgs(int index) {
       return args_.get(index);
@@ -1623,7 +1633,7 @@ public final class HadoopJob extends com.google.protobuf.GeneratedMessageV3
      * submission.
      * </pre>
      *
-     * <code>repeated string args = 3;</code>
+     * <code>repeated string args = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public com.google.protobuf.ByteString getArgsBytes(int index) {
       return args_.getByteString(index);
@@ -1638,7 +1648,7 @@ public final class HadoopJob extends com.google.protobuf.GeneratedMessageV3
      * submission.
      * </pre>
      *
-     * <code>repeated string args = 3;</code>
+     * <code>repeated string args = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public Builder setArgs(int index, java.lang.String value) {
       if (value == null) {
@@ -1659,7 +1669,7 @@ public final class HadoopJob extends com.google.protobuf.GeneratedMessageV3
      * submission.
      * </pre>
      *
-     * <code>repeated string args = 3;</code>
+     * <code>repeated string args = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public Builder addArgs(java.lang.String value) {
       if (value == null) {
@@ -1680,7 +1690,7 @@ public final class HadoopJob extends com.google.protobuf.GeneratedMessageV3
      * submission.
      * </pre>
      *
-     * <code>repeated string args = 3;</code>
+     * <code>repeated string args = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public Builder addAllArgs(java.lang.Iterable<java.lang.String> values) {
       ensureArgsIsMutable();
@@ -1698,7 +1708,7 @@ public final class HadoopJob extends com.google.protobuf.GeneratedMessageV3
      * submission.
      * </pre>
      *
-     * <code>repeated string args = 3;</code>
+     * <code>repeated string args = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public Builder clearArgs() {
       args_ = com.google.protobuf.LazyStringArrayList.EMPTY;
@@ -1716,7 +1726,7 @@ public final class HadoopJob extends com.google.protobuf.GeneratedMessageV3
      * submission.
      * </pre>
      *
-     * <code>repeated string args = 3;</code>
+     * <code>repeated string args = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public Builder addArgsBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -1746,7 +1756,7 @@ public final class HadoopJob extends com.google.protobuf.GeneratedMessageV3
      * Hadoop driver and tasks.
      * </pre>
      *
-     * <code>repeated string jar_file_uris = 4;</code>
+     * <code>repeated string jar_file_uris = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public com.google.protobuf.ProtocolStringList getJarFileUrisList() {
       return jarFileUris_.getUnmodifiableView();
@@ -1759,7 +1769,7 @@ public final class HadoopJob extends com.google.protobuf.GeneratedMessageV3
      * Hadoop driver and tasks.
      * </pre>
      *
-     * <code>repeated string jar_file_uris = 4;</code>
+     * <code>repeated string jar_file_uris = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public int getJarFileUrisCount() {
       return jarFileUris_.size();
@@ -1772,7 +1782,7 @@ public final class HadoopJob extends com.google.protobuf.GeneratedMessageV3
      * Hadoop driver and tasks.
      * </pre>
      *
-     * <code>repeated string jar_file_uris = 4;</code>
+     * <code>repeated string jar_file_uris = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public java.lang.String getJarFileUris(int index) {
       return jarFileUris_.get(index);
@@ -1785,7 +1795,7 @@ public final class HadoopJob extends com.google.protobuf.GeneratedMessageV3
      * Hadoop driver and tasks.
      * </pre>
      *
-     * <code>repeated string jar_file_uris = 4;</code>
+     * <code>repeated string jar_file_uris = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public com.google.protobuf.ByteString getJarFileUrisBytes(int index) {
       return jarFileUris_.getByteString(index);
@@ -1798,7 +1808,7 @@ public final class HadoopJob extends com.google.protobuf.GeneratedMessageV3
      * Hadoop driver and tasks.
      * </pre>
      *
-     * <code>repeated string jar_file_uris = 4;</code>
+     * <code>repeated string jar_file_uris = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public Builder setJarFileUris(int index, java.lang.String value) {
       if (value == null) {
@@ -1817,7 +1827,7 @@ public final class HadoopJob extends com.google.protobuf.GeneratedMessageV3
      * Hadoop driver and tasks.
      * </pre>
      *
-     * <code>repeated string jar_file_uris = 4;</code>
+     * <code>repeated string jar_file_uris = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public Builder addJarFileUris(java.lang.String value) {
       if (value == null) {
@@ -1836,7 +1846,7 @@ public final class HadoopJob extends com.google.protobuf.GeneratedMessageV3
      * Hadoop driver and tasks.
      * </pre>
      *
-     * <code>repeated string jar_file_uris = 4;</code>
+     * <code>repeated string jar_file_uris = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public Builder addAllJarFileUris(java.lang.Iterable<java.lang.String> values) {
       ensureJarFileUrisIsMutable();
@@ -1852,7 +1862,7 @@ public final class HadoopJob extends com.google.protobuf.GeneratedMessageV3
      * Hadoop driver and tasks.
      * </pre>
      *
-     * <code>repeated string jar_file_uris = 4;</code>
+     * <code>repeated string jar_file_uris = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public Builder clearJarFileUris() {
       jarFileUris_ = com.google.protobuf.LazyStringArrayList.EMPTY;
@@ -1868,7 +1878,7 @@ public final class HadoopJob extends com.google.protobuf.GeneratedMessageV3
      * Hadoop driver and tasks.
      * </pre>
      *
-     * <code>repeated string jar_file_uris = 4;</code>
+     * <code>repeated string jar_file_uris = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public Builder addJarFileUrisBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -1899,7 +1909,7 @@ public final class HadoopJob extends com.google.protobuf.GeneratedMessageV3
      * for naively parallel tasks.
      * </pre>
      *
-     * <code>repeated string file_uris = 5;</code>
+     * <code>repeated string file_uris = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public com.google.protobuf.ProtocolStringList getFileUrisList() {
       return fileUris_.getUnmodifiableView();
@@ -1913,7 +1923,7 @@ public final class HadoopJob extends com.google.protobuf.GeneratedMessageV3
      * for naively parallel tasks.
      * </pre>
      *
-     * <code>repeated string file_uris = 5;</code>
+     * <code>repeated string file_uris = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public int getFileUrisCount() {
       return fileUris_.size();
@@ -1927,7 +1937,7 @@ public final class HadoopJob extends com.google.protobuf.GeneratedMessageV3
      * for naively parallel tasks.
      * </pre>
      *
-     * <code>repeated string file_uris = 5;</code>
+     * <code>repeated string file_uris = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public java.lang.String getFileUris(int index) {
       return fileUris_.get(index);
@@ -1941,7 +1951,7 @@ public final class HadoopJob extends com.google.protobuf.GeneratedMessageV3
      * for naively parallel tasks.
      * </pre>
      *
-     * <code>repeated string file_uris = 5;</code>
+     * <code>repeated string file_uris = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public com.google.protobuf.ByteString getFileUrisBytes(int index) {
       return fileUris_.getByteString(index);
@@ -1955,7 +1965,7 @@ public final class HadoopJob extends com.google.protobuf.GeneratedMessageV3
      * for naively parallel tasks.
      * </pre>
      *
-     * <code>repeated string file_uris = 5;</code>
+     * <code>repeated string file_uris = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public Builder setFileUris(int index, java.lang.String value) {
       if (value == null) {
@@ -1975,7 +1985,7 @@ public final class HadoopJob extends com.google.protobuf.GeneratedMessageV3
      * for naively parallel tasks.
      * </pre>
      *
-     * <code>repeated string file_uris = 5;</code>
+     * <code>repeated string file_uris = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public Builder addFileUris(java.lang.String value) {
       if (value == null) {
@@ -1995,7 +2005,7 @@ public final class HadoopJob extends com.google.protobuf.GeneratedMessageV3
      * for naively parallel tasks.
      * </pre>
      *
-     * <code>repeated string file_uris = 5;</code>
+     * <code>repeated string file_uris = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public Builder addAllFileUris(java.lang.Iterable<java.lang.String> values) {
       ensureFileUrisIsMutable();
@@ -2012,7 +2022,7 @@ public final class HadoopJob extends com.google.protobuf.GeneratedMessageV3
      * for naively parallel tasks.
      * </pre>
      *
-     * <code>repeated string file_uris = 5;</code>
+     * <code>repeated string file_uris = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public Builder clearFileUris() {
       fileUris_ = com.google.protobuf.LazyStringArrayList.EMPTY;
@@ -2029,7 +2039,7 @@ public final class HadoopJob extends com.google.protobuf.GeneratedMessageV3
      * for naively parallel tasks.
      * </pre>
      *
-     * <code>repeated string file_uris = 5;</code>
+     * <code>repeated string file_uris = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public Builder addFileUrisBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -2060,7 +2070,7 @@ public final class HadoopJob extends com.google.protobuf.GeneratedMessageV3
      * .jar, .tar, .tar.gz, .tgz, or .zip.
      * </pre>
      *
-     * <code>repeated string archive_uris = 6;</code>
+     * <code>repeated string archive_uris = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public com.google.protobuf.ProtocolStringList getArchiveUrisList() {
       return archiveUris_.getUnmodifiableView();
@@ -2074,7 +2084,7 @@ public final class HadoopJob extends com.google.protobuf.GeneratedMessageV3
      * .jar, .tar, .tar.gz, .tgz, or .zip.
      * </pre>
      *
-     * <code>repeated string archive_uris = 6;</code>
+     * <code>repeated string archive_uris = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public int getArchiveUrisCount() {
       return archiveUris_.size();
@@ -2088,7 +2098,7 @@ public final class HadoopJob extends com.google.protobuf.GeneratedMessageV3
      * .jar, .tar, .tar.gz, .tgz, or .zip.
      * </pre>
      *
-     * <code>repeated string archive_uris = 6;</code>
+     * <code>repeated string archive_uris = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public java.lang.String getArchiveUris(int index) {
       return archiveUris_.get(index);
@@ -2102,7 +2112,7 @@ public final class HadoopJob extends com.google.protobuf.GeneratedMessageV3
      * .jar, .tar, .tar.gz, .tgz, or .zip.
      * </pre>
      *
-     * <code>repeated string archive_uris = 6;</code>
+     * <code>repeated string archive_uris = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public com.google.protobuf.ByteString getArchiveUrisBytes(int index) {
       return archiveUris_.getByteString(index);
@@ -2116,7 +2126,7 @@ public final class HadoopJob extends com.google.protobuf.GeneratedMessageV3
      * .jar, .tar, .tar.gz, .tgz, or .zip.
      * </pre>
      *
-     * <code>repeated string archive_uris = 6;</code>
+     * <code>repeated string archive_uris = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public Builder setArchiveUris(int index, java.lang.String value) {
       if (value == null) {
@@ -2136,7 +2146,7 @@ public final class HadoopJob extends com.google.protobuf.GeneratedMessageV3
      * .jar, .tar, .tar.gz, .tgz, or .zip.
      * </pre>
      *
-     * <code>repeated string archive_uris = 6;</code>
+     * <code>repeated string archive_uris = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public Builder addArchiveUris(java.lang.String value) {
       if (value == null) {
@@ -2156,7 +2166,7 @@ public final class HadoopJob extends com.google.protobuf.GeneratedMessageV3
      * .jar, .tar, .tar.gz, .tgz, or .zip.
      * </pre>
      *
-     * <code>repeated string archive_uris = 6;</code>
+     * <code>repeated string archive_uris = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public Builder addAllArchiveUris(java.lang.Iterable<java.lang.String> values) {
       ensureArchiveUrisIsMutable();
@@ -2173,7 +2183,7 @@ public final class HadoopJob extends com.google.protobuf.GeneratedMessageV3
      * .jar, .tar, .tar.gz, .tgz, or .zip.
      * </pre>
      *
-     * <code>repeated string archive_uris = 6;</code>
+     * <code>repeated string archive_uris = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public Builder clearArchiveUris() {
       archiveUris_ = com.google.protobuf.LazyStringArrayList.EMPTY;
@@ -2190,7 +2200,7 @@ public final class HadoopJob extends com.google.protobuf.GeneratedMessageV3
      * .jar, .tar, .tar.gz, .tgz, or .zip.
      * </pre>
      *
-     * <code>repeated string archive_uris = 6;</code>
+     * <code>repeated string archive_uris = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public Builder addArchiveUrisBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -2241,7 +2251,8 @@ public final class HadoopJob extends com.google.protobuf.GeneratedMessageV3
      * classes in user code.
      * </pre>
      *
-     * <code>map&lt;string, string&gt; properties = 7;</code>
+     * <code>map&lt;string, string&gt; properties = 7 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public boolean containsProperties(java.lang.String key) {
       if (key == null) {
@@ -2264,7 +2275,8 @@ public final class HadoopJob extends com.google.protobuf.GeneratedMessageV3
      * classes in user code.
      * </pre>
      *
-     * <code>map&lt;string, string&gt; properties = 7;</code>
+     * <code>map&lt;string, string&gt; properties = 7 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public java.util.Map<java.lang.String, java.lang.String> getPropertiesMap() {
       return internalGetProperties().getMap();
@@ -2279,7 +2291,8 @@ public final class HadoopJob extends com.google.protobuf.GeneratedMessageV3
      * classes in user code.
      * </pre>
      *
-     * <code>map&lt;string, string&gt; properties = 7;</code>
+     * <code>map&lt;string, string&gt; properties = 7 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public java.lang.String getPropertiesOrDefault(
         java.lang.String key, java.lang.String defaultValue) {
@@ -2299,7 +2312,8 @@ public final class HadoopJob extends com.google.protobuf.GeneratedMessageV3
      * classes in user code.
      * </pre>
      *
-     * <code>map&lt;string, string&gt; properties = 7;</code>
+     * <code>map&lt;string, string&gt; properties = 7 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public java.lang.String getPropertiesOrThrow(java.lang.String key) {
       if (key == null) {
@@ -2326,7 +2340,8 @@ public final class HadoopJob extends com.google.protobuf.GeneratedMessageV3
      * classes in user code.
      * </pre>
      *
-     * <code>map&lt;string, string&gt; properties = 7;</code>
+     * <code>map&lt;string, string&gt; properties = 7 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder removeProperties(java.lang.String key) {
       if (key == null) {
@@ -2350,7 +2365,8 @@ public final class HadoopJob extends com.google.protobuf.GeneratedMessageV3
      * classes in user code.
      * </pre>
      *
-     * <code>map&lt;string, string&gt; properties = 7;</code>
+     * <code>map&lt;string, string&gt; properties = 7 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder putProperties(java.lang.String key, java.lang.String value) {
       if (key == null) {
@@ -2372,7 +2388,8 @@ public final class HadoopJob extends com.google.protobuf.GeneratedMessageV3
      * classes in user code.
      * </pre>
      *
-     * <code>map&lt;string, string&gt; properties = 7;</code>
+     * <code>map&lt;string, string&gt; properties = 7 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder putAllProperties(java.util.Map<java.lang.String, java.lang.String> values) {
       internalGetMutableProperties().getMutableMap().putAll(values);
@@ -2392,7 +2409,9 @@ public final class HadoopJob extends com.google.protobuf.GeneratedMessageV3
      * Optional. The runtime log config for job execution.
      * </pre>
      *
-     * <code>.google.cloud.dataproc.v1.LoggingConfig logging_config = 8;</code>
+     * <code>
+     * .google.cloud.dataproc.v1.LoggingConfig logging_config = 8 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public boolean hasLoggingConfig() {
       return loggingConfigBuilder_ != null || loggingConfig_ != null;
@@ -2404,7 +2423,9 @@ public final class HadoopJob extends com.google.protobuf.GeneratedMessageV3
      * Optional. The runtime log config for job execution.
      * </pre>
      *
-     * <code>.google.cloud.dataproc.v1.LoggingConfig logging_config = 8;</code>
+     * <code>
+     * .google.cloud.dataproc.v1.LoggingConfig logging_config = 8 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public com.google.cloud.dataproc.v1.LoggingConfig getLoggingConfig() {
       if (loggingConfigBuilder_ == null) {
@@ -2422,7 +2443,9 @@ public final class HadoopJob extends com.google.protobuf.GeneratedMessageV3
      * Optional. The runtime log config for job execution.
      * </pre>
      *
-     * <code>.google.cloud.dataproc.v1.LoggingConfig logging_config = 8;</code>
+     * <code>
+     * .google.cloud.dataproc.v1.LoggingConfig logging_config = 8 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder setLoggingConfig(com.google.cloud.dataproc.v1.LoggingConfig value) {
       if (loggingConfigBuilder_ == null) {
@@ -2444,7 +2467,9 @@ public final class HadoopJob extends com.google.protobuf.GeneratedMessageV3
      * Optional. The runtime log config for job execution.
      * </pre>
      *
-     * <code>.google.cloud.dataproc.v1.LoggingConfig logging_config = 8;</code>
+     * <code>
+     * .google.cloud.dataproc.v1.LoggingConfig logging_config = 8 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder setLoggingConfig(
         com.google.cloud.dataproc.v1.LoggingConfig.Builder builderForValue) {
@@ -2464,7 +2489,9 @@ public final class HadoopJob extends com.google.protobuf.GeneratedMessageV3
      * Optional. The runtime log config for job execution.
      * </pre>
      *
-     * <code>.google.cloud.dataproc.v1.LoggingConfig logging_config = 8;</code>
+     * <code>
+     * .google.cloud.dataproc.v1.LoggingConfig logging_config = 8 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder mergeLoggingConfig(com.google.cloud.dataproc.v1.LoggingConfig value) {
       if (loggingConfigBuilder_ == null) {
@@ -2490,7 +2517,9 @@ public final class HadoopJob extends com.google.protobuf.GeneratedMessageV3
      * Optional. The runtime log config for job execution.
      * </pre>
      *
-     * <code>.google.cloud.dataproc.v1.LoggingConfig logging_config = 8;</code>
+     * <code>
+     * .google.cloud.dataproc.v1.LoggingConfig logging_config = 8 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder clearLoggingConfig() {
       if (loggingConfigBuilder_ == null) {
@@ -2510,7 +2539,9 @@ public final class HadoopJob extends com.google.protobuf.GeneratedMessageV3
      * Optional. The runtime log config for job execution.
      * </pre>
      *
-     * <code>.google.cloud.dataproc.v1.LoggingConfig logging_config = 8;</code>
+     * <code>
+     * .google.cloud.dataproc.v1.LoggingConfig logging_config = 8 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public com.google.cloud.dataproc.v1.LoggingConfig.Builder getLoggingConfigBuilder() {
 
@@ -2524,7 +2555,9 @@ public final class HadoopJob extends com.google.protobuf.GeneratedMessageV3
      * Optional. The runtime log config for job execution.
      * </pre>
      *
-     * <code>.google.cloud.dataproc.v1.LoggingConfig logging_config = 8;</code>
+     * <code>
+     * .google.cloud.dataproc.v1.LoggingConfig logging_config = 8 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public com.google.cloud.dataproc.v1.LoggingConfigOrBuilder getLoggingConfigOrBuilder() {
       if (loggingConfigBuilder_ != null) {
@@ -2542,7 +2575,9 @@ public final class HadoopJob extends com.google.protobuf.GeneratedMessageV3
      * Optional. The runtime log config for job execution.
      * </pre>
      *
-     * <code>.google.cloud.dataproc.v1.LoggingConfig logging_config = 8;</code>
+     * <code>
+     * .google.cloud.dataproc.v1.LoggingConfig logging_config = 8 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.dataproc.v1.LoggingConfig,

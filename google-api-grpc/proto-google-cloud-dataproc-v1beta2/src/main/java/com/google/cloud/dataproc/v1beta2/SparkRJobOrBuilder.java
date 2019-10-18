@@ -16,7 +16,7 @@ public interface SparkRJobOrBuilder
    * Must be a .R file.
    * </pre>
    *
-   * <code>string main_r_file_uri = 1;</code>
+   * <code>string main_r_file_uri = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   java.lang.String getMainRFileUri();
   /**
@@ -27,7 +27,7 @@ public interface SparkRJobOrBuilder
    * Must be a .R file.
    * </pre>
    *
-   * <code>string main_r_file_uri = 1;</code>
+   * <code>string main_r_file_uri = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   com.google.protobuf.ByteString getMainRFileUriBytes();
 

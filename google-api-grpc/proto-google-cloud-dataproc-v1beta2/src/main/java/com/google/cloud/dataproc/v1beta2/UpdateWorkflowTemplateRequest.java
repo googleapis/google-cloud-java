@@ -109,7 +109,9 @@ public final class UpdateWorkflowTemplateRequest extends com.google.protobuf.Gen
    * The `template.version` field must match the current version.
    * </pre>
    *
-   * <code>.google.cloud.dataproc.v1beta2.WorkflowTemplate template = 1;</code>
+   * <code>
+   * .google.cloud.dataproc.v1beta2.WorkflowTemplate template = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    */
   public boolean hasTemplate() {
     return template_ != null;
@@ -122,7 +124,9 @@ public final class UpdateWorkflowTemplateRequest extends com.google.protobuf.Gen
    * The `template.version` field must match the current version.
    * </pre>
    *
-   * <code>.google.cloud.dataproc.v1beta2.WorkflowTemplate template = 1;</code>
+   * <code>
+   * .google.cloud.dataproc.v1beta2.WorkflowTemplate template = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    */
   public com.google.cloud.dataproc.v1beta2.WorkflowTemplate getTemplate() {
     return template_ == null
@@ -137,7 +141,9 @@ public final class UpdateWorkflowTemplateRequest extends com.google.protobuf.Gen
    * The `template.version` field must match the current version.
    * </pre>
    *
-   * <code>.google.cloud.dataproc.v1beta2.WorkflowTemplate template = 1;</code>
+   * <code>
+   * .google.cloud.dataproc.v1beta2.WorkflowTemplate template = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    */
   public com.google.cloud.dataproc.v1beta2.WorkflowTemplateOrBuilder getTemplateOrBuilder() {
     return getTemplate();
@@ -492,7 +498,9 @@ public final class UpdateWorkflowTemplateRequest extends com.google.protobuf.Gen
      * The `template.version` field must match the current version.
      * </pre>
      *
-     * <code>.google.cloud.dataproc.v1beta2.WorkflowTemplate template = 1;</code>
+     * <code>
+     * .google.cloud.dataproc.v1beta2.WorkflowTemplate template = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      */
     public boolean hasTemplate() {
       return templateBuilder_ != null || template_ != null;
@@ -505,7 +513,9 @@ public final class UpdateWorkflowTemplateRequest extends com.google.protobuf.Gen
      * The `template.version` field must match the current version.
      * </pre>
      *
-     * <code>.google.cloud.dataproc.v1beta2.WorkflowTemplate template = 1;</code>
+     * <code>
+     * .google.cloud.dataproc.v1beta2.WorkflowTemplate template = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      */
     public com.google.cloud.dataproc.v1beta2.WorkflowTemplate getTemplate() {
       if (templateBuilder_ == null) {
@@ -524,7 +534,9 @@ public final class UpdateWorkflowTemplateRequest extends com.google.protobuf.Gen
      * The `template.version` field must match the current version.
      * </pre>
      *
-     * <code>.google.cloud.dataproc.v1beta2.WorkflowTemplate template = 1;</code>
+     * <code>
+     * .google.cloud.dataproc.v1beta2.WorkflowTemplate template = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      */
     public Builder setTemplate(com.google.cloud.dataproc.v1beta2.WorkflowTemplate value) {
       if (templateBuilder_ == null) {
@@ -547,7 +559,9 @@ public final class UpdateWorkflowTemplateRequest extends com.google.protobuf.Gen
      * The `template.version` field must match the current version.
      * </pre>
      *
-     * <code>.google.cloud.dataproc.v1beta2.WorkflowTemplate template = 1;</code>
+     * <code>
+     * .google.cloud.dataproc.v1beta2.WorkflowTemplate template = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      */
     public Builder setTemplate(
         com.google.cloud.dataproc.v1beta2.WorkflowTemplate.Builder builderForValue) {
@@ -568,7 +582,9 @@ public final class UpdateWorkflowTemplateRequest extends com.google.protobuf.Gen
      * The `template.version` field must match the current version.
      * </pre>
      *
-     * <code>.google.cloud.dataproc.v1beta2.WorkflowTemplate template = 1;</code>
+     * <code>
+     * .google.cloud.dataproc.v1beta2.WorkflowTemplate template = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      */
     public Builder mergeTemplate(com.google.cloud.dataproc.v1beta2.WorkflowTemplate value) {
       if (templateBuilder_ == null) {
@@ -595,7 +611,9 @@ public final class UpdateWorkflowTemplateRequest extends com.google.protobuf.Gen
      * The `template.version` field must match the current version.
      * </pre>
      *
-     * <code>.google.cloud.dataproc.v1beta2.WorkflowTemplate template = 1;</code>
+     * <code>
+     * .google.cloud.dataproc.v1beta2.WorkflowTemplate template = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      */
     public Builder clearTemplate() {
       if (templateBuilder_ == null) {
@@ -616,7 +634,9 @@ public final class UpdateWorkflowTemplateRequest extends com.google.protobuf.Gen
      * The `template.version` field must match the current version.
      * </pre>
      *
-     * <code>.google.cloud.dataproc.v1beta2.WorkflowTemplate template = 1;</code>
+     * <code>
+     * .google.cloud.dataproc.v1beta2.WorkflowTemplate template = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      */
     public com.google.cloud.dataproc.v1beta2.WorkflowTemplate.Builder getTemplateBuilder() {
 
@@ -631,7 +651,9 @@ public final class UpdateWorkflowTemplateRequest extends com.google.protobuf.Gen
      * The `template.version` field must match the current version.
      * </pre>
      *
-     * <code>.google.cloud.dataproc.v1beta2.WorkflowTemplate template = 1;</code>
+     * <code>
+     * .google.cloud.dataproc.v1beta2.WorkflowTemplate template = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      */
     public com.google.cloud.dataproc.v1beta2.WorkflowTemplateOrBuilder getTemplateOrBuilder() {
       if (templateBuilder_ != null) {
@@ -650,7 +672,9 @@ public final class UpdateWorkflowTemplateRequest extends com.google.protobuf.Gen
      * The `template.version` field must match the current version.
      * </pre>
      *
-     * <code>.google.cloud.dataproc.v1beta2.WorkflowTemplate template = 1;</code>
+     * <code>
+     * .google.cloud.dataproc.v1beta2.WorkflowTemplate template = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.dataproc.v1beta2.WorkflowTemplate,

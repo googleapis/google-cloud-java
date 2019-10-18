@@ -8,55 +8,43 @@ public interface WorkflowTemplateOrBuilder
     // @@protoc_insertion_point(interface_extends:google.cloud.dataproc.v1.WorkflowTemplate)
     com.google.protobuf.MessageOrBuilder {
 
-  /**
-   *
-   *
-   * <pre>
-   * Required. The template id.
-   * The id must contain only letters (a-z, A-Z), numbers (0-9),
-   * underscores (_), and hyphens (-). Cannot begin or end with underscore
-   * or hyphen. Must consist of between 3 and 50 characters.
-   * </pre>
-   *
-   * <code>string id = 2;</code>
-   */
+  /** <code>string id = 2 [(.google.api.field_behavior) = REQUIRED];</code> */
   java.lang.String getId();
-  /**
-   *
-   *
-   * <pre>
-   * Required. The template id.
-   * The id must contain only letters (a-z, A-Z), numbers (0-9),
-   * underscores (_), and hyphens (-). Cannot begin or end with underscore
-   * or hyphen. Must consist of between 3 and 50 characters.
-   * </pre>
-   *
-   * <code>string id = 2;</code>
-   */
+  /** <code>string id = 2 [(.google.api.field_behavior) = REQUIRED];</code> */
   com.google.protobuf.ByteString getIdBytes();
 
   /**
    *
    *
    * <pre>
-   * Output only. The "resource name" of the template, as described
-   * in https://cloud.google.com/apis/design/resource_names of the form
-   * `projects/{project_id}/regions/{region}/workflowTemplates/{template_id}`
+   * Output only. The resource name of the workflow template, as described
+   * in https://cloud.google.com/apis/design/resource_names.
+   * * For `projects.regions.workflowTemplates`, the resource name of the
+   *   template has the following format:
+   *   `projects/{project_id}/regions/{region}/workflowTemplates/{template_id}`
+   * * For `projects.locations.workflowTemplates`, the resource name of the
+   *   template has the following format:
+   *   `projects/{project_id}/locations/{location}/workflowTemplates/{template_id}`
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    */
   java.lang.String getName();
   /**
    *
    *
    * <pre>
-   * Output only. The "resource name" of the template, as described
-   * in https://cloud.google.com/apis/design/resource_names of the form
-   * `projects/{project_id}/regions/{region}/workflowTemplates/{template_id}`
+   * Output only. The resource name of the workflow template, as described
+   * in https://cloud.google.com/apis/design/resource_names.
+   * * For `projects.regions.workflowTemplates`, the resource name of the
+   *   template has the following format:
+   *   `projects/{project_id}/regions/{region}/workflowTemplates/{template_id}`
+   * * For `projects.locations.workflowTemplates`, the resource name of the
+   *   template has the following format:
+   *   `projects/{project_id}/locations/{location}/workflowTemplates/{template_id}`
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    */
   com.google.protobuf.ByteString getNameBytes();
 
@@ -74,7 +62,7 @@ public interface WorkflowTemplateOrBuilder
    * then returns it as part of the `UpdateWorkflowTemplate` request.
    * </pre>
    *
-   * <code>int32 version = 3;</code>
+   * <code>int32 version = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   int getVersion();
 
@@ -85,7 +73,8 @@ public interface WorkflowTemplateOrBuilder
    * Output only. The time template was created.
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp create_time = 4;</code>
+   * <code>.google.protobuf.Timestamp create_time = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    */
   boolean hasCreateTime();
   /**
@@ -95,7 +84,8 @@ public interface WorkflowTemplateOrBuilder
    * Output only. The time template was created.
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp create_time = 4;</code>
+   * <code>.google.protobuf.Timestamp create_time = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    */
   com.google.protobuf.Timestamp getCreateTime();
   /**
@@ -105,7 +95,8 @@ public interface WorkflowTemplateOrBuilder
    * Output only. The time template was created.
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp create_time = 4;</code>
+   * <code>.google.protobuf.Timestamp create_time = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    */
   com.google.protobuf.TimestampOrBuilder getCreateTimeOrBuilder();
 
@@ -116,7 +107,8 @@ public interface WorkflowTemplateOrBuilder
    * Output only. The time template was last updated.
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp update_time = 5;</code>
+   * <code>.google.protobuf.Timestamp update_time = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    */
   boolean hasUpdateTime();
   /**
@@ -126,7 +118,8 @@ public interface WorkflowTemplateOrBuilder
    * Output only. The time template was last updated.
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp update_time = 5;</code>
+   * <code>.google.protobuf.Timestamp update_time = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    */
   com.google.protobuf.Timestamp getUpdateTime();
   /**
@@ -136,7 +129,8 @@ public interface WorkflowTemplateOrBuilder
    * Output only. The time template was last updated.
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp update_time = 5;</code>
+   * <code>.google.protobuf.Timestamp update_time = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    */
   com.google.protobuf.TimestampOrBuilder getUpdateTimeOrBuilder();
 
@@ -155,7 +149,7 @@ public interface WorkflowTemplateOrBuilder
    * No more than 32 labels can be associated with a template.
    * </pre>
    *
-   * <code>map&lt;string, string&gt; labels = 6;</code>
+   * <code>map&lt;string, string&gt; labels = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   int getLabelsCount();
   /**
@@ -173,7 +167,7 @@ public interface WorkflowTemplateOrBuilder
    * No more than 32 labels can be associated with a template.
    * </pre>
    *
-   * <code>map&lt;string, string&gt; labels = 6;</code>
+   * <code>map&lt;string, string&gt; labels = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   boolean containsLabels(java.lang.String key);
   /** Use {@link #getLabelsMap()} instead. */
@@ -194,7 +188,7 @@ public interface WorkflowTemplateOrBuilder
    * No more than 32 labels can be associated with a template.
    * </pre>
    *
-   * <code>map&lt;string, string&gt; labels = 6;</code>
+   * <code>map&lt;string, string&gt; labels = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   java.util.Map<java.lang.String, java.lang.String> getLabelsMap();
   /**
@@ -212,7 +206,7 @@ public interface WorkflowTemplateOrBuilder
    * No more than 32 labels can be associated with a template.
    * </pre>
    *
-   * <code>map&lt;string, string&gt; labels = 6;</code>
+   * <code>map&lt;string, string&gt; labels = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   java.lang.String getLabelsOrDefault(java.lang.String key, java.lang.String defaultValue);
   /**
@@ -230,7 +224,7 @@ public interface WorkflowTemplateOrBuilder
    * No more than 32 labels can be associated with a template.
    * </pre>
    *
-   * <code>map&lt;string, string&gt; labels = 6;</code>
+   * <code>map&lt;string, string&gt; labels = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   java.lang.String getLabelsOrThrow(java.lang.String key);
 
@@ -241,7 +235,9 @@ public interface WorkflowTemplateOrBuilder
    * Required. WorkflowTemplate scheduling information.
    * </pre>
    *
-   * <code>.google.cloud.dataproc.v1.WorkflowTemplatePlacement placement = 7;</code>
+   * <code>
+   * .google.cloud.dataproc.v1.WorkflowTemplatePlacement placement = 7 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   boolean hasPlacement();
   /**
@@ -251,7 +247,9 @@ public interface WorkflowTemplateOrBuilder
    * Required. WorkflowTemplate scheduling information.
    * </pre>
    *
-   * <code>.google.cloud.dataproc.v1.WorkflowTemplatePlacement placement = 7;</code>
+   * <code>
+   * .google.cloud.dataproc.v1.WorkflowTemplatePlacement placement = 7 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   com.google.cloud.dataproc.v1.WorkflowTemplatePlacement getPlacement();
   /**
@@ -261,7 +259,9 @@ public interface WorkflowTemplateOrBuilder
    * Required. WorkflowTemplate scheduling information.
    * </pre>
    *
-   * <code>.google.cloud.dataproc.v1.WorkflowTemplatePlacement placement = 7;</code>
+   * <code>
+   * .google.cloud.dataproc.v1.WorkflowTemplatePlacement placement = 7 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   com.google.cloud.dataproc.v1.WorkflowTemplatePlacementOrBuilder getPlacementOrBuilder();
 
@@ -272,7 +272,9 @@ public interface WorkflowTemplateOrBuilder
    * Required. The Directed Acyclic Graph of Jobs to submit.
    * </pre>
    *
-   * <code>repeated .google.cloud.dataproc.v1.OrderedJob jobs = 8;</code>
+   * <code>
+   * repeated .google.cloud.dataproc.v1.OrderedJob jobs = 8 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   java.util.List<com.google.cloud.dataproc.v1.OrderedJob> getJobsList();
   /**
@@ -282,7 +284,9 @@ public interface WorkflowTemplateOrBuilder
    * Required. The Directed Acyclic Graph of Jobs to submit.
    * </pre>
    *
-   * <code>repeated .google.cloud.dataproc.v1.OrderedJob jobs = 8;</code>
+   * <code>
+   * repeated .google.cloud.dataproc.v1.OrderedJob jobs = 8 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   com.google.cloud.dataproc.v1.OrderedJob getJobs(int index);
   /**
@@ -292,7 +296,9 @@ public interface WorkflowTemplateOrBuilder
    * Required. The Directed Acyclic Graph of Jobs to submit.
    * </pre>
    *
-   * <code>repeated .google.cloud.dataproc.v1.OrderedJob jobs = 8;</code>
+   * <code>
+   * repeated .google.cloud.dataproc.v1.OrderedJob jobs = 8 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   int getJobsCount();
   /**
@@ -302,7 +308,9 @@ public interface WorkflowTemplateOrBuilder
    * Required. The Directed Acyclic Graph of Jobs to submit.
    * </pre>
    *
-   * <code>repeated .google.cloud.dataproc.v1.OrderedJob jobs = 8;</code>
+   * <code>
+   * repeated .google.cloud.dataproc.v1.OrderedJob jobs = 8 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   java.util.List<? extends com.google.cloud.dataproc.v1.OrderedJobOrBuilder> getJobsOrBuilderList();
   /**
@@ -312,7 +320,9 @@ public interface WorkflowTemplateOrBuilder
    * Required. The Directed Acyclic Graph of Jobs to submit.
    * </pre>
    *
-   * <code>repeated .google.cloud.dataproc.v1.OrderedJob jobs = 8;</code>
+   * <code>
+   * repeated .google.cloud.dataproc.v1.OrderedJob jobs = 8 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   com.google.cloud.dataproc.v1.OrderedJobOrBuilder getJobsOrBuilder(int index);
 
@@ -320,48 +330,56 @@ public interface WorkflowTemplateOrBuilder
    *
    *
    * <pre>
-   * Optional. Template parameters whose values are substituted into the
+   * Optional. emplate parameters whose values are substituted into the
    * template. Values for parameters must be provided when the template is
    * instantiated.
    * </pre>
    *
-   * <code>repeated .google.cloud.dataproc.v1.TemplateParameter parameters = 9;</code>
+   * <code>
+   * repeated .google.cloud.dataproc.v1.TemplateParameter parameters = 9 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   java.util.List<com.google.cloud.dataproc.v1.TemplateParameter> getParametersList();
   /**
    *
    *
    * <pre>
-   * Optional. Template parameters whose values are substituted into the
+   * Optional. emplate parameters whose values are substituted into the
    * template. Values for parameters must be provided when the template is
    * instantiated.
    * </pre>
    *
-   * <code>repeated .google.cloud.dataproc.v1.TemplateParameter parameters = 9;</code>
+   * <code>
+   * repeated .google.cloud.dataproc.v1.TemplateParameter parameters = 9 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   com.google.cloud.dataproc.v1.TemplateParameter getParameters(int index);
   /**
    *
    *
    * <pre>
-   * Optional. Template parameters whose values are substituted into the
+   * Optional. emplate parameters whose values are substituted into the
    * template. Values for parameters must be provided when the template is
    * instantiated.
    * </pre>
    *
-   * <code>repeated .google.cloud.dataproc.v1.TemplateParameter parameters = 9;</code>
+   * <code>
+   * repeated .google.cloud.dataproc.v1.TemplateParameter parameters = 9 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   int getParametersCount();
   /**
    *
    *
    * <pre>
-   * Optional. Template parameters whose values are substituted into the
+   * Optional. emplate parameters whose values are substituted into the
    * template. Values for parameters must be provided when the template is
    * instantiated.
    * </pre>
    *
-   * <code>repeated .google.cloud.dataproc.v1.TemplateParameter parameters = 9;</code>
+   * <code>
+   * repeated .google.cloud.dataproc.v1.TemplateParameter parameters = 9 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   java.util.List<? extends com.google.cloud.dataproc.v1.TemplateParameterOrBuilder>
       getParametersOrBuilderList();
@@ -369,12 +387,14 @@ public interface WorkflowTemplateOrBuilder
    *
    *
    * <pre>
-   * Optional. Template parameters whose values are substituted into the
+   * Optional. emplate parameters whose values are substituted into the
    * template. Values for parameters must be provided when the template is
    * instantiated.
    * </pre>
    *
-   * <code>repeated .google.cloud.dataproc.v1.TemplateParameter parameters = 9;</code>
+   * <code>
+   * repeated .google.cloud.dataproc.v1.TemplateParameter parameters = 9 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   com.google.cloud.dataproc.v1.TemplateParameterOrBuilder getParametersOrBuilder(int index);
 }

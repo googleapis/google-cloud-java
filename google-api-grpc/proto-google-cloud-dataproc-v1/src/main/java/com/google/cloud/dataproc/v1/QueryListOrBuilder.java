@@ -27,7 +27,7 @@ public interface QueryListOrBuilder
    *     }
    * </pre>
    *
-   * <code>repeated string queries = 1;</code>
+   * <code>repeated string queries = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   java.util.List<java.lang.String> getQueriesList();
   /**
@@ -49,7 +49,7 @@ public interface QueryListOrBuilder
    *     }
    * </pre>
    *
-   * <code>repeated string queries = 1;</code>
+   * <code>repeated string queries = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   int getQueriesCount();
   /**
@@ -71,7 +71,7 @@ public interface QueryListOrBuilder
    *     }
    * </pre>
    *
-   * <code>repeated string queries = 1;</code>
+   * <code>repeated string queries = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   java.lang.String getQueries(int index);
   /**
@@ -93,7 +93,7 @@ public interface QueryListOrBuilder
    *     }
    * </pre>
    *
-   * <code>repeated string queries = 1;</code>
+   * <code>repeated string queries = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   com.google.protobuf.ByteString getQueriesBytes(int index);
 }

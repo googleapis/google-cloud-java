@@ -15,7 +15,9 @@
  */
 package com.google.cloud.compute.v1;
 
+import static com.google.cloud.compute.v1.TargetHttpsProxyClient.AggregatedListTargetHttpsProxiesPagedResponse;
 import static com.google.cloud.compute.v1.TargetHttpsProxyClient.ListTargetHttpsProxiesPagedResponse;
+import static com.google.cloud.compute.v1.stub.HttpJsonTargetHttpsProxyStub.aggregatedListTargetHttpsProxiesMethodDescriptor;
 import static com.google.cloud.compute.v1.stub.HttpJsonTargetHttpsProxyStub.deleteTargetHttpsProxyMethodDescriptor;
 import static com.google.cloud.compute.v1.stub.HttpJsonTargetHttpsProxyStub.getTargetHttpsProxyMethodDescriptor;
 import static com.google.cloud.compute.v1.stub.HttpJsonTargetHttpsProxyStub.insertTargetHttpsProxyMethodDescriptor;
@@ -40,7 +42,9 @@ import com.google.common.collect.ImmutableList;
 import com.google.common.collect.Lists;
 import java.io.IOException;
 import java.util.Arrays;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Assert;
@@ -53,6 +57,7 @@ public class TargetHttpsProxyClientTest {
   private static final List<ApiMethodDescriptor> METHOD_DESCRIPTORS =
       ImmutableList.copyOf(
           Lists.<ApiMethodDescriptor>newArrayList(
+              aggregatedListTargetHttpsProxiesMethodDescriptor,
               deleteTargetHttpsProxyMethodDescriptor,
               getTargetHttpsProxyMethodDescriptor,
               insertTargetHttpsProxyMethodDescriptor,
@@ -88,6 +93,70 @@ public class TargetHttpsProxyClientTest {
   @AfterClass
   public static void tearDown() throws Exception {
     client.close();
+  }
+
+  @Test
+  @SuppressWarnings("all")
+  public void aggregatedListTargetHttpsProxiesTest() {
+    String id = "id3355";
+    String kind = "kind3292052";
+    String nextPageToken = "";
+    String selfLink = "selfLink-1691268851";
+    TargetHttpsProxiesScopedList itemsItem = TargetHttpsProxiesScopedList.newBuilder().build();
+    Map<String, TargetHttpsProxiesScopedList> items = new HashMap<>();
+    items.put("items", itemsItem);
+    TargetHttpsProxyAggregatedList expectedResponse =
+        TargetHttpsProxyAggregatedList.newBuilder()
+            .setId(id)
+            .setKind(kind)
+            .setNextPageToken(nextPageToken)
+            .setSelfLink(selfLink)
+            .putAllItems(items)
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    ProjectName project = ProjectName.of("[PROJECT]");
+
+    AggregatedListTargetHttpsProxiesPagedResponse pagedListResponse =
+        client.aggregatedListTargetHttpsProxies(project);
+
+    List<TargetHttpsProxiesScopedList> resources =
+        Lists.newArrayList(pagedListResponse.iterateAll());
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(
+        expectedResponse.getItemsMap().values().iterator().next(), resources.get(0));
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  @SuppressWarnings("all")
+  public void aggregatedListTargetHttpsProxiesExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      ProjectName project = ProjectName.of("[PROJECT]");
+
+      client.aggregatedListTargetHttpsProxies(project);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception
+    }
   }
 
   @Test
@@ -189,6 +258,7 @@ public class TargetHttpsProxyClientTest {
     String kind = "kind3292052";
     String name = "name3373707";
     String quicOverride = "quicOverride2067189933";
+    ProjectRegionName region = ProjectRegionName.of("[PROJECT]", "[REGION]");
     String selfLink = "selfLink-1691268851";
     ProjectGlobalSslPolicyName sslPolicy =
         ProjectGlobalSslPolicyName.of("[PROJECT]", "[SSL_POLICY]");
@@ -201,6 +271,7 @@ public class TargetHttpsProxyClientTest {
             .setKind(kind)
             .setName(name)
             .setQuicOverride(quicOverride)
+            .setRegion(region.toString())
             .setSelfLink(selfLink)
             .setSslPolicy(sslPolicy.toString())
             .setUrlMap(urlMap.toString())

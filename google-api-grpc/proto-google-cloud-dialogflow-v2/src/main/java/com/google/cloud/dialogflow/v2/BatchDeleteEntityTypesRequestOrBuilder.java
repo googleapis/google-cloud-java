@@ -16,7 +16,9 @@ public interface BatchDeleteEntityTypesRequestOrBuilder
    * `projects/&lt;Project ID&gt;/agent`.
    * </pre>
    *
-   * <code>string parent = 1;</code>
+   * <code>
+   * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    */
   java.lang.String getParent();
   /**
@@ -27,7 +29,9 @@ public interface BatchDeleteEntityTypesRequestOrBuilder
    * `projects/&lt;Project ID&gt;/agent`.
    * </pre>
    *
-   * <code>string parent = 1;</code>
+   * <code>
+   * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    */
   com.google.protobuf.ByteString getParentBytes();
 
@@ -39,7 +43,7 @@ public interface BatchDeleteEntityTypesRequestOrBuilder
    * same agent as `parent`.
    * </pre>
    *
-   * <code>repeated string entity_type_names = 2;</code>
+   * <code>repeated string entity_type_names = 2 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   java.util.List<java.lang.String> getEntityTypeNamesList();
   /**
@@ -50,7 +54,7 @@ public interface BatchDeleteEntityTypesRequestOrBuilder
    * same agent as `parent`.
    * </pre>
    *
-   * <code>repeated string entity_type_names = 2;</code>
+   * <code>repeated string entity_type_names = 2 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   int getEntityTypeNamesCount();
   /**
@@ -61,7 +65,7 @@ public interface BatchDeleteEntityTypesRequestOrBuilder
    * same agent as `parent`.
    * </pre>
    *
-   * <code>repeated string entity_type_names = 2;</code>
+   * <code>repeated string entity_type_names = 2 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   java.lang.String getEntityTypeNames(int index);
   /**
@@ -72,7 +76,7 @@ public interface BatchDeleteEntityTypesRequestOrBuilder
    * same agent as `parent`.
    * </pre>
    *
-   * <code>repeated string entity_type_names = 2;</code>
+   * <code>repeated string entity_type_names = 2 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   com.google.protobuf.ByteString getEntityTypeNamesBytes(int index);
 }

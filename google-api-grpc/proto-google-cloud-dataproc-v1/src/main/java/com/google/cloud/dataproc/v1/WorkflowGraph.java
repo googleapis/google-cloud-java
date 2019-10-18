@@ -107,7 +107,9 @@ public final class WorkflowGraph extends com.google.protobuf.GeneratedMessageV3
    * Output only. The workflow nodes.
    * </pre>
    *
-   * <code>repeated .google.cloud.dataproc.v1.WorkflowNode nodes = 1;</code>
+   * <code>
+   * repeated .google.cloud.dataproc.v1.WorkflowNode nodes = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    */
   public java.util.List<com.google.cloud.dataproc.v1.WorkflowNode> getNodesList() {
     return nodes_;
@@ -119,7 +121,9 @@ public final class WorkflowGraph extends com.google.protobuf.GeneratedMessageV3
    * Output only. The workflow nodes.
    * </pre>
    *
-   * <code>repeated .google.cloud.dataproc.v1.WorkflowNode nodes = 1;</code>
+   * <code>
+   * repeated .google.cloud.dataproc.v1.WorkflowNode nodes = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    */
   public java.util.List<? extends com.google.cloud.dataproc.v1.WorkflowNodeOrBuilder>
       getNodesOrBuilderList() {
@@ -132,7 +136,9 @@ public final class WorkflowGraph extends com.google.protobuf.GeneratedMessageV3
    * Output only. The workflow nodes.
    * </pre>
    *
-   * <code>repeated .google.cloud.dataproc.v1.WorkflowNode nodes = 1;</code>
+   * <code>
+   * repeated .google.cloud.dataproc.v1.WorkflowNode nodes = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    */
   public int getNodesCount() {
     return nodes_.size();
@@ -144,7 +150,9 @@ public final class WorkflowGraph extends com.google.protobuf.GeneratedMessageV3
    * Output only. The workflow nodes.
    * </pre>
    *
-   * <code>repeated .google.cloud.dataproc.v1.WorkflowNode nodes = 1;</code>
+   * <code>
+   * repeated .google.cloud.dataproc.v1.WorkflowNode nodes = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    */
   public com.google.cloud.dataproc.v1.WorkflowNode getNodes(int index) {
     return nodes_.get(index);
@@ -156,7 +164,9 @@ public final class WorkflowGraph extends com.google.protobuf.GeneratedMessageV3
    * Output only. The workflow nodes.
    * </pre>
    *
-   * <code>repeated .google.cloud.dataproc.v1.WorkflowNode nodes = 1;</code>
+   * <code>
+   * repeated .google.cloud.dataproc.v1.WorkflowNode nodes = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    */
   public com.google.cloud.dataproc.v1.WorkflowNodeOrBuilder getNodesOrBuilder(int index) {
     return nodes_.get(index);
@@ -543,7 +553,9 @@ public final class WorkflowGraph extends com.google.protobuf.GeneratedMessageV3
      * Output only. The workflow nodes.
      * </pre>
      *
-     * <code>repeated .google.cloud.dataproc.v1.WorkflowNode nodes = 1;</code>
+     * <code>
+     * repeated .google.cloud.dataproc.v1.WorkflowNode nodes = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public java.util.List<com.google.cloud.dataproc.v1.WorkflowNode> getNodesList() {
       if (nodesBuilder_ == null) {
@@ -559,7 +571,9 @@ public final class WorkflowGraph extends com.google.protobuf.GeneratedMessageV3
      * Output only. The workflow nodes.
      * </pre>
      *
-     * <code>repeated .google.cloud.dataproc.v1.WorkflowNode nodes = 1;</code>
+     * <code>
+     * repeated .google.cloud.dataproc.v1.WorkflowNode nodes = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public int getNodesCount() {
       if (nodesBuilder_ == null) {
@@ -575,7 +589,9 @@ public final class WorkflowGraph extends com.google.protobuf.GeneratedMessageV3
      * Output only. The workflow nodes.
      * </pre>
      *
-     * <code>repeated .google.cloud.dataproc.v1.WorkflowNode nodes = 1;</code>
+     * <code>
+     * repeated .google.cloud.dataproc.v1.WorkflowNode nodes = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public com.google.cloud.dataproc.v1.WorkflowNode getNodes(int index) {
       if (nodesBuilder_ == null) {
@@ -591,7 +607,9 @@ public final class WorkflowGraph extends com.google.protobuf.GeneratedMessageV3
      * Output only. The workflow nodes.
      * </pre>
      *
-     * <code>repeated .google.cloud.dataproc.v1.WorkflowNode nodes = 1;</code>
+     * <code>
+     * repeated .google.cloud.dataproc.v1.WorkflowNode nodes = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public Builder setNodes(int index, com.google.cloud.dataproc.v1.WorkflowNode value) {
       if (nodesBuilder_ == null) {
@@ -613,7 +631,9 @@ public final class WorkflowGraph extends com.google.protobuf.GeneratedMessageV3
      * Output only. The workflow nodes.
      * </pre>
      *
-     * <code>repeated .google.cloud.dataproc.v1.WorkflowNode nodes = 1;</code>
+     * <code>
+     * repeated .google.cloud.dataproc.v1.WorkflowNode nodes = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public Builder setNodes(
         int index, com.google.cloud.dataproc.v1.WorkflowNode.Builder builderForValue) {
@@ -633,7 +653,9 @@ public final class WorkflowGraph extends com.google.protobuf.GeneratedMessageV3
      * Output only. The workflow nodes.
      * </pre>
      *
-     * <code>repeated .google.cloud.dataproc.v1.WorkflowNode nodes = 1;</code>
+     * <code>
+     * repeated .google.cloud.dataproc.v1.WorkflowNode nodes = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public Builder addNodes(com.google.cloud.dataproc.v1.WorkflowNode value) {
       if (nodesBuilder_ == null) {
@@ -655,7 +677,9 @@ public final class WorkflowGraph extends com.google.protobuf.GeneratedMessageV3
      * Output only. The workflow nodes.
      * </pre>
      *
-     * <code>repeated .google.cloud.dataproc.v1.WorkflowNode nodes = 1;</code>
+     * <code>
+     * repeated .google.cloud.dataproc.v1.WorkflowNode nodes = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public Builder addNodes(int index, com.google.cloud.dataproc.v1.WorkflowNode value) {
       if (nodesBuilder_ == null) {
@@ -677,7 +701,9 @@ public final class WorkflowGraph extends com.google.protobuf.GeneratedMessageV3
      * Output only. The workflow nodes.
      * </pre>
      *
-     * <code>repeated .google.cloud.dataproc.v1.WorkflowNode nodes = 1;</code>
+     * <code>
+     * repeated .google.cloud.dataproc.v1.WorkflowNode nodes = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public Builder addNodes(com.google.cloud.dataproc.v1.WorkflowNode.Builder builderForValue) {
       if (nodesBuilder_ == null) {
@@ -696,7 +722,9 @@ public final class WorkflowGraph extends com.google.protobuf.GeneratedMessageV3
      * Output only. The workflow nodes.
      * </pre>
      *
-     * <code>repeated .google.cloud.dataproc.v1.WorkflowNode nodes = 1;</code>
+     * <code>
+     * repeated .google.cloud.dataproc.v1.WorkflowNode nodes = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public Builder addNodes(
         int index, com.google.cloud.dataproc.v1.WorkflowNode.Builder builderForValue) {
@@ -716,7 +744,9 @@ public final class WorkflowGraph extends com.google.protobuf.GeneratedMessageV3
      * Output only. The workflow nodes.
      * </pre>
      *
-     * <code>repeated .google.cloud.dataproc.v1.WorkflowNode nodes = 1;</code>
+     * <code>
+     * repeated .google.cloud.dataproc.v1.WorkflowNode nodes = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public Builder addAllNodes(
         java.lang.Iterable<? extends com.google.cloud.dataproc.v1.WorkflowNode> values) {
@@ -736,7 +766,9 @@ public final class WorkflowGraph extends com.google.protobuf.GeneratedMessageV3
      * Output only. The workflow nodes.
      * </pre>
      *
-     * <code>repeated .google.cloud.dataproc.v1.WorkflowNode nodes = 1;</code>
+     * <code>
+     * repeated .google.cloud.dataproc.v1.WorkflowNode nodes = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public Builder clearNodes() {
       if (nodesBuilder_ == null) {
@@ -755,7 +787,9 @@ public final class WorkflowGraph extends com.google.protobuf.GeneratedMessageV3
      * Output only. The workflow nodes.
      * </pre>
      *
-     * <code>repeated .google.cloud.dataproc.v1.WorkflowNode nodes = 1;</code>
+     * <code>
+     * repeated .google.cloud.dataproc.v1.WorkflowNode nodes = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public Builder removeNodes(int index) {
       if (nodesBuilder_ == null) {
@@ -774,7 +808,9 @@ public final class WorkflowGraph extends com.google.protobuf.GeneratedMessageV3
      * Output only. The workflow nodes.
      * </pre>
      *
-     * <code>repeated .google.cloud.dataproc.v1.WorkflowNode nodes = 1;</code>
+     * <code>
+     * repeated .google.cloud.dataproc.v1.WorkflowNode nodes = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public com.google.cloud.dataproc.v1.WorkflowNode.Builder getNodesBuilder(int index) {
       return getNodesFieldBuilder().getBuilder(index);
@@ -786,7 +822,9 @@ public final class WorkflowGraph extends com.google.protobuf.GeneratedMessageV3
      * Output only. The workflow nodes.
      * </pre>
      *
-     * <code>repeated .google.cloud.dataproc.v1.WorkflowNode nodes = 1;</code>
+     * <code>
+     * repeated .google.cloud.dataproc.v1.WorkflowNode nodes = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public com.google.cloud.dataproc.v1.WorkflowNodeOrBuilder getNodesOrBuilder(int index) {
       if (nodesBuilder_ == null) {
@@ -802,7 +840,9 @@ public final class WorkflowGraph extends com.google.protobuf.GeneratedMessageV3
      * Output only. The workflow nodes.
      * </pre>
      *
-     * <code>repeated .google.cloud.dataproc.v1.WorkflowNode nodes = 1;</code>
+     * <code>
+     * repeated .google.cloud.dataproc.v1.WorkflowNode nodes = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public java.util.List<? extends com.google.cloud.dataproc.v1.WorkflowNodeOrBuilder>
         getNodesOrBuilderList() {
@@ -819,7 +859,9 @@ public final class WorkflowGraph extends com.google.protobuf.GeneratedMessageV3
      * Output only. The workflow nodes.
      * </pre>
      *
-     * <code>repeated .google.cloud.dataproc.v1.WorkflowNode nodes = 1;</code>
+     * <code>
+     * repeated .google.cloud.dataproc.v1.WorkflowNode nodes = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public com.google.cloud.dataproc.v1.WorkflowNode.Builder addNodesBuilder() {
       return getNodesFieldBuilder()
@@ -832,7 +874,9 @@ public final class WorkflowGraph extends com.google.protobuf.GeneratedMessageV3
      * Output only. The workflow nodes.
      * </pre>
      *
-     * <code>repeated .google.cloud.dataproc.v1.WorkflowNode nodes = 1;</code>
+     * <code>
+     * repeated .google.cloud.dataproc.v1.WorkflowNode nodes = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public com.google.cloud.dataproc.v1.WorkflowNode.Builder addNodesBuilder(int index) {
       return getNodesFieldBuilder()
@@ -845,7 +889,9 @@ public final class WorkflowGraph extends com.google.protobuf.GeneratedMessageV3
      * Output only. The workflow nodes.
      * </pre>
      *
-     * <code>repeated .google.cloud.dataproc.v1.WorkflowNode nodes = 1;</code>
+     * <code>
+     * repeated .google.cloud.dataproc.v1.WorkflowNode nodes = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public java.util.List<com.google.cloud.dataproc.v1.WorkflowNode.Builder> getNodesBuilderList() {
       return getNodesFieldBuilder().getBuilderList();

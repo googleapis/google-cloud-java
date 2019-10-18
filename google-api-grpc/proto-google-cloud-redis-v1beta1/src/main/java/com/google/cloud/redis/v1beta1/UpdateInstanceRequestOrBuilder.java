@@ -21,7 +21,8 @@ public interface UpdateInstanceRequestOrBuilder
    *  *   `redisConfig`
    * </pre>
    *
-   * <code>.google.protobuf.FieldMask update_mask = 1;</code>
+   * <code>.google.protobuf.FieldMask update_mask = 1 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   boolean hasUpdateMask();
   /**
@@ -37,7 +38,8 @@ public interface UpdateInstanceRequestOrBuilder
    *  *   `redisConfig`
    * </pre>
    *
-   * <code>.google.protobuf.FieldMask update_mask = 1;</code>
+   * <code>.google.protobuf.FieldMask update_mask = 1 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   com.google.protobuf.FieldMask getUpdateMask();
   /**
@@ -53,7 +55,8 @@ public interface UpdateInstanceRequestOrBuilder
    *  *   `redisConfig`
    * </pre>
    *
-   * <code>.google.protobuf.FieldMask update_mask = 1;</code>
+   * <code>.google.protobuf.FieldMask update_mask = 1 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   com.google.protobuf.FieldMaskOrBuilder getUpdateMaskOrBuilder();
 
@@ -65,7 +68,9 @@ public interface UpdateInstanceRequestOrBuilder
    * Only fields specified in update_mask are updated.
    * </pre>
    *
-   * <code>.google.cloud.redis.v1beta1.Instance instance = 2;</code>
+   * <code>
+   * .google.cloud.redis.v1beta1.Instance instance = 2 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   boolean hasInstance();
   /**
@@ -76,7 +81,9 @@ public interface UpdateInstanceRequestOrBuilder
    * Only fields specified in update_mask are updated.
    * </pre>
    *
-   * <code>.google.cloud.redis.v1beta1.Instance instance = 2;</code>
+   * <code>
+   * .google.cloud.redis.v1beta1.Instance instance = 2 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   com.google.cloud.redis.v1beta1.Instance getInstance();
   /**
@@ -87,7 +94,9 @@ public interface UpdateInstanceRequestOrBuilder
    * Only fields specified in update_mask are updated.
    * </pre>
    *
-   * <code>.google.cloud.redis.v1beta1.Instance instance = 2;</code>
+   * <code>
+   * .google.cloud.redis.v1beta1.Instance instance = 2 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   com.google.cloud.redis.v1beta1.InstanceOrBuilder getInstanceOrBuilder();
 }

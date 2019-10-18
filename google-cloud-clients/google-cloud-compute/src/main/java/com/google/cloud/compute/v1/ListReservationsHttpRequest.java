@@ -25,8 +25,8 @@ import javax.annotation.Nullable;
 @Generated("by GAPIC")
 @BetaApi
 /**
- * Request object for method compute.reservations.list. A list all the reservations that have been
- * configured for the specified project in specified zone.
+ * Request object for method compute.reservations.list. A list of all the reservations that have
+ * been configured for the specified project in specified zone.
  */
 public final class ListReservationsHttpRequest implements ApiMessage {
   private final String access_token;

@@ -121,11 +121,13 @@ public final class CreateProductSetRequest extends com.google.protobuf.Generated
    *
    *
    * <pre>
-   * The project in which the ProductSet should be created.
+   * Required. The project in which the ProductSet should be created.
    * Format is `projects/PROJECT_ID/locations/LOC_ID`.
    * </pre>
    *
-   * <code>string parent = 1;</code>
+   * <code>
+   * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    */
   public java.lang.String getParent() {
     java.lang.Object ref = parent_;
@@ -142,11 +144,13 @@ public final class CreateProductSetRequest extends com.google.protobuf.Generated
    *
    *
    * <pre>
-   * The project in which the ProductSet should be created.
+   * Required. The project in which the ProductSet should be created.
    * Format is `projects/PROJECT_ID/locations/LOC_ID`.
    * </pre>
    *
-   * <code>string parent = 1;</code>
+   * <code>
+   * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    */
   public com.google.protobuf.ByteString getParentBytes() {
     java.lang.Object ref = parent_;
@@ -166,10 +170,12 @@ public final class CreateProductSetRequest extends com.google.protobuf.Generated
    *
    *
    * <pre>
-   * The ProductSet to create.
+   * Required. The ProductSet to create.
    * </pre>
    *
-   * <code>.google.cloud.vision.v1.ProductSet product_set = 2;</code>
+   * <code>
+   * .google.cloud.vision.v1.ProductSet product_set = 2 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   public boolean hasProductSet() {
     return productSet_ != null;
@@ -178,10 +184,12 @@ public final class CreateProductSetRequest extends com.google.protobuf.Generated
    *
    *
    * <pre>
-   * The ProductSet to create.
+   * Required. The ProductSet to create.
    * </pre>
    *
-   * <code>.google.cloud.vision.v1.ProductSet product_set = 2;</code>
+   * <code>
+   * .google.cloud.vision.v1.ProductSet product_set = 2 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   public com.google.cloud.vision.v1.ProductSet getProductSet() {
     return productSet_ == null
@@ -192,10 +200,12 @@ public final class CreateProductSetRequest extends com.google.protobuf.Generated
    *
    *
    * <pre>
-   * The ProductSet to create.
+   * Required. The ProductSet to create.
    * </pre>
    *
-   * <code>.google.cloud.vision.v1.ProductSet product_set = 2;</code>
+   * <code>
+   * .google.cloud.vision.v1.ProductSet product_set = 2 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   public com.google.cloud.vision.v1.ProductSetOrBuilder getProductSetOrBuilder() {
     return getProductSet();
@@ -617,11 +627,13 @@ public final class CreateProductSetRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * The project in which the ProductSet should be created.
+     * Required. The project in which the ProductSet should be created.
      * Format is `projects/PROJECT_ID/locations/LOC_ID`.
      * </pre>
      *
-     * <code>string parent = 1;</code>
+     * <code>
+     * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      */
     public java.lang.String getParent() {
       java.lang.Object ref = parent_;
@@ -638,11 +650,13 @@ public final class CreateProductSetRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * The project in which the ProductSet should be created.
+     * Required. The project in which the ProductSet should be created.
      * Format is `projects/PROJECT_ID/locations/LOC_ID`.
      * </pre>
      *
-     * <code>string parent = 1;</code>
+     * <code>
+     * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      */
     public com.google.protobuf.ByteString getParentBytes() {
       java.lang.Object ref = parent_;
@@ -659,11 +673,13 @@ public final class CreateProductSetRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * The project in which the ProductSet should be created.
+     * Required. The project in which the ProductSet should be created.
      * Format is `projects/PROJECT_ID/locations/LOC_ID`.
      * </pre>
      *
-     * <code>string parent = 1;</code>
+     * <code>
+     * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      */
     public Builder setParent(java.lang.String value) {
       if (value == null) {
@@ -678,11 +694,13 @@ public final class CreateProductSetRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * The project in which the ProductSet should be created.
+     * Required. The project in which the ProductSet should be created.
      * Format is `projects/PROJECT_ID/locations/LOC_ID`.
      * </pre>
      *
-     * <code>string parent = 1;</code>
+     * <code>
+     * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      */
     public Builder clearParent() {
 
@@ -694,11 +712,13 @@ public final class CreateProductSetRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * The project in which the ProductSet should be created.
+     * Required. The project in which the ProductSet should be created.
      * Format is `projects/PROJECT_ID/locations/LOC_ID`.
      * </pre>
      *
-     * <code>string parent = 1;</code>
+     * <code>
+     * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      */
     public Builder setParentBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -721,10 +741,12 @@ public final class CreateProductSetRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * The ProductSet to create.
+     * Required. The ProductSet to create.
      * </pre>
      *
-     * <code>.google.cloud.vision.v1.ProductSet product_set = 2;</code>
+     * <code>
+     * .google.cloud.vision.v1.ProductSet product_set = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public boolean hasProductSet() {
       return productSetBuilder_ != null || productSet_ != null;
@@ -733,10 +755,12 @@ public final class CreateProductSetRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * The ProductSet to create.
+     * Required. The ProductSet to create.
      * </pre>
      *
-     * <code>.google.cloud.vision.v1.ProductSet product_set = 2;</code>
+     * <code>
+     * .google.cloud.vision.v1.ProductSet product_set = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public com.google.cloud.vision.v1.ProductSet getProductSet() {
       if (productSetBuilder_ == null) {
@@ -751,10 +775,12 @@ public final class CreateProductSetRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * The ProductSet to create.
+     * Required. The ProductSet to create.
      * </pre>
      *
-     * <code>.google.cloud.vision.v1.ProductSet product_set = 2;</code>
+     * <code>
+     * .google.cloud.vision.v1.ProductSet product_set = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder setProductSet(com.google.cloud.vision.v1.ProductSet value) {
       if (productSetBuilder_ == null) {
@@ -773,10 +799,12 @@ public final class CreateProductSetRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * The ProductSet to create.
+     * Required. The ProductSet to create.
      * </pre>
      *
-     * <code>.google.cloud.vision.v1.ProductSet product_set = 2;</code>
+     * <code>
+     * .google.cloud.vision.v1.ProductSet product_set = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder setProductSet(com.google.cloud.vision.v1.ProductSet.Builder builderForValue) {
       if (productSetBuilder_ == null) {
@@ -792,10 +820,12 @@ public final class CreateProductSetRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * The ProductSet to create.
+     * Required. The ProductSet to create.
      * </pre>
      *
-     * <code>.google.cloud.vision.v1.ProductSet product_set = 2;</code>
+     * <code>
+     * .google.cloud.vision.v1.ProductSet product_set = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder mergeProductSet(com.google.cloud.vision.v1.ProductSet value) {
       if (productSetBuilder_ == null) {
@@ -818,10 +848,12 @@ public final class CreateProductSetRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * The ProductSet to create.
+     * Required. The ProductSet to create.
      * </pre>
      *
-     * <code>.google.cloud.vision.v1.ProductSet product_set = 2;</code>
+     * <code>
+     * .google.cloud.vision.v1.ProductSet product_set = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder clearProductSet() {
       if (productSetBuilder_ == null) {
@@ -838,10 +870,12 @@ public final class CreateProductSetRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * The ProductSet to create.
+     * Required. The ProductSet to create.
      * </pre>
      *
-     * <code>.google.cloud.vision.v1.ProductSet product_set = 2;</code>
+     * <code>
+     * .google.cloud.vision.v1.ProductSet product_set = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public com.google.cloud.vision.v1.ProductSet.Builder getProductSetBuilder() {
 
@@ -852,10 +886,12 @@ public final class CreateProductSetRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * The ProductSet to create.
+     * Required. The ProductSet to create.
      * </pre>
      *
-     * <code>.google.cloud.vision.v1.ProductSet product_set = 2;</code>
+     * <code>
+     * .google.cloud.vision.v1.ProductSet product_set = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public com.google.cloud.vision.v1.ProductSetOrBuilder getProductSetOrBuilder() {
       if (productSetBuilder_ != null) {
@@ -870,10 +906,12 @@ public final class CreateProductSetRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * The ProductSet to create.
+     * Required. The ProductSet to create.
      * </pre>
      *
-     * <code>.google.cloud.vision.v1.ProductSet product_set = 2;</code>
+     * <code>
+     * .google.cloud.vision.v1.ProductSet product_set = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.vision.v1.ProductSet,

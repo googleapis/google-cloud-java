@@ -18,7 +18,7 @@ public interface ApplicationOutcomeNotesFilterOrBuilder
    * in profiles.
    * </pre>
    *
-   * <code>string outcome_notes = 1;</code>
+   * <code>string outcome_notes = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   java.lang.String getOutcomeNotes();
   /**
@@ -31,7 +31,7 @@ public interface ApplicationOutcomeNotesFilterOrBuilder
    * in profiles.
    * </pre>
    *
-   * <code>string outcome_notes = 1;</code>
+   * <code>string outcome_notes = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   com.google.protobuf.ByteString getOutcomeNotesBytes();
 
@@ -39,7 +39,7 @@ public interface ApplicationOutcomeNotesFilterOrBuilder
    *
    *
    * <pre>
-   * Optional. If true, The API excludes all candidates with any
+   * If true, The API excludes all candidates with any
    * [Application.outcome_notes][google.cloud.talent.v4beta1.Application.outcome_notes]
    * matching the outcome reason specified in the filter.
    * </pre>

@@ -120,7 +120,7 @@ public final class ListUptimeCheckConfigsResponse extends com.google.protobuf.Ge
    *
    *
    * <pre>
-   * The returned uptime check configurations.
+   * The returned Uptime check configurations.
    * </pre>
    *
    * <code>repeated .google.monitoring.v3.UptimeCheckConfig uptime_check_configs = 1;</code>
@@ -132,7 +132,7 @@ public final class ListUptimeCheckConfigsResponse extends com.google.protobuf.Ge
    *
    *
    * <pre>
-   * The returned uptime check configurations.
+   * The returned Uptime check configurations.
    * </pre>
    *
    * <code>repeated .google.monitoring.v3.UptimeCheckConfig uptime_check_configs = 1;</code>
@@ -145,7 +145,7 @@ public final class ListUptimeCheckConfigsResponse extends com.google.protobuf.Ge
    *
    *
    * <pre>
-   * The returned uptime check configurations.
+   * The returned Uptime check configurations.
    * </pre>
    *
    * <code>repeated .google.monitoring.v3.UptimeCheckConfig uptime_check_configs = 1;</code>
@@ -157,7 +157,7 @@ public final class ListUptimeCheckConfigsResponse extends com.google.protobuf.Ge
    *
    *
    * <pre>
-   * The returned uptime check configurations.
+   * The returned Uptime check configurations.
    * </pre>
    *
    * <code>repeated .google.monitoring.v3.UptimeCheckConfig uptime_check_configs = 1;</code>
@@ -169,7 +169,7 @@ public final class ListUptimeCheckConfigsResponse extends com.google.protobuf.Ge
    *
    *
    * <pre>
-   * The returned uptime check configurations.
+   * The returned Uptime check configurations.
    * </pre>
    *
    * <code>repeated .google.monitoring.v3.UptimeCheckConfig uptime_check_configs = 1;</code>
@@ -236,7 +236,7 @@ public final class ListUptimeCheckConfigsResponse extends com.google.protobuf.Ge
    *
    *
    * <pre>
-   * The total number of uptime check configurations for the project,
+   * The total number of Uptime check configurations for the project,
    * irrespective of any pagination.
    * </pre>
    *
@@ -663,7 +663,7 @@ public final class ListUptimeCheckConfigsResponse extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * The returned uptime check configurations.
+     * The returned Uptime check configurations.
      * </pre>
      *
      * <code>repeated .google.monitoring.v3.UptimeCheckConfig uptime_check_configs = 1;</code>
@@ -679,7 +679,7 @@ public final class ListUptimeCheckConfigsResponse extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * The returned uptime check configurations.
+     * The returned Uptime check configurations.
      * </pre>
      *
      * <code>repeated .google.monitoring.v3.UptimeCheckConfig uptime_check_configs = 1;</code>
@@ -695,7 +695,7 @@ public final class ListUptimeCheckConfigsResponse extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * The returned uptime check configurations.
+     * The returned Uptime check configurations.
      * </pre>
      *
      * <code>repeated .google.monitoring.v3.UptimeCheckConfig uptime_check_configs = 1;</code>
@@ -711,7 +711,7 @@ public final class ListUptimeCheckConfigsResponse extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * The returned uptime check configurations.
+     * The returned Uptime check configurations.
      * </pre>
      *
      * <code>repeated .google.monitoring.v3.UptimeCheckConfig uptime_check_configs = 1;</code>
@@ -734,7 +734,7 @@ public final class ListUptimeCheckConfigsResponse extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * The returned uptime check configurations.
+     * The returned Uptime check configurations.
      * </pre>
      *
      * <code>repeated .google.monitoring.v3.UptimeCheckConfig uptime_check_configs = 1;</code>
@@ -754,7 +754,7 @@ public final class ListUptimeCheckConfigsResponse extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * The returned uptime check configurations.
+     * The returned Uptime check configurations.
      * </pre>
      *
      * <code>repeated .google.monitoring.v3.UptimeCheckConfig uptime_check_configs = 1;</code>
@@ -776,7 +776,7 @@ public final class ListUptimeCheckConfigsResponse extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * The returned uptime check configurations.
+     * The returned Uptime check configurations.
      * </pre>
      *
      * <code>repeated .google.monitoring.v3.UptimeCheckConfig uptime_check_configs = 1;</code>
@@ -799,7 +799,7 @@ public final class ListUptimeCheckConfigsResponse extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * The returned uptime check configurations.
+     * The returned Uptime check configurations.
      * </pre>
      *
      * <code>repeated .google.monitoring.v3.UptimeCheckConfig uptime_check_configs = 1;</code>
@@ -819,7 +819,7 @@ public final class ListUptimeCheckConfigsResponse extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * The returned uptime check configurations.
+     * The returned Uptime check configurations.
      * </pre>
      *
      * <code>repeated .google.monitoring.v3.UptimeCheckConfig uptime_check_configs = 1;</code>
@@ -839,7 +839,7 @@ public final class ListUptimeCheckConfigsResponse extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * The returned uptime check configurations.
+     * The returned Uptime check configurations.
      * </pre>
      *
      * <code>repeated .google.monitoring.v3.UptimeCheckConfig uptime_check_configs = 1;</code>
@@ -859,7 +859,7 @@ public final class ListUptimeCheckConfigsResponse extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * The returned uptime check configurations.
+     * The returned Uptime check configurations.
      * </pre>
      *
      * <code>repeated .google.monitoring.v3.UptimeCheckConfig uptime_check_configs = 1;</code>
@@ -878,7 +878,7 @@ public final class ListUptimeCheckConfigsResponse extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * The returned uptime check configurations.
+     * The returned Uptime check configurations.
      * </pre>
      *
      * <code>repeated .google.monitoring.v3.UptimeCheckConfig uptime_check_configs = 1;</code>
@@ -897,7 +897,7 @@ public final class ListUptimeCheckConfigsResponse extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * The returned uptime check configurations.
+     * The returned Uptime check configurations.
      * </pre>
      *
      * <code>repeated .google.monitoring.v3.UptimeCheckConfig uptime_check_configs = 1;</code>
@@ -910,7 +910,7 @@ public final class ListUptimeCheckConfigsResponse extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * The returned uptime check configurations.
+     * The returned Uptime check configurations.
      * </pre>
      *
      * <code>repeated .google.monitoring.v3.UptimeCheckConfig uptime_check_configs = 1;</code>
@@ -927,7 +927,7 @@ public final class ListUptimeCheckConfigsResponse extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * The returned uptime check configurations.
+     * The returned Uptime check configurations.
      * </pre>
      *
      * <code>repeated .google.monitoring.v3.UptimeCheckConfig uptime_check_configs = 1;</code>
@@ -944,7 +944,7 @@ public final class ListUptimeCheckConfigsResponse extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * The returned uptime check configurations.
+     * The returned Uptime check configurations.
      * </pre>
      *
      * <code>repeated .google.monitoring.v3.UptimeCheckConfig uptime_check_configs = 1;</code>
@@ -957,7 +957,7 @@ public final class ListUptimeCheckConfigsResponse extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * The returned uptime check configurations.
+     * The returned Uptime check configurations.
      * </pre>
      *
      * <code>repeated .google.monitoring.v3.UptimeCheckConfig uptime_check_configs = 1;</code>
@@ -971,7 +971,7 @@ public final class ListUptimeCheckConfigsResponse extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * The returned uptime check configurations.
+     * The returned Uptime check configurations.
      * </pre>
      *
      * <code>repeated .google.monitoring.v3.UptimeCheckConfig uptime_check_configs = 1;</code>
@@ -1120,7 +1120,7 @@ public final class ListUptimeCheckConfigsResponse extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * The total number of uptime check configurations for the project,
+     * The total number of Uptime check configurations for the project,
      * irrespective of any pagination.
      * </pre>
      *
@@ -1133,7 +1133,7 @@ public final class ListUptimeCheckConfigsResponse extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * The total number of uptime check configurations for the project,
+     * The total number of Uptime check configurations for the project,
      * irrespective of any pagination.
      * </pre>
      *
@@ -1149,7 +1149,7 @@ public final class ListUptimeCheckConfigsResponse extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * The total number of uptime check configurations for the project,
+     * The total number of Uptime check configurations for the project,
      * irrespective of any pagination.
      * </pre>
      *

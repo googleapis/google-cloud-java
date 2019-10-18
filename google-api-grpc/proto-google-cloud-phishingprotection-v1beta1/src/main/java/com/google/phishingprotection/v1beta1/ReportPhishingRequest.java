@@ -109,7 +109,9 @@ public final class ReportPhishingRequest extends com.google.protobuf.GeneratedMe
    * in the format "projects/{project_number}".
    * </pre>
    *
-   * <code>string parent = 1;</code>
+   * <code>
+   * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    */
   public java.lang.String getParent() {
     java.lang.Object ref = parent_;
@@ -130,7 +132,9 @@ public final class ReportPhishingRequest extends com.google.protobuf.GeneratedMe
    * in the format "projects/{project_number}".
    * </pre>
    *
-   * <code>string parent = 1;</code>
+   * <code>
+   * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    */
   public com.google.protobuf.ByteString getParentBytes() {
     java.lang.Object ref = parent_;
@@ -150,10 +154,10 @@ public final class ReportPhishingRequest extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * The URI that is being reported for phishing content to be analyzed.
+   * Required. The URI that is being reported for phishing content to be analyzed.
    * </pre>
    *
-   * <code>string uri = 2;</code>
+   * <code>string uri = 2 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   public java.lang.String getUri() {
     java.lang.Object ref = uri_;
@@ -170,10 +174,10 @@ public final class ReportPhishingRequest extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * The URI that is being reported for phishing content to be analyzed.
+   * Required. The URI that is being reported for phishing content to be analyzed.
    * </pre>
    *
-   * <code>string uri = 2;</code>
+   * <code>string uri = 2 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   public com.google.protobuf.ByteString getUriBytes() {
     java.lang.Object ref = uri_;
@@ -531,7 +535,9 @@ public final class ReportPhishingRequest extends com.google.protobuf.GeneratedMe
      * in the format "projects/{project_number}".
      * </pre>
      *
-     * <code>string parent = 1;</code>
+     * <code>
+     * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      */
     public java.lang.String getParent() {
       java.lang.Object ref = parent_;
@@ -552,7 +558,9 @@ public final class ReportPhishingRequest extends com.google.protobuf.GeneratedMe
      * in the format "projects/{project_number}".
      * </pre>
      *
-     * <code>string parent = 1;</code>
+     * <code>
+     * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      */
     public com.google.protobuf.ByteString getParentBytes() {
       java.lang.Object ref = parent_;
@@ -573,7 +581,9 @@ public final class ReportPhishingRequest extends com.google.protobuf.GeneratedMe
      * in the format "projects/{project_number}".
      * </pre>
      *
-     * <code>string parent = 1;</code>
+     * <code>
+     * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      */
     public Builder setParent(java.lang.String value) {
       if (value == null) {
@@ -592,7 +602,9 @@ public final class ReportPhishingRequest extends com.google.protobuf.GeneratedMe
      * in the format "projects/{project_number}".
      * </pre>
      *
-     * <code>string parent = 1;</code>
+     * <code>
+     * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      */
     public Builder clearParent() {
 
@@ -608,7 +620,9 @@ public final class ReportPhishingRequest extends com.google.protobuf.GeneratedMe
      * in the format "projects/{project_number}".
      * </pre>
      *
-     * <code>string parent = 1;</code>
+     * <code>
+     * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      */
     public Builder setParentBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -626,10 +640,10 @@ public final class ReportPhishingRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * The URI that is being reported for phishing content to be analyzed.
+     * Required. The URI that is being reported for phishing content to be analyzed.
      * </pre>
      *
-     * <code>string uri = 2;</code>
+     * <code>string uri = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public java.lang.String getUri() {
       java.lang.Object ref = uri_;
@@ -646,10 +660,10 @@ public final class ReportPhishingRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * The URI that is being reported for phishing content to be analyzed.
+     * Required. The URI that is being reported for phishing content to be analyzed.
      * </pre>
      *
-     * <code>string uri = 2;</code>
+     * <code>string uri = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public com.google.protobuf.ByteString getUriBytes() {
       java.lang.Object ref = uri_;
@@ -666,10 +680,10 @@ public final class ReportPhishingRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * The URI that is being reported for phishing content to be analyzed.
+     * Required. The URI that is being reported for phishing content to be analyzed.
      * </pre>
      *
-     * <code>string uri = 2;</code>
+     * <code>string uri = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder setUri(java.lang.String value) {
       if (value == null) {
@@ -684,10 +698,10 @@ public final class ReportPhishingRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * The URI that is being reported for phishing content to be analyzed.
+     * Required. The URI that is being reported for phishing content to be analyzed.
      * </pre>
      *
-     * <code>string uri = 2;</code>
+     * <code>string uri = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder clearUri() {
 
@@ -699,10 +713,10 @@ public final class ReportPhishingRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * The URI that is being reported for phishing content to be analyzed.
+     * Required. The URI that is being reported for phishing content to be analyzed.
      * </pre>
      *
-     * <code>string uri = 2;</code>
+     * <code>string uri = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder setUriBytes(com.google.protobuf.ByteString value) {
       if (value == null) {

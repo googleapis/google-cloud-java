@@ -12,20 +12,20 @@ public interface LoginProfileOrBuilder
    *
    *
    * <pre>
-   * The primary email address that uniquely identifies the user.
+   * Required. A unique user ID.
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   java.lang.String getName();
   /**
    *
    *
    * <pre>
-   * The primary email address that uniquely identifies the user.
+   * Required. A unique user ID.
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   com.google.protobuf.ByteString getNameBytes();
 

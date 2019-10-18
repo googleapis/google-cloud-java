@@ -15,7 +15,8 @@ public interface ReservationAffinityOrBuilder
    * Optional. Type of reservation to consume
    * </pre>
    *
-   * <code>.google.cloud.dataproc.v1beta2.ReservationAffinity.Type consume_reservation_type = 1;
+   * <code>
+   * .google.cloud.dataproc.v1beta2.ReservationAffinity.Type consume_reservation_type = 1 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    */
   int getConsumeReservationTypeValue();
@@ -26,7 +27,8 @@ public interface ReservationAffinityOrBuilder
    * Optional. Type of reservation to consume
    * </pre>
    *
-   * <code>.google.cloud.dataproc.v1beta2.ReservationAffinity.Type consume_reservation_type = 1;
+   * <code>
+   * .google.cloud.dataproc.v1beta2.ReservationAffinity.Type consume_reservation_type = 1 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    */
   com.google.cloud.dataproc.v1beta2.ReservationAffinity.Type getConsumeReservationType();
@@ -38,7 +40,7 @@ public interface ReservationAffinityOrBuilder
    * Optional. Corresponds to the label key of reservation resource.
    * </pre>
    *
-   * <code>string key = 2;</code>
+   * <code>string key = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   java.lang.String getKey();
   /**
@@ -48,7 +50,7 @@ public interface ReservationAffinityOrBuilder
    * Optional. Corresponds to the label key of reservation resource.
    * </pre>
    *
-   * <code>string key = 2;</code>
+   * <code>string key = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   com.google.protobuf.ByteString getKeyBytes();
 
@@ -59,7 +61,7 @@ public interface ReservationAffinityOrBuilder
    * Optional. Corresponds to the label values of reservation resource.
    * </pre>
    *
-   * <code>repeated string values = 3;</code>
+   * <code>repeated string values = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   java.util.List<java.lang.String> getValuesList();
   /**
@@ -69,7 +71,7 @@ public interface ReservationAffinityOrBuilder
    * Optional. Corresponds to the label values of reservation resource.
    * </pre>
    *
-   * <code>repeated string values = 3;</code>
+   * <code>repeated string values = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   int getValuesCount();
   /**
@@ -79,7 +81,7 @@ public interface ReservationAffinityOrBuilder
    * Optional. Corresponds to the label values of reservation resource.
    * </pre>
    *
-   * <code>repeated string values = 3;</code>
+   * <code>repeated string values = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   java.lang.String getValues(int index);
   /**
@@ -89,7 +91,7 @@ public interface ReservationAffinityOrBuilder
    * Optional. Corresponds to the label values of reservation resource.
    * </pre>
    *
-   * <code>repeated string values = 3;</code>
+   * <code>repeated string values = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   com.google.protobuf.ByteString getValuesBytes(int index);
 }

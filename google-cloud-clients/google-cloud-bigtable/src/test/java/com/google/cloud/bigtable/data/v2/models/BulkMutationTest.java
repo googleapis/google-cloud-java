@@ -114,4 +114,37 @@ public class BulkMutationTest {
     BulkMutation actual = (BulkMutation) ois.readObject();
     assertThat(actual.toProto(REQUEST_CONTEXT)).isEqualTo(expected.toProto(REQUEST_CONTEXT));
   }
+
+  @Test
+  public void cloneTest() {
+    BulkMutation originalBulkMutation =
+        BulkMutation.create(TABLE_ID)
+            .add(
+                "test-rowKey",
+                Mutation.create().setCell("fake-family1", "fake-qualifier1", 12345, "fake-value1"));
+
+    MutateRowsRequest originalRequest = originalBulkMutation.toProto(REQUEST_CONTEXT);
+    BulkMutation clonedMutation = originalBulkMutation.clone();
+    MutateRowsRequest clonedRequest = clonedMutation.toProto(REQUEST_CONTEXT);
+
+    // Both BulkMutations should be equals.
+    assertThat(clonedRequest).isEqualTo(originalRequest);
+    assertThat(clonedRequest.getTableName()).isEqualTo(originalRequest.getTableName());
+    assertThat(clonedRequest.getEntriesList()).isEqualTo(originalRequest.getEntriesList());
+
+    // Mutating cloned BulkMutation
+    clonedMutation.add(
+        "another-rowKey", Mutation.create().deleteCells("delete-family", "delete-qualifier"));
+    assertThat(clonedMutation.toProto(REQUEST_CONTEXT)).isNotEqualTo(originalRequest);
+  }
+
+  @Test
+  public void addRowMutationEntry() {
+    RowMutationEntry entry =
+        RowMutationEntry.create("test-rowKey")
+            .setCell("fake-family1", "fake-qualifier1", "fake-value1");
+    BulkMutation bulkMutation = BulkMutation.create(TABLE_ID);
+    bulkMutation.add(entry);
+    assertThat(bulkMutation.toProto(REQUEST_CONTEXT).getEntriesList()).contains(entry.toProto());
+  }
 }

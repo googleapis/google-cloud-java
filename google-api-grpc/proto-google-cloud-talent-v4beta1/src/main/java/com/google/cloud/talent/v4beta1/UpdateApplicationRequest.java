@@ -123,7 +123,9 @@ public final class UpdateApplicationRequest extends com.google.protobuf.Generate
    * system.
    * </pre>
    *
-   * <code>.google.cloud.talent.v4beta1.Application application = 1;</code>
+   * <code>
+   * .google.cloud.talent.v4beta1.Application application = 1 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   public boolean hasApplication() {
     return application_ != null;
@@ -136,7 +138,9 @@ public final class UpdateApplicationRequest extends com.google.protobuf.Generate
    * system.
    * </pre>
    *
-   * <code>.google.cloud.talent.v4beta1.Application application = 1;</code>
+   * <code>
+   * .google.cloud.talent.v4beta1.Application application = 1 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   public com.google.cloud.talent.v4beta1.Application getApplication() {
     return application_ == null
@@ -151,7 +155,9 @@ public final class UpdateApplicationRequest extends com.google.protobuf.Generate
    * system.
    * </pre>
    *
-   * <code>.google.cloud.talent.v4beta1.Application application = 1;</code>
+   * <code>
+   * .google.cloud.talent.v4beta1.Application application = 1 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   public com.google.cloud.talent.v4beta1.ApplicationOrBuilder getApplicationOrBuilder() {
     return getApplication();
@@ -163,8 +169,7 @@ public final class UpdateApplicationRequest extends com.google.protobuf.Generate
    *
    *
    * <pre>
-   * Optional but strongly recommended for the best service
-   * experience.
+   * Strongly recommended for the best service experience.
    * If
    * [update_mask][google.cloud.talent.v4beta1.UpdateApplicationRequest.update_mask]
    * is provided, only the specified fields in
@@ -184,8 +189,7 @@ public final class UpdateApplicationRequest extends com.google.protobuf.Generate
    *
    *
    * <pre>
-   * Optional but strongly recommended for the best service
-   * experience.
+   * Strongly recommended for the best service experience.
    * If
    * [update_mask][google.cloud.talent.v4beta1.UpdateApplicationRequest.update_mask]
    * is provided, only the specified fields in
@@ -205,8 +209,7 @@ public final class UpdateApplicationRequest extends com.google.protobuf.Generate
    *
    *
    * <pre>
-   * Optional but strongly recommended for the best service
-   * experience.
+   * Strongly recommended for the best service experience.
    * If
    * [update_mask][google.cloud.talent.v4beta1.UpdateApplicationRequest.update_mask]
    * is provided, only the specified fields in
@@ -596,7 +599,9 @@ public final class UpdateApplicationRequest extends com.google.protobuf.Generate
      * system.
      * </pre>
      *
-     * <code>.google.cloud.talent.v4beta1.Application application = 1;</code>
+     * <code>
+     * .google.cloud.talent.v4beta1.Application application = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public boolean hasApplication() {
       return applicationBuilder_ != null || application_ != null;
@@ -609,7 +614,9 @@ public final class UpdateApplicationRequest extends com.google.protobuf.Generate
      * system.
      * </pre>
      *
-     * <code>.google.cloud.talent.v4beta1.Application application = 1;</code>
+     * <code>
+     * .google.cloud.talent.v4beta1.Application application = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public com.google.cloud.talent.v4beta1.Application getApplication() {
       if (applicationBuilder_ == null) {
@@ -628,7 +635,9 @@ public final class UpdateApplicationRequest extends com.google.protobuf.Generate
      * system.
      * </pre>
      *
-     * <code>.google.cloud.talent.v4beta1.Application application = 1;</code>
+     * <code>
+     * .google.cloud.talent.v4beta1.Application application = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder setApplication(com.google.cloud.talent.v4beta1.Application value) {
       if (applicationBuilder_ == null) {
@@ -651,7 +660,9 @@ public final class UpdateApplicationRequest extends com.google.protobuf.Generate
      * system.
      * </pre>
      *
-     * <code>.google.cloud.talent.v4beta1.Application application = 1;</code>
+     * <code>
+     * .google.cloud.talent.v4beta1.Application application = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder setApplication(
         com.google.cloud.talent.v4beta1.Application.Builder builderForValue) {
@@ -672,7 +683,9 @@ public final class UpdateApplicationRequest extends com.google.protobuf.Generate
      * system.
      * </pre>
      *
-     * <code>.google.cloud.talent.v4beta1.Application application = 1;</code>
+     * <code>
+     * .google.cloud.talent.v4beta1.Application application = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder mergeApplication(com.google.cloud.talent.v4beta1.Application value) {
       if (applicationBuilder_ == null) {
@@ -699,7 +712,9 @@ public final class UpdateApplicationRequest extends com.google.protobuf.Generate
      * system.
      * </pre>
      *
-     * <code>.google.cloud.talent.v4beta1.Application application = 1;</code>
+     * <code>
+     * .google.cloud.talent.v4beta1.Application application = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder clearApplication() {
       if (applicationBuilder_ == null) {
@@ -720,7 +735,9 @@ public final class UpdateApplicationRequest extends com.google.protobuf.Generate
      * system.
      * </pre>
      *
-     * <code>.google.cloud.talent.v4beta1.Application application = 1;</code>
+     * <code>
+     * .google.cloud.talent.v4beta1.Application application = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public com.google.cloud.talent.v4beta1.Application.Builder getApplicationBuilder() {
 
@@ -735,7 +752,9 @@ public final class UpdateApplicationRequest extends com.google.protobuf.Generate
      * system.
      * </pre>
      *
-     * <code>.google.cloud.talent.v4beta1.Application application = 1;</code>
+     * <code>
+     * .google.cloud.talent.v4beta1.Application application = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public com.google.cloud.talent.v4beta1.ApplicationOrBuilder getApplicationOrBuilder() {
       if (applicationBuilder_ != null) {
@@ -754,7 +773,9 @@ public final class UpdateApplicationRequest extends com.google.protobuf.Generate
      * system.
      * </pre>
      *
-     * <code>.google.cloud.talent.v4beta1.Application application = 1;</code>
+     * <code>
+     * .google.cloud.talent.v4beta1.Application application = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.talent.v4beta1.Application,
@@ -783,8 +804,7 @@ public final class UpdateApplicationRequest extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * Optional but strongly recommended for the best service
-     * experience.
+     * Strongly recommended for the best service experience.
      * If
      * [update_mask][google.cloud.talent.v4beta1.UpdateApplicationRequest.update_mask]
      * is provided, only the specified fields in
@@ -804,8 +824,7 @@ public final class UpdateApplicationRequest extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * Optional but strongly recommended for the best service
-     * experience.
+     * Strongly recommended for the best service experience.
      * If
      * [update_mask][google.cloud.talent.v4beta1.UpdateApplicationRequest.update_mask]
      * is provided, only the specified fields in
@@ -831,8 +850,7 @@ public final class UpdateApplicationRequest extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * Optional but strongly recommended for the best service
-     * experience.
+     * Strongly recommended for the best service experience.
      * If
      * [update_mask][google.cloud.talent.v4beta1.UpdateApplicationRequest.update_mask]
      * is provided, only the specified fields in
@@ -862,8 +880,7 @@ public final class UpdateApplicationRequest extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * Optional but strongly recommended for the best service
-     * experience.
+     * Strongly recommended for the best service experience.
      * If
      * [update_mask][google.cloud.talent.v4beta1.UpdateApplicationRequest.update_mask]
      * is provided, only the specified fields in
@@ -890,8 +907,7 @@ public final class UpdateApplicationRequest extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * Optional but strongly recommended for the best service
-     * experience.
+     * Strongly recommended for the best service experience.
      * If
      * [update_mask][google.cloud.talent.v4beta1.UpdateApplicationRequest.update_mask]
      * is provided, only the specified fields in
@@ -923,8 +939,7 @@ public final class UpdateApplicationRequest extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * Optional but strongly recommended for the best service
-     * experience.
+     * Strongly recommended for the best service experience.
      * If
      * [update_mask][google.cloud.talent.v4beta1.UpdateApplicationRequest.update_mask]
      * is provided, only the specified fields in
@@ -952,8 +967,7 @@ public final class UpdateApplicationRequest extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * Optional but strongly recommended for the best service
-     * experience.
+     * Strongly recommended for the best service experience.
      * If
      * [update_mask][google.cloud.talent.v4beta1.UpdateApplicationRequest.update_mask]
      * is provided, only the specified fields in
@@ -975,8 +989,7 @@ public final class UpdateApplicationRequest extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * Optional but strongly recommended for the best service
-     * experience.
+     * Strongly recommended for the best service experience.
      * If
      * [update_mask][google.cloud.talent.v4beta1.UpdateApplicationRequest.update_mask]
      * is provided, only the specified fields in
@@ -1002,8 +1015,7 @@ public final class UpdateApplicationRequest extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * Optional but strongly recommended for the best service
-     * experience.
+     * Strongly recommended for the best service experience.
      * If
      * [update_mask][google.cloud.talent.v4beta1.UpdateApplicationRequest.update_mask]
      * is provided, only the specified fields in

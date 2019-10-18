@@ -130,7 +130,7 @@ public final class DroppedLabelsOuterClass {
               break;
             case 10:
               {
-                if (!((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
+                if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                   label_ =
                       com.google.protobuf.MapField.newMapField(
                           LabelDefaultEntryHolder.defaultEntry);
@@ -144,7 +144,7 @@ public final class DroppedLabelsOuterClass {
               }
             default:
               {
-                if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+                if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
                   done = true;
                 }
                 break;
@@ -331,10 +331,9 @@ public final class DroppedLabelsOuterClass {
       google.monitoring.v3.DroppedLabelsOuterClass.DroppedLabels other =
           (google.monitoring.v3.DroppedLabelsOuterClass.DroppedLabels) obj;
 
-      boolean result = true;
-      result = result && internalGetLabel().equals(other.internalGetLabel());
-      result = result && unknownFields.equals(other.unknownFields);
-      return result;
+      if (!internalGetLabel().equals(other.internalGetLabel())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
     }
 
     @java.lang.Override
@@ -566,23 +565,23 @@ public final class DroppedLabelsOuterClass {
 
       @java.lang.Override
       public Builder clone() {
-        return (Builder) super.clone();
+        return super.clone();
       }
 
       @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-        return (Builder) super.setField(field, value);
+        return super.setField(field, value);
       }
 
       @java.lang.Override
       public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return (Builder) super.clearField(field);
+        return super.clearField(field);
       }
 
       @java.lang.Override
       public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return (Builder) super.clearOneof(oneof);
+        return super.clearOneof(oneof);
       }
 
       @java.lang.Override
@@ -590,13 +589,13 @@ public final class DroppedLabelsOuterClass {
           com.google.protobuf.Descriptors.FieldDescriptor field,
           int index,
           java.lang.Object value) {
-        return (Builder) super.setRepeatedField(field, index, value);
+        return super.setRepeatedField(field, index, value);
       }
 
       @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-        return (Builder) super.addRepeatedField(field, value);
+        return super.addRepeatedField(field, value);
       }
 
       @java.lang.Override
@@ -801,7 +800,7 @@ public final class DroppedLabelsOuterClass {
       @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.setUnknownFieldsProto3(unknownFields);
+        return super.setUnknownFields(unknownFields);
       }
 
       @java.lang.Override
@@ -869,13 +868,12 @@ public final class DroppedLabelsOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n)google/monitoring/v3/dropped_labels.pr"
-          + "oto\022\024google.monitoring.v3\032\034google/api/an"
-          + "notations.proto\"|\n\rDroppedLabels\022=\n\005labe"
-          + "l\030\001 \003(\0132..google.monitoring.v3.DroppedLa"
-          + "bels.LabelEntry\032,\n\nLabelEntry\022\013\n\003key\030\001 \001"
-          + "(\t\022\r\n\005value\030\002 \001(\t:\0028\001B@Z>google.golang.o"
-          + "rg/genproto/googleapis/monitoring/v3;mon"
-          + "itoringb\006proto3"
+          + "oto\022\024google.monitoring.v3\"|\n\rDroppedLabe"
+          + "ls\022=\n\005label\030\001 \003(\0132..google.monitoring.v3"
+          + ".DroppedLabels.LabelEntry\032,\n\nLabelEntry\022"
+          + "\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001B@Z>googl"
+          + "e.golang.org/genproto/googleapis/monitor"
+          + "ing/v3;monitoringb\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner() {
@@ -886,11 +884,7 @@ public final class DroppedLabelsOuterClass {
           }
         };
     com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
-        descriptorData,
-        new com.google.protobuf.Descriptors.FileDescriptor[] {
-          com.google.api.AnnotationsProto.getDescriptor(),
-        },
-        assigner);
+        descriptorData, new com.google.protobuf.Descriptors.FileDescriptor[] {}, assigner);
     internal_static_google_monitoring_v3_DroppedLabels_descriptor =
         getDescriptor().getMessageTypes().get(0);
     internal_static_google_monitoring_v3_DroppedLabels_fieldAccessorTable =
@@ -907,7 +901,6 @@ public final class DroppedLabelsOuterClass {
             new java.lang.String[] {
               "Key", "Value",
             });
-    com.google.api.AnnotationsProto.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

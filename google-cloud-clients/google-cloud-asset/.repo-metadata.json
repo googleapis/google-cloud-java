@@ -1,0 +1,13 @@
+{
+  "name": "cloudasset",
+  "name_pretty": "Cloud Asset",
+  "product_documentation": "https://cloud.google.com/resource-manager/docs/cloud-asset-inventory/overview",
+  "client_documentation": "https://googleapis.dev/java/google-cloud-clients/latest/index.html?com/google/cloud/asset/v1beta1/package-summary.html",
+  "issue_tracker": "https://issuetracker.google.com/issues/new?component=187210&template=0",
+  "release_level": "beta",
+  "language": "java",
+  "repo": "googleapis/google-cloud-java",
+  "repo_short": "google-cloud-java",
+  "distribution_name": "com.google.cloud:google-cloud-asset",
+  "api_id": "cloudasset.googleapis.com"
+}

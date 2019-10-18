@@ -255,7 +255,7 @@ public class ITDatastoreTest {
   }
 
   @Test
-  public void testTransactionWithQuery() throws InterruptedException {
+  public void testTransactionWithQuery() {
     Query<Entity> query =
         Query.newEntityQueryBuilder()
             .setKind(KIND2)
@@ -857,5 +857,31 @@ public class ITDatastoreTest {
     Query<Key> query = Query.newKeyQueryBuilder().setOffset(Integer.MAX_VALUE).build();
     int numberOfEntities = DATASTORE.run(query).getSkippedResults();
     assertEquals(2, numberOfEntities);
+  }
+
+  @Test
+  public void testSetLimit() {
+    DATASTORE.put(ENTITY1);
+    Query<Key> keyQuery = Query.newKeyQueryBuilder().setLimit(1).build();
+    QueryResults<?> queryResults = DATASTORE.run(keyQuery);
+    assertTrue(queryResults.hasNext());
+    assertEquals(KEY1, queryResults.next());
+
+    Query<?> query = Query.newEntityQueryBuilder().setLimit(0).build();
+    QueryResults<?> results = DATASTORE.run(query);
+    assertFalse(results.hasNext());
+  }
+
+  @Test
+  public void testGqlQueryWithNullBinding() {
+    Query<Entity> query =
+        Query.newGqlQueryBuilder(ResultType.ENTITY, "select * from " + KIND1)
+            .setNamespace(NAMESPACE)
+            .setNullBinding("name")
+            .build();
+    Iterator<Entity> results = DATASTORE.run(query);
+    assertTrue(results.hasNext());
+    assertEquals(ENTITY1, results.next());
+    assertFalse(results.hasNext());
   }
 }

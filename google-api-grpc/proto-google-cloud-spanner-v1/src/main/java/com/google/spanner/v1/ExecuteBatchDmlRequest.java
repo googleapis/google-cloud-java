@@ -223,7 +223,9 @@ public final class ExecuteBatchDmlRequest extends com.google.protobuf.GeneratedM
      * <pre>
      * It is not always possible for Cloud Spanner to infer the right SQL type
      * from a JSON value.  For example, values of type `BYTES` and values
-     * of type `STRING` both appear in [params][google.spanner.v1.ExecuteBatchDmlRequest.Statement.params] as JSON strings.
+     * of type `STRING` both appear in
+     * [params][google.spanner.v1.ExecuteBatchDmlRequest.Statement.params] as
+     * JSON strings.
      * In these cases, `param_types` can be used to specify the exact
      * SQL type for some or all of the SQL statement parameters. See the
      * definition of [Type][google.spanner.v1.Type] for more information
@@ -239,7 +241,9 @@ public final class ExecuteBatchDmlRequest extends com.google.protobuf.GeneratedM
      * <pre>
      * It is not always possible for Cloud Spanner to infer the right SQL type
      * from a JSON value.  For example, values of type `BYTES` and values
-     * of type `STRING` both appear in [params][google.spanner.v1.ExecuteBatchDmlRequest.Statement.params] as JSON strings.
+     * of type `STRING` both appear in
+     * [params][google.spanner.v1.ExecuteBatchDmlRequest.Statement.params] as
+     * JSON strings.
      * In these cases, `param_types` can be used to specify the exact
      * SQL type for some or all of the SQL statement parameters. See the
      * definition of [Type][google.spanner.v1.Type] for more information
@@ -258,7 +262,9 @@ public final class ExecuteBatchDmlRequest extends com.google.protobuf.GeneratedM
      * <pre>
      * It is not always possible for Cloud Spanner to infer the right SQL type
      * from a JSON value.  For example, values of type `BYTES` and values
-     * of type `STRING` both appear in [params][google.spanner.v1.ExecuteBatchDmlRequest.Statement.params] as JSON strings.
+     * of type `STRING` both appear in
+     * [params][google.spanner.v1.ExecuteBatchDmlRequest.Statement.params] as
+     * JSON strings.
      * In these cases, `param_types` can be used to specify the exact
      * SQL type for some or all of the SQL statement parameters. See the
      * definition of [Type][google.spanner.v1.Type] for more information
@@ -274,7 +280,9 @@ public final class ExecuteBatchDmlRequest extends com.google.protobuf.GeneratedM
      * <pre>
      * It is not always possible for Cloud Spanner to infer the right SQL type
      * from a JSON value.  For example, values of type `BYTES` and values
-     * of type `STRING` both appear in [params][google.spanner.v1.ExecuteBatchDmlRequest.Statement.params] as JSON strings.
+     * of type `STRING` both appear in
+     * [params][google.spanner.v1.ExecuteBatchDmlRequest.Statement.params] as
+     * JSON strings.
      * In these cases, `param_types` can be used to specify the exact
      * SQL type for some or all of the SQL statement parameters. See the
      * definition of [Type][google.spanner.v1.Type] for more information
@@ -291,7 +299,9 @@ public final class ExecuteBatchDmlRequest extends com.google.protobuf.GeneratedM
      * <pre>
      * It is not always possible for Cloud Spanner to infer the right SQL type
      * from a JSON value.  For example, values of type `BYTES` and values
-     * of type `STRING` both appear in [params][google.spanner.v1.ExecuteBatchDmlRequest.Statement.params] as JSON strings.
+     * of type `STRING` both appear in
+     * [params][google.spanner.v1.ExecuteBatchDmlRequest.Statement.params] as
+     * JSON strings.
      * In these cases, `param_types` can be used to specify the exact
      * SQL type for some or all of the SQL statement parameters. See the
      * definition of [Type][google.spanner.v1.Type] for more information
@@ -579,7 +589,9 @@ public final class ExecuteBatchDmlRequest extends com.google.protobuf.GeneratedM
      * <pre>
      * It is not always possible for Cloud Spanner to infer the right SQL type
      * from a JSON value.  For example, values of type `BYTES` and values
-     * of type `STRING` both appear in [params][google.spanner.v1.ExecuteBatchDmlRequest.Statement.params] as JSON strings.
+     * of type `STRING` both appear in
+     * [params][google.spanner.v1.ExecuteBatchDmlRequest.Statement.params] as
+     * JSON strings.
      * In these cases, `param_types` can be used to specify the exact
      * SQL type for some or all of the SQL statement parameters. See the
      * definition of [Type][google.spanner.v1.Type] for more information
@@ -605,7 +617,9 @@ public final class ExecuteBatchDmlRequest extends com.google.protobuf.GeneratedM
      * <pre>
      * It is not always possible for Cloud Spanner to infer the right SQL type
      * from a JSON value.  For example, values of type `BYTES` and values
-     * of type `STRING` both appear in [params][google.spanner.v1.ExecuteBatchDmlRequest.Statement.params] as JSON strings.
+     * of type `STRING` both appear in
+     * [params][google.spanner.v1.ExecuteBatchDmlRequest.Statement.params] as
+     * JSON strings.
      * In these cases, `param_types` can be used to specify the exact
      * SQL type for some or all of the SQL statement parameters. See the
      * definition of [Type][google.spanner.v1.Type] for more information
@@ -623,7 +637,9 @@ public final class ExecuteBatchDmlRequest extends com.google.protobuf.GeneratedM
      * <pre>
      * It is not always possible for Cloud Spanner to infer the right SQL type
      * from a JSON value.  For example, values of type `BYTES` and values
-     * of type `STRING` both appear in [params][google.spanner.v1.ExecuteBatchDmlRequest.Statement.params] as JSON strings.
+     * of type `STRING` both appear in
+     * [params][google.spanner.v1.ExecuteBatchDmlRequest.Statement.params] as
+     * JSON strings.
      * In these cases, `param_types` can be used to specify the exact
      * SQL type for some or all of the SQL statement parameters. See the
      * definition of [Type][google.spanner.v1.Type] for more information
@@ -647,7 +663,9 @@ public final class ExecuteBatchDmlRequest extends com.google.protobuf.GeneratedM
      * <pre>
      * It is not always possible for Cloud Spanner to infer the right SQL type
      * from a JSON value.  For example, values of type `BYTES` and values
-     * of type `STRING` both appear in [params][google.spanner.v1.ExecuteBatchDmlRequest.Statement.params] as JSON strings.
+     * of type `STRING` both appear in
+     * [params][google.spanner.v1.ExecuteBatchDmlRequest.Statement.params] as
+     * JSON strings.
      * In these cases, `param_types` can be used to specify the exact
      * SQL type for some or all of the SQL statement parameters. See the
      * definition of [Type][google.spanner.v1.Type] for more information
@@ -1459,7 +1477,9 @@ public final class ExecuteBatchDmlRequest extends com.google.protobuf.GeneratedM
        * <pre>
        * It is not always possible for Cloud Spanner to infer the right SQL type
        * from a JSON value.  For example, values of type `BYTES` and values
-       * of type `STRING` both appear in [params][google.spanner.v1.ExecuteBatchDmlRequest.Statement.params] as JSON strings.
+       * of type `STRING` both appear in
+       * [params][google.spanner.v1.ExecuteBatchDmlRequest.Statement.params] as
+       * JSON strings.
        * In these cases, `param_types` can be used to specify the exact
        * SQL type for some or all of the SQL statement parameters. See the
        * definition of [Type][google.spanner.v1.Type] for more information
@@ -1485,7 +1505,9 @@ public final class ExecuteBatchDmlRequest extends com.google.protobuf.GeneratedM
        * <pre>
        * It is not always possible for Cloud Spanner to infer the right SQL type
        * from a JSON value.  For example, values of type `BYTES` and values
-       * of type `STRING` both appear in [params][google.spanner.v1.ExecuteBatchDmlRequest.Statement.params] as JSON strings.
+       * of type `STRING` both appear in
+       * [params][google.spanner.v1.ExecuteBatchDmlRequest.Statement.params] as
+       * JSON strings.
        * In these cases, `param_types` can be used to specify the exact
        * SQL type for some or all of the SQL statement parameters. See the
        * definition of [Type][google.spanner.v1.Type] for more information
@@ -1503,7 +1525,9 @@ public final class ExecuteBatchDmlRequest extends com.google.protobuf.GeneratedM
        * <pre>
        * It is not always possible for Cloud Spanner to infer the right SQL type
        * from a JSON value.  For example, values of type `BYTES` and values
-       * of type `STRING` both appear in [params][google.spanner.v1.ExecuteBatchDmlRequest.Statement.params] as JSON strings.
+       * of type `STRING` both appear in
+       * [params][google.spanner.v1.ExecuteBatchDmlRequest.Statement.params] as
+       * JSON strings.
        * In these cases, `param_types` can be used to specify the exact
        * SQL type for some or all of the SQL statement parameters. See the
        * definition of [Type][google.spanner.v1.Type] for more information
@@ -1527,7 +1551,9 @@ public final class ExecuteBatchDmlRequest extends com.google.protobuf.GeneratedM
        * <pre>
        * It is not always possible for Cloud Spanner to infer the right SQL type
        * from a JSON value.  For example, values of type `BYTES` and values
-       * of type `STRING` both appear in [params][google.spanner.v1.ExecuteBatchDmlRequest.Statement.params] as JSON strings.
+       * of type `STRING` both appear in
+       * [params][google.spanner.v1.ExecuteBatchDmlRequest.Statement.params] as
+       * JSON strings.
        * In these cases, `param_types` can be used to specify the exact
        * SQL type for some or all of the SQL statement parameters. See the
        * definition of [Type][google.spanner.v1.Type] for more information
@@ -1558,7 +1584,9 @@ public final class ExecuteBatchDmlRequest extends com.google.protobuf.GeneratedM
        * <pre>
        * It is not always possible for Cloud Spanner to infer the right SQL type
        * from a JSON value.  For example, values of type `BYTES` and values
-       * of type `STRING` both appear in [params][google.spanner.v1.ExecuteBatchDmlRequest.Statement.params] as JSON strings.
+       * of type `STRING` both appear in
+       * [params][google.spanner.v1.ExecuteBatchDmlRequest.Statement.params] as
+       * JSON strings.
        * In these cases, `param_types` can be used to specify the exact
        * SQL type for some or all of the SQL statement parameters. See the
        * definition of [Type][google.spanner.v1.Type] for more information
@@ -1585,7 +1613,9 @@ public final class ExecuteBatchDmlRequest extends com.google.protobuf.GeneratedM
        * <pre>
        * It is not always possible for Cloud Spanner to infer the right SQL type
        * from a JSON value.  For example, values of type `BYTES` and values
-       * of type `STRING` both appear in [params][google.spanner.v1.ExecuteBatchDmlRequest.Statement.params] as JSON strings.
+       * of type `STRING` both appear in
+       * [params][google.spanner.v1.ExecuteBatchDmlRequest.Statement.params] as
+       * JSON strings.
        * In these cases, `param_types` can be used to specify the exact
        * SQL type for some or all of the SQL statement parameters. See the
        * definition of [Type][google.spanner.v1.Type] for more information
@@ -1610,7 +1640,9 @@ public final class ExecuteBatchDmlRequest extends com.google.protobuf.GeneratedM
        * <pre>
        * It is not always possible for Cloud Spanner to infer the right SQL type
        * from a JSON value.  For example, values of type `BYTES` and values
-       * of type `STRING` both appear in [params][google.spanner.v1.ExecuteBatchDmlRequest.Statement.params] as JSON strings.
+       * of type `STRING` both appear in
+       * [params][google.spanner.v1.ExecuteBatchDmlRequest.Statement.params] as
+       * JSON strings.
        * In these cases, `param_types` can be used to specify the exact
        * SQL type for some or all of the SQL statement parameters. See the
        * definition of [Type][google.spanner.v1.Type] for more information

@@ -12,7 +12,7 @@ public interface InterviewOrBuilder
    *
    *
    * <pre>
-   * Optional. The rating on this interview.
+   * The rating on this interview.
    * </pre>
    *
    * <code>.google.cloud.talent.v4beta1.Rating rating = 6;</code>
@@ -22,7 +22,7 @@ public interface InterviewOrBuilder
    *
    *
    * <pre>
-   * Optional. The rating on this interview.
+   * The rating on this interview.
    * </pre>
    *
    * <code>.google.cloud.talent.v4beta1.Rating rating = 6;</code>
@@ -32,7 +32,7 @@ public interface InterviewOrBuilder
    *
    *
    * <pre>
-   * Optional. The rating on this interview.
+   * The rating on this interview.
    * </pre>
    *
    * <code>.google.cloud.talent.v4beta1.Rating rating = 6;</code>
@@ -47,7 +47,9 @@ public interface InterviewOrBuilder
    * negative, nuetral).
    * </pre>
    *
-   * <code>.google.cloud.talent.v4beta1.Outcome outcome = 7;</code>
+   * <code>
+   * .google.cloud.talent.v4beta1.Outcome outcome = 7 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   int getOutcomeValue();
   /**
@@ -58,7 +60,9 @@ public interface InterviewOrBuilder
    * negative, nuetral).
    * </pre>
    *
-   * <code>.google.cloud.talent.v4beta1.Outcome outcome = 7;</code>
+   * <code>
+   * .google.cloud.talent.v4beta1.Outcome outcome = 7 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   com.google.cloud.talent.v4beta1.Outcome getOutcome();
 }

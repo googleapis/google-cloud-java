@@ -12,7 +12,7 @@ public interface TokenPropertiesOrBuilder
    *
    *
    * <pre>
-   * Output only. Whether the provided user response token is valid.
+   * Whether the provided user response token is valid.
    * </pre>
    *
    * <code>bool valid = 1;</code>
@@ -23,7 +23,7 @@ public interface TokenPropertiesOrBuilder
    *
    *
    * <pre>
-   * Output only. Reason associated with the response when valid = false.
+   * Reason associated with the response when valid = false.
    * </pre>
    *
    * <code>
@@ -35,7 +35,7 @@ public interface TokenPropertiesOrBuilder
    *
    *
    * <pre>
-   * Output only. Reason associated with the response when valid = false.
+   * Reason associated with the response when valid = false.
    * </pre>
    *
    * <code>
@@ -48,7 +48,7 @@ public interface TokenPropertiesOrBuilder
    *
    *
    * <pre>
-   * Output only. The timestamp corresponding to the generation of the token.
+   * The timestamp corresponding to the generation of the token.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp create_time = 3;</code>
@@ -58,7 +58,7 @@ public interface TokenPropertiesOrBuilder
    *
    *
    * <pre>
-   * Output only. The timestamp corresponding to the generation of the token.
+   * The timestamp corresponding to the generation of the token.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp create_time = 3;</code>
@@ -68,7 +68,7 @@ public interface TokenPropertiesOrBuilder
    *
    *
    * <pre>
-   * Output only. The timestamp corresponding to the generation of the token.
+   * The timestamp corresponding to the generation of the token.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp create_time = 3;</code>
@@ -79,7 +79,7 @@ public interface TokenPropertiesOrBuilder
    *
    *
    * <pre>
-   * Output only. The hostname of the page on which the token was generated.
+   * The hostname of the page on which the token was generated.
    * </pre>
    *
    * <code>string hostname = 4;</code>
@@ -89,7 +89,7 @@ public interface TokenPropertiesOrBuilder
    *
    *
    * <pre>
-   * Output only. The hostname of the page on which the token was generated.
+   * The hostname of the page on which the token was generated.
    * </pre>
    *
    * <code>string hostname = 4;</code>
@@ -100,7 +100,7 @@ public interface TokenPropertiesOrBuilder
    *
    *
    * <pre>
-   * Output only. Action name provided at token generation.
+   * Action name provided at token generation.
    * </pre>
    *
    * <code>string action = 5;</code>
@@ -110,7 +110,7 @@ public interface TokenPropertiesOrBuilder
    *
    *
    * <pre>
-   * Output only. Action name provided at token generation.
+   * Action name provided at token generation.
    * </pre>
    *
    * <code>string action = 5;</code>
