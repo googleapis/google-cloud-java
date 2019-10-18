@@ -7,9 +7,9 @@
   <name>grpc-google-cloud-bigtable-admin-v2</name>
   <description>GRPC library for grpc-google-cloud-bigtable-admin-v2</description>
   <parent>
-    <groupId>com.google.api.grpc</groupId>
-    <artifactId>google-api-grpc</artifactId>
-    <version>0.81.1-SNAPSHOT</version><!-- {x-version-update:google-api-grpc:current} -->
+    <groupId>com.google.cloud</groupId>
+    <artifactId>google-cloud-bigtable-parent</artifactId>
+    <version>1.5.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-bigtable:current} -->
   </parent>
   <dependencies>
     <dependency>
