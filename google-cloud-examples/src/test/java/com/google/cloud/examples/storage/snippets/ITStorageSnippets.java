@@ -444,6 +444,12 @@ public class ITStorageSnippets {
     Page<Bucket> bucket = storageSnippets.authListBuckets();
     assertNotNull(bucket);
   }
+  
+  @Test
+  public void testListBuckets() {
+    Page<Bucket> bucket = storageSnippets.listBuckets();
+    assertNotNull(bucket);
+  }
 
   @Test
   public void testBlobDownload() throws Exception {
