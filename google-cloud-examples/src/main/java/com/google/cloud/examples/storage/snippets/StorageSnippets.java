@@ -1003,6 +1003,19 @@ public class StorageSnippets {
     return buckets;
   }
 
+  /** Example of a simple listBuckets() */
+  public Page<Bucket> listBuckets() {
+    // [START storage_list_buckets]
+    Storage storage = StorageOptions.getDefaultInstance().getService();
+
+    Page<Bucket> buckets = storage.list();
+    for (Bucket bucket : buckets.iterateAll()) {
+      // do something with the info
+    }
+    // [END storage_list_buckets]
+    return buckets;
+  }
+  
   /** Example of enabling Requester pays on a bucket. */
   public Bucket enableRequesterPays(String bucketName) throws StorageException {
     // [START enable_requester_pays]
