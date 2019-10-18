@@ -115,7 +115,9 @@ public final class ListJobsResponse extends com.google.protobuf.GeneratedMessage
    * Output only. Jobs list.
    * </pre>
    *
-   * <code>repeated .google.cloud.dataproc.v1.Job jobs = 1;</code>
+   * <code>
+   * repeated .google.cloud.dataproc.v1.Job jobs = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    */
   public java.util.List<com.google.cloud.dataproc.v1.Job> getJobsList() {
     return jobs_;
@@ -127,7 +129,9 @@ public final class ListJobsResponse extends com.google.protobuf.GeneratedMessage
    * Output only. Jobs list.
    * </pre>
    *
-   * <code>repeated .google.cloud.dataproc.v1.Job jobs = 1;</code>
+   * <code>
+   * repeated .google.cloud.dataproc.v1.Job jobs = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    */
   public java.util.List<? extends com.google.cloud.dataproc.v1.JobOrBuilder>
       getJobsOrBuilderList() {
@@ -140,7 +144,9 @@ public final class ListJobsResponse extends com.google.protobuf.GeneratedMessage
    * Output only. Jobs list.
    * </pre>
    *
-   * <code>repeated .google.cloud.dataproc.v1.Job jobs = 1;</code>
+   * <code>
+   * repeated .google.cloud.dataproc.v1.Job jobs = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    */
   public int getJobsCount() {
     return jobs_.size();
@@ -152,7 +158,9 @@ public final class ListJobsResponse extends com.google.protobuf.GeneratedMessage
    * Output only. Jobs list.
    * </pre>
    *
-   * <code>repeated .google.cloud.dataproc.v1.Job jobs = 1;</code>
+   * <code>
+   * repeated .google.cloud.dataproc.v1.Job jobs = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    */
   public com.google.cloud.dataproc.v1.Job getJobs(int index) {
     return jobs_.get(index);
@@ -164,7 +172,9 @@ public final class ListJobsResponse extends com.google.protobuf.GeneratedMessage
    * Output only. Jobs list.
    * </pre>
    *
-   * <code>repeated .google.cloud.dataproc.v1.Job jobs = 1;</code>
+   * <code>
+   * repeated .google.cloud.dataproc.v1.Job jobs = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    */
   public com.google.cloud.dataproc.v1.JobOrBuilder getJobsOrBuilder(int index) {
     return jobs_.get(index);
@@ -181,7 +191,7 @@ public final class ListJobsResponse extends com.google.protobuf.GeneratedMessage
    * `page_token` in a subsequent &lt;code&gt;ListJobsRequest&lt;/code&gt;.
    * </pre>
    *
-   * <code>string next_page_token = 2;</code>
+   * <code>string next_page_token = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   public java.lang.String getNextPageToken() {
     java.lang.Object ref = nextPageToken_;
@@ -203,7 +213,7 @@ public final class ListJobsResponse extends com.google.protobuf.GeneratedMessage
    * `page_token` in a subsequent &lt;code&gt;ListJobsRequest&lt;/code&gt;.
    * </pre>
    *
-   * <code>string next_page_token = 2;</code>
+   * <code>string next_page_token = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   public com.google.protobuf.ByteString getNextPageTokenBytes() {
     java.lang.Object ref = nextPageToken_;
@@ -616,7 +626,9 @@ public final class ListJobsResponse extends com.google.protobuf.GeneratedMessage
      * Output only. Jobs list.
      * </pre>
      *
-     * <code>repeated .google.cloud.dataproc.v1.Job jobs = 1;</code>
+     * <code>
+     * repeated .google.cloud.dataproc.v1.Job jobs = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public java.util.List<com.google.cloud.dataproc.v1.Job> getJobsList() {
       if (jobsBuilder_ == null) {
@@ -632,7 +644,9 @@ public final class ListJobsResponse extends com.google.protobuf.GeneratedMessage
      * Output only. Jobs list.
      * </pre>
      *
-     * <code>repeated .google.cloud.dataproc.v1.Job jobs = 1;</code>
+     * <code>
+     * repeated .google.cloud.dataproc.v1.Job jobs = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public int getJobsCount() {
       if (jobsBuilder_ == null) {
@@ -648,7 +662,9 @@ public final class ListJobsResponse extends com.google.protobuf.GeneratedMessage
      * Output only. Jobs list.
      * </pre>
      *
-     * <code>repeated .google.cloud.dataproc.v1.Job jobs = 1;</code>
+     * <code>
+     * repeated .google.cloud.dataproc.v1.Job jobs = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public com.google.cloud.dataproc.v1.Job getJobs(int index) {
       if (jobsBuilder_ == null) {
@@ -664,7 +680,9 @@ public final class ListJobsResponse extends com.google.protobuf.GeneratedMessage
      * Output only. Jobs list.
      * </pre>
      *
-     * <code>repeated .google.cloud.dataproc.v1.Job jobs = 1;</code>
+     * <code>
+     * repeated .google.cloud.dataproc.v1.Job jobs = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public Builder setJobs(int index, com.google.cloud.dataproc.v1.Job value) {
       if (jobsBuilder_ == null) {
@@ -686,7 +704,9 @@ public final class ListJobsResponse extends com.google.protobuf.GeneratedMessage
      * Output only. Jobs list.
      * </pre>
      *
-     * <code>repeated .google.cloud.dataproc.v1.Job jobs = 1;</code>
+     * <code>
+     * repeated .google.cloud.dataproc.v1.Job jobs = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public Builder setJobs(int index, com.google.cloud.dataproc.v1.Job.Builder builderForValue) {
       if (jobsBuilder_ == null) {
@@ -705,7 +725,9 @@ public final class ListJobsResponse extends com.google.protobuf.GeneratedMessage
      * Output only. Jobs list.
      * </pre>
      *
-     * <code>repeated .google.cloud.dataproc.v1.Job jobs = 1;</code>
+     * <code>
+     * repeated .google.cloud.dataproc.v1.Job jobs = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public Builder addJobs(com.google.cloud.dataproc.v1.Job value) {
       if (jobsBuilder_ == null) {
@@ -727,7 +749,9 @@ public final class ListJobsResponse extends com.google.protobuf.GeneratedMessage
      * Output only. Jobs list.
      * </pre>
      *
-     * <code>repeated .google.cloud.dataproc.v1.Job jobs = 1;</code>
+     * <code>
+     * repeated .google.cloud.dataproc.v1.Job jobs = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public Builder addJobs(int index, com.google.cloud.dataproc.v1.Job value) {
       if (jobsBuilder_ == null) {
@@ -749,7 +773,9 @@ public final class ListJobsResponse extends com.google.protobuf.GeneratedMessage
      * Output only. Jobs list.
      * </pre>
      *
-     * <code>repeated .google.cloud.dataproc.v1.Job jobs = 1;</code>
+     * <code>
+     * repeated .google.cloud.dataproc.v1.Job jobs = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public Builder addJobs(com.google.cloud.dataproc.v1.Job.Builder builderForValue) {
       if (jobsBuilder_ == null) {
@@ -768,7 +794,9 @@ public final class ListJobsResponse extends com.google.protobuf.GeneratedMessage
      * Output only. Jobs list.
      * </pre>
      *
-     * <code>repeated .google.cloud.dataproc.v1.Job jobs = 1;</code>
+     * <code>
+     * repeated .google.cloud.dataproc.v1.Job jobs = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public Builder addJobs(int index, com.google.cloud.dataproc.v1.Job.Builder builderForValue) {
       if (jobsBuilder_ == null) {
@@ -787,7 +815,9 @@ public final class ListJobsResponse extends com.google.protobuf.GeneratedMessage
      * Output only. Jobs list.
      * </pre>
      *
-     * <code>repeated .google.cloud.dataproc.v1.Job jobs = 1;</code>
+     * <code>
+     * repeated .google.cloud.dataproc.v1.Job jobs = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public Builder addAllJobs(
         java.lang.Iterable<? extends com.google.cloud.dataproc.v1.Job> values) {
@@ -807,7 +837,9 @@ public final class ListJobsResponse extends com.google.protobuf.GeneratedMessage
      * Output only. Jobs list.
      * </pre>
      *
-     * <code>repeated .google.cloud.dataproc.v1.Job jobs = 1;</code>
+     * <code>
+     * repeated .google.cloud.dataproc.v1.Job jobs = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public Builder clearJobs() {
       if (jobsBuilder_ == null) {
@@ -826,7 +858,9 @@ public final class ListJobsResponse extends com.google.protobuf.GeneratedMessage
      * Output only. Jobs list.
      * </pre>
      *
-     * <code>repeated .google.cloud.dataproc.v1.Job jobs = 1;</code>
+     * <code>
+     * repeated .google.cloud.dataproc.v1.Job jobs = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public Builder removeJobs(int index) {
       if (jobsBuilder_ == null) {
@@ -845,7 +879,9 @@ public final class ListJobsResponse extends com.google.protobuf.GeneratedMessage
      * Output only. Jobs list.
      * </pre>
      *
-     * <code>repeated .google.cloud.dataproc.v1.Job jobs = 1;</code>
+     * <code>
+     * repeated .google.cloud.dataproc.v1.Job jobs = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public com.google.cloud.dataproc.v1.Job.Builder getJobsBuilder(int index) {
       return getJobsFieldBuilder().getBuilder(index);
@@ -857,7 +893,9 @@ public final class ListJobsResponse extends com.google.protobuf.GeneratedMessage
      * Output only. Jobs list.
      * </pre>
      *
-     * <code>repeated .google.cloud.dataproc.v1.Job jobs = 1;</code>
+     * <code>
+     * repeated .google.cloud.dataproc.v1.Job jobs = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public com.google.cloud.dataproc.v1.JobOrBuilder getJobsOrBuilder(int index) {
       if (jobsBuilder_ == null) {
@@ -873,7 +911,9 @@ public final class ListJobsResponse extends com.google.protobuf.GeneratedMessage
      * Output only. Jobs list.
      * </pre>
      *
-     * <code>repeated .google.cloud.dataproc.v1.Job jobs = 1;</code>
+     * <code>
+     * repeated .google.cloud.dataproc.v1.Job jobs = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public java.util.List<? extends com.google.cloud.dataproc.v1.JobOrBuilder>
         getJobsOrBuilderList() {
@@ -890,7 +930,9 @@ public final class ListJobsResponse extends com.google.protobuf.GeneratedMessage
      * Output only. Jobs list.
      * </pre>
      *
-     * <code>repeated .google.cloud.dataproc.v1.Job jobs = 1;</code>
+     * <code>
+     * repeated .google.cloud.dataproc.v1.Job jobs = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public com.google.cloud.dataproc.v1.Job.Builder addJobsBuilder() {
       return getJobsFieldBuilder()
@@ -903,7 +945,9 @@ public final class ListJobsResponse extends com.google.protobuf.GeneratedMessage
      * Output only. Jobs list.
      * </pre>
      *
-     * <code>repeated .google.cloud.dataproc.v1.Job jobs = 1;</code>
+     * <code>
+     * repeated .google.cloud.dataproc.v1.Job jobs = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public com.google.cloud.dataproc.v1.Job.Builder addJobsBuilder(int index) {
       return getJobsFieldBuilder()
@@ -916,7 +960,9 @@ public final class ListJobsResponse extends com.google.protobuf.GeneratedMessage
      * Output only. Jobs list.
      * </pre>
      *
-     * <code>repeated .google.cloud.dataproc.v1.Job jobs = 1;</code>
+     * <code>
+     * repeated .google.cloud.dataproc.v1.Job jobs = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public java.util.List<com.google.cloud.dataproc.v1.Job.Builder> getJobsBuilderList() {
       return getJobsFieldBuilder().getBuilderList();
@@ -949,7 +995,7 @@ public final class ListJobsResponse extends com.google.protobuf.GeneratedMessage
      * `page_token` in a subsequent &lt;code&gt;ListJobsRequest&lt;/code&gt;.
      * </pre>
      *
-     * <code>string next_page_token = 2;</code>
+     * <code>string next_page_token = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public java.lang.String getNextPageToken() {
       java.lang.Object ref = nextPageToken_;
@@ -971,7 +1017,7 @@ public final class ListJobsResponse extends com.google.protobuf.GeneratedMessage
      * `page_token` in a subsequent &lt;code&gt;ListJobsRequest&lt;/code&gt;.
      * </pre>
      *
-     * <code>string next_page_token = 2;</code>
+     * <code>string next_page_token = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public com.google.protobuf.ByteString getNextPageTokenBytes() {
       java.lang.Object ref = nextPageToken_;
@@ -993,7 +1039,7 @@ public final class ListJobsResponse extends com.google.protobuf.GeneratedMessage
      * `page_token` in a subsequent &lt;code&gt;ListJobsRequest&lt;/code&gt;.
      * </pre>
      *
-     * <code>string next_page_token = 2;</code>
+     * <code>string next_page_token = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public Builder setNextPageToken(java.lang.String value) {
       if (value == null) {
@@ -1013,7 +1059,7 @@ public final class ListJobsResponse extends com.google.protobuf.GeneratedMessage
      * `page_token` in a subsequent &lt;code&gt;ListJobsRequest&lt;/code&gt;.
      * </pre>
      *
-     * <code>string next_page_token = 2;</code>
+     * <code>string next_page_token = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public Builder clearNextPageToken() {
 
@@ -1030,7 +1076,7 @@ public final class ListJobsResponse extends com.google.protobuf.GeneratedMessage
      * `page_token` in a subsequent &lt;code&gt;ListJobsRequest&lt;/code&gt;.
      * </pre>
      *
-     * <code>string next_page_token = 2;</code>
+     * <code>string next_page_token = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public Builder setNextPageTokenBytes(com.google.protobuf.ByteString value) {
       if (value == null) {

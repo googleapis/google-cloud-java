@@ -178,6 +178,19 @@ public class ProductSearchSettings extends ClientSettings<ProductSearchSettings>
     return ((ProductSearchStubSettings) getStubSettings()).importProductSetsOperationSettings();
   }
 
+  /** Returns the object with the settings used for calls to purgeProducts. */
+  public UnaryCallSettings<PurgeProductsRequest, Operation> purgeProductsSettings() {
+    return ((ProductSearchStubSettings) getStubSettings()).purgeProductsSettings();
+  }
+
+  /** Returns the object with the settings used for calls to purgeProducts. */
+  @BetaApi(
+      "The surface for long-running operations is not stable yet and may change in the future.")
+  public OperationCallSettings<PurgeProductsRequest, Empty, BatchOperationMetadata>
+      purgeProductsOperationSettings() {
+    return ((ProductSearchStubSettings) getStubSettings()).purgeProductsOperationSettings();
+  }
+
   public static final ProductSearchSettings create(ProductSearchStubSettings stub)
       throws IOException {
     return new ProductSearchSettings.Builder(stub.toBuilder()).build();
@@ -392,6 +405,19 @@ public class ProductSearchSettings extends ClientSettings<ProductSearchSettings>
             ImportProductSetsRequest, ImportProductSetsResponse, BatchOperationMetadata>
         importProductSetsOperationSettings() {
       return getStubSettingsBuilder().importProductSetsOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to purgeProducts. */
+    public UnaryCallSettings.Builder<PurgeProductsRequest, Operation> purgeProductsSettings() {
+      return getStubSettingsBuilder().purgeProductsSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to purgeProducts. */
+    @BetaApi(
+        "The surface for long-running operations is not stable yet and may change in the future.")
+    public OperationCallSettings.Builder<PurgeProductsRequest, Empty, BatchOperationMetadata>
+        purgeProductsOperationSettings() {
+      return getStubSettingsBuilder().purgeProductsOperationSettings();
     }
 
     @Override

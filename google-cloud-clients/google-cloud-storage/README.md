@@ -19,16 +19,16 @@ If you are using Maven, add this to your pom.xml file
 <dependency>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-storage</artifactId>
-  <version>1.84.0</version>
+  <version>1.98.0</version>
 </dependency>
 ```
 If you are using Gradle, add this to your dependencies
 ```Groovy
-compile 'com.google.cloud:google-cloud-storage:1.84.0'
+compile 'com.google.cloud:google-cloud-storage:1.98.0'
 ```
 If you are using SBT, add this to your dependencies
 ```Scala
-libraryDependencies += "com.google.cloud" % "google-cloud-storage" % "1.84.0"
+libraryDependencies += "com.google.cloud" % "google-cloud-storage" % "1.98.0"
 ```
 [//]: # ({x-version-update-end})
 
@@ -221,4 +221,4 @@ Apache 2.0 - See [LICENSE] for more information.
 [cloud-storage-create-bucket]: https://cloud.google.com/storage/docs/cloud-console#_creatingbuckets
 [cloud-storage-activation]:https://cloud.google.com/storage/docs/signup?hl=en
 [storage-product-docs]: https://cloud.google.com/storage/docs/
-[storage-client-lib-docs]: https://googleapis.github.io/google-cloud-java/google-cloud-clients/apidocs/index.html?com/google/cloud/storage/package-summary.html
+[storage-client-lib-docs]: https://googleapis.dev/java/google-cloud-clients/latest/index.html?com/google/cloud/storage/package-summary.html

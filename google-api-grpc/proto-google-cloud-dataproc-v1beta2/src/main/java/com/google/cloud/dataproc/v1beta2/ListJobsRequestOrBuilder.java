@@ -16,7 +16,7 @@ public interface ListJobsRequestOrBuilder
    * belongs to.
    * </pre>
    *
-   * <code>string project_id = 1;</code>
+   * <code>string project_id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   java.lang.String getProjectId();
   /**
@@ -27,7 +27,7 @@ public interface ListJobsRequestOrBuilder
    * belongs to.
    * </pre>
    *
-   * <code>string project_id = 1;</code>
+   * <code>string project_id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   com.google.protobuf.ByteString getProjectIdBytes();
 
@@ -38,7 +38,7 @@ public interface ListJobsRequestOrBuilder
    * Required. The Cloud Dataproc region in which to handle the request.
    * </pre>
    *
-   * <code>string region = 6;</code>
+   * <code>string region = 6 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   java.lang.String getRegion();
   /**
@@ -48,7 +48,7 @@ public interface ListJobsRequestOrBuilder
    * Required. The Cloud Dataproc region in which to handle the request.
    * </pre>
    *
-   * <code>string region = 6;</code>
+   * <code>string region = 6 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   com.google.protobuf.ByteString getRegionBytes();
 

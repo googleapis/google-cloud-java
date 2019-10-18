@@ -43,6 +43,7 @@ import com.google.cloud.compute.v1.ProjectGlobalNetworkName;
 import com.google.cloud.compute.v1.ProjectName;
 import com.google.cloud.compute.v1.RemovePeeringNetworkHttpRequest;
 import com.google.cloud.compute.v1.SwitchToCustomModeNetworkHttpRequest;
+import com.google.cloud.compute.v1.UpdatePeeringNetworkHttpRequest;
 import com.google.common.collect.Sets;
 import java.io.IOException;
 import java.util.concurrent.TimeUnit;
@@ -214,6 +215,26 @@ public class HttpJsonNetworkStub extends NetworkStub {
                       .build())
               .build();
 
+  @InternalApi
+  public static final ApiMethodDescriptor<UpdatePeeringNetworkHttpRequest, Operation>
+      updatePeeringNetworkMethodDescriptor =
+          ApiMethodDescriptor.<UpdatePeeringNetworkHttpRequest, Operation>newBuilder()
+              .setFullMethodName("compute.networks.updatePeering")
+              .setHttpMethod(HttpMethods.PATCH)
+              .setRequestFormatter(
+                  ApiMessageHttpRequestFormatter.<UpdatePeeringNetworkHttpRequest>newBuilder()
+                      .setPathTemplate(
+                          PathTemplate.create("{project}/global/networks/{network}/updatePeering"))
+                      .setQueryParams(Sets.<String>newHashSet("requestId"))
+                      .setResourceNameFactory(ProjectGlobalNetworkName.newFactory())
+                      .setResourceNameField("network")
+                      .build())
+              .setResponseParser(
+                  ApiMessageHttpResponseParser.<Operation>newBuilder()
+                      .setResponseInstance(Operation.getDefaultInstance())
+                      .build())
+              .build();
+
   private final BackgroundResource backgroundResources;
 
   private final UnaryCallable<AddPeeringNetworkHttpRequest, Operation> addPeeringNetworkCallable;
@@ -228,6 +249,8 @@ public class HttpJsonNetworkStub extends NetworkStub {
       removePeeringNetworkCallable;
   private final UnaryCallable<SwitchToCustomModeNetworkHttpRequest, Operation>
       switchToCustomModeNetworkCallable;
+  private final UnaryCallable<UpdatePeeringNetworkHttpRequest, Operation>
+      updatePeeringNetworkCallable;
 
   private final HttpJsonStubCallableFactory callableFactory;
 
@@ -302,6 +325,11 @@ public class HttpJsonNetworkStub extends NetworkStub {
             HttpJsonCallSettings.<SwitchToCustomModeNetworkHttpRequest, Operation>newBuilder()
                 .setMethodDescriptor(switchToCustomModeNetworkMethodDescriptor)
                 .build();
+    HttpJsonCallSettings<UpdatePeeringNetworkHttpRequest, Operation>
+        updatePeeringNetworkTransportSettings =
+            HttpJsonCallSettings.<UpdatePeeringNetworkHttpRequest, Operation>newBuilder()
+                .setMethodDescriptor(updatePeeringNetworkMethodDescriptor)
+                .build();
 
     this.addPeeringNetworkCallable =
         callableFactory.createUnaryCallable(
@@ -335,6 +363,11 @@ public class HttpJsonNetworkStub extends NetworkStub {
         callableFactory.createUnaryCallable(
             switchToCustomModeNetworkTransportSettings,
             settings.switchToCustomModeNetworkSettings(),
+            clientContext);
+    this.updatePeeringNetworkCallable =
+        callableFactory.createUnaryCallable(
+            updatePeeringNetworkTransportSettings,
+            settings.updatePeeringNetworkSettings(),
             clientContext);
 
     backgroundResources = new BackgroundResourceAggregation(clientContext.getBackgroundResources());
@@ -385,6 +418,11 @@ public class HttpJsonNetworkStub extends NetworkStub {
   public UnaryCallable<SwitchToCustomModeNetworkHttpRequest, Operation>
       switchToCustomModeNetworkCallable() {
     return switchToCustomModeNetworkCallable;
+  }
+
+  @BetaApi
+  public UnaryCallable<UpdatePeeringNetworkHttpRequest, Operation> updatePeeringNetworkCallable() {
+    return updatePeeringNetworkCallable;
   }
 
   @Override

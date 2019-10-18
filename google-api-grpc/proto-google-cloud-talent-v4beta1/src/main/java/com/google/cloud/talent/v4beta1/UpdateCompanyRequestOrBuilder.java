@@ -16,7 +16,9 @@ public interface UpdateCompanyRequestOrBuilder
    * system.
    * </pre>
    *
-   * <code>.google.cloud.talent.v4beta1.Company company = 1;</code>
+   * <code>
+   * .google.cloud.talent.v4beta1.Company company = 1 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   boolean hasCompany();
   /**
@@ -27,7 +29,9 @@ public interface UpdateCompanyRequestOrBuilder
    * system.
    * </pre>
    *
-   * <code>.google.cloud.talent.v4beta1.Company company = 1;</code>
+   * <code>
+   * .google.cloud.talent.v4beta1.Company company = 1 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   com.google.cloud.talent.v4beta1.Company getCompany();
   /**
@@ -38,7 +42,9 @@ public interface UpdateCompanyRequestOrBuilder
    * system.
    * </pre>
    *
-   * <code>.google.cloud.talent.v4beta1.Company company = 1;</code>
+   * <code>
+   * .google.cloud.talent.v4beta1.Company company = 1 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   com.google.cloud.talent.v4beta1.CompanyOrBuilder getCompanyOrBuilder();
 
@@ -46,8 +52,7 @@ public interface UpdateCompanyRequestOrBuilder
    *
    *
    * <pre>
-   * Optional but strongly recommended for the best service
-   * experience.
+   * Strongly recommended for the best service experience.
    * If
    * [update_mask][google.cloud.talent.v4beta1.UpdateCompanyRequest.update_mask]
    * is provided, only the specified fields in
@@ -65,8 +70,7 @@ public interface UpdateCompanyRequestOrBuilder
    *
    *
    * <pre>
-   * Optional but strongly recommended for the best service
-   * experience.
+   * Strongly recommended for the best service experience.
    * If
    * [update_mask][google.cloud.talent.v4beta1.UpdateCompanyRequest.update_mask]
    * is provided, only the specified fields in
@@ -84,8 +88,7 @@ public interface UpdateCompanyRequestOrBuilder
    *
    *
    * <pre>
-   * Optional but strongly recommended for the best service
-   * experience.
+   * Strongly recommended for the best service experience.
    * If
    * [update_mask][google.cloud.talent.v4beta1.UpdateCompanyRequest.update_mask]
    * is provided, only the specified fields in

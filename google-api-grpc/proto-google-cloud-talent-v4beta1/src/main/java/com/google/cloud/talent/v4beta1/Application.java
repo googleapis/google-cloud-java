@@ -749,9 +749,8 @@ public final class Application extends com.google.protobuf.GeneratedMessageV3
    * Required during application update.
    * Resource name assigned to an application by the API.
    * The format is
-   * "projects/{project_id}/tenants/{tenant_id}/profiles/{profile_id}/applications/{application_id}",
-   * for example,
-   * "projects/api-test-project/tenants/foo/profiles/bar/applications/baz".
+   * "projects/{project_id}/tenants/{tenant_id}/profiles/{profile_id}/applications/{application_id}".
+   * For example, "projects/foo/tenants/bar/profiles/baz/applications/qux".
    * </pre>
    *
    * <code>string name = 1;</code>
@@ -774,9 +773,8 @@ public final class Application extends com.google.protobuf.GeneratedMessageV3
    * Required during application update.
    * Resource name assigned to an application by the API.
    * The format is
-   * "projects/{project_id}/tenants/{tenant_id}/profiles/{profile_id}/applications/{application_id}",
-   * for example,
-   * "projects/api-test-project/tenants/foo/profiles/bar/applications/baz".
+   * "projects/{project_id}/tenants/{tenant_id}/profiles/{profile_id}/applications/{application_id}".
+   * For example, "projects/foo/tenants/bar/profiles/baz/applications/qux".
    * </pre>
    *
    * <code>string name = 1;</code>
@@ -804,7 +802,7 @@ public final class Application extends com.google.protobuf.GeneratedMessageV3
    * The maximum number of allowed characters is 255.
    * </pre>
    *
-   * <code>string external_id = 31;</code>
+   * <code>string external_id = 31 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   public java.lang.String getExternalId() {
     java.lang.Object ref = externalId_;
@@ -826,7 +824,7 @@ public final class Application extends com.google.protobuf.GeneratedMessageV3
    * The maximum number of allowed characters is 255.
    * </pre>
    *
-   * <code>string external_id = 31;</code>
+   * <code>string external_id = 31 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   public com.google.protobuf.ByteString getExternalIdBytes() {
     java.lang.Object ref = externalId_;
@@ -848,11 +846,11 @@ public final class Application extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Output only. Resource name of the candidate of this application.
    * The format is
-   * "projects/{project_id}/tenants/{tenant_id}/profiles/{profile_id}",
-   * for example, "projects/api-test-project/tenants/foo/profiles/bar".
+   * "projects/{project_id}/tenants/{tenant_id}/profiles/{profile_id}".
+   * For example, "projects/foo/tenants/bar/profiles/baz".
    * </pre>
    *
-   * <code>string profile = 2;</code>
+   * <code>string profile = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    */
   public java.lang.String getProfile() {
     java.lang.Object ref = profile_;
@@ -871,11 +869,11 @@ public final class Application extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Output only. Resource name of the candidate of this application.
    * The format is
-   * "projects/{project_id}/tenants/{tenant_id}/profiles/{profile_id}",
-   * for example, "projects/api-test-project/tenants/foo/profiles/bar".
+   * "projects/{project_id}/tenants/{tenant_id}/profiles/{profile_id}".
+   * For example, "projects/foo/tenants/bar/profiles/baz".
    * </pre>
    *
-   * <code>string profile = 2;</code>
+   * <code>string profile = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    */
   public com.google.protobuf.ByteString getProfileBytes() {
     java.lang.Object ref = profile_;
@@ -898,8 +896,8 @@ public final class Application extends com.google.protobuf.GeneratedMessageV3
    * One of either a job or a company is required.
    * Resource name of the job which the candidate applied for.
    * The format is
-   * "projects/{project_id}/tenants/{tenant_id}/jobs/{job_id}",
-   * for example, "projects/api-test-project/tenants/foo/jobs/bar".
+   * "projects/{project_id}/tenants/{tenant_id}/jobs/{job_id}". For example,
+   * "projects/foo/tenants/bar/jobs/baz".
    * </pre>
    *
    * <code>string job = 4;</code>
@@ -922,8 +920,8 @@ public final class Application extends com.google.protobuf.GeneratedMessageV3
    * One of either a job or a company is required.
    * Resource name of the job which the candidate applied for.
    * The format is
-   * "projects/{project_id}/tenants/{tenant_id}/jobs/{job_id}",
-   * for example, "projects/api-test-project/tenants/foo/jobs/bar".
+   * "projects/{project_id}/tenants/{tenant_id}/jobs/{job_id}". For example,
+   * "projects/foo/tenants/bar/jobs/baz".
    * </pre>
    *
    * <code>string job = 4;</code>
@@ -949,8 +947,8 @@ public final class Application extends com.google.protobuf.GeneratedMessageV3
    * One of either a job or a company is required.
    * Resource name of the company which the candidate applied for.
    * The format is
-   * "projects/{project_id}/tenants/{tenant_id}/companies/{company_id}",
-   * for example, "projects/api-test-project/tenants/foo/companies/bar".
+   * "projects/{project_id}/tenants/{tenant_id}/companies/{company_id}".
+   * For example, "projects/foo/tenants/bar/companies/baz".
    * </pre>
    *
    * <code>string company = 5;</code>
@@ -973,8 +971,8 @@ public final class Application extends com.google.protobuf.GeneratedMessageV3
    * One of either a job or a company is required.
    * Resource name of the company which the candidate applied for.
    * The format is
-   * "projects/{project_id}/tenants/{tenant_id}/companies/{company_id}",
-   * for example, "projects/api-test-project/tenants/foo/companies/bar".
+   * "projects/{project_id}/tenants/{tenant_id}/companies/{company_id}".
+   * For example, "projects/foo/tenants/bar/companies/baz".
    * </pre>
    *
    * <code>string company = 5;</code>
@@ -997,7 +995,7 @@ public final class Application extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. The application date.
+   * The application date.
    * </pre>
    *
    * <code>.google.type.Date application_date = 7;</code>
@@ -1009,7 +1007,7 @@ public final class Application extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. The application date.
+   * The application date.
    * </pre>
    *
    * <code>.google.type.Date application_date = 7;</code>
@@ -1021,7 +1019,7 @@ public final class Application extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. The application date.
+   * The application date.
    * </pre>
    *
    * <code>.google.type.Date application_date = 7;</code>
@@ -1042,7 +1040,9 @@ public final class Application extends com.google.protobuf.GeneratedMessageV3
    * that would be used to indicate to the ML models good / bad matches.
    * </pre>
    *
-   * <code>.google.cloud.talent.v4beta1.Application.ApplicationStage stage = 11;</code>
+   * <code>
+   * .google.cloud.talent.v4beta1.Application.ApplicationStage stage = 11 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   public int getStageValue() {
     return stage_;
@@ -1057,7 +1057,9 @@ public final class Application extends com.google.protobuf.GeneratedMessageV3
    * that would be used to indicate to the ML models good / bad matches.
    * </pre>
    *
-   * <code>.google.cloud.talent.v4beta1.Application.ApplicationStage stage = 11;</code>
+   * <code>
+   * .google.cloud.talent.v4beta1.Application.ApplicationStage stage = 11 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   public com.google.cloud.talent.v4beta1.Application.ApplicationStage getStage() {
     @SuppressWarnings("deprecation")
@@ -1074,7 +1076,7 @@ public final class Application extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. The application state.
+   * The application state.
    * </pre>
    *
    * <code>.google.cloud.talent.v4beta1.Application.ApplicationState state = 13;</code>
@@ -1086,7 +1088,7 @@ public final class Application extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. The application state.
+   * The application state.
    * </pre>
    *
    * <code>.google.cloud.talent.v4beta1.Application.ApplicationState state = 13;</code>
@@ -1106,8 +1108,8 @@ public final class Application extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. All interviews (screen, onsite, and so on) conducted as part of
-   * this application (includes details such as user conducting the interview,
+   * All interviews (screen, onsite, and so on) conducted as part of this
+   * application (includes details such as user conducting the interview,
    * timestamp, feedback, and so on).
    * </pre>
    *
@@ -1120,8 +1122,8 @@ public final class Application extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. All interviews (screen, onsite, and so on) conducted as part of
-   * this application (includes details such as user conducting the interview,
+   * All interviews (screen, onsite, and so on) conducted as part of this
+   * application (includes details such as user conducting the interview,
    * timestamp, feedback, and so on).
    * </pre>
    *
@@ -1135,8 +1137,8 @@ public final class Application extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. All interviews (screen, onsite, and so on) conducted as part of
-   * this application (includes details such as user conducting the interview,
+   * All interviews (screen, onsite, and so on) conducted as part of this
+   * application (includes details such as user conducting the interview,
    * timestamp, feedback, and so on).
    * </pre>
    *
@@ -1149,8 +1151,8 @@ public final class Application extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. All interviews (screen, onsite, and so on) conducted as part of
-   * this application (includes details such as user conducting the interview,
+   * All interviews (screen, onsite, and so on) conducted as part of this
+   * application (includes details such as user conducting the interview,
    * timestamp, feedback, and so on).
    * </pre>
    *
@@ -1163,8 +1165,8 @@ public final class Application extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. All interviews (screen, onsite, and so on) conducted as part of
-   * this application (includes details such as user conducting the interview,
+   * All interviews (screen, onsite, and so on) conducted as part of this
+   * application (includes details such as user conducting the interview,
    * timestamp, feedback, and so on).
    * </pre>
    *
@@ -1180,7 +1182,7 @@ public final class Application extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. If the candidate is referred by a employee.
+   * If the candidate is referred by a employee.
    * </pre>
    *
    * <code>.google.protobuf.BoolValue referral = 18;</code>
@@ -1192,7 +1194,7 @@ public final class Application extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. If the candidate is referred by a employee.
+   * If the candidate is referred by a employee.
    * </pre>
    *
    * <code>.google.protobuf.BoolValue referral = 18;</code>
@@ -1204,7 +1206,7 @@ public final class Application extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. If the candidate is referred by a employee.
+   * If the candidate is referred by a employee.
    * </pre>
    *
    * <code>.google.protobuf.BoolValue referral = 18;</code>
@@ -1222,7 +1224,8 @@ public final class Application extends com.google.protobuf.GeneratedMessageV3
    * Required. Reflects the time that the application was created.
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp create_time = 19;</code>
+   * <code>.google.protobuf.Timestamp create_time = 19 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   public boolean hasCreateTime() {
     return createTime_ != null;
@@ -1234,7 +1237,8 @@ public final class Application extends com.google.protobuf.GeneratedMessageV3
    * Required. Reflects the time that the application was created.
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp create_time = 19;</code>
+   * <code>.google.protobuf.Timestamp create_time = 19 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   public com.google.protobuf.Timestamp getCreateTime() {
     return createTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : createTime_;
@@ -1246,7 +1250,8 @@ public final class Application extends com.google.protobuf.GeneratedMessageV3
    * Required. Reflects the time that the application was created.
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp create_time = 19;</code>
+   * <code>.google.protobuf.Timestamp create_time = 19 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   public com.google.protobuf.TimestampOrBuilder getCreateTimeOrBuilder() {
     return getCreateTime();
@@ -1258,7 +1263,7 @@ public final class Application extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. The last update timestamp.
+   * The last update timestamp.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp update_time = 20;</code>
@@ -1270,7 +1275,7 @@ public final class Application extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. The last update timestamp.
+   * The last update timestamp.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp update_time = 20;</code>
@@ -1282,7 +1287,7 @@ public final class Application extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. The last update timestamp.
+   * The last update timestamp.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp update_time = 20;</code>
@@ -1297,9 +1302,8 @@ public final class Application extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. Free text reason behind the recruitement outcome (for example,
-   * reason for withdraw / reject, reason for an unsuccessful finish, and so
-   * on).
+   * Free text reason behind the recruitement outcome (for example, reason for
+   * withdraw / reject, reason for an unsuccessful finish, and so on).
    * Number of characters allowed is 100.
    * </pre>
    *
@@ -1320,9 +1324,8 @@ public final class Application extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. Free text reason behind the recruitement outcome (for example,
-   * reason for withdraw / reject, reason for an unsuccessful finish, and so
-   * on).
+   * Free text reason behind the recruitement outcome (for example, reason for
+   * withdraw / reject, reason for an unsuccessful finish, and so on).
    * Number of characters allowed is 100.
    * </pre>
    *
@@ -1346,7 +1349,7 @@ public final class Application extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. Outcome positiveness shows how positive the outcome is.
+   * Outcome positiveness shows how positive the outcome is.
    * </pre>
    *
    * <code>.google.cloud.talent.v4beta1.Outcome outcome = 22;</code>
@@ -1358,7 +1361,7 @@ public final class Application extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. Outcome positiveness shows how positive the outcome is.
+   * Outcome positiveness shows how positive the outcome is.
    * </pre>
    *
    * <code>.google.cloud.talent.v4beta1.Outcome outcome = 22;</code>
@@ -1381,7 +1384,8 @@ public final class Application extends com.google.protobuf.GeneratedMessageV3
    * search response.
    * </pre>
    *
-   * <code>.google.protobuf.BoolValue is_match = 28;</code>
+   * <code>.google.protobuf.BoolValue is_match = 28 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    */
   public boolean hasIsMatch() {
     return isMatch_ != null;
@@ -1395,7 +1399,8 @@ public final class Application extends com.google.protobuf.GeneratedMessageV3
    * search response.
    * </pre>
    *
-   * <code>.google.protobuf.BoolValue is_match = 28;</code>
+   * <code>.google.protobuf.BoolValue is_match = 28 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    */
   public com.google.protobuf.BoolValue getIsMatch() {
     return isMatch_ == null ? com.google.protobuf.BoolValue.getDefaultInstance() : isMatch_;
@@ -1409,7 +1414,8 @@ public final class Application extends com.google.protobuf.GeneratedMessageV3
    * search response.
    * </pre>
    *
-   * <code>.google.protobuf.BoolValue is_match = 28;</code>
+   * <code>.google.protobuf.BoolValue is_match = 28 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    */
   public com.google.protobuf.BoolValueOrBuilder getIsMatchOrBuilder() {
     return getIsMatch();
@@ -1426,7 +1432,7 @@ public final class Application extends com.google.protobuf.GeneratedMessageV3
    * query.
    * </pre>
    *
-   * <code>string job_title_snippet = 29;</code>
+   * <code>string job_title_snippet = 29 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    */
   public java.lang.String getJobTitleSnippet() {
     java.lang.Object ref = jobTitleSnippet_;
@@ -1448,7 +1454,7 @@ public final class Application extends com.google.protobuf.GeneratedMessageV3
    * query.
    * </pre>
    *
-   * <code>string job_title_snippet = 29;</code>
+   * <code>string job_title_snippet = 29 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    */
   public com.google.protobuf.ByteString getJobTitleSnippetBytes() {
     java.lang.Object ref = jobTitleSnippet_;
@@ -2139,9 +2145,8 @@ public final class Application extends com.google.protobuf.GeneratedMessageV3
      * Required during application update.
      * Resource name assigned to an application by the API.
      * The format is
-     * "projects/{project_id}/tenants/{tenant_id}/profiles/{profile_id}/applications/{application_id}",
-     * for example,
-     * "projects/api-test-project/tenants/foo/profiles/bar/applications/baz".
+     * "projects/{project_id}/tenants/{tenant_id}/profiles/{profile_id}/applications/{application_id}".
+     * For example, "projects/foo/tenants/bar/profiles/baz/applications/qux".
      * </pre>
      *
      * <code>string name = 1;</code>
@@ -2164,9 +2169,8 @@ public final class Application extends com.google.protobuf.GeneratedMessageV3
      * Required during application update.
      * Resource name assigned to an application by the API.
      * The format is
-     * "projects/{project_id}/tenants/{tenant_id}/profiles/{profile_id}/applications/{application_id}",
-     * for example,
-     * "projects/api-test-project/tenants/foo/profiles/bar/applications/baz".
+     * "projects/{project_id}/tenants/{tenant_id}/profiles/{profile_id}/applications/{application_id}".
+     * For example, "projects/foo/tenants/bar/profiles/baz/applications/qux".
      * </pre>
      *
      * <code>string name = 1;</code>
@@ -2189,9 +2193,8 @@ public final class Application extends com.google.protobuf.GeneratedMessageV3
      * Required during application update.
      * Resource name assigned to an application by the API.
      * The format is
-     * "projects/{project_id}/tenants/{tenant_id}/profiles/{profile_id}/applications/{application_id}",
-     * for example,
-     * "projects/api-test-project/tenants/foo/profiles/bar/applications/baz".
+     * "projects/{project_id}/tenants/{tenant_id}/profiles/{profile_id}/applications/{application_id}".
+     * For example, "projects/foo/tenants/bar/profiles/baz/applications/qux".
      * </pre>
      *
      * <code>string name = 1;</code>
@@ -2212,9 +2215,8 @@ public final class Application extends com.google.protobuf.GeneratedMessageV3
      * Required during application update.
      * Resource name assigned to an application by the API.
      * The format is
-     * "projects/{project_id}/tenants/{tenant_id}/profiles/{profile_id}/applications/{application_id}",
-     * for example,
-     * "projects/api-test-project/tenants/foo/profiles/bar/applications/baz".
+     * "projects/{project_id}/tenants/{tenant_id}/profiles/{profile_id}/applications/{application_id}".
+     * For example, "projects/foo/tenants/bar/profiles/baz/applications/qux".
      * </pre>
      *
      * <code>string name = 1;</code>
@@ -2232,9 +2234,8 @@ public final class Application extends com.google.protobuf.GeneratedMessageV3
      * Required during application update.
      * Resource name assigned to an application by the API.
      * The format is
-     * "projects/{project_id}/tenants/{tenant_id}/profiles/{profile_id}/applications/{application_id}",
-     * for example,
-     * "projects/api-test-project/tenants/foo/profiles/bar/applications/baz".
+     * "projects/{project_id}/tenants/{tenant_id}/profiles/{profile_id}/applications/{application_id}".
+     * For example, "projects/foo/tenants/bar/profiles/baz/applications/qux".
      * </pre>
      *
      * <code>string name = 1;</code>
@@ -2260,7 +2261,7 @@ public final class Application extends com.google.protobuf.GeneratedMessageV3
      * The maximum number of allowed characters is 255.
      * </pre>
      *
-     * <code>string external_id = 31;</code>
+     * <code>string external_id = 31 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public java.lang.String getExternalId() {
       java.lang.Object ref = externalId_;
@@ -2282,7 +2283,7 @@ public final class Application extends com.google.protobuf.GeneratedMessageV3
      * The maximum number of allowed characters is 255.
      * </pre>
      *
-     * <code>string external_id = 31;</code>
+     * <code>string external_id = 31 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public com.google.protobuf.ByteString getExternalIdBytes() {
       java.lang.Object ref = externalId_;
@@ -2304,7 +2305,7 @@ public final class Application extends com.google.protobuf.GeneratedMessageV3
      * The maximum number of allowed characters is 255.
      * </pre>
      *
-     * <code>string external_id = 31;</code>
+     * <code>string external_id = 31 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder setExternalId(java.lang.String value) {
       if (value == null) {
@@ -2324,7 +2325,7 @@ public final class Application extends com.google.protobuf.GeneratedMessageV3
      * The maximum number of allowed characters is 255.
      * </pre>
      *
-     * <code>string external_id = 31;</code>
+     * <code>string external_id = 31 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder clearExternalId() {
 
@@ -2341,7 +2342,7 @@ public final class Application extends com.google.protobuf.GeneratedMessageV3
      * The maximum number of allowed characters is 255.
      * </pre>
      *
-     * <code>string external_id = 31;</code>
+     * <code>string external_id = 31 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder setExternalIdBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -2361,11 +2362,11 @@ public final class Application extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Output only. Resource name of the candidate of this application.
      * The format is
-     * "projects/{project_id}/tenants/{tenant_id}/profiles/{profile_id}",
-     * for example, "projects/api-test-project/tenants/foo/profiles/bar".
+     * "projects/{project_id}/tenants/{tenant_id}/profiles/{profile_id}".
+     * For example, "projects/foo/tenants/bar/profiles/baz".
      * </pre>
      *
-     * <code>string profile = 2;</code>
+     * <code>string profile = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     public java.lang.String getProfile() {
       java.lang.Object ref = profile_;
@@ -2384,11 +2385,11 @@ public final class Application extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Output only. Resource name of the candidate of this application.
      * The format is
-     * "projects/{project_id}/tenants/{tenant_id}/profiles/{profile_id}",
-     * for example, "projects/api-test-project/tenants/foo/profiles/bar".
+     * "projects/{project_id}/tenants/{tenant_id}/profiles/{profile_id}".
+     * For example, "projects/foo/tenants/bar/profiles/baz".
      * </pre>
      *
-     * <code>string profile = 2;</code>
+     * <code>string profile = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     public com.google.protobuf.ByteString getProfileBytes() {
       java.lang.Object ref = profile_;
@@ -2407,11 +2408,11 @@ public final class Application extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Output only. Resource name of the candidate of this application.
      * The format is
-     * "projects/{project_id}/tenants/{tenant_id}/profiles/{profile_id}",
-     * for example, "projects/api-test-project/tenants/foo/profiles/bar".
+     * "projects/{project_id}/tenants/{tenant_id}/profiles/{profile_id}".
+     * For example, "projects/foo/tenants/bar/profiles/baz".
      * </pre>
      *
-     * <code>string profile = 2;</code>
+     * <code>string profile = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     public Builder setProfile(java.lang.String value) {
       if (value == null) {
@@ -2428,11 +2429,11 @@ public final class Application extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Output only. Resource name of the candidate of this application.
      * The format is
-     * "projects/{project_id}/tenants/{tenant_id}/profiles/{profile_id}",
-     * for example, "projects/api-test-project/tenants/foo/profiles/bar".
+     * "projects/{project_id}/tenants/{tenant_id}/profiles/{profile_id}".
+     * For example, "projects/foo/tenants/bar/profiles/baz".
      * </pre>
      *
-     * <code>string profile = 2;</code>
+     * <code>string profile = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     public Builder clearProfile() {
 
@@ -2446,11 +2447,11 @@ public final class Application extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Output only. Resource name of the candidate of this application.
      * The format is
-     * "projects/{project_id}/tenants/{tenant_id}/profiles/{profile_id}",
-     * for example, "projects/api-test-project/tenants/foo/profiles/bar".
+     * "projects/{project_id}/tenants/{tenant_id}/profiles/{profile_id}".
+     * For example, "projects/foo/tenants/bar/profiles/baz".
      * </pre>
      *
-     * <code>string profile = 2;</code>
+     * <code>string profile = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     public Builder setProfileBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -2471,8 +2472,8 @@ public final class Application extends com.google.protobuf.GeneratedMessageV3
      * One of either a job or a company is required.
      * Resource name of the job which the candidate applied for.
      * The format is
-     * "projects/{project_id}/tenants/{tenant_id}/jobs/{job_id}",
-     * for example, "projects/api-test-project/tenants/foo/jobs/bar".
+     * "projects/{project_id}/tenants/{tenant_id}/jobs/{job_id}". For example,
+     * "projects/foo/tenants/bar/jobs/baz".
      * </pre>
      *
      * <code>string job = 4;</code>
@@ -2495,8 +2496,8 @@ public final class Application extends com.google.protobuf.GeneratedMessageV3
      * One of either a job or a company is required.
      * Resource name of the job which the candidate applied for.
      * The format is
-     * "projects/{project_id}/tenants/{tenant_id}/jobs/{job_id}",
-     * for example, "projects/api-test-project/tenants/foo/jobs/bar".
+     * "projects/{project_id}/tenants/{tenant_id}/jobs/{job_id}". For example,
+     * "projects/foo/tenants/bar/jobs/baz".
      * </pre>
      *
      * <code>string job = 4;</code>
@@ -2519,8 +2520,8 @@ public final class Application extends com.google.protobuf.GeneratedMessageV3
      * One of either a job or a company is required.
      * Resource name of the job which the candidate applied for.
      * The format is
-     * "projects/{project_id}/tenants/{tenant_id}/jobs/{job_id}",
-     * for example, "projects/api-test-project/tenants/foo/jobs/bar".
+     * "projects/{project_id}/tenants/{tenant_id}/jobs/{job_id}". For example,
+     * "projects/foo/tenants/bar/jobs/baz".
      * </pre>
      *
      * <code>string job = 4;</code>
@@ -2541,8 +2542,8 @@ public final class Application extends com.google.protobuf.GeneratedMessageV3
      * One of either a job or a company is required.
      * Resource name of the job which the candidate applied for.
      * The format is
-     * "projects/{project_id}/tenants/{tenant_id}/jobs/{job_id}",
-     * for example, "projects/api-test-project/tenants/foo/jobs/bar".
+     * "projects/{project_id}/tenants/{tenant_id}/jobs/{job_id}". For example,
+     * "projects/foo/tenants/bar/jobs/baz".
      * </pre>
      *
      * <code>string job = 4;</code>
@@ -2560,8 +2561,8 @@ public final class Application extends com.google.protobuf.GeneratedMessageV3
      * One of either a job or a company is required.
      * Resource name of the job which the candidate applied for.
      * The format is
-     * "projects/{project_id}/tenants/{tenant_id}/jobs/{job_id}",
-     * for example, "projects/api-test-project/tenants/foo/jobs/bar".
+     * "projects/{project_id}/tenants/{tenant_id}/jobs/{job_id}". For example,
+     * "projects/foo/tenants/bar/jobs/baz".
      * </pre>
      *
      * <code>string job = 4;</code>
@@ -2585,8 +2586,8 @@ public final class Application extends com.google.protobuf.GeneratedMessageV3
      * One of either a job or a company is required.
      * Resource name of the company which the candidate applied for.
      * The format is
-     * "projects/{project_id}/tenants/{tenant_id}/companies/{company_id}",
-     * for example, "projects/api-test-project/tenants/foo/companies/bar".
+     * "projects/{project_id}/tenants/{tenant_id}/companies/{company_id}".
+     * For example, "projects/foo/tenants/bar/companies/baz".
      * </pre>
      *
      * <code>string company = 5;</code>
@@ -2609,8 +2610,8 @@ public final class Application extends com.google.protobuf.GeneratedMessageV3
      * One of either a job or a company is required.
      * Resource name of the company which the candidate applied for.
      * The format is
-     * "projects/{project_id}/tenants/{tenant_id}/companies/{company_id}",
-     * for example, "projects/api-test-project/tenants/foo/companies/bar".
+     * "projects/{project_id}/tenants/{tenant_id}/companies/{company_id}".
+     * For example, "projects/foo/tenants/bar/companies/baz".
      * </pre>
      *
      * <code>string company = 5;</code>
@@ -2633,8 +2634,8 @@ public final class Application extends com.google.protobuf.GeneratedMessageV3
      * One of either a job or a company is required.
      * Resource name of the company which the candidate applied for.
      * The format is
-     * "projects/{project_id}/tenants/{tenant_id}/companies/{company_id}",
-     * for example, "projects/api-test-project/tenants/foo/companies/bar".
+     * "projects/{project_id}/tenants/{tenant_id}/companies/{company_id}".
+     * For example, "projects/foo/tenants/bar/companies/baz".
      * </pre>
      *
      * <code>string company = 5;</code>
@@ -2655,8 +2656,8 @@ public final class Application extends com.google.protobuf.GeneratedMessageV3
      * One of either a job or a company is required.
      * Resource name of the company which the candidate applied for.
      * The format is
-     * "projects/{project_id}/tenants/{tenant_id}/companies/{company_id}",
-     * for example, "projects/api-test-project/tenants/foo/companies/bar".
+     * "projects/{project_id}/tenants/{tenant_id}/companies/{company_id}".
+     * For example, "projects/foo/tenants/bar/companies/baz".
      * </pre>
      *
      * <code>string company = 5;</code>
@@ -2674,8 +2675,8 @@ public final class Application extends com.google.protobuf.GeneratedMessageV3
      * One of either a job or a company is required.
      * Resource name of the company which the candidate applied for.
      * The format is
-     * "projects/{project_id}/tenants/{tenant_id}/companies/{company_id}",
-     * for example, "projects/api-test-project/tenants/foo/companies/bar".
+     * "projects/{project_id}/tenants/{tenant_id}/companies/{company_id}".
+     * For example, "projects/foo/tenants/bar/companies/baz".
      * </pre>
      *
      * <code>string company = 5;</code>
@@ -2699,7 +2700,7 @@ public final class Application extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The application date.
+     * The application date.
      * </pre>
      *
      * <code>.google.type.Date application_date = 7;</code>
@@ -2711,7 +2712,7 @@ public final class Application extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The application date.
+     * The application date.
      * </pre>
      *
      * <code>.google.type.Date application_date = 7;</code>
@@ -2729,7 +2730,7 @@ public final class Application extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The application date.
+     * The application date.
      * </pre>
      *
      * <code>.google.type.Date application_date = 7;</code>
@@ -2751,7 +2752,7 @@ public final class Application extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The application date.
+     * The application date.
      * </pre>
      *
      * <code>.google.type.Date application_date = 7;</code>
@@ -2770,7 +2771,7 @@ public final class Application extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The application date.
+     * The application date.
      * </pre>
      *
      * <code>.google.type.Date application_date = 7;</code>
@@ -2794,7 +2795,7 @@ public final class Application extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The application date.
+     * The application date.
      * </pre>
      *
      * <code>.google.type.Date application_date = 7;</code>
@@ -2814,7 +2815,7 @@ public final class Application extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The application date.
+     * The application date.
      * </pre>
      *
      * <code>.google.type.Date application_date = 7;</code>
@@ -2828,7 +2829,7 @@ public final class Application extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The application date.
+     * The application date.
      * </pre>
      *
      * <code>.google.type.Date application_date = 7;</code>
@@ -2846,7 +2847,7 @@ public final class Application extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The application date.
+     * The application date.
      * </pre>
      *
      * <code>.google.type.Date application_date = 7;</code>
@@ -2875,7 +2876,9 @@ public final class Application extends com.google.protobuf.GeneratedMessageV3
      * that would be used to indicate to the ML models good / bad matches.
      * </pre>
      *
-     * <code>.google.cloud.talent.v4beta1.Application.ApplicationStage stage = 11;</code>
+     * <code>
+     * .google.cloud.talent.v4beta1.Application.ApplicationStage stage = 11 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public int getStageValue() {
       return stage_;
@@ -2890,7 +2893,9 @@ public final class Application extends com.google.protobuf.GeneratedMessageV3
      * that would be used to indicate to the ML models good / bad matches.
      * </pre>
      *
-     * <code>.google.cloud.talent.v4beta1.Application.ApplicationStage stage = 11;</code>
+     * <code>
+     * .google.cloud.talent.v4beta1.Application.ApplicationStage stage = 11 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder setStageValue(int value) {
       stage_ = value;
@@ -2907,7 +2912,9 @@ public final class Application extends com.google.protobuf.GeneratedMessageV3
      * that would be used to indicate to the ML models good / bad matches.
      * </pre>
      *
-     * <code>.google.cloud.talent.v4beta1.Application.ApplicationStage stage = 11;</code>
+     * <code>
+     * .google.cloud.talent.v4beta1.Application.ApplicationStage stage = 11 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public com.google.cloud.talent.v4beta1.Application.ApplicationStage getStage() {
       @SuppressWarnings("deprecation")
@@ -2927,7 +2934,9 @@ public final class Application extends com.google.protobuf.GeneratedMessageV3
      * that would be used to indicate to the ML models good / bad matches.
      * </pre>
      *
-     * <code>.google.cloud.talent.v4beta1.Application.ApplicationStage stage = 11;</code>
+     * <code>
+     * .google.cloud.talent.v4beta1.Application.ApplicationStage stage = 11 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder setStage(com.google.cloud.talent.v4beta1.Application.ApplicationStage value) {
       if (value == null) {
@@ -2948,7 +2957,9 @@ public final class Application extends com.google.protobuf.GeneratedMessageV3
      * that would be used to indicate to the ML models good / bad matches.
      * </pre>
      *
-     * <code>.google.cloud.talent.v4beta1.Application.ApplicationStage stage = 11;</code>
+     * <code>
+     * .google.cloud.talent.v4beta1.Application.ApplicationStage stage = 11 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder clearStage() {
 
@@ -2962,7 +2973,7 @@ public final class Application extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The application state.
+     * The application state.
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.Application.ApplicationState state = 13;</code>
@@ -2974,7 +2985,7 @@ public final class Application extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The application state.
+     * The application state.
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.Application.ApplicationState state = 13;</code>
@@ -2988,7 +2999,7 @@ public final class Application extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The application state.
+     * The application state.
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.Application.ApplicationState state = 13;</code>
@@ -3005,7 +3016,7 @@ public final class Application extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The application state.
+     * The application state.
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.Application.ApplicationState state = 13;</code>
@@ -3023,7 +3034,7 @@ public final class Application extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The application state.
+     * The application state.
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.Application.ApplicationState state = 13;</code>
@@ -3056,8 +3067,8 @@ public final class Application extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. All interviews (screen, onsite, and so on) conducted as part of
-     * this application (includes details such as user conducting the interview,
+     * All interviews (screen, onsite, and so on) conducted as part of this
+     * application (includes details such as user conducting the interview,
      * timestamp, feedback, and so on).
      * </pre>
      *
@@ -3074,8 +3085,8 @@ public final class Application extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. All interviews (screen, onsite, and so on) conducted as part of
-     * this application (includes details such as user conducting the interview,
+     * All interviews (screen, onsite, and so on) conducted as part of this
+     * application (includes details such as user conducting the interview,
      * timestamp, feedback, and so on).
      * </pre>
      *
@@ -3092,8 +3103,8 @@ public final class Application extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. All interviews (screen, onsite, and so on) conducted as part of
-     * this application (includes details such as user conducting the interview,
+     * All interviews (screen, onsite, and so on) conducted as part of this
+     * application (includes details such as user conducting the interview,
      * timestamp, feedback, and so on).
      * </pre>
      *
@@ -3110,8 +3121,8 @@ public final class Application extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. All interviews (screen, onsite, and so on) conducted as part of
-     * this application (includes details such as user conducting the interview,
+     * All interviews (screen, onsite, and so on) conducted as part of this
+     * application (includes details such as user conducting the interview,
      * timestamp, feedback, and so on).
      * </pre>
      *
@@ -3134,8 +3145,8 @@ public final class Application extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. All interviews (screen, onsite, and so on) conducted as part of
-     * this application (includes details such as user conducting the interview,
+     * All interviews (screen, onsite, and so on) conducted as part of this
+     * application (includes details such as user conducting the interview,
      * timestamp, feedback, and so on).
      * </pre>
      *
@@ -3156,8 +3167,8 @@ public final class Application extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. All interviews (screen, onsite, and so on) conducted as part of
-     * this application (includes details such as user conducting the interview,
+     * All interviews (screen, onsite, and so on) conducted as part of this
+     * application (includes details such as user conducting the interview,
      * timestamp, feedback, and so on).
      * </pre>
      *
@@ -3180,8 +3191,8 @@ public final class Application extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. All interviews (screen, onsite, and so on) conducted as part of
-     * this application (includes details such as user conducting the interview,
+     * All interviews (screen, onsite, and so on) conducted as part of this
+     * application (includes details such as user conducting the interview,
      * timestamp, feedback, and so on).
      * </pre>
      *
@@ -3204,8 +3215,8 @@ public final class Application extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. All interviews (screen, onsite, and so on) conducted as part of
-     * this application (includes details such as user conducting the interview,
+     * All interviews (screen, onsite, and so on) conducted as part of this
+     * application (includes details such as user conducting the interview,
      * timestamp, feedback, and so on).
      * </pre>
      *
@@ -3226,8 +3237,8 @@ public final class Application extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. All interviews (screen, onsite, and so on) conducted as part of
-     * this application (includes details such as user conducting the interview,
+     * All interviews (screen, onsite, and so on) conducted as part of this
+     * application (includes details such as user conducting the interview,
      * timestamp, feedback, and so on).
      * </pre>
      *
@@ -3248,8 +3259,8 @@ public final class Application extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. All interviews (screen, onsite, and so on) conducted as part of
-     * this application (includes details such as user conducting the interview,
+     * All interviews (screen, onsite, and so on) conducted as part of this
+     * application (includes details such as user conducting the interview,
      * timestamp, feedback, and so on).
      * </pre>
      *
@@ -3270,8 +3281,8 @@ public final class Application extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. All interviews (screen, onsite, and so on) conducted as part of
-     * this application (includes details such as user conducting the interview,
+     * All interviews (screen, onsite, and so on) conducted as part of this
+     * application (includes details such as user conducting the interview,
      * timestamp, feedback, and so on).
      * </pre>
      *
@@ -3291,8 +3302,8 @@ public final class Application extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. All interviews (screen, onsite, and so on) conducted as part of
-     * this application (includes details such as user conducting the interview,
+     * All interviews (screen, onsite, and so on) conducted as part of this
+     * application (includes details such as user conducting the interview,
      * timestamp, feedback, and so on).
      * </pre>
      *
@@ -3312,8 +3323,8 @@ public final class Application extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. All interviews (screen, onsite, and so on) conducted as part of
-     * this application (includes details such as user conducting the interview,
+     * All interviews (screen, onsite, and so on) conducted as part of this
+     * application (includes details such as user conducting the interview,
      * timestamp, feedback, and so on).
      * </pre>
      *
@@ -3326,8 +3337,8 @@ public final class Application extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. All interviews (screen, onsite, and so on) conducted as part of
-     * this application (includes details such as user conducting the interview,
+     * All interviews (screen, onsite, and so on) conducted as part of this
+     * application (includes details such as user conducting the interview,
      * timestamp, feedback, and so on).
      * </pre>
      *
@@ -3344,8 +3355,8 @@ public final class Application extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. All interviews (screen, onsite, and so on) conducted as part of
-     * this application (includes details such as user conducting the interview,
+     * All interviews (screen, onsite, and so on) conducted as part of this
+     * application (includes details such as user conducting the interview,
      * timestamp, feedback, and so on).
      * </pre>
      *
@@ -3363,8 +3374,8 @@ public final class Application extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. All interviews (screen, onsite, and so on) conducted as part of
-     * this application (includes details such as user conducting the interview,
+     * All interviews (screen, onsite, and so on) conducted as part of this
+     * application (includes details such as user conducting the interview,
      * timestamp, feedback, and so on).
      * </pre>
      *
@@ -3378,8 +3389,8 @@ public final class Application extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. All interviews (screen, onsite, and so on) conducted as part of
-     * this application (includes details such as user conducting the interview,
+     * All interviews (screen, onsite, and so on) conducted as part of this
+     * application (includes details such as user conducting the interview,
      * timestamp, feedback, and so on).
      * </pre>
      *
@@ -3393,8 +3404,8 @@ public final class Application extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. All interviews (screen, onsite, and so on) conducted as part of
-     * this application (includes details such as user conducting the interview,
+     * All interviews (screen, onsite, and so on) conducted as part of this
+     * application (includes details such as user conducting the interview,
      * timestamp, feedback, and so on).
      * </pre>
      *
@@ -3432,7 +3443,7 @@ public final class Application extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. If the candidate is referred by a employee.
+     * If the candidate is referred by a employee.
      * </pre>
      *
      * <code>.google.protobuf.BoolValue referral = 18;</code>
@@ -3444,7 +3455,7 @@ public final class Application extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. If the candidate is referred by a employee.
+     * If the candidate is referred by a employee.
      * </pre>
      *
      * <code>.google.protobuf.BoolValue referral = 18;</code>
@@ -3460,7 +3471,7 @@ public final class Application extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. If the candidate is referred by a employee.
+     * If the candidate is referred by a employee.
      * </pre>
      *
      * <code>.google.protobuf.BoolValue referral = 18;</code>
@@ -3482,7 +3493,7 @@ public final class Application extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. If the candidate is referred by a employee.
+     * If the candidate is referred by a employee.
      * </pre>
      *
      * <code>.google.protobuf.BoolValue referral = 18;</code>
@@ -3501,7 +3512,7 @@ public final class Application extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. If the candidate is referred by a employee.
+     * If the candidate is referred by a employee.
      * </pre>
      *
      * <code>.google.protobuf.BoolValue referral = 18;</code>
@@ -3525,7 +3536,7 @@ public final class Application extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. If the candidate is referred by a employee.
+     * If the candidate is referred by a employee.
      * </pre>
      *
      * <code>.google.protobuf.BoolValue referral = 18;</code>
@@ -3545,7 +3556,7 @@ public final class Application extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. If the candidate is referred by a employee.
+     * If the candidate is referred by a employee.
      * </pre>
      *
      * <code>.google.protobuf.BoolValue referral = 18;</code>
@@ -3559,7 +3570,7 @@ public final class Application extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. If the candidate is referred by a employee.
+     * If the candidate is referred by a employee.
      * </pre>
      *
      * <code>.google.protobuf.BoolValue referral = 18;</code>
@@ -3575,7 +3586,7 @@ public final class Application extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. If the candidate is referred by a employee.
+     * If the candidate is referred by a employee.
      * </pre>
      *
      * <code>.google.protobuf.BoolValue referral = 18;</code>
@@ -3610,7 +3621,8 @@ public final class Application extends com.google.protobuf.GeneratedMessageV3
      * Required. Reflects the time that the application was created.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp create_time = 19;</code>
+     * <code>.google.protobuf.Timestamp create_time = 19 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public boolean hasCreateTime() {
       return createTimeBuilder_ != null || createTime_ != null;
@@ -3622,7 +3634,8 @@ public final class Application extends com.google.protobuf.GeneratedMessageV3
      * Required. Reflects the time that the application was created.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp create_time = 19;</code>
+     * <code>.google.protobuf.Timestamp create_time = 19 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public com.google.protobuf.Timestamp getCreateTime() {
       if (createTimeBuilder_ == null) {
@@ -3640,7 +3653,8 @@ public final class Application extends com.google.protobuf.GeneratedMessageV3
      * Required. Reflects the time that the application was created.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp create_time = 19;</code>
+     * <code>.google.protobuf.Timestamp create_time = 19 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder setCreateTime(com.google.protobuf.Timestamp value) {
       if (createTimeBuilder_ == null) {
@@ -3662,7 +3676,8 @@ public final class Application extends com.google.protobuf.GeneratedMessageV3
      * Required. Reflects the time that the application was created.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp create_time = 19;</code>
+     * <code>.google.protobuf.Timestamp create_time = 19 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder setCreateTime(com.google.protobuf.Timestamp.Builder builderForValue) {
       if (createTimeBuilder_ == null) {
@@ -3681,7 +3696,8 @@ public final class Application extends com.google.protobuf.GeneratedMessageV3
      * Required. Reflects the time that the application was created.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp create_time = 19;</code>
+     * <code>.google.protobuf.Timestamp create_time = 19 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder mergeCreateTime(com.google.protobuf.Timestamp value) {
       if (createTimeBuilder_ == null) {
@@ -3705,7 +3721,8 @@ public final class Application extends com.google.protobuf.GeneratedMessageV3
      * Required. Reflects the time that the application was created.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp create_time = 19;</code>
+     * <code>.google.protobuf.Timestamp create_time = 19 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder clearCreateTime() {
       if (createTimeBuilder_ == null) {
@@ -3725,7 +3742,8 @@ public final class Application extends com.google.protobuf.GeneratedMessageV3
      * Required. Reflects the time that the application was created.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp create_time = 19;</code>
+     * <code>.google.protobuf.Timestamp create_time = 19 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public com.google.protobuf.Timestamp.Builder getCreateTimeBuilder() {
 
@@ -3739,7 +3757,8 @@ public final class Application extends com.google.protobuf.GeneratedMessageV3
      * Required. Reflects the time that the application was created.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp create_time = 19;</code>
+     * <code>.google.protobuf.Timestamp create_time = 19 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public com.google.protobuf.TimestampOrBuilder getCreateTimeOrBuilder() {
       if (createTimeBuilder_ != null) {
@@ -3757,7 +3776,8 @@ public final class Application extends com.google.protobuf.GeneratedMessageV3
      * Required. Reflects the time that the application was created.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp create_time = 19;</code>
+     * <code>.google.protobuf.Timestamp create_time = 19 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.protobuf.Timestamp,
@@ -3786,7 +3806,7 @@ public final class Application extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The last update timestamp.
+     * The last update timestamp.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp update_time = 20;</code>
@@ -3798,7 +3818,7 @@ public final class Application extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The last update timestamp.
+     * The last update timestamp.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp update_time = 20;</code>
@@ -3816,7 +3836,7 @@ public final class Application extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The last update timestamp.
+     * The last update timestamp.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp update_time = 20;</code>
@@ -3838,7 +3858,7 @@ public final class Application extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The last update timestamp.
+     * The last update timestamp.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp update_time = 20;</code>
@@ -3857,7 +3877,7 @@ public final class Application extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The last update timestamp.
+     * The last update timestamp.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp update_time = 20;</code>
@@ -3881,7 +3901,7 @@ public final class Application extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The last update timestamp.
+     * The last update timestamp.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp update_time = 20;</code>
@@ -3901,7 +3921,7 @@ public final class Application extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The last update timestamp.
+     * The last update timestamp.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp update_time = 20;</code>
@@ -3915,7 +3935,7 @@ public final class Application extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The last update timestamp.
+     * The last update timestamp.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp update_time = 20;</code>
@@ -3933,7 +3953,7 @@ public final class Application extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The last update timestamp.
+     * The last update timestamp.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp update_time = 20;</code>
@@ -3960,9 +3980,8 @@ public final class Application extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Free text reason behind the recruitement outcome (for example,
-     * reason for withdraw / reject, reason for an unsuccessful finish, and so
-     * on).
+     * Free text reason behind the recruitement outcome (for example, reason for
+     * withdraw / reject, reason for an unsuccessful finish, and so on).
      * Number of characters allowed is 100.
      * </pre>
      *
@@ -3983,9 +4002,8 @@ public final class Application extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Free text reason behind the recruitement outcome (for example,
-     * reason for withdraw / reject, reason for an unsuccessful finish, and so
-     * on).
+     * Free text reason behind the recruitement outcome (for example, reason for
+     * withdraw / reject, reason for an unsuccessful finish, and so on).
      * Number of characters allowed is 100.
      * </pre>
      *
@@ -4006,9 +4024,8 @@ public final class Application extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Free text reason behind the recruitement outcome (for example,
-     * reason for withdraw / reject, reason for an unsuccessful finish, and so
-     * on).
+     * Free text reason behind the recruitement outcome (for example, reason for
+     * withdraw / reject, reason for an unsuccessful finish, and so on).
      * Number of characters allowed is 100.
      * </pre>
      *
@@ -4027,9 +4044,8 @@ public final class Application extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Free text reason behind the recruitement outcome (for example,
-     * reason for withdraw / reject, reason for an unsuccessful finish, and so
-     * on).
+     * Free text reason behind the recruitement outcome (for example, reason for
+     * withdraw / reject, reason for an unsuccessful finish, and so on).
      * Number of characters allowed is 100.
      * </pre>
      *
@@ -4045,9 +4061,8 @@ public final class Application extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Free text reason behind the recruitement outcome (for example,
-     * reason for withdraw / reject, reason for an unsuccessful finish, and so
-     * on).
+     * Free text reason behind the recruitement outcome (for example, reason for
+     * withdraw / reject, reason for an unsuccessful finish, and so on).
      * Number of characters allowed is 100.
      * </pre>
      *
@@ -4069,7 +4084,7 @@ public final class Application extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Outcome positiveness shows how positive the outcome is.
+     * Outcome positiveness shows how positive the outcome is.
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.Outcome outcome = 22;</code>
@@ -4081,7 +4096,7 @@ public final class Application extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Outcome positiveness shows how positive the outcome is.
+     * Outcome positiveness shows how positive the outcome is.
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.Outcome outcome = 22;</code>
@@ -4095,7 +4110,7 @@ public final class Application extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Outcome positiveness shows how positive the outcome is.
+     * Outcome positiveness shows how positive the outcome is.
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.Outcome outcome = 22;</code>
@@ -4110,7 +4125,7 @@ public final class Application extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Outcome positiveness shows how positive the outcome is.
+     * Outcome positiveness shows how positive the outcome is.
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.Outcome outcome = 22;</code>
@@ -4128,7 +4143,7 @@ public final class Application extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Outcome positiveness shows how positive the outcome is.
+     * Outcome positiveness shows how positive the outcome is.
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.Outcome outcome = 22;</code>
@@ -4155,7 +4170,8 @@ public final class Application extends com.google.protobuf.GeneratedMessageV3
      * search response.
      * </pre>
      *
-     * <code>.google.protobuf.BoolValue is_match = 28;</code>
+     * <code>.google.protobuf.BoolValue is_match = 28 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public boolean hasIsMatch() {
       return isMatchBuilder_ != null || isMatch_ != null;
@@ -4169,7 +4185,8 @@ public final class Application extends com.google.protobuf.GeneratedMessageV3
      * search response.
      * </pre>
      *
-     * <code>.google.protobuf.BoolValue is_match = 28;</code>
+     * <code>.google.protobuf.BoolValue is_match = 28 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public com.google.protobuf.BoolValue getIsMatch() {
       if (isMatchBuilder_ == null) {
@@ -4187,7 +4204,8 @@ public final class Application extends com.google.protobuf.GeneratedMessageV3
      * search response.
      * </pre>
      *
-     * <code>.google.protobuf.BoolValue is_match = 28;</code>
+     * <code>.google.protobuf.BoolValue is_match = 28 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public Builder setIsMatch(com.google.protobuf.BoolValue value) {
       if (isMatchBuilder_ == null) {
@@ -4211,7 +4229,8 @@ public final class Application extends com.google.protobuf.GeneratedMessageV3
      * search response.
      * </pre>
      *
-     * <code>.google.protobuf.BoolValue is_match = 28;</code>
+     * <code>.google.protobuf.BoolValue is_match = 28 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public Builder setIsMatch(com.google.protobuf.BoolValue.Builder builderForValue) {
       if (isMatchBuilder_ == null) {
@@ -4232,7 +4251,8 @@ public final class Application extends com.google.protobuf.GeneratedMessageV3
      * search response.
      * </pre>
      *
-     * <code>.google.protobuf.BoolValue is_match = 28;</code>
+     * <code>.google.protobuf.BoolValue is_match = 28 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public Builder mergeIsMatch(com.google.protobuf.BoolValue value) {
       if (isMatchBuilder_ == null) {
@@ -4258,7 +4278,8 @@ public final class Application extends com.google.protobuf.GeneratedMessageV3
      * search response.
      * </pre>
      *
-     * <code>.google.protobuf.BoolValue is_match = 28;</code>
+     * <code>.google.protobuf.BoolValue is_match = 28 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public Builder clearIsMatch() {
       if (isMatchBuilder_ == null) {
@@ -4280,7 +4301,8 @@ public final class Application extends com.google.protobuf.GeneratedMessageV3
      * search response.
      * </pre>
      *
-     * <code>.google.protobuf.BoolValue is_match = 28;</code>
+     * <code>.google.protobuf.BoolValue is_match = 28 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public com.google.protobuf.BoolValue.Builder getIsMatchBuilder() {
 
@@ -4296,7 +4318,8 @@ public final class Application extends com.google.protobuf.GeneratedMessageV3
      * search response.
      * </pre>
      *
-     * <code>.google.protobuf.BoolValue is_match = 28;</code>
+     * <code>.google.protobuf.BoolValue is_match = 28 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public com.google.protobuf.BoolValueOrBuilder getIsMatchOrBuilder() {
       if (isMatchBuilder_ != null) {
@@ -4314,7 +4337,8 @@ public final class Application extends com.google.protobuf.GeneratedMessageV3
      * search response.
      * </pre>
      *
-     * <code>.google.protobuf.BoolValue is_match = 28;</code>
+     * <code>.google.protobuf.BoolValue is_match = 28 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.protobuf.BoolValue,
@@ -4343,7 +4367,7 @@ public final class Application extends com.google.protobuf.GeneratedMessageV3
      * query.
      * </pre>
      *
-     * <code>string job_title_snippet = 29;</code>
+     * <code>string job_title_snippet = 29 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     public java.lang.String getJobTitleSnippet() {
       java.lang.Object ref = jobTitleSnippet_;
@@ -4365,7 +4389,7 @@ public final class Application extends com.google.protobuf.GeneratedMessageV3
      * query.
      * </pre>
      *
-     * <code>string job_title_snippet = 29;</code>
+     * <code>string job_title_snippet = 29 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     public com.google.protobuf.ByteString getJobTitleSnippetBytes() {
       java.lang.Object ref = jobTitleSnippet_;
@@ -4387,7 +4411,7 @@ public final class Application extends com.google.protobuf.GeneratedMessageV3
      * query.
      * </pre>
      *
-     * <code>string job_title_snippet = 29;</code>
+     * <code>string job_title_snippet = 29 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     public Builder setJobTitleSnippet(java.lang.String value) {
       if (value == null) {
@@ -4407,7 +4431,7 @@ public final class Application extends com.google.protobuf.GeneratedMessageV3
      * query.
      * </pre>
      *
-     * <code>string job_title_snippet = 29;</code>
+     * <code>string job_title_snippet = 29 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     public Builder clearJobTitleSnippet() {
 
@@ -4424,7 +4448,7 @@ public final class Application extends com.google.protobuf.GeneratedMessageV3
      * query.
      * </pre>
      *
-     * <code>string job_title_snippet = 29;</code>
+     * <code>string job_title_snippet = 29 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     public Builder setJobTitleSnippetBytes(com.google.protobuf.ByteString value) {
       if (value == null) {

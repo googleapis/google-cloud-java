@@ -217,7 +217,7 @@ public final class PySparkJob extends com.google.protobuf.GeneratedMessageV3
    * be a .py file.
    * </pre>
    *
-   * <code>string main_python_file_uri = 1;</code>
+   * <code>string main_python_file_uri = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   public java.lang.String getMainPythonFileUri() {
     java.lang.Object ref = mainPythonFileUri_;
@@ -238,7 +238,7 @@ public final class PySparkJob extends com.google.protobuf.GeneratedMessageV3
    * be a .py file.
    * </pre>
    *
-   * <code>string main_python_file_uri = 1;</code>
+   * <code>string main_python_file_uri = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   public com.google.protobuf.ByteString getMainPythonFileUriBytes() {
     java.lang.Object ref = mainPythonFileUri_;
@@ -1245,7 +1245,7 @@ public final class PySparkJob extends com.google.protobuf.GeneratedMessageV3
      * be a .py file.
      * </pre>
      *
-     * <code>string main_python_file_uri = 1;</code>
+     * <code>string main_python_file_uri = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public java.lang.String getMainPythonFileUri() {
       java.lang.Object ref = mainPythonFileUri_;
@@ -1266,7 +1266,7 @@ public final class PySparkJob extends com.google.protobuf.GeneratedMessageV3
      * be a .py file.
      * </pre>
      *
-     * <code>string main_python_file_uri = 1;</code>
+     * <code>string main_python_file_uri = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public com.google.protobuf.ByteString getMainPythonFileUriBytes() {
       java.lang.Object ref = mainPythonFileUri_;
@@ -1287,7 +1287,7 @@ public final class PySparkJob extends com.google.protobuf.GeneratedMessageV3
      * be a .py file.
      * </pre>
      *
-     * <code>string main_python_file_uri = 1;</code>
+     * <code>string main_python_file_uri = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder setMainPythonFileUri(java.lang.String value) {
       if (value == null) {
@@ -1306,7 +1306,7 @@ public final class PySparkJob extends com.google.protobuf.GeneratedMessageV3
      * be a .py file.
      * </pre>
      *
-     * <code>string main_python_file_uri = 1;</code>
+     * <code>string main_python_file_uri = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder clearMainPythonFileUri() {
 
@@ -1322,7 +1322,7 @@ public final class PySparkJob extends com.google.protobuf.GeneratedMessageV3
      * be a .py file.
      * </pre>
      *
-     * <code>string main_python_file_uri = 1;</code>
+     * <code>string main_python_file_uri = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder setMainPythonFileUriBytes(com.google.protobuf.ByteString value) {
       if (value == null) {

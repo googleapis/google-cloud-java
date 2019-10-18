@@ -91,6 +91,21 @@ public final class LifecycleConfig extends com.google.protobuf.GeneratedMessageV
               ttlCase_ = 3;
               break;
             }
+          case 34:
+            {
+              com.google.protobuf.Timestamp.Builder subBuilder = null;
+              if (idleStartTime_ != null) {
+                subBuilder = idleStartTime_.toBuilder();
+              }
+              idleStartTime_ =
+                  input.readMessage(com.google.protobuf.Timestamp.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(idleStartTime_);
+                idleStartTime_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
           default:
             {
               if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -178,7 +193,8 @@ public final class LifecycleConfig extends com.google.protobuf.GeneratedMessageV
    * cluster when it has had no jobs running for 10 minutes.
    * </pre>
    *
-   * <code>.google.protobuf.Duration idle_delete_ttl = 1;</code>
+   * <code>.google.protobuf.Duration idle_delete_ttl = 1 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   public boolean hasIdleDeleteTtl() {
     return idleDeleteTtl_ != null;
@@ -194,7 +210,8 @@ public final class LifecycleConfig extends com.google.protobuf.GeneratedMessageV
    * cluster when it has had no jobs running for 10 minutes.
    * </pre>
    *
-   * <code>.google.protobuf.Duration idle_delete_ttl = 1;</code>
+   * <code>.google.protobuf.Duration idle_delete_ttl = 1 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   public com.google.protobuf.Duration getIdleDeleteTtl() {
     return idleDeleteTtl_ == null
@@ -212,7 +229,8 @@ public final class LifecycleConfig extends com.google.protobuf.GeneratedMessageV
    * cluster when it has had no jobs running for 10 minutes.
    * </pre>
    *
-   * <code>.google.protobuf.Duration idle_delete_ttl = 1;</code>
+   * <code>.google.protobuf.Duration idle_delete_ttl = 1 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   public com.google.protobuf.DurationOrBuilder getIdleDeleteTtlOrBuilder() {
     return getIdleDeleteTtl();
@@ -312,6 +330,56 @@ public final class LifecycleConfig extends com.google.protobuf.GeneratedMessageV
     return com.google.protobuf.Duration.getDefaultInstance();
   }
 
+  public static final int IDLE_START_TIME_FIELD_NUMBER = 4;
+  private com.google.protobuf.Timestamp idleStartTime_;
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The time when cluster became idle (most recent job finished)
+   * and became eligible for deletion due to idleness.
+   * </pre>
+   *
+   * <code>
+   * .google.protobuf.Timestamp idle_start_time = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  public boolean hasIdleStartTime() {
+    return idleStartTime_ != null;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The time when cluster became idle (most recent job finished)
+   * and became eligible for deletion due to idleness.
+   * </pre>
+   *
+   * <code>
+   * .google.protobuf.Timestamp idle_start_time = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  public com.google.protobuf.Timestamp getIdleStartTime() {
+    return idleStartTime_ == null
+        ? com.google.protobuf.Timestamp.getDefaultInstance()
+        : idleStartTime_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The time when cluster became idle (most recent job finished)
+   * and became eligible for deletion due to idleness.
+   * </pre>
+   *
+   * <code>
+   * .google.protobuf.Timestamp idle_start_time = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  public com.google.protobuf.TimestampOrBuilder getIdleStartTimeOrBuilder() {
+    return getIdleStartTime();
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -335,6 +403,9 @@ public final class LifecycleConfig extends com.google.protobuf.GeneratedMessageV
     if (ttlCase_ == 3) {
       output.writeMessage(3, (com.google.protobuf.Duration) ttl_);
     }
+    if (idleStartTime_ != null) {
+      output.writeMessage(4, getIdleStartTime());
+    }
     unknownFields.writeTo(output);
   }
 
@@ -357,6 +428,9 @@ public final class LifecycleConfig extends com.google.protobuf.GeneratedMessageV
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               3, (com.google.protobuf.Duration) ttl_);
     }
+    if (idleStartTime_ != null) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(4, getIdleStartTime());
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -376,6 +450,10 @@ public final class LifecycleConfig extends com.google.protobuf.GeneratedMessageV
     if (hasIdleDeleteTtl() != other.hasIdleDeleteTtl()) return false;
     if (hasIdleDeleteTtl()) {
       if (!getIdleDeleteTtl().equals(other.getIdleDeleteTtl())) return false;
+    }
+    if (hasIdleStartTime() != other.hasIdleStartTime()) return false;
+    if (hasIdleStartTime()) {
+      if (!getIdleStartTime().equals(other.getIdleStartTime())) return false;
     }
     if (!getTtlCase().equals(other.getTtlCase())) return false;
     switch (ttlCase_) {
@@ -402,6 +480,10 @@ public final class LifecycleConfig extends com.google.protobuf.GeneratedMessageV
     if (hasIdleDeleteTtl()) {
       hash = (37 * hash) + IDLE_DELETE_TTL_FIELD_NUMBER;
       hash = (53 * hash) + getIdleDeleteTtl().hashCode();
+    }
+    if (hasIdleStartTime()) {
+      hash = (37 * hash) + IDLE_START_TIME_FIELD_NUMBER;
+      hash = (53 * hash) + getIdleStartTime().hashCode();
     }
     switch (ttlCase_) {
       case 2:
@@ -566,6 +648,12 @@ public final class LifecycleConfig extends com.google.protobuf.GeneratedMessageV
         idleDeleteTtl_ = null;
         idleDeleteTtlBuilder_ = null;
       }
+      if (idleStartTimeBuilder_ == null) {
+        idleStartTime_ = null;
+      } else {
+        idleStartTime_ = null;
+        idleStartTimeBuilder_ = null;
+      }
       ttlCase_ = 0;
       ttl_ = null;
       return this;
@@ -613,6 +701,11 @@ public final class LifecycleConfig extends com.google.protobuf.GeneratedMessageV
         } else {
           result.ttl_ = autoDeleteTtlBuilder_.build();
         }
+      }
+      if (idleStartTimeBuilder_ == null) {
+        result.idleStartTime_ = idleStartTime_;
+      } else {
+        result.idleStartTime_ = idleStartTimeBuilder_.build();
       }
       result.ttlCase_ = ttlCase_;
       onBuilt();
@@ -667,6 +760,9 @@ public final class LifecycleConfig extends com.google.protobuf.GeneratedMessageV
         return this;
       if (other.hasIdleDeleteTtl()) {
         mergeIdleDeleteTtl(other.getIdleDeleteTtl());
+      }
+      if (other.hasIdleStartTime()) {
+        mergeIdleStartTime(other.getIdleStartTime());
       }
       switch (other.getTtlCase()) {
         case AUTO_DELETE_TIME:
@@ -745,7 +841,9 @@ public final class LifecycleConfig extends com.google.protobuf.GeneratedMessageV
      * cluster when it has had no jobs running for 10 minutes.
      * </pre>
      *
-     * <code>.google.protobuf.Duration idle_delete_ttl = 1;</code>
+     * <code>
+     * .google.protobuf.Duration idle_delete_ttl = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public boolean hasIdleDeleteTtl() {
       return idleDeleteTtlBuilder_ != null || idleDeleteTtl_ != null;
@@ -761,7 +859,9 @@ public final class LifecycleConfig extends com.google.protobuf.GeneratedMessageV
      * cluster when it has had no jobs running for 10 minutes.
      * </pre>
      *
-     * <code>.google.protobuf.Duration idle_delete_ttl = 1;</code>
+     * <code>
+     * .google.protobuf.Duration idle_delete_ttl = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public com.google.protobuf.Duration getIdleDeleteTtl() {
       if (idleDeleteTtlBuilder_ == null) {
@@ -783,7 +883,9 @@ public final class LifecycleConfig extends com.google.protobuf.GeneratedMessageV
      * cluster when it has had no jobs running for 10 minutes.
      * </pre>
      *
-     * <code>.google.protobuf.Duration idle_delete_ttl = 1;</code>
+     * <code>
+     * .google.protobuf.Duration idle_delete_ttl = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder setIdleDeleteTtl(com.google.protobuf.Duration value) {
       if (idleDeleteTtlBuilder_ == null) {
@@ -809,7 +911,9 @@ public final class LifecycleConfig extends com.google.protobuf.GeneratedMessageV
      * cluster when it has had no jobs running for 10 minutes.
      * </pre>
      *
-     * <code>.google.protobuf.Duration idle_delete_ttl = 1;</code>
+     * <code>
+     * .google.protobuf.Duration idle_delete_ttl = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder setIdleDeleteTtl(com.google.protobuf.Duration.Builder builderForValue) {
       if (idleDeleteTtlBuilder_ == null) {
@@ -832,7 +936,9 @@ public final class LifecycleConfig extends com.google.protobuf.GeneratedMessageV
      * cluster when it has had no jobs running for 10 minutes.
      * </pre>
      *
-     * <code>.google.protobuf.Duration idle_delete_ttl = 1;</code>
+     * <code>
+     * .google.protobuf.Duration idle_delete_ttl = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder mergeIdleDeleteTtl(com.google.protobuf.Duration value) {
       if (idleDeleteTtlBuilder_ == null) {
@@ -862,7 +968,9 @@ public final class LifecycleConfig extends com.google.protobuf.GeneratedMessageV
      * cluster when it has had no jobs running for 10 minutes.
      * </pre>
      *
-     * <code>.google.protobuf.Duration idle_delete_ttl = 1;</code>
+     * <code>
+     * .google.protobuf.Duration idle_delete_ttl = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder clearIdleDeleteTtl() {
       if (idleDeleteTtlBuilder_ == null) {
@@ -886,7 +994,9 @@ public final class LifecycleConfig extends com.google.protobuf.GeneratedMessageV
      * cluster when it has had no jobs running for 10 minutes.
      * </pre>
      *
-     * <code>.google.protobuf.Duration idle_delete_ttl = 1;</code>
+     * <code>
+     * .google.protobuf.Duration idle_delete_ttl = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public com.google.protobuf.Duration.Builder getIdleDeleteTtlBuilder() {
 
@@ -904,7 +1014,9 @@ public final class LifecycleConfig extends com.google.protobuf.GeneratedMessageV
      * cluster when it has had no jobs running for 10 minutes.
      * </pre>
      *
-     * <code>.google.protobuf.Duration idle_delete_ttl = 1;</code>
+     * <code>
+     * .google.protobuf.Duration idle_delete_ttl = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public com.google.protobuf.DurationOrBuilder getIdleDeleteTtlOrBuilder() {
       if (idleDeleteTtlBuilder_ != null) {
@@ -926,7 +1038,9 @@ public final class LifecycleConfig extends com.google.protobuf.GeneratedMessageV
      * cluster when it has had no jobs running for 10 minutes.
      * </pre>
      *
-     * <code>.google.protobuf.Duration idle_delete_ttl = 1;</code>
+     * <code>
+     * .google.protobuf.Duration idle_delete_ttl = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.protobuf.Duration,
@@ -1355,6 +1469,214 @@ public final class LifecycleConfig extends com.google.protobuf.GeneratedMessageV
       onChanged();
       ;
       return autoDeleteTtlBuilder_;
+    }
+
+    private com.google.protobuf.Timestamp idleStartTime_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.protobuf.Timestamp,
+            com.google.protobuf.Timestamp.Builder,
+            com.google.protobuf.TimestampOrBuilder>
+        idleStartTimeBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The time when cluster became idle (most recent job finished)
+     * and became eligible for deletion due to idleness.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp idle_start_time = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public boolean hasIdleStartTime() {
+      return idleStartTimeBuilder_ != null || idleStartTime_ != null;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The time when cluster became idle (most recent job finished)
+     * and became eligible for deletion due to idleness.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp idle_start_time = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.protobuf.Timestamp getIdleStartTime() {
+      if (idleStartTimeBuilder_ == null) {
+        return idleStartTime_ == null
+            ? com.google.protobuf.Timestamp.getDefaultInstance()
+            : idleStartTime_;
+      } else {
+        return idleStartTimeBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The time when cluster became idle (most recent job finished)
+     * and became eligible for deletion due to idleness.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp idle_start_time = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setIdleStartTime(com.google.protobuf.Timestamp value) {
+      if (idleStartTimeBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        idleStartTime_ = value;
+        onChanged();
+      } else {
+        idleStartTimeBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The time when cluster became idle (most recent job finished)
+     * and became eligible for deletion due to idleness.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp idle_start_time = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setIdleStartTime(com.google.protobuf.Timestamp.Builder builderForValue) {
+      if (idleStartTimeBuilder_ == null) {
+        idleStartTime_ = builderForValue.build();
+        onChanged();
+      } else {
+        idleStartTimeBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The time when cluster became idle (most recent job finished)
+     * and became eligible for deletion due to idleness.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp idle_start_time = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder mergeIdleStartTime(com.google.protobuf.Timestamp value) {
+      if (idleStartTimeBuilder_ == null) {
+        if (idleStartTime_ != null) {
+          idleStartTime_ =
+              com.google.protobuf.Timestamp.newBuilder(idleStartTime_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          idleStartTime_ = value;
+        }
+        onChanged();
+      } else {
+        idleStartTimeBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The time when cluster became idle (most recent job finished)
+     * and became eligible for deletion due to idleness.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp idle_start_time = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder clearIdleStartTime() {
+      if (idleStartTimeBuilder_ == null) {
+        idleStartTime_ = null;
+        onChanged();
+      } else {
+        idleStartTime_ = null;
+        idleStartTimeBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The time when cluster became idle (most recent job finished)
+     * and became eligible for deletion due to idleness.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp idle_start_time = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.protobuf.Timestamp.Builder getIdleStartTimeBuilder() {
+
+      onChanged();
+      return getIdleStartTimeFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The time when cluster became idle (most recent job finished)
+     * and became eligible for deletion due to idleness.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp idle_start_time = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.protobuf.TimestampOrBuilder getIdleStartTimeOrBuilder() {
+      if (idleStartTimeBuilder_ != null) {
+        return idleStartTimeBuilder_.getMessageOrBuilder();
+      } else {
+        return idleStartTime_ == null
+            ? com.google.protobuf.Timestamp.getDefaultInstance()
+            : idleStartTime_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The time when cluster became idle (most recent job finished)
+     * and became eligible for deletion due to idleness.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp idle_start_time = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.protobuf.Timestamp,
+            com.google.protobuf.Timestamp.Builder,
+            com.google.protobuf.TimestampOrBuilder>
+        getIdleStartTimeFieldBuilder() {
+      if (idleStartTimeBuilder_ == null) {
+        idleStartTimeBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.protobuf.Timestamp,
+                com.google.protobuf.Timestamp.Builder,
+                com.google.protobuf.TimestampOrBuilder>(
+                getIdleStartTime(), getParentForChildren(), isClean());
+        idleStartTime_ = null;
+      }
+      return idleStartTimeBuilder_;
     }
 
     @java.lang.Override

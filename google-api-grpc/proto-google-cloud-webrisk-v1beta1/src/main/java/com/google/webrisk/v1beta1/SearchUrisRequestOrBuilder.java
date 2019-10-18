@@ -12,20 +12,20 @@ public interface SearchUrisRequestOrBuilder
    *
    *
    * <pre>
-   * The URI to be checked for matches.
+   * Required. The URI to be checked for matches.
    * </pre>
    *
-   * <code>string uri = 1;</code>
+   * <code>string uri = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   java.lang.String getUri();
   /**
    *
    *
    * <pre>
-   * The URI to be checked for matches.
+   * Required. The URI to be checked for matches.
    * </pre>
    *
-   * <code>string uri = 1;</code>
+   * <code>string uri = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   com.google.protobuf.ByteString getUriBytes();
 
@@ -36,7 +36,9 @@ public interface SearchUrisRequestOrBuilder
    * Required. The ThreatLists to search in.
    * </pre>
    *
-   * <code>repeated .google.cloud.webrisk.v1beta1.ThreatType threat_types = 2;</code>
+   * <code>
+   * repeated .google.cloud.webrisk.v1beta1.ThreatType threat_types = 2 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   java.util.List<com.google.webrisk.v1beta1.ThreatType> getThreatTypesList();
   /**
@@ -46,7 +48,9 @@ public interface SearchUrisRequestOrBuilder
    * Required. The ThreatLists to search in.
    * </pre>
    *
-   * <code>repeated .google.cloud.webrisk.v1beta1.ThreatType threat_types = 2;</code>
+   * <code>
+   * repeated .google.cloud.webrisk.v1beta1.ThreatType threat_types = 2 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   int getThreatTypesCount();
   /**
@@ -56,7 +60,9 @@ public interface SearchUrisRequestOrBuilder
    * Required. The ThreatLists to search in.
    * </pre>
    *
-   * <code>repeated .google.cloud.webrisk.v1beta1.ThreatType threat_types = 2;</code>
+   * <code>
+   * repeated .google.cloud.webrisk.v1beta1.ThreatType threat_types = 2 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   com.google.webrisk.v1beta1.ThreatType getThreatTypes(int index);
   /**
@@ -66,7 +72,9 @@ public interface SearchUrisRequestOrBuilder
    * Required. The ThreatLists to search in.
    * </pre>
    *
-   * <code>repeated .google.cloud.webrisk.v1beta1.ThreatType threat_types = 2;</code>
+   * <code>
+   * repeated .google.cloud.webrisk.v1beta1.ThreatType threat_types = 2 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   java.util.List<java.lang.Integer> getThreatTypesValueList();
   /**
@@ -76,7 +84,9 @@ public interface SearchUrisRequestOrBuilder
    * Required. The ThreatLists to search in.
    * </pre>
    *
-   * <code>repeated .google.cloud.webrisk.v1beta1.ThreatType threat_types = 2;</code>
+   * <code>
+   * repeated .google.cloud.webrisk.v1beta1.ThreatType threat_types = 2 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   int getThreatTypesValue(int index);
 }

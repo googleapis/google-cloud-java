@@ -260,7 +260,9 @@ public final class FailoverInstanceRequest extends com.google.protobuf.Generated
    * where `location_id` refers to a GCP region.
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>
+   * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    */
   public java.lang.String getName() {
     java.lang.Object ref = name_;
@@ -282,7 +284,9 @@ public final class FailoverInstanceRequest extends com.google.protobuf.Generated
    * where `location_id` refers to a GCP region.
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>
+   * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    */
   public com.google.protobuf.ByteString getNameBytes() {
     java.lang.Object ref = name_;
@@ -307,7 +311,7 @@ public final class FailoverInstanceRequest extends com.google.protobuf.Generated
    * </pre>
    *
    * <code>
-   * .google.cloud.redis.v1.FailoverInstanceRequest.DataProtectionMode data_protection_mode = 2;
+   * .google.cloud.redis.v1.FailoverInstanceRequest.DataProtectionMode data_protection_mode = 2 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    */
   public int getDataProtectionModeValue() {
@@ -322,7 +326,7 @@ public final class FailoverInstanceRequest extends com.google.protobuf.Generated
    * </pre>
    *
    * <code>
-   * .google.cloud.redis.v1.FailoverInstanceRequest.DataProtectionMode data_protection_mode = 2;
+   * .google.cloud.redis.v1.FailoverInstanceRequest.DataProtectionMode data_protection_mode = 2 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    */
   public com.google.cloud.redis.v1.FailoverInstanceRequest.DataProtectionMode
@@ -685,7 +689,9 @@ public final class FailoverInstanceRequest extends com.google.protobuf.Generated
      * where `location_id` refers to a GCP region.
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>
+     * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      */
     public java.lang.String getName() {
       java.lang.Object ref = name_;
@@ -707,7 +713,9 @@ public final class FailoverInstanceRequest extends com.google.protobuf.Generated
      * where `location_id` refers to a GCP region.
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>
+     * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      */
     public com.google.protobuf.ByteString getNameBytes() {
       java.lang.Object ref = name_;
@@ -729,7 +737,9 @@ public final class FailoverInstanceRequest extends com.google.protobuf.Generated
      * where `location_id` refers to a GCP region.
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>
+     * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      */
     public Builder setName(java.lang.String value) {
       if (value == null) {
@@ -749,7 +759,9 @@ public final class FailoverInstanceRequest extends com.google.protobuf.Generated
      * where `location_id` refers to a GCP region.
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>
+     * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      */
     public Builder clearName() {
 
@@ -766,7 +778,9 @@ public final class FailoverInstanceRequest extends com.google.protobuf.Generated
      * where `location_id` refers to a GCP region.
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>
+     * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      */
     public Builder setNameBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -789,7 +803,7 @@ public final class FailoverInstanceRequest extends com.google.protobuf.Generated
      * </pre>
      *
      * <code>
-     * .google.cloud.redis.v1.FailoverInstanceRequest.DataProtectionMode data_protection_mode = 2;
+     * .google.cloud.redis.v1.FailoverInstanceRequest.DataProtectionMode data_protection_mode = 2 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public int getDataProtectionModeValue() {
@@ -804,7 +818,7 @@ public final class FailoverInstanceRequest extends com.google.protobuf.Generated
      * </pre>
      *
      * <code>
-     * .google.cloud.redis.v1.FailoverInstanceRequest.DataProtectionMode data_protection_mode = 2;
+     * .google.cloud.redis.v1.FailoverInstanceRequest.DataProtectionMode data_protection_mode = 2 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public Builder setDataProtectionModeValue(int value) {
@@ -821,7 +835,7 @@ public final class FailoverInstanceRequest extends com.google.protobuf.Generated
      * </pre>
      *
      * <code>
-     * .google.cloud.redis.v1.FailoverInstanceRequest.DataProtectionMode data_protection_mode = 2;
+     * .google.cloud.redis.v1.FailoverInstanceRequest.DataProtectionMode data_protection_mode = 2 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public com.google.cloud.redis.v1.FailoverInstanceRequest.DataProtectionMode
@@ -843,7 +857,7 @@ public final class FailoverInstanceRequest extends com.google.protobuf.Generated
      * </pre>
      *
      * <code>
-     * .google.cloud.redis.v1.FailoverInstanceRequest.DataProtectionMode data_protection_mode = 2;
+     * .google.cloud.redis.v1.FailoverInstanceRequest.DataProtectionMode data_protection_mode = 2 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public Builder setDataProtectionMode(
@@ -865,7 +879,7 @@ public final class FailoverInstanceRequest extends com.google.protobuf.Generated
      * </pre>
      *
      * <code>
-     * .google.cloud.redis.v1.FailoverInstanceRequest.DataProtectionMode data_protection_mode = 2;
+     * .google.cloud.redis.v1.FailoverInstanceRequest.DataProtectionMode data_protection_mode = 2 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public Builder clearDataProtectionMode() {

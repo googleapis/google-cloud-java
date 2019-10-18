@@ -12,8 +12,7 @@ public interface EmailOrBuilder
    *
    *
    * <pre>
-   * Optional. The usage of the email address. For example, SCHOOL, WORK,
-   * PERSONAL.
+   * The usage of the email address. For example, SCHOOL, WORK, PERSONAL.
    * </pre>
    *
    * <code>.google.cloud.talent.v4beta1.ContactInfoUsage usage = 1;</code>
@@ -23,8 +22,7 @@ public interface EmailOrBuilder
    *
    *
    * <pre>
-   * Optional. The usage of the email address. For example, SCHOOL, WORK,
-   * PERSONAL.
+   * The usage of the email address. For example, SCHOOL, WORK, PERSONAL.
    * </pre>
    *
    * <code>.google.cloud.talent.v4beta1.ContactInfoUsage usage = 1;</code>
@@ -35,7 +33,7 @@ public interface EmailOrBuilder
    *
    *
    * <pre>
-   * Optional. Email address.
+   * Email address.
    * Number of characters allowed is 4,000.
    * </pre>
    *
@@ -46,7 +44,7 @@ public interface EmailOrBuilder
    *
    *
    * <pre>
-   * Optional. Email address.
+   * Email address.
    * Number of characters allowed is 4,000.
    * </pre>
    *

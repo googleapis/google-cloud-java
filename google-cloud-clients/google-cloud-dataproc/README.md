@@ -22,16 +22,16 @@ Add this to your pom.xml file
 <dependency>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-dataproc</artifactId>
-  <version>0.102.0-alpha</version>
+  <version>0.116.0</version>
 </dependency>
 ```
 If you are using Gradle, add this to your dependencies
 ```Groovy
-compile 'com.google.cloud:google-cloud-dataproc:0.102.0-alpha'
+compile 'com.google.cloud:google-cloud-dataproc:0.116.0'
 ```
 If you are using SBT, add this to your dependencies
 ```Scala
-libraryDependencies += "com.google.cloud" % "google-cloud-dataproc" % "0.102.0-alpha"
+libraryDependencies += "com.google.cloud" % "google-cloud-dataproc" % "0.116.0"
 ```
 [//]: # ({x-version-update-end})
 
@@ -115,5 +115,5 @@ Apache 2.0 - See [LICENSE] for more information.
 [cloud-dataproc]: https://cloud.google.com/dataproc/
 [cloud-dataproc-quickstart]: https://cloud.google.com/dataproc/quickstart-console#before-you-begin
 [dataproc-product-docs]: https://cloud.google.com/dataproc/docs/
-[dataproc-client-lib-docs]: https://googleapis.github.io/google-cloud-java/google-cloud-clients/apidocs/index.html?com/google/cloud/dataproc/v1/package-summary.html
+[dataproc-client-lib-docs]: https://googleapis.dev/java/google-cloud-clients/latest/index.html?com/google/cloud/dataproc/v1/package-summary.html
 [auth]: https://cloud.google.com/docs/authentication/getting-started

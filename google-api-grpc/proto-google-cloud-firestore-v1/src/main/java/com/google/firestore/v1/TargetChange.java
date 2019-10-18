@@ -401,10 +401,7 @@ public final class TargetChange extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * The target IDs of targets that have changed.
    * If empty, the change applies to all targets.
-   * For `target_change_type=ADD`, the order of the target IDs matches the order
-   * of the requests to add the targets. This allows clients to unambiguously
-   * associate server-assigned target IDs with added targets.
-   * For other states, the order of the target IDs is not defined.
+   * The order of the target IDs is not defined.
    * </pre>
    *
    * <code>repeated int32 target_ids = 2;</code>
@@ -418,10 +415,7 @@ public final class TargetChange extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * The target IDs of targets that have changed.
    * If empty, the change applies to all targets.
-   * For `target_change_type=ADD`, the order of the target IDs matches the order
-   * of the requests to add the targets. This allows clients to unambiguously
-   * associate server-assigned target IDs with added targets.
-   * For other states, the order of the target IDs is not defined.
+   * The order of the target IDs is not defined.
    * </pre>
    *
    * <code>repeated int32 target_ids = 2;</code>
@@ -435,10 +429,7 @@ public final class TargetChange extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * The target IDs of targets that have changed.
    * If empty, the change applies to all targets.
-   * For `target_change_type=ADD`, the order of the target IDs matches the order
-   * of the requests to add the targets. This allows clients to unambiguously
-   * associate server-assigned target IDs with added targets.
-   * For other states, the order of the target IDs is not defined.
+   * The order of the target IDs is not defined.
    * </pre>
    *
    * <code>repeated int32 target_ids = 2;</code>
@@ -1091,10 +1082,7 @@ public final class TargetChange extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * The target IDs of targets that have changed.
      * If empty, the change applies to all targets.
-     * For `target_change_type=ADD`, the order of the target IDs matches the order
-     * of the requests to add the targets. This allows clients to unambiguously
-     * associate server-assigned target IDs with added targets.
-     * For other states, the order of the target IDs is not defined.
+     * The order of the target IDs is not defined.
      * </pre>
      *
      * <code>repeated int32 target_ids = 2;</code>
@@ -1110,10 +1098,7 @@ public final class TargetChange extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * The target IDs of targets that have changed.
      * If empty, the change applies to all targets.
-     * For `target_change_type=ADD`, the order of the target IDs matches the order
-     * of the requests to add the targets. This allows clients to unambiguously
-     * associate server-assigned target IDs with added targets.
-     * For other states, the order of the target IDs is not defined.
+     * The order of the target IDs is not defined.
      * </pre>
      *
      * <code>repeated int32 target_ids = 2;</code>
@@ -1127,10 +1112,7 @@ public final class TargetChange extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * The target IDs of targets that have changed.
      * If empty, the change applies to all targets.
-     * For `target_change_type=ADD`, the order of the target IDs matches the order
-     * of the requests to add the targets. This allows clients to unambiguously
-     * associate server-assigned target IDs with added targets.
-     * For other states, the order of the target IDs is not defined.
+     * The order of the target IDs is not defined.
      * </pre>
      *
      * <code>repeated int32 target_ids = 2;</code>
@@ -1144,10 +1126,7 @@ public final class TargetChange extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * The target IDs of targets that have changed.
      * If empty, the change applies to all targets.
-     * For `target_change_type=ADD`, the order of the target IDs matches the order
-     * of the requests to add the targets. This allows clients to unambiguously
-     * associate server-assigned target IDs with added targets.
-     * For other states, the order of the target IDs is not defined.
+     * The order of the target IDs is not defined.
      * </pre>
      *
      * <code>repeated int32 target_ids = 2;</code>
@@ -1164,10 +1143,7 @@ public final class TargetChange extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * The target IDs of targets that have changed.
      * If empty, the change applies to all targets.
-     * For `target_change_type=ADD`, the order of the target IDs matches the order
-     * of the requests to add the targets. This allows clients to unambiguously
-     * associate server-assigned target IDs with added targets.
-     * For other states, the order of the target IDs is not defined.
+     * The order of the target IDs is not defined.
      * </pre>
      *
      * <code>repeated int32 target_ids = 2;</code>
@@ -1184,10 +1160,7 @@ public final class TargetChange extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * The target IDs of targets that have changed.
      * If empty, the change applies to all targets.
-     * For `target_change_type=ADD`, the order of the target IDs matches the order
-     * of the requests to add the targets. This allows clients to unambiguously
-     * associate server-assigned target IDs with added targets.
-     * For other states, the order of the target IDs is not defined.
+     * The order of the target IDs is not defined.
      * </pre>
      *
      * <code>repeated int32 target_ids = 2;</code>
@@ -1204,10 +1177,7 @@ public final class TargetChange extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * The target IDs of targets that have changed.
      * If empty, the change applies to all targets.
-     * For `target_change_type=ADD`, the order of the target IDs matches the order
-     * of the requests to add the targets. This allows clients to unambiguously
-     * associate server-assigned target IDs with added targets.
-     * For other states, the order of the target IDs is not defined.
+     * The order of the target IDs is not defined.
      * </pre>
      *
      * <code>repeated int32 target_ids = 2;</code>

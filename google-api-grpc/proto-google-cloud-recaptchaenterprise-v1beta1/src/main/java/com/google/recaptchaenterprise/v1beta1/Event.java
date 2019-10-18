@@ -97,11 +97,11 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The user response token provided by the reCAPTCHA client-side integration
+   * Required. The user response token provided by the reCAPTCHA client-side integration
    * on your site.
    * </pre>
    *
-   * <code>string token = 1;</code>
+   * <code>string token = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   public java.lang.String getToken() {
     java.lang.Object ref = token_;
@@ -118,11 +118,11 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The user response token provided by the reCAPTCHA client-side integration
+   * Required. The user response token provided by the reCAPTCHA client-side integration
    * on your site.
    * </pre>
    *
-   * <code>string token = 1;</code>
+   * <code>string token = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   public com.google.protobuf.ByteString getTokenBytes() {
     java.lang.Object ref = token_;
@@ -142,11 +142,11 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The site key that was used to invoke reCAPTCHA on your site and generate
+   * Required. The site key that was used to invoke reCAPTCHA on your site and generate
    * the token.
    * </pre>
    *
-   * <code>string site_key = 2;</code>
+   * <code>string site_key = 2 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   public java.lang.String getSiteKey() {
     java.lang.Object ref = siteKey_;
@@ -163,11 +163,11 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The site key that was used to invoke reCAPTCHA on your site and generate
+   * Required. The site key that was used to invoke reCAPTCHA on your site and generate
    * the token.
    * </pre>
    *
-   * <code>string site_key = 2;</code>
+   * <code>string site_key = 2 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   public com.google.protobuf.ByteString getSiteKeyBytes() {
     java.lang.Object ref = siteKey_;
@@ -510,11 +510,11 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The user response token provided by the reCAPTCHA client-side integration
+     * Required. The user response token provided by the reCAPTCHA client-side integration
      * on your site.
      * </pre>
      *
-     * <code>string token = 1;</code>
+     * <code>string token = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public java.lang.String getToken() {
       java.lang.Object ref = token_;
@@ -531,11 +531,11 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The user response token provided by the reCAPTCHA client-side integration
+     * Required. The user response token provided by the reCAPTCHA client-side integration
      * on your site.
      * </pre>
      *
-     * <code>string token = 1;</code>
+     * <code>string token = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public com.google.protobuf.ByteString getTokenBytes() {
       java.lang.Object ref = token_;
@@ -552,11 +552,11 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The user response token provided by the reCAPTCHA client-side integration
+     * Required. The user response token provided by the reCAPTCHA client-side integration
      * on your site.
      * </pre>
      *
-     * <code>string token = 1;</code>
+     * <code>string token = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder setToken(java.lang.String value) {
       if (value == null) {
@@ -571,11 +571,11 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The user response token provided by the reCAPTCHA client-side integration
+     * Required. The user response token provided by the reCAPTCHA client-side integration
      * on your site.
      * </pre>
      *
-     * <code>string token = 1;</code>
+     * <code>string token = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder clearToken() {
 
@@ -587,11 +587,11 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The user response token provided by the reCAPTCHA client-side integration
+     * Required. The user response token provided by the reCAPTCHA client-side integration
      * on your site.
      * </pre>
      *
-     * <code>string token = 1;</code>
+     * <code>string token = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder setTokenBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -609,11 +609,11 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The site key that was used to invoke reCAPTCHA on your site and generate
+     * Required. The site key that was used to invoke reCAPTCHA on your site and generate
      * the token.
      * </pre>
      *
-     * <code>string site_key = 2;</code>
+     * <code>string site_key = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public java.lang.String getSiteKey() {
       java.lang.Object ref = siteKey_;
@@ -630,11 +630,11 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The site key that was used to invoke reCAPTCHA on your site and generate
+     * Required. The site key that was used to invoke reCAPTCHA on your site and generate
      * the token.
      * </pre>
      *
-     * <code>string site_key = 2;</code>
+     * <code>string site_key = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public com.google.protobuf.ByteString getSiteKeyBytes() {
       java.lang.Object ref = siteKey_;
@@ -651,11 +651,11 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The site key that was used to invoke reCAPTCHA on your site and generate
+     * Required. The site key that was used to invoke reCAPTCHA on your site and generate
      * the token.
      * </pre>
      *
-     * <code>string site_key = 2;</code>
+     * <code>string site_key = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder setSiteKey(java.lang.String value) {
       if (value == null) {
@@ -670,11 +670,11 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The site key that was used to invoke reCAPTCHA on your site and generate
+     * Required. The site key that was used to invoke reCAPTCHA on your site and generate
      * the token.
      * </pre>
      *
-     * <code>string site_key = 2;</code>
+     * <code>string site_key = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder clearSiteKey() {
 
@@ -686,11 +686,11 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The site key that was used to invoke reCAPTCHA on your site and generate
+     * Required. The site key that was used to invoke reCAPTCHA on your site and generate
      * the token.
      * </pre>
      *
-     * <code>string site_key = 2;</code>
+     * <code>string site_key = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder setSiteKeyBytes(com.google.protobuf.ByteString value) {
       if (value == null) {

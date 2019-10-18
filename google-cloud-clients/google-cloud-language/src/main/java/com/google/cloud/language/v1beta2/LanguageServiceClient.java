@@ -159,7 +159,7 @@ public class LanguageServiceClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param document Input document.
+   * @param document Required. Input document.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final AnalyzeSentimentResponse analyzeSentiment(Document document) {
@@ -230,7 +230,7 @@ public class LanguageServiceClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param document Input document.
+   * @param document Required. Input document.
    * @param encodingType The encoding type used by the API to calculate offsets.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -309,7 +309,7 @@ public class LanguageServiceClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param document Input document.
+   * @param document Required. Input document.
    * @param encodingType The encoding type used by the API to calculate offsets.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -390,7 +390,7 @@ public class LanguageServiceClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param document Input document.
+   * @param document Required. Input document.
    * @param encodingType The encoding type used by the API to calculate offsets.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -464,7 +464,7 @@ public class LanguageServiceClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param document Input document.
+   * @param document Required. Input document.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ClassifyTextResponse classifyText(Document document) {
@@ -534,8 +534,8 @@ public class LanguageServiceClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param document Input document.
-   * @param features The enabled features.
+   * @param document Required. Input document.
+   * @param features Required. The enabled features.
    * @param encodingType The encoding type used by the API to calculate offsets.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */

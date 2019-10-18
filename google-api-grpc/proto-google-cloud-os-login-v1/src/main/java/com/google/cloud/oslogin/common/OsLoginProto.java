@@ -11,6 +11,155 @@ public final class OsLoginProto {
   public static void registerAllExtensions(com.google.protobuf.ExtensionRegistry registry) {
     registerAllExtensions((com.google.protobuf.ExtensionRegistryLite) registry);
   }
+  /**
+   *
+   *
+   * <pre>
+   * The operating system options for account entries.
+   * </pre>
+   *
+   * Protobuf enum {@code google.cloud.oslogin.common.OperatingSystemType}
+   */
+  public enum OperatingSystemType implements com.google.protobuf.ProtocolMessageEnum {
+    /**
+     *
+     *
+     * <pre>
+     * The operating system type associated with the user account information is
+     * unspecified.
+     * </pre>
+     *
+     * <code>OPERATING_SYSTEM_TYPE_UNSPECIFIED = 0;</code>
+     */
+    OPERATING_SYSTEM_TYPE_UNSPECIFIED(0),
+    /**
+     *
+     *
+     * <pre>
+     * Linux user account information.
+     * </pre>
+     *
+     * <code>LINUX = 1;</code>
+     */
+    LINUX(1),
+    /**
+     *
+     *
+     * <pre>
+     * Windows user account information.
+     * </pre>
+     *
+     * <code>WINDOWS = 2;</code>
+     */
+    WINDOWS(2),
+    UNRECOGNIZED(-1),
+    ;
+
+    /**
+     *
+     *
+     * <pre>
+     * The operating system type associated with the user account information is
+     * unspecified.
+     * </pre>
+     *
+     * <code>OPERATING_SYSTEM_TYPE_UNSPECIFIED = 0;</code>
+     */
+    public static final int OPERATING_SYSTEM_TYPE_UNSPECIFIED_VALUE = 0;
+    /**
+     *
+     *
+     * <pre>
+     * Linux user account information.
+     * </pre>
+     *
+     * <code>LINUX = 1;</code>
+     */
+    public static final int LINUX_VALUE = 1;
+    /**
+     *
+     *
+     * <pre>
+     * Windows user account information.
+     * </pre>
+     *
+     * <code>WINDOWS = 2;</code>
+     */
+    public static final int WINDOWS_VALUE = 2;
+
+    public final int getNumber() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalArgumentException(
+            "Can't get the number of an unknown enum value.");
+      }
+      return value;
+    }
+
+    /** @deprecated Use {@link #forNumber(int)} instead. */
+    @java.lang.Deprecated
+    public static OperatingSystemType valueOf(int value) {
+      return forNumber(value);
+    }
+
+    public static OperatingSystemType forNumber(int value) {
+      switch (value) {
+        case 0:
+          return OPERATING_SYSTEM_TYPE_UNSPECIFIED;
+        case 1:
+          return LINUX;
+        case 2:
+          return WINDOWS;
+        default:
+          return null;
+      }
+    }
+
+    public static com.google.protobuf.Internal.EnumLiteMap<OperatingSystemType>
+        internalGetValueMap() {
+      return internalValueMap;
+    }
+
+    private static final com.google.protobuf.Internal.EnumLiteMap<OperatingSystemType>
+        internalValueMap =
+            new com.google.protobuf.Internal.EnumLiteMap<OperatingSystemType>() {
+              public OperatingSystemType findValueByNumber(int number) {
+                return OperatingSystemType.forNumber(number);
+              }
+            };
+
+    public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+      return getDescriptor().getValues().get(ordinal());
+    }
+
+    public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
+      return getDescriptor();
+    }
+
+    public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
+      return com.google.cloud.oslogin.common.OsLoginProto.getDescriptor().getEnumTypes().get(0);
+    }
+
+    private static final OperatingSystemType[] VALUES = values();
+
+    public static OperatingSystemType valueOf(
+        com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+      if (desc.getType() != getDescriptor()) {
+        throw new java.lang.IllegalArgumentException("EnumValueDescriptor is not for this type.");
+      }
+      if (desc.getIndex() == -1) {
+        return UNRECOGNIZED;
+      }
+      return VALUES[desc.getIndex()];
+    }
+
+    private final int value;
+
+    private OperatingSystemType(int value) {
+      this.value = value;
+    }
+
+    // @@protoc_insertion_point(enum_scope:google.cloud.oslogin.common.OperatingSystemType)
+  }
 
   public interface PosixAccountOrBuilder
       extends
@@ -164,7 +313,7 @@ public final class OsLoginProto {
      * Output only. A POSIX account identifier.
      * </pre>
      *
-     * <code>string account_id = 9;</code>
+     * <code>string account_id = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     java.lang.String getAccountId();
     /**
@@ -174,9 +323,51 @@ public final class OsLoginProto {
      * Output only. A POSIX account identifier.
      * </pre>
      *
-     * <code>string account_id = 9;</code>
+     * <code>string account_id = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     com.google.protobuf.ByteString getAccountIdBytes();
+
+    /**
+     *
+     *
+     * <pre>
+     * The operating system type where this account applies.
+     * </pre>
+     *
+     * <code>.google.cloud.oslogin.common.OperatingSystemType operating_system_type = 10;</code>
+     */
+    int getOperatingSystemTypeValue();
+    /**
+     *
+     *
+     * <pre>
+     * The operating system type where this account applies.
+     * </pre>
+     *
+     * <code>.google.cloud.oslogin.common.OperatingSystemType operating_system_type = 10;</code>
+     */
+    com.google.cloud.oslogin.common.OsLoginProto.OperatingSystemType getOperatingSystemType();
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The canonical resource name.
+     * </pre>
+     *
+     * <code>string name = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     */
+    java.lang.String getName();
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The canonical resource name.
+     * </pre>
+     *
+     * <code>string name = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     */
+    com.google.protobuf.ByteString getNameBytes();
   }
   /**
    *
@@ -204,6 +395,8 @@ public final class OsLoginProto {
       gecos_ = "";
       systemId_ = "";
       accountId_ = "";
+      operatingSystemType_ = 0;
+      name_ = "";
     }
 
     @java.lang.Override
@@ -285,6 +478,20 @@ public final class OsLoginProto {
                 java.lang.String s = input.readStringRequireUtf8();
 
                 accountId_ = s;
+                break;
+              }
+            case 80:
+              {
+                int rawValue = input.readEnum();
+
+                operatingSystemType_ = rawValue;
+                break;
+              }
+            case 90:
+              {
+                java.lang.String s = input.readStringRequireUtf8();
+
+                name_ = s;
                 break;
               }
             default:
@@ -592,7 +799,7 @@ public final class OsLoginProto {
      * Output only. A POSIX account identifier.
      * </pre>
      *
-     * <code>string account_id = 9;</code>
+     * <code>string account_id = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     public java.lang.String getAccountId() {
       java.lang.Object ref = accountId_;
@@ -612,7 +819,7 @@ public final class OsLoginProto {
      * Output only. A POSIX account identifier.
      * </pre>
      *
-     * <code>string account_id = 9;</code>
+     * <code>string account_id = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     public com.google.protobuf.ByteString getAccountIdBytes() {
       java.lang.Object ref = accountId_;
@@ -620,6 +827,83 @@ public final class OsLoginProto {
         com.google.protobuf.ByteString b =
             com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
         accountId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int OPERATING_SYSTEM_TYPE_FIELD_NUMBER = 10;
+    private int operatingSystemType_;
+    /**
+     *
+     *
+     * <pre>
+     * The operating system type where this account applies.
+     * </pre>
+     *
+     * <code>.google.cloud.oslogin.common.OperatingSystemType operating_system_type = 10;</code>
+     */
+    public int getOperatingSystemTypeValue() {
+      return operatingSystemType_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The operating system type where this account applies.
+     * </pre>
+     *
+     * <code>.google.cloud.oslogin.common.OperatingSystemType operating_system_type = 10;</code>
+     */
+    public com.google.cloud.oslogin.common.OsLoginProto.OperatingSystemType
+        getOperatingSystemType() {
+      @SuppressWarnings("deprecation")
+      com.google.cloud.oslogin.common.OsLoginProto.OperatingSystemType result =
+          com.google.cloud.oslogin.common.OsLoginProto.OperatingSystemType.valueOf(
+              operatingSystemType_);
+      return result == null
+          ? com.google.cloud.oslogin.common.OsLoginProto.OperatingSystemType.UNRECOGNIZED
+          : result;
+    }
+
+    public static final int NAME_FIELD_NUMBER = 11;
+    private volatile java.lang.Object name_;
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The canonical resource name.
+     * </pre>
+     *
+     * <code>string name = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     */
+    public java.lang.String getName() {
+      java.lang.Object ref = name_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        name_ = s;
+        return s;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The canonical resource name.
+     * </pre>
+     *
+     * <code>string name = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     */
+    public com.google.protobuf.ByteString getNameBytes() {
+      java.lang.Object ref = name_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        name_ = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
@@ -667,6 +951,15 @@ public final class OsLoginProto {
       if (!getAccountIdBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 9, accountId_);
       }
+      if (operatingSystemType_
+          != com.google.cloud.oslogin.common.OsLoginProto.OperatingSystemType
+              .OPERATING_SYSTEM_TYPE_UNSPECIFIED
+              .getNumber()) {
+        output.writeEnum(10, operatingSystemType_);
+      }
+      if (!getNameBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 11, name_);
+      }
       unknownFields.writeTo(output);
     }
 
@@ -703,6 +996,15 @@ public final class OsLoginProto {
       if (!getAccountIdBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(9, accountId_);
       }
+      if (operatingSystemType_
+          != com.google.cloud.oslogin.common.OsLoginProto.OperatingSystemType
+              .OPERATING_SYSTEM_TYPE_UNSPECIFIED
+              .getNumber()) {
+        size += com.google.protobuf.CodedOutputStream.computeEnumSize(10, operatingSystemType_);
+      }
+      if (!getNameBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(11, name_);
+      }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
@@ -728,6 +1030,8 @@ public final class OsLoginProto {
       if (!getGecos().equals(other.getGecos())) return false;
       if (!getSystemId().equals(other.getSystemId())) return false;
       if (!getAccountId().equals(other.getAccountId())) return false;
+      if (operatingSystemType_ != other.operatingSystemType_) return false;
+      if (!getName().equals(other.getName())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -757,6 +1061,10 @@ public final class OsLoginProto {
       hash = (53 * hash) + getSystemId().hashCode();
       hash = (37 * hash) + ACCOUNT_ID_FIELD_NUMBER;
       hash = (53 * hash) + getAccountId().hashCode();
+      hash = (37 * hash) + OPERATING_SYSTEM_TYPE_FIELD_NUMBER;
+      hash = (53 * hash) + operatingSystemType_;
+      hash = (37 * hash) + NAME_FIELD_NUMBER;
+      hash = (53 * hash) + getName().hashCode();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -923,6 +1231,10 @@ public final class OsLoginProto {
 
         accountId_ = "";
 
+        operatingSystemType_ = 0;
+
+        name_ = "";
+
         return this;
       }
 
@@ -959,6 +1271,8 @@ public final class OsLoginProto {
         result.gecos_ = gecos_;
         result.systemId_ = systemId_;
         result.accountId_ = accountId_;
+        result.operatingSystemType_ = operatingSystemType_;
+        result.name_ = name_;
         onBuilt();
         return result;
       }
@@ -1042,6 +1356,13 @@ public final class OsLoginProto {
         }
         if (!other.getAccountId().isEmpty()) {
           accountId_ = other.accountId_;
+          onChanged();
+        }
+        if (other.operatingSystemType_ != 0) {
+          setOperatingSystemTypeValue(other.getOperatingSystemTypeValue());
+        }
+        if (!other.getName().isEmpty()) {
+          name_ = other.name_;
           onChanged();
         }
         this.mergeUnknownFields(other.unknownFields);
@@ -1689,7 +2010,7 @@ public final class OsLoginProto {
        * Output only. A POSIX account identifier.
        * </pre>
        *
-       * <code>string account_id = 9;</code>
+       * <code>string account_id = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
        */
       public java.lang.String getAccountId() {
         java.lang.Object ref = accountId_;
@@ -1709,7 +2030,7 @@ public final class OsLoginProto {
        * Output only. A POSIX account identifier.
        * </pre>
        *
-       * <code>string account_id = 9;</code>
+       * <code>string account_id = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
        */
       public com.google.protobuf.ByteString getAccountIdBytes() {
         java.lang.Object ref = accountId_;
@@ -1729,7 +2050,7 @@ public final class OsLoginProto {
        * Output only. A POSIX account identifier.
        * </pre>
        *
-       * <code>string account_id = 9;</code>
+       * <code>string account_id = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
        */
       public Builder setAccountId(java.lang.String value) {
         if (value == null) {
@@ -1747,7 +2068,7 @@ public final class OsLoginProto {
        * Output only. A POSIX account identifier.
        * </pre>
        *
-       * <code>string account_id = 9;</code>
+       * <code>string account_id = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
        */
       public Builder clearAccountId() {
 
@@ -1762,7 +2083,7 @@ public final class OsLoginProto {
        * Output only. A POSIX account identifier.
        * </pre>
        *
-       * <code>string account_id = 9;</code>
+       * <code>string account_id = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
        */
       public Builder setAccountIdBytes(com.google.protobuf.ByteString value) {
         if (value == null) {
@@ -1771,6 +2092,181 @@ public final class OsLoginProto {
         checkByteStringIsUtf8(value);
 
         accountId_ = value;
+        onChanged();
+        return this;
+      }
+
+      private int operatingSystemType_ = 0;
+      /**
+       *
+       *
+       * <pre>
+       * The operating system type where this account applies.
+       * </pre>
+       *
+       * <code>.google.cloud.oslogin.common.OperatingSystemType operating_system_type = 10;</code>
+       */
+      public int getOperatingSystemTypeValue() {
+        return operatingSystemType_;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The operating system type where this account applies.
+       * </pre>
+       *
+       * <code>.google.cloud.oslogin.common.OperatingSystemType operating_system_type = 10;</code>
+       */
+      public Builder setOperatingSystemTypeValue(int value) {
+        operatingSystemType_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The operating system type where this account applies.
+       * </pre>
+       *
+       * <code>.google.cloud.oslogin.common.OperatingSystemType operating_system_type = 10;</code>
+       */
+      public com.google.cloud.oslogin.common.OsLoginProto.OperatingSystemType
+          getOperatingSystemType() {
+        @SuppressWarnings("deprecation")
+        com.google.cloud.oslogin.common.OsLoginProto.OperatingSystemType result =
+            com.google.cloud.oslogin.common.OsLoginProto.OperatingSystemType.valueOf(
+                operatingSystemType_);
+        return result == null
+            ? com.google.cloud.oslogin.common.OsLoginProto.OperatingSystemType.UNRECOGNIZED
+            : result;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The operating system type where this account applies.
+       * </pre>
+       *
+       * <code>.google.cloud.oslogin.common.OperatingSystemType operating_system_type = 10;</code>
+       */
+      public Builder setOperatingSystemType(
+          com.google.cloud.oslogin.common.OsLoginProto.OperatingSystemType value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+
+        operatingSystemType_ = value.getNumber();
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The operating system type where this account applies.
+       * </pre>
+       *
+       * <code>.google.cloud.oslogin.common.OperatingSystemType operating_system_type = 10;</code>
+       */
+      public Builder clearOperatingSystemType() {
+
+        operatingSystemType_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object name_ = "";
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The canonical resource name.
+       * </pre>
+       *
+       * <code>string name = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       */
+      public java.lang.String getName() {
+        java.lang.Object ref = name_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          name_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The canonical resource name.
+       * </pre>
+       *
+       * <code>string name = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       */
+      public com.google.protobuf.ByteString getNameBytes() {
+        java.lang.Object ref = name_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          name_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The canonical resource name.
+       * </pre>
+       *
+       * <code>string name = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       */
+      public Builder setName(java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+
+        name_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The canonical resource name.
+       * </pre>
+       *
+       * <code>string name = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       */
+      public Builder clearName() {
+
+        name_ = getDefaultInstance().getName();
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The canonical resource name.
+       * </pre>
+       *
+       * <code>string name = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       */
+      public Builder setNameBytes(com.google.protobuf.ByteString value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+
+        name_ = value;
         onChanged();
         return this;
       }
@@ -1875,7 +2371,7 @@ public final class OsLoginProto {
      * Output only. The SHA-256 fingerprint of the SSH public key.
      * </pre>
      *
-     * <code>string fingerprint = 3;</code>
+     * <code>string fingerprint = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     java.lang.String getFingerprint();
     /**
@@ -1885,9 +2381,30 @@ public final class OsLoginProto {
      * Output only. The SHA-256 fingerprint of the SSH public key.
      * </pre>
      *
-     * <code>string fingerprint = 3;</code>
+     * <code>string fingerprint = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     com.google.protobuf.ByteString getFingerprintBytes();
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The canonical resource name.
+     * </pre>
+     *
+     * <code>string name = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     */
+    java.lang.String getName();
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The canonical resource name.
+     * </pre>
+     *
+     * <code>string name = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     */
+    com.google.protobuf.ByteString getNameBytes();
   }
   /**
    *
@@ -1911,6 +2428,7 @@ public final class OsLoginProto {
     private SshPublicKey() {
       key_ = "";
       fingerprint_ = "";
+      name_ = "";
     }
 
     @java.lang.Override
@@ -1954,6 +2472,13 @@ public final class OsLoginProto {
                 java.lang.String s = input.readStringRequireUtf8();
 
                 fingerprint_ = s;
+                break;
+              }
+            case 34:
+              {
+                java.lang.String s = input.readStringRequireUtf8();
+
+                name_ = s;
                 break;
               }
             default:
@@ -2061,7 +2586,7 @@ public final class OsLoginProto {
      * Output only. The SHA-256 fingerprint of the SSH public key.
      * </pre>
      *
-     * <code>string fingerprint = 3;</code>
+     * <code>string fingerprint = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     public java.lang.String getFingerprint() {
       java.lang.Object ref = fingerprint_;
@@ -2081,7 +2606,7 @@ public final class OsLoginProto {
      * Output only. The SHA-256 fingerprint of the SSH public key.
      * </pre>
      *
-     * <code>string fingerprint = 3;</code>
+     * <code>string fingerprint = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     public com.google.protobuf.ByteString getFingerprintBytes() {
       java.lang.Object ref = fingerprint_;
@@ -2089,6 +2614,49 @@ public final class OsLoginProto {
         com.google.protobuf.ByteString b =
             com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
         fingerprint_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int NAME_FIELD_NUMBER = 4;
+    private volatile java.lang.Object name_;
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The canonical resource name.
+     * </pre>
+     *
+     * <code>string name = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     */
+    public java.lang.String getName() {
+      java.lang.Object ref = name_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        name_ = s;
+        return s;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The canonical resource name.
+     * </pre>
+     *
+     * <code>string name = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     */
+    public com.google.protobuf.ByteString getNameBytes() {
+      java.lang.Object ref = name_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        name_ = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
@@ -2118,6 +2686,9 @@ public final class OsLoginProto {
       if (!getFingerprintBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 3, fingerprint_);
       }
+      if (!getNameBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 4, name_);
+      }
       unknownFields.writeTo(output);
     }
 
@@ -2135,6 +2706,9 @@ public final class OsLoginProto {
       }
       if (!getFingerprintBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, fingerprint_);
+      }
+      if (!getNameBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, name_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -2155,6 +2729,7 @@ public final class OsLoginProto {
       if (!getKey().equals(other.getKey())) return false;
       if (getExpirationTimeUsec() != other.getExpirationTimeUsec()) return false;
       if (!getFingerprint().equals(other.getFingerprint())) return false;
+      if (!getName().equals(other.getName())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -2172,6 +2747,8 @@ public final class OsLoginProto {
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(getExpirationTimeUsec());
       hash = (37 * hash) + FINGERPRINT_FIELD_NUMBER;
       hash = (53 * hash) + getFingerprint().hashCode();
+      hash = (37 * hash) + NAME_FIELD_NUMBER;
+      hash = (53 * hash) + getName().hashCode();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -2326,6 +2903,8 @@ public final class OsLoginProto {
 
         fingerprint_ = "";
 
+        name_ = "";
+
         return this;
       }
 
@@ -2356,6 +2935,7 @@ public final class OsLoginProto {
         result.key_ = key_;
         result.expirationTimeUsec_ = expirationTimeUsec_;
         result.fingerprint_ = fingerprint_;
+        result.name_ = name_;
         onBuilt();
         return result;
       }
@@ -2417,6 +2997,10 @@ public final class OsLoginProto {
         }
         if (!other.getFingerprint().isEmpty()) {
           fingerprint_ = other.fingerprint_;
+          onChanged();
+        }
+        if (!other.getName().isEmpty()) {
+          name_ = other.name_;
           onChanged();
         }
         this.mergeUnknownFields(other.unknownFields);
@@ -2605,7 +3189,7 @@ public final class OsLoginProto {
        * Output only. The SHA-256 fingerprint of the SSH public key.
        * </pre>
        *
-       * <code>string fingerprint = 3;</code>
+       * <code>string fingerprint = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
        */
       public java.lang.String getFingerprint() {
         java.lang.Object ref = fingerprint_;
@@ -2625,7 +3209,7 @@ public final class OsLoginProto {
        * Output only. The SHA-256 fingerprint of the SSH public key.
        * </pre>
        *
-       * <code>string fingerprint = 3;</code>
+       * <code>string fingerprint = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
        */
       public com.google.protobuf.ByteString getFingerprintBytes() {
         java.lang.Object ref = fingerprint_;
@@ -2645,7 +3229,7 @@ public final class OsLoginProto {
        * Output only. The SHA-256 fingerprint of the SSH public key.
        * </pre>
        *
-       * <code>string fingerprint = 3;</code>
+       * <code>string fingerprint = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
        */
       public Builder setFingerprint(java.lang.String value) {
         if (value == null) {
@@ -2663,7 +3247,7 @@ public final class OsLoginProto {
        * Output only. The SHA-256 fingerprint of the SSH public key.
        * </pre>
        *
-       * <code>string fingerprint = 3;</code>
+       * <code>string fingerprint = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
        */
       public Builder clearFingerprint() {
 
@@ -2678,7 +3262,7 @@ public final class OsLoginProto {
        * Output only. The SHA-256 fingerprint of the SSH public key.
        * </pre>
        *
-       * <code>string fingerprint = 3;</code>
+       * <code>string fingerprint = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
        */
       public Builder setFingerprintBytes(com.google.protobuf.ByteString value) {
         if (value == null) {
@@ -2687,6 +3271,100 @@ public final class OsLoginProto {
         checkByteStringIsUtf8(value);
 
         fingerprint_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object name_ = "";
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The canonical resource name.
+       * </pre>
+       *
+       * <code>string name = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       */
+      public java.lang.String getName() {
+        java.lang.Object ref = name_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          name_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The canonical resource name.
+       * </pre>
+       *
+       * <code>string name = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       */
+      public com.google.protobuf.ByteString getNameBytes() {
+        java.lang.Object ref = name_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          name_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The canonical resource name.
+       * </pre>
+       *
+       * <code>string name = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       */
+      public Builder setName(java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+
+        name_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The canonical resource name.
+       * </pre>
+       *
+       * <code>string name = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       */
+      public Builder clearName() {
+
+        name_ = getDefaultInstance().getName();
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The canonical resource name.
+       * </pre>
+       *
+       * <code>string name = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       */
+      public Builder setNameBytes(com.google.protobuf.ByteString value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+
+        name_ = value;
         onChanged();
         return this;
       }
@@ -2761,19 +3439,29 @@ public final class OsLoginProto {
   static {
     java.lang.String[] descriptorData = {
       "\n(google/cloud/oslogin/common/common.pro"
-          + "to\022\033google.cloud.oslogin.common\032\034google/"
-          + "api/annotations.proto\"\250\001\n\014PosixAccount\022\017"
-          + "\n\007primary\030\001 \001(\010\022\020\n\010username\030\002 \001(\t\022\013\n\003uid"
-          + "\030\003 \001(\003\022\013\n\003gid\030\004 \001(\003\022\026\n\016home_directory\030\005 "
-          + "\001(\t\022\r\n\005shell\030\006 \001(\t\022\r\n\005gecos\030\007 \001(\t\022\021\n\tsys"
-          + "tem_id\030\010 \001(\t\022\022\n\naccount_id\030\t \001(\t\"N\n\014SshP"
-          + "ublicKey\022\013\n\003key\030\001 \001(\t\022\034\n\024expiration_time"
-          + "_usec\030\002 \001(\003\022\023\n\013fingerprint\030\003 \001(\tB\256\001\n\037com"
-          + ".google.cloud.oslogin.commonB\014OsLoginPro"
-          + "toZAgoogle.golang.org/genproto/googleapi"
-          + "s/cloud/oslogin/common;common\252\002\033Google.C"
-          + "loud.OsLogin.Common\312\002\033Google\\Cloud\\OsLog"
-          + "in\\Commonb\006proto3"
+          + "to\022\033google.cloud.oslogin.common\032\037google/"
+          + "api/field_behavior.proto\032\031google/api/res"
+          + "ource.proto\"\334\002\n\014PosixAccount\022\017\n\007primary\030"
+          + "\001 \001(\010\022\020\n\010username\030\002 \001(\t\022\013\n\003uid\030\003 \001(\003\022\013\n\003"
+          + "gid\030\004 \001(\003\022\026\n\016home_directory\030\005 \001(\t\022\r\n\005she"
+          + "ll\030\006 \001(\t\022\r\n\005gecos\030\007 \001(\t\022\021\n\tsystem_id\030\010 \001"
+          + "(\t\022\027\n\naccount_id\030\t \001(\tB\003\340A\003\022O\n\025operating"
+          + "_system_type\030\n \001(\01620.google.cloud.oslogi"
+          + "n.common.OperatingSystemType\022\021\n\004name\030\013 \001"
+          + "(\tB\003\340A\003:I\352AF\n#oslogin.googleapis.com/Pos"
+          + "ixAccount\022\037users/{user}/projects/{projec"
+          + "t}\"\272\001\n\014SshPublicKey\022\013\n\003key\030\001 \001(\t\022\034\n\024expi"
+          + "ration_time_usec\030\002 \001(\003\022\030\n\013fingerprint\030\003 "
+          + "\001(\tB\003\340A\003\022\021\n\004name\030\004 \001(\tB\003\340A\003:R\352AO\n#oslogi"
+          + "n.googleapis.com/SshPublicKey\022(users/{us"
+          + "er}/sshPublicKeys/{fingerprint}*T\n\023Opera"
+          + "tingSystemType\022%\n!OPERATING_SYSTEM_TYPE_"
+          + "UNSPECIFIED\020\000\022\t\n\005LINUX\020\001\022\013\n\007WINDOWS\020\002B\256\001"
+          + "\n\037com.google.cloud.oslogin.commonB\014OsLog"
+          + "inProtoZAgoogle.golang.org/genproto/goog"
+          + "leapis/cloud/oslogin/common;common\252\002\033Goo"
+          + "gle.Cloud.OsLogin.Common\312\002\033Google\\Cloud\\"
+          + "OsLogin\\Commonb\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner() {
@@ -2786,7 +3474,8 @@ public final class OsLoginProto {
     com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
         descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
-          com.google.api.AnnotationsProto.getDescriptor(),
+          com.google.api.FieldBehaviorProto.getDescriptor(),
+          com.google.api.ResourceProto.getDescriptor(),
         },
         assigner);
     internal_static_google_cloud_oslogin_common_PosixAccount_descriptor =
@@ -2804,6 +3493,8 @@ public final class OsLoginProto {
               "Gecos",
               "SystemId",
               "AccountId",
+              "OperatingSystemType",
+              "Name",
             });
     internal_static_google_cloud_oslogin_common_SshPublicKey_descriptor =
         getDescriptor().getMessageTypes().get(1);
@@ -2811,9 +3502,16 @@ public final class OsLoginProto {
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_oslogin_common_SshPublicKey_descriptor,
             new java.lang.String[] {
-              "Key", "ExpirationTimeUsec", "Fingerprint",
+              "Key", "ExpirationTimeUsec", "Fingerprint", "Name",
             });
-    com.google.api.AnnotationsProto.getDescriptor();
+    com.google.protobuf.ExtensionRegistry registry =
+        com.google.protobuf.ExtensionRegistry.newInstance();
+    registry.add(com.google.api.FieldBehaviorProto.fieldBehavior);
+    registry.add(com.google.api.ResourceProto.resource);
+    com.google.protobuf.Descriptors.FileDescriptor.internalUpdateFileDescriptor(
+        descriptor, registry);
+    com.google.api.FieldBehaviorProto.getDescriptor();
+    com.google.api.ResourceProto.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

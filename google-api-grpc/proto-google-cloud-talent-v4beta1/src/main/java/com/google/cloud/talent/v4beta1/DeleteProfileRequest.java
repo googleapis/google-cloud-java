@@ -99,11 +99,11 @@ public final class DeleteProfileRequest extends com.google.protobuf.GeneratedMes
    * <pre>
    * Required. Resource name of the profile to be deleted.
    * The format is
-   * "projects/{project_id}/tenants/{tenant_id}/profiles/{profile_id}",
-   * for example, "projects/api-test-project/tenants/foo/profiles/bar".
+   * "projects/{project_id}/tenants/{tenant_id}/profiles/{profile_id}". For
+   * example, "projects/foo/tenants/bar/profiles/baz".
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   public java.lang.String getName() {
     java.lang.Object ref = name_;
@@ -122,11 +122,11 @@ public final class DeleteProfileRequest extends com.google.protobuf.GeneratedMes
    * <pre>
    * Required. Resource name of the profile to be deleted.
    * The format is
-   * "projects/{project_id}/tenants/{tenant_id}/profiles/{profile_id}",
-   * for example, "projects/api-test-project/tenants/foo/profiles/bar".
+   * "projects/{project_id}/tenants/{tenant_id}/profiles/{profile_id}". For
+   * example, "projects/foo/tenants/bar/profiles/baz".
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   public com.google.protobuf.ByteString getNameBytes() {
     java.lang.Object ref = name_;
@@ -465,11 +465,11 @@ public final class DeleteProfileRequest extends com.google.protobuf.GeneratedMes
      * <pre>
      * Required. Resource name of the profile to be deleted.
      * The format is
-     * "projects/{project_id}/tenants/{tenant_id}/profiles/{profile_id}",
-     * for example, "projects/api-test-project/tenants/foo/profiles/bar".
+     * "projects/{project_id}/tenants/{tenant_id}/profiles/{profile_id}". For
+     * example, "projects/foo/tenants/bar/profiles/baz".
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public java.lang.String getName() {
       java.lang.Object ref = name_;
@@ -488,11 +488,11 @@ public final class DeleteProfileRequest extends com.google.protobuf.GeneratedMes
      * <pre>
      * Required. Resource name of the profile to be deleted.
      * The format is
-     * "projects/{project_id}/tenants/{tenant_id}/profiles/{profile_id}",
-     * for example, "projects/api-test-project/tenants/foo/profiles/bar".
+     * "projects/{project_id}/tenants/{tenant_id}/profiles/{profile_id}". For
+     * example, "projects/foo/tenants/bar/profiles/baz".
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public com.google.protobuf.ByteString getNameBytes() {
       java.lang.Object ref = name_;
@@ -511,11 +511,11 @@ public final class DeleteProfileRequest extends com.google.protobuf.GeneratedMes
      * <pre>
      * Required. Resource name of the profile to be deleted.
      * The format is
-     * "projects/{project_id}/tenants/{tenant_id}/profiles/{profile_id}",
-     * for example, "projects/api-test-project/tenants/foo/profiles/bar".
+     * "projects/{project_id}/tenants/{tenant_id}/profiles/{profile_id}". For
+     * example, "projects/foo/tenants/bar/profiles/baz".
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder setName(java.lang.String value) {
       if (value == null) {
@@ -532,11 +532,11 @@ public final class DeleteProfileRequest extends com.google.protobuf.GeneratedMes
      * <pre>
      * Required. Resource name of the profile to be deleted.
      * The format is
-     * "projects/{project_id}/tenants/{tenant_id}/profiles/{profile_id}",
-     * for example, "projects/api-test-project/tenants/foo/profiles/bar".
+     * "projects/{project_id}/tenants/{tenant_id}/profiles/{profile_id}". For
+     * example, "projects/foo/tenants/bar/profiles/baz".
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder clearName() {
 
@@ -550,11 +550,11 @@ public final class DeleteProfileRequest extends com.google.protobuf.GeneratedMes
      * <pre>
      * Required. Resource name of the profile to be deleted.
      * The format is
-     * "projects/{project_id}/tenants/{tenant_id}/profiles/{profile_id}",
-     * for example, "projects/api-test-project/tenants/foo/profiles/bar".
+     * "projects/{project_id}/tenants/{tenant_id}/profiles/{profile_id}". For
+     * example, "projects/foo/tenants/bar/profiles/baz".
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder setNameBytes(com.google.protobuf.ByteString value) {
       if (value == null) {

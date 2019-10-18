@@ -19,7 +19,8 @@ public interface LifecycleConfigOrBuilder
    * cluster when it has had no jobs running for 10 minutes.
    * </pre>
    *
-   * <code>.google.protobuf.Duration idle_delete_ttl = 1;</code>
+   * <code>.google.protobuf.Duration idle_delete_ttl = 1 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   boolean hasIdleDeleteTtl();
   /**
@@ -33,7 +34,8 @@ public interface LifecycleConfigOrBuilder
    * cluster when it has had no jobs running for 10 minutes.
    * </pre>
    *
-   * <code>.google.protobuf.Duration idle_delete_ttl = 1;</code>
+   * <code>.google.protobuf.Duration idle_delete_ttl = 1 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   com.google.protobuf.Duration getIdleDeleteTtl();
   /**
@@ -47,7 +49,8 @@ public interface LifecycleConfigOrBuilder
    * cluster when it has had no jobs running for 10 minutes.
    * </pre>
    *
-   * <code>.google.protobuf.Duration idle_delete_ttl = 1;</code>
+   * <code>.google.protobuf.Duration idle_delete_ttl = 1 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   com.google.protobuf.DurationOrBuilder getIdleDeleteTtlOrBuilder();
 
@@ -118,6 +121,46 @@ public interface LifecycleConfigOrBuilder
    * <code>.google.protobuf.Duration auto_delete_ttl = 3;</code>
    */
   com.google.protobuf.DurationOrBuilder getAutoDeleteTtlOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The time when cluster became idle (most recent job finished)
+   * and became eligible for deletion due to idleness.
+   * </pre>
+   *
+   * <code>
+   * .google.protobuf.Timestamp idle_start_time = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  boolean hasIdleStartTime();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The time when cluster became idle (most recent job finished)
+   * and became eligible for deletion due to idleness.
+   * </pre>
+   *
+   * <code>
+   * .google.protobuf.Timestamp idle_start_time = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  com.google.protobuf.Timestamp getIdleStartTime();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The time when cluster became idle (most recent job finished)
+   * and became eligible for deletion due to idleness.
+   * </pre>
+   *
+   * <code>
+   * .google.protobuf.Timestamp idle_start_time = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  com.google.protobuf.TimestampOrBuilder getIdleStartTimeOrBuilder();
 
   public com.google.cloud.dataproc.v1beta2.LifecycleConfig.TtlCase getTtlCase();
 }

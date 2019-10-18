@@ -7,12 +7,13 @@ package com.google.monitoring.v3;
  *
  *
  * <pre>
- * An internal checker allows uptime checks to run on private/internal GCP
+ * An internal checker allows Uptime checks to run on private/internal GCP
  * resources.
  * </pre>
  *
  * Protobuf type {@code google.monitoring.v3.InternalChecker}
  */
+@java.lang.Deprecated
 public final class InternalChecker extends com.google.protobuf.GeneratedMessageV3
     implements
     // @@protoc_insertion_point(message_implements:google.monitoring.v3.InternalChecker)
@@ -29,6 +30,7 @@ public final class InternalChecker extends com.google.protobuf.GeneratedMessageV
     network_ = "";
     gcpZone_ = "";
     peerProjectId_ = "";
+    state_ = 0;
   }
 
   @java.lang.Override
@@ -90,6 +92,13 @@ public final class InternalChecker extends com.google.protobuf.GeneratedMessageV
               peerProjectId_ = s;
               break;
             }
+          case 56:
+            {
+              int rawValue = input.readEnum();
+
+              state_ = rawValue;
+              break;
+            }
           default:
             {
               if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -124,6 +133,171 @@ public final class InternalChecker extends com.google.protobuf.GeneratedMessageV
             com.google.monitoring.v3.InternalChecker.Builder.class);
   }
 
+  /**
+   *
+   *
+   * <pre>
+   * Operational states for an internal checker.
+   * </pre>
+   *
+   * Protobuf enum {@code google.monitoring.v3.InternalChecker.State}
+   */
+  public enum State implements com.google.protobuf.ProtocolMessageEnum {
+    /**
+     *
+     *
+     * <pre>
+     * An internal checker should never be in the unspecified state.
+     * </pre>
+     *
+     * <code>UNSPECIFIED = 0;</code>
+     */
+    UNSPECIFIED(0),
+    /**
+     *
+     *
+     * <pre>
+     * The checker is being created, provisioned, and configured. A checker in
+     * this state can be returned by `ListInternalCheckers` or
+     * `GetInternalChecker`, as well as by examining the [long running
+     * Operation](https://cloud.google.com/apis/design/design_patterns#long_running_operations)
+     * that created it.
+     * </pre>
+     *
+     * <code>CREATING = 1;</code>
+     */
+    CREATING(1),
+    /**
+     *
+     *
+     * <pre>
+     * The checker is running and available for use. A checker in this state
+     * can be returned by `ListInternalCheckers` or `GetInternalChecker` as
+     * well as by examining the [long running
+     * Operation](https://cloud.google.com/apis/design/design_patterns#long_running_operations)
+     * that created it.
+     * If a checker is being torn down, it is neither visible nor usable, so
+     * there is no "deleting" or "down" state.
+     * </pre>
+     *
+     * <code>RUNNING = 2;</code>
+     */
+    RUNNING(2),
+    UNRECOGNIZED(-1),
+    ;
+
+    /**
+     *
+     *
+     * <pre>
+     * An internal checker should never be in the unspecified state.
+     * </pre>
+     *
+     * <code>UNSPECIFIED = 0;</code>
+     */
+    public static final int UNSPECIFIED_VALUE = 0;
+    /**
+     *
+     *
+     * <pre>
+     * The checker is being created, provisioned, and configured. A checker in
+     * this state can be returned by `ListInternalCheckers` or
+     * `GetInternalChecker`, as well as by examining the [long running
+     * Operation](https://cloud.google.com/apis/design/design_patterns#long_running_operations)
+     * that created it.
+     * </pre>
+     *
+     * <code>CREATING = 1;</code>
+     */
+    public static final int CREATING_VALUE = 1;
+    /**
+     *
+     *
+     * <pre>
+     * The checker is running and available for use. A checker in this state
+     * can be returned by `ListInternalCheckers` or `GetInternalChecker` as
+     * well as by examining the [long running
+     * Operation](https://cloud.google.com/apis/design/design_patterns#long_running_operations)
+     * that created it.
+     * If a checker is being torn down, it is neither visible nor usable, so
+     * there is no "deleting" or "down" state.
+     * </pre>
+     *
+     * <code>RUNNING = 2;</code>
+     */
+    public static final int RUNNING_VALUE = 2;
+
+    public final int getNumber() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalArgumentException(
+            "Can't get the number of an unknown enum value.");
+      }
+      return value;
+    }
+
+    /** @deprecated Use {@link #forNumber(int)} instead. */
+    @java.lang.Deprecated
+    public static State valueOf(int value) {
+      return forNumber(value);
+    }
+
+    public static State forNumber(int value) {
+      switch (value) {
+        case 0:
+          return UNSPECIFIED;
+        case 1:
+          return CREATING;
+        case 2:
+          return RUNNING;
+        default:
+          return null;
+      }
+    }
+
+    public static com.google.protobuf.Internal.EnumLiteMap<State> internalGetValueMap() {
+      return internalValueMap;
+    }
+
+    private static final com.google.protobuf.Internal.EnumLiteMap<State> internalValueMap =
+        new com.google.protobuf.Internal.EnumLiteMap<State>() {
+          public State findValueByNumber(int number) {
+            return State.forNumber(number);
+          }
+        };
+
+    public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+      return getDescriptor().getValues().get(ordinal());
+    }
+
+    public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
+      return getDescriptor();
+    }
+
+    public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
+      return com.google.monitoring.v3.InternalChecker.getDescriptor().getEnumTypes().get(0);
+    }
+
+    private static final State[] VALUES = values();
+
+    public static State valueOf(com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+      if (desc.getType() != getDescriptor()) {
+        throw new java.lang.IllegalArgumentException("EnumValueDescriptor is not for this type.");
+      }
+      if (desc.getIndex() == -1) {
+        return UNRECOGNIZED;
+      }
+      return VALUES[desc.getIndex()];
+    }
+
+    private final int value;
+
+    private State(int value) {
+      this.value = value;
+    }
+
+    // @@protoc_insertion_point(enum_scope:google.monitoring.v3.InternalChecker.State)
+  }
+
   public static final int NAME_FIELD_NUMBER = 1;
   private volatile java.lang.Object name_;
   /**
@@ -132,8 +306,8 @@ public final class InternalChecker extends com.google.protobuf.GeneratedMessageV
    * <pre>
    * A unique resource name for this InternalChecker. The format is:
    *   `projects/[PROJECT_ID]/internalCheckers/[INTERNAL_CHECKER_ID]`.
-   * PROJECT_ID is the stackdriver workspace project for the
-   * uptime check config associated with the internal checker.
+   * `[PROJECT_ID]` is the Stackdriver Workspace project for the
+   * Uptime check config associated with the internal checker.
    * </pre>
    *
    * <code>string name = 1;</code>
@@ -155,8 +329,8 @@ public final class InternalChecker extends com.google.protobuf.GeneratedMessageV
    * <pre>
    * A unique resource name for this InternalChecker. The format is:
    *   `projects/[PROJECT_ID]/internalCheckers/[INTERNAL_CHECKER_ID]`.
-   * PROJECT_ID is the stackdriver workspace project for the
-   * uptime check config associated with the internal checker.
+   * `[PROJECT_ID]` is the Stackdriver Workspace project for the
+   * Uptime check config associated with the internal checker.
    * </pre>
    *
    * <code>string name = 1;</code>
@@ -271,8 +445,8 @@ public final class InternalChecker extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * The GCP zone the uptime check should egress from. Only respected for
-   * internal uptime checks, where internal_network is specified.
+   * The GCP zone the Uptime check should egress from. Only respected for
+   * internal Uptime checks, where internal_network is specified.
    * </pre>
    *
    * <code>string gcp_zone = 4;</code>
@@ -292,8 +466,8 @@ public final class InternalChecker extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * The GCP zone the uptime check should egress from. Only respected for
-   * internal uptime checks, where internal_network is specified.
+   * The GCP zone the Uptime check should egress from. Only respected for
+   * internal Uptime checks, where internal_network is specified.
    * </pre>
    *
    * <code>string gcp_zone = 4;</code>
@@ -316,8 +490,8 @@ public final class InternalChecker extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * The GCP project_id where the internal checker lives. Not necessary
-   * the same as the workspace project.
+   * The GCP project ID where the internal checker lives. Not necessary
+   * the same as the Workspace project.
    * </pre>
    *
    * <code>string peer_project_id = 6;</code>
@@ -337,8 +511,8 @@ public final class InternalChecker extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * The GCP project_id where the internal checker lives. Not necessary
-   * the same as the workspace project.
+   * The GCP project ID where the internal checker lives. Not necessary
+   * the same as the Workspace project.
    * </pre>
    *
    * <code>string peer_project_id = 6;</code>
@@ -353,6 +527,36 @@ public final class InternalChecker extends com.google.protobuf.GeneratedMessageV
     } else {
       return (com.google.protobuf.ByteString) ref;
     }
+  }
+
+  public static final int STATE_FIELD_NUMBER = 7;
+  private int state_;
+  /**
+   *
+   *
+   * <pre>
+   * The current operational state of the internal checker.
+   * </pre>
+   *
+   * <code>.google.monitoring.v3.InternalChecker.State state = 7;</code>
+   */
+  public int getStateValue() {
+    return state_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The current operational state of the internal checker.
+   * </pre>
+   *
+   * <code>.google.monitoring.v3.InternalChecker.State state = 7;</code>
+   */
+  public com.google.monitoring.v3.InternalChecker.State getState() {
+    @SuppressWarnings("deprecation")
+    com.google.monitoring.v3.InternalChecker.State result =
+        com.google.monitoring.v3.InternalChecker.State.valueOf(state_);
+    return result == null ? com.google.monitoring.v3.InternalChecker.State.UNRECOGNIZED : result;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -384,6 +588,9 @@ public final class InternalChecker extends com.google.protobuf.GeneratedMessageV
     if (!getPeerProjectIdBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 6, peerProjectId_);
     }
+    if (state_ != com.google.monitoring.v3.InternalChecker.State.UNSPECIFIED.getNumber()) {
+      output.writeEnum(7, state_);
+    }
     unknownFields.writeTo(output);
   }
 
@@ -408,6 +615,9 @@ public final class InternalChecker extends com.google.protobuf.GeneratedMessageV
     if (!getPeerProjectIdBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, peerProjectId_);
     }
+    if (state_ != com.google.monitoring.v3.InternalChecker.State.UNSPECIFIED.getNumber()) {
+      size += com.google.protobuf.CodedOutputStream.computeEnumSize(7, state_);
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -428,6 +638,7 @@ public final class InternalChecker extends com.google.protobuf.GeneratedMessageV
     if (!getNetwork().equals(other.getNetwork())) return false;
     if (!getGcpZone().equals(other.getGcpZone())) return false;
     if (!getPeerProjectId().equals(other.getPeerProjectId())) return false;
+    if (state_ != other.state_) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -449,6 +660,8 @@ public final class InternalChecker extends com.google.protobuf.GeneratedMessageV
     hash = (53 * hash) + getGcpZone().hashCode();
     hash = (37 * hash) + PEER_PROJECT_ID_FIELD_NUMBER;
     hash = (53 * hash) + getPeerProjectId().hashCode();
+    hash = (37 * hash) + STATE_FIELD_NUMBER;
+    hash = (53 * hash) + state_;
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -553,7 +766,7 @@ public final class InternalChecker extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * An internal checker allows uptime checks to run on private/internal GCP
+   * An internal checker allows Uptime checks to run on private/internal GCP
    * resources.
    * </pre>
    *
@@ -605,6 +818,8 @@ public final class InternalChecker extends com.google.protobuf.GeneratedMessageV
 
       peerProjectId_ = "";
 
+      state_ = 0;
+
       return this;
     }
 
@@ -637,6 +852,7 @@ public final class InternalChecker extends com.google.protobuf.GeneratedMessageV
       result.network_ = network_;
       result.gcpZone_ = gcpZone_;
       result.peerProjectId_ = peerProjectId_;
+      result.state_ = state_;
       onBuilt();
       return result;
     }
@@ -706,6 +922,9 @@ public final class InternalChecker extends com.google.protobuf.GeneratedMessageV
         peerProjectId_ = other.peerProjectId_;
         onChanged();
       }
+      if (other.state_ != 0) {
+        setStateValue(other.getStateValue());
+      }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
       return this;
@@ -742,8 +961,8 @@ public final class InternalChecker extends com.google.protobuf.GeneratedMessageV
      * <pre>
      * A unique resource name for this InternalChecker. The format is:
      *   `projects/[PROJECT_ID]/internalCheckers/[INTERNAL_CHECKER_ID]`.
-     * PROJECT_ID is the stackdriver workspace project for the
-     * uptime check config associated with the internal checker.
+     * `[PROJECT_ID]` is the Stackdriver Workspace project for the
+     * Uptime check config associated with the internal checker.
      * </pre>
      *
      * <code>string name = 1;</code>
@@ -765,8 +984,8 @@ public final class InternalChecker extends com.google.protobuf.GeneratedMessageV
      * <pre>
      * A unique resource name for this InternalChecker. The format is:
      *   `projects/[PROJECT_ID]/internalCheckers/[INTERNAL_CHECKER_ID]`.
-     * PROJECT_ID is the stackdriver workspace project for the
-     * uptime check config associated with the internal checker.
+     * `[PROJECT_ID]` is the Stackdriver Workspace project for the
+     * Uptime check config associated with the internal checker.
      * </pre>
      *
      * <code>string name = 1;</code>
@@ -788,8 +1007,8 @@ public final class InternalChecker extends com.google.protobuf.GeneratedMessageV
      * <pre>
      * A unique resource name for this InternalChecker. The format is:
      *   `projects/[PROJECT_ID]/internalCheckers/[INTERNAL_CHECKER_ID]`.
-     * PROJECT_ID is the stackdriver workspace project for the
-     * uptime check config associated with the internal checker.
+     * `[PROJECT_ID]` is the Stackdriver Workspace project for the
+     * Uptime check config associated with the internal checker.
      * </pre>
      *
      * <code>string name = 1;</code>
@@ -809,8 +1028,8 @@ public final class InternalChecker extends com.google.protobuf.GeneratedMessageV
      * <pre>
      * A unique resource name for this InternalChecker. The format is:
      *   `projects/[PROJECT_ID]/internalCheckers/[INTERNAL_CHECKER_ID]`.
-     * PROJECT_ID is the stackdriver workspace project for the
-     * uptime check config associated with the internal checker.
+     * `[PROJECT_ID]` is the Stackdriver Workspace project for the
+     * Uptime check config associated with the internal checker.
      * </pre>
      *
      * <code>string name = 1;</code>
@@ -827,8 +1046,8 @@ public final class InternalChecker extends com.google.protobuf.GeneratedMessageV
      * <pre>
      * A unique resource name for this InternalChecker. The format is:
      *   `projects/[PROJECT_ID]/internalCheckers/[INTERNAL_CHECKER_ID]`.
-     * PROJECT_ID is the stackdriver workspace project for the
-     * uptime check config associated with the internal checker.
+     * `[PROJECT_ID]` is the Stackdriver Workspace project for the
+     * Uptime check config associated with the internal checker.
      * </pre>
      *
      * <code>string name = 1;</code>
@@ -1052,8 +1271,8 @@ public final class InternalChecker extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * The GCP zone the uptime check should egress from. Only respected for
-     * internal uptime checks, where internal_network is specified.
+     * The GCP zone the Uptime check should egress from. Only respected for
+     * internal Uptime checks, where internal_network is specified.
      * </pre>
      *
      * <code>string gcp_zone = 4;</code>
@@ -1073,8 +1292,8 @@ public final class InternalChecker extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * The GCP zone the uptime check should egress from. Only respected for
-     * internal uptime checks, where internal_network is specified.
+     * The GCP zone the Uptime check should egress from. Only respected for
+     * internal Uptime checks, where internal_network is specified.
      * </pre>
      *
      * <code>string gcp_zone = 4;</code>
@@ -1094,8 +1313,8 @@ public final class InternalChecker extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * The GCP zone the uptime check should egress from. Only respected for
-     * internal uptime checks, where internal_network is specified.
+     * The GCP zone the Uptime check should egress from. Only respected for
+     * internal Uptime checks, where internal_network is specified.
      * </pre>
      *
      * <code>string gcp_zone = 4;</code>
@@ -1113,8 +1332,8 @@ public final class InternalChecker extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * The GCP zone the uptime check should egress from. Only respected for
-     * internal uptime checks, where internal_network is specified.
+     * The GCP zone the Uptime check should egress from. Only respected for
+     * internal Uptime checks, where internal_network is specified.
      * </pre>
      *
      * <code>string gcp_zone = 4;</code>
@@ -1129,8 +1348,8 @@ public final class InternalChecker extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * The GCP zone the uptime check should egress from. Only respected for
-     * internal uptime checks, where internal_network is specified.
+     * The GCP zone the Uptime check should egress from. Only respected for
+     * internal Uptime checks, where internal_network is specified.
      * </pre>
      *
      * <code>string gcp_zone = 4;</code>
@@ -1151,8 +1370,8 @@ public final class InternalChecker extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * The GCP project_id where the internal checker lives. Not necessary
-     * the same as the workspace project.
+     * The GCP project ID where the internal checker lives. Not necessary
+     * the same as the Workspace project.
      * </pre>
      *
      * <code>string peer_project_id = 6;</code>
@@ -1172,8 +1391,8 @@ public final class InternalChecker extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * The GCP project_id where the internal checker lives. Not necessary
-     * the same as the workspace project.
+     * The GCP project ID where the internal checker lives. Not necessary
+     * the same as the Workspace project.
      * </pre>
      *
      * <code>string peer_project_id = 6;</code>
@@ -1193,8 +1412,8 @@ public final class InternalChecker extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * The GCP project_id where the internal checker lives. Not necessary
-     * the same as the workspace project.
+     * The GCP project ID where the internal checker lives. Not necessary
+     * the same as the Workspace project.
      * </pre>
      *
      * <code>string peer_project_id = 6;</code>
@@ -1212,8 +1431,8 @@ public final class InternalChecker extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * The GCP project_id where the internal checker lives. Not necessary
-     * the same as the workspace project.
+     * The GCP project ID where the internal checker lives. Not necessary
+     * the same as the Workspace project.
      * </pre>
      *
      * <code>string peer_project_id = 6;</code>
@@ -1228,8 +1447,8 @@ public final class InternalChecker extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * The GCP project_id where the internal checker lives. Not necessary
-     * the same as the workspace project.
+     * The GCP project ID where the internal checker lives. Not necessary
+     * the same as the Workspace project.
      * </pre>
      *
      * <code>string peer_project_id = 6;</code>
@@ -1241,6 +1460,82 @@ public final class InternalChecker extends com.google.protobuf.GeneratedMessageV
       checkByteStringIsUtf8(value);
 
       peerProjectId_ = value;
+      onChanged();
+      return this;
+    }
+
+    private int state_ = 0;
+    /**
+     *
+     *
+     * <pre>
+     * The current operational state of the internal checker.
+     * </pre>
+     *
+     * <code>.google.monitoring.v3.InternalChecker.State state = 7;</code>
+     */
+    public int getStateValue() {
+      return state_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The current operational state of the internal checker.
+     * </pre>
+     *
+     * <code>.google.monitoring.v3.InternalChecker.State state = 7;</code>
+     */
+    public Builder setStateValue(int value) {
+      state_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The current operational state of the internal checker.
+     * </pre>
+     *
+     * <code>.google.monitoring.v3.InternalChecker.State state = 7;</code>
+     */
+    public com.google.monitoring.v3.InternalChecker.State getState() {
+      @SuppressWarnings("deprecation")
+      com.google.monitoring.v3.InternalChecker.State result =
+          com.google.monitoring.v3.InternalChecker.State.valueOf(state_);
+      return result == null ? com.google.monitoring.v3.InternalChecker.State.UNRECOGNIZED : result;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The current operational state of the internal checker.
+     * </pre>
+     *
+     * <code>.google.monitoring.v3.InternalChecker.State state = 7;</code>
+     */
+    public Builder setState(com.google.monitoring.v3.InternalChecker.State value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+
+      state_ = value.getNumber();
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The current operational state of the internal checker.
+     * </pre>
+     *
+     * <code>.google.monitoring.v3.InternalChecker.State state = 7;</code>
+     */
+    public Builder clearState() {
+
+      state_ = 0;
       onChanged();
       return this;
     }

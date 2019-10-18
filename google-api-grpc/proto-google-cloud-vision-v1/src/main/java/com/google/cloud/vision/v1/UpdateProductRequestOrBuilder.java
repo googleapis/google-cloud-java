@@ -12,33 +12,36 @@ public interface UpdateProductRequestOrBuilder
    *
    *
    * <pre>
-   * The Product resource which replaces the one on the server.
+   * Required. The Product resource which replaces the one on the server.
    * product.name is immutable.
    * </pre>
    *
-   * <code>.google.cloud.vision.v1.Product product = 1;</code>
+   * <code>.google.cloud.vision.v1.Product product = 1 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   boolean hasProduct();
   /**
    *
    *
    * <pre>
-   * The Product resource which replaces the one on the server.
+   * Required. The Product resource which replaces the one on the server.
    * product.name is immutable.
    * </pre>
    *
-   * <code>.google.cloud.vision.v1.Product product = 1;</code>
+   * <code>.google.cloud.vision.v1.Product product = 1 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   com.google.cloud.vision.v1.Product getProduct();
   /**
    *
    *
    * <pre>
-   * The Product resource which replaces the one on the server.
+   * Required. The Product resource which replaces the one on the server.
    * product.name is immutable.
    * </pre>
    *
-   * <code>.google.cloud.vision.v1.Product product = 1;</code>
+   * <code>.google.cloud.vision.v1.Product product = 1 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   com.google.cloud.vision.v1.ProductOrBuilder getProductOrBuilder();
 

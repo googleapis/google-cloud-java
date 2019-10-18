@@ -106,7 +106,7 @@ public final class ValueValidation extends com.google.protobuf.GeneratedMessageV
    * Required. List of allowed values for the parameter.
    * </pre>
    *
-   * <code>repeated string values = 1;</code>
+   * <code>repeated string values = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   public com.google.protobuf.ProtocolStringList getValuesList() {
     return values_;
@@ -118,7 +118,7 @@ public final class ValueValidation extends com.google.protobuf.GeneratedMessageV
    * Required. List of allowed values for the parameter.
    * </pre>
    *
-   * <code>repeated string values = 1;</code>
+   * <code>repeated string values = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   public int getValuesCount() {
     return values_.size();
@@ -130,7 +130,7 @@ public final class ValueValidation extends com.google.protobuf.GeneratedMessageV
    * Required. List of allowed values for the parameter.
    * </pre>
    *
-   * <code>repeated string values = 1;</code>
+   * <code>repeated string values = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   public java.lang.String getValues(int index) {
     return values_.get(index);
@@ -142,7 +142,7 @@ public final class ValueValidation extends com.google.protobuf.GeneratedMessageV
    * Required. List of allowed values for the parameter.
    * </pre>
    *
-   * <code>repeated string values = 1;</code>
+   * <code>repeated string values = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   public com.google.protobuf.ByteString getValuesBytes(int index) {
     return values_.getByteString(index);
@@ -500,7 +500,7 @@ public final class ValueValidation extends com.google.protobuf.GeneratedMessageV
      * Required. List of allowed values for the parameter.
      * </pre>
      *
-     * <code>repeated string values = 1;</code>
+     * <code>repeated string values = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public com.google.protobuf.ProtocolStringList getValuesList() {
       return values_.getUnmodifiableView();
@@ -512,7 +512,7 @@ public final class ValueValidation extends com.google.protobuf.GeneratedMessageV
      * Required. List of allowed values for the parameter.
      * </pre>
      *
-     * <code>repeated string values = 1;</code>
+     * <code>repeated string values = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public int getValuesCount() {
       return values_.size();
@@ -524,7 +524,7 @@ public final class ValueValidation extends com.google.protobuf.GeneratedMessageV
      * Required. List of allowed values for the parameter.
      * </pre>
      *
-     * <code>repeated string values = 1;</code>
+     * <code>repeated string values = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public java.lang.String getValues(int index) {
       return values_.get(index);
@@ -536,7 +536,7 @@ public final class ValueValidation extends com.google.protobuf.GeneratedMessageV
      * Required. List of allowed values for the parameter.
      * </pre>
      *
-     * <code>repeated string values = 1;</code>
+     * <code>repeated string values = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public com.google.protobuf.ByteString getValuesBytes(int index) {
       return values_.getByteString(index);
@@ -548,7 +548,7 @@ public final class ValueValidation extends com.google.protobuf.GeneratedMessageV
      * Required. List of allowed values for the parameter.
      * </pre>
      *
-     * <code>repeated string values = 1;</code>
+     * <code>repeated string values = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder setValues(int index, java.lang.String value) {
       if (value == null) {
@@ -566,7 +566,7 @@ public final class ValueValidation extends com.google.protobuf.GeneratedMessageV
      * Required. List of allowed values for the parameter.
      * </pre>
      *
-     * <code>repeated string values = 1;</code>
+     * <code>repeated string values = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder addValues(java.lang.String value) {
       if (value == null) {
@@ -584,7 +584,7 @@ public final class ValueValidation extends com.google.protobuf.GeneratedMessageV
      * Required. List of allowed values for the parameter.
      * </pre>
      *
-     * <code>repeated string values = 1;</code>
+     * <code>repeated string values = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder addAllValues(java.lang.Iterable<java.lang.String> values) {
       ensureValuesIsMutable();
@@ -599,7 +599,7 @@ public final class ValueValidation extends com.google.protobuf.GeneratedMessageV
      * Required. List of allowed values for the parameter.
      * </pre>
      *
-     * <code>repeated string values = 1;</code>
+     * <code>repeated string values = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder clearValues() {
       values_ = com.google.protobuf.LazyStringArrayList.EMPTY;
@@ -614,7 +614,7 @@ public final class ValueValidation extends com.google.protobuf.GeneratedMessageV
      * Required. List of allowed values for the parameter.
      * </pre>
      *
-     * <code>repeated string values = 1;</code>
+     * <code>repeated string values = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder addValuesBytes(com.google.protobuf.ByteString value) {
       if (value == null) {

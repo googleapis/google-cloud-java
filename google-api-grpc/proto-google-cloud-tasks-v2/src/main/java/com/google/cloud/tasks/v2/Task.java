@@ -534,8 +534,7 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The time when the task is scheduled to be attempted.
-   * For App Engine queues, this is when the task will be attempted or retried.
+   * The time when the task is scheduled to be attempted or retried.
    * `schedule_time` will be truncated to the nearest microsecond.
    * </pre>
    *
@@ -548,8 +547,7 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The time when the task is scheduled to be attempted.
-   * For App Engine queues, this is when the task will be attempted or retried.
+   * The time when the task is scheduled to be attempted or retried.
    * `schedule_time` will be truncated to the nearest microsecond.
    * </pre>
    *
@@ -564,8 +562,7 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The time when the task is scheduled to be attempted.
-   * For App Engine queues, this is when the task will be attempted or retried.
+   * The time when the task is scheduled to be attempted or retried.
    * `schedule_time` will be truncated to the nearest microsecond.
    * </pre>
    *
@@ -1831,8 +1828,7 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The time when the task is scheduled to be attempted.
-     * For App Engine queues, this is when the task will be attempted or retried.
+     * The time when the task is scheduled to be attempted or retried.
      * `schedule_time` will be truncated to the nearest microsecond.
      * </pre>
      *
@@ -1845,8 +1841,7 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The time when the task is scheduled to be attempted.
-     * For App Engine queues, this is when the task will be attempted or retried.
+     * The time when the task is scheduled to be attempted or retried.
      * `schedule_time` will be truncated to the nearest microsecond.
      * </pre>
      *
@@ -1865,8 +1860,7 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The time when the task is scheduled to be attempted.
-     * For App Engine queues, this is when the task will be attempted or retried.
+     * The time when the task is scheduled to be attempted or retried.
      * `schedule_time` will be truncated to the nearest microsecond.
      * </pre>
      *
@@ -1889,8 +1883,7 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The time when the task is scheduled to be attempted.
-     * For App Engine queues, this is when the task will be attempted or retried.
+     * The time when the task is scheduled to be attempted or retried.
      * `schedule_time` will be truncated to the nearest microsecond.
      * </pre>
      *
@@ -1910,8 +1903,7 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The time when the task is scheduled to be attempted.
-     * For App Engine queues, this is when the task will be attempted or retried.
+     * The time when the task is scheduled to be attempted or retried.
      * `schedule_time` will be truncated to the nearest microsecond.
      * </pre>
      *
@@ -1938,8 +1930,7 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The time when the task is scheduled to be attempted.
-     * For App Engine queues, this is when the task will be attempted or retried.
+     * The time when the task is scheduled to be attempted or retried.
      * `schedule_time` will be truncated to the nearest microsecond.
      * </pre>
      *
@@ -1960,8 +1951,7 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The time when the task is scheduled to be attempted.
-     * For App Engine queues, this is when the task will be attempted or retried.
+     * The time when the task is scheduled to be attempted or retried.
      * `schedule_time` will be truncated to the nearest microsecond.
      * </pre>
      *
@@ -1976,8 +1966,7 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The time when the task is scheduled to be attempted.
-     * For App Engine queues, this is when the task will be attempted or retried.
+     * The time when the task is scheduled to be attempted or retried.
      * `schedule_time` will be truncated to the nearest microsecond.
      * </pre>
      *
@@ -1996,8 +1985,7 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The time when the task is scheduled to be attempted.
-     * For App Engine queues, this is when the task will be attempted or retried.
+     * The time when the task is scheduled to be attempted or retried.
      * `schedule_time` will be truncated to the nearest microsecond.
      * </pre>
      *

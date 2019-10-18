@@ -15,6 +15,7 @@
  */
 package com.google.cloud.compute.v1.stub;
 
+import static com.google.cloud.compute.v1.TargetHttpProxyClient.AggregatedListTargetHttpProxiesPagedResponse;
 import static com.google.cloud.compute.v1.TargetHttpProxyClient.ListTargetHttpProxiesPagedResponse;
 
 import com.google.api.client.http.HttpMethods;
@@ -30,6 +31,7 @@ import com.google.api.gax.httpjson.HttpJsonStubCallableFactory;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.api.pathtemplate.PathTemplate;
+import com.google.cloud.compute.v1.AggregatedListTargetHttpProxiesHttpRequest;
 import com.google.cloud.compute.v1.DeleteTargetHttpProxyHttpRequest;
 import com.google.cloud.compute.v1.GetTargetHttpProxyHttpRequest;
 import com.google.cloud.compute.v1.InsertTargetHttpProxyHttpRequest;
@@ -40,6 +42,7 @@ import com.google.cloud.compute.v1.ProjectName;
 import com.google.cloud.compute.v1.ProjectTargetHttpProxyName;
 import com.google.cloud.compute.v1.SetUrlMapTargetHttpProxyHttpRequest;
 import com.google.cloud.compute.v1.TargetHttpProxy;
+import com.google.cloud.compute.v1.TargetHttpProxyAggregatedList;
 import com.google.cloud.compute.v1.TargetHttpProxyList;
 import com.google.common.collect.Sets;
 import java.io.IOException;
@@ -55,6 +58,31 @@ import javax.annotation.Generated;
 @Generated("by gapic-generator")
 @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
 public class HttpJsonTargetHttpProxyStub extends TargetHttpProxyStub {
+  @InternalApi
+  public static final ApiMethodDescriptor<
+          AggregatedListTargetHttpProxiesHttpRequest, TargetHttpProxyAggregatedList>
+      aggregatedListTargetHttpProxiesMethodDescriptor =
+          ApiMethodDescriptor
+              .<AggregatedListTargetHttpProxiesHttpRequest, TargetHttpProxyAggregatedList>
+                  newBuilder()
+              .setFullMethodName("compute.targetHttpProxies.aggregatedList")
+              .setHttpMethod(HttpMethods.GET)
+              .setRequestFormatter(
+                  ApiMessageHttpRequestFormatter
+                      .<AggregatedListTargetHttpProxiesHttpRequest>newBuilder()
+                      .setPathTemplate(
+                          PathTemplate.create("{project}/aggregated/targetHttpProxies"))
+                      .setQueryParams(
+                          Sets.<String>newHashSet("filter", "maxResults", "orderBy", "pageToken"))
+                      .setResourceNameFactory(ProjectName.newFactory())
+                      .setResourceNameField("project")
+                      .build())
+              .setResponseParser(
+                  ApiMessageHttpResponseParser.<TargetHttpProxyAggregatedList>newBuilder()
+                      .setResponseInstance(TargetHttpProxyAggregatedList.getDefaultInstance())
+                      .build())
+              .build();
+
   @InternalApi
   public static final ApiMethodDescriptor<DeleteTargetHttpProxyHttpRequest, Operation>
       deleteTargetHttpProxyMethodDescriptor =
@@ -159,6 +187,12 @@ public class HttpJsonTargetHttpProxyStub extends TargetHttpProxyStub {
 
   private final BackgroundResource backgroundResources;
 
+  private final UnaryCallable<
+          AggregatedListTargetHttpProxiesHttpRequest, TargetHttpProxyAggregatedList>
+      aggregatedListTargetHttpProxiesCallable;
+  private final UnaryCallable<
+          AggregatedListTargetHttpProxiesHttpRequest, AggregatedListTargetHttpProxiesPagedResponse>
+      aggregatedListTargetHttpProxiesPagedCallable;
   private final UnaryCallable<DeleteTargetHttpProxyHttpRequest, Operation>
       deleteTargetHttpProxyCallable;
   private final UnaryCallable<GetTargetHttpProxyHttpRequest, TargetHttpProxy>
@@ -213,6 +247,13 @@ public class HttpJsonTargetHttpProxyStub extends TargetHttpProxyStub {
       throws IOException {
     this.callableFactory = callableFactory;
 
+    HttpJsonCallSettings<AggregatedListTargetHttpProxiesHttpRequest, TargetHttpProxyAggregatedList>
+        aggregatedListTargetHttpProxiesTransportSettings =
+            HttpJsonCallSettings
+                .<AggregatedListTargetHttpProxiesHttpRequest, TargetHttpProxyAggregatedList>
+                    newBuilder()
+                .setMethodDescriptor(aggregatedListTargetHttpProxiesMethodDescriptor)
+                .build();
     HttpJsonCallSettings<DeleteTargetHttpProxyHttpRequest, Operation>
         deleteTargetHttpProxyTransportSettings =
             HttpJsonCallSettings.<DeleteTargetHttpProxyHttpRequest, Operation>newBuilder()
@@ -239,6 +280,16 @@ public class HttpJsonTargetHttpProxyStub extends TargetHttpProxyStub {
                 .setMethodDescriptor(setUrlMapTargetHttpProxyMethodDescriptor)
                 .build();
 
+    this.aggregatedListTargetHttpProxiesCallable =
+        callableFactory.createUnaryCallable(
+            aggregatedListTargetHttpProxiesTransportSettings,
+            settings.aggregatedListTargetHttpProxiesSettings(),
+            clientContext);
+    this.aggregatedListTargetHttpProxiesPagedCallable =
+        callableFactory.createPagedCallable(
+            aggregatedListTargetHttpProxiesTransportSettings,
+            settings.aggregatedListTargetHttpProxiesSettings(),
+            clientContext);
     this.deleteTargetHttpProxyCallable =
         callableFactory.createUnaryCallable(
             deleteTargetHttpProxyTransportSettings,
@@ -271,6 +322,19 @@ public class HttpJsonTargetHttpProxyStub extends TargetHttpProxyStub {
             clientContext);
 
     backgroundResources = new BackgroundResourceAggregation(clientContext.getBackgroundResources());
+  }
+
+  @BetaApi
+  public UnaryCallable<
+          AggregatedListTargetHttpProxiesHttpRequest, AggregatedListTargetHttpProxiesPagedResponse>
+      aggregatedListTargetHttpProxiesPagedCallable() {
+    return aggregatedListTargetHttpProxiesPagedCallable;
+  }
+
+  @BetaApi
+  public UnaryCallable<AggregatedListTargetHttpProxiesHttpRequest, TargetHttpProxyAggregatedList>
+      aggregatedListTargetHttpProxiesCallable() {
+    return aggregatedListTargetHttpProxiesCallable;
   }
 
   @BetaApi

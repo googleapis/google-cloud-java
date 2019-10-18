@@ -37,8 +37,8 @@ for version in versions:
 
   s.replace(
       '**/stub/SubscriberStubSettings.java',
-      r'return InstantiatingGrpcChannelProvider\.newBuilder\(\);',
-      'return InstantiatingGrpcChannelProvider.newBuilder().setMaxInboundMessageSize(20 << 20); // 20MB'
+      r'setMaxInboundMessageSize\(Integer.MAX_VALUE\)',
+      'setMaxInboundMessageSize(20 << 20)'
   )
 
   java.format_code('./src')

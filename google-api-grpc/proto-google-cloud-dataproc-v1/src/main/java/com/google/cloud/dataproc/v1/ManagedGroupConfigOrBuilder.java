@@ -16,7 +16,7 @@ public interface ManagedGroupConfigOrBuilder
    * Instance Group.
    * </pre>
    *
-   * <code>string instance_template_name = 1;</code>
+   * <code>string instance_template_name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    */
   java.lang.String getInstanceTemplateName();
   /**
@@ -27,7 +27,7 @@ public interface ManagedGroupConfigOrBuilder
    * Instance Group.
    * </pre>
    *
-   * <code>string instance_template_name = 1;</code>
+   * <code>string instance_template_name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    */
   com.google.protobuf.ByteString getInstanceTemplateNameBytes();
 
@@ -38,7 +38,8 @@ public interface ManagedGroupConfigOrBuilder
    * Output only. The name of the Instance Group Manager for this group.
    * </pre>
    *
-   * <code>string instance_group_manager_name = 2;</code>
+   * <code>string instance_group_manager_name = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    */
   java.lang.String getInstanceGroupManagerName();
   /**
@@ -48,7 +49,8 @@ public interface ManagedGroupConfigOrBuilder
    * Output only. The name of the Instance Group Manager for this group.
    * </pre>
    *
-   * <code>string instance_group_manager_name = 2;</code>
+   * <code>string instance_group_manager_name = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    */
   com.google.protobuf.ByteString getInstanceGroupManagerNameBytes();
 }

@@ -55,8 +55,7 @@ public interface AppEngineHttpRequestOrBuilder
    * If set,
    * [app_engine_routing_override][google.cloud.tasks.v2beta2.AppEngineHttpTarget.app_engine_routing_override]
    * is used for all tasks in the queue, no matter what the setting is for the
-   * [task-level
-   * app_engine_routing][google.cloud.tasks.v2beta2.AppEngineHttpRequest.app_engine_routing].
+   * [task-level app_engine_routing][google.cloud.tasks.v2beta2.AppEngineHttpRequest.app_engine_routing].
    * </pre>
    *
    * <code>.google.cloud.tasks.v2beta2.AppEngineRouting app_engine_routing = 2;</code>
@@ -70,8 +69,7 @@ public interface AppEngineHttpRequestOrBuilder
    * If set,
    * [app_engine_routing_override][google.cloud.tasks.v2beta2.AppEngineHttpTarget.app_engine_routing_override]
    * is used for all tasks in the queue, no matter what the setting is for the
-   * [task-level
-   * app_engine_routing][google.cloud.tasks.v2beta2.AppEngineHttpRequest.app_engine_routing].
+   * [task-level app_engine_routing][google.cloud.tasks.v2beta2.AppEngineHttpRequest.app_engine_routing].
    * </pre>
    *
    * <code>.google.cloud.tasks.v2beta2.AppEngineRouting app_engine_routing = 2;</code>
@@ -85,8 +83,7 @@ public interface AppEngineHttpRequestOrBuilder
    * If set,
    * [app_engine_routing_override][google.cloud.tasks.v2beta2.AppEngineHttpTarget.app_engine_routing_override]
    * is used for all tasks in the queue, no matter what the setting is for the
-   * [task-level
-   * app_engine_routing][google.cloud.tasks.v2beta2.AppEngineHttpRequest.app_engine_routing].
+   * [task-level app_engine_routing][google.cloud.tasks.v2beta2.AppEngineHttpRequest.app_engine_routing].
    * </pre>
    *
    * <code>.google.cloud.tasks.v2beta2.AppEngineRouting app_engine_routing = 2;</code>
@@ -137,8 +134,7 @@ public interface AppEngineHttpRequestOrBuilder
    *   This header can be modified, but Cloud Tasks will append
    *   `"AppEngine-Google; (+http://code.google.com/appengine)"` to the
    *   modified `User-Agent`.
-   * If the task has a
-   * [payload][google.cloud.tasks.v2beta2.AppEngineHttpRequest.payload], Cloud
+   * If the task has a [payload][google.cloud.tasks.v2beta2.AppEngineHttpRequest.payload], Cloud
    * Tasks sets the following headers:
    * * `Content-Type`: By default, the `Content-Type` header is set to
    *   `"application/octet-stream"`. The default can be overridden by explicitly
@@ -158,10 +154,8 @@ public interface AppEngineHttpRequestOrBuilder
    * These headers are set only when the task is dispatched, so they are not
    * visible when the task is returned in a Cloud Tasks response.
    * Although there is no specific limit for the maximum number of headers or
-   * the size, there is a limit on the maximum size of the
-   * [Task][google.cloud.tasks.v2beta2.Task]. For more information, see the
-   * [CreateTask][google.cloud.tasks.v2beta2.CloudTasks.CreateTask]
-   * documentation.
+   * the size, there is a limit on the maximum size of the [Task][google.cloud.tasks.v2beta2.Task]. For more
+   * information, see the [CreateTask][google.cloud.tasks.v2beta2.CloudTasks.CreateTask] documentation.
    * </pre>
    *
    * <code>map&lt;string, string&gt; headers = 4;</code>
@@ -182,8 +176,7 @@ public interface AppEngineHttpRequestOrBuilder
    *   This header can be modified, but Cloud Tasks will append
    *   `"AppEngine-Google; (+http://code.google.com/appengine)"` to the
    *   modified `User-Agent`.
-   * If the task has a
-   * [payload][google.cloud.tasks.v2beta2.AppEngineHttpRequest.payload], Cloud
+   * If the task has a [payload][google.cloud.tasks.v2beta2.AppEngineHttpRequest.payload], Cloud
    * Tasks sets the following headers:
    * * `Content-Type`: By default, the `Content-Type` header is set to
    *   `"application/octet-stream"`. The default can be overridden by explicitly
@@ -203,10 +196,8 @@ public interface AppEngineHttpRequestOrBuilder
    * These headers are set only when the task is dispatched, so they are not
    * visible when the task is returned in a Cloud Tasks response.
    * Although there is no specific limit for the maximum number of headers or
-   * the size, there is a limit on the maximum size of the
-   * [Task][google.cloud.tasks.v2beta2.Task]. For more information, see the
-   * [CreateTask][google.cloud.tasks.v2beta2.CloudTasks.CreateTask]
-   * documentation.
+   * the size, there is a limit on the maximum size of the [Task][google.cloud.tasks.v2beta2.Task]. For more
+   * information, see the [CreateTask][google.cloud.tasks.v2beta2.CloudTasks.CreateTask] documentation.
    * </pre>
    *
    * <code>map&lt;string, string&gt; headers = 4;</code>
@@ -230,8 +221,7 @@ public interface AppEngineHttpRequestOrBuilder
    *   This header can be modified, but Cloud Tasks will append
    *   `"AppEngine-Google; (+http://code.google.com/appengine)"` to the
    *   modified `User-Agent`.
-   * If the task has a
-   * [payload][google.cloud.tasks.v2beta2.AppEngineHttpRequest.payload], Cloud
+   * If the task has a [payload][google.cloud.tasks.v2beta2.AppEngineHttpRequest.payload], Cloud
    * Tasks sets the following headers:
    * * `Content-Type`: By default, the `Content-Type` header is set to
    *   `"application/octet-stream"`. The default can be overridden by explicitly
@@ -251,10 +241,8 @@ public interface AppEngineHttpRequestOrBuilder
    * These headers are set only when the task is dispatched, so they are not
    * visible when the task is returned in a Cloud Tasks response.
    * Although there is no specific limit for the maximum number of headers or
-   * the size, there is a limit on the maximum size of the
-   * [Task][google.cloud.tasks.v2beta2.Task]. For more information, see the
-   * [CreateTask][google.cloud.tasks.v2beta2.CloudTasks.CreateTask]
-   * documentation.
+   * the size, there is a limit on the maximum size of the [Task][google.cloud.tasks.v2beta2.Task]. For more
+   * information, see the [CreateTask][google.cloud.tasks.v2beta2.CloudTasks.CreateTask] documentation.
    * </pre>
    *
    * <code>map&lt;string, string&gt; headers = 4;</code>
@@ -275,8 +263,7 @@ public interface AppEngineHttpRequestOrBuilder
    *   This header can be modified, but Cloud Tasks will append
    *   `"AppEngine-Google; (+http://code.google.com/appengine)"` to the
    *   modified `User-Agent`.
-   * If the task has a
-   * [payload][google.cloud.tasks.v2beta2.AppEngineHttpRequest.payload], Cloud
+   * If the task has a [payload][google.cloud.tasks.v2beta2.AppEngineHttpRequest.payload], Cloud
    * Tasks sets the following headers:
    * * `Content-Type`: By default, the `Content-Type` header is set to
    *   `"application/octet-stream"`. The default can be overridden by explicitly
@@ -296,10 +283,8 @@ public interface AppEngineHttpRequestOrBuilder
    * These headers are set only when the task is dispatched, so they are not
    * visible when the task is returned in a Cloud Tasks response.
    * Although there is no specific limit for the maximum number of headers or
-   * the size, there is a limit on the maximum size of the
-   * [Task][google.cloud.tasks.v2beta2.Task]. For more information, see the
-   * [CreateTask][google.cloud.tasks.v2beta2.CloudTasks.CreateTask]
-   * documentation.
+   * the size, there is a limit on the maximum size of the [Task][google.cloud.tasks.v2beta2.Task]. For more
+   * information, see the [CreateTask][google.cloud.tasks.v2beta2.CloudTasks.CreateTask] documentation.
    * </pre>
    *
    * <code>map&lt;string, string&gt; headers = 4;</code>
@@ -320,8 +305,7 @@ public interface AppEngineHttpRequestOrBuilder
    *   This header can be modified, but Cloud Tasks will append
    *   `"AppEngine-Google; (+http://code.google.com/appengine)"` to the
    *   modified `User-Agent`.
-   * If the task has a
-   * [payload][google.cloud.tasks.v2beta2.AppEngineHttpRequest.payload], Cloud
+   * If the task has a [payload][google.cloud.tasks.v2beta2.AppEngineHttpRequest.payload], Cloud
    * Tasks sets the following headers:
    * * `Content-Type`: By default, the `Content-Type` header is set to
    *   `"application/octet-stream"`. The default can be overridden by explicitly
@@ -341,10 +325,8 @@ public interface AppEngineHttpRequestOrBuilder
    * These headers are set only when the task is dispatched, so they are not
    * visible when the task is returned in a Cloud Tasks response.
    * Although there is no specific limit for the maximum number of headers or
-   * the size, there is a limit on the maximum size of the
-   * [Task][google.cloud.tasks.v2beta2.Task]. For more information, see the
-   * [CreateTask][google.cloud.tasks.v2beta2.CloudTasks.CreateTask]
-   * documentation.
+   * the size, there is a limit on the maximum size of the [Task][google.cloud.tasks.v2beta2.Task]. For more
+   * information, see the [CreateTask][google.cloud.tasks.v2beta2.CloudTasks.CreateTask] documentation.
    * </pre>
    *
    * <code>map&lt;string, string&gt; headers = 4;</code>

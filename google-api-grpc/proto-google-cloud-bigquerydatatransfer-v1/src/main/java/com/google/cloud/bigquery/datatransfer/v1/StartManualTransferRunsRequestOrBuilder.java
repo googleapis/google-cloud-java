@@ -16,7 +16,7 @@ public interface StartManualTransferRunsRequestOrBuilder
    * `projects/{project_id}/transferConfigs/{config_id}`.
    * </pre>
    *
-   * <code>string parent = 1;</code>
+   * <code>string parent = 1 [(.google.api.resource_reference) = { ... }</code>
    */
   java.lang.String getParent();
   /**
@@ -27,7 +27,7 @@ public interface StartManualTransferRunsRequestOrBuilder
    * `projects/{project_id}/transferConfigs/{config_id}`.
    * </pre>
    *
-   * <code>string parent = 1;</code>
+   * <code>string parent = 1 [(.google.api.resource_reference) = { ... }</code>
    */
   com.google.protobuf.ByteString getParentBytes();
 

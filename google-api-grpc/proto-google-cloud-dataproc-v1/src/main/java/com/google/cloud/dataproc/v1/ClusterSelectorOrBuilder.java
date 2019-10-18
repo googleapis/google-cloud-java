@@ -18,7 +18,7 @@ public interface ClusterSelectorOrBuilder
    * is used.
    * </pre>
    *
-   * <code>string zone = 1;</code>
+   * <code>string zone = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   java.lang.String getZone();
   /**
@@ -31,7 +31,7 @@ public interface ClusterSelectorOrBuilder
    * is used.
    * </pre>
    *
-   * <code>string zone = 1;</code>
+   * <code>string zone = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   com.google.protobuf.ByteString getZoneBytes();
 
@@ -43,7 +43,8 @@ public interface ClusterSelectorOrBuilder
    * to match.
    * </pre>
    *
-   * <code>map&lt;string, string&gt; cluster_labels = 2;</code>
+   * <code>map&lt;string, string&gt; cluster_labels = 2 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   int getClusterLabelsCount();
   /**
@@ -54,7 +55,8 @@ public interface ClusterSelectorOrBuilder
    * to match.
    * </pre>
    *
-   * <code>map&lt;string, string&gt; cluster_labels = 2;</code>
+   * <code>map&lt;string, string&gt; cluster_labels = 2 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   boolean containsClusterLabels(java.lang.String key);
   /** Use {@link #getClusterLabelsMap()} instead. */
@@ -68,7 +70,8 @@ public interface ClusterSelectorOrBuilder
    * to match.
    * </pre>
    *
-   * <code>map&lt;string, string&gt; cluster_labels = 2;</code>
+   * <code>map&lt;string, string&gt; cluster_labels = 2 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   java.util.Map<java.lang.String, java.lang.String> getClusterLabelsMap();
   /**
@@ -79,7 +82,8 @@ public interface ClusterSelectorOrBuilder
    * to match.
    * </pre>
    *
-   * <code>map&lt;string, string&gt; cluster_labels = 2;</code>
+   * <code>map&lt;string, string&gt; cluster_labels = 2 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   java.lang.String getClusterLabelsOrDefault(java.lang.String key, java.lang.String defaultValue);
   /**
@@ -90,7 +94,8 @@ public interface ClusterSelectorOrBuilder
    * to match.
    * </pre>
    *
-   * <code>map&lt;string, string&gt; cluster_labels = 2;</code>
+   * <code>map&lt;string, string&gt; cluster_labels = 2 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   java.lang.String getClusterLabelsOrThrow(java.lang.String key);
 }

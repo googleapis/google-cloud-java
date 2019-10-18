@@ -138,12 +138,19 @@ public final class InstantiateWorkflowTemplateRequest extends com.google.protobu
    *
    *
    * <pre>
-   * Required. The "resource name" of the workflow template, as described
-   * in https://cloud.google.com/apis/design/resource_names of the form
-   * `projects/{project_id}/regions/{region}/workflowTemplates/{template_id}`
+   * Required. The resource name of the workflow template, as described
+   * in https://cloud.google.com/apis/design/resource_names.
+   * * For `projects.regions.workflowTemplates.instantiate`, the resource name
+   * of the template has the following format:
+   *   `projects/{project_id}/regions/{region}/workflowTemplates/{template_id}`
+   * * For `projects.locations.workflowTemplates.instantiate`, the resource name
+   *   of the template has the following format:
+   *   `projects/{project_id}/locations/{location}/workflowTemplates/{template_id}`
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>
+   * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    */
   public java.lang.String getName() {
     java.lang.Object ref = name_;
@@ -160,12 +167,19 @@ public final class InstantiateWorkflowTemplateRequest extends com.google.protobu
    *
    *
    * <pre>
-   * Required. The "resource name" of the workflow template, as described
-   * in https://cloud.google.com/apis/design/resource_names of the form
-   * `projects/{project_id}/regions/{region}/workflowTemplates/{template_id}`
+   * Required. The resource name of the workflow template, as described
+   * in https://cloud.google.com/apis/design/resource_names.
+   * * For `projects.regions.workflowTemplates.instantiate`, the resource name
+   * of the template has the following format:
+   *   `projects/{project_id}/regions/{region}/workflowTemplates/{template_id}`
+   * * For `projects.locations.workflowTemplates.instantiate`, the resource name
+   *   of the template has the following format:
+   *   `projects/{project_id}/locations/{location}/workflowTemplates/{template_id}`
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>
+   * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    */
   public com.google.protobuf.ByteString getNameBytes() {
     java.lang.Object ref = name_;
@@ -192,7 +206,7 @@ public final class InstantiateWorkflowTemplateRequest extends com.google.protobu
    * workflow template.
    * </pre>
    *
-   * <code>int32 version = 2;</code>
+   * <code>int32 version = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   public int getVersion() {
     return version_;
@@ -213,7 +227,7 @@ public final class InstantiateWorkflowTemplateRequest extends com.google.protobu
    * underscores (_), and hyphens (-). The maximum length is 40 characters.
    * </pre>
    *
-   * <code>string request_id = 5;</code>
+   * <code>string request_id = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   public java.lang.String getRequestId() {
     java.lang.Object ref = requestId_;
@@ -239,7 +253,7 @@ public final class InstantiateWorkflowTemplateRequest extends com.google.protobu
    * underscores (_), and hyphens (-). The maximum length is 40 characters.
    * </pre>
    *
-   * <code>string request_id = 5;</code>
+   * <code>string request_id = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   public com.google.protobuf.ByteString getRequestIdBytes() {
     java.lang.Object ref = requestId_;
@@ -286,7 +300,8 @@ public final class InstantiateWorkflowTemplateRequest extends com.google.protobu
    * parameters. Values may not exceed 100 characters.
    * </pre>
    *
-   * <code>map&lt;string, string&gt; parameters = 6;</code>
+   * <code>map&lt;string, string&gt; parameters = 6 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   public boolean containsParameters(java.lang.String key) {
     if (key == null) {
@@ -307,7 +322,8 @@ public final class InstantiateWorkflowTemplateRequest extends com.google.protobu
    * parameters. Values may not exceed 100 characters.
    * </pre>
    *
-   * <code>map&lt;string, string&gt; parameters = 6;</code>
+   * <code>map&lt;string, string&gt; parameters = 6 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   public java.util.Map<java.lang.String, java.lang.String> getParametersMap() {
     return internalGetParameters().getMap();
@@ -320,7 +336,8 @@ public final class InstantiateWorkflowTemplateRequest extends com.google.protobu
    * parameters. Values may not exceed 100 characters.
    * </pre>
    *
-   * <code>map&lt;string, string&gt; parameters = 6;</code>
+   * <code>map&lt;string, string&gt; parameters = 6 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   public java.lang.String getParametersOrDefault(
       java.lang.String key, java.lang.String defaultValue) {
@@ -338,7 +355,8 @@ public final class InstantiateWorkflowTemplateRequest extends com.google.protobu
    * parameters. Values may not exceed 100 characters.
    * </pre>
    *
-   * <code>map&lt;string, string&gt; parameters = 6;</code>
+   * <code>map&lt;string, string&gt; parameters = 6 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   public java.lang.String getParametersOrThrow(java.lang.String key) {
     if (key == null) {
@@ -756,12 +774,19 @@ public final class InstantiateWorkflowTemplateRequest extends com.google.protobu
      *
      *
      * <pre>
-     * Required. The "resource name" of the workflow template, as described
-     * in https://cloud.google.com/apis/design/resource_names of the form
-     * `projects/{project_id}/regions/{region}/workflowTemplates/{template_id}`
+     * Required. The resource name of the workflow template, as described
+     * in https://cloud.google.com/apis/design/resource_names.
+     * * For `projects.regions.workflowTemplates.instantiate`, the resource name
+     * of the template has the following format:
+     *   `projects/{project_id}/regions/{region}/workflowTemplates/{template_id}`
+     * * For `projects.locations.workflowTemplates.instantiate`, the resource name
+     *   of the template has the following format:
+     *   `projects/{project_id}/locations/{location}/workflowTemplates/{template_id}`
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>
+     * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      */
     public java.lang.String getName() {
       java.lang.Object ref = name_;
@@ -778,12 +803,19 @@ public final class InstantiateWorkflowTemplateRequest extends com.google.protobu
      *
      *
      * <pre>
-     * Required. The "resource name" of the workflow template, as described
-     * in https://cloud.google.com/apis/design/resource_names of the form
-     * `projects/{project_id}/regions/{region}/workflowTemplates/{template_id}`
+     * Required. The resource name of the workflow template, as described
+     * in https://cloud.google.com/apis/design/resource_names.
+     * * For `projects.regions.workflowTemplates.instantiate`, the resource name
+     * of the template has the following format:
+     *   `projects/{project_id}/regions/{region}/workflowTemplates/{template_id}`
+     * * For `projects.locations.workflowTemplates.instantiate`, the resource name
+     *   of the template has the following format:
+     *   `projects/{project_id}/locations/{location}/workflowTemplates/{template_id}`
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>
+     * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      */
     public com.google.protobuf.ByteString getNameBytes() {
       java.lang.Object ref = name_;
@@ -800,12 +832,19 @@ public final class InstantiateWorkflowTemplateRequest extends com.google.protobu
      *
      *
      * <pre>
-     * Required. The "resource name" of the workflow template, as described
-     * in https://cloud.google.com/apis/design/resource_names of the form
-     * `projects/{project_id}/regions/{region}/workflowTemplates/{template_id}`
+     * Required. The resource name of the workflow template, as described
+     * in https://cloud.google.com/apis/design/resource_names.
+     * * For `projects.regions.workflowTemplates.instantiate`, the resource name
+     * of the template has the following format:
+     *   `projects/{project_id}/regions/{region}/workflowTemplates/{template_id}`
+     * * For `projects.locations.workflowTemplates.instantiate`, the resource name
+     *   of the template has the following format:
+     *   `projects/{project_id}/locations/{location}/workflowTemplates/{template_id}`
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>
+     * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      */
     public Builder setName(java.lang.String value) {
       if (value == null) {
@@ -820,12 +859,19 @@ public final class InstantiateWorkflowTemplateRequest extends com.google.protobu
      *
      *
      * <pre>
-     * Required. The "resource name" of the workflow template, as described
-     * in https://cloud.google.com/apis/design/resource_names of the form
-     * `projects/{project_id}/regions/{region}/workflowTemplates/{template_id}`
+     * Required. The resource name of the workflow template, as described
+     * in https://cloud.google.com/apis/design/resource_names.
+     * * For `projects.regions.workflowTemplates.instantiate`, the resource name
+     * of the template has the following format:
+     *   `projects/{project_id}/regions/{region}/workflowTemplates/{template_id}`
+     * * For `projects.locations.workflowTemplates.instantiate`, the resource name
+     *   of the template has the following format:
+     *   `projects/{project_id}/locations/{location}/workflowTemplates/{template_id}`
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>
+     * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      */
     public Builder clearName() {
 
@@ -837,12 +883,19 @@ public final class InstantiateWorkflowTemplateRequest extends com.google.protobu
      *
      *
      * <pre>
-     * Required. The "resource name" of the workflow template, as described
-     * in https://cloud.google.com/apis/design/resource_names of the form
-     * `projects/{project_id}/regions/{region}/workflowTemplates/{template_id}`
+     * Required. The resource name of the workflow template, as described
+     * in https://cloud.google.com/apis/design/resource_names.
+     * * For `projects.regions.workflowTemplates.instantiate`, the resource name
+     * of the template has the following format:
+     *   `projects/{project_id}/regions/{region}/workflowTemplates/{template_id}`
+     * * For `projects.locations.workflowTemplates.instantiate`, the resource name
+     *   of the template has the following format:
+     *   `projects/{project_id}/locations/{location}/workflowTemplates/{template_id}`
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>
+     * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      */
     public Builder setNameBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -867,7 +920,7 @@ public final class InstantiateWorkflowTemplateRequest extends com.google.protobu
      * workflow template.
      * </pre>
      *
-     * <code>int32 version = 2;</code>
+     * <code>int32 version = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public int getVersion() {
       return version_;
@@ -883,7 +936,7 @@ public final class InstantiateWorkflowTemplateRequest extends com.google.protobu
      * workflow template.
      * </pre>
      *
-     * <code>int32 version = 2;</code>
+     * <code>int32 version = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public Builder setVersion(int value) {
 
@@ -902,7 +955,7 @@ public final class InstantiateWorkflowTemplateRequest extends com.google.protobu
      * workflow template.
      * </pre>
      *
-     * <code>int32 version = 2;</code>
+     * <code>int32 version = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public Builder clearVersion() {
 
@@ -925,7 +978,7 @@ public final class InstantiateWorkflowTemplateRequest extends com.google.protobu
      * underscores (_), and hyphens (-). The maximum length is 40 characters.
      * </pre>
      *
-     * <code>string request_id = 5;</code>
+     * <code>string request_id = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public java.lang.String getRequestId() {
       java.lang.Object ref = requestId_;
@@ -951,7 +1004,7 @@ public final class InstantiateWorkflowTemplateRequest extends com.google.protobu
      * underscores (_), and hyphens (-). The maximum length is 40 characters.
      * </pre>
      *
-     * <code>string request_id = 5;</code>
+     * <code>string request_id = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public com.google.protobuf.ByteString getRequestIdBytes() {
       java.lang.Object ref = requestId_;
@@ -977,7 +1030,7 @@ public final class InstantiateWorkflowTemplateRequest extends com.google.protobu
      * underscores (_), and hyphens (-). The maximum length is 40 characters.
      * </pre>
      *
-     * <code>string request_id = 5;</code>
+     * <code>string request_id = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public Builder setRequestId(java.lang.String value) {
       if (value == null) {
@@ -1001,7 +1054,7 @@ public final class InstantiateWorkflowTemplateRequest extends com.google.protobu
      * underscores (_), and hyphens (-). The maximum length is 40 characters.
      * </pre>
      *
-     * <code>string request_id = 5;</code>
+     * <code>string request_id = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public Builder clearRequestId() {
 
@@ -1022,7 +1075,7 @@ public final class InstantiateWorkflowTemplateRequest extends com.google.protobu
      * underscores (_), and hyphens (-). The maximum length is 40 characters.
      * </pre>
      *
-     * <code>string request_id = 5;</code>
+     * <code>string request_id = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public Builder setRequestIdBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -1071,7 +1124,8 @@ public final class InstantiateWorkflowTemplateRequest extends com.google.protobu
      * parameters. Values may not exceed 100 characters.
      * </pre>
      *
-     * <code>map&lt;string, string&gt; parameters = 6;</code>
+     * <code>map&lt;string, string&gt; parameters = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public boolean containsParameters(java.lang.String key) {
       if (key == null) {
@@ -1092,7 +1146,8 @@ public final class InstantiateWorkflowTemplateRequest extends com.google.protobu
      * parameters. Values may not exceed 100 characters.
      * </pre>
      *
-     * <code>map&lt;string, string&gt; parameters = 6;</code>
+     * <code>map&lt;string, string&gt; parameters = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public java.util.Map<java.lang.String, java.lang.String> getParametersMap() {
       return internalGetParameters().getMap();
@@ -1105,7 +1160,8 @@ public final class InstantiateWorkflowTemplateRequest extends com.google.protobu
      * parameters. Values may not exceed 100 characters.
      * </pre>
      *
-     * <code>map&lt;string, string&gt; parameters = 6;</code>
+     * <code>map&lt;string, string&gt; parameters = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public java.lang.String getParametersOrDefault(
         java.lang.String key, java.lang.String defaultValue) {
@@ -1123,7 +1179,8 @@ public final class InstantiateWorkflowTemplateRequest extends com.google.protobu
      * parameters. Values may not exceed 100 characters.
      * </pre>
      *
-     * <code>map&lt;string, string&gt; parameters = 6;</code>
+     * <code>map&lt;string, string&gt; parameters = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public java.lang.String getParametersOrThrow(java.lang.String key) {
       if (key == null) {
@@ -1148,7 +1205,8 @@ public final class InstantiateWorkflowTemplateRequest extends com.google.protobu
      * parameters. Values may not exceed 100 characters.
      * </pre>
      *
-     * <code>map&lt;string, string&gt; parameters = 6;</code>
+     * <code>map&lt;string, string&gt; parameters = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder removeParameters(java.lang.String key) {
       if (key == null) {
@@ -1170,7 +1228,8 @@ public final class InstantiateWorkflowTemplateRequest extends com.google.protobu
      * parameters. Values may not exceed 100 characters.
      * </pre>
      *
-     * <code>map&lt;string, string&gt; parameters = 6;</code>
+     * <code>map&lt;string, string&gt; parameters = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder putParameters(java.lang.String key, java.lang.String value) {
       if (key == null) {
@@ -1190,7 +1249,8 @@ public final class InstantiateWorkflowTemplateRequest extends com.google.protobu
      * parameters. Values may not exceed 100 characters.
      * </pre>
      *
-     * <code>map&lt;string, string&gt; parameters = 6;</code>
+     * <code>map&lt;string, string&gt; parameters = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder putAllParameters(java.util.Map<java.lang.String, java.lang.String> values) {
       internalGetMutableParameters().getMutableMap().putAll(values);

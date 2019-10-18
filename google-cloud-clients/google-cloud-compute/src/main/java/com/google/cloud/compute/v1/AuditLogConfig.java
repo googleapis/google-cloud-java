@@ -29,22 +29,26 @@ import javax.annotation.Nullable;
  * Provides the configuration for logging a type of permissions. Example:
  *
  * <p>{ "audit_log_configs": [ { "log_type": "DATA_READ", "exempted_members": [
- * "user:foo{@literal @}gmail.com" ] }, { "log_type": "DATA_WRITE", } ] }
+ * "user:jose{@literal @}example.com" ] }, { "log_type": "DATA_WRITE", } ] }
  *
- * <p>This enables 'DATA_READ' and 'DATA_WRITE' logging, while exempting foo{@literal @}gmail.com
+ * <p>This enables 'DATA_READ' and 'DATA_WRITE' logging, while exempting jose{@literal @}example.com
  * from DATA_READ logging.
  */
 public final class AuditLogConfig implements ApiMessage {
   private final List<String> exemptedMembers;
+  private final Boolean ignoreChildExemptions;
   private final String logType;
 
   private AuditLogConfig() {
     this.exemptedMembers = null;
+    this.ignoreChildExemptions = null;
     this.logType = null;
   }
 
-  private AuditLogConfig(List<String> exemptedMembers, String logType) {
+  private AuditLogConfig(
+      List<String> exemptedMembers, Boolean ignoreChildExemptions, String logType) {
     this.exemptedMembers = exemptedMembers;
+    this.ignoreChildExemptions = ignoreChildExemptions;
     this.logType = logType;
   }
 
@@ -52,6 +56,9 @@ public final class AuditLogConfig implements ApiMessage {
   public Object getFieldValue(String fieldName) {
     if ("exemptedMembers".equals(fieldName)) {
       return exemptedMembers;
+    }
+    if ("ignoreChildExemptions".equals(fieldName)) {
+      return ignoreChildExemptions;
     }
     if ("logType".equals(fieldName)) {
       return logType;
@@ -85,6 +92,10 @@ public final class AuditLogConfig implements ApiMessage {
     return exemptedMembers;
   }
 
+  public Boolean getIgnoreChildExemptions() {
+    return ignoreChildExemptions;
+  }
+
   /** The log type that this config enables. */
   public String getLogType() {
     return logType;
@@ -114,6 +125,7 @@ public final class AuditLogConfig implements ApiMessage {
 
   public static class Builder {
     private List<String> exemptedMembers;
+    private Boolean ignoreChildExemptions;
     private String logType;
 
     Builder() {}
@@ -123,6 +135,9 @@ public final class AuditLogConfig implements ApiMessage {
       if (other.getExemptedMembersList() != null) {
         this.exemptedMembers = other.exemptedMembers;
       }
+      if (other.getIgnoreChildExemptions() != null) {
+        this.ignoreChildExemptions = other.ignoreChildExemptions;
+      }
       if (other.getLogType() != null) {
         this.logType = other.logType;
       }
@@ -131,6 +146,7 @@ public final class AuditLogConfig implements ApiMessage {
 
     Builder(AuditLogConfig source) {
       this.exemptedMembers = source.exemptedMembers;
+      this.ignoreChildExemptions = source.ignoreChildExemptions;
       this.logType = source.logType;
     }
 
@@ -166,6 +182,15 @@ public final class AuditLogConfig implements ApiMessage {
       return this;
     }
 
+    public Boolean getIgnoreChildExemptions() {
+      return ignoreChildExemptions;
+    }
+
+    public Builder setIgnoreChildExemptions(Boolean ignoreChildExemptions) {
+      this.ignoreChildExemptions = ignoreChildExemptions;
+      return this;
+    }
+
     /** The log type that this config enables. */
     public String getLogType() {
       return logType;
@@ -179,12 +204,13 @@ public final class AuditLogConfig implements ApiMessage {
 
     public AuditLogConfig build() {
 
-      return new AuditLogConfig(exemptedMembers, logType);
+      return new AuditLogConfig(exemptedMembers, ignoreChildExemptions, logType);
     }
 
     public Builder clone() {
       Builder newBuilder = new Builder();
       newBuilder.addAllExemptedMembers(this.exemptedMembers);
+      newBuilder.setIgnoreChildExemptions(this.ignoreChildExemptions);
       newBuilder.setLogType(this.logType);
       return newBuilder;
     }
@@ -195,6 +221,9 @@ public final class AuditLogConfig implements ApiMessage {
     return "AuditLogConfig{"
         + "exemptedMembers="
         + exemptedMembers
+        + ", "
+        + "ignoreChildExemptions="
+        + ignoreChildExemptions
         + ", "
         + "logType="
         + logType
@@ -209,6 +238,7 @@ public final class AuditLogConfig implements ApiMessage {
     if (o instanceof AuditLogConfig) {
       AuditLogConfig that = (AuditLogConfig) o;
       return Objects.equals(this.exemptedMembers, that.getExemptedMembersList())
+          && Objects.equals(this.ignoreChildExemptions, that.getIgnoreChildExemptions())
           && Objects.equals(this.logType, that.getLogType());
     }
     return false;
@@ -216,6 +246,6 @@ public final class AuditLogConfig implements ApiMessage {
 
   @Override
   public int hashCode() {
-    return Objects.hash(exemptedMembers, logType);
+    return Objects.hash(exemptedMembers, ignoreChildExemptions, logType);
   }
 }

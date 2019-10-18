@@ -97,12 +97,14 @@ public final class DeleteSshPublicKeyRequest extends com.google.protobuf.Generat
    *
    *
    * <pre>
-   * The fingerprint of the public key to update. Public keys are identified by
+   * Required. The fingerprint of the public key to update. Public keys are identified by
    * their SHA-256 fingerprint. The fingerprint of the public key is in format
    * `users/{user}/sshPublicKeys/{fingerprint}`.
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>
+   * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    */
   public java.lang.String getName() {
     java.lang.Object ref = name_;
@@ -119,12 +121,14 @@ public final class DeleteSshPublicKeyRequest extends com.google.protobuf.Generat
    *
    *
    * <pre>
-   * The fingerprint of the public key to update. Public keys are identified by
+   * Required. The fingerprint of the public key to update. Public keys are identified by
    * their SHA-256 fingerprint. The fingerprint of the public key is in format
    * `users/{user}/sshPublicKeys/{fingerprint}`.
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>
+   * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    */
   public com.google.protobuf.ByteString getNameBytes() {
     java.lang.Object ref = name_;
@@ -462,12 +466,14 @@ public final class DeleteSshPublicKeyRequest extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * The fingerprint of the public key to update. Public keys are identified by
+     * Required. The fingerprint of the public key to update. Public keys are identified by
      * their SHA-256 fingerprint. The fingerprint of the public key is in format
      * `users/{user}/sshPublicKeys/{fingerprint}`.
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>
+     * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      */
     public java.lang.String getName() {
       java.lang.Object ref = name_;
@@ -484,12 +490,14 @@ public final class DeleteSshPublicKeyRequest extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * The fingerprint of the public key to update. Public keys are identified by
+     * Required. The fingerprint of the public key to update. Public keys are identified by
      * their SHA-256 fingerprint. The fingerprint of the public key is in format
      * `users/{user}/sshPublicKeys/{fingerprint}`.
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>
+     * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      */
     public com.google.protobuf.ByteString getNameBytes() {
       java.lang.Object ref = name_;
@@ -506,12 +514,14 @@ public final class DeleteSshPublicKeyRequest extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * The fingerprint of the public key to update. Public keys are identified by
+     * Required. The fingerprint of the public key to update. Public keys are identified by
      * their SHA-256 fingerprint. The fingerprint of the public key is in format
      * `users/{user}/sshPublicKeys/{fingerprint}`.
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>
+     * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      */
     public Builder setName(java.lang.String value) {
       if (value == null) {
@@ -526,12 +536,14 @@ public final class DeleteSshPublicKeyRequest extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * The fingerprint of the public key to update. Public keys are identified by
+     * Required. The fingerprint of the public key to update. Public keys are identified by
      * their SHA-256 fingerprint. The fingerprint of the public key is in format
      * `users/{user}/sshPublicKeys/{fingerprint}`.
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>
+     * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      */
     public Builder clearName() {
 
@@ -543,12 +555,14 @@ public final class DeleteSshPublicKeyRequest extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * The fingerprint of the public key to update. Public keys are identified by
+     * Required. The fingerprint of the public key to update. Public keys are identified by
      * their SHA-256 fingerprint. The fingerprint of the public key is in format
      * `users/{user}/sshPublicKeys/{fingerprint}`.
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>
+     * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      */
     public Builder setNameBytes(com.google.protobuf.ByteString value) {
       if (value == null) {

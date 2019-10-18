@@ -139,7 +139,8 @@ public final class UpdateIntentRequest extends com.google.protobuf.GeneratedMess
    * Required. The intent to update.
    * </pre>
    *
-   * <code>.google.cloud.dialogflow.v2.Intent intent = 1;</code>
+   * <code>.google.cloud.dialogflow.v2.Intent intent = 1 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   public boolean hasIntent() {
     return intent_ != null;
@@ -151,7 +152,8 @@ public final class UpdateIntentRequest extends com.google.protobuf.GeneratedMess
    * Required. The intent to update.
    * </pre>
    *
-   * <code>.google.cloud.dialogflow.v2.Intent intent = 1;</code>
+   * <code>.google.cloud.dialogflow.v2.Intent intent = 1 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   public com.google.cloud.dialogflow.v2.Intent getIntent() {
     return intent_ == null ? com.google.cloud.dialogflow.v2.Intent.getDefaultInstance() : intent_;
@@ -163,7 +165,8 @@ public final class UpdateIntentRequest extends com.google.protobuf.GeneratedMess
    * Required. The intent to update.
    * </pre>
    *
-   * <code>.google.cloud.dialogflow.v2.Intent intent = 1;</code>
+   * <code>.google.cloud.dialogflow.v2.Intent intent = 1 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   public com.google.cloud.dialogflow.v2.IntentOrBuilder getIntentOrBuilder() {
     return getIntent();
@@ -183,7 +186,7 @@ public final class UpdateIntentRequest extends com.google.protobuf.GeneratedMess
    * be used.
    * </pre>
    *
-   * <code>string language_code = 2;</code>
+   * <code>string language_code = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   public java.lang.String getLanguageCode() {
     java.lang.Object ref = languageCode_;
@@ -208,7 +211,7 @@ public final class UpdateIntentRequest extends com.google.protobuf.GeneratedMess
    * be used.
    * </pre>
    *
-   * <code>string language_code = 2;</code>
+   * <code>string language_code = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   public com.google.protobuf.ByteString getLanguageCodeBytes() {
     java.lang.Object ref = languageCode_;
@@ -231,7 +234,8 @@ public final class UpdateIntentRequest extends com.google.protobuf.GeneratedMess
    * Optional. The mask to control which fields get updated.
    * </pre>
    *
-   * <code>.google.protobuf.FieldMask update_mask = 3;</code>
+   * <code>.google.protobuf.FieldMask update_mask = 3 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   public boolean hasUpdateMask() {
     return updateMask_ != null;
@@ -243,7 +247,8 @@ public final class UpdateIntentRequest extends com.google.protobuf.GeneratedMess
    * Optional. The mask to control which fields get updated.
    * </pre>
    *
-   * <code>.google.protobuf.FieldMask update_mask = 3;</code>
+   * <code>.google.protobuf.FieldMask update_mask = 3 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   public com.google.protobuf.FieldMask getUpdateMask() {
     return updateMask_ == null ? com.google.protobuf.FieldMask.getDefaultInstance() : updateMask_;
@@ -255,7 +260,8 @@ public final class UpdateIntentRequest extends com.google.protobuf.GeneratedMess
    * Optional. The mask to control which fields get updated.
    * </pre>
    *
-   * <code>.google.protobuf.FieldMask update_mask = 3;</code>
+   * <code>.google.protobuf.FieldMask update_mask = 3 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   public com.google.protobuf.FieldMaskOrBuilder getUpdateMaskOrBuilder() {
     return getUpdateMask();
@@ -270,7 +276,9 @@ public final class UpdateIntentRequest extends com.google.protobuf.GeneratedMess
    * Optional. The resource view to apply to the returned intent.
    * </pre>
    *
-   * <code>.google.cloud.dialogflow.v2.IntentView intent_view = 4;</code>
+   * <code>
+   * .google.cloud.dialogflow.v2.IntentView intent_view = 4 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   public int getIntentViewValue() {
     return intentView_;
@@ -282,7 +290,9 @@ public final class UpdateIntentRequest extends com.google.protobuf.GeneratedMess
    * Optional. The resource view to apply to the returned intent.
    * </pre>
    *
-   * <code>.google.cloud.dialogflow.v2.IntentView intent_view = 4;</code>
+   * <code>
+   * .google.cloud.dialogflow.v2.IntentView intent_view = 4 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   public com.google.cloud.dialogflow.v2.IntentView getIntentView() {
     @SuppressWarnings("deprecation")
@@ -695,7 +705,9 @@ public final class UpdateIntentRequest extends com.google.protobuf.GeneratedMess
      * Required. The intent to update.
      * </pre>
      *
-     * <code>.google.cloud.dialogflow.v2.Intent intent = 1;</code>
+     * <code>
+     * .google.cloud.dialogflow.v2.Intent intent = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public boolean hasIntent() {
       return intentBuilder_ != null || intent_ != null;
@@ -707,7 +719,9 @@ public final class UpdateIntentRequest extends com.google.protobuf.GeneratedMess
      * Required. The intent to update.
      * </pre>
      *
-     * <code>.google.cloud.dialogflow.v2.Intent intent = 1;</code>
+     * <code>
+     * .google.cloud.dialogflow.v2.Intent intent = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public com.google.cloud.dialogflow.v2.Intent getIntent() {
       if (intentBuilder_ == null) {
@@ -725,7 +739,9 @@ public final class UpdateIntentRequest extends com.google.protobuf.GeneratedMess
      * Required. The intent to update.
      * </pre>
      *
-     * <code>.google.cloud.dialogflow.v2.Intent intent = 1;</code>
+     * <code>
+     * .google.cloud.dialogflow.v2.Intent intent = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder setIntent(com.google.cloud.dialogflow.v2.Intent value) {
       if (intentBuilder_ == null) {
@@ -747,7 +763,9 @@ public final class UpdateIntentRequest extends com.google.protobuf.GeneratedMess
      * Required. The intent to update.
      * </pre>
      *
-     * <code>.google.cloud.dialogflow.v2.Intent intent = 1;</code>
+     * <code>
+     * .google.cloud.dialogflow.v2.Intent intent = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder setIntent(com.google.cloud.dialogflow.v2.Intent.Builder builderForValue) {
       if (intentBuilder_ == null) {
@@ -766,7 +784,9 @@ public final class UpdateIntentRequest extends com.google.protobuf.GeneratedMess
      * Required. The intent to update.
      * </pre>
      *
-     * <code>.google.cloud.dialogflow.v2.Intent intent = 1;</code>
+     * <code>
+     * .google.cloud.dialogflow.v2.Intent intent = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder mergeIntent(com.google.cloud.dialogflow.v2.Intent value) {
       if (intentBuilder_ == null) {
@@ -792,7 +812,9 @@ public final class UpdateIntentRequest extends com.google.protobuf.GeneratedMess
      * Required. The intent to update.
      * </pre>
      *
-     * <code>.google.cloud.dialogflow.v2.Intent intent = 1;</code>
+     * <code>
+     * .google.cloud.dialogflow.v2.Intent intent = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder clearIntent() {
       if (intentBuilder_ == null) {
@@ -812,7 +834,9 @@ public final class UpdateIntentRequest extends com.google.protobuf.GeneratedMess
      * Required. The intent to update.
      * </pre>
      *
-     * <code>.google.cloud.dialogflow.v2.Intent intent = 1;</code>
+     * <code>
+     * .google.cloud.dialogflow.v2.Intent intent = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public com.google.cloud.dialogflow.v2.Intent.Builder getIntentBuilder() {
 
@@ -826,7 +850,9 @@ public final class UpdateIntentRequest extends com.google.protobuf.GeneratedMess
      * Required. The intent to update.
      * </pre>
      *
-     * <code>.google.cloud.dialogflow.v2.Intent intent = 1;</code>
+     * <code>
+     * .google.cloud.dialogflow.v2.Intent intent = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public com.google.cloud.dialogflow.v2.IntentOrBuilder getIntentOrBuilder() {
       if (intentBuilder_ != null) {
@@ -844,7 +870,9 @@ public final class UpdateIntentRequest extends com.google.protobuf.GeneratedMess
      * Required. The intent to update.
      * </pre>
      *
-     * <code>.google.cloud.dialogflow.v2.Intent intent = 1;</code>
+     * <code>
+     * .google.cloud.dialogflow.v2.Intent intent = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.dialogflow.v2.Intent,
@@ -876,7 +904,7 @@ public final class UpdateIntentRequest extends com.google.protobuf.GeneratedMess
      * be used.
      * </pre>
      *
-     * <code>string language_code = 2;</code>
+     * <code>string language_code = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public java.lang.String getLanguageCode() {
       java.lang.Object ref = languageCode_;
@@ -901,7 +929,7 @@ public final class UpdateIntentRequest extends com.google.protobuf.GeneratedMess
      * be used.
      * </pre>
      *
-     * <code>string language_code = 2;</code>
+     * <code>string language_code = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public com.google.protobuf.ByteString getLanguageCodeBytes() {
       java.lang.Object ref = languageCode_;
@@ -926,7 +954,7 @@ public final class UpdateIntentRequest extends com.google.protobuf.GeneratedMess
      * be used.
      * </pre>
      *
-     * <code>string language_code = 2;</code>
+     * <code>string language_code = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public Builder setLanguageCode(java.lang.String value) {
       if (value == null) {
@@ -949,7 +977,7 @@ public final class UpdateIntentRequest extends com.google.protobuf.GeneratedMess
      * be used.
      * </pre>
      *
-     * <code>string language_code = 2;</code>
+     * <code>string language_code = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public Builder clearLanguageCode() {
 
@@ -969,7 +997,7 @@ public final class UpdateIntentRequest extends com.google.protobuf.GeneratedMess
      * be used.
      * </pre>
      *
-     * <code>string language_code = 2;</code>
+     * <code>string language_code = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public Builder setLanguageCodeBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -995,7 +1023,8 @@ public final class UpdateIntentRequest extends com.google.protobuf.GeneratedMess
      * Optional. The mask to control which fields get updated.
      * </pre>
      *
-     * <code>.google.protobuf.FieldMask update_mask = 3;</code>
+     * <code>.google.protobuf.FieldMask update_mask = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public boolean hasUpdateMask() {
       return updateMaskBuilder_ != null || updateMask_ != null;
@@ -1007,7 +1036,8 @@ public final class UpdateIntentRequest extends com.google.protobuf.GeneratedMess
      * Optional. The mask to control which fields get updated.
      * </pre>
      *
-     * <code>.google.protobuf.FieldMask update_mask = 3;</code>
+     * <code>.google.protobuf.FieldMask update_mask = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public com.google.protobuf.FieldMask getUpdateMask() {
       if (updateMaskBuilder_ == null) {
@@ -1025,7 +1055,8 @@ public final class UpdateIntentRequest extends com.google.protobuf.GeneratedMess
      * Optional. The mask to control which fields get updated.
      * </pre>
      *
-     * <code>.google.protobuf.FieldMask update_mask = 3;</code>
+     * <code>.google.protobuf.FieldMask update_mask = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder setUpdateMask(com.google.protobuf.FieldMask value) {
       if (updateMaskBuilder_ == null) {
@@ -1047,7 +1078,8 @@ public final class UpdateIntentRequest extends com.google.protobuf.GeneratedMess
      * Optional. The mask to control which fields get updated.
      * </pre>
      *
-     * <code>.google.protobuf.FieldMask update_mask = 3;</code>
+     * <code>.google.protobuf.FieldMask update_mask = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder setUpdateMask(com.google.protobuf.FieldMask.Builder builderForValue) {
       if (updateMaskBuilder_ == null) {
@@ -1066,7 +1098,8 @@ public final class UpdateIntentRequest extends com.google.protobuf.GeneratedMess
      * Optional. The mask to control which fields get updated.
      * </pre>
      *
-     * <code>.google.protobuf.FieldMask update_mask = 3;</code>
+     * <code>.google.protobuf.FieldMask update_mask = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder mergeUpdateMask(com.google.protobuf.FieldMask value) {
       if (updateMaskBuilder_ == null) {
@@ -1090,7 +1123,8 @@ public final class UpdateIntentRequest extends com.google.protobuf.GeneratedMess
      * Optional. The mask to control which fields get updated.
      * </pre>
      *
-     * <code>.google.protobuf.FieldMask update_mask = 3;</code>
+     * <code>.google.protobuf.FieldMask update_mask = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder clearUpdateMask() {
       if (updateMaskBuilder_ == null) {
@@ -1110,7 +1144,8 @@ public final class UpdateIntentRequest extends com.google.protobuf.GeneratedMess
      * Optional. The mask to control which fields get updated.
      * </pre>
      *
-     * <code>.google.protobuf.FieldMask update_mask = 3;</code>
+     * <code>.google.protobuf.FieldMask update_mask = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public com.google.protobuf.FieldMask.Builder getUpdateMaskBuilder() {
 
@@ -1124,7 +1159,8 @@ public final class UpdateIntentRequest extends com.google.protobuf.GeneratedMess
      * Optional. The mask to control which fields get updated.
      * </pre>
      *
-     * <code>.google.protobuf.FieldMask update_mask = 3;</code>
+     * <code>.google.protobuf.FieldMask update_mask = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public com.google.protobuf.FieldMaskOrBuilder getUpdateMaskOrBuilder() {
       if (updateMaskBuilder_ != null) {
@@ -1142,7 +1178,8 @@ public final class UpdateIntentRequest extends com.google.protobuf.GeneratedMess
      * Optional. The mask to control which fields get updated.
      * </pre>
      *
-     * <code>.google.protobuf.FieldMask update_mask = 3;</code>
+     * <code>.google.protobuf.FieldMask update_mask = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.protobuf.FieldMask,
@@ -1169,7 +1206,9 @@ public final class UpdateIntentRequest extends com.google.protobuf.GeneratedMess
      * Optional. The resource view to apply to the returned intent.
      * </pre>
      *
-     * <code>.google.cloud.dialogflow.v2.IntentView intent_view = 4;</code>
+     * <code>
+     * .google.cloud.dialogflow.v2.IntentView intent_view = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public int getIntentViewValue() {
       return intentView_;
@@ -1181,7 +1220,9 @@ public final class UpdateIntentRequest extends com.google.protobuf.GeneratedMess
      * Optional. The resource view to apply to the returned intent.
      * </pre>
      *
-     * <code>.google.cloud.dialogflow.v2.IntentView intent_view = 4;</code>
+     * <code>
+     * .google.cloud.dialogflow.v2.IntentView intent_view = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder setIntentViewValue(int value) {
       intentView_ = value;
@@ -1195,7 +1236,9 @@ public final class UpdateIntentRequest extends com.google.protobuf.GeneratedMess
      * Optional. The resource view to apply to the returned intent.
      * </pre>
      *
-     * <code>.google.cloud.dialogflow.v2.IntentView intent_view = 4;</code>
+     * <code>
+     * .google.cloud.dialogflow.v2.IntentView intent_view = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public com.google.cloud.dialogflow.v2.IntentView getIntentView() {
       @SuppressWarnings("deprecation")
@@ -1210,7 +1253,9 @@ public final class UpdateIntentRequest extends com.google.protobuf.GeneratedMess
      * Optional. The resource view to apply to the returned intent.
      * </pre>
      *
-     * <code>.google.cloud.dialogflow.v2.IntentView intent_view = 4;</code>
+     * <code>
+     * .google.cloud.dialogflow.v2.IntentView intent_view = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder setIntentView(com.google.cloud.dialogflow.v2.IntentView value) {
       if (value == null) {
@@ -1228,7 +1273,9 @@ public final class UpdateIntentRequest extends com.google.protobuf.GeneratedMess
      * Optional. The resource view to apply to the returned intent.
      * </pre>
      *
-     * <code>.google.cloud.dialogflow.v2.IntentView intent_view = 4;</code>
+     * <code>
+     * .google.cloud.dialogflow.v2.IntentView intent_view = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder clearIntentView() {
 

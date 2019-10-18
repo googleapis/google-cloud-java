@@ -16,7 +16,9 @@ public interface UpdateApplicationRequestOrBuilder
    * system.
    * </pre>
    *
-   * <code>.google.cloud.talent.v4beta1.Application application = 1;</code>
+   * <code>
+   * .google.cloud.talent.v4beta1.Application application = 1 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   boolean hasApplication();
   /**
@@ -27,7 +29,9 @@ public interface UpdateApplicationRequestOrBuilder
    * system.
    * </pre>
    *
-   * <code>.google.cloud.talent.v4beta1.Application application = 1;</code>
+   * <code>
+   * .google.cloud.talent.v4beta1.Application application = 1 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   com.google.cloud.talent.v4beta1.Application getApplication();
   /**
@@ -38,7 +42,9 @@ public interface UpdateApplicationRequestOrBuilder
    * system.
    * </pre>
    *
-   * <code>.google.cloud.talent.v4beta1.Application application = 1;</code>
+   * <code>
+   * .google.cloud.talent.v4beta1.Application application = 1 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   com.google.cloud.talent.v4beta1.ApplicationOrBuilder getApplicationOrBuilder();
 
@@ -46,8 +52,7 @@ public interface UpdateApplicationRequestOrBuilder
    *
    *
    * <pre>
-   * Optional but strongly recommended for the best service
-   * experience.
+   * Strongly recommended for the best service experience.
    * If
    * [update_mask][google.cloud.talent.v4beta1.UpdateApplicationRequest.update_mask]
    * is provided, only the specified fields in
@@ -65,8 +70,7 @@ public interface UpdateApplicationRequestOrBuilder
    *
    *
    * <pre>
-   * Optional but strongly recommended for the best service
-   * experience.
+   * Strongly recommended for the best service experience.
    * If
    * [update_mask][google.cloud.talent.v4beta1.UpdateApplicationRequest.update_mask]
    * is provided, only the specified fields in
@@ -84,8 +88,7 @@ public interface UpdateApplicationRequestOrBuilder
    *
    *
    * <pre>
-   * Optional but strongly recommended for the best service
-   * experience.
+   * Strongly recommended for the best service experience.
    * If
    * [update_mask][google.cloud.talent.v4beta1.UpdateApplicationRequest.update_mask]
    * is provided, only the specified fields in

@@ -11,8 +11,7 @@ import static io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall;
  *
  *
  * <pre>
- * Service for configuring sinks used to export log entries out of
- * Logging.
+ * Service for configuring sinks used to route log entries.
  * </pre>
  */
 @javax.annotation.Generated(
@@ -551,8 +550,7 @@ public final class ConfigServiceV2Grpc {
    *
    *
    * <pre>
-   * Service for configuring sinks used to export log entries out of
-   * Logging.
+   * Service for configuring sinks used to route log entries.
    * </pre>
    */
   public abstract static class ConfigServiceV2ImplBase implements io.grpc.BindableService {
@@ -587,9 +585,9 @@ public final class ConfigServiceV2Grpc {
      *
      *
      * <pre>
-     * Creates a sink that exports specified log entries to a destination.  The
+     * Creates a sink that exports specified log entries to a destination. The
      * export of newly-ingested log entries begins immediately, unless the sink's
-     * `writer_identity` is not permitted to write to the destination.  A sink can
+     * `writer_identity` is not permitted to write to the destination. A sink can
      * export log entries only from the resource owning the sink.
      * </pre>
      */
@@ -603,7 +601,7 @@ public final class ConfigServiceV2Grpc {
      *
      *
      * <pre>
-     * Updates a sink.  This method replaces the following fields in the existing
+     * Updates a sink. This method replaces the following fields in the existing
      * sink with values from the new sink: `destination`, and `filter`.
      * The updated sink might also have a new `writer_identity`; see the
      * `unique_writer_identity` field.
@@ -769,8 +767,7 @@ public final class ConfigServiceV2Grpc {
    *
    *
    * <pre>
-   * Service for configuring sinks used to export log entries out of
-   * Logging.
+   * Service for configuring sinks used to route log entries.
    * </pre>
    */
   public static final class ConfigServiceV2Stub
@@ -824,9 +821,9 @@ public final class ConfigServiceV2Grpc {
      *
      *
      * <pre>
-     * Creates a sink that exports specified log entries to a destination.  The
+     * Creates a sink that exports specified log entries to a destination. The
      * export of newly-ingested log entries begins immediately, unless the sink's
-     * `writer_identity` is not permitted to write to the destination.  A sink can
+     * `writer_identity` is not permitted to write to the destination. A sink can
      * export log entries only from the resource owning the sink.
      * </pre>
      */
@@ -843,7 +840,7 @@ public final class ConfigServiceV2Grpc {
      *
      *
      * <pre>
-     * Updates a sink.  This method replaces the following fields in the existing
+     * Updates a sink. This method replaces the following fields in the existing
      * sink with values from the new sink: `destination`, and `filter`.
      * The updated sink might also have a new `writer_identity`; see the
      * `unique_writer_identity` field.
@@ -963,8 +960,7 @@ public final class ConfigServiceV2Grpc {
    *
    *
    * <pre>
-   * Service for configuring sinks used to export log entries out of
-   * Logging.
+   * Service for configuring sinks used to route log entries.
    * </pre>
    */
   public static final class ConfigServiceV2BlockingStub
@@ -1010,9 +1006,9 @@ public final class ConfigServiceV2Grpc {
      *
      *
      * <pre>
-     * Creates a sink that exports specified log entries to a destination.  The
+     * Creates a sink that exports specified log entries to a destination. The
      * export of newly-ingested log entries begins immediately, unless the sink's
-     * `writer_identity` is not permitted to write to the destination.  A sink can
+     * `writer_identity` is not permitted to write to the destination. A sink can
      * export log entries only from the resource owning the sink.
      * </pre>
      */
@@ -1026,7 +1022,7 @@ public final class ConfigServiceV2Grpc {
      *
      *
      * <pre>
-     * Updates a sink.  This method replaces the following fields in the existing
+     * Updates a sink. This method replaces the following fields in the existing
      * sink with values from the new sink: `destination`, and `filter`.
      * The updated sink might also have a new `writer_identity`; see the
      * `unique_writer_identity` field.
@@ -1123,8 +1119,7 @@ public final class ConfigServiceV2Grpc {
    *
    *
    * <pre>
-   * Service for configuring sinks used to export log entries out of
-   * Logging.
+   * Service for configuring sinks used to route log entries.
    * </pre>
    */
   public static final class ConfigServiceV2FutureStub
@@ -1174,9 +1169,9 @@ public final class ConfigServiceV2Grpc {
      *
      *
      * <pre>
-     * Creates a sink that exports specified log entries to a destination.  The
+     * Creates a sink that exports specified log entries to a destination. The
      * export of newly-ingested log entries begins immediately, unless the sink's
-     * `writer_identity` is not permitted to write to the destination.  A sink can
+     * `writer_identity` is not permitted to write to the destination. A sink can
      * export log entries only from the resource owning the sink.
      * </pre>
      */
@@ -1190,7 +1185,7 @@ public final class ConfigServiceV2Grpc {
      *
      *
      * <pre>
-     * Updates a sink.  This method replaces the following fields in the existing
+     * Updates a sink. This method replaces the following fields in the existing
      * sink with values from the new sink: `destination`, and `filter`.
      * The updated sink might also have a new `writer_identity`; see the
      * `unique_writer_identity` field.

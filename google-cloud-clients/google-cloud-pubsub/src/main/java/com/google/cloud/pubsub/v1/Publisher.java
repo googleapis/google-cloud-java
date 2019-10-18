@@ -155,7 +155,8 @@ public class Publisher {
         PublisherStubSettings.newBuilder()
             .setCredentialsProvider(builder.credentialsProvider)
             .setExecutorProvider(FixedExecutorProvider.create(executor))
-            .setTransportChannelProvider(builder.channelProvider);
+            .setTransportChannelProvider(builder.channelProvider)
+            .setEndpoint(builder.endpoint);
     stubSettings
         .publishSettings()
         .setRetryableCodes(
@@ -204,7 +205,7 @@ public class Publisher {
    *   public void onFailure(Throwable t) {
    *     System.out.println("failed to publish: " + t);
    *   }
-   * });
+   * }, MoreExecutors.directExecutor());
    * }</pre>
    *
    * @param message the message to publish.
@@ -255,7 +256,13 @@ public class Publisher {
     if (!batchesToSend.isEmpty() && orderingKey.isEmpty()) {
       for (final OutstandingBatch batch : batchesToSend) {
         logger.log(Level.FINER, "Scheduling a batch for immediate sending.");
-        publishOutstandingBatch(batch);
+        executor.execute(
+            new Runnable() {
+              @Override
+              public void run() {
+                publishOutstandingBatch(batch);
+              }
+            });
       }
     }
 
@@ -562,8 +569,9 @@ public class Publisher {
     static final long DEFAULT_ELEMENT_COUNT_THRESHOLD = 100L;
     static final long DEFAULT_REQUEST_BYTES_THRESHOLD = 1000L; // 1 kB
     static final Duration DEFAULT_DELAY_THRESHOLD = Duration.ofMillis(1);
-    private static final Duration DEFAULT_RPC_TIMEOUT = Duration.ofSeconds(10);
-    private static final Duration DEFAULT_TOTAL_TIMEOUT = MIN_TOTAL_TIMEOUT;
+    private static final Duration DEFAULT_INITIAL_RPC_TIMEOUT = Duration.ofSeconds(5);
+    private static final Duration DEFAULT_MAX_RPC_TIMEOUT = Duration.ofSeconds(600);
+    private static final Duration DEFAULT_TOTAL_TIMEOUT = Duration.ofSeconds(600);
     static final BatchingSettings DEFAULT_BATCHING_SETTINGS =
         BatchingSettings.newBuilder()
             .setDelayThreshold(DEFAULT_DELAY_THRESHOLD)
@@ -573,12 +581,12 @@ public class Publisher {
     static final RetrySettings DEFAULT_RETRY_SETTINGS =
         RetrySettings.newBuilder()
             .setTotalTimeout(DEFAULT_TOTAL_TIMEOUT)
-            .setInitialRetryDelay(Duration.ofMillis(5))
-            .setRetryDelayMultiplier(2)
-            .setMaxRetryDelay(Duration.ofMillis(Long.MAX_VALUE))
-            .setInitialRpcTimeout(DEFAULT_RPC_TIMEOUT)
-            .setRpcTimeoutMultiplier(2)
-            .setMaxRpcTimeout(DEFAULT_RPC_TIMEOUT)
+            .setInitialRetryDelay(Duration.ofMillis(100))
+            .setRetryDelayMultiplier(1.3)
+            .setMaxRetryDelay(Duration.ofSeconds(60))
+            .setInitialRpcTimeout(DEFAULT_INITIAL_RPC_TIMEOUT)
+            .setRpcTimeoutMultiplier(1)
+            .setMaxRpcTimeout(DEFAULT_MAX_RPC_TIMEOUT)
             .build();
     static final boolean DEFAULT_ENABLE_MESSAGE_ORDERING = false;
     private static final int THREADS_PER_CPU = 5;
@@ -588,6 +596,7 @@ public class Publisher {
             .build();
 
     String topicName;
+    private String endpoint = PublisherStubSettings.getDefaultEndpoint();
 
     // Batching options
     BatchingSettings batchingSettings = DEFAULT_BATCHING_SETTINGS;
@@ -711,6 +720,12 @@ public class Publisher {
     public Builder setTransform(ApiFunction<PubsubMessage, PubsubMessage> messageTransform) {
       this.messageTransform =
           Preconditions.checkNotNull(messageTransform, "The messageTransform cannnot be null.");
+      return this;
+    }
+
+    /** Gives the ability to override the gRPC endpoint. */
+    public Builder setEndpoint(String endpoint) {
+      this.endpoint = endpoint;
       return this;
     }
 

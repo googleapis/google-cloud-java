@@ -120,7 +120,7 @@ public final class UpdateUptimeCheckConfigRequest extends com.google.protobuf.Ge
    *
    *
    * <pre>
-   * Optional. If present, only the listed fields in the current uptime check
+   * Optional. If present, only the listed fields in the current Uptime check
    * configuration are updated with values from the new configuration. If this
    * field is empty, then the current configuration is completely replaced with
    * the new configuration.
@@ -135,7 +135,7 @@ public final class UpdateUptimeCheckConfigRequest extends com.google.protobuf.Ge
    *
    *
    * <pre>
-   * Optional. If present, only the listed fields in the current uptime check
+   * Optional. If present, only the listed fields in the current Uptime check
    * configuration are updated with values from the new configuration. If this
    * field is empty, then the current configuration is completely replaced with
    * the new configuration.
@@ -150,7 +150,7 @@ public final class UpdateUptimeCheckConfigRequest extends com.google.protobuf.Ge
    *
    *
    * <pre>
-   * Optional. If present, only the listed fields in the current uptime check
+   * Optional. If present, only the listed fields in the current Uptime check
    * configuration are updated with values from the new configuration. If this
    * field is empty, then the current configuration is completely replaced with
    * the new configuration.
@@ -168,11 +168,11 @@ public final class UpdateUptimeCheckConfigRequest extends com.google.protobuf.Ge
    *
    *
    * <pre>
-   * Required. If an `"updateMask"` has been specified, this field gives
-   * the values for the set of fields mentioned in the `"updateMask"`. If an
-   * `"updateMask"` has not been given, this uptime check configuration replaces
-   * the current configuration. If a field is mentioned in `"updateMask"` but
-   * the corresonding field is omitted in this partial uptime check
+   * Required. If an `updateMask` has been specified, this field gives
+   * the values for the set of fields mentioned in the `updateMask`. If an
+   * `updateMask` has not been given, this Uptime check configuration replaces
+   * the current configuration. If a field is mentioned in `updateMask` but
+   * the corresonding field is omitted in this partial Uptime check
    * configuration, it has the effect of deleting/clearing the field from the
    * configuration on the server.
    * The following fields can be updated: `display_name`,
@@ -189,11 +189,11 @@ public final class UpdateUptimeCheckConfigRequest extends com.google.protobuf.Ge
    *
    *
    * <pre>
-   * Required. If an `"updateMask"` has been specified, this field gives
-   * the values for the set of fields mentioned in the `"updateMask"`. If an
-   * `"updateMask"` has not been given, this uptime check configuration replaces
-   * the current configuration. If a field is mentioned in `"updateMask"` but
-   * the corresonding field is omitted in this partial uptime check
+   * Required. If an `updateMask` has been specified, this field gives
+   * the values for the set of fields mentioned in the `updateMask`. If an
+   * `updateMask` has not been given, this Uptime check configuration replaces
+   * the current configuration. If a field is mentioned in `updateMask` but
+   * the corresonding field is omitted in this partial Uptime check
    * configuration, it has the effect of deleting/clearing the field from the
    * configuration on the server.
    * The following fields can be updated: `display_name`,
@@ -212,11 +212,11 @@ public final class UpdateUptimeCheckConfigRequest extends com.google.protobuf.Ge
    *
    *
    * <pre>
-   * Required. If an `"updateMask"` has been specified, this field gives
-   * the values for the set of fields mentioned in the `"updateMask"`. If an
-   * `"updateMask"` has not been given, this uptime check configuration replaces
-   * the current configuration. If a field is mentioned in `"updateMask"` but
-   * the corresonding field is omitted in this partial uptime check
+   * Required. If an `updateMask` has been specified, this field gives
+   * the values for the set of fields mentioned in the `updateMask`. If an
+   * `updateMask` has not been given, this Uptime check configuration replaces
+   * the current configuration. If a field is mentioned in `updateMask` but
+   * the corresonding field is omitted in this partial Uptime check
    * configuration, it has the effect of deleting/clearing the field from the
    * configuration on the server.
    * The following fields can be updated: `display_name`,
@@ -599,7 +599,7 @@ public final class UpdateUptimeCheckConfigRequest extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * Optional. If present, only the listed fields in the current uptime check
+     * Optional. If present, only the listed fields in the current Uptime check
      * configuration are updated with values from the new configuration. If this
      * field is empty, then the current configuration is completely replaced with
      * the new configuration.
@@ -614,7 +614,7 @@ public final class UpdateUptimeCheckConfigRequest extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * Optional. If present, only the listed fields in the current uptime check
+     * Optional. If present, only the listed fields in the current Uptime check
      * configuration are updated with values from the new configuration. If this
      * field is empty, then the current configuration is completely replaced with
      * the new configuration.
@@ -635,7 +635,7 @@ public final class UpdateUptimeCheckConfigRequest extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * Optional. If present, only the listed fields in the current uptime check
+     * Optional. If present, only the listed fields in the current Uptime check
      * configuration are updated with values from the new configuration. If this
      * field is empty, then the current configuration is completely replaced with
      * the new configuration.
@@ -660,7 +660,7 @@ public final class UpdateUptimeCheckConfigRequest extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * Optional. If present, only the listed fields in the current uptime check
+     * Optional. If present, only the listed fields in the current Uptime check
      * configuration are updated with values from the new configuration. If this
      * field is empty, then the current configuration is completely replaced with
      * the new configuration.
@@ -682,7 +682,7 @@ public final class UpdateUptimeCheckConfigRequest extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * Optional. If present, only the listed fields in the current uptime check
+     * Optional. If present, only the listed fields in the current Uptime check
      * configuration are updated with values from the new configuration. If this
      * field is empty, then the current configuration is completely replaced with
      * the new configuration.
@@ -709,7 +709,7 @@ public final class UpdateUptimeCheckConfigRequest extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * Optional. If present, only the listed fields in the current uptime check
+     * Optional. If present, only the listed fields in the current Uptime check
      * configuration are updated with values from the new configuration. If this
      * field is empty, then the current configuration is completely replaced with
      * the new configuration.
@@ -732,7 +732,7 @@ public final class UpdateUptimeCheckConfigRequest extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * Optional. If present, only the listed fields in the current uptime check
+     * Optional. If present, only the listed fields in the current Uptime check
      * configuration are updated with values from the new configuration. If this
      * field is empty, then the current configuration is completely replaced with
      * the new configuration.
@@ -749,7 +749,7 @@ public final class UpdateUptimeCheckConfigRequest extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * Optional. If present, only the listed fields in the current uptime check
+     * Optional. If present, only the listed fields in the current Uptime check
      * configuration are updated with values from the new configuration. If this
      * field is empty, then the current configuration is completely replaced with
      * the new configuration.
@@ -770,7 +770,7 @@ public final class UpdateUptimeCheckConfigRequest extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * Optional. If present, only the listed fields in the current uptime check
+     * Optional. If present, only the listed fields in the current Uptime check
      * configuration are updated with values from the new configuration. If this
      * field is empty, then the current configuration is completely replaced with
      * the new configuration.
@@ -805,11 +805,11 @@ public final class UpdateUptimeCheckConfigRequest extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * Required. If an `"updateMask"` has been specified, this field gives
-     * the values for the set of fields mentioned in the `"updateMask"`. If an
-     * `"updateMask"` has not been given, this uptime check configuration replaces
-     * the current configuration. If a field is mentioned in `"updateMask"` but
-     * the corresonding field is omitted in this partial uptime check
+     * Required. If an `updateMask` has been specified, this field gives
+     * the values for the set of fields mentioned in the `updateMask`. If an
+     * `updateMask` has not been given, this Uptime check configuration replaces
+     * the current configuration. If a field is mentioned in `updateMask` but
+     * the corresonding field is omitted in this partial Uptime check
      * configuration, it has the effect of deleting/clearing the field from the
      * configuration on the server.
      * The following fields can be updated: `display_name`,
@@ -826,11 +826,11 @@ public final class UpdateUptimeCheckConfigRequest extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * Required. If an `"updateMask"` has been specified, this field gives
-     * the values for the set of fields mentioned in the `"updateMask"`. If an
-     * `"updateMask"` has not been given, this uptime check configuration replaces
-     * the current configuration. If a field is mentioned in `"updateMask"` but
-     * the corresonding field is omitted in this partial uptime check
+     * Required. If an `updateMask` has been specified, this field gives
+     * the values for the set of fields mentioned in the `updateMask`. If an
+     * `updateMask` has not been given, this Uptime check configuration replaces
+     * the current configuration. If a field is mentioned in `updateMask` but
+     * the corresonding field is omitted in this partial Uptime check
      * configuration, it has the effect of deleting/clearing the field from the
      * configuration on the server.
      * The following fields can be updated: `display_name`,
@@ -853,11 +853,11 @@ public final class UpdateUptimeCheckConfigRequest extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * Required. If an `"updateMask"` has been specified, this field gives
-     * the values for the set of fields mentioned in the `"updateMask"`. If an
-     * `"updateMask"` has not been given, this uptime check configuration replaces
-     * the current configuration. If a field is mentioned in `"updateMask"` but
-     * the corresonding field is omitted in this partial uptime check
+     * Required. If an `updateMask` has been specified, this field gives
+     * the values for the set of fields mentioned in the `updateMask`. If an
+     * `updateMask` has not been given, this Uptime check configuration replaces
+     * the current configuration. If a field is mentioned in `updateMask` but
+     * the corresonding field is omitted in this partial Uptime check
      * configuration, it has the effect of deleting/clearing the field from the
      * configuration on the server.
      * The following fields can be updated: `display_name`,
@@ -884,11 +884,11 @@ public final class UpdateUptimeCheckConfigRequest extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * Required. If an `"updateMask"` has been specified, this field gives
-     * the values for the set of fields mentioned in the `"updateMask"`. If an
-     * `"updateMask"` has not been given, this uptime check configuration replaces
-     * the current configuration. If a field is mentioned in `"updateMask"` but
-     * the corresonding field is omitted in this partial uptime check
+     * Required. If an `updateMask` has been specified, this field gives
+     * the values for the set of fields mentioned in the `updateMask`. If an
+     * `updateMask` has not been given, this Uptime check configuration replaces
+     * the current configuration. If a field is mentioned in `updateMask` but
+     * the corresonding field is omitted in this partial Uptime check
      * configuration, it has the effect of deleting/clearing the field from the
      * configuration on the server.
      * The following fields can be updated: `display_name`,
@@ -913,11 +913,11 @@ public final class UpdateUptimeCheckConfigRequest extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * Required. If an `"updateMask"` has been specified, this field gives
-     * the values for the set of fields mentioned in the `"updateMask"`. If an
-     * `"updateMask"` has not been given, this uptime check configuration replaces
-     * the current configuration. If a field is mentioned in `"updateMask"` but
-     * the corresonding field is omitted in this partial uptime check
+     * Required. If an `updateMask` has been specified, this field gives
+     * the values for the set of fields mentioned in the `updateMask`. If an
+     * `updateMask` has not been given, this Uptime check configuration replaces
+     * the current configuration. If a field is mentioned in `updateMask` but
+     * the corresonding field is omitted in this partial Uptime check
      * configuration, it has the effect of deleting/clearing the field from the
      * configuration on the server.
      * The following fields can be updated: `display_name`,
@@ -948,11 +948,11 @@ public final class UpdateUptimeCheckConfigRequest extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * Required. If an `"updateMask"` has been specified, this field gives
-     * the values for the set of fields mentioned in the `"updateMask"`. If an
-     * `"updateMask"` has not been given, this uptime check configuration replaces
-     * the current configuration. If a field is mentioned in `"updateMask"` but
-     * the corresonding field is omitted in this partial uptime check
+     * Required. If an `updateMask` has been specified, this field gives
+     * the values for the set of fields mentioned in the `updateMask`. If an
+     * `updateMask` has not been given, this Uptime check configuration replaces
+     * the current configuration. If a field is mentioned in `updateMask` but
+     * the corresonding field is omitted in this partial Uptime check
      * configuration, it has the effect of deleting/clearing the field from the
      * configuration on the server.
      * The following fields can be updated: `display_name`,
@@ -977,11 +977,11 @@ public final class UpdateUptimeCheckConfigRequest extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * Required. If an `"updateMask"` has been specified, this field gives
-     * the values for the set of fields mentioned in the `"updateMask"`. If an
-     * `"updateMask"` has not been given, this uptime check configuration replaces
-     * the current configuration. If a field is mentioned in `"updateMask"` but
-     * the corresonding field is omitted in this partial uptime check
+     * Required. If an `updateMask` has been specified, this field gives
+     * the values for the set of fields mentioned in the `updateMask`. If an
+     * `updateMask` has not been given, this Uptime check configuration replaces
+     * the current configuration. If a field is mentioned in `updateMask` but
+     * the corresonding field is omitted in this partial Uptime check
      * configuration, it has the effect of deleting/clearing the field from the
      * configuration on the server.
      * The following fields can be updated: `display_name`,
@@ -1000,11 +1000,11 @@ public final class UpdateUptimeCheckConfigRequest extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * Required. If an `"updateMask"` has been specified, this field gives
-     * the values for the set of fields mentioned in the `"updateMask"`. If an
-     * `"updateMask"` has not been given, this uptime check configuration replaces
-     * the current configuration. If a field is mentioned in `"updateMask"` but
-     * the corresonding field is omitted in this partial uptime check
+     * Required. If an `updateMask` has been specified, this field gives
+     * the values for the set of fields mentioned in the `updateMask`. If an
+     * `updateMask` has not been given, this Uptime check configuration replaces
+     * the current configuration. If a field is mentioned in `updateMask` but
+     * the corresonding field is omitted in this partial Uptime check
      * configuration, it has the effect of deleting/clearing the field from the
      * configuration on the server.
      * The following fields can be updated: `display_name`,
@@ -1027,11 +1027,11 @@ public final class UpdateUptimeCheckConfigRequest extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * Required. If an `"updateMask"` has been specified, this field gives
-     * the values for the set of fields mentioned in the `"updateMask"`. If an
-     * `"updateMask"` has not been given, this uptime check configuration replaces
-     * the current configuration. If a field is mentioned in `"updateMask"` but
-     * the corresonding field is omitted in this partial uptime check
+     * Required. If an `updateMask` has been specified, this field gives
+     * the values for the set of fields mentioned in the `updateMask`. If an
+     * `updateMask` has not been given, this Uptime check configuration replaces
+     * the current configuration. If a field is mentioned in `updateMask` but
+     * the corresonding field is omitted in this partial Uptime check
      * configuration, it has the effect of deleting/clearing the field from the
      * configuration on the server.
      * The following fields can be updated: `display_name`,

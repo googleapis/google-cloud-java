@@ -16,7 +16,9 @@ public interface GetEntityTypeRequestOrBuilder
    * Format: `projects/&lt;Project ID&gt;/agent/entityTypes/&lt;EntityType ID&gt;`.
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>
+   * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    */
   java.lang.String getName();
   /**
@@ -27,7 +29,9 @@ public interface GetEntityTypeRequestOrBuilder
    * Format: `projects/&lt;Project ID&gt;/agent/entityTypes/&lt;EntityType ID&gt;`.
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>
+   * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    */
   com.google.protobuf.ByteString getNameBytes();
 
@@ -43,7 +47,7 @@ public interface GetEntityTypeRequestOrBuilder
    * be used.
    * </pre>
    *
-   * <code>string language_code = 2;</code>
+   * <code>string language_code = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   java.lang.String getLanguageCode();
   /**
@@ -58,7 +62,7 @@ public interface GetEntityTypeRequestOrBuilder
    * be used.
    * </pre>
    *
-   * <code>string language_code = 2;</code>
+   * <code>string language_code = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   com.google.protobuf.ByteString getLanguageCodeBytes();
 }

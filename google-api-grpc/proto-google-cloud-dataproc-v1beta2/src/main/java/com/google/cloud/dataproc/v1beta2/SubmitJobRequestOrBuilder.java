@@ -16,7 +16,7 @@ public interface SubmitJobRequestOrBuilder
    * belongs to.
    * </pre>
    *
-   * <code>string project_id = 1;</code>
+   * <code>string project_id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   java.lang.String getProjectId();
   /**
@@ -27,7 +27,7 @@ public interface SubmitJobRequestOrBuilder
    * belongs to.
    * </pre>
    *
-   * <code>string project_id = 1;</code>
+   * <code>string project_id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   com.google.protobuf.ByteString getProjectIdBytes();
 
@@ -38,7 +38,7 @@ public interface SubmitJobRequestOrBuilder
    * Required. The Cloud Dataproc region in which to handle the request.
    * </pre>
    *
-   * <code>string region = 3;</code>
+   * <code>string region = 3 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   java.lang.String getRegion();
   /**
@@ -48,7 +48,7 @@ public interface SubmitJobRequestOrBuilder
    * Required. The Cloud Dataproc region in which to handle the request.
    * </pre>
    *
-   * <code>string region = 3;</code>
+   * <code>string region = 3 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   com.google.protobuf.ByteString getRegionBytes();
 
@@ -59,7 +59,8 @@ public interface SubmitJobRequestOrBuilder
    * Required. The job resource.
    * </pre>
    *
-   * <code>.google.cloud.dataproc.v1beta2.Job job = 2;</code>
+   * <code>.google.cloud.dataproc.v1beta2.Job job = 2 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   boolean hasJob();
   /**
@@ -69,7 +70,8 @@ public interface SubmitJobRequestOrBuilder
    * Required. The job resource.
    * </pre>
    *
-   * <code>.google.cloud.dataproc.v1beta2.Job job = 2;</code>
+   * <code>.google.cloud.dataproc.v1beta2.Job job = 2 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   com.google.cloud.dataproc.v1beta2.Job getJob();
   /**
@@ -79,7 +81,8 @@ public interface SubmitJobRequestOrBuilder
    * Required. The job resource.
    * </pre>
    *
-   * <code>.google.cloud.dataproc.v1beta2.Job job = 2;</code>
+   * <code>.google.cloud.dataproc.v1beta2.Job job = 2 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   com.google.cloud.dataproc.v1beta2.JobOrBuilder getJobOrBuilder();
 

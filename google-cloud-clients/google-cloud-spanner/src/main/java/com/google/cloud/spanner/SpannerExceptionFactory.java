@@ -89,6 +89,33 @@ public final class SpannerExceptionFactory {
   }
 
   /**
+   * Constructs a specific aborted exception that should only be thrown by a connection after an
+   * internal retry aborted due to concurrent modifications.
+   */
+  public static AbortedDueToConcurrentModificationException
+      newAbortedDueToConcurrentModificationException(AbortedException cause) {
+    return new AbortedDueToConcurrentModificationException(
+        DoNotConstructDirectly.ALLOWED,
+        "The transaction was aborted and could not be retried due to a concurrent modification",
+        cause);
+  }
+
+  /**
+   * Constructs a specific aborted exception that should only be thrown by a connection after an
+   * internal retry aborted because a database call caused an exception that did not happen during
+   * the original attempt.
+   */
+  public static AbortedDueToConcurrentModificationException
+      newAbortedDueToConcurrentModificationException(
+          AbortedException cause, SpannerException databaseError) {
+    return new AbortedDueToConcurrentModificationException(
+        DoNotConstructDirectly.ALLOWED,
+        "The transaction was aborted and could not be retried due to a database error during the retry",
+        cause,
+        databaseError);
+  }
+
+  /**
    * Creates a new exception based on {@code cause}. If {@code cause} indicates cancellation, {@code
    * context} will be inspected to establish the type of cancellation.
    *

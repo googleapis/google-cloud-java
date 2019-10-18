@@ -1056,6 +1056,146 @@ public class NetworkClient implements BackgroundResource {
     return stub.switchToCustomModeNetworkCallable();
   }
 
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Updates the specified network peering with the data included in the request Only the following
+   * fields can be modified: NetworkPeering.export_custom_routes, and
+   * NetworkPeering.import_custom_routes
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (NetworkClient networkClient = NetworkClient.create()) {
+   *   ProjectGlobalNetworkName network = ProjectGlobalNetworkName.of("[PROJECT]", "[NETWORK]");
+   *   NetworksUpdatePeeringRequest networksUpdatePeeringRequestResource = NetworksUpdatePeeringRequest.newBuilder().build();
+   *   List&lt;String&gt; fieldMask = new ArrayList&lt;&gt;();
+   *   Operation response = networkClient.updatePeeringNetwork(network, networksUpdatePeeringRequestResource, fieldMask);
+   * }
+   * </code></pre>
+   *
+   * @param network Name of the network resource which the updated peering is belonging to.
+   * @param networksUpdatePeeringRequestResource
+   * @param fieldMask The fields that should be serialized (even if they have empty values). If the
+   *     containing message object has a non-null fieldmask, then all the fields in the field mask
+   *     (and only those fields in the field mask) will be serialized. If the containing object does
+   *     not have a fieldmask, then only non-empty fields will be serialized.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  @BetaApi
+  public final Operation updatePeeringNetwork(
+      ProjectGlobalNetworkName network,
+      NetworksUpdatePeeringRequest networksUpdatePeeringRequestResource,
+      List<String> fieldMask) {
+
+    UpdatePeeringNetworkHttpRequest request =
+        UpdatePeeringNetworkHttpRequest.newBuilder()
+            .setNetwork(network == null ? null : network.toString())
+            .setNetworksUpdatePeeringRequestResource(networksUpdatePeeringRequestResource)
+            .addAllFieldMask(fieldMask)
+            .build();
+    return updatePeeringNetwork(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Updates the specified network peering with the data included in the request Only the following
+   * fields can be modified: NetworkPeering.export_custom_routes, and
+   * NetworkPeering.import_custom_routes
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (NetworkClient networkClient = NetworkClient.create()) {
+   *   ProjectGlobalNetworkName network = ProjectGlobalNetworkName.of("[PROJECT]", "[NETWORK]");
+   *   NetworksUpdatePeeringRequest networksUpdatePeeringRequestResource = NetworksUpdatePeeringRequest.newBuilder().build();
+   *   List&lt;String&gt; fieldMask = new ArrayList&lt;&gt;();
+   *   Operation response = networkClient.updatePeeringNetwork(network.toString(), networksUpdatePeeringRequestResource, fieldMask);
+   * }
+   * </code></pre>
+   *
+   * @param network Name of the network resource which the updated peering is belonging to.
+   * @param networksUpdatePeeringRequestResource
+   * @param fieldMask The fields that should be serialized (even if they have empty values). If the
+   *     containing message object has a non-null fieldmask, then all the fields in the field mask
+   *     (and only those fields in the field mask) will be serialized. If the containing object does
+   *     not have a fieldmask, then only non-empty fields will be serialized.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  @BetaApi
+  public final Operation updatePeeringNetwork(
+      String network,
+      NetworksUpdatePeeringRequest networksUpdatePeeringRequestResource,
+      List<String> fieldMask) {
+
+    UpdatePeeringNetworkHttpRequest request =
+        UpdatePeeringNetworkHttpRequest.newBuilder()
+            .setNetwork(network)
+            .setNetworksUpdatePeeringRequestResource(networksUpdatePeeringRequestResource)
+            .addAllFieldMask(fieldMask)
+            .build();
+    return updatePeeringNetwork(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Updates the specified network peering with the data included in the request Only the following
+   * fields can be modified: NetworkPeering.export_custom_routes, and
+   * NetworkPeering.import_custom_routes
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (NetworkClient networkClient = NetworkClient.create()) {
+   *   String formattedNetwork = ProjectGlobalNetworkName.format("[PROJECT]", "[NETWORK]");
+   *   NetworksUpdatePeeringRequest networksUpdatePeeringRequestResource = NetworksUpdatePeeringRequest.newBuilder().build();
+   *   List&lt;String&gt; fieldMask = new ArrayList&lt;&gt;();
+   *   UpdatePeeringNetworkHttpRequest request = UpdatePeeringNetworkHttpRequest.newBuilder()
+   *     .setNetwork(formattedNetwork)
+   *     .setNetworksUpdatePeeringRequestResource(networksUpdatePeeringRequestResource)
+   *     .addAllFieldMask(fieldMask)
+   *     .build();
+   *   Operation response = networkClient.updatePeeringNetwork(request);
+   * }
+   * </code></pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  @BetaApi
+  public final Operation updatePeeringNetwork(UpdatePeeringNetworkHttpRequest request) {
+    return updatePeeringNetworkCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Updates the specified network peering with the data included in the request Only the following
+   * fields can be modified: NetworkPeering.export_custom_routes, and
+   * NetworkPeering.import_custom_routes
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (NetworkClient networkClient = NetworkClient.create()) {
+   *   String formattedNetwork = ProjectGlobalNetworkName.format("[PROJECT]", "[NETWORK]");
+   *   NetworksUpdatePeeringRequest networksUpdatePeeringRequestResource = NetworksUpdatePeeringRequest.newBuilder().build();
+   *   List&lt;String&gt; fieldMask = new ArrayList&lt;&gt;();
+   *   UpdatePeeringNetworkHttpRequest request = UpdatePeeringNetworkHttpRequest.newBuilder()
+   *     .setNetwork(formattedNetwork)
+   *     .setNetworksUpdatePeeringRequestResource(networksUpdatePeeringRequestResource)
+   *     .addAllFieldMask(fieldMask)
+   *     .build();
+   *   ApiFuture&lt;Operation&gt; future = networkClient.updatePeeringNetworkCallable().futureCall(request);
+   *   // Do something
+   *   Operation response = future.get();
+   * }
+   * </code></pre>
+   */
+  @BetaApi
+  public final UnaryCallable<UpdatePeeringNetworkHttpRequest, Operation>
+      updatePeeringNetworkCallable() {
+    return stub.updatePeeringNetworkCallable();
+  }
+
   @Override
   public final void close() {
     stub.close();

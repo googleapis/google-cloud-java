@@ -19,6 +19,8 @@ package com.google.cloud.storage.spi.v1;
 import com.google.api.core.InternalApi;
 import com.google.api.services.storage.model.Bucket;
 import com.google.api.services.storage.model.BucketAccessControl;
+import com.google.api.services.storage.model.HmacKey;
+import com.google.api.services.storage.model.HmacKeyMetadata;
 import com.google.api.services.storage.model.Notification;
 import com.google.api.services.storage.model.ObjectAccessControl;
 import com.google.api.services.storage.model.Policy;
@@ -51,6 +53,7 @@ public interface StorageRpc extends ServiceRpc {
     IF_SOURCE_GENERATION_NOT_MATCH("ifSourceGenerationNotMatch"),
     IF_DISABLE_GZIP_CONTENT("disableGzipContent"),
     PREFIX("prefix"),
+    PROJECT_ID("projectId"),
     PROJECTION("projection"),
     MAX_RESULTS("maxResults"),
     PAGE_TOKEN("pageToken"),
@@ -59,7 +62,9 @@ public interface StorageRpc extends ServiceRpc {
     FIELDS("fields"),
     CUSTOMER_SUPPLIED_KEY("customerSuppliedKey"),
     USER_PROJECT("userProject"),
-    KMS_KEY_NAME("kmsKeyName");
+    KMS_KEY_NAME("kmsKeyName"),
+    SERVICE_ACCOUNT_EMAIL("serviceAccount"),
+    SHOW_DELETED_KEYS("showDeletedKeys");
 
     private final String value;
 
@@ -443,6 +448,42 @@ public interface StorageRpc extends ServiceRpc {
    * @throws StorageException upon failure
    */
   List<ObjectAccessControl> listAcls(String bucket, String object, Long generation);
+
+  /**
+   * Creates a new HMAC key for the provided service account email.
+   *
+   * @throws StorageException upon failure
+   */
+  HmacKey createHmacKey(String serviceAccountEmail, Map<Option, ?> options);
+
+  /**
+   * Lists the HMAC keys for the provided service account email.
+   *
+   * @throws StorageException upon failure
+   */
+  Tuple<String, Iterable<HmacKeyMetadata>> listHmacKeys(Map<Option, ?> options);
+
+  /**
+   * Updates an HMAC key for the provided metadata object and returns the updated object. Only
+   * updates the State field.
+   *
+   * @throws StorageException upon failure
+   */
+  HmacKeyMetadata updateHmacKey(HmacKeyMetadata hmacKeyMetadata, Map<Option, ?> options);
+
+  /**
+   * Returns the HMAC key associated with the provided access id.
+   *
+   * @throws StorageException upon failure
+   */
+  HmacKeyMetadata getHmacKey(String accessId, Map<Option, ?> options);
+
+  /**
+   * Deletes the HMAC key associated with the provided metadata object.
+   *
+   * @throws StorageException upon failure
+   */
+  void deleteHmacKey(HmacKeyMetadata hmacKeyMetadata, Map<Option, ?> options);
 
   /**
    * Returns the IAM policy for the specified bucket.

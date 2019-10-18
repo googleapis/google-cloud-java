@@ -43,7 +43,9 @@ public final class BackendService implements ApiMessage {
   private final Integer affinityCookieTtlSec;
   private final List<Backend> backends;
   private final BackendServiceCdnPolicy cdnPolicy;
+  private final CircuitBreakers circuitBreakers;
   private final ConnectionDraining connectionDraining;
+  private final ConsistentHashLoadBalancerSettings consistentHash;
   private final String creationTimestamp;
   private final List<String> customRequestHeaders;
   private final String description;
@@ -54,7 +56,9 @@ public final class BackendService implements ApiMessage {
   private final String id;
   private final String kind;
   private final String loadBalancingScheme;
+  private final String localityLbPolicy;
   private final String name;
+  private final OutlierDetection outlierDetection;
   private final Integer port;
   private final String portName;
   private final String protocol;
@@ -68,7 +72,9 @@ public final class BackendService implements ApiMessage {
     this.affinityCookieTtlSec = null;
     this.backends = null;
     this.cdnPolicy = null;
+    this.circuitBreakers = null;
     this.connectionDraining = null;
+    this.consistentHash = null;
     this.creationTimestamp = null;
     this.customRequestHeaders = null;
     this.description = null;
@@ -79,7 +85,9 @@ public final class BackendService implements ApiMessage {
     this.id = null;
     this.kind = null;
     this.loadBalancingScheme = null;
+    this.localityLbPolicy = null;
     this.name = null;
+    this.outlierDetection = null;
     this.port = null;
     this.portName = null;
     this.protocol = null;
@@ -94,7 +102,9 @@ public final class BackendService implements ApiMessage {
       Integer affinityCookieTtlSec,
       List<Backend> backends,
       BackendServiceCdnPolicy cdnPolicy,
+      CircuitBreakers circuitBreakers,
       ConnectionDraining connectionDraining,
+      ConsistentHashLoadBalancerSettings consistentHash,
       String creationTimestamp,
       List<String> customRequestHeaders,
       String description,
@@ -105,7 +115,9 @@ public final class BackendService implements ApiMessage {
       String id,
       String kind,
       String loadBalancingScheme,
+      String localityLbPolicy,
       String name,
+      OutlierDetection outlierDetection,
       Integer port,
       String portName,
       String protocol,
@@ -117,7 +129,9 @@ public final class BackendService implements ApiMessage {
     this.affinityCookieTtlSec = affinityCookieTtlSec;
     this.backends = backends;
     this.cdnPolicy = cdnPolicy;
+    this.circuitBreakers = circuitBreakers;
     this.connectionDraining = connectionDraining;
+    this.consistentHash = consistentHash;
     this.creationTimestamp = creationTimestamp;
     this.customRequestHeaders = customRequestHeaders;
     this.description = description;
@@ -128,7 +142,9 @@ public final class BackendService implements ApiMessage {
     this.id = id;
     this.kind = kind;
     this.loadBalancingScheme = loadBalancingScheme;
+    this.localityLbPolicy = localityLbPolicy;
     this.name = name;
+    this.outlierDetection = outlierDetection;
     this.port = port;
     this.portName = portName;
     this.protocol = protocol;
@@ -150,8 +166,14 @@ public final class BackendService implements ApiMessage {
     if ("cdnPolicy".equals(fieldName)) {
       return cdnPolicy;
     }
+    if ("circuitBreakers".equals(fieldName)) {
+      return circuitBreakers;
+    }
     if ("connectionDraining".equals(fieldName)) {
       return connectionDraining;
+    }
+    if ("consistentHash".equals(fieldName)) {
+      return consistentHash;
     }
     if ("creationTimestamp".equals(fieldName)) {
       return creationTimestamp;
@@ -183,8 +205,14 @@ public final class BackendService implements ApiMessage {
     if ("loadBalancingScheme".equals(fieldName)) {
       return loadBalancingScheme;
     }
+    if ("localityLbPolicy".equals(fieldName)) {
+      return localityLbPolicy;
+    }
     if ("name".equals(fieldName)) {
       return name;
+    }
+    if ("outlierDetection".equals(fieldName)) {
+      return outlierDetection;
     }
     if ("port".equals(fieldName)) {
       return port;
@@ -249,8 +277,35 @@ public final class BackendService implements ApiMessage {
     return cdnPolicy;
   }
 
+  /**
+   * Settings controlling the volume of connections to a backend service.
+   *
+   * <p>This field is applicable to either: - A regional backend service with the service_protocol
+   * set to HTTP, HTTPS, or HTTP2, and load_balancing_scheme set to INTERNAL_MANAGED. - A global
+   * backend service with the load_balancing_scheme set to INTERNAL_SELF_MANAGED.
+   */
+  public CircuitBreakers getCircuitBreakers() {
+    return circuitBreakers;
+  }
+
   public ConnectionDraining getConnectionDraining() {
     return connectionDraining;
+  }
+
+  /**
+   * Consistent Hash-based load balancing can be used to provide soft session affinity based on HTTP
+   * headers, cookies or other properties. This load balancing policy is applicable only for HTTP
+   * connections. The affinity to a particular destination host will be lost when one or more hosts
+   * are added/removed from the destination service. This field specifies parameters that control
+   * consistent hashing. This field is only applicable when localityLbPolicy is set to MAGLEV or
+   * RING_HASH.
+   *
+   * <p>This field is applicable to either: - A regional backend service with the service_protocol
+   * set to HTTP, HTTPS, or HTTP2, and load_balancing_scheme set to INTERNAL_MANAGED. - A global
+   * backend service with the load_balancing_scheme set to INTERNAL_SELF_MANAGED.
+   */
+  public ConsistentHashLoadBalancerSettings getConsistentHash() {
+    return consistentHash;
   }
 
   /** [Output Only] Creation timestamp in RFC3339 text format. */
@@ -328,6 +383,29 @@ public final class BackendService implements ApiMessage {
   }
 
   /**
+   * The load balancing algorithm used within the scope of the locality. The possible values are: -
+   * ROUND_ROBIN: This is a simple policy in which each healthy backend is selected in round robin
+   * order. This is the default. - LEAST_REQUEST: An O(1) algorithm which selects two random healthy
+   * hosts and picks the host which has fewer active requests. - RING_HASH: The ring/modulo hash
+   * load balancer implements consistent hashing to backends. The algorithm has the property that
+   * the addition/removal of a host from a set of N hosts only affects 1/N of the requests. -
+   * RANDOM: The load balancer selects a random healthy host. - ORIGINAL_DESTINATION: Backend host
+   * is selected based on the client connection metadata, i.e., connections are opened to the same
+   * address as the destination address of the incoming connection before the connection was
+   * redirected to the load balancer. - MAGLEV: used as a drop in replacement for the ring hash load
+   * balancer. Maglev is not as stable as ring hash but has faster table lookup build times and host
+   * selection times. For more information about Maglev, refer to
+   * https://ai.google/research/pubs/pub44824
+   *
+   * <p>This field is applicable to either: - A regional backend service with the service_protocol
+   * set to HTTP, HTTPS, or HTTP2, and load_balancing_scheme set to INTERNAL_MANAGED. - A global
+   * backend service with the load_balancing_scheme set to INTERNAL_SELF_MANAGED.
+   */
+  public String getLocalityLbPolicy() {
+    return localityLbPolicy;
+  }
+
+  /**
    * Name of the resource. Provided by the client when the resource is created. The name must be
    * 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters
    * long and match the regular expression `[a-z]([-a-z0-9]&#42;[a-z0-9])?` which means the first
@@ -336,6 +414,16 @@ public final class BackendService implements ApiMessage {
    */
   public String getName() {
     return name;
+  }
+
+  /**
+   * Settings controlling eviction of unhealthy hosts from the load balancing pool. This field is
+   * applicable to either: - A regional backend service with the service_protocol set to HTTP,
+   * HTTPS, or HTTP2, and load_balancing_scheme set to INTERNAL_MANAGED. - A global backend service
+   * with the load_balancing_scheme set to INTERNAL_SELF_MANAGED.
+   */
+  public OutlierDetection getOutlierDetection() {
+    return outlierDetection;
   }
 
   /**
@@ -398,7 +486,7 @@ public final class BackendService implements ApiMessage {
    * --protocol is UDP.
    *
    * <p>When the loadBalancingScheme is EXTERNAL, possible values are NONE, CLIENT_IP, or
-   * GENERATED_COOKIE. GENERATED_COOKIE is only available if the protocol is HTTP or HTTPS.
+   * GENERATED_COOKIE. You can use GENERATED_COOKIE if the protocol is HTTP or HTTPS.
    *
    * <p>When the loadBalancingScheme is INTERNAL, possible values are NONE, CLIENT_IP,
    * CLIENT_IP_PROTO, or CLIENT_IP_PORT_PROTO.
@@ -444,7 +532,9 @@ public final class BackendService implements ApiMessage {
     private Integer affinityCookieTtlSec;
     private List<Backend> backends;
     private BackendServiceCdnPolicy cdnPolicy;
+    private CircuitBreakers circuitBreakers;
     private ConnectionDraining connectionDraining;
+    private ConsistentHashLoadBalancerSettings consistentHash;
     private String creationTimestamp;
     private List<String> customRequestHeaders;
     private String description;
@@ -455,7 +545,9 @@ public final class BackendService implements ApiMessage {
     private String id;
     private String kind;
     private String loadBalancingScheme;
+    private String localityLbPolicy;
     private String name;
+    private OutlierDetection outlierDetection;
     private Integer port;
     private String portName;
     private String protocol;
@@ -478,8 +570,14 @@ public final class BackendService implements ApiMessage {
       if (other.getCdnPolicy() != null) {
         this.cdnPolicy = other.cdnPolicy;
       }
+      if (other.getCircuitBreakers() != null) {
+        this.circuitBreakers = other.circuitBreakers;
+      }
       if (other.getConnectionDraining() != null) {
         this.connectionDraining = other.connectionDraining;
+      }
+      if (other.getConsistentHash() != null) {
+        this.consistentHash = other.consistentHash;
       }
       if (other.getCreationTimestamp() != null) {
         this.creationTimestamp = other.creationTimestamp;
@@ -511,8 +609,14 @@ public final class BackendService implements ApiMessage {
       if (other.getLoadBalancingScheme() != null) {
         this.loadBalancingScheme = other.loadBalancingScheme;
       }
+      if (other.getLocalityLbPolicy() != null) {
+        this.localityLbPolicy = other.localityLbPolicy;
+      }
       if (other.getName() != null) {
         this.name = other.name;
+      }
+      if (other.getOutlierDetection() != null) {
+        this.outlierDetection = other.outlierDetection;
       }
       if (other.getPort() != null) {
         this.port = other.port;
@@ -545,7 +649,9 @@ public final class BackendService implements ApiMessage {
       this.affinityCookieTtlSec = source.affinityCookieTtlSec;
       this.backends = source.backends;
       this.cdnPolicy = source.cdnPolicy;
+      this.circuitBreakers = source.circuitBreakers;
       this.connectionDraining = source.connectionDraining;
+      this.consistentHash = source.consistentHash;
       this.creationTimestamp = source.creationTimestamp;
       this.customRequestHeaders = source.customRequestHeaders;
       this.description = source.description;
@@ -556,7 +662,9 @@ public final class BackendService implements ApiMessage {
       this.id = source.id;
       this.kind = source.kind;
       this.loadBalancingScheme = source.loadBalancingScheme;
+      this.localityLbPolicy = source.localityLbPolicy;
       this.name = source.name;
+      this.outlierDetection = source.outlierDetection;
       this.port = source.port;
       this.portName = source.portName;
       this.protocol = source.protocol;
@@ -618,12 +726,68 @@ public final class BackendService implements ApiMessage {
       return this;
     }
 
+    /**
+     * Settings controlling the volume of connections to a backend service.
+     *
+     * <p>This field is applicable to either: - A regional backend service with the service_protocol
+     * set to HTTP, HTTPS, or HTTP2, and load_balancing_scheme set to INTERNAL_MANAGED. - A global
+     * backend service with the load_balancing_scheme set to INTERNAL_SELF_MANAGED.
+     */
+    public CircuitBreakers getCircuitBreakers() {
+      return circuitBreakers;
+    }
+
+    /**
+     * Settings controlling the volume of connections to a backend service.
+     *
+     * <p>This field is applicable to either: - A regional backend service with the service_protocol
+     * set to HTTP, HTTPS, or HTTP2, and load_balancing_scheme set to INTERNAL_MANAGED. - A global
+     * backend service with the load_balancing_scheme set to INTERNAL_SELF_MANAGED.
+     */
+    public Builder setCircuitBreakers(CircuitBreakers circuitBreakers) {
+      this.circuitBreakers = circuitBreakers;
+      return this;
+    }
+
     public ConnectionDraining getConnectionDraining() {
       return connectionDraining;
     }
 
     public Builder setConnectionDraining(ConnectionDraining connectionDraining) {
       this.connectionDraining = connectionDraining;
+      return this;
+    }
+
+    /**
+     * Consistent Hash-based load balancing can be used to provide soft session affinity based on
+     * HTTP headers, cookies or other properties. This load balancing policy is applicable only for
+     * HTTP connections. The affinity to a particular destination host will be lost when one or more
+     * hosts are added/removed from the destination service. This field specifies parameters that
+     * control consistent hashing. This field is only applicable when localityLbPolicy is set to
+     * MAGLEV or RING_HASH.
+     *
+     * <p>This field is applicable to either: - A regional backend service with the service_protocol
+     * set to HTTP, HTTPS, or HTTP2, and load_balancing_scheme set to INTERNAL_MANAGED. - A global
+     * backend service with the load_balancing_scheme set to INTERNAL_SELF_MANAGED.
+     */
+    public ConsistentHashLoadBalancerSettings getConsistentHash() {
+      return consistentHash;
+    }
+
+    /**
+     * Consistent Hash-based load balancing can be used to provide soft session affinity based on
+     * HTTP headers, cookies or other properties. This load balancing policy is applicable only for
+     * HTTP connections. The affinity to a particular destination host will be lost when one or more
+     * hosts are added/removed from the destination service. This field specifies parameters that
+     * control consistent hashing. This field is only applicable when localityLbPolicy is set to
+     * MAGLEV or RING_HASH.
+     *
+     * <p>This field is applicable to either: - A regional backend service with the service_protocol
+     * set to HTTP, HTTPS, or HTTP2, and load_balancing_scheme set to INTERNAL_MANAGED. - A global
+     * backend service with the load_balancing_scheme set to INTERNAL_SELF_MANAGED.
+     */
+    public Builder setConsistentHash(ConsistentHashLoadBalancerSettings consistentHash) {
+      this.consistentHash = consistentHash;
       return this;
     }
 
@@ -819,6 +983,53 @@ public final class BackendService implements ApiMessage {
     }
 
     /**
+     * The load balancing algorithm used within the scope of the locality. The possible values are:
+     * - ROUND_ROBIN: This is a simple policy in which each healthy backend is selected in round
+     * robin order. This is the default. - LEAST_REQUEST: An O(1) algorithm which selects two random
+     * healthy hosts and picks the host which has fewer active requests. - RING_HASH: The
+     * ring/modulo hash load balancer implements consistent hashing to backends. The algorithm has
+     * the property that the addition/removal of a host from a set of N hosts only affects 1/N of
+     * the requests. - RANDOM: The load balancer selects a random healthy host. -
+     * ORIGINAL_DESTINATION: Backend host is selected based on the client connection metadata, i.e.,
+     * connections are opened to the same address as the destination address of the incoming
+     * connection before the connection was redirected to the load balancer. - MAGLEV: used as a
+     * drop in replacement for the ring hash load balancer. Maglev is not as stable as ring hash but
+     * has faster table lookup build times and host selection times. For more information about
+     * Maglev, refer to https://ai.google/research/pubs/pub44824
+     *
+     * <p>This field is applicable to either: - A regional backend service with the service_protocol
+     * set to HTTP, HTTPS, or HTTP2, and load_balancing_scheme set to INTERNAL_MANAGED. - A global
+     * backend service with the load_balancing_scheme set to INTERNAL_SELF_MANAGED.
+     */
+    public String getLocalityLbPolicy() {
+      return localityLbPolicy;
+    }
+
+    /**
+     * The load balancing algorithm used within the scope of the locality. The possible values are:
+     * - ROUND_ROBIN: This is a simple policy in which each healthy backend is selected in round
+     * robin order. This is the default. - LEAST_REQUEST: An O(1) algorithm which selects two random
+     * healthy hosts and picks the host which has fewer active requests. - RING_HASH: The
+     * ring/modulo hash load balancer implements consistent hashing to backends. The algorithm has
+     * the property that the addition/removal of a host from a set of N hosts only affects 1/N of
+     * the requests. - RANDOM: The load balancer selects a random healthy host. -
+     * ORIGINAL_DESTINATION: Backend host is selected based on the client connection metadata, i.e.,
+     * connections are opened to the same address as the destination address of the incoming
+     * connection before the connection was redirected to the load balancer. - MAGLEV: used as a
+     * drop in replacement for the ring hash load balancer. Maglev is not as stable as ring hash but
+     * has faster table lookup build times and host selection times. For more information about
+     * Maglev, refer to https://ai.google/research/pubs/pub44824
+     *
+     * <p>This field is applicable to either: - A regional backend service with the service_protocol
+     * set to HTTP, HTTPS, or HTTP2, and load_balancing_scheme set to INTERNAL_MANAGED. - A global
+     * backend service with the load_balancing_scheme set to INTERNAL_SELF_MANAGED.
+     */
+    public Builder setLocalityLbPolicy(String localityLbPolicy) {
+      this.localityLbPolicy = localityLbPolicy;
+      return this;
+    }
+
+    /**
      * Name of the resource. Provided by the client when the resource is created. The name must be
      * 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters
      * long and match the regular expression `[a-z]([-a-z0-9]&#42;[a-z0-9])?` which means the first
@@ -838,6 +1049,27 @@ public final class BackendService implements ApiMessage {
      */
     public Builder setName(String name) {
       this.name = name;
+      return this;
+    }
+
+    /**
+     * Settings controlling eviction of unhealthy hosts from the load balancing pool. This field is
+     * applicable to either: - A regional backend service with the service_protocol set to HTTP,
+     * HTTPS, or HTTP2, and load_balancing_scheme set to INTERNAL_MANAGED. - A global backend
+     * service with the load_balancing_scheme set to INTERNAL_SELF_MANAGED.
+     */
+    public OutlierDetection getOutlierDetection() {
+      return outlierDetection;
+    }
+
+    /**
+     * Settings controlling eviction of unhealthy hosts from the load balancing pool. This field is
+     * applicable to either: - A regional backend service with the service_protocol set to HTTP,
+     * HTTPS, or HTTP2, and load_balancing_scheme set to INTERNAL_MANAGED. - A global backend
+     * service with the load_balancing_scheme set to INTERNAL_SELF_MANAGED.
+     */
+    public Builder setOutlierDetection(OutlierDetection outlierDetection) {
+      this.outlierDetection = outlierDetection;
       return this;
     }
 
@@ -964,7 +1196,7 @@ public final class BackendService implements ApiMessage {
      * the --protocol is UDP.
      *
      * <p>When the loadBalancingScheme is EXTERNAL, possible values are NONE, CLIENT_IP, or
-     * GENERATED_COOKIE. GENERATED_COOKIE is only available if the protocol is HTTP or HTTPS.
+     * GENERATED_COOKIE. You can use GENERATED_COOKIE if the protocol is HTTP or HTTPS.
      *
      * <p>When the loadBalancingScheme is INTERNAL, possible values are NONE, CLIENT_IP,
      * CLIENT_IP_PROTO, or CLIENT_IP_PORT_PROTO.
@@ -981,7 +1213,7 @@ public final class BackendService implements ApiMessage {
      * the --protocol is UDP.
      *
      * <p>When the loadBalancingScheme is EXTERNAL, possible values are NONE, CLIENT_IP, or
-     * GENERATED_COOKIE. GENERATED_COOKIE is only available if the protocol is HTTP or HTTPS.
+     * GENERATED_COOKIE. You can use GENERATED_COOKIE if the protocol is HTTP or HTTPS.
      *
      * <p>When the loadBalancingScheme is INTERNAL, possible values are NONE, CLIENT_IP,
      * CLIENT_IP_PROTO, or CLIENT_IP_PORT_PROTO.
@@ -1017,7 +1249,9 @@ public final class BackendService implements ApiMessage {
           affinityCookieTtlSec,
           backends,
           cdnPolicy,
+          circuitBreakers,
           connectionDraining,
+          consistentHash,
           creationTimestamp,
           customRequestHeaders,
           description,
@@ -1028,7 +1262,9 @@ public final class BackendService implements ApiMessage {
           id,
           kind,
           loadBalancingScheme,
+          localityLbPolicy,
           name,
+          outlierDetection,
           port,
           portName,
           protocol,
@@ -1044,7 +1280,9 @@ public final class BackendService implements ApiMessage {
       newBuilder.setAffinityCookieTtlSec(this.affinityCookieTtlSec);
       newBuilder.addAllBackends(this.backends);
       newBuilder.setCdnPolicy(this.cdnPolicy);
+      newBuilder.setCircuitBreakers(this.circuitBreakers);
       newBuilder.setConnectionDraining(this.connectionDraining);
+      newBuilder.setConsistentHash(this.consistentHash);
       newBuilder.setCreationTimestamp(this.creationTimestamp);
       newBuilder.addAllCustomRequestHeaders(this.customRequestHeaders);
       newBuilder.setDescription(this.description);
@@ -1055,7 +1293,9 @@ public final class BackendService implements ApiMessage {
       newBuilder.setId(this.id);
       newBuilder.setKind(this.kind);
       newBuilder.setLoadBalancingScheme(this.loadBalancingScheme);
+      newBuilder.setLocalityLbPolicy(this.localityLbPolicy);
       newBuilder.setName(this.name);
+      newBuilder.setOutlierDetection(this.outlierDetection);
       newBuilder.setPort(this.port);
       newBuilder.setPortName(this.portName);
       newBuilder.setProtocol(this.protocol);
@@ -1080,8 +1320,14 @@ public final class BackendService implements ApiMessage {
         + "cdnPolicy="
         + cdnPolicy
         + ", "
+        + "circuitBreakers="
+        + circuitBreakers
+        + ", "
         + "connectionDraining="
         + connectionDraining
+        + ", "
+        + "consistentHash="
+        + consistentHash
         + ", "
         + "creationTimestamp="
         + creationTimestamp
@@ -1113,8 +1359,14 @@ public final class BackendService implements ApiMessage {
         + "loadBalancingScheme="
         + loadBalancingScheme
         + ", "
+        + "localityLbPolicy="
+        + localityLbPolicy
+        + ", "
         + "name="
         + name
+        + ", "
+        + "outlierDetection="
+        + outlierDetection
         + ", "
         + "port="
         + port
@@ -1152,7 +1404,9 @@ public final class BackendService implements ApiMessage {
       return Objects.equals(this.affinityCookieTtlSec, that.getAffinityCookieTtlSec())
           && Objects.equals(this.backends, that.getBackendsList())
           && Objects.equals(this.cdnPolicy, that.getCdnPolicy())
+          && Objects.equals(this.circuitBreakers, that.getCircuitBreakers())
           && Objects.equals(this.connectionDraining, that.getConnectionDraining())
+          && Objects.equals(this.consistentHash, that.getConsistentHash())
           && Objects.equals(this.creationTimestamp, that.getCreationTimestamp())
           && Objects.equals(this.customRequestHeaders, that.getCustomRequestHeadersList())
           && Objects.equals(this.description, that.getDescription())
@@ -1163,7 +1417,9 @@ public final class BackendService implements ApiMessage {
           && Objects.equals(this.id, that.getId())
           && Objects.equals(this.kind, that.getKind())
           && Objects.equals(this.loadBalancingScheme, that.getLoadBalancingScheme())
+          && Objects.equals(this.localityLbPolicy, that.getLocalityLbPolicy())
           && Objects.equals(this.name, that.getName())
+          && Objects.equals(this.outlierDetection, that.getOutlierDetection())
           && Objects.equals(this.port, that.getPort())
           && Objects.equals(this.portName, that.getPortName())
           && Objects.equals(this.protocol, that.getProtocol())
@@ -1182,7 +1438,9 @@ public final class BackendService implements ApiMessage {
         affinityCookieTtlSec,
         backends,
         cdnPolicy,
+        circuitBreakers,
         connectionDraining,
+        consistentHash,
         creationTimestamp,
         customRequestHeaders,
         description,
@@ -1193,7 +1451,9 @@ public final class BackendService implements ApiMessage {
         id,
         kind,
         loadBalancingScheme,
+        localityLbPolicy,
         name,
+        outlierDetection,
         port,
         portName,
         protocol,

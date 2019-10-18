@@ -26,11 +26,10 @@ public interface PullMessageOrBuilder
    * The task's tag.
    * Tags allow similar tasks to be processed in a batch. If you label
    * tasks with a tag, your worker can
-   * [lease tasks][google.cloud.tasks.v2beta2.CloudTasks.LeaseTasks] with the
-   * same tag using
-   * [filter][google.cloud.tasks.v2beta2.LeaseTasksRequest.filter]. For example,
-   * if you want to aggregate the events associated with a specific user once a
-   * day, you could tag tasks with the user ID.
+   * [lease tasks][google.cloud.tasks.v2beta2.CloudTasks.LeaseTasks] with the same tag using
+   * [filter][google.cloud.tasks.v2beta2.LeaseTasksRequest.filter]. For example, if you want to
+   * aggregate the events associated with a specific user once a day,
+   * you could tag tasks with the user ID.
    * The task's tag can only be set when the
    * [task is created][google.cloud.tasks.v2beta2.CloudTasks.CreateTask].
    * The tag must be less than 500 characters.
@@ -51,11 +50,10 @@ public interface PullMessageOrBuilder
    * The task's tag.
    * Tags allow similar tasks to be processed in a batch. If you label
    * tasks with a tag, your worker can
-   * [lease tasks][google.cloud.tasks.v2beta2.CloudTasks.LeaseTasks] with the
-   * same tag using
-   * [filter][google.cloud.tasks.v2beta2.LeaseTasksRequest.filter]. For example,
-   * if you want to aggregate the events associated with a specific user once a
-   * day, you could tag tasks with the user ID.
+   * [lease tasks][google.cloud.tasks.v2beta2.CloudTasks.LeaseTasks] with the same tag using
+   * [filter][google.cloud.tasks.v2beta2.LeaseTasksRequest.filter]. For example, if you want to
+   * aggregate the events associated with a specific user once a day,
+   * you could tag tasks with the user ID.
    * The task's tag can only be set when the
    * [task is created][google.cloud.tasks.v2beta2.CloudTasks.CreateTask].
    * The tag must be less than 500 characters.

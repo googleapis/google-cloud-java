@@ -16,7 +16,7 @@ public interface CancelJobRequestOrBuilder
    * belongs to.
    * </pre>
    *
-   * <code>string project_id = 1;</code>
+   * <code>string project_id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   java.lang.String getProjectId();
   /**
@@ -27,7 +27,7 @@ public interface CancelJobRequestOrBuilder
    * belongs to.
    * </pre>
    *
-   * <code>string project_id = 1;</code>
+   * <code>string project_id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   com.google.protobuf.ByteString getProjectIdBytes();
 
@@ -38,7 +38,7 @@ public interface CancelJobRequestOrBuilder
    * Required. The Cloud Dataproc region in which to handle the request.
    * </pre>
    *
-   * <code>string region = 3;</code>
+   * <code>string region = 3 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   java.lang.String getRegion();
   /**
@@ -48,7 +48,7 @@ public interface CancelJobRequestOrBuilder
    * Required. The Cloud Dataproc region in which to handle the request.
    * </pre>
    *
-   * <code>string region = 3;</code>
+   * <code>string region = 3 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   com.google.protobuf.ByteString getRegionBytes();
 
@@ -59,7 +59,7 @@ public interface CancelJobRequestOrBuilder
    * Required. The job ID.
    * </pre>
    *
-   * <code>string job_id = 2;</code>
+   * <code>string job_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   java.lang.String getJobId();
   /**
@@ -69,7 +69,7 @@ public interface CancelJobRequestOrBuilder
    * Required. The job ID.
    * </pre>
    *
-   * <code>string job_id = 2;</code>
+   * <code>string job_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   com.google.protobuf.ByteString getJobIdBytes();
 }

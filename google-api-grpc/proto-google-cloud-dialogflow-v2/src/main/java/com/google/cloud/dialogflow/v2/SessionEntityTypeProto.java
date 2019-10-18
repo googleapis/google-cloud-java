@@ -51,68 +51,78 @@ public final class SessionEntityTypeProto {
     java.lang.String[] descriptorData = {
       "\n4google/cloud/dialogflow/v2/session_ent"
           + "ity_type.proto\022\032google.cloud.dialogflow."
-          + "v2\032\034google/api/annotations.proto\032,google"
-          + "/cloud/dialogflow/v2/entity_type.proto\032\033"
-          + "google/protobuf/empty.proto\032 google/prot"
-          + "obuf/field_mask.proto\032\027google/api/client"
-          + ".proto\"\307\002\n\021SessionEntityType\022\014\n\004name\030\001 \001"
-          + "(\t\022^\n\024entity_override_mode\030\002 \001(\0162@.googl"
-          + "e.cloud.dialogflow.v2.SessionEntityType."
-          + "EntityOverrideMode\022?\n\010entities\030\003 \003(\0132-.g"
-          + "oogle.cloud.dialogflow.v2.EntityType.Ent"
-          + "ity\"\202\001\n\022EntityOverrideMode\022$\n ENTITY_OVE"
-          + "RRIDE_MODE_UNSPECIFIED\020\000\022!\n\035ENTITY_OVERR"
-          + "IDE_MODE_OVERRIDE\020\001\022#\n\037ENTITY_OVERRIDE_M"
-          + "ODE_SUPPLEMENT\020\002\"V\n\035ListSessionEntityTyp"
-          + "esRequest\022\016\n\006parent\030\001 \001(\t\022\021\n\tpage_size\030\002"
-          + " \001(\005\022\022\n\npage_token\030\003 \001(\t\"\206\001\n\036ListSession"
-          + "EntityTypesResponse\022K\n\024session_entity_ty"
-          + "pes\030\001 \003(\0132-.google.cloud.dialogflow.v2.S"
-          + "essionEntityType\022\027\n\017next_page_token\030\002 \001("
-          + "\t\"+\n\033GetSessionEntityTypeRequest\022\014\n\004name"
-          + "\030\001 \001(\t\"|\n\036CreateSessionEntityTypeRequest"
-          + "\022\016\n\006parent\030\001 \001(\t\022J\n\023session_entity_type\030"
-          + "\002 \001(\0132-.google.cloud.dialogflow.v2.Sessi"
-          + "onEntityType\"\235\001\n\036UpdateSessionEntityType"
-          + "Request\022J\n\023session_entity_type\030\001 \001(\0132-.g"
-          + "oogle.cloud.dialogflow.v2.SessionEntityT"
-          + "ype\022/\n\013update_mask\030\002 \001(\0132\032.google.protob"
-          + "uf.FieldMask\".\n\036DeleteSessionEntityTypeR"
-          + "equest\022\014\n\004name\030\001 \001(\t2\223\t\n\022SessionEntityTy"
-          + "pes\022\315\001\n\026ListSessionEntityTypes\0229.google."
-          + "cloud.dialogflow.v2.ListSessionEntityTyp"
-          + "esRequest\032:.google.cloud.dialogflow.v2.L"
-          + "istSessionEntityTypesResponse\"<\202\323\344\223\0026\0224/"
-          + "v2/{parent=projects/*/agent/sessions/*}/"
-          + "entityTypes\022\274\001\n\024GetSessionEntityType\0227.g"
-          + "oogle.cloud.dialogflow.v2.GetSessionEnti"
-          + "tyTypeRequest\032-.google.cloud.dialogflow."
-          + "v2.SessionEntityType\"<\202\323\344\223\0026\0224/v2/{name="
-          + "projects/*/agent/sessions/*/entityTypes/"
-          + "*}\022\327\001\n\027CreateSessionEntityType\022:.google."
-          + "cloud.dialogflow.v2.CreateSessionEntityT"
-          + "ypeRequest\032-.google.cloud.dialogflow.v2."
-          + "SessionEntityType\"Q\202\323\344\223\002K\"4/v2/{parent=p"
-          + "rojects/*/agent/sessions/*}/entityTypes:"
-          + "\023session_entity_type\022\353\001\n\027UpdateSessionEn"
-          + "tityType\022:.google.cloud.dialogflow.v2.Up"
-          + "dateSessionEntityTypeRequest\032-.google.cl"
-          + "oud.dialogflow.v2.SessionEntityType\"e\202\323\344"
-          + "\223\002_2H/v2/{session_entity_type.name=proje"
-          + "cts/*/agent/sessions/*/entityTypes/*}:\023s"
-          + "ession_entity_type\022\253\001\n\027DeleteSessionEnti"
-          + "tyType\022:.google.cloud.dialogflow.v2.Dele"
-          + "teSessionEntityTypeRequest\032\026.google.prot"
-          + "obuf.Empty\"<\202\323\344\223\0026*4/v2/{name=projects/*"
-          + "/agent/sessions/*/entityTypes/*}\032x\312A\031dia"
-          + "logflow.googleapis.com\322AYhttps://www.goo"
-          + "gleapis.com/auth/cloud-platform,https://"
-          + "www.googleapis.com/auth/dialogflowB\245\001\n\036c"
-          + "om.google.cloud.dialogflow.v2B\026SessionEn"
-          + "tityTypeProtoP\001ZDgoogle.golang.org/genpr"
-          + "oto/googleapis/cloud/dialogflow/v2;dialo"
-          + "gflow\370\001\001\242\002\002DF\252\002\032Google.Cloud.Dialogflow."
-          + "V2b\006proto3"
+          + "v2\032\034google/api/annotations.proto\032\027google"
+          + "/api/client.proto\032\037google/api/field_beha"
+          + "vior.proto\032\031google/api/resource.proto\032,g"
+          + "oogle/cloud/dialogflow/v2/entity_type.pr"
+          + "oto\032\033google/protobuf/empty.proto\032 google"
+          + "/protobuf/field_mask.proto\"\313\003\n\021SessionEn"
+          + "tityType\022\021\n\004name\030\001 \001(\tB\003\340A\002\022c\n\024entity_ov"
+          + "erride_mode\030\002 \001(\0162@.google.cloud.dialogf"
+          + "low.v2.SessionEntityType.EntityOverrideM"
+          + "odeB\003\340A\002\022D\n\010entities\030\003 \003(\0132-.google.clou"
+          + "d.dialogflow.v2.EntityType.EntityB\003\340A\002\"\202"
+          + "\001\n\022EntityOverrideMode\022$\n ENTITY_OVERRIDE"
+          + "_MODE_UNSPECIFIED\020\000\022!\n\035ENTITY_OVERRIDE_M"
+          + "ODE_OVERRIDE\020\001\022#\n\037ENTITY_OVERRIDE_MODE_S"
+          + "UPPLEMENT\020\002:s\352Ap\n\'pubsub.googleapis.com/"
+          + "SessionEntityType\022Eprojects/{project}/ag"
+          + "ent/sessions/{session}/entityTypes/{enti"
+          + "ty_type}\"e\n\035ListSessionEntityTypesReques"
+          + "t\022\023\n\006parent\030\001 \001(\tB\003\340A\002\022\026\n\tpage_size\030\002 \001("
+          + "\005B\003\340A\001\022\027\n\npage_token\030\003 \001(\tB\003\340A\001\"\206\001\n\036List"
+          + "SessionEntityTypesResponse\022K\n\024session_en"
+          + "tity_types\030\001 \003(\0132-.google.cloud.dialogfl"
+          + "ow.v2.SessionEntityType\022\027\n\017next_page_tok"
+          + "en\030\002 \001(\t\"`\n\033GetSessionEntityTypeRequest\022"
+          + "A\n\004name\030\001 \001(\tB3\340A\002\372A-\n+dialogflow.google"
+          + "apis.com/SessionEntityType\"\206\001\n\036CreateSes"
+          + "sionEntityTypeRequest\022\023\n\006parent\030\001 \001(\tB\003\340"
+          + "A\002\022O\n\023session_entity_type\030\002 \001(\0132-.google"
+          + ".cloud.dialogflow.v2.SessionEntityTypeB\003"
+          + "\340A\002\"\247\001\n\036UpdateSessionEntityTypeRequest\022O"
+          + "\n\023session_entity_type\030\001 \001(\0132-.google.clo"
+          + "ud.dialogflow.v2.SessionEntityTypeB\003\340A\002\022"
+          + "4\n\013update_mask\030\002 \001(\0132\032.google.protobuf.F"
+          + "ieldMaskB\003\340A\001\"Y\n\036DeleteSessionEntityType"
+          + "Request\0227\n\004name\030\001 \001(\tB)\340A\002\372A#\n!dialogflo"
+          + "w.googleapis.com/Context2\326\t\n\022SessionEnti"
+          + "tyTypes\022\326\001\n\026ListSessionEntityTypes\0229.goo"
+          + "gle.cloud.dialogflow.v2.ListSessionEntit"
+          + "yTypesRequest\032:.google.cloud.dialogflow."
+          + "v2.ListSessionEntityTypesResponse\"E\202\323\344\223\002"
+          + "6\0224/v2/{parent=projects/*/agent/sessions"
+          + "/*}/entityTypes\332A\006parent\022\274\001\n\024GetSessionE"
+          + "ntityType\0227.google.cloud.dialogflow.v2.G"
+          + "etSessionEntityTypeRequest\032-.google.clou"
+          + "d.dialogflow.v2.SessionEntityType\"<\202\323\344\223\002"
+          + "6\0224/v2/{name=projects/*/agent/sessions/*"
+          + "/entityTypes/*}\022\364\001\n\027CreateSessionEntityT"
+          + "ype\022:.google.cloud.dialogflow.v2.CreateS"
+          + "essionEntityTypeRequest\032-.google.cloud.d"
+          + "ialogflow.v2.SessionEntityType\"n\202\323\344\223\002K\"4"
+          + "/v2/{parent=projects/*/agent/sessions/*}"
+          + "/entityTypes:\023session_entity_type\332A\032pare"
+          + "nt,session_entity_type\022\201\002\n\027UpdateSession"
+          + "EntityType\022:.google.cloud.dialogflow.v2."
+          + "UpdateSessionEntityTypeRequest\032-.google."
+          + "cloud.dialogflow.v2.SessionEntityType\"{\202"
+          + "\323\344\223\002_2H/v2/{session_entity_type.name=pro"
+          + "jects/*/agent/sessions/*/entityTypes/*}:"
+          + "\023session_entity_type\332A\023session_entity_ty"
+          + "pe\022\262\001\n\027DeleteSessionEntityType\022:.google."
+          + "cloud.dialogflow.v2.DeleteSessionEntityT"
+          + "ypeRequest\032\026.google.protobuf.Empty\"C\202\323\344\223"
+          + "\0026*4/v2/{name=projects/*/agent/sessions/"
+          + "*/entityTypes/*}\332A\004name\032x\312A\031dialogflow.g"
+          + "oogleapis.com\322AYhttps://www.googleapis.c"
+          + "om/auth/cloud-platform,https://www.googl"
+          + "eapis.com/auth/dialogflowB\245\001\n\036com.google"
+          + ".cloud.dialogflow.v2B\026SessionEntityTypeP"
+          + "rotoP\001ZDgoogle.golang.org/genproto/googl"
+          + "eapis/cloud/dialogflow/v2;dialogflow\370\001\001\242"
+          + "\002\002DF\252\002\032Google.Cloud.Dialogflow.V2b\006proto"
+          + "3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner() {
@@ -126,10 +136,12 @@ public final class SessionEntityTypeProto {
         descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
           com.google.api.AnnotationsProto.getDescriptor(),
+          com.google.api.ClientProto.getDescriptor(),
+          com.google.api.FieldBehaviorProto.getDescriptor(),
+          com.google.api.ResourceProto.getDescriptor(),
           com.google.cloud.dialogflow.v2.EntityTypeProto.getDescriptor(),
           com.google.protobuf.EmptyProto.getDescriptor(),
           com.google.protobuf.FieldMaskProto.getDescriptor(),
-          com.google.api.ClientProto.getDescriptor(),
         },
         assigner);
     internal_static_google_cloud_dialogflow_v2_SessionEntityType_descriptor =
@@ -191,15 +203,21 @@ public final class SessionEntityTypeProto {
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();
     registry.add(com.google.api.ClientProto.defaultHost);
+    registry.add(com.google.api.FieldBehaviorProto.fieldBehavior);
     registry.add(com.google.api.AnnotationsProto.http);
+    registry.add(com.google.api.ClientProto.methodSignature);
     registry.add(com.google.api.ClientProto.oauthScopes);
+    registry.add(com.google.api.ResourceProto.resource);
+    registry.add(com.google.api.ResourceProto.resourceReference);
     com.google.protobuf.Descriptors.FileDescriptor.internalUpdateFileDescriptor(
         descriptor, registry);
     com.google.api.AnnotationsProto.getDescriptor();
+    com.google.api.ClientProto.getDescriptor();
+    com.google.api.FieldBehaviorProto.getDescriptor();
+    com.google.api.ResourceProto.getDescriptor();
     com.google.cloud.dialogflow.v2.EntityTypeProto.getDescriptor();
     com.google.protobuf.EmptyProto.getDescriptor();
     com.google.protobuf.FieldMaskProto.getDescriptor();
-    com.google.api.ClientProto.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

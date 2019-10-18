@@ -197,16 +197,14 @@ public final class ExportAgentResponse extends com.google.protobuf.GeneratedMess
    * The exported agent.
    * Example for how to export an agent to a zip file via a command line:
    * &lt;pre&gt;curl &#92;
-   *   'https://dialogflow.googleapis.com/v2/projects/&amp;lt;project_name&amp;gt;/agent:export'&#92;
+   *   'https://dialogflow.googleapis.com/v2/projects/&amp;lt;project_id&amp;gt;/agent:export'&#92;
    *   -X POST &#92;
-   *   -H 'Authorization: Bearer '$(gcloud auth application-default
-   *   print-access-token) &#92;
-   *   -H 'Accept: application/json' &#92;
-   *   -H 'Content-Type: application/json' &#92;
+   *   -H 'Authorization: Bearer' &#92;
+   *   $(gcloud auth application-default print-access-token) &#92;
+   *   -H 'Accept: application/json'
    *   --compressed &#92;
-   *   --data-binary '{}' &#92;
-   * | grep agentContent | sed -e 's/.*"agentContent": "&#92;([^"]*&#92;)".*&#47;&#92;1/' &#92;
-   * | base64 --decode &gt; &amp;lt;agent zip file&amp;gt;&lt;/pre&gt;
+   *   | grep agentContent | sed -e 's/.*"agentContent": "&#92;([^"]*&#92;)".*&#47;&#92;1/' &#92;
+   *   | base64 --decode &gt; &amp;lt;agent zip file&amp;gt;&lt;/pre&gt;
    * </pre>
    *
    * <code>bytes agent_content = 2;</code>
@@ -715,16 +713,14 @@ public final class ExportAgentResponse extends com.google.protobuf.GeneratedMess
      * The exported agent.
      * Example for how to export an agent to a zip file via a command line:
      * &lt;pre&gt;curl &#92;
-     *   'https://dialogflow.googleapis.com/v2/projects/&amp;lt;project_name&amp;gt;/agent:export'&#92;
+     *   'https://dialogflow.googleapis.com/v2/projects/&amp;lt;project_id&amp;gt;/agent:export'&#92;
      *   -X POST &#92;
-     *   -H 'Authorization: Bearer '$(gcloud auth application-default
-     *   print-access-token) &#92;
-     *   -H 'Accept: application/json' &#92;
-     *   -H 'Content-Type: application/json' &#92;
+     *   -H 'Authorization: Bearer' &#92;
+     *   $(gcloud auth application-default print-access-token) &#92;
+     *   -H 'Accept: application/json'
      *   --compressed &#92;
-     *   --data-binary '{}' &#92;
-     * | grep agentContent | sed -e 's/.*"agentContent": "&#92;([^"]*&#92;)".*&#47;&#92;1/' &#92;
-     * | base64 --decode &gt; &amp;lt;agent zip file&amp;gt;&lt;/pre&gt;
+     *   | grep agentContent | sed -e 's/.*"agentContent": "&#92;([^"]*&#92;)".*&#47;&#92;1/' &#92;
+     *   | base64 --decode &gt; &amp;lt;agent zip file&amp;gt;&lt;/pre&gt;
      * </pre>
      *
      * <code>bytes agent_content = 2;</code>
@@ -742,16 +738,14 @@ public final class ExportAgentResponse extends com.google.protobuf.GeneratedMess
      * The exported agent.
      * Example for how to export an agent to a zip file via a command line:
      * &lt;pre&gt;curl &#92;
-     *   'https://dialogflow.googleapis.com/v2/projects/&amp;lt;project_name&amp;gt;/agent:export'&#92;
+     *   'https://dialogflow.googleapis.com/v2/projects/&amp;lt;project_id&amp;gt;/agent:export'&#92;
      *   -X POST &#92;
-     *   -H 'Authorization: Bearer '$(gcloud auth application-default
-     *   print-access-token) &#92;
-     *   -H 'Accept: application/json' &#92;
-     *   -H 'Content-Type: application/json' &#92;
+     *   -H 'Authorization: Bearer' &#92;
+     *   $(gcloud auth application-default print-access-token) &#92;
+     *   -H 'Accept: application/json'
      *   --compressed &#92;
-     *   --data-binary '{}' &#92;
-     * | grep agentContent | sed -e 's/.*"agentContent": "&#92;([^"]*&#92;)".*&#47;&#92;1/' &#92;
-     * | base64 --decode &gt; &amp;lt;agent zip file&amp;gt;&lt;/pre&gt;
+     *   | grep agentContent | sed -e 's/.*"agentContent": "&#92;([^"]*&#92;)".*&#47;&#92;1/' &#92;
+     *   | base64 --decode &gt; &amp;lt;agent zip file&amp;gt;&lt;/pre&gt;
      * </pre>
      *
      * <code>bytes agent_content = 2;</code>
@@ -772,16 +766,14 @@ public final class ExportAgentResponse extends com.google.protobuf.GeneratedMess
      * The exported agent.
      * Example for how to export an agent to a zip file via a command line:
      * &lt;pre&gt;curl &#92;
-     *   'https://dialogflow.googleapis.com/v2/projects/&amp;lt;project_name&amp;gt;/agent:export'&#92;
+     *   'https://dialogflow.googleapis.com/v2/projects/&amp;lt;project_id&amp;gt;/agent:export'&#92;
      *   -X POST &#92;
-     *   -H 'Authorization: Bearer '$(gcloud auth application-default
-     *   print-access-token) &#92;
-     *   -H 'Accept: application/json' &#92;
-     *   -H 'Content-Type: application/json' &#92;
+     *   -H 'Authorization: Bearer' &#92;
+     *   $(gcloud auth application-default print-access-token) &#92;
+     *   -H 'Accept: application/json'
      *   --compressed &#92;
-     *   --data-binary '{}' &#92;
-     * | grep agentContent | sed -e 's/.*"agentContent": "&#92;([^"]*&#92;)".*&#47;&#92;1/' &#92;
-     * | base64 --decode &gt; &amp;lt;agent zip file&amp;gt;&lt;/pre&gt;
+     *   | grep agentContent | sed -e 's/.*"agentContent": "&#92;([^"]*&#92;)".*&#47;&#92;1/' &#92;
+     *   | base64 --decode &gt; &amp;lt;agent zip file&amp;gt;&lt;/pre&gt;
      * </pre>
      *
      * <code>bytes agent_content = 2;</code>

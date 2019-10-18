@@ -131,7 +131,9 @@ public final class UpdateEntityTypeRequest extends com.google.protobuf.Generated
    * Required. The entity type to update.
    * </pre>
    *
-   * <code>.google.cloud.dialogflow.v2.EntityType entity_type = 1;</code>
+   * <code>
+   * .google.cloud.dialogflow.v2.EntityType entity_type = 1 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   public boolean hasEntityType() {
     return entityType_ != null;
@@ -143,7 +145,9 @@ public final class UpdateEntityTypeRequest extends com.google.protobuf.Generated
    * Required. The entity type to update.
    * </pre>
    *
-   * <code>.google.cloud.dialogflow.v2.EntityType entity_type = 1;</code>
+   * <code>
+   * .google.cloud.dialogflow.v2.EntityType entity_type = 1 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   public com.google.cloud.dialogflow.v2.EntityType getEntityType() {
     return entityType_ == null
@@ -157,7 +161,9 @@ public final class UpdateEntityTypeRequest extends com.google.protobuf.Generated
    * Required. The entity type to update.
    * </pre>
    *
-   * <code>.google.cloud.dialogflow.v2.EntityType entity_type = 1;</code>
+   * <code>
+   * .google.cloud.dialogflow.v2.EntityType entity_type = 1 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   public com.google.cloud.dialogflow.v2.EntityTypeOrBuilder getEntityTypeOrBuilder() {
     return getEntityType();
@@ -177,7 +183,7 @@ public final class UpdateEntityTypeRequest extends com.google.protobuf.Generated
    * be used.
    * </pre>
    *
-   * <code>string language_code = 2;</code>
+   * <code>string language_code = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   public java.lang.String getLanguageCode() {
     java.lang.Object ref = languageCode_;
@@ -202,7 +208,7 @@ public final class UpdateEntityTypeRequest extends com.google.protobuf.Generated
    * be used.
    * </pre>
    *
-   * <code>string language_code = 2;</code>
+   * <code>string language_code = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   public com.google.protobuf.ByteString getLanguageCodeBytes() {
     java.lang.Object ref = languageCode_;
@@ -225,7 +231,8 @@ public final class UpdateEntityTypeRequest extends com.google.protobuf.Generated
    * Optional. The mask to control which fields get updated.
    * </pre>
    *
-   * <code>.google.protobuf.FieldMask update_mask = 3;</code>
+   * <code>.google.protobuf.FieldMask update_mask = 3 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   public boolean hasUpdateMask() {
     return updateMask_ != null;
@@ -237,7 +244,8 @@ public final class UpdateEntityTypeRequest extends com.google.protobuf.Generated
    * Optional. The mask to control which fields get updated.
    * </pre>
    *
-   * <code>.google.protobuf.FieldMask update_mask = 3;</code>
+   * <code>.google.protobuf.FieldMask update_mask = 3 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   public com.google.protobuf.FieldMask getUpdateMask() {
     return updateMask_ == null ? com.google.protobuf.FieldMask.getDefaultInstance() : updateMask_;
@@ -249,7 +257,8 @@ public final class UpdateEntityTypeRequest extends com.google.protobuf.Generated
    * Optional. The mask to control which fields get updated.
    * </pre>
    *
-   * <code>.google.protobuf.FieldMask update_mask = 3;</code>
+   * <code>.google.protobuf.FieldMask update_mask = 3 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   public com.google.protobuf.FieldMaskOrBuilder getUpdateMaskOrBuilder() {
     return getUpdateMask();
@@ -643,7 +652,9 @@ public final class UpdateEntityTypeRequest extends com.google.protobuf.Generated
      * Required. The entity type to update.
      * </pre>
      *
-     * <code>.google.cloud.dialogflow.v2.EntityType entity_type = 1;</code>
+     * <code>
+     * .google.cloud.dialogflow.v2.EntityType entity_type = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public boolean hasEntityType() {
       return entityTypeBuilder_ != null || entityType_ != null;
@@ -655,7 +666,9 @@ public final class UpdateEntityTypeRequest extends com.google.protobuf.Generated
      * Required. The entity type to update.
      * </pre>
      *
-     * <code>.google.cloud.dialogflow.v2.EntityType entity_type = 1;</code>
+     * <code>
+     * .google.cloud.dialogflow.v2.EntityType entity_type = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public com.google.cloud.dialogflow.v2.EntityType getEntityType() {
       if (entityTypeBuilder_ == null) {
@@ -673,7 +686,9 @@ public final class UpdateEntityTypeRequest extends com.google.protobuf.Generated
      * Required. The entity type to update.
      * </pre>
      *
-     * <code>.google.cloud.dialogflow.v2.EntityType entity_type = 1;</code>
+     * <code>
+     * .google.cloud.dialogflow.v2.EntityType entity_type = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder setEntityType(com.google.cloud.dialogflow.v2.EntityType value) {
       if (entityTypeBuilder_ == null) {
@@ -695,7 +710,9 @@ public final class UpdateEntityTypeRequest extends com.google.protobuf.Generated
      * Required. The entity type to update.
      * </pre>
      *
-     * <code>.google.cloud.dialogflow.v2.EntityType entity_type = 1;</code>
+     * <code>
+     * .google.cloud.dialogflow.v2.EntityType entity_type = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder setEntityType(
         com.google.cloud.dialogflow.v2.EntityType.Builder builderForValue) {
@@ -715,7 +732,9 @@ public final class UpdateEntityTypeRequest extends com.google.protobuf.Generated
      * Required. The entity type to update.
      * </pre>
      *
-     * <code>.google.cloud.dialogflow.v2.EntityType entity_type = 1;</code>
+     * <code>
+     * .google.cloud.dialogflow.v2.EntityType entity_type = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder mergeEntityType(com.google.cloud.dialogflow.v2.EntityType value) {
       if (entityTypeBuilder_ == null) {
@@ -741,7 +760,9 @@ public final class UpdateEntityTypeRequest extends com.google.protobuf.Generated
      * Required. The entity type to update.
      * </pre>
      *
-     * <code>.google.cloud.dialogflow.v2.EntityType entity_type = 1;</code>
+     * <code>
+     * .google.cloud.dialogflow.v2.EntityType entity_type = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder clearEntityType() {
       if (entityTypeBuilder_ == null) {
@@ -761,7 +782,9 @@ public final class UpdateEntityTypeRequest extends com.google.protobuf.Generated
      * Required. The entity type to update.
      * </pre>
      *
-     * <code>.google.cloud.dialogflow.v2.EntityType entity_type = 1;</code>
+     * <code>
+     * .google.cloud.dialogflow.v2.EntityType entity_type = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public com.google.cloud.dialogflow.v2.EntityType.Builder getEntityTypeBuilder() {
 
@@ -775,7 +798,9 @@ public final class UpdateEntityTypeRequest extends com.google.protobuf.Generated
      * Required. The entity type to update.
      * </pre>
      *
-     * <code>.google.cloud.dialogflow.v2.EntityType entity_type = 1;</code>
+     * <code>
+     * .google.cloud.dialogflow.v2.EntityType entity_type = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public com.google.cloud.dialogflow.v2.EntityTypeOrBuilder getEntityTypeOrBuilder() {
       if (entityTypeBuilder_ != null) {
@@ -793,7 +818,9 @@ public final class UpdateEntityTypeRequest extends com.google.protobuf.Generated
      * Required. The entity type to update.
      * </pre>
      *
-     * <code>.google.cloud.dialogflow.v2.EntityType entity_type = 1;</code>
+     * <code>
+     * .google.cloud.dialogflow.v2.EntityType entity_type = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.dialogflow.v2.EntityType,
@@ -825,7 +852,7 @@ public final class UpdateEntityTypeRequest extends com.google.protobuf.Generated
      * be used.
      * </pre>
      *
-     * <code>string language_code = 2;</code>
+     * <code>string language_code = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public java.lang.String getLanguageCode() {
       java.lang.Object ref = languageCode_;
@@ -850,7 +877,7 @@ public final class UpdateEntityTypeRequest extends com.google.protobuf.Generated
      * be used.
      * </pre>
      *
-     * <code>string language_code = 2;</code>
+     * <code>string language_code = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public com.google.protobuf.ByteString getLanguageCodeBytes() {
       java.lang.Object ref = languageCode_;
@@ -875,7 +902,7 @@ public final class UpdateEntityTypeRequest extends com.google.protobuf.Generated
      * be used.
      * </pre>
      *
-     * <code>string language_code = 2;</code>
+     * <code>string language_code = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public Builder setLanguageCode(java.lang.String value) {
       if (value == null) {
@@ -898,7 +925,7 @@ public final class UpdateEntityTypeRequest extends com.google.protobuf.Generated
      * be used.
      * </pre>
      *
-     * <code>string language_code = 2;</code>
+     * <code>string language_code = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public Builder clearLanguageCode() {
 
@@ -918,7 +945,7 @@ public final class UpdateEntityTypeRequest extends com.google.protobuf.Generated
      * be used.
      * </pre>
      *
-     * <code>string language_code = 2;</code>
+     * <code>string language_code = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public Builder setLanguageCodeBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -944,7 +971,8 @@ public final class UpdateEntityTypeRequest extends com.google.protobuf.Generated
      * Optional. The mask to control which fields get updated.
      * </pre>
      *
-     * <code>.google.protobuf.FieldMask update_mask = 3;</code>
+     * <code>.google.protobuf.FieldMask update_mask = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public boolean hasUpdateMask() {
       return updateMaskBuilder_ != null || updateMask_ != null;
@@ -956,7 +984,8 @@ public final class UpdateEntityTypeRequest extends com.google.protobuf.Generated
      * Optional. The mask to control which fields get updated.
      * </pre>
      *
-     * <code>.google.protobuf.FieldMask update_mask = 3;</code>
+     * <code>.google.protobuf.FieldMask update_mask = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public com.google.protobuf.FieldMask getUpdateMask() {
       if (updateMaskBuilder_ == null) {
@@ -974,7 +1003,8 @@ public final class UpdateEntityTypeRequest extends com.google.protobuf.Generated
      * Optional. The mask to control which fields get updated.
      * </pre>
      *
-     * <code>.google.protobuf.FieldMask update_mask = 3;</code>
+     * <code>.google.protobuf.FieldMask update_mask = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder setUpdateMask(com.google.protobuf.FieldMask value) {
       if (updateMaskBuilder_ == null) {
@@ -996,7 +1026,8 @@ public final class UpdateEntityTypeRequest extends com.google.protobuf.Generated
      * Optional. The mask to control which fields get updated.
      * </pre>
      *
-     * <code>.google.protobuf.FieldMask update_mask = 3;</code>
+     * <code>.google.protobuf.FieldMask update_mask = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder setUpdateMask(com.google.protobuf.FieldMask.Builder builderForValue) {
       if (updateMaskBuilder_ == null) {
@@ -1015,7 +1046,8 @@ public final class UpdateEntityTypeRequest extends com.google.protobuf.Generated
      * Optional. The mask to control which fields get updated.
      * </pre>
      *
-     * <code>.google.protobuf.FieldMask update_mask = 3;</code>
+     * <code>.google.protobuf.FieldMask update_mask = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder mergeUpdateMask(com.google.protobuf.FieldMask value) {
       if (updateMaskBuilder_ == null) {
@@ -1039,7 +1071,8 @@ public final class UpdateEntityTypeRequest extends com.google.protobuf.Generated
      * Optional. The mask to control which fields get updated.
      * </pre>
      *
-     * <code>.google.protobuf.FieldMask update_mask = 3;</code>
+     * <code>.google.protobuf.FieldMask update_mask = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder clearUpdateMask() {
       if (updateMaskBuilder_ == null) {
@@ -1059,7 +1092,8 @@ public final class UpdateEntityTypeRequest extends com.google.protobuf.Generated
      * Optional. The mask to control which fields get updated.
      * </pre>
      *
-     * <code>.google.protobuf.FieldMask update_mask = 3;</code>
+     * <code>.google.protobuf.FieldMask update_mask = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public com.google.protobuf.FieldMask.Builder getUpdateMaskBuilder() {
 
@@ -1073,7 +1107,8 @@ public final class UpdateEntityTypeRequest extends com.google.protobuf.Generated
      * Optional. The mask to control which fields get updated.
      * </pre>
      *
-     * <code>.google.protobuf.FieldMask update_mask = 3;</code>
+     * <code>.google.protobuf.FieldMask update_mask = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public com.google.protobuf.FieldMaskOrBuilder getUpdateMaskOrBuilder() {
       if (updateMaskBuilder_ != null) {
@@ -1091,7 +1126,8 @@ public final class UpdateEntityTypeRequest extends com.google.protobuf.Generated
      * Optional. The mask to control which fields get updated.
      * </pre>
      *
-     * <code>.google.protobuf.FieldMask update_mask = 3;</code>
+     * <code>.google.protobuf.FieldMask update_mask = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.protobuf.FieldMask,

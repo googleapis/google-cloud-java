@@ -12,24 +12,28 @@ public interface ListTransferRunsRequestOrBuilder
    *
    *
    * <pre>
-   * Name of transfer configuration for which transfer runs should be retrieved.
+   * Required. Name of transfer configuration for which transfer runs should be retrieved.
    * Format of transfer configuration resource name is:
    * `projects/{project_id}/transferConfigs/{config_id}`.
    * </pre>
    *
-   * <code>string parent = 1;</code>
+   * <code>
+   * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    */
   java.lang.String getParent();
   /**
    *
    *
    * <pre>
-   * Name of transfer configuration for which transfer runs should be retrieved.
+   * Required. Name of transfer configuration for which transfer runs should be retrieved.
    * Format of transfer configuration resource name is:
    * `projects/{project_id}/transferConfigs/{config_id}`.
    * </pre>
    *
-   * <code>string parent = 1;</code>
+   * <code>
+   * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    */
   com.google.protobuf.ByteString getParentBytes();
 

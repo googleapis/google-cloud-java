@@ -98,11 +98,13 @@ public final class DeleteTagRequest extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Required. The name of the tag to delete. For example,
-   * "projects/{project_id}/locations/{location}/entryGroups/{entry_group_id}/entries/{entry_id}/tags/{tag_id}".
+   * Required. The name of the tag to delete. Example:
+   * * projects/{project_id}/locations/{location}/entryGroups/{entry_group_id}/entries/{entry_id}/tags/{tag_id}
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>
+   * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    */
   public java.lang.String getName() {
     java.lang.Object ref = name_;
@@ -119,11 +121,13 @@ public final class DeleteTagRequest extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Required. The name of the tag to delete. For example,
-   * "projects/{project_id}/locations/{location}/entryGroups/{entry_group_id}/entries/{entry_id}/tags/{tag_id}".
+   * Required. The name of the tag to delete. Example:
+   * * projects/{project_id}/locations/{location}/entryGroups/{entry_group_id}/entries/{entry_id}/tags/{tag_id}
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>
+   * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    */
   public com.google.protobuf.ByteString getNameBytes() {
     java.lang.Object ref = name_;
@@ -459,11 +463,13 @@ public final class DeleteTagRequest extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Required. The name of the tag to delete. For example,
-     * "projects/{project_id}/locations/{location}/entryGroups/{entry_group_id}/entries/{entry_id}/tags/{tag_id}".
+     * Required. The name of the tag to delete. Example:
+     * * projects/{project_id}/locations/{location}/entryGroups/{entry_group_id}/entries/{entry_id}/tags/{tag_id}
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>
+     * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      */
     public java.lang.String getName() {
       java.lang.Object ref = name_;
@@ -480,11 +486,13 @@ public final class DeleteTagRequest extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Required. The name of the tag to delete. For example,
-     * "projects/{project_id}/locations/{location}/entryGroups/{entry_group_id}/entries/{entry_id}/tags/{tag_id}".
+     * Required. The name of the tag to delete. Example:
+     * * projects/{project_id}/locations/{location}/entryGroups/{entry_group_id}/entries/{entry_id}/tags/{tag_id}
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>
+     * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      */
     public com.google.protobuf.ByteString getNameBytes() {
       java.lang.Object ref = name_;
@@ -501,11 +509,13 @@ public final class DeleteTagRequest extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Required. The name of the tag to delete. For example,
-     * "projects/{project_id}/locations/{location}/entryGroups/{entry_group_id}/entries/{entry_id}/tags/{tag_id}".
+     * Required. The name of the tag to delete. Example:
+     * * projects/{project_id}/locations/{location}/entryGroups/{entry_group_id}/entries/{entry_id}/tags/{tag_id}
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>
+     * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      */
     public Builder setName(java.lang.String value) {
       if (value == null) {
@@ -520,11 +530,13 @@ public final class DeleteTagRequest extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Required. The name of the tag to delete. For example,
-     * "projects/{project_id}/locations/{location}/entryGroups/{entry_group_id}/entries/{entry_id}/tags/{tag_id}".
+     * Required. The name of the tag to delete. Example:
+     * * projects/{project_id}/locations/{location}/entryGroups/{entry_group_id}/entries/{entry_id}/tags/{tag_id}
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>
+     * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      */
     public Builder clearName() {
 
@@ -536,11 +548,13 @@ public final class DeleteTagRequest extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Required. The name of the tag to delete. For example,
-     * "projects/{project_id}/locations/{location}/entryGroups/{entry_group_id}/entries/{entry_id}/tags/{tag_id}".
+     * Required. The name of the tag to delete. Example:
+     * * projects/{project_id}/locations/{location}/entryGroups/{entry_group_id}/entries/{entry_id}/tags/{tag_id}
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>
+     * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      */
     public Builder setNameBytes(com.google.protobuf.ByteString value) {
       if (value == null) {

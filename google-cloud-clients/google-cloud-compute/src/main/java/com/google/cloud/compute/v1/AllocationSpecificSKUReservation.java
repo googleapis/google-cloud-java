@@ -77,17 +77,17 @@ public final class AllocationSpecificSKUReservation implements ApiMessage {
     return null;
   }
 
-  /** Specifies number of resources that are allocated. */
+  /** Specifies the number of resources that are allocated. */
   public String getCount() {
     return count;
   }
 
-  /** [OutputOnly] Indicates how many resource are in use. */
+  /** [OutputOnly] Indicates how many instances are in use. */
   public String getInUseCount() {
     return inUseCount;
   }
 
-  /** The instance properties for this specific sku reservation. */
+  /** The instance properties for the reservation. */
   public AllocationSpecificSKUAllocationReservedInstanceProperties getInstanceProperties() {
     return instanceProperties;
   }
@@ -141,34 +141,34 @@ public final class AllocationSpecificSKUReservation implements ApiMessage {
       this.instanceProperties = source.instanceProperties;
     }
 
-    /** Specifies number of resources that are allocated. */
+    /** Specifies the number of resources that are allocated. */
     public String getCount() {
       return count;
     }
 
-    /** Specifies number of resources that are allocated. */
+    /** Specifies the number of resources that are allocated. */
     public Builder setCount(String count) {
       this.count = count;
       return this;
     }
 
-    /** [OutputOnly] Indicates how many resource are in use. */
+    /** [OutputOnly] Indicates how many instances are in use. */
     public String getInUseCount() {
       return inUseCount;
     }
 
-    /** [OutputOnly] Indicates how many resource are in use. */
+    /** [OutputOnly] Indicates how many instances are in use. */
     public Builder setInUseCount(String inUseCount) {
       this.inUseCount = inUseCount;
       return this;
     }
 
-    /** The instance properties for this specific sku reservation. */
+    /** The instance properties for the reservation. */
     public AllocationSpecificSKUAllocationReservedInstanceProperties getInstanceProperties() {
       return instanceProperties;
     }
 
-    /** The instance properties for this specific sku reservation. */
+    /** The instance properties for the reservation. */
     public Builder setInstanceProperties(
         AllocationSpecificSKUAllocationReservedInstanceProperties instanceProperties) {
       this.instanceProperties = instanceProperties;

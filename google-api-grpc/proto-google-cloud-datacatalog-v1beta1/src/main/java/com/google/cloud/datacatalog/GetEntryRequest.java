@@ -98,11 +98,17 @@ public final class GetEntryRequest extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * Required. The name of the entry. For example,
-   * "projects/{project_id}/locations/{location}/entryGroups/{entry_group_id}/entries/{entry_id}".
+   * Required. The name of the entry. Example:
+   * * projects/{project_id}/locations/{location}/entryGroups/{entry_group_id}/entries/{entry_id}
+   * Entry groups are logical groupings of entries. Currently, users cannot
+   * create/modify entry groups. They are created by Data Catalog; they include
+   * `&#64;bigquery` for all BigQuery entries, and `&#64;pubsub` for all Cloud Pub/Sub
+   * entries.
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>
+   * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    */
   public java.lang.String getName() {
     java.lang.Object ref = name_;
@@ -119,11 +125,17 @@ public final class GetEntryRequest extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * Required. The name of the entry. For example,
-   * "projects/{project_id}/locations/{location}/entryGroups/{entry_group_id}/entries/{entry_id}".
+   * Required. The name of the entry. Example:
+   * * projects/{project_id}/locations/{location}/entryGroups/{entry_group_id}/entries/{entry_id}
+   * Entry groups are logical groupings of entries. Currently, users cannot
+   * create/modify entry groups. They are created by Data Catalog; they include
+   * `&#64;bigquery` for all BigQuery entries, and `&#64;pubsub` for all Cloud Pub/Sub
+   * entries.
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>
+   * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    */
   public com.google.protobuf.ByteString getNameBytes() {
     java.lang.Object ref = name_;
@@ -459,11 +471,17 @@ public final class GetEntryRequest extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Required. The name of the entry. For example,
-     * "projects/{project_id}/locations/{location}/entryGroups/{entry_group_id}/entries/{entry_id}".
+     * Required. The name of the entry. Example:
+     * * projects/{project_id}/locations/{location}/entryGroups/{entry_group_id}/entries/{entry_id}
+     * Entry groups are logical groupings of entries. Currently, users cannot
+     * create/modify entry groups. They are created by Data Catalog; they include
+     * `&#64;bigquery` for all BigQuery entries, and `&#64;pubsub` for all Cloud Pub/Sub
+     * entries.
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>
+     * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      */
     public java.lang.String getName() {
       java.lang.Object ref = name_;
@@ -480,11 +498,17 @@ public final class GetEntryRequest extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Required. The name of the entry. For example,
-     * "projects/{project_id}/locations/{location}/entryGroups/{entry_group_id}/entries/{entry_id}".
+     * Required. The name of the entry. Example:
+     * * projects/{project_id}/locations/{location}/entryGroups/{entry_group_id}/entries/{entry_id}
+     * Entry groups are logical groupings of entries. Currently, users cannot
+     * create/modify entry groups. They are created by Data Catalog; they include
+     * `&#64;bigquery` for all BigQuery entries, and `&#64;pubsub` for all Cloud Pub/Sub
+     * entries.
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>
+     * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      */
     public com.google.protobuf.ByteString getNameBytes() {
       java.lang.Object ref = name_;
@@ -501,11 +525,17 @@ public final class GetEntryRequest extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Required. The name of the entry. For example,
-     * "projects/{project_id}/locations/{location}/entryGroups/{entry_group_id}/entries/{entry_id}".
+     * Required. The name of the entry. Example:
+     * * projects/{project_id}/locations/{location}/entryGroups/{entry_group_id}/entries/{entry_id}
+     * Entry groups are logical groupings of entries. Currently, users cannot
+     * create/modify entry groups. They are created by Data Catalog; they include
+     * `&#64;bigquery` for all BigQuery entries, and `&#64;pubsub` for all Cloud Pub/Sub
+     * entries.
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>
+     * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      */
     public Builder setName(java.lang.String value) {
       if (value == null) {
@@ -520,11 +550,17 @@ public final class GetEntryRequest extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Required. The name of the entry. For example,
-     * "projects/{project_id}/locations/{location}/entryGroups/{entry_group_id}/entries/{entry_id}".
+     * Required. The name of the entry. Example:
+     * * projects/{project_id}/locations/{location}/entryGroups/{entry_group_id}/entries/{entry_id}
+     * Entry groups are logical groupings of entries. Currently, users cannot
+     * create/modify entry groups. They are created by Data Catalog; they include
+     * `&#64;bigquery` for all BigQuery entries, and `&#64;pubsub` for all Cloud Pub/Sub
+     * entries.
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>
+     * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      */
     public Builder clearName() {
 
@@ -536,11 +572,17 @@ public final class GetEntryRequest extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Required. The name of the entry. For example,
-     * "projects/{project_id}/locations/{location}/entryGroups/{entry_group_id}/entries/{entry_id}".
+     * Required. The name of the entry. Example:
+     * * projects/{project_id}/locations/{location}/entryGroups/{entry_group_id}/entries/{entry_id}
+     * Entry groups are logical groupings of entries. Currently, users cannot
+     * create/modify entry groups. They are created by Data Catalog; they include
+     * `&#64;bigquery` for all BigQuery entries, and `&#64;pubsub` for all Cloud Pub/Sub
+     * entries.
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>
+     * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      */
     public Builder setNameBytes(com.google.protobuf.ByteString value) {
       if (value == null) {

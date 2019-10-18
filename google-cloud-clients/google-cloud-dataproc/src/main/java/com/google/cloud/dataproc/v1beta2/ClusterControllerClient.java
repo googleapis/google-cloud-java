@@ -178,7 +178,9 @@ public class ClusterControllerClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Creates a cluster in a project.
+   * Creates a cluster in a project. The returned
+   * [Operation.metadata][google.longrunning.Operation.metadata] will be
+   * [ClusterOperationMetadata](/dataproc/docs/reference/rpc/google.cloud.dataproc.v1beta2#clusteroperationmetadata).
    *
    * <p>Sample code:
    *
@@ -213,7 +215,9 @@ public class ClusterControllerClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Creates a cluster in a project.
+   * Creates a cluster in a project. The returned
+   * [Operation.metadata][google.longrunning.Operation.metadata] will be
+   * [ClusterOperationMetadata](/dataproc/docs/reference/rpc/google.cloud.dataproc.v1beta2#clusteroperationmetadata).
    *
    * <p>Sample code:
    *
@@ -243,7 +247,9 @@ public class ClusterControllerClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Creates a cluster in a project.
+   * Creates a cluster in a project. The returned
+   * [Operation.metadata][google.longrunning.Operation.metadata] will be
+   * [ClusterOperationMetadata](/dataproc/docs/reference/rpc/google.cloud.dataproc.v1beta2#clusteroperationmetadata).
    *
    * <p>Sample code:
    *
@@ -271,7 +277,9 @@ public class ClusterControllerClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Creates a cluster in a project.
+   * Creates a cluster in a project. The returned
+   * [Operation.metadata][google.longrunning.Operation.metadata] will be
+   * [ClusterOperationMetadata](/dataproc/docs/reference/rpc/google.cloud.dataproc.v1beta2#clusteroperationmetadata).
    *
    * <p>Sample code:
    *
@@ -297,7 +305,9 @@ public class ClusterControllerClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Updates a cluster in a project.
+   * Updates a cluster in a project. The returned
+   * [Operation.metadata][google.longrunning.Operation.metadata] will be
+   * [ClusterOperationMetadata](/dataproc/docs/reference/rpc/google.cloud.dataproc.v1beta2#clusteroperationmetadata).
    *
    * <p>Sample code:
    *
@@ -362,7 +372,9 @@ public class ClusterControllerClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Updates a cluster in a project.
+   * Updates a cluster in a project. The returned
+   * [Operation.metadata][google.longrunning.Operation.metadata] will be
+   * [ClusterOperationMetadata](/dataproc/docs/reference/rpc/google.cloud.dataproc.v1beta2#clusteroperationmetadata).
    *
    * <p>Sample code:
    *
@@ -396,7 +408,9 @@ public class ClusterControllerClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Updates a cluster in a project.
+   * Updates a cluster in a project. The returned
+   * [Operation.metadata][google.longrunning.Operation.metadata] will be
+   * [ClusterOperationMetadata](/dataproc/docs/reference/rpc/google.cloud.dataproc.v1beta2#clusteroperationmetadata).
    *
    * <p>Sample code:
    *
@@ -428,7 +442,9 @@ public class ClusterControllerClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Updates a cluster in a project.
+   * Updates a cluster in a project. The returned
+   * [Operation.metadata][google.longrunning.Operation.metadata] will be
+   * [ClusterOperationMetadata](/dataproc/docs/reference/rpc/google.cloud.dataproc.v1beta2#clusteroperationmetadata).
    *
    * <p>Sample code:
    *
@@ -458,7 +474,9 @@ public class ClusterControllerClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Deletes a cluster in a project.
+   * Deletes a cluster in a project. The returned
+   * [Operation.metadata][google.longrunning.Operation.metadata] will be
+   * [ClusterOperationMetadata](/dataproc/docs/reference/rpc/google.cloud.dataproc.v1beta2#clusteroperationmetadata).
    *
    * <p>Sample code:
    *
@@ -493,7 +511,9 @@ public class ClusterControllerClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Deletes a cluster in a project.
+   * Deletes a cluster in a project. The returned
+   * [Operation.metadata][google.longrunning.Operation.metadata] will be
+   * [ClusterOperationMetadata](/dataproc/docs/reference/rpc/google.cloud.dataproc.v1beta2#clusteroperationmetadata).
    *
    * <p>Sample code:
    *
@@ -523,7 +543,9 @@ public class ClusterControllerClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Deletes a cluster in a project.
+   * Deletes a cluster in a project. The returned
+   * [Operation.metadata][google.longrunning.Operation.metadata] will be
+   * [ClusterOperationMetadata](/dataproc/docs/reference/rpc/google.cloud.dataproc.v1beta2#clusteroperationmetadata).
    *
    * <p>Sample code:
    *
@@ -551,7 +573,9 @@ public class ClusterControllerClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Deletes a cluster in a project.
+   * Deletes a cluster in a project. The returned
+   * [Operation.metadata][google.longrunning.Operation.metadata] will be
+   * [ClusterOperationMetadata](/dataproc/docs/reference/rpc/google.cloud.dataproc.v1beta2#clusteroperationmetadata).
    *
    * <p>Sample code:
    *
@@ -823,8 +847,11 @@ public class ClusterControllerClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Gets cluster diagnostic information. After the operation completes, the Operation.response
-   * field contains `DiagnoseClusterOutputLocation`.
+   * Gets cluster diagnostic information. The returned
+   * [Operation.metadata][google.longrunning.Operation.metadata] will be
+   * [ClusterOperationMetadata](/dataproc/docs/reference/rpc/google.cloud.dataproc.v1beta2#clusteroperationmetadata).
+   * After the operation completes, [Operation.response][google.longrunning.Operation.response]
+   * contains [Empty](google.protobuf.Empty).
    *
    * <p>Sample code:
    *
@@ -859,8 +886,11 @@ public class ClusterControllerClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Gets cluster diagnostic information. After the operation completes, the Operation.response
-   * field contains `DiagnoseClusterOutputLocation`.
+   * Gets cluster diagnostic information. The returned
+   * [Operation.metadata][google.longrunning.Operation.metadata] will be
+   * [ClusterOperationMetadata](/dataproc/docs/reference/rpc/google.cloud.dataproc.v1beta2#clusteroperationmetadata).
+   * After the operation completes, [Operation.response][google.longrunning.Operation.response]
+   * contains [Empty](google.protobuf.Empty).
    *
    * <p>Sample code:
    *
@@ -890,8 +920,11 @@ public class ClusterControllerClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Gets cluster diagnostic information. After the operation completes, the Operation.response
-   * field contains `DiagnoseClusterOutputLocation`.
+   * Gets cluster diagnostic information. The returned
+   * [Operation.metadata][google.longrunning.Operation.metadata] will be
+   * [ClusterOperationMetadata](/dataproc/docs/reference/rpc/google.cloud.dataproc.v1beta2#clusteroperationmetadata).
+   * After the operation completes, [Operation.response][google.longrunning.Operation.response]
+   * contains [Empty](google.protobuf.Empty).
    *
    * <p>Sample code:
    *
@@ -919,8 +952,11 @@ public class ClusterControllerClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Gets cluster diagnostic information. After the operation completes, the Operation.response
-   * field contains `DiagnoseClusterOutputLocation`.
+   * Gets cluster diagnostic information. The returned
+   * [Operation.metadata][google.longrunning.Operation.metadata] will be
+   * [ClusterOperationMetadata](/dataproc/docs/reference/rpc/google.cloud.dataproc.v1beta2#clusteroperationmetadata).
+   * After the operation completes, [Operation.response][google.longrunning.Operation.response]
+   * contains [Empty](google.protobuf.Empty).
    *
    * <p>Sample code:
    *

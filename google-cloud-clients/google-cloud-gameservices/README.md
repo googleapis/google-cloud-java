@@ -16,24 +16,22 @@ Java idiomatic client for [Game Services API][product-overview].
 Quickstart
 ----------
 
-[//]: # ({x-version-update-start:google-cloud-gameservices:released})
 If you are using Maven, add this to your pom.xml file
 ```xml
 <dependency>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-gameservices</artifactId>
-  <version>0.3.0</version>
+  <version>0.16.0</version>
 </dependency>
 ```
 If you are using Gradle, add this to your dependencies
 ```Groovy
-compile 'com.google.cloud:google-cloud-gameservices:0.3.0'
+compile 'com.google.cloud:google-cloud-gameservices:0.16.0'
 ```
 If you are using SBT, add this to your dependencies
 ```Scala
-libraryDependencies += "com.google.cloud" % "google-cloud-gameservices" % "0.3.0"
+libraryDependencies += "com.google.cloud" % "google-cloud-gameservices" % "0.16.0"
 ```
-[//]: # ({x-version-update-end})
 
 Authentication
 --------------
@@ -97,4 +95,4 @@ Apache 2.0 - See [LICENSE] for more information.
 [cloud-platform]: https://cloud.google.com/
 [product-overview]: https://developers.google.com/games/services/
 [product-docs]: https://developers.google.com/games/services/
-[lib-docs]: https://googleapis.github.io/google-cloud-java/google-cloud-clients/apidocs/index.html?com/google/cloud/gameservices/v1alpha/package-summary.html
+[lib-docs]: https://googleapis.dev/java/google-cloud-clients/latest/index.html?com/google/cloud/gameservices/v1alpha/package-summary.html

@@ -49,14 +49,14 @@ target environment can be selected by setting a maven profile. By default it is 
 `bigtable-emulator-it` and other options are `bigtable-prod-it` and `bigtable-directpath-it`.
 
 To use the `bigtable-prod-it` and `bigtable-directpath-it` environments:
-1. Set up the target table using `google-cloud-bigtable/scripts/setup-test-table.sh`
+1. Set up the target table using `google-cloud-clients/google-cloud-bigtable/scripts/setup-test-table.sh`
 2. Download the [JSON service account credentials file][create-service-account] from the Google 
    Developer's Console.
 3. Set the environment variable `GOOGLE_APPLICATION_CREDENTIALS` to the path of the credentials file
 4. Enable the profile and the system properties `bigtable.project`, `bigtable.instance` and
    `bigtable.table` to created earlier. Example: 
     ```shell
-    mvn verify -am -pl google-cloud-bigtable \
+    mvn verify -am -pl google-cloud-clients/google-cloud-bigtable \
       -P bigtable-prod-it \
       -Dbigtable.project=my-project
       -Dbigtable.instance=my-instance

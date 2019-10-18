@@ -15,7 +15,7 @@ public interface DataSourceOrBuilder
    * Output only. Data source resource name.
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    */
   java.lang.String getName();
   /**
@@ -25,7 +25,7 @@ public interface DataSourceOrBuilder
    * Output only. Data source resource name.
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    */
   com.google.protobuf.ByteString getNameBytes();
 

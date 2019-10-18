@@ -12,19 +12,17 @@ public interface ResumeOrBuilder
    *
    *
    * <pre>
-   * Optional. Users can create a profile with only this field field, if
+   * Users can create a profile with only this field field, if
    * [resume_type][google.cloud.talent.v4beta1.Resume.resume_type] is
    * [HRXML][google.cloud.talent.v4beta1.Resume.ResumeType.HRXML]. For example,
    * the API parses this field and creates a profile with all structured fields
-   * populated, for example.
+   * populated.
    * [EmploymentRecord][google.cloud.talent.v4beta1.EmploymentRecord],
    * [EducationRecord][google.cloud.talent.v4beta1.EducationRecord], and so on.
    * An error is thrown if this field cannot be parsed.
-   * If this field is provided during profile creation or update,
-   * any other structured data provided in the profile is ignored. The
-   * API populates these fields by parsing this field. Note that the use of the
-   * functionality offered by this field to extract data from resumes is an
-   * Alpha feature and as such is not covered by any SLA.
+   * Note that the use of the functionality offered by this field to extract
+   * data from resumes is an Alpha feature and as such is not covered by any
+   * SLA.
    * </pre>
    *
    * <code>string structured_resume = 1;</code>
@@ -34,19 +32,17 @@ public interface ResumeOrBuilder
    *
    *
    * <pre>
-   * Optional. Users can create a profile with only this field field, if
+   * Users can create a profile with only this field field, if
    * [resume_type][google.cloud.talent.v4beta1.Resume.resume_type] is
    * [HRXML][google.cloud.talent.v4beta1.Resume.ResumeType.HRXML]. For example,
    * the API parses this field and creates a profile with all structured fields
-   * populated, for example.
+   * populated.
    * [EmploymentRecord][google.cloud.talent.v4beta1.EmploymentRecord],
    * [EducationRecord][google.cloud.talent.v4beta1.EducationRecord], and so on.
    * An error is thrown if this field cannot be parsed.
-   * If this field is provided during profile creation or update,
-   * any other structured data provided in the profile is ignored. The
-   * API populates these fields by parsing this field. Note that the use of the
-   * functionality offered by this field to extract data from resumes is an
-   * Alpha feature and as such is not covered by any SLA.
+   * Note that the use of the functionality offered by this field to extract
+   * data from resumes is an Alpha feature and as such is not covered by any
+   * SLA.
    * </pre>
    *
    * <code>string structured_resume = 1;</code>
@@ -57,7 +53,7 @@ public interface ResumeOrBuilder
    *
    *
    * <pre>
-   * Optional. The format of
+   * The format of
    * [structured_resume][google.cloud.talent.v4beta1.Resume.structured_resume].
    * </pre>
    *
@@ -68,7 +64,7 @@ public interface ResumeOrBuilder
    *
    *
    * <pre>
-   * Optional. The format of
+   * The format of
    * [structured_resume][google.cloud.talent.v4beta1.Resume.structured_resume].
    * </pre>
    *

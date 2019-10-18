@@ -172,7 +172,9 @@ public final class BigQueryTableSpec extends com.google.protobuf.GeneratedMessag
    * Output only. The table source type.
    * </pre>
    *
-   * <code>.google.cloud.datacatalog.v1beta1.TableSourceType table_source_type = 1;</code>
+   * <code>
+   * .google.cloud.datacatalog.v1beta1.TableSourceType table_source_type = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    */
   public int getTableSourceTypeValue() {
     return tableSourceType_;
@@ -184,7 +186,9 @@ public final class BigQueryTableSpec extends com.google.protobuf.GeneratedMessag
    * Output only. The table source type.
    * </pre>
    *
-   * <code>.google.cloud.datacatalog.v1beta1.TableSourceType table_source_type = 1;</code>
+   * <code>
+   * .google.cloud.datacatalog.v1beta1.TableSourceType table_source_type = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    */
   public com.google.cloud.datacatalog.TableSourceType getTableSourceType() {
     @SuppressWarnings("deprecation")
@@ -199,7 +203,7 @@ public final class BigQueryTableSpec extends com.google.protobuf.GeneratedMessag
    *
    * <pre>
    * Table view specification. This field should only be populated if
-   * table_source_type is BIGQUERY_VIEW.
+   * `table_source_type` is `BIGQUERY_VIEW`.
    * </pre>
    *
    * <code>.google.cloud.datacatalog.v1beta1.ViewSpec view_spec = 2;</code>
@@ -212,7 +216,7 @@ public final class BigQueryTableSpec extends com.google.protobuf.GeneratedMessag
    *
    * <pre>
    * Table view specification. This field should only be populated if
-   * table_source_type is BIGQUERY_VIEW.
+   * `table_source_type` is `BIGQUERY_VIEW`.
    * </pre>
    *
    * <code>.google.cloud.datacatalog.v1beta1.ViewSpec view_spec = 2;</code>
@@ -228,7 +232,7 @@ public final class BigQueryTableSpec extends com.google.protobuf.GeneratedMessag
    *
    * <pre>
    * Table view specification. This field should only be populated if
-   * table_source_type is BIGQUERY_VIEW.
+   * `table_source_type` is `BIGQUERY_VIEW`.
    * </pre>
    *
    * <code>.google.cloud.datacatalog.v1beta1.ViewSpec view_spec = 2;</code>
@@ -246,7 +250,7 @@ public final class BigQueryTableSpec extends com.google.protobuf.GeneratedMessag
    *
    * <pre>
    * Spec of a BigQuery table. This field should only be populated if
-   * table_source_type is BIGQUERY_TABLE.
+   * `table_source_type` is `BIGQUERY_TABLE`.
    * </pre>
    *
    * <code>.google.cloud.datacatalog.v1beta1.TableSpec table_spec = 3;</code>
@@ -259,7 +263,7 @@ public final class BigQueryTableSpec extends com.google.protobuf.GeneratedMessag
    *
    * <pre>
    * Spec of a BigQuery table. This field should only be populated if
-   * table_source_type is BIGQUERY_TABLE.
+   * `table_source_type` is `BIGQUERY_TABLE`.
    * </pre>
    *
    * <code>.google.cloud.datacatalog.v1beta1.TableSpec table_spec = 3;</code>
@@ -275,7 +279,7 @@ public final class BigQueryTableSpec extends com.google.protobuf.GeneratedMessag
    *
    * <pre>
    * Spec of a BigQuery table. This field should only be populated if
-   * table_source_type is BIGQUERY_TABLE.
+   * `table_source_type` is `BIGQUERY_TABLE`.
    * </pre>
    *
    * <code>.google.cloud.datacatalog.v1beta1.TableSpec table_spec = 3;</code>
@@ -698,7 +702,9 @@ public final class BigQueryTableSpec extends com.google.protobuf.GeneratedMessag
      * Output only. The table source type.
      * </pre>
      *
-     * <code>.google.cloud.datacatalog.v1beta1.TableSourceType table_source_type = 1;</code>
+     * <code>
+     * .google.cloud.datacatalog.v1beta1.TableSourceType table_source_type = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public int getTableSourceTypeValue() {
       return tableSourceType_;
@@ -710,7 +716,9 @@ public final class BigQueryTableSpec extends com.google.protobuf.GeneratedMessag
      * Output only. The table source type.
      * </pre>
      *
-     * <code>.google.cloud.datacatalog.v1beta1.TableSourceType table_source_type = 1;</code>
+     * <code>
+     * .google.cloud.datacatalog.v1beta1.TableSourceType table_source_type = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public Builder setTableSourceTypeValue(int value) {
       tableSourceType_ = value;
@@ -724,7 +732,9 @@ public final class BigQueryTableSpec extends com.google.protobuf.GeneratedMessag
      * Output only. The table source type.
      * </pre>
      *
-     * <code>.google.cloud.datacatalog.v1beta1.TableSourceType table_source_type = 1;</code>
+     * <code>
+     * .google.cloud.datacatalog.v1beta1.TableSourceType table_source_type = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public com.google.cloud.datacatalog.TableSourceType getTableSourceType() {
       @SuppressWarnings("deprecation")
@@ -739,7 +749,9 @@ public final class BigQueryTableSpec extends com.google.protobuf.GeneratedMessag
      * Output only. The table source type.
      * </pre>
      *
-     * <code>.google.cloud.datacatalog.v1beta1.TableSourceType table_source_type = 1;</code>
+     * <code>
+     * .google.cloud.datacatalog.v1beta1.TableSourceType table_source_type = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public Builder setTableSourceType(com.google.cloud.datacatalog.TableSourceType value) {
       if (value == null) {
@@ -757,7 +769,9 @@ public final class BigQueryTableSpec extends com.google.protobuf.GeneratedMessag
      * Output only. The table source type.
      * </pre>
      *
-     * <code>.google.cloud.datacatalog.v1beta1.TableSourceType table_source_type = 1;</code>
+     * <code>
+     * .google.cloud.datacatalog.v1beta1.TableSourceType table_source_type = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public Builder clearTableSourceType() {
 
@@ -776,7 +790,7 @@ public final class BigQueryTableSpec extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * Table view specification. This field should only be populated if
-     * table_source_type is BIGQUERY_VIEW.
+     * `table_source_type` is `BIGQUERY_VIEW`.
      * </pre>
      *
      * <code>.google.cloud.datacatalog.v1beta1.ViewSpec view_spec = 2;</code>
@@ -789,7 +803,7 @@ public final class BigQueryTableSpec extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * Table view specification. This field should only be populated if
-     * table_source_type is BIGQUERY_VIEW.
+     * `table_source_type` is `BIGQUERY_VIEW`.
      * </pre>
      *
      * <code>.google.cloud.datacatalog.v1beta1.ViewSpec view_spec = 2;</code>
@@ -812,7 +826,7 @@ public final class BigQueryTableSpec extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * Table view specification. This field should only be populated if
-     * table_source_type is BIGQUERY_VIEW.
+     * `table_source_type` is `BIGQUERY_VIEW`.
      * </pre>
      *
      * <code>.google.cloud.datacatalog.v1beta1.ViewSpec view_spec = 2;</code>
@@ -835,7 +849,7 @@ public final class BigQueryTableSpec extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * Table view specification. This field should only be populated if
-     * table_source_type is BIGQUERY_VIEW.
+     * `table_source_type` is `BIGQUERY_VIEW`.
      * </pre>
      *
      * <code>.google.cloud.datacatalog.v1beta1.ViewSpec view_spec = 2;</code>
@@ -855,7 +869,7 @@ public final class BigQueryTableSpec extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * Table view specification. This field should only be populated if
-     * table_source_type is BIGQUERY_VIEW.
+     * `table_source_type` is `BIGQUERY_VIEW`.
      * </pre>
      *
      * <code>.google.cloud.datacatalog.v1beta1.ViewSpec view_spec = 2;</code>
@@ -887,7 +901,7 @@ public final class BigQueryTableSpec extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * Table view specification. This field should only be populated if
-     * table_source_type is BIGQUERY_VIEW.
+     * `table_source_type` is `BIGQUERY_VIEW`.
      * </pre>
      *
      * <code>.google.cloud.datacatalog.v1beta1.ViewSpec view_spec = 2;</code>
@@ -913,7 +927,7 @@ public final class BigQueryTableSpec extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * Table view specification. This field should only be populated if
-     * table_source_type is BIGQUERY_VIEW.
+     * `table_source_type` is `BIGQUERY_VIEW`.
      * </pre>
      *
      * <code>.google.cloud.datacatalog.v1beta1.ViewSpec view_spec = 2;</code>
@@ -926,7 +940,7 @@ public final class BigQueryTableSpec extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * Table view specification. This field should only be populated if
-     * table_source_type is BIGQUERY_VIEW.
+     * `table_source_type` is `BIGQUERY_VIEW`.
      * </pre>
      *
      * <code>.google.cloud.datacatalog.v1beta1.ViewSpec view_spec = 2;</code>
@@ -946,7 +960,7 @@ public final class BigQueryTableSpec extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * Table view specification. This field should only be populated if
-     * table_source_type is BIGQUERY_VIEW.
+     * `table_source_type` is `BIGQUERY_VIEW`.
      * </pre>
      *
      * <code>.google.cloud.datacatalog.v1beta1.ViewSpec view_spec = 2;</code>
@@ -986,7 +1000,7 @@ public final class BigQueryTableSpec extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * Spec of a BigQuery table. This field should only be populated if
-     * table_source_type is BIGQUERY_TABLE.
+     * `table_source_type` is `BIGQUERY_TABLE`.
      * </pre>
      *
      * <code>.google.cloud.datacatalog.v1beta1.TableSpec table_spec = 3;</code>
@@ -999,7 +1013,7 @@ public final class BigQueryTableSpec extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * Spec of a BigQuery table. This field should only be populated if
-     * table_source_type is BIGQUERY_TABLE.
+     * `table_source_type` is `BIGQUERY_TABLE`.
      * </pre>
      *
      * <code>.google.cloud.datacatalog.v1beta1.TableSpec table_spec = 3;</code>
@@ -1022,7 +1036,7 @@ public final class BigQueryTableSpec extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * Spec of a BigQuery table. This field should only be populated if
-     * table_source_type is BIGQUERY_TABLE.
+     * `table_source_type` is `BIGQUERY_TABLE`.
      * </pre>
      *
      * <code>.google.cloud.datacatalog.v1beta1.TableSpec table_spec = 3;</code>
@@ -1045,7 +1059,7 @@ public final class BigQueryTableSpec extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * Spec of a BigQuery table. This field should only be populated if
-     * table_source_type is BIGQUERY_TABLE.
+     * `table_source_type` is `BIGQUERY_TABLE`.
      * </pre>
      *
      * <code>.google.cloud.datacatalog.v1beta1.TableSpec table_spec = 3;</code>
@@ -1065,7 +1079,7 @@ public final class BigQueryTableSpec extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * Spec of a BigQuery table. This field should only be populated if
-     * table_source_type is BIGQUERY_TABLE.
+     * `table_source_type` is `BIGQUERY_TABLE`.
      * </pre>
      *
      * <code>.google.cloud.datacatalog.v1beta1.TableSpec table_spec = 3;</code>
@@ -1097,7 +1111,7 @@ public final class BigQueryTableSpec extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * Spec of a BigQuery table. This field should only be populated if
-     * table_source_type is BIGQUERY_TABLE.
+     * `table_source_type` is `BIGQUERY_TABLE`.
      * </pre>
      *
      * <code>.google.cloud.datacatalog.v1beta1.TableSpec table_spec = 3;</code>
@@ -1123,7 +1137,7 @@ public final class BigQueryTableSpec extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * Spec of a BigQuery table. This field should only be populated if
-     * table_source_type is BIGQUERY_TABLE.
+     * `table_source_type` is `BIGQUERY_TABLE`.
      * </pre>
      *
      * <code>.google.cloud.datacatalog.v1beta1.TableSpec table_spec = 3;</code>
@@ -1136,7 +1150,7 @@ public final class BigQueryTableSpec extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * Spec of a BigQuery table. This field should only be populated if
-     * table_source_type is BIGQUERY_TABLE.
+     * `table_source_type` is `BIGQUERY_TABLE`.
      * </pre>
      *
      * <code>.google.cloud.datacatalog.v1beta1.TableSpec table_spec = 3;</code>
@@ -1156,7 +1170,7 @@ public final class BigQueryTableSpec extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * Spec of a BigQuery table. This field should only be populated if
-     * table_source_type is BIGQUERY_TABLE.
+     * `table_source_type` is `BIGQUERY_TABLE`.
      * </pre>
      *
      * <code>.google.cloud.datacatalog.v1beta1.TableSpec table_spec = 3;</code>

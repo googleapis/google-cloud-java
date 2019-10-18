@@ -108,7 +108,7 @@ public final class JobPlacement extends com.google.protobuf.GeneratedMessageV3
    * Required. The name of the cluster where the job will be submitted.
    * </pre>
    *
-   * <code>string cluster_name = 1;</code>
+   * <code>string cluster_name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   public java.lang.String getClusterName() {
     java.lang.Object ref = clusterName_;
@@ -128,7 +128,7 @@ public final class JobPlacement extends com.google.protobuf.GeneratedMessageV3
    * Required. The name of the cluster where the job will be submitted.
    * </pre>
    *
-   * <code>string cluster_name = 1;</code>
+   * <code>string cluster_name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   public com.google.protobuf.ByteString getClusterNameBytes() {
     java.lang.Object ref = clusterName_;
@@ -527,7 +527,7 @@ public final class JobPlacement extends com.google.protobuf.GeneratedMessageV3
      * Required. The name of the cluster where the job will be submitted.
      * </pre>
      *
-     * <code>string cluster_name = 1;</code>
+     * <code>string cluster_name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public java.lang.String getClusterName() {
       java.lang.Object ref = clusterName_;
@@ -547,7 +547,7 @@ public final class JobPlacement extends com.google.protobuf.GeneratedMessageV3
      * Required. The name of the cluster where the job will be submitted.
      * </pre>
      *
-     * <code>string cluster_name = 1;</code>
+     * <code>string cluster_name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public com.google.protobuf.ByteString getClusterNameBytes() {
       java.lang.Object ref = clusterName_;
@@ -567,7 +567,7 @@ public final class JobPlacement extends com.google.protobuf.GeneratedMessageV3
      * Required. The name of the cluster where the job will be submitted.
      * </pre>
      *
-     * <code>string cluster_name = 1;</code>
+     * <code>string cluster_name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder setClusterName(java.lang.String value) {
       if (value == null) {
@@ -585,7 +585,7 @@ public final class JobPlacement extends com.google.protobuf.GeneratedMessageV3
      * Required. The name of the cluster where the job will be submitted.
      * </pre>
      *
-     * <code>string cluster_name = 1;</code>
+     * <code>string cluster_name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder clearClusterName() {
 
@@ -600,7 +600,7 @@ public final class JobPlacement extends com.google.protobuf.GeneratedMessageV3
      * Required. The name of the cluster where the job will be submitted.
      * </pre>
      *
-     * <code>string cluster_name = 1;</code>
+     * <code>string cluster_name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder setClusterNameBytes(com.google.protobuf.ByteString value) {
       if (value == null) {

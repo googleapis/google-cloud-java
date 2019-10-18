@@ -13,13 +13,12 @@ public interface CreateJobRequestOrBuilder
    *
    * <pre>
    * Required. The resource name of the tenant under which the job is created.
-   * The format is "projects/{project_id}/tenants/{tenant_id}", for example,
-   * "projects/api-test-project/tenant/foo".
-   * Tenant id is optional and a default tenant is created if unspecified, for
-   * example, "projects/api-test-project".
+   * The format is "projects/{project_id}/tenants/{tenant_id}". For example,
+   * "projects/foo/tenant/bar". If tenant id is unspecified a default tenant
+   * is created. For example, "projects/foo".
    * </pre>
    *
-   * <code>string parent = 1;</code>
+   * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   java.lang.String getParent();
   /**
@@ -27,13 +26,12 @@ public interface CreateJobRequestOrBuilder
    *
    * <pre>
    * Required. The resource name of the tenant under which the job is created.
-   * The format is "projects/{project_id}/tenants/{tenant_id}", for example,
-   * "projects/api-test-project/tenant/foo".
-   * Tenant id is optional and a default tenant is created if unspecified, for
-   * example, "projects/api-test-project".
+   * The format is "projects/{project_id}/tenants/{tenant_id}". For example,
+   * "projects/foo/tenant/bar". If tenant id is unspecified a default tenant
+   * is created. For example, "projects/foo".
    * </pre>
    *
-   * <code>string parent = 1;</code>
+   * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   com.google.protobuf.ByteString getParentBytes();
 
@@ -44,7 +42,8 @@ public interface CreateJobRequestOrBuilder
    * Required. The Job to be created.
    * </pre>
    *
-   * <code>.google.cloud.talent.v4beta1.Job job = 2;</code>
+   * <code>.google.cloud.talent.v4beta1.Job job = 2 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   boolean hasJob();
   /**
@@ -54,7 +53,8 @@ public interface CreateJobRequestOrBuilder
    * Required. The Job to be created.
    * </pre>
    *
-   * <code>.google.cloud.talent.v4beta1.Job job = 2;</code>
+   * <code>.google.cloud.talent.v4beta1.Job job = 2 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   com.google.cloud.talent.v4beta1.Job getJob();
   /**
@@ -64,7 +64,8 @@ public interface CreateJobRequestOrBuilder
    * Required. The Job to be created.
    * </pre>
    *
-   * <code>.google.cloud.talent.v4beta1.Job job = 2;</code>
+   * <code>.google.cloud.talent.v4beta1.Job job = 2 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   com.google.cloud.talent.v4beta1.JobOrBuilder getJobOrBuilder();
 }

@@ -28,8 +28,10 @@ import com.google.cloud.NoCredentials;
 import com.google.cloud.ServiceRpc;
 import com.google.cloud.grpc.GrpcTransportOptions;
 import com.google.cloud.spanner.spi.v1.SpannerRpc;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
+import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -52,34 +54,17 @@ public class SpannerImplTest {
   @Before
   public void setUp() {
     MockitoAnnotations.initMocks(this);
+    when(spannerOptions.getNumChannels()).thenReturn(4);
     when(spannerOptions.getPrefetchChunks()).thenReturn(1);
     when(spannerOptions.getRetrySettings()).thenReturn(RetrySettings.newBuilder().build());
     when(spannerOptions.getClock()).thenReturn(NanoClock.getDefaultClock());
+    when(spannerOptions.getSessionLabels()).thenReturn(Collections.<String, String>emptyMap());
     impl = new SpannerImpl(rpc, spannerOptions);
   }
 
-  @Test
-  public void createAndCloseSession() {
-    Map<String, String> labels = new HashMap<>();
-    labels.put("env", "dev");
-    Mockito.when(spannerOptions.getSessionLabels()).thenReturn(labels);
-    String dbName = "projects/p1/instances/i1/databases/d1";
-    String sessionName = dbName + "/sessions/s1";
-    DatabaseId db = DatabaseId.of(dbName);
-
-    com.google.spanner.v1.Session sessionProto =
-        com.google.spanner.v1.Session.newBuilder()
-            .setName(sessionName)
-            .putAllLabels(labels)
-            .build();
-    Mockito.when(rpc.createSession(Mockito.eq(dbName), Mockito.eq(labels), options.capture()))
-        .thenReturn(sessionProto);
-    Session session = impl.createSession(db);
-    assertThat(session.getName()).isEqualTo(sessionName);
-
-    session.close();
-    // The same channelHint is passed for deleteSession (contained in "options").
-    Mockito.verify(rpc).deleteSession(sessionName, options.getValue());
+  @After
+  public void teardown() {
+    impl.close();
   }
 
   @Test
@@ -93,7 +78,7 @@ public class SpannerImplTest {
     Mockito.when(spannerOptions.getTransportOptions())
         .thenReturn(GrpcTransportOptions.newBuilder().build());
     Mockito.when(spannerOptions.getSessionPoolOptions())
-        .thenReturn(SessionPoolOptions.newBuilder().build());
+        .thenReturn(SessionPoolOptions.newBuilder().setMinSessions(0).build());
 
     DatabaseClient databaseClient = impl.getDatabaseClient(db);
 

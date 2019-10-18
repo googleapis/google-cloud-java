@@ -434,7 +434,7 @@ public final class Phone extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. The usage of the phone. For example, SCHOOL, WORK, PERSONAL.
+   * The usage of the phone. For example, SCHOOL, WORK, PERSONAL.
    * </pre>
    *
    * <code>.google.cloud.talent.v4beta1.ContactInfoUsage usage = 1;</code>
@@ -446,7 +446,7 @@ public final class Phone extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. The usage of the phone. For example, SCHOOL, WORK, PERSONAL.
+   * The usage of the phone. For example, SCHOOL, WORK, PERSONAL.
    * </pre>
    *
    * <code>.google.cloud.talent.v4beta1.ContactInfoUsage usage = 1;</code>
@@ -464,7 +464,7 @@ public final class Phone extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. The phone type. For example, LANDLINE, MOBILE, FAX.
+   * The phone type. For example, LANDLINE, MOBILE, FAX.
    * </pre>
    *
    * <code>.google.cloud.talent.v4beta1.Phone.PhoneType type = 2;</code>
@@ -476,7 +476,7 @@ public final class Phone extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. The phone type. For example, LANDLINE, MOBILE, FAX.
+   * The phone type. For example, LANDLINE, MOBILE, FAX.
    * </pre>
    *
    * <code>.google.cloud.talent.v4beta1.Phone.PhoneType type = 2;</code>
@@ -494,7 +494,7 @@ public final class Phone extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. Phone number.
+   * Phone number.
    * Any phone formats are supported and only exact matches are performed on
    * searches. For example, if a phone number in profile is provided in the
    * format of "(xxx)xxx-xxxx", in profile searches the same phone format
@@ -519,7 +519,7 @@ public final class Phone extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. Phone number.
+   * Phone number.
    * Any phone formats are supported and only exact matches are performed on
    * searches. For example, if a phone number in profile is provided in the
    * format of "(xxx)xxx-xxxx", in profile searches the same phone format
@@ -547,8 +547,7 @@ public final class Phone extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. When this number is available. Any descriptive string is
-   * expected.
+   * When this number is available. Any descriptive string is expected.
    * Number of characters allowed is 100.
    * </pre>
    *
@@ -569,8 +568,7 @@ public final class Phone extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. When this number is available. Any descriptive string is
-   * expected.
+   * When this number is available. Any descriptive string is expected.
    * Number of characters allowed is 100.
    * </pre>
    *
@@ -959,7 +957,7 @@ public final class Phone extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The usage of the phone. For example, SCHOOL, WORK, PERSONAL.
+     * The usage of the phone. For example, SCHOOL, WORK, PERSONAL.
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.ContactInfoUsage usage = 1;</code>
@@ -971,7 +969,7 @@ public final class Phone extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The usage of the phone. For example, SCHOOL, WORK, PERSONAL.
+     * The usage of the phone. For example, SCHOOL, WORK, PERSONAL.
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.ContactInfoUsage usage = 1;</code>
@@ -985,7 +983,7 @@ public final class Phone extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The usage of the phone. For example, SCHOOL, WORK, PERSONAL.
+     * The usage of the phone. For example, SCHOOL, WORK, PERSONAL.
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.ContactInfoUsage usage = 1;</code>
@@ -1002,7 +1000,7 @@ public final class Phone extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The usage of the phone. For example, SCHOOL, WORK, PERSONAL.
+     * The usage of the phone. For example, SCHOOL, WORK, PERSONAL.
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.ContactInfoUsage usage = 1;</code>
@@ -1020,7 +1018,7 @@ public final class Phone extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The usage of the phone. For example, SCHOOL, WORK, PERSONAL.
+     * The usage of the phone. For example, SCHOOL, WORK, PERSONAL.
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.ContactInfoUsage usage = 1;</code>
@@ -1037,7 +1035,7 @@ public final class Phone extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The phone type. For example, LANDLINE, MOBILE, FAX.
+     * The phone type. For example, LANDLINE, MOBILE, FAX.
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.Phone.PhoneType type = 2;</code>
@@ -1049,7 +1047,7 @@ public final class Phone extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The phone type. For example, LANDLINE, MOBILE, FAX.
+     * The phone type. For example, LANDLINE, MOBILE, FAX.
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.Phone.PhoneType type = 2;</code>
@@ -1063,7 +1061,7 @@ public final class Phone extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The phone type. For example, LANDLINE, MOBILE, FAX.
+     * The phone type. For example, LANDLINE, MOBILE, FAX.
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.Phone.PhoneType type = 2;</code>
@@ -1078,7 +1076,7 @@ public final class Phone extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The phone type. For example, LANDLINE, MOBILE, FAX.
+     * The phone type. For example, LANDLINE, MOBILE, FAX.
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.Phone.PhoneType type = 2;</code>
@@ -1096,7 +1094,7 @@ public final class Phone extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The phone type. For example, LANDLINE, MOBILE, FAX.
+     * The phone type. For example, LANDLINE, MOBILE, FAX.
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.Phone.PhoneType type = 2;</code>
@@ -1113,7 +1111,7 @@ public final class Phone extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Phone number.
+     * Phone number.
      * Any phone formats are supported and only exact matches are performed on
      * searches. For example, if a phone number in profile is provided in the
      * format of "(xxx)xxx-xxxx", in profile searches the same phone format
@@ -1138,7 +1136,7 @@ public final class Phone extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Phone number.
+     * Phone number.
      * Any phone formats are supported and only exact matches are performed on
      * searches. For example, if a phone number in profile is provided in the
      * format of "(xxx)xxx-xxxx", in profile searches the same phone format
@@ -1163,7 +1161,7 @@ public final class Phone extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Phone number.
+     * Phone number.
      * Any phone formats are supported and only exact matches are performed on
      * searches. For example, if a phone number in profile is provided in the
      * format of "(xxx)xxx-xxxx", in profile searches the same phone format
@@ -1186,7 +1184,7 @@ public final class Phone extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Phone number.
+     * Phone number.
      * Any phone formats are supported and only exact matches are performed on
      * searches. For example, if a phone number in profile is provided in the
      * format of "(xxx)xxx-xxxx", in profile searches the same phone format
@@ -1206,7 +1204,7 @@ public final class Phone extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Phone number.
+     * Phone number.
      * Any phone formats are supported and only exact matches are performed on
      * searches. For example, if a phone number in profile is provided in the
      * format of "(xxx)xxx-xxxx", in profile searches the same phone format
@@ -1232,8 +1230,7 @@ public final class Phone extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. When this number is available. Any descriptive string is
-     * expected.
+     * When this number is available. Any descriptive string is expected.
      * Number of characters allowed is 100.
      * </pre>
      *
@@ -1254,8 +1251,7 @@ public final class Phone extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. When this number is available. Any descriptive string is
-     * expected.
+     * When this number is available. Any descriptive string is expected.
      * Number of characters allowed is 100.
      * </pre>
      *
@@ -1276,8 +1272,7 @@ public final class Phone extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. When this number is available. Any descriptive string is
-     * expected.
+     * When this number is available. Any descriptive string is expected.
      * Number of characters allowed is 100.
      * </pre>
      *
@@ -1296,8 +1291,7 @@ public final class Phone extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. When this number is available. Any descriptive string is
-     * expected.
+     * When this number is available. Any descriptive string is expected.
      * Number of characters allowed is 100.
      * </pre>
      *
@@ -1313,8 +1307,7 @@ public final class Phone extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. When this number is available. Any descriptive string is
-     * expected.
+     * When this number is available. Any descriptive string is expected.
      * Number of characters allowed is 100.
      * </pre>
      *

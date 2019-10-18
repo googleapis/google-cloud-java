@@ -15,7 +15,9 @@ public interface BasicAutoscalingAlgorithmOrBuilder
    * Required. YARN autoscaling configuration.
    * </pre>
    *
-   * <code>.google.cloud.dataproc.v1beta2.BasicYarnAutoscalingConfig yarn_config = 1;</code>
+   * <code>
+   * .google.cloud.dataproc.v1beta2.BasicYarnAutoscalingConfig yarn_config = 1 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   boolean hasYarnConfig();
   /**
@@ -25,7 +27,9 @@ public interface BasicAutoscalingAlgorithmOrBuilder
    * Required. YARN autoscaling configuration.
    * </pre>
    *
-   * <code>.google.cloud.dataproc.v1beta2.BasicYarnAutoscalingConfig yarn_config = 1;</code>
+   * <code>
+   * .google.cloud.dataproc.v1beta2.BasicYarnAutoscalingConfig yarn_config = 1 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   com.google.cloud.dataproc.v1beta2.BasicYarnAutoscalingConfig getYarnConfig();
   /**
@@ -35,7 +39,9 @@ public interface BasicAutoscalingAlgorithmOrBuilder
    * Required. YARN autoscaling configuration.
    * </pre>
    *
-   * <code>.google.cloud.dataproc.v1beta2.BasicYarnAutoscalingConfig yarn_config = 1;</code>
+   * <code>
+   * .google.cloud.dataproc.v1beta2.BasicYarnAutoscalingConfig yarn_config = 1 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   com.google.cloud.dataproc.v1beta2.BasicYarnAutoscalingConfigOrBuilder getYarnConfigOrBuilder();
 
@@ -48,7 +54,8 @@ public interface BasicAutoscalingAlgorithmOrBuilder
    * Bounds: [2m, 1d]. Default: 2m.
    * </pre>
    *
-   * <code>.google.protobuf.Duration cooldown_period = 2;</code>
+   * <code>.google.protobuf.Duration cooldown_period = 2 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   boolean hasCooldownPeriod();
   /**
@@ -60,7 +67,8 @@ public interface BasicAutoscalingAlgorithmOrBuilder
    * Bounds: [2m, 1d]. Default: 2m.
    * </pre>
    *
-   * <code>.google.protobuf.Duration cooldown_period = 2;</code>
+   * <code>.google.protobuf.Duration cooldown_period = 2 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   com.google.protobuf.Duration getCooldownPeriod();
   /**
@@ -72,7 +80,8 @@ public interface BasicAutoscalingAlgorithmOrBuilder
    * Bounds: [2m, 1d]. Default: 2m.
    * </pre>
    *
-   * <code>.google.protobuf.Duration cooldown_period = 2;</code>
+   * <code>.google.protobuf.Duration cooldown_period = 2 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   com.google.protobuf.DurationOrBuilder getCooldownPeriodOrBuilder();
 }

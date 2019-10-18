@@ -48,57 +48,69 @@ public final class RecaptchaEnterpriseProto {
       "\nBgoogle/cloud/recaptchaenterprise/v1bet"
           + "a1/recaptchaenterprise.proto\022(google.clo"
           + "ud.recaptchaenterprise.v1beta1\032\034google/a"
-          + "pi/annotations.proto\032\037google/protobuf/ti"
-          + "mestamp.proto\"s\n\027CreateAssessmentRequest"
-          + "\022\016\n\006parent\030\001 \001(\t\022H\n\nassessment\030\002 \001(\01324.g"
-          + "oogle.cloud.recaptchaenterprise.v1beta1."
-          + "Assessment\"\327\001\n\031AnnotateAssessmentRequest"
-          + "\022\014\n\004name\030\001 \001(\t\022b\n\nannotation\030\002 \001(\0162N.goo"
-          + "gle.cloud.recaptchaenterprise.v1beta1.An"
-          + "notateAssessmentRequest.Annotation\"H\n\nAn"
-          + "notation\022\032\n\026ANNOTATION_UNSPECIFIED\020\000\022\016\n\n"
-          + "LEGITIMATE\020\001\022\016\n\nFRAUDULENT\020\002\"\034\n\032Annotate"
-          + "AssessmentResponse\"\304\003\n\nAssessment\022\014\n\004nam"
-          + "e\030\001 \001(\t\022>\n\005event\030\002 \001(\0132/.google.cloud.re"
-          + "captchaenterprise.v1beta1.Event\022\r\n\005score"
-          + "\030\003 \001(\002\022S\n\020token_properties\030\004 \001(\01329.googl"
-          + "e.cloud.recaptchaenterprise.v1beta1.Toke"
-          + "nProperties\022Z\n\007reasons\030\005 \003(\0162I.google.cl"
-          + "oud.recaptchaenterprise.v1beta1.Assessme"
-          + "nt.ClassificationReason\"\247\001\n\024Classificati"
-          + "onReason\022%\n!CLASSIFICATION_REASON_UNSPEC"
-          + "IFIED\020\000\022\016\n\nAUTOMATION\020\001\022\032\n\026UNEXPECTED_EN"
-          + "VIRONMENT\020\002\022\035\n\031UNEXPECTED_USAGE_PATTERNS"
-          + "\020\004\022\035\n\031PROVISIONAL_RISK_ANALYSIS\020\005\"(\n\005Eve"
-          + "nt\022\r\n\005token\030\001 \001(\t\022\020\n\010site_key\030\002 \001(\t\"\350\002\n\017"
-          + "TokenProperties\022\r\n\005valid\030\001 \001(\010\022_\n\016invali"
-          + "d_reason\030\002 \001(\0162G.google.cloud.recaptchae"
-          + "nterprise.v1beta1.TokenProperties.Invali"
-          + "dReason\022/\n\013create_time\030\003 \001(\0132\032.google.pr"
-          + "otobuf.Timestamp\022\020\n\010hostname\030\004 \001(\t\022\016\n\006ac"
-          + "tion\030\005 \001(\t\"\221\001\n\rInvalidReason\022\036\n\032INVALID_"
-          + "REASON_UNSPECIFIED\020\000\022\032\n\026UNKNOWN_INVALID_"
-          + "REASON\020\001\022\r\n\tMALFORMED\020\002\022\013\n\007EXPIRED\020\003\022\010\n\004"
-          + "DUPE\020\004\022\021\n\rSITE_MISMATCH\020\005\022\013\n\007MISSING\020\0062\317"
-          + "\003\n!RecaptchaEnterpriseServiceV1Beta1\022\311\001\n"
-          + "\020CreateAssessment\022A.google.cloud.recaptc"
-          + "haenterprise.v1beta1.CreateAssessmentReq"
-          + "uest\0324.google.cloud.recaptchaenterprise."
-          + "v1beta1.Assessment\"<\202\323\344\223\0026\"(/v1beta1/{pa"
-          + "rent=projects/*}/assessments:\nassessment"
-          + "\022\335\001\n\022AnnotateAssessment\022C.google.cloud.r"
-          + "ecaptchaenterprise.v1beta1.AnnotateAsses"
-          + "smentRequest\032D.google.cloud.recaptchaent"
-          + "erprise.v1beta1.AnnotateAssessmentRespon"
-          + "se\"<\202\323\344\223\0026\"1/v1beta1/{name=projects/*/as"
-          + "sessments/*}:annotate:\001*B\376\001\n&com.google."
-          + "recaptchaenterprise.v1beta1B\030RecaptchaEn"
-          + "terpriseProtoP\001Z[google.golang.org/genpr"
-          + "oto/googleapis/cloud/recaptchaenterprise"
-          + "/v1beta1;recaptchaenterprise\242\002\004GCRE\252\002(Go"
-          + "ogle.Cloud.RecaptchaEnterprise.V1Beta1\312\002"
-          + "(Google\\Cloud\\RecaptchaEnterprise\\V1beta"
-          + "1b\006proto3"
+          + "pi/annotations.proto\032\027google/api/client."
+          + "proto\032\037google/api/field_behavior.proto\032\031"
+          + "google/api/resource.proto\032\037google/protob"
+          + "uf/timestamp.proto\"\255\001\n\027CreateAssessmentR"
+          + "equest\022C\n\006parent\030\001 \001(\tB3\340A\002\372A-\n+cloudres"
+          + "ourcemanager.googleapis.com/Project\022M\n\na"
+          + "ssessment\030\002 \001(\01324.google.cloud.recaptcha"
+          + "enterprise.v1beta1.AssessmentB\003\340A\002\"\223\002\n\031A"
+          + "nnotateAssessmentRequest\022C\n\004name\030\001 \001(\tB5"
+          + "\340A\002\372A/\n-recaptchaenterprise.googleapis.c"
+          + "om/Assessment\022g\n\nannotation\030\002 \001(\0162N.goog"
+          + "le.cloud.recaptchaenterprise.v1beta1.Ann"
+          + "otateAssessmentRequest.AnnotationB\003\340A\002\"H"
+          + "\n\nAnnotation\022\032\n\026ANNOTATION_UNSPECIFIED\020\000"
+          + "\022\016\n\nLEGITIMATE\020\001\022\016\n\nFRAUDULENT\020\002\"\034\n\032Anno"
+          + "tateAssessmentResponse\"\312\004\n\nAssessment\022\021\n"
+          + "\004name\030\001 \001(\tB\003\340A\003\022>\n\005event\030\002 \001(\0132/.google"
+          + ".cloud.recaptchaenterprise.v1beta1.Event"
+          + "\022\022\n\005score\030\003 \001(\002B\003\340A\003\022X\n\020token_properties"
+          + "\030\004 \001(\01329.google.cloud.recaptchaenterpris"
+          + "e.v1beta1.TokenPropertiesB\003\340A\003\022_\n\007reason"
+          + "s\030\005 \003(\0162I.google.cloud.recaptchaenterpri"
+          + "se.v1beta1.Assessment.ClassificationReas"
+          + "onB\003\340A\003\"\270\001\n\024ClassificationReason\022%\n!CLAS"
+          + "SIFICATION_REASON_UNSPECIFIED\020\000\022\016\n\nAUTOM"
+          + "ATION\020\001\022\032\n\026UNEXPECTED_ENVIRONMENT\020\002\022\024\n\020T"
+          + "OO_MUCH_TRAFFIC\020\003\022\035\n\031UNEXPECTED_USAGE_PA"
+          + "TTERNS\020\004\022\030\n\024LOW_CONFIDENCE_SCORE\020\005:_\352A\\\n"
+          + "-recaptchaenterprise.googleapis.com/Asse"
+          + "ssment\022+projects/{project}/assessments/{"
+          + "assessment}\"2\n\005Event\022\022\n\005token\030\001 \001(\tB\003\340A\002"
+          + "\022\025\n\010site_key\030\002 \001(\tB\003\340A\002\"\350\002\n\017TokenPropert"
+          + "ies\022\r\n\005valid\030\001 \001(\010\022_\n\016invalid_reason\030\002 \001"
+          + "(\0162G.google.cloud.recaptchaenterprise.v1"
+          + "beta1.TokenProperties.InvalidReason\022/\n\013c"
+          + "reate_time\030\003 \001(\0132\032.google.protobuf.Times"
+          + "tamp\022\020\n\010hostname\030\004 \001(\t\022\016\n\006action\030\005 \001(\t\"\221"
+          + "\001\n\rInvalidReason\022\036\n\032INVALID_REASON_UNSPE"
+          + "CIFIED\020\000\022\032\n\026UNKNOWN_INVALID_REASON\020\001\022\r\n\t"
+          + "MALFORMED\020\002\022\013\n\007EXPIRED\020\003\022\010\n\004DUPE\020\004\022\021\n\rSI"
+          + "TE_MISMATCH\020\005\022\013\n\007MISSING\020\0062\315\004\n!Recaptcha"
+          + "EnterpriseServiceV1Beta1\022\335\001\n\020CreateAsses"
+          + "sment\022A.google.cloud.recaptchaenterprise"
+          + ".v1beta1.CreateAssessmentRequest\0324.googl"
+          + "e.cloud.recaptchaenterprise.v1beta1.Asse"
+          + "ssment\"P\202\323\344\223\0026\"(/v1beta1/{parent=project"
+          + "s/*}/assessments:\nassessment\332A\021parent,as"
+          + "sessment\022\357\001\n\022AnnotateAssessment\022C.google"
+          + ".cloud.recaptchaenterprise.v1beta1.Annot"
+          + "ateAssessmentRequest\032D.google.cloud.reca"
+          + "ptchaenterprise.v1beta1.AnnotateAssessme"
+          + "ntResponse\"N\202\323\344\223\0026\"1/v1beta1/{name=proje"
+          + "cts/*/assessments/*}:annotate:\001*\332A\017name,"
+          + "annotation\032V\312A\"recaptchaenterprise.googl"
+          + "eapis.com\322A.https://www.googleapis.com/a"
+          + "uth/cloud-platformB\376\001\n&com.google.recapt"
+          + "chaenterprise.v1beta1B\030RecaptchaEnterpri"
+          + "seProtoP\001Z[google.golang.org/genproto/go"
+          + "ogleapis/cloud/recaptchaenterprise/v1bet"
+          + "a1;recaptchaenterprise\242\002\004GCRE\252\002(Google.C"
+          + "loud.RecaptchaEnterprise.V1Beta1\312\002(Googl"
+          + "e\\Cloud\\RecaptchaEnterprise\\V1beta1b\006pro"
+          + "to3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner() {
@@ -112,6 +124,9 @@ public final class RecaptchaEnterpriseProto {
         descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
           com.google.api.AnnotationsProto.getDescriptor(),
+          com.google.api.ClientProto.getDescriptor(),
+          com.google.api.FieldBehaviorProto.getDescriptor(),
+          com.google.api.ResourceProto.getDescriptor(),
           com.google.protobuf.TimestampProto.getDescriptor(),
         },
         assigner);
@@ -163,10 +178,19 @@ public final class RecaptchaEnterpriseProto {
             });
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();
+    registry.add(com.google.api.ClientProto.defaultHost);
+    registry.add(com.google.api.FieldBehaviorProto.fieldBehavior);
     registry.add(com.google.api.AnnotationsProto.http);
+    registry.add(com.google.api.ClientProto.methodSignature);
+    registry.add(com.google.api.ClientProto.oauthScopes);
+    registry.add(com.google.api.ResourceProto.resource);
+    registry.add(com.google.api.ResourceProto.resourceReference);
     com.google.protobuf.Descriptors.FileDescriptor.internalUpdateFileDescriptor(
         descriptor, registry);
     com.google.api.AnnotationsProto.getDescriptor();
+    com.google.api.ClientProto.getDescriptor();
+    com.google.api.FieldBehaviorProto.getDescriptor();
+    com.google.api.ResourceProto.getDescriptor();
     com.google.protobuf.TimestampProto.getDescriptor();
   }
 

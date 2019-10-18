@@ -113,7 +113,7 @@ public final class ClusterOperation extends com.google.protobuf.GeneratedMessage
    * Output only. The id of the cluster operation.
    * </pre>
    *
-   * <code>string operation_id = 1;</code>
+   * <code>string operation_id = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    */
   public java.lang.String getOperationId() {
     java.lang.Object ref = operationId_;
@@ -133,7 +133,7 @@ public final class ClusterOperation extends com.google.protobuf.GeneratedMessage
    * Output only. The id of the cluster operation.
    * </pre>
    *
-   * <code>string operation_id = 1;</code>
+   * <code>string operation_id = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    */
   public com.google.protobuf.ByteString getOperationIdBytes() {
     java.lang.Object ref = operationId_;
@@ -156,7 +156,7 @@ public final class ClusterOperation extends com.google.protobuf.GeneratedMessage
    * Output only. Error, if operation failed.
    * </pre>
    *
-   * <code>string error = 2;</code>
+   * <code>string error = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    */
   public java.lang.String getError() {
     java.lang.Object ref = error_;
@@ -176,7 +176,7 @@ public final class ClusterOperation extends com.google.protobuf.GeneratedMessage
    * Output only. Error, if operation failed.
    * </pre>
    *
-   * <code>string error = 2;</code>
+   * <code>string error = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    */
   public com.google.protobuf.ByteString getErrorBytes() {
     java.lang.Object ref = error_;
@@ -199,7 +199,7 @@ public final class ClusterOperation extends com.google.protobuf.GeneratedMessage
    * Output only. Indicates the operation is done.
    * </pre>
    *
-   * <code>bool done = 3;</code>
+   * <code>bool done = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    */
   public boolean getDone() {
     return done_;
@@ -562,7 +562,7 @@ public final class ClusterOperation extends com.google.protobuf.GeneratedMessage
      * Output only. The id of the cluster operation.
      * </pre>
      *
-     * <code>string operation_id = 1;</code>
+     * <code>string operation_id = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     public java.lang.String getOperationId() {
       java.lang.Object ref = operationId_;
@@ -582,7 +582,7 @@ public final class ClusterOperation extends com.google.protobuf.GeneratedMessage
      * Output only. The id of the cluster operation.
      * </pre>
      *
-     * <code>string operation_id = 1;</code>
+     * <code>string operation_id = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     public com.google.protobuf.ByteString getOperationIdBytes() {
       java.lang.Object ref = operationId_;
@@ -602,7 +602,7 @@ public final class ClusterOperation extends com.google.protobuf.GeneratedMessage
      * Output only. The id of the cluster operation.
      * </pre>
      *
-     * <code>string operation_id = 1;</code>
+     * <code>string operation_id = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     public Builder setOperationId(java.lang.String value) {
       if (value == null) {
@@ -620,7 +620,7 @@ public final class ClusterOperation extends com.google.protobuf.GeneratedMessage
      * Output only. The id of the cluster operation.
      * </pre>
      *
-     * <code>string operation_id = 1;</code>
+     * <code>string operation_id = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     public Builder clearOperationId() {
 
@@ -635,7 +635,7 @@ public final class ClusterOperation extends com.google.protobuf.GeneratedMessage
      * Output only. The id of the cluster operation.
      * </pre>
      *
-     * <code>string operation_id = 1;</code>
+     * <code>string operation_id = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     public Builder setOperationIdBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -656,7 +656,7 @@ public final class ClusterOperation extends com.google.protobuf.GeneratedMessage
      * Output only. Error, if operation failed.
      * </pre>
      *
-     * <code>string error = 2;</code>
+     * <code>string error = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     public java.lang.String getError() {
       java.lang.Object ref = error_;
@@ -676,7 +676,7 @@ public final class ClusterOperation extends com.google.protobuf.GeneratedMessage
      * Output only. Error, if operation failed.
      * </pre>
      *
-     * <code>string error = 2;</code>
+     * <code>string error = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     public com.google.protobuf.ByteString getErrorBytes() {
       java.lang.Object ref = error_;
@@ -696,7 +696,7 @@ public final class ClusterOperation extends com.google.protobuf.GeneratedMessage
      * Output only. Error, if operation failed.
      * </pre>
      *
-     * <code>string error = 2;</code>
+     * <code>string error = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     public Builder setError(java.lang.String value) {
       if (value == null) {
@@ -714,7 +714,7 @@ public final class ClusterOperation extends com.google.protobuf.GeneratedMessage
      * Output only. Error, if operation failed.
      * </pre>
      *
-     * <code>string error = 2;</code>
+     * <code>string error = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     public Builder clearError() {
 
@@ -729,7 +729,7 @@ public final class ClusterOperation extends com.google.protobuf.GeneratedMessage
      * Output only. Error, if operation failed.
      * </pre>
      *
-     * <code>string error = 2;</code>
+     * <code>string error = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     public Builder setErrorBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -750,7 +750,7 @@ public final class ClusterOperation extends com.google.protobuf.GeneratedMessage
      * Output only. Indicates the operation is done.
      * </pre>
      *
-     * <code>bool done = 3;</code>
+     * <code>bool done = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     public boolean getDone() {
       return done_;
@@ -762,7 +762,7 @@ public final class ClusterOperation extends com.google.protobuf.GeneratedMessage
      * Output only. Indicates the operation is done.
      * </pre>
      *
-     * <code>bool done = 3;</code>
+     * <code>bool done = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     public Builder setDone(boolean value) {
 
@@ -777,7 +777,7 @@ public final class ClusterOperation extends com.google.protobuf.GeneratedMessage
      * Output only. Indicates the operation is done.
      * </pre>
      *
-     * <code>bool done = 3;</code>
+     * <code>bool done = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     public Builder clearDone() {
 

@@ -49,9 +49,15 @@ import com.google.bigtable.admin.v2.SnapshotTableRequest;
 import com.google.bigtable.admin.v2.Table;
 import com.google.bigtable.admin.v2.TableName;
 import com.google.common.collect.Lists;
+import com.google.iam.v1.GetIamPolicyRequest;
+import com.google.iam.v1.Policy;
+import com.google.iam.v1.SetIamPolicyRequest;
+import com.google.iam.v1.TestIamPermissionsRequest;
+import com.google.iam.v1.TestIamPermissionsResponse;
 import com.google.longrunning.Operation;
 import com.google.protobuf.AbstractMessage;
 import com.google.protobuf.Any;
+import com.google.protobuf.ByteString;
 import com.google.protobuf.Empty;
 import io.grpc.Status;
 import io.grpc.StatusRuntimeException;
@@ -454,6 +460,131 @@ public class BaseBigtableTableAdminClientTest {
       String consistencyToken = "consistencyToken-1090516718";
 
       client.checkConsistency(name, consistencyToken);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception
+    }
+  }
+
+  @Test
+  @SuppressWarnings("all")
+  public void getIamPolicyTest() {
+    int version = 351608024;
+    ByteString etag = ByteString.copyFromUtf8("etag3123477");
+    Policy expectedResponse = Policy.newBuilder().setVersion(version).setEtag(etag).build();
+    mockBigtableTableAdmin.addResponse(expectedResponse);
+
+    String formattedResource = TableName.format("[PROJECT]", "[INSTANCE]", "[TABLE]");
+
+    Policy actualResponse = client.getIamPolicy(formattedResource);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockBigtableTableAdmin.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    GetIamPolicyRequest actualRequest = (GetIamPolicyRequest) actualRequests.get(0);
+
+    Assert.assertEquals(formattedResource, actualRequest.getResource());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  @SuppressWarnings("all")
+  public void getIamPolicyExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
+    mockBigtableTableAdmin.addException(exception);
+
+    try {
+      String formattedResource = TableName.format("[PROJECT]", "[INSTANCE]", "[TABLE]");
+
+      client.getIamPolicy(formattedResource);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception
+    }
+  }
+
+  @Test
+  @SuppressWarnings("all")
+  public void setIamPolicyTest() {
+    int version = 351608024;
+    ByteString etag = ByteString.copyFromUtf8("etag3123477");
+    Policy expectedResponse = Policy.newBuilder().setVersion(version).setEtag(etag).build();
+    mockBigtableTableAdmin.addResponse(expectedResponse);
+
+    String formattedResource = TableName.format("[PROJECT]", "[INSTANCE]", "[TABLE]");
+    Policy policy = Policy.newBuilder().build();
+
+    Policy actualResponse = client.setIamPolicy(formattedResource, policy);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockBigtableTableAdmin.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    SetIamPolicyRequest actualRequest = (SetIamPolicyRequest) actualRequests.get(0);
+
+    Assert.assertEquals(formattedResource, actualRequest.getResource());
+    Assert.assertEquals(policy, actualRequest.getPolicy());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  @SuppressWarnings("all")
+  public void setIamPolicyExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
+    mockBigtableTableAdmin.addException(exception);
+
+    try {
+      String formattedResource = TableName.format("[PROJECT]", "[INSTANCE]", "[TABLE]");
+      Policy policy = Policy.newBuilder().build();
+
+      client.setIamPolicy(formattedResource, policy);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception
+    }
+  }
+
+  @Test
+  @SuppressWarnings("all")
+  public void testIamPermissionsTest() {
+    TestIamPermissionsResponse expectedResponse = TestIamPermissionsResponse.newBuilder().build();
+    mockBigtableTableAdmin.addResponse(expectedResponse);
+
+    String formattedResource = TableName.format("[PROJECT]", "[INSTANCE]", "[TABLE]");
+    List<String> permissions = new ArrayList<>();
+
+    TestIamPermissionsResponse actualResponse =
+        client.testIamPermissions(formattedResource, permissions);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockBigtableTableAdmin.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    TestIamPermissionsRequest actualRequest = (TestIamPermissionsRequest) actualRequests.get(0);
+
+    Assert.assertEquals(formattedResource, actualRequest.getResource());
+    Assert.assertEquals(permissions, actualRequest.getPermissionsList());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  @SuppressWarnings("all")
+  public void testIamPermissionsExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
+    mockBigtableTableAdmin.addException(exception);
+
+    try {
+      String formattedResource = TableName.format("[PROJECT]", "[INSTANCE]", "[TABLE]");
+      List<String> permissions = new ArrayList<>();
+
+      client.testIamPermissions(formattedResource, permissions);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception

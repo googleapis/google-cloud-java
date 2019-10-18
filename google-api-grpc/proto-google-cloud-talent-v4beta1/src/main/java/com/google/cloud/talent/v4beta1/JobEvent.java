@@ -653,7 +653,9 @@ public final class JobEvent extends com.google.protobuf.GeneratedMessageV3
    * [JobEventType][google.cloud.talent.v4beta1.JobEvent.JobEventType]).
    * </pre>
    *
-   * <code>.google.cloud.talent.v4beta1.JobEvent.JobEventType type = 1;</code>
+   * <code>
+   * .google.cloud.talent.v4beta1.JobEvent.JobEventType type = 1 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   public int getTypeValue() {
     return type_;
@@ -666,7 +668,9 @@ public final class JobEvent extends com.google.protobuf.GeneratedMessageV3
    * [JobEventType][google.cloud.talent.v4beta1.JobEvent.JobEventType]).
    * </pre>
    *
-   * <code>.google.cloud.talent.v4beta1.JobEvent.JobEventType type = 1;</code>
+   * <code>
+   * .google.cloud.talent.v4beta1.JobEvent.JobEventType type = 1 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   public com.google.cloud.talent.v4beta1.JobEvent.JobEventType getType() {
     @SuppressWarnings("deprecation")
@@ -692,10 +696,10 @@ public final class JobEvent extends com.google.protobuf.GeneratedMessageV3
    * field contains the identifier of the viewed job.
    * The format is
    * "projects/{project_id}/tenants/{tenant_id}/jobs/{job_id}", for
-   * example, "projects/api-test-project/tenants/foo/jobs/1234".
+   * example, "projects/foo/tenants/bar/jobs/baz".
    * </pre>
    *
-   * <code>repeated string jobs = 2;</code>
+   * <code>repeated string jobs = 2 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   public com.google.protobuf.ProtocolStringList getJobsList() {
     return jobs_;
@@ -713,10 +717,10 @@ public final class JobEvent extends com.google.protobuf.GeneratedMessageV3
    * field contains the identifier of the viewed job.
    * The format is
    * "projects/{project_id}/tenants/{tenant_id}/jobs/{job_id}", for
-   * example, "projects/api-test-project/tenants/foo/jobs/1234".
+   * example, "projects/foo/tenants/bar/jobs/baz".
    * </pre>
    *
-   * <code>repeated string jobs = 2;</code>
+   * <code>repeated string jobs = 2 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   public int getJobsCount() {
     return jobs_.size();
@@ -734,10 +738,10 @@ public final class JobEvent extends com.google.protobuf.GeneratedMessageV3
    * field contains the identifier of the viewed job.
    * The format is
    * "projects/{project_id}/tenants/{tenant_id}/jobs/{job_id}", for
-   * example, "projects/api-test-project/tenants/foo/jobs/1234".
+   * example, "projects/foo/tenants/bar/jobs/baz".
    * </pre>
    *
-   * <code>repeated string jobs = 2;</code>
+   * <code>repeated string jobs = 2 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   public java.lang.String getJobs(int index) {
     return jobs_.get(index);
@@ -755,10 +759,10 @@ public final class JobEvent extends com.google.protobuf.GeneratedMessageV3
    * field contains the identifier of the viewed job.
    * The format is
    * "projects/{project_id}/tenants/{tenant_id}/jobs/{job_id}", for
-   * example, "projects/api-test-project/tenants/foo/jobs/1234".
+   * example, "projects/foo/tenants/bar/jobs/baz".
    * </pre>
    *
-   * <code>repeated string jobs = 2;</code>
+   * <code>repeated string jobs = 2 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   public com.google.protobuf.ByteString getJobsBytes(int index) {
     return jobs_.getByteString(index);
@@ -770,11 +774,11 @@ public final class JobEvent extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. The [profile name][google.cloud.talent.v4beta1.Profile.name]
-   * associated with this client event.
+   * The [profile name][google.cloud.talent.v4beta1.Profile.name] associated
+   * with this client event.
    * The format is
    * "projects/{project_id}/tenants/{tenant_id}/profiles/{profile_id}",
-   * for example, "projects/api-test-project/tenants/foo/profiles/bar".
+   * for example, "projects/foo/tenants/bar/profiles/baz".
    * </pre>
    *
    * <code>string profile = 3;</code>
@@ -794,11 +798,11 @@ public final class JobEvent extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. The [profile name][google.cloud.talent.v4beta1.Profile.name]
-   * associated with this client event.
+   * The [profile name][google.cloud.talent.v4beta1.Profile.name] associated
+   * with this client event.
    * The format is
    * "projects/{project_id}/tenants/{tenant_id}/profiles/{profile_id}",
-   * for example, "projects/api-test-project/tenants/foo/profiles/bar".
+   * for example, "projects/foo/tenants/bar/profiles/baz".
    * </pre>
    *
    * <code>string profile = 3;</code>
@@ -1197,7 +1201,9 @@ public final class JobEvent extends com.google.protobuf.GeneratedMessageV3
      * [JobEventType][google.cloud.talent.v4beta1.JobEvent.JobEventType]).
      * </pre>
      *
-     * <code>.google.cloud.talent.v4beta1.JobEvent.JobEventType type = 1;</code>
+     * <code>
+     * .google.cloud.talent.v4beta1.JobEvent.JobEventType type = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public int getTypeValue() {
       return type_;
@@ -1210,7 +1216,9 @@ public final class JobEvent extends com.google.protobuf.GeneratedMessageV3
      * [JobEventType][google.cloud.talent.v4beta1.JobEvent.JobEventType]).
      * </pre>
      *
-     * <code>.google.cloud.talent.v4beta1.JobEvent.JobEventType type = 1;</code>
+     * <code>
+     * .google.cloud.talent.v4beta1.JobEvent.JobEventType type = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder setTypeValue(int value) {
       type_ = value;
@@ -1225,7 +1233,9 @@ public final class JobEvent extends com.google.protobuf.GeneratedMessageV3
      * [JobEventType][google.cloud.talent.v4beta1.JobEvent.JobEventType]).
      * </pre>
      *
-     * <code>.google.cloud.talent.v4beta1.JobEvent.JobEventType type = 1;</code>
+     * <code>
+     * .google.cloud.talent.v4beta1.JobEvent.JobEventType type = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public com.google.cloud.talent.v4beta1.JobEvent.JobEventType getType() {
       @SuppressWarnings("deprecation")
@@ -1243,7 +1253,9 @@ public final class JobEvent extends com.google.protobuf.GeneratedMessageV3
      * [JobEventType][google.cloud.talent.v4beta1.JobEvent.JobEventType]).
      * </pre>
      *
-     * <code>.google.cloud.talent.v4beta1.JobEvent.JobEventType type = 1;</code>
+     * <code>
+     * .google.cloud.talent.v4beta1.JobEvent.JobEventType type = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder setType(com.google.cloud.talent.v4beta1.JobEvent.JobEventType value) {
       if (value == null) {
@@ -1262,7 +1274,9 @@ public final class JobEvent extends com.google.protobuf.GeneratedMessageV3
      * [JobEventType][google.cloud.talent.v4beta1.JobEvent.JobEventType]).
      * </pre>
      *
-     * <code>.google.cloud.talent.v4beta1.JobEvent.JobEventType type = 1;</code>
+     * <code>
+     * .google.cloud.talent.v4beta1.JobEvent.JobEventType type = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder clearType() {
 
@@ -1293,10 +1307,10 @@ public final class JobEvent extends com.google.protobuf.GeneratedMessageV3
      * field contains the identifier of the viewed job.
      * The format is
      * "projects/{project_id}/tenants/{tenant_id}/jobs/{job_id}", for
-     * example, "projects/api-test-project/tenants/foo/jobs/1234".
+     * example, "projects/foo/tenants/bar/jobs/baz".
      * </pre>
      *
-     * <code>repeated string jobs = 2;</code>
+     * <code>repeated string jobs = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public com.google.protobuf.ProtocolStringList getJobsList() {
       return jobs_.getUnmodifiableView();
@@ -1314,10 +1328,10 @@ public final class JobEvent extends com.google.protobuf.GeneratedMessageV3
      * field contains the identifier of the viewed job.
      * The format is
      * "projects/{project_id}/tenants/{tenant_id}/jobs/{job_id}", for
-     * example, "projects/api-test-project/tenants/foo/jobs/1234".
+     * example, "projects/foo/tenants/bar/jobs/baz".
      * </pre>
      *
-     * <code>repeated string jobs = 2;</code>
+     * <code>repeated string jobs = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public int getJobsCount() {
       return jobs_.size();
@@ -1335,10 +1349,10 @@ public final class JobEvent extends com.google.protobuf.GeneratedMessageV3
      * field contains the identifier of the viewed job.
      * The format is
      * "projects/{project_id}/tenants/{tenant_id}/jobs/{job_id}", for
-     * example, "projects/api-test-project/tenants/foo/jobs/1234".
+     * example, "projects/foo/tenants/bar/jobs/baz".
      * </pre>
      *
-     * <code>repeated string jobs = 2;</code>
+     * <code>repeated string jobs = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public java.lang.String getJobs(int index) {
       return jobs_.get(index);
@@ -1356,10 +1370,10 @@ public final class JobEvent extends com.google.protobuf.GeneratedMessageV3
      * field contains the identifier of the viewed job.
      * The format is
      * "projects/{project_id}/tenants/{tenant_id}/jobs/{job_id}", for
-     * example, "projects/api-test-project/tenants/foo/jobs/1234".
+     * example, "projects/foo/tenants/bar/jobs/baz".
      * </pre>
      *
-     * <code>repeated string jobs = 2;</code>
+     * <code>repeated string jobs = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public com.google.protobuf.ByteString getJobsBytes(int index) {
       return jobs_.getByteString(index);
@@ -1377,10 +1391,10 @@ public final class JobEvent extends com.google.protobuf.GeneratedMessageV3
      * field contains the identifier of the viewed job.
      * The format is
      * "projects/{project_id}/tenants/{tenant_id}/jobs/{job_id}", for
-     * example, "projects/api-test-project/tenants/foo/jobs/1234".
+     * example, "projects/foo/tenants/bar/jobs/baz".
      * </pre>
      *
-     * <code>repeated string jobs = 2;</code>
+     * <code>repeated string jobs = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder setJobs(int index, java.lang.String value) {
       if (value == null) {
@@ -1404,10 +1418,10 @@ public final class JobEvent extends com.google.protobuf.GeneratedMessageV3
      * field contains the identifier of the viewed job.
      * The format is
      * "projects/{project_id}/tenants/{tenant_id}/jobs/{job_id}", for
-     * example, "projects/api-test-project/tenants/foo/jobs/1234".
+     * example, "projects/foo/tenants/bar/jobs/baz".
      * </pre>
      *
-     * <code>repeated string jobs = 2;</code>
+     * <code>repeated string jobs = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder addJobs(java.lang.String value) {
       if (value == null) {
@@ -1431,10 +1445,10 @@ public final class JobEvent extends com.google.protobuf.GeneratedMessageV3
      * field contains the identifier of the viewed job.
      * The format is
      * "projects/{project_id}/tenants/{tenant_id}/jobs/{job_id}", for
-     * example, "projects/api-test-project/tenants/foo/jobs/1234".
+     * example, "projects/foo/tenants/bar/jobs/baz".
      * </pre>
      *
-     * <code>repeated string jobs = 2;</code>
+     * <code>repeated string jobs = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder addAllJobs(java.lang.Iterable<java.lang.String> values) {
       ensureJobsIsMutable();
@@ -1455,10 +1469,10 @@ public final class JobEvent extends com.google.protobuf.GeneratedMessageV3
      * field contains the identifier of the viewed job.
      * The format is
      * "projects/{project_id}/tenants/{tenant_id}/jobs/{job_id}", for
-     * example, "projects/api-test-project/tenants/foo/jobs/1234".
+     * example, "projects/foo/tenants/bar/jobs/baz".
      * </pre>
      *
-     * <code>repeated string jobs = 2;</code>
+     * <code>repeated string jobs = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder clearJobs() {
       jobs_ = com.google.protobuf.LazyStringArrayList.EMPTY;
@@ -1479,10 +1493,10 @@ public final class JobEvent extends com.google.protobuf.GeneratedMessageV3
      * field contains the identifier of the viewed job.
      * The format is
      * "projects/{project_id}/tenants/{tenant_id}/jobs/{job_id}", for
-     * example, "projects/api-test-project/tenants/foo/jobs/1234".
+     * example, "projects/foo/tenants/bar/jobs/baz".
      * </pre>
      *
-     * <code>repeated string jobs = 2;</code>
+     * <code>repeated string jobs = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder addJobsBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -1500,11 +1514,11 @@ public final class JobEvent extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The [profile name][google.cloud.talent.v4beta1.Profile.name]
-     * associated with this client event.
+     * The [profile name][google.cloud.talent.v4beta1.Profile.name] associated
+     * with this client event.
      * The format is
      * "projects/{project_id}/tenants/{tenant_id}/profiles/{profile_id}",
-     * for example, "projects/api-test-project/tenants/foo/profiles/bar".
+     * for example, "projects/foo/tenants/bar/profiles/baz".
      * </pre>
      *
      * <code>string profile = 3;</code>
@@ -1524,11 +1538,11 @@ public final class JobEvent extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The [profile name][google.cloud.talent.v4beta1.Profile.name]
-     * associated with this client event.
+     * The [profile name][google.cloud.talent.v4beta1.Profile.name] associated
+     * with this client event.
      * The format is
      * "projects/{project_id}/tenants/{tenant_id}/profiles/{profile_id}",
-     * for example, "projects/api-test-project/tenants/foo/profiles/bar".
+     * for example, "projects/foo/tenants/bar/profiles/baz".
      * </pre>
      *
      * <code>string profile = 3;</code>
@@ -1548,11 +1562,11 @@ public final class JobEvent extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The [profile name][google.cloud.talent.v4beta1.Profile.name]
-     * associated with this client event.
+     * The [profile name][google.cloud.talent.v4beta1.Profile.name] associated
+     * with this client event.
      * The format is
      * "projects/{project_id}/tenants/{tenant_id}/profiles/{profile_id}",
-     * for example, "projects/api-test-project/tenants/foo/profiles/bar".
+     * for example, "projects/foo/tenants/bar/profiles/baz".
      * </pre>
      *
      * <code>string profile = 3;</code>
@@ -1570,11 +1584,11 @@ public final class JobEvent extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The [profile name][google.cloud.talent.v4beta1.Profile.name]
-     * associated with this client event.
+     * The [profile name][google.cloud.talent.v4beta1.Profile.name] associated
+     * with this client event.
      * The format is
      * "projects/{project_id}/tenants/{tenant_id}/profiles/{profile_id}",
-     * for example, "projects/api-test-project/tenants/foo/profiles/bar".
+     * for example, "projects/foo/tenants/bar/profiles/baz".
      * </pre>
      *
      * <code>string profile = 3;</code>
@@ -1589,11 +1603,11 @@ public final class JobEvent extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The [profile name][google.cloud.talent.v4beta1.Profile.name]
-     * associated with this client event.
+     * The [profile name][google.cloud.talent.v4beta1.Profile.name] associated
+     * with this client event.
      * The format is
      * "projects/{project_id}/tenants/{tenant_id}/profiles/{profile_id}",
-     * for example, "projects/api-test-project/tenants/foo/profiles/bar".
+     * for example, "projects/foo/tenants/bar/profiles/baz".
      * </pre>
      *
      * <code>string profile = 3;</code>

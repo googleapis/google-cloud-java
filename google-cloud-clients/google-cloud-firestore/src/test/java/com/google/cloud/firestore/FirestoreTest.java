@@ -16,19 +16,32 @@
 
 package com.google.cloud.firestore;
 
+import static com.google.cloud.firestore.LocalFirestoreHelper.SINGLE_FIELD_OBJECT;
 import static com.google.cloud.firestore.LocalFirestoreHelper.SINGLE_FIELD_PROTO;
+import static com.google.cloud.firestore.LocalFirestoreHelper.SINGLE_FIELD_VALUE;
+import static com.google.cloud.firestore.LocalFirestoreHelper.UPDATE_PRECONDITION;
+import static com.google.cloud.firestore.LocalFirestoreHelper.arrayRemove;
+import static com.google.cloud.firestore.LocalFirestoreHelper.arrayUnion;
+import static com.google.cloud.firestore.LocalFirestoreHelper.commit;
+import static com.google.cloud.firestore.LocalFirestoreHelper.commitResponse;
 import static com.google.cloud.firestore.LocalFirestoreHelper.getAllResponse;
+import static com.google.cloud.firestore.LocalFirestoreHelper.transform;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotEquals;
 import static org.junit.Assert.fail;
 import static org.mockito.Mockito.doAnswer;
+import static org.mockito.Mockito.doReturn;
 
 import com.google.api.gax.rpc.ApiStreamObserver;
 import com.google.api.gax.rpc.ServerStreamingCallable;
+import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.firestore.spi.v1.FirestoreRpc;
 import com.google.firestore.v1.BatchGetDocumentsRequest;
+import com.google.firestore.v1.CommitRequest;
+import com.google.firestore.v1.CommitResponse;
 import com.google.firestore.v1.ListCollectionIdsRequest;
 import java.util.List;
+import java.util.concurrent.ExecutionException;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.ArgumentCaptor;
@@ -52,6 +65,8 @@ public class FirestoreTest {
   @Captor private ArgumentCaptor<ListCollectionIdsRequest> listCollectionIdsCapture;
 
   @Captor private ArgumentCaptor<ApiStreamObserver> streamObserverCapture;
+
+  @Captor private ArgumentCaptor<CommitRequest> commitCapture;
 
   @Test
   public void encodeFieldPath() {
@@ -168,5 +183,37 @@ public class FirestoreTest {
     assertEquals(increment3, increment4);
     assertNotEquals(increment1, increment3);
     assertNotEquals(increment2, increment4);
+  }
+
+  @Test
+  public void arrayUnionWithPojo() throws ExecutionException, InterruptedException {
+    doReturn(commitResponse(1, 0))
+        .when(firestoreMock)
+        .sendRequest(
+            commitCapture.capture(), Matchers.<UnaryCallable<CommitRequest, CommitResponse>>any());
+
+    DocumentReference doc = firestoreMock.document("coll/doc");
+    doc.update("array", FieldValue.arrayUnion(SINGLE_FIELD_OBJECT)).get();
+
+    CommitRequest expectedRequest =
+        commit(transform(UPDATE_PRECONDITION, "array", arrayUnion(SINGLE_FIELD_VALUE)));
+    CommitRequest actualRequest = commitCapture.getValue();
+    assertEquals(expectedRequest, actualRequest);
+  }
+
+  @Test
+  public void arrayRemoveWithPojo() throws ExecutionException, InterruptedException {
+    doReturn(commitResponse(1, 0))
+        .when(firestoreMock)
+        .sendRequest(
+            commitCapture.capture(), Matchers.<UnaryCallable<CommitRequest, CommitResponse>>any());
+
+    DocumentReference doc = firestoreMock.document("coll/doc");
+    doc.update("array", FieldValue.arrayRemove(SINGLE_FIELD_OBJECT)).get();
+
+    CommitRequest expectedRequest =
+        commit(transform(UPDATE_PRECONDITION, "array", arrayRemove(SINGLE_FIELD_VALUE)));
+    CommitRequest actualRequest = commitCapture.getValue();
+    assertEquals(expectedRequest, actualRequest);
   }
 }

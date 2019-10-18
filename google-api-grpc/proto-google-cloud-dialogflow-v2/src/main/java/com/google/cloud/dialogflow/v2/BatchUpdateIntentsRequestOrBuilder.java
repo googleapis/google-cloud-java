@@ -16,7 +16,9 @@ public interface BatchUpdateIntentsRequestOrBuilder
    * Format: `projects/&lt;Project ID&gt;/agent`.
    * </pre>
    *
-   * <code>string parent = 1;</code>
+   * <code>
+   * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    */
   java.lang.String getParent();
   /**
@@ -27,7 +29,9 @@ public interface BatchUpdateIntentsRequestOrBuilder
    * Format: `projects/&lt;Project ID&gt;/agent`.
    * </pre>
    *
-   * <code>string parent = 1;</code>
+   * <code>
+   * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    */
   com.google.protobuf.ByteString getParentBytes();
 
@@ -99,7 +103,7 @@ public interface BatchUpdateIntentsRequestOrBuilder
    * be used.
    * </pre>
    *
-   * <code>string language_code = 4;</code>
+   * <code>string language_code = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   java.lang.String getLanguageCode();
   /**
@@ -114,7 +118,7 @@ public interface BatchUpdateIntentsRequestOrBuilder
    * be used.
    * </pre>
    *
-   * <code>string language_code = 4;</code>
+   * <code>string language_code = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   com.google.protobuf.ByteString getLanguageCodeBytes();
 
@@ -125,7 +129,8 @@ public interface BatchUpdateIntentsRequestOrBuilder
    * Optional. The mask to control which fields get updated.
    * </pre>
    *
-   * <code>.google.protobuf.FieldMask update_mask = 5;</code>
+   * <code>.google.protobuf.FieldMask update_mask = 5 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   boolean hasUpdateMask();
   /**
@@ -135,7 +140,8 @@ public interface BatchUpdateIntentsRequestOrBuilder
    * Optional. The mask to control which fields get updated.
    * </pre>
    *
-   * <code>.google.protobuf.FieldMask update_mask = 5;</code>
+   * <code>.google.protobuf.FieldMask update_mask = 5 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   com.google.protobuf.FieldMask getUpdateMask();
   /**
@@ -145,7 +151,8 @@ public interface BatchUpdateIntentsRequestOrBuilder
    * Optional. The mask to control which fields get updated.
    * </pre>
    *
-   * <code>.google.protobuf.FieldMask update_mask = 5;</code>
+   * <code>.google.protobuf.FieldMask update_mask = 5 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   com.google.protobuf.FieldMaskOrBuilder getUpdateMaskOrBuilder();
 
@@ -156,7 +163,9 @@ public interface BatchUpdateIntentsRequestOrBuilder
    * Optional. The resource view to apply to the returned intent.
    * </pre>
    *
-   * <code>.google.cloud.dialogflow.v2.IntentView intent_view = 6;</code>
+   * <code>
+   * .google.cloud.dialogflow.v2.IntentView intent_view = 6 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   int getIntentViewValue();
   /**
@@ -166,7 +175,9 @@ public interface BatchUpdateIntentsRequestOrBuilder
    * Optional. The resource view to apply to the returned intent.
    * </pre>
    *
-   * <code>.google.cloud.dialogflow.v2.IntentView intent_view = 6;</code>
+   * <code>
+   * .google.cloud.dialogflow.v2.IntentView intent_view = 6 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   com.google.cloud.dialogflow.v2.IntentView getIntentView();
 

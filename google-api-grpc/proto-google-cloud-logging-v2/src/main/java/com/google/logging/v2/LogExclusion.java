@@ -8,11 +8,11 @@ package com.google.logging.v2;
  *
  * <pre>
  * Specifies a set of log entries that are not to be stored in
- * Logging. If your project receives a large volume of logs, you might be able
- * to use exclusions to reduce your chargeable logs. Exclusions are processed
- * after log sinks, so you can export log entries before they are excluded.
- * Audit log entries and log entries from Amazon Web Services are never
- * excluded.
+ * Logging. If your GCP resource receives a large volume of logs, you can
+ * use exclusions to reduce your chargeable logs. Exclusions are
+ * processed after log sinks, so you can export log entries before they are
+ * excluded. Note that organization-level and folder-level exclusions don't
+ * apply to child resources, and that you can't exclude audit log entries.
  * </pre>
  *
  * Protobuf type {@code google.logging.v2.LogExclusion}
@@ -81,6 +81,36 @@ public final class LogExclusion extends com.google.protobuf.GeneratedMessageV3
           case 32:
             {
               disabled_ = input.readBool();
+              break;
+            }
+          case 42:
+            {
+              com.google.protobuf.Timestamp.Builder subBuilder = null;
+              if (createTime_ != null) {
+                subBuilder = createTime_.toBuilder();
+              }
+              createTime_ =
+                  input.readMessage(com.google.protobuf.Timestamp.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(createTime_);
+                createTime_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+          case 50:
+            {
+              com.google.protobuf.Timestamp.Builder subBuilder = null;
+              if (updateTime_ != null) {
+                subBuilder = updateTime_.toBuilder();
+              }
+              updateTime_ =
+                  input.readMessage(com.google.protobuf.Timestamp.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(updateTime_);
+                updateTime_ = subBuilder.buildPartial();
+              }
+
               break;
             }
           default:
@@ -213,14 +243,13 @@ public final class LogExclusion extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Required.
-   * An [advanced logs filter](/logging/docs/view/advanced_filters)
+   * Required. An [advanced logs filter](/logging/docs/view/advanced-queries)
    * that matches the log entries to be excluded. By using the
-   * [sample function](/logging/docs/view/advanced_filters#sample),
+   * [sample function](/logging/docs/view/advanced-queries#sample),
    * you can exclude less than 100% of the matching log entries.
-   * For example, the following filter matches 99% of low-severity log
-   * entries from load balancers:
-   * `"resource.type=http_load_balancer severity&lt;ERROR sample(insertId, 0.99)"`
+   * For example, the following query matches 99% of low-severity log
+   * entries from Google Cloud Storage buckets:
+   * `"resource.type=gcs_bucket severity&lt;ERROR sample(insertId, 0.99)"`
    * </pre>
    *
    * <code>string filter = 3;</code>
@@ -240,14 +269,13 @@ public final class LogExclusion extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Required.
-   * An [advanced logs filter](/logging/docs/view/advanced_filters)
+   * Required. An [advanced logs filter](/logging/docs/view/advanced-queries)
    * that matches the log entries to be excluded. By using the
-   * [sample function](/logging/docs/view/advanced_filters#sample),
+   * [sample function](/logging/docs/view/advanced-queries#sample),
    * you can exclude less than 100% of the matching log entries.
-   * For example, the following filter matches 99% of low-severity log
-   * entries from load balancers:
-   * `"resource.type=http_load_balancer severity&lt;ERROR sample(insertId, 0.99)"`
+   * For example, the following query matches 99% of low-severity log
+   * entries from Google Cloud Storage buckets:
+   * `"resource.type=gcs_bucket severity&lt;ERROR sample(insertId, 0.99)"`
    * </pre>
    *
    * <code>string filter = 3;</code>
@@ -271,15 +299,99 @@ public final class LogExclusion extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Optional. If set to True, then this exclusion is disabled and it does not
-   * exclude any log entries. You can use
-   * [exclusions.patch](/logging/docs/reference/v2/rest/v2/projects.exclusions/patch)
-   * to change the value of this field.
+   * exclude any log entries. You can [update an
+   * exclusion][google.logging.v2.ConfigServiceV2.UpdateExclusion] to change the
+   * value of this field.
    * </pre>
    *
    * <code>bool disabled = 4;</code>
    */
   public boolean getDisabled() {
     return disabled_;
+  }
+
+  public static final int CREATE_TIME_FIELD_NUMBER = 5;
+  private com.google.protobuf.Timestamp createTime_;
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The creation timestamp of the exclusion.
+   * This field may not be present for older exclusions.
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp create_time = 5;</code>
+   */
+  public boolean hasCreateTime() {
+    return createTime_ != null;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The creation timestamp of the exclusion.
+   * This field may not be present for older exclusions.
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp create_time = 5;</code>
+   */
+  public com.google.protobuf.Timestamp getCreateTime() {
+    return createTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : createTime_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The creation timestamp of the exclusion.
+   * This field may not be present for older exclusions.
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp create_time = 5;</code>
+   */
+  public com.google.protobuf.TimestampOrBuilder getCreateTimeOrBuilder() {
+    return getCreateTime();
+  }
+
+  public static final int UPDATE_TIME_FIELD_NUMBER = 6;
+  private com.google.protobuf.Timestamp updateTime_;
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The last update timestamp of the exclusion.
+   * This field may not be present for older exclusions.
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp update_time = 6;</code>
+   */
+  public boolean hasUpdateTime() {
+    return updateTime_ != null;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The last update timestamp of the exclusion.
+   * This field may not be present for older exclusions.
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp update_time = 6;</code>
+   */
+  public com.google.protobuf.Timestamp getUpdateTime() {
+    return updateTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : updateTime_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The last update timestamp of the exclusion.
+   * This field may not be present for older exclusions.
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp update_time = 6;</code>
+   */
+  public com.google.protobuf.TimestampOrBuilder getUpdateTimeOrBuilder() {
+    return getUpdateTime();
   }
 
   private byte memoizedIsInitialized = -1;
@@ -308,6 +420,12 @@ public final class LogExclusion extends com.google.protobuf.GeneratedMessageV3
     if (disabled_ != false) {
       output.writeBool(4, disabled_);
     }
+    if (createTime_ != null) {
+      output.writeMessage(5, getCreateTime());
+    }
+    if (updateTime_ != null) {
+      output.writeMessage(6, getUpdateTime());
+    }
     unknownFields.writeTo(output);
   }
 
@@ -329,6 +447,12 @@ public final class LogExclusion extends com.google.protobuf.GeneratedMessageV3
     if (disabled_ != false) {
       size += com.google.protobuf.CodedOutputStream.computeBoolSize(4, disabled_);
     }
+    if (createTime_ != null) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(5, getCreateTime());
+    }
+    if (updateTime_ != null) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(6, getUpdateTime());
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -348,6 +472,14 @@ public final class LogExclusion extends com.google.protobuf.GeneratedMessageV3
     if (!getDescription().equals(other.getDescription())) return false;
     if (!getFilter().equals(other.getFilter())) return false;
     if (getDisabled() != other.getDisabled()) return false;
+    if (hasCreateTime() != other.hasCreateTime()) return false;
+    if (hasCreateTime()) {
+      if (!getCreateTime().equals(other.getCreateTime())) return false;
+    }
+    if (hasUpdateTime() != other.hasUpdateTime()) return false;
+    if (hasUpdateTime()) {
+      if (!getUpdateTime().equals(other.getUpdateTime())) return false;
+    }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -367,6 +499,14 @@ public final class LogExclusion extends com.google.protobuf.GeneratedMessageV3
     hash = (53 * hash) + getFilter().hashCode();
     hash = (37 * hash) + DISABLED_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getDisabled());
+    if (hasCreateTime()) {
+      hash = (37 * hash) + CREATE_TIME_FIELD_NUMBER;
+      hash = (53 * hash) + getCreateTime().hashCode();
+    }
+    if (hasUpdateTime()) {
+      hash = (37 * hash) + UPDATE_TIME_FIELD_NUMBER;
+      hash = (53 * hash) + getUpdateTime().hashCode();
+    }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -471,11 +611,11 @@ public final class LogExclusion extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Specifies a set of log entries that are not to be stored in
-   * Logging. If your project receives a large volume of logs, you might be able
-   * to use exclusions to reduce your chargeable logs. Exclusions are processed
-   * after log sinks, so you can export log entries before they are excluded.
-   * Audit log entries and log entries from Amazon Web Services are never
-   * excluded.
+   * Logging. If your GCP resource receives a large volume of logs, you can
+   * use exclusions to reduce your chargeable logs. Exclusions are
+   * processed after log sinks, so you can export log entries before they are
+   * excluded. Note that organization-level and folder-level exclusions don't
+   * apply to child resources, and that you can't exclude audit log entries.
    * </pre>
    *
    * Protobuf type {@code google.logging.v2.LogExclusion}
@@ -524,6 +664,18 @@ public final class LogExclusion extends com.google.protobuf.GeneratedMessageV3
 
       disabled_ = false;
 
+      if (createTimeBuilder_ == null) {
+        createTime_ = null;
+      } else {
+        createTime_ = null;
+        createTimeBuilder_ = null;
+      }
+      if (updateTimeBuilder_ == null) {
+        updateTime_ = null;
+      } else {
+        updateTime_ = null;
+        updateTimeBuilder_ = null;
+      }
       return this;
     }
 
@@ -554,6 +706,16 @@ public final class LogExclusion extends com.google.protobuf.GeneratedMessageV3
       result.description_ = description_;
       result.filter_ = filter_;
       result.disabled_ = disabled_;
+      if (createTimeBuilder_ == null) {
+        result.createTime_ = createTime_;
+      } else {
+        result.createTime_ = createTimeBuilder_.build();
+      }
+      if (updateTimeBuilder_ == null) {
+        result.updateTime_ = updateTime_;
+      } else {
+        result.updateTime_ = updateTimeBuilder_.build();
+      }
       onBuilt();
       return result;
     }
@@ -617,6 +779,12 @@ public final class LogExclusion extends com.google.protobuf.GeneratedMessageV3
       }
       if (other.getDisabled() != false) {
         setDisabled(other.getDisabled());
+      }
+      if (other.hasCreateTime()) {
+        mergeCreateTime(other.getCreateTime());
+      }
+      if (other.hasUpdateTime()) {
+        mergeUpdateTime(other.getUpdateTime());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -850,14 +1018,13 @@ public final class LogExclusion extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required.
-     * An [advanced logs filter](/logging/docs/view/advanced_filters)
+     * Required. An [advanced logs filter](/logging/docs/view/advanced-queries)
      * that matches the log entries to be excluded. By using the
-     * [sample function](/logging/docs/view/advanced_filters#sample),
+     * [sample function](/logging/docs/view/advanced-queries#sample),
      * you can exclude less than 100% of the matching log entries.
-     * For example, the following filter matches 99% of low-severity log
-     * entries from load balancers:
-     * `"resource.type=http_load_balancer severity&lt;ERROR sample(insertId, 0.99)"`
+     * For example, the following query matches 99% of low-severity log
+     * entries from Google Cloud Storage buckets:
+     * `"resource.type=gcs_bucket severity&lt;ERROR sample(insertId, 0.99)"`
      * </pre>
      *
      * <code>string filter = 3;</code>
@@ -877,14 +1044,13 @@ public final class LogExclusion extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required.
-     * An [advanced logs filter](/logging/docs/view/advanced_filters)
+     * Required. An [advanced logs filter](/logging/docs/view/advanced-queries)
      * that matches the log entries to be excluded. By using the
-     * [sample function](/logging/docs/view/advanced_filters#sample),
+     * [sample function](/logging/docs/view/advanced-queries#sample),
      * you can exclude less than 100% of the matching log entries.
-     * For example, the following filter matches 99% of low-severity log
-     * entries from load balancers:
-     * `"resource.type=http_load_balancer severity&lt;ERROR sample(insertId, 0.99)"`
+     * For example, the following query matches 99% of low-severity log
+     * entries from Google Cloud Storage buckets:
+     * `"resource.type=gcs_bucket severity&lt;ERROR sample(insertId, 0.99)"`
      * </pre>
      *
      * <code>string filter = 3;</code>
@@ -904,14 +1070,13 @@ public final class LogExclusion extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required.
-     * An [advanced logs filter](/logging/docs/view/advanced_filters)
+     * Required. An [advanced logs filter](/logging/docs/view/advanced-queries)
      * that matches the log entries to be excluded. By using the
-     * [sample function](/logging/docs/view/advanced_filters#sample),
+     * [sample function](/logging/docs/view/advanced-queries#sample),
      * you can exclude less than 100% of the matching log entries.
-     * For example, the following filter matches 99% of low-severity log
-     * entries from load balancers:
-     * `"resource.type=http_load_balancer severity&lt;ERROR sample(insertId, 0.99)"`
+     * For example, the following query matches 99% of low-severity log
+     * entries from Google Cloud Storage buckets:
+     * `"resource.type=gcs_bucket severity&lt;ERROR sample(insertId, 0.99)"`
      * </pre>
      *
      * <code>string filter = 3;</code>
@@ -929,14 +1094,13 @@ public final class LogExclusion extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required.
-     * An [advanced logs filter](/logging/docs/view/advanced_filters)
+     * Required. An [advanced logs filter](/logging/docs/view/advanced-queries)
      * that matches the log entries to be excluded. By using the
-     * [sample function](/logging/docs/view/advanced_filters#sample),
+     * [sample function](/logging/docs/view/advanced-queries#sample),
      * you can exclude less than 100% of the matching log entries.
-     * For example, the following filter matches 99% of low-severity log
-     * entries from load balancers:
-     * `"resource.type=http_load_balancer severity&lt;ERROR sample(insertId, 0.99)"`
+     * For example, the following query matches 99% of low-severity log
+     * entries from Google Cloud Storage buckets:
+     * `"resource.type=gcs_bucket severity&lt;ERROR sample(insertId, 0.99)"`
      * </pre>
      *
      * <code>string filter = 3;</code>
@@ -951,14 +1115,13 @@ public final class LogExclusion extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required.
-     * An [advanced logs filter](/logging/docs/view/advanced_filters)
+     * Required. An [advanced logs filter](/logging/docs/view/advanced-queries)
      * that matches the log entries to be excluded. By using the
-     * [sample function](/logging/docs/view/advanced_filters#sample),
+     * [sample function](/logging/docs/view/advanced-queries#sample),
      * you can exclude less than 100% of the matching log entries.
-     * For example, the following filter matches 99% of low-severity log
-     * entries from load balancers:
-     * `"resource.type=http_load_balancer severity&lt;ERROR sample(insertId, 0.99)"`
+     * For example, the following query matches 99% of low-severity log
+     * entries from Google Cloud Storage buckets:
+     * `"resource.type=gcs_bucket severity&lt;ERROR sample(insertId, 0.99)"`
      * </pre>
      *
      * <code>string filter = 3;</code>
@@ -980,9 +1143,9 @@ public final class LogExclusion extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. If set to True, then this exclusion is disabled and it does not
-     * exclude any log entries. You can use
-     * [exclusions.patch](/logging/docs/reference/v2/rest/v2/projects.exclusions/patch)
-     * to change the value of this field.
+     * exclude any log entries. You can [update an
+     * exclusion][google.logging.v2.ConfigServiceV2.UpdateExclusion] to change the
+     * value of this field.
      * </pre>
      *
      * <code>bool disabled = 4;</code>
@@ -995,9 +1158,9 @@ public final class LogExclusion extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. If set to True, then this exclusion is disabled and it does not
-     * exclude any log entries. You can use
-     * [exclusions.patch](/logging/docs/reference/v2/rest/v2/projects.exclusions/patch)
-     * to change the value of this field.
+     * exclude any log entries. You can [update an
+     * exclusion][google.logging.v2.ConfigServiceV2.UpdateExclusion] to change the
+     * value of this field.
      * </pre>
      *
      * <code>bool disabled = 4;</code>
@@ -1013,9 +1176,9 @@ public final class LogExclusion extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. If set to True, then this exclusion is disabled and it does not
-     * exclude any log entries. You can use
-     * [exclusions.patch](/logging/docs/reference/v2/rest/v2/projects.exclusions/patch)
-     * to change the value of this field.
+     * exclude any log entries. You can [update an
+     * exclusion][google.logging.v2.ConfigServiceV2.UpdateExclusion] to change the
+     * value of this field.
      * </pre>
      *
      * <code>bool disabled = 4;</code>
@@ -1025,6 +1188,382 @@ public final class LogExclusion extends com.google.protobuf.GeneratedMessageV3
       disabled_ = false;
       onChanged();
       return this;
+    }
+
+    private com.google.protobuf.Timestamp createTime_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.protobuf.Timestamp,
+            com.google.protobuf.Timestamp.Builder,
+            com.google.protobuf.TimestampOrBuilder>
+        createTimeBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The creation timestamp of the exclusion.
+     * This field may not be present for older exclusions.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp create_time = 5;</code>
+     */
+    public boolean hasCreateTime() {
+      return createTimeBuilder_ != null || createTime_ != null;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The creation timestamp of the exclusion.
+     * This field may not be present for older exclusions.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp create_time = 5;</code>
+     */
+    public com.google.protobuf.Timestamp getCreateTime() {
+      if (createTimeBuilder_ == null) {
+        return createTime_ == null
+            ? com.google.protobuf.Timestamp.getDefaultInstance()
+            : createTime_;
+      } else {
+        return createTimeBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The creation timestamp of the exclusion.
+     * This field may not be present for older exclusions.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp create_time = 5;</code>
+     */
+    public Builder setCreateTime(com.google.protobuf.Timestamp value) {
+      if (createTimeBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        createTime_ = value;
+        onChanged();
+      } else {
+        createTimeBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The creation timestamp of the exclusion.
+     * This field may not be present for older exclusions.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp create_time = 5;</code>
+     */
+    public Builder setCreateTime(com.google.protobuf.Timestamp.Builder builderForValue) {
+      if (createTimeBuilder_ == null) {
+        createTime_ = builderForValue.build();
+        onChanged();
+      } else {
+        createTimeBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The creation timestamp of the exclusion.
+     * This field may not be present for older exclusions.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp create_time = 5;</code>
+     */
+    public Builder mergeCreateTime(com.google.protobuf.Timestamp value) {
+      if (createTimeBuilder_ == null) {
+        if (createTime_ != null) {
+          createTime_ =
+              com.google.protobuf.Timestamp.newBuilder(createTime_).mergeFrom(value).buildPartial();
+        } else {
+          createTime_ = value;
+        }
+        onChanged();
+      } else {
+        createTimeBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The creation timestamp of the exclusion.
+     * This field may not be present for older exclusions.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp create_time = 5;</code>
+     */
+    public Builder clearCreateTime() {
+      if (createTimeBuilder_ == null) {
+        createTime_ = null;
+        onChanged();
+      } else {
+        createTime_ = null;
+        createTimeBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The creation timestamp of the exclusion.
+     * This field may not be present for older exclusions.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp create_time = 5;</code>
+     */
+    public com.google.protobuf.Timestamp.Builder getCreateTimeBuilder() {
+
+      onChanged();
+      return getCreateTimeFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The creation timestamp of the exclusion.
+     * This field may not be present for older exclusions.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp create_time = 5;</code>
+     */
+    public com.google.protobuf.TimestampOrBuilder getCreateTimeOrBuilder() {
+      if (createTimeBuilder_ != null) {
+        return createTimeBuilder_.getMessageOrBuilder();
+      } else {
+        return createTime_ == null
+            ? com.google.protobuf.Timestamp.getDefaultInstance()
+            : createTime_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The creation timestamp of the exclusion.
+     * This field may not be present for older exclusions.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp create_time = 5;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.protobuf.Timestamp,
+            com.google.protobuf.Timestamp.Builder,
+            com.google.protobuf.TimestampOrBuilder>
+        getCreateTimeFieldBuilder() {
+      if (createTimeBuilder_ == null) {
+        createTimeBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.protobuf.Timestamp,
+                com.google.protobuf.Timestamp.Builder,
+                com.google.protobuf.TimestampOrBuilder>(
+                getCreateTime(), getParentForChildren(), isClean());
+        createTime_ = null;
+      }
+      return createTimeBuilder_;
+    }
+
+    private com.google.protobuf.Timestamp updateTime_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.protobuf.Timestamp,
+            com.google.protobuf.Timestamp.Builder,
+            com.google.protobuf.TimestampOrBuilder>
+        updateTimeBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The last update timestamp of the exclusion.
+     * This field may not be present for older exclusions.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp update_time = 6;</code>
+     */
+    public boolean hasUpdateTime() {
+      return updateTimeBuilder_ != null || updateTime_ != null;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The last update timestamp of the exclusion.
+     * This field may not be present for older exclusions.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp update_time = 6;</code>
+     */
+    public com.google.protobuf.Timestamp getUpdateTime() {
+      if (updateTimeBuilder_ == null) {
+        return updateTime_ == null
+            ? com.google.protobuf.Timestamp.getDefaultInstance()
+            : updateTime_;
+      } else {
+        return updateTimeBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The last update timestamp of the exclusion.
+     * This field may not be present for older exclusions.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp update_time = 6;</code>
+     */
+    public Builder setUpdateTime(com.google.protobuf.Timestamp value) {
+      if (updateTimeBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        updateTime_ = value;
+        onChanged();
+      } else {
+        updateTimeBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The last update timestamp of the exclusion.
+     * This field may not be present for older exclusions.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp update_time = 6;</code>
+     */
+    public Builder setUpdateTime(com.google.protobuf.Timestamp.Builder builderForValue) {
+      if (updateTimeBuilder_ == null) {
+        updateTime_ = builderForValue.build();
+        onChanged();
+      } else {
+        updateTimeBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The last update timestamp of the exclusion.
+     * This field may not be present for older exclusions.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp update_time = 6;</code>
+     */
+    public Builder mergeUpdateTime(com.google.protobuf.Timestamp value) {
+      if (updateTimeBuilder_ == null) {
+        if (updateTime_ != null) {
+          updateTime_ =
+              com.google.protobuf.Timestamp.newBuilder(updateTime_).mergeFrom(value).buildPartial();
+        } else {
+          updateTime_ = value;
+        }
+        onChanged();
+      } else {
+        updateTimeBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The last update timestamp of the exclusion.
+     * This field may not be present for older exclusions.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp update_time = 6;</code>
+     */
+    public Builder clearUpdateTime() {
+      if (updateTimeBuilder_ == null) {
+        updateTime_ = null;
+        onChanged();
+      } else {
+        updateTime_ = null;
+        updateTimeBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The last update timestamp of the exclusion.
+     * This field may not be present for older exclusions.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp update_time = 6;</code>
+     */
+    public com.google.protobuf.Timestamp.Builder getUpdateTimeBuilder() {
+
+      onChanged();
+      return getUpdateTimeFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The last update timestamp of the exclusion.
+     * This field may not be present for older exclusions.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp update_time = 6;</code>
+     */
+    public com.google.protobuf.TimestampOrBuilder getUpdateTimeOrBuilder() {
+      if (updateTimeBuilder_ != null) {
+        return updateTimeBuilder_.getMessageOrBuilder();
+      } else {
+        return updateTime_ == null
+            ? com.google.protobuf.Timestamp.getDefaultInstance()
+            : updateTime_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The last update timestamp of the exclusion.
+     * This field may not be present for older exclusions.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp update_time = 6;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.protobuf.Timestamp,
+            com.google.protobuf.Timestamp.Builder,
+            com.google.protobuf.TimestampOrBuilder>
+        getUpdateTimeFieldBuilder() {
+      if (updateTimeBuilder_ == null) {
+        updateTimeBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.protobuf.Timestamp,
+                com.google.protobuf.Timestamp.Builder,
+                com.google.protobuf.TimestampOrBuilder>(
+                getUpdateTime(), getParentForChildren(), isClean());
+        updateTime_ = null;
+      }
+      return updateTimeBuilder_;
     }
 
     @java.lang.Override

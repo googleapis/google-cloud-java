@@ -12,24 +12,28 @@ public interface UpdateSshPublicKeyRequestOrBuilder
    *
    *
    * <pre>
-   * The fingerprint of the public key to update. Public keys are identified by
+   * Required. The fingerprint of the public key to update. Public keys are identified by
    * their SHA-256 fingerprint. The fingerprint of the public key is in format
    * `users/{user}/sshPublicKeys/{fingerprint}`.
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>
+   * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    */
   java.lang.String getName();
   /**
    *
    *
    * <pre>
-   * The fingerprint of the public key to update. Public keys are identified by
+   * Required. The fingerprint of the public key to update. Public keys are identified by
    * their SHA-256 fingerprint. The fingerprint of the public key is in format
    * `users/{user}/sshPublicKeys/{fingerprint}`.
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>
+   * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    */
   com.google.protobuf.ByteString getNameBytes();
 
@@ -37,30 +41,36 @@ public interface UpdateSshPublicKeyRequestOrBuilder
    *
    *
    * <pre>
-   * The SSH public key and expiration time.
+   * Required. The SSH public key and expiration time.
    * </pre>
    *
-   * <code>.google.cloud.oslogin.common.SshPublicKey ssh_public_key = 2;</code>
+   * <code>
+   * .google.cloud.oslogin.common.SshPublicKey ssh_public_key = 2 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   boolean hasSshPublicKey();
   /**
    *
    *
    * <pre>
-   * The SSH public key and expiration time.
+   * Required. The SSH public key and expiration time.
    * </pre>
    *
-   * <code>.google.cloud.oslogin.common.SshPublicKey ssh_public_key = 2;</code>
+   * <code>
+   * .google.cloud.oslogin.common.SshPublicKey ssh_public_key = 2 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   com.google.cloud.oslogin.common.OsLoginProto.SshPublicKey getSshPublicKey();
   /**
    *
    *
    * <pre>
-   * The SSH public key and expiration time.
+   * Required. The SSH public key and expiration time.
    * </pre>
    *
-   * <code>.google.cloud.oslogin.common.SshPublicKey ssh_public_key = 2;</code>
+   * <code>
+   * .google.cloud.oslogin.common.SshPublicKey ssh_public_key = 2 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   com.google.cloud.oslogin.common.OsLoginProto.SshPublicKeyOrBuilder getSshPublicKeyOrBuilder();
 

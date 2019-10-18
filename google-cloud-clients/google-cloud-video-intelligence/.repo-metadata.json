@@ -1,0 +1,13 @@
+{
+  "name": "videointelligence",
+  "name_pretty": "Cloud Video Intelligence",
+  "product_documentation": "https://cloud.google.com/video-intelligence/docs/",
+  "client_documentation": "https://googleapis.dev/java/google-cloud-clients/latest/index.html?com/google/cloud/videointelligence/v1/package-summary.html",
+  "issue_tracker": "https://issuetracker.google.com/savedsearches/5084810",
+  "release_level": "beta",
+  "language": "java",
+  "repo": "googleapis/google-cloud-java",
+  "repo_short": "google-cloud-java",
+  "distribution_name": "com.google.cloud:google-cloud-videointelligence",
+  "api_id": "videointelligence.googleapis.com"
+}

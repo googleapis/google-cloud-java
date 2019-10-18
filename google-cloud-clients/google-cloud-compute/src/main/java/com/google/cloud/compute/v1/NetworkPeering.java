@@ -32,6 +32,8 @@ import javax.annotation.Nullable;
 public final class NetworkPeering implements ApiMessage {
   private final Boolean autoCreateRoutes;
   private final Boolean exchangeSubnetRoutes;
+  private final Boolean exportCustomRoutes;
+  private final Boolean importCustomRoutes;
   private final String name;
   private final String network;
   private final String state;
@@ -40,6 +42,8 @@ public final class NetworkPeering implements ApiMessage {
   private NetworkPeering() {
     this.autoCreateRoutes = null;
     this.exchangeSubnetRoutes = null;
+    this.exportCustomRoutes = null;
+    this.importCustomRoutes = null;
     this.name = null;
     this.network = null;
     this.state = null;
@@ -49,12 +53,16 @@ public final class NetworkPeering implements ApiMessage {
   private NetworkPeering(
       Boolean autoCreateRoutes,
       Boolean exchangeSubnetRoutes,
+      Boolean exportCustomRoutes,
+      Boolean importCustomRoutes,
       String name,
       String network,
       String state,
       String stateDetails) {
     this.autoCreateRoutes = autoCreateRoutes;
     this.exchangeSubnetRoutes = exchangeSubnetRoutes;
+    this.exportCustomRoutes = exportCustomRoutes;
+    this.importCustomRoutes = importCustomRoutes;
     this.name = name;
     this.network = network;
     this.state = state;
@@ -68,6 +76,12 @@ public final class NetworkPeering implements ApiMessage {
     }
     if ("exchangeSubnetRoutes".equals(fieldName)) {
       return exchangeSubnetRoutes;
+    }
+    if ("exportCustomRoutes".equals(fieldName)) {
+      return exportCustomRoutes;
+    }
+    if ("importCustomRoutes".equals(fieldName)) {
+      return importCustomRoutes;
     }
     if ("name".equals(fieldName)) {
       return name;
@@ -120,6 +134,16 @@ public final class NetworkPeering implements ApiMessage {
    */
   public Boolean getExchangeSubnetRoutes() {
     return exchangeSubnetRoutes;
+  }
+
+  /** Whether to export the custom routes to peer network. */
+  public Boolean getExportCustomRoutes() {
+    return exportCustomRoutes;
+  }
+
+  /** Whether to import the custom routes from peer network. */
+  public Boolean getImportCustomRoutes() {
+    return importCustomRoutes;
   }
 
   /**
@@ -180,6 +204,8 @@ public final class NetworkPeering implements ApiMessage {
   public static class Builder {
     private Boolean autoCreateRoutes;
     private Boolean exchangeSubnetRoutes;
+    private Boolean exportCustomRoutes;
+    private Boolean importCustomRoutes;
     private String name;
     private String network;
     private String state;
@@ -194,6 +220,12 @@ public final class NetworkPeering implements ApiMessage {
       }
       if (other.getExchangeSubnetRoutes() != null) {
         this.exchangeSubnetRoutes = other.exchangeSubnetRoutes;
+      }
+      if (other.getExportCustomRoutes() != null) {
+        this.exportCustomRoutes = other.exportCustomRoutes;
+      }
+      if (other.getImportCustomRoutes() != null) {
+        this.importCustomRoutes = other.importCustomRoutes;
       }
       if (other.getName() != null) {
         this.name = other.name;
@@ -213,6 +245,8 @@ public final class NetworkPeering implements ApiMessage {
     Builder(NetworkPeering source) {
       this.autoCreateRoutes = source.autoCreateRoutes;
       this.exchangeSubnetRoutes = source.exchangeSubnetRoutes;
+      this.exportCustomRoutes = source.exportCustomRoutes;
+      this.importCustomRoutes = source.importCustomRoutes;
       this.name = source.name;
       this.network = source.network;
       this.state = source.state;
@@ -258,6 +292,28 @@ public final class NetworkPeering implements ApiMessage {
      */
     public Builder setExchangeSubnetRoutes(Boolean exchangeSubnetRoutes) {
       this.exchangeSubnetRoutes = exchangeSubnetRoutes;
+      return this;
+    }
+
+    /** Whether to export the custom routes to peer network. */
+    public Boolean getExportCustomRoutes() {
+      return exportCustomRoutes;
+    }
+
+    /** Whether to export the custom routes to peer network. */
+    public Builder setExportCustomRoutes(Boolean exportCustomRoutes) {
+      this.exportCustomRoutes = exportCustomRoutes;
+      return this;
+    }
+
+    /** Whether to import the custom routes from peer network. */
+    public Boolean getImportCustomRoutes() {
+      return importCustomRoutes;
+    }
+
+    /** Whether to import the custom routes from peer network. */
+    public Builder setImportCustomRoutes(Boolean importCustomRoutes) {
+      this.importCustomRoutes = importCustomRoutes;
       return this;
     }
 
@@ -334,13 +390,22 @@ public final class NetworkPeering implements ApiMessage {
     public NetworkPeering build() {
 
       return new NetworkPeering(
-          autoCreateRoutes, exchangeSubnetRoutes, name, network, state, stateDetails);
+          autoCreateRoutes,
+          exchangeSubnetRoutes,
+          exportCustomRoutes,
+          importCustomRoutes,
+          name,
+          network,
+          state,
+          stateDetails);
     }
 
     public Builder clone() {
       Builder newBuilder = new Builder();
       newBuilder.setAutoCreateRoutes(this.autoCreateRoutes);
       newBuilder.setExchangeSubnetRoutes(this.exchangeSubnetRoutes);
+      newBuilder.setExportCustomRoutes(this.exportCustomRoutes);
+      newBuilder.setImportCustomRoutes(this.importCustomRoutes);
       newBuilder.setName(this.name);
       newBuilder.setNetwork(this.network);
       newBuilder.setState(this.state);
@@ -357,6 +422,12 @@ public final class NetworkPeering implements ApiMessage {
         + ", "
         + "exchangeSubnetRoutes="
         + exchangeSubnetRoutes
+        + ", "
+        + "exportCustomRoutes="
+        + exportCustomRoutes
+        + ", "
+        + "importCustomRoutes="
+        + importCustomRoutes
         + ", "
         + "name="
         + name
@@ -381,6 +452,8 @@ public final class NetworkPeering implements ApiMessage {
       NetworkPeering that = (NetworkPeering) o;
       return Objects.equals(this.autoCreateRoutes, that.getAutoCreateRoutes())
           && Objects.equals(this.exchangeSubnetRoutes, that.getExchangeSubnetRoutes())
+          && Objects.equals(this.exportCustomRoutes, that.getExportCustomRoutes())
+          && Objects.equals(this.importCustomRoutes, that.getImportCustomRoutes())
           && Objects.equals(this.name, that.getName())
           && Objects.equals(this.network, that.getNetwork())
           && Objects.equals(this.state, that.getState())
@@ -391,6 +464,14 @@ public final class NetworkPeering implements ApiMessage {
 
   @Override
   public int hashCode() {
-    return Objects.hash(autoCreateRoutes, exchangeSubnetRoutes, name, network, state, stateDetails);
+    return Objects.hash(
+        autoCreateRoutes,
+        exchangeSubnetRoutes,
+        exportCustomRoutes,
+        importCustomRoutes,
+        name,
+        network,
+        state,
+        stateDetails);
   }
 }

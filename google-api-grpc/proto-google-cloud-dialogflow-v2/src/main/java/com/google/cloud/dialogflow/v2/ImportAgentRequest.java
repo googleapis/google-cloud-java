@@ -154,7 +154,9 @@ public final class ImportAgentRequest extends com.google.protobuf.GeneratedMessa
    * Format: `projects/&lt;Project ID&gt;`.
    * </pre>
    *
-   * <code>string parent = 1;</code>
+   * <code>
+   * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    */
   public java.lang.String getParent() {
     java.lang.Object ref = parent_;
@@ -175,7 +177,9 @@ public final class ImportAgentRequest extends com.google.protobuf.GeneratedMessa
    * Format: `projects/&lt;Project ID&gt;`.
    * </pre>
    *
-   * <code>string parent = 1;</code>
+   * <code>
+   * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    */
   public com.google.protobuf.ByteString getParentBytes() {
     java.lang.Object ref = parent_;
@@ -251,13 +255,12 @@ public final class ImportAgentRequest extends com.google.protobuf.GeneratedMessa
    * The agent to import.
    * Example for how to import an agent via the command line:
    * &lt;pre&gt;curl &#92;
-   *   'https://dialogflow.googleapis.com/v2/projects/&amp;lt;project_name&amp;gt;/agent:import&#92;
+   *   'https://dialogflow.googleapis.com/v2/projects/&amp;lt;project_id&amp;gt;/agent:import'&#92;
    *    -X POST &#92;
-   *    -H 'Authorization: Bearer '$(gcloud auth application-default
-   *    print-access-token) &#92;
+   *    -H 'Authorization: Bearer'&#92;
+   *    $(gcloud auth application-default print-access-token) &#92;
    *    -H 'Accept: application/json' &#92;
    *    -H 'Content-Type: application/json' &#92;
-   *    --compressed &#92;
    *    --data-binary "{
    *       'agentContent': '$(cat &amp;lt;agent zip file&amp;gt; | base64 -w 0)'
    *    }"&lt;/pre&gt;
@@ -677,7 +680,9 @@ public final class ImportAgentRequest extends com.google.protobuf.GeneratedMessa
      * Format: `projects/&lt;Project ID&gt;`.
      * </pre>
      *
-     * <code>string parent = 1;</code>
+     * <code>
+     * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      */
     public java.lang.String getParent() {
       java.lang.Object ref = parent_;
@@ -698,7 +703,9 @@ public final class ImportAgentRequest extends com.google.protobuf.GeneratedMessa
      * Format: `projects/&lt;Project ID&gt;`.
      * </pre>
      *
-     * <code>string parent = 1;</code>
+     * <code>
+     * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      */
     public com.google.protobuf.ByteString getParentBytes() {
       java.lang.Object ref = parent_;
@@ -719,7 +726,9 @@ public final class ImportAgentRequest extends com.google.protobuf.GeneratedMessa
      * Format: `projects/&lt;Project ID&gt;`.
      * </pre>
      *
-     * <code>string parent = 1;</code>
+     * <code>
+     * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      */
     public Builder setParent(java.lang.String value) {
       if (value == null) {
@@ -738,7 +747,9 @@ public final class ImportAgentRequest extends com.google.protobuf.GeneratedMessa
      * Format: `projects/&lt;Project ID&gt;`.
      * </pre>
      *
-     * <code>string parent = 1;</code>
+     * <code>
+     * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      */
     public Builder clearParent() {
 
@@ -754,7 +765,9 @@ public final class ImportAgentRequest extends com.google.protobuf.GeneratedMessa
      * Format: `projects/&lt;Project ID&gt;`.
      * </pre>
      *
-     * <code>string parent = 1;</code>
+     * <code>
+     * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      */
     public Builder setParentBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -884,13 +897,12 @@ public final class ImportAgentRequest extends com.google.protobuf.GeneratedMessa
      * The agent to import.
      * Example for how to import an agent via the command line:
      * &lt;pre&gt;curl &#92;
-     *   'https://dialogflow.googleapis.com/v2/projects/&amp;lt;project_name&amp;gt;/agent:import&#92;
+     *   'https://dialogflow.googleapis.com/v2/projects/&amp;lt;project_id&amp;gt;/agent:import'&#92;
      *    -X POST &#92;
-     *    -H 'Authorization: Bearer '$(gcloud auth application-default
-     *    print-access-token) &#92;
+     *    -H 'Authorization: Bearer'&#92;
+     *    $(gcloud auth application-default print-access-token) &#92;
      *    -H 'Accept: application/json' &#92;
      *    -H 'Content-Type: application/json' &#92;
-     *    --compressed &#92;
      *    --data-binary "{
      *       'agentContent': '$(cat &amp;lt;agent zip file&amp;gt; | base64 -w 0)'
      *    }"&lt;/pre&gt;
@@ -911,13 +923,12 @@ public final class ImportAgentRequest extends com.google.protobuf.GeneratedMessa
      * The agent to import.
      * Example for how to import an agent via the command line:
      * &lt;pre&gt;curl &#92;
-     *   'https://dialogflow.googleapis.com/v2/projects/&amp;lt;project_name&amp;gt;/agent:import&#92;
+     *   'https://dialogflow.googleapis.com/v2/projects/&amp;lt;project_id&amp;gt;/agent:import'&#92;
      *    -X POST &#92;
-     *    -H 'Authorization: Bearer '$(gcloud auth application-default
-     *    print-access-token) &#92;
+     *    -H 'Authorization: Bearer'&#92;
+     *    $(gcloud auth application-default print-access-token) &#92;
      *    -H 'Accept: application/json' &#92;
      *    -H 'Content-Type: application/json' &#92;
-     *    --compressed &#92;
      *    --data-binary "{
      *       'agentContent': '$(cat &amp;lt;agent zip file&amp;gt; | base64 -w 0)'
      *    }"&lt;/pre&gt;
@@ -941,13 +952,12 @@ public final class ImportAgentRequest extends com.google.protobuf.GeneratedMessa
      * The agent to import.
      * Example for how to import an agent via the command line:
      * &lt;pre&gt;curl &#92;
-     *   'https://dialogflow.googleapis.com/v2/projects/&amp;lt;project_name&amp;gt;/agent:import&#92;
+     *   'https://dialogflow.googleapis.com/v2/projects/&amp;lt;project_id&amp;gt;/agent:import'&#92;
      *    -X POST &#92;
-     *    -H 'Authorization: Bearer '$(gcloud auth application-default
-     *    print-access-token) &#92;
+     *    -H 'Authorization: Bearer'&#92;
+     *    $(gcloud auth application-default print-access-token) &#92;
      *    -H 'Accept: application/json' &#92;
      *    -H 'Content-Type: application/json' &#92;
-     *    --compressed &#92;
      *    --data-binary "{
      *       'agentContent': '$(cat &amp;lt;agent zip file&amp;gt; | base64 -w 0)'
      *    }"&lt;/pre&gt;

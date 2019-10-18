@@ -21,6 +21,7 @@ import com.google.bigtable.v2.Mutation.DeleteFromColumn;
 import com.google.bigtable.v2.Mutation.DeleteFromFamily;
 import com.google.bigtable.v2.Mutation.DeleteFromRow;
 import com.google.cloud.bigtable.data.v2.models.Range.TimestampRange;
+import com.google.common.primitives.Longs;
 import com.google.protobuf.ByteString;
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
@@ -226,5 +227,31 @@ public class MutationTest {
     }
 
     assertThat(actualError).isInstanceOf(IllegalStateException.class);
+  }
+
+  @Test
+  public void testWithLongValue() {
+    Mutation mutation =
+        Mutation.create()
+            .setCell("fake-family", "fake-qualifier", 100_000L)
+            .setCell("fake-family", ByteString.copyFromUtf8("test-qualifier"), 100_000L)
+            .setCell("fake-family", "fake-qualifier", 30_000L, 20000L);
+
+    List<com.google.bigtable.v2.Mutation> mutations = mutation.getMutations();
+
+    assertThat(mutations.size()).isEqualTo(3);
+    com.google.bigtable.v2.Mutation actualMutation = mutations.get(0);
+
+    assertThat(actualMutation.getSetCell().getValue())
+        .isEqualTo(ByteString.copyFrom(Longs.toByteArray(100_000L)));
+
+    assertThat(mutations.get(2).getSetCell())
+        .isEqualTo(
+            com.google.bigtable.v2.Mutation.SetCell.newBuilder()
+                .setFamilyName("fake-family")
+                .setColumnQualifier(ByteString.copyFromUtf8("fake-qualifier"))
+                .setTimestampMicros(30_000L)
+                .setValue(ByteString.copyFrom(Longs.toByteArray(20_000L)))
+                .build());
   }
 }

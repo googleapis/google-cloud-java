@@ -1202,10 +1202,12 @@ public final class ComputeThreatListDiffRequest extends com.google.protobuf.Gene
    *
    *
    * <pre>
-   * Required. The ThreatList to update.
+   * The ThreatList to update.
    * </pre>
    *
-   * <code>.google.cloud.webrisk.v1beta1.ThreatType threat_type = 1;</code>
+   * <code>
+   * .google.cloud.webrisk.v1beta1.ThreatType threat_type = 1 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   public int getThreatTypeValue() {
     return threatType_;
@@ -1214,10 +1216,12 @@ public final class ComputeThreatListDiffRequest extends com.google.protobuf.Gene
    *
    *
    * <pre>
-   * Required. The ThreatList to update.
+   * The ThreatList to update.
    * </pre>
    *
-   * <code>.google.cloud.webrisk.v1beta1.ThreatType threat_type = 1;</code>
+   * <code>
+   * .google.cloud.webrisk.v1beta1.ThreatType threat_type = 1 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   public com.google.webrisk.v1beta1.ThreatType getThreatType() {
     @SuppressWarnings("deprecation")
@@ -1248,10 +1252,11 @@ public final class ComputeThreatListDiffRequest extends com.google.protobuf.Gene
    *
    *
    * <pre>
-   * The constraints associated with this request.
+   * Required. The constraints associated with this request.
    * </pre>
    *
-   * <code>.google.cloud.webrisk.v1beta1.ComputeThreatListDiffRequest.Constraints constraints = 3;
+   * <code>
+   * .google.cloud.webrisk.v1beta1.ComputeThreatListDiffRequest.Constraints constraints = 3 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    */
   public boolean hasConstraints() {
@@ -1261,10 +1266,11 @@ public final class ComputeThreatListDiffRequest extends com.google.protobuf.Gene
    *
    *
    * <pre>
-   * The constraints associated with this request.
+   * Required. The constraints associated with this request.
    * </pre>
    *
-   * <code>.google.cloud.webrisk.v1beta1.ComputeThreatListDiffRequest.Constraints constraints = 3;
+   * <code>
+   * .google.cloud.webrisk.v1beta1.ComputeThreatListDiffRequest.Constraints constraints = 3 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    */
   public com.google.webrisk.v1beta1.ComputeThreatListDiffRequest.Constraints getConstraints() {
@@ -1276,10 +1282,11 @@ public final class ComputeThreatListDiffRequest extends com.google.protobuf.Gene
    *
    *
    * <pre>
-   * The constraints associated with this request.
+   * Required. The constraints associated with this request.
    * </pre>
    *
-   * <code>.google.cloud.webrisk.v1beta1.ComputeThreatListDiffRequest.Constraints constraints = 3;
+   * <code>
+   * .google.cloud.webrisk.v1beta1.ComputeThreatListDiffRequest.Constraints constraints = 3 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    */
   public com.google.webrisk.v1beta1.ComputeThreatListDiffRequest.ConstraintsOrBuilder
@@ -1653,10 +1660,12 @@ public final class ComputeThreatListDiffRequest extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * Required. The ThreatList to update.
+     * The ThreatList to update.
      * </pre>
      *
-     * <code>.google.cloud.webrisk.v1beta1.ThreatType threat_type = 1;</code>
+     * <code>
+     * .google.cloud.webrisk.v1beta1.ThreatType threat_type = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public int getThreatTypeValue() {
       return threatType_;
@@ -1665,10 +1674,12 @@ public final class ComputeThreatListDiffRequest extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * Required. The ThreatList to update.
+     * The ThreatList to update.
      * </pre>
      *
-     * <code>.google.cloud.webrisk.v1beta1.ThreatType threat_type = 1;</code>
+     * <code>
+     * .google.cloud.webrisk.v1beta1.ThreatType threat_type = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder setThreatTypeValue(int value) {
       threatType_ = value;
@@ -1679,10 +1690,12 @@ public final class ComputeThreatListDiffRequest extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * Required. The ThreatList to update.
+     * The ThreatList to update.
      * </pre>
      *
-     * <code>.google.cloud.webrisk.v1beta1.ThreatType threat_type = 1;</code>
+     * <code>
+     * .google.cloud.webrisk.v1beta1.ThreatType threat_type = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public com.google.webrisk.v1beta1.ThreatType getThreatType() {
       @SuppressWarnings("deprecation")
@@ -1694,10 +1707,12 @@ public final class ComputeThreatListDiffRequest extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * Required. The ThreatList to update.
+     * The ThreatList to update.
      * </pre>
      *
-     * <code>.google.cloud.webrisk.v1beta1.ThreatType threat_type = 1;</code>
+     * <code>
+     * .google.cloud.webrisk.v1beta1.ThreatType threat_type = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder setThreatType(com.google.webrisk.v1beta1.ThreatType value) {
       if (value == null) {
@@ -1712,10 +1727,12 @@ public final class ComputeThreatListDiffRequest extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * Required. The ThreatList to update.
+     * The ThreatList to update.
      * </pre>
      *
-     * <code>.google.cloud.webrisk.v1beta1.ThreatType threat_type = 1;</code>
+     * <code>
+     * .google.cloud.webrisk.v1beta1.ThreatType threat_type = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder clearThreatType() {
 
@@ -1784,10 +1801,11 @@ public final class ComputeThreatListDiffRequest extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * The constraints associated with this request.
+     * Required. The constraints associated with this request.
      * </pre>
      *
-     * <code>.google.cloud.webrisk.v1beta1.ComputeThreatListDiffRequest.Constraints constraints = 3;
+     * <code>
+     * .google.cloud.webrisk.v1beta1.ComputeThreatListDiffRequest.Constraints constraints = 3 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public boolean hasConstraints() {
@@ -1797,10 +1815,11 @@ public final class ComputeThreatListDiffRequest extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * The constraints associated with this request.
+     * Required. The constraints associated with this request.
      * </pre>
      *
-     * <code>.google.cloud.webrisk.v1beta1.ComputeThreatListDiffRequest.Constraints constraints = 3;
+     * <code>
+     * .google.cloud.webrisk.v1beta1.ComputeThreatListDiffRequest.Constraints constraints = 3 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public com.google.webrisk.v1beta1.ComputeThreatListDiffRequest.Constraints getConstraints() {
@@ -1817,10 +1836,11 @@ public final class ComputeThreatListDiffRequest extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * The constraints associated with this request.
+     * Required. The constraints associated with this request.
      * </pre>
      *
-     * <code>.google.cloud.webrisk.v1beta1.ComputeThreatListDiffRequest.Constraints constraints = 3;
+     * <code>
+     * .google.cloud.webrisk.v1beta1.ComputeThreatListDiffRequest.Constraints constraints = 3 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public Builder setConstraints(
@@ -1841,10 +1861,11 @@ public final class ComputeThreatListDiffRequest extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * The constraints associated with this request.
+     * Required. The constraints associated with this request.
      * </pre>
      *
-     * <code>.google.cloud.webrisk.v1beta1.ComputeThreatListDiffRequest.Constraints constraints = 3;
+     * <code>
+     * .google.cloud.webrisk.v1beta1.ComputeThreatListDiffRequest.Constraints constraints = 3 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public Builder setConstraints(
@@ -1863,10 +1884,11 @@ public final class ComputeThreatListDiffRequest extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * The constraints associated with this request.
+     * Required. The constraints associated with this request.
      * </pre>
      *
-     * <code>.google.cloud.webrisk.v1beta1.ComputeThreatListDiffRequest.Constraints constraints = 3;
+     * <code>
+     * .google.cloud.webrisk.v1beta1.ComputeThreatListDiffRequest.Constraints constraints = 3 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public Builder mergeConstraints(
@@ -1892,10 +1914,11 @@ public final class ComputeThreatListDiffRequest extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * The constraints associated with this request.
+     * Required. The constraints associated with this request.
      * </pre>
      *
-     * <code>.google.cloud.webrisk.v1beta1.ComputeThreatListDiffRequest.Constraints constraints = 3;
+     * <code>
+     * .google.cloud.webrisk.v1beta1.ComputeThreatListDiffRequest.Constraints constraints = 3 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public Builder clearConstraints() {
@@ -1913,10 +1936,11 @@ public final class ComputeThreatListDiffRequest extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * The constraints associated with this request.
+     * Required. The constraints associated with this request.
      * </pre>
      *
-     * <code>.google.cloud.webrisk.v1beta1.ComputeThreatListDiffRequest.Constraints constraints = 3;
+     * <code>
+     * .google.cloud.webrisk.v1beta1.ComputeThreatListDiffRequest.Constraints constraints = 3 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public com.google.webrisk.v1beta1.ComputeThreatListDiffRequest.Constraints.Builder
@@ -1929,10 +1953,11 @@ public final class ComputeThreatListDiffRequest extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * The constraints associated with this request.
+     * Required. The constraints associated with this request.
      * </pre>
      *
-     * <code>.google.cloud.webrisk.v1beta1.ComputeThreatListDiffRequest.Constraints constraints = 3;
+     * <code>
+     * .google.cloud.webrisk.v1beta1.ComputeThreatListDiffRequest.Constraints constraints = 3 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public com.google.webrisk.v1beta1.ComputeThreatListDiffRequest.ConstraintsOrBuilder
@@ -1950,10 +1975,11 @@ public final class ComputeThreatListDiffRequest extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * The constraints associated with this request.
+     * Required. The constraints associated with this request.
      * </pre>
      *
-     * <code>.google.cloud.webrisk.v1beta1.ComputeThreatListDiffRequest.Constraints constraints = 3;
+     * <code>
+     * .google.cloud.webrisk.v1beta1.ComputeThreatListDiffRequest.Constraints constraints = 3 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<

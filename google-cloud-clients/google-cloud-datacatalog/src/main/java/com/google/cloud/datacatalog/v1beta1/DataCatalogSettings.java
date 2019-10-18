@@ -29,13 +29,19 @@ import com.google.api.gax.rpc.ClientSettings;
 import com.google.api.gax.rpc.PagedCallSettings;
 import com.google.api.gax.rpc.TransportChannelProvider;
 import com.google.api.gax.rpc.UnaryCallSettings;
+import com.google.cloud.datacatalog.CreateEntryGroupRequest;
+import com.google.cloud.datacatalog.CreateEntryRequest;
 import com.google.cloud.datacatalog.CreateTagRequest;
 import com.google.cloud.datacatalog.CreateTagTemplateFieldRequest;
 import com.google.cloud.datacatalog.CreateTagTemplateRequest;
+import com.google.cloud.datacatalog.DeleteEntryGroupRequest;
+import com.google.cloud.datacatalog.DeleteEntryRequest;
 import com.google.cloud.datacatalog.DeleteTagRequest;
 import com.google.cloud.datacatalog.DeleteTagTemplateFieldRequest;
 import com.google.cloud.datacatalog.DeleteTagTemplateRequest;
 import com.google.cloud.datacatalog.Entry;
+import com.google.cloud.datacatalog.EntryGroup;
+import com.google.cloud.datacatalog.GetEntryGroupRequest;
 import com.google.cloud.datacatalog.GetEntryRequest;
 import com.google.cloud.datacatalog.GetTagTemplateRequest;
 import com.google.cloud.datacatalog.ListTagsRequest;
@@ -77,13 +83,13 @@ import javax.annotation.Generated;
  * <p>The builder of this class is recursive, so contained classes are themselves builders. When
  * build() is called, the tree of builders is called to create the complete settings object.
  *
- * <p>For example, to set the total timeout of updateEntry to 30 seconds:
+ * <p>For example, to set the total timeout of createEntryGroup to 30 seconds:
  *
  * <pre>
  * <code>
  * DataCatalogSettings.Builder dataCatalogSettingsBuilder =
  *     DataCatalogSettings.newBuilder();
- * dataCatalogSettingsBuilder.updateEntrySettings().getRetrySettings().toBuilder()
+ * dataCatalogSettingsBuilder.createEntryGroupSettings().getRetrySettings().toBuilder()
  *     .setTotalTimeout(Duration.ofSeconds(30));
  * DataCatalogSettings dataCatalogSettings = dataCatalogSettingsBuilder.build();
  * </code>
@@ -98,9 +104,34 @@ public class DataCatalogSettings extends ClientSettings<DataCatalogSettings> {
     return ((DataCatalogStubSettings) getStubSettings()).searchCatalogSettings();
   }
 
+  /** Returns the object with the settings used for calls to createEntryGroup. */
+  public UnaryCallSettings<CreateEntryGroupRequest, EntryGroup> createEntryGroupSettings() {
+    return ((DataCatalogStubSettings) getStubSettings()).createEntryGroupSettings();
+  }
+
+  /** Returns the object with the settings used for calls to getEntryGroup. */
+  public UnaryCallSettings<GetEntryGroupRequest, EntryGroup> getEntryGroupSettings() {
+    return ((DataCatalogStubSettings) getStubSettings()).getEntryGroupSettings();
+  }
+
+  /** Returns the object with the settings used for calls to deleteEntryGroup. */
+  public UnaryCallSettings<DeleteEntryGroupRequest, Empty> deleteEntryGroupSettings() {
+    return ((DataCatalogStubSettings) getStubSettings()).deleteEntryGroupSettings();
+  }
+
+  /** Returns the object with the settings used for calls to createEntry. */
+  public UnaryCallSettings<CreateEntryRequest, Entry> createEntrySettings() {
+    return ((DataCatalogStubSettings) getStubSettings()).createEntrySettings();
+  }
+
   /** Returns the object with the settings used for calls to updateEntry. */
   public UnaryCallSettings<UpdateEntryRequest, Entry> updateEntrySettings() {
     return ((DataCatalogStubSettings) getStubSettings()).updateEntrySettings();
+  }
+
+  /** Returns the object with the settings used for calls to deleteEntry. */
+  public UnaryCallSettings<DeleteEntryRequest, Empty> deleteEntrySettings() {
+    return ((DataCatalogStubSettings) getStubSettings()).deleteEntrySettings();
   }
 
   /** Returns the object with the settings used for calls to getEntry. */
@@ -296,9 +327,35 @@ public class DataCatalogSettings extends ClientSettings<DataCatalogSettings> {
       return getStubSettingsBuilder().searchCatalogSettings();
     }
 
+    /** Returns the builder for the settings used for calls to createEntryGroup. */
+    public UnaryCallSettings.Builder<CreateEntryGroupRequest, EntryGroup>
+        createEntryGroupSettings() {
+      return getStubSettingsBuilder().createEntryGroupSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to getEntryGroup. */
+    public UnaryCallSettings.Builder<GetEntryGroupRequest, EntryGroup> getEntryGroupSettings() {
+      return getStubSettingsBuilder().getEntryGroupSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to deleteEntryGroup. */
+    public UnaryCallSettings.Builder<DeleteEntryGroupRequest, Empty> deleteEntryGroupSettings() {
+      return getStubSettingsBuilder().deleteEntryGroupSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to createEntry. */
+    public UnaryCallSettings.Builder<CreateEntryRequest, Entry> createEntrySettings() {
+      return getStubSettingsBuilder().createEntrySettings();
+    }
+
     /** Returns the builder for the settings used for calls to updateEntry. */
     public UnaryCallSettings.Builder<UpdateEntryRequest, Entry> updateEntrySettings() {
       return getStubSettingsBuilder().updateEntrySettings();
+    }
+
+    /** Returns the builder for the settings used for calls to deleteEntry. */
+    public UnaryCallSettings.Builder<DeleteEntryRequest, Empty> deleteEntrySettings() {
+      return getStubSettingsBuilder().deleteEntrySettings();
     }
 
     /** Returns the builder for the settings used for calls to getEntry. */

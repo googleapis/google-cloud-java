@@ -300,7 +300,9 @@ public final class ClusterOperationStatus extends com.google.protobuf.GeneratedM
    * Output only. A message containing the operation state.
    * </pre>
    *
-   * <code>.google.cloud.dataproc.v1.ClusterOperationStatus.State state = 1;</code>
+   * <code>
+   * .google.cloud.dataproc.v1.ClusterOperationStatus.State state = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    */
   public int getStateValue() {
     return state_;
@@ -312,7 +314,9 @@ public final class ClusterOperationStatus extends com.google.protobuf.GeneratedM
    * Output only. A message containing the operation state.
    * </pre>
    *
-   * <code>.google.cloud.dataproc.v1.ClusterOperationStatus.State state = 1;</code>
+   * <code>
+   * .google.cloud.dataproc.v1.ClusterOperationStatus.State state = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    */
   public com.google.cloud.dataproc.v1.ClusterOperationStatus.State getState() {
     @SuppressWarnings("deprecation")
@@ -332,7 +336,7 @@ public final class ClusterOperationStatus extends com.google.protobuf.GeneratedM
    * Output only. A message containing the detailed operation state.
    * </pre>
    *
-   * <code>string inner_state = 2;</code>
+   * <code>string inner_state = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    */
   public java.lang.String getInnerState() {
     java.lang.Object ref = innerState_;
@@ -352,7 +356,7 @@ public final class ClusterOperationStatus extends com.google.protobuf.GeneratedM
    * Output only. A message containing the detailed operation state.
    * </pre>
    *
-   * <code>string inner_state = 2;</code>
+   * <code>string inner_state = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    */
   public com.google.protobuf.ByteString getInnerStateBytes() {
     java.lang.Object ref = innerState_;
@@ -375,7 +379,7 @@ public final class ClusterOperationStatus extends com.google.protobuf.GeneratedM
    * Output only. A message containing any operation metadata details.
    * </pre>
    *
-   * <code>string details = 3;</code>
+   * <code>string details = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    */
   public java.lang.String getDetails() {
     java.lang.Object ref = details_;
@@ -395,7 +399,7 @@ public final class ClusterOperationStatus extends com.google.protobuf.GeneratedM
    * Output only. A message containing any operation metadata details.
    * </pre>
    *
-   * <code>string details = 3;</code>
+   * <code>string details = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    */
   public com.google.protobuf.ByteString getDetailsBytes() {
     java.lang.Object ref = details_;
@@ -418,7 +422,9 @@ public final class ClusterOperationStatus extends com.google.protobuf.GeneratedM
    * Output only. The time this state was entered.
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp state_start_time = 4;</code>
+   * <code>
+   * .google.protobuf.Timestamp state_start_time = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    */
   public boolean hasStateStartTime() {
     return stateStartTime_ != null;
@@ -430,7 +436,9 @@ public final class ClusterOperationStatus extends com.google.protobuf.GeneratedM
    * Output only. The time this state was entered.
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp state_start_time = 4;</code>
+   * <code>
+   * .google.protobuf.Timestamp state_start_time = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    */
   public com.google.protobuf.Timestamp getStateStartTime() {
     return stateStartTime_ == null
@@ -444,7 +452,9 @@ public final class ClusterOperationStatus extends com.google.protobuf.GeneratedM
    * Output only. The time this state was entered.
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp state_start_time = 4;</code>
+   * <code>
+   * .google.protobuf.Timestamp state_start_time = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    */
   public com.google.protobuf.TimestampOrBuilder getStateStartTimeOrBuilder() {
     return getStateStartTime();
@@ -835,7 +845,9 @@ public final class ClusterOperationStatus extends com.google.protobuf.GeneratedM
      * Output only. A message containing the operation state.
      * </pre>
      *
-     * <code>.google.cloud.dataproc.v1.ClusterOperationStatus.State state = 1;</code>
+     * <code>
+     * .google.cloud.dataproc.v1.ClusterOperationStatus.State state = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public int getStateValue() {
       return state_;
@@ -847,7 +859,9 @@ public final class ClusterOperationStatus extends com.google.protobuf.GeneratedM
      * Output only. A message containing the operation state.
      * </pre>
      *
-     * <code>.google.cloud.dataproc.v1.ClusterOperationStatus.State state = 1;</code>
+     * <code>
+     * .google.cloud.dataproc.v1.ClusterOperationStatus.State state = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public Builder setStateValue(int value) {
       state_ = value;
@@ -861,7 +875,9 @@ public final class ClusterOperationStatus extends com.google.protobuf.GeneratedM
      * Output only. A message containing the operation state.
      * </pre>
      *
-     * <code>.google.cloud.dataproc.v1.ClusterOperationStatus.State state = 1;</code>
+     * <code>
+     * .google.cloud.dataproc.v1.ClusterOperationStatus.State state = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public com.google.cloud.dataproc.v1.ClusterOperationStatus.State getState() {
       @SuppressWarnings("deprecation")
@@ -878,7 +894,9 @@ public final class ClusterOperationStatus extends com.google.protobuf.GeneratedM
      * Output only. A message containing the operation state.
      * </pre>
      *
-     * <code>.google.cloud.dataproc.v1.ClusterOperationStatus.State state = 1;</code>
+     * <code>
+     * .google.cloud.dataproc.v1.ClusterOperationStatus.State state = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public Builder setState(com.google.cloud.dataproc.v1.ClusterOperationStatus.State value) {
       if (value == null) {
@@ -896,7 +914,9 @@ public final class ClusterOperationStatus extends com.google.protobuf.GeneratedM
      * Output only. A message containing the operation state.
      * </pre>
      *
-     * <code>.google.cloud.dataproc.v1.ClusterOperationStatus.State state = 1;</code>
+     * <code>
+     * .google.cloud.dataproc.v1.ClusterOperationStatus.State state = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public Builder clearState() {
 
@@ -913,7 +933,7 @@ public final class ClusterOperationStatus extends com.google.protobuf.GeneratedM
      * Output only. A message containing the detailed operation state.
      * </pre>
      *
-     * <code>string inner_state = 2;</code>
+     * <code>string inner_state = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     public java.lang.String getInnerState() {
       java.lang.Object ref = innerState_;
@@ -933,7 +953,7 @@ public final class ClusterOperationStatus extends com.google.protobuf.GeneratedM
      * Output only. A message containing the detailed operation state.
      * </pre>
      *
-     * <code>string inner_state = 2;</code>
+     * <code>string inner_state = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     public com.google.protobuf.ByteString getInnerStateBytes() {
       java.lang.Object ref = innerState_;
@@ -953,7 +973,7 @@ public final class ClusterOperationStatus extends com.google.protobuf.GeneratedM
      * Output only. A message containing the detailed operation state.
      * </pre>
      *
-     * <code>string inner_state = 2;</code>
+     * <code>string inner_state = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     public Builder setInnerState(java.lang.String value) {
       if (value == null) {
@@ -971,7 +991,7 @@ public final class ClusterOperationStatus extends com.google.protobuf.GeneratedM
      * Output only. A message containing the detailed operation state.
      * </pre>
      *
-     * <code>string inner_state = 2;</code>
+     * <code>string inner_state = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     public Builder clearInnerState() {
 
@@ -986,7 +1006,7 @@ public final class ClusterOperationStatus extends com.google.protobuf.GeneratedM
      * Output only. A message containing the detailed operation state.
      * </pre>
      *
-     * <code>string inner_state = 2;</code>
+     * <code>string inner_state = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     public Builder setInnerStateBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -1007,7 +1027,7 @@ public final class ClusterOperationStatus extends com.google.protobuf.GeneratedM
      * Output only. A message containing any operation metadata details.
      * </pre>
      *
-     * <code>string details = 3;</code>
+     * <code>string details = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     public java.lang.String getDetails() {
       java.lang.Object ref = details_;
@@ -1027,7 +1047,7 @@ public final class ClusterOperationStatus extends com.google.protobuf.GeneratedM
      * Output only. A message containing any operation metadata details.
      * </pre>
      *
-     * <code>string details = 3;</code>
+     * <code>string details = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     public com.google.protobuf.ByteString getDetailsBytes() {
       java.lang.Object ref = details_;
@@ -1047,7 +1067,7 @@ public final class ClusterOperationStatus extends com.google.protobuf.GeneratedM
      * Output only. A message containing any operation metadata details.
      * </pre>
      *
-     * <code>string details = 3;</code>
+     * <code>string details = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     public Builder setDetails(java.lang.String value) {
       if (value == null) {
@@ -1065,7 +1085,7 @@ public final class ClusterOperationStatus extends com.google.protobuf.GeneratedM
      * Output only. A message containing any operation metadata details.
      * </pre>
      *
-     * <code>string details = 3;</code>
+     * <code>string details = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     public Builder clearDetails() {
 
@@ -1080,7 +1100,7 @@ public final class ClusterOperationStatus extends com.google.protobuf.GeneratedM
      * Output only. A message containing any operation metadata details.
      * </pre>
      *
-     * <code>string details = 3;</code>
+     * <code>string details = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     public Builder setDetailsBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -1106,7 +1126,9 @@ public final class ClusterOperationStatus extends com.google.protobuf.GeneratedM
      * Output only. The time this state was entered.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp state_start_time = 4;</code>
+     * <code>
+     * .google.protobuf.Timestamp state_start_time = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public boolean hasStateStartTime() {
       return stateStartTimeBuilder_ != null || stateStartTime_ != null;
@@ -1118,7 +1140,9 @@ public final class ClusterOperationStatus extends com.google.protobuf.GeneratedM
      * Output only. The time this state was entered.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp state_start_time = 4;</code>
+     * <code>
+     * .google.protobuf.Timestamp state_start_time = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public com.google.protobuf.Timestamp getStateStartTime() {
       if (stateStartTimeBuilder_ == null) {
@@ -1136,7 +1160,9 @@ public final class ClusterOperationStatus extends com.google.protobuf.GeneratedM
      * Output only. The time this state was entered.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp state_start_time = 4;</code>
+     * <code>
+     * .google.protobuf.Timestamp state_start_time = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public Builder setStateStartTime(com.google.protobuf.Timestamp value) {
       if (stateStartTimeBuilder_ == null) {
@@ -1158,7 +1184,9 @@ public final class ClusterOperationStatus extends com.google.protobuf.GeneratedM
      * Output only. The time this state was entered.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp state_start_time = 4;</code>
+     * <code>
+     * .google.protobuf.Timestamp state_start_time = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public Builder setStateStartTime(com.google.protobuf.Timestamp.Builder builderForValue) {
       if (stateStartTimeBuilder_ == null) {
@@ -1177,7 +1205,9 @@ public final class ClusterOperationStatus extends com.google.protobuf.GeneratedM
      * Output only. The time this state was entered.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp state_start_time = 4;</code>
+     * <code>
+     * .google.protobuf.Timestamp state_start_time = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public Builder mergeStateStartTime(com.google.protobuf.Timestamp value) {
       if (stateStartTimeBuilder_ == null) {
@@ -1203,7 +1233,9 @@ public final class ClusterOperationStatus extends com.google.protobuf.GeneratedM
      * Output only. The time this state was entered.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp state_start_time = 4;</code>
+     * <code>
+     * .google.protobuf.Timestamp state_start_time = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public Builder clearStateStartTime() {
       if (stateStartTimeBuilder_ == null) {
@@ -1223,7 +1255,9 @@ public final class ClusterOperationStatus extends com.google.protobuf.GeneratedM
      * Output only. The time this state was entered.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp state_start_time = 4;</code>
+     * <code>
+     * .google.protobuf.Timestamp state_start_time = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public com.google.protobuf.Timestamp.Builder getStateStartTimeBuilder() {
 
@@ -1237,7 +1271,9 @@ public final class ClusterOperationStatus extends com.google.protobuf.GeneratedM
      * Output only. The time this state was entered.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp state_start_time = 4;</code>
+     * <code>
+     * .google.protobuf.Timestamp state_start_time = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public com.google.protobuf.TimestampOrBuilder getStateStartTimeOrBuilder() {
       if (stateStartTimeBuilder_ != null) {
@@ -1255,7 +1291,9 @@ public final class ClusterOperationStatus extends com.google.protobuf.GeneratedM
      * Output only. The time this state was entered.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp state_start_time = 4;</code>
+     * <code>
+     * .google.protobuf.Timestamp state_start_time = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.protobuf.Timestamp,

@@ -52,7 +52,7 @@ abstract class BaseSessionPoolTest {
 
     @Override
     public void release(ScheduledExecutorService executor) {
-      // do nothing
+      executor.shutdown();
     }
   }
 

@@ -84,24 +84,28 @@ public class WebSecurityScannerClientTest {
   @Test
   @SuppressWarnings("all")
   public void createScanConfigTest() {
-    String name = "name3373707";
+    ScanConfigName name = ScanConfigName.of("[PROJECT]", "[SCAN_CONFIG]");
     String displayName = "displayName1615086568";
     int maxQps = 844445913;
     ScanConfig expectedResponse =
-        ScanConfig.newBuilder().setName(name).setDisplayName(displayName).setMaxQps(maxQps).build();
+        ScanConfig.newBuilder()
+            .setName(name.toString())
+            .setDisplayName(displayName)
+            .setMaxQps(maxQps)
+            .build();
     mockWebSecurityScanner.addResponse(expectedResponse);
 
-    String formattedParent = WebSecurityScannerClient.formatProjectName("[PROJECT]");
+    ProjectName parent = ProjectName.of("[PROJECT]");
     ScanConfig scanConfig = ScanConfig.newBuilder().build();
 
-    ScanConfig actualResponse = client.createScanConfig(formattedParent, scanConfig);
+    ScanConfig actualResponse = client.createScanConfig(parent, scanConfig);
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<AbstractMessage> actualRequests = mockWebSecurityScanner.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     CreateScanConfigRequest actualRequest = (CreateScanConfigRequest) actualRequests.get(0);
 
-    Assert.assertEquals(formattedParent, actualRequest.getParent());
+    Assert.assertEquals(parent, ProjectName.parse(actualRequest.getParent()));
     Assert.assertEquals(scanConfig, actualRequest.getScanConfig());
     Assert.assertTrue(
         channelProvider.isHeaderSent(
@@ -116,10 +120,10 @@ public class WebSecurityScannerClientTest {
     mockWebSecurityScanner.addException(exception);
 
     try {
-      String formattedParent = WebSecurityScannerClient.formatProjectName("[PROJECT]");
+      ProjectName parent = ProjectName.of("[PROJECT]");
       ScanConfig scanConfig = ScanConfig.newBuilder().build();
 
-      client.createScanConfig(formattedParent, scanConfig);
+      client.createScanConfig(parent, scanConfig);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception
@@ -132,16 +136,15 @@ public class WebSecurityScannerClientTest {
     Empty expectedResponse = Empty.newBuilder().build();
     mockWebSecurityScanner.addResponse(expectedResponse);
 
-    String formattedName =
-        WebSecurityScannerClient.formatScanConfigName("[PROJECT]", "[SCAN_CONFIG]");
+    ScanConfigName name = ScanConfigName.of("[PROJECT]", "[SCAN_CONFIG]");
 
-    client.deleteScanConfig(formattedName);
+    client.deleteScanConfig(name);
 
     List<AbstractMessage> actualRequests = mockWebSecurityScanner.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     DeleteScanConfigRequest actualRequest = (DeleteScanConfigRequest) actualRequests.get(0);
 
-    Assert.assertEquals(formattedName, actualRequest.getName());
+    Assert.assertEquals(name, ScanConfigName.parse(actualRequest.getName()));
     Assert.assertTrue(
         channelProvider.isHeaderSent(
             ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
@@ -155,10 +158,9 @@ public class WebSecurityScannerClientTest {
     mockWebSecurityScanner.addException(exception);
 
     try {
-      String formattedName =
-          WebSecurityScannerClient.formatScanConfigName("[PROJECT]", "[SCAN_CONFIG]");
+      ScanConfigName name = ScanConfigName.of("[PROJECT]", "[SCAN_CONFIG]");
 
-      client.deleteScanConfig(formattedName);
+      client.deleteScanConfig(name);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception
@@ -168,28 +170,27 @@ public class WebSecurityScannerClientTest {
   @Test
   @SuppressWarnings("all")
   public void getScanConfigTest() {
-    String name2 = "name2-1052831874";
+    ScanConfigName name2 = ScanConfigName.of("[PROJECT]", "[SCAN_CONFIG]");
     String displayName = "displayName1615086568";
     int maxQps = 844445913;
     ScanConfig expectedResponse =
         ScanConfig.newBuilder()
-            .setName(name2)
+            .setName(name2.toString())
             .setDisplayName(displayName)
             .setMaxQps(maxQps)
             .build();
     mockWebSecurityScanner.addResponse(expectedResponse);
 
-    String formattedName =
-        WebSecurityScannerClient.formatScanConfigName("[PROJECT]", "[SCAN_CONFIG]");
+    ScanConfigName name = ScanConfigName.of("[PROJECT]", "[SCAN_CONFIG]");
 
-    ScanConfig actualResponse = client.getScanConfig(formattedName);
+    ScanConfig actualResponse = client.getScanConfig(name);
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<AbstractMessage> actualRequests = mockWebSecurityScanner.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     GetScanConfigRequest actualRequest = (GetScanConfigRequest) actualRequests.get(0);
 
-    Assert.assertEquals(formattedName, actualRequest.getName());
+    Assert.assertEquals(name, ScanConfigName.parse(actualRequest.getName()));
     Assert.assertTrue(
         channelProvider.isHeaderSent(
             ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
@@ -203,10 +204,9 @@ public class WebSecurityScannerClientTest {
     mockWebSecurityScanner.addException(exception);
 
     try {
-      String formattedName =
-          WebSecurityScannerClient.formatScanConfigName("[PROJECT]", "[SCAN_CONFIG]");
+      ScanConfigName name = ScanConfigName.of("[PROJECT]", "[SCAN_CONFIG]");
 
-      client.getScanConfig(formattedName);
+      client.getScanConfig(name);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception
@@ -226,9 +226,9 @@ public class WebSecurityScannerClientTest {
             .build();
     mockWebSecurityScanner.addResponse(expectedResponse);
 
-    String formattedParent = WebSecurityScannerClient.formatProjectName("[PROJECT]");
+    ProjectName parent = ProjectName.of("[PROJECT]");
 
-    ListScanConfigsPagedResponse pagedListResponse = client.listScanConfigs(formattedParent);
+    ListScanConfigsPagedResponse pagedListResponse = client.listScanConfigs(parent);
 
     List<ScanConfig> resources = Lists.newArrayList(pagedListResponse.iterateAll());
     Assert.assertEquals(1, resources.size());
@@ -238,7 +238,7 @@ public class WebSecurityScannerClientTest {
     Assert.assertEquals(1, actualRequests.size());
     ListScanConfigsRequest actualRequest = (ListScanConfigsRequest) actualRequests.get(0);
 
-    Assert.assertEquals(formattedParent, actualRequest.getParent());
+    Assert.assertEquals(parent, ProjectName.parse(actualRequest.getParent()));
     Assert.assertTrue(
         channelProvider.isHeaderSent(
             ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
@@ -252,9 +252,9 @@ public class WebSecurityScannerClientTest {
     mockWebSecurityScanner.addException(exception);
 
     try {
-      String formattedParent = WebSecurityScannerClient.formatProjectName("[PROJECT]");
+      ProjectName parent = ProjectName.of("[PROJECT]");
 
-      client.listScanConfigs(formattedParent);
+      client.listScanConfigs(parent);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception
@@ -264,11 +264,15 @@ public class WebSecurityScannerClientTest {
   @Test
   @SuppressWarnings("all")
   public void updateScanConfigTest() {
-    String name = "name3373707";
+    ScanConfigName name = ScanConfigName.of("[PROJECT]", "[SCAN_CONFIG]");
     String displayName = "displayName1615086568";
     int maxQps = 844445913;
     ScanConfig expectedResponse =
-        ScanConfig.newBuilder().setName(name).setDisplayName(displayName).setMaxQps(maxQps).build();
+        ScanConfig.newBuilder()
+            .setName(name.toString())
+            .setDisplayName(displayName)
+            .setMaxQps(maxQps)
+            .build();
     mockWebSecurityScanner.addResponse(expectedResponse);
 
     ScanConfig scanConfig = ScanConfig.newBuilder().build();
@@ -309,14 +313,14 @@ public class WebSecurityScannerClientTest {
   @Test
   @SuppressWarnings("all")
   public void startScanRunTest() {
-    String name2 = "name2-1052831874";
+    ScanRunName name2 = ScanRunName.of("[PROJECT]", "[SCAN_CONFIG]", "[SCAN_RUN]");
     long urlsCrawledCount = 1749797253L;
     long urlsTestedCount = 1498664068L;
     boolean hasVulnerabilities = false;
     int progressPercent = 2137894861;
     ScanRun expectedResponse =
         ScanRun.newBuilder()
-            .setName(name2)
+            .setName(name2.toString())
             .setUrlsCrawledCount(urlsCrawledCount)
             .setUrlsTestedCount(urlsTestedCount)
             .setHasVulnerabilities(hasVulnerabilities)
@@ -324,17 +328,16 @@ public class WebSecurityScannerClientTest {
             .build();
     mockWebSecurityScanner.addResponse(expectedResponse);
 
-    String formattedName =
-        WebSecurityScannerClient.formatScanConfigName("[PROJECT]", "[SCAN_CONFIG]");
+    ScanConfigName name = ScanConfigName.of("[PROJECT]", "[SCAN_CONFIG]");
 
-    ScanRun actualResponse = client.startScanRun(formattedName);
+    ScanRun actualResponse = client.startScanRun(name);
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<AbstractMessage> actualRequests = mockWebSecurityScanner.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     StartScanRunRequest actualRequest = (StartScanRunRequest) actualRequests.get(0);
 
-    Assert.assertEquals(formattedName, actualRequest.getName());
+    Assert.assertEquals(name, ScanConfigName.parse(actualRequest.getName()));
     Assert.assertTrue(
         channelProvider.isHeaderSent(
             ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
@@ -348,10 +351,9 @@ public class WebSecurityScannerClientTest {
     mockWebSecurityScanner.addException(exception);
 
     try {
-      String formattedName =
-          WebSecurityScannerClient.formatScanConfigName("[PROJECT]", "[SCAN_CONFIG]");
+      ScanConfigName name = ScanConfigName.of("[PROJECT]", "[SCAN_CONFIG]");
 
-      client.startScanRun(formattedName);
+      client.startScanRun(name);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception
@@ -361,14 +363,14 @@ public class WebSecurityScannerClientTest {
   @Test
   @SuppressWarnings("all")
   public void getScanRunTest() {
-    String name2 = "name2-1052831874";
+    ScanRunName name2 = ScanRunName.of("[PROJECT]", "[SCAN_CONFIG]", "[SCAN_RUN]");
     long urlsCrawledCount = 1749797253L;
     long urlsTestedCount = 1498664068L;
     boolean hasVulnerabilities = false;
     int progressPercent = 2137894861;
     ScanRun expectedResponse =
         ScanRun.newBuilder()
-            .setName(name2)
+            .setName(name2.toString())
             .setUrlsCrawledCount(urlsCrawledCount)
             .setUrlsTestedCount(urlsTestedCount)
             .setHasVulnerabilities(hasVulnerabilities)
@@ -376,17 +378,16 @@ public class WebSecurityScannerClientTest {
             .build();
     mockWebSecurityScanner.addResponse(expectedResponse);
 
-    String formattedName =
-        WebSecurityScannerClient.formatScanRunName("[PROJECT]", "[SCAN_CONFIG]", "[SCAN_RUN]");
+    ScanRunName name = ScanRunName.of("[PROJECT]", "[SCAN_CONFIG]", "[SCAN_RUN]");
 
-    ScanRun actualResponse = client.getScanRun(formattedName);
+    ScanRun actualResponse = client.getScanRun(name);
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<AbstractMessage> actualRequests = mockWebSecurityScanner.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     GetScanRunRequest actualRequest = (GetScanRunRequest) actualRequests.get(0);
 
-    Assert.assertEquals(formattedName, actualRequest.getName());
+    Assert.assertEquals(name, ScanRunName.parse(actualRequest.getName()));
     Assert.assertTrue(
         channelProvider.isHeaderSent(
             ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
@@ -400,10 +401,9 @@ public class WebSecurityScannerClientTest {
     mockWebSecurityScanner.addException(exception);
 
     try {
-      String formattedName =
-          WebSecurityScannerClient.formatScanRunName("[PROJECT]", "[SCAN_CONFIG]", "[SCAN_RUN]");
+      ScanRunName name = ScanRunName.of("[PROJECT]", "[SCAN_CONFIG]", "[SCAN_RUN]");
 
-      client.getScanRun(formattedName);
+      client.getScanRun(name);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception
@@ -423,10 +423,9 @@ public class WebSecurityScannerClientTest {
             .build();
     mockWebSecurityScanner.addResponse(expectedResponse);
 
-    String formattedParent =
-        WebSecurityScannerClient.formatScanConfigName("[PROJECT]", "[SCAN_CONFIG]");
+    ScanConfigName parent = ScanConfigName.of("[PROJECT]", "[SCAN_CONFIG]");
 
-    ListScanRunsPagedResponse pagedListResponse = client.listScanRuns(formattedParent);
+    ListScanRunsPagedResponse pagedListResponse = client.listScanRuns(parent);
 
     List<ScanRun> resources = Lists.newArrayList(pagedListResponse.iterateAll());
     Assert.assertEquals(1, resources.size());
@@ -436,7 +435,7 @@ public class WebSecurityScannerClientTest {
     Assert.assertEquals(1, actualRequests.size());
     ListScanRunsRequest actualRequest = (ListScanRunsRequest) actualRequests.get(0);
 
-    Assert.assertEquals(formattedParent, actualRequest.getParent());
+    Assert.assertEquals(parent, ScanConfigName.parse(actualRequest.getParent()));
     Assert.assertTrue(
         channelProvider.isHeaderSent(
             ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
@@ -450,10 +449,9 @@ public class WebSecurityScannerClientTest {
     mockWebSecurityScanner.addException(exception);
 
     try {
-      String formattedParent =
-          WebSecurityScannerClient.formatScanConfigName("[PROJECT]", "[SCAN_CONFIG]");
+      ScanConfigName parent = ScanConfigName.of("[PROJECT]", "[SCAN_CONFIG]");
 
-      client.listScanRuns(formattedParent);
+      client.listScanRuns(parent);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception
@@ -463,14 +461,14 @@ public class WebSecurityScannerClientTest {
   @Test
   @SuppressWarnings("all")
   public void stopScanRunTest() {
-    String name2 = "name2-1052831874";
+    ScanRunName name2 = ScanRunName.of("[PROJECT]", "[SCAN_CONFIG]", "[SCAN_RUN]");
     long urlsCrawledCount = 1749797253L;
     long urlsTestedCount = 1498664068L;
     boolean hasVulnerabilities = false;
     int progressPercent = 2137894861;
     ScanRun expectedResponse =
         ScanRun.newBuilder()
-            .setName(name2)
+            .setName(name2.toString())
             .setUrlsCrawledCount(urlsCrawledCount)
             .setUrlsTestedCount(urlsTestedCount)
             .setHasVulnerabilities(hasVulnerabilities)
@@ -478,17 +476,16 @@ public class WebSecurityScannerClientTest {
             .build();
     mockWebSecurityScanner.addResponse(expectedResponse);
 
-    String formattedName =
-        WebSecurityScannerClient.formatScanRunName("[PROJECT]", "[SCAN_CONFIG]", "[SCAN_RUN]");
+    ScanRunName name = ScanRunName.of("[PROJECT]", "[SCAN_CONFIG]", "[SCAN_RUN]");
 
-    ScanRun actualResponse = client.stopScanRun(formattedName);
+    ScanRun actualResponse = client.stopScanRun(name);
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<AbstractMessage> actualRequests = mockWebSecurityScanner.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     StopScanRunRequest actualRequest = (StopScanRunRequest) actualRequests.get(0);
 
-    Assert.assertEquals(formattedName, actualRequest.getName());
+    Assert.assertEquals(name, ScanRunName.parse(actualRequest.getName()));
     Assert.assertTrue(
         channelProvider.isHeaderSent(
             ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
@@ -502,10 +499,9 @@ public class WebSecurityScannerClientTest {
     mockWebSecurityScanner.addException(exception);
 
     try {
-      String formattedName =
-          WebSecurityScannerClient.formatScanRunName("[PROJECT]", "[SCAN_CONFIG]", "[SCAN_RUN]");
+      ScanRunName name = ScanRunName.of("[PROJECT]", "[SCAN_CONFIG]", "[SCAN_RUN]");
 
-      client.stopScanRun(formattedName);
+      client.stopScanRun(name);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception
@@ -525,10 +521,9 @@ public class WebSecurityScannerClientTest {
             .build();
     mockWebSecurityScanner.addResponse(expectedResponse);
 
-    String formattedParent =
-        WebSecurityScannerClient.formatScanRunName("[PROJECT]", "[SCAN_CONFIG]", "[SCAN_RUN]");
+    ScanRunName parent = ScanRunName.of("[PROJECT]", "[SCAN_CONFIG]", "[SCAN_RUN]");
 
-    ListCrawledUrlsPagedResponse pagedListResponse = client.listCrawledUrls(formattedParent);
+    ListCrawledUrlsPagedResponse pagedListResponse = client.listCrawledUrls(parent);
 
     List<CrawledUrl> resources = Lists.newArrayList(pagedListResponse.iterateAll());
     Assert.assertEquals(1, resources.size());
@@ -538,7 +533,7 @@ public class WebSecurityScannerClientTest {
     Assert.assertEquals(1, actualRequests.size());
     ListCrawledUrlsRequest actualRequest = (ListCrawledUrlsRequest) actualRequests.get(0);
 
-    Assert.assertEquals(formattedParent, actualRequest.getParent());
+    Assert.assertEquals(parent, ScanRunName.parse(actualRequest.getParent()));
     Assert.assertTrue(
         channelProvider.isHeaderSent(
             ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
@@ -552,10 +547,9 @@ public class WebSecurityScannerClientTest {
     mockWebSecurityScanner.addException(exception);
 
     try {
-      String formattedParent =
-          WebSecurityScannerClient.formatScanRunName("[PROJECT]", "[SCAN_CONFIG]", "[SCAN_RUN]");
+      ScanRunName parent = ScanRunName.of("[PROJECT]", "[SCAN_CONFIG]", "[SCAN_RUN]");
 
-      client.listCrawledUrls(formattedParent);
+      client.listCrawledUrls(parent);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception
@@ -565,7 +559,7 @@ public class WebSecurityScannerClientTest {
   @Test
   @SuppressWarnings("all")
   public void getFindingTest() {
-    String name2 = "name2-1052831874";
+    FindingName name2 = FindingName.of("[PROJECT]", "[SCAN_CONFIG]", "[SCAN_RUN]", "[FINDING]");
     String findingType = "findingType274496048";
     String httpMethod = "httpMethod820747384";
     String fuzzedUrl = "fuzzedUrl-2120677666";
@@ -577,7 +571,7 @@ public class WebSecurityScannerClientTest {
     String trackingId = "trackingId1878901667";
     Finding expectedResponse =
         Finding.newBuilder()
-            .setName(name2)
+            .setName(name2.toString())
             .setFindingType(findingType)
             .setHttpMethod(httpMethod)
             .setFuzzedUrl(fuzzedUrl)
@@ -590,18 +584,16 @@ public class WebSecurityScannerClientTest {
             .build();
     mockWebSecurityScanner.addResponse(expectedResponse);
 
-    String formattedName =
-        WebSecurityScannerClient.formatFindingName(
-            "[PROJECT]", "[SCAN_CONFIG]", "[SCAN_RUN]", "[FINDING]");
+    FindingName name = FindingName.of("[PROJECT]", "[SCAN_CONFIG]", "[SCAN_RUN]", "[FINDING]");
 
-    Finding actualResponse = client.getFinding(formattedName);
+    Finding actualResponse = client.getFinding(name);
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<AbstractMessage> actualRequests = mockWebSecurityScanner.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     GetFindingRequest actualRequest = (GetFindingRequest) actualRequests.get(0);
 
-    Assert.assertEquals(formattedName, actualRequest.getName());
+    Assert.assertEquals(name, FindingName.parse(actualRequest.getName()));
     Assert.assertTrue(
         channelProvider.isHeaderSent(
             ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
@@ -615,11 +607,9 @@ public class WebSecurityScannerClientTest {
     mockWebSecurityScanner.addException(exception);
 
     try {
-      String formattedName =
-          WebSecurityScannerClient.formatFindingName(
-              "[PROJECT]", "[SCAN_CONFIG]", "[SCAN_RUN]", "[FINDING]");
+      FindingName name = FindingName.of("[PROJECT]", "[SCAN_CONFIG]", "[SCAN_RUN]", "[FINDING]");
 
-      client.getFinding(formattedName);
+      client.getFinding(name);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception
@@ -639,11 +629,10 @@ public class WebSecurityScannerClientTest {
             .build();
     mockWebSecurityScanner.addResponse(expectedResponse);
 
-    String formattedParent =
-        WebSecurityScannerClient.formatScanRunName("[PROJECT]", "[SCAN_CONFIG]", "[SCAN_RUN]");
+    ScanRunName parent = ScanRunName.of("[PROJECT]", "[SCAN_CONFIG]", "[SCAN_RUN]");
     String filter = "filter-1274492040";
 
-    ListFindingsPagedResponse pagedListResponse = client.listFindings(formattedParent, filter);
+    ListFindingsPagedResponse pagedListResponse = client.listFindings(parent, filter);
 
     List<Finding> resources = Lists.newArrayList(pagedListResponse.iterateAll());
     Assert.assertEquals(1, resources.size());
@@ -653,7 +642,7 @@ public class WebSecurityScannerClientTest {
     Assert.assertEquals(1, actualRequests.size());
     ListFindingsRequest actualRequest = (ListFindingsRequest) actualRequests.get(0);
 
-    Assert.assertEquals(formattedParent, actualRequest.getParent());
+    Assert.assertEquals(parent, ScanRunName.parse(actualRequest.getParent()));
     Assert.assertEquals(filter, actualRequest.getFilter());
     Assert.assertTrue(
         channelProvider.isHeaderSent(
@@ -668,11 +657,10 @@ public class WebSecurityScannerClientTest {
     mockWebSecurityScanner.addException(exception);
 
     try {
-      String formattedParent =
-          WebSecurityScannerClient.formatScanRunName("[PROJECT]", "[SCAN_CONFIG]", "[SCAN_RUN]");
+      ScanRunName parent = ScanRunName.of("[PROJECT]", "[SCAN_CONFIG]", "[SCAN_RUN]");
       String filter = "filter-1274492040";
 
-      client.listFindings(formattedParent, filter);
+      client.listFindings(parent, filter);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception
@@ -686,17 +674,16 @@ public class WebSecurityScannerClientTest {
         ListFindingTypeStatsResponse.newBuilder().build();
     mockWebSecurityScanner.addResponse(expectedResponse);
 
-    String formattedParent =
-        WebSecurityScannerClient.formatScanRunName("[PROJECT]", "[SCAN_CONFIG]", "[SCAN_RUN]");
+    ScanRunName parent = ScanRunName.of("[PROJECT]", "[SCAN_CONFIG]", "[SCAN_RUN]");
 
-    ListFindingTypeStatsResponse actualResponse = client.listFindingTypeStats(formattedParent);
+    ListFindingTypeStatsResponse actualResponse = client.listFindingTypeStats(parent);
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<AbstractMessage> actualRequests = mockWebSecurityScanner.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     ListFindingTypeStatsRequest actualRequest = (ListFindingTypeStatsRequest) actualRequests.get(0);
 
-    Assert.assertEquals(formattedParent, actualRequest.getParent());
+    Assert.assertEquals(parent, ScanRunName.parse(actualRequest.getParent()));
     Assert.assertTrue(
         channelProvider.isHeaderSent(
             ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
@@ -710,10 +697,9 @@ public class WebSecurityScannerClientTest {
     mockWebSecurityScanner.addException(exception);
 
     try {
-      String formattedParent =
-          WebSecurityScannerClient.formatScanRunName("[PROJECT]", "[SCAN_CONFIG]", "[SCAN_RUN]");
+      ScanRunName parent = ScanRunName.of("[PROJECT]", "[SCAN_CONFIG]", "[SCAN_RUN]");
 
-      client.listFindingTypeStats(formattedParent);
+      client.listFindingTypeStats(parent);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception

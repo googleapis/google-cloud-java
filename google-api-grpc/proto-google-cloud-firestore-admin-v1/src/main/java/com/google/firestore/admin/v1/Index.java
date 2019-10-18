@@ -156,6 +156,18 @@ public final class Index extends com.google.protobuf.GeneratedMessageV3
      * <code>COLLECTION = 1;</code>
      */
     COLLECTION(1),
+    /**
+     *
+     *
+     * <pre>
+     * Indexes with a collection group query scope specified allow queries
+     * against all collections that has the collection id specified by the
+     * index.
+     * </pre>
+     *
+     * <code>COLLECTION_GROUP = 2;</code>
+     */
+    COLLECTION_GROUP(2),
     UNRECOGNIZED(-1),
     ;
 
@@ -181,6 +193,18 @@ public final class Index extends com.google.protobuf.GeneratedMessageV3
      * <code>COLLECTION = 1;</code>
      */
     public static final int COLLECTION_VALUE = 1;
+    /**
+     *
+     *
+     * <pre>
+     * Indexes with a collection group query scope specified allow queries
+     * against all collections that has the collection id specified by the
+     * index.
+     * </pre>
+     *
+     * <code>COLLECTION_GROUP = 2;</code>
+     */
+    public static final int COLLECTION_GROUP_VALUE = 2;
 
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
@@ -202,6 +226,8 @@ public final class Index extends com.google.protobuf.GeneratedMessageV3
           return QUERY_SCOPE_UNSPECIFIED;
         case 1:
           return COLLECTION;
+        case 2:
+          return COLLECTION_GROUP;
         default:
           return null;
       }
@@ -1802,8 +1828,7 @@ public final class Index extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only.
-   * A server defined name for this index.
+   * Output only. A server defined name for this index.
    * The form of this name for composite indexes will be:
    * `projects/{project_id}/databases/{database_id}/collectionGroups/{collection_id}/indexes/{composite_index_id}`
    * For single field indexes, this field will be empty.
@@ -1826,8 +1851,7 @@ public final class Index extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only.
-   * A server defined name for this index.
+   * Output only. A server defined name for this index.
    * The form of this name for composite indexes will be:
    * `projects/{project_id}/databases/{database_id}/collectionGroups/{collection_id}/indexes/{composite_index_id}`
    * For single field indexes, this field will be empty.
@@ -1997,8 +2021,7 @@ public final class Index extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only.
-   * The serving state of the index.
+   * Output only. The serving state of the index.
    * </pre>
    *
    * <code>.google.firestore.admin.v1.Index.State state = 4;</code>
@@ -2010,8 +2033,7 @@ public final class Index extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only.
-   * The serving state of the index.
+   * Output only. The serving state of the index.
    * </pre>
    *
    * <code>.google.firestore.admin.v1.Index.State state = 4;</code>
@@ -2434,8 +2456,7 @@ public final class Index extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only.
-     * A server defined name for this index.
+     * Output only. A server defined name for this index.
      * The form of this name for composite indexes will be:
      * `projects/{project_id}/databases/{database_id}/collectionGroups/{collection_id}/indexes/{composite_index_id}`
      * For single field indexes, this field will be empty.
@@ -2458,8 +2479,7 @@ public final class Index extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only.
-     * A server defined name for this index.
+     * Output only. A server defined name for this index.
      * The form of this name for composite indexes will be:
      * `projects/{project_id}/databases/{database_id}/collectionGroups/{collection_id}/indexes/{composite_index_id}`
      * For single field indexes, this field will be empty.
@@ -2482,8 +2502,7 @@ public final class Index extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only.
-     * A server defined name for this index.
+     * Output only. A server defined name for this index.
      * The form of this name for composite indexes will be:
      * `projects/{project_id}/databases/{database_id}/collectionGroups/{collection_id}/indexes/{composite_index_id}`
      * For single field indexes, this field will be empty.
@@ -2504,8 +2523,7 @@ public final class Index extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only.
-     * A server defined name for this index.
+     * Output only. A server defined name for this index.
      * The form of this name for composite indexes will be:
      * `projects/{project_id}/databases/{database_id}/collectionGroups/{collection_id}/indexes/{composite_index_id}`
      * For single field indexes, this field will be empty.
@@ -2523,8 +2541,7 @@ public final class Index extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only.
-     * A server defined name for this index.
+     * Output only. A server defined name for this index.
      * The form of this name for composite indexes will be:
      * `projects/{project_id}/databases/{database_id}/collectionGroups/{collection_id}/indexes/{composite_index_id}`
      * For single field indexes, this field will be empty.
@@ -3143,8 +3160,7 @@ public final class Index extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only.
-     * The serving state of the index.
+     * Output only. The serving state of the index.
      * </pre>
      *
      * <code>.google.firestore.admin.v1.Index.State state = 4;</code>
@@ -3156,8 +3172,7 @@ public final class Index extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only.
-     * The serving state of the index.
+     * Output only. The serving state of the index.
      * </pre>
      *
      * <code>.google.firestore.admin.v1.Index.State state = 4;</code>
@@ -3171,8 +3186,7 @@ public final class Index extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only.
-     * The serving state of the index.
+     * Output only. The serving state of the index.
      * </pre>
      *
      * <code>.google.firestore.admin.v1.Index.State state = 4;</code>
@@ -3187,8 +3201,7 @@ public final class Index extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only.
-     * The serving state of the index.
+     * Output only. The serving state of the index.
      * </pre>
      *
      * <code>.google.firestore.admin.v1.Index.State state = 4;</code>
@@ -3206,8 +3219,7 @@ public final class Index extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only.
-     * The serving state of the index.
+     * Output only. The serving state of the index.
      * </pre>
      *
      * <code>.google.firestore.admin.v1.Index.State state = 4;</code>

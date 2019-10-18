@@ -34,36 +34,39 @@ public final class TaskProto {
   static {
     java.lang.String[] descriptorData = {
       "\n%google/cloud/tasks/v2beta2/task.proto\022"
-          + "\032google.cloud.tasks.v2beta2\032\034google/api/"
-          + "annotations.proto\032\'google/cloud/tasks/v2"
-          + "beta2/target.proto\032\037google/protobuf/time"
-          + "stamp.proto\032\027google/rpc/status.proto\"\276\003\n"
-          + "\004Task\022\014\n\004name\030\001 \001(\t\022S\n\027app_engine_http_r"
-          + "equest\030\003 \001(\01320.google.cloud.tasks.v2beta"
-          + "2.AppEngineHttpRequestH\000\022?\n\014pull_message"
-          + "\030\004 \001(\0132\'.google.cloud.tasks.v2beta2.Pull"
-          + "MessageH\000\0221\n\rschedule_time\030\005 \001(\0132\032.googl"
-          + "e.protobuf.Timestamp\022/\n\013create_time\030\006 \001("
-          + "\0132\032.google.protobuf.Timestamp\0226\n\006status\030"
-          + "\007 \001(\0132&.google.cloud.tasks.v2beta2.TaskS"
-          + "tatus\0223\n\004view\030\010 \001(\0162%.google.cloud.tasks"
-          + ".v2beta2.Task.View\"1\n\004View\022\024\n\020VIEW_UNSPE"
-          + "CIFIED\020\000\022\t\n\005BASIC\020\001\022\010\n\004FULL\020\002B\016\n\014payload"
-          + "_type\"\335\001\n\nTaskStatus\022\036\n\026attempt_dispatch"
-          + "_count\030\001 \001(\005\022\036\n\026attempt_response_count\030\002"
-          + " \001(\005\022G\n\024first_attempt_status\030\003 \001(\0132).goo"
-          + "gle.cloud.tasks.v2beta2.AttemptStatus\022F\n"
-          + "\023last_attempt_status\030\004 \001(\0132).google.clou"
-          + "d.tasks.v2beta2.AttemptStatus\"\325\001\n\rAttemp"
-          + "tStatus\0221\n\rschedule_time\030\001 \001(\0132\032.google."
-          + "protobuf.Timestamp\0221\n\rdispatch_time\030\002 \001("
-          + "\0132\032.google.protobuf.Timestamp\0221\n\rrespons"
-          + "e_time\030\003 \001(\0132\032.google.protobuf.Timestamp"
-          + "\022+\n\017response_status\030\004 \001(\0132\022.google.rpc.S"
-          + "tatusBn\n\036com.google.cloud.tasks.v2beta2B"
-          + "\tTaskProtoP\001Z?google.golang.org/genproto"
-          + "/googleapis/cloud/tasks/v2beta2;tasksb\006p"
-          + "roto3"
+          + "\032google.cloud.tasks.v2beta2\032\031google/api/"
+          + "resource.proto\032\'google/cloud/tasks/v2bet"
+          + "a2/target.proto\032\037google/protobuf/timesta"
+          + "mp.proto\032\027google/rpc/status.proto\032\034googl"
+          + "e/api/annotations.proto\"\250\004\n\004Task\022\014\n\004name"
+          + "\030\001 \001(\t\022S\n\027app_engine_http_request\030\003 \001(\0132"
+          + "0.google.cloud.tasks.v2beta2.AppEngineHt"
+          + "tpRequestH\000\022?\n\014pull_message\030\004 \001(\0132\'.goog"
+          + "le.cloud.tasks.v2beta2.PullMessageH\000\0221\n\r"
+          + "schedule_time\030\005 \001(\0132\032.google.protobuf.Ti"
+          + "mestamp\022/\n\013create_time\030\006 \001(\0132\032.google.pr"
+          + "otobuf.Timestamp\0226\n\006status\030\007 \001(\0132&.googl"
+          + "e.cloud.tasks.v2beta2.TaskStatus\0223\n\004view"
+          + "\030\010 \001(\0162%.google.cloud.tasks.v2beta2.Task"
+          + ".View\"1\n\004View\022\024\n\020VIEW_UNSPECIFIED\020\000\022\t\n\005B"
+          + "ASIC\020\001\022\010\n\004FULL\020\002:h\352Ae\n\036cloudtasks.google"
+          + "apis.com/Task\022Cprojects/{project}/locati"
+          + "ons/{location}/queues/{queue}/tasks/{tas"
+          + "k}B\016\n\014payload_type\"\335\001\n\nTaskStatus\022\036\n\026att"
+          + "empt_dispatch_count\030\001 \001(\005\022\036\n\026attempt_res"
+          + "ponse_count\030\002 \001(\005\022G\n\024first_attempt_statu"
+          + "s\030\003 \001(\0132).google.cloud.tasks.v2beta2.Att"
+          + "emptStatus\022F\n\023last_attempt_status\030\004 \001(\0132"
+          + ").google.cloud.tasks.v2beta2.AttemptStat"
+          + "us\"\325\001\n\rAttemptStatus\0221\n\rschedule_time\030\001 "
+          + "\001(\0132\032.google.protobuf.Timestamp\0221\n\rdispa"
+          + "tch_time\030\002 \001(\0132\032.google.protobuf.Timesta"
+          + "mp\0221\n\rresponse_time\030\003 \001(\0132\032.google.proto"
+          + "buf.Timestamp\022+\n\017response_status\030\004 \001(\0132\022"
+          + ".google.rpc.StatusBn\n\036com.google.cloud.t"
+          + "asks.v2beta2B\tTaskProtoP\001Z?google.golang"
+          + ".org/genproto/googleapis/cloud/tasks/v2b"
+          + "eta2;tasksb\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner() {
@@ -76,10 +79,11 @@ public final class TaskProto {
     com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
         descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
-          com.google.api.AnnotationsProto.getDescriptor(),
+          com.google.api.ResourceProto.getDescriptor(),
           com.google.cloud.tasks.v2beta2.TargetProto.getDescriptor(),
           com.google.protobuf.TimestampProto.getDescriptor(),
           com.google.rpc.StatusProto.getDescriptor(),
+          com.google.api.AnnotationsProto.getDescriptor(),
         },
         assigner);
     internal_static_google_cloud_tasks_v2beta2_Task_descriptor =
@@ -116,10 +120,16 @@ public final class TaskProto {
             new java.lang.String[] {
               "ScheduleTime", "DispatchTime", "ResponseTime", "ResponseStatus",
             });
-    com.google.api.AnnotationsProto.getDescriptor();
+    com.google.protobuf.ExtensionRegistry registry =
+        com.google.protobuf.ExtensionRegistry.newInstance();
+    registry.add(com.google.api.ResourceProto.resource);
+    com.google.protobuf.Descriptors.FileDescriptor.internalUpdateFileDescriptor(
+        descriptor, registry);
+    com.google.api.ResourceProto.getDescriptor();
     com.google.cloud.tasks.v2beta2.TargetProto.getDescriptor();
     com.google.protobuf.TimestampProto.getDescriptor();
     com.google.rpc.StatusProto.getDescriptor();
+    com.google.api.AnnotationsProto.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

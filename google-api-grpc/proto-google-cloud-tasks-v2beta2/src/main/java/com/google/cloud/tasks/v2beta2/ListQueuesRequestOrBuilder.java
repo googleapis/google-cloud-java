@@ -12,24 +12,26 @@ public interface ListQueuesRequestOrBuilder
    *
    *
    * <pre>
-   * Required.
-   * The location name.
+   * Required. The location name.
    * For example: `projects/PROJECT_ID/locations/LOCATION_ID`
    * </pre>
    *
-   * <code>string parent = 1;</code>
+   * <code>
+   * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    */
   java.lang.String getParent();
   /**
    *
    *
    * <pre>
-   * Required.
-   * The location name.
+   * Required. The location name.
    * For example: `projects/PROJECT_ID/locations/LOCATION_ID`
    * </pre>
    *
-   * <code>string parent = 1;</code>
+   * <code>
+   * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    */
   com.google.protobuf.ByteString getParentBytes();
 
@@ -37,10 +39,11 @@ public interface ListQueuesRequestOrBuilder
    *
    *
    * <pre>
-   * `filter` can be used to specify a subset of queues. Any
-   * [Queue][google.cloud.tasks.v2beta2.Queue] field can be used as a filter and
-   * several operators as supported. For example: `&lt;=, &lt;, &gt;=, &gt;, !=, =, :`. The
-   * filter syntax is the same as described in [Stackdriver's Advanced Logs
+   * `filter` can be used to specify a subset of queues. Any [Queue][google.cloud.tasks.v2beta2.Queue]
+   * field can be used as a filter and several operators as supported.
+   * For example: `&lt;=, &lt;, &gt;=, &gt;, !=, =, :`. The filter syntax is the same as
+   * described in
+   * [Stackdriver's Advanced Logs
    * Filters](https://cloud.google.com/logging/docs/view/advanced_filters).
    * Sample filter "app_engine_http_target: *".
    * Note that using filters might cause fewer queues than the
@@ -54,10 +57,11 @@ public interface ListQueuesRequestOrBuilder
    *
    *
    * <pre>
-   * `filter` can be used to specify a subset of queues. Any
-   * [Queue][google.cloud.tasks.v2beta2.Queue] field can be used as a filter and
-   * several operators as supported. For example: `&lt;=, &lt;, &gt;=, &gt;, !=, =, :`. The
-   * filter syntax is the same as described in [Stackdriver's Advanced Logs
+   * `filter` can be used to specify a subset of queues. Any [Queue][google.cloud.tasks.v2beta2.Queue]
+   * field can be used as a filter and several operators as supported.
+   * For example: `&lt;=, &lt;, &gt;=, &gt;, !=, =, :`. The filter syntax is the same as
+   * described in
+   * [Stackdriver's Advanced Logs
    * Filters](https://cloud.google.com/logging/docs/view/advanced_filters).
    * Sample filter "app_engine_http_target: *".
    * Note that using filters might cause fewer queues than the
@@ -76,8 +80,8 @@ public interface ListQueuesRequestOrBuilder
    * The maximum page size is 9800. If unspecified, the page size will
    * be the maximum. Fewer queues than requested might be returned,
    * even if more queues exist; use the
-   * [next_page_token][google.cloud.tasks.v2beta2.ListQueuesResponse.next_page_token]
-   * in the response to determine if more queues exist.
+   * [next_page_token][google.cloud.tasks.v2beta2.ListQueuesResponse.next_page_token] in the
+   * response to determine if more queues exist.
    * </pre>
    *
    * <code>int32 page_size = 3;</code>
@@ -91,12 +95,10 @@ public interface ListQueuesRequestOrBuilder
    * A token identifying the page of results to return.
    * To request the first page results, page_token must be empty. To
    * request the next page of results, page_token must be the value of
-   * [next_page_token][google.cloud.tasks.v2beta2.ListQueuesResponse.next_page_token]
-   * returned from the previous call to
-   * [ListQueues][google.cloud.tasks.v2beta2.CloudTasks.ListQueues] method. It
-   * is an error to switch the value of the
-   * [filter][google.cloud.tasks.v2beta2.ListQueuesRequest.filter] while
-   * iterating through pages.
+   * [next_page_token][google.cloud.tasks.v2beta2.ListQueuesResponse.next_page_token] returned
+   * from the previous call to [ListQueues][google.cloud.tasks.v2beta2.CloudTasks.ListQueues]
+   * method. It is an error to switch the value of the
+   * [filter][google.cloud.tasks.v2beta2.ListQueuesRequest.filter] while iterating through pages.
    * </pre>
    *
    * <code>string page_token = 4;</code>
@@ -109,12 +111,10 @@ public interface ListQueuesRequestOrBuilder
    * A token identifying the page of results to return.
    * To request the first page results, page_token must be empty. To
    * request the next page of results, page_token must be the value of
-   * [next_page_token][google.cloud.tasks.v2beta2.ListQueuesResponse.next_page_token]
-   * returned from the previous call to
-   * [ListQueues][google.cloud.tasks.v2beta2.CloudTasks.ListQueues] method. It
-   * is an error to switch the value of the
-   * [filter][google.cloud.tasks.v2beta2.ListQueuesRequest.filter] while
-   * iterating through pages.
+   * [next_page_token][google.cloud.tasks.v2beta2.ListQueuesResponse.next_page_token] returned
+   * from the previous call to [ListQueues][google.cloud.tasks.v2beta2.CloudTasks.ListQueues]
+   * method. It is an error to switch the value of the
+   * [filter][google.cloud.tasks.v2beta2.ListQueuesRequest.filter] while iterating through pages.
    * </pre>
    *
    * <code>string page_token = 4;</code>

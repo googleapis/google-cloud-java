@@ -14,6 +14,7 @@ Contents
  * [google-cloud-nio](./google-cloud-nio/): NIO Filesystem Provider for Google Cloud Storage.
  * [google-cloud-nio-examples](./google-cloud-nio-examples/): How to add Google Cloud Storage NIO after the fact.
  * [google-cloud-notification](./google-cloud-notification/): Google Cloud Java Client for Cloud Pub/Sub Notifications
+ * [google-cloud-spanner-jdbc](./google-cloud-spanner-jdbc/): JDBC Driver for Google Cloud Spanner
 
 Java Versions
 -------------

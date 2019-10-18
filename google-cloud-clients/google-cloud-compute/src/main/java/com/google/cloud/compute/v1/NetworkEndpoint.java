@@ -86,10 +86,10 @@ public final class NetworkEndpoint implements ApiMessage {
   }
 
   /**
-   * Optional IPv4 address of network endpoint. The IP address must belong to a VM in GCE (either
-   * the primary IP or as part of an aliased IP range). If the IP address is not specified, then the
-   * primary IP address for the VM instance in the network that the network endpoint group belongs
-   * to will be used.
+   * Optional IPv4 address of network endpoint. The IP address must belong to a VM in Compute Engine
+   * (either the primary IP or as part of an aliased IP range). If the IP address is not specified,
+   * then the primary IP address for the VM instance in the network that the network endpoint group
+   * belongs to will be used.
    */
   public String getIpAddress() {
     return ipAddress;
@@ -177,20 +177,20 @@ public final class NetworkEndpoint implements ApiMessage {
     }
 
     /**
-     * Optional IPv4 address of network endpoint. The IP address must belong to a VM in GCE (either
-     * the primary IP or as part of an aliased IP range). If the IP address is not specified, then
-     * the primary IP address for the VM instance in the network that the network endpoint group
-     * belongs to will be used.
+     * Optional IPv4 address of network endpoint. The IP address must belong to a VM in Compute
+     * Engine (either the primary IP or as part of an aliased IP range). If the IP address is not
+     * specified, then the primary IP address for the VM instance in the network that the network
+     * endpoint group belongs to will be used.
      */
     public String getIpAddress() {
       return ipAddress;
     }
 
     /**
-     * Optional IPv4 address of network endpoint. The IP address must belong to a VM in GCE (either
-     * the primary IP or as part of an aliased IP range). If the IP address is not specified, then
-     * the primary IP address for the VM instance in the network that the network endpoint group
-     * belongs to will be used.
+     * Optional IPv4 address of network endpoint. The IP address must belong to a VM in Compute
+     * Engine (either the primary IP or as part of an aliased IP range). If the IP address is not
+     * specified, then the primary IP address for the VM instance in the network that the network
+     * endpoint group belongs to will be used.
      */
     public Builder setIpAddress(String ipAddress) {
       this.ipAddress = ipAddress;

@@ -13,9 +13,11 @@ public interface ExecuteBatchDmlResponseOrBuilder
    *
    * <pre>
    * ResultSets, one for each statement in the request that ran successfully, in
-   * the same order as the statements in the request. Each [ResultSet][google.spanner.v1.ResultSet] will
-   * not contain any rows. The [ResultSetStats][google.spanner.v1.ResultSetStats] in each [ResultSet][google.spanner.v1.ResultSet] will
-   * contain the number of rows modified by the statement.
+   * the same order as the statements in the request. Each
+   * [ResultSet][google.spanner.v1.ResultSet] will not contain any rows. The
+   * [ResultSetStats][google.spanner.v1.ResultSetStats] in each
+   * [ResultSet][google.spanner.v1.ResultSet] will contain the number of rows
+   * modified by the statement.
    * Only the first ResultSet in the response contains a valid
    * [ResultSetMetadata][google.spanner.v1.ResultSetMetadata].
    * </pre>
@@ -28,9 +30,11 @@ public interface ExecuteBatchDmlResponseOrBuilder
    *
    * <pre>
    * ResultSets, one for each statement in the request that ran successfully, in
-   * the same order as the statements in the request. Each [ResultSet][google.spanner.v1.ResultSet] will
-   * not contain any rows. The [ResultSetStats][google.spanner.v1.ResultSetStats] in each [ResultSet][google.spanner.v1.ResultSet] will
-   * contain the number of rows modified by the statement.
+   * the same order as the statements in the request. Each
+   * [ResultSet][google.spanner.v1.ResultSet] will not contain any rows. The
+   * [ResultSetStats][google.spanner.v1.ResultSetStats] in each
+   * [ResultSet][google.spanner.v1.ResultSet] will contain the number of rows
+   * modified by the statement.
    * Only the first ResultSet in the response contains a valid
    * [ResultSetMetadata][google.spanner.v1.ResultSetMetadata].
    * </pre>
@@ -43,9 +47,11 @@ public interface ExecuteBatchDmlResponseOrBuilder
    *
    * <pre>
    * ResultSets, one for each statement in the request that ran successfully, in
-   * the same order as the statements in the request. Each [ResultSet][google.spanner.v1.ResultSet] will
-   * not contain any rows. The [ResultSetStats][google.spanner.v1.ResultSetStats] in each [ResultSet][google.spanner.v1.ResultSet] will
-   * contain the number of rows modified by the statement.
+   * the same order as the statements in the request. Each
+   * [ResultSet][google.spanner.v1.ResultSet] will not contain any rows. The
+   * [ResultSetStats][google.spanner.v1.ResultSetStats] in each
+   * [ResultSet][google.spanner.v1.ResultSet] will contain the number of rows
+   * modified by the statement.
    * Only the first ResultSet in the response contains a valid
    * [ResultSetMetadata][google.spanner.v1.ResultSetMetadata].
    * </pre>
@@ -58,9 +64,11 @@ public interface ExecuteBatchDmlResponseOrBuilder
    *
    * <pre>
    * ResultSets, one for each statement in the request that ran successfully, in
-   * the same order as the statements in the request. Each [ResultSet][google.spanner.v1.ResultSet] will
-   * not contain any rows. The [ResultSetStats][google.spanner.v1.ResultSetStats] in each [ResultSet][google.spanner.v1.ResultSet] will
-   * contain the number of rows modified by the statement.
+   * the same order as the statements in the request. Each
+   * [ResultSet][google.spanner.v1.ResultSet] will not contain any rows. The
+   * [ResultSetStats][google.spanner.v1.ResultSetStats] in each
+   * [ResultSet][google.spanner.v1.ResultSet] will contain the number of rows
+   * modified by the statement.
    * Only the first ResultSet in the response contains a valid
    * [ResultSetMetadata][google.spanner.v1.ResultSetMetadata].
    * </pre>
@@ -73,9 +81,11 @@ public interface ExecuteBatchDmlResponseOrBuilder
    *
    * <pre>
    * ResultSets, one for each statement in the request that ran successfully, in
-   * the same order as the statements in the request. Each [ResultSet][google.spanner.v1.ResultSet] will
-   * not contain any rows. The [ResultSetStats][google.spanner.v1.ResultSetStats] in each [ResultSet][google.spanner.v1.ResultSet] will
-   * contain the number of rows modified by the statement.
+   * the same order as the statements in the request. Each
+   * [ResultSet][google.spanner.v1.ResultSet] will not contain any rows. The
+   * [ResultSetStats][google.spanner.v1.ResultSetStats] in each
+   * [ResultSet][google.spanner.v1.ResultSet] will contain the number of rows
+   * modified by the statement.
    * Only the first ResultSet in the response contains a valid
    * [ResultSetMetadata][google.spanner.v1.ResultSetMetadata].
    * </pre>

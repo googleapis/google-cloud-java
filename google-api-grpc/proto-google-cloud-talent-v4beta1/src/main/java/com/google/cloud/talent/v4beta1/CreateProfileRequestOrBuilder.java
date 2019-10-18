@@ -13,11 +13,11 @@ public interface CreateProfileRequestOrBuilder
    *
    * <pre>
    * Required. The name of the tenant this profile belongs to.
-   * The format is "projects/{project_id}/tenants/{tenant_id}", for example,
-   * "projects/api-test-project/tenants/foo".
+   * The format is "projects/{project_id}/tenants/{tenant_id}". For example,
+   * "projects/foo/tenants/bar".
    * </pre>
    *
-   * <code>string parent = 1;</code>
+   * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   java.lang.String getParent();
   /**
@@ -25,11 +25,11 @@ public interface CreateProfileRequestOrBuilder
    *
    * <pre>
    * Required. The name of the tenant this profile belongs to.
-   * The format is "projects/{project_id}/tenants/{tenant_id}", for example,
-   * "projects/api-test-project/tenants/foo".
+   * The format is "projects/{project_id}/tenants/{tenant_id}". For example,
+   * "projects/foo/tenants/bar".
    * </pre>
    *
-   * <code>string parent = 1;</code>
+   * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   com.google.protobuf.ByteString getParentBytes();
 
@@ -40,7 +40,9 @@ public interface CreateProfileRequestOrBuilder
    * Required. The profile to be created.
    * </pre>
    *
-   * <code>.google.cloud.talent.v4beta1.Profile profile = 2;</code>
+   * <code>
+   * .google.cloud.talent.v4beta1.Profile profile = 2 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   boolean hasProfile();
   /**
@@ -50,7 +52,9 @@ public interface CreateProfileRequestOrBuilder
    * Required. The profile to be created.
    * </pre>
    *
-   * <code>.google.cloud.talent.v4beta1.Profile profile = 2;</code>
+   * <code>
+   * .google.cloud.talent.v4beta1.Profile profile = 2 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   com.google.cloud.talent.v4beta1.Profile getProfile();
   /**
@@ -60,7 +64,9 @@ public interface CreateProfileRequestOrBuilder
    * Required. The profile to be created.
    * </pre>
    *
-   * <code>.google.cloud.talent.v4beta1.Profile profile = 2;</code>
+   * <code>
+   * .google.cloud.talent.v4beta1.Profile profile = 2 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   com.google.cloud.talent.v4beta1.ProfileOrBuilder getProfileOrBuilder();
 }

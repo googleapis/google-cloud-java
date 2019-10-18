@@ -30,8 +30,10 @@ import com.google.cloud.spanner.ResultSet;
 import com.google.cloud.spanner.Spanner;
 import com.google.cloud.spanner.SpannerOptions;
 import com.google.cloud.spanner.Statement;
+import com.google.common.base.Stopwatch;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.concurrent.TimeUnit;
 import java.util.regex.Pattern;
 import org.junit.After;
 import org.junit.Before;
@@ -131,7 +133,11 @@ public class ITSpannerOptionsTest {
       // Now close the Spanner instance and check whether the threads are shutdown or not.
       spanner.close();
       // Wait a little to allow the threads to actually shutdown.
-      Thread.sleep(200L);
+      Stopwatch watch = Stopwatch.createStarted();
+      while (getNumberOfThreadsWithName(SPANNER_THREAD_NAME) > baseThreadCount
+          && watch.elapsed(TimeUnit.SECONDS) < 2) {
+        Thread.sleep(50L);
+      }
       assertThat(getNumberOfThreadsWithName(SPANNER_THREAD_NAME), is(equalTo(baseThreadCount)));
     }
   }
@@ -161,7 +167,11 @@ public class ITSpannerOptionsTest {
         }
       }
     }
-    Thread.sleep(200L);
+    Stopwatch watch = Stopwatch.createStarted();
+    while (getNumberOfThreadsWithName(SPANNER_THREAD_NAME) > baseThreadCount
+        && watch.elapsed(TimeUnit.SECONDS) < 2) {
+      Thread.sleep(50L);
+    }
     assertThat(getNumberOfThreadsWithName(SPANNER_THREAD_NAME), is(equalTo(baseThreadCount)));
   }
 

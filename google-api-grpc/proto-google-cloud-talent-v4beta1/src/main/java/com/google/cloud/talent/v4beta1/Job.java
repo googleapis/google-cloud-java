@@ -499,7 +499,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Use this field to specify email address(es) to which resumes or
+     * Use this field to specify email address(es) to which resumes or
      * applications can be sent.
      * The maximum number of allowed characters for each entry is 255.
      * </pre>
@@ -511,7 +511,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Use this field to specify email address(es) to which resumes or
+     * Use this field to specify email address(es) to which resumes or
      * applications can be sent.
      * The maximum number of allowed characters for each entry is 255.
      * </pre>
@@ -523,7 +523,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Use this field to specify email address(es) to which resumes or
+     * Use this field to specify email address(es) to which resumes or
      * applications can be sent.
      * The maximum number of allowed characters for each entry is 255.
      * </pre>
@@ -535,7 +535,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Use this field to specify email address(es) to which resumes or
+     * Use this field to specify email address(es) to which resumes or
      * applications can be sent.
      * The maximum number of allowed characters for each entry is 255.
      * </pre>
@@ -548,8 +548,8 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Use this field to provide instructions, such as "Mail your
-     * application to ...", that a candidate can follow to apply for the job.
+     * Use this field to provide instructions, such as "Mail your application
+     * to ...", that a candidate can follow to apply for the job.
      * This field accepts and sanitizes HTML input, and also accepts
      * bold, italic, ordered list, and unordered list markup tags.
      * The maximum number of allowed characters is 3,000.
@@ -562,8 +562,8 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Use this field to provide instructions, such as "Mail your
-     * application to ...", that a candidate can follow to apply for the job.
+     * Use this field to provide instructions, such as "Mail your application
+     * to ...", that a candidate can follow to apply for the job.
      * This field accepts and sanitizes HTML input, and also accepts
      * bold, italic, ordered list, and unordered list markup tags.
      * The maximum number of allowed characters is 3,000.
@@ -577,8 +577,8 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Use this URI field to direct an applicant to a website, for
-     * example to link to an online application form.
+     * Use this URI field to direct an applicant to a website, for example to
+     * link to an online application form.
      * The maximum number of allowed characters for each entry is 2,000.
      * </pre>
      *
@@ -589,8 +589,8 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Use this URI field to direct an applicant to a website, for
-     * example to link to an online application form.
+     * Use this URI field to direct an applicant to a website, for example to
+     * link to an online application form.
      * The maximum number of allowed characters for each entry is 2,000.
      * </pre>
      *
@@ -601,8 +601,8 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Use this URI field to direct an applicant to a website, for
-     * example to link to an online application form.
+     * Use this URI field to direct an applicant to a website, for example to
+     * link to an online application form.
      * The maximum number of allowed characters for each entry is 2,000.
      * </pre>
      *
@@ -613,8 +613,8 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Use this URI field to direct an applicant to a website, for
-     * example to link to an online application form.
+     * Use this URI field to direct an applicant to a website, for example to
+     * link to an online application form.
      * The maximum number of allowed characters for each entry is 2,000.
      * </pre>
      *
@@ -745,7 +745,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Use this field to specify email address(es) to which resumes or
+     * Use this field to specify email address(es) to which resumes or
      * applications can be sent.
      * The maximum number of allowed characters for each entry is 255.
      * </pre>
@@ -759,7 +759,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Use this field to specify email address(es) to which resumes or
+     * Use this field to specify email address(es) to which resumes or
      * applications can be sent.
      * The maximum number of allowed characters for each entry is 255.
      * </pre>
@@ -773,7 +773,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Use this field to specify email address(es) to which resumes or
+     * Use this field to specify email address(es) to which resumes or
      * applications can be sent.
      * The maximum number of allowed characters for each entry is 255.
      * </pre>
@@ -787,7 +787,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Use this field to specify email address(es) to which resumes or
+     * Use this field to specify email address(es) to which resumes or
      * applications can be sent.
      * The maximum number of allowed characters for each entry is 255.
      * </pre>
@@ -804,8 +804,8 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Use this field to provide instructions, such as "Mail your
-     * application to ...", that a candidate can follow to apply for the job.
+     * Use this field to provide instructions, such as "Mail your application
+     * to ...", that a candidate can follow to apply for the job.
      * This field accepts and sanitizes HTML input, and also accepts
      * bold, italic, ordered list, and unordered list markup tags.
      * The maximum number of allowed characters is 3,000.
@@ -828,8 +828,8 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Use this field to provide instructions, such as "Mail your
-     * application to ...", that a candidate can follow to apply for the job.
+     * Use this field to provide instructions, such as "Mail your application
+     * to ...", that a candidate can follow to apply for the job.
      * This field accepts and sanitizes HTML input, and also accepts
      * bold, italic, ordered list, and unordered list markup tags.
      * The maximum number of allowed characters is 3,000.
@@ -855,8 +855,8 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Use this URI field to direct an applicant to a website, for
-     * example to link to an online application form.
+     * Use this URI field to direct an applicant to a website, for example to
+     * link to an online application form.
      * The maximum number of allowed characters for each entry is 2,000.
      * </pre>
      *
@@ -869,8 +869,8 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Use this URI field to direct an applicant to a website, for
-     * example to link to an online application form.
+     * Use this URI field to direct an applicant to a website, for example to
+     * link to an online application form.
      * The maximum number of allowed characters for each entry is 2,000.
      * </pre>
      *
@@ -883,8 +883,8 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Use this URI field to direct an applicant to a website, for
-     * example to link to an online application form.
+     * Use this URI field to direct an applicant to a website, for example to
+     * link to an online application form.
      * The maximum number of allowed characters for each entry is 2,000.
      * </pre>
      *
@@ -897,8 +897,8 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Use this URI field to direct an applicant to a website, for
-     * example to link to an online application form.
+     * Use this URI field to direct an applicant to a website, for example to
+     * link to an online application form.
      * The maximum number of allowed characters for each entry is 2,000.
      * </pre>
      *
@@ -1315,7 +1315,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Optional. Use this field to specify email address(es) to which resumes or
+       * Use this field to specify email address(es) to which resumes or
        * applications can be sent.
        * The maximum number of allowed characters for each entry is 255.
        * </pre>
@@ -1329,7 +1329,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Optional. Use this field to specify email address(es) to which resumes or
+       * Use this field to specify email address(es) to which resumes or
        * applications can be sent.
        * The maximum number of allowed characters for each entry is 255.
        * </pre>
@@ -1343,7 +1343,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Optional. Use this field to specify email address(es) to which resumes or
+       * Use this field to specify email address(es) to which resumes or
        * applications can be sent.
        * The maximum number of allowed characters for each entry is 255.
        * </pre>
@@ -1357,7 +1357,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Optional. Use this field to specify email address(es) to which resumes or
+       * Use this field to specify email address(es) to which resumes or
        * applications can be sent.
        * The maximum number of allowed characters for each entry is 255.
        * </pre>
@@ -1371,7 +1371,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Optional. Use this field to specify email address(es) to which resumes or
+       * Use this field to specify email address(es) to which resumes or
        * applications can be sent.
        * The maximum number of allowed characters for each entry is 255.
        * </pre>
@@ -1391,7 +1391,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Optional. Use this field to specify email address(es) to which resumes or
+       * Use this field to specify email address(es) to which resumes or
        * applications can be sent.
        * The maximum number of allowed characters for each entry is 255.
        * </pre>
@@ -1411,7 +1411,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Optional. Use this field to specify email address(es) to which resumes or
+       * Use this field to specify email address(es) to which resumes or
        * applications can be sent.
        * The maximum number of allowed characters for each entry is 255.
        * </pre>
@@ -1428,7 +1428,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Optional. Use this field to specify email address(es) to which resumes or
+       * Use this field to specify email address(es) to which resumes or
        * applications can be sent.
        * The maximum number of allowed characters for each entry is 255.
        * </pre>
@@ -1445,7 +1445,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Optional. Use this field to specify email address(es) to which resumes or
+       * Use this field to specify email address(es) to which resumes or
        * applications can be sent.
        * The maximum number of allowed characters for each entry is 255.
        * </pre>
@@ -1468,8 +1468,8 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Optional. Use this field to provide instructions, such as "Mail your
-       * application to ...", that a candidate can follow to apply for the job.
+       * Use this field to provide instructions, such as "Mail your application
+       * to ...", that a candidate can follow to apply for the job.
        * This field accepts and sanitizes HTML input, and also accepts
        * bold, italic, ordered list, and unordered list markup tags.
        * The maximum number of allowed characters is 3,000.
@@ -1492,8 +1492,8 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Optional. Use this field to provide instructions, such as "Mail your
-       * application to ...", that a candidate can follow to apply for the job.
+       * Use this field to provide instructions, such as "Mail your application
+       * to ...", that a candidate can follow to apply for the job.
        * This field accepts and sanitizes HTML input, and also accepts
        * bold, italic, ordered list, and unordered list markup tags.
        * The maximum number of allowed characters is 3,000.
@@ -1516,8 +1516,8 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Optional. Use this field to provide instructions, such as "Mail your
-       * application to ...", that a candidate can follow to apply for the job.
+       * Use this field to provide instructions, such as "Mail your application
+       * to ...", that a candidate can follow to apply for the job.
        * This field accepts and sanitizes HTML input, and also accepts
        * bold, italic, ordered list, and unordered list markup tags.
        * The maximum number of allowed characters is 3,000.
@@ -1538,8 +1538,8 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Optional. Use this field to provide instructions, such as "Mail your
-       * application to ...", that a candidate can follow to apply for the job.
+       * Use this field to provide instructions, such as "Mail your application
+       * to ...", that a candidate can follow to apply for the job.
        * This field accepts and sanitizes HTML input, and also accepts
        * bold, italic, ordered list, and unordered list markup tags.
        * The maximum number of allowed characters is 3,000.
@@ -1557,8 +1557,8 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Optional. Use this field to provide instructions, such as "Mail your
-       * application to ...", that a candidate can follow to apply for the job.
+       * Use this field to provide instructions, such as "Mail your application
+       * to ...", that a candidate can follow to apply for the job.
        * This field accepts and sanitizes HTML input, and also accepts
        * bold, italic, ordered list, and unordered list markup tags.
        * The maximum number of allowed characters is 3,000.
@@ -1590,8 +1590,8 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Optional. Use this URI field to direct an applicant to a website, for
-       * example to link to an online application form.
+       * Use this URI field to direct an applicant to a website, for example to
+       * link to an online application form.
        * The maximum number of allowed characters for each entry is 2,000.
        * </pre>
        *
@@ -1604,8 +1604,8 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Optional. Use this URI field to direct an applicant to a website, for
-       * example to link to an online application form.
+       * Use this URI field to direct an applicant to a website, for example to
+       * link to an online application form.
        * The maximum number of allowed characters for each entry is 2,000.
        * </pre>
        *
@@ -1618,8 +1618,8 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Optional. Use this URI field to direct an applicant to a website, for
-       * example to link to an online application form.
+       * Use this URI field to direct an applicant to a website, for example to
+       * link to an online application form.
        * The maximum number of allowed characters for each entry is 2,000.
        * </pre>
        *
@@ -1632,8 +1632,8 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Optional. Use this URI field to direct an applicant to a website, for
-       * example to link to an online application form.
+       * Use this URI field to direct an applicant to a website, for example to
+       * link to an online application form.
        * The maximum number of allowed characters for each entry is 2,000.
        * </pre>
        *
@@ -1646,8 +1646,8 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Optional. Use this URI field to direct an applicant to a website, for
-       * example to link to an online application form.
+       * Use this URI field to direct an applicant to a website, for example to
+       * link to an online application form.
        * The maximum number of allowed characters for each entry is 2,000.
        * </pre>
        *
@@ -1666,8 +1666,8 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Optional. Use this URI field to direct an applicant to a website, for
-       * example to link to an online application form.
+       * Use this URI field to direct an applicant to a website, for example to
+       * link to an online application form.
        * The maximum number of allowed characters for each entry is 2,000.
        * </pre>
        *
@@ -1686,8 +1686,8 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Optional. Use this URI field to direct an applicant to a website, for
-       * example to link to an online application form.
+       * Use this URI field to direct an applicant to a website, for example to
+       * link to an online application form.
        * The maximum number of allowed characters for each entry is 2,000.
        * </pre>
        *
@@ -1703,8 +1703,8 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Optional. Use this URI field to direct an applicant to a website, for
-       * example to link to an online application form.
+       * Use this URI field to direct an applicant to a website, for example to
+       * link to an online application form.
        * The maximum number of allowed characters for each entry is 2,000.
        * </pre>
        *
@@ -1720,8 +1720,8 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Optional. Use this URI field to direct an applicant to a website, for
-       * example to link to an online application form.
+       * Use this URI field to direct an applicant to a website, for example to
+       * link to an online application form.
        * The maximum number of allowed characters for each entry is 2,000.
        * </pre>
        *
@@ -1937,7 +1937,6 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only.
    * Derived details about the job posting.
    * </pre>
    *
@@ -2430,7 +2429,6 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only.
      * Derived details about the job posting.
      * </pre>
      *
@@ -3360,7 +3358,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. If set to `true`, the service does not attempt to resolve a
+     * If set to `true`, the service does not attempt to resolve a
      * more precise address for the job.
      * </pre>
      *
@@ -3372,7 +3370,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Option for job HTML content sanitization. Applied fields are:
+     * Option for job HTML content sanitization. Applied fields are:
      * * description
      * * applicationInfo.instruction
      * * incentives
@@ -3391,7 +3389,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Option for job HTML content sanitization. Applied fields are:
+     * Option for job HTML content sanitization. Applied fields are:
      * * description
      * * applicationInfo.instruction
      * * incentives
@@ -3411,7 +3409,6 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Input only.
    * Options for job processing.
    * </pre>
    *
@@ -3507,7 +3504,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. If set to `true`, the service does not attempt to resolve a
+     * If set to `true`, the service does not attempt to resolve a
      * more precise address for the job.
      * </pre>
      *
@@ -3523,7 +3520,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Option for job HTML content sanitization. Applied fields are:
+     * Option for job HTML content sanitization. Applied fields are:
      * * description
      * * applicationInfo.instruction
      * * incentives
@@ -3544,7 +3541,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Option for job HTML content sanitization. Applied fields are:
+     * Option for job HTML content sanitization. Applied fields are:
      * * description
      * * applicationInfo.instruction
      * * incentives
@@ -3750,7 +3747,6 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Input only.
      * Options for job processing.
      * </pre>
      *
@@ -3919,7 +3915,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Optional. If set to `true`, the service does not attempt to resolve a
+       * If set to `true`, the service does not attempt to resolve a
        * more precise address for the job.
        * </pre>
        *
@@ -3932,7 +3928,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Optional. If set to `true`, the service does not attempt to resolve a
+       * If set to `true`, the service does not attempt to resolve a
        * more precise address for the job.
        * </pre>
        *
@@ -3948,7 +3944,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Optional. If set to `true`, the service does not attempt to resolve a
+       * If set to `true`, the service does not attempt to resolve a
        * more precise address for the job.
        * </pre>
        *
@@ -3966,7 +3962,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Optional. Option for job HTML content sanitization. Applied fields are:
+       * Option for job HTML content sanitization. Applied fields are:
        * * description
        * * applicationInfo.instruction
        * * incentives
@@ -3987,7 +3983,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Optional. Option for job HTML content sanitization. Applied fields are:
+       * Option for job HTML content sanitization. Applied fields are:
        * * description
        * * applicationInfo.instruction
        * * incentives
@@ -4010,7 +4006,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Optional. Option for job HTML content sanitization. Applied fields are:
+       * Option for job HTML content sanitization. Applied fields are:
        * * description
        * * applicationInfo.instruction
        * * incentives
@@ -4036,7 +4032,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Optional. Option for job HTML content sanitization. Applied fields are:
+       * Option for job HTML content sanitization. Applied fields are:
        * * description
        * * applicationInfo.instruction
        * * incentives
@@ -4063,7 +4059,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Optional. Option for job HTML content sanitization. Applied fields are:
+       * Option for job HTML content sanitization. Applied fields are:
        * * description
        * * applicationInfo.instruction
        * * incentives
@@ -4147,10 +4143,10 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
    * The resource name for the job. This is generated by the service when a
    * job is created.
    * The format is
-   * "projects/{project_id}/tenants/{tenant_id}/jobs/{job_id}", for
-   * example, "projects/api-test-project/tenants/foo/jobs/1234".
-   * Tenant id is optional and the default tenant is used if unspecified, for
-   * example, "projects/api-test-project/jobs/1234".
+   * "projects/{project_id}/tenants/{tenant_id}/jobs/{job_id}". For
+   * example, "projects/foo/tenants/bar/jobs/baz".
+   * If tenant id is unspecified, the default tenant is used. For
+   * example, "projects/foo/jobs/bar".
    * Use of this field in job queries and API calls is preferred over the use of
    * [requisition_id][google.cloud.talent.v4beta1.Job.requisition_id] since this
    * value is unique.
@@ -4177,10 +4173,10 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
    * The resource name for the job. This is generated by the service when a
    * job is created.
    * The format is
-   * "projects/{project_id}/tenants/{tenant_id}/jobs/{job_id}", for
-   * example, "projects/api-test-project/tenants/foo/jobs/1234".
-   * Tenant id is optional and the default tenant is used if unspecified, for
-   * example, "projects/api-test-project/jobs/1234".
+   * "projects/{project_id}/tenants/{tenant_id}/jobs/{job_id}". For
+   * example, "projects/foo/tenants/bar/jobs/baz".
+   * If tenant id is unspecified, the default tenant is used. For
+   * example, "projects/foo/jobs/bar".
    * Use of this field in job queries and API calls is preferred over the use of
    * [requisition_id][google.cloud.talent.v4beta1.Job.requisition_id] since this
    * value is unique.
@@ -4208,13 +4204,13 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Required. The resource name of the company listing the job.
    * The format is
-   * "projects/{project_id}/tenants/{tenant_id}/companies/{company_id}", for
-   * example, "projects/api-test-project/tenants/foo/companies/bar".
-   * Tenant id is optional and the default tenant is used if unspecified, for
-   * example, "projects/api-test-project/companies/bar".
+   * "projects/{project_id}/tenants/{tenant_id}/companies/{company_id}". For
+   * example, "projects/foo/tenants/bar/companies/baz".
+   * If tenant id is unspecified, the default tenant is used. For
+   * example, "projects/foo/companies/bar".
    * </pre>
    *
-   * <code>string company = 2;</code>
+   * <code>string company = 2 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   public java.lang.String getCompany() {
     java.lang.Object ref = company_;
@@ -4233,13 +4229,13 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Required. The resource name of the company listing the job.
    * The format is
-   * "projects/{project_id}/tenants/{tenant_id}/companies/{company_id}", for
-   * example, "projects/api-test-project/tenants/foo/companies/bar".
-   * Tenant id is optional and the default tenant is used if unspecified, for
-   * example, "projects/api-test-project/companies/bar".
+   * "projects/{project_id}/tenants/{tenant_id}/companies/{company_id}". For
+   * example, "projects/foo/tenants/bar/companies/baz".
+   * If tenant id is unspecified, the default tenant is used. For
+   * example, "projects/foo/companies/bar".
    * </pre>
    *
-   * <code>string company = 2;</code>
+   * <code>string company = 2 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   public com.google.protobuf.ByteString getCompanyBytes() {
     java.lang.Object ref = company_;
@@ -4269,7 +4265,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
    * The maximum number of allowed characters is 255.
    * </pre>
    *
-   * <code>string requisition_id = 3;</code>
+   * <code>string requisition_id = 3 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   public java.lang.String getRequisitionId() {
     java.lang.Object ref = requisitionId_;
@@ -4296,7 +4292,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
    * The maximum number of allowed characters is 255.
    * </pre>
    *
-   * <code>string requisition_id = 3;</code>
+   * <code>string requisition_id = 3 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   public com.google.protobuf.ByteString getRequisitionIdBytes() {
     java.lang.Object ref = requisitionId_;
@@ -4320,7 +4316,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
    * The maximum number of allowed characters is 500.
    * </pre>
    *
-   * <code>string title = 4;</code>
+   * <code>string title = 4 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   public java.lang.String getTitle() {
     java.lang.Object ref = title_;
@@ -4341,7 +4337,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
    * The maximum number of allowed characters is 500.
    * </pre>
    *
-   * <code>string title = 4;</code>
+   * <code>string title = 4 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   public com.google.protobuf.ByteString getTitleBytes() {
     java.lang.Object ref = title_;
@@ -4372,7 +4368,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
    * The maximum number of allowed characters is 100,000.
    * </pre>
    *
-   * <code>string description = 5;</code>
+   * <code>string description = 5 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   public java.lang.String getDescription() {
     java.lang.Object ref = description_;
@@ -4400,7 +4396,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
    * The maximum number of allowed characters is 100,000.
    * </pre>
    *
-   * <code>string description = 5;</code>
+   * <code>string description = 5 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   public com.google.protobuf.ByteString getDescriptionBytes() {
     java.lang.Object ref = description_;
@@ -4420,7 +4416,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional but strongly recommended for the best service experience.
+   * Strongly recommended for the best service experience.
    * Location(s) where the employer is looking to hire for this job posting.
    * Specifying the full street address(es) of the hiring location enables
    * better API results, especially job searches by commute time.
@@ -4448,7 +4444,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional but strongly recommended for the best service experience.
+   * Strongly recommended for the best service experience.
    * Location(s) where the employer is looking to hire for this job posting.
    * Specifying the full street address(es) of the hiring location enables
    * better API results, especially job searches by commute time.
@@ -4476,7 +4472,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional but strongly recommended for the best service experience.
+   * Strongly recommended for the best service experience.
    * Location(s) where the employer is looking to hire for this job posting.
    * Specifying the full street address(es) of the hiring location enables
    * better API results, especially job searches by commute time.
@@ -4504,7 +4500,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional but strongly recommended for the best service experience.
+   * Strongly recommended for the best service experience.
    * Location(s) where the employer is looking to hire for this job posting.
    * Specifying the full street address(es) of the hiring location enables
    * better API results, especially job searches by commute time.
@@ -4535,7 +4531,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. Job application information.
+   * Job application information.
    * </pre>
    *
    * <code>.google.cloud.talent.v4beta1.Job.ApplicationInfo application_info = 7;</code>
@@ -4547,7 +4543,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. Job application information.
+   * Job application information.
    * </pre>
    *
    * <code>.google.cloud.talent.v4beta1.Job.ApplicationInfo application_info = 7;</code>
@@ -4561,7 +4557,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. Job application information.
+   * Job application information.
    * </pre>
    *
    * <code>.google.cloud.talent.v4beta1.Job.ApplicationInfo application_info = 7;</code>
@@ -4591,7 +4587,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. The benefits included with the job.
+   * The benefits included with the job.
    * </pre>
    *
    * <code>repeated .google.cloud.talent.v4beta1.JobBenefit job_benefits = 8;</code>
@@ -4605,7 +4601,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. The benefits included with the job.
+   * The benefits included with the job.
    * </pre>
    *
    * <code>repeated .google.cloud.talent.v4beta1.JobBenefit job_benefits = 8;</code>
@@ -4617,7 +4613,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. The benefits included with the job.
+   * The benefits included with the job.
    * </pre>
    *
    * <code>repeated .google.cloud.talent.v4beta1.JobBenefit job_benefits = 8;</code>
@@ -4629,7 +4625,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. The benefits included with the job.
+   * The benefits included with the job.
    * </pre>
    *
    * <code>repeated .google.cloud.talent.v4beta1.JobBenefit job_benefits = 8;</code>
@@ -4641,7 +4637,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. The benefits included with the job.
+   * The benefits included with the job.
    * </pre>
    *
    * <code>repeated .google.cloud.talent.v4beta1.JobBenefit job_benefits = 8;</code>
@@ -4658,8 +4654,8 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. Job compensation information (a.k.a. "pay rate") i.e., the
-   * compensation that will paid to the employee.
+   * Job compensation information (a.k.a. "pay rate") i.e., the compensation
+   * that will paid to the employee.
    * </pre>
    *
    * <code>.google.cloud.talent.v4beta1.CompensationInfo compensation_info = 9;</code>
@@ -4671,8 +4667,8 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. Job compensation information (a.k.a. "pay rate") i.e., the
-   * compensation that will paid to the employee.
+   * Job compensation information (a.k.a. "pay rate") i.e., the compensation
+   * that will paid to the employee.
    * </pre>
    *
    * <code>.google.cloud.talent.v4beta1.CompensationInfo compensation_info = 9;</code>
@@ -4686,8 +4682,8 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. Job compensation information (a.k.a. "pay rate") i.e., the
-   * compensation that will paid to the employee.
+   * Job compensation information (a.k.a. "pay rate") i.e., the compensation
+   * that will paid to the employee.
    * </pre>
    *
    * <code>.google.cloud.talent.v4beta1.CompensationInfo compensation_info = 9;</code>
@@ -4734,8 +4730,8 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. A map of fields to hold both filterable and non-filterable custom
-   * job attributes that are not covered by the provided structured fields.
+   * A map of fields to hold both filterable and non-filterable custom job
+   * attributes that are not covered by the provided structured fields.
    * The keys of the map are strings up to 64 bytes and must match the
    * pattern: [a-zA-Z][a-zA-Z0-9_]*. For example, key0LikeThis or
    * KEY_1_LIKE_THIS.
@@ -4765,8 +4761,8 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. A map of fields to hold both filterable and non-filterable custom
-   * job attributes that are not covered by the provided structured fields.
+   * A map of fields to hold both filterable and non-filterable custom job
+   * attributes that are not covered by the provided structured fields.
    * The keys of the map are strings up to 64 bytes and must match the
    * pattern: [a-zA-Z][a-zA-Z0-9_]*. For example, key0LikeThis or
    * KEY_1_LIKE_THIS.
@@ -4788,8 +4784,8 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. A map of fields to hold both filterable and non-filterable custom
-   * job attributes that are not covered by the provided structured fields.
+   * A map of fields to hold both filterable and non-filterable custom job
+   * attributes that are not covered by the provided structured fields.
    * The keys of the map are strings up to 64 bytes and must match the
    * pattern: [a-zA-Z][a-zA-Z0-9_]*. For example, key0LikeThis or
    * KEY_1_LIKE_THIS.
@@ -4816,8 +4812,8 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. A map of fields to hold both filterable and non-filterable custom
-   * job attributes that are not covered by the provided structured fields.
+   * A map of fields to hold both filterable and non-filterable custom job
+   * attributes that are not covered by the provided structured fields.
    * The keys of the map are strings up to 64 bytes and must match the
    * pattern: [a-zA-Z][a-zA-Z0-9_]*. For example, key0LikeThis or
    * KEY_1_LIKE_THIS.
@@ -4864,8 +4860,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. The desired education degrees for the job, such as Bachelors,
-   * Masters.
+   * The desired education degrees for the job, such as Bachelors, Masters.
    * </pre>
    *
    * <code>repeated .google.cloud.talent.v4beta1.DegreeType degree_types = 11;</code>
@@ -4879,8 +4874,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. The desired education degrees for the job, such as Bachelors,
-   * Masters.
+   * The desired education degrees for the job, such as Bachelors, Masters.
    * </pre>
    *
    * <code>repeated .google.cloud.talent.v4beta1.DegreeType degree_types = 11;</code>
@@ -4892,8 +4886,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. The desired education degrees for the job, such as Bachelors,
-   * Masters.
+   * The desired education degrees for the job, such as Bachelors, Masters.
    * </pre>
    *
    * <code>repeated .google.cloud.talent.v4beta1.DegreeType degree_types = 11;</code>
@@ -4905,8 +4898,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. The desired education degrees for the job, such as Bachelors,
-   * Masters.
+   * The desired education degrees for the job, such as Bachelors, Masters.
    * </pre>
    *
    * <code>repeated .google.cloud.talent.v4beta1.DegreeType degree_types = 11;</code>
@@ -4918,8 +4910,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. The desired education degrees for the job, such as Bachelors,
-   * Masters.
+   * The desired education degrees for the job, such as Bachelors, Masters.
    * </pre>
    *
    * <code>repeated .google.cloud.talent.v4beta1.DegreeType degree_types = 11;</code>
@@ -4936,8 +4927,8 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. The department or functional area within the company with the
-   * open position.
+   * The department or functional area within the company with the open
+   * position.
    * The maximum number of allowed characters is 255.
    * </pre>
    *
@@ -4958,8 +4949,8 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. The department or functional area within the company with the
-   * open position.
+   * The department or functional area within the company with the open
+   * position.
    * The maximum number of allowed characters is 255.
    * </pre>
    *
@@ -4997,7 +4988,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. The employment type(s) of a job, for example,
+   * The employment type(s) of a job, for example,
    * [full time][google.cloud.talent.v4beta1.EmploymentType.FULL_TIME] or
    * [part time][google.cloud.talent.v4beta1.EmploymentType.PART_TIME].
    * </pre>
@@ -5013,7 +5004,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. The employment type(s) of a job, for example,
+   * The employment type(s) of a job, for example,
    * [full time][google.cloud.talent.v4beta1.EmploymentType.FULL_TIME] or
    * [part time][google.cloud.talent.v4beta1.EmploymentType.PART_TIME].
    * </pre>
@@ -5027,7 +5018,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. The employment type(s) of a job, for example,
+   * The employment type(s) of a job, for example,
    * [full time][google.cloud.talent.v4beta1.EmploymentType.FULL_TIME] or
    * [part time][google.cloud.talent.v4beta1.EmploymentType.PART_TIME].
    * </pre>
@@ -5041,7 +5032,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. The employment type(s) of a job, for example,
+   * The employment type(s) of a job, for example,
    * [full time][google.cloud.talent.v4beta1.EmploymentType.FULL_TIME] or
    * [part time][google.cloud.talent.v4beta1.EmploymentType.PART_TIME].
    * </pre>
@@ -5055,7 +5046,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. The employment type(s) of a job, for example,
+   * The employment type(s) of a job, for example,
    * [full time][google.cloud.talent.v4beta1.EmploymentType.FULL_TIME] or
    * [part time][google.cloud.talent.v4beta1.EmploymentType.PART_TIME].
    * </pre>
@@ -5074,7 +5065,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. A description of bonus, commission, and other compensation
+   * A description of bonus, commission, and other compensation
    * incentives associated with the job not including salary or pay.
    * The maximum number of allowed characters is 10,000.
    * </pre>
@@ -5096,7 +5087,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. A description of bonus, commission, and other compensation
+   * A description of bonus, commission, and other compensation
    * incentives associated with the job not including salary or pay.
    * The maximum number of allowed characters is 10,000.
    * </pre>
@@ -5121,7 +5112,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. The language of the posting. This field is distinct from
+   * The language of the posting. This field is distinct from
    * any requirements for fluency that are associated with the job.
    * Language codes must be in BCP-47 format, such as "en-US" or "sr-Latn".
    * For more information, see
@@ -5151,7 +5142,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. The language of the posting. This field is distinct from
+   * The language of the posting. This field is distinct from
    * any requirements for fluency that are associated with the job.
    * Language codes must be in BCP-47 format, such as "en-US" or "sr-Latn".
    * For more information, see
@@ -5184,8 +5175,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. The experience level associated with the job, such as "Entry
-   * Level".
+   * The experience level associated with the job, such as "Entry Level".
    * </pre>
    *
    * <code>.google.cloud.talent.v4beta1.JobLevel job_level = 16;</code>
@@ -5197,8 +5187,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. The experience level associated with the job, such as "Entry
-   * Level".
+   * The experience level associated with the job, such as "Entry Level".
    * </pre>
    *
    * <code>.google.cloud.talent.v4beta1.JobLevel job_level = 16;</code>
@@ -5216,7 +5205,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. A promotion value of the job, as determined by the client.
+   * A promotion value of the job, as determined by the client.
    * The value determines the sort order of the jobs returned when searching for
    * jobs using the featured jobs search call, with higher promotional values
    * being returned first and ties being resolved by relevance sort. Only the
@@ -5236,7 +5225,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. A description of the qualifications required to perform the
+   * A description of the qualifications required to perform the
    * job. The use of this field is recommended
    * as an alternative to using the more general
    * [description][google.cloud.talent.v4beta1.Job.description] field.
@@ -5262,7 +5251,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. A description of the qualifications required to perform the
+   * A description of the qualifications required to perform the
    * job. The use of this field is recommended
    * as an alternative to using the more general
    * [description][google.cloud.talent.v4beta1.Job.description] field.
@@ -5291,7 +5280,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. A description of job responsibilities. The use of this field is
+   * A description of job responsibilities. The use of this field is
    * recommended as an alternative to using the more general
    * [description][google.cloud.talent.v4beta1.Job.description] field.
    * This field accepts and sanitizes HTML input, and also accepts
@@ -5316,7 +5305,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. A description of job responsibilities. The use of this field is
+   * A description of job responsibilities. The use of this field is
    * recommended as an alternative to using the more general
    * [description][google.cloud.talent.v4beta1.Job.description] field.
    * This field accepts and sanitizes HTML input, and also accepts
@@ -5344,12 +5333,12 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. The job
-   * [PostingRegion][google.cloud.talent.v4beta1.PostingRegion] (for example,
-   * state, country) throughout which the job is available. If this field is
-   * set, a [LocationFilter][google.cloud.talent.v4beta1.LocationFilter] in a
-   * search query within the job region finds this job posting if an exact
-   * location match isn't specified. If this field is set to
+   * The job [PostingRegion][google.cloud.talent.v4beta1.PostingRegion] (for
+   * example, state, country) throughout which the job is available. If this
+   * field is set, a
+   * [LocationFilter][google.cloud.talent.v4beta1.LocationFilter] in a search
+   * query within the job region finds this job posting if an exact location
+   * match isn't specified. If this field is set to
    * [PostingRegion.NATION][google.cloud.talent.v4beta1.PostingRegion.NATION] or
    * [PostingRegion.ADMINISTRATIVE_AREA][google.cloud.talent.v4beta1.PostingRegion.ADMINISTRATIVE_AREA],
    * setting job [Job.addresses][google.cloud.talent.v4beta1.Job.addresses] to
@@ -5365,12 +5354,12 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. The job
-   * [PostingRegion][google.cloud.talent.v4beta1.PostingRegion] (for example,
-   * state, country) throughout which the job is available. If this field is
-   * set, a [LocationFilter][google.cloud.talent.v4beta1.LocationFilter] in a
-   * search query within the job region finds this job posting if an exact
-   * location match isn't specified. If this field is set to
+   * The job [PostingRegion][google.cloud.talent.v4beta1.PostingRegion] (for
+   * example, state, country) throughout which the job is available. If this
+   * field is set, a
+   * [LocationFilter][google.cloud.talent.v4beta1.LocationFilter] in a search
+   * query within the job region finds this job posting if an exact location
+   * match isn't specified. If this field is set to
    * [PostingRegion.NATION][google.cloud.talent.v4beta1.PostingRegion.NATION] or
    * [PostingRegion.ADMINISTRATIVE_AREA][google.cloud.talent.v4beta1.PostingRegion.ADMINISTRATIVE_AREA],
    * setting job [Job.addresses][google.cloud.talent.v4beta1.Job.addresses] to
@@ -5392,14 +5381,16 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. The visibility of the job.
+   * Deprecated. The job is only visible to the owner.
+   * The visibility of the job.
    * Defaults to
    * [Visibility.ACCOUNT_ONLY][google.cloud.talent.v4beta1.Visibility.ACCOUNT_ONLY]
    * if not specified.
    * </pre>
    *
-   * <code>.google.cloud.talent.v4beta1.Visibility visibility = 21;</code>
+   * <code>.google.cloud.talent.v4beta1.Visibility visibility = 21 [deprecated = true];</code>
    */
+  @java.lang.Deprecated
   public int getVisibilityValue() {
     return visibility_;
   }
@@ -5407,14 +5398,16 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. The visibility of the job.
+   * Deprecated. The job is only visible to the owner.
+   * The visibility of the job.
    * Defaults to
    * [Visibility.ACCOUNT_ONLY][google.cloud.talent.v4beta1.Visibility.ACCOUNT_ONLY]
    * if not specified.
    * </pre>
    *
-   * <code>.google.cloud.talent.v4beta1.Visibility visibility = 21;</code>
+   * <code>.google.cloud.talent.v4beta1.Visibility visibility = 21 [deprecated = true];</code>
    */
+  @java.lang.Deprecated
   public com.google.cloud.talent.v4beta1.Visibility getVisibility() {
     @SuppressWarnings("deprecation")
     com.google.cloud.talent.v4beta1.Visibility result =
@@ -5428,8 +5421,8 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. The start timestamp of the job in UTC time zone. Typically this
-   * field is used for contracting engagements. Invalid timestamps are ignored.
+   * The start timestamp of the job in UTC time zone. Typically this field
+   * is used for contracting engagements. Invalid timestamps are ignored.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp job_start_time = 22;</code>
@@ -5441,8 +5434,8 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. The start timestamp of the job in UTC time zone. Typically this
-   * field is used for contracting engagements. Invalid timestamps are ignored.
+   * The start timestamp of the job in UTC time zone. Typically this field
+   * is used for contracting engagements. Invalid timestamps are ignored.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp job_start_time = 22;</code>
@@ -5456,8 +5449,8 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. The start timestamp of the job in UTC time zone. Typically this
-   * field is used for contracting engagements. Invalid timestamps are ignored.
+   * The start timestamp of the job in UTC time zone. Typically this field
+   * is used for contracting engagements. Invalid timestamps are ignored.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp job_start_time = 22;</code>
@@ -5472,8 +5465,8 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. The end timestamp of the job. Typically this field is used for
-   * contracting engagements. Invalid timestamps are ignored.
+   * The end timestamp of the job. Typically this field is used for contracting
+   * engagements. Invalid timestamps are ignored.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp job_end_time = 23;</code>
@@ -5485,8 +5478,8 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. The end timestamp of the job. Typically this field is used for
-   * contracting engagements. Invalid timestamps are ignored.
+   * The end timestamp of the job. Typically this field is used for contracting
+   * engagements. Invalid timestamps are ignored.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp job_end_time = 23;</code>
@@ -5498,8 +5491,8 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. The end timestamp of the job. Typically this field is used for
-   * contracting engagements. Invalid timestamps are ignored.
+   * The end timestamp of the job. Typically this field is used for contracting
+   * engagements. Invalid timestamps are ignored.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp job_end_time = 23;</code>
@@ -5514,9 +5507,9 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. The timestamp this job posting was most recently published. The
-   * default value is the time the request arrives at the server. Invalid
-   * timestamps are ignored.
+   * The timestamp this job posting was most recently published. The default
+   * value is the time the request arrives at the server. Invalid timestamps are
+   * ignored.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp posting_publish_time = 24;</code>
@@ -5528,9 +5521,9 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. The timestamp this job posting was most recently published. The
-   * default value is the time the request arrives at the server. Invalid
-   * timestamps are ignored.
+   * The timestamp this job posting was most recently published. The default
+   * value is the time the request arrives at the server. Invalid timestamps are
+   * ignored.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp posting_publish_time = 24;</code>
@@ -5544,9 +5537,9 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. The timestamp this job posting was most recently published. The
-   * default value is the time the request arrives at the server. Invalid
-   * timestamps are ignored.
+   * The timestamp this job posting was most recently published. The default
+   * value is the time the request arrives at the server. Invalid timestamps are
+   * ignored.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp posting_publish_time = 24;</code>
@@ -5561,8 +5554,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional but strongly recommended for the best service
-   * experience.
+   * Strongly recommended for the best service experience.
    * The expiration timestamp of the job. After this timestamp, the
    * job is marked as expired, and it no longer appears in search results. The
    * expired job can't be listed by the
@@ -5617,8 +5609,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional but strongly recommended for the best service
-   * experience.
+   * Strongly recommended for the best service experience.
    * The expiration timestamp of the job. After this timestamp, the
    * job is marked as expired, and it no longer appears in search results. The
    * expired job can't be listed by the
@@ -5675,8 +5666,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional but strongly recommended for the best service
-   * experience.
+   * Strongly recommended for the best service experience.
    * The expiration timestamp of the job. After this timestamp, the
    * job is marked as expired, and it no longer appears in search results. The
    * expired job can't be listed by the
@@ -5737,7 +5727,9 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
    * Output only. The timestamp when this job posting was created.
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp posting_create_time = 26;</code>
+   * <code>
+   * .google.protobuf.Timestamp posting_create_time = 26 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    */
   public boolean hasPostingCreateTime() {
     return postingCreateTime_ != null;
@@ -5749,7 +5741,9 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
    * Output only. The timestamp when this job posting was created.
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp posting_create_time = 26;</code>
+   * <code>
+   * .google.protobuf.Timestamp posting_create_time = 26 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    */
   public com.google.protobuf.Timestamp getPostingCreateTime() {
     return postingCreateTime_ == null
@@ -5763,7 +5757,9 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
    * Output only. The timestamp when this job posting was created.
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp posting_create_time = 26;</code>
+   * <code>
+   * .google.protobuf.Timestamp posting_create_time = 26 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    */
   public com.google.protobuf.TimestampOrBuilder getPostingCreateTimeOrBuilder() {
     return getPostingCreateTime();
@@ -5778,7 +5774,9 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
    * Output only. The timestamp when this job posting was last updated.
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp posting_update_time = 27;</code>
+   * <code>
+   * .google.protobuf.Timestamp posting_update_time = 27 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    */
   public boolean hasPostingUpdateTime() {
     return postingUpdateTime_ != null;
@@ -5790,7 +5788,9 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
    * Output only. The timestamp when this job posting was last updated.
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp posting_update_time = 27;</code>
+   * <code>
+   * .google.protobuf.Timestamp posting_update_time = 27 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    */
   public com.google.protobuf.Timestamp getPostingUpdateTime() {
     return postingUpdateTime_ == null
@@ -5804,7 +5804,9 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
    * Output only. The timestamp when this job posting was last updated.
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp posting_update_time = 27;</code>
+   * <code>
+   * .google.protobuf.Timestamp posting_update_time = 27 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    */
   public com.google.protobuf.TimestampOrBuilder getPostingUpdateTimeOrBuilder() {
     return getPostingUpdateTime();
@@ -5819,7 +5821,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
    * Output only. Display name of the company listing the job.
    * </pre>
    *
-   * <code>string company_display_name = 28;</code>
+   * <code>string company_display_name = 28 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    */
   public java.lang.String getCompanyDisplayName() {
     java.lang.Object ref = companyDisplayName_;
@@ -5839,7 +5841,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
    * Output only. Display name of the company listing the job.
    * </pre>
    *
-   * <code>string company_display_name = 28;</code>
+   * <code>string company_display_name = 28 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    */
   public com.google.protobuf.ByteString getCompanyDisplayNameBytes() {
     java.lang.Object ref = companyDisplayName_;
@@ -5862,7 +5864,9 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
    * Output only. Derived details about the job posting.
    * </pre>
    *
-   * <code>.google.cloud.talent.v4beta1.Job.DerivedInfo derived_info = 29;</code>
+   * <code>
+   * .google.cloud.talent.v4beta1.Job.DerivedInfo derived_info = 29 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    */
   public boolean hasDerivedInfo() {
     return derivedInfo_ != null;
@@ -5874,7 +5878,9 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
    * Output only. Derived details about the job posting.
    * </pre>
    *
-   * <code>.google.cloud.talent.v4beta1.Job.DerivedInfo derived_info = 29;</code>
+   * <code>
+   * .google.cloud.talent.v4beta1.Job.DerivedInfo derived_info = 29 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    */
   public com.google.cloud.talent.v4beta1.Job.DerivedInfo getDerivedInfo() {
     return derivedInfo_ == null
@@ -5888,7 +5894,9 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
    * Output only. Derived details about the job posting.
    * </pre>
    *
-   * <code>.google.cloud.talent.v4beta1.Job.DerivedInfo derived_info = 29;</code>
+   * <code>
+   * .google.cloud.talent.v4beta1.Job.DerivedInfo derived_info = 29 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    */
   public com.google.cloud.talent.v4beta1.Job.DerivedInfoOrBuilder getDerivedInfoOrBuilder() {
     return getDerivedInfo();
@@ -5900,7 +5908,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. Options for job processing.
+   * Options for job processing.
    * </pre>
    *
    * <code>.google.cloud.talent.v4beta1.Job.ProcessingOptions processing_options = 30;</code>
@@ -5912,7 +5920,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. Options for job processing.
+   * Options for job processing.
    * </pre>
    *
    * <code>.google.cloud.talent.v4beta1.Job.ProcessingOptions processing_options = 30;</code>
@@ -5926,7 +5934,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. Options for job processing.
+   * Options for job processing.
    * </pre>
    *
    * <code>.google.cloud.talent.v4beta1.Job.ProcessingOptions processing_options = 30;</code>
@@ -6971,10 +6979,10 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      * The resource name for the job. This is generated by the service when a
      * job is created.
      * The format is
-     * "projects/{project_id}/tenants/{tenant_id}/jobs/{job_id}", for
-     * example, "projects/api-test-project/tenants/foo/jobs/1234".
-     * Tenant id is optional and the default tenant is used if unspecified, for
-     * example, "projects/api-test-project/jobs/1234".
+     * "projects/{project_id}/tenants/{tenant_id}/jobs/{job_id}". For
+     * example, "projects/foo/tenants/bar/jobs/baz".
+     * If tenant id is unspecified, the default tenant is used. For
+     * example, "projects/foo/jobs/bar".
      * Use of this field in job queries and API calls is preferred over the use of
      * [requisition_id][google.cloud.talent.v4beta1.Job.requisition_id] since this
      * value is unique.
@@ -7001,10 +7009,10 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      * The resource name for the job. This is generated by the service when a
      * job is created.
      * The format is
-     * "projects/{project_id}/tenants/{tenant_id}/jobs/{job_id}", for
-     * example, "projects/api-test-project/tenants/foo/jobs/1234".
-     * Tenant id is optional and the default tenant is used if unspecified, for
-     * example, "projects/api-test-project/jobs/1234".
+     * "projects/{project_id}/tenants/{tenant_id}/jobs/{job_id}". For
+     * example, "projects/foo/tenants/bar/jobs/baz".
+     * If tenant id is unspecified, the default tenant is used. For
+     * example, "projects/foo/jobs/bar".
      * Use of this field in job queries and API calls is preferred over the use of
      * [requisition_id][google.cloud.talent.v4beta1.Job.requisition_id] since this
      * value is unique.
@@ -7031,10 +7039,10 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      * The resource name for the job. This is generated by the service when a
      * job is created.
      * The format is
-     * "projects/{project_id}/tenants/{tenant_id}/jobs/{job_id}", for
-     * example, "projects/api-test-project/tenants/foo/jobs/1234".
-     * Tenant id is optional and the default tenant is used if unspecified, for
-     * example, "projects/api-test-project/jobs/1234".
+     * "projects/{project_id}/tenants/{tenant_id}/jobs/{job_id}". For
+     * example, "projects/foo/tenants/bar/jobs/baz".
+     * If tenant id is unspecified, the default tenant is used. For
+     * example, "projects/foo/jobs/bar".
      * Use of this field in job queries and API calls is preferred over the use of
      * [requisition_id][google.cloud.talent.v4beta1.Job.requisition_id] since this
      * value is unique.
@@ -7059,10 +7067,10 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      * The resource name for the job. This is generated by the service when a
      * job is created.
      * The format is
-     * "projects/{project_id}/tenants/{tenant_id}/jobs/{job_id}", for
-     * example, "projects/api-test-project/tenants/foo/jobs/1234".
-     * Tenant id is optional and the default tenant is used if unspecified, for
-     * example, "projects/api-test-project/jobs/1234".
+     * "projects/{project_id}/tenants/{tenant_id}/jobs/{job_id}". For
+     * example, "projects/foo/tenants/bar/jobs/baz".
+     * If tenant id is unspecified, the default tenant is used. For
+     * example, "projects/foo/jobs/bar".
      * Use of this field in job queries and API calls is preferred over the use of
      * [requisition_id][google.cloud.talent.v4beta1.Job.requisition_id] since this
      * value is unique.
@@ -7084,10 +7092,10 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      * The resource name for the job. This is generated by the service when a
      * job is created.
      * The format is
-     * "projects/{project_id}/tenants/{tenant_id}/jobs/{job_id}", for
-     * example, "projects/api-test-project/tenants/foo/jobs/1234".
-     * Tenant id is optional and the default tenant is used if unspecified, for
-     * example, "projects/api-test-project/jobs/1234".
+     * "projects/{project_id}/tenants/{tenant_id}/jobs/{job_id}". For
+     * example, "projects/foo/tenants/bar/jobs/baz".
+     * If tenant id is unspecified, the default tenant is used. For
+     * example, "projects/foo/jobs/bar".
      * Use of this field in job queries and API calls is preferred over the use of
      * [requisition_id][google.cloud.talent.v4beta1.Job.requisition_id] since this
      * value is unique.
@@ -7113,13 +7121,13 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Required. The resource name of the company listing the job.
      * The format is
-     * "projects/{project_id}/tenants/{tenant_id}/companies/{company_id}", for
-     * example, "projects/api-test-project/tenants/foo/companies/bar".
-     * Tenant id is optional and the default tenant is used if unspecified, for
-     * example, "projects/api-test-project/companies/bar".
+     * "projects/{project_id}/tenants/{tenant_id}/companies/{company_id}". For
+     * example, "projects/foo/tenants/bar/companies/baz".
+     * If tenant id is unspecified, the default tenant is used. For
+     * example, "projects/foo/companies/bar".
      * </pre>
      *
-     * <code>string company = 2;</code>
+     * <code>string company = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public java.lang.String getCompany() {
       java.lang.Object ref = company_;
@@ -7138,13 +7146,13 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Required. The resource name of the company listing the job.
      * The format is
-     * "projects/{project_id}/tenants/{tenant_id}/companies/{company_id}", for
-     * example, "projects/api-test-project/tenants/foo/companies/bar".
-     * Tenant id is optional and the default tenant is used if unspecified, for
-     * example, "projects/api-test-project/companies/bar".
+     * "projects/{project_id}/tenants/{tenant_id}/companies/{company_id}". For
+     * example, "projects/foo/tenants/bar/companies/baz".
+     * If tenant id is unspecified, the default tenant is used. For
+     * example, "projects/foo/companies/bar".
      * </pre>
      *
-     * <code>string company = 2;</code>
+     * <code>string company = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public com.google.protobuf.ByteString getCompanyBytes() {
       java.lang.Object ref = company_;
@@ -7163,13 +7171,13 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Required. The resource name of the company listing the job.
      * The format is
-     * "projects/{project_id}/tenants/{tenant_id}/companies/{company_id}", for
-     * example, "projects/api-test-project/tenants/foo/companies/bar".
-     * Tenant id is optional and the default tenant is used if unspecified, for
-     * example, "projects/api-test-project/companies/bar".
+     * "projects/{project_id}/tenants/{tenant_id}/companies/{company_id}". For
+     * example, "projects/foo/tenants/bar/companies/baz".
+     * If tenant id is unspecified, the default tenant is used. For
+     * example, "projects/foo/companies/bar".
      * </pre>
      *
-     * <code>string company = 2;</code>
+     * <code>string company = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder setCompany(java.lang.String value) {
       if (value == null) {
@@ -7186,13 +7194,13 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Required. The resource name of the company listing the job.
      * The format is
-     * "projects/{project_id}/tenants/{tenant_id}/companies/{company_id}", for
-     * example, "projects/api-test-project/tenants/foo/companies/bar".
-     * Tenant id is optional and the default tenant is used if unspecified, for
-     * example, "projects/api-test-project/companies/bar".
+     * "projects/{project_id}/tenants/{tenant_id}/companies/{company_id}". For
+     * example, "projects/foo/tenants/bar/companies/baz".
+     * If tenant id is unspecified, the default tenant is used. For
+     * example, "projects/foo/companies/bar".
      * </pre>
      *
-     * <code>string company = 2;</code>
+     * <code>string company = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder clearCompany() {
 
@@ -7206,13 +7214,13 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Required. The resource name of the company listing the job.
      * The format is
-     * "projects/{project_id}/tenants/{tenant_id}/companies/{company_id}", for
-     * example, "projects/api-test-project/tenants/foo/companies/bar".
-     * Tenant id is optional and the default tenant is used if unspecified, for
-     * example, "projects/api-test-project/companies/bar".
+     * "projects/{project_id}/tenants/{tenant_id}/companies/{company_id}". For
+     * example, "projects/foo/tenants/bar/companies/baz".
+     * If tenant id is unspecified, the default tenant is used. For
+     * example, "projects/foo/companies/bar".
      * </pre>
      *
-     * <code>string company = 2;</code>
+     * <code>string company = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder setCompanyBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -7240,7 +7248,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      * The maximum number of allowed characters is 255.
      * </pre>
      *
-     * <code>string requisition_id = 3;</code>
+     * <code>string requisition_id = 3 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public java.lang.String getRequisitionId() {
       java.lang.Object ref = requisitionId_;
@@ -7267,7 +7275,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      * The maximum number of allowed characters is 255.
      * </pre>
      *
-     * <code>string requisition_id = 3;</code>
+     * <code>string requisition_id = 3 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public com.google.protobuf.ByteString getRequisitionIdBytes() {
       java.lang.Object ref = requisitionId_;
@@ -7294,7 +7302,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      * The maximum number of allowed characters is 255.
      * </pre>
      *
-     * <code>string requisition_id = 3;</code>
+     * <code>string requisition_id = 3 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder setRequisitionId(java.lang.String value) {
       if (value == null) {
@@ -7319,7 +7327,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      * The maximum number of allowed characters is 255.
      * </pre>
      *
-     * <code>string requisition_id = 3;</code>
+     * <code>string requisition_id = 3 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder clearRequisitionId() {
 
@@ -7341,7 +7349,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      * The maximum number of allowed characters is 255.
      * </pre>
      *
-     * <code>string requisition_id = 3;</code>
+     * <code>string requisition_id = 3 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder setRequisitionIdBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -7363,7 +7371,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      * The maximum number of allowed characters is 500.
      * </pre>
      *
-     * <code>string title = 4;</code>
+     * <code>string title = 4 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public java.lang.String getTitle() {
       java.lang.Object ref = title_;
@@ -7384,7 +7392,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      * The maximum number of allowed characters is 500.
      * </pre>
      *
-     * <code>string title = 4;</code>
+     * <code>string title = 4 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public com.google.protobuf.ByteString getTitleBytes() {
       java.lang.Object ref = title_;
@@ -7405,7 +7413,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      * The maximum number of allowed characters is 500.
      * </pre>
      *
-     * <code>string title = 4;</code>
+     * <code>string title = 4 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder setTitle(java.lang.String value) {
       if (value == null) {
@@ -7424,7 +7432,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      * The maximum number of allowed characters is 500.
      * </pre>
      *
-     * <code>string title = 4;</code>
+     * <code>string title = 4 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder clearTitle() {
 
@@ -7440,7 +7448,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      * The maximum number of allowed characters is 500.
      * </pre>
      *
-     * <code>string title = 4;</code>
+     * <code>string title = 4 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder setTitleBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -7469,7 +7477,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      * The maximum number of allowed characters is 100,000.
      * </pre>
      *
-     * <code>string description = 5;</code>
+     * <code>string description = 5 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public java.lang.String getDescription() {
       java.lang.Object ref = description_;
@@ -7497,7 +7505,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      * The maximum number of allowed characters is 100,000.
      * </pre>
      *
-     * <code>string description = 5;</code>
+     * <code>string description = 5 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public com.google.protobuf.ByteString getDescriptionBytes() {
       java.lang.Object ref = description_;
@@ -7525,7 +7533,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      * The maximum number of allowed characters is 100,000.
      * </pre>
      *
-     * <code>string description = 5;</code>
+     * <code>string description = 5 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder setDescription(java.lang.String value) {
       if (value == null) {
@@ -7551,7 +7559,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      * The maximum number of allowed characters is 100,000.
      * </pre>
      *
-     * <code>string description = 5;</code>
+     * <code>string description = 5 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder clearDescription() {
 
@@ -7574,7 +7582,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      * The maximum number of allowed characters is 100,000.
      * </pre>
      *
-     * <code>string description = 5;</code>
+     * <code>string description = 5 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder setDescriptionBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -7600,7 +7608,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional but strongly recommended for the best service experience.
+     * Strongly recommended for the best service experience.
      * Location(s) where the employer is looking to hire for this job posting.
      * Specifying the full street address(es) of the hiring location enables
      * better API results, especially job searches by commute time.
@@ -7628,7 +7636,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional but strongly recommended for the best service experience.
+     * Strongly recommended for the best service experience.
      * Location(s) where the employer is looking to hire for this job posting.
      * Specifying the full street address(es) of the hiring location enables
      * better API results, especially job searches by commute time.
@@ -7656,7 +7664,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional but strongly recommended for the best service experience.
+     * Strongly recommended for the best service experience.
      * Location(s) where the employer is looking to hire for this job posting.
      * Specifying the full street address(es) of the hiring location enables
      * better API results, especially job searches by commute time.
@@ -7684,7 +7692,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional but strongly recommended for the best service experience.
+     * Strongly recommended for the best service experience.
      * Location(s) where the employer is looking to hire for this job posting.
      * Specifying the full street address(es) of the hiring location enables
      * better API results, especially job searches by commute time.
@@ -7712,7 +7720,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional but strongly recommended for the best service experience.
+     * Strongly recommended for the best service experience.
      * Location(s) where the employer is looking to hire for this job posting.
      * Specifying the full street address(es) of the hiring location enables
      * better API results, especially job searches by commute time.
@@ -7746,7 +7754,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional but strongly recommended for the best service experience.
+     * Strongly recommended for the best service experience.
      * Location(s) where the employer is looking to hire for this job posting.
      * Specifying the full street address(es) of the hiring location enables
      * better API results, especially job searches by commute time.
@@ -7780,7 +7788,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional but strongly recommended for the best service experience.
+     * Strongly recommended for the best service experience.
      * Location(s) where the employer is looking to hire for this job posting.
      * Specifying the full street address(es) of the hiring location enables
      * better API results, especially job searches by commute time.
@@ -7811,7 +7819,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional but strongly recommended for the best service experience.
+     * Strongly recommended for the best service experience.
      * Location(s) where the employer is looking to hire for this job posting.
      * Specifying the full street address(es) of the hiring location enables
      * better API results, especially job searches by commute time.
@@ -7842,7 +7850,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional but strongly recommended for the best service experience.
+     * Strongly recommended for the best service experience.
      * Location(s) where the employer is looking to hire for this job posting.
      * Specifying the full street address(es) of the hiring location enables
      * better API results, especially job searches by commute time.
@@ -7884,7 +7892,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Job application information.
+     * Job application information.
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.Job.ApplicationInfo application_info = 7;</code>
@@ -7896,7 +7904,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Job application information.
+     * Job application information.
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.Job.ApplicationInfo application_info = 7;</code>
@@ -7914,7 +7922,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Job application information.
+     * Job application information.
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.Job.ApplicationInfo application_info = 7;</code>
@@ -7936,7 +7944,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Job application information.
+     * Job application information.
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.Job.ApplicationInfo application_info = 7;</code>
@@ -7956,7 +7964,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Job application information.
+     * Job application information.
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.Job.ApplicationInfo application_info = 7;</code>
@@ -7982,7 +7990,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Job application information.
+     * Job application information.
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.Job.ApplicationInfo application_info = 7;</code>
@@ -8002,7 +8010,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Job application information.
+     * Job application information.
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.Job.ApplicationInfo application_info = 7;</code>
@@ -8016,7 +8024,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Job application information.
+     * Job application information.
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.Job.ApplicationInfo application_info = 7;</code>
@@ -8035,7 +8043,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Job application information.
+     * Job application information.
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.Job.ApplicationInfo application_info = 7;</code>
@@ -8069,7 +8077,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The benefits included with the job.
+     * The benefits included with the job.
      * </pre>
      *
      * <code>repeated .google.cloud.talent.v4beta1.JobBenefit job_benefits = 8;</code>
@@ -8083,7 +8091,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The benefits included with the job.
+     * The benefits included with the job.
      * </pre>
      *
      * <code>repeated .google.cloud.talent.v4beta1.JobBenefit job_benefits = 8;</code>
@@ -8095,7 +8103,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The benefits included with the job.
+     * The benefits included with the job.
      * </pre>
      *
      * <code>repeated .google.cloud.talent.v4beta1.JobBenefit job_benefits = 8;</code>
@@ -8107,7 +8115,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The benefits included with the job.
+     * The benefits included with the job.
      * </pre>
      *
      * <code>repeated .google.cloud.talent.v4beta1.JobBenefit job_benefits = 8;</code>
@@ -8125,7 +8133,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The benefits included with the job.
+     * The benefits included with the job.
      * </pre>
      *
      * <code>repeated .google.cloud.talent.v4beta1.JobBenefit job_benefits = 8;</code>
@@ -8143,7 +8151,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The benefits included with the job.
+     * The benefits included with the job.
      * </pre>
      *
      * <code>repeated .google.cloud.talent.v4beta1.JobBenefit job_benefits = 8;</code>
@@ -8161,7 +8169,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The benefits included with the job.
+     * The benefits included with the job.
      * </pre>
      *
      * <code>repeated .google.cloud.talent.v4beta1.JobBenefit job_benefits = 8;</code>
@@ -8176,7 +8184,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The benefits included with the job.
+     * The benefits included with the job.
      * </pre>
      *
      * <code>repeated .google.cloud.talent.v4beta1.JobBenefit job_benefits = 8;</code>
@@ -8188,7 +8196,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The benefits included with the job.
+     * The benefits included with the job.
      * </pre>
      *
      * <code>repeated .google.cloud.talent.v4beta1.JobBenefit job_benefits = 8;</code>
@@ -8200,7 +8208,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The benefits included with the job.
+     * The benefits included with the job.
      * </pre>
      *
      * <code>repeated .google.cloud.talent.v4beta1.JobBenefit job_benefits = 8;</code>
@@ -8215,7 +8223,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The benefits included with the job.
+     * The benefits included with the job.
      * </pre>
      *
      * <code>repeated .google.cloud.talent.v4beta1.JobBenefit job_benefits = 8;</code>
@@ -8230,7 +8238,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The benefits included with the job.
+     * The benefits included with the job.
      * </pre>
      *
      * <code>repeated .google.cloud.talent.v4beta1.JobBenefit job_benefits = 8;</code>
@@ -8254,8 +8262,8 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Job compensation information (a.k.a. "pay rate") i.e., the
-     * compensation that will paid to the employee.
+     * Job compensation information (a.k.a. "pay rate") i.e., the compensation
+     * that will paid to the employee.
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.CompensationInfo compensation_info = 9;</code>
@@ -8267,8 +8275,8 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Job compensation information (a.k.a. "pay rate") i.e., the
-     * compensation that will paid to the employee.
+     * Job compensation information (a.k.a. "pay rate") i.e., the compensation
+     * that will paid to the employee.
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.CompensationInfo compensation_info = 9;</code>
@@ -8286,8 +8294,8 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Job compensation information (a.k.a. "pay rate") i.e., the
-     * compensation that will paid to the employee.
+     * Job compensation information (a.k.a. "pay rate") i.e., the compensation
+     * that will paid to the employee.
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.CompensationInfo compensation_info = 9;</code>
@@ -8309,8 +8317,8 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Job compensation information (a.k.a. "pay rate") i.e., the
-     * compensation that will paid to the employee.
+     * Job compensation information (a.k.a. "pay rate") i.e., the compensation
+     * that will paid to the employee.
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.CompensationInfo compensation_info = 9;</code>
@@ -8330,8 +8338,8 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Job compensation information (a.k.a. "pay rate") i.e., the
-     * compensation that will paid to the employee.
+     * Job compensation information (a.k.a. "pay rate") i.e., the compensation
+     * that will paid to the employee.
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.CompensationInfo compensation_info = 9;</code>
@@ -8357,8 +8365,8 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Job compensation information (a.k.a. "pay rate") i.e., the
-     * compensation that will paid to the employee.
+     * Job compensation information (a.k.a. "pay rate") i.e., the compensation
+     * that will paid to the employee.
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.CompensationInfo compensation_info = 9;</code>
@@ -8378,8 +8386,8 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Job compensation information (a.k.a. "pay rate") i.e., the
-     * compensation that will paid to the employee.
+     * Job compensation information (a.k.a. "pay rate") i.e., the compensation
+     * that will paid to the employee.
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.CompensationInfo compensation_info = 9;</code>
@@ -8393,8 +8401,8 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Job compensation information (a.k.a. "pay rate") i.e., the
-     * compensation that will paid to the employee.
+     * Job compensation information (a.k.a. "pay rate") i.e., the compensation
+     * that will paid to the employee.
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.CompensationInfo compensation_info = 9;</code>
@@ -8413,8 +8421,8 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Job compensation information (a.k.a. "pay rate") i.e., the
-     * compensation that will paid to the employee.
+     * Job compensation information (a.k.a. "pay rate") i.e., the compensation
+     * that will paid to the employee.
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.CompensationInfo compensation_info = 9;</code>
@@ -8473,8 +8481,8 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. A map of fields to hold both filterable and non-filterable custom
-     * job attributes that are not covered by the provided structured fields.
+     * A map of fields to hold both filterable and non-filterable custom job
+     * attributes that are not covered by the provided structured fields.
      * The keys of the map are strings up to 64 bytes and must match the
      * pattern: [a-zA-Z][a-zA-Z0-9_]*. For example, key0LikeThis or
      * KEY_1_LIKE_THIS.
@@ -8504,8 +8512,8 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. A map of fields to hold both filterable and non-filterable custom
-     * job attributes that are not covered by the provided structured fields.
+     * A map of fields to hold both filterable and non-filterable custom job
+     * attributes that are not covered by the provided structured fields.
      * The keys of the map are strings up to 64 bytes and must match the
      * pattern: [a-zA-Z][a-zA-Z0-9_]*. For example, key0LikeThis or
      * KEY_1_LIKE_THIS.
@@ -8527,8 +8535,8 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. A map of fields to hold both filterable and non-filterable custom
-     * job attributes that are not covered by the provided structured fields.
+     * A map of fields to hold both filterable and non-filterable custom job
+     * attributes that are not covered by the provided structured fields.
      * The keys of the map are strings up to 64 bytes and must match the
      * pattern: [a-zA-Z][a-zA-Z0-9_]*. For example, key0LikeThis or
      * KEY_1_LIKE_THIS.
@@ -8555,8 +8563,8 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. A map of fields to hold both filterable and non-filterable custom
-     * job attributes that are not covered by the provided structured fields.
+     * A map of fields to hold both filterable and non-filterable custom job
+     * attributes that are not covered by the provided structured fields.
      * The keys of the map are strings up to 64 bytes and must match the
      * pattern: [a-zA-Z][a-zA-Z0-9_]*. For example, key0LikeThis or
      * KEY_1_LIKE_THIS.
@@ -8591,8 +8599,8 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. A map of fields to hold both filterable and non-filterable custom
-     * job attributes that are not covered by the provided structured fields.
+     * A map of fields to hold both filterable and non-filterable custom job
+     * attributes that are not covered by the provided structured fields.
      * The keys of the map are strings up to 64 bytes and must match the
      * pattern: [a-zA-Z][a-zA-Z0-9_]*. For example, key0LikeThis or
      * KEY_1_LIKE_THIS.
@@ -8623,8 +8631,8 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. A map of fields to hold both filterable and non-filterable custom
-     * job attributes that are not covered by the provided structured fields.
+     * A map of fields to hold both filterable and non-filterable custom job
+     * attributes that are not covered by the provided structured fields.
      * The keys of the map are strings up to 64 bytes and must match the
      * pattern: [a-zA-Z][a-zA-Z0-9_]*. For example, key0LikeThis or
      * KEY_1_LIKE_THIS.
@@ -8653,8 +8661,8 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. A map of fields to hold both filterable and non-filterable custom
-     * job attributes that are not covered by the provided structured fields.
+     * A map of fields to hold both filterable and non-filterable custom job
+     * attributes that are not covered by the provided structured fields.
      * The keys of the map are strings up to 64 bytes and must match the
      * pattern: [a-zA-Z][a-zA-Z0-9_]*. For example, key0LikeThis or
      * KEY_1_LIKE_THIS.
@@ -8686,8 +8694,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The desired education degrees for the job, such as Bachelors,
-     * Masters.
+     * The desired education degrees for the job, such as Bachelors, Masters.
      * </pre>
      *
      * <code>repeated .google.cloud.talent.v4beta1.DegreeType degree_types = 11;</code>
@@ -8701,8 +8708,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The desired education degrees for the job, such as Bachelors,
-     * Masters.
+     * The desired education degrees for the job, such as Bachelors, Masters.
      * </pre>
      *
      * <code>repeated .google.cloud.talent.v4beta1.DegreeType degree_types = 11;</code>
@@ -8714,8 +8720,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The desired education degrees for the job, such as Bachelors,
-     * Masters.
+     * The desired education degrees for the job, such as Bachelors, Masters.
      * </pre>
      *
      * <code>repeated .google.cloud.talent.v4beta1.DegreeType degree_types = 11;</code>
@@ -8727,8 +8732,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The desired education degrees for the job, such as Bachelors,
-     * Masters.
+     * The desired education degrees for the job, such as Bachelors, Masters.
      * </pre>
      *
      * <code>repeated .google.cloud.talent.v4beta1.DegreeType degree_types = 11;</code>
@@ -8746,8 +8750,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The desired education degrees for the job, such as Bachelors,
-     * Masters.
+     * The desired education degrees for the job, such as Bachelors, Masters.
      * </pre>
      *
      * <code>repeated .google.cloud.talent.v4beta1.DegreeType degree_types = 11;</code>
@@ -8765,8 +8768,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The desired education degrees for the job, such as Bachelors,
-     * Masters.
+     * The desired education degrees for the job, such as Bachelors, Masters.
      * </pre>
      *
      * <code>repeated .google.cloud.talent.v4beta1.DegreeType degree_types = 11;</code>
@@ -8784,8 +8786,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The desired education degrees for the job, such as Bachelors,
-     * Masters.
+     * The desired education degrees for the job, such as Bachelors, Masters.
      * </pre>
      *
      * <code>repeated .google.cloud.talent.v4beta1.DegreeType degree_types = 11;</code>
@@ -8800,8 +8801,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The desired education degrees for the job, such as Bachelors,
-     * Masters.
+     * The desired education degrees for the job, such as Bachelors, Masters.
      * </pre>
      *
      * <code>repeated .google.cloud.talent.v4beta1.DegreeType degree_types = 11;</code>
@@ -8813,8 +8813,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The desired education degrees for the job, such as Bachelors,
-     * Masters.
+     * The desired education degrees for the job, such as Bachelors, Masters.
      * </pre>
      *
      * <code>repeated .google.cloud.talent.v4beta1.DegreeType degree_types = 11;</code>
@@ -8826,8 +8825,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The desired education degrees for the job, such as Bachelors,
-     * Masters.
+     * The desired education degrees for the job, such as Bachelors, Masters.
      * </pre>
      *
      * <code>repeated .google.cloud.talent.v4beta1.DegreeType degree_types = 11;</code>
@@ -8842,8 +8840,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The desired education degrees for the job, such as Bachelors,
-     * Masters.
+     * The desired education degrees for the job, such as Bachelors, Masters.
      * </pre>
      *
      * <code>repeated .google.cloud.talent.v4beta1.DegreeType degree_types = 11;</code>
@@ -8858,8 +8855,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The desired education degrees for the job, such as Bachelors,
-     * Masters.
+     * The desired education degrees for the job, such as Bachelors, Masters.
      * </pre>
      *
      * <code>repeated .google.cloud.talent.v4beta1.DegreeType degree_types = 11;</code>
@@ -8878,8 +8874,8 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The department or functional area within the company with the
-     * open position.
+     * The department or functional area within the company with the open
+     * position.
      * The maximum number of allowed characters is 255.
      * </pre>
      *
@@ -8900,8 +8896,8 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The department or functional area within the company with the
-     * open position.
+     * The department or functional area within the company with the open
+     * position.
      * The maximum number of allowed characters is 255.
      * </pre>
      *
@@ -8922,8 +8918,8 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The department or functional area within the company with the
-     * open position.
+     * The department or functional area within the company with the open
+     * position.
      * The maximum number of allowed characters is 255.
      * </pre>
      *
@@ -8942,8 +8938,8 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The department or functional area within the company with the
-     * open position.
+     * The department or functional area within the company with the open
+     * position.
      * The maximum number of allowed characters is 255.
      * </pre>
      *
@@ -8959,8 +8955,8 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The department or functional area within the company with the
-     * open position.
+     * The department or functional area within the company with the open
+     * position.
      * The maximum number of allowed characters is 255.
      * </pre>
      *
@@ -8989,7 +8985,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The employment type(s) of a job, for example,
+     * The employment type(s) of a job, for example,
      * [full time][google.cloud.talent.v4beta1.EmploymentType.FULL_TIME] or
      * [part time][google.cloud.talent.v4beta1.EmploymentType.PART_TIME].
      * </pre>
@@ -9005,7 +9001,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The employment type(s) of a job, for example,
+     * The employment type(s) of a job, for example,
      * [full time][google.cloud.talent.v4beta1.EmploymentType.FULL_TIME] or
      * [part time][google.cloud.talent.v4beta1.EmploymentType.PART_TIME].
      * </pre>
@@ -9019,7 +9015,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The employment type(s) of a job, for example,
+     * The employment type(s) of a job, for example,
      * [full time][google.cloud.talent.v4beta1.EmploymentType.FULL_TIME] or
      * [part time][google.cloud.talent.v4beta1.EmploymentType.PART_TIME].
      * </pre>
@@ -9033,7 +9029,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The employment type(s) of a job, for example,
+     * The employment type(s) of a job, for example,
      * [full time][google.cloud.talent.v4beta1.EmploymentType.FULL_TIME] or
      * [part time][google.cloud.talent.v4beta1.EmploymentType.PART_TIME].
      * </pre>
@@ -9054,7 +9050,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The employment type(s) of a job, for example,
+     * The employment type(s) of a job, for example,
      * [full time][google.cloud.talent.v4beta1.EmploymentType.FULL_TIME] or
      * [part time][google.cloud.talent.v4beta1.EmploymentType.PART_TIME].
      * </pre>
@@ -9074,7 +9070,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The employment type(s) of a job, for example,
+     * The employment type(s) of a job, for example,
      * [full time][google.cloud.talent.v4beta1.EmploymentType.FULL_TIME] or
      * [part time][google.cloud.talent.v4beta1.EmploymentType.PART_TIME].
      * </pre>
@@ -9094,7 +9090,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The employment type(s) of a job, for example,
+     * The employment type(s) of a job, for example,
      * [full time][google.cloud.talent.v4beta1.EmploymentType.FULL_TIME] or
      * [part time][google.cloud.talent.v4beta1.EmploymentType.PART_TIME].
      * </pre>
@@ -9111,7 +9107,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The employment type(s) of a job, for example,
+     * The employment type(s) of a job, for example,
      * [full time][google.cloud.talent.v4beta1.EmploymentType.FULL_TIME] or
      * [part time][google.cloud.talent.v4beta1.EmploymentType.PART_TIME].
      * </pre>
@@ -9125,7 +9121,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The employment type(s) of a job, for example,
+     * The employment type(s) of a job, for example,
      * [full time][google.cloud.talent.v4beta1.EmploymentType.FULL_TIME] or
      * [part time][google.cloud.talent.v4beta1.EmploymentType.PART_TIME].
      * </pre>
@@ -9139,7 +9135,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The employment type(s) of a job, for example,
+     * The employment type(s) of a job, for example,
      * [full time][google.cloud.talent.v4beta1.EmploymentType.FULL_TIME] or
      * [part time][google.cloud.talent.v4beta1.EmploymentType.PART_TIME].
      * </pre>
@@ -9156,7 +9152,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The employment type(s) of a job, for example,
+     * The employment type(s) of a job, for example,
      * [full time][google.cloud.talent.v4beta1.EmploymentType.FULL_TIME] or
      * [part time][google.cloud.talent.v4beta1.EmploymentType.PART_TIME].
      * </pre>
@@ -9173,7 +9169,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The employment type(s) of a job, for example,
+     * The employment type(s) of a job, for example,
      * [full time][google.cloud.talent.v4beta1.EmploymentType.FULL_TIME] or
      * [part time][google.cloud.talent.v4beta1.EmploymentType.PART_TIME].
      * </pre>
@@ -9194,7 +9190,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. A description of bonus, commission, and other compensation
+     * A description of bonus, commission, and other compensation
      * incentives associated with the job not including salary or pay.
      * The maximum number of allowed characters is 10,000.
      * </pre>
@@ -9216,7 +9212,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. A description of bonus, commission, and other compensation
+     * A description of bonus, commission, and other compensation
      * incentives associated with the job not including salary or pay.
      * The maximum number of allowed characters is 10,000.
      * </pre>
@@ -9238,7 +9234,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. A description of bonus, commission, and other compensation
+     * A description of bonus, commission, and other compensation
      * incentives associated with the job not including salary or pay.
      * The maximum number of allowed characters is 10,000.
      * </pre>
@@ -9258,7 +9254,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. A description of bonus, commission, and other compensation
+     * A description of bonus, commission, and other compensation
      * incentives associated with the job not including salary or pay.
      * The maximum number of allowed characters is 10,000.
      * </pre>
@@ -9275,7 +9271,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. A description of bonus, commission, and other compensation
+     * A description of bonus, commission, and other compensation
      * incentives associated with the job not including salary or pay.
      * The maximum number of allowed characters is 10,000.
      * </pre>
@@ -9298,7 +9294,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The language of the posting. This field is distinct from
+     * The language of the posting. This field is distinct from
      * any requirements for fluency that are associated with the job.
      * Language codes must be in BCP-47 format, such as "en-US" or "sr-Latn".
      * For more information, see
@@ -9328,7 +9324,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The language of the posting. This field is distinct from
+     * The language of the posting. This field is distinct from
      * any requirements for fluency that are associated with the job.
      * Language codes must be in BCP-47 format, such as "en-US" or "sr-Latn".
      * For more information, see
@@ -9358,7 +9354,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The language of the posting. This field is distinct from
+     * The language of the posting. This field is distinct from
      * any requirements for fluency that are associated with the job.
      * Language codes must be in BCP-47 format, such as "en-US" or "sr-Latn".
      * For more information, see
@@ -9386,7 +9382,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The language of the posting. This field is distinct from
+     * The language of the posting. This field is distinct from
      * any requirements for fluency that are associated with the job.
      * Language codes must be in BCP-47 format, such as "en-US" or "sr-Latn".
      * For more information, see
@@ -9411,7 +9407,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The language of the posting. This field is distinct from
+     * The language of the posting. This field is distinct from
      * any requirements for fluency that are associated with the job.
      * Language codes must be in BCP-47 format, such as "en-US" or "sr-Latn".
      * For more information, see
@@ -9442,8 +9438,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The experience level associated with the job, such as "Entry
-     * Level".
+     * The experience level associated with the job, such as "Entry Level".
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.JobLevel job_level = 16;</code>
@@ -9455,8 +9450,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The experience level associated with the job, such as "Entry
-     * Level".
+     * The experience level associated with the job, such as "Entry Level".
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.JobLevel job_level = 16;</code>
@@ -9470,8 +9464,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The experience level associated with the job, such as "Entry
-     * Level".
+     * The experience level associated with the job, such as "Entry Level".
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.JobLevel job_level = 16;</code>
@@ -9486,8 +9479,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The experience level associated with the job, such as "Entry
-     * Level".
+     * The experience level associated with the job, such as "Entry Level".
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.JobLevel job_level = 16;</code>
@@ -9505,8 +9497,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The experience level associated with the job, such as "Entry
-     * Level".
+     * The experience level associated with the job, such as "Entry Level".
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.JobLevel job_level = 16;</code>
@@ -9523,7 +9514,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. A promotion value of the job, as determined by the client.
+     * A promotion value of the job, as determined by the client.
      * The value determines the sort order of the jobs returned when searching for
      * jobs using the featured jobs search call, with higher promotional values
      * being returned first and ties being resolved by relevance sort. Only the
@@ -9540,7 +9531,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. A promotion value of the job, as determined by the client.
+     * A promotion value of the job, as determined by the client.
      * The value determines the sort order of the jobs returned when searching for
      * jobs using the featured jobs search call, with higher promotional values
      * being returned first and ties being resolved by relevance sort. Only the
@@ -9560,7 +9551,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. A promotion value of the job, as determined by the client.
+     * A promotion value of the job, as determined by the client.
      * The value determines the sort order of the jobs returned when searching for
      * jobs using the featured jobs search call, with higher promotional values
      * being returned first and ties being resolved by relevance sort. Only the
@@ -9582,7 +9573,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. A description of the qualifications required to perform the
+     * A description of the qualifications required to perform the
      * job. The use of this field is recommended
      * as an alternative to using the more general
      * [description][google.cloud.talent.v4beta1.Job.description] field.
@@ -9608,7 +9599,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. A description of the qualifications required to perform the
+     * A description of the qualifications required to perform the
      * job. The use of this field is recommended
      * as an alternative to using the more general
      * [description][google.cloud.talent.v4beta1.Job.description] field.
@@ -9634,7 +9625,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. A description of the qualifications required to perform the
+     * A description of the qualifications required to perform the
      * job. The use of this field is recommended
      * as an alternative to using the more general
      * [description][google.cloud.talent.v4beta1.Job.description] field.
@@ -9658,7 +9649,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. A description of the qualifications required to perform the
+     * A description of the qualifications required to perform the
      * job. The use of this field is recommended
      * as an alternative to using the more general
      * [description][google.cloud.talent.v4beta1.Job.description] field.
@@ -9679,7 +9670,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. A description of the qualifications required to perform the
+     * A description of the qualifications required to perform the
      * job. The use of this field is recommended
      * as an alternative to using the more general
      * [description][google.cloud.talent.v4beta1.Job.description] field.
@@ -9706,7 +9697,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. A description of job responsibilities. The use of this field is
+     * A description of job responsibilities. The use of this field is
      * recommended as an alternative to using the more general
      * [description][google.cloud.talent.v4beta1.Job.description] field.
      * This field accepts and sanitizes HTML input, and also accepts
@@ -9731,7 +9722,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. A description of job responsibilities. The use of this field is
+     * A description of job responsibilities. The use of this field is
      * recommended as an alternative to using the more general
      * [description][google.cloud.talent.v4beta1.Job.description] field.
      * This field accepts and sanitizes HTML input, and also accepts
@@ -9756,7 +9747,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. A description of job responsibilities. The use of this field is
+     * A description of job responsibilities. The use of this field is
      * recommended as an alternative to using the more general
      * [description][google.cloud.talent.v4beta1.Job.description] field.
      * This field accepts and sanitizes HTML input, and also accepts
@@ -9779,7 +9770,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. A description of job responsibilities. The use of this field is
+     * A description of job responsibilities. The use of this field is
      * recommended as an alternative to using the more general
      * [description][google.cloud.talent.v4beta1.Job.description] field.
      * This field accepts and sanitizes HTML input, and also accepts
@@ -9799,7 +9790,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. A description of job responsibilities. The use of this field is
+     * A description of job responsibilities. The use of this field is
      * recommended as an alternative to using the more general
      * [description][google.cloud.talent.v4beta1.Job.description] field.
      * This field accepts and sanitizes HTML input, and also accepts
@@ -9825,12 +9816,12 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The job
-     * [PostingRegion][google.cloud.talent.v4beta1.PostingRegion] (for example,
-     * state, country) throughout which the job is available. If this field is
-     * set, a [LocationFilter][google.cloud.talent.v4beta1.LocationFilter] in a
-     * search query within the job region finds this job posting if an exact
-     * location match isn't specified. If this field is set to
+     * The job [PostingRegion][google.cloud.talent.v4beta1.PostingRegion] (for
+     * example, state, country) throughout which the job is available. If this
+     * field is set, a
+     * [LocationFilter][google.cloud.talent.v4beta1.LocationFilter] in a search
+     * query within the job region finds this job posting if an exact location
+     * match isn't specified. If this field is set to
      * [PostingRegion.NATION][google.cloud.talent.v4beta1.PostingRegion.NATION] or
      * [PostingRegion.ADMINISTRATIVE_AREA][google.cloud.talent.v4beta1.PostingRegion.ADMINISTRATIVE_AREA],
      * setting job [Job.addresses][google.cloud.talent.v4beta1.Job.addresses] to
@@ -9846,12 +9837,12 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The job
-     * [PostingRegion][google.cloud.talent.v4beta1.PostingRegion] (for example,
-     * state, country) throughout which the job is available. If this field is
-     * set, a [LocationFilter][google.cloud.talent.v4beta1.LocationFilter] in a
-     * search query within the job region finds this job posting if an exact
-     * location match isn't specified. If this field is set to
+     * The job [PostingRegion][google.cloud.talent.v4beta1.PostingRegion] (for
+     * example, state, country) throughout which the job is available. If this
+     * field is set, a
+     * [LocationFilter][google.cloud.talent.v4beta1.LocationFilter] in a search
+     * query within the job region finds this job posting if an exact location
+     * match isn't specified. If this field is set to
      * [PostingRegion.NATION][google.cloud.talent.v4beta1.PostingRegion.NATION] or
      * [PostingRegion.ADMINISTRATIVE_AREA][google.cloud.talent.v4beta1.PostingRegion.ADMINISTRATIVE_AREA],
      * setting job [Job.addresses][google.cloud.talent.v4beta1.Job.addresses] to
@@ -9869,12 +9860,12 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The job
-     * [PostingRegion][google.cloud.talent.v4beta1.PostingRegion] (for example,
-     * state, country) throughout which the job is available. If this field is
-     * set, a [LocationFilter][google.cloud.talent.v4beta1.LocationFilter] in a
-     * search query within the job region finds this job posting if an exact
-     * location match isn't specified. If this field is set to
+     * The job [PostingRegion][google.cloud.talent.v4beta1.PostingRegion] (for
+     * example, state, country) throughout which the job is available. If this
+     * field is set, a
+     * [LocationFilter][google.cloud.talent.v4beta1.LocationFilter] in a search
+     * query within the job region finds this job posting if an exact location
+     * match isn't specified. If this field is set to
      * [PostingRegion.NATION][google.cloud.talent.v4beta1.PostingRegion.NATION] or
      * [PostingRegion.ADMINISTRATIVE_AREA][google.cloud.talent.v4beta1.PostingRegion.ADMINISTRATIVE_AREA],
      * setting job [Job.addresses][google.cloud.talent.v4beta1.Job.addresses] to
@@ -9893,12 +9884,12 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The job
-     * [PostingRegion][google.cloud.talent.v4beta1.PostingRegion] (for example,
-     * state, country) throughout which the job is available. If this field is
-     * set, a [LocationFilter][google.cloud.talent.v4beta1.LocationFilter] in a
-     * search query within the job region finds this job posting if an exact
-     * location match isn't specified. If this field is set to
+     * The job [PostingRegion][google.cloud.talent.v4beta1.PostingRegion] (for
+     * example, state, country) throughout which the job is available. If this
+     * field is set, a
+     * [LocationFilter][google.cloud.talent.v4beta1.LocationFilter] in a search
+     * query within the job region finds this job posting if an exact location
+     * match isn't specified. If this field is set to
      * [PostingRegion.NATION][google.cloud.talent.v4beta1.PostingRegion.NATION] or
      * [PostingRegion.ADMINISTRATIVE_AREA][google.cloud.talent.v4beta1.PostingRegion.ADMINISTRATIVE_AREA],
      * setting job [Job.addresses][google.cloud.talent.v4beta1.Job.addresses] to
@@ -9920,12 +9911,12 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The job
-     * [PostingRegion][google.cloud.talent.v4beta1.PostingRegion] (for example,
-     * state, country) throughout which the job is available. If this field is
-     * set, a [LocationFilter][google.cloud.talent.v4beta1.LocationFilter] in a
-     * search query within the job region finds this job posting if an exact
-     * location match isn't specified. If this field is set to
+     * The job [PostingRegion][google.cloud.talent.v4beta1.PostingRegion] (for
+     * example, state, country) throughout which the job is available. If this
+     * field is set, a
+     * [LocationFilter][google.cloud.talent.v4beta1.LocationFilter] in a search
+     * query within the job region finds this job posting if an exact location
+     * match isn't specified. If this field is set to
      * [PostingRegion.NATION][google.cloud.talent.v4beta1.PostingRegion.NATION] or
      * [PostingRegion.ADMINISTRATIVE_AREA][google.cloud.talent.v4beta1.PostingRegion.ADMINISTRATIVE_AREA],
      * setting job [Job.addresses][google.cloud.talent.v4beta1.Job.addresses] to
@@ -9946,14 +9937,16 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The visibility of the job.
+     * Deprecated. The job is only visible to the owner.
+     * The visibility of the job.
      * Defaults to
      * [Visibility.ACCOUNT_ONLY][google.cloud.talent.v4beta1.Visibility.ACCOUNT_ONLY]
      * if not specified.
      * </pre>
      *
-     * <code>.google.cloud.talent.v4beta1.Visibility visibility = 21;</code>
+     * <code>.google.cloud.talent.v4beta1.Visibility visibility = 21 [deprecated = true];</code>
      */
+    @java.lang.Deprecated
     public int getVisibilityValue() {
       return visibility_;
     }
@@ -9961,14 +9954,16 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The visibility of the job.
+     * Deprecated. The job is only visible to the owner.
+     * The visibility of the job.
      * Defaults to
      * [Visibility.ACCOUNT_ONLY][google.cloud.talent.v4beta1.Visibility.ACCOUNT_ONLY]
      * if not specified.
      * </pre>
      *
-     * <code>.google.cloud.talent.v4beta1.Visibility visibility = 21;</code>
+     * <code>.google.cloud.talent.v4beta1.Visibility visibility = 21 [deprecated = true];</code>
      */
+    @java.lang.Deprecated
     public Builder setVisibilityValue(int value) {
       visibility_ = value;
       onChanged();
@@ -9978,14 +9973,16 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The visibility of the job.
+     * Deprecated. The job is only visible to the owner.
+     * The visibility of the job.
      * Defaults to
      * [Visibility.ACCOUNT_ONLY][google.cloud.talent.v4beta1.Visibility.ACCOUNT_ONLY]
      * if not specified.
      * </pre>
      *
-     * <code>.google.cloud.talent.v4beta1.Visibility visibility = 21;</code>
+     * <code>.google.cloud.talent.v4beta1.Visibility visibility = 21 [deprecated = true];</code>
      */
+    @java.lang.Deprecated
     public com.google.cloud.talent.v4beta1.Visibility getVisibility() {
       @SuppressWarnings("deprecation")
       com.google.cloud.talent.v4beta1.Visibility result =
@@ -9996,14 +9993,16 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The visibility of the job.
+     * Deprecated. The job is only visible to the owner.
+     * The visibility of the job.
      * Defaults to
      * [Visibility.ACCOUNT_ONLY][google.cloud.talent.v4beta1.Visibility.ACCOUNT_ONLY]
      * if not specified.
      * </pre>
      *
-     * <code>.google.cloud.talent.v4beta1.Visibility visibility = 21;</code>
+     * <code>.google.cloud.talent.v4beta1.Visibility visibility = 21 [deprecated = true];</code>
      */
+    @java.lang.Deprecated
     public Builder setVisibility(com.google.cloud.talent.v4beta1.Visibility value) {
       if (value == null) {
         throw new NullPointerException();
@@ -10017,14 +10016,16 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The visibility of the job.
+     * Deprecated. The job is only visible to the owner.
+     * The visibility of the job.
      * Defaults to
      * [Visibility.ACCOUNT_ONLY][google.cloud.talent.v4beta1.Visibility.ACCOUNT_ONLY]
      * if not specified.
      * </pre>
      *
-     * <code>.google.cloud.talent.v4beta1.Visibility visibility = 21;</code>
+     * <code>.google.cloud.talent.v4beta1.Visibility visibility = 21 [deprecated = true];</code>
      */
+    @java.lang.Deprecated
     public Builder clearVisibility() {
 
       visibility_ = 0;
@@ -10042,8 +10043,8 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The start timestamp of the job in UTC time zone. Typically this
-     * field is used for contracting engagements. Invalid timestamps are ignored.
+     * The start timestamp of the job in UTC time zone. Typically this field
+     * is used for contracting engagements. Invalid timestamps are ignored.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp job_start_time = 22;</code>
@@ -10055,8 +10056,8 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The start timestamp of the job in UTC time zone. Typically this
-     * field is used for contracting engagements. Invalid timestamps are ignored.
+     * The start timestamp of the job in UTC time zone. Typically this field
+     * is used for contracting engagements. Invalid timestamps are ignored.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp job_start_time = 22;</code>
@@ -10074,8 +10075,8 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The start timestamp of the job in UTC time zone. Typically this
-     * field is used for contracting engagements. Invalid timestamps are ignored.
+     * The start timestamp of the job in UTC time zone. Typically this field
+     * is used for contracting engagements. Invalid timestamps are ignored.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp job_start_time = 22;</code>
@@ -10097,8 +10098,8 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The start timestamp of the job in UTC time zone. Typically this
-     * field is used for contracting engagements. Invalid timestamps are ignored.
+     * The start timestamp of the job in UTC time zone. Typically this field
+     * is used for contracting engagements. Invalid timestamps are ignored.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp job_start_time = 22;</code>
@@ -10117,8 +10118,8 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The start timestamp of the job in UTC time zone. Typically this
-     * field is used for contracting engagements. Invalid timestamps are ignored.
+     * The start timestamp of the job in UTC time zone. Typically this field
+     * is used for contracting engagements. Invalid timestamps are ignored.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp job_start_time = 22;</code>
@@ -10144,8 +10145,8 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The start timestamp of the job in UTC time zone. Typically this
-     * field is used for contracting engagements. Invalid timestamps are ignored.
+     * The start timestamp of the job in UTC time zone. Typically this field
+     * is used for contracting engagements. Invalid timestamps are ignored.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp job_start_time = 22;</code>
@@ -10165,8 +10166,8 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The start timestamp of the job in UTC time zone. Typically this
-     * field is used for contracting engagements. Invalid timestamps are ignored.
+     * The start timestamp of the job in UTC time zone. Typically this field
+     * is used for contracting engagements. Invalid timestamps are ignored.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp job_start_time = 22;</code>
@@ -10180,8 +10181,8 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The start timestamp of the job in UTC time zone. Typically this
-     * field is used for contracting engagements. Invalid timestamps are ignored.
+     * The start timestamp of the job in UTC time zone. Typically this field
+     * is used for contracting engagements. Invalid timestamps are ignored.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp job_start_time = 22;</code>
@@ -10199,8 +10200,8 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The start timestamp of the job in UTC time zone. Typically this
-     * field is used for contracting engagements. Invalid timestamps are ignored.
+     * The start timestamp of the job in UTC time zone. Typically this field
+     * is used for contracting engagements. Invalid timestamps are ignored.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp job_start_time = 22;</code>
@@ -10232,8 +10233,8 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The end timestamp of the job. Typically this field is used for
-     * contracting engagements. Invalid timestamps are ignored.
+     * The end timestamp of the job. Typically this field is used for contracting
+     * engagements. Invalid timestamps are ignored.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp job_end_time = 23;</code>
@@ -10245,8 +10246,8 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The end timestamp of the job. Typically this field is used for
-     * contracting engagements. Invalid timestamps are ignored.
+     * The end timestamp of the job. Typically this field is used for contracting
+     * engagements. Invalid timestamps are ignored.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp job_end_time = 23;</code>
@@ -10264,8 +10265,8 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The end timestamp of the job. Typically this field is used for
-     * contracting engagements. Invalid timestamps are ignored.
+     * The end timestamp of the job. Typically this field is used for contracting
+     * engagements. Invalid timestamps are ignored.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp job_end_time = 23;</code>
@@ -10287,8 +10288,8 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The end timestamp of the job. Typically this field is used for
-     * contracting engagements. Invalid timestamps are ignored.
+     * The end timestamp of the job. Typically this field is used for contracting
+     * engagements. Invalid timestamps are ignored.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp job_end_time = 23;</code>
@@ -10307,8 +10308,8 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The end timestamp of the job. Typically this field is used for
-     * contracting engagements. Invalid timestamps are ignored.
+     * The end timestamp of the job. Typically this field is used for contracting
+     * engagements. Invalid timestamps are ignored.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp job_end_time = 23;</code>
@@ -10332,8 +10333,8 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The end timestamp of the job. Typically this field is used for
-     * contracting engagements. Invalid timestamps are ignored.
+     * The end timestamp of the job. Typically this field is used for contracting
+     * engagements. Invalid timestamps are ignored.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp job_end_time = 23;</code>
@@ -10353,8 +10354,8 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The end timestamp of the job. Typically this field is used for
-     * contracting engagements. Invalid timestamps are ignored.
+     * The end timestamp of the job. Typically this field is used for contracting
+     * engagements. Invalid timestamps are ignored.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp job_end_time = 23;</code>
@@ -10368,8 +10369,8 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The end timestamp of the job. Typically this field is used for
-     * contracting engagements. Invalid timestamps are ignored.
+     * The end timestamp of the job. Typically this field is used for contracting
+     * engagements. Invalid timestamps are ignored.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp job_end_time = 23;</code>
@@ -10387,8 +10388,8 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The end timestamp of the job. Typically this field is used for
-     * contracting engagements. Invalid timestamps are ignored.
+     * The end timestamp of the job. Typically this field is used for contracting
+     * engagements. Invalid timestamps are ignored.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp job_end_time = 23;</code>
@@ -10420,9 +10421,9 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The timestamp this job posting was most recently published. The
-     * default value is the time the request arrives at the server. Invalid
-     * timestamps are ignored.
+     * The timestamp this job posting was most recently published. The default
+     * value is the time the request arrives at the server. Invalid timestamps are
+     * ignored.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp posting_publish_time = 24;</code>
@@ -10434,9 +10435,9 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The timestamp this job posting was most recently published. The
-     * default value is the time the request arrives at the server. Invalid
-     * timestamps are ignored.
+     * The timestamp this job posting was most recently published. The default
+     * value is the time the request arrives at the server. Invalid timestamps are
+     * ignored.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp posting_publish_time = 24;</code>
@@ -10454,9 +10455,9 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The timestamp this job posting was most recently published. The
-     * default value is the time the request arrives at the server. Invalid
-     * timestamps are ignored.
+     * The timestamp this job posting was most recently published. The default
+     * value is the time the request arrives at the server. Invalid timestamps are
+     * ignored.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp posting_publish_time = 24;</code>
@@ -10478,9 +10479,9 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The timestamp this job posting was most recently published. The
-     * default value is the time the request arrives at the server. Invalid
-     * timestamps are ignored.
+     * The timestamp this job posting was most recently published. The default
+     * value is the time the request arrives at the server. Invalid timestamps are
+     * ignored.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp posting_publish_time = 24;</code>
@@ -10499,9 +10500,9 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The timestamp this job posting was most recently published. The
-     * default value is the time the request arrives at the server. Invalid
-     * timestamps are ignored.
+     * The timestamp this job posting was most recently published. The default
+     * value is the time the request arrives at the server. Invalid timestamps are
+     * ignored.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp posting_publish_time = 24;</code>
@@ -10527,9 +10528,9 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The timestamp this job posting was most recently published. The
-     * default value is the time the request arrives at the server. Invalid
-     * timestamps are ignored.
+     * The timestamp this job posting was most recently published. The default
+     * value is the time the request arrives at the server. Invalid timestamps are
+     * ignored.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp posting_publish_time = 24;</code>
@@ -10549,9 +10550,9 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The timestamp this job posting was most recently published. The
-     * default value is the time the request arrives at the server. Invalid
-     * timestamps are ignored.
+     * The timestamp this job posting was most recently published. The default
+     * value is the time the request arrives at the server. Invalid timestamps are
+     * ignored.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp posting_publish_time = 24;</code>
@@ -10565,9 +10566,9 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The timestamp this job posting was most recently published. The
-     * default value is the time the request arrives at the server. Invalid
-     * timestamps are ignored.
+     * The timestamp this job posting was most recently published. The default
+     * value is the time the request arrives at the server. Invalid timestamps are
+     * ignored.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp posting_publish_time = 24;</code>
@@ -10585,9 +10586,9 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The timestamp this job posting was most recently published. The
-     * default value is the time the request arrives at the server. Invalid
-     * timestamps are ignored.
+     * The timestamp this job posting was most recently published. The default
+     * value is the time the request arrives at the server. Invalid timestamps are
+     * ignored.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp posting_publish_time = 24;</code>
@@ -10619,8 +10620,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional but strongly recommended for the best service
-     * experience.
+     * Strongly recommended for the best service experience.
      * The expiration timestamp of the job. After this timestamp, the
      * job is marked as expired, and it no longer appears in search results. The
      * expired job can't be listed by the
@@ -10675,8 +10675,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional but strongly recommended for the best service
-     * experience.
+     * Strongly recommended for the best service experience.
      * The expiration timestamp of the job. After this timestamp, the
      * job is marked as expired, and it no longer appears in search results. The
      * expired job can't be listed by the
@@ -10737,8 +10736,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional but strongly recommended for the best service
-     * experience.
+     * Strongly recommended for the best service experience.
      * The expiration timestamp of the job. After this timestamp, the
      * job is marked as expired, and it no longer appears in search results. The
      * expired job can't be listed by the
@@ -10803,8 +10801,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional but strongly recommended for the best service
-     * experience.
+     * Strongly recommended for the best service experience.
      * The expiration timestamp of the job. After this timestamp, the
      * job is marked as expired, and it no longer appears in search results. The
      * expired job can't be listed by the
@@ -10866,8 +10863,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional but strongly recommended for the best service
-     * experience.
+     * Strongly recommended for the best service experience.
      * The expiration timestamp of the job. After this timestamp, the
      * job is marked as expired, and it no longer appears in search results. The
      * expired job can't be listed by the
@@ -10936,8 +10932,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional but strongly recommended for the best service
-     * experience.
+     * Strongly recommended for the best service experience.
      * The expiration timestamp of the job. After this timestamp, the
      * job is marked as expired, and it no longer appears in search results. The
      * expired job can't be listed by the
@@ -11000,8 +10995,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional but strongly recommended for the best service
-     * experience.
+     * Strongly recommended for the best service experience.
      * The expiration timestamp of the job. After this timestamp, the
      * job is marked as expired, and it no longer appears in search results. The
      * expired job can't be listed by the
@@ -11058,8 +11052,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional but strongly recommended for the best service
-     * experience.
+     * Strongly recommended for the best service experience.
      * The expiration timestamp of the job. After this timestamp, the
      * job is marked as expired, and it no longer appears in search results. The
      * expired job can't be listed by the
@@ -11120,8 +11113,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional but strongly recommended for the best service
-     * experience.
+     * Strongly recommended for the best service experience.
      * The expiration timestamp of the job. After this timestamp, the
      * job is marked as expired, and it no longer appears in search results. The
      * expired job can't be listed by the
@@ -11199,7 +11191,9 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      * Output only. The timestamp when this job posting was created.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp posting_create_time = 26;</code>
+     * <code>
+     * .google.protobuf.Timestamp posting_create_time = 26 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public boolean hasPostingCreateTime() {
       return postingCreateTimeBuilder_ != null || postingCreateTime_ != null;
@@ -11211,7 +11205,9 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      * Output only. The timestamp when this job posting was created.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp posting_create_time = 26;</code>
+     * <code>
+     * .google.protobuf.Timestamp posting_create_time = 26 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public com.google.protobuf.Timestamp getPostingCreateTime() {
       if (postingCreateTimeBuilder_ == null) {
@@ -11229,7 +11225,9 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      * Output only. The timestamp when this job posting was created.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp posting_create_time = 26;</code>
+     * <code>
+     * .google.protobuf.Timestamp posting_create_time = 26 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public Builder setPostingCreateTime(com.google.protobuf.Timestamp value) {
       if (postingCreateTimeBuilder_ == null) {
@@ -11251,7 +11249,9 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      * Output only. The timestamp when this job posting was created.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp posting_create_time = 26;</code>
+     * <code>
+     * .google.protobuf.Timestamp posting_create_time = 26 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public Builder setPostingCreateTime(com.google.protobuf.Timestamp.Builder builderForValue) {
       if (postingCreateTimeBuilder_ == null) {
@@ -11270,7 +11270,9 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      * Output only. The timestamp when this job posting was created.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp posting_create_time = 26;</code>
+     * <code>
+     * .google.protobuf.Timestamp posting_create_time = 26 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public Builder mergePostingCreateTime(com.google.protobuf.Timestamp value) {
       if (postingCreateTimeBuilder_ == null) {
@@ -11296,7 +11298,9 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      * Output only. The timestamp when this job posting was created.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp posting_create_time = 26;</code>
+     * <code>
+     * .google.protobuf.Timestamp posting_create_time = 26 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public Builder clearPostingCreateTime() {
       if (postingCreateTimeBuilder_ == null) {
@@ -11316,7 +11320,9 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      * Output only. The timestamp when this job posting was created.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp posting_create_time = 26;</code>
+     * <code>
+     * .google.protobuf.Timestamp posting_create_time = 26 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public com.google.protobuf.Timestamp.Builder getPostingCreateTimeBuilder() {
 
@@ -11330,7 +11336,9 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      * Output only. The timestamp when this job posting was created.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp posting_create_time = 26;</code>
+     * <code>
+     * .google.protobuf.Timestamp posting_create_time = 26 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public com.google.protobuf.TimestampOrBuilder getPostingCreateTimeOrBuilder() {
       if (postingCreateTimeBuilder_ != null) {
@@ -11348,7 +11356,9 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      * Output only. The timestamp when this job posting was created.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp posting_create_time = 26;</code>
+     * <code>
+     * .google.protobuf.Timestamp posting_create_time = 26 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.protobuf.Timestamp,
@@ -11380,7 +11390,9 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      * Output only. The timestamp when this job posting was last updated.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp posting_update_time = 27;</code>
+     * <code>
+     * .google.protobuf.Timestamp posting_update_time = 27 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public boolean hasPostingUpdateTime() {
       return postingUpdateTimeBuilder_ != null || postingUpdateTime_ != null;
@@ -11392,7 +11404,9 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      * Output only. The timestamp when this job posting was last updated.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp posting_update_time = 27;</code>
+     * <code>
+     * .google.protobuf.Timestamp posting_update_time = 27 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public com.google.protobuf.Timestamp getPostingUpdateTime() {
       if (postingUpdateTimeBuilder_ == null) {
@@ -11410,7 +11424,9 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      * Output only. The timestamp when this job posting was last updated.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp posting_update_time = 27;</code>
+     * <code>
+     * .google.protobuf.Timestamp posting_update_time = 27 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public Builder setPostingUpdateTime(com.google.protobuf.Timestamp value) {
       if (postingUpdateTimeBuilder_ == null) {
@@ -11432,7 +11448,9 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      * Output only. The timestamp when this job posting was last updated.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp posting_update_time = 27;</code>
+     * <code>
+     * .google.protobuf.Timestamp posting_update_time = 27 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public Builder setPostingUpdateTime(com.google.protobuf.Timestamp.Builder builderForValue) {
       if (postingUpdateTimeBuilder_ == null) {
@@ -11451,7 +11469,9 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      * Output only. The timestamp when this job posting was last updated.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp posting_update_time = 27;</code>
+     * <code>
+     * .google.protobuf.Timestamp posting_update_time = 27 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public Builder mergePostingUpdateTime(com.google.protobuf.Timestamp value) {
       if (postingUpdateTimeBuilder_ == null) {
@@ -11477,7 +11497,9 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      * Output only. The timestamp when this job posting was last updated.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp posting_update_time = 27;</code>
+     * <code>
+     * .google.protobuf.Timestamp posting_update_time = 27 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public Builder clearPostingUpdateTime() {
       if (postingUpdateTimeBuilder_ == null) {
@@ -11497,7 +11519,9 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      * Output only. The timestamp when this job posting was last updated.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp posting_update_time = 27;</code>
+     * <code>
+     * .google.protobuf.Timestamp posting_update_time = 27 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public com.google.protobuf.Timestamp.Builder getPostingUpdateTimeBuilder() {
 
@@ -11511,7 +11535,9 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      * Output only. The timestamp when this job posting was last updated.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp posting_update_time = 27;</code>
+     * <code>
+     * .google.protobuf.Timestamp posting_update_time = 27 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public com.google.protobuf.TimestampOrBuilder getPostingUpdateTimeOrBuilder() {
       if (postingUpdateTimeBuilder_ != null) {
@@ -11529,7 +11555,9 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      * Output only. The timestamp when this job posting was last updated.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp posting_update_time = 27;</code>
+     * <code>
+     * .google.protobuf.Timestamp posting_update_time = 27 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.protobuf.Timestamp,
@@ -11556,7 +11584,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      * Output only. Display name of the company listing the job.
      * </pre>
      *
-     * <code>string company_display_name = 28;</code>
+     * <code>string company_display_name = 28 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     public java.lang.String getCompanyDisplayName() {
       java.lang.Object ref = companyDisplayName_;
@@ -11576,7 +11604,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      * Output only. Display name of the company listing the job.
      * </pre>
      *
-     * <code>string company_display_name = 28;</code>
+     * <code>string company_display_name = 28 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     public com.google.protobuf.ByteString getCompanyDisplayNameBytes() {
       java.lang.Object ref = companyDisplayName_;
@@ -11596,7 +11624,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      * Output only. Display name of the company listing the job.
      * </pre>
      *
-     * <code>string company_display_name = 28;</code>
+     * <code>string company_display_name = 28 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     public Builder setCompanyDisplayName(java.lang.String value) {
       if (value == null) {
@@ -11614,7 +11642,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      * Output only. Display name of the company listing the job.
      * </pre>
      *
-     * <code>string company_display_name = 28;</code>
+     * <code>string company_display_name = 28 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     public Builder clearCompanyDisplayName() {
 
@@ -11629,7 +11657,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      * Output only. Display name of the company listing the job.
      * </pre>
      *
-     * <code>string company_display_name = 28;</code>
+     * <code>string company_display_name = 28 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     public Builder setCompanyDisplayNameBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -11655,7 +11683,9 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      * Output only. Derived details about the job posting.
      * </pre>
      *
-     * <code>.google.cloud.talent.v4beta1.Job.DerivedInfo derived_info = 29;</code>
+     * <code>
+     * .google.cloud.talent.v4beta1.Job.DerivedInfo derived_info = 29 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public boolean hasDerivedInfo() {
       return derivedInfoBuilder_ != null || derivedInfo_ != null;
@@ -11667,7 +11697,9 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      * Output only. Derived details about the job posting.
      * </pre>
      *
-     * <code>.google.cloud.talent.v4beta1.Job.DerivedInfo derived_info = 29;</code>
+     * <code>
+     * .google.cloud.talent.v4beta1.Job.DerivedInfo derived_info = 29 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public com.google.cloud.talent.v4beta1.Job.DerivedInfo getDerivedInfo() {
       if (derivedInfoBuilder_ == null) {
@@ -11685,7 +11717,9 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      * Output only. Derived details about the job posting.
      * </pre>
      *
-     * <code>.google.cloud.talent.v4beta1.Job.DerivedInfo derived_info = 29;</code>
+     * <code>
+     * .google.cloud.talent.v4beta1.Job.DerivedInfo derived_info = 29 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public Builder setDerivedInfo(com.google.cloud.talent.v4beta1.Job.DerivedInfo value) {
       if (derivedInfoBuilder_ == null) {
@@ -11707,7 +11741,9 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      * Output only. Derived details about the job posting.
      * </pre>
      *
-     * <code>.google.cloud.talent.v4beta1.Job.DerivedInfo derived_info = 29;</code>
+     * <code>
+     * .google.cloud.talent.v4beta1.Job.DerivedInfo derived_info = 29 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public Builder setDerivedInfo(
         com.google.cloud.talent.v4beta1.Job.DerivedInfo.Builder builderForValue) {
@@ -11727,7 +11763,9 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      * Output only. Derived details about the job posting.
      * </pre>
      *
-     * <code>.google.cloud.talent.v4beta1.Job.DerivedInfo derived_info = 29;</code>
+     * <code>
+     * .google.cloud.talent.v4beta1.Job.DerivedInfo derived_info = 29 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public Builder mergeDerivedInfo(com.google.cloud.talent.v4beta1.Job.DerivedInfo value) {
       if (derivedInfoBuilder_ == null) {
@@ -11753,7 +11791,9 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      * Output only. Derived details about the job posting.
      * </pre>
      *
-     * <code>.google.cloud.talent.v4beta1.Job.DerivedInfo derived_info = 29;</code>
+     * <code>
+     * .google.cloud.talent.v4beta1.Job.DerivedInfo derived_info = 29 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public Builder clearDerivedInfo() {
       if (derivedInfoBuilder_ == null) {
@@ -11773,7 +11813,9 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      * Output only. Derived details about the job posting.
      * </pre>
      *
-     * <code>.google.cloud.talent.v4beta1.Job.DerivedInfo derived_info = 29;</code>
+     * <code>
+     * .google.cloud.talent.v4beta1.Job.DerivedInfo derived_info = 29 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public com.google.cloud.talent.v4beta1.Job.DerivedInfo.Builder getDerivedInfoBuilder() {
 
@@ -11787,7 +11829,9 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      * Output only. Derived details about the job posting.
      * </pre>
      *
-     * <code>.google.cloud.talent.v4beta1.Job.DerivedInfo derived_info = 29;</code>
+     * <code>
+     * .google.cloud.talent.v4beta1.Job.DerivedInfo derived_info = 29 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public com.google.cloud.talent.v4beta1.Job.DerivedInfoOrBuilder getDerivedInfoOrBuilder() {
       if (derivedInfoBuilder_ != null) {
@@ -11805,7 +11849,9 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      * Output only. Derived details about the job posting.
      * </pre>
      *
-     * <code>.google.cloud.talent.v4beta1.Job.DerivedInfo derived_info = 29;</code>
+     * <code>
+     * .google.cloud.talent.v4beta1.Job.DerivedInfo derived_info = 29 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.talent.v4beta1.Job.DerivedInfo,
@@ -11834,7 +11880,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Options for job processing.
+     * Options for job processing.
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.Job.ProcessingOptions processing_options = 30;</code>
@@ -11846,7 +11892,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Options for job processing.
+     * Options for job processing.
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.Job.ProcessingOptions processing_options = 30;</code>
@@ -11864,7 +11910,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Options for job processing.
+     * Options for job processing.
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.Job.ProcessingOptions processing_options = 30;</code>
@@ -11887,7 +11933,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Options for job processing.
+     * Options for job processing.
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.Job.ProcessingOptions processing_options = 30;</code>
@@ -11907,7 +11953,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Options for job processing.
+     * Options for job processing.
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.Job.ProcessingOptions processing_options = 30;</code>
@@ -11934,7 +11980,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Options for job processing.
+     * Options for job processing.
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.Job.ProcessingOptions processing_options = 30;</code>
@@ -11954,7 +12000,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Options for job processing.
+     * Options for job processing.
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.Job.ProcessingOptions processing_options = 30;</code>
@@ -11969,7 +12015,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Options for job processing.
+     * Options for job processing.
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.Job.ProcessingOptions processing_options = 30;</code>
@@ -11988,7 +12034,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Options for job processing.
+     * Options for job processing.
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.Job.ProcessingOptions processing_options = 30;</code>

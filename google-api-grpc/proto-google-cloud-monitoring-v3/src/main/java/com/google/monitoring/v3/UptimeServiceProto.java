@@ -56,60 +56,66 @@ public final class UptimeServiceProto {
       "\n)google/monitoring/v3/uptime_service.pr"
           + "oto\022\024google.monitoring.v3\032\034google/api/an"
           + "notations.proto\032!google/monitoring/v3/up"
-          + "time.proto\032\033google/protobuf/empty.proto\032"
-          + " google/protobuf/field_mask.proto\"V\n\035Lis"
-          + "tUptimeCheckConfigsRequest\022\016\n\006parent\030\001 \001"
-          + "(\t\022\021\n\tpage_size\030\003 \001(\005\022\022\n\npage_token\030\004 \001("
-          + "\t\"\224\001\n\036ListUptimeCheckConfigsResponse\022E\n\024"
-          + "uptime_check_configs\030\001 \003(\0132\'.google.moni"
-          + "toring.v3.UptimeCheckConfig\022\027\n\017next_page"
-          + "_token\030\002 \001(\t\022\022\n\ntotal_size\030\003 \001(\005\"+\n\033GetU"
-          + "ptimeCheckConfigRequest\022\014\n\004name\030\001 \001(\t\"v\n"
-          + "\036CreateUptimeCheckConfigRequest\022\016\n\006paren"
-          + "t\030\001 \001(\t\022D\n\023uptime_check_config\030\002 \001(\0132\'.g"
-          + "oogle.monitoring.v3.UptimeCheckConfig\"\227\001"
-          + "\n\036UpdateUptimeCheckConfigRequest\022/\n\013upda"
-          + "te_mask\030\002 \001(\0132\032.google.protobuf.FieldMas"
-          + "k\022D\n\023uptime_check_config\030\003 \001(\0132\'.google."
-          + "monitoring.v3.UptimeCheckConfig\".\n\036Delet"
-          + "eUptimeCheckConfigRequest\022\014\n\004name\030\001 \001(\t\""
-          + "B\n\031ListUptimeCheckIpsRequest\022\021\n\tpage_siz"
-          + "e\030\002 \001(\005\022\022\n\npage_token\030\003 \001(\t\"t\n\032ListUptim"
-          + "eCheckIpsResponse\022=\n\020uptime_check_ips\030\001 "
-          + "\003(\0132#.google.monitoring.v3.UptimeCheckIp"
-          + "\022\027\n\017next_page_token\030\002 \001(\t2\307\010\n\022UptimeChec"
-          + "kService\022\267\001\n\026ListUptimeCheckConfigs\0223.go"
-          + "ogle.monitoring.v3.ListUptimeCheckConfig"
-          + "sRequest\0324.google.monitoring.v3.ListUpti"
-          + "meCheckConfigsResponse\"2\202\323\344\223\002,\022*/v3/{par"
-          + "ent=projects/*}/uptimeCheckConfigs\022\246\001\n\024G"
-          + "etUptimeCheckConfig\0221.google.monitoring."
-          + "v3.GetUptimeCheckConfigRequest\032\'.google."
-          + "monitoring.v3.UptimeCheckConfig\"2\202\323\344\223\002,\022"
-          + "*/v3/{name=projects/*/uptimeCheckConfigs"
-          + "/*}\022\301\001\n\027CreateUptimeCheckConfig\0224.google"
-          + ".monitoring.v3.CreateUptimeCheckConfigRe"
-          + "quest\032\'.google.monitoring.v3.UptimeCheck"
-          + "Config\"G\202\323\344\223\002A\"*/v3/{parent=projects/*}/"
-          + "uptimeCheckConfigs:\023uptime_check_config\022"
-          + "\325\001\n\027UpdateUptimeCheckConfig\0224.google.mon"
-          + "itoring.v3.UpdateUptimeCheckConfigReques"
-          + "t\032\'.google.monitoring.v3.UptimeCheckConf"
-          + "ig\"[\202\323\344\223\002U2>/v3/{uptime_check_config.nam"
-          + "e=projects/*/uptimeCheckConfigs/*}:\023upti"
-          + "me_check_config\022\233\001\n\027DeleteUptimeCheckCon"
-          + "fig\0224.google.monitoring.v3.DeleteUptimeC"
-          + "heckConfigRequest\032\026.google.protobuf.Empt"
-          + "y\"2\202\323\344\223\002,**/v3/{name=projects/*/uptimeCh"
-          + "eckConfigs/*}\022\223\001\n\022ListUptimeCheckIps\022/.g"
-          + "oogle.monitoring.v3.ListUptimeCheckIpsRe"
-          + "quest\0320.google.monitoring.v3.ListUptimeC"
-          + "heckIpsResponse\"\032\202\323\344\223\002\024\022\022/v3/uptimeCheck"
-          + "IpsB\252\001\n\030com.google.monitoring.v3B\022Uptime"
-          + "ServiceProtoP\001Z>google.golang.org/genpro"
-          + "to/googleapis/monitoring/v3;monitoring\252\002"
-          + "\032Google.Cloud.Monitoring.V3\312\002\032Google\\Clo"
-          + "ud\\Monitoring\\V3b\006proto3"
+          + "time.proto\032\036google/protobuf/duration.pro"
+          + "to\032\033google/protobuf/empty.proto\032 google/"
+          + "protobuf/field_mask.proto\032\027google/api/cl"
+          + "ient.proto\"V\n\035ListUptimeCheckConfigsRequ"
+          + "est\022\016\n\006parent\030\001 \001(\t\022\021\n\tpage_size\030\003 \001(\005\022\022"
+          + "\n\npage_token\030\004 \001(\t\"\224\001\n\036ListUptimeCheckCo"
+          + "nfigsResponse\022E\n\024uptime_check_configs\030\001 "
+          + "\003(\0132\'.google.monitoring.v3.UptimeCheckCo"
+          + "nfig\022\027\n\017next_page_token\030\002 \001(\t\022\022\n\ntotal_s"
+          + "ize\030\003 \001(\005\"+\n\033GetUptimeCheckConfigRequest"
+          + "\022\014\n\004name\030\001 \001(\t\"v\n\036CreateUptimeCheckConfi"
+          + "gRequest\022\016\n\006parent\030\001 \001(\t\022D\n\023uptime_check"
+          + "_config\030\002 \001(\0132\'.google.monitoring.v3.Upt"
+          + "imeCheckConfig\"\227\001\n\036UpdateUptimeCheckConf"
+          + "igRequest\022/\n\013update_mask\030\002 \001(\0132\032.google."
+          + "protobuf.FieldMask\022D\n\023uptime_check_confi"
+          + "g\030\003 \001(\0132\'.google.monitoring.v3.UptimeChe"
+          + "ckConfig\".\n\036DeleteUptimeCheckConfigReque"
+          + "st\022\014\n\004name\030\001 \001(\t\"B\n\031ListUptimeCheckIpsRe"
+          + "quest\022\021\n\tpage_size\030\002 \001(\005\022\022\n\npage_token\030\003"
+          + " \001(\t\"t\n\032ListUptimeCheckIpsResponse\022=\n\020up"
+          + "time_check_ips\030\001 \003(\0132#.google.monitoring"
+          + ".v3.UptimeCheckIp\022\027\n\017next_page_token\030\002 \001"
+          + "(\t2\363\t\n\022UptimeCheckService\022\267\001\n\026ListUptime"
+          + "CheckConfigs\0223.google.monitoring.v3.List"
+          + "UptimeCheckConfigsRequest\0324.google.monit"
+          + "oring.v3.ListUptimeCheckConfigsResponse\""
+          + "2\202\323\344\223\002,\022*/v3/{parent=projects/*}/uptimeC"
+          + "heckConfigs\022\246\001\n\024GetUptimeCheckConfig\0221.g"
+          + "oogle.monitoring.v3.GetUptimeCheckConfig"
+          + "Request\032\'.google.monitoring.v3.UptimeChe"
+          + "ckConfig\"2\202\323\344\223\002,\022*/v3/{name=projects/*/u"
+          + "ptimeCheckConfigs/*}\022\301\001\n\027CreateUptimeChe"
+          + "ckConfig\0224.google.monitoring.v3.CreateUp"
+          + "timeCheckConfigRequest\032\'.google.monitori"
+          + "ng.v3.UptimeCheckConfig\"G\202\323\344\223\002A\"*/v3/{pa"
+          + "rent=projects/*}/uptimeCheckConfigs:\023upt"
+          + "ime_check_config\022\325\001\n\027UpdateUptimeCheckCo"
+          + "nfig\0224.google.monitoring.v3.UpdateUptime"
+          + "CheckConfigRequest\032\'.google.monitoring.v"
+          + "3.UptimeCheckConfig\"[\202\323\344\223\002U2>/v3/{uptime"
+          + "_check_config.name=projects/*/uptimeChec"
+          + "kConfigs/*}:\023uptime_check_config\022\233\001\n\027Del"
+          + "eteUptimeCheckConfig\0224.google.monitoring"
+          + ".v3.DeleteUptimeCheckConfigRequest\032\026.goo"
+          + "gle.protobuf.Empty\"2\202\323\344\223\002,**/v3/{name=pr"
+          + "ojects/*/uptimeCheckConfigs/*}\022\223\001\n\022ListU"
+          + "ptimeCheckIps\022/.google.monitoring.v3.Lis"
+          + "tUptimeCheckIpsRequest\0320.google.monitori"
+          + "ng.v3.ListUptimeCheckIpsResponse\"\032\202\323\344\223\002\024"
+          + "\022\022/v3/uptimeCheckIps\032\251\001\312A\031monitoring.goo"
+          + "gleapis.com\322A\211\001https://www.googleapis.co"
+          + "m/auth/cloud-platform,https://www.google"
+          + "apis.com/auth/monitoring,https://www.goo"
+          + "gleapis.com/auth/monitoring.readB\252\001\n\030com"
+          + ".google.monitoring.v3B\022UptimeServiceProt"
+          + "oP\001Z>google.golang.org/genproto/googleap"
+          + "is/monitoring/v3;monitoring\252\002\032Google.Clo"
+          + "ud.Monitoring.V3\312\002\032Google\\Cloud\\Monitori"
+          + "ng\\V3b\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner() {
@@ -124,8 +130,10 @@ public final class UptimeServiceProto {
         new com.google.protobuf.Descriptors.FileDescriptor[] {
           com.google.api.AnnotationsProto.getDescriptor(),
           com.google.monitoring.v3.UptimeProto.getDescriptor(),
+          com.google.protobuf.DurationProto.getDescriptor(),
           com.google.protobuf.EmptyProto.getDescriptor(),
           com.google.protobuf.FieldMaskProto.getDescriptor(),
+          com.google.api.ClientProto.getDescriptor(),
         },
         assigner);
     internal_static_google_monitoring_v3_ListUptimeCheckConfigsRequest_descriptor =
@@ -194,13 +202,17 @@ public final class UptimeServiceProto {
             });
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();
+    registry.add(com.google.api.ClientProto.defaultHost);
     registry.add(com.google.api.AnnotationsProto.http);
+    registry.add(com.google.api.ClientProto.oauthScopes);
     com.google.protobuf.Descriptors.FileDescriptor.internalUpdateFileDescriptor(
         descriptor, registry);
     com.google.api.AnnotationsProto.getDescriptor();
     com.google.monitoring.v3.UptimeProto.getDescriptor();
+    com.google.protobuf.DurationProto.getDescriptor();
     com.google.protobuf.EmptyProto.getDescriptor();
     com.google.protobuf.FieldMaskProto.getDescriptor();
+    com.google.api.ClientProto.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

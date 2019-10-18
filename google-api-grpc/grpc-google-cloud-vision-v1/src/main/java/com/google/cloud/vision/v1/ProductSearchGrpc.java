@@ -13,15 +13,13 @@ import static io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall;
  * <pre>
  * Manages Products and ProductSets of reference images for use in product
  * search. It uses the following resource model:
- * - The API has a collection of [ProductSet][google.cloud.vision.v1.ProductSet]
- * resources, named `projects/&#42;&#47;locations/&#42;&#47;productSets/&#42;`, which acts as a way
- * to put different products into groups to limit identification.
+ * - The API has a collection of [ProductSet][google.cloud.vision.v1.ProductSet] resources, named
+ * `projects/&#42;&#47;locations/&#42;&#47;productSets/&#42;`, which acts as a way to put different
+ * products into groups to limit identification.
  * In parallel,
- * - The API has a collection of [Product][google.cloud.vision.v1.Product]
- * resources, named
+ * - The API has a collection of [Product][google.cloud.vision.v1.Product] resources, named
  *   `projects/&#42;&#47;locations/&#42;&#47;products/&#42;`
- * - Each [Product][google.cloud.vision.v1.Product] has a collection of
- * [ReferenceImage][google.cloud.vision.v1.ReferenceImage] resources, named
+ * - Each [Product][google.cloud.vision.v1.Product] has a collection of [ReferenceImage][google.cloud.vision.v1.ReferenceImage] resources, named
  *   `projects/&#42;&#47;locations/&#42;&#47;products/&#42;&#47;referenceImages/&#42;`
  * </pre>
  */
@@ -1030,6 +1028,58 @@ public final class ProductSearchGrpc {
     return getImportProductSetsMethod;
   }
 
+  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
+  @java.lang.Deprecated // Use {@link #getPurgeProductsMethod()} instead.
+  public static final io.grpc.MethodDescriptor<
+          com.google.cloud.vision.v1.PurgeProductsRequest, com.google.longrunning.Operation>
+      METHOD_PURGE_PRODUCTS = getPurgeProductsMethodHelper();
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.vision.v1.PurgeProductsRequest, com.google.longrunning.Operation>
+      getPurgeProductsMethod;
+
+  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.vision.v1.PurgeProductsRequest, com.google.longrunning.Operation>
+      getPurgeProductsMethod() {
+    return getPurgeProductsMethodHelper();
+  }
+
+  private static io.grpc.MethodDescriptor<
+          com.google.cloud.vision.v1.PurgeProductsRequest, com.google.longrunning.Operation>
+      getPurgeProductsMethodHelper() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.vision.v1.PurgeProductsRequest, com.google.longrunning.Operation>
+        getPurgeProductsMethod;
+    if ((getPurgeProductsMethod = ProductSearchGrpc.getPurgeProductsMethod) == null) {
+      synchronized (ProductSearchGrpc.class) {
+        if ((getPurgeProductsMethod = ProductSearchGrpc.getPurgeProductsMethod) == null) {
+          ProductSearchGrpc.getPurgeProductsMethod =
+              getPurgeProductsMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.vision.v1.PurgeProductsRequest,
+                          com.google.longrunning.Operation>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(
+                              "google.cloud.vision.v1.ProductSearch", "PurgeProducts"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.vision.v1.PurgeProductsRequest.getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.longrunning.Operation.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new ProductSearchMethodDescriptorSupplier("PurgeProducts"))
+                      .build();
+        }
+      }
+    }
+    return getPurgeProductsMethod;
+  }
+
   /** Creates a new async stub that supports all call types for the service */
   public static ProductSearchStub newStub(io.grpc.Channel channel) {
     return new ProductSearchStub(channel);
@@ -1053,15 +1103,13 @@ public final class ProductSearchGrpc {
    * <pre>
    * Manages Products and ProductSets of reference images for use in product
    * search. It uses the following resource model:
-   * - The API has a collection of [ProductSet][google.cloud.vision.v1.ProductSet]
-   * resources, named `projects/&#42;&#47;locations/&#42;&#47;productSets/&#42;`, which acts as a way
-   * to put different products into groups to limit identification.
+   * - The API has a collection of [ProductSet][google.cloud.vision.v1.ProductSet] resources, named
+   * `projects/&#42;&#47;locations/&#42;&#47;productSets/&#42;`, which acts as a way to put different
+   * products into groups to limit identification.
    * In parallel,
-   * - The API has a collection of [Product][google.cloud.vision.v1.Product]
-   * resources, named
+   * - The API has a collection of [Product][google.cloud.vision.v1.Product] resources, named
    *   `projects/&#42;&#47;locations/&#42;&#47;products/&#42;`
-   * - Each [Product][google.cloud.vision.v1.Product] has a collection of
-   * [ReferenceImage][google.cloud.vision.v1.ReferenceImage] resources, named
+   * - Each [Product][google.cloud.vision.v1.Product] has a collection of [ReferenceImage][google.cloud.vision.v1.ReferenceImage] resources, named
    *   `projects/&#42;&#47;locations/&#42;&#47;products/&#42;&#47;referenceImages/&#42;`
    * </pre>
    */
@@ -1368,8 +1416,8 @@ public final class ProductSearchGrpc {
      * <pre>
      * Asynchronous API that imports a list of reference images to specified
      * product sets based on a list of image information.
-     * The [google.longrunning.Operation][google.longrunning.Operation] API can be
-     * used to keep track of the progress and results of the request.
+     * The [google.longrunning.Operation][google.longrunning.Operation] API can be used to keep track of the
+     * progress and results of the request.
      * `Operation.metadata` contains `BatchOperationMetadata`. (progress)
      * `Operation.response` contains `ImportProductSetsResponse`. (results)
      * The input source of this method is a csv file on Google Cloud Storage.
@@ -1381,6 +1429,37 @@ public final class ProductSearchGrpc {
         com.google.cloud.vision.v1.ImportProductSetsRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       asyncUnimplementedUnaryCall(getImportProductSetsMethodHelper(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Asynchronous API to delete all Products in a ProductSet or all Products
+     * that are in no ProductSet.
+     * If a Product is a member of the specified ProductSet in addition to other
+     * ProductSets, the Product will still be deleted.
+     * It is recommended to not delete the specified ProductSet until after this
+     * operation has completed. It is also recommended to not add any of the
+     * Products involved in the batch delete to a new ProductSet while this
+     * operation is running because those Products may still end up deleted.
+     * It's not possible to undo the PurgeProducts operation. Therefore, it is
+     * recommended to keep the csv files used in ImportProductSets (if that was
+     * how you originally built the Product Set) before starting PurgeProducts, in
+     * case you need to re-import the data after deletion.
+     * If the plan is to purge all of the Products from a ProductSet and then
+     * re-use the empty ProductSet to re-import new Products into the empty
+     * ProductSet, you must wait until the PurgeProducts operation has finished
+     * for that ProductSet.
+     * The [google.longrunning.Operation][google.longrunning.Operation] API can be used to keep track of the
+     * progress and results of the request.
+     * `Operation.metadata` contains `BatchOperationMetadata`. (progress)
+     * </pre>
+     */
+    public void purgeProducts(
+        com.google.cloud.vision.v1.PurgeProductsRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      asyncUnimplementedUnaryCall(getPurgeProductsMethodHelper(), responseObserver);
     }
 
     @java.lang.Override
@@ -1500,6 +1579,12 @@ public final class ProductSearchGrpc {
                   new MethodHandlers<
                       com.google.cloud.vision.v1.ImportProductSetsRequest,
                       com.google.longrunning.Operation>(this, METHODID_IMPORT_PRODUCT_SETS)))
+          .addMethod(
+              getPurgeProductsMethodHelper(),
+              asyncUnaryCall(
+                  new MethodHandlers<
+                      com.google.cloud.vision.v1.PurgeProductsRequest,
+                      com.google.longrunning.Operation>(this, METHODID_PURGE_PRODUCTS)))
           .build();
     }
   }
@@ -1510,15 +1595,13 @@ public final class ProductSearchGrpc {
    * <pre>
    * Manages Products and ProductSets of reference images for use in product
    * search. It uses the following resource model:
-   * - The API has a collection of [ProductSet][google.cloud.vision.v1.ProductSet]
-   * resources, named `projects/&#42;&#47;locations/&#42;&#47;productSets/&#42;`, which acts as a way
-   * to put different products into groups to limit identification.
+   * - The API has a collection of [ProductSet][google.cloud.vision.v1.ProductSet] resources, named
+   * `projects/&#42;&#47;locations/&#42;&#47;productSets/&#42;`, which acts as a way to put different
+   * products into groups to limit identification.
    * In parallel,
-   * - The API has a collection of [Product][google.cloud.vision.v1.Product]
-   * resources, named
+   * - The API has a collection of [Product][google.cloud.vision.v1.Product] resources, named
    *   `projects/&#42;&#47;locations/&#42;&#47;products/&#42;`
-   * - Each [Product][google.cloud.vision.v1.Product] has a collection of
-   * [ReferenceImage][google.cloud.vision.v1.ReferenceImage] resources, named
+   * - Each [Product][google.cloud.vision.v1.Product] has a collection of [ReferenceImage][google.cloud.vision.v1.ReferenceImage] resources, named
    *   `projects/&#42;&#47;locations/&#42;&#47;products/&#42;&#47;referenceImages/&#42;`
    * </pre>
    */
@@ -1888,8 +1971,8 @@ public final class ProductSearchGrpc {
      * <pre>
      * Asynchronous API that imports a list of reference images to specified
      * product sets based on a list of image information.
-     * The [google.longrunning.Operation][google.longrunning.Operation] API can be
-     * used to keep track of the progress and results of the request.
+     * The [google.longrunning.Operation][google.longrunning.Operation] API can be used to keep track of the
+     * progress and results of the request.
      * `Operation.metadata` contains `BatchOperationMetadata`. (progress)
      * `Operation.response` contains `ImportProductSetsResponse`. (results)
      * The input source of this method is a csv file on Google Cloud Storage.
@@ -1905,6 +1988,40 @@ public final class ProductSearchGrpc {
           request,
           responseObserver);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Asynchronous API to delete all Products in a ProductSet or all Products
+     * that are in no ProductSet.
+     * If a Product is a member of the specified ProductSet in addition to other
+     * ProductSets, the Product will still be deleted.
+     * It is recommended to not delete the specified ProductSet until after this
+     * operation has completed. It is also recommended to not add any of the
+     * Products involved in the batch delete to a new ProductSet while this
+     * operation is running because those Products may still end up deleted.
+     * It's not possible to undo the PurgeProducts operation. Therefore, it is
+     * recommended to keep the csv files used in ImportProductSets (if that was
+     * how you originally built the Product Set) before starting PurgeProducts, in
+     * case you need to re-import the data after deletion.
+     * If the plan is to purge all of the Products from a ProductSet and then
+     * re-use the empty ProductSet to re-import new Products into the empty
+     * ProductSet, you must wait until the PurgeProducts operation has finished
+     * for that ProductSet.
+     * The [google.longrunning.Operation][google.longrunning.Operation] API can be used to keep track of the
+     * progress and results of the request.
+     * `Operation.metadata` contains `BatchOperationMetadata`. (progress)
+     * </pre>
+     */
+    public void purgeProducts(
+        com.google.cloud.vision.v1.PurgeProductsRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      asyncUnaryCall(
+          getChannel().newCall(getPurgeProductsMethodHelper(), getCallOptions()),
+          request,
+          responseObserver);
+    }
   }
 
   /**
@@ -1913,15 +2030,13 @@ public final class ProductSearchGrpc {
    * <pre>
    * Manages Products and ProductSets of reference images for use in product
    * search. It uses the following resource model:
-   * - The API has a collection of [ProductSet][google.cloud.vision.v1.ProductSet]
-   * resources, named `projects/&#42;&#47;locations/&#42;&#47;productSets/&#42;`, which acts as a way
-   * to put different products into groups to limit identification.
+   * - The API has a collection of [ProductSet][google.cloud.vision.v1.ProductSet] resources, named
+   * `projects/&#42;&#47;locations/&#42;&#47;productSets/&#42;`, which acts as a way to put different
+   * products into groups to limit identification.
    * In parallel,
-   * - The API has a collection of [Product][google.cloud.vision.v1.Product]
-   * resources, named
+   * - The API has a collection of [Product][google.cloud.vision.v1.Product] resources, named
    *   `projects/&#42;&#47;locations/&#42;&#47;products/&#42;`
-   * - Each [Product][google.cloud.vision.v1.Product] has a collection of
-   * [ReferenceImage][google.cloud.vision.v1.ReferenceImage] resources, named
+   * - Each [Product][google.cloud.vision.v1.Product] has a collection of [ReferenceImage][google.cloud.vision.v1.ReferenceImage] resources, named
    *   `projects/&#42;&#47;locations/&#42;&#47;products/&#42;&#47;referenceImages/&#42;`
    * </pre>
    */
@@ -2238,8 +2353,8 @@ public final class ProductSearchGrpc {
      * <pre>
      * Asynchronous API that imports a list of reference images to specified
      * product sets based on a list of image information.
-     * The [google.longrunning.Operation][google.longrunning.Operation] API can be
-     * used to keep track of the progress and results of the request.
+     * The [google.longrunning.Operation][google.longrunning.Operation] API can be used to keep track of the
+     * progress and results of the request.
      * `Operation.metadata` contains `BatchOperationMetadata`. (progress)
      * `Operation.response` contains `ImportProductSetsResponse`. (results)
      * The input source of this method is a csv file on Google Cloud Storage.
@@ -2252,6 +2367,37 @@ public final class ProductSearchGrpc {
       return blockingUnaryCall(
           getChannel(), getImportProductSetsMethodHelper(), getCallOptions(), request);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Asynchronous API to delete all Products in a ProductSet or all Products
+     * that are in no ProductSet.
+     * If a Product is a member of the specified ProductSet in addition to other
+     * ProductSets, the Product will still be deleted.
+     * It is recommended to not delete the specified ProductSet until after this
+     * operation has completed. It is also recommended to not add any of the
+     * Products involved in the batch delete to a new ProductSet while this
+     * operation is running because those Products may still end up deleted.
+     * It's not possible to undo the PurgeProducts operation. Therefore, it is
+     * recommended to keep the csv files used in ImportProductSets (if that was
+     * how you originally built the Product Set) before starting PurgeProducts, in
+     * case you need to re-import the data after deletion.
+     * If the plan is to purge all of the Products from a ProductSet and then
+     * re-use the empty ProductSet to re-import new Products into the empty
+     * ProductSet, you must wait until the PurgeProducts operation has finished
+     * for that ProductSet.
+     * The [google.longrunning.Operation][google.longrunning.Operation] API can be used to keep track of the
+     * progress and results of the request.
+     * `Operation.metadata` contains `BatchOperationMetadata`. (progress)
+     * </pre>
+     */
+    public com.google.longrunning.Operation purgeProducts(
+        com.google.cloud.vision.v1.PurgeProductsRequest request) {
+      return blockingUnaryCall(
+          getChannel(), getPurgeProductsMethodHelper(), getCallOptions(), request);
+    }
   }
 
   /**
@@ -2260,15 +2406,13 @@ public final class ProductSearchGrpc {
    * <pre>
    * Manages Products and ProductSets of reference images for use in product
    * search. It uses the following resource model:
-   * - The API has a collection of [ProductSet][google.cloud.vision.v1.ProductSet]
-   * resources, named `projects/&#42;&#47;locations/&#42;&#47;productSets/&#42;`, which acts as a way
-   * to put different products into groups to limit identification.
+   * - The API has a collection of [ProductSet][google.cloud.vision.v1.ProductSet] resources, named
+   * `projects/&#42;&#47;locations/&#42;&#47;productSets/&#42;`, which acts as a way to put different
+   * products into groups to limit identification.
    * In parallel,
-   * - The API has a collection of [Product][google.cloud.vision.v1.Product]
-   * resources, named
+   * - The API has a collection of [Product][google.cloud.vision.v1.Product] resources, named
    *   `projects/&#42;&#47;locations/&#42;&#47;products/&#42;`
-   * - Each [Product][google.cloud.vision.v1.Product] has a collection of
-   * [ReferenceImage][google.cloud.vision.v1.ReferenceImage] resources, named
+   * - Each [Product][google.cloud.vision.v1.Product] has a collection of [ReferenceImage][google.cloud.vision.v1.ReferenceImage] resources, named
    *   `projects/&#42;&#47;locations/&#42;&#47;products/&#42;&#47;referenceImages/&#42;`
    * </pre>
    */
@@ -2595,8 +2739,8 @@ public final class ProductSearchGrpc {
      * <pre>
      * Asynchronous API that imports a list of reference images to specified
      * product sets based on a list of image information.
-     * The [google.longrunning.Operation][google.longrunning.Operation] API can be
-     * used to keep track of the progress and results of the request.
+     * The [google.longrunning.Operation][google.longrunning.Operation] API can be used to keep track of the
+     * progress and results of the request.
      * `Operation.metadata` contains `BatchOperationMetadata`. (progress)
      * `Operation.response` contains `ImportProductSetsResponse`. (results)
      * The input source of this method is a csv file on Google Cloud Storage.
@@ -2608,6 +2752,37 @@ public final class ProductSearchGrpc {
         importProductSets(com.google.cloud.vision.v1.ImportProductSetsRequest request) {
       return futureUnaryCall(
           getChannel().newCall(getImportProductSetsMethodHelper(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Asynchronous API to delete all Products in a ProductSet or all Products
+     * that are in no ProductSet.
+     * If a Product is a member of the specified ProductSet in addition to other
+     * ProductSets, the Product will still be deleted.
+     * It is recommended to not delete the specified ProductSet until after this
+     * operation has completed. It is also recommended to not add any of the
+     * Products involved in the batch delete to a new ProductSet while this
+     * operation is running because those Products may still end up deleted.
+     * It's not possible to undo the PurgeProducts operation. Therefore, it is
+     * recommended to keep the csv files used in ImportProductSets (if that was
+     * how you originally built the Product Set) before starting PurgeProducts, in
+     * case you need to re-import the data after deletion.
+     * If the plan is to purge all of the Products from a ProductSet and then
+     * re-use the empty ProductSet to re-import new Products into the empty
+     * ProductSet, you must wait until the PurgeProducts operation has finished
+     * for that ProductSet.
+     * The [google.longrunning.Operation][google.longrunning.Operation] API can be used to keep track of the
+     * progress and results of the request.
+     * `Operation.metadata` contains `BatchOperationMetadata`. (progress)
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
+        purgeProducts(com.google.cloud.vision.v1.PurgeProductsRequest request) {
+      return futureUnaryCall(
+          getChannel().newCall(getPurgeProductsMethodHelper(), getCallOptions()), request);
     }
   }
 
@@ -2629,6 +2804,7 @@ public final class ProductSearchGrpc {
   private static final int METHODID_REMOVE_PRODUCT_FROM_PRODUCT_SET = 15;
   private static final int METHODID_LIST_PRODUCTS_IN_PRODUCT_SET = 16;
   private static final int METHODID_IMPORT_PRODUCT_SETS = 17;
+  private static final int METHODID_PURGE_PRODUCTS = 18;
 
   private static final class MethodHandlers<Req, Resp>
       implements io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -2747,6 +2923,11 @@ public final class ProductSearchGrpc {
               (com.google.cloud.vision.v1.ImportProductSetsRequest) request,
               (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
           break;
+        case METHODID_PURGE_PRODUCTS:
+          serviceImpl.purgeProducts(
+              (com.google.cloud.vision.v1.PurgeProductsRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
+          break;
         default:
           throw new AssertionError();
       }
@@ -2829,6 +3010,7 @@ public final class ProductSearchGrpc {
                       .addMethod(getRemoveProductFromProductSetMethodHelper())
                       .addMethod(getListProductsInProductSetMethodHelper())
                       .addMethod(getImportProductSetsMethodHelper())
+                      .addMethod(getPurgeProductsMethodHelper())
                       .build();
         }
       }

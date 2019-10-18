@@ -14,13 +14,13 @@ public interface EntryOrBuilder
    * <pre>
    * Required when used in
    * [UpdateEntryRequest][google.cloud.datacatalog.v1beta1.UpdateEntryRequest].
-   * The Data Catalog resource name of the entry in URL format. For example,
-   * "projects/{project_id}/locations/{location}/entryGroups/{entry_group_id}/entries/{entry_id}".
+   * The Data Catalog resource name of the entry in URL format. Example:
+   * * projects/{project_id}/locations/{location}/entryGroups/{entry_group_id}/entries/{entry_id}
    * Note that this Entry and its child resources may not actually be stored in
    * the location in this name.
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>string name = 1 [(.google.api.resource_reference) = { ... }</code>
    */
   java.lang.String getName();
   /**
@@ -29,13 +29,13 @@ public interface EntryOrBuilder
    * <pre>
    * Required when used in
    * [UpdateEntryRequest][google.cloud.datacatalog.v1beta1.UpdateEntryRequest].
-   * The Data Catalog resource name of the entry in URL format. For example,
-   * "projects/{project_id}/locations/{location}/entryGroups/{entry_group_id}/entries/{entry_id}".
+   * The Data Catalog resource name of the entry in URL format. Example:
+   * * projects/{project_id}/locations/{location}/entryGroups/{entry_group_id}/entries/{entry_id}
    * Note that this Entry and its child resources may not actually be stored in
    * the location in this name.
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>string name = 1 [(.google.api.resource_reference) = { ... }</code>
    */
   com.google.protobuf.ByteString getNameBytes();
 
@@ -43,12 +43,12 @@ public interface EntryOrBuilder
    *
    *
    * <pre>
-   * Output only. The full name of the cloud resource the entry belongs to. See:
-   * https://cloud.google.com/apis/design/resource_names#full_resource_name
-   * Data Catalog supports resources from select Google Cloud Platform systems.
-   * `linked_resource` is the full name of the Google Cloud Platform resource.
+   * Output only. The resource this metadata entry refers to.
+   * For Google Cloud Platform resources, `linked_resource` is the [full name of
+   * the
+   * resource](https://cloud.google.com/apis/design/resource_names#full_resource_name).
    * For example, the `linked_resource` for a table resource from BigQuery is:
-   * "//bigquery.googleapis.com/projects/projectId/datasets/datasetId/tables/tableId".
+   * * //bigquery.googleapis.com/projects/projectId/datasets/datasetId/tables/tableId
    * </pre>
    *
    * <code>string linked_resource = 9;</code>
@@ -58,12 +58,12 @@ public interface EntryOrBuilder
    *
    *
    * <pre>
-   * Output only. The full name of the cloud resource the entry belongs to. See:
-   * https://cloud.google.com/apis/design/resource_names#full_resource_name
-   * Data Catalog supports resources from select Google Cloud Platform systems.
-   * `linked_resource` is the full name of the Google Cloud Platform resource.
+   * Output only. The resource this metadata entry refers to.
+   * For Google Cloud Platform resources, `linked_resource` is the [full name of
+   * the
+   * resource](https://cloud.google.com/apis/design/resource_names#full_resource_name).
    * For example, the `linked_resource` for a table resource from BigQuery is:
-   * "//bigquery.googleapis.com/projects/projectId/datasets/datasetId/tables/tableId".
+   * * //bigquery.googleapis.com/projects/projectId/datasets/datasetId/tables/tableId
    * </pre>
    *
    * <code>string linked_resource = 9;</code>
@@ -74,7 +74,7 @@ public interface EntryOrBuilder
    *
    *
    * <pre>
-   * Required. Type of entry.
+   * The type of the entry.
    * </pre>
    *
    * <code>.google.cloud.datacatalog.v1beta1.EntryType type = 2;</code>
@@ -84,7 +84,7 @@ public interface EntryOrBuilder
    *
    *
    * <pre>
-   * Required. Type of entry.
+   * The type of the entry.
    * </pre>
    *
    * <code>.google.cloud.datacatalog.v1beta1.EntryType type = 2;</code>
@@ -95,8 +95,42 @@ public interface EntryOrBuilder
    *
    *
    * <pre>
+   * Specification that applies to a Cloud Storage fileset. This is only valid
+   * on entries of type FILESET.
+   * </pre>
+   *
+   * <code>.google.cloud.datacatalog.v1beta1.GcsFilesetSpec gcs_fileset_spec = 6;</code>
+   */
+  boolean hasGcsFilesetSpec();
+  /**
+   *
+   *
+   * <pre>
+   * Specification that applies to a Cloud Storage fileset. This is only valid
+   * on entries of type FILESET.
+   * </pre>
+   *
+   * <code>.google.cloud.datacatalog.v1beta1.GcsFilesetSpec gcs_fileset_spec = 6;</code>
+   */
+  com.google.cloud.datacatalog.GcsFilesetSpec getGcsFilesetSpec();
+  /**
+   *
+   *
+   * <pre>
+   * Specification that applies to a Cloud Storage fileset. This is only valid
+   * on entries of type FILESET.
+   * </pre>
+   *
+   * <code>.google.cloud.datacatalog.v1beta1.GcsFilesetSpec gcs_fileset_spec = 6;</code>
+   */
+  com.google.cloud.datacatalog.GcsFilesetSpecOrBuilder getGcsFilesetSpecOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * Specification that applies to a BigQuery table. This is only valid on
-   * entries of type TABLE.
+   * entries of type `TABLE`.
    * </pre>
    *
    * <code>.google.cloud.datacatalog.v1beta1.BigQueryTableSpec bigquery_table_spec = 12;</code>
@@ -107,7 +141,7 @@ public interface EntryOrBuilder
    *
    * <pre>
    * Specification that applies to a BigQuery table. This is only valid on
-   * entries of type TABLE.
+   * entries of type `TABLE`.
    * </pre>
    *
    * <code>.google.cloud.datacatalog.v1beta1.BigQueryTableSpec bigquery_table_spec = 12;</code>
@@ -118,7 +152,7 @@ public interface EntryOrBuilder
    *
    * <pre>
    * Specification that applies to a BigQuery table. This is only valid on
-   * entries of type TABLE.
+   * entries of type `TABLE`.
    * </pre>
    *
    * <code>.google.cloud.datacatalog.v1beta1.BigQueryTableSpec bigquery_table_spec = 12;</code>
@@ -130,8 +164,8 @@ public interface EntryOrBuilder
    *
    * <pre>
    * Specification for a group of BigQuery tables with name pattern
-   * [prefix]YYYYMMDD. Context:
-   * https://cloud.google.com/bigquery/docs/partitioned-tables#partitioning_versus_sharding
+   * `[prefix]YYYYMMDD`. Context:
+   * https://cloud.google.com/bigquery/docs/partitioned-tables#partitioning_versus_sharding.
    * </pre>
    *
    * <code>
@@ -144,8 +178,8 @@ public interface EntryOrBuilder
    *
    * <pre>
    * Specification for a group of BigQuery tables with name pattern
-   * [prefix]YYYYMMDD. Context:
-   * https://cloud.google.com/bigquery/docs/partitioned-tables#partitioning_versus_sharding
+   * `[prefix]YYYYMMDD`. Context:
+   * https://cloud.google.com/bigquery/docs/partitioned-tables#partitioning_versus_sharding.
    * </pre>
    *
    * <code>
@@ -158,8 +192,8 @@ public interface EntryOrBuilder
    *
    * <pre>
    * Specification for a group of BigQuery tables with name pattern
-   * [prefix]YYYYMMDD. Context:
-   * https://cloud.google.com/bigquery/docs/partitioned-tables#partitioning_versus_sharding
+   * `[prefix]YYYYMMDD`. Context:
+   * https://cloud.google.com/bigquery/docs/partitioned-tables#partitioning_versus_sharding.
    * </pre>
    *
    * <code>
@@ -255,8 +289,8 @@ public interface EntryOrBuilder
    *
    *
    * <pre>
-   * Output only. Timestamps about the underlying Google Cloud Platform resource
-   * -- not about this Data Catalog Entry.
+   * Output only. Timestamps about the underlying Google Cloud Platform
+   * resource, not about this Data Catalog Entry.
    * </pre>
    *
    * <code>.google.cloud.datacatalog.v1beta1.SystemTimestamps source_system_timestamps = 7;</code>
@@ -266,8 +300,8 @@ public interface EntryOrBuilder
    *
    *
    * <pre>
-   * Output only. Timestamps about the underlying Google Cloud Platform resource
-   * -- not about this Data Catalog Entry.
+   * Output only. Timestamps about the underlying Google Cloud Platform
+   * resource, not about this Data Catalog Entry.
    * </pre>
    *
    * <code>.google.cloud.datacatalog.v1beta1.SystemTimestamps source_system_timestamps = 7;</code>
@@ -277,13 +311,15 @@ public interface EntryOrBuilder
    *
    *
    * <pre>
-   * Output only. Timestamps about the underlying Google Cloud Platform resource
-   * -- not about this Data Catalog Entry.
+   * Output only. Timestamps about the underlying Google Cloud Platform
+   * resource, not about this Data Catalog Entry.
    * </pre>
    *
    * <code>.google.cloud.datacatalog.v1beta1.SystemTimestamps source_system_timestamps = 7;</code>
    */
   com.google.cloud.datacatalog.SystemTimestampsOrBuilder getSourceSystemTimestampsOrBuilder();
+
+  public com.google.cloud.datacatalog.Entry.EntryTypeCase getEntryTypeCase();
 
   public com.google.cloud.datacatalog.Entry.TypeSpecCase getTypeSpecCase();
 }

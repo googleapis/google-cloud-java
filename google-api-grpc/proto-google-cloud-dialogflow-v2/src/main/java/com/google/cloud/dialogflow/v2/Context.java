@@ -123,7 +123,7 @@ public final class Context extends com.google.protobuf.GeneratedMessageV3
    * characters in [a-zA-Z0-9_-%] and may be at most 250 bytes long.
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   public java.lang.String getName() {
     java.lang.Object ref = name_;
@@ -146,7 +146,7 @@ public final class Context extends com.google.protobuf.GeneratedMessageV3
    * characters in [a-zA-Z0-9_-%] and may be at most 250 bytes long.
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   public com.google.protobuf.ByteString getNameBytes() {
     java.lang.Object ref = name_;
@@ -172,7 +172,7 @@ public final class Context extends com.google.protobuf.GeneratedMessageV3
    * are no matching queries.
    * </pre>
    *
-   * <code>int32 lifespan_count = 2;</code>
+   * <code>int32 lifespan_count = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   public int getLifespanCount() {
     return lifespanCount_;
@@ -190,7 +190,7 @@ public final class Context extends com.google.protobuf.GeneratedMessageV3
    * for syntax.
    * </pre>
    *
-   * <code>.google.protobuf.Struct parameters = 3;</code>
+   * <code>.google.protobuf.Struct parameters = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   public boolean hasParameters() {
     return parameters_ != null;
@@ -205,7 +205,7 @@ public final class Context extends com.google.protobuf.GeneratedMessageV3
    * for syntax.
    * </pre>
    *
-   * <code>.google.protobuf.Struct parameters = 3;</code>
+   * <code>.google.protobuf.Struct parameters = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   public com.google.protobuf.Struct getParameters() {
     return parameters_ == null ? com.google.protobuf.Struct.getDefaultInstance() : parameters_;
@@ -220,7 +220,7 @@ public final class Context extends com.google.protobuf.GeneratedMessageV3
    * for syntax.
    * </pre>
    *
-   * <code>.google.protobuf.Struct parameters = 3;</code>
+   * <code>.google.protobuf.Struct parameters = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   public com.google.protobuf.StructOrBuilder getParametersOrBuilder() {
     return getParameters();
@@ -595,7 +595,7 @@ public final class Context extends com.google.protobuf.GeneratedMessageV3
      * characters in [a-zA-Z0-9_-%] and may be at most 250 bytes long.
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public java.lang.String getName() {
       java.lang.Object ref = name_;
@@ -618,7 +618,7 @@ public final class Context extends com.google.protobuf.GeneratedMessageV3
      * characters in [a-zA-Z0-9_-%] and may be at most 250 bytes long.
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public com.google.protobuf.ByteString getNameBytes() {
       java.lang.Object ref = name_;
@@ -641,7 +641,7 @@ public final class Context extends com.google.protobuf.GeneratedMessageV3
      * characters in [a-zA-Z0-9_-%] and may be at most 250 bytes long.
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder setName(java.lang.String value) {
       if (value == null) {
@@ -662,7 +662,7 @@ public final class Context extends com.google.protobuf.GeneratedMessageV3
      * characters in [a-zA-Z0-9_-%] and may be at most 250 bytes long.
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder clearName() {
 
@@ -680,7 +680,7 @@ public final class Context extends com.google.protobuf.GeneratedMessageV3
      * characters in [a-zA-Z0-9_-%] and may be at most 250 bytes long.
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder setNameBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -704,7 +704,7 @@ public final class Context extends com.google.protobuf.GeneratedMessageV3
      * are no matching queries.
      * </pre>
      *
-     * <code>int32 lifespan_count = 2;</code>
+     * <code>int32 lifespan_count = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public int getLifespanCount() {
       return lifespanCount_;
@@ -719,7 +719,7 @@ public final class Context extends com.google.protobuf.GeneratedMessageV3
      * are no matching queries.
      * </pre>
      *
-     * <code>int32 lifespan_count = 2;</code>
+     * <code>int32 lifespan_count = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public Builder setLifespanCount(int value) {
 
@@ -737,7 +737,7 @@ public final class Context extends com.google.protobuf.GeneratedMessageV3
      * are no matching queries.
      * </pre>
      *
-     * <code>int32 lifespan_count = 2;</code>
+     * <code>int32 lifespan_count = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public Builder clearLifespanCount() {
 
@@ -762,7 +762,8 @@ public final class Context extends com.google.protobuf.GeneratedMessageV3
      * for syntax.
      * </pre>
      *
-     * <code>.google.protobuf.Struct parameters = 3;</code>
+     * <code>.google.protobuf.Struct parameters = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public boolean hasParameters() {
       return parametersBuilder_ != null || parameters_ != null;
@@ -777,7 +778,8 @@ public final class Context extends com.google.protobuf.GeneratedMessageV3
      * for syntax.
      * </pre>
      *
-     * <code>.google.protobuf.Struct parameters = 3;</code>
+     * <code>.google.protobuf.Struct parameters = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public com.google.protobuf.Struct getParameters() {
       if (parametersBuilder_ == null) {
@@ -796,7 +798,8 @@ public final class Context extends com.google.protobuf.GeneratedMessageV3
      * for syntax.
      * </pre>
      *
-     * <code>.google.protobuf.Struct parameters = 3;</code>
+     * <code>.google.protobuf.Struct parameters = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder setParameters(com.google.protobuf.Struct value) {
       if (parametersBuilder_ == null) {
@@ -821,7 +824,8 @@ public final class Context extends com.google.protobuf.GeneratedMessageV3
      * for syntax.
      * </pre>
      *
-     * <code>.google.protobuf.Struct parameters = 3;</code>
+     * <code>.google.protobuf.Struct parameters = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder setParameters(com.google.protobuf.Struct.Builder builderForValue) {
       if (parametersBuilder_ == null) {
@@ -843,7 +847,8 @@ public final class Context extends com.google.protobuf.GeneratedMessageV3
      * for syntax.
      * </pre>
      *
-     * <code>.google.protobuf.Struct parameters = 3;</code>
+     * <code>.google.protobuf.Struct parameters = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder mergeParameters(com.google.protobuf.Struct value) {
       if (parametersBuilder_ == null) {
@@ -870,7 +875,8 @@ public final class Context extends com.google.protobuf.GeneratedMessageV3
      * for syntax.
      * </pre>
      *
-     * <code>.google.protobuf.Struct parameters = 3;</code>
+     * <code>.google.protobuf.Struct parameters = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder clearParameters() {
       if (parametersBuilder_ == null) {
@@ -893,7 +899,8 @@ public final class Context extends com.google.protobuf.GeneratedMessageV3
      * for syntax.
      * </pre>
      *
-     * <code>.google.protobuf.Struct parameters = 3;</code>
+     * <code>.google.protobuf.Struct parameters = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public com.google.protobuf.Struct.Builder getParametersBuilder() {
 
@@ -910,7 +917,8 @@ public final class Context extends com.google.protobuf.GeneratedMessageV3
      * for syntax.
      * </pre>
      *
-     * <code>.google.protobuf.Struct parameters = 3;</code>
+     * <code>.google.protobuf.Struct parameters = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public com.google.protobuf.StructOrBuilder getParametersOrBuilder() {
       if (parametersBuilder_ != null) {
@@ -929,7 +937,8 @@ public final class Context extends com.google.protobuf.GeneratedMessageV3
      * for syntax.
      * </pre>
      *
-     * <code>.google.protobuf.Struct parameters = 3;</code>
+     * <code>.google.protobuf.Struct parameters = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.protobuf.Struct,
