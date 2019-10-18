@@ -299,6 +299,7 @@
     <module>grpc-google-cloud-speech-v1beta1</module>
     <module>grpc-google-cloud-speech-v1p1beta1</module>
     <module>google-cloud-speech</module>
+    <module>google-cloud-speech-bom</module>
   </modules>
 
   <reporting>
