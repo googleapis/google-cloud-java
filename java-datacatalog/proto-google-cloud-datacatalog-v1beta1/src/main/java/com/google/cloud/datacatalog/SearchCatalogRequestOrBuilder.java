@@ -113,30 +113,30 @@ public interface SearchCatalogRequestOrBuilder
    *
    *
    * <pre>
-   * Optional pagination token returned in an earlier
-   * [SearchCatalogResponse.next_page_token][google.cloud.datacatalog.v1beta1.SearchCatalogResponse.next_page_token], which
-   * indicates that this is a continuation of a prior
+   * Optional. Pagination token returned in an earlier
+   * [SearchCatalogResponse.next_page_token][google.cloud.datacatalog.v1beta1.SearchCatalogResponse.next_page_token],
+   * which indicates that this is a continuation of a prior
    * [SearchCatalogRequest][google.cloud.datacatalog.v1beta1.DataCatalog.SearchCatalog]
    * call, and that the system should return the next page of data. If empty,
    * the first page is returned.
    * </pre>
    *
-   * <code>string page_token = 3;</code>
+   * <code>string page_token = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   java.lang.String getPageToken();
   /**
    *
    *
    * <pre>
-   * Optional pagination token returned in an earlier
-   * [SearchCatalogResponse.next_page_token][google.cloud.datacatalog.v1beta1.SearchCatalogResponse.next_page_token], which
-   * indicates that this is a continuation of a prior
+   * Optional. Pagination token returned in an earlier
+   * [SearchCatalogResponse.next_page_token][google.cloud.datacatalog.v1beta1.SearchCatalogResponse.next_page_token],
+   * which indicates that this is a continuation of a prior
    * [SearchCatalogRequest][google.cloud.datacatalog.v1beta1.DataCatalog.SearchCatalog]
    * call, and that the system should return the next page of data. If empty,
    * the first page is returned.
    * </pre>
    *
-   * <code>string page_token = 3;</code>
+   * <code>string page_token = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   com.google.protobuf.ByteString getPageTokenBytes();
 

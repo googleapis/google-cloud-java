@@ -240,7 +240,7 @@ public final class UpdateTagTemplateFieldRequest extends com.google.protobuf.Gen
    *
    *
    * <pre>
-   * Optional. The field mask specifies the parts of the template to be updated.
+   * The field mask specifies the parts of the template to be updated.
    * Allowed fields:
    *   * `display_name`
    *   * `type.enum_type`
@@ -260,7 +260,7 @@ public final class UpdateTagTemplateFieldRequest extends com.google.protobuf.Gen
    *
    *
    * <pre>
-   * Optional. The field mask specifies the parts of the template to be updated.
+   * The field mask specifies the parts of the template to be updated.
    * Allowed fields:
    *   * `display_name`
    *   * `type.enum_type`
@@ -280,7 +280,7 @@ public final class UpdateTagTemplateFieldRequest extends com.google.protobuf.Gen
    *
    *
    * <pre>
-   * Optional. The field mask specifies the parts of the template to be updated.
+   * The field mask specifies the parts of the template to be updated.
    * Allowed fields:
    *   * `display_name`
    *   * `type.enum_type`
@@ -992,7 +992,7 @@ public final class UpdateTagTemplateFieldRequest extends com.google.protobuf.Gen
      *
      *
      * <pre>
-     * Optional. The field mask specifies the parts of the template to be updated.
+     * The field mask specifies the parts of the template to be updated.
      * Allowed fields:
      *   * `display_name`
      *   * `type.enum_type`
@@ -1012,7 +1012,7 @@ public final class UpdateTagTemplateFieldRequest extends com.google.protobuf.Gen
      *
      *
      * <pre>
-     * Optional. The field mask specifies the parts of the template to be updated.
+     * The field mask specifies the parts of the template to be updated.
      * Allowed fields:
      *   * `display_name`
      *   * `type.enum_type`
@@ -1038,7 +1038,7 @@ public final class UpdateTagTemplateFieldRequest extends com.google.protobuf.Gen
      *
      *
      * <pre>
-     * Optional. The field mask specifies the parts of the template to be updated.
+     * The field mask specifies the parts of the template to be updated.
      * Allowed fields:
      *   * `display_name`
      *   * `type.enum_type`
@@ -1068,7 +1068,7 @@ public final class UpdateTagTemplateFieldRequest extends com.google.protobuf.Gen
      *
      *
      * <pre>
-     * Optional. The field mask specifies the parts of the template to be updated.
+     * The field mask specifies the parts of the template to be updated.
      * Allowed fields:
      *   * `display_name`
      *   * `type.enum_type`
@@ -1095,7 +1095,7 @@ public final class UpdateTagTemplateFieldRequest extends com.google.protobuf.Gen
      *
      *
      * <pre>
-     * Optional. The field mask specifies the parts of the template to be updated.
+     * The field mask specifies the parts of the template to be updated.
      * Allowed fields:
      *   * `display_name`
      *   * `type.enum_type`
@@ -1127,7 +1127,7 @@ public final class UpdateTagTemplateFieldRequest extends com.google.protobuf.Gen
      *
      *
      * <pre>
-     * Optional. The field mask specifies the parts of the template to be updated.
+     * The field mask specifies the parts of the template to be updated.
      * Allowed fields:
      *   * `display_name`
      *   * `type.enum_type`
@@ -1155,7 +1155,7 @@ public final class UpdateTagTemplateFieldRequest extends com.google.protobuf.Gen
      *
      *
      * <pre>
-     * Optional. The field mask specifies the parts of the template to be updated.
+     * The field mask specifies the parts of the template to be updated.
      * Allowed fields:
      *   * `display_name`
      *   * `type.enum_type`
@@ -1177,7 +1177,7 @@ public final class UpdateTagTemplateFieldRequest extends com.google.protobuf.Gen
      *
      *
      * <pre>
-     * Optional. The field mask specifies the parts of the template to be updated.
+     * The field mask specifies the parts of the template to be updated.
      * Allowed fields:
      *   * `display_name`
      *   * `type.enum_type`
@@ -1203,7 +1203,7 @@ public final class UpdateTagTemplateFieldRequest extends com.google.protobuf.Gen
      *
      *
      * <pre>
-     * Optional. The field mask specifies the parts of the template to be updated.
+     * The field mask specifies the parts of the template to be updated.
      * Allowed fields:
      *   * `display_name`
      *   * `type.enum_type`

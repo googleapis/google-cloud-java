@@ -96,8 +96,8 @@ public interface GcsFilesetSpecOrBuilder
    *
    *
    * <pre>
-   * Output only. Sample files contained in this fileset, not all files contained in this
-   * fileset are represented here.
+   * Output only. Sample files contained in this fileset, not all files
+   * contained in this fileset are represented here.
    * </pre>
    *
    * <code>
@@ -109,8 +109,8 @@ public interface GcsFilesetSpecOrBuilder
    *
    *
    * <pre>
-   * Output only. Sample files contained in this fileset, not all files contained in this
-   * fileset are represented here.
+   * Output only. Sample files contained in this fileset, not all files
+   * contained in this fileset are represented here.
    * </pre>
    *
    * <code>
@@ -122,8 +122,8 @@ public interface GcsFilesetSpecOrBuilder
    *
    *
    * <pre>
-   * Output only. Sample files contained in this fileset, not all files contained in this
-   * fileset are represented here.
+   * Output only. Sample files contained in this fileset, not all files
+   * contained in this fileset are represented here.
    * </pre>
    *
    * <code>
@@ -135,8 +135,8 @@ public interface GcsFilesetSpecOrBuilder
    *
    *
    * <pre>
-   * Output only. Sample files contained in this fileset, not all files contained in this
-   * fileset are represented here.
+   * Output only. Sample files contained in this fileset, not all files
+   * contained in this fileset are represented here.
    * </pre>
    *
    * <code>
@@ -149,8 +149,8 @@ public interface GcsFilesetSpecOrBuilder
    *
    *
    * <pre>
-   * Output only. Sample files contained in this fileset, not all files contained in this
-   * fileset are represented here.
+   * Output only. Sample files contained in this fileset, not all files
+   * contained in this fileset are represented here.
    * </pre>
    *
    * <code>

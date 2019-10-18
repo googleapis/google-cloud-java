@@ -42,18 +42,19 @@ public final class Search {
     java.lang.String[] descriptorData = {
       "\n-google/cloud/datacatalog/v1beta1/searc"
           + "h.proto\022 google.cloud.datacatalog.v1beta"
-          + "1\032\037google/protobuf/timestamp.proto\"\275\001\n\023S"
-          + "earchCatalogResult\022N\n\022search_result_type"
-          + "\030\001 \001(\01622.google.cloud.datacatalog.v1beta"
-          + "1.SearchResultType\022\035\n\025search_result_subt"
-          + "ype\030\002 \001(\t\022\036\n\026relative_resource_name\030\003 \001("
-          + "\t\022\027\n\017linked_resource\030\004 \001(\t*d\n\020SearchResu"
-          + "ltType\022\"\n\036SEARCH_RESULT_TYPE_UNSPECIFIED"
-          + "\020\000\022\t\n\005ENTRY\020\001\022\020\n\014TAG_TEMPLATE\020\002\022\017\n\013ENTRY"
-          + "_GROUP\020\003Bp\n\034com.google.cloud.datacatalog"
-          + "P\001ZKgoogle.golang.org/genproto/googleapi"
-          + "s/cloud/datacatalog/v1beta1;datacatalog\370"
-          + "\001\001b\006proto3"
+          + "1\032\037google/api/field_behavior.proto\032\037goog"
+          + "le/protobuf/timestamp.proto\"\275\001\n\023SearchCa"
+          + "talogResult\022N\n\022search_result_type\030\001 \001(\0162"
+          + "2.google.cloud.datacatalog.v1beta1.Searc"
+          + "hResultType\022\035\n\025search_result_subtype\030\002 \001"
+          + "(\t\022\036\n\026relative_resource_name\030\003 \001(\t\022\027\n\017li"
+          + "nked_resource\030\004 \001(\t*d\n\020SearchResultType\022"
+          + "\"\n\036SEARCH_RESULT_TYPE_UNSPECIFIED\020\000\022\t\n\005E"
+          + "NTRY\020\001\022\020\n\014TAG_TEMPLATE\020\002\022\017\n\013ENTRY_GROUP\020"
+          + "\003Bp\n\034com.google.cloud.datacatalogP\001ZKgoo"
+          + "gle.golang.org/genproto/googleapis/cloud"
+          + "/datacatalog/v1beta1;datacatalog\370\001\001b\006pro"
+          + "to3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner() {
@@ -66,6 +67,7 @@ public final class Search {
     com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
         descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
+          com.google.api.FieldBehaviorProto.getDescriptor(),
           com.google.protobuf.TimestampProto.getDescriptor(),
         },
         assigner);
@@ -77,6 +79,7 @@ public final class Search {
             new java.lang.String[] {
               "SearchResultType", "SearchResultSubtype", "RelativeResourceName", "LinkedResource",
             });
+    com.google.api.FieldBehaviorProto.getDescriptor();
     com.google.protobuf.TimestampProto.getDescriptor();
   }
 

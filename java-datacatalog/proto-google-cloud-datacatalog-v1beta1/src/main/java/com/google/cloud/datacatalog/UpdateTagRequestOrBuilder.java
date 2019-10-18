@@ -27,7 +27,7 @@ public interface UpdateTagRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The updated tag.
+   * Required. The updated tag. The "name" field must be set.
    * </pre>
    *
    * <code>.google.cloud.datacatalog.v1beta1.Tag tag = 1 [(.google.api.field_behavior) = REQUIRED];
@@ -38,7 +38,7 @@ public interface UpdateTagRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The updated tag.
+   * Required. The updated tag. The "name" field must be set.
    * </pre>
    *
    * <code>.google.cloud.datacatalog.v1beta1.Tag tag = 1 [(.google.api.field_behavior) = REQUIRED];
@@ -49,7 +49,7 @@ public interface UpdateTagRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The updated tag.
+   * Required. The updated tag. The "name" field must be set.
    * </pre>
    *
    * <code>.google.cloud.datacatalog.v1beta1.Tag tag = 1 [(.google.api.field_behavior) = REQUIRED];
@@ -61,9 +61,8 @@ public interface UpdateTagRequestOrBuilder
    *
    *
    * <pre>
-   * Optional. The fields to update on the Tag. If absent or empty, all
-   * modifiable fields are updated. Currently the only modifiable field is the
-   * field `fields`.
+   * The fields to update on the Tag. If absent or empty, all modifiable fields
+   * are updated. Currently the only modifiable field is the field `fields`.
    * </pre>
    *
    * <code>.google.protobuf.FieldMask update_mask = 2;</code>
@@ -73,9 +72,8 @@ public interface UpdateTagRequestOrBuilder
    *
    *
    * <pre>
-   * Optional. The fields to update on the Tag. If absent or empty, all
-   * modifiable fields are updated. Currently the only modifiable field is the
-   * field `fields`.
+   * The fields to update on the Tag. If absent or empty, all modifiable fields
+   * are updated. Currently the only modifiable field is the field `fields`.
    * </pre>
    *
    * <code>.google.protobuf.FieldMask update_mask = 2;</code>
@@ -85,9 +83,8 @@ public interface UpdateTagRequestOrBuilder
    *
    *
    * <pre>
-   * Optional. The fields to update on the Tag. If absent or empty, all
-   * modifiable fields are updated. Currently the only modifiable field is the
-   * field `fields`.
+   * The fields to update on the Tag. If absent or empty, all modifiable fields
+   * are updated. Currently the only modifiable field is the field `fields`.
    * </pre>
    *
    * <code>.google.protobuf.FieldMask update_mask = 2;</code>

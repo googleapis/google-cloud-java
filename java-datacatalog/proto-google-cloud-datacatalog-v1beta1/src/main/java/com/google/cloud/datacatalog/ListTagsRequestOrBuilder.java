@@ -54,8 +54,7 @@ public interface ListTagsRequestOrBuilder
    *
    *
    * <pre>
-   * Optional. The maximum number of tags to return. Default is 10. Max limit is
-   * 1000.
+   * The maximum number of tags to return. Default is 10. Max limit is 1000.
    * </pre>
    *
    * <code>int32 page_size = 2;</code>
@@ -66,8 +65,8 @@ public interface ListTagsRequestOrBuilder
    *
    *
    * <pre>
-   * Optional. Token that specifies which page is requested. If empty, the first
-   * page is returned.
+   * Token that specifies which page is requested. If empty, the first page is
+   * returned.
    * </pre>
    *
    * <code>string page_token = 3;</code>
@@ -77,8 +76,8 @@ public interface ListTagsRequestOrBuilder
    *
    *
    * <pre>
-   * Optional. Token that specifies which page is requested. If empty, the first
-   * page is returned.
+   * Token that specifies which page is requested. If empty, the first page is
+   * returned.
    * </pre>
    *
    * <code>string page_token = 3;</code>

@@ -718,7 +718,7 @@ public class DataCatalogClient implements BackgroundResource {
    *     <p>Note that this EntryGroup and its child resources may not actually be stored in the
    *     location in this name.
    * @param entryGroupId Required. The id of the entry group to create.
-   * @param entryGroup Optional. The entry group to create. Defaults to an empty entry group.
+   * @param entryGroup The entry group to create. Defaults to an empty entry group.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final EntryGroup createEntryGroup(
@@ -806,7 +806,7 @@ public class DataCatalogClient implements BackgroundResource {
    *
    * @param name Required. The name of the entry group. For example,
    *     `projects/{project_id}/locations/{location}/entryGroups/{entry_group_id}`.
-   * @param readMask Optional. The fields to return. If not set or empty, all fields are returned.
+   * @param readMask The fields to return. If not set or empty, all fields are returned.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final EntryGroup getEntryGroup(String name, FieldMask readMask) {
@@ -1050,10 +1050,12 @@ public class DataCatalogClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param entry Required. The updated entry.
-   * @param updateMask Optional. The fields to update on the entry. If absent or empty, all
-   *     modifiable fields are updated.
-   *     <p>Currently only `schema` field in Cloud Pub/Sub topic entries is modifiable.
+   * @param entry Required. The updated entry. The "name" field must be set.
+   * @param updateMask The fields to update on the entry. If absent or empty, all modifiable fields
+   *     are updated.
+   *     <p>The following fields are modifiable: &#42; For entries with type `DATA_STREAM`: &#42;
+   *     `schema` &#42; For entries with type `FILESET` &#42; `schema` &#42; `display_name` &#42;
+   *     `description` &#42; `gcs_fileset_spec` &#42; `gcs_fileset_spec.file_patterns`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Entry updateEntry(Entry entry, FieldMask updateMask) {
@@ -1486,8 +1488,8 @@ public class DataCatalogClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param tagTemplate Required. The template to update.
-   * @param updateMask Optional. The field mask specifies the parts of the template to overwrite.
+   * @param tagTemplate Required. The template to update. The "name" field must be set.
+   * @param updateMask The field mask specifies the parts of the template to overwrite.
    *     <p>Allowed fields:
    *     <p>&#42; `display_name`
    *     <p>If absent or empty, all of the allowed fields above will be updated.
@@ -1758,8 +1760,8 @@ public class DataCatalogClient implements BackgroundResource {
    *     <p>&#42;
    *     projects/{project_id}/locations/{location}/tagTemplates/{tag_template_id}/fields/{tag_template_field_id}
    * @param tagTemplateField Required. The template to update.
-   * @param updateMask Optional. The field mask specifies the parts of the template to be updated.
-   *     Allowed fields:
+   * @param updateMask The field mask specifies the parts of the template to be updated. Allowed
+   *     fields:
    *     <p>&#42; `display_name` &#42; `type.enum_type`
    *     <p>If `update_mask` is not set or empty, all of the allowed fields above will be updated.
    *     <p>When updating an enum type, the provided values will be merged with the existing values.
@@ -2114,9 +2116,9 @@ public class DataCatalogClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param tag Required. The updated tag.
-   * @param updateMask Optional. The fields to update on the Tag. If absent or empty, all modifiable
-   *     fields are updated. Currently the only modifiable field is the field `fields`.
+   * @param tag Required. The updated tag. The "name" field must be set.
+   * @param updateMask The fields to update on the Tag. If absent or empty, all modifiable fields
+   *     are updated. Currently the only modifiable field is the field `fields`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Tag updateTag(Tag tag, FieldMask updateMask) {

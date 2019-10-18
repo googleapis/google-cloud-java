@@ -135,7 +135,7 @@ public final class UpdateTagTemplateRequest extends com.google.protobuf.Generate
    *
    *
    * <pre>
-   * Required. The template to update.
+   * Required. The template to update. The "name" field must be set.
    * </pre>
    *
    * <code>
@@ -149,7 +149,7 @@ public final class UpdateTagTemplateRequest extends com.google.protobuf.Generate
    *
    *
    * <pre>
-   * Required. The template to update.
+   * Required. The template to update. The "name" field must be set.
    * </pre>
    *
    * <code>
@@ -165,7 +165,7 @@ public final class UpdateTagTemplateRequest extends com.google.protobuf.Generate
    *
    *
    * <pre>
-   * Required. The template to update.
+   * Required. The template to update. The "name" field must be set.
    * </pre>
    *
    * <code>
@@ -182,7 +182,7 @@ public final class UpdateTagTemplateRequest extends com.google.protobuf.Generate
    *
    *
    * <pre>
-   * Optional. The field mask specifies the parts of the template to overwrite.
+   * The field mask specifies the parts of the template to overwrite.
    * Allowed fields:
    *   * `display_name`
    * If absent or empty, all of the allowed fields above will be updated.
@@ -197,7 +197,7 @@ public final class UpdateTagTemplateRequest extends com.google.protobuf.Generate
    *
    *
    * <pre>
-   * Optional. The field mask specifies the parts of the template to overwrite.
+   * The field mask specifies the parts of the template to overwrite.
    * Allowed fields:
    *   * `display_name`
    * If absent or empty, all of the allowed fields above will be updated.
@@ -212,7 +212,7 @@ public final class UpdateTagTemplateRequest extends com.google.protobuf.Generate
    *
    *
    * <pre>
-   * Optional. The field mask specifies the parts of the template to overwrite.
+   * The field mask specifies the parts of the template to overwrite.
    * Allowed fields:
    *   * `display_name`
    * If absent or empty, all of the allowed fields above will be updated.
@@ -594,7 +594,7 @@ public final class UpdateTagTemplateRequest extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * Required. The template to update.
+     * Required. The template to update. The "name" field must be set.
      * </pre>
      *
      * <code>
@@ -608,7 +608,7 @@ public final class UpdateTagTemplateRequest extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * Required. The template to update.
+     * Required. The template to update. The "name" field must be set.
      * </pre>
      *
      * <code>
@@ -628,7 +628,7 @@ public final class UpdateTagTemplateRequest extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * Required. The template to update.
+     * Required. The template to update. The "name" field must be set.
      * </pre>
      *
      * <code>
@@ -652,7 +652,7 @@ public final class UpdateTagTemplateRequest extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * Required. The template to update.
+     * Required. The template to update. The "name" field must be set.
      * </pre>
      *
      * <code>
@@ -674,7 +674,7 @@ public final class UpdateTagTemplateRequest extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * Required. The template to update.
+     * Required. The template to update. The "name" field must be set.
      * </pre>
      *
      * <code>
@@ -702,7 +702,7 @@ public final class UpdateTagTemplateRequest extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * Required. The template to update.
+     * Required. The template to update. The "name" field must be set.
      * </pre>
      *
      * <code>
@@ -724,7 +724,7 @@ public final class UpdateTagTemplateRequest extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * Required. The template to update.
+     * Required. The template to update. The "name" field must be set.
      * </pre>
      *
      * <code>
@@ -740,7 +740,7 @@ public final class UpdateTagTemplateRequest extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * Required. The template to update.
+     * Required. The template to update. The "name" field must be set.
      * </pre>
      *
      * <code>
@@ -760,7 +760,7 @@ public final class UpdateTagTemplateRequest extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * Required. The template to update.
+     * Required. The template to update. The "name" field must be set.
      * </pre>
      *
      * <code>
@@ -794,7 +794,7 @@ public final class UpdateTagTemplateRequest extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * Optional. The field mask specifies the parts of the template to overwrite.
+     * The field mask specifies the parts of the template to overwrite.
      * Allowed fields:
      *   * `display_name`
      * If absent or empty, all of the allowed fields above will be updated.
@@ -809,7 +809,7 @@ public final class UpdateTagTemplateRequest extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * Optional. The field mask specifies the parts of the template to overwrite.
+     * The field mask specifies the parts of the template to overwrite.
      * Allowed fields:
      *   * `display_name`
      * If absent or empty, all of the allowed fields above will be updated.
@@ -830,7 +830,7 @@ public final class UpdateTagTemplateRequest extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * Optional. The field mask specifies the parts of the template to overwrite.
+     * The field mask specifies the parts of the template to overwrite.
      * Allowed fields:
      *   * `display_name`
      * If absent or empty, all of the allowed fields above will be updated.
@@ -855,7 +855,7 @@ public final class UpdateTagTemplateRequest extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * Optional. The field mask specifies the parts of the template to overwrite.
+     * The field mask specifies the parts of the template to overwrite.
      * Allowed fields:
      *   * `display_name`
      * If absent or empty, all of the allowed fields above will be updated.
@@ -877,7 +877,7 @@ public final class UpdateTagTemplateRequest extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * Optional. The field mask specifies the parts of the template to overwrite.
+     * The field mask specifies the parts of the template to overwrite.
      * Allowed fields:
      *   * `display_name`
      * If absent or empty, all of the allowed fields above will be updated.
@@ -904,7 +904,7 @@ public final class UpdateTagTemplateRequest extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * Optional. The field mask specifies the parts of the template to overwrite.
+     * The field mask specifies the parts of the template to overwrite.
      * Allowed fields:
      *   * `display_name`
      * If absent or empty, all of the allowed fields above will be updated.
@@ -927,7 +927,7 @@ public final class UpdateTagTemplateRequest extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * Optional. The field mask specifies the parts of the template to overwrite.
+     * The field mask specifies the parts of the template to overwrite.
      * Allowed fields:
      *   * `display_name`
      * If absent or empty, all of the allowed fields above will be updated.
@@ -944,7 +944,7 @@ public final class UpdateTagTemplateRequest extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * Optional. The field mask specifies the parts of the template to overwrite.
+     * The field mask specifies the parts of the template to overwrite.
      * Allowed fields:
      *   * `display_name`
      * If absent or empty, all of the allowed fields above will be updated.
@@ -965,7 +965,7 @@ public final class UpdateTagTemplateRequest extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * Optional. The field mask specifies the parts of the template to overwrite.
+     * The field mask specifies the parts of the template to overwrite.
      * Allowed fields:
      *   * `display_name`
      * If absent or empty, all of the allowed fields above will be updated.

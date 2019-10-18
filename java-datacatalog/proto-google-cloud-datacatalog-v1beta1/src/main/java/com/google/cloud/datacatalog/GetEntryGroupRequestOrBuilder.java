@@ -54,8 +54,7 @@ public interface GetEntryGroupRequestOrBuilder
    *
    *
    * <pre>
-   * Optional. The fields to return. If not set or empty, all fields are
-   * returned.
+   * The fields to return. If not set or empty, all fields are returned.
    * </pre>
    *
    * <code>.google.protobuf.FieldMask read_mask = 2;</code>
@@ -65,8 +64,7 @@ public interface GetEntryGroupRequestOrBuilder
    *
    *
    * <pre>
-   * Optional. The fields to return. If not set or empty, all fields are
-   * returned.
+   * The fields to return. If not set or empty, all fields are returned.
    * </pre>
    *
    * <code>.google.protobuf.FieldMask read_mask = 2;</code>
@@ -76,8 +74,7 @@ public interface GetEntryGroupRequestOrBuilder
    *
    *
    * <pre>
-   * Optional. The fields to return. If not set or empty, all fields are
-   * returned.
+   * The fields to return. If not set or empty, all fields are returned.
    * </pre>
    *
    * <code>.google.protobuf.FieldMask read_mask = 2;</code>

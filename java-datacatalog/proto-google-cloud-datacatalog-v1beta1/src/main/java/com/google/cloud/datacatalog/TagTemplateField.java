@@ -143,7 +143,7 @@ public final class TagTemplateField extends com.google.protobuf.GeneratedMessage
    * in this name.
    * </pre>
    *
-   * <code>string name = 6;</code>
+   * <code>string name = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    */
   public java.lang.String getName() {
     java.lang.Object ref = name_;
@@ -167,7 +167,7 @@ public final class TagTemplateField extends com.google.protobuf.GeneratedMessage
    * in this name.
    * </pre>
    *
-   * <code>string name = 6;</code>
+   * <code>string name = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    */
   public com.google.protobuf.ByteString getNameBytes() {
     java.lang.Object ref = name_;
@@ -187,7 +187,7 @@ public final class TagTemplateField extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Optional. The display name for this field. Defaults to an empty string.
+   * The display name for this field. Defaults to an empty string.
    * </pre>
    *
    * <code>string display_name = 1;</code>
@@ -207,7 +207,7 @@ public final class TagTemplateField extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Optional. The display name for this field. Defaults to an empty string.
+   * The display name for this field. Defaults to an empty string.
    * </pre>
    *
    * <code>string display_name = 1;</code>
@@ -641,7 +641,7 @@ public final class TagTemplateField extends com.google.protobuf.GeneratedMessage
      * in this name.
      * </pre>
      *
-     * <code>string name = 6;</code>
+     * <code>string name = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     public java.lang.String getName() {
       java.lang.Object ref = name_;
@@ -665,7 +665,7 @@ public final class TagTemplateField extends com.google.protobuf.GeneratedMessage
      * in this name.
      * </pre>
      *
-     * <code>string name = 6;</code>
+     * <code>string name = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     public com.google.protobuf.ByteString getNameBytes() {
       java.lang.Object ref = name_;
@@ -689,7 +689,7 @@ public final class TagTemplateField extends com.google.protobuf.GeneratedMessage
      * in this name.
      * </pre>
      *
-     * <code>string name = 6;</code>
+     * <code>string name = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     public Builder setName(java.lang.String value) {
       if (value == null) {
@@ -711,7 +711,7 @@ public final class TagTemplateField extends com.google.protobuf.GeneratedMessage
      * in this name.
      * </pre>
      *
-     * <code>string name = 6;</code>
+     * <code>string name = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     public Builder clearName() {
 
@@ -730,7 +730,7 @@ public final class TagTemplateField extends com.google.protobuf.GeneratedMessage
      * in this name.
      * </pre>
      *
-     * <code>string name = 6;</code>
+     * <code>string name = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     public Builder setNameBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -748,7 +748,7 @@ public final class TagTemplateField extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. The display name for this field. Defaults to an empty string.
+     * The display name for this field. Defaults to an empty string.
      * </pre>
      *
      * <code>string display_name = 1;</code>
@@ -768,7 +768,7 @@ public final class TagTemplateField extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. The display name for this field. Defaults to an empty string.
+     * The display name for this field. Defaults to an empty string.
      * </pre>
      *
      * <code>string display_name = 1;</code>
@@ -788,7 +788,7 @@ public final class TagTemplateField extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. The display name for this field. Defaults to an empty string.
+     * The display name for this field. Defaults to an empty string.
      * </pre>
      *
      * <code>string display_name = 1;</code>
@@ -806,7 +806,7 @@ public final class TagTemplateField extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. The display name for this field. Defaults to an empty string.
+     * The display name for this field. Defaults to an empty string.
      * </pre>
      *
      * <code>string display_name = 1;</code>
@@ -821,7 +821,7 @@ public final class TagTemplateField extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. The display name for this field. Defaults to an empty string.
+     * The display name for this field. Defaults to an empty string.
      * </pre>
      *
      * <code>string display_name = 1;</code>

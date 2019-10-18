@@ -134,7 +134,7 @@ public final class UpdateTagRequest extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Required. The updated tag.
+   * Required. The updated tag. The "name" field must be set.
    * </pre>
    *
    * <code>.google.cloud.datacatalog.v1beta1.Tag tag = 1 [(.google.api.field_behavior) = REQUIRED];
@@ -147,7 +147,7 @@ public final class UpdateTagRequest extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Required. The updated tag.
+   * Required. The updated tag. The "name" field must be set.
    * </pre>
    *
    * <code>.google.cloud.datacatalog.v1beta1.Tag tag = 1 [(.google.api.field_behavior) = REQUIRED];
@@ -160,7 +160,7 @@ public final class UpdateTagRequest extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Required. The updated tag.
+   * Required. The updated tag. The "name" field must be set.
    * </pre>
    *
    * <code>.google.cloud.datacatalog.v1beta1.Tag tag = 1 [(.google.api.field_behavior) = REQUIRED];
@@ -176,9 +176,8 @@ public final class UpdateTagRequest extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Optional. The fields to update on the Tag. If absent or empty, all
-   * modifiable fields are updated. Currently the only modifiable field is the
-   * field `fields`.
+   * The fields to update on the Tag. If absent or empty, all modifiable fields
+   * are updated. Currently the only modifiable field is the field `fields`.
    * </pre>
    *
    * <code>.google.protobuf.FieldMask update_mask = 2;</code>
@@ -190,9 +189,8 @@ public final class UpdateTagRequest extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Optional. The fields to update on the Tag. If absent or empty, all
-   * modifiable fields are updated. Currently the only modifiable field is the
-   * field `fields`.
+   * The fields to update on the Tag. If absent or empty, all modifiable fields
+   * are updated. Currently the only modifiable field is the field `fields`.
    * </pre>
    *
    * <code>.google.protobuf.FieldMask update_mask = 2;</code>
@@ -204,9 +202,8 @@ public final class UpdateTagRequest extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Optional. The fields to update on the Tag. If absent or empty, all
-   * modifiable fields are updated. Currently the only modifiable field is the
-   * field `fields`.
+   * The fields to update on the Tag. If absent or empty, all modifiable fields
+   * are updated. Currently the only modifiable field is the field `fields`.
    * </pre>
    *
    * <code>.google.protobuf.FieldMask update_mask = 2;</code>
@@ -582,7 +579,7 @@ public final class UpdateTagRequest extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Required. The updated tag.
+     * Required. The updated tag. The "name" field must be set.
      * </pre>
      *
      * <code>
@@ -596,7 +593,7 @@ public final class UpdateTagRequest extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Required. The updated tag.
+     * Required. The updated tag. The "name" field must be set.
      * </pre>
      *
      * <code>
@@ -614,7 +611,7 @@ public final class UpdateTagRequest extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Required. The updated tag.
+     * Required. The updated tag. The "name" field must be set.
      * </pre>
      *
      * <code>
@@ -638,7 +635,7 @@ public final class UpdateTagRequest extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Required. The updated tag.
+     * Required. The updated tag. The "name" field must be set.
      * </pre>
      *
      * <code>
@@ -659,7 +656,7 @@ public final class UpdateTagRequest extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Required. The updated tag.
+     * Required. The updated tag. The "name" field must be set.
      * </pre>
      *
      * <code>
@@ -684,7 +681,7 @@ public final class UpdateTagRequest extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Required. The updated tag.
+     * Required. The updated tag. The "name" field must be set.
      * </pre>
      *
      * <code>
@@ -706,7 +703,7 @@ public final class UpdateTagRequest extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Required. The updated tag.
+     * Required. The updated tag. The "name" field must be set.
      * </pre>
      *
      * <code>
@@ -722,7 +719,7 @@ public final class UpdateTagRequest extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Required. The updated tag.
+     * Required. The updated tag. The "name" field must be set.
      * </pre>
      *
      * <code>
@@ -740,7 +737,7 @@ public final class UpdateTagRequest extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Required. The updated tag.
+     * Required. The updated tag. The "name" field must be set.
      * </pre>
      *
      * <code>
@@ -774,9 +771,8 @@ public final class UpdateTagRequest extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. The fields to update on the Tag. If absent or empty, all
-     * modifiable fields are updated. Currently the only modifiable field is the
-     * field `fields`.
+     * The fields to update on the Tag. If absent or empty, all modifiable fields
+     * are updated. Currently the only modifiable field is the field `fields`.
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 2;</code>
@@ -788,9 +784,8 @@ public final class UpdateTagRequest extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. The fields to update on the Tag. If absent or empty, all
-     * modifiable fields are updated. Currently the only modifiable field is the
-     * field `fields`.
+     * The fields to update on the Tag. If absent or empty, all modifiable fields
+     * are updated. Currently the only modifiable field is the field `fields`.
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 2;</code>
@@ -808,9 +803,8 @@ public final class UpdateTagRequest extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. The fields to update on the Tag. If absent or empty, all
-     * modifiable fields are updated. Currently the only modifiable field is the
-     * field `fields`.
+     * The fields to update on the Tag. If absent or empty, all modifiable fields
+     * are updated. Currently the only modifiable field is the field `fields`.
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 2;</code>
@@ -832,9 +826,8 @@ public final class UpdateTagRequest extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. The fields to update on the Tag. If absent or empty, all
-     * modifiable fields are updated. Currently the only modifiable field is the
-     * field `fields`.
+     * The fields to update on the Tag. If absent or empty, all modifiable fields
+     * are updated. Currently the only modifiable field is the field `fields`.
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 2;</code>
@@ -853,9 +846,8 @@ public final class UpdateTagRequest extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. The fields to update on the Tag. If absent or empty, all
-     * modifiable fields are updated. Currently the only modifiable field is the
-     * field `fields`.
+     * The fields to update on the Tag. If absent or empty, all modifiable fields
+     * are updated. Currently the only modifiable field is the field `fields`.
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 2;</code>
@@ -879,9 +871,8 @@ public final class UpdateTagRequest extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. The fields to update on the Tag. If absent or empty, all
-     * modifiable fields are updated. Currently the only modifiable field is the
-     * field `fields`.
+     * The fields to update on the Tag. If absent or empty, all modifiable fields
+     * are updated. Currently the only modifiable field is the field `fields`.
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 2;</code>
@@ -901,9 +892,8 @@ public final class UpdateTagRequest extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. The fields to update on the Tag. If absent or empty, all
-     * modifiable fields are updated. Currently the only modifiable field is the
-     * field `fields`.
+     * The fields to update on the Tag. If absent or empty, all modifiable fields
+     * are updated. Currently the only modifiable field is the field `fields`.
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 2;</code>
@@ -917,9 +907,8 @@ public final class UpdateTagRequest extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. The fields to update on the Tag. If absent or empty, all
-     * modifiable fields are updated. Currently the only modifiable field is the
-     * field `fields`.
+     * The fields to update on the Tag. If absent or empty, all modifiable fields
+     * are updated. Currently the only modifiable field is the field `fields`.
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 2;</code>
@@ -937,9 +926,8 @@ public final class UpdateTagRequest extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. The fields to update on the Tag. If absent or empty, all
-     * modifiable fields are updated. Currently the only modifiable field is the
-     * field `fields`.
+     * The fields to update on the Tag. If absent or empty, all modifiable fields
+     * are updated. Currently the only modifiable field is the field `fields`.
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 2;</code>

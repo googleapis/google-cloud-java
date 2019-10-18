@@ -72,7 +72,7 @@ public interface ColumnSchemaOrBuilder
    * Optional. Description of the column. Default value is an empty string.
    * </pre>
    *
-   * <code>string description = 2;</code>
+   * <code>string description = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   java.lang.String getDescription();
   /**
@@ -82,7 +82,7 @@ public interface ColumnSchemaOrBuilder
    * Optional. Description of the column. Default value is an empty string.
    * </pre>
    *
-   * <code>string description = 2;</code>
+   * <code>string description = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   com.google.protobuf.ByteString getDescriptionBytes();
 
@@ -95,7 +95,7 @@ public interface ColumnSchemaOrBuilder
    * supported. Default mode is `NULLABLE`.
    * </pre>
    *
-   * <code>string mode = 3;</code>
+   * <code>string mode = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   java.lang.String getMode();
   /**
@@ -107,7 +107,7 @@ public interface ColumnSchemaOrBuilder
    * supported. Default mode is `NULLABLE`.
    * </pre>
    *
-   * <code>string mode = 3;</code>
+   * <code>string mode = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   com.google.protobuf.ByteString getModeBytes();
 
@@ -119,7 +119,9 @@ public interface ColumnSchemaOrBuilder
    * sub-columns.
    * </pre>
    *
-   * <code>repeated .google.cloud.datacatalog.v1beta1.ColumnSchema subcolumns = 7;</code>
+   * <code>
+   * repeated .google.cloud.datacatalog.v1beta1.ColumnSchema subcolumns = 7 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   java.util.List<com.google.cloud.datacatalog.ColumnSchema> getSubcolumnsList();
   /**
@@ -130,7 +132,9 @@ public interface ColumnSchemaOrBuilder
    * sub-columns.
    * </pre>
    *
-   * <code>repeated .google.cloud.datacatalog.v1beta1.ColumnSchema subcolumns = 7;</code>
+   * <code>
+   * repeated .google.cloud.datacatalog.v1beta1.ColumnSchema subcolumns = 7 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   com.google.cloud.datacatalog.ColumnSchema getSubcolumns(int index);
   /**
@@ -141,7 +145,9 @@ public interface ColumnSchemaOrBuilder
    * sub-columns.
    * </pre>
    *
-   * <code>repeated .google.cloud.datacatalog.v1beta1.ColumnSchema subcolumns = 7;</code>
+   * <code>
+   * repeated .google.cloud.datacatalog.v1beta1.ColumnSchema subcolumns = 7 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   int getSubcolumnsCount();
   /**
@@ -152,7 +158,9 @@ public interface ColumnSchemaOrBuilder
    * sub-columns.
    * </pre>
    *
-   * <code>repeated .google.cloud.datacatalog.v1beta1.ColumnSchema subcolumns = 7;</code>
+   * <code>
+   * repeated .google.cloud.datacatalog.v1beta1.ColumnSchema subcolumns = 7 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   java.util.List<? extends com.google.cloud.datacatalog.ColumnSchemaOrBuilder>
       getSubcolumnsOrBuilderList();
@@ -164,7 +172,9 @@ public interface ColumnSchemaOrBuilder
    * sub-columns.
    * </pre>
    *
-   * <code>repeated .google.cloud.datacatalog.v1beta1.ColumnSchema subcolumns = 7;</code>
+   * <code>
+   * repeated .google.cloud.datacatalog.v1beta1.ColumnSchema subcolumns = 7 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   com.google.cloud.datacatalog.ColumnSchemaOrBuilder getSubcolumnsOrBuilder(int index);
 }

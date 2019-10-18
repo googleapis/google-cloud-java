@@ -134,7 +134,7 @@ public final class UpdateEntryRequest extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * Required. The updated entry.
+   * Required. The updated entry. The "name" field must be set.
    * </pre>
    *
    * <code>
@@ -148,7 +148,7 @@ public final class UpdateEntryRequest extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * Required. The updated entry.
+   * Required. The updated entry. The "name" field must be set.
    * </pre>
    *
    * <code>
@@ -162,7 +162,7 @@ public final class UpdateEntryRequest extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * Required. The updated entry.
+   * Required. The updated entry. The "name" field must be set.
    * </pre>
    *
    * <code>
@@ -179,9 +179,17 @@ public final class UpdateEntryRequest extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * Optional. The fields to update on the entry. If absent or empty, all
-   * modifiable fields are updated.
-   * Currently only `schema` field in Cloud Pub/Sub topic entries is modifiable.
+   * The fields to update on the entry. If absent or empty, all modifiable
+   * fields are updated.
+   * The following fields are modifiable:
+   * * For entries with type `DATA_STREAM`:
+   *    * `schema`
+   * * For entries with type `FILESET`
+   *    * `schema`
+   *    * `display_name`
+   *    * `description`
+   *    * `gcs_fileset_spec`
+   *    * `gcs_fileset_spec.file_patterns`
    * </pre>
    *
    * <code>.google.protobuf.FieldMask update_mask = 2;</code>
@@ -193,9 +201,17 @@ public final class UpdateEntryRequest extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * Optional. The fields to update on the entry. If absent or empty, all
-   * modifiable fields are updated.
-   * Currently only `schema` field in Cloud Pub/Sub topic entries is modifiable.
+   * The fields to update on the entry. If absent or empty, all modifiable
+   * fields are updated.
+   * The following fields are modifiable:
+   * * For entries with type `DATA_STREAM`:
+   *    * `schema`
+   * * For entries with type `FILESET`
+   *    * `schema`
+   *    * `display_name`
+   *    * `description`
+   *    * `gcs_fileset_spec`
+   *    * `gcs_fileset_spec.file_patterns`
    * </pre>
    *
    * <code>.google.protobuf.FieldMask update_mask = 2;</code>
@@ -207,9 +223,17 @@ public final class UpdateEntryRequest extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * Optional. The fields to update on the entry. If absent or empty, all
-   * modifiable fields are updated.
-   * Currently only `schema` field in Cloud Pub/Sub topic entries is modifiable.
+   * The fields to update on the entry. If absent or empty, all modifiable
+   * fields are updated.
+   * The following fields are modifiable:
+   * * For entries with type `DATA_STREAM`:
+   *    * `schema`
+   * * For entries with type `FILESET`
+   *    * `schema`
+   *    * `display_name`
+   *    * `description`
+   *    * `gcs_fileset_spec`
+   *    * `gcs_fileset_spec.file_patterns`
    * </pre>
    *
    * <code>.google.protobuf.FieldMask update_mask = 2;</code>
@@ -586,7 +610,7 @@ public final class UpdateEntryRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Required. The updated entry.
+     * Required. The updated entry. The "name" field must be set.
      * </pre>
      *
      * <code>
@@ -600,7 +624,7 @@ public final class UpdateEntryRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Required. The updated entry.
+     * Required. The updated entry. The "name" field must be set.
      * </pre>
      *
      * <code>
@@ -618,7 +642,7 @@ public final class UpdateEntryRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Required. The updated entry.
+     * Required. The updated entry. The "name" field must be set.
      * </pre>
      *
      * <code>
@@ -642,7 +666,7 @@ public final class UpdateEntryRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Required. The updated entry.
+     * Required. The updated entry. The "name" field must be set.
      * </pre>
      *
      * <code>
@@ -663,7 +687,7 @@ public final class UpdateEntryRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Required. The updated entry.
+     * Required. The updated entry. The "name" field must be set.
      * </pre>
      *
      * <code>
@@ -689,7 +713,7 @@ public final class UpdateEntryRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Required. The updated entry.
+     * Required. The updated entry. The "name" field must be set.
      * </pre>
      *
      * <code>
@@ -711,7 +735,7 @@ public final class UpdateEntryRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Required. The updated entry.
+     * Required. The updated entry. The "name" field must be set.
      * </pre>
      *
      * <code>
@@ -727,7 +751,7 @@ public final class UpdateEntryRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Required. The updated entry.
+     * Required. The updated entry. The "name" field must be set.
      * </pre>
      *
      * <code>
@@ -745,7 +769,7 @@ public final class UpdateEntryRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Required. The updated entry.
+     * Required. The updated entry. The "name" field must be set.
      * </pre>
      *
      * <code>
@@ -779,9 +803,17 @@ public final class UpdateEntryRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Optional. The fields to update on the entry. If absent or empty, all
-     * modifiable fields are updated.
-     * Currently only `schema` field in Cloud Pub/Sub topic entries is modifiable.
+     * The fields to update on the entry. If absent or empty, all modifiable
+     * fields are updated.
+     * The following fields are modifiable:
+     * * For entries with type `DATA_STREAM`:
+     *    * `schema`
+     * * For entries with type `FILESET`
+     *    * `schema`
+     *    * `display_name`
+     *    * `description`
+     *    * `gcs_fileset_spec`
+     *    * `gcs_fileset_spec.file_patterns`
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 2;</code>
@@ -793,9 +825,17 @@ public final class UpdateEntryRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Optional. The fields to update on the entry. If absent or empty, all
-     * modifiable fields are updated.
-     * Currently only `schema` field in Cloud Pub/Sub topic entries is modifiable.
+     * The fields to update on the entry. If absent or empty, all modifiable
+     * fields are updated.
+     * The following fields are modifiable:
+     * * For entries with type `DATA_STREAM`:
+     *    * `schema`
+     * * For entries with type `FILESET`
+     *    * `schema`
+     *    * `display_name`
+     *    * `description`
+     *    * `gcs_fileset_spec`
+     *    * `gcs_fileset_spec.file_patterns`
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 2;</code>
@@ -813,9 +853,17 @@ public final class UpdateEntryRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Optional. The fields to update on the entry. If absent or empty, all
-     * modifiable fields are updated.
-     * Currently only `schema` field in Cloud Pub/Sub topic entries is modifiable.
+     * The fields to update on the entry. If absent or empty, all modifiable
+     * fields are updated.
+     * The following fields are modifiable:
+     * * For entries with type `DATA_STREAM`:
+     *    * `schema`
+     * * For entries with type `FILESET`
+     *    * `schema`
+     *    * `display_name`
+     *    * `description`
+     *    * `gcs_fileset_spec`
+     *    * `gcs_fileset_spec.file_patterns`
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 2;</code>
@@ -837,9 +885,17 @@ public final class UpdateEntryRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Optional. The fields to update on the entry. If absent or empty, all
-     * modifiable fields are updated.
-     * Currently only `schema` field in Cloud Pub/Sub topic entries is modifiable.
+     * The fields to update on the entry. If absent or empty, all modifiable
+     * fields are updated.
+     * The following fields are modifiable:
+     * * For entries with type `DATA_STREAM`:
+     *    * `schema`
+     * * For entries with type `FILESET`
+     *    * `schema`
+     *    * `display_name`
+     *    * `description`
+     *    * `gcs_fileset_spec`
+     *    * `gcs_fileset_spec.file_patterns`
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 2;</code>
@@ -858,9 +914,17 @@ public final class UpdateEntryRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Optional. The fields to update on the entry. If absent or empty, all
-     * modifiable fields are updated.
-     * Currently only `schema` field in Cloud Pub/Sub topic entries is modifiable.
+     * The fields to update on the entry. If absent or empty, all modifiable
+     * fields are updated.
+     * The following fields are modifiable:
+     * * For entries with type `DATA_STREAM`:
+     *    * `schema`
+     * * For entries with type `FILESET`
+     *    * `schema`
+     *    * `display_name`
+     *    * `description`
+     *    * `gcs_fileset_spec`
+     *    * `gcs_fileset_spec.file_patterns`
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 2;</code>
@@ -884,9 +948,17 @@ public final class UpdateEntryRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Optional. The fields to update on the entry. If absent or empty, all
-     * modifiable fields are updated.
-     * Currently only `schema` field in Cloud Pub/Sub topic entries is modifiable.
+     * The fields to update on the entry. If absent or empty, all modifiable
+     * fields are updated.
+     * The following fields are modifiable:
+     * * For entries with type `DATA_STREAM`:
+     *    * `schema`
+     * * For entries with type `FILESET`
+     *    * `schema`
+     *    * `display_name`
+     *    * `description`
+     *    * `gcs_fileset_spec`
+     *    * `gcs_fileset_spec.file_patterns`
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 2;</code>
@@ -906,9 +978,17 @@ public final class UpdateEntryRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Optional. The fields to update on the entry. If absent or empty, all
-     * modifiable fields are updated.
-     * Currently only `schema` field in Cloud Pub/Sub topic entries is modifiable.
+     * The fields to update on the entry. If absent or empty, all modifiable
+     * fields are updated.
+     * The following fields are modifiable:
+     * * For entries with type `DATA_STREAM`:
+     *    * `schema`
+     * * For entries with type `FILESET`
+     *    * `schema`
+     *    * `display_name`
+     *    * `description`
+     *    * `gcs_fileset_spec`
+     *    * `gcs_fileset_spec.file_patterns`
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 2;</code>
@@ -922,9 +1002,17 @@ public final class UpdateEntryRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Optional. The fields to update on the entry. If absent or empty, all
-     * modifiable fields are updated.
-     * Currently only `schema` field in Cloud Pub/Sub topic entries is modifiable.
+     * The fields to update on the entry. If absent or empty, all modifiable
+     * fields are updated.
+     * The following fields are modifiable:
+     * * For entries with type `DATA_STREAM`:
+     *    * `schema`
+     * * For entries with type `FILESET`
+     *    * `schema`
+     *    * `display_name`
+     *    * `description`
+     *    * `gcs_fileset_spec`
+     *    * `gcs_fileset_spec.file_patterns`
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 2;</code>
@@ -942,9 +1030,17 @@ public final class UpdateEntryRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Optional. The fields to update on the entry. If absent or empty, all
-     * modifiable fields are updated.
-     * Currently only `schema` field in Cloud Pub/Sub topic entries is modifiable.
+     * The fields to update on the entry. If absent or empty, all modifiable
+     * fields are updated.
+     * The following fields are modifiable:
+     * * For entries with type `DATA_STREAM`:
+     *    * `schema`
+     * * For entries with type `FILESET`
+     *    * `schema`
+     *    * `display_name`
+     *    * `description`
+     *    * `gcs_fileset_spec`
+     *    * `gcs_fileset_spec.file_patterns`
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 2;</code>

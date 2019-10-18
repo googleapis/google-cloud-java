@@ -199,9 +199,7 @@ public final class Tag extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Required when used in
-   * [UpdateTagRequest][google.cloud.datacatalog.v1beta1.UpdateTagRequest]. The
-   * resource name of the tag in URL format. Example:
+   * The resource name of the tag in URL format. Example:
    * * projects/{project_id}/locations/{location}/entrygroups/{entry_group_id}/entries/{entry_id}/tags/{tag_id}
    * where `tag_id` is a system-generated identifier.
    * Note that this Tag may not actually be stored in the location in this name.
@@ -224,9 +222,7 @@ public final class Tag extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Required when used in
-   * [UpdateTagRequest][google.cloud.datacatalog.v1beta1.UpdateTagRequest]. The
-   * resource name of the tag in URL format. Example:
+   * The resource name of the tag in URL format. Example:
    * * projects/{project_id}/locations/{location}/entrygroups/{entry_group_id}/entries/{entry_id}/tags/{tag_id}
    * where `tag_id` is a system-generated identifier.
    * Note that this Tag may not actually be stored in the location in this name.
@@ -968,9 +964,7 @@ public final class Tag extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required when used in
-     * [UpdateTagRequest][google.cloud.datacatalog.v1beta1.UpdateTagRequest]. The
-     * resource name of the tag in URL format. Example:
+     * The resource name of the tag in URL format. Example:
      * * projects/{project_id}/locations/{location}/entrygroups/{entry_group_id}/entries/{entry_id}/tags/{tag_id}
      * where `tag_id` is a system-generated identifier.
      * Note that this Tag may not actually be stored in the location in this name.
@@ -993,9 +987,7 @@ public final class Tag extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required when used in
-     * [UpdateTagRequest][google.cloud.datacatalog.v1beta1.UpdateTagRequest]. The
-     * resource name of the tag in URL format. Example:
+     * The resource name of the tag in URL format. Example:
      * * projects/{project_id}/locations/{location}/entrygroups/{entry_group_id}/entries/{entry_id}/tags/{tag_id}
      * where `tag_id` is a system-generated identifier.
      * Note that this Tag may not actually be stored in the location in this name.
@@ -1018,9 +1010,7 @@ public final class Tag extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required when used in
-     * [UpdateTagRequest][google.cloud.datacatalog.v1beta1.UpdateTagRequest]. The
-     * resource name of the tag in URL format. Example:
+     * The resource name of the tag in URL format. Example:
      * * projects/{project_id}/locations/{location}/entrygroups/{entry_group_id}/entries/{entry_id}/tags/{tag_id}
      * where `tag_id` is a system-generated identifier.
      * Note that this Tag may not actually be stored in the location in this name.
@@ -1041,9 +1031,7 @@ public final class Tag extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required when used in
-     * [UpdateTagRequest][google.cloud.datacatalog.v1beta1.UpdateTagRequest]. The
-     * resource name of the tag in URL format. Example:
+     * The resource name of the tag in URL format. Example:
      * * projects/{project_id}/locations/{location}/entrygroups/{entry_group_id}/entries/{entry_id}/tags/{tag_id}
      * where `tag_id` is a system-generated identifier.
      * Note that this Tag may not actually be stored in the location in this name.
@@ -1061,9 +1049,7 @@ public final class Tag extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required when used in
-     * [UpdateTagRequest][google.cloud.datacatalog.v1beta1.UpdateTagRequest]. The
-     * resource name of the tag in URL format. Example:
+     * The resource name of the tag in URL format. Example:
      * * projects/{project_id}/locations/{location}/entrygroups/{entry_group_id}/entries/{entry_id}/tags/{tag_id}
      * where `tag_id` is a system-generated identifier.
      * Note that this Tag may not actually be stored in the location in this name.

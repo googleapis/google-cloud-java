@@ -242,7 +242,7 @@ public final class ColumnSchema extends com.google.protobuf.GeneratedMessageV3
    * Optional. Description of the column. Default value is an empty string.
    * </pre>
    *
-   * <code>string description = 2;</code>
+   * <code>string description = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   public java.lang.String getDescription() {
     java.lang.Object ref = description_;
@@ -262,7 +262,7 @@ public final class ColumnSchema extends com.google.protobuf.GeneratedMessageV3
    * Optional. Description of the column. Default value is an empty string.
    * </pre>
    *
-   * <code>string description = 2;</code>
+   * <code>string description = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   public com.google.protobuf.ByteString getDescriptionBytes() {
     java.lang.Object ref = description_;
@@ -287,7 +287,7 @@ public final class ColumnSchema extends com.google.protobuf.GeneratedMessageV3
    * supported. Default mode is `NULLABLE`.
    * </pre>
    *
-   * <code>string mode = 3;</code>
+   * <code>string mode = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   public java.lang.String getMode() {
     java.lang.Object ref = mode_;
@@ -309,7 +309,7 @@ public final class ColumnSchema extends com.google.protobuf.GeneratedMessageV3
    * supported. Default mode is `NULLABLE`.
    * </pre>
    *
-   * <code>string mode = 3;</code>
+   * <code>string mode = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   public com.google.protobuf.ByteString getModeBytes() {
     java.lang.Object ref = mode_;
@@ -333,7 +333,9 @@ public final class ColumnSchema extends com.google.protobuf.GeneratedMessageV3
    * sub-columns.
    * </pre>
    *
-   * <code>repeated .google.cloud.datacatalog.v1beta1.ColumnSchema subcolumns = 7;</code>
+   * <code>
+   * repeated .google.cloud.datacatalog.v1beta1.ColumnSchema subcolumns = 7 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   public java.util.List<com.google.cloud.datacatalog.ColumnSchema> getSubcolumnsList() {
     return subcolumns_;
@@ -346,7 +348,9 @@ public final class ColumnSchema extends com.google.protobuf.GeneratedMessageV3
    * sub-columns.
    * </pre>
    *
-   * <code>repeated .google.cloud.datacatalog.v1beta1.ColumnSchema subcolumns = 7;</code>
+   * <code>
+   * repeated .google.cloud.datacatalog.v1beta1.ColumnSchema subcolumns = 7 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   public java.util.List<? extends com.google.cloud.datacatalog.ColumnSchemaOrBuilder>
       getSubcolumnsOrBuilderList() {
@@ -360,7 +364,9 @@ public final class ColumnSchema extends com.google.protobuf.GeneratedMessageV3
    * sub-columns.
    * </pre>
    *
-   * <code>repeated .google.cloud.datacatalog.v1beta1.ColumnSchema subcolumns = 7;</code>
+   * <code>
+   * repeated .google.cloud.datacatalog.v1beta1.ColumnSchema subcolumns = 7 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   public int getSubcolumnsCount() {
     return subcolumns_.size();
@@ -373,7 +379,9 @@ public final class ColumnSchema extends com.google.protobuf.GeneratedMessageV3
    * sub-columns.
    * </pre>
    *
-   * <code>repeated .google.cloud.datacatalog.v1beta1.ColumnSchema subcolumns = 7;</code>
+   * <code>
+   * repeated .google.cloud.datacatalog.v1beta1.ColumnSchema subcolumns = 7 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   public com.google.cloud.datacatalog.ColumnSchema getSubcolumns(int index) {
     return subcolumns_.get(index);
@@ -386,7 +394,9 @@ public final class ColumnSchema extends com.google.protobuf.GeneratedMessageV3
    * sub-columns.
    * </pre>
    *
-   * <code>repeated .google.cloud.datacatalog.v1beta1.ColumnSchema subcolumns = 7;</code>
+   * <code>
+   * repeated .google.cloud.datacatalog.v1beta1.ColumnSchema subcolumns = 7 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   public com.google.cloud.datacatalog.ColumnSchemaOrBuilder getSubcolumnsOrBuilder(int index) {
     return subcolumns_.get(index);
@@ -1013,7 +1023,7 @@ public final class ColumnSchema extends com.google.protobuf.GeneratedMessageV3
      * Optional. Description of the column. Default value is an empty string.
      * </pre>
      *
-     * <code>string description = 2;</code>
+     * <code>string description = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public java.lang.String getDescription() {
       java.lang.Object ref = description_;
@@ -1033,7 +1043,7 @@ public final class ColumnSchema extends com.google.protobuf.GeneratedMessageV3
      * Optional. Description of the column. Default value is an empty string.
      * </pre>
      *
-     * <code>string description = 2;</code>
+     * <code>string description = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public com.google.protobuf.ByteString getDescriptionBytes() {
       java.lang.Object ref = description_;
@@ -1053,7 +1063,7 @@ public final class ColumnSchema extends com.google.protobuf.GeneratedMessageV3
      * Optional. Description of the column. Default value is an empty string.
      * </pre>
      *
-     * <code>string description = 2;</code>
+     * <code>string description = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public Builder setDescription(java.lang.String value) {
       if (value == null) {
@@ -1071,7 +1081,7 @@ public final class ColumnSchema extends com.google.protobuf.GeneratedMessageV3
      * Optional. Description of the column. Default value is an empty string.
      * </pre>
      *
-     * <code>string description = 2;</code>
+     * <code>string description = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public Builder clearDescription() {
 
@@ -1086,7 +1096,7 @@ public final class ColumnSchema extends com.google.protobuf.GeneratedMessageV3
      * Optional. Description of the column. Default value is an empty string.
      * </pre>
      *
-     * <code>string description = 2;</code>
+     * <code>string description = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public Builder setDescriptionBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -1109,7 +1119,7 @@ public final class ColumnSchema extends com.google.protobuf.GeneratedMessageV3
      * supported. Default mode is `NULLABLE`.
      * </pre>
      *
-     * <code>string mode = 3;</code>
+     * <code>string mode = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public java.lang.String getMode() {
       java.lang.Object ref = mode_;
@@ -1131,7 +1141,7 @@ public final class ColumnSchema extends com.google.protobuf.GeneratedMessageV3
      * supported. Default mode is `NULLABLE`.
      * </pre>
      *
-     * <code>string mode = 3;</code>
+     * <code>string mode = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public com.google.protobuf.ByteString getModeBytes() {
       java.lang.Object ref = mode_;
@@ -1153,7 +1163,7 @@ public final class ColumnSchema extends com.google.protobuf.GeneratedMessageV3
      * supported. Default mode is `NULLABLE`.
      * </pre>
      *
-     * <code>string mode = 3;</code>
+     * <code>string mode = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public Builder setMode(java.lang.String value) {
       if (value == null) {
@@ -1173,7 +1183,7 @@ public final class ColumnSchema extends com.google.protobuf.GeneratedMessageV3
      * supported. Default mode is `NULLABLE`.
      * </pre>
      *
-     * <code>string mode = 3;</code>
+     * <code>string mode = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public Builder clearMode() {
 
@@ -1190,7 +1200,7 @@ public final class ColumnSchema extends com.google.protobuf.GeneratedMessageV3
      * supported. Default mode is `NULLABLE`.
      * </pre>
      *
-     * <code>string mode = 3;</code>
+     * <code>string mode = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public Builder setModeBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -1228,7 +1238,9 @@ public final class ColumnSchema extends com.google.protobuf.GeneratedMessageV3
      * sub-columns.
      * </pre>
      *
-     * <code>repeated .google.cloud.datacatalog.v1beta1.ColumnSchema subcolumns = 7;</code>
+     * <code>
+     * repeated .google.cloud.datacatalog.v1beta1.ColumnSchema subcolumns = 7 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public java.util.List<com.google.cloud.datacatalog.ColumnSchema> getSubcolumnsList() {
       if (subcolumnsBuilder_ == null) {
@@ -1245,7 +1257,9 @@ public final class ColumnSchema extends com.google.protobuf.GeneratedMessageV3
      * sub-columns.
      * </pre>
      *
-     * <code>repeated .google.cloud.datacatalog.v1beta1.ColumnSchema subcolumns = 7;</code>
+     * <code>
+     * repeated .google.cloud.datacatalog.v1beta1.ColumnSchema subcolumns = 7 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public int getSubcolumnsCount() {
       if (subcolumnsBuilder_ == null) {
@@ -1262,7 +1276,9 @@ public final class ColumnSchema extends com.google.protobuf.GeneratedMessageV3
      * sub-columns.
      * </pre>
      *
-     * <code>repeated .google.cloud.datacatalog.v1beta1.ColumnSchema subcolumns = 7;</code>
+     * <code>
+     * repeated .google.cloud.datacatalog.v1beta1.ColumnSchema subcolumns = 7 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public com.google.cloud.datacatalog.ColumnSchema getSubcolumns(int index) {
       if (subcolumnsBuilder_ == null) {
@@ -1279,7 +1295,9 @@ public final class ColumnSchema extends com.google.protobuf.GeneratedMessageV3
      * sub-columns.
      * </pre>
      *
-     * <code>repeated .google.cloud.datacatalog.v1beta1.ColumnSchema subcolumns = 7;</code>
+     * <code>
+     * repeated .google.cloud.datacatalog.v1beta1.ColumnSchema subcolumns = 7 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder setSubcolumns(int index, com.google.cloud.datacatalog.ColumnSchema value) {
       if (subcolumnsBuilder_ == null) {
@@ -1302,7 +1320,9 @@ public final class ColumnSchema extends com.google.protobuf.GeneratedMessageV3
      * sub-columns.
      * </pre>
      *
-     * <code>repeated .google.cloud.datacatalog.v1beta1.ColumnSchema subcolumns = 7;</code>
+     * <code>
+     * repeated .google.cloud.datacatalog.v1beta1.ColumnSchema subcolumns = 7 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder setSubcolumns(
         int index, com.google.cloud.datacatalog.ColumnSchema.Builder builderForValue) {
@@ -1323,7 +1343,9 @@ public final class ColumnSchema extends com.google.protobuf.GeneratedMessageV3
      * sub-columns.
      * </pre>
      *
-     * <code>repeated .google.cloud.datacatalog.v1beta1.ColumnSchema subcolumns = 7;</code>
+     * <code>
+     * repeated .google.cloud.datacatalog.v1beta1.ColumnSchema subcolumns = 7 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder addSubcolumns(com.google.cloud.datacatalog.ColumnSchema value) {
       if (subcolumnsBuilder_ == null) {
@@ -1346,7 +1368,9 @@ public final class ColumnSchema extends com.google.protobuf.GeneratedMessageV3
      * sub-columns.
      * </pre>
      *
-     * <code>repeated .google.cloud.datacatalog.v1beta1.ColumnSchema subcolumns = 7;</code>
+     * <code>
+     * repeated .google.cloud.datacatalog.v1beta1.ColumnSchema subcolumns = 7 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder addSubcolumns(int index, com.google.cloud.datacatalog.ColumnSchema value) {
       if (subcolumnsBuilder_ == null) {
@@ -1369,7 +1393,9 @@ public final class ColumnSchema extends com.google.protobuf.GeneratedMessageV3
      * sub-columns.
      * </pre>
      *
-     * <code>repeated .google.cloud.datacatalog.v1beta1.ColumnSchema subcolumns = 7;</code>
+     * <code>
+     * repeated .google.cloud.datacatalog.v1beta1.ColumnSchema subcolumns = 7 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder addSubcolumns(
         com.google.cloud.datacatalog.ColumnSchema.Builder builderForValue) {
@@ -1390,7 +1416,9 @@ public final class ColumnSchema extends com.google.protobuf.GeneratedMessageV3
      * sub-columns.
      * </pre>
      *
-     * <code>repeated .google.cloud.datacatalog.v1beta1.ColumnSchema subcolumns = 7;</code>
+     * <code>
+     * repeated .google.cloud.datacatalog.v1beta1.ColumnSchema subcolumns = 7 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder addSubcolumns(
         int index, com.google.cloud.datacatalog.ColumnSchema.Builder builderForValue) {
@@ -1411,7 +1439,9 @@ public final class ColumnSchema extends com.google.protobuf.GeneratedMessageV3
      * sub-columns.
      * </pre>
      *
-     * <code>repeated .google.cloud.datacatalog.v1beta1.ColumnSchema subcolumns = 7;</code>
+     * <code>
+     * repeated .google.cloud.datacatalog.v1beta1.ColumnSchema subcolumns = 7 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder addAllSubcolumns(
         java.lang.Iterable<? extends com.google.cloud.datacatalog.ColumnSchema> values) {
@@ -1432,7 +1462,9 @@ public final class ColumnSchema extends com.google.protobuf.GeneratedMessageV3
      * sub-columns.
      * </pre>
      *
-     * <code>repeated .google.cloud.datacatalog.v1beta1.ColumnSchema subcolumns = 7;</code>
+     * <code>
+     * repeated .google.cloud.datacatalog.v1beta1.ColumnSchema subcolumns = 7 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder clearSubcolumns() {
       if (subcolumnsBuilder_ == null) {
@@ -1452,7 +1484,9 @@ public final class ColumnSchema extends com.google.protobuf.GeneratedMessageV3
      * sub-columns.
      * </pre>
      *
-     * <code>repeated .google.cloud.datacatalog.v1beta1.ColumnSchema subcolumns = 7;</code>
+     * <code>
+     * repeated .google.cloud.datacatalog.v1beta1.ColumnSchema subcolumns = 7 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder removeSubcolumns(int index) {
       if (subcolumnsBuilder_ == null) {
@@ -1472,7 +1506,9 @@ public final class ColumnSchema extends com.google.protobuf.GeneratedMessageV3
      * sub-columns.
      * </pre>
      *
-     * <code>repeated .google.cloud.datacatalog.v1beta1.ColumnSchema subcolumns = 7;</code>
+     * <code>
+     * repeated .google.cloud.datacatalog.v1beta1.ColumnSchema subcolumns = 7 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public com.google.cloud.datacatalog.ColumnSchema.Builder getSubcolumnsBuilder(int index) {
       return getSubcolumnsFieldBuilder().getBuilder(index);
@@ -1485,7 +1521,9 @@ public final class ColumnSchema extends com.google.protobuf.GeneratedMessageV3
      * sub-columns.
      * </pre>
      *
-     * <code>repeated .google.cloud.datacatalog.v1beta1.ColumnSchema subcolumns = 7;</code>
+     * <code>
+     * repeated .google.cloud.datacatalog.v1beta1.ColumnSchema subcolumns = 7 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public com.google.cloud.datacatalog.ColumnSchemaOrBuilder getSubcolumnsOrBuilder(int index) {
       if (subcolumnsBuilder_ == null) {
@@ -1502,7 +1540,9 @@ public final class ColumnSchema extends com.google.protobuf.GeneratedMessageV3
      * sub-columns.
      * </pre>
      *
-     * <code>repeated .google.cloud.datacatalog.v1beta1.ColumnSchema subcolumns = 7;</code>
+     * <code>
+     * repeated .google.cloud.datacatalog.v1beta1.ColumnSchema subcolumns = 7 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public java.util.List<? extends com.google.cloud.datacatalog.ColumnSchemaOrBuilder>
         getSubcolumnsOrBuilderList() {
@@ -1520,7 +1560,9 @@ public final class ColumnSchema extends com.google.protobuf.GeneratedMessageV3
      * sub-columns.
      * </pre>
      *
-     * <code>repeated .google.cloud.datacatalog.v1beta1.ColumnSchema subcolumns = 7;</code>
+     * <code>
+     * repeated .google.cloud.datacatalog.v1beta1.ColumnSchema subcolumns = 7 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public com.google.cloud.datacatalog.ColumnSchema.Builder addSubcolumnsBuilder() {
       return getSubcolumnsFieldBuilder()
@@ -1534,7 +1576,9 @@ public final class ColumnSchema extends com.google.protobuf.GeneratedMessageV3
      * sub-columns.
      * </pre>
      *
-     * <code>repeated .google.cloud.datacatalog.v1beta1.ColumnSchema subcolumns = 7;</code>
+     * <code>
+     * repeated .google.cloud.datacatalog.v1beta1.ColumnSchema subcolumns = 7 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public com.google.cloud.datacatalog.ColumnSchema.Builder addSubcolumnsBuilder(int index) {
       return getSubcolumnsFieldBuilder()
@@ -1548,7 +1592,9 @@ public final class ColumnSchema extends com.google.protobuf.GeneratedMessageV3
      * sub-columns.
      * </pre>
      *
-     * <code>repeated .google.cloud.datacatalog.v1beta1.ColumnSchema subcolumns = 7;</code>
+     * <code>
+     * repeated .google.cloud.datacatalog.v1beta1.ColumnSchema subcolumns = 7 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public java.util.List<com.google.cloud.datacatalog.ColumnSchema.Builder>
         getSubcolumnsBuilderList() {

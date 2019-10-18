@@ -57,11 +57,12 @@ public interface BigQueryDateShardedSpecOrBuilder
    *
    * <pre>
    * Output only. The table name prefix of the shards. The name of any given
-   * shard is `[table_prefix]YYYYMMDD`, for example, for shard
-   * `MyTable20180101`, the `table_prefix` is `MyTable`.
+   * shard is
+   * `[table_prefix]YYYYMMDD`, for example, for shard `MyTable20180101`, the
+   * `table_prefix` is `MyTable`.
    * </pre>
    *
-   * <code>string table_prefix = 2;</code>
+   * <code>string table_prefix = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    */
   java.lang.String getTablePrefix();
   /**
@@ -69,11 +70,12 @@ public interface BigQueryDateShardedSpecOrBuilder
    *
    * <pre>
    * Output only. The table name prefix of the shards. The name of any given
-   * shard is `[table_prefix]YYYYMMDD`, for example, for shard
-   * `MyTable20180101`, the `table_prefix` is `MyTable`.
+   * shard is
+   * `[table_prefix]YYYYMMDD`, for example, for shard `MyTable20180101`, the
+   * `table_prefix` is `MyTable`.
    * </pre>
    *
-   * <code>string table_prefix = 2;</code>
+   * <code>string table_prefix = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    */
   com.google.protobuf.ByteString getTablePrefixBytes();
 
@@ -84,7 +86,7 @@ public interface BigQueryDateShardedSpecOrBuilder
    * Output only. Total number of shards.
    * </pre>
    *
-   * <code>int64 shard_count = 3;</code>
+   * <code>int64 shard_count = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    */
   long getShardCount();
 }

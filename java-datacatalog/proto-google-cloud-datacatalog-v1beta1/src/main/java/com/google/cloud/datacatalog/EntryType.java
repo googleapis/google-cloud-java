@@ -66,8 +66,8 @@ public enum EntryType implements com.google.protobuf.ProtocolMessageEnum {
    *
    *
    * <pre>
-   * An entry type which is a set of files or objects. Example: Cloud Storage
-   * fileset.
+   * Alpha feature. An entry type which is a set of files or objects. Example:
+   * Cloud Storage fileset.
    * </pre>
    *
    * <code>FILESET = 4;</code>
@@ -112,8 +112,8 @@ public enum EntryType implements com.google.protobuf.ProtocolMessageEnum {
    *
    *
    * <pre>
-   * An entry type which is a set of files or objects. Example: Cloud Storage
-   * fileset.
+   * Alpha feature. An entry type which is a set of files or objects. Example:
+   * Cloud Storage fileset.
    * </pre>
    *
    * <code>FILESET = 4;</code>

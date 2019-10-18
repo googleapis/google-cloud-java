@@ -27,7 +27,7 @@ public interface UpdateTagTemplateRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The template to update.
+   * Required. The template to update. The "name" field must be set.
    * </pre>
    *
    * <code>
@@ -39,7 +39,7 @@ public interface UpdateTagTemplateRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The template to update.
+   * Required. The template to update. The "name" field must be set.
    * </pre>
    *
    * <code>
@@ -51,7 +51,7 @@ public interface UpdateTagTemplateRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The template to update.
+   * Required. The template to update. The "name" field must be set.
    * </pre>
    *
    * <code>
@@ -64,7 +64,7 @@ public interface UpdateTagTemplateRequestOrBuilder
    *
    *
    * <pre>
-   * Optional. The field mask specifies the parts of the template to overwrite.
+   * The field mask specifies the parts of the template to overwrite.
    * Allowed fields:
    *   * `display_name`
    * If absent or empty, all of the allowed fields above will be updated.
@@ -77,7 +77,7 @@ public interface UpdateTagTemplateRequestOrBuilder
    *
    *
    * <pre>
-   * Optional. The field mask specifies the parts of the template to overwrite.
+   * The field mask specifies the parts of the template to overwrite.
    * Allowed fields:
    *   * `display_name`
    * If absent or empty, all of the allowed fields above will be updated.
@@ -90,7 +90,7 @@ public interface UpdateTagTemplateRequestOrBuilder
    *
    *
    * <pre>
-   * Optional. The field mask specifies the parts of the template to overwrite.
+   * The field mask specifies the parts of the template to overwrite.
    * Allowed fields:
    *   * `display_name`
    * If absent or empty, all of the allowed fields above will be updated.

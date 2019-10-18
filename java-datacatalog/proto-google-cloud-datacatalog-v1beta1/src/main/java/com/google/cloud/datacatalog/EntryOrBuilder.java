@@ -27,8 +27,6 @@ public interface EntryOrBuilder
    *
    *
    * <pre>
-   * Required when used in
-   * [UpdateEntryRequest][google.cloud.datacatalog.v1beta1.UpdateEntryRequest].
    * The Data Catalog resource name of the entry in URL format. Example:
    * * projects/{project_id}/locations/{location}/entryGroups/{entry_group_id}/entries/{entry_id}
    * Note that this Entry and its child resources may not actually be stored in
@@ -42,8 +40,6 @@ public interface EntryOrBuilder
    *
    *
    * <pre>
-   * Required when used in
-   * [UpdateEntryRequest][google.cloud.datacatalog.v1beta1.UpdateEntryRequest].
    * The Data Catalog resource name of the entry in URL format. Example:
    * * projects/{project_id}/locations/{location}/entryGroups/{entry_group_id}/entries/{entry_id}
    * Note that this Entry and its child resources may not actually be stored in
@@ -66,7 +62,7 @@ public interface EntryOrBuilder
    * * //bigquery.googleapis.com/projects/projectId/datasets/datasetId/tables/tableId
    * </pre>
    *
-   * <code>string linked_resource = 9;</code>
+   * <code>string linked_resource = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    */
   java.lang.String getLinkedResource();
   /**
@@ -81,7 +77,7 @@ public interface EntryOrBuilder
    * * //bigquery.googleapis.com/projects/projectId/datasets/datasetId/tables/tableId
    * </pre>
    *
-   * <code>string linked_resource = 9;</code>
+   * <code>string linked_resource = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    */
   com.google.protobuf.ByteString getLinkedResourceBytes();
 
@@ -222,9 +218,9 @@ public interface EntryOrBuilder
    *
    *
    * <pre>
-   * Optional. Display information such as title and description. A short name
-   * to identify the entry, for example, "Analytics Data - Jan 2011". Default
-   * value is an empty string.
+   * Display information such as title and description. A short name to identify
+   * the entry, for example, "Analytics Data - Jan 2011". Default value is an
+   * empty string.
    * </pre>
    *
    * <code>string display_name = 3;</code>
@@ -234,9 +230,9 @@ public interface EntryOrBuilder
    *
    *
    * <pre>
-   * Optional. Display information such as title and description. A short name
-   * to identify the entry, for example, "Analytics Data - Jan 2011". Default
-   * value is an empty string.
+   * Display information such as title and description. A short name to identify
+   * the entry, for example, "Analytics Data - Jan 2011". Default value is an
+   * empty string.
    * </pre>
    *
    * <code>string display_name = 3;</code>
@@ -247,8 +243,8 @@ public interface EntryOrBuilder
    *
    *
    * <pre>
-   * Optional. Entry description, which can consist of several sentences or
-   * paragraphs that describe entry contents. Default value is an empty string.
+   * Entry description, which can consist of several sentences or paragraphs
+   * that describe entry contents. Default value is an empty string.
    * </pre>
    *
    * <code>string description = 4;</code>
@@ -258,8 +254,8 @@ public interface EntryOrBuilder
    *
    *
    * <pre>
-   * Optional. Entry description, which can consist of several sentences or
-   * paragraphs that describe entry contents. Default value is an empty string.
+   * Entry description, which can consist of several sentences or paragraphs
+   * that describe entry contents. Default value is an empty string.
    * </pre>
    *
    * <code>string description = 4;</code>
@@ -270,8 +266,7 @@ public interface EntryOrBuilder
    *
    *
    * <pre>
-   * Optional. Schema of the entry. An entry might not have any schema attached
-   * to it.
+   * Schema of the entry. An entry might not have any schema attached to it.
    * </pre>
    *
    * <code>.google.cloud.datacatalog.v1beta1.Schema schema = 5;</code>
@@ -281,8 +276,7 @@ public interface EntryOrBuilder
    *
    *
    * <pre>
-   * Optional. Schema of the entry. An entry might not have any schema attached
-   * to it.
+   * Schema of the entry. An entry might not have any schema attached to it.
    * </pre>
    *
    * <code>.google.cloud.datacatalog.v1beta1.Schema schema = 5;</code>
@@ -292,8 +286,7 @@ public interface EntryOrBuilder
    *
    *
    * <pre>
-   * Optional. Schema of the entry. An entry might not have any schema attached
-   * to it.
+   * Schema of the entry. An entry might not have any schema attached to it.
    * </pre>
    *
    * <code>.google.cloud.datacatalog.v1beta1.Schema schema = 5;</code>
@@ -308,7 +301,9 @@ public interface EntryOrBuilder
    * resource, not about this Data Catalog Entry.
    * </pre>
    *
-   * <code>.google.cloud.datacatalog.v1beta1.SystemTimestamps source_system_timestamps = 7;</code>
+   * <code>
+   * .google.cloud.datacatalog.v1beta1.SystemTimestamps source_system_timestamps = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    */
   boolean hasSourceSystemTimestamps();
   /**
@@ -319,7 +314,9 @@ public interface EntryOrBuilder
    * resource, not about this Data Catalog Entry.
    * </pre>
    *
-   * <code>.google.cloud.datacatalog.v1beta1.SystemTimestamps source_system_timestamps = 7;</code>
+   * <code>
+   * .google.cloud.datacatalog.v1beta1.SystemTimestamps source_system_timestamps = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    */
   com.google.cloud.datacatalog.SystemTimestamps getSourceSystemTimestamps();
   /**
@@ -330,7 +327,9 @@ public interface EntryOrBuilder
    * resource, not about this Data Catalog Entry.
    * </pre>
    *
-   * <code>.google.cloud.datacatalog.v1beta1.SystemTimestamps source_system_timestamps = 7;</code>
+   * <code>
+   * .google.cloud.datacatalog.v1beta1.SystemTimestamps source_system_timestamps = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    */
   com.google.cloud.datacatalog.SystemTimestampsOrBuilder getSourceSystemTimestampsOrBuilder();
 

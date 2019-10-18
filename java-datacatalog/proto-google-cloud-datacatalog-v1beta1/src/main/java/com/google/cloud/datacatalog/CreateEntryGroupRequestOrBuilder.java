@@ -79,7 +79,7 @@ public interface CreateEntryGroupRequestOrBuilder
    *
    *
    * <pre>
-   * Optional. The entry group to create. Defaults to an empty entry group.
+   * The entry group to create. Defaults to an empty entry group.
    * </pre>
    *
    * <code>.google.cloud.datacatalog.v1beta1.EntryGroup entry_group = 2;</code>
@@ -89,7 +89,7 @@ public interface CreateEntryGroupRequestOrBuilder
    *
    *
    * <pre>
-   * Optional. The entry group to create. Defaults to an empty entry group.
+   * The entry group to create. Defaults to an empty entry group.
    * </pre>
    *
    * <code>.google.cloud.datacatalog.v1beta1.EntryGroup entry_group = 2;</code>
@@ -99,7 +99,7 @@ public interface CreateEntryGroupRequestOrBuilder
    *
    *
    * <pre>
-   * Optional. The entry group to create. Defaults to an empty entry group.
+   * The entry group to create. Defaults to an empty entry group.
    * </pre>
    *
    * <code>.google.cloud.datacatalog.v1beta1.EntryGroup entry_group = 2;</code>

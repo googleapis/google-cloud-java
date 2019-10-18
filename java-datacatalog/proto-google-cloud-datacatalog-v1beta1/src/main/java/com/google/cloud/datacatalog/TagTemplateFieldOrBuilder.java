@@ -34,7 +34,7 @@ public interface TagTemplateFieldOrBuilder
    * in this name.
    * </pre>
    *
-   * <code>string name = 6;</code>
+   * <code>string name = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    */
   java.lang.String getName();
   /**
@@ -48,7 +48,7 @@ public interface TagTemplateFieldOrBuilder
    * in this name.
    * </pre>
    *
-   * <code>string name = 6;</code>
+   * <code>string name = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    */
   com.google.protobuf.ByteString getNameBytes();
 
@@ -56,7 +56,7 @@ public interface TagTemplateFieldOrBuilder
    *
    *
    * <pre>
-   * Optional. The display name for this field. Defaults to an empty string.
+   * The display name for this field. Defaults to an empty string.
    * </pre>
    *
    * <code>string display_name = 1;</code>
@@ -66,7 +66,7 @@ public interface TagTemplateFieldOrBuilder
    *
    *
    * <pre>
-   * Optional. The display name for this field. Defaults to an empty string.
+   * The display name for this field. Defaults to an empty string.
    * </pre>
    *
    * <code>string display_name = 1;</code>

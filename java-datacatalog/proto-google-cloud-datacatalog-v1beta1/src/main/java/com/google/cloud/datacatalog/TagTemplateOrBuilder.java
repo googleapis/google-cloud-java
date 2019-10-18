@@ -27,8 +27,6 @@ public interface TagTemplateOrBuilder
    *
    *
    * <pre>
-   * Required when used in
-   * [UpdateTagTemplateRequest][google.cloud.datacatalog.v1beta1.UpdateTagTemplateRequest].
    * The resource name of the tag template in URL format. Example:
    * * projects/{project_id}/locations/{location}/tagTemplates/{tag_template_id}
    * Note that this TagTemplate and its child resources may not actually be
@@ -42,8 +40,6 @@ public interface TagTemplateOrBuilder
    *
    *
    * <pre>
-   * Required when used in
-   * [UpdateTagTemplateRequest][google.cloud.datacatalog.v1beta1.UpdateTagTemplateRequest].
    * The resource name of the tag template in URL format. Example:
    * * projects/{project_id}/locations/{location}/tagTemplates/{tag_template_id}
    * Note that this TagTemplate and its child resources may not actually be
@@ -58,7 +54,7 @@ public interface TagTemplateOrBuilder
    *
    *
    * <pre>
-   * Optional. The display name for this template. Defaults to an empty string.
+   * The display name for this template. Defaults to an empty string.
    * </pre>
    *
    * <code>string display_name = 2;</code>
@@ -68,7 +64,7 @@ public interface TagTemplateOrBuilder
    *
    *
    * <pre>
-   * Optional. The display name for this template. Defaults to an empty string.
+   * The display name for this template. Defaults to an empty string.
    * </pre>
    *
    * <code>string display_name = 2;</code>

@@ -314,8 +314,6 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Required when used in
-   * [UpdateEntryRequest][google.cloud.datacatalog.v1beta1.UpdateEntryRequest].
    * The Data Catalog resource name of the entry in URL format. Example:
    * * projects/{project_id}/locations/{location}/entryGroups/{entry_group_id}/entries/{entry_id}
    * Note that this Entry and its child resources may not actually be stored in
@@ -339,8 +337,6 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Required when used in
-   * [UpdateEntryRequest][google.cloud.datacatalog.v1beta1.UpdateEntryRequest].
    * The Data Catalog resource name of the entry in URL format. Example:
    * * projects/{project_id}/locations/{location}/entryGroups/{entry_group_id}/entries/{entry_id}
    * Note that this Entry and its child resources may not actually be stored in
@@ -375,7 +371,7 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
    * * //bigquery.googleapis.com/projects/projectId/datasets/datasetId/tables/tableId
    * </pre>
    *
-   * <code>string linked_resource = 9;</code>
+   * <code>string linked_resource = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    */
   public java.lang.String getLinkedResource() {
     java.lang.Object ref = linkedResource_;
@@ -400,7 +396,7 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
    * * //bigquery.googleapis.com/projects/projectId/datasets/datasetId/tables/tableId
    * </pre>
    *
-   * <code>string linked_resource = 9;</code>
+   * <code>string linked_resource = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    */
   public com.google.protobuf.ByteString getLinkedResourceBytes() {
     java.lang.Object ref = linkedResource_;
@@ -606,9 +602,9 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. Display information such as title and description. A short name
-   * to identify the entry, for example, "Analytics Data - Jan 2011". Default
-   * value is an empty string.
+   * Display information such as title and description. A short name to identify
+   * the entry, for example, "Analytics Data - Jan 2011". Default value is an
+   * empty string.
    * </pre>
    *
    * <code>string display_name = 3;</code>
@@ -628,9 +624,9 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. Display information such as title and description. A short name
-   * to identify the entry, for example, "Analytics Data - Jan 2011". Default
-   * value is an empty string.
+   * Display information such as title and description. A short name to identify
+   * the entry, for example, "Analytics Data - Jan 2011". Default value is an
+   * empty string.
    * </pre>
    *
    * <code>string display_name = 3;</code>
@@ -653,8 +649,8 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. Entry description, which can consist of several sentences or
-   * paragraphs that describe entry contents. Default value is an empty string.
+   * Entry description, which can consist of several sentences or paragraphs
+   * that describe entry contents. Default value is an empty string.
    * </pre>
    *
    * <code>string description = 4;</code>
@@ -674,8 +670,8 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. Entry description, which can consist of several sentences or
-   * paragraphs that describe entry contents. Default value is an empty string.
+   * Entry description, which can consist of several sentences or paragraphs
+   * that describe entry contents. Default value is an empty string.
    * </pre>
    *
    * <code>string description = 4;</code>
@@ -698,8 +694,7 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. Schema of the entry. An entry might not have any schema attached
-   * to it.
+   * Schema of the entry. An entry might not have any schema attached to it.
    * </pre>
    *
    * <code>.google.cloud.datacatalog.v1beta1.Schema schema = 5;</code>
@@ -711,8 +706,7 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. Schema of the entry. An entry might not have any schema attached
-   * to it.
+   * Schema of the entry. An entry might not have any schema attached to it.
    * </pre>
    *
    * <code>.google.cloud.datacatalog.v1beta1.Schema schema = 5;</code>
@@ -724,8 +718,7 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. Schema of the entry. An entry might not have any schema attached
-   * to it.
+   * Schema of the entry. An entry might not have any schema attached to it.
    * </pre>
    *
    * <code>.google.cloud.datacatalog.v1beta1.Schema schema = 5;</code>
@@ -744,7 +737,9 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
    * resource, not about this Data Catalog Entry.
    * </pre>
    *
-   * <code>.google.cloud.datacatalog.v1beta1.SystemTimestamps source_system_timestamps = 7;</code>
+   * <code>
+   * .google.cloud.datacatalog.v1beta1.SystemTimestamps source_system_timestamps = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    */
   public boolean hasSourceSystemTimestamps() {
     return sourceSystemTimestamps_ != null;
@@ -757,7 +752,9 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
    * resource, not about this Data Catalog Entry.
    * </pre>
    *
-   * <code>.google.cloud.datacatalog.v1beta1.SystemTimestamps source_system_timestamps = 7;</code>
+   * <code>
+   * .google.cloud.datacatalog.v1beta1.SystemTimestamps source_system_timestamps = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    */
   public com.google.cloud.datacatalog.SystemTimestamps getSourceSystemTimestamps() {
     return sourceSystemTimestamps_ == null
@@ -772,7 +769,9 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
    * resource, not about this Data Catalog Entry.
    * </pre>
    *
-   * <code>.google.cloud.datacatalog.v1beta1.SystemTimestamps source_system_timestamps = 7;</code>
+   * <code>
+   * .google.cloud.datacatalog.v1beta1.SystemTimestamps source_system_timestamps = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    */
   public com.google.cloud.datacatalog.SystemTimestampsOrBuilder
       getSourceSystemTimestampsOrBuilder() {
@@ -1377,8 +1376,6 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required when used in
-     * [UpdateEntryRequest][google.cloud.datacatalog.v1beta1.UpdateEntryRequest].
      * The Data Catalog resource name of the entry in URL format. Example:
      * * projects/{project_id}/locations/{location}/entryGroups/{entry_group_id}/entries/{entry_id}
      * Note that this Entry and its child resources may not actually be stored in
@@ -1402,8 +1399,6 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required when used in
-     * [UpdateEntryRequest][google.cloud.datacatalog.v1beta1.UpdateEntryRequest].
      * The Data Catalog resource name of the entry in URL format. Example:
      * * projects/{project_id}/locations/{location}/entryGroups/{entry_group_id}/entries/{entry_id}
      * Note that this Entry and its child resources may not actually be stored in
@@ -1427,8 +1422,6 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required when used in
-     * [UpdateEntryRequest][google.cloud.datacatalog.v1beta1.UpdateEntryRequest].
      * The Data Catalog resource name of the entry in URL format. Example:
      * * projects/{project_id}/locations/{location}/entryGroups/{entry_group_id}/entries/{entry_id}
      * Note that this Entry and its child resources may not actually be stored in
@@ -1450,8 +1443,6 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required when used in
-     * [UpdateEntryRequest][google.cloud.datacatalog.v1beta1.UpdateEntryRequest].
      * The Data Catalog resource name of the entry in URL format. Example:
      * * projects/{project_id}/locations/{location}/entryGroups/{entry_group_id}/entries/{entry_id}
      * Note that this Entry and its child resources may not actually be stored in
@@ -1470,8 +1461,6 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required when used in
-     * [UpdateEntryRequest][google.cloud.datacatalog.v1beta1.UpdateEntryRequest].
      * The Data Catalog resource name of the entry in URL format. Example:
      * * projects/{project_id}/locations/{location}/entryGroups/{entry_group_id}/entries/{entry_id}
      * Note that this Entry and its child resources may not actually be stored in
@@ -1504,7 +1493,7 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
      * * //bigquery.googleapis.com/projects/projectId/datasets/datasetId/tables/tableId
      * </pre>
      *
-     * <code>string linked_resource = 9;</code>
+     * <code>string linked_resource = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     public java.lang.String getLinkedResource() {
       java.lang.Object ref = linkedResource_;
@@ -1529,7 +1518,7 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
      * * //bigquery.googleapis.com/projects/projectId/datasets/datasetId/tables/tableId
      * </pre>
      *
-     * <code>string linked_resource = 9;</code>
+     * <code>string linked_resource = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     public com.google.protobuf.ByteString getLinkedResourceBytes() {
       java.lang.Object ref = linkedResource_;
@@ -1554,7 +1543,7 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
      * * //bigquery.googleapis.com/projects/projectId/datasets/datasetId/tables/tableId
      * </pre>
      *
-     * <code>string linked_resource = 9;</code>
+     * <code>string linked_resource = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     public Builder setLinkedResource(java.lang.String value) {
       if (value == null) {
@@ -1577,7 +1566,7 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
      * * //bigquery.googleapis.com/projects/projectId/datasets/datasetId/tables/tableId
      * </pre>
      *
-     * <code>string linked_resource = 9;</code>
+     * <code>string linked_resource = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     public Builder clearLinkedResource() {
 
@@ -1597,7 +1586,7 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
      * * //bigquery.googleapis.com/projects/projectId/datasets/datasetId/tables/tableId
      * </pre>
      *
-     * <code>string linked_resource = 9;</code>
+     * <code>string linked_resource = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     public Builder setLinkedResourceBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -2364,9 +2353,9 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Display information such as title and description. A short name
-     * to identify the entry, for example, "Analytics Data - Jan 2011". Default
-     * value is an empty string.
+     * Display information such as title and description. A short name to identify
+     * the entry, for example, "Analytics Data - Jan 2011". Default value is an
+     * empty string.
      * </pre>
      *
      * <code>string display_name = 3;</code>
@@ -2386,9 +2375,9 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Display information such as title and description. A short name
-     * to identify the entry, for example, "Analytics Data - Jan 2011". Default
-     * value is an empty string.
+     * Display information such as title and description. A short name to identify
+     * the entry, for example, "Analytics Data - Jan 2011". Default value is an
+     * empty string.
      * </pre>
      *
      * <code>string display_name = 3;</code>
@@ -2408,9 +2397,9 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Display information such as title and description. A short name
-     * to identify the entry, for example, "Analytics Data - Jan 2011". Default
-     * value is an empty string.
+     * Display information such as title and description. A short name to identify
+     * the entry, for example, "Analytics Data - Jan 2011". Default value is an
+     * empty string.
      * </pre>
      *
      * <code>string display_name = 3;</code>
@@ -2428,9 +2417,9 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Display information such as title and description. A short name
-     * to identify the entry, for example, "Analytics Data - Jan 2011". Default
-     * value is an empty string.
+     * Display information such as title and description. A short name to identify
+     * the entry, for example, "Analytics Data - Jan 2011". Default value is an
+     * empty string.
      * </pre>
      *
      * <code>string display_name = 3;</code>
@@ -2445,9 +2434,9 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Display information such as title and description. A short name
-     * to identify the entry, for example, "Analytics Data - Jan 2011". Default
-     * value is an empty string.
+     * Display information such as title and description. A short name to identify
+     * the entry, for example, "Analytics Data - Jan 2011". Default value is an
+     * empty string.
      * </pre>
      *
      * <code>string display_name = 3;</code>
@@ -2468,8 +2457,8 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Entry description, which can consist of several sentences or
-     * paragraphs that describe entry contents. Default value is an empty string.
+     * Entry description, which can consist of several sentences or paragraphs
+     * that describe entry contents. Default value is an empty string.
      * </pre>
      *
      * <code>string description = 4;</code>
@@ -2489,8 +2478,8 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Entry description, which can consist of several sentences or
-     * paragraphs that describe entry contents. Default value is an empty string.
+     * Entry description, which can consist of several sentences or paragraphs
+     * that describe entry contents. Default value is an empty string.
      * </pre>
      *
      * <code>string description = 4;</code>
@@ -2510,8 +2499,8 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Entry description, which can consist of several sentences or
-     * paragraphs that describe entry contents. Default value is an empty string.
+     * Entry description, which can consist of several sentences or paragraphs
+     * that describe entry contents. Default value is an empty string.
      * </pre>
      *
      * <code>string description = 4;</code>
@@ -2529,8 +2518,8 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Entry description, which can consist of several sentences or
-     * paragraphs that describe entry contents. Default value is an empty string.
+     * Entry description, which can consist of several sentences or paragraphs
+     * that describe entry contents. Default value is an empty string.
      * </pre>
      *
      * <code>string description = 4;</code>
@@ -2545,8 +2534,8 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Entry description, which can consist of several sentences or
-     * paragraphs that describe entry contents. Default value is an empty string.
+     * Entry description, which can consist of several sentences or paragraphs
+     * that describe entry contents. Default value is an empty string.
      * </pre>
      *
      * <code>string description = 4;</code>
@@ -2572,8 +2561,7 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Schema of the entry. An entry might not have any schema attached
-     * to it.
+     * Schema of the entry. An entry might not have any schema attached to it.
      * </pre>
      *
      * <code>.google.cloud.datacatalog.v1beta1.Schema schema = 5;</code>
@@ -2585,8 +2573,7 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Schema of the entry. An entry might not have any schema attached
-     * to it.
+     * Schema of the entry. An entry might not have any schema attached to it.
      * </pre>
      *
      * <code>.google.cloud.datacatalog.v1beta1.Schema schema = 5;</code>
@@ -2602,8 +2589,7 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Schema of the entry. An entry might not have any schema attached
-     * to it.
+     * Schema of the entry. An entry might not have any schema attached to it.
      * </pre>
      *
      * <code>.google.cloud.datacatalog.v1beta1.Schema schema = 5;</code>
@@ -2625,8 +2611,7 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Schema of the entry. An entry might not have any schema attached
-     * to it.
+     * Schema of the entry. An entry might not have any schema attached to it.
      * </pre>
      *
      * <code>.google.cloud.datacatalog.v1beta1.Schema schema = 5;</code>
@@ -2645,8 +2630,7 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Schema of the entry. An entry might not have any schema attached
-     * to it.
+     * Schema of the entry. An entry might not have any schema attached to it.
      * </pre>
      *
      * <code>.google.cloud.datacatalog.v1beta1.Schema schema = 5;</code>
@@ -2672,8 +2656,7 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Schema of the entry. An entry might not have any schema attached
-     * to it.
+     * Schema of the entry. An entry might not have any schema attached to it.
      * </pre>
      *
      * <code>.google.cloud.datacatalog.v1beta1.Schema schema = 5;</code>
@@ -2693,8 +2676,7 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Schema of the entry. An entry might not have any schema attached
-     * to it.
+     * Schema of the entry. An entry might not have any schema attached to it.
      * </pre>
      *
      * <code>.google.cloud.datacatalog.v1beta1.Schema schema = 5;</code>
@@ -2708,8 +2690,7 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Schema of the entry. An entry might not have any schema attached
-     * to it.
+     * Schema of the entry. An entry might not have any schema attached to it.
      * </pre>
      *
      * <code>.google.cloud.datacatalog.v1beta1.Schema schema = 5;</code>
@@ -2725,8 +2706,7 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Schema of the entry. An entry might not have any schema attached
-     * to it.
+     * Schema of the entry. An entry might not have any schema attached to it.
      * </pre>
      *
      * <code>.google.cloud.datacatalog.v1beta1.Schema schema = 5;</code>
@@ -2762,7 +2742,9 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
      * resource, not about this Data Catalog Entry.
      * </pre>
      *
-     * <code>.google.cloud.datacatalog.v1beta1.SystemTimestamps source_system_timestamps = 7;</code>
+     * <code>
+     * .google.cloud.datacatalog.v1beta1.SystemTimestamps source_system_timestamps = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public boolean hasSourceSystemTimestamps() {
       return sourceSystemTimestampsBuilder_ != null || sourceSystemTimestamps_ != null;
@@ -2775,7 +2757,9 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
      * resource, not about this Data Catalog Entry.
      * </pre>
      *
-     * <code>.google.cloud.datacatalog.v1beta1.SystemTimestamps source_system_timestamps = 7;</code>
+     * <code>
+     * .google.cloud.datacatalog.v1beta1.SystemTimestamps source_system_timestamps = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public com.google.cloud.datacatalog.SystemTimestamps getSourceSystemTimestamps() {
       if (sourceSystemTimestampsBuilder_ == null) {
@@ -2794,7 +2778,9 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
      * resource, not about this Data Catalog Entry.
      * </pre>
      *
-     * <code>.google.cloud.datacatalog.v1beta1.SystemTimestamps source_system_timestamps = 7;</code>
+     * <code>
+     * .google.cloud.datacatalog.v1beta1.SystemTimestamps source_system_timestamps = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public Builder setSourceSystemTimestamps(com.google.cloud.datacatalog.SystemTimestamps value) {
       if (sourceSystemTimestampsBuilder_ == null) {
@@ -2817,7 +2803,9 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
      * resource, not about this Data Catalog Entry.
      * </pre>
      *
-     * <code>.google.cloud.datacatalog.v1beta1.SystemTimestamps source_system_timestamps = 7;</code>
+     * <code>
+     * .google.cloud.datacatalog.v1beta1.SystemTimestamps source_system_timestamps = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public Builder setSourceSystemTimestamps(
         com.google.cloud.datacatalog.SystemTimestamps.Builder builderForValue) {
@@ -2838,7 +2826,9 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
      * resource, not about this Data Catalog Entry.
      * </pre>
      *
-     * <code>.google.cloud.datacatalog.v1beta1.SystemTimestamps source_system_timestamps = 7;</code>
+     * <code>
+     * .google.cloud.datacatalog.v1beta1.SystemTimestamps source_system_timestamps = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public Builder mergeSourceSystemTimestamps(
         com.google.cloud.datacatalog.SystemTimestamps value) {
@@ -2866,7 +2856,9 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
      * resource, not about this Data Catalog Entry.
      * </pre>
      *
-     * <code>.google.cloud.datacatalog.v1beta1.SystemTimestamps source_system_timestamps = 7;</code>
+     * <code>
+     * .google.cloud.datacatalog.v1beta1.SystemTimestamps source_system_timestamps = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public Builder clearSourceSystemTimestamps() {
       if (sourceSystemTimestampsBuilder_ == null) {
@@ -2887,7 +2879,9 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
      * resource, not about this Data Catalog Entry.
      * </pre>
      *
-     * <code>.google.cloud.datacatalog.v1beta1.SystemTimestamps source_system_timestamps = 7;</code>
+     * <code>
+     * .google.cloud.datacatalog.v1beta1.SystemTimestamps source_system_timestamps = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public com.google.cloud.datacatalog.SystemTimestamps.Builder
         getSourceSystemTimestampsBuilder() {
@@ -2903,7 +2897,9 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
      * resource, not about this Data Catalog Entry.
      * </pre>
      *
-     * <code>.google.cloud.datacatalog.v1beta1.SystemTimestamps source_system_timestamps = 7;</code>
+     * <code>
+     * .google.cloud.datacatalog.v1beta1.SystemTimestamps source_system_timestamps = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public com.google.cloud.datacatalog.SystemTimestampsOrBuilder
         getSourceSystemTimestampsOrBuilder() {
@@ -2923,7 +2919,9 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
      * resource, not about this Data Catalog Entry.
      * </pre>
      *
-     * <code>.google.cloud.datacatalog.v1beta1.SystemTimestamps source_system_timestamps = 7;</code>
+     * <code>
+     * .google.cloud.datacatalog.v1beta1.SystemTimestamps source_system_timestamps = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.datacatalog.SystemTimestamps,

@@ -179,11 +179,12 @@ public final class BigQueryDateShardedSpec extends com.google.protobuf.Generated
    *
    * <pre>
    * Output only. The table name prefix of the shards. The name of any given
-   * shard is `[table_prefix]YYYYMMDD`, for example, for shard
-   * `MyTable20180101`, the `table_prefix` is `MyTable`.
+   * shard is
+   * `[table_prefix]YYYYMMDD`, for example, for shard `MyTable20180101`, the
+   * `table_prefix` is `MyTable`.
    * </pre>
    *
-   * <code>string table_prefix = 2;</code>
+   * <code>string table_prefix = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    */
   public java.lang.String getTablePrefix() {
     java.lang.Object ref = tablePrefix_;
@@ -201,11 +202,12 @@ public final class BigQueryDateShardedSpec extends com.google.protobuf.Generated
    *
    * <pre>
    * Output only. The table name prefix of the shards. The name of any given
-   * shard is `[table_prefix]YYYYMMDD`, for example, for shard
-   * `MyTable20180101`, the `table_prefix` is `MyTable`.
+   * shard is
+   * `[table_prefix]YYYYMMDD`, for example, for shard `MyTable20180101`, the
+   * `table_prefix` is `MyTable`.
    * </pre>
    *
-   * <code>string table_prefix = 2;</code>
+   * <code>string table_prefix = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    */
   public com.google.protobuf.ByteString getTablePrefixBytes() {
     java.lang.Object ref = tablePrefix_;
@@ -228,7 +230,7 @@ public final class BigQueryDateShardedSpec extends com.google.protobuf.Generated
    * Output only. Total number of shards.
    * </pre>
    *
-   * <code>int64 shard_count = 3;</code>
+   * <code>int64 shard_count = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    */
   public long getShardCount() {
     return shardCount_;
@@ -705,11 +707,12 @@ public final class BigQueryDateShardedSpec extends com.google.protobuf.Generated
      *
      * <pre>
      * Output only. The table name prefix of the shards. The name of any given
-     * shard is `[table_prefix]YYYYMMDD`, for example, for shard
-     * `MyTable20180101`, the `table_prefix` is `MyTable`.
+     * shard is
+     * `[table_prefix]YYYYMMDD`, for example, for shard `MyTable20180101`, the
+     * `table_prefix` is `MyTable`.
      * </pre>
      *
-     * <code>string table_prefix = 2;</code>
+     * <code>string table_prefix = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     public java.lang.String getTablePrefix() {
       java.lang.Object ref = tablePrefix_;
@@ -727,11 +730,12 @@ public final class BigQueryDateShardedSpec extends com.google.protobuf.Generated
      *
      * <pre>
      * Output only. The table name prefix of the shards. The name of any given
-     * shard is `[table_prefix]YYYYMMDD`, for example, for shard
-     * `MyTable20180101`, the `table_prefix` is `MyTable`.
+     * shard is
+     * `[table_prefix]YYYYMMDD`, for example, for shard `MyTable20180101`, the
+     * `table_prefix` is `MyTable`.
      * </pre>
      *
-     * <code>string table_prefix = 2;</code>
+     * <code>string table_prefix = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     public com.google.protobuf.ByteString getTablePrefixBytes() {
       java.lang.Object ref = tablePrefix_;
@@ -749,11 +753,12 @@ public final class BigQueryDateShardedSpec extends com.google.protobuf.Generated
      *
      * <pre>
      * Output only. The table name prefix of the shards. The name of any given
-     * shard is `[table_prefix]YYYYMMDD`, for example, for shard
-     * `MyTable20180101`, the `table_prefix` is `MyTable`.
+     * shard is
+     * `[table_prefix]YYYYMMDD`, for example, for shard `MyTable20180101`, the
+     * `table_prefix` is `MyTable`.
      * </pre>
      *
-     * <code>string table_prefix = 2;</code>
+     * <code>string table_prefix = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     public Builder setTablePrefix(java.lang.String value) {
       if (value == null) {
@@ -769,11 +774,12 @@ public final class BigQueryDateShardedSpec extends com.google.protobuf.Generated
      *
      * <pre>
      * Output only. The table name prefix of the shards. The name of any given
-     * shard is `[table_prefix]YYYYMMDD`, for example, for shard
-     * `MyTable20180101`, the `table_prefix` is `MyTable`.
+     * shard is
+     * `[table_prefix]YYYYMMDD`, for example, for shard `MyTable20180101`, the
+     * `table_prefix` is `MyTable`.
      * </pre>
      *
-     * <code>string table_prefix = 2;</code>
+     * <code>string table_prefix = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     public Builder clearTablePrefix() {
 
@@ -786,11 +792,12 @@ public final class BigQueryDateShardedSpec extends com.google.protobuf.Generated
      *
      * <pre>
      * Output only. The table name prefix of the shards. The name of any given
-     * shard is `[table_prefix]YYYYMMDD`, for example, for shard
-     * `MyTable20180101`, the `table_prefix` is `MyTable`.
+     * shard is
+     * `[table_prefix]YYYYMMDD`, for example, for shard `MyTable20180101`, the
+     * `table_prefix` is `MyTable`.
      * </pre>
      *
-     * <code>string table_prefix = 2;</code>
+     * <code>string table_prefix = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     public Builder setTablePrefixBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -811,7 +818,7 @@ public final class BigQueryDateShardedSpec extends com.google.protobuf.Generated
      * Output only. Total number of shards.
      * </pre>
      *
-     * <code>int64 shard_count = 3;</code>
+     * <code>int64 shard_count = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     public long getShardCount() {
       return shardCount_;
@@ -823,7 +830,7 @@ public final class BigQueryDateShardedSpec extends com.google.protobuf.Generated
      * Output only. Total number of shards.
      * </pre>
      *
-     * <code>int64 shard_count = 3;</code>
+     * <code>int64 shard_count = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     public Builder setShardCount(long value) {
 
@@ -838,7 +845,7 @@ public final class BigQueryDateShardedSpec extends com.google.protobuf.Generated
      * Output only. Total number of shards.
      * </pre>
      *
-     * <code>int64 shard_count = 3;</code>
+     * <code>int64 shard_count = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     public Builder clearShardCount() {
 
