@@ -1,19 +1,26 @@
 {
-  "updateTime": "2019-08-07T08:03:45.605698Z",
+  "updateTime": "2019-10-16T20:06:05.358172Z",
   "sources": [
     {
       "generator": {
         "name": "artman",
-        "version": "0.32.1",
-        "dockerImage": "googleapis/artman@sha256:a684d40ba9a4e15946f5f2ca6b4bd9fe301192f522e9de4fff622118775f309b"
+        "version": "0.39.0",
+        "dockerImage": "googleapis/artman@sha256:72554d0b3bdc0b4ac7d6726a6a606c00c14b454339037ed86be94574fb05d9f3"
       }
     },
     {
       "git": {
         "name": "googleapis",
         "remote": "https://github.com/googleapis/googleapis.git",
-        "sha": "6d29882872298c8bfbaef33bd69bfca275c4d2eb",
-        "internalRef": "262019251"
+        "sha": "c6e62c7e5e61e6dae7fdc3bc3de81f60e6a9445c",
+        "internalRef": "274798600"
+      }
+    },
+    {
+      "template": {
+        "name": "java_library",
+        "origin": "synthtool.gcp",
+        "version": "2019.5.2"
       }
     }
   ],
@@ -26,16 +33,6 @@
         "language": "java",
         "generator": "gapic",
         "config": "google/cloud/videointelligence/artman_videointelligence_v1.yaml"
-      }
-    },
-    {
-      "client": {
-        "source": "googleapis",
-        "apiName": "video-intelligence",
-        "apiVersion": "v1beta1",
-        "language": "java",
-        "generator": "gapic",
-        "config": "google/cloud/videointelligence/artman_videointelligence_v1beta1.yaml"
       }
     },
     {

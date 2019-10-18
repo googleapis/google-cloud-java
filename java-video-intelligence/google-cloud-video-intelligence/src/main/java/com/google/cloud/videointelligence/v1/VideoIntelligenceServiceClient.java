@@ -193,7 +193,7 @@ public class VideoIntelligenceServiceClient implements BackgroundResource {
    *     wildcards in `object-id`, and thus identify multiple videos. Supported wildcards: '&#42;'
    *     to match 0 or more characters; '?' to match 1 character. If unset, the input video should
    *     be embedded in the request as `input_content`. If set, `input_content` should be unset.
-   * @param features Requested video annotation features.
+   * @param features Required. Requested video annotation features.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi(
@@ -217,12 +217,12 @@ public class VideoIntelligenceServiceClient implements BackgroundResource {
    *
    * <pre><code>
    * try (VideoIntelligenceServiceClient videoIntelligenceServiceClient = VideoIntelligenceServiceClient.create()) {
-   *   String inputUri = "gs://cloud-samples-data/video/cat.mp4";
    *   Feature featuresElement = Feature.LABEL_DETECTION;
    *   List&lt;Feature&gt; features = Arrays.asList(featuresElement);
+   *   String inputUri = "gs://cloud-samples-data/video/cat.mp4";
    *   AnnotateVideoRequest request = AnnotateVideoRequest.newBuilder()
-   *     .setInputUri(inputUri)
    *     .addAllFeatures(features)
+   *     .setInputUri(inputUri)
    *     .build();
    *   AnnotateVideoResponse response = videoIntelligenceServiceClient.annotateVideoAsync(request).get();
    * }
@@ -249,12 +249,12 @@ public class VideoIntelligenceServiceClient implements BackgroundResource {
    *
    * <pre><code>
    * try (VideoIntelligenceServiceClient videoIntelligenceServiceClient = VideoIntelligenceServiceClient.create()) {
-   *   String inputUri = "gs://cloud-samples-data/video/cat.mp4";
    *   Feature featuresElement = Feature.LABEL_DETECTION;
    *   List&lt;Feature&gt; features = Arrays.asList(featuresElement);
+   *   String inputUri = "gs://cloud-samples-data/video/cat.mp4";
    *   AnnotateVideoRequest request = AnnotateVideoRequest.newBuilder()
-   *     .setInputUri(inputUri)
    *     .addAllFeatures(features)
+   *     .setInputUri(inputUri)
    *     .build();
    *   OperationFuture&lt;AnnotateVideoResponse, AnnotateVideoProgress&gt; future = videoIntelligenceServiceClient.annotateVideoOperationCallable().futureCall(request);
    *   // Do something
@@ -279,12 +279,12 @@ public class VideoIntelligenceServiceClient implements BackgroundResource {
    *
    * <pre><code>
    * try (VideoIntelligenceServiceClient videoIntelligenceServiceClient = VideoIntelligenceServiceClient.create()) {
-   *   String inputUri = "gs://cloud-samples-data/video/cat.mp4";
    *   Feature featuresElement = Feature.LABEL_DETECTION;
    *   List&lt;Feature&gt; features = Arrays.asList(featuresElement);
+   *   String inputUri = "gs://cloud-samples-data/video/cat.mp4";
    *   AnnotateVideoRequest request = AnnotateVideoRequest.newBuilder()
-   *     .setInputUri(inputUri)
    *     .addAllFeatures(features)
+   *     .setInputUri(inputUri)
    *     .build();
    *   ApiFuture&lt;Operation&gt; future = videoIntelligenceServiceClient.annotateVideoCallable().futureCall(request);
    *   // Do something
