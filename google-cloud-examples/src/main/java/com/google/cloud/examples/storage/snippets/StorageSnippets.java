@@ -1015,7 +1015,7 @@ public class StorageSnippets {
     // [END storage_list_buckets]
     return buckets;
   }
-  
+
   /** Example of enabling Requester pays on a bucket. */
   public Bucket enableRequesterPays(String bucketName) throws StorageException {
     // [START enable_requester_pays]
