@@ -40,7 +40,8 @@ public class BigtableOptions extends FormatOptions {
     return columnFamilies;
   }
 
-  static final class Builder {
+  /** A builder for {@code BigtableOptions} objects. */
+  public static final class Builder {
 
     private Boolean ignoreUnspecifiedColumnFamilies;
     private Boolean readRowkeyAsString;
@@ -59,7 +60,7 @@ public class BigtableOptions extends FormatOptions {
      * not exposed in the table schema. Otherwise, they are read with BYTES type values. The default
      * value is false.
      */
-    Builder setIgnoreUnspecifiedColumnFamilies(Boolean ignoreUnspecifiedColumnFamilies) {
+    public Builder setIgnoreUnspecifiedColumnFamilies(Boolean ignoreUnspecifiedColumnFamilies) {
       this.ignoreUnspecifiedColumnFamilies = ignoreUnspecifiedColumnFamilies;
       return this;
     }
@@ -69,7 +70,7 @@ public class BigtableOptions extends FormatOptions {
      * string. Otherwise they are read with BYTES type values and users need to manually cast them
      * with CAST if necessary. The default value is false.
      */
-    Builder setReadRowkeyAsString(Boolean readRowkeyAsString) {
+    public Builder setReadRowkeyAsString(Boolean readRowkeyAsString) {
       this.readRowkeyAsString = readRowkeyAsString;
       return this;
     }
@@ -83,14 +84,19 @@ public class BigtableOptions extends FormatOptions {
      * schema and their values are read as BYTES. During a query only the column families referenced
      * in that query are read from Bigtable.
      */
-    Builder setColumnFamilies(List<BigtableColumnFamily> columnFamilies) {
+    public Builder setColumnFamilies(List<BigtableColumnFamily> columnFamilies) {
       this.columnFamilies = columnFamilies;
       return this;
     }
 
-    BigtableOptions build() {
+    public BigtableOptions build() {
       return new BigtableOptions(this);
     }
+  }
+
+  /** Returns a builder for the {@link BigtableOptions} object. */
+  public Builder toBuilder() {
+    return new Builder(this);
   }
 
   BigtableOptions(Builder builder) {
@@ -128,6 +134,7 @@ public class BigtableOptions extends FormatOptions {
         && Objects.equals(columnFamilies, other.columnFamilies);
   }
 
+  /** Returns a builder for a {@link BigtableOptions} object. */
   public static Builder newBuilder() {
     return new Builder();
   }
@@ -136,8 +143,10 @@ public class BigtableOptions extends FormatOptions {
     Builder builder = newBuilder();
     builder.setIgnoreUnspecifiedColumnFamilies(options.getIgnoreUnspecifiedColumnFamilies());
     builder.setReadRowkeyAsString(options.getReadRowkeyAsString());
-    builder.setColumnFamilies(
-        Lists.transform(options.getColumnFamilies(), BigtableColumnFamily.FROM_PB_FUNCTION));
+    if (options.getColumnFamilies() != null) {
+      builder.setColumnFamilies(
+          Lists.transform(options.getColumnFamilies(), BigtableColumnFamily.FROM_PB_FUNCTION));
+    }
     return builder.build();
   }
 
