@@ -23,7 +23,7 @@
 
     <!-- Production dependencies -->
     <dependency>
-      <groupId>${project.groupId}</groupId>
+      <groupId>com.google.cloud</groupId>
       <artifactId>google-cloud-core-grpc</artifactId>
     </dependency>
     <dependency>
