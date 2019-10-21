@@ -23,10 +23,6 @@
 
     <!-- Production dependencies -->
     <dependency>
-      <groupId>${project.groupId}</groupId>
-      <artifactId>google-cloud-core-grpc</artifactId>
-    </dependency>
-    <dependency>
       <groupId>com.google.api</groupId>
       <artifactId>api-common</artifactId>
     </dependency>
@@ -53,11 +49,6 @@
     <dependency>
       <groupId>com.google.api.grpc</groupId>
       <artifactId>proto-google-iam-v1</artifactId>
-    </dependency>
-    <dependency>
-      <groupId>com.google.auto.value</groupId>
-      <artifactId>auto-value</artifactId>
-      <scope>provided</scope>
     </dependency>
     <dependency>
       <groupId>com.google.auto.value</groupId>

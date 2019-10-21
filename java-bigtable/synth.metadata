@@ -1,0 +1,49 @@
+{
+  "updateTime": "2019-10-21T15:56:13.038889Z",
+  "sources": [
+    {
+      "generator": {
+        "name": "artman",
+        "version": "0.40.1",
+        "dockerImage": "googleapis/artman@sha256:168646efbffe41e8f8fa86a60fa0d5724fab67fa37f35082cf6cfc85cedce3c7"
+      }
+    },
+    {
+      "git": {
+        "name": "googleapis",
+        "remote": "https://github.com/googleapis/googleapis.git",
+        "sha": "868cc5c8add9957f9d4501f7ae86140644cd68a1",
+        "internalRef": "275845814"
+      }
+    },
+    {
+      "template": {
+        "name": "java_library",
+        "origin": "synthtool.gcp",
+        "version": "2019.5.2"
+      }
+    }
+  ],
+  "destinations": [
+    {
+      "client": {
+        "source": "googleapis",
+        "apiName": "bigtable",
+        "apiVersion": "v2",
+        "language": "java",
+        "generator": "gapic",
+        "config": "google/bigtable/artman_bigtable.yaml"
+      }
+    },
+    {
+      "client": {
+        "source": "googleapis",
+        "apiName": "bigtable-admin",
+        "apiVersion": "v2",
+        "language": "java",
+        "generator": "gapic",
+        "config": "google/bigtable/admin/artman_bigtableadmin.yaml"
+      }
+    }
+  ]
+}

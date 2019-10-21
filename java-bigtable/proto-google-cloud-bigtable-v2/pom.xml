@@ -14,13 +14,17 @@
   </parent>
   <dependencies>
     <dependency>
-      <groupId>com.google.protobuf</groupId>
-      <artifactId>protobuf-java</artifactId>
+      <groupId>com.google.api</groupId>
+      <artifactId>api-common</artifactId>
       <scope>compile</scope>
     </dependency>
     <dependency>
-      <groupId>com.google.api</groupId>
-      <artifactId>api-common</artifactId>
+      <groupId>com.google.guava</groupId>
+      <artifactId>guava</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>com.google.protobuf</groupId>
+      <artifactId>protobuf-java</artifactId>
       <scope>compile</scope>
     </dependency>
     <dependency>
