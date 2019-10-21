@@ -1,3 +1,0 @@
-[submodule "google-cloud-testing/google-cloud-conformance-tests/conformance-tests"]
-	path = google-cloud-testing/google-cloud-conformance-tests/conformance-tests
-	url = https://github.com/googleapis/conformance-tests
