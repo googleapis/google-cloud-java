@@ -2,14 +2,15 @@
   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
+  <groupId>com.google.api.grpc</groupId>
   <artifactId>proto-google-cloud-bigtable-v2</artifactId>
   <version>0.81.1-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-bigtable-v2:current} -->
   <name>proto-google-cloud-bigtable-v2</name>
   <description>PROTO library for proto-google-cloud-bigtable-v2</description>
   <parent>
-    <groupId>com.google.api.grpc</groupId>
-    <artifactId>google-api-grpc</artifactId>
-    <version>0.81.1-SNAPSHOT</version><!-- {x-version-update:google-api-grpc:current} -->
+    <groupId>com.google.cloud</groupId>
+    <artifactId>google-cloud-bigtable-parent</artifactId>
+    <version>1.5.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-bigtable:current} -->
   </parent>
   <dependencies>
     <dependency>
