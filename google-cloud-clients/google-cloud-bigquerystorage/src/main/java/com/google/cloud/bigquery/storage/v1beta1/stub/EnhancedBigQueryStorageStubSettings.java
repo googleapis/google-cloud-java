@@ -20,7 +20,6 @@ import com.google.api.core.BetaApi;
 import com.google.api.gax.core.GoogleCredentialsProvider;
 import com.google.api.gax.core.InstantiatingExecutorProvider;
 import com.google.api.gax.grpc.InstantiatingGrpcChannelProvider;
-import com.google.api.gax.retrying.RetrySettings;
 import com.google.api.gax.rpc.ApiClientHeaderProvider;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.ServerStreamingCallSettings;
@@ -40,7 +39,6 @@ import com.google.cloud.bigquery.storage.v1beta1.stub.readrows.ReadRowsResumptio
 import com.google.common.collect.ImmutableList;
 import com.google.protobuf.Empty;
 import java.util.List;
-import org.threeten.bp.Duration;
 
 /**
  * Settings class to configure an instance of {@link EnhancedBigQueryStorageStub}.
@@ -202,9 +200,7 @@ public class EnhancedBigQueryStorageStubSettings
 
       // Per-method settings using override values for defaults.
       readRowsSettings =
-          baseDefaults
-              .readRowsSettings()
-              .setResumptionStrategy(new ReadRowsResumptionStrategy());
+          baseDefaults.readRowsSettings().setResumptionStrategy(new ReadRowsResumptionStrategy());
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(

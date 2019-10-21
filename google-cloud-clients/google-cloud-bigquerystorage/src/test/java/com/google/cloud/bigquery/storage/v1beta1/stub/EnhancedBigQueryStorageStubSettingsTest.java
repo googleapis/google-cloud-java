@@ -84,8 +84,7 @@ public class EnhancedBigQueryStorageStubSettingsTest {
 
     InstantiatingGrpcChannelProvider channelProvider =
         (InstantiatingGrpcChannelProvider) builder.getTransportChannelProvider();
-    assertThat(channelProvider.toBuilder().getMaxInboundMessageSize())
-        .isEqualTo(Integer.MAX_VALUE);
+    assertThat(channelProvider.toBuilder().getMaxInboundMessageSize()).isEqualTo(Integer.MAX_VALUE);
   }
 
   private void verifySettings(
@@ -101,8 +100,7 @@ public class EnhancedBigQueryStorageStubSettingsTest {
 
     InstantiatingGrpcChannelProvider channelProvider =
         (InstantiatingGrpcChannelProvider) settings.getTransportChannelProvider();
-    assertThat(channelProvider.toBuilder().getMaxInboundMessageSize())
-        .isEqualTo(Integer.MAX_VALUE);
+    assertThat(channelProvider.toBuilder().getMaxInboundMessageSize()).isEqualTo(Integer.MAX_VALUE);
   }
 
   @Test
