@@ -1,0 +1,31 @@
+{
+  "extends": [
+    "config:base"
+  ],
+  "ignoreDeps": [],
+  "packageRules": [
+    {
+      "packagePatterns": ["*"],
+      "semanticCommitType": "chore"
+    },
+    {
+      "depTypeList": [
+        "dependencies"
+      ],
+      "semanticCommitType": "deps"
+    },
+    {
+      "packagePatterns": ["^io.grpc:grpc-"],
+      "groupName": "gRPC packages"
+    },
+    {
+      "packagePatterns": ["^com.google.protobuf:protobuf-"],
+      "groupName": "Protobuf packages"
+    },
+    {
+      "packagePatterns": ["^io.opencensus:opencensus-"],
+      "groupName": "OpenCensus packages"
+    }
+  ],
+  "semanticCommits": true
+}
