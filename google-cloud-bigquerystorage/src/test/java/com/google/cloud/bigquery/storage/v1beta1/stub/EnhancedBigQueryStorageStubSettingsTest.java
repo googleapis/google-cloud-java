@@ -44,8 +44,6 @@ import org.threeten.bp.Duration;
 @RunWith(JUnit4.class)
 public class EnhancedBigQueryStorageStubSettingsTest {
 
-  private static final int MAX_INBOUND_MESSAGE_SIZE = 1024 * 1024 * 11;
-
   @Test
   public void testSettingsArePreserved() {
     String endpoint = "some.other.host:123";
@@ -86,9 +84,7 @@ public class EnhancedBigQueryStorageStubSettingsTest {
 
     InstantiatingGrpcChannelProvider channelProvider =
         (InstantiatingGrpcChannelProvider) builder.getTransportChannelProvider();
-    assertThat(channelProvider.toBuilder().getMaxInboundMessageSize())
-        .isEqualTo(MAX_INBOUND_MESSAGE_SIZE);
-    assertThat(channelProvider.toBuilder().getPoolSize()).isGreaterThan(1);
+    assertThat(channelProvider.toBuilder().getMaxInboundMessageSize()).isEqualTo(Integer.MAX_VALUE);
   }
 
   private void verifySettings(
@@ -104,9 +100,7 @@ public class EnhancedBigQueryStorageStubSettingsTest {
 
     InstantiatingGrpcChannelProvider channelProvider =
         (InstantiatingGrpcChannelProvider) settings.getTransportChannelProvider();
-    assertThat(channelProvider.toBuilder().getMaxInboundMessageSize())
-        .isEqualTo(MAX_INBOUND_MESSAGE_SIZE);
-    assertThat(channelProvider.toBuilder().getPoolSize()).isGreaterThan(1);
+    assertThat(channelProvider.toBuilder().getMaxInboundMessageSize()).isEqualTo(Integer.MAX_VALUE);
   }
 
   @Test
