@@ -29,15 +29,15 @@ import com.google.cloud.oslogin.v1.OsLoginServiceClient;
 import com.google.cloud.oslogin.v1.UserName;
 import com.google.gson.Gson;
 import com.google.gson.JsonObject;
-import org.junit.AfterClass;
-import org.junit.BeforeClass;
+import org.junit.After;
+import org.junit.Before;
 import org.junit.Test;
 
 public class ITSystemTest {
-  private static OsLoginServiceClient osLoginServiceClient;
-  private static UserName parent;
-  private static String user;
-  private static String clientId;
+  private OsLoginServiceClient osLoginServiceClient;
+  private UserName parent;
+  private String user;
+  private String clientId;
 
   private static final String PROJECT = ServiceOptions.getDefaultProjectId();
   private static final String GOOGLE_API_CLIENT_ID = "clientId";
@@ -50,16 +50,16 @@ public class ITSystemTest {
       OsLoginProto.SshPublicKey.newBuilder().build();
   private static final Gson GSON = new Gson();
 
-  @BeforeClass
-  public static void beforeClass() throws Exception {
+  @Before
+  public void before() throws Exception {
     osLoginServiceClient = OsLoginServiceClient.create();
     user = getFromCredential(GOOGLE_API_CLIENT_EMAIL_ID);
     clientId = getFromCredential(GOOGLE_API_CLIENT_ID);
     parent = UserName.of(user);
   }
 
-  @AfterClass
-  public static void afterClass() {
+  @After
+  public void after() {
     osLoginServiceClient.close();
   }
 
