@@ -16,6 +16,8 @@
 
 package com.google.cloud.oslogin.v1.it;
 
+import static org.junit.Assert.assertEquals;
+
 import com.google.api.gax.rpc.NotFoundException;
 import com.google.auth.oauth2.GoogleCredentials;
 import com.google.cloud.ServiceOptions;
@@ -31,8 +33,6 @@ import org.junit.AfterClass;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
-import static org.junit.Assert.assertEquals;
-
 public class ITSystemTest {
   private static OsLoginServiceClient osLoginServiceClient;
   private static UserName parent;
@@ -45,7 +45,7 @@ public class ITSystemTest {
   private static final String GOOGLE_API_CLOUD_PLATFORM_LINK =
       "https://www.googleapis.com/auth/cloud-platform";
   private static final String FINGERPRINT_NAME = "test-fingerprint";
-  private static final String REGEXP="^\"|\"$";
+  private static final String REGEXP = "^\"|\"$";
   private static final OsLoginProto.SshPublicKey SSH_PUBLIC_KEY =
       OsLoginProto.SshPublicKey.newBuilder().build();
   private static final Gson GSON = new Gson();
@@ -91,7 +91,7 @@ public class ITSystemTest {
   }
 
   @Test
-  public void importSshPublicKeyTest2() {
+  public void importSshPublicKeyWithProjectTest() {
     ImportSshPublicKeyResponse keyResponse =
         osLoginServiceClient.importSshPublicKey(parent, SSH_PUBLIC_KEY, PROJECT);
     assertEquals(clientId, keyResponse.getLoginProfile().getName());
