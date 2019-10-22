@@ -1,0 +1,8 @@
+# Format:
+# module:released-version:current-version
+
+google-cloud-bigtable:1.5.0:1.5.1-SNAPSHOT
+grpc-google-cloud-bigtable-admin-v2:0.81.0:0.81.1-SNAPSHOT
+grpc-google-cloud-bigtable-v2:0.81.0:0.81.1-SNAPSHOT
+proto-google-cloud-bigtable-admin-v2:0.81.0:0.81.1-SNAPSHOT
+proto-google-cloud-bigtable-v2:0.81.0:0.81.1-SNAPSHOT
