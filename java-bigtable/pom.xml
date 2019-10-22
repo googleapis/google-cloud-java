@@ -319,15 +319,6 @@
         <pluginManagement>
             <plugins>
                 <plugin>
-                    <groupId>org.apache.maven.plugins</groupId>
-                    <artifactId>maven-dependency-plugin</artifactId>
-                    <configuration>
-                      <ignoredUnusedDeclaredDependencies>io.grpc:grpc-grpclb</ignoredUnusedDeclaredDependencies>
-                      <ignoredUnusedDeclaredDependencies>io.grpc:grpc-auth</ignoredUnusedDeclaredDependencies>
-                      <ignoredUnusedDeclaredDependencies>org.objenesis:objenesis</ignoredUnusedDeclaredDependencies>
-                    </configuration>
-                </plugin>
-                <plugin>
                   <artifactId>maven-compiler-plugin</artifactId>
                   <version>3.5.1</version>
                   <configuration>

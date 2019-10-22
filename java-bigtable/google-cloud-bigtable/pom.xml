@@ -298,6 +298,18 @@
         </executions>
       </plugin>
 
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-dependency-plugin</artifactId>
+        <configuration>
+          <!--
+            grpc-grpclb is used at runtime using reflection
+            grpc-auth is not directly used transitively, but is pulled to align with other grpc parts
+            -->
+          <usedDependencies>io.grpc:grpc-auth,io.grpc:grpc-grpclb</usedDependencies>
+        </configuration>
+      </plugin>
+
       <!-- Workaround maven failing to delete old test reports. For some reason, when using the
         failsafe plugin in profiles, maven retains the counts from previous executions. Causing a
         stale failure to fail the current test run. -->
