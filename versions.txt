@@ -10,7 +10,6 @@ google-cloud-appenginejava8:0.116.0-alpha:0.116.1-alpha-SNAPSHOT
 google-cloud-bigquery:1.98.0:1.98.1-SNAPSHOT
 google-cloud-bigquerydatatransfer:0.116.0-beta:0.116.1-beta-SNAPSHOT
 google-cloud-bigquerystorage:0.116.0-beta:0.116.1-beta-SNAPSHOT
-google-cloud-bigtable:1.5.0:1.5.1-SNAPSHOT
 google-cloud-bom:0.116.0-alpha:0.116.1-alpha-SNAPSHOT
 google-cloud-clients:0.116.0-alpha:0.116.1-alpha-SNAPSHOT
 google-cloud-compat-checker:0.116.0-alpha:0.116.1-alpha-SNAPSHOT
@@ -54,8 +53,6 @@ google-cloud-util:0.116.0-alpha:0.116.1-alpha-SNAPSHOT
 grafeas:0.19.0:0.19.1-SNAPSHOT
 grpc-google-cloud-bigquerydatatransfer-v1:0.81.0:0.81.1-SNAPSHOT
 grpc-google-cloud-bigquerystorage-v1beta1:0.81.0:0.81.1-SNAPSHOT
-grpc-google-cloud-bigtable-admin-v2:0.81.0:0.81.1-SNAPSHOT
-grpc-google-cloud-bigtable-v2:0.81.0:0.81.1-SNAPSHOT
 grpc-google-cloud-container-v1:0.81.0:0.81.1-SNAPSHOT
 grpc-google-cloud-containeranalysis-v1:0.81.0:0.81.1-SNAPSHOT
 grpc-google-cloud-containeranalysis-v1beta1:0.81.0:0.81.1-SNAPSHOT
@@ -93,8 +90,6 @@ grpc-google-cloud-texttospeech-v1:0.81.0:0.81.1-SNAPSHOT
 grpc-google-cloud-texttospeech-v1beta1:0.81.0:0.81.1-SNAPSHOT
 proto-google-cloud-bigquerydatatransfer-v1:0.81.0:0.81.1-SNAPSHOT
 proto-google-cloud-bigquerystorage-v1beta1:0.81.0:0.81.1-SNAPSHOT
-proto-google-cloud-bigtable-admin-v2:0.81.0:0.81.1-SNAPSHOT
-proto-google-cloud-bigtable-v2:0.81.0:0.81.1-SNAPSHOT
 proto-google-cloud-container-v1:0.81.0:0.81.1-SNAPSHOT
 proto-google-cloud-containeranalysis-v1:0.81.0:0.81.1-SNAPSHOT
 proto-google-cloud-containeranalysis-v1beta1:0.81.0:0.81.1-SNAPSHOT
