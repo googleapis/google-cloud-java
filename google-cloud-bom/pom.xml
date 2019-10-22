@@ -383,18 +383,10 @@
       </dependency>
       <dependency>
         <groupId>com.google.cloud</groupId>
-        <artifactId>google-cloud-datalabeling</artifactId>
-        <version>0.115.0-alpha</version>
-      </dependency>
-      <dependency>
-        <groupId>com.google.api.grpc</groupId>
-        <artifactId>proto-google-cloud-datalabeling-v1beta1</artifactId>
-        <version>0.80.0</version>
-      </dependency>
-      <dependency>
-        <groupId>com.google.api.grpc</groupId>
-        <artifactId>grpc-google-cloud-datalabeling-v1beta1</artifactId>
-        <version>0.80.0</version>
+        <artifactId>google-cloud-datalabeling-bom</artifactId>
+        <version>0.116.1</version>
+        <type>pom</type>
+        <scope>import</scope>
       </dependency>
       <dependency>
         <groupId>com.google.cloud</groupId>
