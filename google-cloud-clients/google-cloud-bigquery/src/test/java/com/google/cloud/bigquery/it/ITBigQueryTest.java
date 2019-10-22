@@ -1270,6 +1270,47 @@ public class ITBigQueryTest {
   }
 
   @Test
+  public void testScriptStatistics() throws InterruptedException {
+    long currentTime = System.currentTimeMillis();
+    String script =
+        "-- Declare a variable to hold names as an array.\n"
+            + "DECLARE top_names ARRAY<STRING>;\n"
+            + "-- Build an array of the top 100 names from the year 2017.\n"
+            + "SET top_names = (\n"
+            + "  SELECT ARRAY_AGG(name ORDER BY number DESC LIMIT 100)\n"
+            + "  FROM `bigquery-public-data`.usa_names.usa_1910_current\n"
+            + "  WHERE year = 2017\n"
+            + ");\n"
+            + "-- Which names appear as words in Shakespeare's plays?\n"
+            + "SELECT\n"
+            + "  name AS shakespeare_name\n"
+            + "FROM UNNEST(top_names) AS name\n"
+            + "WHERE name IN (\n"
+            + "  SELECT word\n"
+            + "  FROM `bigquery-public-data`.samples.shakespeare\n"
+            + ");";
+    QueryJobConfiguration config = QueryJobConfiguration.of(script);
+    Job remoteJob = bigquery.create(JobInfo.of(config));
+    JobInfo info = remoteJob.waitFor();
+    JobStatistics jobStatistics = info.getStatistics();
+    String parentJobId = info.getJobId().getJob();
+    assertEquals(2, jobStatistics.getNumChildJobs().longValue());
+    Page<Job> page =
+        bigquery.listJobs(
+            JobListOption.parentJobId(parentJobId), JobListOption.minCreationTime(currentTime));
+    for (Job job : page.iterateAll()) {
+      JobStatistics.ScriptStatistics scriptStatistics = job.getStatistics().getScriptStatistics();
+      if (scriptStatistics != null) {
+        if (scriptStatistics.getEvaluationKind().equals("STATEMENT")) {
+          assertEquals("STATEMENT", scriptStatistics.getEvaluationKind());
+        } else {
+          assertEquals("EXPRESSION", scriptStatistics.getEvaluationKind());
+        }
+      }
+    }
+  }
+
+  @Test
   public void testPositionalQueryParameters() throws InterruptedException {
     String query =
         "SELECT TimestampField, StringField, BooleanField FROM "

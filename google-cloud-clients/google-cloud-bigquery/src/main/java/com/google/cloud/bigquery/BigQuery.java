@@ -490,6 +490,11 @@ public interface BigQuery extends Service<BigQueryOptions> {
       return new JobListOption(BigQueryRpc.Option.PAGE_TOKEN, pageToken);
     }
 
+    /** Returns an option to list only child job from specify parent job id. */
+    public static JobListOption parentJobId(String parentJobId) {
+      return new JobListOption(BigQueryRpc.Option.PARENT_JOB_ID, parentJobId);
+    }
+
     /**
      * Returns an option to specify the job's fields to be returned by the RPC call. If this option
      * is not provided all job's fields are returned. {@code JobOption.fields()} can be used to

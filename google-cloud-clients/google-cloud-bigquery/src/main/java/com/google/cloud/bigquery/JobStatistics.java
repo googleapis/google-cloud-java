@@ -858,28 +858,54 @@ public abstract class JobStatistics implements Serializable {
         }
       }
 
+      /** Returns the end column. */
       public Integer getEndColumn() {
         return endColumn;
       }
 
+      /** Returns the end line. */
       public Integer getEndLine() {
         return endLine;
       }
 
+      /** Returns Name of the active procedure, empty if in a top-level script. */
       public String getProcedureId() {
         return procedureId;
       }
 
+      /** Returns the start column */
       public Integer getStartColumn() {
         return startColumn;
       }
 
+      /** Returns the start line. */
       public Integer getStartLine() {
         return startLine;
       }
 
+      /** Returns Text of the current statement/expression. */
       public String getText() {
         return text;
+      }
+
+      ToStringHelper toStringHelper() {
+        return MoreObjects.toStringHelper(this)
+            .add("endColumn", endColumn)
+            .add("endLine", endLine)
+            .add("procedureId", procedureId)
+            .add("startColumn", startColumn)
+            .add("startLine", startLine)
+            .add("text", text);
+      }
+
+      @Override
+      public String toString() {
+        return toStringHelper().toString();
+      }
+
+      @Override
+      public int hashCode() {
+        return Objects.hash(endColumn, endLine, procedureId, startColumn, startLine, text);
       }
 
       com.google.api.services.bigquery.model.ScriptStackFrame toPb() {
@@ -954,12 +980,34 @@ public abstract class JobStatistics implements Serializable {
       return new Builder();
     }
 
+    /** Returns child job was a statement or expression */
     public String getEvaluationKind() {
       return evaluationKind;
     }
 
+    /**
+     * Stack trace showing the line/column/procedure name of each frame on the stack at the point
+     * where the current evaluation happened. The leaf frame is first, the primary script is last.
+     * Never empty.
+     */
     public List<ScriptStackFrame> getStackFrames() {
       return stackFrames;
+    }
+
+    ToStringHelper toStringHelper() {
+      return MoreObjects.toStringHelper(this)
+          .add("evaluationKind", evaluationKind)
+          .add("stackFrames", stackFrames);
+    }
+
+    @Override
+    public String toString() {
+      return toStringHelper().toString();
+    }
+
+    @Override
+    public int hashCode() {
+      return Objects.hash(evaluationKind, stackFrames);
     }
 
     com.google.api.services.bigquery.model.ScriptStatistics toPb() {
@@ -1003,7 +1051,7 @@ public abstract class JobStatistics implements Serializable {
       this.numChildJobs = statisticsPb.getNumChildJobs();
       this.parentJobId = statisticsPb.getParentJobId();
       if (statisticsPb.getScriptStatistics() != null) {
-        this.scriptStatistics = ScriptStatistics.fromPb(scriptStatistics.toPb());
+        this.scriptStatistics = ScriptStatistics.fromPb(statisticsPb.getScriptStatistics());
       }
     }
 
@@ -1060,14 +1108,17 @@ public abstract class JobStatistics implements Serializable {
     return startTime;
   }
 
+  /** Returns the number of child job executed. */
   public Long getNumChildJobs() {
     return numChildJobs;
   }
 
+  /** Returns the parent job id of child job. */
   public String getParentJobId() {
     return parentJobId;
   }
 
+  /** Returns the statistics for a child job of a script. */
   public ScriptStatistics getScriptStatistics() {
     return scriptStatistics;
   }
@@ -1104,7 +1155,9 @@ public abstract class JobStatistics implements Serializable {
     statistics.setStartTime(startTime);
     statistics.setNumChildJobs(numChildJobs);
     statistics.setParentJobId(parentJobId);
-    statistics.setScriptStatistics(scriptStatistics.toPb());
+    if (scriptStatistics != null) {
+      statistics.setScriptStatistics(scriptStatistics.toPb());
+    }
     return statistics;
   }
 
