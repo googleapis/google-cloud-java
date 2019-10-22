@@ -54,5 +54,45 @@ public interface OutputConfigOrBuilder
    */
   com.google.cloud.asset.v1.GcsDestinationOrBuilder getGcsDestinationOrBuilder();
 
+  /**
+   *
+   *
+   * <pre>
+   * Destination on BigQuery. The output table stores the fields in asset
+   * proto as columns in BigQuery. The resource/iam_policy field is converted
+   * to a record with each field to a column, except metadata to a single JSON
+   * string.
+   * </pre>
+   *
+   * <code>.google.cloud.asset.v1.BigQueryDestination bigquery_destination = 2;</code>
+   */
+  boolean hasBigqueryDestination();
+  /**
+   *
+   *
+   * <pre>
+   * Destination on BigQuery. The output table stores the fields in asset
+   * proto as columns in BigQuery. The resource/iam_policy field is converted
+   * to a record with each field to a column, except metadata to a single JSON
+   * string.
+   * </pre>
+   *
+   * <code>.google.cloud.asset.v1.BigQueryDestination bigquery_destination = 2;</code>
+   */
+  com.google.cloud.asset.v1.BigQueryDestination getBigqueryDestination();
+  /**
+   *
+   *
+   * <pre>
+   * Destination on BigQuery. The output table stores the fields in asset
+   * proto as columns in BigQuery. The resource/iam_policy field is converted
+   * to a record with each field to a column, except metadata to a single JSON
+   * string.
+   * </pre>
+   *
+   * <code>.google.cloud.asset.v1.BigQueryDestination bigquery_destination = 2;</code>
+   */
+  com.google.cloud.asset.v1.BigQueryDestinationOrBuilder getBigqueryDestinationOrBuilder();
+
   public com.google.cloud.asset.v1.OutputConfig.DestinationCase getDestinationCase();
 }

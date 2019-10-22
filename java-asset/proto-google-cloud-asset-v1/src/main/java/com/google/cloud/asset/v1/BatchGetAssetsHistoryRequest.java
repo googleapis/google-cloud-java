@@ -156,7 +156,9 @@ public final class BatchGetAssetsHistoryRequest extends com.google.protobuf.Gene
    * "projects/my-project-id")", or a project number (such as "projects/12345").
    * </pre>
    *
-   * <code>string parent = 1;</code>
+   * <code>
+   * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    */
   public java.lang.String getParent() {
     java.lang.Object ref = parent_;
@@ -178,7 +180,9 @@ public final class BatchGetAssetsHistoryRequest extends com.google.protobuf.Gene
    * "projects/my-project-id")", or a project number (such as "projects/12345").
    * </pre>
    *
-   * <code>string parent = 1;</code>
+   * <code>
+   * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    */
   public com.google.protobuf.ByteString getParentBytes() {
     java.lang.Object ref = parent_;
@@ -202,7 +206,8 @@ public final class BatchGetAssetsHistoryRequest extends com.google.protobuf.Gene
    * `//compute.googleapis.com/projects/my_project_123/zones/zone1/instances/instance1`.
    * See [Resource
    * Names](https://cloud.google.com/apis/design/resource_names#full_resource_name)
-   * and [Resource Name Format](https://cloud.google.com/resource-manager/docs/cloud-asset-inventory/resource-name-format)
+   * and [Resource Name
+   * Format](https://cloud.google.com/asset-inventory/docs/resource-name-format)
    * for more info.
    * The request becomes a no-op if the asset name list is empty, and the max
    * size of the asset name list is 100 in one request.
@@ -221,7 +226,8 @@ public final class BatchGetAssetsHistoryRequest extends com.google.protobuf.Gene
    * `//compute.googleapis.com/projects/my_project_123/zones/zone1/instances/instance1`.
    * See [Resource
    * Names](https://cloud.google.com/apis/design/resource_names#full_resource_name)
-   * and [Resource Name Format](https://cloud.google.com/resource-manager/docs/cloud-asset-inventory/resource-name-format)
+   * and [Resource Name
+   * Format](https://cloud.google.com/asset-inventory/docs/resource-name-format)
    * for more info.
    * The request becomes a no-op if the asset name list is empty, and the max
    * size of the asset name list is 100 in one request.
@@ -240,7 +246,8 @@ public final class BatchGetAssetsHistoryRequest extends com.google.protobuf.Gene
    * `//compute.googleapis.com/projects/my_project_123/zones/zone1/instances/instance1`.
    * See [Resource
    * Names](https://cloud.google.com/apis/design/resource_names#full_resource_name)
-   * and [Resource Name Format](https://cloud.google.com/resource-manager/docs/cloud-asset-inventory/resource-name-format)
+   * and [Resource Name
+   * Format](https://cloud.google.com/asset-inventory/docs/resource-name-format)
    * for more info.
    * The request becomes a no-op if the asset name list is empty, and the max
    * size of the asset name list is 100 in one request.
@@ -259,7 +266,8 @@ public final class BatchGetAssetsHistoryRequest extends com.google.protobuf.Gene
    * `//compute.googleapis.com/projects/my_project_123/zones/zone1/instances/instance1`.
    * See [Resource
    * Names](https://cloud.google.com/apis/design/resource_names#full_resource_name)
-   * and [Resource Name Format](https://cloud.google.com/resource-manager/docs/cloud-asset-inventory/resource-name-format)
+   * and [Resource Name
+   * Format](https://cloud.google.com/asset-inventory/docs/resource-name-format)
    * for more info.
    * The request becomes a no-op if the asset name list is empty, and the max
    * size of the asset name list is 100 in one request.
@@ -277,10 +285,12 @@ public final class BatchGetAssetsHistoryRequest extends com.google.protobuf.Gene
    *
    *
    * <pre>
-   * Required. The content type.
+   * Optional. The content type.
    * </pre>
    *
-   * <code>.google.cloud.asset.v1.ContentType content_type = 3;</code>
+   * <code>
+   * .google.cloud.asset.v1.ContentType content_type = 3 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   public int getContentTypeValue() {
     return contentType_;
@@ -289,10 +299,12 @@ public final class BatchGetAssetsHistoryRequest extends com.google.protobuf.Gene
    *
    *
    * <pre>
-   * Required. The content type.
+   * Optional. The content type.
    * </pre>
    *
-   * <code>.google.cloud.asset.v1.ContentType content_type = 3;</code>
+   * <code>
+   * .google.cloud.asset.v1.ContentType content_type = 3 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   public com.google.cloud.asset.v1.ContentType getContentType() {
     @SuppressWarnings("deprecation")
@@ -315,7 +327,9 @@ public final class BatchGetAssetsHistoryRequest extends com.google.protobuf.Gene
    * read_time_window.
    * </pre>
    *
-   * <code>.google.cloud.asset.v1.TimeWindow read_time_window = 4;</code>
+   * <code>
+   * .google.cloud.asset.v1.TimeWindow read_time_window = 4 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   public boolean hasReadTimeWindow() {
     return readTimeWindow_ != null;
@@ -332,7 +346,9 @@ public final class BatchGetAssetsHistoryRequest extends com.google.protobuf.Gene
    * read_time_window.
    * </pre>
    *
-   * <code>.google.cloud.asset.v1.TimeWindow read_time_window = 4;</code>
+   * <code>
+   * .google.cloud.asset.v1.TimeWindow read_time_window = 4 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   public com.google.cloud.asset.v1.TimeWindow getReadTimeWindow() {
     return readTimeWindow_ == null
@@ -351,7 +367,9 @@ public final class BatchGetAssetsHistoryRequest extends com.google.protobuf.Gene
    * read_time_window.
    * </pre>
    *
-   * <code>.google.cloud.asset.v1.TimeWindow read_time_window = 4;</code>
+   * <code>
+   * .google.cloud.asset.v1.TimeWindow read_time_window = 4 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   public com.google.cloud.asset.v1.TimeWindowOrBuilder getReadTimeWindowOrBuilder() {
     return getReadTimeWindow();
@@ -769,7 +787,9 @@ public final class BatchGetAssetsHistoryRequest extends com.google.protobuf.Gene
      * "projects/my-project-id")", or a project number (such as "projects/12345").
      * </pre>
      *
-     * <code>string parent = 1;</code>
+     * <code>
+     * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      */
     public java.lang.String getParent() {
       java.lang.Object ref = parent_;
@@ -791,7 +811,9 @@ public final class BatchGetAssetsHistoryRequest extends com.google.protobuf.Gene
      * "projects/my-project-id")", or a project number (such as "projects/12345").
      * </pre>
      *
-     * <code>string parent = 1;</code>
+     * <code>
+     * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      */
     public com.google.protobuf.ByteString getParentBytes() {
       java.lang.Object ref = parent_;
@@ -813,7 +835,9 @@ public final class BatchGetAssetsHistoryRequest extends com.google.protobuf.Gene
      * "projects/my-project-id")", or a project number (such as "projects/12345").
      * </pre>
      *
-     * <code>string parent = 1;</code>
+     * <code>
+     * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      */
     public Builder setParent(java.lang.String value) {
       if (value == null) {
@@ -833,7 +857,9 @@ public final class BatchGetAssetsHistoryRequest extends com.google.protobuf.Gene
      * "projects/my-project-id")", or a project number (such as "projects/12345").
      * </pre>
      *
-     * <code>string parent = 1;</code>
+     * <code>
+     * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      */
     public Builder clearParent() {
 
@@ -850,7 +876,9 @@ public final class BatchGetAssetsHistoryRequest extends com.google.protobuf.Gene
      * "projects/my-project-id")", or a project number (such as "projects/12345").
      * </pre>
      *
-     * <code>string parent = 1;</code>
+     * <code>
+     * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      */
     public Builder setParentBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -880,7 +908,8 @@ public final class BatchGetAssetsHistoryRequest extends com.google.protobuf.Gene
      * `//compute.googleapis.com/projects/my_project_123/zones/zone1/instances/instance1`.
      * See [Resource
      * Names](https://cloud.google.com/apis/design/resource_names#full_resource_name)
-     * and [Resource Name Format](https://cloud.google.com/resource-manager/docs/cloud-asset-inventory/resource-name-format)
+     * and [Resource Name
+     * Format](https://cloud.google.com/asset-inventory/docs/resource-name-format)
      * for more info.
      * The request becomes a no-op if the asset name list is empty, and the max
      * size of the asset name list is 100 in one request.
@@ -899,7 +928,8 @@ public final class BatchGetAssetsHistoryRequest extends com.google.protobuf.Gene
      * `//compute.googleapis.com/projects/my_project_123/zones/zone1/instances/instance1`.
      * See [Resource
      * Names](https://cloud.google.com/apis/design/resource_names#full_resource_name)
-     * and [Resource Name Format](https://cloud.google.com/resource-manager/docs/cloud-asset-inventory/resource-name-format)
+     * and [Resource Name
+     * Format](https://cloud.google.com/asset-inventory/docs/resource-name-format)
      * for more info.
      * The request becomes a no-op if the asset name list is empty, and the max
      * size of the asset name list is 100 in one request.
@@ -918,7 +948,8 @@ public final class BatchGetAssetsHistoryRequest extends com.google.protobuf.Gene
      * `//compute.googleapis.com/projects/my_project_123/zones/zone1/instances/instance1`.
      * See [Resource
      * Names](https://cloud.google.com/apis/design/resource_names#full_resource_name)
-     * and [Resource Name Format](https://cloud.google.com/resource-manager/docs/cloud-asset-inventory/resource-name-format)
+     * and [Resource Name
+     * Format](https://cloud.google.com/asset-inventory/docs/resource-name-format)
      * for more info.
      * The request becomes a no-op if the asset name list is empty, and the max
      * size of the asset name list is 100 in one request.
@@ -937,7 +968,8 @@ public final class BatchGetAssetsHistoryRequest extends com.google.protobuf.Gene
      * `//compute.googleapis.com/projects/my_project_123/zones/zone1/instances/instance1`.
      * See [Resource
      * Names](https://cloud.google.com/apis/design/resource_names#full_resource_name)
-     * and [Resource Name Format](https://cloud.google.com/resource-manager/docs/cloud-asset-inventory/resource-name-format)
+     * and [Resource Name
+     * Format](https://cloud.google.com/asset-inventory/docs/resource-name-format)
      * for more info.
      * The request becomes a no-op if the asset name list is empty, and the max
      * size of the asset name list is 100 in one request.
@@ -956,7 +988,8 @@ public final class BatchGetAssetsHistoryRequest extends com.google.protobuf.Gene
      * `//compute.googleapis.com/projects/my_project_123/zones/zone1/instances/instance1`.
      * See [Resource
      * Names](https://cloud.google.com/apis/design/resource_names#full_resource_name)
-     * and [Resource Name Format](https://cloud.google.com/resource-manager/docs/cloud-asset-inventory/resource-name-format)
+     * and [Resource Name
+     * Format](https://cloud.google.com/asset-inventory/docs/resource-name-format)
      * for more info.
      * The request becomes a no-op if the asset name list is empty, and the max
      * size of the asset name list is 100 in one request.
@@ -981,7 +1014,8 @@ public final class BatchGetAssetsHistoryRequest extends com.google.protobuf.Gene
      * `//compute.googleapis.com/projects/my_project_123/zones/zone1/instances/instance1`.
      * See [Resource
      * Names](https://cloud.google.com/apis/design/resource_names#full_resource_name)
-     * and [Resource Name Format](https://cloud.google.com/resource-manager/docs/cloud-asset-inventory/resource-name-format)
+     * and [Resource Name
+     * Format](https://cloud.google.com/asset-inventory/docs/resource-name-format)
      * for more info.
      * The request becomes a no-op if the asset name list is empty, and the max
      * size of the asset name list is 100 in one request.
@@ -1006,7 +1040,8 @@ public final class BatchGetAssetsHistoryRequest extends com.google.protobuf.Gene
      * `//compute.googleapis.com/projects/my_project_123/zones/zone1/instances/instance1`.
      * See [Resource
      * Names](https://cloud.google.com/apis/design/resource_names#full_resource_name)
-     * and [Resource Name Format](https://cloud.google.com/resource-manager/docs/cloud-asset-inventory/resource-name-format)
+     * and [Resource Name
+     * Format](https://cloud.google.com/asset-inventory/docs/resource-name-format)
      * for more info.
      * The request becomes a no-op if the asset name list is empty, and the max
      * size of the asset name list is 100 in one request.
@@ -1028,7 +1063,8 @@ public final class BatchGetAssetsHistoryRequest extends com.google.protobuf.Gene
      * `//compute.googleapis.com/projects/my_project_123/zones/zone1/instances/instance1`.
      * See [Resource
      * Names](https://cloud.google.com/apis/design/resource_names#full_resource_name)
-     * and [Resource Name Format](https://cloud.google.com/resource-manager/docs/cloud-asset-inventory/resource-name-format)
+     * and [Resource Name
+     * Format](https://cloud.google.com/asset-inventory/docs/resource-name-format)
      * for more info.
      * The request becomes a no-op if the asset name list is empty, and the max
      * size of the asset name list is 100 in one request.
@@ -1050,7 +1086,8 @@ public final class BatchGetAssetsHistoryRequest extends com.google.protobuf.Gene
      * `//compute.googleapis.com/projects/my_project_123/zones/zone1/instances/instance1`.
      * See [Resource
      * Names](https://cloud.google.com/apis/design/resource_names#full_resource_name)
-     * and [Resource Name Format](https://cloud.google.com/resource-manager/docs/cloud-asset-inventory/resource-name-format)
+     * and [Resource Name
+     * Format](https://cloud.google.com/asset-inventory/docs/resource-name-format)
      * for more info.
      * The request becomes a no-op if the asset name list is empty, and the max
      * size of the asset name list is 100 in one request.
@@ -1074,10 +1111,12 @@ public final class BatchGetAssetsHistoryRequest extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * Required. The content type.
+     * Optional. The content type.
      * </pre>
      *
-     * <code>.google.cloud.asset.v1.ContentType content_type = 3;</code>
+     * <code>
+     * .google.cloud.asset.v1.ContentType content_type = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public int getContentTypeValue() {
       return contentType_;
@@ -1086,10 +1125,12 @@ public final class BatchGetAssetsHistoryRequest extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * Required. The content type.
+     * Optional. The content type.
      * </pre>
      *
-     * <code>.google.cloud.asset.v1.ContentType content_type = 3;</code>
+     * <code>
+     * .google.cloud.asset.v1.ContentType content_type = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder setContentTypeValue(int value) {
       contentType_ = value;
@@ -1100,10 +1141,12 @@ public final class BatchGetAssetsHistoryRequest extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * Required. The content type.
+     * Optional. The content type.
      * </pre>
      *
-     * <code>.google.cloud.asset.v1.ContentType content_type = 3;</code>
+     * <code>
+     * .google.cloud.asset.v1.ContentType content_type = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public com.google.cloud.asset.v1.ContentType getContentType() {
       @SuppressWarnings("deprecation")
@@ -1115,10 +1158,12 @@ public final class BatchGetAssetsHistoryRequest extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * Required. The content type.
+     * Optional. The content type.
      * </pre>
      *
-     * <code>.google.cloud.asset.v1.ContentType content_type = 3;</code>
+     * <code>
+     * .google.cloud.asset.v1.ContentType content_type = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder setContentType(com.google.cloud.asset.v1.ContentType value) {
       if (value == null) {
@@ -1133,10 +1178,12 @@ public final class BatchGetAssetsHistoryRequest extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * Required. The content type.
+     * Optional. The content type.
      * </pre>
      *
-     * <code>.google.cloud.asset.v1.ContentType content_type = 3;</code>
+     * <code>
+     * .google.cloud.asset.v1.ContentType content_type = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder clearContentType() {
 
@@ -1163,7 +1210,9 @@ public final class BatchGetAssetsHistoryRequest extends com.google.protobuf.Gene
      * read_time_window.
      * </pre>
      *
-     * <code>.google.cloud.asset.v1.TimeWindow read_time_window = 4;</code>
+     * <code>
+     * .google.cloud.asset.v1.TimeWindow read_time_window = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public boolean hasReadTimeWindow() {
       return readTimeWindowBuilder_ != null || readTimeWindow_ != null;
@@ -1180,7 +1229,9 @@ public final class BatchGetAssetsHistoryRequest extends com.google.protobuf.Gene
      * read_time_window.
      * </pre>
      *
-     * <code>.google.cloud.asset.v1.TimeWindow read_time_window = 4;</code>
+     * <code>
+     * .google.cloud.asset.v1.TimeWindow read_time_window = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public com.google.cloud.asset.v1.TimeWindow getReadTimeWindow() {
       if (readTimeWindowBuilder_ == null) {
@@ -1203,7 +1254,9 @@ public final class BatchGetAssetsHistoryRequest extends com.google.protobuf.Gene
      * read_time_window.
      * </pre>
      *
-     * <code>.google.cloud.asset.v1.TimeWindow read_time_window = 4;</code>
+     * <code>
+     * .google.cloud.asset.v1.TimeWindow read_time_window = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder setReadTimeWindow(com.google.cloud.asset.v1.TimeWindow value) {
       if (readTimeWindowBuilder_ == null) {
@@ -1230,7 +1283,9 @@ public final class BatchGetAssetsHistoryRequest extends com.google.protobuf.Gene
      * read_time_window.
      * </pre>
      *
-     * <code>.google.cloud.asset.v1.TimeWindow read_time_window = 4;</code>
+     * <code>
+     * .google.cloud.asset.v1.TimeWindow read_time_window = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder setReadTimeWindow(com.google.cloud.asset.v1.TimeWindow.Builder builderForValue) {
       if (readTimeWindowBuilder_ == null) {
@@ -1254,7 +1309,9 @@ public final class BatchGetAssetsHistoryRequest extends com.google.protobuf.Gene
      * read_time_window.
      * </pre>
      *
-     * <code>.google.cloud.asset.v1.TimeWindow read_time_window = 4;</code>
+     * <code>
+     * .google.cloud.asset.v1.TimeWindow read_time_window = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder mergeReadTimeWindow(com.google.cloud.asset.v1.TimeWindow value) {
       if (readTimeWindowBuilder_ == null) {
@@ -1285,7 +1342,9 @@ public final class BatchGetAssetsHistoryRequest extends com.google.protobuf.Gene
      * read_time_window.
      * </pre>
      *
-     * <code>.google.cloud.asset.v1.TimeWindow read_time_window = 4;</code>
+     * <code>
+     * .google.cloud.asset.v1.TimeWindow read_time_window = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder clearReadTimeWindow() {
       if (readTimeWindowBuilder_ == null) {
@@ -1310,7 +1369,9 @@ public final class BatchGetAssetsHistoryRequest extends com.google.protobuf.Gene
      * read_time_window.
      * </pre>
      *
-     * <code>.google.cloud.asset.v1.TimeWindow read_time_window = 4;</code>
+     * <code>
+     * .google.cloud.asset.v1.TimeWindow read_time_window = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public com.google.cloud.asset.v1.TimeWindow.Builder getReadTimeWindowBuilder() {
 
@@ -1329,7 +1390,9 @@ public final class BatchGetAssetsHistoryRequest extends com.google.protobuf.Gene
      * read_time_window.
      * </pre>
      *
-     * <code>.google.cloud.asset.v1.TimeWindow read_time_window = 4;</code>
+     * <code>
+     * .google.cloud.asset.v1.TimeWindow read_time_window = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public com.google.cloud.asset.v1.TimeWindowOrBuilder getReadTimeWindowOrBuilder() {
       if (readTimeWindowBuilder_ != null) {
@@ -1352,7 +1415,9 @@ public final class BatchGetAssetsHistoryRequest extends com.google.protobuf.Gene
      * read_time_window.
      * </pre>
      *
-     * <code>.google.cloud.asset.v1.TimeWindow read_time_window = 4;</code>
+     * <code>
+     * .google.cloud.asset.v1.TimeWindow read_time_window = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.asset.v1.TimeWindow,

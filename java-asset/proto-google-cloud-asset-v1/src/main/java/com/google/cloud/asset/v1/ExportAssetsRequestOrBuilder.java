@@ -33,7 +33,9 @@ public interface ExportAssetsRequestOrBuilder
    * or a folder number (such as "folders/123").
    * </pre>
    *
-   * <code>string parent = 1;</code>
+   * <code>
+   * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    */
   java.lang.String getParent();
   /**
@@ -46,7 +48,9 @@ public interface ExportAssetsRequestOrBuilder
    * or a folder number (such as "folders/123").
    * </pre>
    *
-   * <code>string parent = 1;</code>
+   * <code>
+   * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    */
   com.google.protobuf.ByteString getParentBytes();
 
@@ -98,9 +102,9 @@ public interface ExportAssetsRequestOrBuilder
    *
    * <pre>
    * A list of asset types of which to take a snapshot for. For example:
-   * "compute.googleapis.com/Disk". If specified, only matching assets will be returned.
-   * See [Introduction to Cloud Asset
-   * Inventory](https://cloud.google.com/resource-manager/docs/cloud-asset-inventory/overview)
+   * "compute.googleapis.com/Disk". If specified, only matching assets will be
+   * returned. See [Introduction to Cloud Asset
+   * Inventory](https://cloud.google.com/asset-inventory/docs/overview)
    * for all supported asset types.
    * </pre>
    *
@@ -112,9 +116,9 @@ public interface ExportAssetsRequestOrBuilder
    *
    * <pre>
    * A list of asset types of which to take a snapshot for. For example:
-   * "compute.googleapis.com/Disk". If specified, only matching assets will be returned.
-   * See [Introduction to Cloud Asset
-   * Inventory](https://cloud.google.com/resource-manager/docs/cloud-asset-inventory/overview)
+   * "compute.googleapis.com/Disk". If specified, only matching assets will be
+   * returned. See [Introduction to Cloud Asset
+   * Inventory](https://cloud.google.com/asset-inventory/docs/overview)
    * for all supported asset types.
    * </pre>
    *
@@ -126,9 +130,9 @@ public interface ExportAssetsRequestOrBuilder
    *
    * <pre>
    * A list of asset types of which to take a snapshot for. For example:
-   * "compute.googleapis.com/Disk". If specified, only matching assets will be returned.
-   * See [Introduction to Cloud Asset
-   * Inventory](https://cloud.google.com/resource-manager/docs/cloud-asset-inventory/overview)
+   * "compute.googleapis.com/Disk". If specified, only matching assets will be
+   * returned. See [Introduction to Cloud Asset
+   * Inventory](https://cloud.google.com/asset-inventory/docs/overview)
    * for all supported asset types.
    * </pre>
    *
@@ -140,9 +144,9 @@ public interface ExportAssetsRequestOrBuilder
    *
    * <pre>
    * A list of asset types of which to take a snapshot for. For example:
-   * "compute.googleapis.com/Disk". If specified, only matching assets will be returned.
-   * See [Introduction to Cloud Asset
-   * Inventory](https://cloud.google.com/resource-manager/docs/cloud-asset-inventory/overview)
+   * "compute.googleapis.com/Disk". If specified, only matching assets will be
+   * returned. See [Introduction to Cloud Asset
+   * Inventory](https://cloud.google.com/asset-inventory/docs/overview)
    * for all supported asset types.
    * </pre>
    *
@@ -181,7 +185,9 @@ public interface ExportAssetsRequestOrBuilder
    * to. All results will be in newline delimited JSON format.
    * </pre>
    *
-   * <code>.google.cloud.asset.v1.OutputConfig output_config = 5;</code>
+   * <code>
+   * .google.cloud.asset.v1.OutputConfig output_config = 5 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   boolean hasOutputConfig();
   /**
@@ -192,7 +198,9 @@ public interface ExportAssetsRequestOrBuilder
    * to. All results will be in newline delimited JSON format.
    * </pre>
    *
-   * <code>.google.cloud.asset.v1.OutputConfig output_config = 5;</code>
+   * <code>
+   * .google.cloud.asset.v1.OutputConfig output_config = 5 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   com.google.cloud.asset.v1.OutputConfig getOutputConfig();
   /**
@@ -203,7 +211,9 @@ public interface ExportAssetsRequestOrBuilder
    * to. All results will be in newline delimited JSON format.
    * </pre>
    *
-   * <code>.google.cloud.asset.v1.OutputConfig output_config = 5;</code>
+   * <code>
+   * .google.cloud.asset.v1.OutputConfig output_config = 5 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   com.google.cloud.asset.v1.OutputConfigOrBuilder getOutputConfigOrBuilder();
 }

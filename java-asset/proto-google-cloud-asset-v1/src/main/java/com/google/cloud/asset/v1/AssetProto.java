@@ -54,27 +54,29 @@ public final class AssetProto {
     java.lang.String[] descriptorData = {
       "\n\"google/cloud/asset/v1/assets.proto\022\025go"
           + "ogle.cloud.asset.v1\032\034google/api/annotati"
-          + "ons.proto\032\032google/iam/v1/policy.proto\032\031g"
-          + "oogle/protobuf/any.proto\032\034google/protobu"
-          + "f/struct.proto\032\037google/protobuf/timestam"
-          + "p.proto\"\200\001\n\rTemporalAsset\0221\n\006window\030\001 \001("
-          + "\0132!.google.cloud.asset.v1.TimeWindow\022\017\n\007"
-          + "deleted\030\002 \001(\010\022+\n\005asset\030\003 \001(\0132\034.google.cl"
-          + "oud.asset.v1.Asset\"j\n\nTimeWindow\022.\n\nstar"
-          + "t_time\030\001 \001(\0132\032.google.protobuf.Timestamp"
-          + "\022,\n\010end_time\030\002 \001(\0132\032.google.protobuf.Tim"
-          + "estamp\"\207\001\n\005Asset\022\014\n\004name\030\001 \001(\t\022\022\n\nasset_"
-          + "type\030\002 \001(\t\0221\n\010resource\030\003 \001(\0132\037.google.cl"
-          + "oud.asset.v1.Resource\022)\n\niam_policy\030\004 \001("
-          + "\0132\025.google.iam.v1.Policy\"\240\001\n\010Resource\022\017\n"
-          + "\007version\030\001 \001(\t\022\036\n\026discovery_document_uri"
-          + "\030\002 \001(\t\022\026\n\016discovery_name\030\003 \001(\t\022\024\n\014resour"
-          + "ce_url\030\004 \001(\t\022\016\n\006parent\030\005 \001(\t\022%\n\004data\030\006 \001"
-          + "(\0132\027.google.protobuf.StructB\225\001\n\031com.goog"
-          + "le.cloud.asset.v1B\nAssetProtoP\001Z:google."
-          + "golang.org/genproto/googleapis/cloud/ass"
-          + "et/v1;asset\252\002\025Google.Cloud.Asset.V1\312\002\025Go"
-          + "ogle\\Cloud\\Asset\\V1b\006proto3"
+          + "ons.proto\032\031google/api/resource.proto\032\032go"
+          + "ogle/iam/v1/policy.proto\032\031google/protobu"
+          + "f/any.proto\032\034google/protobuf/struct.prot"
+          + "o\032\037google/protobuf/timestamp.proto\"\200\001\n\rT"
+          + "emporalAsset\0221\n\006window\030\001 \001(\0132!.google.cl"
+          + "oud.asset.v1.TimeWindow\022\017\n\007deleted\030\002 \001(\010"
+          + "\022+\n\005asset\030\003 \001(\0132\034.google.cloud.asset.v1."
+          + "Asset\"j\n\nTimeWindow\022.\n\nstart_time\030\001 \001(\0132"
+          + "\032.google.protobuf.Timestamp\022,\n\010end_time\030"
+          + "\002 \001(\0132\032.google.protobuf.Timestamp\"\260\001\n\005As"
+          + "set\022\014\n\004name\030\001 \001(\t\022\022\n\nasset_type\030\002 \001(\t\0221\n"
+          + "\010resource\030\003 \001(\0132\037.google.cloud.asset.v1."
+          + "Resource\022)\n\niam_policy\030\004 \001(\0132\025.google.ia"
+          + "m.v1.Policy:\'\352A$\n\037cloudasset.googleapis."
+          + "com/Asset\022\001*\"\240\001\n\010Resource\022\017\n\007version\030\001 \001"
+          + "(\t\022\036\n\026discovery_document_uri\030\002 \001(\t\022\026\n\016di"
+          + "scovery_name\030\003 \001(\t\022\024\n\014resource_url\030\004 \001(\t"
+          + "\022\016\n\006parent\030\005 \001(\t\022%\n\004data\030\006 \001(\0132\027.google."
+          + "protobuf.StructB\230\001\n\031com.google.cloud.ass"
+          + "et.v1B\nAssetProtoP\001Z:google.golang.org/g"
+          + "enproto/googleapis/cloud/asset/v1;asset\370"
+          + "\001\001\252\002\025Google.Cloud.Asset.V1\312\002\025Google\\Clou"
+          + "d\\Asset\\V1b\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner() {
@@ -88,6 +90,7 @@ public final class AssetProto {
         descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
           com.google.api.AnnotationsProto.getDescriptor(),
+          com.google.api.ResourceProto.getDescriptor(),
           com.google.iam.v1.PolicyProto.getDescriptor(),
           com.google.protobuf.AnyProto.getDescriptor(),
           com.google.protobuf.StructProto.getDescriptor(),
@@ -126,7 +129,13 @@ public final class AssetProto {
             new java.lang.String[] {
               "Version", "DiscoveryDocumentUri", "DiscoveryName", "ResourceUrl", "Parent", "Data",
             });
+    com.google.protobuf.ExtensionRegistry registry =
+        com.google.protobuf.ExtensionRegistry.newInstance();
+    registry.add(com.google.api.ResourceProto.resource);
+    com.google.protobuf.Descriptors.FileDescriptor.internalUpdateFileDescriptor(
+        descriptor, registry);
     com.google.api.AnnotationsProto.getDescriptor();
+    com.google.api.ResourceProto.getDescriptor();
     com.google.iam.v1.PolicyProto.getDescriptor();
     com.google.protobuf.AnyProto.getDescriptor();
     com.google.protobuf.StructProto.getDescriptor();

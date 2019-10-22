@@ -70,6 +70,13 @@ public final class GcsDestination extends com.google.protobuf.GeneratedMessageV3
               objectUri_ = s;
               break;
             }
+          case 18:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+              objectUriCase_ = 2;
+              objectUri_ = s;
+              break;
+            }
           default:
             {
               if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -109,6 +116,7 @@ public final class GcsDestination extends com.google.protobuf.GeneratedMessageV3
 
   public enum ObjectUriCase implements com.google.protobuf.Internal.EnumLite {
     URI(1),
+    URI_PREFIX(2),
     OBJECTURI_NOT_SET(0);
     private final int value;
 
@@ -125,6 +133,8 @@ public final class GcsDestination extends com.google.protobuf.GeneratedMessageV3
       switch (value) {
         case 1:
           return URI;
+        case 2:
+          return URI_PREFIX;
         case 0:
           return OBJECTURI_NOT_SET;
         default:
@@ -201,6 +211,74 @@ public final class GcsDestination extends com.google.protobuf.GeneratedMessageV3
     }
   }
 
+  public static final int URI_PREFIX_FIELD_NUMBER = 2;
+  /**
+   *
+   *
+   * <pre>
+   * The uri prefix of all generated Cloud Storage objects. For example:
+   * "gs://bucket_name/object_name_prefix". Each object uri is in format:
+   * "gs://bucket_name/object_name_prefix/&lt;asset type&gt;/&lt;shard number&gt; and only
+   * contains assets for that type. &lt;shard number&gt; starts from 0. For example:
+   * "gs://bucket_name/object_name_prefix/compute.googleapis.com/Disk/0" is
+   * the first shard of output objects containing all
+   * compute.googleapis.com/Disk assets. An INVALID_ARGUMENT error will be
+   * returned if file with the same name "gs://bucket_name/object_name_prefix"
+   * already exists.
+   * </pre>
+   *
+   * <code>string uri_prefix = 2;</code>
+   */
+  public java.lang.String getUriPrefix() {
+    java.lang.Object ref = "";
+    if (objectUriCase_ == 2) {
+      ref = objectUri_;
+    }
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      if (objectUriCase_ == 2) {
+        objectUri_ = s;
+      }
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The uri prefix of all generated Cloud Storage objects. For example:
+   * "gs://bucket_name/object_name_prefix". Each object uri is in format:
+   * "gs://bucket_name/object_name_prefix/&lt;asset type&gt;/&lt;shard number&gt; and only
+   * contains assets for that type. &lt;shard number&gt; starts from 0. For example:
+   * "gs://bucket_name/object_name_prefix/compute.googleapis.com/Disk/0" is
+   * the first shard of output objects containing all
+   * compute.googleapis.com/Disk assets. An INVALID_ARGUMENT error will be
+   * returned if file with the same name "gs://bucket_name/object_name_prefix"
+   * already exists.
+   * </pre>
+   *
+   * <code>string uri_prefix = 2;</code>
+   */
+  public com.google.protobuf.ByteString getUriPrefixBytes() {
+    java.lang.Object ref = "";
+    if (objectUriCase_ == 2) {
+      ref = objectUri_;
+    }
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      if (objectUriCase_ == 2) {
+        objectUri_ = b;
+      }
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -218,6 +296,9 @@ public final class GcsDestination extends com.google.protobuf.GeneratedMessageV3
     if (objectUriCase_ == 1) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, objectUri_);
     }
+    if (objectUriCase_ == 2) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 2, objectUri_);
+    }
     unknownFields.writeTo(output);
   }
 
@@ -229,6 +310,9 @@ public final class GcsDestination extends com.google.protobuf.GeneratedMessageV3
     size = 0;
     if (objectUriCase_ == 1) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, objectUri_);
+    }
+    if (objectUriCase_ == 2) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, objectUri_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -250,6 +334,9 @@ public final class GcsDestination extends com.google.protobuf.GeneratedMessageV3
       case 1:
         if (!getUri().equals(other.getUri())) return false;
         break;
+      case 2:
+        if (!getUriPrefix().equals(other.getUriPrefix())) return false;
+        break;
       case 0:
       default:
     }
@@ -268,6 +355,10 @@ public final class GcsDestination extends com.google.protobuf.GeneratedMessageV3
       case 1:
         hash = (37 * hash) + URI_FIELD_NUMBER;
         hash = (53 * hash) + getUri().hashCode();
+        break;
+      case 2:
+        hash = (37 * hash) + URI_PREFIX_FIELD_NUMBER;
+        hash = (53 * hash) + getUriPrefix().hashCode();
         break;
       case 0:
       default:
@@ -449,6 +540,9 @@ public final class GcsDestination extends com.google.protobuf.GeneratedMessageV3
       if (objectUriCase_ == 1) {
         result.objectUri_ = objectUri_;
       }
+      if (objectUriCase_ == 2) {
+        result.objectUri_ = objectUri_;
+      }
       result.objectUriCase_ = objectUriCase_;
       onBuilt();
       return result;
@@ -503,6 +597,13 @@ public final class GcsDestination extends com.google.protobuf.GeneratedMessageV3
         case URI:
           {
             objectUriCase_ = 1;
+            objectUri_ = other.objectUri_;
+            onChanged();
+            break;
+          }
+        case URI_PREFIX:
+          {
+            objectUriCase_ = 2;
             objectUri_ = other.objectUri_;
             onChanged();
             break;
@@ -675,6 +776,151 @@ public final class GcsDestination extends com.google.protobuf.GeneratedMessageV3
       }
       checkByteStringIsUtf8(value);
       objectUriCase_ = 1;
+      objectUri_ = value;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The uri prefix of all generated Cloud Storage objects. For example:
+     * "gs://bucket_name/object_name_prefix". Each object uri is in format:
+     * "gs://bucket_name/object_name_prefix/&lt;asset type&gt;/&lt;shard number&gt; and only
+     * contains assets for that type. &lt;shard number&gt; starts from 0. For example:
+     * "gs://bucket_name/object_name_prefix/compute.googleapis.com/Disk/0" is
+     * the first shard of output objects containing all
+     * compute.googleapis.com/Disk assets. An INVALID_ARGUMENT error will be
+     * returned if file with the same name "gs://bucket_name/object_name_prefix"
+     * already exists.
+     * </pre>
+     *
+     * <code>string uri_prefix = 2;</code>
+     */
+    public java.lang.String getUriPrefix() {
+      java.lang.Object ref = "";
+      if (objectUriCase_ == 2) {
+        ref = objectUri_;
+      }
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        if (objectUriCase_ == 2) {
+          objectUri_ = s;
+        }
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The uri prefix of all generated Cloud Storage objects. For example:
+     * "gs://bucket_name/object_name_prefix". Each object uri is in format:
+     * "gs://bucket_name/object_name_prefix/&lt;asset type&gt;/&lt;shard number&gt; and only
+     * contains assets for that type. &lt;shard number&gt; starts from 0. For example:
+     * "gs://bucket_name/object_name_prefix/compute.googleapis.com/Disk/0" is
+     * the first shard of output objects containing all
+     * compute.googleapis.com/Disk assets. An INVALID_ARGUMENT error will be
+     * returned if file with the same name "gs://bucket_name/object_name_prefix"
+     * already exists.
+     * </pre>
+     *
+     * <code>string uri_prefix = 2;</code>
+     */
+    public com.google.protobuf.ByteString getUriPrefixBytes() {
+      java.lang.Object ref = "";
+      if (objectUriCase_ == 2) {
+        ref = objectUri_;
+      }
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        if (objectUriCase_ == 2) {
+          objectUri_ = b;
+        }
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The uri prefix of all generated Cloud Storage objects. For example:
+     * "gs://bucket_name/object_name_prefix". Each object uri is in format:
+     * "gs://bucket_name/object_name_prefix/&lt;asset type&gt;/&lt;shard number&gt; and only
+     * contains assets for that type. &lt;shard number&gt; starts from 0. For example:
+     * "gs://bucket_name/object_name_prefix/compute.googleapis.com/Disk/0" is
+     * the first shard of output objects containing all
+     * compute.googleapis.com/Disk assets. An INVALID_ARGUMENT error will be
+     * returned if file with the same name "gs://bucket_name/object_name_prefix"
+     * already exists.
+     * </pre>
+     *
+     * <code>string uri_prefix = 2;</code>
+     */
+    public Builder setUriPrefix(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      objectUriCase_ = 2;
+      objectUri_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The uri prefix of all generated Cloud Storage objects. For example:
+     * "gs://bucket_name/object_name_prefix". Each object uri is in format:
+     * "gs://bucket_name/object_name_prefix/&lt;asset type&gt;/&lt;shard number&gt; and only
+     * contains assets for that type. &lt;shard number&gt; starts from 0. For example:
+     * "gs://bucket_name/object_name_prefix/compute.googleapis.com/Disk/0" is
+     * the first shard of output objects containing all
+     * compute.googleapis.com/Disk assets. An INVALID_ARGUMENT error will be
+     * returned if file with the same name "gs://bucket_name/object_name_prefix"
+     * already exists.
+     * </pre>
+     *
+     * <code>string uri_prefix = 2;</code>
+     */
+    public Builder clearUriPrefix() {
+      if (objectUriCase_ == 2) {
+        objectUriCase_ = 0;
+        objectUri_ = null;
+        onChanged();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The uri prefix of all generated Cloud Storage objects. For example:
+     * "gs://bucket_name/object_name_prefix". Each object uri is in format:
+     * "gs://bucket_name/object_name_prefix/&lt;asset type&gt;/&lt;shard number&gt; and only
+     * contains assets for that type. &lt;shard number&gt; starts from 0. For example:
+     * "gs://bucket_name/object_name_prefix/compute.googleapis.com/Disk/0" is
+     * the first shard of output objects containing all
+     * compute.googleapis.com/Disk assets. An INVALID_ARGUMENT error will be
+     * returned if file with the same name "gs://bucket_name/object_name_prefix"
+     * already exists.
+     * </pre>
+     *
+     * <code>string uri_prefix = 2;</code>
+     */
+    public Builder setUriPrefixBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      objectUriCase_ = 2;
       objectUri_ = value;
       onChanged();
       return this;

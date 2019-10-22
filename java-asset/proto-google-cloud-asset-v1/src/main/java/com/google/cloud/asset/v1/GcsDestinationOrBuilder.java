@@ -52,5 +52,42 @@ public interface GcsDestinationOrBuilder
    */
   com.google.protobuf.ByteString getUriBytes();
 
+  /**
+   *
+   *
+   * <pre>
+   * The uri prefix of all generated Cloud Storage objects. For example:
+   * "gs://bucket_name/object_name_prefix". Each object uri is in format:
+   * "gs://bucket_name/object_name_prefix/&lt;asset type&gt;/&lt;shard number&gt; and only
+   * contains assets for that type. &lt;shard number&gt; starts from 0. For example:
+   * "gs://bucket_name/object_name_prefix/compute.googleapis.com/Disk/0" is
+   * the first shard of output objects containing all
+   * compute.googleapis.com/Disk assets. An INVALID_ARGUMENT error will be
+   * returned if file with the same name "gs://bucket_name/object_name_prefix"
+   * already exists.
+   * </pre>
+   *
+   * <code>string uri_prefix = 2;</code>
+   */
+  java.lang.String getUriPrefix();
+  /**
+   *
+   *
+   * <pre>
+   * The uri prefix of all generated Cloud Storage objects. For example:
+   * "gs://bucket_name/object_name_prefix". Each object uri is in format:
+   * "gs://bucket_name/object_name_prefix/&lt;asset type&gt;/&lt;shard number&gt; and only
+   * contains assets for that type. &lt;shard number&gt; starts from 0. For example:
+   * "gs://bucket_name/object_name_prefix/compute.googleapis.com/Disk/0" is
+   * the first shard of output objects containing all
+   * compute.googleapis.com/Disk assets. An INVALID_ARGUMENT error will be
+   * returned if file with the same name "gs://bucket_name/object_name_prefix"
+   * already exists.
+   * </pre>
+   *
+   * <code>string uri_prefix = 2;</code>
+   */
+  com.google.protobuf.ByteString getUriPrefixBytes();
+
   public com.google.cloud.asset.v1.GcsDestination.ObjectUriCase getObjectUriCase();
 }

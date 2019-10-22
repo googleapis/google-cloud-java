@@ -26,6 +26,7 @@ echo ${JOB_TYPE}
 
 mvn install -B -V \
   -DskipTests=true \
+  -Dclirr.skip=true \
   -Dmaven.javadoc.skip=true \
   -Dgcloud.download.skip=true \
   -T 1C
@@ -37,8 +38,9 @@ fi
 
 case ${JOB_TYPE} in
 test)
-    mvn test -B
+    mvn test -B -Dclirr.skip=true
     bash ${KOKORO_GFILE_DIR}/codecov.sh
+    bash .kokoro/coerce_logs.sh
     ;;
 lint)
     mvn com.coveo:fmt-maven-plugin:check
@@ -47,7 +49,11 @@ javadoc)
     mvn javadoc:javadoc javadoc:test-javadoc
     ;;
 integration)
-    mvn -B ${INTEGRATION_TEST_ARGS} -DtrimStackTrace=false -fae verify
+    mvn -B ${INTEGRATION_TEST_ARGS} -DtrimStackTrace=false -Dclirr.skip=true -fae verify
+    bash .kokoro/coerce_logs.sh
+    ;;
+clirr)
+    mvn -B clirr:check
     ;;
 *)
     ;;

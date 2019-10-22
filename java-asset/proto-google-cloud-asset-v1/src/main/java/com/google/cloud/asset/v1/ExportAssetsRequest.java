@@ -172,7 +172,9 @@ public final class ExportAssetsRequest extends com.google.protobuf.GeneratedMess
    * or a folder number (such as "folders/123").
    * </pre>
    *
-   * <code>string parent = 1;</code>
+   * <code>
+   * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    */
   public java.lang.String getParent() {
     java.lang.Object ref = parent_;
@@ -195,7 +197,9 @@ public final class ExportAssetsRequest extends com.google.protobuf.GeneratedMess
    * or a folder number (such as "folders/123").
    * </pre>
    *
-   * <code>string parent = 1;</code>
+   * <code>
+   * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    */
   public com.google.protobuf.ByteString getParentBytes() {
     java.lang.Object ref = parent_;
@@ -267,9 +271,9 @@ public final class ExportAssetsRequest extends com.google.protobuf.GeneratedMess
    *
    * <pre>
    * A list of asset types of which to take a snapshot for. For example:
-   * "compute.googleapis.com/Disk". If specified, only matching assets will be returned.
-   * See [Introduction to Cloud Asset
-   * Inventory](https://cloud.google.com/resource-manager/docs/cloud-asset-inventory/overview)
+   * "compute.googleapis.com/Disk". If specified, only matching assets will be
+   * returned. See [Introduction to Cloud Asset
+   * Inventory](https://cloud.google.com/asset-inventory/docs/overview)
    * for all supported asset types.
    * </pre>
    *
@@ -283,9 +287,9 @@ public final class ExportAssetsRequest extends com.google.protobuf.GeneratedMess
    *
    * <pre>
    * A list of asset types of which to take a snapshot for. For example:
-   * "compute.googleapis.com/Disk". If specified, only matching assets will be returned.
-   * See [Introduction to Cloud Asset
-   * Inventory](https://cloud.google.com/resource-manager/docs/cloud-asset-inventory/overview)
+   * "compute.googleapis.com/Disk". If specified, only matching assets will be
+   * returned. See [Introduction to Cloud Asset
+   * Inventory](https://cloud.google.com/asset-inventory/docs/overview)
    * for all supported asset types.
    * </pre>
    *
@@ -299,9 +303,9 @@ public final class ExportAssetsRequest extends com.google.protobuf.GeneratedMess
    *
    * <pre>
    * A list of asset types of which to take a snapshot for. For example:
-   * "compute.googleapis.com/Disk". If specified, only matching assets will be returned.
-   * See [Introduction to Cloud Asset
-   * Inventory](https://cloud.google.com/resource-manager/docs/cloud-asset-inventory/overview)
+   * "compute.googleapis.com/Disk". If specified, only matching assets will be
+   * returned. See [Introduction to Cloud Asset
+   * Inventory](https://cloud.google.com/asset-inventory/docs/overview)
    * for all supported asset types.
    * </pre>
    *
@@ -315,9 +319,9 @@ public final class ExportAssetsRequest extends com.google.protobuf.GeneratedMess
    *
    * <pre>
    * A list of asset types of which to take a snapshot for. For example:
-   * "compute.googleapis.com/Disk". If specified, only matching assets will be returned.
-   * See [Introduction to Cloud Asset
-   * Inventory](https://cloud.google.com/resource-manager/docs/cloud-asset-inventory/overview)
+   * "compute.googleapis.com/Disk". If specified, only matching assets will be
+   * returned. See [Introduction to Cloud Asset
+   * Inventory](https://cloud.google.com/asset-inventory/docs/overview)
    * for all supported asset types.
    * </pre>
    *
@@ -369,7 +373,9 @@ public final class ExportAssetsRequest extends com.google.protobuf.GeneratedMess
    * to. All results will be in newline delimited JSON format.
    * </pre>
    *
-   * <code>.google.cloud.asset.v1.OutputConfig output_config = 5;</code>
+   * <code>
+   * .google.cloud.asset.v1.OutputConfig output_config = 5 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   public boolean hasOutputConfig() {
     return outputConfig_ != null;
@@ -382,7 +388,9 @@ public final class ExportAssetsRequest extends com.google.protobuf.GeneratedMess
    * to. All results will be in newline delimited JSON format.
    * </pre>
    *
-   * <code>.google.cloud.asset.v1.OutputConfig output_config = 5;</code>
+   * <code>
+   * .google.cloud.asset.v1.OutputConfig output_config = 5 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   public com.google.cloud.asset.v1.OutputConfig getOutputConfig() {
     return outputConfig_ == null
@@ -397,7 +405,9 @@ public final class ExportAssetsRequest extends com.google.protobuf.GeneratedMess
    * to. All results will be in newline delimited JSON format.
    * </pre>
    *
-   * <code>.google.cloud.asset.v1.OutputConfig output_config = 5;</code>
+   * <code>
+   * .google.cloud.asset.v1.OutputConfig output_config = 5 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   public com.google.cloud.asset.v1.OutputConfigOrBuilder getOutputConfigOrBuilder() {
     return getOutputConfig();
@@ -841,7 +851,9 @@ public final class ExportAssetsRequest extends com.google.protobuf.GeneratedMess
      * or a folder number (such as "folders/123").
      * </pre>
      *
-     * <code>string parent = 1;</code>
+     * <code>
+     * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      */
     public java.lang.String getParent() {
       java.lang.Object ref = parent_;
@@ -864,7 +876,9 @@ public final class ExportAssetsRequest extends com.google.protobuf.GeneratedMess
      * or a folder number (such as "folders/123").
      * </pre>
      *
-     * <code>string parent = 1;</code>
+     * <code>
+     * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      */
     public com.google.protobuf.ByteString getParentBytes() {
       java.lang.Object ref = parent_;
@@ -887,7 +901,9 @@ public final class ExportAssetsRequest extends com.google.protobuf.GeneratedMess
      * or a folder number (such as "folders/123").
      * </pre>
      *
-     * <code>string parent = 1;</code>
+     * <code>
+     * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      */
     public Builder setParent(java.lang.String value) {
       if (value == null) {
@@ -908,7 +924,9 @@ public final class ExportAssetsRequest extends com.google.protobuf.GeneratedMess
      * or a folder number (such as "folders/123").
      * </pre>
      *
-     * <code>string parent = 1;</code>
+     * <code>
+     * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      */
     public Builder clearParent() {
 
@@ -926,7 +944,9 @@ public final class ExportAssetsRequest extends com.google.protobuf.GeneratedMess
      * or a folder number (such as "folders/123").
      * </pre>
      *
-     * <code>string parent = 1;</code>
+     * <code>
+     * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      */
     public Builder setParentBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -1164,9 +1184,9 @@ public final class ExportAssetsRequest extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * A list of asset types of which to take a snapshot for. For example:
-     * "compute.googleapis.com/Disk". If specified, only matching assets will be returned.
-     * See [Introduction to Cloud Asset
-     * Inventory](https://cloud.google.com/resource-manager/docs/cloud-asset-inventory/overview)
+     * "compute.googleapis.com/Disk". If specified, only matching assets will be
+     * returned. See [Introduction to Cloud Asset
+     * Inventory](https://cloud.google.com/asset-inventory/docs/overview)
      * for all supported asset types.
      * </pre>
      *
@@ -1180,9 +1200,9 @@ public final class ExportAssetsRequest extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * A list of asset types of which to take a snapshot for. For example:
-     * "compute.googleapis.com/Disk". If specified, only matching assets will be returned.
-     * See [Introduction to Cloud Asset
-     * Inventory](https://cloud.google.com/resource-manager/docs/cloud-asset-inventory/overview)
+     * "compute.googleapis.com/Disk". If specified, only matching assets will be
+     * returned. See [Introduction to Cloud Asset
+     * Inventory](https://cloud.google.com/asset-inventory/docs/overview)
      * for all supported asset types.
      * </pre>
      *
@@ -1196,9 +1216,9 @@ public final class ExportAssetsRequest extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * A list of asset types of which to take a snapshot for. For example:
-     * "compute.googleapis.com/Disk". If specified, only matching assets will be returned.
-     * See [Introduction to Cloud Asset
-     * Inventory](https://cloud.google.com/resource-manager/docs/cloud-asset-inventory/overview)
+     * "compute.googleapis.com/Disk". If specified, only matching assets will be
+     * returned. See [Introduction to Cloud Asset
+     * Inventory](https://cloud.google.com/asset-inventory/docs/overview)
      * for all supported asset types.
      * </pre>
      *
@@ -1212,9 +1232,9 @@ public final class ExportAssetsRequest extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * A list of asset types of which to take a snapshot for. For example:
-     * "compute.googleapis.com/Disk". If specified, only matching assets will be returned.
-     * See [Introduction to Cloud Asset
-     * Inventory](https://cloud.google.com/resource-manager/docs/cloud-asset-inventory/overview)
+     * "compute.googleapis.com/Disk". If specified, only matching assets will be
+     * returned. See [Introduction to Cloud Asset
+     * Inventory](https://cloud.google.com/asset-inventory/docs/overview)
      * for all supported asset types.
      * </pre>
      *
@@ -1228,9 +1248,9 @@ public final class ExportAssetsRequest extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * A list of asset types of which to take a snapshot for. For example:
-     * "compute.googleapis.com/Disk". If specified, only matching assets will be returned.
-     * See [Introduction to Cloud Asset
-     * Inventory](https://cloud.google.com/resource-manager/docs/cloud-asset-inventory/overview)
+     * "compute.googleapis.com/Disk". If specified, only matching assets will be
+     * returned. See [Introduction to Cloud Asset
+     * Inventory](https://cloud.google.com/asset-inventory/docs/overview)
      * for all supported asset types.
      * </pre>
      *
@@ -1250,9 +1270,9 @@ public final class ExportAssetsRequest extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * A list of asset types of which to take a snapshot for. For example:
-     * "compute.googleapis.com/Disk". If specified, only matching assets will be returned.
-     * See [Introduction to Cloud Asset
-     * Inventory](https://cloud.google.com/resource-manager/docs/cloud-asset-inventory/overview)
+     * "compute.googleapis.com/Disk". If specified, only matching assets will be
+     * returned. See [Introduction to Cloud Asset
+     * Inventory](https://cloud.google.com/asset-inventory/docs/overview)
      * for all supported asset types.
      * </pre>
      *
@@ -1272,9 +1292,9 @@ public final class ExportAssetsRequest extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * A list of asset types of which to take a snapshot for. For example:
-     * "compute.googleapis.com/Disk". If specified, only matching assets will be returned.
-     * See [Introduction to Cloud Asset
-     * Inventory](https://cloud.google.com/resource-manager/docs/cloud-asset-inventory/overview)
+     * "compute.googleapis.com/Disk". If specified, only matching assets will be
+     * returned. See [Introduction to Cloud Asset
+     * Inventory](https://cloud.google.com/asset-inventory/docs/overview)
      * for all supported asset types.
      * </pre>
      *
@@ -1291,9 +1311,9 @@ public final class ExportAssetsRequest extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * A list of asset types of which to take a snapshot for. For example:
-     * "compute.googleapis.com/Disk". If specified, only matching assets will be returned.
-     * See [Introduction to Cloud Asset
-     * Inventory](https://cloud.google.com/resource-manager/docs/cloud-asset-inventory/overview)
+     * "compute.googleapis.com/Disk". If specified, only matching assets will be
+     * returned. See [Introduction to Cloud Asset
+     * Inventory](https://cloud.google.com/asset-inventory/docs/overview)
      * for all supported asset types.
      * </pre>
      *
@@ -1310,9 +1330,9 @@ public final class ExportAssetsRequest extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * A list of asset types of which to take a snapshot for. For example:
-     * "compute.googleapis.com/Disk". If specified, only matching assets will be returned.
-     * See [Introduction to Cloud Asset
-     * Inventory](https://cloud.google.com/resource-manager/docs/cloud-asset-inventory/overview)
+     * "compute.googleapis.com/Disk". If specified, only matching assets will be
+     * returned. See [Introduction to Cloud Asset
+     * Inventory](https://cloud.google.com/asset-inventory/docs/overview)
      * for all supported asset types.
      * </pre>
      *
@@ -1424,7 +1444,9 @@ public final class ExportAssetsRequest extends com.google.protobuf.GeneratedMess
      * to. All results will be in newline delimited JSON format.
      * </pre>
      *
-     * <code>.google.cloud.asset.v1.OutputConfig output_config = 5;</code>
+     * <code>
+     * .google.cloud.asset.v1.OutputConfig output_config = 5 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public boolean hasOutputConfig() {
       return outputConfigBuilder_ != null || outputConfig_ != null;
@@ -1437,7 +1459,9 @@ public final class ExportAssetsRequest extends com.google.protobuf.GeneratedMess
      * to. All results will be in newline delimited JSON format.
      * </pre>
      *
-     * <code>.google.cloud.asset.v1.OutputConfig output_config = 5;</code>
+     * <code>
+     * .google.cloud.asset.v1.OutputConfig output_config = 5 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public com.google.cloud.asset.v1.OutputConfig getOutputConfig() {
       if (outputConfigBuilder_ == null) {
@@ -1456,7 +1480,9 @@ public final class ExportAssetsRequest extends com.google.protobuf.GeneratedMess
      * to. All results will be in newline delimited JSON format.
      * </pre>
      *
-     * <code>.google.cloud.asset.v1.OutputConfig output_config = 5;</code>
+     * <code>
+     * .google.cloud.asset.v1.OutputConfig output_config = 5 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder setOutputConfig(com.google.cloud.asset.v1.OutputConfig value) {
       if (outputConfigBuilder_ == null) {
@@ -1479,7 +1505,9 @@ public final class ExportAssetsRequest extends com.google.protobuf.GeneratedMess
      * to. All results will be in newline delimited JSON format.
      * </pre>
      *
-     * <code>.google.cloud.asset.v1.OutputConfig output_config = 5;</code>
+     * <code>
+     * .google.cloud.asset.v1.OutputConfig output_config = 5 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder setOutputConfig(com.google.cloud.asset.v1.OutputConfig.Builder builderForValue) {
       if (outputConfigBuilder_ == null) {
@@ -1499,7 +1527,9 @@ public final class ExportAssetsRequest extends com.google.protobuf.GeneratedMess
      * to. All results will be in newline delimited JSON format.
      * </pre>
      *
-     * <code>.google.cloud.asset.v1.OutputConfig output_config = 5;</code>
+     * <code>
+     * .google.cloud.asset.v1.OutputConfig output_config = 5 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder mergeOutputConfig(com.google.cloud.asset.v1.OutputConfig value) {
       if (outputConfigBuilder_ == null) {
@@ -1526,7 +1556,9 @@ public final class ExportAssetsRequest extends com.google.protobuf.GeneratedMess
      * to. All results will be in newline delimited JSON format.
      * </pre>
      *
-     * <code>.google.cloud.asset.v1.OutputConfig output_config = 5;</code>
+     * <code>
+     * .google.cloud.asset.v1.OutputConfig output_config = 5 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder clearOutputConfig() {
       if (outputConfigBuilder_ == null) {
@@ -1547,7 +1579,9 @@ public final class ExportAssetsRequest extends com.google.protobuf.GeneratedMess
      * to. All results will be in newline delimited JSON format.
      * </pre>
      *
-     * <code>.google.cloud.asset.v1.OutputConfig output_config = 5;</code>
+     * <code>
+     * .google.cloud.asset.v1.OutputConfig output_config = 5 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public com.google.cloud.asset.v1.OutputConfig.Builder getOutputConfigBuilder() {
 
@@ -1562,7 +1596,9 @@ public final class ExportAssetsRequest extends com.google.protobuf.GeneratedMess
      * to. All results will be in newline delimited JSON format.
      * </pre>
      *
-     * <code>.google.cloud.asset.v1.OutputConfig output_config = 5;</code>
+     * <code>
+     * .google.cloud.asset.v1.OutputConfig output_config = 5 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public com.google.cloud.asset.v1.OutputConfigOrBuilder getOutputConfigOrBuilder() {
       if (outputConfigBuilder_ != null) {
@@ -1581,7 +1617,9 @@ public final class ExportAssetsRequest extends com.google.protobuf.GeneratedMess
      * to. All results will be in newline delimited JSON format.
      * </pre>
      *
-     * <code>.google.cloud.asset.v1.OutputConfig output_config = 5;</code>
+     * <code>
+     * .google.cloud.asset.v1.OutputConfig output_config = 5 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.asset.v1.OutputConfig,

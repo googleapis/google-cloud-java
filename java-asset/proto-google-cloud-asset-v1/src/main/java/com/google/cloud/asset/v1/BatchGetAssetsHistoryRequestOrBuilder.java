@@ -32,7 +32,9 @@ public interface BatchGetAssetsHistoryRequestOrBuilder
    * "projects/my-project-id")", or a project number (such as "projects/12345").
    * </pre>
    *
-   * <code>string parent = 1;</code>
+   * <code>
+   * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    */
   java.lang.String getParent();
   /**
@@ -44,7 +46,9 @@ public interface BatchGetAssetsHistoryRequestOrBuilder
    * "projects/my-project-id")", or a project number (such as "projects/12345").
    * </pre>
    *
-   * <code>string parent = 1;</code>
+   * <code>
+   * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    */
   com.google.protobuf.ByteString getParentBytes();
 
@@ -56,7 +60,8 @@ public interface BatchGetAssetsHistoryRequestOrBuilder
    * `//compute.googleapis.com/projects/my_project_123/zones/zone1/instances/instance1`.
    * See [Resource
    * Names](https://cloud.google.com/apis/design/resource_names#full_resource_name)
-   * and [Resource Name Format](https://cloud.google.com/resource-manager/docs/cloud-asset-inventory/resource-name-format)
+   * and [Resource Name
+   * Format](https://cloud.google.com/asset-inventory/docs/resource-name-format)
    * for more info.
    * The request becomes a no-op if the asset name list is empty, and the max
    * size of the asset name list is 100 in one request.
@@ -73,7 +78,8 @@ public interface BatchGetAssetsHistoryRequestOrBuilder
    * `//compute.googleapis.com/projects/my_project_123/zones/zone1/instances/instance1`.
    * See [Resource
    * Names](https://cloud.google.com/apis/design/resource_names#full_resource_name)
-   * and [Resource Name Format](https://cloud.google.com/resource-manager/docs/cloud-asset-inventory/resource-name-format)
+   * and [Resource Name
+   * Format](https://cloud.google.com/asset-inventory/docs/resource-name-format)
    * for more info.
    * The request becomes a no-op if the asset name list is empty, and the max
    * size of the asset name list is 100 in one request.
@@ -90,7 +96,8 @@ public interface BatchGetAssetsHistoryRequestOrBuilder
    * `//compute.googleapis.com/projects/my_project_123/zones/zone1/instances/instance1`.
    * See [Resource
    * Names](https://cloud.google.com/apis/design/resource_names#full_resource_name)
-   * and [Resource Name Format](https://cloud.google.com/resource-manager/docs/cloud-asset-inventory/resource-name-format)
+   * and [Resource Name
+   * Format](https://cloud.google.com/asset-inventory/docs/resource-name-format)
    * for more info.
    * The request becomes a no-op if the asset name list is empty, and the max
    * size of the asset name list is 100 in one request.
@@ -107,7 +114,8 @@ public interface BatchGetAssetsHistoryRequestOrBuilder
    * `//compute.googleapis.com/projects/my_project_123/zones/zone1/instances/instance1`.
    * See [Resource
    * Names](https://cloud.google.com/apis/design/resource_names#full_resource_name)
-   * and [Resource Name Format](https://cloud.google.com/resource-manager/docs/cloud-asset-inventory/resource-name-format)
+   * and [Resource Name
+   * Format](https://cloud.google.com/asset-inventory/docs/resource-name-format)
    * for more info.
    * The request becomes a no-op if the asset name list is empty, and the max
    * size of the asset name list is 100 in one request.
@@ -121,20 +129,24 @@ public interface BatchGetAssetsHistoryRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The content type.
+   * Optional. The content type.
    * </pre>
    *
-   * <code>.google.cloud.asset.v1.ContentType content_type = 3;</code>
+   * <code>
+   * .google.cloud.asset.v1.ContentType content_type = 3 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   int getContentTypeValue();
   /**
    *
    *
    * <pre>
-   * Required. The content type.
+   * Optional. The content type.
    * </pre>
    *
-   * <code>.google.cloud.asset.v1.ContentType content_type = 3;</code>
+   * <code>
+   * .google.cloud.asset.v1.ContentType content_type = 3 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   com.google.cloud.asset.v1.ContentType getContentType();
 
@@ -150,7 +162,9 @@ public interface BatchGetAssetsHistoryRequestOrBuilder
    * read_time_window.
    * </pre>
    *
-   * <code>.google.cloud.asset.v1.TimeWindow read_time_window = 4;</code>
+   * <code>
+   * .google.cloud.asset.v1.TimeWindow read_time_window = 4 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   boolean hasReadTimeWindow();
   /**
@@ -165,7 +179,9 @@ public interface BatchGetAssetsHistoryRequestOrBuilder
    * read_time_window.
    * </pre>
    *
-   * <code>.google.cloud.asset.v1.TimeWindow read_time_window = 4;</code>
+   * <code>
+   * .google.cloud.asset.v1.TimeWindow read_time_window = 4 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   com.google.cloud.asset.v1.TimeWindow getReadTimeWindow();
   /**
@@ -180,7 +196,9 @@ public interface BatchGetAssetsHistoryRequestOrBuilder
    * read_time_window.
    * </pre>
    *
-   * <code>.google.cloud.asset.v1.TimeWindow read_time_window = 4;</code>
+   * <code>
+   * .google.cloud.asset.v1.TimeWindow read_time_window = 4 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   com.google.cloud.asset.v1.TimeWindowOrBuilder getReadTimeWindowOrBuilder();
 }
