@@ -30,14 +30,15 @@ public final class DroppedLabelsProto {
   static {
     java.lang.String[] descriptorData = {
       "\n)google/monitoring/v3/dropped_labels.pr"
-          + "oto\022\024google.monitoring.v3\032\034google/api/an"
-          + "notations.proto\"|\n\rDroppedLabels\022=\n\005labe"
-          + "l\030\001 \003(\0132..google.monitoring.v3.DroppedLa"
-          + "bels.LabelEntry\032,\n\nLabelEntry\022\013\n\003key\030\001 \001"
-          + "(\t\022\r\n\005value\030\002 \001(\t:\0028\001Bp\n\030com.google.moni"
-          + "toring.v3B\022DroppedLabelsProtoP\001Z>google."
-          + "golang.org/genproto/googleapis/monitorin"
-          + "g/v3;monitoringb\006proto3"
+          + "oto\022\024google.monitoring.v3\"|\n\rDroppedLabe"
+          + "ls\022=\n\005label\030\001 \003(\0132..google.monitoring.v3"
+          + ".DroppedLabels.LabelEntry\032,\n\nLabelEntry\022"
+          + "\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001B\252\001\n\030com."
+          + "google.monitoring.v3B\022DroppedLabelsProto"
+          + "P\001Z>google.golang.org/genproto/googleapi"
+          + "s/monitoring/v3;monitoring\252\002\032Google.Clou"
+          + "d.Monitoring.V3\312\002\032Google\\Cloud\\Monitorin"
+          + "g\\V3b\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner() {
@@ -48,11 +49,7 @@ public final class DroppedLabelsProto {
           }
         };
     com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
-        descriptorData,
-        new com.google.protobuf.Descriptors.FileDescriptor[] {
-          com.google.api.AnnotationsProto.getDescriptor(),
-        },
-        assigner);
+        descriptorData, new com.google.protobuf.Descriptors.FileDescriptor[] {}, assigner);
     internal_static_google_monitoring_v3_DroppedLabels_descriptor =
         getDescriptor().getMessageTypes().get(0);
     internal_static_google_monitoring_v3_DroppedLabels_fieldAccessorTable =
@@ -69,7 +66,6 @@ public final class DroppedLabelsProto {
             new java.lang.String[] {
               "Key", "Value",
             });
-    com.google.api.AnnotationsProto.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)
