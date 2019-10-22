@@ -31,7 +31,7 @@
  * <pre>
  * <code>
  * try (OsLoginServiceClient osLoginServiceClient = OsLoginServiceClient.create()) {
- *   ProjectName name = ProjectName.of("[USER]", "[PROJECT]");
+ *   PosixAccountName name = PosixAccountName.of("[USER]", "[PROJECT]");
  *   osLoginServiceClient.deletePosixAccount(name);
  * }
  * </code>
