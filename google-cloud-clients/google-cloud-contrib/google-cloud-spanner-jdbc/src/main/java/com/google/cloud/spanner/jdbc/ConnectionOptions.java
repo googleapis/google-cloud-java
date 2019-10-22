@@ -291,7 +291,9 @@ class ConnectionOptions {
      * Sets the URL of the credentials file to use for this connection. The URL may be a reference
      * to a file on the local file system, or to a file on Google Cloud Storage. References to
      * Google Cloud Storage files are only allowed when the application is running on Google Cloud
-     * and the environment has access to the specified storage location.
+     * and the environment has access to the specified storage location. It also requires that the
+     * Google Cloud Storage client library is present on the class path. The Google Cloud Storage
+     * library is not automatically added as a dependency by the JDBC driver.
      *
      * <p>If you do not specify a credentialsUrl (either by using this setter, or by specifying on
      * the connection URI), the credentials returned by {@link
