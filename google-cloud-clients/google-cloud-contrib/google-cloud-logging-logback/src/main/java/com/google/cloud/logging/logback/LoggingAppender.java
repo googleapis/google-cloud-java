@@ -72,7 +72,7 @@ public class LoggingAppender extends UnsynchronizedAppenderBase<ILoggingEvent> {
   private static final String LEVEL_NAME_KEY = "levelName";
   private static final String LEVEL_VALUE_KEY = "levelValue";
   private static final String LOGGER_NAME_KEY = "loggerName";
-  private static final String STACKTRACE = "stacktrace";
+  private static final String STACKTRACE = "fullStacktrace";
 
   private volatile Logging logging;
   private LoggingOptions loggingOptions;
