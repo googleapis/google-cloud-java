@@ -438,6 +438,21 @@ public interface UptimeCheckConfigOrBuilder
    *
    *
    * <pre>
+   * If this is `true`, then checks are made only from the 'internal_checkers'.
+   * If it is `false`, then checks are made only from the 'selected_regions'.
+   * It is an error to provide 'selected_regions' when is_internal is `true`,
+   * or to provide 'internal_checkers' when is_internal is `false`.
+   * </pre>
+   *
+   * <code>bool is_internal = 15 [deprecated = true];</code>
+   */
+  @java.lang.Deprecated
+  boolean getIsInternal();
+
+  /**
+   *
+   *
+   * <pre>
    * The internal checkers that this check will egress from. If `is_internal` is
    * `true` and this list is empty, the check will egress from all the
    * InternalCheckers configured for the project that owns this

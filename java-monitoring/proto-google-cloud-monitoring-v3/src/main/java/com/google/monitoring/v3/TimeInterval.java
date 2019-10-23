@@ -10,7 +10,8 @@ package com.google.monitoring.v3;
  * A closed time interval. It extends from the start time to the end time, and includes both: `[startTime, endTime]`. Valid time intervals depend on the [`MetricKind`](/monitoring/api/ref_v3/rest/v3/projects.metricDescriptors#MetricKind) of the metric value. In no case can the end time be earlier than the start time.
  * * For a `GAUGE` metric, the `startTime` value is technically optional; if
  *   no value is specified, the start time defaults to the value of the
- *   end time, and the interval represents a single point in time. Such an
+ *   end time, and the interval represents a single point in time. If both
+ *   start and end times are specified, they must be identical. Such an
  *   interval is valid only for `GAUGE` metrics, which are point-in-time
  *   measurements.
  * * For `DELTA` and `CUMULATIVE` metrics, the start time must be earlier
@@ -392,7 +393,8 @@ public final class TimeInterval extends com.google.protobuf.GeneratedMessageV3
    * A closed time interval. It extends from the start time to the end time, and includes both: `[startTime, endTime]`. Valid time intervals depend on the [`MetricKind`](/monitoring/api/ref_v3/rest/v3/projects.metricDescriptors#MetricKind) of the metric value. In no case can the end time be earlier than the start time.
    * * For a `GAUGE` metric, the `startTime` value is technically optional; if
    *   no value is specified, the start time defaults to the value of the
-   *   end time, and the interval represents a single point in time. Such an
+   *   end time, and the interval represents a single point in time. If both
+   *   start and end times are specified, they must be identical. Such an
    *   interval is valid only for `GAUGE` metrics, which are point-in-time
    *   measurements.
    * * For `DELTA` and `CUMULATIVE` metrics, the start time must be earlier
