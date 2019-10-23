@@ -19,6 +19,9 @@ source $(dirname "$0")/common.sh
 MAVEN_SETTINGS_FILE=$(realpath $(dirname "$0")/../../)/settings.xml
 pushd $(dirname "$0")/../../
 
+# ensure we're trying to push a snapshot (no-result returns non-zero exit code)
+grep SNAPSHOT versions.txt
+
 setup_environment_secrets
 create_settings_xml_file "settings.xml"
 

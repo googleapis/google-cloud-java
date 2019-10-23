@@ -19,7 +19,6 @@ import com.google.api.core.ApiFunction;
 import com.google.api.core.ApiFuture;
 import com.google.api.core.ApiFutures;
 import com.google.api.core.BetaApi;
-import com.google.api.core.InternalApi;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.longrunning.OperationFuture;
 import com.google.api.gax.paging.AbstractFixedSizeCollection;
@@ -47,6 +46,7 @@ import com.google.bigtable.admin.v2.ListSnapshotsResponse;
 import com.google.bigtable.admin.v2.ListTablesRequest;
 import com.google.bigtable.admin.v2.ListTablesResponse;
 import com.google.bigtable.admin.v2.ModifyColumnFamiliesRequest;
+import com.google.bigtable.admin.v2.ModifyColumnFamiliesRequest.Modification;
 import com.google.bigtable.admin.v2.Snapshot;
 import com.google.bigtable.admin.v2.SnapshotName;
 import com.google.bigtable.admin.v2.SnapshotTableMetadata;
@@ -68,6 +68,7 @@ import java.io.IOException;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
+import com.google.api.core.InternalApi;
 
 // AUTO-GENERATED DOCUMENTATION AND SERVICE
 /** For internal use only. */
@@ -2001,10 +2002,7 @@ public class BaseBigtableTableAdminClient implements BackgroundResource {
 
   public static class ListTablesPagedResponse
       extends AbstractPagedListResponse<
-          ListTablesRequest,
-          ListTablesResponse,
-          Table,
-          ListTablesPage,
+          ListTablesRequest, ListTablesResponse, Table, ListTablesPage,
           ListTablesFixedSizeCollection> {
 
     public static ApiFuture<ListTablesPagedResponse> createAsync(
@@ -2058,10 +2056,7 @@ public class BaseBigtableTableAdminClient implements BackgroundResource {
 
   public static class ListTablesFixedSizeCollection
       extends AbstractFixedSizeCollection<
-          ListTablesRequest,
-          ListTablesResponse,
-          Table,
-          ListTablesPage,
+          ListTablesRequest, ListTablesResponse, Table, ListTablesPage,
           ListTablesFixedSizeCollection> {
 
     private ListTablesFixedSizeCollection(List<ListTablesPage> pages, int collectionSize) {
@@ -2081,10 +2076,7 @@ public class BaseBigtableTableAdminClient implements BackgroundResource {
 
   public static class ListSnapshotsPagedResponse
       extends AbstractPagedListResponse<
-          ListSnapshotsRequest,
-          ListSnapshotsResponse,
-          Snapshot,
-          ListSnapshotsPage,
+          ListSnapshotsRequest, ListSnapshotsResponse, Snapshot, ListSnapshotsPage,
           ListSnapshotsFixedSizeCollection> {
 
     public static ApiFuture<ListSnapshotsPagedResponse> createAsync(
@@ -2139,10 +2131,7 @@ public class BaseBigtableTableAdminClient implements BackgroundResource {
 
   public static class ListSnapshotsFixedSizeCollection
       extends AbstractFixedSizeCollection<
-          ListSnapshotsRequest,
-          ListSnapshotsResponse,
-          Snapshot,
-          ListSnapshotsPage,
+          ListSnapshotsRequest, ListSnapshotsResponse, Snapshot, ListSnapshotsPage,
           ListSnapshotsFixedSizeCollection> {
 
     private ListSnapshotsFixedSizeCollection(List<ListSnapshotsPage> pages, int collectionSize) {

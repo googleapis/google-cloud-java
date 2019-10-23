@@ -18,7 +18,6 @@ package com.google.cloud.bigtable.admin.v2.stub;
 import static com.google.cloud.bigtable.admin.v2.BaseBigtableInstanceAdminClient.ListAppProfilesPagedResponse;
 
 import com.google.api.core.BetaApi;
-import com.google.api.core.InternalApi;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.UnaryCallable;
@@ -56,6 +55,7 @@ import com.google.longrunning.Operation;
 import com.google.longrunning.stub.OperationsStub;
 import com.google.protobuf.Empty;
 import javax.annotation.Generated;
+import com.google.api.core.InternalApi;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS
 /** For internal use only. */

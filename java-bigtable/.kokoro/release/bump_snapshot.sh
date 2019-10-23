@@ -21,8 +21,8 @@ export NPM_CONFIG_PREFIX=/home/node/.npm-global
 if [ -f ${KOKORO_KEYSTORE_DIR}/73713_github-magic-proxy-url-release-please ]; then
   # Groom the snapshot release PR immediately after publishing a release
   npx release-please release-pr --token=${KOKORO_KEYSTORE_DIR}/73713_github-magic-proxy-token-release-please \
-    --repo-url= \
-    --package-name="" \
+    --repo-url=googleapis/java-bigtable \
+    --package-name="bigtable" \
     --api-url=${KOKORO_KEYSTORE_DIR}/73713_github-magic-proxy-url-release-please \
     --proxy-key=${KOKORO_KEYSTORE_DIR}/73713_github-magic-proxy-key-release-please \
     --snapshot \

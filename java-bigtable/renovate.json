@@ -5,14 +5,9 @@
   "ignoreDeps": [],
   "packageRules": [
     {
-      "packagePatterns": ["*"],
-      "semanticCommitType": "chore"
-    },
-    {
-      "depTypeList": [
-        "dependencies"
-      ],
-      "semanticCommitType": "deps"
+      "managers": ["maven"],
+      "packageNames": ["com.google.guava:guava*"],
+      "versionScheme": "docker"
     },
     {
       "packagePatterns": ["^io.grpc:grpc-"],
@@ -27,5 +22,6 @@
       "groupName": "OpenCensus packages"
     }
   ],
-  "semanticCommits": true
+  "semanticCommits": true,
+  "semanticCommitType": "deps"
 }

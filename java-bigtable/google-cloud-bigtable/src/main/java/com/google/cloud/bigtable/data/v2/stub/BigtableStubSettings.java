@@ -17,7 +17,6 @@ package com.google.cloud.bigtable.data.v2.stub;
 
 import com.google.api.core.ApiFunction;
 import com.google.api.core.BetaApi;
-import com.google.api.core.InternalApi;
 import com.google.api.gax.core.GaxProperties;
 import com.google.api.gax.core.GoogleCredentialsProvider;
 import com.google.api.gax.core.InstantiatingExecutorProvider;
@@ -52,6 +51,7 @@ import java.io.IOException;
 import java.util.List;
 import javax.annotation.Generated;
 import org.threeten.bp.Duration;
+import com.google.api.core.InternalApi;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS
 /** For internal use only. */

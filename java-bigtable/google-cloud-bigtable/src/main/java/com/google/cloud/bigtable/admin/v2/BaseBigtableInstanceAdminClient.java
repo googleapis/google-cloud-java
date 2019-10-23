@@ -19,7 +19,6 @@ import com.google.api.core.ApiFunction;
 import com.google.api.core.ApiFuture;
 import com.google.api.core.ApiFutures;
 import com.google.api.core.BetaApi;
-import com.google.api.core.InternalApi;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.longrunning.OperationFuture;
 import com.google.api.gax.paging.AbstractFixedSizeCollection;
@@ -74,6 +73,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
+import com.google.api.core.InternalApi;
 
 // AUTO-GENERATED DOCUMENTATION AND SERVICE
 /** For internal use only. */
@@ -2044,10 +2044,7 @@ public class BaseBigtableInstanceAdminClient implements BackgroundResource {
 
   public static class ListAppProfilesPagedResponse
       extends AbstractPagedListResponse<
-          ListAppProfilesRequest,
-          ListAppProfilesResponse,
-          AppProfile,
-          ListAppProfilesPage,
+          ListAppProfilesRequest, ListAppProfilesResponse, AppProfile, ListAppProfilesPage,
           ListAppProfilesFixedSizeCollection> {
 
     public static ApiFuture<ListAppProfilesPagedResponse> createAsync(
@@ -2102,10 +2099,7 @@ public class BaseBigtableInstanceAdminClient implements BackgroundResource {
 
   public static class ListAppProfilesFixedSizeCollection
       extends AbstractFixedSizeCollection<
-          ListAppProfilesRequest,
-          ListAppProfilesResponse,
-          AppProfile,
-          ListAppProfilesPage,
+          ListAppProfilesRequest, ListAppProfilesResponse, AppProfile, ListAppProfilesPage,
           ListAppProfilesFixedSizeCollection> {
 
     private ListAppProfilesFixedSizeCollection(
