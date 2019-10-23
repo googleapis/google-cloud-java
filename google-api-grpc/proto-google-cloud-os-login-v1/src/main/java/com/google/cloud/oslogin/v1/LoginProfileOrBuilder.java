@@ -139,16 +139,4 @@ public interface LoginProfileOrBuilder
    */
   com.google.cloud.oslogin.common.OsLoginProto.SshPublicKey getSshPublicKeysOrThrow(
       java.lang.String key);
-
-  /**
-   *
-   *
-   * <pre>
-   * Indicates if the user is suspended. A suspended user cannot log in but
-   * their profile information is retained.
-   * </pre>
-   *
-   * <code>bool suspended = 4;</code>
-   */
-  boolean getSuspended();
 }

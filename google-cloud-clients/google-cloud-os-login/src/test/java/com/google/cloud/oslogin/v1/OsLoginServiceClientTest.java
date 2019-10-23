@@ -81,7 +81,7 @@ public class OsLoginServiceClientTest {
     Empty expectedResponse = Empty.newBuilder().build();
     mockOsLoginService.addResponse(expectedResponse);
 
-    ProjectName name = ProjectName.of("[USER]", "[PROJECT]");
+    PosixAccountName name = PosixAccountName.of("[USER]", "[PROJECT]");
 
     client.deletePosixAccount(name);
 
@@ -89,7 +89,7 @@ public class OsLoginServiceClientTest {
     Assert.assertEquals(1, actualRequests.size());
     DeletePosixAccountRequest actualRequest = (DeletePosixAccountRequest) actualRequests.get(0);
 
-    Assert.assertEquals(name, ProjectName.parse(actualRequest.getName()));
+    Assert.assertEquals(name, PosixAccountName.parse(actualRequest.getName()));
     Assert.assertTrue(
         channelProvider.isHeaderSent(
             ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
@@ -103,7 +103,7 @@ public class OsLoginServiceClientTest {
     mockOsLoginService.addException(exception);
 
     try {
-      ProjectName name = ProjectName.of("[USER]", "[PROJECT]");
+      PosixAccountName name = PosixAccountName.of("[USER]", "[PROJECT]");
 
       client.deletePosixAccount(name);
       Assert.fail("No exception raised");
@@ -118,7 +118,7 @@ public class OsLoginServiceClientTest {
     Empty expectedResponse = Empty.newBuilder().build();
     mockOsLoginService.addResponse(expectedResponse);
 
-    FingerprintName name = FingerprintName.of("[USER]", "[FINGERPRINT]");
+    SshPublicKeyName name = SshPublicKeyName.of("[USER]", "[FINGERPRINT]");
 
     client.deleteSshPublicKey(name);
 
@@ -126,7 +126,7 @@ public class OsLoginServiceClientTest {
     Assert.assertEquals(1, actualRequests.size());
     DeleteSshPublicKeyRequest actualRequest = (DeleteSshPublicKeyRequest) actualRequests.get(0);
 
-    Assert.assertEquals(name, FingerprintName.parse(actualRequest.getName()));
+    Assert.assertEquals(name, SshPublicKeyName.parse(actualRequest.getName()));
     Assert.assertTrue(
         channelProvider.isHeaderSent(
             ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
@@ -140,7 +140,7 @@ public class OsLoginServiceClientTest {
     mockOsLoginService.addException(exception);
 
     try {
-      FingerprintName name = FingerprintName.of("[USER]", "[FINGERPRINT]");
+      SshPublicKeyName name = SshPublicKeyName.of("[USER]", "[FINGERPRINT]");
 
       client.deleteSshPublicKey(name);
       Assert.fail("No exception raised");
@@ -153,9 +153,7 @@ public class OsLoginServiceClientTest {
   @SuppressWarnings("all")
   public void getLoginProfileTest() {
     String name2 = "name2-1052831874";
-    boolean suspended = false;
-    LoginProfile expectedResponse =
-        LoginProfile.newBuilder().setName(name2).setSuspended(suspended).build();
+    LoginProfile expectedResponse = LoginProfile.newBuilder().setName(name2).build();
     mockOsLoginService.addResponse(expectedResponse);
 
     UserName name = UserName.of("[USER]");
@@ -196,17 +194,18 @@ public class OsLoginServiceClientTest {
     String key = "key106079";
     long expirationTimeUsec = 2058878882L;
     String fingerprint = "fingerprint-1375934236";
-    String name2 = "name2-1052831874";
+    com.google.cloud.oslogin.common.SshPublicKeyName name2 =
+        com.google.cloud.oslogin.common.SshPublicKeyName.of("[USER]", "[FINGERPRINT]");
     SshPublicKey expectedResponse =
         SshPublicKey.newBuilder()
             .setKey(key)
             .setExpirationTimeUsec(expirationTimeUsec)
             .setFingerprint(fingerprint)
-            .setName(name2)
+            .setName(name2.toString())
             .build();
     mockOsLoginService.addResponse(expectedResponse);
 
-    FingerprintName name = FingerprintName.of("[USER]", "[FINGERPRINT]");
+    SshPublicKeyName name = SshPublicKeyName.of("[USER]", "[FINGERPRINT]");
 
     SshPublicKey actualResponse = client.getSshPublicKey(name);
     Assert.assertEquals(expectedResponse, actualResponse);
@@ -215,7 +214,7 @@ public class OsLoginServiceClientTest {
     Assert.assertEquals(1, actualRequests.size());
     GetSshPublicKeyRequest actualRequest = (GetSshPublicKeyRequest) actualRequests.get(0);
 
-    Assert.assertEquals(name, FingerprintName.parse(actualRequest.getName()));
+    Assert.assertEquals(name, SshPublicKeyName.parse(actualRequest.getName()));
     Assert.assertTrue(
         channelProvider.isHeaderSent(
             ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
@@ -229,7 +228,7 @@ public class OsLoginServiceClientTest {
     mockOsLoginService.addException(exception);
 
     try {
-      FingerprintName name = FingerprintName.of("[USER]", "[FINGERPRINT]");
+      SshPublicKeyName name = SshPublicKeyName.of("[USER]", "[FINGERPRINT]");
 
       client.getSshPublicKey(name);
       Assert.fail("No exception raised");
@@ -330,17 +329,18 @@ public class OsLoginServiceClientTest {
     String key = "key106079";
     long expirationTimeUsec = 2058878882L;
     String fingerprint = "fingerprint-1375934236";
-    String name2 = "name2-1052831874";
+    com.google.cloud.oslogin.common.SshPublicKeyName name2 =
+        com.google.cloud.oslogin.common.SshPublicKeyName.of("[USER]", "[FINGERPRINT]");
     SshPublicKey expectedResponse =
         SshPublicKey.newBuilder()
             .setKey(key)
             .setExpirationTimeUsec(expirationTimeUsec)
             .setFingerprint(fingerprint)
-            .setName(name2)
+            .setName(name2.toString())
             .build();
     mockOsLoginService.addResponse(expectedResponse);
 
-    FingerprintName name = FingerprintName.of("[USER]", "[FINGERPRINT]");
+    SshPublicKeyName name = SshPublicKeyName.of("[USER]", "[FINGERPRINT]");
     SshPublicKey sshPublicKey = SshPublicKey.newBuilder().build();
 
     SshPublicKey actualResponse = client.updateSshPublicKey(name, sshPublicKey);
@@ -350,7 +350,7 @@ public class OsLoginServiceClientTest {
     Assert.assertEquals(1, actualRequests.size());
     UpdateSshPublicKeyRequest actualRequest = (UpdateSshPublicKeyRequest) actualRequests.get(0);
 
-    Assert.assertEquals(name, FingerprintName.parse(actualRequest.getName()));
+    Assert.assertEquals(name, SshPublicKeyName.parse(actualRequest.getName()));
     Assert.assertEquals(sshPublicKey, actualRequest.getSshPublicKey());
     Assert.assertTrue(
         channelProvider.isHeaderSent(
@@ -365,7 +365,7 @@ public class OsLoginServiceClientTest {
     mockOsLoginService.addException(exception);
 
     try {
-      FingerprintName name = FingerprintName.of("[USER]", "[FINGERPRINT]");
+      SshPublicKeyName name = SshPublicKeyName.of("[USER]", "[FINGERPRINT]");
       SshPublicKey sshPublicKey = SshPublicKey.newBuilder().build();
 
       client.updateSshPublicKey(name, sshPublicKey);
@@ -381,17 +381,18 @@ public class OsLoginServiceClientTest {
     String key = "key106079";
     long expirationTimeUsec = 2058878882L;
     String fingerprint = "fingerprint-1375934236";
-    String name2 = "name2-1052831874";
+    com.google.cloud.oslogin.common.SshPublicKeyName name2 =
+        com.google.cloud.oslogin.common.SshPublicKeyName.of("[USER]", "[FINGERPRINT]");
     SshPublicKey expectedResponse =
         SshPublicKey.newBuilder()
             .setKey(key)
             .setExpirationTimeUsec(expirationTimeUsec)
             .setFingerprint(fingerprint)
-            .setName(name2)
+            .setName(name2.toString())
             .build();
     mockOsLoginService.addResponse(expectedResponse);
 
-    FingerprintName name = FingerprintName.of("[USER]", "[FINGERPRINT]");
+    SshPublicKeyName name = SshPublicKeyName.of("[USER]", "[FINGERPRINT]");
     SshPublicKey sshPublicKey = SshPublicKey.newBuilder().build();
     FieldMask updateMask = FieldMask.newBuilder().build();
 
@@ -402,7 +403,7 @@ public class OsLoginServiceClientTest {
     Assert.assertEquals(1, actualRequests.size());
     UpdateSshPublicKeyRequest actualRequest = (UpdateSshPublicKeyRequest) actualRequests.get(0);
 
-    Assert.assertEquals(name, FingerprintName.parse(actualRequest.getName()));
+    Assert.assertEquals(name, SshPublicKeyName.parse(actualRequest.getName()));
     Assert.assertEquals(sshPublicKey, actualRequest.getSshPublicKey());
     Assert.assertEquals(updateMask, actualRequest.getUpdateMask());
     Assert.assertTrue(
@@ -418,7 +419,7 @@ public class OsLoginServiceClientTest {
     mockOsLoginService.addException(exception);
 
     try {
-      FingerprintName name = FingerprintName.of("[USER]", "[FINGERPRINT]");
+      SshPublicKeyName name = SshPublicKeyName.of("[USER]", "[FINGERPRINT]");
       SshPublicKey sshPublicKey = SshPublicKey.newBuilder().build();
       FieldMask updateMask = FieldMask.newBuilder().build();
 

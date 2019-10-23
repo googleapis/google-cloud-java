@@ -92,11 +92,6 @@ public final class LoginProfile extends com.google.protobuf.GeneratedMessageV3
                   .put(sshPublicKeys__.getKey(), sshPublicKeys__.getValue());
               break;
             }
-          case 32:
-            {
-              suspended_ = input.readBool();
-              break;
-            }
           default:
             {
               if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -366,22 +361,6 @@ public final class LoginProfile extends com.google.protobuf.GeneratedMessageV3
     return map.get(key);
   }
 
-  public static final int SUSPENDED_FIELD_NUMBER = 4;
-  private boolean suspended_;
-  /**
-   *
-   *
-   * <pre>
-   * Indicates if the user is suspended. A suspended user cannot log in but
-   * their profile information is retained.
-   * </pre>
-   *
-   * <code>bool suspended = 4;</code>
-   */
-  public boolean getSuspended() {
-    return suspended_;
-  }
-
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -404,9 +383,6 @@ public final class LoginProfile extends com.google.protobuf.GeneratedMessageV3
     }
     com.google.protobuf.GeneratedMessageV3.serializeStringMapTo(
         output, internalGetSshPublicKeys(), SshPublicKeysDefaultEntryHolder.defaultEntry, 3);
-    if (suspended_ != false) {
-      output.writeBool(4, suspended_);
-    }
     unknownFields.writeTo(output);
   }
 
@@ -435,9 +411,6 @@ public final class LoginProfile extends com.google.protobuf.GeneratedMessageV3
                   .build();
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(3, sshPublicKeys__);
     }
-    if (suspended_ != false) {
-      size += com.google.protobuf.CodedOutputStream.computeBoolSize(4, suspended_);
-    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -456,7 +429,6 @@ public final class LoginProfile extends com.google.protobuf.GeneratedMessageV3
     if (!getName().equals(other.getName())) return false;
     if (!getPosixAccountsList().equals(other.getPosixAccountsList())) return false;
     if (!internalGetSshPublicKeys().equals(other.internalGetSshPublicKeys())) return false;
-    if (getSuspended() != other.getSuspended()) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -478,8 +450,6 @@ public final class LoginProfile extends com.google.protobuf.GeneratedMessageV3
       hash = (37 * hash) + SSH_PUBLIC_KEYS_FIELD_NUMBER;
       hash = (53 * hash) + internalGetSshPublicKeys().hashCode();
     }
-    hash = (37 * hash) + SUSPENDED_FIELD_NUMBER;
-    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getSuspended());
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -657,8 +627,6 @@ public final class LoginProfile extends com.google.protobuf.GeneratedMessageV3
         posixAccountsBuilder_.clear();
       }
       internalGetMutableSshPublicKeys().clear();
-      suspended_ = false;
-
       return this;
     }
 
@@ -700,7 +668,6 @@ public final class LoginProfile extends com.google.protobuf.GeneratedMessageV3
       }
       result.sshPublicKeys_ = internalGetSshPublicKeys();
       result.sshPublicKeys_.makeImmutable();
-      result.suspended_ = suspended_;
       result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
@@ -783,9 +750,6 @@ public final class LoginProfile extends com.google.protobuf.GeneratedMessageV3
         }
       }
       internalGetMutableSshPublicKeys().mergeFrom(other.internalGetSshPublicKeys());
-      if (other.getSuspended() != false) {
-        setSuspended(other.getSuspended());
-      }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
       return this;
@@ -1457,53 +1421,6 @@ public final class LoginProfile extends com.google.protobuf.GeneratedMessageV3
         java.util.Map<java.lang.String, com.google.cloud.oslogin.common.OsLoginProto.SshPublicKey>
             values) {
       internalGetMutableSshPublicKeys().getMutableMap().putAll(values);
-      return this;
-    }
-
-    private boolean suspended_;
-    /**
-     *
-     *
-     * <pre>
-     * Indicates if the user is suspended. A suspended user cannot log in but
-     * their profile information is retained.
-     * </pre>
-     *
-     * <code>bool suspended = 4;</code>
-     */
-    public boolean getSuspended() {
-      return suspended_;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Indicates if the user is suspended. A suspended user cannot log in but
-     * their profile information is retained.
-     * </pre>
-     *
-     * <code>bool suspended = 4;</code>
-     */
-    public Builder setSuspended(boolean value) {
-
-      suspended_ = value;
-      onChanged();
-      return this;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Indicates if the user is suspended. A suspended user cannot log in but
-     * their profile information is retained.
-     * </pre>
-     *
-     * <code>bool suspended = 4;</code>
-     */
-    public Builder clearSuspended() {
-
-      suspended_ = false;
-      onChanged();
       return this;
     }
 
