@@ -18,6 +18,7 @@ package com.google.cloud.bigtable.admin.v2.stub;
 import static com.google.cloud.bigtable.admin.v2.BaseBigtableInstanceAdminClient.ListAppProfilesPagedResponse;
 
 import com.google.api.core.BetaApi;
+import com.google.api.core.InternalApi;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.core.BackgroundResourceAggregation;
 import com.google.api.gax.grpc.GrpcCallSettings;
@@ -66,7 +67,6 @@ import java.io.IOException;
 import java.util.Map;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
-import com.google.api.core.InternalApi;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS
 /** For internal use only. */

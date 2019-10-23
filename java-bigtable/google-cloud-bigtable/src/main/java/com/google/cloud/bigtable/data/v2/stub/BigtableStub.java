@@ -15,7 +15,7 @@
  */
 package com.google.cloud.bigtable.data.v2.stub;
 
-import com.google.api.core.BetaApi;
+import com.google.api.core.InternalApi;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.rpc.ServerStreamingCallable;
 import com.google.api.gax.rpc.UnaryCallable;
@@ -32,7 +32,6 @@ import com.google.bigtable.v2.ReadRowsResponse;
 import com.google.bigtable.v2.SampleRowKeysRequest;
 import com.google.bigtable.v2.SampleRowKeysResponse;
 import javax.annotation.Generated;
-import com.google.api.core.InternalApi;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS
 /** For internal use only. */

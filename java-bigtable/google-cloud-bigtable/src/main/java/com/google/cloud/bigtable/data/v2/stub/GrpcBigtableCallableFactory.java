@@ -16,6 +16,7 @@
 package com.google.cloud.bigtable.data.v2.stub;
 
 import com.google.api.core.BetaApi;
+import com.google.api.core.InternalApi;
 import com.google.api.gax.grpc.GrpcCallSettings;
 import com.google.api.gax.grpc.GrpcCallableFactory;
 import com.google.api.gax.grpc.GrpcStubCallableFactory;
@@ -31,10 +32,8 @@ import com.google.api.gax.rpc.ServerStreamingCallable;
 import com.google.api.gax.rpc.StreamingCallSettings;
 import com.google.api.gax.rpc.UnaryCallSettings;
 import com.google.api.gax.rpc.UnaryCallable;
-import com.google.longrunning.Operation;
 import com.google.longrunning.stub.OperationsStub;
 import javax.annotation.Generated;
-import com.google.api.core.InternalApi;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS
 /** For internal use only. */

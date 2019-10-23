@@ -20,6 +20,7 @@ import static com.google.cloud.bigtable.admin.v2.BaseBigtableTableAdminClient.Li
 
 import com.google.api.core.ApiFunction;
 import com.google.api.core.BetaApi;
+import com.google.api.core.InternalApi;
 import com.google.api.gax.core.GoogleCredentialsProvider;
 import com.google.api.gax.core.InstantiatingExecutorProvider;
 import com.google.api.gax.grpc.InstantiatingGrpcChannelProvider;
@@ -62,7 +63,6 @@ import com.google.protobuf.Empty;
 import java.io.IOException;
 import java.util.List;
 import javax.annotation.Generated;
-import com.google.api.core.InternalApi;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS
 /** For internal use only. */

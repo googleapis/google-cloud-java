@@ -47,7 +47,7 @@ def main():
   generate_data_api(gapic, license)
   generate_admin_api(gapic, license)
 
-  java.format_code('src')
+  java.format_code(f'./google-cloud-bigtable/src')
 
   common_templates = gcp.CommonTemplates()
   templates = common_templates.java_library()
