@@ -293,6 +293,28 @@ public class StatementParserTest {
   }
 
   @Test
+  public void testQueryHints() {
+    // Valid query hints.
+    assertTrue(parser.isQuery("@{JOIN_METHOD=HASH_JOIN} SELECT * FROM PersonsTable"));
+    assertTrue(parser.isQuery("@ {JOIN_METHOD=HASH_JOIN} SELECT * FROM PersonsTable"));
+    assertTrue(parser.isQuery("@{ JOIN_METHOD=HASH_JOIN} SELECT * FROM PersonsTable"));
+    assertTrue(parser.isQuery("@{JOIN_METHOD=HASH_JOIN } SELECT * FROM PersonsTable"));
+    assertTrue(parser.isQuery("@{JOIN_METHOD=HASH_JOIN}\nSELECT * FROM PersonsTable"));
+    assertTrue(parser.isQuery("@{\nJOIN_METHOD =  HASH_JOIN   \t}\n\t SELECT * FROM PersonsTable"));
+    assertTrue(
+        parser.isQuery(
+            "@{JOIN_METHOD=HASH_JOIN}\n -- Single line comment\nSELECT * FROM PersonsTable"));
+    assertTrue(
+        parser.isQuery(
+            "@{JOIN_METHOD=HASH_JOIN}\n /* Multi line comment\n with more comments\n */SELECT * FROM PersonsTable"));
+
+    // Invalid query hints.
+    assertFalse(parser.isQuery("@{JOIN_METHOD=HASH_JOIN SELECT * FROM PersonsTable"));
+    assertFalse(parser.isQuery("@JOIN_METHOD=HASH_JOIN} SELECT * FROM PersonsTable"));
+    assertFalse(parser.isQuery("@JOIN_METHOD=HASH_JOIN SELECT * FROM PersonsTable"));
+  }
+
+  @Test
   public void testIsUpdate_InsertStatements() {
     assertFalse(parser.isUpdateStatement(""));
     assertFalse(parser.isUpdateStatement("random text"));
