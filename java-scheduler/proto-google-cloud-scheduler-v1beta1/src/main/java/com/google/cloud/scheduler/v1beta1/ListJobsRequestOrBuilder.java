@@ -12,24 +12,26 @@ public interface ListJobsRequestOrBuilder
    *
    *
    * <pre>
-   * Required.
-   * The location name. For example:
+   * Required. The location name. For example:
    * `projects/PROJECT_ID/locations/LOCATION_ID`.
    * </pre>
    *
-   * <code>string parent = 1;</code>
+   * <code>
+   * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    */
   java.lang.String getParent();
   /**
    *
    *
    * <pre>
-   * Required.
-   * The location name. For example:
+   * Required. The location name. For example:
    * `projects/PROJECT_ID/locations/LOCATION_ID`.
    * </pre>
    *
-   * <code>string parent = 1;</code>
+   * <code>
+   * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    */
   com.google.protobuf.ByteString getParentBytes();
 

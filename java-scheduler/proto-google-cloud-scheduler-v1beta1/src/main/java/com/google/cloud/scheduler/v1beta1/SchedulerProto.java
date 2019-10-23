@@ -59,60 +59,73 @@ public final class SchedulerProto {
     java.lang.String[] descriptorData = {
       "\n3google/cloud/scheduler/v1beta1/cloudsc"
           + "heduler.proto\022\036google.cloud.scheduler.v1"
-          + "beta1\032\034google/api/annotations.proto\032\031goo"
-          + "gle/api/resource.proto\032(google/cloud/sch"
-          + "eduler/v1beta1/job.proto\032\033google/protobu"
-          + "f/empty.proto\032 google/protobuf/field_mas"
-          + "k.proto\"H\n\017ListJobsRequest\022\016\n\006parent\030\001 \001"
-          + "(\t\022\021\n\tpage_size\030\005 \001(\005\022\022\n\npage_token\030\006 \001("
-          + "\t\"^\n\020ListJobsResponse\0221\n\004jobs\030\001 \003(\0132#.go"
-          + "ogle.cloud.scheduler.v1beta1.Job\022\027\n\017next"
-          + "_page_token\030\002 \001(\t\"\035\n\rGetJobRequest\022\014\n\004na"
-          + "me\030\001 \001(\t\"T\n\020CreateJobRequest\022\016\n\006parent\030\001"
-          + " \001(\t\0220\n\003job\030\002 \001(\0132#.google.cloud.schedul"
-          + "er.v1beta1.Job\"u\n\020UpdateJobRequest\0220\n\003jo"
-          + "b\030\001 \001(\0132#.google.cloud.scheduler.v1beta1"
-          + ".Job\022/\n\013update_mask\030\002 \001(\0132\032.google.proto"
-          + "buf.FieldMask\" \n\020DeleteJobRequest\022\014\n\004nam"
-          + "e\030\001 \001(\t\"\037\n\017PauseJobRequest\022\014\n\004name\030\001 \001(\t"
-          + "\" \n\020ResumeJobRequest\022\014\n\004name\030\001 \001(\t\"\035\n\rRu"
-          + "nJobRequest\022\014\n\004name\030\001 \001(\t2\210\n\n\016CloudSched"
-          + "uler\022\244\001\n\010ListJobs\022/.google.cloud.schedul"
-          + "er.v1beta1.ListJobsRequest\0320.google.clou"
-          + "d.scheduler.v1beta1.ListJobsResponse\"5\202\323"
-          + "\344\223\002/\022-/v1beta1/{parent=projects/*/locati"
-          + "ons/*}/jobs\022\223\001\n\006GetJob\022-.google.cloud.sc"
-          + "heduler.v1beta1.GetJobRequest\032#.google.c"
-          + "loud.scheduler.v1beta1.Job\"5\202\323\344\223\002/\022-/v1b"
-          + "eta1/{name=projects/*/locations/*/jobs/*"
-          + "}\022\236\001\n\tCreateJob\0220.google.cloud.scheduler"
-          + ".v1beta1.CreateJobRequest\032#.google.cloud"
-          + ".scheduler.v1beta1.Job\":\202\323\344\223\0024\"-/v1beta1"
-          + "/{parent=projects/*/locations/*}/jobs:\003j"
-          + "ob\022\242\001\n\tUpdateJob\0220.google.cloud.schedule"
-          + "r.v1beta1.UpdateJobRequest\032#.google.clou"
-          + "d.scheduler.v1beta1.Job\">\202\323\344\223\002821/v1beta"
-          + "1/{job.name=projects/*/locations/*/jobs/"
-          + "*}:\003job\022\214\001\n\tDeleteJob\0220.google.cloud.sch"
-          + "eduler.v1beta1.DeleteJobRequest\032\026.google"
-          + ".protobuf.Empty\"5\202\323\344\223\002/*-/v1beta1/{name="
-          + "projects/*/locations/*/jobs/*}\022\240\001\n\010Pause"
-          + "Job\022/.google.cloud.scheduler.v1beta1.Pau"
-          + "seJobRequest\032#.google.cloud.scheduler.v1"
-          + "beta1.Job\">\202\323\344\223\0028\"3/v1beta1/{name=projec"
-          + "ts/*/locations/*/jobs/*}:pause:\001*\022\243\001\n\tRe"
-          + "sumeJob\0220.google.cloud.scheduler.v1beta1"
-          + ".ResumeJobRequest\032#.google.cloud.schedul"
-          + "er.v1beta1.Job\"?\202\323\344\223\0029\"4/v1beta1/{name=p"
-          + "rojects/*/locations/*/jobs/*}:resume:\001*\022"
-          + "\232\001\n\006RunJob\022-.google.cloud.scheduler.v1be"
-          + "ta1.RunJobRequest\032#.google.cloud.schedul"
-          + "er.v1beta1.Job\"<\202\323\344\223\0026\"1/v1beta1/{name=p"
-          + "rojects/*/locations/*/jobs/*}:run:\001*B\213\001\n"
-          + "\"com.google.cloud.scheduler.v1beta1B\016Sch"
-          + "edulerProtoP\001ZGgoogle.golang.org/genprot"
-          + "o/googleapis/cloud/scheduler/v1beta1;sch"
-          + "eduler\242\002\tSCHEDULERb\006proto3"
+          + "beta1\032\034google/api/annotations.proto\032\027goo"
+          + "gle/api/client.proto\032\037google/api/field_b"
+          + "ehavior.proto\032\031google/api/resource.proto"
+          + "\032(google/cloud/scheduler/v1beta1/job.pro"
+          + "to\032\033google/protobuf/empty.proto\032 google/"
+          + "protobuf/field_mask.proto\"s\n\017ListJobsReq"
+          + "uest\0229\n\006parent\030\001 \001(\tB)\340A\002\372A#\022!cloudsched"
+          + "uler.googleapis.com/Job\022\021\n\tpage_size\030\005 \001"
+          + "(\005\022\022\n\npage_token\030\006 \001(\t\"^\n\020ListJobsRespon"
+          + "se\0221\n\004jobs\030\001 \003(\0132#.google.cloud.schedule"
+          + "r.v1beta1.Job\022\027\n\017next_page_token\030\002 \001(\t\"H"
+          + "\n\rGetJobRequest\0227\n\004name\030\001 \001(\tB)\340A\002\372A#\n!c"
+          + "loudscheduler.googleapis.com/Job\"\204\001\n\020Cre"
+          + "ateJobRequest\0229\n\006parent\030\001 \001(\tB)\340A\002\372A#\022!c"
+          + "loudscheduler.googleapis.com/Job\0225\n\003job\030"
+          + "\002 \001(\0132#.google.cloud.scheduler.v1beta1.J"
+          + "obB\003\340A\002\"z\n\020UpdateJobRequest\0225\n\003job\030\001 \001(\013"
+          + "2#.google.cloud.scheduler.v1beta1.JobB\003\340"
+          + "A\002\022/\n\013update_mask\030\002 \001(\0132\032.google.protobu"
+          + "f.FieldMask\"K\n\020DeleteJobRequest\0227\n\004name\030"
+          + "\001 \001(\tB)\340A\002\372A#\n!cloudscheduler.googleapis"
+          + ".com/Job\"J\n\017PauseJobRequest\0227\n\004name\030\001 \001("
+          + "\tB)\340A\002\372A#\n!cloudscheduler.googleapis.com"
+          + "/Job\"K\n\020ResumeJobRequest\0227\n\004name\030\001 \001(\tB)"
+          + "\340A\002\372A#\n!cloudscheduler.googleapis.com/Jo"
+          + "b\"H\n\rRunJobRequest\0227\n\004name\030\001 \001(\tB)\340A\002\372A#"
+          + "\n!cloudscheduler.googleapis.com/Job2\246\013\n\016"
+          + "CloudScheduler\022\255\001\n\010ListJobs\022/.google.clo"
+          + "ud.scheduler.v1beta1.ListJobsRequest\0320.g"
+          + "oogle.cloud.scheduler.v1beta1.ListJobsRe"
+          + "sponse\">\202\323\344\223\002/\022-/v1beta1/{parent=project"
+          + "s/*/locations/*}/jobs\332A\006parent\022\232\001\n\006GetJo"
+          + "b\022-.google.cloud.scheduler.v1beta1.GetJo"
+          + "bRequest\032#.google.cloud.scheduler.v1beta"
+          + "1.Job\"<\202\323\344\223\002/\022-/v1beta1/{name=projects/*"
+          + "/locations/*/jobs/*}\332A\004name\022\253\001\n\tCreateJo"
+          + "b\0220.google.cloud.scheduler.v1beta1.Creat"
+          + "eJobRequest\032#.google.cloud.scheduler.v1b"
+          + "eta1.Job\"G\202\323\344\223\0024\"-/v1beta1/{parent=proje"
+          + "cts/*/locations/*}/jobs:\003job\332A\nparent,jo"
+          + "b\022\264\001\n\tUpdateJob\0220.google.cloud.scheduler"
+          + ".v1beta1.UpdateJobRequest\032#.google.cloud"
+          + ".scheduler.v1beta1.Job\"P\202\323\344\223\002821/v1beta1"
+          + "/{job.name=projects/*/locations/*/jobs/*"
+          + "}:\003job\332A\017job,update_mask\022\223\001\n\tDeleteJob\0220"
+          + ".google.cloud.scheduler.v1beta1.DeleteJo"
+          + "bRequest\032\026.google.protobuf.Empty\"<\202\323\344\223\002/"
+          + "*-/v1beta1/{name=projects/*/locations/*/"
+          + "jobs/*}\332A\004name\022\247\001\n\010PauseJob\022/.google.clo"
+          + "ud.scheduler.v1beta1.PauseJobRequest\032#.g"
+          + "oogle.cloud.scheduler.v1beta1.Job\"E\202\323\344\223\002"
+          + "8\"3/v1beta1/{name=projects/*/locations/*"
+          + "/jobs/*}:pause:\001*\332A\004name\022\252\001\n\tResumeJob\0220"
+          + ".google.cloud.scheduler.v1beta1.ResumeJo"
+          + "bRequest\032#.google.cloud.scheduler.v1beta"
+          + "1.Job\"F\202\323\344\223\0029\"4/v1beta1/{name=projects/*"
+          + "/locations/*/jobs/*}:resume:\001*\332A\004name\022\241\001"
+          + "\n\006RunJob\022-.google.cloud.scheduler.v1beta"
+          + "1.RunJobRequest\032#.google.cloud.scheduler"
+          + ".v1beta1.Job\"C\202\323\344\223\0026\"1/v1beta1/{name=pro"
+          + "jects/*/locations/*/jobs/*}:run:\001*\332A\004nam"
+          + "e\032Q\312A\035cloudscheduler.googleapis.com\322A.ht"
+          + "tps://www.googleapis.com/auth/cloud-plat"
+          + "formB\213\001\n\"com.google.cloud.scheduler.v1be"
+          + "ta1B\016SchedulerProtoP\001ZGgoogle.golang.org"
+          + "/genproto/googleapis/cloud/scheduler/v1b"
+          + "eta1;scheduler\242\002\tSCHEDULERb\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner() {
@@ -126,6 +139,8 @@ public final class SchedulerProto {
         descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
           com.google.api.AnnotationsProto.getDescriptor(),
+          com.google.api.ClientProto.getDescriptor(),
+          com.google.api.FieldBehaviorProto.getDescriptor(),
           com.google.api.ResourceProto.getDescriptor(),
           com.google.cloud.scheduler.v1beta1.JobProto.getDescriptor(),
           com.google.protobuf.EmptyProto.getDescriptor(),
@@ -206,10 +221,17 @@ public final class SchedulerProto {
             });
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();
+    registry.add(com.google.api.ClientProto.defaultHost);
+    registry.add(com.google.api.FieldBehaviorProto.fieldBehavior);
     registry.add(com.google.api.AnnotationsProto.http);
+    registry.add(com.google.api.ClientProto.methodSignature);
+    registry.add(com.google.api.ClientProto.oauthScopes);
+    registry.add(com.google.api.ResourceProto.resourceReference);
     com.google.protobuf.Descriptors.FileDescriptor.internalUpdateFileDescriptor(
         descriptor, registry);
     com.google.api.AnnotationsProto.getDescriptor();
+    com.google.api.ClientProto.getDescriptor();
+    com.google.api.FieldBehaviorProto.getDescriptor();
     com.google.api.ResourceProto.getDescriptor();
     com.google.cloud.scheduler.v1beta1.JobProto.getDescriptor();
     com.google.protobuf.EmptyProto.getDescriptor();

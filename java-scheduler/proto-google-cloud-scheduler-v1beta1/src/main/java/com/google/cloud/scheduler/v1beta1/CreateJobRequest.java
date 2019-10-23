@@ -113,12 +113,13 @@ public final class CreateJobRequest extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Required.
-   * The location name. For example:
+   * Required. The location name. For example:
    * `projects/PROJECT_ID/locations/LOCATION_ID`.
    * </pre>
    *
-   * <code>string parent = 1;</code>
+   * <code>
+   * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    */
   public java.lang.String getParent() {
     java.lang.Object ref = parent_;
@@ -135,12 +136,13 @@ public final class CreateJobRequest extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Required.
-   * The location name. For example:
+   * Required. The location name. For example:
    * `projects/PROJECT_ID/locations/LOCATION_ID`.
    * </pre>
    *
-   * <code>string parent = 1;</code>
+   * <code>
+   * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    */
   public com.google.protobuf.ByteString getParentBytes() {
     java.lang.Object ref = parent_;
@@ -160,15 +162,15 @@ public final class CreateJobRequest extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Required.
-   * The job to add. The user can optionally specify a name for the
+   * Required. The job to add. The user can optionally specify a name for the
    * job in [name][google.cloud.scheduler.v1beta1.Job.name]. [name][google.cloud.scheduler.v1beta1.Job.name] cannot be the same as an
    * existing job. If a name is not specified then the system will
    * generate a random unique name that will be returned
    * ([name][google.cloud.scheduler.v1beta1.Job.name]) in the response.
    * </pre>
    *
-   * <code>.google.cloud.scheduler.v1beta1.Job job = 2;</code>
+   * <code>.google.cloud.scheduler.v1beta1.Job job = 2 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   public boolean hasJob() {
     return job_ != null;
@@ -177,15 +179,15 @@ public final class CreateJobRequest extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Required.
-   * The job to add. The user can optionally specify a name for the
+   * Required. The job to add. The user can optionally specify a name for the
    * job in [name][google.cloud.scheduler.v1beta1.Job.name]. [name][google.cloud.scheduler.v1beta1.Job.name] cannot be the same as an
    * existing job. If a name is not specified then the system will
    * generate a random unique name that will be returned
    * ([name][google.cloud.scheduler.v1beta1.Job.name]) in the response.
    * </pre>
    *
-   * <code>.google.cloud.scheduler.v1beta1.Job job = 2;</code>
+   * <code>.google.cloud.scheduler.v1beta1.Job job = 2 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   public com.google.cloud.scheduler.v1beta1.Job getJob() {
     return job_ == null ? com.google.cloud.scheduler.v1beta1.Job.getDefaultInstance() : job_;
@@ -194,15 +196,15 @@ public final class CreateJobRequest extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Required.
-   * The job to add. The user can optionally specify a name for the
+   * Required. The job to add. The user can optionally specify a name for the
    * job in [name][google.cloud.scheduler.v1beta1.Job.name]. [name][google.cloud.scheduler.v1beta1.Job.name] cannot be the same as an
    * existing job. If a name is not specified then the system will
    * generate a random unique name that will be returned
    * ([name][google.cloud.scheduler.v1beta1.Job.name]) in the response.
    * </pre>
    *
-   * <code>.google.cloud.scheduler.v1beta1.Job job = 2;</code>
+   * <code>.google.cloud.scheduler.v1beta1.Job job = 2 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   public com.google.cloud.scheduler.v1beta1.JobOrBuilder getJobOrBuilder() {
     return getJob();
@@ -559,12 +561,13 @@ public final class CreateJobRequest extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Required.
-     * The location name. For example:
+     * Required. The location name. For example:
      * `projects/PROJECT_ID/locations/LOCATION_ID`.
      * </pre>
      *
-     * <code>string parent = 1;</code>
+     * <code>
+     * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      */
     public java.lang.String getParent() {
       java.lang.Object ref = parent_;
@@ -581,12 +584,13 @@ public final class CreateJobRequest extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Required.
-     * The location name. For example:
+     * Required. The location name. For example:
      * `projects/PROJECT_ID/locations/LOCATION_ID`.
      * </pre>
      *
-     * <code>string parent = 1;</code>
+     * <code>
+     * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      */
     public com.google.protobuf.ByteString getParentBytes() {
       java.lang.Object ref = parent_;
@@ -603,12 +607,13 @@ public final class CreateJobRequest extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Required.
-     * The location name. For example:
+     * Required. The location name. For example:
      * `projects/PROJECT_ID/locations/LOCATION_ID`.
      * </pre>
      *
-     * <code>string parent = 1;</code>
+     * <code>
+     * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      */
     public Builder setParent(java.lang.String value) {
       if (value == null) {
@@ -623,12 +628,13 @@ public final class CreateJobRequest extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Required.
-     * The location name. For example:
+     * Required. The location name. For example:
      * `projects/PROJECT_ID/locations/LOCATION_ID`.
      * </pre>
      *
-     * <code>string parent = 1;</code>
+     * <code>
+     * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      */
     public Builder clearParent() {
 
@@ -640,12 +646,13 @@ public final class CreateJobRequest extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Required.
-     * The location name. For example:
+     * Required. The location name. For example:
      * `projects/PROJECT_ID/locations/LOCATION_ID`.
      * </pre>
      *
-     * <code>string parent = 1;</code>
+     * <code>
+     * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      */
     public Builder setParentBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -668,15 +675,15 @@ public final class CreateJobRequest extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Required.
-     * The job to add. The user can optionally specify a name for the
+     * Required. The job to add. The user can optionally specify a name for the
      * job in [name][google.cloud.scheduler.v1beta1.Job.name]. [name][google.cloud.scheduler.v1beta1.Job.name] cannot be the same as an
      * existing job. If a name is not specified then the system will
      * generate a random unique name that will be returned
      * ([name][google.cloud.scheduler.v1beta1.Job.name]) in the response.
      * </pre>
      *
-     * <code>.google.cloud.scheduler.v1beta1.Job job = 2;</code>
+     * <code>.google.cloud.scheduler.v1beta1.Job job = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public boolean hasJob() {
       return jobBuilder_ != null || job_ != null;
@@ -685,15 +692,15 @@ public final class CreateJobRequest extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Required.
-     * The job to add. The user can optionally specify a name for the
+     * Required. The job to add. The user can optionally specify a name for the
      * job in [name][google.cloud.scheduler.v1beta1.Job.name]. [name][google.cloud.scheduler.v1beta1.Job.name] cannot be the same as an
      * existing job. If a name is not specified then the system will
      * generate a random unique name that will be returned
      * ([name][google.cloud.scheduler.v1beta1.Job.name]) in the response.
      * </pre>
      *
-     * <code>.google.cloud.scheduler.v1beta1.Job job = 2;</code>
+     * <code>.google.cloud.scheduler.v1beta1.Job job = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public com.google.cloud.scheduler.v1beta1.Job getJob() {
       if (jobBuilder_ == null) {
@@ -706,15 +713,15 @@ public final class CreateJobRequest extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Required.
-     * The job to add. The user can optionally specify a name for the
+     * Required. The job to add. The user can optionally specify a name for the
      * job in [name][google.cloud.scheduler.v1beta1.Job.name]. [name][google.cloud.scheduler.v1beta1.Job.name] cannot be the same as an
      * existing job. If a name is not specified then the system will
      * generate a random unique name that will be returned
      * ([name][google.cloud.scheduler.v1beta1.Job.name]) in the response.
      * </pre>
      *
-     * <code>.google.cloud.scheduler.v1beta1.Job job = 2;</code>
+     * <code>.google.cloud.scheduler.v1beta1.Job job = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder setJob(com.google.cloud.scheduler.v1beta1.Job value) {
       if (jobBuilder_ == null) {
@@ -733,15 +740,15 @@ public final class CreateJobRequest extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Required.
-     * The job to add. The user can optionally specify a name for the
+     * Required. The job to add. The user can optionally specify a name for the
      * job in [name][google.cloud.scheduler.v1beta1.Job.name]. [name][google.cloud.scheduler.v1beta1.Job.name] cannot be the same as an
      * existing job. If a name is not specified then the system will
      * generate a random unique name that will be returned
      * ([name][google.cloud.scheduler.v1beta1.Job.name]) in the response.
      * </pre>
      *
-     * <code>.google.cloud.scheduler.v1beta1.Job job = 2;</code>
+     * <code>.google.cloud.scheduler.v1beta1.Job job = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder setJob(com.google.cloud.scheduler.v1beta1.Job.Builder builderForValue) {
       if (jobBuilder_ == null) {
@@ -757,15 +764,15 @@ public final class CreateJobRequest extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Required.
-     * The job to add. The user can optionally specify a name for the
+     * Required. The job to add. The user can optionally specify a name for the
      * job in [name][google.cloud.scheduler.v1beta1.Job.name]. [name][google.cloud.scheduler.v1beta1.Job.name] cannot be the same as an
      * existing job. If a name is not specified then the system will
      * generate a random unique name that will be returned
      * ([name][google.cloud.scheduler.v1beta1.Job.name]) in the response.
      * </pre>
      *
-     * <code>.google.cloud.scheduler.v1beta1.Job job = 2;</code>
+     * <code>.google.cloud.scheduler.v1beta1.Job job = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder mergeJob(com.google.cloud.scheduler.v1beta1.Job value) {
       if (jobBuilder_ == null) {
@@ -788,15 +795,15 @@ public final class CreateJobRequest extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Required.
-     * The job to add. The user can optionally specify a name for the
+     * Required. The job to add. The user can optionally specify a name for the
      * job in [name][google.cloud.scheduler.v1beta1.Job.name]. [name][google.cloud.scheduler.v1beta1.Job.name] cannot be the same as an
      * existing job. If a name is not specified then the system will
      * generate a random unique name that will be returned
      * ([name][google.cloud.scheduler.v1beta1.Job.name]) in the response.
      * </pre>
      *
-     * <code>.google.cloud.scheduler.v1beta1.Job job = 2;</code>
+     * <code>.google.cloud.scheduler.v1beta1.Job job = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder clearJob() {
       if (jobBuilder_ == null) {
@@ -813,15 +820,15 @@ public final class CreateJobRequest extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Required.
-     * The job to add. The user can optionally specify a name for the
+     * Required. The job to add. The user can optionally specify a name for the
      * job in [name][google.cloud.scheduler.v1beta1.Job.name]. [name][google.cloud.scheduler.v1beta1.Job.name] cannot be the same as an
      * existing job. If a name is not specified then the system will
      * generate a random unique name that will be returned
      * ([name][google.cloud.scheduler.v1beta1.Job.name]) in the response.
      * </pre>
      *
-     * <code>.google.cloud.scheduler.v1beta1.Job job = 2;</code>
+     * <code>.google.cloud.scheduler.v1beta1.Job job = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public com.google.cloud.scheduler.v1beta1.Job.Builder getJobBuilder() {
 
@@ -832,15 +839,15 @@ public final class CreateJobRequest extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Required.
-     * The job to add. The user can optionally specify a name for the
+     * Required. The job to add. The user can optionally specify a name for the
      * job in [name][google.cloud.scheduler.v1beta1.Job.name]. [name][google.cloud.scheduler.v1beta1.Job.name] cannot be the same as an
      * existing job. If a name is not specified then the system will
      * generate a random unique name that will be returned
      * ([name][google.cloud.scheduler.v1beta1.Job.name]) in the response.
      * </pre>
      *
-     * <code>.google.cloud.scheduler.v1beta1.Job job = 2;</code>
+     * <code>.google.cloud.scheduler.v1beta1.Job job = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public com.google.cloud.scheduler.v1beta1.JobOrBuilder getJobOrBuilder() {
       if (jobBuilder_ != null) {
@@ -853,15 +860,15 @@ public final class CreateJobRequest extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Required.
-     * The job to add. The user can optionally specify a name for the
+     * Required. The job to add. The user can optionally specify a name for the
      * job in [name][google.cloud.scheduler.v1beta1.Job.name]. [name][google.cloud.scheduler.v1beta1.Job.name] cannot be the same as an
      * existing job. If a name is not specified then the system will
      * generate a random unique name that will be returned
      * ([name][google.cloud.scheduler.v1beta1.Job.name]) in the response.
      * </pre>
      *
-     * <code>.google.cloud.scheduler.v1beta1.Job job = 2;</code>
+     * <code>.google.cloud.scheduler.v1beta1.Job job = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.scheduler.v1beta1.Job,
