@@ -168,7 +168,7 @@
       <dependency>
         <groupId>com.google.api</groupId>
         <artifactId>gax-bom</artifactId>
-        <version>1.49.0</version>
+        <version>1.49.1</version>
         <type>pom</type>
         <scope>import</scope>
       </dependency>
