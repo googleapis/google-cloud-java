@@ -42,8 +42,8 @@ public class TextToSpeechTest {
 	 public void synthesizeSpeechTest() throws IOException {
 	    try (TextToSpeechClient textToSpeechClient = TextToSpeechClient.create()) {
 		     SynthesisInput input = SynthesisInput.newBuilder()
-		    	    .setText("Hello, World!")
-		    	    .build();
+		    	  .setText("Hello, World!")
+		    	  .build();
 
 		     VoiceSelectionParams voice = VoiceSelectionParams.newBuilder()
 		          .setLanguageCode("en-US")
