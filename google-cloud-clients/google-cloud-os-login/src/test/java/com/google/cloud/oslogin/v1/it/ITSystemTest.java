@@ -31,30 +31,35 @@ import com.google.gson.Gson;
 import com.google.gson.JsonObject;
 import org.junit.After;
 import org.junit.Before;
+import org.junit.BeforeClass;
 import org.junit.Test;
 
 public class ITSystemTest {
   private OsLoginServiceClient osLoginServiceClient;
   private UserName parent;
-  private String user;
-  private String clientId;
+  private static String user;
+  private static String clientId;
 
   private static final String PROJECT = ServiceOptions.getDefaultProjectId();
   private static final String GOOGLE_API_CLIENT_ID = "clientId";
   private static final String GOOGLE_API_CLIENT_EMAIL_ID = "clientEmail";
   private static final String GOOGLE_API_CLOUD_PLATFORM_LINK =
       "https://www.googleapis.com/auth/cloud-platform";
-  private static final String FINGERPRINT_NAME = "test-fingerprint";
+  private static final String NON_EXISTENT_FINGERPRINT_NAME = "test-fingerprint";
   private static final String REGEXP = "^\"|\"$";
   private static final OsLoginProto.SshPublicKey SSH_PUBLIC_KEY =
       OsLoginProto.SshPublicKey.newBuilder().build();
   private static final Gson GSON = new Gson();
 
+  @BeforeClass
+  public static void setup() throws Exception {
+    user = getFromCredential(GOOGLE_API_CLIENT_EMAIL_ID);
+    clientId = getFromCredential(GOOGLE_API_CLIENT_ID);
+  }
+
   @Before
   public void before() throws Exception {
     osLoginServiceClient = OsLoginServiceClient.create();
-    user = getFromCredential(GOOGLE_API_CLIENT_EMAIL_ID);
-    clientId = getFromCredential(GOOGLE_API_CLIENT_ID);
     parent = UserName.of(user);
   }
 
@@ -78,7 +83,7 @@ public class ITSystemTest {
 
   @Test(expected = NotFoundException.class)
   public void getSshPublicKeyExceptionTest() {
-    FingerprintName name = FingerprintName.of(user, FINGERPRINT_NAME);
+    FingerprintName name = FingerprintName.of(user, NON_EXISTENT_FINGERPRINT_NAME);
     OsLoginProto.SshPublicKey sshPublicKey = osLoginServiceClient.getSshPublicKey(name);
   }
 
