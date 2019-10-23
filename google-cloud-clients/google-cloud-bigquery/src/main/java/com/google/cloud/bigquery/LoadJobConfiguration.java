@@ -447,7 +447,7 @@ public final class LoadJobConfiguration extends JobConfiguration implements Load
     return jobTimeoutMs;
   }
 
-  /** Returns the range partitioning specification for this table */
+  /** Returns the range partitioning specification for the table */
   public RangePartitioning getRangePartitioning() {
     return rangePartitioning;
   }
