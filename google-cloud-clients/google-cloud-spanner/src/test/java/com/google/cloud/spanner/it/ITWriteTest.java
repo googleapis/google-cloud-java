@@ -18,6 +18,7 @@ package com.google.cloud.spanner.it;
 
 import static com.google.cloud.spanner.SpannerMatchers.isSpannerException;
 import static com.google.common.truth.Truth.assertThat;
+import static org.junit.Assert.fail;
 
 import com.google.cloud.ByteArray;
 import com.google.cloud.Date;
@@ -123,6 +124,38 @@ public class ITWriteTest {
                 .to("v1")
                 .build()));
     Struct row = readLastRow("StringValue");
+    assertThat(row.isNull(0)).isFalse();
+    assertThat(row.getString(0)).isEqualTo("v1");
+  }
+
+  @Test
+  public void writeAlreadyExists() {
+    client.write(
+        Arrays.asList(
+            Mutation.newInsertBuilder("T")
+                .set("K")
+                .to(lastKey = "key1")
+                .set("StringValue")
+                .to("v1")
+                .build()));
+    Struct row = readLastRow("StringValue");
+    assertThat(row.isNull(0)).isFalse();
+    assertThat(row.getString(0)).isEqualTo("v1");
+
+    try {
+      client.write(
+          Arrays.asList(
+              Mutation.newInsertBuilder("T")
+                  .set("K")
+                  .to(lastKey)
+                  .set("StringValue")
+                  .to("v2")
+                  .build()));
+      fail("missing expected ALREADY_EXISTS exception");
+    } catch (SpannerException e) {
+      assertThat(e.getErrorCode()).isEqualTo(ErrorCode.ALREADY_EXISTS);
+    }
+    row = readLastRow("StringValue");
     assertThat(row.isNull(0)).isFalse();
     assertThat(row.getString(0)).isEqualTo("v1");
   }
