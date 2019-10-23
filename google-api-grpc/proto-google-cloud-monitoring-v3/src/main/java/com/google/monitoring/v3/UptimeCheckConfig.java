@@ -214,14 +214,19 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
             }
           case 114:
             {
-              if (!((mutable_bitField0_ & 0x00000400) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000800) != 0)) {
                 internalCheckers_ =
                     new java.util.ArrayList<com.google.monitoring.v3.InternalChecker>();
-                mutable_bitField0_ |= 0x00000400;
+                mutable_bitField0_ |= 0x00000800;
               }
               internalCheckers_.add(
                   input.readMessage(
                       com.google.monitoring.v3.InternalChecker.parser(), extensionRegistry));
+              break;
+            }
+          case 120:
+            {
+              isInternal_ = input.readBool();
               break;
             }
           default:
@@ -244,7 +249,7 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
       if (((mutable_bitField0_ & 0x00000200) != 0)) {
         selectedRegions_ = java.util.Collections.unmodifiableList(selectedRegions_);
       }
-      if (((mutable_bitField0_ & 0x00000400) != 0)) {
+      if (((mutable_bitField0_ & 0x00000800) != 0)) {
         internalCheckers_ = java.util.Collections.unmodifiableList(internalCheckers_);
       }
       this.unknownFields = unknownFields.build();
@@ -6047,6 +6052,25 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
 
   private int selectedRegionsMemoizedSerializedSize;
 
+  public static final int IS_INTERNAL_FIELD_NUMBER = 15;
+  private boolean isInternal_;
+  /**
+   *
+   *
+   * <pre>
+   * If this is `true`, then checks are made only from the 'internal_checkers'.
+   * If it is `false`, then checks are made only from the 'selected_regions'.
+   * It is an error to provide 'selected_regions' when is_internal is `true`,
+   * or to provide 'internal_checkers' when is_internal is `false`.
+   * </pre>
+   *
+   * <code>bool is_internal = 15 [deprecated = true];</code>
+   */
+  @java.lang.Deprecated
+  public boolean getIsInternal() {
+    return isInternal_;
+  }
+
   public static final int INTERNAL_CHECKERS_FIELD_NUMBER = 14;
   private java.util.List<com.google.monitoring.v3.InternalChecker> internalCheckers_;
   /**
@@ -6195,6 +6219,9 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
     for (int i = 0; i < internalCheckers_.size(); i++) {
       output.writeMessage(14, internalCheckers_.get(i));
     }
+    if (isInternal_ != false) {
+      output.writeBool(15, isInternal_);
+    }
     unknownFields.writeTo(output);
   }
 
@@ -6256,6 +6283,9 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(14, internalCheckers_.get(i));
     }
+    if (isInternal_ != false) {
+      size += com.google.protobuf.CodedOutputStream.computeBoolSize(15, isInternal_);
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -6284,6 +6314,7 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
     }
     if (!getContentMatchersList().equals(other.getContentMatchersList())) return false;
     if (!selectedRegions_.equals(other.selectedRegions_)) return false;
+    if (getIsInternal() != other.getIsInternal()) return false;
     if (!getInternalCheckersList().equals(other.getInternalCheckersList())) return false;
     if (!getResourceCase().equals(other.getResourceCase())) return false;
     switch (resourceCase_) {
@@ -6338,6 +6369,8 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
       hash = (37 * hash) + SELECTED_REGIONS_FIELD_NUMBER;
       hash = (53 * hash) + selectedRegions_.hashCode();
     }
+    hash = (37 * hash) + IS_INTERNAL_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getIsInternal());
     if (getInternalCheckersCount() > 0) {
       hash = (37 * hash) + INTERNAL_CHECKERS_FIELD_NUMBER;
       hash = (53 * hash) + getInternalCheckersList().hashCode();
@@ -6539,9 +6572,11 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
       }
       selectedRegions_ = java.util.Collections.emptyList();
       bitField0_ = (bitField0_ & ~0x00000200);
+      isInternal_ = false;
+
       if (internalCheckersBuilder_ == null) {
         internalCheckers_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000400);
+        bitField0_ = (bitField0_ & ~0x00000800);
       } else {
         internalCheckersBuilder_.clear();
       }
@@ -6632,10 +6667,11 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
         bitField0_ = (bitField0_ & ~0x00000200);
       }
       result.selectedRegions_ = selectedRegions_;
+      result.isInternal_ = isInternal_;
       if (internalCheckersBuilder_ == null) {
-        if (((bitField0_ & 0x00000400) != 0)) {
+        if (((bitField0_ & 0x00000800) != 0)) {
           internalCheckers_ = java.util.Collections.unmodifiableList(internalCheckers_);
-          bitField0_ = (bitField0_ & ~0x00000400);
+          bitField0_ = (bitField0_ & ~0x00000800);
         }
         result.internalCheckers_ = internalCheckers_;
       } else {
@@ -6744,11 +6780,14 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
         }
         onChanged();
       }
+      if (other.getIsInternal() != false) {
+        setIsInternal(other.getIsInternal());
+      }
       if (internalCheckersBuilder_ == null) {
         if (!other.internalCheckers_.isEmpty()) {
           if (internalCheckers_.isEmpty()) {
             internalCheckers_ = other.internalCheckers_;
-            bitField0_ = (bitField0_ & ~0x00000400);
+            bitField0_ = (bitField0_ & ~0x00000800);
           } else {
             ensureInternalCheckersIsMutable();
             internalCheckers_.addAll(other.internalCheckers_);
@@ -6761,7 +6800,7 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
             internalCheckersBuilder_.dispose();
             internalCheckersBuilder_ = null;
             internalCheckers_ = other.internalCheckers_;
-            bitField0_ = (bitField0_ & ~0x00000400);
+            bitField0_ = (bitField0_ & ~0x00000800);
             internalCheckersBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getInternalCheckersFieldBuilder()
@@ -9047,14 +9086,70 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
       return this;
     }
 
+    private boolean isInternal_;
+    /**
+     *
+     *
+     * <pre>
+     * If this is `true`, then checks are made only from the 'internal_checkers'.
+     * If it is `false`, then checks are made only from the 'selected_regions'.
+     * It is an error to provide 'selected_regions' when is_internal is `true`,
+     * or to provide 'internal_checkers' when is_internal is `false`.
+     * </pre>
+     *
+     * <code>bool is_internal = 15 [deprecated = true];</code>
+     */
+    @java.lang.Deprecated
+    public boolean getIsInternal() {
+      return isInternal_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * If this is `true`, then checks are made only from the 'internal_checkers'.
+     * If it is `false`, then checks are made only from the 'selected_regions'.
+     * It is an error to provide 'selected_regions' when is_internal is `true`,
+     * or to provide 'internal_checkers' when is_internal is `false`.
+     * </pre>
+     *
+     * <code>bool is_internal = 15 [deprecated = true];</code>
+     */
+    @java.lang.Deprecated
+    public Builder setIsInternal(boolean value) {
+
+      isInternal_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * If this is `true`, then checks are made only from the 'internal_checkers'.
+     * If it is `false`, then checks are made only from the 'selected_regions'.
+     * It is an error to provide 'selected_regions' when is_internal is `true`,
+     * or to provide 'internal_checkers' when is_internal is `false`.
+     * </pre>
+     *
+     * <code>bool is_internal = 15 [deprecated = true];</code>
+     */
+    @java.lang.Deprecated
+    public Builder clearIsInternal() {
+
+      isInternal_ = false;
+      onChanged();
+      return this;
+    }
+
     private java.util.List<com.google.monitoring.v3.InternalChecker> internalCheckers_ =
         java.util.Collections.emptyList();
 
     private void ensureInternalCheckersIsMutable() {
-      if (!((bitField0_ & 0x00000400) != 0)) {
+      if (!((bitField0_ & 0x00000800) != 0)) {
         internalCheckers_ =
             new java.util.ArrayList<com.google.monitoring.v3.InternalChecker>(internalCheckers_);
-        bitField0_ |= 0x00000400;
+        bitField0_ |= 0x00000800;
       }
     }
 
@@ -9336,7 +9431,7 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
     public Builder clearInternalCheckers() {
       if (internalCheckersBuilder_ == null) {
         internalCheckers_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000400);
+        bitField0_ = (bitField0_ & ~0x00000800);
         onChanged();
       } else {
         internalCheckersBuilder_.clear();
@@ -9502,7 +9597,7 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
                 com.google.monitoring.v3.InternalChecker.Builder,
                 com.google.monitoring.v3.InternalCheckerOrBuilder>(
                 internalCheckers_,
-                ((bitField0_ & 0x00000400) != 0),
+                ((bitField0_ & 0x00000800) != 0),
                 getParentForChildren(),
                 isClean());
         internalCheckers_ = null;
