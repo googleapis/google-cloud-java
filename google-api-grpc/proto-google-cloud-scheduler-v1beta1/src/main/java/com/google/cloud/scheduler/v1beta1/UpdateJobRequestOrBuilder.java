@@ -12,39 +12,39 @@ public interface UpdateJobRequestOrBuilder
    *
    *
    * <pre>
-   * Required.
-   * The new job properties. [name][google.cloud.scheduler.v1beta1.Job.name] must be specified.
+   * Required. The new job properties. [name][google.cloud.scheduler.v1beta1.Job.name] must be specified.
    * Output only fields cannot be modified using UpdateJob.
    * Any value specified for an output only field will be ignored.
    * </pre>
    *
-   * <code>.google.cloud.scheduler.v1beta1.Job job = 1;</code>
+   * <code>.google.cloud.scheduler.v1beta1.Job job = 1 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   boolean hasJob();
   /**
    *
    *
    * <pre>
-   * Required.
-   * The new job properties. [name][google.cloud.scheduler.v1beta1.Job.name] must be specified.
+   * Required. The new job properties. [name][google.cloud.scheduler.v1beta1.Job.name] must be specified.
    * Output only fields cannot be modified using UpdateJob.
    * Any value specified for an output only field will be ignored.
    * </pre>
    *
-   * <code>.google.cloud.scheduler.v1beta1.Job job = 1;</code>
+   * <code>.google.cloud.scheduler.v1beta1.Job job = 1 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   com.google.cloud.scheduler.v1beta1.Job getJob();
   /**
    *
    *
    * <pre>
-   * Required.
-   * The new job properties. [name][google.cloud.scheduler.v1beta1.Job.name] must be specified.
+   * Required. The new job properties. [name][google.cloud.scheduler.v1beta1.Job.name] must be specified.
    * Output only fields cannot be modified using UpdateJob.
    * Any value specified for an output only field will be ignored.
    * </pre>
    *
-   * <code>.google.cloud.scheduler.v1beta1.Job job = 1;</code>
+   * <code>.google.cloud.scheduler.v1beta1.Job job = 1 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   com.google.cloud.scheduler.v1beta1.JobOrBuilder getJobOrBuilder();
 
