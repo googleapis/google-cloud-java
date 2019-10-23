@@ -72,22 +72,6 @@ public class TextToSpeechTest {
 		     List<Voice> voices = response.getVoicesList();	
 		    
 		     Assert.assertTrue(!voices.isEmpty());		
-	    }
+	          }
 	 }
-}
-
-	  
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+}	
