@@ -157,8 +157,13 @@ public class UptimeCheckServiceClientTest {
   public void getUptimeCheckConfigTest() {
     String name2 = "name2-1052831874";
     String displayName = "displayName1615086568";
+    boolean isInternal = true;
     UptimeCheckConfig expectedResponse =
-        UptimeCheckConfig.newBuilder().setName(name2).setDisplayName(displayName).build();
+        UptimeCheckConfig.newBuilder()
+            .setName(name2)
+            .setDisplayName(displayName)
+            .setIsInternal(isInternal)
+            .build();
     mockUptimeCheckService.addResponse(expectedResponse);
 
     UptimeCheckConfigName name = UptimeCheckConfigName.of("[PROJECT]", "[UPTIME_CHECK_CONFIG]");
@@ -198,8 +203,13 @@ public class UptimeCheckServiceClientTest {
   public void createUptimeCheckConfigTest() {
     String name = "name3373707";
     String displayName = "displayName1615086568";
+    boolean isInternal = true;
     UptimeCheckConfig expectedResponse =
-        UptimeCheckConfig.newBuilder().setName(name).setDisplayName(displayName).build();
+        UptimeCheckConfig.newBuilder()
+            .setName(name)
+            .setDisplayName(displayName)
+            .setIsInternal(isInternal)
+            .build();
     mockUptimeCheckService.addResponse(expectedResponse);
 
     String formattedParent = ProjectName.format("[PROJECT]");
@@ -244,8 +254,13 @@ public class UptimeCheckServiceClientTest {
   public void updateUptimeCheckConfigTest() {
     String name = "name3373707";
     String displayName = "displayName1615086568";
+    boolean isInternal = true;
     UptimeCheckConfig expectedResponse =
-        UptimeCheckConfig.newBuilder().setName(name).setDisplayName(displayName).build();
+        UptimeCheckConfig.newBuilder()
+            .setName(name)
+            .setDisplayName(displayName)
+            .setIsInternal(isInternal)
+            .build();
     mockUptimeCheckService.addResponse(expectedResponse);
 
     UptimeCheckConfig uptimeCheckConfig = UptimeCheckConfig.newBuilder().build();
