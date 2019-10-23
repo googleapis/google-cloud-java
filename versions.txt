@@ -48,7 +48,6 @@ google-cloud-storage:1.98.0:1.98.1-SNAPSHOT
 google-cloud-talent:0.33.0-beta:0.33.1-beta-SNAPSHOT
 google-cloud-tasks:1.25.0:1.25.1-SNAPSHOT
 google-cloud-testing:0.116.0-alpha:0.116.1-alpha-SNAPSHOT
-google-cloud-texttospeech:0.116.0-beta:0.116.1-beta-SNAPSHOT
 google-cloud-util:0.116.0-alpha:0.116.1-alpha-SNAPSHOT
 grafeas:0.19.0:0.19.1-SNAPSHOT
 grpc-google-cloud-bigquerydatatransfer-v1:0.81.0:0.81.1-SNAPSHOT
@@ -86,8 +85,6 @@ grpc-google-cloud-talent-v4beta1:0.33.0-beta:0.33.1-beta-SNAPSHOT
 grpc-google-cloud-tasks-v2:1.25.0:1.25.1-SNAPSHOT
 grpc-google-cloud-tasks-v2beta2:0.81.0:0.81.1-SNAPSHOT
 grpc-google-cloud-tasks-v2beta3:0.81.0:0.81.1-SNAPSHOT
-grpc-google-cloud-texttospeech-v1:0.81.0:0.81.1-SNAPSHOT
-grpc-google-cloud-texttospeech-v1beta1:0.81.0:0.81.1-SNAPSHOT
 proto-google-cloud-bigquerydatatransfer-v1:0.81.0:0.81.1-SNAPSHOT
 proto-google-cloud-bigquerystorage-v1beta1:0.81.0:0.81.1-SNAPSHOT
 proto-google-cloud-container-v1:0.81.0:0.81.1-SNAPSHOT
@@ -124,5 +121,3 @@ proto-google-cloud-talent-v4beta1:0.33.0-beta:0.33.1-beta-SNAPSHOT
 proto-google-cloud-tasks-v2:1.25.0:1.25.1-SNAPSHOT
 proto-google-cloud-tasks-v2beta2:0.81.0:0.81.1-SNAPSHOT
 proto-google-cloud-tasks-v2beta3:0.81.0:0.81.1-SNAPSHOT
-proto-google-cloud-texttospeech-v1:0.81.0:0.81.1-SNAPSHOT
-proto-google-cloud-texttospeech-v1beta1:0.81.0:0.81.1-SNAPSHOT
