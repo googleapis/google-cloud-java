@@ -171,8 +171,8 @@ public class CloudSchedulerClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param parent Required.
-   *     <p>The location name. For example: `projects/PROJECT_ID/locations/LOCATION_ID`.
+   * @param parent Required. The location name. For example:
+   *     `projects/PROJECT_ID/locations/LOCATION_ID`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListJobsPagedResponse listJobs(LocationName parent) {
@@ -196,8 +196,8 @@ public class CloudSchedulerClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param parent Required.
-   *     <p>The location name. For example: `projects/PROJECT_ID/locations/LOCATION_ID`.
+   * @param parent Required. The location name. For example:
+   *     `projects/PROJECT_ID/locations/LOCATION_ID`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListJobsPagedResponse listJobs(String parent) {
@@ -298,8 +298,8 @@ public class CloudSchedulerClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param name Required.
-   *     <p>The job name. For example: `projects/PROJECT_ID/locations/LOCATION_ID/jobs/JOB_ID`.
+   * @param name Required. The job name. For example:
+   *     `projects/PROJECT_ID/locations/LOCATION_ID/jobs/JOB_ID`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Job getJob(JobName name) {
@@ -322,8 +322,8 @@ public class CloudSchedulerClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param name Required.
-   *     <p>The job name. For example: `projects/PROJECT_ID/locations/LOCATION_ID/jobs/JOB_ID`.
+   * @param name Required. The job name. For example:
+   *     `projects/PROJECT_ID/locations/LOCATION_ID/jobs/JOB_ID`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Job getJob(String name) {
@@ -391,10 +391,9 @@ public class CloudSchedulerClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param parent Required.
-   *     <p>The location name. For example: `projects/PROJECT_ID/locations/LOCATION_ID`.
-   * @param job Required.
-   *     <p>The job to add. The user can optionally specify a name for the job in
+   * @param parent Required. The location name. For example:
+   *     `projects/PROJECT_ID/locations/LOCATION_ID`.
+   * @param job Required. The job to add. The user can optionally specify a name for the job in
    *     [name][google.cloud.scheduler.v1.Job.name]. [name][google.cloud.scheduler.v1.Job.name]
    *     cannot be the same as an existing job. If a name is not specified then the system will
    *     generate a random unique name that will be returned
@@ -425,10 +424,9 @@ public class CloudSchedulerClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param parent Required.
-   *     <p>The location name. For example: `projects/PROJECT_ID/locations/LOCATION_ID`.
-   * @param job Required.
-   *     <p>The job to add. The user can optionally specify a name for the job in
+   * @param parent Required. The location name. For example:
+   *     `projects/PROJECT_ID/locations/LOCATION_ID`.
+   * @param job Required. The job to add. The user can optionally specify a name for the job in
    *     [name][google.cloud.scheduler.v1.Job.name]. [name][google.cloud.scheduler.v1.Job.name]
    *     cannot be the same as an existing job. If a name is not specified then the system will
    *     generate a random unique name that will be returned
@@ -512,8 +510,8 @@ public class CloudSchedulerClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param job Required.
-   *     <p>The new job properties. [name][google.cloud.scheduler.v1.Job.name] must be specified.
+   * @param job Required. The new job properties. [name][google.cloud.scheduler.v1.Job.name] must be
+   *     specified.
    *     <p>Output only fields cannot be modified using UpdateJob. Any value specified for an output
    *     only field will be ignored.
    * @param updateMask A mask used to specify which fields of the job are being updated.
@@ -604,8 +602,8 @@ public class CloudSchedulerClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param name Required.
-   *     <p>The job name. For example: `projects/PROJECT_ID/locations/LOCATION_ID/jobs/JOB_ID`.
+   * @param name Required. The job name. For example:
+   *     `projects/PROJECT_ID/locations/LOCATION_ID/jobs/JOB_ID`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final void deleteJob(JobName name) {
@@ -628,8 +626,8 @@ public class CloudSchedulerClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param name Required.
-   *     <p>The job name. For example: `projects/PROJECT_ID/locations/LOCATION_ID/jobs/JOB_ID`.
+   * @param name Required. The job name. For example:
+   *     `projects/PROJECT_ID/locations/LOCATION_ID/jobs/JOB_ID`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final void deleteJob(String name) {
@@ -702,8 +700,8 @@ public class CloudSchedulerClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param name Required.
-   *     <p>The job name. For example: `projects/PROJECT_ID/locations/LOCATION_ID/jobs/JOB_ID`.
+   * @param name Required. The job name. For example:
+   *     `projects/PROJECT_ID/locations/LOCATION_ID/jobs/JOB_ID`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Job pauseJob(JobName name) {
@@ -732,8 +730,8 @@ public class CloudSchedulerClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param name Required.
-   *     <p>The job name. For example: `projects/PROJECT_ID/locations/LOCATION_ID/jobs/JOB_ID`.
+   * @param name Required. The job name. For example:
+   *     `projects/PROJECT_ID/locations/LOCATION_ID/jobs/JOB_ID`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Job pauseJob(String name) {
@@ -818,8 +816,8 @@ public class CloudSchedulerClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param name Required.
-   *     <p>The job name. For example: `projects/PROJECT_ID/locations/LOCATION_ID/jobs/JOB_ID`.
+   * @param name Required. The job name. For example:
+   *     `projects/PROJECT_ID/locations/LOCATION_ID/jobs/JOB_ID`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Job resumeJob(JobName name) {
@@ -848,8 +846,8 @@ public class CloudSchedulerClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param name Required.
-   *     <p>The job name. For example: `projects/PROJECT_ID/locations/LOCATION_ID/jobs/JOB_ID`.
+   * @param name Required. The job name. For example:
+   *     `projects/PROJECT_ID/locations/LOCATION_ID/jobs/JOB_ID`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Job resumeJob(String name) {
@@ -931,8 +929,8 @@ public class CloudSchedulerClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param name Required.
-   *     <p>The job name. For example: `projects/PROJECT_ID/locations/LOCATION_ID/jobs/JOB_ID`.
+   * @param name Required. The job name. For example:
+   *     `projects/PROJECT_ID/locations/LOCATION_ID/jobs/JOB_ID`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Job runJob(JobName name) {
@@ -958,8 +956,8 @@ public class CloudSchedulerClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param name Required.
-   *     <p>The job name. For example: `projects/PROJECT_ID/locations/LOCATION_ID/jobs/JOB_ID`.
+   * @param name Required. The job name. For example:
+   *     `projects/PROJECT_ID/locations/LOCATION_ID/jobs/JOB_ID`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Job runJob(String name) {

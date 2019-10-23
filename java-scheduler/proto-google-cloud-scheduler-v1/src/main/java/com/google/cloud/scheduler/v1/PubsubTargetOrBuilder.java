@@ -12,8 +12,7 @@ public interface PubsubTargetOrBuilder
    *
    *
    * <pre>
-   * Required.
-   * The name of the Cloud Pub/Sub topic to which messages will
+   * Required. The name of the Cloud Pub/Sub topic to which messages will
    * be published when a job is delivered. The topic name must be in the
    * same format as required by PubSub's
    * [PublishRequest.name](https://cloud.google.com/pubsub/docs/reference/rpc/google.pubsub.v1#publishrequest),
@@ -21,15 +20,14 @@ public interface PubsubTargetOrBuilder
    * The topic must be in the same project as the Cloud Scheduler job.
    * </pre>
    *
-   * <code>string topic_name = 1;</code>
+   * <code>string topic_name = 1 [(.google.api.resource_reference) = { ... }</code>
    */
   java.lang.String getTopicName();
   /**
    *
    *
    * <pre>
-   * Required.
-   * The name of the Cloud Pub/Sub topic to which messages will
+   * Required. The name of the Cloud Pub/Sub topic to which messages will
    * be published when a job is delivered. The topic name must be in the
    * same format as required by PubSub's
    * [PublishRequest.name](https://cloud.google.com/pubsub/docs/reference/rpc/google.pubsub.v1#publishrequest),
@@ -37,7 +35,7 @@ public interface PubsubTargetOrBuilder
    * The topic must be in the same project as the Cloud Scheduler job.
    * </pre>
    *
-   * <code>string topic_name = 1;</code>
+   * <code>string topic_name = 1 [(.google.api.resource_reference) = { ... }</code>
    */
   com.google.protobuf.ByteString getTopicNameBytes();
 
