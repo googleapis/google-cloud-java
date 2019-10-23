@@ -1,0 +1,60 @@
+---
+type: manifest/samples
+schema_version: 3
+java: &java
+  environment: "java"
+  bin: "mvn exec:java"
+  base_path: "samples/src/main/java/com/google/cloud/examples/language/v1"
+  package: "com.google.cloud.examples.language.v1"
+  invocation: "{bin} -Dexec.mainClass={class} -Dexec.args='@args'"
+samples:
+- <<: *java
+  sample: "language_sentiment_gcs"
+  path: "{base_path}/LanguageSentimentGcs.java"
+  class: "{package}.LanguageSentimentGcs"
+  region_tag: "language_sentiment_gcs"
+- <<: *java
+  sample: "language_sentiment_text"
+  path: "{base_path}/LanguageSentimentText.java"
+  class: "{package}.LanguageSentimentText"
+  region_tag: "language_sentiment_text"
+- <<: *java
+  sample: "language_entities_gcs"
+  path: "{base_path}/LanguageEntitiesGcs.java"
+  class: "{package}.LanguageEntitiesGcs"
+  region_tag: "language_entities_gcs"
+- <<: *java
+  sample: "language_entities_text"
+  path: "{base_path}/LanguageEntitiesText.java"
+  class: "{package}.LanguageEntitiesText"
+  region_tag: "language_entities_text"
+- <<: *java
+  sample: "language_entity_sentiment_gcs"
+  path: "{base_path}/LanguageEntitySentimentGcs.java"
+  class: "{package}.LanguageEntitySentimentGcs"
+  region_tag: "language_entity_sentiment_gcs"
+- <<: *java
+  sample: "language_entity_sentiment_text"
+  path: "{base_path}/LanguageEntitySentimentText.java"
+  class: "{package}.LanguageEntitySentimentText"
+  region_tag: "language_entity_sentiment_text"
+- <<: *java
+  sample: "language_syntax_gcs"
+  path: "{base_path}/LanguageSyntaxGcs.java"
+  class: "{package}.LanguageSyntaxGcs"
+  region_tag: "language_syntax_gcs"
+- <<: *java
+  sample: "language_syntax_text"
+  path: "{base_path}/LanguageSyntaxText.java"
+  class: "{package}.LanguageSyntaxText"
+  region_tag: "language_syntax_text"
+- <<: *java
+  sample: "language_classify_gcs"
+  path: "{base_path}/LanguageClassifyGcs.java"
+  class: "{package}.LanguageClassifyGcs"
+  region_tag: "language_classify_gcs"
+- <<: *java
+  sample: "language_classify_text"
+  path: "{base_path}/LanguageClassifyText.java"
+  class: "{package}.LanguageClassifyText"
+  region_tag: "language_classify_text"

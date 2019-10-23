@@ -29,9 +29,11 @@ for version in versions:
         service=service,
         version=version,
         config_path=config_pattern.format(version=version),
-        artman_output_name='')
+        artman_output_name='',
+        include_samples=True)
 
     s.copy(library / f'gapic-google-cloud-{service}-{version}/src', 'src')
+    s.copy(library / f'gapic-google-cloud-{service}-{version}/samples', 'samples')
     s.copy(library / f'grpc-google-cloud-{service}-{version}/src', f'../../google-api-grpc/grpc-google-cloud-{service}-{version}/src')
     s.copy(library / f'proto-google-cloud-{service}-{version}/src', f'../../google-api-grpc/proto-google-cloud-{service}-{version}/src')
 
