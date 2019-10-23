@@ -380,7 +380,7 @@
       <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-conformance-tests</artifactId>
-        <version>0.1.0-SNAPSHOT</version>
+        <version>0.0.1</version>
         <scope>test</scope>
       </dependency>
     </dependencies>
