@@ -58,9 +58,9 @@ public final class TargetProto {
   static {
     java.lang.String[] descriptorData = {
       "\n+google/cloud/scheduler/v1beta1/target."
-          + "proto\022\036google.cloud.scheduler.v1beta1\032\034g"
-          + "oogle/api/annotations.proto\032\031google/prot"
-          + "obuf/any.proto\"\376\002\n\nHttpTarget\022\013\n\003uri\030\001 \001"
+          + "proto\022\036google.cloud.scheduler.v1beta1\032\031g"
+          + "oogle/api/resource.proto\032\034google/api/ann"
+          + "otations.proto\"\376\002\n\nHttpTarget\022\013\n\003uri\030\001 \001"
           + "(\t\022?\n\013http_method\030\002 \001(\0162*.google.cloud.s"
           + "cheduler.v1beta1.HttpMethod\022H\n\007headers\030\003"
           + " \003(\01327.google.cloud.scheduler.v1beta1.Ht"
@@ -78,23 +78,25 @@ public final class TargetProto {
           + "\004 \003(\0132@.google.cloud.scheduler.v1beta1.A"
           + "ppEngineHttpTarget.HeadersEntry\022\014\n\004body\030"
           + "\005 \001(\014\032.\n\014HeadersEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005va"
-          + "lue\030\002 \001(\t:\0028\001\"\265\001\n\014PubsubTarget\022\022\n\ntopic_"
-          + "name\030\001 \001(\t\022\014\n\004data\030\003 \001(\014\022P\n\nattributes\030\004"
-          + " \003(\0132<.google.cloud.scheduler.v1beta1.Pu"
-          + "bsubTarget.AttributesEntry\0321\n\017Attributes"
-          + "Entry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\"T\n"
-          + "\020AppEngineRouting\022\017\n\007service\030\001 \001(\t\022\017\n\007ve"
-          + "rsion\030\002 \001(\t\022\020\n\010instance\030\003 \001(\t\022\014\n\004host\030\004 "
-          + "\001(\t\":\n\nOAuthToken\022\035\n\025service_account_ema"
-          + "il\030\001 \001(\t\022\r\n\005scope\030\002 \001(\t\"<\n\tOidcToken\022\035\n\025"
-          + "service_account_email\030\001 \001(\t\022\020\n\010audience\030"
-          + "\002 \001(\t*s\n\nHttpMethod\022\033\n\027HTTP_METHOD_UNSPE"
-          + "CIFIED\020\000\022\010\n\004POST\020\001\022\007\n\003GET\020\002\022\010\n\004HEAD\020\003\022\007\n"
-          + "\003PUT\020\004\022\n\n\006DELETE\020\005\022\t\n\005PATCH\020\006\022\013\n\007OPTIONS"
-          + "\020\007B|\n\"com.google.cloud.scheduler.v1beta1"
-          + "B\013TargetProtoP\001ZGgoogle.golang.org/genpr"
-          + "oto/googleapis/cloud/scheduler/v1beta1;s"
-          + "chedulerb\006proto3"
+          + "lue\030\002 \001(\t:\0028\001\"\327\001\n\014PubsubTarget\0224\n\ntopic_"
+          + "name\030\001 \001(\tB \372A\035\n\033pubsub.googleapis.com/T"
+          + "opic\022\014\n\004data\030\003 \001(\014\022P\n\nattributes\030\004 \003(\0132<"
+          + ".google.cloud.scheduler.v1beta1.PubsubTa"
+          + "rget.AttributesEntry\0321\n\017AttributesEntry\022"
+          + "\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\"T\n\020AppEn"
+          + "gineRouting\022\017\n\007service\030\001 \001(\t\022\017\n\007version\030"
+          + "\002 \001(\t\022\020\n\010instance\030\003 \001(\t\022\014\n\004host\030\004 \001(\t\":\n"
+          + "\nOAuthToken\022\035\n\025service_account_email\030\001 \001"
+          + "(\t\022\r\n\005scope\030\002 \001(\t\"<\n\tOidcToken\022\035\n\025servic"
+          + "e_account_email\030\001 \001(\t\022\020\n\010audience\030\002 \001(\t*"
+          + "s\n\nHttpMethod\022\033\n\027HTTP_METHOD_UNSPECIFIED"
+          + "\020\000\022\010\n\004POST\020\001\022\007\n\003GET\020\002\022\010\n\004HEAD\020\003\022\007\n\003PUT\020\004"
+          + "\022\n\n\006DELETE\020\005\022\t\n\005PATCH\020\006\022\013\n\007OPTIONS\020\007B\277\001\n"
+          + "\"com.google.cloud.scheduler.v1beta1B\013Tar"
+          + "getProtoP\001ZGgoogle.golang.org/genproto/g"
+          + "oogleapis/cloud/scheduler/v1beta1;schedu"
+          + "ler\352A@\n\033pubsub.googleapis.com/Topic\022!pro"
+          + "jects/{project}/topics/{topic}b\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner() {
@@ -107,8 +109,8 @@ public final class TargetProto {
     com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
         descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
+          com.google.api.ResourceProto.getDescriptor(),
           com.google.api.AnnotationsProto.getDescriptor(),
-          com.google.protobuf.AnyProto.getDescriptor(),
         },
         assigner);
     internal_static_google_cloud_scheduler_v1beta1_HttpTarget_descriptor =
@@ -195,8 +197,14 @@ public final class TargetProto {
             new java.lang.String[] {
               "ServiceAccountEmail", "Audience",
             });
+    com.google.protobuf.ExtensionRegistry registry =
+        com.google.protobuf.ExtensionRegistry.newInstance();
+    registry.add(com.google.api.ResourceProto.resourceDefinition);
+    registry.add(com.google.api.ResourceProto.resourceReference);
+    com.google.protobuf.Descriptors.FileDescriptor.internalUpdateFileDescriptor(
+        descriptor, registry);
+    com.google.api.ResourceProto.getDescriptor();
     com.google.api.AnnotationsProto.getDescriptor();
-    com.google.protobuf.AnyProto.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)
