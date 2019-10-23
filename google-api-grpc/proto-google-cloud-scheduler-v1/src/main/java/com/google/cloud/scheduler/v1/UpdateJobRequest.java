@@ -118,13 +118,12 @@ public final class UpdateJobRequest extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Required.
-   * The new job properties. [name][google.cloud.scheduler.v1.Job.name] must be specified.
+   * Required. The new job properties. [name][google.cloud.scheduler.v1.Job.name] must be specified.
    * Output only fields cannot be modified using UpdateJob.
    * Any value specified for an output only field will be ignored.
    * </pre>
    *
-   * <code>.google.cloud.scheduler.v1.Job job = 1;</code>
+   * <code>.google.cloud.scheduler.v1.Job job = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   public boolean hasJob() {
     return job_ != null;
@@ -133,13 +132,12 @@ public final class UpdateJobRequest extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Required.
-   * The new job properties. [name][google.cloud.scheduler.v1.Job.name] must be specified.
+   * Required. The new job properties. [name][google.cloud.scheduler.v1.Job.name] must be specified.
    * Output only fields cannot be modified using UpdateJob.
    * Any value specified for an output only field will be ignored.
    * </pre>
    *
-   * <code>.google.cloud.scheduler.v1.Job job = 1;</code>
+   * <code>.google.cloud.scheduler.v1.Job job = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   public com.google.cloud.scheduler.v1.Job getJob() {
     return job_ == null ? com.google.cloud.scheduler.v1.Job.getDefaultInstance() : job_;
@@ -148,13 +146,12 @@ public final class UpdateJobRequest extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Required.
-   * The new job properties. [name][google.cloud.scheduler.v1.Job.name] must be specified.
+   * Required. The new job properties. [name][google.cloud.scheduler.v1.Job.name] must be specified.
    * Output only fields cannot be modified using UpdateJob.
    * Any value specified for an output only field will be ignored.
    * </pre>
    *
-   * <code>.google.cloud.scheduler.v1.Job job = 1;</code>
+   * <code>.google.cloud.scheduler.v1.Job job = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   public com.google.cloud.scheduler.v1.JobOrBuilder getJobOrBuilder() {
     return getJob();
@@ -169,7 +166,8 @@ public final class UpdateJobRequest extends com.google.protobuf.GeneratedMessage
    * A  mask used to specify which fields of the job are being updated.
    * </pre>
    *
-   * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+   * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   public boolean hasUpdateMask() {
     return updateMask_ != null;
@@ -181,7 +179,8 @@ public final class UpdateJobRequest extends com.google.protobuf.GeneratedMessage
    * A  mask used to specify which fields of the job are being updated.
    * </pre>
    *
-   * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+   * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   public com.google.protobuf.FieldMask getUpdateMask() {
     return updateMask_ == null ? com.google.protobuf.FieldMask.getDefaultInstance() : updateMask_;
@@ -193,7 +192,8 @@ public final class UpdateJobRequest extends com.google.protobuf.GeneratedMessage
    * A  mask used to specify which fields of the job are being updated.
    * </pre>
    *
-   * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+   * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   public com.google.protobuf.FieldMaskOrBuilder getUpdateMaskOrBuilder() {
     return getUpdateMask();
@@ -565,13 +565,13 @@ public final class UpdateJobRequest extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Required.
-     * The new job properties. [name][google.cloud.scheduler.v1.Job.name] must be specified.
+     * Required. The new job properties. [name][google.cloud.scheduler.v1.Job.name] must be specified.
      * Output only fields cannot be modified using UpdateJob.
      * Any value specified for an output only field will be ignored.
      * </pre>
      *
-     * <code>.google.cloud.scheduler.v1.Job job = 1;</code>
+     * <code>.google.cloud.scheduler.v1.Job job = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public boolean hasJob() {
       return jobBuilder_ != null || job_ != null;
@@ -580,13 +580,13 @@ public final class UpdateJobRequest extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Required.
-     * The new job properties. [name][google.cloud.scheduler.v1.Job.name] must be specified.
+     * Required. The new job properties. [name][google.cloud.scheduler.v1.Job.name] must be specified.
      * Output only fields cannot be modified using UpdateJob.
      * Any value specified for an output only field will be ignored.
      * </pre>
      *
-     * <code>.google.cloud.scheduler.v1.Job job = 1;</code>
+     * <code>.google.cloud.scheduler.v1.Job job = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public com.google.cloud.scheduler.v1.Job getJob() {
       if (jobBuilder_ == null) {
@@ -599,13 +599,13 @@ public final class UpdateJobRequest extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Required.
-     * The new job properties. [name][google.cloud.scheduler.v1.Job.name] must be specified.
+     * Required. The new job properties. [name][google.cloud.scheduler.v1.Job.name] must be specified.
      * Output only fields cannot be modified using UpdateJob.
      * Any value specified for an output only field will be ignored.
      * </pre>
      *
-     * <code>.google.cloud.scheduler.v1.Job job = 1;</code>
+     * <code>.google.cloud.scheduler.v1.Job job = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder setJob(com.google.cloud.scheduler.v1.Job value) {
       if (jobBuilder_ == null) {
@@ -624,13 +624,13 @@ public final class UpdateJobRequest extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Required.
-     * The new job properties. [name][google.cloud.scheduler.v1.Job.name] must be specified.
+     * Required. The new job properties. [name][google.cloud.scheduler.v1.Job.name] must be specified.
      * Output only fields cannot be modified using UpdateJob.
      * Any value specified for an output only field will be ignored.
      * </pre>
      *
-     * <code>.google.cloud.scheduler.v1.Job job = 1;</code>
+     * <code>.google.cloud.scheduler.v1.Job job = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder setJob(com.google.cloud.scheduler.v1.Job.Builder builderForValue) {
       if (jobBuilder_ == null) {
@@ -646,13 +646,13 @@ public final class UpdateJobRequest extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Required.
-     * The new job properties. [name][google.cloud.scheduler.v1.Job.name] must be specified.
+     * Required. The new job properties. [name][google.cloud.scheduler.v1.Job.name] must be specified.
      * Output only fields cannot be modified using UpdateJob.
      * Any value specified for an output only field will be ignored.
      * </pre>
      *
-     * <code>.google.cloud.scheduler.v1.Job job = 1;</code>
+     * <code>.google.cloud.scheduler.v1.Job job = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder mergeJob(com.google.cloud.scheduler.v1.Job value) {
       if (jobBuilder_ == null) {
@@ -672,13 +672,13 @@ public final class UpdateJobRequest extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Required.
-     * The new job properties. [name][google.cloud.scheduler.v1.Job.name] must be specified.
+     * Required. The new job properties. [name][google.cloud.scheduler.v1.Job.name] must be specified.
      * Output only fields cannot be modified using UpdateJob.
      * Any value specified for an output only field will be ignored.
      * </pre>
      *
-     * <code>.google.cloud.scheduler.v1.Job job = 1;</code>
+     * <code>.google.cloud.scheduler.v1.Job job = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder clearJob() {
       if (jobBuilder_ == null) {
@@ -695,13 +695,13 @@ public final class UpdateJobRequest extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Required.
-     * The new job properties. [name][google.cloud.scheduler.v1.Job.name] must be specified.
+     * Required. The new job properties. [name][google.cloud.scheduler.v1.Job.name] must be specified.
      * Output only fields cannot be modified using UpdateJob.
      * Any value specified for an output only field will be ignored.
      * </pre>
      *
-     * <code>.google.cloud.scheduler.v1.Job job = 1;</code>
+     * <code>.google.cloud.scheduler.v1.Job job = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public com.google.cloud.scheduler.v1.Job.Builder getJobBuilder() {
 
@@ -712,13 +712,13 @@ public final class UpdateJobRequest extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Required.
-     * The new job properties. [name][google.cloud.scheduler.v1.Job.name] must be specified.
+     * Required. The new job properties. [name][google.cloud.scheduler.v1.Job.name] must be specified.
      * Output only fields cannot be modified using UpdateJob.
      * Any value specified for an output only field will be ignored.
      * </pre>
      *
-     * <code>.google.cloud.scheduler.v1.Job job = 1;</code>
+     * <code>.google.cloud.scheduler.v1.Job job = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public com.google.cloud.scheduler.v1.JobOrBuilder getJobOrBuilder() {
       if (jobBuilder_ != null) {
@@ -731,13 +731,13 @@ public final class UpdateJobRequest extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Required.
-     * The new job properties. [name][google.cloud.scheduler.v1.Job.name] must be specified.
+     * Required. The new job properties. [name][google.cloud.scheduler.v1.Job.name] must be specified.
      * Output only fields cannot be modified using UpdateJob.
      * Any value specified for an output only field will be ignored.
      * </pre>
      *
-     * <code>.google.cloud.scheduler.v1.Job job = 1;</code>
+     * <code>.google.cloud.scheduler.v1.Job job = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.scheduler.v1.Job,
@@ -769,7 +769,8 @@ public final class UpdateJobRequest extends com.google.protobuf.GeneratedMessage
      * A  mask used to specify which fields of the job are being updated.
      * </pre>
      *
-     * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+     * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public boolean hasUpdateMask() {
       return updateMaskBuilder_ != null || updateMask_ != null;
@@ -781,7 +782,8 @@ public final class UpdateJobRequest extends com.google.protobuf.GeneratedMessage
      * A  mask used to specify which fields of the job are being updated.
      * </pre>
      *
-     * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+     * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public com.google.protobuf.FieldMask getUpdateMask() {
       if (updateMaskBuilder_ == null) {
@@ -799,7 +801,8 @@ public final class UpdateJobRequest extends com.google.protobuf.GeneratedMessage
      * A  mask used to specify which fields of the job are being updated.
      * </pre>
      *
-     * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+     * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder setUpdateMask(com.google.protobuf.FieldMask value) {
       if (updateMaskBuilder_ == null) {
@@ -821,7 +824,8 @@ public final class UpdateJobRequest extends com.google.protobuf.GeneratedMessage
      * A  mask used to specify which fields of the job are being updated.
      * </pre>
      *
-     * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+     * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder setUpdateMask(com.google.protobuf.FieldMask.Builder builderForValue) {
       if (updateMaskBuilder_ == null) {
@@ -840,7 +844,8 @@ public final class UpdateJobRequest extends com.google.protobuf.GeneratedMessage
      * A  mask used to specify which fields of the job are being updated.
      * </pre>
      *
-     * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+     * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder mergeUpdateMask(com.google.protobuf.FieldMask value) {
       if (updateMaskBuilder_ == null) {
@@ -864,7 +869,8 @@ public final class UpdateJobRequest extends com.google.protobuf.GeneratedMessage
      * A  mask used to specify which fields of the job are being updated.
      * </pre>
      *
-     * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+     * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder clearUpdateMask() {
       if (updateMaskBuilder_ == null) {
@@ -884,7 +890,8 @@ public final class UpdateJobRequest extends com.google.protobuf.GeneratedMessage
      * A  mask used to specify which fields of the job are being updated.
      * </pre>
      *
-     * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+     * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public com.google.protobuf.FieldMask.Builder getUpdateMaskBuilder() {
 
@@ -898,7 +905,8 @@ public final class UpdateJobRequest extends com.google.protobuf.GeneratedMessage
      * A  mask used to specify which fields of the job are being updated.
      * </pre>
      *
-     * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+     * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public com.google.protobuf.FieldMaskOrBuilder getUpdateMaskOrBuilder() {
       if (updateMaskBuilder_ != null) {
@@ -916,7 +924,8 @@ public final class UpdateJobRequest extends com.google.protobuf.GeneratedMessage
      * A  mask used to specify which fields of the job are being updated.
      * </pre>
      *
-     * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+     * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.protobuf.FieldMask,

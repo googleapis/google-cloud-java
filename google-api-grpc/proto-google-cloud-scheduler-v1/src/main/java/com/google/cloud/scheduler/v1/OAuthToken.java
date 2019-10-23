@@ -9,8 +9,8 @@ package com.google.cloud.scheduler.v1;
  * <pre>
  * Contains information needed for generating an
  * [OAuth token](https://developers.google.com/identity/protocols/OAuth2).
- * This type of authorization should be used when sending requests to a GCP
- * endpoint.
+ * This type of authorization should generally only be used when calling Google
+ * APIs hosted on *.googleapis.com.
  * </pre>
  *
  * Protobuf type {@code google.cloud.scheduler.v1.OAuthToken}
@@ -371,8 +371,8 @@ public final class OAuthToken extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Contains information needed for generating an
    * [OAuth token](https://developers.google.com/identity/protocols/OAuth2).
-   * This type of authorization should be used when sending requests to a GCP
-   * endpoint.
+   * This type of authorization should generally only be used when calling Google
+   * APIs hosted on *.googleapis.com.
    * </pre>
    *
    * Protobuf type {@code google.cloud.scheduler.v1.OAuthToken}
