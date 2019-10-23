@@ -1,5 +1,20 @@
 # Changelog
 
+### [1.91.3](https://www.github.com/googleapis/java-core/compare/v1.91.2...v1.91.3) (2019-10-23)
+
+
+### Bug Fixes
+
+* try to keep autovalue out of the runtime time classpath ([#48](https://www.github.com/googleapis/java-core/issues/48)) ([0988c27](https://www.github.com/googleapis/java-core/commit/0988c27b01461a0b8c02ac0f9def5b409c56980c))
+
+
+### Dependencies
+
+* update dependency com.google.api:gax-bom to v1.49.1 ([#65](https://www.github.com/googleapis/java-core/issues/65)) ([131a0fd](https://www.github.com/googleapis/java-core/commit/131a0fd52bebdd217bdcb288374127cef7889692))
+* update dependency com.google.api.grpc:proto-google-common-protos to v1.17.0 ([#50](https://www.github.com/googleapis/java-core/issues/50)) ([3ba5512](https://www.github.com/googleapis/java-core/commit/3ba55124247b82061781c4ae0acb08cec239afe4))
+* update dependency com.google.auth:google-auth-library-bom to v0.18.0 ([#56](https://www.github.com/googleapis/java-core/issues/56)) ([ab25f15](https://www.github.com/googleapis/java-core/commit/ab25f153021f73b5f0ce5cc2cf0b53d42a1871c7))
+* update dependency io.grpc:grpc-bom to v1.24.1 ([07fefbb](https://www.github.com/googleapis/java-core/commit/07fefbb38de93c2b3b5095bc5432bc5161bb7094))
+
 ### [1.91.2](https://www.github.com/googleapis/java-core/compare/v1.91.1...v1.91.2) (2019-09-30)
 
 
