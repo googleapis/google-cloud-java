@@ -91,9 +91,9 @@ License
 Apache 2.0 - See [LICENSE] for more information.
 
 
-[CONTRIBUTING]:https://github.com/googleapis/google-cloud-java/blob/master/CONTRIBUTING.md
-[code-of-conduct]:https://github.com/googleapis/google-cloud-java/blob/master/CODE_OF_CONDUCT.md#contributor-code-of-conduct
-[LICENSE]: https://github.com/googleapis/google-cloud-java/blob/master/LICENSE
+[CONTRIBUTING]:https://github.com/googleapis/java-tasks/blob/master/CONTRIBUTING.md
+[code-of-conduct]:https://github.com/googleapis/java-tasks/blob/master/CODE_OF_CONDUCT.md#contributor-code-of-conduct
+[LICENSE]: https://github.com/googleapis/java-tasks/blob/master/LICENSE
 [cloud-platform]: https://cloud.google.com/
 [cloud-tasks]: https://cloud.google.com/tasks
 [tasks]: https://cloud.google.com/tasks/docs

@@ -74,6 +74,7 @@
     <threeten.version>1.4.0</threeten.version>
     <javax.annotations.version>1.3.2</javax.annotations.version>
     <animal-sniffer.version>1.18</animal-sniffer.version>
+    <google.proto-iam-v1.version>0.13.0</google.proto-iam-v1.version>
   </properties>
 
   <dependencyManagement>
@@ -165,6 +166,11 @@
         <groupId>org.codehaus.mojo</groupId>
         <artifactId>animal-sniffer-annotations</artifactId>
         <version>${animal-sniffer.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>com.google.api.grpc</groupId>
+        <artifactId>proto-google-iam-v1</artifactId>
+        <version>${google.proto-iam-v1.version}</version>
       </dependency>
 
       <dependency>
