@@ -90,31 +90,31 @@ public class GcpManagedChannel extends ManagedChannel {
   /**
    * Pick a channelRef (and create a new one if necessary).
    *
-   * @param key affinity key. If it is specified, pick the ChannelRef bound with the the affinity
-   *     key. Otherwise pick the one with the smallest number of streams.
+   * @param key affinity key. If it is specified, pick the ChannelRef bound with the affinity key.
+   *     Otherwise pick the one with the smallest number of streams.
    */
   protected ChannelRef getChannelRef(@Nullable String key) {
 
     if (key != null && key != "") {
+      // System.out.println("affinity");
       synchronized (bindLock) {
         return affinityKeyToChannelRef.get(key);
       }
     }
     synchronized (this) {
+      int size = channelRefs.size();
       channelRefs.sort(Comparator.comparingInt(ChannelRef::getActiveStreamsCount));
 
-      int size = channelRefs.size();
-      // Choose the channelRef that has the least busy channel.
-      if (size > 0
-          && channelRefs.get(0).getActiveStreamsCount() < maxConcurrentStreamsLowWatermark) {
-        return channelRefs.get(0);
-      }
-      // If all existing channels are busy, and channel pool still has capacity, create a new
-      // channel.
-      if (size < maxSize) {
+      // Create a new channel if the max size has not been reached.
+      if (size == 0 || (size < maxSize && channelRefs.get(0).getActiveStreamsCount() > 0)) {
         ChannelRef channelRef = new ChannelRef(delegateChannelBuilder.build(), size);
         channelRefs.add(channelRef);
         return channelRef;
+      }
+      // Choose the channelRef that has the least busy delegate channel.
+
+      if (channelRefs.get(0).getActiveStreamsCount() < maxConcurrentStreamsLowWatermark) {
+        return channelRefs.get(0);
       }
       // Otherwise return first ChannelRef.
       return channelRefs.get(0);
@@ -242,13 +242,15 @@ public class GcpManagedChannel extends ManagedChannel {
    * <p>One channel can be mapped to more than one keys. But one key can only be mapped to one
    * channel.
    */
-  protected void bind(ChannelRef channelRef, String affinityKey) {
+  protected void bind(ChannelRef channelRef, List<String> affinityKeys) {
     synchronized (bindLock) {
-      if (affinityKey != null && !affinityKey.equals("") && channelRef != null) {
-        if (!affinityKeyToChannelRef.containsKey(affinityKey)) {
-          affinityKeyToChannelRef.put(affinityKey, channelRef);
+      if (affinityKeys != null && channelRef != null) {
+        for (String affinityKey : affinityKeys) {
+          if (!affinityKeyToChannelRef.containsKey(affinityKey)) {
+            affinityKeyToChannelRef.put(affinityKey, channelRef);
+          }
+          affinityKeyToChannelRef.get(affinityKey).affinityCountIncr();
         }
-        affinityKeyToChannelRef.get(affinityKey).affinityCountIncr();
       }
     }
   }
@@ -318,7 +320,7 @@ public class GcpManagedChannel extends ManagedChannel {
    * "session1.session2".
    */
   @VisibleForTesting
-  static String getKeyFromMessage(MessageOrBuilder msg, String name) {
+  static List<String> getKeyFromMessage(MessageOrBuilder msg, String name) {
     // The field names in a nested message name are splitted by '.'.
     int currentLength = name.indexOf('.');
     String currentName = name;
@@ -326,18 +328,32 @@ public class GcpManagedChannel extends ManagedChannel {
       currentName = name.substring(0, currentLength);
     }
 
+    List<String> keys = new ArrayList<>();
     Map<FieldDescriptor, Object> obs = msg.getAllFields();
     for (Map.Entry<FieldDescriptor, Object> entry : obs.entrySet()) {
       if (entry.getKey().getName().equals(currentName)) {
         if (currentLength == -1 && entry.getValue() instanceof String) {
-          return entry.getValue().toString();
+          // Value of the current field.
+          keys.add(entry.getValue().toString());
         } else if (currentLength != -1 && entry.getValue() instanceof MessageOrBuilder) {
-          return getKeyFromMessage(
-              (MessageOrBuilder) entry.getValue(), name.substring(currentLength + 1));
+          // One nested MessageOrBuilder.
+          keys.addAll(
+              getKeyFromMessage(
+                  (MessageOrBuilder) entry.getValue(), name.substring(currentLength + 1)));
+        } else if (currentLength != -1 && entry.getValue() instanceof List) {
+          // Repeated nested MessageOrBuilder.
+          List<?> list = (List<?>) entry.getValue();
+          if (list.size() > 0 && list.get(0) instanceof MessageOrBuilder) {
+            for (int i = 0; i < list.size(); i++) {
+              keys.addAll(
+                  getKeyFromMessage(
+                      (MessageOrBuilder) list.get(i), name.substring(currentLength + 1)));
+            }
+          }
         }
       }
     }
-    return null;
+    return keys;
   }
 
   /**
@@ -346,7 +362,7 @@ public class GcpManagedChannel extends ManagedChannel {
    * @param message the <reqT> or <respT> prototype message.
    * @param isReq indicates if the message is a request message.
    */
-  protected <ReqT, RespT> String checkKey(
+  protected <ReqT, RespT> List<String> checkKey(
       Object message, boolean isReq, MethodDescriptor<ReqT, RespT> methodDescriptor) {
     if (!(message instanceof MessageOrBuilder)) {
       return null;
@@ -356,14 +372,15 @@ public class GcpManagedChannel extends ManagedChannel {
     if (affinity != null) {
       AffinityConfig.Command cmd = affinity.getCommand();
       String keyName = affinity.getAffinityKey();
-      String key = getKeyFromMessage((MessageOrBuilder) message, keyName);
-      if (key != null && key != "") {
-        if ((isReq && (cmd == AffinityConfig.Command.UNBIND || cmd == AffinityConfig.Command.BOUND))
-            || (!isReq && cmd == AffinityConfig.Command.BIND)) {
-          {
-            return key;
-          }
+      List<String> keys = getKeyFromMessage((MessageOrBuilder) message, keyName);
+      if (isReq && (cmd == AffinityConfig.Command.UNBIND || cmd == AffinityConfig.Command.BOUND)) {
+        if (keys.size() > 1) {
+          throw new IllegalStateException("Duplicate affinity key in the request message");
         }
+        return keys;
+      }
+      if (!isReq && cmd == AffinityConfig.Command.BIND) {
+        return keys;
       }
     }
     return null;

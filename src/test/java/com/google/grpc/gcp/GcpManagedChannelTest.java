@@ -28,6 +28,8 @@ import io.grpc.ConnectivityState;
 import io.grpc.ManagedChannel;
 import io.grpc.ManagedChannelBuilder;
 import java.io.File;
+import java.util.Arrays;
+import java.util.List;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
@@ -133,9 +135,9 @@ public final class GcpManagedChannelTest {
     GcpManagedChannel.ChannelRef cf2 = gcpChannel.new ChannelRef(builder.build(), 1, 0, 4);
     gcpChannel.channelRefs.add(cf1);
     gcpChannel.channelRefs.add(cf2);
-    gcpChannel.bind(cf1, "key1");
-    gcpChannel.bind(cf2, "key2");
-    gcpChannel.bind(cf1, "key1");
+    gcpChannel.bind(cf1, Arrays.asList("key1"));
+    gcpChannel.bind(cf2, Arrays.asList("key2"));
+    gcpChannel.bind(cf1, Arrays.asList("key1"));
     assertEquals(2, gcpChannel.channelRefs.get(1).getAffinityCount());
     assertEquals(1, gcpChannel.channelRefs.get(2).getAffinityCount());
     assertEquals(2, gcpChannel.affinityKeyToChannelRef.size());
@@ -161,10 +163,10 @@ public final class GcpManagedChannelTest {
             .setTransaction(selector)
             .addColumns("users")
             .build();
-    String result = gcpChannel.getKeyFromMessage(req, "session");
-    assertEquals(expected, result);
+    List<String> result = gcpChannel.getKeyFromMessage(req, "session");
+    assertEquals(expected, result.get(0));
     result = gcpChannel.getKeyFromMessage(req, "fakesession");
-    assertEquals(null, result);
+    assertEquals(0, result.size());
   }
 
   @Test
