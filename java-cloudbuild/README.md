@@ -13,22 +13,22 @@ Java idiomatic client for [Cloud Build][api-reference].
 
 ## Quickstart
 
-[//]: # ({x-version-update-start:google-cloud-cloudbuild:released})
+[//]: # ({x-version-update-start:google-cloud-build:released})
 If you are using Maven, add this to your pom.xml file
 ```xml
 <dependency>
   <groupId>com.google.cloud</groupId>
-  <artifactId>google-cloud-cloudbuild</artifactId>
+  <artifactId>google-cloud-build</artifactId>
   <version>0.0.1</version>
 </dependency>
 ```
 If you are using Gradle, add this to your dependencies
 ```Groovy
-compile 'com.google.cloud:google-cloud-cloudbuild:0.0.1'
+compile 'com.google.cloud:google-cloud-build:0.0.1'
 ```
 If you are using SBT, add this to your dependencies
 ```Scala
-libraryDependencies += "com.google.cloud" % "google-cloud-cloudbuild" % "0.0.1"
+libraryDependencies += "com.google.cloud" % "google-cloud-build" % "0.0.1"
 ```
 [//]: # ({x-version-update-end})
 
@@ -55,8 +55,8 @@ project set up. You will also need to set up the local development environment b
 
 ### Installation and setup
 
-You'll need to obtain the `google-cloud-cloudbuild` library.  See the [Quickstart](#quickstart) section
-to add `google-cloud-cloudbuild` as a dependency in your code.
+You'll need to obtain the `google-cloud-build` library.  See the [Quickstart](#quickstart) section
+to add `google-cloud-build` as a dependency in your code.
 
 ## Troubleshooting
 
@@ -103,7 +103,7 @@ Java 11 | [![Kokoro CI][kokoro-badge-image-5]][kokoro-badge-link-5]
 
 [api-reference]: https://cloud.google.com/cloud-build/docs/api
 [product-docs]: https://cloud.google.com/cloud-build/
-[javadocs]: https://googleapis.dev/java/google-cloud-cloudbuild/latest
+[javadocs]: https://googleapis.dev/java/google-cloud-build/latest
 [kokoro-badge-image-1]: http://storage.googleapis.com/cloud-devrel-public/java/badges/java-cloudbuild/java7.svg
 [kokoro-badge-link-1]: http://storage.googleapis.com/cloud-devrel-public/java/badges/java-cloudbuild/java7.html
 [kokoro-badge-image-2]: http://storage.googleapis.com/cloud-devrel-public/java/badges/java-cloudbuild/java8.svg

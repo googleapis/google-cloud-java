@@ -2,21 +2,21 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.google.cloud</groupId>
-  <artifactId>google-cloud-cloudbuild</artifactId>
-  <version>0.0.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-cloudbuild:current} -->
+  <artifactId>google-cloud-build</artifactId>
+  <version>0.0.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-build:current} -->
   <packaging>jar</packaging>
   <name>Google Cloud Build</name>
-  <url>https://github.com/googleapis/google-cloud-java/tree/master/google-cloud-clients/google-cloud-cloudbuild</url>
+  <url>https://github.com/googleapis/google-cloud-java/tree/master/google-cloud-clients/google-cloud-build</url>
   <description>
     Java idiomatic client for Google Cloud Build.
   </description>
   <parent>
     <groupId>com.google.cloud</groupId>
-    <artifactId>google-cloud-cloudbuild-parent</artifactId>
-    <version>0.0.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-cloudbuild:current} -->
+    <artifactId>google-cloud-build-parent</artifactId>
+    <version>0.0.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-build:current} -->
   </parent>
   <properties>
-    <site.installationModule>google-cloud-cloudbuild</site.installationModule>
+    <site.installationModule>google-cloud-build</site.installationModule>
   </properties>
   <dependencies>
     <dependency>
@@ -45,7 +45,7 @@
     </dependency>
     <dependency>
       <groupId>com.google.api.grpc</groupId>
-      <artifactId>proto-google-cloud-cloudbuild-v1</artifactId>
+      <artifactId>proto-google-cloud-build-v1</artifactId>
     </dependency>
     <dependency>
       <groupId>com.google.guava</groupId>
@@ -72,7 +72,7 @@
     </dependency>
     <dependency>
       <groupId>com.google.api.grpc</groupId>
-      <artifactId>grpc-google-cloud-cloudbuild-v1</artifactId>
+      <artifactId>grpc-google-cloud-build-v1</artifactId>
       <scope>test</scope>
     </dependency>
     <!-- Need testing utility classes for generated gRPC clients tests -->
