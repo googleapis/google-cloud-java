@@ -192,10 +192,9 @@
 
             <!-- Child Modules, in alphabetical order -->
             <dependency>
-              <!-- TODO: Make this a child module -->
               <groupId>com.google.cloud</groupId>
               <artifactId>google-cloud-bigtable-emulator</artifactId>
-              <version>0.111.0-alpha</version>
+              <version>0.114.1-alpha-SNAPSHOT</version><!-- {x-version-update:google-cloud-bigtable-emulator:current} -->
             </dependency>
             <dependency>
               <groupId>com.google.api.grpc</groupId>
@@ -364,6 +363,7 @@
         <module>proto-google-cloud-bigtable-admin-v2</module>
         <module>grpc-google-cloud-bigtable-admin-v2</module>
         <module>google-cloud-bigtable</module>
+        <module>google-cloud-bigtable-emulator</module>
     </modules>
 
     <reporting>

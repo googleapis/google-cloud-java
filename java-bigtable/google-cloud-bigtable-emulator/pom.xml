@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <artifactId>google-cloud-bigtable-emulator</artifactId>
+  <version>0.114.1-alpha-SNAPSHOT</version><!-- {x-version-update:google-cloud-bigtable-emulator:current} -->
+  <name>Google Cloud Java - Bigtable Emulator</name>
+  <url>https://github.com/googleapis/java-bigtable</url>
+  <description>
+    A Java wrapper for the Cloud Bigtable emulator.
+  </description>
+  <parent>
+    <groupId>com.google.cloud</groupId>
+    <artifactId>google-cloud-bigtable-parent</artifactId>
+    <version>1.5.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-bigtable:current} -->
+  </parent>
+  <scm>
+    <connection>scm:git:git@github.com:googleapis/java-bigtable.git</connection>
+    <developerConnection>scm:git:git@github.com:googleapis/java-bigtable.git</developerConnection>
+    <url>https://github.com/googleapis/java-bigtable</url>
+    <tag>HEAD</tag>
+  </scm>
+
+  <developers>
+    <developer>
+      <id>igorberstein</id>
+      <name>Igor Bernstein</name>
+      <email>igorbernstein@google.com</email>
+      <organization>Google</organization>
+      <roles>
+        <role>Developer</role>
+      </roles>
+    </developer>
+  </developers>
+
+  <build>
+    <plugins>
+      <plugin>
+        <!-- https://github.com/googleapis/java-gcloud-maven-plugin -->
+        <groupId>com.google.cloud</groupId>
+        <artifactId>google-cloud-gcloud-maven-plugin</artifactId>
+        <version>0.1.0</version>
+
+        <executions>
+          <execution>
+            <id>gen-sources</id>
+            <phase>generate-resources</phase>
+            <goals>
+              <goal>download</goal>
+            </goals>
+            <configuration>
+              <componentNames>
+                <componentName>bigtable-darwin-x86</componentName>
+                <componentName>bigtable-darwin-x86_64</componentName>
+                <componentName>bigtable-linux-x86</componentName>
+                <componentName>bigtable-linux-x86_64</componentName>
+                <componentName>bigtable-windows-x86</componentName>
+                <componentName>bigtable-windows-x86_64</componentName>
+              </componentNames>
+            </configuration>
+          </execution>
+        </executions>
+      </plugin>
+
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-dependency-plugin</artifactId>
+        <configuration>
+          <!-- grpc-netty-shaded is used at test runtime -->
+          <usedDependencies>io.grpc:grpc-netty-shaded</usedDependencies>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
+
+  <dependencies>
+    <!-- Compile deps in alphabetical order -->
+    <dependency>
+      <groupId>com.google.api</groupId>
+      <artifactId>api-common</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>io.grpc</groupId>
+      <artifactId>grpc-api</artifactId>
+      <!-- gRPC deps are provided by the client -->
+      <scope>provided</scope>
+    </dependency>
+
+    <dependency>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+      <!-- NOTE: this is intentionally in compile scope since it provides a JUnit Rule -->
+      <scope>compile</scope>
+      <optional>true</optional>
+    </dependency>
+
+    <!-- Test deps, in alphabetical order -->
+    <dependency>
+      <groupId>com.google.api.grpc</groupId>
+      <artifactId>grpc-google-cloud-bigtable-v2</artifactId>
+      <scope>test</scope>
+    </dependency>
+
+    <dependency>
+      <groupId>com.google.api.grpc</groupId>
+      <artifactId>grpc-google-cloud-bigtable-admin-v2</artifactId>
+      <scope>test</scope>
+    </dependency>
+
+    <dependency>
+      <groupId>com.google.api.grpc</groupId>
+      <artifactId>proto-google-cloud-bigtable-v2</artifactId>
+      <scope>test</scope>
+    </dependency>
+
+    <dependency>
+      <groupId>com.google.api.grpc</groupId>
+      <artifactId>proto-google-cloud-bigtable-admin-v2</artifactId>
+      <scope>test</scope>
+    </dependency>
+
+    <dependency>
+      <groupId>com.google.protobuf</groupId>
+      <artifactId>protobuf-java</artifactId>
+      <scope>test</scope>
+    </dependency>
+
+    <dependency>
+      <groupId>com.google.truth</groupId>
+      <artifactId>truth</artifactId>
+      <scope>test</scope>
+    </dependency>
+
+    <dependency>
+      <groupId>io.grpc</groupId>
+      <artifactId>grpc-netty-shaded</artifactId>
+      <scope>test</scope>
+    </dependency>
+  </dependencies>
+</project>
