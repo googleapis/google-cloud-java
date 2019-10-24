@@ -16,7 +16,6 @@ Java idiomatic client for [Cloud Talent Solution][product-overview].
 Quickstart
 ----------
 
-[//]: # ({x-version-update-start:google-cloud-talent:released})
 If you are using Maven, add this to your pom.xml file
 ```xml
 <dependency>
@@ -33,7 +32,6 @@ If you are using SBT, add this to your dependencies
 ```Scala
 libraryDependencies += "com.google.cloud" % "google-cloud-talent" % "0.33.0-beta"
 ```
-[//]: # ({x-version-update-end})
 
 Authentication
 --------------
