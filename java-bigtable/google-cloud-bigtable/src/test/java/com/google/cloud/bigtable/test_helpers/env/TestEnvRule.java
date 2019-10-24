@@ -63,9 +63,6 @@ public class TestEnvRule extends ExternalResource {
       case "prod":
         testEnv = ProdEnv.fromSystemProperties();
         break;
-      case "direct_path":
-        testEnv = DirectPathEnv.create();
-        break;
       default:
         throw new IllegalArgumentException(
             String.format(

@@ -23,7 +23,6 @@ import com.google.api.core.ApiFunction;
 import com.google.api.gax.grpc.InstantiatingGrpcChannelProvider;
 import com.google.cloud.bigtable.data.v2.BigtableDataClient;
 import com.google.cloud.bigtable.data.v2.BigtableDataSettings;
-import com.google.cloud.bigtable.test_helpers.env.DirectPathEnv;
 import com.google.cloud.bigtable.test_helpers.env.TestEnvRule;
 import io.grpc.ManagedChannelBuilder;
 import io.grpc.alts.ComputeEngineChannelBuilder;
@@ -82,8 +81,8 @@ public class DirectPathFallbackIT {
   public void setup() throws IOException {
     assume()
         .withMessage("DirectPath integration tests can only run against DirectPathEnv")
-        .that(testEnvRule.env())
-        .isInstanceOf(DirectPathEnv.class);
+        .that(testEnvRule.env().isDirectPathEnabled())
+        .isTrue();
 
     BigtableDataSettings defaultSettings = testEnvRule.env().getDataClientSettings();
     InstantiatingGrpcChannelProvider defaultTransportProvider =

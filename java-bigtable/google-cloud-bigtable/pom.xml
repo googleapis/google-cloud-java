@@ -257,7 +257,7 @@
                 </goals>
                 <configuration>
                   <systemPropertyVariables>
-                    <bigtable.env>direct_path</bigtable.env>
+                    <bigtable.env>prod</bigtable.env>
                     <!-- TODO(igorbernstein): This property should be auto set by gax -->
                     <io.grpc.internal.DnsNameResolverProvider.enable_grpclb>true</io.grpc.internal.DnsNameResolverProvider.enable_grpclb>
                   </systemPropertyVariables>

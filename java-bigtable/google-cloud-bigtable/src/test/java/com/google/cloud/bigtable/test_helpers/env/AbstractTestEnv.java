@@ -74,6 +74,10 @@ public abstract class AbstractTestEnv {
     return true;
   }
 
+  public boolean isDirectPathEnabled() {
+    return "bigtable".equals(System.getenv("GOOGLE_CLOUD_ENABLE_DIRECT_PATH"));
+  }
+
   void cleanUpStale() {
     cleanupStaleTables();
     if (isInstanceAdminSupported()) {
