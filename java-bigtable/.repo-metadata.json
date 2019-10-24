@@ -1,5 +1,5 @@
 {
-  "name": "bigtable",
+  "name": "google-cloud-bigtable",
   "name_pretty": "Cloud Bigtable",
   "product_documentation": "https://cloud.google.com/bigtable",
   "client_documentation": "https://googleapis.dev/java/java-bigtable/latest/index.html",

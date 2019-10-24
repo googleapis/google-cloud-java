@@ -54,6 +54,9 @@ def main():
   s.copy(templates, excludes=[
     '.gitignore',
     'README.md',
+    '.kokoro/presubmit/integration.cfg',
+    # todo remove once template is updated
+    '.github/ISSUE_TEMPLATE/bug_report.md',
   ])
 
 def generate_data_api(gapic, license):
