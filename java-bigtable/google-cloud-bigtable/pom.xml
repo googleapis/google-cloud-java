@@ -115,8 +115,6 @@
     <dependency>
       <groupId>org.threeten</groupId>
       <artifactId>threetenbp</artifactId>
-      <!-- For dependency convergence with gax -->
-      <version>1.3.3</version>
     </dependency>
     <!-- // TODO(igorbernstein): Enable grpc views once we upgrade to grpc-java 1.24.0 -->
 <!--    <dependency>-->
