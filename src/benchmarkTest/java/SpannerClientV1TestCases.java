@@ -55,7 +55,7 @@ import java.util.concurrent.TimeUnit;
 import java.util.logging.Logger;
 
 /**
- * Benchmark for the lower level gapic-generated Spanner client
+ * Benchmark for the lower layer gapic-generated Spanner client
  * (com.google.cloud.spanner.v1.SpannerClient) with two different implementations of channel pool:
  * <1> Channel pool by com.google.api.gax.grpc. <2> Channel pool by grpc-gcp-java.
  */
@@ -64,11 +64,14 @@ final class SpannerClientV1TestCases {
   private static final Logger logger = Logger.getLogger(SpannerTestCases.class.getName());
 
   private static final String SPANNER_TARGET = "spanner.googleapis.com";
-  private static final String DATABASE =
-      "projects/cloudprober-test/instances/test-instance/databases/test-db";
+  private static final String OAUTH_SCOPE = "https://www.googleapis.com/auth/cloud-platform";
+
+  private static final String DEFAULT_PROJECT = "cloudprober-test";
+  private static final String DEFAULT_INSTANCE = "test-instance";
+  private static final String DEFAULT_DATABASE = "test-db";
   private static final String LARGE_TABLE = "large_table";
   private static final String TABLE = "jenny";
-  private static final String OAUTH_SCOPE = "https://www.googleapis.com/auth/cloud-platform";
+
   private static final String API_FILE = "spannertest.json";
   private static final int MAX_SIZE_PER_COLUMN = 2621440;
   private static final int NUM_WARMUP = 10;
@@ -76,12 +79,19 @@ final class SpannerClientV1TestCases {
   // This should be the same as channelpool-maxsize in the ApiConfig JSON file.
   private static final int DEFAULT_CHANNEL_POOL = 2;
 
+  private final String database;
   private final boolean isGrpcGcp;
   private final int payload;
   private final int numOfRpcs;
   private final int numOfThreads;
 
   SpannerClientV1TestCases(boolean isGrpcGcp, int payload, int numOfRpcs, int numOfThreads) {
+    String projectId =
+        System.getenv("GCP_PROJECT_ID") != null ? System.getenv("GCP_PROJECT_ID") : DEFAULT_PROJECT;
+    this.database =
+        String.format(
+            "projects/%s/instances/%s/databases/%s", projectId, DEFAULT_INSTANCE, DEFAULT_DATABASE);
+
     this.isGrpcGcp = isGrpcGcp;
     this.payload = payload;
     this.numOfRpcs = numOfRpcs;
@@ -96,7 +106,7 @@ final class SpannerClientV1TestCases {
     String colContent = new String(charArray);
     SpannerClient client = getClient();
     Session session =
-        client.createSession(CreateSessionRequest.newBuilder().setDatabase(DATABASE).build());
+        client.createSession(CreateSessionRequest.newBuilder().setDatabase(database).build());
     long start = System.currentTimeMillis();
 
     // Clean the existing data.
@@ -160,7 +170,7 @@ final class SpannerClientV1TestCases {
   void testListSessions() throws InterruptedException {
     System.out.println("\nTestListSessions");
     SpannerClient client = getClient();
-    ListSessionsRequest request = ListSessionsRequest.newBuilder().setDatabase(DATABASE).build();
+    ListSessionsRequest request = ListSessionsRequest.newBuilder().setDatabase(database).build();
     for (int i = 0; i < NUM_WARMUP; i++) {
       client.listSessions(request);
     }
@@ -177,7 +187,7 @@ final class SpannerClientV1TestCases {
     System.out.println("\nTestExecuteSql");
     SpannerClient client = getClient();
     Session session =
-        client.createSession(CreateSessionRequest.newBuilder().setDatabase(DATABASE).build());
+        client.createSession(CreateSessionRequest.newBuilder().setDatabase(database).build());
 
     ExecuteSqlRequest request =
         ExecuteSqlRequest.newBuilder()
@@ -195,7 +205,7 @@ final class SpannerClientV1TestCases {
     System.out.println("\nTestPartitionQuery");
     SpannerClient client = getClient();
     Session session =
-        client.createSession(CreateSessionRequest.newBuilder().setDatabase(DATABASE).build());
+        client.createSession(CreateSessionRequest.newBuilder().setDatabase(database).build());
 
     TransactionOptions options =
         TransactionOptions.newBuilder()
@@ -219,7 +229,7 @@ final class SpannerClientV1TestCases {
     System.out.println("\nTestRead");
     SpannerClient client = getClient();
     Session session =
-        client.createSession(CreateSessionRequest.newBuilder().setDatabase(DATABASE).build());
+        client.createSession(CreateSessionRequest.newBuilder().setDatabase(database).build());
 
     ReadRequest request =
         ReadRequest.newBuilder()
@@ -240,7 +250,7 @@ final class SpannerClientV1TestCases {
     System.out.println("\nTestMaxConcurrentStream");
     SpannerClient client = getClient();
     Session session =
-        client.createSession(CreateSessionRequest.newBuilder().setDatabase(DATABASE).build());
+        client.createSession(CreateSessionRequest.newBuilder().setDatabase(database).build());
 
     // Warm up.
     ExecuteSqlRequest request =
@@ -374,13 +384,14 @@ final class SpannerClientV1TestCases {
     }
   }
 
-  private static void listSessionsSingleCall(SpannerClient client) {
-    ListSessionsRequest request = ListSessionsRequest.newBuilder().setDatabase(DATABASE).build();
+  private void listSessionsSingleCall(SpannerClient client) {
+    ListSessionsRequest request = ListSessionsRequest.newBuilder().setDatabase(database).build();
     long start = System.currentTimeMillis();
     client.listSessionsCallable().call(request);
     System.out.println(
         String.format(
-            "Finished executing listSessions in %d ms", System.currentTimeMillis() - start));
+            "-- Finished executing listSessions in %d ms in another thread. -- ",
+            System.currentTimeMillis() - start));
   }
 
   private SpannerClient getClient() {

@@ -58,29 +58,38 @@ import java.util.concurrent.TimeUnit;
 import java.util.logging.Logger;
 
 /**
- * Benchmark for SpannerGrpc operations with two different channels: GrpcGcpManagedChannel(uss
- * channel pool) and ManagedChannel.
+ * Benchmark for SpannerGrpc operations with two different channels: GrpcGcpManagedChannel(use
+ * grpc-gcp channel pool) and gio.grpc.ManagedChannel.
  */
 final class SpannerTestCases {
 
   private static final Logger logger = Logger.getLogger(SpannerTestCases.class.getName());
 
   private static final String SPANNER_TARGET = "spanner.googleapis.com";
-  private static final String DATABASE =
-      "projects/cloudprober-test/instances/test-instance/databases/test-db";
+  private static final String OAUTH_SCOPE = "https://www.googleapis.com/auth/cloud-platform";
+
+  private static final String DEFAULT_PROJECT = "cloudprober-test";
+  private static final String DEFAULT_INSTANCE = "test-instance";
+  private static final String DEFAULT_DATABASE = "test-db";
   private static final String LARGE_TABLE = "large_table";
   private static final String TABLE = "jenny";
-  private static final String OAUTH_SCOPE = "https://www.googleapis.com/auth/cloud-platform";
+
   private static final String API_FILE = "spannertest.json";
   private static final int MAX_SIZE_PER_COLUMN = 2621440;
   private static final int NUM_WARMUP = 10;
 
+  private final String database;
   private final boolean isGrpcGcp;
   private final int payload;
   private final int numOfRpcs;
   private final int numOfThreads;
 
   SpannerTestCases(boolean isGrpcGcp, int payload, int numOfRpcs, int numOfThreads) {
+    String projectId =
+        System.getenv("GCP_PROJECT_ID") != null ? System.getenv("GCP_PROJECT_ID") : DEFAULT_PROJECT;
+    this.database =
+        String.format(
+            "projects/%s/instances/%s/databases/%s", projectId, DEFAULT_INSTANCE, DEFAULT_DATABASE);
     this.isGrpcGcp = isGrpcGcp;
     this.payload = payload;
     this.numOfRpcs = numOfRpcs;
@@ -133,7 +142,7 @@ final class SpannerTestCases {
     String colContent = new String(charArray);
 
     Session session =
-        stub.createSession(CreateSessionRequest.newBuilder().setDatabase(DATABASE).build());
+        stub.createSession(CreateSessionRequest.newBuilder().setDatabase(database).build());
     long start = System.currentTimeMillis();
     // Clean the data in the table.
     BeginTransactionRequest request =
@@ -198,7 +207,7 @@ final class SpannerTestCases {
     System.out.println("\nTestListSessions");
     ManagedChannel channel = getChannel();
     SpannerBlockingStub stub = getBlockingStub(channel);
-    ListSessionsRequest request = ListSessionsRequest.newBuilder().setDatabase(DATABASE).build();
+    ListSessionsRequest request = ListSessionsRequest.newBuilder().setDatabase(database).build();
 
     for (int i = 0; i < NUM_WARMUP; i++) {
       stub.listSessions(request);
@@ -216,7 +225,7 @@ final class SpannerTestCases {
     System.out.println("\nTestListSessionsAsync");
     ManagedChannel channel = getChannel();
     SpannerStub stub = getStub(channel);
-    ListSessionsRequest request = ListSessionsRequest.newBuilder().setDatabase(DATABASE).build();
+    ListSessionsRequest request = ListSessionsRequest.newBuilder().setDatabase(database).build();
 
     for (int i = 0; i < NUM_WARMUP; i++) {
       AsyncResponseObserver<ListSessionsResponse> respList = new AsyncResponseObserver<>();
@@ -237,7 +246,7 @@ final class SpannerTestCases {
     ManagedChannel channel = getChannel();
     SpannerBlockingStub stub = getBlockingStub(channel);
     Session session =
-        stub.createSession(CreateSessionRequest.newBuilder().setDatabase(DATABASE).build());
+        stub.createSession(CreateSessionRequest.newBuilder().setDatabase(database).build());
 
     ExecuteSqlRequest request =
         ExecuteSqlRequest.newBuilder()
@@ -258,7 +267,7 @@ final class SpannerTestCases {
     ManagedChannel channel = getChannel();
     SpannerStub stub = getStub(channel);
     AsyncResponseObserver<Session> sessionObs = new AsyncResponseObserver<>();
-    stub.createSession(CreateSessionRequest.newBuilder().setDatabase(DATABASE).build(), sessionObs);
+    stub.createSession(CreateSessionRequest.newBuilder().setDatabase(database).build(), sessionObs);
 
     ExecuteSqlRequest request =
         ExecuteSqlRequest.newBuilder()
@@ -279,7 +288,7 @@ final class SpannerTestCases {
     ManagedChannel channel = getChannel();
     SpannerBlockingStub stub = getBlockingStub(channel);
     Session session =
-        stub.createSession(CreateSessionRequest.newBuilder().setDatabase(DATABASE).build());
+        stub.createSession(CreateSessionRequest.newBuilder().setDatabase(database).build());
 
     TransactionOptions options =
         TransactionOptions.newBuilder()
@@ -306,7 +315,7 @@ final class SpannerTestCases {
     ManagedChannel channel = getChannel();
     SpannerStub stub = getStub(channel);
     AsyncResponseObserver<Session> sessionObs = new AsyncResponseObserver<>();
-    stub.createSession(CreateSessionRequest.newBuilder().setDatabase(DATABASE).build(), sessionObs);
+    stub.createSession(CreateSessionRequest.newBuilder().setDatabase(database).build(), sessionObs);
 
     TransactionOptions options =
         TransactionOptions.newBuilder()
@@ -333,7 +342,7 @@ final class SpannerTestCases {
     ManagedChannel channel = getChannel();
     SpannerBlockingStub stub = getBlockingStub(channel);
     Session session =
-        stub.createSession(CreateSessionRequest.newBuilder().setDatabase(DATABASE).build());
+        stub.createSession(CreateSessionRequest.newBuilder().setDatabase(database).build());
 
     ReadRequest request =
         ReadRequest.newBuilder()
@@ -357,7 +366,7 @@ final class SpannerTestCases {
     ManagedChannel channel = getChannel();
     SpannerStub stub = getStub(channel);
     AsyncResponseObserver<Session> sessionObs = new AsyncResponseObserver<>();
-    stub.createSession(CreateSessionRequest.newBuilder().setDatabase(DATABASE).build(), sessionObs);
+    stub.createSession(CreateSessionRequest.newBuilder().setDatabase(database).build(), sessionObs);
 
     ReadRequest request =
         ReadRequest.newBuilder()
@@ -381,7 +390,7 @@ final class SpannerTestCases {
     ManagedChannel channel = getChannel();
     SpannerBlockingStub stub = getBlockingStub(channel);
     Session session =
-        stub.createSession(CreateSessionRequest.newBuilder().setDatabase(DATABASE).build());
+        stub.createSession(CreateSessionRequest.newBuilder().setDatabase(database).build());
 
     // Warm up.
     ExecuteSqlRequest request =
@@ -541,13 +550,14 @@ final class SpannerTestCases {
     }
   }
 
-  private static void listSessionsSingleCall(SpannerBlockingStub stub) {
-    ListSessionsRequest request = ListSessionsRequest.newBuilder().setDatabase(DATABASE).build();
+  private void listSessionsSingleCall(SpannerBlockingStub stub) {
+    ListSessionsRequest request = ListSessionsRequest.newBuilder().setDatabase(database).build();
     long start = System.currentTimeMillis();
     stub.listSessions(request);
     System.out.println(
         String.format(
-            "Finished executing listSessions in %d ms", System.currentTimeMillis() - start));
+            "-- Finished executing listSessions in %d ms in another thread. -- ",
+            System.currentTimeMillis() - start));
   }
 
   private static void deleteAndCloseAsync(SpannerStub stub, ManagedChannel channel, String name)
