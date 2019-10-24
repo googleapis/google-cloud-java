@@ -16,7 +16,6 @@ Java idiomatic client for [Cloud Tasks][cloud-tasks].
 Quickstart
 ----------
 
-[//]: # ({x-version-update-start:google-cloud-tasks:released})
 If you are using Maven, add this to your pom.xml file
 ```xml
 <dependency>
@@ -33,7 +32,6 @@ If you are using SBT, add this to your dependencies
 ```Scala
 libraryDependencies += "com.google.cloud" % "google-cloud-tasks" % "1.25.0"
 ```
-[//]: # ({x-version-update-end})
 
 Authentication
 --------------
