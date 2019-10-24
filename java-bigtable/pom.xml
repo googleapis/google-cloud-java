@@ -157,7 +157,7 @@
         <gax.version>1.49.1</gax.version>
         <google.api-common.version>1.8.1</google.api-common.version>
         <google.common-protos.version>1.17.0</google.common-protos.version>
-        <google.core.version>1.91.2</google.core.version>
+        <google.core.version>1.91.3</google.core.version>
         <grpc.version>1.24.1</grpc.version>
         <guava.version>28.1-android</guava.version>
         <opencensus.version>0.24.0</opencensus.version>
