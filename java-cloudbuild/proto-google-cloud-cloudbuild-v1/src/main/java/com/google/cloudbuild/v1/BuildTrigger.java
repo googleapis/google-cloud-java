@@ -498,6 +498,7 @@ public final class BuildTrigger extends com.google.protobuf.GeneratedMessageV3
    * Branch and tag names in trigger templates are interpreted as regular
    * expressions. Any branch or tag change that matches that regular expression
    * will trigger a build.
+   * Mutually exclusive with `github`.
    * </pre>
    *
    * <code>.google.devtools.cloudbuild.v1.RepoSource trigger_template = 7;</code>
@@ -513,6 +514,7 @@ public final class BuildTrigger extends com.google.protobuf.GeneratedMessageV3
    * Branch and tag names in trigger templates are interpreted as regular
    * expressions. Any branch or tag change that matches that regular expression
    * will trigger a build.
+   * Mutually exclusive with `github`.
    * </pre>
    *
    * <code>.google.devtools.cloudbuild.v1.RepoSource trigger_template = 7;</code>
@@ -530,6 +532,7 @@ public final class BuildTrigger extends com.google.protobuf.GeneratedMessageV3
    * Branch and tag names in trigger templates are interpreted as regular
    * expressions. Any branch or tag change that matches that regular expression
    * will trigger a build.
+   * Mutually exclusive with `github`.
    * </pre>
    *
    * <code>.google.devtools.cloudbuild.v1.RepoSource trigger_template = 7;</code>
@@ -546,6 +549,7 @@ public final class BuildTrigger extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * GitHubEventsConfig describes the configuration of a trigger that creates
    * a build whenever a GitHub event is received.
+   * Mutually exclusive with `trigger_template`.
    * </pre>
    *
    * <code>.google.devtools.cloudbuild.v1.GitHubEventsConfig github = 13;</code>
@@ -559,6 +563,7 @@ public final class BuildTrigger extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * GitHubEventsConfig describes the configuration of a trigger that creates
    * a build whenever a GitHub event is received.
+   * Mutually exclusive with `trigger_template`.
    * </pre>
    *
    * <code>.google.devtools.cloudbuild.v1.GitHubEventsConfig github = 13;</code>
@@ -574,6 +579,7 @@ public final class BuildTrigger extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * GitHubEventsConfig describes the configuration of a trigger that creates
    * a build whenever a GitHub event is received.
+   * Mutually exclusive with `trigger_template`.
    * </pre>
    *
    * <code>.google.devtools.cloudbuild.v1.GitHubEventsConfig github = 13;</code>
@@ -2092,6 +2098,7 @@ public final class BuildTrigger extends com.google.protobuf.GeneratedMessageV3
      * Branch and tag names in trigger templates are interpreted as regular
      * expressions. Any branch or tag change that matches that regular expression
      * will trigger a build.
+     * Mutually exclusive with `github`.
      * </pre>
      *
      * <code>.google.devtools.cloudbuild.v1.RepoSource trigger_template = 7;</code>
@@ -2107,6 +2114,7 @@ public final class BuildTrigger extends com.google.protobuf.GeneratedMessageV3
      * Branch and tag names in trigger templates are interpreted as regular
      * expressions. Any branch or tag change that matches that regular expression
      * will trigger a build.
+     * Mutually exclusive with `github`.
      * </pre>
      *
      * <code>.google.devtools.cloudbuild.v1.RepoSource trigger_template = 7;</code>
@@ -2128,6 +2136,7 @@ public final class BuildTrigger extends com.google.protobuf.GeneratedMessageV3
      * Branch and tag names in trigger templates are interpreted as regular
      * expressions. Any branch or tag change that matches that regular expression
      * will trigger a build.
+     * Mutually exclusive with `github`.
      * </pre>
      *
      * <code>.google.devtools.cloudbuild.v1.RepoSource trigger_template = 7;</code>
@@ -2153,6 +2162,7 @@ public final class BuildTrigger extends com.google.protobuf.GeneratedMessageV3
      * Branch and tag names in trigger templates are interpreted as regular
      * expressions. Any branch or tag change that matches that regular expression
      * will trigger a build.
+     * Mutually exclusive with `github`.
      * </pre>
      *
      * <code>.google.devtools.cloudbuild.v1.RepoSource trigger_template = 7;</code>
@@ -2175,6 +2185,7 @@ public final class BuildTrigger extends com.google.protobuf.GeneratedMessageV3
      * Branch and tag names in trigger templates are interpreted as regular
      * expressions. Any branch or tag change that matches that regular expression
      * will trigger a build.
+     * Mutually exclusive with `github`.
      * </pre>
      *
      * <code>.google.devtools.cloudbuild.v1.RepoSource trigger_template = 7;</code>
@@ -2204,6 +2215,7 @@ public final class BuildTrigger extends com.google.protobuf.GeneratedMessageV3
      * Branch and tag names in trigger templates are interpreted as regular
      * expressions. Any branch or tag change that matches that regular expression
      * will trigger a build.
+     * Mutually exclusive with `github`.
      * </pre>
      *
      * <code>.google.devtools.cloudbuild.v1.RepoSource trigger_template = 7;</code>
@@ -2227,6 +2239,7 @@ public final class BuildTrigger extends com.google.protobuf.GeneratedMessageV3
      * Branch and tag names in trigger templates are interpreted as regular
      * expressions. Any branch or tag change that matches that regular expression
      * will trigger a build.
+     * Mutually exclusive with `github`.
      * </pre>
      *
      * <code>.google.devtools.cloudbuild.v1.RepoSource trigger_template = 7;</code>
@@ -2244,6 +2257,7 @@ public final class BuildTrigger extends com.google.protobuf.GeneratedMessageV3
      * Branch and tag names in trigger templates are interpreted as regular
      * expressions. Any branch or tag change that matches that regular expression
      * will trigger a build.
+     * Mutually exclusive with `github`.
      * </pre>
      *
      * <code>.google.devtools.cloudbuild.v1.RepoSource trigger_template = 7;</code>
@@ -2265,6 +2279,7 @@ public final class BuildTrigger extends com.google.protobuf.GeneratedMessageV3
      * Branch and tag names in trigger templates are interpreted as regular
      * expressions. Any branch or tag change that matches that regular expression
      * will trigger a build.
+     * Mutually exclusive with `github`.
      * </pre>
      *
      * <code>.google.devtools.cloudbuild.v1.RepoSource trigger_template = 7;</code>
@@ -2298,6 +2313,7 @@ public final class BuildTrigger extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * GitHubEventsConfig describes the configuration of a trigger that creates
      * a build whenever a GitHub event is received.
+     * Mutually exclusive with `trigger_template`.
      * </pre>
      *
      * <code>.google.devtools.cloudbuild.v1.GitHubEventsConfig github = 13;</code>
@@ -2311,6 +2327,7 @@ public final class BuildTrigger extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * GitHubEventsConfig describes the configuration of a trigger that creates
      * a build whenever a GitHub event is received.
+     * Mutually exclusive with `trigger_template`.
      * </pre>
      *
      * <code>.google.devtools.cloudbuild.v1.GitHubEventsConfig github = 13;</code>
@@ -2330,6 +2347,7 @@ public final class BuildTrigger extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * GitHubEventsConfig describes the configuration of a trigger that creates
      * a build whenever a GitHub event is received.
+     * Mutually exclusive with `trigger_template`.
      * </pre>
      *
      * <code>.google.devtools.cloudbuild.v1.GitHubEventsConfig github = 13;</code>
@@ -2353,6 +2371,7 @@ public final class BuildTrigger extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * GitHubEventsConfig describes the configuration of a trigger that creates
      * a build whenever a GitHub event is received.
+     * Mutually exclusive with `trigger_template`.
      * </pre>
      *
      * <code>.google.devtools.cloudbuild.v1.GitHubEventsConfig github = 13;</code>
@@ -2373,6 +2392,7 @@ public final class BuildTrigger extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * GitHubEventsConfig describes the configuration of a trigger that creates
      * a build whenever a GitHub event is received.
+     * Mutually exclusive with `trigger_template`.
      * </pre>
      *
      * <code>.google.devtools.cloudbuild.v1.GitHubEventsConfig github = 13;</code>
@@ -2400,6 +2420,7 @@ public final class BuildTrigger extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * GitHubEventsConfig describes the configuration of a trigger that creates
      * a build whenever a GitHub event is received.
+     * Mutually exclusive with `trigger_template`.
      * </pre>
      *
      * <code>.google.devtools.cloudbuild.v1.GitHubEventsConfig github = 13;</code>
@@ -2421,6 +2442,7 @@ public final class BuildTrigger extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * GitHubEventsConfig describes the configuration of a trigger that creates
      * a build whenever a GitHub event is received.
+     * Mutually exclusive with `trigger_template`.
      * </pre>
      *
      * <code>.google.devtools.cloudbuild.v1.GitHubEventsConfig github = 13;</code>
@@ -2436,6 +2458,7 @@ public final class BuildTrigger extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * GitHubEventsConfig describes the configuration of a trigger that creates
      * a build whenever a GitHub event is received.
+     * Mutually exclusive with `trigger_template`.
      * </pre>
      *
      * <code>.google.devtools.cloudbuild.v1.GitHubEventsConfig github = 13;</code>
@@ -2455,6 +2478,7 @@ public final class BuildTrigger extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * GitHubEventsConfig describes the configuration of a trigger that creates
      * a build whenever a GitHub event is received.
+     * Mutually exclusive with `trigger_template`.
      * </pre>
      *
      * <code>.google.devtools.cloudbuild.v1.GitHubEventsConfig github = 13;</code>

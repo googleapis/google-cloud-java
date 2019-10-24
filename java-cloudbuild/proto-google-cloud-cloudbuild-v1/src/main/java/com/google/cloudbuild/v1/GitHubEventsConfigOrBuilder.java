@@ -30,8 +30,9 @@ public interface GitHubEventsConfigOrBuilder
    * The installationID that emits the GitHub event.
    * </pre>
    *
-   * <code>int64 installation_id = 1;</code>
+   * <code>int64 installation_id = 1 [deprecated = true];</code>
    */
+  @java.lang.Deprecated
   long getInstallationId();
 
   /**

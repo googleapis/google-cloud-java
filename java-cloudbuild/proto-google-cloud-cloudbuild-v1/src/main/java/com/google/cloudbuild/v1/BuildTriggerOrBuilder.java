@@ -135,6 +135,7 @@ public interface BuildTriggerOrBuilder
    * Branch and tag names in trigger templates are interpreted as regular
    * expressions. Any branch or tag change that matches that regular expression
    * will trigger a build.
+   * Mutually exclusive with `github`.
    * </pre>
    *
    * <code>.google.devtools.cloudbuild.v1.RepoSource trigger_template = 7;</code>
@@ -148,6 +149,7 @@ public interface BuildTriggerOrBuilder
    * Branch and tag names in trigger templates are interpreted as regular
    * expressions. Any branch or tag change that matches that regular expression
    * will trigger a build.
+   * Mutually exclusive with `github`.
    * </pre>
    *
    * <code>.google.devtools.cloudbuild.v1.RepoSource trigger_template = 7;</code>
@@ -161,6 +163,7 @@ public interface BuildTriggerOrBuilder
    * Branch and tag names in trigger templates are interpreted as regular
    * expressions. Any branch or tag change that matches that regular expression
    * will trigger a build.
+   * Mutually exclusive with `github`.
    * </pre>
    *
    * <code>.google.devtools.cloudbuild.v1.RepoSource trigger_template = 7;</code>
@@ -173,6 +176,7 @@ public interface BuildTriggerOrBuilder
    * <pre>
    * GitHubEventsConfig describes the configuration of a trigger that creates
    * a build whenever a GitHub event is received.
+   * Mutually exclusive with `trigger_template`.
    * </pre>
    *
    * <code>.google.devtools.cloudbuild.v1.GitHubEventsConfig github = 13;</code>
@@ -184,6 +188,7 @@ public interface BuildTriggerOrBuilder
    * <pre>
    * GitHubEventsConfig describes the configuration of a trigger that creates
    * a build whenever a GitHub event is received.
+   * Mutually exclusive with `trigger_template`.
    * </pre>
    *
    * <code>.google.devtools.cloudbuild.v1.GitHubEventsConfig github = 13;</code>
@@ -195,6 +200,7 @@ public interface BuildTriggerOrBuilder
    * <pre>
    * GitHubEventsConfig describes the configuration of a trigger that creates
    * a build whenever a GitHub event is received.
+   * Mutually exclusive with `trigger_template`.
    * </pre>
    *
    * <code>.google.devtools.cloudbuild.v1.GitHubEventsConfig github = 13;</code>

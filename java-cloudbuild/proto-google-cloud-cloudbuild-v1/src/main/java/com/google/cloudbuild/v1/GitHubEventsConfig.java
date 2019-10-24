@@ -202,8 +202,9 @@ public final class GitHubEventsConfig extends com.google.protobuf.GeneratedMessa
    * The installationID that emits the GitHub event.
    * </pre>
    *
-   * <code>int64 installation_id = 1;</code>
+   * <code>int64 installation_id = 1 [deprecated = true];</code>
    */
+  @java.lang.Deprecated
   public long getInstallationId() {
     return installationId_;
   }
@@ -831,8 +832,9 @@ public final class GitHubEventsConfig extends com.google.protobuf.GeneratedMessa
      * The installationID that emits the GitHub event.
      * </pre>
      *
-     * <code>int64 installation_id = 1;</code>
+     * <code>int64 installation_id = 1 [deprecated = true];</code>
      */
+    @java.lang.Deprecated
     public long getInstallationId() {
       return installationId_;
     }
@@ -843,8 +845,9 @@ public final class GitHubEventsConfig extends com.google.protobuf.GeneratedMessa
      * The installationID that emits the GitHub event.
      * </pre>
      *
-     * <code>int64 installation_id = 1;</code>
+     * <code>int64 installation_id = 1 [deprecated = true];</code>
      */
+    @java.lang.Deprecated
     public Builder setInstallationId(long value) {
 
       installationId_ = value;
@@ -858,8 +861,9 @@ public final class GitHubEventsConfig extends com.google.protobuf.GeneratedMessa
      * The installationID that emits the GitHub event.
      * </pre>
      *
-     * <code>int64 installation_id = 1;</code>
+     * <code>int64 installation_id = 1 [deprecated = true];</code>
      */
+    @java.lang.Deprecated
     public Builder clearInstallationId() {
 
       installationId_ = 0L;
