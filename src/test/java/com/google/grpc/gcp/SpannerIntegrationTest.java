@@ -42,6 +42,8 @@ import com.google.common.util.concurrent.ListenableFuture;
 import com.google.protobuf.Empty;
 import com.google.spanner.admin.database.v1.CreateDatabaseMetadata;
 import com.google.spanner.admin.instance.v1.CreateInstanceMetadata;
+import com.google.spanner.v1.BatchCreateSessionsRequest;
+import com.google.spanner.v1.BatchCreateSessionsResponse;
 import com.google.spanner.v1.CreateSessionRequest;
 import com.google.spanner.v1.DeleteSessionRequest;
 import com.google.spanner.v1.ExecuteSqlRequest;
@@ -355,6 +357,27 @@ public final class SpannerIntegrationTest {
 
       deleteSession(stub, session);
       checkChannelRefs(1, 0, 0);
+    }
+  }
+
+  @Test
+  public void testBatchCreateSessionsBlocking() throws Exception {
+    int sessionCount = 10;
+    SpannerBlockingStub stub = getSpannerBlockingStub();
+    BatchCreateSessionsRequest req =
+        BatchCreateSessionsRequest.newBuilder()
+            .setDatabase(DATABASE_PATH)
+            .setSessionCount(sessionCount)
+            .build();
+    for (int i = 0; i < MAX_CHANNEL * 2; i++) {
+      BatchCreateSessionsResponse resp = stub.batchCreateSessions(req);
+      assertThat(resp.getSessionCount()).isEqualTo(sessionCount);
+      checkChannelRefs(1, 0, sessionCount);
+
+      for (int j = 0; j < sessionCount; j++) {
+        deleteSession(stub, resp.getSession(j));
+        checkChannelRefs(1, 0, sessionCount - 1 - j);
+      }
     }
   }
 
