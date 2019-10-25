@@ -1,6 +1,6 @@
 # Changelog
 
-## [0.91.0](https://www.github.com/googleapis/java-tasks/compare/v0.90.0...v0.91.0) (2019-10-25)
+## [1.26.0](https://www.github.com/googleapis/java-tasks/compare/v0.90.0...v1.26.0) (2019-10-25)
 
 
 ### Features
