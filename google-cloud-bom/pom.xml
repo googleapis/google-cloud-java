@@ -870,19 +870,11 @@
         <scope>import</scope>
       </dependency>
       <dependency>
-        <groupId>com.google.api.grpc</groupId>
-        <artifactId>proto-google-cloud-iamcredentials-v1</artifactId>
-        <version>0.42.0-alpha</version>
-      </dependency>
-      <dependency>
-        <groupId>com.google.api.grpc</groupId>
-        <artifactId>grpc-google-cloud-iamcredentials-v1</artifactId>
-        <version>0.42.0-alpha</version>
-      </dependency>
-      <dependency>
         <groupId>com.google.cloud</groupId>
-        <artifactId>google-cloud-iamcredentials</artifactId>
-        <version>0.42.0-alpha</version>
+        <artifactId>google-cloud-iamcredentials-bom</artifactId>
+        <version>0.43.0-alpha</version>
+        <type>pom</type>
+        <scope>import</scope>
       </dependency>
       <dependency>
         <groupId>com.google.cloud</groupId>
