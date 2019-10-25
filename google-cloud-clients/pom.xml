@@ -177,6 +177,13 @@
   <dependencyManagement>
     <dependencies>
       <dependency>
+        <groupId>io.grpc</groupId>
+        <artifactId>grpc-bom</artifactId>
+        <version>${grpc.version}</version>
+        <type>pom</type>
+        <scope>import</scope>
+      </dependency>
+      <dependency>
         <groupId>com.google.http-client</groupId>
         <artifactId>google-http-client-bom</artifactId>
         <version>${http-client-bom.version}</version>
@@ -201,13 +208,6 @@
         <groupId>com.google.auth</groupId>
         <artifactId>google-auth-library-bom</artifactId>
         <version>${google.auth.version}</version>
-        <type>pom</type>
-        <scope>import</scope>
-      </dependency>
-      <dependency>
-        <groupId>io.grpc</groupId>
-        <artifactId>grpc-bom</artifactId>
-        <version>${grpc.version}</version>
         <type>pom</type>
         <scope>import</scope>
       </dependency>
