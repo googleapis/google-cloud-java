@@ -1,6 +1,6 @@
 # Format:
 # module:released-version:current-version
 
-proto-google-cloud-dlp-v2:0.80.1-SNAPSHOT:0.80.1-SNAPSHOT
-grpc-google-cloud-dlp-v2:0.80.1-SNAPSHOT:0.80.1-SNAPSHOT
-google-cloud-dlp:0.115.1-beta-SNAPSHOT:0.115.1-beta-SNAPSHOT
+proto-google-cloud-dlp-v2:0.80.0:0.80.1-SNAPSHOT
+grpc-google-cloud-dlp-v2:0.80.0:0.80.1-SNAPSHOT
+google-cloud-dlp:0.115.0-beta:0.115.1-beta-SNAPSHOT
