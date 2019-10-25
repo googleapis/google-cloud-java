@@ -381,18 +381,10 @@
       </dependency>
       <dependency>
         <groupId>com.google.cloud</groupId>
-        <artifactId>google-cloud-dlp</artifactId>
-        <version>0.115.0-beta</version>
-      </dependency>
-      <dependency>
-        <groupId>com.google.api.grpc</groupId>
-        <artifactId>proto-google-cloud-dlp-v2</artifactId>
-        <version>0.80.0</version>
-      </dependency>
-      <dependency>
-        <groupId>com.google.api.grpc</groupId>
-        <artifactId>grpc-google-cloud-dlp-v2</artifactId>
-        <version>0.80.0</version>
+        <artifactId>google-cloud-dlp-bom</artifactId>
+        <version>0.116.0-beta</version>
+        <type>pom</type>
+        <scope>import</scope>
       </dependency>
       <dependency>
         <groupId>com.google.cloud</groupId>
