@@ -456,22 +456,22 @@
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>proto-google-cloud-scheduler-v1beta1</artifactId>
-        <version>0.81.1-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-scheduler-v1beta1:current} -->
+        <version>0.81.0</version>
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>proto-google-cloud-scheduler-v1</artifactId>
-        <version>1.21.1-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-scheduler-v1:current} -->
+        <version>1.21.0</version>
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>grpc-google-cloud-scheduler-v1beta1</artifactId>
-        <version>0.81.1-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-scheduler-v1beta1:current} -->
+        <version>0.81.0</version>
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>grpc-google-cloud-scheduler-v1</artifactId>
-        <version>1.21.1-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-scheduler-v1:current} -->
+        <version>1.21.0</version>
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
