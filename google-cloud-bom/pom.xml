@@ -360,18 +360,10 @@
       </dependency>
       <dependency>
         <groupId>com.google.cloud</groupId>
-        <artifactId>google-cloud-datacatalog</artifactId>
-        <version>0.28.0-alpha</version>
-      </dependency>
-      <dependency>
-        <groupId>com.google.api.grpc</groupId>
-        <artifactId>proto-google-cloud-datacatalog-v1beta1</artifactId>
-        <version>0.28.0-alpha</version>
-      </dependency>
-      <dependency>
-        <groupId>com.google.api.grpc</groupId>
-        <artifactId>grpc-google-cloud-datacatalog-v1beta1</artifactId>
-        <version>0.28.0-alpha</version>
+        <artifactId>google-cloud-datacatalog-bom</artifactId>
+        <version>0.29.0-alpha</version>
+        <type>pom</type>
+        <scope>import</scope>
       </dependency>
       <dependency>
         <groupId>com.google.cloud</groupId>
