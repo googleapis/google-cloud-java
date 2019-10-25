@@ -708,28 +708,10 @@
       </dependency>
       <dependency>
         <groupId>com.google.cloud</groupId>
-        <artifactId>google-cloud-texttospeech</artifactId>
-        <version>0.116.0-beta</version>
-      </dependency>
-      <dependency>
-        <groupId>com.google.api.grpc</groupId>
-        <artifactId>proto-google-cloud-texttospeech-v1beta1</artifactId>
-        <version>0.81.0</version>
-      </dependency>
-      <dependency>
-        <groupId>com.google.api.grpc</groupId>
-        <artifactId>grpc-google-cloud-texttospeech-v1beta1</artifactId>
-        <version>0.81.0</version>
-      </dependency>
-      <dependency>
-        <groupId>com.google.api.grpc</groupId>
-        <artifactId>proto-google-cloud-texttospeech-v1</artifactId>
-        <version>0.81.0</version>
-      </dependency>
-      <dependency>
-        <groupId>com.google.api.grpc</groupId>
-        <artifactId>grpc-google-cloud-texttospeech-v1</artifactId>
-        <version>0.81.0</version>
+        <artifactId>google-cloud-texttospeech-bom</artifactId>
+        <version>0.117.0-beta</version>
+        <type>pom</type>
+        <scope>import</scope>
       </dependency>
       <dependency>
         <groupId>com.google.cloud</groupId>
