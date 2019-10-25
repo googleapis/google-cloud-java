@@ -643,27 +643,27 @@
       <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-redis</artifactId>
-        <version>0.116.1-alpha-SNAPSHOT</version><!-- {x-version-update:google-cloud-redis:current} -->
+        <version>0.116.0-alpha</version>
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>proto-google-cloud-redis-v1beta1</artifactId>
-        <version>0.81.1-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-redis-v1beta1:current} -->
+        <version>0.81.0</version>
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>grpc-google-cloud-redis-v1beta1</artifactId>
-        <version>0.81.1-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-redis-v1beta1:current} -->
+        <version>0.81.0</version>
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>proto-google-cloud-redis-v1</artifactId>
-        <version>0.81.1-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-redis-v1:current} -->
+        <version>0.81.0</version>
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>grpc-google-cloud-redis-v1</artifactId>
-        <version>0.81.1-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-redis-v1:current} -->
+        <version>0.81.0</version>
       </dependency>
       <dependency>
         <groupId>com.google.cloud</groupId>
