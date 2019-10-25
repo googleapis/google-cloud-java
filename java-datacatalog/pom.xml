@@ -4,7 +4,7 @@
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-datacatalog-parent</artifactId>
   <packaging>pom</packaging>
-  <version>0.28.1-alpha-SNAPSHOT</version><!-- {x-version-update:google-cloud-datacatalog:current} -->
+  <version>0.29.0-alpha</version><!-- {x-version-update:google-cloud-datacatalog:current} -->
   <name>Google Cloud Data Catalog Parent</name>
   <url>https://github.com/googleapis/java-datacatalog</url>
   <description>
@@ -82,17 +82,17 @@
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>proto-google-cloud-datacatalog-v1beta1</artifactId>
-        <version>0.28.1-alpha-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-datacatalog-v1beta1:current} -->
+        <version>0.29.0-alpha</version><!-- {x-version-update:proto-google-cloud-datacatalog-v1beta1:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>grpc-google-cloud-datacatalog-v1beta1</artifactId>
-        <version>0.28.1-alpha-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-datacatalog-v1beta1:current} -->
+        <version>0.29.0-alpha</version><!-- {x-version-update:grpc-google-cloud-datacatalog-v1beta1:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-datacatalog</artifactId>
-        <version>0.28.1-alpha-SNAPSHOT</version><!-- {x-version-update:google-cloud-datacatalog:current} -->
+        <version>0.29.0-alpha</version><!-- {x-version-update:google-cloud-datacatalog:current} -->
       </dependency>
 
       <dependency>
