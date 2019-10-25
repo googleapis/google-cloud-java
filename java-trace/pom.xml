@@ -276,6 +276,7 @@
     <module>grpc-google-cloud-trace-v1</module>
     <module>grpc-google-cloud-trace-v2</module>
     <module>google-cloud-trace</module>
+    <module>google-cloud-trace-bom</module>
   </modules>
 
   <reporting>
