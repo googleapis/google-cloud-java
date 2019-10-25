@@ -117,4 +117,3 @@ proto-google-cloud-securitycenter-v1beta1:0.81.0:0.81.1-SNAPSHOT
 proto-google-cloud-spanner-admin-database-v1:1.43.0:1.43.1-SNAPSHOT
 proto-google-cloud-spanner-admin-instance-v1:1.43.0:1.43.1-SNAPSHOT
 proto-google-cloud-spanner-v1:1.43.0:1.43.1-SNAPSHOT
-proto-google-cloud-talent-v4beta1:0.33.0-beta:0.33.1-beta-SNAPSHOT
