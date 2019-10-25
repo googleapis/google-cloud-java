@@ -668,7 +668,7 @@
       <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-resourcemanager</artifactId>
-        <version>0.116.1-alpha-SNAPSHOT</version><!-- {x-version-update:google-cloud-resourcemanager:current} -->
+        <version>0.116.0-alpha</version>
       </dependency>
       <dependency>
         <groupId>com.google.cloud</groupId>

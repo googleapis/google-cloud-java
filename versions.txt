@@ -39,7 +39,6 @@ google-cloud-phishingprotection:0.27.0:0.27.1-SNAPSHOT
 google-cloud-pubsub:1.98.0:1.98.1-SNAPSHOT
 google-cloud-recaptchaenterprise:0.27.0:0.27.1-SNAPSHOT
 google-cloud-redis:0.116.0-alpha:0.116.1-alpha-SNAPSHOT
-google-cloud-resourcemanager:0.116.0-alpha:0.116.1-alpha-SNAPSHOT
 google-cloud-scheduler:1.21.0:1.21.1-SNAPSHOT
 google-cloud-securitycenter:0.116.0:0.116.1-SNAPSHOT
 google-cloud-spanner:1.43.0:1.43.1-SNAPSHOT
