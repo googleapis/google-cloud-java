@@ -222,7 +222,7 @@
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>proto-google-cloud-asset-v1p2beta1</artifactId>
-        <version>0.79.0</version>
+        <version>0.80.0</version>
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
