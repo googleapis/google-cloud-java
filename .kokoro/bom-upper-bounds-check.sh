@@ -31,10 +31,10 @@ git version
 
 mvn install -DskipTests=true -Dmaven.javadoc.skip=true -Dgcloud.download.skip=true -B -V
 
-# Example version: '0.116.1-alpha-SNAPSHOT'
 VERSION_POM=google-cloud-bom/pom.xml
 # The property key for this repository in Google Libraries BOM
 VERSION_KEY=google.cloud.java.version
+# Example version: '0.116.1-alpha-SNAPSHOT'
 VERSION=`grep '<version>' $VERSION_POM |head -1 |perl -nle 'print $1 if m|<version>(.+)</version>|'`
 
 if [ -z "${VERSION}" ]; then
@@ -45,7 +45,6 @@ echo "Version: ${VERSION}"
 
 # Run the upper bound check against Google Libraries BOM in cloud-opensource-java
 git clone https://github.com/GoogleCloudPlatform/cloud-opensource-java.git
-cd cloud-opensource-java/boms/upper-bounds-check
-
 # This project has the enforcer rule with requireUpperBoundDeps
+cd cloud-opensource-java/boms/upper-bounds-check
 mvn validate -D${VERSION_KEY}=${VERSION}
