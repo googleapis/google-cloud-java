@@ -803,7 +803,7 @@
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>proto-google-cloud-tasks-v2</artifactId>
-        <version>1.25.0</version>
+        <version>1.26.0</version>
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
