@@ -125,7 +125,9 @@ public class QueryTest {
     query.whereLessThanOrEqualTo("foo", "bar").get().get();
     query.whereArrayContains("foo", "bar").get().get();
     query.whereIn("foo", Collections.<Object>singletonList("bar"));
+    query.whereIn("foo", "bar");
     query.whereArrayContainsAny("foo", Collections.<Object>singletonList("bar"));
+    query.whereArrayContainsAny("foo", "bar");
 
     Iterator<RunQueryRequest> expected =
         Arrays.asList(
@@ -163,7 +165,9 @@ public class QueryTest {
     query.whereLessThanOrEqualTo(FieldPath.of("foo"), "bar").get().get();
     query.whereArrayContains(FieldPath.of("foo"), "bar").get().get();
     query.whereIn(FieldPath.of("foo"), Collections.<Object>singletonList("bar"));
+    query.whereIn(FieldPath.of("foo"), "bar");
     query.whereArrayContainsAny(FieldPath.of("foo"), Collections.<Object>singletonList("bar"));
+    query.whereArrayContainsAny(FieldPath.of("foo"), "bar");
 
     Iterator<RunQueryRequest> expected =
         Arrays.asList(

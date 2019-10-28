@@ -50,6 +50,7 @@ import com.google.protobuf.Int32Value;
 import io.opencensus.trace.AttributeValue;
 import io.opencensus.trace.Tracing;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Comparator;
 import java.util.Iterator;
 import java.util.List;
@@ -623,7 +624,7 @@ public class Query {
    * @return The created Query.
    */
   @Nonnull
-  public Query whereArrayContainsAny(@Nonnull String field, @Nonnull List<Object> value) {
+  public Query whereArrayContainsAny(@Nonnull String field, @Nonnull List<? extends Object> value) {
     Preconditions.checkState(
         options.getStartCursor() == null && options.getEndCursor() == null,
         "Cannot call whereArrayContainsAny() after defining a boundary with startAt(), "
@@ -639,17 +640,68 @@ public class Query {
    * <p>A Query can have only one whereArrayContainsAny() filter and it cannot be combined with
    * whereArrayContains() or whereIn().
    *
-   * @param fieldPath The path of the field containing an array to search.
-   * @param value The array that contains the values to match.
-   * @return The created Query.
+   * @param field The name of the field containing an array to search.
+   * @param value The first value to match against.
+   * @param moreValues Additional values to match against.
+   * @return The created {@code Query}.
    */
   @Nonnull
-  public Query whereArrayContainsAny(@Nonnull FieldPath fieldPath, @Nonnull List<Object> value) {
+  Query whereArrayContainsAny(@Nonnull String field, Object value, Object... moreValues) {
     Preconditions.checkState(
         options.getStartCursor() == null && options.getEndCursor() == null,
         "Cannot call whereArrayContainsAny() after defining a boundary with startAt(), "
             + "startAfter(), endBefore() or endAt().");
-    return whereHelper(fieldPath, ARRAY_CONTAINS_ANY, value);
+    List<Object> values = new ArrayList<>();
+    values.add(value);
+    values.addAll(Arrays.asList(moreValues));
+    return whereHelper(FieldPath.fromDotSeparatedString(field), ARRAY_CONTAINS_ANY, values);
+  }
+
+  /**
+   * Creates and returns a new Query with the additional filter that documents must contain the
+   * specified field, the value must be an array, and that the array must contain at least one value
+   * from the provided array.
+   *
+   * <p>A Query can have only one whereArrayContainsAny() filter and it cannot be combined with
+   * whereArrayContains() or whereIn().
+   *
+   * @param fieldPath The path of the field containing an array to search.
+   * @param values The array that contains the values to match.
+   * @return The created Query.
+   */
+  @Nonnull
+  public Query whereArrayContainsAny(
+      @Nonnull FieldPath fieldPath, @Nonnull List<? extends Object> values) {
+    Preconditions.checkState(
+        options.getStartCursor() == null && options.getEndCursor() == null,
+        "Cannot call whereArrayContainsAny() after defining a boundary with startAt(), "
+            + "startAfter(), endBefore() or endAt().");
+    return whereHelper(fieldPath, ARRAY_CONTAINS_ANY, values);
+  }
+
+  /**
+   * Creates and returns a new Query with the additional filter that documents must contain the
+   * specified field, the value must be an array, and that the array must contain at least one value
+   * from the provided array.
+   *
+   * <p>A Query can have only one whereArrayContainsAny() filter and it cannot be combined with
+   * whereArrayContains() or whereIn().
+   *
+   * @param fieldPath The path of the field containing an array to search.
+   * @param value The first value to match against.
+   * @param moreValues Additional values to match against.
+   * @return The created Query.
+   */
+  @Nonnull
+  Query whereArrayContainsAny(@Nonnull FieldPath fieldPath, Object value, Object... moreValues) {
+    Preconditions.checkState(
+        options.getStartCursor() == null && options.getEndCursor() == null,
+        "Cannot call whereArrayContainsAny() after defining a boundary with startAt(), "
+            + "startAfter(), endBefore() or endAt().");
+    List<Object> values = new ArrayList<>();
+    values.add(value);
+    values.addAll(Arrays.asList(moreValues));
+    return whereHelper(fieldPath, ARRAY_CONTAINS_ANY, values);
   }
 
   /**
@@ -660,16 +712,40 @@ public class Query {
    * whereArrayContainsAny().
    *
    * @param field The name of the field to search.
-   * @param value The array that contains the values to match.
+   * @param values The array that contains the values to match.
    * @return The created Query.
    */
   @Nonnull
-  public Query whereIn(@Nonnull String field, @Nonnull List<Object> value) {
+  public Query whereIn(@Nonnull String field, @Nonnull List<? extends Object> values) {
     Preconditions.checkState(
         options.getStartCursor() == null && options.getEndCursor() == null,
         "Cannot call whereIn() after defining a boundary with startAt(), "
             + "startAfter(), endBefore() or endAt().");
-    return whereHelper(FieldPath.fromDotSeparatedString(field), IN, value);
+    return whereHelper(FieldPath.fromDotSeparatedString(field), IN, values);
+  }
+
+  /**
+   * Creates and returns a new Query with the additional filter that documents must contain the
+   * specified field and the value must equal one of the values from the provided array.
+   *
+   * <p>A Query can have only one whereIn() filter, and it cannot be combined with
+   * whereArrayContainsAny().
+   *
+   * @param field The name of the field to search.
+   * @param value The first value to match against.
+   * @param moreValues Additional values to match against.
+   * @return The created {@code Query}.
+   */
+  @Nonnull
+  public Query whereIn(@Nonnull String field, Object value, Object... moreValues) {
+    Preconditions.checkState(
+        options.getStartCursor() == null && options.getEndCursor() == null,
+        "Cannot call whereIn() after defining a boundary with startAt(), "
+            + "startAfter(), endBefore() or endAt().");
+    List<Object> values = new ArrayList<>();
+    values.add(value);
+    values.addAll(Arrays.asList(moreValues));
+    return whereHelper(FieldPath.fromDotSeparatedString(field), IN, values);
   }
 
   /**
@@ -680,16 +756,40 @@ public class Query {
    * whereArrayContainsAny().
    *
    * @param fieldPath The path of the field to search.
-   * @param value The array that contains the values to match.
+   * @param values The array that contains the values to match.
    * @return The created Query.
    */
   @Nonnull
-  public Query whereIn(@Nonnull FieldPath fieldPath, @Nonnull List<Object> value) {
+  public Query whereIn(@Nonnull FieldPath fieldPath, @Nonnull List<? extends Object> values) {
     Preconditions.checkState(
         options.getStartCursor() == null && options.getEndCursor() == null,
         "Cannot call whereIn() after defining a boundary with startAt(), "
             + "startAfter(), endBefore() or endAt().");
-    return whereHelper(fieldPath, IN, value);
+    return whereHelper(fieldPath, IN, values);
+  }
+
+  /**
+   * Creates and returns a new Query with the additional filter that documents must contain the
+   * specified field and the value must equal one of the values from the provided array.
+   *
+   * <p>A Query can have only one whereIn() filter, and it cannot be combined with
+   * whereArrayContainsAny().
+   *
+   * @param fieldPath The path of the field to search.
+   * @param value The first value to match against.
+   * @param moreValues Additional values to match against.
+   * @return The created Query.
+   */
+  @Nonnull
+  public Query whereIn(@Nonnull FieldPath fieldPath, Object value, Object... moreValues) {
+    Preconditions.checkState(
+        options.getStartCursor() == null && options.getEndCursor() == null,
+        "Cannot call whereIn() after defining a boundary with startAt(), "
+            + "startAfter(), endBefore() or endAt().");
+    List<Object> values = new ArrayList<>();
+    values.add(value);
+    values.addAll(Arrays.asList(moreValues));
+    return whereHelper(fieldPath, IN, values);
   }
 
   private Query whereHelper(
