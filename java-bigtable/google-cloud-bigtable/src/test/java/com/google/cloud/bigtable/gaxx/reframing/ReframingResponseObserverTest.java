@@ -15,6 +15,7 @@
  */
 package com.google.cloud.bigtable.gaxx.reframing;
 
+import com.google.api.gax.rpc.StreamController;
 import com.google.cloud.bigtable.gaxx.testing.FakeStreamingApi.ServerStreamingStashCallable;
 import com.google.cloud.bigtable.gaxx.testing.FakeStreamingApi.ServerStreamingStashCallable.StreamControllerStash;
 import com.google.cloud.bigtable.gaxx.testing.MockStreamingApi.MockResponseObserver;
@@ -41,6 +42,7 @@ import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
+import org.mockito.Mockito;
 
 @RunWith(JUnit4.class)
 public class ReframingResponseObserverTest {
@@ -372,6 +374,61 @@ public class ReframingResponseObserverTest {
 
     Truth.assertThat(lastCall.getError()).isInstanceOf(CancellationException.class);
     Truth.assertThat(lastCall.getNumDelivered()).isEqualTo(2);
+  }
+
+  /**
+   * Test the scenario where the reframer throws an exception on incoming data and the upstream
+   * throws an exception during cleanup when cancel is called.
+   */
+  @Test
+  public void testFailedRecoveryHandling() {
+    MockResponseObserver<String> outerObserver = new MockResponseObserver<>(true);
+    final RuntimeException fakeReframerError = new RuntimeException("fake reframer error");
+
+    Reframer<String, String> brokenReframer =
+        new Reframer<String, String>() {
+          @Override
+          public void push(String ignored) {
+            throw fakeReframerError;
+          }
+
+          @Override
+          public boolean hasFullFrame() {
+            return false;
+          }
+
+          @Override
+          public boolean hasPartialFrame() {
+            return false;
+          }
+
+          @Override
+          public String pop() {
+            throw new IllegalStateException("should not be called");
+          }
+        };
+    ReframingResponseObserver<String, String> middleware =
+        new ReframingResponseObserver<>(outerObserver, brokenReframer);
+
+    // Configure the mock inner controller to fail cancellation.
+    StreamController mockInnerController = Mockito.mock(StreamController.class);
+    RuntimeException fakeCancelError = new RuntimeException("fake cancel error");
+    Mockito.doThrow(fakeCancelError).when(mockInnerController).cancel();
+
+    // Jumpstart a call & feed it data
+    middleware.onStartImpl(mockInnerController);
+    middleware.onResponseImpl("1");
+
+    // Make sure that the outer observer was notified with the reframer, which contains a suppressed
+    // cancellation error.
+    Throwable finalError = outerObserver.getFinalError();
+    Truth.assertThat(finalError).isSameInstanceAs(fakeReframerError);
+    Truth.assertThat(ImmutableList.of(finalError.getSuppressed())).hasSize(1);
+    Truth.assertThat(finalError.getSuppressed()[0]).isInstanceOf(IllegalStateException.class);
+    Truth.assertThat(finalError.getSuppressed()[0])
+        .hasMessageThat()
+        .isEqualTo("Failed to cancel upstream while recovering from an unexpected error");
+    Truth.assertThat(finalError.getSuppressed()[0].getCause()).isSameInstanceAs(fakeCancelError);
   }
 
   /**

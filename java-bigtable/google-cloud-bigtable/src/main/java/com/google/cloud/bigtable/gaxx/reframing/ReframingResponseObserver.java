@@ -244,7 +244,14 @@ public class ReframingResponseObserver<InnerT, OuterT>
       // purposefully leaving the lock non-zero and notifying the outerResponseObserver of the
       // error. Care must be taken to avoid calling close twice in case the first invocation threw
       // an error.
-      innerController.cancel();
+      try {
+        innerController.cancel();
+      } catch (Throwable cancelError) {
+        t.addSuppressed(
+            new IllegalStateException(
+                "Failed to cancel upstream while recovering from an unexpected error",
+                cancelError));
+      }
       if (!finished) {
         outerResponseObserver.onError(t);
       }
