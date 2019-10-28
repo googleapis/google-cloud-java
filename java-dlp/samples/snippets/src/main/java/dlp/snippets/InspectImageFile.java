@@ -34,11 +34,15 @@ import java.util.List;
 
 public class InspectImageFile {
 
+  public static void inspectString() {
+    // TODO(developer): Replace these variables before running the sample.
+    String projectId = "my-project-id";
+    String textToInspect = "My name is Gary and my email is gary@example.com";
+    inspectString(projectId, textToInspect);
+  }
+
   // Inspects the specified image file.
   public static void inspectImageFile(String projectId, String filePath) {
-    // String projectId = "my-project-id";
-    // String filePath = "path/to/image.png";
-
     // Initialize client that will be used to send requests. This client only needs to be created
     // once, and can be reused for multiple requests. After completing all of your requests, call
     // the "close" method on the client to safely clean up any remaining background resources.

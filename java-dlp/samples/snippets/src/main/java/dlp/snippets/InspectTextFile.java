@@ -34,11 +34,15 @@ import java.util.List;
 
 public class InspectTextFile {
 
+  public static void inspectTextFile() {
+    // TODO(developer): Replace these variables before running the sample.
+    String projectId = "my-project-id";
+    String filePath = "path/to/image.png";
+    inspectTextFile(projectId, filePath);
+  }
+
   // Inspects the specified text file.
   public static void inspectTextFile(String projectId, String filePath) {
-    // String projectId = "my-project-id";
-    // String filePath = "path/to/image.png";
-
     // Initialize client that will be used to send requests. This client only needs to be created
     // once, and can be reused for multiple requests. After completing all of your requests, call
     // the "close" method on the client to safely clean up any remaining background resources.
@@ -48,13 +52,9 @@ public class InspectTextFile {
 
       // Specify the type and content to be inspected.
       ByteString fileBytes = ByteString.readFrom(new FileInputStream(filePath));
-      ByteContentItem byteItem = ByteContentItem.newBuilder()
-          .setType(BytesType.TEXT_UTF8)
-          .setData(fileBytes)
-          .build();
-      ContentItem item = ContentItem.newBuilder()
-          .setByteItem(byteItem)
-          .build();
+      ByteContentItem byteItem =
+          ByteContentItem.newBuilder().setType(BytesType.TEXT_UTF8).setData(fileBytes).build();
+      ContentItem item = ContentItem.newBuilder().setByteItem(byteItem).build();
 
       // Specify the type of info the inspection will look for.
       List<InfoType> infoTypes = new ArrayList<>();
@@ -64,17 +64,16 @@ public class InspectTextFile {
       }
 
       // Construct the configuration for the Inspect request.
-      InspectConfig config = InspectConfig.newBuilder()
-          .addAllInfoTypes(infoTypes)
-          .setIncludeQuote(true)
-          .build();
+      InspectConfig config =
+          InspectConfig.newBuilder().addAllInfoTypes(infoTypes).setIncludeQuote(true).build();
 
       // Construct the Inspect request to be sent by the client.
-      InspectContentRequest request = InspectContentRequest.newBuilder()
-          .setParent(project.toString())
-          .setItem(item)
-          .setInspectConfig(config)
-          .build();
+      InspectContentRequest request =
+          InspectContentRequest.newBuilder()
+              .setParent(project.toString())
+              .setItem(item)
+              .setInspectConfig(config)
+              .build();
 
       // Use the client to send the API request.
       InspectContentResponse response = dlp.inspectContent(request);
