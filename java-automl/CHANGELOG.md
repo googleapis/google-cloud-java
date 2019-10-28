@@ -1,5 +1,13 @@
 # Changelog
 
+### [0.114.1](https://www.github.com/googleapis/java-automl/compare/v0.114.0...v0.114.1) (2019-10-28)
+
+
+### Dependencies
+
+* update dependency io.grpc:grpc-bom to v1.24.1 ([6210b9e](https://www.github.com/googleapis/java-automl/commit/6210b9e29cfe0a1b666d28db6af929fd8e903c98))
+* update gax.version to v1.49.1 ([da649d6](https://www.github.com/googleapis/java-automl/commit/da649d604046ba5940bdc94f90c94589dbad26d1))
+
 ## [0.114.0](https://www.github.com/googleapis/java-automl/compare/v0.113.0...v0.114.0) (2019-10-10)
 
 
