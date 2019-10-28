@@ -233,7 +233,7 @@
                 </goals>
                 <configuration>
                   <systemPropertyVariables>
-                    <bigtable.env>prod</bigtable.env>
+                    <bigtable.env>cloud</bigtable.env>
                   </systemPropertyVariables>
                   <includes>
                     <include>com.google.cloud.bigtable.**.it.*IT</include>
@@ -262,9 +262,14 @@
                 </goals>
                 <configuration>
                   <systemPropertyVariables>
-                    <bigtable.env>prod</bigtable.env>
+                    <bigtable.env>cloud</bigtable.env>
                     <!-- TODO(igorbernstein): This property should be auto set by gax -->
                     <io.grpc.internal.DnsNameResolverProvider.enable_grpclb>true</io.grpc.internal.DnsNameResolverProvider.enable_grpclb>
+
+                    <!-- TODO(igorbernstein): Remove overrides once the prod DirectPath endpoint is available. -->
+                    <!-- Use test env until the prod endpoint is available -->
+                    <bigtable.data-endpoint>testdirectpath-bigtable.sandbox.googleapis.com:443</bigtable.data-endpoint>
+                    <bigtable.admin-endpoint>test-bigtableadmin.sandbox.googleapis.com:443</bigtable.admin-endpoint>
                   </systemPropertyVariables>
                   <!-- Enable directpath for bigtable -->
                   <environmentVariables>

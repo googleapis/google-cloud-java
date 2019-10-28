@@ -30,9 +30,9 @@ import org.junit.rules.ExternalResource;
  * <ul>
  *   <li>{@code emulator}: uses the cbtemulator component that can be installed by gcloud
  *   <li>{@code prod}: uses a pre-existing production table. The target table is defined using
- *       system properties listed in {@link ProdEnv} and application default credentials
+ *       system properties listed in {@link CloudEnv} and application default credentials
  *   <li>{@code direct_path}: uses a pre-existing table in the direct path test environment. The
- *       target table is defined using system properties listed in {@link ProdEnv} and application
+ *       target table is defined using system properties listed in {@link CloudEnv} and application
  *       default credentials
  * </ul>
  *
@@ -60,8 +60,8 @@ public class TestEnvRule extends ExternalResource {
       case "emulator":
         testEnv = EmulatorEnv.createBundled();
         break;
-      case "prod":
-        testEnv = ProdEnv.fromSystemProperties();
+      case "cloud":
+        testEnv = CloudEnv.fromSystemProperties();
         break;
       default:
         throw new IllegalArgumentException(
