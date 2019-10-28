@@ -206,8 +206,9 @@
                   <systemPropertyVariables>
                     <bigtable.env>emulator</bigtable.env>
                   </systemPropertyVariables>
-                  <test>com.google.cloud.bigtable.data.v2.it.**</test>
-                  <test>com.google.cloud.bigtable.admin.v2.it.**</test>
+                  <includes>
+                    <include>com.google.cloud.bigtable.**.it.*IT</include>
+                  </includes>
                   <summaryFile>${project.build.directory}/failsafe-reports/failsafe-summary-emulator-it.xml</summaryFile>
                 </configuration>
               </execution>
@@ -234,8 +235,9 @@
                   <systemPropertyVariables>
                     <bigtable.env>prod</bigtable.env>
                   </systemPropertyVariables>
-                  <test>com.google.cloud.bigtable.data.v2.it.**</test>
-                  <test>com.google.cloud.bigtable.admin.v2.it.**</test>
+                  <includes>
+                    <include>com.google.cloud.bigtable.**.it.*IT</include>
+                  </includes>
                   <summaryFile>${project.build.directory}/failsafe-reports/failsafe-summary-prod-it.xml</summaryFile>
                 </configuration>
               </execution>
@@ -268,8 +270,10 @@
                   <environmentVariables>
                     <GOOGLE_CLOUD_ENABLE_DIRECT_PATH>bigtable</GOOGLE_CLOUD_ENABLE_DIRECT_PATH>
                   </environmentVariables>
-                  <!-- TODO(igorbernstein): Once the control plane is accessible via directpath, add admin tests -->
-                  <test>com.google.cloud.bigtable.data.v2.it.**</test>
+                  <includes>
+                    <!-- TODO(igorbernstein): Once the control plane is accessible via directpath, add admin tests -->
+                    <include>com.google.cloud.bigtable.data.v2.it.*IT</include>
+                  </includes>
                   <summaryFile>${project.build.directory}/failsafe-reports/failsafe-summary-directpath-it.xml</summaryFile>
                 </configuration>
               </execution>
