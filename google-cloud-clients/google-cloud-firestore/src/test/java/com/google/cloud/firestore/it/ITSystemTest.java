@@ -116,6 +116,13 @@ public class ITSystemTest {
     firestore.close();
   }
 
+  private DocumentReference setDocument(String documentId, Map<String, Object> fields)
+      throws Exception {
+    DocumentReference documentReference = randomColl.document(documentId);
+    documentReference.set(fields).get();
+    return documentReference;
+  }
+
   private DocumentReference addDocument(String key, Object value, Object... fields)
       throws Exception {
     DocumentReference documentReference = randomColl.document();
@@ -1286,12 +1293,12 @@ public class ITSystemTest {
 
   @Test
   public void inQueries() throws Exception {
-    addDocument("a", map("zip", 98101));
-    addDocument("b", map("zip", 91102));
-    addDocument("c", map("zip", 98103));
-    addDocument("d", map("zip", asList(98101)));
-    addDocument("e", map("zip", asList("98101", map("zip", 98101))));
-    addDocument("f", map("zip", map("code", 500)));
+    setDocument("a", map("zip", (Object) 98101));
+    setDocument("b", map("zip", (Object) 91102));
+    setDocument("c", map("zip", (Object) 98103));
+    setDocument("d", map("zip", (Object) asList(98101)));
+    setDocument("e", map("zip", (Object) asList("98101", map("zip", 98101))));
+    setDocument("f", map("zip", (Object) map("code", 500)));
 
     QuerySnapshot querySnapshot =
         randomColl.whereIn("zip", Arrays.<Object>asList(98101, 98103)).get().get();
@@ -1301,18 +1308,18 @@ public class ITSystemTest {
 
   @Test
   public void arrayContainsAnyQueries() throws Exception {
-    addDocument("a", map("array", asList(42)));
-    addDocument("b", map("array", asList("a", 42, "c")));
-    addDocument("c", map("array", asList(41.999, "42", map("a", 42))));
-    addDocument("d", map("array", asList(41), "array2", "sigh"));
-    addDocument("e", map("array", asList(43)));
-    addDocument("f", map("array", asList(map("a", 42))));
-    addDocument("e", map("array", 42));
+    setDocument("a", map("array", (Object) asList(42)));
+    setDocument("b", map("array", (Object) asList("a", 42, "c")));
+    setDocument("c", map("array", (Object) asList(41.999, "42", map("a", 42))));
+    setDocument("d", map("array", (Object) asList(42), "array2", "sigh"));
+    setDocument("e", map("array", (Object) asList(43)));
+    setDocument("f", map("array", (Object) asList(map("a", 42))));
+    setDocument("g", map("array", (Object) 42));
 
     QuerySnapshot querySnapshot =
         randomColl.whereArrayContainsAny("array", Arrays.<Object>asList(42, 43)).get().get();
 
-    assertEquals(asList("a", "b", "c", "e"), querySnapshotToIds(querySnapshot));
+    assertEquals(asList("a", "b", "d", "e"), querySnapshotToIds(querySnapshot));
   }
 
   @Test
