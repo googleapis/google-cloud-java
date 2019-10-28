@@ -46,6 +46,10 @@ echo "Version: ${VERSION}"
 
 # Run the upper bound check against Google Libraries BOM in cloud-opensource-java
 git clone https://github.com/GoogleCloudPlatform/cloud-opensource-java.git
+
+cd cloud-opensource-java/boms/cloud-oss-bom
+mvn install
+
 # This upper-bounds-check project has the enforcer rule with requireUpperBoundDeps
-cd cloud-opensource-java/boms/upper-bounds-check
+cd ../upper-bounds-check
 mvn validate -D${VERSION_KEY}=${VERSION}
