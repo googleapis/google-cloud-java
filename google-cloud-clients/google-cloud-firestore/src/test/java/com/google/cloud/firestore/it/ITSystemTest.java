@@ -1294,7 +1294,7 @@ public class ITSystemTest {
     addDocument("f", map("zip", map("code", 500)));
 
     QuerySnapshot querySnapshot =
-            randomColl.whereIn("zip", Arrays.<Object>asList(98101, 98103)).get().get();
+        randomColl.whereIn("zip", Arrays.<Object>asList(98101, 98103)).get().get();
 
     assertEquals(asList("a", "c"), querySnapshotToIds(querySnapshot));
   }
@@ -1310,7 +1310,7 @@ public class ITSystemTest {
     addDocument("e", map("array", 42));
 
     QuerySnapshot querySnapshot =
-            randomColl.whereArrayContainsAny("array", Arrays.<Object>asList(42, 43)).get().get();
+        randomColl.whereArrayContainsAny("array", Arrays.<Object>asList(42, 43)).get().get();
 
     assertEquals(asList("a", "b", "c", "e"), querySnapshotToIds(querySnapshot));
   }
