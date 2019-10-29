@@ -1143,7 +1143,7 @@
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>grpc-google-cloud-gameservices-v1alpha</artifactId>
-        <version>0.16.0</version>
+        <version>0.17.0</version>
       </dependency>
       <dependency>
         <groupId>com.google.cloud</groupId>
