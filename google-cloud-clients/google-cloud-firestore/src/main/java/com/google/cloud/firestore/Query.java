@@ -50,7 +50,6 @@ import com.google.protobuf.Int32Value;
 import io.opencensus.trace.AttributeValue;
 import io.opencensus.trace.Tracing;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Comparator;
 import java.util.Iterator;
 import java.util.List;
@@ -624,11 +623,12 @@ public class Query {
    * @return The created Query.
    */
   @Nonnull
-  public Query whereArrayContainsAny(@Nonnull String field, @Nonnull List<? extends Object> values) {
+  public Query whereArrayContainsAny(
+      @Nonnull String field, @Nonnull List<? extends Object> values) {
     Preconditions.checkState(
-            options.getStartCursor() == null && options.getEndCursor() == null,
-            "Cannot call whereArrayContainsAny() after defining a boundary with startAt(), "
-                    + "startAfter(), endBefore() or endAt().");
+        options.getStartCursor() == null && options.getEndCursor() == null,
+        "Cannot call whereArrayContainsAny() after defining a boundary with startAt(), "
+            + "startAfter(), endBefore() or endAt().");
     return whereHelper(FieldPath.fromDotSeparatedString(field), ARRAY_CONTAINS_ANY, values);
   }
 
