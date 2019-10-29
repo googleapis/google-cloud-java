@@ -34,9 +34,10 @@ mvn install -DskipTests=true -Dmaven.javadoc.skip=true -Dgcloud.download.skip=tr
 
 # The property key for this repository in Google Libraries BOM
 VERSION_KEY=google.cloud.java.version
-# Example version: '0.116.1-alpha-SNAPSHOT'
+# Read the version of POM. Example version: '0.116.1-alpha-SNAPSHOT'
 VERSION_POM=google-cloud-bom/pom.xml
-VERSION=`perl -nle 'print $1 if m|<version>(.+)</version>|' $VERSION_POM |head -1`
+# Namespace (xmlns) prevents xmllint from specifying tag names in XPath
+VERSION=`sed -e 's/xmlns=".*"//' $VERSION_POM | xmllint --xpath '/project/version/text()' -`
 
 if [ -z "${VERSION}" ]; then
   echo "Version is not found in ${VERSION_POM}"
