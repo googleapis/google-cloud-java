@@ -126,7 +126,6 @@ public class QueryTest {
     query.whereArrayContains("foo", "bar").get().get();
     query.whereIn("foo", Collections.<Object>singletonList("bar"));
     query.whereArrayContainsAny("foo", Collections.<Object>singletonList("bar"));
-    query.whereArrayContainsAny("foo", "bar");
 
     Iterator<RunQueryRequest> expected =
         Arrays.asList(
