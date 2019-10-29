@@ -35,6 +35,10 @@ public interface MutationApi<T extends MutationApi<T>> {
    * Adds a mutation which sets the value of the specified cell.
    *
    * <p>This is a convenience override that converts Strings to ByteStrings.
+   *
+   * <p>Note: The timestamp values are in microseconds but must match the granularity of the
+   * table(defaults to `MILLIS`). Therefore, the given value must be a multiple of 1000 (millisecond
+   * granularity). For example: `1571902339435000`.
    */
   T setCell(
       @Nonnull String familyName, @Nonnull String qualifier, long timestamp, @Nonnull String value);
@@ -46,7 +50,13 @@ public interface MutationApi<T extends MutationApi<T>> {
    */
   T setCell(@Nonnull String familyName, @Nonnull ByteString qualifier, @Nonnull ByteString value);
 
-  /** Adds a mutation which sets the value of the specified cell. */
+  /**
+   * Adds a mutation which sets the value of the specified cell.
+   *
+   * <p>Note: The timestamp values are in microseconds but must match the granularity of the
+   * table(defaults to `MILLIS`). Therefore, the given value must be a multiple of 1000 (millisecond
+   * granularity). For example: `1571902339435000`.
+   */
   T setCell(
       @Nonnull String familyName,
       @Nonnull ByteString qualifier,
@@ -65,6 +75,10 @@ public interface MutationApi<T extends MutationApi<T>> {
    * Adds a mutation which sets the value of the specified cell.
    *
    * <p>This is a convenience override that converts Strings to ByteStrings.
+   *
+   * <p>Note: The timestamp values are in microseconds but must match the granularity of the
+   * table(defaults to `MILLIS`). Therefore, the given value must be a multiple of 1000 (millisecond
+   * granularity). For example: `1571902339435000`.
    */
   T setCell(@Nonnull String familyName, @Nonnull String qualifier, long timestamp, long value);
 
@@ -75,7 +89,13 @@ public interface MutationApi<T extends MutationApi<T>> {
    */
   T setCell(@Nonnull String familyName, @Nonnull ByteString qualifier, long value);
 
-  /** Adds a mutation which sets the value of the specified cell. */
+  /**
+   * Adds a mutation which sets the value of the specified cell.
+   *
+   * <p>Note: The timestamp values are in microseconds but must match the granularity of the
+   * table(defaults to `MILLIS`). Therefore, the given value must be a multiple of 1000 (millisecond
+   * granularity). For example: `1571902339435000`.
+   */
   T setCell(@Nonnull String familyName, @Nonnull ByteString qualifier, long timestamp, long value);
 
   /** Adds a mutation which deletes cells from the specified column. */
