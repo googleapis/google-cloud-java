@@ -21,7 +21,7 @@ import static org.junit.Assert.assertThat;
 
 import com.google.cloud.spanner.MockSpannerServiceImpl;
 import io.grpc.Server;
-import io.grpc.netty.shaded.io.grpc.netty.NettyServerBuilder;
+import io.grpc.netty.NettyServerBuilder;
 import java.io.IOException;
 import java.net.InetSocketAddress;
 import java.sql.Connection;

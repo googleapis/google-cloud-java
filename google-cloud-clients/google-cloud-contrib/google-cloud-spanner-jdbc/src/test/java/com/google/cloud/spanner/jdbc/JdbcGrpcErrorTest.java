@@ -33,7 +33,7 @@ import com.google.spanner.v1.TypeCode;
 import io.grpc.Server;
 import io.grpc.Status;
 import io.grpc.Status.Code;
-import io.grpc.netty.shaded.io.grpc.netty.NettyServerBuilder;
+import io.grpc.netty.NettyServerBuilder;
 import java.io.IOException;
 import java.net.InetSocketAddress;
 import java.sql.Connection;

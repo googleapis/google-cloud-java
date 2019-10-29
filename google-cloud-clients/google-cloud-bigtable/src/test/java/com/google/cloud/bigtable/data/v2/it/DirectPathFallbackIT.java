@@ -27,15 +27,15 @@ import com.google.cloud.bigtable.test_helpers.env.DirectPathEnv;
 import com.google.cloud.bigtable.test_helpers.env.TestEnvRule;
 import io.grpc.ManagedChannelBuilder;
 import io.grpc.alts.ComputeEngineChannelBuilder;
-import io.grpc.netty.shaded.io.grpc.netty.NettyChannelBuilder;
-import io.grpc.netty.shaded.io.netty.channel.ChannelDuplexHandler;
-import io.grpc.netty.shaded.io.netty.channel.ChannelFactory;
-import io.grpc.netty.shaded.io.netty.channel.ChannelHandlerContext;
-import io.grpc.netty.shaded.io.netty.channel.ChannelPromise;
-import io.grpc.netty.shaded.io.netty.channel.EventLoopGroup;
-import io.grpc.netty.shaded.io.netty.channel.nio.NioEventLoopGroup;
-import io.grpc.netty.shaded.io.netty.channel.socket.nio.NioSocketChannel;
-import io.grpc.netty.shaded.io.netty.util.ReferenceCountUtil;
+import io.grpc.netty.NettyChannelBuilder;
+import io.netty.channel.ChannelDuplexHandler;
+import io.netty.channel.ChannelFactory;
+import io.netty.channel.ChannelHandlerContext;
+import io.netty.channel.ChannelPromise;
+import io.netty.channel.EventLoopGroup;
+import io.netty.channel.nio.NioEventLoopGroup;
+import io.netty.channel.socket.nio.NioSocketChannel;
+import io.netty.util.ReferenceCountUtil;
 import java.io.IOException;
 import java.lang.reflect.Field;
 import java.net.Inet6Address;
@@ -197,8 +197,8 @@ public class DirectPathFallbackIT {
   }
 
   /**
-   * A netty {@link io.grpc.netty.shaded.io.netty.channel.ChannelHandler} that can be instructed to
-   * make IPv6 packets disappear
+   * A netty {@link io.netty.channel.ChannelHandler} that can be instructed to make IPv6 packets
+   * disappear
    */
   private class MyChannelHandler extends ChannelDuplexHandler {
     private boolean isIPv6;

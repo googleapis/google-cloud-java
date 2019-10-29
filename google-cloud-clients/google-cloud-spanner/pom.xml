@@ -159,6 +159,11 @@
       <version>20190722</version>
       <scope>test</scope>
     </dependency>
+    <dependency>
+      <groupId>io.grpc</groupId>
+      <artifactId>grpc-netty</artifactId>
+      <scope>test</scope>
+    </dependency>
   </dependencies>
 
   <reporting>
