@@ -629,7 +629,7 @@ public class Query {
             options.getStartCursor() == null && options.getEndCursor() == null,
             "Cannot call whereArrayContainsAny() after defining a boundary with startAt(), "
                     + "startAfter(), endBefore() or endAt().");
-    return whereHelper(FieldPath.fromDotSeparatedString(field), ARRAY_CONTAINS_ANY, value);
+    return whereHelper(FieldPath.fromDotSeparatedString(field), ARRAY_CONTAINS_ANY, values);
   }
 
   /**
