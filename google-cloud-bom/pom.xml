@@ -1103,7 +1103,7 @@
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>proto-google-cloud-phishingprotection-v1beta1</artifactId>
-        <version>0.27.1-SNAPSHOT</version><!--{x-version-update:proto-google-cloud-phishingprotection-v1beta1:current}-->
+        <version>0.28.0</version><!--{x-version-update:proto-google-cloud-phishingprotection-v1beta1:current}-->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
