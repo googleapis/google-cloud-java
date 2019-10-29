@@ -380,6 +380,7 @@
         <module>grpc-google-cloud-bigtable-admin-v2</module>
         <module>google-cloud-bigtable</module>
         <module>google-cloud-bigtable-emulator</module>
+        <module>google-cloud-bigtable-bom</module>
     </modules>
 
     <reporting>
