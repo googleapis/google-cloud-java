@@ -30,7 +30,6 @@ google-cloud-language:1.98.0:1.98.1-SNAPSHOT
 google-cloud-logging:1.98.0:1.98.1-SNAPSHOT
 google-cloud-logging-logback:0.116.0-alpha:0.116.1-alpha-SNAPSHOT
 google-cloud-managedtest:0.116.0-alpha:0.116.1-alpha-SNAPSHOT
-google-cloud-monitoring:1.98.0:1.98.1-SNAPSHOT
 google-cloud-nio:0.116.0-alpha:0.116.1-alpha-SNAPSHOT
 google-cloud-nio-examples:0.116.0-alpha:0.116.1-alpha-SNAPSHOT
 google-cloud-notification:0.116.0-beta:0.116.1-beta-SNAPSHOT
@@ -61,7 +60,6 @@ grpc-google-cloud-kms-v1:0.81.0:0.81.1-SNAPSHOT
 grpc-google-cloud-language-v1:1.80.0:1.80.1-SNAPSHOT
 grpc-google-cloud-language-v1beta2:0.81.0:0.81.1-SNAPSHOT
 grpc-google-cloud-logging-v2:0.81.0:0.81.1-SNAPSHOT
-grpc-google-cloud-monitoring-v3:1.80.0:1.80.1-SNAPSHOT
 grpc-google-cloud-os-login-v1:0.81.0:0.81.1-SNAPSHOT
 grpc-google-cloud-pubsub-v1:1.80.0:1.80.1-SNAPSHOT
 grpc-google-cloud-spanner-admin-database-v1:1.43.0:1.43.1-SNAPSHOT
@@ -89,7 +87,6 @@ proto-google-cloud-kms-v1:0.81.0:0.81.1-SNAPSHOT
 proto-google-cloud-language-v1:1.80.0:1.80.1-SNAPSHOT
 proto-google-cloud-language-v1beta2:0.81.0:0.81.1-SNAPSHOT
 proto-google-cloud-logging-v2:0.81.0:0.81.1-SNAPSHOT
-proto-google-cloud-monitoring-v3:1.80.0:1.80.1-SNAPSHOT
 proto-google-cloud-os-login-v1:0.81.0:0.81.1-SNAPSHOT
 proto-google-cloud-pubsub-v1:1.80.0:1.80.1-SNAPSHOT
 proto-google-cloud-spanner-admin-database-v1:1.43.0:1.43.1-SNAPSHOT
