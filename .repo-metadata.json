@@ -6,8 +6,8 @@
   "issue_tracker": "https://issuetracker.google.com/savedsearches/559764",
   "release_level": "ga",
   "language": "java",
-  "repo": "googleapis/google-cloud-java",
-  "repo_short": "google-cloud-java",
+  "repo": "googleapis/java-logging",
+  "repo_short": "java-logging",
   "distribution_name": "com.google.cloud:google-cloud-logging",
   "api_id": "logging.googleapis.com"
 }
