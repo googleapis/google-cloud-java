@@ -36,7 +36,6 @@ import java.util.logging.StreamHandler;
  * Client factory for {@link Datastore}.
  */
 public class DatastoreFactory {
-  private static final Logger logger = Logger.getLogger(DatastoreFactory.class.getName());
 
   // Lazy load this because we might be running inside App Engine and this
   // class isn't on the whitelist.
@@ -61,7 +60,7 @@ public class DatastoreFactory {
    *
    * @throws IllegalArgumentException if the server or credentials weren't provided.
    */
-  public Datastore create(DatastoreOptions options) throws IllegalArgumentException {
+  public Datastore create(DatastoreOptions options) {
     return new Datastore(newRemoteRpc(options));
   }
 

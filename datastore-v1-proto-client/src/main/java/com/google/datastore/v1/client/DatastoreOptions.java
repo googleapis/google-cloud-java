@@ -135,10 +135,10 @@ public class DatastoreOptions {
     }
 
     /**
-     * @deprecated Use {@link #projectId} and/or {@link #host}/{@link #localHost} instead.
-     *
      * Sets the project endpoint used to access Cloud Datastore. Prefer using {@link #projectId}
      * and/or {@link #host}/{@link #localHost} when possible.
+     * 
+     * @deprecated Use {@link #projectId} and/or {@link #host}/{@link #localHost} instead.
      */
     @Deprecated
     public Builder projectEndpoint(String projectEndpoint) {
