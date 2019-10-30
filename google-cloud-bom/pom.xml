@@ -203,7 +203,7 @@
       </dependency>
       <dependency>
         <groupId>com.google.cloud</groupId>
-        <artifactId>google-cloud-automl</artifactId>
+        <artifactId>google-cloud-automl-bom</artifactId>
         <version>0.114.1-beta</version>
         <type>pom</type>
         <scope>import</scope>
