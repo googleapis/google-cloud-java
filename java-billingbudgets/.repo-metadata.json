@@ -1,0 +1,9 @@
+{
+    "name": "billingbudgets",
+    "name_pretty": "Google Cloud Billing Budgets",
+    "release_level": "alpha",
+    "language": "java",
+    "repo": "googleapis/java-billingbudgets",
+    "repo_short": "java-billingbudgets",
+    "distribution_name": "google-cloud-billingbudgets"
+}
