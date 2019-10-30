@@ -35,7 +35,6 @@ google-cloud-nio:0.116.0-alpha:0.116.1-alpha-SNAPSHOT
 google-cloud-nio-examples:0.116.0-alpha:0.116.1-alpha-SNAPSHOT
 google-cloud-notification:0.116.0-beta:0.116.1-beta-SNAPSHOT
 google-cloud-os-login:0.116.0-alpha:0.116.1-alpha-SNAPSHOT
-google-cloud-phishingprotection:0.27.0:0.27.1-SNAPSHOT
 google-cloud-pubsub:1.98.0:1.98.1-SNAPSHOT
 google-cloud-recaptchaenterprise:0.27.0:0.27.1-SNAPSHOT
 google-cloud-scheduler:1.21.0:1.21.1-SNAPSHOT
@@ -66,7 +65,6 @@ grpc-google-cloud-language-v1beta2:0.81.0:0.81.1-SNAPSHOT
 grpc-google-cloud-logging-v2:0.81.0:0.81.1-SNAPSHOT
 grpc-google-cloud-monitoring-v3:1.80.0:1.80.1-SNAPSHOT
 grpc-google-cloud-os-login-v1:0.81.0:0.81.1-SNAPSHOT
-grpc-google-cloud-phishingprotection-v1beta1:0.27.0:0.27.1-SNAPSHOT
 grpc-google-cloud-pubsub-v1:1.80.0:1.80.1-SNAPSHOT
 grpc-google-cloud-recaptchaenterprise-v1beta1:0.27.0:0.27.1-SNAPSHOT
 grpc-google-cloud-scheduler-v1:1.21.0:1.21.1-SNAPSHOT
@@ -98,7 +96,6 @@ proto-google-cloud-language-v1beta2:0.81.0:0.81.1-SNAPSHOT
 proto-google-cloud-logging-v2:0.81.0:0.81.1-SNAPSHOT
 proto-google-cloud-monitoring-v3:1.80.0:1.80.1-SNAPSHOT
 proto-google-cloud-os-login-v1:0.81.0:0.81.1-SNAPSHOT
-proto-google-cloud-phishingprotection-v1beta1:0.27.0:0.27.1-SNAPSHOT
 proto-google-cloud-pubsub-v1:1.80.0:1.80.1-SNAPSHOT
 proto-google-cloud-recaptchaenterprise-v1beta1:0.27.0:0.27.1-SNAPSHOT
 proto-google-cloud-scheduler-v1:1.21.0:1.21.1-SNAPSHOT
