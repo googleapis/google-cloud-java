@@ -16,7 +16,6 @@ Java idiomatic client for [Phishing Protection][product-overview].
 Quickstart
 ----------
 
-[//]: # ({x-version-update-start:google-cloud-phishingprotection:released})
 If you are using Maven, add this to your pom.xml file
 ```xml
 <dependency>
@@ -33,7 +32,6 @@ If you are using SBT, add this to your dependencies
 ```Scala
 libraryDependencies += "com.google.cloud" % "google-cloud-phishingprotection" % "0.27.0"
 ```
-[//]: # ({x-version-update-end})
 
 Authentication
 --------------

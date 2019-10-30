@@ -68,15 +68,14 @@ To call any of the supported Google Cloud Services simply add a corresponding cl
 artifact as a dependency to your project. The following instructions use `google-cloud-storage` 
 as an example (specific instructions can be found in the README of each client).
 
-[//]: # ({x-version-update-start:google-cloud-bom:released})
 If you are using Maven, add this to your pom.xml file
 ```xml
   <dependencyManagement>
     <dependencies>
       <dependency>
         <groupId>com.google.cloud</groupId>
-        <artifactId>google-cloud-bom</artifactId>
-        <version>0.116.0-alpha</version>
+        <artifactId>libraries-bom</artifactId>
+        <version>2.7.1</version>
         <type>pom</type>
         <scope>import</scope>
        </dependency>
@@ -90,7 +89,6 @@ If you are using Maven, add this to your pom.xml file
     </dependency>
     ...
 ```
-[//]: # ({x-version-update-end})
 
 [//]: # ({x-version-update-start:google-cloud-storage:released})
 If you are using Gradle, add this to your dependencies
@@ -110,26 +108,6 @@ If you're using IntelliJ or Eclipse, you can add client libraries to your projec
 Besides adding client libraries, the plugins provide additional functionality, such as service account key management. Refer to the documentation for each plugin for more details.
 
 These client libraries can be used on App Engine standard for Java 8 runtime and App Engine flexible (including the Compat runtime).  Most of the libraries do not work on the App Engine standard for Java 7 runtime. However, Datastore, Storage, and Bigquery should work.
-
-If you are running into problems with version conflicts, the easiest way to solve the conflicts is to use google-cloud's BOM. In Maven, add the following to your POM:
-
-[//]: # ({x-version-update-start:google-cloud-bom:released})
-```xml
-  <dependencyManagement>
-    <dependencies>
-      <dependency>
-        <groupId>com.google.cloud</groupId>
-        <artifactId>google-cloud-bom</artifactId>
-        <version>0.116.0-alpha</version>
-        <type>pom</type>
-        <scope>import</scope>
-      </dependency>
-    </dependencies>
-  </dependencyManagement>
-```
-[//]: # ({x-version-update-end})
-
-Note that the BOM is only available starting at version 0.32.0-alpha. For prior versions, refer to [Old Version Combinations](#old-version-combinations) to make sure that your versions are compatible.
 
 Specifying a Project ID
 -----------------------

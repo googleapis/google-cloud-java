@@ -116,6 +116,13 @@ public class ITSystemTest {
     firestore.close();
   }
 
+  private DocumentReference setDocument(String documentId, Map<String, Object> fields)
+      throws Exception {
+    DocumentReference documentReference = randomColl.document(documentId);
+    documentReference.set(fields).get();
+    return documentReference;
+  }
+
   private DocumentReference addDocument(String key, Object value, Object... fields)
       throws Exception {
     DocumentReference documentReference = randomColl.document();
@@ -1196,7 +1203,7 @@ public class ITSystemTest {
   }
 
   @Test
-  public void testCollectionGroupQueriesWithStartAtEndAtWithArbitraryDocumentIds()
+  public void collectionGroupQueriesWithStartAtEndAtWithArbitraryDocumentIds()
       throws ExecutionException, InterruptedException {
     // Use `randomColl` to get a random collection group name to use but ensure it starts with 'b'
     // for predictable ordering.
@@ -1241,7 +1248,7 @@ public class ITSystemTest {
   }
 
   @Test
-  public void testCollectionGroupQueriesWithWhereFiltersOnArbitraryDocumentIds()
+  public void collectionGroupQueriesWithWhereFiltersOnArbitraryDocumentIds()
       throws ExecutionException, InterruptedException {
     // Use `randomColl` to get a random collection group name to use but ensure it starts with 'b'
     // for predictable ordering.
@@ -1282,6 +1289,37 @@ public class ITSystemTest {
             .get()
             .get();
     assertEquals(asList("cg-doc2"), querySnapshotToIds(querySnapshot));
+  }
+
+  @Test
+  public void inQueries() throws Exception {
+    setDocument("a", map("zip", (Object) 98101));
+    setDocument("b", map("zip", (Object) 91102));
+    setDocument("c", map("zip", (Object) 98103));
+    setDocument("d", map("zip", (Object) asList(98101)));
+    setDocument("e", map("zip", (Object) asList("98101", map("zip", 98101))));
+    setDocument("f", map("zip", (Object) map("code", 500)));
+
+    QuerySnapshot querySnapshot =
+        randomColl.whereIn("zip", Arrays.<Object>asList(98101, 98103)).get().get();
+
+    assertEquals(asList("a", "c"), querySnapshotToIds(querySnapshot));
+  }
+
+  @Test
+  public void arrayContainsAnyQueries() throws Exception {
+    setDocument("a", map("array", (Object) asList(42)));
+    setDocument("b", map("array", (Object) asList("a", 42, "c")));
+    setDocument("c", map("array", (Object) asList(41.999, "42", map("a", 42))));
+    setDocument("d", map("array", (Object) asList(42), "array2", "sigh"));
+    setDocument("e", map("array", (Object) asList(43)));
+    setDocument("f", map("array", (Object) asList(map("a", 42))));
+    setDocument("g", map("array", (Object) 42));
+
+    QuerySnapshot querySnapshot =
+        randomColl.whereArrayContainsAny("array", Arrays.<Object>asList(42, 43)).get().get();
+
+    assertEquals(asList("a", "b", "d", "e"), querySnapshotToIds(querySnapshot));
   }
 
   @Test

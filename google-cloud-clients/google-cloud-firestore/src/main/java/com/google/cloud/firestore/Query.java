@@ -17,9 +17,11 @@
 package com.google.cloud.firestore;
 
 import static com.google.firestore.v1.StructuredQuery.FieldFilter.Operator.ARRAY_CONTAINS;
+import static com.google.firestore.v1.StructuredQuery.FieldFilter.Operator.ARRAY_CONTAINS_ANY;
 import static com.google.firestore.v1.StructuredQuery.FieldFilter.Operator.EQUAL;
 import static com.google.firestore.v1.StructuredQuery.FieldFilter.Operator.GREATER_THAN;
 import static com.google.firestore.v1.StructuredQuery.FieldFilter.Operator.GREATER_THAN_OR_EQUAL;
+import static com.google.firestore.v1.StructuredQuery.FieldFilter.Operator.IN;
 import static com.google.firestore.v1.StructuredQuery.FieldFilter.Operator.LESS_THAN;
 import static com.google.firestore.v1.StructuredQuery.FieldFilter.Operator.LESS_THAN_OR_EQUAL;
 
@@ -606,6 +608,90 @@ public class Query {
         "Cannot call whereArrayContains() after defining a boundary with startAt(), "
             + "startAfter(), endBefore() or endAt().");
     return whereHelper(fieldPath, ARRAY_CONTAINS, value);
+  }
+
+  /**
+   * Creates and returns a new Query with the additional filter that documents must contain the
+   * specified field, the value must be an array, and that the array must contain at least one value
+   * from the provided list.
+   *
+   * <p>A Query can have only one whereArrayContainsAny() filter and it cannot be combined with
+   * whereArrayContains() or whereIn().
+   *
+   * @param field The name of the field containing an array to search.
+   * @param values A list that contains the values to match.
+   * @return The created Query.
+   */
+  @Nonnull
+  public Query whereArrayContainsAny(
+      @Nonnull String field, @Nonnull List<? extends Object> values) {
+    Preconditions.checkState(
+        options.getStartCursor() == null && options.getEndCursor() == null,
+        "Cannot call whereArrayContainsAny() after defining a boundary with startAt(), "
+            + "startAfter(), endBefore() or endAt().");
+    return whereHelper(FieldPath.fromDotSeparatedString(field), ARRAY_CONTAINS_ANY, values);
+  }
+
+  /**
+   * Creates and returns a new Query with the additional filter that documents must contain the
+   * specified field, the value must be an array, and that the array must contain at least one value
+   * from the provided list.
+   *
+   * <p>A Query can have only one whereArrayContainsAny() filter and it cannot be combined with
+   * whereArrayContains() or whereIn().
+   *
+   * @param fieldPath The path of the field containing an array to search.
+   * @param values A list that contains the values to match.
+   * @return The created Query.
+   */
+  @Nonnull
+  public Query whereArrayContainsAny(
+      @Nonnull FieldPath fieldPath, @Nonnull List<? extends Object> values) {
+    Preconditions.checkState(
+        options.getStartCursor() == null && options.getEndCursor() == null,
+        "Cannot call whereArrayContainsAny() after defining a boundary with startAt(), "
+            + "startAfter(), endBefore() or endAt().");
+    return whereHelper(fieldPath, ARRAY_CONTAINS_ANY, values);
+  }
+
+  /**
+   * Creates and returns a new Query with the additional filter that documents must contain the
+   * specified field and the value must equal one of the values from the provided list.
+   *
+   * <p>A Query can have only one whereIn() filter, and it cannot be combined with
+   * whereArrayContainsAny().
+   *
+   * @param field The name of the field to search.
+   * @param values A list that contains the values to match.
+   * @return The created Query.
+   */
+  @Nonnull
+  public Query whereIn(@Nonnull String field, @Nonnull List<? extends Object> values) {
+    Preconditions.checkState(
+        options.getStartCursor() == null && options.getEndCursor() == null,
+        "Cannot call whereIn() after defining a boundary with startAt(), "
+            + "startAfter(), endBefore() or endAt().");
+    return whereHelper(FieldPath.fromDotSeparatedString(field), IN, values);
+  }
+
+  /**
+   * Creates and returns a new Query with the additional filter that documents must contain the
+   * specified field and the value must equal one of the values from the provided list.
+   *
+   * <p>A Query can have only one whereIn() filter, and it cannot be combined with
+   * whereArrayContainsAny().
+   *
+   * @param fieldPath The path of the field to search.
+   * @param values A list that contains the values to match.
+   * @return The created Query.
+   */
+  @Nonnull
+  public Query whereIn(@Nonnull FieldPath fieldPath, @Nonnull List<? extends Object> values) {
+    Preconditions.checkState(
+        options.getStartCursor() == null && options.getEndCursor() == null,
+        "Cannot call whereIn() after defining a boundary with startAt(), "
+            + "startAfter(), endBefore() or endAt().");
+    return whereHelper(fieldPath, IN, values);
   }
 
   private Query whereHelper(
