@@ -45,6 +45,7 @@ import com.google.firestore.v1.StructuredQuery.Direction;
 import com.google.firestore.v1.StructuredQuery.FieldFilter.Operator;
 import com.google.firestore.v1.Value;
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.Iterator;
 import java.util.concurrent.Semaphore;
 import org.junit.Before;
@@ -123,6 +124,8 @@ public class QueryTest {
     query.whereLessThan("foo", "bar").get().get();
     query.whereLessThanOrEqualTo("foo", "bar").get().get();
     query.whereArrayContains("foo", "bar").get().get();
+    query.whereIn("foo", Collections.<Object>singletonList("bar"));
+    query.whereArrayContainsAny("foo", Collections.<Object>singletonList("bar"));
 
     Iterator<RunQueryRequest> expected =
         Arrays.asList(
@@ -134,7 +137,9 @@ public class QueryTest {
                 query(filter(StructuredQuery.FieldFilter.Operator.GREATER_THAN_OR_EQUAL)),
                 query(filter(StructuredQuery.FieldFilter.Operator.LESS_THAN)),
                 query(filter(StructuredQuery.FieldFilter.Operator.LESS_THAN_OR_EQUAL)),
-                query(filter(StructuredQuery.FieldFilter.Operator.ARRAY_CONTAINS)))
+                query(filter(StructuredQuery.FieldFilter.Operator.ARRAY_CONTAINS)),
+                query(filter(StructuredQuery.FieldFilter.Operator.IN)),
+                query(filter(StructuredQuery.FieldFilter.Operator.ARRAY_CONTAINS_ANY)))
             .iterator();
 
     for (RunQueryRequest actual : runQuery.getAllValues()) {
@@ -157,6 +162,8 @@ public class QueryTest {
     query.whereLessThan(FieldPath.of("foo"), "bar").get().get();
     query.whereLessThanOrEqualTo(FieldPath.of("foo"), "bar").get().get();
     query.whereArrayContains(FieldPath.of("foo"), "bar").get().get();
+    query.whereIn(FieldPath.of("foo"), Collections.<Object>singletonList("bar"));
+    query.whereArrayContainsAny(FieldPath.of("foo"), Collections.<Object>singletonList("bar"));
 
     Iterator<RunQueryRequest> expected =
         Arrays.asList(
@@ -165,7 +172,9 @@ public class QueryTest {
                 query(filter(StructuredQuery.FieldFilter.Operator.GREATER_THAN_OR_EQUAL)),
                 query(filter(StructuredQuery.FieldFilter.Operator.LESS_THAN)),
                 query(filter(StructuredQuery.FieldFilter.Operator.LESS_THAN_OR_EQUAL)),
-                query(filter(StructuredQuery.FieldFilter.Operator.ARRAY_CONTAINS)))
+                query(filter(StructuredQuery.FieldFilter.Operator.ARRAY_CONTAINS)),
+                query(filter(StructuredQuery.FieldFilter.Operator.IN)),
+                query(filter(StructuredQuery.FieldFilter.Operator.ARRAY_CONTAINS_ANY)))
             .iterator();
 
     for (RunQueryRequest actual : runQuery.getAllValues()) {
