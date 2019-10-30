@@ -808,7 +808,7 @@
       </dependency>
       <dependency>
         <groupId>com.google.cloud</groupId>
-        <artifactId>google-cloud-websecurityscanner</artifactId>
+        <artifactId>google-cloud-websecurityscanner-bom</artifactId>
         <version>0.116.0</version>
         <type>pom</type>
         <scope>import</scope>
