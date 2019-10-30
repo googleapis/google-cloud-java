@@ -16,7 +16,6 @@ Java idiomatic client for [Cloud Security Command Center][cloud-securitycenter].
 Quickstart
 ----------
 
-[//]: # ({x-version-update-start:google-cloud-securitycenter:released})
 If you are using Maven, add this to your pom.xml file
 ```xml
 <dependency>
@@ -33,7 +32,6 @@ If you are using SBT, add this to your dependencies
 ```Scala
 libraryDependencies += "com.google.cloud" % "google-cloud-securitycenter" % "0.116.0"
 ```
-[//]: # ({x-version-update-end})
 
 Authentication
 --------------
