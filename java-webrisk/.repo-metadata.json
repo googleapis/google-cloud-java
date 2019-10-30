@@ -1,0 +1,13 @@
+{
+  "name": "webrisk",
+  "name_pretty": "Web Risk",
+  "product_documentation": "https://cloud.google.com/web-risk/docs/",
+  "client_documentation": "https://googleapis.dev/java/java-webrisk/latest/",
+  "issue_tracker": "",
+  "release_level": "alpha",
+  "language": "java",
+  "repo": "googleapis/java-webrisk",
+  "repo_short": "java-webrisk",
+  "distribution_name": "com.google.cloud:google-cloud-webrisk",
+  "api_id": "webrisk.googleapis.com"
+}
