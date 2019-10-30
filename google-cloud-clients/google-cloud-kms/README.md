@@ -13,7 +13,6 @@ Java idiomatic client for [Cloud KMS][cloud-kms].
 Quickstart
 ----------
 
-[//]: # ({x-version-update-start:google-cloud-kms:released})
 If you are using Maven, add this to your pom.xml file
 ```xml
 <dependency>
@@ -30,7 +29,6 @@ If you are using SBT, add this to your dependencies
 ```Scala
 libraryDependencies += "com.google.cloud" % "google-cloud-kms" % "1.34.0"
 ```
-[//]: # ({x-version-update-end})
 
 Authentication
 --------------
