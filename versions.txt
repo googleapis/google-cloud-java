@@ -38,9 +38,6 @@ google-cloud-os-login:0.116.0-alpha:0.116.1-alpha-SNAPSHOT
 google-cloud-phishingprotection:0.27.0:0.27.1-SNAPSHOT
 google-cloud-pubsub:1.98.0:1.98.1-SNAPSHOT
 google-cloud-recaptchaenterprise:0.27.0:0.27.1-SNAPSHOT
-google-cloud-redis:0.116.0-alpha:0.116.1-alpha-SNAPSHOT
-google-cloud-resourcemanager:0.116.0-alpha:0.116.1-alpha-SNAPSHOT
-google-cloud-securitycenter:0.116.0:0.116.1-SNAPSHOT
 google-cloud-spanner:1.43.0:1.43.1-SNAPSHOT
 google-cloud-spanner-jdbc:1.8.0:1.8.1-SNAPSHOT
 google-cloud-storage:1.98.0:1.98.1-SNAPSHOT
@@ -71,10 +68,6 @@ grpc-google-cloud-os-login-v1:0.81.0:0.81.1-SNAPSHOT
 grpc-google-cloud-phishingprotection-v1beta1:0.27.0:0.27.1-SNAPSHOT
 grpc-google-cloud-pubsub-v1:1.80.0:1.80.1-SNAPSHOT
 grpc-google-cloud-recaptchaenterprise-v1beta1:0.27.0:0.27.1-SNAPSHOT
-grpc-google-cloud-redis-v1:0.81.0:0.81.1-SNAPSHOT
-grpc-google-cloud-redis-v1beta1:0.81.0:0.81.1-SNAPSHOT
-grpc-google-cloud-securitycenter-v1:0.81.0:0.81.1-SNAPSHOT
-grpc-google-cloud-securitycenter-v1beta1:0.81.0:0.81.1-SNAPSHOT
 grpc-google-cloud-spanner-admin-database-v1:1.43.0:1.43.1-SNAPSHOT
 grpc-google-cloud-spanner-admin-instance-v1:1.43.0:1.43.1-SNAPSHOT
 grpc-google-cloud-spanner-v1:1.43.0:1.43.1-SNAPSHOT
@@ -105,10 +98,6 @@ proto-google-cloud-os-login-v1:0.81.0:0.81.1-SNAPSHOT
 proto-google-cloud-phishingprotection-v1beta1:0.27.0:0.27.1-SNAPSHOT
 proto-google-cloud-pubsub-v1:1.80.0:1.80.1-SNAPSHOT
 proto-google-cloud-recaptchaenterprise-v1beta1:0.27.0:0.27.1-SNAPSHOT
-proto-google-cloud-redis-v1:0.81.0:0.81.1-SNAPSHOT
-proto-google-cloud-redis-v1beta1:0.81.0:0.81.1-SNAPSHOT
-proto-google-cloud-securitycenter-v1:0.81.0:0.81.1-SNAPSHOT
-proto-google-cloud-securitycenter-v1beta1:0.81.0:0.81.1-SNAPSHOT
 proto-google-cloud-spanner-admin-database-v1:1.43.0:1.43.1-SNAPSHOT
 proto-google-cloud-spanner-admin-instance-v1:1.43.0:1.43.1-SNAPSHOT
 proto-google-cloud-spanner-v1:1.43.0:1.43.1-SNAPSHOT

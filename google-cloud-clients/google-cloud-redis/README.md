@@ -16,7 +16,6 @@ Java idiomatic client for [Cloud Memorystore for Redis][cloud-redis].
 Quickstart
 ----------
 
-[//]: # ({x-version-update-start:google-cloud-redis:released})
 Add this to your pom.xml file
 ```xml
 <dependency>
@@ -33,7 +32,6 @@ If you are using SBT, add this to your dependencies
 ```Scala
 libraryDependencies += "com.google.cloud" % "google-cloud-redis" % "0.116.0-alpha"
 ```
-[//]: # ({x-version-update-end})
 
 Authentication
 --------------

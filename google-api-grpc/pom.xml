@@ -436,22 +436,22 @@
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>proto-google-cloud-redis-v1beta1</artifactId>
-        <version>0.81.1-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-redis-v1beta1:current} -->
+        <version>0.81.0</version>
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>grpc-google-cloud-redis-v1beta1</artifactId>
-        <version>0.81.1-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-redis-v1beta1:current} -->
+        <version>0.81.0</version>
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>proto-google-cloud-redis-v1</artifactId>
-        <version>0.81.1-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-redis-v1:current} -->
+        <version>0.81.0</version>
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>grpc-google-cloud-redis-v1</artifactId>
-        <version>0.81.1-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-redis-v1:current} -->
+        <version>0.81.0</version>
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
@@ -721,22 +721,22 @@
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>proto-google-cloud-securitycenter-v1beta1</artifactId>
-        <version>0.81.1-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-securitycenter-v1beta1:current} -->
+        <version>0.81.0</version>
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>grpc-google-cloud-securitycenter-v1beta1</artifactId>
-        <version>0.81.1-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-securitycenter-v1beta1:current} -->
+        <version>0.81.0</version>
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>proto-google-cloud-securitycenter-v1</artifactId>
-        <version>0.81.1-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-securitycenter-v1:current} -->
+        <version>0.81.0</version>
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>grpc-google-cloud-securitycenter-v1</artifactId>
-        <version>0.81.1-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-securitycenter-v1:current} -->
+        <version>0.81.0</version>
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
