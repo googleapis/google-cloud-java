@@ -800,19 +800,11 @@
         <version>0.80.0</version>
       </dependency>
       <dependency>
-        <groupId>com.google.api.grpc</groupId>
-        <artifactId>proto-google-cloud-iot-v1</artifactId>
-        <version>0.80.0</version>
-      </dependency>
-      <dependency>
-        <groupId>com.google.api.grpc</groupId>
-        <artifactId>grpc-google-cloud-iot-v1</artifactId>
-        <version>0.80.0</version>
-      </dependency>
-      <dependency>
         <groupId>com.google.cloud</groupId>
-        <artifactId>google-cloud-iot</artifactId>
-        <version>0.115.0-beta</version>
+        <artifactId>google-cloud-iot-bom</artifactId>
+        <version>0.116.0-beta</version>
+        <type>pom</type>
+        <scope>import</scope>
       </dependency>
       <dependency>
         <groupId>com.google.cloud</groupId>
