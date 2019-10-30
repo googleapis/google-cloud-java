@@ -542,6 +542,13 @@
                   <violationSeverity>error</violationSeverity>
                   <failsOnError>true</failsOnError>
                   <includeTestSourceDirectory>true</includeTestSourceDirectory>
+                  <!-- Explicitly set the source directory to avoid running checkstyle on generated sources. -->
+                  <sourceDirectories>
+                    <sourceDirectory>src/main</sourceDirectory>
+                  </sourceDirectories>
+                  <testSourceDirectories>
+                    <testSourceDirectory>src/test</testSourceDirectory>
+                  </testSourceDirectories>
                 </configuration>
               </execution>
             </executions>
