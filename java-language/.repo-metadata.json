@@ -6,8 +6,8 @@
   "issue_tracker": "https://issuetracker.google.com/savedsearches/559753",
   "release_level": "ga",
   "language": "java",
-  "repo": "googleapis/google-cloud-java",
-  "repo_short": "google-cloud-java",
+  "repo": "googleapis/java-language",
+  "repo_short": "java-language",
   "distribution_name": "com.google.cloud:google-cloud-language",
   "api_id": "language.googleapis.com"
 }
