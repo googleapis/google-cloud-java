@@ -39,6 +39,7 @@ public final class JobQuery extends com.google.protobuf.GeneratedMessageV3
 
   private JobQuery() {
     query_ = "";
+    queryLanguageCode_ = "";
     companies_ = com.google.protobuf.LazyStringArrayList.EMPTY;
     locationFilters_ = java.util.Collections.emptyList();
     jobCategories_ = java.util.Collections.emptyList();
@@ -83,19 +84,19 @@ public final class JobQuery extends com.google.protobuf.GeneratedMessageV3
           case 18:
             {
               java.lang.String s = input.readStringRequireUtf8();
-              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000004) != 0)) {
                 companies_ = new com.google.protobuf.LazyStringArrayList();
-                mutable_bitField0_ |= 0x00000002;
+                mutable_bitField0_ |= 0x00000004;
               }
               companies_.add(s);
               break;
             }
           case 26:
             {
-              if (!((mutable_bitField0_ & 0x00000004) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000008) != 0)) {
                 locationFilters_ =
                     new java.util.ArrayList<com.google.cloud.talent.v4beta1.LocationFilter>();
-                mutable_bitField0_ |= 0x00000004;
+                mutable_bitField0_ |= 0x00000008;
               }
               locationFilters_.add(
                   input.readMessage(
@@ -105,9 +106,9 @@ public final class JobQuery extends com.google.protobuf.GeneratedMessageV3
           case 32:
             {
               int rawValue = input.readEnum();
-              if (!((mutable_bitField0_ & 0x00000008) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000010) != 0)) {
                 jobCategories_ = new java.util.ArrayList<java.lang.Integer>();
-                mutable_bitField0_ |= 0x00000008;
+                mutable_bitField0_ |= 0x00000010;
               }
               jobCategories_.add(rawValue);
               break;
@@ -118,9 +119,9 @@ public final class JobQuery extends com.google.protobuf.GeneratedMessageV3
               int oldLimit = input.pushLimit(length);
               while (input.getBytesUntilLimit() > 0) {
                 int rawValue = input.readEnum();
-                if (!((mutable_bitField0_ & 0x00000008) != 0)) {
+                if (!((mutable_bitField0_ & 0x00000010) != 0)) {
                   jobCategories_ = new java.util.ArrayList<java.lang.Integer>();
-                  mutable_bitField0_ |= 0x00000008;
+                  mutable_bitField0_ |= 0x00000010;
                 }
                 jobCategories_.add(rawValue);
               }
@@ -146,9 +147,9 @@ public final class JobQuery extends com.google.protobuf.GeneratedMessageV3
           case 50:
             {
               java.lang.String s = input.readStringRequireUtf8();
-              if (!((mutable_bitField0_ & 0x00000020) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000040) != 0)) {
                 companyDisplayNames_ = new com.google.protobuf.LazyStringArrayList();
-                mutable_bitField0_ |= 0x00000020;
+                mutable_bitField0_ |= 0x00000040;
               }
               companyDisplayNames_.add(s);
               break;
@@ -185,9 +186,9 @@ public final class JobQuery extends com.google.protobuf.GeneratedMessageV3
           case 80:
             {
               int rawValue = input.readEnum();
-              if (!((mutable_bitField0_ & 0x00000200) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000400) != 0)) {
                 employmentTypes_ = new java.util.ArrayList<java.lang.Integer>();
-                mutable_bitField0_ |= 0x00000200;
+                mutable_bitField0_ |= 0x00000400;
               }
               employmentTypes_.add(rawValue);
               break;
@@ -198,9 +199,9 @@ public final class JobQuery extends com.google.protobuf.GeneratedMessageV3
               int oldLimit = input.pushLimit(length);
               while (input.getBytesUntilLimit() > 0) {
                 int rawValue = input.readEnum();
-                if (!((mutable_bitField0_ & 0x00000200) != 0)) {
+                if (!((mutable_bitField0_ & 0x00000400) != 0)) {
                   employmentTypes_ = new java.util.ArrayList<java.lang.Integer>();
-                  mutable_bitField0_ |= 0x00000200;
+                  mutable_bitField0_ |= 0x00000400;
                 }
                 employmentTypes_.add(rawValue);
               }
@@ -210,9 +211,9 @@ public final class JobQuery extends com.google.protobuf.GeneratedMessageV3
           case 90:
             {
               java.lang.String s = input.readStringRequireUtf8();
-              if (!((mutable_bitField0_ & 0x00000400) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000800) != 0)) {
                 languageCodes_ = new com.google.protobuf.LazyStringArrayList();
-                mutable_bitField0_ |= 0x00000400;
+                mutable_bitField0_ |= 0x00000800;
               }
               languageCodes_.add(s);
               break;
@@ -236,11 +237,18 @@ public final class JobQuery extends com.google.protobuf.GeneratedMessageV3
           case 106:
             {
               java.lang.String s = input.readStringRequireUtf8();
-              if (!((mutable_bitField0_ & 0x00001000) != 0)) {
+              if (!((mutable_bitField0_ & 0x00002000) != 0)) {
                 excludedJobs_ = new com.google.protobuf.LazyStringArrayList();
-                mutable_bitField0_ |= 0x00001000;
+                mutable_bitField0_ |= 0x00002000;
               }
               excludedJobs_.add(s);
+              break;
+            }
+          case 114:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              queryLanguageCode_ = s;
               break;
             }
           default:
@@ -257,25 +265,25 @@ public final class JobQuery extends com.google.protobuf.GeneratedMessageV3
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
-      if (((mutable_bitField0_ & 0x00000002) != 0)) {
+      if (((mutable_bitField0_ & 0x00000004) != 0)) {
         companies_ = companies_.getUnmodifiableView();
       }
-      if (((mutable_bitField0_ & 0x00000004) != 0)) {
+      if (((mutable_bitField0_ & 0x00000008) != 0)) {
         locationFilters_ = java.util.Collections.unmodifiableList(locationFilters_);
       }
-      if (((mutable_bitField0_ & 0x00000008) != 0)) {
+      if (((mutable_bitField0_ & 0x00000010) != 0)) {
         jobCategories_ = java.util.Collections.unmodifiableList(jobCategories_);
       }
-      if (((mutable_bitField0_ & 0x00000020) != 0)) {
+      if (((mutable_bitField0_ & 0x00000040) != 0)) {
         companyDisplayNames_ = companyDisplayNames_.getUnmodifiableView();
       }
-      if (((mutable_bitField0_ & 0x00000200) != 0)) {
+      if (((mutable_bitField0_ & 0x00000400) != 0)) {
         employmentTypes_ = java.util.Collections.unmodifiableList(employmentTypes_);
       }
-      if (((mutable_bitField0_ & 0x00000400) != 0)) {
+      if (((mutable_bitField0_ & 0x00000800) != 0)) {
         languageCodes_ = languageCodes_.getUnmodifiableView();
       }
-      if (((mutable_bitField0_ & 0x00001000) != 0)) {
+      if (((mutable_bitField0_ & 0x00002000) != 0)) {
         excludedJobs_ = excludedJobs_.getUnmodifiableView();
       }
       this.unknownFields = unknownFields.build();
@@ -340,6 +348,61 @@ public final class JobQuery extends com.google.protobuf.GeneratedMessageV3
       com.google.protobuf.ByteString b =
           com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
       query_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int QUERY_LANGUAGE_CODE_FIELD_NUMBER = 14;
+  private volatile java.lang.Object queryLanguageCode_;
+  /**
+   *
+   *
+   * <pre>
+   * The language code of [query][google.cloud.talent.v4beta1.JobQuery.query].
+   * For example, "en-US". This field helps to better interpret the query.
+   * If a value isn't specified, the query language code is automatically
+   * detected, which may not be accurate.
+   * Language code should be in BCP-47 format, such as "en-US" or "sr-Latn".
+   * For more information, see
+   * [Tags for Identifying Languages](https://tools.ietf.org/html/bcp47).
+   * </pre>
+   *
+   * <code>string query_language_code = 14;</code>
+   */
+  public java.lang.String getQueryLanguageCode() {
+    java.lang.Object ref = queryLanguageCode_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      queryLanguageCode_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The language code of [query][google.cloud.talent.v4beta1.JobQuery.query].
+   * For example, "en-US". This field helps to better interpret the query.
+   * If a value isn't specified, the query language code is automatically
+   * detected, which may not be accurate.
+   * Language code should be in BCP-47 format, such as "en-US" or "sr-Latn".
+   * For more information, see
+   * [Tags for Identifying Languages](https://tools.ietf.org/html/bcp47).
+   * </pre>
+   *
+   * <code>string query_language_code = 14;</code>
+   */
+  public com.google.protobuf.ByteString getQueryLanguageCodeBytes() {
+    java.lang.Object ref = queryLanguageCode_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      queryLanguageCode_ = b;
       return b;
     } else {
       return (com.google.protobuf.ByteString) ref;
@@ -1296,6 +1359,9 @@ public final class JobQuery extends com.google.protobuf.GeneratedMessageV3
     for (int i = 0; i < excludedJobs_.size(); i++) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 13, excludedJobs_.getRaw(i));
     }
+    if (!getQueryLanguageCodeBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 14, queryLanguageCode_);
+    }
     unknownFields.writeTo(output);
   }
 
@@ -1384,6 +1450,9 @@ public final class JobQuery extends com.google.protobuf.GeneratedMessageV3
       size += dataSize;
       size += 1 * getExcludedJobsList().size();
     }
+    if (!getQueryLanguageCodeBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(14, queryLanguageCode_);
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -1400,6 +1469,7 @@ public final class JobQuery extends com.google.protobuf.GeneratedMessageV3
     com.google.cloud.talent.v4beta1.JobQuery other = (com.google.cloud.talent.v4beta1.JobQuery) obj;
 
     if (!getQuery().equals(other.getQuery())) return false;
+    if (!getQueryLanguageCode().equals(other.getQueryLanguageCode())) return false;
     if (!getCompaniesList().equals(other.getCompaniesList())) return false;
     if (!getLocationFiltersList().equals(other.getLocationFiltersList())) return false;
     if (!jobCategories_.equals(other.jobCategories_)) return false;
@@ -1434,6 +1504,8 @@ public final class JobQuery extends com.google.protobuf.GeneratedMessageV3
     hash = (19 * hash) + getDescriptor().hashCode();
     hash = (37 * hash) + QUERY_FIELD_NUMBER;
     hash = (53 * hash) + getQuery().hashCode();
+    hash = (37 * hash) + QUERY_LANGUAGE_CODE_FIELD_NUMBER;
+    hash = (53 * hash) + getQueryLanguageCode().hashCode();
     if (getCompaniesCount() > 0) {
       hash = (37 * hash) + COMPANIES_FIELD_NUMBER;
       hash = (53 * hash) + getCompaniesList().hashCode();
@@ -1627,16 +1699,18 @@ public final class JobQuery extends com.google.protobuf.GeneratedMessageV3
       super.clear();
       query_ = "";
 
+      queryLanguageCode_ = "";
+
       companies_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000002);
+      bitField0_ = (bitField0_ & ~0x00000004);
       if (locationFiltersBuilder_ == null) {
         locationFilters_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000004);
+        bitField0_ = (bitField0_ & ~0x00000008);
       } else {
         locationFiltersBuilder_.clear();
       }
       jobCategories_ = java.util.Collections.emptyList();
-      bitField0_ = (bitField0_ & ~0x00000008);
+      bitField0_ = (bitField0_ & ~0x00000010);
       if (commuteFilterBuilder_ == null) {
         commuteFilter_ = null;
       } else {
@@ -1644,7 +1718,7 @@ public final class JobQuery extends com.google.protobuf.GeneratedMessageV3
         commuteFilterBuilder_ = null;
       }
       companyDisplayNames_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000020);
+      bitField0_ = (bitField0_ & ~0x00000040);
       if (compensationFilterBuilder_ == null) {
         compensationFilter_ = null;
       } else {
@@ -1656,9 +1730,9 @@ public final class JobQuery extends com.google.protobuf.GeneratedMessageV3
       disableSpellCheck_ = false;
 
       employmentTypes_ = java.util.Collections.emptyList();
-      bitField0_ = (bitField0_ & ~0x00000200);
-      languageCodes_ = com.google.protobuf.LazyStringArrayList.EMPTY;
       bitField0_ = (bitField0_ & ~0x00000400);
+      languageCodes_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      bitField0_ = (bitField0_ & ~0x00000800);
       if (publishTimeRangeBuilder_ == null) {
         publishTimeRange_ = null;
       } else {
@@ -1666,7 +1740,7 @@ public final class JobQuery extends com.google.protobuf.GeneratedMessageV3
         publishTimeRangeBuilder_ = null;
       }
       excludedJobs_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00001000);
+      bitField0_ = (bitField0_ & ~0x00002000);
       return this;
     }
 
@@ -1697,23 +1771,24 @@ public final class JobQuery extends com.google.protobuf.GeneratedMessageV3
       int from_bitField0_ = bitField0_;
       int to_bitField0_ = 0;
       result.query_ = query_;
-      if (((bitField0_ & 0x00000002) != 0)) {
+      result.queryLanguageCode_ = queryLanguageCode_;
+      if (((bitField0_ & 0x00000004) != 0)) {
         companies_ = companies_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000002);
+        bitField0_ = (bitField0_ & ~0x00000004);
       }
       result.companies_ = companies_;
       if (locationFiltersBuilder_ == null) {
-        if (((bitField0_ & 0x00000004) != 0)) {
+        if (((bitField0_ & 0x00000008) != 0)) {
           locationFilters_ = java.util.Collections.unmodifiableList(locationFilters_);
-          bitField0_ = (bitField0_ & ~0x00000004);
+          bitField0_ = (bitField0_ & ~0x00000008);
         }
         result.locationFilters_ = locationFilters_;
       } else {
         result.locationFilters_ = locationFiltersBuilder_.build();
       }
-      if (((bitField0_ & 0x00000008) != 0)) {
+      if (((bitField0_ & 0x00000010) != 0)) {
         jobCategories_ = java.util.Collections.unmodifiableList(jobCategories_);
-        bitField0_ = (bitField0_ & ~0x00000008);
+        bitField0_ = (bitField0_ & ~0x00000010);
       }
       result.jobCategories_ = jobCategories_;
       if (commuteFilterBuilder_ == null) {
@@ -1721,9 +1796,9 @@ public final class JobQuery extends com.google.protobuf.GeneratedMessageV3
       } else {
         result.commuteFilter_ = commuteFilterBuilder_.build();
       }
-      if (((bitField0_ & 0x00000020) != 0)) {
+      if (((bitField0_ & 0x00000040) != 0)) {
         companyDisplayNames_ = companyDisplayNames_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000020);
+        bitField0_ = (bitField0_ & ~0x00000040);
       }
       result.companyDisplayNames_ = companyDisplayNames_;
       if (compensationFilterBuilder_ == null) {
@@ -1733,14 +1808,14 @@ public final class JobQuery extends com.google.protobuf.GeneratedMessageV3
       }
       result.customAttributeFilter_ = customAttributeFilter_;
       result.disableSpellCheck_ = disableSpellCheck_;
-      if (((bitField0_ & 0x00000200) != 0)) {
+      if (((bitField0_ & 0x00000400) != 0)) {
         employmentTypes_ = java.util.Collections.unmodifiableList(employmentTypes_);
-        bitField0_ = (bitField0_ & ~0x00000200);
+        bitField0_ = (bitField0_ & ~0x00000400);
       }
       result.employmentTypes_ = employmentTypes_;
-      if (((bitField0_ & 0x00000400) != 0)) {
+      if (((bitField0_ & 0x00000800) != 0)) {
         languageCodes_ = languageCodes_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000400);
+        bitField0_ = (bitField0_ & ~0x00000800);
       }
       result.languageCodes_ = languageCodes_;
       if (publishTimeRangeBuilder_ == null) {
@@ -1748,9 +1823,9 @@ public final class JobQuery extends com.google.protobuf.GeneratedMessageV3
       } else {
         result.publishTimeRange_ = publishTimeRangeBuilder_.build();
       }
-      if (((bitField0_ & 0x00001000) != 0)) {
+      if (((bitField0_ & 0x00002000) != 0)) {
         excludedJobs_ = excludedJobs_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00001000);
+        bitField0_ = (bitField0_ & ~0x00002000);
       }
       result.excludedJobs_ = excludedJobs_;
       result.bitField0_ = to_bitField0_;
@@ -1807,10 +1882,14 @@ public final class JobQuery extends com.google.protobuf.GeneratedMessageV3
         query_ = other.query_;
         onChanged();
       }
+      if (!other.getQueryLanguageCode().isEmpty()) {
+        queryLanguageCode_ = other.queryLanguageCode_;
+        onChanged();
+      }
       if (!other.companies_.isEmpty()) {
         if (companies_.isEmpty()) {
           companies_ = other.companies_;
-          bitField0_ = (bitField0_ & ~0x00000002);
+          bitField0_ = (bitField0_ & ~0x00000004);
         } else {
           ensureCompaniesIsMutable();
           companies_.addAll(other.companies_);
@@ -1821,7 +1900,7 @@ public final class JobQuery extends com.google.protobuf.GeneratedMessageV3
         if (!other.locationFilters_.isEmpty()) {
           if (locationFilters_.isEmpty()) {
             locationFilters_ = other.locationFilters_;
-            bitField0_ = (bitField0_ & ~0x00000004);
+            bitField0_ = (bitField0_ & ~0x00000008);
           } else {
             ensureLocationFiltersIsMutable();
             locationFilters_.addAll(other.locationFilters_);
@@ -1834,7 +1913,7 @@ public final class JobQuery extends com.google.protobuf.GeneratedMessageV3
             locationFiltersBuilder_.dispose();
             locationFiltersBuilder_ = null;
             locationFilters_ = other.locationFilters_;
-            bitField0_ = (bitField0_ & ~0x00000004);
+            bitField0_ = (bitField0_ & ~0x00000008);
             locationFiltersBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getLocationFiltersFieldBuilder()
@@ -1847,7 +1926,7 @@ public final class JobQuery extends com.google.protobuf.GeneratedMessageV3
       if (!other.jobCategories_.isEmpty()) {
         if (jobCategories_.isEmpty()) {
           jobCategories_ = other.jobCategories_;
-          bitField0_ = (bitField0_ & ~0x00000008);
+          bitField0_ = (bitField0_ & ~0x00000010);
         } else {
           ensureJobCategoriesIsMutable();
           jobCategories_.addAll(other.jobCategories_);
@@ -1860,7 +1939,7 @@ public final class JobQuery extends com.google.protobuf.GeneratedMessageV3
       if (!other.companyDisplayNames_.isEmpty()) {
         if (companyDisplayNames_.isEmpty()) {
           companyDisplayNames_ = other.companyDisplayNames_;
-          bitField0_ = (bitField0_ & ~0x00000020);
+          bitField0_ = (bitField0_ & ~0x00000040);
         } else {
           ensureCompanyDisplayNamesIsMutable();
           companyDisplayNames_.addAll(other.companyDisplayNames_);
@@ -1880,7 +1959,7 @@ public final class JobQuery extends com.google.protobuf.GeneratedMessageV3
       if (!other.employmentTypes_.isEmpty()) {
         if (employmentTypes_.isEmpty()) {
           employmentTypes_ = other.employmentTypes_;
-          bitField0_ = (bitField0_ & ~0x00000200);
+          bitField0_ = (bitField0_ & ~0x00000400);
         } else {
           ensureEmploymentTypesIsMutable();
           employmentTypes_.addAll(other.employmentTypes_);
@@ -1890,7 +1969,7 @@ public final class JobQuery extends com.google.protobuf.GeneratedMessageV3
       if (!other.languageCodes_.isEmpty()) {
         if (languageCodes_.isEmpty()) {
           languageCodes_ = other.languageCodes_;
-          bitField0_ = (bitField0_ & ~0x00000400);
+          bitField0_ = (bitField0_ & ~0x00000800);
         } else {
           ensureLanguageCodesIsMutable();
           languageCodes_.addAll(other.languageCodes_);
@@ -1903,7 +1982,7 @@ public final class JobQuery extends com.google.protobuf.GeneratedMessageV3
       if (!other.excludedJobs_.isEmpty()) {
         if (excludedJobs_.isEmpty()) {
           excludedJobs_ = other.excludedJobs_;
-          bitField0_ = (bitField0_ & ~0x00001000);
+          bitField0_ = (bitField0_ & ~0x00002000);
         } else {
           ensureExcludedJobsIsMutable();
           excludedJobs_.addAll(other.excludedJobs_);
@@ -2045,13 +2124,137 @@ public final class JobQuery extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
+    private java.lang.Object queryLanguageCode_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * The language code of [query][google.cloud.talent.v4beta1.JobQuery.query].
+     * For example, "en-US". This field helps to better interpret the query.
+     * If a value isn't specified, the query language code is automatically
+     * detected, which may not be accurate.
+     * Language code should be in BCP-47 format, such as "en-US" or "sr-Latn".
+     * For more information, see
+     * [Tags for Identifying Languages](https://tools.ietf.org/html/bcp47).
+     * </pre>
+     *
+     * <code>string query_language_code = 14;</code>
+     */
+    public java.lang.String getQueryLanguageCode() {
+      java.lang.Object ref = queryLanguageCode_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        queryLanguageCode_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The language code of [query][google.cloud.talent.v4beta1.JobQuery.query].
+     * For example, "en-US". This field helps to better interpret the query.
+     * If a value isn't specified, the query language code is automatically
+     * detected, which may not be accurate.
+     * Language code should be in BCP-47 format, such as "en-US" or "sr-Latn".
+     * For more information, see
+     * [Tags for Identifying Languages](https://tools.ietf.org/html/bcp47).
+     * </pre>
+     *
+     * <code>string query_language_code = 14;</code>
+     */
+    public com.google.protobuf.ByteString getQueryLanguageCodeBytes() {
+      java.lang.Object ref = queryLanguageCode_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        queryLanguageCode_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The language code of [query][google.cloud.talent.v4beta1.JobQuery.query].
+     * For example, "en-US". This field helps to better interpret the query.
+     * If a value isn't specified, the query language code is automatically
+     * detected, which may not be accurate.
+     * Language code should be in BCP-47 format, such as "en-US" or "sr-Latn".
+     * For more information, see
+     * [Tags for Identifying Languages](https://tools.ietf.org/html/bcp47).
+     * </pre>
+     *
+     * <code>string query_language_code = 14;</code>
+     */
+    public Builder setQueryLanguageCode(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+
+      queryLanguageCode_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The language code of [query][google.cloud.talent.v4beta1.JobQuery.query].
+     * For example, "en-US". This field helps to better interpret the query.
+     * If a value isn't specified, the query language code is automatically
+     * detected, which may not be accurate.
+     * Language code should be in BCP-47 format, such as "en-US" or "sr-Latn".
+     * For more information, see
+     * [Tags for Identifying Languages](https://tools.ietf.org/html/bcp47).
+     * </pre>
+     *
+     * <code>string query_language_code = 14;</code>
+     */
+    public Builder clearQueryLanguageCode() {
+
+      queryLanguageCode_ = getDefaultInstance().getQueryLanguageCode();
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The language code of [query][google.cloud.talent.v4beta1.JobQuery.query].
+     * For example, "en-US". This field helps to better interpret the query.
+     * If a value isn't specified, the query language code is automatically
+     * detected, which may not be accurate.
+     * Language code should be in BCP-47 format, such as "en-US" or "sr-Latn".
+     * For more information, see
+     * [Tags for Identifying Languages](https://tools.ietf.org/html/bcp47).
+     * </pre>
+     *
+     * <code>string query_language_code = 14;</code>
+     */
+    public Builder setQueryLanguageCodeBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
+      queryLanguageCode_ = value;
+      onChanged();
+      return this;
+    }
+
     private com.google.protobuf.LazyStringList companies_ =
         com.google.protobuf.LazyStringArrayList.EMPTY;
 
     private void ensureCompaniesIsMutable() {
-      if (!((bitField0_ & 0x00000002) != 0)) {
+      if (!((bitField0_ & 0x00000004) != 0)) {
         companies_ = new com.google.protobuf.LazyStringArrayList(companies_);
-        bitField0_ |= 0x00000002;
+        bitField0_ |= 0x00000004;
       }
     }
     /**
@@ -2244,7 +2447,7 @@ public final class JobQuery extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearCompanies() {
       companies_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000002);
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -2282,11 +2485,11 @@ public final class JobQuery extends com.google.protobuf.GeneratedMessageV3
         java.util.Collections.emptyList();
 
     private void ensureLocationFiltersIsMutable() {
-      if (!((bitField0_ & 0x00000004) != 0)) {
+      if (!((bitField0_ & 0x00000008) != 0)) {
         locationFilters_ =
             new java.util.ArrayList<com.google.cloud.talent.v4beta1.LocationFilter>(
                 locationFilters_);
-        bitField0_ |= 0x00000004;
+        bitField0_ |= 0x00000008;
       }
     }
 
@@ -2614,7 +2817,7 @@ public final class JobQuery extends com.google.protobuf.GeneratedMessageV3
     public Builder clearLocationFilters() {
       if (locationFiltersBuilder_ == null) {
         locationFilters_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000004);
+        bitField0_ = (bitField0_ & ~0x00000008);
         onChanged();
       } else {
         locationFiltersBuilder_.clear();
@@ -2810,7 +3013,7 @@ public final class JobQuery extends com.google.protobuf.GeneratedMessageV3
                 com.google.cloud.talent.v4beta1.LocationFilter.Builder,
                 com.google.cloud.talent.v4beta1.LocationFilterOrBuilder>(
                 locationFilters_,
-                ((bitField0_ & 0x00000004) != 0),
+                ((bitField0_ & 0x00000008) != 0),
                 getParentForChildren(),
                 isClean());
         locationFilters_ = null;
@@ -2821,9 +3024,9 @@ public final class JobQuery extends com.google.protobuf.GeneratedMessageV3
     private java.util.List<java.lang.Integer> jobCategories_ = java.util.Collections.emptyList();
 
     private void ensureJobCategoriesIsMutable() {
-      if (!((bitField0_ & 0x00000008) != 0)) {
+      if (!((bitField0_ & 0x00000010) != 0)) {
         jobCategories_ = new java.util.ArrayList<java.lang.Integer>(jobCategories_);
-        bitField0_ |= 0x00000008;
+        bitField0_ |= 0x00000010;
       }
     }
     /**
@@ -2964,7 +3167,7 @@ public final class JobQuery extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearJobCategories() {
       jobCategories_ = java.util.Collections.emptyList();
-      bitField0_ = (bitField0_ & ~0x00000008);
+      bitField0_ = (bitField0_ & ~0x00000010);
       onChanged();
       return this;
     }
@@ -3305,9 +3508,9 @@ public final class JobQuery extends com.google.protobuf.GeneratedMessageV3
         com.google.protobuf.LazyStringArrayList.EMPTY;
 
     private void ensureCompanyDisplayNamesIsMutable() {
-      if (!((bitField0_ & 0x00000020) != 0)) {
+      if (!((bitField0_ & 0x00000040) != 0)) {
         companyDisplayNames_ = new com.google.protobuf.LazyStringArrayList(companyDisplayNames_);
-        bitField0_ |= 0x00000020;
+        bitField0_ |= 0x00000040;
       }
     }
     /**
@@ -3476,7 +3679,7 @@ public final class JobQuery extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearCompanyDisplayNames() {
       companyDisplayNames_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000020);
+      bitField0_ = (bitField0_ & ~0x00000040);
       onChanged();
       return this;
     }
@@ -3963,9 +4166,9 @@ public final class JobQuery extends com.google.protobuf.GeneratedMessageV3
     private java.util.List<java.lang.Integer> employmentTypes_ = java.util.Collections.emptyList();
 
     private void ensureEmploymentTypesIsMutable() {
-      if (!((bitField0_ & 0x00000200) != 0)) {
+      if (!((bitField0_ & 0x00000400) != 0)) {
         employmentTypes_ = new java.util.ArrayList<java.lang.Integer>(employmentTypes_);
-        bitField0_ |= 0x00000200;
+        bitField0_ |= 0x00000400;
       }
     }
     /**
@@ -4114,7 +4317,7 @@ public final class JobQuery extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearEmploymentTypes() {
       employmentTypes_ = java.util.Collections.emptyList();
-      bitField0_ = (bitField0_ & ~0x00000200);
+      bitField0_ = (bitField0_ & ~0x00000400);
       onChanged();
       return this;
     }
@@ -4224,9 +4427,9 @@ public final class JobQuery extends com.google.protobuf.GeneratedMessageV3
         com.google.protobuf.LazyStringArrayList.EMPTY;
 
     private void ensureLanguageCodesIsMutable() {
-      if (!((bitField0_ & 0x00000400) != 0)) {
+      if (!((bitField0_ & 0x00000800) != 0)) {
         languageCodes_ = new com.google.protobuf.LazyStringArrayList(languageCodes_);
-        bitField0_ |= 0x00000400;
+        bitField0_ |= 0x00000800;
       }
     }
     /**
@@ -4395,7 +4598,7 @@ public final class JobQuery extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearLanguageCodes() {
       languageCodes_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000400);
+      bitField0_ = (bitField0_ & ~0x00000800);
       onChanged();
       return this;
     }
@@ -4621,9 +4824,9 @@ public final class JobQuery extends com.google.protobuf.GeneratedMessageV3
         com.google.protobuf.LazyStringArrayList.EMPTY;
 
     private void ensureExcludedJobsIsMutable() {
-      if (!((bitField0_ & 0x00001000) != 0)) {
+      if (!((bitField0_ & 0x00002000) != 0)) {
         excludedJobs_ = new com.google.protobuf.LazyStringArrayList(excludedJobs_);
-        bitField0_ |= 0x00001000;
+        bitField0_ |= 0x00002000;
       }
     }
     /**
@@ -4744,7 +4947,7 @@ public final class JobQuery extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearExcludedJobs() {
       excludedJobs_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00001000);
+      bitField0_ = (bitField0_ & ~0x00002000);
       onChanged();
       return this;
     }

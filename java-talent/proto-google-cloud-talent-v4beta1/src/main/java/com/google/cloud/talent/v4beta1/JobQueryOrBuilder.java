@@ -52,6 +52,39 @@ public interface JobQueryOrBuilder
    *
    *
    * <pre>
+   * The language code of [query][google.cloud.talent.v4beta1.JobQuery.query].
+   * For example, "en-US". This field helps to better interpret the query.
+   * If a value isn't specified, the query language code is automatically
+   * detected, which may not be accurate.
+   * Language code should be in BCP-47 format, such as "en-US" or "sr-Latn".
+   * For more information, see
+   * [Tags for Identifying Languages](https://tools.ietf.org/html/bcp47).
+   * </pre>
+   *
+   * <code>string query_language_code = 14;</code>
+   */
+  java.lang.String getQueryLanguageCode();
+  /**
+   *
+   *
+   * <pre>
+   * The language code of [query][google.cloud.talent.v4beta1.JobQuery.query].
+   * For example, "en-US". This field helps to better interpret the query.
+   * If a value isn't specified, the query language code is automatically
+   * detected, which may not be accurate.
+   * Language code should be in BCP-47 format, such as "en-US" or "sr-Latn".
+   * For more information, see
+   * [Tags for Identifying Languages](https://tools.ietf.org/html/bcp47).
+   * </pre>
+   *
+   * <code>string query_language_code = 14;</code>
+   */
+  com.google.protobuf.ByteString getQueryLanguageCodeBytes();
+
+  /**
+   *
+   *
+   * <pre>
    * This filter specifies the company entities to search against.
    * If a value isn't specified, jobs are searched for against all
    * companies.
