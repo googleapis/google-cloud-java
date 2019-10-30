@@ -878,19 +878,9 @@
         <version>0.19.1-SNAPSHOT</version><!--{x-version-update:grafeas:current}-->
       </dependency>
       <dependency>
-        <groupId>com.google.api.grpc</groupId>
-        <artifactId>proto-google-cloud-gameservices-v1alpha</artifactId>
-        <version>0.16.0</version>
-      </dependency>
-      <dependency>
-        <groupId>com.google.api.grpc</groupId>
-        <artifactId>grpc-google-cloud-gameservices-v1alpha</artifactId>
-        <version>0.16.0</version>
-      </dependency>
-      <dependency>
         <groupId>com.google.cloud</groupId>
-        <artifactId>google-cloud-gameservices</artifactId>
-        <version>0.16.0</version>
+        <artifactId>google-cloud-gameservices-bom</artifactId>
+        <version>0.17.0</version>
       </dependency>
     </dependencies>
   </dependencyManagement>
