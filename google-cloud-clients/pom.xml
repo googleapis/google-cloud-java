@@ -177,9 +177,9 @@
   <dependencyManagement>
     <dependencies>
       <dependency>
-        <groupId>io.grpc</groupId>
-        <artifactId>grpc-bom</artifactId>
-        <version>${grpc.version}</version>
+        <groupId>com.google.cloud</groupId>
+        <artifactId>google-cloud-bom</artifactId>
+        <version>${bom.version}</version>
         <type>pom</type>
         <scope>import</scope>
       </dependency>
@@ -212,16 +212,16 @@
         <scope>import</scope>
       </dependency>
       <dependency>
-        <groupId>com.google.protobuf</groupId>
-        <artifactId>protobuf-bom</artifactId>
-        <version>${protobuf.version}</version>
+        <groupId>io.grpc</groupId>
+        <artifactId>grpc-bom</artifactId>
+        <version>${grpc.version}</version>
         <type>pom</type>
         <scope>import</scope>
       </dependency>
       <dependency>
-        <groupId>com.google.cloud</groupId>
-        <artifactId>google-cloud-bom</artifactId>
-        <version>${bom.version}</version>
+        <groupId>com.google.protobuf</groupId>
+        <artifactId>protobuf-bom</artifactId>
+        <version>${protobuf.version}</version>
         <type>pom</type>
         <scope>import</scope>
       </dependency>
