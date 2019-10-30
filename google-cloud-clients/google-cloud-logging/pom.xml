@@ -75,10 +75,6 @@
           </dependency>
         </dependencies>
       </plugin>
-    </plugins>
-  </build>
-  <build>
-    <plugins>
       <plugin>
         <!-- skip deployment until we fully migrate to https://github.com/googleapis/java-logging -->
         <groupId>org.apache.maven.plugins</groupId>
