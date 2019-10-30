@@ -25,7 +25,6 @@ google-cloud-errorreporting:0.116.0-beta:0.116.1-beta-SNAPSHOT
 google-cloud-examples:0.116.0-alpha:0.116.1-alpha-SNAPSHOT
 google-cloud-firestore:1.28.0:1.28.1-SNAPSHOT
 google-cloud-gcloud-maven-plugin:0.116.0-alpha:0.116.1-alpha-SNAPSHOT
-google-cloud-language:1.98.0:1.98.1-SNAPSHOT
 google-cloud-logging:1.98.0:1.98.1-SNAPSHOT
 google-cloud-logging-logback:0.116.0-alpha:0.116.1-alpha-SNAPSHOT
 google-cloud-managedtest:0.116.0-alpha:0.116.1-alpha-SNAPSHOT
@@ -56,8 +55,6 @@ grpc-google-cloud-error-reporting-v1beta1:0.81.0:0.81.1-SNAPSHOT
 grpc-google-cloud-firestore-admin-v1:1.28.0:1.28.1-SNAPSHOT
 grpc-google-cloud-firestore-v1:1.28.0:1.28.1-SNAPSHOT
 grpc-google-cloud-firestore-v1beta1:0.81.0:0.81.1-SNAPSHOT
-grpc-google-cloud-language-v1:1.80.0:1.80.1-SNAPSHOT
-grpc-google-cloud-language-v1beta2:0.81.0:0.81.1-SNAPSHOT
 grpc-google-cloud-logging-v2:0.81.0:0.81.1-SNAPSHOT
 grpc-google-cloud-monitoring-v3:1.80.0:1.80.1-SNAPSHOT
 grpc-google-cloud-os-login-v1:0.81.0:0.81.1-SNAPSHOT
@@ -83,8 +80,6 @@ proto-google-cloud-error-reporting-v1beta1:0.81.0:0.81.1-SNAPSHOT
 proto-google-cloud-firestore-admin-v1:1.28.0:1.28.1-SNAPSHOT
 proto-google-cloud-firestore-v1:1.28.0:1.28.1-SNAPSHOT
 proto-google-cloud-firestore-v1beta1:0.81.0:0.81.1-SNAPSHOT
-proto-google-cloud-language-v1:1.80.0:1.80.1-SNAPSHOT
-proto-google-cloud-language-v1beta2:0.81.0:0.81.1-SNAPSHOT
 proto-google-cloud-logging-v2:0.81.0:0.81.1-SNAPSHOT
 proto-google-cloud-monitoring-v3:1.80.0:1.80.1-SNAPSHOT
 proto-google-cloud-os-login-v1:0.81.0:0.81.1-SNAPSHOT
