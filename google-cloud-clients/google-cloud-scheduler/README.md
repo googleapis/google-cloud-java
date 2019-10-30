@@ -16,7 +16,6 @@ Java idiomatic client for [Cloud Scheduler][cloud-scheduler].
 Quickstart
 ----------
 
-[//]: # ({x-version-update-start:google-cloud-scheduler:released})
 Add this to your pom.xml file
 ```xml
 <dependency>
@@ -33,7 +32,6 @@ If you are using SBT, add this to your dependencies
 ```Scala
 libraryDependencies += "com.google.cloud" % "google-cloud-scheduler" % "1.21.0"
 ```
-[//]: # ({x-version-update-end})
 
 Authentication
 --------------
