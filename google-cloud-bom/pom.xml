@@ -196,83 +196,47 @@
       <!-- API-specific dependencies -->
       <dependency>
         <groupId>com.google.cloud</groupId>
-        <artifactId>google-cloud-asset</artifactId>
-        <version>0.114.0-beta</version>
-      </dependency>
-      <dependency>
-        <groupId>com.google.api.grpc</groupId>
-        <artifactId>proto-google-cloud-asset-v1</artifactId>
-        <version>0.79.0</version>
-      </dependency>
-      <dependency>
-        <groupId>com.google.api.grpc</groupId>
-        <artifactId>grpc-google-cloud-asset-v1</artifactId>
-        <version>0.79.0</version>
-      </dependency>
-      <dependency>
-        <groupId>com.google.api.grpc</groupId>
-        <artifactId>proto-google-cloud-asset-v1beta1</artifactId>
-        <version>0.79.0</version>
-      </dependency>
-      <dependency>
-        <groupId>com.google.api.grpc</groupId>
-        <artifactId>grpc-google-cloud-asset-v1beta1</artifactId>
-        <version>0.79.0</version>
-      </dependency>
-      <dependency>
-        <groupId>com.google.api.grpc</groupId>
-        <artifactId>proto-google-cloud-asset-v1p2beta1</artifactId>
-        <version>0.79.0</version>
-      </dependency>
-      <dependency>
-        <groupId>com.google.api.grpc</groupId>
-        <artifactId>grpc-google-cloud-asset-v1p2beta1</artifactId>
-        <version>0.79.0</version>
+        <artifactId>google-cloud-asset-bom</artifactId>
+        <version>0.115.0-beta</version>
+        <type>pom</type>
+        <scope>import</scope>
       </dependency>
       <dependency>
         <groupId>com.google.cloud</groupId>
-        <artifactId>google-cloud-automl</artifactId>
-        <version>0.111.0-beta</version>
-      </dependency>
-      <dependency>
-        <groupId>com.google.api.grpc</groupId>
-        <artifactId>proto-google-cloud-automl-v1beta1</artifactId>
-        <version>0.76.0</version>
-      </dependency>
-      <dependency>
-        <groupId>com.google.api.grpc</groupId>
-        <artifactId>grpc-google-cloud-automl-v1beta1</artifactId>
-        <version>0.76.0</version>
+        <artifactId>google-cloud-automl-bom</artifactId>
+        <version>0.114.1-beta</version>
+        <type>pom</type>
+        <scope>import</scope>
       </dependency>
       <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-bigtable</artifactId>
-        <version>1.5.0</version>
+        <version>1.6.0</version>
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>proto-google-cloud-bigtable-v2</artifactId>
-        <version>0.81.0</version>
+        <version>0.82.0</version>
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>grpc-google-cloud-bigtable-v2</artifactId>
-        <version>0.81.0</version>
+        <version>0.82.0</version>
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>proto-google-cloud-bigtable-admin-v2</artifactId>
-        <version>0.81.0</version>
+        <version>0.82.0</version>
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>grpc-google-cloud-bigtable-admin-v2</artifactId>
-        <version>0.81.0</version>
+        <version>0.82.0</version>
       </dependency>
       <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-bigtable-emulator</artifactId>
-        <version>0.114.0-alpha</version>
+        <version>0.115.0</version>
       </dependency>
       <dependency>
         <groupId>com.google.cloud</groupId>
@@ -361,48 +325,24 @@
       </dependency>
       <dependency>
         <groupId>com.google.cloud</groupId>
-        <artifactId>google-cloud-core</artifactId>
+        <artifactId>google-cloud-core-bom</artifactId>
         <version>1.91.3</version>
+        <type>pom</type>
+        <scope>import</scope>
       </dependency>
       <dependency>
         <groupId>com.google.cloud</groupId>
-        <artifactId>google-cloud-core-grpc</artifactId>
-        <version>1.91.3</version>
+        <artifactId>google-cloud-datacatalog-bom</artifactId>
+        <version>0.29.0-alpha</version>
+        <type>pom</type>
+        <scope>import</scope>
       </dependency>
       <dependency>
         <groupId>com.google.cloud</groupId>
-        <artifactId>google-cloud-core-http</artifactId>
-        <version>1.91.3</version>
-      </dependency>
-      <dependency>
-        <groupId>com.google.cloud</groupId>
-        <artifactId>google-cloud-datacatalog</artifactId>
-        <version>0.28.0-alpha</version>
-      </dependency>
-      <dependency>
-        <groupId>com.google.api.grpc</groupId>
-        <artifactId>proto-google-cloud-datacatalog-v1beta1</artifactId>
-        <version>0.28.0-alpha</version>
-      </dependency>
-      <dependency>
-        <groupId>com.google.api.grpc</groupId>
-        <artifactId>grpc-google-cloud-datacatalog-v1beta1</artifactId>
-        <version>0.28.0-alpha</version>
-      </dependency>
-      <dependency>
-        <groupId>com.google.cloud</groupId>
-        <artifactId>google-cloud-datalabeling</artifactId>
-        <version>0.115.0-alpha</version>
-      </dependency>
-      <dependency>
-        <groupId>com.google.api.grpc</groupId>
-        <artifactId>proto-google-cloud-datalabeling-v1beta1</artifactId>
-        <version>0.80.0</version>
-      </dependency>
-      <dependency>
-        <groupId>com.google.api.grpc</groupId>
-        <artifactId>grpc-google-cloud-datalabeling-v1beta1</artifactId>
-        <version>0.80.0</version>
+        <artifactId>google-cloud-datalabeling-bom</artifactId>
+        <version>0.116.1-alpha</version>
+        <type>pom</type>
+        <scope>import</scope>
       </dependency>
       <dependency>
         <groupId>com.google.cloud</groupId>
@@ -441,18 +381,10 @@
       </dependency>
       <dependency>
         <groupId>com.google.cloud</groupId>
-        <artifactId>google-cloud-dlp</artifactId>
-        <version>0.115.0-beta</version>
-      </dependency>
-      <dependency>
-        <groupId>com.google.api.grpc</groupId>
-        <artifactId>proto-google-cloud-dlp-v2</artifactId>
-        <version>0.80.0</version>
-      </dependency>
-      <dependency>
-        <groupId>com.google.api.grpc</groupId>
-        <artifactId>grpc-google-cloud-dlp-v2</artifactId>
-        <version>0.80.0</version>
+        <artifactId>google-cloud-dlp-bom</artifactId>
+        <version>0.116.0-beta</version>
+        <type>pom</type>
+        <scope>import</scope>
       </dependency>
       <dependency>
         <groupId>com.google.cloud</groupId>
@@ -757,38 +689,10 @@
       </dependency>
       <dependency>
         <groupId>com.google.cloud</groupId>
-        <artifactId>google-cloud-speech</artifactId>
-        <version>1.20.0</version>
-      </dependency>
-      <dependency>
-        <groupId>com.google.api.grpc</groupId>
-        <artifactId>proto-google-cloud-speech-v1beta1</artifactId>
-        <version>0.73.0</version>
-      </dependency>
-      <dependency>
-        <groupId>com.google.api.grpc</groupId>
-        <artifactId>grpc-google-cloud-speech-v1beta1</artifactId>
-        <version>0.73.0</version>
-      </dependency>
-      <dependency>
-        <groupId>com.google.api.grpc</groupId>
-        <artifactId>proto-google-cloud-speech-v1p1beta1</artifactId>
-        <version>0.73.0</version>
-      </dependency>
-      <dependency>
-        <groupId>com.google.api.grpc</groupId>
-        <artifactId>grpc-google-cloud-speech-v1p1beta1</artifactId>
-        <version>0.73.0</version>
-      </dependency>
-      <dependency>
-        <groupId>com.google.api.grpc</groupId>
-        <artifactId>proto-google-cloud-speech-v1</artifactId>
-        <version>1.20.0</version>
-      </dependency>
-      <dependency>
-        <groupId>com.google.api.grpc</groupId>
-        <artifactId>grpc-google-cloud-speech-v1</artifactId>
-        <version>1.20.0</version>
+        <artifactId>google-cloud-speech-bom</artifactId>
+        <version>1.21.0</version>
+        <type>pom</type>
+        <scope>import</scope>
       </dependency>
       <dependency>
         <groupId>com.google.cloud</groupId>
@@ -797,158 +701,38 @@
       </dependency>
       <dependency>
         <groupId>com.google.cloud</groupId>
-        <artifactId>google-cloud-tasks</artifactId>
-        <version>1.25.0</version>
-      </dependency>
-      <dependency>
-        <groupId>com.google.api.grpc</groupId>
-        <artifactId>proto-google-cloud-tasks-v2</artifactId>
-        <version>1.25.0</version>
-      </dependency>
-      <dependency>
-        <groupId>com.google.api.grpc</groupId>
-        <artifactId>grpc-google-cloud-tasks-v2</artifactId>
-        <version>1.25.0</version>
-      </dependency>
-      <dependency>
-        <groupId>com.google.api.grpc</groupId>
-        <artifactId>proto-google-cloud-tasks-v2beta2</artifactId>
-        <version>0.81.0</version>
-      </dependency>
-      <dependency>
-        <groupId>com.google.api.grpc</groupId>
-        <artifactId>grpc-google-cloud-tasks-v2beta2</artifactId>
-        <version>0.81.0</version>
-      </dependency>
-      <dependency>
-        <groupId>com.google.api.grpc</groupId>
-        <artifactId>proto-google-cloud-tasks-v2beta3</artifactId>
-        <version>0.81.0</version>
-      </dependency>
-      <dependency>
-        <groupId>com.google.api.grpc</groupId>
-        <artifactId>grpc-google-cloud-tasks-v2beta3</artifactId>
-        <version>0.81.0</version>
+        <artifactId>google-cloud-tasks-bom</artifactId>
+        <version>1.26.0</version>
+        <type>pom</type>
+        <scope>import</scope>
       </dependency>
       <dependency>
         <groupId>com.google.cloud</groupId>
-        <artifactId>google-cloud-texttospeech</artifactId>
-        <version>0.116.0-beta</version>
-      </dependency>
-      <dependency>
-        <groupId>com.google.api.grpc</groupId>
-        <artifactId>proto-google-cloud-texttospeech-v1beta1</artifactId>
-        <version>0.81.0</version>
-      </dependency>
-      <dependency>
-        <groupId>com.google.api.grpc</groupId>
-        <artifactId>grpc-google-cloud-texttospeech-v1beta1</artifactId>
-        <version>0.81.0</version>
-      </dependency>
-      <dependency>
-        <groupId>com.google.api.grpc</groupId>
-        <artifactId>proto-google-cloud-texttospeech-v1</artifactId>
-        <version>0.81.0</version>
-      </dependency>
-      <dependency>
-        <groupId>com.google.api.grpc</groupId>
-        <artifactId>grpc-google-cloud-texttospeech-v1</artifactId>
-        <version>0.81.0</version>
+        <artifactId>google-cloud-texttospeech-bom</artifactId>
+        <version>0.117.0-beta</version>
+        <type>pom</type>
+        <scope>import</scope>
       </dependency>
       <dependency>
         <groupId>com.google.cloud</groupId>
-        <artifactId>google-cloud-trace</artifactId>
-        <version>0.108.0-beta</version>
-      </dependency>
-      <dependency>
-        <groupId>com.google.api.grpc</groupId>
-        <artifactId>proto-google-cloud-trace-v1</artifactId>
-        <version>0.73.0</version>
-      </dependency>
-      <dependency>
-        <groupId>com.google.api.grpc</groupId>
-        <artifactId>grpc-google-cloud-trace-v1</artifactId>
-        <version>0.73.0</version>
-      </dependency>
-      <dependency>
-        <groupId>com.google.api.grpc</groupId>
-        <artifactId>proto-google-cloud-trace-v2</artifactId>
-        <version>0.73.0</version>
-      </dependency>
-      <dependency>
-        <groupId>com.google.api.grpc</groupId>
-        <artifactId>grpc-google-cloud-trace-v2</artifactId>
-        <version>0.73.0</version>
-      </dependency>
-        <dependency>
-        <groupId>com.google.api.grpc</groupId>
-        <artifactId>proto-google-cloud-translate-v3beta1</artifactId>
-        <version>0.76.0</version>
-      </dependency>
-      <dependency>
-        <groupId>com.google.api.grpc</groupId>
-        <artifactId>grpc-google-cloud-translate-v3beta1</artifactId>
-        <version>0.76.0</version>
+        <artifactId>google-cloud-trace-bom</artifactId>
+        <version>0.109.0-beta</version>
+        <type>pom</type>
+        <scope>import</scope>
       </dependency>
       <dependency>
         <groupId>com.google.cloud</groupId>
-        <artifactId>google-cloud-translate</artifactId>
-        <version>1.93.0</version>
+        <artifactId>google-cloud-translate-bom</artifactId>
+        <version>1.94.0</version>
+        <type>pom</type>
+        <scope>import</scope>
       </dependency>
       <dependency>
         <groupId>com.google.cloud</groupId>
-        <artifactId>google-cloud-vision</artifactId>
-        <version>1.97.0</version>
-      </dependency>
-      <dependency>
-        <groupId>com.google.api.grpc</groupId>
-        <artifactId>proto-google-cloud-vision-v1</artifactId>
-        <version>1.79.0</version>
-      </dependency>
-      <dependency>
-        <groupId>com.google.api.grpc</groupId>
-        <artifactId>grpc-google-cloud-vision-v1</artifactId>
-        <version>1.79.0</version>
-      </dependency>
-      <dependency>
-        <groupId>com.google.api.grpc</groupId>
-        <artifactId>proto-google-cloud-vision-v1p1beta1</artifactId>
-        <version>0.80.0</version>
-      </dependency>
-      <dependency>
-        <groupId>com.google.api.grpc</groupId>
-        <artifactId>grpc-google-cloud-vision-v1p1beta1</artifactId>
-        <version>0.80.0</version>
-      </dependency>
-      <dependency>
-        <groupId>com.google.api.grpc</groupId>
-        <artifactId>proto-google-cloud-vision-v1p2beta1</artifactId>
-        <version>1.79.0</version>
-      </dependency>
-      <dependency>
-        <groupId>com.google.api.grpc</groupId>
-        <artifactId>grpc-google-cloud-vision-v1p2beta1</artifactId>
-        <version>1.79.0</version>
-      </dependency>
-      <dependency>
-        <groupId>com.google.api.grpc</groupId>
-        <artifactId>proto-google-cloud-vision-v1p3beta1</artifactId>
-        <version>0.80.0</version>
-      </dependency>
-      <dependency>
-        <groupId>com.google.api.grpc</groupId>
-        <artifactId>grpc-google-cloud-vision-v1p3beta1</artifactId>
-        <version>0.80.0</version>
-      </dependency>
-      <dependency>
-        <groupId>com.google.api.grpc</groupId>
-        <artifactId>proto-google-cloud-vision-v1p4beta1</artifactId>
-        <version>0.80.0</version>
-      </dependency>
-      <dependency>
-        <groupId>com.google.api.grpc</groupId>
-        <artifactId>grpc-google-cloud-vision-v1p4beta1</artifactId>
-        <version>0.80.0</version>
+        <artifactId>google-cloud-vision-bom</artifactId>
+        <version>1.98.0</version>
+        <type>pom</type>
+        <scope>import</scope>
       </dependency>
       <dependency>
         <groupId>com.google.cloud</groupId>
@@ -1016,74 +800,32 @@
         <version>0.80.0</version>
       </dependency>
       <dependency>
-        <groupId>com.google.api.grpc</groupId>
-        <artifactId>proto-google-cloud-iot-v1</artifactId>
-        <version>0.80.0</version>
-      </dependency>
-      <dependency>
-        <groupId>com.google.api.grpc</groupId>
-        <artifactId>grpc-google-cloud-iot-v1</artifactId>
-        <version>0.80.0</version>
+        <groupId>com.google.cloud</groupId>
+        <artifactId>google-cloud-iot-bom</artifactId>
+        <version>0.116.0-beta</version>
+        <type>pom</type>
+        <scope>import</scope>
       </dependency>
       <dependency>
         <groupId>com.google.cloud</groupId>
-        <artifactId>google-cloud-iot</artifactId>
-        <version>0.115.0-beta</version>
-      </dependency>
-      <dependency>
-        <groupId>com.google.api.grpc</groupId>
-        <artifactId>proto-google-cloud-websecurityscanner-v1alpha</artifactId>
-        <version>0.80.0</version>
-      </dependency>
-      <dependency>
-        <groupId>com.google.api.grpc</groupId>
-        <artifactId>grpc-google-cloud-websecurityscanner-v1alpha</artifactId>
-        <version>0.80.0</version>
-      </dependency>
-      <dependency>
-        <groupId>com.google.api.grpc</groupId>
-        <artifactId>proto-google-cloud-websecurityscanner-v1beta</artifactId>
-        <version>0.80.0</version>
-      </dependency>
-      <dependency>
-        <groupId>com.google.api.grpc</groupId>
-        <artifactId>grpc-google-cloud-websecurityscanner-v1beta</artifactId>
-        <version>0.80.0</version>
+        <artifactId>google-cloud-websecurityscanner-bom</artifactId>
+        <version>0.116.0</version>
+        <type>pom</type>
+        <scope>import</scope>
       </dependency>
       <dependency>
         <groupId>com.google.cloud</groupId>
-        <artifactId>google-cloud-websecurityscanner</artifactId>
-        <version>0.115.0</version>
-      </dependency>
-      <dependency>
-        <groupId>com.google.api.grpc</groupId>
-        <artifactId>proto-google-cloud-iamcredentials-v1</artifactId>
-        <version>0.42.0-alpha</version>
-      </dependency>
-      <dependency>
-        <groupId>com.google.api.grpc</groupId>
-        <artifactId>grpc-google-cloud-iamcredentials-v1</artifactId>
-        <version>0.42.0-alpha</version>
+        <artifactId>google-cloud-iamcredentials-bom</artifactId>
+        <version>0.43.0-alpha</version>
+        <type>pom</type>
+        <scope>import</scope>
       </dependency>
       <dependency>
         <groupId>com.google.cloud</groupId>
-        <artifactId>google-cloud-iamcredentials</artifactId>
-        <version>0.42.0-alpha</version>
-      </dependency>
-      <dependency>
-        <groupId>com.google.api.grpc</groupId>
-        <artifactId>proto-google-cloud-talent-v4beta1</artifactId>
-        <version>0.33.0-beta</version>
-      </dependency>
-      <dependency>
-        <groupId>com.google.api.grpc</groupId>
-        <artifactId>grpc-google-cloud-talent-v4beta1</artifactId>
-        <version>0.33.0-beta</version>
-      </dependency>
-      <dependency>
-        <groupId>com.google.cloud</groupId>
-        <artifactId>google-cloud-talent</artifactId>
-        <version>0.33.0-beta</version>
+        <artifactId>google-cloud-talent-bom</artifactId>
+        <version>0.34.0-beta</version>
+        <type>pom</type>
+        <scope>import</scope>
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
@@ -1101,19 +843,11 @@
         <version>0.30.0-alpha</version>
       </dependency>
       <dependency>
-        <groupId>com.google.api.grpc</groupId>
-        <artifactId>proto-google-cloud-phishingprotection-v1beta1</artifactId>
-        <version>0.27.0</version>
-      </dependency>
-      <dependency>
-        <groupId>com.google.api.grpc</groupId>
-        <artifactId>grpc-google-cloud-phishingprotection-v1beta1</artifactId>
-        <version>0.27.0</version>
-      </dependency>
-      <dependency>
         <groupId>com.google.cloud</groupId>
-        <artifactId>google-cloud-phishingprotection</artifactId>
-        <version>0.27.0</version>
+        <artifactId>google-cloud-phishingprotection-bom</artifactId>
+        <version>0.28.0</version>
+        <type>pom</type>
+        <scope>import</scope>
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
@@ -1136,19 +870,11 @@
         <version>0.19.1-SNAPSHOT</version><!--{x-version-update:grafeas:current}-->
       </dependency>
       <dependency>
-        <groupId>com.google.api.grpc</groupId>
-        <artifactId>proto-google-cloud-gameservices-v1alpha</artifactId>
-        <version>0.16.0</version>
-      </dependency>
-      <dependency>
-        <groupId>com.google.api.grpc</groupId>
-        <artifactId>grpc-google-cloud-gameservices-v1alpha</artifactId>
-        <version>0.16.0</version>
-      </dependency>
-      <dependency>
         <groupId>com.google.cloud</groupId>
-        <artifactId>google-cloud-gameservices</artifactId>
-        <version>0.16.0</version>
+        <artifactId>google-cloud-gameservices-bom</artifactId>
+        <version>0.17.0</version>
+        <type>pom</type>
+        <scope>import</scope>
       </dependency>
     </dependencies>
   </dependencyManagement>

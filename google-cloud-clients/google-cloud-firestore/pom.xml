@@ -58,6 +58,11 @@
       <scope>test</scope>
     </dependency>
     <dependency>
+      <groupId>io.grpc</groupId>
+      <artifactId>grpc-core</artifactId>
+      <version>${grpc.version}</version>
+    </dependency>
+    <dependency>
       <groupId>io.opencensus</groupId>
       <artifactId>opencensus-contrib-grpc-util</artifactId>
     </dependency>
