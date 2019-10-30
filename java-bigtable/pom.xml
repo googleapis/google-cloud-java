@@ -158,6 +158,7 @@
         <google.api-common.version>1.8.1</google.api-common.version>
         <google.common-protos.version>1.17.0</google.common-protos.version>
         <google.core.version>1.91.3</google.core.version>
+         <!-- make sure to update the grpc version in README -->
         <grpc.version>1.24.1</grpc.version>
         <guava.version>28.1-android</guava.version>
         <opencensus.version>0.24.0</opencensus.version>
