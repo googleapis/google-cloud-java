@@ -14,7 +14,6 @@ This library allows you to use [Logback](https://logback.qos.ch/) configuration 
 Quickstart
 ----------
 
-[//]: # ({x-version-update-start:google-cloud-logging-logback:released})
 If you are using Maven, add this to your pom.xml file
 ```xml
 <dependency>
@@ -31,7 +30,6 @@ If you are using SBT, add this to your dependencies
 ```Scala
 libraryDependencies += "com.google.cloud" % "google-cloud-logging-logback" % "0.116.0-alpha"
 ```
-[//]: # ({x-version-update-end})
 
 Usage 
 -----

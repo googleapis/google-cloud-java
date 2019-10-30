@@ -13,7 +13,6 @@ Java idiomatic client for [Stackdriver Logging][stackdriver-logging].
 Quickstart
 ----------
 
-[//]: # ({x-version-update-start:google-cloud-logging:released})
 Add this to your pom.xml file
 ```xml
 <dependency>
@@ -30,7 +29,6 @@ If you are using SBT, add this to your dependencies
 ```Scala
 libraryDependencies += "com.google.cloud" % "google-cloud-logging" % "1.98.0"
 ```
-[//]: # ({x-version-update-end})
 
 Example Application
 -------------------
