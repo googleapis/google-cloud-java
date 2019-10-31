@@ -20,7 +20,6 @@ google-cloud-contrib:0.117.0-alpha:0.117.0-alpha
 google-cloud-dataproc:0.117.0:0.117.0
 google-cloud-datastore:1.99.0:1.99.0
 google-cloud-dialogflow:0.117.0-alpha:0.117.0-alpha
-google-cloud-dns:0.117.0-alpha:0.117.0-alpha
 google-cloud-errorreporting:0.117.0-beta:0.117.0-beta
 google-cloud-examples:0.117.0-alpha:0.117.0-alpha
 google-cloud-firestore:1.29.0:1.29.0
