@@ -19,7 +19,6 @@ google-cloud-containeranalysis:0.117.0-beta:0.117.0-beta
 google-cloud-contrib:0.117.0-alpha:0.117.0-alpha
 google-cloud-dataproc:0.117.0:0.117.0
 google-cloud-datastore:1.99.0:1.99.0
-google-cloud-dialogflow:0.117.0-alpha:0.117.0-alpha
 google-cloud-dns:0.117.0-alpha:0.117.0-alpha
 google-cloud-errorreporting:0.117.0-beta:0.117.0-beta
 google-cloud-examples:0.117.0-alpha:0.117.0-alpha
@@ -45,8 +44,6 @@ grpc-google-cloud-containeranalysis-v1:0.82.0:0.82.0
 grpc-google-cloud-containeranalysis-v1beta1:0.82.0:0.82.0
 grpc-google-cloud-dataproc-v1:0.82.0:0.82.0
 grpc-google-cloud-dataproc-v1beta2:0.82.0:0.82.0
-grpc-google-cloud-dialogflow-v2:0.82.0:0.82.0
-grpc-google-cloud-dialogflow-v2beta1:0.82.0:0.82.0
 grpc-google-cloud-error-reporting-v1beta1:0.82.0:0.82.0
 grpc-google-cloud-firestore-admin-v1:1.29.0:1.29.0
 grpc-google-cloud-firestore-v1:1.29.0:1.29.0
@@ -67,8 +64,6 @@ proto-google-cloud-containeranalysis-v1beta1:0.82.0:0.82.0
 proto-google-cloud-dataproc-v1:0.82.0:0.82.0
 proto-google-cloud-dataproc-v1beta2:0.82.0:0.82.0
 proto-google-cloud-datastore-v1:0.82.0:0.82.0
-proto-google-cloud-dialogflow-v2:0.82.0:0.82.0
-proto-google-cloud-dialogflow-v2beta1:0.82.0:0.82.0
 proto-google-cloud-error-reporting-v1beta1:0.82.0:0.82.0
 proto-google-cloud-firestore-admin-v1:1.29.0:1.29.0
 proto-google-cloud-firestore-v1:1.29.0:1.29.0

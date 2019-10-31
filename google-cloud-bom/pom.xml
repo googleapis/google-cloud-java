@@ -389,27 +389,27 @@
       <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-dialogflow</artifactId>
-        <version>0.117.0-alpha</version><!-- {x-version-update:google-cloud-dialogflow:current} -->
+        <version>0.117.0-alpha</version>
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>proto-google-cloud-dialogflow-v2beta1</artifactId>
-        <version>0.82.0</version><!-- {x-version-update:proto-google-cloud-dialogflow-v2beta1:current} -->
+        <version>0.82.0</version>
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>grpc-google-cloud-dialogflow-v2beta1</artifactId>
-        <version>0.82.0</version><!-- {x-version-update:grpc-google-cloud-dialogflow-v2beta1:current} -->
+        <version>0.82.0</version>
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>proto-google-cloud-dialogflow-v2</artifactId>
-        <version>0.82.0</version><!-- {x-version-update:proto-google-cloud-dialogflow-v2:current} -->
+        <version>0.82.0</version>
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>grpc-google-cloud-dialogflow-v2</artifactId>
-        <version>0.82.0</version><!-- {x-version-update:grpc-google-cloud-dialogflow-v2:current} -->
+        <version>0.82.0</version>
       </dependency>
       <dependency>
         <groupId>com.google.cloud</groupId>
