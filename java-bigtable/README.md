@@ -7,8 +7,7 @@ Java idiomatic client for [Cloud Bigtable][cloud-bigtable].
 [![Codacy Badge](https://api.codacy.com/project/badge/grade/9da006ad7c3a4fe1abd142e77c003917)](https://www.codacy.com/app/mziccard/google-cloud-java)
 
 - [Product Documentation][bigtable-product-docs]
-- [Client Library Documentation - Data API](https://googleapis.dev/java/google-cloud-clients/latest/com/google/cloud/bigtable/data/v2/package-summary.html)
-- [Client Library Documentation - Admin API](https://googleapis.dev/java/google-cloud-clients/latest/com/google/cloud/bigtable/admin/v2/package-summary.html)
+- [Client Library Documentation](https://googleapis.dev/java/google-cloud-bigtable/latest/index.html)
 
 ## Quickstart
 
