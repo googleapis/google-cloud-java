@@ -153,8 +153,13 @@ public class KnowledgeBasesClientTest {
   public void getKnowledgeBaseTest() {
     KnowledgeBaseName name2 = KnowledgeBaseName.of("[PROJECT]", "[KNOWLEDGE_BASE]");
     String displayName = "displayName1615086568";
+    String languageCode = "languageCode-412800396";
     KnowledgeBase expectedResponse =
-        KnowledgeBase.newBuilder().setName(name2.toString()).setDisplayName(displayName).build();
+        KnowledgeBase.newBuilder()
+            .setName(name2.toString())
+            .setDisplayName(displayName)
+            .setLanguageCode(languageCode)
+            .build();
     mockKnowledgeBases.addResponse(expectedResponse);
 
     KnowledgeBaseName name = KnowledgeBaseName.of("[PROJECT]", "[KNOWLEDGE_BASE]");
@@ -194,8 +199,13 @@ public class KnowledgeBasesClientTest {
   public void createKnowledgeBaseTest() {
     KnowledgeBaseName name = KnowledgeBaseName.of("[PROJECT]", "[KNOWLEDGE_BASE]");
     String displayName = "displayName1615086568";
+    String languageCode = "languageCode-412800396";
     KnowledgeBase expectedResponse =
-        KnowledgeBase.newBuilder().setName(name.toString()).setDisplayName(displayName).build();
+        KnowledgeBase.newBuilder()
+            .setName(name.toString())
+            .setDisplayName(displayName)
+            .setLanguageCode(languageCode)
+            .build();
     mockKnowledgeBases.addResponse(expectedResponse);
 
     ProjectName parent = ProjectName.of("[PROJECT]");
@@ -275,8 +285,13 @@ public class KnowledgeBasesClientTest {
   public void updateKnowledgeBaseTest() {
     KnowledgeBaseName name = KnowledgeBaseName.of("[PROJECT]", "[KNOWLEDGE_BASE]");
     String displayName = "displayName1615086568";
+    String languageCode = "languageCode-412800396";
     KnowledgeBase expectedResponse =
-        KnowledgeBase.newBuilder().setName(name.toString()).setDisplayName(displayName).build();
+        KnowledgeBase.newBuilder()
+            .setName(name.toString())
+            .setDisplayName(displayName)
+            .setLanguageCode(languageCode)
+            .build();
     mockKnowledgeBases.addResponse(expectedResponse);
 
     KnowledgeBase knowledgeBase = KnowledgeBase.newBuilder().build();

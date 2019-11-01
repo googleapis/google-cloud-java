@@ -1,0 +1,8 @@
+# Format:
+# module:released-version:current-version
+
+proto-google-cloud-dialogflow-v2:0.82.0:0.82.0
+proto-google-cloud-dialogflow-v2beta1:0.82.0:0.82.0
+grpc-google-cloud-dialogflow-v2beta1:0.82.0:0.82.0
+grpc-google-cloud-dialogflow-v2:0.82.0:0.82.0
+google-cloud-dialogflow:0.117.0-alpha:0.117.0-alpha

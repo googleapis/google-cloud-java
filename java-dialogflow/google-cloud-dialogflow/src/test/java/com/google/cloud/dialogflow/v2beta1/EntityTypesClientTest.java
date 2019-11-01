@@ -209,8 +209,13 @@ public class EntityTypesClientTest {
   public void getEntityTypeTest() {
     EntityTypeName name2 = EntityTypeName.of("[PROJECT]", "[ENTITY_TYPE]");
     String displayName = "displayName1615086568";
+    boolean enableFuzzyExtraction = true;
     EntityType expectedResponse =
-        EntityType.newBuilder().setName(name2.toString()).setDisplayName(displayName).build();
+        EntityType.newBuilder()
+            .setName(name2.toString())
+            .setDisplayName(displayName)
+            .setEnableFuzzyExtraction(enableFuzzyExtraction)
+            .build();
     mockEntityTypes.addResponse(expectedResponse);
 
     EntityTypeName name = EntityTypeName.of("[PROJECT]", "[ENTITY_TYPE]");
@@ -250,8 +255,13 @@ public class EntityTypesClientTest {
   public void getEntityTypeTest2() {
     EntityTypeName name2 = EntityTypeName.of("[PROJECT]", "[ENTITY_TYPE]");
     String displayName = "displayName1615086568";
+    boolean enableFuzzyExtraction = true;
     EntityType expectedResponse =
-        EntityType.newBuilder().setName(name2.toString()).setDisplayName(displayName).build();
+        EntityType.newBuilder()
+            .setName(name2.toString())
+            .setDisplayName(displayName)
+            .setEnableFuzzyExtraction(enableFuzzyExtraction)
+            .build();
     mockEntityTypes.addResponse(expectedResponse);
 
     EntityTypeName name = EntityTypeName.of("[PROJECT]", "[ENTITY_TYPE]");
@@ -294,8 +304,13 @@ public class EntityTypesClientTest {
   public void createEntityTypeTest() {
     EntityTypeName name = EntityTypeName.of("[PROJECT]", "[ENTITY_TYPE]");
     String displayName = "displayName1615086568";
+    boolean enableFuzzyExtraction = true;
     EntityType expectedResponse =
-        EntityType.newBuilder().setName(name.toString()).setDisplayName(displayName).build();
+        EntityType.newBuilder()
+            .setName(name.toString())
+            .setDisplayName(displayName)
+            .setEnableFuzzyExtraction(enableFuzzyExtraction)
+            .build();
     mockEntityTypes.addResponse(expectedResponse);
 
     ProjectAgentName parent = ProjectAgentName.of("[PROJECT]");
@@ -338,8 +353,13 @@ public class EntityTypesClientTest {
   public void createEntityTypeTest2() {
     EntityTypeName name = EntityTypeName.of("[PROJECT]", "[ENTITY_TYPE]");
     String displayName = "displayName1615086568";
+    boolean enableFuzzyExtraction = true;
     EntityType expectedResponse =
-        EntityType.newBuilder().setName(name.toString()).setDisplayName(displayName).build();
+        EntityType.newBuilder()
+            .setName(name.toString())
+            .setDisplayName(displayName)
+            .setEnableFuzzyExtraction(enableFuzzyExtraction)
+            .build();
     mockEntityTypes.addResponse(expectedResponse);
 
     ProjectAgentName parent = ProjectAgentName.of("[PROJECT]");
@@ -385,8 +405,13 @@ public class EntityTypesClientTest {
   public void updateEntityTypeTest() {
     EntityTypeName name = EntityTypeName.of("[PROJECT]", "[ENTITY_TYPE]");
     String displayName = "displayName1615086568";
+    boolean enableFuzzyExtraction = true;
     EntityType expectedResponse =
-        EntityType.newBuilder().setName(name.toString()).setDisplayName(displayName).build();
+        EntityType.newBuilder()
+            .setName(name.toString())
+            .setDisplayName(displayName)
+            .setEnableFuzzyExtraction(enableFuzzyExtraction)
+            .build();
     mockEntityTypes.addResponse(expectedResponse);
 
     EntityType entityType = EntityType.newBuilder().build();
@@ -426,8 +451,13 @@ public class EntityTypesClientTest {
   public void updateEntityTypeTest2() {
     EntityTypeName name = EntityTypeName.of("[PROJECT]", "[ENTITY_TYPE]");
     String displayName = "displayName1615086568";
+    boolean enableFuzzyExtraction = true;
     EntityType expectedResponse =
-        EntityType.newBuilder().setName(name.toString()).setDisplayName(displayName).build();
+        EntityType.newBuilder()
+            .setName(name.toString())
+            .setDisplayName(displayName)
+            .setEnableFuzzyExtraction(enableFuzzyExtraction)
+            .build();
     mockEntityTypes.addResponse(expectedResponse);
 
     EntityType entityType = EntityType.newBuilder().build();
