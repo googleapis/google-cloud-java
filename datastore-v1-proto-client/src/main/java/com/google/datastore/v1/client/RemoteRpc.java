@@ -23,21 +23,16 @@ import com.google.api.client.http.HttpResponse;
 import com.google.api.client.http.HttpStatusCodes;
 import com.google.api.client.http.protobuf.ProtoHttpContent;
 import com.google.api.client.util.IOUtils;
-import com.google.common.base.Preconditions;
 import com.google.protobuf.MessageLite;
 import com.google.rpc.Code;
 import com.google.rpc.Status;
 import java.io.ByteArrayOutputStream;
-import java.io.FilterInputStream;
 import java.io.IOException;
 import java.io.InputStream;
-import java.lang.reflect.Field;
 import java.net.SocketTimeoutException;
 import java.nio.charset.Charset;
 import java.util.concurrent.atomic.AtomicInteger;
-import java.util.logging.Level;
 import java.util.logging.Logger;
-import java.util.zip.GZIPInputStream;
 
 /**
  * An RPC transport that sends protocol buffers over HTTP.
@@ -46,91 +41,6 @@ import java.util.zip.GZIPInputStream;
  */
 class RemoteRpc {
   private static final Logger logger = Logger.getLogger(RemoteRpc.class.getName());
-
-  /**
-   * An input stream that wraps a {@link GZIPInputStream} and forces it to fully consume its
-   * underlying {@link InputStream} before calling close() on it.
-   *
-   * @see <a>href="https://github.com/google/google-http-java-client/issues/367"</a>
-   */
-  static class GzipFixingInputStream extends InputStream {
-
-    // How many extra read() calls we have made on the underlying stream.
-    int callsToRead = 0;
-
-    // Experimentally, it is only necessary to consume 1 extra byte. Consuming a bit more than that
-    // should not affect performance, but we set an upper bound for safety.
-    private static final int MAX_BYTES_TO_CONSUME = 100;
-
-    private static final Field gzipUnderlyingInputStreamField = getGzipUnderlyingInputStreamField();
-
-    private static Field getGzipUnderlyingInputStreamField() {
-      try {
-        // FilterInputStream is a superclass of GZIPInputStream and stores the underlying
-        // InputStream.
-        Field gzipInputStreamIsField = FilterInputStream.class.getDeclaredField("in");
-        gzipInputStreamIsField.setAccessible(true);
-        return gzipInputStreamIsField;
-      } catch (Exception e) {
-        logger.log(
-            Level.INFO,
-            "Failed to find field \"in\" in FilterInputStream. This"
-                + " may prevent keep-alive from working correctly.",
-            e);
-        return null;
-      }
-    }
-
-    public static InputStream maybeWrap(InputStream inputStream) {
-      if (gzipUnderlyingInputStreamField != null && inputStream instanceof GZIPInputStream) {
-        return new GzipFixingInputStream((GZIPInputStream) inputStream);
-      }
-      return inputStream;
-    }
-
-    private final GZIPInputStream gzipInputStream;
-
-    private GzipFixingInputStream(GZIPInputStream gzipInputStream) {
-      Preconditions.checkNotNull(gzipUnderlyingInputStreamField);
-      this.gzipInputStream = gzipInputStream;
-    }
-
-    @Override
-    public int read() throws IOException {
-      return gzipInputStream.read();
-    }
-
-    @Override
-    public int read(byte[] b, int off, int len) throws IOException {
-      return gzipInputStream.read(b, off, len);
-    }
-
-    @Override
-    public void close() throws IOException {
-      // If possible, finish consuming the underlying InputStream before closing it.
-      if (gzipUnderlyingInputStreamField != null) {
-        try {
-          InputStream underlyingInputStream =
-              (InputStream) gzipUnderlyingInputStreamField.get(gzipInputStream);
-          boolean reachedEndOfStream = false;
-          while (!reachedEndOfStream && callsToRead < MAX_BYTES_TO_CONSUME) {
-            callsToRead++;
-            if (underlyingInputStream.read() == -1) {
-              reachedEndOfStream = true;
-            }
-          }
-          if (!reachedEndOfStream) {
-            logger.log(Level.FINER, "Gave up consuming underlying InputStream");
-          }
-        } catch (Exception e) {
-          // If this fails for any reason, log and move on.
-          logger.log(
-              Level.FINER, "Failed to consume underlying InputStream from GZIPInputStream", e);
-        }
-      }
-      gzipInputStream.close();
-    }
-  }
 
   private static final String API_FORMAT_VERSION_HEADER = "X-Goog-Api-Format-Version";
   private static final String API_FORMAT_VERSION = "2";
@@ -182,13 +92,13 @@ class RemoteRpc {
         }
         httpResponse = httpRequest.execute();
         if (!httpResponse.isSuccessStatusCode()) {
-          try (InputStream content = GzipFixingInputStream.maybeWrap(httpResponse.getContent())) {
+          try (InputStream content = httpResponse.getContent()) {
             throw makeException(url, methodName, content,
                 httpResponse.getContentType(), httpResponse.getContentCharset(), null,
                 httpResponse.getStatusCode());
           }
         }
-        return GzipFixingInputStream.maybeWrap(httpResponse.getContent());
+        return httpResponse.getContent();
       } catch (SocketTimeoutException e) {
         throw makeException(url, methodName, Code.DEADLINE_EXCEEDED, "Deadline exceeded", e);
       } catch (IOException e) {
@@ -253,7 +163,7 @@ class RemoteRpc {
           e);
     }
 
-    Code code = Code.valueOf(rpcStatus.getCode());
+    Code code = Code.forNumber(rpcStatus.getCode());
     if (code == null) {
       return makeException(url, methodName, Code.INTERNAL,
           String.format(

@@ -16,16 +16,12 @@
 package com.google.datastore.v1.client;
 
 import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertFalse;
-import static org.junit.Assert.assertNotEquals;
-import static org.junit.Assert.assertTrue;
 
 import com.google.api.client.http.HttpTransport;
 import com.google.api.client.http.LowLevelHttpRequest;
 import com.google.api.client.http.LowLevelHttpResponse;
 import com.google.api.client.util.Charsets;
 import com.google.datastore.v1.BeginTransactionResponse;
-import com.google.datastore.v1.client.RemoteRpc.GzipFixingInputStream;
 import com.google.protobuf.ByteString;
 import com.google.rpc.Code;
 import com.google.rpc.Status;
@@ -121,60 +117,22 @@ public class RemoteRpcTest {
   }
 
   @Test
-  public void testGzipHack_NonGzip() throws Exception {
-    BeginTransactionResponse resp = newBeginTransactionResp();
+  public void testGzip() throws IOException, DatastoreException {
+    BeginTransactionResponse response = newBeginTransactionResponse();
     InjectedTestValues injectedTestValues =
-        new InjectedTestValues(resp.toByteArray(), new byte[0], false);
+        new InjectedTestValues(gzip(response), new byte[1], true);
     RemoteRpc rpc = newRemoteRpc(injectedTestValues);
 
     InputStream is = rpc.call("beginTransaction", BeginTransactionResponse.getDefaultInstance());
-    BeginTransactionResponse parsedResp = BeginTransactionResponse.parseFrom(is);
+    BeginTransactionResponse parsedResponse = BeginTransactionResponse.parseFrom(is);
     is.close();
 
-    assertEquals(resp, parsedResp);
-    assertFalse(is instanceof GzipFixingInputStream);
-  }
-
-  @Test
-  public void testGzipHack_Gzip() throws Exception {
-    BeginTransactionResponse resp = newBeginTransactionResp();
-    InjectedTestValues injectedTestValues = new InjectedTestValues(gzip(resp), new byte[1], true);
-    RemoteRpc rpc = newRemoteRpc(injectedTestValues);
-
-    InputStream is = rpc.call("beginTransaction", BeginTransactionResponse.getDefaultInstance());
-    BeginTransactionResponse parsedResp = BeginTransactionResponse.parseFrom(is);
-    is.close();
-
-    assertEquals(resp, parsedResp);
-    assertTrue(is instanceof GzipFixingInputStream);
-    assertEquals(1, ((GzipFixingInputStream) is).callsToRead);
+    assertEquals(response, parsedResponse);
     // Check that the underlying stream is exhausted.
     assertEquals(-1, injectedTestValues.inputStream.read());
   }
 
-  @Test
-  public void testGzipHack_GzipTooManyExtraBytes() throws Exception {
-    BeginTransactionResponse resp = newBeginTransactionResp();
-    // NOTE(eddavisson): We might expect 101 extra bytes to be enough that the underlying input
-    // stream is not exhausted, but this is not the case (likely due to a buffer somewhere). 1000
-    // extra bytes seems to be enough. We check the value of callsToRead directly to make sure
-    // we eventually stopped trying to consume the underlying stream.
-    InjectedTestValues injectedTestValues =
-        new InjectedTestValues(gzip(resp), new byte[1000], true);
-    RemoteRpc rpc = newRemoteRpc(injectedTestValues);
-
-    InputStream is = rpc.call("beginTransaction", BeginTransactionResponse.getDefaultInstance());
-    BeginTransactionResponse parsedResp = BeginTransactionResponse.parseFrom(is);
-    is.close();
-
-    assertEquals(resp, parsedResp);
-    assertTrue(is instanceof GzipFixingInputStream);
-    assertEquals(100, ((GzipFixingInputStream) is).callsToRead);
-    // Check that the underlying stream is _not_ exhausted.
-    assertNotEquals(-1, injectedTestValues.inputStream.read());
-  }
-
-  private static BeginTransactionResponse newBeginTransactionResp() {
+  private static BeginTransactionResponse newBeginTransactionResponse() {
     return BeginTransactionResponse.newBuilder()
         .setTransaction(ByteString.copyFromUtf8("blah-blah-blah"))
         .build();
@@ -187,10 +145,10 @@ public class RemoteRpcTest {
         "https://www.example.com/v1/projects/p");
   }
 
-  private byte[] gzip(BeginTransactionResponse resp) throws IOException {
+  private byte[] gzip(BeginTransactionResponse response) throws IOException {
     ByteArrayOutputStream bytesOut = new ByteArrayOutputStream();
     try (GZIPOutputStream gzipOut = new GZIPOutputStream(bytesOut)) {
-      resp.writeTo(gzipOut);
+      response.writeTo(gzipOut);
     }
     return bytesOut.toByteArray();
   }
