@@ -17,7 +17,6 @@ Java idiomatic client for [Dialogflow][dialogflow].
 Quickstart
 ----------
 
-[//]: # ({x-version-update-start:google-cloud-dialogflow:released})
 If you are using Maven, add this to your pom.xml file
 ```xml
 <dependency>
@@ -34,7 +33,6 @@ If you are using SBT, add this to your dependencies
 ```Scala
 libraryDependencies += "com.google.cloud" % "google-cloud-dialogflow" % "0.117.0-alpha"
 ```
-[//]: # ({x-version-update-end})
 
 Authentication
 --------------
