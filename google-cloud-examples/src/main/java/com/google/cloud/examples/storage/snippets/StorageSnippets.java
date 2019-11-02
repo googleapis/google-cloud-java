@@ -1580,7 +1580,7 @@ public class StorageSnippets {
     System.out.println(url);
     System.out.println("You can use this URL with any user agent, for example:");
     System.out.println(
-        "curl -X PUT -H 'Content-Type: application/octet-stream'--upload-file my-file '"
+        "curl -X PUT -H 'Content-Type: application/octet-stream' --upload-file my-file '"
             + url
             + "'");
     // [END storage_generate_upload_signed_url_v4]
