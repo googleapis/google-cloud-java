@@ -20,6 +20,7 @@ import static com.google.cloud.firestore.UserDataConverter.NO_DELETES;
 
 import com.google.api.core.InternalApi;
 import com.google.cloud.Timestamp;
+import com.google.cloud.firestore.spi.v1.FirestoreRpc;
 import com.google.common.base.Preconditions;
 import com.google.firestore.v1.Document;
 import com.google.firestore.v1.Value;
@@ -32,6 +33,11 @@ public class Internal {
   @InternalApi
   public Internal(FirestoreImpl firestore) {
     this.firestore = firestore;
+  }
+
+  @InternalApi
+  public Internal(FirestoreOptions firestoreOptions, FirestoreRpc firestoreRpc) {
+    this.firestore = new FirestoreImpl(firestoreOptions, firestoreRpc);
   }
 
   @InternalApi
