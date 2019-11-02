@@ -13,7 +13,6 @@ Java idiomatic client for [Google Cloud Container Analysis][cloud-containeranaly
 Quickstart
 ----------
 
-[//]: # ({x-version-update-start:google-cloud-containeranalysis:released})
 If you are using Maven, add this to your pom.xml file
 ```xml
 <dependency>
@@ -30,7 +29,6 @@ If you are using SBT, add this to your dependencies
 ```Scala
 libraryDependencies += "com.google.cloud" % "google-cloud-containeranalysis" % "0.117.0-beta"
 ```
-[//]: # ({x-version-update-end})
 
 Authentication
 --------------
