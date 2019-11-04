@@ -16,7 +16,6 @@ Java idiomatic client for [Google Cloud Dataproc][cloud-dataproc].
 Quickstart
 ----------
 
-[//]: # ({x-version-update-start:google-cloud-dataproc:released})
 Add this to your pom.xml file
 ```xml
 <dependency>
@@ -33,7 +32,6 @@ If you are using SBT, add this to your dependencies
 ```Scala
 libraryDependencies += "com.google.cloud" % "google-cloud-dataproc" % "0.117.0"
 ```
-[//]: # ({x-version-update-end})
 
 Authentication
 --------------
