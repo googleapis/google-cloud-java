@@ -16,7 +16,6 @@ Java idiomatic client for [Stackdriver Error Reporting][stackdriver-error-report
 Quickstart
 ----------
 
-[//]: # ({x-version-update-start:google-cloud-errorreporting:released})
 If you are using Maven, add this to your pom.xml file
 ```xml
 <dependency>
@@ -33,7 +32,6 @@ If you are using SBT, add this to your dependencies
 ```Scala
 libraryDependencies += "com.google.cloud" % "google-cloud-errorreporting" % "0.117.0-beta"
 ```
-[//]: # ({x-version-update-end})
 
 Authentication
 --------------

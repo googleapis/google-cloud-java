@@ -16,7 +16,6 @@ Java idiomatic client for [Kubernetes Engine][cloud-container].
 Quickstart
 ----------
 
-[//]: # ({x-version-update-start:google-cloud-container:released})
 Add this to your pom.xml file
 ```xml
 <dependency>
@@ -33,7 +32,6 @@ If you are using SBT, add this to your dependencies
 ```Scala
 libraryDependencies += "com.google.cloud" % "google-cloud-container" % "0.117.0-beta"
 ```
-[//]: # ({x-version-update-end})
 
 Authentication
 --------------

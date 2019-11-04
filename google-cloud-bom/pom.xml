@@ -271,47 +271,47 @@
       <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-compute</artifactId>
-        <version>0.117.1-alpha-SNAPSHOT</version><!-- {x-version-update:google-cloud-compute:current} -->
+        <version>0.117.0-alpha</version>
       </dependency>
       <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-container</artifactId>
-        <version>0.117.1-beta-SNAPSHOT</version><!-- {x-version-update:google-cloud-container:current} -->
+        <version>0.117.0-beta</version>
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>proto-google-cloud-container-v1</artifactId>
-        <version>0.82.1-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-container-v1:current} -->
+        <version>0.82.0</version>
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>grpc-google-cloud-container-v1</artifactId>
-        <version>0.82.1-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-container-v1:current} -->
+        <version>0.82.0</version>
       </dependency>
       <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-containeranalysis</artifactId>
-        <version>0.117.1-beta-SNAPSHOT</version><!-- {x-version-update:google-cloud-containeranalysis:current} -->
+        <version>0.117.0-beta</version>
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>proto-google-cloud-containeranalysis-v1</artifactId>
-        <version>0.82.1-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-containeranalysis-v1:current} -->
+        <version>0.82.0</version>
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>grpc-google-cloud-containeranalysis-v1</artifactId>
-        <version>0.82.1-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-containeranalysis-v1:current} -->
+        <version>0.82.0</version>
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>proto-google-cloud-containeranalysis-v1beta1</artifactId>
-        <version>0.82.1-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-containeranalysis-v1beta1:current} -->
+        <version>0.82.0</version>
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>grpc-google-cloud-containeranalysis-v1beta1</artifactId>
-        <version>0.82.1-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-containeranalysis-v1beta1:current} -->
+        <version>0.82.0</version>
       </dependency>
       <dependency>
         <groupId>com.google.cloud</groupId>
@@ -347,27 +347,27 @@
       <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-dataproc</artifactId>
-        <version>0.117.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-dataproc:current} -->
+        <version>0.117.0</version>
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>proto-google-cloud-dataproc-v1</artifactId>
-        <version>0.82.1-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-dataproc-v1:current} -->
+        <version>0.82.0</version>
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>grpc-google-cloud-dataproc-v1</artifactId>
-        <version>0.82.1-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-dataproc-v1:current} -->
+        <version>0.82.0</version>
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>proto-google-cloud-dataproc-v1beta2</artifactId>
-        <version>0.82.1-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-dataproc-v1beta2:current} -->
+        <version>0.82.0</version>
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>grpc-google-cloud-dataproc-v1beta2</artifactId>
-        <version>0.82.1-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-dataproc-v1beta2:current} -->
+        <version>0.82.0</version>
       </dependency>
       <dependency>
         <groupId>com.google.cloud</groupId>
@@ -414,22 +414,22 @@
       <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-dns</artifactId>
-        <version>0.117.1-alpha-SNAPSHOT</version><!-- {x-version-update:google-cloud-dns:current} -->
+        <version>0.117.0-alpha</version>
       </dependency>
       <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-errorreporting</artifactId>
-        <version>0.117.1-beta-SNAPSHOT</version><!-- {x-version-update:google-cloud-errorreporting:current} -->
+        <version>0.117.0-beta</version>
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>proto-google-cloud-error-reporting-v1beta1</artifactId>
-        <version>0.82.1-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-error-reporting-v1beta1:current} -->
+        <version>0.82.0</version>
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>grpc-google-cloud-error-reporting-v1beta1</artifactId>
-        <version>0.82.1-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-error-reporting-v1beta1:current} -->
+        <version>0.82.0</version>
       </dependency>
       <dependency>
         <groupId>com.google.cloud</groupId>

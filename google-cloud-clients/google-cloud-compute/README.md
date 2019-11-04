@@ -16,7 +16,6 @@ accessing Compute.
 Quickstart
 ----------
 
-[//]: # ({x-version-update-start:google-cloud:released})
 If you are using Maven, add this to your pom.xml file
 ```xml
 <dependency>
@@ -33,7 +32,6 @@ If you are using SBT, add this to your dependencies
 ```Scala
 libraryDependencies += "com.google.cloud" % "google-cloud-compute" % "0.117.0-alpha"
 ```
-[//]: # ({x-version-update-end})
 
 Example Application
 -------------------
