@@ -5,7 +5,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *    https://www.apache.org/licenses/LICENSE-2.0
+ *     https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -15,7 +15,7 @@
  */
 
 // DO NOT MODIFY! THIS FILE IS AUTO-GENERATED.
-// This file is auto-generated on 09 Oct 19 18:09 UTC.
+// This file is auto-generated on 04 Nov 19 20:53 UTC.
 
 package com.google.cloud.monitoring.v3;
 
@@ -91,8 +91,11 @@ public class VPCServiceControlTest {
             return null;
           }
         };
-    doTest(delayedInside, delayedOutside);
-    client.close();
+    try {
+      doTest(delayedInside, delayedOutside);
+    } finally {
+      client.close();
+    }
   }
 
   @Test
@@ -117,8 +120,11 @@ public class VPCServiceControlTest {
             return null;
           }
         };
-    doTest(delayedInside, delayedOutside);
-    client.close();
+    try {
+      doTest(delayedInside, delayedOutside);
+    } finally {
+      client.close();
+    }
   }
 
   @Test
@@ -143,8 +149,40 @@ public class VPCServiceControlTest {
             return null;
           }
         };
-    doTest(delayedInside, delayedOutside);
-    client.close();
+    try {
+      doTest(delayedInside, delayedOutside);
+    } finally {
+      client.close();
+    }
+  }
+
+  @Test
+  @SuppressWarnings("all")
+  public void listAlertPoliciesTest() throws Exception {
+    final AlertPolicyServiceClient client = AlertPolicyServiceClient.create();
+    Callable<Object> delayedInside =
+        new Callable() {
+          public Object call() throws Exception {
+            ProjectName nameInside = ProjectName.of(PROJECT_INSIDE);
+            client.listAlertPolicies(
+                ListAlertPoliciesRequest.newBuilder().setName(nameInside.toString()).build());
+            return null;
+          }
+        };
+    Callable<Object> delayedOutside =
+        new Callable() {
+          public Object call() throws Exception {
+            ProjectName nameOutside = ProjectName.of(PROJECT_OUTSIDE);
+            client.listAlertPolicies(
+                ListAlertPoliciesRequest.newBuilder().setName(nameOutside.toString()).build());
+            return null;
+          }
+        };
+    try {
+      doTest(delayedInside, delayedOutside);
+    } finally {
+      client.close();
+    }
   }
 
   @Test
@@ -174,8 +212,11 @@ public class VPCServiceControlTest {
             return null;
           }
         };
-    doTest(delayedInside, delayedOutside);
-    client.close();
+    try {
+      doTest(delayedInside, delayedOutside);
+    } finally {
+      client.close();
+    }
   }
 
   @Test
@@ -200,8 +241,11 @@ public class VPCServiceControlTest {
             return null;
           }
         };
-    doTest(delayedInside, delayedOutside);
-    client.close();
+    try {
+      doTest(delayedInside, delayedOutside);
+    } finally {
+      client.close();
+    }
   }
 
   @Test
@@ -226,8 +270,11 @@ public class VPCServiceControlTest {
             return null;
           }
         };
-    doTest(delayedInside, delayedOutside);
-    client.close();
+    try {
+      doTest(delayedInside, delayedOutside);
+    } finally {
+      client.close();
+    }
   }
 
   @Test
@@ -250,8 +297,11 @@ public class VPCServiceControlTest {
             return null;
           }
         };
-    doTest(delayedInside, delayedOutside);
-    client.close();
+    try {
+      doTest(delayedInside, delayedOutside);
+    } finally {
+      client.close();
+    }
   }
 
   @Test
@@ -276,8 +326,11 @@ public class VPCServiceControlTest {
             return null;
           }
         };
-    doTest(delayedInside, delayedOutside);
-    client.close();
+    try {
+      doTest(delayedInside, delayedOutside);
+    } finally {
+      client.close();
+    }
   }
 
   @Test
@@ -302,8 +355,11 @@ public class VPCServiceControlTest {
             return null;
           }
         };
-    doTest(delayedInside, delayedOutside);
-    client.close();
+    try {
+      doTest(delayedInside, delayedOutside);
+    } finally {
+      client.close();
+    }
   }
 
   @Test
@@ -332,8 +388,11 @@ public class VPCServiceControlTest {
             return null;
           }
         };
-    doTest(delayedInside, delayedOutside);
-    client.close();
+    try {
+      doTest(delayedInside, delayedOutside);
+    } finally {
+      client.close();
+    }
   }
 
   @Test
@@ -358,34 +417,11 @@ public class VPCServiceControlTest {
             return null;
           }
         };
-    doTest(delayedInside, delayedOutside);
-    client.close();
-  }
-
-  @Test
-  @SuppressWarnings("all")
-  public void listAlertPoliciesTest() throws Exception {
-    final AlertPolicyServiceClient client = AlertPolicyServiceClient.create();
-    Callable<Object> delayedInside =
-        new Callable() {
-          public Object call() throws Exception {
-            ProjectName nameInside = ProjectName.of(PROJECT_INSIDE);
-            client.listAlertPolicies(
-                ListAlertPoliciesRequest.newBuilder().setName(nameInside.toString()).build());
-            return null;
-          }
-        };
-    Callable<Object> delayedOutside =
-        new Callable() {
-          public Object call() throws Exception {
-            ProjectName nameOutside = ProjectName.of(PROJECT_OUTSIDE);
-            client.listAlertPolicies(
-                ListAlertPoliciesRequest.newBuilder().setName(nameOutside.toString()).build());
-            return null;
-          }
-        };
-    doTest(delayedInside, delayedOutside);
-    client.close();
+    try {
+      doTest(delayedInside, delayedOutside);
+    } finally {
+      client.close();
+    }
   }
 
   @Test
@@ -408,8 +444,11 @@ public class VPCServiceControlTest {
             return null;
           }
         };
-    doTest(delayedInside, delayedOutside);
-    client.close();
+    try {
+      doTest(delayedInside, delayedOutside);
+    } finally {
+      client.close();
+    }
   }
 
   @Test
@@ -436,8 +475,11 @@ public class VPCServiceControlTest {
             return null;
           }
         };
-    doTest(delayedInside, delayedOutside);
-    client.close();
+    try {
+      doTest(delayedInside, delayedOutside);
+    } finally {
+      client.close();
+    }
   }
 
   @Test
@@ -464,8 +506,11 @@ public class VPCServiceControlTest {
             return null;
           }
         };
-    doTest(delayedInside, delayedOutside);
-    client.close();
+    try {
+      doTest(delayedInside, delayedOutside);
+    } finally {
+      client.close();
+    }
   }
 
   @Test
@@ -498,8 +543,11 @@ public class VPCServiceControlTest {
             return null;
           }
         };
-    doTest(delayedInside, delayedOutside);
-    client.close();
+    try {
+      doTest(delayedInside, delayedOutside);
+    } finally {
+      client.close();
+    }
   }
 
   @Test
@@ -524,8 +572,11 @@ public class VPCServiceControlTest {
             return null;
           }
         };
-    doTest(delayedInside, delayedOutside);
-    client.close();
+    try {
+      doTest(delayedInside, delayedOutside);
+    } finally {
+      client.close();
+    }
   }
 
   @Test
@@ -554,8 +605,40 @@ public class VPCServiceControlTest {
             return null;
           }
         };
-    doTest(delayedInside, delayedOutside);
-    client.close();
+    try {
+      doTest(delayedInside, delayedOutside);
+    } finally {
+      client.close();
+    }
+  }
+
+  @Test
+  @SuppressWarnings("all")
+  public void listTimeSeriesTest() throws Exception {
+    final MetricServiceClient client = MetricServiceClient.create();
+    Callable<Object> delayedInside =
+        new Callable() {
+          public Object call() throws Exception {
+            ProjectName nameInside = ProjectName.of(PROJECT_INSIDE);
+            client.listTimeSeries(
+                ListTimeSeriesRequest.newBuilder().setName(nameInside.toString()).build());
+            return null;
+          }
+        };
+    Callable<Object> delayedOutside =
+        new Callable() {
+          public Object call() throws Exception {
+            ProjectName nameOutside = ProjectName.of(PROJECT_OUTSIDE);
+            client.listTimeSeries(
+                ListTimeSeriesRequest.newBuilder().setName(nameOutside.toString()).build());
+            return null;
+          }
+        };
+    try {
+      doTest(delayedInside, delayedOutside);
+    } finally {
+      client.close();
+    }
   }
 
   @Test
@@ -584,8 +667,11 @@ public class VPCServiceControlTest {
             return null;
           }
         };
-    doTest(delayedInside, delayedOutside);
-    client.close();
+    try {
+      doTest(delayedInside, delayedOutside);
+    } finally {
+      client.close();
+    }
   }
 
   @Test
@@ -616,8 +702,11 @@ public class VPCServiceControlTest {
             return null;
           }
         };
-    doTest(delayedInside, delayedOutside);
-    client.close();
+    try {
+      doTest(delayedInside, delayedOutside);
+    } finally {
+      client.close();
+    }
   }
 
   @Test
@@ -644,38 +733,11 @@ public class VPCServiceControlTest {
             return null;
           }
         };
-    doTest(delayedInside, delayedOutside);
-    client.close();
-  }
-
-  @Test
-  @SuppressWarnings("all")
-  public void deleteUptimeCheckConfigTest() throws Exception {
-    final UptimeCheckServiceClient client = UptimeCheckServiceClient.create();
-    Callable<Object> delayedInside =
-        new Callable() {
-          public Object call() throws Exception {
-            UptimeCheckConfigName nameInside =
-                UptimeCheckConfigName.of(PROJECT_INSIDE, "MockUptimeCheckConfig");
-            client.deleteUptimeCheckConfig(
-                DeleteUptimeCheckConfigRequest.newBuilder().setName(nameInside.toString()).build());
-            return null;
-          }
-        };
-    Callable<Object> delayedOutside =
-        new Callable() {
-          public Object call() throws Exception {
-            UptimeCheckConfigName nameOutside =
-                UptimeCheckConfigName.of(PROJECT_OUTSIDE, "MockUptimeCheckConfig");
-            client.deleteUptimeCheckConfig(
-                DeleteUptimeCheckConfigRequest.newBuilder()
-                    .setName(nameOutside.toString())
-                    .build());
-            return null;
-          }
-        };
-    doTest(delayedInside, delayedOutside);
-    client.close();
+    try {
+      doTest(delayedInside, delayedOutside);
+    } finally {
+      client.close();
+    }
   }
 
   @Test
@@ -708,8 +770,11 @@ public class VPCServiceControlTest {
             return null;
           }
         };
-    doTest(delayedInside, delayedOutside);
-    client.close();
+    try {
+      doTest(delayedInside, delayedOutside);
+    } finally {
+      client.close();
+    }
   }
 
   @Test
@@ -738,8 +803,11 @@ public class VPCServiceControlTest {
             return null;
           }
         };
-    doTest(delayedInside, delayedOutside);
-    client.close();
+    try {
+      doTest(delayedInside, delayedOutside);
+    } finally {
+      client.close();
+    }
   }
 
   @Test
@@ -768,34 +836,11 @@ public class VPCServiceControlTest {
             return null;
           }
         };
-    doTest(delayedInside, delayedOutside);
-    client.close();
-  }
-
-  @Test
-  @SuppressWarnings("all")
-  public void listTimeSeriesTest() throws Exception {
-    final MetricServiceClient client = MetricServiceClient.create();
-    Callable<Object> delayedInside =
-        new Callable() {
-          public Object call() throws Exception {
-            ProjectName nameInside = ProjectName.of(PROJECT_INSIDE);
-            client.listTimeSeries(
-                ListTimeSeriesRequest.newBuilder().setName(nameInside.toString()).build());
-            return null;
-          }
-        };
-    Callable<Object> delayedOutside =
-        new Callable() {
-          public Object call() throws Exception {
-            ProjectName nameOutside = ProjectName.of(PROJECT_OUTSIDE);
-            client.listTimeSeries(
-                ListTimeSeriesRequest.newBuilder().setName(nameOutside.toString()).build());
-            return null;
-          }
-        };
-    doTest(delayedInside, delayedOutside);
-    client.close();
+    try {
+      doTest(delayedInside, delayedOutside);
+    } finally {
+      client.close();
+    }
   }
 
   @Test
@@ -828,8 +873,11 @@ public class VPCServiceControlTest {
             return null;
           }
         };
-    doTest(delayedInside, delayedOutside);
-    client.close();
+    try {
+      doTest(delayedInside, delayedOutside);
+    } finally {
+      client.close();
+    }
   }
 
   @Test
@@ -858,8 +906,44 @@ public class VPCServiceControlTest {
             return null;
           }
         };
-    doTest(delayedInside, delayedOutside);
-    client.close();
+    try {
+      doTest(delayedInside, delayedOutside);
+    } finally {
+      client.close();
+    }
+  }
+
+  @Test
+  @SuppressWarnings("all")
+  public void deleteUptimeCheckConfigTest() throws Exception {
+    final UptimeCheckServiceClient client = UptimeCheckServiceClient.create();
+    Callable<Object> delayedInside =
+        new Callable() {
+          public Object call() throws Exception {
+            UptimeCheckConfigName nameInside =
+                UptimeCheckConfigName.of(PROJECT_INSIDE, "MockUptimeCheckConfig");
+            client.deleteUptimeCheckConfig(
+                DeleteUptimeCheckConfigRequest.newBuilder().setName(nameInside.toString()).build());
+            return null;
+          }
+        };
+    Callable<Object> delayedOutside =
+        new Callable() {
+          public Object call() throws Exception {
+            UptimeCheckConfigName nameOutside =
+                UptimeCheckConfigName.of(PROJECT_OUTSIDE, "MockUptimeCheckConfig");
+            client.deleteUptimeCheckConfig(
+                DeleteUptimeCheckConfigRequest.newBuilder()
+                    .setName(nameOutside.toString())
+                    .build());
+            return null;
+          }
+        };
+    try {
+      doTest(delayedInside, delayedOutside);
+    } finally {
+      client.close();
+    }
   }
 
   @Test
@@ -886,8 +970,11 @@ public class VPCServiceControlTest {
             return null;
           }
         };
-    doTest(delayedInside, delayedOutside);
-    client.close();
+    try {
+      doTest(delayedInside, delayedOutside);
+    } finally {
+      client.close();
+    }
   }
 
   @Test
@@ -916,8 +1003,11 @@ public class VPCServiceControlTest {
             return null;
           }
         };
-    doTest(delayedInside, delayedOutside);
-    client.close();
+    try {
+      doTest(delayedInside, delayedOutside);
+    } finally {
+      client.close();
+    }
   }
 
   @Test
@@ -950,7 +1040,10 @@ public class VPCServiceControlTest {
             return null;
           }
         };
-    doTest(delayedInside, delayedOutside);
-    client.close();
+    try {
+      doTest(delayedInside, delayedOutside);
+    } finally {
+      client.close();
+    }
   }
 }
