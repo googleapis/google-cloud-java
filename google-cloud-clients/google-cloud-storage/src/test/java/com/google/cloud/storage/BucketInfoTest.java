@@ -68,8 +68,8 @@ public class BucketInfoTest {
   private static final String INDEX_PAGE = "index.html";
   private static final BucketInfo.IamConfiguration IAM_CONFIGURATION =
       BucketInfo.IamConfiguration.newBuilder()
-          .setIsBucketPolicyOnlyEnabled(true)
-          .setBucketPolicyOnlyLockedTime(System.currentTimeMillis())
+          .setIsUniformBucketLevelAccessEnabled(true)
+          .setUniformBucketLevelAccessLockedTime(System.currentTimeMillis())
           .build();
   private static final BucketInfo.Logging LOGGING =
       BucketInfo.Logging.newBuilder()
@@ -272,13 +272,13 @@ public class BucketInfoTest {
   public void testIamConfiguration() {
     Bucket.IamConfiguration iamConfiguration =
         BucketInfo.IamConfiguration.newBuilder()
-            .setIsBucketPolicyOnlyEnabled(true)
-            .setBucketPolicyOnlyLockedTime(System.currentTimeMillis())
+            .setIsUniformBucketLevelAccessEnabled(true)
+            .setUniformBucketLevelAccessLockedTime(System.currentTimeMillis())
             .build()
             .toPb();
 
-    assertEquals(Boolean.TRUE, iamConfiguration.getBucketPolicyOnly().getEnabled());
-    assertNotNull(iamConfiguration.getBucketPolicyOnly().getLockedTime());
+    assertEquals(Boolean.TRUE, iamConfiguration.getUniformBucketLevelAccess().getEnabled());
+    assertNotNull(iamConfiguration.getUniformBucketLevelAccess().getLockedTime());
   }
 
   @Test
