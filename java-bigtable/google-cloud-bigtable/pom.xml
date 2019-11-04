@@ -16,6 +16,11 @@
   </parent>
   <properties>
     <site.installationModule>google-cloud-bigtable</site.installationModule>
+
+    <!-- Enable the ability to skip unit tests and only run integration tests,
+         while still respecting global skipTests override. -->
+    <skipTests>false</skipTests>
+    <skipUnitTests>${skipTests}</skipUnitTests>
   </properties>
   <dependencies>
     <!-- NOTE: Dependencies are organized into two groups, production and test.
@@ -383,6 +388,8 @@
         </dependencies>
 
         <configuration>
+          <!-- enable the ability to skip unit tests, while running integration tests -->
+          <skipTests>${skipUnitTests}</skipTests>
           <!--
             TODO(igorbernstein): enable parallel tests once the generate client tests use unique
             names for the mock server

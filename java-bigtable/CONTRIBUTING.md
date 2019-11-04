@@ -26,3 +26,38 @@ information on using pull requests.
 
 This project follows
 [Google's Open Source Community Guidelines](https://opensource.google.com/conduct/).
+
+
+## Running Tests
+
+Bigtable integration tests can either be run against an emulator or a real Bigtable instance.
+The target environment can be selected by setting a maven profile. By default it is set to 
+`bigtable-emulator-it` and other options are `bigtable-prod-it` and `bigtable-directpath-it`.
+
+To use the `bigtable-prod-it` and `bigtable-directpath-it` environments:
+
+1. Set up the target table using scripts/setup-test-table.sh
+2. Download the JSON service account credentials file from the Google Developer's Console.
+3. Set the environment variable GOOGLE_APPLICATION_CREDENTIALS to the path of the credentials file
+4. Enable the profile and the system properties `bigtable.project`, `bigtable.instance` 
+   and `bigtable.table` to created earlier. Example:
+  ```bash
+   mvn verify \
+  -P bigtable-prod-it \
+  -Dbigtable.project=my-project
+  -Dbigtable.instance=my-instance
+  -Dbigtable.table=my-table
+  ```
+
+While developing, it might be helpful to separate running unit tests from integration tests.
+
+```bash
+# To skip integration tests:
+mvn install -DskipITs
+
+# To skip unit tests
+mvn install -DskipUnitTests
+
+# To skip all tests
+mvn install -DskipTests
+```
