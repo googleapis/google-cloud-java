@@ -414,7 +414,7 @@
       <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-dns</artifactId>
-        <version>0.117.0-alpha</version><!-- {x-version-update:google-cloud-dns:current} -->
+        <version>0.117.0-alpha</version>
       </dependency>
       <dependency>
         <groupId>com.google.cloud</groupId>
