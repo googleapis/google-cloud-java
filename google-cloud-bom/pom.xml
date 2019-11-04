@@ -276,17 +276,17 @@
       <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-container</artifactId>
-        <version>0.117.0-beta</version><!-- {x-version-update:google-cloud-container:current} -->
+        <version>0.117.0-beta</version>
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>proto-google-cloud-container-v1</artifactId>
-        <version>0.82.0</version><!-- {x-version-update:proto-google-cloud-container-v1:current} -->
+        <version>0.82.0</version>
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>grpc-google-cloud-container-v1</artifactId>
-        <version>0.82.0</version><!-- {x-version-update:grpc-google-cloud-container-v1:current} -->
+        <version>0.82.0</version>
       </dependency>
       <dependency>
         <groupId>com.google.cloud</groupId>
