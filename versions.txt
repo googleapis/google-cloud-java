@@ -26,8 +26,6 @@ google-cloud-pubsub:1.99.0:1.99.1-SNAPSHOT
 google-cloud-spanner:1.44.0:1.44.1-SNAPSHOT
 google-cloud-spanner-jdbc:1.9.0:1.9.1-SNAPSHOT
 google-cloud-storage:1.99.0:1.99.1-SNAPSHOT
-google-cloud-talent:0.34.0-beta:0.34.1-beta-SNAPSHOT
-google-cloud-tasks:1.26.0:1.26.1-SNAPSHOT
 google-cloud-testing:0.117.0-alpha:0.117.1-alpha-SNAPSHOT
 google-cloud-util:0.117.0-alpha:0.117.1-alpha-SNAPSHOT
 grafeas:0.20.0:0.20.1-SNAPSHOT
@@ -40,10 +38,6 @@ grpc-google-cloud-pubsub-v1:1.81.0:1.81.1-SNAPSHOT
 grpc-google-cloud-spanner-admin-database-v1:1.44.0:1.44.1-SNAPSHOT
 grpc-google-cloud-spanner-admin-instance-v1:1.44.0:1.44.1-SNAPSHOT
 grpc-google-cloud-spanner-v1:1.44.0:1.44.1-SNAPSHOT
-grpc-google-cloud-talent-v4beta1:0.34.0-beta:0.34.1-beta-SNAPSHOT
-grpc-google-cloud-tasks-v2:1.26.0:1.26.1-SNAPSHOT
-grpc-google-cloud-tasks-v2beta2:0.82.0:0.82.1-SNAPSHOT
-grpc-google-cloud-tasks-v2beta3:0.82.0:0.82.1-SNAPSHOT
 proto-google-cloud-bigquerydatatransfer-v1:0.82.0:0.82.1-SNAPSHOT
 proto-google-cloud-bigquerystorage-v1beta1:0.82.0:0.82.1-SNAPSHOT
 proto-google-cloud-datastore-v1:0.82.0:0.82.1-SNAPSHOT
