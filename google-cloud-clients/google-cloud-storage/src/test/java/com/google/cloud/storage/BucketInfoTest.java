@@ -79,6 +79,7 @@ public class BucketInfoTest {
   private static final String NOT_FOUND_PAGE = "error.html";
   private static final String LOCATION = "ASIA";
   private static final StorageClass STORAGE_CLASS = StorageClass.STANDARD;
+  private static final StorageClass ARCHIVE_STORAGE_CLASS = StorageClass.ARCHIVE;
   private static final String DEFAULT_KMS_KEY_NAME =
       "projects/p/locations/kr-loc/keyRings/kr/cryptoKeys/key";
   private static final Boolean VERSIONING_ENABLED = true;
@@ -110,6 +111,36 @@ public class BucketInfoTest {
           .setLocation(LOCATION)
           .setLocationType(LOCATION_TYPE)
           .setStorageClass(STORAGE_CLASS)
+          .setVersioningEnabled(VERSIONING_ENABLED)
+          .setLabels(BUCKET_LABELS)
+          .setRequesterPays(REQUESTER_PAYS)
+          .setDefaultKmsKeyName(DEFAULT_KMS_KEY_NAME)
+          .setDefaultEventBasedHold(DEFAULT_EVENT_BASED_HOLD)
+          .setRetentionEffectiveTime(RETENTION_EFFECTIVE_TIME)
+          .setRetentionPeriod(RETENTION_PERIOD)
+          .setRetentionPolicyIsLocked(RETENTION_POLICY_IS_LOCKED)
+          .setLogging(LOGGING)
+          .build();
+
+  private static final BucketInfo BUCKET_INFO1 =
+      BucketInfo.newBuilder("b")
+          .setAcl(ACL)
+          .setEtag(ETAG)
+          .setGeneratedId(GENERATED_ID)
+          .setMetageneration(META_GENERATION)
+          .setOwner(OWNER)
+          .setSelfLink(SELF_LINK)
+          .setCors(CORS)
+          .setCreateTime(CREATE_TIME)
+          .setDefaultAcl(DEFAULT_ACL)
+          .setDeleteRules(DELETE_RULES)
+          .setLifecycleRules(LIFECYCLE_RULES)
+          .setIndexPage(INDEX_PAGE)
+          .setIamConfiguration(IAM_CONFIGURATION)
+          .setNotFoundPage(NOT_FOUND_PAGE)
+          .setLocation(LOCATION)
+          .setLocationType(LOCATION_TYPE)
+          .setStorageClass(ARCHIVE_STORAGE_CLASS)
           .setVersioningEnabled(VERSIONING_ENABLED)
           .setLabels(BUCKET_LABELS)
           .setRequesterPays(REQUESTER_PAYS)
@@ -171,6 +202,36 @@ public class BucketInfoTest {
     assertEquals(RETENTION_POLICY_IS_LOCKED, BUCKET_INFO.retentionPolicyIsLocked());
     assertTrue(LOCATION_TYPES.contains(BUCKET_INFO.getLocationType()));
     assertEquals(LOGGING, BUCKET_INFO.getLogging());
+  }
+
+  @Test
+  public void testBuilderWithArchiveStorageClass() {
+    assertEquals("b", BUCKET_INFO1.getName());
+    assertEquals(ACL, BUCKET_INFO1.getAcl());
+    assertEquals(ETAG, BUCKET_INFO1.getEtag());
+    assertEquals(GENERATED_ID, BUCKET_INFO1.getGeneratedId());
+    assertEquals(META_GENERATION, BUCKET_INFO1.getMetageneration());
+    assertEquals(OWNER, BUCKET_INFO1.getOwner());
+    assertEquals(SELF_LINK, BUCKET_INFO1.getSelfLink());
+    assertEquals(CREATE_TIME, BUCKET_INFO1.getCreateTime());
+    assertEquals(CORS, BUCKET_INFO1.getCors());
+    assertEquals(DEFAULT_ACL, BUCKET_INFO1.getDefaultAcl());
+    assertEquals(DELETE_RULES, BUCKET_INFO1.getDeleteRules());
+    assertEquals(INDEX_PAGE, BUCKET_INFO1.getIndexPage());
+    assertEquals(IAM_CONFIGURATION, BUCKET_INFO1.getIamConfiguration());
+    assertEquals(NOT_FOUND_PAGE, BUCKET_INFO1.getNotFoundPage());
+    assertEquals(LOCATION, BUCKET_INFO1.getLocation());
+    assertEquals(ARCHIVE_STORAGE_CLASS, BUCKET_INFO1.getStorageClass());
+    assertEquals(DEFAULT_KMS_KEY_NAME, BUCKET_INFO1.getDefaultKmsKeyName());
+    assertEquals(VERSIONING_ENABLED, BUCKET_INFO1.versioningEnabled());
+    assertEquals(BUCKET_LABELS, BUCKET_INFO1.getLabels());
+    assertEquals(REQUESTER_PAYS, BUCKET_INFO1.requesterPays());
+    assertEquals(DEFAULT_EVENT_BASED_HOLD, BUCKET_INFO1.getDefaultEventBasedHold());
+    assertEquals(RETENTION_EFFECTIVE_TIME, BUCKET_INFO1.getRetentionEffectiveTime());
+    assertEquals(RETENTION_PERIOD, BUCKET_INFO1.getRetentionPeriod());
+    assertEquals(RETENTION_POLICY_IS_LOCKED, BUCKET_INFO1.retentionPolicyIsLocked());
+    assertTrue(LOCATION_TYPES.contains(BUCKET_INFO1.getLocationType()));
+    assertEquals(LOGGING, BUCKET_INFO1.getLogging());
   }
 
   @Test

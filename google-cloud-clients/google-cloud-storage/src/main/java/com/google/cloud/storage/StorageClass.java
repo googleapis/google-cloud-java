@@ -56,6 +56,9 @@ public final class StorageClass extends StringEnumValue {
   /** Standard storage class. */
   public static final StorageClass STANDARD = type.createAndRegister("STANDARD");
 
+  /** Archive storage class. */
+  public static final StorageClass ARCHIVE = type.createAndRegister("ARCHIVE");
+
   /** Durable Reduced Availability (deprecated) */
   public static final StorageClass DURABLE_REDUCED_AVAILABILITY =
       type.createAndRegister("DURABLE_REDUCED_AVAILABILITY");
