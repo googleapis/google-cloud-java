@@ -81,7 +81,7 @@
     <objenesis.version>2.6</objenesis.version>
     <google.auth.version>0.18.0</google.auth.version>
     <http-client-bom.version>1.32.1</http-client-bom.version>
-    <google.test-core.version>1.91.2</google.test-core.version>
+    <google.test-core.version>1.91.3</google.test-core.version>
     <oauth-client.version>1.30.4</oauth-client.version>
   </properties>
 
