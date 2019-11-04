@@ -13,10 +13,8 @@ google-cloud-bigquerystorage:0.117.0-beta:0.117.0-beta
 google-cloud-bom:0.117.0-alpha:0.117.0-alpha
 google-cloud-clients:0.117.0-alpha:0.117.0-alpha
 google-cloud-compat-checker:0.117.0-alpha:0.117.0-alpha
-google-cloud-compute:0.117.0-alpha:0.117.0-alpha
 google-cloud-contrib:0.117.0-alpha:0.117.0-alpha
 google-cloud-datastore:1.99.0:1.99.0
-google-cloud-errorreporting:0.117.0-beta:0.117.0-beta
 google-cloud-examples:0.117.0-alpha:0.117.0-alpha
 google-cloud-firestore:1.29.0:1.29.0
 google-cloud-gcloud-maven-plugin:0.117.0-alpha:0.117.0-alpha
@@ -35,7 +33,6 @@ google-cloud-util:0.117.0-alpha:0.117.0-alpha
 grafeas:0.20.0:0.20.0
 grpc-google-cloud-bigquerydatatransfer-v1:0.82.0:0.82.0
 grpc-google-cloud-bigquerystorage-v1beta1:0.82.0:0.82.0
-grpc-google-cloud-error-reporting-v1beta1:0.82.0:0.82.0
 grpc-google-cloud-firestore-admin-v1:1.29.0:1.29.0
 grpc-google-cloud-firestore-v1:1.29.0:1.29.0
 grpc-google-cloud-firestore-v1beta1:0.82.0:0.82.0
@@ -50,7 +47,6 @@ grpc-google-cloud-tasks-v2beta3:0.82.0:0.82.0
 proto-google-cloud-bigquerydatatransfer-v1:0.82.0:0.82.0
 proto-google-cloud-bigquerystorage-v1beta1:0.82.0:0.82.0
 proto-google-cloud-datastore-v1:0.82.0:0.82.0
-proto-google-cloud-error-reporting-v1beta1:0.82.0:0.82.0
 proto-google-cloud-firestore-admin-v1:1.29.0:1.29.0
 proto-google-cloud-firestore-v1:1.29.0:1.29.0
 proto-google-cloud-firestore-v1beta1:0.82.0:0.82.0
