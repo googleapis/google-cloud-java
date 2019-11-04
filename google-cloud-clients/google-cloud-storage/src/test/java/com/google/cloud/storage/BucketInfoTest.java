@@ -122,7 +122,7 @@ public class BucketInfoTest {
           .setLogging(LOGGING)
           .build();
 
-  private static final BucketInfo BUCKET_INFO1 =
+  private static final BucketInfo BUCKET_INFO_ARCHIVE =
       BucketInfo.newBuilder("b")
           .setAcl(ACL)
           .setEtag(ETAG)
@@ -202,36 +202,7 @@ public class BucketInfoTest {
     assertEquals(RETENTION_POLICY_IS_LOCKED, BUCKET_INFO.retentionPolicyIsLocked());
     assertTrue(LOCATION_TYPES.contains(BUCKET_INFO.getLocationType()));
     assertEquals(LOGGING, BUCKET_INFO.getLogging());
-  }
-
-  @Test
-  public void testBuilderWithArchiveStorageClass() {
-    assertEquals("b", BUCKET_INFO1.getName());
-    assertEquals(ACL, BUCKET_INFO1.getAcl());
-    assertEquals(ETAG, BUCKET_INFO1.getEtag());
-    assertEquals(GENERATED_ID, BUCKET_INFO1.getGeneratedId());
-    assertEquals(META_GENERATION, BUCKET_INFO1.getMetageneration());
-    assertEquals(OWNER, BUCKET_INFO1.getOwner());
-    assertEquals(SELF_LINK, BUCKET_INFO1.getSelfLink());
-    assertEquals(CREATE_TIME, BUCKET_INFO1.getCreateTime());
-    assertEquals(CORS, BUCKET_INFO1.getCors());
-    assertEquals(DEFAULT_ACL, BUCKET_INFO1.getDefaultAcl());
-    assertEquals(DELETE_RULES, BUCKET_INFO1.getDeleteRules());
-    assertEquals(INDEX_PAGE, BUCKET_INFO1.getIndexPage());
-    assertEquals(IAM_CONFIGURATION, BUCKET_INFO1.getIamConfiguration());
-    assertEquals(NOT_FOUND_PAGE, BUCKET_INFO1.getNotFoundPage());
-    assertEquals(LOCATION, BUCKET_INFO1.getLocation());
-    assertEquals(ARCHIVE_STORAGE_CLASS, BUCKET_INFO1.getStorageClass());
-    assertEquals(DEFAULT_KMS_KEY_NAME, BUCKET_INFO1.getDefaultKmsKeyName());
-    assertEquals(VERSIONING_ENABLED, BUCKET_INFO1.versioningEnabled());
-    assertEquals(BUCKET_LABELS, BUCKET_INFO1.getLabels());
-    assertEquals(REQUESTER_PAYS, BUCKET_INFO1.requesterPays());
-    assertEquals(DEFAULT_EVENT_BASED_HOLD, BUCKET_INFO1.getDefaultEventBasedHold());
-    assertEquals(RETENTION_EFFECTIVE_TIME, BUCKET_INFO1.getRetentionEffectiveTime());
-    assertEquals(RETENTION_PERIOD, BUCKET_INFO1.getRetentionPeriod());
-    assertEquals(RETENTION_POLICY_IS_LOCKED, BUCKET_INFO1.retentionPolicyIsLocked());
-    assertTrue(LOCATION_TYPES.contains(BUCKET_INFO1.getLocationType()));
-    assertEquals(LOGGING, BUCKET_INFO1.getLogging());
+    assertEquals(ARCHIVE_STORAGE_CLASS, BUCKET_INFO_ARCHIVE.getStorageClass());
   }
 
   @Test
