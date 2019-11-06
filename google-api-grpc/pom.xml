@@ -4,7 +4,7 @@
   <groupId>com.google.api.grpc</groupId>
   <artifactId>google-api-grpc</artifactId>
   <packaging>pom</packaging>
-  <version>0.82.1-SNAPSHOT</version><!-- {x-version-update:google-api-grpc:current} -->
+  <version>0.83.0</version><!-- {x-version-update:google-api-grpc:current} -->
   <name>Google Cloud API gRPC</name>
   <url>https://github.com/googleapis/google-cloud-java/tree/master/google-api-grpc</url>
   <description>
@@ -201,22 +201,22 @@
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>proto-google-cloud-bigquerydatatransfer-v1</artifactId>
-        <version>0.82.1-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-bigquerydatatransfer-v1:current} -->
+        <version>0.83.0</version><!-- {x-version-update:proto-google-cloud-bigquerydatatransfer-v1:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>grpc-google-cloud-bigquerydatatransfer-v1</artifactId>
-        <version>0.82.1-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-bigquerydatatransfer-v1:current} -->
+        <version>0.83.0</version><!-- {x-version-update:grpc-google-cloud-bigquerydatatransfer-v1:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>proto-google-cloud-bigquerystorage-v1beta1</artifactId>
-        <version>0.82.1-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-bigquerystorage-v1beta1:current} -->
+        <version>0.83.0</version><!-- {x-version-update:proto-google-cloud-bigquerystorage-v1beta1:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>grpc-google-cloud-bigquerystorage-v1beta1</artifactId>
-        <version>0.82.1-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-bigquerystorage-v1beta1:current} -->
+        <version>0.83.0</version><!-- {x-version-update:grpc-google-cloud-bigquerystorage-v1beta1:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
@@ -291,7 +291,7 @@
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>proto-google-cloud-datastore-v1</artifactId>
-        <version>0.82.1-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-datastore-v1:current} -->
+        <version>0.83.0</version><!-- {x-version-update:proto-google-cloud-datastore-v1:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
@@ -336,32 +336,32 @@
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>proto-google-cloud-firestore-admin-v1</artifactId>
-        <version>1.29.1-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-firestore-admin-v1:current} -->
+        <version>1.30.0</version><!-- {x-version-update:proto-google-cloud-firestore-admin-v1:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>proto-google-cloud-firestore-v1</artifactId>
-        <version>1.29.1-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-firestore-v1:current} -->
+        <version>1.30.0</version><!-- {x-version-update:proto-google-cloud-firestore-v1:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>proto-google-cloud-firestore-v1beta1</artifactId>
-        <version>0.82.1-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-firestore-v1beta1:current} -->
+        <version>0.83.0</version><!-- {x-version-update:proto-google-cloud-firestore-v1beta1:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>grpc-google-cloud-firestore-admin-v1</artifactId>
-        <version>1.29.1-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-firestore-admin-v1:current} -->
+        <version>1.30.0</version><!-- {x-version-update:grpc-google-cloud-firestore-admin-v1:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>grpc-google-cloud-firestore-v1</artifactId>
-        <version>1.29.1-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-firestore-v1:current} -->
+        <version>1.30.0</version><!-- {x-version-update:grpc-google-cloud-firestore-v1:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>grpc-google-cloud-firestore-v1beta1</artifactId>
-        <version>0.82.1-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-firestore-v1beta1:current} -->
+        <version>0.83.0</version><!-- {x-version-update:grpc-google-cloud-firestore-v1beta1:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
@@ -426,12 +426,12 @@
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>proto-google-cloud-pubsub-v1</artifactId>
-        <version>1.81.1-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-pubsub-v1:current} -->
+        <version>1.82.0</version><!-- {x-version-update:proto-google-cloud-pubsub-v1:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>grpc-google-cloud-pubsub-v1</artifactId>
-        <version>1.81.1-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-pubsub-v1:current} -->
+        <version>1.82.0</version><!-- {x-version-update:grpc-google-cloud-pubsub-v1:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
@@ -476,32 +476,32 @@
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>proto-google-cloud-spanner-v1</artifactId>
-        <version>1.44.1-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-spanner-v1:current} -->
+        <version>1.45.0</version><!-- {x-version-update:proto-google-cloud-spanner-v1:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>grpc-google-cloud-spanner-v1</artifactId>
-        <version>1.44.1-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-spanner-v1:current} -->
+        <version>1.45.0</version><!-- {x-version-update:grpc-google-cloud-spanner-v1:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>proto-google-cloud-spanner-admin-database-v1</artifactId>
-        <version>1.44.1-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-spanner-admin-database-v1:current} -->
+        <version>1.45.0</version><!-- {x-version-update:proto-google-cloud-spanner-admin-database-v1:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>grpc-google-cloud-spanner-admin-database-v1</artifactId>
-        <version>1.44.1-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-spanner-admin-database-v1:current} -->
+        <version>1.45.0</version><!-- {x-version-update:grpc-google-cloud-spanner-admin-database-v1:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>proto-google-cloud-spanner-admin-instance-v1</artifactId>
-        <version>1.44.1-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-spanner-admin-instance-v1:current} -->
+        <version>1.45.0</version><!-- {x-version-update:proto-google-cloud-spanner-admin-instance-v1:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>grpc-google-cloud-spanner-admin-instance-v1</artifactId>
-        <version>1.44.1-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-spanner-admin-instance-v1:current} -->
+        <version>1.45.0</version><!-- {x-version-update:grpc-google-cloud-spanner-admin-instance-v1:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
