@@ -67,6 +67,7 @@ import com.google.cloud.bigquery.ModelId;
 import com.google.cloud.bigquery.ModelInfo;
 import com.google.cloud.bigquery.QueryJobConfiguration;
 import com.google.cloud.bigquery.QueryParameterValue;
+import com.google.cloud.bigquery.RangePartitioning;
 import com.google.cloud.bigquery.Routine;
 import com.google.cloud.bigquery.RoutineArgument;
 import com.google.cloud.bigquery.RoutineId;
@@ -215,6 +216,10 @@ public class ITBigQueryTest {
           Field.newBuilder("BooleanField", LegacySQLTypeName.BOOLEAN)
               .setMode(Field.Mode.NULLABLE)
               .build());
+  private static final RangePartitioning.Range RANGE =
+      RangePartitioning.Range.newBuilder().setStart(1L).setInterval(2L).setEnd(20L).build();
+  private static final RangePartitioning RANGE_PARTITIONING =
+      RangePartitioning.newBuilder().setField("IntegerField").setRange(RANGE).build();
   private static final String LOAD_FILE = "load.csv";
   private static final String JSON_LOAD_FILE = "load.json";
   private static final String EXTRACT_FILE = "extract.csv";
@@ -451,6 +456,30 @@ public class ITBigQueryTest {
   @Test
   public void testGetNonExistingTable() {
     assertNull(bigquery.getTable(DATASET, "test_get_non_existing_table"));
+  }
+
+  @Test
+  public void testCreateTableWithRangePartitioning() {
+    String tableName = "test_create_table_rangepartitioning";
+    TableId tableId = TableId.of(DATASET, tableName);
+    try {
+      StandardTableDefinition tableDefinition =
+          StandardTableDefinition.newBuilder()
+              .setSchema(TABLE_SCHEMA)
+              .setRangePartitioning(RANGE_PARTITIONING)
+              .build();
+      Table createdTable = bigquery.create(TableInfo.of(tableId, tableDefinition));
+      assertNotNull(createdTable);
+      Table remoteTable = bigquery.getTable(DATASET, tableName);
+      assertEquals(
+          RANGE,
+          remoteTable.<StandardTableDefinition>getDefinition().getRangePartitioning().getRange());
+      assertEquals(
+          RANGE_PARTITIONING,
+          remoteTable.<StandardTableDefinition>getDefinition().getRangePartitioning());
+    } finally {
+      bigquery.delete(tableId);
+    }
   }
 
   @Test
@@ -1546,17 +1575,70 @@ public class ITBigQueryTest {
     String query = "SELECT TimestampField, StringField, BooleanField FROM " + TABLE_ID.getTable();
     Map<String, String> labels = ImmutableMap.of("test-job-name", "test-query-job");
     TableId destinationTable = TableId.of(DATASET, tableName);
-    QueryJobConfiguration configuration =
-        QueryJobConfiguration.newBuilder(query)
-            .setDefaultDataset(DatasetId.of(DATASET))
-            .setDestinationTable(destinationTable)
-            .setLabels(labels)
-            .build();
-    Job remoteJob = bigquery.create(JobInfo.of(configuration));
-    remoteJob = remoteJob.waitFor();
-    assertNull(remoteJob.getStatus().getError());
-    QueryJobConfiguration queryJobConfiguration = remoteJob.getConfiguration();
-    assertEquals(labels, queryJobConfiguration.getLabels());
+    try {
+      QueryJobConfiguration configuration =
+          QueryJobConfiguration.newBuilder(query)
+              .setDefaultDataset(DatasetId.of(DATASET))
+              .setDestinationTable(destinationTable)
+              .setLabels(labels)
+              .build();
+      Job remoteJob = bigquery.create(JobInfo.of(configuration));
+      remoteJob = remoteJob.waitFor();
+      assertNull(remoteJob.getStatus().getError());
+      QueryJobConfiguration queryJobConfiguration = remoteJob.getConfiguration();
+      assertEquals(labels, queryJobConfiguration.getLabels());
+    } finally {
+      bigquery.delete(destinationTable);
+    }
+  }
+
+  @Test
+  public void testQueryJobWithRangePartitioning() throws InterruptedException {
+    String tableName = "test_query_job_table_rangepartitioning";
+    String query =
+        "SELECT IntegerField, TimestampField, StringField, BooleanField FROM "
+            + TABLE_ID.getTable();
+    TableId destinationTable = TableId.of(DATASET, tableName);
+    try {
+      QueryJobConfiguration configuration =
+          QueryJobConfiguration.newBuilder(query)
+              .setDefaultDataset(DatasetId.of(DATASET))
+              .setDestinationTable(destinationTable)
+              .setRangePartitioning(RANGE_PARTITIONING)
+              .build();
+      Job remoteJob = bigquery.create(JobInfo.of(configuration));
+      remoteJob = remoteJob.waitFor();
+      assertNull(remoteJob.getStatus().getError());
+      QueryJobConfiguration queryJobConfiguration = remoteJob.getConfiguration();
+      assertEquals(RANGE, queryJobConfiguration.getRangePartitioning().getRange());
+      assertEquals(RANGE_PARTITIONING, queryJobConfiguration.getRangePartitioning());
+    } finally {
+      bigquery.delete(destinationTable);
+    }
+  }
+
+  @Test
+  public void testLoadJobWithRangePartitioning() throws InterruptedException {
+    String tableName = "test_load_job_table_rangepartitioning";
+    TableId destinationTable = TableId.of(DATASET, tableName);
+    try {
+      LoadJobConfiguration configuration =
+          LoadJobConfiguration.newBuilder(
+                  TABLE_ID, "gs://" + BUCKET + "/" + JSON_LOAD_FILE, FormatOptions.json())
+              .setCreateDisposition(JobInfo.CreateDisposition.CREATE_IF_NEEDED)
+              .setSchema(TABLE_SCHEMA)
+              .setRangePartitioning(RANGE_PARTITIONING)
+              .setDestinationTable(destinationTable)
+              .build();
+      Job job = bigquery.create(JobInfo.of(configuration));
+      job = job.waitFor();
+      assertNull(job.getStatus().getError());
+      LoadJobConfiguration loadJobConfiguration = job.getConfiguration();
+      assertEquals(RANGE, loadJobConfiguration.getRangePartitioning().getRange());
+      assertEquals(RANGE_PARTITIONING, loadJobConfiguration.getRangePartitioning());
+    } finally {
+      bigquery.delete(destinationTable);
+    }
   }
 
   @Test
