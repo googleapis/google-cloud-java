@@ -67,6 +67,7 @@ public final class QueryJobConfiguration extends JobConfiguration {
   private final Clustering clustering;
   private final Long jobTimeoutMs;
   private final Map<String, String> labels;
+  private final RangePartitioning rangePartitioning;
 
   /**
    * Priority levels for a query. If not specified the priority is assumed to be {@link
@@ -114,6 +115,7 @@ public final class QueryJobConfiguration extends JobConfiguration {
     private Clustering clustering;
     private Long jobTimeoutMs;
     private Map<String, String> labels;
+    private RangePartitioning rangePartitioning;
 
     private Builder() {
       super(Type.QUERY);
@@ -144,6 +146,7 @@ public final class QueryJobConfiguration extends JobConfiguration {
       this.clustering = jobConfiguration.clustering;
       this.jobTimeoutMs = jobConfiguration.jobTimeoutMs;
       this.labels = jobConfiguration.labels;
+      this.rangePartitioning = jobConfiguration.rangePartitioning;
     }
 
     private Builder(com.google.api.services.bigquery.model.JobConfiguration configurationPb) {
@@ -232,6 +235,10 @@ public final class QueryJobConfiguration extends JobConfiguration {
       }
       if (configurationPb.getLabels() != null) {
         this.labels = configurationPb.getLabels();
+      }
+      if (queryConfigurationPb.getRangePartitioning() != null) {
+        this.rangePartitioning =
+            RangePartitioning.fromPb(queryConfigurationPb.getRangePartitioning());
       }
     }
 
@@ -561,6 +568,17 @@ public final class QueryJobConfiguration extends JobConfiguration {
       return this;
     }
 
+    /**
+     * Range partitioning specification for this table. Only one of timePartitioning and
+     * rangePartitioning should be specified.
+     *
+     * @param rangePartitioning rangePartitioning or {@code null} for none
+     */
+    public Builder setRangePartitioning(RangePartitioning rangePartitioning) {
+      this.rangePartitioning = rangePartitioning;
+      return this;
+    }
+
     public QueryJobConfiguration build() {
       return new QueryJobConfiguration(this);
     }
@@ -600,6 +618,7 @@ public final class QueryJobConfiguration extends JobConfiguration {
     this.clustering = builder.clustering;
     this.jobTimeoutMs = builder.jobTimeoutMs;
     this.labels = builder.labels;
+    this.rangePartitioning = builder.rangePartitioning;
   }
 
   /**
@@ -779,6 +798,11 @@ public final class QueryJobConfiguration extends JobConfiguration {
     return labels;
   }
 
+  /** Returns the range partitioning specification for the table */
+  public RangePartitioning getRangePartitioning() {
+    return rangePartitioning;
+  }
+
   @Override
   public Builder toBuilder() {
     return new Builder(this);
@@ -809,7 +833,8 @@ public final class QueryJobConfiguration extends JobConfiguration {
         .add("timePartitioning", timePartitioning)
         .add("clustering", clustering)
         .add("jobTimeoutMs", jobTimeoutMs)
-        .add("labels", labels);
+        .add("labels", labels)
+        .add("rangePartitioning", rangePartitioning);
   }
 
   @Override
@@ -843,7 +868,8 @@ public final class QueryJobConfiguration extends JobConfiguration {
         timePartitioning,
         clustering,
         jobTimeoutMs,
-        labels);
+        labels,
+        rangePartitioning);
   }
 
   @Override
@@ -938,6 +964,9 @@ public final class QueryJobConfiguration extends JobConfiguration {
     }
     if (labels != null) {
       configurationPb.setLabels(labels);
+    }
+    if (rangePartitioning != null) {
+      queryConfigurationPb.setRangePartitioning(rangePartitioning.toPb());
     }
     configurationPb.setQuery(queryConfigurationPb);
     return configurationPb;
