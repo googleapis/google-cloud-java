@@ -188,7 +188,7 @@ public final class RangePartitioning implements Serializable {
     this.range = Range.fromPb(rangePartitioning.getRange());
   }
 
-  /** Returns the field of range partitioning. */
+  /** Returns the range partitioning field. */
   public String getField() {
     return field;
   }
