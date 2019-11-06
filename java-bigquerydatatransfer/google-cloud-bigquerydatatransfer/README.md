@@ -18,13 +18,32 @@ Quickstart
 ----------
 
 [//]: # ({x-version-update-start:google-cloud-bigquerydatatransfer:released})
-Add this to your pom.xml file
+If you are using Maven with Bom, Add this to your pom.xml file.
 ```xml
-<dependency>
-  <groupId>com.google.cloud</groupId>
-  <artifactId>google-cloud-bigquerydatatransfer</artifactId>
-  <version>0.117.0-beta</version>
-</dependency>
+   <dependencyManagement>
+    <dependencies>
+      <dependency>
+        <groupId>com.google.cloud</groupId>
+        <artifactId>libraries-bom</artifactId>
+        <version>2.8.0</version>
+        <type>pom</type>
+        <scope>import</scope>
+       </dependency>
+     </dependencies>
+  </dependencyManagement>
+  
+  <dependency>
+    <groupId>com.google.cloud</groupId>
+    <artifactId>google-cloud-bigquerydatatransfer</artifactId>
+  </dependency>
+```
+If you are using Maven without Bom, Add this to your dependencies.
+```xml
+  <dependency>
+    <groupId>com.google.cloud</groupId>
+    <artifactId>google-cloud-bigquerydatatransfer</artifactId>
+    <version>0.117.0-beta</version>
+  </dependency>
 ```
 If you are using Gradle, add this to your dependencies
 ```Groovy
