@@ -12,7 +12,7 @@ Java idiomatic client for [Cloud Bigtable][cloud-bigtable].
 
 ## Quickstart
 
-If you are using Maven, add this to your pom.xml file
+If you are using Maven with bom, add this to your pom.xml file
 ```xml
   <dependencyManagement>
     <dependencies>
@@ -29,6 +29,14 @@ If you are using Maven, add this to your pom.xml file
   <dependency>
    <groupId>com.google.cloud</groupId>
    <artifactId>google-cloud-bigtable</artifactId>
+  </dependency>
+```
+if you are using Maven without Bom, Add this to your dependencies.
+```xml
+  <dependency>
+   <groupId>com.google.cloud</groupId>
+   <artifactId>google-cloud-bigtable</artifactId>
+   <version>1.5.0</version>
   </dependency>
 ```
 If you are using Gradle, add this to your dependencies
