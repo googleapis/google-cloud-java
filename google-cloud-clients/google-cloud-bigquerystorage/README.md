@@ -15,14 +15,14 @@ Quickstart
 ----------
 
 [//]: # ({x-version-update-start:google-cloud-bigquerystorage:released})
-Add this to your pom.xml file
+if you are using Bom, Add this to your pom.xml file.
 ```xml
    <dependencyManagement>
     <dependencies>
       <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>libraries-bom</artifactId>
-        <version>2.7.1</version>
+        <version>2.8.0</version>
         <type>pom</type>
         <scope>import</scope>
        </dependency>
@@ -32,6 +32,14 @@ Add this to your pom.xml file
     <dependency>
       <groupId>com.google.cloud</groupId>
       <artifactId>google-cloud-bigquerystorage</artifactId>
+    </dependency>
+```
+if you are using Maven without Bom, Add this to your dependencies.
+```xml
+    <dependency>
+      <groupId>com.google.cloud</groupId>
+      <artifactId>google-cloud-bigquerystorage</artifactId>
+      <version>0.117.0-beta</version>
     </dependency>
 ```
 If you are using Gradle, add this to your dependencies
