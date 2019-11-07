@@ -22,7 +22,6 @@ import com.google.api.services.bigquery.model.JobStatistics2;
 import com.google.api.services.bigquery.model.JobStatistics3;
 import com.google.api.services.bigquery.model.JobStatistics4;
 import com.google.api.services.bigquery.model.ScriptStackFrame;
-import com.google.api.services.bigquery.model.ScriptStatistics;
 import com.google.cloud.StringEnumType;
 import com.google.cloud.StringEnumValue;
 import com.google.common.base.Function;
@@ -769,7 +768,7 @@ public abstract class JobStatistics implements Serializable {
     private final String evaluationKind;
     private final List<ScriptStackFrame> stackFrames;
 
-    static class ScriptStackFrame {
+    public static class ScriptStackFrame {
 
       static final Function<
               com.google.api.services.bigquery.model.ScriptStackFrame, ScriptStackFrame>
@@ -904,6 +903,14 @@ public abstract class JobStatistics implements Serializable {
       }
 
       @Override
+      public boolean equals(Object obj) {
+        return obj == this
+            || obj != null
+                && obj.getClass().equals(ScriptStackFrame.class)
+                && Objects.equals(toPb(), ((ScriptStackFrame) obj).toPb());
+      }
+
+      @Override
       public int hashCode() {
         return Objects.hash(endColumn, endLine, procedureId, startColumn, startLine, text);
       }
@@ -1003,6 +1010,14 @@ public abstract class JobStatistics implements Serializable {
     @Override
     public String toString() {
       return toStringHelper().toString();
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+      return obj == this
+          || obj != null
+              && obj.getClass().equals(ScriptStatistics.class)
+              && Objects.equals(toPb(), ((ScriptStatistics) obj).toPb());
     }
 
     @Override

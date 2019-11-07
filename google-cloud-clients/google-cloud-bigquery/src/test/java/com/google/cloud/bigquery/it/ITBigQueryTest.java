@@ -1303,8 +1303,23 @@ public class ITBigQueryTest {
       if (scriptStatistics != null) {
         if (scriptStatistics.getEvaluationKind().equals("STATEMENT")) {
           assertEquals("STATEMENT", scriptStatistics.getEvaluationKind());
+          for (JobStatistics.ScriptStatistics.ScriptStackFrame stackFrame :
+              scriptStatistics.getStackFrames()) {
+            assertEquals(2, stackFrame.getEndColumn().intValue());
+            assertEquals(16, stackFrame.getEndLine().intValue());
+            assertEquals(1, stackFrame.getStartColumn().intValue());
+            assertEquals(10, stackFrame.getStartLine().intValue());
+          }
+
         } else {
           assertEquals("EXPRESSION", scriptStatistics.getEvaluationKind());
+          for (JobStatistics.ScriptStatistics.ScriptStackFrame stackFrame :
+              scriptStatistics.getStackFrames()) {
+            assertEquals(2, stackFrame.getEndColumn().intValue());
+            assertEquals(8, stackFrame.getEndLine().intValue());
+            assertEquals(17, stackFrame.getStartColumn().intValue());
+            assertEquals(4, stackFrame.getStartLine().intValue());
+          }
         }
       }
     }

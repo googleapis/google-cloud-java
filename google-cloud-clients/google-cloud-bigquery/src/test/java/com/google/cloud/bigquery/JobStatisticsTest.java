@@ -166,6 +166,7 @@ public class JobStatisticsTest {
       ScriptStackFrame.newBuilder()
           .setEndColumn(2)
           .setEndLine(16)
+          .setProcedureId("test-procedureId")
           .setStartColumn(1)
           .setStartLine(16)
           .setText(
@@ -181,6 +182,7 @@ public class JobStatisticsTest {
       ScriptStackFrame.newBuilder()
           .setEndColumn(2)
           .setEndLine(8)
+          .setProcedureId("test-procedureId")
           .setStartColumn(17)
           .setStartLine(4)
           .setText(
@@ -280,6 +282,16 @@ public class JobStatisticsTest {
         LOAD_STATISTICS_INCOMPLETE, LoadStatistics.fromPb(LOAD_STATISTICS_INCOMPLETE.toPb()));
     compareQueryStatistics(
         QUERY_STATISTICS_INCOMPLETE, QueryStatistics.fromPb(QUERY_STATISTICS_INCOMPLETE.toPb()));
+    compareScriptStatistics(
+        STATEMENT_SCRIPT_STATISTICS, ScriptStatistics.fromPb(STATEMENT_SCRIPT_STATISTICS.toPb()));
+    compareScriptStatistics(
+        EXPRESSION_SCRIPT_STATISTICS, ScriptStatistics.fromPb(EXPRESSION_SCRIPT_STATISTICS.toPb()));
+    for (ScriptStackFrame stackFrame : STATEMENT_SCRIPT_STATISTICS.getStackFrames()) {
+      compareStackFrames(stackFrame, ScriptStackFrame.fromPb(stackFrame.toPb()));
+    }
+    for (ScriptStackFrame stackFrame : EXPRESSION_SCRIPT_STATISTICS.getStackFrames()) {
+      compareStackFrames(stackFrame, ScriptStackFrame.fromPb(stackFrame.toPb()));
+    }
   }
 
   @Test
@@ -355,5 +367,29 @@ public class JobStatisticsTest {
     assertEquals(expected.getCreationTime(), value.getCreationTime());
     assertEquals(expected.getEndTime(), value.getEndTime());
     assertEquals(expected.getStartTime(), value.getStartTime());
+    assertEquals(expected.getNumChildJobs(), value.getNumChildJobs());
+    assertEquals(expected.getParentJobId(), value.getParentJobId());
+    assertEquals(expected.getScriptStatistics(), value.getScriptStatistics());
+  }
+
+  private void compareScriptStatistics(ScriptStatistics expected, ScriptStatistics value) {
+    assertEquals(expected, value);
+    assertEquals(expected.hashCode(), value.hashCode());
+    assertEquals(expected.toString(), expected.toString());
+    assertEquals(expected.getEvaluationKind(), value.getEvaluationKind());
+    assertEquals(expected.getStackFrames(), value.getStackFrames());
+  }
+
+  private void compareStackFrames(
+      ScriptStatistics.ScriptStackFrame expected, ScriptStatistics.ScriptStackFrame value) {
+    assertEquals(expected, value);
+    assertEquals(expected.hashCode(), value.hashCode());
+    assertEquals(expected.toString(), value.toString());
+    assertEquals(expected.getEndColumn(), value.getEndColumn());
+    assertEquals(expected.getEndLine(), value.getEndLine());
+    assertEquals(expected.getProcedureId(), value.getProcedureId());
+    assertEquals(expected.getStartColumn(), value.getStartColumn());
+    assertEquals(expected.getStartLine(), value.getStartLine());
+    assertEquals(expected.getText(), value.getText());
   }
 }
