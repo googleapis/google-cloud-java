@@ -41,25 +41,46 @@ public final class StorageClass extends StringEnumValue {
   private static final StringEnumType<StorageClass> type =
       new StringEnumType(StorageClass.class, CONSTRUCTOR);
 
-  /** Regional storage class. */
+  /**
+   * Regional storage class (deprecated).
+   * See:https://cloud.google.com/storage/docs/per-object-storage-class for details
+   */
   public static final StorageClass REGIONAL = type.createAndRegister("REGIONAL");
 
-  /** Multi-regional storage class. */
+  /**
+   * Multi-regional storage class (deprecated).
+   * See:https://cloud.google.com/storage/docs/per-object-storage-class for details
+   */
   public static final StorageClass MULTI_REGIONAL = type.createAndRegister("MULTI_REGIONAL");
 
-  /** Nearline storage class. */
+  /**
+   * Nearline storage class. See: https://cloud.google.com/storage/docs/per-object-storage-class for
+   * details
+   */
   public static final StorageClass NEARLINE = type.createAndRegister("NEARLINE");
 
-  /** Coldline storage class. */
+  /**
+   * Coldline storage class. See: https://cloud.google.com/storage/docs/per-object-storage-class for
+   * details
+   */
   public static final StorageClass COLDLINE = type.createAndRegister("COLDLINE");
 
-  /** Standard storage class. */
+  /**
+   * Standard storage class. See: https://cloud.google.com/storage/docs/per-object-storage-class for
+   * details
+   */
   public static final StorageClass STANDARD = type.createAndRegister("STANDARD");
 
-  /** Archive storage class. */
+  /**
+   * Archive storage class. See: https://cloud.google.com/storage/docs/per-object-storage-class for
+   * details
+   */
   public static final StorageClass ARCHIVE = type.createAndRegister("ARCHIVE");
 
-  /** Durable Reduced Availability (deprecated) */
+  /**
+   * Durable Reduced Availability (deprecated).
+   * See:https://cloud.google.com/storage/docs/per-object-storage-class for details
+   */
   public static final StorageClass DURABLE_REDUCED_AVAILABILITY =
       type.createAndRegister("DURABLE_REDUCED_AVAILABILITY");
 
