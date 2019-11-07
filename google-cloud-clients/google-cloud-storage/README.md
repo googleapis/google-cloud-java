@@ -12,8 +12,6 @@ Java idiomatic client for [Google Cloud Storage][cloud-storage].
 
 Quickstart
 ----------
-
-[//]: # ({x-version-update-start:google-cloud-storage:released})
 If you are using Maven with Bom, Add this to your pom.xml file.
 ```xml
 <dependencyManagement>
@@ -21,7 +19,7 @@ If you are using Maven with Bom, Add this to your pom.xml file.
   <dependency>
     <groupId>com.google.cloud</groupId>
     <artifactId>libraries-bom</artifactId>
-    <version>1.100.0</version>
+    <version>2.8.0</version>
     <type>pom</type>
     <scope>import</scope>
    </dependency>
@@ -33,6 +31,7 @@ If you are using Maven with Bom, Add this to your pom.xml file.
   <artifactId>google-cloud-storage</artifactId>
 </dependency>
 ```
+[//]: # ({x-version-update-start:google-cloud-storage:released})
 If you are using Maven without Bom, Add this to your dependencies.
 ```xml
 <dependency>
