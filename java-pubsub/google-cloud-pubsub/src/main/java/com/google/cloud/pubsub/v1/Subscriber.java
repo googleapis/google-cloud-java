@@ -295,9 +295,7 @@ public class Subscriber extends AbstractApiService {
                 try {
                   // stop connection is no-op if connections haven't been started.
                   stopAllStreamingConnections();
-                  for (BackgroundResource resource : backgroundResources) {
-                    resource.shutdown();
-                  }
+                  shutdownBackgroundResources();
                   notifyStopped();
                 } catch (Exception e) {
                   notifyFailed(e);
@@ -337,6 +335,7 @@ public class Subscriber extends AbstractApiService {
               // If a connection failed is because of a fatal error, we should fail the
               // whole subscriber.
               stopAllStreamingConnections();
+              shutdownBackgroundResources();
               try {
                 notifyFailed(failure);
               } catch (IllegalStateException e) {
@@ -352,6 +351,12 @@ public class Subscriber extends AbstractApiService {
 
   private void stopAllStreamingConnections() {
     stopConnections(streamingSubscriberConnections);
+  }
+
+  private void shutdownBackgroundResources() {
+    for (BackgroundResource resource : backgroundResources) {
+      resource.shutdown();
+    }
   }
 
   private void startConnections(

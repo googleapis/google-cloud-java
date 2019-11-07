@@ -176,6 +176,38 @@ public class SubscriberTest {
     }
   }
 
+  @Test(expected = IllegalStateException.class)
+  public void testFailedChannel_shutdownBackgroundResources() throws Exception {
+    ExecutorProvider provider =
+        new ExecutorProvider() {
+          @Override
+          public boolean shouldAutoClose() {
+            return true;
+          }
+
+          @Override
+          public ScheduledExecutorService getExecutor() {
+            return fakeExecutor;
+          }
+        };
+
+    Subscriber subscriber =
+        startSubscriber(getTestSubscriberBuilder(testReceiver).setExecutorProvider(provider));
+
+    // Fatal error
+    fakeSubscriberServiceImpl.sendError(new StatusException(Status.INVALID_ARGUMENT));
+
+    try {
+      subscriber.awaitTerminated();
+    } finally {
+      // The subscriber must finish with an state error because its FAILED status.
+      assertEquals(Subscriber.State.FAILED, subscriber.state());
+
+      // Make sure that our executor is shut down after a failure
+      assertTrue(fakeExecutor.isShutdown());
+    }
+  }
+
   private Subscriber startSubscriber(Builder testSubscriberBuilder) {
     Subscriber subscriber = testSubscriberBuilder.build();
     subscriber.startAsync().awaitRunning();
