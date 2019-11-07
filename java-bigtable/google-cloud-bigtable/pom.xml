@@ -220,6 +220,7 @@
                     <include>com.google.cloud.bigtable.**.it.*IT</include>
                   </includes>
                   <summaryFile>${project.build.directory}/failsafe-reports/failsafe-summary-emulator-it.xml</summaryFile>
+                  <reportsDirectory>${project.build.directory}/failsafe-reports/emulator-it</reportsDirectory>
                 </configuration>
               </execution>
             </executions>
@@ -249,6 +250,7 @@
                     <include>com.google.cloud.bigtable.**.it.*IT</include>
                   </includes>
                   <summaryFile>${project.build.directory}/failsafe-reports/failsafe-summary-prod-it.xml</summaryFile>
+                  <reportsDirectory>${project.build.directory}/failsafe-reports/prod-it</reportsDirectory>
                 </configuration>
               </execution>
             </executions>
@@ -290,6 +292,7 @@
                     <include>com.google.cloud.bigtable.data.v2.it.*IT</include>
                   </includes>
                   <summaryFile>${project.build.directory}/failsafe-reports/failsafe-summary-directpath-it.xml</summaryFile>
+                  <reportsDirectory>${project.build.directory}/failsafe-reports/directpath-it</reportsDirectory>
                 </configuration>
               </execution>
             </executions>
@@ -330,31 +333,6 @@
             -->
           <usedDependencies>io.grpc:grpc-auth,io.grpc:grpc-grpclb</usedDependencies>
         </configuration>
-      </plugin>
-
-      <!-- Workaround maven failing to delete old test reports. For some reason, when using the
-        failsafe plugin in profiles, maven retains the counts from previous executions. Causing a
-        stale failure to fail the current test run. -->
-      <plugin>
-        <artifactId>maven-clean-plugin</artifactId>
-        <version>2.5</version>
-        <executions>
-          <execution>
-            <id>clean-old-reports</id>
-            <goals>
-              <goal>clean</goal>
-            </goals>
-            <phase>pre-integration-test</phase>
-            <configuration>
-              <excludeDefaultDirectories>true</excludeDefaultDirectories>
-              <filesets>
-                <fileset>
-                  <directory>${project.build.directory}/failsafe-reports</directory>
-                </fileset>
-              </filesets>
-            </configuration>
-          </execution>
-        </executions>
       </plugin>
 
       <plugin>

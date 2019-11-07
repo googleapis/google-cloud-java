@@ -36,13 +36,7 @@ for ADMIN_HOST in "${ADMIN_HOSTS[@]}"; do
   fi
 
   # Ensure that the table exists
-  if ! call_cbt -instance ${INSTANCE_ID} ls | grep -q "^${TABLE_ID}\$"; then
-    call_cbt createtable ${TABLE_ID}
-  fi
-
-  # Ensure that the family exists
-  if ! call_cbt ls "${TABLE_ID}" | grep -q "^$FAMILY\b"; then
-    call_cbt createfamily "${TABLE_ID}" "${FAMILY}"
-    call_cbt setgcpolicy "${TABLE_ID}" "${FAMILY}" maxversions=1 maxage=1h
+  if ! call_cbt -instance "$INSTANCE_ID" ls | grep -q "^${TABLE_ID}\$"; then
+    call_cbt createtable "$TABLE_ID" "families=$FAMILY:maxversions=1||maxage=1h"
   fi
 done
