@@ -23,6 +23,8 @@ import com.google.cloud.bigquery.JobStatistics.CopyStatistics;
 import com.google.cloud.bigquery.JobStatistics.ExtractStatistics;
 import com.google.cloud.bigquery.JobStatistics.LoadStatistics;
 import com.google.cloud.bigquery.JobStatistics.QueryStatistics;
+import com.google.cloud.bigquery.JobStatistics.ScriptStatistics;
+import com.google.cloud.bigquery.JobStatistics.ScriptStatistics.ScriptStackFrame;
 import com.google.cloud.bigquery.QueryStage.QueryStep;
 import com.google.common.collect.ImmutableList;
 import java.util.List;
@@ -33,6 +35,8 @@ public class JobStatisticsTest {
   private static final Integer BILLING_TIER = 42;
   private static final Boolean CACHE_HIT = true;
   private static final String DDL_OPERATION_PERFORMED = "SKIP";
+  private static final String EVALUATIONKIND_TYPE_STATEMENT = "STATEMENT";
+  private static final String EVALUATIONKIND_TYPE_EXPRESSION = "EXPRESSION";
   private static final TableId DDL_TARGET_TABLE = TableId.of("foo", "bar", "baz");
   private static final RoutineId DDL_TARGET_ROUTINE = RoutineId.of("alpha", "beta", "gamma");
   private static final Long ESTIMATE_BYTES_PROCESSED = 101L;
@@ -158,6 +162,44 @@ public class JobStatisticsTest {
           .setBillingTier(BILLING_TIER)
           .setCacheHit(CACHE_HIT)
           .build();
+  private static final ScriptStackFrame STATEMENT_STACK_FRAME =
+      ScriptStackFrame.newBuilder()
+          .setEndColumn(2)
+          .setEndLine(16)
+          .setProcedureId("test-procedureId")
+          .setStartColumn(1)
+          .setStartLine(16)
+          .setText(
+              "SELECT\n"
+                  + "  name AS shakespeare_name\n"
+                  + "FROM UNNEST(top_names) AS name\n"
+                  + "WHERE name IN (\n"
+                  + "  SELECT word\n"
+                  + "  FROM `bigquery-public-data`.samples.shakespeare\n"
+                  + ")")
+          .build();
+  private static final ScriptStackFrame EXPRESSION_STACK_FRAME =
+      ScriptStackFrame.newBuilder()
+          .setEndColumn(2)
+          .setEndLine(8)
+          .setProcedureId("test-procedureId")
+          .setStartColumn(17)
+          .setStartLine(4)
+          .setText(
+              "SELECT ARRAY_AGG(name ORDER BY number DESC LIMIT 100)\n"
+                  + "  FROM `bigquery-public-data`.usa_names.usa_1910_current\n"
+                  + "  WHERE year = 2017")
+          .build();
+  private static final ScriptStatistics STATEMENT_SCRIPT_STATISTICS =
+      ScriptStatistics.newBuilder()
+          .setEvaluationKind(EVALUATIONKIND_TYPE_STATEMENT)
+          .setStackFrames(ImmutableList.of(STATEMENT_STACK_FRAME))
+          .build();
+  private static final ScriptStatistics EXPRESSION_SCRIPT_STATISTICS =
+      ScriptStatistics.newBuilder()
+          .setEvaluationKind(EVALUATIONKIND_TYPE_EXPRESSION)
+          .setStackFrames(ImmutableList.of(EXPRESSION_STACK_FRAME))
+          .build();
 
   @Test
   public void testBuilder() {
@@ -219,6 +261,13 @@ public class JobStatisticsTest {
     assertEquals(null, QUERY_STATISTICS_INCOMPLETE.getTotalSlotMs());
     assertEquals(null, QUERY_STATISTICS_INCOMPLETE.getReferencedTables());
     assertEquals(null, QUERY_STATISTICS_INCOMPLETE.getQueryPlan());
+
+    assertEquals(EVALUATIONKIND_TYPE_STATEMENT, STATEMENT_SCRIPT_STATISTICS.getEvaluationKind());
+    assertEquals(
+        ImmutableList.of(STATEMENT_STACK_FRAME), STATEMENT_SCRIPT_STATISTICS.getStackFrames());
+    assertEquals(EVALUATIONKIND_TYPE_EXPRESSION, EXPRESSION_SCRIPT_STATISTICS.getEvaluationKind());
+    assertEquals(
+        ImmutableList.of(EXPRESSION_STACK_FRAME), EXPRESSION_SCRIPT_STATISTICS.getStackFrames());
   }
 
   @Test
@@ -233,6 +282,16 @@ public class JobStatisticsTest {
         LOAD_STATISTICS_INCOMPLETE, LoadStatistics.fromPb(LOAD_STATISTICS_INCOMPLETE.toPb()));
     compareQueryStatistics(
         QUERY_STATISTICS_INCOMPLETE, QueryStatistics.fromPb(QUERY_STATISTICS_INCOMPLETE.toPb()));
+    compareScriptStatistics(
+        STATEMENT_SCRIPT_STATISTICS, ScriptStatistics.fromPb(STATEMENT_SCRIPT_STATISTICS.toPb()));
+    compareScriptStatistics(
+        EXPRESSION_SCRIPT_STATISTICS, ScriptStatistics.fromPb(EXPRESSION_SCRIPT_STATISTICS.toPb()));
+    for (ScriptStackFrame stackFrame : STATEMENT_SCRIPT_STATISTICS.getStackFrames()) {
+      compareStackFrames(stackFrame, ScriptStackFrame.fromPb(stackFrame.toPb()));
+    }
+    for (ScriptStackFrame stackFrame : EXPRESSION_SCRIPT_STATISTICS.getStackFrames()) {
+      compareStackFrames(stackFrame, ScriptStackFrame.fromPb(stackFrame.toPb()));
+    }
   }
 
   @Test
@@ -308,5 +367,29 @@ public class JobStatisticsTest {
     assertEquals(expected.getCreationTime(), value.getCreationTime());
     assertEquals(expected.getEndTime(), value.getEndTime());
     assertEquals(expected.getStartTime(), value.getStartTime());
+    assertEquals(expected.getNumChildJobs(), value.getNumChildJobs());
+    assertEquals(expected.getParentJobId(), value.getParentJobId());
+    assertEquals(expected.getScriptStatistics(), value.getScriptStatistics());
+  }
+
+  private void compareScriptStatistics(ScriptStatistics expected, ScriptStatistics value) {
+    assertEquals(expected, value);
+    assertEquals(expected.hashCode(), value.hashCode());
+    assertEquals(expected.toString(), expected.toString());
+    assertEquals(expected.getEvaluationKind(), value.getEvaluationKind());
+    assertEquals(expected.getStackFrames(), value.getStackFrames());
+  }
+
+  private void compareStackFrames(
+      ScriptStatistics.ScriptStackFrame expected, ScriptStatistics.ScriptStackFrame value) {
+    assertEquals(expected, value);
+    assertEquals(expected.hashCode(), value.hashCode());
+    assertEquals(expected.toString(), value.toString());
+    assertEquals(expected.getEndColumn(), value.getEndColumn());
+    assertEquals(expected.getEndLine(), value.getEndLine());
+    assertEquals(expected.getProcedureId(), value.getProcedureId());
+    assertEquals(expected.getStartColumn(), value.getStartColumn());
+    assertEquals(expected.getStartLine(), value.getStartLine());
+    assertEquals(expected.getText(), value.getText());
   }
 }
