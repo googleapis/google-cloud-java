@@ -21,6 +21,13 @@
          while still respecting global skipTests override. -->
     <skipTests>false</skipTests>
     <skipUnitTests>${skipTests}</skipUnitTests>
+
+    <bigtable.data-endpoint>bigtable.googleapis.com:443</bigtable.data-endpoint>
+    <bigtable.admin-endpoint>bigtableadmin.googleapis.com:443</bigtable.admin-endpoint>
+
+    <!-- Use test DP env until prod endpoint is available -->
+    <bigtable.directpath-data-endpoint>testdirectpath-bigtable.sandbox.googleapis.com:443</bigtable.directpath-data-endpoint>
+    <bigtable.directpath-admin-endpoint>test-bigtableadmin.sandbox.googleapis.com:443</bigtable.directpath-admin-endpoint>
   </properties>
   <dependencies>
     <!-- NOTE: Dependencies are organized into two groups, production and test.
@@ -275,13 +282,8 @@
                 <configuration>
                   <systemPropertyVariables>
                     <bigtable.env>cloud</bigtable.env>
-                    <!-- TODO(igorbernstein): This property should be auto set by gax -->
-                    <io.grpc.internal.DnsNameResolverProvider.enable_grpclb>true</io.grpc.internal.DnsNameResolverProvider.enable_grpclb>
-
-                    <!-- TODO(igorbernstein): Remove overrides once the prod DirectPath endpoint is available. -->
-                    <!-- Use test env until the prod endpoint is available -->
-                    <bigtable.data-endpoint>testdirectpath-bigtable.sandbox.googleapis.com:443</bigtable.data-endpoint>
-                    <bigtable.admin-endpoint>test-bigtableadmin.sandbox.googleapis.com:443</bigtable.admin-endpoint>
+                    <bigtable.data-endpoint>${bigtable.directpath-data-endpoint}</bigtable.data-endpoint>
+                    <bigtable.admin-endpoint>${bigtable.directpath-admin-endpoint}</bigtable.admin-endpoint>
                   </systemPropertyVariables>
                   <!-- Enable directpath for bigtable -->
                   <environmentVariables>

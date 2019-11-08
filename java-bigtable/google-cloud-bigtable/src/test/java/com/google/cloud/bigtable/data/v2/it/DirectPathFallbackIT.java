@@ -15,7 +15,6 @@
  */
 package com.google.cloud.bigtable.data.v2.it;
 
-import static com.google.common.truth.Truth.assertThat;
 import static com.google.common.truth.Truth.assertWithMessage;
 import static com.google.common.truth.TruthJUnit.assume;
 
@@ -140,7 +139,9 @@ public class DirectPathFallbackIT {
 
     // Verify that the above check was meaningful, by verifying that the blackhole actually dropped
     // packets.
-    assertThat(numBlocked.get()).isGreaterThan(0);
+    assertWithMessage("Failed to detect any IPv6 traffic in blackhole")
+        .that(numBlocked.get())
+        .isGreaterThan(0);
 
     // Make sure that the client will start reading from IPv6 again by sending new requests and
     // checking the injected IPv6 counter has been updated.
