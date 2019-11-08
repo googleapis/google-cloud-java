@@ -22,8 +22,8 @@
     <skipTests>false</skipTests>
     <skipUnitTests>${skipTests}</skipUnitTests>
 
-    <bigtable.data-endpoint>bigtable.googleapis.com:443</bigtable.data-endpoint>
-    <bigtable.admin-endpoint>bigtableadmin.googleapis.com:443</bigtable.admin-endpoint>
+    <bigtable.cfe-data-endpoint>bigtable.googleapis.com:443</bigtable.cfe-data-endpoint>
+    <bigtable.cfe-admin-endpoint>bigtableadmin.googleapis.com:443</bigtable.cfe-admin-endpoint>
 
     <!-- Use test DP env until prod endpoint is available -->
     <bigtable.directpath-data-endpoint>testdirectpath-bigtable.sandbox.googleapis.com:443</bigtable.directpath-data-endpoint>
@@ -252,6 +252,8 @@
                 <configuration>
                   <systemPropertyVariables>
                     <bigtable.env>cloud</bigtable.env>
+                    <bigtable.data-endpoint>${bigtable.cfe-data-endpoint}</bigtable.data-endpoint>
+                    <bigtable.admin-endpoint>${bigtable.cfe-admin-endpoint}</bigtable.admin-endpoint>
                   </systemPropertyVariables>
                   <includes>
                     <include>com.google.cloud.bigtable.**.it.*IT</include>
