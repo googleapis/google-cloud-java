@@ -59,14 +59,4 @@ public class PredictionApiIT {
     String got = bout.toString();
     assertThat(got).contains("Translated Content");
   }
-
-  @Test
-  public void testPrediction() {
-    // Act
-    Prediction.predict(PROJECT_ID, modelId, filePath);
-
-    // Assert
-    String got = bout.toString();
-    assertThat(got).contains("Translated Content");
-  }
 }
