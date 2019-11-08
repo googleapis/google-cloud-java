@@ -15,7 +15,7 @@
  */
 
 // DO NOT MODIFY! THIS FILE IS AUTO-GENERATED.
-// This file is auto-generated on 04 Nov 19 20:53 UTC.
+// This file is auto-generated on 08 Nov 19 20:10 UTC.
 
 package com.google.cloud.monitoring.v3;
 
@@ -25,6 +25,8 @@ import com.google.monitoring.v3.*;
 import com.google.protobuf.*;
 import java.util.ArrayList;
 import java.util.concurrent.Callable;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import org.junit.Assert;
 import org.junit.Assume;
 import org.junit.BeforeClass;
@@ -36,26 +38,39 @@ public class VPCServiceControlTest {
   static final String PROJECT_OUTSIDE =
       System.getenv("GOOGLE_CLOUD_TESTS_VPCSC_OUTSIDE_PERIMETER_PROJECT");
   static final String IS_INSIDE_VPCSC = System.getenv("GOOGLE_CLOUD_TESTS_IN_VPCSC");
+  private static final Logger logger = Logger.getLogger(VPCServiceControlTest.class.getName());
 
-  private static boolean isRejected(Callable callable) {
+  private static Exception getError(Callable callable) {
     try {
       callable.call();
-    } catch (PermissionDeniedException e) {
-      System.out.println(e.getMessage());
-      return e.getMessage().contains("Request is prohibited by organization's policy");
     } catch (Exception e) {
-      System.out.println(e);
+      logger.log(Level.INFO, e.getMessage());
+      return e;
     }
-    return false;
+    return null;
   }
 
   private static void doTest(Callable delayedInside, Callable delayedOutside) {
     if ((IS_INSIDE_VPCSC != null) && (IS_INSIDE_VPCSC.equalsIgnoreCase("true"))) {
-      Assert.assertTrue(isRejected(delayedOutside));
-      Assert.assertFalse(isRejected(delayedInside));
+      logger.log(Level.INFO, "inside perimeter");
+      Exception e = getError(delayedOutside);
+      Assert.assertTrue(
+          PermissionDeniedException.class.isInstance(e)
+              && e.getMessage().contains("Request is prohibited by organization's policy"));
+      e = getError(delayedInside);
+      Assert.assertFalse(
+          PermissionDeniedException.class.isInstance(e)
+              && e.getMessage().contains("Request is prohibited by organization's policy"));
     } else {
-      Assert.assertFalse(isRejected(delayedOutside));
-      Assert.assertTrue(isRejected(delayedInside));
+      logger.log(Level.INFO, "outside perimeter");
+      Exception e = getError(delayedOutside);
+      Assert.assertFalse(
+          PermissionDeniedException.class.isInstance(e)
+              && e.getMessage().contains("Request is prohibited by organization's policy"));
+      e = getError(delayedInside);
+      Assert.assertTrue(
+          PermissionDeniedException.class.isInstance(e)
+              && e.getMessage().contains("Request is prohibited by organization's policy"));
     }
   }
 
@@ -77,6 +92,7 @@ public class VPCServiceControlTest {
         new Callable() {
           public Object call() throws Exception {
             ProjectName nameInside = ProjectName.of(PROJECT_INSIDE);
+            logger.log(Level.INFO, "createAlertPolicyTest: requesting {0}", nameInside);
             client.createAlertPolicy(
                 CreateAlertPolicyRequest.newBuilder().setName(nameInside.toString()).build());
             return null;
@@ -86,6 +102,7 @@ public class VPCServiceControlTest {
         new Callable() {
           public Object call() throws Exception {
             ProjectName nameOutside = ProjectName.of(PROJECT_OUTSIDE);
+            logger.log(Level.INFO, "createAlertPolicyTest: requesting {0}", nameOutside);
             client.createAlertPolicy(
                 CreateAlertPolicyRequest.newBuilder().setName(nameOutside.toString()).build());
             return null;
@@ -106,6 +123,7 @@ public class VPCServiceControlTest {
         new Callable() {
           public Object call() throws Exception {
             AlertPolicyName nameInside = AlertPolicyName.of(PROJECT_INSIDE, "MockAlertPolicy");
+            logger.log(Level.INFO, "deleteAlertPolicyTest: requesting {0}", nameInside);
             client.deleteAlertPolicy(
                 DeleteAlertPolicyRequest.newBuilder().setName(nameInside.toString()).build());
             return null;
@@ -115,6 +133,7 @@ public class VPCServiceControlTest {
         new Callable() {
           public Object call() throws Exception {
             AlertPolicyName nameOutside = AlertPolicyName.of(PROJECT_OUTSIDE, "MockAlertPolicy");
+            logger.log(Level.INFO, "deleteAlertPolicyTest: requesting {0}", nameOutside);
             client.deleteAlertPolicy(
                 DeleteAlertPolicyRequest.newBuilder().setName(nameOutside.toString()).build());
             return null;
@@ -135,6 +154,7 @@ public class VPCServiceControlTest {
         new Callable() {
           public Object call() throws Exception {
             AlertPolicyName nameInside = AlertPolicyName.of(PROJECT_INSIDE, "MockAlertPolicy");
+            logger.log(Level.INFO, "getAlertPolicyTest: requesting {0}", nameInside);
             client.getAlertPolicy(
                 GetAlertPolicyRequest.newBuilder().setName(nameInside.toString()).build());
             return null;
@@ -144,6 +164,7 @@ public class VPCServiceControlTest {
         new Callable() {
           public Object call() throws Exception {
             AlertPolicyName nameOutside = AlertPolicyName.of(PROJECT_OUTSIDE, "MockAlertPolicy");
+            logger.log(Level.INFO, "getAlertPolicyTest: requesting {0}", nameOutside);
             client.getAlertPolicy(
                 GetAlertPolicyRequest.newBuilder().setName(nameOutside.toString()).build());
             return null;
@@ -164,6 +185,7 @@ public class VPCServiceControlTest {
         new Callable() {
           public Object call() throws Exception {
             ProjectName nameInside = ProjectName.of(PROJECT_INSIDE);
+            logger.log(Level.INFO, "listAlertPoliciesTest: requesting {0}", nameInside);
             client.listAlertPolicies(
                 ListAlertPoliciesRequest.newBuilder().setName(nameInside.toString()).build());
             return null;
@@ -173,6 +195,7 @@ public class VPCServiceControlTest {
         new Callable() {
           public Object call() throws Exception {
             ProjectName nameOutside = ProjectName.of(PROJECT_OUTSIDE);
+            logger.log(Level.INFO, "listAlertPoliciesTest: requesting {0}", nameOutside);
             client.listAlertPolicies(
                 ListAlertPoliciesRequest.newBuilder().setName(nameOutside.toString()).build());
             return null;
@@ -193,6 +216,7 @@ public class VPCServiceControlTest {
         new Callable() {
           public Object call() throws Exception {
             AlertPolicyName nameInside = AlertPolicyName.of(PROJECT_INSIDE, "MockAlertPolicy");
+            logger.log(Level.INFO, "updateAlertPolicyTest: requesting {0}", nameInside);
             client.updateAlertPolicy(
                 UpdateAlertPolicyRequest.newBuilder()
                     .setAlertPolicy(AlertPolicy.newBuilder().setName(nameInside.toString()).build())
@@ -204,6 +228,7 @@ public class VPCServiceControlTest {
         new Callable() {
           public Object call() throws Exception {
             AlertPolicyName nameOutside = AlertPolicyName.of(PROJECT_OUTSIDE, "MockAlertPolicy");
+            logger.log(Level.INFO, "updateAlertPolicyTest: requesting {0}", nameOutside);
             client.updateAlertPolicy(
                 UpdateAlertPolicyRequest.newBuilder()
                     .setAlertPolicy(
@@ -227,6 +252,7 @@ public class VPCServiceControlTest {
         new Callable() {
           public Object call() throws Exception {
             ProjectName nameInside = ProjectName.of(PROJECT_INSIDE);
+            logger.log(Level.INFO, "createGroupTest: requesting {0}", nameInside);
             client.createGroup(
                 CreateGroupRequest.newBuilder().setName(nameInside.toString()).build());
             return null;
@@ -236,6 +262,7 @@ public class VPCServiceControlTest {
         new Callable() {
           public Object call() throws Exception {
             ProjectName nameOutside = ProjectName.of(PROJECT_OUTSIDE);
+            logger.log(Level.INFO, "createGroupTest: requesting {0}", nameOutside);
             client.createGroup(
                 CreateGroupRequest.newBuilder().setName(nameOutside.toString()).build());
             return null;
@@ -256,6 +283,7 @@ public class VPCServiceControlTest {
         new Callable() {
           public Object call() throws Exception {
             GroupName nameInside = GroupName.of(PROJECT_INSIDE, "MockGroup");
+            logger.log(Level.INFO, "deleteGroupTest: requesting {0}", nameInside);
             client.deleteGroup(
                 DeleteGroupRequest.newBuilder().setName(nameInside.toString()).build());
             return null;
@@ -265,6 +293,7 @@ public class VPCServiceControlTest {
         new Callable() {
           public Object call() throws Exception {
             GroupName nameOutside = GroupName.of(PROJECT_OUTSIDE, "MockGroup");
+            logger.log(Level.INFO, "deleteGroupTest: requesting {0}", nameOutside);
             client.deleteGroup(
                 DeleteGroupRequest.newBuilder().setName(nameOutside.toString()).build());
             return null;
@@ -285,6 +314,7 @@ public class VPCServiceControlTest {
         new Callable() {
           public Object call() throws Exception {
             GroupName nameInside = GroupName.of(PROJECT_INSIDE, "MockGroup");
+            logger.log(Level.INFO, "getGroupTest: requesting {0}", nameInside);
             client.getGroup(GetGroupRequest.newBuilder().setName(nameInside.toString()).build());
             return null;
           }
@@ -293,6 +323,7 @@ public class VPCServiceControlTest {
         new Callable() {
           public Object call() throws Exception {
             GroupName nameOutside = GroupName.of(PROJECT_OUTSIDE, "MockGroup");
+            logger.log(Level.INFO, "getGroupTest: requesting {0}", nameOutside);
             client.getGroup(GetGroupRequest.newBuilder().setName(nameOutside.toString()).build());
             return null;
           }
@@ -312,6 +343,7 @@ public class VPCServiceControlTest {
         new Callable() {
           public Object call() throws Exception {
             GroupName nameInside = GroupName.of(PROJECT_INSIDE, "MockGroup");
+            logger.log(Level.INFO, "listGroupMembersTest: requesting {0}", nameInside);
             client.listGroupMembers(
                 ListGroupMembersRequest.newBuilder().setName(nameInside.toString()).build());
             return null;
@@ -321,6 +353,7 @@ public class VPCServiceControlTest {
         new Callable() {
           public Object call() throws Exception {
             GroupName nameOutside = GroupName.of(PROJECT_OUTSIDE, "MockGroup");
+            logger.log(Level.INFO, "listGroupMembersTest: requesting {0}", nameOutside);
             client.listGroupMembers(
                 ListGroupMembersRequest.newBuilder().setName(nameOutside.toString()).build());
             return null;
@@ -341,6 +374,7 @@ public class VPCServiceControlTest {
         new Callable() {
           public Object call() throws Exception {
             ProjectName nameInside = ProjectName.of(PROJECT_INSIDE);
+            logger.log(Level.INFO, "listGroupsTest: requesting {0}", nameInside);
             client.listGroups(
                 ListGroupsRequest.newBuilder().setName(nameInside.toString()).build());
             return null;
@@ -350,6 +384,7 @@ public class VPCServiceControlTest {
         new Callable() {
           public Object call() throws Exception {
             ProjectName nameOutside = ProjectName.of(PROJECT_OUTSIDE);
+            logger.log(Level.INFO, "listGroupsTest: requesting {0}", nameOutside);
             client.listGroups(
                 ListGroupsRequest.newBuilder().setName(nameOutside.toString()).build());
             return null;
@@ -370,6 +405,7 @@ public class VPCServiceControlTest {
         new Callable() {
           public Object call() throws Exception {
             GroupName nameInside = GroupName.of(PROJECT_INSIDE, "MockGroup");
+            logger.log(Level.INFO, "updateGroupTest: requesting {0}", nameInside);
             client.updateGroup(
                 UpdateGroupRequest.newBuilder()
                     .setGroup(Group.newBuilder().setName(nameInside.toString()).build())
@@ -381,6 +417,7 @@ public class VPCServiceControlTest {
         new Callable() {
           public Object call() throws Exception {
             GroupName nameOutside = GroupName.of(PROJECT_OUTSIDE, "MockGroup");
+            logger.log(Level.INFO, "updateGroupTest: requesting {0}", nameOutside);
             client.updateGroup(
                 UpdateGroupRequest.newBuilder()
                     .setGroup(Group.newBuilder().setName(nameOutside.toString()).build())
@@ -403,6 +440,7 @@ public class VPCServiceControlTest {
         new Callable() {
           public Object call() throws Exception {
             ProjectName nameInside = ProjectName.of(PROJECT_INSIDE);
+            logger.log(Level.INFO, "createMetricDescriptorTest: requesting {0}", nameInside);
             client.createMetricDescriptor(
                 CreateMetricDescriptorRequest.newBuilder().setName(nameInside.toString()).build());
             return null;
@@ -412,6 +450,7 @@ public class VPCServiceControlTest {
         new Callable() {
           public Object call() throws Exception {
             ProjectName nameOutside = ProjectName.of(PROJECT_OUTSIDE);
+            logger.log(Level.INFO, "createMetricDescriptorTest: requesting {0}", nameOutside);
             client.createMetricDescriptor(
                 CreateMetricDescriptorRequest.newBuilder().setName(nameOutside.toString()).build());
             return null;
@@ -432,6 +471,7 @@ public class VPCServiceControlTest {
         new Callable() {
           public Object call() throws Exception {
             ProjectName nameInside = ProjectName.of(PROJECT_INSIDE);
+            logger.log(Level.INFO, "createTimeSeriesTest: requesting {0}", nameInside);
             client.createTimeSeries(nameInside, new ArrayList<TimeSeries>());
             return null;
           }
@@ -440,6 +480,7 @@ public class VPCServiceControlTest {
         new Callable() {
           public Object call() throws Exception {
             ProjectName nameOutside = ProjectName.of(PROJECT_OUTSIDE);
+            logger.log(Level.INFO, "createTimeSeriesTest: requesting {0}", nameOutside);
             client.createTimeSeries(nameOutside, new ArrayList<TimeSeries>());
             return null;
           }
@@ -460,6 +501,7 @@ public class VPCServiceControlTest {
           public Object call() throws Exception {
             MetricDescriptorName nameInside =
                 MetricDescriptorName.of(PROJECT_INSIDE, "MockMetricDescriptor");
+            logger.log(Level.INFO, "deleteMetricDescriptorTest: requesting {0}", nameInside);
             client.deleteMetricDescriptor(
                 DeleteMetricDescriptorRequest.newBuilder().setName(nameInside.toString()).build());
             return null;
@@ -470,6 +512,7 @@ public class VPCServiceControlTest {
           public Object call() throws Exception {
             MetricDescriptorName nameOutside =
                 MetricDescriptorName.of(PROJECT_OUTSIDE, "MockMetricDescriptor");
+            logger.log(Level.INFO, "deleteMetricDescriptorTest: requesting {0}", nameOutside);
             client.deleteMetricDescriptor(
                 DeleteMetricDescriptorRequest.newBuilder().setName(nameOutside.toString()).build());
             return null;
@@ -491,6 +534,7 @@ public class VPCServiceControlTest {
           public Object call() throws Exception {
             MetricDescriptorName nameInside =
                 MetricDescriptorName.of(PROJECT_INSIDE, "MockMetricDescriptor");
+            logger.log(Level.INFO, "getMetricDescriptorTest: requesting {0}", nameInside);
             client.getMetricDescriptor(
                 GetMetricDescriptorRequest.newBuilder().setName(nameInside.toString()).build());
             return null;
@@ -501,6 +545,7 @@ public class VPCServiceControlTest {
           public Object call() throws Exception {
             MetricDescriptorName nameOutside =
                 MetricDescriptorName.of(PROJECT_OUTSIDE, "MockMetricDescriptor");
+            logger.log(Level.INFO, "getMetricDescriptorTest: requesting {0}", nameOutside);
             client.getMetricDescriptor(
                 GetMetricDescriptorRequest.newBuilder().setName(nameOutside.toString()).build());
             return null;
@@ -523,6 +568,8 @@ public class VPCServiceControlTest {
             MonitoredResourceDescriptorName nameInside =
                 MonitoredResourceDescriptorName.of(
                     PROJECT_INSIDE, "MockMonitoredResourceDescriptor");
+            logger.log(
+                Level.INFO, "getMonitoredResourceDescriptorTest: requesting {0}", nameInside);
             client.getMonitoredResourceDescriptor(
                 GetMonitoredResourceDescriptorRequest.newBuilder()
                     .setName(nameInside.toString())
@@ -536,6 +583,8 @@ public class VPCServiceControlTest {
             MonitoredResourceDescriptorName nameOutside =
                 MonitoredResourceDescriptorName.of(
                     PROJECT_OUTSIDE, "MockMonitoredResourceDescriptor");
+            logger.log(
+                Level.INFO, "getMonitoredResourceDescriptorTest: requesting {0}", nameOutside);
             client.getMonitoredResourceDescriptor(
                 GetMonitoredResourceDescriptorRequest.newBuilder()
                     .setName(nameOutside.toString())
@@ -558,6 +607,7 @@ public class VPCServiceControlTest {
         new Callable() {
           public Object call() throws Exception {
             ProjectName nameInside = ProjectName.of(PROJECT_INSIDE);
+            logger.log(Level.INFO, "listMetricDescriptorsTest: requesting {0}", nameInside);
             client.listMetricDescriptors(
                 ListMetricDescriptorsRequest.newBuilder().setName(nameInside.toString()).build());
             return null;
@@ -567,6 +617,7 @@ public class VPCServiceControlTest {
         new Callable() {
           public Object call() throws Exception {
             ProjectName nameOutside = ProjectName.of(PROJECT_OUTSIDE);
+            logger.log(Level.INFO, "listMetricDescriptorsTest: requesting {0}", nameOutside);
             client.listMetricDescriptors(
                 ListMetricDescriptorsRequest.newBuilder().setName(nameOutside.toString()).build());
             return null;
@@ -587,6 +638,8 @@ public class VPCServiceControlTest {
         new Callable() {
           public Object call() throws Exception {
             ProjectName nameInside = ProjectName.of(PROJECT_INSIDE);
+            logger.log(
+                Level.INFO, "listMonitoredResourceDescriptorsTest: requesting {0}", nameInside);
             client.listMonitoredResourceDescriptors(
                 ListMonitoredResourceDescriptorsRequest.newBuilder()
                     .setName(nameInside.toString())
@@ -598,6 +651,8 @@ public class VPCServiceControlTest {
         new Callable() {
           public Object call() throws Exception {
             ProjectName nameOutside = ProjectName.of(PROJECT_OUTSIDE);
+            logger.log(
+                Level.INFO, "listMonitoredResourceDescriptorsTest: requesting {0}", nameOutside);
             client.listMonitoredResourceDescriptors(
                 ListMonitoredResourceDescriptorsRequest.newBuilder()
                     .setName(nameOutside.toString())
@@ -620,6 +675,7 @@ public class VPCServiceControlTest {
         new Callable() {
           public Object call() throws Exception {
             ProjectName nameInside = ProjectName.of(PROJECT_INSIDE);
+            logger.log(Level.INFO, "listTimeSeriesTest: requesting {0}", nameInside);
             client.listTimeSeries(
                 ListTimeSeriesRequest.newBuilder().setName(nameInside.toString()).build());
             return null;
@@ -629,6 +685,7 @@ public class VPCServiceControlTest {
         new Callable() {
           public Object call() throws Exception {
             ProjectName nameOutside = ProjectName.of(PROJECT_OUTSIDE);
+            logger.log(Level.INFO, "listTimeSeriesTest: requesting {0}", nameOutside);
             client.listTimeSeries(
                 ListTimeSeriesRequest.newBuilder().setName(nameOutside.toString()).build());
             return null;
@@ -649,6 +706,7 @@ public class VPCServiceControlTest {
         new Callable() {
           public Object call() throws Exception {
             ProjectName nameInside = ProjectName.of(PROJECT_INSIDE);
+            logger.log(Level.INFO, "createNotificationChannelTest: requesting {0}", nameInside);
             client.createNotificationChannel(
                 CreateNotificationChannelRequest.newBuilder()
                     .setName(nameInside.toString())
@@ -660,6 +718,7 @@ public class VPCServiceControlTest {
         new Callable() {
           public Object call() throws Exception {
             ProjectName nameOutside = ProjectName.of(PROJECT_OUTSIDE);
+            logger.log(Level.INFO, "createNotificationChannelTest: requesting {0}", nameOutside);
             client.createNotificationChannel(
                 CreateNotificationChannelRequest.newBuilder()
                     .setName(nameOutside.toString())
@@ -683,6 +742,7 @@ public class VPCServiceControlTest {
           public Object call() throws Exception {
             NotificationChannelName nameInside =
                 NotificationChannelName.of(PROJECT_INSIDE, "MockNotificationChannel");
+            logger.log(Level.INFO, "deleteNotificationChannelTest: requesting {0}", nameInside);
             client.deleteNotificationChannel(
                 DeleteNotificationChannelRequest.newBuilder()
                     .setName(nameInside.toString())
@@ -695,6 +755,7 @@ public class VPCServiceControlTest {
           public Object call() throws Exception {
             NotificationChannelName nameOutside =
                 NotificationChannelName.of(PROJECT_OUTSIDE, "MockNotificationChannel");
+            logger.log(Level.INFO, "deleteNotificationChannelTest: requesting {0}", nameOutside);
             client.deleteNotificationChannel(
                 DeleteNotificationChannelRequest.newBuilder()
                     .setName(nameOutside.toString())
@@ -718,6 +779,7 @@ public class VPCServiceControlTest {
           public Object call() throws Exception {
             NotificationChannelName nameInside =
                 NotificationChannelName.of(PROJECT_INSIDE, "MockNotificationChannel");
+            logger.log(Level.INFO, "getNotificationChannelTest: requesting {0}", nameInside);
             client.getNotificationChannel(
                 GetNotificationChannelRequest.newBuilder().setName(nameInside.toString()).build());
             return null;
@@ -728,6 +790,7 @@ public class VPCServiceControlTest {
           public Object call() throws Exception {
             NotificationChannelName nameOutside =
                 NotificationChannelName.of(PROJECT_OUTSIDE, "MockNotificationChannel");
+            logger.log(Level.INFO, "getNotificationChannelTest: requesting {0}", nameOutside);
             client.getNotificationChannel(
                 GetNotificationChannelRequest.newBuilder().setName(nameOutside.toString()).build());
             return null;
@@ -750,6 +813,8 @@ public class VPCServiceControlTest {
             NotificationChannelDescriptorName nameInside =
                 NotificationChannelDescriptorName.of(
                     PROJECT_INSIDE, "MockNotificationChannelDescriptor");
+            logger.log(
+                Level.INFO, "getNotificationChannelDescriptorTest: requesting {0}", nameInside);
             client.getNotificationChannelDescriptor(
                 GetNotificationChannelDescriptorRequest.newBuilder()
                     .setName(nameInside.toString())
@@ -763,6 +828,8 @@ public class VPCServiceControlTest {
             NotificationChannelDescriptorName nameOutside =
                 NotificationChannelDescriptorName.of(
                     PROJECT_OUTSIDE, "MockNotificationChannelDescriptor");
+            logger.log(
+                Level.INFO, "getNotificationChannelDescriptorTest: requesting {0}", nameOutside);
             client.getNotificationChannelDescriptor(
                 GetNotificationChannelDescriptorRequest.newBuilder()
                     .setName(nameOutside.toString())
@@ -785,6 +852,8 @@ public class VPCServiceControlTest {
         new Callable() {
           public Object call() throws Exception {
             ProjectName nameInside = ProjectName.of(PROJECT_INSIDE);
+            logger.log(
+                Level.INFO, "listNotificationChannelDescriptorsTest: requesting {0}", nameInside);
             client.listNotificationChannelDescriptors(
                 ListNotificationChannelDescriptorsRequest.newBuilder()
                     .setName(nameInside.toString())
@@ -796,6 +865,8 @@ public class VPCServiceControlTest {
         new Callable() {
           public Object call() throws Exception {
             ProjectName nameOutside = ProjectName.of(PROJECT_OUTSIDE);
+            logger.log(
+                Level.INFO, "listNotificationChannelDescriptorsTest: requesting {0}", nameOutside);
             client.listNotificationChannelDescriptors(
                 ListNotificationChannelDescriptorsRequest.newBuilder()
                     .setName(nameOutside.toString())
@@ -818,6 +889,7 @@ public class VPCServiceControlTest {
         new Callable() {
           public Object call() throws Exception {
             ProjectName nameInside = ProjectName.of(PROJECT_INSIDE);
+            logger.log(Level.INFO, "listNotificationChannelsTest: requesting {0}", nameInside);
             client.listNotificationChannels(
                 ListNotificationChannelsRequest.newBuilder()
                     .setName(nameInside.toString())
@@ -829,6 +901,7 @@ public class VPCServiceControlTest {
         new Callable() {
           public Object call() throws Exception {
             ProjectName nameOutside = ProjectName.of(PROJECT_OUTSIDE);
+            logger.log(Level.INFO, "listNotificationChannelsTest: requesting {0}", nameOutside);
             client.listNotificationChannels(
                 ListNotificationChannelsRequest.newBuilder()
                     .setName(nameOutside.toString())
@@ -852,6 +925,7 @@ public class VPCServiceControlTest {
           public Object call() throws Exception {
             NotificationChannelName nameInside =
                 NotificationChannelName.of(PROJECT_INSIDE, "MockNotificationChannel");
+            logger.log(Level.INFO, "updateNotificationChannelTest: requesting {0}", nameInside);
             client.updateNotificationChannel(
                 UpdateNotificationChannelRequest.newBuilder()
                     .setNotificationChannel(
@@ -865,6 +939,7 @@ public class VPCServiceControlTest {
           public Object call() throws Exception {
             NotificationChannelName nameOutside =
                 NotificationChannelName.of(PROJECT_OUTSIDE, "MockNotificationChannel");
+            logger.log(Level.INFO, "updateNotificationChannelTest: requesting {0}", nameOutside);
             client.updateNotificationChannel(
                 UpdateNotificationChannelRequest.newBuilder()
                     .setNotificationChannel(
@@ -888,6 +963,7 @@ public class VPCServiceControlTest {
         new Callable() {
           public Object call() throws Exception {
             ProjectName nameInside = ProjectName.of(PROJECT_INSIDE);
+            logger.log(Level.INFO, "createUptimeCheckConfigTest: requesting {0}", nameInside);
             client.createUptimeCheckConfig(
                 CreateUptimeCheckConfigRequest.newBuilder()
                     .setParent(nameInside.toString())
@@ -899,6 +975,7 @@ public class VPCServiceControlTest {
         new Callable() {
           public Object call() throws Exception {
             ProjectName nameOutside = ProjectName.of(PROJECT_OUTSIDE);
+            logger.log(Level.INFO, "createUptimeCheckConfigTest: requesting {0}", nameOutside);
             client.createUptimeCheckConfig(
                 CreateUptimeCheckConfigRequest.newBuilder()
                     .setParent(nameOutside.toString())
@@ -922,6 +999,7 @@ public class VPCServiceControlTest {
           public Object call() throws Exception {
             UptimeCheckConfigName nameInside =
                 UptimeCheckConfigName.of(PROJECT_INSIDE, "MockUptimeCheckConfig");
+            logger.log(Level.INFO, "deleteUptimeCheckConfigTest: requesting {0}", nameInside);
             client.deleteUptimeCheckConfig(
                 DeleteUptimeCheckConfigRequest.newBuilder().setName(nameInside.toString()).build());
             return null;
@@ -932,6 +1010,7 @@ public class VPCServiceControlTest {
           public Object call() throws Exception {
             UptimeCheckConfigName nameOutside =
                 UptimeCheckConfigName.of(PROJECT_OUTSIDE, "MockUptimeCheckConfig");
+            logger.log(Level.INFO, "deleteUptimeCheckConfigTest: requesting {0}", nameOutside);
             client.deleteUptimeCheckConfig(
                 DeleteUptimeCheckConfigRequest.newBuilder()
                     .setName(nameOutside.toString())
@@ -955,6 +1034,7 @@ public class VPCServiceControlTest {
           public Object call() throws Exception {
             UptimeCheckConfigName nameInside =
                 UptimeCheckConfigName.of(PROJECT_INSIDE, "MockUptimeCheckConfig");
+            logger.log(Level.INFO, "getUptimeCheckConfigTest: requesting {0}", nameInside);
             client.getUptimeCheckConfig(
                 GetUptimeCheckConfigRequest.newBuilder().setName(nameInside.toString()).build());
             return null;
@@ -965,6 +1045,7 @@ public class VPCServiceControlTest {
           public Object call() throws Exception {
             UptimeCheckConfigName nameOutside =
                 UptimeCheckConfigName.of(PROJECT_OUTSIDE, "MockUptimeCheckConfig");
+            logger.log(Level.INFO, "getUptimeCheckConfigTest: requesting {0}", nameOutside);
             client.getUptimeCheckConfig(
                 GetUptimeCheckConfigRequest.newBuilder().setName(nameOutside.toString()).build());
             return null;
@@ -985,6 +1066,7 @@ public class VPCServiceControlTest {
         new Callable() {
           public Object call() throws Exception {
             ProjectName nameInside = ProjectName.of(PROJECT_INSIDE);
+            logger.log(Level.INFO, "listUptimeCheckConfigsTest: requesting {0}", nameInside);
             client.listUptimeCheckConfigs(
                 ListUptimeCheckConfigsRequest.newBuilder()
                     .setParent(nameInside.toString())
@@ -996,6 +1078,7 @@ public class VPCServiceControlTest {
         new Callable() {
           public Object call() throws Exception {
             ProjectName nameOutside = ProjectName.of(PROJECT_OUTSIDE);
+            logger.log(Level.INFO, "listUptimeCheckConfigsTest: requesting {0}", nameOutside);
             client.listUptimeCheckConfigs(
                 ListUptimeCheckConfigsRequest.newBuilder()
                     .setParent(nameOutside.toString())
@@ -1019,6 +1102,7 @@ public class VPCServiceControlTest {
           public Object call() throws Exception {
             UptimeCheckConfigName nameInside =
                 UptimeCheckConfigName.of(PROJECT_INSIDE, "MockUptimeCheckConfig");
+            logger.log(Level.INFO, "updateUptimeCheckConfigTest: requesting {0}", nameInside);
             client.updateUptimeCheckConfig(
                 UpdateUptimeCheckConfigRequest.newBuilder()
                     .setUptimeCheckConfig(
@@ -1032,6 +1116,7 @@ public class VPCServiceControlTest {
           public Object call() throws Exception {
             UptimeCheckConfigName nameOutside =
                 UptimeCheckConfigName.of(PROJECT_OUTSIDE, "MockUptimeCheckConfig");
+            logger.log(Level.INFO, "updateUptimeCheckConfigTest: requesting {0}", nameOutside);
             client.updateUptimeCheckConfig(
                 UpdateUptimeCheckConfigRequest.newBuilder()
                     .setUptimeCheckConfig(
