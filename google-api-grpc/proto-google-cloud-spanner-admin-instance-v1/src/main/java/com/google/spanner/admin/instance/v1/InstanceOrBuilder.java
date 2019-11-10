@@ -15,7 +15,7 @@ public interface InstanceOrBuilder
    * Required. A unique identifier for the instance, which cannot be changed
    * after the instance is created. Values are of the form
    * `projects/&lt;project&gt;/instances/[a-z][-a-z0-9]*[a-z0-9]`. The final
-   * segment of the name must be between 6 and 30 characters in length.
+   * segment of the name must be between 2 and 64 characters in length.
    * </pre>
    *
    * <code>string name = 1;</code>
@@ -28,7 +28,7 @@ public interface InstanceOrBuilder
    * Required. A unique identifier for the instance, which cannot be changed
    * after the instance is created. Values are of the form
    * `projects/&lt;project&gt;/instances/[a-z][-a-z0-9]*[a-z0-9]`. The final
-   * segment of the name must be between 6 and 30 characters in length.
+   * segment of the name must be between 2 and 64 characters in length.
    * </pre>
    *
    * <code>string name = 1;</code>
@@ -45,7 +45,7 @@ public interface InstanceOrBuilder
    * [ListInstanceConfigs][google.spanner.admin.instance.v1.InstanceAdmin.ListInstanceConfigs].
    * </pre>
    *
-   * <code>string config = 2;</code>
+   * <code>string config = 2 [(.google.api.resource_reference) = { ... }</code>
    */
   java.lang.String getConfig();
   /**
@@ -58,7 +58,7 @@ public interface InstanceOrBuilder
    * [ListInstanceConfigs][google.spanner.admin.instance.v1.InstanceAdmin.ListInstanceConfigs].
    * </pre>
    *
-   * <code>string config = 2;</code>
+   * <code>string config = 2 [(.google.api.resource_reference) = { ... }</code>
    */
   com.google.protobuf.ByteString getConfigBytes();
 
@@ -105,10 +105,10 @@ public interface InstanceOrBuilder
    *
    * <pre>
    * Output only. The current instance state. For
-   * [CreateInstance][google.spanner.admin.instance.v1.InstanceAdmin.CreateInstance],
-   * the state must be either omitted or set to `CREATING`. For
-   * [UpdateInstance][google.spanner.admin.instance.v1.InstanceAdmin.UpdateInstance],
-   * the state must be either omitted or set to `READY`.
+   * [CreateInstance][google.spanner.admin.instance.v1.InstanceAdmin.CreateInstance], the state must be
+   * either omitted or set to `CREATING`. For
+   * [UpdateInstance][google.spanner.admin.instance.v1.InstanceAdmin.UpdateInstance], the state must be
+   * either omitted or set to `READY`.
    * </pre>
    *
    * <code>.google.spanner.admin.instance.v1.Instance.State state = 6;</code>
@@ -119,10 +119,10 @@ public interface InstanceOrBuilder
    *
    * <pre>
    * Output only. The current instance state. For
-   * [CreateInstance][google.spanner.admin.instance.v1.InstanceAdmin.CreateInstance],
-   * the state must be either omitted or set to `CREATING`. For
-   * [UpdateInstance][google.spanner.admin.instance.v1.InstanceAdmin.UpdateInstance],
-   * the state must be either omitted or set to `READY`.
+   * [CreateInstance][google.spanner.admin.instance.v1.InstanceAdmin.CreateInstance], the state must be
+   * either omitted or set to `CREATING`. For
+   * [UpdateInstance][google.spanner.admin.instance.v1.InstanceAdmin.UpdateInstance], the state must be
+   * either omitted or set to `READY`.
    * </pre>
    *
    * <code>.google.spanner.admin.instance.v1.Instance.State state = 6;</code>

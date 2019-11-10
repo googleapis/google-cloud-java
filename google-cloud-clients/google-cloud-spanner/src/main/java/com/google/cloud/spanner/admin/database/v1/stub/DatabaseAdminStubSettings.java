@@ -107,9 +107,6 @@ public class DatabaseAdminStubSettings extends StubSettings<DatabaseAdminStubSet
           .add("https://www.googleapis.com/auth/spanner.admin")
           .build();
 
-  private final PagedCallSettings<
-          ListDatabasesRequest, ListDatabasesResponse, ListDatabasesPagedResponse>
-      listDatabasesSettings;
   private final UnaryCallSettings<CreateDatabaseRequest, Operation> createDatabaseSettings;
   private final OperationCallSettings<CreateDatabaseRequest, Database, CreateDatabaseMetadata>
       createDatabaseOperationSettings;
@@ -124,12 +121,9 @@ public class DatabaseAdminStubSettings extends StubSettings<DatabaseAdminStubSet
   private final UnaryCallSettings<GetIamPolicyRequest, Policy> getIamPolicySettings;
   private final UnaryCallSettings<TestIamPermissionsRequest, TestIamPermissionsResponse>
       testIamPermissionsSettings;
-
-  /** Returns the object with the settings used for calls to listDatabases. */
-  public PagedCallSettings<ListDatabasesRequest, ListDatabasesResponse, ListDatabasesPagedResponse>
-      listDatabasesSettings() {
-    return listDatabasesSettings;
-  }
+  private final PagedCallSettings<
+          ListDatabasesRequest, ListDatabasesResponse, ListDatabasesPagedResponse>
+      listDatabasesSettings;
 
   /** Returns the object with the settings used for calls to createDatabase. */
   public UnaryCallSettings<CreateDatabaseRequest, Operation> createDatabaseSettings() {
@@ -184,6 +178,12 @@ public class DatabaseAdminStubSettings extends StubSettings<DatabaseAdminStubSet
   public UnaryCallSettings<TestIamPermissionsRequest, TestIamPermissionsResponse>
       testIamPermissionsSettings() {
     return testIamPermissionsSettings;
+  }
+
+  /** Returns the object with the settings used for calls to listDatabases. */
+  public PagedCallSettings<ListDatabasesRequest, ListDatabasesResponse, ListDatabasesPagedResponse>
+      listDatabasesSettings() {
+    return listDatabasesSettings;
   }
 
   @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
@@ -255,7 +255,6 @@ public class DatabaseAdminStubSettings extends StubSettings<DatabaseAdminStubSet
   protected DatabaseAdminStubSettings(Builder settingsBuilder) throws IOException {
     super(settingsBuilder);
 
-    listDatabasesSettings = settingsBuilder.listDatabasesSettings().build();
     createDatabaseSettings = settingsBuilder.createDatabaseSettings().build();
     createDatabaseOperationSettings = settingsBuilder.createDatabaseOperationSettings().build();
     getDatabaseSettings = settingsBuilder.getDatabaseSettings().build();
@@ -267,6 +266,7 @@ public class DatabaseAdminStubSettings extends StubSettings<DatabaseAdminStubSet
     setIamPolicySettings = settingsBuilder.setIamPolicySettings().build();
     getIamPolicySettings = settingsBuilder.getIamPolicySettings().build();
     testIamPermissionsSettings = settingsBuilder.testIamPermissionsSettings().build();
+    listDatabasesSettings = settingsBuilder.listDatabasesSettings().build();
   }
 
   private static final PagedListDescriptor<ListDatabasesRequest, ListDatabasesResponse, Database>
@@ -326,9 +326,6 @@ public class DatabaseAdminStubSettings extends StubSettings<DatabaseAdminStubSet
   public static class Builder extends StubSettings.Builder<DatabaseAdminStubSettings, Builder> {
     private final ImmutableList<UnaryCallSettings.Builder<?, ?>> unaryMethodSettingsBuilders;
 
-    private final PagedCallSettings.Builder<
-            ListDatabasesRequest, ListDatabasesResponse, ListDatabasesPagedResponse>
-        listDatabasesSettings;
     private final UnaryCallSettings.Builder<CreateDatabaseRequest, Operation>
         createDatabaseSettings;
     private final OperationCallSettings.Builder<
@@ -347,6 +344,9 @@ public class DatabaseAdminStubSettings extends StubSettings<DatabaseAdminStubSet
     private final UnaryCallSettings.Builder<GetIamPolicyRequest, Policy> getIamPolicySettings;
     private final UnaryCallSettings.Builder<TestIamPermissionsRequest, TestIamPermissionsResponse>
         testIamPermissionsSettings;
+    private final PagedCallSettings.Builder<
+            ListDatabasesRequest, ListDatabasesResponse, ListDatabasesPagedResponse>
+        listDatabasesSettings;
 
     private static final ImmutableMap<String, ImmutableSet<StatusCode.Code>>
         RETRYABLE_CODE_DEFINITIONS;
@@ -389,8 +389,6 @@ public class DatabaseAdminStubSettings extends StubSettings<DatabaseAdminStubSet
     protected Builder(ClientContext clientContext) {
       super(clientContext);
 
-      listDatabasesSettings = PagedCallSettings.newBuilder(LIST_DATABASES_PAGE_STR_FACT);
-
       createDatabaseSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
       createDatabaseOperationSettings = OperationCallSettings.newBuilder();
@@ -411,9 +409,10 @@ public class DatabaseAdminStubSettings extends StubSettings<DatabaseAdminStubSet
 
       testIamPermissionsSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
+      listDatabasesSettings = PagedCallSettings.newBuilder(LIST_DATABASES_PAGE_STR_FACT);
+
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
-              listDatabasesSettings,
               createDatabaseSettings,
               getDatabaseSettings,
               updateDatabaseDdlSettings,
@@ -421,7 +420,8 @@ public class DatabaseAdminStubSettings extends StubSettings<DatabaseAdminStubSet
               getDatabaseDdlSettings,
               setIamPolicySettings,
               getIamPolicySettings,
-              testIamPermissionsSettings);
+              testIamPermissionsSettings,
+              listDatabasesSettings);
 
       initDefaults(this);
     }
@@ -436,11 +436,6 @@ public class DatabaseAdminStubSettings extends StubSettings<DatabaseAdminStubSet
     }
 
     private static Builder initDefaults(Builder builder) {
-
-      builder
-          .listDatabasesSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
 
       builder
           .createDatabaseSettings()
@@ -480,6 +475,11 @@ public class DatabaseAdminStubSettings extends StubSettings<DatabaseAdminStubSet
       builder
           .testIamPermissionsSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
+
+      builder
+          .listDatabasesSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
       builder
           .createDatabaseOperationSettings()
@@ -535,7 +535,6 @@ public class DatabaseAdminStubSettings extends StubSettings<DatabaseAdminStubSet
     protected Builder(DatabaseAdminStubSettings settings) {
       super(settings);
 
-      listDatabasesSettings = settings.listDatabasesSettings.toBuilder();
       createDatabaseSettings = settings.createDatabaseSettings.toBuilder();
       createDatabaseOperationSettings = settings.createDatabaseOperationSettings.toBuilder();
       getDatabaseSettings = settings.getDatabaseSettings.toBuilder();
@@ -546,10 +545,10 @@ public class DatabaseAdminStubSettings extends StubSettings<DatabaseAdminStubSet
       setIamPolicySettings = settings.setIamPolicySettings.toBuilder();
       getIamPolicySettings = settings.getIamPolicySettings.toBuilder();
       testIamPermissionsSettings = settings.testIamPermissionsSettings.toBuilder();
+      listDatabasesSettings = settings.listDatabasesSettings.toBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
-              listDatabasesSettings,
               createDatabaseSettings,
               getDatabaseSettings,
               updateDatabaseDdlSettings,
@@ -557,7 +556,8 @@ public class DatabaseAdminStubSettings extends StubSettings<DatabaseAdminStubSet
               getDatabaseDdlSettings,
               setIamPolicySettings,
               getIamPolicySettings,
-              testIamPermissionsSettings);
+              testIamPermissionsSettings,
+              listDatabasesSettings);
     }
 
     // NEXT_MAJOR_VER: remove 'throws Exception'
@@ -574,13 +574,6 @@ public class DatabaseAdminStubSettings extends StubSettings<DatabaseAdminStubSet
 
     public ImmutableList<UnaryCallSettings.Builder<?, ?>> unaryMethodSettingsBuilders() {
       return unaryMethodSettingsBuilders;
-    }
-
-    /** Returns the builder for the settings used for calls to listDatabases. */
-    public PagedCallSettings.Builder<
-            ListDatabasesRequest, ListDatabasesResponse, ListDatabasesPagedResponse>
-        listDatabasesSettings() {
-      return listDatabasesSettings;
     }
 
     /** Returns the builder for the settings used for calls to createDatabase. */
@@ -640,6 +633,13 @@ public class DatabaseAdminStubSettings extends StubSettings<DatabaseAdminStubSet
     public UnaryCallSettings.Builder<TestIamPermissionsRequest, TestIamPermissionsResponse>
         testIamPermissionsSettings() {
       return testIamPermissionsSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to listDatabases. */
+    public PagedCallSettings.Builder<
+            ListDatabasesRequest, ListDatabasesResponse, ListDatabasesPagedResponse>
+        listDatabasesSettings() {
+      return listDatabasesSettings;
     }
 
     @Override

@@ -66,8 +66,8 @@ public interface ListInstanceConfigsResponseOrBuilder
    *
    * <pre>
    * `next_page_token` can be sent in a subsequent
-   * [ListInstanceConfigs][google.spanner.admin.instance.v1.InstanceAdmin.ListInstanceConfigs]
-   * call to fetch more of the matching instance configurations.
+   * [ListInstanceConfigs][google.spanner.admin.instance.v1.InstanceAdmin.ListInstanceConfigs] call to
+   * fetch more of the matching instance configurations.
    * </pre>
    *
    * <code>string next_page_token = 2;</code>
@@ -78,8 +78,8 @@ public interface ListInstanceConfigsResponseOrBuilder
    *
    * <pre>
    * `next_page_token` can be sent in a subsequent
-   * [ListInstanceConfigs][google.spanner.admin.instance.v1.InstanceAdmin.ListInstanceConfigs]
-   * call to fetch more of the matching instance configurations.
+   * [ListInstanceConfigs][google.spanner.admin.instance.v1.InstanceAdmin.ListInstanceConfigs] call to
+   * fetch more of the matching instance configurations.
    * </pre>
    *
    * <code>string next_page_token = 2;</code>

@@ -33,9 +33,8 @@ public interface TypeOrBuilder
    *
    *
    * <pre>
-   * If [code][google.spanner.v1.Type.code] ==
-   * [ARRAY][google.spanner.v1.TypeCode.ARRAY], then `array_element_type` is the
-   * type of the array elements.
+   * If [code][google.spanner.v1.Type.code] == [ARRAY][google.spanner.v1.TypeCode.ARRAY], then `array_element_type`
+   * is the type of the array elements.
    * </pre>
    *
    * <code>.google.spanner.v1.Type array_element_type = 2;</code>
@@ -45,9 +44,8 @@ public interface TypeOrBuilder
    *
    *
    * <pre>
-   * If [code][google.spanner.v1.Type.code] ==
-   * [ARRAY][google.spanner.v1.TypeCode.ARRAY], then `array_element_type` is the
-   * type of the array elements.
+   * If [code][google.spanner.v1.Type.code] == [ARRAY][google.spanner.v1.TypeCode.ARRAY], then `array_element_type`
+   * is the type of the array elements.
    * </pre>
    *
    * <code>.google.spanner.v1.Type array_element_type = 2;</code>
@@ -57,9 +55,8 @@ public interface TypeOrBuilder
    *
    *
    * <pre>
-   * If [code][google.spanner.v1.Type.code] ==
-   * [ARRAY][google.spanner.v1.TypeCode.ARRAY], then `array_element_type` is the
-   * type of the array elements.
+   * If [code][google.spanner.v1.Type.code] == [ARRAY][google.spanner.v1.TypeCode.ARRAY], then `array_element_type`
+   * is the type of the array elements.
    * </pre>
    *
    * <code>.google.spanner.v1.Type array_element_type = 2;</code>
@@ -70,9 +67,8 @@ public interface TypeOrBuilder
    *
    *
    * <pre>
-   * If [code][google.spanner.v1.Type.code] ==
-   * [STRUCT][google.spanner.v1.TypeCode.STRUCT], then `struct_type` provides
-   * type information for the struct's fields.
+   * If [code][google.spanner.v1.Type.code] == [STRUCT][google.spanner.v1.TypeCode.STRUCT], then `struct_type`
+   * provides type information for the struct's fields.
    * </pre>
    *
    * <code>.google.spanner.v1.StructType struct_type = 3;</code>
@@ -82,9 +78,8 @@ public interface TypeOrBuilder
    *
    *
    * <pre>
-   * If [code][google.spanner.v1.Type.code] ==
-   * [STRUCT][google.spanner.v1.TypeCode.STRUCT], then `struct_type` provides
-   * type information for the struct's fields.
+   * If [code][google.spanner.v1.Type.code] == [STRUCT][google.spanner.v1.TypeCode.STRUCT], then `struct_type`
+   * provides type information for the struct's fields.
    * </pre>
    *
    * <code>.google.spanner.v1.StructType struct_type = 3;</code>
@@ -94,9 +89,8 @@ public interface TypeOrBuilder
    *
    *
    * <pre>
-   * If [code][google.spanner.v1.Type.code] ==
-   * [STRUCT][google.spanner.v1.TypeCode.STRUCT], then `struct_type` provides
-   * type information for the struct's fields.
+   * If [code][google.spanner.v1.Type.code] == [STRUCT][google.spanner.v1.TypeCode.STRUCT], then `struct_type`
+   * provides type information for the struct's fields.
    * </pre>
    *
    * <code>.google.spanner.v1.StructType struct_type = 3;</code>

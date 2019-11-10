@@ -121,7 +121,9 @@ public final class BatchCreateSessionsRequest extends com.google.protobuf.Genera
    * Required. The database in which the new sessions are created.
    * </pre>
    *
-   * <code>string database = 1;</code>
+   * <code>
+   * string database = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    */
   public java.lang.String getDatabase() {
     java.lang.Object ref = database_;
@@ -141,7 +143,9 @@ public final class BatchCreateSessionsRequest extends com.google.protobuf.Genera
    * Required. The database in which the new sessions are created.
    * </pre>
    *
-   * <code>string database = 1;</code>
+   * <code>
+   * string database = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    */
   public com.google.protobuf.ByteString getDatabaseBytes() {
     java.lang.Object ref = database_;
@@ -210,7 +214,7 @@ public final class BatchCreateSessionsRequest extends com.google.protobuf.Genera
    * as necessary).
    * </pre>
    *
-   * <code>int32 session_count = 3;</code>
+   * <code>int32 session_count = 3 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   public int getSessionCount() {
     return sessionCount_;
@@ -585,7 +589,9 @@ public final class BatchCreateSessionsRequest extends com.google.protobuf.Genera
      * Required. The database in which the new sessions are created.
      * </pre>
      *
-     * <code>string database = 1;</code>
+     * <code>
+     * string database = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      */
     public java.lang.String getDatabase() {
       java.lang.Object ref = database_;
@@ -605,7 +611,9 @@ public final class BatchCreateSessionsRequest extends com.google.protobuf.Genera
      * Required. The database in which the new sessions are created.
      * </pre>
      *
-     * <code>string database = 1;</code>
+     * <code>
+     * string database = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      */
     public com.google.protobuf.ByteString getDatabaseBytes() {
       java.lang.Object ref = database_;
@@ -625,7 +633,9 @@ public final class BatchCreateSessionsRequest extends com.google.protobuf.Genera
      * Required. The database in which the new sessions are created.
      * </pre>
      *
-     * <code>string database = 1;</code>
+     * <code>
+     * string database = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      */
     public Builder setDatabase(java.lang.String value) {
       if (value == null) {
@@ -643,7 +653,9 @@ public final class BatchCreateSessionsRequest extends com.google.protobuf.Genera
      * Required. The database in which the new sessions are created.
      * </pre>
      *
-     * <code>string database = 1;</code>
+     * <code>
+     * string database = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      */
     public Builder clearDatabase() {
 
@@ -658,7 +670,9 @@ public final class BatchCreateSessionsRequest extends com.google.protobuf.Genera
      * Required. The database in which the new sessions are created.
      * </pre>
      *
-     * <code>string database = 1;</code>
+     * <code>
+     * string database = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      */
     public Builder setDatabaseBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -865,7 +879,7 @@ public final class BatchCreateSessionsRequest extends com.google.protobuf.Genera
      * as necessary).
      * </pre>
      *
-     * <code>int32 session_count = 3;</code>
+     * <code>int32 session_count = 3 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public int getSessionCount() {
       return sessionCount_;
@@ -882,7 +896,7 @@ public final class BatchCreateSessionsRequest extends com.google.protobuf.Genera
      * as necessary).
      * </pre>
      *
-     * <code>int32 session_count = 3;</code>
+     * <code>int32 session_count = 3 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder setSessionCount(int value) {
 
@@ -902,7 +916,7 @@ public final class BatchCreateSessionsRequest extends com.google.protobuf.Genera
      * as necessary).
      * </pre>
      *
-     * <code>int32 session_count = 3;</code>
+     * <code>int32 session_count = 3 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder clearSessionCount() {
 

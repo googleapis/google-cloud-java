@@ -27,6 +27,7 @@ import com.google.api.gax.paging.AbstractPagedListResponse;
 import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.PageContext;
 import com.google.api.gax.rpc.UnaryCallable;
+import com.google.api.resourcenames.ResourceName;
 import com.google.cloud.spanner.admin.instance.v1.stub.InstanceAdminStub;
 import com.google.cloud.spanner.admin.instance.v1.stub.InstanceAdminStubSettings;
 import com.google.common.util.concurrent.MoreExecutors;
@@ -699,7 +700,7 @@ public class InstanceAdminClient implements BackgroundResource {
    * <pre><code>
    * try (InstanceAdminClient instanceAdminClient = InstanceAdminClient.create()) {
    *   ProjectName parent = ProjectName.of("[PROJECT]");
-   *   InstanceName instanceId = InstanceName.of("[PROJECT]", "[INSTANCE]");
+   *   String instanceId = "";
    *   Instance instance = Instance.newBuilder().build();
    *   Instance response = instanceAdminClient.createInstanceAsync(parent, instanceId, instance).get();
    * }
@@ -708,7 +709,7 @@ public class InstanceAdminClient implements BackgroundResource {
    * @param parent Required. The name of the project in which to create the instance. Values are of
    *     the form `projects/&lt;project&gt;`.
    * @param instanceId Required. The ID of the instance to create. Valid identifiers are of the form
-   *     `[a-z][-a-z0-9]&#42;[a-z0-9]` and must be between 6 and 30 characters in length.
+   *     `[a-z][-a-z0-9]&#42;[a-z0-9]` and must be between 2 and 64 characters in length.
    * @param instance Required. The instance to create. The name may be omitted, but if specified
    *     must be `&lt;parent&gt;/instances/&lt;instance_id&gt;`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -716,12 +717,12 @@ public class InstanceAdminClient implements BackgroundResource {
   @BetaApi(
       "The surface for long-running operations is not stable yet and may change in the future.")
   public final OperationFuture<Instance, CreateInstanceMetadata> createInstanceAsync(
-      ProjectName parent, InstanceName instanceId, Instance instance) {
+      ProjectName parent, String instanceId, Instance instance) {
 
     CreateInstanceRequest request =
         CreateInstanceRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
-            .setInstanceId(instanceId == null ? null : instanceId.toString())
+            .setInstanceId(instanceId)
             .setInstance(instance)
             .build();
     return createInstanceAsync(request);
@@ -764,16 +765,16 @@ public class InstanceAdminClient implements BackgroundResource {
    * <pre><code>
    * try (InstanceAdminClient instanceAdminClient = InstanceAdminClient.create()) {
    *   ProjectName parent = ProjectName.of("[PROJECT]");
-   *   InstanceName instanceId = InstanceName.of("[PROJECT]", "[INSTANCE]");
+   *   String instanceId = "";
    *   Instance instance = Instance.newBuilder().build();
-   *   Instance response = instanceAdminClient.createInstanceAsync(parent.toString(), instanceId.toString(), instance).get();
+   *   Instance response = instanceAdminClient.createInstanceAsync(parent.toString(), instanceId, instance).get();
    * }
    * </code></pre>
    *
    * @param parent Required. The name of the project in which to create the instance. Values are of
    *     the form `projects/&lt;project&gt;`.
    * @param instanceId Required. The ID of the instance to create. Valid identifiers are of the form
-   *     `[a-z][-a-z0-9]&#42;[a-z0-9]` and must be between 6 and 30 characters in length.
+   *     `[a-z][-a-z0-9]&#42;[a-z0-9]` and must be between 2 and 64 characters in length.
    * @param instance Required. The instance to create. The name may be omitted, but if specified
    *     must be `&lt;parent&gt;/instances/&lt;instance_id&gt;`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -829,11 +830,11 @@ public class InstanceAdminClient implements BackgroundResource {
    * <pre><code>
    * try (InstanceAdminClient instanceAdminClient = InstanceAdminClient.create()) {
    *   ProjectName parent = ProjectName.of("[PROJECT]");
-   *   InstanceName instanceId = InstanceName.of("[PROJECT]", "[INSTANCE]");
+   *   String instanceId = "";
    *   Instance instance = Instance.newBuilder().build();
    *   CreateInstanceRequest request = CreateInstanceRequest.newBuilder()
    *     .setParent(parent.toString())
-   *     .setInstanceId(instanceId.toString())
+   *     .setInstanceId(instanceId)
    *     .setInstance(instance)
    *     .build();
    *   Instance response = instanceAdminClient.createInstanceAsync(request).get();
@@ -887,11 +888,11 @@ public class InstanceAdminClient implements BackgroundResource {
    * <pre><code>
    * try (InstanceAdminClient instanceAdminClient = InstanceAdminClient.create()) {
    *   ProjectName parent = ProjectName.of("[PROJECT]");
-   *   InstanceName instanceId = InstanceName.of("[PROJECT]", "[INSTANCE]");
+   *   String instanceId = "";
    *   Instance instance = Instance.newBuilder().build();
    *   CreateInstanceRequest request = CreateInstanceRequest.newBuilder()
    *     .setParent(parent.toString())
-   *     .setInstanceId(instanceId.toString())
+   *     .setInstanceId(instanceId)
    *     .setInstance(instance)
    *     .build();
    *   OperationFuture&lt;Instance, CreateInstanceMetadata&gt; future = instanceAdminClient.createInstanceOperationCallable().futureCall(request);
@@ -943,11 +944,11 @@ public class InstanceAdminClient implements BackgroundResource {
    * <pre><code>
    * try (InstanceAdminClient instanceAdminClient = InstanceAdminClient.create()) {
    *   ProjectName parent = ProjectName.of("[PROJECT]");
-   *   InstanceName instanceId = InstanceName.of("[PROJECT]", "[INSTANCE]");
+   *   String instanceId = "";
    *   Instance instance = Instance.newBuilder().build();
    *   CreateInstanceRequest request = CreateInstanceRequest.newBuilder()
    *     .setParent(parent.toString())
-   *     .setInstanceId(instanceId.toString())
+   *     .setInstanceId(instanceId)
    *     .setInstance(instance)
    *     .build();
    *   ApiFuture&lt;Operation&gt; future = instanceAdminClient.createInstanceCallable().futureCall(request);
@@ -1339,9 +1340,43 @@ public class InstanceAdminClient implements BackgroundResource {
    *
    * <pre><code>
    * try (InstanceAdminClient instanceAdminClient = InstanceAdminClient.create()) {
-   *   String formattedResource = InstanceName.format("[PROJECT]", "[INSTANCE]");
+   *   ResourceName resource = InstanceName.of("[PROJECT]", "[INSTANCE]");
    *   Policy policy = Policy.newBuilder().build();
-   *   Policy response = instanceAdminClient.setIamPolicy(formattedResource, policy);
+   *   Policy response = instanceAdminClient.setIamPolicy(resource, policy);
+   * }
+   * </code></pre>
+   *
+   * @param resource REQUIRED: The resource for which the policy is being specified. See the
+   *     operation documentation for the appropriate value for this field.
+   * @param policy REQUIRED: The complete policy to be applied to the `resource`. The size of the
+   *     policy is limited to a few 10s of KB. An empty policy is a valid policy but certain Cloud
+   *     Platform services (such as Projects) might reject them.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final Policy setIamPolicy(ResourceName resource, Policy policy) {
+
+    SetIamPolicyRequest request =
+        SetIamPolicyRequest.newBuilder()
+            .setResource(resource == null ? null : resource.toString())
+            .setPolicy(policy)
+            .build();
+    return setIamPolicy(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Sets the access control policy on an instance resource. Replaces any existing policy.
+   *
+   * <p>Authorization requires `spanner.instances.setIamPolicy` on
+   * [resource][google.iam.v1.SetIamPolicyRequest.resource].
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (InstanceAdminClient instanceAdminClient = InstanceAdminClient.create()) {
+   *   ResourceName resource = InstanceName.of("[PROJECT]", "[INSTANCE]");
+   *   Policy policy = Policy.newBuilder().build();
+   *   Policy response = instanceAdminClient.setIamPolicy(resource.toString(), policy);
    * }
    * </code></pre>
    *
@@ -1370,10 +1405,10 @@ public class InstanceAdminClient implements BackgroundResource {
    *
    * <pre><code>
    * try (InstanceAdminClient instanceAdminClient = InstanceAdminClient.create()) {
-   *   String formattedResource = InstanceName.format("[PROJECT]", "[INSTANCE]");
+   *   ResourceName resource = InstanceName.of("[PROJECT]", "[INSTANCE]");
    *   Policy policy = Policy.newBuilder().build();
    *   SetIamPolicyRequest request = SetIamPolicyRequest.newBuilder()
-   *     .setResource(formattedResource)
+   *     .setResource(resource.toString())
    *     .setPolicy(policy)
    *     .build();
    *   Policy response = instanceAdminClient.setIamPolicy(request);
@@ -1398,10 +1433,10 @@ public class InstanceAdminClient implements BackgroundResource {
    *
    * <pre><code>
    * try (InstanceAdminClient instanceAdminClient = InstanceAdminClient.create()) {
-   *   String formattedResource = InstanceName.format("[PROJECT]", "[INSTANCE]");
+   *   ResourceName resource = InstanceName.of("[PROJECT]", "[INSTANCE]");
    *   Policy policy = Policy.newBuilder().build();
    *   SetIamPolicyRequest request = SetIamPolicyRequest.newBuilder()
-   *     .setResource(formattedResource)
+   *     .setResource(resource.toString())
    *     .setPolicy(policy)
    *     .build();
    *   ApiFuture&lt;Policy&gt; future = instanceAdminClient.setIamPolicyCallable().futureCall(request);
@@ -1426,8 +1461,38 @@ public class InstanceAdminClient implements BackgroundResource {
    *
    * <pre><code>
    * try (InstanceAdminClient instanceAdminClient = InstanceAdminClient.create()) {
-   *   String formattedResource = InstanceName.format("[PROJECT]", "[INSTANCE]");
-   *   Policy response = instanceAdminClient.getIamPolicy(formattedResource);
+   *   ResourceName resource = InstanceName.of("[PROJECT]", "[INSTANCE]");
+   *   Policy response = instanceAdminClient.getIamPolicy(resource);
+   * }
+   * </code></pre>
+   *
+   * @param resource REQUIRED: The resource for which the policy is being requested. See the
+   *     operation documentation for the appropriate value for this field.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final Policy getIamPolicy(ResourceName resource) {
+
+    GetIamPolicyRequest request =
+        GetIamPolicyRequest.newBuilder()
+            .setResource(resource == null ? null : resource.toString())
+            .build();
+    return getIamPolicy(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Gets the access control policy for an instance resource. Returns an empty policy if an instance
+   * exists but does not have a policy set.
+   *
+   * <p>Authorization requires `spanner.instances.getIamPolicy` on
+   * [resource][google.iam.v1.GetIamPolicyRequest.resource].
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (InstanceAdminClient instanceAdminClient = InstanceAdminClient.create()) {
+   *   ResourceName resource = InstanceName.of("[PROJECT]", "[INSTANCE]");
+   *   Policy response = instanceAdminClient.getIamPolicy(resource.toString());
    * }
    * </code></pre>
    *
@@ -1453,9 +1518,9 @@ public class InstanceAdminClient implements BackgroundResource {
    *
    * <pre><code>
    * try (InstanceAdminClient instanceAdminClient = InstanceAdminClient.create()) {
-   *   String formattedResource = InstanceName.format("[PROJECT]", "[INSTANCE]");
+   *   ResourceName resource = InstanceName.of("[PROJECT]", "[INSTANCE]");
    *   GetIamPolicyRequest request = GetIamPolicyRequest.newBuilder()
-   *     .setResource(formattedResource)
+   *     .setResource(resource.toString())
    *     .build();
    *   Policy response = instanceAdminClient.getIamPolicy(request);
    * }
@@ -1480,9 +1545,9 @@ public class InstanceAdminClient implements BackgroundResource {
    *
    * <pre><code>
    * try (InstanceAdminClient instanceAdminClient = InstanceAdminClient.create()) {
-   *   String formattedResource = InstanceName.format("[PROJECT]", "[INSTANCE]");
+   *   ResourceName resource = InstanceName.of("[PROJECT]", "[INSTANCE]");
    *   GetIamPolicyRequest request = GetIamPolicyRequest.newBuilder()
-   *     .setResource(formattedResource)
+   *     .setResource(resource.toString())
    *     .build();
    *   ApiFuture&lt;Policy&gt; future = instanceAdminClient.getIamPolicyCallable().futureCall(request);
    *   // Do something
@@ -1506,9 +1571,45 @@ public class InstanceAdminClient implements BackgroundResource {
    *
    * <pre><code>
    * try (InstanceAdminClient instanceAdminClient = InstanceAdminClient.create()) {
-   *   String formattedResource = InstanceName.format("[PROJECT]", "[INSTANCE]");
+   *   ResourceName resource = InstanceName.of("[PROJECT]", "[INSTANCE]");
    *   List&lt;String&gt; permissions = new ArrayList&lt;&gt;();
-   *   TestIamPermissionsResponse response = instanceAdminClient.testIamPermissions(formattedResource, permissions);
+   *   TestIamPermissionsResponse response = instanceAdminClient.testIamPermissions(resource, permissions);
+   * }
+   * </code></pre>
+   *
+   * @param resource REQUIRED: The resource for which the policy detail is being requested. See the
+   *     operation documentation for the appropriate value for this field.
+   * @param permissions The set of permissions to check for the `resource`. Permissions with
+   *     wildcards (such as '&#42;' or 'storage.&#42;') are not allowed. For more information see
+   *     [IAM Overview](https://cloud.google.com/iam/docs/overview#permissions).
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final TestIamPermissionsResponse testIamPermissions(
+      ResourceName resource, List<String> permissions) {
+
+    TestIamPermissionsRequest request =
+        TestIamPermissionsRequest.newBuilder()
+            .setResource(resource == null ? null : resource.toString())
+            .addAllPermissions(permissions)
+            .build();
+    return testIamPermissions(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Returns permissions that the caller has on the specified instance resource.
+   *
+   * <p>Attempting this RPC on a non-existent Cloud Spanner instance resource will result in a
+   * NOT_FOUND error if the user has `spanner.instances.list` permission on the containing Google
+   * Cloud Project. Otherwise returns an empty set of permissions.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (InstanceAdminClient instanceAdminClient = InstanceAdminClient.create()) {
+   *   ResourceName resource = InstanceName.of("[PROJECT]", "[INSTANCE]");
+   *   List&lt;String&gt; permissions = new ArrayList&lt;&gt;();
+   *   TestIamPermissionsResponse response = instanceAdminClient.testIamPermissions(resource.toString(), permissions);
    * }
    * </code></pre>
    *
@@ -1542,11 +1643,9 @@ public class InstanceAdminClient implements BackgroundResource {
    *
    * <pre><code>
    * try (InstanceAdminClient instanceAdminClient = InstanceAdminClient.create()) {
-   *   String formattedResource = InstanceName.format("[PROJECT]", "[INSTANCE]");
-   *   List&lt;String&gt; permissions = new ArrayList&lt;&gt;();
+   *   ResourceName resource = InstanceName.of("[PROJECT]", "[INSTANCE]");
    *   TestIamPermissionsRequest request = TestIamPermissionsRequest.newBuilder()
-   *     .setResource(formattedResource)
-   *     .addAllPermissions(permissions)
+   *     .setResource(resource.toString())
    *     .build();
    *   TestIamPermissionsResponse response = instanceAdminClient.testIamPermissions(request);
    * }
@@ -1571,11 +1670,9 @@ public class InstanceAdminClient implements BackgroundResource {
    *
    * <pre><code>
    * try (InstanceAdminClient instanceAdminClient = InstanceAdminClient.create()) {
-   *   String formattedResource = InstanceName.format("[PROJECT]", "[INSTANCE]");
-   *   List&lt;String&gt; permissions = new ArrayList&lt;&gt;();
+   *   ResourceName resource = InstanceName.of("[PROJECT]", "[INSTANCE]");
    *   TestIamPermissionsRequest request = TestIamPermissionsRequest.newBuilder()
-   *     .setResource(formattedResource)
-   *     .addAllPermissions(permissions)
+   *     .setResource(resource.toString())
    *     .build();
    *   ApiFuture&lt;TestIamPermissionsResponse&gt; future = instanceAdminClient.testIamPermissionsCallable().futureCall(request);
    *   // Do something

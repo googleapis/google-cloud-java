@@ -15,7 +15,9 @@ public interface ExecuteBatchDmlRequestOrBuilder
    * Required. The session in which the DML statements should be performed.
    * </pre>
    *
-   * <code>string session = 1;</code>
+   * <code>
+   * string session = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    */
   java.lang.String getSession();
   /**
@@ -25,7 +27,9 @@ public interface ExecuteBatchDmlRequestOrBuilder
    * Required. The session in which the DML statements should be performed.
    * </pre>
    *
-   * <code>string session = 1;</code>
+   * <code>
+   * string session = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    */
   com.google.protobuf.ByteString getSessionBytes();
 
@@ -33,36 +37,45 @@ public interface ExecuteBatchDmlRequestOrBuilder
    *
    *
    * <pre>
-   * The transaction to use. A ReadWrite transaction is required. Single-use
-   * transactions are not supported (to avoid replay).  The caller must either
-   * supply an existing transaction ID or begin a new transaction.
+   * Required. The transaction to use. Must be a read-write transaction.
+   * To protect against replays, single-use transactions are not supported. The
+   * caller must either supply an existing transaction ID or begin a new
+   * transaction.
    * </pre>
    *
-   * <code>.google.spanner.v1.TransactionSelector transaction = 2;</code>
+   * <code>
+   * .google.spanner.v1.TransactionSelector transaction = 2 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   boolean hasTransaction();
   /**
    *
    *
    * <pre>
-   * The transaction to use. A ReadWrite transaction is required. Single-use
-   * transactions are not supported (to avoid replay).  The caller must either
-   * supply an existing transaction ID or begin a new transaction.
+   * Required. The transaction to use. Must be a read-write transaction.
+   * To protect against replays, single-use transactions are not supported. The
+   * caller must either supply an existing transaction ID or begin a new
+   * transaction.
    * </pre>
    *
-   * <code>.google.spanner.v1.TransactionSelector transaction = 2;</code>
+   * <code>
+   * .google.spanner.v1.TransactionSelector transaction = 2 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   com.google.spanner.v1.TransactionSelector getTransaction();
   /**
    *
    *
    * <pre>
-   * The transaction to use. A ReadWrite transaction is required. Single-use
-   * transactions are not supported (to avoid replay).  The caller must either
-   * supply an existing transaction ID or begin a new transaction.
+   * Required. The transaction to use. Must be a read-write transaction.
+   * To protect against replays, single-use transactions are not supported. The
+   * caller must either supply an existing transaction ID or begin a new
+   * transaction.
    * </pre>
    *
-   * <code>.google.spanner.v1.TransactionSelector transaction = 2;</code>
+   * <code>
+   * .google.spanner.v1.TransactionSelector transaction = 2 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   com.google.spanner.v1.TransactionSelectorOrBuilder getTransactionOrBuilder();
 
@@ -70,56 +83,64 @@ public interface ExecuteBatchDmlRequestOrBuilder
    *
    *
    * <pre>
-   * The list of statements to execute in this batch. Statements are executed
-   * serially, such that the effects of statement i are visible to statement
-   * i+1. Each statement must be a DML statement. Execution will stop at the
-   * first failed statement; the remaining statements will not run.
-   * REQUIRES: statements_size() &gt; 0.
+   * Required. The list of statements to execute in this batch. Statements are
+   * executed serially, such that the effects of statement `i` are visible to
+   * statement `i+1`. Each statement must be a DML statement. Execution stops at
+   * the first failed statement; the remaining statements are not executed.
+   * Callers must provide at least one statement.
    * </pre>
    *
-   * <code>repeated .google.spanner.v1.ExecuteBatchDmlRequest.Statement statements = 3;</code>
+   * <code>
+   * repeated .google.spanner.v1.ExecuteBatchDmlRequest.Statement statements = 3 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   java.util.List<com.google.spanner.v1.ExecuteBatchDmlRequest.Statement> getStatementsList();
   /**
    *
    *
    * <pre>
-   * The list of statements to execute in this batch. Statements are executed
-   * serially, such that the effects of statement i are visible to statement
-   * i+1. Each statement must be a DML statement. Execution will stop at the
-   * first failed statement; the remaining statements will not run.
-   * REQUIRES: statements_size() &gt; 0.
+   * Required. The list of statements to execute in this batch. Statements are
+   * executed serially, such that the effects of statement `i` are visible to
+   * statement `i+1`. Each statement must be a DML statement. Execution stops at
+   * the first failed statement; the remaining statements are not executed.
+   * Callers must provide at least one statement.
    * </pre>
    *
-   * <code>repeated .google.spanner.v1.ExecuteBatchDmlRequest.Statement statements = 3;</code>
+   * <code>
+   * repeated .google.spanner.v1.ExecuteBatchDmlRequest.Statement statements = 3 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   com.google.spanner.v1.ExecuteBatchDmlRequest.Statement getStatements(int index);
   /**
    *
    *
    * <pre>
-   * The list of statements to execute in this batch. Statements are executed
-   * serially, such that the effects of statement i are visible to statement
-   * i+1. Each statement must be a DML statement. Execution will stop at the
-   * first failed statement; the remaining statements will not run.
-   * REQUIRES: statements_size() &gt; 0.
+   * Required. The list of statements to execute in this batch. Statements are
+   * executed serially, such that the effects of statement `i` are visible to
+   * statement `i+1`. Each statement must be a DML statement. Execution stops at
+   * the first failed statement; the remaining statements are not executed.
+   * Callers must provide at least one statement.
    * </pre>
    *
-   * <code>repeated .google.spanner.v1.ExecuteBatchDmlRequest.Statement statements = 3;</code>
+   * <code>
+   * repeated .google.spanner.v1.ExecuteBatchDmlRequest.Statement statements = 3 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   int getStatementsCount();
   /**
    *
    *
    * <pre>
-   * The list of statements to execute in this batch. Statements are executed
-   * serially, such that the effects of statement i are visible to statement
-   * i+1. Each statement must be a DML statement. Execution will stop at the
-   * first failed statement; the remaining statements will not run.
-   * REQUIRES: statements_size() &gt; 0.
+   * Required. The list of statements to execute in this batch. Statements are
+   * executed serially, such that the effects of statement `i` are visible to
+   * statement `i+1`. Each statement must be a DML statement. Execution stops at
+   * the first failed statement; the remaining statements are not executed.
+   * Callers must provide at least one statement.
    * </pre>
    *
-   * <code>repeated .google.spanner.v1.ExecuteBatchDmlRequest.Statement statements = 3;</code>
+   * <code>
+   * repeated .google.spanner.v1.ExecuteBatchDmlRequest.Statement statements = 3 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   java.util.List<? extends com.google.spanner.v1.ExecuteBatchDmlRequest.StatementOrBuilder>
       getStatementsOrBuilderList();
@@ -127,14 +148,16 @@ public interface ExecuteBatchDmlRequestOrBuilder
    *
    *
    * <pre>
-   * The list of statements to execute in this batch. Statements are executed
-   * serially, such that the effects of statement i are visible to statement
-   * i+1. Each statement must be a DML statement. Execution will stop at the
-   * first failed statement; the remaining statements will not run.
-   * REQUIRES: statements_size() &gt; 0.
+   * Required. The list of statements to execute in this batch. Statements are
+   * executed serially, such that the effects of statement `i` are visible to
+   * statement `i+1`. Each statement must be a DML statement. Execution stops at
+   * the first failed statement; the remaining statements are not executed.
+   * Callers must provide at least one statement.
    * </pre>
    *
-   * <code>repeated .google.spanner.v1.ExecuteBatchDmlRequest.Statement statements = 3;</code>
+   * <code>
+   * repeated .google.spanner.v1.ExecuteBatchDmlRequest.Statement statements = 3 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   com.google.spanner.v1.ExecuteBatchDmlRequest.StatementOrBuilder getStatementsOrBuilder(int index);
 
@@ -142,13 +165,16 @@ public interface ExecuteBatchDmlRequestOrBuilder
    *
    *
    * <pre>
-   * A per-transaction sequence number used to identify this request. This is
-   * used in the same space as the seqno in
-   * [ExecuteSqlRequest][Spanner.ExecuteSqlRequest]. See more details
-   * in [ExecuteSqlRequest][Spanner.ExecuteSqlRequest].
+   * Required. A per-transaction sequence number used to identify this request.
+   * This field makes each request idempotent such that if the request is
+   * received multiple times, at most one will succeed.
+   * The sequence number must be monotonically increasing within the
+   * transaction. If a request arrives for the first time with an out-of-order
+   * sequence number, the transaction may be aborted. Replays of previously
+   * handled requests will yield the same response as the first execution.
    * </pre>
    *
-   * <code>int64 seqno = 4;</code>
+   * <code>int64 seqno = 4 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   long getSeqno();
 }

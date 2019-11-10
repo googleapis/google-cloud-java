@@ -177,7 +177,9 @@ public final class PartitionReadRequest extends com.google.protobuf.GeneratedMes
    * Required. The session used to create the partitions.
    * </pre>
    *
-   * <code>string session = 1;</code>
+   * <code>
+   * string session = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    */
   public java.lang.String getSession() {
     java.lang.Object ref = session_;
@@ -197,7 +199,9 @@ public final class PartitionReadRequest extends com.google.protobuf.GeneratedMes
    * Required. The session used to create the partitions.
    * </pre>
    *
-   * <code>string session = 1;</code>
+   * <code>
+   * string session = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    */
   public com.google.protobuf.ByteString getSessionBytes() {
     java.lang.Object ref = session_;
@@ -264,7 +268,7 @@ public final class PartitionReadRequest extends com.google.protobuf.GeneratedMes
    * Required. The name of the table in the database to be read.
    * </pre>
    *
-   * <code>string table = 3;</code>
+   * <code>string table = 3 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   public java.lang.String getTable() {
     java.lang.Object ref = table_;
@@ -284,7 +288,7 @@ public final class PartitionReadRequest extends com.google.protobuf.GeneratedMes
    * Required. The name of the table in the database to be read.
    * </pre>
    *
-   * <code>string table = 3;</code>
+   * <code>string table = 3 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   public com.google.protobuf.ByteString getTableBytes() {
     java.lang.Object ref = table_;
@@ -423,7 +427,7 @@ public final class PartitionReadRequest extends com.google.protobuf.GeneratedMes
    * exist in the database. Read yields nothing for nonexistent rows.
    * </pre>
    *
-   * <code>.google.spanner.v1.KeySet key_set = 6;</code>
+   * <code>.google.spanner.v1.KeySet key_set = 6 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   public boolean hasKeySet() {
     return keySet_ != null;
@@ -443,7 +447,7 @@ public final class PartitionReadRequest extends com.google.protobuf.GeneratedMes
    * exist in the database. Read yields nothing for nonexistent rows.
    * </pre>
    *
-   * <code>.google.spanner.v1.KeySet key_set = 6;</code>
+   * <code>.google.spanner.v1.KeySet key_set = 6 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   public com.google.spanner.v1.KeySet getKeySet() {
     return keySet_ == null ? com.google.spanner.v1.KeySet.getDefaultInstance() : keySet_;
@@ -463,7 +467,7 @@ public final class PartitionReadRequest extends com.google.protobuf.GeneratedMes
    * exist in the database. Read yields nothing for nonexistent rows.
    * </pre>
    *
-   * <code>.google.spanner.v1.KeySet key_set = 6;</code>
+   * <code>.google.spanner.v1.KeySet key_set = 6 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   public com.google.spanner.v1.KeySetOrBuilder getKeySetOrBuilder() {
     return getKeySet();
@@ -988,7 +992,9 @@ public final class PartitionReadRequest extends com.google.protobuf.GeneratedMes
      * Required. The session used to create the partitions.
      * </pre>
      *
-     * <code>string session = 1;</code>
+     * <code>
+     * string session = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      */
     public java.lang.String getSession() {
       java.lang.Object ref = session_;
@@ -1008,7 +1014,9 @@ public final class PartitionReadRequest extends com.google.protobuf.GeneratedMes
      * Required. The session used to create the partitions.
      * </pre>
      *
-     * <code>string session = 1;</code>
+     * <code>
+     * string session = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      */
     public com.google.protobuf.ByteString getSessionBytes() {
       java.lang.Object ref = session_;
@@ -1028,7 +1036,9 @@ public final class PartitionReadRequest extends com.google.protobuf.GeneratedMes
      * Required. The session used to create the partitions.
      * </pre>
      *
-     * <code>string session = 1;</code>
+     * <code>
+     * string session = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      */
     public Builder setSession(java.lang.String value) {
       if (value == null) {
@@ -1046,7 +1056,9 @@ public final class PartitionReadRequest extends com.google.protobuf.GeneratedMes
      * Required. The session used to create the partitions.
      * </pre>
      *
-     * <code>string session = 1;</code>
+     * <code>
+     * string session = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      */
     public Builder clearSession() {
 
@@ -1061,7 +1073,9 @@ public final class PartitionReadRequest extends com.google.protobuf.GeneratedMes
      * Required. The session used to create the partitions.
      * </pre>
      *
-     * <code>string session = 1;</code>
+     * <code>
+     * string session = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      */
     public Builder setSessionBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -1273,7 +1287,7 @@ public final class PartitionReadRequest extends com.google.protobuf.GeneratedMes
      * Required. The name of the table in the database to be read.
      * </pre>
      *
-     * <code>string table = 3;</code>
+     * <code>string table = 3 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public java.lang.String getTable() {
       java.lang.Object ref = table_;
@@ -1293,7 +1307,7 @@ public final class PartitionReadRequest extends com.google.protobuf.GeneratedMes
      * Required. The name of the table in the database to be read.
      * </pre>
      *
-     * <code>string table = 3;</code>
+     * <code>string table = 3 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public com.google.protobuf.ByteString getTableBytes() {
       java.lang.Object ref = table_;
@@ -1313,7 +1327,7 @@ public final class PartitionReadRequest extends com.google.protobuf.GeneratedMes
      * Required. The name of the table in the database to be read.
      * </pre>
      *
-     * <code>string table = 3;</code>
+     * <code>string table = 3 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder setTable(java.lang.String value) {
       if (value == null) {
@@ -1331,7 +1345,7 @@ public final class PartitionReadRequest extends com.google.protobuf.GeneratedMes
      * Required. The name of the table in the database to be read.
      * </pre>
      *
-     * <code>string table = 3;</code>
+     * <code>string table = 3 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder clearTable() {
 
@@ -1346,7 +1360,7 @@ public final class PartitionReadRequest extends com.google.protobuf.GeneratedMes
      * Required. The name of the table in the database to be read.
      * </pre>
      *
-     * <code>string table = 3;</code>
+     * <code>string table = 3 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder setTableBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -1651,7 +1665,7 @@ public final class PartitionReadRequest extends com.google.protobuf.GeneratedMes
      * exist in the database. Read yields nothing for nonexistent rows.
      * </pre>
      *
-     * <code>.google.spanner.v1.KeySet key_set = 6;</code>
+     * <code>.google.spanner.v1.KeySet key_set = 6 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public boolean hasKeySet() {
       return keySetBuilder_ != null || keySet_ != null;
@@ -1671,7 +1685,7 @@ public final class PartitionReadRequest extends com.google.protobuf.GeneratedMes
      * exist in the database. Read yields nothing for nonexistent rows.
      * </pre>
      *
-     * <code>.google.spanner.v1.KeySet key_set = 6;</code>
+     * <code>.google.spanner.v1.KeySet key_set = 6 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public com.google.spanner.v1.KeySet getKeySet() {
       if (keySetBuilder_ == null) {
@@ -1695,7 +1709,7 @@ public final class PartitionReadRequest extends com.google.protobuf.GeneratedMes
      * exist in the database. Read yields nothing for nonexistent rows.
      * </pre>
      *
-     * <code>.google.spanner.v1.KeySet key_set = 6;</code>
+     * <code>.google.spanner.v1.KeySet key_set = 6 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder setKeySet(com.google.spanner.v1.KeySet value) {
       if (keySetBuilder_ == null) {
@@ -1725,7 +1739,7 @@ public final class PartitionReadRequest extends com.google.protobuf.GeneratedMes
      * exist in the database. Read yields nothing for nonexistent rows.
      * </pre>
      *
-     * <code>.google.spanner.v1.KeySet key_set = 6;</code>
+     * <code>.google.spanner.v1.KeySet key_set = 6 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder setKeySet(com.google.spanner.v1.KeySet.Builder builderForValue) {
       if (keySetBuilder_ == null) {
@@ -1752,7 +1766,7 @@ public final class PartitionReadRequest extends com.google.protobuf.GeneratedMes
      * exist in the database. Read yields nothing for nonexistent rows.
      * </pre>
      *
-     * <code>.google.spanner.v1.KeySet key_set = 6;</code>
+     * <code>.google.spanner.v1.KeySet key_set = 6 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder mergeKeySet(com.google.spanner.v1.KeySet value) {
       if (keySetBuilder_ == null) {
@@ -1784,7 +1798,7 @@ public final class PartitionReadRequest extends com.google.protobuf.GeneratedMes
      * exist in the database. Read yields nothing for nonexistent rows.
      * </pre>
      *
-     * <code>.google.spanner.v1.KeySet key_set = 6;</code>
+     * <code>.google.spanner.v1.KeySet key_set = 6 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder clearKeySet() {
       if (keySetBuilder_ == null) {
@@ -1812,7 +1826,7 @@ public final class PartitionReadRequest extends com.google.protobuf.GeneratedMes
      * exist in the database. Read yields nothing for nonexistent rows.
      * </pre>
      *
-     * <code>.google.spanner.v1.KeySet key_set = 6;</code>
+     * <code>.google.spanner.v1.KeySet key_set = 6 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public com.google.spanner.v1.KeySet.Builder getKeySetBuilder() {
 
@@ -1834,7 +1848,7 @@ public final class PartitionReadRequest extends com.google.protobuf.GeneratedMes
      * exist in the database. Read yields nothing for nonexistent rows.
      * </pre>
      *
-     * <code>.google.spanner.v1.KeySet key_set = 6;</code>
+     * <code>.google.spanner.v1.KeySet key_set = 6 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public com.google.spanner.v1.KeySetOrBuilder getKeySetOrBuilder() {
       if (keySetBuilder_ != null) {
@@ -1858,7 +1872,7 @@ public final class PartitionReadRequest extends com.google.protobuf.GeneratedMes
      * exist in the database. Read yields nothing for nonexistent rows.
      * </pre>
      *
-     * <code>.google.spanner.v1.KeySet key_set = 6;</code>
+     * <code>.google.spanner.v1.KeySet key_set = 6 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.spanner.v1.KeySet,

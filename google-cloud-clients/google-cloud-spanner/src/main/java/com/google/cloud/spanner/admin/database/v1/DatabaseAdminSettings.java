@@ -82,12 +82,6 @@ import javax.annotation.Generated;
 @Generated("by gapic-generator")
 @BetaApi
 public class DatabaseAdminSettings extends ClientSettings<DatabaseAdminSettings> {
-  /** Returns the object with the settings used for calls to listDatabases. */
-  public PagedCallSettings<ListDatabasesRequest, ListDatabasesResponse, ListDatabasesPagedResponse>
-      listDatabasesSettings() {
-    return ((DatabaseAdminStubSettings) getStubSettings()).listDatabasesSettings();
-  }
-
   /** Returns the object with the settings used for calls to createDatabase. */
   public UnaryCallSettings<CreateDatabaseRequest, Operation> createDatabaseSettings() {
     return ((DatabaseAdminStubSettings) getStubSettings()).createDatabaseSettings();
@@ -143,6 +137,12 @@ public class DatabaseAdminSettings extends ClientSettings<DatabaseAdminSettings>
   public UnaryCallSettings<TestIamPermissionsRequest, TestIamPermissionsResponse>
       testIamPermissionsSettings() {
     return ((DatabaseAdminStubSettings) getStubSettings()).testIamPermissionsSettings();
+  }
+
+  /** Returns the object with the settings used for calls to listDatabases. */
+  public PagedCallSettings<ListDatabasesRequest, ListDatabasesResponse, ListDatabasesPagedResponse>
+      listDatabasesSettings() {
+    return ((DatabaseAdminStubSettings) getStubSettings()).listDatabasesSettings();
   }
 
   public static final DatabaseAdminSettings create(DatabaseAdminStubSettings stub)
@@ -242,13 +242,6 @@ public class DatabaseAdminSettings extends ClientSettings<DatabaseAdminSettings>
       return this;
     }
 
-    /** Returns the builder for the settings used for calls to listDatabases. */
-    public PagedCallSettings.Builder<
-            ListDatabasesRequest, ListDatabasesResponse, ListDatabasesPagedResponse>
-        listDatabasesSettings() {
-      return getStubSettingsBuilder().listDatabasesSettings();
-    }
-
     /** Returns the builder for the settings used for calls to createDatabase. */
     public UnaryCallSettings.Builder<CreateDatabaseRequest, Operation> createDatabaseSettings() {
       return getStubSettingsBuilder().createDatabaseSettings();
@@ -306,6 +299,13 @@ public class DatabaseAdminSettings extends ClientSettings<DatabaseAdminSettings>
     public UnaryCallSettings.Builder<TestIamPermissionsRequest, TestIamPermissionsResponse>
         testIamPermissionsSettings() {
       return getStubSettingsBuilder().testIamPermissionsSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to listDatabases. */
+    public PagedCallSettings.Builder<
+            ListDatabasesRequest, ListDatabasesResponse, ListDatabasesPagedResponse>
+        listDatabasesSettings() {
+      return getStubSettingsBuilder().listDatabasesSettings();
     }
 
     @Override

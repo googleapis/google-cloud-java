@@ -654,10 +654,10 @@ public final class DatabaseAdminGrpc {
      *
      *
      * <pre>
-     * Sets the access control policy on a database resource. Replaces any
-     * existing policy.
-     * Authorization requires `spanner.databases.setIamPolicy` permission on
-     * [resource][google.iam.v1.SetIamPolicyRequest.resource].
+     * Sets the access control policy on a database resource.
+     * Replaces any existing policy.
+     * Authorization requires `spanner.databases.setIamPolicy`
+     * permission on [resource][google.iam.v1.SetIamPolicyRequest.resource].
      * </pre>
      */
     public void setIamPolicy(
@@ -670,8 +670,9 @@ public final class DatabaseAdminGrpc {
      *
      *
      * <pre>
-     * Gets the access control policy for a database resource. Returns an empty
-     * policy if a database exists but does not have a policy set.
+     * Gets the access control policy for a database resource.
+     * Returns an empty policy if a database exists but does
+     * not have a policy set.
      * Authorization requires `spanner.databases.getIamPolicy` permission on
      * [resource][google.iam.v1.GetIamPolicyRequest.resource].
      * </pre>
@@ -687,10 +688,10 @@ public final class DatabaseAdminGrpc {
      *
      * <pre>
      * Returns permissions that the caller has on the specified database resource.
-     * Attempting this RPC on a non-existent Cloud Spanner database will result in
-     * a NOT_FOUND error if the user has `spanner.databases.list` permission on
-     * the containing Cloud Spanner instance. Otherwise returns an empty set of
-     * permissions.
+     * Attempting this RPC on a non-existent Cloud Spanner database will
+     * result in a NOT_FOUND error if the user has
+     * `spanner.databases.list` permission on the containing Cloud
+     * Spanner instance. Otherwise returns an empty set of permissions.
      * </pre>
      */
     public void testIamPermissions(
@@ -907,10 +908,10 @@ public final class DatabaseAdminGrpc {
      *
      *
      * <pre>
-     * Sets the access control policy on a database resource. Replaces any
-     * existing policy.
-     * Authorization requires `spanner.databases.setIamPolicy` permission on
-     * [resource][google.iam.v1.SetIamPolicyRequest.resource].
+     * Sets the access control policy on a database resource.
+     * Replaces any existing policy.
+     * Authorization requires `spanner.databases.setIamPolicy`
+     * permission on [resource][google.iam.v1.SetIamPolicyRequest.resource].
      * </pre>
      */
     public void setIamPolicy(
@@ -926,8 +927,9 @@ public final class DatabaseAdminGrpc {
      *
      *
      * <pre>
-     * Gets the access control policy for a database resource. Returns an empty
-     * policy if a database exists but does not have a policy set.
+     * Gets the access control policy for a database resource.
+     * Returns an empty policy if a database exists but does
+     * not have a policy set.
      * Authorization requires `spanner.databases.getIamPolicy` permission on
      * [resource][google.iam.v1.GetIamPolicyRequest.resource].
      * </pre>
@@ -946,10 +948,10 @@ public final class DatabaseAdminGrpc {
      *
      * <pre>
      * Returns permissions that the caller has on the specified database resource.
-     * Attempting this RPC on a non-existent Cloud Spanner database will result in
-     * a NOT_FOUND error if the user has `spanner.databases.list` permission on
-     * the containing Cloud Spanner instance. Otherwise returns an empty set of
-     * permissions.
+     * Attempting this RPC on a non-existent Cloud Spanner database will
+     * result in a NOT_FOUND error if the user has
+     * `spanner.databases.list` permission on the containing Cloud
+     * Spanner instance. Otherwise returns an empty set of permissions.
      * </pre>
      */
     public void testIamPermissions(
@@ -1087,10 +1089,10 @@ public final class DatabaseAdminGrpc {
      *
      *
      * <pre>
-     * Sets the access control policy on a database resource. Replaces any
-     * existing policy.
-     * Authorization requires `spanner.databases.setIamPolicy` permission on
-     * [resource][google.iam.v1.SetIamPolicyRequest.resource].
+     * Sets the access control policy on a database resource.
+     * Replaces any existing policy.
+     * Authorization requires `spanner.databases.setIamPolicy`
+     * permission on [resource][google.iam.v1.SetIamPolicyRequest.resource].
      * </pre>
      */
     public com.google.iam.v1.Policy setIamPolicy(com.google.iam.v1.SetIamPolicyRequest request) {
@@ -1102,8 +1104,9 @@ public final class DatabaseAdminGrpc {
      *
      *
      * <pre>
-     * Gets the access control policy for a database resource. Returns an empty
-     * policy if a database exists but does not have a policy set.
+     * Gets the access control policy for a database resource.
+     * Returns an empty policy if a database exists but does
+     * not have a policy set.
      * Authorization requires `spanner.databases.getIamPolicy` permission on
      * [resource][google.iam.v1.GetIamPolicyRequest.resource].
      * </pre>
@@ -1118,10 +1121,10 @@ public final class DatabaseAdminGrpc {
      *
      * <pre>
      * Returns permissions that the caller has on the specified database resource.
-     * Attempting this RPC on a non-existent Cloud Spanner database will result in
-     * a NOT_FOUND error if the user has `spanner.databases.list` permission on
-     * the containing Cloud Spanner instance. Otherwise returns an empty set of
-     * permissions.
+     * Attempting this RPC on a non-existent Cloud Spanner database will
+     * result in a NOT_FOUND error if the user has
+     * `spanner.databases.list` permission on the containing Cloud
+     * Spanner instance. Otherwise returns an empty set of permissions.
      * </pre>
      */
     public com.google.iam.v1.TestIamPermissionsResponse testIamPermissions(
@@ -1258,10 +1261,10 @@ public final class DatabaseAdminGrpc {
      *
      *
      * <pre>
-     * Sets the access control policy on a database resource. Replaces any
-     * existing policy.
-     * Authorization requires `spanner.databases.setIamPolicy` permission on
-     * [resource][google.iam.v1.SetIamPolicyRequest.resource].
+     * Sets the access control policy on a database resource.
+     * Replaces any existing policy.
+     * Authorization requires `spanner.databases.setIamPolicy`
+     * permission on [resource][google.iam.v1.SetIamPolicyRequest.resource].
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.iam.v1.Policy>
@@ -1274,8 +1277,9 @@ public final class DatabaseAdminGrpc {
      *
      *
      * <pre>
-     * Gets the access control policy for a database resource. Returns an empty
-     * policy if a database exists but does not have a policy set.
+     * Gets the access control policy for a database resource.
+     * Returns an empty policy if a database exists but does
+     * not have a policy set.
      * Authorization requires `spanner.databases.getIamPolicy` permission on
      * [resource][google.iam.v1.GetIamPolicyRequest.resource].
      * </pre>
@@ -1291,10 +1295,10 @@ public final class DatabaseAdminGrpc {
      *
      * <pre>
      * Returns permissions that the caller has on the specified database resource.
-     * Attempting this RPC on a non-existent Cloud Spanner database will result in
-     * a NOT_FOUND error if the user has `spanner.databases.list` permission on
-     * the containing Cloud Spanner instance. Otherwise returns an empty set of
-     * permissions.
+     * Attempting this RPC on a non-existent Cloud Spanner database will
+     * result in a NOT_FOUND error if the user has
+     * `spanner.databases.list` permission on the containing Cloud
+     * Spanner instance. Otherwise returns an empty set of permissions.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<

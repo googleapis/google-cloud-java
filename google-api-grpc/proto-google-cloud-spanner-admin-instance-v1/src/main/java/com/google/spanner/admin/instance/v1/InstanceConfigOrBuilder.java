@@ -53,4 +53,61 @@ public interface InstanceConfigOrBuilder
    * <code>string display_name = 2;</code>
    */
   com.google.protobuf.ByteString getDisplayNameBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * The geographic placement of nodes in this instance configuration and their
+   * replication properties.
+   * </pre>
+   *
+   * <code>repeated .google.spanner.admin.instance.v1.ReplicaInfo replicas = 3;</code>
+   */
+  java.util.List<com.google.spanner.admin.instance.v1.ReplicaInfo> getReplicasList();
+  /**
+   *
+   *
+   * <pre>
+   * The geographic placement of nodes in this instance configuration and their
+   * replication properties.
+   * </pre>
+   *
+   * <code>repeated .google.spanner.admin.instance.v1.ReplicaInfo replicas = 3;</code>
+   */
+  com.google.spanner.admin.instance.v1.ReplicaInfo getReplicas(int index);
+  /**
+   *
+   *
+   * <pre>
+   * The geographic placement of nodes in this instance configuration and their
+   * replication properties.
+   * </pre>
+   *
+   * <code>repeated .google.spanner.admin.instance.v1.ReplicaInfo replicas = 3;</code>
+   */
+  int getReplicasCount();
+  /**
+   *
+   *
+   * <pre>
+   * The geographic placement of nodes in this instance configuration and their
+   * replication properties.
+   * </pre>
+   *
+   * <code>repeated .google.spanner.admin.instance.v1.ReplicaInfo replicas = 3;</code>
+   */
+  java.util.List<? extends com.google.spanner.admin.instance.v1.ReplicaInfoOrBuilder>
+      getReplicasOrBuilderList();
+  /**
+   *
+   *
+   * <pre>
+   * The geographic placement of nodes in this instance configuration and their
+   * replication properties.
+   * </pre>
+   *
+   * <code>repeated .google.spanner.admin.instance.v1.ReplicaInfo replicas = 3;</code>
+   */
+  com.google.spanner.admin.instance.v1.ReplicaInfoOrBuilder getReplicasOrBuilder(int index);
 }

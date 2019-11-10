@@ -42,8 +42,8 @@ public final class QueryPlanProto {
   static {
     java.lang.String[] descriptorData = {
       "\n\"google/spanner/v1/query_plan.proto\022\021go"
-          + "ogle.spanner.v1\032\034google/api/annotations."
-          + "proto\032\034google/protobuf/struct.proto\"\370\004\n\010"
+          + "ogle.spanner.v1\032\034google/protobuf/struct."
+          + "proto\032\034google/api/annotations.proto\"\370\004\n\010"
           + "PlanNode\022\r\n\005index\030\001 \001(\005\022.\n\004kind\030\002 \001(\0162 ."
           + "google.spanner.v1.PlanNode.Kind\022\024\n\014displ"
           + "ay_name\030\003 \001(\t\022:\n\013child_links\030\004 \003(\0132%.goo"
@@ -78,8 +78,8 @@ public final class QueryPlanProto {
     com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
         descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
-          com.google.api.AnnotationsProto.getDescriptor(),
           com.google.protobuf.StructProto.getDescriptor(),
+          com.google.api.AnnotationsProto.getDescriptor(),
         },
         assigner);
     internal_static_google_spanner_v1_PlanNode_descriptor =
@@ -130,8 +130,8 @@ public final class QueryPlanProto {
             new java.lang.String[] {
               "PlanNodes",
             });
-    com.google.api.AnnotationsProto.getDescriptor();
     com.google.protobuf.StructProto.getDescriptor();
+    com.google.api.AnnotationsProto.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

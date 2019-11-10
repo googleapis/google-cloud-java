@@ -15,7 +15,9 @@ public interface UpdateDatabaseDdlRequestOrBuilder
    * Required. The database to update.
    * </pre>
    *
-   * <code>string database = 1;</code>
+   * <code>
+   * string database = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    */
   java.lang.String getDatabase();
   /**
@@ -25,7 +27,9 @@ public interface UpdateDatabaseDdlRequestOrBuilder
    * Required. The database to update.
    * </pre>
    *
-   * <code>string database = 1;</code>
+   * <code>
+   * string database = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    */
   com.google.protobuf.ByteString getDatabaseBytes();
 
@@ -33,40 +37,40 @@ public interface UpdateDatabaseDdlRequestOrBuilder
    *
    *
    * <pre>
-   * DDL statements to be applied to the database.
+   * Required. DDL statements to be applied to the database.
    * </pre>
    *
-   * <code>repeated string statements = 2;</code>
+   * <code>repeated string statements = 2 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   java.util.List<java.lang.String> getStatementsList();
   /**
    *
    *
    * <pre>
-   * DDL statements to be applied to the database.
+   * Required. DDL statements to be applied to the database.
    * </pre>
    *
-   * <code>repeated string statements = 2;</code>
+   * <code>repeated string statements = 2 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   int getStatementsCount();
   /**
    *
    *
    * <pre>
-   * DDL statements to be applied to the database.
+   * Required. DDL statements to be applied to the database.
    * </pre>
    *
-   * <code>repeated string statements = 2;</code>
+   * <code>repeated string statements = 2 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   java.lang.String getStatements(int index);
   /**
    *
    *
    * <pre>
-   * DDL statements to be applied to the database.
+   * Required. DDL statements to be applied to the database.
    * </pre>
    *
-   * <code>repeated string statements = 2;</code>
+   * <code>repeated string statements = 2 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   com.google.protobuf.ByteString getStatementsBytes(int index);
 

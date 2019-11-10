@@ -44,10 +44,11 @@ public interface ResultSetOrBuilder
    *
    * <pre>
    * Each element in `rows` is a row whose format is defined by
-   * [metadata.row_type][google.spanner.v1.ResultSetMetadata.row_type]. The ith
-   * element in each row matches the ith field in
-   * [metadata.row_type][google.spanner.v1.ResultSetMetadata.row_type]. Elements
-   * are encoded based on type as described [here][google.spanner.v1.TypeCode].
+   * [metadata.row_type][google.spanner.v1.ResultSetMetadata.row_type]. The ith element
+   * in each row matches the ith field in
+   * [metadata.row_type][google.spanner.v1.ResultSetMetadata.row_type]. Elements are
+   * encoded based on type as described
+   * [here][google.spanner.v1.TypeCode].
    * </pre>
    *
    * <code>repeated .google.protobuf.ListValue rows = 2;</code>
@@ -58,10 +59,11 @@ public interface ResultSetOrBuilder
    *
    * <pre>
    * Each element in `rows` is a row whose format is defined by
-   * [metadata.row_type][google.spanner.v1.ResultSetMetadata.row_type]. The ith
-   * element in each row matches the ith field in
-   * [metadata.row_type][google.spanner.v1.ResultSetMetadata.row_type]. Elements
-   * are encoded based on type as described [here][google.spanner.v1.TypeCode].
+   * [metadata.row_type][google.spanner.v1.ResultSetMetadata.row_type]. The ith element
+   * in each row matches the ith field in
+   * [metadata.row_type][google.spanner.v1.ResultSetMetadata.row_type]. Elements are
+   * encoded based on type as described
+   * [here][google.spanner.v1.TypeCode].
    * </pre>
    *
    * <code>repeated .google.protobuf.ListValue rows = 2;</code>
@@ -72,10 +74,11 @@ public interface ResultSetOrBuilder
    *
    * <pre>
    * Each element in `rows` is a row whose format is defined by
-   * [metadata.row_type][google.spanner.v1.ResultSetMetadata.row_type]. The ith
-   * element in each row matches the ith field in
-   * [metadata.row_type][google.spanner.v1.ResultSetMetadata.row_type]. Elements
-   * are encoded based on type as described [here][google.spanner.v1.TypeCode].
+   * [metadata.row_type][google.spanner.v1.ResultSetMetadata.row_type]. The ith element
+   * in each row matches the ith field in
+   * [metadata.row_type][google.spanner.v1.ResultSetMetadata.row_type]. Elements are
+   * encoded based on type as described
+   * [here][google.spanner.v1.TypeCode].
    * </pre>
    *
    * <code>repeated .google.protobuf.ListValue rows = 2;</code>
@@ -86,10 +89,11 @@ public interface ResultSetOrBuilder
    *
    * <pre>
    * Each element in `rows` is a row whose format is defined by
-   * [metadata.row_type][google.spanner.v1.ResultSetMetadata.row_type]. The ith
-   * element in each row matches the ith field in
-   * [metadata.row_type][google.spanner.v1.ResultSetMetadata.row_type]. Elements
-   * are encoded based on type as described [here][google.spanner.v1.TypeCode].
+   * [metadata.row_type][google.spanner.v1.ResultSetMetadata.row_type]. The ith element
+   * in each row matches the ith field in
+   * [metadata.row_type][google.spanner.v1.ResultSetMetadata.row_type]. Elements are
+   * encoded based on type as described
+   * [here][google.spanner.v1.TypeCode].
    * </pre>
    *
    * <code>repeated .google.protobuf.ListValue rows = 2;</code>
@@ -100,10 +104,11 @@ public interface ResultSetOrBuilder
    *
    * <pre>
    * Each element in `rows` is a row whose format is defined by
-   * [metadata.row_type][google.spanner.v1.ResultSetMetadata.row_type]. The ith
-   * element in each row matches the ith field in
-   * [metadata.row_type][google.spanner.v1.ResultSetMetadata.row_type]. Elements
-   * are encoded based on type as described [here][google.spanner.v1.TypeCode].
+   * [metadata.row_type][google.spanner.v1.ResultSetMetadata.row_type]. The ith element
+   * in each row matches the ith field in
+   * [metadata.row_type][google.spanner.v1.ResultSetMetadata.row_type]. Elements are
+   * encoded based on type as described
+   * [here][google.spanner.v1.TypeCode].
    * </pre>
    *
    * <code>repeated .google.protobuf.ListValue rows = 2;</code>
@@ -119,8 +124,7 @@ public interface ResultSetOrBuilder
    * [ExecuteSqlRequest.query_mode][google.spanner.v1.ExecuteSqlRequest.query_mode].
    * DML statements always produce stats containing the number of rows
    * modified, unless executed using the
-   * [ExecuteSqlRequest.QueryMode.PLAN][google.spanner.v1.ExecuteSqlRequest.QueryMode.PLAN]
-   * [ExecuteSqlRequest.query_mode][google.spanner.v1.ExecuteSqlRequest.query_mode].
+   * [ExecuteSqlRequest.QueryMode.PLAN][google.spanner.v1.ExecuteSqlRequest.QueryMode.PLAN] [ExecuteSqlRequest.query_mode][google.spanner.v1.ExecuteSqlRequest.query_mode].
    * Other fields may or may not be populated, based on the
    * [ExecuteSqlRequest.query_mode][google.spanner.v1.ExecuteSqlRequest.query_mode].
    * </pre>
@@ -137,8 +141,7 @@ public interface ResultSetOrBuilder
    * [ExecuteSqlRequest.query_mode][google.spanner.v1.ExecuteSqlRequest.query_mode].
    * DML statements always produce stats containing the number of rows
    * modified, unless executed using the
-   * [ExecuteSqlRequest.QueryMode.PLAN][google.spanner.v1.ExecuteSqlRequest.QueryMode.PLAN]
-   * [ExecuteSqlRequest.query_mode][google.spanner.v1.ExecuteSqlRequest.query_mode].
+   * [ExecuteSqlRequest.QueryMode.PLAN][google.spanner.v1.ExecuteSqlRequest.QueryMode.PLAN] [ExecuteSqlRequest.query_mode][google.spanner.v1.ExecuteSqlRequest.query_mode].
    * Other fields may or may not be populated, based on the
    * [ExecuteSqlRequest.query_mode][google.spanner.v1.ExecuteSqlRequest.query_mode].
    * </pre>
@@ -155,8 +158,7 @@ public interface ResultSetOrBuilder
    * [ExecuteSqlRequest.query_mode][google.spanner.v1.ExecuteSqlRequest.query_mode].
    * DML statements always produce stats containing the number of rows
    * modified, unless executed using the
-   * [ExecuteSqlRequest.QueryMode.PLAN][google.spanner.v1.ExecuteSqlRequest.QueryMode.PLAN]
-   * [ExecuteSqlRequest.query_mode][google.spanner.v1.ExecuteSqlRequest.query_mode].
+   * [ExecuteSqlRequest.QueryMode.PLAN][google.spanner.v1.ExecuteSqlRequest.QueryMode.PLAN] [ExecuteSqlRequest.query_mode][google.spanner.v1.ExecuteSqlRequest.query_mode].
    * Other fields may or may not be populated, based on the
    * [ExecuteSqlRequest.query_mode][google.spanner.v1.ExecuteSqlRequest.query_mode].
    * </pre>

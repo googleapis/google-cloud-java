@@ -25,6 +25,7 @@ import com.google.api.gax.grpc.testing.MockServiceHelper;
 import com.google.api.gax.rpc.ApiClientHeaderProvider;
 import com.google.api.gax.rpc.InvalidArgumentException;
 import com.google.api.gax.rpc.StatusCode;
+import com.google.api.resourcenames.ResourceName;
 import com.google.common.collect.Lists;
 import com.google.iam.v1.GetIamPolicyRequest;
 import com.google.iam.v1.Policy;
@@ -53,6 +54,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.Objects;
 import java.util.concurrent.ExecutionException;
 import org.junit.After;
 import org.junit.AfterClass;
@@ -96,54 +98,6 @@ public class DatabaseAdminClientTest {
   @After
   public void tearDown() throws Exception {
     client.close();
-  }
-
-  @Test
-  @SuppressWarnings("all")
-  public void listDatabasesTest() {
-    String nextPageToken = "";
-    Database databasesElement = Database.newBuilder().build();
-    List<Database> databases = Arrays.asList(databasesElement);
-    ListDatabasesResponse expectedResponse =
-        ListDatabasesResponse.newBuilder()
-            .setNextPageToken(nextPageToken)
-            .addAllDatabases(databases)
-            .build();
-    mockDatabaseAdmin.addResponse(expectedResponse);
-
-    InstanceName parent = InstanceName.of("[PROJECT]", "[INSTANCE]");
-
-    ListDatabasesPagedResponse pagedListResponse = client.listDatabases(parent);
-
-    List<Database> resources = Lists.newArrayList(pagedListResponse.iterateAll());
-    Assert.assertEquals(1, resources.size());
-    Assert.assertEquals(expectedResponse.getDatabasesList().get(0), resources.get(0));
-
-    List<AbstractMessage> actualRequests = mockDatabaseAdmin.getRequests();
-    Assert.assertEquals(1, actualRequests.size());
-    ListDatabasesRequest actualRequest = (ListDatabasesRequest) actualRequests.get(0);
-
-    Assert.assertEquals(parent, InstanceName.parse(actualRequest.getParent()));
-    Assert.assertTrue(
-        channelProvider.isHeaderSent(
-            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
-            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
-  }
-
-  @Test
-  @SuppressWarnings("all")
-  public void listDatabasesExceptionTest() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
-    mockDatabaseAdmin.addException(exception);
-
-    try {
-      InstanceName parent = InstanceName.of("[PROJECT]", "[INSTANCE]");
-
-      client.listDatabases(parent);
-      Assert.fail("No exception raised");
-    } catch (InvalidArgumentException e) {
-      // Expected exception
-    }
   }
 
   @Test
@@ -367,17 +321,18 @@ public class DatabaseAdminClientTest {
     Policy expectedResponse = Policy.newBuilder().setVersion(version).setEtag(etag).build();
     mockDatabaseAdmin.addResponse(expectedResponse);
 
-    String formattedResource = DatabaseName.format("[PROJECT]", "[INSTANCE]", "[DATABASE]");
+    ResourceName resource =
+        com.google.iam.v1.DatabaseName.of("[PROJECT]", "[INSTANCE]", "[DATABASE]");
     Policy policy = Policy.newBuilder().build();
 
-    Policy actualResponse = client.setIamPolicy(formattedResource, policy);
+    Policy actualResponse = client.setIamPolicy(resource, policy);
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<AbstractMessage> actualRequests = mockDatabaseAdmin.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     SetIamPolicyRequest actualRequest = (SetIamPolicyRequest) actualRequests.get(0);
 
-    Assert.assertEquals(formattedResource, actualRequest.getResource());
+    Assert.assertEquals(Objects.toString(resource), Objects.toString(actualRequest.getResource()));
     Assert.assertEquals(policy, actualRequest.getPolicy());
     Assert.assertTrue(
         channelProvider.isHeaderSent(
@@ -392,10 +347,11 @@ public class DatabaseAdminClientTest {
     mockDatabaseAdmin.addException(exception);
 
     try {
-      String formattedResource = DatabaseName.format("[PROJECT]", "[INSTANCE]", "[DATABASE]");
+      ResourceName resource =
+          com.google.iam.v1.DatabaseName.of("[PROJECT]", "[INSTANCE]", "[DATABASE]");
       Policy policy = Policy.newBuilder().build();
 
-      client.setIamPolicy(formattedResource, policy);
+      client.setIamPolicy(resource, policy);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception
@@ -410,16 +366,17 @@ public class DatabaseAdminClientTest {
     Policy expectedResponse = Policy.newBuilder().setVersion(version).setEtag(etag).build();
     mockDatabaseAdmin.addResponse(expectedResponse);
 
-    String formattedResource = DatabaseName.format("[PROJECT]", "[INSTANCE]", "[DATABASE]");
+    ResourceName resource =
+        com.google.iam.v1.DatabaseName.of("[PROJECT]", "[INSTANCE]", "[DATABASE]");
 
-    Policy actualResponse = client.getIamPolicy(formattedResource);
+    Policy actualResponse = client.getIamPolicy(resource);
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<AbstractMessage> actualRequests = mockDatabaseAdmin.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     GetIamPolicyRequest actualRequest = (GetIamPolicyRequest) actualRequests.get(0);
 
-    Assert.assertEquals(formattedResource, actualRequest.getResource());
+    Assert.assertEquals(Objects.toString(resource), Objects.toString(actualRequest.getResource()));
     Assert.assertTrue(
         channelProvider.isHeaderSent(
             ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
@@ -433,9 +390,10 @@ public class DatabaseAdminClientTest {
     mockDatabaseAdmin.addException(exception);
 
     try {
-      String formattedResource = DatabaseName.format("[PROJECT]", "[INSTANCE]", "[DATABASE]");
+      ResourceName resource =
+          com.google.iam.v1.DatabaseName.of("[PROJECT]", "[INSTANCE]", "[DATABASE]");
 
-      client.getIamPolicy(formattedResource);
+      client.getIamPolicy(resource);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception
@@ -448,18 +406,18 @@ public class DatabaseAdminClientTest {
     TestIamPermissionsResponse expectedResponse = TestIamPermissionsResponse.newBuilder().build();
     mockDatabaseAdmin.addResponse(expectedResponse);
 
-    String formattedResource = DatabaseName.format("[PROJECT]", "[INSTANCE]", "[DATABASE]");
+    ResourceName resource =
+        com.google.iam.v1.DatabaseName.of("[PROJECT]", "[INSTANCE]", "[DATABASE]");
     List<String> permissions = new ArrayList<>();
 
-    TestIamPermissionsResponse actualResponse =
-        client.testIamPermissions(formattedResource, permissions);
+    TestIamPermissionsResponse actualResponse = client.testIamPermissions(resource, permissions);
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<AbstractMessage> actualRequests = mockDatabaseAdmin.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     TestIamPermissionsRequest actualRequest = (TestIamPermissionsRequest) actualRequests.get(0);
 
-    Assert.assertEquals(formattedResource, actualRequest.getResource());
+    Assert.assertEquals(Objects.toString(resource), Objects.toString(actualRequest.getResource()));
     Assert.assertEquals(permissions, actualRequest.getPermissionsList());
     Assert.assertTrue(
         channelProvider.isHeaderSent(
@@ -474,10 +432,59 @@ public class DatabaseAdminClientTest {
     mockDatabaseAdmin.addException(exception);
 
     try {
-      String formattedResource = DatabaseName.format("[PROJECT]", "[INSTANCE]", "[DATABASE]");
+      ResourceName resource =
+          com.google.iam.v1.DatabaseName.of("[PROJECT]", "[INSTANCE]", "[DATABASE]");
       List<String> permissions = new ArrayList<>();
 
-      client.testIamPermissions(formattedResource, permissions);
+      client.testIamPermissions(resource, permissions);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception
+    }
+  }
+
+  @Test
+  @SuppressWarnings("all")
+  public void listDatabasesTest() {
+    String nextPageToken = "";
+    Database databasesElement = Database.newBuilder().build();
+    List<Database> databases = Arrays.asList(databasesElement);
+    ListDatabasesResponse expectedResponse =
+        ListDatabasesResponse.newBuilder()
+            .setNextPageToken(nextPageToken)
+            .addAllDatabases(databases)
+            .build();
+    mockDatabaseAdmin.addResponse(expectedResponse);
+
+    InstanceName parent = InstanceName.of("[PROJECT]", "[INSTANCE]");
+
+    ListDatabasesPagedResponse pagedListResponse = client.listDatabases(parent);
+
+    List<Database> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getDatabasesList().get(0), resources.get(0));
+
+    List<AbstractMessage> actualRequests = mockDatabaseAdmin.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ListDatabasesRequest actualRequest = (ListDatabasesRequest) actualRequests.get(0);
+
+    Assert.assertEquals(parent, InstanceName.parse(actualRequest.getParent()));
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  @SuppressWarnings("all")
+  public void listDatabasesExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
+    mockDatabaseAdmin.addException(exception);
+
+    try {
+      InstanceName parent = InstanceName.of("[PROJECT]", "[INSTANCE]");
+
+      client.listDatabases(parent);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception
