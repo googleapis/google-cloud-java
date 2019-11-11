@@ -90,6 +90,22 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
               messageTypeCase_ = 2;
               break;
             }
+          case 26:
+            {
+              com.google.cloud.tasks.v2.HttpRequest.Builder subBuilder = null;
+              if (messageTypeCase_ == 3) {
+                subBuilder = ((com.google.cloud.tasks.v2.HttpRequest) messageType_).toBuilder();
+              }
+              messageType_ =
+                  input.readMessage(
+                      com.google.cloud.tasks.v2.HttpRequest.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom((com.google.cloud.tasks.v2.HttpRequest) messageType_);
+                messageType_ = subBuilder.buildPartial();
+              }
+              messageTypeCase_ = 3;
+              break;
+            }
           case 34:
             {
               com.google.protobuf.Timestamp.Builder subBuilder = null;
@@ -388,6 +404,7 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
 
   public enum MessageTypeCase implements com.google.protobuf.Internal.EnumLite {
     APP_ENGINE_HTTP_REQUEST(2),
+    HTTP_REQUEST(3),
     MESSAGETYPE_NOT_SET(0);
     private final int value;
 
@@ -404,6 +421,8 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
       switch (value) {
         case 2:
           return APP_ENGINE_HTTP_REQUEST;
+        case 3:
+          return HTTP_REQUEST;
         case 0:
           return MESSAGETYPE_NOT_SET;
         default:
@@ -543,6 +562,53 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
     return com.google.cloud.tasks.v2.AppEngineHttpRequest.getDefaultInstance();
   }
 
+  public static final int HTTP_REQUEST_FIELD_NUMBER = 3;
+  /**
+   *
+   *
+   * <pre>
+   * HTTP request that is sent to the worker.
+   * An HTTP task is a task that has [HttpRequest][google.cloud.tasks.v2.HttpRequest] set.
+   * </pre>
+   *
+   * <code>.google.cloud.tasks.v2.HttpRequest http_request = 3;</code>
+   */
+  public boolean hasHttpRequest() {
+    return messageTypeCase_ == 3;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * HTTP request that is sent to the worker.
+   * An HTTP task is a task that has [HttpRequest][google.cloud.tasks.v2.HttpRequest] set.
+   * </pre>
+   *
+   * <code>.google.cloud.tasks.v2.HttpRequest http_request = 3;</code>
+   */
+  public com.google.cloud.tasks.v2.HttpRequest getHttpRequest() {
+    if (messageTypeCase_ == 3) {
+      return (com.google.cloud.tasks.v2.HttpRequest) messageType_;
+    }
+    return com.google.cloud.tasks.v2.HttpRequest.getDefaultInstance();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * HTTP request that is sent to the worker.
+   * An HTTP task is a task that has [HttpRequest][google.cloud.tasks.v2.HttpRequest] set.
+   * </pre>
+   *
+   * <code>.google.cloud.tasks.v2.HttpRequest http_request = 3;</code>
+   */
+  public com.google.cloud.tasks.v2.HttpRequestOrBuilder getHttpRequestOrBuilder() {
+    if (messageTypeCase_ == 3) {
+      return (com.google.cloud.tasks.v2.HttpRequest) messageType_;
+    }
+    return com.google.cloud.tasks.v2.HttpRequest.getDefaultInstance();
+  }
+
   public static final int SCHEDULE_TIME_FIELD_NUMBER = 4;
   private com.google.protobuf.Timestamp scheduleTime_;
   /**
@@ -644,6 +710,8 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
    * worker. For example, if the worker is stuck, it may not react to cancelled
    * requests.
    * The default and maximum values depend on the type of request:
+   * * For [HTTP tasks][google.cloud.tasks.v2.HttpRequest], the default is 10 minutes. The deadline
+   *   must be in the interval [15 seconds, 30 minutes].
    * * For [App Engine tasks][google.cloud.tasks.v2.AppEngineHttpRequest], 0 indicates that the
    *   request has the default deadline. The default deadline depends on the
    *   [scaling
@@ -679,6 +747,8 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
    * worker. For example, if the worker is stuck, it may not react to cancelled
    * requests.
    * The default and maximum values depend on the type of request:
+   * * For [HTTP tasks][google.cloud.tasks.v2.HttpRequest], the default is 10 minutes. The deadline
+   *   must be in the interval [15 seconds, 30 minutes].
    * * For [App Engine tasks][google.cloud.tasks.v2.AppEngineHttpRequest], 0 indicates that the
    *   request has the default deadline. The default deadline depends on the
    *   [scaling
@@ -716,6 +786,8 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
    * worker. For example, if the worker is stuck, it may not react to cancelled
    * requests.
    * The default and maximum values depend on the type of request:
+   * * For [HTTP tasks][google.cloud.tasks.v2.HttpRequest], the default is 10 minutes. The deadline
+   *   must be in the interval [15 seconds, 30 minutes].
    * * For [App Engine tasks][google.cloud.tasks.v2.AppEngineHttpRequest], 0 indicates that the
    *   request has the default deadline. The default deadline depends on the
    *   [scaling
@@ -910,6 +982,9 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
     if (messageTypeCase_ == 2) {
       output.writeMessage(2, (com.google.cloud.tasks.v2.AppEngineHttpRequest) messageType_);
     }
+    if (messageTypeCase_ == 3) {
+      output.writeMessage(3, (com.google.cloud.tasks.v2.HttpRequest) messageType_);
+    }
     if (scheduleTime_ != null) {
       output.writeMessage(4, getScheduleTime());
     }
@@ -950,6 +1025,11 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               2, (com.google.cloud.tasks.v2.AppEngineHttpRequest) messageType_);
+    }
+    if (messageTypeCase_ == 3) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              3, (com.google.cloud.tasks.v2.HttpRequest) messageType_);
     }
     if (scheduleTime_ != null) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(4, getScheduleTime());
@@ -1019,6 +1099,9 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
       case 2:
         if (!getAppEngineHttpRequest().equals(other.getAppEngineHttpRequest())) return false;
         break;
+      case 3:
+        if (!getHttpRequest().equals(other.getHttpRequest())) return false;
+        break;
       case 0:
       default:
     }
@@ -1065,6 +1148,10 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
       case 2:
         hash = (37 * hash) + APP_ENGINE_HTTP_REQUEST_FIELD_NUMBER;
         hash = (53 * hash) + getAppEngineHttpRequest().hashCode();
+        break;
+      case 3:
+        hash = (37 * hash) + HTTP_REQUEST_FIELD_NUMBER;
+        hash = (53 * hash) + getHttpRequest().hashCode();
         break;
       case 0:
       default:
@@ -1286,6 +1373,13 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
           result.messageType_ = appEngineHttpRequestBuilder_.build();
         }
       }
+      if (messageTypeCase_ == 3) {
+        if (httpRequestBuilder_ == null) {
+          result.messageType_ = messageType_;
+        } else {
+          result.messageType_ = httpRequestBuilder_.build();
+        }
+      }
       if (scheduleTimeBuilder_ == null) {
         result.scheduleTime_ = scheduleTime_;
       } else {
@@ -1396,6 +1490,11 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
         case APP_ENGINE_HTTP_REQUEST:
           {
             mergeAppEngineHttpRequest(other.getAppEngineHttpRequest());
+            break;
+          }
+        case HTTP_REQUEST:
+          {
+            mergeHttpRequest(other.getHttpRequest());
             break;
           }
         case MESSAGETYPE_NOT_SET:
@@ -1833,6 +1932,216 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
       return appEngineHttpRequestBuilder_;
     }
 
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.tasks.v2.HttpRequest,
+            com.google.cloud.tasks.v2.HttpRequest.Builder,
+            com.google.cloud.tasks.v2.HttpRequestOrBuilder>
+        httpRequestBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * HTTP request that is sent to the worker.
+     * An HTTP task is a task that has [HttpRequest][google.cloud.tasks.v2.HttpRequest] set.
+     * </pre>
+     *
+     * <code>.google.cloud.tasks.v2.HttpRequest http_request = 3;</code>
+     */
+    public boolean hasHttpRequest() {
+      return messageTypeCase_ == 3;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * HTTP request that is sent to the worker.
+     * An HTTP task is a task that has [HttpRequest][google.cloud.tasks.v2.HttpRequest] set.
+     * </pre>
+     *
+     * <code>.google.cloud.tasks.v2.HttpRequest http_request = 3;</code>
+     */
+    public com.google.cloud.tasks.v2.HttpRequest getHttpRequest() {
+      if (httpRequestBuilder_ == null) {
+        if (messageTypeCase_ == 3) {
+          return (com.google.cloud.tasks.v2.HttpRequest) messageType_;
+        }
+        return com.google.cloud.tasks.v2.HttpRequest.getDefaultInstance();
+      } else {
+        if (messageTypeCase_ == 3) {
+          return httpRequestBuilder_.getMessage();
+        }
+        return com.google.cloud.tasks.v2.HttpRequest.getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * HTTP request that is sent to the worker.
+     * An HTTP task is a task that has [HttpRequest][google.cloud.tasks.v2.HttpRequest] set.
+     * </pre>
+     *
+     * <code>.google.cloud.tasks.v2.HttpRequest http_request = 3;</code>
+     */
+    public Builder setHttpRequest(com.google.cloud.tasks.v2.HttpRequest value) {
+      if (httpRequestBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        messageType_ = value;
+        onChanged();
+      } else {
+        httpRequestBuilder_.setMessage(value);
+      }
+      messageTypeCase_ = 3;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * HTTP request that is sent to the worker.
+     * An HTTP task is a task that has [HttpRequest][google.cloud.tasks.v2.HttpRequest] set.
+     * </pre>
+     *
+     * <code>.google.cloud.tasks.v2.HttpRequest http_request = 3;</code>
+     */
+    public Builder setHttpRequest(com.google.cloud.tasks.v2.HttpRequest.Builder builderForValue) {
+      if (httpRequestBuilder_ == null) {
+        messageType_ = builderForValue.build();
+        onChanged();
+      } else {
+        httpRequestBuilder_.setMessage(builderForValue.build());
+      }
+      messageTypeCase_ = 3;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * HTTP request that is sent to the worker.
+     * An HTTP task is a task that has [HttpRequest][google.cloud.tasks.v2.HttpRequest] set.
+     * </pre>
+     *
+     * <code>.google.cloud.tasks.v2.HttpRequest http_request = 3;</code>
+     */
+    public Builder mergeHttpRequest(com.google.cloud.tasks.v2.HttpRequest value) {
+      if (httpRequestBuilder_ == null) {
+        if (messageTypeCase_ == 3
+            && messageType_ != com.google.cloud.tasks.v2.HttpRequest.getDefaultInstance()) {
+          messageType_ =
+              com.google.cloud.tasks.v2.HttpRequest.newBuilder(
+                      (com.google.cloud.tasks.v2.HttpRequest) messageType_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          messageType_ = value;
+        }
+        onChanged();
+      } else {
+        if (messageTypeCase_ == 3) {
+          httpRequestBuilder_.mergeFrom(value);
+        }
+        httpRequestBuilder_.setMessage(value);
+      }
+      messageTypeCase_ = 3;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * HTTP request that is sent to the worker.
+     * An HTTP task is a task that has [HttpRequest][google.cloud.tasks.v2.HttpRequest] set.
+     * </pre>
+     *
+     * <code>.google.cloud.tasks.v2.HttpRequest http_request = 3;</code>
+     */
+    public Builder clearHttpRequest() {
+      if (httpRequestBuilder_ == null) {
+        if (messageTypeCase_ == 3) {
+          messageTypeCase_ = 0;
+          messageType_ = null;
+          onChanged();
+        }
+      } else {
+        if (messageTypeCase_ == 3) {
+          messageTypeCase_ = 0;
+          messageType_ = null;
+        }
+        httpRequestBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * HTTP request that is sent to the worker.
+     * An HTTP task is a task that has [HttpRequest][google.cloud.tasks.v2.HttpRequest] set.
+     * </pre>
+     *
+     * <code>.google.cloud.tasks.v2.HttpRequest http_request = 3;</code>
+     */
+    public com.google.cloud.tasks.v2.HttpRequest.Builder getHttpRequestBuilder() {
+      return getHttpRequestFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * HTTP request that is sent to the worker.
+     * An HTTP task is a task that has [HttpRequest][google.cloud.tasks.v2.HttpRequest] set.
+     * </pre>
+     *
+     * <code>.google.cloud.tasks.v2.HttpRequest http_request = 3;</code>
+     */
+    public com.google.cloud.tasks.v2.HttpRequestOrBuilder getHttpRequestOrBuilder() {
+      if ((messageTypeCase_ == 3) && (httpRequestBuilder_ != null)) {
+        return httpRequestBuilder_.getMessageOrBuilder();
+      } else {
+        if (messageTypeCase_ == 3) {
+          return (com.google.cloud.tasks.v2.HttpRequest) messageType_;
+        }
+        return com.google.cloud.tasks.v2.HttpRequest.getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * HTTP request that is sent to the worker.
+     * An HTTP task is a task that has [HttpRequest][google.cloud.tasks.v2.HttpRequest] set.
+     * </pre>
+     *
+     * <code>.google.cloud.tasks.v2.HttpRequest http_request = 3;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.tasks.v2.HttpRequest,
+            com.google.cloud.tasks.v2.HttpRequest.Builder,
+            com.google.cloud.tasks.v2.HttpRequestOrBuilder>
+        getHttpRequestFieldBuilder() {
+      if (httpRequestBuilder_ == null) {
+        if (!(messageTypeCase_ == 3)) {
+          messageType_ = com.google.cloud.tasks.v2.HttpRequest.getDefaultInstance();
+        }
+        httpRequestBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.tasks.v2.HttpRequest,
+                com.google.cloud.tasks.v2.HttpRequest.Builder,
+                com.google.cloud.tasks.v2.HttpRequestOrBuilder>(
+                (com.google.cloud.tasks.v2.HttpRequest) messageType_,
+                getParentForChildren(),
+                isClean());
+        messageType_ = null;
+      }
+      messageTypeCase_ = 3;
+      onChanged();
+      ;
+      return httpRequestBuilder_;
+    }
+
     private com.google.protobuf.Timestamp scheduleTime_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.protobuf.Timestamp,
@@ -2230,6 +2539,8 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
      * worker. For example, if the worker is stuck, it may not react to cancelled
      * requests.
      * The default and maximum values depend on the type of request:
+     * * For [HTTP tasks][google.cloud.tasks.v2.HttpRequest], the default is 10 minutes. The deadline
+     *   must be in the interval [15 seconds, 30 minutes].
      * * For [App Engine tasks][google.cloud.tasks.v2.AppEngineHttpRequest], 0 indicates that the
      *   request has the default deadline. The default deadline depends on the
      *   [scaling
@@ -2265,6 +2576,8 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
      * worker. For example, if the worker is stuck, it may not react to cancelled
      * requests.
      * The default and maximum values depend on the type of request:
+     * * For [HTTP tasks][google.cloud.tasks.v2.HttpRequest], the default is 10 minutes. The deadline
+     *   must be in the interval [15 seconds, 30 minutes].
      * * For [App Engine tasks][google.cloud.tasks.v2.AppEngineHttpRequest], 0 indicates that the
      *   request has the default deadline. The default deadline depends on the
      *   [scaling
@@ -2306,6 +2619,8 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
      * worker. For example, if the worker is stuck, it may not react to cancelled
      * requests.
      * The default and maximum values depend on the type of request:
+     * * For [HTTP tasks][google.cloud.tasks.v2.HttpRequest], the default is 10 minutes. The deadline
+     *   must be in the interval [15 seconds, 30 minutes].
      * * For [App Engine tasks][google.cloud.tasks.v2.AppEngineHttpRequest], 0 indicates that the
      *   request has the default deadline. The default deadline depends on the
      *   [scaling
@@ -2351,6 +2666,8 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
      * worker. For example, if the worker is stuck, it may not react to cancelled
      * requests.
      * The default and maximum values depend on the type of request:
+     * * For [HTTP tasks][google.cloud.tasks.v2.HttpRequest], the default is 10 minutes. The deadline
+     *   must be in the interval [15 seconds, 30 minutes].
      * * For [App Engine tasks][google.cloud.tasks.v2.AppEngineHttpRequest], 0 indicates that the
      *   request has the default deadline. The default deadline depends on the
      *   [scaling
@@ -2393,6 +2710,8 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
      * worker. For example, if the worker is stuck, it may not react to cancelled
      * requests.
      * The default and maximum values depend on the type of request:
+     * * For [HTTP tasks][google.cloud.tasks.v2.HttpRequest], the default is 10 minutes. The deadline
+     *   must be in the interval [15 seconds, 30 minutes].
      * * For [App Engine tasks][google.cloud.tasks.v2.AppEngineHttpRequest], 0 indicates that the
      *   request has the default deadline. The default deadline depends on the
      *   [scaling
@@ -2442,6 +2761,8 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
      * worker. For example, if the worker is stuck, it may not react to cancelled
      * requests.
      * The default and maximum values depend on the type of request:
+     * * For [HTTP tasks][google.cloud.tasks.v2.HttpRequest], the default is 10 minutes. The deadline
+     *   must be in the interval [15 seconds, 30 minutes].
      * * For [App Engine tasks][google.cloud.tasks.v2.AppEngineHttpRequest], 0 indicates that the
      *   request has the default deadline. The default deadline depends on the
      *   [scaling
@@ -2485,6 +2806,8 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
      * worker. For example, if the worker is stuck, it may not react to cancelled
      * requests.
      * The default and maximum values depend on the type of request:
+     * * For [HTTP tasks][google.cloud.tasks.v2.HttpRequest], the default is 10 minutes. The deadline
+     *   must be in the interval [15 seconds, 30 minutes].
      * * For [App Engine tasks][google.cloud.tasks.v2.AppEngineHttpRequest], 0 indicates that the
      *   request has the default deadline. The default deadline depends on the
      *   [scaling
@@ -2522,6 +2845,8 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
      * worker. For example, if the worker is stuck, it may not react to cancelled
      * requests.
      * The default and maximum values depend on the type of request:
+     * * For [HTTP tasks][google.cloud.tasks.v2.HttpRequest], the default is 10 minutes. The deadline
+     *   must be in the interval [15 seconds, 30 minutes].
      * * For [App Engine tasks][google.cloud.tasks.v2.AppEngineHttpRequest], 0 indicates that the
      *   request has the default deadline. The default deadline depends on the
      *   [scaling
@@ -2563,6 +2888,8 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
      * worker. For example, if the worker is stuck, it may not react to cancelled
      * requests.
      * The default and maximum values depend on the type of request:
+     * * For [HTTP tasks][google.cloud.tasks.v2.HttpRequest], the default is 10 minutes. The deadline
+     *   must be in the interval [15 seconds, 30 minutes].
      * * For [App Engine tasks][google.cloud.tasks.v2.AppEngineHttpRequest], 0 indicates that the
      *   request has the default deadline. The default deadline depends on the
      *   [scaling

@@ -464,6 +464,7 @@ public final class Queue extends com.google.protobuf.GeneratedMessageV3
    * [task-level app_engine_routing][google.cloud.tasks.v2.AppEngineHttpRequest.app_engine_routing].
    * These settings apply only to
    * [App Engine tasks][google.cloud.tasks.v2.AppEngineHttpRequest] in this queue.
+   * [Http tasks][google.cloud.tasks.v2.HttpRequest] are not affected.
    * If set, `app_engine_routing_override` is used for all
    * [App Engine tasks][google.cloud.tasks.v2.AppEngineHttpRequest] in the queue, no matter what the
    * setting is for the
@@ -483,6 +484,7 @@ public final class Queue extends com.google.protobuf.GeneratedMessageV3
    * [task-level app_engine_routing][google.cloud.tasks.v2.AppEngineHttpRequest.app_engine_routing].
    * These settings apply only to
    * [App Engine tasks][google.cloud.tasks.v2.AppEngineHttpRequest] in this queue.
+   * [Http tasks][google.cloud.tasks.v2.HttpRequest] are not affected.
    * If set, `app_engine_routing_override` is used for all
    * [App Engine tasks][google.cloud.tasks.v2.AppEngineHttpRequest] in the queue, no matter what the
    * setting is for the
@@ -504,6 +506,7 @@ public final class Queue extends com.google.protobuf.GeneratedMessageV3
    * [task-level app_engine_routing][google.cloud.tasks.v2.AppEngineHttpRequest.app_engine_routing].
    * These settings apply only to
    * [App Engine tasks][google.cloud.tasks.v2.AppEngineHttpRequest] in this queue.
+   * [Http tasks][google.cloud.tasks.v2.HttpRequest] are not affected.
    * If set, `app_engine_routing_override` is used for all
    * [App Engine tasks][google.cloud.tasks.v2.AppEngineHttpRequest] in the queue, no matter what the
    * setting is for the
@@ -1406,6 +1409,7 @@ public final class Queue extends com.google.protobuf.GeneratedMessageV3
      * [task-level app_engine_routing][google.cloud.tasks.v2.AppEngineHttpRequest.app_engine_routing].
      * These settings apply only to
      * [App Engine tasks][google.cloud.tasks.v2.AppEngineHttpRequest] in this queue.
+     * [Http tasks][google.cloud.tasks.v2.HttpRequest] are not affected.
      * If set, `app_engine_routing_override` is used for all
      * [App Engine tasks][google.cloud.tasks.v2.AppEngineHttpRequest] in the queue, no matter what the
      * setting is for the
@@ -1425,6 +1429,7 @@ public final class Queue extends com.google.protobuf.GeneratedMessageV3
      * [task-level app_engine_routing][google.cloud.tasks.v2.AppEngineHttpRequest.app_engine_routing].
      * These settings apply only to
      * [App Engine tasks][google.cloud.tasks.v2.AppEngineHttpRequest] in this queue.
+     * [Http tasks][google.cloud.tasks.v2.HttpRequest] are not affected.
      * If set, `app_engine_routing_override` is used for all
      * [App Engine tasks][google.cloud.tasks.v2.AppEngineHttpRequest] in the queue, no matter what the
      * setting is for the
@@ -1450,6 +1455,7 @@ public final class Queue extends com.google.protobuf.GeneratedMessageV3
      * [task-level app_engine_routing][google.cloud.tasks.v2.AppEngineHttpRequest.app_engine_routing].
      * These settings apply only to
      * [App Engine tasks][google.cloud.tasks.v2.AppEngineHttpRequest] in this queue.
+     * [Http tasks][google.cloud.tasks.v2.HttpRequest] are not affected.
      * If set, `app_engine_routing_override` is used for all
      * [App Engine tasks][google.cloud.tasks.v2.AppEngineHttpRequest] in the queue, no matter what the
      * setting is for the
@@ -1479,6 +1485,7 @@ public final class Queue extends com.google.protobuf.GeneratedMessageV3
      * [task-level app_engine_routing][google.cloud.tasks.v2.AppEngineHttpRequest.app_engine_routing].
      * These settings apply only to
      * [App Engine tasks][google.cloud.tasks.v2.AppEngineHttpRequest] in this queue.
+     * [Http tasks][google.cloud.tasks.v2.HttpRequest] are not affected.
      * If set, `app_engine_routing_override` is used for all
      * [App Engine tasks][google.cloud.tasks.v2.AppEngineHttpRequest] in the queue, no matter what the
      * setting is for the
@@ -1506,6 +1513,7 @@ public final class Queue extends com.google.protobuf.GeneratedMessageV3
      * [task-level app_engine_routing][google.cloud.tasks.v2.AppEngineHttpRequest.app_engine_routing].
      * These settings apply only to
      * [App Engine tasks][google.cloud.tasks.v2.AppEngineHttpRequest] in this queue.
+     * [Http tasks][google.cloud.tasks.v2.HttpRequest] are not affected.
      * If set, `app_engine_routing_override` is used for all
      * [App Engine tasks][google.cloud.tasks.v2.AppEngineHttpRequest] in the queue, no matter what the
      * setting is for the
@@ -1539,6 +1547,7 @@ public final class Queue extends com.google.protobuf.GeneratedMessageV3
      * [task-level app_engine_routing][google.cloud.tasks.v2.AppEngineHttpRequest.app_engine_routing].
      * These settings apply only to
      * [App Engine tasks][google.cloud.tasks.v2.AppEngineHttpRequest] in this queue.
+     * [Http tasks][google.cloud.tasks.v2.HttpRequest] are not affected.
      * If set, `app_engine_routing_override` is used for all
      * [App Engine tasks][google.cloud.tasks.v2.AppEngineHttpRequest] in the queue, no matter what the
      * setting is for the
@@ -1566,6 +1575,7 @@ public final class Queue extends com.google.protobuf.GeneratedMessageV3
      * [task-level app_engine_routing][google.cloud.tasks.v2.AppEngineHttpRequest.app_engine_routing].
      * These settings apply only to
      * [App Engine tasks][google.cloud.tasks.v2.AppEngineHttpRequest] in this queue.
+     * [Http tasks][google.cloud.tasks.v2.HttpRequest] are not affected.
      * If set, `app_engine_routing_override` is used for all
      * [App Engine tasks][google.cloud.tasks.v2.AppEngineHttpRequest] in the queue, no matter what the
      * setting is for the
@@ -1587,6 +1597,7 @@ public final class Queue extends com.google.protobuf.GeneratedMessageV3
      * [task-level app_engine_routing][google.cloud.tasks.v2.AppEngineHttpRequest.app_engine_routing].
      * These settings apply only to
      * [App Engine tasks][google.cloud.tasks.v2.AppEngineHttpRequest] in this queue.
+     * [Http tasks][google.cloud.tasks.v2.HttpRequest] are not affected.
      * If set, `app_engine_routing_override` is used for all
      * [App Engine tasks][google.cloud.tasks.v2.AppEngineHttpRequest] in the queue, no matter what the
      * setting is for the
@@ -1613,6 +1624,7 @@ public final class Queue extends com.google.protobuf.GeneratedMessageV3
      * [task-level app_engine_routing][google.cloud.tasks.v2.AppEngineHttpRequest.app_engine_routing].
      * These settings apply only to
      * [App Engine tasks][google.cloud.tasks.v2.AppEngineHttpRequest] in this queue.
+     * [Http tasks][google.cloud.tasks.v2.HttpRequest] are not affected.
      * If set, `app_engine_routing_override` is used for all
      * [App Engine tasks][google.cloud.tasks.v2.AppEngineHttpRequest] in the queue, no matter what the
      * setting is for the

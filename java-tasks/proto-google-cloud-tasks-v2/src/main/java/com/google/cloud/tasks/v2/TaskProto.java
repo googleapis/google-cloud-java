@@ -50,30 +50,32 @@ public final class TaskProto {
           + "\032\036google/protobuf/duration.proto\032\037google"
           + "/protobuf/timestamp.proto\032\027google/rpc/st"
           + "atus.proto\032\034google/api/annotations.proto"
-          + "\"\370\004\n\004Task\022\014\n\004name\030\001 \001(\t\022N\n\027app_engine_ht"
+          + "\"\264\005\n\004Task\022\014\n\004name\030\001 \001(\t\022N\n\027app_engine_ht"
           + "tp_request\030\002 \001(\0132+.google.cloud.tasks.v2"
-          + ".AppEngineHttpRequestH\000\0221\n\rschedule_time"
-          + "\030\004 \001(\0132\032.google.protobuf.Timestamp\022/\n\013cr"
-          + "eate_time\030\005 \001(\0132\032.google.protobuf.Timest"
-          + "amp\0224\n\021dispatch_deadline\030\006 \001(\0132\031.google."
-          + "protobuf.Duration\022\026\n\016dispatch_count\030\007 \001("
-          + "\005\022\026\n\016response_count\030\010 \001(\005\0225\n\rfirst_attem"
-          + "pt\030\t \001(\0132\036.google.cloud.tasks.v2.Attempt"
-          + "\0224\n\014last_attempt\030\n \001(\0132\036.google.cloud.ta"
-          + "sks.v2.Attempt\022.\n\004view\030\013 \001(\0162 .google.cl"
-          + "oud.tasks.v2.Task.View\"1\n\004View\022\024\n\020VIEW_U"
-          + "NSPECIFIED\020\000\022\t\n\005BASIC\020\001\022\010\n\004FULL\020\002:h\352Ae\n\036"
-          + "cloudtasks.googleapis.com/Task\022Cprojects"
-          + "/{project}/locations/{location}/queues/{"
-          + "queue}/tasks/{task}B\016\n\014message_type\"\317\001\n\007"
-          + "Attempt\0221\n\rschedule_time\030\001 \001(\0132\032.google."
-          + "protobuf.Timestamp\0221\n\rdispatch_time\030\002 \001("
-          + "\0132\032.google.protobuf.Timestamp\0221\n\rrespons"
-          + "e_time\030\003 \001(\0132\032.google.protobuf.Timestamp"
-          + "\022+\n\017response_status\030\004 \001(\0132\022.google.rpc.S"
-          + "tatusBd\n\031com.google.cloud.tasks.v2B\tTask"
-          + "ProtoP\001Z:google.golang.org/genproto/goog"
-          + "leapis/cloud/tasks/v2;tasksb\006proto3"
+          + ".AppEngineHttpRequestH\000\022:\n\014http_request\030"
+          + "\003 \001(\0132\".google.cloud.tasks.v2.HttpReques"
+          + "tH\000\0221\n\rschedule_time\030\004 \001(\0132\032.google.prot"
+          + "obuf.Timestamp\022/\n\013create_time\030\005 \001(\0132\032.go"
+          + "ogle.protobuf.Timestamp\0224\n\021dispatch_dead"
+          + "line\030\006 \001(\0132\031.google.protobuf.Duration\022\026\n"
+          + "\016dispatch_count\030\007 \001(\005\022\026\n\016response_count\030"
+          + "\010 \001(\005\0225\n\rfirst_attempt\030\t \001(\0132\036.google.cl"
+          + "oud.tasks.v2.Attempt\0224\n\014last_attempt\030\n \001"
+          + "(\0132\036.google.cloud.tasks.v2.Attempt\022.\n\004vi"
+          + "ew\030\013 \001(\0162 .google.cloud.tasks.v2.Task.Vi"
+          + "ew\"1\n\004View\022\024\n\020VIEW_UNSPECIFIED\020\000\022\t\n\005BASI"
+          + "C\020\001\022\010\n\004FULL\020\002:h\352Ae\n\036cloudtasks.googleapi"
+          + "s.com/Task\022Cprojects/{project}/locations"
+          + "/{location}/queues/{queue}/tasks/{task}B"
+          + "\016\n\014message_type\"\317\001\n\007Attempt\0221\n\rschedule_"
+          + "time\030\001 \001(\0132\032.google.protobuf.Timestamp\0221"
+          + "\n\rdispatch_time\030\002 \001(\0132\032.google.protobuf."
+          + "Timestamp\0221\n\rresponse_time\030\003 \001(\0132\032.googl"
+          + "e.protobuf.Timestamp\022+\n\017response_status\030"
+          + "\004 \001(\0132\022.google.rpc.StatusBd\n\031com.google."
+          + "cloud.tasks.v2B\tTaskProtoP\001Z:google.gola"
+          + "ng.org/genproto/googleapis/cloud/tasks/v"
+          + "2;tasksb\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner() {
@@ -102,6 +104,7 @@ public final class TaskProto {
             new java.lang.String[] {
               "Name",
               "AppEngineHttpRequest",
+              "HttpRequest",
               "ScheduleTime",
               "CreateTime",
               "DispatchDeadline",
