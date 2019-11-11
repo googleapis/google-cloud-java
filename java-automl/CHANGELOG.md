@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.115.0](https://www.github.com/googleapis/java-automl/compare/v0.114.1...v0.115.0) (2019-11-11)
+
+
+### Features
+
+* add Natural Language, Vision to v1, Tables to v1beta1 ([#42](https://www.github.com/googleapis/java-automl/issues/42)) ([bd9a0f8](https://www.github.com/googleapis/java-automl/commit/bd9a0f84f78189a9b495874af270198ae27992ad))
+
 ### [0.114.1](https://www.github.com/googleapis/java-automl/compare/v0.114.0...v0.114.1) (2019-10-28)
 
 
