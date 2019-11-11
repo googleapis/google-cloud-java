@@ -674,7 +674,7 @@
       <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-trace-bom</artifactId>
-        <version>0.109.0-beta</version>
+        <version>0.109.1-beta</version>
         <type>pom</type>
         <scope>import</scope>
       </dependency>
