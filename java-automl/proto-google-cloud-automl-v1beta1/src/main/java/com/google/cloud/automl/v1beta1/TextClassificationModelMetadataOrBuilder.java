@@ -21,4 +21,26 @@ package com.google.cloud.automl.v1beta1;
 public interface TextClassificationModelMetadataOrBuilder
     extends
     // @@protoc_insertion_point(interface_extends:google.cloud.automl.v1beta1.TextClassificationModelMetadata)
-    com.google.protobuf.MessageOrBuilder {}
+    com.google.protobuf.MessageOrBuilder {
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Classification type of the dataset used to train this model.
+   * </pre>
+   *
+   * <code>.google.cloud.automl.v1beta1.ClassificationType classification_type = 3;</code>
+   */
+  int getClassificationTypeValue();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Classification type of the dataset used to train this model.
+   * </pre>
+   *
+   * <code>.google.cloud.automl.v1beta1.ClassificationType classification_type = 3;</code>
+   */
+  com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationType getClassificationType();
+}

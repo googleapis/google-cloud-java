@@ -60,6 +60,10 @@ public final class AutoMlProto {
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_automl_v1_ExportDataRequest_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_automl_v1_GetAnnotationSpecRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_automl_v1_GetAnnotationSpecRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_cloud_automl_v1_CreateModelRequest_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_automl_v1_CreateModelRequest_fieldAccessorTable;
@@ -84,6 +88,18 @@ public final class AutoMlProto {
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_automl_v1_UpdateModelRequest_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_automl_v1_DeployModelRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_automl_v1_DeployModelRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_automl_v1_UndeployModelRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_automl_v1_UndeployModelRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_automl_v1_ExportModelRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_automl_v1_ExportModelRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_cloud_automl_v1_GetModelEvaluationRequest_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_automl_v1_GetModelEvaluationRequest_fieldAccessorTable;
@@ -106,113 +122,143 @@ public final class AutoMlProto {
     java.lang.String[] descriptorData = {
       "\n$google/cloud/automl/v1/service.proto\022\026"
           + "google.cloud.automl.v1\032\034google/api/annot"
-          + "ations.proto\032\027google/api/client.proto\032/g"
-          + "oogle/cloud/automl/v1/annotation_payload"
-          + ".proto\032$google/cloud/automl/v1/dataset.p"
-          + "roto\032\037google/cloud/automl/v1/io.proto\032\"g"
-          + "oogle/cloud/automl/v1/model.proto\032-googl"
-          + "e/cloud/automl/v1/model_evaluation.proto"
-          + "\032\'google/cloud/automl/v1/operations.prot"
-          + "o\032#google/longrunning/operations.proto\032 "
-          + "google/protobuf/field_mask.proto\"X\n\024Crea"
-          + "teDatasetRequest\022\016\n\006parent\030\001 \001(\t\0220\n\007data"
-          + "set\030\002 \001(\0132\037.google.cloud.automl.v1.Datas"
-          + "et\"!\n\021GetDatasetRequest\022\014\n\004name\030\001 \001(\t\"\\\n"
-          + "\023ListDatasetsRequest\022\016\n\006parent\030\001 \001(\t\022\016\n\006"
-          + "filter\030\003 \001(\t\022\021\n\tpage_size\030\004 \001(\005\022\022\n\npage_"
-          + "token\030\006 \001(\t\"b\n\024ListDatasetsResponse\0221\n\010d"
-          + "atasets\030\001 \003(\0132\037.google.cloud.automl.v1.D"
-          + "ataset\022\027\n\017next_page_token\030\002 \001(\t\"y\n\024Updat"
-          + "eDatasetRequest\0220\n\007dataset\030\001 \001(\0132\037.googl"
-          + "e.cloud.automl.v1.Dataset\022/\n\013update_mask"
-          + "\030\002 \001(\0132\032.google.protobuf.FieldMask\"$\n\024De"
-          + "leteDatasetRequest\022\014\n\004name\030\001 \001(\t\"\\\n\021Impo"
-          + "rtDataRequest\022\014\n\004name\030\001 \001(\t\0229\n\014input_con"
-          + "fig\030\003 \001(\0132#.google.cloud.automl.v1.Input"
-          + "Config\"^\n\021ExportDataRequest\022\014\n\004name\030\001 \001("
-          + "\t\022;\n\routput_config\030\003 \001(\0132$.google.cloud."
-          + "automl.v1.OutputConfig\"R\n\022CreateModelReq"
-          + "uest\022\016\n\006parent\030\001 \001(\t\022,\n\005model\030\004 \001(\0132\035.go"
-          + "ogle.cloud.automl.v1.Model\"\037\n\017GetModelRe"
-          + "quest\022\014\n\004name\030\001 \001(\t\"Z\n\021ListModelsRequest"
-          + "\022\016\n\006parent\030\001 \001(\t\022\016\n\006filter\030\003 \001(\t\022\021\n\tpage"
-          + "_size\030\004 \001(\005\022\022\n\npage_token\030\006 \001(\t\"[\n\022ListM"
-          + "odelsResponse\022,\n\005model\030\001 \003(\0132\035.google.cl"
-          + "oud.automl.v1.Model\022\027\n\017next_page_token\030\002"
-          + " \001(\t\"\"\n\022DeleteModelRequest\022\014\n\004name\030\001 \001(\t"
-          + "\"s\n\022UpdateModelRequest\022,\n\005model\030\001 \001(\0132\035."
-          + "google.cloud.automl.v1.Model\022/\n\013update_m"
-          + "ask\030\002 \001(\0132\032.google.protobuf.FieldMask\")\n"
-          + "\031GetModelEvaluationRequest\022\014\n\004name\030\001 \001(\t"
-          + "\"d\n\033ListModelEvaluationsRequest\022\016\n\006paren"
-          + "t\030\001 \001(\t\022\016\n\006filter\030\003 \001(\t\022\021\n\tpage_size\030\004 \001"
-          + "(\005\022\022\n\npage_token\030\006 \001(\t\"z\n\034ListModelEvalu"
-          + "ationsResponse\022A\n\020model_evaluation\030\001 \003(\013"
-          + "2\'.google.cloud.automl.v1.ModelEvaluatio"
-          + "n\022\027\n\017next_page_token\030\002 \001(\t2\204\022\n\006AutoMl\022\233\001"
-          + "\n\rCreateDataset\022,.google.cloud.automl.v1"
-          + ".CreateDatasetRequest\032\035.google.longrunni"
-          + "ng.Operation\"=\202\323\344\223\0027\",/v1/{parent=projec"
-          + "ts/*/locations/*}/datasets:\007dataset\022\216\001\n\n"
-          + "GetDataset\022).google.cloud.automl.v1.GetD"
-          + "atasetRequest\032\037.google.cloud.automl.v1.D"
-          + "ataset\"4\202\323\344\223\002.\022,/v1/{name=projects/*/loc"
-          + "ations/*/datasets/*}\022\237\001\n\014ListDatasets\022+."
-          + "google.cloud.automl.v1.ListDatasetsReque"
-          + "st\032,.google.cloud.automl.v1.ListDatasets"
-          + "Response\"4\202\323\344\223\002.\022,/v1/{parent=projects/*"
-          + "/locations/*}/datasets\022\245\001\n\rUpdateDataset"
-          + "\022,.google.cloud.automl.v1.UpdateDatasetR"
-          + "equest\032\037.google.cloud.automl.v1.Dataset\""
-          + "E\202\323\344\223\002?24/v1/{dataset.name=projects/*/lo"
-          + "cations/*/datasets/*}:\007dataset\022\222\001\n\rDelet"
-          + "eDataset\022,.google.cloud.automl.v1.Delete"
-          + "DatasetRequest\032\035.google.longrunning.Oper"
-          + "ation\"4\202\323\344\223\002.*,/v1/{name=projects/*/loca"
-          + "tions/*/datasets/*}\022\232\001\n\nImportData\022).goo"
-          + "gle.cloud.automl.v1.ImportDataRequest\032\035."
-          + "google.longrunning.Operation\"B\202\323\344\223\002<\"7/v"
-          + "1/{name=projects/*/locations/*/datasets/"
-          + "*}:importData:\001*\022\232\001\n\nExportData\022).google"
-          + ".cloud.automl.v1.ExportDataRequest\032\035.goo"
-          + "gle.longrunning.Operation\"B\202\323\344\223\002<\"7/v1/{"
-          + "name=projects/*/locations/*/datasets/*}:"
-          + "exportData:\001*\022\223\001\n\013CreateModel\022*.google.c"
-          + "loud.automl.v1.CreateModelRequest\032\035.goog"
-          + "le.longrunning.Operation\"9\202\323\344\223\0023\"*/v1/{p"
-          + "arent=projects/*/locations/*}/models:\005mo"
-          + "del\022\206\001\n\010GetModel\022\'.google.cloud.automl.v"
-          + "1.GetModelRequest\032\035.google.cloud.automl."
-          + "v1.Model\"2\202\323\344\223\002,\022*/v1/{name=projects/*/l"
-          + "ocations/*/models/*}\022\227\001\n\nListModels\022).go"
-          + "ogle.cloud.automl.v1.ListModelsRequest\032*"
-          + ".google.cloud.automl.v1.ListModelsRespon"
-          + "se\"2\202\323\344\223\002,\022*/v1/{parent=projects/*/locat"
-          + "ions/*}/models\022\214\001\n\013DeleteModel\022*.google."
-          + "cloud.automl.v1.DeleteModelRequest\032\035.goo"
-          + "gle.longrunning.Operation\"2\202\323\344\223\002,**/v1/{"
-          + "name=projects/*/locations/*/models/*}\022\231\001"
-          + "\n\013UpdateModel\022*.google.cloud.automl.v1.U"
-          + "pdateModelRequest\032\035.google.cloud.automl."
-          + "v1.Model\"?\202\323\344\223\002920/v1/{model.name=projec"
-          + "ts/*/locations/*/models/*}:\005model\022\267\001\n\022Ge"
-          + "tModelEvaluation\0221.google.cloud.automl.v"
-          + "1.GetModelEvaluationRequest\032\'.google.clo"
-          + "ud.automl.v1.ModelEvaluation\"E\202\323\344\223\002?\022=/v"
-          + "1/{name=projects/*/locations/*/models/*/"
-          + "modelEvaluations/*}\022\310\001\n\024ListModelEvaluat"
-          + "ions\0223.google.cloud.automl.v1.ListModelE"
-          + "valuationsRequest\0324.google.cloud.automl."
-          + "v1.ListModelEvaluationsResponse\"E\202\323\344\223\002?\022"
-          + "=/v1/{parent=projects/*/locations/*/mode"
-          + "ls/*}/modelEvaluations\032I\312A\025automl.google"
-          + "apis.com\322A.https://www.googleapis.com/au"
-          + "th/cloud-platformB\267\001\n\032com.google.cloud.a"
-          + "utoml.v1B\013AutoMlProtoP\001Z<google.golang.o"
-          + "rg/genproto/googleapis/cloud/automl/v1;a"
-          + "utoml\252\002\026Google.Cloud.AutoML.V1\312\002\026Google\\"
-          + "Cloud\\AutoML\\V1\352\002\031Google::Cloud::AutoML:"
-          + ":V1b\006proto3"
+          + "ations.proto\032\027google/api/client.proto\032\031g"
+          + "oogle/api/resource.proto\032/google/cloud/a"
+          + "utoml/v1/annotation_payload.proto\032,googl"
+          + "e/cloud/automl/v1/annotation_spec.proto\032"
+          + "$google/cloud/automl/v1/dataset.proto\032\"g"
+          + "oogle/cloud/automl/v1/image.proto\032\037googl"
+          + "e/cloud/automl/v1/io.proto\032\"google/cloud"
+          + "/automl/v1/model.proto\032-google/cloud/aut"
+          + "oml/v1/model_evaluation.proto\032#google/lo"
+          + "ngrunning/operations.proto\032 google/proto"
+          + "buf/field_mask.proto\"X\n\024CreateDatasetReq"
+          + "uest\022\016\n\006parent\030\001 \001(\t\0220\n\007dataset\030\002 \001(\0132\037."
+          + "google.cloud.automl.v1.Dataset\"!\n\021GetDat"
+          + "asetRequest\022\014\n\004name\030\001 \001(\t\"\\\n\023ListDataset"
+          + "sRequest\022\016\n\006parent\030\001 \001(\t\022\016\n\006filter\030\003 \001(\t"
+          + "\022\021\n\tpage_size\030\004 \001(\005\022\022\n\npage_token\030\006 \001(\t\""
+          + "b\n\024ListDatasetsResponse\0221\n\010datasets\030\001 \003("
+          + "\0132\037.google.cloud.automl.v1.Dataset\022\027\n\017ne"
+          + "xt_page_token\030\002 \001(\t\"y\n\024UpdateDatasetRequ"
+          + "est\0220\n\007dataset\030\001 \001(\0132\037.google.cloud.auto"
+          + "ml.v1.Dataset\022/\n\013update_mask\030\002 \001(\0132\032.goo"
+          + "gle.protobuf.FieldMask\"$\n\024DeleteDatasetR"
+          + "equest\022\014\n\004name\030\001 \001(\t\"\\\n\021ImportDataReques"
+          + "t\022\014\n\004name\030\001 \001(\t\0229\n\014input_config\030\003 \001(\0132#."
+          + "google.cloud.automl.v1.InputConfig\"^\n\021Ex"
+          + "portDataRequest\022\014\n\004name\030\001 \001(\t\022;\n\routput_"
+          + "config\030\003 \001(\0132$.google.cloud.automl.v1.Ou"
+          + "tputConfig\"(\n\030GetAnnotationSpecRequest\022\014"
+          + "\n\004name\030\001 \001(\t\"R\n\022CreateModelRequest\022\016\n\006pa"
+          + "rent\030\001 \001(\t\022,\n\005model\030\004 \001(\0132\035.google.cloud"
+          + ".automl.v1.Model\"\037\n\017GetModelRequest\022\014\n\004n"
+          + "ame\030\001 \001(\t\"Z\n\021ListModelsRequest\022\016\n\006parent"
+          + "\030\001 \001(\t\022\016\n\006filter\030\003 \001(\t\022\021\n\tpage_size\030\004 \001("
+          + "\005\022\022\n\npage_token\030\006 \001(\t\"[\n\022ListModelsRespo"
+          + "nse\022,\n\005model\030\001 \003(\0132\035.google.cloud.automl"
+          + ".v1.Model\022\027\n\017next_page_token\030\002 \001(\t\"\"\n\022De"
+          + "leteModelRequest\022\014\n\004name\030\001 \001(\t\"s\n\022Update"
+          + "ModelRequest\022,\n\005model\030\001 \001(\0132\035.google.clo"
+          + "ud.automl.v1.Model\022/\n\013update_mask\030\002 \001(\0132"
+          + "\032.google.protobuf.FieldMask\"\276\002\n\022DeployMo"
+          + "delRequest\022\177\n0image_object_detection_mod"
+          + "el_deployment_metadata\030\002 \001(\0132C.google.cl"
+          + "oud.automl.v1.ImageObjectDetectionModelD"
+          + "eploymentMetadataH\000\022|\n.image_classificat"
+          + "ion_model_deployment_metadata\030\004 \001(\0132B.go"
+          + "ogle.cloud.automl.v1.ImageClassification"
+          + "ModelDeploymentMetadataH\000\022\014\n\004name\030\001 \001(\tB"
+          + "\033\n\031model_deployment_metadata\"$\n\024Undeploy"
+          + "ModelRequest\022\014\n\004name\030\001 \001(\t\"j\n\022ExportMode"
+          + "lRequest\022\014\n\004name\030\001 \001(\t\022F\n\routput_config\030"
+          + "\003 \001(\0132/.google.cloud.automl.v1.ModelExpo"
+          + "rtOutputConfig\")\n\031GetModelEvaluationRequ"
+          + "est\022\014\n\004name\030\001 \001(\t\"d\n\033ListModelEvaluation"
+          + "sRequest\022\016\n\006parent\030\001 \001(\t\022\016\n\006filter\030\003 \001(\t"
+          + "\022\021\n\tpage_size\030\004 \001(\005\022\022\n\npage_token\030\006 \001(\t\""
+          + "z\n\034ListModelEvaluationsResponse\022A\n\020model"
+          + "_evaluation\030\001 \003(\0132\'.google.cloud.automl."
+          + "v1.ModelEvaluation\022\027\n\017next_page_token\030\002 "
+          + "\001(\t2\215\027\n\006AutoMl\022\233\001\n\rCreateDataset\022,.googl"
+          + "e.cloud.automl.v1.CreateDatasetRequest\032\035"
+          + ".google.longrunning.Operation\"=\202\323\344\223\0027\",/"
+          + "v1/{parent=projects/*/locations/*}/datas"
+          + "ets:\007dataset\022\216\001\n\nGetDataset\022).google.clo"
+          + "ud.automl.v1.GetDatasetRequest\032\037.google."
+          + "cloud.automl.v1.Dataset\"4\202\323\344\223\002.\022,/v1/{na"
+          + "me=projects/*/locations/*/datasets/*}\022\237\001"
+          + "\n\014ListDatasets\022+.google.cloud.automl.v1."
+          + "ListDatasetsRequest\032,.google.cloud.autom"
+          + "l.v1.ListDatasetsResponse\"4\202\323\344\223\002.\022,/v1/{"
+          + "parent=projects/*/locations/*}/datasets\022"
+          + "\245\001\n\rUpdateDataset\022,.google.cloud.automl."
+          + "v1.UpdateDatasetRequest\032\037.google.cloud.a"
+          + "utoml.v1.Dataset\"E\202\323\344\223\002?24/v1/{dataset.n"
+          + "ame=projects/*/locations/*/datasets/*}:\007"
+          + "dataset\022\222\001\n\rDeleteDataset\022,.google.cloud"
+          + ".automl.v1.DeleteDatasetRequest\032\035.google"
+          + ".longrunning.Operation\"4\202\323\344\223\002.*,/v1/{nam"
+          + "e=projects/*/locations/*/datasets/*}\022\232\001\n"
+          + "\nImportData\022).google.cloud.automl.v1.Imp"
+          + "ortDataRequest\032\035.google.longrunning.Oper"
+          + "ation\"B\202\323\344\223\002<\"7/v1/{name=projects/*/loca"
+          + "tions/*/datasets/*}:importData:\001*\022\232\001\n\nEx"
+          + "portData\022).google.cloud.automl.v1.Export"
+          + "DataRequest\032\035.google.longrunning.Operati"
+          + "on\"B\202\323\344\223\002<\"7/v1/{name=projects/*/locatio"
+          + "ns/*/datasets/*}:exportData:\001*\022\265\001\n\021GetAn"
+          + "notationSpec\0220.google.cloud.automl.v1.Ge"
+          + "tAnnotationSpecRequest\032&.google.cloud.au"
+          + "toml.v1.AnnotationSpec\"F\202\323\344\223\002@\022>/v1/{nam"
+          + "e=projects/*/locations/*/datasets/*/anno"
+          + "tationSpecs/*}\022\223\001\n\013CreateModel\022*.google."
+          + "cloud.automl.v1.CreateModelRequest\032\035.goo"
+          + "gle.longrunning.Operation\"9\202\323\344\223\0023\"*/v1/{"
+          + "parent=projects/*/locations/*}/models:\005m"
+          + "odel\022\206\001\n\010GetModel\022\'.google.cloud.automl."
+          + "v1.GetModelRequest\032\035.google.cloud.automl"
+          + ".v1.Model\"2\202\323\344\223\002,\022*/v1/{name=projects/*/"
+          + "locations/*/models/*}\022\227\001\n\nListModels\022).g"
+          + "oogle.cloud.automl.v1.ListModelsRequest\032"
+          + "*.google.cloud.automl.v1.ListModelsRespo"
+          + "nse\"2\202\323\344\223\002,\022*/v1/{parent=projects/*/loca"
+          + "tions/*}/models\022\214\001\n\013DeleteModel\022*.google"
+          + ".cloud.automl.v1.DeleteModelRequest\032\035.go"
+          + "ogle.longrunning.Operation\"2\202\323\344\223\002,**/v1/"
+          + "{name=projects/*/locations/*/models/*}\022\231"
+          + "\001\n\013UpdateModel\022*.google.cloud.automl.v1."
+          + "UpdateModelRequest\032\035.google.cloud.automl"
+          + ".v1.Model\"?\202\323\344\223\002920/v1/{model.name=proje"
+          + "cts/*/locations/*/models/*}:\005model\022\226\001\n\013D"
+          + "eployModel\022*.google.cloud.automl.v1.Depl"
+          + "oyModelRequest\032\035.google.longrunning.Oper"
+          + "ation\"<\202\323\344\223\0026\"1/v1/{name=projects/*/loca"
+          + "tions/*/models/*}:deploy:\001*\022\234\001\n\rUndeploy"
+          + "Model\022,.google.cloud.automl.v1.UndeployM"
+          + "odelRequest\032\035.google.longrunning.Operati"
+          + "on\">\202\323\344\223\0028\"3/v1/{name=projects/*/locatio"
+          + "ns/*/models/*}:undeploy:\001*\022\226\001\n\013ExportMod"
+          + "el\022*.google.cloud.automl.v1.ExportModelR"
+          + "equest\032\035.google.longrunning.Operation\"<\202"
+          + "\323\344\223\0026\"1/v1/{name=projects/*/locations/*/"
+          + "models/*}:export:\001*\022\267\001\n\022GetModelEvaluati"
+          + "on\0221.google.cloud.automl.v1.GetModelEval"
+          + "uationRequest\032\'.google.cloud.automl.v1.M"
+          + "odelEvaluation\"E\202\323\344\223\002?\022=/v1/{name=projec"
+          + "ts/*/locations/*/models/*/modelEvaluatio"
+          + "ns/*}\022\310\001\n\024ListModelEvaluations\0223.google."
+          + "cloud.automl.v1.ListModelEvaluationsRequ"
+          + "est\0324.google.cloud.automl.v1.ListModelEv"
+          + "aluationsResponse\"E\202\323\344\223\002?\022=/v1/{parent=p"
+          + "rojects/*/locations/*/models/*}/modelEva"
+          + "luations\032I\312A\025automl.googleapis.com\322A.htt"
+          + "ps://www.googleapis.com/auth/cloud-platf"
+          + "ormB\267\001\n\032com.google.cloud.automl.v1B\013Auto"
+          + "MlProtoP\001Z<google.golang.org/genproto/go"
+          + "ogleapis/cloud/automl/v1;automl\252\002\026Google"
+          + ".Cloud.AutoML.V1\312\002\026Google\\Cloud\\AutoML\\V"
+          + "1\352\002\031Google::Cloud::AutoML::V1b\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner() {
@@ -227,12 +273,14 @@ public final class AutoMlProto {
         new com.google.protobuf.Descriptors.FileDescriptor[] {
           com.google.api.AnnotationsProto.getDescriptor(),
           com.google.api.ClientProto.getDescriptor(),
+          com.google.api.ResourceProto.getDescriptor(),
           com.google.cloud.automl.v1.AnnotationPayloadOuterClass.getDescriptor(),
+          com.google.cloud.automl.v1.AnnotationSpecOuterClass.getDescriptor(),
           com.google.cloud.automl.v1.DatasetOuterClass.getDescriptor(),
+          com.google.cloud.automl.v1.ImageProto.getDescriptor(),
           com.google.cloud.automl.v1.Io.getDescriptor(),
           com.google.cloud.automl.v1.ModelOuterClass.getDescriptor(),
           com.google.cloud.automl.v1.ModelEvaluationOuterClass.getDescriptor(),
-          com.google.cloud.automl.v1.Operations.getDescriptor(),
           com.google.longrunning.OperationsProto.getDescriptor(),
           com.google.protobuf.FieldMaskProto.getDescriptor(),
         },
@@ -301,8 +349,16 @@ public final class AutoMlProto {
             new java.lang.String[] {
               "Name", "OutputConfig",
             });
-    internal_static_google_cloud_automl_v1_CreateModelRequest_descriptor =
+    internal_static_google_cloud_automl_v1_GetAnnotationSpecRequest_descriptor =
         getDescriptor().getMessageTypes().get(8);
+    internal_static_google_cloud_automl_v1_GetAnnotationSpecRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_automl_v1_GetAnnotationSpecRequest_descriptor,
+            new java.lang.String[] {
+              "Name",
+            });
+    internal_static_google_cloud_automl_v1_CreateModelRequest_descriptor =
+        getDescriptor().getMessageTypes().get(9);
     internal_static_google_cloud_automl_v1_CreateModelRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_automl_v1_CreateModelRequest_descriptor,
@@ -310,7 +366,7 @@ public final class AutoMlProto {
               "Parent", "Model",
             });
     internal_static_google_cloud_automl_v1_GetModelRequest_descriptor =
-        getDescriptor().getMessageTypes().get(9);
+        getDescriptor().getMessageTypes().get(10);
     internal_static_google_cloud_automl_v1_GetModelRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_automl_v1_GetModelRequest_descriptor,
@@ -318,7 +374,7 @@ public final class AutoMlProto {
               "Name",
             });
     internal_static_google_cloud_automl_v1_ListModelsRequest_descriptor =
-        getDescriptor().getMessageTypes().get(10);
+        getDescriptor().getMessageTypes().get(11);
     internal_static_google_cloud_automl_v1_ListModelsRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_automl_v1_ListModelsRequest_descriptor,
@@ -326,7 +382,7 @@ public final class AutoMlProto {
               "Parent", "Filter", "PageSize", "PageToken",
             });
     internal_static_google_cloud_automl_v1_ListModelsResponse_descriptor =
-        getDescriptor().getMessageTypes().get(11);
+        getDescriptor().getMessageTypes().get(12);
     internal_static_google_cloud_automl_v1_ListModelsResponse_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_automl_v1_ListModelsResponse_descriptor,
@@ -334,7 +390,7 @@ public final class AutoMlProto {
               "Model", "NextPageToken",
             });
     internal_static_google_cloud_automl_v1_DeleteModelRequest_descriptor =
-        getDescriptor().getMessageTypes().get(12);
+        getDescriptor().getMessageTypes().get(13);
     internal_static_google_cloud_automl_v1_DeleteModelRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_automl_v1_DeleteModelRequest_descriptor,
@@ -342,15 +398,42 @@ public final class AutoMlProto {
               "Name",
             });
     internal_static_google_cloud_automl_v1_UpdateModelRequest_descriptor =
-        getDescriptor().getMessageTypes().get(13);
+        getDescriptor().getMessageTypes().get(14);
     internal_static_google_cloud_automl_v1_UpdateModelRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_automl_v1_UpdateModelRequest_descriptor,
             new java.lang.String[] {
               "Model", "UpdateMask",
             });
+    internal_static_google_cloud_automl_v1_DeployModelRequest_descriptor =
+        getDescriptor().getMessageTypes().get(15);
+    internal_static_google_cloud_automl_v1_DeployModelRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_automl_v1_DeployModelRequest_descriptor,
+            new java.lang.String[] {
+              "ImageObjectDetectionModelDeploymentMetadata",
+              "ImageClassificationModelDeploymentMetadata",
+              "Name",
+              "ModelDeploymentMetadata",
+            });
+    internal_static_google_cloud_automl_v1_UndeployModelRequest_descriptor =
+        getDescriptor().getMessageTypes().get(16);
+    internal_static_google_cloud_automl_v1_UndeployModelRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_automl_v1_UndeployModelRequest_descriptor,
+            new java.lang.String[] {
+              "Name",
+            });
+    internal_static_google_cloud_automl_v1_ExportModelRequest_descriptor =
+        getDescriptor().getMessageTypes().get(17);
+    internal_static_google_cloud_automl_v1_ExportModelRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_automl_v1_ExportModelRequest_descriptor,
+            new java.lang.String[] {
+              "Name", "OutputConfig",
+            });
     internal_static_google_cloud_automl_v1_GetModelEvaluationRequest_descriptor =
-        getDescriptor().getMessageTypes().get(14);
+        getDescriptor().getMessageTypes().get(18);
     internal_static_google_cloud_automl_v1_GetModelEvaluationRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_automl_v1_GetModelEvaluationRequest_descriptor,
@@ -358,7 +441,7 @@ public final class AutoMlProto {
               "Name",
             });
     internal_static_google_cloud_automl_v1_ListModelEvaluationsRequest_descriptor =
-        getDescriptor().getMessageTypes().get(15);
+        getDescriptor().getMessageTypes().get(19);
     internal_static_google_cloud_automl_v1_ListModelEvaluationsRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_automl_v1_ListModelEvaluationsRequest_descriptor,
@@ -366,7 +449,7 @@ public final class AutoMlProto {
               "Parent", "Filter", "PageSize", "PageToken",
             });
     internal_static_google_cloud_automl_v1_ListModelEvaluationsResponse_descriptor =
-        getDescriptor().getMessageTypes().get(16);
+        getDescriptor().getMessageTypes().get(20);
     internal_static_google_cloud_automl_v1_ListModelEvaluationsResponse_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_automl_v1_ListModelEvaluationsResponse_descriptor,
@@ -382,12 +465,14 @@ public final class AutoMlProto {
         descriptor, registry);
     com.google.api.AnnotationsProto.getDescriptor();
     com.google.api.ClientProto.getDescriptor();
+    com.google.api.ResourceProto.getDescriptor();
     com.google.cloud.automl.v1.AnnotationPayloadOuterClass.getDescriptor();
+    com.google.cloud.automl.v1.AnnotationSpecOuterClass.getDescriptor();
     com.google.cloud.automl.v1.DatasetOuterClass.getDescriptor();
+    com.google.cloud.automl.v1.ImageProto.getDescriptor();
     com.google.cloud.automl.v1.Io.getDescriptor();
     com.google.cloud.automl.v1.ModelOuterClass.getDescriptor();
     com.google.cloud.automl.v1.ModelEvaluationOuterClass.getDescriptor();
-    com.google.cloud.automl.v1.Operations.getDescriptor();
     com.google.longrunning.OperationsProto.getDescriptor();
     com.google.protobuf.FieldMaskProto.getDescriptor();
   }

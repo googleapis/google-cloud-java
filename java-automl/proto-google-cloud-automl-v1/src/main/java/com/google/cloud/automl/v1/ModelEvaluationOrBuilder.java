@@ -27,6 +27,44 @@ public interface ModelEvaluationOrBuilder
    *
    *
    * <pre>
+   * Model evaluation metrics for image, text classification.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.automl.v1.ClassificationEvaluationMetrics classification_evaluation_metrics = 8;
+   * </code>
+   */
+  boolean hasClassificationEvaluationMetrics();
+  /**
+   *
+   *
+   * <pre>
+   * Model evaluation metrics for image, text classification.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.automl.v1.ClassificationEvaluationMetrics classification_evaluation_metrics = 8;
+   * </code>
+   */
+  com.google.cloud.automl.v1.ClassificationEvaluationMetrics getClassificationEvaluationMetrics();
+  /**
+   *
+   *
+   * <pre>
+   * Model evaluation metrics for image, text classification.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.automl.v1.ClassificationEvaluationMetrics classification_evaluation_metrics = 8;
+   * </code>
+   */
+  com.google.cloud.automl.v1.ClassificationEvaluationMetricsOrBuilder
+      getClassificationEvaluationMetricsOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * Model evaluation metrics for translation.
    * </pre>
    *
@@ -62,6 +100,121 @@ public interface ModelEvaluationOrBuilder
    *
    *
    * <pre>
+   * Model evaluation metrics for image object detection.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.automl.v1.ImageObjectDetectionEvaluationMetrics image_object_detection_evaluation_metrics = 12;
+   * </code>
+   */
+  boolean hasImageObjectDetectionEvaluationMetrics();
+  /**
+   *
+   *
+   * <pre>
+   * Model evaluation metrics for image object detection.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.automl.v1.ImageObjectDetectionEvaluationMetrics image_object_detection_evaluation_metrics = 12;
+   * </code>
+   */
+  com.google.cloud.automl.v1.ImageObjectDetectionEvaluationMetrics
+      getImageObjectDetectionEvaluationMetrics();
+  /**
+   *
+   *
+   * <pre>
+   * Model evaluation metrics for image object detection.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.automl.v1.ImageObjectDetectionEvaluationMetrics image_object_detection_evaluation_metrics = 12;
+   * </code>
+   */
+  com.google.cloud.automl.v1.ImageObjectDetectionEvaluationMetricsOrBuilder
+      getImageObjectDetectionEvaluationMetricsOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Evaluation metrics for text sentiment models.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.automl.v1.TextSentimentEvaluationMetrics text_sentiment_evaluation_metrics = 11;
+   * </code>
+   */
+  boolean hasTextSentimentEvaluationMetrics();
+  /**
+   *
+   *
+   * <pre>
+   * Evaluation metrics for text sentiment models.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.automl.v1.TextSentimentEvaluationMetrics text_sentiment_evaluation_metrics = 11;
+   * </code>
+   */
+  com.google.cloud.automl.v1.TextSentimentEvaluationMetrics getTextSentimentEvaluationMetrics();
+  /**
+   *
+   *
+   * <pre>
+   * Evaluation metrics for text sentiment models.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.automl.v1.TextSentimentEvaluationMetrics text_sentiment_evaluation_metrics = 11;
+   * </code>
+   */
+  com.google.cloud.automl.v1.TextSentimentEvaluationMetricsOrBuilder
+      getTextSentimentEvaluationMetricsOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Evaluation metrics for text extraction models.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.automl.v1.TextExtractionEvaluationMetrics text_extraction_evaluation_metrics = 13;
+   * </code>
+   */
+  boolean hasTextExtractionEvaluationMetrics();
+  /**
+   *
+   *
+   * <pre>
+   * Evaluation metrics for text extraction models.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.automl.v1.TextExtractionEvaluationMetrics text_extraction_evaluation_metrics = 13;
+   * </code>
+   */
+  com.google.cloud.automl.v1.TextExtractionEvaluationMetrics getTextExtractionEvaluationMetrics();
+  /**
+   *
+   *
+   * <pre>
+   * Evaluation metrics for text extraction models.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.automl.v1.TextExtractionEvaluationMetrics text_extraction_evaluation_metrics = 13;
+   * </code>
+   */
+  com.google.cloud.automl.v1.TextExtractionEvaluationMetricsOrBuilder
+      getTextExtractionEvaluationMetricsOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * Output only. Resource name of the model evaluation.
    * Format:
    * `projects/{project_id}/locations/{location_id}/models/{model_id}/modelEvaluations/{model_evaluation_id}`
@@ -87,8 +240,8 @@ public interface ModelEvaluationOrBuilder
    *
    *
    * <pre>
-   * Output only. The ID of the annotation spec that the model evaluation applies to. The
-   * The ID is empty for the overall model evaluation.
+   * Output only. The ID of the annotation spec that the model evaluation
+   * applies to. The The ID is empty for the overall model evaluation.
    * </pre>
    *
    * <code>string annotation_spec_id = 2;</code>
@@ -98,13 +251,44 @@ public interface ModelEvaluationOrBuilder
    *
    *
    * <pre>
-   * Output only. The ID of the annotation spec that the model evaluation applies to. The
-   * The ID is empty for the overall model evaluation.
+   * Output only. The ID of the annotation spec that the model evaluation
+   * applies to. The The ID is empty for the overall model evaluation.
    * </pre>
    *
    * <code>string annotation_spec_id = 2;</code>
    */
   com.google.protobuf.ByteString getAnnotationSpecIdBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The value of
+   * [display_name][google.cloud.automl.v1.AnnotationSpec.display_name]
+   * at the moment when the model was trained. Because this field returns a
+   * value at model training time, for different models trained from the same
+   * dataset, the values may differ, since display names could had been changed
+   * between the two model's trainings.
+   * </pre>
+   *
+   * <code>string display_name = 15;</code>
+   */
+  java.lang.String getDisplayName();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The value of
+   * [display_name][google.cloud.automl.v1.AnnotationSpec.display_name]
+   * at the moment when the model was trained. Because this field returns a
+   * value at model training time, for different models trained from the same
+   * dataset, the values may differ, since display names could had been changed
+   * between the two model's trainings.
+   * </pre>
+   *
+   * <code>string display_name = 15;</code>
+   */
+  com.google.protobuf.ByteString getDisplayNameBytes();
 
   /**
    *
@@ -148,7 +332,7 @@ public interface ModelEvaluationOrBuilder
    * the total number of all examples used for evaluation.
    * Otherwise, this is the count of examples that according to the ground
    * truth were annotated by the
-   * [annotation_spec_id][google.cloud.automl.v1beta1.ModelEvaluation.annotation_spec_id].
+   * [annotation_spec_id][google.cloud.automl.v1.ModelEvaluation.annotation_spec_id].
    * </pre>
    *
    * <code>int32 evaluated_example_count = 6;</code>

@@ -41,17 +41,30 @@ public final class AnnotationPayloadOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n/google/cloud/automl/v1/annotation_payl"
-          + "oad.proto\022\026google.cloud.automl.v1\032(googl"
-          + "e/cloud/automl/v1/translation.proto\032\031goo"
-          + "gle/protobuf/any.proto\032\034google/api/annot"
-          + "ations.proto\"c\n\021AnnotationPayload\022D\n\013tra"
-          + "nslation\030\002 \001(\0132-.google.cloud.automl.v1."
-          + "TranslationAnnotationH\000B\010\n\006detailB\252\001\n\032co"
-          + "m.google.cloud.automl.v1P\001Z<google.golan"
-          + "g.org/genproto/googleapis/cloud/automl/v"
-          + "1;automl\252\002\026Google.Cloud.AutoML.V1\312\002\026Goog"
-          + "le\\Cloud\\AutoML\\V1\352\002\031Google::Cloud::Auto"
-          + "ML::V1b\006proto3"
+          + "oad.proto\022\026google.cloud.automl.v1\032+googl"
+          + "e/cloud/automl/v1/classification.proto\032&"
+          + "google/cloud/automl/v1/detection.proto\032,"
+          + "google/cloud/automl/v1/text_extraction.p"
+          + "roto\032+google/cloud/automl/v1/text_sentim"
+          + "ent.proto\032(google/cloud/automl/v1/transl"
+          + "ation.proto\032\031google/protobuf/any.proto\032\034"
+          + "google/api/annotations.proto\"\323\003\n\021Annotat"
+          + "ionPayload\022D\n\013translation\030\002 \001(\0132-.google"
+          + ".cloud.automl.v1.TranslationAnnotationH\000"
+          + "\022J\n\016classification\030\003 \001(\01320.google.cloud."
+          + "automl.v1.ClassificationAnnotationH\000\022X\n\026"
+          + "image_object_detection\030\004 \001(\01326.google.cl"
+          + "oud.automl.v1.ImageObjectDetectionAnnota"
+          + "tionH\000\022K\n\017text_extraction\030\006 \001(\01320.google"
+          + ".cloud.automl.v1.TextExtractionAnnotatio"
+          + "nH\000\022I\n\016text_sentiment\030\007 \001(\0132/.google.clo"
+          + "ud.automl.v1.TextSentimentAnnotationH\000\022\032"
+          + "\n\022annotation_spec_id\030\001 \001(\t\022\024\n\014display_na"
+          + "me\030\005 \001(\tB\010\n\006detailB\252\001\n\032com.google.cloud."
+          + "automl.v1P\001Z<google.golang.org/genproto/"
+          + "googleapis/cloud/automl/v1;automl\252\002\026Goog"
+          + "le.Cloud.AutoML.V1\312\002\026Google\\Cloud\\AutoML"
+          + "\\V1\352\002\031Google::Cloud::AutoML::V1b\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner() {
@@ -64,6 +77,10 @@ public final class AnnotationPayloadOuterClass {
     com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
         descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
+          com.google.cloud.automl.v1.ClassificationProto.getDescriptor(),
+          com.google.cloud.automl.v1.Detection.getDescriptor(),
+          com.google.cloud.automl.v1.TextExtraction.getDescriptor(),
+          com.google.cloud.automl.v1.TextSentimentProto.getDescriptor(),
           com.google.cloud.automl.v1.TranslationProto.getDescriptor(),
           com.google.protobuf.AnyProto.getDescriptor(),
           com.google.api.AnnotationsProto.getDescriptor(),
@@ -75,8 +92,19 @@ public final class AnnotationPayloadOuterClass {
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_automl_v1_AnnotationPayload_descriptor,
             new java.lang.String[] {
-              "Translation", "Detail",
+              "Translation",
+              "Classification",
+              "ImageObjectDetection",
+              "TextExtraction",
+              "TextSentiment",
+              "AnnotationSpecId",
+              "DisplayName",
+              "Detail",
             });
+    com.google.cloud.automl.v1.ClassificationProto.getDescriptor();
+    com.google.cloud.automl.v1.Detection.getDescriptor();
+    com.google.cloud.automl.v1.TextExtraction.getDescriptor();
+    com.google.cloud.automl.v1.TextSentimentProto.getDescriptor();
     com.google.cloud.automl.v1.TranslationProto.getDescriptor();
     com.google.protobuf.AnyProto.getDescriptor();
     com.google.api.AnnotationsProto.getDescriptor();

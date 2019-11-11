@@ -136,6 +136,11 @@ public class AutoMlSettings extends ClientSettings<AutoMlSettings> {
     return ((AutoMlStubSettings) getStubSettings()).exportDataOperationSettings();
   }
 
+  /** Returns the object with the settings used for calls to getAnnotationSpec. */
+  public UnaryCallSettings<GetAnnotationSpecRequest, AnnotationSpec> getAnnotationSpecSettings() {
+    return ((AutoMlStubSettings) getStubSettings()).getAnnotationSpecSettings();
+  }
+
   /** Returns the object with the settings used for calls to createModel. */
   public UnaryCallSettings<CreateModelRequest, Operation> createModelSettings() {
     return ((AutoMlStubSettings) getStubSettings()).createModelSettings();
@@ -176,6 +181,45 @@ public class AutoMlSettings extends ClientSettings<AutoMlSettings> {
   public OperationCallSettings<DeleteModelRequest, Empty, OperationMetadata>
       deleteModelOperationSettings() {
     return ((AutoMlStubSettings) getStubSettings()).deleteModelOperationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to deployModel. */
+  public UnaryCallSettings<DeployModelRequest, Operation> deployModelSettings() {
+    return ((AutoMlStubSettings) getStubSettings()).deployModelSettings();
+  }
+
+  /** Returns the object with the settings used for calls to deployModel. */
+  @BetaApi(
+      "The surface for long-running operations is not stable yet and may change in the future.")
+  public OperationCallSettings<DeployModelRequest, Empty, OperationMetadata>
+      deployModelOperationSettings() {
+    return ((AutoMlStubSettings) getStubSettings()).deployModelOperationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to undeployModel. */
+  public UnaryCallSettings<UndeployModelRequest, Operation> undeployModelSettings() {
+    return ((AutoMlStubSettings) getStubSettings()).undeployModelSettings();
+  }
+
+  /** Returns the object with the settings used for calls to undeployModel. */
+  @BetaApi(
+      "The surface for long-running operations is not stable yet and may change in the future.")
+  public OperationCallSettings<UndeployModelRequest, Empty, OperationMetadata>
+      undeployModelOperationSettings() {
+    return ((AutoMlStubSettings) getStubSettings()).undeployModelOperationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to exportModel. */
+  public UnaryCallSettings<ExportModelRequest, Operation> exportModelSettings() {
+    return ((AutoMlStubSettings) getStubSettings()).exportModelSettings();
+  }
+
+  /** Returns the object with the settings used for calls to exportModel. */
+  @BetaApi(
+      "The surface for long-running operations is not stable yet and may change in the future.")
+  public OperationCallSettings<ExportModelRequest, Empty, OperationMetadata>
+      exportModelOperationSettings() {
+    return ((AutoMlStubSettings) getStubSettings()).exportModelOperationSettings();
   }
 
   /** Returns the object with the settings used for calls to getModelEvaluation. */
@@ -358,6 +402,12 @@ public class AutoMlSettings extends ClientSettings<AutoMlSettings> {
       return getStubSettingsBuilder().exportDataOperationSettings();
     }
 
+    /** Returns the builder for the settings used for calls to getAnnotationSpec. */
+    public UnaryCallSettings.Builder<GetAnnotationSpecRequest, AnnotationSpec>
+        getAnnotationSpecSettings() {
+      return getStubSettingsBuilder().getAnnotationSpecSettings();
+    }
+
     /** Returns the builder for the settings used for calls to createModel. */
     public UnaryCallSettings.Builder<CreateModelRequest, Operation> createModelSettings() {
       return getStubSettingsBuilder().createModelSettings();
@@ -398,6 +448,45 @@ public class AutoMlSettings extends ClientSettings<AutoMlSettings> {
     public OperationCallSettings.Builder<DeleteModelRequest, Empty, OperationMetadata>
         deleteModelOperationSettings() {
       return getStubSettingsBuilder().deleteModelOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to deployModel. */
+    public UnaryCallSettings.Builder<DeployModelRequest, Operation> deployModelSettings() {
+      return getStubSettingsBuilder().deployModelSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to deployModel. */
+    @BetaApi(
+        "The surface for long-running operations is not stable yet and may change in the future.")
+    public OperationCallSettings.Builder<DeployModelRequest, Empty, OperationMetadata>
+        deployModelOperationSettings() {
+      return getStubSettingsBuilder().deployModelOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to undeployModel. */
+    public UnaryCallSettings.Builder<UndeployModelRequest, Operation> undeployModelSettings() {
+      return getStubSettingsBuilder().undeployModelSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to undeployModel. */
+    @BetaApi(
+        "The surface for long-running operations is not stable yet and may change in the future.")
+    public OperationCallSettings.Builder<UndeployModelRequest, Empty, OperationMetadata>
+        undeployModelOperationSettings() {
+      return getStubSettingsBuilder().undeployModelOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to exportModel. */
+    public UnaryCallSettings.Builder<ExportModelRequest, Operation> exportModelSettings() {
+      return getStubSettingsBuilder().exportModelSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to exportModel. */
+    @BetaApi(
+        "The surface for long-running operations is not stable yet and may change in the future.")
+    public OperationCallSettings.Builder<ExportModelRequest, Empty, OperationMetadata>
+        exportModelOperationSettings() {
+      return getStubSettingsBuilder().exportModelOperationSettings();
     }
 
     /** Returns the builder for the settings used for calls to getModelEvaluation. */

@@ -45,24 +45,39 @@ public final class DatasetOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n$google/cloud/automl/v1/dataset.proto\022\026"
-          + "google.cloud.automl.v1\032(google/cloud/aut"
-          + "oml/v1/translation.proto\032\037google/protobu"
-          + "f/timestamp.proto\032\034google/api/annotation"
-          + "s.proto\"\364\002\n\007Dataset\022Z\n\034translation_datas"
-          + "et_metadata\030\027 \001(\01322.google.cloud.automl."
-          + "v1.TranslationDatasetMetadataH\000\022\014\n\004name\030"
-          + "\001 \001(\t\022\024\n\014display_name\030\002 \001(\t\022\023\n\013descripti"
-          + "on\030\003 \001(\t\022\025\n\rexample_count\030\025 \001(\005\022/\n\013creat"
-          + "e_time\030\016 \001(\0132\032.google.protobuf.Timestamp"
-          + "\022\014\n\004etag\030\021 \001(\t\022;\n\006labels\030\' \003(\0132+.google."
-          + "cloud.automl.v1.Dataset.LabelsEntry\032-\n\013L"
-          + "abelsEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\002"
-          + "8\001B\022\n\020dataset_metadataB\252\001\n\032com.google.cl"
-          + "oud.automl.v1P\001Z<google.golang.org/genpr"
-          + "oto/googleapis/cloud/automl/v1;automl\252\002\026"
-          + "Google.Cloud.AutoML.V1\312\002\026Google\\Cloud\\Au"
-          + "toML\\V1\352\002\031Google::Cloud::AutoML::V1b\006pro"
-          + "to3"
+          + "google.cloud.automl.v1\032\031google/api/resou"
+          + "rce.proto\032\"google/cloud/automl/v1/image."
+          + "proto\032!google/cloud/automl/v1/text.proto"
+          + "\032(google/cloud/automl/v1/translation.pro"
+          + "to\032\037google/protobuf/timestamp.proto\032\034goo"
+          + "gle/api/annotations.proto\"\200\007\n\007Dataset\022Z\n"
+          + "\034translation_dataset_metadata\030\027 \001(\01322.go"
+          + "ogle.cloud.automl.v1.TranslationDatasetM"
+          + "etadataH\000\022k\n%image_classification_datase"
+          + "t_metadata\030\030 \001(\0132:.google.cloud.automl.v"
+          + "1.ImageClassificationDatasetMetadataH\000\022i"
+          + "\n$text_classification_dataset_metadata\030\031"
+          + " \001(\01329.google.cloud.automl.v1.TextClassi"
+          + "ficationDatasetMetadataH\000\022n\n\'image_objec"
+          + "t_detection_dataset_metadata\030\032 \001(\0132;.goo"
+          + "gle.cloud.automl.v1.ImageObjectDetection"
+          + "DatasetMetadataH\000\022a\n text_extraction_dat"
+          + "aset_metadata\030\034 \001(\01325.google.cloud.autom"
+          + "l.v1.TextExtractionDatasetMetadataH\000\022_\n\037"
+          + "text_sentiment_dataset_metadata\030\036 \001(\01324."
+          + "google.cloud.automl.v1.TextSentimentData"
+          + "setMetadataH\000\022\014\n\004name\030\001 \001(\t\022\024\n\014display_n"
+          + "ame\030\002 \001(\t\022\023\n\013description\030\003 \001(\t\022\025\n\rexampl"
+          + "e_count\030\025 \001(\005\022/\n\013create_time\030\016 \001(\0132\032.goo"
+          + "gle.protobuf.Timestamp\022\014\n\004etag\030\021 \001(\t\022;\n\006"
+          + "labels\030\' \003(\0132+.google.cloud.automl.v1.Da"
+          + "taset.LabelsEntry\032-\n\013LabelsEntry\022\013\n\003key\030"
+          + "\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001B\022\n\020dataset_meta"
+          + "dataB\252\001\n\032com.google.cloud.automl.v1P\001Z<g"
+          + "oogle.golang.org/genproto/googleapis/clo"
+          + "ud/automl/v1;automl\252\002\026Google.Cloud.AutoM"
+          + "L.V1\312\002\026Google\\Cloud\\AutoML\\V1\352\002\031Google::"
+          + "Cloud::AutoML::V1b\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner() {
@@ -75,6 +90,9 @@ public final class DatasetOuterClass {
     com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
         descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
+          com.google.api.ResourceProto.getDescriptor(),
+          com.google.cloud.automl.v1.ImageProto.getDescriptor(),
+          com.google.cloud.automl.v1.TextProto.getDescriptor(),
           com.google.cloud.automl.v1.TranslationProto.getDescriptor(),
           com.google.protobuf.TimestampProto.getDescriptor(),
           com.google.api.AnnotationsProto.getDescriptor(),
@@ -87,6 +105,11 @@ public final class DatasetOuterClass {
             internal_static_google_cloud_automl_v1_Dataset_descriptor,
             new java.lang.String[] {
               "TranslationDatasetMetadata",
+              "ImageClassificationDatasetMetadata",
+              "TextClassificationDatasetMetadata",
+              "ImageObjectDetectionDatasetMetadata",
+              "TextExtractionDatasetMetadata",
+              "TextSentimentDatasetMetadata",
               "Name",
               "DisplayName",
               "Description",
@@ -104,6 +127,9 @@ public final class DatasetOuterClass {
             new java.lang.String[] {
               "Key", "Value",
             });
+    com.google.api.ResourceProto.getDescriptor();
+    com.google.cloud.automl.v1.ImageProto.getDescriptor();
+    com.google.cloud.automl.v1.TextProto.getDescriptor();
     com.google.cloud.automl.v1.TranslationProto.getDescriptor();
     com.google.protobuf.TimestampProto.getDescriptor();
     com.google.api.AnnotationsProto.getDescriptor();

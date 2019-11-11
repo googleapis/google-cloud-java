@@ -59,6 +59,191 @@ public interface ModelOrBuilder
    *
    *
    * <pre>
+   * Metadata for image classification models.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.automl.v1.ImageClassificationModelMetadata image_classification_model_metadata = 13;
+   * </code>
+   */
+  boolean hasImageClassificationModelMetadata();
+  /**
+   *
+   *
+   * <pre>
+   * Metadata for image classification models.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.automl.v1.ImageClassificationModelMetadata image_classification_model_metadata = 13;
+   * </code>
+   */
+  com.google.cloud.automl.v1.ImageClassificationModelMetadata getImageClassificationModelMetadata();
+  /**
+   *
+   *
+   * <pre>
+   * Metadata for image classification models.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.automl.v1.ImageClassificationModelMetadata image_classification_model_metadata = 13;
+   * </code>
+   */
+  com.google.cloud.automl.v1.ImageClassificationModelMetadataOrBuilder
+      getImageClassificationModelMetadataOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Metadata for text classification models.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.automl.v1.TextClassificationModelMetadata text_classification_model_metadata = 14;
+   * </code>
+   */
+  boolean hasTextClassificationModelMetadata();
+  /**
+   *
+   *
+   * <pre>
+   * Metadata for text classification models.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.automl.v1.TextClassificationModelMetadata text_classification_model_metadata = 14;
+   * </code>
+   */
+  com.google.cloud.automl.v1.TextClassificationModelMetadata getTextClassificationModelMetadata();
+  /**
+   *
+   *
+   * <pre>
+   * Metadata for text classification models.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.automl.v1.TextClassificationModelMetadata text_classification_model_metadata = 14;
+   * </code>
+   */
+  com.google.cloud.automl.v1.TextClassificationModelMetadataOrBuilder
+      getTextClassificationModelMetadataOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Metadata for image object detection models.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.automl.v1.ImageObjectDetectionModelMetadata image_object_detection_model_metadata = 20;
+   * </code>
+   */
+  boolean hasImageObjectDetectionModelMetadata();
+  /**
+   *
+   *
+   * <pre>
+   * Metadata for image object detection models.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.automl.v1.ImageObjectDetectionModelMetadata image_object_detection_model_metadata = 20;
+   * </code>
+   */
+  com.google.cloud.automl.v1.ImageObjectDetectionModelMetadata
+      getImageObjectDetectionModelMetadata();
+  /**
+   *
+   *
+   * <pre>
+   * Metadata for image object detection models.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.automl.v1.ImageObjectDetectionModelMetadata image_object_detection_model_metadata = 20;
+   * </code>
+   */
+  com.google.cloud.automl.v1.ImageObjectDetectionModelMetadataOrBuilder
+      getImageObjectDetectionModelMetadataOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Metadata for text extraction models.
+   * </pre>
+   *
+   * <code>.google.cloud.automl.v1.TextExtractionModelMetadata text_extraction_model_metadata = 19;
+   * </code>
+   */
+  boolean hasTextExtractionModelMetadata();
+  /**
+   *
+   *
+   * <pre>
+   * Metadata for text extraction models.
+   * </pre>
+   *
+   * <code>.google.cloud.automl.v1.TextExtractionModelMetadata text_extraction_model_metadata = 19;
+   * </code>
+   */
+  com.google.cloud.automl.v1.TextExtractionModelMetadata getTextExtractionModelMetadata();
+  /**
+   *
+   *
+   * <pre>
+   * Metadata for text extraction models.
+   * </pre>
+   *
+   * <code>.google.cloud.automl.v1.TextExtractionModelMetadata text_extraction_model_metadata = 19;
+   * </code>
+   */
+  com.google.cloud.automl.v1.TextExtractionModelMetadataOrBuilder
+      getTextExtractionModelMetadataOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Metadata for text sentiment models.
+   * </pre>
+   *
+   * <code>.google.cloud.automl.v1.TextSentimentModelMetadata text_sentiment_model_metadata = 22;
+   * </code>
+   */
+  boolean hasTextSentimentModelMetadata();
+  /**
+   *
+   *
+   * <pre>
+   * Metadata for text sentiment models.
+   * </pre>
+   *
+   * <code>.google.cloud.automl.v1.TextSentimentModelMetadata text_sentiment_model_metadata = 22;
+   * </code>
+   */
+  com.google.cloud.automl.v1.TextSentimentModelMetadata getTextSentimentModelMetadata();
+  /**
+   *
+   *
+   * <pre>
+   * Metadata for text sentiment models.
+   * </pre>
+   *
+   * <code>.google.cloud.automl.v1.TextSentimentModelMetadata text_sentiment_model_metadata = 22;
+   * </code>
+   */
+  com.google.cloud.automl.v1.TextSentimentModelMetadataOrBuilder
+      getTextSentimentModelMetadataOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * Output only. Resource name of the model.
    * Format: `projects/{project_id}/locations/{location_id}/models/{model_id}`
    * </pre>
@@ -212,6 +397,29 @@ public interface ModelOrBuilder
    * <code>.google.cloud.automl.v1.Model.DeploymentState deployment_state = 8;</code>
    */
   com.google.cloud.automl.v1.Model.DeploymentState getDeploymentState();
+
+  /**
+   *
+   *
+   * <pre>
+   * Used to perform a consistent read-modify-write updates. If not set, a blind
+   * "overwrite" update happens.
+   * </pre>
+   *
+   * <code>string etag = 10;</code>
+   */
+  java.lang.String getEtag();
+  /**
+   *
+   *
+   * <pre>
+   * Used to perform a consistent read-modify-write updates. If not set, a blind
+   * "overwrite" update happens.
+   * </pre>
+   *
+   * <code>string etag = 10;</code>
+   */
+  com.google.protobuf.ByteString getEtagBytes();
 
   /**
    *

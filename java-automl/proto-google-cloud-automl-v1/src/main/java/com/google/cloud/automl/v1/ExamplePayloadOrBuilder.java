@@ -27,6 +27,37 @@ public interface ExamplePayloadOrBuilder
    *
    *
    * <pre>
+   * Example image.
+   * </pre>
+   *
+   * <code>.google.cloud.automl.v1.Image image = 1;</code>
+   */
+  boolean hasImage();
+  /**
+   *
+   *
+   * <pre>
+   * Example image.
+   * </pre>
+   *
+   * <code>.google.cloud.automl.v1.Image image = 1;</code>
+   */
+  com.google.cloud.automl.v1.Image getImage();
+  /**
+   *
+   *
+   * <pre>
+   * Example image.
+   * </pre>
+   *
+   * <code>.google.cloud.automl.v1.Image image = 1;</code>
+   */
+  com.google.cloud.automl.v1.ImageOrBuilder getImageOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * Example text.
    * </pre>
    *
@@ -53,6 +84,37 @@ public interface ExamplePayloadOrBuilder
    * <code>.google.cloud.automl.v1.TextSnippet text_snippet = 2;</code>
    */
   com.google.cloud.automl.v1.TextSnippetOrBuilder getTextSnippetOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Example document.
+   * </pre>
+   *
+   * <code>.google.cloud.automl.v1.Document document = 4;</code>
+   */
+  boolean hasDocument();
+  /**
+   *
+   *
+   * <pre>
+   * Example document.
+   * </pre>
+   *
+   * <code>.google.cloud.automl.v1.Document document = 4;</code>
+   */
+  com.google.cloud.automl.v1.Document getDocument();
+  /**
+   *
+   *
+   * <pre>
+   * Example document.
+   * </pre>
+   *
+   * <code>.google.cloud.automl.v1.Document document = 4;</code>
+   */
+  com.google.cloud.automl.v1.DocumentOrBuilder getDocumentOrBuilder();
 
   public com.google.cloud.automl.v1.ExamplePayload.PayloadCase getPayloadCase();
 }

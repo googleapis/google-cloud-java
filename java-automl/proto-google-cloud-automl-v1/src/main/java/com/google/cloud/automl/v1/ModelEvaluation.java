@@ -40,6 +40,7 @@ public final class ModelEvaluation extends com.google.protobuf.GeneratedMessageV
   private ModelEvaluation() {
     name_ = "";
     annotationSpecId_ = "";
+    displayName_ = "";
   }
 
   @java.lang.Override
@@ -100,6 +101,26 @@ public final class ModelEvaluation extends com.google.protobuf.GeneratedMessageV
               evaluatedExampleCount_ = input.readInt32();
               break;
             }
+          case 66:
+            {
+              com.google.cloud.automl.v1.ClassificationEvaluationMetrics.Builder subBuilder = null;
+              if (metricsCase_ == 8) {
+                subBuilder =
+                    ((com.google.cloud.automl.v1.ClassificationEvaluationMetrics) metrics_)
+                        .toBuilder();
+              }
+              metrics_ =
+                  input.readMessage(
+                      com.google.cloud.automl.v1.ClassificationEvaluationMetrics.parser(),
+                      extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(
+                    (com.google.cloud.automl.v1.ClassificationEvaluationMetrics) metrics_);
+                metrics_ = subBuilder.buildPartial();
+              }
+              metricsCase_ = 8;
+              break;
+            }
           case 74:
             {
               com.google.cloud.automl.v1.TranslationEvaluationMetrics.Builder subBuilder = null;
@@ -118,6 +139,74 @@ public final class ModelEvaluation extends com.google.protobuf.GeneratedMessageV
                 metrics_ = subBuilder.buildPartial();
               }
               metricsCase_ = 9;
+              break;
+            }
+          case 90:
+            {
+              com.google.cloud.automl.v1.TextSentimentEvaluationMetrics.Builder subBuilder = null;
+              if (metricsCase_ == 11) {
+                subBuilder =
+                    ((com.google.cloud.automl.v1.TextSentimentEvaluationMetrics) metrics_)
+                        .toBuilder();
+              }
+              metrics_ =
+                  input.readMessage(
+                      com.google.cloud.automl.v1.TextSentimentEvaluationMetrics.parser(),
+                      extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(
+                    (com.google.cloud.automl.v1.TextSentimentEvaluationMetrics) metrics_);
+                metrics_ = subBuilder.buildPartial();
+              }
+              metricsCase_ = 11;
+              break;
+            }
+          case 98:
+            {
+              com.google.cloud.automl.v1.ImageObjectDetectionEvaluationMetrics.Builder subBuilder =
+                  null;
+              if (metricsCase_ == 12) {
+                subBuilder =
+                    ((com.google.cloud.automl.v1.ImageObjectDetectionEvaluationMetrics) metrics_)
+                        .toBuilder();
+              }
+              metrics_ =
+                  input.readMessage(
+                      com.google.cloud.automl.v1.ImageObjectDetectionEvaluationMetrics.parser(),
+                      extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(
+                    (com.google.cloud.automl.v1.ImageObjectDetectionEvaluationMetrics) metrics_);
+                metrics_ = subBuilder.buildPartial();
+              }
+              metricsCase_ = 12;
+              break;
+            }
+          case 106:
+            {
+              com.google.cloud.automl.v1.TextExtractionEvaluationMetrics.Builder subBuilder = null;
+              if (metricsCase_ == 13) {
+                subBuilder =
+                    ((com.google.cloud.automl.v1.TextExtractionEvaluationMetrics) metrics_)
+                        .toBuilder();
+              }
+              metrics_ =
+                  input.readMessage(
+                      com.google.cloud.automl.v1.TextExtractionEvaluationMetrics.parser(),
+                      extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(
+                    (com.google.cloud.automl.v1.TextExtractionEvaluationMetrics) metrics_);
+                metrics_ = subBuilder.buildPartial();
+              }
+              metricsCase_ = 13;
+              break;
+            }
+          case 122:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              displayName_ = s;
               break;
             }
           default:
@@ -158,7 +247,11 @@ public final class ModelEvaluation extends com.google.protobuf.GeneratedMessageV
   private java.lang.Object metrics_;
 
   public enum MetricsCase implements com.google.protobuf.Internal.EnumLite {
+    CLASSIFICATION_EVALUATION_METRICS(8),
     TRANSLATION_EVALUATION_METRICS(9),
+    IMAGE_OBJECT_DETECTION_EVALUATION_METRICS(12),
+    TEXT_SENTIMENT_EVALUATION_METRICS(11),
+    TEXT_EXTRACTION_EVALUATION_METRICS(13),
     METRICS_NOT_SET(0);
     private final int value;
 
@@ -173,8 +266,16 @@ public final class ModelEvaluation extends com.google.protobuf.GeneratedMessageV
 
     public static MetricsCase forNumber(int value) {
       switch (value) {
+        case 8:
+          return CLASSIFICATION_EVALUATION_METRICS;
         case 9:
           return TRANSLATION_EVALUATION_METRICS;
+        case 12:
+          return IMAGE_OBJECT_DETECTION_EVALUATION_METRICS;
+        case 11:
+          return TEXT_SENTIMENT_EVALUATION_METRICS;
+        case 13:
+          return TEXT_EXTRACTION_EVALUATION_METRICS;
         case 0:
           return METRICS_NOT_SET;
         default:
@@ -189,6 +290,58 @@ public final class ModelEvaluation extends com.google.protobuf.GeneratedMessageV
 
   public MetricsCase getMetricsCase() {
     return MetricsCase.forNumber(metricsCase_);
+  }
+
+  public static final int CLASSIFICATION_EVALUATION_METRICS_FIELD_NUMBER = 8;
+  /**
+   *
+   *
+   * <pre>
+   * Model evaluation metrics for image, text classification.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.automl.v1.ClassificationEvaluationMetrics classification_evaluation_metrics = 8;
+   * </code>
+   */
+  public boolean hasClassificationEvaluationMetrics() {
+    return metricsCase_ == 8;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Model evaluation metrics for image, text classification.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.automl.v1.ClassificationEvaluationMetrics classification_evaluation_metrics = 8;
+   * </code>
+   */
+  public com.google.cloud.automl.v1.ClassificationEvaluationMetrics
+      getClassificationEvaluationMetrics() {
+    if (metricsCase_ == 8) {
+      return (com.google.cloud.automl.v1.ClassificationEvaluationMetrics) metrics_;
+    }
+    return com.google.cloud.automl.v1.ClassificationEvaluationMetrics.getDefaultInstance();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Model evaluation metrics for image, text classification.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.automl.v1.ClassificationEvaluationMetrics classification_evaluation_metrics = 8;
+   * </code>
+   */
+  public com.google.cloud.automl.v1.ClassificationEvaluationMetricsOrBuilder
+      getClassificationEvaluationMetricsOrBuilder() {
+    if (metricsCase_ == 8) {
+      return (com.google.cloud.automl.v1.ClassificationEvaluationMetrics) metrics_;
+    }
+    return com.google.cloud.automl.v1.ClassificationEvaluationMetrics.getDefaultInstance();
   }
 
   public static final int TRANSLATION_EVALUATION_METRICS_FIELD_NUMBER = 9;
@@ -237,6 +390,162 @@ public final class ModelEvaluation extends com.google.protobuf.GeneratedMessageV
       return (com.google.cloud.automl.v1.TranslationEvaluationMetrics) metrics_;
     }
     return com.google.cloud.automl.v1.TranslationEvaluationMetrics.getDefaultInstance();
+  }
+
+  public static final int IMAGE_OBJECT_DETECTION_EVALUATION_METRICS_FIELD_NUMBER = 12;
+  /**
+   *
+   *
+   * <pre>
+   * Model evaluation metrics for image object detection.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.automl.v1.ImageObjectDetectionEvaluationMetrics image_object_detection_evaluation_metrics = 12;
+   * </code>
+   */
+  public boolean hasImageObjectDetectionEvaluationMetrics() {
+    return metricsCase_ == 12;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Model evaluation metrics for image object detection.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.automl.v1.ImageObjectDetectionEvaluationMetrics image_object_detection_evaluation_metrics = 12;
+   * </code>
+   */
+  public com.google.cloud.automl.v1.ImageObjectDetectionEvaluationMetrics
+      getImageObjectDetectionEvaluationMetrics() {
+    if (metricsCase_ == 12) {
+      return (com.google.cloud.automl.v1.ImageObjectDetectionEvaluationMetrics) metrics_;
+    }
+    return com.google.cloud.automl.v1.ImageObjectDetectionEvaluationMetrics.getDefaultInstance();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Model evaluation metrics for image object detection.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.automl.v1.ImageObjectDetectionEvaluationMetrics image_object_detection_evaluation_metrics = 12;
+   * </code>
+   */
+  public com.google.cloud.automl.v1.ImageObjectDetectionEvaluationMetricsOrBuilder
+      getImageObjectDetectionEvaluationMetricsOrBuilder() {
+    if (metricsCase_ == 12) {
+      return (com.google.cloud.automl.v1.ImageObjectDetectionEvaluationMetrics) metrics_;
+    }
+    return com.google.cloud.automl.v1.ImageObjectDetectionEvaluationMetrics.getDefaultInstance();
+  }
+
+  public static final int TEXT_SENTIMENT_EVALUATION_METRICS_FIELD_NUMBER = 11;
+  /**
+   *
+   *
+   * <pre>
+   * Evaluation metrics for text sentiment models.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.automl.v1.TextSentimentEvaluationMetrics text_sentiment_evaluation_metrics = 11;
+   * </code>
+   */
+  public boolean hasTextSentimentEvaluationMetrics() {
+    return metricsCase_ == 11;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Evaluation metrics for text sentiment models.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.automl.v1.TextSentimentEvaluationMetrics text_sentiment_evaluation_metrics = 11;
+   * </code>
+   */
+  public com.google.cloud.automl.v1.TextSentimentEvaluationMetrics
+      getTextSentimentEvaluationMetrics() {
+    if (metricsCase_ == 11) {
+      return (com.google.cloud.automl.v1.TextSentimentEvaluationMetrics) metrics_;
+    }
+    return com.google.cloud.automl.v1.TextSentimentEvaluationMetrics.getDefaultInstance();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Evaluation metrics for text sentiment models.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.automl.v1.TextSentimentEvaluationMetrics text_sentiment_evaluation_metrics = 11;
+   * </code>
+   */
+  public com.google.cloud.automl.v1.TextSentimentEvaluationMetricsOrBuilder
+      getTextSentimentEvaluationMetricsOrBuilder() {
+    if (metricsCase_ == 11) {
+      return (com.google.cloud.automl.v1.TextSentimentEvaluationMetrics) metrics_;
+    }
+    return com.google.cloud.automl.v1.TextSentimentEvaluationMetrics.getDefaultInstance();
+  }
+
+  public static final int TEXT_EXTRACTION_EVALUATION_METRICS_FIELD_NUMBER = 13;
+  /**
+   *
+   *
+   * <pre>
+   * Evaluation metrics for text extraction models.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.automl.v1.TextExtractionEvaluationMetrics text_extraction_evaluation_metrics = 13;
+   * </code>
+   */
+  public boolean hasTextExtractionEvaluationMetrics() {
+    return metricsCase_ == 13;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Evaluation metrics for text extraction models.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.automl.v1.TextExtractionEvaluationMetrics text_extraction_evaluation_metrics = 13;
+   * </code>
+   */
+  public com.google.cloud.automl.v1.TextExtractionEvaluationMetrics
+      getTextExtractionEvaluationMetrics() {
+    if (metricsCase_ == 13) {
+      return (com.google.cloud.automl.v1.TextExtractionEvaluationMetrics) metrics_;
+    }
+    return com.google.cloud.automl.v1.TextExtractionEvaluationMetrics.getDefaultInstance();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Evaluation metrics for text extraction models.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.automl.v1.TextExtractionEvaluationMetrics text_extraction_evaluation_metrics = 13;
+   * </code>
+   */
+  public com.google.cloud.automl.v1.TextExtractionEvaluationMetricsOrBuilder
+      getTextExtractionEvaluationMetricsOrBuilder() {
+    if (metricsCase_ == 13) {
+      return (com.google.cloud.automl.v1.TextExtractionEvaluationMetrics) metrics_;
+    }
+    return com.google.cloud.automl.v1.TextExtractionEvaluationMetrics.getDefaultInstance();
   }
 
   public static final int NAME_FIELD_NUMBER = 1;
@@ -292,8 +601,8 @@ public final class ModelEvaluation extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * Output only. The ID of the annotation spec that the model evaluation applies to. The
-   * The ID is empty for the overall model evaluation.
+   * Output only. The ID of the annotation spec that the model evaluation
+   * applies to. The The ID is empty for the overall model evaluation.
    * </pre>
    *
    * <code>string annotation_spec_id = 2;</code>
@@ -313,8 +622,8 @@ public final class ModelEvaluation extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * Output only. The ID of the annotation spec that the model evaluation applies to. The
-   * The ID is empty for the overall model evaluation.
+   * Output only. The ID of the annotation spec that the model evaluation
+   * applies to. The The ID is empty for the overall model evaluation.
    * </pre>
    *
    * <code>string annotation_spec_id = 2;</code>
@@ -325,6 +634,59 @@ public final class ModelEvaluation extends com.google.protobuf.GeneratedMessageV
       com.google.protobuf.ByteString b =
           com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
       annotationSpecId_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int DISPLAY_NAME_FIELD_NUMBER = 15;
+  private volatile java.lang.Object displayName_;
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The value of
+   * [display_name][google.cloud.automl.v1.AnnotationSpec.display_name]
+   * at the moment when the model was trained. Because this field returns a
+   * value at model training time, for different models trained from the same
+   * dataset, the values may differ, since display names could had been changed
+   * between the two model's trainings.
+   * </pre>
+   *
+   * <code>string display_name = 15;</code>
+   */
+  public java.lang.String getDisplayName() {
+    java.lang.Object ref = displayName_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      displayName_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The value of
+   * [display_name][google.cloud.automl.v1.AnnotationSpec.display_name]
+   * at the moment when the model was trained. Because this field returns a
+   * value at model training time, for different models trained from the same
+   * dataset, the values may differ, since display names could had been changed
+   * between the two model's trainings.
+   * </pre>
+   *
+   * <code>string display_name = 15;</code>
+   */
+  public com.google.protobuf.ByteString getDisplayNameBytes() {
+    java.lang.Object ref = displayName_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      displayName_ = b;
       return b;
     } else {
       return (com.google.protobuf.ByteString) ref;
@@ -383,7 +745,7 @@ public final class ModelEvaluation extends com.google.protobuf.GeneratedMessageV
    * the total number of all examples used for evaluation.
    * Otherwise, this is the count of examples that according to the ground
    * truth were annotated by the
-   * [annotation_spec_id][google.cloud.automl.v1beta1.ModelEvaluation.annotation_spec_id].
+   * [annotation_spec_id][google.cloud.automl.v1.ModelEvaluation.annotation_spec_id].
    * </pre>
    *
    * <code>int32 evaluated_example_count = 6;</code>
@@ -418,8 +780,25 @@ public final class ModelEvaluation extends com.google.protobuf.GeneratedMessageV
     if (evaluatedExampleCount_ != 0) {
       output.writeInt32(6, evaluatedExampleCount_);
     }
+    if (metricsCase_ == 8) {
+      output.writeMessage(8, (com.google.cloud.automl.v1.ClassificationEvaluationMetrics) metrics_);
+    }
     if (metricsCase_ == 9) {
       output.writeMessage(9, (com.google.cloud.automl.v1.TranslationEvaluationMetrics) metrics_);
+    }
+    if (metricsCase_ == 11) {
+      output.writeMessage(11, (com.google.cloud.automl.v1.TextSentimentEvaluationMetrics) metrics_);
+    }
+    if (metricsCase_ == 12) {
+      output.writeMessage(
+          12, (com.google.cloud.automl.v1.ImageObjectDetectionEvaluationMetrics) metrics_);
+    }
+    if (metricsCase_ == 13) {
+      output.writeMessage(
+          13, (com.google.cloud.automl.v1.TextExtractionEvaluationMetrics) metrics_);
+    }
+    if (!getDisplayNameBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 15, displayName_);
     }
     unknownFields.writeTo(output);
   }
@@ -442,10 +821,33 @@ public final class ModelEvaluation extends com.google.protobuf.GeneratedMessageV
     if (evaluatedExampleCount_ != 0) {
       size += com.google.protobuf.CodedOutputStream.computeInt32Size(6, evaluatedExampleCount_);
     }
+    if (metricsCase_ == 8) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              8, (com.google.cloud.automl.v1.ClassificationEvaluationMetrics) metrics_);
+    }
     if (metricsCase_ == 9) {
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               9, (com.google.cloud.automl.v1.TranslationEvaluationMetrics) metrics_);
+    }
+    if (metricsCase_ == 11) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              11, (com.google.cloud.automl.v1.TextSentimentEvaluationMetrics) metrics_);
+    }
+    if (metricsCase_ == 12) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              12, (com.google.cloud.automl.v1.ImageObjectDetectionEvaluationMetrics) metrics_);
+    }
+    if (metricsCase_ == 13) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              13, (com.google.cloud.automl.v1.TextExtractionEvaluationMetrics) metrics_);
+    }
+    if (!getDisplayNameBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(15, displayName_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -465,6 +867,7 @@ public final class ModelEvaluation extends com.google.protobuf.GeneratedMessageV
 
     if (!getName().equals(other.getName())) return false;
     if (!getAnnotationSpecId().equals(other.getAnnotationSpecId())) return false;
+    if (!getDisplayName().equals(other.getDisplayName())) return false;
     if (hasCreateTime() != other.hasCreateTime()) return false;
     if (hasCreateTime()) {
       if (!getCreateTime().equals(other.getCreateTime())) return false;
@@ -472,9 +875,25 @@ public final class ModelEvaluation extends com.google.protobuf.GeneratedMessageV
     if (getEvaluatedExampleCount() != other.getEvaluatedExampleCount()) return false;
     if (!getMetricsCase().equals(other.getMetricsCase())) return false;
     switch (metricsCase_) {
+      case 8:
+        if (!getClassificationEvaluationMetrics()
+            .equals(other.getClassificationEvaluationMetrics())) return false;
+        break;
       case 9:
         if (!getTranslationEvaluationMetrics().equals(other.getTranslationEvaluationMetrics()))
           return false;
+        break;
+      case 12:
+        if (!getImageObjectDetectionEvaluationMetrics()
+            .equals(other.getImageObjectDetectionEvaluationMetrics())) return false;
+        break;
+      case 11:
+        if (!getTextSentimentEvaluationMetrics().equals(other.getTextSentimentEvaluationMetrics()))
+          return false;
+        break;
+      case 13:
+        if (!getTextExtractionEvaluationMetrics()
+            .equals(other.getTextExtractionEvaluationMetrics())) return false;
         break;
       case 0:
       default:
@@ -494,6 +913,8 @@ public final class ModelEvaluation extends com.google.protobuf.GeneratedMessageV
     hash = (53 * hash) + getName().hashCode();
     hash = (37 * hash) + ANNOTATION_SPEC_ID_FIELD_NUMBER;
     hash = (53 * hash) + getAnnotationSpecId().hashCode();
+    hash = (37 * hash) + DISPLAY_NAME_FIELD_NUMBER;
+    hash = (53 * hash) + getDisplayName().hashCode();
     if (hasCreateTime()) {
       hash = (37 * hash) + CREATE_TIME_FIELD_NUMBER;
       hash = (53 * hash) + getCreateTime().hashCode();
@@ -501,9 +922,25 @@ public final class ModelEvaluation extends com.google.protobuf.GeneratedMessageV
     hash = (37 * hash) + EVALUATED_EXAMPLE_COUNT_FIELD_NUMBER;
     hash = (53 * hash) + getEvaluatedExampleCount();
     switch (metricsCase_) {
+      case 8:
+        hash = (37 * hash) + CLASSIFICATION_EVALUATION_METRICS_FIELD_NUMBER;
+        hash = (53 * hash) + getClassificationEvaluationMetrics().hashCode();
+        break;
       case 9:
         hash = (37 * hash) + TRANSLATION_EVALUATION_METRICS_FIELD_NUMBER;
         hash = (53 * hash) + getTranslationEvaluationMetrics().hashCode();
+        break;
+      case 12:
+        hash = (37 * hash) + IMAGE_OBJECT_DETECTION_EVALUATION_METRICS_FIELD_NUMBER;
+        hash = (53 * hash) + getImageObjectDetectionEvaluationMetrics().hashCode();
+        break;
+      case 11:
+        hash = (37 * hash) + TEXT_SENTIMENT_EVALUATION_METRICS_FIELD_NUMBER;
+        hash = (53 * hash) + getTextSentimentEvaluationMetrics().hashCode();
+        break;
+      case 13:
+        hash = (37 * hash) + TEXT_EXTRACTION_EVALUATION_METRICS_FIELD_NUMBER;
+        hash = (53 * hash) + getTextExtractionEvaluationMetrics().hashCode();
         break;
       case 0:
       default:
@@ -657,6 +1094,8 @@ public final class ModelEvaluation extends com.google.protobuf.GeneratedMessageV
 
       annotationSpecId_ = "";
 
+      displayName_ = "";
+
       if (createTimeBuilder_ == null) {
         createTime_ = null;
       } else {
@@ -694,6 +1133,13 @@ public final class ModelEvaluation extends com.google.protobuf.GeneratedMessageV
     public com.google.cloud.automl.v1.ModelEvaluation buildPartial() {
       com.google.cloud.automl.v1.ModelEvaluation result =
           new com.google.cloud.automl.v1.ModelEvaluation(this);
+      if (metricsCase_ == 8) {
+        if (classificationEvaluationMetricsBuilder_ == null) {
+          result.metrics_ = metrics_;
+        } else {
+          result.metrics_ = classificationEvaluationMetricsBuilder_.build();
+        }
+      }
       if (metricsCase_ == 9) {
         if (translationEvaluationMetricsBuilder_ == null) {
           result.metrics_ = metrics_;
@@ -701,8 +1147,30 @@ public final class ModelEvaluation extends com.google.protobuf.GeneratedMessageV
           result.metrics_ = translationEvaluationMetricsBuilder_.build();
         }
       }
+      if (metricsCase_ == 12) {
+        if (imageObjectDetectionEvaluationMetricsBuilder_ == null) {
+          result.metrics_ = metrics_;
+        } else {
+          result.metrics_ = imageObjectDetectionEvaluationMetricsBuilder_.build();
+        }
+      }
+      if (metricsCase_ == 11) {
+        if (textSentimentEvaluationMetricsBuilder_ == null) {
+          result.metrics_ = metrics_;
+        } else {
+          result.metrics_ = textSentimentEvaluationMetricsBuilder_.build();
+        }
+      }
+      if (metricsCase_ == 13) {
+        if (textExtractionEvaluationMetricsBuilder_ == null) {
+          result.metrics_ = metrics_;
+        } else {
+          result.metrics_ = textExtractionEvaluationMetricsBuilder_.build();
+        }
+      }
       result.name_ = name_;
       result.annotationSpecId_ = annotationSpecId_;
+      result.displayName_ = displayName_;
       if (createTimeBuilder_ == null) {
         result.createTime_ = createTime_;
       } else {
@@ -767,6 +1235,10 @@ public final class ModelEvaluation extends com.google.protobuf.GeneratedMessageV
         annotationSpecId_ = other.annotationSpecId_;
         onChanged();
       }
+      if (!other.getDisplayName().isEmpty()) {
+        displayName_ = other.displayName_;
+        onChanged();
+      }
       if (other.hasCreateTime()) {
         mergeCreateTime(other.getCreateTime());
       }
@@ -774,9 +1246,30 @@ public final class ModelEvaluation extends com.google.protobuf.GeneratedMessageV
         setEvaluatedExampleCount(other.getEvaluatedExampleCount());
       }
       switch (other.getMetricsCase()) {
+        case CLASSIFICATION_EVALUATION_METRICS:
+          {
+            mergeClassificationEvaluationMetrics(other.getClassificationEvaluationMetrics());
+            break;
+          }
         case TRANSLATION_EVALUATION_METRICS:
           {
             mergeTranslationEvaluationMetrics(other.getTranslationEvaluationMetrics());
+            break;
+          }
+        case IMAGE_OBJECT_DETECTION_EVALUATION_METRICS:
+          {
+            mergeImageObjectDetectionEvaluationMetrics(
+                other.getImageObjectDetectionEvaluationMetrics());
+            break;
+          }
+        case TEXT_SENTIMENT_EVALUATION_METRICS:
+          {
+            mergeTextSentimentEvaluationMetrics(other.getTextSentimentEvaluationMetrics());
+            break;
+          }
+        case TEXT_EXTRACTION_EVALUATION_METRICS:
+          {
+            mergeTextExtractionEvaluationMetrics(other.getTextExtractionEvaluationMetrics());
             break;
           }
         case METRICS_NOT_SET:
@@ -825,6 +1318,234 @@ public final class ModelEvaluation extends com.google.protobuf.GeneratedMessageV
       metrics_ = null;
       onChanged();
       return this;
+    }
+
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.automl.v1.ClassificationEvaluationMetrics,
+            com.google.cloud.automl.v1.ClassificationEvaluationMetrics.Builder,
+            com.google.cloud.automl.v1.ClassificationEvaluationMetricsOrBuilder>
+        classificationEvaluationMetricsBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Model evaluation metrics for image, text classification.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.automl.v1.ClassificationEvaluationMetrics classification_evaluation_metrics = 8;
+     * </code>
+     */
+    public boolean hasClassificationEvaluationMetrics() {
+      return metricsCase_ == 8;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Model evaluation metrics for image, text classification.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.automl.v1.ClassificationEvaluationMetrics classification_evaluation_metrics = 8;
+     * </code>
+     */
+    public com.google.cloud.automl.v1.ClassificationEvaluationMetrics
+        getClassificationEvaluationMetrics() {
+      if (classificationEvaluationMetricsBuilder_ == null) {
+        if (metricsCase_ == 8) {
+          return (com.google.cloud.automl.v1.ClassificationEvaluationMetrics) metrics_;
+        }
+        return com.google.cloud.automl.v1.ClassificationEvaluationMetrics.getDefaultInstance();
+      } else {
+        if (metricsCase_ == 8) {
+          return classificationEvaluationMetricsBuilder_.getMessage();
+        }
+        return com.google.cloud.automl.v1.ClassificationEvaluationMetrics.getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Model evaluation metrics for image, text classification.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.automl.v1.ClassificationEvaluationMetrics classification_evaluation_metrics = 8;
+     * </code>
+     */
+    public Builder setClassificationEvaluationMetrics(
+        com.google.cloud.automl.v1.ClassificationEvaluationMetrics value) {
+      if (classificationEvaluationMetricsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        metrics_ = value;
+        onChanged();
+      } else {
+        classificationEvaluationMetricsBuilder_.setMessage(value);
+      }
+      metricsCase_ = 8;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Model evaluation metrics for image, text classification.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.automl.v1.ClassificationEvaluationMetrics classification_evaluation_metrics = 8;
+     * </code>
+     */
+    public Builder setClassificationEvaluationMetrics(
+        com.google.cloud.automl.v1.ClassificationEvaluationMetrics.Builder builderForValue) {
+      if (classificationEvaluationMetricsBuilder_ == null) {
+        metrics_ = builderForValue.build();
+        onChanged();
+      } else {
+        classificationEvaluationMetricsBuilder_.setMessage(builderForValue.build());
+      }
+      metricsCase_ = 8;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Model evaluation metrics for image, text classification.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.automl.v1.ClassificationEvaluationMetrics classification_evaluation_metrics = 8;
+     * </code>
+     */
+    public Builder mergeClassificationEvaluationMetrics(
+        com.google.cloud.automl.v1.ClassificationEvaluationMetrics value) {
+      if (classificationEvaluationMetricsBuilder_ == null) {
+        if (metricsCase_ == 8
+            && metrics_
+                != com.google.cloud.automl.v1.ClassificationEvaluationMetrics
+                    .getDefaultInstance()) {
+          metrics_ =
+              com.google.cloud.automl.v1.ClassificationEvaluationMetrics.newBuilder(
+                      (com.google.cloud.automl.v1.ClassificationEvaluationMetrics) metrics_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          metrics_ = value;
+        }
+        onChanged();
+      } else {
+        if (metricsCase_ == 8) {
+          classificationEvaluationMetricsBuilder_.mergeFrom(value);
+        }
+        classificationEvaluationMetricsBuilder_.setMessage(value);
+      }
+      metricsCase_ = 8;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Model evaluation metrics for image, text classification.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.automl.v1.ClassificationEvaluationMetrics classification_evaluation_metrics = 8;
+     * </code>
+     */
+    public Builder clearClassificationEvaluationMetrics() {
+      if (classificationEvaluationMetricsBuilder_ == null) {
+        if (metricsCase_ == 8) {
+          metricsCase_ = 0;
+          metrics_ = null;
+          onChanged();
+        }
+      } else {
+        if (metricsCase_ == 8) {
+          metricsCase_ = 0;
+          metrics_ = null;
+        }
+        classificationEvaluationMetricsBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Model evaluation metrics for image, text classification.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.automl.v1.ClassificationEvaluationMetrics classification_evaluation_metrics = 8;
+     * </code>
+     */
+    public com.google.cloud.automl.v1.ClassificationEvaluationMetrics.Builder
+        getClassificationEvaluationMetricsBuilder() {
+      return getClassificationEvaluationMetricsFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Model evaluation metrics for image, text classification.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.automl.v1.ClassificationEvaluationMetrics classification_evaluation_metrics = 8;
+     * </code>
+     */
+    public com.google.cloud.automl.v1.ClassificationEvaluationMetricsOrBuilder
+        getClassificationEvaluationMetricsOrBuilder() {
+      if ((metricsCase_ == 8) && (classificationEvaluationMetricsBuilder_ != null)) {
+        return classificationEvaluationMetricsBuilder_.getMessageOrBuilder();
+      } else {
+        if (metricsCase_ == 8) {
+          return (com.google.cloud.automl.v1.ClassificationEvaluationMetrics) metrics_;
+        }
+        return com.google.cloud.automl.v1.ClassificationEvaluationMetrics.getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Model evaluation metrics for image, text classification.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.automl.v1.ClassificationEvaluationMetrics classification_evaluation_metrics = 8;
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.automl.v1.ClassificationEvaluationMetrics,
+            com.google.cloud.automl.v1.ClassificationEvaluationMetrics.Builder,
+            com.google.cloud.automl.v1.ClassificationEvaluationMetricsOrBuilder>
+        getClassificationEvaluationMetricsFieldBuilder() {
+      if (classificationEvaluationMetricsBuilder_ == null) {
+        if (!(metricsCase_ == 8)) {
+          metrics_ =
+              com.google.cloud.automl.v1.ClassificationEvaluationMetrics.getDefaultInstance();
+        }
+        classificationEvaluationMetricsBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.automl.v1.ClassificationEvaluationMetrics,
+                com.google.cloud.automl.v1.ClassificationEvaluationMetrics.Builder,
+                com.google.cloud.automl.v1.ClassificationEvaluationMetricsOrBuilder>(
+                (com.google.cloud.automl.v1.ClassificationEvaluationMetrics) metrics_,
+                getParentForChildren(),
+                isClean());
+        metrics_ = null;
+      }
+      metricsCase_ = 8;
+      onChanged();
+      ;
+      return classificationEvaluationMetricsBuilder_;
     }
 
     private com.google.protobuf.SingleFieldBuilderV3<
@@ -1053,6 +1774,691 @@ public final class ModelEvaluation extends com.google.protobuf.GeneratedMessageV
       return translationEvaluationMetricsBuilder_;
     }
 
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.automl.v1.ImageObjectDetectionEvaluationMetrics,
+            com.google.cloud.automl.v1.ImageObjectDetectionEvaluationMetrics.Builder,
+            com.google.cloud.automl.v1.ImageObjectDetectionEvaluationMetricsOrBuilder>
+        imageObjectDetectionEvaluationMetricsBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Model evaluation metrics for image object detection.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.automl.v1.ImageObjectDetectionEvaluationMetrics image_object_detection_evaluation_metrics = 12;
+     * </code>
+     */
+    public boolean hasImageObjectDetectionEvaluationMetrics() {
+      return metricsCase_ == 12;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Model evaluation metrics for image object detection.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.automl.v1.ImageObjectDetectionEvaluationMetrics image_object_detection_evaluation_metrics = 12;
+     * </code>
+     */
+    public com.google.cloud.automl.v1.ImageObjectDetectionEvaluationMetrics
+        getImageObjectDetectionEvaluationMetrics() {
+      if (imageObjectDetectionEvaluationMetricsBuilder_ == null) {
+        if (metricsCase_ == 12) {
+          return (com.google.cloud.automl.v1.ImageObjectDetectionEvaluationMetrics) metrics_;
+        }
+        return com.google.cloud.automl.v1.ImageObjectDetectionEvaluationMetrics
+            .getDefaultInstance();
+      } else {
+        if (metricsCase_ == 12) {
+          return imageObjectDetectionEvaluationMetricsBuilder_.getMessage();
+        }
+        return com.google.cloud.automl.v1.ImageObjectDetectionEvaluationMetrics
+            .getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Model evaluation metrics for image object detection.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.automl.v1.ImageObjectDetectionEvaluationMetrics image_object_detection_evaluation_metrics = 12;
+     * </code>
+     */
+    public Builder setImageObjectDetectionEvaluationMetrics(
+        com.google.cloud.automl.v1.ImageObjectDetectionEvaluationMetrics value) {
+      if (imageObjectDetectionEvaluationMetricsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        metrics_ = value;
+        onChanged();
+      } else {
+        imageObjectDetectionEvaluationMetricsBuilder_.setMessage(value);
+      }
+      metricsCase_ = 12;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Model evaluation metrics for image object detection.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.automl.v1.ImageObjectDetectionEvaluationMetrics image_object_detection_evaluation_metrics = 12;
+     * </code>
+     */
+    public Builder setImageObjectDetectionEvaluationMetrics(
+        com.google.cloud.automl.v1.ImageObjectDetectionEvaluationMetrics.Builder builderForValue) {
+      if (imageObjectDetectionEvaluationMetricsBuilder_ == null) {
+        metrics_ = builderForValue.build();
+        onChanged();
+      } else {
+        imageObjectDetectionEvaluationMetricsBuilder_.setMessage(builderForValue.build());
+      }
+      metricsCase_ = 12;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Model evaluation metrics for image object detection.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.automl.v1.ImageObjectDetectionEvaluationMetrics image_object_detection_evaluation_metrics = 12;
+     * </code>
+     */
+    public Builder mergeImageObjectDetectionEvaluationMetrics(
+        com.google.cloud.automl.v1.ImageObjectDetectionEvaluationMetrics value) {
+      if (imageObjectDetectionEvaluationMetricsBuilder_ == null) {
+        if (metricsCase_ == 12
+            && metrics_
+                != com.google.cloud.automl.v1.ImageObjectDetectionEvaluationMetrics
+                    .getDefaultInstance()) {
+          metrics_ =
+              com.google.cloud.automl.v1.ImageObjectDetectionEvaluationMetrics.newBuilder(
+                      (com.google.cloud.automl.v1.ImageObjectDetectionEvaluationMetrics) metrics_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          metrics_ = value;
+        }
+        onChanged();
+      } else {
+        if (metricsCase_ == 12) {
+          imageObjectDetectionEvaluationMetricsBuilder_.mergeFrom(value);
+        }
+        imageObjectDetectionEvaluationMetricsBuilder_.setMessage(value);
+      }
+      metricsCase_ = 12;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Model evaluation metrics for image object detection.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.automl.v1.ImageObjectDetectionEvaluationMetrics image_object_detection_evaluation_metrics = 12;
+     * </code>
+     */
+    public Builder clearImageObjectDetectionEvaluationMetrics() {
+      if (imageObjectDetectionEvaluationMetricsBuilder_ == null) {
+        if (metricsCase_ == 12) {
+          metricsCase_ = 0;
+          metrics_ = null;
+          onChanged();
+        }
+      } else {
+        if (metricsCase_ == 12) {
+          metricsCase_ = 0;
+          metrics_ = null;
+        }
+        imageObjectDetectionEvaluationMetricsBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Model evaluation metrics for image object detection.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.automl.v1.ImageObjectDetectionEvaluationMetrics image_object_detection_evaluation_metrics = 12;
+     * </code>
+     */
+    public com.google.cloud.automl.v1.ImageObjectDetectionEvaluationMetrics.Builder
+        getImageObjectDetectionEvaluationMetricsBuilder() {
+      return getImageObjectDetectionEvaluationMetricsFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Model evaluation metrics for image object detection.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.automl.v1.ImageObjectDetectionEvaluationMetrics image_object_detection_evaluation_metrics = 12;
+     * </code>
+     */
+    public com.google.cloud.automl.v1.ImageObjectDetectionEvaluationMetricsOrBuilder
+        getImageObjectDetectionEvaluationMetricsOrBuilder() {
+      if ((metricsCase_ == 12) && (imageObjectDetectionEvaluationMetricsBuilder_ != null)) {
+        return imageObjectDetectionEvaluationMetricsBuilder_.getMessageOrBuilder();
+      } else {
+        if (metricsCase_ == 12) {
+          return (com.google.cloud.automl.v1.ImageObjectDetectionEvaluationMetrics) metrics_;
+        }
+        return com.google.cloud.automl.v1.ImageObjectDetectionEvaluationMetrics
+            .getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Model evaluation metrics for image object detection.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.automl.v1.ImageObjectDetectionEvaluationMetrics image_object_detection_evaluation_metrics = 12;
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.automl.v1.ImageObjectDetectionEvaluationMetrics,
+            com.google.cloud.automl.v1.ImageObjectDetectionEvaluationMetrics.Builder,
+            com.google.cloud.automl.v1.ImageObjectDetectionEvaluationMetricsOrBuilder>
+        getImageObjectDetectionEvaluationMetricsFieldBuilder() {
+      if (imageObjectDetectionEvaluationMetricsBuilder_ == null) {
+        if (!(metricsCase_ == 12)) {
+          metrics_ =
+              com.google.cloud.automl.v1.ImageObjectDetectionEvaluationMetrics.getDefaultInstance();
+        }
+        imageObjectDetectionEvaluationMetricsBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.automl.v1.ImageObjectDetectionEvaluationMetrics,
+                com.google.cloud.automl.v1.ImageObjectDetectionEvaluationMetrics.Builder,
+                com.google.cloud.automl.v1.ImageObjectDetectionEvaluationMetricsOrBuilder>(
+                (com.google.cloud.automl.v1.ImageObjectDetectionEvaluationMetrics) metrics_,
+                getParentForChildren(),
+                isClean());
+        metrics_ = null;
+      }
+      metricsCase_ = 12;
+      onChanged();
+      ;
+      return imageObjectDetectionEvaluationMetricsBuilder_;
+    }
+
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.automl.v1.TextSentimentEvaluationMetrics,
+            com.google.cloud.automl.v1.TextSentimentEvaluationMetrics.Builder,
+            com.google.cloud.automl.v1.TextSentimentEvaluationMetricsOrBuilder>
+        textSentimentEvaluationMetricsBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Evaluation metrics for text sentiment models.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.automl.v1.TextSentimentEvaluationMetrics text_sentiment_evaluation_metrics = 11;
+     * </code>
+     */
+    public boolean hasTextSentimentEvaluationMetrics() {
+      return metricsCase_ == 11;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Evaluation metrics for text sentiment models.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.automl.v1.TextSentimentEvaluationMetrics text_sentiment_evaluation_metrics = 11;
+     * </code>
+     */
+    public com.google.cloud.automl.v1.TextSentimentEvaluationMetrics
+        getTextSentimentEvaluationMetrics() {
+      if (textSentimentEvaluationMetricsBuilder_ == null) {
+        if (metricsCase_ == 11) {
+          return (com.google.cloud.automl.v1.TextSentimentEvaluationMetrics) metrics_;
+        }
+        return com.google.cloud.automl.v1.TextSentimentEvaluationMetrics.getDefaultInstance();
+      } else {
+        if (metricsCase_ == 11) {
+          return textSentimentEvaluationMetricsBuilder_.getMessage();
+        }
+        return com.google.cloud.automl.v1.TextSentimentEvaluationMetrics.getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Evaluation metrics for text sentiment models.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.automl.v1.TextSentimentEvaluationMetrics text_sentiment_evaluation_metrics = 11;
+     * </code>
+     */
+    public Builder setTextSentimentEvaluationMetrics(
+        com.google.cloud.automl.v1.TextSentimentEvaluationMetrics value) {
+      if (textSentimentEvaluationMetricsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        metrics_ = value;
+        onChanged();
+      } else {
+        textSentimentEvaluationMetricsBuilder_.setMessage(value);
+      }
+      metricsCase_ = 11;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Evaluation metrics for text sentiment models.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.automl.v1.TextSentimentEvaluationMetrics text_sentiment_evaluation_metrics = 11;
+     * </code>
+     */
+    public Builder setTextSentimentEvaluationMetrics(
+        com.google.cloud.automl.v1.TextSentimentEvaluationMetrics.Builder builderForValue) {
+      if (textSentimentEvaluationMetricsBuilder_ == null) {
+        metrics_ = builderForValue.build();
+        onChanged();
+      } else {
+        textSentimentEvaluationMetricsBuilder_.setMessage(builderForValue.build());
+      }
+      metricsCase_ = 11;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Evaluation metrics for text sentiment models.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.automl.v1.TextSentimentEvaluationMetrics text_sentiment_evaluation_metrics = 11;
+     * </code>
+     */
+    public Builder mergeTextSentimentEvaluationMetrics(
+        com.google.cloud.automl.v1.TextSentimentEvaluationMetrics value) {
+      if (textSentimentEvaluationMetricsBuilder_ == null) {
+        if (metricsCase_ == 11
+            && metrics_
+                != com.google.cloud.automl.v1.TextSentimentEvaluationMetrics.getDefaultInstance()) {
+          metrics_ =
+              com.google.cloud.automl.v1.TextSentimentEvaluationMetrics.newBuilder(
+                      (com.google.cloud.automl.v1.TextSentimentEvaluationMetrics) metrics_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          metrics_ = value;
+        }
+        onChanged();
+      } else {
+        if (metricsCase_ == 11) {
+          textSentimentEvaluationMetricsBuilder_.mergeFrom(value);
+        }
+        textSentimentEvaluationMetricsBuilder_.setMessage(value);
+      }
+      metricsCase_ = 11;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Evaluation metrics for text sentiment models.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.automl.v1.TextSentimentEvaluationMetrics text_sentiment_evaluation_metrics = 11;
+     * </code>
+     */
+    public Builder clearTextSentimentEvaluationMetrics() {
+      if (textSentimentEvaluationMetricsBuilder_ == null) {
+        if (metricsCase_ == 11) {
+          metricsCase_ = 0;
+          metrics_ = null;
+          onChanged();
+        }
+      } else {
+        if (metricsCase_ == 11) {
+          metricsCase_ = 0;
+          metrics_ = null;
+        }
+        textSentimentEvaluationMetricsBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Evaluation metrics for text sentiment models.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.automl.v1.TextSentimentEvaluationMetrics text_sentiment_evaluation_metrics = 11;
+     * </code>
+     */
+    public com.google.cloud.automl.v1.TextSentimentEvaluationMetrics.Builder
+        getTextSentimentEvaluationMetricsBuilder() {
+      return getTextSentimentEvaluationMetricsFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Evaluation metrics for text sentiment models.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.automl.v1.TextSentimentEvaluationMetrics text_sentiment_evaluation_metrics = 11;
+     * </code>
+     */
+    public com.google.cloud.automl.v1.TextSentimentEvaluationMetricsOrBuilder
+        getTextSentimentEvaluationMetricsOrBuilder() {
+      if ((metricsCase_ == 11) && (textSentimentEvaluationMetricsBuilder_ != null)) {
+        return textSentimentEvaluationMetricsBuilder_.getMessageOrBuilder();
+      } else {
+        if (metricsCase_ == 11) {
+          return (com.google.cloud.automl.v1.TextSentimentEvaluationMetrics) metrics_;
+        }
+        return com.google.cloud.automl.v1.TextSentimentEvaluationMetrics.getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Evaluation metrics for text sentiment models.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.automl.v1.TextSentimentEvaluationMetrics text_sentiment_evaluation_metrics = 11;
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.automl.v1.TextSentimentEvaluationMetrics,
+            com.google.cloud.automl.v1.TextSentimentEvaluationMetrics.Builder,
+            com.google.cloud.automl.v1.TextSentimentEvaluationMetricsOrBuilder>
+        getTextSentimentEvaluationMetricsFieldBuilder() {
+      if (textSentimentEvaluationMetricsBuilder_ == null) {
+        if (!(metricsCase_ == 11)) {
+          metrics_ = com.google.cloud.automl.v1.TextSentimentEvaluationMetrics.getDefaultInstance();
+        }
+        textSentimentEvaluationMetricsBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.automl.v1.TextSentimentEvaluationMetrics,
+                com.google.cloud.automl.v1.TextSentimentEvaluationMetrics.Builder,
+                com.google.cloud.automl.v1.TextSentimentEvaluationMetricsOrBuilder>(
+                (com.google.cloud.automl.v1.TextSentimentEvaluationMetrics) metrics_,
+                getParentForChildren(),
+                isClean());
+        metrics_ = null;
+      }
+      metricsCase_ = 11;
+      onChanged();
+      ;
+      return textSentimentEvaluationMetricsBuilder_;
+    }
+
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.automl.v1.TextExtractionEvaluationMetrics,
+            com.google.cloud.automl.v1.TextExtractionEvaluationMetrics.Builder,
+            com.google.cloud.automl.v1.TextExtractionEvaluationMetricsOrBuilder>
+        textExtractionEvaluationMetricsBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Evaluation metrics for text extraction models.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.automl.v1.TextExtractionEvaluationMetrics text_extraction_evaluation_metrics = 13;
+     * </code>
+     */
+    public boolean hasTextExtractionEvaluationMetrics() {
+      return metricsCase_ == 13;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Evaluation metrics for text extraction models.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.automl.v1.TextExtractionEvaluationMetrics text_extraction_evaluation_metrics = 13;
+     * </code>
+     */
+    public com.google.cloud.automl.v1.TextExtractionEvaluationMetrics
+        getTextExtractionEvaluationMetrics() {
+      if (textExtractionEvaluationMetricsBuilder_ == null) {
+        if (metricsCase_ == 13) {
+          return (com.google.cloud.automl.v1.TextExtractionEvaluationMetrics) metrics_;
+        }
+        return com.google.cloud.automl.v1.TextExtractionEvaluationMetrics.getDefaultInstance();
+      } else {
+        if (metricsCase_ == 13) {
+          return textExtractionEvaluationMetricsBuilder_.getMessage();
+        }
+        return com.google.cloud.automl.v1.TextExtractionEvaluationMetrics.getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Evaluation metrics for text extraction models.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.automl.v1.TextExtractionEvaluationMetrics text_extraction_evaluation_metrics = 13;
+     * </code>
+     */
+    public Builder setTextExtractionEvaluationMetrics(
+        com.google.cloud.automl.v1.TextExtractionEvaluationMetrics value) {
+      if (textExtractionEvaluationMetricsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        metrics_ = value;
+        onChanged();
+      } else {
+        textExtractionEvaluationMetricsBuilder_.setMessage(value);
+      }
+      metricsCase_ = 13;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Evaluation metrics for text extraction models.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.automl.v1.TextExtractionEvaluationMetrics text_extraction_evaluation_metrics = 13;
+     * </code>
+     */
+    public Builder setTextExtractionEvaluationMetrics(
+        com.google.cloud.automl.v1.TextExtractionEvaluationMetrics.Builder builderForValue) {
+      if (textExtractionEvaluationMetricsBuilder_ == null) {
+        metrics_ = builderForValue.build();
+        onChanged();
+      } else {
+        textExtractionEvaluationMetricsBuilder_.setMessage(builderForValue.build());
+      }
+      metricsCase_ = 13;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Evaluation metrics for text extraction models.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.automl.v1.TextExtractionEvaluationMetrics text_extraction_evaluation_metrics = 13;
+     * </code>
+     */
+    public Builder mergeTextExtractionEvaluationMetrics(
+        com.google.cloud.automl.v1.TextExtractionEvaluationMetrics value) {
+      if (textExtractionEvaluationMetricsBuilder_ == null) {
+        if (metricsCase_ == 13
+            && metrics_
+                != com.google.cloud.automl.v1.TextExtractionEvaluationMetrics
+                    .getDefaultInstance()) {
+          metrics_ =
+              com.google.cloud.automl.v1.TextExtractionEvaluationMetrics.newBuilder(
+                      (com.google.cloud.automl.v1.TextExtractionEvaluationMetrics) metrics_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          metrics_ = value;
+        }
+        onChanged();
+      } else {
+        if (metricsCase_ == 13) {
+          textExtractionEvaluationMetricsBuilder_.mergeFrom(value);
+        }
+        textExtractionEvaluationMetricsBuilder_.setMessage(value);
+      }
+      metricsCase_ = 13;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Evaluation metrics for text extraction models.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.automl.v1.TextExtractionEvaluationMetrics text_extraction_evaluation_metrics = 13;
+     * </code>
+     */
+    public Builder clearTextExtractionEvaluationMetrics() {
+      if (textExtractionEvaluationMetricsBuilder_ == null) {
+        if (metricsCase_ == 13) {
+          metricsCase_ = 0;
+          metrics_ = null;
+          onChanged();
+        }
+      } else {
+        if (metricsCase_ == 13) {
+          metricsCase_ = 0;
+          metrics_ = null;
+        }
+        textExtractionEvaluationMetricsBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Evaluation metrics for text extraction models.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.automl.v1.TextExtractionEvaluationMetrics text_extraction_evaluation_metrics = 13;
+     * </code>
+     */
+    public com.google.cloud.automl.v1.TextExtractionEvaluationMetrics.Builder
+        getTextExtractionEvaluationMetricsBuilder() {
+      return getTextExtractionEvaluationMetricsFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Evaluation metrics for text extraction models.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.automl.v1.TextExtractionEvaluationMetrics text_extraction_evaluation_metrics = 13;
+     * </code>
+     */
+    public com.google.cloud.automl.v1.TextExtractionEvaluationMetricsOrBuilder
+        getTextExtractionEvaluationMetricsOrBuilder() {
+      if ((metricsCase_ == 13) && (textExtractionEvaluationMetricsBuilder_ != null)) {
+        return textExtractionEvaluationMetricsBuilder_.getMessageOrBuilder();
+      } else {
+        if (metricsCase_ == 13) {
+          return (com.google.cloud.automl.v1.TextExtractionEvaluationMetrics) metrics_;
+        }
+        return com.google.cloud.automl.v1.TextExtractionEvaluationMetrics.getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Evaluation metrics for text extraction models.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.automl.v1.TextExtractionEvaluationMetrics text_extraction_evaluation_metrics = 13;
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.automl.v1.TextExtractionEvaluationMetrics,
+            com.google.cloud.automl.v1.TextExtractionEvaluationMetrics.Builder,
+            com.google.cloud.automl.v1.TextExtractionEvaluationMetricsOrBuilder>
+        getTextExtractionEvaluationMetricsFieldBuilder() {
+      if (textExtractionEvaluationMetricsBuilder_ == null) {
+        if (!(metricsCase_ == 13)) {
+          metrics_ =
+              com.google.cloud.automl.v1.TextExtractionEvaluationMetrics.getDefaultInstance();
+        }
+        textExtractionEvaluationMetricsBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.automl.v1.TextExtractionEvaluationMetrics,
+                com.google.cloud.automl.v1.TextExtractionEvaluationMetrics.Builder,
+                com.google.cloud.automl.v1.TextExtractionEvaluationMetricsOrBuilder>(
+                (com.google.cloud.automl.v1.TextExtractionEvaluationMetrics) metrics_,
+                getParentForChildren(),
+                isClean());
+        metrics_ = null;
+      }
+      metricsCase_ = 13;
+      onChanged();
+      ;
+      return textExtractionEvaluationMetricsBuilder_;
+    }
+
     private java.lang.Object name_ = "";
     /**
      *
@@ -1162,8 +2568,8 @@ public final class ModelEvaluation extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Output only. The ID of the annotation spec that the model evaluation applies to. The
-     * The ID is empty for the overall model evaluation.
+     * Output only. The ID of the annotation spec that the model evaluation
+     * applies to. The The ID is empty for the overall model evaluation.
      * </pre>
      *
      * <code>string annotation_spec_id = 2;</code>
@@ -1183,8 +2589,8 @@ public final class ModelEvaluation extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Output only. The ID of the annotation spec that the model evaluation applies to. The
-     * The ID is empty for the overall model evaluation.
+     * Output only. The ID of the annotation spec that the model evaluation
+     * applies to. The The ID is empty for the overall model evaluation.
      * </pre>
      *
      * <code>string annotation_spec_id = 2;</code>
@@ -1204,8 +2610,8 @@ public final class ModelEvaluation extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Output only. The ID of the annotation spec that the model evaluation applies to. The
-     * The ID is empty for the overall model evaluation.
+     * Output only. The ID of the annotation spec that the model evaluation
+     * applies to. The The ID is empty for the overall model evaluation.
      * </pre>
      *
      * <code>string annotation_spec_id = 2;</code>
@@ -1223,8 +2629,8 @@ public final class ModelEvaluation extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Output only. The ID of the annotation spec that the model evaluation applies to. The
-     * The ID is empty for the overall model evaluation.
+     * Output only. The ID of the annotation spec that the model evaluation
+     * applies to. The The ID is empty for the overall model evaluation.
      * </pre>
      *
      * <code>string annotation_spec_id = 2;</code>
@@ -1239,8 +2645,8 @@ public final class ModelEvaluation extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Output only. The ID of the annotation spec that the model evaluation applies to. The
-     * The ID is empty for the overall model evaluation.
+     * Output only. The ID of the annotation spec that the model evaluation
+     * applies to. The The ID is empty for the overall model evaluation.
      * </pre>
      *
      * <code>string annotation_spec_id = 2;</code>
@@ -1252,6 +2658,125 @@ public final class ModelEvaluation extends com.google.protobuf.GeneratedMessageV
       checkByteStringIsUtf8(value);
 
       annotationSpecId_ = value;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object displayName_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The value of
+     * [display_name][google.cloud.automl.v1.AnnotationSpec.display_name]
+     * at the moment when the model was trained. Because this field returns a
+     * value at model training time, for different models trained from the same
+     * dataset, the values may differ, since display names could had been changed
+     * between the two model's trainings.
+     * </pre>
+     *
+     * <code>string display_name = 15;</code>
+     */
+    public java.lang.String getDisplayName() {
+      java.lang.Object ref = displayName_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        displayName_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The value of
+     * [display_name][google.cloud.automl.v1.AnnotationSpec.display_name]
+     * at the moment when the model was trained. Because this field returns a
+     * value at model training time, for different models trained from the same
+     * dataset, the values may differ, since display names could had been changed
+     * between the two model's trainings.
+     * </pre>
+     *
+     * <code>string display_name = 15;</code>
+     */
+    public com.google.protobuf.ByteString getDisplayNameBytes() {
+      java.lang.Object ref = displayName_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        displayName_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The value of
+     * [display_name][google.cloud.automl.v1.AnnotationSpec.display_name]
+     * at the moment when the model was trained. Because this field returns a
+     * value at model training time, for different models trained from the same
+     * dataset, the values may differ, since display names could had been changed
+     * between the two model's trainings.
+     * </pre>
+     *
+     * <code>string display_name = 15;</code>
+     */
+    public Builder setDisplayName(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+
+      displayName_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The value of
+     * [display_name][google.cloud.automl.v1.AnnotationSpec.display_name]
+     * at the moment when the model was trained. Because this field returns a
+     * value at model training time, for different models trained from the same
+     * dataset, the values may differ, since display names could had been changed
+     * between the two model's trainings.
+     * </pre>
+     *
+     * <code>string display_name = 15;</code>
+     */
+    public Builder clearDisplayName() {
+
+      displayName_ = getDefaultInstance().getDisplayName();
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The value of
+     * [display_name][google.cloud.automl.v1.AnnotationSpec.display_name]
+     * at the moment when the model was trained. Because this field returns a
+     * value at model training time, for different models trained from the same
+     * dataset, the values may differ, since display names could had been changed
+     * between the two model's trainings.
+     * </pre>
+     *
+     * <code>string display_name = 15;</code>
+     */
+    public Builder setDisplayNameBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
+      displayName_ = value;
       onChanged();
       return this;
     }
@@ -1447,7 +2972,7 @@ public final class ModelEvaluation extends com.google.protobuf.GeneratedMessageV
      * the total number of all examples used for evaluation.
      * Otherwise, this is the count of examples that according to the ground
      * truth were annotated by the
-     * [annotation_spec_id][google.cloud.automl.v1beta1.ModelEvaluation.annotation_spec_id].
+     * [annotation_spec_id][google.cloud.automl.v1.ModelEvaluation.annotation_spec_id].
      * </pre>
      *
      * <code>int32 evaluated_example_count = 6;</code>
@@ -1466,7 +2991,7 @@ public final class ModelEvaluation extends com.google.protobuf.GeneratedMessageV
      * the total number of all examples used for evaluation.
      * Otherwise, this is the count of examples that according to the ground
      * truth were annotated by the
-     * [annotation_spec_id][google.cloud.automl.v1beta1.ModelEvaluation.annotation_spec_id].
+     * [annotation_spec_id][google.cloud.automl.v1.ModelEvaluation.annotation_spec_id].
      * </pre>
      *
      * <code>int32 evaluated_example_count = 6;</code>
@@ -1488,7 +3013,7 @@ public final class ModelEvaluation extends com.google.protobuf.GeneratedMessageV
      * the total number of all examples used for evaluation.
      * Otherwise, this is the count of examples that according to the ground
      * truth were annotated by the
-     * [annotation_spec_id][google.cloud.automl.v1beta1.ModelEvaluation.annotation_spec_id].
+     * [annotation_spec_id][google.cloud.automl.v1.ModelEvaluation.annotation_spec_id].
      * </pre>
      *
      * <code>int32 evaluated_example_count = 6;</code>

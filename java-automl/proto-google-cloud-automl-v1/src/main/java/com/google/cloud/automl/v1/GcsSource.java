@@ -118,12 +118,12 @@ public final class GcsSource extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Required. Google Cloud Storage URIs to input files, up to 2000 characters
-   * long. Accepted forms:
+   * Required. Google Cloud Storage URIs to input files, up to 2000
+   * characters long. Accepted forms:
    * * Full object path, e.g. gs://bucket/directory/object.csv
    * </pre>
    *
-   * <code>repeated string input_uris = 1;</code>
+   * <code>repeated string input_uris = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   public com.google.protobuf.ProtocolStringList getInputUrisList() {
     return inputUris_;
@@ -132,12 +132,12 @@ public final class GcsSource extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Required. Google Cloud Storage URIs to input files, up to 2000 characters
-   * long. Accepted forms:
+   * Required. Google Cloud Storage URIs to input files, up to 2000
+   * characters long. Accepted forms:
    * * Full object path, e.g. gs://bucket/directory/object.csv
    * </pre>
    *
-   * <code>repeated string input_uris = 1;</code>
+   * <code>repeated string input_uris = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   public int getInputUrisCount() {
     return inputUris_.size();
@@ -146,12 +146,12 @@ public final class GcsSource extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Required. Google Cloud Storage URIs to input files, up to 2000 characters
-   * long. Accepted forms:
+   * Required. Google Cloud Storage URIs to input files, up to 2000
+   * characters long. Accepted forms:
    * * Full object path, e.g. gs://bucket/directory/object.csv
    * </pre>
    *
-   * <code>repeated string input_uris = 1;</code>
+   * <code>repeated string input_uris = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   public java.lang.String getInputUris(int index) {
     return inputUris_.get(index);
@@ -160,12 +160,12 @@ public final class GcsSource extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Required. Google Cloud Storage URIs to input files, up to 2000 characters
-   * long. Accepted forms:
+   * Required. Google Cloud Storage URIs to input files, up to 2000
+   * characters long. Accepted forms:
    * * Full object path, e.g. gs://bucket/directory/object.csv
    * </pre>
    *
-   * <code>repeated string input_uris = 1;</code>
+   * <code>repeated string input_uris = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   public com.google.protobuf.ByteString getInputUrisBytes(int index) {
     return inputUris_.getByteString(index);
@@ -517,12 +517,12 @@ public final class GcsSource extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Google Cloud Storage URIs to input files, up to 2000 characters
-     * long. Accepted forms:
+     * Required. Google Cloud Storage URIs to input files, up to 2000
+     * characters long. Accepted forms:
      * * Full object path, e.g. gs://bucket/directory/object.csv
      * </pre>
      *
-     * <code>repeated string input_uris = 1;</code>
+     * <code>repeated string input_uris = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public com.google.protobuf.ProtocolStringList getInputUrisList() {
       return inputUris_.getUnmodifiableView();
@@ -531,12 +531,12 @@ public final class GcsSource extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Google Cloud Storage URIs to input files, up to 2000 characters
-     * long. Accepted forms:
+     * Required. Google Cloud Storage URIs to input files, up to 2000
+     * characters long. Accepted forms:
      * * Full object path, e.g. gs://bucket/directory/object.csv
      * </pre>
      *
-     * <code>repeated string input_uris = 1;</code>
+     * <code>repeated string input_uris = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public int getInputUrisCount() {
       return inputUris_.size();
@@ -545,12 +545,12 @@ public final class GcsSource extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Google Cloud Storage URIs to input files, up to 2000 characters
-     * long. Accepted forms:
+     * Required. Google Cloud Storage URIs to input files, up to 2000
+     * characters long. Accepted forms:
      * * Full object path, e.g. gs://bucket/directory/object.csv
      * </pre>
      *
-     * <code>repeated string input_uris = 1;</code>
+     * <code>repeated string input_uris = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public java.lang.String getInputUris(int index) {
       return inputUris_.get(index);
@@ -559,12 +559,12 @@ public final class GcsSource extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Google Cloud Storage URIs to input files, up to 2000 characters
-     * long. Accepted forms:
+     * Required. Google Cloud Storage URIs to input files, up to 2000
+     * characters long. Accepted forms:
      * * Full object path, e.g. gs://bucket/directory/object.csv
      * </pre>
      *
-     * <code>repeated string input_uris = 1;</code>
+     * <code>repeated string input_uris = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public com.google.protobuf.ByteString getInputUrisBytes(int index) {
       return inputUris_.getByteString(index);
@@ -573,12 +573,12 @@ public final class GcsSource extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Google Cloud Storage URIs to input files, up to 2000 characters
-     * long. Accepted forms:
+     * Required. Google Cloud Storage URIs to input files, up to 2000
+     * characters long. Accepted forms:
      * * Full object path, e.g. gs://bucket/directory/object.csv
      * </pre>
      *
-     * <code>repeated string input_uris = 1;</code>
+     * <code>repeated string input_uris = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder setInputUris(int index, java.lang.String value) {
       if (value == null) {
@@ -593,12 +593,12 @@ public final class GcsSource extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Google Cloud Storage URIs to input files, up to 2000 characters
-     * long. Accepted forms:
+     * Required. Google Cloud Storage URIs to input files, up to 2000
+     * characters long. Accepted forms:
      * * Full object path, e.g. gs://bucket/directory/object.csv
      * </pre>
      *
-     * <code>repeated string input_uris = 1;</code>
+     * <code>repeated string input_uris = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder addInputUris(java.lang.String value) {
       if (value == null) {
@@ -613,12 +613,12 @@ public final class GcsSource extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Google Cloud Storage URIs to input files, up to 2000 characters
-     * long. Accepted forms:
+     * Required. Google Cloud Storage URIs to input files, up to 2000
+     * characters long. Accepted forms:
      * * Full object path, e.g. gs://bucket/directory/object.csv
      * </pre>
      *
-     * <code>repeated string input_uris = 1;</code>
+     * <code>repeated string input_uris = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder addAllInputUris(java.lang.Iterable<java.lang.String> values) {
       ensureInputUrisIsMutable();
@@ -630,12 +630,12 @@ public final class GcsSource extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Google Cloud Storage URIs to input files, up to 2000 characters
-     * long. Accepted forms:
+     * Required. Google Cloud Storage URIs to input files, up to 2000
+     * characters long. Accepted forms:
      * * Full object path, e.g. gs://bucket/directory/object.csv
      * </pre>
      *
-     * <code>repeated string input_uris = 1;</code>
+     * <code>repeated string input_uris = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder clearInputUris() {
       inputUris_ = com.google.protobuf.LazyStringArrayList.EMPTY;
@@ -647,12 +647,12 @@ public final class GcsSource extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Google Cloud Storage URIs to input files, up to 2000 characters
-     * long. Accepted forms:
+     * Required. Google Cloud Storage URIs to input files, up to 2000
+     * characters long. Accepted forms:
      * * Full object path, e.g. gs://bucket/directory/object.csv
      * </pre>
      *
-     * <code>repeated string input_uris = 1;</code>
+     * <code>repeated string input_uris = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder addInputUrisBytes(com.google.protobuf.ByteString value) {
       if (value == null) {

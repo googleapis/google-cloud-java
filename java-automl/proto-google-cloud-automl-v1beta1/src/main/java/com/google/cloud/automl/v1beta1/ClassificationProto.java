@@ -2764,7 +2764,10 @@ public final class ClassificationProto {
        *
        *
        * <pre>
-       * Output only. The harmonic mean of [recall_at1][google.cloud.automl.v1beta1.ClassificationEvaluationMetrics.ConfidenceMetricsEntry.recall_at1] and [precision_at1][google.cloud.automl.v1beta1.ClassificationEvaluationMetrics.ConfidenceMetricsEntry.precision_at1].
+       * Output only. The harmonic mean of
+       * [recall_at1][google.cloud.automl.v1beta1.ClassificationEvaluationMetrics.ConfidenceMetricsEntry.recall_at1]
+       * and
+       * [precision_at1][google.cloud.automl.v1beta1.ClassificationEvaluationMetrics.ConfidenceMetricsEntry.precision_at1].
        * </pre>
        *
        * <code>float f1_score_at1 = 7;</code>
@@ -3123,7 +3126,10 @@ public final class ClassificationProto {
        *
        *
        * <pre>
-       * Output only. The harmonic mean of [recall_at1][google.cloud.automl.v1beta1.ClassificationEvaluationMetrics.ConfidenceMetricsEntry.recall_at1] and [precision_at1][google.cloud.automl.v1beta1.ClassificationEvaluationMetrics.ConfidenceMetricsEntry.precision_at1].
+       * Output only. The harmonic mean of
+       * [recall_at1][google.cloud.automl.v1beta1.ClassificationEvaluationMetrics.ConfidenceMetricsEntry.recall_at1]
+       * and
+       * [precision_at1][google.cloud.automl.v1beta1.ClassificationEvaluationMetrics.ConfidenceMetricsEntry.precision_at1].
        * </pre>
        *
        * <code>float f1_score_at1 = 7;</code>
@@ -4213,7 +4219,10 @@ public final class ClassificationProto {
          *
          *
          * <pre>
-         * Output only. The harmonic mean of [recall_at1][google.cloud.automl.v1beta1.ClassificationEvaluationMetrics.ConfidenceMetricsEntry.recall_at1] and [precision_at1][google.cloud.automl.v1beta1.ClassificationEvaluationMetrics.ConfidenceMetricsEntry.precision_at1].
+         * Output only. The harmonic mean of
+         * [recall_at1][google.cloud.automl.v1beta1.ClassificationEvaluationMetrics.ConfidenceMetricsEntry.recall_at1]
+         * and
+         * [precision_at1][google.cloud.automl.v1beta1.ClassificationEvaluationMetrics.ConfidenceMetricsEntry.precision_at1].
          * </pre>
          *
          * <code>float f1_score_at1 = 7;</code>
@@ -4225,7 +4234,10 @@ public final class ClassificationProto {
          *
          *
          * <pre>
-         * Output only. The harmonic mean of [recall_at1][google.cloud.automl.v1beta1.ClassificationEvaluationMetrics.ConfidenceMetricsEntry.recall_at1] and [precision_at1][google.cloud.automl.v1beta1.ClassificationEvaluationMetrics.ConfidenceMetricsEntry.precision_at1].
+         * Output only. The harmonic mean of
+         * [recall_at1][google.cloud.automl.v1beta1.ClassificationEvaluationMetrics.ConfidenceMetricsEntry.recall_at1]
+         * and
+         * [precision_at1][google.cloud.automl.v1beta1.ClassificationEvaluationMetrics.ConfidenceMetricsEntry.precision_at1].
          * </pre>
          *
          * <code>float f1_score_at1 = 7;</code>
@@ -4240,7 +4252,10 @@ public final class ClassificationProto {
          *
          *
          * <pre>
-         * Output only. The harmonic mean of [recall_at1][google.cloud.automl.v1beta1.ClassificationEvaluationMetrics.ConfidenceMetricsEntry.recall_at1] and [precision_at1][google.cloud.automl.v1beta1.ClassificationEvaluationMetrics.ConfidenceMetricsEntry.precision_at1].
+         * Output only. The harmonic mean of
+         * [recall_at1][google.cloud.automl.v1beta1.ClassificationEvaluationMetrics.ConfidenceMetricsEntry.recall_at1]
+         * and
+         * [precision_at1][google.cloud.automl.v1beta1.ClassificationEvaluationMetrics.ConfidenceMetricsEntry.precision_at1].
          * </pre>
          *
          * <code>float f1_score_at1 = 7;</code>
@@ -4625,9 +4640,9 @@ public final class ClassificationProto {
        * <pre>
        * Output only. Rows in the confusion matrix. The number of rows is equal to
        * the size of `annotation_spec_id`.
-       * `row[i].value[j]` is the number of examples that have ground truth of the
-       * `annotation_spec_id[i]` and are predicted as `annotation_spec_id[j]` by
-       * the model being evaluated.
+       * `row[i].example_count[j]` is the number of examples that have ground
+       * truth of the `annotation_spec_id[i]` and are predicted as
+       * `annotation_spec_id[j]` by the model being evaluated.
        * </pre>
        *
        * <code>
@@ -4644,9 +4659,9 @@ public final class ClassificationProto {
        * <pre>
        * Output only. Rows in the confusion matrix. The number of rows is equal to
        * the size of `annotation_spec_id`.
-       * `row[i].value[j]` is the number of examples that have ground truth of the
-       * `annotation_spec_id[i]` and are predicted as `annotation_spec_id[j]` by
-       * the model being evaluated.
+       * `row[i].example_count[j]` is the number of examples that have ground
+       * truth of the `annotation_spec_id[i]` and are predicted as
+       * `annotation_spec_id[j]` by the model being evaluated.
        * </pre>
        *
        * <code>
@@ -4662,9 +4677,9 @@ public final class ClassificationProto {
        * <pre>
        * Output only. Rows in the confusion matrix. The number of rows is equal to
        * the size of `annotation_spec_id`.
-       * `row[i].value[j]` is the number of examples that have ground truth of the
-       * `annotation_spec_id[i]` and are predicted as `annotation_spec_id[j]` by
-       * the model being evaluated.
+       * `row[i].example_count[j]` is the number of examples that have ground
+       * truth of the `annotation_spec_id[i]` and are predicted as
+       * `annotation_spec_id[j]` by the model being evaluated.
        * </pre>
        *
        * <code>
@@ -4678,9 +4693,9 @@ public final class ClassificationProto {
        * <pre>
        * Output only. Rows in the confusion matrix. The number of rows is equal to
        * the size of `annotation_spec_id`.
-       * `row[i].value[j]` is the number of examples that have ground truth of the
-       * `annotation_spec_id[i]` and are predicted as `annotation_spec_id[j]` by
-       * the model being evaluated.
+       * `row[i].example_count[j]` is the number of examples that have ground
+       * truth of the `annotation_spec_id[i]` and are predicted as
+       * `annotation_spec_id[j]` by the model being evaluated.
        * </pre>
        *
        * <code>
@@ -4698,9 +4713,9 @@ public final class ClassificationProto {
        * <pre>
        * Output only. Rows in the confusion matrix. The number of rows is equal to
        * the size of `annotation_spec_id`.
-       * `row[i].value[j]` is the number of examples that have ground truth of the
-       * `annotation_spec_id[i]` and are predicted as `annotation_spec_id[j]` by
-       * the model being evaluated.
+       * `row[i].example_count[j]` is the number of examples that have ground
+       * truth of the `annotation_spec_id[i]` and are predicted as
+       * `annotation_spec_id[j]` by the model being evaluated.
        * </pre>
        *
        * <code>
@@ -4855,7 +4870,9 @@ public final class ClassificationProto {
          * Output only. Value of the specific cell in the confusion matrix.
          * The number of values each row has (i.e. the length of the row) is equal
          * to the length of the `annotation_spec_id` field or, if that one is not
-         * populated, length of the [display_name][google.cloud.automl.v1beta1.ClassificationEvaluationMetrics.ConfusionMatrix.display_name] field.
+         * populated, length of the
+         * [display_name][google.cloud.automl.v1beta1.ClassificationEvaluationMetrics.ConfusionMatrix.display_name]
+         * field.
          * </pre>
          *
          * <code>repeated int32 example_count = 1;</code>
@@ -4868,7 +4885,9 @@ public final class ClassificationProto {
          * Output only. Value of the specific cell in the confusion matrix.
          * The number of values each row has (i.e. the length of the row) is equal
          * to the length of the `annotation_spec_id` field or, if that one is not
-         * populated, length of the [display_name][google.cloud.automl.v1beta1.ClassificationEvaluationMetrics.ConfusionMatrix.display_name] field.
+         * populated, length of the
+         * [display_name][google.cloud.automl.v1beta1.ClassificationEvaluationMetrics.ConfusionMatrix.display_name]
+         * field.
          * </pre>
          *
          * <code>repeated int32 example_count = 1;</code>
@@ -4881,7 +4900,9 @@ public final class ClassificationProto {
          * Output only. Value of the specific cell in the confusion matrix.
          * The number of values each row has (i.e. the length of the row) is equal
          * to the length of the `annotation_spec_id` field or, if that one is not
-         * populated, length of the [display_name][google.cloud.automl.v1beta1.ClassificationEvaluationMetrics.ConfusionMatrix.display_name] field.
+         * populated, length of the
+         * [display_name][google.cloud.automl.v1beta1.ClassificationEvaluationMetrics.ConfusionMatrix.display_name]
+         * field.
          * </pre>
          *
          * <code>repeated int32 example_count = 1;</code>
@@ -5009,7 +5030,9 @@ public final class ClassificationProto {
          * Output only. Value of the specific cell in the confusion matrix.
          * The number of values each row has (i.e. the length of the row) is equal
          * to the length of the `annotation_spec_id` field or, if that one is not
-         * populated, length of the [display_name][google.cloud.automl.v1beta1.ClassificationEvaluationMetrics.ConfusionMatrix.display_name] field.
+         * populated, length of the
+         * [display_name][google.cloud.automl.v1beta1.ClassificationEvaluationMetrics.ConfusionMatrix.display_name]
+         * field.
          * </pre>
          *
          * <code>repeated int32 example_count = 1;</code>
@@ -5024,7 +5047,9 @@ public final class ClassificationProto {
          * Output only. Value of the specific cell in the confusion matrix.
          * The number of values each row has (i.e. the length of the row) is equal
          * to the length of the `annotation_spec_id` field or, if that one is not
-         * populated, length of the [display_name][google.cloud.automl.v1beta1.ClassificationEvaluationMetrics.ConfusionMatrix.display_name] field.
+         * populated, length of the
+         * [display_name][google.cloud.automl.v1beta1.ClassificationEvaluationMetrics.ConfusionMatrix.display_name]
+         * field.
          * </pre>
          *
          * <code>repeated int32 example_count = 1;</code>
@@ -5039,7 +5064,9 @@ public final class ClassificationProto {
          * Output only. Value of the specific cell in the confusion matrix.
          * The number of values each row has (i.e. the length of the row) is equal
          * to the length of the `annotation_spec_id` field or, if that one is not
-         * populated, length of the [display_name][google.cloud.automl.v1beta1.ClassificationEvaluationMetrics.ConfusionMatrix.display_name] field.
+         * populated, length of the
+         * [display_name][google.cloud.automl.v1beta1.ClassificationEvaluationMetrics.ConfusionMatrix.display_name]
+         * field.
          * </pre>
          *
          * <code>repeated int32 example_count = 1;</code>
@@ -5483,7 +5510,9 @@ public final class ClassificationProto {
            * Output only. Value of the specific cell in the confusion matrix.
            * The number of values each row has (i.e. the length of the row) is equal
            * to the length of the `annotation_spec_id` field or, if that one is not
-           * populated, length of the [display_name][google.cloud.automl.v1beta1.ClassificationEvaluationMetrics.ConfusionMatrix.display_name] field.
+           * populated, length of the
+           * [display_name][google.cloud.automl.v1beta1.ClassificationEvaluationMetrics.ConfusionMatrix.display_name]
+           * field.
            * </pre>
            *
            * <code>repeated int32 example_count = 1;</code>
@@ -5500,7 +5529,9 @@ public final class ClassificationProto {
            * Output only. Value of the specific cell in the confusion matrix.
            * The number of values each row has (i.e. the length of the row) is equal
            * to the length of the `annotation_spec_id` field or, if that one is not
-           * populated, length of the [display_name][google.cloud.automl.v1beta1.ClassificationEvaluationMetrics.ConfusionMatrix.display_name] field.
+           * populated, length of the
+           * [display_name][google.cloud.automl.v1beta1.ClassificationEvaluationMetrics.ConfusionMatrix.display_name]
+           * field.
            * </pre>
            *
            * <code>repeated int32 example_count = 1;</code>
@@ -5515,7 +5546,9 @@ public final class ClassificationProto {
            * Output only. Value of the specific cell in the confusion matrix.
            * The number of values each row has (i.e. the length of the row) is equal
            * to the length of the `annotation_spec_id` field or, if that one is not
-           * populated, length of the [display_name][google.cloud.automl.v1beta1.ClassificationEvaluationMetrics.ConfusionMatrix.display_name] field.
+           * populated, length of the
+           * [display_name][google.cloud.automl.v1beta1.ClassificationEvaluationMetrics.ConfusionMatrix.display_name]
+           * field.
            * </pre>
            *
            * <code>repeated int32 example_count = 1;</code>
@@ -5530,7 +5563,9 @@ public final class ClassificationProto {
            * Output only. Value of the specific cell in the confusion matrix.
            * The number of values each row has (i.e. the length of the row) is equal
            * to the length of the `annotation_spec_id` field or, if that one is not
-           * populated, length of the [display_name][google.cloud.automl.v1beta1.ClassificationEvaluationMetrics.ConfusionMatrix.display_name] field.
+           * populated, length of the
+           * [display_name][google.cloud.automl.v1beta1.ClassificationEvaluationMetrics.ConfusionMatrix.display_name]
+           * field.
            * </pre>
            *
            * <code>repeated int32 example_count = 1;</code>
@@ -5548,7 +5583,9 @@ public final class ClassificationProto {
            * Output only. Value of the specific cell in the confusion matrix.
            * The number of values each row has (i.e. the length of the row) is equal
            * to the length of the `annotation_spec_id` field or, if that one is not
-           * populated, length of the [display_name][google.cloud.automl.v1beta1.ClassificationEvaluationMetrics.ConfusionMatrix.display_name] field.
+           * populated, length of the
+           * [display_name][google.cloud.automl.v1beta1.ClassificationEvaluationMetrics.ConfusionMatrix.display_name]
+           * field.
            * </pre>
            *
            * <code>repeated int32 example_count = 1;</code>
@@ -5566,7 +5603,9 @@ public final class ClassificationProto {
            * Output only. Value of the specific cell in the confusion matrix.
            * The number of values each row has (i.e. the length of the row) is equal
            * to the length of the `annotation_spec_id` field or, if that one is not
-           * populated, length of the [display_name][google.cloud.automl.v1beta1.ClassificationEvaluationMetrics.ConfusionMatrix.display_name] field.
+           * populated, length of the
+           * [display_name][google.cloud.automl.v1beta1.ClassificationEvaluationMetrics.ConfusionMatrix.display_name]
+           * field.
            * </pre>
            *
            * <code>repeated int32 example_count = 1;</code>
@@ -5585,7 +5624,9 @@ public final class ClassificationProto {
            * Output only. Value of the specific cell in the confusion matrix.
            * The number of values each row has (i.e. the length of the row) is equal
            * to the length of the `annotation_spec_id` field or, if that one is not
-           * populated, length of the [display_name][google.cloud.automl.v1beta1.ClassificationEvaluationMetrics.ConfusionMatrix.display_name] field.
+           * populated, length of the
+           * [display_name][google.cloud.automl.v1beta1.ClassificationEvaluationMetrics.ConfusionMatrix.display_name]
+           * field.
            * </pre>
            *
            * <code>repeated int32 example_count = 1;</code>
@@ -5802,9 +5843,9 @@ public final class ClassificationProto {
        * <pre>
        * Output only. Rows in the confusion matrix. The number of rows is equal to
        * the size of `annotation_spec_id`.
-       * `row[i].value[j]` is the number of examples that have ground truth of the
-       * `annotation_spec_id[i]` and are predicted as `annotation_spec_id[j]` by
-       * the model being evaluated.
+       * `row[i].example_count[j]` is the number of examples that have ground
+       * truth of the `annotation_spec_id[i]` and are predicted as
+       * `annotation_spec_id[j]` by the model being evaluated.
        * </pre>
        *
        * <code>
@@ -5823,9 +5864,9 @@ public final class ClassificationProto {
        * <pre>
        * Output only. Rows in the confusion matrix. The number of rows is equal to
        * the size of `annotation_spec_id`.
-       * `row[i].value[j]` is the number of examples that have ground truth of the
-       * `annotation_spec_id[i]` and are predicted as `annotation_spec_id[j]` by
-       * the model being evaluated.
+       * `row[i].example_count[j]` is the number of examples that have ground
+       * truth of the `annotation_spec_id[i]` and are predicted as
+       * `annotation_spec_id[j]` by the model being evaluated.
        * </pre>
        *
        * <code>
@@ -5845,9 +5886,9 @@ public final class ClassificationProto {
        * <pre>
        * Output only. Rows in the confusion matrix. The number of rows is equal to
        * the size of `annotation_spec_id`.
-       * `row[i].value[j]` is the number of examples that have ground truth of the
-       * `annotation_spec_id[i]` and are predicted as `annotation_spec_id[j]` by
-       * the model being evaluated.
+       * `row[i].example_count[j]` is the number of examples that have ground
+       * truth of the `annotation_spec_id[i]` and are predicted as
+       * `annotation_spec_id[j]` by the model being evaluated.
        * </pre>
        *
        * <code>
@@ -5863,9 +5904,9 @@ public final class ClassificationProto {
        * <pre>
        * Output only. Rows in the confusion matrix. The number of rows is equal to
        * the size of `annotation_spec_id`.
-       * `row[i].value[j]` is the number of examples that have ground truth of the
-       * `annotation_spec_id[i]` and are predicted as `annotation_spec_id[j]` by
-       * the model being evaluated.
+       * `row[i].example_count[j]` is the number of examples that have ground
+       * truth of the `annotation_spec_id[i]` and are predicted as
+       * `annotation_spec_id[j]` by the model being evaluated.
        * </pre>
        *
        * <code>
@@ -5883,9 +5924,9 @@ public final class ClassificationProto {
        * <pre>
        * Output only. Rows in the confusion matrix. The number of rows is equal to
        * the size of `annotation_spec_id`.
-       * `row[i].value[j]` is the number of examples that have ground truth of the
-       * `annotation_spec_id[i]` and are predicted as `annotation_spec_id[j]` by
-       * the model being evaluated.
+       * `row[i].example_count[j]` is the number of examples that have ground
+       * truth of the `annotation_spec_id[i]` and are predicted as
+       * `annotation_spec_id[j]` by the model being evaluated.
        * </pre>
        *
        * <code>
@@ -6778,9 +6819,9 @@ public final class ClassificationProto {
          * <pre>
          * Output only. Rows in the confusion matrix. The number of rows is equal to
          * the size of `annotation_spec_id`.
-         * `row[i].value[j]` is the number of examples that have ground truth of the
-         * `annotation_spec_id[i]` and are predicted as `annotation_spec_id[j]` by
-         * the model being evaluated.
+         * `row[i].example_count[j]` is the number of examples that have ground
+         * truth of the `annotation_spec_id[i]` and are predicted as
+         * `annotation_spec_id[j]` by the model being evaluated.
          * </pre>
          *
          * <code>
@@ -6803,9 +6844,9 @@ public final class ClassificationProto {
          * <pre>
          * Output only. Rows in the confusion matrix. The number of rows is equal to
          * the size of `annotation_spec_id`.
-         * `row[i].value[j]` is the number of examples that have ground truth of the
-         * `annotation_spec_id[i]` and are predicted as `annotation_spec_id[j]` by
-         * the model being evaluated.
+         * `row[i].example_count[j]` is the number of examples that have ground
+         * truth of the `annotation_spec_id[i]` and are predicted as
+         * `annotation_spec_id[j]` by the model being evaluated.
          * </pre>
          *
          * <code>
@@ -6825,9 +6866,9 @@ public final class ClassificationProto {
          * <pre>
          * Output only. Rows in the confusion matrix. The number of rows is equal to
          * the size of `annotation_spec_id`.
-         * `row[i].value[j]` is the number of examples that have ground truth of the
-         * `annotation_spec_id[i]` and are predicted as `annotation_spec_id[j]` by
-         * the model being evaluated.
+         * `row[i].example_count[j]` is the number of examples that have ground
+         * truth of the `annotation_spec_id[i]` and are predicted as
+         * `annotation_spec_id[j]` by the model being evaluated.
          * </pre>
          *
          * <code>
@@ -6849,9 +6890,9 @@ public final class ClassificationProto {
          * <pre>
          * Output only. Rows in the confusion matrix. The number of rows is equal to
          * the size of `annotation_spec_id`.
-         * `row[i].value[j]` is the number of examples that have ground truth of the
-         * `annotation_spec_id[i]` and are predicted as `annotation_spec_id[j]` by
-         * the model being evaluated.
+         * `row[i].example_count[j]` is the number of examples that have ground
+         * truth of the `annotation_spec_id[i]` and are predicted as
+         * `annotation_spec_id[j]` by the model being evaluated.
          * </pre>
          *
          * <code>
@@ -6881,9 +6922,9 @@ public final class ClassificationProto {
          * <pre>
          * Output only. Rows in the confusion matrix. The number of rows is equal to
          * the size of `annotation_spec_id`.
-         * `row[i].value[j]` is the number of examples that have ground truth of the
-         * `annotation_spec_id[i]` and are predicted as `annotation_spec_id[j]` by
-         * the model being evaluated.
+         * `row[i].example_count[j]` is the number of examples that have ground
+         * truth of the `annotation_spec_id[i]` and are predicted as
+         * `annotation_spec_id[j]` by the model being evaluated.
          * </pre>
          *
          * <code>
@@ -6910,9 +6951,9 @@ public final class ClassificationProto {
          * <pre>
          * Output only. Rows in the confusion matrix. The number of rows is equal to
          * the size of `annotation_spec_id`.
-         * `row[i].value[j]` is the number of examples that have ground truth of the
-         * `annotation_spec_id[i]` and are predicted as `annotation_spec_id[j]` by
-         * the model being evaluated.
+         * `row[i].example_count[j]` is the number of examples that have ground
+         * truth of the `annotation_spec_id[i]` and are predicted as
+         * `annotation_spec_id[j]` by the model being evaluated.
          * </pre>
          *
          * <code>
@@ -6941,9 +6982,9 @@ public final class ClassificationProto {
          * <pre>
          * Output only. Rows in the confusion matrix. The number of rows is equal to
          * the size of `annotation_spec_id`.
-         * `row[i].value[j]` is the number of examples that have ground truth of the
-         * `annotation_spec_id[i]` and are predicted as `annotation_spec_id[j]` by
-         * the model being evaluated.
+         * `row[i].example_count[j]` is the number of examples that have ground
+         * truth of the `annotation_spec_id[i]` and are predicted as
+         * `annotation_spec_id[j]` by the model being evaluated.
          * </pre>
          *
          * <code>
@@ -6973,9 +7014,9 @@ public final class ClassificationProto {
          * <pre>
          * Output only. Rows in the confusion matrix. The number of rows is equal to
          * the size of `annotation_spec_id`.
-         * `row[i].value[j]` is the number of examples that have ground truth of the
-         * `annotation_spec_id[i]` and are predicted as `annotation_spec_id[j]` by
-         * the model being evaluated.
+         * `row[i].example_count[j]` is the number of examples that have ground
+         * truth of the `annotation_spec_id[i]` and are predicted as
+         * `annotation_spec_id[j]` by the model being evaluated.
          * </pre>
          *
          * <code>
@@ -7001,9 +7042,9 @@ public final class ClassificationProto {
          * <pre>
          * Output only. Rows in the confusion matrix. The number of rows is equal to
          * the size of `annotation_spec_id`.
-         * `row[i].value[j]` is the number of examples that have ground truth of the
-         * `annotation_spec_id[i]` and are predicted as `annotation_spec_id[j]` by
-         * the model being evaluated.
+         * `row[i].example_count[j]` is the number of examples that have ground
+         * truth of the `annotation_spec_id[i]` and are predicted as
+         * `annotation_spec_id[j]` by the model being evaluated.
          * </pre>
          *
          * <code>
@@ -7030,9 +7071,9 @@ public final class ClassificationProto {
          * <pre>
          * Output only. Rows in the confusion matrix. The number of rows is equal to
          * the size of `annotation_spec_id`.
-         * `row[i].value[j]` is the number of examples that have ground truth of the
-         * `annotation_spec_id[i]` and are predicted as `annotation_spec_id[j]` by
-         * the model being evaluated.
+         * `row[i].example_count[j]` is the number of examples that have ground
+         * truth of the `annotation_spec_id[i]` and are predicted as
+         * `annotation_spec_id[j]` by the model being evaluated.
          * </pre>
          *
          * <code>
@@ -7060,9 +7101,9 @@ public final class ClassificationProto {
          * <pre>
          * Output only. Rows in the confusion matrix. The number of rows is equal to
          * the size of `annotation_spec_id`.
-         * `row[i].value[j]` is the number of examples that have ground truth of the
-         * `annotation_spec_id[i]` and are predicted as `annotation_spec_id[j]` by
-         * the model being evaluated.
+         * `row[i].example_count[j]` is the number of examples that have ground
+         * truth of the `annotation_spec_id[i]` and are predicted as
+         * `annotation_spec_id[j]` by the model being evaluated.
          * </pre>
          *
          * <code>
@@ -7085,9 +7126,9 @@ public final class ClassificationProto {
          * <pre>
          * Output only. Rows in the confusion matrix. The number of rows is equal to
          * the size of `annotation_spec_id`.
-         * `row[i].value[j]` is the number of examples that have ground truth of the
-         * `annotation_spec_id[i]` and are predicted as `annotation_spec_id[j]` by
-         * the model being evaluated.
+         * `row[i].example_count[j]` is the number of examples that have ground
+         * truth of the `annotation_spec_id[i]` and are predicted as
+         * `annotation_spec_id[j]` by the model being evaluated.
          * </pre>
          *
          * <code>
@@ -7110,9 +7151,9 @@ public final class ClassificationProto {
          * <pre>
          * Output only. Rows in the confusion matrix. The number of rows is equal to
          * the size of `annotation_spec_id`.
-         * `row[i].value[j]` is the number of examples that have ground truth of the
-         * `annotation_spec_id[i]` and are predicted as `annotation_spec_id[j]` by
-         * the model being evaluated.
+         * `row[i].example_count[j]` is the number of examples that have ground
+         * truth of the `annotation_spec_id[i]` and are predicted as
+         * `annotation_spec_id[j]` by the model being evaluated.
          * </pre>
          *
          * <code>
@@ -7130,9 +7171,9 @@ public final class ClassificationProto {
          * <pre>
          * Output only. Rows in the confusion matrix. The number of rows is equal to
          * the size of `annotation_spec_id`.
-         * `row[i].value[j]` is the number of examples that have ground truth of the
-         * `annotation_spec_id[i]` and are predicted as `annotation_spec_id[j]` by
-         * the model being evaluated.
+         * `row[i].example_count[j]` is the number of examples that have ground
+         * truth of the `annotation_spec_id[i]` and are predicted as
+         * `annotation_spec_id[j]` by the model being evaluated.
          * </pre>
          *
          * <code>
@@ -7154,9 +7195,9 @@ public final class ClassificationProto {
          * <pre>
          * Output only. Rows in the confusion matrix. The number of rows is equal to
          * the size of `annotation_spec_id`.
-         * `row[i].value[j]` is the number of examples that have ground truth of the
-         * `annotation_spec_id[i]` and are predicted as `annotation_spec_id[j]` by
-         * the model being evaluated.
+         * `row[i].example_count[j]` is the number of examples that have ground
+         * truth of the `annotation_spec_id[i]` and are predicted as
+         * `annotation_spec_id[j]` by the model being evaluated.
          * </pre>
          *
          * <code>
@@ -7180,9 +7221,9 @@ public final class ClassificationProto {
          * <pre>
          * Output only. Rows in the confusion matrix. The number of rows is equal to
          * the size of `annotation_spec_id`.
-         * `row[i].value[j]` is the number of examples that have ground truth of the
-         * `annotation_spec_id[i]` and are predicted as `annotation_spec_id[j]` by
-         * the model being evaluated.
+         * `row[i].example_count[j]` is the number of examples that have ground
+         * truth of the `annotation_spec_id[i]` and are predicted as
+         * `annotation_spec_id[j]` by the model being evaluated.
          * </pre>
          *
          * <code>
@@ -7203,9 +7244,9 @@ public final class ClassificationProto {
          * <pre>
          * Output only. Rows in the confusion matrix. The number of rows is equal to
          * the size of `annotation_spec_id`.
-         * `row[i].value[j]` is the number of examples that have ground truth of the
-         * `annotation_spec_id[i]` and are predicted as `annotation_spec_id[j]` by
-         * the model being evaluated.
+         * `row[i].example_count[j]` is the number of examples that have ground
+         * truth of the `annotation_spec_id[i]` and are predicted as
+         * `annotation_spec_id[j]` by the model being evaluated.
          * </pre>
          *
          * <code>
@@ -7227,9 +7268,9 @@ public final class ClassificationProto {
          * <pre>
          * Output only. Rows in the confusion matrix. The number of rows is equal to
          * the size of `annotation_spec_id`.
-         * `row[i].value[j]` is the number of examples that have ground truth of the
-         * `annotation_spec_id[i]` and are predicted as `annotation_spec_id[j]` by
-         * the model being evaluated.
+         * `row[i].example_count[j]` is the number of examples that have ground
+         * truth of the `annotation_spec_id[i]` and are predicted as
+         * `annotation_spec_id[j]` by the model being evaluated.
          * </pre>
          *
          * <code>
@@ -9401,8 +9442,8 @@ public final class ClassificationProto {
     java.lang.String[] descriptorData = {
       "\n0google/cloud/automl/v1beta1/classifica"
           + "tion.proto\022\033google.cloud.automl.v1beta1\032"
-          + "*google/cloud/automl/v1beta1/temporal.pr"
-          + "oto\032\034google/api/annotations.proto\")\n\030Cla"
+          + "\034google/api/annotations.proto\032*google/cl"
+          + "oud/automl/v1beta1/temporal.proto\")\n\030Cla"
           + "ssificationAnnotation\022\r\n\005score\030\001 \001(\002\"\307\001\n"
           + "\035VideoClassificationAnnotation\022\014\n\004type\030\001"
           + " \001(\t\022X\n\031classification_annotation\030\002 \001(\0132"
@@ -9452,8 +9493,8 @@ public final class ClassificationProto {
     com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
         descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
-          com.google.cloud.automl.v1beta1.Temporal.getDescriptor(),
           com.google.api.AnnotationsProto.getDescriptor(),
+          com.google.cloud.automl.v1beta1.Temporal.getDescriptor(),
         },
         assigner);
     internal_static_google_cloud_automl_v1beta1_ClassificationAnnotation_descriptor =
@@ -9529,8 +9570,8 @@ public final class ClassificationProto {
             new java.lang.String[] {
               "ExampleCount",
             });
-    com.google.cloud.automl.v1beta1.Temporal.getDescriptor();
     com.google.api.AnnotationsProto.getDescriptor();
+    com.google.cloud.automl.v1beta1.Temporal.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

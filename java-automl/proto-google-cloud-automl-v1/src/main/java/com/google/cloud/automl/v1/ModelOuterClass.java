@@ -45,27 +45,45 @@ public final class ModelOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n\"google/cloud/automl/v1/model.proto\022\026go"
-          + "ogle.cloud.automl.v1\032(google/cloud/autom"
-          + "l/v1/translation.proto\032\037google/protobuf/"
-          + "timestamp.proto\032\034google/api/annotations."
-          + "proto\"\221\004\n\005Model\022V\n\032translation_model_met"
-          + "adata\030\017 \001(\01320.google.cloud.automl.v1.Tra"
-          + "nslationModelMetadataH\000\022\014\n\004name\030\001 \001(\t\022\024\n"
-          + "\014display_name\030\002 \001(\t\022\022\n\ndataset_id\030\003 \001(\t\022"
-          + "/\n\013create_time\030\007 \001(\0132\032.google.protobuf.T"
-          + "imestamp\022/\n\013update_time\030\013 \001(\0132\032.google.p"
-          + "rotobuf.Timestamp\022G\n\020deployment_state\030\010 "
-          + "\001(\0162-.google.cloud.automl.v1.Model.Deplo"
-          + "ymentState\0229\n\006labels\030\" \003(\0132).google.clou"
-          + "d.automl.v1.Model.LabelsEntry\032-\n\013LabelsE"
-          + "ntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\"Q\n\017"
-          + "DeploymentState\022 \n\034DEPLOYMENT_STATE_UNSP"
-          + "ECIFIED\020\000\022\014\n\010DEPLOYED\020\001\022\016\n\nUNDEPLOYED\020\002B"
-          + "\020\n\016model_metadataB\252\001\n\032com.google.cloud.a"
-          + "utoml.v1P\001Z<google.golang.org/genproto/g"
-          + "oogleapis/cloud/automl/v1;automl\252\002\026Googl"
-          + "e.Cloud.AutoML.V1\312\002\026Google\\Cloud\\AutoML\\"
-          + "V1\352\002\031Google::Cloud::AutoML::V1b\006proto3"
+          + "ogle.cloud.automl.v1\032\031google/api/resourc"
+          + "e.proto\032\"google/cloud/automl/v1/image.pr"
+          + "oto\032!google/cloud/automl/v1/text.proto\032("
+          + "google/cloud/automl/v1/translation.proto"
+          + "\032\037google/protobuf/timestamp.proto\032\034googl"
+          + "e/api/annotations.proto\"\372\010\n\005Model\022V\n\032tra"
+          + "nslation_model_metadata\030\017 \001(\01320.google.c"
+          + "loud.automl.v1.TranslationModelMetadataH"
+          + "\000\022g\n#image_classification_model_metadata"
+          + "\030\r \001(\01328.google.cloud.automl.v1.ImageCla"
+          + "ssificationModelMetadataH\000\022e\n\"text_class"
+          + "ification_model_metadata\030\016 \001(\01327.google."
+          + "cloud.automl.v1.TextClassificationModelM"
+          + "etadataH\000\022j\n%image_object_detection_mode"
+          + "l_metadata\030\024 \001(\01329.google.cloud.automl.v"
+          + "1.ImageObjectDetectionModelMetadataH\000\022]\n"
+          + "\036text_extraction_model_metadata\030\023 \001(\01323."
+          + "google.cloud.automl.v1.TextExtractionMod"
+          + "elMetadataH\000\022[\n\035text_sentiment_model_met"
+          + "adata\030\026 \001(\01322.google.cloud.automl.v1.Tex"
+          + "tSentimentModelMetadataH\000\022\014\n\004name\030\001 \001(\t\022"
+          + "\024\n\014display_name\030\002 \001(\t\022\022\n\ndataset_id\030\003 \001("
+          + "\t\022/\n\013create_time\030\007 \001(\0132\032.google.protobuf"
+          + ".Timestamp\022/\n\013update_time\030\013 \001(\0132\032.google"
+          + ".protobuf.Timestamp\022G\n\020deployment_state\030"
+          + "\010 \001(\0162-.google.cloud.automl.v1.Model.Dep"
+          + "loymentState\022\014\n\004etag\030\n \001(\t\0229\n\006labels\030\" \003"
+          + "(\0132).google.cloud.automl.v1.Model.Labels"
+          + "Entry\032-\n\013LabelsEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005val"
+          + "ue\030\002 \001(\t:\0028\001\"Q\n\017DeploymentState\022 \n\034DEPLO"
+          + "YMENT_STATE_UNSPECIFIED\020\000\022\014\n\010DEPLOYED\020\001\022"
+          + "\016\n\nUNDEPLOYED\020\002:a\352A^\n\033automl.googleapis."
+          + "com/Model\022?projects/{project_id}/locatio"
+          + "ns/{location_id}/models/{model_id}B\020\n\016mo"
+          + "del_metadataB\252\001\n\032com.google.cloud.automl"
+          + ".v1P\001Z<google.golang.org/genproto/google"
+          + "apis/cloud/automl/v1;automl\252\002\026Google.Clo"
+          + "ud.AutoML.V1\312\002\026Google\\Cloud\\AutoML\\V1\352\002\031"
+          + "Google::Cloud::AutoML::V1b\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner() {
@@ -78,6 +96,9 @@ public final class ModelOuterClass {
     com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
         descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
+          com.google.api.ResourceProto.getDescriptor(),
+          com.google.cloud.automl.v1.ImageProto.getDescriptor(),
+          com.google.cloud.automl.v1.TextProto.getDescriptor(),
           com.google.cloud.automl.v1.TranslationProto.getDescriptor(),
           com.google.protobuf.TimestampProto.getDescriptor(),
           com.google.api.AnnotationsProto.getDescriptor(),
@@ -90,12 +111,18 @@ public final class ModelOuterClass {
             internal_static_google_cloud_automl_v1_Model_descriptor,
             new java.lang.String[] {
               "TranslationModelMetadata",
+              "ImageClassificationModelMetadata",
+              "TextClassificationModelMetadata",
+              "ImageObjectDetectionModelMetadata",
+              "TextExtractionModelMetadata",
+              "TextSentimentModelMetadata",
               "Name",
               "DisplayName",
               "DatasetId",
               "CreateTime",
               "UpdateTime",
               "DeploymentState",
+              "Etag",
               "Labels",
               "ModelMetadata",
             });
@@ -107,6 +134,14 @@ public final class ModelOuterClass {
             new java.lang.String[] {
               "Key", "Value",
             });
+    com.google.protobuf.ExtensionRegistry registry =
+        com.google.protobuf.ExtensionRegistry.newInstance();
+    registry.add(com.google.api.ResourceProto.resource);
+    com.google.protobuf.Descriptors.FileDescriptor.internalUpdateFileDescriptor(
+        descriptor, registry);
+    com.google.api.ResourceProto.getDescriptor();
+    com.google.cloud.automl.v1.ImageProto.getDescriptor();
+    com.google.cloud.automl.v1.TextProto.getDescriptor();
     com.google.cloud.automl.v1.TranslationProto.getDescriptor();
     com.google.protobuf.TimestampProto.getDescriptor();
     com.google.api.AnnotationsProto.getDescriptor();

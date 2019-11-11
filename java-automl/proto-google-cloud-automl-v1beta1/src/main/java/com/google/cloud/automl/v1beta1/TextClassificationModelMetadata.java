@@ -38,7 +38,9 @@ public final class TextClassificationModelMetadata extends com.google.protobuf.G
     super(builder);
   }
 
-  private TextClassificationModelMetadata() {}
+  private TextClassificationModelMetadata() {
+    classificationType_ = 0;
+  }
 
   @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
@@ -53,6 +55,7 @@ public final class TextClassificationModelMetadata extends com.google.protobuf.G
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
+    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -63,6 +66,13 @@ public final class TextClassificationModelMetadata extends com.google.protobuf.G
           case 0:
             done = true;
             break;
+          case 24:
+            {
+              int rawValue = input.readEnum();
+
+              classificationType_ = rawValue;
+              break;
+            }
           default:
             {
               if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -97,6 +107,40 @@ public final class TextClassificationModelMetadata extends com.google.protobuf.G
             com.google.cloud.automl.v1beta1.TextClassificationModelMetadata.Builder.class);
   }
 
+  public static final int CLASSIFICATION_TYPE_FIELD_NUMBER = 3;
+  private int classificationType_;
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Classification type of the dataset used to train this model.
+   * </pre>
+   *
+   * <code>.google.cloud.automl.v1beta1.ClassificationType classification_type = 3;</code>
+   */
+  public int getClassificationTypeValue() {
+    return classificationType_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Classification type of the dataset used to train this model.
+   * </pre>
+   *
+   * <code>.google.cloud.automl.v1beta1.ClassificationType classification_type = 3;</code>
+   */
+  public com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationType
+      getClassificationType() {
+    @SuppressWarnings("deprecation")
+    com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationType result =
+        com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationType.valueOf(
+            classificationType_);
+    return result == null
+        ? com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationType.UNRECOGNIZED
+        : result;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -111,6 +155,12 @@ public final class TextClassificationModelMetadata extends com.google.protobuf.G
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+    if (classificationType_
+        != com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationType
+            .CLASSIFICATION_TYPE_UNSPECIFIED
+            .getNumber()) {
+      output.writeEnum(3, classificationType_);
+    }
     unknownFields.writeTo(output);
   }
 
@@ -120,6 +170,12 @@ public final class TextClassificationModelMetadata extends com.google.protobuf.G
     if (size != -1) return size;
 
     size = 0;
+    if (classificationType_
+        != com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationType
+            .CLASSIFICATION_TYPE_UNSPECIFIED
+            .getNumber()) {
+      size += com.google.protobuf.CodedOutputStream.computeEnumSize(3, classificationType_);
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -136,6 +192,7 @@ public final class TextClassificationModelMetadata extends com.google.protobuf.G
     com.google.cloud.automl.v1beta1.TextClassificationModelMetadata other =
         (com.google.cloud.automl.v1beta1.TextClassificationModelMetadata) obj;
 
+    if (classificationType_ != other.classificationType_) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -147,6 +204,8 @@ public final class TextClassificationModelMetadata extends com.google.protobuf.G
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
+    hash = (37 * hash) + CLASSIFICATION_TYPE_FIELD_NUMBER;
+    hash = (53 * hash) + classificationType_;
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -293,6 +352,8 @@ public final class TextClassificationModelMetadata extends com.google.protobuf.G
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      classificationType_ = 0;
+
       return this;
     }
 
@@ -321,6 +382,7 @@ public final class TextClassificationModelMetadata extends com.google.protobuf.G
     public com.google.cloud.automl.v1beta1.TextClassificationModelMetadata buildPartial() {
       com.google.cloud.automl.v1beta1.TextClassificationModelMetadata result =
           new com.google.cloud.automl.v1beta1.TextClassificationModelMetadata(this);
+      result.classificationType_ = classificationType_;
       onBuilt();
       return result;
     }
@@ -373,6 +435,9 @@ public final class TextClassificationModelMetadata extends com.google.protobuf.G
       if (other
           == com.google.cloud.automl.v1beta1.TextClassificationModelMetadata.getDefaultInstance())
         return this;
+      if (other.classificationType_ != 0) {
+        setClassificationTypeValue(other.getClassificationTypeValue());
+      }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
       return this;
@@ -401,6 +466,87 @@ public final class TextClassificationModelMetadata extends com.google.protobuf.G
           mergeFrom(parsedMessage);
         }
       }
+      return this;
+    }
+
+    private int classificationType_ = 0;
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Classification type of the dataset used to train this model.
+     * </pre>
+     *
+     * <code>.google.cloud.automl.v1beta1.ClassificationType classification_type = 3;</code>
+     */
+    public int getClassificationTypeValue() {
+      return classificationType_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Classification type of the dataset used to train this model.
+     * </pre>
+     *
+     * <code>.google.cloud.automl.v1beta1.ClassificationType classification_type = 3;</code>
+     */
+    public Builder setClassificationTypeValue(int value) {
+      classificationType_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Classification type of the dataset used to train this model.
+     * </pre>
+     *
+     * <code>.google.cloud.automl.v1beta1.ClassificationType classification_type = 3;</code>
+     */
+    public com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationType
+        getClassificationType() {
+      @SuppressWarnings("deprecation")
+      com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationType result =
+          com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationType.valueOf(
+              classificationType_);
+      return result == null
+          ? com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationType.UNRECOGNIZED
+          : result;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Classification type of the dataset used to train this model.
+     * </pre>
+     *
+     * <code>.google.cloud.automl.v1beta1.ClassificationType classification_type = 3;</code>
+     */
+    public Builder setClassificationType(
+        com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationType value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+
+      classificationType_ = value.getNumber();
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Classification type of the dataset used to train this model.
+     * </pre>
+     *
+     * <code>.google.cloud.automl.v1beta1.ClassificationType classification_type = 3;</code>
+     */
+    public Builder clearClassificationType() {
+
+      classificationType_ = 0;
+      onChanged();
       return this;
     }
 

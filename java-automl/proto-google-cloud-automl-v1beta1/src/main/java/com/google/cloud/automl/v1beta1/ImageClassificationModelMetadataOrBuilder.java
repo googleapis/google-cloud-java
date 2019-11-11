@@ -192,4 +192,29 @@ public interface ImageClassificationModelMetadataOrBuilder
    * <code>string model_type = 7;</code>
    */
   com.google.protobuf.ByteString getModelTypeBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. An approximate number of online prediction QPS that can
+   * be supported by this model per each node on which it is deployed.
+   * </pre>
+   *
+   * <code>double node_qps = 13;</code>
+   */
+  double getNodeQps();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The number of nodes this model is deployed on. A node is an
+   * abstraction of a machine resource, which can handle online prediction QPS
+   * as given in the node_qps field.
+   * </pre>
+   *
+   * <code>int64 node_count = 14;</code>
+   */
+  long getNodeCount();
 }

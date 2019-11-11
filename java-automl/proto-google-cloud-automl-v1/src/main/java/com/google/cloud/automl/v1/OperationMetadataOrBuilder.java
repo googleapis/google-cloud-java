@@ -58,6 +58,72 @@ public interface OperationMetadataOrBuilder
    *
    *
    * <pre>
+   * Details of a DeployModel operation.
+   * </pre>
+   *
+   * <code>.google.cloud.automl.v1.DeployModelOperationMetadata deploy_model_details = 24;</code>
+   */
+  boolean hasDeployModelDetails();
+  /**
+   *
+   *
+   * <pre>
+   * Details of a DeployModel operation.
+   * </pre>
+   *
+   * <code>.google.cloud.automl.v1.DeployModelOperationMetadata deploy_model_details = 24;</code>
+   */
+  com.google.cloud.automl.v1.DeployModelOperationMetadata getDeployModelDetails();
+  /**
+   *
+   *
+   * <pre>
+   * Details of a DeployModel operation.
+   * </pre>
+   *
+   * <code>.google.cloud.automl.v1.DeployModelOperationMetadata deploy_model_details = 24;</code>
+   */
+  com.google.cloud.automl.v1.DeployModelOperationMetadataOrBuilder getDeployModelDetailsOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Details of an UndeployModel operation.
+   * </pre>
+   *
+   * <code>.google.cloud.automl.v1.UndeployModelOperationMetadata undeploy_model_details = 25;
+   * </code>
+   */
+  boolean hasUndeployModelDetails();
+  /**
+   *
+   *
+   * <pre>
+   * Details of an UndeployModel operation.
+   * </pre>
+   *
+   * <code>.google.cloud.automl.v1.UndeployModelOperationMetadata undeploy_model_details = 25;
+   * </code>
+   */
+  com.google.cloud.automl.v1.UndeployModelOperationMetadata getUndeployModelDetails();
+  /**
+   *
+   *
+   * <pre>
+   * Details of an UndeployModel operation.
+   * </pre>
+   *
+   * <code>.google.cloud.automl.v1.UndeployModelOperationMetadata undeploy_model_details = 25;
+   * </code>
+   */
+  com.google.cloud.automl.v1.UndeployModelOperationMetadataOrBuilder
+      getUndeployModelDetailsOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * Details of CreateModel operation.
    * </pre>
    *
@@ -84,6 +150,166 @@ public interface OperationMetadataOrBuilder
    * <code>.google.cloud.automl.v1.CreateModelOperationMetadata create_model_details = 10;</code>
    */
   com.google.cloud.automl.v1.CreateModelOperationMetadataOrBuilder getCreateModelDetailsOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Details of CreateDataset operation.
+   * </pre>
+   *
+   * <code>.google.cloud.automl.v1.CreateDatasetOperationMetadata create_dataset_details = 30;
+   * </code>
+   */
+  boolean hasCreateDatasetDetails();
+  /**
+   *
+   *
+   * <pre>
+   * Details of CreateDataset operation.
+   * </pre>
+   *
+   * <code>.google.cloud.automl.v1.CreateDatasetOperationMetadata create_dataset_details = 30;
+   * </code>
+   */
+  com.google.cloud.automl.v1.CreateDatasetOperationMetadata getCreateDatasetDetails();
+  /**
+   *
+   *
+   * <pre>
+   * Details of CreateDataset operation.
+   * </pre>
+   *
+   * <code>.google.cloud.automl.v1.CreateDatasetOperationMetadata create_dataset_details = 30;
+   * </code>
+   */
+  com.google.cloud.automl.v1.CreateDatasetOperationMetadataOrBuilder
+      getCreateDatasetDetailsOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Details of ImportData operation.
+   * </pre>
+   *
+   * <code>.google.cloud.automl.v1.ImportDataOperationMetadata import_data_details = 15;</code>
+   */
+  boolean hasImportDataDetails();
+  /**
+   *
+   *
+   * <pre>
+   * Details of ImportData operation.
+   * </pre>
+   *
+   * <code>.google.cloud.automl.v1.ImportDataOperationMetadata import_data_details = 15;</code>
+   */
+  com.google.cloud.automl.v1.ImportDataOperationMetadata getImportDataDetails();
+  /**
+   *
+   *
+   * <pre>
+   * Details of ImportData operation.
+   * </pre>
+   *
+   * <code>.google.cloud.automl.v1.ImportDataOperationMetadata import_data_details = 15;</code>
+   */
+  com.google.cloud.automl.v1.ImportDataOperationMetadataOrBuilder getImportDataDetailsOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Details of BatchPredict operation.
+   * </pre>
+   *
+   * <code>.google.cloud.automl.v1.BatchPredictOperationMetadata batch_predict_details = 16;</code>
+   */
+  boolean hasBatchPredictDetails();
+  /**
+   *
+   *
+   * <pre>
+   * Details of BatchPredict operation.
+   * </pre>
+   *
+   * <code>.google.cloud.automl.v1.BatchPredictOperationMetadata batch_predict_details = 16;</code>
+   */
+  com.google.cloud.automl.v1.BatchPredictOperationMetadata getBatchPredictDetails();
+  /**
+   *
+   *
+   * <pre>
+   * Details of BatchPredict operation.
+   * </pre>
+   *
+   * <code>.google.cloud.automl.v1.BatchPredictOperationMetadata batch_predict_details = 16;</code>
+   */
+  com.google.cloud.automl.v1.BatchPredictOperationMetadataOrBuilder
+      getBatchPredictDetailsOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Details of ExportData operation.
+   * </pre>
+   *
+   * <code>.google.cloud.automl.v1.ExportDataOperationMetadata export_data_details = 21;</code>
+   */
+  boolean hasExportDataDetails();
+  /**
+   *
+   *
+   * <pre>
+   * Details of ExportData operation.
+   * </pre>
+   *
+   * <code>.google.cloud.automl.v1.ExportDataOperationMetadata export_data_details = 21;</code>
+   */
+  com.google.cloud.automl.v1.ExportDataOperationMetadata getExportDataDetails();
+  /**
+   *
+   *
+   * <pre>
+   * Details of ExportData operation.
+   * </pre>
+   *
+   * <code>.google.cloud.automl.v1.ExportDataOperationMetadata export_data_details = 21;</code>
+   */
+  com.google.cloud.automl.v1.ExportDataOperationMetadataOrBuilder getExportDataDetailsOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Details of ExportModel operation.
+   * </pre>
+   *
+   * <code>.google.cloud.automl.v1.ExportModelOperationMetadata export_model_details = 22;</code>
+   */
+  boolean hasExportModelDetails();
+  /**
+   *
+   *
+   * <pre>
+   * Details of ExportModel operation.
+   * </pre>
+   *
+   * <code>.google.cloud.automl.v1.ExportModelOperationMetadata export_model_details = 22;</code>
+   */
+  com.google.cloud.automl.v1.ExportModelOperationMetadata getExportModelDetails();
+  /**
+   *
+   *
+   * <pre>
+   * Details of ExportModel operation.
+   * </pre>
+   *
+   * <code>.google.cloud.automl.v1.ExportModelOperationMetadata export_model_details = 22;</code>
+   */
+  com.google.cloud.automl.v1.ExportModelOperationMetadataOrBuilder getExportModelDetailsOrBuilder();
 
   /**
    *

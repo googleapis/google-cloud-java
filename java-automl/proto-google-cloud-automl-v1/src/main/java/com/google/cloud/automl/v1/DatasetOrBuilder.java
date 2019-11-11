@@ -62,6 +62,199 @@ public interface DatasetOrBuilder
    *
    *
    * <pre>
+   * Metadata for a dataset used for image classification.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.automl.v1.ImageClassificationDatasetMetadata image_classification_dataset_metadata = 24;
+   * </code>
+   */
+  boolean hasImageClassificationDatasetMetadata();
+  /**
+   *
+   *
+   * <pre>
+   * Metadata for a dataset used for image classification.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.automl.v1.ImageClassificationDatasetMetadata image_classification_dataset_metadata = 24;
+   * </code>
+   */
+  com.google.cloud.automl.v1.ImageClassificationDatasetMetadata
+      getImageClassificationDatasetMetadata();
+  /**
+   *
+   *
+   * <pre>
+   * Metadata for a dataset used for image classification.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.automl.v1.ImageClassificationDatasetMetadata image_classification_dataset_metadata = 24;
+   * </code>
+   */
+  com.google.cloud.automl.v1.ImageClassificationDatasetMetadataOrBuilder
+      getImageClassificationDatasetMetadataOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Metadata for a dataset used for text classification.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.automl.v1.TextClassificationDatasetMetadata text_classification_dataset_metadata = 25;
+   * </code>
+   */
+  boolean hasTextClassificationDatasetMetadata();
+  /**
+   *
+   *
+   * <pre>
+   * Metadata for a dataset used for text classification.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.automl.v1.TextClassificationDatasetMetadata text_classification_dataset_metadata = 25;
+   * </code>
+   */
+  com.google.cloud.automl.v1.TextClassificationDatasetMetadata
+      getTextClassificationDatasetMetadata();
+  /**
+   *
+   *
+   * <pre>
+   * Metadata for a dataset used for text classification.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.automl.v1.TextClassificationDatasetMetadata text_classification_dataset_metadata = 25;
+   * </code>
+   */
+  com.google.cloud.automl.v1.TextClassificationDatasetMetadataOrBuilder
+      getTextClassificationDatasetMetadataOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Metadata for a dataset used for image object detection.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.automl.v1.ImageObjectDetectionDatasetMetadata image_object_detection_dataset_metadata = 26;
+   * </code>
+   */
+  boolean hasImageObjectDetectionDatasetMetadata();
+  /**
+   *
+   *
+   * <pre>
+   * Metadata for a dataset used for image object detection.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.automl.v1.ImageObjectDetectionDatasetMetadata image_object_detection_dataset_metadata = 26;
+   * </code>
+   */
+  com.google.cloud.automl.v1.ImageObjectDetectionDatasetMetadata
+      getImageObjectDetectionDatasetMetadata();
+  /**
+   *
+   *
+   * <pre>
+   * Metadata for a dataset used for image object detection.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.automl.v1.ImageObjectDetectionDatasetMetadata image_object_detection_dataset_metadata = 26;
+   * </code>
+   */
+  com.google.cloud.automl.v1.ImageObjectDetectionDatasetMetadataOrBuilder
+      getImageObjectDetectionDatasetMetadataOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Metadata for a dataset used for text extraction.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.automl.v1.TextExtractionDatasetMetadata text_extraction_dataset_metadata = 28;
+   * </code>
+   */
+  boolean hasTextExtractionDatasetMetadata();
+  /**
+   *
+   *
+   * <pre>
+   * Metadata for a dataset used for text extraction.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.automl.v1.TextExtractionDatasetMetadata text_extraction_dataset_metadata = 28;
+   * </code>
+   */
+  com.google.cloud.automl.v1.TextExtractionDatasetMetadata getTextExtractionDatasetMetadata();
+  /**
+   *
+   *
+   * <pre>
+   * Metadata for a dataset used for text extraction.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.automl.v1.TextExtractionDatasetMetadata text_extraction_dataset_metadata = 28;
+   * </code>
+   */
+  com.google.cloud.automl.v1.TextExtractionDatasetMetadataOrBuilder
+      getTextExtractionDatasetMetadataOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Metadata for a dataset used for text sentiment.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.automl.v1.TextSentimentDatasetMetadata text_sentiment_dataset_metadata = 30;
+   * </code>
+   */
+  boolean hasTextSentimentDatasetMetadata();
+  /**
+   *
+   *
+   * <pre>
+   * Metadata for a dataset used for text sentiment.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.automl.v1.TextSentimentDatasetMetadata text_sentiment_dataset_metadata = 30;
+   * </code>
+   */
+  com.google.cloud.automl.v1.TextSentimentDatasetMetadata getTextSentimentDatasetMetadata();
+  /**
+   *
+   *
+   * <pre>
+   * Metadata for a dataset used for text sentiment.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.automl.v1.TextSentimentDatasetMetadata text_sentiment_dataset_metadata = 30;
+   * </code>
+   */
+  com.google.cloud.automl.v1.TextSentimentDatasetMetadataOrBuilder
+      getTextSentimentDatasetMetadataOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * Output only. The resource name of the dataset.
    * Form: `projects/{project_id}/locations/{location_id}/datasets/{dataset_id}`
    * </pre>

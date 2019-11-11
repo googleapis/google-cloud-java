@@ -30,7 +30,7 @@ public interface TranslationDatasetMetadataOrBuilder
    * Required. The BCP-47 language code of the source language.
    * </pre>
    *
-   * <code>string source_language_code = 1;</code>
+   * <code>string source_language_code = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   java.lang.String getSourceLanguageCode();
   /**
@@ -40,7 +40,7 @@ public interface TranslationDatasetMetadataOrBuilder
    * Required. The BCP-47 language code of the source language.
    * </pre>
    *
-   * <code>string source_language_code = 1;</code>
+   * <code>string source_language_code = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   com.google.protobuf.ByteString getSourceLanguageCodeBytes();
 
@@ -51,7 +51,7 @@ public interface TranslationDatasetMetadataOrBuilder
    * Required. The BCP-47 language code of the target language.
    * </pre>
    *
-   * <code>string target_language_code = 2;</code>
+   * <code>string target_language_code = 2 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   java.lang.String getTargetLanguageCode();
   /**
@@ -61,7 +61,7 @@ public interface TranslationDatasetMetadataOrBuilder
    * Required. The BCP-47 language code of the target language.
    * </pre>
    *
-   * <code>string target_language_code = 2;</code>
+   * <code>string target_language_code = 2 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   com.google.protobuf.ByteString getTargetLanguageCodeBytes();
 }

@@ -22,7 +22,10 @@ import com.google.api.gax.grpc.testing.MockGrpcService;
 import com.google.api.gax.grpc.testing.MockServiceHelper;
 import com.google.api.gax.rpc.ApiClientHeaderProvider;
 import com.google.api.gax.rpc.InvalidArgumentException;
+import com.google.api.gax.rpc.StatusCode;
+import com.google.longrunning.Operation;
 import com.google.protobuf.AbstractMessage;
+import com.google.protobuf.Any;
 import io.grpc.Status;
 import io.grpc.StatusRuntimeException;
 import java.io.IOException;
@@ -30,6 +33,7 @@ import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.concurrent.ExecutionException;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Assert;
@@ -118,6 +122,62 @@ public class PredictionServiceClientTest {
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception
+    }
+  }
+
+  @Test
+  @SuppressWarnings("all")
+  public void batchPredictTest() throws Exception {
+    BatchPredictResult expectedResponse = BatchPredictResult.newBuilder().build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("batchPredictTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockPredictionService.addResponse(resultOperation);
+
+    ModelName name = ModelName.of("[PROJECT]", "[LOCATION]", "[MODEL]");
+    BatchPredictInputConfig inputConfig = BatchPredictInputConfig.newBuilder().build();
+    BatchPredictOutputConfig outputConfig = BatchPredictOutputConfig.newBuilder().build();
+    Map<String, String> params = new HashMap<>();
+
+    BatchPredictResult actualResponse =
+        client.batchPredictAsync(name, inputConfig, outputConfig, params).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockPredictionService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    BatchPredictRequest actualRequest = (BatchPredictRequest) actualRequests.get(0);
+
+    Assert.assertEquals(name, ModelName.parse(actualRequest.getName()));
+    Assert.assertEquals(inputConfig, actualRequest.getInputConfig());
+    Assert.assertEquals(outputConfig, actualRequest.getOutputConfig());
+    Assert.assertEquals(params, actualRequest.getParamsMap());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  @SuppressWarnings("all")
+  public void batchPredictExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
+    mockPredictionService.addException(exception);
+
+    try {
+      ModelName name = ModelName.of("[PROJECT]", "[LOCATION]", "[MODEL]");
+      BatchPredictInputConfig inputConfig = BatchPredictInputConfig.newBuilder().build();
+      BatchPredictOutputConfig outputConfig = BatchPredictOutputConfig.newBuilder().build();
+      Map<String, String> params = new HashMap<>();
+
+      client.batchPredictAsync(name, inputConfig, outputConfig, params).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = (InvalidArgumentException) e.getCause();
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
     }
   }
 }

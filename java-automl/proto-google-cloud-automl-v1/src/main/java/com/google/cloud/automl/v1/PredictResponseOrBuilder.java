@@ -84,7 +84,80 @@ public interface PredictResponseOrBuilder
    *
    *
    * <pre>
+   * The preprocessed example that AutoML actually makes prediction on.
+   * Empty if AutoML does not preprocess the input example.
+   * * For Text Extraction:
+   *   If the input is a .pdf file, the OCR'ed text will be provided in
+   *   [document_text][google.cloud.automl.v1.Document.document_text].
+   * * For Text Classification:
+   *   If the input is a .pdf file, the OCR'ed trucated text will be provided in
+   *   [document_text][google.cloud.automl.v1.Document.document_text].
+   * * For Text Sentiment:
+   *   If the input is a .pdf file, the OCR'ed trucated text will be provided in
+   *   [document_text][google.cloud.automl.v1.Document.document_text].
+   * </pre>
+   *
+   * <code>.google.cloud.automl.v1.ExamplePayload preprocessed_input = 3;</code>
+   */
+  boolean hasPreprocessedInput();
+  /**
+   *
+   *
+   * <pre>
+   * The preprocessed example that AutoML actually makes prediction on.
+   * Empty if AutoML does not preprocess the input example.
+   * * For Text Extraction:
+   *   If the input is a .pdf file, the OCR'ed text will be provided in
+   *   [document_text][google.cloud.automl.v1.Document.document_text].
+   * * For Text Classification:
+   *   If the input is a .pdf file, the OCR'ed trucated text will be provided in
+   *   [document_text][google.cloud.automl.v1.Document.document_text].
+   * * For Text Sentiment:
+   *   If the input is a .pdf file, the OCR'ed trucated text will be provided in
+   *   [document_text][google.cloud.automl.v1.Document.document_text].
+   * </pre>
+   *
+   * <code>.google.cloud.automl.v1.ExamplePayload preprocessed_input = 3;</code>
+   */
+  com.google.cloud.automl.v1.ExamplePayload getPreprocessedInput();
+  /**
+   *
+   *
+   * <pre>
+   * The preprocessed example that AutoML actually makes prediction on.
+   * Empty if AutoML does not preprocess the input example.
+   * * For Text Extraction:
+   *   If the input is a .pdf file, the OCR'ed text will be provided in
+   *   [document_text][google.cloud.automl.v1.Document.document_text].
+   * * For Text Classification:
+   *   If the input is a .pdf file, the OCR'ed trucated text will be provided in
+   *   [document_text][google.cloud.automl.v1.Document.document_text].
+   * * For Text Sentiment:
+   *   If the input is a .pdf file, the OCR'ed trucated text will be provided in
+   *   [document_text][google.cloud.automl.v1.Document.document_text].
+   * </pre>
+   *
+   * <code>.google.cloud.automl.v1.ExamplePayload preprocessed_input = 3;</code>
+   */
+  com.google.cloud.automl.v1.ExamplePayloadOrBuilder getPreprocessedInputOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * Additional domain-specific prediction response metadata.
+   * * For Image Object Detection:
+   *  `max_bounding_box_count` - (int64) At most that many bounding boxes per
+   *      image could have been returned.
+   * * For Text Sentiment:
+   *  `sentiment_score` - (float, deprecated) A value between -1 and 1,
+   *      -1 maps to least positive sentiment, while 1 maps to the most positive
+   *      one and the higher the score, the more positive the sentiment in the
+   *      document is. Yet these values are relative to the training data, so
+   *      e.g. if all data was positive then -1 will be also positive (though
+   *      the least).
+   *      The sentiment_score shouldn't be confused with "score" or "magnitude"
+   *      from the previous Natural Language Sentiment Analysis API.
    * </pre>
    *
    * <code>map&lt;string, string&gt; metadata = 2;</code>
@@ -95,6 +168,18 @@ public interface PredictResponseOrBuilder
    *
    * <pre>
    * Additional domain-specific prediction response metadata.
+   * * For Image Object Detection:
+   *  `max_bounding_box_count` - (int64) At most that many bounding boxes per
+   *      image could have been returned.
+   * * For Text Sentiment:
+   *  `sentiment_score` - (float, deprecated) A value between -1 and 1,
+   *      -1 maps to least positive sentiment, while 1 maps to the most positive
+   *      one and the higher the score, the more positive the sentiment in the
+   *      document is. Yet these values are relative to the training data, so
+   *      e.g. if all data was positive then -1 will be also positive (though
+   *      the least).
+   *      The sentiment_score shouldn't be confused with "score" or "magnitude"
+   *      from the previous Natural Language Sentiment Analysis API.
    * </pre>
    *
    * <code>map&lt;string, string&gt; metadata = 2;</code>
@@ -108,6 +193,18 @@ public interface PredictResponseOrBuilder
    *
    * <pre>
    * Additional domain-specific prediction response metadata.
+   * * For Image Object Detection:
+   *  `max_bounding_box_count` - (int64) At most that many bounding boxes per
+   *      image could have been returned.
+   * * For Text Sentiment:
+   *  `sentiment_score` - (float, deprecated) A value between -1 and 1,
+   *      -1 maps to least positive sentiment, while 1 maps to the most positive
+   *      one and the higher the score, the more positive the sentiment in the
+   *      document is. Yet these values are relative to the training data, so
+   *      e.g. if all data was positive then -1 will be also positive (though
+   *      the least).
+   *      The sentiment_score shouldn't be confused with "score" or "magnitude"
+   *      from the previous Natural Language Sentiment Analysis API.
    * </pre>
    *
    * <code>map&lt;string, string&gt; metadata = 2;</code>
@@ -118,6 +215,18 @@ public interface PredictResponseOrBuilder
    *
    * <pre>
    * Additional domain-specific prediction response metadata.
+   * * For Image Object Detection:
+   *  `max_bounding_box_count` - (int64) At most that many bounding boxes per
+   *      image could have been returned.
+   * * For Text Sentiment:
+   *  `sentiment_score` - (float, deprecated) A value between -1 and 1,
+   *      -1 maps to least positive sentiment, while 1 maps to the most positive
+   *      one and the higher the score, the more positive the sentiment in the
+   *      document is. Yet these values are relative to the training data, so
+   *      e.g. if all data was positive then -1 will be also positive (though
+   *      the least).
+   *      The sentiment_score shouldn't be confused with "score" or "magnitude"
+   *      from the previous Natural Language Sentiment Analysis API.
    * </pre>
    *
    * <code>map&lt;string, string&gt; metadata = 2;</code>
@@ -128,6 +237,18 @@ public interface PredictResponseOrBuilder
    *
    * <pre>
    * Additional domain-specific prediction response metadata.
+   * * For Image Object Detection:
+   *  `max_bounding_box_count` - (int64) At most that many bounding boxes per
+   *      image could have been returned.
+   * * For Text Sentiment:
+   *  `sentiment_score` - (float, deprecated) A value between -1 and 1,
+   *      -1 maps to least positive sentiment, while 1 maps to the most positive
+   *      one and the higher the score, the more positive the sentiment in the
+   *      document is. Yet these values are relative to the training data, so
+   *      e.g. if all data was positive then -1 will be also positive (though
+   *      the least).
+   *      The sentiment_score shouldn't be confused with "score" or "magnitude"
+   *      from the previous Natural Language Sentiment Analysis API.
    * </pre>
    *
    * <code>map&lt;string, string&gt; metadata = 2;</code>

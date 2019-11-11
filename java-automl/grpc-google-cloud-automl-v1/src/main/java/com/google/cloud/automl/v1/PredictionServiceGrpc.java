@@ -92,6 +92,58 @@ public final class PredictionServiceGrpc {
     return getPredictMethod;
   }
 
+  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
+  @java.lang.Deprecated // Use {@link #getBatchPredictMethod()} instead.
+  public static final io.grpc.MethodDescriptor<
+          com.google.cloud.automl.v1.BatchPredictRequest, com.google.longrunning.Operation>
+      METHOD_BATCH_PREDICT = getBatchPredictMethodHelper();
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.automl.v1.BatchPredictRequest, com.google.longrunning.Operation>
+      getBatchPredictMethod;
+
+  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.automl.v1.BatchPredictRequest, com.google.longrunning.Operation>
+      getBatchPredictMethod() {
+    return getBatchPredictMethodHelper();
+  }
+
+  private static io.grpc.MethodDescriptor<
+          com.google.cloud.automl.v1.BatchPredictRequest, com.google.longrunning.Operation>
+      getBatchPredictMethodHelper() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.automl.v1.BatchPredictRequest, com.google.longrunning.Operation>
+        getBatchPredictMethod;
+    if ((getBatchPredictMethod = PredictionServiceGrpc.getBatchPredictMethod) == null) {
+      synchronized (PredictionServiceGrpc.class) {
+        if ((getBatchPredictMethod = PredictionServiceGrpc.getBatchPredictMethod) == null) {
+          PredictionServiceGrpc.getBatchPredictMethod =
+              getBatchPredictMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.automl.v1.BatchPredictRequest,
+                          com.google.longrunning.Operation>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(
+                              "google.cloud.automl.v1.PredictionService", "BatchPredict"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.automl.v1.BatchPredictRequest.getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.longrunning.Operation.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new PredictionServiceMethodDescriptorSupplier("BatchPredict"))
+                      .build();
+        }
+      }
+    }
+    return getBatchPredictMethod;
+  }
+
   /** Creates a new async stub that supports all call types for the service */
   public static PredictionServiceStub newStub(io.grpc.Channel channel) {
     return new PredictionServiceStub(channel);
@@ -127,14 +179,48 @@ public final class PredictionServiceGrpc {
      * Perform an online prediction. The prediction result will be directly
      * returned in the response.
      * Available for following ML problems, and their expected request payloads:
+     * * Image Classification - Image in .JPEG, .GIF or .PNG format, image_bytes
+     *                          up to 30MB.
+     * * Image Object Detection - Image in .JPEG, .GIF or .PNG format, image_bytes
+     *                            up to 30MB.
+     * * Text Classification - TextSnippet, content up to 60,000 characters,
+     *                         UTF-8 encoded.
+     * * Text Extraction - TextSnippet, content up to 30,000 characters,
+     *                     UTF-8 NFC encoded.
      * * Translation - TextSnippet, content up to 25,000 characters, UTF-8
      *                 encoded.
+     * * Text Sentiment - TextSnippet, content up 500 characters, UTF-8
+     *                     encoded.
      * </pre>
      */
     public void predict(
         com.google.cloud.automl.v1.PredictRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.automl.v1.PredictResponse> responseObserver) {
       asyncUnimplementedUnaryCall(getPredictMethodHelper(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Perform a batch prediction. Unlike the online
+     * [Predict][google.cloud.automl.v1.PredictionService.Predict], batch
+     * prediction result won't be immediately available in the response. Instead,
+     * a long running operation object is returned. User can poll the operation
+     * result via [GetOperation][google.longrunning.Operations.GetOperation]
+     * method. Once the operation is done,
+     * [BatchPredictResult][google.cloud.automl.v1.BatchPredictResult] is returned
+     * in the [response][google.longrunning.Operation.response] field. Available
+     * for following ML problems:
+     * * Image Classification
+     * * Image Object Detection
+     * * Text Extraction
+     * </pre>
+     */
+    public void batchPredict(
+        com.google.cloud.automl.v1.BatchPredictRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      asyncUnimplementedUnaryCall(getBatchPredictMethodHelper(), responseObserver);
     }
 
     @java.lang.Override
@@ -146,6 +232,12 @@ public final class PredictionServiceGrpc {
                   new MethodHandlers<
                       com.google.cloud.automl.v1.PredictRequest,
                       com.google.cloud.automl.v1.PredictResponse>(this, METHODID_PREDICT)))
+          .addMethod(
+              getBatchPredictMethodHelper(),
+              asyncUnaryCall(
+                  new MethodHandlers<
+                      com.google.cloud.automl.v1.BatchPredictRequest,
+                      com.google.longrunning.Operation>(this, METHODID_BATCH_PREDICT)))
           .build();
     }
   }
@@ -182,8 +274,18 @@ public final class PredictionServiceGrpc {
      * Perform an online prediction. The prediction result will be directly
      * returned in the response.
      * Available for following ML problems, and their expected request payloads:
+     * * Image Classification - Image in .JPEG, .GIF or .PNG format, image_bytes
+     *                          up to 30MB.
+     * * Image Object Detection - Image in .JPEG, .GIF or .PNG format, image_bytes
+     *                            up to 30MB.
+     * * Text Classification - TextSnippet, content up to 60,000 characters,
+     *                         UTF-8 encoded.
+     * * Text Extraction - TextSnippet, content up to 30,000 characters,
+     *                     UTF-8 NFC encoded.
      * * Translation - TextSnippet, content up to 25,000 characters, UTF-8
      *                 encoded.
+     * * Text Sentiment - TextSnippet, content up 500 characters, UTF-8
+     *                     encoded.
      * </pre>
      */
     public void predict(
@@ -191,6 +293,33 @@ public final class PredictionServiceGrpc {
         io.grpc.stub.StreamObserver<com.google.cloud.automl.v1.PredictResponse> responseObserver) {
       asyncUnaryCall(
           getChannel().newCall(getPredictMethodHelper(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Perform a batch prediction. Unlike the online
+     * [Predict][google.cloud.automl.v1.PredictionService.Predict], batch
+     * prediction result won't be immediately available in the response. Instead,
+     * a long running operation object is returned. User can poll the operation
+     * result via [GetOperation][google.longrunning.Operations.GetOperation]
+     * method. Once the operation is done,
+     * [BatchPredictResult][google.cloud.automl.v1.BatchPredictResult] is returned
+     * in the [response][google.longrunning.Operation.response] field. Available
+     * for following ML problems:
+     * * Image Classification
+     * * Image Object Detection
+     * * Text Extraction
+     * </pre>
+     */
+    public void batchPredict(
+        com.google.cloud.automl.v1.BatchPredictRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      asyncUnaryCall(
+          getChannel().newCall(getBatchPredictMethodHelper(), getCallOptions()),
           request,
           responseObserver);
     }
@@ -229,13 +358,47 @@ public final class PredictionServiceGrpc {
      * Perform an online prediction. The prediction result will be directly
      * returned in the response.
      * Available for following ML problems, and their expected request payloads:
+     * * Image Classification - Image in .JPEG, .GIF or .PNG format, image_bytes
+     *                          up to 30MB.
+     * * Image Object Detection - Image in .JPEG, .GIF or .PNG format, image_bytes
+     *                            up to 30MB.
+     * * Text Classification - TextSnippet, content up to 60,000 characters,
+     *                         UTF-8 encoded.
+     * * Text Extraction - TextSnippet, content up to 30,000 characters,
+     *                     UTF-8 NFC encoded.
      * * Translation - TextSnippet, content up to 25,000 characters, UTF-8
      *                 encoded.
+     * * Text Sentiment - TextSnippet, content up 500 characters, UTF-8
+     *                     encoded.
      * </pre>
      */
     public com.google.cloud.automl.v1.PredictResponse predict(
         com.google.cloud.automl.v1.PredictRequest request) {
       return blockingUnaryCall(getChannel(), getPredictMethodHelper(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Perform a batch prediction. Unlike the online
+     * [Predict][google.cloud.automl.v1.PredictionService.Predict], batch
+     * prediction result won't be immediately available in the response. Instead,
+     * a long running operation object is returned. User can poll the operation
+     * result via [GetOperation][google.longrunning.Operations.GetOperation]
+     * method. Once the operation is done,
+     * [BatchPredictResult][google.cloud.automl.v1.BatchPredictResult] is returned
+     * in the [response][google.longrunning.Operation.response] field. Available
+     * for following ML problems:
+     * * Image Classification
+     * * Image Object Detection
+     * * Text Extraction
+     * </pre>
+     */
+    public com.google.longrunning.Operation batchPredict(
+        com.google.cloud.automl.v1.BatchPredictRequest request) {
+      return blockingUnaryCall(
+          getChannel(), getBatchPredictMethodHelper(), getCallOptions(), request);
     }
   }
 
@@ -271,8 +434,18 @@ public final class PredictionServiceGrpc {
      * Perform an online prediction. The prediction result will be directly
      * returned in the response.
      * Available for following ML problems, and their expected request payloads:
+     * * Image Classification - Image in .JPEG, .GIF or .PNG format, image_bytes
+     *                          up to 30MB.
+     * * Image Object Detection - Image in .JPEG, .GIF or .PNG format, image_bytes
+     *                            up to 30MB.
+     * * Text Classification - TextSnippet, content up to 60,000 characters,
+     *                         UTF-8 encoded.
+     * * Text Extraction - TextSnippet, content up to 30,000 characters,
+     *                     UTF-8 NFC encoded.
      * * Translation - TextSnippet, content up to 25,000 characters, UTF-8
      *                 encoded.
+     * * Text Sentiment - TextSnippet, content up 500 characters, UTF-8
+     *                     encoded.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<
@@ -281,9 +454,34 @@ public final class PredictionServiceGrpc {
       return futureUnaryCall(
           getChannel().newCall(getPredictMethodHelper(), getCallOptions()), request);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Perform a batch prediction. Unlike the online
+     * [Predict][google.cloud.automl.v1.PredictionService.Predict], batch
+     * prediction result won't be immediately available in the response. Instead,
+     * a long running operation object is returned. User can poll the operation
+     * result via [GetOperation][google.longrunning.Operations.GetOperation]
+     * method. Once the operation is done,
+     * [BatchPredictResult][google.cloud.automl.v1.BatchPredictResult] is returned
+     * in the [response][google.longrunning.Operation.response] field. Available
+     * for following ML problems:
+     * * Image Classification
+     * * Image Object Detection
+     * * Text Extraction
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
+        batchPredict(com.google.cloud.automl.v1.BatchPredictRequest request) {
+      return futureUnaryCall(
+          getChannel().newCall(getBatchPredictMethodHelper(), getCallOptions()), request);
+    }
   }
 
   private static final int METHODID_PREDICT = 0;
+  private static final int METHODID_BATCH_PREDICT = 1;
 
   private static final class MethodHandlers<Req, Resp>
       implements io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -307,6 +505,11 @@ public final class PredictionServiceGrpc {
               (com.google.cloud.automl.v1.PredictRequest) request,
               (io.grpc.stub.StreamObserver<com.google.cloud.automl.v1.PredictResponse>)
                   responseObserver);
+          break;
+        case METHODID_BATCH_PREDICT:
+          serviceImpl.batchPredict(
+              (com.google.cloud.automl.v1.BatchPredictRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
           break;
         default:
           throw new AssertionError();
@@ -373,6 +576,7 @@ public final class PredictionServiceGrpc {
                   io.grpc.ServiceDescriptor.newBuilder(SERVICE_NAME)
                       .setSchemaDescriptor(new PredictionServiceFileDescriptorSupplier())
                       .addMethod(getPredictMethodHelper())
+                      .addMethod(getBatchPredictMethodHelper())
                       .build();
         }
       }

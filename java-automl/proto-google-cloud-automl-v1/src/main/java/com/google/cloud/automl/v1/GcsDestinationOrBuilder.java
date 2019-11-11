@@ -35,7 +35,7 @@ public interface GcsDestinationOrBuilder
    * The directory is created if it doesn't exist.
    * </pre>
    *
-   * <code>string output_uri_prefix = 1;</code>
+   * <code>string output_uri_prefix = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   java.lang.String getOutputUriPrefix();
   /**
@@ -50,7 +50,7 @@ public interface GcsDestinationOrBuilder
    * The directory is created if it doesn't exist.
    * </pre>
    *
-   * <code>string output_uri_prefix = 1;</code>
+   * <code>string output_uri_prefix = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   com.google.protobuf.ByteString getOutputUriPrefixBytes();
 }

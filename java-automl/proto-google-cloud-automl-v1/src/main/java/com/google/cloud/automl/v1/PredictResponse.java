@@ -79,17 +79,33 @@ public final class PredictResponse extends com.google.protobuf.GeneratedMessageV
             }
           case 18:
             {
-              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000004) != 0)) {
                 metadata_ =
                     com.google.protobuf.MapField.newMapField(
                         MetadataDefaultEntryHolder.defaultEntry);
-                mutable_bitField0_ |= 0x00000002;
+                mutable_bitField0_ |= 0x00000004;
               }
               com.google.protobuf.MapEntry<java.lang.String, java.lang.String> metadata__ =
                   input.readMessage(
                       MetadataDefaultEntryHolder.defaultEntry.getParserForType(),
                       extensionRegistry);
               metadata_.getMutableMap().put(metadata__.getKey(), metadata__.getValue());
+              break;
+            }
+          case 26:
+            {
+              com.google.cloud.automl.v1.ExamplePayload.Builder subBuilder = null;
+              if (preprocessedInput_ != null) {
+                subBuilder = preprocessedInput_.toBuilder();
+              }
+              preprocessedInput_ =
+                  input.readMessage(
+                      com.google.cloud.automl.v1.ExamplePayload.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(preprocessedInput_);
+                preprocessedInput_ = subBuilder.buildPartial();
+              }
+
               break;
             }
           default:
@@ -140,6 +156,7 @@ public final class PredictResponse extends com.google.protobuf.GeneratedMessageV
             com.google.cloud.automl.v1.PredictResponse.Builder.class);
   }
 
+  private int bitField0_;
   public static final int PAYLOAD_FIELD_NUMBER = 1;
   private java.util.List<com.google.cloud.automl.v1.AnnotationPayload> payload_;
   /**
@@ -209,6 +226,77 @@ public final class PredictResponse extends com.google.protobuf.GeneratedMessageV
     return payload_.get(index);
   }
 
+  public static final int PREPROCESSED_INPUT_FIELD_NUMBER = 3;
+  private com.google.cloud.automl.v1.ExamplePayload preprocessedInput_;
+  /**
+   *
+   *
+   * <pre>
+   * The preprocessed example that AutoML actually makes prediction on.
+   * Empty if AutoML does not preprocess the input example.
+   * * For Text Extraction:
+   *   If the input is a .pdf file, the OCR'ed text will be provided in
+   *   [document_text][google.cloud.automl.v1.Document.document_text].
+   * * For Text Classification:
+   *   If the input is a .pdf file, the OCR'ed trucated text will be provided in
+   *   [document_text][google.cloud.automl.v1.Document.document_text].
+   * * For Text Sentiment:
+   *   If the input is a .pdf file, the OCR'ed trucated text will be provided in
+   *   [document_text][google.cloud.automl.v1.Document.document_text].
+   * </pre>
+   *
+   * <code>.google.cloud.automl.v1.ExamplePayload preprocessed_input = 3;</code>
+   */
+  public boolean hasPreprocessedInput() {
+    return preprocessedInput_ != null;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The preprocessed example that AutoML actually makes prediction on.
+   * Empty if AutoML does not preprocess the input example.
+   * * For Text Extraction:
+   *   If the input is a .pdf file, the OCR'ed text will be provided in
+   *   [document_text][google.cloud.automl.v1.Document.document_text].
+   * * For Text Classification:
+   *   If the input is a .pdf file, the OCR'ed trucated text will be provided in
+   *   [document_text][google.cloud.automl.v1.Document.document_text].
+   * * For Text Sentiment:
+   *   If the input is a .pdf file, the OCR'ed trucated text will be provided in
+   *   [document_text][google.cloud.automl.v1.Document.document_text].
+   * </pre>
+   *
+   * <code>.google.cloud.automl.v1.ExamplePayload preprocessed_input = 3;</code>
+   */
+  public com.google.cloud.automl.v1.ExamplePayload getPreprocessedInput() {
+    return preprocessedInput_ == null
+        ? com.google.cloud.automl.v1.ExamplePayload.getDefaultInstance()
+        : preprocessedInput_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The preprocessed example that AutoML actually makes prediction on.
+   * Empty if AutoML does not preprocess the input example.
+   * * For Text Extraction:
+   *   If the input is a .pdf file, the OCR'ed text will be provided in
+   *   [document_text][google.cloud.automl.v1.Document.document_text].
+   * * For Text Classification:
+   *   If the input is a .pdf file, the OCR'ed trucated text will be provided in
+   *   [document_text][google.cloud.automl.v1.Document.document_text].
+   * * For Text Sentiment:
+   *   If the input is a .pdf file, the OCR'ed trucated text will be provided in
+   *   [document_text][google.cloud.automl.v1.Document.document_text].
+   * </pre>
+   *
+   * <code>.google.cloud.automl.v1.ExamplePayload preprocessed_input = 3;</code>
+   */
+  public com.google.cloud.automl.v1.ExamplePayloadOrBuilder getPreprocessedInputOrBuilder() {
+    return getPreprocessedInput();
+  }
+
   public static final int METADATA_FIELD_NUMBER = 2;
 
   private static final class MetadataDefaultEntryHolder {
@@ -239,6 +327,18 @@ public final class PredictResponse extends com.google.protobuf.GeneratedMessageV
    *
    * <pre>
    * Additional domain-specific prediction response metadata.
+   * * For Image Object Detection:
+   *  `max_bounding_box_count` - (int64) At most that many bounding boxes per
+   *      image could have been returned.
+   * * For Text Sentiment:
+   *  `sentiment_score` - (float, deprecated) A value between -1 and 1,
+   *      -1 maps to least positive sentiment, while 1 maps to the most positive
+   *      one and the higher the score, the more positive the sentiment in the
+   *      document is. Yet these values are relative to the training data, so
+   *      e.g. if all data was positive then -1 will be also positive (though
+   *      the least).
+   *      The sentiment_score shouldn't be confused with "score" or "magnitude"
+   *      from the previous Natural Language Sentiment Analysis API.
    * </pre>
    *
    * <code>map&lt;string, string&gt; metadata = 2;</code>
@@ -259,6 +359,18 @@ public final class PredictResponse extends com.google.protobuf.GeneratedMessageV
    *
    * <pre>
    * Additional domain-specific prediction response metadata.
+   * * For Image Object Detection:
+   *  `max_bounding_box_count` - (int64) At most that many bounding boxes per
+   *      image could have been returned.
+   * * For Text Sentiment:
+   *  `sentiment_score` - (float, deprecated) A value between -1 and 1,
+   *      -1 maps to least positive sentiment, while 1 maps to the most positive
+   *      one and the higher the score, the more positive the sentiment in the
+   *      document is. Yet these values are relative to the training data, so
+   *      e.g. if all data was positive then -1 will be also positive (though
+   *      the least).
+   *      The sentiment_score shouldn't be confused with "score" or "magnitude"
+   *      from the previous Natural Language Sentiment Analysis API.
    * </pre>
    *
    * <code>map&lt;string, string&gt; metadata = 2;</code>
@@ -271,6 +383,18 @@ public final class PredictResponse extends com.google.protobuf.GeneratedMessageV
    *
    * <pre>
    * Additional domain-specific prediction response metadata.
+   * * For Image Object Detection:
+   *  `max_bounding_box_count` - (int64) At most that many bounding boxes per
+   *      image could have been returned.
+   * * For Text Sentiment:
+   *  `sentiment_score` - (float, deprecated) A value between -1 and 1,
+   *      -1 maps to least positive sentiment, while 1 maps to the most positive
+   *      one and the higher the score, the more positive the sentiment in the
+   *      document is. Yet these values are relative to the training data, so
+   *      e.g. if all data was positive then -1 will be also positive (though
+   *      the least).
+   *      The sentiment_score shouldn't be confused with "score" or "magnitude"
+   *      from the previous Natural Language Sentiment Analysis API.
    * </pre>
    *
    * <code>map&lt;string, string&gt; metadata = 2;</code>
@@ -288,6 +412,18 @@ public final class PredictResponse extends com.google.protobuf.GeneratedMessageV
    *
    * <pre>
    * Additional domain-specific prediction response metadata.
+   * * For Image Object Detection:
+   *  `max_bounding_box_count` - (int64) At most that many bounding boxes per
+   *      image could have been returned.
+   * * For Text Sentiment:
+   *  `sentiment_score` - (float, deprecated) A value between -1 and 1,
+   *      -1 maps to least positive sentiment, while 1 maps to the most positive
+   *      one and the higher the score, the more positive the sentiment in the
+   *      document is. Yet these values are relative to the training data, so
+   *      e.g. if all data was positive then -1 will be also positive (though
+   *      the least).
+   *      The sentiment_score shouldn't be confused with "score" or "magnitude"
+   *      from the previous Natural Language Sentiment Analysis API.
    * </pre>
    *
    * <code>map&lt;string, string&gt; metadata = 2;</code>
@@ -322,6 +458,9 @@ public final class PredictResponse extends com.google.protobuf.GeneratedMessageV
     }
     com.google.protobuf.GeneratedMessageV3.serializeStringMapTo(
         output, internalGetMetadata(), MetadataDefaultEntryHolder.defaultEntry, 2);
+    if (preprocessedInput_ != null) {
+      output.writeMessage(3, getPreprocessedInput());
+    }
     unknownFields.writeTo(output);
   }
 
@@ -344,6 +483,9 @@ public final class PredictResponse extends com.google.protobuf.GeneratedMessageV
               .build();
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(2, metadata__);
     }
+    if (preprocessedInput_ != null) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(3, getPreprocessedInput());
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -361,6 +503,10 @@ public final class PredictResponse extends com.google.protobuf.GeneratedMessageV
         (com.google.cloud.automl.v1.PredictResponse) obj;
 
     if (!getPayloadList().equals(other.getPayloadList())) return false;
+    if (hasPreprocessedInput() != other.hasPreprocessedInput()) return false;
+    if (hasPreprocessedInput()) {
+      if (!getPreprocessedInput().equals(other.getPreprocessedInput())) return false;
+    }
     if (!internalGetMetadata().equals(other.internalGetMetadata())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
@@ -376,6 +522,10 @@ public final class PredictResponse extends com.google.protobuf.GeneratedMessageV
     if (getPayloadCount() > 0) {
       hash = (37 * hash) + PAYLOAD_FIELD_NUMBER;
       hash = (53 * hash) + getPayloadList().hashCode();
+    }
+    if (hasPreprocessedInput()) {
+      hash = (37 * hash) + PREPROCESSED_INPUT_FIELD_NUMBER;
+      hash = (53 * hash) + getPreprocessedInput().hashCode();
     }
     if (!internalGetMetadata().getMap().isEmpty()) {
       hash = (37 * hash) + METADATA_FIELD_NUMBER;
@@ -555,6 +705,12 @@ public final class PredictResponse extends com.google.protobuf.GeneratedMessageV
       } else {
         payloadBuilder_.clear();
       }
+      if (preprocessedInputBuilder_ == null) {
+        preprocessedInput_ = null;
+      } else {
+        preprocessedInput_ = null;
+        preprocessedInputBuilder_ = null;
+      }
       internalGetMutableMetadata().clear();
       return this;
     }
@@ -584,6 +740,7 @@ public final class PredictResponse extends com.google.protobuf.GeneratedMessageV
       com.google.cloud.automl.v1.PredictResponse result =
           new com.google.cloud.automl.v1.PredictResponse(this);
       int from_bitField0_ = bitField0_;
+      int to_bitField0_ = 0;
       if (payloadBuilder_ == null) {
         if (((bitField0_ & 0x00000001) != 0)) {
           payload_ = java.util.Collections.unmodifiableList(payload_);
@@ -593,8 +750,14 @@ public final class PredictResponse extends com.google.protobuf.GeneratedMessageV
       } else {
         result.payload_ = payloadBuilder_.build();
       }
+      if (preprocessedInputBuilder_ == null) {
+        result.preprocessedInput_ = preprocessedInput_;
+      } else {
+        result.preprocessedInput_ = preprocessedInputBuilder_.build();
+      }
       result.metadata_ = internalGetMetadata();
       result.metadata_.makeImmutable();
+      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -670,6 +833,9 @@ public final class PredictResponse extends com.google.protobuf.GeneratedMessageV
             payloadBuilder_.addAllMessages(other.payload_);
           }
         }
+      }
+      if (other.hasPreprocessedInput()) {
+        mergePreprocessedInput(other.getPreprocessedInput());
       }
       internalGetMutableMetadata().mergeFrom(other.internalGetMetadata());
       this.mergeUnknownFields(other.unknownFields);
@@ -1071,6 +1237,278 @@ public final class PredictResponse extends com.google.protobuf.GeneratedMessageV
       return payloadBuilder_;
     }
 
+    private com.google.cloud.automl.v1.ExamplePayload preprocessedInput_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.automl.v1.ExamplePayload,
+            com.google.cloud.automl.v1.ExamplePayload.Builder,
+            com.google.cloud.automl.v1.ExamplePayloadOrBuilder>
+        preprocessedInputBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * The preprocessed example that AutoML actually makes prediction on.
+     * Empty if AutoML does not preprocess the input example.
+     * * For Text Extraction:
+     *   If the input is a .pdf file, the OCR'ed text will be provided in
+     *   [document_text][google.cloud.automl.v1.Document.document_text].
+     * * For Text Classification:
+     *   If the input is a .pdf file, the OCR'ed trucated text will be provided in
+     *   [document_text][google.cloud.automl.v1.Document.document_text].
+     * * For Text Sentiment:
+     *   If the input is a .pdf file, the OCR'ed trucated text will be provided in
+     *   [document_text][google.cloud.automl.v1.Document.document_text].
+     * </pre>
+     *
+     * <code>.google.cloud.automl.v1.ExamplePayload preprocessed_input = 3;</code>
+     */
+    public boolean hasPreprocessedInput() {
+      return preprocessedInputBuilder_ != null || preprocessedInput_ != null;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The preprocessed example that AutoML actually makes prediction on.
+     * Empty if AutoML does not preprocess the input example.
+     * * For Text Extraction:
+     *   If the input is a .pdf file, the OCR'ed text will be provided in
+     *   [document_text][google.cloud.automl.v1.Document.document_text].
+     * * For Text Classification:
+     *   If the input is a .pdf file, the OCR'ed trucated text will be provided in
+     *   [document_text][google.cloud.automl.v1.Document.document_text].
+     * * For Text Sentiment:
+     *   If the input is a .pdf file, the OCR'ed trucated text will be provided in
+     *   [document_text][google.cloud.automl.v1.Document.document_text].
+     * </pre>
+     *
+     * <code>.google.cloud.automl.v1.ExamplePayload preprocessed_input = 3;</code>
+     */
+    public com.google.cloud.automl.v1.ExamplePayload getPreprocessedInput() {
+      if (preprocessedInputBuilder_ == null) {
+        return preprocessedInput_ == null
+            ? com.google.cloud.automl.v1.ExamplePayload.getDefaultInstance()
+            : preprocessedInput_;
+      } else {
+        return preprocessedInputBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The preprocessed example that AutoML actually makes prediction on.
+     * Empty if AutoML does not preprocess the input example.
+     * * For Text Extraction:
+     *   If the input is a .pdf file, the OCR'ed text will be provided in
+     *   [document_text][google.cloud.automl.v1.Document.document_text].
+     * * For Text Classification:
+     *   If the input is a .pdf file, the OCR'ed trucated text will be provided in
+     *   [document_text][google.cloud.automl.v1.Document.document_text].
+     * * For Text Sentiment:
+     *   If the input is a .pdf file, the OCR'ed trucated text will be provided in
+     *   [document_text][google.cloud.automl.v1.Document.document_text].
+     * </pre>
+     *
+     * <code>.google.cloud.automl.v1.ExamplePayload preprocessed_input = 3;</code>
+     */
+    public Builder setPreprocessedInput(com.google.cloud.automl.v1.ExamplePayload value) {
+      if (preprocessedInputBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        preprocessedInput_ = value;
+        onChanged();
+      } else {
+        preprocessedInputBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The preprocessed example that AutoML actually makes prediction on.
+     * Empty if AutoML does not preprocess the input example.
+     * * For Text Extraction:
+     *   If the input is a .pdf file, the OCR'ed text will be provided in
+     *   [document_text][google.cloud.automl.v1.Document.document_text].
+     * * For Text Classification:
+     *   If the input is a .pdf file, the OCR'ed trucated text will be provided in
+     *   [document_text][google.cloud.automl.v1.Document.document_text].
+     * * For Text Sentiment:
+     *   If the input is a .pdf file, the OCR'ed trucated text will be provided in
+     *   [document_text][google.cloud.automl.v1.Document.document_text].
+     * </pre>
+     *
+     * <code>.google.cloud.automl.v1.ExamplePayload preprocessed_input = 3;</code>
+     */
+    public Builder setPreprocessedInput(
+        com.google.cloud.automl.v1.ExamplePayload.Builder builderForValue) {
+      if (preprocessedInputBuilder_ == null) {
+        preprocessedInput_ = builderForValue.build();
+        onChanged();
+      } else {
+        preprocessedInputBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The preprocessed example that AutoML actually makes prediction on.
+     * Empty if AutoML does not preprocess the input example.
+     * * For Text Extraction:
+     *   If the input is a .pdf file, the OCR'ed text will be provided in
+     *   [document_text][google.cloud.automl.v1.Document.document_text].
+     * * For Text Classification:
+     *   If the input is a .pdf file, the OCR'ed trucated text will be provided in
+     *   [document_text][google.cloud.automl.v1.Document.document_text].
+     * * For Text Sentiment:
+     *   If the input is a .pdf file, the OCR'ed trucated text will be provided in
+     *   [document_text][google.cloud.automl.v1.Document.document_text].
+     * </pre>
+     *
+     * <code>.google.cloud.automl.v1.ExamplePayload preprocessed_input = 3;</code>
+     */
+    public Builder mergePreprocessedInput(com.google.cloud.automl.v1.ExamplePayload value) {
+      if (preprocessedInputBuilder_ == null) {
+        if (preprocessedInput_ != null) {
+          preprocessedInput_ =
+              com.google.cloud.automl.v1.ExamplePayload.newBuilder(preprocessedInput_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          preprocessedInput_ = value;
+        }
+        onChanged();
+      } else {
+        preprocessedInputBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The preprocessed example that AutoML actually makes prediction on.
+     * Empty if AutoML does not preprocess the input example.
+     * * For Text Extraction:
+     *   If the input is a .pdf file, the OCR'ed text will be provided in
+     *   [document_text][google.cloud.automl.v1.Document.document_text].
+     * * For Text Classification:
+     *   If the input is a .pdf file, the OCR'ed trucated text will be provided in
+     *   [document_text][google.cloud.automl.v1.Document.document_text].
+     * * For Text Sentiment:
+     *   If the input is a .pdf file, the OCR'ed trucated text will be provided in
+     *   [document_text][google.cloud.automl.v1.Document.document_text].
+     * </pre>
+     *
+     * <code>.google.cloud.automl.v1.ExamplePayload preprocessed_input = 3;</code>
+     */
+    public Builder clearPreprocessedInput() {
+      if (preprocessedInputBuilder_ == null) {
+        preprocessedInput_ = null;
+        onChanged();
+      } else {
+        preprocessedInput_ = null;
+        preprocessedInputBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The preprocessed example that AutoML actually makes prediction on.
+     * Empty if AutoML does not preprocess the input example.
+     * * For Text Extraction:
+     *   If the input is a .pdf file, the OCR'ed text will be provided in
+     *   [document_text][google.cloud.automl.v1.Document.document_text].
+     * * For Text Classification:
+     *   If the input is a .pdf file, the OCR'ed trucated text will be provided in
+     *   [document_text][google.cloud.automl.v1.Document.document_text].
+     * * For Text Sentiment:
+     *   If the input is a .pdf file, the OCR'ed trucated text will be provided in
+     *   [document_text][google.cloud.automl.v1.Document.document_text].
+     * </pre>
+     *
+     * <code>.google.cloud.automl.v1.ExamplePayload preprocessed_input = 3;</code>
+     */
+    public com.google.cloud.automl.v1.ExamplePayload.Builder getPreprocessedInputBuilder() {
+
+      onChanged();
+      return getPreprocessedInputFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The preprocessed example that AutoML actually makes prediction on.
+     * Empty if AutoML does not preprocess the input example.
+     * * For Text Extraction:
+     *   If the input is a .pdf file, the OCR'ed text will be provided in
+     *   [document_text][google.cloud.automl.v1.Document.document_text].
+     * * For Text Classification:
+     *   If the input is a .pdf file, the OCR'ed trucated text will be provided in
+     *   [document_text][google.cloud.automl.v1.Document.document_text].
+     * * For Text Sentiment:
+     *   If the input is a .pdf file, the OCR'ed trucated text will be provided in
+     *   [document_text][google.cloud.automl.v1.Document.document_text].
+     * </pre>
+     *
+     * <code>.google.cloud.automl.v1.ExamplePayload preprocessed_input = 3;</code>
+     */
+    public com.google.cloud.automl.v1.ExamplePayloadOrBuilder getPreprocessedInputOrBuilder() {
+      if (preprocessedInputBuilder_ != null) {
+        return preprocessedInputBuilder_.getMessageOrBuilder();
+      } else {
+        return preprocessedInput_ == null
+            ? com.google.cloud.automl.v1.ExamplePayload.getDefaultInstance()
+            : preprocessedInput_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The preprocessed example that AutoML actually makes prediction on.
+     * Empty if AutoML does not preprocess the input example.
+     * * For Text Extraction:
+     *   If the input is a .pdf file, the OCR'ed text will be provided in
+     *   [document_text][google.cloud.automl.v1.Document.document_text].
+     * * For Text Classification:
+     *   If the input is a .pdf file, the OCR'ed trucated text will be provided in
+     *   [document_text][google.cloud.automl.v1.Document.document_text].
+     * * For Text Sentiment:
+     *   If the input is a .pdf file, the OCR'ed trucated text will be provided in
+     *   [document_text][google.cloud.automl.v1.Document.document_text].
+     * </pre>
+     *
+     * <code>.google.cloud.automl.v1.ExamplePayload preprocessed_input = 3;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.automl.v1.ExamplePayload,
+            com.google.cloud.automl.v1.ExamplePayload.Builder,
+            com.google.cloud.automl.v1.ExamplePayloadOrBuilder>
+        getPreprocessedInputFieldBuilder() {
+      if (preprocessedInputBuilder_ == null) {
+        preprocessedInputBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.automl.v1.ExamplePayload,
+                com.google.cloud.automl.v1.ExamplePayload.Builder,
+                com.google.cloud.automl.v1.ExamplePayloadOrBuilder>(
+                getPreprocessedInput(), getParentForChildren(), isClean());
+        preprocessedInput_ = null;
+      }
+      return preprocessedInputBuilder_;
+    }
+
     private com.google.protobuf.MapField<java.lang.String, java.lang.String> metadata_;
 
     private com.google.protobuf.MapField<java.lang.String, java.lang.String> internalGetMetadata() {
@@ -1102,6 +1540,18 @@ public final class PredictResponse extends com.google.protobuf.GeneratedMessageV
      *
      * <pre>
      * Additional domain-specific prediction response metadata.
+     * * For Image Object Detection:
+     *  `max_bounding_box_count` - (int64) At most that many bounding boxes per
+     *      image could have been returned.
+     * * For Text Sentiment:
+     *  `sentiment_score` - (float, deprecated) A value between -1 and 1,
+     *      -1 maps to least positive sentiment, while 1 maps to the most positive
+     *      one and the higher the score, the more positive the sentiment in the
+     *      document is. Yet these values are relative to the training data, so
+     *      e.g. if all data was positive then -1 will be also positive (though
+     *      the least).
+     *      The sentiment_score shouldn't be confused with "score" or "magnitude"
+     *      from the previous Natural Language Sentiment Analysis API.
      * </pre>
      *
      * <code>map&lt;string, string&gt; metadata = 2;</code>
@@ -1122,6 +1572,18 @@ public final class PredictResponse extends com.google.protobuf.GeneratedMessageV
      *
      * <pre>
      * Additional domain-specific prediction response metadata.
+     * * For Image Object Detection:
+     *  `max_bounding_box_count` - (int64) At most that many bounding boxes per
+     *      image could have been returned.
+     * * For Text Sentiment:
+     *  `sentiment_score` - (float, deprecated) A value between -1 and 1,
+     *      -1 maps to least positive sentiment, while 1 maps to the most positive
+     *      one and the higher the score, the more positive the sentiment in the
+     *      document is. Yet these values are relative to the training data, so
+     *      e.g. if all data was positive then -1 will be also positive (though
+     *      the least).
+     *      The sentiment_score shouldn't be confused with "score" or "magnitude"
+     *      from the previous Natural Language Sentiment Analysis API.
      * </pre>
      *
      * <code>map&lt;string, string&gt; metadata = 2;</code>
@@ -1134,6 +1596,18 @@ public final class PredictResponse extends com.google.protobuf.GeneratedMessageV
      *
      * <pre>
      * Additional domain-specific prediction response metadata.
+     * * For Image Object Detection:
+     *  `max_bounding_box_count` - (int64) At most that many bounding boxes per
+     *      image could have been returned.
+     * * For Text Sentiment:
+     *  `sentiment_score` - (float, deprecated) A value between -1 and 1,
+     *      -1 maps to least positive sentiment, while 1 maps to the most positive
+     *      one and the higher the score, the more positive the sentiment in the
+     *      document is. Yet these values are relative to the training data, so
+     *      e.g. if all data was positive then -1 will be also positive (though
+     *      the least).
+     *      The sentiment_score shouldn't be confused with "score" or "magnitude"
+     *      from the previous Natural Language Sentiment Analysis API.
      * </pre>
      *
      * <code>map&lt;string, string&gt; metadata = 2;</code>
@@ -1151,6 +1625,18 @@ public final class PredictResponse extends com.google.protobuf.GeneratedMessageV
      *
      * <pre>
      * Additional domain-specific prediction response metadata.
+     * * For Image Object Detection:
+     *  `max_bounding_box_count` - (int64) At most that many bounding boxes per
+     *      image could have been returned.
+     * * For Text Sentiment:
+     *  `sentiment_score` - (float, deprecated) A value between -1 and 1,
+     *      -1 maps to least positive sentiment, while 1 maps to the most positive
+     *      one and the higher the score, the more positive the sentiment in the
+     *      document is. Yet these values are relative to the training data, so
+     *      e.g. if all data was positive then -1 will be also positive (though
+     *      the least).
+     *      The sentiment_score shouldn't be confused with "score" or "magnitude"
+     *      from the previous Natural Language Sentiment Analysis API.
      * </pre>
      *
      * <code>map&lt;string, string&gt; metadata = 2;</code>
@@ -1175,6 +1661,18 @@ public final class PredictResponse extends com.google.protobuf.GeneratedMessageV
      *
      * <pre>
      * Additional domain-specific prediction response metadata.
+     * * For Image Object Detection:
+     *  `max_bounding_box_count` - (int64) At most that many bounding boxes per
+     *      image could have been returned.
+     * * For Text Sentiment:
+     *  `sentiment_score` - (float, deprecated) A value between -1 and 1,
+     *      -1 maps to least positive sentiment, while 1 maps to the most positive
+     *      one and the higher the score, the more positive the sentiment in the
+     *      document is. Yet these values are relative to the training data, so
+     *      e.g. if all data was positive then -1 will be also positive (though
+     *      the least).
+     *      The sentiment_score shouldn't be confused with "score" or "magnitude"
+     *      from the previous Natural Language Sentiment Analysis API.
      * </pre>
      *
      * <code>map&lt;string, string&gt; metadata = 2;</code>
@@ -1196,6 +1694,18 @@ public final class PredictResponse extends com.google.protobuf.GeneratedMessageV
      *
      * <pre>
      * Additional domain-specific prediction response metadata.
+     * * For Image Object Detection:
+     *  `max_bounding_box_count` - (int64) At most that many bounding boxes per
+     *      image could have been returned.
+     * * For Text Sentiment:
+     *  `sentiment_score` - (float, deprecated) A value between -1 and 1,
+     *      -1 maps to least positive sentiment, while 1 maps to the most positive
+     *      one and the higher the score, the more positive the sentiment in the
+     *      document is. Yet these values are relative to the training data, so
+     *      e.g. if all data was positive then -1 will be also positive (though
+     *      the least).
+     *      The sentiment_score shouldn't be confused with "score" or "magnitude"
+     *      from the previous Natural Language Sentiment Analysis API.
      * </pre>
      *
      * <code>map&lt;string, string&gt; metadata = 2;</code>
@@ -1215,6 +1725,18 @@ public final class PredictResponse extends com.google.protobuf.GeneratedMessageV
      *
      * <pre>
      * Additional domain-specific prediction response metadata.
+     * * For Image Object Detection:
+     *  `max_bounding_box_count` - (int64) At most that many bounding boxes per
+     *      image could have been returned.
+     * * For Text Sentiment:
+     *  `sentiment_score` - (float, deprecated) A value between -1 and 1,
+     *      -1 maps to least positive sentiment, while 1 maps to the most positive
+     *      one and the higher the score, the more positive the sentiment in the
+     *      document is. Yet these values are relative to the training data, so
+     *      e.g. if all data was positive then -1 will be also positive (though
+     *      the least).
+     *      The sentiment_score shouldn't be confused with "score" or "magnitude"
+     *      from the previous Natural Language Sentiment Analysis API.
      * </pre>
      *
      * <code>map&lt;string, string&gt; metadata = 2;</code>

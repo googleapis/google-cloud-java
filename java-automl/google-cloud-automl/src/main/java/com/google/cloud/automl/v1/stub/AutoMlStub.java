@@ -23,12 +23,16 @@ import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.UnaryCallable;
+import com.google.cloud.automl.v1.AnnotationSpec;
 import com.google.cloud.automl.v1.CreateDatasetRequest;
 import com.google.cloud.automl.v1.CreateModelRequest;
 import com.google.cloud.automl.v1.Dataset;
 import com.google.cloud.automl.v1.DeleteDatasetRequest;
 import com.google.cloud.automl.v1.DeleteModelRequest;
+import com.google.cloud.automl.v1.DeployModelRequest;
 import com.google.cloud.automl.v1.ExportDataRequest;
+import com.google.cloud.automl.v1.ExportModelRequest;
+import com.google.cloud.automl.v1.GetAnnotationSpecRequest;
 import com.google.cloud.automl.v1.GetDatasetRequest;
 import com.google.cloud.automl.v1.GetModelEvaluationRequest;
 import com.google.cloud.automl.v1.GetModelRequest;
@@ -42,6 +46,7 @@ import com.google.cloud.automl.v1.ListModelsResponse;
 import com.google.cloud.automl.v1.Model;
 import com.google.cloud.automl.v1.ModelEvaluation;
 import com.google.cloud.automl.v1.OperationMetadata;
+import com.google.cloud.automl.v1.UndeployModelRequest;
 import com.google.cloud.automl.v1.UpdateDatasetRequest;
 import com.google.cloud.automl.v1.UpdateModelRequest;
 import com.google.longrunning.Operation;
@@ -120,6 +125,10 @@ public abstract class AutoMlStub implements BackgroundResource {
     throw new UnsupportedOperationException("Not implemented: exportDataCallable()");
   }
 
+  public UnaryCallable<GetAnnotationSpecRequest, AnnotationSpec> getAnnotationSpecCallable() {
+    throw new UnsupportedOperationException("Not implemented: getAnnotationSpecCallable()");
+  }
+
   @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
   public OperationCallable<CreateModelRequest, Model, OperationMetadata>
       createModelOperationCallable() {
@@ -154,6 +163,36 @@ public abstract class AutoMlStub implements BackgroundResource {
 
   public UnaryCallable<DeleteModelRequest, Operation> deleteModelCallable() {
     throw new UnsupportedOperationException("Not implemented: deleteModelCallable()");
+  }
+
+  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
+  public OperationCallable<DeployModelRequest, Empty, OperationMetadata>
+      deployModelOperationCallable() {
+    throw new UnsupportedOperationException("Not implemented: deployModelOperationCallable()");
+  }
+
+  public UnaryCallable<DeployModelRequest, Operation> deployModelCallable() {
+    throw new UnsupportedOperationException("Not implemented: deployModelCallable()");
+  }
+
+  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
+  public OperationCallable<UndeployModelRequest, Empty, OperationMetadata>
+      undeployModelOperationCallable() {
+    throw new UnsupportedOperationException("Not implemented: undeployModelOperationCallable()");
+  }
+
+  public UnaryCallable<UndeployModelRequest, Operation> undeployModelCallable() {
+    throw new UnsupportedOperationException("Not implemented: undeployModelCallable()");
+  }
+
+  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
+  public OperationCallable<ExportModelRequest, Empty, OperationMetadata>
+      exportModelOperationCallable() {
+    throw new UnsupportedOperationException("Not implemented: exportModelOperationCallable()");
+  }
+
+  public UnaryCallable<ExportModelRequest, Operation> exportModelCallable() {
+    throw new UnsupportedOperationException("Not implemented: exportModelCallable()");
   }
 
   public UnaryCallable<GetModelEvaluationRequest, ModelEvaluation> getModelEvaluationCallable() {

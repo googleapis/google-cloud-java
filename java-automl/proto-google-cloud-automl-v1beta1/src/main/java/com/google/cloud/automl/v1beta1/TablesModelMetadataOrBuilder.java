@@ -27,6 +27,30 @@ public interface TablesModelMetadataOrBuilder
    *
    *
    * <pre>
+   * Required when optimization_objective is "MAXIMIZE_PRECISION_AT_RECALL".
+   * Must be between 0 and 1, inclusive.
+   * </pre>
+   *
+   * <code>float optimization_objective_recall_value = 17;</code>
+   */
+  float getOptimizationObjectiveRecallValue();
+
+  /**
+   *
+   *
+   * <pre>
+   * Required when optimization_objective is "MAXIMIZE_RECALL_AT_PRECISION".
+   * Must be between 0 and 1, inclusive.
+   * </pre>
+   *
+   * <code>float optimization_objective_precision_value = 18;</code>
+   */
+  float getOptimizationObjectivePrecisionValue();
+
+  /**
+   *
+   *
+   * <pre>
    * Column spec of the dataset's primary table's column the model is
    * predicting. Snapshotted when model creation started.
    * Only 3 fields are used:
@@ -370,4 +394,8 @@ public interface TablesModelMetadataOrBuilder
    * <code>bool disable_early_stopping = 12;</code>
    */
   boolean getDisableEarlyStopping();
+
+  public com.google.cloud.automl.v1beta1.TablesModelMetadata
+          .AdditionalOptimizationObjectiveConfigCase
+      getAdditionalOptimizationObjectiveConfigCase();
 }

@@ -404,6 +404,63 @@ public final class AutoMlGrpc {
   }
 
   @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
+  @java.lang.Deprecated // Use {@link #getGetAnnotationSpecMethod()} instead.
+  public static final io.grpc.MethodDescriptor<
+          com.google.cloud.automl.v1.GetAnnotationSpecRequest,
+          com.google.cloud.automl.v1.AnnotationSpec>
+      METHOD_GET_ANNOTATION_SPEC = getGetAnnotationSpecMethodHelper();
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.automl.v1.GetAnnotationSpecRequest,
+          com.google.cloud.automl.v1.AnnotationSpec>
+      getGetAnnotationSpecMethod;
+
+  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.automl.v1.GetAnnotationSpecRequest,
+          com.google.cloud.automl.v1.AnnotationSpec>
+      getGetAnnotationSpecMethod() {
+    return getGetAnnotationSpecMethodHelper();
+  }
+
+  private static io.grpc.MethodDescriptor<
+          com.google.cloud.automl.v1.GetAnnotationSpecRequest,
+          com.google.cloud.automl.v1.AnnotationSpec>
+      getGetAnnotationSpecMethodHelper() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.automl.v1.GetAnnotationSpecRequest,
+            com.google.cloud.automl.v1.AnnotationSpec>
+        getGetAnnotationSpecMethod;
+    if ((getGetAnnotationSpecMethod = AutoMlGrpc.getGetAnnotationSpecMethod) == null) {
+      synchronized (AutoMlGrpc.class) {
+        if ((getGetAnnotationSpecMethod = AutoMlGrpc.getGetAnnotationSpecMethod) == null) {
+          AutoMlGrpc.getGetAnnotationSpecMethod =
+              getGetAnnotationSpecMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.automl.v1.GetAnnotationSpecRequest,
+                          com.google.cloud.automl.v1.AnnotationSpec>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(
+                              "google.cloud.automl.v1.AutoMl", "GetAnnotationSpec"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.automl.v1.GetAnnotationSpecRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.automl.v1.AnnotationSpec.getDefaultInstance()))
+                      .setSchemaDescriptor(new AutoMlMethodDescriptorSupplier("GetAnnotationSpec"))
+                      .build();
+        }
+      }
+    }
+    return getGetAnnotationSpecMethod;
+  }
+
+  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
   @java.lang.Deprecated // Use {@link #getCreateModelMethod()} instead.
   public static final io.grpc.MethodDescriptor<
           com.google.cloud.automl.v1.CreateModelRequest, com.google.longrunning.Operation>
@@ -659,6 +716,156 @@ public final class AutoMlGrpc {
   }
 
   @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
+  @java.lang.Deprecated // Use {@link #getDeployModelMethod()} instead.
+  public static final io.grpc.MethodDescriptor<
+          com.google.cloud.automl.v1.DeployModelRequest, com.google.longrunning.Operation>
+      METHOD_DEPLOY_MODEL = getDeployModelMethodHelper();
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.automl.v1.DeployModelRequest, com.google.longrunning.Operation>
+      getDeployModelMethod;
+
+  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.automl.v1.DeployModelRequest, com.google.longrunning.Operation>
+      getDeployModelMethod() {
+    return getDeployModelMethodHelper();
+  }
+
+  private static io.grpc.MethodDescriptor<
+          com.google.cloud.automl.v1.DeployModelRequest, com.google.longrunning.Operation>
+      getDeployModelMethodHelper() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.automl.v1.DeployModelRequest, com.google.longrunning.Operation>
+        getDeployModelMethod;
+    if ((getDeployModelMethod = AutoMlGrpc.getDeployModelMethod) == null) {
+      synchronized (AutoMlGrpc.class) {
+        if ((getDeployModelMethod = AutoMlGrpc.getDeployModelMethod) == null) {
+          AutoMlGrpc.getDeployModelMethod =
+              getDeployModelMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.automl.v1.DeployModelRequest,
+                          com.google.longrunning.Operation>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName("google.cloud.automl.v1.AutoMl", "DeployModel"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.automl.v1.DeployModelRequest.getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.longrunning.Operation.getDefaultInstance()))
+                      .setSchemaDescriptor(new AutoMlMethodDescriptorSupplier("DeployModel"))
+                      .build();
+        }
+      }
+    }
+    return getDeployModelMethod;
+  }
+
+  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
+  @java.lang.Deprecated // Use {@link #getUndeployModelMethod()} instead.
+  public static final io.grpc.MethodDescriptor<
+          com.google.cloud.automl.v1.UndeployModelRequest, com.google.longrunning.Operation>
+      METHOD_UNDEPLOY_MODEL = getUndeployModelMethodHelper();
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.automl.v1.UndeployModelRequest, com.google.longrunning.Operation>
+      getUndeployModelMethod;
+
+  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.automl.v1.UndeployModelRequest, com.google.longrunning.Operation>
+      getUndeployModelMethod() {
+    return getUndeployModelMethodHelper();
+  }
+
+  private static io.grpc.MethodDescriptor<
+          com.google.cloud.automl.v1.UndeployModelRequest, com.google.longrunning.Operation>
+      getUndeployModelMethodHelper() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.automl.v1.UndeployModelRequest, com.google.longrunning.Operation>
+        getUndeployModelMethod;
+    if ((getUndeployModelMethod = AutoMlGrpc.getUndeployModelMethod) == null) {
+      synchronized (AutoMlGrpc.class) {
+        if ((getUndeployModelMethod = AutoMlGrpc.getUndeployModelMethod) == null) {
+          AutoMlGrpc.getUndeployModelMethod =
+              getUndeployModelMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.automl.v1.UndeployModelRequest,
+                          com.google.longrunning.Operation>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName("google.cloud.automl.v1.AutoMl", "UndeployModel"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.automl.v1.UndeployModelRequest.getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.longrunning.Operation.getDefaultInstance()))
+                      .setSchemaDescriptor(new AutoMlMethodDescriptorSupplier("UndeployModel"))
+                      .build();
+        }
+      }
+    }
+    return getUndeployModelMethod;
+  }
+
+  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
+  @java.lang.Deprecated // Use {@link #getExportModelMethod()} instead.
+  public static final io.grpc.MethodDescriptor<
+          com.google.cloud.automl.v1.ExportModelRequest, com.google.longrunning.Operation>
+      METHOD_EXPORT_MODEL = getExportModelMethodHelper();
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.automl.v1.ExportModelRequest, com.google.longrunning.Operation>
+      getExportModelMethod;
+
+  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.automl.v1.ExportModelRequest, com.google.longrunning.Operation>
+      getExportModelMethod() {
+    return getExportModelMethodHelper();
+  }
+
+  private static io.grpc.MethodDescriptor<
+          com.google.cloud.automl.v1.ExportModelRequest, com.google.longrunning.Operation>
+      getExportModelMethodHelper() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.automl.v1.ExportModelRequest, com.google.longrunning.Operation>
+        getExportModelMethod;
+    if ((getExportModelMethod = AutoMlGrpc.getExportModelMethod) == null) {
+      synchronized (AutoMlGrpc.class) {
+        if ((getExportModelMethod = AutoMlGrpc.getExportModelMethod) == null) {
+          AutoMlGrpc.getExportModelMethod =
+              getExportModelMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.automl.v1.ExportModelRequest,
+                          com.google.longrunning.Operation>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName("google.cloud.automl.v1.AutoMl", "ExportModel"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.automl.v1.ExportModelRequest.getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.longrunning.Operation.getDefaultInstance()))
+                      .setSchemaDescriptor(new AutoMlMethodDescriptorSupplier("ExportModel"))
+                      .build();
+        }
+      }
+    }
+    return getExportModelMethod;
+  }
+
+  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
   @java.lang.Deprecated // Use {@link #getGetModelEvaluationMethod()} instead.
   public static final io.grpc.MethodDescriptor<
           com.google.cloud.automl.v1.GetModelEvaluationRequest,
@@ -911,6 +1118,19 @@ public final class AutoMlGrpc {
      *
      *
      * <pre>
+     * Gets an annotation spec.
+     * </pre>
+     */
+    public void getAnnotationSpec(
+        com.google.cloud.automl.v1.GetAnnotationSpecRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.automl.v1.AnnotationSpec> responseObserver) {
+      asyncUnimplementedUnaryCall(getGetAnnotationSpecMethodHelper(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Creates a model.
      * Returns a Model in the [response][google.longrunning.Operation.response]
      * field when it completes.
@@ -979,6 +1199,62 @@ public final class AutoMlGrpc {
         com.google.cloud.automl.v1.UpdateModelRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.automl.v1.Model> responseObserver) {
       asyncUnimplementedUnaryCall(getUpdateModelMethodHelper(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deploys a model. If a model is already deployed, deploying it with the
+     * same parameters has no effect. Deploying with different parametrs
+     * (as e.g. changing
+     * [node_number][google.cloud.automl.v1.ImageObjectDetectionModelDeploymentMetadata.node_number])
+     *  will reset the deployment state without pausing the model's availability.
+     * Only applicable for Text Classification, Image Object Detection; all other
+     * domains manage deployment automatically.
+     * Returns an empty response in the
+     * [response][google.longrunning.Operation.response] field when it completes.
+     * </pre>
+     */
+    public void deployModel(
+        com.google.cloud.automl.v1.DeployModelRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      asyncUnimplementedUnaryCall(getDeployModelMethodHelper(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Undeploys a model. If the model is not deployed this method has no effect.
+     * Only applicable for Text Classification, Image Object Detection;
+     * all other domains manage deployment automatically.
+     * Returns an empty response in the
+     * [response][google.longrunning.Operation.response] field when it completes.
+     * </pre>
+     */
+    public void undeployModel(
+        com.google.cloud.automl.v1.UndeployModelRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      asyncUnimplementedUnaryCall(getUndeployModelMethodHelper(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Exports a trained, "export-able", model to a user specified Google Cloud
+     * Storage location. A model is considered export-able if and only if it has
+     * an export format defined for it in
+     * [ModelExportOutputConfig][google.cloud.automl.v1.ModelExportOutputConfig].
+     * Returns an empty response in the
+     * [response][google.longrunning.Operation.response] field when it completes.
+     * </pre>
+     */
+    public void exportModel(
+        com.google.cloud.automl.v1.ExportModelRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      asyncUnimplementedUnaryCall(getExportModelMethodHelper(), responseObserver);
     }
 
     /**
@@ -1055,6 +1331,13 @@ public final class AutoMlGrpc {
                       com.google.cloud.automl.v1.ExportDataRequest,
                       com.google.longrunning.Operation>(this, METHODID_EXPORT_DATA)))
           .addMethod(
+              getGetAnnotationSpecMethodHelper(),
+              asyncUnaryCall(
+                  new MethodHandlers<
+                      com.google.cloud.automl.v1.GetAnnotationSpecRequest,
+                      com.google.cloud.automl.v1.AnnotationSpec>(
+                      this, METHODID_GET_ANNOTATION_SPEC)))
+          .addMethod(
               getCreateModelMethodHelper(),
               asyncUnaryCall(
                   new MethodHandlers<
@@ -1084,6 +1367,24 @@ public final class AutoMlGrpc {
                   new MethodHandlers<
                       com.google.cloud.automl.v1.UpdateModelRequest,
                       com.google.cloud.automl.v1.Model>(this, METHODID_UPDATE_MODEL)))
+          .addMethod(
+              getDeployModelMethodHelper(),
+              asyncUnaryCall(
+                  new MethodHandlers<
+                      com.google.cloud.automl.v1.DeployModelRequest,
+                      com.google.longrunning.Operation>(this, METHODID_DEPLOY_MODEL)))
+          .addMethod(
+              getUndeployModelMethodHelper(),
+              asyncUnaryCall(
+                  new MethodHandlers<
+                      com.google.cloud.automl.v1.UndeployModelRequest,
+                      com.google.longrunning.Operation>(this, METHODID_UNDEPLOY_MODEL)))
+          .addMethod(
+              getExportModelMethodHelper(),
+              asyncUnaryCall(
+                  new MethodHandlers<
+                      com.google.cloud.automl.v1.ExportModelRequest,
+                      com.google.longrunning.Operation>(this, METHODID_EXPORT_MODEL)))
           .addMethod(
               getGetModelEvaluationMethodHelper(),
               asyncUnaryCall(
@@ -1255,6 +1556,22 @@ public final class AutoMlGrpc {
      *
      *
      * <pre>
+     * Gets an annotation spec.
+     * </pre>
+     */
+    public void getAnnotationSpec(
+        com.google.cloud.automl.v1.GetAnnotationSpecRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.automl.v1.AnnotationSpec> responseObserver) {
+      asyncUnaryCall(
+          getChannel().newCall(getGetAnnotationSpecMethodHelper(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Creates a model.
      * Returns a Model in the [response][google.longrunning.Operation.response]
      * field when it completes.
@@ -1336,6 +1653,71 @@ public final class AutoMlGrpc {
         io.grpc.stub.StreamObserver<com.google.cloud.automl.v1.Model> responseObserver) {
       asyncUnaryCall(
           getChannel().newCall(getUpdateModelMethodHelper(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deploys a model. If a model is already deployed, deploying it with the
+     * same parameters has no effect. Deploying with different parametrs
+     * (as e.g. changing
+     * [node_number][google.cloud.automl.v1.ImageObjectDetectionModelDeploymentMetadata.node_number])
+     *  will reset the deployment state without pausing the model's availability.
+     * Only applicable for Text Classification, Image Object Detection; all other
+     * domains manage deployment automatically.
+     * Returns an empty response in the
+     * [response][google.longrunning.Operation.response] field when it completes.
+     * </pre>
+     */
+    public void deployModel(
+        com.google.cloud.automl.v1.DeployModelRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      asyncUnaryCall(
+          getChannel().newCall(getDeployModelMethodHelper(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Undeploys a model. If the model is not deployed this method has no effect.
+     * Only applicable for Text Classification, Image Object Detection;
+     * all other domains manage deployment automatically.
+     * Returns an empty response in the
+     * [response][google.longrunning.Operation.response] field when it completes.
+     * </pre>
+     */
+    public void undeployModel(
+        com.google.cloud.automl.v1.UndeployModelRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      asyncUnaryCall(
+          getChannel().newCall(getUndeployModelMethodHelper(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Exports a trained, "export-able", model to a user specified Google Cloud
+     * Storage location. A model is considered export-able if and only if it has
+     * an export format defined for it in
+     * [ModelExportOutputConfig][google.cloud.automl.v1.ModelExportOutputConfig].
+     * Returns an empty response in the
+     * [response][google.longrunning.Operation.response] field when it completes.
+     * </pre>
+     */
+    public void exportModel(
+        com.google.cloud.automl.v1.ExportModelRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      asyncUnaryCall(
+          getChannel().newCall(getExportModelMethodHelper(), getCallOptions()),
           request,
           responseObserver);
     }
@@ -1506,6 +1888,19 @@ public final class AutoMlGrpc {
      *
      *
      * <pre>
+     * Gets an annotation spec.
+     * </pre>
+     */
+    public com.google.cloud.automl.v1.AnnotationSpec getAnnotationSpec(
+        com.google.cloud.automl.v1.GetAnnotationSpecRequest request) {
+      return blockingUnaryCall(
+          getChannel(), getGetAnnotationSpecMethodHelper(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Creates a model.
      * Returns a Model in the [response][google.longrunning.Operation.response]
      * field when it completes.
@@ -1572,6 +1967,62 @@ public final class AutoMlGrpc {
         com.google.cloud.automl.v1.UpdateModelRequest request) {
       return blockingUnaryCall(
           getChannel(), getUpdateModelMethodHelper(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deploys a model. If a model is already deployed, deploying it with the
+     * same parameters has no effect. Deploying with different parametrs
+     * (as e.g. changing
+     * [node_number][google.cloud.automl.v1.ImageObjectDetectionModelDeploymentMetadata.node_number])
+     *  will reset the deployment state without pausing the model's availability.
+     * Only applicable for Text Classification, Image Object Detection; all other
+     * domains manage deployment automatically.
+     * Returns an empty response in the
+     * [response][google.longrunning.Operation.response] field when it completes.
+     * </pre>
+     */
+    public com.google.longrunning.Operation deployModel(
+        com.google.cloud.automl.v1.DeployModelRequest request) {
+      return blockingUnaryCall(
+          getChannel(), getDeployModelMethodHelper(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Undeploys a model. If the model is not deployed this method has no effect.
+     * Only applicable for Text Classification, Image Object Detection;
+     * all other domains manage deployment automatically.
+     * Returns an empty response in the
+     * [response][google.longrunning.Operation.response] field when it completes.
+     * </pre>
+     */
+    public com.google.longrunning.Operation undeployModel(
+        com.google.cloud.automl.v1.UndeployModelRequest request) {
+      return blockingUnaryCall(
+          getChannel(), getUndeployModelMethodHelper(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Exports a trained, "export-able", model to a user specified Google Cloud
+     * Storage location. A model is considered export-able if and only if it has
+     * an export format defined for it in
+     * [ModelExportOutputConfig][google.cloud.automl.v1.ModelExportOutputConfig].
+     * Returns an empty response in the
+     * [response][google.longrunning.Operation.response] field when it completes.
+     * </pre>
+     */
+    public com.google.longrunning.Operation exportModel(
+        com.google.cloud.automl.v1.ExportModelRequest request) {
+      return blockingUnaryCall(
+          getChannel(), getExportModelMethodHelper(), getCallOptions(), request);
     }
 
     /**
@@ -1733,6 +2184,20 @@ public final class AutoMlGrpc {
      *
      *
      * <pre>
+     * Gets an annotation spec.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.automl.v1.AnnotationSpec>
+        getAnnotationSpec(com.google.cloud.automl.v1.GetAnnotationSpecRequest request) {
+      return futureUnaryCall(
+          getChannel().newCall(getGetAnnotationSpecMethodHelper(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Creates a model.
      * Returns a Model in the [response][google.longrunning.Operation.response]
      * field when it completes.
@@ -1807,6 +2272,62 @@ public final class AutoMlGrpc {
      *
      *
      * <pre>
+     * Deploys a model. If a model is already deployed, deploying it with the
+     * same parameters has no effect. Deploying with different parametrs
+     * (as e.g. changing
+     * [node_number][google.cloud.automl.v1.ImageObjectDetectionModelDeploymentMetadata.node_number])
+     *  will reset the deployment state without pausing the model's availability.
+     * Only applicable for Text Classification, Image Object Detection; all other
+     * domains manage deployment automatically.
+     * Returns an empty response in the
+     * [response][google.longrunning.Operation.response] field when it completes.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
+        deployModel(com.google.cloud.automl.v1.DeployModelRequest request) {
+      return futureUnaryCall(
+          getChannel().newCall(getDeployModelMethodHelper(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Undeploys a model. If the model is not deployed this method has no effect.
+     * Only applicable for Text Classification, Image Object Detection;
+     * all other domains manage deployment automatically.
+     * Returns an empty response in the
+     * [response][google.longrunning.Operation.response] field when it completes.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
+        undeployModel(com.google.cloud.automl.v1.UndeployModelRequest request) {
+      return futureUnaryCall(
+          getChannel().newCall(getUndeployModelMethodHelper(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Exports a trained, "export-able", model to a user specified Google Cloud
+     * Storage location. A model is considered export-able if and only if it has
+     * an export format defined for it in
+     * [ModelExportOutputConfig][google.cloud.automl.v1.ModelExportOutputConfig].
+     * Returns an empty response in the
+     * [response][google.longrunning.Operation.response] field when it completes.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
+        exportModel(com.google.cloud.automl.v1.ExportModelRequest request) {
+      return futureUnaryCall(
+          getChannel().newCall(getExportModelMethodHelper(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Gets a model evaluation.
      * </pre>
      */
@@ -1839,13 +2360,17 @@ public final class AutoMlGrpc {
   private static final int METHODID_DELETE_DATASET = 4;
   private static final int METHODID_IMPORT_DATA = 5;
   private static final int METHODID_EXPORT_DATA = 6;
-  private static final int METHODID_CREATE_MODEL = 7;
-  private static final int METHODID_GET_MODEL = 8;
-  private static final int METHODID_LIST_MODELS = 9;
-  private static final int METHODID_DELETE_MODEL = 10;
-  private static final int METHODID_UPDATE_MODEL = 11;
-  private static final int METHODID_GET_MODEL_EVALUATION = 12;
-  private static final int METHODID_LIST_MODEL_EVALUATIONS = 13;
+  private static final int METHODID_GET_ANNOTATION_SPEC = 7;
+  private static final int METHODID_CREATE_MODEL = 8;
+  private static final int METHODID_GET_MODEL = 9;
+  private static final int METHODID_LIST_MODELS = 10;
+  private static final int METHODID_DELETE_MODEL = 11;
+  private static final int METHODID_UPDATE_MODEL = 12;
+  private static final int METHODID_DEPLOY_MODEL = 13;
+  private static final int METHODID_UNDEPLOY_MODEL = 14;
+  private static final int METHODID_EXPORT_MODEL = 15;
+  private static final int METHODID_GET_MODEL_EVALUATION = 16;
+  private static final int METHODID_LIST_MODEL_EVALUATIONS = 17;
 
   private static final class MethodHandlers<Req, Resp>
       implements io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -1900,6 +2425,12 @@ public final class AutoMlGrpc {
               (com.google.cloud.automl.v1.ExportDataRequest) request,
               (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
           break;
+        case METHODID_GET_ANNOTATION_SPEC:
+          serviceImpl.getAnnotationSpec(
+              (com.google.cloud.automl.v1.GetAnnotationSpecRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.cloud.automl.v1.AnnotationSpec>)
+                  responseObserver);
+          break;
         case METHODID_CREATE_MODEL:
           serviceImpl.createModel(
               (com.google.cloud.automl.v1.CreateModelRequest) request,
@@ -1925,6 +2456,21 @@ public final class AutoMlGrpc {
           serviceImpl.updateModel(
               (com.google.cloud.automl.v1.UpdateModelRequest) request,
               (io.grpc.stub.StreamObserver<com.google.cloud.automl.v1.Model>) responseObserver);
+          break;
+        case METHODID_DEPLOY_MODEL:
+          serviceImpl.deployModel(
+              (com.google.cloud.automl.v1.DeployModelRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
+          break;
+        case METHODID_UNDEPLOY_MODEL:
+          serviceImpl.undeployModel(
+              (com.google.cloud.automl.v1.UndeployModelRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
+          break;
+        case METHODID_EXPORT_MODEL:
+          serviceImpl.exportModel(
+              (com.google.cloud.automl.v1.ExportModelRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
           break;
         case METHODID_GET_MODEL_EVALUATION:
           serviceImpl.getModelEvaluation(
@@ -2007,11 +2553,15 @@ public final class AutoMlGrpc {
                       .addMethod(getDeleteDatasetMethodHelper())
                       .addMethod(getImportDataMethodHelper())
                       .addMethod(getExportDataMethodHelper())
+                      .addMethod(getGetAnnotationSpecMethodHelper())
                       .addMethod(getCreateModelMethodHelper())
                       .addMethod(getGetModelMethodHelper())
                       .addMethod(getListModelsMethodHelper())
                       .addMethod(getDeleteModelMethodHelper())
                       .addMethod(getUpdateModelMethodHelper())
+                      .addMethod(getDeployModelMethodHelper())
+                      .addMethod(getUndeployModelMethodHelper())
+                      .addMethod(getExportModelMethodHelper())
                       .addMethod(getGetModelEvaluationMethodHelper())
                       .addMethod(getListModelEvaluationsMethodHelper())
                       .build();

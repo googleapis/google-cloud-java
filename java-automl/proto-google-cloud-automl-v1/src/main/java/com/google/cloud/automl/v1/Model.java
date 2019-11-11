@@ -42,6 +42,7 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
     displayName_ = "";
     datasetId_ = "";
     deploymentState_ = 0;
+    etag_ = "";
   }
 
   @java.lang.Override
@@ -111,6 +112,13 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
               deploymentState_ = rawValue;
               break;
             }
+          case 82:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              etag_ = s;
+              break;
+            }
           case 90:
             {
               com.google.protobuf.Timestamp.Builder subBuilder = null;
@@ -124,6 +132,46 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
                 updateTime_ = subBuilder.buildPartial();
               }
 
+              break;
+            }
+          case 106:
+            {
+              com.google.cloud.automl.v1.ImageClassificationModelMetadata.Builder subBuilder = null;
+              if (modelMetadataCase_ == 13) {
+                subBuilder =
+                    ((com.google.cloud.automl.v1.ImageClassificationModelMetadata) modelMetadata_)
+                        .toBuilder();
+              }
+              modelMetadata_ =
+                  input.readMessage(
+                      com.google.cloud.automl.v1.ImageClassificationModelMetadata.parser(),
+                      extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(
+                    (com.google.cloud.automl.v1.ImageClassificationModelMetadata) modelMetadata_);
+                modelMetadata_ = subBuilder.buildPartial();
+              }
+              modelMetadataCase_ = 13;
+              break;
+            }
+          case 114:
+            {
+              com.google.cloud.automl.v1.TextClassificationModelMetadata.Builder subBuilder = null;
+              if (modelMetadataCase_ == 14) {
+                subBuilder =
+                    ((com.google.cloud.automl.v1.TextClassificationModelMetadata) modelMetadata_)
+                        .toBuilder();
+              }
+              modelMetadata_ =
+                  input.readMessage(
+                      com.google.cloud.automl.v1.TextClassificationModelMetadata.parser(),
+                      extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(
+                    (com.google.cloud.automl.v1.TextClassificationModelMetadata) modelMetadata_);
+                modelMetadata_ = subBuilder.buildPartial();
+              }
+              modelMetadataCase_ = 14;
               break;
             }
           case 122:
@@ -146,12 +194,73 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
               modelMetadataCase_ = 15;
               break;
             }
+          case 154:
+            {
+              com.google.cloud.automl.v1.TextExtractionModelMetadata.Builder subBuilder = null;
+              if (modelMetadataCase_ == 19) {
+                subBuilder =
+                    ((com.google.cloud.automl.v1.TextExtractionModelMetadata) modelMetadata_)
+                        .toBuilder();
+              }
+              modelMetadata_ =
+                  input.readMessage(
+                      com.google.cloud.automl.v1.TextExtractionModelMetadata.parser(),
+                      extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(
+                    (com.google.cloud.automl.v1.TextExtractionModelMetadata) modelMetadata_);
+                modelMetadata_ = subBuilder.buildPartial();
+              }
+              modelMetadataCase_ = 19;
+              break;
+            }
+          case 162:
+            {
+              com.google.cloud.automl.v1.ImageObjectDetectionModelMetadata.Builder subBuilder =
+                  null;
+              if (modelMetadataCase_ == 20) {
+                subBuilder =
+                    ((com.google.cloud.automl.v1.ImageObjectDetectionModelMetadata) modelMetadata_)
+                        .toBuilder();
+              }
+              modelMetadata_ =
+                  input.readMessage(
+                      com.google.cloud.automl.v1.ImageObjectDetectionModelMetadata.parser(),
+                      extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(
+                    (com.google.cloud.automl.v1.ImageObjectDetectionModelMetadata) modelMetadata_);
+                modelMetadata_ = subBuilder.buildPartial();
+              }
+              modelMetadataCase_ = 20;
+              break;
+            }
+          case 178:
+            {
+              com.google.cloud.automl.v1.TextSentimentModelMetadata.Builder subBuilder = null;
+              if (modelMetadataCase_ == 22) {
+                subBuilder =
+                    ((com.google.cloud.automl.v1.TextSentimentModelMetadata) modelMetadata_)
+                        .toBuilder();
+              }
+              modelMetadata_ =
+                  input.readMessage(
+                      com.google.cloud.automl.v1.TextSentimentModelMetadata.parser(),
+                      extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(
+                    (com.google.cloud.automl.v1.TextSentimentModelMetadata) modelMetadata_);
+                modelMetadata_ = subBuilder.buildPartial();
+              }
+              modelMetadataCase_ = 22;
+              break;
+            }
           case 274:
             {
-              if (!((mutable_bitField0_ & 0x00000080) != 0)) {
+              if (!((mutable_bitField0_ & 0x00002000) != 0)) {
                 labels_ =
                     com.google.protobuf.MapField.newMapField(LabelsDefaultEntryHolder.defaultEntry);
-                mutable_bitField0_ |= 0x00000080;
+                mutable_bitField0_ |= 0x00002000;
               }
               com.google.protobuf.MapEntry<java.lang.String, java.lang.String> labels__ =
                   input.readMessage(
@@ -356,6 +465,11 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
 
   public enum ModelMetadataCase implements com.google.protobuf.Internal.EnumLite {
     TRANSLATION_MODEL_METADATA(15),
+    IMAGE_CLASSIFICATION_MODEL_METADATA(13),
+    TEXT_CLASSIFICATION_MODEL_METADATA(14),
+    IMAGE_OBJECT_DETECTION_MODEL_METADATA(20),
+    TEXT_EXTRACTION_MODEL_METADATA(19),
+    TEXT_SENTIMENT_MODEL_METADATA(22),
     MODELMETADATA_NOT_SET(0);
     private final int value;
 
@@ -372,6 +486,16 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
       switch (value) {
         case 15:
           return TRANSLATION_MODEL_METADATA;
+        case 13:
+          return IMAGE_CLASSIFICATION_MODEL_METADATA;
+        case 14:
+          return TEXT_CLASSIFICATION_MODEL_METADATA;
+        case 20:
+          return IMAGE_OBJECT_DETECTION_MODEL_METADATA;
+        case 19:
+          return TEXT_EXTRACTION_MODEL_METADATA;
+        case 22:
+          return TEXT_SENTIMENT_MODEL_METADATA;
         case 0:
           return MODELMETADATA_NOT_SET;
         default:
@@ -431,6 +555,258 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
       return (com.google.cloud.automl.v1.TranslationModelMetadata) modelMetadata_;
     }
     return com.google.cloud.automl.v1.TranslationModelMetadata.getDefaultInstance();
+  }
+
+  public static final int IMAGE_CLASSIFICATION_MODEL_METADATA_FIELD_NUMBER = 13;
+  /**
+   *
+   *
+   * <pre>
+   * Metadata for image classification models.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.automl.v1.ImageClassificationModelMetadata image_classification_model_metadata = 13;
+   * </code>
+   */
+  public boolean hasImageClassificationModelMetadata() {
+    return modelMetadataCase_ == 13;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Metadata for image classification models.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.automl.v1.ImageClassificationModelMetadata image_classification_model_metadata = 13;
+   * </code>
+   */
+  public com.google.cloud.automl.v1.ImageClassificationModelMetadata
+      getImageClassificationModelMetadata() {
+    if (modelMetadataCase_ == 13) {
+      return (com.google.cloud.automl.v1.ImageClassificationModelMetadata) modelMetadata_;
+    }
+    return com.google.cloud.automl.v1.ImageClassificationModelMetadata.getDefaultInstance();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Metadata for image classification models.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.automl.v1.ImageClassificationModelMetadata image_classification_model_metadata = 13;
+   * </code>
+   */
+  public com.google.cloud.automl.v1.ImageClassificationModelMetadataOrBuilder
+      getImageClassificationModelMetadataOrBuilder() {
+    if (modelMetadataCase_ == 13) {
+      return (com.google.cloud.automl.v1.ImageClassificationModelMetadata) modelMetadata_;
+    }
+    return com.google.cloud.automl.v1.ImageClassificationModelMetadata.getDefaultInstance();
+  }
+
+  public static final int TEXT_CLASSIFICATION_MODEL_METADATA_FIELD_NUMBER = 14;
+  /**
+   *
+   *
+   * <pre>
+   * Metadata for text classification models.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.automl.v1.TextClassificationModelMetadata text_classification_model_metadata = 14;
+   * </code>
+   */
+  public boolean hasTextClassificationModelMetadata() {
+    return modelMetadataCase_ == 14;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Metadata for text classification models.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.automl.v1.TextClassificationModelMetadata text_classification_model_metadata = 14;
+   * </code>
+   */
+  public com.google.cloud.automl.v1.TextClassificationModelMetadata
+      getTextClassificationModelMetadata() {
+    if (modelMetadataCase_ == 14) {
+      return (com.google.cloud.automl.v1.TextClassificationModelMetadata) modelMetadata_;
+    }
+    return com.google.cloud.automl.v1.TextClassificationModelMetadata.getDefaultInstance();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Metadata for text classification models.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.automl.v1.TextClassificationModelMetadata text_classification_model_metadata = 14;
+   * </code>
+   */
+  public com.google.cloud.automl.v1.TextClassificationModelMetadataOrBuilder
+      getTextClassificationModelMetadataOrBuilder() {
+    if (modelMetadataCase_ == 14) {
+      return (com.google.cloud.automl.v1.TextClassificationModelMetadata) modelMetadata_;
+    }
+    return com.google.cloud.automl.v1.TextClassificationModelMetadata.getDefaultInstance();
+  }
+
+  public static final int IMAGE_OBJECT_DETECTION_MODEL_METADATA_FIELD_NUMBER = 20;
+  /**
+   *
+   *
+   * <pre>
+   * Metadata for image object detection models.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.automl.v1.ImageObjectDetectionModelMetadata image_object_detection_model_metadata = 20;
+   * </code>
+   */
+  public boolean hasImageObjectDetectionModelMetadata() {
+    return modelMetadataCase_ == 20;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Metadata for image object detection models.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.automl.v1.ImageObjectDetectionModelMetadata image_object_detection_model_metadata = 20;
+   * </code>
+   */
+  public com.google.cloud.automl.v1.ImageObjectDetectionModelMetadata
+      getImageObjectDetectionModelMetadata() {
+    if (modelMetadataCase_ == 20) {
+      return (com.google.cloud.automl.v1.ImageObjectDetectionModelMetadata) modelMetadata_;
+    }
+    return com.google.cloud.automl.v1.ImageObjectDetectionModelMetadata.getDefaultInstance();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Metadata for image object detection models.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.automl.v1.ImageObjectDetectionModelMetadata image_object_detection_model_metadata = 20;
+   * </code>
+   */
+  public com.google.cloud.automl.v1.ImageObjectDetectionModelMetadataOrBuilder
+      getImageObjectDetectionModelMetadataOrBuilder() {
+    if (modelMetadataCase_ == 20) {
+      return (com.google.cloud.automl.v1.ImageObjectDetectionModelMetadata) modelMetadata_;
+    }
+    return com.google.cloud.automl.v1.ImageObjectDetectionModelMetadata.getDefaultInstance();
+  }
+
+  public static final int TEXT_EXTRACTION_MODEL_METADATA_FIELD_NUMBER = 19;
+  /**
+   *
+   *
+   * <pre>
+   * Metadata for text extraction models.
+   * </pre>
+   *
+   * <code>.google.cloud.automl.v1.TextExtractionModelMetadata text_extraction_model_metadata = 19;
+   * </code>
+   */
+  public boolean hasTextExtractionModelMetadata() {
+    return modelMetadataCase_ == 19;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Metadata for text extraction models.
+   * </pre>
+   *
+   * <code>.google.cloud.automl.v1.TextExtractionModelMetadata text_extraction_model_metadata = 19;
+   * </code>
+   */
+  public com.google.cloud.automl.v1.TextExtractionModelMetadata getTextExtractionModelMetadata() {
+    if (modelMetadataCase_ == 19) {
+      return (com.google.cloud.automl.v1.TextExtractionModelMetadata) modelMetadata_;
+    }
+    return com.google.cloud.automl.v1.TextExtractionModelMetadata.getDefaultInstance();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Metadata for text extraction models.
+   * </pre>
+   *
+   * <code>.google.cloud.automl.v1.TextExtractionModelMetadata text_extraction_model_metadata = 19;
+   * </code>
+   */
+  public com.google.cloud.automl.v1.TextExtractionModelMetadataOrBuilder
+      getTextExtractionModelMetadataOrBuilder() {
+    if (modelMetadataCase_ == 19) {
+      return (com.google.cloud.automl.v1.TextExtractionModelMetadata) modelMetadata_;
+    }
+    return com.google.cloud.automl.v1.TextExtractionModelMetadata.getDefaultInstance();
+  }
+
+  public static final int TEXT_SENTIMENT_MODEL_METADATA_FIELD_NUMBER = 22;
+  /**
+   *
+   *
+   * <pre>
+   * Metadata for text sentiment models.
+   * </pre>
+   *
+   * <code>.google.cloud.automl.v1.TextSentimentModelMetadata text_sentiment_model_metadata = 22;
+   * </code>
+   */
+  public boolean hasTextSentimentModelMetadata() {
+    return modelMetadataCase_ == 22;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Metadata for text sentiment models.
+   * </pre>
+   *
+   * <code>.google.cloud.automl.v1.TextSentimentModelMetadata text_sentiment_model_metadata = 22;
+   * </code>
+   */
+  public com.google.cloud.automl.v1.TextSentimentModelMetadata getTextSentimentModelMetadata() {
+    if (modelMetadataCase_ == 22) {
+      return (com.google.cloud.automl.v1.TextSentimentModelMetadata) modelMetadata_;
+    }
+    return com.google.cloud.automl.v1.TextSentimentModelMetadata.getDefaultInstance();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Metadata for text sentiment models.
+   * </pre>
+   *
+   * <code>.google.cloud.automl.v1.TextSentimentModelMetadata text_sentiment_model_metadata = 22;
+   * </code>
+   */
+  public com.google.cloud.automl.v1.TextSentimentModelMetadataOrBuilder
+      getTextSentimentModelMetadataOrBuilder() {
+    if (modelMetadataCase_ == 22) {
+      return (com.google.cloud.automl.v1.TextSentimentModelMetadata) modelMetadata_;
+    }
+    return com.google.cloud.automl.v1.TextSentimentModelMetadata.getDefaultInstance();
   }
 
   public static final int NAME_FIELD_NUMBER = 1;
@@ -682,6 +1058,51 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
     return result == null ? com.google.cloud.automl.v1.Model.DeploymentState.UNRECOGNIZED : result;
   }
 
+  public static final int ETAG_FIELD_NUMBER = 10;
+  private volatile java.lang.Object etag_;
+  /**
+   *
+   *
+   * <pre>
+   * Used to perform a consistent read-modify-write updates. If not set, a blind
+   * "overwrite" update happens.
+   * </pre>
+   *
+   * <code>string etag = 10;</code>
+   */
+  public java.lang.String getEtag() {
+    java.lang.Object ref = etag_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      etag_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Used to perform a consistent read-modify-write updates. If not set, a blind
+   * "overwrite" update happens.
+   * </pre>
+   *
+   * <code>string etag = 10;</code>
+   */
+  public com.google.protobuf.ByteString getEtagBytes() {
+    java.lang.Object ref = etag_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      etag_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   public static final int LABELS_FIELD_NUMBER = 34;
 
   private static final class LabelsDefaultEntryHolder {
@@ -826,11 +1247,34 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
             .getNumber()) {
       output.writeEnum(8, deploymentState_);
     }
+    if (!getEtagBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 10, etag_);
+    }
     if (updateTime_ != null) {
       output.writeMessage(11, getUpdateTime());
     }
+    if (modelMetadataCase_ == 13) {
+      output.writeMessage(
+          13, (com.google.cloud.automl.v1.ImageClassificationModelMetadata) modelMetadata_);
+    }
+    if (modelMetadataCase_ == 14) {
+      output.writeMessage(
+          14, (com.google.cloud.automl.v1.TextClassificationModelMetadata) modelMetadata_);
+    }
     if (modelMetadataCase_ == 15) {
       output.writeMessage(15, (com.google.cloud.automl.v1.TranslationModelMetadata) modelMetadata_);
+    }
+    if (modelMetadataCase_ == 19) {
+      output.writeMessage(
+          19, (com.google.cloud.automl.v1.TextExtractionModelMetadata) modelMetadata_);
+    }
+    if (modelMetadataCase_ == 20) {
+      output.writeMessage(
+          20, (com.google.cloud.automl.v1.ImageObjectDetectionModelMetadata) modelMetadata_);
+    }
+    if (modelMetadataCase_ == 22) {
+      output.writeMessage(
+          22, (com.google.cloud.automl.v1.TextSentimentModelMetadata) modelMetadata_);
     }
     com.google.protobuf.GeneratedMessageV3.serializeStringMapTo(
         output, internalGetLabels(), LabelsDefaultEntryHolder.defaultEntry, 34);
@@ -860,13 +1304,41 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
             .getNumber()) {
       size += com.google.protobuf.CodedOutputStream.computeEnumSize(8, deploymentState_);
     }
+    if (!getEtagBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(10, etag_);
+    }
     if (updateTime_ != null) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(11, getUpdateTime());
+    }
+    if (modelMetadataCase_ == 13) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              13, (com.google.cloud.automl.v1.ImageClassificationModelMetadata) modelMetadata_);
+    }
+    if (modelMetadataCase_ == 14) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              14, (com.google.cloud.automl.v1.TextClassificationModelMetadata) modelMetadata_);
     }
     if (modelMetadataCase_ == 15) {
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               15, (com.google.cloud.automl.v1.TranslationModelMetadata) modelMetadata_);
+    }
+    if (modelMetadataCase_ == 19) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              19, (com.google.cloud.automl.v1.TextExtractionModelMetadata) modelMetadata_);
+    }
+    if (modelMetadataCase_ == 20) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              20, (com.google.cloud.automl.v1.ImageObjectDetectionModelMetadata) modelMetadata_);
+    }
+    if (modelMetadataCase_ == 22) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              22, (com.google.cloud.automl.v1.TextSentimentModelMetadata) modelMetadata_);
     }
     for (java.util.Map.Entry<java.lang.String, java.lang.String> entry :
         internalGetLabels().getMap().entrySet()) {
@@ -905,11 +1377,32 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
       if (!getUpdateTime().equals(other.getUpdateTime())) return false;
     }
     if (deploymentState_ != other.deploymentState_) return false;
+    if (!getEtag().equals(other.getEtag())) return false;
     if (!internalGetLabels().equals(other.internalGetLabels())) return false;
     if (!getModelMetadataCase().equals(other.getModelMetadataCase())) return false;
     switch (modelMetadataCase_) {
       case 15:
         if (!getTranslationModelMetadata().equals(other.getTranslationModelMetadata()))
+          return false;
+        break;
+      case 13:
+        if (!getImageClassificationModelMetadata()
+            .equals(other.getImageClassificationModelMetadata())) return false;
+        break;
+      case 14:
+        if (!getTextClassificationModelMetadata()
+            .equals(other.getTextClassificationModelMetadata())) return false;
+        break;
+      case 20:
+        if (!getImageObjectDetectionModelMetadata()
+            .equals(other.getImageObjectDetectionModelMetadata())) return false;
+        break;
+      case 19:
+        if (!getTextExtractionModelMetadata().equals(other.getTextExtractionModelMetadata()))
+          return false;
+        break;
+      case 22:
+        if (!getTextSentimentModelMetadata().equals(other.getTextSentimentModelMetadata()))
           return false;
         break;
       case 0:
@@ -942,6 +1435,8 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
     }
     hash = (37 * hash) + DEPLOYMENT_STATE_FIELD_NUMBER;
     hash = (53 * hash) + deploymentState_;
+    hash = (37 * hash) + ETAG_FIELD_NUMBER;
+    hash = (53 * hash) + getEtag().hashCode();
     if (!internalGetLabels().getMap().isEmpty()) {
       hash = (37 * hash) + LABELS_FIELD_NUMBER;
       hash = (53 * hash) + internalGetLabels().hashCode();
@@ -950,6 +1445,26 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
       case 15:
         hash = (37 * hash) + TRANSLATION_MODEL_METADATA_FIELD_NUMBER;
         hash = (53 * hash) + getTranslationModelMetadata().hashCode();
+        break;
+      case 13:
+        hash = (37 * hash) + IMAGE_CLASSIFICATION_MODEL_METADATA_FIELD_NUMBER;
+        hash = (53 * hash) + getImageClassificationModelMetadata().hashCode();
+        break;
+      case 14:
+        hash = (37 * hash) + TEXT_CLASSIFICATION_MODEL_METADATA_FIELD_NUMBER;
+        hash = (53 * hash) + getTextClassificationModelMetadata().hashCode();
+        break;
+      case 20:
+        hash = (37 * hash) + IMAGE_OBJECT_DETECTION_MODEL_METADATA_FIELD_NUMBER;
+        hash = (53 * hash) + getImageObjectDetectionModelMetadata().hashCode();
+        break;
+      case 19:
+        hash = (37 * hash) + TEXT_EXTRACTION_MODEL_METADATA_FIELD_NUMBER;
+        hash = (53 * hash) + getTextExtractionModelMetadata().hashCode();
+        break;
+      case 22:
+        hash = (37 * hash) + TEXT_SENTIMENT_MODEL_METADATA_FIELD_NUMBER;
+        hash = (53 * hash) + getTextSentimentModelMetadata().hashCode();
         break;
       case 0:
       default:
@@ -1138,6 +1653,8 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
       }
       deploymentState_ = 0;
 
+      etag_ = "";
+
       internalGetMutableLabels().clear();
       modelMetadataCase_ = 0;
       modelMetadata_ = null;
@@ -1176,6 +1693,41 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
           result.modelMetadata_ = translationModelMetadataBuilder_.build();
         }
       }
+      if (modelMetadataCase_ == 13) {
+        if (imageClassificationModelMetadataBuilder_ == null) {
+          result.modelMetadata_ = modelMetadata_;
+        } else {
+          result.modelMetadata_ = imageClassificationModelMetadataBuilder_.build();
+        }
+      }
+      if (modelMetadataCase_ == 14) {
+        if (textClassificationModelMetadataBuilder_ == null) {
+          result.modelMetadata_ = modelMetadata_;
+        } else {
+          result.modelMetadata_ = textClassificationModelMetadataBuilder_.build();
+        }
+      }
+      if (modelMetadataCase_ == 20) {
+        if (imageObjectDetectionModelMetadataBuilder_ == null) {
+          result.modelMetadata_ = modelMetadata_;
+        } else {
+          result.modelMetadata_ = imageObjectDetectionModelMetadataBuilder_.build();
+        }
+      }
+      if (modelMetadataCase_ == 19) {
+        if (textExtractionModelMetadataBuilder_ == null) {
+          result.modelMetadata_ = modelMetadata_;
+        } else {
+          result.modelMetadata_ = textExtractionModelMetadataBuilder_.build();
+        }
+      }
+      if (modelMetadataCase_ == 22) {
+        if (textSentimentModelMetadataBuilder_ == null) {
+          result.modelMetadata_ = modelMetadata_;
+        } else {
+          result.modelMetadata_ = textSentimentModelMetadataBuilder_.build();
+        }
+      }
       result.name_ = name_;
       result.displayName_ = displayName_;
       result.datasetId_ = datasetId_;
@@ -1190,6 +1742,7 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
         result.updateTime_ = updateTimeBuilder_.build();
       }
       result.deploymentState_ = deploymentState_;
+      result.etag_ = etag_;
       result.labels_ = internalGetLabels();
       result.labels_.makeImmutable();
       result.bitField0_ = to_bitField0_;
@@ -1264,11 +1817,40 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
       if (other.deploymentState_ != 0) {
         setDeploymentStateValue(other.getDeploymentStateValue());
       }
+      if (!other.getEtag().isEmpty()) {
+        etag_ = other.etag_;
+        onChanged();
+      }
       internalGetMutableLabels().mergeFrom(other.internalGetLabels());
       switch (other.getModelMetadataCase()) {
         case TRANSLATION_MODEL_METADATA:
           {
             mergeTranslationModelMetadata(other.getTranslationModelMetadata());
+            break;
+          }
+        case IMAGE_CLASSIFICATION_MODEL_METADATA:
+          {
+            mergeImageClassificationModelMetadata(other.getImageClassificationModelMetadata());
+            break;
+          }
+        case TEXT_CLASSIFICATION_MODEL_METADATA:
+          {
+            mergeTextClassificationModelMetadata(other.getTextClassificationModelMetadata());
+            break;
+          }
+        case IMAGE_OBJECT_DETECTION_MODEL_METADATA:
+          {
+            mergeImageObjectDetectionModelMetadata(other.getImageObjectDetectionModelMetadata());
+            break;
+          }
+        case TEXT_EXTRACTION_MODEL_METADATA:
+          {
+            mergeTextExtractionModelMetadata(other.getTextExtractionModelMetadata());
+            break;
+          }
+        case TEXT_SENTIMENT_MODEL_METADATA:
+          {
+            mergeTextSentimentModelMetadata(other.getTextSentimentModelMetadata());
             break;
           }
         case MODELMETADATA_NOT_SET:
@@ -1535,6 +2117,1133 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       ;
       return translationModelMetadataBuilder_;
+    }
+
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.automl.v1.ImageClassificationModelMetadata,
+            com.google.cloud.automl.v1.ImageClassificationModelMetadata.Builder,
+            com.google.cloud.automl.v1.ImageClassificationModelMetadataOrBuilder>
+        imageClassificationModelMetadataBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Metadata for image classification models.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.automl.v1.ImageClassificationModelMetadata image_classification_model_metadata = 13;
+     * </code>
+     */
+    public boolean hasImageClassificationModelMetadata() {
+      return modelMetadataCase_ == 13;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Metadata for image classification models.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.automl.v1.ImageClassificationModelMetadata image_classification_model_metadata = 13;
+     * </code>
+     */
+    public com.google.cloud.automl.v1.ImageClassificationModelMetadata
+        getImageClassificationModelMetadata() {
+      if (imageClassificationModelMetadataBuilder_ == null) {
+        if (modelMetadataCase_ == 13) {
+          return (com.google.cloud.automl.v1.ImageClassificationModelMetadata) modelMetadata_;
+        }
+        return com.google.cloud.automl.v1.ImageClassificationModelMetadata.getDefaultInstance();
+      } else {
+        if (modelMetadataCase_ == 13) {
+          return imageClassificationModelMetadataBuilder_.getMessage();
+        }
+        return com.google.cloud.automl.v1.ImageClassificationModelMetadata.getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Metadata for image classification models.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.automl.v1.ImageClassificationModelMetadata image_classification_model_metadata = 13;
+     * </code>
+     */
+    public Builder setImageClassificationModelMetadata(
+        com.google.cloud.automl.v1.ImageClassificationModelMetadata value) {
+      if (imageClassificationModelMetadataBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        modelMetadata_ = value;
+        onChanged();
+      } else {
+        imageClassificationModelMetadataBuilder_.setMessage(value);
+      }
+      modelMetadataCase_ = 13;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Metadata for image classification models.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.automl.v1.ImageClassificationModelMetadata image_classification_model_metadata = 13;
+     * </code>
+     */
+    public Builder setImageClassificationModelMetadata(
+        com.google.cloud.automl.v1.ImageClassificationModelMetadata.Builder builderForValue) {
+      if (imageClassificationModelMetadataBuilder_ == null) {
+        modelMetadata_ = builderForValue.build();
+        onChanged();
+      } else {
+        imageClassificationModelMetadataBuilder_.setMessage(builderForValue.build());
+      }
+      modelMetadataCase_ = 13;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Metadata for image classification models.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.automl.v1.ImageClassificationModelMetadata image_classification_model_metadata = 13;
+     * </code>
+     */
+    public Builder mergeImageClassificationModelMetadata(
+        com.google.cloud.automl.v1.ImageClassificationModelMetadata value) {
+      if (imageClassificationModelMetadataBuilder_ == null) {
+        if (modelMetadataCase_ == 13
+            && modelMetadata_
+                != com.google.cloud.automl.v1.ImageClassificationModelMetadata
+                    .getDefaultInstance()) {
+          modelMetadata_ =
+              com.google.cloud.automl.v1.ImageClassificationModelMetadata.newBuilder(
+                      (com.google.cloud.automl.v1.ImageClassificationModelMetadata) modelMetadata_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          modelMetadata_ = value;
+        }
+        onChanged();
+      } else {
+        if (modelMetadataCase_ == 13) {
+          imageClassificationModelMetadataBuilder_.mergeFrom(value);
+        }
+        imageClassificationModelMetadataBuilder_.setMessage(value);
+      }
+      modelMetadataCase_ = 13;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Metadata for image classification models.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.automl.v1.ImageClassificationModelMetadata image_classification_model_metadata = 13;
+     * </code>
+     */
+    public Builder clearImageClassificationModelMetadata() {
+      if (imageClassificationModelMetadataBuilder_ == null) {
+        if (modelMetadataCase_ == 13) {
+          modelMetadataCase_ = 0;
+          modelMetadata_ = null;
+          onChanged();
+        }
+      } else {
+        if (modelMetadataCase_ == 13) {
+          modelMetadataCase_ = 0;
+          modelMetadata_ = null;
+        }
+        imageClassificationModelMetadataBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Metadata for image classification models.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.automl.v1.ImageClassificationModelMetadata image_classification_model_metadata = 13;
+     * </code>
+     */
+    public com.google.cloud.automl.v1.ImageClassificationModelMetadata.Builder
+        getImageClassificationModelMetadataBuilder() {
+      return getImageClassificationModelMetadataFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Metadata for image classification models.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.automl.v1.ImageClassificationModelMetadata image_classification_model_metadata = 13;
+     * </code>
+     */
+    public com.google.cloud.automl.v1.ImageClassificationModelMetadataOrBuilder
+        getImageClassificationModelMetadataOrBuilder() {
+      if ((modelMetadataCase_ == 13) && (imageClassificationModelMetadataBuilder_ != null)) {
+        return imageClassificationModelMetadataBuilder_.getMessageOrBuilder();
+      } else {
+        if (modelMetadataCase_ == 13) {
+          return (com.google.cloud.automl.v1.ImageClassificationModelMetadata) modelMetadata_;
+        }
+        return com.google.cloud.automl.v1.ImageClassificationModelMetadata.getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Metadata for image classification models.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.automl.v1.ImageClassificationModelMetadata image_classification_model_metadata = 13;
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.automl.v1.ImageClassificationModelMetadata,
+            com.google.cloud.automl.v1.ImageClassificationModelMetadata.Builder,
+            com.google.cloud.automl.v1.ImageClassificationModelMetadataOrBuilder>
+        getImageClassificationModelMetadataFieldBuilder() {
+      if (imageClassificationModelMetadataBuilder_ == null) {
+        if (!(modelMetadataCase_ == 13)) {
+          modelMetadata_ =
+              com.google.cloud.automl.v1.ImageClassificationModelMetadata.getDefaultInstance();
+        }
+        imageClassificationModelMetadataBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.automl.v1.ImageClassificationModelMetadata,
+                com.google.cloud.automl.v1.ImageClassificationModelMetadata.Builder,
+                com.google.cloud.automl.v1.ImageClassificationModelMetadataOrBuilder>(
+                (com.google.cloud.automl.v1.ImageClassificationModelMetadata) modelMetadata_,
+                getParentForChildren(),
+                isClean());
+        modelMetadata_ = null;
+      }
+      modelMetadataCase_ = 13;
+      onChanged();
+      ;
+      return imageClassificationModelMetadataBuilder_;
+    }
+
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.automl.v1.TextClassificationModelMetadata,
+            com.google.cloud.automl.v1.TextClassificationModelMetadata.Builder,
+            com.google.cloud.automl.v1.TextClassificationModelMetadataOrBuilder>
+        textClassificationModelMetadataBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Metadata for text classification models.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.automl.v1.TextClassificationModelMetadata text_classification_model_metadata = 14;
+     * </code>
+     */
+    public boolean hasTextClassificationModelMetadata() {
+      return modelMetadataCase_ == 14;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Metadata for text classification models.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.automl.v1.TextClassificationModelMetadata text_classification_model_metadata = 14;
+     * </code>
+     */
+    public com.google.cloud.automl.v1.TextClassificationModelMetadata
+        getTextClassificationModelMetadata() {
+      if (textClassificationModelMetadataBuilder_ == null) {
+        if (modelMetadataCase_ == 14) {
+          return (com.google.cloud.automl.v1.TextClassificationModelMetadata) modelMetadata_;
+        }
+        return com.google.cloud.automl.v1.TextClassificationModelMetadata.getDefaultInstance();
+      } else {
+        if (modelMetadataCase_ == 14) {
+          return textClassificationModelMetadataBuilder_.getMessage();
+        }
+        return com.google.cloud.automl.v1.TextClassificationModelMetadata.getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Metadata for text classification models.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.automl.v1.TextClassificationModelMetadata text_classification_model_metadata = 14;
+     * </code>
+     */
+    public Builder setTextClassificationModelMetadata(
+        com.google.cloud.automl.v1.TextClassificationModelMetadata value) {
+      if (textClassificationModelMetadataBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        modelMetadata_ = value;
+        onChanged();
+      } else {
+        textClassificationModelMetadataBuilder_.setMessage(value);
+      }
+      modelMetadataCase_ = 14;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Metadata for text classification models.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.automl.v1.TextClassificationModelMetadata text_classification_model_metadata = 14;
+     * </code>
+     */
+    public Builder setTextClassificationModelMetadata(
+        com.google.cloud.automl.v1.TextClassificationModelMetadata.Builder builderForValue) {
+      if (textClassificationModelMetadataBuilder_ == null) {
+        modelMetadata_ = builderForValue.build();
+        onChanged();
+      } else {
+        textClassificationModelMetadataBuilder_.setMessage(builderForValue.build());
+      }
+      modelMetadataCase_ = 14;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Metadata for text classification models.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.automl.v1.TextClassificationModelMetadata text_classification_model_metadata = 14;
+     * </code>
+     */
+    public Builder mergeTextClassificationModelMetadata(
+        com.google.cloud.automl.v1.TextClassificationModelMetadata value) {
+      if (textClassificationModelMetadataBuilder_ == null) {
+        if (modelMetadataCase_ == 14
+            && modelMetadata_
+                != com.google.cloud.automl.v1.TextClassificationModelMetadata
+                    .getDefaultInstance()) {
+          modelMetadata_ =
+              com.google.cloud.automl.v1.TextClassificationModelMetadata.newBuilder(
+                      (com.google.cloud.automl.v1.TextClassificationModelMetadata) modelMetadata_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          modelMetadata_ = value;
+        }
+        onChanged();
+      } else {
+        if (modelMetadataCase_ == 14) {
+          textClassificationModelMetadataBuilder_.mergeFrom(value);
+        }
+        textClassificationModelMetadataBuilder_.setMessage(value);
+      }
+      modelMetadataCase_ = 14;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Metadata for text classification models.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.automl.v1.TextClassificationModelMetadata text_classification_model_metadata = 14;
+     * </code>
+     */
+    public Builder clearTextClassificationModelMetadata() {
+      if (textClassificationModelMetadataBuilder_ == null) {
+        if (modelMetadataCase_ == 14) {
+          modelMetadataCase_ = 0;
+          modelMetadata_ = null;
+          onChanged();
+        }
+      } else {
+        if (modelMetadataCase_ == 14) {
+          modelMetadataCase_ = 0;
+          modelMetadata_ = null;
+        }
+        textClassificationModelMetadataBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Metadata for text classification models.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.automl.v1.TextClassificationModelMetadata text_classification_model_metadata = 14;
+     * </code>
+     */
+    public com.google.cloud.automl.v1.TextClassificationModelMetadata.Builder
+        getTextClassificationModelMetadataBuilder() {
+      return getTextClassificationModelMetadataFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Metadata for text classification models.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.automl.v1.TextClassificationModelMetadata text_classification_model_metadata = 14;
+     * </code>
+     */
+    public com.google.cloud.automl.v1.TextClassificationModelMetadataOrBuilder
+        getTextClassificationModelMetadataOrBuilder() {
+      if ((modelMetadataCase_ == 14) && (textClassificationModelMetadataBuilder_ != null)) {
+        return textClassificationModelMetadataBuilder_.getMessageOrBuilder();
+      } else {
+        if (modelMetadataCase_ == 14) {
+          return (com.google.cloud.automl.v1.TextClassificationModelMetadata) modelMetadata_;
+        }
+        return com.google.cloud.automl.v1.TextClassificationModelMetadata.getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Metadata for text classification models.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.automl.v1.TextClassificationModelMetadata text_classification_model_metadata = 14;
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.automl.v1.TextClassificationModelMetadata,
+            com.google.cloud.automl.v1.TextClassificationModelMetadata.Builder,
+            com.google.cloud.automl.v1.TextClassificationModelMetadataOrBuilder>
+        getTextClassificationModelMetadataFieldBuilder() {
+      if (textClassificationModelMetadataBuilder_ == null) {
+        if (!(modelMetadataCase_ == 14)) {
+          modelMetadata_ =
+              com.google.cloud.automl.v1.TextClassificationModelMetadata.getDefaultInstance();
+        }
+        textClassificationModelMetadataBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.automl.v1.TextClassificationModelMetadata,
+                com.google.cloud.automl.v1.TextClassificationModelMetadata.Builder,
+                com.google.cloud.automl.v1.TextClassificationModelMetadataOrBuilder>(
+                (com.google.cloud.automl.v1.TextClassificationModelMetadata) modelMetadata_,
+                getParentForChildren(),
+                isClean());
+        modelMetadata_ = null;
+      }
+      modelMetadataCase_ = 14;
+      onChanged();
+      ;
+      return textClassificationModelMetadataBuilder_;
+    }
+
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.automl.v1.ImageObjectDetectionModelMetadata,
+            com.google.cloud.automl.v1.ImageObjectDetectionModelMetadata.Builder,
+            com.google.cloud.automl.v1.ImageObjectDetectionModelMetadataOrBuilder>
+        imageObjectDetectionModelMetadataBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Metadata for image object detection models.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.automl.v1.ImageObjectDetectionModelMetadata image_object_detection_model_metadata = 20;
+     * </code>
+     */
+    public boolean hasImageObjectDetectionModelMetadata() {
+      return modelMetadataCase_ == 20;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Metadata for image object detection models.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.automl.v1.ImageObjectDetectionModelMetadata image_object_detection_model_metadata = 20;
+     * </code>
+     */
+    public com.google.cloud.automl.v1.ImageObjectDetectionModelMetadata
+        getImageObjectDetectionModelMetadata() {
+      if (imageObjectDetectionModelMetadataBuilder_ == null) {
+        if (modelMetadataCase_ == 20) {
+          return (com.google.cloud.automl.v1.ImageObjectDetectionModelMetadata) modelMetadata_;
+        }
+        return com.google.cloud.automl.v1.ImageObjectDetectionModelMetadata.getDefaultInstance();
+      } else {
+        if (modelMetadataCase_ == 20) {
+          return imageObjectDetectionModelMetadataBuilder_.getMessage();
+        }
+        return com.google.cloud.automl.v1.ImageObjectDetectionModelMetadata.getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Metadata for image object detection models.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.automl.v1.ImageObjectDetectionModelMetadata image_object_detection_model_metadata = 20;
+     * </code>
+     */
+    public Builder setImageObjectDetectionModelMetadata(
+        com.google.cloud.automl.v1.ImageObjectDetectionModelMetadata value) {
+      if (imageObjectDetectionModelMetadataBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        modelMetadata_ = value;
+        onChanged();
+      } else {
+        imageObjectDetectionModelMetadataBuilder_.setMessage(value);
+      }
+      modelMetadataCase_ = 20;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Metadata for image object detection models.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.automl.v1.ImageObjectDetectionModelMetadata image_object_detection_model_metadata = 20;
+     * </code>
+     */
+    public Builder setImageObjectDetectionModelMetadata(
+        com.google.cloud.automl.v1.ImageObjectDetectionModelMetadata.Builder builderForValue) {
+      if (imageObjectDetectionModelMetadataBuilder_ == null) {
+        modelMetadata_ = builderForValue.build();
+        onChanged();
+      } else {
+        imageObjectDetectionModelMetadataBuilder_.setMessage(builderForValue.build());
+      }
+      modelMetadataCase_ = 20;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Metadata for image object detection models.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.automl.v1.ImageObjectDetectionModelMetadata image_object_detection_model_metadata = 20;
+     * </code>
+     */
+    public Builder mergeImageObjectDetectionModelMetadata(
+        com.google.cloud.automl.v1.ImageObjectDetectionModelMetadata value) {
+      if (imageObjectDetectionModelMetadataBuilder_ == null) {
+        if (modelMetadataCase_ == 20
+            && modelMetadata_
+                != com.google.cloud.automl.v1.ImageObjectDetectionModelMetadata
+                    .getDefaultInstance()) {
+          modelMetadata_ =
+              com.google.cloud.automl.v1.ImageObjectDetectionModelMetadata.newBuilder(
+                      (com.google.cloud.automl.v1.ImageObjectDetectionModelMetadata) modelMetadata_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          modelMetadata_ = value;
+        }
+        onChanged();
+      } else {
+        if (modelMetadataCase_ == 20) {
+          imageObjectDetectionModelMetadataBuilder_.mergeFrom(value);
+        }
+        imageObjectDetectionModelMetadataBuilder_.setMessage(value);
+      }
+      modelMetadataCase_ = 20;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Metadata for image object detection models.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.automl.v1.ImageObjectDetectionModelMetadata image_object_detection_model_metadata = 20;
+     * </code>
+     */
+    public Builder clearImageObjectDetectionModelMetadata() {
+      if (imageObjectDetectionModelMetadataBuilder_ == null) {
+        if (modelMetadataCase_ == 20) {
+          modelMetadataCase_ = 0;
+          modelMetadata_ = null;
+          onChanged();
+        }
+      } else {
+        if (modelMetadataCase_ == 20) {
+          modelMetadataCase_ = 0;
+          modelMetadata_ = null;
+        }
+        imageObjectDetectionModelMetadataBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Metadata for image object detection models.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.automl.v1.ImageObjectDetectionModelMetadata image_object_detection_model_metadata = 20;
+     * </code>
+     */
+    public com.google.cloud.automl.v1.ImageObjectDetectionModelMetadata.Builder
+        getImageObjectDetectionModelMetadataBuilder() {
+      return getImageObjectDetectionModelMetadataFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Metadata for image object detection models.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.automl.v1.ImageObjectDetectionModelMetadata image_object_detection_model_metadata = 20;
+     * </code>
+     */
+    public com.google.cloud.automl.v1.ImageObjectDetectionModelMetadataOrBuilder
+        getImageObjectDetectionModelMetadataOrBuilder() {
+      if ((modelMetadataCase_ == 20) && (imageObjectDetectionModelMetadataBuilder_ != null)) {
+        return imageObjectDetectionModelMetadataBuilder_.getMessageOrBuilder();
+      } else {
+        if (modelMetadataCase_ == 20) {
+          return (com.google.cloud.automl.v1.ImageObjectDetectionModelMetadata) modelMetadata_;
+        }
+        return com.google.cloud.automl.v1.ImageObjectDetectionModelMetadata.getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Metadata for image object detection models.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.automl.v1.ImageObjectDetectionModelMetadata image_object_detection_model_metadata = 20;
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.automl.v1.ImageObjectDetectionModelMetadata,
+            com.google.cloud.automl.v1.ImageObjectDetectionModelMetadata.Builder,
+            com.google.cloud.automl.v1.ImageObjectDetectionModelMetadataOrBuilder>
+        getImageObjectDetectionModelMetadataFieldBuilder() {
+      if (imageObjectDetectionModelMetadataBuilder_ == null) {
+        if (!(modelMetadataCase_ == 20)) {
+          modelMetadata_ =
+              com.google.cloud.automl.v1.ImageObjectDetectionModelMetadata.getDefaultInstance();
+        }
+        imageObjectDetectionModelMetadataBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.automl.v1.ImageObjectDetectionModelMetadata,
+                com.google.cloud.automl.v1.ImageObjectDetectionModelMetadata.Builder,
+                com.google.cloud.automl.v1.ImageObjectDetectionModelMetadataOrBuilder>(
+                (com.google.cloud.automl.v1.ImageObjectDetectionModelMetadata) modelMetadata_,
+                getParentForChildren(),
+                isClean());
+        modelMetadata_ = null;
+      }
+      modelMetadataCase_ = 20;
+      onChanged();
+      ;
+      return imageObjectDetectionModelMetadataBuilder_;
+    }
+
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.automl.v1.TextExtractionModelMetadata,
+            com.google.cloud.automl.v1.TextExtractionModelMetadata.Builder,
+            com.google.cloud.automl.v1.TextExtractionModelMetadataOrBuilder>
+        textExtractionModelMetadataBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Metadata for text extraction models.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.automl.v1.TextExtractionModelMetadata text_extraction_model_metadata = 19;
+     * </code>
+     */
+    public boolean hasTextExtractionModelMetadata() {
+      return modelMetadataCase_ == 19;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Metadata for text extraction models.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.automl.v1.TextExtractionModelMetadata text_extraction_model_metadata = 19;
+     * </code>
+     */
+    public com.google.cloud.automl.v1.TextExtractionModelMetadata getTextExtractionModelMetadata() {
+      if (textExtractionModelMetadataBuilder_ == null) {
+        if (modelMetadataCase_ == 19) {
+          return (com.google.cloud.automl.v1.TextExtractionModelMetadata) modelMetadata_;
+        }
+        return com.google.cloud.automl.v1.TextExtractionModelMetadata.getDefaultInstance();
+      } else {
+        if (modelMetadataCase_ == 19) {
+          return textExtractionModelMetadataBuilder_.getMessage();
+        }
+        return com.google.cloud.automl.v1.TextExtractionModelMetadata.getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Metadata for text extraction models.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.automl.v1.TextExtractionModelMetadata text_extraction_model_metadata = 19;
+     * </code>
+     */
+    public Builder setTextExtractionModelMetadata(
+        com.google.cloud.automl.v1.TextExtractionModelMetadata value) {
+      if (textExtractionModelMetadataBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        modelMetadata_ = value;
+        onChanged();
+      } else {
+        textExtractionModelMetadataBuilder_.setMessage(value);
+      }
+      modelMetadataCase_ = 19;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Metadata for text extraction models.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.automl.v1.TextExtractionModelMetadata text_extraction_model_metadata = 19;
+     * </code>
+     */
+    public Builder setTextExtractionModelMetadata(
+        com.google.cloud.automl.v1.TextExtractionModelMetadata.Builder builderForValue) {
+      if (textExtractionModelMetadataBuilder_ == null) {
+        modelMetadata_ = builderForValue.build();
+        onChanged();
+      } else {
+        textExtractionModelMetadataBuilder_.setMessage(builderForValue.build());
+      }
+      modelMetadataCase_ = 19;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Metadata for text extraction models.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.automl.v1.TextExtractionModelMetadata text_extraction_model_metadata = 19;
+     * </code>
+     */
+    public Builder mergeTextExtractionModelMetadata(
+        com.google.cloud.automl.v1.TextExtractionModelMetadata value) {
+      if (textExtractionModelMetadataBuilder_ == null) {
+        if (modelMetadataCase_ == 19
+            && modelMetadata_
+                != com.google.cloud.automl.v1.TextExtractionModelMetadata.getDefaultInstance()) {
+          modelMetadata_ =
+              com.google.cloud.automl.v1.TextExtractionModelMetadata.newBuilder(
+                      (com.google.cloud.automl.v1.TextExtractionModelMetadata) modelMetadata_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          modelMetadata_ = value;
+        }
+        onChanged();
+      } else {
+        if (modelMetadataCase_ == 19) {
+          textExtractionModelMetadataBuilder_.mergeFrom(value);
+        }
+        textExtractionModelMetadataBuilder_.setMessage(value);
+      }
+      modelMetadataCase_ = 19;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Metadata for text extraction models.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.automl.v1.TextExtractionModelMetadata text_extraction_model_metadata = 19;
+     * </code>
+     */
+    public Builder clearTextExtractionModelMetadata() {
+      if (textExtractionModelMetadataBuilder_ == null) {
+        if (modelMetadataCase_ == 19) {
+          modelMetadataCase_ = 0;
+          modelMetadata_ = null;
+          onChanged();
+        }
+      } else {
+        if (modelMetadataCase_ == 19) {
+          modelMetadataCase_ = 0;
+          modelMetadata_ = null;
+        }
+        textExtractionModelMetadataBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Metadata for text extraction models.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.automl.v1.TextExtractionModelMetadata text_extraction_model_metadata = 19;
+     * </code>
+     */
+    public com.google.cloud.automl.v1.TextExtractionModelMetadata.Builder
+        getTextExtractionModelMetadataBuilder() {
+      return getTextExtractionModelMetadataFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Metadata for text extraction models.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.automl.v1.TextExtractionModelMetadata text_extraction_model_metadata = 19;
+     * </code>
+     */
+    public com.google.cloud.automl.v1.TextExtractionModelMetadataOrBuilder
+        getTextExtractionModelMetadataOrBuilder() {
+      if ((modelMetadataCase_ == 19) && (textExtractionModelMetadataBuilder_ != null)) {
+        return textExtractionModelMetadataBuilder_.getMessageOrBuilder();
+      } else {
+        if (modelMetadataCase_ == 19) {
+          return (com.google.cloud.automl.v1.TextExtractionModelMetadata) modelMetadata_;
+        }
+        return com.google.cloud.automl.v1.TextExtractionModelMetadata.getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Metadata for text extraction models.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.automl.v1.TextExtractionModelMetadata text_extraction_model_metadata = 19;
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.automl.v1.TextExtractionModelMetadata,
+            com.google.cloud.automl.v1.TextExtractionModelMetadata.Builder,
+            com.google.cloud.automl.v1.TextExtractionModelMetadataOrBuilder>
+        getTextExtractionModelMetadataFieldBuilder() {
+      if (textExtractionModelMetadataBuilder_ == null) {
+        if (!(modelMetadataCase_ == 19)) {
+          modelMetadata_ =
+              com.google.cloud.automl.v1.TextExtractionModelMetadata.getDefaultInstance();
+        }
+        textExtractionModelMetadataBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.automl.v1.TextExtractionModelMetadata,
+                com.google.cloud.automl.v1.TextExtractionModelMetadata.Builder,
+                com.google.cloud.automl.v1.TextExtractionModelMetadataOrBuilder>(
+                (com.google.cloud.automl.v1.TextExtractionModelMetadata) modelMetadata_,
+                getParentForChildren(),
+                isClean());
+        modelMetadata_ = null;
+      }
+      modelMetadataCase_ = 19;
+      onChanged();
+      ;
+      return textExtractionModelMetadataBuilder_;
+    }
+
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.automl.v1.TextSentimentModelMetadata,
+            com.google.cloud.automl.v1.TextSentimentModelMetadata.Builder,
+            com.google.cloud.automl.v1.TextSentimentModelMetadataOrBuilder>
+        textSentimentModelMetadataBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Metadata for text sentiment models.
+     * </pre>
+     *
+     * <code>.google.cloud.automl.v1.TextSentimentModelMetadata text_sentiment_model_metadata = 22;
+     * </code>
+     */
+    public boolean hasTextSentimentModelMetadata() {
+      return modelMetadataCase_ == 22;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Metadata for text sentiment models.
+     * </pre>
+     *
+     * <code>.google.cloud.automl.v1.TextSentimentModelMetadata text_sentiment_model_metadata = 22;
+     * </code>
+     */
+    public com.google.cloud.automl.v1.TextSentimentModelMetadata getTextSentimentModelMetadata() {
+      if (textSentimentModelMetadataBuilder_ == null) {
+        if (modelMetadataCase_ == 22) {
+          return (com.google.cloud.automl.v1.TextSentimentModelMetadata) modelMetadata_;
+        }
+        return com.google.cloud.automl.v1.TextSentimentModelMetadata.getDefaultInstance();
+      } else {
+        if (modelMetadataCase_ == 22) {
+          return textSentimentModelMetadataBuilder_.getMessage();
+        }
+        return com.google.cloud.automl.v1.TextSentimentModelMetadata.getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Metadata for text sentiment models.
+     * </pre>
+     *
+     * <code>.google.cloud.automl.v1.TextSentimentModelMetadata text_sentiment_model_metadata = 22;
+     * </code>
+     */
+    public Builder setTextSentimentModelMetadata(
+        com.google.cloud.automl.v1.TextSentimentModelMetadata value) {
+      if (textSentimentModelMetadataBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        modelMetadata_ = value;
+        onChanged();
+      } else {
+        textSentimentModelMetadataBuilder_.setMessage(value);
+      }
+      modelMetadataCase_ = 22;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Metadata for text sentiment models.
+     * </pre>
+     *
+     * <code>.google.cloud.automl.v1.TextSentimentModelMetadata text_sentiment_model_metadata = 22;
+     * </code>
+     */
+    public Builder setTextSentimentModelMetadata(
+        com.google.cloud.automl.v1.TextSentimentModelMetadata.Builder builderForValue) {
+      if (textSentimentModelMetadataBuilder_ == null) {
+        modelMetadata_ = builderForValue.build();
+        onChanged();
+      } else {
+        textSentimentModelMetadataBuilder_.setMessage(builderForValue.build());
+      }
+      modelMetadataCase_ = 22;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Metadata for text sentiment models.
+     * </pre>
+     *
+     * <code>.google.cloud.automl.v1.TextSentimentModelMetadata text_sentiment_model_metadata = 22;
+     * </code>
+     */
+    public Builder mergeTextSentimentModelMetadata(
+        com.google.cloud.automl.v1.TextSentimentModelMetadata value) {
+      if (textSentimentModelMetadataBuilder_ == null) {
+        if (modelMetadataCase_ == 22
+            && modelMetadata_
+                != com.google.cloud.automl.v1.TextSentimentModelMetadata.getDefaultInstance()) {
+          modelMetadata_ =
+              com.google.cloud.automl.v1.TextSentimentModelMetadata.newBuilder(
+                      (com.google.cloud.automl.v1.TextSentimentModelMetadata) modelMetadata_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          modelMetadata_ = value;
+        }
+        onChanged();
+      } else {
+        if (modelMetadataCase_ == 22) {
+          textSentimentModelMetadataBuilder_.mergeFrom(value);
+        }
+        textSentimentModelMetadataBuilder_.setMessage(value);
+      }
+      modelMetadataCase_ = 22;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Metadata for text sentiment models.
+     * </pre>
+     *
+     * <code>.google.cloud.automl.v1.TextSentimentModelMetadata text_sentiment_model_metadata = 22;
+     * </code>
+     */
+    public Builder clearTextSentimentModelMetadata() {
+      if (textSentimentModelMetadataBuilder_ == null) {
+        if (modelMetadataCase_ == 22) {
+          modelMetadataCase_ = 0;
+          modelMetadata_ = null;
+          onChanged();
+        }
+      } else {
+        if (modelMetadataCase_ == 22) {
+          modelMetadataCase_ = 0;
+          modelMetadata_ = null;
+        }
+        textSentimentModelMetadataBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Metadata for text sentiment models.
+     * </pre>
+     *
+     * <code>.google.cloud.automl.v1.TextSentimentModelMetadata text_sentiment_model_metadata = 22;
+     * </code>
+     */
+    public com.google.cloud.automl.v1.TextSentimentModelMetadata.Builder
+        getTextSentimentModelMetadataBuilder() {
+      return getTextSentimentModelMetadataFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Metadata for text sentiment models.
+     * </pre>
+     *
+     * <code>.google.cloud.automl.v1.TextSentimentModelMetadata text_sentiment_model_metadata = 22;
+     * </code>
+     */
+    public com.google.cloud.automl.v1.TextSentimentModelMetadataOrBuilder
+        getTextSentimentModelMetadataOrBuilder() {
+      if ((modelMetadataCase_ == 22) && (textSentimentModelMetadataBuilder_ != null)) {
+        return textSentimentModelMetadataBuilder_.getMessageOrBuilder();
+      } else {
+        if (modelMetadataCase_ == 22) {
+          return (com.google.cloud.automl.v1.TextSentimentModelMetadata) modelMetadata_;
+        }
+        return com.google.cloud.automl.v1.TextSentimentModelMetadata.getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Metadata for text sentiment models.
+     * </pre>
+     *
+     * <code>.google.cloud.automl.v1.TextSentimentModelMetadata text_sentiment_model_metadata = 22;
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.automl.v1.TextSentimentModelMetadata,
+            com.google.cloud.automl.v1.TextSentimentModelMetadata.Builder,
+            com.google.cloud.automl.v1.TextSentimentModelMetadataOrBuilder>
+        getTextSentimentModelMetadataFieldBuilder() {
+      if (textSentimentModelMetadataBuilder_ == null) {
+        if (!(modelMetadataCase_ == 22)) {
+          modelMetadata_ =
+              com.google.cloud.automl.v1.TextSentimentModelMetadata.getDefaultInstance();
+        }
+        textSentimentModelMetadataBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.automl.v1.TextSentimentModelMetadata,
+                com.google.cloud.automl.v1.TextSentimentModelMetadata.Builder,
+                com.google.cloud.automl.v1.TextSentimentModelMetadataOrBuilder>(
+                (com.google.cloud.automl.v1.TextSentimentModelMetadata) modelMetadata_,
+                getParentForChildren(),
+                isClean());
+        modelMetadata_ = null;
+      }
+      modelMetadataCase_ = 22;
+      onChanged();
+      ;
+      return textSentimentModelMetadataBuilder_;
     }
 
     private java.lang.Object name_ = "";
@@ -2281,6 +3990,105 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
     public Builder clearDeploymentState() {
 
       deploymentState_ = 0;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object etag_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * Used to perform a consistent read-modify-write updates. If not set, a blind
+     * "overwrite" update happens.
+     * </pre>
+     *
+     * <code>string etag = 10;</code>
+     */
+    public java.lang.String getEtag() {
+      java.lang.Object ref = etag_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        etag_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Used to perform a consistent read-modify-write updates. If not set, a blind
+     * "overwrite" update happens.
+     * </pre>
+     *
+     * <code>string etag = 10;</code>
+     */
+    public com.google.protobuf.ByteString getEtagBytes() {
+      java.lang.Object ref = etag_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        etag_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Used to perform a consistent read-modify-write updates. If not set, a blind
+     * "overwrite" update happens.
+     * </pre>
+     *
+     * <code>string etag = 10;</code>
+     */
+    public Builder setEtag(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+
+      etag_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Used to perform a consistent read-modify-write updates. If not set, a blind
+     * "overwrite" update happens.
+     * </pre>
+     *
+     * <code>string etag = 10;</code>
+     */
+    public Builder clearEtag() {
+
+      etag_ = getDefaultInstance().getEtag();
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Used to perform a consistent read-modify-write updates. If not set, a blind
+     * "overwrite" update happens.
+     * </pre>
+     *
+     * <code>string etag = 10;</code>
+     */
+    public Builder setEtagBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
+      etag_ = value;
       onChanged();
       return this;
     }

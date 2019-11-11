@@ -1030,6 +1030,98 @@ public class AutoMlClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
+   * Gets an annotation spec.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (AutoMlClient autoMlClient = AutoMlClient.create()) {
+   *   AnnotationSpecName name = AnnotationSpecName.of("[PROJECT]", "[LOCATION]", "[DATASET]", "[ANNOTATION_SPEC]");
+   *   AnnotationSpec response = autoMlClient.getAnnotationSpec(name);
+   * }
+   * </code></pre>
+   *
+   * @param name The resource name of the annotation spec to retrieve.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final AnnotationSpec getAnnotationSpec(AnnotationSpecName name) {
+
+    GetAnnotationSpecRequest request =
+        GetAnnotationSpecRequest.newBuilder()
+            .setName(name == null ? null : name.toString())
+            .build();
+    return getAnnotationSpec(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Gets an annotation spec.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (AutoMlClient autoMlClient = AutoMlClient.create()) {
+   *   AnnotationSpecName name = AnnotationSpecName.of("[PROJECT]", "[LOCATION]", "[DATASET]", "[ANNOTATION_SPEC]");
+   *   AnnotationSpec response = autoMlClient.getAnnotationSpec(name.toString());
+   * }
+   * </code></pre>
+   *
+   * @param name The resource name of the annotation spec to retrieve.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final AnnotationSpec getAnnotationSpec(String name) {
+
+    GetAnnotationSpecRequest request = GetAnnotationSpecRequest.newBuilder().setName(name).build();
+    return getAnnotationSpec(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Gets an annotation spec.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (AutoMlClient autoMlClient = AutoMlClient.create()) {
+   *   AnnotationSpecName name = AnnotationSpecName.of("[PROJECT]", "[LOCATION]", "[DATASET]", "[ANNOTATION_SPEC]");
+   *   GetAnnotationSpecRequest request = GetAnnotationSpecRequest.newBuilder()
+   *     .setName(name.toString())
+   *     .build();
+   *   AnnotationSpec response = autoMlClient.getAnnotationSpec(request);
+   * }
+   * </code></pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final AnnotationSpec getAnnotationSpec(GetAnnotationSpecRequest request) {
+    return getAnnotationSpecCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Gets an annotation spec.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (AutoMlClient autoMlClient = AutoMlClient.create()) {
+   *   AnnotationSpecName name = AnnotationSpecName.of("[PROJECT]", "[LOCATION]", "[DATASET]", "[ANNOTATION_SPEC]");
+   *   GetAnnotationSpecRequest request = GetAnnotationSpecRequest.newBuilder()
+   *     .setName(name.toString())
+   *     .build();
+   *   ApiFuture&lt;AnnotationSpec&gt; future = autoMlClient.getAnnotationSpecCallable().futureCall(request);
+   *   // Do something
+   *   AnnotationSpec response = future.get();
+   * }
+   * </code></pre>
+   */
+  public final UnaryCallable<GetAnnotationSpecRequest, AnnotationSpec> getAnnotationSpecCallable() {
+    return stub.getAnnotationSpecCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
    * Creates a model. Returns a Model in the [response][google.longrunning.Operation.response] field
    * when it completes. When you create a model, several model evaluations are created for it: a
    * global evaluation, and one evaluation for each annotation spec.
@@ -1595,6 +1687,421 @@ public class AutoMlClient implements BackgroundResource {
    */
   public final UnaryCallable<DeleteModelRequest, Operation> deleteModelCallable() {
     return stub.deleteModelCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Deploys a model. If a model is already deployed, deploying it with the same parameters has no
+   * effect. Deploying with different parametrs (as e.g. changing
+   *
+   * <p>[node_number][google.cloud.automl.v1.ImageObjectDetectionModelDeploymentMetadata.node_number])
+   * will reset the deployment state without pausing the model's availability.
+   *
+   * <p>Only applicable for Text Classification, Image Object Detection; all other domains manage
+   * deployment automatically.
+   *
+   * <p>Returns an empty response in the [response][google.longrunning.Operation.response] field
+   * when it completes.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (AutoMlClient autoMlClient = AutoMlClient.create()) {
+   *   ModelName name = ModelName.of("[PROJECT]", "[LOCATION]", "[MODEL]");
+   *   autoMlClient.deployModelAsync(name).get();
+   * }
+   * </code></pre>
+   *
+   * @param name Resource name of the model to deploy.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  @BetaApi(
+      "The surface for long-running operations is not stable yet and may change in the future.")
+  public final OperationFuture<Empty, OperationMetadata> deployModelAsync(ModelName name) {
+
+    DeployModelRequest request =
+        DeployModelRequest.newBuilder().setName(name == null ? null : name.toString()).build();
+    return deployModelAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Deploys a model. If a model is already deployed, deploying it with the same parameters has no
+   * effect. Deploying with different parametrs (as e.g. changing
+   *
+   * <p>[node_number][google.cloud.automl.v1.ImageObjectDetectionModelDeploymentMetadata.node_number])
+   * will reset the deployment state without pausing the model's availability.
+   *
+   * <p>Only applicable for Text Classification, Image Object Detection; all other domains manage
+   * deployment automatically.
+   *
+   * <p>Returns an empty response in the [response][google.longrunning.Operation.response] field
+   * when it completes.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (AutoMlClient autoMlClient = AutoMlClient.create()) {
+   *   ModelName name = ModelName.of("[PROJECT]", "[LOCATION]", "[MODEL]");
+   *   autoMlClient.deployModelAsync(name.toString()).get();
+   * }
+   * </code></pre>
+   *
+   * @param name Resource name of the model to deploy.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  @BetaApi(
+      "The surface for long-running operations is not stable yet and may change in the future.")
+  public final OperationFuture<Empty, OperationMetadata> deployModelAsync(String name) {
+
+    DeployModelRequest request = DeployModelRequest.newBuilder().setName(name).build();
+    return deployModelAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Deploys a model. If a model is already deployed, deploying it with the same parameters has no
+   * effect. Deploying with different parametrs (as e.g. changing
+   *
+   * <p>[node_number][google.cloud.automl.v1.ImageObjectDetectionModelDeploymentMetadata.node_number])
+   * will reset the deployment state without pausing the model's availability.
+   *
+   * <p>Only applicable for Text Classification, Image Object Detection; all other domains manage
+   * deployment automatically.
+   *
+   * <p>Returns an empty response in the [response][google.longrunning.Operation.response] field
+   * when it completes.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (AutoMlClient autoMlClient = AutoMlClient.create()) {
+   *   ModelName name = ModelName.of("[PROJECT]", "[LOCATION]", "[MODEL]");
+   *   DeployModelRequest request = DeployModelRequest.newBuilder()
+   *     .setName(name.toString())
+   *     .build();
+   *   autoMlClient.deployModelAsync(request).get();
+   * }
+   * </code></pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  @BetaApi(
+      "The surface for long-running operations is not stable yet and may change in the future.")
+  public final OperationFuture<Empty, OperationMetadata> deployModelAsync(
+      DeployModelRequest request) {
+    return deployModelOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Deploys a model. If a model is already deployed, deploying it with the same parameters has no
+   * effect. Deploying with different parametrs (as e.g. changing
+   *
+   * <p>[node_number][google.cloud.automl.v1.ImageObjectDetectionModelDeploymentMetadata.node_number])
+   * will reset the deployment state without pausing the model's availability.
+   *
+   * <p>Only applicable for Text Classification, Image Object Detection; all other domains manage
+   * deployment automatically.
+   *
+   * <p>Returns an empty response in the [response][google.longrunning.Operation.response] field
+   * when it completes.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (AutoMlClient autoMlClient = AutoMlClient.create()) {
+   *   ModelName name = ModelName.of("[PROJECT]", "[LOCATION]", "[MODEL]");
+   *   DeployModelRequest request = DeployModelRequest.newBuilder()
+   *     .setName(name.toString())
+   *     .build();
+   *   OperationFuture&lt;Empty, OperationMetadata&gt; future = autoMlClient.deployModelOperationCallable().futureCall(request);
+   *   // Do something
+   *   future.get();
+   * }
+   * </code></pre>
+   */
+  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
+  public final OperationCallable<DeployModelRequest, Empty, OperationMetadata>
+      deployModelOperationCallable() {
+    return stub.deployModelOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Deploys a model. If a model is already deployed, deploying it with the same parameters has no
+   * effect. Deploying with different parametrs (as e.g. changing
+   *
+   * <p>[node_number][google.cloud.automl.v1.ImageObjectDetectionModelDeploymentMetadata.node_number])
+   * will reset the deployment state without pausing the model's availability.
+   *
+   * <p>Only applicable for Text Classification, Image Object Detection; all other domains manage
+   * deployment automatically.
+   *
+   * <p>Returns an empty response in the [response][google.longrunning.Operation.response] field
+   * when it completes.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (AutoMlClient autoMlClient = AutoMlClient.create()) {
+   *   ModelName name = ModelName.of("[PROJECT]", "[LOCATION]", "[MODEL]");
+   *   DeployModelRequest request = DeployModelRequest.newBuilder()
+   *     .setName(name.toString())
+   *     .build();
+   *   ApiFuture&lt;Operation&gt; future = autoMlClient.deployModelCallable().futureCall(request);
+   *   // Do something
+   *   future.get();
+   * }
+   * </code></pre>
+   */
+  public final UnaryCallable<DeployModelRequest, Operation> deployModelCallable() {
+    return stub.deployModelCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Undeploys a model. If the model is not deployed this method has no effect.
+   *
+   * <p>Only applicable for Text Classification, Image Object Detection; all other domains manage
+   * deployment automatically.
+   *
+   * <p>Returns an empty response in the [response][google.longrunning.Operation.response] field
+   * when it completes.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (AutoMlClient autoMlClient = AutoMlClient.create()) {
+   *   ModelName name = ModelName.of("[PROJECT]", "[LOCATION]", "[MODEL]");
+   *   autoMlClient.undeployModelAsync(name).get();
+   * }
+   * </code></pre>
+   *
+   * @param name Resource name of the model to undeploy.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  @BetaApi(
+      "The surface for long-running operations is not stable yet and may change in the future.")
+  public final OperationFuture<Empty, OperationMetadata> undeployModelAsync(ModelName name) {
+
+    UndeployModelRequest request =
+        UndeployModelRequest.newBuilder().setName(name == null ? null : name.toString()).build();
+    return undeployModelAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Undeploys a model. If the model is not deployed this method has no effect.
+   *
+   * <p>Only applicable for Text Classification, Image Object Detection; all other domains manage
+   * deployment automatically.
+   *
+   * <p>Returns an empty response in the [response][google.longrunning.Operation.response] field
+   * when it completes.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (AutoMlClient autoMlClient = AutoMlClient.create()) {
+   *   ModelName name = ModelName.of("[PROJECT]", "[LOCATION]", "[MODEL]");
+   *   autoMlClient.undeployModelAsync(name.toString()).get();
+   * }
+   * </code></pre>
+   *
+   * @param name Resource name of the model to undeploy.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  @BetaApi(
+      "The surface for long-running operations is not stable yet and may change in the future.")
+  public final OperationFuture<Empty, OperationMetadata> undeployModelAsync(String name) {
+
+    UndeployModelRequest request = UndeployModelRequest.newBuilder().setName(name).build();
+    return undeployModelAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Undeploys a model. If the model is not deployed this method has no effect.
+   *
+   * <p>Only applicable for Text Classification, Image Object Detection; all other domains manage
+   * deployment automatically.
+   *
+   * <p>Returns an empty response in the [response][google.longrunning.Operation.response] field
+   * when it completes.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (AutoMlClient autoMlClient = AutoMlClient.create()) {
+   *   ModelName name = ModelName.of("[PROJECT]", "[LOCATION]", "[MODEL]");
+   *   UndeployModelRequest request = UndeployModelRequest.newBuilder()
+   *     .setName(name.toString())
+   *     .build();
+   *   autoMlClient.undeployModelAsync(request).get();
+   * }
+   * </code></pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  @BetaApi(
+      "The surface for long-running operations is not stable yet and may change in the future.")
+  public final OperationFuture<Empty, OperationMetadata> undeployModelAsync(
+      UndeployModelRequest request) {
+    return undeployModelOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Undeploys a model. If the model is not deployed this method has no effect.
+   *
+   * <p>Only applicable for Text Classification, Image Object Detection; all other domains manage
+   * deployment automatically.
+   *
+   * <p>Returns an empty response in the [response][google.longrunning.Operation.response] field
+   * when it completes.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (AutoMlClient autoMlClient = AutoMlClient.create()) {
+   *   ModelName name = ModelName.of("[PROJECT]", "[LOCATION]", "[MODEL]");
+   *   UndeployModelRequest request = UndeployModelRequest.newBuilder()
+   *     .setName(name.toString())
+   *     .build();
+   *   OperationFuture&lt;Empty, OperationMetadata&gt; future = autoMlClient.undeployModelOperationCallable().futureCall(request);
+   *   // Do something
+   *   future.get();
+   * }
+   * </code></pre>
+   */
+  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
+  public final OperationCallable<UndeployModelRequest, Empty, OperationMetadata>
+      undeployModelOperationCallable() {
+    return stub.undeployModelOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Undeploys a model. If the model is not deployed this method has no effect.
+   *
+   * <p>Only applicable for Text Classification, Image Object Detection; all other domains manage
+   * deployment automatically.
+   *
+   * <p>Returns an empty response in the [response][google.longrunning.Operation.response] field
+   * when it completes.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (AutoMlClient autoMlClient = AutoMlClient.create()) {
+   *   ModelName name = ModelName.of("[PROJECT]", "[LOCATION]", "[MODEL]");
+   *   UndeployModelRequest request = UndeployModelRequest.newBuilder()
+   *     .setName(name.toString())
+   *     .build();
+   *   ApiFuture&lt;Operation&gt; future = autoMlClient.undeployModelCallable().futureCall(request);
+   *   // Do something
+   *   future.get();
+   * }
+   * </code></pre>
+   */
+  public final UnaryCallable<UndeployModelRequest, Operation> undeployModelCallable() {
+    return stub.undeployModelCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Exports a trained, "export-able", model to a user specified Google Cloud Storage location. A
+   * model is considered export-able if and only if it has an export format defined for it in
+   * [ModelExportOutputConfig][google.cloud.automl.v1.ModelExportOutputConfig].
+   *
+   * <p>Returns an empty response in the [response][google.longrunning.Operation.response] field
+   * when it completes.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (AutoMlClient autoMlClient = AutoMlClient.create()) {
+   *   ModelName name = ModelName.of("[PROJECT]", "[LOCATION]", "[MODEL]");
+   *   ModelExportOutputConfig outputConfig = ModelExportOutputConfig.newBuilder().build();
+   *   ExportModelRequest request = ExportModelRequest.newBuilder()
+   *     .setName(name.toString())
+   *     .setOutputConfig(outputConfig)
+   *     .build();
+   *   autoMlClient.exportModelAsync(request).get();
+   * }
+   * </code></pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  @BetaApi(
+      "The surface for long-running operations is not stable yet and may change in the future.")
+  public final OperationFuture<Empty, OperationMetadata> exportModelAsync(
+      ExportModelRequest request) {
+    return exportModelOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Exports a trained, "export-able", model to a user specified Google Cloud Storage location. A
+   * model is considered export-able if and only if it has an export format defined for it in
+   * [ModelExportOutputConfig][google.cloud.automl.v1.ModelExportOutputConfig].
+   *
+   * <p>Returns an empty response in the [response][google.longrunning.Operation.response] field
+   * when it completes.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (AutoMlClient autoMlClient = AutoMlClient.create()) {
+   *   ModelName name = ModelName.of("[PROJECT]", "[LOCATION]", "[MODEL]");
+   *   ModelExportOutputConfig outputConfig = ModelExportOutputConfig.newBuilder().build();
+   *   ExportModelRequest request = ExportModelRequest.newBuilder()
+   *     .setName(name.toString())
+   *     .setOutputConfig(outputConfig)
+   *     .build();
+   *   OperationFuture&lt;Empty, OperationMetadata&gt; future = autoMlClient.exportModelOperationCallable().futureCall(request);
+   *   // Do something
+   *   future.get();
+   * }
+   * </code></pre>
+   */
+  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
+  public final OperationCallable<ExportModelRequest, Empty, OperationMetadata>
+      exportModelOperationCallable() {
+    return stub.exportModelOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Exports a trained, "export-able", model to a user specified Google Cloud Storage location. A
+   * model is considered export-able if and only if it has an export format defined for it in
+   * [ModelExportOutputConfig][google.cloud.automl.v1.ModelExportOutputConfig].
+   *
+   * <p>Returns an empty response in the [response][google.longrunning.Operation.response] field
+   * when it completes.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (AutoMlClient autoMlClient = AutoMlClient.create()) {
+   *   ModelName name = ModelName.of("[PROJECT]", "[LOCATION]", "[MODEL]");
+   *   ModelExportOutputConfig outputConfig = ModelExportOutputConfig.newBuilder().build();
+   *   ExportModelRequest request = ExportModelRequest.newBuilder()
+   *     .setName(name.toString())
+   *     .setOutputConfig(outputConfig)
+   *     .build();
+   *   ApiFuture&lt;Operation&gt; future = autoMlClient.exportModelCallable().futureCall(request);
+   *   // Do something
+   *   future.get();
+   * }
+   * </code></pre>
+   */
+  public final UnaryCallable<ExportModelRequest, Operation> exportModelCallable() {
+    return stub.exportModelCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD

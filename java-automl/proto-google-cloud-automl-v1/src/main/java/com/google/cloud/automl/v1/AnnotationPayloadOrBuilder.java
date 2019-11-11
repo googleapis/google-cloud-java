@@ -54,5 +54,186 @@ public interface AnnotationPayloadOrBuilder
    */
   com.google.cloud.automl.v1.TranslationAnnotationOrBuilder getTranslationOrBuilder();
 
+  /**
+   *
+   *
+   * <pre>
+   * Annotation details for content or image classification.
+   * </pre>
+   *
+   * <code>.google.cloud.automl.v1.ClassificationAnnotation classification = 3;</code>
+   */
+  boolean hasClassification();
+  /**
+   *
+   *
+   * <pre>
+   * Annotation details for content or image classification.
+   * </pre>
+   *
+   * <code>.google.cloud.automl.v1.ClassificationAnnotation classification = 3;</code>
+   */
+  com.google.cloud.automl.v1.ClassificationAnnotation getClassification();
+  /**
+   *
+   *
+   * <pre>
+   * Annotation details for content or image classification.
+   * </pre>
+   *
+   * <code>.google.cloud.automl.v1.ClassificationAnnotation classification = 3;</code>
+   */
+  com.google.cloud.automl.v1.ClassificationAnnotationOrBuilder getClassificationOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Annotation details for image object detection.
+   * </pre>
+   *
+   * <code>.google.cloud.automl.v1.ImageObjectDetectionAnnotation image_object_detection = 4;</code>
+   */
+  boolean hasImageObjectDetection();
+  /**
+   *
+   *
+   * <pre>
+   * Annotation details for image object detection.
+   * </pre>
+   *
+   * <code>.google.cloud.automl.v1.ImageObjectDetectionAnnotation image_object_detection = 4;</code>
+   */
+  com.google.cloud.automl.v1.ImageObjectDetectionAnnotation getImageObjectDetection();
+  /**
+   *
+   *
+   * <pre>
+   * Annotation details for image object detection.
+   * </pre>
+   *
+   * <code>.google.cloud.automl.v1.ImageObjectDetectionAnnotation image_object_detection = 4;</code>
+   */
+  com.google.cloud.automl.v1.ImageObjectDetectionAnnotationOrBuilder
+      getImageObjectDetectionOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Annotation details for text extraction.
+   * </pre>
+   *
+   * <code>.google.cloud.automl.v1.TextExtractionAnnotation text_extraction = 6;</code>
+   */
+  boolean hasTextExtraction();
+  /**
+   *
+   *
+   * <pre>
+   * Annotation details for text extraction.
+   * </pre>
+   *
+   * <code>.google.cloud.automl.v1.TextExtractionAnnotation text_extraction = 6;</code>
+   */
+  com.google.cloud.automl.v1.TextExtractionAnnotation getTextExtraction();
+  /**
+   *
+   *
+   * <pre>
+   * Annotation details for text extraction.
+   * </pre>
+   *
+   * <code>.google.cloud.automl.v1.TextExtractionAnnotation text_extraction = 6;</code>
+   */
+  com.google.cloud.automl.v1.TextExtractionAnnotationOrBuilder getTextExtractionOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Annotation details for text sentiment.
+   * </pre>
+   *
+   * <code>.google.cloud.automl.v1.TextSentimentAnnotation text_sentiment = 7;</code>
+   */
+  boolean hasTextSentiment();
+  /**
+   *
+   *
+   * <pre>
+   * Annotation details for text sentiment.
+   * </pre>
+   *
+   * <code>.google.cloud.automl.v1.TextSentimentAnnotation text_sentiment = 7;</code>
+   */
+  com.google.cloud.automl.v1.TextSentimentAnnotation getTextSentiment();
+  /**
+   *
+   *
+   * <pre>
+   * Annotation details for text sentiment.
+   * </pre>
+   *
+   * <code>.google.cloud.automl.v1.TextSentimentAnnotation text_sentiment = 7;</code>
+   */
+  com.google.cloud.automl.v1.TextSentimentAnnotationOrBuilder getTextSentimentOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only . The resource ID of the annotation spec that
+   * this annotation pertains to. The annotation spec comes from either an
+   * ancestor dataset, or the dataset that was used to train the model in use.
+   * </pre>
+   *
+   * <code>string annotation_spec_id = 1;</code>
+   */
+  java.lang.String getAnnotationSpecId();
+  /**
+   *
+   *
+   * <pre>
+   * Output only . The resource ID of the annotation spec that
+   * this annotation pertains to. The annotation spec comes from either an
+   * ancestor dataset, or the dataset that was used to train the model in use.
+   * </pre>
+   *
+   * <code>string annotation_spec_id = 1;</code>
+   */
+  com.google.protobuf.ByteString getAnnotationSpecIdBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The value of
+   * [display_name][google.cloud.automl.v1.AnnotationSpec.display_name]
+   * when the model was trained. Because this field returns a value at model
+   * training time, for different models trained using the same dataset, the
+   * returned value could be different as model owner could update the
+   * `display_name` between any two model training.
+   * </pre>
+   *
+   * <code>string display_name = 5;</code>
+   */
+  java.lang.String getDisplayName();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The value of
+   * [display_name][google.cloud.automl.v1.AnnotationSpec.display_name]
+   * when the model was trained. Because this field returns a value at model
+   * training time, for different models trained using the same dataset, the
+   * returned value could be different as model owner could update the
+   * `display_name` between any two model training.
+   * </pre>
+   *
+   * <code>string display_name = 5;</code>
+   */
+  com.google.protobuf.ByteString getDisplayNameBytes();
+
   public com.google.cloud.automl.v1.AnnotationPayload.DetailCase getDetailCase();
 }

@@ -61,21 +61,23 @@ public final class TextProto {
   static {
     java.lang.String[] descriptorData = {
       "\n&google/cloud/automl/v1beta1/text.proto"
-          + "\022\033google.cloud.automl.v1beta1\0320google/cl"
-          + "oud/automl/v1beta1/classification.proto\032"
-          + "\034google/api/annotations.proto\"q\n!TextCla"
+          + "\022\033google.cloud.automl.v1beta1\032\034google/ap"
+          + "i/annotations.proto\0320google/cloud/automl"
+          + "/v1beta1/classification.proto\"q\n!TextCla"
           + "ssificationDatasetMetadata\022L\n\023classifica"
           + "tion_type\030\001 \001(\0162/.google.cloud.automl.v1"
-          + "beta1.ClassificationType\"!\n\037TextClassifi"
-          + "cationModelMetadata\"\037\n\035TextExtractionDat"
-          + "asetMetadata\"\035\n\033TextExtractionModelMetad"
-          + "ata\"5\n\034TextSentimentDatasetMetadata\022\025\n\rs"
-          + "entiment_max\030\001 \001(\005\"\034\n\032TextSentimentModel"
-          + "MetadataB\260\001\n\037com.google.cloud.automl.v1b"
-          + "eta1B\tTextProtoP\001ZAgoogle.golang.org/gen"
-          + "proto/googleapis/cloud/automl/v1beta1;au"
-          + "toml\312\002\033Google\\Cloud\\AutoMl\\V1beta1\352\002\036Goo"
-          + "gle::Cloud::AutoML::V1beta1b\006proto3"
+          + "beta1.ClassificationType\"o\n\037TextClassifi"
+          + "cationModelMetadata\022L\n\023classification_ty"
+          + "pe\030\003 \001(\0162/.google.cloud.automl.v1beta1.C"
+          + "lassificationType\"\037\n\035TextExtractionDatas"
+          + "etMetadata\"\035\n\033TextExtractionModelMetadat"
+          + "a\"5\n\034TextSentimentDatasetMetadata\022\025\n\rsen"
+          + "timent_max\030\001 \001(\005\"\034\n\032TextSentimentModelMe"
+          + "tadataB\260\001\n\037com.google.cloud.automl.v1bet"
+          + "a1B\tTextProtoP\001ZAgoogle.golang.org/genpr"
+          + "oto/googleapis/cloud/automl/v1beta1;auto"
+          + "ml\312\002\033Google\\Cloud\\AutoMl\\V1beta1\352\002\036Googl"
+          + "e::Cloud::AutoML::V1beta1b\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner() {
@@ -88,8 +90,8 @@ public final class TextProto {
     com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
         descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
-          com.google.cloud.automl.v1beta1.ClassificationProto.getDescriptor(),
           com.google.api.AnnotationsProto.getDescriptor(),
+          com.google.cloud.automl.v1beta1.ClassificationProto.getDescriptor(),
         },
         assigner);
     internal_static_google_cloud_automl_v1beta1_TextClassificationDatasetMetadata_descriptor =
@@ -105,7 +107,9 @@ public final class TextProto {
     internal_static_google_cloud_automl_v1beta1_TextClassificationModelMetadata_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_automl_v1beta1_TextClassificationModelMetadata_descriptor,
-            new java.lang.String[] {});
+            new java.lang.String[] {
+              "ClassificationType",
+            });
     internal_static_google_cloud_automl_v1beta1_TextExtractionDatasetMetadata_descriptor =
         getDescriptor().getMessageTypes().get(2);
     internal_static_google_cloud_automl_v1beta1_TextExtractionDatasetMetadata_fieldAccessorTable =
@@ -132,8 +136,8 @@ public final class TextProto {
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_automl_v1beta1_TextSentimentModelMetadata_descriptor,
             new java.lang.String[] {});
-    com.google.cloud.automl.v1beta1.ClassificationProto.getDescriptor();
     com.google.api.AnnotationsProto.getDescriptor();
+    com.google.cloud.automl.v1beta1.ClassificationProto.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

@@ -99,6 +99,16 @@ public final class ImageClassificationModelMetadata extends com.google.protobuf.
               modelType_ = s;
               break;
             }
+          case 105:
+            {
+              nodeQps_ = input.readDouble();
+              break;
+            }
+          case 112:
+            {
+              nodeCount_ = input.readInt64();
+              break;
+            }
           default:
             {
               if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -377,6 +387,39 @@ public final class ImageClassificationModelMetadata extends com.google.protobuf.
     }
   }
 
+  public static final int NODE_QPS_FIELD_NUMBER = 13;
+  private double nodeQps_;
+  /**
+   *
+   *
+   * <pre>
+   * Output only. An approximate number of online prediction QPS that can
+   * be supported by this model per each node on which it is deployed.
+   * </pre>
+   *
+   * <code>double node_qps = 13;</code>
+   */
+  public double getNodeQps() {
+    return nodeQps_;
+  }
+
+  public static final int NODE_COUNT_FIELD_NUMBER = 14;
+  private long nodeCount_;
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The number of nodes this model is deployed on. A node is an
+   * abstraction of a machine resource, which can handle online prediction QPS
+   * as given in the node_qps field.
+   * </pre>
+   *
+   * <code>int64 node_count = 14;</code>
+   */
+  public long getNodeCount() {
+    return nodeCount_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -406,6 +449,12 @@ public final class ImageClassificationModelMetadata extends com.google.protobuf.
     if (!getModelTypeBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 7, modelType_);
     }
+    if (nodeQps_ != 0D) {
+      output.writeDouble(13, nodeQps_);
+    }
+    if (nodeCount_ != 0L) {
+      output.writeInt64(14, nodeCount_);
+    }
     unknownFields.writeTo(output);
   }
 
@@ -430,6 +479,12 @@ public final class ImageClassificationModelMetadata extends com.google.protobuf.
     if (!getModelTypeBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(7, modelType_);
     }
+    if (nodeQps_ != 0D) {
+      size += com.google.protobuf.CodedOutputStream.computeDoubleSize(13, nodeQps_);
+    }
+    if (nodeCount_ != 0L) {
+      size += com.google.protobuf.CodedOutputStream.computeInt64Size(14, nodeCount_);
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -451,6 +506,9 @@ public final class ImageClassificationModelMetadata extends com.google.protobuf.
     if (getTrainCost() != other.getTrainCost()) return false;
     if (!getStopReason().equals(other.getStopReason())) return false;
     if (!getModelType().equals(other.getModelType())) return false;
+    if (java.lang.Double.doubleToLongBits(getNodeQps())
+        != java.lang.Double.doubleToLongBits(other.getNodeQps())) return false;
+    if (getNodeCount() != other.getNodeCount()) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -472,6 +530,13 @@ public final class ImageClassificationModelMetadata extends com.google.protobuf.
     hash = (53 * hash) + getStopReason().hashCode();
     hash = (37 * hash) + MODEL_TYPE_FIELD_NUMBER;
     hash = (53 * hash) + getModelType().hashCode();
+    hash = (37 * hash) + NODE_QPS_FIELD_NUMBER;
+    hash =
+        (53 * hash)
+            + com.google.protobuf.Internal.hashLong(
+                java.lang.Double.doubleToLongBits(getNodeQps()));
+    hash = (37 * hash) + NODE_COUNT_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashLong(getNodeCount());
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -628,6 +693,10 @@ public final class ImageClassificationModelMetadata extends com.google.protobuf.
 
       modelType_ = "";
 
+      nodeQps_ = 0D;
+
+      nodeCount_ = 0L;
+
       return this;
     }
 
@@ -661,6 +730,8 @@ public final class ImageClassificationModelMetadata extends com.google.protobuf.
       result.trainCost_ = trainCost_;
       result.stopReason_ = stopReason_;
       result.modelType_ = modelType_;
+      result.nodeQps_ = nodeQps_;
+      result.nodeCount_ = nodeCount_;
       onBuilt();
       return result;
     }
@@ -730,6 +801,12 @@ public final class ImageClassificationModelMetadata extends com.google.protobuf.
       if (!other.getModelType().isEmpty()) {
         modelType_ = other.modelType_;
         onChanged();
+      }
+      if (other.getNodeQps() != 0D) {
+        setNodeQps(other.getNodeQps());
+      }
+      if (other.getNodeCount() != 0L) {
+        setNodeCount(other.getNodeCount());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -1342,6 +1419,103 @@ public final class ImageClassificationModelMetadata extends com.google.protobuf.
       checkByteStringIsUtf8(value);
 
       modelType_ = value;
+      onChanged();
+      return this;
+    }
+
+    private double nodeQps_;
+    /**
+     *
+     *
+     * <pre>
+     * Output only. An approximate number of online prediction QPS that can
+     * be supported by this model per each node on which it is deployed.
+     * </pre>
+     *
+     * <code>double node_qps = 13;</code>
+     */
+    public double getNodeQps() {
+      return nodeQps_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. An approximate number of online prediction QPS that can
+     * be supported by this model per each node on which it is deployed.
+     * </pre>
+     *
+     * <code>double node_qps = 13;</code>
+     */
+    public Builder setNodeQps(double value) {
+
+      nodeQps_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. An approximate number of online prediction QPS that can
+     * be supported by this model per each node on which it is deployed.
+     * </pre>
+     *
+     * <code>double node_qps = 13;</code>
+     */
+    public Builder clearNodeQps() {
+
+      nodeQps_ = 0D;
+      onChanged();
+      return this;
+    }
+
+    private long nodeCount_;
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The number of nodes this model is deployed on. A node is an
+     * abstraction of a machine resource, which can handle online prediction QPS
+     * as given in the node_qps field.
+     * </pre>
+     *
+     * <code>int64 node_count = 14;</code>
+     */
+    public long getNodeCount() {
+      return nodeCount_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The number of nodes this model is deployed on. A node is an
+     * abstraction of a machine resource, which can handle online prediction QPS
+     * as given in the node_qps field.
+     * </pre>
+     *
+     * <code>int64 node_count = 14;</code>
+     */
+    public Builder setNodeCount(long value) {
+
+      nodeCount_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The number of nodes this model is deployed on. A node is an
+     * abstraction of a machine resource, which can handle online prediction QPS
+     * as given in the node_qps field.
+     * </pre>
+     *
+     * <code>int64 node_count = 14;</code>
+     */
+    public Builder clearNodeCount() {
+
+      nodeCount_ = 0L;
       onChanged();
       return this;
     }

@@ -117,7 +117,7 @@ public interface ImageObjectDetectionModelMetadataOrBuilder
    * full budget and the stop_reason will be `MODEL_CONVERGED`.
    * Note, node_hour  = actual_hour * number_of_nodes_invovled.
    * For model type `cloud-high-accuracy-1`(default) and `cloud-low-latency-1`,
-   * the train budget must be between 20,000 and 2,000,000 milli node hours,
+   * the train budget must be between 20,000 and 900,000 milli node hours,
    * inclusive. The default value is 216, 000 which represents one day in
    * wall time.
    * For model type `mobile-low-latency-1`, `mobile-versatile-1`,

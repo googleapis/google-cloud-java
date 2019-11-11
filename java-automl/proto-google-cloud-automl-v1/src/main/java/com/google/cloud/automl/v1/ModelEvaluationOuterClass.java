@@ -41,21 +41,37 @@ public final class ModelEvaluationOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n-google/cloud/automl/v1/model_evaluatio"
-          + "n.proto\022\026google.cloud.automl.v1\032(google/"
-          + "cloud/automl/v1/translation.proto\032\037googl"
-          + "e/protobuf/timestamp.proto\032\034google/api/a"
-          + "nnotations.proto\"\370\001\n\017ModelEvaluation\022^\n\036"
-          + "translation_evaluation_metrics\030\t \001(\01324.g"
-          + "oogle.cloud.automl.v1.TranslationEvaluat"
-          + "ionMetricsH\000\022\014\n\004name\030\001 \001(\t\022\032\n\022annotation"
-          + "_spec_id\030\002 \001(\t\022/\n\013create_time\030\005 \001(\0132\032.go"
-          + "ogle.protobuf.Timestamp\022\037\n\027evaluated_exa"
-          + "mple_count\030\006 \001(\005B\t\n\007metricsB\252\001\n\032com.goog"
-          + "le.cloud.automl.v1P\001Z<google.golang.org/"
-          + "genproto/googleapis/cloud/automl/v1;auto"
-          + "ml\252\002\026Google.Cloud.AutoML.V1\312\002\026Google\\Clo"
-          + "ud\\AutoML\\V1\352\002\031Google::Cloud::AutoML::V1"
-          + "b\006proto3"
+          + "n.proto\022\026google.cloud.automl.v1\032\034google/"
+          + "api/annotations.proto\032\031google/api/resour"
+          + "ce.proto\032+google/cloud/automl/v1/classif"
+          + "ication.proto\032&google/cloud/automl/v1/de"
+          + "tection.proto\032,google/cloud/automl/v1/te"
+          + "xt_extraction.proto\032+google/cloud/automl"
+          + "/v1/text_sentiment.proto\032(google/cloud/a"
+          + "utoml/v1/translation.proto\032\037google/proto"
+          + "buf/timestamp.proto\"\264\005\n\017ModelEvaluation\022"
+          + "d\n!classification_evaluation_metrics\030\010 \001"
+          + "(\01327.google.cloud.automl.v1.Classificati"
+          + "onEvaluationMetricsH\000\022^\n\036translation_eva"
+          + "luation_metrics\030\t \001(\01324.google.cloud.aut"
+          + "oml.v1.TranslationEvaluationMetricsH\000\022r\n"
+          + ")image_object_detection_evaluation_metri"
+          + "cs\030\014 \001(\0132=.google.cloud.automl.v1.ImageO"
+          + "bjectDetectionEvaluationMetricsH\000\022c\n!tex"
+          + "t_sentiment_evaluation_metrics\030\013 \001(\01326.g"
+          + "oogle.cloud.automl.v1.TextSentimentEvalu"
+          + "ationMetricsH\000\022e\n\"text_extraction_evalua"
+          + "tion_metrics\030\r \001(\01327.google.cloud.automl"
+          + ".v1.TextExtractionEvaluationMetricsH\000\022\014\n"
+          + "\004name\030\001 \001(\t\022\032\n\022annotation_spec_id\030\002 \001(\t\022"
+          + "\024\n\014display_name\030\017 \001(\t\022/\n\013create_time\030\005 \001"
+          + "(\0132\032.google.protobuf.Timestamp\022\037\n\027evalua"
+          + "ted_example_count\030\006 \001(\005B\t\n\007metricsB\252\001\n\032c"
+          + "om.google.cloud.automl.v1P\001Z<google.gola"
+          + "ng.org/genproto/googleapis/cloud/automl/"
+          + "v1;automl\252\002\026Google.Cloud.AutoML.V1\312\002\026Goo"
+          + "gle\\Cloud\\AutoML\\V1\352\002\031Google::Cloud::Aut"
+          + "oML::V1b\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner() {
@@ -68,9 +84,14 @@ public final class ModelEvaluationOuterClass {
     com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
         descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
+          com.google.api.AnnotationsProto.getDescriptor(),
+          com.google.api.ResourceProto.getDescriptor(),
+          com.google.cloud.automl.v1.ClassificationProto.getDescriptor(),
+          com.google.cloud.automl.v1.Detection.getDescriptor(),
+          com.google.cloud.automl.v1.TextExtraction.getDescriptor(),
+          com.google.cloud.automl.v1.TextSentimentProto.getDescriptor(),
           com.google.cloud.automl.v1.TranslationProto.getDescriptor(),
           com.google.protobuf.TimestampProto.getDescriptor(),
-          com.google.api.AnnotationsProto.getDescriptor(),
         },
         assigner);
     internal_static_google_cloud_automl_v1_ModelEvaluation_descriptor =
@@ -79,16 +100,26 @@ public final class ModelEvaluationOuterClass {
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_automl_v1_ModelEvaluation_descriptor,
             new java.lang.String[] {
+              "ClassificationEvaluationMetrics",
               "TranslationEvaluationMetrics",
+              "ImageObjectDetectionEvaluationMetrics",
+              "TextSentimentEvaluationMetrics",
+              "TextExtractionEvaluationMetrics",
               "Name",
               "AnnotationSpecId",
+              "DisplayName",
               "CreateTime",
               "EvaluatedExampleCount",
               "Metrics",
             });
+    com.google.api.AnnotationsProto.getDescriptor();
+    com.google.api.ResourceProto.getDescriptor();
+    com.google.cloud.automl.v1.ClassificationProto.getDescriptor();
+    com.google.cloud.automl.v1.Detection.getDescriptor();
+    com.google.cloud.automl.v1.TextExtraction.getDescriptor();
+    com.google.cloud.automl.v1.TextSentimentProto.getDescriptor();
     com.google.cloud.automl.v1.TranslationProto.getDescriptor();
     com.google.protobuf.TimestampProto.getDescriptor();
-    com.google.api.AnnotationsProto.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

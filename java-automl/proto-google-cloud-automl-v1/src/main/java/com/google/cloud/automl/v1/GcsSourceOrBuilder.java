@@ -27,48 +27,48 @@ public interface GcsSourceOrBuilder
    *
    *
    * <pre>
-   * Required. Google Cloud Storage URIs to input files, up to 2000 characters
-   * long. Accepted forms:
+   * Required. Google Cloud Storage URIs to input files, up to 2000
+   * characters long. Accepted forms:
    * * Full object path, e.g. gs://bucket/directory/object.csv
    * </pre>
    *
-   * <code>repeated string input_uris = 1;</code>
+   * <code>repeated string input_uris = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   java.util.List<java.lang.String> getInputUrisList();
   /**
    *
    *
    * <pre>
-   * Required. Google Cloud Storage URIs to input files, up to 2000 characters
-   * long. Accepted forms:
+   * Required. Google Cloud Storage URIs to input files, up to 2000
+   * characters long. Accepted forms:
    * * Full object path, e.g. gs://bucket/directory/object.csv
    * </pre>
    *
-   * <code>repeated string input_uris = 1;</code>
+   * <code>repeated string input_uris = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   int getInputUrisCount();
   /**
    *
    *
    * <pre>
-   * Required. Google Cloud Storage URIs to input files, up to 2000 characters
-   * long. Accepted forms:
+   * Required. Google Cloud Storage URIs to input files, up to 2000
+   * characters long. Accepted forms:
    * * Full object path, e.g. gs://bucket/directory/object.csv
    * </pre>
    *
-   * <code>repeated string input_uris = 1;</code>
+   * <code>repeated string input_uris = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   java.lang.String getInputUris(int index);
   /**
    *
    *
    * <pre>
-   * Required. Google Cloud Storage URIs to input files, up to 2000 characters
-   * long. Accepted forms:
+   * Required. Google Cloud Storage URIs to input files, up to 2000
+   * characters long. Accepted forms:
    * * Full object path, e.g. gs://bucket/directory/object.csv
    * </pre>
    *
-   * <code>repeated string input_uris = 1;</code>
+   * <code>repeated string input_uris = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   com.google.protobuf.ByteString getInputUrisBytes(int index);
 }

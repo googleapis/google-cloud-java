@@ -120,7 +120,7 @@ public final class GcsDestination extends com.google.protobuf.GeneratedMessageV3
    * The directory is created if it doesn't exist.
    * </pre>
    *
-   * <code>string output_uri_prefix = 1;</code>
+   * <code>string output_uri_prefix = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   public java.lang.String getOutputUriPrefix() {
     java.lang.Object ref = outputUriPrefix_;
@@ -145,7 +145,7 @@ public final class GcsDestination extends com.google.protobuf.GeneratedMessageV3
    * The directory is created if it doesn't exist.
    * </pre>
    *
-   * <code>string output_uri_prefix = 1;</code>
+   * <code>string output_uri_prefix = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   public com.google.protobuf.ByteString getOutputUriPrefixBytes() {
     java.lang.Object ref = outputUriPrefix_;
@@ -488,7 +488,7 @@ public final class GcsDestination extends com.google.protobuf.GeneratedMessageV3
      * The directory is created if it doesn't exist.
      * </pre>
      *
-     * <code>string output_uri_prefix = 1;</code>
+     * <code>string output_uri_prefix = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public java.lang.String getOutputUriPrefix() {
       java.lang.Object ref = outputUriPrefix_;
@@ -513,7 +513,7 @@ public final class GcsDestination extends com.google.protobuf.GeneratedMessageV3
      * The directory is created if it doesn't exist.
      * </pre>
      *
-     * <code>string output_uri_prefix = 1;</code>
+     * <code>string output_uri_prefix = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public com.google.protobuf.ByteString getOutputUriPrefixBytes() {
       java.lang.Object ref = outputUriPrefix_;
@@ -538,7 +538,7 @@ public final class GcsDestination extends com.google.protobuf.GeneratedMessageV3
      * The directory is created if it doesn't exist.
      * </pre>
      *
-     * <code>string output_uri_prefix = 1;</code>
+     * <code>string output_uri_prefix = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder setOutputUriPrefix(java.lang.String value) {
       if (value == null) {
@@ -561,7 +561,7 @@ public final class GcsDestination extends com.google.protobuf.GeneratedMessageV3
      * The directory is created if it doesn't exist.
      * </pre>
      *
-     * <code>string output_uri_prefix = 1;</code>
+     * <code>string output_uri_prefix = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder clearOutputUriPrefix() {
 
@@ -581,7 +581,7 @@ public final class GcsDestination extends com.google.protobuf.GeneratedMessageV3
      * The directory is created if it doesn't exist.
      * </pre>
      *
-     * <code>string output_uri_prefix = 1;</code>
+     * <code>string output_uri_prefix = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder setOutputUriPrefixBytes(com.google.protobuf.ByteString value) {
       if (value == null) {

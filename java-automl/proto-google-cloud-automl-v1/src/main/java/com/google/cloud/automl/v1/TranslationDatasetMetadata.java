@@ -123,7 +123,7 @@ public final class TranslationDatasetMetadata extends com.google.protobuf.Genera
    * Required. The BCP-47 language code of the source language.
    * </pre>
    *
-   * <code>string source_language_code = 1;</code>
+   * <code>string source_language_code = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   public java.lang.String getSourceLanguageCode() {
     java.lang.Object ref = sourceLanguageCode_;
@@ -143,7 +143,7 @@ public final class TranslationDatasetMetadata extends com.google.protobuf.Genera
    * Required. The BCP-47 language code of the source language.
    * </pre>
    *
-   * <code>string source_language_code = 1;</code>
+   * <code>string source_language_code = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   public com.google.protobuf.ByteString getSourceLanguageCodeBytes() {
     java.lang.Object ref = sourceLanguageCode_;
@@ -166,7 +166,7 @@ public final class TranslationDatasetMetadata extends com.google.protobuf.Genera
    * Required. The BCP-47 language code of the target language.
    * </pre>
    *
-   * <code>string target_language_code = 2;</code>
+   * <code>string target_language_code = 2 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   public java.lang.String getTargetLanguageCode() {
     java.lang.Object ref = targetLanguageCode_;
@@ -186,7 +186,7 @@ public final class TranslationDatasetMetadata extends com.google.protobuf.Genera
    * Required. The BCP-47 language code of the target language.
    * </pre>
    *
-   * <code>string target_language_code = 2;</code>
+   * <code>string target_language_code = 2 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   public com.google.protobuf.ByteString getTargetLanguageCodeBytes() {
     java.lang.Object ref = targetLanguageCode_;
@@ -543,7 +543,7 @@ public final class TranslationDatasetMetadata extends com.google.protobuf.Genera
      * Required. The BCP-47 language code of the source language.
      * </pre>
      *
-     * <code>string source_language_code = 1;</code>
+     * <code>string source_language_code = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public java.lang.String getSourceLanguageCode() {
       java.lang.Object ref = sourceLanguageCode_;
@@ -563,7 +563,7 @@ public final class TranslationDatasetMetadata extends com.google.protobuf.Genera
      * Required. The BCP-47 language code of the source language.
      * </pre>
      *
-     * <code>string source_language_code = 1;</code>
+     * <code>string source_language_code = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public com.google.protobuf.ByteString getSourceLanguageCodeBytes() {
       java.lang.Object ref = sourceLanguageCode_;
@@ -583,7 +583,7 @@ public final class TranslationDatasetMetadata extends com.google.protobuf.Genera
      * Required. The BCP-47 language code of the source language.
      * </pre>
      *
-     * <code>string source_language_code = 1;</code>
+     * <code>string source_language_code = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder setSourceLanguageCode(java.lang.String value) {
       if (value == null) {
@@ -601,7 +601,7 @@ public final class TranslationDatasetMetadata extends com.google.protobuf.Genera
      * Required. The BCP-47 language code of the source language.
      * </pre>
      *
-     * <code>string source_language_code = 1;</code>
+     * <code>string source_language_code = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder clearSourceLanguageCode() {
 
@@ -616,7 +616,7 @@ public final class TranslationDatasetMetadata extends com.google.protobuf.Genera
      * Required. The BCP-47 language code of the source language.
      * </pre>
      *
-     * <code>string source_language_code = 1;</code>
+     * <code>string source_language_code = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder setSourceLanguageCodeBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -637,7 +637,7 @@ public final class TranslationDatasetMetadata extends com.google.protobuf.Genera
      * Required. The BCP-47 language code of the target language.
      * </pre>
      *
-     * <code>string target_language_code = 2;</code>
+     * <code>string target_language_code = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public java.lang.String getTargetLanguageCode() {
       java.lang.Object ref = targetLanguageCode_;
@@ -657,7 +657,7 @@ public final class TranslationDatasetMetadata extends com.google.protobuf.Genera
      * Required. The BCP-47 language code of the target language.
      * </pre>
      *
-     * <code>string target_language_code = 2;</code>
+     * <code>string target_language_code = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public com.google.protobuf.ByteString getTargetLanguageCodeBytes() {
       java.lang.Object ref = targetLanguageCode_;
@@ -677,7 +677,7 @@ public final class TranslationDatasetMetadata extends com.google.protobuf.Genera
      * Required. The BCP-47 language code of the target language.
      * </pre>
      *
-     * <code>string target_language_code = 2;</code>
+     * <code>string target_language_code = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder setTargetLanguageCode(java.lang.String value) {
       if (value == null) {
@@ -695,7 +695,7 @@ public final class TranslationDatasetMetadata extends com.google.protobuf.Genera
      * Required. The BCP-47 language code of the target language.
      * </pre>
      *
-     * <code>string target_language_code = 2;</code>
+     * <code>string target_language_code = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder clearTargetLanguageCode() {
 
@@ -710,7 +710,7 @@ public final class TranslationDatasetMetadata extends com.google.protobuf.Genera
      * Required. The BCP-47 language code of the target language.
      * </pre>
      *
-     * <code>string target_language_code = 2;</code>
+     * <code>string target_language_code = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder setTargetLanguageCodeBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
