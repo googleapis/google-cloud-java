@@ -1,5 +1,17 @@
 # Changelog
 
+### [0.109.1](https://www.github.com/googleapis/java-trace/compare/v0.109.0...v0.109.1) (2019-11-11)
+
+
+### Bug Fixes
+
+* bom missing dep ([#36](https://www.github.com/googleapis/java-trace/issues/36)) ([7049c28](https://www.github.com/googleapis/java-trace/commit/7049c28c7f8c807f3c2d8b0b72987a1db35b8923))
+
+
+### Dependencies
+
+* update gax.version to v1.50.1 ([#38](https://www.github.com/googleapis/java-trace/issues/38)) ([ff45f64](https://www.github.com/googleapis/java-trace/commit/ff45f641c3f7303d85d1e7f8ed58ea99b13cf270))
+
 ## [0.109.0](https://www.github.com/googleapis/java-trace/compare/v0.108.0...v0.109.0) (2019-10-25)
 
 
