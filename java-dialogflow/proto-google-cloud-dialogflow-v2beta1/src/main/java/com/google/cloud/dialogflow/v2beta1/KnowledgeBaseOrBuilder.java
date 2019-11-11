@@ -80,7 +80,7 @@ public interface KnowledgeBaseOrBuilder
    * populated, the default language en-us applies.
    * </pre>
    *
-   * <code>string language_code = 3;</code>
+   * <code>string language_code = 4;</code>
    */
   java.lang.String getLanguageCode();
   /**
@@ -92,7 +92,7 @@ public interface KnowledgeBaseOrBuilder
    * populated, the default language en-us applies.
    * </pre>
    *
-   * <code>string language_code = 3;</code>
+   * <code>string language_code = 4;</code>
    */
   com.google.protobuf.ByteString getLanguageCodeBytes();
 }

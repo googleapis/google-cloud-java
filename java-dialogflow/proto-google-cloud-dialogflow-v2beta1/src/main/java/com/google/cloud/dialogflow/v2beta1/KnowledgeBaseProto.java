@@ -70,7 +70,7 @@ public final class KnowledgeBaseProto {
           + "oogle/protobuf/empty.proto\032 google/proto"
           + "buf/field_mask.proto\032\027google/api/client."
           + "proto\"J\n\rKnowledgeBase\022\014\n\004name\030\001 \001(\t\022\024\n\014"
-          + "display_name\030\002 \001(\t\022\025\n\rlanguage_code\030\003 \001("
+          + "display_name\030\002 \001(\t\022\025\n\rlanguage_code\030\004 \001("
           + "\t\"R\n\031ListKnowledgeBasesRequest\022\016\n\006parent"
           + "\030\001 \001(\t\022\021\n\tpage_size\030\002 \001(\005\022\022\n\npage_token\030"
           + "\003 \001(\t\"~\n\032ListKnowledgeBasesResponse\022G\n\017k"

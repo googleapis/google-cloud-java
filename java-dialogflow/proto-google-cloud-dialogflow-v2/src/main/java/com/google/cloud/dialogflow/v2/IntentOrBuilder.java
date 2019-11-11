@@ -101,9 +101,12 @@ public interface IntentOrBuilder
    *
    * <pre>
    * Optional. The priority of this intent. Higher numbers represent higher
-   * priorities. If this is zero or unspecified, we use the default
-   * priority 500000.
-   * Negative numbers mean that the intent is disabled.
+   * priorities.
+   * - If the supplied value is unspecified or 0, the service
+   *   translates the value to 500,000, which corresponds to the
+   *   `Normal` priority in the console.
+   * - If the supplied value is negative, the intent is ignored
+   *   in runtime detect intent requests.
    * </pre>
    *
    * <code>int32 priority = 3 [(.google.api.field_behavior) = OPTIONAL];</code>

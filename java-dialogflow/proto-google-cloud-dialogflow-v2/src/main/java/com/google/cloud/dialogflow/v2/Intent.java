@@ -19941,6 +19941,27 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        */
       com.google.cloud.dialogflow.v2.Intent.Message.ListSelect.ItemOrBuilder getItemsOrBuilder(
           int index);
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Subtitle of the list.
+       * </pre>
+       *
+       * <code>string subtitle = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+       */
+      java.lang.String getSubtitle();
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Subtitle of the list.
+       * </pre>
+       *
+       * <code>string subtitle = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+       */
+      com.google.protobuf.ByteString getSubtitleBytes();
     }
     /**
      *
@@ -19964,6 +19985,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
       private ListSelect() {
         title_ = "";
         items_ = java.util.Collections.emptyList();
+        subtitle_ = "";
       }
 
       @java.lang.Override
@@ -20009,6 +20031,13 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
                       input.readMessage(
                           com.google.cloud.dialogflow.v2.Intent.Message.ListSelect.Item.parser(),
                           extensionRegistry));
+                  break;
+                }
+              case 26:
+                {
+                  java.lang.String s = input.readStringRequireUtf8();
+
+                  subtitle_ = s;
                   break;
                 }
               default:
@@ -21660,6 +21689,49 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
         return items_.get(index);
       }
 
+      public static final int SUBTITLE_FIELD_NUMBER = 3;
+      private volatile java.lang.Object subtitle_;
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Subtitle of the list.
+       * </pre>
+       *
+       * <code>string subtitle = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+       */
+      public java.lang.String getSubtitle() {
+        java.lang.Object ref = subtitle_;
+        if (ref instanceof java.lang.String) {
+          return (java.lang.String) ref;
+        } else {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          subtitle_ = s;
+          return s;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Subtitle of the list.
+       * </pre>
+       *
+       * <code>string subtitle = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+       */
+      public com.google.protobuf.ByteString getSubtitleBytes() {
+        java.lang.Object ref = subtitle_;
+        if (ref instanceof java.lang.String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          subtitle_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+
       private byte memoizedIsInitialized = -1;
 
       @java.lang.Override
@@ -21680,6 +21752,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
         for (int i = 0; i < items_.size(); i++) {
           output.writeMessage(2, items_.get(i));
         }
+        if (!getSubtitleBytes().isEmpty()) {
+          com.google.protobuf.GeneratedMessageV3.writeString(output, 3, subtitle_);
+        }
         unknownFields.writeTo(output);
       }
 
@@ -21694,6 +21769,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
         }
         for (int i = 0; i < items_.size(); i++) {
           size += com.google.protobuf.CodedOutputStream.computeMessageSize(2, items_.get(i));
+        }
+        if (!getSubtitleBytes().isEmpty()) {
+          size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, subtitle_);
         }
         size += unknownFields.getSerializedSize();
         memoizedSize = size;
@@ -21713,6 +21791,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
 
         if (!getTitle().equals(other.getTitle())) return false;
         if (!getItemsList().equals(other.getItemsList())) return false;
+        if (!getSubtitle().equals(other.getSubtitle())) return false;
         if (!unknownFields.equals(other.unknownFields)) return false;
         return true;
       }
@@ -21730,6 +21809,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
           hash = (37 * hash) + ITEMS_FIELD_NUMBER;
           hash = (53 * hash) + getItemsList().hashCode();
         }
+        hash = (37 * hash) + SUBTITLE_FIELD_NUMBER;
+        hash = (53 * hash) + getSubtitle().hashCode();
         hash = (29 * hash) + unknownFields.hashCode();
         memoizedHashCode = hash;
         return hash;
@@ -21888,6 +21969,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
           } else {
             itemsBuilder_.clear();
           }
+          subtitle_ = "";
+
           return this;
         }
 
@@ -21928,6 +22011,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
           } else {
             result.items_ = itemsBuilder_.build();
           }
+          result.subtitle_ = subtitle_;
           result.bitField0_ = to_bitField0_;
           onBuilt();
           return result;
@@ -22012,6 +22096,10 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
                 itemsBuilder_.addAllMessages(other.items_);
               }
             }
+          }
+          if (!other.getSubtitle().isEmpty()) {
+            subtitle_ = other.subtitle_;
+            onChanged();
           }
           this.mergeUnknownFields(other.unknownFields);
           onChanged();
@@ -22543,6 +22631,100 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
             items_ = null;
           }
           return itemsBuilder_;
+        }
+
+        private java.lang.Object subtitle_ = "";
+        /**
+         *
+         *
+         * <pre>
+         * Optional. Subtitle of the list.
+         * </pre>
+         *
+         * <code>string subtitle = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+         */
+        public java.lang.String getSubtitle() {
+          java.lang.Object ref = subtitle_;
+          if (!(ref instanceof java.lang.String)) {
+            com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+            java.lang.String s = bs.toStringUtf8();
+            subtitle_ = s;
+            return s;
+          } else {
+            return (java.lang.String) ref;
+          }
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Optional. Subtitle of the list.
+         * </pre>
+         *
+         * <code>string subtitle = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+         */
+        public com.google.protobuf.ByteString getSubtitleBytes() {
+          java.lang.Object ref = subtitle_;
+          if (ref instanceof String) {
+            com.google.protobuf.ByteString b =
+                com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+            subtitle_ = b;
+            return b;
+          } else {
+            return (com.google.protobuf.ByteString) ref;
+          }
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Optional. Subtitle of the list.
+         * </pre>
+         *
+         * <code>string subtitle = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+         */
+        public Builder setSubtitle(java.lang.String value) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+
+          subtitle_ = value;
+          onChanged();
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Optional. Subtitle of the list.
+         * </pre>
+         *
+         * <code>string subtitle = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+         */
+        public Builder clearSubtitle() {
+
+          subtitle_ = getDefaultInstance().getSubtitle();
+          onChanged();
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Optional. Subtitle of the list.
+         * </pre>
+         *
+         * <code>string subtitle = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+         */
+        public Builder setSubtitleBytes(com.google.protobuf.ByteString value) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          checkByteStringIsUtf8(value);
+
+          subtitle_ = value;
+          onChanged();
+          return this;
         }
 
         @java.lang.Override
@@ -30813,9 +30995,12 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Optional. The priority of this intent. Higher numbers represent higher
-   * priorities. If this is zero or unspecified, we use the default
-   * priority 500000.
-   * Negative numbers mean that the intent is disabled.
+   * priorities.
+   * - If the supplied value is unspecified or 0, the service
+   *   translates the value to 500,000, which corresponds to the
+   *   `Normal` priority in the console.
+   * - If the supplied value is negative, the intent is ignored
+   *   in runtime detect intent requests.
    * </pre>
    *
    * <code>int32 priority = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -32788,9 +32973,12 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. The priority of this intent. Higher numbers represent higher
-     * priorities. If this is zero or unspecified, we use the default
-     * priority 500000.
-     * Negative numbers mean that the intent is disabled.
+     * priorities.
+     * - If the supplied value is unspecified or 0, the service
+     *   translates the value to 500,000, which corresponds to the
+     *   `Normal` priority in the console.
+     * - If the supplied value is negative, the intent is ignored
+     *   in runtime detect intent requests.
      * </pre>
      *
      * <code>int32 priority = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -32803,9 +32991,12 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. The priority of this intent. Higher numbers represent higher
-     * priorities. If this is zero or unspecified, we use the default
-     * priority 500000.
-     * Negative numbers mean that the intent is disabled.
+     * priorities.
+     * - If the supplied value is unspecified or 0, the service
+     *   translates the value to 500,000, which corresponds to the
+     *   `Normal` priority in the console.
+     * - If the supplied value is negative, the intent is ignored
+     *   in runtime detect intent requests.
      * </pre>
      *
      * <code>int32 priority = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -32821,9 +33012,12 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. The priority of this intent. Higher numbers represent higher
-     * priorities. If this is zero or unspecified, we use the default
-     * priority 500000.
-     * Negative numbers mean that the intent is disabled.
+     * priorities.
+     * - If the supplied value is unspecified or 0, the service
+     *   translates the value to 500,000, which corresponds to the
+     *   `Normal` priority in the console.
+     * - If the supplied value is negative, the intent is ignored
+     *   in runtime detect intent requests.
      * </pre>
      *
      * <code>int32 priority = 3 [(.google.api.field_behavior) = OPTIONAL];</code>

@@ -83,7 +83,7 @@ public final class KnowledgeBase extends com.google.protobuf.GeneratedMessageV3
               displayName_ = s;
               break;
             }
-          case 26:
+          case 34:
             {
               java.lang.String s = input.readStringRequireUtf8();
 
@@ -216,7 +216,7 @@ public final class KnowledgeBase extends com.google.protobuf.GeneratedMessageV3
     }
   }
 
-  public static final int LANGUAGE_CODE_FIELD_NUMBER = 3;
+  public static final int LANGUAGE_CODE_FIELD_NUMBER = 4;
   private volatile java.lang.Object languageCode_;
   /**
    *
@@ -227,7 +227,7 @@ public final class KnowledgeBase extends com.google.protobuf.GeneratedMessageV3
    * populated, the default language en-us applies.
    * </pre>
    *
-   * <code>string language_code = 3;</code>
+   * <code>string language_code = 4;</code>
    */
   public java.lang.String getLanguageCode() {
     java.lang.Object ref = languageCode_;
@@ -249,7 +249,7 @@ public final class KnowledgeBase extends com.google.protobuf.GeneratedMessageV3
    * populated, the default language en-us applies.
    * </pre>
    *
-   * <code>string language_code = 3;</code>
+   * <code>string language_code = 4;</code>
    */
   public com.google.protobuf.ByteString getLanguageCodeBytes() {
     java.lang.Object ref = languageCode_;
@@ -284,7 +284,7 @@ public final class KnowledgeBase extends com.google.protobuf.GeneratedMessageV3
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, displayName_);
     }
     if (!getLanguageCodeBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 3, languageCode_);
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 4, languageCode_);
     }
     unknownFields.writeTo(output);
   }
@@ -302,7 +302,7 @@ public final class KnowledgeBase extends com.google.protobuf.GeneratedMessageV3
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, displayName_);
     }
     if (!getLanguageCodeBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, languageCode_);
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, languageCode_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -828,7 +828,7 @@ public final class KnowledgeBase extends com.google.protobuf.GeneratedMessageV3
      * populated, the default language en-us applies.
      * </pre>
      *
-     * <code>string language_code = 3;</code>
+     * <code>string language_code = 4;</code>
      */
     public java.lang.String getLanguageCode() {
       java.lang.Object ref = languageCode_;
@@ -850,7 +850,7 @@ public final class KnowledgeBase extends com.google.protobuf.GeneratedMessageV3
      * populated, the default language en-us applies.
      * </pre>
      *
-     * <code>string language_code = 3;</code>
+     * <code>string language_code = 4;</code>
      */
     public com.google.protobuf.ByteString getLanguageCodeBytes() {
       java.lang.Object ref = languageCode_;
@@ -872,7 +872,7 @@ public final class KnowledgeBase extends com.google.protobuf.GeneratedMessageV3
      * populated, the default language en-us applies.
      * </pre>
      *
-     * <code>string language_code = 3;</code>
+     * <code>string language_code = 4;</code>
      */
     public Builder setLanguageCode(java.lang.String value) {
       if (value == null) {
@@ -892,7 +892,7 @@ public final class KnowledgeBase extends com.google.protobuf.GeneratedMessageV3
      * populated, the default language en-us applies.
      * </pre>
      *
-     * <code>string language_code = 3;</code>
+     * <code>string language_code = 4;</code>
      */
     public Builder clearLanguageCode() {
 
@@ -909,7 +909,7 @@ public final class KnowledgeBase extends com.google.protobuf.GeneratedMessageV3
      * populated, the default language en-us applies.
      * </pre>
      *
-     * <code>string language_code = 3;</code>
+     * <code>string language_code = 4;</code>
      */
     public Builder setLanguageCodeBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
