@@ -1,5 +1,18 @@
 # Changelog
 
+## [1.27.0](https://www.github.com/googleapis/java-tasks/compare/v1.26.0...v1.27.0) (2019-11-11)
+
+
+### Features
+
+* add HttpRequest tasks ([#14](https://www.github.com/googleapis/java-tasks/issues/14)) ([df89d67](https://www.github.com/googleapis/java-tasks/commit/df89d677e2a012ded5e41004ebd9b6a9f4b64b66))
+
+
+### Dependencies
+
+* update dependency io.grpc:grpc-bom to v1.25.0 ([#10](https://www.github.com/googleapis/java-tasks/issues/10)) ([0a65b44](https://www.github.com/googleapis/java-tasks/commit/0a65b44692ba157fdd7af53f7aa02ff8068522ba))
+* update gax.version to v1.50.1 ([#13](https://www.github.com/googleapis/java-tasks/issues/13)) ([6a80a7a](https://www.github.com/googleapis/java-tasks/commit/6a80a7a0e12c864e4dca8d2bbfa6c75c35fedecc))
+
 ## [1.26.0](https://www.github.com/googleapis/java-tasks/compare/v0.90.0...v1.26.0) (2019-10-25)
 
 
