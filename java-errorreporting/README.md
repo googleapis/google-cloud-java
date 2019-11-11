@@ -32,7 +32,6 @@ If you are using Maven with a BOM, add this to your pom.xml file.
 <dependency>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-errorreporting</artifactId>
-  <version>0.116.0-beta</version>
 </dependency>
 ```
 [//]: # ({x-version-update-start:google-cloud-errorreporting:released})
