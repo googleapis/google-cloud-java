@@ -117,7 +117,8 @@ public class BigtableInstanceAdminClientIT {
 
     client.createInstance(
         CreateInstanceRequest.of(newInstanceId)
-            .addDevelopmentCluster(newClusterId, "us-east1-b", StorageType.SSD)
+            .addDevelopmentCluster(
+                newClusterId, testEnvRule.env().getPrimaryZone(), StorageType.SSD)
             .setDisplayName("Fresh-Instance-Name")
             .addLabel("state", "readytodelete")
             .setType(Instance.Type.DEVELOPMENT));
@@ -154,7 +155,7 @@ public class BigtableInstanceAdminClientIT {
     boolean isClusterDeleted = false;
     client.createCluster(
         CreateClusterRequest.of(instanceId, newClusterId)
-            .setZone("us-central1-f")
+            .setZone(testEnvRule.env().getSecondaryZone())
             .setStorageType(StorageType.SSD)
             .setServeNodes(3));
     try {

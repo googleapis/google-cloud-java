@@ -78,6 +78,14 @@ public abstract class AbstractTestEnv {
     return "bigtable".equals(System.getenv("GOOGLE_CLOUD_ENABLE_DIRECT_PATH"));
   }
 
+  public String getPrimaryZone() {
+    return "us-east1-b";
+  }
+
+  public String getSecondaryZone() {
+    return "us-central1-b";
+  }
+
   void cleanUpStale() {
     cleanupStaleTables();
     if (isInstanceAdminSupported()) {
