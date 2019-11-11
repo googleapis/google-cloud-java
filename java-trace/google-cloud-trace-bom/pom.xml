@@ -72,6 +72,11 @@
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
+        <artifactId>grpc-google-cloud-trace-v2</artifactId>
+        <version>0.74.1-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-trace-v2:current} -->
+      </dependency>
+      <dependency>
+        <groupId>com.google.api.grpc</groupId>
         <artifactId>proto-google-cloud-trace-v2</artifactId>
         <version>0.74.1-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-trace-v2:current} -->
       </dependency>
