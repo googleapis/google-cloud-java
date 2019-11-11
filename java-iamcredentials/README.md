@@ -15,9 +15,28 @@ Java idiomatic client for [IAM Service Account Credentials API][product-overview
 
 Quickstart
 ----------
+If you are using Maven with a BOM, add this to your pom.xml file.
+```xml
+<dependencyManagement>
+ <dependencies>
+  <dependency>
+    <groupId>com.google.cloud</groupId>
+    <artifactId>libraries-bom</artifactId>
+    <version>2.8.0</version>
+    <type>pom</type>
+    <scope>import</scope>
+   </dependency>
+ </dependencies>
+</dependencyManagement>
+
+<dependency>
+  <groupId>com.google.cloud</groupId>
+  <artifactId>google-cloud-iamcredentials</artifactId>
+</dependency>
+```
 
 [//]: # ({x-version-update-start:google-cloud-iamcredentials:released})
-If you are using Maven, add this to your pom.xml file
+If you are using Maven without a BOM, add this to your dependencies.
 ```xml
 <dependency>
   <groupId>com.google.cloud</groupId>
