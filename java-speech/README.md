@@ -12,9 +12,27 @@ Java idiomatic client for [Google Cloud Speech][cloud-speech].
 
 Quickstart
 ----------
+If you are using Maven with Bom, Add this to your pom.xml file.
+```xml
+<dependencyManagement>
+ <dependencies>
+  <dependency>
+    <groupId>com.google.cloud</groupId>
+    <artifactId>libraries-bom</artifactId>
+    <version>2.8.0</version>
+    <type>pom</type>
+    <scope>import</scope>
+   </dependency>
+ </dependencies>
+</dependencyManagement>
 
+<dependency>
+  <groupId>com.google.cloud</groupId>
+  <artifactId>google-cloud-speech</artifactId>
+</dependency>
+```
 [//]: # ({x-version-update-start:google-cloud-speech:released})
-If you are using Maven, add this to your pom.xml file
+If you are using Maven without Bom, Add this to your dependencies.
 ```xml
 <dependency>
   <groupId>com.google.cloud</groupId>
