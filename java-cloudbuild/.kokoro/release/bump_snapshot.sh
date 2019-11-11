@@ -22,7 +22,7 @@ if [ -f ${KOKORO_KEYSTORE_DIR}/73713_github-magic-proxy-url-release-please ]; th
   # Groom the snapshot release PR immediately after publishing a release
   npx release-please release-pr --token=${KOKORO_KEYSTORE_DIR}/73713_github-magic-proxy-token-release-please \
     --repo-url=googleapis/java-cloudbuild \
-    --package-name="cloudbuild" \
+    --package-name="build" \
     --api-url=${KOKORO_KEYSTORE_DIR}/73713_github-magic-proxy-url-release-please \
     --proxy-key=${KOKORO_KEYSTORE_DIR}/73713_github-magic-proxy-key-release-please \
     --snapshot \

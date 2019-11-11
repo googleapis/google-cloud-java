@@ -25,13 +25,23 @@ versions = ['v1']
 config_pattern = '/google/devtools/cloudbuild/artman_cloudbuild.yaml'
 
 for version in versions:
-    java.gapic_library(
+    library = gapic.java_library(
         service=service,
         version=version,
-        config_pattern=config_pattern,
-        package_pattern='com.google.cloudbuild.{version}',
-        gapic=gapic,
-    )
+        config_path=config_pattern.format(version=version),
+        artman_output_name='')
+
+    package_name = f'com.google.cloudbuild.{version}'
+    java.fix_proto_headers(library / f'proto-google-cloud-build-{version}')
+    java.fix_grpc_headers(library / f'grpc-google-cloud-build-{version}', package_name)
+
+    s.copy(library / f'gapic-google-cloud-build-{version}/src', f'google-cloud-build/src')
+    s.copy(library / f'grpc-google-cloud-build-{version}/src', f'grpc-google-cloud-build-{version}/src')
+    s.copy(library / f'proto-google-cloud-build-{version}/src', f'proto-google-cloud-build-{version}/src')
+
+    java.format_code(f'google-cloud-build/src')
+    java.format_code(f'grpc-google-cloud-build-{version}/src')
+    java.format_code(f'proto-google-cloud-build-{version}/src')
 
 common_templates = gcp.CommonTemplates()
 templates = common_templates.java_library()
