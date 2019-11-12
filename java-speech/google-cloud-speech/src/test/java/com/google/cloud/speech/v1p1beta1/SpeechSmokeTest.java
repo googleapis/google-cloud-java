@@ -53,7 +53,7 @@ public class SpeechSmokeTest {
               .setSampleRateHertz(sampleRateHertz)
               .setEncoding(encoding)
               .build();
-      String uri = "gs://gapic-toolkit/hello.flac";
+      String uri = "gs://cloud-samples-data/speech/brooklyn_bridge.flac";
       RecognitionAudio audio = RecognitionAudio.newBuilder().setUri(uri).build();
 
       RecognizeResponse response = client.recognize(config, audio);

@@ -174,15 +174,13 @@ public final class SpeakerDiarizationConfig extends com.google.protobuf.Generate
    *
    *
    * <pre>
-   * A distinct integer value is assigned for every speaker within
-   * the audio. This field specifies which one of those speakers was detected to
-   * have spoken this word. Value ranges from '1' to diarization_speaker_count.
-   * speaker_tag is set if enable_speaker_diarization = 'true' and only in the
-   * top alternative.
+   * Unused.
    * </pre>
    *
-   * <code>int32 speaker_tag = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * <code>int32 speaker_tag = 5 [deprecated = true, (.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    */
+  @java.lang.Deprecated
   public int getSpeakerTag() {
     return speakerTag_;
   }
@@ -704,15 +702,13 @@ public final class SpeakerDiarizationConfig extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * A distinct integer value is assigned for every speaker within
-     * the audio. This field specifies which one of those speakers was detected to
-     * have spoken this word. Value ranges from '1' to diarization_speaker_count.
-     * speaker_tag is set if enable_speaker_diarization = 'true' and only in the
-     * top alternative.
+     * Unused.
      * </pre>
      *
-     * <code>int32 speaker_tag = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>int32 speaker_tag = 5 [deprecated = true, (.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
+    @java.lang.Deprecated
     public int getSpeakerTag() {
       return speakerTag_;
     }
@@ -720,15 +716,13 @@ public final class SpeakerDiarizationConfig extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * A distinct integer value is assigned for every speaker within
-     * the audio. This field specifies which one of those speakers was detected to
-     * have spoken this word. Value ranges from '1' to diarization_speaker_count.
-     * speaker_tag is set if enable_speaker_diarization = 'true' and only in the
-     * top alternative.
+     * Unused.
      * </pre>
      *
-     * <code>int32 speaker_tag = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>int32 speaker_tag = 5 [deprecated = true, (.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
+    @java.lang.Deprecated
     public Builder setSpeakerTag(int value) {
 
       speakerTag_ = value;
@@ -739,15 +733,13 @@ public final class SpeakerDiarizationConfig extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * A distinct integer value is assigned for every speaker within
-     * the audio. This field specifies which one of those speakers was detected to
-     * have spoken this word. Value ranges from '1' to diarization_speaker_count.
-     * speaker_tag is set if enable_speaker_diarization = 'true' and only in the
-     * top alternative.
+     * Unused.
      * </pre>
      *
-     * <code>int32 speaker_tag = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>int32 speaker_tag = 5 [deprecated = true, (.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
+    @java.lang.Deprecated
     public Builder clearSpeakerTag() {
 
       speakerTag_ = 0;
