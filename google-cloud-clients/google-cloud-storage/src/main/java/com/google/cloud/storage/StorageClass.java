@@ -42,44 +42,40 @@ public final class StorageClass extends StringEnumValue {
       new StringEnumType(StorageClass.class, CONSTRUCTOR);
 
   /**
-   * Regional storage class (deprecated).
-   * See:https://cloud.google.com/storage/docs/per-object-storage-class for details
+   * Standard storage class. See: https://cloud.google.com/storage/docs/storage-classes for details
+   */
+  public static final StorageClass STANDARD = type.createAndRegister("STANDARD");
+
+  /**
+   * Nearline storage class. See: https://cloud.google.com/storage/docs/storage-classes for details
+   */
+  public static final StorageClass NEARLINE = type.createAndRegister("NEARLINE");
+
+  /**
+   * Coldline storage class. See: https://cloud.google.com/storage/docs/storage-classes for details
+   */
+  public static final StorageClass COLDLINE = type.createAndRegister("COLDLINE");
+
+  /**
+   * Archive storage class. See: https://cloud.google.com/storage/docs/storage-classes for details
+   */
+  public static final StorageClass ARCHIVE = type.createAndRegister("ARCHIVE");
+
+  /**
+   * Regional storage class (deprecated). See: https://cloud.google.com/storage/docs/storage-classes
+   * for details
    */
   public static final StorageClass REGIONAL = type.createAndRegister("REGIONAL");
 
   /**
    * Multi-regional storage class (deprecated).
-   * See:https://cloud.google.com/storage/docs/per-object-storage-class for details
+   * See:https://cloud.google.com/storage/docs/storage-classes for details
    */
   public static final StorageClass MULTI_REGIONAL = type.createAndRegister("MULTI_REGIONAL");
 
   /**
-   * Nearline storage class. See: https://cloud.google.com/storage/docs/per-object-storage-class for
-   * details
-   */
-  public static final StorageClass NEARLINE = type.createAndRegister("NEARLINE");
-
-  /**
-   * Coldline storage class. See: https://cloud.google.com/storage/docs/per-object-storage-class for
-   * details
-   */
-  public static final StorageClass COLDLINE = type.createAndRegister("COLDLINE");
-
-  /**
-   * Standard storage class. See: https://cloud.google.com/storage/docs/per-object-storage-class for
-   * details
-   */
-  public static final StorageClass STANDARD = type.createAndRegister("STANDARD");
-
-  /**
-   * Archive storage class. See: https://cloud.google.com/storage/docs/per-object-storage-class for
-   * details
-   */
-  public static final StorageClass ARCHIVE = type.createAndRegister("ARCHIVE");
-
-  /**
    * Durable Reduced Availability (deprecated).
-   * See:https://cloud.google.com/storage/docs/per-object-storage-class for details
+   * See:https://cloud.google.com/storage/docs/storage-classes for details
    */
   public static final StorageClass DURABLE_REDUCED_AVAILABILITY =
       type.createAndRegister("DURABLE_REDUCED_AVAILABILITY");
