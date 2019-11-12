@@ -155,13 +155,14 @@
     <google.api-common.version>1.8.1</google.api-common.version>
     <google.common-protos.version>1.17.0</google.common-protos.version>
     <gax.version>1.49.1</gax.version>
-    <grpc.version>1.24.1</grpc.version>
+    <grpc.version>1.25.0</grpc.version>
     <protobuf.version>3.10.0</protobuf.version>
     <junit.version>4.12</junit.version>
     <guava.version>28.1-android</guava.version>
     <threeten.version>1.4.0</threeten.version>
     <javax.annotations.version>1.3.2</javax.annotations.version>
     <animal-sniffer.version>1.18</animal-sniffer.version>
+    <errorprone.version>2.3.3</errorprone.version>
   </properties>
 
   <dependencyManagement>
@@ -253,6 +254,11 @@
         <groupId>org.codehaus.mojo</groupId>
         <artifactId>animal-sniffer-annotations</artifactId>
         <version>${animal-sniffer.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>com.google.errorprone</groupId>
+        <artifactId>error_prone_annotations</artifactId>
+        <version>${errorprone.version}</version>
       </dependency>
 
       <dependency>
