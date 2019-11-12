@@ -471,8 +471,9 @@ public abstract class UpdateBuilder<T extends UpdateBuilder> {
       @Nonnull FieldPath fieldPath,
       @Nullable Object value,
       Object[] moreFieldsAndValues) {
+    Object data = CustomClassMapper.convertToPlainJavaTypes(value);
     Map<FieldPath, Object> fields = new HashMap<>();
-    fields.put(fieldPath, value);
+    fields.put(fieldPath, data);
 
     Preconditions.checkArgument(
         moreFieldsAndValues.length % 2 == 0, "moreFieldsAndValues must be key-value pairs.");

@@ -110,6 +110,30 @@ public class WriteBatchTest {
   }
 
   @Test
+  public void updateDocumentWithSinglePojoField() throws Exception {
+    doReturn(commitResponse(1, 0))
+        .when(firestoreMock)
+        .sendRequest(
+            commitCapture.capture(), Matchers.<UnaryCallable<CommitRequest, CommitResponse>>any());
+    batch.update(documentReference, "complexField", LocalFirestoreHelper.UPDATE_POJO_OBJECT);
+
+    assertEquals(1, batch.getMutationsSize());
+    List<WriteResult> writeResults = batch.commit().get();
+    List<Write> writes = new ArrayList<>();
+
+    for (int i = 0; i < writeResults.size(); ++i) {
+      assertEquals(Timestamp.ofTimeSecondsAndNanos(i, i), writeResults.get(i).getUpdateTime());
+      writes.add(
+          update(
+              LocalFirestoreHelper.UPDATE_POJOFIELD_PROTO,
+              Collections.singletonList("complexField")));
+    }
+
+    CommitRequest commitRequest = commitCapture.getValue();
+    assertEquals(commit(writes.toArray(new Write[] {})), commitRequest);
+  }
+
+  @Test
   public void setDocument() throws Exception {
     doReturn(commitResponse(4, 0))
         .when(firestoreMock)
