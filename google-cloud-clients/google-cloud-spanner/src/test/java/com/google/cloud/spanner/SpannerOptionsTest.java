@@ -83,9 +83,9 @@ public class SpannerOptionsTest {
             .setInitialRetryDelay(Duration.ofMillis(250L))
             .setRetryDelayMultiplier(1.3)
             .setMaxRetryDelay(Duration.ofMillis(32000L))
-            .setInitialRpcTimeout(Duration.ofMillis(360000L))
+            .setInitialRpcTimeout(Duration.ofMillis(3600000L))
             .setRpcTimeoutMultiplier(1.0)
-            .setMaxRpcTimeout(Duration.ofMillis(360000L))
+            .setMaxRpcTimeout(Duration.ofMillis(3600000L))
             .setTotalTimeout(Duration.ofMillis(3600000L))
             .build();
     RetrySettings streamingRetrySettings =
@@ -93,9 +93,9 @@ public class SpannerOptionsTest {
             .setInitialRetryDelay(Duration.ofMillis(250L))
             .setRetryDelayMultiplier(1.3)
             .setMaxRetryDelay(Duration.ofMillis(32000L))
-            .setInitialRpcTimeout(Duration.ofMillis(360000L))
+            .setInitialRpcTimeout(Duration.ofMillis(3600000L))
             .setRpcTimeoutMultiplier(1.0)
-            .setMaxRpcTimeout(Duration.ofMillis(360000L))
+            .setMaxRpcTimeout(Duration.ofMillis(3600000L))
             .setTotalTimeout(Duration.ofMillis(3600000L))
             .build();
     RetrySettings longRunningRetrySettings =
