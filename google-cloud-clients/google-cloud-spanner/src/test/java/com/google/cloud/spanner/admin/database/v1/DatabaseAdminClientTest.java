@@ -321,7 +321,8 @@ public class DatabaseAdminClientTest {
     Policy expectedResponse = Policy.newBuilder().setVersion(version).setEtag(etag).build();
     mockDatabaseAdmin.addResponse(expectedResponse);
 
-    ResourceName resource = DatabaseName.of("[PROJECT]", "[INSTANCE]", "[DATABASE]");
+    ResourceName resource =
+        com.google.iam.v1.DatabaseName.of("[PROJECT]", "[INSTANCE]", "[DATABASE]");
     Policy policy = Policy.newBuilder().build();
 
     Policy actualResponse = client.setIamPolicy(resource, policy);
@@ -346,7 +347,8 @@ public class DatabaseAdminClientTest {
     mockDatabaseAdmin.addException(exception);
 
     try {
-      ResourceName resource = DatabaseName.of("[PROJECT]", "[INSTANCE]", "[DATABASE]");
+      ResourceName resource =
+          com.google.iam.v1.DatabaseName.of("[PROJECT]", "[INSTANCE]", "[DATABASE]");
       Policy policy = Policy.newBuilder().build();
 
       client.setIamPolicy(resource, policy);
@@ -364,7 +366,8 @@ public class DatabaseAdminClientTest {
     Policy expectedResponse = Policy.newBuilder().setVersion(version).setEtag(etag).build();
     mockDatabaseAdmin.addResponse(expectedResponse);
 
-    ResourceName resource = DatabaseName.of("[PROJECT]", "[INSTANCE]", "[DATABASE]");
+    ResourceName resource =
+        com.google.iam.v1.DatabaseName.of("[PROJECT]", "[INSTANCE]", "[DATABASE]");
 
     Policy actualResponse = client.getIamPolicy(resource);
     Assert.assertEquals(expectedResponse, actualResponse);
@@ -387,7 +390,8 @@ public class DatabaseAdminClientTest {
     mockDatabaseAdmin.addException(exception);
 
     try {
-      ResourceName resource = DatabaseName.of("[PROJECT]", "[INSTANCE]", "[DATABASE]");
+      ResourceName resource =
+          com.google.iam.v1.DatabaseName.of("[PROJECT]", "[INSTANCE]", "[DATABASE]");
 
       client.getIamPolicy(resource);
       Assert.fail("No exception raised");
@@ -402,7 +406,8 @@ public class DatabaseAdminClientTest {
     TestIamPermissionsResponse expectedResponse = TestIamPermissionsResponse.newBuilder().build();
     mockDatabaseAdmin.addResponse(expectedResponse);
 
-    ResourceName resource = DatabaseName.of("[PROJECT]", "[INSTANCE]", "[DATABASE]");
+    ResourceName resource =
+        com.google.iam.v1.DatabaseName.of("[PROJECT]", "[INSTANCE]", "[DATABASE]");
     List<String> permissions = new ArrayList<>();
 
     TestIamPermissionsResponse actualResponse = client.testIamPermissions(resource, permissions);
@@ -427,7 +432,8 @@ public class DatabaseAdminClientTest {
     mockDatabaseAdmin.addException(exception);
 
     try {
-      ResourceName resource = DatabaseName.of("[PROJECT]", "[INSTANCE]", "[DATABASE]");
+      ResourceName resource =
+          com.google.iam.v1.DatabaseName.of("[PROJECT]", "[INSTANCE]", "[DATABASE]");
       List<String> permissions = new ArrayList<>();
 
       client.testIamPermissions(resource, permissions);
