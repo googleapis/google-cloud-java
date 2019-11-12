@@ -234,6 +234,11 @@
               <artifactId>proto-google-iam-v1</artifactId>
               <version>0.13.0</version>
             </dependency>
+          <dependency>
+            <groupId>com.google.auto.value</groupId>
+            <artifactId>auto-value</artifactId>
+            <version>${autovalue.version}</version>
+          </dependency>
             <dependency>
               <groupId>com.google.auto.value</groupId>
               <artifactId>auto-value-annotations</artifactId>
@@ -345,13 +350,6 @@
                     <target>1.7</target>
                     <encoding>UTF-8</encoding>
                     <compilerArgument>-Xlint:unchecked</compilerArgument>
-                    <annotationProcessorPaths>
-                      <path>
-                        <groupId>com.google.auto.value</groupId>
-                        <artifactId>auto-value</artifactId>
-                        <version>${autovalue.version}</version>
-                      </path>
-                    </annotationProcessorPaths>
                   </configuration>
                 </plugin>
 

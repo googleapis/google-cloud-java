@@ -64,6 +64,11 @@
     </dependency>
     <dependency>
       <groupId>com.google.auto.value</groupId>
+      <artifactId>auto-value</artifactId>
+      <scope>provided</scope>
+    </dependency>
+    <dependency>
+      <groupId>com.google.auto.value</groupId>
       <artifactId>auto-value-annotations</artifactId>
     </dependency>
     <dependency>
@@ -338,7 +343,7 @@
             grpc-grpclb is used at runtime using reflection
             grpc-auth is not directly used transitively, but is pulled to align with other grpc parts
             -->
-          <usedDependencies>io.grpc:grpc-auth,io.grpc:grpc-grpclb</usedDependencies>
+          <usedDependencies>io.grpc:grpc-auth,io.grpc:grpc-grpclb,com.google.auto.value:auto-value</usedDependencies>
         </configuration>
       </plugin>
 
@@ -357,10 +362,6 @@
         <artifactId>maven-surefire-plugin</artifactId>
 
         <configuration>
-          <parallel>classes</parallel>
-          <forkCount>2C</forkCount>
-          <reuseForks>true</reuseForks>
-
           <!-- enable the ability to skip unit tests, while running integration tests -->
           <skipTests>${skipUnitTests}</skipTests>
           <trimStackTrace>false</trimStackTrace>

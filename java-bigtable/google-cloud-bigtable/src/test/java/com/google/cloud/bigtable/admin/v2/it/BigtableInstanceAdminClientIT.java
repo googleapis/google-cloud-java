@@ -27,6 +27,7 @@ import com.google.cloud.bigtable.admin.v2.models.CreateAppProfileRequest;
 import com.google.cloud.bigtable.admin.v2.models.CreateClusterRequest;
 import com.google.cloud.bigtable.admin.v2.models.CreateInstanceRequest;
 import com.google.cloud.bigtable.admin.v2.models.Instance;
+import com.google.cloud.bigtable.admin.v2.models.Instance.Type;
 import com.google.cloud.bigtable.admin.v2.models.StorageType;
 import com.google.cloud.bigtable.admin.v2.models.UpdateAppProfileRequest;
 import com.google.cloud.bigtable.admin.v2.models.UpdateInstanceRequest;
@@ -110,18 +111,18 @@ public class BigtableInstanceAdminClientIT {
     assertThat(permissions).hasSize(2);
   }
 
+  /** To optimize test run time, instance & cluster creation is tested at the same time */
   @Test
-  public void instanceCreationDeletionTest() {
+  public void instanceAndClusterCreationDeletionTest() {
     String newInstanceId = AbstractTestEnv.TEST_INSTANCE_PREFIX + Instant.now().getEpochSecond();
     String newClusterId = newInstanceId + "-c1";
 
     client.createInstance(
         CreateInstanceRequest.of(newInstanceId)
-            .addDevelopmentCluster(
-                newClusterId, testEnvRule.env().getPrimaryZone(), StorageType.SSD)
+            .addCluster(newClusterId, testEnvRule.env().getPrimaryZone(), 3, StorageType.SSD)
             .setDisplayName("Fresh-Instance-Name")
             .addLabel("state", "readytodelete")
-            .setType(Instance.Type.DEVELOPMENT));
+            .setType(Type.PRODUCTION));
 
     try {
       assertThat(client.exists(newInstanceId)).isTrue();
@@ -134,6 +135,8 @@ public class BigtableInstanceAdminClientIT {
 
       assertThat(client.listInstances()).contains(instance);
 
+      clusterCreationDeletionTestHelper(newInstanceId);
+
       client.deleteInstance(newInstanceId);
       assertThat(client.exists(newInstanceId)).isFalse();
     } finally {
@@ -143,29 +146,25 @@ public class BigtableInstanceAdminClientIT {
     }
   }
 
-  @Test
-  public void clusterCreationDeletionTest() {
-    Instance currentInstance = client.getInstance(instanceId);
-    assume()
-        .withMessage("cluster replication test can only run on PRODUCTION instance")
-        .that(currentInstance.getType())
-        .isEqualTo(Instance.Type.PRODUCTION);
-
+  // To improve test runtime, piggyback off the instance creation/deletion test's fresh instance.
+  // This will avoid the need to copy any existing tables and will also reduce flakiness in case a
+  // previous run failed to clean up a cluster in the secondary zone.
+  public void clusterCreationDeletionTestHelper(String newInstanceId) {
     String newClusterId = AbstractTestEnv.TEST_CLUSTER_PREFIX + Instant.now().getEpochSecond();
     boolean isClusterDeleted = false;
     client.createCluster(
-        CreateClusterRequest.of(instanceId, newClusterId)
+        CreateClusterRequest.of(newInstanceId, newClusterId)
             .setZone(testEnvRule.env().getSecondaryZone())
             .setStorageType(StorageType.SSD)
             .setServeNodes(3));
     try {
-      assertThat(client.getCluster(instanceId, newClusterId)).isNotNull();
+      assertThat(client.getCluster(newInstanceId, newClusterId)).isNotNull();
 
-      client.deleteCluster(instanceId, newClusterId);
+      client.deleteCluster(newInstanceId, newClusterId);
       isClusterDeleted = true;
     } finally {
       if (!isClusterDeleted) {
-        client.deleteCluster(instanceId, newClusterId);
+        client.deleteCluster(newInstanceId, newClusterId);
       }
     }
   }
@@ -203,7 +202,8 @@ public class BigtableInstanceAdminClientIT {
       Cluster resizeCluster = client.resizeCluster(instanceId, clusterId, freshNumOfNodes);
       assertThat(resizeCluster.getServeNodes()).isEqualTo(freshNumOfNodes);
 
-      assertThat(client.resizeCluster(instanceId, clusterId, existingClusterNodeSize))
+      assertThat(
+              client.resizeCluster(instanceId, clusterId, existingClusterNodeSize).getServeNodes())
           .isEqualTo(existingClusterNodeSize);
     }
   }
