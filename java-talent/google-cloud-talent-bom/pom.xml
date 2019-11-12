@@ -3,7 +3,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-talent-bom</artifactId>
-  <version>0.34.1-beta-SNAPSHOT</version> <!-- {x-version-update:google-cloud-talent:current} -->
+  <version>0.35.0-beta</version> <!-- {x-version-update:google-cloud-talent:current} -->
   <packaging>pom</packaging>
   <parent>
     <groupId>com.google.cloud</groupId>
@@ -64,17 +64,17 @@
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>proto-google-cloud-talent-v4beta1</artifactId>
-        <version>0.34.1-beta-SNAPSHOT</version> <!-- {x-version-update:proto-google-cloud-talent-v4beta1:current} -->
+        <version>0.35.0-beta</version> <!-- {x-version-update:proto-google-cloud-talent-v4beta1:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-talent</artifactId>
-        <version>0.34.1-beta-SNAPSHOT</version> <!-- {x-version-update:google-cloud-talent:current} -->
+        <version>0.35.0-beta</version> <!-- {x-version-update:google-cloud-talent:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>grpc-google-cloud-talent-v4beta1</artifactId>
-        <version>0.34.1-beta-SNAPSHOT</version> <!-- {x-version-update:grpc-google-cloud-talent-v4beta1:current} -->
+        <version>0.35.0-beta</version> <!-- {x-version-update:grpc-google-cloud-talent-v4beta1:current} -->
       </dependency>
     </dependencies>
   </dependencyManagement>

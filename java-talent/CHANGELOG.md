@@ -1,5 +1,17 @@
 # Changelog
 
+## [0.35.0](https://www.github.com/googleapis/java-talent/compare/v0.34.0...v0.35.0) (2019-11-12)
+
+
+### Features
+
+* add queryLanguageCode to JobQuery ([#9](https://www.github.com/googleapis/java-talent/issues/9)) ([1e2f981](https://www.github.com/googleapis/java-talent/commit/1e2f981ebd39f96b4c0d50f3b3908f63bdd6424b))
+
+
+### Documentation
+
+* mark jobs as required for BatchUpdateJobsRequest ([#15](https://www.github.com/googleapis/java-talent/issues/15)) ([b098490](https://www.github.com/googleapis/java-talent/commit/b0984906ece41add04c47136fb8c6579284cffe2))
+
 ## [0.34.0](https://www.github.com/googleapis/java-talent/compare/0.33.0...v0.34.0) (2019-10-25)
 
 
