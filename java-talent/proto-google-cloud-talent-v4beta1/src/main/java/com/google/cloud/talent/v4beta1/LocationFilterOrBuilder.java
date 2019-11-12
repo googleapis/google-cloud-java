@@ -54,8 +54,8 @@ public interface LocationFilterOrBuilder
    * Set this field to bias location resolution toward a specific country
    * or territory. If this field is not set, application behavior is biased
    * toward the United States by default.
-   * See http://cldr.unicode.org/ and
-   * http://www.unicode.org/cldr/charts/30/supplemental/territory_information.html
+   * See https://cldr.unicode.org/ and
+   * https://www.unicode.org/cldr/charts/30/supplemental/territory_information.html
    * for details. Example: "CH" for Switzerland.
    * Note that this filter is not applicable for Profile Search related queries.
    * </pre>
@@ -73,8 +73,8 @@ public interface LocationFilterOrBuilder
    * Set this field to bias location resolution toward a specific country
    * or territory. If this field is not set, application behavior is biased
    * toward the United States by default.
-   * See http://cldr.unicode.org/ and
-   * http://www.unicode.org/cldr/charts/30/supplemental/territory_information.html
+   * See https://cldr.unicode.org/ and
+   * https://www.unicode.org/cldr/charts/30/supplemental/territory_information.html
    * for details. Example: "CH" for Switzerland.
    * Note that this filter is not applicable for Profile Search related queries.
    * </pre>

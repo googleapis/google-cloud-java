@@ -54,50 +54,60 @@ public interface BatchUpdateJobsRequestOrBuilder
    *
    *
    * <pre>
-   * The jobs to be updated.
+   * Required. The jobs to be updated.
    * </pre>
    *
-   * <code>repeated .google.cloud.talent.v4beta1.Job jobs = 2;</code>
+   * <code>
+   * repeated .google.cloud.talent.v4beta1.Job jobs = 2 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   java.util.List<com.google.cloud.talent.v4beta1.Job> getJobsList();
   /**
    *
    *
    * <pre>
-   * The jobs to be updated.
+   * Required. The jobs to be updated.
    * </pre>
    *
-   * <code>repeated .google.cloud.talent.v4beta1.Job jobs = 2;</code>
+   * <code>
+   * repeated .google.cloud.talent.v4beta1.Job jobs = 2 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   com.google.cloud.talent.v4beta1.Job getJobs(int index);
   /**
    *
    *
    * <pre>
-   * The jobs to be updated.
+   * Required. The jobs to be updated.
    * </pre>
    *
-   * <code>repeated .google.cloud.talent.v4beta1.Job jobs = 2;</code>
+   * <code>
+   * repeated .google.cloud.talent.v4beta1.Job jobs = 2 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   int getJobsCount();
   /**
    *
    *
    * <pre>
-   * The jobs to be updated.
+   * Required. The jobs to be updated.
    * </pre>
    *
-   * <code>repeated .google.cloud.talent.v4beta1.Job jobs = 2;</code>
+   * <code>
+   * repeated .google.cloud.talent.v4beta1.Job jobs = 2 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   java.util.List<? extends com.google.cloud.talent.v4beta1.JobOrBuilder> getJobsOrBuilderList();
   /**
    *
    *
    * <pre>
-   * The jobs to be updated.
+   * Required. The jobs to be updated.
    * </pre>
    *
-   * <code>repeated .google.cloud.talent.v4beta1.Job jobs = 2;</code>
+   * <code>
+   * repeated .google.cloud.talent.v4beta1.Job jobs = 2 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   com.google.cloud.talent.v4beta1.JobOrBuilder getJobsOrBuilder(int index);
 

@@ -220,7 +220,7 @@ public final class Phone extends com.google.protobuf.GeneratedMessageV3
      * or LANDLINE number. The [phone
      * usage][google.cloud.talent.v4beta1.ContactInfoUsage] should be set to
      * PERSONAL for these phone types. Some more information can be found here:
-     * http://en.wikipedia.org/wiki/Personal_Numbers
+     * https://en.wikipedia.org/wiki/Personal_Numbers
      * </pre>
      *
      * <code>VIRTUAL = 7;</code>
@@ -330,7 +330,7 @@ public final class Phone extends com.google.protobuf.GeneratedMessageV3
      * or LANDLINE number. The [phone
      * usage][google.cloud.talent.v4beta1.ContactInfoUsage] should be set to
      * PERSONAL for these phone types. Some more information can be found here:
-     * http://en.wikipedia.org/wiki/Personal_Numbers
+     * https://en.wikipedia.org/wiki/Personal_Numbers
      * </pre>
      *
      * <code>VIRTUAL = 7;</code>

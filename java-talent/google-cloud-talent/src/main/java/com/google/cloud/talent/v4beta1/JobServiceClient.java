@@ -1184,7 +1184,7 @@ public class JobServiceClient implements BackgroundResource {
    *     <p>The format is "projects/{project_id}/tenants/{tenant_id}". For example,
    *     "projects/foo/tenant/bar". If tenant id is unspecified, a default tenant is created. For
    *     example, "projects/foo".
-   * @param jobs The jobs to be updated.
+   * @param jobs Required. The jobs to be updated.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi(

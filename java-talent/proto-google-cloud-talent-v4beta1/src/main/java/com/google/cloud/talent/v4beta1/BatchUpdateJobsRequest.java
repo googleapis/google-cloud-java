@@ -192,10 +192,12 @@ public final class BatchUpdateJobsRequest extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * The jobs to be updated.
+   * Required. The jobs to be updated.
    * </pre>
    *
-   * <code>repeated .google.cloud.talent.v4beta1.Job jobs = 2;</code>
+   * <code>
+   * repeated .google.cloud.talent.v4beta1.Job jobs = 2 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   public java.util.List<com.google.cloud.talent.v4beta1.Job> getJobsList() {
     return jobs_;
@@ -204,10 +206,12 @@ public final class BatchUpdateJobsRequest extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * The jobs to be updated.
+   * Required. The jobs to be updated.
    * </pre>
    *
-   * <code>repeated .google.cloud.talent.v4beta1.Job jobs = 2;</code>
+   * <code>
+   * repeated .google.cloud.talent.v4beta1.Job jobs = 2 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   public java.util.List<? extends com.google.cloud.talent.v4beta1.JobOrBuilder>
       getJobsOrBuilderList() {
@@ -217,10 +221,12 @@ public final class BatchUpdateJobsRequest extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * The jobs to be updated.
+   * Required. The jobs to be updated.
    * </pre>
    *
-   * <code>repeated .google.cloud.talent.v4beta1.Job jobs = 2;</code>
+   * <code>
+   * repeated .google.cloud.talent.v4beta1.Job jobs = 2 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   public int getJobsCount() {
     return jobs_.size();
@@ -229,10 +235,12 @@ public final class BatchUpdateJobsRequest extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * The jobs to be updated.
+   * Required. The jobs to be updated.
    * </pre>
    *
-   * <code>repeated .google.cloud.talent.v4beta1.Job jobs = 2;</code>
+   * <code>
+   * repeated .google.cloud.talent.v4beta1.Job jobs = 2 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   public com.google.cloud.talent.v4beta1.Job getJobs(int index) {
     return jobs_.get(index);
@@ -241,10 +249,12 @@ public final class BatchUpdateJobsRequest extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * The jobs to be updated.
+   * Required. The jobs to be updated.
    * </pre>
    *
-   * <code>repeated .google.cloud.talent.v4beta1.Job jobs = 2;</code>
+   * <code>
+   * repeated .google.cloud.talent.v4beta1.Job jobs = 2 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   public com.google.cloud.talent.v4beta1.JobOrBuilder getJobsOrBuilder(int index) {
     return jobs_.get(index);
@@ -870,10 +880,12 @@ public final class BatchUpdateJobsRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * The jobs to be updated.
+     * Required. The jobs to be updated.
      * </pre>
      *
-     * <code>repeated .google.cloud.talent.v4beta1.Job jobs = 2;</code>
+     * <code>
+     * repeated .google.cloud.talent.v4beta1.Job jobs = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public java.util.List<com.google.cloud.talent.v4beta1.Job> getJobsList() {
       if (jobsBuilder_ == null) {
@@ -886,10 +898,12 @@ public final class BatchUpdateJobsRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * The jobs to be updated.
+     * Required. The jobs to be updated.
      * </pre>
      *
-     * <code>repeated .google.cloud.talent.v4beta1.Job jobs = 2;</code>
+     * <code>
+     * repeated .google.cloud.talent.v4beta1.Job jobs = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public int getJobsCount() {
       if (jobsBuilder_ == null) {
@@ -902,10 +916,12 @@ public final class BatchUpdateJobsRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * The jobs to be updated.
+     * Required. The jobs to be updated.
      * </pre>
      *
-     * <code>repeated .google.cloud.talent.v4beta1.Job jobs = 2;</code>
+     * <code>
+     * repeated .google.cloud.talent.v4beta1.Job jobs = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public com.google.cloud.talent.v4beta1.Job getJobs(int index) {
       if (jobsBuilder_ == null) {
@@ -918,10 +934,12 @@ public final class BatchUpdateJobsRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * The jobs to be updated.
+     * Required. The jobs to be updated.
      * </pre>
      *
-     * <code>repeated .google.cloud.talent.v4beta1.Job jobs = 2;</code>
+     * <code>
+     * repeated .google.cloud.talent.v4beta1.Job jobs = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder setJobs(int index, com.google.cloud.talent.v4beta1.Job value) {
       if (jobsBuilder_ == null) {
@@ -940,10 +958,12 @@ public final class BatchUpdateJobsRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * The jobs to be updated.
+     * Required. The jobs to be updated.
      * </pre>
      *
-     * <code>repeated .google.cloud.talent.v4beta1.Job jobs = 2;</code>
+     * <code>
+     * repeated .google.cloud.talent.v4beta1.Job jobs = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder setJobs(int index, com.google.cloud.talent.v4beta1.Job.Builder builderForValue) {
       if (jobsBuilder_ == null) {
@@ -959,10 +979,12 @@ public final class BatchUpdateJobsRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * The jobs to be updated.
+     * Required. The jobs to be updated.
      * </pre>
      *
-     * <code>repeated .google.cloud.talent.v4beta1.Job jobs = 2;</code>
+     * <code>
+     * repeated .google.cloud.talent.v4beta1.Job jobs = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder addJobs(com.google.cloud.talent.v4beta1.Job value) {
       if (jobsBuilder_ == null) {
@@ -981,10 +1003,12 @@ public final class BatchUpdateJobsRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * The jobs to be updated.
+     * Required. The jobs to be updated.
      * </pre>
      *
-     * <code>repeated .google.cloud.talent.v4beta1.Job jobs = 2;</code>
+     * <code>
+     * repeated .google.cloud.talent.v4beta1.Job jobs = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder addJobs(int index, com.google.cloud.talent.v4beta1.Job value) {
       if (jobsBuilder_ == null) {
@@ -1003,10 +1027,12 @@ public final class BatchUpdateJobsRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * The jobs to be updated.
+     * Required. The jobs to be updated.
      * </pre>
      *
-     * <code>repeated .google.cloud.talent.v4beta1.Job jobs = 2;</code>
+     * <code>
+     * repeated .google.cloud.talent.v4beta1.Job jobs = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder addJobs(com.google.cloud.talent.v4beta1.Job.Builder builderForValue) {
       if (jobsBuilder_ == null) {
@@ -1022,10 +1048,12 @@ public final class BatchUpdateJobsRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * The jobs to be updated.
+     * Required. The jobs to be updated.
      * </pre>
      *
-     * <code>repeated .google.cloud.talent.v4beta1.Job jobs = 2;</code>
+     * <code>
+     * repeated .google.cloud.talent.v4beta1.Job jobs = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder addJobs(int index, com.google.cloud.talent.v4beta1.Job.Builder builderForValue) {
       if (jobsBuilder_ == null) {
@@ -1041,10 +1069,12 @@ public final class BatchUpdateJobsRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * The jobs to be updated.
+     * Required. The jobs to be updated.
      * </pre>
      *
-     * <code>repeated .google.cloud.talent.v4beta1.Job jobs = 2;</code>
+     * <code>
+     * repeated .google.cloud.talent.v4beta1.Job jobs = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder addAllJobs(
         java.lang.Iterable<? extends com.google.cloud.talent.v4beta1.Job> values) {
@@ -1061,10 +1091,12 @@ public final class BatchUpdateJobsRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * The jobs to be updated.
+     * Required. The jobs to be updated.
      * </pre>
      *
-     * <code>repeated .google.cloud.talent.v4beta1.Job jobs = 2;</code>
+     * <code>
+     * repeated .google.cloud.talent.v4beta1.Job jobs = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder clearJobs() {
       if (jobsBuilder_ == null) {
@@ -1080,10 +1112,12 @@ public final class BatchUpdateJobsRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * The jobs to be updated.
+     * Required. The jobs to be updated.
      * </pre>
      *
-     * <code>repeated .google.cloud.talent.v4beta1.Job jobs = 2;</code>
+     * <code>
+     * repeated .google.cloud.talent.v4beta1.Job jobs = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder removeJobs(int index) {
       if (jobsBuilder_ == null) {
@@ -1099,10 +1133,12 @@ public final class BatchUpdateJobsRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * The jobs to be updated.
+     * Required. The jobs to be updated.
      * </pre>
      *
-     * <code>repeated .google.cloud.talent.v4beta1.Job jobs = 2;</code>
+     * <code>
+     * repeated .google.cloud.talent.v4beta1.Job jobs = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public com.google.cloud.talent.v4beta1.Job.Builder getJobsBuilder(int index) {
       return getJobsFieldBuilder().getBuilder(index);
@@ -1111,10 +1147,12 @@ public final class BatchUpdateJobsRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * The jobs to be updated.
+     * Required. The jobs to be updated.
      * </pre>
      *
-     * <code>repeated .google.cloud.talent.v4beta1.Job jobs = 2;</code>
+     * <code>
+     * repeated .google.cloud.talent.v4beta1.Job jobs = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public com.google.cloud.talent.v4beta1.JobOrBuilder getJobsOrBuilder(int index) {
       if (jobsBuilder_ == null) {
@@ -1127,10 +1165,12 @@ public final class BatchUpdateJobsRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * The jobs to be updated.
+     * Required. The jobs to be updated.
      * </pre>
      *
-     * <code>repeated .google.cloud.talent.v4beta1.Job jobs = 2;</code>
+     * <code>
+     * repeated .google.cloud.talent.v4beta1.Job jobs = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public java.util.List<? extends com.google.cloud.talent.v4beta1.JobOrBuilder>
         getJobsOrBuilderList() {
@@ -1144,10 +1184,12 @@ public final class BatchUpdateJobsRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * The jobs to be updated.
+     * Required. The jobs to be updated.
      * </pre>
      *
-     * <code>repeated .google.cloud.talent.v4beta1.Job jobs = 2;</code>
+     * <code>
+     * repeated .google.cloud.talent.v4beta1.Job jobs = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public com.google.cloud.talent.v4beta1.Job.Builder addJobsBuilder() {
       return getJobsFieldBuilder()
@@ -1157,10 +1199,12 @@ public final class BatchUpdateJobsRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * The jobs to be updated.
+     * Required. The jobs to be updated.
      * </pre>
      *
-     * <code>repeated .google.cloud.talent.v4beta1.Job jobs = 2;</code>
+     * <code>
+     * repeated .google.cloud.talent.v4beta1.Job jobs = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public com.google.cloud.talent.v4beta1.Job.Builder addJobsBuilder(int index) {
       return getJobsFieldBuilder()
@@ -1170,10 +1214,12 @@ public final class BatchUpdateJobsRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * The jobs to be updated.
+     * Required. The jobs to be updated.
      * </pre>
      *
-     * <code>repeated .google.cloud.talent.v4beta1.Job jobs = 2;</code>
+     * <code>
+     * repeated .google.cloud.talent.v4beta1.Job jobs = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public java.util.List<com.google.cloud.talent.v4beta1.Job.Builder> getJobsBuilderList() {
       return getJobsFieldBuilder().getBuilderList();

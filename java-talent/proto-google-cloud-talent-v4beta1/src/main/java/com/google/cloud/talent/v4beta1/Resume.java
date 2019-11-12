@@ -139,7 +139,7 @@ public final class Resume extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The profile contents in HR-XML format.
-     * See http://schemas.liquid-technologies.com/hr-xml/2007-04-15/ for more
+     * See https://schemas.liquid-technologies.com/hr-xml/2007-04-15/ for more
      * information about Human Resources XML.
      * </pre>
      *
@@ -174,7 +174,7 @@ public final class Resume extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The profile contents in HR-XML format.
-     * See http://schemas.liquid-technologies.com/hr-xml/2007-04-15/ for more
+     * See https://schemas.liquid-technologies.com/hr-xml/2007-04-15/ for more
      * information about Human Resources XML.
      * </pre>
      *
