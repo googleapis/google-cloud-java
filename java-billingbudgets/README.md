@@ -101,9 +101,9 @@ Java 8 OSX | [![Kokoro CI][kokoro-badge-image-3]][kokoro-badge-link-3]
 Java 8 Windows | [![Kokoro CI][kokoro-badge-image-4]][kokoro-badge-link-4]
 Java 11 | [![Kokoro CI][kokoro-badge-image-5]][kokoro-badge-link-5]
 
-[api-reference]: 
-[product-docs]: 
-[javadocs]: 
+[api-reference]: https://googleapis.dev/java/google-cloud-billingbudgets/latest 
+[product-docs]: https://cloud.google.com/billing/docs/how-to/budgets
+[javadocs]: https://googleapis.dev/java/google-cloud-billingbudgets/latest 
 [kokoro-badge-image-1]: http://storage.googleapis.com/cloud-devrel-public/java/badges/java-billingbudgets/java7.svg
 [kokoro-badge-link-1]: http://storage.googleapis.com/cloud-devrel-public/java/badges/java-billingbudgets/java7.html
 [kokoro-badge-image-2]: http://storage.googleapis.com/cloud-devrel-public/java/badges/java-billingbudgets/java8.svg
