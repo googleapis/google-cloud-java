@@ -156,6 +156,25 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
               actionCase_ = 8;
               break;
             }
+          case 74:
+            {
+              com.google.privacy.dlp.v2.Action.PublishToStackdriver.Builder subBuilder = null;
+              if (actionCase_ == 9) {
+                subBuilder =
+                    ((com.google.privacy.dlp.v2.Action.PublishToStackdriver) action_).toBuilder();
+              }
+              action_ =
+                  input.readMessage(
+                      com.google.privacy.dlp.v2.Action.PublishToStackdriver.parser(),
+                      extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(
+                    (com.google.privacy.dlp.v2.Action.PublishToStackdriver) action_);
+                action_ = subBuilder.buildPartial();
+              }
+              actionCase_ = 9;
+              break;
+            }
           default:
             {
               if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -2848,6 +2867,453 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
     }
   }
 
+  public interface PublishToStackdriverOrBuilder
+      extends
+      // @@protoc_insertion_point(interface_extends:google.privacy.dlp.v2.Action.PublishToStackdriver)
+      com.google.protobuf.MessageOrBuilder {}
+  /**
+   *
+   *
+   * <pre>
+   * Enable Stackdriver metric dlp.googleapis.com/finding_count. This
+   * will publish a metric to stack driver on each infotype requested and
+   * how many findings were found for it. CustomDetectors will be bucketed
+   * as 'Custom' under the Stackdriver label 'info_type'.
+   * </pre>
+   *
+   * Protobuf type {@code google.privacy.dlp.v2.Action.PublishToStackdriver}
+   */
+  public static final class PublishToStackdriver extends com.google.protobuf.GeneratedMessageV3
+      implements
+      // @@protoc_insertion_point(message_implements:google.privacy.dlp.v2.Action.PublishToStackdriver)
+      PublishToStackdriverOrBuilder {
+    private static final long serialVersionUID = 0L;
+    // Use PublishToStackdriver.newBuilder() to construct.
+    private PublishToStackdriver(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+
+    private PublishToStackdriver() {}
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
+      return this.unknownFields;
+    }
+
+    private PublishToStackdriver(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            default:
+              {
+                if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
+                  done = true;
+                }
+                break;
+              }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.privacy.dlp.v2.DlpProto
+          .internal_static_google_privacy_dlp_v2_Action_PublishToStackdriver_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.google.privacy.dlp.v2.DlpProto
+          .internal_static_google_privacy_dlp_v2_Action_PublishToStackdriver_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.google.privacy.dlp.v2.Action.PublishToStackdriver.class,
+              com.google.privacy.dlp.v2.Action.PublishToStackdriver.Builder.class);
+    }
+
+    private byte memoizedIsInitialized = -1;
+
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+        return true;
+      }
+      if (!(obj instanceof com.google.privacy.dlp.v2.Action.PublishToStackdriver)) {
+        return super.equals(obj);
+      }
+      com.google.privacy.dlp.v2.Action.PublishToStackdriver other =
+          (com.google.privacy.dlp.v2.Action.PublishToStackdriver) obj;
+
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.google.privacy.dlp.v2.Action.PublishToStackdriver parseFrom(
+        java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.privacy.dlp.v2.Action.PublishToStackdriver parseFrom(
+        java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.privacy.dlp.v2.Action.PublishToStackdriver parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.privacy.dlp.v2.Action.PublishToStackdriver parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.privacy.dlp.v2.Action.PublishToStackdriver parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.privacy.dlp.v2.Action.PublishToStackdriver parseFrom(
+        byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.privacy.dlp.v2.Action.PublishToStackdriver parseFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.privacy.dlp.v2.Action.PublishToStackdriver parseFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.privacy.dlp.v2.Action.PublishToStackdriver parseDelimitedFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.google.privacy.dlp.v2.Action.PublishToStackdriver parseDelimitedFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.privacy.dlp.v2.Action.PublishToStackdriver parseFrom(
+        com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.privacy.dlp.v2.Action.PublishToStackdriver parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() {
+      return newBuilder();
+    }
+
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+
+    public static Builder newBuilder(
+        com.google.privacy.dlp.v2.Action.PublishToStackdriver prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Enable Stackdriver metric dlp.googleapis.com/finding_count. This
+     * will publish a metric to stack driver on each infotype requested and
+     * how many findings were found for it. CustomDetectors will be bucketed
+     * as 'Custom' under the Stackdriver label 'info_type'.
+     * </pre>
+     *
+     * Protobuf type {@code google.privacy.dlp.v2.Action.PublishToStackdriver}
+     */
+    public static final class Builder
+        extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+        implements
+        // @@protoc_insertion_point(builder_implements:google.privacy.dlp.v2.Action.PublishToStackdriver)
+        com.google.privacy.dlp.v2.Action.PublishToStackdriverOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.privacy.dlp.v2.DlpProto
+            .internal_static_google_privacy_dlp_v2_Action_PublishToStackdriver_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.privacy.dlp.v2.DlpProto
+            .internal_static_google_privacy_dlp_v2_Action_PublishToStackdriver_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.privacy.dlp.v2.Action.PublishToStackdriver.class,
+                com.google.privacy.dlp.v2.Action.PublishToStackdriver.Builder.class);
+      }
+
+      // Construct using com.google.privacy.dlp.v2.Action.PublishToStackdriver.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
+      }
+
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+        return com.google.privacy.dlp.v2.DlpProto
+            .internal_static_google_privacy_dlp_v2_Action_PublishToStackdriver_descriptor;
+      }
+
+      @java.lang.Override
+      public com.google.privacy.dlp.v2.Action.PublishToStackdriver getDefaultInstanceForType() {
+        return com.google.privacy.dlp.v2.Action.PublishToStackdriver.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.google.privacy.dlp.v2.Action.PublishToStackdriver build() {
+        com.google.privacy.dlp.v2.Action.PublishToStackdriver result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.google.privacy.dlp.v2.Action.PublishToStackdriver buildPartial() {
+        com.google.privacy.dlp.v2.Action.PublishToStackdriver result =
+            new com.google.privacy.dlp.v2.Action.PublishToStackdriver(this);
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.setField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+
+      @java.lang.Override
+      public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index,
+          java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.google.privacy.dlp.v2.Action.PublishToStackdriver) {
+          return mergeFrom((com.google.privacy.dlp.v2.Action.PublishToStackdriver) other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.google.privacy.dlp.v2.Action.PublishToStackdriver other) {
+        if (other == com.google.privacy.dlp.v2.Action.PublishToStackdriver.getDefaultInstance())
+          return this;
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        com.google.privacy.dlp.v2.Action.PublishToStackdriver parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage =
+              (com.google.privacy.dlp.v2.Action.PublishToStackdriver) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+      // @@protoc_insertion_point(builder_scope:google.privacy.dlp.v2.Action.PublishToStackdriver)
+    }
+
+    // @@protoc_insertion_point(class_scope:google.privacy.dlp.v2.Action.PublishToStackdriver)
+    private static final com.google.privacy.dlp.v2.Action.PublishToStackdriver DEFAULT_INSTANCE;
+
+    static {
+      DEFAULT_INSTANCE = new com.google.privacy.dlp.v2.Action.PublishToStackdriver();
+    }
+
+    public static com.google.privacy.dlp.v2.Action.PublishToStackdriver getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<PublishToStackdriver> PARSER =
+        new com.google.protobuf.AbstractParser<PublishToStackdriver>() {
+          @java.lang.Override
+          public PublishToStackdriver parsePartialFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+            return new PublishToStackdriver(input, extensionRegistry);
+          }
+        };
+
+    public static com.google.protobuf.Parser<PublishToStackdriver> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<PublishToStackdriver> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.privacy.dlp.v2.Action.PublishToStackdriver getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+  }
+
   private int actionCase_ = 0;
   private java.lang.Object action_;
 
@@ -2857,6 +3323,7 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
     PUBLISH_SUMMARY_TO_CSCC(3),
     PUBLISH_FINDINGS_TO_CLOUD_DATA_CATALOG(5),
     JOB_NOTIFICATION_EMAILS(8),
+    PUBLISH_TO_STACKDRIVER(9),
     ACTION_NOT_SET(0);
     private final int value;
 
@@ -2881,6 +3348,8 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
           return PUBLISH_FINDINGS_TO_CLOUD_DATA_CATALOG;
         case 8:
           return JOB_NOTIFICATION_EMAILS;
+        case 9:
+          return PUBLISH_TO_STACKDRIVER;
         case 0:
           return ACTION_NOT_SET;
         default:
@@ -3130,6 +3599,51 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
     return com.google.privacy.dlp.v2.Action.JobNotificationEmails.getDefaultInstance();
   }
 
+  public static final int PUBLISH_TO_STACKDRIVER_FIELD_NUMBER = 9;
+  /**
+   *
+   *
+   * <pre>
+   * Enable Stackdriver metric dlp.googleapis.com/finding_count.
+   * </pre>
+   *
+   * <code>.google.privacy.dlp.v2.Action.PublishToStackdriver publish_to_stackdriver = 9;</code>
+   */
+  public boolean hasPublishToStackdriver() {
+    return actionCase_ == 9;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Enable Stackdriver metric dlp.googleapis.com/finding_count.
+   * </pre>
+   *
+   * <code>.google.privacy.dlp.v2.Action.PublishToStackdriver publish_to_stackdriver = 9;</code>
+   */
+  public com.google.privacy.dlp.v2.Action.PublishToStackdriver getPublishToStackdriver() {
+    if (actionCase_ == 9) {
+      return (com.google.privacy.dlp.v2.Action.PublishToStackdriver) action_;
+    }
+    return com.google.privacy.dlp.v2.Action.PublishToStackdriver.getDefaultInstance();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Enable Stackdriver metric dlp.googleapis.com/finding_count.
+   * </pre>
+   *
+   * <code>.google.privacy.dlp.v2.Action.PublishToStackdriver publish_to_stackdriver = 9;</code>
+   */
+  public com.google.privacy.dlp.v2.Action.PublishToStackdriverOrBuilder
+      getPublishToStackdriverOrBuilder() {
+    if (actionCase_ == 9) {
+      return (com.google.privacy.dlp.v2.Action.PublishToStackdriver) action_;
+    }
+    return com.google.privacy.dlp.v2.Action.PublishToStackdriver.getDefaultInstance();
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -3159,6 +3673,9 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
     }
     if (actionCase_ == 8) {
       output.writeMessage(8, (com.google.privacy.dlp.v2.Action.JobNotificationEmails) action_);
+    }
+    if (actionCase_ == 9) {
+      output.writeMessage(9, (com.google.privacy.dlp.v2.Action.PublishToStackdriver) action_);
     }
     unknownFields.writeTo(output);
   }
@@ -3194,6 +3711,11 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               8, (com.google.privacy.dlp.v2.Action.JobNotificationEmails) action_);
     }
+    if (actionCase_ == 9) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              9, (com.google.privacy.dlp.v2.Action.PublishToStackdriver) action_);
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -3226,6 +3748,9 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
         break;
       case 8:
         if (!getJobNotificationEmails().equals(other.getJobNotificationEmails())) return false;
+        break;
+      case 9:
+        if (!getPublishToStackdriver().equals(other.getPublishToStackdriver())) return false;
         break;
       case 0:
       default:
@@ -3261,6 +3786,10 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
       case 8:
         hash = (37 * hash) + JOB_NOTIFICATION_EMAILS_FIELD_NUMBER;
         hash = (53 * hash) + getJobNotificationEmails().hashCode();
+        break;
+      case 9:
+        hash = (37 * hash) + PUBLISH_TO_STACKDRIVER_FIELD_NUMBER;
+        hash = (53 * hash) + getPublishToStackdriver().hashCode();
         break;
       case 0:
       default:
@@ -3473,6 +4002,13 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
           result.action_ = jobNotificationEmailsBuilder_.build();
         }
       }
+      if (actionCase_ == 9) {
+        if (publishToStackdriverBuilder_ == null) {
+          result.action_ = action_;
+        } else {
+          result.action_ = publishToStackdriverBuilder_.build();
+        }
+      }
       result.actionCase_ = actionCase_;
       onBuilt();
       return result;
@@ -3547,6 +4083,11 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
         case JOB_NOTIFICATION_EMAILS:
           {
             mergeJobNotificationEmails(other.getJobNotificationEmails());
+            break;
+          }
+        case PUBLISH_TO_STACKDRIVER:
+          {
+            mergePublishToStackdriver(other.getPublishToStackdriver());
             break;
           }
         case ACTION_NOT_SET:
@@ -4655,6 +5196,213 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       ;
       return jobNotificationEmailsBuilder_;
+    }
+
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.privacy.dlp.v2.Action.PublishToStackdriver,
+            com.google.privacy.dlp.v2.Action.PublishToStackdriver.Builder,
+            com.google.privacy.dlp.v2.Action.PublishToStackdriverOrBuilder>
+        publishToStackdriverBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Enable Stackdriver metric dlp.googleapis.com/finding_count.
+     * </pre>
+     *
+     * <code>.google.privacy.dlp.v2.Action.PublishToStackdriver publish_to_stackdriver = 9;</code>
+     */
+    public boolean hasPublishToStackdriver() {
+      return actionCase_ == 9;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Enable Stackdriver metric dlp.googleapis.com/finding_count.
+     * </pre>
+     *
+     * <code>.google.privacy.dlp.v2.Action.PublishToStackdriver publish_to_stackdriver = 9;</code>
+     */
+    public com.google.privacy.dlp.v2.Action.PublishToStackdriver getPublishToStackdriver() {
+      if (publishToStackdriverBuilder_ == null) {
+        if (actionCase_ == 9) {
+          return (com.google.privacy.dlp.v2.Action.PublishToStackdriver) action_;
+        }
+        return com.google.privacy.dlp.v2.Action.PublishToStackdriver.getDefaultInstance();
+      } else {
+        if (actionCase_ == 9) {
+          return publishToStackdriverBuilder_.getMessage();
+        }
+        return com.google.privacy.dlp.v2.Action.PublishToStackdriver.getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Enable Stackdriver metric dlp.googleapis.com/finding_count.
+     * </pre>
+     *
+     * <code>.google.privacy.dlp.v2.Action.PublishToStackdriver publish_to_stackdriver = 9;</code>
+     */
+    public Builder setPublishToStackdriver(
+        com.google.privacy.dlp.v2.Action.PublishToStackdriver value) {
+      if (publishToStackdriverBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        action_ = value;
+        onChanged();
+      } else {
+        publishToStackdriverBuilder_.setMessage(value);
+      }
+      actionCase_ = 9;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Enable Stackdriver metric dlp.googleapis.com/finding_count.
+     * </pre>
+     *
+     * <code>.google.privacy.dlp.v2.Action.PublishToStackdriver publish_to_stackdriver = 9;</code>
+     */
+    public Builder setPublishToStackdriver(
+        com.google.privacy.dlp.v2.Action.PublishToStackdriver.Builder builderForValue) {
+      if (publishToStackdriverBuilder_ == null) {
+        action_ = builderForValue.build();
+        onChanged();
+      } else {
+        publishToStackdriverBuilder_.setMessage(builderForValue.build());
+      }
+      actionCase_ = 9;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Enable Stackdriver metric dlp.googleapis.com/finding_count.
+     * </pre>
+     *
+     * <code>.google.privacy.dlp.v2.Action.PublishToStackdriver publish_to_stackdriver = 9;</code>
+     */
+    public Builder mergePublishToStackdriver(
+        com.google.privacy.dlp.v2.Action.PublishToStackdriver value) {
+      if (publishToStackdriverBuilder_ == null) {
+        if (actionCase_ == 9
+            && action_
+                != com.google.privacy.dlp.v2.Action.PublishToStackdriver.getDefaultInstance()) {
+          action_ =
+              com.google.privacy.dlp.v2.Action.PublishToStackdriver.newBuilder(
+                      (com.google.privacy.dlp.v2.Action.PublishToStackdriver) action_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          action_ = value;
+        }
+        onChanged();
+      } else {
+        if (actionCase_ == 9) {
+          publishToStackdriverBuilder_.mergeFrom(value);
+        }
+        publishToStackdriverBuilder_.setMessage(value);
+      }
+      actionCase_ = 9;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Enable Stackdriver metric dlp.googleapis.com/finding_count.
+     * </pre>
+     *
+     * <code>.google.privacy.dlp.v2.Action.PublishToStackdriver publish_to_stackdriver = 9;</code>
+     */
+    public Builder clearPublishToStackdriver() {
+      if (publishToStackdriverBuilder_ == null) {
+        if (actionCase_ == 9) {
+          actionCase_ = 0;
+          action_ = null;
+          onChanged();
+        }
+      } else {
+        if (actionCase_ == 9) {
+          actionCase_ = 0;
+          action_ = null;
+        }
+        publishToStackdriverBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Enable Stackdriver metric dlp.googleapis.com/finding_count.
+     * </pre>
+     *
+     * <code>.google.privacy.dlp.v2.Action.PublishToStackdriver publish_to_stackdriver = 9;</code>
+     */
+    public com.google.privacy.dlp.v2.Action.PublishToStackdriver.Builder
+        getPublishToStackdriverBuilder() {
+      return getPublishToStackdriverFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Enable Stackdriver metric dlp.googleapis.com/finding_count.
+     * </pre>
+     *
+     * <code>.google.privacy.dlp.v2.Action.PublishToStackdriver publish_to_stackdriver = 9;</code>
+     */
+    public com.google.privacy.dlp.v2.Action.PublishToStackdriverOrBuilder
+        getPublishToStackdriverOrBuilder() {
+      if ((actionCase_ == 9) && (publishToStackdriverBuilder_ != null)) {
+        return publishToStackdriverBuilder_.getMessageOrBuilder();
+      } else {
+        if (actionCase_ == 9) {
+          return (com.google.privacy.dlp.v2.Action.PublishToStackdriver) action_;
+        }
+        return com.google.privacy.dlp.v2.Action.PublishToStackdriver.getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Enable Stackdriver metric dlp.googleapis.com/finding_count.
+     * </pre>
+     *
+     * <code>.google.privacy.dlp.v2.Action.PublishToStackdriver publish_to_stackdriver = 9;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.privacy.dlp.v2.Action.PublishToStackdriver,
+            com.google.privacy.dlp.v2.Action.PublishToStackdriver.Builder,
+            com.google.privacy.dlp.v2.Action.PublishToStackdriverOrBuilder>
+        getPublishToStackdriverFieldBuilder() {
+      if (publishToStackdriverBuilder_ == null) {
+        if (!(actionCase_ == 9)) {
+          action_ = com.google.privacy.dlp.v2.Action.PublishToStackdriver.getDefaultInstance();
+        }
+        publishToStackdriverBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.privacy.dlp.v2.Action.PublishToStackdriver,
+                com.google.privacy.dlp.v2.Action.PublishToStackdriver.Builder,
+                com.google.privacy.dlp.v2.Action.PublishToStackdriverOrBuilder>(
+                (com.google.privacy.dlp.v2.Action.PublishToStackdriver) action_,
+                getParentForChildren(),
+                isClean());
+        action_ = null;
+      }
+      actionCase_ = 9;
+      onChanged();
+      ;
+      return publishToStackdriverBuilder_;
     }
 
     @java.lang.Override

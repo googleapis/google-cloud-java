@@ -27,24 +27,28 @@ public interface GetDeidentifyTemplateRequestOrBuilder
    *
    *
    * <pre>
-   * Resource name of the organization and deidentify template to be read, for
+   * Required. Resource name of the organization and deidentify template to be read, for
    * example `organizations/433245324/deidentifyTemplates/432452342` or
    * projects/project-id/deidentifyTemplates/432452342.
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>
+   * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    */
   java.lang.String getName();
   /**
    *
    *
    * <pre>
-   * Resource name of the organization and deidentify template to be read, for
+   * Required. Resource name of the organization and deidentify template to be read, for
    * example `organizations/433245324/deidentifyTemplates/432452342` or
    * projects/project-id/deidentifyTemplates/432452342.
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>
+   * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    */
   com.google.protobuf.ByteString getNameBytes();
 }

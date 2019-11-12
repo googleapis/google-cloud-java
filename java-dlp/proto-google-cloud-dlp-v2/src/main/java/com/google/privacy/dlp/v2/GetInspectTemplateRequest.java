@@ -112,12 +112,14 @@ public final class GetInspectTemplateRequest extends com.google.protobuf.Generat
    *
    *
    * <pre>
-   * Resource name of the organization and inspectTemplate to be read, for
+   * Required. Resource name of the organization and inspectTemplate to be read, for
    * example `organizations/433245324/inspectTemplates/432452342` or
    * projects/project-id/inspectTemplates/432452342.
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>
+   * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    */
   public java.lang.String getName() {
     java.lang.Object ref = name_;
@@ -134,12 +136,14 @@ public final class GetInspectTemplateRequest extends com.google.protobuf.Generat
    *
    *
    * <pre>
-   * Resource name of the organization and inspectTemplate to be read, for
+   * Required. Resource name of the organization and inspectTemplate to be read, for
    * example `organizations/433245324/inspectTemplates/432452342` or
    * projects/project-id/inspectTemplates/432452342.
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>
+   * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    */
   public com.google.protobuf.ByteString getNameBytes() {
     java.lang.Object ref = name_;
@@ -476,12 +480,14 @@ public final class GetInspectTemplateRequest extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Resource name of the organization and inspectTemplate to be read, for
+     * Required. Resource name of the organization and inspectTemplate to be read, for
      * example `organizations/433245324/inspectTemplates/432452342` or
      * projects/project-id/inspectTemplates/432452342.
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>
+     * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      */
     public java.lang.String getName() {
       java.lang.Object ref = name_;
@@ -498,12 +504,14 @@ public final class GetInspectTemplateRequest extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Resource name of the organization and inspectTemplate to be read, for
+     * Required. Resource name of the organization and inspectTemplate to be read, for
      * example `organizations/433245324/inspectTemplates/432452342` or
      * projects/project-id/inspectTemplates/432452342.
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>
+     * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      */
     public com.google.protobuf.ByteString getNameBytes() {
       java.lang.Object ref = name_;
@@ -520,12 +528,14 @@ public final class GetInspectTemplateRequest extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Resource name of the organization and inspectTemplate to be read, for
+     * Required. Resource name of the organization and inspectTemplate to be read, for
      * example `organizations/433245324/inspectTemplates/432452342` or
      * projects/project-id/inspectTemplates/432452342.
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>
+     * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      */
     public Builder setName(java.lang.String value) {
       if (value == null) {
@@ -540,12 +550,14 @@ public final class GetInspectTemplateRequest extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Resource name of the organization and inspectTemplate to be read, for
+     * Required. Resource name of the organization and inspectTemplate to be read, for
      * example `organizations/433245324/inspectTemplates/432452342` or
      * projects/project-id/inspectTemplates/432452342.
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>
+     * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      */
     public Builder clearName() {
 
@@ -557,12 +569,14 @@ public final class GetInspectTemplateRequest extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Resource name of the organization and inspectTemplate to be read, for
+     * Required. Resource name of the organization and inspectTemplate to be read, for
      * example `organizations/433245324/inspectTemplates/432452342` or
      * projects/project-id/inspectTemplates/432452342.
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>
+     * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      */
     public Builder setNameBytes(com.google.protobuf.ByteString value) {
       if (value == null) {

@@ -30,7 +30,7 @@ public interface InspectContentRequestOrBuilder
    * The parent resource name, for example projects/my-project-id.
    * </pre>
    *
-   * <code>string parent = 1;</code>
+   * <code>string parent = 1 [(.google.api.resource_reference) = { ... }</code>
    */
   java.lang.String getParent();
   /**
@@ -40,7 +40,7 @@ public interface InspectContentRequestOrBuilder
    * The parent resource name, for example projects/my-project-id.
    * </pre>
    *
-   * <code>string parent = 1;</code>
+   * <code>string parent = 1 [(.google.api.resource_reference) = { ... }</code>
    */
   com.google.protobuf.ByteString getParentBytes();
 

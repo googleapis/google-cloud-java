@@ -155,7 +155,7 @@ public final class TimePartConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [1-52]
+     * [1-53]
      * </pre>
      *
      * <code>WEEK_OF_YEAR = 5;</code>
@@ -220,7 +220,7 @@ public final class TimePartConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [1-52]
+     * [1-53]
      * </pre>
      *
      * <code>WEEK_OF_YEAR = 5;</code>

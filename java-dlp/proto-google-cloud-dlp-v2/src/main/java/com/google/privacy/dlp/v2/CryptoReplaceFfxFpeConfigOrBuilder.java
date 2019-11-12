@@ -145,7 +145,7 @@ public interface CryptoReplaceFfxFpeConfigOrBuilder
    * that the FFX mode natively supports. This happens before/after
    * encryption/decryption.
    * Each character listed must appear only once.
-   * Number of characters must be in the range [2, 62].
+   * Number of characters must be in the range [2, 95].
    * This must be encoded as ASCII.
    * The order of characters does not matter.
    * </pre>
@@ -161,7 +161,7 @@ public interface CryptoReplaceFfxFpeConfigOrBuilder
    * that the FFX mode natively supports. This happens before/after
    * encryption/decryption.
    * Each character listed must appear only once.
-   * Number of characters must be in the range [2, 62].
+   * Number of characters must be in the range [2, 95].
    * This must be encoded as ASCII.
    * The order of characters does not matter.
    * </pre>
@@ -174,7 +174,7 @@ public interface CryptoReplaceFfxFpeConfigOrBuilder
    *
    *
    * <pre>
-   * The native way to select the alphabet. Must be in the range [2, 62].
+   * The native way to select the alphabet. Must be in the range [2, 95].
    * </pre>
    *
    * <code>int32 radix = 6;</code>

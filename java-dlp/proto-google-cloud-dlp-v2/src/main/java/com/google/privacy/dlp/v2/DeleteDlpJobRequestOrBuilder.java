@@ -27,20 +27,24 @@ public interface DeleteDlpJobRequestOrBuilder
    *
    *
    * <pre>
-   * The name of the DlpJob resource to be deleted.
+   * Required. The name of the DlpJob resource to be deleted.
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>
+   * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    */
   java.lang.String getName();
   /**
    *
    *
    * <pre>
-   * The name of the DlpJob resource to be deleted.
+   * Required. The name of the DlpJob resource to be deleted.
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>
+   * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    */
   com.google.protobuf.ByteString getNameBytes();
 }

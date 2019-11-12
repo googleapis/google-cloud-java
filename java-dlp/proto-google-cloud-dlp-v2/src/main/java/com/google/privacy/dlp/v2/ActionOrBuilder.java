@@ -190,5 +190,36 @@ public interface ActionOrBuilder
   com.google.privacy.dlp.v2.Action.JobNotificationEmailsOrBuilder
       getJobNotificationEmailsOrBuilder();
 
+  /**
+   *
+   *
+   * <pre>
+   * Enable Stackdriver metric dlp.googleapis.com/finding_count.
+   * </pre>
+   *
+   * <code>.google.privacy.dlp.v2.Action.PublishToStackdriver publish_to_stackdriver = 9;</code>
+   */
+  boolean hasPublishToStackdriver();
+  /**
+   *
+   *
+   * <pre>
+   * Enable Stackdriver metric dlp.googleapis.com/finding_count.
+   * </pre>
+   *
+   * <code>.google.privacy.dlp.v2.Action.PublishToStackdriver publish_to_stackdriver = 9;</code>
+   */
+  com.google.privacy.dlp.v2.Action.PublishToStackdriver getPublishToStackdriver();
+  /**
+   *
+   *
+   * <pre>
+   * Enable Stackdriver metric dlp.googleapis.com/finding_count.
+   * </pre>
+   *
+   * <code>.google.privacy.dlp.v2.Action.PublishToStackdriver publish_to_stackdriver = 9;</code>
+   */
+  com.google.privacy.dlp.v2.Action.PublishToStackdriverOrBuilder getPublishToStackdriverOrBuilder();
+
   public com.google.privacy.dlp.v2.Action.ActionCase getActionCase();
 }

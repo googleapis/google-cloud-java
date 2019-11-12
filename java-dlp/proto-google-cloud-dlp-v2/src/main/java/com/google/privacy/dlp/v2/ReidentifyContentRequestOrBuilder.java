@@ -27,20 +27,24 @@ public interface ReidentifyContentRequestOrBuilder
    *
    *
    * <pre>
-   * The parent resource name.
+   * Required. The parent resource name.
    * </pre>
    *
-   * <code>string parent = 1;</code>
+   * <code>
+   * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    */
   java.lang.String getParent();
   /**
    *
    *
    * <pre>
-   * The parent resource name.
+   * Required. The parent resource name.
    * </pre>
    *
-   * <code>string parent = 1;</code>
+   * <code>
+   * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    */
   com.google.protobuf.ByteString getParentBytes();
 
@@ -55,6 +59,7 @@ public interface ReidentifyContentRequestOrBuilder
    * the transformations used to de-identify the items and executing the
    * reverse. This requires that only reversible transformations
    * be provided here. The reversible transformations are:
+   *  - `CryptoDeterministicConfig`
    *  - `CryptoReplaceFfxFpeConfig`
    * </pre>
    *
@@ -72,6 +77,7 @@ public interface ReidentifyContentRequestOrBuilder
    * the transformations used to de-identify the items and executing the
    * reverse. This requires that only reversible transformations
    * be provided here. The reversible transformations are:
+   *  - `CryptoDeterministicConfig`
    *  - `CryptoReplaceFfxFpeConfig`
    * </pre>
    *
@@ -89,6 +95,7 @@ public interface ReidentifyContentRequestOrBuilder
    * the transformations used to de-identify the items and executing the
    * reverse. This requires that only reversible transformations
    * be provided here. The reversible transformations are:
+   *  - `CryptoDeterministicConfig`
    *  - `CryptoReplaceFfxFpeConfig`
    * </pre>
    *

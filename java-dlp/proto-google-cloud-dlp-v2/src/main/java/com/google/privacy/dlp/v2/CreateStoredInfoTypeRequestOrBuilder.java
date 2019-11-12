@@ -27,22 +27,26 @@ public interface CreateStoredInfoTypeRequestOrBuilder
    *
    *
    * <pre>
-   * The parent resource name, for example projects/my-project-id or
+   * Required. The parent resource name, for example projects/my-project-id or
    * organizations/my-org-id.
    * </pre>
    *
-   * <code>string parent = 1;</code>
+   * <code>
+   * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    */
   java.lang.String getParent();
   /**
    *
    *
    * <pre>
-   * The parent resource name, for example projects/my-project-id or
+   * Required. The parent resource name, for example projects/my-project-id or
    * organizations/my-org-id.
    * </pre>
    *
-   * <code>string parent = 1;</code>
+   * <code>
+   * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    */
   com.google.protobuf.ByteString getParentBytes();
 

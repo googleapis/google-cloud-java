@@ -27,22 +27,26 @@ public interface UpdateJobTriggerRequestOrBuilder
    *
    *
    * <pre>
-   * Resource name of the project and the triggeredJob, for example
+   * Required. Resource name of the project and the triggeredJob, for example
    * `projects/dlp-test-project/jobTriggers/53234423`.
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>
+   * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    */
   java.lang.String getName();
   /**
    *
    *
    * <pre>
-   * Resource name of the project and the triggeredJob, for example
+   * Required. Resource name of the project and the triggeredJob, for example
    * `projects/dlp-test-project/jobTriggers/53234423`.
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>
+   * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    */
   com.google.protobuf.ByteString getNameBytes();
 

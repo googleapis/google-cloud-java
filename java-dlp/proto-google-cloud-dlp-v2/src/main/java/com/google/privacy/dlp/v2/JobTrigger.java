@@ -1249,7 +1249,7 @@ public final class JobTrigger extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Unique resource name for the triggeredJob, assigned by the service when the
    * triggeredJob is created, for example
-   * `projects/dlp-test-project/triggeredJobs/53234423`.
+   * `projects/dlp-test-project/jobTriggers/53234423`.
    * </pre>
    *
    * <code>string name = 1;</code>
@@ -1271,7 +1271,7 @@ public final class JobTrigger extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Unique resource name for the triggeredJob, assigned by the service when the
    * triggeredJob is created, for example
-   * `projects/dlp-test-project/triggeredJobs/53234423`.
+   * `projects/dlp-test-project/jobTriggers/53234423`.
    * </pre>
    *
    * <code>string name = 1;</code>
@@ -2319,7 +2319,7 @@ public final class JobTrigger extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Unique resource name for the triggeredJob, assigned by the service when the
      * triggeredJob is created, for example
-     * `projects/dlp-test-project/triggeredJobs/53234423`.
+     * `projects/dlp-test-project/jobTriggers/53234423`.
      * </pre>
      *
      * <code>string name = 1;</code>
@@ -2341,7 +2341,7 @@ public final class JobTrigger extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Unique resource name for the triggeredJob, assigned by the service when the
      * triggeredJob is created, for example
-     * `projects/dlp-test-project/triggeredJobs/53234423`.
+     * `projects/dlp-test-project/jobTriggers/53234423`.
      * </pre>
      *
      * <code>string name = 1;</code>
@@ -2363,7 +2363,7 @@ public final class JobTrigger extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Unique resource name for the triggeredJob, assigned by the service when the
      * triggeredJob is created, for example
-     * `projects/dlp-test-project/triggeredJobs/53234423`.
+     * `projects/dlp-test-project/jobTriggers/53234423`.
      * </pre>
      *
      * <code>string name = 1;</code>
@@ -2383,7 +2383,7 @@ public final class JobTrigger extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Unique resource name for the triggeredJob, assigned by the service when the
      * triggeredJob is created, for example
-     * `projects/dlp-test-project/triggeredJobs/53234423`.
+     * `projects/dlp-test-project/jobTriggers/53234423`.
      * </pre>
      *
      * <code>string name = 1;</code>
@@ -2400,7 +2400,7 @@ public final class JobTrigger extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Unique resource name for the triggeredJob, assigned by the service when the
      * triggeredJob is created, for example
-     * `projects/dlp-test-project/triggeredJobs/53234423`.
+     * `projects/dlp-test-project/jobTriggers/53234423`.
      * </pre>
      *
      * <code>string name = 1;</code>

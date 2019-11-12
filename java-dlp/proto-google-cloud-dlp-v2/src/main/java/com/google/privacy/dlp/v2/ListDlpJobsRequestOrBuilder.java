@@ -27,20 +27,24 @@ public interface ListDlpJobsRequestOrBuilder
    *
    *
    * <pre>
-   * The parent resource name, for example projects/my-project-id.
+   * Required. The parent resource name, for example projects/my-project-id.
    * </pre>
    *
-   * <code>string parent = 4;</code>
+   * <code>
+   * string parent = 4 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    */
   java.lang.String getParent();
   /**
    *
    *
    * <pre>
-   * The parent resource name, for example projects/my-project-id.
+   * Required. The parent resource name, for example projects/my-project-id.
    * </pre>
    *
-   * <code>string parent = 4;</code>
+   * <code>
+   * string parent = 4 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    */
   com.google.protobuf.ByteString getParentBytes();
 

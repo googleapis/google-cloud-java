@@ -69,6 +69,10 @@ public interface CryptoDeterministicConfigOrBuilder
    * This annotation identifies the surrogate when inspecting content using the
    * custom info type 'Surrogate'. This facilitates reversal of the
    * surrogate when it occurs in free text.
+   * Note: For record transformations where the entire cell in a table is being
+   * transformed, surrogates are optional to use. Surrogates are used to denote
+   * the location of the token and are necessary for re-identification in free
+   * form text.
    * In order for inspection to work properly, the name of this info type must
    * not occur naturally anywhere in your data; otherwise, inspection may either
    * - reverse a surrogate that does not correspond to an actual identifier
@@ -79,7 +83,7 @@ public interface CryptoDeterministicConfigOrBuilder
    * that are highly improbable to exist in your data.
    * For example, assuming your data is entered from a regular ASCII keyboard,
    * the symbol with the hex code point 29DD might be used like so:
-   * ⧝MY_TOKEN_TYPE
+   * ⧝MY_TOKEN_TYPE.
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.InfoType surrogate_info_type = 2;</code>
@@ -100,6 +104,10 @@ public interface CryptoDeterministicConfigOrBuilder
    * This annotation identifies the surrogate when inspecting content using the
    * custom info type 'Surrogate'. This facilitates reversal of the
    * surrogate when it occurs in free text.
+   * Note: For record transformations where the entire cell in a table is being
+   * transformed, surrogates are optional to use. Surrogates are used to denote
+   * the location of the token and are necessary for re-identification in free
+   * form text.
    * In order for inspection to work properly, the name of this info type must
    * not occur naturally anywhere in your data; otherwise, inspection may either
    * - reverse a surrogate that does not correspond to an actual identifier
@@ -110,7 +118,7 @@ public interface CryptoDeterministicConfigOrBuilder
    * that are highly improbable to exist in your data.
    * For example, assuming your data is entered from a regular ASCII keyboard,
    * the symbol with the hex code point 29DD might be used like so:
-   * ⧝MY_TOKEN_TYPE
+   * ⧝MY_TOKEN_TYPE.
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.InfoType surrogate_info_type = 2;</code>
@@ -131,6 +139,10 @@ public interface CryptoDeterministicConfigOrBuilder
    * This annotation identifies the surrogate when inspecting content using the
    * custom info type 'Surrogate'. This facilitates reversal of the
    * surrogate when it occurs in free text.
+   * Note: For record transformations where the entire cell in a table is being
+   * transformed, surrogates are optional to use. Surrogates are used to denote
+   * the location of the token and are necessary for re-identification in free
+   * form text.
    * In order for inspection to work properly, the name of this info type must
    * not occur naturally anywhere in your data; otherwise, inspection may either
    * - reverse a surrogate that does not correspond to an actual identifier
@@ -141,7 +153,7 @@ public interface CryptoDeterministicConfigOrBuilder
    * that are highly improbable to exist in your data.
    * For example, assuming your data is entered from a regular ASCII keyboard,
    * the symbol with the hex code point 29DD might be used like so:
-   * ⧝MY_TOKEN_TYPE
+   * ⧝MY_TOKEN_TYPE.
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.InfoType surrogate_info_type = 2;</code>
