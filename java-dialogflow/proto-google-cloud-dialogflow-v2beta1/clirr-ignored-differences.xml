@@ -3,12 +3,17 @@
 <differences>
     <difference>
         <differenceType>7012</differenceType>
-        <className>com/google/cloud/dialogflow/**/*OrBuilder</className>
+        <className>com/google/cloud/dialogflow/v2beta1/*OrBuilder</className>
         <method>* get*(*)</method>
     </difference>
     <difference>
         <differenceType>7012</differenceType>
-        <className>com/google/cloud/dialogflow/**/*OrBuilder</className>
-        <method>* has*(*)</method>
+        <className>com/google/cloud/dialogflow/v2beta1/*OrBuilder</className>
+        <method>boolean contains*(*)</method>
+    </difference>
+    <difference>
+        <differenceType>7012</differenceType>
+        <className>com/google/cloud/dialogflow/v2beta1/*OrBuilder</className>
+        <method>boolean has*(*)</method>
     </difference>
 </differences>

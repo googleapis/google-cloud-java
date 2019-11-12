@@ -121,7 +121,8 @@ public final class VoiceSelectionParams extends com.google.protobuf.GeneratedMes
    *
    * <pre>
    * Optional. The name of the voice. If not set, the service will choose a
-   * voice based on the other parameters such as language_code and gender.
+   * voice based on the other parameters such as language_code and
+   * [ssml_gender][google.cloud.dialogflow.v2beta1.VoiceSelectionParams.ssml_gender].
    * </pre>
    *
    * <code>string name = 1;</code>
@@ -142,7 +143,8 @@ public final class VoiceSelectionParams extends com.google.protobuf.GeneratedMes
    *
    * <pre>
    * Optional. The name of the voice. If not set, the service will choose a
-   * voice based on the other parameters such as language_code and gender.
+   * voice based on the other parameters such as language_code and
+   * [ssml_gender][google.cloud.dialogflow.v2beta1.VoiceSelectionParams.ssml_gender].
    * </pre>
    *
    * <code>string name = 1;</code>
@@ -167,7 +169,7 @@ public final class VoiceSelectionParams extends com.google.protobuf.GeneratedMes
    * <pre>
    * Optional. The preferred gender of the voice. If not set, the service will
    * choose a voice based on the other parameters such as language_code and
-   * name. Note that this is only a preference, not requirement. If a
+   * [name][google.cloud.dialogflow.v2beta1.VoiceSelectionParams.name]. Note that this is only a preference, not requirement. If a
    * voice of the appropriate gender is not available, the synthesizer should
    * substitute a voice with a different gender rather than failing the request.
    * </pre>
@@ -183,7 +185,7 @@ public final class VoiceSelectionParams extends com.google.protobuf.GeneratedMes
    * <pre>
    * Optional. The preferred gender of the voice. If not set, the service will
    * choose a voice based on the other parameters such as language_code and
-   * name. Note that this is only a preference, not requirement. If a
+   * [name][google.cloud.dialogflow.v2beta1.VoiceSelectionParams.name]. Note that this is only a preference, not requirement. If a
    * voice of the appropriate gender is not available, the synthesizer should
    * substitute a voice with a different gender rather than failing the request.
    * </pre>
@@ -543,7 +545,8 @@ public final class VoiceSelectionParams extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * Optional. The name of the voice. If not set, the service will choose a
-     * voice based on the other parameters such as language_code and gender.
+     * voice based on the other parameters such as language_code and
+     * [ssml_gender][google.cloud.dialogflow.v2beta1.VoiceSelectionParams.ssml_gender].
      * </pre>
      *
      * <code>string name = 1;</code>
@@ -564,7 +567,8 @@ public final class VoiceSelectionParams extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * Optional. The name of the voice. If not set, the service will choose a
-     * voice based on the other parameters such as language_code and gender.
+     * voice based on the other parameters such as language_code and
+     * [ssml_gender][google.cloud.dialogflow.v2beta1.VoiceSelectionParams.ssml_gender].
      * </pre>
      *
      * <code>string name = 1;</code>
@@ -585,7 +589,8 @@ public final class VoiceSelectionParams extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * Optional. The name of the voice. If not set, the service will choose a
-     * voice based on the other parameters such as language_code and gender.
+     * voice based on the other parameters such as language_code and
+     * [ssml_gender][google.cloud.dialogflow.v2beta1.VoiceSelectionParams.ssml_gender].
      * </pre>
      *
      * <code>string name = 1;</code>
@@ -604,7 +609,8 @@ public final class VoiceSelectionParams extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * Optional. The name of the voice. If not set, the service will choose a
-     * voice based on the other parameters such as language_code and gender.
+     * voice based on the other parameters such as language_code and
+     * [ssml_gender][google.cloud.dialogflow.v2beta1.VoiceSelectionParams.ssml_gender].
      * </pre>
      *
      * <code>string name = 1;</code>
@@ -620,7 +626,8 @@ public final class VoiceSelectionParams extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * Optional. The name of the voice. If not set, the service will choose a
-     * voice based on the other parameters such as language_code and gender.
+     * voice based on the other parameters such as language_code and
+     * [ssml_gender][google.cloud.dialogflow.v2beta1.VoiceSelectionParams.ssml_gender].
      * </pre>
      *
      * <code>string name = 1;</code>
@@ -643,7 +650,7 @@ public final class VoiceSelectionParams extends com.google.protobuf.GeneratedMes
      * <pre>
      * Optional. The preferred gender of the voice. If not set, the service will
      * choose a voice based on the other parameters such as language_code and
-     * name. Note that this is only a preference, not requirement. If a
+     * [name][google.cloud.dialogflow.v2beta1.VoiceSelectionParams.name]. Note that this is only a preference, not requirement. If a
      * voice of the appropriate gender is not available, the synthesizer should
      * substitute a voice with a different gender rather than failing the request.
      * </pre>
@@ -659,7 +666,7 @@ public final class VoiceSelectionParams extends com.google.protobuf.GeneratedMes
      * <pre>
      * Optional. The preferred gender of the voice. If not set, the service will
      * choose a voice based on the other parameters such as language_code and
-     * name. Note that this is only a preference, not requirement. If a
+     * [name][google.cloud.dialogflow.v2beta1.VoiceSelectionParams.name]. Note that this is only a preference, not requirement. If a
      * voice of the appropriate gender is not available, the synthesizer should
      * substitute a voice with a different gender rather than failing the request.
      * </pre>
@@ -677,7 +684,7 @@ public final class VoiceSelectionParams extends com.google.protobuf.GeneratedMes
      * <pre>
      * Optional. The preferred gender of the voice. If not set, the service will
      * choose a voice based on the other parameters such as language_code and
-     * name. Note that this is only a preference, not requirement. If a
+     * [name][google.cloud.dialogflow.v2beta1.VoiceSelectionParams.name]. Note that this is only a preference, not requirement. If a
      * voice of the appropriate gender is not available, the synthesizer should
      * substitute a voice with a different gender rather than failing the request.
      * </pre>
@@ -698,7 +705,7 @@ public final class VoiceSelectionParams extends com.google.protobuf.GeneratedMes
      * <pre>
      * Optional. The preferred gender of the voice. If not set, the service will
      * choose a voice based on the other parameters such as language_code and
-     * name. Note that this is only a preference, not requirement. If a
+     * [name][google.cloud.dialogflow.v2beta1.VoiceSelectionParams.name]. Note that this is only a preference, not requirement. If a
      * voice of the appropriate gender is not available, the synthesizer should
      * substitute a voice with a different gender rather than failing the request.
      * </pre>
@@ -720,7 +727,7 @@ public final class VoiceSelectionParams extends com.google.protobuf.GeneratedMes
      * <pre>
      * Optional. The preferred gender of the voice. If not set, the service will
      * choose a voice based on the other parameters such as language_code and
-     * name. Note that this is only a preference, not requirement. If a
+     * [name][google.cloud.dialogflow.v2beta1.VoiceSelectionParams.name]. Note that this is only a preference, not requirement. If a
      * voice of the appropriate gender is not available, the synthesizer should
      * substitute a voice with a different gender rather than failing the request.
      * </pre>
