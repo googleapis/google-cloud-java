@@ -15,8 +15,26 @@ Java idiomatic client for [Google Cloud OS Login][cloud-os-login].
 
 Quickstart
 ----------
+If you are using Maven with a BOM, add this to your pom.xml file.
+```xml
+<dependencyManagement>
+ <dependencies>
+  <dependency>
+    <groupId>com.google.cloud</groupId>
+    <artifactId>libraries-bom</artifactId>
+    <version>2.8.0</version>
+    <type>pom</type>
+    <scope>import</scope>
+   </dependency>
+ </dependencies>
+</dependencyManagement>
 
-Add this to your pom.xml file
+<dependency>
+  <groupId>com.google.cloud</groupId>
+  <artifactId>google-cloud-os-login</artifactId>
+</dependency>
+```
+If you are using Maven without a BOM, add this to your dependencies.
 ```xml
 <dependency>
   <groupId>com.google.cloud</groupId>
