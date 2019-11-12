@@ -222,6 +222,7 @@
                 <configuration>
                   <systemPropertyVariables>
                     <bigtable.env>emulator</bigtable.env>
+                    <bigtable.grpc-log-dir>${project.build.directory}/test-grpc-logs/emulator-it</bigtable.grpc-log-dir>
                   </systemPropertyVariables>
                   <includes>
                     <include>com.google.cloud.bigtable.**.it.*IT</include>
@@ -254,6 +255,7 @@
                     <bigtable.env>cloud</bigtable.env>
                     <bigtable.data-endpoint>${bigtable.cfe-data-endpoint}</bigtable.data-endpoint>
                     <bigtable.admin-endpoint>${bigtable.cfe-admin-endpoint}</bigtable.admin-endpoint>
+                    <bigtable.grpc-log-dir>${project.build.directory}/test-grpc-logs/prod-it</bigtable.grpc-log-dir>
                   </systemPropertyVariables>
                   <includes>
                     <include>com.google.cloud.bigtable.**.it.*IT</include>
@@ -286,6 +288,7 @@
                     <bigtable.env>cloud</bigtable.env>
                     <bigtable.data-endpoint>${bigtable.directpath-data-endpoint}</bigtable.data-endpoint>
                     <bigtable.admin-endpoint>${bigtable.directpath-admin-endpoint}</bigtable.admin-endpoint>
+                    <bigtable.grpc-log-dir>${project.build.directory}/test-grpc-logs/directpath-it</bigtable.grpc-log-dir>
                   </systemPropertyVariables>
                   <!-- Enable directpath for bigtable -->
                   <environmentVariables>
@@ -340,42 +343,26 @@
       </plugin>
 
       <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-failsafe-plugin</artifactId>
-        <version>3.0.0-M3</version>
         <configuration>
           <parallel>classes</parallel>
-          <perCoreThreadCount>true</perCoreThreadCount>
-          <threadCount>2</threadCount>
+          <forkCount>2C</forkCount>
+          <reuseForks>true</reuseForks>
+
           <trimStackTrace>false</trimStackTrace>
         </configuration>
-        <dependencies>
-          <dependency>
-            <groupId>org.apache.maven.surefire</groupId>
-            <artifactId>surefire-junit47</artifactId>
-            <version>3.0.0-M3</version>
-          </dependency>
-        </dependencies>
       </plugin>
 
       <plugin>
         <artifactId>maven-surefire-plugin</artifactId>
-        <version>3.0.0-M3</version>
-        <dependencies>
-          <dependency>
-            <groupId>org.apache.maven.surefire</groupId>
-            <artifactId>surefire-junit47</artifactId>
-            <version>3.0.0-M3</version>
-          </dependency>
-        </dependencies>
 
         <configuration>
+          <parallel>classes</parallel>
+          <forkCount>2C</forkCount>
+          <reuseForks>true</reuseForks>
+
           <!-- enable the ability to skip unit tests, while running integration tests -->
           <skipTests>${skipUnitTests}</skipTests>
-          <!--
-            TODO(igorbernstein): enable parallel tests once the generate client tests use unique
-            names for the mock server
-          -->
           <trimStackTrace>false</trimStackTrace>
         </configuration>
       </plugin>
