@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.117.0](https://www.github.com/googleapis/java-dlp/compare/v0.116.0...v0.117.0) (2019-11-12)
+
+
+### Features
+
+* add PublishToStackdriver option to Action ([#20](https://www.github.com/googleapis/java-dlp/issues/20)) ([b3b3a1c](https://www.github.com/googleapis/java-dlp/commit/b3b3a1c5df1395808fb3373a616b67f74168f07f))
+
 ## [0.116.0](https://www.github.com/googleapis/java-dlp/compare/0.115.0...v0.116.0) (2019-10-25)
 
 
