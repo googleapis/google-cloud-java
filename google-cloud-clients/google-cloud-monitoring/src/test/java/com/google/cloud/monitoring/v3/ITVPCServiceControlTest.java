@@ -15,7 +15,7 @@
  */
 
 // DO NOT MODIFY! THIS FILE IS AUTO-GENERATED.
-// This file is auto-generated on 08 Nov 19 20:10 UTC.
+// This file is auto-generated on 12 Nov 19 21:41 UTC.
 
 package com.google.cloud.monitoring.v3;
 
@@ -33,12 +33,12 @@ import org.junit.BeforeClass;
 import org.junit.Test;
 
 @javax.annotation.Generated("by Google")
-public class VPCServiceControlTest {
+public class ITVPCServiceControlTest {
   static final String PROJECT_INSIDE = System.getenv("PROJECT_ID");
   static final String PROJECT_OUTSIDE =
       System.getenv("GOOGLE_CLOUD_TESTS_VPCSC_OUTSIDE_PERIMETER_PROJECT");
   static final String IS_INSIDE_VPCSC = System.getenv("GOOGLE_CLOUD_TESTS_IN_VPCSC");
-  private static final Logger logger = Logger.getLogger(VPCServiceControlTest.class.getName());
+  private static final Logger logger = Logger.getLogger(ITVPCServiceControlTest.class.getName());
 
   private static Exception getError(Callable callable) {
     try {
