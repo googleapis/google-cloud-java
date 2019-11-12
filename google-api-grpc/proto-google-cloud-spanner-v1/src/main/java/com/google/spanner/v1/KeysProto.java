@@ -30,8 +30,8 @@ public final class KeysProto {
   static {
     java.lang.String[] descriptorData = {
       "\n\034google/spanner/v1/keys.proto\022\021google.s"
-          + "panner.v1\032\034google/api/annotations.proto\032"
-          + "\034google/protobuf/struct.proto\"\364\001\n\010KeyRan"
+          + "panner.v1\032\034google/protobuf/struct.proto\032"
+          + "\034google/api/annotations.proto\"\364\001\n\010KeyRan"
           + "ge\0222\n\014start_closed\030\001 \001(\0132\032.google.protob"
           + "uf.ListValueH\000\0220\n\nstart_open\030\002 \001(\0132\032.goo"
           + "gle.protobuf.ListValueH\000\0220\n\nend_closed\030\003"
@@ -57,8 +57,8 @@ public final class KeysProto {
     com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
         descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
-          com.google.api.AnnotationsProto.getDescriptor(),
           com.google.protobuf.StructProto.getDescriptor(),
+          com.google.api.AnnotationsProto.getDescriptor(),
         },
         assigner);
     internal_static_google_spanner_v1_KeyRange_descriptor =
@@ -76,8 +76,8 @@ public final class KeysProto {
             new java.lang.String[] {
               "Keys", "Ranges", "All",
             });
-    com.google.api.AnnotationsProto.getDescriptor();
     com.google.protobuf.StructProto.getDescriptor();
+    com.google.api.AnnotationsProto.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

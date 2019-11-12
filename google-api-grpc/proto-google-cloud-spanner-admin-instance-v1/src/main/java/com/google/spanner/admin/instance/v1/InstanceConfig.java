@@ -26,6 +26,7 @@ public final class InstanceConfig extends com.google.protobuf.GeneratedMessageV3
   private InstanceConfig() {
     name_ = "";
     displayName_ = "";
+    replicas_ = java.util.Collections.emptyList();
   }
 
   @java.lang.Override
@@ -66,6 +67,19 @@ public final class InstanceConfig extends com.google.protobuf.GeneratedMessageV3
               displayName_ = s;
               break;
             }
+          case 26:
+            {
+              if (!((mutable_bitField0_ & 0x00000004) != 0)) {
+                replicas_ =
+                    new java.util.ArrayList<com.google.spanner.admin.instance.v1.ReplicaInfo>();
+                mutable_bitField0_ |= 0x00000004;
+              }
+              replicas_.add(
+                  input.readMessage(
+                      com.google.spanner.admin.instance.v1.ReplicaInfo.parser(),
+                      extensionRegistry));
+              break;
+            }
           default:
             {
               if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -80,6 +94,9 @@ public final class InstanceConfig extends com.google.protobuf.GeneratedMessageV3
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
+      if (((mutable_bitField0_ & 0x00000004) != 0)) {
+        replicas_ = java.util.Collections.unmodifiableList(replicas_);
+      }
       this.unknownFields = unknownFields.build();
       makeExtensionsImmutable();
     }
@@ -100,6 +117,7 @@ public final class InstanceConfig extends com.google.protobuf.GeneratedMessageV3
             com.google.spanner.admin.instance.v1.InstanceConfig.Builder.class);
   }
 
+  private int bitField0_;
   public static final int NAME_FIELD_NUMBER = 1;
   private volatile java.lang.Object name_;
   /**
@@ -190,6 +208,75 @@ public final class InstanceConfig extends com.google.protobuf.GeneratedMessageV3
     }
   }
 
+  public static final int REPLICAS_FIELD_NUMBER = 3;
+  private java.util.List<com.google.spanner.admin.instance.v1.ReplicaInfo> replicas_;
+  /**
+   *
+   *
+   * <pre>
+   * The geographic placement of nodes in this instance configuration and their
+   * replication properties.
+   * </pre>
+   *
+   * <code>repeated .google.spanner.admin.instance.v1.ReplicaInfo replicas = 3;</code>
+   */
+  public java.util.List<com.google.spanner.admin.instance.v1.ReplicaInfo> getReplicasList() {
+    return replicas_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The geographic placement of nodes in this instance configuration and their
+   * replication properties.
+   * </pre>
+   *
+   * <code>repeated .google.spanner.admin.instance.v1.ReplicaInfo replicas = 3;</code>
+   */
+  public java.util.List<? extends com.google.spanner.admin.instance.v1.ReplicaInfoOrBuilder>
+      getReplicasOrBuilderList() {
+    return replicas_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The geographic placement of nodes in this instance configuration and their
+   * replication properties.
+   * </pre>
+   *
+   * <code>repeated .google.spanner.admin.instance.v1.ReplicaInfo replicas = 3;</code>
+   */
+  public int getReplicasCount() {
+    return replicas_.size();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The geographic placement of nodes in this instance configuration and their
+   * replication properties.
+   * </pre>
+   *
+   * <code>repeated .google.spanner.admin.instance.v1.ReplicaInfo replicas = 3;</code>
+   */
+  public com.google.spanner.admin.instance.v1.ReplicaInfo getReplicas(int index) {
+    return replicas_.get(index);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The geographic placement of nodes in this instance configuration and their
+   * replication properties.
+   * </pre>
+   *
+   * <code>repeated .google.spanner.admin.instance.v1.ReplicaInfo replicas = 3;</code>
+   */
+  public com.google.spanner.admin.instance.v1.ReplicaInfoOrBuilder getReplicasOrBuilder(int index) {
+    return replicas_.get(index);
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -210,6 +297,9 @@ public final class InstanceConfig extends com.google.protobuf.GeneratedMessageV3
     if (!getDisplayNameBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, displayName_);
     }
+    for (int i = 0; i < replicas_.size(); i++) {
+      output.writeMessage(3, replicas_.get(i));
+    }
     unknownFields.writeTo(output);
   }
 
@@ -224,6 +314,9 @@ public final class InstanceConfig extends com.google.protobuf.GeneratedMessageV3
     }
     if (!getDisplayNameBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, displayName_);
+    }
+    for (int i = 0; i < replicas_.size(); i++) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(3, replicas_.get(i));
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -243,6 +336,7 @@ public final class InstanceConfig extends com.google.protobuf.GeneratedMessageV3
 
     if (!getName().equals(other.getName())) return false;
     if (!getDisplayName().equals(other.getDisplayName())) return false;
+    if (!getReplicasList().equals(other.getReplicasList())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -258,6 +352,10 @@ public final class InstanceConfig extends com.google.protobuf.GeneratedMessageV3
     hash = (53 * hash) + getName().hashCode();
     hash = (37 * hash) + DISPLAY_NAME_FIELD_NUMBER;
     hash = (53 * hash) + getDisplayName().hashCode();
+    if (getReplicasCount() > 0) {
+      hash = (37 * hash) + REPLICAS_FIELD_NUMBER;
+      hash = (53 * hash) + getReplicasList().hashCode();
+    }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -398,7 +496,9 @@ public final class InstanceConfig extends com.google.protobuf.GeneratedMessageV3
     }
 
     private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
+      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
+        getReplicasFieldBuilder();
+      }
     }
 
     @java.lang.Override
@@ -408,6 +508,12 @@ public final class InstanceConfig extends com.google.protobuf.GeneratedMessageV3
 
       displayName_ = "";
 
+      if (replicasBuilder_ == null) {
+        replicas_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000004);
+      } else {
+        replicasBuilder_.clear();
+      }
       return this;
     }
 
@@ -435,8 +541,20 @@ public final class InstanceConfig extends com.google.protobuf.GeneratedMessageV3
     public com.google.spanner.admin.instance.v1.InstanceConfig buildPartial() {
       com.google.spanner.admin.instance.v1.InstanceConfig result =
           new com.google.spanner.admin.instance.v1.InstanceConfig(this);
+      int from_bitField0_ = bitField0_;
+      int to_bitField0_ = 0;
       result.name_ = name_;
       result.displayName_ = displayName_;
+      if (replicasBuilder_ == null) {
+        if (((bitField0_ & 0x00000004) != 0)) {
+          replicas_ = java.util.Collections.unmodifiableList(replicas_);
+          bitField0_ = (bitField0_ & ~0x00000004);
+        }
+        result.replicas_ = replicas_;
+      } else {
+        result.replicas_ = replicasBuilder_.build();
+      }
+      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -495,6 +613,33 @@ public final class InstanceConfig extends com.google.protobuf.GeneratedMessageV3
         displayName_ = other.displayName_;
         onChanged();
       }
+      if (replicasBuilder_ == null) {
+        if (!other.replicas_.isEmpty()) {
+          if (replicas_.isEmpty()) {
+            replicas_ = other.replicas_;
+            bitField0_ = (bitField0_ & ~0x00000004);
+          } else {
+            ensureReplicasIsMutable();
+            replicas_.addAll(other.replicas_);
+          }
+          onChanged();
+        }
+      } else {
+        if (!other.replicas_.isEmpty()) {
+          if (replicasBuilder_.isEmpty()) {
+            replicasBuilder_.dispose();
+            replicasBuilder_ = null;
+            replicas_ = other.replicas_;
+            bitField0_ = (bitField0_ & ~0x00000004);
+            replicasBuilder_ =
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
+                    ? getReplicasFieldBuilder()
+                    : null;
+          } else {
+            replicasBuilder_.addAllMessages(other.replicas_);
+          }
+        }
+      }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
       return this;
@@ -524,6 +669,8 @@ public final class InstanceConfig extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object name_ = "";
     /**
@@ -721,6 +868,376 @@ public final class InstanceConfig extends com.google.protobuf.GeneratedMessageV3
       displayName_ = value;
       onChanged();
       return this;
+    }
+
+    private java.util.List<com.google.spanner.admin.instance.v1.ReplicaInfo> replicas_ =
+        java.util.Collections.emptyList();
+
+    private void ensureReplicasIsMutable() {
+      if (!((bitField0_ & 0x00000004) != 0)) {
+        replicas_ =
+            new java.util.ArrayList<com.google.spanner.admin.instance.v1.ReplicaInfo>(replicas_);
+        bitField0_ |= 0x00000004;
+      }
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+            com.google.spanner.admin.instance.v1.ReplicaInfo,
+            com.google.spanner.admin.instance.v1.ReplicaInfo.Builder,
+            com.google.spanner.admin.instance.v1.ReplicaInfoOrBuilder>
+        replicasBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * The geographic placement of nodes in this instance configuration and their
+     * replication properties.
+     * </pre>
+     *
+     * <code>repeated .google.spanner.admin.instance.v1.ReplicaInfo replicas = 3;</code>
+     */
+    public java.util.List<com.google.spanner.admin.instance.v1.ReplicaInfo> getReplicasList() {
+      if (replicasBuilder_ == null) {
+        return java.util.Collections.unmodifiableList(replicas_);
+      } else {
+        return replicasBuilder_.getMessageList();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The geographic placement of nodes in this instance configuration and their
+     * replication properties.
+     * </pre>
+     *
+     * <code>repeated .google.spanner.admin.instance.v1.ReplicaInfo replicas = 3;</code>
+     */
+    public int getReplicasCount() {
+      if (replicasBuilder_ == null) {
+        return replicas_.size();
+      } else {
+        return replicasBuilder_.getCount();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The geographic placement of nodes in this instance configuration and their
+     * replication properties.
+     * </pre>
+     *
+     * <code>repeated .google.spanner.admin.instance.v1.ReplicaInfo replicas = 3;</code>
+     */
+    public com.google.spanner.admin.instance.v1.ReplicaInfo getReplicas(int index) {
+      if (replicasBuilder_ == null) {
+        return replicas_.get(index);
+      } else {
+        return replicasBuilder_.getMessage(index);
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The geographic placement of nodes in this instance configuration and their
+     * replication properties.
+     * </pre>
+     *
+     * <code>repeated .google.spanner.admin.instance.v1.ReplicaInfo replicas = 3;</code>
+     */
+    public Builder setReplicas(int index, com.google.spanner.admin.instance.v1.ReplicaInfo value) {
+      if (replicasBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureReplicasIsMutable();
+        replicas_.set(index, value);
+        onChanged();
+      } else {
+        replicasBuilder_.setMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The geographic placement of nodes in this instance configuration and their
+     * replication properties.
+     * </pre>
+     *
+     * <code>repeated .google.spanner.admin.instance.v1.ReplicaInfo replicas = 3;</code>
+     */
+    public Builder setReplicas(
+        int index, com.google.spanner.admin.instance.v1.ReplicaInfo.Builder builderForValue) {
+      if (replicasBuilder_ == null) {
+        ensureReplicasIsMutable();
+        replicas_.set(index, builderForValue.build());
+        onChanged();
+      } else {
+        replicasBuilder_.setMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The geographic placement of nodes in this instance configuration and their
+     * replication properties.
+     * </pre>
+     *
+     * <code>repeated .google.spanner.admin.instance.v1.ReplicaInfo replicas = 3;</code>
+     */
+    public Builder addReplicas(com.google.spanner.admin.instance.v1.ReplicaInfo value) {
+      if (replicasBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureReplicasIsMutable();
+        replicas_.add(value);
+        onChanged();
+      } else {
+        replicasBuilder_.addMessage(value);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The geographic placement of nodes in this instance configuration and their
+     * replication properties.
+     * </pre>
+     *
+     * <code>repeated .google.spanner.admin.instance.v1.ReplicaInfo replicas = 3;</code>
+     */
+    public Builder addReplicas(int index, com.google.spanner.admin.instance.v1.ReplicaInfo value) {
+      if (replicasBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureReplicasIsMutable();
+        replicas_.add(index, value);
+        onChanged();
+      } else {
+        replicasBuilder_.addMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The geographic placement of nodes in this instance configuration and their
+     * replication properties.
+     * </pre>
+     *
+     * <code>repeated .google.spanner.admin.instance.v1.ReplicaInfo replicas = 3;</code>
+     */
+    public Builder addReplicas(
+        com.google.spanner.admin.instance.v1.ReplicaInfo.Builder builderForValue) {
+      if (replicasBuilder_ == null) {
+        ensureReplicasIsMutable();
+        replicas_.add(builderForValue.build());
+        onChanged();
+      } else {
+        replicasBuilder_.addMessage(builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The geographic placement of nodes in this instance configuration and their
+     * replication properties.
+     * </pre>
+     *
+     * <code>repeated .google.spanner.admin.instance.v1.ReplicaInfo replicas = 3;</code>
+     */
+    public Builder addReplicas(
+        int index, com.google.spanner.admin.instance.v1.ReplicaInfo.Builder builderForValue) {
+      if (replicasBuilder_ == null) {
+        ensureReplicasIsMutable();
+        replicas_.add(index, builderForValue.build());
+        onChanged();
+      } else {
+        replicasBuilder_.addMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The geographic placement of nodes in this instance configuration and their
+     * replication properties.
+     * </pre>
+     *
+     * <code>repeated .google.spanner.admin.instance.v1.ReplicaInfo replicas = 3;</code>
+     */
+    public Builder addAllReplicas(
+        java.lang.Iterable<? extends com.google.spanner.admin.instance.v1.ReplicaInfo> values) {
+      if (replicasBuilder_ == null) {
+        ensureReplicasIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(values, replicas_);
+        onChanged();
+      } else {
+        replicasBuilder_.addAllMessages(values);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The geographic placement of nodes in this instance configuration and their
+     * replication properties.
+     * </pre>
+     *
+     * <code>repeated .google.spanner.admin.instance.v1.ReplicaInfo replicas = 3;</code>
+     */
+    public Builder clearReplicas() {
+      if (replicasBuilder_ == null) {
+        replicas_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000004);
+        onChanged();
+      } else {
+        replicasBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The geographic placement of nodes in this instance configuration and their
+     * replication properties.
+     * </pre>
+     *
+     * <code>repeated .google.spanner.admin.instance.v1.ReplicaInfo replicas = 3;</code>
+     */
+    public Builder removeReplicas(int index) {
+      if (replicasBuilder_ == null) {
+        ensureReplicasIsMutable();
+        replicas_.remove(index);
+        onChanged();
+      } else {
+        replicasBuilder_.remove(index);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The geographic placement of nodes in this instance configuration and their
+     * replication properties.
+     * </pre>
+     *
+     * <code>repeated .google.spanner.admin.instance.v1.ReplicaInfo replicas = 3;</code>
+     */
+    public com.google.spanner.admin.instance.v1.ReplicaInfo.Builder getReplicasBuilder(int index) {
+      return getReplicasFieldBuilder().getBuilder(index);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The geographic placement of nodes in this instance configuration and their
+     * replication properties.
+     * </pre>
+     *
+     * <code>repeated .google.spanner.admin.instance.v1.ReplicaInfo replicas = 3;</code>
+     */
+    public com.google.spanner.admin.instance.v1.ReplicaInfoOrBuilder getReplicasOrBuilder(
+        int index) {
+      if (replicasBuilder_ == null) {
+        return replicas_.get(index);
+      } else {
+        return replicasBuilder_.getMessageOrBuilder(index);
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The geographic placement of nodes in this instance configuration and their
+     * replication properties.
+     * </pre>
+     *
+     * <code>repeated .google.spanner.admin.instance.v1.ReplicaInfo replicas = 3;</code>
+     */
+    public java.util.List<? extends com.google.spanner.admin.instance.v1.ReplicaInfoOrBuilder>
+        getReplicasOrBuilderList() {
+      if (replicasBuilder_ != null) {
+        return replicasBuilder_.getMessageOrBuilderList();
+      } else {
+        return java.util.Collections.unmodifiableList(replicas_);
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The geographic placement of nodes in this instance configuration and their
+     * replication properties.
+     * </pre>
+     *
+     * <code>repeated .google.spanner.admin.instance.v1.ReplicaInfo replicas = 3;</code>
+     */
+    public com.google.spanner.admin.instance.v1.ReplicaInfo.Builder addReplicasBuilder() {
+      return getReplicasFieldBuilder()
+          .addBuilder(com.google.spanner.admin.instance.v1.ReplicaInfo.getDefaultInstance());
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The geographic placement of nodes in this instance configuration and their
+     * replication properties.
+     * </pre>
+     *
+     * <code>repeated .google.spanner.admin.instance.v1.ReplicaInfo replicas = 3;</code>
+     */
+    public com.google.spanner.admin.instance.v1.ReplicaInfo.Builder addReplicasBuilder(int index) {
+      return getReplicasFieldBuilder()
+          .addBuilder(index, com.google.spanner.admin.instance.v1.ReplicaInfo.getDefaultInstance());
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The geographic placement of nodes in this instance configuration and their
+     * replication properties.
+     * </pre>
+     *
+     * <code>repeated .google.spanner.admin.instance.v1.ReplicaInfo replicas = 3;</code>
+     */
+    public java.util.List<com.google.spanner.admin.instance.v1.ReplicaInfo.Builder>
+        getReplicasBuilderList() {
+      return getReplicasFieldBuilder().getBuilderList();
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+            com.google.spanner.admin.instance.v1.ReplicaInfo,
+            com.google.spanner.admin.instance.v1.ReplicaInfo.Builder,
+            com.google.spanner.admin.instance.v1.ReplicaInfoOrBuilder>
+        getReplicasFieldBuilder() {
+      if (replicasBuilder_ == null) {
+        replicasBuilder_ =
+            new com.google.protobuf.RepeatedFieldBuilderV3<
+                com.google.spanner.admin.instance.v1.ReplicaInfo,
+                com.google.spanner.admin.instance.v1.ReplicaInfo.Builder,
+                com.google.spanner.admin.instance.v1.ReplicaInfoOrBuilder>(
+                replicas_, ((bitField0_ & 0x00000004) != 0), getParentForChildren(), isClean());
+        replicas_ = null;
+      }
+      return replicasBuilder_;
     }
 
     @java.lang.Override

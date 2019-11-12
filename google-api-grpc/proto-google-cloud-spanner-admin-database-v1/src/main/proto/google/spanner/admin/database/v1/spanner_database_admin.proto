@@ -1,4 +1,4 @@
-// Copyright 2018 Google LLC
+// Copyright 2019 Google LLC.
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -11,12 +11,16 @@
 // WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 // See the License for the specific language governing permissions and
 // limitations under the License.
+//
 
 syntax = "proto3";
 
 package google.spanner.admin.database.v1;
 
 import "google/api/annotations.proto";
+import "google/api/client.proto";
+import "google/api/field_behavior.proto";
+import "google/api/resource.proto";
 import "google/iam/v1/iam_policy.proto";
 import "google/iam/v1/policy.proto";
 import "google/longrunning/operations.proto";
@@ -30,17 +34,31 @@ option java_outer_classname = "SpannerDatabaseAdminProto";
 option java_package = "com.google.spanner.admin.database.v1";
 option php_namespace = "Google\\Cloud\\Spanner\\Admin\\Database\\V1";
 
+// The Instance resource is defined in `google.spanner.admin.instance.v1`.
+// Because this is a separate, independent API (technically), we redefine
+// the resource name pattern here.
+option (google.api.resource_definition) = {
+  type: "spanner.googleapis.com/Instance"
+  pattern: "projects/{project}/instances/{instance}"
+};
+
 // Cloud Spanner Database Admin API
 //
 // The Cloud Spanner Database Admin API can be used to create, drop, and
 // list databases. It also enables updating the schema of pre-existing
 // databases.
 service DatabaseAdmin {
+  option (google.api.default_host) = "spanner.googleapis.com";
+  option (google.api.oauth_scopes) =
+      "https://www.googleapis.com/auth/cloud-platform,"
+      "https://www.googleapis.com/auth/spanner.admin";
+
   // Lists Cloud Spanner databases.
   rpc ListDatabases(ListDatabasesRequest) returns (ListDatabasesResponse) {
     option (google.api.http) = {
       get: "/v1/{parent=projects/*/instances/*}/databases"
     };
+    option (google.api.method_signature) = "parent";
   }
 
   // Creates a new Cloud Spanner database and starts to prepare it for serving.
@@ -57,6 +75,11 @@ service DatabaseAdmin {
       post: "/v1/{parent=projects/*/instances/*}/databases"
       body: "*"
     };
+    option (google.api.method_signature) = "parent,create_statement";
+    option (google.longrunning.operation_info) = {
+      response_type: "google.spanner.admin.database.v1.Database"
+      metadata_type: "google.spanner.admin.database.v1.CreateDatabaseMetadata"
+    };
   }
 
   // Gets the state of a Cloud Spanner database.
@@ -64,6 +87,7 @@ service DatabaseAdmin {
     option (google.api.http) = {
       get: "/v1/{name=projects/*/instances/*/databases/*}"
     };
+    option (google.api.method_signature) = "name";
   }
 
   // Updates the schema of a Cloud Spanner database by
@@ -80,6 +104,11 @@ service DatabaseAdmin {
       patch: "/v1/{database=projects/*/instances/*/databases/*}/ddl"
       body: "*"
     };
+    option (google.api.method_signature) = "database,statements";
+    option (google.longrunning.operation_info) = {
+      response_type: "google.protobuf.Empty"
+      metadata_type: "google.spanner.admin.database.v1.UpdateDatabaseDdlMetadata"
+    };
   }
 
   // Drops (aka deletes) a Cloud Spanner database.
@@ -87,6 +116,7 @@ service DatabaseAdmin {
     option (google.api.http) = {
       delete: "/v1/{database=projects/*/instances/*/databases/*}"
     };
+    option (google.api.method_signature) = "database";
   }
 
   // Returns the schema of a Cloud Spanner database as a list of formatted
@@ -96,23 +126,30 @@ service DatabaseAdmin {
     option (google.api.http) = {
       get: "/v1/{database=projects/*/instances/*/databases/*}/ddl"
     };
+    option (google.api.method_signature) = "database";
   }
 
-  // Sets the access control policy on a database resource. Replaces any
-  // existing policy.
+  // Sets the access control policy on a database resource.
+  // Replaces any existing policy.
   //
-  // Authorization requires `spanner.databases.setIamPolicy` permission on
-  // [resource][google.iam.v1.SetIamPolicyRequest.resource].
+  // Authorization requires `spanner.databases.setIamPolicy`
+  // permission on [resource][google.iam.v1.SetIamPolicyRequest.resource].
   rpc SetIamPolicy(google.iam.v1.SetIamPolicyRequest)
       returns (google.iam.v1.Policy) {
     option (google.api.http) = {
       post: "/v1/{resource=projects/*/instances/*/databases/*}:setIamPolicy"
       body: "*"
+      additional_bindings {
+        post: "/v1/{resource=projects/*/instances/*/backups/*}:setIamPolicy"
+        body: "*"
+      }
     };
+    option (google.api.method_signature) = "resource,policy";
   }
 
-  // Gets the access control policy for a database resource. Returns an empty
-  // policy if a database exists but does not have a policy set.
+  // Gets the access control policy for a database resource.
+  // Returns an empty policy if a database exists but does
+  // not have a policy set.
   //
   // Authorization requires `spanner.databases.getIamPolicy` permission on
   // [resource][google.iam.v1.GetIamPolicyRequest.resource].
@@ -121,26 +158,41 @@ service DatabaseAdmin {
     option (google.api.http) = {
       post: "/v1/{resource=projects/*/instances/*/databases/*}:getIamPolicy"
       body: "*"
+      additional_bindings {
+        post: "/v1/{resource=projects/*/instances/*/backups/*}:getIamPolicy"
+        body: "*"
+      }
     };
+    option (google.api.method_signature) = "resource";
   }
 
   // Returns permissions that the caller has on the specified database resource.
   //
-  // Attempting this RPC on a non-existent Cloud Spanner database will result in
-  // a NOT_FOUND error if the user has `spanner.databases.list` permission on
-  // the containing Cloud Spanner instance. Otherwise returns an empty set of
-  // permissions.
+  // Attempting this RPC on a non-existent Cloud Spanner database will
+  // result in a NOT_FOUND error if the user has
+  // `spanner.databases.list` permission on the containing Cloud
+  // Spanner instance. Otherwise returns an empty set of permissions.
   rpc TestIamPermissions(google.iam.v1.TestIamPermissionsRequest)
       returns (google.iam.v1.TestIamPermissionsResponse) {
     option (google.api.http) = {
       post: "/v1/{resource=projects/*/instances/*/databases/*}:testIamPermissions"
       body: "*"
+      additional_bindings {
+        post: "/v1/{resource=projects/*/instances/*/backups/*}:testIamPermissions"
+        body: "*"
+      }
     };
+    option (google.api.method_signature) = "resource,permissions";
   }
 }
 
 // A Cloud Spanner database.
 message Database {
+  option (google.api.resource) = {
+    type: "spanner.googleapis.com/Database"
+    pattern: "projects/{project}/instances/{instance}/databases/{database}"
+  };
+
   // Indicates the current state of the database.
   enum State {
     // Not specified.
@@ -170,7 +222,12 @@ message Database {
 message ListDatabasesRequest {
   // Required. The instance whose databases should be listed.
   // Values are of the form `projects/<project>/instances/<instance>`.
-  string parent = 1;
+  string parent = 1 [
+    (google.api.field_behavior) = REQUIRED,
+    (google.api.resource_reference) = {
+      type: "spanner.googleapis.com/Instance"
+    }
+  ];
 
   // Number of databases to be returned in the response. If 0 or less,
   // defaults to the server's maximum allowed page size.
@@ -200,14 +257,19 @@ message ListDatabasesResponse {
 message CreateDatabaseRequest {
   // Required. The name of the instance that will serve the new database.
   // Values are of the form `projects/<project>/instances/<instance>`.
-  string parent = 1;
+  string parent = 1 [
+    (google.api.field_behavior) = REQUIRED,
+    (google.api.resource_reference) = {
+      type: "spanner.googleapis.com/Instance"
+    }
+  ];
 
   // Required. A `CREATE DATABASE` statement, which specifies the ID of the
   // new database.  The database ID must conform to the regular expression
   // `[a-z][a-z0-9_\-]*[a-z0-9]` and be between 2 and 30 characters in length.
   // If the database ID is a reserved word or if it contains a hyphen, the
   // database ID must be enclosed in backticks (`` ` ``).
-  string create_statement = 2;
+  string create_statement = 2 [(google.api.field_behavior) = REQUIRED];
 
   // An optional list of DDL statements to run inside the newly created
   // database. Statements can create tables, indexes, etc. These
@@ -220,7 +282,9 @@ message CreateDatabaseRequest {
 // [CreateDatabase][google.spanner.admin.database.v1.DatabaseAdmin.CreateDatabase].
 message CreateDatabaseMetadata {
   // The database being created.
-  string database = 1;
+  string database = 1 [(google.api.resource_reference) = {
+    type: "spanner.googleapis.com/Database"
+  }];
 }
 
 // The request for
@@ -228,7 +292,12 @@ message CreateDatabaseMetadata {
 message GetDatabaseRequest {
   // Required. The name of the requested database. Values are of the form
   // `projects/<project>/instances/<instance>/databases/<database>`.
-  string name = 1;
+  string name = 1 [
+    (google.api.field_behavior) = REQUIRED,
+    (google.api.resource_reference) = {
+      type: "spanner.googleapis.com/Database"
+    }
+  ];
 }
 
 // Enqueues the given DDL statements to be applied, in order but not
@@ -249,10 +318,15 @@ message GetDatabaseRequest {
 // field for more details.
 message UpdateDatabaseDdlRequest {
   // Required. The database to update.
-  string database = 1;
+  string database = 1 [
+    (google.api.field_behavior) = REQUIRED,
+    (google.api.resource_reference) = {
+      type: "spanner.googleapis.com/Database"
+    }
+  ];
 
-  // DDL statements to be applied to the database.
-  repeated string statements = 2;
+  // Required. DDL statements to be applied to the database.
+  repeated string statements = 2 [(google.api.field_behavior) = REQUIRED];
 
   // If empty, the new update request is assigned an
   // automatically-generated operation ID. Otherwise, `operation_id`
@@ -282,7 +356,9 @@ message UpdateDatabaseDdlRequest {
 // [UpdateDatabaseDdl][google.spanner.admin.database.v1.DatabaseAdmin.UpdateDatabaseDdl].
 message UpdateDatabaseDdlMetadata {
   // The database being modified.
-  string database = 1;
+  string database = 1 [(google.api.resource_reference) = {
+    type: "spanner.googleapis.com/Database"
+  }];
 
   // For an update this list contains all the statements. For an
   // individual statement, this list contains only that statement.
@@ -298,14 +374,24 @@ message UpdateDatabaseDdlMetadata {
 // [DropDatabase][google.spanner.admin.database.v1.DatabaseAdmin.DropDatabase].
 message DropDatabaseRequest {
   // Required. The database to be dropped.
-  string database = 1;
+  string database = 1 [
+    (google.api.field_behavior) = REQUIRED,
+    (google.api.resource_reference) = {
+      type: "spanner.googleapis.com/Database"
+    }
+  ];
 }
 
 // The request for
 // [GetDatabaseDdl][google.spanner.admin.database.v1.DatabaseAdmin.GetDatabaseDdl].
 message GetDatabaseDdlRequest {
   // Required. The database whose schema we wish to get.
-  string database = 1;
+  string database = 1 [
+    (google.api.field_behavior) = REQUIRED,
+    (google.api.resource_reference) = {
+      type: "spanner.googleapis.com/Database"
+    }
+  ];
 }
 
 // The response for

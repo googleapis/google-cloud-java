@@ -235,9 +235,9 @@ public class SpannerClientTest {
             .build();
     mockSpanner.addResponse(expectedResponse);
 
-    String formattedDatabase = DatabaseName.format("[PROJECT]", "[INSTANCE]", "[DATABASE]");
+    DatabaseName database = DatabaseName.of("[PROJECT]", "[INSTANCE]", "[DATABASE]");
 
-    ListSessionsPagedResponse pagedListResponse = client.listSessions(formattedDatabase);
+    ListSessionsPagedResponse pagedListResponse = client.listSessions(database);
 
     List<Session> resources = Lists.newArrayList(pagedListResponse.iterateAll());
     Assert.assertEquals(1, resources.size());
@@ -247,7 +247,7 @@ public class SpannerClientTest {
     Assert.assertEquals(1, actualRequests.size());
     ListSessionsRequest actualRequest = (ListSessionsRequest) actualRequests.get(0);
 
-    Assert.assertEquals(formattedDatabase, actualRequest.getDatabase());
+    Assert.assertEquals(database, DatabaseName.parse(actualRequest.getDatabase()));
     Assert.assertTrue(
         channelProvider.isHeaderSent(
             ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
@@ -261,9 +261,9 @@ public class SpannerClientTest {
     mockSpanner.addException(exception);
 
     try {
-      String formattedDatabase = DatabaseName.format("[PROJECT]", "[INSTANCE]", "[DATABASE]");
+      DatabaseName database = DatabaseName.of("[PROJECT]", "[INSTANCE]", "[DATABASE]");
 
-      client.listSessions(formattedDatabase);
+      client.listSessions(database);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception

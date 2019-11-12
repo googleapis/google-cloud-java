@@ -101,7 +101,9 @@ public final class DropDatabaseRequest extends com.google.protobuf.GeneratedMess
    * Required. The database to be dropped.
    * </pre>
    *
-   * <code>string database = 1;</code>
+   * <code>
+   * string database = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    */
   public java.lang.String getDatabase() {
     java.lang.Object ref = database_;
@@ -121,7 +123,9 @@ public final class DropDatabaseRequest extends com.google.protobuf.GeneratedMess
    * Required. The database to be dropped.
    * </pre>
    *
-   * <code>string database = 1;</code>
+   * <code>
+   * string database = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    */
   public com.google.protobuf.ByteString getDatabaseBytes() {
     java.lang.Object ref = database_;
@@ -463,7 +467,9 @@ public final class DropDatabaseRequest extends com.google.protobuf.GeneratedMess
      * Required. The database to be dropped.
      * </pre>
      *
-     * <code>string database = 1;</code>
+     * <code>
+     * string database = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      */
     public java.lang.String getDatabase() {
       java.lang.Object ref = database_;
@@ -483,7 +489,9 @@ public final class DropDatabaseRequest extends com.google.protobuf.GeneratedMess
      * Required. The database to be dropped.
      * </pre>
      *
-     * <code>string database = 1;</code>
+     * <code>
+     * string database = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      */
     public com.google.protobuf.ByteString getDatabaseBytes() {
       java.lang.Object ref = database_;
@@ -503,7 +511,9 @@ public final class DropDatabaseRequest extends com.google.protobuf.GeneratedMess
      * Required. The database to be dropped.
      * </pre>
      *
-     * <code>string database = 1;</code>
+     * <code>
+     * string database = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      */
     public Builder setDatabase(java.lang.String value) {
       if (value == null) {
@@ -521,7 +531,9 @@ public final class DropDatabaseRequest extends com.google.protobuf.GeneratedMess
      * Required. The database to be dropped.
      * </pre>
      *
-     * <code>string database = 1;</code>
+     * <code>
+     * string database = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      */
     public Builder clearDatabase() {
 
@@ -536,7 +548,9 @@ public final class DropDatabaseRequest extends com.google.protobuf.GeneratedMess
      * Required. The database to be dropped.
      * </pre>
      *
-     * <code>string database = 1;</code>
+     * <code>
+     * string database = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      */
     public Builder setDatabaseBytes(com.google.protobuf.ByteString value) {
       if (value == null) {

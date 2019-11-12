@@ -16,7 +16,9 @@ public interface CreateDatabaseRequestOrBuilder
    * Values are of the form `projects/&lt;project&gt;/instances/&lt;instance&gt;`.
    * </pre>
    *
-   * <code>string parent = 1;</code>
+   * <code>
+   * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    */
   java.lang.String getParent();
   /**
@@ -27,7 +29,9 @@ public interface CreateDatabaseRequestOrBuilder
    * Values are of the form `projects/&lt;project&gt;/instances/&lt;instance&gt;`.
    * </pre>
    *
-   * <code>string parent = 1;</code>
+   * <code>
+   * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    */
   com.google.protobuf.ByteString getParentBytes();
 
@@ -42,7 +46,7 @@ public interface CreateDatabaseRequestOrBuilder
    * database ID must be enclosed in backticks (`` ` ``).
    * </pre>
    *
-   * <code>string create_statement = 2;</code>
+   * <code>string create_statement = 2 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   java.lang.String getCreateStatement();
   /**
@@ -56,7 +60,7 @@ public interface CreateDatabaseRequestOrBuilder
    * database ID must be enclosed in backticks (`` ` ``).
    * </pre>
    *
-   * <code>string create_statement = 2;</code>
+   * <code>string create_statement = 2 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   com.google.protobuf.ByteString getCreateStatementBytes();
 

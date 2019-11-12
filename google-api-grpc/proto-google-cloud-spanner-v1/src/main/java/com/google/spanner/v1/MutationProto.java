@@ -34,9 +34,9 @@ public final class MutationProto {
   static {
     java.lang.String[] descriptorData = {
       "\n google/spanner/v1/mutation.proto\022\021goog"
-          + "le.spanner.v1\032\034google/api/annotations.pr"
-          + "oto\032\034google/protobuf/struct.proto\032\034googl"
-          + "e/spanner/v1/keys.proto\"\306\003\n\010Mutation\0223\n\006"
+          + "le.spanner.v1\032\034google/protobuf/struct.pr"
+          + "oto\032\034google/spanner/v1/keys.proto\032\034googl"
+          + "e/api/annotations.proto\"\306\003\n\010Mutation\0223\n\006"
           + "insert\030\001 \001(\0132!.google.spanner.v1.Mutatio"
           + "n.WriteH\000\0223\n\006update\030\002 \001(\0132!.google.spann"
           + "er.v1.Mutation.WriteH\000\022=\n\020insert_or_upda"
@@ -65,9 +65,9 @@ public final class MutationProto {
     com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
         descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
-          com.google.api.AnnotationsProto.getDescriptor(),
           com.google.protobuf.StructProto.getDescriptor(),
           com.google.spanner.v1.KeysProto.getDescriptor(),
+          com.google.api.AnnotationsProto.getDescriptor(),
         },
         assigner);
     internal_static_google_spanner_v1_Mutation_descriptor =
@@ -94,9 +94,9 @@ public final class MutationProto {
             new java.lang.String[] {
               "Table", "KeySet",
             });
-    com.google.api.AnnotationsProto.getDescriptor();
     com.google.protobuf.StructProto.getDescriptor();
     com.google.spanner.v1.KeysProto.getDescriptor();
+    com.google.api.AnnotationsProto.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

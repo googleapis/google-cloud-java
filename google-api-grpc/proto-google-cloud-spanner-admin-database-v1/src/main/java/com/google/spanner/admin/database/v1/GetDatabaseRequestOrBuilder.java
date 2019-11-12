@@ -16,7 +16,9 @@ public interface GetDatabaseRequestOrBuilder
    * `projects/&lt;project&gt;/instances/&lt;instance&gt;/databases/&lt;database&gt;`.
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>
+   * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    */
   java.lang.String getName();
   /**
@@ -27,7 +29,9 @@ public interface GetDatabaseRequestOrBuilder
    * `projects/&lt;project&gt;/instances/&lt;instance&gt;/databases/&lt;database&gt;`.
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>
+   * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    */
   com.google.protobuf.ByteString getNameBytes();
 }

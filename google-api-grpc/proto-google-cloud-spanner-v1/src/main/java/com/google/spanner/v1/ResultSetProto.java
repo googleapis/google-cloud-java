@@ -38,11 +38,11 @@ public final class ResultSetProto {
   static {
     java.lang.String[] descriptorData = {
       "\n\"google/spanner/v1/result_set.proto\022\021go"
-          + "ogle.spanner.v1\032\034google/api/annotations."
-          + "proto\032\034google/protobuf/struct.proto\032\"goo"
-          + "gle/spanner/v1/query_plan.proto\032#google/"
-          + "spanner/v1/transaction.proto\032\034google/spa"
-          + "nner/v1/type.proto\"\237\001\n\tResultSet\0226\n\010meta"
+          + "ogle.spanner.v1\032\034google/protobuf/struct."
+          + "proto\032\"google/spanner/v1/query_plan.prot"
+          + "o\032#google/spanner/v1/transaction.proto\032\034"
+          + "google/spanner/v1/type.proto\032\034google/api"
+          + "/annotations.proto\"\237\001\n\tResultSet\0226\n\010meta"
           + "data\030\001 \001(\0132$.google.spanner.v1.ResultSet"
           + "Metadata\022(\n\004rows\030\002 \003(\0132\032.google.protobuf"
           + ".ListValue\0220\n\005stats\030\003 \001(\0132!.google.spann"
@@ -76,11 +76,11 @@ public final class ResultSetProto {
     com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
         descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
-          com.google.api.AnnotationsProto.getDescriptor(),
           com.google.protobuf.StructProto.getDescriptor(),
           com.google.spanner.v1.QueryPlanProto.getDescriptor(),
           com.google.spanner.v1.TransactionProto.getDescriptor(),
           com.google.spanner.v1.TypeProto.getDescriptor(),
+          com.google.api.AnnotationsProto.getDescriptor(),
         },
         assigner);
     internal_static_google_spanner_v1_ResultSet_descriptor =
@@ -115,11 +115,11 @@ public final class ResultSetProto {
             new java.lang.String[] {
               "QueryPlan", "QueryStats", "RowCountExact", "RowCountLowerBound", "RowCount",
             });
-    com.google.api.AnnotationsProto.getDescriptor();
     com.google.protobuf.StructProto.getDescriptor();
     com.google.spanner.v1.QueryPlanProto.getDescriptor();
     com.google.spanner.v1.TransactionProto.getDescriptor();
     com.google.spanner.v1.TypeProto.getDescriptor();
+    com.google.api.AnnotationsProto.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

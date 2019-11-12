@@ -26,6 +26,7 @@ import com.google.api.gax.grpc.testing.MockServiceHelper;
 import com.google.api.gax.rpc.ApiClientHeaderProvider;
 import com.google.api.gax.rpc.InvalidArgumentException;
 import com.google.api.gax.rpc.StatusCode;
+import com.google.api.resourcenames.ResourceName;
 import com.google.common.collect.Lists;
 import com.google.iam.v1.GetIamPolicyRequest;
 import com.google.iam.v1.Policy;
@@ -58,6 +59,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.Objects;
 import java.util.concurrent.ExecutionException;
 import org.junit.After;
 import org.junit.AfterClass;
@@ -311,7 +313,7 @@ public class InstanceAdminClientTest {
     mockInstanceAdmin.addResponse(resultOperation);
 
     ProjectName parent = ProjectName.of("[PROJECT]");
-    InstanceName instanceId = InstanceName.of("[PROJECT]", "[INSTANCE]");
+    String instanceId = "instanceId-2101995259";
     Instance instance = Instance.newBuilder().build();
 
     Instance actualResponse = client.createInstanceAsync(parent, instanceId, instance).get();
@@ -322,7 +324,7 @@ public class InstanceAdminClientTest {
     CreateInstanceRequest actualRequest = (CreateInstanceRequest) actualRequests.get(0);
 
     Assert.assertEquals(parent, ProjectName.parse(actualRequest.getParent()));
-    Assert.assertEquals(instanceId, InstanceName.parse(actualRequest.getInstanceId()));
+    Assert.assertEquals(instanceId, actualRequest.getInstanceId());
     Assert.assertEquals(instance, actualRequest.getInstance());
     Assert.assertTrue(
         channelProvider.isHeaderSent(
@@ -338,7 +340,7 @@ public class InstanceAdminClientTest {
 
     try {
       ProjectName parent = ProjectName.of("[PROJECT]");
-      InstanceName instanceId = InstanceName.of("[PROJECT]", "[INSTANCE]");
+      String instanceId = "instanceId-2101995259";
       Instance instance = Instance.newBuilder().build();
 
       client.createInstanceAsync(parent, instanceId, instance).get();
@@ -454,17 +456,17 @@ public class InstanceAdminClientTest {
     Policy expectedResponse = Policy.newBuilder().setVersion(version).setEtag(etag).build();
     mockInstanceAdmin.addResponse(expectedResponse);
 
-    String formattedResource = InstanceName.format("[PROJECT]", "[INSTANCE]");
+    ResourceName resource = InstanceName.of("[PROJECT]", "[INSTANCE]");
     Policy policy = Policy.newBuilder().build();
 
-    Policy actualResponse = client.setIamPolicy(formattedResource, policy);
+    Policy actualResponse = client.setIamPolicy(resource, policy);
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<AbstractMessage> actualRequests = mockInstanceAdmin.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     SetIamPolicyRequest actualRequest = (SetIamPolicyRequest) actualRequests.get(0);
 
-    Assert.assertEquals(formattedResource, actualRequest.getResource());
+    Assert.assertEquals(Objects.toString(resource), Objects.toString(actualRequest.getResource()));
     Assert.assertEquals(policy, actualRequest.getPolicy());
     Assert.assertTrue(
         channelProvider.isHeaderSent(
@@ -479,10 +481,10 @@ public class InstanceAdminClientTest {
     mockInstanceAdmin.addException(exception);
 
     try {
-      String formattedResource = InstanceName.format("[PROJECT]", "[INSTANCE]");
+      ResourceName resource = InstanceName.of("[PROJECT]", "[INSTANCE]");
       Policy policy = Policy.newBuilder().build();
 
-      client.setIamPolicy(formattedResource, policy);
+      client.setIamPolicy(resource, policy);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception
@@ -497,16 +499,16 @@ public class InstanceAdminClientTest {
     Policy expectedResponse = Policy.newBuilder().setVersion(version).setEtag(etag).build();
     mockInstanceAdmin.addResponse(expectedResponse);
 
-    String formattedResource = InstanceName.format("[PROJECT]", "[INSTANCE]");
+    ResourceName resource = InstanceName.of("[PROJECT]", "[INSTANCE]");
 
-    Policy actualResponse = client.getIamPolicy(formattedResource);
+    Policy actualResponse = client.getIamPolicy(resource);
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<AbstractMessage> actualRequests = mockInstanceAdmin.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     GetIamPolicyRequest actualRequest = (GetIamPolicyRequest) actualRequests.get(0);
 
-    Assert.assertEquals(formattedResource, actualRequest.getResource());
+    Assert.assertEquals(Objects.toString(resource), Objects.toString(actualRequest.getResource()));
     Assert.assertTrue(
         channelProvider.isHeaderSent(
             ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
@@ -520,9 +522,9 @@ public class InstanceAdminClientTest {
     mockInstanceAdmin.addException(exception);
 
     try {
-      String formattedResource = InstanceName.format("[PROJECT]", "[INSTANCE]");
+      ResourceName resource = InstanceName.of("[PROJECT]", "[INSTANCE]");
 
-      client.getIamPolicy(formattedResource);
+      client.getIamPolicy(resource);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception
@@ -535,18 +537,17 @@ public class InstanceAdminClientTest {
     TestIamPermissionsResponse expectedResponse = TestIamPermissionsResponse.newBuilder().build();
     mockInstanceAdmin.addResponse(expectedResponse);
 
-    String formattedResource = InstanceName.format("[PROJECT]", "[INSTANCE]");
+    ResourceName resource = InstanceName.of("[PROJECT]", "[INSTANCE]");
     List<String> permissions = new ArrayList<>();
 
-    TestIamPermissionsResponse actualResponse =
-        client.testIamPermissions(formattedResource, permissions);
+    TestIamPermissionsResponse actualResponse = client.testIamPermissions(resource, permissions);
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<AbstractMessage> actualRequests = mockInstanceAdmin.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     TestIamPermissionsRequest actualRequest = (TestIamPermissionsRequest) actualRequests.get(0);
 
-    Assert.assertEquals(formattedResource, actualRequest.getResource());
+    Assert.assertEquals(Objects.toString(resource), Objects.toString(actualRequest.getResource()));
     Assert.assertEquals(permissions, actualRequest.getPermissionsList());
     Assert.assertTrue(
         channelProvider.isHeaderSent(
@@ -561,10 +562,10 @@ public class InstanceAdminClientTest {
     mockInstanceAdmin.addException(exception);
 
     try {
-      String formattedResource = InstanceName.format("[PROJECT]", "[INSTANCE]");
+      ResourceName resource = InstanceName.of("[PROJECT]", "[INSTANCE]");
       List<String> permissions = new ArrayList<>();
 
-      client.testIamPermissions(formattedResource, permissions);
+      client.testIamPermissions(resource, permissions);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception

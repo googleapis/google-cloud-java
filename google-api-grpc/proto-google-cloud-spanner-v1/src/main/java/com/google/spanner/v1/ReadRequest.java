@@ -179,7 +179,9 @@ public final class ReadRequest extends com.google.protobuf.GeneratedMessageV3
    * Required. The session in which the read should be performed.
    * </pre>
    *
-   * <code>string session = 1;</code>
+   * <code>
+   * string session = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    */
   public java.lang.String getSession() {
     java.lang.Object ref = session_;
@@ -199,7 +201,9 @@ public final class ReadRequest extends com.google.protobuf.GeneratedMessageV3
    * Required. The session in which the read should be performed.
    * </pre>
    *
-   * <code>string session = 1;</code>
+   * <code>
+   * string session = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    */
   public com.google.protobuf.ByteString getSessionBytes() {
     java.lang.Object ref = session_;
@@ -266,7 +270,7 @@ public final class ReadRequest extends com.google.protobuf.GeneratedMessageV3
    * Required. The name of the table in the database to be read.
    * </pre>
    *
-   * <code>string table = 3;</code>
+   * <code>string table = 3 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   public java.lang.String getTable() {
     java.lang.Object ref = table_;
@@ -286,7 +290,7 @@ public final class ReadRequest extends com.google.protobuf.GeneratedMessageV3
    * Required. The name of the table in the database to be read.
    * </pre>
    *
-   * <code>string table = 3;</code>
+   * <code>string table = 3 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   public com.google.protobuf.ByteString getTableBytes() {
     java.lang.Object ref = table_;
@@ -359,11 +363,11 @@ public final class ReadRequest extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The columns of [table][google.spanner.v1.ReadRequest.table] to be returned
-   * for each row matching this request.
+   * Required. The columns of [table][google.spanner.v1.ReadRequest.table] to be
+   * returned for each row matching this request.
    * </pre>
    *
-   * <code>repeated string columns = 5;</code>
+   * <code>repeated string columns = 5 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   public com.google.protobuf.ProtocolStringList getColumnsList() {
     return columns_;
@@ -372,11 +376,11 @@ public final class ReadRequest extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The columns of [table][google.spanner.v1.ReadRequest.table] to be returned
-   * for each row matching this request.
+   * Required. The columns of [table][google.spanner.v1.ReadRequest.table] to be
+   * returned for each row matching this request.
    * </pre>
    *
-   * <code>repeated string columns = 5;</code>
+   * <code>repeated string columns = 5 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   public int getColumnsCount() {
     return columns_.size();
@@ -385,11 +389,11 @@ public final class ReadRequest extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The columns of [table][google.spanner.v1.ReadRequest.table] to be returned
-   * for each row matching this request.
+   * Required. The columns of [table][google.spanner.v1.ReadRequest.table] to be
+   * returned for each row matching this request.
    * </pre>
    *
-   * <code>repeated string columns = 5;</code>
+   * <code>repeated string columns = 5 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   public java.lang.String getColumns(int index) {
     return columns_.get(index);
@@ -398,11 +402,11 @@ public final class ReadRequest extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The columns of [table][google.spanner.v1.ReadRequest.table] to be returned
-   * for each row matching this request.
+   * Required. The columns of [table][google.spanner.v1.ReadRequest.table] to be
+   * returned for each row matching this request.
    * </pre>
    *
-   * <code>repeated string columns = 5;</code>
+   * <code>repeated string columns = 5 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   public com.google.protobuf.ByteString getColumnsBytes(int index) {
     return columns_.getByteString(index);
@@ -430,7 +434,7 @@ public final class ReadRequest extends com.google.protobuf.GeneratedMessageV3
    * exist in the database. Read yields nothing for nonexistent rows.
    * </pre>
    *
-   * <code>.google.spanner.v1.KeySet key_set = 6;</code>
+   * <code>.google.spanner.v1.KeySet key_set = 6 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   public boolean hasKeySet() {
     return keySet_ != null;
@@ -455,7 +459,7 @@ public final class ReadRequest extends com.google.protobuf.GeneratedMessageV3
    * exist in the database. Read yields nothing for nonexistent rows.
    * </pre>
    *
-   * <code>.google.spanner.v1.KeySet key_set = 6;</code>
+   * <code>.google.spanner.v1.KeySet key_set = 6 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   public com.google.spanner.v1.KeySet getKeySet() {
     return keySet_ == null ? com.google.spanner.v1.KeySet.getDefaultInstance() : keySet_;
@@ -480,7 +484,7 @@ public final class ReadRequest extends com.google.protobuf.GeneratedMessageV3
    * exist in the database. Read yields nothing for nonexistent rows.
    * </pre>
    *
-   * <code>.google.spanner.v1.KeySet key_set = 6;</code>
+   * <code>.google.spanner.v1.KeySet key_set = 6 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   public com.google.spanner.v1.KeySetOrBuilder getKeySetOrBuilder() {
     return getKeySet();
@@ -1034,7 +1038,9 @@ public final class ReadRequest extends com.google.protobuf.GeneratedMessageV3
      * Required. The session in which the read should be performed.
      * </pre>
      *
-     * <code>string session = 1;</code>
+     * <code>
+     * string session = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      */
     public java.lang.String getSession() {
       java.lang.Object ref = session_;
@@ -1054,7 +1060,9 @@ public final class ReadRequest extends com.google.protobuf.GeneratedMessageV3
      * Required. The session in which the read should be performed.
      * </pre>
      *
-     * <code>string session = 1;</code>
+     * <code>
+     * string session = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      */
     public com.google.protobuf.ByteString getSessionBytes() {
       java.lang.Object ref = session_;
@@ -1074,7 +1082,9 @@ public final class ReadRequest extends com.google.protobuf.GeneratedMessageV3
      * Required. The session in which the read should be performed.
      * </pre>
      *
-     * <code>string session = 1;</code>
+     * <code>
+     * string session = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      */
     public Builder setSession(java.lang.String value) {
       if (value == null) {
@@ -1092,7 +1102,9 @@ public final class ReadRequest extends com.google.protobuf.GeneratedMessageV3
      * Required. The session in which the read should be performed.
      * </pre>
      *
-     * <code>string session = 1;</code>
+     * <code>
+     * string session = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      */
     public Builder clearSession() {
 
@@ -1107,7 +1119,9 @@ public final class ReadRequest extends com.google.protobuf.GeneratedMessageV3
      * Required. The session in which the read should be performed.
      * </pre>
      *
-     * <code>string session = 1;</code>
+     * <code>
+     * string session = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      */
     public Builder setSessionBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -1319,7 +1333,7 @@ public final class ReadRequest extends com.google.protobuf.GeneratedMessageV3
      * Required. The name of the table in the database to be read.
      * </pre>
      *
-     * <code>string table = 3;</code>
+     * <code>string table = 3 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public java.lang.String getTable() {
       java.lang.Object ref = table_;
@@ -1339,7 +1353,7 @@ public final class ReadRequest extends com.google.protobuf.GeneratedMessageV3
      * Required. The name of the table in the database to be read.
      * </pre>
      *
-     * <code>string table = 3;</code>
+     * <code>string table = 3 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public com.google.protobuf.ByteString getTableBytes() {
       java.lang.Object ref = table_;
@@ -1359,7 +1373,7 @@ public final class ReadRequest extends com.google.protobuf.GeneratedMessageV3
      * Required. The name of the table in the database to be read.
      * </pre>
      *
-     * <code>string table = 3;</code>
+     * <code>string table = 3 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder setTable(java.lang.String value) {
       if (value == null) {
@@ -1377,7 +1391,7 @@ public final class ReadRequest extends com.google.protobuf.GeneratedMessageV3
      * Required. The name of the table in the database to be read.
      * </pre>
      *
-     * <code>string table = 3;</code>
+     * <code>string table = 3 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder clearTable() {
 
@@ -1392,7 +1406,7 @@ public final class ReadRequest extends com.google.protobuf.GeneratedMessageV3
      * Required. The name of the table in the database to be read.
      * </pre>
      *
-     * <code>string table = 3;</code>
+     * <code>string table = 3 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder setTableBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -1537,11 +1551,11 @@ public final class ReadRequest extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The columns of [table][google.spanner.v1.ReadRequest.table] to be returned
-     * for each row matching this request.
+     * Required. The columns of [table][google.spanner.v1.ReadRequest.table] to be
+     * returned for each row matching this request.
      * </pre>
      *
-     * <code>repeated string columns = 5;</code>
+     * <code>repeated string columns = 5 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public com.google.protobuf.ProtocolStringList getColumnsList() {
       return columns_.getUnmodifiableView();
@@ -1550,11 +1564,11 @@ public final class ReadRequest extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The columns of [table][google.spanner.v1.ReadRequest.table] to be returned
-     * for each row matching this request.
+     * Required. The columns of [table][google.spanner.v1.ReadRequest.table] to be
+     * returned for each row matching this request.
      * </pre>
      *
-     * <code>repeated string columns = 5;</code>
+     * <code>repeated string columns = 5 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public int getColumnsCount() {
       return columns_.size();
@@ -1563,11 +1577,11 @@ public final class ReadRequest extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The columns of [table][google.spanner.v1.ReadRequest.table] to be returned
-     * for each row matching this request.
+     * Required. The columns of [table][google.spanner.v1.ReadRequest.table] to be
+     * returned for each row matching this request.
      * </pre>
      *
-     * <code>repeated string columns = 5;</code>
+     * <code>repeated string columns = 5 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public java.lang.String getColumns(int index) {
       return columns_.get(index);
@@ -1576,11 +1590,11 @@ public final class ReadRequest extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The columns of [table][google.spanner.v1.ReadRequest.table] to be returned
-     * for each row matching this request.
+     * Required. The columns of [table][google.spanner.v1.ReadRequest.table] to be
+     * returned for each row matching this request.
      * </pre>
      *
-     * <code>repeated string columns = 5;</code>
+     * <code>repeated string columns = 5 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public com.google.protobuf.ByteString getColumnsBytes(int index) {
       return columns_.getByteString(index);
@@ -1589,11 +1603,11 @@ public final class ReadRequest extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The columns of [table][google.spanner.v1.ReadRequest.table] to be returned
-     * for each row matching this request.
+     * Required. The columns of [table][google.spanner.v1.ReadRequest.table] to be
+     * returned for each row matching this request.
      * </pre>
      *
-     * <code>repeated string columns = 5;</code>
+     * <code>repeated string columns = 5 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder setColumns(int index, java.lang.String value) {
       if (value == null) {
@@ -1608,11 +1622,11 @@ public final class ReadRequest extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The columns of [table][google.spanner.v1.ReadRequest.table] to be returned
-     * for each row matching this request.
+     * Required. The columns of [table][google.spanner.v1.ReadRequest.table] to be
+     * returned for each row matching this request.
      * </pre>
      *
-     * <code>repeated string columns = 5;</code>
+     * <code>repeated string columns = 5 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder addColumns(java.lang.String value) {
       if (value == null) {
@@ -1627,11 +1641,11 @@ public final class ReadRequest extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The columns of [table][google.spanner.v1.ReadRequest.table] to be returned
-     * for each row matching this request.
+     * Required. The columns of [table][google.spanner.v1.ReadRequest.table] to be
+     * returned for each row matching this request.
      * </pre>
      *
-     * <code>repeated string columns = 5;</code>
+     * <code>repeated string columns = 5 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder addAllColumns(java.lang.Iterable<java.lang.String> values) {
       ensureColumnsIsMutable();
@@ -1643,11 +1657,11 @@ public final class ReadRequest extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The columns of [table][google.spanner.v1.ReadRequest.table] to be returned
-     * for each row matching this request.
+     * Required. The columns of [table][google.spanner.v1.ReadRequest.table] to be
+     * returned for each row matching this request.
      * </pre>
      *
-     * <code>repeated string columns = 5;</code>
+     * <code>repeated string columns = 5 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder clearColumns() {
       columns_ = com.google.protobuf.LazyStringArrayList.EMPTY;
@@ -1659,11 +1673,11 @@ public final class ReadRequest extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The columns of [table][google.spanner.v1.ReadRequest.table] to be returned
-     * for each row matching this request.
+     * Required. The columns of [table][google.spanner.v1.ReadRequest.table] to be
+     * returned for each row matching this request.
      * </pre>
      *
-     * <code>repeated string columns = 5;</code>
+     * <code>repeated string columns = 5 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder addColumnsBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -1702,7 +1716,7 @@ public final class ReadRequest extends com.google.protobuf.GeneratedMessageV3
      * exist in the database. Read yields nothing for nonexistent rows.
      * </pre>
      *
-     * <code>.google.spanner.v1.KeySet key_set = 6;</code>
+     * <code>.google.spanner.v1.KeySet key_set = 6 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public boolean hasKeySet() {
       return keySetBuilder_ != null || keySet_ != null;
@@ -1727,7 +1741,7 @@ public final class ReadRequest extends com.google.protobuf.GeneratedMessageV3
      * exist in the database. Read yields nothing for nonexistent rows.
      * </pre>
      *
-     * <code>.google.spanner.v1.KeySet key_set = 6;</code>
+     * <code>.google.spanner.v1.KeySet key_set = 6 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public com.google.spanner.v1.KeySet getKeySet() {
       if (keySetBuilder_ == null) {
@@ -1756,7 +1770,7 @@ public final class ReadRequest extends com.google.protobuf.GeneratedMessageV3
      * exist in the database. Read yields nothing for nonexistent rows.
      * </pre>
      *
-     * <code>.google.spanner.v1.KeySet key_set = 6;</code>
+     * <code>.google.spanner.v1.KeySet key_set = 6 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder setKeySet(com.google.spanner.v1.KeySet value) {
       if (keySetBuilder_ == null) {
@@ -1791,7 +1805,7 @@ public final class ReadRequest extends com.google.protobuf.GeneratedMessageV3
      * exist in the database. Read yields nothing for nonexistent rows.
      * </pre>
      *
-     * <code>.google.spanner.v1.KeySet key_set = 6;</code>
+     * <code>.google.spanner.v1.KeySet key_set = 6 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder setKeySet(com.google.spanner.v1.KeySet.Builder builderForValue) {
       if (keySetBuilder_ == null) {
@@ -1823,7 +1837,7 @@ public final class ReadRequest extends com.google.protobuf.GeneratedMessageV3
      * exist in the database. Read yields nothing for nonexistent rows.
      * </pre>
      *
-     * <code>.google.spanner.v1.KeySet key_set = 6;</code>
+     * <code>.google.spanner.v1.KeySet key_set = 6 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder mergeKeySet(com.google.spanner.v1.KeySet value) {
       if (keySetBuilder_ == null) {
@@ -1860,7 +1874,7 @@ public final class ReadRequest extends com.google.protobuf.GeneratedMessageV3
      * exist in the database. Read yields nothing for nonexistent rows.
      * </pre>
      *
-     * <code>.google.spanner.v1.KeySet key_set = 6;</code>
+     * <code>.google.spanner.v1.KeySet key_set = 6 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder clearKeySet() {
       if (keySetBuilder_ == null) {
@@ -1893,7 +1907,7 @@ public final class ReadRequest extends com.google.protobuf.GeneratedMessageV3
      * exist in the database. Read yields nothing for nonexistent rows.
      * </pre>
      *
-     * <code>.google.spanner.v1.KeySet key_set = 6;</code>
+     * <code>.google.spanner.v1.KeySet key_set = 6 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public com.google.spanner.v1.KeySet.Builder getKeySetBuilder() {
 
@@ -1920,7 +1934,7 @@ public final class ReadRequest extends com.google.protobuf.GeneratedMessageV3
      * exist in the database. Read yields nothing for nonexistent rows.
      * </pre>
      *
-     * <code>.google.spanner.v1.KeySet key_set = 6;</code>
+     * <code>.google.spanner.v1.KeySet key_set = 6 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public com.google.spanner.v1.KeySetOrBuilder getKeySetOrBuilder() {
       if (keySetBuilder_ != null) {
@@ -1949,7 +1963,7 @@ public final class ReadRequest extends com.google.protobuf.GeneratedMessageV3
      * exist in the database. Read yields nothing for nonexistent rows.
      * </pre>
      *
-     * <code>.google.spanner.v1.KeySet key_set = 6;</code>
+     * <code>.google.spanner.v1.KeySet key_set = 6 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.spanner.v1.KeySet,
