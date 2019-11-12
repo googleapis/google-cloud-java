@@ -1,5 +1,18 @@
 # Changelog
 
+## [1.22.0](https://www.github.com/googleapis/java-speech/compare/v1.21.0...v1.22.0) (2019-11-12)
+
+
+### Features
+
+* add speaker_tag to WordInfo ([#40](https://www.github.com/googleapis/java-speech/issues/40)) ([3ccf3fe](https://www.github.com/googleapis/java-speech/commit/3ccf3fe57e5edef83f11efb13f4d44305b810f26))
+
+
+### Dependencies
+
+* update dependency io.grpc:grpc-bom to v1.25.0 ([#37](https://www.github.com/googleapis/java-speech/issues/37)) ([453858a](https://www.github.com/googleapis/java-speech/commit/453858a0caf6b2724150b627c1405a36b33ba568))
+* update gax.version to v1.50.1 ([#38](https://www.github.com/googleapis/java-speech/issues/38)) ([a9f3ef0](https://www.github.com/googleapis/java-speech/commit/a9f3ef003dee89a7c48e21ce99c239b15f860e4d))
+
 ## [1.21.0](https://www.github.com/googleapis/java-speech/compare/v1.20.0...v1.21.0) (2019-10-25)
 
 
