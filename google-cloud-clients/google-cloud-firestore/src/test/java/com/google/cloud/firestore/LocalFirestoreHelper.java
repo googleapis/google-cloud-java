@@ -92,10 +92,10 @@ public final class LocalFirestoreHelper {
   public static final Map<String, Object> UPDATED_FIELD_MAP;
   public static final Map<String, Value> UPDATED_FIELD_PROTO;
 
-  public static final PojoField UPDATE_POJOFIELD_OBJECT;
-  public static final Map<String, Value> UPDATE_POJOFIELD_PROTO;
-  public static final Pojo UPDATE_POJO_OBJECT;
-  public static final Map<String, Value> UPDATE_POJO_PROTO;
+  public static final CompositeField UPDATE_COMPOSITE_FIELD_OBJECT;
+  public static final Map<String, Value> UPDATE_COMPOSITE_FIELD_PROTO;
+  public static final PrimitiveField UPDATE_PRIMITIVE_FIELD_OBJECT;
+  public static final Map<String, Value> UPDATE_PRIMITIVE_FIELD_PROTO;
 
   public static final Map<String, Float> SINGLE_FLOAT_MAP;
   public static final Map<String, Value> SINGLE_FLOAT_PROTO;
@@ -126,14 +126,14 @@ public final class LocalFirestoreHelper {
 
   public static final Precondition UPDATE_PRECONDITION;
 
-  public static class PojoField {
+  public static class CompositeField {
 
-    public String primitiveField;
-    public Pojo complexField;
+    public String stringField;
+    public PrimitiveField primitiveField;
 
-    public PojoField(String primitiveField, Pojo complexField) {
+    public CompositeField(String stringField, PrimitiveField primitiveField) {
+      this.stringField = stringField;
       this.primitiveField = primitiveField;
-      this.complexField = complexField;
     }
 
     @Override
@@ -144,19 +144,19 @@ public final class LocalFirestoreHelper {
       if (o == null || getClass() != o.getClass()) {
         return false;
       }
-      PojoField that = (PojoField) o;
-      return primitiveField.equals(that.primitiveField) && complexField.equals(that.complexField);
+      CompositeField that = (CompositeField) o;
+      return stringField.equals(that.stringField) && primitiveField.equals(that.primitiveField);
     }
   }
 
-  public static class Pojo {
+  public static class PrimitiveField {
 
-    public String primitiveField1;
-    public Integer primitiveField2;
+    public String stringField;
+    public Integer integerField;
 
-    public Pojo(String primitiveField1, Integer primitiveField2) {
-      this.primitiveField1 = primitiveField1;
-      this.primitiveField2 = primitiveField2;
+    public PrimitiveField(String stringField, Integer integerField) {
+      this.stringField = stringField;
+      this.integerField = integerField;
     }
 
     @Override
@@ -167,9 +167,8 @@ public final class LocalFirestoreHelper {
       if (o == null || getClass() != o.getClass()) {
         return false;
       }
-      Pojo that = (Pojo) o;
-      return primitiveField1.equals(that.primitiveField1)
-          && primitiveField2.equals(that.primitiveField2);
+      PrimitiveField that = (PrimitiveField) o;
+      return stringField.equals(that.stringField) && integerField.equals(that.integerField);
     }
   }
 
@@ -767,19 +766,21 @@ public final class LocalFirestoreHelper {
     SINGLE_FIELD_MAP = map("foo", (Object) "bar");
     SINGLE_FIELD_OBJECT = new SingleField();
     SINGLE_FIELD_PROTO = map("foo", Value.newBuilder().setStringValue("bar").build());
-    UPDATE_POJO_OBJECT = new Pojo("pojo-update", 456);
-    UPDATE_POJO_PROTO =
+    UPDATE_PRIMITIVE_FIELD_OBJECT = new PrimitiveField("stringField", 456);
+    UPDATE_PRIMITIVE_FIELD_PROTO =
         ImmutableMap.<String, Value>builder()
-            .put("primitiveField1", Value.newBuilder().setStringValue("pojo-update").build())
-            .put("primitiveField2", Value.newBuilder().setIntegerValue(456L).build())
+            .put("stringField", Value.newBuilder().setStringValue("stringField").build())
+            .put("integerField", Value.newBuilder().setIntegerValue(456L).build())
             .build();
-    UPDATE_POJOFIELD_OBJECT = new PojoField("pojofield", UPDATE_POJO_OBJECT);
-    UPDATE_POJOFIELD_PROTO =
+    UPDATE_COMPOSITE_FIELD_OBJECT =
+        new CompositeField("stringField", UPDATE_PRIMITIVE_FIELD_OBJECT);
+    UPDATE_COMPOSITE_FIELD_PROTO =
         ImmutableMap.<String, Value>builder()
             .put(
-                "complexField",
+                "compositeField",
                 Value.newBuilder()
-                    .setMapValue(MapValue.newBuilder().putAllFields(UPDATE_POJO_PROTO).build())
+                    .setMapValue(
+                        MapValue.newBuilder().putAllFields(UPDATE_PRIMITIVE_FIELD_PROTO).build())
                     .build())
             .build();
 
