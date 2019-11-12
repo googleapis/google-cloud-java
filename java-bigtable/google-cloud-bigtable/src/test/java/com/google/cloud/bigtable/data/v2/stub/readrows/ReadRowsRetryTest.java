@@ -83,8 +83,10 @@ public class ReadRowsRetryTest {
   }
 
   @After
-  public void tearDown() throws Exception {
-    client.close();
+  public void tearDown() {
+    if (client != null) {
+      client.close();
+    }
   }
 
   @Test

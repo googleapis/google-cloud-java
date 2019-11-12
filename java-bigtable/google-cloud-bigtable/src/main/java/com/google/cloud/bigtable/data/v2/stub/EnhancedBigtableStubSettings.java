@@ -102,6 +102,25 @@ public class EnhancedBigtableStubSettings extends StubSettings<EnhancedBigtableS
           .setTotalTimeout(Duration.ofMinutes(10))
           .build();
 
+  // Allow retrying ABORTED statuses. These will be returned by the server when the client is
+  // too slow to read the rows. This makes sense for the java client because retries happen
+  // after the row merging logic. Which means that the retry will not be invoked until the
+  // current buffered chunks are consumed.
+  private static final Set<Code> READ_ROWS_RETRY_CODES =
+      ImmutableSet.<Code>builder().addAll(IDEMPOTENT_RETRY_CODES).add(Code.ABORTED).build();
+
+  private static final RetrySettings READ_ROWS_RETRY_SETTINGS =
+      RetrySettings.newBuilder()
+          .setInitialRetryDelay(Duration.ofMillis(10))
+          .setRetryDelayMultiplier(2.0)
+          .setMaxRetryDelay(Duration.ofMinutes(1))
+          .setJittered(true)
+          .setInitialRpcTimeout(Duration.ofMinutes(5))
+          .setRpcTimeoutMultiplier(2.0)
+          .setMaxRpcTimeout(Duration.ofMinutes(5))
+          .setTotalTimeout(Duration.ofHours(12))
+          .build();
+
   private static final RetrySettings MUTATE_ROWS_RETRY_SETTINGS =
       RetrySettings.newBuilder()
           .setInitialRetryDelay(Duration.ofMillis(10))
@@ -441,17 +460,9 @@ public class EnhancedBigtableStubSettings extends StubSettings<EnhancedBigtableS
       // Per-method settings using baseSettings for defaults.
       readRowsSettings = ServerStreamingCallSettings.newBuilder();
 
-      // Allow retrying ABORTED statuses. These will be returned by the server when the client is
-      // too slow to read the rows. This makes sense for the java client because retries happen
-      // after the row merging logic. Which means that the retry will not be invoked until the
-      // current buffered chunks are consumed.
       readRowsSettings
-          .setRetryableCodes(
-              ImmutableSet.<Code>builder()
-                  .addAll(baseDefaults.readRowsSettings().getRetryableCodes())
-                  .add(Code.ABORTED)
-                  .build())
-          .setRetrySettings(baseDefaults.readRowsSettings().getRetrySettings())
+          .setRetryableCodes(READ_ROWS_RETRY_CODES)
+          .setRetrySettings(READ_ROWS_RETRY_SETTINGS)
           .setIdleTimeout(Duration.ofMinutes(5));
 
       // Point reads should use same defaults as streaming reads, but with a shorter timeout
@@ -468,8 +479,8 @@ public class EnhancedBigtableStubSettings extends StubSettings<EnhancedBigtableS
 
       sampleRowKeysSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       sampleRowKeysSettings
-          .setRetryableCodes(baseDefaults.sampleRowKeysSettings().getRetryableCodes())
-          .setRetrySettings(baseDefaults.sampleRowKeysSettings().getRetrySettings());
+          .setRetryableCodes(IDEMPOTENT_RETRY_CODES)
+          .setRetrySettings(IDEMPOTENT_RETRY_SETTINGS);
 
       mutateRowSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       copyRetrySettings(baseDefaults.mutateRowSettings(), mutateRowSettings);
