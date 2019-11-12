@@ -456,7 +456,7 @@ public class InstanceAdminClientTest {
     Policy expectedResponse = Policy.newBuilder().setVersion(version).setEtag(etag).build();
     mockInstanceAdmin.addResponse(expectedResponse);
 
-    ResourceName resource = com.google.iam.v1.InstanceName.of("[PROJECT]", "[INSTANCE]");
+    ResourceName resource = InstanceName.of("[PROJECT]", "[INSTANCE]");
     Policy policy = Policy.newBuilder().build();
 
     Policy actualResponse = client.setIamPolicy(resource, policy);
@@ -481,7 +481,7 @@ public class InstanceAdminClientTest {
     mockInstanceAdmin.addException(exception);
 
     try {
-      ResourceName resource = com.google.iam.v1.InstanceName.of("[PROJECT]", "[INSTANCE]");
+      ResourceName resource = InstanceName.of("[PROJECT]", "[INSTANCE]");
       Policy policy = Policy.newBuilder().build();
 
       client.setIamPolicy(resource, policy);
@@ -499,7 +499,7 @@ public class InstanceAdminClientTest {
     Policy expectedResponse = Policy.newBuilder().setVersion(version).setEtag(etag).build();
     mockInstanceAdmin.addResponse(expectedResponse);
 
-    ResourceName resource = com.google.iam.v1.InstanceName.of("[PROJECT]", "[INSTANCE]");
+    ResourceName resource = InstanceName.of("[PROJECT]", "[INSTANCE]");
 
     Policy actualResponse = client.getIamPolicy(resource);
     Assert.assertEquals(expectedResponse, actualResponse);
@@ -522,7 +522,7 @@ public class InstanceAdminClientTest {
     mockInstanceAdmin.addException(exception);
 
     try {
-      ResourceName resource = com.google.iam.v1.InstanceName.of("[PROJECT]", "[INSTANCE]");
+      ResourceName resource = InstanceName.of("[PROJECT]", "[INSTANCE]");
 
       client.getIamPolicy(resource);
       Assert.fail("No exception raised");
@@ -537,7 +537,7 @@ public class InstanceAdminClientTest {
     TestIamPermissionsResponse expectedResponse = TestIamPermissionsResponse.newBuilder().build();
     mockInstanceAdmin.addResponse(expectedResponse);
 
-    ResourceName resource = com.google.iam.v1.InstanceName.of("[PROJECT]", "[INSTANCE]");
+    ResourceName resource = InstanceName.of("[PROJECT]", "[INSTANCE]");
     List<String> permissions = new ArrayList<>();
 
     TestIamPermissionsResponse actualResponse = client.testIamPermissions(resource, permissions);
@@ -562,7 +562,7 @@ public class InstanceAdminClientTest {
     mockInstanceAdmin.addException(exception);
 
     try {
-      ResourceName resource = com.google.iam.v1.InstanceName.of("[PROJECT]", "[INSTANCE]");
+      ResourceName resource = InstanceName.of("[PROJECT]", "[INSTANCE]");
       List<String> permissions = new ArrayList<>();
 
       client.testIamPermissions(resource, permissions);
