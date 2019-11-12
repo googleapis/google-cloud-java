@@ -153,9 +153,7 @@ public class OsLoginServiceClientTest {
   @SuppressWarnings("all")
   public void getLoginProfileTest() {
     String name2 = "name2-1052831874";
-    boolean suspended = false;
-    LoginProfile expectedResponse =
-        LoginProfile.newBuilder().setName(name2).setSuspended(suspended).build();
+    LoginProfile expectedResponse = LoginProfile.newBuilder().setName(name2).build();
     mockOsLoginService.addResponse(expectedResponse);
 
     UserName name = UserName.of("[USER]");
@@ -196,13 +194,14 @@ public class OsLoginServiceClientTest {
     String key = "key106079";
     long expirationTimeUsec = 2058878882L;
     String fingerprint = "fingerprint-1375934236";
-    String name2 = "name2-1052831874";
+    com.google.cloud.oslogin.common.FingerprintName name2 =
+        com.google.cloud.oslogin.common.FingerprintName.of("[USER]", "[FINGERPRINT]");
     SshPublicKey expectedResponse =
         SshPublicKey.newBuilder()
             .setKey(key)
             .setExpirationTimeUsec(expirationTimeUsec)
             .setFingerprint(fingerprint)
-            .setName(name2)
+            .setName(name2.toString())
             .build();
     mockOsLoginService.addResponse(expectedResponse);
 
@@ -330,13 +329,14 @@ public class OsLoginServiceClientTest {
     String key = "key106079";
     long expirationTimeUsec = 2058878882L;
     String fingerprint = "fingerprint-1375934236";
-    String name2 = "name2-1052831874";
+    com.google.cloud.oslogin.common.FingerprintName name2 =
+        com.google.cloud.oslogin.common.FingerprintName.of("[USER]", "[FINGERPRINT]");
     SshPublicKey expectedResponse =
         SshPublicKey.newBuilder()
             .setKey(key)
             .setExpirationTimeUsec(expirationTimeUsec)
             .setFingerprint(fingerprint)
-            .setName(name2)
+            .setName(name2.toString())
             .build();
     mockOsLoginService.addResponse(expectedResponse);
 
@@ -381,13 +381,14 @@ public class OsLoginServiceClientTest {
     String key = "key106079";
     long expirationTimeUsec = 2058878882L;
     String fingerprint = "fingerprint-1375934236";
-    String name2 = "name2-1052831874";
+    com.google.cloud.oslogin.common.FingerprintName name2 =
+        com.google.cloud.oslogin.common.FingerprintName.of("[USER]", "[FINGERPRINT]");
     SshPublicKey expectedResponse =
         SshPublicKey.newBuilder()
             .setKey(key)
             .setExpirationTimeUsec(expirationTimeUsec)
             .setFingerprint(fingerprint)
-            .setName(name2)
+            .setName(name2.toString())
             .build();
     mockOsLoginService.addResponse(expectedResponse);
 

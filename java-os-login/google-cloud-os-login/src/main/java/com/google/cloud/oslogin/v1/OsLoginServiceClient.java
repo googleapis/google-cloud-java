@@ -451,8 +451,8 @@ public class OsLoginServiceClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param name The fingerprint of the public key to retrieve. Public keys are identified by their
-   *     SHA-256 fingerprint. The fingerprint of the public key is in format
+   * @param name Required. The fingerprint of the public key to retrieve. Public keys are identified
+   *     by their SHA-256 fingerprint. The fingerprint of the public key is in format
    *     `users/{user}/sshPublicKeys/{fingerprint}`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -476,8 +476,8 @@ public class OsLoginServiceClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param name The fingerprint of the public key to retrieve. Public keys are identified by their
-   *     SHA-256 fingerprint. The fingerprint of the public key is in format
+   * @param name Required. The fingerprint of the public key to retrieve. Public keys are identified
+   *     by their SHA-256 fingerprint. The fingerprint of the public key is in format
    *     `users/{user}/sshPublicKeys/{fingerprint}`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -668,10 +668,8 @@ public class OsLoginServiceClient implements BackgroundResource {
    * <pre><code>
    * try (OsLoginServiceClient osLoginServiceClient = OsLoginServiceClient.create()) {
    *   UserName parent = UserName.of("[USER]");
-   *   SshPublicKey sshPublicKey = SshPublicKey.newBuilder().build();
    *   ImportSshPublicKeyRequest request = ImportSshPublicKeyRequest.newBuilder()
    *     .setParent(parent.toString())
-   *     .setSshPublicKey(sshPublicKey)
    *     .build();
    *   ImportSshPublicKeyResponse response = osLoginServiceClient.importSshPublicKey(request);
    * }
@@ -694,10 +692,8 @@ public class OsLoginServiceClient implements BackgroundResource {
    * <pre><code>
    * try (OsLoginServiceClient osLoginServiceClient = OsLoginServiceClient.create()) {
    *   UserName parent = UserName.of("[USER]");
-   *   SshPublicKey sshPublicKey = SshPublicKey.newBuilder().build();
    *   ImportSshPublicKeyRequest request = ImportSshPublicKeyRequest.newBuilder()
    *     .setParent(parent.toString())
-   *     .setSshPublicKey(sshPublicKey)
    *     .build();
    *   ApiFuture&lt;ImportSshPublicKeyResponse&gt; future = osLoginServiceClient.importSshPublicKeyCallable().futureCall(request);
    *   // Do something
