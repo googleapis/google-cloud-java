@@ -23,6 +23,13 @@ import static org.junit.Assert.assertTrue;
 
 import com.google.cloud.Identity;
 import com.google.cloud.Policy;
+import com.google.cloud.examples.storage.buckets.AddBucketLabel;
+import com.google.cloud.examples.storage.buckets.ChangeDefaultStorageClass;
+import com.google.cloud.examples.storage.buckets.CreateBucketWithStorageClassAndLocation;
+import com.google.cloud.examples.storage.buckets.DeleteBucket;
+import com.google.cloud.examples.storage.buckets.GetBucketMetadata;
+import com.google.cloud.examples.storage.buckets.ListBuckets;
+import com.google.cloud.examples.storage.buckets.RemoveBucketLabel;
 import com.google.cloud.storage.Acl;
 import com.google.cloud.storage.Acl.Role;
 import com.google.cloud.storage.Blob;
@@ -32,13 +39,20 @@ import com.google.cloud.storage.Storage;
 import com.google.cloud.storage.StorageException;
 import com.google.cloud.storage.StorageRoles;
 import com.google.cloud.storage.testing.RemoteStorageHelper;
+import com.google.common.collect.ImmutableList;
+import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.Sets;
+
+import java.io.ByteArrayOutputStream;
+import java.io.PrintStream;
 import java.util.List;
 import java.util.Set;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.TimeUnit;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+
+import org.apache.commons.lang3.builder.ToStringExclude;
 import org.junit.AfterClass;
 import org.junit.BeforeClass;
 import org.junit.Rule;
@@ -55,6 +69,7 @@ public class ITBucketSnippets {
   private static final String BLOB2 = "blob2";
   private static final String BLOB3 = "blob3";
   private static final String BLOB4 = "blob4";
+  private static final String projectId = System.getProperty("GOOGLE_CLOUD_PROJECT");
 
   private static Storage storage;
   private static BucketSnippets bucketSnippets;
@@ -133,7 +148,114 @@ public class ITBucketSnippets {
     assertTrue(bucketSnippets.deleteDefaultAcl());
     assertNull(bucketSnippets.getDefaultAcl());
     thrown.expect(StorageException.class);
-    assertTrue(bucketSnippets.delete());
+    // assertTrue(bucketSnippets.delete());
+  }
+
+  @Test
+  public void testAddBucketLabel() {
+    AddBucketLabel.addBucketLabel(projectId, BUCKET, "key", "value");
+    Bucket remoteBucket = storage.get(BUCKET);
+    assertEquals(1, remoteBucket.getLabels().size());
+  }
+
+  @Test
+  public void testChangeDefaultStorageClass() {
+    Bucket remoteBucket = storage.get(BUCKET);
+    assertEquals("STANDARD", remoteBucket.getStorageClass().name());
+    ChangeDefaultStorageClass.changeDefaultStorageClass(projectId, BUCKET);
+    remoteBucket = storage.get(BUCKET);
+    assertEquals("COLDLINE", remoteBucket.getStorageClass().name());
+  }
+
+  @Test
+  public void testCreateBucketWithStorageClassAndLocation() {
+    String newBucket = RemoteStorageHelper.generateBucketName();
+    CreateBucketWithStorageClassAndLocation.createBucketWithStorageClassAndLocation(
+        projectId, newBucket);
+    try {
+      Bucket remoteBucket = storage.get(newBucket);
+      assertNotNull(remoteBucket);
+      assertEquals("COLDLINE", remoteBucket.getStorageClass().name());
+      assertEquals("ASIA", remoteBucket.getLocation());
+    } finally {
+      storage.delete(newBucket);
+    }
+  }
+
+  @Test
+  public void testDeleteBucket() {
+    String newBucket = RemoteStorageHelper.generateBucketName();
+    storage.create(BucketInfo.newBuilder(newBucket).build());
+    assertNotNull(storage.get(newBucket));
+    DeleteBucket.deleteBucket(projectId, newBucket);
+    assertNull(storage.get(newBucket));
+  }
+
+  @Test
+  public void testGetBucketMetadata() {
+    Bucket bucket =
+        storage.get(BUCKET, Storage.BucketGetOption.fields(Storage.BucketField.values()));
+    bucket =
+        bucket
+            .toBuilder()
+            .setLabels(ImmutableMap.of("k", "v"))
+            .setLifecycleRules(
+                ImmutableList.of(
+                    new BucketInfo.LifecycleRule(
+                        BucketInfo.LifecycleRule.LifecycleAction.newDeleteAction(),
+                        BucketInfo.LifecycleRule.LifecycleCondition.newBuilder()
+                            .setAge(5)
+                            .build())))
+            .build()
+            .update();
+
+    final ByteArrayOutputStream snippetOutputCapture = new ByteArrayOutputStream();
+    // System.setOut(new PrintStream(snippetOutputCapture));
+    GetBucketMetadata.getBucketMetadata(projectId, BUCKET);
+    String snippetOutput = snippetOutputCapture.toString();
+    System.setOut(System.out);
+    System.out.println(snippetOutput);
+    assertTrue(snippetOutput.contains(("BucketName: " + bucket.getName())));
+    assertTrue(
+        snippetOutput.contains(("DefaultEventBasedHold: " + bucket.getDefaultEventBasedHold())));
+    assertTrue(snippetOutput.contains(("DefaultKmsKeyName: " + bucket.getDefaultKmsKeyName())));
+    assertTrue(snippetOutput.contains(("Id: " + bucket.getGeneratedId())));
+    assertTrue(snippetOutput.contains(("IndexPage: " + bucket.getIndexPage())));
+    assertTrue(snippetOutput.contains(("Location: " + bucket.getLocation())));
+    assertTrue(snippetOutput.contains(("LocationType: " + bucket.getLocationType())));
+    assertTrue(snippetOutput.contains(("Metageneration: " + bucket.getMetageneration())));
+    assertTrue(snippetOutput.contains(("NotFoundPage: " + bucket.getNotFoundPage())));
+    assertTrue(
+        snippetOutput.contains(("RetentionEffectiveTime: " + bucket.getRetentionEffectiveTime())));
+    assertTrue(snippetOutput.contains(("RetentionPeriod: " + bucket.getRetentionPeriod())));
+    assertTrue(
+        snippetOutput.contains(("RetentionPolicyIsLocked: " + bucket.retentionPolicyIsLocked())));
+    assertTrue(snippetOutput.contains(("RequesterPays: " + bucket.requesterPays())));
+    assertTrue(snippetOutput.contains(("SelfLink: " + bucket.getSelfLink())));
+    assertTrue(snippetOutput.contains(("StorageClass: " + bucket.getStorageClass().name())));
+    assertTrue(snippetOutput.contains(("TimeCreated: " + bucket.getCreateTime())));
+    assertTrue(snippetOutput.contains(("VersioningEnabled: " + bucket.versioningEnabled())));
+    assertTrue(snippetOutput.contains("Labels:"));
+    assertTrue(snippetOutput.contains("k=v"));
+    System.out.println(snippetOutput);
+  }
+
+  @Test
+  public void testListBuckets() {
+    final ByteArrayOutputStream snippetOutputCapture = new ByteArrayOutputStream();
+    System.setOut(new PrintStream(snippetOutputCapture));
+    ListBuckets.listBuckets(projectId);
+    String snippetOutput = snippetOutputCapture.toString();
+    System.setOut(System.out);
+    assertTrue(snippetOutput.contains(BUCKET));
+  }
+
+  @Test
+  public void testRemoveBucketLabel() {
+    storage.get(BUCKET).toBuilder().setLabels(ImmutableMap.of("k","v")).build().update();
+    assertEquals(1, storage.get(BUCKET).getLabels().size());
+    RemoveBucketLabel.removeBucketLabel(projectId, BUCKET, "k");
+    assertNull(storage.get(BUCKET).getLabels());
   }
 
   @Test

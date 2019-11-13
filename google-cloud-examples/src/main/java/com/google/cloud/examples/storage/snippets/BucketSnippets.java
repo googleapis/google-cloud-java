@@ -84,23 +84,6 @@ public class BucketSnippets {
     return updatedBucket;
   }
 
-  /**
-   * Example of deleting the bucket, if its metageneration matches the {@link
-   * Bucket#getMetageneration()} value, otherwise a {@link StorageException} is thrown.
-   */
-  // [TARGET delete(BucketSourceOption...)]
-  public boolean delete() {
-    // [START delete]
-    boolean deleted = bucket.delete(BucketSourceOption.metagenerationMatch());
-    if (deleted) {
-      // the bucket was deleted
-    } else {
-      // the bucket was not found
-    }
-    // [END delete]
-    return deleted;
-  }
-
   /** Example of listing the blobs in the bucket. */
   // [TARGET list(BlobListOption...)]
   public Page<Blob> listBlobs() {

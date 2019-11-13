@@ -95,23 +95,6 @@ public class StorageSnippets {
     return bucket;
   }
 
-  /** Example of creating a bucket with storage class and location. */
-  // [TARGET create(BucketInfo, BucketTargetOption...)]
-  // [VARIABLE "my_unique_bucket"]
-  public Bucket createBucketWithStorageClassAndLocation(String bucketName) {
-    // [START createBucketWithStorageClassAndLocation]
-    Bucket bucket =
-        storage.create(
-            BucketInfo.newBuilder(bucketName)
-                // See here for possible values: http://g.co/cloud/storage/docs/storage-classes
-                .setStorageClass(StorageClass.COLDLINE)
-                // Possible values: http://g.co/cloud/storage/docs/bucket-locations#location-mr
-                .setLocation("asia")
-                .build());
-    // [END createBucketWithStorageClassAndLocation]
-    return bucket;
-  }
-
   /** Example of creating a blob with no content. */
   // [TARGET create(BlobInfo, BlobTargetOption...)]
   // [VARIABLE "my_unique_bucket"]
@@ -261,22 +244,6 @@ public class StorageSnippets {
     Blob blob = storage.get(blobId, BlobGetOption.metagenerationMatch(blobMetageneration));
     // [END getBlobFromIdWithMetageneration]
     return blob;
-  }
-
-  /** Example of listing buckets, specifying the page size and a name prefix. */
-  // [TARGET list(BucketListOption...)]
-  // [VARIABLE "bucket_"]
-  public Page<Bucket> listBucketsWithSizeAndPrefix(String prefix) {
-    // [START listBucketsWithSizeAndPrefix]
-    // Include a prefix of bucket-name to reduce search space.
-    // For more information read https://cloud.google.com/storage/docs/json_api/v1/buckets/list
-    Page<Bucket> buckets =
-        storage.list(BucketListOption.pageSize(100), BucketListOption.prefix(prefix));
-    for (Bucket bucket : buckets.iterateAll()) {
-      // do something with the bucket
-    }
-    // [END listBucketsWithSizeAndPrefix]
-    return buckets;
   }
 
   /** Example of listing blobs in a provided directory. */
@@ -1131,44 +1098,6 @@ public class StorageSnippets {
     return bucket;
   }
 
-  /** Example of displaying Bucket metadata */
-  public void getBucketMetadata(String bucketName) throws StorageException {
-    // [START storage_get_bucket_metadata]
-    Storage storage = StorageOptions.getDefaultInstance().getService();
-
-    // The name of a bucket, e.g. "my-bucket"
-    // String bucketName = "my-bucket";
-
-    // Select all fields
-    // Fields can be selected individually e.g. Storage.BucketField.NAME
-    Bucket bucket = storage.get(bucketName, BucketGetOption.fields(Storage.BucketField.values()));
-
-    // Print bucket metadata
-    System.out.println("BucketName: " + bucket.getName());
-    System.out.println("DefaultEventBasedHold: " + bucket.getDefaultEventBasedHold());
-    System.out.println("DefaultKmsKeyName: " + bucket.getDefaultKmsKeyName());
-    System.out.println("Id: " + bucket.getGeneratedId());
-    System.out.println("IndexPage: " + bucket.getIndexPage());
-    System.out.println("Location: " + bucket.getLocation());
-    System.out.println("LocationType: " + bucket.getLocationType());
-    System.out.println("Metageneration: " + bucket.getMetageneration());
-    System.out.println("NotFoundPage: " + bucket.getNotFoundPage());
-    System.out.println("RetentionEffectiveTime: " + bucket.getRetentionEffectiveTime());
-    System.out.println("RetentionPeriod: " + bucket.getRetentionPeriod());
-    System.out.println("RetentionPolicyIsLocked: " + bucket.retentionPolicyIsLocked());
-    System.out.println("RequesterPays: " + bucket.requesterPays());
-    System.out.println("SelfLink: " + bucket.getSelfLink());
-    System.out.println("StorageClass: " + bucket.getStorageClass().name());
-    System.out.println("TimeCreated: " + bucket.getCreateTime());
-    System.out.println("VersioningEnabled: " + bucket.versioningEnabled());
-    if (bucket.getLabels() != null) {
-      System.out.println("\n\n\nLabels:");
-      for (Map.Entry<String, String> label : bucket.getLabels().entrySet()) {
-        System.out.println(label.getKey() + "=" + label.getValue());
-      }
-    }
-    // [END storage_get_bucket_metadata]
-  }
   /** Example of displaying Blob metadata */
   public void getBlobMetadata(String bucketName, String blobName) throws StorageException {
     // [START storage_get_metadata]
