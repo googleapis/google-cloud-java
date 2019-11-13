@@ -1,5 +1,12 @@
 # Changelog
 
+### [1.98.1](https://www.github.com/googleapis/java-vision/compare/v1.98.0...v1.98.1) (2019-11-12)
+
+
+### Dependencies
+
+* update gax.version to v1.50.1 ([#9](https://www.github.com/googleapis/java-vision/issues/9)) ([96884d4](https://www.github.com/googleapis/java-vision/commit/96884d419aa5be9b497e8e2f649b47a8bbc26df3))
+
 ## [1.98.0](https://www.github.com/googleapis/java-vision/compare/1.97.0...v1.98.0) (2019-10-28)
 
 
