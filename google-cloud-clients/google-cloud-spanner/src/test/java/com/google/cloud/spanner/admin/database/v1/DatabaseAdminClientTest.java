@@ -322,7 +322,7 @@ public class DatabaseAdminClientTest {
     mockDatabaseAdmin.addResponse(expectedResponse);
 
     ResourceName resource =
-        com.google.iam.v1.DatabaseName.of("[PROJECT]", "[INSTANCE]", "[DATABASE]");
+        DatabaseName.of("[PROJECT]", "[INSTANCE]", "[DATABASE]");
     Policy policy = Policy.newBuilder().build();
 
     Policy actualResponse = client.setIamPolicy(resource, policy);
@@ -348,7 +348,7 @@ public class DatabaseAdminClientTest {
 
     try {
       ResourceName resource =
-          com.google.iam.v1.DatabaseName.of("[PROJECT]", "[INSTANCE]", "[DATABASE]");
+          DatabaseName.of("[PROJECT]", "[INSTANCE]", "[DATABASE]");
       Policy policy = Policy.newBuilder().build();
 
       client.setIamPolicy(resource, policy);
@@ -367,7 +367,7 @@ public class DatabaseAdminClientTest {
     mockDatabaseAdmin.addResponse(expectedResponse);
 
     ResourceName resource =
-        com.google.iam.v1.DatabaseName.of("[PROJECT]", "[INSTANCE]", "[DATABASE]");
+        DatabaseName.of("[PROJECT]", "[INSTANCE]", "[DATABASE]");
 
     Policy actualResponse = client.getIamPolicy(resource);
     Assert.assertEquals(expectedResponse, actualResponse);
@@ -391,7 +391,7 @@ public class DatabaseAdminClientTest {
 
     try {
       ResourceName resource =
-          com.google.iam.v1.DatabaseName.of("[PROJECT]", "[INSTANCE]", "[DATABASE]");
+          DatabaseName.of("[PROJECT]", "[INSTANCE]", "[DATABASE]");
 
       client.getIamPolicy(resource);
       Assert.fail("No exception raised");
@@ -407,7 +407,7 @@ public class DatabaseAdminClientTest {
     mockDatabaseAdmin.addResponse(expectedResponse);
 
     ResourceName resource =
-        com.google.iam.v1.DatabaseName.of("[PROJECT]", "[INSTANCE]", "[DATABASE]");
+        DatabaseName.of("[PROJECT]", "[INSTANCE]", "[DATABASE]");
     List<String> permissions = new ArrayList<>();
 
     TestIamPermissionsResponse actualResponse = client.testIamPermissions(resource, permissions);
@@ -433,7 +433,7 @@ public class DatabaseAdminClientTest {
 
     try {
       ResourceName resource =
-          com.google.iam.v1.DatabaseName.of("[PROJECT]", "[INSTANCE]", "[DATABASE]");
+          DatabaseName.of("[PROJECT]", "[INSTANCE]", "[DATABASE]");
       List<String> permissions = new ArrayList<>();
 
       client.testIamPermissions(resource, permissions);
