@@ -48,7 +48,7 @@ public final class TextSegmentProto {
           + "v1B\020TextSegmentProtoP\001Z<google.golang.or"
           + "g/genproto/googleapis/cloud/automl/v1;au"
           + "toml\252\002\026Google.Cloud.AutoML.V1\312\002\026Google\\C"
-          + "loud\\AutoML\\V1\352\002\031Google::Cloud::AutoML::"
+          + "loud\\AutoMl\\V1\352\002\031Google::Cloud::AutoML::"
           + "V1b\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =

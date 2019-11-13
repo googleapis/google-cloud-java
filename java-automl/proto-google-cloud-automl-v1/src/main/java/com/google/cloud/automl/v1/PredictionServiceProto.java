@@ -113,7 +113,7 @@ public final class PredictionServiceProto {
           + "ml.v1B\026PredictionServiceProtoP\001Z<google."
           + "golang.org/genproto/googleapis/cloud/aut"
           + "oml/v1;automl\252\002\026Google.Cloud.AutoML.V1\312\002"
-          + "\026Google\\Cloud\\AutoML\\V1\352\002\031Google::Cloud:"
+          + "\026Google\\Cloud\\AutoMl\\V1\352\002\031Google::Cloud:"
           + ":AutoML::V1b\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =

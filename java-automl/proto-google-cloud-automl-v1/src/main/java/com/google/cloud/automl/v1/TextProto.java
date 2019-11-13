@@ -76,7 +76,7 @@ public final class TextProto {
           + "ud.automl.v1B\tTextProtoP\001Z<google.golang"
           + ".org/genproto/googleapis/cloud/automl/v1"
           + ";automl\252\002\026Google.Cloud.AutoML.V1\312\002\026Googl"
-          + "e\\Cloud\\AutoML\\V1\352\002\031Google::Cloud::AutoM"
+          + "e\\Cloud\\AutoMl\\V1\352\002\031Google::Cloud::AutoM"
           + "L::V1b\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =

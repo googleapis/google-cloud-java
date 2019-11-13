@@ -103,7 +103,7 @@ public final class DataItems {
           + "m.google.cloud.automl.v1P\001Z<google.golan"
           + "g.org/genproto/googleapis/cloud/automl/v"
           + "1;automl\252\002\026Google.Cloud.AutoML.V1\312\002\026Goog"
-          + "le\\Cloud\\AutoML\\V1\352\002\031Google::Cloud::Auto"
+          + "le\\Cloud\\AutoMl\\V1\352\002\031Google::Cloud::Auto"
           + "ML::V1b\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =

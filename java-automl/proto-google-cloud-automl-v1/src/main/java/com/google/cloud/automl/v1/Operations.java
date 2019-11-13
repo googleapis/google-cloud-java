@@ -147,7 +147,7 @@ public final class Operations {
           + "rectory\030\001 \001(\tB\252\001\n\032com.google.cloud.autom"
           + "l.v1P\001Z<google.golang.org/genproto/googl"
           + "eapis/cloud/automl/v1;automl\252\002\026Google.Cl"
-          + "oud.AutoML.V1\312\002\026Google\\Cloud\\AutoML\\V1\352\002"
+          + "oud.AutoML.V1\312\002\026Google\\Cloud\\AutoMl\\V1\352\002"
           + "\031Google::Cloud::AutoML::V1b\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =

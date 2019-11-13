@@ -82,7 +82,7 @@ public final class ModelOuterClass {
           + "del_metadataB\252\001\n\032com.google.cloud.automl"
           + ".v1P\001Z<google.golang.org/genproto/google"
           + "apis/cloud/automl/v1;automl\252\002\026Google.Clo"
-          + "ud.AutoML.V1\312\002\026Google\\Cloud\\AutoML\\V1\352\002\031"
+          + "ud.AutoML.V1\312\002\026Google\\Cloud\\AutoMl\\V1\352\002\031"
           + "Google::Cloud::AutoML::V1b\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =

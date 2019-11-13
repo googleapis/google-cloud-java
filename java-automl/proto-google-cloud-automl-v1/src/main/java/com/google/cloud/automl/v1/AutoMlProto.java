@@ -257,7 +257,7 @@ public final class AutoMlProto {
           + "ormB\267\001\n\032com.google.cloud.automl.v1B\013Auto"
           + "MlProtoP\001Z<google.golang.org/genproto/go"
           + "ogleapis/cloud/automl/v1;automl\252\002\026Google"
-          + ".Cloud.AutoML.V1\312\002\026Google\\Cloud\\AutoML\\V"
+          + ".Cloud.AutoML.V1\312\002\026Google\\Cloud\\AutoMl\\V"
           + "1\352\002\031Google::Cloud::AutoML::V1b\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =

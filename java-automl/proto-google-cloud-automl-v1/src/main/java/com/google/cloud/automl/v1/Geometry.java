@@ -53,7 +53,7 @@ public final class Geometry {
           + "oud.automl.v1P\001Z<google.golang.org/genpr"
           + "oto/googleapis/cloud/automl/v1;automl\252\002\026"
           + "Google.Cloud.AutoML.V1\312\002\026Google\\Cloud\\Au"
-          + "toML\\V1\352\002\031Google::Cloud::AutoML::V1b\006pro"
+          + "toMl\\V1\352\002\031Google::Cloud::AutoML::V1b\006pro"
           + "to3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =

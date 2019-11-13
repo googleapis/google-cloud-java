@@ -47,7 +47,7 @@ public final class AnnotationSpecOuterClass {
           + "ample_count\030\t \001(\005B\252\001\n\032com.google.cloud.a"
           + "utoml.v1P\001Z<google.golang.org/genproto/g"
           + "oogleapis/cloud/automl/v1;automl\252\002\026Googl"
-          + "e.Cloud.AutoML.V1\312\002\026Google\\Cloud\\AutoML\\"
+          + "e.Cloud.AutoML.V1\312\002\026Google\\Cloud\\AutoMl\\"
           + "V1\352\002\031Google::Cloud::AutoML::V1b\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =

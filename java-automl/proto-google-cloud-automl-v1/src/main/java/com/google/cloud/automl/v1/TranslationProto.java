@@ -69,7 +69,7 @@ public final class TranslationProto {
           + ".cloud.automl.v1B\020TranslationProtoP\001Z<go"
           + "ogle.golang.org/genproto/googleapis/clou"
           + "d/automl/v1;automl\252\002\026Google.Cloud.AutoML"
-          + ".V1\312\002\026Google\\Cloud\\AutoML\\V1\352\002\031Google::C"
+          + ".V1\312\002\026Google\\Cloud\\AutoMl\\V1\352\002\031Google::C"
           + "loud::AutoML::V1b\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =

@@ -87,7 +87,7 @@ public final class ImageProto {
           + ".v1B\nImageProtoP\001Z<google.golang.org/gen"
           + "proto/googleapis/cloud/automl/v1;automl\252"
           + "\002\026Google.Cloud.AutoML.V1\312\002\026Google\\Cloud\\"
-          + "AutoML\\V1\352\002\031Google::Cloud::AutoML::V1b\006p"
+          + "AutoMl\\V1\352\002\031Google::Cloud::AutoML::V1b\006p"
           + "roto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =

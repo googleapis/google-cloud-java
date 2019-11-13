@@ -106,7 +106,7 @@ public final class Io {
           + ".automl.v1P\001Z<google.golang.org/genproto"
           + "/googleapis/cloud/automl/v1;automl\252\002\026Goo"
           + "gle.Cloud.AutoML.V1\312\002\026Google\\Cloud\\AutoM"
-          + "L\\V1\352\002\031Google::Cloud::AutoML::V1b\006proto3"
+          + "l\\V1\352\002\031Google::Cloud::AutoML::V1b\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner() {

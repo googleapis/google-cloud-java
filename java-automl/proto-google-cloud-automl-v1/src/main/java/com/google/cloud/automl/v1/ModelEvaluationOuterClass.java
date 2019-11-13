@@ -70,7 +70,7 @@ public final class ModelEvaluationOuterClass {
           + "om.google.cloud.automl.v1P\001Z<google.gola"
           + "ng.org/genproto/googleapis/cloud/automl/"
           + "v1;automl\252\002\026Google.Cloud.AutoML.V1\312\002\026Goo"
-          + "gle\\Cloud\\AutoML\\V1\352\002\031Google::Cloud::Aut"
+          + "gle\\Cloud\\AutoMl\\V1\352\002\031Google::Cloud::Aut"
           + "oML::V1b\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =

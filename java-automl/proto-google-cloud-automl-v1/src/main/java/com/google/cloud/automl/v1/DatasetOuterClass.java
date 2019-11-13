@@ -76,7 +76,7 @@ public final class DatasetOuterClass {
           + "dataB\252\001\n\032com.google.cloud.automl.v1P\001Z<g"
           + "oogle.golang.org/genproto/googleapis/clo"
           + "ud/automl/v1;automl\252\002\026Google.Cloud.AutoM"
-          + "L.V1\312\002\026Google\\Cloud\\AutoML\\V1\352\002\031Google::"
+          + "L.V1\312\002\026Google\\Cloud\\AutoMl\\V1\352\002\031Google::"
           + "Cloud::AutoML::V1b\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
