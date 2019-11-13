@@ -267,4 +267,73 @@ public interface InstanceOrBuilder
    * <code>map&lt;string, string&gt; labels = 7;</code>
    */
   java.lang.String getLabelsOrThrow(java.lang.String key);
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The endpoint URLs based on the instance config.
+   * For example, instances located in a specific cloud region (or multi region)
+   * such as nam3, would have a nam3 specific endpoint URL.
+   * This URL is to be used implictly by SDK clients, with fallback to default
+   * URL. These endpoints are intended to optimize the network routing between
+   * the client and the instance's serving resources.
+   * If multiple endpoints are present,
+   * client may establish connections using any of the given URLs.
+   * </pre>
+   *
+   * <code>repeated string endpoint_urls = 8;</code>
+   */
+  java.util.List<java.lang.String> getEndpointUrlsList();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The endpoint URLs based on the instance config.
+   * For example, instances located in a specific cloud region (or multi region)
+   * such as nam3, would have a nam3 specific endpoint URL.
+   * This URL is to be used implictly by SDK clients, with fallback to default
+   * URL. These endpoints are intended to optimize the network routing between
+   * the client and the instance's serving resources.
+   * If multiple endpoints are present,
+   * client may establish connections using any of the given URLs.
+   * </pre>
+   *
+   * <code>repeated string endpoint_urls = 8;</code>
+   */
+  int getEndpointUrlsCount();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The endpoint URLs based on the instance config.
+   * For example, instances located in a specific cloud region (or multi region)
+   * such as nam3, would have a nam3 specific endpoint URL.
+   * This URL is to be used implictly by SDK clients, with fallback to default
+   * URL. These endpoints are intended to optimize the network routing between
+   * the client and the instance's serving resources.
+   * If multiple endpoints are present,
+   * client may establish connections using any of the given URLs.
+   * </pre>
+   *
+   * <code>repeated string endpoint_urls = 8;</code>
+   */
+  java.lang.String getEndpointUrls(int index);
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The endpoint URLs based on the instance config.
+   * For example, instances located in a specific cloud region (or multi region)
+   * such as nam3, would have a nam3 specific endpoint URL.
+   * This URL is to be used implictly by SDK clients, with fallback to default
+   * URL. These endpoints are intended to optimize the network routing between
+   * the client and the instance's serving resources.
+   * If multiple endpoints are present,
+   * client may establish connections using any of the given URLs.
+   * </pre>
+   *
+   * <code>repeated string endpoint_urls = 8;</code>
+   */
+  com.google.protobuf.ByteString getEndpointUrlsBytes(int index);
 }
