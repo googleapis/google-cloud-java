@@ -17,6 +17,7 @@ package com.google.cloud.bigtable.admin.v2.it;
 
 import static com.google.cloud.bigtable.test_helpers.env.AbstractTestEnv.TEST_APP_PREFIX;
 import static com.google.common.truth.Truth.assertThat;
+import static com.google.common.truth.Truth.assertWithMessage;
 import static com.google.common.truth.TruthJUnit.assume;
 
 import com.google.cloud.Policy;
@@ -136,6 +137,7 @@ public class BigtableInstanceAdminClientIT {
       assertThat(client.listInstances()).contains(instance);
 
       clusterCreationDeletionTestHelper(newInstanceId);
+      basicClusterOperationTestHelper(newInstanceId, newClusterId);
 
       client.deleteInstance(newInstanceId);
       assertThat(client.exists(newInstanceId)).isFalse();
@@ -149,7 +151,7 @@ public class BigtableInstanceAdminClientIT {
   // To improve test runtime, piggyback off the instance creation/deletion test's fresh instance.
   // This will avoid the need to copy any existing tables and will also reduce flakiness in case a
   // previous run failed to clean up a cluster in the secondary zone.
-  public void clusterCreationDeletionTestHelper(String newInstanceId) {
+  private void clusterCreationDeletionTestHelper(String newInstanceId) {
     String newClusterId = AbstractTestEnv.TEST_CLUSTER_PREFIX + Instant.now().getEpochSecond();
     boolean isClusterDeleted = false;
     client.createCluster(
@@ -184,27 +186,26 @@ public class BigtableInstanceAdminClientIT {
     assertThat(client.listInstances()).contains(instance);
   }
 
-  /* As cluster creation is very expensive operation, so reusing existing clusters to verify rest
-  of the operation.*/
-  @Test
-  public void basicClusterOperationTest() {
-    List<Cluster> clusters = client.listClusters(instanceId);
-    assertThat(clusters).isNotEmpty();
+  // To improve test runtime, piggyback off the instance creation/deletion test's fresh instance.
+  private void basicClusterOperationTestHelper(String targetInstanceId, String targetClusterId) {
+    List<Cluster> clusters = client.listClusters(targetInstanceId);
 
-    Cluster existingCluster = clusters.get(0);
-    String clusterId = existingCluster.getId();
-    assertThat(client.getCluster(instanceId, clusterId)).isEqualTo(existingCluster);
-
-    if (Instance.Type.PRODUCTION.equals(client.getInstance(instanceId).getType())) {
-      int existingClusterNodeSize = existingCluster.getServeNodes();
-      int freshNumOfNodes = existingClusterNodeSize + 1;
-
-      Cluster resizeCluster = client.resizeCluster(instanceId, clusterId, freshNumOfNodes);
-      assertThat(resizeCluster.getServeNodes()).isEqualTo(freshNumOfNodes);
-
-      assertThat(
-              client.resizeCluster(instanceId, clusterId, existingClusterNodeSize).getServeNodes())
-          .isEqualTo(existingClusterNodeSize);
+    Cluster targetCluster = null;
+    for (Cluster cluster : clusters) {
+      if (cluster.getId().equals(targetClusterId)) {
+        targetCluster = cluster;
+      }
     }
+    assertWithMessage("Failed to find target cluster id in listClusters")
+        .that(targetCluster)
+        .isNotNull();
+
+    assertThat(client.getCluster(targetInstanceId, targetClusterId)).isEqualTo(targetCluster);
+
+    int freshNumOfNodes = targetCluster.getServeNodes() + 1;
+
+    Cluster resizeCluster =
+        client.resizeCluster(targetInstanceId, targetClusterId, freshNumOfNodes);
+    assertThat(resizeCluster.getServeNodes()).isEqualTo(freshNumOfNodes);
   }
 }

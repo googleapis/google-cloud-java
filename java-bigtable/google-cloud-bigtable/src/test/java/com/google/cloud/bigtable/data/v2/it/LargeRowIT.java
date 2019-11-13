@@ -25,6 +25,7 @@ import com.google.protobuf.ByteString;
 import java.util.Random;
 import java.util.UUID;
 import java.util.concurrent.TimeUnit;
+import java.util.logging.Logger;
 import org.junit.ClassRule;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -32,7 +33,9 @@ import org.junit.runners.JUnit4;
 
 @RunWith(JUnit4.class)
 public class LargeRowIT {
-  @ClassRule public static TestEnvRule testEnvRule = new TestEnvRule();
+  private static final Logger logger = Logger.getLogger(LargeRowIT.class.getName());
+
+  @ClassRule public static final TestEnvRule testEnvRule = new TestEnvRule();
 
   @Test
   public void testWriteRead() throws Exception {
@@ -45,6 +48,7 @@ public class LargeRowIT {
     ByteString largeValue = ByteString.copyFrom(largeValueBytes);
 
     // Create a 200 MB row
+    logger.info("Sending large row, this will take awhile");
     for (int i = 0; i < 2; i++) {
       testEnvRule
           .env()
@@ -55,6 +59,7 @@ public class LargeRowIT {
           .get(10, TimeUnit.MINUTES);
     }
 
+    logger.info("Reading large row, this will take awhile");
     // Read it back
     Row row =
         testEnvRule
