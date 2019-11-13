@@ -35,16 +35,16 @@ If you are using Maven without a BOM, add this to your dependencies.
 <dependency>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-spanner</artifactId>
-  <version>1.45.0</version>
+  <version>1.46.0</version>
 </dependency>
 ```
 If you are using Gradle, add this to your dependencies
 ```Groovy
-compile 'com.google.cloud:google-cloud-spanner:1.45.0'
+compile 'com.google.cloud:google-cloud-spanner:1.46.0'
 ```
 If you are using SBT, add this to your dependencies
 ```Scala
-libraryDependencies += "com.google.cloud" % "google-cloud-spanner" % "1.45.0"
+libraryDependencies += "com.google.cloud" % "google-cloud-spanner" % "1.46.0"
 ```
 [//]: # ({x-version-update-end})
 
