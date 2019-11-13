@@ -95,23 +95,6 @@ public class StorageSnippets {
     return bucket;
   }
 
-  /** Example of creating a bucket with storage class and location. */
-  // [TARGET create(BucketInfo, BucketTargetOption...)]
-  // [VARIABLE "my_unique_bucket"]
-  public Bucket createBucketWithStorageClassAndLocation(String bucketName) {
-    // [START createBucketWithStorageClassAndLocation]
-    Bucket bucket =
-        storage.create(
-            BucketInfo.newBuilder(bucketName)
-                // See here for possible values: http://g.co/cloud/storage/docs/storage-classes
-                .setStorageClass(StorageClass.COLDLINE)
-                // Possible values: http://g.co/cloud/storage/docs/bucket-locations#location-mr
-                .setLocation("asia")
-                .build());
-    // [END createBucketWithStorageClassAndLocation]
-    return bucket;
-  }
-
   /** Example of creating a blob with no content. */
   // [TARGET create(BlobInfo, BlobTargetOption...)]
   // [VARIABLE "my_unique_bucket"]
