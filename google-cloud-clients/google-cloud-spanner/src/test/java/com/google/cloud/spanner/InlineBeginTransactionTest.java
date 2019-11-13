@@ -35,6 +35,7 @@ import io.grpc.Status;
 import io.grpc.inprocess.InProcessServerBuilder;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import java.util.concurrent.Callable;
 import java.util.concurrent.Executors;
@@ -201,6 +202,26 @@ public class InlineBeginTransactionTest {
                   }
                 });
     assertThat(updateCount).isEqualTo(1L);
+    assertThat(countRequests(BeginTransactionRequest.class)).isEqualTo(0);
+    assertThat(countTransactionsStarted()).isEqualTo(1);
+  }
+
+  @Test
+  public void testInlinedBeginTxWithBatchDml() {
+    DatabaseClient client =
+        spanner.getDatabaseClient(DatabaseId.of("[PROJECT]", "[INSTANCE]", "[DATABASE]"));
+    long[] updateCounts =
+        client
+            .readWriteTransaction()
+            .run(
+                new TransactionCallable<long[]>() {
+                  @Override
+                  public long[] run(TransactionContext transaction) throws Exception {
+                    return transaction.batchUpdate(
+                        Arrays.asList(UPDATE_STATEMENT, UPDATE_STATEMENT));
+                  }
+                });
+    assertThat(updateCounts).asList().containsExactly(UPDATE_COUNT, UPDATE_COUNT);
     assertThat(countRequests(BeginTransactionRequest.class)).isEqualTo(0);
     assertThat(countTransactionsStarted()).isEqualTo(1);
   }

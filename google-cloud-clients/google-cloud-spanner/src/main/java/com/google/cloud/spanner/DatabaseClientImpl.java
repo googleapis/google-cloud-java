@@ -187,6 +187,7 @@ class DatabaseClientImpl implements DatabaseClient {
   private TransactionRunner inlinedReadWriteTransaction() {
     Span span = tracer.spanBuilder(READ_WRITE_TRANSACTION_WITH_INLINE_BEGIN).startSpan();
     try (Scope s = tracer.withSpan(span)) {
+      // An inlined read/write transaction does not need a write-prepared session.
       return getReadSession().readWriteTransaction();
     } catch (RuntimeException e) {
       TraceUtil.endSpanWithFailure(span, e);
@@ -214,6 +215,7 @@ class DatabaseClientImpl implements DatabaseClient {
   private TransactionManager inlinedTransactionManager() {
     Span span = tracer.spanBuilder(READ_WRITE_TRANSACTION_WITH_INLINE_BEGIN).startSpan();
     try (Scope s = tracer.withSpan(span)) {
+      // An inlined read/write transaction does not need a write-prepared session.
       return getReadSession().transactionManager();
     } catch (RuntimeException e) {
       TraceUtil.endSpanWithFailure(span, e);

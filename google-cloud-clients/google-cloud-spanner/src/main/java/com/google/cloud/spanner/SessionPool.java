@@ -1132,10 +1132,6 @@ final class SessionPool {
     this.poolMaintainer = new PoolMaintainer();
   }
 
-  SessionPoolOptions getOptions() {
-    return options;
-  }
-
   @VisibleForTesting
   int getNumberOfAvailableWritePreparedSessions() {
     synchronized (lock) {

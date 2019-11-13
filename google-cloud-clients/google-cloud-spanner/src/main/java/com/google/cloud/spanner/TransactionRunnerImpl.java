@@ -71,10 +71,10 @@ class TransactionRunnerImpl implements SessionTransaction, TransactionRunner {
     private long retryDelayInMillis = -1L;
 
     /**
-     * transactionLock guards that only one request can be either beginning, committing or rolling
-     * back the transaction at any time. We only hold on to this lock while a request is creating a
-     * transaction. After a transaction has been created, the lock is released and concurrent
-     * requests can be executed on the transaction.
+     * transactionLock guards that only one request can be beginning the transaction at any time. We
+     * only hold on to this lock while a request is creating a transaction. After a transaction has
+     * been created, the lock is released and concurrent requests can be executed on the
+     * transaction.
      */
     private final ReentrantLock transactionLock = new ReentrantLock();
 
@@ -193,16 +193,13 @@ class TransactionRunnerImpl implements SessionTransaction, TransactionRunner {
     }
 
     void rollback() {
-      try {
-        // Take the transaction lock to prevent any other request to include a BeginTransaction.
-        // Note that we do not unlock, as the transaction should never be used after a rollback.
-        transactionLock.lockInterruptibly();
-      } catch (InterruptedException e) {
-        throw SpannerExceptionFactory.propagateInterrupt(e);
-      }
       // It could be that there is no transaction if the transaction has been marked
       // withInlineBegin, and there has not been any query/update statement that has been executed.
       // In that case, we do not need to do anything, as there is no transaction.
+      //
+      // We do not take the transactionLock before trying to rollback to prevent a rollback call
+      // from blocking if an async query or update statement that is trying to begin the transaction
+      // is still in flight. That transaction will then automatically be terminated by the server.
       if (transactionId != null) {
         // We're exiting early due to a user exception, but the transaction is still active.
         // Send a rollback for the transaction to release any locks held.
