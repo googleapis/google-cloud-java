@@ -108,6 +108,16 @@ public enum Feature implements com.google.protobuf.ProtocolMessageEnum {
    * <code>LOGO_RECOGNITION = 12;</code>
    */
   LOGO_RECOGNITION(12),
+  /**
+   *
+   *
+   * <pre>
+   * Celebrity recognition.
+   * </pre>
+   *
+   * <code>CELEBRITY_RECOGNITION = 13;</code>
+   */
+  CELEBRITY_RECOGNITION(13),
   UNRECOGNIZED(-1),
   ;
 
@@ -191,6 +201,16 @@ public enum Feature implements com.google.protobuf.ProtocolMessageEnum {
    * <code>LOGO_RECOGNITION = 12;</code>
    */
   public static final int LOGO_RECOGNITION_VALUE = 12;
+  /**
+   *
+   *
+   * <pre>
+   * Celebrity recognition.
+   * </pre>
+   *
+   * <code>CELEBRITY_RECOGNITION = 13;</code>
+   */
+  public static final int CELEBRITY_RECOGNITION_VALUE = 13;
 
   public final int getNumber() {
     if (this == UNRECOGNIZED) {
@@ -224,6 +244,8 @@ public enum Feature implements com.google.protobuf.ProtocolMessageEnum {
         return OBJECT_TRACKING;
       case 12:
         return LOGO_RECOGNITION;
+      case 13:
+        return CELEBRITY_RECOGNITION;
       default:
         return null;
     }

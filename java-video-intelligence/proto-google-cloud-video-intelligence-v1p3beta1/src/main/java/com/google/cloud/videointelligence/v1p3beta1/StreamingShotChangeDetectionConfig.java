@@ -22,7 +22,7 @@ package com.google.cloud.videointelligence.v1p3beta1;
  *
  *
  * <pre>
- * Config for SHOT_CHANGE_DETECTION in streaming mode.
+ * Config for STREAMING_SHOT_CHANGE_DETECTION.
  * </pre>
  *
  * Protobuf type {@code google.cloud.videointelligence.v1p3beta1.StreamingShotChangeDetectionConfig}
@@ -261,7 +261,7 @@ public final class StreamingShotChangeDetectionConfig extends com.google.protobu
    *
    *
    * <pre>
-   * Config for SHOT_CHANGE_DETECTION in streaming mode.
+   * Config for STREAMING_SHOT_CHANGE_DETECTION.
    * </pre>
    *
    * Protobuf type {@code

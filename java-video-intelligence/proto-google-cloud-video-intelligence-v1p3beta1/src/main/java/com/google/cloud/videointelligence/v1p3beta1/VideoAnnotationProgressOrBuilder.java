@@ -119,4 +119,61 @@ public interface VideoAnnotationProgressOrBuilder
    * <code>.google.protobuf.Timestamp update_time = 4;</code>
    */
   com.google.protobuf.TimestampOrBuilder getUpdateTimeOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Specifies which feature is being tracked if the request contains more than
+   * one features.
+   * </pre>
+   *
+   * <code>.google.cloud.videointelligence.v1p3beta1.Feature feature = 5;</code>
+   */
+  int getFeatureValue();
+  /**
+   *
+   *
+   * <pre>
+   * Specifies which feature is being tracked if the request contains more than
+   * one features.
+   * </pre>
+   *
+   * <code>.google.cloud.videointelligence.v1p3beta1.Feature feature = 5;</code>
+   */
+  com.google.cloud.videointelligence.v1p3beta1.Feature getFeature();
+
+  /**
+   *
+   *
+   * <pre>
+   * Specifies which segment is being tracked if the request contains more than
+   * one segments.
+   * </pre>
+   *
+   * <code>.google.cloud.videointelligence.v1p3beta1.VideoSegment segment = 6;</code>
+   */
+  boolean hasSegment();
+  /**
+   *
+   *
+   * <pre>
+   * Specifies which segment is being tracked if the request contains more than
+   * one segments.
+   * </pre>
+   *
+   * <code>.google.cloud.videointelligence.v1p3beta1.VideoSegment segment = 6;</code>
+   */
+  com.google.cloud.videointelligence.v1p3beta1.VideoSegment getSegment();
+  /**
+   *
+   *
+   * <pre>
+   * Specifies which segment is being tracked if the request contains more than
+   * one segments.
+   * </pre>
+   *
+   * <code>.google.cloud.videointelligence.v1p3beta1.VideoSegment segment = 6;</code>
+   */
+  com.google.cloud.videointelligence.v1p3beta1.VideoSegmentOrBuilder getSegmentOrBuilder();
 }

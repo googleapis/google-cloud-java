@@ -22,7 +22,7 @@ package com.google.cloud.videointelligence.v1p3beta1;
  *
  *
  * <pre>
- * Config for AUTOML_CLASSIFICATION in streaming mode.
+ * Config for STREAMING_AUTOML_CLASSIFICATION.
  * </pre>
  *
  * Protobuf type {@code
@@ -327,7 +327,7 @@ public final class StreamingAutomlClassificationConfig
    *
    *
    * <pre>
-   * Config for AUTOML_CLASSIFICATION in streaming mode.
+   * Config for STREAMING_AUTOML_CLASSIFICATION.
    * </pre>
    *
    * Protobuf type {@code

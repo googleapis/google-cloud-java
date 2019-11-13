@@ -136,7 +136,7 @@ public interface WordInfoOrBuilder
    * The default of 0.0 is a sentinel value indicating `confidence` was not set.
    * </pre>
    *
-   * <code>float confidence = 4;</code>
+   * <code>float confidence = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    */
   float getConfidence();
 
@@ -150,7 +150,7 @@ public interface WordInfoOrBuilder
    * and is only set if speaker diarization is enabled.
    * </pre>
    *
-   * <code>int32 speaker_tag = 5;</code>
+   * <code>int32 speaker_tag = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    */
   int getSpeakerTag();
 }

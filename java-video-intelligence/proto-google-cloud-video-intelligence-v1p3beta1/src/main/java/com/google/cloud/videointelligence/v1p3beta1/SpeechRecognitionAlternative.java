@@ -180,15 +180,15 @@ public final class SpeechRecognitionAlternative extends com.google.protobuf.Gene
    *
    *
    * <pre>
-   * The confidence estimate between 0.0 and 1.0. A higher number
+   * Output only. The confidence estimate between 0.0 and 1.0. A higher number
    * indicates an estimated greater likelihood that the recognized words are
-   * correct. This field is typically provided only for the top hypothesis, and
-   * only for `is_final=true` results. Clients should not rely on the
-   * `confidence` field as it is not guaranteed to be accurate or consistent.
+   * correct. This field is set only for the top alternative.
+   * This field is not guaranteed to be accurate and users should not rely on it
+   * to be always provided.
    * The default of 0.0 is a sentinel value indicating `confidence` was not set.
    * </pre>
    *
-   * <code>float confidence = 2;</code>
+   * <code>float confidence = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    */
   public float getConfidence() {
     return confidence_;
@@ -200,10 +200,14 @@ public final class SpeechRecognitionAlternative extends com.google.protobuf.Gene
    *
    *
    * <pre>
-   * A list of word-specific information for each recognized word.
+   * Output only. A list of word-specific information for each recognized word.
+   * Note: When `enable_speaker_diarization` is true, you will see all the words
+   * from the beginning of the audio.
    * </pre>
    *
-   * <code>repeated .google.cloud.videointelligence.v1p3beta1.WordInfo words = 3;</code>
+   * <code>
+   * repeated .google.cloud.videointelligence.v1p3beta1.WordInfo words = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    */
   public java.util.List<com.google.cloud.videointelligence.v1p3beta1.WordInfo> getWordsList() {
     return words_;
@@ -212,10 +216,14 @@ public final class SpeechRecognitionAlternative extends com.google.protobuf.Gene
    *
    *
    * <pre>
-   * A list of word-specific information for each recognized word.
+   * Output only. A list of word-specific information for each recognized word.
+   * Note: When `enable_speaker_diarization` is true, you will see all the words
+   * from the beginning of the audio.
    * </pre>
    *
-   * <code>repeated .google.cloud.videointelligence.v1p3beta1.WordInfo words = 3;</code>
+   * <code>
+   * repeated .google.cloud.videointelligence.v1p3beta1.WordInfo words = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    */
   public java.util.List<? extends com.google.cloud.videointelligence.v1p3beta1.WordInfoOrBuilder>
       getWordsOrBuilderList() {
@@ -225,10 +233,14 @@ public final class SpeechRecognitionAlternative extends com.google.protobuf.Gene
    *
    *
    * <pre>
-   * A list of word-specific information for each recognized word.
+   * Output only. A list of word-specific information for each recognized word.
+   * Note: When `enable_speaker_diarization` is true, you will see all the words
+   * from the beginning of the audio.
    * </pre>
    *
-   * <code>repeated .google.cloud.videointelligence.v1p3beta1.WordInfo words = 3;</code>
+   * <code>
+   * repeated .google.cloud.videointelligence.v1p3beta1.WordInfo words = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    */
   public int getWordsCount() {
     return words_.size();
@@ -237,10 +249,14 @@ public final class SpeechRecognitionAlternative extends com.google.protobuf.Gene
    *
    *
    * <pre>
-   * A list of word-specific information for each recognized word.
+   * Output only. A list of word-specific information for each recognized word.
+   * Note: When `enable_speaker_diarization` is true, you will see all the words
+   * from the beginning of the audio.
    * </pre>
    *
-   * <code>repeated .google.cloud.videointelligence.v1p3beta1.WordInfo words = 3;</code>
+   * <code>
+   * repeated .google.cloud.videointelligence.v1p3beta1.WordInfo words = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    */
   public com.google.cloud.videointelligence.v1p3beta1.WordInfo getWords(int index) {
     return words_.get(index);
@@ -249,10 +265,14 @@ public final class SpeechRecognitionAlternative extends com.google.protobuf.Gene
    *
    *
    * <pre>
-   * A list of word-specific information for each recognized word.
+   * Output only. A list of word-specific information for each recognized word.
+   * Note: When `enable_speaker_diarization` is true, you will see all the words
+   * from the beginning of the audio.
    * </pre>
    *
-   * <code>repeated .google.cloud.videointelligence.v1p3beta1.WordInfo words = 3;</code>
+   * <code>
+   * repeated .google.cloud.videointelligence.v1p3beta1.WordInfo words = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    */
   public com.google.cloud.videointelligence.v1p3beta1.WordInfoOrBuilder getWordsOrBuilder(
       int index) {
@@ -767,15 +787,15 @@ public final class SpeechRecognitionAlternative extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * The confidence estimate between 0.0 and 1.0. A higher number
+     * Output only. The confidence estimate between 0.0 and 1.0. A higher number
      * indicates an estimated greater likelihood that the recognized words are
-     * correct. This field is typically provided only for the top hypothesis, and
-     * only for `is_final=true` results. Clients should not rely on the
-     * `confidence` field as it is not guaranteed to be accurate or consistent.
+     * correct. This field is set only for the top alternative.
+     * This field is not guaranteed to be accurate and users should not rely on it
+     * to be always provided.
      * The default of 0.0 is a sentinel value indicating `confidence` was not set.
      * </pre>
      *
-     * <code>float confidence = 2;</code>
+     * <code>float confidence = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     public float getConfidence() {
       return confidence_;
@@ -784,15 +804,15 @@ public final class SpeechRecognitionAlternative extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * The confidence estimate between 0.0 and 1.0. A higher number
+     * Output only. The confidence estimate between 0.0 and 1.0. A higher number
      * indicates an estimated greater likelihood that the recognized words are
-     * correct. This field is typically provided only for the top hypothesis, and
-     * only for `is_final=true` results. Clients should not rely on the
-     * `confidence` field as it is not guaranteed to be accurate or consistent.
+     * correct. This field is set only for the top alternative.
+     * This field is not guaranteed to be accurate and users should not rely on it
+     * to be always provided.
      * The default of 0.0 is a sentinel value indicating `confidence` was not set.
      * </pre>
      *
-     * <code>float confidence = 2;</code>
+     * <code>float confidence = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     public Builder setConfidence(float value) {
 
@@ -804,15 +824,15 @@ public final class SpeechRecognitionAlternative extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * The confidence estimate between 0.0 and 1.0. A higher number
+     * Output only. The confidence estimate between 0.0 and 1.0. A higher number
      * indicates an estimated greater likelihood that the recognized words are
-     * correct. This field is typically provided only for the top hypothesis, and
-     * only for `is_final=true` results. Clients should not rely on the
-     * `confidence` field as it is not guaranteed to be accurate or consistent.
+     * correct. This field is set only for the top alternative.
+     * This field is not guaranteed to be accurate and users should not rely on it
+     * to be always provided.
      * The default of 0.0 is a sentinel value indicating `confidence` was not set.
      * </pre>
      *
-     * <code>float confidence = 2;</code>
+     * <code>float confidence = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     public Builder clearConfidence() {
 
@@ -842,10 +862,14 @@ public final class SpeechRecognitionAlternative extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * A list of word-specific information for each recognized word.
+     * Output only. A list of word-specific information for each recognized word.
+     * Note: When `enable_speaker_diarization` is true, you will see all the words
+     * from the beginning of the audio.
      * </pre>
      *
-     * <code>repeated .google.cloud.videointelligence.v1p3beta1.WordInfo words = 3;</code>
+     * <code>
+     * repeated .google.cloud.videointelligence.v1p3beta1.WordInfo words = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public java.util.List<com.google.cloud.videointelligence.v1p3beta1.WordInfo> getWordsList() {
       if (wordsBuilder_ == null) {
@@ -858,10 +882,14 @@ public final class SpeechRecognitionAlternative extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * A list of word-specific information for each recognized word.
+     * Output only. A list of word-specific information for each recognized word.
+     * Note: When `enable_speaker_diarization` is true, you will see all the words
+     * from the beginning of the audio.
      * </pre>
      *
-     * <code>repeated .google.cloud.videointelligence.v1p3beta1.WordInfo words = 3;</code>
+     * <code>
+     * repeated .google.cloud.videointelligence.v1p3beta1.WordInfo words = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public int getWordsCount() {
       if (wordsBuilder_ == null) {
@@ -874,10 +902,14 @@ public final class SpeechRecognitionAlternative extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * A list of word-specific information for each recognized word.
+     * Output only. A list of word-specific information for each recognized word.
+     * Note: When `enable_speaker_diarization` is true, you will see all the words
+     * from the beginning of the audio.
      * </pre>
      *
-     * <code>repeated .google.cloud.videointelligence.v1p3beta1.WordInfo words = 3;</code>
+     * <code>
+     * repeated .google.cloud.videointelligence.v1p3beta1.WordInfo words = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public com.google.cloud.videointelligence.v1p3beta1.WordInfo getWords(int index) {
       if (wordsBuilder_ == null) {
@@ -890,10 +922,14 @@ public final class SpeechRecognitionAlternative extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * A list of word-specific information for each recognized word.
+     * Output only. A list of word-specific information for each recognized word.
+     * Note: When `enable_speaker_diarization` is true, you will see all the words
+     * from the beginning of the audio.
      * </pre>
      *
-     * <code>repeated .google.cloud.videointelligence.v1p3beta1.WordInfo words = 3;</code>
+     * <code>
+     * repeated .google.cloud.videointelligence.v1p3beta1.WordInfo words = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public Builder setWords(
         int index, com.google.cloud.videointelligence.v1p3beta1.WordInfo value) {
@@ -913,10 +949,14 @@ public final class SpeechRecognitionAlternative extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * A list of word-specific information for each recognized word.
+     * Output only. A list of word-specific information for each recognized word.
+     * Note: When `enable_speaker_diarization` is true, you will see all the words
+     * from the beginning of the audio.
      * </pre>
      *
-     * <code>repeated .google.cloud.videointelligence.v1p3beta1.WordInfo words = 3;</code>
+     * <code>
+     * repeated .google.cloud.videointelligence.v1p3beta1.WordInfo words = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public Builder setWords(
         int index, com.google.cloud.videointelligence.v1p3beta1.WordInfo.Builder builderForValue) {
@@ -933,10 +973,14 @@ public final class SpeechRecognitionAlternative extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * A list of word-specific information for each recognized word.
+     * Output only. A list of word-specific information for each recognized word.
+     * Note: When `enable_speaker_diarization` is true, you will see all the words
+     * from the beginning of the audio.
      * </pre>
      *
-     * <code>repeated .google.cloud.videointelligence.v1p3beta1.WordInfo words = 3;</code>
+     * <code>
+     * repeated .google.cloud.videointelligence.v1p3beta1.WordInfo words = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public Builder addWords(com.google.cloud.videointelligence.v1p3beta1.WordInfo value) {
       if (wordsBuilder_ == null) {
@@ -955,10 +999,14 @@ public final class SpeechRecognitionAlternative extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * A list of word-specific information for each recognized word.
+     * Output only. A list of word-specific information for each recognized word.
+     * Note: When `enable_speaker_diarization` is true, you will see all the words
+     * from the beginning of the audio.
      * </pre>
      *
-     * <code>repeated .google.cloud.videointelligence.v1p3beta1.WordInfo words = 3;</code>
+     * <code>
+     * repeated .google.cloud.videointelligence.v1p3beta1.WordInfo words = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public Builder addWords(
         int index, com.google.cloud.videointelligence.v1p3beta1.WordInfo value) {
@@ -978,10 +1026,14 @@ public final class SpeechRecognitionAlternative extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * A list of word-specific information for each recognized word.
+     * Output only. A list of word-specific information for each recognized word.
+     * Note: When `enable_speaker_diarization` is true, you will see all the words
+     * from the beginning of the audio.
      * </pre>
      *
-     * <code>repeated .google.cloud.videointelligence.v1p3beta1.WordInfo words = 3;</code>
+     * <code>
+     * repeated .google.cloud.videointelligence.v1p3beta1.WordInfo words = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public Builder addWords(
         com.google.cloud.videointelligence.v1p3beta1.WordInfo.Builder builderForValue) {
@@ -998,10 +1050,14 @@ public final class SpeechRecognitionAlternative extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * A list of word-specific information for each recognized word.
+     * Output only. A list of word-specific information for each recognized word.
+     * Note: When `enable_speaker_diarization` is true, you will see all the words
+     * from the beginning of the audio.
      * </pre>
      *
-     * <code>repeated .google.cloud.videointelligence.v1p3beta1.WordInfo words = 3;</code>
+     * <code>
+     * repeated .google.cloud.videointelligence.v1p3beta1.WordInfo words = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public Builder addWords(
         int index, com.google.cloud.videointelligence.v1p3beta1.WordInfo.Builder builderForValue) {
@@ -1018,10 +1074,14 @@ public final class SpeechRecognitionAlternative extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * A list of word-specific information for each recognized word.
+     * Output only. A list of word-specific information for each recognized word.
+     * Note: When `enable_speaker_diarization` is true, you will see all the words
+     * from the beginning of the audio.
      * </pre>
      *
-     * <code>repeated .google.cloud.videointelligence.v1p3beta1.WordInfo words = 3;</code>
+     * <code>
+     * repeated .google.cloud.videointelligence.v1p3beta1.WordInfo words = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public Builder addAllWords(
         java.lang.Iterable<? extends com.google.cloud.videointelligence.v1p3beta1.WordInfo>
@@ -1039,10 +1099,14 @@ public final class SpeechRecognitionAlternative extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * A list of word-specific information for each recognized word.
+     * Output only. A list of word-specific information for each recognized word.
+     * Note: When `enable_speaker_diarization` is true, you will see all the words
+     * from the beginning of the audio.
      * </pre>
      *
-     * <code>repeated .google.cloud.videointelligence.v1p3beta1.WordInfo words = 3;</code>
+     * <code>
+     * repeated .google.cloud.videointelligence.v1p3beta1.WordInfo words = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public Builder clearWords() {
       if (wordsBuilder_ == null) {
@@ -1058,10 +1122,14 @@ public final class SpeechRecognitionAlternative extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * A list of word-specific information for each recognized word.
+     * Output only. A list of word-specific information for each recognized word.
+     * Note: When `enable_speaker_diarization` is true, you will see all the words
+     * from the beginning of the audio.
      * </pre>
      *
-     * <code>repeated .google.cloud.videointelligence.v1p3beta1.WordInfo words = 3;</code>
+     * <code>
+     * repeated .google.cloud.videointelligence.v1p3beta1.WordInfo words = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public Builder removeWords(int index) {
       if (wordsBuilder_ == null) {
@@ -1077,10 +1145,14 @@ public final class SpeechRecognitionAlternative extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * A list of word-specific information for each recognized word.
+     * Output only. A list of word-specific information for each recognized word.
+     * Note: When `enable_speaker_diarization` is true, you will see all the words
+     * from the beginning of the audio.
      * </pre>
      *
-     * <code>repeated .google.cloud.videointelligence.v1p3beta1.WordInfo words = 3;</code>
+     * <code>
+     * repeated .google.cloud.videointelligence.v1p3beta1.WordInfo words = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public com.google.cloud.videointelligence.v1p3beta1.WordInfo.Builder getWordsBuilder(
         int index) {
@@ -1090,10 +1162,14 @@ public final class SpeechRecognitionAlternative extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * A list of word-specific information for each recognized word.
+     * Output only. A list of word-specific information for each recognized word.
+     * Note: When `enable_speaker_diarization` is true, you will see all the words
+     * from the beginning of the audio.
      * </pre>
      *
-     * <code>repeated .google.cloud.videointelligence.v1p3beta1.WordInfo words = 3;</code>
+     * <code>
+     * repeated .google.cloud.videointelligence.v1p3beta1.WordInfo words = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public com.google.cloud.videointelligence.v1p3beta1.WordInfoOrBuilder getWordsOrBuilder(
         int index) {
@@ -1107,10 +1183,14 @@ public final class SpeechRecognitionAlternative extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * A list of word-specific information for each recognized word.
+     * Output only. A list of word-specific information for each recognized word.
+     * Note: When `enable_speaker_diarization` is true, you will see all the words
+     * from the beginning of the audio.
      * </pre>
      *
-     * <code>repeated .google.cloud.videointelligence.v1p3beta1.WordInfo words = 3;</code>
+     * <code>
+     * repeated .google.cloud.videointelligence.v1p3beta1.WordInfo words = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public java.util.List<? extends com.google.cloud.videointelligence.v1p3beta1.WordInfoOrBuilder>
         getWordsOrBuilderList() {
@@ -1124,10 +1204,14 @@ public final class SpeechRecognitionAlternative extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * A list of word-specific information for each recognized word.
+     * Output only. A list of word-specific information for each recognized word.
+     * Note: When `enable_speaker_diarization` is true, you will see all the words
+     * from the beginning of the audio.
      * </pre>
      *
-     * <code>repeated .google.cloud.videointelligence.v1p3beta1.WordInfo words = 3;</code>
+     * <code>
+     * repeated .google.cloud.videointelligence.v1p3beta1.WordInfo words = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public com.google.cloud.videointelligence.v1p3beta1.WordInfo.Builder addWordsBuilder() {
       return getWordsFieldBuilder()
@@ -1137,10 +1221,14 @@ public final class SpeechRecognitionAlternative extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * A list of word-specific information for each recognized word.
+     * Output only. A list of word-specific information for each recognized word.
+     * Note: When `enable_speaker_diarization` is true, you will see all the words
+     * from the beginning of the audio.
      * </pre>
      *
-     * <code>repeated .google.cloud.videointelligence.v1p3beta1.WordInfo words = 3;</code>
+     * <code>
+     * repeated .google.cloud.videointelligence.v1p3beta1.WordInfo words = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public com.google.cloud.videointelligence.v1p3beta1.WordInfo.Builder addWordsBuilder(
         int index) {
@@ -1152,10 +1240,14 @@ public final class SpeechRecognitionAlternative extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * A list of word-specific information for each recognized word.
+     * Output only. A list of word-specific information for each recognized word.
+     * Note: When `enable_speaker_diarization` is true, you will see all the words
+     * from the beginning of the audio.
      * </pre>
      *
-     * <code>repeated .google.cloud.videointelligence.v1p3beta1.WordInfo words = 3;</code>
+     * <code>
+     * repeated .google.cloud.videointelligence.v1p3beta1.WordInfo words = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public java.util.List<com.google.cloud.videointelligence.v1p3beta1.WordInfo.Builder>
         getWordsBuilderList() {

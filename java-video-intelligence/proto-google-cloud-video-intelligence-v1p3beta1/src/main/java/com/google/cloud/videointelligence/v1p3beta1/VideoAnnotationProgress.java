@@ -39,6 +39,7 @@ public final class VideoAnnotationProgress extends com.google.protobuf.Generated
 
   private VideoAnnotationProgress() {
     inputUri_ = "";
+    feature_ = 0;
   }
 
   @java.lang.Override
@@ -103,6 +104,30 @@ public final class VideoAnnotationProgress extends com.google.protobuf.Generated
               if (subBuilder != null) {
                 subBuilder.mergeFrom(updateTime_);
                 updateTime_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+          case 40:
+            {
+              int rawValue = input.readEnum();
+
+              feature_ = rawValue;
+              break;
+            }
+          case 50:
+            {
+              com.google.cloud.videointelligence.v1p3beta1.VideoSegment.Builder subBuilder = null;
+              if (segment_ != null) {
+                subBuilder = segment_.toBuilder();
+              }
+              segment_ =
+                  input.readMessage(
+                      com.google.cloud.videointelligence.v1p3beta1.VideoSegment.parser(),
+                      extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(segment_);
+                segment_ = subBuilder.buildPartial();
               }
 
               break;
@@ -280,6 +305,84 @@ public final class VideoAnnotationProgress extends com.google.protobuf.Generated
     return getUpdateTime();
   }
 
+  public static final int FEATURE_FIELD_NUMBER = 5;
+  private int feature_;
+  /**
+   *
+   *
+   * <pre>
+   * Specifies which feature is being tracked if the request contains more than
+   * one features.
+   * </pre>
+   *
+   * <code>.google.cloud.videointelligence.v1p3beta1.Feature feature = 5;</code>
+   */
+  public int getFeatureValue() {
+    return feature_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Specifies which feature is being tracked if the request contains more than
+   * one features.
+   * </pre>
+   *
+   * <code>.google.cloud.videointelligence.v1p3beta1.Feature feature = 5;</code>
+   */
+  public com.google.cloud.videointelligence.v1p3beta1.Feature getFeature() {
+    @SuppressWarnings("deprecation")
+    com.google.cloud.videointelligence.v1p3beta1.Feature result =
+        com.google.cloud.videointelligence.v1p3beta1.Feature.valueOf(feature_);
+    return result == null
+        ? com.google.cloud.videointelligence.v1p3beta1.Feature.UNRECOGNIZED
+        : result;
+  }
+
+  public static final int SEGMENT_FIELD_NUMBER = 6;
+  private com.google.cloud.videointelligence.v1p3beta1.VideoSegment segment_;
+  /**
+   *
+   *
+   * <pre>
+   * Specifies which segment is being tracked if the request contains more than
+   * one segments.
+   * </pre>
+   *
+   * <code>.google.cloud.videointelligence.v1p3beta1.VideoSegment segment = 6;</code>
+   */
+  public boolean hasSegment() {
+    return segment_ != null;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Specifies which segment is being tracked if the request contains more than
+   * one segments.
+   * </pre>
+   *
+   * <code>.google.cloud.videointelligence.v1p3beta1.VideoSegment segment = 6;</code>
+   */
+  public com.google.cloud.videointelligence.v1p3beta1.VideoSegment getSegment() {
+    return segment_ == null
+        ? com.google.cloud.videointelligence.v1p3beta1.VideoSegment.getDefaultInstance()
+        : segment_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Specifies which segment is being tracked if the request contains more than
+   * one segments.
+   * </pre>
+   *
+   * <code>.google.cloud.videointelligence.v1p3beta1.VideoSegment segment = 6;</code>
+   */
+  public com.google.cloud.videointelligence.v1p3beta1.VideoSegmentOrBuilder getSegmentOrBuilder() {
+    return getSegment();
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -306,6 +409,13 @@ public final class VideoAnnotationProgress extends com.google.protobuf.Generated
     if (updateTime_ != null) {
       output.writeMessage(4, getUpdateTime());
     }
+    if (feature_
+        != com.google.cloud.videointelligence.v1p3beta1.Feature.FEATURE_UNSPECIFIED.getNumber()) {
+      output.writeEnum(5, feature_);
+    }
+    if (segment_ != null) {
+      output.writeMessage(6, getSegment());
+    }
     unknownFields.writeTo(output);
   }
 
@@ -326,6 +436,13 @@ public final class VideoAnnotationProgress extends com.google.protobuf.Generated
     }
     if (updateTime_ != null) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(4, getUpdateTime());
+    }
+    if (feature_
+        != com.google.cloud.videointelligence.v1p3beta1.Feature.FEATURE_UNSPECIFIED.getNumber()) {
+      size += com.google.protobuf.CodedOutputStream.computeEnumSize(5, feature_);
+    }
+    if (segment_ != null) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(6, getSegment());
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -353,6 +470,11 @@ public final class VideoAnnotationProgress extends com.google.protobuf.Generated
     if (hasUpdateTime()) {
       if (!getUpdateTime().equals(other.getUpdateTime())) return false;
     }
+    if (feature_ != other.feature_) return false;
+    if (hasSegment() != other.hasSegment()) return false;
+    if (hasSegment()) {
+      if (!getSegment().equals(other.getSegment())) return false;
+    }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -375,6 +497,12 @@ public final class VideoAnnotationProgress extends com.google.protobuf.Generated
     if (hasUpdateTime()) {
       hash = (37 * hash) + UPDATE_TIME_FIELD_NUMBER;
       hash = (53 * hash) + getUpdateTime().hashCode();
+    }
+    hash = (37 * hash) + FEATURE_FIELD_NUMBER;
+    hash = (53 * hash) + feature_;
+    if (hasSegment()) {
+      hash = (37 * hash) + SEGMENT_FIELD_NUMBER;
+      hash = (53 * hash) + getSegment().hashCode();
     }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
@@ -540,6 +668,14 @@ public final class VideoAnnotationProgress extends com.google.protobuf.Generated
         updateTime_ = null;
         updateTimeBuilder_ = null;
       }
+      feature_ = 0;
+
+      if (segmentBuilder_ == null) {
+        segment_ = null;
+      } else {
+        segment_ = null;
+        segmentBuilder_ = null;
+      }
       return this;
     }
 
@@ -580,6 +716,12 @@ public final class VideoAnnotationProgress extends com.google.protobuf.Generated
         result.updateTime_ = updateTime_;
       } else {
         result.updateTime_ = updateTimeBuilder_.build();
+      }
+      result.feature_ = feature_;
+      if (segmentBuilder_ == null) {
+        result.segment_ = segment_;
+      } else {
+        result.segment_ = segmentBuilder_.build();
       }
       onBuilt();
       return result;
@@ -646,6 +788,12 @@ public final class VideoAnnotationProgress extends com.google.protobuf.Generated
       }
       if (other.hasUpdateTime()) {
         mergeUpdateTime(other.getUpdateTime());
+      }
+      if (other.feature_ != 0) {
+        setFeatureValue(other.getFeatureValue());
+      }
+      if (other.hasSegment()) {
+        mergeSegment(other.getSegment());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -1176,6 +1324,281 @@ public final class VideoAnnotationProgress extends com.google.protobuf.Generated
         updateTime_ = null;
       }
       return updateTimeBuilder_;
+    }
+
+    private int feature_ = 0;
+    /**
+     *
+     *
+     * <pre>
+     * Specifies which feature is being tracked if the request contains more than
+     * one features.
+     * </pre>
+     *
+     * <code>.google.cloud.videointelligence.v1p3beta1.Feature feature = 5;</code>
+     */
+    public int getFeatureValue() {
+      return feature_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Specifies which feature is being tracked if the request contains more than
+     * one features.
+     * </pre>
+     *
+     * <code>.google.cloud.videointelligence.v1p3beta1.Feature feature = 5;</code>
+     */
+    public Builder setFeatureValue(int value) {
+      feature_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Specifies which feature is being tracked if the request contains more than
+     * one features.
+     * </pre>
+     *
+     * <code>.google.cloud.videointelligence.v1p3beta1.Feature feature = 5;</code>
+     */
+    public com.google.cloud.videointelligence.v1p3beta1.Feature getFeature() {
+      @SuppressWarnings("deprecation")
+      com.google.cloud.videointelligence.v1p3beta1.Feature result =
+          com.google.cloud.videointelligence.v1p3beta1.Feature.valueOf(feature_);
+      return result == null
+          ? com.google.cloud.videointelligence.v1p3beta1.Feature.UNRECOGNIZED
+          : result;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Specifies which feature is being tracked if the request contains more than
+     * one features.
+     * </pre>
+     *
+     * <code>.google.cloud.videointelligence.v1p3beta1.Feature feature = 5;</code>
+     */
+    public Builder setFeature(com.google.cloud.videointelligence.v1p3beta1.Feature value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+
+      feature_ = value.getNumber();
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Specifies which feature is being tracked if the request contains more than
+     * one features.
+     * </pre>
+     *
+     * <code>.google.cloud.videointelligence.v1p3beta1.Feature feature = 5;</code>
+     */
+    public Builder clearFeature() {
+
+      feature_ = 0;
+      onChanged();
+      return this;
+    }
+
+    private com.google.cloud.videointelligence.v1p3beta1.VideoSegment segment_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.videointelligence.v1p3beta1.VideoSegment,
+            com.google.cloud.videointelligence.v1p3beta1.VideoSegment.Builder,
+            com.google.cloud.videointelligence.v1p3beta1.VideoSegmentOrBuilder>
+        segmentBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Specifies which segment is being tracked if the request contains more than
+     * one segments.
+     * </pre>
+     *
+     * <code>.google.cloud.videointelligence.v1p3beta1.VideoSegment segment = 6;</code>
+     */
+    public boolean hasSegment() {
+      return segmentBuilder_ != null || segment_ != null;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Specifies which segment is being tracked if the request contains more than
+     * one segments.
+     * </pre>
+     *
+     * <code>.google.cloud.videointelligence.v1p3beta1.VideoSegment segment = 6;</code>
+     */
+    public com.google.cloud.videointelligence.v1p3beta1.VideoSegment getSegment() {
+      if (segmentBuilder_ == null) {
+        return segment_ == null
+            ? com.google.cloud.videointelligence.v1p3beta1.VideoSegment.getDefaultInstance()
+            : segment_;
+      } else {
+        return segmentBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Specifies which segment is being tracked if the request contains more than
+     * one segments.
+     * </pre>
+     *
+     * <code>.google.cloud.videointelligence.v1p3beta1.VideoSegment segment = 6;</code>
+     */
+    public Builder setSegment(com.google.cloud.videointelligence.v1p3beta1.VideoSegment value) {
+      if (segmentBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        segment_ = value;
+        onChanged();
+      } else {
+        segmentBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Specifies which segment is being tracked if the request contains more than
+     * one segments.
+     * </pre>
+     *
+     * <code>.google.cloud.videointelligence.v1p3beta1.VideoSegment segment = 6;</code>
+     */
+    public Builder setSegment(
+        com.google.cloud.videointelligence.v1p3beta1.VideoSegment.Builder builderForValue) {
+      if (segmentBuilder_ == null) {
+        segment_ = builderForValue.build();
+        onChanged();
+      } else {
+        segmentBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Specifies which segment is being tracked if the request contains more than
+     * one segments.
+     * </pre>
+     *
+     * <code>.google.cloud.videointelligence.v1p3beta1.VideoSegment segment = 6;</code>
+     */
+    public Builder mergeSegment(com.google.cloud.videointelligence.v1p3beta1.VideoSegment value) {
+      if (segmentBuilder_ == null) {
+        if (segment_ != null) {
+          segment_ =
+              com.google.cloud.videointelligence.v1p3beta1.VideoSegment.newBuilder(segment_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          segment_ = value;
+        }
+        onChanged();
+      } else {
+        segmentBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Specifies which segment is being tracked if the request contains more than
+     * one segments.
+     * </pre>
+     *
+     * <code>.google.cloud.videointelligence.v1p3beta1.VideoSegment segment = 6;</code>
+     */
+    public Builder clearSegment() {
+      if (segmentBuilder_ == null) {
+        segment_ = null;
+        onChanged();
+      } else {
+        segment_ = null;
+        segmentBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Specifies which segment is being tracked if the request contains more than
+     * one segments.
+     * </pre>
+     *
+     * <code>.google.cloud.videointelligence.v1p3beta1.VideoSegment segment = 6;</code>
+     */
+    public com.google.cloud.videointelligence.v1p3beta1.VideoSegment.Builder getSegmentBuilder() {
+
+      onChanged();
+      return getSegmentFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Specifies which segment is being tracked if the request contains more than
+     * one segments.
+     * </pre>
+     *
+     * <code>.google.cloud.videointelligence.v1p3beta1.VideoSegment segment = 6;</code>
+     */
+    public com.google.cloud.videointelligence.v1p3beta1.VideoSegmentOrBuilder
+        getSegmentOrBuilder() {
+      if (segmentBuilder_ != null) {
+        return segmentBuilder_.getMessageOrBuilder();
+      } else {
+        return segment_ == null
+            ? com.google.cloud.videointelligence.v1p3beta1.VideoSegment.getDefaultInstance()
+            : segment_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Specifies which segment is being tracked if the request contains more than
+     * one segments.
+     * </pre>
+     *
+     * <code>.google.cloud.videointelligence.v1p3beta1.VideoSegment segment = 6;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.videointelligence.v1p3beta1.VideoSegment,
+            com.google.cloud.videointelligence.v1p3beta1.VideoSegment.Builder,
+            com.google.cloud.videointelligence.v1p3beta1.VideoSegmentOrBuilder>
+        getSegmentFieldBuilder() {
+      if (segmentBuilder_ == null) {
+        segmentBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.videointelligence.v1p3beta1.VideoSegment,
+                com.google.cloud.videointelligence.v1p3beta1.VideoSegment.Builder,
+                com.google.cloud.videointelligence.v1p3beta1.VideoSegmentOrBuilder>(
+                getSegment(), getParentForChildren(), isClean());
+        segment_ = null;
+      }
+      return segmentBuilder_;
     }
 
     @java.lang.Override

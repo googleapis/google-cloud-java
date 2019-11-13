@@ -22,7 +22,7 @@ package com.google.cloud.videointelligence.v1p3beta1;
  *
  *
  * <pre>
- * Config for EXPLICIT_CONTENT_DETECTION in streaming mode.
+ * Config for STREAMING_EXPLICIT_CONTENT_DETECTION.
  * </pre>
  *
  * Protobuf type {@code
@@ -265,7 +265,7 @@ public final class StreamingExplicitContentDetectionConfig
    *
    *
    * <pre>
-   * Config for EXPLICIT_CONTENT_DETECTION in streaming mode.
+   * Config for STREAMING_EXPLICIT_CONTENT_DETECTION.
    * </pre>
    *
    * Protobuf type {@code

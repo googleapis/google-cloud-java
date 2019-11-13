@@ -27,7 +27,7 @@ public interface SpeechContextOrBuilder
    *
    *
    * <pre>
-   * *Optional* A list of strings containing words and phrases "hints" so that
+   * Optional. A list of strings containing words and phrases "hints" so that
    * the speech recognition is more likely to recognize them. This can be used
    * to improve the accuracy for specific words and phrases, for example, if
    * specific commands are typically spoken by the user. This can also be used
@@ -35,14 +35,14 @@ public interface SpeechContextOrBuilder
    * [usage limits](https://cloud.google.com/speech/limits#content).
    * </pre>
    *
-   * <code>repeated string phrases = 1;</code>
+   * <code>repeated string phrases = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   java.util.List<java.lang.String> getPhrasesList();
   /**
    *
    *
    * <pre>
-   * *Optional* A list of strings containing words and phrases "hints" so that
+   * Optional. A list of strings containing words and phrases "hints" so that
    * the speech recognition is more likely to recognize them. This can be used
    * to improve the accuracy for specific words and phrases, for example, if
    * specific commands are typically spoken by the user. This can also be used
@@ -50,14 +50,14 @@ public interface SpeechContextOrBuilder
    * [usage limits](https://cloud.google.com/speech/limits#content).
    * </pre>
    *
-   * <code>repeated string phrases = 1;</code>
+   * <code>repeated string phrases = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   int getPhrasesCount();
   /**
    *
    *
    * <pre>
-   * *Optional* A list of strings containing words and phrases "hints" so that
+   * Optional. A list of strings containing words and phrases "hints" so that
    * the speech recognition is more likely to recognize them. This can be used
    * to improve the accuracy for specific words and phrases, for example, if
    * specific commands are typically spoken by the user. This can also be used
@@ -65,14 +65,14 @@ public interface SpeechContextOrBuilder
    * [usage limits](https://cloud.google.com/speech/limits#content).
    * </pre>
    *
-   * <code>repeated string phrases = 1;</code>
+   * <code>repeated string phrases = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   java.lang.String getPhrases(int index);
   /**
    *
    *
    * <pre>
-   * *Optional* A list of strings containing words and phrases "hints" so that
+   * Optional. A list of strings containing words and phrases "hints" so that
    * the speech recognition is more likely to recognize them. This can be used
    * to improve the accuracy for specific words and phrases, for example, if
    * specific commands are typically spoken by the user. This can also be used
@@ -80,7 +80,7 @@ public interface SpeechContextOrBuilder
    * [usage limits](https://cloud.google.com/speech/limits#content).
    * </pre>
    *
-   * <code>repeated string phrases = 1;</code>
+   * <code>repeated string phrases = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   com.google.protobuf.ByteString getPhrasesBytes(int index);
 }

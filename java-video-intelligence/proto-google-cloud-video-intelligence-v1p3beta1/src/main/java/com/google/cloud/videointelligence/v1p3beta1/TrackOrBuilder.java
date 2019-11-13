@@ -125,7 +125,8 @@ public interface TrackOrBuilder
    * Optional. Attributes in the track level.
    * </pre>
    *
-   * <code>repeated .google.cloud.videointelligence.v1p3beta1.DetectedAttribute attributes = 3;
+   * <code>
+   * repeated .google.cloud.videointelligence.v1p3beta1.DetectedAttribute attributes = 3 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    */
   java.util.List<com.google.cloud.videointelligence.v1p3beta1.DetectedAttribute>
@@ -137,7 +138,8 @@ public interface TrackOrBuilder
    * Optional. Attributes in the track level.
    * </pre>
    *
-   * <code>repeated .google.cloud.videointelligence.v1p3beta1.DetectedAttribute attributes = 3;
+   * <code>
+   * repeated .google.cloud.videointelligence.v1p3beta1.DetectedAttribute attributes = 3 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    */
   com.google.cloud.videointelligence.v1p3beta1.DetectedAttribute getAttributes(int index);
@@ -148,7 +150,8 @@ public interface TrackOrBuilder
    * Optional. Attributes in the track level.
    * </pre>
    *
-   * <code>repeated .google.cloud.videointelligence.v1p3beta1.DetectedAttribute attributes = 3;
+   * <code>
+   * repeated .google.cloud.videointelligence.v1p3beta1.DetectedAttribute attributes = 3 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    */
   int getAttributesCount();
@@ -159,7 +162,8 @@ public interface TrackOrBuilder
    * Optional. Attributes in the track level.
    * </pre>
    *
-   * <code>repeated .google.cloud.videointelligence.v1p3beta1.DetectedAttribute attributes = 3;
+   * <code>
+   * repeated .google.cloud.videointelligence.v1p3beta1.DetectedAttribute attributes = 3 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    */
   java.util.List<? extends com.google.cloud.videointelligence.v1p3beta1.DetectedAttributeOrBuilder>
@@ -171,7 +175,8 @@ public interface TrackOrBuilder
    * Optional. Attributes in the track level.
    * </pre>
    *
-   * <code>repeated .google.cloud.videointelligence.v1p3beta1.DetectedAttribute attributes = 3;
+   * <code>
+   * repeated .google.cloud.videointelligence.v1p3beta1.DetectedAttribute attributes = 3 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    */
   com.google.cloud.videointelligence.v1p3beta1.DetectedAttributeOrBuilder getAttributesOrBuilder(
@@ -184,7 +189,7 @@ public interface TrackOrBuilder
    * Optional. The confidence score of the tracked object.
    * </pre>
    *
-   * <code>float confidence = 4;</code>
+   * <code>float confidence = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   float getConfidence();
 }

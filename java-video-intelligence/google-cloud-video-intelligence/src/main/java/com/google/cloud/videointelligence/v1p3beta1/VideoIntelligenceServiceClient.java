@@ -193,7 +193,7 @@ public class VideoIntelligenceServiceClient implements BackgroundResource {
    *     wildcards in `object-id`, and thus identify multiple videos. Supported wildcards: '&#42;'
    *     to match 0 or more characters; '?' to match 1 character. If unset, the input video should
    *     be embedded in the request as `input_content`. If set, `input_content` should be unset.
-   * @param features Requested video annotation features.
+   * @param features Required. Requested video annotation features.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi(

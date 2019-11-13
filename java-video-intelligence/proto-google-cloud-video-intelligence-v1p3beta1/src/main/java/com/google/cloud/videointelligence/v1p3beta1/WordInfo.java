@@ -301,7 +301,7 @@ public final class WordInfo extends com.google.protobuf.GeneratedMessageV3
    * The default of 0.0 is a sentinel value indicating `confidence` was not set.
    * </pre>
    *
-   * <code>float confidence = 4;</code>
+   * <code>float confidence = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    */
   public float getConfidence() {
     return confidence_;
@@ -319,7 +319,7 @@ public final class WordInfo extends com.google.protobuf.GeneratedMessageV3
    * and is only set if speaker diarization is enabled.
    * </pre>
    *
-   * <code>int32 speaker_tag = 5;</code>
+   * <code>int32 speaker_tag = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    */
   public int getSpeakerTag() {
     return speakerTag_;
@@ -1244,7 +1244,7 @@ public final class WordInfo extends com.google.protobuf.GeneratedMessageV3
      * The default of 0.0 is a sentinel value indicating `confidence` was not set.
      * </pre>
      *
-     * <code>float confidence = 4;</code>
+     * <code>float confidence = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     public float getConfidence() {
       return confidence_;
@@ -1261,7 +1261,7 @@ public final class WordInfo extends com.google.protobuf.GeneratedMessageV3
      * The default of 0.0 is a sentinel value indicating `confidence` was not set.
      * </pre>
      *
-     * <code>float confidence = 4;</code>
+     * <code>float confidence = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     public Builder setConfidence(float value) {
 
@@ -1281,7 +1281,7 @@ public final class WordInfo extends com.google.protobuf.GeneratedMessageV3
      * The default of 0.0 is a sentinel value indicating `confidence` was not set.
      * </pre>
      *
-     * <code>float confidence = 4;</code>
+     * <code>float confidence = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     public Builder clearConfidence() {
 
@@ -1301,7 +1301,7 @@ public final class WordInfo extends com.google.protobuf.GeneratedMessageV3
      * and is only set if speaker diarization is enabled.
      * </pre>
      *
-     * <code>int32 speaker_tag = 5;</code>
+     * <code>int32 speaker_tag = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     public int getSpeakerTag() {
       return speakerTag_;
@@ -1316,7 +1316,7 @@ public final class WordInfo extends com.google.protobuf.GeneratedMessageV3
      * and is only set if speaker diarization is enabled.
      * </pre>
      *
-     * <code>int32 speaker_tag = 5;</code>
+     * <code>int32 speaker_tag = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     public Builder setSpeakerTag(int value) {
 
@@ -1334,7 +1334,7 @@ public final class WordInfo extends com.google.protobuf.GeneratedMessageV3
      * and is only set if speaker diarization is enabled.
      * </pre>
      *
-     * <code>int32 speaker_tag = 5;</code>
+     * <code>int32 speaker_tag = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     public Builder clearSpeakerTag() {
 

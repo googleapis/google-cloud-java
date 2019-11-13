@@ -287,7 +287,8 @@ public final class Track extends com.google.protobuf.GeneratedMessageV3
    * Optional. Attributes in the track level.
    * </pre>
    *
-   * <code>repeated .google.cloud.videointelligence.v1p3beta1.DetectedAttribute attributes = 3;
+   * <code>
+   * repeated .google.cloud.videointelligence.v1p3beta1.DetectedAttribute attributes = 3 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    */
   public java.util.List<com.google.cloud.videointelligence.v1p3beta1.DetectedAttribute>
@@ -301,7 +302,8 @@ public final class Track extends com.google.protobuf.GeneratedMessageV3
    * Optional. Attributes in the track level.
    * </pre>
    *
-   * <code>repeated .google.cloud.videointelligence.v1p3beta1.DetectedAttribute attributes = 3;
+   * <code>
+   * repeated .google.cloud.videointelligence.v1p3beta1.DetectedAttribute attributes = 3 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    */
   public java.util.List<
@@ -316,7 +318,8 @@ public final class Track extends com.google.protobuf.GeneratedMessageV3
    * Optional. Attributes in the track level.
    * </pre>
    *
-   * <code>repeated .google.cloud.videointelligence.v1p3beta1.DetectedAttribute attributes = 3;
+   * <code>
+   * repeated .google.cloud.videointelligence.v1p3beta1.DetectedAttribute attributes = 3 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    */
   public int getAttributesCount() {
@@ -329,7 +332,8 @@ public final class Track extends com.google.protobuf.GeneratedMessageV3
    * Optional. Attributes in the track level.
    * </pre>
    *
-   * <code>repeated .google.cloud.videointelligence.v1p3beta1.DetectedAttribute attributes = 3;
+   * <code>
+   * repeated .google.cloud.videointelligence.v1p3beta1.DetectedAttribute attributes = 3 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    */
   public com.google.cloud.videointelligence.v1p3beta1.DetectedAttribute getAttributes(int index) {
@@ -342,7 +346,8 @@ public final class Track extends com.google.protobuf.GeneratedMessageV3
    * Optional. Attributes in the track level.
    * </pre>
    *
-   * <code>repeated .google.cloud.videointelligence.v1p3beta1.DetectedAttribute attributes = 3;
+   * <code>
+   * repeated .google.cloud.videointelligence.v1p3beta1.DetectedAttribute attributes = 3 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    */
   public com.google.cloud.videointelligence.v1p3beta1.DetectedAttributeOrBuilder
@@ -359,7 +364,7 @@ public final class Track extends com.google.protobuf.GeneratedMessageV3
    * Optional. The confidence score of the tracked object.
    * </pre>
    *
-   * <code>float confidence = 4;</code>
+   * <code>float confidence = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   public float getConfidence() {
     return confidence_;
@@ -1441,7 +1446,8 @@ public final class Track extends com.google.protobuf.GeneratedMessageV3
      * Optional. Attributes in the track level.
      * </pre>
      *
-     * <code>repeated .google.cloud.videointelligence.v1p3beta1.DetectedAttribute attributes = 3;
+     * <code>
+     * repeated .google.cloud.videointelligence.v1p3beta1.DetectedAttribute attributes = 3 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public java.util.List<com.google.cloud.videointelligence.v1p3beta1.DetectedAttribute>
@@ -1459,7 +1465,8 @@ public final class Track extends com.google.protobuf.GeneratedMessageV3
      * Optional. Attributes in the track level.
      * </pre>
      *
-     * <code>repeated .google.cloud.videointelligence.v1p3beta1.DetectedAttribute attributes = 3;
+     * <code>
+     * repeated .google.cloud.videointelligence.v1p3beta1.DetectedAttribute attributes = 3 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public int getAttributesCount() {
@@ -1476,7 +1483,8 @@ public final class Track extends com.google.protobuf.GeneratedMessageV3
      * Optional. Attributes in the track level.
      * </pre>
      *
-     * <code>repeated .google.cloud.videointelligence.v1p3beta1.DetectedAttribute attributes = 3;
+     * <code>
+     * repeated .google.cloud.videointelligence.v1p3beta1.DetectedAttribute attributes = 3 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public com.google.cloud.videointelligence.v1p3beta1.DetectedAttribute getAttributes(int index) {
@@ -1493,7 +1501,8 @@ public final class Track extends com.google.protobuf.GeneratedMessageV3
      * Optional. Attributes in the track level.
      * </pre>
      *
-     * <code>repeated .google.cloud.videointelligence.v1p3beta1.DetectedAttribute attributes = 3;
+     * <code>
+     * repeated .google.cloud.videointelligence.v1p3beta1.DetectedAttribute attributes = 3 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public Builder setAttributes(
@@ -1517,7 +1526,8 @@ public final class Track extends com.google.protobuf.GeneratedMessageV3
      * Optional. Attributes in the track level.
      * </pre>
      *
-     * <code>repeated .google.cloud.videointelligence.v1p3beta1.DetectedAttribute attributes = 3;
+     * <code>
+     * repeated .google.cloud.videointelligence.v1p3beta1.DetectedAttribute attributes = 3 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public Builder setAttributes(
@@ -1539,7 +1549,8 @@ public final class Track extends com.google.protobuf.GeneratedMessageV3
      * Optional. Attributes in the track level.
      * </pre>
      *
-     * <code>repeated .google.cloud.videointelligence.v1p3beta1.DetectedAttribute attributes = 3;
+     * <code>
+     * repeated .google.cloud.videointelligence.v1p3beta1.DetectedAttribute attributes = 3 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public Builder addAttributes(
@@ -1563,7 +1574,8 @@ public final class Track extends com.google.protobuf.GeneratedMessageV3
      * Optional. Attributes in the track level.
      * </pre>
      *
-     * <code>repeated .google.cloud.videointelligence.v1p3beta1.DetectedAttribute attributes = 3;
+     * <code>
+     * repeated .google.cloud.videointelligence.v1p3beta1.DetectedAttribute attributes = 3 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public Builder addAttributes(
@@ -1587,7 +1599,8 @@ public final class Track extends com.google.protobuf.GeneratedMessageV3
      * Optional. Attributes in the track level.
      * </pre>
      *
-     * <code>repeated .google.cloud.videointelligence.v1p3beta1.DetectedAttribute attributes = 3;
+     * <code>
+     * repeated .google.cloud.videointelligence.v1p3beta1.DetectedAttribute attributes = 3 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public Builder addAttributes(
@@ -1608,7 +1621,8 @@ public final class Track extends com.google.protobuf.GeneratedMessageV3
      * Optional. Attributes in the track level.
      * </pre>
      *
-     * <code>repeated .google.cloud.videointelligence.v1p3beta1.DetectedAttribute attributes = 3;
+     * <code>
+     * repeated .google.cloud.videointelligence.v1p3beta1.DetectedAttribute attributes = 3 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public Builder addAttributes(
@@ -1630,7 +1644,8 @@ public final class Track extends com.google.protobuf.GeneratedMessageV3
      * Optional. Attributes in the track level.
      * </pre>
      *
-     * <code>repeated .google.cloud.videointelligence.v1p3beta1.DetectedAttribute attributes = 3;
+     * <code>
+     * repeated .google.cloud.videointelligence.v1p3beta1.DetectedAttribute attributes = 3 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public Builder addAllAttributes(
@@ -1652,7 +1667,8 @@ public final class Track extends com.google.protobuf.GeneratedMessageV3
      * Optional. Attributes in the track level.
      * </pre>
      *
-     * <code>repeated .google.cloud.videointelligence.v1p3beta1.DetectedAttribute attributes = 3;
+     * <code>
+     * repeated .google.cloud.videointelligence.v1p3beta1.DetectedAttribute attributes = 3 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public Builder clearAttributes() {
@@ -1672,7 +1688,8 @@ public final class Track extends com.google.protobuf.GeneratedMessageV3
      * Optional. Attributes in the track level.
      * </pre>
      *
-     * <code>repeated .google.cloud.videointelligence.v1p3beta1.DetectedAttribute attributes = 3;
+     * <code>
+     * repeated .google.cloud.videointelligence.v1p3beta1.DetectedAttribute attributes = 3 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public Builder removeAttributes(int index) {
@@ -1692,7 +1709,8 @@ public final class Track extends com.google.protobuf.GeneratedMessageV3
      * Optional. Attributes in the track level.
      * </pre>
      *
-     * <code>repeated .google.cloud.videointelligence.v1p3beta1.DetectedAttribute attributes = 3;
+     * <code>
+     * repeated .google.cloud.videointelligence.v1p3beta1.DetectedAttribute attributes = 3 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public com.google.cloud.videointelligence.v1p3beta1.DetectedAttribute.Builder
@@ -1706,7 +1724,8 @@ public final class Track extends com.google.protobuf.GeneratedMessageV3
      * Optional. Attributes in the track level.
      * </pre>
      *
-     * <code>repeated .google.cloud.videointelligence.v1p3beta1.DetectedAttribute attributes = 3;
+     * <code>
+     * repeated .google.cloud.videointelligence.v1p3beta1.DetectedAttribute attributes = 3 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public com.google.cloud.videointelligence.v1p3beta1.DetectedAttributeOrBuilder
@@ -1724,7 +1743,8 @@ public final class Track extends com.google.protobuf.GeneratedMessageV3
      * Optional. Attributes in the track level.
      * </pre>
      *
-     * <code>repeated .google.cloud.videointelligence.v1p3beta1.DetectedAttribute attributes = 3;
+     * <code>
+     * repeated .google.cloud.videointelligence.v1p3beta1.DetectedAttribute attributes = 3 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public java.util.List<
@@ -1743,7 +1763,8 @@ public final class Track extends com.google.protobuf.GeneratedMessageV3
      * Optional. Attributes in the track level.
      * </pre>
      *
-     * <code>repeated .google.cloud.videointelligence.v1p3beta1.DetectedAttribute attributes = 3;
+     * <code>
+     * repeated .google.cloud.videointelligence.v1p3beta1.DetectedAttribute attributes = 3 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public com.google.cloud.videointelligence.v1p3beta1.DetectedAttribute.Builder
@@ -1759,7 +1780,8 @@ public final class Track extends com.google.protobuf.GeneratedMessageV3
      * Optional. Attributes in the track level.
      * </pre>
      *
-     * <code>repeated .google.cloud.videointelligence.v1p3beta1.DetectedAttribute attributes = 3;
+     * <code>
+     * repeated .google.cloud.videointelligence.v1p3beta1.DetectedAttribute attributes = 3 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public com.google.cloud.videointelligence.v1p3beta1.DetectedAttribute.Builder
@@ -1776,7 +1798,8 @@ public final class Track extends com.google.protobuf.GeneratedMessageV3
      * Optional. Attributes in the track level.
      * </pre>
      *
-     * <code>repeated .google.cloud.videointelligence.v1p3beta1.DetectedAttribute attributes = 3;
+     * <code>
+     * repeated .google.cloud.videointelligence.v1p3beta1.DetectedAttribute attributes = 3 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public java.util.List<com.google.cloud.videointelligence.v1p3beta1.DetectedAttribute.Builder>
@@ -1809,7 +1832,7 @@ public final class Track extends com.google.protobuf.GeneratedMessageV3
      * Optional. The confidence score of the tracked object.
      * </pre>
      *
-     * <code>float confidence = 4;</code>
+     * <code>float confidence = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public float getConfidence() {
       return confidence_;
@@ -1821,7 +1844,7 @@ public final class Track extends com.google.protobuf.GeneratedMessageV3
      * Optional. The confidence score of the tracked object.
      * </pre>
      *
-     * <code>float confidence = 4;</code>
+     * <code>float confidence = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public Builder setConfidence(float value) {
 
@@ -1836,7 +1859,7 @@ public final class Track extends com.google.protobuf.GeneratedMessageV3
      * Optional. The confidence score of the tracked object.
      * </pre>
      *
-     * <code>float confidence = 4;</code>
+     * <code>float confidence = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public Builder clearConfidence() {
 

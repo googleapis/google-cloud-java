@@ -188,14 +188,14 @@ public final class SpeechTranscriptionConfig extends com.google.protobuf.Generat
    *
    *
    * <pre>
-   * *Required* The language of the supplied audio as a
+   * Required. *Required* The language of the supplied audio as a
    * [BCP-47](https://www.rfc-editor.org/rfc/bcp/bcp47.txt) language tag.
    * Example: "en-US".
    * See [Language Support](https://cloud.google.com/speech/docs/languages)
    * for a list of the currently supported language codes.
    * </pre>
    *
-   * <code>string language_code = 1;</code>
+   * <code>string language_code = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   public java.lang.String getLanguageCode() {
     java.lang.Object ref = languageCode_;
@@ -212,14 +212,14 @@ public final class SpeechTranscriptionConfig extends com.google.protobuf.Generat
    *
    *
    * <pre>
-   * *Required* The language of the supplied audio as a
+   * Required. *Required* The language of the supplied audio as a
    * [BCP-47](https://www.rfc-editor.org/rfc/bcp/bcp47.txt) language tag.
    * Example: "en-US".
    * See [Language Support](https://cloud.google.com/speech/docs/languages)
    * for a list of the currently supported language codes.
    * </pre>
    *
-   * <code>string language_code = 1;</code>
+   * <code>string language_code = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   public com.google.protobuf.ByteString getLanguageCodeBytes() {
     java.lang.Object ref = languageCode_;
@@ -239,14 +239,14 @@ public final class SpeechTranscriptionConfig extends com.google.protobuf.Generat
    *
    *
    * <pre>
-   * *Optional* Maximum number of recognition hypotheses to be returned.
+   * Optional. Maximum number of recognition hypotheses to be returned.
    * Specifically, the maximum number of `SpeechRecognitionAlternative` messages
    * within each `SpeechTranscription`. The server may return fewer than
    * `max_alternatives`. Valid values are `0`-`30`. A value of `0` or `1` will
    * return a maximum of one. If omitted, will return a maximum of one.
    * </pre>
    *
-   * <code>int32 max_alternatives = 2;</code>
+   * <code>int32 max_alternatives = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   public int getMaxAlternatives() {
     return maxAlternatives_;
@@ -258,13 +258,13 @@ public final class SpeechTranscriptionConfig extends com.google.protobuf.Generat
    *
    *
    * <pre>
-   * *Optional* If set to `true`, the server will attempt to filter out
+   * Optional. If set to `true`, the server will attempt to filter out
    * profanities, replacing all but the initial character in each filtered word
    * with asterisks, e.g. "f***". If set to `false` or omitted, profanities
    * won't be filtered out.
    * </pre>
    *
-   * <code>bool filter_profanity = 3;</code>
+   * <code>bool filter_profanity = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   public boolean getFilterProfanity() {
     return filterProfanity_;
@@ -277,10 +277,11 @@ public final class SpeechTranscriptionConfig extends com.google.protobuf.Generat
    *
    *
    * <pre>
-   * *Optional* A means to provide context to assist the speech recognition.
+   * Optional. A means to provide context to assist the speech recognition.
    * </pre>
    *
-   * <code>repeated .google.cloud.videointelligence.v1p3beta1.SpeechContext speech_contexts = 4;
+   * <code>
+   * repeated .google.cloud.videointelligence.v1p3beta1.SpeechContext speech_contexts = 4 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    */
   public java.util.List<com.google.cloud.videointelligence.v1p3beta1.SpeechContext>
@@ -291,10 +292,11 @@ public final class SpeechTranscriptionConfig extends com.google.protobuf.Generat
    *
    *
    * <pre>
-   * *Optional* A means to provide context to assist the speech recognition.
+   * Optional. A means to provide context to assist the speech recognition.
    * </pre>
    *
-   * <code>repeated .google.cloud.videointelligence.v1p3beta1.SpeechContext speech_contexts = 4;
+   * <code>
+   * repeated .google.cloud.videointelligence.v1p3beta1.SpeechContext speech_contexts = 4 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    */
   public java.util.List<
@@ -306,10 +308,11 @@ public final class SpeechTranscriptionConfig extends com.google.protobuf.Generat
    *
    *
    * <pre>
-   * *Optional* A means to provide context to assist the speech recognition.
+   * Optional. A means to provide context to assist the speech recognition.
    * </pre>
    *
-   * <code>repeated .google.cloud.videointelligence.v1p3beta1.SpeechContext speech_contexts = 4;
+   * <code>
+   * repeated .google.cloud.videointelligence.v1p3beta1.SpeechContext speech_contexts = 4 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    */
   public int getSpeechContextsCount() {
@@ -319,10 +322,11 @@ public final class SpeechTranscriptionConfig extends com.google.protobuf.Generat
    *
    *
    * <pre>
-   * *Optional* A means to provide context to assist the speech recognition.
+   * Optional. A means to provide context to assist the speech recognition.
    * </pre>
    *
-   * <code>repeated .google.cloud.videointelligence.v1p3beta1.SpeechContext speech_contexts = 4;
+   * <code>
+   * repeated .google.cloud.videointelligence.v1p3beta1.SpeechContext speech_contexts = 4 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    */
   public com.google.cloud.videointelligence.v1p3beta1.SpeechContext getSpeechContexts(int index) {
@@ -332,10 +336,11 @@ public final class SpeechTranscriptionConfig extends com.google.protobuf.Generat
    *
    *
    * <pre>
-   * *Optional* A means to provide context to assist the speech recognition.
+   * Optional. A means to provide context to assist the speech recognition.
    * </pre>
    *
-   * <code>repeated .google.cloud.videointelligence.v1p3beta1.SpeechContext speech_contexts = 4;
+   * <code>
+   * repeated .google.cloud.videointelligence.v1p3beta1.SpeechContext speech_contexts = 4 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    */
   public com.google.cloud.videointelligence.v1p3beta1.SpeechContextOrBuilder
@@ -349,7 +354,7 @@ public final class SpeechTranscriptionConfig extends com.google.protobuf.Generat
    *
    *
    * <pre>
-   * *Optional* If 'true', adds punctuation to recognition result hypotheses.
+   * Optional. If 'true', adds punctuation to recognition result hypotheses.
    * This feature is only available in select languages. Setting this for
    * requests in other languages has no effect at all. The default 'false' value
    * does not add punctuation to result hypotheses. NOTE: "This is currently
@@ -357,7 +362,7 @@ public final class SpeechTranscriptionConfig extends com.google.protobuf.Generat
    * future this may be exclusively available as a premium feature."
    * </pre>
    *
-   * <code>bool enable_automatic_punctuation = 5;</code>
+   * <code>bool enable_automatic_punctuation = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   public boolean getEnableAutomaticPunctuation() {
     return enableAutomaticPunctuation_;
@@ -369,11 +374,11 @@ public final class SpeechTranscriptionConfig extends com.google.protobuf.Generat
    *
    *
    * <pre>
-   * *Optional* For file formats, such as MXF or MKV, supporting multiple audio
+   * Optional. For file formats, such as MXF or MKV, supporting multiple audio
    * tracks, specify up to two tracks. Default: track 0.
    * </pre>
    *
-   * <code>repeated int32 audio_tracks = 6;</code>
+   * <code>repeated int32 audio_tracks = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   public java.util.List<java.lang.Integer> getAudioTracksList() {
     return audioTracks_;
@@ -382,11 +387,11 @@ public final class SpeechTranscriptionConfig extends com.google.protobuf.Generat
    *
    *
    * <pre>
-   * *Optional* For file formats, such as MXF or MKV, supporting multiple audio
+   * Optional. For file formats, such as MXF or MKV, supporting multiple audio
    * tracks, specify up to two tracks. Default: track 0.
    * </pre>
    *
-   * <code>repeated int32 audio_tracks = 6;</code>
+   * <code>repeated int32 audio_tracks = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   public int getAudioTracksCount() {
     return audioTracks_.size();
@@ -395,11 +400,11 @@ public final class SpeechTranscriptionConfig extends com.google.protobuf.Generat
    *
    *
    * <pre>
-   * *Optional* For file formats, such as MXF or MKV, supporting multiple audio
+   * Optional. For file formats, such as MXF or MKV, supporting multiple audio
    * tracks, specify up to two tracks. Default: track 0.
    * </pre>
    *
-   * <code>repeated int32 audio_tracks = 6;</code>
+   * <code>repeated int32 audio_tracks = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   public int getAudioTracks(int index) {
     return audioTracks_.getInt(index);
@@ -413,7 +418,7 @@ public final class SpeechTranscriptionConfig extends com.google.protobuf.Generat
    *
    *
    * <pre>
-   * *Optional* If 'true', enables speaker detection for each recognized word in
+   * Optional. If 'true', enables speaker detection for each recognized word in
    * the top alternative of the recognition result using a speaker_tag provided
    * in the WordInfo.
    * Note: When this is true, we send all the words from the beginning of the
@@ -422,7 +427,7 @@ public final class SpeechTranscriptionConfig extends com.google.protobuf.Generat
    * identify the speakers in the conversation over time.
    * </pre>
    *
-   * <code>bool enable_speaker_diarization = 7;</code>
+   * <code>bool enable_speaker_diarization = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   public boolean getEnableSpeakerDiarization() {
     return enableSpeakerDiarization_;
@@ -434,13 +439,12 @@ public final class SpeechTranscriptionConfig extends com.google.protobuf.Generat
    *
    *
    * <pre>
-   * *Optional*
-   * If set, specifies the estimated number of speakers in the conversation.
-   * If not set, defaults to '2'.
-   * Ignored unless enable_speaker_diarization is set to true.
+   * Optional. If set, specifies the estimated number of speakers in the
+   * conversation. If not set, defaults to '2'. Ignored unless
+   * enable_speaker_diarization is set to true.
    * </pre>
    *
-   * <code>int32 diarization_speaker_count = 8;</code>
+   * <code>int32 diarization_speaker_count = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   public int getDiarizationSpeakerCount() {
     return diarizationSpeakerCount_;
@@ -452,12 +456,12 @@ public final class SpeechTranscriptionConfig extends com.google.protobuf.Generat
    *
    *
    * <pre>
-   * *Optional* If `true`, the top result includes a list of words and the
+   * Optional. If `true`, the top result includes a list of words and the
    * confidence for those words. If `false`, no word-level confidence
    * information is returned. The default is `false`.
    * </pre>
    *
-   * <code>bool enable_word_confidence = 9;</code>
+   * <code>bool enable_word_confidence = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   public boolean getEnableWordConfidence() {
     return enableWordConfidence_;
@@ -989,14 +993,14 @@ public final class SpeechTranscriptionConfig extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * *Required* The language of the supplied audio as a
+     * Required. *Required* The language of the supplied audio as a
      * [BCP-47](https://www.rfc-editor.org/rfc/bcp/bcp47.txt) language tag.
      * Example: "en-US".
      * See [Language Support](https://cloud.google.com/speech/docs/languages)
      * for a list of the currently supported language codes.
      * </pre>
      *
-     * <code>string language_code = 1;</code>
+     * <code>string language_code = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public java.lang.String getLanguageCode() {
       java.lang.Object ref = languageCode_;
@@ -1013,14 +1017,14 @@ public final class SpeechTranscriptionConfig extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * *Required* The language of the supplied audio as a
+     * Required. *Required* The language of the supplied audio as a
      * [BCP-47](https://www.rfc-editor.org/rfc/bcp/bcp47.txt) language tag.
      * Example: "en-US".
      * See [Language Support](https://cloud.google.com/speech/docs/languages)
      * for a list of the currently supported language codes.
      * </pre>
      *
-     * <code>string language_code = 1;</code>
+     * <code>string language_code = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public com.google.protobuf.ByteString getLanguageCodeBytes() {
       java.lang.Object ref = languageCode_;
@@ -1037,14 +1041,14 @@ public final class SpeechTranscriptionConfig extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * *Required* The language of the supplied audio as a
+     * Required. *Required* The language of the supplied audio as a
      * [BCP-47](https://www.rfc-editor.org/rfc/bcp/bcp47.txt) language tag.
      * Example: "en-US".
      * See [Language Support](https://cloud.google.com/speech/docs/languages)
      * for a list of the currently supported language codes.
      * </pre>
      *
-     * <code>string language_code = 1;</code>
+     * <code>string language_code = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder setLanguageCode(java.lang.String value) {
       if (value == null) {
@@ -1059,14 +1063,14 @@ public final class SpeechTranscriptionConfig extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * *Required* The language of the supplied audio as a
+     * Required. *Required* The language of the supplied audio as a
      * [BCP-47](https://www.rfc-editor.org/rfc/bcp/bcp47.txt) language tag.
      * Example: "en-US".
      * See [Language Support](https://cloud.google.com/speech/docs/languages)
      * for a list of the currently supported language codes.
      * </pre>
      *
-     * <code>string language_code = 1;</code>
+     * <code>string language_code = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder clearLanguageCode() {
 
@@ -1078,14 +1082,14 @@ public final class SpeechTranscriptionConfig extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * *Required* The language of the supplied audio as a
+     * Required. *Required* The language of the supplied audio as a
      * [BCP-47](https://www.rfc-editor.org/rfc/bcp/bcp47.txt) language tag.
      * Example: "en-US".
      * See [Language Support](https://cloud.google.com/speech/docs/languages)
      * for a list of the currently supported language codes.
      * </pre>
      *
-     * <code>string language_code = 1;</code>
+     * <code>string language_code = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder setLanguageCodeBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -1103,14 +1107,14 @@ public final class SpeechTranscriptionConfig extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * *Optional* Maximum number of recognition hypotheses to be returned.
+     * Optional. Maximum number of recognition hypotheses to be returned.
      * Specifically, the maximum number of `SpeechRecognitionAlternative` messages
      * within each `SpeechTranscription`. The server may return fewer than
      * `max_alternatives`. Valid values are `0`-`30`. A value of `0` or `1` will
      * return a maximum of one. If omitted, will return a maximum of one.
      * </pre>
      *
-     * <code>int32 max_alternatives = 2;</code>
+     * <code>int32 max_alternatives = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public int getMaxAlternatives() {
       return maxAlternatives_;
@@ -1119,14 +1123,14 @@ public final class SpeechTranscriptionConfig extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * *Optional* Maximum number of recognition hypotheses to be returned.
+     * Optional. Maximum number of recognition hypotheses to be returned.
      * Specifically, the maximum number of `SpeechRecognitionAlternative` messages
      * within each `SpeechTranscription`. The server may return fewer than
      * `max_alternatives`. Valid values are `0`-`30`. A value of `0` or `1` will
      * return a maximum of one. If omitted, will return a maximum of one.
      * </pre>
      *
-     * <code>int32 max_alternatives = 2;</code>
+     * <code>int32 max_alternatives = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public Builder setMaxAlternatives(int value) {
 
@@ -1138,14 +1142,14 @@ public final class SpeechTranscriptionConfig extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * *Optional* Maximum number of recognition hypotheses to be returned.
+     * Optional. Maximum number of recognition hypotheses to be returned.
      * Specifically, the maximum number of `SpeechRecognitionAlternative` messages
      * within each `SpeechTranscription`. The server may return fewer than
      * `max_alternatives`. Valid values are `0`-`30`. A value of `0` or `1` will
      * return a maximum of one. If omitted, will return a maximum of one.
      * </pre>
      *
-     * <code>int32 max_alternatives = 2;</code>
+     * <code>int32 max_alternatives = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public Builder clearMaxAlternatives() {
 
@@ -1159,13 +1163,13 @@ public final class SpeechTranscriptionConfig extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * *Optional* If set to `true`, the server will attempt to filter out
+     * Optional. If set to `true`, the server will attempt to filter out
      * profanities, replacing all but the initial character in each filtered word
      * with asterisks, e.g. "f***". If set to `false` or omitted, profanities
      * won't be filtered out.
      * </pre>
      *
-     * <code>bool filter_profanity = 3;</code>
+     * <code>bool filter_profanity = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public boolean getFilterProfanity() {
       return filterProfanity_;
@@ -1174,13 +1178,13 @@ public final class SpeechTranscriptionConfig extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * *Optional* If set to `true`, the server will attempt to filter out
+     * Optional. If set to `true`, the server will attempt to filter out
      * profanities, replacing all but the initial character in each filtered word
      * with asterisks, e.g. "f***". If set to `false` or omitted, profanities
      * won't be filtered out.
      * </pre>
      *
-     * <code>bool filter_profanity = 3;</code>
+     * <code>bool filter_profanity = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public Builder setFilterProfanity(boolean value) {
 
@@ -1192,13 +1196,13 @@ public final class SpeechTranscriptionConfig extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * *Optional* If set to `true`, the server will attempt to filter out
+     * Optional. If set to `true`, the server will attempt to filter out
      * profanities, replacing all but the initial character in each filtered word
      * with asterisks, e.g. "f***". If set to `false` or omitted, profanities
      * won't be filtered out.
      * </pre>
      *
-     * <code>bool filter_profanity = 3;</code>
+     * <code>bool filter_profanity = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public Builder clearFilterProfanity() {
 
@@ -1229,10 +1233,11 @@ public final class SpeechTranscriptionConfig extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * *Optional* A means to provide context to assist the speech recognition.
+     * Optional. A means to provide context to assist the speech recognition.
      * </pre>
      *
-     * <code>repeated .google.cloud.videointelligence.v1p3beta1.SpeechContext speech_contexts = 4;
+     * <code>
+     * repeated .google.cloud.videointelligence.v1p3beta1.SpeechContext speech_contexts = 4 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public java.util.List<com.google.cloud.videointelligence.v1p3beta1.SpeechContext>
@@ -1247,10 +1252,11 @@ public final class SpeechTranscriptionConfig extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * *Optional* A means to provide context to assist the speech recognition.
+     * Optional. A means to provide context to assist the speech recognition.
      * </pre>
      *
-     * <code>repeated .google.cloud.videointelligence.v1p3beta1.SpeechContext speech_contexts = 4;
+     * <code>
+     * repeated .google.cloud.videointelligence.v1p3beta1.SpeechContext speech_contexts = 4 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public int getSpeechContextsCount() {
@@ -1264,10 +1270,11 @@ public final class SpeechTranscriptionConfig extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * *Optional* A means to provide context to assist the speech recognition.
+     * Optional. A means to provide context to assist the speech recognition.
      * </pre>
      *
-     * <code>repeated .google.cloud.videointelligence.v1p3beta1.SpeechContext speech_contexts = 4;
+     * <code>
+     * repeated .google.cloud.videointelligence.v1p3beta1.SpeechContext speech_contexts = 4 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public com.google.cloud.videointelligence.v1p3beta1.SpeechContext getSpeechContexts(int index) {
@@ -1281,10 +1288,11 @@ public final class SpeechTranscriptionConfig extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * *Optional* A means to provide context to assist the speech recognition.
+     * Optional. A means to provide context to assist the speech recognition.
      * </pre>
      *
-     * <code>repeated .google.cloud.videointelligence.v1p3beta1.SpeechContext speech_contexts = 4;
+     * <code>
+     * repeated .google.cloud.videointelligence.v1p3beta1.SpeechContext speech_contexts = 4 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public Builder setSpeechContexts(
@@ -1305,10 +1313,11 @@ public final class SpeechTranscriptionConfig extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * *Optional* A means to provide context to assist the speech recognition.
+     * Optional. A means to provide context to assist the speech recognition.
      * </pre>
      *
-     * <code>repeated .google.cloud.videointelligence.v1p3beta1.SpeechContext speech_contexts = 4;
+     * <code>
+     * repeated .google.cloud.videointelligence.v1p3beta1.SpeechContext speech_contexts = 4 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public Builder setSpeechContexts(
@@ -1327,10 +1336,11 @@ public final class SpeechTranscriptionConfig extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * *Optional* A means to provide context to assist the speech recognition.
+     * Optional. A means to provide context to assist the speech recognition.
      * </pre>
      *
-     * <code>repeated .google.cloud.videointelligence.v1p3beta1.SpeechContext speech_contexts = 4;
+     * <code>
+     * repeated .google.cloud.videointelligence.v1p3beta1.SpeechContext speech_contexts = 4 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public Builder addSpeechContexts(
@@ -1351,10 +1361,11 @@ public final class SpeechTranscriptionConfig extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * *Optional* A means to provide context to assist the speech recognition.
+     * Optional. A means to provide context to assist the speech recognition.
      * </pre>
      *
-     * <code>repeated .google.cloud.videointelligence.v1p3beta1.SpeechContext speech_contexts = 4;
+     * <code>
+     * repeated .google.cloud.videointelligence.v1p3beta1.SpeechContext speech_contexts = 4 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public Builder addSpeechContexts(
@@ -1375,10 +1386,11 @@ public final class SpeechTranscriptionConfig extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * *Optional* A means to provide context to assist the speech recognition.
+     * Optional. A means to provide context to assist the speech recognition.
      * </pre>
      *
-     * <code>repeated .google.cloud.videointelligence.v1p3beta1.SpeechContext speech_contexts = 4;
+     * <code>
+     * repeated .google.cloud.videointelligence.v1p3beta1.SpeechContext speech_contexts = 4 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public Builder addSpeechContexts(
@@ -1396,10 +1408,11 @@ public final class SpeechTranscriptionConfig extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * *Optional* A means to provide context to assist the speech recognition.
+     * Optional. A means to provide context to assist the speech recognition.
      * </pre>
      *
-     * <code>repeated .google.cloud.videointelligence.v1p3beta1.SpeechContext speech_contexts = 4;
+     * <code>
+     * repeated .google.cloud.videointelligence.v1p3beta1.SpeechContext speech_contexts = 4 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public Builder addSpeechContexts(
@@ -1418,10 +1431,11 @@ public final class SpeechTranscriptionConfig extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * *Optional* A means to provide context to assist the speech recognition.
+     * Optional. A means to provide context to assist the speech recognition.
      * </pre>
      *
-     * <code>repeated .google.cloud.videointelligence.v1p3beta1.SpeechContext speech_contexts = 4;
+     * <code>
+     * repeated .google.cloud.videointelligence.v1p3beta1.SpeechContext speech_contexts = 4 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public Builder addAllSpeechContexts(
@@ -1440,10 +1454,11 @@ public final class SpeechTranscriptionConfig extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * *Optional* A means to provide context to assist the speech recognition.
+     * Optional. A means to provide context to assist the speech recognition.
      * </pre>
      *
-     * <code>repeated .google.cloud.videointelligence.v1p3beta1.SpeechContext speech_contexts = 4;
+     * <code>
+     * repeated .google.cloud.videointelligence.v1p3beta1.SpeechContext speech_contexts = 4 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public Builder clearSpeechContexts() {
@@ -1460,10 +1475,11 @@ public final class SpeechTranscriptionConfig extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * *Optional* A means to provide context to assist the speech recognition.
+     * Optional. A means to provide context to assist the speech recognition.
      * </pre>
      *
-     * <code>repeated .google.cloud.videointelligence.v1p3beta1.SpeechContext speech_contexts = 4;
+     * <code>
+     * repeated .google.cloud.videointelligence.v1p3beta1.SpeechContext speech_contexts = 4 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public Builder removeSpeechContexts(int index) {
@@ -1480,10 +1496,11 @@ public final class SpeechTranscriptionConfig extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * *Optional* A means to provide context to assist the speech recognition.
+     * Optional. A means to provide context to assist the speech recognition.
      * </pre>
      *
-     * <code>repeated .google.cloud.videointelligence.v1p3beta1.SpeechContext speech_contexts = 4;
+     * <code>
+     * repeated .google.cloud.videointelligence.v1p3beta1.SpeechContext speech_contexts = 4 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public com.google.cloud.videointelligence.v1p3beta1.SpeechContext.Builder
@@ -1494,10 +1511,11 @@ public final class SpeechTranscriptionConfig extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * *Optional* A means to provide context to assist the speech recognition.
+     * Optional. A means to provide context to assist the speech recognition.
      * </pre>
      *
-     * <code>repeated .google.cloud.videointelligence.v1p3beta1.SpeechContext speech_contexts = 4;
+     * <code>
+     * repeated .google.cloud.videointelligence.v1p3beta1.SpeechContext speech_contexts = 4 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public com.google.cloud.videointelligence.v1p3beta1.SpeechContextOrBuilder
@@ -1512,10 +1530,11 @@ public final class SpeechTranscriptionConfig extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * *Optional* A means to provide context to assist the speech recognition.
+     * Optional. A means to provide context to assist the speech recognition.
      * </pre>
      *
-     * <code>repeated .google.cloud.videointelligence.v1p3beta1.SpeechContext speech_contexts = 4;
+     * <code>
+     * repeated .google.cloud.videointelligence.v1p3beta1.SpeechContext speech_contexts = 4 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public java.util.List<
@@ -1531,10 +1550,11 @@ public final class SpeechTranscriptionConfig extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * *Optional* A means to provide context to assist the speech recognition.
+     * Optional. A means to provide context to assist the speech recognition.
      * </pre>
      *
-     * <code>repeated .google.cloud.videointelligence.v1p3beta1.SpeechContext speech_contexts = 4;
+     * <code>
+     * repeated .google.cloud.videointelligence.v1p3beta1.SpeechContext speech_contexts = 4 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public com.google.cloud.videointelligence.v1p3beta1.SpeechContext.Builder
@@ -1547,10 +1567,11 @@ public final class SpeechTranscriptionConfig extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * *Optional* A means to provide context to assist the speech recognition.
+     * Optional. A means to provide context to assist the speech recognition.
      * </pre>
      *
-     * <code>repeated .google.cloud.videointelligence.v1p3beta1.SpeechContext speech_contexts = 4;
+     * <code>
+     * repeated .google.cloud.videointelligence.v1p3beta1.SpeechContext speech_contexts = 4 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public com.google.cloud.videointelligence.v1p3beta1.SpeechContext.Builder
@@ -1564,10 +1585,11 @@ public final class SpeechTranscriptionConfig extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * *Optional* A means to provide context to assist the speech recognition.
+     * Optional. A means to provide context to assist the speech recognition.
      * </pre>
      *
-     * <code>repeated .google.cloud.videointelligence.v1p3beta1.SpeechContext speech_contexts = 4;
+     * <code>
+     * repeated .google.cloud.videointelligence.v1p3beta1.SpeechContext speech_contexts = 4 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public java.util.List<com.google.cloud.videointelligence.v1p3beta1.SpeechContext.Builder>
@@ -1600,7 +1622,7 @@ public final class SpeechTranscriptionConfig extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * *Optional* If 'true', adds punctuation to recognition result hypotheses.
+     * Optional. If 'true', adds punctuation to recognition result hypotheses.
      * This feature is only available in select languages. Setting this for
      * requests in other languages has no effect at all. The default 'false' value
      * does not add punctuation to result hypotheses. NOTE: "This is currently
@@ -1608,7 +1630,7 @@ public final class SpeechTranscriptionConfig extends com.google.protobuf.Generat
      * future this may be exclusively available as a premium feature."
      * </pre>
      *
-     * <code>bool enable_automatic_punctuation = 5;</code>
+     * <code>bool enable_automatic_punctuation = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public boolean getEnableAutomaticPunctuation() {
       return enableAutomaticPunctuation_;
@@ -1617,7 +1639,7 @@ public final class SpeechTranscriptionConfig extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * *Optional* If 'true', adds punctuation to recognition result hypotheses.
+     * Optional. If 'true', adds punctuation to recognition result hypotheses.
      * This feature is only available in select languages. Setting this for
      * requests in other languages has no effect at all. The default 'false' value
      * does not add punctuation to result hypotheses. NOTE: "This is currently
@@ -1625,7 +1647,7 @@ public final class SpeechTranscriptionConfig extends com.google.protobuf.Generat
      * future this may be exclusively available as a premium feature."
      * </pre>
      *
-     * <code>bool enable_automatic_punctuation = 5;</code>
+     * <code>bool enable_automatic_punctuation = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public Builder setEnableAutomaticPunctuation(boolean value) {
 
@@ -1637,7 +1659,7 @@ public final class SpeechTranscriptionConfig extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * *Optional* If 'true', adds punctuation to recognition result hypotheses.
+     * Optional. If 'true', adds punctuation to recognition result hypotheses.
      * This feature is only available in select languages. Setting this for
      * requests in other languages has no effect at all. The default 'false' value
      * does not add punctuation to result hypotheses. NOTE: "This is currently
@@ -1645,7 +1667,7 @@ public final class SpeechTranscriptionConfig extends com.google.protobuf.Generat
      * future this may be exclusively available as a premium feature."
      * </pre>
      *
-     * <code>bool enable_automatic_punctuation = 5;</code>
+     * <code>bool enable_automatic_punctuation = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public Builder clearEnableAutomaticPunctuation() {
 
@@ -1666,11 +1688,11 @@ public final class SpeechTranscriptionConfig extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * *Optional* For file formats, such as MXF or MKV, supporting multiple audio
+     * Optional. For file formats, such as MXF or MKV, supporting multiple audio
      * tracks, specify up to two tracks. Default: track 0.
      * </pre>
      *
-     * <code>repeated int32 audio_tracks = 6;</code>
+     * <code>repeated int32 audio_tracks = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public java.util.List<java.lang.Integer> getAudioTracksList() {
       return ((bitField0_ & 0x00000020) != 0)
@@ -1681,11 +1703,11 @@ public final class SpeechTranscriptionConfig extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * *Optional* For file formats, such as MXF or MKV, supporting multiple audio
+     * Optional. For file formats, such as MXF or MKV, supporting multiple audio
      * tracks, specify up to two tracks. Default: track 0.
      * </pre>
      *
-     * <code>repeated int32 audio_tracks = 6;</code>
+     * <code>repeated int32 audio_tracks = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public int getAudioTracksCount() {
       return audioTracks_.size();
@@ -1694,11 +1716,11 @@ public final class SpeechTranscriptionConfig extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * *Optional* For file formats, such as MXF or MKV, supporting multiple audio
+     * Optional. For file formats, such as MXF or MKV, supporting multiple audio
      * tracks, specify up to two tracks. Default: track 0.
      * </pre>
      *
-     * <code>repeated int32 audio_tracks = 6;</code>
+     * <code>repeated int32 audio_tracks = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public int getAudioTracks(int index) {
       return audioTracks_.getInt(index);
@@ -1707,11 +1729,11 @@ public final class SpeechTranscriptionConfig extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * *Optional* For file formats, such as MXF or MKV, supporting multiple audio
+     * Optional. For file formats, such as MXF or MKV, supporting multiple audio
      * tracks, specify up to two tracks. Default: track 0.
      * </pre>
      *
-     * <code>repeated int32 audio_tracks = 6;</code>
+     * <code>repeated int32 audio_tracks = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public Builder setAudioTracks(int index, int value) {
       ensureAudioTracksIsMutable();
@@ -1723,11 +1745,11 @@ public final class SpeechTranscriptionConfig extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * *Optional* For file formats, such as MXF or MKV, supporting multiple audio
+     * Optional. For file formats, such as MXF or MKV, supporting multiple audio
      * tracks, specify up to two tracks. Default: track 0.
      * </pre>
      *
-     * <code>repeated int32 audio_tracks = 6;</code>
+     * <code>repeated int32 audio_tracks = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public Builder addAudioTracks(int value) {
       ensureAudioTracksIsMutable();
@@ -1739,11 +1761,11 @@ public final class SpeechTranscriptionConfig extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * *Optional* For file formats, such as MXF or MKV, supporting multiple audio
+     * Optional. For file formats, such as MXF or MKV, supporting multiple audio
      * tracks, specify up to two tracks. Default: track 0.
      * </pre>
      *
-     * <code>repeated int32 audio_tracks = 6;</code>
+     * <code>repeated int32 audio_tracks = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public Builder addAllAudioTracks(java.lang.Iterable<? extends java.lang.Integer> values) {
       ensureAudioTracksIsMutable();
@@ -1755,11 +1777,11 @@ public final class SpeechTranscriptionConfig extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * *Optional* For file formats, such as MXF or MKV, supporting multiple audio
+     * Optional. For file formats, such as MXF or MKV, supporting multiple audio
      * tracks, specify up to two tracks. Default: track 0.
      * </pre>
      *
-     * <code>repeated int32 audio_tracks = 6;</code>
+     * <code>repeated int32 audio_tracks = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public Builder clearAudioTracks() {
       audioTracks_ = emptyIntList();
@@ -1773,7 +1795,7 @@ public final class SpeechTranscriptionConfig extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * *Optional* If 'true', enables speaker detection for each recognized word in
+     * Optional. If 'true', enables speaker detection for each recognized word in
      * the top alternative of the recognition result using a speaker_tag provided
      * in the WordInfo.
      * Note: When this is true, we send all the words from the beginning of the
@@ -1782,7 +1804,7 @@ public final class SpeechTranscriptionConfig extends com.google.protobuf.Generat
      * identify the speakers in the conversation over time.
      * </pre>
      *
-     * <code>bool enable_speaker_diarization = 7;</code>
+     * <code>bool enable_speaker_diarization = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public boolean getEnableSpeakerDiarization() {
       return enableSpeakerDiarization_;
@@ -1791,7 +1813,7 @@ public final class SpeechTranscriptionConfig extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * *Optional* If 'true', enables speaker detection for each recognized word in
+     * Optional. If 'true', enables speaker detection for each recognized word in
      * the top alternative of the recognition result using a speaker_tag provided
      * in the WordInfo.
      * Note: When this is true, we send all the words from the beginning of the
@@ -1800,7 +1822,7 @@ public final class SpeechTranscriptionConfig extends com.google.protobuf.Generat
      * identify the speakers in the conversation over time.
      * </pre>
      *
-     * <code>bool enable_speaker_diarization = 7;</code>
+     * <code>bool enable_speaker_diarization = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public Builder setEnableSpeakerDiarization(boolean value) {
 
@@ -1812,7 +1834,7 @@ public final class SpeechTranscriptionConfig extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * *Optional* If 'true', enables speaker detection for each recognized word in
+     * Optional. If 'true', enables speaker detection for each recognized word in
      * the top alternative of the recognition result using a speaker_tag provided
      * in the WordInfo.
      * Note: When this is true, we send all the words from the beginning of the
@@ -1821,7 +1843,7 @@ public final class SpeechTranscriptionConfig extends com.google.protobuf.Generat
      * identify the speakers in the conversation over time.
      * </pre>
      *
-     * <code>bool enable_speaker_diarization = 7;</code>
+     * <code>bool enable_speaker_diarization = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public Builder clearEnableSpeakerDiarization() {
 
@@ -1835,13 +1857,12 @@ public final class SpeechTranscriptionConfig extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * *Optional*
-     * If set, specifies the estimated number of speakers in the conversation.
-     * If not set, defaults to '2'.
-     * Ignored unless enable_speaker_diarization is set to true.
+     * Optional. If set, specifies the estimated number of speakers in the
+     * conversation. If not set, defaults to '2'. Ignored unless
+     * enable_speaker_diarization is set to true.
      * </pre>
      *
-     * <code>int32 diarization_speaker_count = 8;</code>
+     * <code>int32 diarization_speaker_count = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public int getDiarizationSpeakerCount() {
       return diarizationSpeakerCount_;
@@ -1850,13 +1871,12 @@ public final class SpeechTranscriptionConfig extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * *Optional*
-     * If set, specifies the estimated number of speakers in the conversation.
-     * If not set, defaults to '2'.
-     * Ignored unless enable_speaker_diarization is set to true.
+     * Optional. If set, specifies the estimated number of speakers in the
+     * conversation. If not set, defaults to '2'. Ignored unless
+     * enable_speaker_diarization is set to true.
      * </pre>
      *
-     * <code>int32 diarization_speaker_count = 8;</code>
+     * <code>int32 diarization_speaker_count = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public Builder setDiarizationSpeakerCount(int value) {
 
@@ -1868,13 +1888,12 @@ public final class SpeechTranscriptionConfig extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * *Optional*
-     * If set, specifies the estimated number of speakers in the conversation.
-     * If not set, defaults to '2'.
-     * Ignored unless enable_speaker_diarization is set to true.
+     * Optional. If set, specifies the estimated number of speakers in the
+     * conversation. If not set, defaults to '2'. Ignored unless
+     * enable_speaker_diarization is set to true.
      * </pre>
      *
-     * <code>int32 diarization_speaker_count = 8;</code>
+     * <code>int32 diarization_speaker_count = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public Builder clearDiarizationSpeakerCount() {
 
@@ -1888,12 +1907,12 @@ public final class SpeechTranscriptionConfig extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * *Optional* If `true`, the top result includes a list of words and the
+     * Optional. If `true`, the top result includes a list of words and the
      * confidence for those words. If `false`, no word-level confidence
      * information is returned. The default is `false`.
      * </pre>
      *
-     * <code>bool enable_word_confidence = 9;</code>
+     * <code>bool enable_word_confidence = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public boolean getEnableWordConfidence() {
       return enableWordConfidence_;
@@ -1902,12 +1921,12 @@ public final class SpeechTranscriptionConfig extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * *Optional* If `true`, the top result includes a list of words and the
+     * Optional. If `true`, the top result includes a list of words and the
      * confidence for those words. If `false`, no word-level confidence
      * information is returned. The default is `false`.
      * </pre>
      *
-     * <code>bool enable_word_confidence = 9;</code>
+     * <code>bool enable_word_confidence = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public Builder setEnableWordConfidence(boolean value) {
 
@@ -1919,12 +1938,12 @@ public final class SpeechTranscriptionConfig extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * *Optional* If `true`, the top result includes a list of words and the
+     * Optional. If `true`, the top result includes a list of words and the
      * confidence for those words. If `false`, no word-level confidence
      * information is returned. The default is `false`.
      * </pre>
      *
-     * <code>bool enable_word_confidence = 9;</code>
+     * <code>bool enable_word_confidence = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public Builder clearEnableWordConfidence() {
 

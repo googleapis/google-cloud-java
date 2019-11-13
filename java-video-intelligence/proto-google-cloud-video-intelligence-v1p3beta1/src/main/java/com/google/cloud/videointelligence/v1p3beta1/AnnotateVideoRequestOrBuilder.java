@@ -79,50 +79,60 @@ public interface AnnotateVideoRequestOrBuilder
    *
    *
    * <pre>
-   * Requested video annotation features.
+   * Required. Requested video annotation features.
    * </pre>
    *
-   * <code>repeated .google.cloud.videointelligence.v1p3beta1.Feature features = 2;</code>
+   * <code>
+   * repeated .google.cloud.videointelligence.v1p3beta1.Feature features = 2 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   java.util.List<com.google.cloud.videointelligence.v1p3beta1.Feature> getFeaturesList();
   /**
    *
    *
    * <pre>
-   * Requested video annotation features.
+   * Required. Requested video annotation features.
    * </pre>
    *
-   * <code>repeated .google.cloud.videointelligence.v1p3beta1.Feature features = 2;</code>
+   * <code>
+   * repeated .google.cloud.videointelligence.v1p3beta1.Feature features = 2 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   int getFeaturesCount();
   /**
    *
    *
    * <pre>
-   * Requested video annotation features.
+   * Required. Requested video annotation features.
    * </pre>
    *
-   * <code>repeated .google.cloud.videointelligence.v1p3beta1.Feature features = 2;</code>
+   * <code>
+   * repeated .google.cloud.videointelligence.v1p3beta1.Feature features = 2 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   com.google.cloud.videointelligence.v1p3beta1.Feature getFeatures(int index);
   /**
    *
    *
    * <pre>
-   * Requested video annotation features.
+   * Required. Requested video annotation features.
    * </pre>
    *
-   * <code>repeated .google.cloud.videointelligence.v1p3beta1.Feature features = 2;</code>
+   * <code>
+   * repeated .google.cloud.videointelligence.v1p3beta1.Feature features = 2 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   java.util.List<java.lang.Integer> getFeaturesValueList();
   /**
    *
    *
    * <pre>
-   * Requested video annotation features.
+   * Required. Requested video annotation features.
    * </pre>
    *
-   * <code>repeated .google.cloud.videointelligence.v1p3beta1.Feature features = 2;</code>
+   * <code>
+   * repeated .google.cloud.videointelligence.v1p3beta1.Feature features = 2 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   int getFeaturesValue(int index);
 
@@ -161,7 +171,7 @@ public interface AnnotateVideoRequestOrBuilder
    *
    *
    * <pre>
-   * Optional location where the output (in JSON format) should be stored.
+   * Optional. Location where the output (in JSON format) should be stored.
    * Currently, only [Google Cloud Storage](https://cloud.google.com/storage/)
    * URIs are supported, which must be specified in the following format:
    * `gs://bucket-id/object-id` (other URI formats return
@@ -169,14 +179,14 @@ public interface AnnotateVideoRequestOrBuilder
    * more information, see [Request URIs](/storage/docs/reference-uris).
    * </pre>
    *
-   * <code>string output_uri = 4;</code>
+   * <code>string output_uri = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   java.lang.String getOutputUri();
   /**
    *
    *
    * <pre>
-   * Optional location where the output (in JSON format) should be stored.
+   * Optional. Location where the output (in JSON format) should be stored.
    * Currently, only [Google Cloud Storage](https://cloud.google.com/storage/)
    * URIs are supported, which must be specified in the following format:
    * `gs://bucket-id/object-id` (other URI formats return
@@ -184,7 +194,7 @@ public interface AnnotateVideoRequestOrBuilder
    * more information, see [Request URIs](/storage/docs/reference-uris).
    * </pre>
    *
-   * <code>string output_uri = 4;</code>
+   * <code>string output_uri = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   com.google.protobuf.ByteString getOutputUriBytes();
 
@@ -192,24 +202,24 @@ public interface AnnotateVideoRequestOrBuilder
    *
    *
    * <pre>
-   * Optional cloud region where annotation should take place. Supported cloud
+   * Optional. Cloud region where annotation should take place. Supported cloud
    * regions: `us-east1`, `us-west1`, `europe-west1`, `asia-east1`. If no region
    * is specified, a region will be determined based on video file location.
    * </pre>
    *
-   * <code>string location_id = 5;</code>
+   * <code>string location_id = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   java.lang.String getLocationId();
   /**
    *
    *
    * <pre>
-   * Optional cloud region where annotation should take place. Supported cloud
+   * Optional. Cloud region where annotation should take place. Supported cloud
    * regions: `us-east1`, `us-west1`, `europe-west1`, `asia-east1`. If no region
    * is specified, a region will be determined based on video file location.
    * </pre>
    *
-   * <code>string location_id = 5;</code>
+   * <code>string location_id = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   com.google.protobuf.ByteString getLocationIdBytes();
 }

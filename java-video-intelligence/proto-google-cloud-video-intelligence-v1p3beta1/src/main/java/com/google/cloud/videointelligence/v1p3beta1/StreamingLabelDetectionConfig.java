@@ -22,7 +22,7 @@ package com.google.cloud.videointelligence.v1p3beta1;
  *
  *
  * <pre>
- * Config for LABEL_DETECTION in streaming mode.
+ * Config for STREAMING_LABEL_DETECTION.
  * </pre>
  *
  * Protobuf type {@code google.cloud.videointelligence.v1p3beta1.StreamingLabelDetectionConfig}
@@ -291,7 +291,7 @@ public final class StreamingLabelDetectionConfig extends com.google.protobuf.Gen
    *
    *
    * <pre>
-   * Config for LABEL_DETECTION in streaming mode.
+   * Config for STREAMING_LABEL_DETECTION.
    * </pre>
    *
    * Protobuf type {@code google.cloud.videointelligence.v1p3beta1.StreamingLabelDetectionConfig}

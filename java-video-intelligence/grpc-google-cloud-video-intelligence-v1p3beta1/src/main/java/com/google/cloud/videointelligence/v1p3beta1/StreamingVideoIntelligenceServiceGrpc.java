@@ -24,7 +24,7 @@ import static io.grpc.stub.ServerCalls.asyncUnimplementedStreamingCall;
  *
  *
  * <pre>
- * Service that implements Google Cloud Video Intelligence Streaming API.
+ * Service that implements streaming Google Cloud Video Intelligence API.
  * </pre>
  */
 @javax.annotation.Generated(
@@ -126,7 +126,7 @@ public final class StreamingVideoIntelligenceServiceGrpc {
    *
    *
    * <pre>
-   * Service that implements Google Cloud Video Intelligence Streaming API.
+   * Service that implements streaming Google Cloud Video Intelligence API.
    * </pre>
    */
   public abstract static class StreamingVideoIntelligenceServiceImplBase
@@ -169,7 +169,7 @@ public final class StreamingVideoIntelligenceServiceGrpc {
    *
    *
    * <pre>
-   * Service that implements Google Cloud Video Intelligence Streaming API.
+   * Service that implements streaming Google Cloud Video Intelligence API.
    * </pre>
    */
   public static final class StreamingVideoIntelligenceServiceStub
@@ -214,7 +214,7 @@ public final class StreamingVideoIntelligenceServiceGrpc {
    *
    *
    * <pre>
-   * Service that implements Google Cloud Video Intelligence Streaming API.
+   * Service that implements streaming Google Cloud Video Intelligence API.
    * </pre>
    */
   public static final class StreamingVideoIntelligenceServiceBlockingStub
@@ -239,7 +239,7 @@ public final class StreamingVideoIntelligenceServiceGrpc {
    *
    *
    * <pre>
-   * Service that implements Google Cloud Video Intelligence Streaming API.
+   * Service that implements streaming Google Cloud Video Intelligence API.
    * </pre>
    */
   public static final class StreamingVideoIntelligenceServiceFutureStub

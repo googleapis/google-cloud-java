@@ -22,8 +22,7 @@ package com.google.cloud.videointelligence.v1p3beta1;
  *
  *
  * <pre>
- * For tracking related features, such as LOGO_RECOGNITION, FACE_DETECTION,
- * CELEBRITY_RECOGNITION, PERSON_DETECTION.
+ * For tracking related features.
  * An object at time_offset with attributes, and located with
  * normalized_bounding_box.
  * </pre>
@@ -254,7 +253,8 @@ public final class TimestampedObject extends com.google.protobuf.GeneratedMessag
    * Optional. The attributes of the object in the bounding box.
    * </pre>
    *
-   * <code>repeated .google.cloud.videointelligence.v1p3beta1.DetectedAttribute attributes = 3;
+   * <code>
+   * repeated .google.cloud.videointelligence.v1p3beta1.DetectedAttribute attributes = 3 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    */
   public java.util.List<com.google.cloud.videointelligence.v1p3beta1.DetectedAttribute>
@@ -268,7 +268,8 @@ public final class TimestampedObject extends com.google.protobuf.GeneratedMessag
    * Optional. The attributes of the object in the bounding box.
    * </pre>
    *
-   * <code>repeated .google.cloud.videointelligence.v1p3beta1.DetectedAttribute attributes = 3;
+   * <code>
+   * repeated .google.cloud.videointelligence.v1p3beta1.DetectedAttribute attributes = 3 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    */
   public java.util.List<
@@ -283,7 +284,8 @@ public final class TimestampedObject extends com.google.protobuf.GeneratedMessag
    * Optional. The attributes of the object in the bounding box.
    * </pre>
    *
-   * <code>repeated .google.cloud.videointelligence.v1p3beta1.DetectedAttribute attributes = 3;
+   * <code>
+   * repeated .google.cloud.videointelligence.v1p3beta1.DetectedAttribute attributes = 3 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    */
   public int getAttributesCount() {
@@ -296,7 +298,8 @@ public final class TimestampedObject extends com.google.protobuf.GeneratedMessag
    * Optional. The attributes of the object in the bounding box.
    * </pre>
    *
-   * <code>repeated .google.cloud.videointelligence.v1p3beta1.DetectedAttribute attributes = 3;
+   * <code>
+   * repeated .google.cloud.videointelligence.v1p3beta1.DetectedAttribute attributes = 3 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    */
   public com.google.cloud.videointelligence.v1p3beta1.DetectedAttribute getAttributes(int index) {
@@ -309,7 +312,8 @@ public final class TimestampedObject extends com.google.protobuf.GeneratedMessag
    * Optional. The attributes of the object in the bounding box.
    * </pre>
    *
-   * <code>repeated .google.cloud.videointelligence.v1p3beta1.DetectedAttribute attributes = 3;
+   * <code>
+   * repeated .google.cloud.videointelligence.v1p3beta1.DetectedAttribute attributes = 3 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    */
   public com.google.cloud.videointelligence.v1p3beta1.DetectedAttributeOrBuilder
@@ -512,8 +516,7 @@ public final class TimestampedObject extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * For tracking related features, such as LOGO_RECOGNITION, FACE_DETECTION,
-   * CELEBRITY_RECOGNITION, PERSON_DETECTION.
+   * For tracking related features.
    * An object at time_offset with attributes, and located with
    * normalized_bounding_box.
    * </pre>
@@ -1166,7 +1169,8 @@ public final class TimestampedObject extends com.google.protobuf.GeneratedMessag
      * Optional. The attributes of the object in the bounding box.
      * </pre>
      *
-     * <code>repeated .google.cloud.videointelligence.v1p3beta1.DetectedAttribute attributes = 3;
+     * <code>
+     * repeated .google.cloud.videointelligence.v1p3beta1.DetectedAttribute attributes = 3 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public java.util.List<com.google.cloud.videointelligence.v1p3beta1.DetectedAttribute>
@@ -1184,7 +1188,8 @@ public final class TimestampedObject extends com.google.protobuf.GeneratedMessag
      * Optional. The attributes of the object in the bounding box.
      * </pre>
      *
-     * <code>repeated .google.cloud.videointelligence.v1p3beta1.DetectedAttribute attributes = 3;
+     * <code>
+     * repeated .google.cloud.videointelligence.v1p3beta1.DetectedAttribute attributes = 3 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public int getAttributesCount() {
@@ -1201,7 +1206,8 @@ public final class TimestampedObject extends com.google.protobuf.GeneratedMessag
      * Optional. The attributes of the object in the bounding box.
      * </pre>
      *
-     * <code>repeated .google.cloud.videointelligence.v1p3beta1.DetectedAttribute attributes = 3;
+     * <code>
+     * repeated .google.cloud.videointelligence.v1p3beta1.DetectedAttribute attributes = 3 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public com.google.cloud.videointelligence.v1p3beta1.DetectedAttribute getAttributes(int index) {
@@ -1218,7 +1224,8 @@ public final class TimestampedObject extends com.google.protobuf.GeneratedMessag
      * Optional. The attributes of the object in the bounding box.
      * </pre>
      *
-     * <code>repeated .google.cloud.videointelligence.v1p3beta1.DetectedAttribute attributes = 3;
+     * <code>
+     * repeated .google.cloud.videointelligence.v1p3beta1.DetectedAttribute attributes = 3 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public Builder setAttributes(
@@ -1242,7 +1249,8 @@ public final class TimestampedObject extends com.google.protobuf.GeneratedMessag
      * Optional. The attributes of the object in the bounding box.
      * </pre>
      *
-     * <code>repeated .google.cloud.videointelligence.v1p3beta1.DetectedAttribute attributes = 3;
+     * <code>
+     * repeated .google.cloud.videointelligence.v1p3beta1.DetectedAttribute attributes = 3 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public Builder setAttributes(
@@ -1264,7 +1272,8 @@ public final class TimestampedObject extends com.google.protobuf.GeneratedMessag
      * Optional. The attributes of the object in the bounding box.
      * </pre>
      *
-     * <code>repeated .google.cloud.videointelligence.v1p3beta1.DetectedAttribute attributes = 3;
+     * <code>
+     * repeated .google.cloud.videointelligence.v1p3beta1.DetectedAttribute attributes = 3 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public Builder addAttributes(
@@ -1288,7 +1297,8 @@ public final class TimestampedObject extends com.google.protobuf.GeneratedMessag
      * Optional. The attributes of the object in the bounding box.
      * </pre>
      *
-     * <code>repeated .google.cloud.videointelligence.v1p3beta1.DetectedAttribute attributes = 3;
+     * <code>
+     * repeated .google.cloud.videointelligence.v1p3beta1.DetectedAttribute attributes = 3 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public Builder addAttributes(
@@ -1312,7 +1322,8 @@ public final class TimestampedObject extends com.google.protobuf.GeneratedMessag
      * Optional. The attributes of the object in the bounding box.
      * </pre>
      *
-     * <code>repeated .google.cloud.videointelligence.v1p3beta1.DetectedAttribute attributes = 3;
+     * <code>
+     * repeated .google.cloud.videointelligence.v1p3beta1.DetectedAttribute attributes = 3 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public Builder addAttributes(
@@ -1333,7 +1344,8 @@ public final class TimestampedObject extends com.google.protobuf.GeneratedMessag
      * Optional. The attributes of the object in the bounding box.
      * </pre>
      *
-     * <code>repeated .google.cloud.videointelligence.v1p3beta1.DetectedAttribute attributes = 3;
+     * <code>
+     * repeated .google.cloud.videointelligence.v1p3beta1.DetectedAttribute attributes = 3 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public Builder addAttributes(
@@ -1355,7 +1367,8 @@ public final class TimestampedObject extends com.google.protobuf.GeneratedMessag
      * Optional. The attributes of the object in the bounding box.
      * </pre>
      *
-     * <code>repeated .google.cloud.videointelligence.v1p3beta1.DetectedAttribute attributes = 3;
+     * <code>
+     * repeated .google.cloud.videointelligence.v1p3beta1.DetectedAttribute attributes = 3 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public Builder addAllAttributes(
@@ -1377,7 +1390,8 @@ public final class TimestampedObject extends com.google.protobuf.GeneratedMessag
      * Optional. The attributes of the object in the bounding box.
      * </pre>
      *
-     * <code>repeated .google.cloud.videointelligence.v1p3beta1.DetectedAttribute attributes = 3;
+     * <code>
+     * repeated .google.cloud.videointelligence.v1p3beta1.DetectedAttribute attributes = 3 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public Builder clearAttributes() {
@@ -1397,7 +1411,8 @@ public final class TimestampedObject extends com.google.protobuf.GeneratedMessag
      * Optional. The attributes of the object in the bounding box.
      * </pre>
      *
-     * <code>repeated .google.cloud.videointelligence.v1p3beta1.DetectedAttribute attributes = 3;
+     * <code>
+     * repeated .google.cloud.videointelligence.v1p3beta1.DetectedAttribute attributes = 3 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public Builder removeAttributes(int index) {
@@ -1417,7 +1432,8 @@ public final class TimestampedObject extends com.google.protobuf.GeneratedMessag
      * Optional. The attributes of the object in the bounding box.
      * </pre>
      *
-     * <code>repeated .google.cloud.videointelligence.v1p3beta1.DetectedAttribute attributes = 3;
+     * <code>
+     * repeated .google.cloud.videointelligence.v1p3beta1.DetectedAttribute attributes = 3 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public com.google.cloud.videointelligence.v1p3beta1.DetectedAttribute.Builder
@@ -1431,7 +1447,8 @@ public final class TimestampedObject extends com.google.protobuf.GeneratedMessag
      * Optional. The attributes of the object in the bounding box.
      * </pre>
      *
-     * <code>repeated .google.cloud.videointelligence.v1p3beta1.DetectedAttribute attributes = 3;
+     * <code>
+     * repeated .google.cloud.videointelligence.v1p3beta1.DetectedAttribute attributes = 3 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public com.google.cloud.videointelligence.v1p3beta1.DetectedAttributeOrBuilder
@@ -1449,7 +1466,8 @@ public final class TimestampedObject extends com.google.protobuf.GeneratedMessag
      * Optional. The attributes of the object in the bounding box.
      * </pre>
      *
-     * <code>repeated .google.cloud.videointelligence.v1p3beta1.DetectedAttribute attributes = 3;
+     * <code>
+     * repeated .google.cloud.videointelligence.v1p3beta1.DetectedAttribute attributes = 3 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public java.util.List<
@@ -1468,7 +1486,8 @@ public final class TimestampedObject extends com.google.protobuf.GeneratedMessag
      * Optional. The attributes of the object in the bounding box.
      * </pre>
      *
-     * <code>repeated .google.cloud.videointelligence.v1p3beta1.DetectedAttribute attributes = 3;
+     * <code>
+     * repeated .google.cloud.videointelligence.v1p3beta1.DetectedAttribute attributes = 3 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public com.google.cloud.videointelligence.v1p3beta1.DetectedAttribute.Builder
@@ -1484,7 +1503,8 @@ public final class TimestampedObject extends com.google.protobuf.GeneratedMessag
      * Optional. The attributes of the object in the bounding box.
      * </pre>
      *
-     * <code>repeated .google.cloud.videointelligence.v1p3beta1.DetectedAttribute attributes = 3;
+     * <code>
+     * repeated .google.cloud.videointelligence.v1p3beta1.DetectedAttribute attributes = 3 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public com.google.cloud.videointelligence.v1p3beta1.DetectedAttribute.Builder
@@ -1501,7 +1521,8 @@ public final class TimestampedObject extends com.google.protobuf.GeneratedMessag
      * Optional. The attributes of the object in the bounding box.
      * </pre>
      *
-     * <code>repeated .google.cloud.videointelligence.v1p3beta1.DetectedAttribute attributes = 3;
+     * <code>
+     * repeated .google.cloud.videointelligence.v1p3beta1.DetectedAttribute attributes = 3 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public java.util.List<com.google.cloud.videointelligence.v1p3beta1.DetectedAttribute.Builder>

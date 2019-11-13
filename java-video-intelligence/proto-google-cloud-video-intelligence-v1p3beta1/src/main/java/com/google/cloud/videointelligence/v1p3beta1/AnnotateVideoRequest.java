@@ -274,10 +274,12 @@ public final class AnnotateVideoRequest extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * Requested video annotation features.
+   * Required. Requested video annotation features.
    * </pre>
    *
-   * <code>repeated .google.cloud.videointelligence.v1p3beta1.Feature features = 2;</code>
+   * <code>
+   * repeated .google.cloud.videointelligence.v1p3beta1.Feature features = 2 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   public java.util.List<com.google.cloud.videointelligence.v1p3beta1.Feature> getFeaturesList() {
     return new com.google.protobuf.Internal.ListAdapter<
@@ -288,10 +290,12 @@ public final class AnnotateVideoRequest extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * Requested video annotation features.
+   * Required. Requested video annotation features.
    * </pre>
    *
-   * <code>repeated .google.cloud.videointelligence.v1p3beta1.Feature features = 2;</code>
+   * <code>
+   * repeated .google.cloud.videointelligence.v1p3beta1.Feature features = 2 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   public int getFeaturesCount() {
     return features_.size();
@@ -300,10 +304,12 @@ public final class AnnotateVideoRequest extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * Requested video annotation features.
+   * Required. Requested video annotation features.
    * </pre>
    *
-   * <code>repeated .google.cloud.videointelligence.v1p3beta1.Feature features = 2;</code>
+   * <code>
+   * repeated .google.cloud.videointelligence.v1p3beta1.Feature features = 2 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   public com.google.cloud.videointelligence.v1p3beta1.Feature getFeatures(int index) {
     return features_converter_.convert(features_.get(index));
@@ -312,10 +318,12 @@ public final class AnnotateVideoRequest extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * Requested video annotation features.
+   * Required. Requested video annotation features.
    * </pre>
    *
-   * <code>repeated .google.cloud.videointelligence.v1p3beta1.Feature features = 2;</code>
+   * <code>
+   * repeated .google.cloud.videointelligence.v1p3beta1.Feature features = 2 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   public java.util.List<java.lang.Integer> getFeaturesValueList() {
     return features_;
@@ -324,10 +332,12 @@ public final class AnnotateVideoRequest extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * Requested video annotation features.
+   * Required. Requested video annotation features.
    * </pre>
    *
-   * <code>repeated .google.cloud.videointelligence.v1p3beta1.Feature features = 2;</code>
+   * <code>
+   * repeated .google.cloud.videointelligence.v1p3beta1.Feature features = 2 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   public int getFeaturesValue(int index) {
     return features_.get(index);
@@ -383,7 +393,7 @@ public final class AnnotateVideoRequest extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * Optional location where the output (in JSON format) should be stored.
+   * Optional. Location where the output (in JSON format) should be stored.
    * Currently, only [Google Cloud Storage](https://cloud.google.com/storage/)
    * URIs are supported, which must be specified in the following format:
    * `gs://bucket-id/object-id` (other URI formats return
@@ -391,7 +401,7 @@ public final class AnnotateVideoRequest extends com.google.protobuf.GeneratedMes
    * more information, see [Request URIs](/storage/docs/reference-uris).
    * </pre>
    *
-   * <code>string output_uri = 4;</code>
+   * <code>string output_uri = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   public java.lang.String getOutputUri() {
     java.lang.Object ref = outputUri_;
@@ -408,7 +418,7 @@ public final class AnnotateVideoRequest extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * Optional location where the output (in JSON format) should be stored.
+   * Optional. Location where the output (in JSON format) should be stored.
    * Currently, only [Google Cloud Storage](https://cloud.google.com/storage/)
    * URIs are supported, which must be specified in the following format:
    * `gs://bucket-id/object-id` (other URI formats return
@@ -416,7 +426,7 @@ public final class AnnotateVideoRequest extends com.google.protobuf.GeneratedMes
    * more information, see [Request URIs](/storage/docs/reference-uris).
    * </pre>
    *
-   * <code>string output_uri = 4;</code>
+   * <code>string output_uri = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   public com.google.protobuf.ByteString getOutputUriBytes() {
     java.lang.Object ref = outputUri_;
@@ -436,12 +446,12 @@ public final class AnnotateVideoRequest extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * Optional cloud region where annotation should take place. Supported cloud
+   * Optional. Cloud region where annotation should take place. Supported cloud
    * regions: `us-east1`, `us-west1`, `europe-west1`, `asia-east1`. If no region
    * is specified, a region will be determined based on video file location.
    * </pre>
    *
-   * <code>string location_id = 5;</code>
+   * <code>string location_id = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   public java.lang.String getLocationId() {
     java.lang.Object ref = locationId_;
@@ -458,12 +468,12 @@ public final class AnnotateVideoRequest extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * Optional cloud region where annotation should take place. Supported cloud
+   * Optional. Cloud region where annotation should take place. Supported cloud
    * regions: `us-east1`, `us-west1`, `europe-west1`, `asia-east1`. If no region
    * is specified, a region will be determined based on video file location.
    * </pre>
    *
-   * <code>string location_id = 5;</code>
+   * <code>string location_id = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   public com.google.protobuf.ByteString getLocationIdBytes() {
     java.lang.Object ref = locationId_;
@@ -1128,10 +1138,12 @@ public final class AnnotateVideoRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Requested video annotation features.
+     * Required. Requested video annotation features.
      * </pre>
      *
-     * <code>repeated .google.cloud.videointelligence.v1p3beta1.Feature features = 2;</code>
+     * <code>
+     * repeated .google.cloud.videointelligence.v1p3beta1.Feature features = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public java.util.List<com.google.cloud.videointelligence.v1p3beta1.Feature> getFeaturesList() {
       return new com.google.protobuf.Internal.ListAdapter<
@@ -1142,10 +1154,12 @@ public final class AnnotateVideoRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Requested video annotation features.
+     * Required. Requested video annotation features.
      * </pre>
      *
-     * <code>repeated .google.cloud.videointelligence.v1p3beta1.Feature features = 2;</code>
+     * <code>
+     * repeated .google.cloud.videointelligence.v1p3beta1.Feature features = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public int getFeaturesCount() {
       return features_.size();
@@ -1154,10 +1168,12 @@ public final class AnnotateVideoRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Requested video annotation features.
+     * Required. Requested video annotation features.
      * </pre>
      *
-     * <code>repeated .google.cloud.videointelligence.v1p3beta1.Feature features = 2;</code>
+     * <code>
+     * repeated .google.cloud.videointelligence.v1p3beta1.Feature features = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public com.google.cloud.videointelligence.v1p3beta1.Feature getFeatures(int index) {
       return features_converter_.convert(features_.get(index));
@@ -1166,10 +1182,12 @@ public final class AnnotateVideoRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Requested video annotation features.
+     * Required. Requested video annotation features.
      * </pre>
      *
-     * <code>repeated .google.cloud.videointelligence.v1p3beta1.Feature features = 2;</code>
+     * <code>
+     * repeated .google.cloud.videointelligence.v1p3beta1.Feature features = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder setFeatures(
         int index, com.google.cloud.videointelligence.v1p3beta1.Feature value) {
@@ -1185,10 +1203,12 @@ public final class AnnotateVideoRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Requested video annotation features.
+     * Required. Requested video annotation features.
      * </pre>
      *
-     * <code>repeated .google.cloud.videointelligence.v1p3beta1.Feature features = 2;</code>
+     * <code>
+     * repeated .google.cloud.videointelligence.v1p3beta1.Feature features = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder addFeatures(com.google.cloud.videointelligence.v1p3beta1.Feature value) {
       if (value == null) {
@@ -1203,10 +1223,12 @@ public final class AnnotateVideoRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Requested video annotation features.
+     * Required. Requested video annotation features.
      * </pre>
      *
-     * <code>repeated .google.cloud.videointelligence.v1p3beta1.Feature features = 2;</code>
+     * <code>
+     * repeated .google.cloud.videointelligence.v1p3beta1.Feature features = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder addAllFeatures(
         java.lang.Iterable<? extends com.google.cloud.videointelligence.v1p3beta1.Feature> values) {
@@ -1221,10 +1243,12 @@ public final class AnnotateVideoRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Requested video annotation features.
+     * Required. Requested video annotation features.
      * </pre>
      *
-     * <code>repeated .google.cloud.videointelligence.v1p3beta1.Feature features = 2;</code>
+     * <code>
+     * repeated .google.cloud.videointelligence.v1p3beta1.Feature features = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder clearFeatures() {
       features_ = java.util.Collections.emptyList();
@@ -1236,10 +1260,12 @@ public final class AnnotateVideoRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Requested video annotation features.
+     * Required. Requested video annotation features.
      * </pre>
      *
-     * <code>repeated .google.cloud.videointelligence.v1p3beta1.Feature features = 2;</code>
+     * <code>
+     * repeated .google.cloud.videointelligence.v1p3beta1.Feature features = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public java.util.List<java.lang.Integer> getFeaturesValueList() {
       return java.util.Collections.unmodifiableList(features_);
@@ -1248,10 +1274,12 @@ public final class AnnotateVideoRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Requested video annotation features.
+     * Required. Requested video annotation features.
      * </pre>
      *
-     * <code>repeated .google.cloud.videointelligence.v1p3beta1.Feature features = 2;</code>
+     * <code>
+     * repeated .google.cloud.videointelligence.v1p3beta1.Feature features = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public int getFeaturesValue(int index) {
       return features_.get(index);
@@ -1260,10 +1288,12 @@ public final class AnnotateVideoRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Requested video annotation features.
+     * Required. Requested video annotation features.
      * </pre>
      *
-     * <code>repeated .google.cloud.videointelligence.v1p3beta1.Feature features = 2;</code>
+     * <code>
+     * repeated .google.cloud.videointelligence.v1p3beta1.Feature features = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder setFeaturesValue(int index, int value) {
       ensureFeaturesIsMutable();
@@ -1275,10 +1305,12 @@ public final class AnnotateVideoRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Requested video annotation features.
+     * Required. Requested video annotation features.
      * </pre>
      *
-     * <code>repeated .google.cloud.videointelligence.v1p3beta1.Feature features = 2;</code>
+     * <code>
+     * repeated .google.cloud.videointelligence.v1p3beta1.Feature features = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder addFeaturesValue(int value) {
       ensureFeaturesIsMutable();
@@ -1290,10 +1322,12 @@ public final class AnnotateVideoRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Requested video annotation features.
+     * Required. Requested video annotation features.
      * </pre>
      *
-     * <code>repeated .google.cloud.videointelligence.v1p3beta1.Feature features = 2;</code>
+     * <code>
+     * repeated .google.cloud.videointelligence.v1p3beta1.Feature features = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder addAllFeaturesValue(java.lang.Iterable<java.lang.Integer> values) {
       ensureFeaturesIsMutable();
@@ -1495,7 +1529,7 @@ public final class AnnotateVideoRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Optional location where the output (in JSON format) should be stored.
+     * Optional. Location where the output (in JSON format) should be stored.
      * Currently, only [Google Cloud Storage](https://cloud.google.com/storage/)
      * URIs are supported, which must be specified in the following format:
      * `gs://bucket-id/object-id` (other URI formats return
@@ -1503,7 +1537,7 @@ public final class AnnotateVideoRequest extends com.google.protobuf.GeneratedMes
      * more information, see [Request URIs](/storage/docs/reference-uris).
      * </pre>
      *
-     * <code>string output_uri = 4;</code>
+     * <code>string output_uri = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public java.lang.String getOutputUri() {
       java.lang.Object ref = outputUri_;
@@ -1520,7 +1554,7 @@ public final class AnnotateVideoRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Optional location where the output (in JSON format) should be stored.
+     * Optional. Location where the output (in JSON format) should be stored.
      * Currently, only [Google Cloud Storage](https://cloud.google.com/storage/)
      * URIs are supported, which must be specified in the following format:
      * `gs://bucket-id/object-id` (other URI formats return
@@ -1528,7 +1562,7 @@ public final class AnnotateVideoRequest extends com.google.protobuf.GeneratedMes
      * more information, see [Request URIs](/storage/docs/reference-uris).
      * </pre>
      *
-     * <code>string output_uri = 4;</code>
+     * <code>string output_uri = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public com.google.protobuf.ByteString getOutputUriBytes() {
       java.lang.Object ref = outputUri_;
@@ -1545,7 +1579,7 @@ public final class AnnotateVideoRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Optional location where the output (in JSON format) should be stored.
+     * Optional. Location where the output (in JSON format) should be stored.
      * Currently, only [Google Cloud Storage](https://cloud.google.com/storage/)
      * URIs are supported, which must be specified in the following format:
      * `gs://bucket-id/object-id` (other URI formats return
@@ -1553,7 +1587,7 @@ public final class AnnotateVideoRequest extends com.google.protobuf.GeneratedMes
      * more information, see [Request URIs](/storage/docs/reference-uris).
      * </pre>
      *
-     * <code>string output_uri = 4;</code>
+     * <code>string output_uri = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public Builder setOutputUri(java.lang.String value) {
       if (value == null) {
@@ -1568,7 +1602,7 @@ public final class AnnotateVideoRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Optional location where the output (in JSON format) should be stored.
+     * Optional. Location where the output (in JSON format) should be stored.
      * Currently, only [Google Cloud Storage](https://cloud.google.com/storage/)
      * URIs are supported, which must be specified in the following format:
      * `gs://bucket-id/object-id` (other URI formats return
@@ -1576,7 +1610,7 @@ public final class AnnotateVideoRequest extends com.google.protobuf.GeneratedMes
      * more information, see [Request URIs](/storage/docs/reference-uris).
      * </pre>
      *
-     * <code>string output_uri = 4;</code>
+     * <code>string output_uri = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public Builder clearOutputUri() {
 
@@ -1588,7 +1622,7 @@ public final class AnnotateVideoRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Optional location where the output (in JSON format) should be stored.
+     * Optional. Location where the output (in JSON format) should be stored.
      * Currently, only [Google Cloud Storage](https://cloud.google.com/storage/)
      * URIs are supported, which must be specified in the following format:
      * `gs://bucket-id/object-id` (other URI formats return
@@ -1596,7 +1630,7 @@ public final class AnnotateVideoRequest extends com.google.protobuf.GeneratedMes
      * more information, see [Request URIs](/storage/docs/reference-uris).
      * </pre>
      *
-     * <code>string output_uri = 4;</code>
+     * <code>string output_uri = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public Builder setOutputUriBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -1614,12 +1648,12 @@ public final class AnnotateVideoRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Optional cloud region where annotation should take place. Supported cloud
+     * Optional. Cloud region where annotation should take place. Supported cloud
      * regions: `us-east1`, `us-west1`, `europe-west1`, `asia-east1`. If no region
      * is specified, a region will be determined based on video file location.
      * </pre>
      *
-     * <code>string location_id = 5;</code>
+     * <code>string location_id = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public java.lang.String getLocationId() {
       java.lang.Object ref = locationId_;
@@ -1636,12 +1670,12 @@ public final class AnnotateVideoRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Optional cloud region where annotation should take place. Supported cloud
+     * Optional. Cloud region where annotation should take place. Supported cloud
      * regions: `us-east1`, `us-west1`, `europe-west1`, `asia-east1`. If no region
      * is specified, a region will be determined based on video file location.
      * </pre>
      *
-     * <code>string location_id = 5;</code>
+     * <code>string location_id = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public com.google.protobuf.ByteString getLocationIdBytes() {
       java.lang.Object ref = locationId_;
@@ -1658,12 +1692,12 @@ public final class AnnotateVideoRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Optional cloud region where annotation should take place. Supported cloud
+     * Optional. Cloud region where annotation should take place. Supported cloud
      * regions: `us-east1`, `us-west1`, `europe-west1`, `asia-east1`. If no region
      * is specified, a region will be determined based on video file location.
      * </pre>
      *
-     * <code>string location_id = 5;</code>
+     * <code>string location_id = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public Builder setLocationId(java.lang.String value) {
       if (value == null) {
@@ -1678,12 +1712,12 @@ public final class AnnotateVideoRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Optional cloud region where annotation should take place. Supported cloud
+     * Optional. Cloud region where annotation should take place. Supported cloud
      * regions: `us-east1`, `us-west1`, `europe-west1`, `asia-east1`. If no region
      * is specified, a region will be determined based on video file location.
      * </pre>
      *
-     * <code>string location_id = 5;</code>
+     * <code>string location_id = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public Builder clearLocationId() {
 
@@ -1695,12 +1729,12 @@ public final class AnnotateVideoRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Optional cloud region where annotation should take place. Supported cloud
+     * Optional. Cloud region where annotation should take place. Supported cloud
      * regions: `us-east1`, `us-west1`, `europe-west1`, `asia-east1`. If no region
      * is specified, a region will be determined based on video file location.
      * </pre>
      *
-     * <code>string location_id = 5;</code>
+     * <code>string location_id = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public Builder setLocationIdBytes(com.google.protobuf.ByteString value) {
       if (value == null) {

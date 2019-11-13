@@ -119,7 +119,7 @@ public final class SpeechContext extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * *Optional* A list of strings containing words and phrases "hints" so that
+   * Optional. A list of strings containing words and phrases "hints" so that
    * the speech recognition is more likely to recognize them. This can be used
    * to improve the accuracy for specific words and phrases, for example, if
    * specific commands are typically spoken by the user. This can also be used
@@ -127,7 +127,7 @@ public final class SpeechContext extends com.google.protobuf.GeneratedMessageV3
    * [usage limits](https://cloud.google.com/speech/limits#content).
    * </pre>
    *
-   * <code>repeated string phrases = 1;</code>
+   * <code>repeated string phrases = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   public com.google.protobuf.ProtocolStringList getPhrasesList() {
     return phrases_;
@@ -136,7 +136,7 @@ public final class SpeechContext extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * *Optional* A list of strings containing words and phrases "hints" so that
+   * Optional. A list of strings containing words and phrases "hints" so that
    * the speech recognition is more likely to recognize them. This can be used
    * to improve the accuracy for specific words and phrases, for example, if
    * specific commands are typically spoken by the user. This can also be used
@@ -144,7 +144,7 @@ public final class SpeechContext extends com.google.protobuf.GeneratedMessageV3
    * [usage limits](https://cloud.google.com/speech/limits#content).
    * </pre>
    *
-   * <code>repeated string phrases = 1;</code>
+   * <code>repeated string phrases = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   public int getPhrasesCount() {
     return phrases_.size();
@@ -153,7 +153,7 @@ public final class SpeechContext extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * *Optional* A list of strings containing words and phrases "hints" so that
+   * Optional. A list of strings containing words and phrases "hints" so that
    * the speech recognition is more likely to recognize them. This can be used
    * to improve the accuracy for specific words and phrases, for example, if
    * specific commands are typically spoken by the user. This can also be used
@@ -161,7 +161,7 @@ public final class SpeechContext extends com.google.protobuf.GeneratedMessageV3
    * [usage limits](https://cloud.google.com/speech/limits#content).
    * </pre>
    *
-   * <code>repeated string phrases = 1;</code>
+   * <code>repeated string phrases = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   public java.lang.String getPhrases(int index) {
     return phrases_.get(index);
@@ -170,7 +170,7 @@ public final class SpeechContext extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * *Optional* A list of strings containing words and phrases "hints" so that
+   * Optional. A list of strings containing words and phrases "hints" so that
    * the speech recognition is more likely to recognize them. This can be used
    * to improve the accuracy for specific words and phrases, for example, if
    * specific commands are typically spoken by the user. This can also be used
@@ -178,7 +178,7 @@ public final class SpeechContext extends com.google.protobuf.GeneratedMessageV3
    * [usage limits](https://cloud.google.com/speech/limits#content).
    * </pre>
    *
-   * <code>repeated string phrases = 1;</code>
+   * <code>repeated string phrases = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   public com.google.protobuf.ByteString getPhrasesBytes(int index) {
     return phrases_.getByteString(index);
@@ -537,7 +537,7 @@ public final class SpeechContext extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * *Optional* A list of strings containing words and phrases "hints" so that
+     * Optional. A list of strings containing words and phrases "hints" so that
      * the speech recognition is more likely to recognize them. This can be used
      * to improve the accuracy for specific words and phrases, for example, if
      * specific commands are typically spoken by the user. This can also be used
@@ -545,7 +545,7 @@ public final class SpeechContext extends com.google.protobuf.GeneratedMessageV3
      * [usage limits](https://cloud.google.com/speech/limits#content).
      * </pre>
      *
-     * <code>repeated string phrases = 1;</code>
+     * <code>repeated string phrases = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public com.google.protobuf.ProtocolStringList getPhrasesList() {
       return phrases_.getUnmodifiableView();
@@ -554,7 +554,7 @@ public final class SpeechContext extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * *Optional* A list of strings containing words and phrases "hints" so that
+     * Optional. A list of strings containing words and phrases "hints" so that
      * the speech recognition is more likely to recognize them. This can be used
      * to improve the accuracy for specific words and phrases, for example, if
      * specific commands are typically spoken by the user. This can also be used
@@ -562,7 +562,7 @@ public final class SpeechContext extends com.google.protobuf.GeneratedMessageV3
      * [usage limits](https://cloud.google.com/speech/limits#content).
      * </pre>
      *
-     * <code>repeated string phrases = 1;</code>
+     * <code>repeated string phrases = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public int getPhrasesCount() {
       return phrases_.size();
@@ -571,7 +571,7 @@ public final class SpeechContext extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * *Optional* A list of strings containing words and phrases "hints" so that
+     * Optional. A list of strings containing words and phrases "hints" so that
      * the speech recognition is more likely to recognize them. This can be used
      * to improve the accuracy for specific words and phrases, for example, if
      * specific commands are typically spoken by the user. This can also be used
@@ -579,7 +579,7 @@ public final class SpeechContext extends com.google.protobuf.GeneratedMessageV3
      * [usage limits](https://cloud.google.com/speech/limits#content).
      * </pre>
      *
-     * <code>repeated string phrases = 1;</code>
+     * <code>repeated string phrases = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public java.lang.String getPhrases(int index) {
       return phrases_.get(index);
@@ -588,7 +588,7 @@ public final class SpeechContext extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * *Optional* A list of strings containing words and phrases "hints" so that
+     * Optional. A list of strings containing words and phrases "hints" so that
      * the speech recognition is more likely to recognize them. This can be used
      * to improve the accuracy for specific words and phrases, for example, if
      * specific commands are typically spoken by the user. This can also be used
@@ -596,7 +596,7 @@ public final class SpeechContext extends com.google.protobuf.GeneratedMessageV3
      * [usage limits](https://cloud.google.com/speech/limits#content).
      * </pre>
      *
-     * <code>repeated string phrases = 1;</code>
+     * <code>repeated string phrases = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public com.google.protobuf.ByteString getPhrasesBytes(int index) {
       return phrases_.getByteString(index);
@@ -605,7 +605,7 @@ public final class SpeechContext extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * *Optional* A list of strings containing words and phrases "hints" so that
+     * Optional. A list of strings containing words and phrases "hints" so that
      * the speech recognition is more likely to recognize them. This can be used
      * to improve the accuracy for specific words and phrases, for example, if
      * specific commands are typically spoken by the user. This can also be used
@@ -613,7 +613,7 @@ public final class SpeechContext extends com.google.protobuf.GeneratedMessageV3
      * [usage limits](https://cloud.google.com/speech/limits#content).
      * </pre>
      *
-     * <code>repeated string phrases = 1;</code>
+     * <code>repeated string phrases = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public Builder setPhrases(int index, java.lang.String value) {
       if (value == null) {
@@ -628,7 +628,7 @@ public final class SpeechContext extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * *Optional* A list of strings containing words and phrases "hints" so that
+     * Optional. A list of strings containing words and phrases "hints" so that
      * the speech recognition is more likely to recognize them. This can be used
      * to improve the accuracy for specific words and phrases, for example, if
      * specific commands are typically spoken by the user. This can also be used
@@ -636,7 +636,7 @@ public final class SpeechContext extends com.google.protobuf.GeneratedMessageV3
      * [usage limits](https://cloud.google.com/speech/limits#content).
      * </pre>
      *
-     * <code>repeated string phrases = 1;</code>
+     * <code>repeated string phrases = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public Builder addPhrases(java.lang.String value) {
       if (value == null) {
@@ -651,7 +651,7 @@ public final class SpeechContext extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * *Optional* A list of strings containing words and phrases "hints" so that
+     * Optional. A list of strings containing words and phrases "hints" so that
      * the speech recognition is more likely to recognize them. This can be used
      * to improve the accuracy for specific words and phrases, for example, if
      * specific commands are typically spoken by the user. This can also be used
@@ -659,7 +659,7 @@ public final class SpeechContext extends com.google.protobuf.GeneratedMessageV3
      * [usage limits](https://cloud.google.com/speech/limits#content).
      * </pre>
      *
-     * <code>repeated string phrases = 1;</code>
+     * <code>repeated string phrases = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public Builder addAllPhrases(java.lang.Iterable<java.lang.String> values) {
       ensurePhrasesIsMutable();
@@ -671,7 +671,7 @@ public final class SpeechContext extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * *Optional* A list of strings containing words and phrases "hints" so that
+     * Optional. A list of strings containing words and phrases "hints" so that
      * the speech recognition is more likely to recognize them. This can be used
      * to improve the accuracy for specific words and phrases, for example, if
      * specific commands are typically spoken by the user. This can also be used
@@ -679,7 +679,7 @@ public final class SpeechContext extends com.google.protobuf.GeneratedMessageV3
      * [usage limits](https://cloud.google.com/speech/limits#content).
      * </pre>
      *
-     * <code>repeated string phrases = 1;</code>
+     * <code>repeated string phrases = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public Builder clearPhrases() {
       phrases_ = com.google.protobuf.LazyStringArrayList.EMPTY;
@@ -691,7 +691,7 @@ public final class SpeechContext extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * *Optional* A list of strings containing words and phrases "hints" so that
+     * Optional. A list of strings containing words and phrases "hints" so that
      * the speech recognition is more likely to recognize them. This can be used
      * to improve the accuracy for specific words and phrases, for example, if
      * specific commands are typically spoken by the user. This can also be used
@@ -699,7 +699,7 @@ public final class SpeechContext extends com.google.protobuf.GeneratedMessageV3
      * [usage limits](https://cloud.google.com/speech/limits#content).
      * </pre>
      *
-     * <code>repeated string phrases = 1;</code>
+     * <code>repeated string phrases = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public Builder addPhrasesBytes(com.google.protobuf.ByteString value) {
       if (value == null) {

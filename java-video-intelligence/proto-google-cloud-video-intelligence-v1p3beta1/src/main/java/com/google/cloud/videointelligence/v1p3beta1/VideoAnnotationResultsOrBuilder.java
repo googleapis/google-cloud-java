@@ -50,7 +50,38 @@ public interface VideoAnnotationResultsOrBuilder
    *
    *
    * <pre>
-   * Label annotations on video level or user specified segment level.
+   * Video segment on which the annotation is run.
+   * </pre>
+   *
+   * <code>.google.cloud.videointelligence.v1p3beta1.VideoSegment segment = 10;</code>
+   */
+  boolean hasSegment();
+  /**
+   *
+   *
+   * <pre>
+   * Video segment on which the annotation is run.
+   * </pre>
+   *
+   * <code>.google.cloud.videointelligence.v1p3beta1.VideoSegment segment = 10;</code>
+   */
+  com.google.cloud.videointelligence.v1p3beta1.VideoSegment getSegment();
+  /**
+   *
+   *
+   * <pre>
+   * Video segment on which the annotation is run.
+   * </pre>
+   *
+   * <code>.google.cloud.videointelligence.v1p3beta1.VideoSegment segment = 10;</code>
+   */
+  com.google.cloud.videointelligence.v1p3beta1.VideoSegmentOrBuilder getSegmentOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Topical label annotations on video level or user specified segment level.
    * There is exactly one element for each unique label.
    * </pre>
    *
@@ -64,7 +95,7 @@ public interface VideoAnnotationResultsOrBuilder
    *
    *
    * <pre>
-   * Label annotations on video level or user specified segment level.
+   * Topical label annotations on video level or user specified segment level.
    * There is exactly one element for each unique label.
    * </pre>
    *
@@ -78,7 +109,7 @@ public interface VideoAnnotationResultsOrBuilder
    *
    *
    * <pre>
-   * Label annotations on video level or user specified segment level.
+   * Topical label annotations on video level or user specified segment level.
    * There is exactly one element for each unique label.
    * </pre>
    *
@@ -91,7 +122,7 @@ public interface VideoAnnotationResultsOrBuilder
    *
    *
    * <pre>
-   * Label annotations on video level or user specified segment level.
+   * Topical label annotations on video level or user specified segment level.
    * There is exactly one element for each unique label.
    * </pre>
    *
@@ -105,7 +136,7 @@ public interface VideoAnnotationResultsOrBuilder
    *
    *
    * <pre>
-   * Label annotations on video level or user specified segment level.
+   * Topical label annotations on video level or user specified segment level.
    * There is exactly one element for each unique label.
    * </pre>
    *
@@ -120,7 +151,97 @@ public interface VideoAnnotationResultsOrBuilder
    *
    *
    * <pre>
-   * Label annotations on shot level.
+   * Presence label annotations on video level or user specified segment level.
+   * There is exactly one element for each unique label. Compared to the
+   * existing topical `segment_label_annotations`, this field presents more
+   * fine-grained, segment-level labels detected in video content and is made
+   * available only when the client sets `LabelDetectionConfig.model` to
+   * "builtin/latest" in the request.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.videointelligence.v1p3beta1.LabelAnnotation segment_presence_label_annotations = 23;
+   * </code>
+   */
+  java.util.List<com.google.cloud.videointelligence.v1p3beta1.LabelAnnotation>
+      getSegmentPresenceLabelAnnotationsList();
+  /**
+   *
+   *
+   * <pre>
+   * Presence label annotations on video level or user specified segment level.
+   * There is exactly one element for each unique label. Compared to the
+   * existing topical `segment_label_annotations`, this field presents more
+   * fine-grained, segment-level labels detected in video content and is made
+   * available only when the client sets `LabelDetectionConfig.model` to
+   * "builtin/latest" in the request.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.videointelligence.v1p3beta1.LabelAnnotation segment_presence_label_annotations = 23;
+   * </code>
+   */
+  com.google.cloud.videointelligence.v1p3beta1.LabelAnnotation getSegmentPresenceLabelAnnotations(
+      int index);
+  /**
+   *
+   *
+   * <pre>
+   * Presence label annotations on video level or user specified segment level.
+   * There is exactly one element for each unique label. Compared to the
+   * existing topical `segment_label_annotations`, this field presents more
+   * fine-grained, segment-level labels detected in video content and is made
+   * available only when the client sets `LabelDetectionConfig.model` to
+   * "builtin/latest" in the request.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.videointelligence.v1p3beta1.LabelAnnotation segment_presence_label_annotations = 23;
+   * </code>
+   */
+  int getSegmentPresenceLabelAnnotationsCount();
+  /**
+   *
+   *
+   * <pre>
+   * Presence label annotations on video level or user specified segment level.
+   * There is exactly one element for each unique label. Compared to the
+   * existing topical `segment_label_annotations`, this field presents more
+   * fine-grained, segment-level labels detected in video content and is made
+   * available only when the client sets `LabelDetectionConfig.model` to
+   * "builtin/latest" in the request.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.videointelligence.v1p3beta1.LabelAnnotation segment_presence_label_annotations = 23;
+   * </code>
+   */
+  java.util.List<? extends com.google.cloud.videointelligence.v1p3beta1.LabelAnnotationOrBuilder>
+      getSegmentPresenceLabelAnnotationsOrBuilderList();
+  /**
+   *
+   *
+   * <pre>
+   * Presence label annotations on video level or user specified segment level.
+   * There is exactly one element for each unique label. Compared to the
+   * existing topical `segment_label_annotations`, this field presents more
+   * fine-grained, segment-level labels detected in video content and is made
+   * available only when the client sets `LabelDetectionConfig.model` to
+   * "builtin/latest" in the request.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.videointelligence.v1p3beta1.LabelAnnotation segment_presence_label_annotations = 23;
+   * </code>
+   */
+  com.google.cloud.videointelligence.v1p3beta1.LabelAnnotationOrBuilder
+      getSegmentPresenceLabelAnnotationsOrBuilder(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Topical label annotations on shot level.
    * There is exactly one element for each unique label.
    * </pre>
    *
@@ -134,7 +255,7 @@ public interface VideoAnnotationResultsOrBuilder
    *
    *
    * <pre>
-   * Label annotations on shot level.
+   * Topical label annotations on shot level.
    * There is exactly one element for each unique label.
    * </pre>
    *
@@ -147,7 +268,7 @@ public interface VideoAnnotationResultsOrBuilder
    *
    *
    * <pre>
-   * Label annotations on shot level.
+   * Topical label annotations on shot level.
    * There is exactly one element for each unique label.
    * </pre>
    *
@@ -160,7 +281,7 @@ public interface VideoAnnotationResultsOrBuilder
    *
    *
    * <pre>
-   * Label annotations on shot level.
+   * Topical label annotations on shot level.
    * There is exactly one element for each unique label.
    * </pre>
    *
@@ -174,7 +295,7 @@ public interface VideoAnnotationResultsOrBuilder
    *
    *
    * <pre>
-   * Label annotations on shot level.
+   * Topical label annotations on shot level.
    * There is exactly one element for each unique label.
    * </pre>
    *
@@ -184,6 +305,91 @@ public interface VideoAnnotationResultsOrBuilder
    */
   com.google.cloud.videointelligence.v1p3beta1.LabelAnnotationOrBuilder
       getShotLabelAnnotationsOrBuilder(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Presence label annotations on shot level. There is exactly one element for
+   * each unique label. Compared to the existing topical
+   * `shot_label_annotations`, this field presents more fine-grained, shot-level
+   * labels detected in video content and is made available only when the client
+   * sets `LabelDetectionConfig.model` to "builtin/latest" in the request.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.videointelligence.v1p3beta1.LabelAnnotation shot_presence_label_annotations = 24;
+   * </code>
+   */
+  java.util.List<com.google.cloud.videointelligence.v1p3beta1.LabelAnnotation>
+      getShotPresenceLabelAnnotationsList();
+  /**
+   *
+   *
+   * <pre>
+   * Presence label annotations on shot level. There is exactly one element for
+   * each unique label. Compared to the existing topical
+   * `shot_label_annotations`, this field presents more fine-grained, shot-level
+   * labels detected in video content and is made available only when the client
+   * sets `LabelDetectionConfig.model` to "builtin/latest" in the request.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.videointelligence.v1p3beta1.LabelAnnotation shot_presence_label_annotations = 24;
+   * </code>
+   */
+  com.google.cloud.videointelligence.v1p3beta1.LabelAnnotation getShotPresenceLabelAnnotations(
+      int index);
+  /**
+   *
+   *
+   * <pre>
+   * Presence label annotations on shot level. There is exactly one element for
+   * each unique label. Compared to the existing topical
+   * `shot_label_annotations`, this field presents more fine-grained, shot-level
+   * labels detected in video content and is made available only when the client
+   * sets `LabelDetectionConfig.model` to "builtin/latest" in the request.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.videointelligence.v1p3beta1.LabelAnnotation shot_presence_label_annotations = 24;
+   * </code>
+   */
+  int getShotPresenceLabelAnnotationsCount();
+  /**
+   *
+   *
+   * <pre>
+   * Presence label annotations on shot level. There is exactly one element for
+   * each unique label. Compared to the existing topical
+   * `shot_label_annotations`, this field presents more fine-grained, shot-level
+   * labels detected in video content and is made available only when the client
+   * sets `LabelDetectionConfig.model` to "builtin/latest" in the request.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.videointelligence.v1p3beta1.LabelAnnotation shot_presence_label_annotations = 24;
+   * </code>
+   */
+  java.util.List<? extends com.google.cloud.videointelligence.v1p3beta1.LabelAnnotationOrBuilder>
+      getShotPresenceLabelAnnotationsOrBuilderList();
+  /**
+   *
+   *
+   * <pre>
+   * Presence label annotations on shot level. There is exactly one element for
+   * each unique label. Compared to the existing topical
+   * `shot_label_annotations`, this field presents more fine-grained, shot-level
+   * labels detected in video content and is made available only when the client
+   * sets `LabelDetectionConfig.model` to "builtin/latest" in the request.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.videointelligence.v1p3beta1.LabelAnnotation shot_presence_label_annotations = 24;
+   * </code>
+   */
+  com.google.cloud.videointelligence.v1p3beta1.LabelAnnotationOrBuilder
+      getShotPresenceLabelAnnotationsOrBuilder(int index);
 
   /**
    *
@@ -617,6 +823,45 @@ public interface VideoAnnotationResultsOrBuilder
    */
   com.google.cloud.videointelligence.v1p3beta1.LogoRecognitionAnnotationOrBuilder
       getLogoRecognitionAnnotationsOrBuilder(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Celebrity recognition annotations.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.videointelligence.v1p3beta1.CelebrityRecognitionAnnotation celebrity_recognition_annotations = 21;
+   * </code>
+   */
+  boolean hasCelebrityRecognitionAnnotations();
+  /**
+   *
+   *
+   * <pre>
+   * Celebrity recognition annotations.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.videointelligence.v1p3beta1.CelebrityRecognitionAnnotation celebrity_recognition_annotations = 21;
+   * </code>
+   */
+  com.google.cloud.videointelligence.v1p3beta1.CelebrityRecognitionAnnotation
+      getCelebrityRecognitionAnnotations();
+  /**
+   *
+   *
+   * <pre>
+   * Celebrity recognition annotations.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.videointelligence.v1p3beta1.CelebrityRecognitionAnnotation celebrity_recognition_annotations = 21;
+   * </code>
+   */
+  com.google.cloud.videointelligence.v1p3beta1.CelebrityRecognitionAnnotationOrBuilder
+      getCelebrityRecognitionAnnotationsOrBuilder();
 
   /**
    *

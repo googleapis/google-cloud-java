@@ -48,15 +48,15 @@ public interface SpeechRecognitionAlternativeOrBuilder
    *
    *
    * <pre>
-   * The confidence estimate between 0.0 and 1.0. A higher number
+   * Output only. The confidence estimate between 0.0 and 1.0. A higher number
    * indicates an estimated greater likelihood that the recognized words are
-   * correct. This field is typically provided only for the top hypothesis, and
-   * only for `is_final=true` results. Clients should not rely on the
-   * `confidence` field as it is not guaranteed to be accurate or consistent.
+   * correct. This field is set only for the top alternative.
+   * This field is not guaranteed to be accurate and users should not rely on it
+   * to be always provided.
    * The default of 0.0 is a sentinel value indicating `confidence` was not set.
    * </pre>
    *
-   * <code>float confidence = 2;</code>
+   * <code>float confidence = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    */
   float getConfidence();
 
@@ -64,40 +64,56 @@ public interface SpeechRecognitionAlternativeOrBuilder
    *
    *
    * <pre>
-   * A list of word-specific information for each recognized word.
+   * Output only. A list of word-specific information for each recognized word.
+   * Note: When `enable_speaker_diarization` is true, you will see all the words
+   * from the beginning of the audio.
    * </pre>
    *
-   * <code>repeated .google.cloud.videointelligence.v1p3beta1.WordInfo words = 3;</code>
+   * <code>
+   * repeated .google.cloud.videointelligence.v1p3beta1.WordInfo words = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    */
   java.util.List<com.google.cloud.videointelligence.v1p3beta1.WordInfo> getWordsList();
   /**
    *
    *
    * <pre>
-   * A list of word-specific information for each recognized word.
+   * Output only. A list of word-specific information for each recognized word.
+   * Note: When `enable_speaker_diarization` is true, you will see all the words
+   * from the beginning of the audio.
    * </pre>
    *
-   * <code>repeated .google.cloud.videointelligence.v1p3beta1.WordInfo words = 3;</code>
+   * <code>
+   * repeated .google.cloud.videointelligence.v1p3beta1.WordInfo words = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    */
   com.google.cloud.videointelligence.v1p3beta1.WordInfo getWords(int index);
   /**
    *
    *
    * <pre>
-   * A list of word-specific information for each recognized word.
+   * Output only. A list of word-specific information for each recognized word.
+   * Note: When `enable_speaker_diarization` is true, you will see all the words
+   * from the beginning of the audio.
    * </pre>
    *
-   * <code>repeated .google.cloud.videointelligence.v1p3beta1.WordInfo words = 3;</code>
+   * <code>
+   * repeated .google.cloud.videointelligence.v1p3beta1.WordInfo words = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    */
   int getWordsCount();
   /**
    *
    *
    * <pre>
-   * A list of word-specific information for each recognized word.
+   * Output only. A list of word-specific information for each recognized word.
+   * Note: When `enable_speaker_diarization` is true, you will see all the words
+   * from the beginning of the audio.
    * </pre>
    *
-   * <code>repeated .google.cloud.videointelligence.v1p3beta1.WordInfo words = 3;</code>
+   * <code>
+   * repeated .google.cloud.videointelligence.v1p3beta1.WordInfo words = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    */
   java.util.List<? extends com.google.cloud.videointelligence.v1p3beta1.WordInfoOrBuilder>
       getWordsOrBuilderList();
@@ -105,10 +121,14 @@ public interface SpeechRecognitionAlternativeOrBuilder
    *
    *
    * <pre>
-   * A list of word-specific information for each recognized word.
+   * Output only. A list of word-specific information for each recognized word.
+   * Note: When `enable_speaker_diarization` is true, you will see all the words
+   * from the beginning of the audio.
    * </pre>
    *
-   * <code>repeated .google.cloud.videointelligence.v1p3beta1.WordInfo words = 3;</code>
+   * <code>
+   * repeated .google.cloud.videointelligence.v1p3beta1.WordInfo words = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    */
   com.google.cloud.videointelligence.v1p3beta1.WordInfoOrBuilder getWordsOrBuilder(int index);
 }

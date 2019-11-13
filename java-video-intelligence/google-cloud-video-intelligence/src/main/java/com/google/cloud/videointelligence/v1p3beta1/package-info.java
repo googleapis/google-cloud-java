@@ -39,7 +39,7 @@
  * ======================================= StreamingVideoIntelligenceServiceClient
  * =======================================
  *
- * <p>Service Description: Service that implements Google Cloud Video Intelligence Streaming API.
+ * <p>Service Description: Service that implements streaming Google Cloud Video Intelligence API.
  *
  * <p>Sample for StreamingVideoIntelligenceServiceClient:
  *
