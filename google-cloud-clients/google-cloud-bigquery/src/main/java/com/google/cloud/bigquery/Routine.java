@@ -76,6 +76,12 @@ public class Routine extends RoutineInfo {
     }
 
     @Override
+    public Builder setDescription(String description) {
+      infoBuilder.setDescription(description);
+      return this;
+    }
+
+    @Override
     Builder setLastModifiedTime(Long lastModifiedMillis) {
       infoBuilder.setLastModifiedTime(lastModifiedMillis);
       return this;
