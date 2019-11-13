@@ -13,16 +13,14 @@ Java idiomatic client for Cloud BigQuery Storage.
 
 Quickstart
 ----------
-
-[//]: # ({x-version-update-start:google-cloud-bigquerystorage:released})
-If you are using Maven with Bom, Add this to your pom.xml file.
+If you are using Maven with a BOM, add this to your pom.xml file.
 ```xml
    <dependencyManagement>
     <dependencies>
       <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>libraries-bom</artifactId>
-        <version>0.118.0-beta</version>
+        <version>2.8.0</version>
         <type>pom</type>
         <scope>import</scope>
        </dependency>
@@ -34,7 +32,8 @@ If you are using Maven with Bom, Add this to your pom.xml file.
       <artifactId>google-cloud-bigquerystorage</artifactId>
     </dependency>
 ```
-If you are using Maven without Bom, Add this to your dependencies.
+[//]: # ({x-version-update-start:google-cloud-bigquerystorage:released})
+If you are using Maven without a BOM, add this to your dependencies.
 ```xml
     <dependency>
       <groupId>com.google.cloud</groupId>
