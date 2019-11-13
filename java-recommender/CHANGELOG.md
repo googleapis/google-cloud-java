@@ -1,5 +1,15 @@
 # Changelog
 
+### [0.1.2](https://www.github.com/googleapis/java-recommender/compare/v0.1.1...v0.1.2) (2019-11-08)
+
+
+### Dependencies
+
+* update dependency com.google.api.grpc:proto-google-common-protos to v1.17.0 ([#12](https://www.github.com/googleapis/java-recommender/issues/12)) ([b855509](https://www.github.com/googleapis/java-recommender/commit/b855509011815aabd63adfdb663179b3ddae8d41))
+* update dependency com.google.cloud:google-cloud-core-grpc to v1.91.3 ([#24](https://www.github.com/googleapis/java-recommender/issues/24)) ([24348f6](https://www.github.com/googleapis/java-recommender/commit/24348f6a2190b7f402183ab584fce8c7c6e0fdfc))
+* update dependency io.grpc:grpc-bom to v1.24.1 ([cb46cec](https://www.github.com/googleapis/java-recommender/commit/cb46cec5588edd3edd8575a90374b380ea2e690c))
+* update gax.version to v1.49.1 ([c0c4b24](https://www.github.com/googleapis/java-recommender/commit/c0c4b243ce03e7e8fff5e52126b7597661a1da14))
+
 ### [0.1.1](https://www.github.com/googleapis/java-recommender/compare/v0.1.0...v0.1.1) (2019-10-02)
 
 
