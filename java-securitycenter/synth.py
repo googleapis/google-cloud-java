@@ -25,31 +25,15 @@ versions = ['v1beta1', 'v1']
 config_pattern = '/google/cloud/securitycenter/artman_securitycenter_{version}.yaml'
 
 for version in versions:
-    library = gapic.java_library(
+    java.gapic_library(
         service=service,
         version=version,
-        config_path=config_pattern.format(version=version),
-        artman_output_name='')
-
-    package_name = f'com.google.cloud.{service}.{version}'
-    java.fix_proto_headers(library / f'proto-google-cloud-{service}-{version}')
-    java.fix_grpc_headers(
-        library / f'grpc-google-cloud-{service}-{version}', package_name)
-
-    s.copy(
-        library / f'gapic-google-cloud-{service}-{version}/src', f'google-cloud-{service}/src')
-    s.copy(library / f'grpc-google-cloud-{service}-{version}/src',
-           f'grpc-google-cloud-{service}-{version}/src')
-    s.copy(library / f'proto-google-cloud-{service}-{version}/src',
-           f'proto-google-cloud-{service}-{version}/src')
-
-    java.format_code('./src')
-    java.format_code(f'grpc-google-cloud-{service}-{version}/src')
-    java.format_code(f'proto-google-cloud-{service}-{version}/src')
+        config_pattern=config_pattern,
+        gapic=gapic,
+    )
 
 common_templates = gcp.CommonTemplates()
 templates = common_templates.java_library()
 s.copy(templates, excludes=[
-    '.gitignore',
-    'README.md',
+  'README.md',
 ])
