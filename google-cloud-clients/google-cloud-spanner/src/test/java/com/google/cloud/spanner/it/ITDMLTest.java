@@ -30,6 +30,7 @@ import com.google.cloud.spanner.KeyRange;
 import com.google.cloud.spanner.KeySet;
 import com.google.cloud.spanner.Mutation;
 import com.google.cloud.spanner.ResultSet;
+import com.google.cloud.spanner.Spanner;
 import com.google.cloud.spanner.SpannerException;
 import com.google.cloud.spanner.SpannerExceptionFactory;
 import com.google.cloud.spanner.Statement;
@@ -38,20 +39,24 @@ import com.google.cloud.spanner.TransactionContext;
 import com.google.cloud.spanner.TransactionRunner;
 import com.google.cloud.spanner.TransactionRunner.TransactionCallable;
 import java.util.Arrays;
+import java.util.Collection;
+import org.junit.After;
+import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.ClassRule;
 import org.junit.Test;
 import org.junit.experimental.categories.Category;
 import org.junit.runner.RunWith;
-import org.junit.runners.JUnit4;
+import org.junit.runners.Parameterized;
+import org.junit.runners.Parameterized.Parameter;
+import org.junit.runners.Parameterized.Parameters;
 
 /** Integration tests for DML. */
 @Category(IntegrationTest.class)
-@RunWith(JUnit4.class)
+@RunWith(Parameterized.class)
 public final class ITDMLTest {
   @ClassRule public static IntegrationTestEnv env = new IntegrationTestEnv();
   private static Database db;
-  private static DatabaseClient client;
   /** Sequence for assigning unique keys to test cases. */
   private static int seq;
 
@@ -63,6 +68,15 @@ public final class ITDMLTest {
 
   private static boolean throwAbortOnce = false;
 
+  @Parameters(name = "InlineBeginTx = {0}")
+  public static Collection<Object[]> data() {
+    return Arrays.asList(new Object[][] {{false}, {true}});
+  }
+
+  @Parameter public boolean inlineBeginTx;
+  private Spanner spanner;
+  private DatabaseClient client;
+
   @BeforeClass
   public static void setUpDatabase() {
     db =
@@ -72,7 +86,23 @@ public final class ITDMLTest {
                     + "  K    STRING(MAX) NOT NULL,"
                     + "  V    INT64,"
                     + ") PRIMARY KEY (K)");
-    client = env.getTestHelper().getDatabaseClient(db);
+  }
+
+  @Before
+  public void setupClient() {
+    spanner =
+        env.getTestHelper()
+            .getOptions()
+            .toBuilder()
+            .setInlineBeginForReadWriteTransaction(inlineBeginTx)
+            .build()
+            .getService();
+    client = spanner.getDatabaseClient(db.getId());
+  }
+
+  @After
+  public void teardownClient() {
+    spanner.close();
   }
 
   private static String uniqueKey() {

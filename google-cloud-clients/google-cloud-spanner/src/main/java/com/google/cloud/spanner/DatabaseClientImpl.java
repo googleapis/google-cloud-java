@@ -44,9 +44,11 @@ class DatabaseClientImpl implements DatabaseClient {
   }
 
   @VisibleForTesting final SessionPool pool;
+  private final boolean inlineBeginReadWriteTransactions;
 
-  DatabaseClientImpl(SessionPool pool) {
+  DatabaseClientImpl(SessionPool pool, boolean inlineBeginReadWriteTransactions) {
     this.pool = pool;
+    this.inlineBeginReadWriteTransactions = inlineBeginReadWriteTransactions;
   }
 
   @VisibleForTesting
@@ -167,7 +169,7 @@ class DatabaseClientImpl implements DatabaseClient {
 
   @Override
   public TransactionRunner readWriteTransaction() {
-    return pool.getOptions().isInlineBeginTransaction()
+    return inlineBeginReadWriteTransactions
         ? inlinedReadWriteTransaction()
         : preparedReadWriteTransaction();
   }
@@ -194,7 +196,7 @@ class DatabaseClientImpl implements DatabaseClient {
 
   @Override
   public TransactionManager transactionManager() {
-    return pool.getOptions().isInlineBeginTransaction()
+    return inlineBeginReadWriteTransactions
         ? inlinedTransactionManager()
         : preparedTransactionManager();
   }

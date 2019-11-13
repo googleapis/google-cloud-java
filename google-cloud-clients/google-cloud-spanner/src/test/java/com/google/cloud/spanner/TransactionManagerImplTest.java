@@ -263,8 +263,9 @@ public class TransactionManagerImplTest {
     when(transportOptions.getExecutorFactory()).thenReturn(new TestExecutorFactory());
     when(options.getTransportOptions()).thenReturn(transportOptions);
     SessionPoolOptions sessionPoolOptions =
-        SessionPoolOptions.newBuilder().setMinSessions(0).setInlineBeginTransaction(true).build();
+        SessionPoolOptions.newBuilder().setMinSessions(0).build();
     when(options.getSessionPoolOptions()).thenReturn(sessionPoolOptions);
+    when(options.isInlineBeginForReadWriteTransaction()).thenReturn(true);
     when(options.getSessionLabels()).thenReturn(Collections.<String, String>emptyMap());
     SpannerRpc rpc = mock(SpannerRpc.class);
     when(rpc.batchCreateSessions(

@@ -1430,7 +1430,7 @@ public class SessionPoolTest extends BaseSessionPoolTest {
     FakeClock clock = new FakeClock();
     clock.currentTimeMillis = System.currentTimeMillis();
     pool = createPool(clock);
-    DatabaseClientImpl impl = new DatabaseClientImpl(pool);
+    DatabaseClientImpl impl = new DatabaseClientImpl(pool, false);
     assertThat(impl.write(mutations)).isNotNull();
   }
 
@@ -1481,7 +1481,7 @@ public class SessionPoolTest extends BaseSessionPoolTest {
     FakeClock clock = new FakeClock();
     clock.currentTimeMillis = System.currentTimeMillis();
     pool = createPool(clock);
-    DatabaseClientImpl impl = new DatabaseClientImpl(pool);
+    DatabaseClientImpl impl = new DatabaseClientImpl(pool, false);
     assertThat(impl.writeAtLeastOnce(mutations)).isNotNull();
   }
 
@@ -1532,7 +1532,7 @@ public class SessionPoolTest extends BaseSessionPoolTest {
     FakeClock clock = new FakeClock();
     clock.currentTimeMillis = System.currentTimeMillis();
     pool = createPool(clock);
-    DatabaseClientImpl impl = new DatabaseClientImpl(pool);
+    DatabaseClientImpl impl = new DatabaseClientImpl(pool, false);
     assertThat(impl.executePartitionedUpdate(statement)).isEqualTo(1L);
   }
 

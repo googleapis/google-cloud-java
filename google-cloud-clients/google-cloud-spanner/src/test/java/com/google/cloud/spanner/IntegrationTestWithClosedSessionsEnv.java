@@ -46,7 +46,8 @@ public class IntegrationTestWithClosedSessionsEnv extends IntegrationTestEnv {
 
     @Override
     DatabaseClientImpl createDatabaseClient(SessionPool pool) {
-      return new DatabaseClientWithClosedSessionImpl(pool);
+      return new DatabaseClientWithClosedSessionImpl(
+          pool, getOptions().isInlineBeginForReadWriteTransaction());
     }
   }
 
@@ -58,8 +59,9 @@ public class IntegrationTestWithClosedSessionsEnv extends IntegrationTestEnv {
     private boolean invalidateNextSession = false;
     private boolean allowReplacing = true;
 
-    DatabaseClientWithClosedSessionImpl(SessionPool pool) {
-      super(pool);
+    DatabaseClientWithClosedSessionImpl(
+        SessionPool pool, boolean inlineBeginReadWriteTransactions) {
+      super(pool, inlineBeginReadWriteTransactions);
     }
 
     /** Invalidate the next session that is checked out from the pool. */

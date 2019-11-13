@@ -68,6 +68,7 @@ public class SpannerOptions extends ServiceOptions<Spanner, SpannerOptions> {
   private final int prefetchChunks;
   private final int numChannels;
   private final ImmutableMap<String, String> sessionLabels;
+  private final boolean inlineBeginForReadWriteTransaction;
   private final SpannerStubSettings spannerStubSettings;
   private final InstanceAdminStubSettings instanceAdminStubSettings;
   private final DatabaseAdminStubSettings databaseAdminStubSettings;
@@ -111,6 +112,7 @@ public class SpannerOptions extends ServiceOptions<Spanner, SpannerOptions> {
             : SessionPoolOptions.newBuilder().build();
     prefetchChunks = builder.prefetchChunks;
     sessionLabels = builder.sessionLabels;
+    inlineBeginForReadWriteTransaction = builder.inlineBeginForReadWriteTransaction;
     try {
       spannerStubSettings = builder.spannerStubSettingsBuilder.build();
       instanceAdminStubSettings = builder.instanceAdminStubSettingsBuilder.build();
@@ -143,6 +145,7 @@ public class SpannerOptions extends ServiceOptions<Spanner, SpannerOptions> {
     private int prefetchChunks = DEFAULT_PREFETCH_CHUNKS;
     private SessionPoolOptions sessionPoolOptions;
     private ImmutableMap<String, String> sessionLabels;
+    private boolean inlineBeginForReadWriteTransaction;
     private SpannerStubSettings.Builder spannerStubSettingsBuilder =
         SpannerStubSettings.newBuilder();
     private InstanceAdminStubSettings.Builder instanceAdminStubSettingsBuilder =
@@ -159,6 +162,7 @@ public class SpannerOptions extends ServiceOptions<Spanner, SpannerOptions> {
       this.sessionPoolOptions = options.sessionPoolOptions;
       this.prefetchChunks = options.prefetchChunks;
       this.sessionLabels = options.sessionLabels;
+      this.inlineBeginForReadWriteTransaction = options.inlineBeginForReadWriteTransaction;
       this.spannerStubSettingsBuilder = options.spannerStubSettings.toBuilder();
       this.instanceAdminStubSettingsBuilder = options.instanceAdminStubSettings.toBuilder();
       this.databaseAdminStubSettingsBuilder = options.databaseAdminStubSettings.toBuilder();
@@ -243,6 +247,11 @@ public class SpannerOptions extends ServiceOptions<Spanner, SpannerOptions> {
         Preconditions.checkNotNull(value, "Null values are not allowed in the labels map.");
       }
       this.sessionLabels = ImmutableMap.copyOf(sessionLabels);
+      return this;
+    }
+
+    public Builder setInlineBeginForReadWriteTransaction(boolean inlineBegin) {
+      this.inlineBeginForReadWriteTransaction = inlineBegin;
       return this;
     }
 
@@ -408,6 +417,10 @@ public class SpannerOptions extends ServiceOptions<Spanner, SpannerOptions> {
 
   public Map<String, String> getSessionLabels() {
     return sessionLabels;
+  }
+
+  public boolean isInlineBeginForReadWriteTransaction() {
+    return inlineBeginForReadWriteTransaction;
   }
 
   public SpannerStubSettings getSpannerStubSettings() {

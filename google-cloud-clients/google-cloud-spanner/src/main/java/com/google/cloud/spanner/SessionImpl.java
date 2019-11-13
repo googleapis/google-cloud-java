@@ -191,7 +191,7 @@ class SessionImpl implements Session {
             this,
             spanner.getRpc(),
             spanner.getDefaultPrefetchChunks(),
-            spanner.getOptions().getSessionPoolOptions().isInlineBeginTransaction()));
+            spanner.getOptions().isInlineBeginForReadWriteTransaction()));
   }
 
   @Override
@@ -255,6 +255,6 @@ class SessionImpl implements Session {
   @Override
   public TransactionManager transactionManager() {
     return new TransactionManagerImpl(
-        this, spanner.getOptions().getSessionPoolOptions().isInlineBeginTransaction());
+        this, spanner.getOptions().isInlineBeginForReadWriteTransaction());
   }
 }

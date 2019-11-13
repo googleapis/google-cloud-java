@@ -29,7 +29,6 @@ public class SessionPoolOptions {
   private final int maxSessions;
   private final int maxIdleSessions;
   private final float writeSessionsFraction;
-  private final boolean inlineBeginTransaction;
   private final ActionOnExhaustion actionOnExhaustion;
   private final int keepAliveIntervalMinutes;
   private final ActionOnSessionNotFound actionOnSessionNotFound;
@@ -43,7 +42,6 @@ public class SessionPoolOptions {
     this.maxSessions = builder.maxSessions;
     this.maxIdleSessions = builder.maxIdleSessions;
     this.writeSessionsFraction = builder.writeSessionsFraction;
-    this.inlineBeginTransaction = builder.inlineBeginTransaction;
     this.actionOnExhaustion = builder.actionOnExhaustion;
     this.actionOnSessionNotFound = builder.actionOnSessionNotFound;
     this.initialWaitForSessionTimeoutMillis = builder.initialWaitForSessionTimeoutMillis;
@@ -64,10 +62,6 @@ public class SessionPoolOptions {
 
   public float getWriteSessionsFraction() {
     return writeSessionsFraction;
-  }
-
-  public boolean isInlineBeginTransaction() {
-    return inlineBeginTransaction;
   }
 
   public int getKeepAliveIntervalMinutes() {
@@ -113,7 +107,6 @@ public class SessionPoolOptions {
     private int maxSessions = DEFAULT_MAX_SESSIONS;
     private int maxIdleSessions;
     private float writeSessionsFraction = 0.2f;
-    private boolean inlineBeginTransaction;
     private ActionOnExhaustion actionOnExhaustion = DEFAULT_ACTION;
     private long initialWaitForSessionTimeoutMillis = 30_000L;
     private ActionOnSessionNotFound actionOnSessionNotFound = ActionOnSessionNotFound.RETRY;
@@ -214,11 +207,6 @@ public class SessionPoolOptions {
      */
     public Builder setWriteSessionsFraction(float writeSessionsFraction) {
       this.writeSessionsFraction = writeSessionsFraction;
-      return this;
-    }
-
-    public Builder setInlineBeginTransaction(boolean inlineBeginTransaction) {
-      this.inlineBeginTransaction = inlineBeginTransaction;
       return this;
     }
 

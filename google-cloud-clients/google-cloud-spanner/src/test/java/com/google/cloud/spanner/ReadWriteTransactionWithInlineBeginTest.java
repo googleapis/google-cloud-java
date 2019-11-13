@@ -132,11 +132,9 @@ public class ReadWriteTransactionWithInlineBeginTest {
     spanner =
         SpannerOptions.newBuilder()
             .setProjectId("[PROJECT]")
+            .setInlineBeginForReadWriteTransaction(true)
             .setSessionPoolOption(
-                SessionPoolOptions.newBuilder()
-                    .setWriteSessionsFraction(0.0f)
-                    .setInlineBeginTransaction(true)
-                    .build())
+                SessionPoolOptions.newBuilder().setWriteSessionsFraction(0.0f).build())
             .setChannelProvider(channelProvider)
             .setCredentials(NoCredentials.getInstance())
             .build()
