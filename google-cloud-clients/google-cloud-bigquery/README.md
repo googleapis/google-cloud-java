@@ -12,8 +12,7 @@ Java idiomatic client for [Google Cloud BigQuery][cloud-bigquery].
 
 Quickstart
 ----------
-[//]: # ({x-version-update-start:google-cloud-bigquery:released})
-If you are using Maven, add this to your pom.xml file
+If you are using Maven with a BOM, add this to your pom.xml file.
 ```xml
 <dependencyManagement>
     <dependencies>
@@ -31,7 +30,10 @@ If you are using Maven, add this to your pom.xml file
      <groupId>com.google.cloud</groupId>
      <artifactId>google-cloud-bigquery</artifactId>
   </dependency>
-  
+```
+[//]: # ({x-version-update-start:google-cloud-bigquery:released})
+If you are using Maven without a BOM, add this to your dependencies.
+```xml
 <dependency>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-bigquery</artifactId>
