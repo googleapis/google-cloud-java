@@ -250,6 +250,29 @@ public class SpannerOptions extends ServiceOptions<Spanner, SpannerOptions> {
       return this;
     }
 
+    /**
+     * Sets whether {@link DatabaseClient}s should inline the BeginTransaction option with the first
+     * query or update statement that is executed by a read/write transaction instead of using a
+     * write-prepared session from the session pool. Enabling this option can improve execution
+     * times for read/write transactions in the following scenarios:
+     *
+     * <p>
+     *
+     * <ul>
+     *   <li>Applications with a very high rate of read/write transactions where the session pool is
+     *       not able to prepare new read/write transactions at the same rate as the application is
+     *       requesting read/write transactions.
+     *   <li>Applications with a very low rate of read/write transactions where sessions with a
+     *       prepared read/write transaction are kept in the session pool for a long time without
+     *       being used.
+     * </ul>
+     *
+     * If you enable this option, you should also re-evaluate the value for {@link
+     * SessionPoolOptions.Builder#setWriteSessionsFraction(float)}. When this option is enabled,
+     * write-prepared sessions are only used for calls to {@link DatabaseClient#write(Iterable)}. If
+     * your application does not use this method, you should set the write fraction for the session
+     * pool to zero.
+     */
     public Builder setInlineBeginForReadWriteTransaction(boolean inlineBegin) {
       this.inlineBeginForReadWriteTransaction = inlineBegin;
       return this;
