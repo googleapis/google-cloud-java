@@ -18,13 +18,13 @@ package com.example.task;
 
 import static com.google.common.truth.Truth.assertThat;
 
+import com.google.cloud.tasks.v2.CloudTasksClient;
+import com.google.cloud.tasks.v2.QueueName;
 import java.io.ByteArrayOutputStream;
 import java.io.PrintStream;
 import org.junit.After;
 import org.junit.Before;
-import org.junit.Rule;
 import org.junit.Test;
-import org.junit.rules.Timeout;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
 
@@ -49,6 +49,12 @@ public class CreateHttpTaskIT {
   @After
   public void tearDown() {
     System.setOut(null);
+    try (CloudTasksClient client = CloudTasksClient.create()) {
+      String queuePath = QueueName.of(PROJECT_ID, LOCATION_ID, QUEUE_ID).toString();
+      client.purgeQueue(queuePath);
+    } catch (Exception e) {
+      System.out.println("Error with queue purge.");
+    }
   }
 
   @Test

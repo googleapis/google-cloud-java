@@ -17,12 +17,12 @@
 package com.example.task;
 
 // [START cloud_tasks_create_http_task_with_token]
-import com.google.cloud.tasks.v2beta3.CloudTasksClient;
-import com.google.cloud.tasks.v2beta3.HttpMethod;
-import com.google.cloud.tasks.v2beta3.HttpRequest;
-import com.google.cloud.tasks.v2beta3.OidcToken;
-import com.google.cloud.tasks.v2beta3.QueueName;
-import com.google.cloud.tasks.v2beta3.Task;
+import com.google.cloud.tasks.v2.CloudTasksClient;
+import com.google.cloud.tasks.v2.HttpMethod;
+import com.google.cloud.tasks.v2.HttpRequest;
+import com.google.cloud.tasks.v2.OidcToken;
+import com.google.cloud.tasks.v2.QueueName;
+import com.google.cloud.tasks.v2.Task;
 import com.google.protobuf.ByteString;
 import java.nio.charset.Charset;
 
