@@ -611,7 +611,7 @@
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>grpc-google-cloud-vision-v1p1beta1</artifactId>
-        <version>0.80.0</version>
+        <version>0.81.1</version>
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
