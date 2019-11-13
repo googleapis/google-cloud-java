@@ -98,6 +98,7 @@ public final class ITDMLTest {
             .build()
             .getService();
     client = spanner.getDatabaseClient(db.getId());
+    client.writeAtLeastOnce(Arrays.asList(Mutation.delete("T", KeySet.all())));
   }
 
   @After
