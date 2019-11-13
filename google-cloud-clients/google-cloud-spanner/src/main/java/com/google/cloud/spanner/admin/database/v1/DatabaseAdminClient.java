@@ -1144,8 +1144,10 @@ public class DatabaseAdminClient implements BackgroundResource {
    * <pre><code>
    * try (DatabaseAdminClient databaseAdminClient = DatabaseAdminClient.create()) {
    *   ResourceName resource = DatabaseName.of("[PROJECT]", "[INSTANCE]", "[DATABASE]");
+   *   List&lt;String&gt; permissions = new ArrayList&lt;&gt;();
    *   TestIamPermissionsRequest request = TestIamPermissionsRequest.newBuilder()
    *     .setResource(resource.toString())
+   *     .addAllPermissions(permissions)
    *     .build();
    *   TestIamPermissionsResponse response = databaseAdminClient.testIamPermissions(request);
    * }
@@ -1171,8 +1173,10 @@ public class DatabaseAdminClient implements BackgroundResource {
    * <pre><code>
    * try (DatabaseAdminClient databaseAdminClient = DatabaseAdminClient.create()) {
    *   ResourceName resource = DatabaseName.of("[PROJECT]", "[INSTANCE]", "[DATABASE]");
+   *   List&lt;String&gt; permissions = new ArrayList&lt;&gt;();
    *   TestIamPermissionsRequest request = TestIamPermissionsRequest.newBuilder()
    *     .setResource(resource.toString())
+   *     .addAllPermissions(permissions)
    *     .build();
    *   ApiFuture&lt;TestIamPermissionsResponse&gt; future = databaseAdminClient.testIamPermissionsCallable().futureCall(request);
    *   // Do something
