@@ -591,11 +591,9 @@ public class DataCatalogClient implements BackgroundResource {
    * try (DataCatalogClient dataCatalogClient = DataCatalogClient.create()) {
    *   SearchCatalogRequest.Scope scope = SearchCatalogRequest.Scope.newBuilder().build();
    *   String query = "";
-   *   String orderBy = "";
    *   SearchCatalogRequest request = SearchCatalogRequest.newBuilder()
    *     .setScope(scope)
    *     .setQuery(query)
-   *     .setOrderBy(orderBy)
    *     .build();
    *   for (SearchCatalogResult element : dataCatalogClient.searchCatalog(request).iterateAll()) {
    *     // doThingsWith(element);
@@ -631,11 +629,9 @@ public class DataCatalogClient implements BackgroundResource {
    * try (DataCatalogClient dataCatalogClient = DataCatalogClient.create()) {
    *   SearchCatalogRequest.Scope scope = SearchCatalogRequest.Scope.newBuilder().build();
    *   String query = "";
-   *   String orderBy = "";
    *   SearchCatalogRequest request = SearchCatalogRequest.newBuilder()
    *     .setScope(scope)
    *     .setQuery(query)
-   *     .setOrderBy(orderBy)
    *     .build();
    *   ApiFuture&lt;SearchCatalogPagedResponse&gt; future = dataCatalogClient.searchCatalogPagedCallable().futureCall(request);
    *   // Do something
@@ -671,11 +667,9 @@ public class DataCatalogClient implements BackgroundResource {
    * try (DataCatalogClient dataCatalogClient = DataCatalogClient.create()) {
    *   SearchCatalogRequest.Scope scope = SearchCatalogRequest.Scope.newBuilder().build();
    *   String query = "";
-   *   String orderBy = "";
    *   SearchCatalogRequest request = SearchCatalogRequest.newBuilder()
    *     .setScope(scope)
    *     .setQuery(query)
-   *     .setOrderBy(orderBy)
    *     .build();
    *   while (true) {
    *     SearchCatalogResponse response = dataCatalogClient.searchCatalogCallable().call(request);
