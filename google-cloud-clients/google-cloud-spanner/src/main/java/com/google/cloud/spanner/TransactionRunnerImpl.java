@@ -126,13 +126,13 @@ class TransactionRunnerImpl implements SessionTransaction, TransactionRunner {
     void commit() {
       try {
         // Take the transaction lock to prevent any other request to include a BeginTransaction.
-        // Note that we do not unlock unless an error occurs. The unlocking will in that case be
+        // Note that we do not unlock if an error occurs. The unlocking will in that case be
         // handled by the onError(...) method.
         transactionLock.lockInterruptibly();
       } catch (InterruptedException e) {
         throw SpannerExceptionFactory.propagateInterrupt(e);
       }
-      // It could be that there is no transaction if the transaction context has been marked as
+      // It could be that there is no transaction if the transaction has been marked
       // withInlineBegin, and there has not been any query/update statement that has been executed.
       if (transactionId == null) {
         createTxn();
@@ -200,6 +200,9 @@ class TransactionRunnerImpl implements SessionTransaction, TransactionRunner {
       } catch (InterruptedException e) {
         throw SpannerExceptionFactory.propagateInterrupt(e);
       }
+      // It could be that there is no transaction if the transaction has been marked
+      // withInlineBegin, and there has not been any query/update statement that has been executed.
+      // In that case, we do not need to do anything, as there is no transaction.
       if (transactionId != null) {
         // We're exiting early due to a user exception, but the transaction is still active.
         // Send a rollback for the transaction to release any locks held.
@@ -226,6 +229,9 @@ class TransactionRunnerImpl implements SessionTransaction, TransactionRunner {
     @Nullable
     @Override
     TransactionSelector getTransactionSelector() {
+      // Check if there is already a transactionId available. That is the case if this transaction
+      // has already been prepared by the session pool, or if this transaction has been marked
+      // withInlineBegin and an earlier statement has already started a transaction.
       if (transactionId == null) {
         try {
           // Wait if another request is already beginning, committing or rolling back the
@@ -235,6 +241,8 @@ class TransactionRunnerImpl implements SessionTransaction, TransactionRunner {
           // holding the lock and that had sent a statement with a BeginTransaction request caused
           // an error and did not return a transaction.
           if (transactionId == null) {
+            // Return a TransactionSelector that will start a new transaction as part of the
+            // statement that is being executed.
             return TransactionSelector.newBuilder()
                 .setBegin(
                     TransactionOptions.newBuilder()
@@ -247,11 +255,14 @@ class TransactionRunnerImpl implements SessionTransaction, TransactionRunner {
           throw SpannerExceptionFactory.newSpannerExceptionForCancellation(null, e);
         }
       }
+      // There is already a transactionId available. Include that id as the transaction to use.
       return TransactionSelector.newBuilder().setId(transactionId).build();
     }
 
     @Override
     public void onTransactionMetadata(Transaction transaction) {
+      // A transaction has been returned by a statement that was executed. Set the id of the
+      // transaction on this instance and release the lock to allow other statements to proceed.
       if (this.transactionId == null && transaction != null && transaction.getId() != null) {
         this.transactionId = transaction.getId();
         transactionLock.unlock();
@@ -260,6 +271,9 @@ class TransactionRunnerImpl implements SessionTransaction, TransactionRunner {
 
     @Override
     public void onError(SpannerException e) {
+      // Release the transactionLock if that is being held by this thread. That would mean that the
+      // statement that was trying to start a transaction caused an error. The next statement should
+      // in that case also include a BeginTransaction option.
       if (transactionLock.isHeldByCurrentThread()) {
         transactionLock.unlock();
       }

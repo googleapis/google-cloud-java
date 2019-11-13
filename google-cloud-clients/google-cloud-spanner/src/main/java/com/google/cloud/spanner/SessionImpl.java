@@ -254,6 +254,7 @@ class SessionImpl implements Session {
 
   @Override
   public TransactionManager transactionManager() {
-    return new TransactionManagerImpl(this);
+    return new TransactionManagerImpl(
+        this, spanner.getOptions().getSessionPoolOptions().isInlineBeginTransaction());
   }
 }

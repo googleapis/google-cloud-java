@@ -439,6 +439,7 @@ public class MockSpannerServiceImpl extends SpannerImplBase implements MockGrpcS
   private final Random random = new Random();
   private double abortProbability = 0.0010D;
 
+  private final Queue<AbstractMessage> requests = new ConcurrentLinkedQueue<>();
   private final ReadWriteLock freezeLock = new ReentrantReadWriteLock();
   private final Queue<Exception> exceptions = new ConcurrentLinkedQueue<>();
   private final ConcurrentMap<Statement, StatementResult> statementResults =
@@ -446,6 +447,7 @@ public class MockSpannerServiceImpl extends SpannerImplBase implements MockGrpcS
   private final ConcurrentMap<String, Session> sessions = new ConcurrentHashMap<>();
   private ConcurrentMap<String, Instant> sessionLastUsed = new ConcurrentHashMap<>();
   private final ConcurrentMap<ByteString, Transaction> transactions = new ConcurrentHashMap<>();
+  private final Queue<ByteString> transactionsStarted = new ConcurrentLinkedQueue<>();
   private final ConcurrentMap<ByteString, Boolean> isPartitionedDmlTransaction =
       new ConcurrentHashMap<>();
   private final ConcurrentMap<ByteString, Boolean> abortedTransactions = new ConcurrentHashMap<>();
@@ -597,6 +599,7 @@ public class MockSpannerServiceImpl extends SpannerImplBase implements MockGrpcS
   public void batchCreateSessions(
       BatchCreateSessionsRequest request,
       StreamObserver<BatchCreateSessionsResponse> responseObserver) {
+    requests.add(request);
     Preconditions.checkNotNull(request.getDatabase());
     String name = null;
     try {
@@ -656,6 +659,7 @@ public class MockSpannerServiceImpl extends SpannerImplBase implements MockGrpcS
   @Override
   public void createSession(
       CreateSessionRequest request, StreamObserver<Session> responseObserver) {
+    requests.add(request);
     Preconditions.checkNotNull(request.getDatabase());
     String name = generateSessionName(request.getDatabase());
     try {
@@ -690,6 +694,7 @@ public class MockSpannerServiceImpl extends SpannerImplBase implements MockGrpcS
 
   @Override
   public void getSession(GetSessionRequest request, StreamObserver<Session> responseObserver) {
+    requests.add(request);
     Preconditions.checkNotNull(request.getName());
     try {
       getSessionExecutionTime.simulateExecutionTime(exceptions, freezeLock);
@@ -719,6 +724,7 @@ public class MockSpannerServiceImpl extends SpannerImplBase implements MockGrpcS
   @Override
   public void listSessions(
       ListSessionsRequest request, StreamObserver<ListSessionsResponse> responseObserver) {
+    requests.add(request);
     try {
       listSessionsExecutionTime.simulateExecutionTime(exceptions, freezeLock);
       List<Session> res = new ArrayList<>();
@@ -747,6 +753,7 @@ public class MockSpannerServiceImpl extends SpannerImplBase implements MockGrpcS
 
   @Override
   public void deleteSession(DeleteSessionRequest request, StreamObserver<Empty> responseObserver) {
+    requests.add(request);
     Preconditions.checkNotNull(request.getName());
     try {
       deleteSessionExecutionTime.simulateExecutionTime(exceptions, freezeLock);
@@ -774,6 +781,7 @@ public class MockSpannerServiceImpl extends SpannerImplBase implements MockGrpcS
 
   @Override
   public void executeSql(ExecuteSqlRequest request, StreamObserver<ResultSet> responseObserver) {
+    requests.add(request);
     Preconditions.checkNotNull(request.getSession());
     Session session = sessions.get(request.getSession());
     if (session == null) {
@@ -853,6 +861,7 @@ public class MockSpannerServiceImpl extends SpannerImplBase implements MockGrpcS
   @Override
   public void executeBatchDml(
       ExecuteBatchDmlRequest request, StreamObserver<ExecuteBatchDmlResponse> responseObserver) {
+    requests.add(request);
     Preconditions.checkNotNull(request.getSession());
     Session session = sessions.get(request.getSession());
     if (session == null) {
@@ -940,6 +949,7 @@ public class MockSpannerServiceImpl extends SpannerImplBase implements MockGrpcS
   @Override
   public void executeStreamingSql(
       ExecuteSqlRequest request, StreamObserver<PartialResultSet> responseObserver) {
+    requests.add(request);
     Preconditions.checkNotNull(request.getSession());
     Session session = sessions.get(request.getSession());
     if (session == null) {
@@ -1119,6 +1129,7 @@ public class MockSpannerServiceImpl extends SpannerImplBase implements MockGrpcS
 
   @Override
   public void read(final ReadRequest request, StreamObserver<ResultSet> responseObserver) {
+    requests.add(request);
     Preconditions.checkNotNull(request.getSession());
     Session session = sessions.get(request.getSession());
     if (session == null) {
@@ -1157,6 +1168,7 @@ public class MockSpannerServiceImpl extends SpannerImplBase implements MockGrpcS
   @Override
   public void streamingRead(
       final ReadRequest request, StreamObserver<PartialResultSet> responseObserver) {
+    requests.add(request);
     Preconditions.checkNotNull(request.getSession());
     Session session = sessions.get(request.getSession());
     if (session == null) {
@@ -1324,6 +1336,7 @@ public class MockSpannerServiceImpl extends SpannerImplBase implements MockGrpcS
   @Override
   public void beginTransaction(
       BeginTransactionRequest request, StreamObserver<Transaction> responseObserver) {
+    requests.add(request);
     Preconditions.checkNotNull(request.getSession());
     Session session = sessions.get(request.getSession());
     if (session == null) {
@@ -1351,6 +1364,7 @@ public class MockSpannerServiceImpl extends SpannerImplBase implements MockGrpcS
     }
     Transaction transaction = builder.build();
     transactions.put(transaction.getId(), transaction);
+    transactionsStarted.add(transaction.getId());
     isPartitionedDmlTransaction.put(
         transaction.getId(), options.getModeCase() == ModeCase.PARTITIONED_DML);
     if (abortNextTransaction.getAndSet(false)) {
@@ -1428,6 +1442,7 @@ public class MockSpannerServiceImpl extends SpannerImplBase implements MockGrpcS
 
   @Override
   public void commit(CommitRequest request, StreamObserver<CommitResponse> responseObserver) {
+    requests.add(request);
     Preconditions.checkNotNull(request.getSession());
     Session session = sessions.get(request.getSession());
     if (session == null) {
@@ -1481,6 +1496,7 @@ public class MockSpannerServiceImpl extends SpannerImplBase implements MockGrpcS
 
   @Override
   public void rollback(RollbackRequest request, StreamObserver<Empty> responseObserver) {
+    requests.add(request);
     Preconditions.checkNotNull(request.getTransactionId());
     Session session = sessions.get(request.getSession());
     if (session == null) {
@@ -1519,6 +1535,7 @@ public class MockSpannerServiceImpl extends SpannerImplBase implements MockGrpcS
   @Override
   public void partitionQuery(
       PartitionQueryRequest request, StreamObserver<PartitionResponse> responseObserver) {
+    requests.add(request);
     try {
       partitionQueryExecutionTime.simulateExecutionTime(exceptions, freezeLock);
       partition(request.getSession(), request.getTransaction(), responseObserver);
@@ -1532,6 +1549,7 @@ public class MockSpannerServiceImpl extends SpannerImplBase implements MockGrpcS
   @Override
   public void partitionRead(
       PartitionReadRequest request, StreamObserver<PartitionResponse> responseObserver) {
+    requests.add(request);
     try {
       partitionReadExecutionTime.simulateExecutionTime(exceptions, freezeLock);
       partition(request.getSession(), request.getTransaction(), responseObserver);
@@ -1571,7 +1589,11 @@ public class MockSpannerServiceImpl extends SpannerImplBase implements MockGrpcS
 
   @Override
   public List<AbstractMessage> getRequests() {
-    return Collections.emptyList();
+    return new ArrayList<>(requests);
+  }
+
+  public List<ByteString> getTransactionsStarted() {
+    return new ArrayList<>(transactionsStarted);
   }
 
   @Override
@@ -1592,9 +1614,11 @@ public class MockSpannerServiceImpl extends SpannerImplBase implements MockGrpcS
   /** Removes all sessions and transactions. Mocked results are not removed. */
   @Override
   public void reset() {
+    requests.clear();
     sessions.clear();
     sessionLastUsed.clear();
     transactions.clear();
+    transactionsStarted.clear();
     isPartitionedDmlTransaction.clear();
     abortedTransactions.clear();
     transactionCounters.clear();

@@ -30,13 +30,15 @@ final class TransactionManagerImpl implements TransactionManager, SessionTransac
 
   private final SessionImpl session;
   private final Span span;
+  private final boolean inlineBegin;
 
   private TransactionRunnerImpl.TransactionContextImpl txn;
   private TransactionState txnState;
 
-  TransactionManagerImpl(SessionImpl session) {
+  TransactionManagerImpl(SessionImpl session, boolean inlineBegin) {
     this.session = session;
     this.span = Tracing.getTracer().getCurrentSpan();
+    this.inlineBegin = inlineBegin;
   }
 
   @Override
@@ -45,7 +47,9 @@ final class TransactionManagerImpl implements TransactionManager, SessionTransac
     try (Scope s = tracer.withSpan(span)) {
       txn = session.newTransaction();
       session.setActive(this);
-      txn.ensureTxn();
+      if (!inlineBegin) {
+        txn.ensureTxn();
+      }
       txnState = TransactionState.STARTED;
       return txn;
     }
@@ -93,7 +97,9 @@ final class TransactionManagerImpl implements TransactionManager, SessionTransac
     }
     try (Scope s = tracer.withSpan(span)) {
       txn = session.newTransaction();
-      txn.ensureTxn();
+      if (!inlineBegin) {
+        txn.ensureTxn();
+      }
       txnState = TransactionState.STARTED;
       return txn;
     }
