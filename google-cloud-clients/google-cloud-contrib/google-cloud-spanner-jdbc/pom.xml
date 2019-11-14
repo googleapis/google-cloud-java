@@ -25,11 +25,6 @@
       <artifactId>google-cloud-spanner</artifactId>
     </dependency>
     <dependency>
-      <groupId>com.google.cloud</groupId>
-      <artifactId>google-cloud-storage</artifactId>
-      <scope>provided</scope>
-    </dependency>
-    <dependency>
       <groupId>${project.groupId}</groupId>
       <artifactId>google-cloud-spanner</artifactId>
       <version>1.46.0</version><!-- {x-version-update:google-cloud-spanner:current} -->
