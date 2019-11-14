@@ -1,5 +1,12 @@
 # Changelog
 
+### [0.117.1](https://www.github.com/googleapis/java-dns/compare/v0.117.0...v0.117.1) (2019-11-14)
+
+
+### Bug Fixes
+
+* google-cloud-dns should release as a jar ([#12](https://www.github.com/googleapis/java-dns/issues/12)) ([0262f21](https://www.github.com/googleapis/java-dns/commit/0262f217356dceb77b73768548091c33e66c4305))
+
 ## [0.117.0](https://www.github.com/googleapis/java-dns/compare/0.116.0...v0.117.0) (2019-11-14)
 
 
