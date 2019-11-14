@@ -1,5 +1,5 @@
 # Format:
 # module:released-version:current-version
 
-google-cloud-dns:0.116.1-alpha-SNAPSHOT:0.116.1-alpha-SNAPSHOT
-google-cloud-dns-bom:0.116.1-alpha-SNAPSHOT:0.116.1-alpha-SNAPSHOT
+google-cloud-dns:0.117.0-alpha:0.117.0-alpha
+google-cloud-dns-bom:0.117.0-alpha:0.117.0-alpha
