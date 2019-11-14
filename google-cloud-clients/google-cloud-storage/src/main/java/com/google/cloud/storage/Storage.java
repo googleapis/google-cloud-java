@@ -1123,12 +1123,11 @@ public interface Storage extends Service<StorageOptions> {
     }
 
     /**
-     * Use a different host name than the default host name 'https://storage.googleapis.com'. This
-     * must also include the scheme component of the URI. This option is particularly useful for
-     * developers to point requests to an alternate endpoint (e.g. a staging environment or sending
-     * requests through VPC). Note that if using this with the {@code withVirtualHostedStyle()}
-     * method, you should omit the bucket name from the hostname, as it automatically gets prepended
-     * to the hostname for virtual hosted-style URLs.
+     * Use a different host name than the default host name 'storage.googleapis.com'. This option is
+     * particularly useful for developers to point requests to an alternate endpoint (e.g. a staging
+     * environment or sending requests through VPC). Note that if using this with the {@code
+     * withVirtualHostedStyle()} method, you should omit the bucket name from the hostname, as it
+     * automatically gets prepended to the hostname for virtual hosted-style URLs.
      */
     public static SignUrlOption withHostName(String hostName) {
       return new SignUrlOption(Option.HOST_NAME, hostName);
