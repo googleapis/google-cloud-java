@@ -27,8 +27,9 @@ public interface ProductSearchResultsOrBuilder
    *
    *
    * <pre>
-   * Timestamp of the index which provided these results. Changes made after
-   * this time are not reflected in the current results.
+   * Timestamp of the index which provided these results. Products added to the
+   * product set and products removed from the product set after this time are
+   * not reflected in the current results.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp index_time = 2;</code>
@@ -38,8 +39,9 @@ public interface ProductSearchResultsOrBuilder
    *
    *
    * <pre>
-   * Timestamp of the index which provided these results. Changes made after
-   * this time are not reflected in the current results.
+   * Timestamp of the index which provided these results. Products added to the
+   * product set and products removed from the product set after this time are
+   * not reflected in the current results.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp index_time = 2;</code>
@@ -49,8 +51,9 @@ public interface ProductSearchResultsOrBuilder
    *
    *
    * <pre>
-   * Timestamp of the index which provided these results. Changes made after
-   * this time are not reflected in the current results.
+   * Timestamp of the index which provided these results. Products added to the
+   * product set and products removed from the product set after this time are
+   * not reflected in the current results.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp index_time = 2;</code>

@@ -46,6 +46,7 @@ public final class FaceAnnotation extends com.google.protobuf.GeneratedMessageV3
     underExposedLikelihood_ = 0;
     blurredLikelihood_ = 0;
     headwearLikelihood_ = 0;
+    recognitionResult_ = java.util.Collections.emptyList();
   }
 
   @java.lang.Override
@@ -192,6 +193,20 @@ public final class FaceAnnotation extends com.google.protobuf.GeneratedMessageV3
               headwearLikelihood_ = rawValue;
               break;
             }
+          case 130:
+            {
+              if (!((mutable_bitField0_ & 0x00008000) != 0)) {
+                recognitionResult_ =
+                    new java.util.ArrayList<
+                        com.google.cloud.vision.v1p4beta1.FaceRecognitionResult>();
+                mutable_bitField0_ |= 0x00008000;
+              }
+              recognitionResult_.add(
+                  input.readMessage(
+                      com.google.cloud.vision.v1p4beta1.FaceRecognitionResult.parser(),
+                      extensionRegistry));
+              break;
+            }
           default:
             {
               if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -208,6 +223,9 @@ public final class FaceAnnotation extends com.google.protobuf.GeneratedMessageV3
     } finally {
       if (((mutable_bitField0_ & 0x00000004) != 0)) {
         landmarks_ = java.util.Collections.unmodifiableList(landmarks_);
+      }
+      if (((mutable_bitField0_ & 0x00008000) != 0)) {
+        recognitionResult_ = java.util.Collections.unmodifiableList(recognitionResult_);
       }
       this.unknownFields = unknownFields.build();
       makeExtensionsImmutable();
@@ -2456,6 +2474,98 @@ public final class FaceAnnotation extends com.google.protobuf.GeneratedMessageV3
     return result == null ? com.google.cloud.vision.v1p4beta1.Likelihood.UNRECOGNIZED : result;
   }
 
+  public static final int RECOGNITION_RESULT_FIELD_NUMBER = 16;
+  private java.util.List<com.google.cloud.vision.v1p4beta1.FaceRecognitionResult>
+      recognitionResult_;
+  /**
+   *
+   *
+   * <pre>
+   * Additional recognition information. Only computed if
+   * image_context.face_recognition_params is provided, **and** a match is found
+   * to a [Celebrity][google.cloud.vision.v1p4beta1.Celebrity] in the input
+   * [CelebritySet][google.cloud.vision.v1p4beta1.CelebritySet]. This field is
+   * sorted in order of decreasing confidence values.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.vision.v1p4beta1.FaceRecognitionResult recognition_result = 16;
+   * </code>
+   */
+  public java.util.List<com.google.cloud.vision.v1p4beta1.FaceRecognitionResult>
+      getRecognitionResultList() {
+    return recognitionResult_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Additional recognition information. Only computed if
+   * image_context.face_recognition_params is provided, **and** a match is found
+   * to a [Celebrity][google.cloud.vision.v1p4beta1.Celebrity] in the input
+   * [CelebritySet][google.cloud.vision.v1p4beta1.CelebritySet]. This field is
+   * sorted in order of decreasing confidence values.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.vision.v1p4beta1.FaceRecognitionResult recognition_result = 16;
+   * </code>
+   */
+  public java.util.List<? extends com.google.cloud.vision.v1p4beta1.FaceRecognitionResultOrBuilder>
+      getRecognitionResultOrBuilderList() {
+    return recognitionResult_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Additional recognition information. Only computed if
+   * image_context.face_recognition_params is provided, **and** a match is found
+   * to a [Celebrity][google.cloud.vision.v1p4beta1.Celebrity] in the input
+   * [CelebritySet][google.cloud.vision.v1p4beta1.CelebritySet]. This field is
+   * sorted in order of decreasing confidence values.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.vision.v1p4beta1.FaceRecognitionResult recognition_result = 16;
+   * </code>
+   */
+  public int getRecognitionResultCount() {
+    return recognitionResult_.size();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Additional recognition information. Only computed if
+   * image_context.face_recognition_params is provided, **and** a match is found
+   * to a [Celebrity][google.cloud.vision.v1p4beta1.Celebrity] in the input
+   * [CelebritySet][google.cloud.vision.v1p4beta1.CelebritySet]. This field is
+   * sorted in order of decreasing confidence values.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.vision.v1p4beta1.FaceRecognitionResult recognition_result = 16;
+   * </code>
+   */
+  public com.google.cloud.vision.v1p4beta1.FaceRecognitionResult getRecognitionResult(int index) {
+    return recognitionResult_.get(index);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Additional recognition information. Only computed if
+   * image_context.face_recognition_params is provided, **and** a match is found
+   * to a [Celebrity][google.cloud.vision.v1p4beta1.Celebrity] in the input
+   * [CelebritySet][google.cloud.vision.v1p4beta1.CelebritySet]. This field is
+   * sorted in order of decreasing confidence values.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.vision.v1p4beta1.FaceRecognitionResult recognition_result = 16;
+   * </code>
+   */
+  public com.google.cloud.vision.v1p4beta1.FaceRecognitionResultOrBuilder
+      getRecognitionResultOrBuilder(int index) {
+    return recognitionResult_.get(index);
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -2516,6 +2626,9 @@ public final class FaceAnnotation extends com.google.protobuf.GeneratedMessageV3
     if (headwearLikelihood_ != com.google.cloud.vision.v1p4beta1.Likelihood.UNKNOWN.getNumber()) {
       output.writeEnum(15, headwearLikelihood_);
     }
+    for (int i = 0; i < recognitionResult_.size(); i++) {
+      output.writeMessage(16, recognitionResult_.get(i));
+    }
     unknownFields.writeTo(output);
   }
 
@@ -2571,6 +2684,10 @@ public final class FaceAnnotation extends com.google.protobuf.GeneratedMessageV3
     if (headwearLikelihood_ != com.google.cloud.vision.v1p4beta1.Likelihood.UNKNOWN.getNumber()) {
       size += com.google.protobuf.CodedOutputStream.computeEnumSize(15, headwearLikelihood_);
     }
+    for (int i = 0; i < recognitionResult_.size(); i++) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(16, recognitionResult_.get(i));
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -2613,6 +2730,7 @@ public final class FaceAnnotation extends com.google.protobuf.GeneratedMessageV3
     if (underExposedLikelihood_ != other.underExposedLikelihood_) return false;
     if (blurredLikelihood_ != other.blurredLikelihood_) return false;
     if (headwearLikelihood_ != other.headwearLikelihood_) return false;
+    if (!getRecognitionResultList().equals(other.getRecognitionResultList())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -2660,6 +2778,10 @@ public final class FaceAnnotation extends com.google.protobuf.GeneratedMessageV3
     hash = (53 * hash) + blurredLikelihood_;
     hash = (37 * hash) + HEADWEAR_LIKELIHOOD_FIELD_NUMBER;
     hash = (53 * hash) + headwearLikelihood_;
+    if (getRecognitionResultCount() > 0) {
+      hash = (37 * hash) + RECOGNITION_RESULT_FIELD_NUMBER;
+      hash = (53 * hash) + getRecognitionResultList().hashCode();
+    }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -2801,6 +2923,7 @@ public final class FaceAnnotation extends com.google.protobuf.GeneratedMessageV3
     private void maybeForceBuilderInitialization() {
       if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
         getLandmarksFieldBuilder();
+        getRecognitionResultFieldBuilder();
       }
     }
 
@@ -2849,6 +2972,12 @@ public final class FaceAnnotation extends com.google.protobuf.GeneratedMessageV3
 
       headwearLikelihood_ = 0;
 
+      if (recognitionResultBuilder_ == null) {
+        recognitionResult_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00008000);
+      } else {
+        recognitionResultBuilder_.clear();
+      }
       return this;
     }
 
@@ -2909,6 +3038,15 @@ public final class FaceAnnotation extends com.google.protobuf.GeneratedMessageV3
       result.underExposedLikelihood_ = underExposedLikelihood_;
       result.blurredLikelihood_ = blurredLikelihood_;
       result.headwearLikelihood_ = headwearLikelihood_;
+      if (recognitionResultBuilder_ == null) {
+        if (((bitField0_ & 0x00008000) != 0)) {
+          recognitionResult_ = java.util.Collections.unmodifiableList(recognitionResult_);
+          bitField0_ = (bitField0_ & ~0x00008000);
+        }
+        result.recognitionResult_ = recognitionResult_;
+      } else {
+        result.recognitionResult_ = recognitionResultBuilder_.build();
+      }
       result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
@@ -3028,6 +3166,33 @@ public final class FaceAnnotation extends com.google.protobuf.GeneratedMessageV3
       }
       if (other.headwearLikelihood_ != 0) {
         setHeadwearLikelihoodValue(other.getHeadwearLikelihoodValue());
+      }
+      if (recognitionResultBuilder_ == null) {
+        if (!other.recognitionResult_.isEmpty()) {
+          if (recognitionResult_.isEmpty()) {
+            recognitionResult_ = other.recognitionResult_;
+            bitField0_ = (bitField0_ & ~0x00008000);
+          } else {
+            ensureRecognitionResultIsMutable();
+            recognitionResult_.addAll(other.recognitionResult_);
+          }
+          onChanged();
+        }
+      } else {
+        if (!other.recognitionResult_.isEmpty()) {
+          if (recognitionResultBuilder_.isEmpty()) {
+            recognitionResultBuilder_.dispose();
+            recognitionResultBuilder_ = null;
+            recognitionResult_ = other.recognitionResult_;
+            bitField0_ = (bitField0_ & ~0x00008000);
+            recognitionResultBuilder_ =
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
+                    ? getRecognitionResultFieldBuilder()
+                    : null;
+          } else {
+            recognitionResultBuilder_.addAllMessages(other.recognitionResult_);
+          }
+        }
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -4653,6 +4818,464 @@ public final class FaceAnnotation extends com.google.protobuf.GeneratedMessageV3
       headwearLikelihood_ = 0;
       onChanged();
       return this;
+    }
+
+    private java.util.List<com.google.cloud.vision.v1p4beta1.FaceRecognitionResult>
+        recognitionResult_ = java.util.Collections.emptyList();
+
+    private void ensureRecognitionResultIsMutable() {
+      if (!((bitField0_ & 0x00008000) != 0)) {
+        recognitionResult_ =
+            new java.util.ArrayList<com.google.cloud.vision.v1p4beta1.FaceRecognitionResult>(
+                recognitionResult_);
+        bitField0_ |= 0x00008000;
+      }
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+            com.google.cloud.vision.v1p4beta1.FaceRecognitionResult,
+            com.google.cloud.vision.v1p4beta1.FaceRecognitionResult.Builder,
+            com.google.cloud.vision.v1p4beta1.FaceRecognitionResultOrBuilder>
+        recognitionResultBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Additional recognition information. Only computed if
+     * image_context.face_recognition_params is provided, **and** a match is found
+     * to a [Celebrity][google.cloud.vision.v1p4beta1.Celebrity] in the input
+     * [CelebritySet][google.cloud.vision.v1p4beta1.CelebritySet]. This field is
+     * sorted in order of decreasing confidence values.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.vision.v1p4beta1.FaceRecognitionResult recognition_result = 16;
+     * </code>
+     */
+    public java.util.List<com.google.cloud.vision.v1p4beta1.FaceRecognitionResult>
+        getRecognitionResultList() {
+      if (recognitionResultBuilder_ == null) {
+        return java.util.Collections.unmodifiableList(recognitionResult_);
+      } else {
+        return recognitionResultBuilder_.getMessageList();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Additional recognition information. Only computed if
+     * image_context.face_recognition_params is provided, **and** a match is found
+     * to a [Celebrity][google.cloud.vision.v1p4beta1.Celebrity] in the input
+     * [CelebritySet][google.cloud.vision.v1p4beta1.CelebritySet]. This field is
+     * sorted in order of decreasing confidence values.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.vision.v1p4beta1.FaceRecognitionResult recognition_result = 16;
+     * </code>
+     */
+    public int getRecognitionResultCount() {
+      if (recognitionResultBuilder_ == null) {
+        return recognitionResult_.size();
+      } else {
+        return recognitionResultBuilder_.getCount();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Additional recognition information. Only computed if
+     * image_context.face_recognition_params is provided, **and** a match is found
+     * to a [Celebrity][google.cloud.vision.v1p4beta1.Celebrity] in the input
+     * [CelebritySet][google.cloud.vision.v1p4beta1.CelebritySet]. This field is
+     * sorted in order of decreasing confidence values.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.vision.v1p4beta1.FaceRecognitionResult recognition_result = 16;
+     * </code>
+     */
+    public com.google.cloud.vision.v1p4beta1.FaceRecognitionResult getRecognitionResult(int index) {
+      if (recognitionResultBuilder_ == null) {
+        return recognitionResult_.get(index);
+      } else {
+        return recognitionResultBuilder_.getMessage(index);
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Additional recognition information. Only computed if
+     * image_context.face_recognition_params is provided, **and** a match is found
+     * to a [Celebrity][google.cloud.vision.v1p4beta1.Celebrity] in the input
+     * [CelebritySet][google.cloud.vision.v1p4beta1.CelebritySet]. This field is
+     * sorted in order of decreasing confidence values.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.vision.v1p4beta1.FaceRecognitionResult recognition_result = 16;
+     * </code>
+     */
+    public Builder setRecognitionResult(
+        int index, com.google.cloud.vision.v1p4beta1.FaceRecognitionResult value) {
+      if (recognitionResultBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureRecognitionResultIsMutable();
+        recognitionResult_.set(index, value);
+        onChanged();
+      } else {
+        recognitionResultBuilder_.setMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Additional recognition information. Only computed if
+     * image_context.face_recognition_params is provided, **and** a match is found
+     * to a [Celebrity][google.cloud.vision.v1p4beta1.Celebrity] in the input
+     * [CelebritySet][google.cloud.vision.v1p4beta1.CelebritySet]. This field is
+     * sorted in order of decreasing confidence values.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.vision.v1p4beta1.FaceRecognitionResult recognition_result = 16;
+     * </code>
+     */
+    public Builder setRecognitionResult(
+        int index,
+        com.google.cloud.vision.v1p4beta1.FaceRecognitionResult.Builder builderForValue) {
+      if (recognitionResultBuilder_ == null) {
+        ensureRecognitionResultIsMutable();
+        recognitionResult_.set(index, builderForValue.build());
+        onChanged();
+      } else {
+        recognitionResultBuilder_.setMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Additional recognition information. Only computed if
+     * image_context.face_recognition_params is provided, **and** a match is found
+     * to a [Celebrity][google.cloud.vision.v1p4beta1.Celebrity] in the input
+     * [CelebritySet][google.cloud.vision.v1p4beta1.CelebritySet]. This field is
+     * sorted in order of decreasing confidence values.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.vision.v1p4beta1.FaceRecognitionResult recognition_result = 16;
+     * </code>
+     */
+    public Builder addRecognitionResult(
+        com.google.cloud.vision.v1p4beta1.FaceRecognitionResult value) {
+      if (recognitionResultBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureRecognitionResultIsMutable();
+        recognitionResult_.add(value);
+        onChanged();
+      } else {
+        recognitionResultBuilder_.addMessage(value);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Additional recognition information. Only computed if
+     * image_context.face_recognition_params is provided, **and** a match is found
+     * to a [Celebrity][google.cloud.vision.v1p4beta1.Celebrity] in the input
+     * [CelebritySet][google.cloud.vision.v1p4beta1.CelebritySet]. This field is
+     * sorted in order of decreasing confidence values.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.vision.v1p4beta1.FaceRecognitionResult recognition_result = 16;
+     * </code>
+     */
+    public Builder addRecognitionResult(
+        int index, com.google.cloud.vision.v1p4beta1.FaceRecognitionResult value) {
+      if (recognitionResultBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureRecognitionResultIsMutable();
+        recognitionResult_.add(index, value);
+        onChanged();
+      } else {
+        recognitionResultBuilder_.addMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Additional recognition information. Only computed if
+     * image_context.face_recognition_params is provided, **and** a match is found
+     * to a [Celebrity][google.cloud.vision.v1p4beta1.Celebrity] in the input
+     * [CelebritySet][google.cloud.vision.v1p4beta1.CelebritySet]. This field is
+     * sorted in order of decreasing confidence values.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.vision.v1p4beta1.FaceRecognitionResult recognition_result = 16;
+     * </code>
+     */
+    public Builder addRecognitionResult(
+        com.google.cloud.vision.v1p4beta1.FaceRecognitionResult.Builder builderForValue) {
+      if (recognitionResultBuilder_ == null) {
+        ensureRecognitionResultIsMutable();
+        recognitionResult_.add(builderForValue.build());
+        onChanged();
+      } else {
+        recognitionResultBuilder_.addMessage(builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Additional recognition information. Only computed if
+     * image_context.face_recognition_params is provided, **and** a match is found
+     * to a [Celebrity][google.cloud.vision.v1p4beta1.Celebrity] in the input
+     * [CelebritySet][google.cloud.vision.v1p4beta1.CelebritySet]. This field is
+     * sorted in order of decreasing confidence values.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.vision.v1p4beta1.FaceRecognitionResult recognition_result = 16;
+     * </code>
+     */
+    public Builder addRecognitionResult(
+        int index,
+        com.google.cloud.vision.v1p4beta1.FaceRecognitionResult.Builder builderForValue) {
+      if (recognitionResultBuilder_ == null) {
+        ensureRecognitionResultIsMutable();
+        recognitionResult_.add(index, builderForValue.build());
+        onChanged();
+      } else {
+        recognitionResultBuilder_.addMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Additional recognition information. Only computed if
+     * image_context.face_recognition_params is provided, **and** a match is found
+     * to a [Celebrity][google.cloud.vision.v1p4beta1.Celebrity] in the input
+     * [CelebritySet][google.cloud.vision.v1p4beta1.CelebritySet]. This field is
+     * sorted in order of decreasing confidence values.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.vision.v1p4beta1.FaceRecognitionResult recognition_result = 16;
+     * </code>
+     */
+    public Builder addAllRecognitionResult(
+        java.lang.Iterable<? extends com.google.cloud.vision.v1p4beta1.FaceRecognitionResult>
+            values) {
+      if (recognitionResultBuilder_ == null) {
+        ensureRecognitionResultIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(values, recognitionResult_);
+        onChanged();
+      } else {
+        recognitionResultBuilder_.addAllMessages(values);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Additional recognition information. Only computed if
+     * image_context.face_recognition_params is provided, **and** a match is found
+     * to a [Celebrity][google.cloud.vision.v1p4beta1.Celebrity] in the input
+     * [CelebritySet][google.cloud.vision.v1p4beta1.CelebritySet]. This field is
+     * sorted in order of decreasing confidence values.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.vision.v1p4beta1.FaceRecognitionResult recognition_result = 16;
+     * </code>
+     */
+    public Builder clearRecognitionResult() {
+      if (recognitionResultBuilder_ == null) {
+        recognitionResult_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00008000);
+        onChanged();
+      } else {
+        recognitionResultBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Additional recognition information. Only computed if
+     * image_context.face_recognition_params is provided, **and** a match is found
+     * to a [Celebrity][google.cloud.vision.v1p4beta1.Celebrity] in the input
+     * [CelebritySet][google.cloud.vision.v1p4beta1.CelebritySet]. This field is
+     * sorted in order of decreasing confidence values.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.vision.v1p4beta1.FaceRecognitionResult recognition_result = 16;
+     * </code>
+     */
+    public Builder removeRecognitionResult(int index) {
+      if (recognitionResultBuilder_ == null) {
+        ensureRecognitionResultIsMutable();
+        recognitionResult_.remove(index);
+        onChanged();
+      } else {
+        recognitionResultBuilder_.remove(index);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Additional recognition information. Only computed if
+     * image_context.face_recognition_params is provided, **and** a match is found
+     * to a [Celebrity][google.cloud.vision.v1p4beta1.Celebrity] in the input
+     * [CelebritySet][google.cloud.vision.v1p4beta1.CelebritySet]. This field is
+     * sorted in order of decreasing confidence values.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.vision.v1p4beta1.FaceRecognitionResult recognition_result = 16;
+     * </code>
+     */
+    public com.google.cloud.vision.v1p4beta1.FaceRecognitionResult.Builder
+        getRecognitionResultBuilder(int index) {
+      return getRecognitionResultFieldBuilder().getBuilder(index);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Additional recognition information. Only computed if
+     * image_context.face_recognition_params is provided, **and** a match is found
+     * to a [Celebrity][google.cloud.vision.v1p4beta1.Celebrity] in the input
+     * [CelebritySet][google.cloud.vision.v1p4beta1.CelebritySet]. This field is
+     * sorted in order of decreasing confidence values.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.vision.v1p4beta1.FaceRecognitionResult recognition_result = 16;
+     * </code>
+     */
+    public com.google.cloud.vision.v1p4beta1.FaceRecognitionResultOrBuilder
+        getRecognitionResultOrBuilder(int index) {
+      if (recognitionResultBuilder_ == null) {
+        return recognitionResult_.get(index);
+      } else {
+        return recognitionResultBuilder_.getMessageOrBuilder(index);
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Additional recognition information. Only computed if
+     * image_context.face_recognition_params is provided, **and** a match is found
+     * to a [Celebrity][google.cloud.vision.v1p4beta1.Celebrity] in the input
+     * [CelebritySet][google.cloud.vision.v1p4beta1.CelebritySet]. This field is
+     * sorted in order of decreasing confidence values.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.vision.v1p4beta1.FaceRecognitionResult recognition_result = 16;
+     * </code>
+     */
+    public java.util.List<
+            ? extends com.google.cloud.vision.v1p4beta1.FaceRecognitionResultOrBuilder>
+        getRecognitionResultOrBuilderList() {
+      if (recognitionResultBuilder_ != null) {
+        return recognitionResultBuilder_.getMessageOrBuilderList();
+      } else {
+        return java.util.Collections.unmodifiableList(recognitionResult_);
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Additional recognition information. Only computed if
+     * image_context.face_recognition_params is provided, **and** a match is found
+     * to a [Celebrity][google.cloud.vision.v1p4beta1.Celebrity] in the input
+     * [CelebritySet][google.cloud.vision.v1p4beta1.CelebritySet]. This field is
+     * sorted in order of decreasing confidence values.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.vision.v1p4beta1.FaceRecognitionResult recognition_result = 16;
+     * </code>
+     */
+    public com.google.cloud.vision.v1p4beta1.FaceRecognitionResult.Builder
+        addRecognitionResultBuilder() {
+      return getRecognitionResultFieldBuilder()
+          .addBuilder(com.google.cloud.vision.v1p4beta1.FaceRecognitionResult.getDefaultInstance());
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Additional recognition information. Only computed if
+     * image_context.face_recognition_params is provided, **and** a match is found
+     * to a [Celebrity][google.cloud.vision.v1p4beta1.Celebrity] in the input
+     * [CelebritySet][google.cloud.vision.v1p4beta1.CelebritySet]. This field is
+     * sorted in order of decreasing confidence values.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.vision.v1p4beta1.FaceRecognitionResult recognition_result = 16;
+     * </code>
+     */
+    public com.google.cloud.vision.v1p4beta1.FaceRecognitionResult.Builder
+        addRecognitionResultBuilder(int index) {
+      return getRecognitionResultFieldBuilder()
+          .addBuilder(
+              index, com.google.cloud.vision.v1p4beta1.FaceRecognitionResult.getDefaultInstance());
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Additional recognition information. Only computed if
+     * image_context.face_recognition_params is provided, **and** a match is found
+     * to a [Celebrity][google.cloud.vision.v1p4beta1.Celebrity] in the input
+     * [CelebritySet][google.cloud.vision.v1p4beta1.CelebritySet]. This field is
+     * sorted in order of decreasing confidence values.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.vision.v1p4beta1.FaceRecognitionResult recognition_result = 16;
+     * </code>
+     */
+    public java.util.List<com.google.cloud.vision.v1p4beta1.FaceRecognitionResult.Builder>
+        getRecognitionResultBuilderList() {
+      return getRecognitionResultFieldBuilder().getBuilderList();
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+            com.google.cloud.vision.v1p4beta1.FaceRecognitionResult,
+            com.google.cloud.vision.v1p4beta1.FaceRecognitionResult.Builder,
+            com.google.cloud.vision.v1p4beta1.FaceRecognitionResultOrBuilder>
+        getRecognitionResultFieldBuilder() {
+      if (recognitionResultBuilder_ == null) {
+        recognitionResultBuilder_ =
+            new com.google.protobuf.RepeatedFieldBuilderV3<
+                com.google.cloud.vision.v1p4beta1.FaceRecognitionResult,
+                com.google.cloud.vision.v1p4beta1.FaceRecognitionResult.Builder,
+                com.google.cloud.vision.v1p4beta1.FaceRecognitionResultOrBuilder>(
+                recognitionResult_,
+                ((bitField0_ & 0x00008000) != 0),
+                getParentForChildren(),
+                isClean());
+        recognitionResult_ = null;
+      }
+      return recognitionResultBuilder_;
     }
 
     @java.lang.Override

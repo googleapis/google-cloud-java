@@ -136,12 +136,14 @@ public final class CreateProductRequest extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * The project in which the Product should be created.
+   * Required. The project in which the Product should be created.
    * Format is
    * `projects/PROJECT_ID/locations/LOC_ID`.
    * </pre>
    *
-   * <code>string parent = 1;</code>
+   * <code>
+   * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    */
   public java.lang.String getParent() {
     java.lang.Object ref = parent_;
@@ -158,12 +160,14 @@ public final class CreateProductRequest extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * The project in which the Product should be created.
+   * Required. The project in which the Product should be created.
    * Format is
    * `projects/PROJECT_ID/locations/LOC_ID`.
    * </pre>
    *
-   * <code>string parent = 1;</code>
+   * <code>
+   * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    */
   public com.google.protobuf.ByteString getParentBytes() {
     java.lang.Object ref = parent_;
@@ -183,10 +187,12 @@ public final class CreateProductRequest extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * The product to create.
+   * Required. The product to create.
    * </pre>
    *
-   * <code>.google.cloud.vision.v1p4beta1.Product product = 2;</code>
+   * <code>
+   * .google.cloud.vision.v1p4beta1.Product product = 2 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   public boolean hasProduct() {
     return product_ != null;
@@ -195,10 +201,12 @@ public final class CreateProductRequest extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * The product to create.
+   * Required. The product to create.
    * </pre>
    *
-   * <code>.google.cloud.vision.v1p4beta1.Product product = 2;</code>
+   * <code>
+   * .google.cloud.vision.v1p4beta1.Product product = 2 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   public com.google.cloud.vision.v1p4beta1.Product getProduct() {
     return product_ == null
@@ -209,10 +217,12 @@ public final class CreateProductRequest extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * The product to create.
+   * Required. The product to create.
    * </pre>
    *
-   * <code>.google.cloud.vision.v1p4beta1.Product product = 2;</code>
+   * <code>
+   * .google.cloud.vision.v1p4beta1.Product product = 2 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   public com.google.cloud.vision.v1p4beta1.ProductOrBuilder getProductOrBuilder() {
     return getProduct();
@@ -635,12 +645,14 @@ public final class CreateProductRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * The project in which the Product should be created.
+     * Required. The project in which the Product should be created.
      * Format is
      * `projects/PROJECT_ID/locations/LOC_ID`.
      * </pre>
      *
-     * <code>string parent = 1;</code>
+     * <code>
+     * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      */
     public java.lang.String getParent() {
       java.lang.Object ref = parent_;
@@ -657,12 +669,14 @@ public final class CreateProductRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * The project in which the Product should be created.
+     * Required. The project in which the Product should be created.
      * Format is
      * `projects/PROJECT_ID/locations/LOC_ID`.
      * </pre>
      *
-     * <code>string parent = 1;</code>
+     * <code>
+     * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      */
     public com.google.protobuf.ByteString getParentBytes() {
       java.lang.Object ref = parent_;
@@ -679,12 +693,14 @@ public final class CreateProductRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * The project in which the Product should be created.
+     * Required. The project in which the Product should be created.
      * Format is
      * `projects/PROJECT_ID/locations/LOC_ID`.
      * </pre>
      *
-     * <code>string parent = 1;</code>
+     * <code>
+     * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      */
     public Builder setParent(java.lang.String value) {
       if (value == null) {
@@ -699,12 +715,14 @@ public final class CreateProductRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * The project in which the Product should be created.
+     * Required. The project in which the Product should be created.
      * Format is
      * `projects/PROJECT_ID/locations/LOC_ID`.
      * </pre>
      *
-     * <code>string parent = 1;</code>
+     * <code>
+     * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      */
     public Builder clearParent() {
 
@@ -716,12 +734,14 @@ public final class CreateProductRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * The project in which the Product should be created.
+     * Required. The project in which the Product should be created.
      * Format is
      * `projects/PROJECT_ID/locations/LOC_ID`.
      * </pre>
      *
-     * <code>string parent = 1;</code>
+     * <code>
+     * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      */
     public Builder setParentBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -744,10 +764,12 @@ public final class CreateProductRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * The product to create.
+     * Required. The product to create.
      * </pre>
      *
-     * <code>.google.cloud.vision.v1p4beta1.Product product = 2;</code>
+     * <code>
+     * .google.cloud.vision.v1p4beta1.Product product = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public boolean hasProduct() {
       return productBuilder_ != null || product_ != null;
@@ -756,10 +778,12 @@ public final class CreateProductRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * The product to create.
+     * Required. The product to create.
      * </pre>
      *
-     * <code>.google.cloud.vision.v1p4beta1.Product product = 2;</code>
+     * <code>
+     * .google.cloud.vision.v1p4beta1.Product product = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public com.google.cloud.vision.v1p4beta1.Product getProduct() {
       if (productBuilder_ == null) {
@@ -774,10 +798,12 @@ public final class CreateProductRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * The product to create.
+     * Required. The product to create.
      * </pre>
      *
-     * <code>.google.cloud.vision.v1p4beta1.Product product = 2;</code>
+     * <code>
+     * .google.cloud.vision.v1p4beta1.Product product = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder setProduct(com.google.cloud.vision.v1p4beta1.Product value) {
       if (productBuilder_ == null) {
@@ -796,10 +822,12 @@ public final class CreateProductRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * The product to create.
+     * Required. The product to create.
      * </pre>
      *
-     * <code>.google.cloud.vision.v1p4beta1.Product product = 2;</code>
+     * <code>
+     * .google.cloud.vision.v1p4beta1.Product product = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder setProduct(com.google.cloud.vision.v1p4beta1.Product.Builder builderForValue) {
       if (productBuilder_ == null) {
@@ -815,10 +843,12 @@ public final class CreateProductRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * The product to create.
+     * Required. The product to create.
      * </pre>
      *
-     * <code>.google.cloud.vision.v1p4beta1.Product product = 2;</code>
+     * <code>
+     * .google.cloud.vision.v1p4beta1.Product product = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder mergeProduct(com.google.cloud.vision.v1p4beta1.Product value) {
       if (productBuilder_ == null) {
@@ -841,10 +871,12 @@ public final class CreateProductRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * The product to create.
+     * Required. The product to create.
      * </pre>
      *
-     * <code>.google.cloud.vision.v1p4beta1.Product product = 2;</code>
+     * <code>
+     * .google.cloud.vision.v1p4beta1.Product product = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder clearProduct() {
       if (productBuilder_ == null) {
@@ -861,10 +893,12 @@ public final class CreateProductRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * The product to create.
+     * Required. The product to create.
      * </pre>
      *
-     * <code>.google.cloud.vision.v1p4beta1.Product product = 2;</code>
+     * <code>
+     * .google.cloud.vision.v1p4beta1.Product product = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public com.google.cloud.vision.v1p4beta1.Product.Builder getProductBuilder() {
 
@@ -875,10 +909,12 @@ public final class CreateProductRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * The product to create.
+     * Required. The product to create.
      * </pre>
      *
-     * <code>.google.cloud.vision.v1p4beta1.Product product = 2;</code>
+     * <code>
+     * .google.cloud.vision.v1p4beta1.Product product = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public com.google.cloud.vision.v1p4beta1.ProductOrBuilder getProductOrBuilder() {
       if (productBuilder_ != null) {
@@ -893,10 +929,12 @@ public final class CreateProductRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * The product to create.
+     * Required. The product to create.
      * </pre>
      *
-     * <code>.google.cloud.vision.v1p4beta1.Product product = 2;</code>
+     * <code>
+     * .google.cloud.vision.v1p4beta1.Product product = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.vision.v1p4beta1.Product,

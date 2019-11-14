@@ -1104,6 +1104,60 @@ public final class ProductSearchGrpc {
     return getImportProductSetsMethod;
   }
 
+  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
+  @java.lang.Deprecated // Use {@link #getPurgeProductsMethod()} instead.
+  public static final io.grpc.MethodDescriptor<
+          com.google.cloud.vision.v1p4beta1.PurgeProductsRequest, com.google.longrunning.Operation>
+      METHOD_PURGE_PRODUCTS = getPurgeProductsMethodHelper();
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.vision.v1p4beta1.PurgeProductsRequest, com.google.longrunning.Operation>
+      getPurgeProductsMethod;
+
+  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.vision.v1p4beta1.PurgeProductsRequest, com.google.longrunning.Operation>
+      getPurgeProductsMethod() {
+    return getPurgeProductsMethodHelper();
+  }
+
+  private static io.grpc.MethodDescriptor<
+          com.google.cloud.vision.v1p4beta1.PurgeProductsRequest, com.google.longrunning.Operation>
+      getPurgeProductsMethodHelper() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.vision.v1p4beta1.PurgeProductsRequest,
+            com.google.longrunning.Operation>
+        getPurgeProductsMethod;
+    if ((getPurgeProductsMethod = ProductSearchGrpc.getPurgeProductsMethod) == null) {
+      synchronized (ProductSearchGrpc.class) {
+        if ((getPurgeProductsMethod = ProductSearchGrpc.getPurgeProductsMethod) == null) {
+          ProductSearchGrpc.getPurgeProductsMethod =
+              getPurgeProductsMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.vision.v1p4beta1.PurgeProductsRequest,
+                          com.google.longrunning.Operation>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(
+                              "google.cloud.vision.v1p4beta1.ProductSearch", "PurgeProducts"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.vision.v1p4beta1.PurgeProductsRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.longrunning.Operation.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new ProductSearchMethodDescriptorSupplier("PurgeProducts"))
+                      .build();
+        }
+      }
+    }
+    return getPurgeProductsMethod;
+  }
+
   /** Creates a new async stub that supports all call types for the service */
   public static ProductSearchStub newStub(io.grpc.Channel channel) {
     return new ProductSearchStub(channel);
@@ -1219,8 +1273,6 @@ public final class ProductSearchGrpc {
      * Permanently deletes a ProductSet. Products and ReferenceImages in the
      * ProductSet are not deleted.
      * The actual image files are not deleted from Google Cloud Storage.
-     * Possible errors:
-     * * Returns NOT_FOUND if the ProductSet does not exist.
      * </pre>
      */
     public void deleteProductSet(
@@ -1310,8 +1362,6 @@ public final class ProductSearchGrpc {
      * Metadata of the product and all its images will be deleted right away, but
      * search queries against ProductSets containing the product may still work
      * until all related caches are refreshed.
-     * Possible errors:
-     * * Returns NOT_FOUND if the product does not exist.
      * </pre>
      */
     public void deleteProduct(
@@ -1357,8 +1407,6 @@ public final class ProductSearchGrpc {
      * against ProductSets containing the image may still work until all related
      * caches are refreshed.
      * The actual image files are not deleted from Google Cloud Storage.
-     * Possible errors:
-     * * Returns NOT_FOUND if the reference image does not exist.
      * </pre>
      */
     public void deleteReferenceImage(
@@ -1423,8 +1471,6 @@ public final class ProductSearchGrpc {
      *
      * <pre>
      * Removes a Product from the specified ProductSet.
-     * Possible errors:
-     * * Returns NOT_FOUND If the Product is not found under the ProductSet.
      * </pre>
      */
     public void removeProductFromProductSet(
@@ -1471,6 +1517,37 @@ public final class ProductSearchGrpc {
         com.google.cloud.vision.v1p4beta1.ImportProductSetsRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       asyncUnimplementedUnaryCall(getImportProductSetsMethodHelper(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Asynchronous API to delete all Products in a ProductSet or all Products
+     * that are in no ProductSet.
+     * If a Product is a member of the specified ProductSet in addition to other
+     * ProductSets, the Product will still be deleted.
+     * It is recommended to not delete the specified ProductSet until after this
+     * operation has completed. It is also recommended to not add any of the
+     * Products involved in the batch delete to a new ProductSet while this
+     * operation is running because those Products may still end up deleted.
+     * It's not possible to undo the PurgeProducts operation. Therefore, it is
+     * recommended to keep the csv files used in ImportProductSets (if that was
+     * how you originally built the Product Set) before starting PurgeProducts, in
+     * case you need to re-import the data after deletion.
+     * If the plan is to purge all of the Products from a ProductSet and then
+     * re-use the empty ProductSet to re-import new Products into the empty
+     * ProductSet, you must wait until the PurgeProducts operation has finished
+     * for that ProductSet.
+     * The [google.longrunning.Operation][google.longrunning.Operation] API can be
+     * used to keep track of the progress and results of the request.
+     * `Operation.metadata` contains `BatchOperationMetadata`. (progress)
+     * </pre>
+     */
+    public void purgeProducts(
+        com.google.cloud.vision.v1p4beta1.PurgeProductsRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      asyncUnimplementedUnaryCall(getPurgeProductsMethodHelper(), responseObserver);
     }
 
     @java.lang.Override
@@ -1593,6 +1670,12 @@ public final class ProductSearchGrpc {
                   new MethodHandlers<
                       com.google.cloud.vision.v1p4beta1.ImportProductSetsRequest,
                       com.google.longrunning.Operation>(this, METHODID_IMPORT_PRODUCT_SETS)))
+          .addMethod(
+              getPurgeProductsMethodHelper(),
+              asyncUnaryCall(
+                  new MethodHandlers<
+                      com.google.cloud.vision.v1p4beta1.PurgeProductsRequest,
+                      com.google.longrunning.Operation>(this, METHODID_PURGE_PRODUCTS)))
           .build();
     }
   }
@@ -1719,8 +1802,6 @@ public final class ProductSearchGrpc {
      * Permanently deletes a ProductSet. Products and ReferenceImages in the
      * ProductSet are not deleted.
      * The actual image files are not deleted from Google Cloud Storage.
-     * Possible errors:
-     * * Returns NOT_FOUND if the ProductSet does not exist.
      * </pre>
      */
     public void deleteProductSet(
@@ -1825,8 +1906,6 @@ public final class ProductSearchGrpc {
      * Metadata of the product and all its images will be deleted right away, but
      * search queries against ProductSets containing the product may still work
      * until all related caches are refreshed.
-     * Possible errors:
-     * * Returns NOT_FOUND if the product does not exist.
      * </pre>
      */
     public void deleteProduct(
@@ -1878,8 +1957,6 @@ public final class ProductSearchGrpc {
      * against ProductSets containing the image may still work until all related
      * caches are refreshed.
      * The actual image files are not deleted from Google Cloud Storage.
-     * Possible errors:
-     * * Returns NOT_FOUND if the reference image does not exist.
      * </pre>
      */
     public void deleteReferenceImage(
@@ -1956,8 +2033,6 @@ public final class ProductSearchGrpc {
      *
      * <pre>
      * Removes a Product from the specified ProductSet.
-     * Possible errors:
-     * * Returns NOT_FOUND If the Product is not found under the ProductSet.
      * </pre>
      */
     public void removeProductFromProductSet(
@@ -2011,6 +2086,40 @@ public final class ProductSearchGrpc {
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       asyncUnaryCall(
           getChannel().newCall(getImportProductSetsMethodHelper(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Asynchronous API to delete all Products in a ProductSet or all Products
+     * that are in no ProductSet.
+     * If a Product is a member of the specified ProductSet in addition to other
+     * ProductSets, the Product will still be deleted.
+     * It is recommended to not delete the specified ProductSet until after this
+     * operation has completed. It is also recommended to not add any of the
+     * Products involved in the batch delete to a new ProductSet while this
+     * operation is running because those Products may still end up deleted.
+     * It's not possible to undo the PurgeProducts operation. Therefore, it is
+     * recommended to keep the csv files used in ImportProductSets (if that was
+     * how you originally built the Product Set) before starting PurgeProducts, in
+     * case you need to re-import the data after deletion.
+     * If the plan is to purge all of the Products from a ProductSet and then
+     * re-use the empty ProductSet to re-import new Products into the empty
+     * ProductSet, you must wait until the PurgeProducts operation has finished
+     * for that ProductSet.
+     * The [google.longrunning.Operation][google.longrunning.Operation] API can be
+     * used to keep track of the progress and results of the request.
+     * `Operation.metadata` contains `BatchOperationMetadata`. (progress)
+     * </pre>
+     */
+    public void purgeProducts(
+        com.google.cloud.vision.v1p4beta1.PurgeProductsRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      asyncUnaryCall(
+          getChannel().newCall(getPurgeProductsMethodHelper(), getCallOptions()),
           request,
           responseObserver);
     }
@@ -2124,8 +2233,6 @@ public final class ProductSearchGrpc {
      * Permanently deletes a ProductSet. Products and ReferenceImages in the
      * ProductSet are not deleted.
      * The actual image files are not deleted from Google Cloud Storage.
-     * Possible errors:
-     * * Returns NOT_FOUND if the ProductSet does not exist.
      * </pre>
      */
     public com.google.protobuf.Empty deleteProductSet(
@@ -2214,8 +2321,6 @@ public final class ProductSearchGrpc {
      * Metadata of the product and all its images will be deleted right away, but
      * search queries against ProductSets containing the product may still work
      * until all related caches are refreshed.
-     * Possible errors:
-     * * Returns NOT_FOUND if the product does not exist.
      * </pre>
      */
     public com.google.protobuf.Empty deleteProduct(
@@ -2260,8 +2365,6 @@ public final class ProductSearchGrpc {
      * against ProductSets containing the image may still work until all related
      * caches are refreshed.
      * The actual image files are not deleted from Google Cloud Storage.
-     * Possible errors:
-     * * Returns NOT_FOUND if the reference image does not exist.
      * </pre>
      */
     public com.google.protobuf.Empty deleteReferenceImage(
@@ -2324,8 +2427,6 @@ public final class ProductSearchGrpc {
      *
      * <pre>
      * Removes a Product from the specified ProductSet.
-     * Possible errors:
-     * * Returns NOT_FOUND If the Product is not found under the ProductSet.
      * </pre>
      */
     public com.google.protobuf.Empty removeProductFromProductSet(
@@ -2371,6 +2472,37 @@ public final class ProductSearchGrpc {
         com.google.cloud.vision.v1p4beta1.ImportProductSetsRequest request) {
       return blockingUnaryCall(
           getChannel(), getImportProductSetsMethodHelper(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Asynchronous API to delete all Products in a ProductSet or all Products
+     * that are in no ProductSet.
+     * If a Product is a member of the specified ProductSet in addition to other
+     * ProductSets, the Product will still be deleted.
+     * It is recommended to not delete the specified ProductSet until after this
+     * operation has completed. It is also recommended to not add any of the
+     * Products involved in the batch delete to a new ProductSet while this
+     * operation is running because those Products may still end up deleted.
+     * It's not possible to undo the PurgeProducts operation. Therefore, it is
+     * recommended to keep the csv files used in ImportProductSets (if that was
+     * how you originally built the Product Set) before starting PurgeProducts, in
+     * case you need to re-import the data after deletion.
+     * If the plan is to purge all of the Products from a ProductSet and then
+     * re-use the empty ProductSet to re-import new Products into the empty
+     * ProductSet, you must wait until the PurgeProducts operation has finished
+     * for that ProductSet.
+     * The [google.longrunning.Operation][google.longrunning.Operation] API can be
+     * used to keep track of the progress and results of the request.
+     * `Operation.metadata` contains `BatchOperationMetadata`. (progress)
+     * </pre>
+     */
+    public com.google.longrunning.Operation purgeProducts(
+        com.google.cloud.vision.v1p4beta1.PurgeProductsRequest request) {
+      return blockingUnaryCall(
+          getChannel(), getPurgeProductsMethodHelper(), getCallOptions(), request);
     }
   }
 
@@ -2486,8 +2618,6 @@ public final class ProductSearchGrpc {
      * Permanently deletes a ProductSet. Products and ReferenceImages in the
      * ProductSet are not deleted.
      * The actual image files are not deleted from Google Cloud Storage.
-     * Possible errors:
-     * * Returns NOT_FOUND if the ProductSet does not exist.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.protobuf.Empty>
@@ -2580,8 +2710,6 @@ public final class ProductSearchGrpc {
      * Metadata of the product and all its images will be deleted right away, but
      * search queries against ProductSets containing the product may still work
      * until all related caches are refreshed.
-     * Possible errors:
-     * * Returns NOT_FOUND if the product does not exist.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.protobuf.Empty>
@@ -2628,8 +2756,6 @@ public final class ProductSearchGrpc {
      * against ProductSets containing the image may still work until all related
      * caches are refreshed.
      * The actual image files are not deleted from Google Cloud Storage.
-     * Possible errors:
-     * * Returns NOT_FOUND if the reference image does not exist.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.protobuf.Empty>
@@ -2696,8 +2822,6 @@ public final class ProductSearchGrpc {
      *
      * <pre>
      * Removes a Product from the specified ProductSet.
-     * Possible errors:
-     * * Returns NOT_FOUND If the Product is not found under the ProductSet.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.protobuf.Empty>
@@ -2748,6 +2872,37 @@ public final class ProductSearchGrpc {
       return futureUnaryCall(
           getChannel().newCall(getImportProductSetsMethodHelper(), getCallOptions()), request);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Asynchronous API to delete all Products in a ProductSet or all Products
+     * that are in no ProductSet.
+     * If a Product is a member of the specified ProductSet in addition to other
+     * ProductSets, the Product will still be deleted.
+     * It is recommended to not delete the specified ProductSet until after this
+     * operation has completed. It is also recommended to not add any of the
+     * Products involved in the batch delete to a new ProductSet while this
+     * operation is running because those Products may still end up deleted.
+     * It's not possible to undo the PurgeProducts operation. Therefore, it is
+     * recommended to keep the csv files used in ImportProductSets (if that was
+     * how you originally built the Product Set) before starting PurgeProducts, in
+     * case you need to re-import the data after deletion.
+     * If the plan is to purge all of the Products from a ProductSet and then
+     * re-use the empty ProductSet to re-import new Products into the empty
+     * ProductSet, you must wait until the PurgeProducts operation has finished
+     * for that ProductSet.
+     * The [google.longrunning.Operation][google.longrunning.Operation] API can be
+     * used to keep track of the progress and results of the request.
+     * `Operation.metadata` contains `BatchOperationMetadata`. (progress)
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
+        purgeProducts(com.google.cloud.vision.v1p4beta1.PurgeProductsRequest request) {
+      return futureUnaryCall(
+          getChannel().newCall(getPurgeProductsMethodHelper(), getCallOptions()), request);
+    }
   }
 
   private static final int METHODID_CREATE_PRODUCT_SET = 0;
@@ -2768,6 +2923,7 @@ public final class ProductSearchGrpc {
   private static final int METHODID_REMOVE_PRODUCT_FROM_PRODUCT_SET = 15;
   private static final int METHODID_LIST_PRODUCTS_IN_PRODUCT_SET = 16;
   private static final int METHODID_IMPORT_PRODUCT_SETS = 17;
+  private static final int METHODID_PURGE_PRODUCTS = 18;
 
   private static final class MethodHandlers<Req, Resp>
       implements io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -2891,6 +3047,11 @@ public final class ProductSearchGrpc {
               (com.google.cloud.vision.v1p4beta1.ImportProductSetsRequest) request,
               (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
           break;
+        case METHODID_PURGE_PRODUCTS:
+          serviceImpl.purgeProducts(
+              (com.google.cloud.vision.v1p4beta1.PurgeProductsRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
+          break;
         default:
           throw new AssertionError();
       }
@@ -2973,6 +3134,7 @@ public final class ProductSearchGrpc {
                       .addMethod(getRemoveProductFromProductSetMethodHelper())
                       .addMethod(getListProductsInProductSetMethodHelper())
                       .addMethod(getImportProductSetsMethodHelper())
+                      .addMethod(getPurgeProductsMethodHelper())
                       .build();
         }
       }

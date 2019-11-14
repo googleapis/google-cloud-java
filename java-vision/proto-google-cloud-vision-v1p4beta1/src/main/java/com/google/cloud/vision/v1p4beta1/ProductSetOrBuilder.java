@@ -84,7 +84,8 @@ public interface ProductSetOrBuilder
    * This field is ignored when creating a ProductSet.
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp index_time = 3;</code>
+   * <code>.google.protobuf.Timestamp index_time = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    */
   boolean hasIndexTime();
   /**
@@ -98,7 +99,8 @@ public interface ProductSetOrBuilder
    * This field is ignored when creating a ProductSet.
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp index_time = 3;</code>
+   * <code>.google.protobuf.Timestamp index_time = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    */
   com.google.protobuf.Timestamp getIndexTime();
   /**
@@ -112,7 +114,8 @@ public interface ProductSetOrBuilder
    * This field is ignored when creating a ProductSet.
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp index_time = 3;</code>
+   * <code>.google.protobuf.Timestamp index_time = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    */
   com.google.protobuf.TimestampOrBuilder getIndexTimeOrBuilder();
 
@@ -125,7 +128,7 @@ public interface ProductSetOrBuilder
    * This field is ignored when creating a ProductSet.
    * </pre>
    *
-   * <code>.google.rpc.Status index_error = 4;</code>
+   * <code>.google.rpc.Status index_error = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    */
   boolean hasIndexError();
   /**
@@ -137,7 +140,7 @@ public interface ProductSetOrBuilder
    * This field is ignored when creating a ProductSet.
    * </pre>
    *
-   * <code>.google.rpc.Status index_error = 4;</code>
+   * <code>.google.rpc.Status index_error = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    */
   com.google.rpc.Status getIndexError();
   /**
@@ -149,7 +152,7 @@ public interface ProductSetOrBuilder
    * This field is ignored when creating a ProductSet.
    * </pre>
    *
-   * <code>.google.rpc.Status index_error = 4;</code>
+   * <code>.google.rpc.Status index_error = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    */
   com.google.rpc.StatusOrBuilder getIndexErrorOrBuilder();
 }

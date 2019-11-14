@@ -140,10 +140,12 @@ public final class AsyncBatchAnnotateImagesRequest extends com.google.protobuf.G
    *
    *
    * <pre>
-   * Individual image annotation requests for this batch.
+   * Required. Individual image annotation requests for this batch.
    * </pre>
    *
-   * <code>repeated .google.cloud.vision.v1p4beta1.AnnotateImageRequest requests = 1;</code>
+   * <code>
+   * repeated .google.cloud.vision.v1p4beta1.AnnotateImageRequest requests = 1 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   public java.util.List<com.google.cloud.vision.v1p4beta1.AnnotateImageRequest> getRequestsList() {
     return requests_;
@@ -152,10 +154,12 @@ public final class AsyncBatchAnnotateImagesRequest extends com.google.protobuf.G
    *
    *
    * <pre>
-   * Individual image annotation requests for this batch.
+   * Required. Individual image annotation requests for this batch.
    * </pre>
    *
-   * <code>repeated .google.cloud.vision.v1p4beta1.AnnotateImageRequest requests = 1;</code>
+   * <code>
+   * repeated .google.cloud.vision.v1p4beta1.AnnotateImageRequest requests = 1 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   public java.util.List<? extends com.google.cloud.vision.v1p4beta1.AnnotateImageRequestOrBuilder>
       getRequestsOrBuilderList() {
@@ -165,10 +169,12 @@ public final class AsyncBatchAnnotateImagesRequest extends com.google.protobuf.G
    *
    *
    * <pre>
-   * Individual image annotation requests for this batch.
+   * Required. Individual image annotation requests for this batch.
    * </pre>
    *
-   * <code>repeated .google.cloud.vision.v1p4beta1.AnnotateImageRequest requests = 1;</code>
+   * <code>
+   * repeated .google.cloud.vision.v1p4beta1.AnnotateImageRequest requests = 1 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   public int getRequestsCount() {
     return requests_.size();
@@ -177,10 +183,12 @@ public final class AsyncBatchAnnotateImagesRequest extends com.google.protobuf.G
    *
    *
    * <pre>
-   * Individual image annotation requests for this batch.
+   * Required. Individual image annotation requests for this batch.
    * </pre>
    *
-   * <code>repeated .google.cloud.vision.v1p4beta1.AnnotateImageRequest requests = 1;</code>
+   * <code>
+   * repeated .google.cloud.vision.v1p4beta1.AnnotateImageRequest requests = 1 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   public com.google.cloud.vision.v1p4beta1.AnnotateImageRequest getRequests(int index) {
     return requests_.get(index);
@@ -189,10 +197,12 @@ public final class AsyncBatchAnnotateImagesRequest extends com.google.protobuf.G
    *
    *
    * <pre>
-   * Individual image annotation requests for this batch.
+   * Required. Individual image annotation requests for this batch.
    * </pre>
    *
-   * <code>repeated .google.cloud.vision.v1p4beta1.AnnotateImageRequest requests = 1;</code>
+   * <code>
+   * repeated .google.cloud.vision.v1p4beta1.AnnotateImageRequest requests = 1 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   public com.google.cloud.vision.v1p4beta1.AnnotateImageRequestOrBuilder getRequestsOrBuilder(
       int index) {
@@ -208,7 +218,9 @@ public final class AsyncBatchAnnotateImagesRequest extends com.google.protobuf.G
    * Required. The desired output location and metadata (e.g. format).
    * </pre>
    *
-   * <code>.google.cloud.vision.v1p4beta1.OutputConfig output_config = 2;</code>
+   * <code>
+   * .google.cloud.vision.v1p4beta1.OutputConfig output_config = 2 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   public boolean hasOutputConfig() {
     return outputConfig_ != null;
@@ -220,7 +232,9 @@ public final class AsyncBatchAnnotateImagesRequest extends com.google.protobuf.G
    * Required. The desired output location and metadata (e.g. format).
    * </pre>
    *
-   * <code>.google.cloud.vision.v1p4beta1.OutputConfig output_config = 2;</code>
+   * <code>
+   * .google.cloud.vision.v1p4beta1.OutputConfig output_config = 2 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   public com.google.cloud.vision.v1p4beta1.OutputConfig getOutputConfig() {
     return outputConfig_ == null
@@ -234,7 +248,9 @@ public final class AsyncBatchAnnotateImagesRequest extends com.google.protobuf.G
    * Required. The desired output location and metadata (e.g. format).
    * </pre>
    *
-   * <code>.google.cloud.vision.v1p4beta1.OutputConfig output_config = 2;</code>
+   * <code>
+   * .google.cloud.vision.v1p4beta1.OutputConfig output_config = 2 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   public com.google.cloud.vision.v1p4beta1.OutputConfigOrBuilder getOutputConfigOrBuilder() {
     return getOutputConfig();
@@ -659,10 +675,12 @@ public final class AsyncBatchAnnotateImagesRequest extends com.google.protobuf.G
      *
      *
      * <pre>
-     * Individual image annotation requests for this batch.
+     * Required. Individual image annotation requests for this batch.
      * </pre>
      *
-     * <code>repeated .google.cloud.vision.v1p4beta1.AnnotateImageRequest requests = 1;</code>
+     * <code>
+     * repeated .google.cloud.vision.v1p4beta1.AnnotateImageRequest requests = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public java.util.List<com.google.cloud.vision.v1p4beta1.AnnotateImageRequest>
         getRequestsList() {
@@ -676,10 +694,12 @@ public final class AsyncBatchAnnotateImagesRequest extends com.google.protobuf.G
      *
      *
      * <pre>
-     * Individual image annotation requests for this batch.
+     * Required. Individual image annotation requests for this batch.
      * </pre>
      *
-     * <code>repeated .google.cloud.vision.v1p4beta1.AnnotateImageRequest requests = 1;</code>
+     * <code>
+     * repeated .google.cloud.vision.v1p4beta1.AnnotateImageRequest requests = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public int getRequestsCount() {
       if (requestsBuilder_ == null) {
@@ -692,10 +712,12 @@ public final class AsyncBatchAnnotateImagesRequest extends com.google.protobuf.G
      *
      *
      * <pre>
-     * Individual image annotation requests for this batch.
+     * Required. Individual image annotation requests for this batch.
      * </pre>
      *
-     * <code>repeated .google.cloud.vision.v1p4beta1.AnnotateImageRequest requests = 1;</code>
+     * <code>
+     * repeated .google.cloud.vision.v1p4beta1.AnnotateImageRequest requests = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public com.google.cloud.vision.v1p4beta1.AnnotateImageRequest getRequests(int index) {
       if (requestsBuilder_ == null) {
@@ -708,10 +730,12 @@ public final class AsyncBatchAnnotateImagesRequest extends com.google.protobuf.G
      *
      *
      * <pre>
-     * Individual image annotation requests for this batch.
+     * Required. Individual image annotation requests for this batch.
      * </pre>
      *
-     * <code>repeated .google.cloud.vision.v1p4beta1.AnnotateImageRequest requests = 1;</code>
+     * <code>
+     * repeated .google.cloud.vision.v1p4beta1.AnnotateImageRequest requests = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder setRequests(
         int index, com.google.cloud.vision.v1p4beta1.AnnotateImageRequest value) {
@@ -731,10 +755,12 @@ public final class AsyncBatchAnnotateImagesRequest extends com.google.protobuf.G
      *
      *
      * <pre>
-     * Individual image annotation requests for this batch.
+     * Required. Individual image annotation requests for this batch.
      * </pre>
      *
-     * <code>repeated .google.cloud.vision.v1p4beta1.AnnotateImageRequest requests = 1;</code>
+     * <code>
+     * repeated .google.cloud.vision.v1p4beta1.AnnotateImageRequest requests = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder setRequests(
         int index, com.google.cloud.vision.v1p4beta1.AnnotateImageRequest.Builder builderForValue) {
@@ -751,10 +777,12 @@ public final class AsyncBatchAnnotateImagesRequest extends com.google.protobuf.G
      *
      *
      * <pre>
-     * Individual image annotation requests for this batch.
+     * Required. Individual image annotation requests for this batch.
      * </pre>
      *
-     * <code>repeated .google.cloud.vision.v1p4beta1.AnnotateImageRequest requests = 1;</code>
+     * <code>
+     * repeated .google.cloud.vision.v1p4beta1.AnnotateImageRequest requests = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder addRequests(com.google.cloud.vision.v1p4beta1.AnnotateImageRequest value) {
       if (requestsBuilder_ == null) {
@@ -773,10 +801,12 @@ public final class AsyncBatchAnnotateImagesRequest extends com.google.protobuf.G
      *
      *
      * <pre>
-     * Individual image annotation requests for this batch.
+     * Required. Individual image annotation requests for this batch.
      * </pre>
      *
-     * <code>repeated .google.cloud.vision.v1p4beta1.AnnotateImageRequest requests = 1;</code>
+     * <code>
+     * repeated .google.cloud.vision.v1p4beta1.AnnotateImageRequest requests = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder addRequests(
         int index, com.google.cloud.vision.v1p4beta1.AnnotateImageRequest value) {
@@ -796,10 +826,12 @@ public final class AsyncBatchAnnotateImagesRequest extends com.google.protobuf.G
      *
      *
      * <pre>
-     * Individual image annotation requests for this batch.
+     * Required. Individual image annotation requests for this batch.
      * </pre>
      *
-     * <code>repeated .google.cloud.vision.v1p4beta1.AnnotateImageRequest requests = 1;</code>
+     * <code>
+     * repeated .google.cloud.vision.v1p4beta1.AnnotateImageRequest requests = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder addRequests(
         com.google.cloud.vision.v1p4beta1.AnnotateImageRequest.Builder builderForValue) {
@@ -816,10 +848,12 @@ public final class AsyncBatchAnnotateImagesRequest extends com.google.protobuf.G
      *
      *
      * <pre>
-     * Individual image annotation requests for this batch.
+     * Required. Individual image annotation requests for this batch.
      * </pre>
      *
-     * <code>repeated .google.cloud.vision.v1p4beta1.AnnotateImageRequest requests = 1;</code>
+     * <code>
+     * repeated .google.cloud.vision.v1p4beta1.AnnotateImageRequest requests = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder addRequests(
         int index, com.google.cloud.vision.v1p4beta1.AnnotateImageRequest.Builder builderForValue) {
@@ -836,10 +870,12 @@ public final class AsyncBatchAnnotateImagesRequest extends com.google.protobuf.G
      *
      *
      * <pre>
-     * Individual image annotation requests for this batch.
+     * Required. Individual image annotation requests for this batch.
      * </pre>
      *
-     * <code>repeated .google.cloud.vision.v1p4beta1.AnnotateImageRequest requests = 1;</code>
+     * <code>
+     * repeated .google.cloud.vision.v1p4beta1.AnnotateImageRequest requests = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder addAllRequests(
         java.lang.Iterable<? extends com.google.cloud.vision.v1p4beta1.AnnotateImageRequest>
@@ -857,10 +893,12 @@ public final class AsyncBatchAnnotateImagesRequest extends com.google.protobuf.G
      *
      *
      * <pre>
-     * Individual image annotation requests for this batch.
+     * Required. Individual image annotation requests for this batch.
      * </pre>
      *
-     * <code>repeated .google.cloud.vision.v1p4beta1.AnnotateImageRequest requests = 1;</code>
+     * <code>
+     * repeated .google.cloud.vision.v1p4beta1.AnnotateImageRequest requests = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder clearRequests() {
       if (requestsBuilder_ == null) {
@@ -876,10 +914,12 @@ public final class AsyncBatchAnnotateImagesRequest extends com.google.protobuf.G
      *
      *
      * <pre>
-     * Individual image annotation requests for this batch.
+     * Required. Individual image annotation requests for this batch.
      * </pre>
      *
-     * <code>repeated .google.cloud.vision.v1p4beta1.AnnotateImageRequest requests = 1;</code>
+     * <code>
+     * repeated .google.cloud.vision.v1p4beta1.AnnotateImageRequest requests = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder removeRequests(int index) {
       if (requestsBuilder_ == null) {
@@ -895,10 +935,12 @@ public final class AsyncBatchAnnotateImagesRequest extends com.google.protobuf.G
      *
      *
      * <pre>
-     * Individual image annotation requests for this batch.
+     * Required. Individual image annotation requests for this batch.
      * </pre>
      *
-     * <code>repeated .google.cloud.vision.v1p4beta1.AnnotateImageRequest requests = 1;</code>
+     * <code>
+     * repeated .google.cloud.vision.v1p4beta1.AnnotateImageRequest requests = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public com.google.cloud.vision.v1p4beta1.AnnotateImageRequest.Builder getRequestsBuilder(
         int index) {
@@ -908,10 +950,12 @@ public final class AsyncBatchAnnotateImagesRequest extends com.google.protobuf.G
      *
      *
      * <pre>
-     * Individual image annotation requests for this batch.
+     * Required. Individual image annotation requests for this batch.
      * </pre>
      *
-     * <code>repeated .google.cloud.vision.v1p4beta1.AnnotateImageRequest requests = 1;</code>
+     * <code>
+     * repeated .google.cloud.vision.v1p4beta1.AnnotateImageRequest requests = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public com.google.cloud.vision.v1p4beta1.AnnotateImageRequestOrBuilder getRequestsOrBuilder(
         int index) {
@@ -925,10 +969,12 @@ public final class AsyncBatchAnnotateImagesRequest extends com.google.protobuf.G
      *
      *
      * <pre>
-     * Individual image annotation requests for this batch.
+     * Required. Individual image annotation requests for this batch.
      * </pre>
      *
-     * <code>repeated .google.cloud.vision.v1p4beta1.AnnotateImageRequest requests = 1;</code>
+     * <code>
+     * repeated .google.cloud.vision.v1p4beta1.AnnotateImageRequest requests = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public java.util.List<? extends com.google.cloud.vision.v1p4beta1.AnnotateImageRequestOrBuilder>
         getRequestsOrBuilderList() {
@@ -942,10 +988,12 @@ public final class AsyncBatchAnnotateImagesRequest extends com.google.protobuf.G
      *
      *
      * <pre>
-     * Individual image annotation requests for this batch.
+     * Required. Individual image annotation requests for this batch.
      * </pre>
      *
-     * <code>repeated .google.cloud.vision.v1p4beta1.AnnotateImageRequest requests = 1;</code>
+     * <code>
+     * repeated .google.cloud.vision.v1p4beta1.AnnotateImageRequest requests = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public com.google.cloud.vision.v1p4beta1.AnnotateImageRequest.Builder addRequestsBuilder() {
       return getRequestsFieldBuilder()
@@ -955,10 +1003,12 @@ public final class AsyncBatchAnnotateImagesRequest extends com.google.protobuf.G
      *
      *
      * <pre>
-     * Individual image annotation requests for this batch.
+     * Required. Individual image annotation requests for this batch.
      * </pre>
      *
-     * <code>repeated .google.cloud.vision.v1p4beta1.AnnotateImageRequest requests = 1;</code>
+     * <code>
+     * repeated .google.cloud.vision.v1p4beta1.AnnotateImageRequest requests = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public com.google.cloud.vision.v1p4beta1.AnnotateImageRequest.Builder addRequestsBuilder(
         int index) {
@@ -970,10 +1020,12 @@ public final class AsyncBatchAnnotateImagesRequest extends com.google.protobuf.G
      *
      *
      * <pre>
-     * Individual image annotation requests for this batch.
+     * Required. Individual image annotation requests for this batch.
      * </pre>
      *
-     * <code>repeated .google.cloud.vision.v1p4beta1.AnnotateImageRequest requests = 1;</code>
+     * <code>
+     * repeated .google.cloud.vision.v1p4beta1.AnnotateImageRequest requests = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public java.util.List<com.google.cloud.vision.v1p4beta1.AnnotateImageRequest.Builder>
         getRequestsBuilderList() {
@@ -1010,7 +1062,9 @@ public final class AsyncBatchAnnotateImagesRequest extends com.google.protobuf.G
      * Required. The desired output location and metadata (e.g. format).
      * </pre>
      *
-     * <code>.google.cloud.vision.v1p4beta1.OutputConfig output_config = 2;</code>
+     * <code>
+     * .google.cloud.vision.v1p4beta1.OutputConfig output_config = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public boolean hasOutputConfig() {
       return outputConfigBuilder_ != null || outputConfig_ != null;
@@ -1022,7 +1076,9 @@ public final class AsyncBatchAnnotateImagesRequest extends com.google.protobuf.G
      * Required. The desired output location and metadata (e.g. format).
      * </pre>
      *
-     * <code>.google.cloud.vision.v1p4beta1.OutputConfig output_config = 2;</code>
+     * <code>
+     * .google.cloud.vision.v1p4beta1.OutputConfig output_config = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public com.google.cloud.vision.v1p4beta1.OutputConfig getOutputConfig() {
       if (outputConfigBuilder_ == null) {
@@ -1040,7 +1096,9 @@ public final class AsyncBatchAnnotateImagesRequest extends com.google.protobuf.G
      * Required. The desired output location and metadata (e.g. format).
      * </pre>
      *
-     * <code>.google.cloud.vision.v1p4beta1.OutputConfig output_config = 2;</code>
+     * <code>
+     * .google.cloud.vision.v1p4beta1.OutputConfig output_config = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder setOutputConfig(com.google.cloud.vision.v1p4beta1.OutputConfig value) {
       if (outputConfigBuilder_ == null) {
@@ -1062,7 +1120,9 @@ public final class AsyncBatchAnnotateImagesRequest extends com.google.protobuf.G
      * Required. The desired output location and metadata (e.g. format).
      * </pre>
      *
-     * <code>.google.cloud.vision.v1p4beta1.OutputConfig output_config = 2;</code>
+     * <code>
+     * .google.cloud.vision.v1p4beta1.OutputConfig output_config = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder setOutputConfig(
         com.google.cloud.vision.v1p4beta1.OutputConfig.Builder builderForValue) {
@@ -1082,7 +1142,9 @@ public final class AsyncBatchAnnotateImagesRequest extends com.google.protobuf.G
      * Required. The desired output location and metadata (e.g. format).
      * </pre>
      *
-     * <code>.google.cloud.vision.v1p4beta1.OutputConfig output_config = 2;</code>
+     * <code>
+     * .google.cloud.vision.v1p4beta1.OutputConfig output_config = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder mergeOutputConfig(com.google.cloud.vision.v1p4beta1.OutputConfig value) {
       if (outputConfigBuilder_ == null) {
@@ -1108,7 +1170,9 @@ public final class AsyncBatchAnnotateImagesRequest extends com.google.protobuf.G
      * Required. The desired output location and metadata (e.g. format).
      * </pre>
      *
-     * <code>.google.cloud.vision.v1p4beta1.OutputConfig output_config = 2;</code>
+     * <code>
+     * .google.cloud.vision.v1p4beta1.OutputConfig output_config = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder clearOutputConfig() {
       if (outputConfigBuilder_ == null) {
@@ -1128,7 +1192,9 @@ public final class AsyncBatchAnnotateImagesRequest extends com.google.protobuf.G
      * Required. The desired output location and metadata (e.g. format).
      * </pre>
      *
-     * <code>.google.cloud.vision.v1p4beta1.OutputConfig output_config = 2;</code>
+     * <code>
+     * .google.cloud.vision.v1p4beta1.OutputConfig output_config = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public com.google.cloud.vision.v1p4beta1.OutputConfig.Builder getOutputConfigBuilder() {
 
@@ -1142,7 +1208,9 @@ public final class AsyncBatchAnnotateImagesRequest extends com.google.protobuf.G
      * Required. The desired output location and metadata (e.g. format).
      * </pre>
      *
-     * <code>.google.cloud.vision.v1p4beta1.OutputConfig output_config = 2;</code>
+     * <code>
+     * .google.cloud.vision.v1p4beta1.OutputConfig output_config = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public com.google.cloud.vision.v1p4beta1.OutputConfigOrBuilder getOutputConfigOrBuilder() {
       if (outputConfigBuilder_ != null) {
@@ -1160,7 +1228,9 @@ public final class AsyncBatchAnnotateImagesRequest extends com.google.protobuf.G
      * Required. The desired output location and metadata (e.g. format).
      * </pre>
      *
-     * <code>.google.cloud.vision.v1p4beta1.OutputConfig output_config = 2;</code>
+     * <code>
+     * .google.cloud.vision.v1p4beta1.OutputConfig output_config = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.vision.v1p4beta1.OutputConfig,

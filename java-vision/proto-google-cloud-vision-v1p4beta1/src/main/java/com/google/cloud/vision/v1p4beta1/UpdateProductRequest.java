@@ -134,11 +134,13 @@ public final class UpdateProductRequest extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * The Product resource which replaces the one on the server.
+   * Required. The Product resource which replaces the one on the server.
    * product.name is immutable.
    * </pre>
    *
-   * <code>.google.cloud.vision.v1p4beta1.Product product = 1;</code>
+   * <code>
+   * .google.cloud.vision.v1p4beta1.Product product = 1 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   public boolean hasProduct() {
     return product_ != null;
@@ -147,11 +149,13 @@ public final class UpdateProductRequest extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * The Product resource which replaces the one on the server.
+   * Required. The Product resource which replaces the one on the server.
    * product.name is immutable.
    * </pre>
    *
-   * <code>.google.cloud.vision.v1p4beta1.Product product = 1;</code>
+   * <code>
+   * .google.cloud.vision.v1p4beta1.Product product = 1 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   public com.google.cloud.vision.v1p4beta1.Product getProduct() {
     return product_ == null
@@ -162,11 +166,13 @@ public final class UpdateProductRequest extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * The Product resource which replaces the one on the server.
+   * Required. The Product resource which replaces the one on the server.
    * product.name is immutable.
    * </pre>
    *
-   * <code>.google.cloud.vision.v1p4beta1.Product product = 1;</code>
+   * <code>
+   * .google.cloud.vision.v1p4beta1.Product product = 1 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   public com.google.cloud.vision.v1p4beta1.ProductOrBuilder getProductOrBuilder() {
     return getProduct();
@@ -592,11 +598,13 @@ public final class UpdateProductRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * The Product resource which replaces the one on the server.
+     * Required. The Product resource which replaces the one on the server.
      * product.name is immutable.
      * </pre>
      *
-     * <code>.google.cloud.vision.v1p4beta1.Product product = 1;</code>
+     * <code>
+     * .google.cloud.vision.v1p4beta1.Product product = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public boolean hasProduct() {
       return productBuilder_ != null || product_ != null;
@@ -605,11 +613,13 @@ public final class UpdateProductRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * The Product resource which replaces the one on the server.
+     * Required. The Product resource which replaces the one on the server.
      * product.name is immutable.
      * </pre>
      *
-     * <code>.google.cloud.vision.v1p4beta1.Product product = 1;</code>
+     * <code>
+     * .google.cloud.vision.v1p4beta1.Product product = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public com.google.cloud.vision.v1p4beta1.Product getProduct() {
       if (productBuilder_ == null) {
@@ -624,11 +634,13 @@ public final class UpdateProductRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * The Product resource which replaces the one on the server.
+     * Required. The Product resource which replaces the one on the server.
      * product.name is immutable.
      * </pre>
      *
-     * <code>.google.cloud.vision.v1p4beta1.Product product = 1;</code>
+     * <code>
+     * .google.cloud.vision.v1p4beta1.Product product = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder setProduct(com.google.cloud.vision.v1p4beta1.Product value) {
       if (productBuilder_ == null) {
@@ -647,11 +659,13 @@ public final class UpdateProductRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * The Product resource which replaces the one on the server.
+     * Required. The Product resource which replaces the one on the server.
      * product.name is immutable.
      * </pre>
      *
-     * <code>.google.cloud.vision.v1p4beta1.Product product = 1;</code>
+     * <code>
+     * .google.cloud.vision.v1p4beta1.Product product = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder setProduct(com.google.cloud.vision.v1p4beta1.Product.Builder builderForValue) {
       if (productBuilder_ == null) {
@@ -667,11 +681,13 @@ public final class UpdateProductRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * The Product resource which replaces the one on the server.
+     * Required. The Product resource which replaces the one on the server.
      * product.name is immutable.
      * </pre>
      *
-     * <code>.google.cloud.vision.v1p4beta1.Product product = 1;</code>
+     * <code>
+     * .google.cloud.vision.v1p4beta1.Product product = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder mergeProduct(com.google.cloud.vision.v1p4beta1.Product value) {
       if (productBuilder_ == null) {
@@ -694,11 +710,13 @@ public final class UpdateProductRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * The Product resource which replaces the one on the server.
+     * Required. The Product resource which replaces the one on the server.
      * product.name is immutable.
      * </pre>
      *
-     * <code>.google.cloud.vision.v1p4beta1.Product product = 1;</code>
+     * <code>
+     * .google.cloud.vision.v1p4beta1.Product product = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder clearProduct() {
       if (productBuilder_ == null) {
@@ -715,11 +733,13 @@ public final class UpdateProductRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * The Product resource which replaces the one on the server.
+     * Required. The Product resource which replaces the one on the server.
      * product.name is immutable.
      * </pre>
      *
-     * <code>.google.cloud.vision.v1p4beta1.Product product = 1;</code>
+     * <code>
+     * .google.cloud.vision.v1p4beta1.Product product = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public com.google.cloud.vision.v1p4beta1.Product.Builder getProductBuilder() {
 
@@ -730,11 +750,13 @@ public final class UpdateProductRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * The Product resource which replaces the one on the server.
+     * Required. The Product resource which replaces the one on the server.
      * product.name is immutable.
      * </pre>
      *
-     * <code>.google.cloud.vision.v1p4beta1.Product product = 1;</code>
+     * <code>
+     * .google.cloud.vision.v1p4beta1.Product product = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public com.google.cloud.vision.v1p4beta1.ProductOrBuilder getProductOrBuilder() {
       if (productBuilder_ != null) {
@@ -749,11 +771,13 @@ public final class UpdateProductRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * The Product resource which replaces the one on the server.
+     * Required. The Product resource which replaces the one on the server.
      * product.name is immutable.
      * </pre>
      *
-     * <code>.google.cloud.vision.v1p4beta1.Product product = 1;</code>
+     * <code>
+     * .google.cloud.vision.v1p4beta1.Product product = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.vision.v1p4beta1.Product,

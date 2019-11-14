@@ -142,6 +142,23 @@ public final class ImageContext extends com.google.protobuf.GeneratedMessageV3
 
               break;
             }
+          case 82:
+            {
+              com.google.cloud.vision.v1p4beta1.FaceRecognitionParams.Builder subBuilder = null;
+              if (faceRecognitionParams_ != null) {
+                subBuilder = faceRecognitionParams_.toBuilder();
+              }
+              faceRecognitionParams_ =
+                  input.readMessage(
+                      com.google.cloud.vision.v1p4beta1.FaceRecognitionParams.parser(),
+                      extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(faceRecognitionParams_);
+                faceRecognitionParams_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
           default:
             {
               if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -341,6 +358,48 @@ public final class ImageContext extends com.google.protobuf.GeneratedMessageV3
     return getCropHintsParams();
   }
 
+  public static final int FACE_RECOGNITION_PARAMS_FIELD_NUMBER = 10;
+  private com.google.cloud.vision.v1p4beta1.FaceRecognitionParams faceRecognitionParams_;
+  /**
+   *
+   *
+   * <pre>
+   * Parameters for face recognition.
+   * </pre>
+   *
+   * <code>.google.cloud.vision.v1p4beta1.FaceRecognitionParams face_recognition_params = 10;</code>
+   */
+  public boolean hasFaceRecognitionParams() {
+    return faceRecognitionParams_ != null;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Parameters for face recognition.
+   * </pre>
+   *
+   * <code>.google.cloud.vision.v1p4beta1.FaceRecognitionParams face_recognition_params = 10;</code>
+   */
+  public com.google.cloud.vision.v1p4beta1.FaceRecognitionParams getFaceRecognitionParams() {
+    return faceRecognitionParams_ == null
+        ? com.google.cloud.vision.v1p4beta1.FaceRecognitionParams.getDefaultInstance()
+        : faceRecognitionParams_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Parameters for face recognition.
+   * </pre>
+   *
+   * <code>.google.cloud.vision.v1p4beta1.FaceRecognitionParams face_recognition_params = 10;</code>
+   */
+  public com.google.cloud.vision.v1p4beta1.FaceRecognitionParamsOrBuilder
+      getFaceRecognitionParamsOrBuilder() {
+    return getFaceRecognitionParams();
+  }
+
   public static final int PRODUCT_SEARCH_PARAMS_FIELD_NUMBER = 5;
   private com.google.cloud.vision.v1p4beta1.ProductSearchParams productSearchParams_;
   /**
@@ -454,6 +513,9 @@ public final class ImageContext extends com.google.protobuf.GeneratedMessageV3
     if (webDetectionParams_ != null) {
       output.writeMessage(6, getWebDetectionParams());
     }
+    if (faceRecognitionParams_ != null) {
+      output.writeMessage(10, getFaceRecognitionParams());
+    }
     unknownFields.writeTo(output);
   }
 
@@ -483,6 +545,10 @@ public final class ImageContext extends com.google.protobuf.GeneratedMessageV3
     if (webDetectionParams_ != null) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(6, getWebDetectionParams());
     }
+    if (faceRecognitionParams_ != null) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(10, getFaceRecognitionParams());
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -507,6 +573,10 @@ public final class ImageContext extends com.google.protobuf.GeneratedMessageV3
     if (hasCropHintsParams() != other.hasCropHintsParams()) return false;
     if (hasCropHintsParams()) {
       if (!getCropHintsParams().equals(other.getCropHintsParams())) return false;
+    }
+    if (hasFaceRecognitionParams() != other.hasFaceRecognitionParams()) return false;
+    if (hasFaceRecognitionParams()) {
+      if (!getFaceRecognitionParams().equals(other.getFaceRecognitionParams())) return false;
     }
     if (hasProductSearchParams() != other.hasProductSearchParams()) return false;
     if (hasProductSearchParams()) {
@@ -538,6 +608,10 @@ public final class ImageContext extends com.google.protobuf.GeneratedMessageV3
     if (hasCropHintsParams()) {
       hash = (37 * hash) + CROP_HINTS_PARAMS_FIELD_NUMBER;
       hash = (53 * hash) + getCropHintsParams().hashCode();
+    }
+    if (hasFaceRecognitionParams()) {
+      hash = (37 * hash) + FACE_RECOGNITION_PARAMS_FIELD_NUMBER;
+      hash = (53 * hash) + getFaceRecognitionParams().hashCode();
     }
     if (hasProductSearchParams()) {
       hash = (37 * hash) + PRODUCT_SEARCH_PARAMS_FIELD_NUMBER;
@@ -706,6 +780,12 @@ public final class ImageContext extends com.google.protobuf.GeneratedMessageV3
         cropHintsParams_ = null;
         cropHintsParamsBuilder_ = null;
       }
+      if (faceRecognitionParamsBuilder_ == null) {
+        faceRecognitionParams_ = null;
+      } else {
+        faceRecognitionParams_ = null;
+        faceRecognitionParamsBuilder_ = null;
+      }
       if (productSearchParamsBuilder_ == null) {
         productSearchParams_ = null;
       } else {
@@ -761,6 +841,11 @@ public final class ImageContext extends com.google.protobuf.GeneratedMessageV3
         result.cropHintsParams_ = cropHintsParams_;
       } else {
         result.cropHintsParams_ = cropHintsParamsBuilder_.build();
+      }
+      if (faceRecognitionParamsBuilder_ == null) {
+        result.faceRecognitionParams_ = faceRecognitionParams_;
+      } else {
+        result.faceRecognitionParams_ = faceRecognitionParamsBuilder_.build();
       }
       if (productSearchParamsBuilder_ == null) {
         result.productSearchParams_ = productSearchParams_;
@@ -837,6 +922,9 @@ public final class ImageContext extends com.google.protobuf.GeneratedMessageV3
       }
       if (other.hasCropHintsParams()) {
         mergeCropHintsParams(other.getCropHintsParams());
+      }
+      if (other.hasFaceRecognitionParams()) {
+        mergeFaceRecognitionParams(other.getFaceRecognitionParams());
       }
       if (other.hasProductSearchParams()) {
         mergeProductSearchParams(other.getProductSearchParams());
@@ -1444,6 +1532,202 @@ public final class ImageContext extends com.google.protobuf.GeneratedMessageV3
         cropHintsParams_ = null;
       }
       return cropHintsParamsBuilder_;
+    }
+
+    private com.google.cloud.vision.v1p4beta1.FaceRecognitionParams faceRecognitionParams_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.vision.v1p4beta1.FaceRecognitionParams,
+            com.google.cloud.vision.v1p4beta1.FaceRecognitionParams.Builder,
+            com.google.cloud.vision.v1p4beta1.FaceRecognitionParamsOrBuilder>
+        faceRecognitionParamsBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Parameters for face recognition.
+     * </pre>
+     *
+     * <code>.google.cloud.vision.v1p4beta1.FaceRecognitionParams face_recognition_params = 10;
+     * </code>
+     */
+    public boolean hasFaceRecognitionParams() {
+      return faceRecognitionParamsBuilder_ != null || faceRecognitionParams_ != null;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Parameters for face recognition.
+     * </pre>
+     *
+     * <code>.google.cloud.vision.v1p4beta1.FaceRecognitionParams face_recognition_params = 10;
+     * </code>
+     */
+    public com.google.cloud.vision.v1p4beta1.FaceRecognitionParams getFaceRecognitionParams() {
+      if (faceRecognitionParamsBuilder_ == null) {
+        return faceRecognitionParams_ == null
+            ? com.google.cloud.vision.v1p4beta1.FaceRecognitionParams.getDefaultInstance()
+            : faceRecognitionParams_;
+      } else {
+        return faceRecognitionParamsBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Parameters for face recognition.
+     * </pre>
+     *
+     * <code>.google.cloud.vision.v1p4beta1.FaceRecognitionParams face_recognition_params = 10;
+     * </code>
+     */
+    public Builder setFaceRecognitionParams(
+        com.google.cloud.vision.v1p4beta1.FaceRecognitionParams value) {
+      if (faceRecognitionParamsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        faceRecognitionParams_ = value;
+        onChanged();
+      } else {
+        faceRecognitionParamsBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Parameters for face recognition.
+     * </pre>
+     *
+     * <code>.google.cloud.vision.v1p4beta1.FaceRecognitionParams face_recognition_params = 10;
+     * </code>
+     */
+    public Builder setFaceRecognitionParams(
+        com.google.cloud.vision.v1p4beta1.FaceRecognitionParams.Builder builderForValue) {
+      if (faceRecognitionParamsBuilder_ == null) {
+        faceRecognitionParams_ = builderForValue.build();
+        onChanged();
+      } else {
+        faceRecognitionParamsBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Parameters for face recognition.
+     * </pre>
+     *
+     * <code>.google.cloud.vision.v1p4beta1.FaceRecognitionParams face_recognition_params = 10;
+     * </code>
+     */
+    public Builder mergeFaceRecognitionParams(
+        com.google.cloud.vision.v1p4beta1.FaceRecognitionParams value) {
+      if (faceRecognitionParamsBuilder_ == null) {
+        if (faceRecognitionParams_ != null) {
+          faceRecognitionParams_ =
+              com.google.cloud.vision.v1p4beta1.FaceRecognitionParams.newBuilder(
+                      faceRecognitionParams_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          faceRecognitionParams_ = value;
+        }
+        onChanged();
+      } else {
+        faceRecognitionParamsBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Parameters for face recognition.
+     * </pre>
+     *
+     * <code>.google.cloud.vision.v1p4beta1.FaceRecognitionParams face_recognition_params = 10;
+     * </code>
+     */
+    public Builder clearFaceRecognitionParams() {
+      if (faceRecognitionParamsBuilder_ == null) {
+        faceRecognitionParams_ = null;
+        onChanged();
+      } else {
+        faceRecognitionParams_ = null;
+        faceRecognitionParamsBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Parameters for face recognition.
+     * </pre>
+     *
+     * <code>.google.cloud.vision.v1p4beta1.FaceRecognitionParams face_recognition_params = 10;
+     * </code>
+     */
+    public com.google.cloud.vision.v1p4beta1.FaceRecognitionParams.Builder
+        getFaceRecognitionParamsBuilder() {
+
+      onChanged();
+      return getFaceRecognitionParamsFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Parameters for face recognition.
+     * </pre>
+     *
+     * <code>.google.cloud.vision.v1p4beta1.FaceRecognitionParams face_recognition_params = 10;
+     * </code>
+     */
+    public com.google.cloud.vision.v1p4beta1.FaceRecognitionParamsOrBuilder
+        getFaceRecognitionParamsOrBuilder() {
+      if (faceRecognitionParamsBuilder_ != null) {
+        return faceRecognitionParamsBuilder_.getMessageOrBuilder();
+      } else {
+        return faceRecognitionParams_ == null
+            ? com.google.cloud.vision.v1p4beta1.FaceRecognitionParams.getDefaultInstance()
+            : faceRecognitionParams_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Parameters for face recognition.
+     * </pre>
+     *
+     * <code>.google.cloud.vision.v1p4beta1.FaceRecognitionParams face_recognition_params = 10;
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.vision.v1p4beta1.FaceRecognitionParams,
+            com.google.cloud.vision.v1p4beta1.FaceRecognitionParams.Builder,
+            com.google.cloud.vision.v1p4beta1.FaceRecognitionParamsOrBuilder>
+        getFaceRecognitionParamsFieldBuilder() {
+      if (faceRecognitionParamsBuilder_ == null) {
+        faceRecognitionParamsBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.vision.v1p4beta1.FaceRecognitionParams,
+                com.google.cloud.vision.v1p4beta1.FaceRecognitionParams.Builder,
+                com.google.cloud.vision.v1p4beta1.FaceRecognitionParamsOrBuilder>(
+                getFaceRecognitionParams(), getParentForChildren(), isClean());
+        faceRecognitionParams_ = null;
+      }
+      return faceRecognitionParamsBuilder_;
     }
 
     private com.google.cloud.vision.v1p4beta1.ProductSearchParams productSearchParams_;

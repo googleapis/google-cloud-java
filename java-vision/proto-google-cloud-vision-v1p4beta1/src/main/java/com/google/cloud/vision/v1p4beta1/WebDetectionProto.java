@@ -40,13 +40,13 @@ public final class WebDetectionProto {
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_vision_v1p4beta1_WebDetection_WebImage_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
-      internal_static_google_cloud_vision_v1p4beta1_WebDetection_WebLabel_descriptor;
-  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_google_cloud_vision_v1p4beta1_WebDetection_WebLabel_fieldAccessorTable;
-  static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_cloud_vision_v1p4beta1_WebDetection_WebPage_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_vision_v1p4beta1_WebDetection_WebPage_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_vision_v1p4beta1_WebDetection_WebLabel_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_vision_v1p4beta1_WebDetection_WebLabel_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor getDescriptor() {
     return descriptor;
@@ -74,14 +74,14 @@ public final class WebDetectionProto {
           + "on.v1p4beta1.WebDetection.WebLabel\032B\n\tWe"
           + "bEntity\022\021\n\tentity_id\030\001 \001(\t\022\r\n\005score\030\002 \001("
           + "\002\022\023\n\013description\030\003 \001(\t\032&\n\010WebImage\022\013\n\003ur"
-          + "l\030\001 \001(\t\022\r\n\005score\030\002 \001(\002\0320\n\010WebLabel\022\r\n\005la"
-          + "bel\030\001 \001(\t\022\025\n\rlanguage_code\030\002 \001(\t\032\344\001\n\007Web"
-          + "Page\022\013\n\003url\030\001 \001(\t\022\r\n\005score\030\002 \001(\002\022\022\n\npage"
-          + "_title\030\003 \001(\t\022R\n\024full_matching_images\030\004 \003"
-          + "(\01324.google.cloud.vision.v1p4beta1.WebDe"
-          + "tection.WebImage\022U\n\027partial_matching_ima"
-          + "ges\030\005 \003(\01324.google.cloud.vision.v1p4beta"
-          + "1.WebDetection.WebImageB\207\001\n!com.google.c"
+          + "l\030\001 \001(\t\022\r\n\005score\030\002 \001(\002\032\344\001\n\007WebPage\022\013\n\003ur"
+          + "l\030\001 \001(\t\022\r\n\005score\030\002 \001(\002\022\022\n\npage_title\030\003 \001"
+          + "(\t\022R\n\024full_matching_images\030\004 \003(\01324.googl"
+          + "e.cloud.vision.v1p4beta1.WebDetection.We"
+          + "bImage\022U\n\027partial_matching_images\030\005 \003(\0132"
+          + "4.google.cloud.vision.v1p4beta1.WebDetec"
+          + "tion.WebImage\0320\n\010WebLabel\022\r\n\005label\030\001 \001(\t"
+          + "\022\025\n\rlanguage_code\030\002 \001(\tB\207\001\n!com.google.c"
           + "loud.vision.v1p4beta1B\021WebDetectionProto"
           + "P\001ZCgoogle.golang.org/genproto/googleapi"
           + "s/cloud/vision/v1p4beta1;vision\370\001\001\242\002\004GCV"
@@ -134,25 +134,25 @@ public final class WebDetectionProto {
             new java.lang.String[] {
               "Url", "Score",
             });
-    internal_static_google_cloud_vision_v1p4beta1_WebDetection_WebLabel_descriptor =
-        internal_static_google_cloud_vision_v1p4beta1_WebDetection_descriptor
-            .getNestedTypes()
-            .get(2);
-    internal_static_google_cloud_vision_v1p4beta1_WebDetection_WebLabel_fieldAccessorTable =
-        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-            internal_static_google_cloud_vision_v1p4beta1_WebDetection_WebLabel_descriptor,
-            new java.lang.String[] {
-              "Label", "LanguageCode",
-            });
     internal_static_google_cloud_vision_v1p4beta1_WebDetection_WebPage_descriptor =
         internal_static_google_cloud_vision_v1p4beta1_WebDetection_descriptor
             .getNestedTypes()
-            .get(3);
+            .get(2);
     internal_static_google_cloud_vision_v1p4beta1_WebDetection_WebPage_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_vision_v1p4beta1_WebDetection_WebPage_descriptor,
             new java.lang.String[] {
               "Url", "Score", "PageTitle", "FullMatchingImages", "PartialMatchingImages",
+            });
+    internal_static_google_cloud_vision_v1p4beta1_WebDetection_WebLabel_descriptor =
+        internal_static_google_cloud_vision_v1p4beta1_WebDetection_descriptor
+            .getNestedTypes()
+            .get(3);
+    internal_static_google_cloud_vision_v1p4beta1_WebDetection_WebLabel_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_vision_v1p4beta1_WebDetection_WebLabel_descriptor,
+            new java.lang.String[] {
+              "Label", "LanguageCode",
             });
     com.google.api.AnnotationsProto.getDescriptor();
   }

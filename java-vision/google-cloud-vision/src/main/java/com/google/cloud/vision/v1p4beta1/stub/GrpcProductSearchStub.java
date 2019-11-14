@@ -52,6 +52,7 @@ import com.google.cloud.vision.v1p4beta1.ListReferenceImagesRequest;
 import com.google.cloud.vision.v1p4beta1.ListReferenceImagesResponse;
 import com.google.cloud.vision.v1p4beta1.Product;
 import com.google.cloud.vision.v1p4beta1.ProductSet;
+import com.google.cloud.vision.v1p4beta1.PurgeProductsRequest;
 import com.google.cloud.vision.v1p4beta1.ReferenceImage;
 import com.google.cloud.vision.v1p4beta1.RemoveProductFromProductSetRequest;
 import com.google.cloud.vision.v1p4beta1.UpdateProductRequest;
@@ -243,6 +244,15 @@ public class GrpcProductSearchStub extends ProductSearchStub {
                   ProtoUtils.marshaller(ImportProductSetsRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
               .build();
+  private static final MethodDescriptor<PurgeProductsRequest, Operation>
+      purgeProductsMethodDescriptor =
+          MethodDescriptor.<PurgeProductsRequest, Operation>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.vision.v1p4beta1.ProductSearch/PurgeProducts")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(PurgeProductsRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .build();
 
   private final BackgroundResource backgroundResources;
   private final GrpcOperationsStub operationsStub;
@@ -282,6 +292,7 @@ public class GrpcProductSearchStub extends ProductSearchStub {
   private final OperationCallable<
           ImportProductSetsRequest, ImportProductSetsResponse, BatchOperationMetadata>
       importProductSetsOperationCallable;
+  private final UnaryCallable<PurgeProductsRequest, Operation> purgeProductsCallable;
 
   private final GrpcStubCallableFactory callableFactory;
 
@@ -565,6 +576,19 @@ public class GrpcProductSearchStub extends ProductSearchStub {
                   }
                 })
             .build();
+    GrpcCallSettings<PurgeProductsRequest, Operation> purgeProductsTransportSettings =
+        GrpcCallSettings.<PurgeProductsRequest, Operation>newBuilder()
+            .setMethodDescriptor(purgeProductsMethodDescriptor)
+            .setParamsExtractor(
+                new RequestParamsExtractor<PurgeProductsRequest>() {
+                  @Override
+                  public Map<String, String> extract(PurgeProductsRequest request) {
+                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                    params.put("parent", String.valueOf(request.getParent()));
+                    return params.build();
+                  }
+                })
+            .build();
 
     this.createProductSetCallable =
         callableFactory.createUnaryCallable(
@@ -658,6 +682,9 @@ public class GrpcProductSearchStub extends ProductSearchStub {
             settings.importProductSetsOperationSettings(),
             clientContext,
             this.operationsStub);
+    this.purgeProductsCallable =
+        callableFactory.createUnaryCallable(
+            purgeProductsTransportSettings, settings.purgeProductsSettings(), clientContext);
 
     backgroundResources = new BackgroundResourceAggregation(clientContext.getBackgroundResources());
   }
@@ -766,6 +793,10 @@ public class GrpcProductSearchStub extends ProductSearchStub {
 
   public UnaryCallable<ImportProductSetsRequest, Operation> importProductSetsCallable() {
     return importProductSetsCallable;
+  }
+
+  public UnaryCallable<PurgeProductsRequest, Operation> purgeProductsCallable() {
+    return purgeProductsCallable;
   }
 
   @Override

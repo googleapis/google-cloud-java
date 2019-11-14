@@ -27,24 +27,28 @@ public interface CreateProductRequestOrBuilder
    *
    *
    * <pre>
-   * The project in which the Product should be created.
+   * Required. The project in which the Product should be created.
    * Format is
    * `projects/PROJECT_ID/locations/LOC_ID`.
    * </pre>
    *
-   * <code>string parent = 1;</code>
+   * <code>
+   * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    */
   java.lang.String getParent();
   /**
    *
    *
    * <pre>
-   * The project in which the Product should be created.
+   * Required. The project in which the Product should be created.
    * Format is
    * `projects/PROJECT_ID/locations/LOC_ID`.
    * </pre>
    *
-   * <code>string parent = 1;</code>
+   * <code>
+   * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    */
   com.google.protobuf.ByteString getParentBytes();
 
@@ -52,30 +56,36 @@ public interface CreateProductRequestOrBuilder
    *
    *
    * <pre>
-   * The product to create.
+   * Required. The product to create.
    * </pre>
    *
-   * <code>.google.cloud.vision.v1p4beta1.Product product = 2;</code>
+   * <code>
+   * .google.cloud.vision.v1p4beta1.Product product = 2 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   boolean hasProduct();
   /**
    *
    *
    * <pre>
-   * The product to create.
+   * Required. The product to create.
    * </pre>
    *
-   * <code>.google.cloud.vision.v1p4beta1.Product product = 2;</code>
+   * <code>
+   * .google.cloud.vision.v1p4beta1.Product product = 2 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   com.google.cloud.vision.v1p4beta1.Product getProduct();
   /**
    *
    *
    * <pre>
-   * The product to create.
+   * Required. The product to create.
    * </pre>
    *
-   * <code>.google.cloud.vision.v1p4beta1.Product product = 2;</code>
+   * <code>
+   * .google.cloud.vision.v1p4beta1.Product product = 2 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   com.google.cloud.vision.v1p4beta1.ProductOrBuilder getProductOrBuilder();
 

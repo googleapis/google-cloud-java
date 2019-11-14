@@ -377,4 +377,83 @@ public interface FaceAnnotationOrBuilder
    * <code>.google.cloud.vision.v1p4beta1.Likelihood headwear_likelihood = 15;</code>
    */
   com.google.cloud.vision.v1p4beta1.Likelihood getHeadwearLikelihood();
+
+  /**
+   *
+   *
+   * <pre>
+   * Additional recognition information. Only computed if
+   * image_context.face_recognition_params is provided, **and** a match is found
+   * to a [Celebrity][google.cloud.vision.v1p4beta1.Celebrity] in the input
+   * [CelebritySet][google.cloud.vision.v1p4beta1.CelebritySet]. This field is
+   * sorted in order of decreasing confidence values.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.vision.v1p4beta1.FaceRecognitionResult recognition_result = 16;
+   * </code>
+   */
+  java.util.List<com.google.cloud.vision.v1p4beta1.FaceRecognitionResult>
+      getRecognitionResultList();
+  /**
+   *
+   *
+   * <pre>
+   * Additional recognition information. Only computed if
+   * image_context.face_recognition_params is provided, **and** a match is found
+   * to a [Celebrity][google.cloud.vision.v1p4beta1.Celebrity] in the input
+   * [CelebritySet][google.cloud.vision.v1p4beta1.CelebritySet]. This field is
+   * sorted in order of decreasing confidence values.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.vision.v1p4beta1.FaceRecognitionResult recognition_result = 16;
+   * </code>
+   */
+  com.google.cloud.vision.v1p4beta1.FaceRecognitionResult getRecognitionResult(int index);
+  /**
+   *
+   *
+   * <pre>
+   * Additional recognition information. Only computed if
+   * image_context.face_recognition_params is provided, **and** a match is found
+   * to a [Celebrity][google.cloud.vision.v1p4beta1.Celebrity] in the input
+   * [CelebritySet][google.cloud.vision.v1p4beta1.CelebritySet]. This field is
+   * sorted in order of decreasing confidence values.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.vision.v1p4beta1.FaceRecognitionResult recognition_result = 16;
+   * </code>
+   */
+  int getRecognitionResultCount();
+  /**
+   *
+   *
+   * <pre>
+   * Additional recognition information. Only computed if
+   * image_context.face_recognition_params is provided, **and** a match is found
+   * to a [Celebrity][google.cloud.vision.v1p4beta1.Celebrity] in the input
+   * [CelebritySet][google.cloud.vision.v1p4beta1.CelebritySet]. This field is
+   * sorted in order of decreasing confidence values.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.vision.v1p4beta1.FaceRecognitionResult recognition_result = 16;
+   * </code>
+   */
+  java.util.List<? extends com.google.cloud.vision.v1p4beta1.FaceRecognitionResultOrBuilder>
+      getRecognitionResultOrBuilderList();
+  /**
+   *
+   *
+   * <pre>
+   * Additional recognition information. Only computed if
+   * image_context.face_recognition_params is provided, **and** a match is found
+   * to a [Celebrity][google.cloud.vision.v1p4beta1.Celebrity] in the input
+   * [CelebritySet][google.cloud.vision.v1p4beta1.CelebritySet]. This field is
+   * sorted in order of decreasing confidence values.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.vision.v1p4beta1.FaceRecognitionResult recognition_result = 16;
+   * </code>
+   */
+  com.google.cloud.vision.v1p4beta1.FaceRecognitionResultOrBuilder getRecognitionResultOrBuilder(
+      int index);
 }

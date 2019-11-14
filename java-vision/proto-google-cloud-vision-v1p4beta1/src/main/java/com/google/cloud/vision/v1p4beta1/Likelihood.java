@@ -43,7 +43,7 @@ public enum Likelihood implements com.google.protobuf.ProtocolMessageEnum {
    *
    *
    * <pre>
-   * It is very unlikely that the image belongs to the specified vertical.
+   * It is very unlikely.
    * </pre>
    *
    * <code>VERY_UNLIKELY = 1;</code>
@@ -53,7 +53,7 @@ public enum Likelihood implements com.google.protobuf.ProtocolMessageEnum {
    *
    *
    * <pre>
-   * It is unlikely that the image belongs to the specified vertical.
+   * It is unlikely.
    * </pre>
    *
    * <code>UNLIKELY = 2;</code>
@@ -63,7 +63,7 @@ public enum Likelihood implements com.google.protobuf.ProtocolMessageEnum {
    *
    *
    * <pre>
-   * It is possible that the image belongs to the specified vertical.
+   * It is possible.
    * </pre>
    *
    * <code>POSSIBLE = 3;</code>
@@ -73,7 +73,7 @@ public enum Likelihood implements com.google.protobuf.ProtocolMessageEnum {
    *
    *
    * <pre>
-   * It is likely that the image belongs to the specified vertical.
+   * It is likely.
    * </pre>
    *
    * <code>LIKELY = 4;</code>
@@ -83,7 +83,7 @@ public enum Likelihood implements com.google.protobuf.ProtocolMessageEnum {
    *
    *
    * <pre>
-   * It is very likely that the image belongs to the specified vertical.
+   * It is very likely.
    * </pre>
    *
    * <code>VERY_LIKELY = 5;</code>
@@ -106,7 +106,7 @@ public enum Likelihood implements com.google.protobuf.ProtocolMessageEnum {
    *
    *
    * <pre>
-   * It is very unlikely that the image belongs to the specified vertical.
+   * It is very unlikely.
    * </pre>
    *
    * <code>VERY_UNLIKELY = 1;</code>
@@ -116,7 +116,7 @@ public enum Likelihood implements com.google.protobuf.ProtocolMessageEnum {
    *
    *
    * <pre>
-   * It is unlikely that the image belongs to the specified vertical.
+   * It is unlikely.
    * </pre>
    *
    * <code>UNLIKELY = 2;</code>
@@ -126,7 +126,7 @@ public enum Likelihood implements com.google.protobuf.ProtocolMessageEnum {
    *
    *
    * <pre>
-   * It is possible that the image belongs to the specified vertical.
+   * It is possible.
    * </pre>
    *
    * <code>POSSIBLE = 3;</code>
@@ -136,7 +136,7 @@ public enum Likelihood implements com.google.protobuf.ProtocolMessageEnum {
    *
    *
    * <pre>
-   * It is likely that the image belongs to the specified vertical.
+   * It is likely.
    * </pre>
    *
    * <code>LIKELY = 4;</code>
@@ -146,7 +146,7 @@ public enum Likelihood implements com.google.protobuf.ProtocolMessageEnum {
    *
    *
    * <pre>
-   * It is very likely that the image belongs to the specified vertical.
+   * It is very likely.
    * </pre>
    *
    * <code>VERY_LIKELY = 5;</code>

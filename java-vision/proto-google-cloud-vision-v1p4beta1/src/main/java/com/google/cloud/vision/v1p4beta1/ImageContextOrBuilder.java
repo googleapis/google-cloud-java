@@ -158,6 +158,38 @@ public interface ImageContextOrBuilder
    *
    *
    * <pre>
+   * Parameters for face recognition.
+   * </pre>
+   *
+   * <code>.google.cloud.vision.v1p4beta1.FaceRecognitionParams face_recognition_params = 10;</code>
+   */
+  boolean hasFaceRecognitionParams();
+  /**
+   *
+   *
+   * <pre>
+   * Parameters for face recognition.
+   * </pre>
+   *
+   * <code>.google.cloud.vision.v1p4beta1.FaceRecognitionParams face_recognition_params = 10;</code>
+   */
+  com.google.cloud.vision.v1p4beta1.FaceRecognitionParams getFaceRecognitionParams();
+  /**
+   *
+   *
+   * <pre>
+   * Parameters for face recognition.
+   * </pre>
+   *
+   * <code>.google.cloud.vision.v1p4beta1.FaceRecognitionParams face_recognition_params = 10;</code>
+   */
+  com.google.cloud.vision.v1p4beta1.FaceRecognitionParamsOrBuilder
+      getFaceRecognitionParamsOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * Parameters for product search.
    * </pre>
    *

@@ -130,11 +130,13 @@ public final class ImportProductSetsRequest extends com.google.protobuf.Generate
    *
    *
    * <pre>
-   * The project in which the ProductSets should be imported.
+   * Required. The project in which the ProductSets should be imported.
    * Format is `projects/PROJECT_ID/locations/LOC_ID`.
    * </pre>
    *
-   * <code>string parent = 1;</code>
+   * <code>
+   * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    */
   public java.lang.String getParent() {
     java.lang.Object ref = parent_;
@@ -151,11 +153,13 @@ public final class ImportProductSetsRequest extends com.google.protobuf.Generate
    *
    *
    * <pre>
-   * The project in which the ProductSets should be imported.
+   * Required. The project in which the ProductSets should be imported.
    * Format is `projects/PROJECT_ID/locations/LOC_ID`.
    * </pre>
    *
-   * <code>string parent = 1;</code>
+   * <code>
+   * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    */
   public com.google.protobuf.ByteString getParentBytes() {
     java.lang.Object ref = parent_;
@@ -175,10 +179,12 @@ public final class ImportProductSetsRequest extends com.google.protobuf.Generate
    *
    *
    * <pre>
-   * The input content for the list of requests.
+   * Required. The input content for the list of requests.
    * </pre>
    *
-   * <code>.google.cloud.vision.v1p4beta1.ImportProductSetsInputConfig input_config = 2;</code>
+   * <code>
+   * .google.cloud.vision.v1p4beta1.ImportProductSetsInputConfig input_config = 2 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   public boolean hasInputConfig() {
     return inputConfig_ != null;
@@ -187,10 +193,12 @@ public final class ImportProductSetsRequest extends com.google.protobuf.Generate
    *
    *
    * <pre>
-   * The input content for the list of requests.
+   * Required. The input content for the list of requests.
    * </pre>
    *
-   * <code>.google.cloud.vision.v1p4beta1.ImportProductSetsInputConfig input_config = 2;</code>
+   * <code>
+   * .google.cloud.vision.v1p4beta1.ImportProductSetsInputConfig input_config = 2 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   public com.google.cloud.vision.v1p4beta1.ImportProductSetsInputConfig getInputConfig() {
     return inputConfig_ == null
@@ -201,10 +209,12 @@ public final class ImportProductSetsRequest extends com.google.protobuf.Generate
    *
    *
    * <pre>
-   * The input content for the list of requests.
+   * Required. The input content for the list of requests.
    * </pre>
    *
-   * <code>.google.cloud.vision.v1p4beta1.ImportProductSetsInputConfig input_config = 2;</code>
+   * <code>
+   * .google.cloud.vision.v1p4beta1.ImportProductSetsInputConfig input_config = 2 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   public com.google.cloud.vision.v1p4beta1.ImportProductSetsInputConfigOrBuilder
       getInputConfigOrBuilder() {
@@ -563,11 +573,13 @@ public final class ImportProductSetsRequest extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * The project in which the ProductSets should be imported.
+     * Required. The project in which the ProductSets should be imported.
      * Format is `projects/PROJECT_ID/locations/LOC_ID`.
      * </pre>
      *
-     * <code>string parent = 1;</code>
+     * <code>
+     * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      */
     public java.lang.String getParent() {
       java.lang.Object ref = parent_;
@@ -584,11 +596,13 @@ public final class ImportProductSetsRequest extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * The project in which the ProductSets should be imported.
+     * Required. The project in which the ProductSets should be imported.
      * Format is `projects/PROJECT_ID/locations/LOC_ID`.
      * </pre>
      *
-     * <code>string parent = 1;</code>
+     * <code>
+     * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      */
     public com.google.protobuf.ByteString getParentBytes() {
       java.lang.Object ref = parent_;
@@ -605,11 +619,13 @@ public final class ImportProductSetsRequest extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * The project in which the ProductSets should be imported.
+     * Required. The project in which the ProductSets should be imported.
      * Format is `projects/PROJECT_ID/locations/LOC_ID`.
      * </pre>
      *
-     * <code>string parent = 1;</code>
+     * <code>
+     * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      */
     public Builder setParent(java.lang.String value) {
       if (value == null) {
@@ -624,11 +640,13 @@ public final class ImportProductSetsRequest extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * The project in which the ProductSets should be imported.
+     * Required. The project in which the ProductSets should be imported.
      * Format is `projects/PROJECT_ID/locations/LOC_ID`.
      * </pre>
      *
-     * <code>string parent = 1;</code>
+     * <code>
+     * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      */
     public Builder clearParent() {
 
@@ -640,11 +658,13 @@ public final class ImportProductSetsRequest extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * The project in which the ProductSets should be imported.
+     * Required. The project in which the ProductSets should be imported.
      * Format is `projects/PROJECT_ID/locations/LOC_ID`.
      * </pre>
      *
-     * <code>string parent = 1;</code>
+     * <code>
+     * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      */
     public Builder setParentBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -667,10 +687,12 @@ public final class ImportProductSetsRequest extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * The input content for the list of requests.
+     * Required. The input content for the list of requests.
      * </pre>
      *
-     * <code>.google.cloud.vision.v1p4beta1.ImportProductSetsInputConfig input_config = 2;</code>
+     * <code>
+     * .google.cloud.vision.v1p4beta1.ImportProductSetsInputConfig input_config = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public boolean hasInputConfig() {
       return inputConfigBuilder_ != null || inputConfig_ != null;
@@ -679,10 +701,12 @@ public final class ImportProductSetsRequest extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * The input content for the list of requests.
+     * Required. The input content for the list of requests.
      * </pre>
      *
-     * <code>.google.cloud.vision.v1p4beta1.ImportProductSetsInputConfig input_config = 2;</code>
+     * <code>
+     * .google.cloud.vision.v1p4beta1.ImportProductSetsInputConfig input_config = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public com.google.cloud.vision.v1p4beta1.ImportProductSetsInputConfig getInputConfig() {
       if (inputConfigBuilder_ == null) {
@@ -697,10 +721,12 @@ public final class ImportProductSetsRequest extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * The input content for the list of requests.
+     * Required. The input content for the list of requests.
      * </pre>
      *
-     * <code>.google.cloud.vision.v1p4beta1.ImportProductSetsInputConfig input_config = 2;</code>
+     * <code>
+     * .google.cloud.vision.v1p4beta1.ImportProductSetsInputConfig input_config = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder setInputConfig(
         com.google.cloud.vision.v1p4beta1.ImportProductSetsInputConfig value) {
@@ -720,10 +746,12 @@ public final class ImportProductSetsRequest extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * The input content for the list of requests.
+     * Required. The input content for the list of requests.
      * </pre>
      *
-     * <code>.google.cloud.vision.v1p4beta1.ImportProductSetsInputConfig input_config = 2;</code>
+     * <code>
+     * .google.cloud.vision.v1p4beta1.ImportProductSetsInputConfig input_config = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder setInputConfig(
         com.google.cloud.vision.v1p4beta1.ImportProductSetsInputConfig.Builder builderForValue) {
@@ -740,10 +768,12 @@ public final class ImportProductSetsRequest extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * The input content for the list of requests.
+     * Required. The input content for the list of requests.
      * </pre>
      *
-     * <code>.google.cloud.vision.v1p4beta1.ImportProductSetsInputConfig input_config = 2;</code>
+     * <code>
+     * .google.cloud.vision.v1p4beta1.ImportProductSetsInputConfig input_config = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder mergeInputConfig(
         com.google.cloud.vision.v1p4beta1.ImportProductSetsInputConfig value) {
@@ -768,10 +798,12 @@ public final class ImportProductSetsRequest extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * The input content for the list of requests.
+     * Required. The input content for the list of requests.
      * </pre>
      *
-     * <code>.google.cloud.vision.v1p4beta1.ImportProductSetsInputConfig input_config = 2;</code>
+     * <code>
+     * .google.cloud.vision.v1p4beta1.ImportProductSetsInputConfig input_config = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder clearInputConfig() {
       if (inputConfigBuilder_ == null) {
@@ -788,10 +820,12 @@ public final class ImportProductSetsRequest extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * The input content for the list of requests.
+     * Required. The input content for the list of requests.
      * </pre>
      *
-     * <code>.google.cloud.vision.v1p4beta1.ImportProductSetsInputConfig input_config = 2;</code>
+     * <code>
+     * .google.cloud.vision.v1p4beta1.ImportProductSetsInputConfig input_config = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public com.google.cloud.vision.v1p4beta1.ImportProductSetsInputConfig.Builder
         getInputConfigBuilder() {
@@ -803,10 +837,12 @@ public final class ImportProductSetsRequest extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * The input content for the list of requests.
+     * Required. The input content for the list of requests.
      * </pre>
      *
-     * <code>.google.cloud.vision.v1p4beta1.ImportProductSetsInputConfig input_config = 2;</code>
+     * <code>
+     * .google.cloud.vision.v1p4beta1.ImportProductSetsInputConfig input_config = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public com.google.cloud.vision.v1p4beta1.ImportProductSetsInputConfigOrBuilder
         getInputConfigOrBuilder() {
@@ -822,10 +858,12 @@ public final class ImportProductSetsRequest extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * The input content for the list of requests.
+     * Required. The input content for the list of requests.
      * </pre>
      *
-     * <code>.google.cloud.vision.v1p4beta1.ImportProductSetsInputConfig input_config = 2;</code>
+     * <code>
+     * .google.cloud.vision.v1p4beta1.ImportProductSetsInputConfig input_config = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.vision.v1p4beta1.ImportProductSetsInputConfig,

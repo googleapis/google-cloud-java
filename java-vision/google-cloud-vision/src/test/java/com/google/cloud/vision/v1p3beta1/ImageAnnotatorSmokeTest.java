@@ -46,7 +46,8 @@ public class ImageAnnotatorSmokeTest {
 
   public static void executeNoCatch() throws Exception {
     try (ImageAnnotatorClient client = ImageAnnotatorClient.create()) {
-      String gcsImageUri = "gs://gapic-toolkit/President_Barack_Obama.jpg";
+      String gcsImageUri =
+          "gs://cloud-samples-data/vision/face_detection/celebrity_recognition/sergey.jpg";
       ImageSource source = ImageSource.newBuilder().setGcsImageUri(gcsImageUri).build();
       Image image = Image.newBuilder().setSource(source).build();
       Feature.Type type = Feature.Type.FACE_DETECTION;

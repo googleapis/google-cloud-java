@@ -27,44 +27,52 @@ public interface BatchAnnotateFilesRequestOrBuilder
    *
    *
    * <pre>
-   * The list of file annotation requests. Right now we support only one
-   * AnnotateFileRequest in BatchAnnotateFilesRequest.
+   * Required. The list of file annotation requests. Right now we support only
+   * one AnnotateFileRequest in BatchAnnotateFilesRequest.
    * </pre>
    *
-   * <code>repeated .google.cloud.vision.v1p4beta1.AnnotateFileRequest requests = 1;</code>
+   * <code>
+   * repeated .google.cloud.vision.v1p4beta1.AnnotateFileRequest requests = 1 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   java.util.List<com.google.cloud.vision.v1p4beta1.AnnotateFileRequest> getRequestsList();
   /**
    *
    *
    * <pre>
-   * The list of file annotation requests. Right now we support only one
-   * AnnotateFileRequest in BatchAnnotateFilesRequest.
+   * Required. The list of file annotation requests. Right now we support only
+   * one AnnotateFileRequest in BatchAnnotateFilesRequest.
    * </pre>
    *
-   * <code>repeated .google.cloud.vision.v1p4beta1.AnnotateFileRequest requests = 1;</code>
+   * <code>
+   * repeated .google.cloud.vision.v1p4beta1.AnnotateFileRequest requests = 1 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   com.google.cloud.vision.v1p4beta1.AnnotateFileRequest getRequests(int index);
   /**
    *
    *
    * <pre>
-   * The list of file annotation requests. Right now we support only one
-   * AnnotateFileRequest in BatchAnnotateFilesRequest.
+   * Required. The list of file annotation requests. Right now we support only
+   * one AnnotateFileRequest in BatchAnnotateFilesRequest.
    * </pre>
    *
-   * <code>repeated .google.cloud.vision.v1p4beta1.AnnotateFileRequest requests = 1;</code>
+   * <code>
+   * repeated .google.cloud.vision.v1p4beta1.AnnotateFileRequest requests = 1 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   int getRequestsCount();
   /**
    *
    *
    * <pre>
-   * The list of file annotation requests. Right now we support only one
-   * AnnotateFileRequest in BatchAnnotateFilesRequest.
+   * Required. The list of file annotation requests. Right now we support only
+   * one AnnotateFileRequest in BatchAnnotateFilesRequest.
    * </pre>
    *
-   * <code>repeated .google.cloud.vision.v1p4beta1.AnnotateFileRequest requests = 1;</code>
+   * <code>
+   * repeated .google.cloud.vision.v1p4beta1.AnnotateFileRequest requests = 1 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   java.util.List<? extends com.google.cloud.vision.v1p4beta1.AnnotateFileRequestOrBuilder>
       getRequestsOrBuilderList();
@@ -72,11 +80,13 @@ public interface BatchAnnotateFilesRequestOrBuilder
    *
    *
    * <pre>
-   * The list of file annotation requests. Right now we support only one
-   * AnnotateFileRequest in BatchAnnotateFilesRequest.
+   * Required. The list of file annotation requests. Right now we support only
+   * one AnnotateFileRequest in BatchAnnotateFilesRequest.
    * </pre>
    *
-   * <code>repeated .google.cloud.vision.v1p4beta1.AnnotateFileRequest requests = 1;</code>
+   * <code>
+   * repeated .google.cloud.vision.v1p4beta1.AnnotateFileRequest requests = 1 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   com.google.cloud.vision.v1p4beta1.AnnotateFileRequestOrBuilder getRequestsOrBuilder(int index);
 }

@@ -1118,14 +1118,13 @@ public final class Product extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The category for the product identified by the reference image. This should
-   * be either "homegoods-v2", "apparel-v2", "toys-v2", "packagedgoods-v1", or
-   * "general-v1" The legacy categories "homegoods", "apparel", and "toys" are
-   * still supported, but these should not be used for new products.
-   * This field is immutable.
+   * Immutable. The category for the product identified by the reference image.
+   * This should be either "homegoods-v2", "apparel-v2", or "toys-v2". The
+   * legacy categories "homegoods", "apparel", and "toys" are still supported,
+   * but these should not be used for new products.
    * </pre>
    *
-   * <code>string product_category = 4;</code>
+   * <code>string product_category = 4 [(.google.api.field_behavior) = IMMUTABLE];</code>
    */
   public java.lang.String getProductCategory() {
     java.lang.Object ref = productCategory_;
@@ -1142,14 +1141,13 @@ public final class Product extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The category for the product identified by the reference image. This should
-   * be either "homegoods-v2", "apparel-v2", "toys-v2", "packagedgoods-v1", or
-   * "general-v1" The legacy categories "homegoods", "apparel", and "toys" are
-   * still supported, but these should not be used for new products.
-   * This field is immutable.
+   * Immutable. The category for the product identified by the reference image.
+   * This should be either "homegoods-v2", "apparel-v2", or "toys-v2". The
+   * legacy categories "homegoods", "apparel", and "toys" are still supported,
+   * but these should not be used for new products.
    * </pre>
    *
-   * <code>string product_category = 4;</code>
+   * <code>string product_category = 4 [(.google.api.field_behavior) = IMMUTABLE];</code>
    */
   public com.google.protobuf.ByteString getProductCategoryBytes() {
     java.lang.Object ref = productCategory_;
@@ -1175,7 +1173,10 @@ public final class Product extends com.google.protobuf.GeneratedMessageV3
    * strings with integer values can match a range-based restriction which is
    * to be supported soon.
    * Multiple values can be assigned to the same key. One product may have up to
-   * 100 product_labels.
+   * 500 product_labels.
+   * Notice that the total number of distinct product_labels over all products
+   * in one ProductSet cannot exceed 1M, otherwise the product search pipeline
+   * will refuse to work for that ProductSet.
    * </pre>
    *
    * <code>repeated .google.cloud.vision.v1p4beta1.Product.KeyValue product_labels = 5;</code>
@@ -1193,7 +1194,10 @@ public final class Product extends com.google.protobuf.GeneratedMessageV3
    * strings with integer values can match a range-based restriction which is
    * to be supported soon.
    * Multiple values can be assigned to the same key. One product may have up to
-   * 100 product_labels.
+   * 500 product_labels.
+   * Notice that the total number of distinct product_labels over all products
+   * in one ProductSet cannot exceed 1M, otherwise the product search pipeline
+   * will refuse to work for that ProductSet.
    * </pre>
    *
    * <code>repeated .google.cloud.vision.v1p4beta1.Product.KeyValue product_labels = 5;</code>
@@ -1212,7 +1216,10 @@ public final class Product extends com.google.protobuf.GeneratedMessageV3
    * strings with integer values can match a range-based restriction which is
    * to be supported soon.
    * Multiple values can be assigned to the same key. One product may have up to
-   * 100 product_labels.
+   * 500 product_labels.
+   * Notice that the total number of distinct product_labels over all products
+   * in one ProductSet cannot exceed 1M, otherwise the product search pipeline
+   * will refuse to work for that ProductSet.
    * </pre>
    *
    * <code>repeated .google.cloud.vision.v1p4beta1.Product.KeyValue product_labels = 5;</code>
@@ -1230,7 +1237,10 @@ public final class Product extends com.google.protobuf.GeneratedMessageV3
    * strings with integer values can match a range-based restriction which is
    * to be supported soon.
    * Multiple values can be assigned to the same key. One product may have up to
-   * 100 product_labels.
+   * 500 product_labels.
+   * Notice that the total number of distinct product_labels over all products
+   * in one ProductSet cannot exceed 1M, otherwise the product search pipeline
+   * will refuse to work for that ProductSet.
    * </pre>
    *
    * <code>repeated .google.cloud.vision.v1p4beta1.Product.KeyValue product_labels = 5;</code>
@@ -1248,7 +1258,10 @@ public final class Product extends com.google.protobuf.GeneratedMessageV3
    * strings with integer values can match a range-based restriction which is
    * to be supported soon.
    * Multiple values can be assigned to the same key. One product may have up to
-   * 100 product_labels.
+   * 500 product_labels.
+   * Notice that the total number of distinct product_labels over all products
+   * in one ProductSet cannot exceed 1M, otherwise the product search pipeline
+   * will refuse to work for that ProductSet.
    * </pre>
    *
    * <code>repeated .google.cloud.vision.v1p4beta1.Product.KeyValue product_labels = 5;</code>
@@ -1994,14 +2007,13 @@ public final class Product extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The category for the product identified by the reference image. This should
-     * be either "homegoods-v2", "apparel-v2", "toys-v2", "packagedgoods-v1", or
-     * "general-v1" The legacy categories "homegoods", "apparel", and "toys" are
-     * still supported, but these should not be used for new products.
-     * This field is immutable.
+     * Immutable. The category for the product identified by the reference image.
+     * This should be either "homegoods-v2", "apparel-v2", or "toys-v2". The
+     * legacy categories "homegoods", "apparel", and "toys" are still supported,
+     * but these should not be used for new products.
      * </pre>
      *
-     * <code>string product_category = 4;</code>
+     * <code>string product_category = 4 [(.google.api.field_behavior) = IMMUTABLE];</code>
      */
     public java.lang.String getProductCategory() {
       java.lang.Object ref = productCategory_;
@@ -2018,14 +2030,13 @@ public final class Product extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The category for the product identified by the reference image. This should
-     * be either "homegoods-v2", "apparel-v2", "toys-v2", "packagedgoods-v1", or
-     * "general-v1" The legacy categories "homegoods", "apparel", and "toys" are
-     * still supported, but these should not be used for new products.
-     * This field is immutable.
+     * Immutable. The category for the product identified by the reference image.
+     * This should be either "homegoods-v2", "apparel-v2", or "toys-v2". The
+     * legacy categories "homegoods", "apparel", and "toys" are still supported,
+     * but these should not be used for new products.
      * </pre>
      *
-     * <code>string product_category = 4;</code>
+     * <code>string product_category = 4 [(.google.api.field_behavior) = IMMUTABLE];</code>
      */
     public com.google.protobuf.ByteString getProductCategoryBytes() {
       java.lang.Object ref = productCategory_;
@@ -2042,14 +2053,13 @@ public final class Product extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The category for the product identified by the reference image. This should
-     * be either "homegoods-v2", "apparel-v2", "toys-v2", "packagedgoods-v1", or
-     * "general-v1" The legacy categories "homegoods", "apparel", and "toys" are
-     * still supported, but these should not be used for new products.
-     * This field is immutable.
+     * Immutable. The category for the product identified by the reference image.
+     * This should be either "homegoods-v2", "apparel-v2", or "toys-v2". The
+     * legacy categories "homegoods", "apparel", and "toys" are still supported,
+     * but these should not be used for new products.
      * </pre>
      *
-     * <code>string product_category = 4;</code>
+     * <code>string product_category = 4 [(.google.api.field_behavior) = IMMUTABLE];</code>
      */
     public Builder setProductCategory(java.lang.String value) {
       if (value == null) {
@@ -2064,14 +2074,13 @@ public final class Product extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The category for the product identified by the reference image. This should
-     * be either "homegoods-v2", "apparel-v2", "toys-v2", "packagedgoods-v1", or
-     * "general-v1" The legacy categories "homegoods", "apparel", and "toys" are
-     * still supported, but these should not be used for new products.
-     * This field is immutable.
+     * Immutable. The category for the product identified by the reference image.
+     * This should be either "homegoods-v2", "apparel-v2", or "toys-v2". The
+     * legacy categories "homegoods", "apparel", and "toys" are still supported,
+     * but these should not be used for new products.
      * </pre>
      *
-     * <code>string product_category = 4;</code>
+     * <code>string product_category = 4 [(.google.api.field_behavior) = IMMUTABLE];</code>
      */
     public Builder clearProductCategory() {
 
@@ -2083,14 +2092,13 @@ public final class Product extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The category for the product identified by the reference image. This should
-     * be either "homegoods-v2", "apparel-v2", "toys-v2", "packagedgoods-v1", or
-     * "general-v1" The legacy categories "homegoods", "apparel", and "toys" are
-     * still supported, but these should not be used for new products.
-     * This field is immutable.
+     * Immutable. The category for the product identified by the reference image.
+     * This should be either "homegoods-v2", "apparel-v2", or "toys-v2". The
+     * legacy categories "homegoods", "apparel", and "toys" are still supported,
+     * but these should not be used for new products.
      * </pre>
      *
-     * <code>string product_category = 4;</code>
+     * <code>string product_category = 4 [(.google.api.field_behavior) = IMMUTABLE];</code>
      */
     public Builder setProductCategoryBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -2131,7 +2139,10 @@ public final class Product extends com.google.protobuf.GeneratedMessageV3
      * strings with integer values can match a range-based restriction which is
      * to be supported soon.
      * Multiple values can be assigned to the same key. One product may have up to
-     * 100 product_labels.
+     * 500 product_labels.
+     * Notice that the total number of distinct product_labels over all products
+     * in one ProductSet cannot exceed 1M, otherwise the product search pipeline
+     * will refuse to work for that ProductSet.
      * </pre>
      *
      * <code>repeated .google.cloud.vision.v1p4beta1.Product.KeyValue product_labels = 5;</code>
@@ -2154,7 +2165,10 @@ public final class Product extends com.google.protobuf.GeneratedMessageV3
      * strings with integer values can match a range-based restriction which is
      * to be supported soon.
      * Multiple values can be assigned to the same key. One product may have up to
-     * 100 product_labels.
+     * 500 product_labels.
+     * Notice that the total number of distinct product_labels over all products
+     * in one ProductSet cannot exceed 1M, otherwise the product search pipeline
+     * will refuse to work for that ProductSet.
      * </pre>
      *
      * <code>repeated .google.cloud.vision.v1p4beta1.Product.KeyValue product_labels = 5;</code>
@@ -2176,7 +2190,10 @@ public final class Product extends com.google.protobuf.GeneratedMessageV3
      * strings with integer values can match a range-based restriction which is
      * to be supported soon.
      * Multiple values can be assigned to the same key. One product may have up to
-     * 100 product_labels.
+     * 500 product_labels.
+     * Notice that the total number of distinct product_labels over all products
+     * in one ProductSet cannot exceed 1M, otherwise the product search pipeline
+     * will refuse to work for that ProductSet.
      * </pre>
      *
      * <code>repeated .google.cloud.vision.v1p4beta1.Product.KeyValue product_labels = 5;</code>
@@ -2198,7 +2215,10 @@ public final class Product extends com.google.protobuf.GeneratedMessageV3
      * strings with integer values can match a range-based restriction which is
      * to be supported soon.
      * Multiple values can be assigned to the same key. One product may have up to
-     * 100 product_labels.
+     * 500 product_labels.
+     * Notice that the total number of distinct product_labels over all products
+     * in one ProductSet cannot exceed 1M, otherwise the product search pipeline
+     * will refuse to work for that ProductSet.
      * </pre>
      *
      * <code>repeated .google.cloud.vision.v1p4beta1.Product.KeyValue product_labels = 5;</code>
@@ -2227,7 +2247,10 @@ public final class Product extends com.google.protobuf.GeneratedMessageV3
      * strings with integer values can match a range-based restriction which is
      * to be supported soon.
      * Multiple values can be assigned to the same key. One product may have up to
-     * 100 product_labels.
+     * 500 product_labels.
+     * Notice that the total number of distinct product_labels over all products
+     * in one ProductSet cannot exceed 1M, otherwise the product search pipeline
+     * will refuse to work for that ProductSet.
      * </pre>
      *
      * <code>repeated .google.cloud.vision.v1p4beta1.Product.KeyValue product_labels = 5;</code>
@@ -2253,7 +2276,10 @@ public final class Product extends com.google.protobuf.GeneratedMessageV3
      * strings with integer values can match a range-based restriction which is
      * to be supported soon.
      * Multiple values can be assigned to the same key. One product may have up to
-     * 100 product_labels.
+     * 500 product_labels.
+     * Notice that the total number of distinct product_labels over all products
+     * in one ProductSet cannot exceed 1M, otherwise the product search pipeline
+     * will refuse to work for that ProductSet.
      * </pre>
      *
      * <code>repeated .google.cloud.vision.v1p4beta1.Product.KeyValue product_labels = 5;</code>
@@ -2281,7 +2307,10 @@ public final class Product extends com.google.protobuf.GeneratedMessageV3
      * strings with integer values can match a range-based restriction which is
      * to be supported soon.
      * Multiple values can be assigned to the same key. One product may have up to
-     * 100 product_labels.
+     * 500 product_labels.
+     * Notice that the total number of distinct product_labels over all products
+     * in one ProductSet cannot exceed 1M, otherwise the product search pipeline
+     * will refuse to work for that ProductSet.
      * </pre>
      *
      * <code>repeated .google.cloud.vision.v1p4beta1.Product.KeyValue product_labels = 5;</code>
@@ -2310,7 +2339,10 @@ public final class Product extends com.google.protobuf.GeneratedMessageV3
      * strings with integer values can match a range-based restriction which is
      * to be supported soon.
      * Multiple values can be assigned to the same key. One product may have up to
-     * 100 product_labels.
+     * 500 product_labels.
+     * Notice that the total number of distinct product_labels over all products
+     * in one ProductSet cannot exceed 1M, otherwise the product search pipeline
+     * will refuse to work for that ProductSet.
      * </pre>
      *
      * <code>repeated .google.cloud.vision.v1p4beta1.Product.KeyValue product_labels = 5;</code>
@@ -2336,7 +2368,10 @@ public final class Product extends com.google.protobuf.GeneratedMessageV3
      * strings with integer values can match a range-based restriction which is
      * to be supported soon.
      * Multiple values can be assigned to the same key. One product may have up to
-     * 100 product_labels.
+     * 500 product_labels.
+     * Notice that the total number of distinct product_labels over all products
+     * in one ProductSet cannot exceed 1M, otherwise the product search pipeline
+     * will refuse to work for that ProductSet.
      * </pre>
      *
      * <code>repeated .google.cloud.vision.v1p4beta1.Product.KeyValue product_labels = 5;</code>
@@ -2362,7 +2397,10 @@ public final class Product extends com.google.protobuf.GeneratedMessageV3
      * strings with integer values can match a range-based restriction which is
      * to be supported soon.
      * Multiple values can be assigned to the same key. One product may have up to
-     * 100 product_labels.
+     * 500 product_labels.
+     * Notice that the total number of distinct product_labels over all products
+     * in one ProductSet cannot exceed 1M, otherwise the product search pipeline
+     * will refuse to work for that ProductSet.
      * </pre>
      *
      * <code>repeated .google.cloud.vision.v1p4beta1.Product.KeyValue product_labels = 5;</code>
@@ -2388,7 +2426,10 @@ public final class Product extends com.google.protobuf.GeneratedMessageV3
      * strings with integer values can match a range-based restriction which is
      * to be supported soon.
      * Multiple values can be assigned to the same key. One product may have up to
-     * 100 product_labels.
+     * 500 product_labels.
+     * Notice that the total number of distinct product_labels over all products
+     * in one ProductSet cannot exceed 1M, otherwise the product search pipeline
+     * will refuse to work for that ProductSet.
      * </pre>
      *
      * <code>repeated .google.cloud.vision.v1p4beta1.Product.KeyValue product_labels = 5;</code>
@@ -2413,7 +2454,10 @@ public final class Product extends com.google.protobuf.GeneratedMessageV3
      * strings with integer values can match a range-based restriction which is
      * to be supported soon.
      * Multiple values can be assigned to the same key. One product may have up to
-     * 100 product_labels.
+     * 500 product_labels.
+     * Notice that the total number of distinct product_labels over all products
+     * in one ProductSet cannot exceed 1M, otherwise the product search pipeline
+     * will refuse to work for that ProductSet.
      * </pre>
      *
      * <code>repeated .google.cloud.vision.v1p4beta1.Product.KeyValue product_labels = 5;</code>
@@ -2438,7 +2482,10 @@ public final class Product extends com.google.protobuf.GeneratedMessageV3
      * strings with integer values can match a range-based restriction which is
      * to be supported soon.
      * Multiple values can be assigned to the same key. One product may have up to
-     * 100 product_labels.
+     * 500 product_labels.
+     * Notice that the total number of distinct product_labels over all products
+     * in one ProductSet cannot exceed 1M, otherwise the product search pipeline
+     * will refuse to work for that ProductSet.
      * </pre>
      *
      * <code>repeated .google.cloud.vision.v1p4beta1.Product.KeyValue product_labels = 5;</code>
@@ -2457,7 +2504,10 @@ public final class Product extends com.google.protobuf.GeneratedMessageV3
      * strings with integer values can match a range-based restriction which is
      * to be supported soon.
      * Multiple values can be assigned to the same key. One product may have up to
-     * 100 product_labels.
+     * 500 product_labels.
+     * Notice that the total number of distinct product_labels over all products
+     * in one ProductSet cannot exceed 1M, otherwise the product search pipeline
+     * will refuse to work for that ProductSet.
      * </pre>
      *
      * <code>repeated .google.cloud.vision.v1p4beta1.Product.KeyValue product_labels = 5;</code>
@@ -2480,7 +2530,10 @@ public final class Product extends com.google.protobuf.GeneratedMessageV3
      * strings with integer values can match a range-based restriction which is
      * to be supported soon.
      * Multiple values can be assigned to the same key. One product may have up to
-     * 100 product_labels.
+     * 500 product_labels.
+     * Notice that the total number of distinct product_labels over all products
+     * in one ProductSet cannot exceed 1M, otherwise the product search pipeline
+     * will refuse to work for that ProductSet.
      * </pre>
      *
      * <code>repeated .google.cloud.vision.v1p4beta1.Product.KeyValue product_labels = 5;</code>
@@ -2503,7 +2556,10 @@ public final class Product extends com.google.protobuf.GeneratedMessageV3
      * strings with integer values can match a range-based restriction which is
      * to be supported soon.
      * Multiple values can be assigned to the same key. One product may have up to
-     * 100 product_labels.
+     * 500 product_labels.
+     * Notice that the total number of distinct product_labels over all products
+     * in one ProductSet cannot exceed 1M, otherwise the product search pipeline
+     * will refuse to work for that ProductSet.
      * </pre>
      *
      * <code>repeated .google.cloud.vision.v1p4beta1.Product.KeyValue product_labels = 5;</code>
@@ -2522,7 +2578,10 @@ public final class Product extends com.google.protobuf.GeneratedMessageV3
      * strings with integer values can match a range-based restriction which is
      * to be supported soon.
      * Multiple values can be assigned to the same key. One product may have up to
-     * 100 product_labels.
+     * 500 product_labels.
+     * Notice that the total number of distinct product_labels over all products
+     * in one ProductSet cannot exceed 1M, otherwise the product search pipeline
+     * will refuse to work for that ProductSet.
      * </pre>
      *
      * <code>repeated .google.cloud.vision.v1p4beta1.Product.KeyValue product_labels = 5;</code>
@@ -2543,7 +2602,10 @@ public final class Product extends com.google.protobuf.GeneratedMessageV3
      * strings with integer values can match a range-based restriction which is
      * to be supported soon.
      * Multiple values can be assigned to the same key. One product may have up to
-     * 100 product_labels.
+     * 500 product_labels.
+     * Notice that the total number of distinct product_labels over all products
+     * in one ProductSet cannot exceed 1M, otherwise the product search pipeline
+     * will refuse to work for that ProductSet.
      * </pre>
      *
      * <code>repeated .google.cloud.vision.v1p4beta1.Product.KeyValue product_labels = 5;</code>

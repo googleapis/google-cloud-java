@@ -122,11 +122,13 @@ public final class BatchAnnotateFilesRequest extends com.google.protobuf.Generat
    *
    *
    * <pre>
-   * The list of file annotation requests. Right now we support only one
-   * AnnotateFileRequest in BatchAnnotateFilesRequest.
+   * Required. The list of file annotation requests. Right now we support only
+   * one AnnotateFileRequest in BatchAnnotateFilesRequest.
    * </pre>
    *
-   * <code>repeated .google.cloud.vision.v1p4beta1.AnnotateFileRequest requests = 1;</code>
+   * <code>
+   * repeated .google.cloud.vision.v1p4beta1.AnnotateFileRequest requests = 1 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   public java.util.List<com.google.cloud.vision.v1p4beta1.AnnotateFileRequest> getRequestsList() {
     return requests_;
@@ -135,11 +137,13 @@ public final class BatchAnnotateFilesRequest extends com.google.protobuf.Generat
    *
    *
    * <pre>
-   * The list of file annotation requests. Right now we support only one
-   * AnnotateFileRequest in BatchAnnotateFilesRequest.
+   * Required. The list of file annotation requests. Right now we support only
+   * one AnnotateFileRequest in BatchAnnotateFilesRequest.
    * </pre>
    *
-   * <code>repeated .google.cloud.vision.v1p4beta1.AnnotateFileRequest requests = 1;</code>
+   * <code>
+   * repeated .google.cloud.vision.v1p4beta1.AnnotateFileRequest requests = 1 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   public java.util.List<? extends com.google.cloud.vision.v1p4beta1.AnnotateFileRequestOrBuilder>
       getRequestsOrBuilderList() {
@@ -149,11 +153,13 @@ public final class BatchAnnotateFilesRequest extends com.google.protobuf.Generat
    *
    *
    * <pre>
-   * The list of file annotation requests. Right now we support only one
-   * AnnotateFileRequest in BatchAnnotateFilesRequest.
+   * Required. The list of file annotation requests. Right now we support only
+   * one AnnotateFileRequest in BatchAnnotateFilesRequest.
    * </pre>
    *
-   * <code>repeated .google.cloud.vision.v1p4beta1.AnnotateFileRequest requests = 1;</code>
+   * <code>
+   * repeated .google.cloud.vision.v1p4beta1.AnnotateFileRequest requests = 1 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   public int getRequestsCount() {
     return requests_.size();
@@ -162,11 +168,13 @@ public final class BatchAnnotateFilesRequest extends com.google.protobuf.Generat
    *
    *
    * <pre>
-   * The list of file annotation requests. Right now we support only one
-   * AnnotateFileRequest in BatchAnnotateFilesRequest.
+   * Required. The list of file annotation requests. Right now we support only
+   * one AnnotateFileRequest in BatchAnnotateFilesRequest.
    * </pre>
    *
-   * <code>repeated .google.cloud.vision.v1p4beta1.AnnotateFileRequest requests = 1;</code>
+   * <code>
+   * repeated .google.cloud.vision.v1p4beta1.AnnotateFileRequest requests = 1 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   public com.google.cloud.vision.v1p4beta1.AnnotateFileRequest getRequests(int index) {
     return requests_.get(index);
@@ -175,11 +183,13 @@ public final class BatchAnnotateFilesRequest extends com.google.protobuf.Generat
    *
    *
    * <pre>
-   * The list of file annotation requests. Right now we support only one
-   * AnnotateFileRequest in BatchAnnotateFilesRequest.
+   * Required. The list of file annotation requests. Right now we support only
+   * one AnnotateFileRequest in BatchAnnotateFilesRequest.
    * </pre>
    *
-   * <code>repeated .google.cloud.vision.v1p4beta1.AnnotateFileRequest requests = 1;</code>
+   * <code>
+   * repeated .google.cloud.vision.v1p4beta1.AnnotateFileRequest requests = 1 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   public com.google.cloud.vision.v1p4beta1.AnnotateFileRequestOrBuilder getRequestsOrBuilder(
       int index) {
@@ -569,11 +579,13 @@ public final class BatchAnnotateFilesRequest extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * The list of file annotation requests. Right now we support only one
-     * AnnotateFileRequest in BatchAnnotateFilesRequest.
+     * Required. The list of file annotation requests. Right now we support only
+     * one AnnotateFileRequest in BatchAnnotateFilesRequest.
      * </pre>
      *
-     * <code>repeated .google.cloud.vision.v1p4beta1.AnnotateFileRequest requests = 1;</code>
+     * <code>
+     * repeated .google.cloud.vision.v1p4beta1.AnnotateFileRequest requests = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public java.util.List<com.google.cloud.vision.v1p4beta1.AnnotateFileRequest> getRequestsList() {
       if (requestsBuilder_ == null) {
@@ -586,11 +598,13 @@ public final class BatchAnnotateFilesRequest extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * The list of file annotation requests. Right now we support only one
-     * AnnotateFileRequest in BatchAnnotateFilesRequest.
+     * Required. The list of file annotation requests. Right now we support only
+     * one AnnotateFileRequest in BatchAnnotateFilesRequest.
      * </pre>
      *
-     * <code>repeated .google.cloud.vision.v1p4beta1.AnnotateFileRequest requests = 1;</code>
+     * <code>
+     * repeated .google.cloud.vision.v1p4beta1.AnnotateFileRequest requests = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public int getRequestsCount() {
       if (requestsBuilder_ == null) {
@@ -603,11 +617,13 @@ public final class BatchAnnotateFilesRequest extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * The list of file annotation requests. Right now we support only one
-     * AnnotateFileRequest in BatchAnnotateFilesRequest.
+     * Required. The list of file annotation requests. Right now we support only
+     * one AnnotateFileRequest in BatchAnnotateFilesRequest.
      * </pre>
      *
-     * <code>repeated .google.cloud.vision.v1p4beta1.AnnotateFileRequest requests = 1;</code>
+     * <code>
+     * repeated .google.cloud.vision.v1p4beta1.AnnotateFileRequest requests = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public com.google.cloud.vision.v1p4beta1.AnnotateFileRequest getRequests(int index) {
       if (requestsBuilder_ == null) {
@@ -620,11 +636,13 @@ public final class BatchAnnotateFilesRequest extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * The list of file annotation requests. Right now we support only one
-     * AnnotateFileRequest in BatchAnnotateFilesRequest.
+     * Required. The list of file annotation requests. Right now we support only
+     * one AnnotateFileRequest in BatchAnnotateFilesRequest.
      * </pre>
      *
-     * <code>repeated .google.cloud.vision.v1p4beta1.AnnotateFileRequest requests = 1;</code>
+     * <code>
+     * repeated .google.cloud.vision.v1p4beta1.AnnotateFileRequest requests = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder setRequests(
         int index, com.google.cloud.vision.v1p4beta1.AnnotateFileRequest value) {
@@ -644,11 +662,13 @@ public final class BatchAnnotateFilesRequest extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * The list of file annotation requests. Right now we support only one
-     * AnnotateFileRequest in BatchAnnotateFilesRequest.
+     * Required. The list of file annotation requests. Right now we support only
+     * one AnnotateFileRequest in BatchAnnotateFilesRequest.
      * </pre>
      *
-     * <code>repeated .google.cloud.vision.v1p4beta1.AnnotateFileRequest requests = 1;</code>
+     * <code>
+     * repeated .google.cloud.vision.v1p4beta1.AnnotateFileRequest requests = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder setRequests(
         int index, com.google.cloud.vision.v1p4beta1.AnnotateFileRequest.Builder builderForValue) {
@@ -665,11 +685,13 @@ public final class BatchAnnotateFilesRequest extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * The list of file annotation requests. Right now we support only one
-     * AnnotateFileRequest in BatchAnnotateFilesRequest.
+     * Required. The list of file annotation requests. Right now we support only
+     * one AnnotateFileRequest in BatchAnnotateFilesRequest.
      * </pre>
      *
-     * <code>repeated .google.cloud.vision.v1p4beta1.AnnotateFileRequest requests = 1;</code>
+     * <code>
+     * repeated .google.cloud.vision.v1p4beta1.AnnotateFileRequest requests = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder addRequests(com.google.cloud.vision.v1p4beta1.AnnotateFileRequest value) {
       if (requestsBuilder_ == null) {
@@ -688,11 +710,13 @@ public final class BatchAnnotateFilesRequest extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * The list of file annotation requests. Right now we support only one
-     * AnnotateFileRequest in BatchAnnotateFilesRequest.
+     * Required. The list of file annotation requests. Right now we support only
+     * one AnnotateFileRequest in BatchAnnotateFilesRequest.
      * </pre>
      *
-     * <code>repeated .google.cloud.vision.v1p4beta1.AnnotateFileRequest requests = 1;</code>
+     * <code>
+     * repeated .google.cloud.vision.v1p4beta1.AnnotateFileRequest requests = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder addRequests(
         int index, com.google.cloud.vision.v1p4beta1.AnnotateFileRequest value) {
@@ -712,11 +736,13 @@ public final class BatchAnnotateFilesRequest extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * The list of file annotation requests. Right now we support only one
-     * AnnotateFileRequest in BatchAnnotateFilesRequest.
+     * Required. The list of file annotation requests. Right now we support only
+     * one AnnotateFileRequest in BatchAnnotateFilesRequest.
      * </pre>
      *
-     * <code>repeated .google.cloud.vision.v1p4beta1.AnnotateFileRequest requests = 1;</code>
+     * <code>
+     * repeated .google.cloud.vision.v1p4beta1.AnnotateFileRequest requests = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder addRequests(
         com.google.cloud.vision.v1p4beta1.AnnotateFileRequest.Builder builderForValue) {
@@ -733,11 +759,13 @@ public final class BatchAnnotateFilesRequest extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * The list of file annotation requests. Right now we support only one
-     * AnnotateFileRequest in BatchAnnotateFilesRequest.
+     * Required. The list of file annotation requests. Right now we support only
+     * one AnnotateFileRequest in BatchAnnotateFilesRequest.
      * </pre>
      *
-     * <code>repeated .google.cloud.vision.v1p4beta1.AnnotateFileRequest requests = 1;</code>
+     * <code>
+     * repeated .google.cloud.vision.v1p4beta1.AnnotateFileRequest requests = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder addRequests(
         int index, com.google.cloud.vision.v1p4beta1.AnnotateFileRequest.Builder builderForValue) {
@@ -754,11 +782,13 @@ public final class BatchAnnotateFilesRequest extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * The list of file annotation requests. Right now we support only one
-     * AnnotateFileRequest in BatchAnnotateFilesRequest.
+     * Required. The list of file annotation requests. Right now we support only
+     * one AnnotateFileRequest in BatchAnnotateFilesRequest.
      * </pre>
      *
-     * <code>repeated .google.cloud.vision.v1p4beta1.AnnotateFileRequest requests = 1;</code>
+     * <code>
+     * repeated .google.cloud.vision.v1p4beta1.AnnotateFileRequest requests = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder addAllRequests(
         java.lang.Iterable<? extends com.google.cloud.vision.v1p4beta1.AnnotateFileRequest>
@@ -776,11 +806,13 @@ public final class BatchAnnotateFilesRequest extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * The list of file annotation requests. Right now we support only one
-     * AnnotateFileRequest in BatchAnnotateFilesRequest.
+     * Required. The list of file annotation requests. Right now we support only
+     * one AnnotateFileRequest in BatchAnnotateFilesRequest.
      * </pre>
      *
-     * <code>repeated .google.cloud.vision.v1p4beta1.AnnotateFileRequest requests = 1;</code>
+     * <code>
+     * repeated .google.cloud.vision.v1p4beta1.AnnotateFileRequest requests = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder clearRequests() {
       if (requestsBuilder_ == null) {
@@ -796,11 +828,13 @@ public final class BatchAnnotateFilesRequest extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * The list of file annotation requests. Right now we support only one
-     * AnnotateFileRequest in BatchAnnotateFilesRequest.
+     * Required. The list of file annotation requests. Right now we support only
+     * one AnnotateFileRequest in BatchAnnotateFilesRequest.
      * </pre>
      *
-     * <code>repeated .google.cloud.vision.v1p4beta1.AnnotateFileRequest requests = 1;</code>
+     * <code>
+     * repeated .google.cloud.vision.v1p4beta1.AnnotateFileRequest requests = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder removeRequests(int index) {
       if (requestsBuilder_ == null) {
@@ -816,11 +850,13 @@ public final class BatchAnnotateFilesRequest extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * The list of file annotation requests. Right now we support only one
-     * AnnotateFileRequest in BatchAnnotateFilesRequest.
+     * Required. The list of file annotation requests. Right now we support only
+     * one AnnotateFileRequest in BatchAnnotateFilesRequest.
      * </pre>
      *
-     * <code>repeated .google.cloud.vision.v1p4beta1.AnnotateFileRequest requests = 1;</code>
+     * <code>
+     * repeated .google.cloud.vision.v1p4beta1.AnnotateFileRequest requests = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public com.google.cloud.vision.v1p4beta1.AnnotateFileRequest.Builder getRequestsBuilder(
         int index) {
@@ -830,11 +866,13 @@ public final class BatchAnnotateFilesRequest extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * The list of file annotation requests. Right now we support only one
-     * AnnotateFileRequest in BatchAnnotateFilesRequest.
+     * Required. The list of file annotation requests. Right now we support only
+     * one AnnotateFileRequest in BatchAnnotateFilesRequest.
      * </pre>
      *
-     * <code>repeated .google.cloud.vision.v1p4beta1.AnnotateFileRequest requests = 1;</code>
+     * <code>
+     * repeated .google.cloud.vision.v1p4beta1.AnnotateFileRequest requests = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public com.google.cloud.vision.v1p4beta1.AnnotateFileRequestOrBuilder getRequestsOrBuilder(
         int index) {
@@ -848,11 +886,13 @@ public final class BatchAnnotateFilesRequest extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * The list of file annotation requests. Right now we support only one
-     * AnnotateFileRequest in BatchAnnotateFilesRequest.
+     * Required. The list of file annotation requests. Right now we support only
+     * one AnnotateFileRequest in BatchAnnotateFilesRequest.
      * </pre>
      *
-     * <code>repeated .google.cloud.vision.v1p4beta1.AnnotateFileRequest requests = 1;</code>
+     * <code>
+     * repeated .google.cloud.vision.v1p4beta1.AnnotateFileRequest requests = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public java.util.List<? extends com.google.cloud.vision.v1p4beta1.AnnotateFileRequestOrBuilder>
         getRequestsOrBuilderList() {
@@ -866,11 +906,13 @@ public final class BatchAnnotateFilesRequest extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * The list of file annotation requests. Right now we support only one
-     * AnnotateFileRequest in BatchAnnotateFilesRequest.
+     * Required. The list of file annotation requests. Right now we support only
+     * one AnnotateFileRequest in BatchAnnotateFilesRequest.
      * </pre>
      *
-     * <code>repeated .google.cloud.vision.v1p4beta1.AnnotateFileRequest requests = 1;</code>
+     * <code>
+     * repeated .google.cloud.vision.v1p4beta1.AnnotateFileRequest requests = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public com.google.cloud.vision.v1p4beta1.AnnotateFileRequest.Builder addRequestsBuilder() {
       return getRequestsFieldBuilder()
@@ -880,11 +922,13 @@ public final class BatchAnnotateFilesRequest extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * The list of file annotation requests. Right now we support only one
-     * AnnotateFileRequest in BatchAnnotateFilesRequest.
+     * Required. The list of file annotation requests. Right now we support only
+     * one AnnotateFileRequest in BatchAnnotateFilesRequest.
      * </pre>
      *
-     * <code>repeated .google.cloud.vision.v1p4beta1.AnnotateFileRequest requests = 1;</code>
+     * <code>
+     * repeated .google.cloud.vision.v1p4beta1.AnnotateFileRequest requests = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public com.google.cloud.vision.v1p4beta1.AnnotateFileRequest.Builder addRequestsBuilder(
         int index) {
@@ -896,11 +940,13 @@ public final class BatchAnnotateFilesRequest extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * The list of file annotation requests. Right now we support only one
-     * AnnotateFileRequest in BatchAnnotateFilesRequest.
+     * Required. The list of file annotation requests. Right now we support only
+     * one AnnotateFileRequest in BatchAnnotateFilesRequest.
      * </pre>
      *
-     * <code>repeated .google.cloud.vision.v1p4beta1.AnnotateFileRequest requests = 1;</code>
+     * <code>
+     * repeated .google.cloud.vision.v1p4beta1.AnnotateFileRequest requests = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public java.util.List<com.google.cloud.vision.v1p4beta1.AnnotateFileRequest.Builder>
         getRequestsBuilderList() {

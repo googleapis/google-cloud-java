@@ -1,5 +1,5 @@
 {
-  "updateTime": "2019-11-12T17:27:37.943900Z",
+  "updateTime": "2019-11-13T23:40:59.479115Z",
   "sources": [
     {
       "generator": {
@@ -12,8 +12,8 @@
       "git": {
         "name": "googleapis",
         "remote": "https://github.com/googleapis/googleapis.git",
-        "sha": "675de3dc9ab98cc1cf54216ad58c933ede54e915",
-        "internalRef": "279982263"
+        "sha": "218164b3deba1075979c9dca5f71461379e42dd1",
+        "internalRef": "280279014"
       }
     },
     {
@@ -33,6 +33,46 @@
         "language": "java",
         "generator": "gapic",
         "config": "google/cloud/vision/artman_vision_v1.yaml"
+      }
+    },
+    {
+      "client": {
+        "source": "googleapis",
+        "apiName": "vision",
+        "apiVersion": "v1p1beta1",
+        "language": "java",
+        "generator": "gapic",
+        "config": "google/cloud/vision/artman_vision_v1p1beta1.yaml"
+      }
+    },
+    {
+      "client": {
+        "source": "googleapis",
+        "apiName": "vision",
+        "apiVersion": "v1p2beta1",
+        "language": "java",
+        "generator": "gapic",
+        "config": "google/cloud/vision/artman_vision_v1p2beta1.yaml"
+      }
+    },
+    {
+      "client": {
+        "source": "googleapis",
+        "apiName": "vision",
+        "apiVersion": "v1p3beta1",
+        "language": "java",
+        "generator": "gapic",
+        "config": "google/cloud/vision/artman_vision_v1p3beta1.yaml"
+      }
+    },
+    {
+      "client": {
+        "source": "googleapis",
+        "apiName": "vision",
+        "apiVersion": "v1p4beta1",
+        "language": "java",
+        "generator": "gapic",
+        "config": "google/cloud/vision/artman_vision_v1p4beta1.yaml"
       }
     }
   ]

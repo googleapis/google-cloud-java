@@ -124,10 +124,12 @@ public final class AsyncBatchAnnotateFilesRequest extends com.google.protobuf.Ge
    *
    *
    * <pre>
-   * Individual async file annotation requests for this batch.
+   * Required. Individual async file annotation requests for this batch.
    * </pre>
    *
-   * <code>repeated .google.cloud.vision.v1p4beta1.AsyncAnnotateFileRequest requests = 1;</code>
+   * <code>
+   * repeated .google.cloud.vision.v1p4beta1.AsyncAnnotateFileRequest requests = 1 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   public java.util.List<com.google.cloud.vision.v1p4beta1.AsyncAnnotateFileRequest>
       getRequestsList() {
@@ -137,10 +139,12 @@ public final class AsyncBatchAnnotateFilesRequest extends com.google.protobuf.Ge
    *
    *
    * <pre>
-   * Individual async file annotation requests for this batch.
+   * Required. Individual async file annotation requests for this batch.
    * </pre>
    *
-   * <code>repeated .google.cloud.vision.v1p4beta1.AsyncAnnotateFileRequest requests = 1;</code>
+   * <code>
+   * repeated .google.cloud.vision.v1p4beta1.AsyncAnnotateFileRequest requests = 1 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   public java.util.List<
           ? extends com.google.cloud.vision.v1p4beta1.AsyncAnnotateFileRequestOrBuilder>
@@ -151,10 +155,12 @@ public final class AsyncBatchAnnotateFilesRequest extends com.google.protobuf.Ge
    *
    *
    * <pre>
-   * Individual async file annotation requests for this batch.
+   * Required. Individual async file annotation requests for this batch.
    * </pre>
    *
-   * <code>repeated .google.cloud.vision.v1p4beta1.AsyncAnnotateFileRequest requests = 1;</code>
+   * <code>
+   * repeated .google.cloud.vision.v1p4beta1.AsyncAnnotateFileRequest requests = 1 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   public int getRequestsCount() {
     return requests_.size();
@@ -163,10 +169,12 @@ public final class AsyncBatchAnnotateFilesRequest extends com.google.protobuf.Ge
    *
    *
    * <pre>
-   * Individual async file annotation requests for this batch.
+   * Required. Individual async file annotation requests for this batch.
    * </pre>
    *
-   * <code>repeated .google.cloud.vision.v1p4beta1.AsyncAnnotateFileRequest requests = 1;</code>
+   * <code>
+   * repeated .google.cloud.vision.v1p4beta1.AsyncAnnotateFileRequest requests = 1 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   public com.google.cloud.vision.v1p4beta1.AsyncAnnotateFileRequest getRequests(int index) {
     return requests_.get(index);
@@ -175,10 +183,12 @@ public final class AsyncBatchAnnotateFilesRequest extends com.google.protobuf.Ge
    *
    *
    * <pre>
-   * Individual async file annotation requests for this batch.
+   * Required. Individual async file annotation requests for this batch.
    * </pre>
    *
-   * <code>repeated .google.cloud.vision.v1p4beta1.AsyncAnnotateFileRequest requests = 1;</code>
+   * <code>
+   * repeated .google.cloud.vision.v1p4beta1.AsyncAnnotateFileRequest requests = 1 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   public com.google.cloud.vision.v1p4beta1.AsyncAnnotateFileRequestOrBuilder getRequestsOrBuilder(
       int index) {
@@ -573,10 +583,12 @@ public final class AsyncBatchAnnotateFilesRequest extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * Individual async file annotation requests for this batch.
+     * Required. Individual async file annotation requests for this batch.
      * </pre>
      *
-     * <code>repeated .google.cloud.vision.v1p4beta1.AsyncAnnotateFileRequest requests = 1;</code>
+     * <code>
+     * repeated .google.cloud.vision.v1p4beta1.AsyncAnnotateFileRequest requests = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public java.util.List<com.google.cloud.vision.v1p4beta1.AsyncAnnotateFileRequest>
         getRequestsList() {
@@ -590,10 +602,12 @@ public final class AsyncBatchAnnotateFilesRequest extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * Individual async file annotation requests for this batch.
+     * Required. Individual async file annotation requests for this batch.
      * </pre>
      *
-     * <code>repeated .google.cloud.vision.v1p4beta1.AsyncAnnotateFileRequest requests = 1;</code>
+     * <code>
+     * repeated .google.cloud.vision.v1p4beta1.AsyncAnnotateFileRequest requests = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public int getRequestsCount() {
       if (requestsBuilder_ == null) {
@@ -606,10 +620,12 @@ public final class AsyncBatchAnnotateFilesRequest extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * Individual async file annotation requests for this batch.
+     * Required. Individual async file annotation requests for this batch.
      * </pre>
      *
-     * <code>repeated .google.cloud.vision.v1p4beta1.AsyncAnnotateFileRequest requests = 1;</code>
+     * <code>
+     * repeated .google.cloud.vision.v1p4beta1.AsyncAnnotateFileRequest requests = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public com.google.cloud.vision.v1p4beta1.AsyncAnnotateFileRequest getRequests(int index) {
       if (requestsBuilder_ == null) {
@@ -622,10 +638,12 @@ public final class AsyncBatchAnnotateFilesRequest extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * Individual async file annotation requests for this batch.
+     * Required. Individual async file annotation requests for this batch.
      * </pre>
      *
-     * <code>repeated .google.cloud.vision.v1p4beta1.AsyncAnnotateFileRequest requests = 1;</code>
+     * <code>
+     * repeated .google.cloud.vision.v1p4beta1.AsyncAnnotateFileRequest requests = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder setRequests(
         int index, com.google.cloud.vision.v1p4beta1.AsyncAnnotateFileRequest value) {
@@ -645,10 +663,12 @@ public final class AsyncBatchAnnotateFilesRequest extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * Individual async file annotation requests for this batch.
+     * Required. Individual async file annotation requests for this batch.
      * </pre>
      *
-     * <code>repeated .google.cloud.vision.v1p4beta1.AsyncAnnotateFileRequest requests = 1;</code>
+     * <code>
+     * repeated .google.cloud.vision.v1p4beta1.AsyncAnnotateFileRequest requests = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder setRequests(
         int index,
@@ -666,10 +686,12 @@ public final class AsyncBatchAnnotateFilesRequest extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * Individual async file annotation requests for this batch.
+     * Required. Individual async file annotation requests for this batch.
      * </pre>
      *
-     * <code>repeated .google.cloud.vision.v1p4beta1.AsyncAnnotateFileRequest requests = 1;</code>
+     * <code>
+     * repeated .google.cloud.vision.v1p4beta1.AsyncAnnotateFileRequest requests = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder addRequests(com.google.cloud.vision.v1p4beta1.AsyncAnnotateFileRequest value) {
       if (requestsBuilder_ == null) {
@@ -688,10 +710,12 @@ public final class AsyncBatchAnnotateFilesRequest extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * Individual async file annotation requests for this batch.
+     * Required. Individual async file annotation requests for this batch.
      * </pre>
      *
-     * <code>repeated .google.cloud.vision.v1p4beta1.AsyncAnnotateFileRequest requests = 1;</code>
+     * <code>
+     * repeated .google.cloud.vision.v1p4beta1.AsyncAnnotateFileRequest requests = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder addRequests(
         int index, com.google.cloud.vision.v1p4beta1.AsyncAnnotateFileRequest value) {
@@ -711,10 +735,12 @@ public final class AsyncBatchAnnotateFilesRequest extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * Individual async file annotation requests for this batch.
+     * Required. Individual async file annotation requests for this batch.
      * </pre>
      *
-     * <code>repeated .google.cloud.vision.v1p4beta1.AsyncAnnotateFileRequest requests = 1;</code>
+     * <code>
+     * repeated .google.cloud.vision.v1p4beta1.AsyncAnnotateFileRequest requests = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder addRequests(
         com.google.cloud.vision.v1p4beta1.AsyncAnnotateFileRequest.Builder builderForValue) {
@@ -731,10 +757,12 @@ public final class AsyncBatchAnnotateFilesRequest extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * Individual async file annotation requests for this batch.
+     * Required. Individual async file annotation requests for this batch.
      * </pre>
      *
-     * <code>repeated .google.cloud.vision.v1p4beta1.AsyncAnnotateFileRequest requests = 1;</code>
+     * <code>
+     * repeated .google.cloud.vision.v1p4beta1.AsyncAnnotateFileRequest requests = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder addRequests(
         int index,
@@ -752,10 +780,12 @@ public final class AsyncBatchAnnotateFilesRequest extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * Individual async file annotation requests for this batch.
+     * Required. Individual async file annotation requests for this batch.
      * </pre>
      *
-     * <code>repeated .google.cloud.vision.v1p4beta1.AsyncAnnotateFileRequest requests = 1;</code>
+     * <code>
+     * repeated .google.cloud.vision.v1p4beta1.AsyncAnnotateFileRequest requests = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder addAllRequests(
         java.lang.Iterable<? extends com.google.cloud.vision.v1p4beta1.AsyncAnnotateFileRequest>
@@ -773,10 +803,12 @@ public final class AsyncBatchAnnotateFilesRequest extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * Individual async file annotation requests for this batch.
+     * Required. Individual async file annotation requests for this batch.
      * </pre>
      *
-     * <code>repeated .google.cloud.vision.v1p4beta1.AsyncAnnotateFileRequest requests = 1;</code>
+     * <code>
+     * repeated .google.cloud.vision.v1p4beta1.AsyncAnnotateFileRequest requests = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder clearRequests() {
       if (requestsBuilder_ == null) {
@@ -792,10 +824,12 @@ public final class AsyncBatchAnnotateFilesRequest extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * Individual async file annotation requests for this batch.
+     * Required. Individual async file annotation requests for this batch.
      * </pre>
      *
-     * <code>repeated .google.cloud.vision.v1p4beta1.AsyncAnnotateFileRequest requests = 1;</code>
+     * <code>
+     * repeated .google.cloud.vision.v1p4beta1.AsyncAnnotateFileRequest requests = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder removeRequests(int index) {
       if (requestsBuilder_ == null) {
@@ -811,10 +845,12 @@ public final class AsyncBatchAnnotateFilesRequest extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * Individual async file annotation requests for this batch.
+     * Required. Individual async file annotation requests for this batch.
      * </pre>
      *
-     * <code>repeated .google.cloud.vision.v1p4beta1.AsyncAnnotateFileRequest requests = 1;</code>
+     * <code>
+     * repeated .google.cloud.vision.v1p4beta1.AsyncAnnotateFileRequest requests = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public com.google.cloud.vision.v1p4beta1.AsyncAnnotateFileRequest.Builder getRequestsBuilder(
         int index) {
@@ -824,10 +860,12 @@ public final class AsyncBatchAnnotateFilesRequest extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * Individual async file annotation requests for this batch.
+     * Required. Individual async file annotation requests for this batch.
      * </pre>
      *
-     * <code>repeated .google.cloud.vision.v1p4beta1.AsyncAnnotateFileRequest requests = 1;</code>
+     * <code>
+     * repeated .google.cloud.vision.v1p4beta1.AsyncAnnotateFileRequest requests = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public com.google.cloud.vision.v1p4beta1.AsyncAnnotateFileRequestOrBuilder getRequestsOrBuilder(
         int index) {
@@ -841,10 +879,12 @@ public final class AsyncBatchAnnotateFilesRequest extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * Individual async file annotation requests for this batch.
+     * Required. Individual async file annotation requests for this batch.
      * </pre>
      *
-     * <code>repeated .google.cloud.vision.v1p4beta1.AsyncAnnotateFileRequest requests = 1;</code>
+     * <code>
+     * repeated .google.cloud.vision.v1p4beta1.AsyncAnnotateFileRequest requests = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public java.util.List<
             ? extends com.google.cloud.vision.v1p4beta1.AsyncAnnotateFileRequestOrBuilder>
@@ -859,10 +899,12 @@ public final class AsyncBatchAnnotateFilesRequest extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * Individual async file annotation requests for this batch.
+     * Required. Individual async file annotation requests for this batch.
      * </pre>
      *
-     * <code>repeated .google.cloud.vision.v1p4beta1.AsyncAnnotateFileRequest requests = 1;</code>
+     * <code>
+     * repeated .google.cloud.vision.v1p4beta1.AsyncAnnotateFileRequest requests = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public com.google.cloud.vision.v1p4beta1.AsyncAnnotateFileRequest.Builder addRequestsBuilder() {
       return getRequestsFieldBuilder()
@@ -873,10 +915,12 @@ public final class AsyncBatchAnnotateFilesRequest extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * Individual async file annotation requests for this batch.
+     * Required. Individual async file annotation requests for this batch.
      * </pre>
      *
-     * <code>repeated .google.cloud.vision.v1p4beta1.AsyncAnnotateFileRequest requests = 1;</code>
+     * <code>
+     * repeated .google.cloud.vision.v1p4beta1.AsyncAnnotateFileRequest requests = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public com.google.cloud.vision.v1p4beta1.AsyncAnnotateFileRequest.Builder addRequestsBuilder(
         int index) {
@@ -889,10 +933,12 @@ public final class AsyncBatchAnnotateFilesRequest extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * Individual async file annotation requests for this batch.
+     * Required. Individual async file annotation requests for this batch.
      * </pre>
      *
-     * <code>repeated .google.cloud.vision.v1p4beta1.AsyncAnnotateFileRequest requests = 1;</code>
+     * <code>
+     * repeated .google.cloud.vision.v1p4beta1.AsyncAnnotateFileRequest requests = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public java.util.List<com.google.cloud.vision.v1p4beta1.AsyncAnnotateFileRequest.Builder>
         getRequestsBuilderList() {

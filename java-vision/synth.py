@@ -21,7 +21,7 @@ import synthtool.languages.java as java
 gapic = gcp.GAPICGenerator()
 
 service = 'vision'
-versions = ['v1']#, 'v1p1beta1', 'v1p2beta1', 'v1p3beta1', 'v1p4beta1']
+versions = ['v1', 'v1p1beta1', 'v1p2beta1', 'v1p3beta1', 'v1p4beta1']
 config_pattern = '/google/cloud/vision/artman_vision_{version}.yaml'
 
 for version in versions:

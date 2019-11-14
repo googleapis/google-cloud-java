@@ -27,30 +27,36 @@ public interface UpdateProductSetRequestOrBuilder
    *
    *
    * <pre>
-   * The ProductSet resource which replaces the one on the server.
+   * Required. The ProductSet resource which replaces the one on the server.
    * </pre>
    *
-   * <code>.google.cloud.vision.v1p4beta1.ProductSet product_set = 1;</code>
+   * <code>
+   * .google.cloud.vision.v1p4beta1.ProductSet product_set = 1 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   boolean hasProductSet();
   /**
    *
    *
    * <pre>
-   * The ProductSet resource which replaces the one on the server.
+   * Required. The ProductSet resource which replaces the one on the server.
    * </pre>
    *
-   * <code>.google.cloud.vision.v1p4beta1.ProductSet product_set = 1;</code>
+   * <code>
+   * .google.cloud.vision.v1p4beta1.ProductSet product_set = 1 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   com.google.cloud.vision.v1p4beta1.ProductSet getProductSet();
   /**
    *
    *
    * <pre>
-   * The ProductSet resource which replaces the one on the server.
+   * Required. The ProductSet resource which replaces the one on the server.
    * </pre>
    *
-   * <code>.google.cloud.vision.v1p4beta1.ProductSet product_set = 1;</code>
+   * <code>
+   * .google.cloud.vision.v1p4beta1.ProductSet product_set = 1 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   com.google.cloud.vision.v1p4beta1.ProductSetOrBuilder getProductSetOrBuilder();
 

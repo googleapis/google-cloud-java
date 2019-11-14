@@ -1,15 +1,32 @@
-# Maven
-target/
+.gitignore
 
-# Eclipse
-.classpath
+# Packages
+dist
+bin
+var
+sdist
+target
+
+# Unit test / coverage reports
+.coverage
+.tox
+nosetests.xml
+
+# Translations
+*.mo
+
+# Mr Developer
+.mr.developer.cfg
 .project
-.settings
-
-# Intellij
+.pydevproject
 *.iml
-.idea/
+.idea
+.settings
+.DS_Store
+.classpath
 
-# python utilities
+# Built documentation
+docs/
+
+# Python utilities
 *.pyc
-__pycache__

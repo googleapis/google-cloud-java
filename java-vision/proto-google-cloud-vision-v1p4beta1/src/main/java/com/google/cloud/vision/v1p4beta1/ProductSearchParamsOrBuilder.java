@@ -28,7 +28,7 @@ public interface ProductSearchParamsOrBuilder
    *
    * <pre>
    * The bounding polygon around the area of interest in the image.
-   * Optional. If it is not specified, system discretion will be applied.
+   * If it is not specified, system discretion will be applied.
    * </pre>
    *
    * <code>.google.cloud.vision.v1p4beta1.BoundingPoly bounding_poly = 9;</code>
@@ -39,7 +39,7 @@ public interface ProductSearchParamsOrBuilder
    *
    * <pre>
    * The bounding polygon around the area of interest in the image.
-   * Optional. If it is not specified, system discretion will be applied.
+   * If it is not specified, system discretion will be applied.
    * </pre>
    *
    * <code>.google.cloud.vision.v1p4beta1.BoundingPoly bounding_poly = 9;</code>
@@ -50,7 +50,7 @@ public interface ProductSearchParamsOrBuilder
    *
    * <pre>
    * The bounding polygon around the area of interest in the image.
-   * Optional. If it is not specified, system discretion will be applied.
+   * If it is not specified, system discretion will be applied.
    * </pre>
    *
    * <code>.google.cloud.vision.v1p4beta1.BoundingPoly bounding_poly = 9;</code>
@@ -68,7 +68,7 @@ public interface ProductSearchParamsOrBuilder
    * `projects/PROJECT_ID/locations/LOC_ID/productSets/PRODUCT_SET_ID`.
    * </pre>
    *
-   * <code>string product_set = 6;</code>
+   * <code>string product_set = 6 [(.google.api.resource_reference) = { ... }</code>
    */
   java.lang.String getProductSet();
   /**
@@ -82,7 +82,7 @@ public interface ProductSearchParamsOrBuilder
    * `projects/PROJECT_ID/locations/LOC_ID/productSets/PRODUCT_SET_ID`.
    * </pre>
    *
-   * <code>string product_set = 6;</code>
+   * <code>string product_set = 6 [(.google.api.resource_reference) = { ... }</code>
    */
   com.google.protobuf.ByteString getProductSetBytes();
 
@@ -157,9 +157,11 @@ public interface ProductSearchParamsOrBuilder
    * <pre>
    * The filtering expression. This can be used to restrict search results based
    * on Product labels. We currently support an AND of OR of key-value
-   * expressions, where each expression within an OR must have the same key.
+   * expressions, where each expression within an OR must have the same key. An
+   * '=' should be used to connect the key and value.
    * For example, "(color = red OR color = blue) AND brand = Google" is
-   * acceptable, but not "(color = red OR brand = Google)" or "color: red".
+   * acceptable, but "(color = red OR brand = Google)" is not acceptable.
+   * "color: red" is not acceptable because it uses a ':' instead of an '='.
    * </pre>
    *
    * <code>string filter = 8;</code>
@@ -171,9 +173,11 @@ public interface ProductSearchParamsOrBuilder
    * <pre>
    * The filtering expression. This can be used to restrict search results based
    * on Product labels. We currently support an AND of OR of key-value
-   * expressions, where each expression within an OR must have the same key.
+   * expressions, where each expression within an OR must have the same key. An
+   * '=' should be used to connect the key and value.
    * For example, "(color = red OR color = blue) AND brand = Google" is
-   * acceptable, but not "(color = red OR brand = Google)" or "color: red".
+   * acceptable, but "(color = red OR brand = Google)" is not acceptable.
+   * "color: red" is not acceptable because it uses a ':' instead of an '='.
    * </pre>
    *
    * <code>string filter = 8;</code>

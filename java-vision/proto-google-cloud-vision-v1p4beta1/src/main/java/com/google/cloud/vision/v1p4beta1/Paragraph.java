@@ -284,7 +284,7 @@ public final class Paragraph extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * List of words in this paragraph.
+   * List of all words in this paragraph.
    * </pre>
    *
    * <code>repeated .google.cloud.vision.v1p4beta1.Word words = 3;</code>
@@ -296,7 +296,7 @@ public final class Paragraph extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * List of words in this paragraph.
+   * List of all words in this paragraph.
    * </pre>
    *
    * <code>repeated .google.cloud.vision.v1p4beta1.Word words = 3;</code>
@@ -309,7 +309,7 @@ public final class Paragraph extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * List of words in this paragraph.
+   * List of all words in this paragraph.
    * </pre>
    *
    * <code>repeated .google.cloud.vision.v1p4beta1.Word words = 3;</code>
@@ -321,7 +321,7 @@ public final class Paragraph extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * List of words in this paragraph.
+   * List of all words in this paragraph.
    * </pre>
    *
    * <code>repeated .google.cloud.vision.v1p4beta1.Word words = 3;</code>
@@ -333,7 +333,7 @@ public final class Paragraph extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * List of words in this paragraph.
+   * List of all words in this paragraph.
    * </pre>
    *
    * <code>repeated .google.cloud.vision.v1p4beta1.Word words = 3;</code>
@@ -1303,7 +1303,7 @@ public final class Paragraph extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * List of words in this paragraph.
+     * List of all words in this paragraph.
      * </pre>
      *
      * <code>repeated .google.cloud.vision.v1p4beta1.Word words = 3;</code>
@@ -1319,7 +1319,7 @@ public final class Paragraph extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * List of words in this paragraph.
+     * List of all words in this paragraph.
      * </pre>
      *
      * <code>repeated .google.cloud.vision.v1p4beta1.Word words = 3;</code>
@@ -1335,7 +1335,7 @@ public final class Paragraph extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * List of words in this paragraph.
+     * List of all words in this paragraph.
      * </pre>
      *
      * <code>repeated .google.cloud.vision.v1p4beta1.Word words = 3;</code>
@@ -1351,7 +1351,7 @@ public final class Paragraph extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * List of words in this paragraph.
+     * List of all words in this paragraph.
      * </pre>
      *
      * <code>repeated .google.cloud.vision.v1p4beta1.Word words = 3;</code>
@@ -1373,7 +1373,7 @@ public final class Paragraph extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * List of words in this paragraph.
+     * List of all words in this paragraph.
      * </pre>
      *
      * <code>repeated .google.cloud.vision.v1p4beta1.Word words = 3;</code>
@@ -1393,7 +1393,7 @@ public final class Paragraph extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * List of words in this paragraph.
+     * List of all words in this paragraph.
      * </pre>
      *
      * <code>repeated .google.cloud.vision.v1p4beta1.Word words = 3;</code>
@@ -1415,7 +1415,7 @@ public final class Paragraph extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * List of words in this paragraph.
+     * List of all words in this paragraph.
      * </pre>
      *
      * <code>repeated .google.cloud.vision.v1p4beta1.Word words = 3;</code>
@@ -1437,7 +1437,7 @@ public final class Paragraph extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * List of words in this paragraph.
+     * List of all words in this paragraph.
      * </pre>
      *
      * <code>repeated .google.cloud.vision.v1p4beta1.Word words = 3;</code>
@@ -1456,7 +1456,7 @@ public final class Paragraph extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * List of words in this paragraph.
+     * List of all words in this paragraph.
      * </pre>
      *
      * <code>repeated .google.cloud.vision.v1p4beta1.Word words = 3;</code>
@@ -1476,7 +1476,7 @@ public final class Paragraph extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * List of words in this paragraph.
+     * List of all words in this paragraph.
      * </pre>
      *
      * <code>repeated .google.cloud.vision.v1p4beta1.Word words = 3;</code>
@@ -1496,7 +1496,7 @@ public final class Paragraph extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * List of words in this paragraph.
+     * List of all words in this paragraph.
      * </pre>
      *
      * <code>repeated .google.cloud.vision.v1p4beta1.Word words = 3;</code>
@@ -1515,7 +1515,7 @@ public final class Paragraph extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * List of words in this paragraph.
+     * List of all words in this paragraph.
      * </pre>
      *
      * <code>repeated .google.cloud.vision.v1p4beta1.Word words = 3;</code>
@@ -1534,7 +1534,7 @@ public final class Paragraph extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * List of words in this paragraph.
+     * List of all words in this paragraph.
      * </pre>
      *
      * <code>repeated .google.cloud.vision.v1p4beta1.Word words = 3;</code>
@@ -1546,7 +1546,7 @@ public final class Paragraph extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * List of words in this paragraph.
+     * List of all words in this paragraph.
      * </pre>
      *
      * <code>repeated .google.cloud.vision.v1p4beta1.Word words = 3;</code>
@@ -1562,7 +1562,7 @@ public final class Paragraph extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * List of words in this paragraph.
+     * List of all words in this paragraph.
      * </pre>
      *
      * <code>repeated .google.cloud.vision.v1p4beta1.Word words = 3;</code>
@@ -1579,7 +1579,7 @@ public final class Paragraph extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * List of words in this paragraph.
+     * List of all words in this paragraph.
      * </pre>
      *
      * <code>repeated .google.cloud.vision.v1p4beta1.Word words = 3;</code>
@@ -1592,7 +1592,7 @@ public final class Paragraph extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * List of words in this paragraph.
+     * List of all words in this paragraph.
      * </pre>
      *
      * <code>repeated .google.cloud.vision.v1p4beta1.Word words = 3;</code>
@@ -1605,7 +1605,7 @@ public final class Paragraph extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * List of words in this paragraph.
+     * List of all words in this paragraph.
      * </pre>
      *
      * <code>repeated .google.cloud.vision.v1p4beta1.Word words = 3;</code>
