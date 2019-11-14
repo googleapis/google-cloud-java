@@ -34,13 +34,13 @@ import com.google.cloud.logging.MonitoredResourceUtil;
 import com.google.cloud.logging.Payload;
 import com.google.cloud.logging.Severity;
 import com.google.common.base.Strings;
+import com.google.common.collect.ImmutableList;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashSet;
 import java.util.List;
-import java.util.Map;
 import java.util.Set;
 
 /**
@@ -72,6 +72,8 @@ public class LoggingAppender extends UnsynchronizedAppenderBase<ILoggingEvent> {
   private static final String LEVEL_NAME_KEY = "levelName";
   private static final String LEVEL_VALUE_KEY = "levelValue";
   private static final String LOGGER_NAME_KEY = "loggerName";
+  private static final List<LoggingEventEnhancer> DEFAULT_LOGGING_EVENT_ENHANCERS =
+      ImmutableList.<LoggingEventEnhancer>of(new MDCEventEnhancer());
 
   private volatile Logging logging;
   private LoggingOptions loggingOptions;
@@ -157,7 +159,11 @@ public class LoggingAppender extends UnsynchronizedAppenderBase<ILoggingEvent> {
   }
 
   List<LoggingEventEnhancer> getLoggingEventEnhancers() {
-    return getEnhancers(loggingEventEnhancerClassNames);
+    if (loggingEventEnhancerClassNames.isEmpty()) {
+      return DEFAULT_LOGGING_EVENT_ENHANCERS;
+    } else {
+      return getEnhancers(loggingEventEnhancerClassNames);
+    }
   }
 
   <T> List<T> getEnhancers(Set<String> classNames) {
@@ -277,12 +283,6 @@ public class LoggingAppender extends UnsynchronizedAppenderBase<ILoggingEvent> {
         .addLabel(LEVEL_NAME_KEY, level.toString())
         .addLabel(LEVEL_VALUE_KEY, String.valueOf(level.toInt()))
         .addLabel(LOGGER_NAME_KEY, e.getLoggerName());
-
-    for (Map.Entry<String, String> entry : e.getMDCPropertyMap().entrySet()) {
-      if (null != entry.getKey() && null != entry.getValue()) {
-        builder.addLabel(entry.getKey(), entry.getValue());
-      }
-    }
 
     if (loggingEnhancers != null) {
       for (LoggingEnhancer enhancer : loggingEnhancers) {
