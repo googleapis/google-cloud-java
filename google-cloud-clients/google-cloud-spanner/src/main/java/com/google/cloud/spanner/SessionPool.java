@@ -1154,6 +1154,13 @@ final class SessionPool {
   }
 
   @VisibleForTesting
+  int getNumberOfSessionsBeingPrepared() {
+    synchronized (lock) {
+      return numSessionsBeingPrepared;
+    }
+  }
+
+  @VisibleForTesting
   long getNumWaiterTimeouts() {
     return numWaiterTimeouts.get();
   }
@@ -1183,6 +1190,11 @@ final class SessionPool {
 
   private boolean isSessionNotFound(SpannerException e) {
     return e.getErrorCode() == ErrorCode.NOT_FOUND && e.getMessage().contains("Session not found");
+  }
+
+  private boolean isDatabaseDoesNotExist(SpannerException e) {
+    return e.getErrorCode() == ErrorCode.NOT_FOUND
+        && e.getMessage().contains("Database does not exist");
   }
 
   private void invalidateSession(PooledSession session) {
@@ -1440,6 +1452,20 @@ final class SessionPool {
     synchronized (lock) {
       if (isSessionNotFound(e)) {
         invalidateSession(session);
+      } else if (isDatabaseDoesNotExist(e)) {
+        // Database has been deleted. We should stop trying to prepare any transactions. Also
+        // propagate the error to all waiters, as any further waiting is pointless.
+        while (readWriteWaiters.size() > 0) {
+          readWriteWaiters.poll().put(e);
+        }
+        while (readWaiters.size() > 0) {
+          readWaiters.poll().put(e);
+        }
+        // Remove the session from the pool.
+        allSessions.remove(session);
+        if (isClosed()) {
+          decrementPendingClosures(1);
+        }
       } else if (readWriteWaiters.size() > 0) {
         releaseSession(session, Position.FIRST);
         readWriteWaiters.poll().put(e);

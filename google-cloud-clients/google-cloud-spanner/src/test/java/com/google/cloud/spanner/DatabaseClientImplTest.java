@@ -16,6 +16,7 @@
 
 package com.google.cloud.spanner;
 
+import static org.hamcrest.CoreMatchers.containsString;
 import static org.hamcrest.CoreMatchers.equalTo;
 import static org.hamcrest.CoreMatchers.is;
 import static org.junit.Assert.assertThat;
@@ -27,6 +28,7 @@ import com.google.cloud.NoCredentials;
 import com.google.cloud.spanner.MockSpannerServiceImpl.SimulatedExecutionTime;
 import com.google.cloud.spanner.MockSpannerServiceImpl.StatementResult;
 import com.google.cloud.spanner.TransactionRunner.TransactionCallable;
+import com.google.common.base.Stopwatch;
 import com.google.protobuf.ListValue;
 import com.google.spanner.v1.ResultSetMetadata;
 import com.google.spanner.v1.StructType;
@@ -37,6 +39,7 @@ import io.grpc.Status;
 import io.grpc.inprocess.InProcessServerBuilder;
 import java.io.IOException;
 import java.util.concurrent.ScheduledThreadPoolExecutor;
+import java.util.concurrent.TimeUnit;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
@@ -51,7 +54,6 @@ public class DatabaseClientImplTest {
   private static MockSpannerServiceImpl mockSpanner;
   private static Server server;
   private static LocalChannelProvider channelProvider;
-  private static Spanner spanner;
   private static final Statement UPDATE_STATEMENT =
       Statement.of("UPDATE FOO SET BAR=1 WHERE BAZ=2");
   private static final Statement INVALID_UPDATE_STATEMENT =
@@ -80,6 +82,7 @@ public class DatabaseClientImplTest {
                   .build())
           .setMetadata(SELECT1_METADATA)
           .build();
+  private Spanner spanner;
 
   @BeforeClass
   public static void startStaticServer() throws IOException {
@@ -111,8 +114,6 @@ public class DatabaseClientImplTest {
 
   @Before
   public void setUp() throws IOException {
-    mockSpanner.reset();
-    mockSpanner.removeAllExecutionTimes();
     spanner =
         SpannerOptions.newBuilder()
             .setProjectId("[PROJECT]")
@@ -125,6 +126,8 @@ public class DatabaseClientImplTest {
   @After
   public void tearDown() throws Exception {
     spanner.close();
+    mockSpanner.reset();
+    mockSpanner.removeAllExecutionTimes();
   }
 
   /**
@@ -256,5 +259,106 @@ public class DatabaseClientImplTest {
                   });
       assertThat(updateCount, is(equalTo(UPDATE_COUNT)));
     }
+  }
+
+  @Test
+  public void testDatabaseDoesNotExistOnPrepareSession() throws Exception {
+    mockSpanner.setBeginTransactionExecutionTime(
+        SimulatedExecutionTime.ofStickyException(
+            Status.NOT_FOUND.withDescription("Database does not exist").asRuntimeException()));
+    DatabaseClientImpl dbClient =
+        (DatabaseClientImpl)
+            spanner.getDatabaseClient(DatabaseId.of("[PROJECT]", "[INSTANCE]", "[DATABASE]"));
+    // Wait until all sessions have been created.
+    Stopwatch watch = Stopwatch.createStarted();
+    while (watch.elapsed(TimeUnit.SECONDS) < 5
+        && dbClient.pool.getNumberOfSessionsBeingCreated() > 0) {
+      Thread.sleep(1L);
+    }
+    // Ensure that no sessions could be prepared and that the session pool gives up trying to
+    // prepare sessions.
+    watch = watch.reset().start();
+    while (watch.elapsed(TimeUnit.SECONDS) < 5
+        && dbClient.pool.getNumberOfSessionsBeingPrepared() > 0) {
+      Thread.sleep(1L);
+    }
+    assertThat(dbClient.pool.getNumberOfSessionsBeingPrepared(), is(equalTo(0)));
+    assertThat(dbClient.pool.getNumberOfAvailableWritePreparedSessions(), is(equalTo(0)));
+  }
+
+  @Test
+  public void testDatabaseDoesNotExistOnInitialization() throws Exception {
+    mockSpanner.setBatchCreateSessionsExecutionTime(
+        SimulatedExecutionTime.ofStickyException(
+            Status.NOT_FOUND.withDescription("Database does not exist").asRuntimeException()));
+    DatabaseClientImpl dbClient =
+        (DatabaseClientImpl)
+            spanner.getDatabaseClient(DatabaseId.of("[PROJECT]", "[INSTANCE]", "[DATABASE]"));
+    // Wait until session creation has finished.
+    Stopwatch watch = Stopwatch.createStarted();
+    while (watch.elapsed(TimeUnit.SECONDS) < 5
+        && dbClient.pool.getNumberOfSessionsBeingCreated() > 0) {
+      Thread.sleep(1L);
+    }
+    // All session creation should fail and stop trying.
+    assertThat(dbClient.pool.getNumberOfSessionsInPool(), is(equalTo(0)));
+    assertThat(dbClient.pool.getNumberOfSessionsBeingCreated(), is(equalTo(0)));
+  }
+
+  @Test
+  public void testDatabaseDoesNotExistOnCreate() throws Exception {
+    mockSpanner.setBatchCreateSessionsExecutionTime(
+        SimulatedExecutionTime.ofStickyException(
+            Status.NOT_FOUND.withDescription("Database does not exist").asRuntimeException()));
+    // Ensure there are no sessions in the pool by default.
+    try (Spanner spanner =
+        SpannerOptions.newBuilder()
+            .setProjectId("[PROJECT]")
+            .setChannelProvider(channelProvider)
+            .setCredentials(NoCredentials.getInstance())
+            .setSessionPoolOption(SessionPoolOptions.newBuilder().setMinSessions(0).build())
+            .build()
+            .getService()) {
+      DatabaseClientImpl dbClient =
+          (DatabaseClientImpl)
+              spanner.getDatabaseClient(DatabaseId.of("[PROJECT]", "[INSTANCE]", "[DATABASE]"));
+      // The create session failure should propagate to the client and not retry.
+      try (ResultSet rs = dbClient.singleUse().executeQuery(SELECT1)) {
+        fail("missing expected exception");
+      } catch (SpannerException e) {
+        assertThat(e.getErrorCode(), is(equalTo(ErrorCode.NOT_FOUND)));
+        assertThat(e.getMessage(), containsString("Database does not exist"));
+      }
+    }
+  }
+
+  @Test
+  public void testDatabaseDoesNotExistOnReplenish() throws Exception {
+    mockSpanner.setBatchCreateSessionsExecutionTime(
+        SimulatedExecutionTime.ofStickyException(
+            Status.NOT_FOUND.withDescription("Database does not exist").asRuntimeException()));
+    DatabaseClientImpl dbClient =
+        (DatabaseClientImpl)
+            spanner.getDatabaseClient(DatabaseId.of("[PROJECT]", "[INSTANCE]", "[DATABASE]"));
+    // Wait until session creation has finished.
+    Stopwatch watch = Stopwatch.createStarted();
+    while (watch.elapsed(TimeUnit.SECONDS) < 5
+        && dbClient.pool.getNumberOfSessionsBeingCreated() > 0) {
+      Thread.sleep(1L);
+    }
+    // All session creation should fail and stop trying.
+    assertThat(dbClient.pool.getNumberOfSessionsInPool(), is(equalTo(0)));
+    assertThat(dbClient.pool.getNumberOfSessionsBeingCreated(), is(equalTo(0)));
+    // Force a maintainer run. This should schedule new session creation.
+    dbClient.pool.poolMaintainer.maintainPool();
+    // Wait until the replenish has finished.
+    watch = watch.reset().start();
+    while (watch.elapsed(TimeUnit.SECONDS) < 5
+        && dbClient.pool.getNumberOfSessionsBeingCreated() > 0) {
+      Thread.sleep(1L);
+    }
+    // All session creation from replenishPool should fail and stop trying.
+    assertThat(dbClient.pool.getNumberOfSessionsInPool(), is(equalTo(0)));
+    assertThat(dbClient.pool.getNumberOfSessionsBeingCreated(), is(equalTo(0)));
   }
 }
