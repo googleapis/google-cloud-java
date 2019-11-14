@@ -33,7 +33,7 @@ python3 -m pip install gcp-docuploader
 # compile all packages
 mvn clean install -B -DskipTests=true
 
-NAME=datacatalog
+NAME=google-cloud-datacatalog
 VERSION=$(grep ${NAME}: versions.txt | cut -d: -f3)
 
 # build the docs
