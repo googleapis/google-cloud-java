@@ -30,7 +30,7 @@ import java.io.InputStream;
 /** Service class for getting credentials from key files. */
 class CredentialsService {
   static final String GCS_NOT_SUPPORTED_MSG =
-      "Credentials that are stored on Google Cloud Storage is no longer supported. Please use the Google Cloud Storage client library to download the credentials to a local file and reference the local file in the connection URL.";
+      "Credentials that is stored on Google Cloud Storage is no longer supported. Download the credentials to a local file and reference the local file in the connection URL.";
   static final CredentialsService INSTANCE = new CredentialsService();
 
   CredentialsService() {}
