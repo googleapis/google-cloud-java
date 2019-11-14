@@ -133,6 +133,7 @@ try {
   PubsubMessage pubsubMessage = PubsubMessage.newBuilder().setData(data).build();
   ApiFuture<String> messageIdFuture = publisher.publish(pubsubMessage);
 } finally {
+  messageIdFuture.get();
   if (publisher != null) {
     publisher.shutdown();
     publisher.awaitTermination(1, TimeUnit.MINUTES);
