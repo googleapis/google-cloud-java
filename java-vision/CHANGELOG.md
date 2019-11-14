@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.99.0](https://www.github.com/googleapis/java-vision/compare/v1.98.1...v1.99.0) (2019-11-14)
+
+
+### Features
+
+* add celebrity face detection to v1p4beta ([#13](https://www.github.com/googleapis/java-vision/issues/13)) ([3a869f7](https://www.github.com/googleapis/java-vision/commit/3a869f7c5af4e133fd644005c27e058d5f35b4d2))
+
 ### [1.98.1](https://www.github.com/googleapis/java-vision/compare/v1.98.0...v1.98.1) (2019-11-12)
 
 
