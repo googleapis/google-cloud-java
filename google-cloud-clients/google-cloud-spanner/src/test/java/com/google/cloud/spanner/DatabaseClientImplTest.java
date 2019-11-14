@@ -329,6 +329,13 @@ public class DatabaseClientImplTest {
         assertThat(e.getErrorCode(), is(equalTo(ErrorCode.NOT_FOUND)));
         assertThat(e.getMessage(), containsString("Database does not exist"));
       }
+      try {
+        dbClient.readWriteTransaction();
+        fail("missing expected exception");
+      } catch (SpannerException e) {
+        assertThat(e.getErrorCode(), is(equalTo(ErrorCode.NOT_FOUND)));
+        assertThat(e.getMessage(), containsString("Database does not exist"));
+      }
     }
   }
 
