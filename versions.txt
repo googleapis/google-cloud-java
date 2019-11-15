@@ -38,7 +38,7 @@ grpc-google-cloud-pubsub-v1:1.83.0:1.83.0
 grpc-google-cloud-spanner-admin-database-v1:1.46.0:1.46.0
 grpc-google-cloud-spanner-admin-instance-v1:1.46.0:1.46.0
 grpc-google-cloud-spanner-v1:1.46.0:1.46.0
-com.google.cloud:libraries-bom:2.9.0
+libraries-bom:2.9.0:2.9.0
 proto-google-cloud-bigquerydatatransfer-v1:0.84.0:0.84.0
 proto-google-cloud-bigquerystorage-v1beta1:0.84.0:0.84.0
 proto-google-cloud-datastore-v1:0.84.0:0.84.0
