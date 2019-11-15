@@ -192,7 +192,7 @@ public class GapicSpannerRpc implements SpannerRpc {
     String projectNameStr = PROJECT_NAME_TEMPLATE.instantiate("project", this.projectId);
     try {
       // Fix use cases where projectName contains special charecters.
-      // This would happen when projects are under organization.
+      // This would happen when projects are under an organization.
       projectNameStr = URLDecoder.decode(projectNameStr, StandardCharsets.UTF_8.toString());
     } catch (UnsupportedEncodingException e) { // Ignored.
     }
