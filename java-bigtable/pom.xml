@@ -370,6 +370,88 @@
 
             </plugins>
         </pluginManagement>
+
+        <plugins>
+            <!-- Using maven site plugin only as a hook for javadoc:aggregate, don't need the reports -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-site-plugin</artifactId>
+
+                <configuration>
+                    <generateReports>false</generateReports>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-javadoc-plugin</artifactId>
+                <version>3.1.1</version>
+                <executions>
+                    <execution>
+                        <id>aggregate</id>
+                        <inherited>false</inherited>
+                        <phase>site</phase>
+                        <goals>
+                            <goal>aggregate</goal>
+                        </goals>
+                        <configuration>
+                            <sourceFileExcludes combine.children="append">
+                                <!-- Exclude protobuf & grpc stubs from the public javadocs site. -->
+                                <sourceFileExclude>**/com/google/bigtable/**</sourceFileExclude>
+                            </sourceFileExcludes>
+                        </configuration>
+                    </execution>
+                </executions>
+
+                <configuration>
+                    <doclint>none</doclint>
+                    <show>protected</show>
+                    <nohelp>true</nohelp>
+                    <outputDirectory>${project.build.directory}/javadoc</outputDirectory>
+
+                    <sourceFileExcludes>
+                        <!-- Hide InternalApi & non public classes from javadocs site and the javadoc jars -->
+                        <!-- TODO(igorbernstein): use a custom doclet to exclude @InternalApi classes from javadoc -->
+                        <!-- Hide @InternalApi classes -->
+                        <sourceFileExclude>**/com/google/cloud/bigtable/gaxx/**</sourceFileExclude>
+
+                        <!-- Hide @InternalApi classes for InstanceAdmin -->
+                        <sourceFileExclude>**/com/google/cloud/bigtable/admin/v2/internal/**</sourceFileExclude>
+                        <sourceFileExclude>**/com/google/cloud/bigtable/admin/v2/BaseBigtableInstanceAdminClient.java</sourceFileExclude>
+                        <sourceFileExclude>**/com/google/cloud/bigtable/admin/v2/BaseBigtableInstanceAdminSettings.java</sourceFileExclude>
+                        <sourceFileExclude>**/com/google/cloud/bigtable/admin/v2/stub/GrpcBigtableInstanceAdminCallableFactory.java</sourceFileExclude>
+                        <sourceFileExclude>**/com/google/cloud/bigtable/admin/v2/stub/GrpcBigtableInstanceAdminStub.java</sourceFileExclude>
+                        <sourceFileExclude>**/com/google/cloud/bigtable/admin/v2/stub/BigtableInstanceAdminStub.java</sourceFileExclude>
+
+                        <!-- Hide**/ @InternalApi classes for TableAdmin -->
+                        <sourceFileExclude>**/com/google/cloud/bigtable/admin/v2/BaseBigtableTableAdminClient.java</sourceFileExclude>
+                        <sourceFileExclude>**/com/google/cloud/bigtable/admin/v2/BaseBigtableTableAdminSettings.java</sourceFileExclude>
+                        <sourceFileExclude>**/com/google/cloud/bigtable/admin/v2/stub/GrpcBigtableTableAdminCallableFactory.java</sourceFileExclude>
+                        <sourceFileExclude>**/com/google/cloud/bigtable/admin/v2/stub/GrpcBigtableTableAdminStub.java</sourceFileExclude>
+                        <sourceFileExclude>**/com/google/cloud/bigtable/admin/v2/stub/BigtableTableAdminStub.java</sourceFileExclude>
+                        <sourceFileExclude>**/com/google/cloud/bigtable/admin/v2/stub/EnhancedBigtableTableAdminStub.java</sourceFileExclude>
+
+                        <!-- Hide**/ @InternalApi classes for Data -->
+                        <sourceFileExclude>**/com/google/cloud/bigtable/data/v2/internal/**</sourceFileExclude>
+                        <sourceFileExclude>**/com/google/cloud/bigtable/data/v2/BaseBigtableDataClient.java</sourceFileExclude>
+                        <sourceFileExclude>**/com/google/cloud/bigtable/data/v2/BaseBigtableDataSettings.java</sourceFileExclude>
+                        <sourceFileExclude>**/com/google/cloud/bigtable/data/v2/stub/BigtableStub.java</sourceFileExclude>
+                        <sourceFileExclude>**/com/google/cloud/bigtable/data/v2/stub/BigtableStubSettings.java</sourceFileExclude>
+                        <sourceFileExclude>**/com/google/cloud/bigtable/data/v2/stub/GrpcBigtableStub.java</sourceFileExclude>
+                        <sourceFileExclude>**/com/google/cloud/bigtable/data/v2/stub/GrpcBigtableCallableFactory.java</sourceFileExclude>
+                        <sourceFileExclude>**/com/google/cloud/bigtable/data/v2/stub/EnhancedBigtableStub.java</sourceFileExclude>
+                        <sourceFileExclude>**/com/google/cloud/bigtable/data/v2/stub/mutaterows/**</sourceFileExclude>
+                        <sourceFileExclude>**/com/google/cloud/bigtable/data/v2/stub/readrows/**</sourceFileExclude>
+                        <sourceFileExclude>**/com/google/cloud/bigtable/data/v2/stub/metrics/**</sourceFileExclude>
+                    </sourceFileExcludes>
+
+                    <!-- Enable external linking -->
+                    <links>
+                        <link>https://googleapis.dev/java/gax/${gax.version}/</link>
+                        <link>https://googleapis.github.io/api-common-java/${google.api-common.version}/apidocs/</link>
+                    </links>
+                </configuration>
+            </plugin>
+        </plugins>
     </build>
 
     <modules>
@@ -381,74 +463,4 @@
         <module>google-cloud-bigtable-emulator</module>
         <module>google-cloud-bigtable-bom</module>
     </modules>
-
-    <reporting>
-        <plugins>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-project-info-reports-plugin</artifactId>
-                <version>3.0.0</version>
-                <reportSets>
-                    <reportSet>
-                        <reports>
-                            <report>index</report>
-                            <report>dependency-info</report>
-                            <report>team</report>
-                            <report>ci-management</report>
-                            <report>issue-management</report>
-                            <report>licenses</report>
-                            <report>scm</report>
-                            <report>dependency-management</report>
-                            <report>distribution-management</report>
-                            <report>summary</report>
-                            <report>modules</report>
-                        </reports>
-                    </reportSet>
-                </reportSets>
-                <configuration>
-                    <dependencyDetailsEnabled>true</dependencyDetailsEnabled>
-                    <artifactId>${site.installationModule}</artifactId>
-                    <packaging>jar</packaging>
-                </configuration>
-            </plugin>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-javadoc-plugin</artifactId>
-                <version>3.1.1</version>
-                <reportSets>
-                    <reportSet>
-                        <id>html</id>
-                        <reports>
-                            <report>aggregate</report>
-                            <report>javadoc</report>
-                        </reports>
-                    </reportSet>
-                </reportSets>
-                <configuration>
-                    <doclint>none</doclint>
-                    <show>protected</show>
-                    <nohelp>true</nohelp>
-                    <outputDirectory>${project.build.directory}/javadoc</outputDirectory>
-                    <groups>
-                        <group>
-                            <title>Test helpers packages</title>
-                            <packages>com.google.cloud.testing</packages>
-                        </group>
-                        <group>
-                            <title>SPI packages</title>
-                            <packages>com.google.cloud.spi*</packages>
-                        </group>
-                    </groups>
-
-                    <links>
-                        <link>https://grpc.io/grpc-java/javadoc/</link>
-                        <link>https://developers.google.com/protocol-buffers/docs/reference/java/</link>
-                        <link>https://googleapis.dev/java/google-auth-library/latest/</link>
-                        <link>https://googleapis.dev/java/gax/latest/</link>
-                        <link>https://googleapis.github.io/api-common-java/${google.api-common.version}/apidocs/</link>
-                    </links>
-                </configuration>
-            </plugin>
-        </plugins>
-    </reporting>
 </project>
