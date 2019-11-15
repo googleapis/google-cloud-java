@@ -27,70 +27,67 @@ public interface CreateTimeSeriesErrorOrBuilder
    *
    *
    * <pre>
-   * The time series, including the `Metric`, `MonitoredResource`,
-   * and `Point`s (including timestamp and value) that resulted
-   * in the error. This field provides all of the context that
-   * would be needed to retry the operation.
+   * DEPRECATED. Time series ID that resulted in the `status` error.
    * </pre>
    *
-   * <code>.google.monitoring.v3.TimeSeries time_series = 1;</code>
+   * <code>.google.monitoring.v3.TimeSeries time_series = 1 [deprecated = true];</code>
    */
+  @java.lang.Deprecated
   boolean hasTimeSeries();
   /**
    *
    *
    * <pre>
-   * The time series, including the `Metric`, `MonitoredResource`,
-   * and `Point`s (including timestamp and value) that resulted
-   * in the error. This field provides all of the context that
-   * would be needed to retry the operation.
+   * DEPRECATED. Time series ID that resulted in the `status` error.
    * </pre>
    *
-   * <code>.google.monitoring.v3.TimeSeries time_series = 1;</code>
+   * <code>.google.monitoring.v3.TimeSeries time_series = 1 [deprecated = true];</code>
    */
+  @java.lang.Deprecated
   com.google.monitoring.v3.TimeSeries getTimeSeries();
   /**
    *
    *
    * <pre>
-   * The time series, including the `Metric`, `MonitoredResource`,
-   * and `Point`s (including timestamp and value) that resulted
-   * in the error. This field provides all of the context that
-   * would be needed to retry the operation.
+   * DEPRECATED. Time series ID that resulted in the `status` error.
    * </pre>
    *
-   * <code>.google.monitoring.v3.TimeSeries time_series = 1;</code>
+   * <code>.google.monitoring.v3.TimeSeries time_series = 1 [deprecated = true];</code>
    */
+  @java.lang.Deprecated
   com.google.monitoring.v3.TimeSeriesOrBuilder getTimeSeriesOrBuilder();
 
   /**
    *
    *
    * <pre>
-   * The status of the requested write operation.
+   * DEPRECATED. The status of the requested write operation for `time_series`.
    * </pre>
    *
-   * <code>.google.rpc.Status status = 2;</code>
+   * <code>.google.rpc.Status status = 2 [deprecated = true];</code>
    */
+  @java.lang.Deprecated
   boolean hasStatus();
   /**
    *
    *
    * <pre>
-   * The status of the requested write operation.
+   * DEPRECATED. The status of the requested write operation for `time_series`.
    * </pre>
    *
-   * <code>.google.rpc.Status status = 2;</code>
+   * <code>.google.rpc.Status status = 2 [deprecated = true];</code>
    */
+  @java.lang.Deprecated
   com.google.rpc.Status getStatus();
   /**
    *
    *
    * <pre>
-   * The status of the requested write operation.
+   * DEPRECATED. The status of the requested write operation for `time_series`.
    * </pre>
    *
-   * <code>.google.rpc.Status status = 2;</code>
+   * <code>.google.rpc.Status status = 2 [deprecated = true];</code>
    */
+  @java.lang.Deprecated
   com.google.rpc.StatusOrBuilder getStatusOrBuilder();
 }

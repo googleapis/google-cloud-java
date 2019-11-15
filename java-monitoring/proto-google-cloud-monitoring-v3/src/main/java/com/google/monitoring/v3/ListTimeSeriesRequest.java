@@ -453,9 +453,10 @@ public final class ListTimeSeriesRequest extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * By default, the raw time series data is returned.
-   * Use this field to combine multiple time series for different
-   * views of the data.
+   * Specifies the alignment of data points in individual time series as
+   * well as how to combine the retrieved time series across specified labels.
+   * By default (if no `aggregation` is explicitly specified), the raw time
+   * series data is returned.
    * </pre>
    *
    * <code>.google.monitoring.v3.Aggregation aggregation = 5;</code>
@@ -467,9 +468,10 @@ public final class ListTimeSeriesRequest extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * By default, the raw time series data is returned.
-   * Use this field to combine multiple time series for different
-   * views of the data.
+   * Specifies the alignment of data points in individual time series as
+   * well as how to combine the retrieved time series across specified labels.
+   * By default (if no `aggregation` is explicitly specified), the raw time
+   * series data is returned.
    * </pre>
    *
    * <code>.google.monitoring.v3.Aggregation aggregation = 5;</code>
@@ -483,9 +485,10 @@ public final class ListTimeSeriesRequest extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * By default, the raw time series data is returned.
-   * Use this field to combine multiple time series for different
-   * views of the data.
+   * Specifies the alignment of data points in individual time series as
+   * well as how to combine the retrieved time series across specified labels.
+   * By default (if no `aggregation` is explicitly specified), the raw time
+   * series data is returned.
    * </pre>
    *
    * <code>.google.monitoring.v3.Aggregation aggregation = 5;</code>
@@ -501,7 +504,7 @@ public final class ListTimeSeriesRequest extends com.google.protobuf.GeneratedMe
    *
    * <pre>
    * Unsupported: must be left blank. The points in each time series are
-   * returned in reverse time order.
+   * currently returned in reverse time order (most recent to oldest).
    * </pre>
    *
    * <code>string order_by = 6;</code>
@@ -522,7 +525,7 @@ public final class ListTimeSeriesRequest extends com.google.protobuf.GeneratedMe
    *
    * <pre>
    * Unsupported: must be left blank. The points in each time series are
-   * returned in reverse time order.
+   * currently returned in reverse time order (most recent to oldest).
    * </pre>
    *
    * <code>string order_by = 6;</code>
@@ -1514,9 +1517,10 @@ public final class ListTimeSeriesRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * By default, the raw time series data is returned.
-     * Use this field to combine multiple time series for different
-     * views of the data.
+     * Specifies the alignment of data points in individual time series as
+     * well as how to combine the retrieved time series across specified labels.
+     * By default (if no `aggregation` is explicitly specified), the raw time
+     * series data is returned.
      * </pre>
      *
      * <code>.google.monitoring.v3.Aggregation aggregation = 5;</code>
@@ -1528,9 +1532,10 @@ public final class ListTimeSeriesRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * By default, the raw time series data is returned.
-     * Use this field to combine multiple time series for different
-     * views of the data.
+     * Specifies the alignment of data points in individual time series as
+     * well as how to combine the retrieved time series across specified labels.
+     * By default (if no `aggregation` is explicitly specified), the raw time
+     * series data is returned.
      * </pre>
      *
      * <code>.google.monitoring.v3.Aggregation aggregation = 5;</code>
@@ -1548,9 +1553,10 @@ public final class ListTimeSeriesRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * By default, the raw time series data is returned.
-     * Use this field to combine multiple time series for different
-     * views of the data.
+     * Specifies the alignment of data points in individual time series as
+     * well as how to combine the retrieved time series across specified labels.
+     * By default (if no `aggregation` is explicitly specified), the raw time
+     * series data is returned.
      * </pre>
      *
      * <code>.google.monitoring.v3.Aggregation aggregation = 5;</code>
@@ -1572,9 +1578,10 @@ public final class ListTimeSeriesRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * By default, the raw time series data is returned.
-     * Use this field to combine multiple time series for different
-     * views of the data.
+     * Specifies the alignment of data points in individual time series as
+     * well as how to combine the retrieved time series across specified labels.
+     * By default (if no `aggregation` is explicitly specified), the raw time
+     * series data is returned.
      * </pre>
      *
      * <code>.google.monitoring.v3.Aggregation aggregation = 5;</code>
@@ -1593,9 +1600,10 @@ public final class ListTimeSeriesRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * By default, the raw time series data is returned.
-     * Use this field to combine multiple time series for different
-     * views of the data.
+     * Specifies the alignment of data points in individual time series as
+     * well as how to combine the retrieved time series across specified labels.
+     * By default (if no `aggregation` is explicitly specified), the raw time
+     * series data is returned.
      * </pre>
      *
      * <code>.google.monitoring.v3.Aggregation aggregation = 5;</code>
@@ -1621,9 +1629,10 @@ public final class ListTimeSeriesRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * By default, the raw time series data is returned.
-     * Use this field to combine multiple time series for different
-     * views of the data.
+     * Specifies the alignment of data points in individual time series as
+     * well as how to combine the retrieved time series across specified labels.
+     * By default (if no `aggregation` is explicitly specified), the raw time
+     * series data is returned.
      * </pre>
      *
      * <code>.google.monitoring.v3.Aggregation aggregation = 5;</code>
@@ -1643,9 +1652,10 @@ public final class ListTimeSeriesRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * By default, the raw time series data is returned.
-     * Use this field to combine multiple time series for different
-     * views of the data.
+     * Specifies the alignment of data points in individual time series as
+     * well as how to combine the retrieved time series across specified labels.
+     * By default (if no `aggregation` is explicitly specified), the raw time
+     * series data is returned.
      * </pre>
      *
      * <code>.google.monitoring.v3.Aggregation aggregation = 5;</code>
@@ -1659,9 +1669,10 @@ public final class ListTimeSeriesRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * By default, the raw time series data is returned.
-     * Use this field to combine multiple time series for different
-     * views of the data.
+     * Specifies the alignment of data points in individual time series as
+     * well as how to combine the retrieved time series across specified labels.
+     * By default (if no `aggregation` is explicitly specified), the raw time
+     * series data is returned.
      * </pre>
      *
      * <code>.google.monitoring.v3.Aggregation aggregation = 5;</code>
@@ -1679,9 +1690,10 @@ public final class ListTimeSeriesRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * By default, the raw time series data is returned.
-     * Use this field to combine multiple time series for different
-     * views of the data.
+     * Specifies the alignment of data points in individual time series as
+     * well as how to combine the retrieved time series across specified labels.
+     * By default (if no `aggregation` is explicitly specified), the raw time
+     * series data is returned.
      * </pre>
      *
      * <code>.google.monitoring.v3.Aggregation aggregation = 5;</code>
@@ -1709,7 +1721,7 @@ public final class ListTimeSeriesRequest extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * Unsupported: must be left blank. The points in each time series are
-     * returned in reverse time order.
+     * currently returned in reverse time order (most recent to oldest).
      * </pre>
      *
      * <code>string order_by = 6;</code>
@@ -1730,7 +1742,7 @@ public final class ListTimeSeriesRequest extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * Unsupported: must be left blank. The points in each time series are
-     * returned in reverse time order.
+     * currently returned in reverse time order (most recent to oldest).
      * </pre>
      *
      * <code>string order_by = 6;</code>
@@ -1751,7 +1763,7 @@ public final class ListTimeSeriesRequest extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * Unsupported: must be left blank. The points in each time series are
-     * returned in reverse time order.
+     * currently returned in reverse time order (most recent to oldest).
      * </pre>
      *
      * <code>string order_by = 6;</code>
@@ -1770,7 +1782,7 @@ public final class ListTimeSeriesRequest extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * Unsupported: must be left blank. The points in each time series are
-     * returned in reverse time order.
+     * currently returned in reverse time order (most recent to oldest).
      * </pre>
      *
      * <code>string order_by = 6;</code>
@@ -1786,7 +1798,7 @@ public final class ListTimeSeriesRequest extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * Unsupported: must be left blank. The points in each time series are
-     * returned in reverse time order.
+     * currently returned in reverse time order (most recent to oldest).
      * </pre>
      *
      * <code>string order_by = 6;</code>

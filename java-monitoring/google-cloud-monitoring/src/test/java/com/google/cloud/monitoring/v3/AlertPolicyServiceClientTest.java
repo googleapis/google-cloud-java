@@ -55,6 +55,7 @@ public class AlertPolicyServiceClientTest {
   private static MockGroupService mockGroupService;
   private static MockMetricService mockMetricService;
   private static MockNotificationChannelService mockNotificationChannelService;
+  private static MockServiceMonitoringService mockServiceMonitoringService;
   private static MockUptimeCheckService mockUptimeCheckService;
   private static MockServiceHelper serviceHelper;
   private AlertPolicyServiceClient client;
@@ -66,6 +67,7 @@ public class AlertPolicyServiceClientTest {
     mockGroupService = new MockGroupService();
     mockMetricService = new MockMetricService();
     mockNotificationChannelService = new MockNotificationChannelService();
+    mockServiceMonitoringService = new MockServiceMonitoringService();
     mockUptimeCheckService = new MockUptimeCheckService();
     serviceHelper =
         new MockServiceHelper(
@@ -75,6 +77,7 @@ public class AlertPolicyServiceClientTest {
                 mockGroupService,
                 mockMetricService,
                 mockNotificationChannelService,
+                mockServiceMonitoringService,
                 mockUptimeCheckService));
     serviceHelper.start();
   }

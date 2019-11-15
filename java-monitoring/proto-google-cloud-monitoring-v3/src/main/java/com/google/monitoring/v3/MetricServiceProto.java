@@ -75,6 +75,14 @@ public final class MetricServiceProto {
       internal_static_google_monitoring_v3_CreateTimeSeriesError_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_monitoring_v3_CreateTimeSeriesError_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_monitoring_v3_CreateTimeSeriesSummary_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_monitoring_v3_CreateTimeSeriesSummary_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_monitoring_v3_CreateTimeSeriesSummary_Error_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_monitoring_v3_CreateTimeSeriesSummary_Error_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor getDescriptor() {
     return descriptor;
@@ -126,54 +134,60 @@ public final class MetricServiceProto {
           + "\003(\0132\022.google.rpc.Status\"^\n\027CreateTimeSer"
           + "iesRequest\022\014\n\004name\030\003 \001(\t\0225\n\013time_series\030"
           + "\002 \003(\0132 .google.monitoring.v3.TimeSeries\""
-          + "r\n\025CreateTimeSeriesError\0225\n\013time_series\030"
-          + "\001 \001(\0132 .google.monitoring.v3.TimeSeries\022"
-          + "\"\n\006status\030\002 \001(\0132\022.google.rpc.Status2\322\014\n\r"
-          + "MetricService\022\335\001\n ListMonitoredResourceD"
-          + "escriptors\022=.google.monitoring.v3.ListMo"
-          + "nitoredResourceDescriptorsRequest\032>.goog"
-          + "le.monitoring.v3.ListMonitoredResourceDe"
-          + "scriptorsResponse\":\202\323\344\223\0024\0222/v3/{name=pro"
-          + "jects/*}/monitoredResourceDescriptors\022\304\001"
-          + "\n\036GetMonitoredResourceDescriptor\022;.googl"
-          + "e.monitoring.v3.GetMonitoredResourceDesc"
-          + "riptorRequest\032\'.google.api.MonitoredReso"
-          + "urceDescriptor\"<\202\323\344\223\0026\0224/v3/{name=projec"
-          + "ts/*/monitoredResourceDescriptors/*}\022\261\001\n"
-          + "\025ListMetricDescriptors\0222.google.monitori"
-          + "ng.v3.ListMetricDescriptorsRequest\0323.goo"
-          + "gle.monitoring.v3.ListMetricDescriptorsR"
-          + "esponse\"/\202\323\344\223\002)\022\'/v3/{name=projects/*}/m"
-          + "etricDescriptors\022\231\001\n\023GetMetricDescriptor"
-          + "\0220.google.monitoring.v3.GetMetricDescrip"
-          + "torRequest\032\034.google.api.MetricDescriptor"
-          + "\"2\202\323\344\223\002,\022*/v3/{name=projects/*/metricDes"
-          + "criptors/**}\022\257\001\n\026CreateMetricDescriptor\022"
-          + "3.google.monitoring.v3.CreateMetricDescr"
-          + "iptorRequest\032\034.google.api.MetricDescript"
-          + "or\"B\202\323\344\223\002<\"\'/v3/{name=projects/*}/metric"
-          + "Descriptors:\021metric_descriptor\022\231\001\n\026Delet"
-          + "eMetricDescriptor\0223.google.monitoring.v3"
-          + ".DeleteMetricDescriptorRequest\032\026.google."
-          + "protobuf.Empty\"2\202\323\344\223\002,**/v3/{name=projec"
-          + "ts/*/metricDescriptors/**}\022\225\001\n\016ListTimeS"
-          + "eries\022+.google.monitoring.v3.ListTimeSer"
-          + "iesRequest\032,.google.monitoring.v3.ListTi"
-          + "meSeriesResponse\"(\202\323\344\223\002\"\022 /v3/{name=proj"
-          + "ects/*}/timeSeries\022\206\001\n\020CreateTimeSeries\022"
-          + "-.google.monitoring.v3.CreateTimeSeriesR"
-          + "equest\032\026.google.protobuf.Empty\"+\202\323\344\223\002%\" "
-          + "/v3/{name=projects/*}/timeSeries:\001*\032\332\001\312A"
-          + "\031monitoring.googleapis.com\322A\272\001https://ww"
-          + "w.googleapis.com/auth/cloud-platform,htt"
-          + "ps://www.googleapis.com/auth/monitoring,"
-          + "https://www.googleapis.com/auth/monitori"
-          + "ng.read,https://www.googleapis.com/auth/"
-          + "monitoring.writeB\252\001\n\030com.google.monitori"
-          + "ng.v3B\022MetricServiceProtoP\001Z>google.gola"
-          + "ng.org/genproto/googleapis/monitoring/v3"
-          + ";monitoring\252\002\032Google.Cloud.Monitoring.V3"
-          + "\312\002\032Google\\Cloud\\Monitoring\\V3b\006proto3"
+          + "z\n\025CreateTimeSeriesError\0229\n\013time_series\030"
+          + "\001 \001(\0132 .google.monitoring.v3.TimeSeriesB"
+          + "\002\030\001\022&\n\006status\030\002 \001(\0132\022.google.rpc.StatusB"
+          + "\002\030\001\"\330\001\n\027CreateTimeSeriesSummary\022\031\n\021total"
+          + "_point_count\030\001 \001(\005\022\033\n\023success_point_coun"
+          + "t\030\002 \001(\005\022C\n\006errors\030\003 \003(\01323.google.monitor"
+          + "ing.v3.CreateTimeSeriesSummary.Error\032@\n\005"
+          + "Error\022\"\n\006status\030\001 \001(\0132\022.google.rpc.Statu"
+          + "s\022\023\n\013point_count\030\002 \001(\0052\322\014\n\rMetricService"
+          + "\022\335\001\n ListMonitoredResourceDescriptors\022=."
+          + "google.monitoring.v3.ListMonitoredResour"
+          + "ceDescriptorsRequest\032>.google.monitoring"
+          + ".v3.ListMonitoredResourceDescriptorsResp"
+          + "onse\":\202\323\344\223\0024\0222/v3/{name=projects/*}/moni"
+          + "toredResourceDescriptors\022\304\001\n\036GetMonitore"
+          + "dResourceDescriptor\022;.google.monitoring."
+          + "v3.GetMonitoredResourceDescriptorRequest"
+          + "\032\'.google.api.MonitoredResourceDescripto"
+          + "r\"<\202\323\344\223\0026\0224/v3/{name=projects/*/monitore"
+          + "dResourceDescriptors/*}\022\261\001\n\025ListMetricDe"
+          + "scriptors\0222.google.monitoring.v3.ListMet"
+          + "ricDescriptorsRequest\0323.google.monitorin"
+          + "g.v3.ListMetricDescriptorsResponse\"/\202\323\344\223"
+          + "\002)\022\'/v3/{name=projects/*}/metricDescript"
+          + "ors\022\231\001\n\023GetMetricDescriptor\0220.google.mon"
+          + "itoring.v3.GetMetricDescriptorRequest\032\034."
+          + "google.api.MetricDescriptor\"2\202\323\344\223\002,\022*/v3"
+          + "/{name=projects/*/metricDescriptors/**}\022"
+          + "\257\001\n\026CreateMetricDescriptor\0223.google.moni"
+          + "toring.v3.CreateMetricDescriptorRequest\032"
+          + "\034.google.api.MetricDescriptor\"B\202\323\344\223\002<\"\'/"
+          + "v3/{name=projects/*}/metricDescriptors:\021"
+          + "metric_descriptor\022\231\001\n\026DeleteMetricDescri"
+          + "ptor\0223.google.monitoring.v3.DeleteMetric"
+          + "DescriptorRequest\032\026.google.protobuf.Empt"
+          + "y\"2\202\323\344\223\002,**/v3/{name=projects/*/metricDe"
+          + "scriptors/**}\022\225\001\n\016ListTimeSeries\022+.googl"
+          + "e.monitoring.v3.ListTimeSeriesRequest\032,."
+          + "google.monitoring.v3.ListTimeSeriesRespo"
+          + "nse\"(\202\323\344\223\002\"\022 /v3/{name=projects/*}/timeS"
+          + "eries\022\206\001\n\020CreateTimeSeries\022-.google.moni"
+          + "toring.v3.CreateTimeSeriesRequest\032\026.goog"
+          + "le.protobuf.Empty\"+\202\323\344\223\002%\" /v3/{name=pro"
+          + "jects/*}/timeSeries:\001*\032\332\001\312A\031monitoring.g"
+          + "oogleapis.com\322A\272\001https://www.googleapis."
+          + "com/auth/cloud-platform,https://www.goog"
+          + "leapis.com/auth/monitoring,https://www.g"
+          + "oogleapis.com/auth/monitoring.read,https"
+          + "://www.googleapis.com/auth/monitoring.wr"
+          + "iteB\252\001\n\030com.google.monitoring.v3B\022Metric"
+          + "ServiceProtoP\001Z>google.golang.org/genpro"
+          + "to/googleapis/monitoring/v3;monitoring\252\002"
+          + "\032Google.Cloud.Monitoring.V3\312\002\032Google\\Clo"
+          + "ud\\Monitoring\\V3b\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner() {
@@ -300,6 +314,24 @@ public final class MetricServiceProto {
             internal_static_google_monitoring_v3_CreateTimeSeriesError_descriptor,
             new java.lang.String[] {
               "TimeSeries", "Status",
+            });
+    internal_static_google_monitoring_v3_CreateTimeSeriesSummary_descriptor =
+        getDescriptor().getMessageTypes().get(12);
+    internal_static_google_monitoring_v3_CreateTimeSeriesSummary_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_monitoring_v3_CreateTimeSeriesSummary_descriptor,
+            new java.lang.String[] {
+              "TotalPointCount", "SuccessPointCount", "Errors",
+            });
+    internal_static_google_monitoring_v3_CreateTimeSeriesSummary_Error_descriptor =
+        internal_static_google_monitoring_v3_CreateTimeSeriesSummary_descriptor
+            .getNestedTypes()
+            .get(0);
+    internal_static_google_monitoring_v3_CreateTimeSeriesSummary_Error_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_monitoring_v3_CreateTimeSeriesSummary_Error_descriptor,
+            new java.lang.String[] {
+              "Status", "PointCount",
             });
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();

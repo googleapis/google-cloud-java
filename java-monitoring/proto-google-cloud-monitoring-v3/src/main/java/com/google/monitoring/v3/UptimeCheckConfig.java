@@ -4377,7 +4377,8 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * String or regex content to match (max 1024 bytes)
+     * String or regex content to match. Maximum 1024 bytes. An empty `content`
+     * string indicates no content matching is to be performed.
      * </pre>
      *
      * <code>string content = 1;</code>
@@ -4387,7 +4388,8 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * String or regex content to match (max 1024 bytes)
+     * String or regex content to match. Maximum 1024 bytes. An empty `content`
+     * string indicates no content matching is to be performed.
      * </pre>
      *
      * <code>string content = 1;</code>
@@ -4425,8 +4427,11 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * Used to perform string matching. It allows substring and regular
-   * expressions, together with their negations.
+   * Optional. Used to perform content matching. This allows matching based on
+   * substrings and regular expressions, together with their negations. Only the
+   * first 4&amp;nbsp;MB of an HTTP or HTTPS check's response (and the first
+   * 1&amp;nbsp;MB of a TCP check's response) are examined for purposes of content
+   * matching.
    * </pre>
    *
    * Protobuf type {@code google.monitoring.v3.UptimeCheckConfig.ContentMatcher}
@@ -4545,8 +4550,8 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
        *
        *
        * <pre>
-       * Selects substring matching (there is a match if the output contains
-       * the `content` string).  This is the default value for checks without
+       * Selects substring matching. The match succeeds if the output contains
+       * the `content` string.  This is the default value for checks without
        * a `matcher` option, or where the value of `matcher` is
        * `CONTENT_MATCHER_OPTION_UNSPECIFIED`.
        * </pre>
@@ -4558,8 +4563,8 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
        *
        *
        * <pre>
-       * Selects negation of substring matching (there is a match if the output
-       * does NOT contain the `content` string).
+       * Selects negation of substring matching. The match succeeds if the
+       * output does _NOT_ contain the `content` string.
        * </pre>
        *
        * <code>NOT_CONTAINS_STRING = 2;</code>
@@ -4569,8 +4574,8 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
        *
        *
        * <pre>
-       * Selects regular expression matching (there is a match of the output
-       * matches the regular expression specified in the `content` string).
+       * Selects regular-expression matching. The match succeeds of the output
+       * matches the regular expression specified in the `content` string.
        * </pre>
        *
        * <code>MATCHES_REGEX = 3;</code>
@@ -4580,9 +4585,9 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
        *
        *
        * <pre>
-       * Selects negation of regular expression matching (there is a match if
-       * the output does NOT match the regular expression specified in the
-       * `content` string).
+       * Selects negation of regular-expression matching. The match succeeds if
+       * the output does _NOT_ match the regular expression specified in the
+       * `content` string.
        * </pre>
        *
        * <code>NOT_MATCHES_REGEX = 4;</code>
@@ -4607,8 +4612,8 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
        *
        *
        * <pre>
-       * Selects substring matching (there is a match if the output contains
-       * the `content` string).  This is the default value for checks without
+       * Selects substring matching. The match succeeds if the output contains
+       * the `content` string.  This is the default value for checks without
        * a `matcher` option, or where the value of `matcher` is
        * `CONTENT_MATCHER_OPTION_UNSPECIFIED`.
        * </pre>
@@ -4620,8 +4625,8 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
        *
        *
        * <pre>
-       * Selects negation of substring matching (there is a match if the output
-       * does NOT contain the `content` string).
+       * Selects negation of substring matching. The match succeeds if the
+       * output does _NOT_ contain the `content` string.
        * </pre>
        *
        * <code>NOT_CONTAINS_STRING = 2;</code>
@@ -4631,8 +4636,8 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
        *
        *
        * <pre>
-       * Selects regular expression matching (there is a match of the output
-       * matches the regular expression specified in the `content` string).
+       * Selects regular-expression matching. The match succeeds of the output
+       * matches the regular expression specified in the `content` string.
        * </pre>
        *
        * <code>MATCHES_REGEX = 3;</code>
@@ -4642,9 +4647,9 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
        *
        *
        * <pre>
-       * Selects negation of regular expression matching (there is a match if
-       * the output does NOT match the regular expression specified in the
-       * `content` string).
+       * Selects negation of regular-expression matching. The match succeeds if
+       * the output does _NOT_ match the regular expression specified in the
+       * `content` string.
        * </pre>
        *
        * <code>NOT_MATCHES_REGEX = 4;</code>
@@ -4737,7 +4742,8 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * String or regex content to match (max 1024 bytes)
+     * String or regex content to match. Maximum 1024 bytes. An empty `content`
+     * string indicates no content matching is to be performed.
      * </pre>
      *
      * <code>string content = 1;</code>
@@ -4757,7 +4763,8 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * String or regex content to match (max 1024 bytes)
+     * String or regex content to match. Maximum 1024 bytes. An empty `content`
+     * string indicates no content matching is to be performed.
      * </pre>
      *
      * <code>string content = 1;</code>
@@ -4995,8 +5002,11 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Used to perform string matching. It allows substring and regular
-     * expressions, together with their negations.
+     * Optional. Used to perform content matching. This allows matching based on
+     * substrings and regular expressions, together with their negations. Only the
+     * first 4&amp;nbsp;MB of an HTTP or HTTPS check's response (and the first
+     * 1&amp;nbsp;MB of a TCP check's response) are examined for purposes of content
+     * matching.
      * </pre>
      *
      * Protobuf type {@code google.monitoring.v3.UptimeCheckConfig.ContentMatcher}
@@ -5165,7 +5175,8 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
        *
        *
        * <pre>
-       * String or regex content to match (max 1024 bytes)
+       * String or regex content to match. Maximum 1024 bytes. An empty `content`
+       * string indicates no content matching is to be performed.
        * </pre>
        *
        * <code>string content = 1;</code>
@@ -5185,7 +5196,8 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
        *
        *
        * <pre>
-       * String or regex content to match (max 1024 bytes)
+       * String or regex content to match. Maximum 1024 bytes. An empty `content`
+       * string indicates no content matching is to be performed.
        * </pre>
        *
        * <code>string content = 1;</code>
@@ -5205,7 +5217,8 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
        *
        *
        * <pre>
-       * String or regex content to match (max 1024 bytes)
+       * String or regex content to match. Maximum 1024 bytes. An empty `content`
+       * string indicates no content matching is to be performed.
        * </pre>
        *
        * <code>string content = 1;</code>
@@ -5223,7 +5236,8 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
        *
        *
        * <pre>
-       * String or regex content to match (max 1024 bytes)
+       * String or regex content to match. Maximum 1024 bytes. An empty `content`
+       * string indicates no content matching is to be performed.
        * </pre>
        *
        * <code>string content = 1;</code>
@@ -5238,7 +5252,8 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
        *
        *
        * <pre>
-       * String or regex content to match (max 1024 bytes)
+       * String or regex content to match. Maximum 1024 bytes. An empty `content`
+       * string indicates no content matching is to be performed.
        * </pre>
        *
        * <code>string content = 1;</code>

@@ -95,6 +95,24 @@
  * </code>
  * </pre>
  *
+ * ============================== ServiceMonitoringServiceClient ==============================
+ *
+ * <p>Service Description: The Stackdriver Monitoring Service-Oriented Monitoring API has endpoints
+ * for managing and querying aspects of a workspace's services. These include the `Service`'s
+ * monitored resources, its Service-Level Objectives, and a taxonomy of categorized Health Metrics.
+ *
+ * <p>Sample for ServiceMonitoringServiceClient:
+ *
+ * <pre>
+ * <code>
+ * try (ServiceMonitoringServiceClient serviceMonitoringServiceClient = ServiceMonitoringServiceClient.create()) {
+ *   ProjectName parent = ProjectName.of("[PROJECT]");
+ *   Service service = Service.newBuilder().build();
+ *   Service response = serviceMonitoringServiceClient.createService(parent, service);
+ * }
+ * </code>
+ * </pre>
+ *
  * ======================== UptimeCheckServiceClient ========================
  *
  * <p>Service Description: The UptimeCheckService API is used to manage (list, create, delete, edit)

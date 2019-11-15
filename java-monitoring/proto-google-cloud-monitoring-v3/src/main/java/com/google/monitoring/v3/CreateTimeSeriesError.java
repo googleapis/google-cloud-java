@@ -22,7 +22,7 @@ package com.google.monitoring.v3;
  *
  *
  * <pre>
- * Describes the result of a failed request to write data to a time series.
+ * DEPRECATED. Used to hold per-time-series error status.
  * </pre>
  *
  * Protobuf type {@code google.monitoring.v3.CreateTimeSeriesError}
@@ -133,14 +133,12 @@ public final class CreateTimeSeriesError extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * The time series, including the `Metric`, `MonitoredResource`,
-   * and `Point`s (including timestamp and value) that resulted
-   * in the error. This field provides all of the context that
-   * would be needed to retry the operation.
+   * DEPRECATED. Time series ID that resulted in the `status` error.
    * </pre>
    *
-   * <code>.google.monitoring.v3.TimeSeries time_series = 1;</code>
+   * <code>.google.monitoring.v3.TimeSeries time_series = 1 [deprecated = true];</code>
    */
+  @java.lang.Deprecated
   public boolean hasTimeSeries() {
     return timeSeries_ != null;
   }
@@ -148,14 +146,12 @@ public final class CreateTimeSeriesError extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * The time series, including the `Metric`, `MonitoredResource`,
-   * and `Point`s (including timestamp and value) that resulted
-   * in the error. This field provides all of the context that
-   * would be needed to retry the operation.
+   * DEPRECATED. Time series ID that resulted in the `status` error.
    * </pre>
    *
-   * <code>.google.monitoring.v3.TimeSeries time_series = 1;</code>
+   * <code>.google.monitoring.v3.TimeSeries time_series = 1 [deprecated = true];</code>
    */
+  @java.lang.Deprecated
   public com.google.monitoring.v3.TimeSeries getTimeSeries() {
     return timeSeries_ == null
         ? com.google.monitoring.v3.TimeSeries.getDefaultInstance()
@@ -165,14 +161,12 @@ public final class CreateTimeSeriesError extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * The time series, including the `Metric`, `MonitoredResource`,
-   * and `Point`s (including timestamp and value) that resulted
-   * in the error. This field provides all of the context that
-   * would be needed to retry the operation.
+   * DEPRECATED. Time series ID that resulted in the `status` error.
    * </pre>
    *
-   * <code>.google.monitoring.v3.TimeSeries time_series = 1;</code>
+   * <code>.google.monitoring.v3.TimeSeries time_series = 1 [deprecated = true];</code>
    */
+  @java.lang.Deprecated
   public com.google.monitoring.v3.TimeSeriesOrBuilder getTimeSeriesOrBuilder() {
     return getTimeSeries();
   }
@@ -183,11 +177,12 @@ public final class CreateTimeSeriesError extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * The status of the requested write operation.
+   * DEPRECATED. The status of the requested write operation for `time_series`.
    * </pre>
    *
-   * <code>.google.rpc.Status status = 2;</code>
+   * <code>.google.rpc.Status status = 2 [deprecated = true];</code>
    */
+  @java.lang.Deprecated
   public boolean hasStatus() {
     return status_ != null;
   }
@@ -195,11 +190,12 @@ public final class CreateTimeSeriesError extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * The status of the requested write operation.
+   * DEPRECATED. The status of the requested write operation for `time_series`.
    * </pre>
    *
-   * <code>.google.rpc.Status status = 2;</code>
+   * <code>.google.rpc.Status status = 2 [deprecated = true];</code>
    */
+  @java.lang.Deprecated
   public com.google.rpc.Status getStatus() {
     return status_ == null ? com.google.rpc.Status.getDefaultInstance() : status_;
   }
@@ -207,11 +203,12 @@ public final class CreateTimeSeriesError extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * The status of the requested write operation.
+   * DEPRECATED. The status of the requested write operation for `time_series`.
    * </pre>
    *
-   * <code>.google.rpc.Status status = 2;</code>
+   * <code>.google.rpc.Status status = 2 [deprecated = true];</code>
    */
+  @java.lang.Deprecated
   public com.google.rpc.StatusOrBuilder getStatusOrBuilder() {
     return getStatus();
   }
@@ -398,7 +395,7 @@ public final class CreateTimeSeriesError extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * Describes the result of a failed request to write data to a time series.
+   * DEPRECATED. Used to hold per-time-series error status.
    * </pre>
    *
    * Protobuf type {@code google.monitoring.v3.CreateTimeSeriesError}
@@ -582,14 +579,12 @@ public final class CreateTimeSeriesError extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * The time series, including the `Metric`, `MonitoredResource`,
-     * and `Point`s (including timestamp and value) that resulted
-     * in the error. This field provides all of the context that
-     * would be needed to retry the operation.
+     * DEPRECATED. Time series ID that resulted in the `status` error.
      * </pre>
      *
-     * <code>.google.monitoring.v3.TimeSeries time_series = 1;</code>
+     * <code>.google.monitoring.v3.TimeSeries time_series = 1 [deprecated = true];</code>
      */
+    @java.lang.Deprecated
     public boolean hasTimeSeries() {
       return timeSeriesBuilder_ != null || timeSeries_ != null;
     }
@@ -597,14 +592,12 @@ public final class CreateTimeSeriesError extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * The time series, including the `Metric`, `MonitoredResource`,
-     * and `Point`s (including timestamp and value) that resulted
-     * in the error. This field provides all of the context that
-     * would be needed to retry the operation.
+     * DEPRECATED. Time series ID that resulted in the `status` error.
      * </pre>
      *
-     * <code>.google.monitoring.v3.TimeSeries time_series = 1;</code>
+     * <code>.google.monitoring.v3.TimeSeries time_series = 1 [deprecated = true];</code>
      */
+    @java.lang.Deprecated
     public com.google.monitoring.v3.TimeSeries getTimeSeries() {
       if (timeSeriesBuilder_ == null) {
         return timeSeries_ == null
@@ -618,14 +611,12 @@ public final class CreateTimeSeriesError extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * The time series, including the `Metric`, `MonitoredResource`,
-     * and `Point`s (including timestamp and value) that resulted
-     * in the error. This field provides all of the context that
-     * would be needed to retry the operation.
+     * DEPRECATED. Time series ID that resulted in the `status` error.
      * </pre>
      *
-     * <code>.google.monitoring.v3.TimeSeries time_series = 1;</code>
+     * <code>.google.monitoring.v3.TimeSeries time_series = 1 [deprecated = true];</code>
      */
+    @java.lang.Deprecated
     public Builder setTimeSeries(com.google.monitoring.v3.TimeSeries value) {
       if (timeSeriesBuilder_ == null) {
         if (value == null) {
@@ -643,14 +634,12 @@ public final class CreateTimeSeriesError extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * The time series, including the `Metric`, `MonitoredResource`,
-     * and `Point`s (including timestamp and value) that resulted
-     * in the error. This field provides all of the context that
-     * would be needed to retry the operation.
+     * DEPRECATED. Time series ID that resulted in the `status` error.
      * </pre>
      *
-     * <code>.google.monitoring.v3.TimeSeries time_series = 1;</code>
+     * <code>.google.monitoring.v3.TimeSeries time_series = 1 [deprecated = true];</code>
      */
+    @java.lang.Deprecated
     public Builder setTimeSeries(com.google.monitoring.v3.TimeSeries.Builder builderForValue) {
       if (timeSeriesBuilder_ == null) {
         timeSeries_ = builderForValue.build();
@@ -665,14 +654,12 @@ public final class CreateTimeSeriesError extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * The time series, including the `Metric`, `MonitoredResource`,
-     * and `Point`s (including timestamp and value) that resulted
-     * in the error. This field provides all of the context that
-     * would be needed to retry the operation.
+     * DEPRECATED. Time series ID that resulted in the `status` error.
      * </pre>
      *
-     * <code>.google.monitoring.v3.TimeSeries time_series = 1;</code>
+     * <code>.google.monitoring.v3.TimeSeries time_series = 1 [deprecated = true];</code>
      */
+    @java.lang.Deprecated
     public Builder mergeTimeSeries(com.google.monitoring.v3.TimeSeries value) {
       if (timeSeriesBuilder_ == null) {
         if (timeSeries_ != null) {
@@ -694,14 +681,12 @@ public final class CreateTimeSeriesError extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * The time series, including the `Metric`, `MonitoredResource`,
-     * and `Point`s (including timestamp and value) that resulted
-     * in the error. This field provides all of the context that
-     * would be needed to retry the operation.
+     * DEPRECATED. Time series ID that resulted in the `status` error.
      * </pre>
      *
-     * <code>.google.monitoring.v3.TimeSeries time_series = 1;</code>
+     * <code>.google.monitoring.v3.TimeSeries time_series = 1 [deprecated = true];</code>
      */
+    @java.lang.Deprecated
     public Builder clearTimeSeries() {
       if (timeSeriesBuilder_ == null) {
         timeSeries_ = null;
@@ -717,14 +702,12 @@ public final class CreateTimeSeriesError extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * The time series, including the `Metric`, `MonitoredResource`,
-     * and `Point`s (including timestamp and value) that resulted
-     * in the error. This field provides all of the context that
-     * would be needed to retry the operation.
+     * DEPRECATED. Time series ID that resulted in the `status` error.
      * </pre>
      *
-     * <code>.google.monitoring.v3.TimeSeries time_series = 1;</code>
+     * <code>.google.monitoring.v3.TimeSeries time_series = 1 [deprecated = true];</code>
      */
+    @java.lang.Deprecated
     public com.google.monitoring.v3.TimeSeries.Builder getTimeSeriesBuilder() {
 
       onChanged();
@@ -734,14 +717,12 @@ public final class CreateTimeSeriesError extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * The time series, including the `Metric`, `MonitoredResource`,
-     * and `Point`s (including timestamp and value) that resulted
-     * in the error. This field provides all of the context that
-     * would be needed to retry the operation.
+     * DEPRECATED. Time series ID that resulted in the `status` error.
      * </pre>
      *
-     * <code>.google.monitoring.v3.TimeSeries time_series = 1;</code>
+     * <code>.google.monitoring.v3.TimeSeries time_series = 1 [deprecated = true];</code>
      */
+    @java.lang.Deprecated
     public com.google.monitoring.v3.TimeSeriesOrBuilder getTimeSeriesOrBuilder() {
       if (timeSeriesBuilder_ != null) {
         return timeSeriesBuilder_.getMessageOrBuilder();
@@ -755,13 +736,10 @@ public final class CreateTimeSeriesError extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * The time series, including the `Metric`, `MonitoredResource`,
-     * and `Point`s (including timestamp and value) that resulted
-     * in the error. This field provides all of the context that
-     * would be needed to retry the operation.
+     * DEPRECATED. Time series ID that resulted in the `status` error.
      * </pre>
      *
-     * <code>.google.monitoring.v3.TimeSeries time_series = 1;</code>
+     * <code>.google.monitoring.v3.TimeSeries time_series = 1 [deprecated = true];</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.monitoring.v3.TimeSeries,
@@ -788,11 +766,12 @@ public final class CreateTimeSeriesError extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * The status of the requested write operation.
+     * DEPRECATED. The status of the requested write operation for `time_series`.
      * </pre>
      *
-     * <code>.google.rpc.Status status = 2;</code>
+     * <code>.google.rpc.Status status = 2 [deprecated = true];</code>
      */
+    @java.lang.Deprecated
     public boolean hasStatus() {
       return statusBuilder_ != null || status_ != null;
     }
@@ -800,11 +779,12 @@ public final class CreateTimeSeriesError extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * The status of the requested write operation.
+     * DEPRECATED. The status of the requested write operation for `time_series`.
      * </pre>
      *
-     * <code>.google.rpc.Status status = 2;</code>
+     * <code>.google.rpc.Status status = 2 [deprecated = true];</code>
      */
+    @java.lang.Deprecated
     public com.google.rpc.Status getStatus() {
       if (statusBuilder_ == null) {
         return status_ == null ? com.google.rpc.Status.getDefaultInstance() : status_;
@@ -816,11 +796,12 @@ public final class CreateTimeSeriesError extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * The status of the requested write operation.
+     * DEPRECATED. The status of the requested write operation for `time_series`.
      * </pre>
      *
-     * <code>.google.rpc.Status status = 2;</code>
+     * <code>.google.rpc.Status status = 2 [deprecated = true];</code>
      */
+    @java.lang.Deprecated
     public Builder setStatus(com.google.rpc.Status value) {
       if (statusBuilder_ == null) {
         if (value == null) {
@@ -838,11 +819,12 @@ public final class CreateTimeSeriesError extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * The status of the requested write operation.
+     * DEPRECATED. The status of the requested write operation for `time_series`.
      * </pre>
      *
-     * <code>.google.rpc.Status status = 2;</code>
+     * <code>.google.rpc.Status status = 2 [deprecated = true];</code>
      */
+    @java.lang.Deprecated
     public Builder setStatus(com.google.rpc.Status.Builder builderForValue) {
       if (statusBuilder_ == null) {
         status_ = builderForValue.build();
@@ -857,11 +839,12 @@ public final class CreateTimeSeriesError extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * The status of the requested write operation.
+     * DEPRECATED. The status of the requested write operation for `time_series`.
      * </pre>
      *
-     * <code>.google.rpc.Status status = 2;</code>
+     * <code>.google.rpc.Status status = 2 [deprecated = true];</code>
      */
+    @java.lang.Deprecated
     public Builder mergeStatus(com.google.rpc.Status value) {
       if (statusBuilder_ == null) {
         if (status_ != null) {
@@ -880,11 +863,12 @@ public final class CreateTimeSeriesError extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * The status of the requested write operation.
+     * DEPRECATED. The status of the requested write operation for `time_series`.
      * </pre>
      *
-     * <code>.google.rpc.Status status = 2;</code>
+     * <code>.google.rpc.Status status = 2 [deprecated = true];</code>
      */
+    @java.lang.Deprecated
     public Builder clearStatus() {
       if (statusBuilder_ == null) {
         status_ = null;
@@ -900,11 +884,12 @@ public final class CreateTimeSeriesError extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * The status of the requested write operation.
+     * DEPRECATED. The status of the requested write operation for `time_series`.
      * </pre>
      *
-     * <code>.google.rpc.Status status = 2;</code>
+     * <code>.google.rpc.Status status = 2 [deprecated = true];</code>
      */
+    @java.lang.Deprecated
     public com.google.rpc.Status.Builder getStatusBuilder() {
 
       onChanged();
@@ -914,11 +899,12 @@ public final class CreateTimeSeriesError extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * The status of the requested write operation.
+     * DEPRECATED. The status of the requested write operation for `time_series`.
      * </pre>
      *
-     * <code>.google.rpc.Status status = 2;</code>
+     * <code>.google.rpc.Status status = 2 [deprecated = true];</code>
      */
+    @java.lang.Deprecated
     public com.google.rpc.StatusOrBuilder getStatusOrBuilder() {
       if (statusBuilder_ != null) {
         return statusBuilder_.getMessageOrBuilder();
@@ -930,10 +916,10 @@ public final class CreateTimeSeriesError extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * The status of the requested write operation.
+     * DEPRECATED. The status of the requested write operation for `time_series`.
      * </pre>
      *
-     * <code>.google.rpc.Status status = 2;</code>
+     * <code>.google.rpc.Status status = 2 [deprecated = true];</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.rpc.Status, com.google.rpc.Status.Builder, com.google.rpc.StatusOrBuilder>
