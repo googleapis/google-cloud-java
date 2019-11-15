@@ -1,5 +1,12 @@
 # Changelog
 
+### [0.117.2](https://www.github.com/googleapis/java-dns/compare/v0.117.1...v0.117.2) (2019-11-15)
+
+
+### Bug Fixes
+
+* fix artifact name ([#19](https://www.github.com/googleapis/java-dns/issues/19)) ([ac3ab38](https://www.github.com/googleapis/java-dns/commit/ac3ab389a9055c47af6b698ab5f2a180154670be))
+
 ### [0.117.1](https://www.github.com/googleapis/java-dns/compare/v0.117.0...v0.117.1) (2019-11-14)
 
 
