@@ -16,7 +16,12 @@
 
 package com.example.automl;
 
+// [START automl_language_entity_extraction_list_datasets]
+// [START automl_language_sentiment_analysis_list_datasets]
+// [START automl_language_text_classification_list_datasets]
 // [START automl_translate_list_datasets]
+// [START automl_vision_classification_list_datasets]
+// [START automl_vision_object_detection_list_datasets]
 import com.google.cloud.automl.v1.AutoMlClient;
 import com.google.cloud.automl.v1.Dataset;
 import com.google.cloud.automl.v1.ListDatasetsRequest;
@@ -58,6 +63,30 @@ class ListDatasets {
         String retrievedDatasetId = names[names.length - 1];
         System.out.format("Dataset id: %s\n", retrievedDatasetId);
         System.out.format("Dataset display name: %s\n", dataset.getDisplayName());
+        System.out.println("Dataset create time:");
+        System.out.format("\tseconds: %s\n", dataset.getCreateTime().getSeconds());
+        System.out.format("\tnanos: %s\n", dataset.getCreateTime().getNanos());
+        // [END automl_language_sentiment_analysis_list_datasets]
+        // [END automl_language_text_classification_list_datasets]
+        // [END automl_translate_list_datasets]
+        // [END automl_vision_classification_list_datasets]
+        // [END automl_vision_object_detection_list_datasets]
+        System.out.format(
+            "Text extraction dataset metadata: %s\n", dataset.getTextExtractionDatasetMetadata());
+        // [END automl_language_entity_extraction_list_datasets]
+
+        // [START automl_language_sentiment_analysis_list_datasets]
+        System.out.format(
+            "Text sentiment dataset metadata: %s\n", dataset.getTextSentimentDatasetMetadata());
+        // [END automl_language_sentiment_analysis_list_datasets]
+
+        // [START automl_language_text_classification_list_datasets]
+        System.out.format(
+            "Text classification dataset metadata: %s\n",
+            dataset.getTextClassificationDatasetMetadata());
+        // [END automl_language_text_classification_list_datasets]
+
+        // [START automl_translate_list_datasets]
         System.out.println("Translation dataset metadata:");
         System.out.format(
             "\tSource language code: %s\n",
@@ -65,11 +94,30 @@ class ListDatasets {
         System.out.format(
             "\tTarget language code: %s\n",
             dataset.getTranslationDatasetMetadata().getTargetLanguageCode());
-        System.out.println("Dataset create time:");
-        System.out.format("\tseconds: %s\n", dataset.getCreateTime().getSeconds());
-        System.out.format("\tnanos: %s\n", dataset.getCreateTime().getNanos());
+        // [END automl_translate_list_datasets]
+
+        // [START automl_vision_classification_list_datasets]
+        System.out.format(
+            "Image classification dataset metadata: %s\n",
+            dataset.getImageClassificationDatasetMetadata());
+        // [END automl_vision_classification_list_datasets]
+
+        // [START automl_vision_object_detection_list_datasets]
+        System.out.format(
+            "Image object detection dataset metadata: %s\n",
+            dataset.getImageObjectDetectionDatasetMetadata());
+        // [START automl_language_entity_extraction_list_datasets]
+        // [START automl_language_sentiment_analysis_list_datasets]
+        // [START automl_language_text_classification_list_datasets]
+        // [START automl_translate_list_datasets]
+        // [START automl_vision_classification_list_datasets]
       }
     }
   }
 }
+// [END automl_language_entity_extraction_list_datasets]
+// [END automl_language_sentiment_analysis_list_datasets]
+// [END automl_language_text_classification_list_datasets]
 // [END automl_translate_list_datasets]
+// [END automl_vision_classification_list_datasets]
+// [END automl_vision_object_detection_list_datasets]

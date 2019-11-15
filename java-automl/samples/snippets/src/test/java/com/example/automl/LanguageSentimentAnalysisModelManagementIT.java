@@ -31,13 +31,11 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
 
-// Tests for translation "Predict" sample.
+// Tests for Automl natural language sentiment analysis models.
 @RunWith(JUnit4.class)
-@SuppressWarnings("checkstyle:abbreviationaswordinname")
-public class TranslatePredictIT {
+public class LanguageSentimentAnalysisModelManagementIT {
   private static final String PROJECT_ID = System.getenv("GOOGLE_CLOUD_PROJECT");
-  private static final String modelId = "TRL2188848820815848149";
-  private static final String filePath = "./resources/input.txt";
+  private static final String MODEL_ID = "TST864310464894223026";
   private ByteArrayOutputStream bout;
   private PrintStream out;
 
@@ -67,12 +65,14 @@ public class TranslatePredictIT {
   }
 
   @Test
-  public void testPredict() throws IOException {
-    // Act
-    TranslatePredict.predict(PROJECT_ID, modelId, filePath);
-
-    // Assert
+  public void testDeployUndeployModel()
+      throws IOException, ExecutionException, InterruptedException {
+    UndeployModel.undeployModel(PROJECT_ID, MODEL_ID);
     String got = bout.toString();
-    assertThat(got).contains("Translated Content");
+    assertThat(got).contains("Model undeployment finished");
+
+    DeployModel.deployModel(PROJECT_ID, MODEL_ID);
+    got = bout.toString();
+    assertThat(got).contains("Model deployment finished");
   }
 }

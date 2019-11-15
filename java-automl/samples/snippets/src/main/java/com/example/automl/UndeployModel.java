@@ -16,25 +16,28 @@
 
 package com.example.automl;
 
-// [START automl_delete_model]
+// [START automl_undeploy_model]
+import com.google.api.gax.longrunning.OperationFuture;
 import com.google.cloud.automl.v1.AutoMlClient;
 import com.google.cloud.automl.v1.ModelName;
+import com.google.cloud.automl.v1.OperationMetadata;
+import com.google.cloud.automl.v1.UndeployModelRequest;
 import com.google.protobuf.Empty;
 
 import java.io.IOException;
 import java.util.concurrent.ExecutionException;
 
-class DeleteModel {
+class UndeployModel {
 
-  static void deleteModel() throws IOException, ExecutionException, InterruptedException {
+  static void undeployModel() throws IOException, ExecutionException, InterruptedException {
     // TODO(developer): Replace these variables before running the sample.
     String projectId = "YOUR_PROJECT_ID";
     String modelId = "YOUR_MODEL_ID";
-    deleteModel(projectId, modelId);
+    undeployModel(projectId, modelId);
   }
 
-  // Delete a model
-  static void deleteModel(String projectId, String modelId)
+  // Undeploy a model from prediction
+  static void undeployModel(String projectId, String modelId)
       throws IOException, ExecutionException, InterruptedException {
     // Initialize client that will be used to send requests. This client only needs to be created
     // once, and can be reused for multiple requests. After completing all of your requests, call
@@ -42,13 +45,13 @@ class DeleteModel {
     try (AutoMlClient client = AutoMlClient.create()) {
       // Get the full path of the model.
       ModelName modelFullId = ModelName.of(projectId, "us-central1", modelId);
+      UndeployModelRequest request =
+          UndeployModelRequest.newBuilder().setName(modelFullId.toString()).build();
+      OperationFuture<Empty, OperationMetadata> future = client.undeployModelAsync(request);
 
-      // Delete a model.
-      Empty response = client.deleteModelAsync(modelFullId).get();
-
-      System.out.println("Model deletion started...");
-      System.out.println(String.format("Model deleted. %s", response));
+      future.get();
+      System.out.println("Model undeployment finished");
     }
   }
 }
-// [END automl_delete_model]
+// [END automl_undeploy_model]

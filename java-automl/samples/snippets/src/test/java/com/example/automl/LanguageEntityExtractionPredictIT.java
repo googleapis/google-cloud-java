@@ -19,6 +19,10 @@ package com.example.automl;
 import static com.google.common.truth.Truth.assertThat;
 import static junit.framework.TestCase.assertNotNull;
 
+import com.google.api.gax.paging.Page;
+import com.google.cloud.storage.Blob;
+import com.google.cloud.storage.Storage;
+import com.google.cloud.storage.StorageOptions;
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.io.PrintStream;
@@ -31,13 +35,13 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
 
-// Tests for translation "Predict" sample.
+// Tests for automl natural language entity extraction "Predict" sample.
 @RunWith(JUnit4.class)
 @SuppressWarnings("checkstyle:abbreviationaswordinname")
-public class TranslatePredictIT {
+public class LanguageEntityExtractionPredictIT {
   private static final String PROJECT_ID = System.getenv("GOOGLE_CLOUD_PROJECT");
-  private static final String modelId = "TRL2188848820815848149";
-  private static final String filePath = "./resources/input.txt";
+  private static final String BUCKET_ID = PROJECT_ID + "-lcm";
+  private static final String modelId = "TEN1974951581904273408";
   private ByteArrayOutputStream bout;
   private PrintStream out;
 
@@ -68,11 +72,44 @@ public class TranslatePredictIT {
 
   @Test
   public void testPredict() throws IOException {
+    String text = "Constitutional mutations in the WT1 gene in patients with Denys-Drash syndrome.";
     // Act
-    TranslatePredict.predict(PROJECT_ID, modelId, filePath);
+    LanguageEntityExtractionPredict.predict(PROJECT_ID, modelId, text);
 
     // Assert
     String got = bout.toString();
-    assertThat(got).contains("Translated Content");
+    assertThat(got).contains("Text Extract Entity Types:");
+  }
+
+  @Test
+  public void testBatchPredict() throws IOException, ExecutionException, InterruptedException {
+    String inputUri = String.format("gs://%s/entity_extraction/input.jsonl", BUCKET_ID);
+    String outputUri = String.format("gs://%s/TEST_BATCH_PREDICT/", BUCKET_ID);
+    // Act
+    LanguageBatchPredict.batchPredict(PROJECT_ID, modelId, inputUri, outputUri);
+
+    // Assert
+    String got = bout.toString();
+    assertThat(got).contains("Batch Prediction results saved to specified Cloud Storage bucket");
+
+    Storage storage = StorageOptions.getDefaultInstance().getService();
+    Page<Blob> blobs =
+        storage.list(
+            BUCKET_ID,
+            Storage.BlobListOption.currentDirectory(),
+            Storage.BlobListOption.prefix("TEST_BATCH_PREDICT/"));
+
+    for (Blob blob : blobs.iterateAll()) {
+      Page<Blob> fileBlobs =
+          storage.list(
+              BUCKET_ID,
+              Storage.BlobListOption.currentDirectory(),
+              Storage.BlobListOption.prefix(blob.getName()));
+      for (Blob fileBlob : fileBlobs.iterateAll()) {
+        if (!fileBlob.isDirectory()) {
+          fileBlob.delete();
+        }
+      }
+    }
   }
 }

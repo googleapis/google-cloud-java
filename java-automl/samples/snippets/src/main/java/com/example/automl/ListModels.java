@@ -32,7 +32,7 @@ class ListModels {
     listModels(projectId);
   }
 
-  // List models
+  // List the models available in the specified location
   static void listModels(String projectId) throws IOException {
     // Initialize client that will be used to send requests. This client only needs to be created
     // once, and can be reused for multiple requests. After completing all of your requests, call

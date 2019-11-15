@@ -37,17 +37,17 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
 
-// Tests for Automl translation datasets
+// Tests for Automl natural language text classification datasets.
 @RunWith(JUnit4.class)
 @SuppressWarnings("checkstyle:abbreviationaswordinname")
-public class TranslateDatasetManagementIT {
+public class LanguageTextClassificationDatasetManagementIT {
 
   private static final String PROJECT_ID = System.getenv("GOOGLE_CLOUD_PROJECT");
-  private static final String BUCKET = "gs://" + PROJECT_ID + "-vcm";
+  private static final String BUCKET_ID = PROJECT_ID + "-lcm";
+  private static final String BUCKET = "gs://" + BUCKET_ID;
   private ByteArrayOutputStream bout;
   private PrintStream out;
-  private String datasetId;
-  private String getdatasetId = "TRL3946265060617537378";
+  private String getdatasetId = "TCN2551826603472450019";
 
   private static void requireEnvVar(String varName) {
     assertNotNull(
@@ -84,14 +84,14 @@ public class TranslateDatasetManagementIT {
         String.format("test_%s", UUID.randomUUID().toString().replace("-", "_").substring(0, 26));
 
     // Act
-    TranslateCreateDataset.createDataset(PROJECT_ID, datasetName);
+    LanguageTextClassificationCreateDataset.createDataset(PROJECT_ID, datasetName);
 
     // Assert
     String got = bout.toString();
-    datasetId = got.split("Dataset id: ")[1].split("\n")[0];
+    String datasetId = got.split("Dataset id: ")[1].split("\n")[0];
 
     // Act
-    ImportDataset.importDataset(PROJECT_ID, datasetId, BUCKET + "/en-ja-short.csv");
+    ImportDataset.importDataset(PROJECT_ID, datasetId, BUCKET + "/happiness.csv");
 
     // Assert
     got = bout.toString();
@@ -130,22 +130,20 @@ public class TranslateDatasetManagementIT {
   public void testExportDataset() throws IOException, ExecutionException, InterruptedException {
     ExportDataset.exportDataset(PROJECT_ID, getdatasetId, BUCKET + "/TEST_EXPORT_OUTPUT/");
 
-    Storage storage = StorageOptions.getDefaultInstance().getService();
-
     String got = bout.toString();
-
     assertThat(got).contains("Dataset exported.");
 
+    Storage storage = StorageOptions.getDefaultInstance().getService();
     Page<Blob> blobs =
         storage.list(
-            PROJECT_ID + "-vcm",
+            BUCKET_ID,
             Storage.BlobListOption.currentDirectory(),
             Storage.BlobListOption.prefix("TEST_EXPORT_OUTPUT/"));
 
     for (Blob blob : blobs.iterateAll()) {
       Page<Blob> fileBlobs =
           storage.list(
-              PROJECT_ID + "-vcm",
+              BUCKET_ID,
               Storage.BlobListOption.currentDirectory(),
               Storage.BlobListOption.prefix(blob.getName()));
       for (Blob fileBlob : fileBlobs.iterateAll()) {

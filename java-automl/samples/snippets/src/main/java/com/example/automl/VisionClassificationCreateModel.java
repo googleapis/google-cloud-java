@@ -16,18 +16,18 @@
 
 package com.example.automl;
 
-// [START automl_translate_create_model]
+// [START automl_vision_classification_create_model]
 import com.google.api.gax.longrunning.OperationFuture;
 import com.google.cloud.automl.v1.AutoMlClient;
+import com.google.cloud.automl.v1.ImageClassificationModelMetadata;
 import com.google.cloud.automl.v1.LocationName;
 import com.google.cloud.automl.v1.Model;
 import com.google.cloud.automl.v1.OperationMetadata;
-import com.google.cloud.automl.v1.TranslationModelMetadata;
 
 import java.io.IOException;
 import java.util.concurrent.ExecutionException;
 
-class TranslateCreateModel {
+class VisionClassificationCreateModel {
 
   static void createModel() throws IOException, ExecutionException, InterruptedException {
     // TODO(developer): Replace these variables before running the sample.
@@ -46,14 +46,17 @@ class TranslateCreateModel {
     try (AutoMlClient client = AutoMlClient.create()) {
       // A resource that represents Google Cloud Platform location.
       LocationName projectLocation = LocationName.of(projectId, "us-central1");
-      // Leave model unset to use the default base model provided by Google
-      TranslationModelMetadata translationModelMetadata =
-          TranslationModelMetadata.newBuilder().build();
+      // Set model metadata.
+      ImageClassificationModelMetadata metadata =
+          ImageClassificationModelMetadata.newBuilder()
+              .setTrainBudgetMilliNodeHours(
+                  8) // The train budget of creating this model, expressed in hours.
+              .build();
       Model model =
           Model.newBuilder()
               .setDisplayName(displayName)
               .setDatasetId(datasetId)
-              .setTranslationModelMetadata(translationModelMetadata)
+              .setImageClassificationModelMetadata(metadata)
               .build();
 
       // Create a model with the model metadata in the region.
@@ -67,4 +70,4 @@ class TranslateCreateModel {
     }
   }
 }
-// [END automl_translate_create_model]
+// [END automl_vision_classification_create_model]

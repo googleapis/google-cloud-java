@@ -36,7 +36,7 @@ class ExportDataset {
     exportDataset(projectId, datasetId, gcsUri);
   }
 
-  // Export a dataset
+  // Export a dataset to a GCS bucket
   static void exportDataset(String projectId, String datasetId, String gcsUri)
       throws IOException, ExecutionException, InterruptedException {
     // Initialize client that will be used to send requests. This client only needs to be created

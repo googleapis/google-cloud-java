@@ -22,7 +22,6 @@ import static junit.framework.TestCase.assertNotNull;
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.io.PrintStream;
-import java.util.concurrent.ExecutionException;
 
 import org.junit.After;
 import org.junit.Before;
@@ -31,13 +30,12 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
 
-// Tests for translation "Predict" sample.
+// Tests for automl natural language text classification "Predict" sample.
 @RunWith(JUnit4.class)
 @SuppressWarnings("checkstyle:abbreviationaswordinname")
-public class TranslatePredictIT {
+public class LanguageTextClassificationPredictIT {
   private static final String PROJECT_ID = System.getenv("GOOGLE_CLOUD_PROJECT");
-  private static final String modelId = "TRL2188848820815848149";
-  private static final String filePath = "./resources/input.txt";
+  private static final String modelId = "TCN6871084728972835631";
   private ByteArrayOutputStream bout;
   private PrintStream out;
 
@@ -68,11 +66,12 @@ public class TranslatePredictIT {
 
   @Test
   public void testPredict() throws IOException {
+    String text = "Fruit and nut flavour";
     // Act
-    TranslatePredict.predict(PROJECT_ID, modelId, filePath);
+    LanguageTextClassificationPredict.predict(PROJECT_ID, modelId, text);
 
     // Assert
     String got = bout.toString();
-    assertThat(got).contains("Translated Content");
+    assertThat(got).contains("Predicted class name:");
   }
 }
