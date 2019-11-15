@@ -362,6 +362,7 @@ public class MockSpannerServiceImpl extends SpannerImplBase implements MockGrpcS
     private final int minimumExecutionTime;
     private final int randomExecutionTime;
     private final Queue<Exception> exceptions;
+    private final boolean stickyException;
 
     /**
      * Creates a simulated execution time that will always be somewhere between <code>
@@ -384,36 +385,43 @@ public class MockSpannerServiceImpl extends SpannerImplBase implements MockGrpcS
     }
 
     public static SimulatedExecutionTime ofException(Exception exception) {
-      return new SimulatedExecutionTime(0, 0, Arrays.asList(exception));
+      return new SimulatedExecutionTime(0, 0, Arrays.asList(exception), false);
+    }
+
+    public static SimulatedExecutionTime ofStickyException(Exception exception) {
+      return new SimulatedExecutionTime(0, 0, Arrays.asList(exception), true);
     }
 
     public static SimulatedExecutionTime ofExceptions(Collection<Exception> exceptions) {
-      return new SimulatedExecutionTime(0, 0, exceptions);
+      return new SimulatedExecutionTime(0, 0, exceptions, false);
     }
 
     public static SimulatedExecutionTime ofMinimumAndRandomTimeAndExceptions(
         int minimumExecutionTime, int randomExecutionTime, Collection<Exception> exceptions) {
-      return new SimulatedExecutionTime(minimumExecutionTime, randomExecutionTime, exceptions);
+      return new SimulatedExecutionTime(
+          minimumExecutionTime, randomExecutionTime, exceptions, false);
     }
 
     private SimulatedExecutionTime(int minimum, int random) {
-      this(minimum, random, Collections.<Exception>emptyList());
+      this(minimum, random, Collections.<Exception>emptyList(), false);
     }
 
-    private SimulatedExecutionTime(int minimum, int random, Collection<Exception> exceptions) {
+    private SimulatedExecutionTime(
+        int minimum, int random, Collection<Exception> exceptions, boolean stickyException) {
       Preconditions.checkArgument(minimum >= 0, "Minimum execution time must be >= 0");
       Preconditions.checkArgument(random >= 0, "Random execution time must be >= 0");
       this.minimumExecutionTime = minimum;
       this.randomExecutionTime = random;
       this.exceptions = new LinkedList<>(exceptions);
+      this.stickyException = stickyException;
     }
 
     private void simulateExecutionTime(
         Queue<Exception> globalExceptions, ReadWriteLock freezeLock) {
       try {
         freezeLock.readLock().lock();
-        checkException(globalExceptions);
-        checkException(this.exceptions);
+        checkException(globalExceptions, false);
+        checkException(this.exceptions, stickyException);
         if (minimumExecutionTime > 0 || randomExecutionTime > 0) {
           Uninterruptibles.sleepUninterruptibly(
               (randomExecutionTime == 0 ? 0 : RANDOM.nextInt(randomExecutionTime))
@@ -425,8 +433,8 @@ public class MockSpannerServiceImpl extends SpannerImplBase implements MockGrpcS
       }
     }
 
-    private static void checkException(Queue<Exception> exceptions) {
-      Exception e = exceptions.poll();
+    private static void checkException(Queue<Exception> exceptions, boolean keepException) {
+      Exception e = keepException ? exceptions.peek() : exceptions.poll();
       if (e != null) {
         Throwables.throwIfUnchecked(e);
         throw Status.INTERNAL.withDescription(e.getMessage()).withCause(e).asRuntimeException();
@@ -1609,6 +1617,7 @@ public class MockSpannerServiceImpl extends SpannerImplBase implements MockGrpcS
   }
 
   public void removeAllExecutionTimes() {
+    batchCreateSessionsExecutionTime = NO_EXECUTION_TIME;
     beginTransactionExecutionTime = NO_EXECUTION_TIME;
     commitExecutionTime = NO_EXECUTION_TIME;
     createSessionExecutionTime = NO_EXECUTION_TIME;
