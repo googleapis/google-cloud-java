@@ -1192,9 +1192,8 @@ final class SessionPool {
     return e.getErrorCode() == ErrorCode.NOT_FOUND && e.getMessage().contains("Session not found");
   }
 
-  private boolean isDatabaseDoesNotExist(SpannerException e) {
-    return e.getErrorCode() == ErrorCode.NOT_FOUND
-        && e.getMessage().contains("Database does not exist");
+  private boolean isDatabaseNotFound(SpannerException e) {
+    return e.getErrorCode() == ErrorCode.NOT_FOUND && e.getMessage().contains("Database not found");
   }
 
   private void invalidateSession(PooledSession session) {
@@ -1452,7 +1451,7 @@ final class SessionPool {
     synchronized (lock) {
       if (isSessionNotFound(e)) {
         invalidateSession(session);
-      } else if (isDatabaseDoesNotExist(e)) {
+      } else if (isDatabaseNotFound(e)) {
         // Database has been deleted. We should stop trying to prepare any transactions. Also
         // propagate the error to all waiters, as any further waiting is pointless.
         while (readWriteWaiters.size() > 0) {

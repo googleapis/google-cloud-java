@@ -51,6 +51,8 @@ import org.threeten.bp.Duration;
 
 @RunWith(JUnit4.class)
 public class DatabaseClientImplTest {
+  private static final String DATABASE_DOES_NOT_EXIST_MSG =
+      "Database not found: projects/<project>/instances/<instance>/databases/<database> resource_type: \"type.googleapis.com/google.spanner.admin.database.v1.Database\" resource_name: \"projects/<project>/instances/<instance>/databases/<database>\" description: \"Database does not exist.\"";
   private static MockSpannerServiceImpl mockSpanner;
   private static Server server;
   private static LocalChannelProvider channelProvider;
@@ -265,7 +267,7 @@ public class DatabaseClientImplTest {
   public void testDatabaseDoesNotExistOnPrepareSession() throws Exception {
     mockSpanner.setBeginTransactionExecutionTime(
         SimulatedExecutionTime.ofStickyException(
-            Status.NOT_FOUND.withDescription("Database does not exist").asRuntimeException()));
+            Status.NOT_FOUND.withDescription(DATABASE_DOES_NOT_EXIST_MSG).asRuntimeException()));
     DatabaseClientImpl dbClient =
         (DatabaseClientImpl)
             spanner.getDatabaseClient(DatabaseId.of("[PROJECT]", "[INSTANCE]", "[DATABASE]"));
@@ -290,7 +292,7 @@ public class DatabaseClientImplTest {
   public void testDatabaseDoesNotExistOnInitialization() throws Exception {
     mockSpanner.setBatchCreateSessionsExecutionTime(
         SimulatedExecutionTime.ofStickyException(
-            Status.NOT_FOUND.withDescription("Database does not exist").asRuntimeException()));
+            Status.NOT_FOUND.withDescription(DATABASE_DOES_NOT_EXIST_MSG).asRuntimeException()));
     DatabaseClientImpl dbClient =
         (DatabaseClientImpl)
             spanner.getDatabaseClient(DatabaseId.of("[PROJECT]", "[INSTANCE]", "[DATABASE]"));
@@ -309,7 +311,7 @@ public class DatabaseClientImplTest {
   public void testDatabaseDoesNotExistOnCreate() throws Exception {
     mockSpanner.setBatchCreateSessionsExecutionTime(
         SimulatedExecutionTime.ofStickyException(
-            Status.NOT_FOUND.withDescription("Database does not exist").asRuntimeException()));
+            Status.NOT_FOUND.withDescription(DATABASE_DOES_NOT_EXIST_MSG).asRuntimeException()));
     // Ensure there are no sessions in the pool by default.
     try (Spanner spanner =
         SpannerOptions.newBuilder()
@@ -327,14 +329,14 @@ public class DatabaseClientImplTest {
         fail("missing expected exception");
       } catch (SpannerException e) {
         assertThat(e.getErrorCode(), is(equalTo(ErrorCode.NOT_FOUND)));
-        assertThat(e.getMessage(), containsString("Database does not exist"));
+        assertThat(e.getMessage(), containsString(DATABASE_DOES_NOT_EXIST_MSG));
       }
       try {
         dbClient.readWriteTransaction();
         fail("missing expected exception");
       } catch (SpannerException e) {
         assertThat(e.getErrorCode(), is(equalTo(ErrorCode.NOT_FOUND)));
-        assertThat(e.getMessage(), containsString("Database does not exist"));
+        assertThat(e.getMessage(), containsString(DATABASE_DOES_NOT_EXIST_MSG));
       }
     }
   }
@@ -343,7 +345,7 @@ public class DatabaseClientImplTest {
   public void testDatabaseDoesNotExistOnReplenish() throws Exception {
     mockSpanner.setBatchCreateSessionsExecutionTime(
         SimulatedExecutionTime.ofStickyException(
-            Status.NOT_FOUND.withDescription("Database does not exist").asRuntimeException()));
+            Status.NOT_FOUND.withDescription(DATABASE_DOES_NOT_EXIST_MSG).asRuntimeException()));
     DatabaseClientImpl dbClient =
         (DatabaseClientImpl)
             spanner.getDatabaseClient(DatabaseId.of("[PROJECT]", "[INSTANCE]", "[DATABASE]"));
