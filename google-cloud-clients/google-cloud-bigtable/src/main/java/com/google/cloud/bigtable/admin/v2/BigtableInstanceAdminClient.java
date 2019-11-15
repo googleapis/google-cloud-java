@@ -1217,27 +1217,44 @@ public final class BigtableInstanceAdminClient implements AutoCloseable {
   }
 
   /**
+   * @deprecated Please use {@link #testIamPermissions} instead.
+   */
+  @Deprecated
+  public List<String> testIamPermission(String instanceId, String... permissions) {
+    return testIamPermissions(instanceId, permissions);
+  }
+
+  /**
    * Tests whether the caller has the given permissions for the specified instance. Returns a subset
    * of the specified permissions that the caller has.
    *
    * <p>Sample code:
    *
    * <pre>{@code
-   * List<String> grantedPermissions = client.testIamPermission("my-instance",
+   * List<String> grantedPermissions = client.testIamPermissions("my-instance",
    *   "bigtable.tables.readRows", "bigtable.tables.mutateRows");
-   * }</pre>
    *
    * System.out.println("Has read access: " +
-   * grantedPermissions.contains("bigtable.tables.readRows")); System.out.println("Has write access:
-   * " + grantedPermissions.contains("bigtable.tables.mutateRows"));
+   *   grantedPermissions.contains("bigtable.tables.readRows"));
+   * System.out.println("Has write access: " +
+   *   grantedPermissions.contains("bigtable.tables.mutateRows"));
+   * }</pre>
    *
    * @see <a href="https://cloud.google.com/bigtable/docs/access-control#permissions">Cloud Bigtable
    *     permissions</a>
    */
   @SuppressWarnings({"WeakerAccess"})
-  public List<String> testIamPermission(String instanceId, String... permissions) {
+  public List<String> testIamPermissions(String instanceId, String... permissions) {
     return ApiExceptions.callAndTranslateApiException(
-        testIamPermissionAsync(instanceId, permissions));
+        testIamPermissionsAsync(instanceId, permissions));
+  }
+
+  /**
+   * @deprecated Please use {@link #testIamPermissionsAsync} instead.
+   */
+  @Deprecated
+  public ApiFuture<List<String>> testIamPermissionAsync(String instanceId, String... permissions) {
+    return testIamPermissionsAsync(instanceId, permissions);
   }
 
   /**
@@ -1247,8 +1264,9 @@ public final class BigtableInstanceAdminClient implements AutoCloseable {
    * <p>Sample code:
    *
    * <pre>{@code
-   * ApiFuture<List<String>> grantedPermissionsFuture = client.testIamPermissionAsync("my-instance",
-   *   "bigtable.tables.readRows", "bigtable.tables.mutateRows");
+   * ApiFuture<List<String>> grantedPermissionsFuture =
+   *   client.testIamPermissionsAsync("my-instance",
+   *     "bigtable.tables.readRows", "bigtable.tables.mutateRows");
    *
    * ApiFutures.addCallback(grantedPermissionsFuture,
    *   new ApiFutureCallback<List<String>>() {
@@ -1268,7 +1286,7 @@ public final class BigtableInstanceAdminClient implements AutoCloseable {
    *     permissions</a>
    */
   @SuppressWarnings({"WeakerAccess"})
-  public ApiFuture<List<String>> testIamPermissionAsync(String instanceId, String... permissions) {
+  public ApiFuture<List<String>> testIamPermissionsAsync(String instanceId, String... permissions) {
     TestIamPermissionsRequest request =
         TestIamPermissionsRequest.newBuilder()
             .setResource(NameUtil.formatInstanceName(projectId, instanceId))

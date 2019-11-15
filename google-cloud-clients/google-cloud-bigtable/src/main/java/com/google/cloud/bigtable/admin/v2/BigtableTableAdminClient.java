@@ -991,27 +991,43 @@ public final class BigtableTableAdminClient implements AutoCloseable {
   }
 
   /**
+   * @deprecated Please use {@link #testIamPermissions} instead.
+   */
+  @Deprecated
+  public List<String> testIamPermission(String tableId, String... permissions) {
+    return testIamPermissions(tableId, permissions);
+  }
+
+  /**
    * Tests whether the caller has the given permissions for the specified table. Returns a subset of
    * the specified permissions that the caller has.
    *
    * <p>Sample code:
    *
    * <pre>{@code
-   * List<String> grantedPermissions = client.testIamPermission("my-table",
+   * List<String> grantedPermissions = client.testIamPermissions("my-table",
    *   "bigtable.tables.readRows", "bigtable.tables.mutateRows");
-   * }</pre>
    *
    * System.out.println("Has read access: " +
-   * grantedPermissions.contains("bigtable.tables.readRows")); System.out.println("Has write access:
-   * " + grantedPermissions.contains("bigtable.tables.mutateRows"));
+   *   grantedPermissions.contains("bigtable.tables.readRows"));
+   * System.out.println("Has write access: " +
+   *   grantedPermissions.contains("bigtable.tables.mutateRows"));
+   * }</pre>
    *
    * @see <a href="https://cloud.google.com/bigtable/docs/access-control#permissions">Cloud Bigtable
    *     permissions</a>
    */
   @SuppressWarnings({"WeakerAccess"})
-  public List<String> testIamPermission(String tableId, String... permissions) {
-    return ApiExceptions.callAndTranslateApiException(testIamPermissionAsync(tableId, permissions));
+  public List<String> testIamPermissions(String tableId, String... permissions) {
+    return ApiExceptions.callAndTranslateApiException(testIamPermissionsAsync(tableId, permissions));
   }
+
+  /**
+   * @deprecated Please use {@link #testIamPermissionsAsync} instead.
+   */
+  @Deprecated
+  public ApiFuture<List<String>> testIamPermissionAsync(String tableId, String... permissions) {
+    return testIamPermissionsAsync(tableId, permissions);
 
   /**
    * Asynchronously tests whether the caller has the given permissions for the specified table.
@@ -1020,7 +1036,7 @@ public final class BigtableTableAdminClient implements AutoCloseable {
    * <p>Sample code:
    *
    * <pre>{@code
-   * ApiFuture<List<String>> grantedPermissionsFuture = client.testIamPermissionAsync("my-table",
+   * ApiFuture<List<String>> grantedPermissionsFuture = client.testIamPermissionsAsync("my-table",
    *   "bigtable.tables.readRows", "bigtable.tables.mutateRows");
    *
    * ApiFutures.addCallback(grantedPermissionsFuture,
@@ -1041,7 +1057,7 @@ public final class BigtableTableAdminClient implements AutoCloseable {
    *     permissions</a>
    */
   @SuppressWarnings({"WeakerAccess"})
-  public ApiFuture<List<String>> testIamPermissionAsync(String tableId, String... permissions) {
+  public ApiFuture<List<String>> testIamPermissionsAsync(String tableId, String... permissions) {
     TestIamPermissionsRequest request =
         TestIamPermissionsRequest.newBuilder()
             .setResource(NameUtil.formatTableName(projectId, instanceId, tableId))
