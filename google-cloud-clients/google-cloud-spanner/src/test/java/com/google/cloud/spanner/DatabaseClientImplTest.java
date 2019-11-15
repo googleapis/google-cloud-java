@@ -286,6 +286,21 @@ public class DatabaseClientImplTest {
     }
     assertThat(dbClient.pool.getNumberOfSessionsBeingPrepared(), is(equalTo(0)));
     assertThat(dbClient.pool.getNumberOfAvailableWritePreparedSessions(), is(equalTo(0)));
+    try {
+      dbClient
+          .readWriteTransaction()
+          .run(
+              new TransactionCallable<Void>() {
+                @Override
+                public Void run(TransactionContext transaction) throws Exception {
+                  return null;
+                }
+              });
+      fail("missing expected NOT_FOUND exception");
+    } catch (SpannerException e) {
+      assertThat(e.getErrorCode(), is(equalTo(ErrorCode.NOT_FOUND)));
+      assertThat(e.getMessage(), containsString("Database not found"));
+    }
   }
 
   @Test
@@ -369,5 +384,47 @@ public class DatabaseClientImplTest {
     // All session creation from replenishPool should fail and stop trying.
     assertThat(dbClient.pool.getNumberOfSessionsInPool(), is(equalTo(0)));
     assertThat(dbClient.pool.getNumberOfSessionsBeingCreated(), is(equalTo(0)));
+  }
+
+  @Test
+  public void testPermissionDeniedOnPrepareSession() throws Exception {
+    mockSpanner.setBeginTransactionExecutionTime(
+        SimulatedExecutionTime.ofStickyException(
+            Status.PERMISSION_DENIED
+                .withDescription(
+                    "Caller is missing IAM permission spanner.databases.beginOrRollbackReadWriteTransaction on resource")
+                .asRuntimeException()));
+    DatabaseClientImpl dbClient =
+        (DatabaseClientImpl)
+            spanner.getDatabaseClient(DatabaseId.of("[PROJECT]", "[INSTANCE]", "[DATABASE]"));
+    // Wait until all sessions have been created.
+    Stopwatch watch = Stopwatch.createStarted();
+    while (watch.elapsed(TimeUnit.SECONDS) < 5
+        && dbClient.pool.getNumberOfSessionsBeingCreated() > 0) {
+      Thread.sleep(1L);
+    }
+    // Ensure that no sessions could be prepared and that the session pool gives up trying to
+    // prepare sessions.
+    watch = watch.reset().start();
+    while (watch.elapsed(TimeUnit.SECONDS) < 5
+        && dbClient.pool.getNumberOfSessionsBeingPrepared() > 0) {
+      Thread.sleep(1L);
+    }
+    assertThat(dbClient.pool.getNumberOfSessionsBeingPrepared(), is(equalTo(0)));
+    assertThat(dbClient.pool.getNumberOfAvailableWritePreparedSessions(), is(equalTo(0)));
+    try {
+      dbClient
+          .readWriteTransaction()
+          .run(
+              new TransactionCallable<Void>() {
+                @Override
+                public Void run(TransactionContext transaction) throws Exception {
+                  return null;
+                }
+              });
+      fail("missing expected PERMISSION_DENIED exception");
+    } catch (SpannerException e) {
+      assertThat(e.getErrorCode(), is(equalTo(ErrorCode.PERMISSION_DENIED)));
+    }
   }
 }

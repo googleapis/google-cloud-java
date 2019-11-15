@@ -1196,6 +1196,10 @@ final class SessionPool {
     return e.getErrorCode() == ErrorCode.NOT_FOUND && e.getMessage().contains("Database not found");
   }
 
+  private boolean isPermissionDenied(SpannerException e) {
+    return e.getErrorCode() == ErrorCode.PERMISSION_DENIED;
+  }
+
   private void invalidateSession(PooledSession session) {
     synchronized (lock) {
       if (isClosed()) {
@@ -1451,9 +1455,10 @@ final class SessionPool {
     synchronized (lock) {
       if (isSessionNotFound(e)) {
         invalidateSession(session);
-      } else if (isDatabaseNotFound(e)) {
-        // Database has been deleted. We should stop trying to prepare any transactions. Also
-        // propagate the error to all waiters, as any further waiting is pointless.
+      } else if (isDatabaseNotFound(e) || isPermissionDenied(e)) {
+        // Database has been deleted or the user has no permission to write to this database. We
+        // should stop trying to prepare any transactions. Also propagate the error to all waiters,
+        // as any further waiting is pointless.
         while (readWriteWaiters.size() > 0) {
           readWriteWaiters.poll().put(e);
         }
