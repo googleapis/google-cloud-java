@@ -1216,9 +1216,7 @@ public final class BigtableInstanceAdminClient implements AutoCloseable {
         MoreExecutors.directExecutor());
   }
 
-  /**
-   * @deprecated Please use {@link #testIamPermissions} instead.
-   */
+  /** @deprecated Please use {@link #testIamPermissions} instead. */
   @Deprecated
   public List<String> testIamPermission(String instanceId, String... permissions) {
     return testIamPermissions(instanceId, permissions);
@@ -1249,9 +1247,7 @@ public final class BigtableInstanceAdminClient implements AutoCloseable {
         testIamPermissionsAsync(instanceId, permissions));
   }
 
-  /**
-   * @deprecated Please use {@link #testIamPermissionsAsync} instead.
-   */
+  /** @deprecated Please use {@link #testIamPermissionsAsync} instead. */
   @Deprecated
   public ApiFuture<List<String>> testIamPermissionAsync(String instanceId, String... permissions) {
     return testIamPermissionsAsync(instanceId, permissions);
