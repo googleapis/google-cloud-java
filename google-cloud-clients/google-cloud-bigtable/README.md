@@ -19,7 +19,7 @@ If you are using Maven with Bom, add this to your pom.xml file
       <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>libraries-bom</artifactId>
-        <version>2.8.0</version>
+        <version>2.9.0</version>
         <type>pom</type>
         <scope>import</scope>
        </dependency>
@@ -45,7 +45,7 @@ compile 'com.google.cloud:google-cloud-bigtable:1.5.0'
 ```
 If you are using SBT, add this to your dependencies
 ```Scala
-libraryDependencies += "com.google.cloud" % "google-cloud-bigtable" % "1.5.0"
+libraryDependencies += "com.google.cloud" % "google-cloud-bigtable" % "1.6.0"
 ```
 
 ## Authentication
