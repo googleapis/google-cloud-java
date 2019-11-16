@@ -19,6 +19,7 @@ import static org.hamcrest.MatcherAssert.assertThat;
 
 import com.google.api.gax.longrunning.OperationFuture;
 import com.google.cloud.dataproc.v1.ClusterControllerClient;
+import com.google.cloud.dataproc.v1.ClusterControllerSettings;
 import com.google.cloud.dataproc.v1.ClusterOperationMetadata;
 import com.google.protobuf.Empty;
 import java.io.ByteArrayOutputStream;
@@ -75,8 +76,13 @@ public class CreateClusterTest {
 
   @After
   public void tearDown() throws IOException, InterruptedException {
+    String myEndpoint = String.format("%s-dataproc.googleapis.com:443", REGION);
+
+    ClusterControllerSettings clusterControllerSettings =
+        ClusterControllerSettings.newBuilder().setEndpoint(myEndpoint).build();
+
     try (ClusterControllerClient clusterControllerClient = ClusterControllerClient
-        .create()) {
+        .create(clusterControllerSettings)) {
       OperationFuture<Empty, ClusterOperationMetadata> deleteClusterAsyncRequest =
           clusterControllerClient.deleteClusterAsync(projectId, REGION, clusterName);
       deleteClusterAsyncRequest.get();

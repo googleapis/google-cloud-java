@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-// [START create_cluster]
+// [START dataproc_create_cluster]
 import com.google.api.gax.longrunning.OperationFuture;
 import com.google.cloud.dataproc.v1.Cluster;
 import com.google.cloud.dataproc.v1.ClusterConfig;
@@ -23,7 +23,6 @@ import com.google.cloud.dataproc.v1.ClusterControllerSettings;
 import com.google.cloud.dataproc.v1.ClusterOperationMetadata;
 import com.google.cloud.dataproc.v1.InstanceGroupConfig;
 import java.io.IOException;
-import java.io.InterruptedIOException;
 import java.util.concurrent.ExecutionException;
 
 public class CreateCluster {
@@ -60,12 +59,12 @@ public class CreateCluster {
           .setConfig(clusterConfig)
           .build();
 
-      // Send a request to create a Dataproc cluster.
+      // Create the Cloud Dataproc cluster
       OperationFuture<Cluster, ClusterOperationMetadata> createClusterAsyncRequest =
           clusterControllerClient.createClusterAsync(projectId, region, cluster);
       Cluster response = createClusterAsyncRequest.get();
 
-      // Print out the response
+      // Print out a success message
       System.out.println(
           String.format("Cluster created successfully: %s", response.getClusterName())
       );
@@ -81,4 +80,4 @@ public class CreateCluster {
     }
   }
 }
-// [END create_cluster]
+// [END dataproc_create_cluster]
