@@ -36,7 +36,7 @@ import javax.annotation.Generated;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS
 /**
- * gRPC callable factory implementation for gameservices API (prod).
+ * gRPC callable factory implementation for Game Services API.
  *
  * <p>This class is for advanced usage.
  */

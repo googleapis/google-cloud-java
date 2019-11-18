@@ -81,6 +81,26 @@ public final class GameServerClusterConnectionInfo extends com.google.protobuf.G
               gkeName_ = s;
               break;
             }
+          case 58:
+            {
+              com.google.cloud.gaming.v1alpha.GkeClusterReference.Builder subBuilder = null;
+              if (clusterReferenceCase_ == 7) {
+                subBuilder =
+                    ((com.google.cloud.gaming.v1alpha.GkeClusterReference) clusterReference_)
+                        .toBuilder();
+              }
+              clusterReference_ =
+                  input.readMessage(
+                      com.google.cloud.gaming.v1alpha.GkeClusterReference.parser(),
+                      extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(
+                    (com.google.cloud.gaming.v1alpha.GkeClusterReference) clusterReference_);
+                clusterReference_ = subBuilder.buildPartial();
+              }
+              clusterReferenceCase_ = 7;
+              break;
+            }
           default:
             {
               if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -115,13 +135,97 @@ public final class GameServerClusterConnectionInfo extends com.google.protobuf.G
             com.google.cloud.gaming.v1alpha.GameServerClusterConnectionInfo.Builder.class);
   }
 
+  private int clusterReferenceCase_ = 0;
+  private java.lang.Object clusterReference_;
+
+  public enum ClusterReferenceCase implements com.google.protobuf.Internal.EnumLite {
+    GKE_CLUSTER_REFERENCE(7),
+    CLUSTERREFERENCE_NOT_SET(0);
+    private final int value;
+
+    private ClusterReferenceCase(int value) {
+      this.value = value;
+    }
+    /** @deprecated Use {@link #forNumber(int)} instead. */
+    @java.lang.Deprecated
+    public static ClusterReferenceCase valueOf(int value) {
+      return forNumber(value);
+    }
+
+    public static ClusterReferenceCase forNumber(int value) {
+      switch (value) {
+        case 7:
+          return GKE_CLUSTER_REFERENCE;
+        case 0:
+          return CLUSTERREFERENCE_NOT_SET;
+        default:
+          return null;
+      }
+    }
+
+    public int getNumber() {
+      return this.value;
+    }
+  };
+
+  public ClusterReferenceCase getClusterReferenceCase() {
+    return ClusterReferenceCase.forNumber(clusterReferenceCase_);
+  }
+
+  public static final int GKE_CLUSTER_REFERENCE_FIELD_NUMBER = 7;
+  /**
+   *
+   *
+   * <pre>
+   * Reference of the GKE cluster where the game servers are installed.
+   * </pre>
+   *
+   * <code>.google.cloud.gaming.v1alpha.GkeClusterReference gke_cluster_reference = 7;</code>
+   */
+  public boolean hasGkeClusterReference() {
+    return clusterReferenceCase_ == 7;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Reference of the GKE cluster where the game servers are installed.
+   * </pre>
+   *
+   * <code>.google.cloud.gaming.v1alpha.GkeClusterReference gke_cluster_reference = 7;</code>
+   */
+  public com.google.cloud.gaming.v1alpha.GkeClusterReference getGkeClusterReference() {
+    if (clusterReferenceCase_ == 7) {
+      return (com.google.cloud.gaming.v1alpha.GkeClusterReference) clusterReference_;
+    }
+    return com.google.cloud.gaming.v1alpha.GkeClusterReference.getDefaultInstance();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Reference of the GKE cluster where the game servers are installed.
+   * </pre>
+   *
+   * <code>.google.cloud.gaming.v1alpha.GkeClusterReference gke_cluster_reference = 7;</code>
+   */
+  public com.google.cloud.gaming.v1alpha.GkeClusterReferenceOrBuilder
+      getGkeClusterReferenceOrBuilder() {
+    if (clusterReferenceCase_ == 7) {
+      return (com.google.cloud.gaming.v1alpha.GkeClusterReference) clusterReference_;
+    }
+    return com.google.cloud.gaming.v1alpha.GkeClusterReference.getDefaultInstance();
+  }
+
   public static final int NAMESPACE_FIELD_NUMBER = 5;
   private volatile java.lang.Object namespace_;
   /**
    *
    *
    * <pre>
-   * Namespace for Kubernetes API server endpoint.
+   * Namespace designated on the game server cluster where the game server
+   * instances will be created. The namespace existence will be validated
+   * during creation.
    * </pre>
    *
    * <code>string namespace = 5;</code>
@@ -141,7 +245,9 @@ public final class GameServerClusterConnectionInfo extends com.google.protobuf.G
    *
    *
    * <pre>
-   * Namespace for Kubernetes API server endpoint.
+   * Namespace designated on the game server cluster where the game server
+   * instances will be created. The namespace existence will be validated
+   * during creation.
    * </pre>
    *
    * <code>string namespace = 5;</code>
@@ -164,13 +270,15 @@ public final class GameServerClusterConnectionInfo extends com.google.protobuf.G
    *
    *
    * <pre>
+   * Deprecated. Use cluster instead.
    * This is the gkeName where the game server cluster is installed.
    * It must the format "projects/&#42;&#47;locations/&#42;&#47;clusters/&#42;". For example,
    * "projects/my-project/locations/us-central1/clusters/test".
    * </pre>
    *
-   * <code>string gke_name = 6;</code>
+   * <code>string gke_name = 6 [deprecated = true];</code>
    */
+  @java.lang.Deprecated
   public java.lang.String getGkeName() {
     java.lang.Object ref = gkeName_;
     if (ref instanceof java.lang.String) {
@@ -186,13 +294,15 @@ public final class GameServerClusterConnectionInfo extends com.google.protobuf.G
    *
    *
    * <pre>
+   * Deprecated. Use cluster instead.
    * This is the gkeName where the game server cluster is installed.
    * It must the format "projects/&#42;&#47;locations/&#42;&#47;clusters/&#42;". For example,
    * "projects/my-project/locations/us-central1/clusters/test".
    * </pre>
    *
-   * <code>string gke_name = 6;</code>
+   * <code>string gke_name = 6 [deprecated = true];</code>
    */
+  @java.lang.Deprecated
   public com.google.protobuf.ByteString getGkeNameBytes() {
     java.lang.Object ref = gkeName_;
     if (ref instanceof java.lang.String) {
@@ -225,6 +335,10 @@ public final class GameServerClusterConnectionInfo extends com.google.protobuf.G
     if (!getGkeNameBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 6, gkeName_);
     }
+    if (clusterReferenceCase_ == 7) {
+      output.writeMessage(
+          7, (com.google.cloud.gaming.v1alpha.GkeClusterReference) clusterReference_);
+    }
     unknownFields.writeTo(output);
   }
 
@@ -239,6 +353,11 @@ public final class GameServerClusterConnectionInfo extends com.google.protobuf.G
     }
     if (!getGkeNameBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, gkeName_);
+    }
+    if (clusterReferenceCase_ == 7) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              7, (com.google.cloud.gaming.v1alpha.GkeClusterReference) clusterReference_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -258,6 +377,14 @@ public final class GameServerClusterConnectionInfo extends com.google.protobuf.G
 
     if (!getNamespace().equals(other.getNamespace())) return false;
     if (!getGkeName().equals(other.getGkeName())) return false;
+    if (!getClusterReferenceCase().equals(other.getClusterReferenceCase())) return false;
+    switch (clusterReferenceCase_) {
+      case 7:
+        if (!getGkeClusterReference().equals(other.getGkeClusterReference())) return false;
+        break;
+      case 0:
+      default:
+    }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -273,6 +400,14 @@ public final class GameServerClusterConnectionInfo extends com.google.protobuf.G
     hash = (53 * hash) + getNamespace().hashCode();
     hash = (37 * hash) + GKE_NAME_FIELD_NUMBER;
     hash = (53 * hash) + getGkeName().hashCode();
+    switch (clusterReferenceCase_) {
+      case 7:
+        hash = (37 * hash) + GKE_CLUSTER_REFERENCE_FIELD_NUMBER;
+        hash = (53 * hash) + getGkeClusterReference().hashCode();
+        break;
+      case 0:
+      default:
+    }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -423,6 +558,8 @@ public final class GameServerClusterConnectionInfo extends com.google.protobuf.G
 
       gkeName_ = "";
 
+      clusterReferenceCase_ = 0;
+      clusterReference_ = null;
       return this;
     }
 
@@ -451,8 +588,16 @@ public final class GameServerClusterConnectionInfo extends com.google.protobuf.G
     public com.google.cloud.gaming.v1alpha.GameServerClusterConnectionInfo buildPartial() {
       com.google.cloud.gaming.v1alpha.GameServerClusterConnectionInfo result =
           new com.google.cloud.gaming.v1alpha.GameServerClusterConnectionInfo(this);
+      if (clusterReferenceCase_ == 7) {
+        if (gkeClusterReferenceBuilder_ == null) {
+          result.clusterReference_ = clusterReference_;
+        } else {
+          result.clusterReference_ = gkeClusterReferenceBuilder_.build();
+        }
+      }
       result.namespace_ = namespace_;
       result.gkeName_ = gkeName_;
+      result.clusterReferenceCase_ = clusterReferenceCase_;
       onBuilt();
       return result;
     }
@@ -513,6 +658,17 @@ public final class GameServerClusterConnectionInfo extends com.google.protobuf.G
         gkeName_ = other.gkeName_;
         onChanged();
       }
+      switch (other.getClusterReferenceCase()) {
+        case GKE_CLUSTER_REFERENCE:
+          {
+            mergeGkeClusterReference(other.getGkeClusterReference());
+            break;
+          }
+        case CLUSTERREFERENCE_NOT_SET:
+          {
+            break;
+          }
+      }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
       return this;
@@ -544,12 +700,236 @@ public final class GameServerClusterConnectionInfo extends com.google.protobuf.G
       return this;
     }
 
+    private int clusterReferenceCase_ = 0;
+    private java.lang.Object clusterReference_;
+
+    public ClusterReferenceCase getClusterReferenceCase() {
+      return ClusterReferenceCase.forNumber(clusterReferenceCase_);
+    }
+
+    public Builder clearClusterReference() {
+      clusterReferenceCase_ = 0;
+      clusterReference_ = null;
+      onChanged();
+      return this;
+    }
+
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.gaming.v1alpha.GkeClusterReference,
+            com.google.cloud.gaming.v1alpha.GkeClusterReference.Builder,
+            com.google.cloud.gaming.v1alpha.GkeClusterReferenceOrBuilder>
+        gkeClusterReferenceBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Reference of the GKE cluster where the game servers are installed.
+     * </pre>
+     *
+     * <code>.google.cloud.gaming.v1alpha.GkeClusterReference gke_cluster_reference = 7;</code>
+     */
+    public boolean hasGkeClusterReference() {
+      return clusterReferenceCase_ == 7;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Reference of the GKE cluster where the game servers are installed.
+     * </pre>
+     *
+     * <code>.google.cloud.gaming.v1alpha.GkeClusterReference gke_cluster_reference = 7;</code>
+     */
+    public com.google.cloud.gaming.v1alpha.GkeClusterReference getGkeClusterReference() {
+      if (gkeClusterReferenceBuilder_ == null) {
+        if (clusterReferenceCase_ == 7) {
+          return (com.google.cloud.gaming.v1alpha.GkeClusterReference) clusterReference_;
+        }
+        return com.google.cloud.gaming.v1alpha.GkeClusterReference.getDefaultInstance();
+      } else {
+        if (clusterReferenceCase_ == 7) {
+          return gkeClusterReferenceBuilder_.getMessage();
+        }
+        return com.google.cloud.gaming.v1alpha.GkeClusterReference.getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Reference of the GKE cluster where the game servers are installed.
+     * </pre>
+     *
+     * <code>.google.cloud.gaming.v1alpha.GkeClusterReference gke_cluster_reference = 7;</code>
+     */
+    public Builder setGkeClusterReference(
+        com.google.cloud.gaming.v1alpha.GkeClusterReference value) {
+      if (gkeClusterReferenceBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        clusterReference_ = value;
+        onChanged();
+      } else {
+        gkeClusterReferenceBuilder_.setMessage(value);
+      }
+      clusterReferenceCase_ = 7;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Reference of the GKE cluster where the game servers are installed.
+     * </pre>
+     *
+     * <code>.google.cloud.gaming.v1alpha.GkeClusterReference gke_cluster_reference = 7;</code>
+     */
+    public Builder setGkeClusterReference(
+        com.google.cloud.gaming.v1alpha.GkeClusterReference.Builder builderForValue) {
+      if (gkeClusterReferenceBuilder_ == null) {
+        clusterReference_ = builderForValue.build();
+        onChanged();
+      } else {
+        gkeClusterReferenceBuilder_.setMessage(builderForValue.build());
+      }
+      clusterReferenceCase_ = 7;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Reference of the GKE cluster where the game servers are installed.
+     * </pre>
+     *
+     * <code>.google.cloud.gaming.v1alpha.GkeClusterReference gke_cluster_reference = 7;</code>
+     */
+    public Builder mergeGkeClusterReference(
+        com.google.cloud.gaming.v1alpha.GkeClusterReference value) {
+      if (gkeClusterReferenceBuilder_ == null) {
+        if (clusterReferenceCase_ == 7
+            && clusterReference_
+                != com.google.cloud.gaming.v1alpha.GkeClusterReference.getDefaultInstance()) {
+          clusterReference_ =
+              com.google.cloud.gaming.v1alpha.GkeClusterReference.newBuilder(
+                      (com.google.cloud.gaming.v1alpha.GkeClusterReference) clusterReference_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          clusterReference_ = value;
+        }
+        onChanged();
+      } else {
+        if (clusterReferenceCase_ == 7) {
+          gkeClusterReferenceBuilder_.mergeFrom(value);
+        }
+        gkeClusterReferenceBuilder_.setMessage(value);
+      }
+      clusterReferenceCase_ = 7;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Reference of the GKE cluster where the game servers are installed.
+     * </pre>
+     *
+     * <code>.google.cloud.gaming.v1alpha.GkeClusterReference gke_cluster_reference = 7;</code>
+     */
+    public Builder clearGkeClusterReference() {
+      if (gkeClusterReferenceBuilder_ == null) {
+        if (clusterReferenceCase_ == 7) {
+          clusterReferenceCase_ = 0;
+          clusterReference_ = null;
+          onChanged();
+        }
+      } else {
+        if (clusterReferenceCase_ == 7) {
+          clusterReferenceCase_ = 0;
+          clusterReference_ = null;
+        }
+        gkeClusterReferenceBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Reference of the GKE cluster where the game servers are installed.
+     * </pre>
+     *
+     * <code>.google.cloud.gaming.v1alpha.GkeClusterReference gke_cluster_reference = 7;</code>
+     */
+    public com.google.cloud.gaming.v1alpha.GkeClusterReference.Builder
+        getGkeClusterReferenceBuilder() {
+      return getGkeClusterReferenceFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Reference of the GKE cluster where the game servers are installed.
+     * </pre>
+     *
+     * <code>.google.cloud.gaming.v1alpha.GkeClusterReference gke_cluster_reference = 7;</code>
+     */
+    public com.google.cloud.gaming.v1alpha.GkeClusterReferenceOrBuilder
+        getGkeClusterReferenceOrBuilder() {
+      if ((clusterReferenceCase_ == 7) && (gkeClusterReferenceBuilder_ != null)) {
+        return gkeClusterReferenceBuilder_.getMessageOrBuilder();
+      } else {
+        if (clusterReferenceCase_ == 7) {
+          return (com.google.cloud.gaming.v1alpha.GkeClusterReference) clusterReference_;
+        }
+        return com.google.cloud.gaming.v1alpha.GkeClusterReference.getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Reference of the GKE cluster where the game servers are installed.
+     * </pre>
+     *
+     * <code>.google.cloud.gaming.v1alpha.GkeClusterReference gke_cluster_reference = 7;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.gaming.v1alpha.GkeClusterReference,
+            com.google.cloud.gaming.v1alpha.GkeClusterReference.Builder,
+            com.google.cloud.gaming.v1alpha.GkeClusterReferenceOrBuilder>
+        getGkeClusterReferenceFieldBuilder() {
+      if (gkeClusterReferenceBuilder_ == null) {
+        if (!(clusterReferenceCase_ == 7)) {
+          clusterReference_ =
+              com.google.cloud.gaming.v1alpha.GkeClusterReference.getDefaultInstance();
+        }
+        gkeClusterReferenceBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.gaming.v1alpha.GkeClusterReference,
+                com.google.cloud.gaming.v1alpha.GkeClusterReference.Builder,
+                com.google.cloud.gaming.v1alpha.GkeClusterReferenceOrBuilder>(
+                (com.google.cloud.gaming.v1alpha.GkeClusterReference) clusterReference_,
+                getParentForChildren(),
+                isClean());
+        clusterReference_ = null;
+      }
+      clusterReferenceCase_ = 7;
+      onChanged();
+      ;
+      return gkeClusterReferenceBuilder_;
+    }
+
     private java.lang.Object namespace_ = "";
     /**
      *
      *
      * <pre>
-     * Namespace for Kubernetes API server endpoint.
+     * Namespace designated on the game server cluster where the game server
+     * instances will be created. The namespace existence will be validated
+     * during creation.
      * </pre>
      *
      * <code>string namespace = 5;</code>
@@ -569,7 +949,9 @@ public final class GameServerClusterConnectionInfo extends com.google.protobuf.G
      *
      *
      * <pre>
-     * Namespace for Kubernetes API server endpoint.
+     * Namespace designated on the game server cluster where the game server
+     * instances will be created. The namespace existence will be validated
+     * during creation.
      * </pre>
      *
      * <code>string namespace = 5;</code>
@@ -589,7 +971,9 @@ public final class GameServerClusterConnectionInfo extends com.google.protobuf.G
      *
      *
      * <pre>
-     * Namespace for Kubernetes API server endpoint.
+     * Namespace designated on the game server cluster where the game server
+     * instances will be created. The namespace existence will be validated
+     * during creation.
      * </pre>
      *
      * <code>string namespace = 5;</code>
@@ -607,7 +991,9 @@ public final class GameServerClusterConnectionInfo extends com.google.protobuf.G
      *
      *
      * <pre>
-     * Namespace for Kubernetes API server endpoint.
+     * Namespace designated on the game server cluster where the game server
+     * instances will be created. The namespace existence will be validated
+     * during creation.
      * </pre>
      *
      * <code>string namespace = 5;</code>
@@ -622,7 +1008,9 @@ public final class GameServerClusterConnectionInfo extends com.google.protobuf.G
      *
      *
      * <pre>
-     * Namespace for Kubernetes API server endpoint.
+     * Namespace designated on the game server cluster where the game server
+     * instances will be created. The namespace existence will be validated
+     * during creation.
      * </pre>
      *
      * <code>string namespace = 5;</code>
@@ -643,13 +1031,15 @@ public final class GameServerClusterConnectionInfo extends com.google.protobuf.G
      *
      *
      * <pre>
+     * Deprecated. Use cluster instead.
      * This is the gkeName where the game server cluster is installed.
      * It must the format "projects/&#42;&#47;locations/&#42;&#47;clusters/&#42;". For example,
      * "projects/my-project/locations/us-central1/clusters/test".
      * </pre>
      *
-     * <code>string gke_name = 6;</code>
+     * <code>string gke_name = 6 [deprecated = true];</code>
      */
+    @java.lang.Deprecated
     public java.lang.String getGkeName() {
       java.lang.Object ref = gkeName_;
       if (!(ref instanceof java.lang.String)) {
@@ -665,13 +1055,15 @@ public final class GameServerClusterConnectionInfo extends com.google.protobuf.G
      *
      *
      * <pre>
+     * Deprecated. Use cluster instead.
      * This is the gkeName where the game server cluster is installed.
      * It must the format "projects/&#42;&#47;locations/&#42;&#47;clusters/&#42;". For example,
      * "projects/my-project/locations/us-central1/clusters/test".
      * </pre>
      *
-     * <code>string gke_name = 6;</code>
+     * <code>string gke_name = 6 [deprecated = true];</code>
      */
+    @java.lang.Deprecated
     public com.google.protobuf.ByteString getGkeNameBytes() {
       java.lang.Object ref = gkeName_;
       if (ref instanceof String) {
@@ -687,13 +1079,15 @@ public final class GameServerClusterConnectionInfo extends com.google.protobuf.G
      *
      *
      * <pre>
+     * Deprecated. Use cluster instead.
      * This is the gkeName where the game server cluster is installed.
      * It must the format "projects/&#42;&#47;locations/&#42;&#47;clusters/&#42;". For example,
      * "projects/my-project/locations/us-central1/clusters/test".
      * </pre>
      *
-     * <code>string gke_name = 6;</code>
+     * <code>string gke_name = 6 [deprecated = true];</code>
      */
+    @java.lang.Deprecated
     public Builder setGkeName(java.lang.String value) {
       if (value == null) {
         throw new NullPointerException();
@@ -707,13 +1101,15 @@ public final class GameServerClusterConnectionInfo extends com.google.protobuf.G
      *
      *
      * <pre>
+     * Deprecated. Use cluster instead.
      * This is the gkeName where the game server cluster is installed.
      * It must the format "projects/&#42;&#47;locations/&#42;&#47;clusters/&#42;". For example,
      * "projects/my-project/locations/us-central1/clusters/test".
      * </pre>
      *
-     * <code>string gke_name = 6;</code>
+     * <code>string gke_name = 6 [deprecated = true];</code>
      */
+    @java.lang.Deprecated
     public Builder clearGkeName() {
 
       gkeName_ = getDefaultInstance().getGkeName();
@@ -724,13 +1120,15 @@ public final class GameServerClusterConnectionInfo extends com.google.protobuf.G
      *
      *
      * <pre>
+     * Deprecated. Use cluster instead.
      * This is the gkeName where the game server cluster is installed.
      * It must the format "projects/&#42;&#47;locations/&#42;&#47;clusters/&#42;". For example,
      * "projects/my-project/locations/us-central1/clusters/test".
      * </pre>
      *
-     * <code>string gke_name = 6;</code>
+     * <code>string gke_name = 6 [deprecated = true];</code>
      */
+    @java.lang.Deprecated
     public Builder setGkeNameBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
         throw new NullPointerException();

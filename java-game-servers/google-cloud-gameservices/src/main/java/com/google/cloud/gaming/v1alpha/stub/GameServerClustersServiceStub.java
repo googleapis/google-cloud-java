@@ -35,7 +35,7 @@ import javax.annotation.Generated;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS
 /**
- * Base stub class for gameservices API (prod).
+ * Base stub class for Game Services API.
  *
  * <p>This class is for advanced usage and reflects the underlying API directly.
  */

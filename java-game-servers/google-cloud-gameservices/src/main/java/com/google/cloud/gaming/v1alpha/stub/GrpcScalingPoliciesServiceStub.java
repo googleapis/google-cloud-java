@@ -46,7 +46,7 @@ import javax.annotation.Generated;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS
 /**
- * gRPC stub implementation for gameservices API (prod).
+ * gRPC stub implementation for Game Services API.
  *
  * <p>This class is for advanced usage and reflects the underlying API directly.
  */

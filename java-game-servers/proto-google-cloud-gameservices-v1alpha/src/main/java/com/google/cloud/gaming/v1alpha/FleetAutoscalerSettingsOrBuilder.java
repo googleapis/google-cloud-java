@@ -40,14 +40,15 @@ public interface FleetAutoscalerSettingsOrBuilder
    *
    *
    * <pre>
-   * The size of a buffer of ready game server instances in percentage.
-   * As game server instances get allocated or terminated, the fleet will be
-   * scaled up and down so that this buffer is maintained.
+   * The size of a buffer of ready game server instances in percentage. Value
+   * must be in range [1, 99]. As game server instances get allocated or
+   * terminated, the fleet will be scaled up and down so that this buffer is
+   * maintained.
    * </pre>
    *
-   * <code>float buffer_size_percentage = 2;</code>
+   * <code>int32 buffer_size_percentage = 2;</code>
    */
-  float getBufferSizePercentage();
+  int getBufferSizePercentage();
 
   /**
    *

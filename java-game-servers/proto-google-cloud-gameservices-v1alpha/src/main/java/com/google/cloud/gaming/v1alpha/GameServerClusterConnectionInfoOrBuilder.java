@@ -27,7 +27,40 @@ public interface GameServerClusterConnectionInfoOrBuilder
    *
    *
    * <pre>
-   * Namespace for Kubernetes API server endpoint.
+   * Reference of the GKE cluster where the game servers are installed.
+   * </pre>
+   *
+   * <code>.google.cloud.gaming.v1alpha.GkeClusterReference gke_cluster_reference = 7;</code>
+   */
+  boolean hasGkeClusterReference();
+  /**
+   *
+   *
+   * <pre>
+   * Reference of the GKE cluster where the game servers are installed.
+   * </pre>
+   *
+   * <code>.google.cloud.gaming.v1alpha.GkeClusterReference gke_cluster_reference = 7;</code>
+   */
+  com.google.cloud.gaming.v1alpha.GkeClusterReference getGkeClusterReference();
+  /**
+   *
+   *
+   * <pre>
+   * Reference of the GKE cluster where the game servers are installed.
+   * </pre>
+   *
+   * <code>.google.cloud.gaming.v1alpha.GkeClusterReference gke_cluster_reference = 7;</code>
+   */
+  com.google.cloud.gaming.v1alpha.GkeClusterReferenceOrBuilder getGkeClusterReferenceOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Namespace designated on the game server cluster where the game server
+   * instances will be created. The namespace existence will be validated
+   * during creation.
    * </pre>
    *
    * <code>string namespace = 5;</code>
@@ -37,7 +70,9 @@ public interface GameServerClusterConnectionInfoOrBuilder
    *
    *
    * <pre>
-   * Namespace for Kubernetes API server endpoint.
+   * Namespace designated on the game server cluster where the game server
+   * instances will be created. The namespace existence will be validated
+   * during creation.
    * </pre>
    *
    * <code>string namespace = 5;</code>
@@ -48,24 +83,31 @@ public interface GameServerClusterConnectionInfoOrBuilder
    *
    *
    * <pre>
+   * Deprecated. Use cluster instead.
    * This is the gkeName where the game server cluster is installed.
    * It must the format "projects/&#42;&#47;locations/&#42;&#47;clusters/&#42;". For example,
    * "projects/my-project/locations/us-central1/clusters/test".
    * </pre>
    *
-   * <code>string gke_name = 6;</code>
+   * <code>string gke_name = 6 [deprecated = true];</code>
    */
+  @java.lang.Deprecated
   java.lang.String getGkeName();
   /**
    *
    *
    * <pre>
+   * Deprecated. Use cluster instead.
    * This is the gkeName where the game server cluster is installed.
    * It must the format "projects/&#42;&#47;locations/&#42;&#47;clusters/&#42;". For example,
    * "projects/my-project/locations/us-central1/clusters/test".
    * </pre>
    *
-   * <code>string gke_name = 6;</code>
+   * <code>string gke_name = 6 [deprecated = true];</code>
    */
+  @java.lang.Deprecated
   com.google.protobuf.ByteString getGkeNameBytes();
+
+  public com.google.cloud.gaming.v1alpha.GameServerClusterConnectionInfo.ClusterReferenceCase
+      getClusterReferenceCase();
 }

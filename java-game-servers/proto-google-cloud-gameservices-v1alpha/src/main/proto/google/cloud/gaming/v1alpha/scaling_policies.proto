@@ -20,7 +20,6 @@ package google.cloud.gaming.v1alpha;
 import "google/api/annotations.proto";
 import "google/cloud/gaming/v1alpha/common.proto";
 import "google/longrunning/operations.proto";
-import "google/protobuf/duration.proto";
 import "google/protobuf/field_mask.proto";
 import "google/protobuf/timestamp.proto";
 import "google/protobuf/wrappers.proto";
@@ -35,6 +34,7 @@ option java_package = "com.google.cloud.gaming.v1alpha";
 // each fleet.
 service ScalingPoliciesService {
   option (google.api.default_host) = "gameservices.googleapis.com";
+  option (google.api.oauth_scopes) = "https://www.googleapis.com/auth/cloud-platform";
 
   // Lists ScalingPolicies in a given project and location.
   rpc ListScalingPolicies(ListScalingPoliciesRequest) returns (ListScalingPoliciesResponse) {
@@ -161,10 +161,11 @@ message FleetAutoscalerSettings {
     // scaled up and down so that this buffer is maintained.
     int64 buffer_size_absolute = 1;
 
-    // The size of a buffer of ready game server instances in percentage.
-    // As game server instances get allocated or terminated, the fleet will be
-    // scaled up and down so that this buffer is maintained.
-    float buffer_size_percentage = 2;
+    // The size of a buffer of ready game server instances in percentage. Value
+    // must be in range [1, 99]. As game server instances get allocated or
+    // terminated, the fleet will be scaled up and down so that this buffer is
+    // maintained.
+    int32 buffer_size_percentage = 2;
   }
 
   // The minimum fleet size.

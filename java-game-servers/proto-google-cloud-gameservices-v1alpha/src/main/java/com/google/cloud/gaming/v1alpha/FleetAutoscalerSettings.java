@@ -69,10 +69,10 @@ public final class FleetAutoscalerSettings extends com.google.protobuf.Generated
               bufferSize_ = input.readInt64();
               break;
             }
-          case 21:
+          case 16:
             {
               bufferSizeCase_ = 2;
-              bufferSize_ = input.readFloat();
+              bufferSize_ = input.readInt32();
               break;
             }
           case 24:
@@ -183,18 +183,19 @@ public final class FleetAutoscalerSettings extends com.google.protobuf.Generated
    *
    *
    * <pre>
-   * The size of a buffer of ready game server instances in percentage.
-   * As game server instances get allocated or terminated, the fleet will be
-   * scaled up and down so that this buffer is maintained.
+   * The size of a buffer of ready game server instances in percentage. Value
+   * must be in range [1, 99]. As game server instances get allocated or
+   * terminated, the fleet will be scaled up and down so that this buffer is
+   * maintained.
    * </pre>
    *
-   * <code>float buffer_size_percentage = 2;</code>
+   * <code>int32 buffer_size_percentage = 2;</code>
    */
-  public float getBufferSizePercentage() {
+  public int getBufferSizePercentage() {
     if (bufferSizeCase_ == 2) {
-      return (java.lang.Float) bufferSize_;
+      return (java.lang.Integer) bufferSize_;
     }
-    return 0F;
+    return 0;
   }
 
   public static final int MIN_REPLICAS_FIELD_NUMBER = 3;
@@ -245,7 +246,7 @@ public final class FleetAutoscalerSettings extends com.google.protobuf.Generated
       output.writeInt64(1, (long) ((java.lang.Long) bufferSize_));
     }
     if (bufferSizeCase_ == 2) {
-      output.writeFloat(2, (float) ((java.lang.Float) bufferSize_));
+      output.writeInt32(2, (int) ((java.lang.Integer) bufferSize_));
     }
     if (minReplicas_ != 0L) {
       output.writeInt64(3, minReplicas_);
@@ -269,8 +270,8 @@ public final class FleetAutoscalerSettings extends com.google.protobuf.Generated
     }
     if (bufferSizeCase_ == 2) {
       size +=
-          com.google.protobuf.CodedOutputStream.computeFloatSize(
-              2, (float) ((java.lang.Float) bufferSize_));
+          com.google.protobuf.CodedOutputStream.computeInt32Size(
+              2, (int) ((java.lang.Integer) bufferSize_));
     }
     if (minReplicas_ != 0L) {
       size += com.google.protobuf.CodedOutputStream.computeInt64Size(3, minReplicas_);
@@ -302,8 +303,7 @@ public final class FleetAutoscalerSettings extends com.google.protobuf.Generated
         if (getBufferSizeAbsolute() != other.getBufferSizeAbsolute()) return false;
         break;
       case 2:
-        if (java.lang.Float.floatToIntBits(getBufferSizePercentage())
-            != java.lang.Float.floatToIntBits(other.getBufferSizePercentage())) return false;
+        if (getBufferSizePercentage() != other.getBufferSizePercentage()) return false;
         break;
       case 0:
       default:
@@ -330,7 +330,7 @@ public final class FleetAutoscalerSettings extends com.google.protobuf.Generated
         break;
       case 2:
         hash = (37 * hash) + BUFFER_SIZE_PERCENTAGE_FIELD_NUMBER;
-        hash = (53 * hash) + java.lang.Float.floatToIntBits(getBufferSizePercentage());
+        hash = (53 * hash) + getBufferSizePercentage();
         break;
       case 0:
       default:
@@ -697,31 +697,33 @@ public final class FleetAutoscalerSettings extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * The size of a buffer of ready game server instances in percentage.
-     * As game server instances get allocated or terminated, the fleet will be
-     * scaled up and down so that this buffer is maintained.
+     * The size of a buffer of ready game server instances in percentage. Value
+     * must be in range [1, 99]. As game server instances get allocated or
+     * terminated, the fleet will be scaled up and down so that this buffer is
+     * maintained.
      * </pre>
      *
-     * <code>float buffer_size_percentage = 2;</code>
+     * <code>int32 buffer_size_percentage = 2;</code>
      */
-    public float getBufferSizePercentage() {
+    public int getBufferSizePercentage() {
       if (bufferSizeCase_ == 2) {
-        return (java.lang.Float) bufferSize_;
+        return (java.lang.Integer) bufferSize_;
       }
-      return 0F;
+      return 0;
     }
     /**
      *
      *
      * <pre>
-     * The size of a buffer of ready game server instances in percentage.
-     * As game server instances get allocated or terminated, the fleet will be
-     * scaled up and down so that this buffer is maintained.
+     * The size of a buffer of ready game server instances in percentage. Value
+     * must be in range [1, 99]. As game server instances get allocated or
+     * terminated, the fleet will be scaled up and down so that this buffer is
+     * maintained.
      * </pre>
      *
-     * <code>float buffer_size_percentage = 2;</code>
+     * <code>int32 buffer_size_percentage = 2;</code>
      */
-    public Builder setBufferSizePercentage(float value) {
+    public Builder setBufferSizePercentage(int value) {
       bufferSizeCase_ = 2;
       bufferSize_ = value;
       onChanged();
@@ -731,12 +733,13 @@ public final class FleetAutoscalerSettings extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * The size of a buffer of ready game server instances in percentage.
-     * As game server instances get allocated or terminated, the fleet will be
-     * scaled up and down so that this buffer is maintained.
+     * The size of a buffer of ready game server instances in percentage. Value
+     * must be in range [1, 99]. As game server instances get allocated or
+     * terminated, the fleet will be scaled up and down so that this buffer is
+     * maintained.
      * </pre>
      *
-     * <code>float buffer_size_percentage = 2;</code>
+     * <code>int32 buffer_size_percentage = 2;</code>
      */
     public Builder clearBufferSizePercentage() {
       if (bufferSizeCase_ == 2) {

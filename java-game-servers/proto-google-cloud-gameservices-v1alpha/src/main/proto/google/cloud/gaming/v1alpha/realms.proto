@@ -32,6 +32,7 @@ option java_package = "com.google.cloud.gaming.v1alpha";
 // gamer population.
 service RealmsService {
   option (google.api.default_host) = "gameservices.googleapis.com";
+  option (google.api.oauth_scopes) = "https://www.googleapis.com/auth/cloud-platform";
 
   // Lists realms in a given project and location.
   rpc ListRealms(ListRealmsRequest) returns (ListRealmsResponse) {

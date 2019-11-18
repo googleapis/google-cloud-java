@@ -161,7 +161,7 @@ public final class GameServerDeployments {
           + "late\022Q\n\030new_game_server_template\030\006 \001(\0132/"
           + ".google.cloud.gaming.v1alpha.GameServerT"
           + "emplate\032-\n\013LabelsEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005v"
-          + "alue\030\002 \001(\t:\0028\0012\346\020\n\034GameServerDeployments"
+          + "alue\030\002 \001(\t:\0028\0012\227\021\n\034GameServerDeployments"
           + "Service\022\342\001\n\031ListGameServerDeployments\022=."
           + "google.cloud.gaming.v1alpha.ListGameServ"
           + "erDeploymentsRequest\032>.google.cloud.gami"
@@ -214,10 +214,12 @@ public final class GameServerDeployments {
           + "oogle.cloud.gaming.v1alpha.DeploymentTar"
           + "get\"Z\202\323\344\223\002T\022R/v1alpha/{name=projects/*/l"
           + "ocations/*/gameServerDeployments/*}:getD"
-          + "eploymentTarget\032\036\312A\033gameservices.googlea"
-          + "pis.comBf\n\037com.google.cloud.gaming.v1alp"
-          + "haP\001ZAgoogle.golang.org/genproto/googlea"
-          + "pis/cloud/gaming/v1alpha;gamingb\006proto3"
+          + "eploymentTarget\032O\312A\033gameservices.googlea"
+          + "pis.com\322A.https://www.googleapis.com/aut"
+          + "h/cloud-platformBf\n\037com.google.cloud.gam"
+          + "ing.v1alphaP\001ZAgoogle.golang.org/genprot"
+          + "o/googleapis/cloud/gaming/v1alpha;gaming"
+          + "b\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner() {
@@ -387,6 +389,7 @@ public final class GameServerDeployments {
         com.google.protobuf.ExtensionRegistry.newInstance();
     registry.add(com.google.api.ClientProto.defaultHost);
     registry.add(com.google.api.AnnotationsProto.http);
+    registry.add(com.google.api.ClientProto.oauthScopes);
     com.google.protobuf.Descriptors.FileDescriptor.internalUpdateFileDescriptor(
         descriptor, registry);
     com.google.api.AnnotationsProto.getDescriptor();

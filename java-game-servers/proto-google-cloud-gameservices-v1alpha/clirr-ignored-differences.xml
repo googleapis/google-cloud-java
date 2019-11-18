@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- see http://www.mojohaus.org/clirr-maven-plugin/examples/ignored-differences.html -->
+<differences>
+  <difference>
+    <differenceType>7012</differenceType>
+    <className>com/google/cloud/gaming/v1alpha/*OrBuilder</className>
+    <method>* get*(*)</method>
+  </difference>
+  <difference>
+    <differenceType>7012</differenceType>
+    <className>com/google/cloud/gaming/v1alpha/*OrBuilder</className>
+    <method>boolean contains*(*)</method>
+  </difference>
+  <difference>
+    <differenceType>7012</differenceType>
+    <className>com/google/cloud/gaming/v1alpha/*OrBuilder</className>
+    <method>boolean has*(*)</method>
+  </difference>
+
+  <!-- TODO: remove after 0.18.0 is released -->
+  <difference>
+    <differenceType>7006</differenceType>
+    <className>com/google/cloud/gaming/v1alpha/FleetAutoscalerSettings*</className>
+    <method>float getBufferSizePercentage()</method>
+    <to>int</to>
+  </difference>
+  <difference>
+    <differenceType>7005</differenceType>
+    <className>com/google/cloud/gaming/v1alpha/FleetAutoscalerSettings$Builder</className>
+    <method>com.google.cloud.gaming.v1alpha.FleetAutoscalerSettings$Builder setBufferSizePercentage(float)</method>
+    <to>com.google.cloud.gaming.v1alpha.FleetAutoscalerSettings$Builder setBufferSizePercentage(int)</to>
+  </difference>
+</differences>

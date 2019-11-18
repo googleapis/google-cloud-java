@@ -15,7 +15,7 @@
  */
 
 /**
- * A client to gameservices API (prod).
+ * A client to Game Services API.
  *
  * <p>The interfaces provided are listed below, along with usage samples.
  *

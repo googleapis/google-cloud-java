@@ -92,7 +92,7 @@ public final class Realms {
           + ".protobuf.Timestamp\022>\n\006labels\030\004 \003(\0132..go"
           + "ogle.cloud.gaming.v1alpha.Realm.LabelsEn"
           + "try\022\021\n\ttime_zone\030\006 \001(\t\032-\n\013LabelsEntry\022\013\n"
-          + "\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\0012\317\006\n\rRealms"
+          + "\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\0012\200\007\n\rRealms"
           + "Service\022\246\001\n\nListRealms\022..google.cloud.ga"
           + "ming.v1alpha.ListRealmsRequest\032/.google."
           + "cloud.gaming.v1alpha.ListRealmsResponse\""
@@ -113,10 +113,11 @@ public final class Realms {
           + "v1alpha.UpdateRealmRequest\032\035.google.long"
           + "running.Operation\"D\202\323\344\223\002>25/v1alpha/{rea"
           + "lm.name=projects/*/locations/*/realms/*}"
-          + ":\005realm\032\036\312A\033gameservices.googleapis.comB"
-          + "f\n\037com.google.cloud.gaming.v1alphaP\001ZAgo"
-          + "ogle.golang.org/genproto/googleapis/clou"
-          + "d/gaming/v1alpha;gamingb\006proto3"
+          + ":\005realm\032O\312A\033gameservices.googleapis.com\322"
+          + "A.https://www.googleapis.com/auth/cloud-"
+          + "platformBf\n\037com.google.cloud.gaming.v1al"
+          + "phaP\001ZAgoogle.golang.org/genproto/google"
+          + "apis/cloud/gaming/v1alpha;gamingb\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner() {
@@ -204,6 +205,7 @@ public final class Realms {
         com.google.protobuf.ExtensionRegistry.newInstance();
     registry.add(com.google.api.ClientProto.defaultHost);
     registry.add(com.google.api.AnnotationsProto.http);
+    registry.add(com.google.api.ClientProto.oauthScopes);
     com.google.protobuf.Descriptors.FileDescriptor.internalUpdateFileDescriptor(
         descriptor, registry);
     com.google.api.AnnotationsProto.getDescriptor();

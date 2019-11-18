@@ -32,6 +32,7 @@ option java_package = "com.google.cloud.gaming.v1alpha";
 // which are used to manage game server clusters.
 service GameServerClustersService {
   option (google.api.default_host) = "gameservices.googleapis.com";
+  option (google.api.oauth_scopes) = "https://www.googleapis.com/auth/cloud-platform";
 
   // Lists game server clusters in a given project and location.
   rpc ListGameServerClusters(ListGameServerClustersRequest) returns (ListGameServerClustersResponse) {
@@ -152,13 +153,37 @@ message UpdateGameServerClusterRequest {
 
 // Game server cluster connection information.
 message GameServerClusterConnectionInfo {
-  // Namespace for Kubernetes API server endpoint.
+  oneof cluster_reference {
+    // Reference of the GKE cluster where the game servers are installed.
+    GkeClusterReference gke_cluster_reference = 7;
+  }
+
+  // Namespace designated on the game server cluster where the game server
+  // instances will be created. The namespace existence will be validated
+  // during creation.
   string namespace = 5;
 
+  // Deprecated. Use cluster instead.
   // This is the gkeName where the game server cluster is installed.
   // It must the format "projects/*/locations/*/clusters/*". For example,
   // "projects/my-project/locations/us-central1/clusters/test".
-  string gke_name = 6;
+  string gke_name = 6 [deprecated = true];
+}
+
+// GkeClusterReference represents a reference of a GKE cluster.
+message GkeClusterReference {
+  // The full or partial name of a GKE cluster, using one of the following
+  // forms:
+  // <ul>
+  //    <li>`projects/{project_id}/locations/{location}/clusters/{cluster_id}`
+  //    </li>
+  //    <li>`locations/{location}/clusters/{cluster_id}`</li>
+  //    <li>`{cluster_id}`</li>
+  // </ul>
+  // If project and location are not specified, the project and location of the
+  // GameServerCluster resource are used to generate the full name of the
+  // GKE cluster.
+  string cluster = 1;
 }
 
 // A game server cluster resource.
