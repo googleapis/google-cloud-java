@@ -33,7 +33,7 @@ python3 -m pip install gcp-docuploader
 # compile all packages
 mvn clean install -B -DskipTests=true
 
-NAME=build
+NAME=google-cloud-build
 VERSION=$(grep ${NAME}: versions.txt | cut -d: -f3)
 
 # build the docs
