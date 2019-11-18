@@ -1,5 +1,16 @@
 # Changelog
 
+## [0.18.0](https://www.github.com/googleapis/java-gameservices/compare/v0.17.0...v0.18.0) (2019-11-18)
+
+
+### ⚠ BREAKING CHANGES
+
+* add gke_cluster_reference; buffer_size_percentage is now an int (#18)
+
+### Features
+
+* add gke_cluster_reference; buffer_size_percentage is now an int ([#18](https://www.github.com/googleapis/java-gameservices/issues/18)) ([4414980](https://www.github.com/googleapis/java-gameservices/commit/4414980b948fa37203f05d03e95f2b1c885f783b))
+
 ## [0.17.0](https://www.github.com/googleapis/java-gameservices/compare/0.16.0...v0.17.0) (2019-10-28)
 
 
