@@ -27,20 +27,20 @@ public interface PatchTracesRequestOrBuilder
    *
    *
    * <pre>
-   * ID of the Cloud project where the trace data is stored.
+   * Required. ID of the Cloud project where the trace data is stored.
    * </pre>
    *
-   * <code>string project_id = 1;</code>
+   * <code>string project_id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   java.lang.String getProjectId();
   /**
    *
    *
    * <pre>
-   * ID of the Cloud project where the trace data is stored.
+   * Required. ID of the Cloud project where the trace data is stored.
    * </pre>
    *
-   * <code>string project_id = 1;</code>
+   * <code>string project_id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   com.google.protobuf.ByteString getProjectIdBytes();
 
@@ -48,30 +48,36 @@ public interface PatchTracesRequestOrBuilder
    *
    *
    * <pre>
-   * The body of the message.
+   * Required. The body of the message.
    * </pre>
    *
-   * <code>.google.devtools.cloudtrace.v1.Traces traces = 2;</code>
+   * <code>
+   * .google.devtools.cloudtrace.v1.Traces traces = 2 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   boolean hasTraces();
   /**
    *
    *
    * <pre>
-   * The body of the message.
+   * Required. The body of the message.
    * </pre>
    *
-   * <code>.google.devtools.cloudtrace.v1.Traces traces = 2;</code>
+   * <code>
+   * .google.devtools.cloudtrace.v1.Traces traces = 2 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   com.google.devtools.cloudtrace.v1.Traces getTraces();
   /**
    *
    *
    * <pre>
-   * The body of the message.
+   * Required. The body of the message.
    * </pre>
    *
-   * <code>.google.devtools.cloudtrace.v1.Traces traces = 2;</code>
+   * <code>
+   * .google.devtools.cloudtrace.v1.Traces traces = 2 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   com.google.devtools.cloudtrace.v1.TracesOrBuilder getTracesOrBuilder();
 }

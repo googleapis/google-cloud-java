@@ -168,8 +168,8 @@ public class TraceServiceClient implements BackgroundResource {
    *
    * @param name Required. The name of the project where the spans belong. The format is
    *     `projects/[PROJECT_ID]`.
-   * @param spans A list of new spans. The span names must not match existing spans, or the results
-   *     are undefined.
+   * @param spans Required. A list of new spans. The span names must not match existing spans, or
+   *     the results are undefined.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final void batchWriteSpans(ProjectName name, List<Span> spans) {
@@ -198,8 +198,8 @@ public class TraceServiceClient implements BackgroundResource {
    *
    * @param name Required. The name of the project where the spans belong. The format is
    *     `projects/[PROJECT_ID]`.
-   * @param spans A list of new spans. The span names must not match existing spans, or the results
-   *     are undefined.
+   * @param spans Required. A list of new spans. The span names must not match existing spans, or
+   *     the results are undefined.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final void batchWriteSpans(String name, List<Span> spans) {

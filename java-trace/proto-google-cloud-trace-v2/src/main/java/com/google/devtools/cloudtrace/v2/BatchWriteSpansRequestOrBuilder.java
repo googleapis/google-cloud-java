@@ -31,7 +31,9 @@ public interface BatchWriteSpansRequestOrBuilder
    * `projects/[PROJECT_ID]`.
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>
+   * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    */
   java.lang.String getName();
   /**
@@ -42,7 +44,9 @@ public interface BatchWriteSpansRequestOrBuilder
    * `projects/[PROJECT_ID]`.
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>
+   * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    */
   com.google.protobuf.ByteString getNameBytes();
 
@@ -50,55 +54,65 @@ public interface BatchWriteSpansRequestOrBuilder
    *
    *
    * <pre>
-   * A list of new spans. The span names must not match existing
+   * Required. A list of new spans. The span names must not match existing
    * spans, or the results are undefined.
    * </pre>
    *
-   * <code>repeated .google.devtools.cloudtrace.v2.Span spans = 2;</code>
+   * <code>
+   * repeated .google.devtools.cloudtrace.v2.Span spans = 2 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   java.util.List<com.google.devtools.cloudtrace.v2.Span> getSpansList();
   /**
    *
    *
    * <pre>
-   * A list of new spans. The span names must not match existing
+   * Required. A list of new spans. The span names must not match existing
    * spans, or the results are undefined.
    * </pre>
    *
-   * <code>repeated .google.devtools.cloudtrace.v2.Span spans = 2;</code>
+   * <code>
+   * repeated .google.devtools.cloudtrace.v2.Span spans = 2 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   com.google.devtools.cloudtrace.v2.Span getSpans(int index);
   /**
    *
    *
    * <pre>
-   * A list of new spans. The span names must not match existing
+   * Required. A list of new spans. The span names must not match existing
    * spans, or the results are undefined.
    * </pre>
    *
-   * <code>repeated .google.devtools.cloudtrace.v2.Span spans = 2;</code>
+   * <code>
+   * repeated .google.devtools.cloudtrace.v2.Span spans = 2 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   int getSpansCount();
   /**
    *
    *
    * <pre>
-   * A list of new spans. The span names must not match existing
+   * Required. A list of new spans. The span names must not match existing
    * spans, or the results are undefined.
    * </pre>
    *
-   * <code>repeated .google.devtools.cloudtrace.v2.Span spans = 2;</code>
+   * <code>
+   * repeated .google.devtools.cloudtrace.v2.Span spans = 2 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   java.util.List<? extends com.google.devtools.cloudtrace.v2.SpanOrBuilder> getSpansOrBuilderList();
   /**
    *
    *
    * <pre>
-   * A list of new spans. The span names must not match existing
+   * Required. A list of new spans. The span names must not match existing
    * spans, or the results are undefined.
    * </pre>
    *
-   * <code>repeated .google.devtools.cloudtrace.v2.Span spans = 2;</code>
+   * <code>
+   * repeated .google.devtools.cloudtrace.v2.Span spans = 2 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   com.google.devtools.cloudtrace.v2.SpanOrBuilder getSpansOrBuilder(int index);
 }

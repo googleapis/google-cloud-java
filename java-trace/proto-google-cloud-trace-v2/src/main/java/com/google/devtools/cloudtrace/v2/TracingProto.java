@@ -42,24 +42,31 @@ public final class TracingProto {
     java.lang.String[] descriptorData = {
       "\n+google/devtools/cloudtrace/v2/tracing."
           + "proto\022\035google.devtools.cloudtrace.v2\032\034go"
-          + "ogle/api/annotations.proto\032)google/devto"
-          + "ols/cloudtrace/v2/trace.proto\032\033google/pr"
-          + "otobuf/empty.proto\032\037google/protobuf/time"
-          + "stamp.proto\"Z\n\026BatchWriteSpansRequest\022\014\n"
-          + "\004name\030\001 \001(\t\0222\n\005spans\030\002 \003(\0132#.google.devt"
-          + "ools.cloudtrace.v2.Span2\257\002\n\014TraceService"
-          + "\022\224\001\n\017BatchWriteSpans\0225.google.devtools.c"
-          + "loudtrace.v2.BatchWriteSpansRequest\032\026.go"
-          + "ogle.protobuf.Empty\"2\202\323\344\223\002,\"\'/v2/{name=p"
-          + "rojects/*}/traces:batchWrite:\001*\022\207\001\n\nCrea"
-          + "teSpan\022#.google.devtools.cloudtrace.v2.S"
-          + "pan\032#.google.devtools.cloudtrace.v2.Span"
-          + "\"/\202\323\344\223\002)\"$/v2/{name=projects/*/traces/*}"
-          + "/spans:\001*B\254\001\n!com.google.devtools.cloudt"
-          + "race.v2B\014TracingProtoP\001ZGgoogle.golang.o"
-          + "rg/genproto/googleapis/devtools/cloudtra"
-          + "ce/v2;cloudtrace\252\002\025Google.Cloud.Trace.V2"
-          + "\312\002\025Google\\Cloud\\Trace\\V2b\006proto3"
+          + "ogle/api/annotations.proto\032\027google/api/c"
+          + "lient.proto\032\037google/api/field_behavior.p"
+          + "roto\032\031google/api/resource.proto\032)google/"
+          + "devtools/cloudtrace/v2/trace.proto\032\033goog"
+          + "le/protobuf/empty.proto\032\037google/protobuf"
+          + "/timestamp.proto\"\224\001\n\026BatchWriteSpansRequ"
+          + "est\022A\n\004name\030\001 \001(\tB3\340A\002\372A-\n+cloudresource"
+          + "manager.googleapis.com/Project\0227\n\005spans\030"
+          + "\002 \003(\0132#.google.devtools.cloudtrace.v2.Sp"
+          + "anB\003\340A\0022\272\003\n\014TraceService\022\241\001\n\017BatchWriteS"
+          + "pans\0225.google.devtools.cloudtrace.v2.Bat"
+          + "chWriteSpansRequest\032\026.google.protobuf.Em"
+          + "pty\"?\202\323\344\223\002,\"\'/v2/{name=projects/*}/trace"
+          + "s:batchWrite:\001*\332A\nname,spans\022\211\001\n\nCreateS"
+          + "pan\022#.google.devtools.cloudtrace.v2.Span"
+          + "\032#.google.devtools.cloudtrace.v2.Span\"1\202"
+          + "\323\344\223\002+\"&/v2/{name=projects/*/traces/*/spa"
+          + "ns/*}:\001*\032z\312A\031cloudtrace.googleapis.com\322A"
+          + "[https://www.googleapis.com/auth/cloud-p"
+          + "latform,https://www.googleapis.com/auth/"
+          + "trace.appendB\254\001\n!com.google.devtools.clo"
+          + "udtrace.v2B\014TracingProtoP\001ZGgoogle.golan"
+          + "g.org/genproto/googleapis/devtools/cloud"
+          + "trace/v2;cloudtrace\252\002\025Google.Cloud.Trace"
+          + ".V2\312\002\025Google\\Cloud\\Trace\\V2b\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner() {
@@ -73,6 +80,9 @@ public final class TracingProto {
         descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
           com.google.api.AnnotationsProto.getDescriptor(),
+          com.google.api.ClientProto.getDescriptor(),
+          com.google.api.FieldBehaviorProto.getDescriptor(),
+          com.google.api.ResourceProto.getDescriptor(),
           com.google.devtools.cloudtrace.v2.TraceProto.getDescriptor(),
           com.google.protobuf.EmptyProto.getDescriptor(),
           com.google.protobuf.TimestampProto.getDescriptor(),
@@ -88,10 +98,18 @@ public final class TracingProto {
             });
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();
+    registry.add(com.google.api.ClientProto.defaultHost);
+    registry.add(com.google.api.FieldBehaviorProto.fieldBehavior);
     registry.add(com.google.api.AnnotationsProto.http);
+    registry.add(com.google.api.ClientProto.methodSignature);
+    registry.add(com.google.api.ClientProto.oauthScopes);
+    registry.add(com.google.api.ResourceProto.resourceReference);
     com.google.protobuf.Descriptors.FileDescriptor.internalUpdateFileDescriptor(
         descriptor, registry);
     com.google.api.AnnotationsProto.getDescriptor();
+    com.google.api.ClientProto.getDescriptor();
+    com.google.api.FieldBehaviorProto.getDescriptor();
+    com.google.api.ResourceProto.getDescriptor();
     com.google.devtools.cloudtrace.v2.TraceProto.getDescriptor();
     com.google.protobuf.EmptyProto.getDescriptor();
     com.google.protobuf.TimestampProto.getDescriptor();

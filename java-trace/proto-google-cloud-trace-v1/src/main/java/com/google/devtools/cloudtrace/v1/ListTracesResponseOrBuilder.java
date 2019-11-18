@@ -27,7 +27,7 @@ public interface ListTracesResponseOrBuilder
    *
    *
    * <pre>
-   * List of trace records returned.
+   * List of trace records as specified by the view parameter.
    * </pre>
    *
    * <code>repeated .google.devtools.cloudtrace.v1.Trace traces = 1;</code>
@@ -37,7 +37,7 @@ public interface ListTracesResponseOrBuilder
    *
    *
    * <pre>
-   * List of trace records returned.
+   * List of trace records as specified by the view parameter.
    * </pre>
    *
    * <code>repeated .google.devtools.cloudtrace.v1.Trace traces = 1;</code>
@@ -47,7 +47,7 @@ public interface ListTracesResponseOrBuilder
    *
    *
    * <pre>
-   * List of trace records returned.
+   * List of trace records as specified by the view parameter.
    * </pre>
    *
    * <code>repeated .google.devtools.cloudtrace.v1.Trace traces = 1;</code>
@@ -57,7 +57,7 @@ public interface ListTracesResponseOrBuilder
    *
    *
    * <pre>
-   * List of trace records returned.
+   * List of trace records as specified by the view parameter.
    * </pre>
    *
    * <code>repeated .google.devtools.cloudtrace.v1.Trace traces = 1;</code>
@@ -68,7 +68,7 @@ public interface ListTracesResponseOrBuilder
    *
    *
    * <pre>
-   * List of trace records returned.
+   * List of trace records as specified by the view parameter.
    * </pre>
    *
    * <code>repeated .google.devtools.cloudtrace.v1.Trace traces = 1;</code>

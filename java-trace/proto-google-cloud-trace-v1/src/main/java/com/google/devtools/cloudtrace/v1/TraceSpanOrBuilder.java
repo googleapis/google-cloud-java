@@ -28,7 +28,7 @@ public interface TraceSpanOrBuilder
    *
    * <pre>
    * Identifier for the span. Must be a 64-bit integer other than 0 and
-   * unique within a trace.
+   * unique within a trace. For example, `2205310701640571284`.
    * </pre>
    *
    * <code>fixed64 span_id = 1;</code>
@@ -66,7 +66,7 @@ public interface TraceSpanOrBuilder
    * <pre>
    * Name of the span. Must be less than 128 bytes. The span name is sanitized
    * and displayed in the Stackdriver Trace tool in the
-   * {% dynamic print site_values.console_name %}.
+   * Google Cloud Platform Console.
    * The name may be a method name or some other per-call site name.
    * For the same executable and the same call point, a best practice is
    * to use a consistent name, which makes it easier to correlate
@@ -82,7 +82,7 @@ public interface TraceSpanOrBuilder
    * <pre>
    * Name of the span. Must be less than 128 bytes. The span name is sanitized
    * and displayed in the Stackdriver Trace tool in the
-   * {% dynamic print site_values.console_name %}.
+   * Google Cloud Platform Console.
    * The name may be a method name or some other per-call site name.
    * For the same executable and the same call point, a best practice is
    * to use a consistent name, which makes it easier to correlate
@@ -159,10 +159,10 @@ public interface TraceSpanOrBuilder
    *
    *
    * <pre>
-   * ID of the parent span, if any. Optional.
+   * Optional. ID of the parent span, if any.
    * </pre>
    *
-   * <code>fixed64 parent_span_id = 6;</code>
+   * <code>fixed64 parent_span_id = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   long getParentSpanId();
 

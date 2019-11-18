@@ -128,7 +128,7 @@ public final class ListTracesResponse extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * List of trace records returned.
+   * List of trace records as specified by the view parameter.
    * </pre>
    *
    * <code>repeated .google.devtools.cloudtrace.v1.Trace traces = 1;</code>
@@ -140,7 +140,7 @@ public final class ListTracesResponse extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * List of trace records returned.
+   * List of trace records as specified by the view parameter.
    * </pre>
    *
    * <code>repeated .google.devtools.cloudtrace.v1.Trace traces = 1;</code>
@@ -153,7 +153,7 @@ public final class ListTracesResponse extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * List of trace records returned.
+   * List of trace records as specified by the view parameter.
    * </pre>
    *
    * <code>repeated .google.devtools.cloudtrace.v1.Trace traces = 1;</code>
@@ -165,7 +165,7 @@ public final class ListTracesResponse extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * List of trace records returned.
+   * List of trace records as specified by the view parameter.
    * </pre>
    *
    * <code>repeated .google.devtools.cloudtrace.v1.Trace traces = 1;</code>
@@ -177,7 +177,7 @@ public final class ListTracesResponse extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * List of trace records returned.
+   * List of trace records as specified by the view parameter.
    * </pre>
    *
    * <code>repeated .google.devtools.cloudtrace.v1.Trace traces = 1;</code>
@@ -631,7 +631,7 @@ public final class ListTracesResponse extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * List of trace records returned.
+     * List of trace records as specified by the view parameter.
      * </pre>
      *
      * <code>repeated .google.devtools.cloudtrace.v1.Trace traces = 1;</code>
@@ -647,7 +647,7 @@ public final class ListTracesResponse extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * List of trace records returned.
+     * List of trace records as specified by the view parameter.
      * </pre>
      *
      * <code>repeated .google.devtools.cloudtrace.v1.Trace traces = 1;</code>
@@ -663,7 +663,7 @@ public final class ListTracesResponse extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * List of trace records returned.
+     * List of trace records as specified by the view parameter.
      * </pre>
      *
      * <code>repeated .google.devtools.cloudtrace.v1.Trace traces = 1;</code>
@@ -679,7 +679,7 @@ public final class ListTracesResponse extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * List of trace records returned.
+     * List of trace records as specified by the view parameter.
      * </pre>
      *
      * <code>repeated .google.devtools.cloudtrace.v1.Trace traces = 1;</code>
@@ -701,7 +701,7 @@ public final class ListTracesResponse extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * List of trace records returned.
+     * List of trace records as specified by the view parameter.
      * </pre>
      *
      * <code>repeated .google.devtools.cloudtrace.v1.Trace traces = 1;</code>
@@ -721,7 +721,7 @@ public final class ListTracesResponse extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * List of trace records returned.
+     * List of trace records as specified by the view parameter.
      * </pre>
      *
      * <code>repeated .google.devtools.cloudtrace.v1.Trace traces = 1;</code>
@@ -743,7 +743,7 @@ public final class ListTracesResponse extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * List of trace records returned.
+     * List of trace records as specified by the view parameter.
      * </pre>
      *
      * <code>repeated .google.devtools.cloudtrace.v1.Trace traces = 1;</code>
@@ -765,7 +765,7 @@ public final class ListTracesResponse extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * List of trace records returned.
+     * List of trace records as specified by the view parameter.
      * </pre>
      *
      * <code>repeated .google.devtools.cloudtrace.v1.Trace traces = 1;</code>
@@ -784,7 +784,7 @@ public final class ListTracesResponse extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * List of trace records returned.
+     * List of trace records as specified by the view parameter.
      * </pre>
      *
      * <code>repeated .google.devtools.cloudtrace.v1.Trace traces = 1;</code>
@@ -804,7 +804,7 @@ public final class ListTracesResponse extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * List of trace records returned.
+     * List of trace records as specified by the view parameter.
      * </pre>
      *
      * <code>repeated .google.devtools.cloudtrace.v1.Trace traces = 1;</code>
@@ -824,7 +824,7 @@ public final class ListTracesResponse extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * List of trace records returned.
+     * List of trace records as specified by the view parameter.
      * </pre>
      *
      * <code>repeated .google.devtools.cloudtrace.v1.Trace traces = 1;</code>
@@ -843,7 +843,7 @@ public final class ListTracesResponse extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * List of trace records returned.
+     * List of trace records as specified by the view parameter.
      * </pre>
      *
      * <code>repeated .google.devtools.cloudtrace.v1.Trace traces = 1;</code>
@@ -862,7 +862,7 @@ public final class ListTracesResponse extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * List of trace records returned.
+     * List of trace records as specified by the view parameter.
      * </pre>
      *
      * <code>repeated .google.devtools.cloudtrace.v1.Trace traces = 1;</code>
@@ -874,7 +874,7 @@ public final class ListTracesResponse extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * List of trace records returned.
+     * List of trace records as specified by the view parameter.
      * </pre>
      *
      * <code>repeated .google.devtools.cloudtrace.v1.Trace traces = 1;</code>
@@ -890,7 +890,7 @@ public final class ListTracesResponse extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * List of trace records returned.
+     * List of trace records as specified by the view parameter.
      * </pre>
      *
      * <code>repeated .google.devtools.cloudtrace.v1.Trace traces = 1;</code>
@@ -907,7 +907,7 @@ public final class ListTracesResponse extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * List of trace records returned.
+     * List of trace records as specified by the view parameter.
      * </pre>
      *
      * <code>repeated .google.devtools.cloudtrace.v1.Trace traces = 1;</code>
@@ -920,7 +920,7 @@ public final class ListTracesResponse extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * List of trace records returned.
+     * List of trace records as specified by the view parameter.
      * </pre>
      *
      * <code>repeated .google.devtools.cloudtrace.v1.Trace traces = 1;</code>
@@ -933,7 +933,7 @@ public final class ListTracesResponse extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * List of trace records returned.
+     * List of trace records as specified by the view parameter.
      * </pre>
      *
      * <code>repeated .google.devtools.cloudtrace.v1.Trace traces = 1;</code>

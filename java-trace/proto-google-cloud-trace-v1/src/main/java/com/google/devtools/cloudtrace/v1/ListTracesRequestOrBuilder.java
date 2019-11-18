@@ -27,20 +27,20 @@ public interface ListTracesRequestOrBuilder
    *
    *
    * <pre>
-   * ID of the Cloud project where the trace data is stored.
+   * Required. ID of the Cloud project where the trace data is stored.
    * </pre>
    *
-   * <code>string project_id = 1;</code>
+   * <code>string project_id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   java.lang.String getProjectId();
   /**
    *
    *
    * <pre>
-   * ID of the Cloud project where the trace data is stored.
+   * Required. ID of the Cloud project where the trace data is stored.
    * </pre>
    *
-   * <code>string project_id = 1;</code>
+   * <code>string project_id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   com.google.protobuf.ByteString getProjectIdBytes();
 
@@ -48,22 +48,26 @@ public interface ListTracesRequestOrBuilder
    *
    *
    * <pre>
-   * Type of data returned for traces in the list. Optional. Default is
+   * Optional. Type of data returned for traces in the list. Default is
    * `MINIMAL`.
    * </pre>
    *
-   * <code>.google.devtools.cloudtrace.v1.ListTracesRequest.ViewType view = 2;</code>
+   * <code>
+   * .google.devtools.cloudtrace.v1.ListTracesRequest.ViewType view = 2 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   int getViewValue();
   /**
    *
    *
    * <pre>
-   * Type of data returned for traces in the list. Optional. Default is
+   * Optional. Type of data returned for traces in the list. Default is
    * `MINIMAL`.
    * </pre>
    *
-   * <code>.google.devtools.cloudtrace.v1.ListTracesRequest.ViewType view = 2;</code>
+   * <code>
+   * .google.devtools.cloudtrace.v1.ListTracesRequest.ViewType view = 2 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   com.google.devtools.cloudtrace.v1.ListTracesRequest.ViewType getView();
 
@@ -71,12 +75,12 @@ public interface ListTracesRequestOrBuilder
    *
    *
    * <pre>
-   * Maximum number of traces to return. If not specified or &lt;= 0, the
+   * Optional. Maximum number of traces to return. If not specified or &lt;= 0, the
    * implementation selects a reasonable value.  The implementation may
-   * return fewer traces than the requested page size. Optional.
+   * return fewer traces than the requested page size.
    * </pre>
    *
-   * <code>int32 page_size = 3;</code>
+   * <code>int32 page_size = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   int getPageSize();
 
@@ -85,7 +89,7 @@ public interface ListTracesRequestOrBuilder
    *
    * <pre>
    * Token identifying the page of results to return. If provided, use the
-   * value of the `next_page_token` field from a previous request. Optional.
+   * value of the `next_page_token` field from a previous request.
    * </pre>
    *
    * <code>string page_token = 4;</code>
@@ -96,7 +100,7 @@ public interface ListTracesRequestOrBuilder
    *
    * <pre>
    * Token identifying the page of results to return. If provided, use the
-   * value of the `next_page_token` field from a previous request. Optional.
+   * value of the `next_page_token` field from a previous request.
    * </pre>
    *
    * <code>string page_token = 4;</code>
@@ -175,7 +179,7 @@ public interface ListTracesRequestOrBuilder
    *
    *
    * <pre>
-   * An optional filter against labels for the request.
+   * Optional. A filter against labels for the request.
    * By default, searches use prefix matching. To specify exact match, prepend
    * a plus symbol (`+`) to the search term.
    * Multiple terms are ANDed. Syntax:
@@ -205,14 +209,14 @@ public interface ListTracesRequestOrBuilder
    * *   `url:VALUE`: Equivalent to `/http/url:VALUE`.
    * </pre>
    *
-   * <code>string filter = 7;</code>
+   * <code>string filter = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   java.lang.String getFilter();
   /**
    *
    *
    * <pre>
-   * An optional filter against labels for the request.
+   * Optional. A filter against labels for the request.
    * By default, searches use prefix matching. To specify exact match, prepend
    * a plus symbol (`+`) to the search term.
    * Multiple terms are ANDed. Syntax:
@@ -242,7 +246,7 @@ public interface ListTracesRequestOrBuilder
    * *   `url:VALUE`: Equivalent to `/http/url:VALUE`.
    * </pre>
    *
-   * <code>string filter = 7;</code>
+   * <code>string filter = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   com.google.protobuf.ByteString getFilterBytes();
 
@@ -250,7 +254,7 @@ public interface ListTracesRequestOrBuilder
    *
    *
    * <pre>
-   * Field used to sort the returned traces. Optional.
+   * Optional. Field used to sort the returned traces.
    * Can be one of the following:
    * *   `trace_id`
    * *   `name` (`name` field of root span in the trace)
@@ -262,14 +266,14 @@ public interface ListTracesRequestOrBuilder
    * Only one sort field is permitted.
    * </pre>
    *
-   * <code>string order_by = 8;</code>
+   * <code>string order_by = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   java.lang.String getOrderBy();
   /**
    *
    *
    * <pre>
-   * Field used to sort the returned traces. Optional.
+   * Optional. Field used to sort the returned traces.
    * Can be one of the following:
    * *   `trace_id`
    * *   `name` (`name` field of root span in the trace)
@@ -281,7 +285,7 @@ public interface ListTracesRequestOrBuilder
    * Only one sort field is permitted.
    * </pre>
    *
-   * <code>string order_by = 8;</code>
+   * <code>string order_by = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   com.google.protobuf.ByteString getOrderByBytes();
 }

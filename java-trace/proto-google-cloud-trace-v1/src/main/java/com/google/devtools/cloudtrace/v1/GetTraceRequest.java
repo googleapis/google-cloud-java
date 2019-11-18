@@ -120,10 +120,10 @@ public final class GetTraceRequest extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * ID of the Cloud project where the trace data is stored.
+   * Required. ID of the Cloud project where the trace data is stored.
    * </pre>
    *
-   * <code>string project_id = 1;</code>
+   * <code>string project_id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   public java.lang.String getProjectId() {
     java.lang.Object ref = projectId_;
@@ -140,10 +140,10 @@ public final class GetTraceRequest extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * ID of the Cloud project where the trace data is stored.
+   * Required. ID of the Cloud project where the trace data is stored.
    * </pre>
    *
-   * <code>string project_id = 1;</code>
+   * <code>string project_id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   public com.google.protobuf.ByteString getProjectIdBytes() {
     java.lang.Object ref = projectId_;
@@ -163,10 +163,10 @@ public final class GetTraceRequest extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * ID of the trace to return.
+   * Required. ID of the trace to return.
    * </pre>
    *
-   * <code>string trace_id = 2;</code>
+   * <code>string trace_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   public java.lang.String getTraceId() {
     java.lang.Object ref = traceId_;
@@ -183,10 +183,10 @@ public final class GetTraceRequest extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * ID of the trace to return.
+   * Required. ID of the trace to return.
    * </pre>
    *
-   * <code>string trace_id = 2;</code>
+   * <code>string trace_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   public com.google.protobuf.ByteString getTraceIdBytes() {
     java.lang.Object ref = traceId_;
@@ -539,10 +539,10 @@ public final class GetTraceRequest extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * ID of the Cloud project where the trace data is stored.
+     * Required. ID of the Cloud project where the trace data is stored.
      * </pre>
      *
-     * <code>string project_id = 1;</code>
+     * <code>string project_id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public java.lang.String getProjectId() {
       java.lang.Object ref = projectId_;
@@ -559,10 +559,10 @@ public final class GetTraceRequest extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * ID of the Cloud project where the trace data is stored.
+     * Required. ID of the Cloud project where the trace data is stored.
      * </pre>
      *
-     * <code>string project_id = 1;</code>
+     * <code>string project_id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public com.google.protobuf.ByteString getProjectIdBytes() {
       java.lang.Object ref = projectId_;
@@ -579,10 +579,10 @@ public final class GetTraceRequest extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * ID of the Cloud project where the trace data is stored.
+     * Required. ID of the Cloud project where the trace data is stored.
      * </pre>
      *
-     * <code>string project_id = 1;</code>
+     * <code>string project_id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder setProjectId(java.lang.String value) {
       if (value == null) {
@@ -597,10 +597,10 @@ public final class GetTraceRequest extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * ID of the Cloud project where the trace data is stored.
+     * Required. ID of the Cloud project where the trace data is stored.
      * </pre>
      *
-     * <code>string project_id = 1;</code>
+     * <code>string project_id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder clearProjectId() {
 
@@ -612,10 +612,10 @@ public final class GetTraceRequest extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * ID of the Cloud project where the trace data is stored.
+     * Required. ID of the Cloud project where the trace data is stored.
      * </pre>
      *
-     * <code>string project_id = 1;</code>
+     * <code>string project_id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder setProjectIdBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -633,10 +633,10 @@ public final class GetTraceRequest extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * ID of the trace to return.
+     * Required. ID of the trace to return.
      * </pre>
      *
-     * <code>string trace_id = 2;</code>
+     * <code>string trace_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public java.lang.String getTraceId() {
       java.lang.Object ref = traceId_;
@@ -653,10 +653,10 @@ public final class GetTraceRequest extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * ID of the trace to return.
+     * Required. ID of the trace to return.
      * </pre>
      *
-     * <code>string trace_id = 2;</code>
+     * <code>string trace_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public com.google.protobuf.ByteString getTraceIdBytes() {
       java.lang.Object ref = traceId_;
@@ -673,10 +673,10 @@ public final class GetTraceRequest extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * ID of the trace to return.
+     * Required. ID of the trace to return.
      * </pre>
      *
-     * <code>string trace_id = 2;</code>
+     * <code>string trace_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder setTraceId(java.lang.String value) {
       if (value == null) {
@@ -691,10 +691,10 @@ public final class GetTraceRequest extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * ID of the trace to return.
+     * Required. ID of the trace to return.
      * </pre>
      *
-     * <code>string trace_id = 2;</code>
+     * <code>string trace_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder clearTraceId() {
 
@@ -706,10 +706,10 @@ public final class GetTraceRequest extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * ID of the trace to return.
+     * Required. ID of the trace to return.
      * </pre>
      *
-     * <code>string trace_id = 2;</code>
+     * <code>string trace_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder setTraceIdBytes(com.google.protobuf.ByteString value) {
       if (value == null) {

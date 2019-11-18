@@ -182,7 +182,8 @@ public final class Trace extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Globally unique identifier for the trace. This identifier is a 128-bit
-   * numeric value formatted as a 32-byte hex string.
+   * numeric value formatted as a 32-byte hex string. For example,
+   * `382d4f4c6b7bb2f4a972559d9085001d`.
    * </pre>
    *
    * <code>string trace_id = 2;</code>
@@ -203,7 +204,8 @@ public final class Trace extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Globally unique identifier for the trace. This identifier is a 128-bit
-   * numeric value formatted as a 32-byte hex string.
+   * numeric value formatted as a 32-byte hex string. For example,
+   * `382d4f4c6b7bb2f4a972559d9085001d`.
    * </pre>
    *
    * <code>string trace_id = 2;</code>
@@ -777,7 +779,8 @@ public final class Trace extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Globally unique identifier for the trace. This identifier is a 128-bit
-     * numeric value formatted as a 32-byte hex string.
+     * numeric value formatted as a 32-byte hex string. For example,
+     * `382d4f4c6b7bb2f4a972559d9085001d`.
      * </pre>
      *
      * <code>string trace_id = 2;</code>
@@ -798,7 +801,8 @@ public final class Trace extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Globally unique identifier for the trace. This identifier is a 128-bit
-     * numeric value formatted as a 32-byte hex string.
+     * numeric value formatted as a 32-byte hex string. For example,
+     * `382d4f4c6b7bb2f4a972559d9085001d`.
      * </pre>
      *
      * <code>string trace_id = 2;</code>
@@ -819,7 +823,8 @@ public final class Trace extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Globally unique identifier for the trace. This identifier is a 128-bit
-     * numeric value formatted as a 32-byte hex string.
+     * numeric value formatted as a 32-byte hex string. For example,
+     * `382d4f4c6b7bb2f4a972559d9085001d`.
      * </pre>
      *
      * <code>string trace_id = 2;</code>
@@ -838,7 +843,8 @@ public final class Trace extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Globally unique identifier for the trace. This identifier is a 128-bit
-     * numeric value formatted as a 32-byte hex string.
+     * numeric value formatted as a 32-byte hex string. For example,
+     * `382d4f4c6b7bb2f4a972559d9085001d`.
      * </pre>
      *
      * <code>string trace_id = 2;</code>
@@ -854,7 +860,8 @@ public final class Trace extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Globally unique identifier for the trace. This identifier is a 128-bit
-     * numeric value formatted as a 32-byte hex string.
+     * numeric value formatted as a 32-byte hex string. For example,
+     * `382d4f4c6b7bb2f4a972559d9085001d`.
      * </pre>
      *
      * <code>string trace_id = 2;</code>

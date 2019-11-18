@@ -27,20 +27,20 @@ public interface GetTraceRequestOrBuilder
    *
    *
    * <pre>
-   * ID of the Cloud project where the trace data is stored.
+   * Required. ID of the Cloud project where the trace data is stored.
    * </pre>
    *
-   * <code>string project_id = 1;</code>
+   * <code>string project_id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   java.lang.String getProjectId();
   /**
    *
    *
    * <pre>
-   * ID of the Cloud project where the trace data is stored.
+   * Required. ID of the Cloud project where the trace data is stored.
    * </pre>
    *
-   * <code>string project_id = 1;</code>
+   * <code>string project_id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   com.google.protobuf.ByteString getProjectIdBytes();
 
@@ -48,20 +48,20 @@ public interface GetTraceRequestOrBuilder
    *
    *
    * <pre>
-   * ID of the trace to return.
+   * Required. ID of the trace to return.
    * </pre>
    *
-   * <code>string trace_id = 2;</code>
+   * <code>string trace_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   java.lang.String getTraceId();
   /**
    *
    *
    * <pre>
-   * ID of the trace to return.
+   * Required. ID of the trace to return.
    * </pre>
    *
-   * <code>string trace_id = 2;</code>
+   * <code>string trace_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   com.google.protobuf.ByteString getTraceIdBytes();
 }

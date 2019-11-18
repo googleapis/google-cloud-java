@@ -84,21 +84,30 @@ public class TraceServiceClientTest {
 
   @Test
   @SuppressWarnings("all")
-  public void patchTracesTest() {
-    Empty expectedResponse = Empty.newBuilder().build();
+  public void listTracesTest() {
+    String nextPageToken = "";
+    Trace tracesElement = Trace.newBuilder().build();
+    List<Trace> traces = Arrays.asList(tracesElement);
+    ListTracesResponse expectedResponse =
+        ListTracesResponse.newBuilder()
+            .setNextPageToken(nextPageToken)
+            .addAllTraces(traces)
+            .build();
     mockTraceService.addResponse(expectedResponse);
 
     String projectId = "projectId-1969970175";
-    Traces traces = Traces.newBuilder().build();
 
-    client.patchTraces(projectId, traces);
+    ListTracesPagedResponse pagedListResponse = client.listTraces(projectId);
+
+    List<Trace> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getTracesList().get(0), resources.get(0));
 
     List<AbstractMessage> actualRequests = mockTraceService.getRequests();
     Assert.assertEquals(1, actualRequests.size());
-    PatchTracesRequest actualRequest = (PatchTracesRequest) actualRequests.get(0);
+    ListTracesRequest actualRequest = (ListTracesRequest) actualRequests.get(0);
 
     Assert.assertEquals(projectId, actualRequest.getProjectId());
-    Assert.assertEquals(traces, actualRequest.getTraces());
     Assert.assertTrue(
         channelProvider.isHeaderSent(
             ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
@@ -107,15 +116,14 @@ public class TraceServiceClientTest {
 
   @Test
   @SuppressWarnings("all")
-  public void patchTracesExceptionTest() throws Exception {
+  public void listTracesExceptionTest() throws Exception {
     StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
     mockTraceService.addException(exception);
 
     try {
       String projectId = "projectId-1969970175";
-      Traces traces = Traces.newBuilder().build();
 
-      client.patchTraces(projectId, traces);
+      client.listTraces(projectId);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception
@@ -168,30 +176,21 @@ public class TraceServiceClientTest {
 
   @Test
   @SuppressWarnings("all")
-  public void listTracesTest() {
-    String nextPageToken = "";
-    Trace tracesElement = Trace.newBuilder().build();
-    List<Trace> traces = Arrays.asList(tracesElement);
-    ListTracesResponse expectedResponse =
-        ListTracesResponse.newBuilder()
-            .setNextPageToken(nextPageToken)
-            .addAllTraces(traces)
-            .build();
+  public void patchTracesTest() {
+    Empty expectedResponse = Empty.newBuilder().build();
     mockTraceService.addResponse(expectedResponse);
 
     String projectId = "projectId-1969970175";
+    Traces traces = Traces.newBuilder().build();
 
-    ListTracesPagedResponse pagedListResponse = client.listTraces(projectId);
-
-    List<Trace> resources = Lists.newArrayList(pagedListResponse.iterateAll());
-    Assert.assertEquals(1, resources.size());
-    Assert.assertEquals(expectedResponse.getTracesList().get(0), resources.get(0));
+    client.patchTraces(projectId, traces);
 
     List<AbstractMessage> actualRequests = mockTraceService.getRequests();
     Assert.assertEquals(1, actualRequests.size());
-    ListTracesRequest actualRequest = (ListTracesRequest) actualRequests.get(0);
+    PatchTracesRequest actualRequest = (PatchTracesRequest) actualRequests.get(0);
 
     Assert.assertEquals(projectId, actualRequest.getProjectId());
+    Assert.assertEquals(traces, actualRequest.getTraces());
     Assert.assertTrue(
         channelProvider.isHeaderSent(
             ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
@@ -200,14 +199,15 @@ public class TraceServiceClientTest {
 
   @Test
   @SuppressWarnings("all")
-  public void listTracesExceptionTest() throws Exception {
+  public void patchTracesExceptionTest() throws Exception {
     StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
     mockTraceService.addException(exception);
 
     try {
       String projectId = "projectId-1969970175";
+      Traces traces = Traces.newBuilder().build();
 
-      client.listTraces(projectId);
+      client.patchTraces(projectId, traces);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception

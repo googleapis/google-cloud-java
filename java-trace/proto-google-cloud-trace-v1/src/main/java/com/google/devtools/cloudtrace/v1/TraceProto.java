@@ -70,55 +70,64 @@ public final class TraceProto {
     java.lang.String[] descriptorData = {
       "\n)google/devtools/cloudtrace/v1/trace.pr"
           + "oto\022\035google.devtools.cloudtrace.v1\032\034goog"
-          + "le/api/annotations.proto\032\033google/protobu"
-          + "f/empty.proto\032\037google/protobuf/timestamp"
-          + ".proto\"f\n\005Trace\022\022\n\nproject_id\030\001 \001(\t\022\020\n\010t"
-          + "race_id\030\002 \001(\t\0227\n\005spans\030\003 \003(\0132(.google.de"
-          + "vtools.cloudtrace.v1.TraceSpan\">\n\006Traces"
-          + "\0224\n\006traces\030\001 \003(\0132$.google.devtools.cloud"
-          + "trace.v1.Trace\"\235\003\n\tTraceSpan\022\017\n\007span_id\030"
-          + "\001 \001(\006\022?\n\004kind\030\002 \001(\01621.google.devtools.cl"
-          + "oudtrace.v1.TraceSpan.SpanKind\022\014\n\004name\030\003"
-          + " \001(\t\022.\n\nstart_time\030\004 \001(\0132\032.google.protob"
-          + "uf.Timestamp\022,\n\010end_time\030\005 \001(\0132\032.google."
-          + "protobuf.Timestamp\022\026\n\016parent_span_id\030\006 \001"
-          + "(\006\022D\n\006labels\030\007 \003(\01324.google.devtools.clo"
-          + "udtrace.v1.TraceSpan.LabelsEntry\032-\n\013Labe"
-          + "lsEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\""
-          + "E\n\010SpanKind\022\031\n\025SPAN_KIND_UNSPECIFIED\020\000\022\016"
-          + "\n\nRPC_SERVER\020\001\022\016\n\nRPC_CLIENT\020\002\"\347\002\n\021ListT"
-          + "racesRequest\022\022\n\nproject_id\030\001 \001(\t\022G\n\004view"
-          + "\030\002 \001(\01629.google.devtools.cloudtrace.v1.L"
-          + "istTracesRequest.ViewType\022\021\n\tpage_size\030\003"
-          + " \001(\005\022\022\n\npage_token\030\004 \001(\t\022.\n\nstart_time\030\005"
-          + " \001(\0132\032.google.protobuf.Timestamp\022,\n\010end_"
-          + "time\030\006 \001(\0132\032.google.protobuf.Timestamp\022\016"
-          + "\n\006filter\030\007 \001(\t\022\020\n\010order_by\030\010 \001(\t\"N\n\010View"
-          + "Type\022\031\n\025VIEW_TYPE_UNSPECIFIED\020\000\022\013\n\007MINIM"
-          + "AL\020\001\022\014\n\010ROOTSPAN\020\002\022\014\n\010COMPLETE\020\003\"c\n\022List"
-          + "TracesResponse\0224\n\006traces\030\001 \003(\0132$.google."
-          + "devtools.cloudtrace.v1.Trace\022\027\n\017next_pag"
-          + "e_token\030\002 \001(\t\"7\n\017GetTraceRequest\022\022\n\nproj"
-          + "ect_id\030\001 \001(\t\022\020\n\010trace_id\030\002 \001(\t\"_\n\022PatchT"
-          + "racesRequest\022\022\n\nproject_id\030\001 \001(\t\0225\n\006trac"
-          + "es\030\002 \001(\0132%.google.devtools.cloudtrace.v1"
-          + ".Traces2\321\003\n\014TraceService\022\233\001\n\nListTraces\022"
-          + "0.google.devtools.cloudtrace.v1.ListTrac"
-          + "esRequest\0321.google.devtools.cloudtrace.v"
-          + "1.ListTracesResponse\"(\202\323\344\223\002\"\022 /v1/projec"
-          + "ts/{project_id}/traces\022\225\001\n\010GetTrace\022..go"
-          + "ogle.devtools.cloudtrace.v1.GetTraceRequ"
-          + "est\032$.google.devtools.cloudtrace.v1.Trac"
-          + "e\"3\202\323\344\223\002-\022+/v1/projects/{project_id}/tra"
-          + "ces/{trace_id}\022\212\001\n\013PatchTraces\0221.google."
-          + "devtools.cloudtrace.v1.PatchTracesReques"
-          + "t\032\026.google.protobuf.Empty\"0\202\323\344\223\002*2 /v1/p"
-          + "rojects/{project_id}/traces:\006tracesB\252\001\n!"
-          + "com.google.devtools.cloudtrace.v1B\nTrace"
-          + "ProtoP\001ZGgoogle.golang.org/genproto/goog"
-          + "leapis/devtools/cloudtrace/v1;cloudtrace"
-          + "\252\002\025Google.Cloud.Trace.V1\312\002\025Google\\Cloud\\"
-          + "Trace\\V1b\006proto3"
+          + "le/api/annotations.proto\032\027google/api/cli"
+          + "ent.proto\032\037google/api/field_behavior.pro"
+          + "to\032\031google/api/resource.proto\032\033google/pr"
+          + "otobuf/empty.proto\032\037google/protobuf/time"
+          + "stamp.proto\"f\n\005Trace\022\022\n\nproject_id\030\001 \001(\t"
+          + "\022\020\n\010trace_id\030\002 \001(\t\0227\n\005spans\030\003 \003(\0132(.goog"
+          + "le.devtools.cloudtrace.v1.TraceSpan\">\n\006T"
+          + "races\0224\n\006traces\030\001 \003(\0132$.google.devtools."
+          + "cloudtrace.v1.Trace\"\242\003\n\tTraceSpan\022\017\n\007spa"
+          + "n_id\030\001 \001(\006\022?\n\004kind\030\002 \001(\01621.google.devtoo"
+          + "ls.cloudtrace.v1.TraceSpan.SpanKind\022\014\n\004n"
+          + "ame\030\003 \001(\t\022.\n\nstart_time\030\004 \001(\0132\032.google.p"
+          + "rotobuf.Timestamp\022,\n\010end_time\030\005 \001(\0132\032.go"
+          + "ogle.protobuf.Timestamp\022\033\n\016parent_span_i"
+          + "d\030\006 \001(\006B\003\340A\001\022D\n\006labels\030\007 \003(\01324.google.de"
+          + "vtools.cloudtrace.v1.TraceSpan.LabelsEnt"
+          + "ry\032-\n\013LabelsEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030"
+          + "\002 \001(\t:\0028\001\"E\n\010SpanKind\022\031\n\025SPAN_KIND_UNSPE"
+          + "CIFIED\020\000\022\016\n\nRPC_SERVER\020\001\022\016\n\nRPC_CLIENT\020\002"
+          + "\"\200\003\n\021ListTracesRequest\022\027\n\nproject_id\030\001 \001"
+          + "(\tB\003\340A\002\022L\n\004view\030\002 \001(\01629.google.devtools."
+          + "cloudtrace.v1.ListTracesRequest.ViewType"
+          + "B\003\340A\001\022\026\n\tpage_size\030\003 \001(\005B\003\340A\001\022\022\n\npage_to"
+          + "ken\030\004 \001(\t\022.\n\nstart_time\030\005 \001(\0132\032.google.p"
+          + "rotobuf.Timestamp\022,\n\010end_time\030\006 \001(\0132\032.go"
+          + "ogle.protobuf.Timestamp\022\023\n\006filter\030\007 \001(\tB"
+          + "\003\340A\001\022\025\n\010order_by\030\010 \001(\tB\003\340A\001\"N\n\010ViewType\022"
+          + "\031\n\025VIEW_TYPE_UNSPECIFIED\020\000\022\013\n\007MINIMAL\020\001\022"
+          + "\014\n\010ROOTSPAN\020\002\022\014\n\010COMPLETE\020\003\"c\n\022ListTrace"
+          + "sResponse\0224\n\006traces\030\001 \003(\0132$.google.devto"
+          + "ols.cloudtrace.v1.Trace\022\027\n\017next_page_tok"
+          + "en\030\002 \001(\t\"A\n\017GetTraceRequest\022\027\n\nproject_i"
+          + "d\030\001 \001(\tB\003\340A\002\022\025\n\010trace_id\030\002 \001(\tB\003\340A\002\"i\n\022P"
+          + "atchTracesRequest\022\027\n\nproject_id\030\001 \001(\tB\003\340"
+          + "A\002\022:\n\006traces\030\002 \001(\0132%.google.devtools.clo"
+          + "udtrace.v1.TracesB\003\340A\0022\265\005\n\014TraceService\022"
+          + "\250\001\n\nListTraces\0220.google.devtools.cloudtr"
+          + "ace.v1.ListTracesRequest\0321.google.devtoo"
+          + "ls.cloudtrace.v1.ListTracesResponse\"5\202\323\344"
+          + "\223\002\"\022 /v1/projects/{project_id}/traces\332A\n"
+          + "project_id\022\253\001\n\010GetTrace\022..google.devtool"
+          + "s.cloudtrace.v1.GetTraceRequest\032$.google"
+          + ".devtools.cloudtrace.v1.Trace\"I\202\323\344\223\002-\022+/"
+          + "v1/projects/{project_id}/traces/{trace_i"
+          + "d}\332A\023project_id,trace_id\022\236\001\n\013PatchTraces"
+          + "\0221.google.devtools.cloudtrace.v1.PatchTr"
+          + "acesRequest\032\026.google.protobuf.Empty\"D\202\323\344"
+          + "\223\002*2 /v1/projects/{project_id}/traces:\006t"
+          + "races\332A\021project_id,traces\032\252\001\312A\031cloudtrac"
+          + "e.googleapis.com\322A\212\001https://www.googleap"
+          + "is.com/auth/cloud-platform,https://www.g"
+          + "oogleapis.com/auth/trace.append,https://"
+          + "www.googleapis.com/auth/trace.readonlyB\252"
+          + "\001\n!com.google.devtools.cloudtrace.v1B\nTr"
+          + "aceProtoP\001ZGgoogle.golang.org/genproto/g"
+          + "oogleapis/devtools/cloudtrace/v1;cloudtr"
+          + "ace\252\002\025Google.Cloud.Trace.V1\312\002\025Google\\Clo"
+          + "ud\\Trace\\V1b\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner() {
@@ -132,6 +141,9 @@ public final class TraceProto {
         descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
           com.google.api.AnnotationsProto.getDescriptor(),
+          com.google.api.ClientProto.getDescriptor(),
+          com.google.api.FieldBehaviorProto.getDescriptor(),
+          com.google.api.ResourceProto.getDescriptor(),
           com.google.protobuf.EmptyProto.getDescriptor(),
           com.google.protobuf.TimestampProto.getDescriptor(),
         },
@@ -209,10 +221,17 @@ public final class TraceProto {
             });
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();
+    registry.add(com.google.api.ClientProto.defaultHost);
+    registry.add(com.google.api.FieldBehaviorProto.fieldBehavior);
     registry.add(com.google.api.AnnotationsProto.http);
+    registry.add(com.google.api.ClientProto.methodSignature);
+    registry.add(com.google.api.ClientProto.oauthScopes);
     com.google.protobuf.Descriptors.FileDescriptor.internalUpdateFileDescriptor(
         descriptor, registry);
     com.google.api.AnnotationsProto.getDescriptor();
+    com.google.api.ClientProto.getDescriptor();
+    com.google.api.FieldBehaviorProto.getDescriptor();
+    com.google.api.ResourceProto.getDescriptor();
     com.google.protobuf.EmptyProto.getDescriptor();
     com.google.protobuf.TimestampProto.getDescriptor();
   }

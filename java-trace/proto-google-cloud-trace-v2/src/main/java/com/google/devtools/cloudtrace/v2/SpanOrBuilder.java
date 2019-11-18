@@ -104,7 +104,7 @@ public interface SpanOrBuilder
    * <pre>
    * A description of the span's operation (up to 128 bytes).
    * Stackdriver Trace displays the description in the
-   * {% dynamic print site_values.console_name %}.
+   * Google Cloud Platform Console.
    * For example, the display name can be a qualified method name or a file name
    * and a line number where the operation is called. A best practice is to use
    * the same display name within an application and at the same call point.
@@ -120,7 +120,7 @@ public interface SpanOrBuilder
    * <pre>
    * A description of the span's operation (up to 128 bytes).
    * Stackdriver Trace displays the description in the
-   * {% dynamic print site_values.console_name %}.
+   * Google Cloud Platform Console.
    * For example, the display name can be a qualified method name or a file name
    * and a line number where the operation is called. A best practice is to use
    * the same display name within an application and at the same call point.
@@ -136,7 +136,7 @@ public interface SpanOrBuilder
    * <pre>
    * A description of the span's operation (up to 128 bytes).
    * Stackdriver Trace displays the description in the
-   * {% dynamic print site_values.console_name %}.
+   * Google Cloud Platform Console.
    * For example, the display name can be a qualified method name or a file name
    * and a line number where the operation is called. A best practice is to use
    * the same display name within an application and at the same call point.
@@ -355,30 +355,30 @@ public interface SpanOrBuilder
    *
    *
    * <pre>
-   * An optional final status for this span.
+   * Optional. The final status for this span.
    * </pre>
    *
-   * <code>.google.rpc.Status status = 11;</code>
+   * <code>.google.rpc.Status status = 11 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   boolean hasStatus();
   /**
    *
    *
    * <pre>
-   * An optional final status for this span.
+   * Optional. The final status for this span.
    * </pre>
    *
-   * <code>.google.rpc.Status status = 11;</code>
+   * <code>.google.rpc.Status status = 11 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   com.google.rpc.Status getStatus();
   /**
    *
    *
    * <pre>
-   * An optional final status for this span.
+   * Optional. The final status for this span.
    * </pre>
    *
-   * <code>.google.rpc.Status status = 11;</code>
+   * <code>.google.rpc.Status status = 11 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   com.google.rpc.StatusOrBuilder getStatusOrBuilder();
 
@@ -386,39 +386,45 @@ public interface SpanOrBuilder
    *
    *
    * <pre>
-   * (Optional) Set this parameter to indicate whether this span is in
+   * Optional. Set this parameter to indicate whether this span is in
    * the same process as its parent. If you do not set this parameter,
    * Stackdriver Trace is unable to take advantage of this helpful
    * information.
    * </pre>
    *
-   * <code>.google.protobuf.BoolValue same_process_as_parent_span = 12;</code>
+   * <code>
+   * .google.protobuf.BoolValue same_process_as_parent_span = 12 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   boolean hasSameProcessAsParentSpan();
   /**
    *
    *
    * <pre>
-   * (Optional) Set this parameter to indicate whether this span is in
+   * Optional. Set this parameter to indicate whether this span is in
    * the same process as its parent. If you do not set this parameter,
    * Stackdriver Trace is unable to take advantage of this helpful
    * information.
    * </pre>
    *
-   * <code>.google.protobuf.BoolValue same_process_as_parent_span = 12;</code>
+   * <code>
+   * .google.protobuf.BoolValue same_process_as_parent_span = 12 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   com.google.protobuf.BoolValue getSameProcessAsParentSpan();
   /**
    *
    *
    * <pre>
-   * (Optional) Set this parameter to indicate whether this span is in
+   * Optional. Set this parameter to indicate whether this span is in
    * the same process as its parent. If you do not set this parameter,
    * Stackdriver Trace is unable to take advantage of this helpful
    * information.
    * </pre>
    *
-   * <code>.google.protobuf.BoolValue same_process_as_parent_span = 12;</code>
+   * <code>
+   * .google.protobuf.BoolValue same_process_as_parent_span = 12 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   com.google.protobuf.BoolValueOrBuilder getSameProcessAsParentSpanOrBuilder();
 
@@ -426,33 +432,39 @@ public interface SpanOrBuilder
    *
    *
    * <pre>
-   * An optional number of child spans that were generated while this span
+   * Optional. The number of child spans that were generated while this span
    * was active. If set, allows implementation to detect missing child spans.
    * </pre>
    *
-   * <code>.google.protobuf.Int32Value child_span_count = 13;</code>
+   * <code>
+   * .google.protobuf.Int32Value child_span_count = 13 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   boolean hasChildSpanCount();
   /**
    *
    *
    * <pre>
-   * An optional number of child spans that were generated while this span
+   * Optional. The number of child spans that were generated while this span
    * was active. If set, allows implementation to detect missing child spans.
    * </pre>
    *
-   * <code>.google.protobuf.Int32Value child_span_count = 13;</code>
+   * <code>
+   * .google.protobuf.Int32Value child_span_count = 13 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   com.google.protobuf.Int32Value getChildSpanCount();
   /**
    *
    *
    * <pre>
-   * An optional number of child spans that were generated while this span
+   * Optional. The number of child spans that were generated while this span
    * was active. If set, allows implementation to detect missing child spans.
    * </pre>
    *
-   * <code>.google.protobuf.Int32Value child_span_count = 13;</code>
+   * <code>
+   * .google.protobuf.Int32Value child_span_count = 13 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   com.google.protobuf.Int32ValueOrBuilder getChildSpanCountOrBuilder();
 }

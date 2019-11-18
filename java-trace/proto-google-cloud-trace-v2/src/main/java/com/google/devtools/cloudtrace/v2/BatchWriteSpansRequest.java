@@ -132,7 +132,9 @@ public final class BatchWriteSpansRequest extends com.google.protobuf.GeneratedM
    * `projects/[PROJECT_ID]`.
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>
+   * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    */
   public java.lang.String getName() {
     java.lang.Object ref = name_;
@@ -153,7 +155,9 @@ public final class BatchWriteSpansRequest extends com.google.protobuf.GeneratedM
    * `projects/[PROJECT_ID]`.
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>
+   * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    */
   public com.google.protobuf.ByteString getNameBytes() {
     java.lang.Object ref = name_;
@@ -173,11 +177,13 @@ public final class BatchWriteSpansRequest extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * A list of new spans. The span names must not match existing
+   * Required. A list of new spans. The span names must not match existing
    * spans, or the results are undefined.
    * </pre>
    *
-   * <code>repeated .google.devtools.cloudtrace.v2.Span spans = 2;</code>
+   * <code>
+   * repeated .google.devtools.cloudtrace.v2.Span spans = 2 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   public java.util.List<com.google.devtools.cloudtrace.v2.Span> getSpansList() {
     return spans_;
@@ -186,11 +192,13 @@ public final class BatchWriteSpansRequest extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * A list of new spans. The span names must not match existing
+   * Required. A list of new spans. The span names must not match existing
    * spans, or the results are undefined.
    * </pre>
    *
-   * <code>repeated .google.devtools.cloudtrace.v2.Span spans = 2;</code>
+   * <code>
+   * repeated .google.devtools.cloudtrace.v2.Span spans = 2 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   public java.util.List<? extends com.google.devtools.cloudtrace.v2.SpanOrBuilder>
       getSpansOrBuilderList() {
@@ -200,11 +208,13 @@ public final class BatchWriteSpansRequest extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * A list of new spans. The span names must not match existing
+   * Required. A list of new spans. The span names must not match existing
    * spans, or the results are undefined.
    * </pre>
    *
-   * <code>repeated .google.devtools.cloudtrace.v2.Span spans = 2;</code>
+   * <code>
+   * repeated .google.devtools.cloudtrace.v2.Span spans = 2 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   public int getSpansCount() {
     return spans_.size();
@@ -213,11 +223,13 @@ public final class BatchWriteSpansRequest extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * A list of new spans. The span names must not match existing
+   * Required. A list of new spans. The span names must not match existing
    * spans, or the results are undefined.
    * </pre>
    *
-   * <code>repeated .google.devtools.cloudtrace.v2.Span spans = 2;</code>
+   * <code>
+   * repeated .google.devtools.cloudtrace.v2.Span spans = 2 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   public com.google.devtools.cloudtrace.v2.Span getSpans(int index) {
     return spans_.get(index);
@@ -226,11 +238,13 @@ public final class BatchWriteSpansRequest extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * A list of new spans. The span names must not match existing
+   * Required. A list of new spans. The span names must not match existing
    * spans, or the results are undefined.
    * </pre>
    *
-   * <code>repeated .google.devtools.cloudtrace.v2.Span spans = 2;</code>
+   * <code>
+   * repeated .google.devtools.cloudtrace.v2.Span spans = 2 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   public com.google.devtools.cloudtrace.v2.SpanOrBuilder getSpansOrBuilder(int index) {
     return spans_.get(index);
@@ -624,7 +638,9 @@ public final class BatchWriteSpansRequest extends com.google.protobuf.GeneratedM
      * `projects/[PROJECT_ID]`.
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>
+     * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      */
     public java.lang.String getName() {
       java.lang.Object ref = name_;
@@ -645,7 +661,9 @@ public final class BatchWriteSpansRequest extends com.google.protobuf.GeneratedM
      * `projects/[PROJECT_ID]`.
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>
+     * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      */
     public com.google.protobuf.ByteString getNameBytes() {
       java.lang.Object ref = name_;
@@ -666,7 +684,9 @@ public final class BatchWriteSpansRequest extends com.google.protobuf.GeneratedM
      * `projects/[PROJECT_ID]`.
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>
+     * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      */
     public Builder setName(java.lang.String value) {
       if (value == null) {
@@ -685,7 +705,9 @@ public final class BatchWriteSpansRequest extends com.google.protobuf.GeneratedM
      * `projects/[PROJECT_ID]`.
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>
+     * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      */
     public Builder clearName() {
 
@@ -701,7 +723,9 @@ public final class BatchWriteSpansRequest extends com.google.protobuf.GeneratedM
      * `projects/[PROJECT_ID]`.
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>
+     * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      */
     public Builder setNameBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -734,11 +758,13 @@ public final class BatchWriteSpansRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * A list of new spans. The span names must not match existing
+     * Required. A list of new spans. The span names must not match existing
      * spans, or the results are undefined.
      * </pre>
      *
-     * <code>repeated .google.devtools.cloudtrace.v2.Span spans = 2;</code>
+     * <code>
+     * repeated .google.devtools.cloudtrace.v2.Span spans = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public java.util.List<com.google.devtools.cloudtrace.v2.Span> getSpansList() {
       if (spansBuilder_ == null) {
@@ -751,11 +777,13 @@ public final class BatchWriteSpansRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * A list of new spans. The span names must not match existing
+     * Required. A list of new spans. The span names must not match existing
      * spans, or the results are undefined.
      * </pre>
      *
-     * <code>repeated .google.devtools.cloudtrace.v2.Span spans = 2;</code>
+     * <code>
+     * repeated .google.devtools.cloudtrace.v2.Span spans = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public int getSpansCount() {
       if (spansBuilder_ == null) {
@@ -768,11 +796,13 @@ public final class BatchWriteSpansRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * A list of new spans. The span names must not match existing
+     * Required. A list of new spans. The span names must not match existing
      * spans, or the results are undefined.
      * </pre>
      *
-     * <code>repeated .google.devtools.cloudtrace.v2.Span spans = 2;</code>
+     * <code>
+     * repeated .google.devtools.cloudtrace.v2.Span spans = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public com.google.devtools.cloudtrace.v2.Span getSpans(int index) {
       if (spansBuilder_ == null) {
@@ -785,11 +815,13 @@ public final class BatchWriteSpansRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * A list of new spans. The span names must not match existing
+     * Required. A list of new spans. The span names must not match existing
      * spans, or the results are undefined.
      * </pre>
      *
-     * <code>repeated .google.devtools.cloudtrace.v2.Span spans = 2;</code>
+     * <code>
+     * repeated .google.devtools.cloudtrace.v2.Span spans = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder setSpans(int index, com.google.devtools.cloudtrace.v2.Span value) {
       if (spansBuilder_ == null) {
@@ -808,11 +840,13 @@ public final class BatchWriteSpansRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * A list of new spans. The span names must not match existing
+     * Required. A list of new spans. The span names must not match existing
      * spans, or the results are undefined.
      * </pre>
      *
-     * <code>repeated .google.devtools.cloudtrace.v2.Span spans = 2;</code>
+     * <code>
+     * repeated .google.devtools.cloudtrace.v2.Span spans = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder setSpans(
         int index, com.google.devtools.cloudtrace.v2.Span.Builder builderForValue) {
@@ -829,11 +863,13 @@ public final class BatchWriteSpansRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * A list of new spans. The span names must not match existing
+     * Required. A list of new spans. The span names must not match existing
      * spans, or the results are undefined.
      * </pre>
      *
-     * <code>repeated .google.devtools.cloudtrace.v2.Span spans = 2;</code>
+     * <code>
+     * repeated .google.devtools.cloudtrace.v2.Span spans = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder addSpans(com.google.devtools.cloudtrace.v2.Span value) {
       if (spansBuilder_ == null) {
@@ -852,11 +888,13 @@ public final class BatchWriteSpansRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * A list of new spans. The span names must not match existing
+     * Required. A list of new spans. The span names must not match existing
      * spans, or the results are undefined.
      * </pre>
      *
-     * <code>repeated .google.devtools.cloudtrace.v2.Span spans = 2;</code>
+     * <code>
+     * repeated .google.devtools.cloudtrace.v2.Span spans = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder addSpans(int index, com.google.devtools.cloudtrace.v2.Span value) {
       if (spansBuilder_ == null) {
@@ -875,11 +913,13 @@ public final class BatchWriteSpansRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * A list of new spans. The span names must not match existing
+     * Required. A list of new spans. The span names must not match existing
      * spans, or the results are undefined.
      * </pre>
      *
-     * <code>repeated .google.devtools.cloudtrace.v2.Span spans = 2;</code>
+     * <code>
+     * repeated .google.devtools.cloudtrace.v2.Span spans = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder addSpans(com.google.devtools.cloudtrace.v2.Span.Builder builderForValue) {
       if (spansBuilder_ == null) {
@@ -895,11 +935,13 @@ public final class BatchWriteSpansRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * A list of new spans. The span names must not match existing
+     * Required. A list of new spans. The span names must not match existing
      * spans, or the results are undefined.
      * </pre>
      *
-     * <code>repeated .google.devtools.cloudtrace.v2.Span spans = 2;</code>
+     * <code>
+     * repeated .google.devtools.cloudtrace.v2.Span spans = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder addSpans(
         int index, com.google.devtools.cloudtrace.v2.Span.Builder builderForValue) {
@@ -916,11 +958,13 @@ public final class BatchWriteSpansRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * A list of new spans. The span names must not match existing
+     * Required. A list of new spans. The span names must not match existing
      * spans, or the results are undefined.
      * </pre>
      *
-     * <code>repeated .google.devtools.cloudtrace.v2.Span spans = 2;</code>
+     * <code>
+     * repeated .google.devtools.cloudtrace.v2.Span spans = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder addAllSpans(
         java.lang.Iterable<? extends com.google.devtools.cloudtrace.v2.Span> values) {
@@ -937,11 +981,13 @@ public final class BatchWriteSpansRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * A list of new spans. The span names must not match existing
+     * Required. A list of new spans. The span names must not match existing
      * spans, or the results are undefined.
      * </pre>
      *
-     * <code>repeated .google.devtools.cloudtrace.v2.Span spans = 2;</code>
+     * <code>
+     * repeated .google.devtools.cloudtrace.v2.Span spans = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder clearSpans() {
       if (spansBuilder_ == null) {
@@ -957,11 +1003,13 @@ public final class BatchWriteSpansRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * A list of new spans. The span names must not match existing
+     * Required. A list of new spans. The span names must not match existing
      * spans, or the results are undefined.
      * </pre>
      *
-     * <code>repeated .google.devtools.cloudtrace.v2.Span spans = 2;</code>
+     * <code>
+     * repeated .google.devtools.cloudtrace.v2.Span spans = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder removeSpans(int index) {
       if (spansBuilder_ == null) {
@@ -977,11 +1025,13 @@ public final class BatchWriteSpansRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * A list of new spans. The span names must not match existing
+     * Required. A list of new spans. The span names must not match existing
      * spans, or the results are undefined.
      * </pre>
      *
-     * <code>repeated .google.devtools.cloudtrace.v2.Span spans = 2;</code>
+     * <code>
+     * repeated .google.devtools.cloudtrace.v2.Span spans = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public com.google.devtools.cloudtrace.v2.Span.Builder getSpansBuilder(int index) {
       return getSpansFieldBuilder().getBuilder(index);
@@ -990,11 +1040,13 @@ public final class BatchWriteSpansRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * A list of new spans. The span names must not match existing
+     * Required. A list of new spans. The span names must not match existing
      * spans, or the results are undefined.
      * </pre>
      *
-     * <code>repeated .google.devtools.cloudtrace.v2.Span spans = 2;</code>
+     * <code>
+     * repeated .google.devtools.cloudtrace.v2.Span spans = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public com.google.devtools.cloudtrace.v2.SpanOrBuilder getSpansOrBuilder(int index) {
       if (spansBuilder_ == null) {
@@ -1007,11 +1059,13 @@ public final class BatchWriteSpansRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * A list of new spans. The span names must not match existing
+     * Required. A list of new spans. The span names must not match existing
      * spans, or the results are undefined.
      * </pre>
      *
-     * <code>repeated .google.devtools.cloudtrace.v2.Span spans = 2;</code>
+     * <code>
+     * repeated .google.devtools.cloudtrace.v2.Span spans = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public java.util.List<? extends com.google.devtools.cloudtrace.v2.SpanOrBuilder>
         getSpansOrBuilderList() {
@@ -1025,11 +1079,13 @@ public final class BatchWriteSpansRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * A list of new spans. The span names must not match existing
+     * Required. A list of new spans. The span names must not match existing
      * spans, or the results are undefined.
      * </pre>
      *
-     * <code>repeated .google.devtools.cloudtrace.v2.Span spans = 2;</code>
+     * <code>
+     * repeated .google.devtools.cloudtrace.v2.Span spans = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public com.google.devtools.cloudtrace.v2.Span.Builder addSpansBuilder() {
       return getSpansFieldBuilder()
@@ -1039,11 +1095,13 @@ public final class BatchWriteSpansRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * A list of new spans. The span names must not match existing
+     * Required. A list of new spans. The span names must not match existing
      * spans, or the results are undefined.
      * </pre>
      *
-     * <code>repeated .google.devtools.cloudtrace.v2.Span spans = 2;</code>
+     * <code>
+     * repeated .google.devtools.cloudtrace.v2.Span spans = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public com.google.devtools.cloudtrace.v2.Span.Builder addSpansBuilder(int index) {
       return getSpansFieldBuilder()
@@ -1053,11 +1111,13 @@ public final class BatchWriteSpansRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * A list of new spans. The span names must not match existing
+     * Required. A list of new spans. The span names must not match existing
      * spans, or the results are undefined.
      * </pre>
      *
-     * <code>repeated .google.devtools.cloudtrace.v2.Span spans = 2;</code>
+     * <code>
+     * repeated .google.devtools.cloudtrace.v2.Span spans = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public java.util.List<com.google.devtools.cloudtrace.v2.Span.Builder> getSpansBuilderList() {
       return getSpansFieldBuilder().getBuilderList();

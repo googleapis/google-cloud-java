@@ -49,20 +49,6 @@ import javax.annotation.Generated;
 @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
 public class GrpcTraceServiceStub extends TraceServiceStub {
 
-  private static final MethodDescriptor<PatchTracesRequest, Empty> patchTracesMethodDescriptor =
-      MethodDescriptor.<PatchTracesRequest, Empty>newBuilder()
-          .setType(MethodDescriptor.MethodType.UNARY)
-          .setFullMethodName("google.devtools.cloudtrace.v1.TraceService/PatchTraces")
-          .setRequestMarshaller(ProtoUtils.marshaller(PatchTracesRequest.getDefaultInstance()))
-          .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
-          .build();
-  private static final MethodDescriptor<GetTraceRequest, Trace> getTraceMethodDescriptor =
-      MethodDescriptor.<GetTraceRequest, Trace>newBuilder()
-          .setType(MethodDescriptor.MethodType.UNARY)
-          .setFullMethodName("google.devtools.cloudtrace.v1.TraceService/GetTrace")
-          .setRequestMarshaller(ProtoUtils.marshaller(GetTraceRequest.getDefaultInstance()))
-          .setResponseMarshaller(ProtoUtils.marshaller(Trace.getDefaultInstance()))
-          .build();
   private static final MethodDescriptor<ListTracesRequest, ListTracesResponse>
       listTracesMethodDescriptor =
           MethodDescriptor.<ListTracesRequest, ListTracesResponse>newBuilder()
@@ -71,13 +57,27 @@ public class GrpcTraceServiceStub extends TraceServiceStub {
               .setRequestMarshaller(ProtoUtils.marshaller(ListTracesRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(ListTracesResponse.getDefaultInstance()))
               .build();
+  private static final MethodDescriptor<GetTraceRequest, Trace> getTraceMethodDescriptor =
+      MethodDescriptor.<GetTraceRequest, Trace>newBuilder()
+          .setType(MethodDescriptor.MethodType.UNARY)
+          .setFullMethodName("google.devtools.cloudtrace.v1.TraceService/GetTrace")
+          .setRequestMarshaller(ProtoUtils.marshaller(GetTraceRequest.getDefaultInstance()))
+          .setResponseMarshaller(ProtoUtils.marshaller(Trace.getDefaultInstance()))
+          .build();
+  private static final MethodDescriptor<PatchTracesRequest, Empty> patchTracesMethodDescriptor =
+      MethodDescriptor.<PatchTracesRequest, Empty>newBuilder()
+          .setType(MethodDescriptor.MethodType.UNARY)
+          .setFullMethodName("google.devtools.cloudtrace.v1.TraceService/PatchTraces")
+          .setRequestMarshaller(ProtoUtils.marshaller(PatchTracesRequest.getDefaultInstance()))
+          .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+          .build();
 
   private final BackgroundResource backgroundResources;
 
-  private final UnaryCallable<PatchTracesRequest, Empty> patchTracesCallable;
-  private final UnaryCallable<GetTraceRequest, Trace> getTraceCallable;
   private final UnaryCallable<ListTracesRequest, ListTracesResponse> listTracesCallable;
   private final UnaryCallable<ListTracesRequest, ListTracesPagedResponse> listTracesPagedCallable;
+  private final UnaryCallable<GetTraceRequest, Trace> getTraceCallable;
+  private final UnaryCallable<PatchTracesRequest, Empty> patchTracesCallable;
 
   private final GrpcStubCallableFactory callableFactory;
 
@@ -118,23 +118,6 @@ public class GrpcTraceServiceStub extends TraceServiceStub {
       throws IOException {
     this.callableFactory = callableFactory;
 
-    GrpcCallSettings<PatchTracesRequest, Empty> patchTracesTransportSettings =
-        GrpcCallSettings.<PatchTracesRequest, Empty>newBuilder()
-            .setMethodDescriptor(patchTracesMethodDescriptor)
-            .setParamsExtractor(
-                new RequestParamsExtractor<PatchTracesRequest>() {
-                  @Override
-                  public Map<String, String> extract(PatchTracesRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("project_id", String.valueOf(request.getProjectId()));
-                    return params.build();
-                  }
-                })
-            .build();
-    GrpcCallSettings<GetTraceRequest, Trace> getTraceTransportSettings =
-        GrpcCallSettings.<GetTraceRequest, Trace>newBuilder()
-            .setMethodDescriptor(getTraceMethodDescriptor)
-            .build();
     GrpcCallSettings<ListTracesRequest, ListTracesResponse> listTracesTransportSettings =
         GrpcCallSettings.<ListTracesRequest, ListTracesResponse>newBuilder()
             .setMethodDescriptor(listTracesMethodDescriptor)
@@ -148,29 +131,38 @@ public class GrpcTraceServiceStub extends TraceServiceStub {
                   }
                 })
             .build();
+    GrpcCallSettings<GetTraceRequest, Trace> getTraceTransportSettings =
+        GrpcCallSettings.<GetTraceRequest, Trace>newBuilder()
+            .setMethodDescriptor(getTraceMethodDescriptor)
+            .build();
+    GrpcCallSettings<PatchTracesRequest, Empty> patchTracesTransportSettings =
+        GrpcCallSettings.<PatchTracesRequest, Empty>newBuilder()
+            .setMethodDescriptor(patchTracesMethodDescriptor)
+            .setParamsExtractor(
+                new RequestParamsExtractor<PatchTracesRequest>() {
+                  @Override
+                  public Map<String, String> extract(PatchTracesRequest request) {
+                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                    params.put("project_id", String.valueOf(request.getProjectId()));
+                    return params.build();
+                  }
+                })
+            .build();
 
-    this.patchTracesCallable =
-        callableFactory.createUnaryCallable(
-            patchTracesTransportSettings, settings.patchTracesSettings(), clientContext);
-    this.getTraceCallable =
-        callableFactory.createUnaryCallable(
-            getTraceTransportSettings, settings.getTraceSettings(), clientContext);
     this.listTracesCallable =
         callableFactory.createUnaryCallable(
             listTracesTransportSettings, settings.listTracesSettings(), clientContext);
     this.listTracesPagedCallable =
         callableFactory.createPagedCallable(
             listTracesTransportSettings, settings.listTracesSettings(), clientContext);
+    this.getTraceCallable =
+        callableFactory.createUnaryCallable(
+            getTraceTransportSettings, settings.getTraceSettings(), clientContext);
+    this.patchTracesCallable =
+        callableFactory.createUnaryCallable(
+            patchTracesTransportSettings, settings.patchTracesSettings(), clientContext);
 
     backgroundResources = new BackgroundResourceAggregation(clientContext.getBackgroundResources());
-  }
-
-  public UnaryCallable<PatchTracesRequest, Empty> patchTracesCallable() {
-    return patchTracesCallable;
-  }
-
-  public UnaryCallable<GetTraceRequest, Trace> getTraceCallable() {
-    return getTraceCallable;
   }
 
   public UnaryCallable<ListTracesRequest, ListTracesPagedResponse> listTracesPagedCallable() {
@@ -179,6 +171,14 @@ public class GrpcTraceServiceStub extends TraceServiceStub {
 
   public UnaryCallable<ListTracesRequest, ListTracesResponse> listTracesCallable() {
     return listTracesCallable;
+  }
+
+  public UnaryCallable<GetTraceRequest, Trace> getTraceCallable() {
+    return getTraceCallable;
+  }
+
+  public UnaryCallable<PatchTracesRequest, Empty> patchTracesCallable() {
+    return patchTracesCallable;
   }
 
   @Override

@@ -294,8 +294,8 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The set of attributes. Each attribute's key can be up to 128 bytes
-     * long. The value can be a string up to 256 bytes, an integer, or the
-     * Boolean values `true` and `false`. For example:
+     * long. The value can be a string up to 256 bytes, a signed 64-bit integer,
+     * or the Boolean values `true` and `false`. For example:
      *     "/instance_id": "my-instance"
      *     "/http/user_agent": ""
      *     "/http/request_bytes": 300
@@ -311,8 +311,8 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The set of attributes. Each attribute's key can be up to 128 bytes
-     * long. The value can be a string up to 256 bytes, an integer, or the
-     * Boolean values `true` and `false`. For example:
+     * long. The value can be a string up to 256 bytes, a signed 64-bit integer,
+     * or the Boolean values `true` and `false`. For example:
      *     "/instance_id": "my-instance"
      *     "/http/user_agent": ""
      *     "/http/request_bytes": 300
@@ -332,8 +332,8 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The set of attributes. Each attribute's key can be up to 128 bytes
-     * long. The value can be a string up to 256 bytes, an integer, or the
-     * Boolean values `true` and `false`. For example:
+     * long. The value can be a string up to 256 bytes, a signed 64-bit integer,
+     * or the Boolean values `true` and `false`. For example:
      *     "/instance_id": "my-instance"
      *     "/http/user_agent": ""
      *     "/http/request_bytes": 300
@@ -350,8 +350,8 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The set of attributes. Each attribute's key can be up to 128 bytes
-     * long. The value can be a string up to 256 bytes, an integer, or the
-     * Boolean values `true` and `false`. For example:
+     * long. The value can be a string up to 256 bytes, a signed 64-bit integer,
+     * or the Boolean values `true` and `false`. For example:
      *     "/instance_id": "my-instance"
      *     "/http/user_agent": ""
      *     "/http/request_bytes": 300
@@ -368,8 +368,8 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The set of attributes. Each attribute's key can be up to 128 bytes
-     * long. The value can be a string up to 256 bytes, an integer, or the
-     * Boolean values `true` and `false`. For example:
+     * long. The value can be a string up to 256 bytes, a signed 64-bit integer,
+     * or the Boolean values `true` and `false`. For example:
      *     "/instance_id": "my-instance"
      *     "/http/user_agent": ""
      *     "/http/request_bytes": 300
@@ -548,8 +548,8 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The set of attributes. Each attribute's key can be up to 128 bytes
-     * long. The value can be a string up to 256 bytes, an integer, or the
-     * Boolean values `true` and `false`. For example:
+     * long. The value can be a string up to 256 bytes, a signed 64-bit integer,
+     * or the Boolean values `true` and `false`. For example:
      *     "/instance_id": "my-instance"
      *     "/http/user_agent": ""
      *     "/http/request_bytes": 300
@@ -576,8 +576,8 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The set of attributes. Each attribute's key can be up to 128 bytes
-     * long. The value can be a string up to 256 bytes, an integer, or the
-     * Boolean values `true` and `false`. For example:
+     * long. The value can be a string up to 256 bytes, a signed 64-bit integer,
+     * or the Boolean values `true` and `false`. For example:
      *     "/instance_id": "my-instance"
      *     "/http/user_agent": ""
      *     "/http/request_bytes": 300
@@ -596,8 +596,8 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The set of attributes. Each attribute's key can be up to 128 bytes
-     * long. The value can be a string up to 256 bytes, an integer, or the
-     * Boolean values `true` and `false`. For example:
+     * long. The value can be a string up to 256 bytes, a signed 64-bit integer,
+     * or the Boolean values `true` and `false`. For example:
      *     "/instance_id": "my-instance"
      *     "/http/user_agent": ""
      *     "/http/request_bytes": 300
@@ -621,8 +621,8 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The set of attributes. Each attribute's key can be up to 128 bytes
-     * long. The value can be a string up to 256 bytes, an integer, or the
-     * Boolean values `true` and `false`. For example:
+     * long. The value can be a string up to 256 bytes, a signed 64-bit integer,
+     * or the Boolean values `true` and `false`. For example:
      *     "/instance_id": "my-instance"
      *     "/http/user_agent": ""
      *     "/http/request_bytes": 300
@@ -1068,8 +1068,8 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * The set of attributes. Each attribute's key can be up to 128 bytes
-       * long. The value can be a string up to 256 bytes, an integer, or the
-       * Boolean values `true` and `false`. For example:
+       * long. The value can be a string up to 256 bytes, a signed 64-bit integer,
+       * or the Boolean values `true` and `false`. For example:
        *     "/instance_id": "my-instance"
        *     "/http/user_agent": ""
        *     "/http/request_bytes": 300
@@ -1096,8 +1096,8 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * The set of attributes. Each attribute's key can be up to 128 bytes
-       * long. The value can be a string up to 256 bytes, an integer, or the
-       * Boolean values `true` and `false`. For example:
+       * long. The value can be a string up to 256 bytes, a signed 64-bit integer,
+       * or the Boolean values `true` and `false`. For example:
        *     "/instance_id": "my-instance"
        *     "/http/user_agent": ""
        *     "/http/request_bytes": 300
@@ -1116,8 +1116,8 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * The set of attributes. Each attribute's key can be up to 128 bytes
-       * long. The value can be a string up to 256 bytes, an integer, or the
-       * Boolean values `true` and `false`. For example:
+       * long. The value can be a string up to 256 bytes, a signed 64-bit integer,
+       * or the Boolean values `true` and `false`. For example:
        *     "/instance_id": "my-instance"
        *     "/http/user_agent": ""
        *     "/http/request_bytes": 300
@@ -1141,8 +1141,8 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * The set of attributes. Each attribute's key can be up to 128 bytes
-       * long. The value can be a string up to 256 bytes, an integer, or the
-       * Boolean values `true` and `false`. For example:
+       * long. The value can be a string up to 256 bytes, a signed 64-bit integer,
+       * or the Boolean values `true` and `false`. For example:
        *     "/instance_id": "my-instance"
        *     "/http/user_agent": ""
        *     "/http/request_bytes": 300
@@ -1174,8 +1174,8 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * The set of attributes. Each attribute's key can be up to 128 bytes
-       * long. The value can be a string up to 256 bytes, an integer, or the
-       * Boolean values `true` and `false`. For example:
+       * long. The value can be a string up to 256 bytes, a signed 64-bit integer,
+       * or the Boolean values `true` and `false`. For example:
        *     "/instance_id": "my-instance"
        *     "/http/user_agent": ""
        *     "/http/request_bytes": 300
@@ -1203,8 +1203,8 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * The set of attributes. Each attribute's key can be up to 128 bytes
-       * long. The value can be a string up to 256 bytes, an integer, or the
-       * Boolean values `true` and `false`. For example:
+       * long. The value can be a string up to 256 bytes, a signed 64-bit integer,
+       * or the Boolean values `true` and `false`. For example:
        *     "/instance_id": "my-instance"
        *     "/http/user_agent": ""
        *     "/http/request_bytes": 300
@@ -1230,8 +1230,8 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * The set of attributes. Each attribute's key can be up to 128 bytes
-       * long. The value can be a string up to 256 bytes, an integer, or the
-       * Boolean values `true` and `false`. For example:
+       * long. The value can be a string up to 256 bytes, a signed 64-bit integer,
+       * or the Boolean values `true` and `false`. For example:
        *     "/instance_id": "my-instance"
        *     "/http/user_agent": ""
        *     "/http/request_bytes": 300
@@ -8802,7 +8802,7 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * A description of the span's operation (up to 128 bytes).
    * Stackdriver Trace displays the description in the
-   * {% dynamic print site_values.console_name %}.
+   * Google Cloud Platform Console.
    * For example, the display name can be a qualified method name or a file name
    * and a line number where the operation is called. A best practice is to use
    * the same display name within an application and at the same call point.
@@ -8820,7 +8820,7 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * A description of the span's operation (up to 128 bytes).
    * Stackdriver Trace displays the description in the
-   * {% dynamic print site_values.console_name %}.
+   * Google Cloud Platform Console.
    * For example, the display name can be a qualified method name or a file name
    * and a line number where the operation is called. A best practice is to use
    * the same display name within an application and at the same call point.
@@ -8840,7 +8840,7 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * A description of the span's operation (up to 128 bytes).
    * Stackdriver Trace displays the description in the
-   * {% dynamic print site_values.console_name %}.
+   * Google Cloud Platform Console.
    * For example, the display name can be a qualified method name or a file name
    * and a line number where the operation is called. A best practice is to use
    * the same display name within an application and at the same call point.
@@ -9119,10 +9119,10 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * An optional final status for this span.
+   * Optional. The final status for this span.
    * </pre>
    *
-   * <code>.google.rpc.Status status = 11;</code>
+   * <code>.google.rpc.Status status = 11 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   public boolean hasStatus() {
     return status_ != null;
@@ -9131,10 +9131,10 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * An optional final status for this span.
+   * Optional. The final status for this span.
    * </pre>
    *
-   * <code>.google.rpc.Status status = 11;</code>
+   * <code>.google.rpc.Status status = 11 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   public com.google.rpc.Status getStatus() {
     return status_ == null ? com.google.rpc.Status.getDefaultInstance() : status_;
@@ -9143,10 +9143,10 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * An optional final status for this span.
+   * Optional. The final status for this span.
    * </pre>
    *
-   * <code>.google.rpc.Status status = 11;</code>
+   * <code>.google.rpc.Status status = 11 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   public com.google.rpc.StatusOrBuilder getStatusOrBuilder() {
     return getStatus();
@@ -9158,13 +9158,15 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * (Optional) Set this parameter to indicate whether this span is in
+   * Optional. Set this parameter to indicate whether this span is in
    * the same process as its parent. If you do not set this parameter,
    * Stackdriver Trace is unable to take advantage of this helpful
    * information.
    * </pre>
    *
-   * <code>.google.protobuf.BoolValue same_process_as_parent_span = 12;</code>
+   * <code>
+   * .google.protobuf.BoolValue same_process_as_parent_span = 12 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   public boolean hasSameProcessAsParentSpan() {
     return sameProcessAsParentSpan_ != null;
@@ -9173,13 +9175,15 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * (Optional) Set this parameter to indicate whether this span is in
+   * Optional. Set this parameter to indicate whether this span is in
    * the same process as its parent. If you do not set this parameter,
    * Stackdriver Trace is unable to take advantage of this helpful
    * information.
    * </pre>
    *
-   * <code>.google.protobuf.BoolValue same_process_as_parent_span = 12;</code>
+   * <code>
+   * .google.protobuf.BoolValue same_process_as_parent_span = 12 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   public com.google.protobuf.BoolValue getSameProcessAsParentSpan() {
     return sameProcessAsParentSpan_ == null
@@ -9190,13 +9194,15 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * (Optional) Set this parameter to indicate whether this span is in
+   * Optional. Set this parameter to indicate whether this span is in
    * the same process as its parent. If you do not set this parameter,
    * Stackdriver Trace is unable to take advantage of this helpful
    * information.
    * </pre>
    *
-   * <code>.google.protobuf.BoolValue same_process_as_parent_span = 12;</code>
+   * <code>
+   * .google.protobuf.BoolValue same_process_as_parent_span = 12 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   public com.google.protobuf.BoolValueOrBuilder getSameProcessAsParentSpanOrBuilder() {
     return getSameProcessAsParentSpan();
@@ -9208,11 +9214,13 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * An optional number of child spans that were generated while this span
+   * Optional. The number of child spans that were generated while this span
    * was active. If set, allows implementation to detect missing child spans.
    * </pre>
    *
-   * <code>.google.protobuf.Int32Value child_span_count = 13;</code>
+   * <code>
+   * .google.protobuf.Int32Value child_span_count = 13 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   public boolean hasChildSpanCount() {
     return childSpanCount_ != null;
@@ -9221,11 +9229,13 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * An optional number of child spans that were generated while this span
+   * Optional. The number of child spans that were generated while this span
    * was active. If set, allows implementation to detect missing child spans.
    * </pre>
    *
-   * <code>.google.protobuf.Int32Value child_span_count = 13;</code>
+   * <code>
+   * .google.protobuf.Int32Value child_span_count = 13 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   public com.google.protobuf.Int32Value getChildSpanCount() {
     return childSpanCount_ == null
@@ -9236,11 +9246,13 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * An optional number of child spans that were generated while this span
+   * Optional. The number of child spans that were generated while this span
    * was active. If set, allows implementation to detect missing child spans.
    * </pre>
    *
-   * <code>.google.protobuf.Int32Value child_span_count = 13;</code>
+   * <code>
+   * .google.protobuf.Int32Value child_span_count = 13 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   public com.google.protobuf.Int32ValueOrBuilder getChildSpanCountOrBuilder() {
     return getChildSpanCount();
@@ -10204,7 +10216,7 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * A description of the span's operation (up to 128 bytes).
      * Stackdriver Trace displays the description in the
-     * {% dynamic print site_values.console_name %}.
+     * Google Cloud Platform Console.
      * For example, the display name can be a qualified method name or a file name
      * and a line number where the operation is called. A best practice is to use
      * the same display name within an application and at the same call point.
@@ -10222,7 +10234,7 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * A description of the span's operation (up to 128 bytes).
      * Stackdriver Trace displays the description in the
-     * {% dynamic print site_values.console_name %}.
+     * Google Cloud Platform Console.
      * For example, the display name can be a qualified method name or a file name
      * and a line number where the operation is called. A best practice is to use
      * the same display name within an application and at the same call point.
@@ -10246,7 +10258,7 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * A description of the span's operation (up to 128 bytes).
      * Stackdriver Trace displays the description in the
-     * {% dynamic print site_values.console_name %}.
+     * Google Cloud Platform Console.
      * For example, the display name can be a qualified method name or a file name
      * and a line number where the operation is called. A best practice is to use
      * the same display name within an application and at the same call point.
@@ -10274,7 +10286,7 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * A description of the span's operation (up to 128 bytes).
      * Stackdriver Trace displays the description in the
-     * {% dynamic print site_values.console_name %}.
+     * Google Cloud Platform Console.
      * For example, the display name can be a qualified method name or a file name
      * and a line number where the operation is called. A best practice is to use
      * the same display name within an application and at the same call point.
@@ -10300,7 +10312,7 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * A description of the span's operation (up to 128 bytes).
      * Stackdriver Trace displays the description in the
-     * {% dynamic print site_values.console_name %}.
+     * Google Cloud Platform Console.
      * For example, the display name can be a qualified method name or a file name
      * and a line number where the operation is called. A best practice is to use
      * the same display name within an application and at the same call point.
@@ -10332,7 +10344,7 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * A description of the span's operation (up to 128 bytes).
      * Stackdriver Trace displays the description in the
-     * {% dynamic print site_values.console_name %}.
+     * Google Cloud Platform Console.
      * For example, the display name can be a qualified method name or a file name
      * and a line number where the operation is called. A best practice is to use
      * the same display name within an application and at the same call point.
@@ -10358,7 +10370,7 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * A description of the span's operation (up to 128 bytes).
      * Stackdriver Trace displays the description in the
-     * {% dynamic print site_values.console_name %}.
+     * Google Cloud Platform Console.
      * For example, the display name can be a qualified method name or a file name
      * and a line number where the operation is called. A best practice is to use
      * the same display name within an application and at the same call point.
@@ -10378,7 +10390,7 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * A description of the span's operation (up to 128 bytes).
      * Stackdriver Trace displays the description in the
-     * {% dynamic print site_values.console_name %}.
+     * Google Cloud Platform Console.
      * For example, the display name can be a qualified method name or a file name
      * and a line number where the operation is called. A best practice is to use
      * the same display name within an application and at the same call point.
@@ -10402,7 +10414,7 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * A description of the span's operation (up to 128 bytes).
      * Stackdriver Trace displays the description in the
-     * {% dynamic print site_values.console_name %}.
+     * Google Cloud Platform Console.
      * For example, the display name can be a qualified method name or a file name
      * and a line number where the operation is called. A best practice is to use
      * the same display name within an application and at the same call point.
@@ -11567,10 +11579,10 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * An optional final status for this span.
+     * Optional. The final status for this span.
      * </pre>
      *
-     * <code>.google.rpc.Status status = 11;</code>
+     * <code>.google.rpc.Status status = 11 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public boolean hasStatus() {
       return statusBuilder_ != null || status_ != null;
@@ -11579,10 +11591,10 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * An optional final status for this span.
+     * Optional. The final status for this span.
      * </pre>
      *
-     * <code>.google.rpc.Status status = 11;</code>
+     * <code>.google.rpc.Status status = 11 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public com.google.rpc.Status getStatus() {
       if (statusBuilder_ == null) {
@@ -11595,10 +11607,10 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * An optional final status for this span.
+     * Optional. The final status for this span.
      * </pre>
      *
-     * <code>.google.rpc.Status status = 11;</code>
+     * <code>.google.rpc.Status status = 11 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public Builder setStatus(com.google.rpc.Status value) {
       if (statusBuilder_ == null) {
@@ -11617,10 +11629,10 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * An optional final status for this span.
+     * Optional. The final status for this span.
      * </pre>
      *
-     * <code>.google.rpc.Status status = 11;</code>
+     * <code>.google.rpc.Status status = 11 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public Builder setStatus(com.google.rpc.Status.Builder builderForValue) {
       if (statusBuilder_ == null) {
@@ -11636,10 +11648,10 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * An optional final status for this span.
+     * Optional. The final status for this span.
      * </pre>
      *
-     * <code>.google.rpc.Status status = 11;</code>
+     * <code>.google.rpc.Status status = 11 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public Builder mergeStatus(com.google.rpc.Status value) {
       if (statusBuilder_ == null) {
@@ -11659,10 +11671,10 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * An optional final status for this span.
+     * Optional. The final status for this span.
      * </pre>
      *
-     * <code>.google.rpc.Status status = 11;</code>
+     * <code>.google.rpc.Status status = 11 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public Builder clearStatus() {
       if (statusBuilder_ == null) {
@@ -11679,10 +11691,10 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * An optional final status for this span.
+     * Optional. The final status for this span.
      * </pre>
      *
-     * <code>.google.rpc.Status status = 11;</code>
+     * <code>.google.rpc.Status status = 11 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public com.google.rpc.Status.Builder getStatusBuilder() {
 
@@ -11693,10 +11705,10 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * An optional final status for this span.
+     * Optional. The final status for this span.
      * </pre>
      *
-     * <code>.google.rpc.Status status = 11;</code>
+     * <code>.google.rpc.Status status = 11 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public com.google.rpc.StatusOrBuilder getStatusOrBuilder() {
       if (statusBuilder_ != null) {
@@ -11709,10 +11721,10 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * An optional final status for this span.
+     * Optional. The final status for this span.
      * </pre>
      *
-     * <code>.google.rpc.Status status = 11;</code>
+     * <code>.google.rpc.Status status = 11 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.rpc.Status, com.google.rpc.Status.Builder, com.google.rpc.StatusOrBuilder>
@@ -11738,13 +11750,15 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * (Optional) Set this parameter to indicate whether this span is in
+     * Optional. Set this parameter to indicate whether this span is in
      * the same process as its parent. If you do not set this parameter,
      * Stackdriver Trace is unable to take advantage of this helpful
      * information.
      * </pre>
      *
-     * <code>.google.protobuf.BoolValue same_process_as_parent_span = 12;</code>
+     * <code>
+     * .google.protobuf.BoolValue same_process_as_parent_span = 12 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public boolean hasSameProcessAsParentSpan() {
       return sameProcessAsParentSpanBuilder_ != null || sameProcessAsParentSpan_ != null;
@@ -11753,13 +11767,15 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * (Optional) Set this parameter to indicate whether this span is in
+     * Optional. Set this parameter to indicate whether this span is in
      * the same process as its parent. If you do not set this parameter,
      * Stackdriver Trace is unable to take advantage of this helpful
      * information.
      * </pre>
      *
-     * <code>.google.protobuf.BoolValue same_process_as_parent_span = 12;</code>
+     * <code>
+     * .google.protobuf.BoolValue same_process_as_parent_span = 12 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public com.google.protobuf.BoolValue getSameProcessAsParentSpan() {
       if (sameProcessAsParentSpanBuilder_ == null) {
@@ -11774,13 +11790,15 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * (Optional) Set this parameter to indicate whether this span is in
+     * Optional. Set this parameter to indicate whether this span is in
      * the same process as its parent. If you do not set this parameter,
      * Stackdriver Trace is unable to take advantage of this helpful
      * information.
      * </pre>
      *
-     * <code>.google.protobuf.BoolValue same_process_as_parent_span = 12;</code>
+     * <code>
+     * .google.protobuf.BoolValue same_process_as_parent_span = 12 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder setSameProcessAsParentSpan(com.google.protobuf.BoolValue value) {
       if (sameProcessAsParentSpanBuilder_ == null) {
@@ -11799,13 +11817,15 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * (Optional) Set this parameter to indicate whether this span is in
+     * Optional. Set this parameter to indicate whether this span is in
      * the same process as its parent. If you do not set this parameter,
      * Stackdriver Trace is unable to take advantage of this helpful
      * information.
      * </pre>
      *
-     * <code>.google.protobuf.BoolValue same_process_as_parent_span = 12;</code>
+     * <code>
+     * .google.protobuf.BoolValue same_process_as_parent_span = 12 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder setSameProcessAsParentSpan(
         com.google.protobuf.BoolValue.Builder builderForValue) {
@@ -11822,13 +11842,15 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * (Optional) Set this parameter to indicate whether this span is in
+     * Optional. Set this parameter to indicate whether this span is in
      * the same process as its parent. If you do not set this parameter,
      * Stackdriver Trace is unable to take advantage of this helpful
      * information.
      * </pre>
      *
-     * <code>.google.protobuf.BoolValue same_process_as_parent_span = 12;</code>
+     * <code>
+     * .google.protobuf.BoolValue same_process_as_parent_span = 12 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder mergeSameProcessAsParentSpan(com.google.protobuf.BoolValue value) {
       if (sameProcessAsParentSpanBuilder_ == null) {
@@ -11851,13 +11873,15 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * (Optional) Set this parameter to indicate whether this span is in
+     * Optional. Set this parameter to indicate whether this span is in
      * the same process as its parent. If you do not set this parameter,
      * Stackdriver Trace is unable to take advantage of this helpful
      * information.
      * </pre>
      *
-     * <code>.google.protobuf.BoolValue same_process_as_parent_span = 12;</code>
+     * <code>
+     * .google.protobuf.BoolValue same_process_as_parent_span = 12 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder clearSameProcessAsParentSpan() {
       if (sameProcessAsParentSpanBuilder_ == null) {
@@ -11874,13 +11898,15 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * (Optional) Set this parameter to indicate whether this span is in
+     * Optional. Set this parameter to indicate whether this span is in
      * the same process as its parent. If you do not set this parameter,
      * Stackdriver Trace is unable to take advantage of this helpful
      * information.
      * </pre>
      *
-     * <code>.google.protobuf.BoolValue same_process_as_parent_span = 12;</code>
+     * <code>
+     * .google.protobuf.BoolValue same_process_as_parent_span = 12 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public com.google.protobuf.BoolValue.Builder getSameProcessAsParentSpanBuilder() {
 
@@ -11891,13 +11917,15 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * (Optional) Set this parameter to indicate whether this span is in
+     * Optional. Set this parameter to indicate whether this span is in
      * the same process as its parent. If you do not set this parameter,
      * Stackdriver Trace is unable to take advantage of this helpful
      * information.
      * </pre>
      *
-     * <code>.google.protobuf.BoolValue same_process_as_parent_span = 12;</code>
+     * <code>
+     * .google.protobuf.BoolValue same_process_as_parent_span = 12 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public com.google.protobuf.BoolValueOrBuilder getSameProcessAsParentSpanOrBuilder() {
       if (sameProcessAsParentSpanBuilder_ != null) {
@@ -11912,13 +11940,15 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * (Optional) Set this parameter to indicate whether this span is in
+     * Optional. Set this parameter to indicate whether this span is in
      * the same process as its parent. If you do not set this parameter,
      * Stackdriver Trace is unable to take advantage of this helpful
      * information.
      * </pre>
      *
-     * <code>.google.protobuf.BoolValue same_process_as_parent_span = 12;</code>
+     * <code>
+     * .google.protobuf.BoolValue same_process_as_parent_span = 12 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.protobuf.BoolValue,
@@ -11947,11 +11977,13 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * An optional number of child spans that were generated while this span
+     * Optional. The number of child spans that were generated while this span
      * was active. If set, allows implementation to detect missing child spans.
      * </pre>
      *
-     * <code>.google.protobuf.Int32Value child_span_count = 13;</code>
+     * <code>
+     * .google.protobuf.Int32Value child_span_count = 13 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public boolean hasChildSpanCount() {
       return childSpanCountBuilder_ != null || childSpanCount_ != null;
@@ -11960,11 +11992,13 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * An optional number of child spans that were generated while this span
+     * Optional. The number of child spans that were generated while this span
      * was active. If set, allows implementation to detect missing child spans.
      * </pre>
      *
-     * <code>.google.protobuf.Int32Value child_span_count = 13;</code>
+     * <code>
+     * .google.protobuf.Int32Value child_span_count = 13 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public com.google.protobuf.Int32Value getChildSpanCount() {
       if (childSpanCountBuilder_ == null) {
@@ -11979,11 +12013,13 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * An optional number of child spans that were generated while this span
+     * Optional. The number of child spans that were generated while this span
      * was active. If set, allows implementation to detect missing child spans.
      * </pre>
      *
-     * <code>.google.protobuf.Int32Value child_span_count = 13;</code>
+     * <code>
+     * .google.protobuf.Int32Value child_span_count = 13 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder setChildSpanCount(com.google.protobuf.Int32Value value) {
       if (childSpanCountBuilder_ == null) {
@@ -12002,11 +12038,13 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * An optional number of child spans that were generated while this span
+     * Optional. The number of child spans that were generated while this span
      * was active. If set, allows implementation to detect missing child spans.
      * </pre>
      *
-     * <code>.google.protobuf.Int32Value child_span_count = 13;</code>
+     * <code>
+     * .google.protobuf.Int32Value child_span_count = 13 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder setChildSpanCount(com.google.protobuf.Int32Value.Builder builderForValue) {
       if (childSpanCountBuilder_ == null) {
@@ -12022,11 +12060,13 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * An optional number of child spans that were generated while this span
+     * Optional. The number of child spans that were generated while this span
      * was active. If set, allows implementation to detect missing child spans.
      * </pre>
      *
-     * <code>.google.protobuf.Int32Value child_span_count = 13;</code>
+     * <code>
+     * .google.protobuf.Int32Value child_span_count = 13 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder mergeChildSpanCount(com.google.protobuf.Int32Value value) {
       if (childSpanCountBuilder_ == null) {
@@ -12049,11 +12089,13 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * An optional number of child spans that were generated while this span
+     * Optional. The number of child spans that were generated while this span
      * was active. If set, allows implementation to detect missing child spans.
      * </pre>
      *
-     * <code>.google.protobuf.Int32Value child_span_count = 13;</code>
+     * <code>
+     * .google.protobuf.Int32Value child_span_count = 13 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder clearChildSpanCount() {
       if (childSpanCountBuilder_ == null) {
@@ -12070,11 +12112,13 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * An optional number of child spans that were generated while this span
+     * Optional. The number of child spans that were generated while this span
      * was active. If set, allows implementation to detect missing child spans.
      * </pre>
      *
-     * <code>.google.protobuf.Int32Value child_span_count = 13;</code>
+     * <code>
+     * .google.protobuf.Int32Value child_span_count = 13 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public com.google.protobuf.Int32Value.Builder getChildSpanCountBuilder() {
 
@@ -12085,11 +12129,13 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * An optional number of child spans that were generated while this span
+     * Optional. The number of child spans that were generated while this span
      * was active. If set, allows implementation to detect missing child spans.
      * </pre>
      *
-     * <code>.google.protobuf.Int32Value child_span_count = 13;</code>
+     * <code>
+     * .google.protobuf.Int32Value child_span_count = 13 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public com.google.protobuf.Int32ValueOrBuilder getChildSpanCountOrBuilder() {
       if (childSpanCountBuilder_ != null) {
@@ -12104,11 +12150,13 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * An optional number of child spans that were generated while this span
+     * Optional. The number of child spans that were generated while this span
      * was active. If set, allows implementation to detect missing child spans.
      * </pre>
      *
-     * <code>.google.protobuf.Int32Value child_span_count = 13;</code>
+     * <code>
+     * .google.protobuf.Int32Value child_span_count = 13 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.protobuf.Int32Value,
