@@ -124,7 +124,11 @@ public final class AllUpdatesRule extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Required. The name of the Cloud Pub/Sub topic where budget related messages will be
    * published, in the form `projects/{project_id}/topics/{topic_id}`. Updates
-   * are sent at regular intervals to the topic. Caller is expected to have
+   * are sent at regular intervals to the topic.
+   * The topic needs to be created before the budget is created; see
+   * https://cloud.google.com/billing/docs/how-to/budgets#manage-notifications
+   * for more details.
+   * Caller is expected to have
    * `pubsub.topics.setIamPolicy` permission on the topic when it's set for a
    * budget, otherwise, the API call will fail with PERMISSION_DENIED. See
    * https://cloud.google.com/pubsub/docs/access-control for more details on
@@ -150,7 +154,11 @@ public final class AllUpdatesRule extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Required. The name of the Cloud Pub/Sub topic where budget related messages will be
    * published, in the form `projects/{project_id}/topics/{topic_id}`. Updates
-   * are sent at regular intervals to the topic. Caller is expected to have
+   * are sent at regular intervals to the topic.
+   * The topic needs to be created before the budget is created; see
+   * https://cloud.google.com/billing/docs/how-to/budgets#manage-notifications
+   * for more details.
+   * Caller is expected to have
    * `pubsub.topics.setIamPolicy` permission on the topic when it's set for a
    * budget, otherwise, the API call will fail with PERMISSION_DENIED. See
    * https://cloud.google.com/pubsub/docs/access-control for more details on
@@ -562,7 +570,11 @@ public final class AllUpdatesRule extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Required. The name of the Cloud Pub/Sub topic where budget related messages will be
      * published, in the form `projects/{project_id}/topics/{topic_id}`. Updates
-     * are sent at regular intervals to the topic. Caller is expected to have
+     * are sent at regular intervals to the topic.
+     * The topic needs to be created before the budget is created; see
+     * https://cloud.google.com/billing/docs/how-to/budgets#manage-notifications
+     * for more details.
+     * Caller is expected to have
      * `pubsub.topics.setIamPolicy` permission on the topic when it's set for a
      * budget, otherwise, the API call will fail with PERMISSION_DENIED. See
      * https://cloud.google.com/pubsub/docs/access-control for more details on
@@ -588,7 +600,11 @@ public final class AllUpdatesRule extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Required. The name of the Cloud Pub/Sub topic where budget related messages will be
      * published, in the form `projects/{project_id}/topics/{topic_id}`. Updates
-     * are sent at regular intervals to the topic. Caller is expected to have
+     * are sent at regular intervals to the topic.
+     * The topic needs to be created before the budget is created; see
+     * https://cloud.google.com/billing/docs/how-to/budgets#manage-notifications
+     * for more details.
+     * Caller is expected to have
      * `pubsub.topics.setIamPolicy` permission on the topic when it's set for a
      * budget, otherwise, the API call will fail with PERMISSION_DENIED. See
      * https://cloud.google.com/pubsub/docs/access-control for more details on
@@ -614,7 +630,11 @@ public final class AllUpdatesRule extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Required. The name of the Cloud Pub/Sub topic where budget related messages will be
      * published, in the form `projects/{project_id}/topics/{topic_id}`. Updates
-     * are sent at regular intervals to the topic. Caller is expected to have
+     * are sent at regular intervals to the topic.
+     * The topic needs to be created before the budget is created; see
+     * https://cloud.google.com/billing/docs/how-to/budgets#manage-notifications
+     * for more details.
+     * Caller is expected to have
      * `pubsub.topics.setIamPolicy` permission on the topic when it's set for a
      * budget, otherwise, the API call will fail with PERMISSION_DENIED. See
      * https://cloud.google.com/pubsub/docs/access-control for more details on
@@ -638,7 +658,11 @@ public final class AllUpdatesRule extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Required. The name of the Cloud Pub/Sub topic where budget related messages will be
      * published, in the form `projects/{project_id}/topics/{topic_id}`. Updates
-     * are sent at regular intervals to the topic. Caller is expected to have
+     * are sent at regular intervals to the topic.
+     * The topic needs to be created before the budget is created; see
+     * https://cloud.google.com/billing/docs/how-to/budgets#manage-notifications
+     * for more details.
+     * Caller is expected to have
      * `pubsub.topics.setIamPolicy` permission on the topic when it's set for a
      * budget, otherwise, the API call will fail with PERMISSION_DENIED. See
      * https://cloud.google.com/pubsub/docs/access-control for more details on
@@ -659,7 +683,11 @@ public final class AllUpdatesRule extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Required. The name of the Cloud Pub/Sub topic where budget related messages will be
      * published, in the form `projects/{project_id}/topics/{topic_id}`. Updates
-     * are sent at regular intervals to the topic. Caller is expected to have
+     * are sent at regular intervals to the topic.
+     * The topic needs to be created before the budget is created; see
+     * https://cloud.google.com/billing/docs/how-to/budgets#manage-notifications
+     * for more details.
+     * Caller is expected to have
      * `pubsub.topics.setIamPolicy` permission on the topic when it's set for a
      * budget, otherwise, the API call will fail with PERMISSION_DENIED. See
      * https://cloud.google.com/pubsub/docs/access-control for more details on

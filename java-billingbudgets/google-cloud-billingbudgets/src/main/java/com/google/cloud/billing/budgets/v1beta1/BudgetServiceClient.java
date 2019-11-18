@@ -162,7 +162,8 @@ public class BudgetServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Creates a new budget if none exists. There is a limit of 1,000 budgets per billing account.
+   * Creates a new budget. See &lt;a href="https://cloud.google.com/billing/quotas"&gt;Quotas and
+   * limits&lt;/a&gt; for more information on the limits of the number of budgets you can create.
    *
    * <p>Sample code:
    *
@@ -187,7 +188,8 @@ public class BudgetServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Creates a new budget if none exists. There is a limit of 1,000 budgets per billing account.
+   * Creates a new budget. See &lt;a href="https://cloud.google.com/billing/quotas"&gt;Quotas and
+   * limits&lt;/a&gt; for more information on the limits of the number of budgets you can create.
    *
    * <p>Sample code:
    *
@@ -301,7 +303,7 @@ public class BudgetServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Returns the budgets for a billing account.
+   * Returns a list of budgets for a billing account.
    *
    * <p>Sample code:
    *
@@ -326,7 +328,7 @@ public class BudgetServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Returns the budgets for a billing account.
+   * Returns a list of budgets for a billing account.
    *
    * <p>Sample code:
    *
@@ -351,7 +353,7 @@ public class BudgetServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Returns the budgets for a billing account.
+   * Returns a list of budgets for a billing account.
    *
    * <p>Sample code:
    *

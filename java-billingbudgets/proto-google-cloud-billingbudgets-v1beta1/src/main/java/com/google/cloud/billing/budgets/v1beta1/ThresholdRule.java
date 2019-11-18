@@ -25,9 +25,10 @@ package com.google.cloud.billing.budgets.v1beta1;
  * ThresholdRule contains a definition of a threshold which triggers
  * an alert (a notification of a threshold being crossed) to be sent when
  * spend goes above the specified amount.
- * Alerts are automatically e-mailed to the billing users who have
- * access to the billing account. The thresholds here have no effect on
- * notifications sent to anything configured under `Budget.all_updates_rule`.
+ * Alerts are automatically e-mailed to users with the Billing Account
+ * Administrator role or the Billing Account User role.
+ * The thresholds here have no effect on notifications sent to anything
+ * configured under `Budget.all_updates_rule`.
  * </pre>
  *
  * Protobuf type {@code google.cloud.billing.budgets.v1beta1.ThresholdRule}
@@ -504,9 +505,10 @@ public final class ThresholdRule extends com.google.protobuf.GeneratedMessageV3
    * ThresholdRule contains a definition of a threshold which triggers
    * an alert (a notification of a threshold being crossed) to be sent when
    * spend goes above the specified amount.
-   * Alerts are automatically e-mailed to the billing users who have
-   * access to the billing account. The thresholds here have no effect on
-   * notifications sent to anything configured under `Budget.all_updates_rule`.
+   * Alerts are automatically e-mailed to users with the Billing Account
+   * Administrator role or the Billing Account User role.
+   * The thresholds here have no effect on notifications sent to anything
+   * configured under `Budget.all_updates_rule`.
    * </pre>
    *
    * Protobuf type {@code google.cloud.billing.budgets.v1beta1.ThresholdRule}

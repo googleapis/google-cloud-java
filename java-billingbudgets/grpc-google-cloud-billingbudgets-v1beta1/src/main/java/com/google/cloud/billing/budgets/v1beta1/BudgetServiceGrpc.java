@@ -355,8 +355,9 @@ public final class BudgetServiceGrpc {
      *
      *
      * <pre>
-     * Creates a new budget if none exists. There is a limit of 1,000 budgets
-     * per billing account.
+     * Creates a new budget. See
+     * &lt;a href="https://cloud.google.com/billing/quotas"&gt;Quotas and limits&lt;/a&gt;
+     * for more information on the limits of the number of budgets you can create.
      * </pre>
      */
     public void createBudget(
@@ -398,7 +399,7 @@ public final class BudgetServiceGrpc {
      *
      *
      * <pre>
-     * Returns the budgets for a billing account.
+     * Returns a list of budgets for a billing account.
      * </pre>
      */
     public void listBudgets(
@@ -487,8 +488,9 @@ public final class BudgetServiceGrpc {
      *
      *
      * <pre>
-     * Creates a new budget if none exists. There is a limit of 1,000 budgets
-     * per billing account.
+     * Creates a new budget. See
+     * &lt;a href="https://cloud.google.com/billing/quotas"&gt;Quotas and limits&lt;/a&gt;
+     * for more information on the limits of the number of budgets you can create.
      * </pre>
      */
     public void createBudget(
@@ -539,7 +541,7 @@ public final class BudgetServiceGrpc {
      *
      *
      * <pre>
-     * Returns the budgets for a billing account.
+     * Returns a list of budgets for a billing account.
      * </pre>
      */
     public void listBudgets(
@@ -597,8 +599,9 @@ public final class BudgetServiceGrpc {
      *
      *
      * <pre>
-     * Creates a new budget if none exists. There is a limit of 1,000 budgets
-     * per billing account.
+     * Creates a new budget. See
+     * &lt;a href="https://cloud.google.com/billing/quotas"&gt;Quotas and limits&lt;/a&gt;
+     * for more information on the limits of the number of budgets you can create.
      * </pre>
      */
     public com.google.cloud.billing.budgets.v1beta1.Budget createBudget(
@@ -636,7 +639,7 @@ public final class BudgetServiceGrpc {
      *
      *
      * <pre>
-     * Returns the budgets for a billing account.
+     * Returns a list of budgets for a billing account.
      * </pre>
      */
     public com.google.cloud.billing.budgets.v1beta1.ListBudgetsResponse listBudgets(
@@ -687,8 +690,9 @@ public final class BudgetServiceGrpc {
      *
      *
      * <pre>
-     * Creates a new budget if none exists. There is a limit of 1,000 budgets
-     * per billing account.
+     * Creates a new budget. See
+     * &lt;a href="https://cloud.google.com/billing/quotas"&gt;Quotas and limits&lt;/a&gt;
+     * for more information on the limits of the number of budgets you can create.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<
@@ -730,7 +734,7 @@ public final class BudgetServiceGrpc {
      *
      *
      * <pre>
-     * Returns the budgets for a billing account.
+     * Returns a list of budgets for a billing account.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<

@@ -22,9 +22,9 @@ package com.google.cloud.billing.budgets.v1beta1;
  *
  *
  * <pre>
- * A budget is a plan that describes what the user expects to spend on Cloud
- * projects, plus rules to execute as spend is tracked against that plan,
- * e.g. alert at 90% of $100 target.
+ * A budget is a plan that describes what you expect to spend on Cloud
+ * projects, plus the rules to execute as spend is tracked against that plan,
+ * (for example, send an alert when 90% of the target spend is met).
  * Currently all plans are monthly budgets so the usage period(s) tracked are
  * implied (calendar months of usage back-to-back).
  * </pre>
@@ -797,9 +797,9 @@ public final class Budget extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * A budget is a plan that describes what the user expects to spend on Cloud
-   * projects, plus rules to execute as spend is tracked against that plan,
-   * e.g. alert at 90% of $100 target.
+   * A budget is a plan that describes what you expect to spend on Cloud
+   * projects, plus the rules to execute as spend is tracked against that plan,
+   * (for example, send an alert when 90% of the target spend is met).
    * Currently all plans are monthly budgets so the usage period(s) tracked are
    * implied (calendar months of usage back-to-back).
    * </pre>

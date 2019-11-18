@@ -22,10 +22,11 @@ package com.google.cloud.billing.budgets.v1beta1;
  *
  *
  * <pre>
- * Describes a plan to target last period's spend.
- * There are no options yet. The amount is automatically 100% of last period's
- * spend.
- * Future configuration will go here (e.g. configuring the percentage).
+ * Describes a budget amount targeted to last period's spend.
+ * At this time, the amount is automatically 100% of last period's spend;
+ * that is, there are no other options yet.
+ * Future configuration will be described here (for example, configuring a
+ * percentage of last period's spend).
  * </pre>
  *
  * Protobuf type {@code google.cloud.billing.budgets.v1beta1.LastPeriodAmount}
@@ -254,10 +255,11 @@ public final class LastPeriodAmount extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Describes a plan to target last period's spend.
-   * There are no options yet. The amount is automatically 100% of last period's
-   * spend.
-   * Future configuration will go here (e.g. configuring the percentage).
+   * Describes a budget amount targeted to last period's spend.
+   * At this time, the amount is automatically 100% of last period's spend;
+   * that is, there are no other options yet.
+   * Future configuration will be described here (for example, configuring a
+   * percentage of last period's spend).
    * </pre>
    *
    * Protobuf type {@code google.cloud.billing.budgets.v1beta1.LastPeriodAmount}

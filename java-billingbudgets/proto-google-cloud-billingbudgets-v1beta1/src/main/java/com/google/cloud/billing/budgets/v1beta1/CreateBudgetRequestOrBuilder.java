@@ -27,7 +27,7 @@ public interface CreateBudgetRequestOrBuilder
    *
    *
    * <pre>
-   * Required. the name of the billing account to create the budget in. Values
+   * Required. The name of the billing account to create the budget in. Values
    * are of the form `billingAccounts/{billingAccountId}`.
    * </pre>
    *
@@ -40,7 +40,7 @@ public interface CreateBudgetRequestOrBuilder
    *
    *
    * <pre>
-   * Required. the name of the billing account to create the budget in. Values
+   * Required. The name of the billing account to create the budget in. Values
    * are of the form `billingAccounts/{billingAccountId}`.
    * </pre>
    *
