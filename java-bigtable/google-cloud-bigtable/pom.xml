@@ -225,6 +225,8 @@
                   <goal>verify</goal>
                 </goals>
                 <configuration>
+                  <skip>false</skip>
+
                   <systemPropertyVariables>
                     <bigtable.env>emulator</bigtable.env>
                     <bigtable.grpc-log-dir>${project.build.directory}/test-grpc-logs/emulator-it</bigtable.grpc-log-dir>
@@ -256,6 +258,8 @@
                   <goal>verify</goal>
                 </goals>
                 <configuration>
+                  <skip>false</skip>
+
                   <systemPropertyVariables>
                     <bigtable.env>cloud</bigtable.env>
                     <bigtable.data-endpoint>${bigtable.cfe-data-endpoint}</bigtable.data-endpoint>
@@ -289,6 +293,8 @@
                   <goal>verify</goal>
                 </goals>
                 <configuration>
+                  <skip>false</skip>
+
                   <systemPropertyVariables>
                     <bigtable.env>cloud</bigtable.env>
                     <bigtable.data-endpoint>${bigtable.directpath-data-endpoint}</bigtable.data-endpoint>
@@ -350,6 +356,9 @@
       <plugin>
         <artifactId>maven-failsafe-plugin</artifactId>
         <configuration>
+          <!-- enabled by profiles -->
+          <skip>true</skip>
+
           <parallel>classes</parallel>
           <forkCount>2C</forkCount>
           <reuseForks>true</reuseForks>
