@@ -516,6 +516,15 @@ public final class Filters {
     public TimestampRangeFilter range() {
       return new TimestampRangeFilter();
     }
+
+    /**
+     * Matches cells with exact given timestamp.
+     *
+     * @return a {@link TimestampRangeFilter} with start/end closed timestamp.
+     */
+    public TimestampRangeFilter exact(Long exactTimestamp) {
+      return new TimestampRangeFilter().startClosed(exactTimestamp).endClosed(exactTimestamp);
+    }
   }
 
   /** Matches only cells with microsecond timestamps within the given range. */

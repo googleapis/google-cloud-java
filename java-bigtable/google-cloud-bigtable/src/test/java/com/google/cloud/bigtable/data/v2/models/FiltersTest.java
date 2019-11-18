@@ -351,6 +351,21 @@ public class FiltersTest {
   }
 
   @Test
+  public void timestampAtExactTime() {
+    RowFilter actualFilter = FILTERS.timestamp().exact(20_000L).toProto();
+
+    RowFilter expectedFilter =
+        RowFilter.newBuilder()
+            .setTimestampRangeFilter(
+                TimestampRange.newBuilder()
+                    .setStartTimestampMicros(20_000L)
+                    .setEndTimestampMicros(20_000L + 1))
+            .build();
+
+    assertThat(actualFilter).isEqualTo(expectedFilter);
+  }
+
+  @Test
   public void timestampOpenClosedFakeRange() {
     RowFilter actualFilter =
         FILTERS.timestamp().range().startOpen(1_000L).endClosed(30_000L).toProto();
