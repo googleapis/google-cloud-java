@@ -1,5 +1,12 @@
 # Changelog
 
+### [0.1.1](https://www.github.com/googleapis/java-billingbudgets/compare/v0.1.0...v0.1.1) (2019-11-18)
+
+
+### Documentation
+
+* update generated documentation ([#17](https://www.github.com/googleapis/java-billingbudgets/issues/17)) ([f86799c](https://www.github.com/googleapis/java-billingbudgets/commit/f86799c18bb28862cf8a26ffa1a9ba6e7408a4b3))
+
 ## 0.1.0 (2019-11-12)
 
 
