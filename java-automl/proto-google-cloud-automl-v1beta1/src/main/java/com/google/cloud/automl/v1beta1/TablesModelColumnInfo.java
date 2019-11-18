@@ -228,9 +228,10 @@ public final class TablesModelColumnInfo extends com.google.protobuf.GeneratedMe
    * [feature_importance][google.cloud.automl.v1beta1.PredictRequest.params]
    * param is set):
    * Measurement of how impactful for the prediction returned for the given row
-   * the value in this column was. A value between 0 and 1, higher means larger
-   * impact. These values are normalized - for all input feature columns of a
-   * single predicted row they add to 1.
+   * the value in this column was. Specifically, the feature importance
+   * specifies the marginal contribution that the feature made to the prediction
+   * score compared to the baseline score. These values are computed using the
+   * Sampled Shapley method.
    * </pre>
    *
    * <code>float feature_importance = 3;</code>
@@ -806,9 +807,10 @@ public final class TablesModelColumnInfo extends com.google.protobuf.GeneratedMe
      * [feature_importance][google.cloud.automl.v1beta1.PredictRequest.params]
      * param is set):
      * Measurement of how impactful for the prediction returned for the given row
-     * the value in this column was. A value between 0 and 1, higher means larger
-     * impact. These values are normalized - for all input feature columns of a
-     * single predicted row they add to 1.
+     * the value in this column was. Specifically, the feature importance
+     * specifies the marginal contribution that the feature made to the prediction
+     * score compared to the baseline score. These values are computed using the
+     * Sampled Shapley method.
      * </pre>
      *
      * <code>float feature_importance = 3;</code>
@@ -832,9 +834,10 @@ public final class TablesModelColumnInfo extends com.google.protobuf.GeneratedMe
      * [feature_importance][google.cloud.automl.v1beta1.PredictRequest.params]
      * param is set):
      * Measurement of how impactful for the prediction returned for the given row
-     * the value in this column was. A value between 0 and 1, higher means larger
-     * impact. These values are normalized - for all input feature columns of a
-     * single predicted row they add to 1.
+     * the value in this column was. Specifically, the feature importance
+     * specifies the marginal contribution that the feature made to the prediction
+     * score compared to the baseline score. These values are computed using the
+     * Sampled Shapley method.
      * </pre>
      *
      * <code>float feature_importance = 3;</code>
@@ -861,9 +864,10 @@ public final class TablesModelColumnInfo extends com.google.protobuf.GeneratedMe
      * [feature_importance][google.cloud.automl.v1beta1.PredictRequest.params]
      * param is set):
      * Measurement of how impactful for the prediction returned for the given row
-     * the value in this column was. A value between 0 and 1, higher means larger
-     * impact. These values are normalized - for all input feature columns of a
-     * single predicted row they add to 1.
+     * the value in this column was. Specifically, the feature importance
+     * specifies the marginal contribution that the feature made to the prediction
+     * score compared to the baseline score. These values are computed using the
+     * Sampled Shapley method.
      * </pre>
      *
      * <code>float feature_importance = 3;</code>
