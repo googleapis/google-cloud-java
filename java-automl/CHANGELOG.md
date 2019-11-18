@@ -1,5 +1,12 @@
 # Changelog
 
+### [0.115.1](https://www.github.com/googleapis/java-automl/compare/v0.115.0...v0.115.1) (2019-11-18)
+
+
+### Documentation
+
+* update generated documentation ([#49](https://www.github.com/googleapis/java-automl/issues/49)) ([f965b4d](https://www.github.com/googleapis/java-automl/commit/f965b4dfe4fae63d4b7ead31e270e6b131e5c1aa))
+
 ## [0.115.0](https://www.github.com/googleapis/java-automl/compare/v0.114.1...v0.115.0) (2019-11-11)
 
 
