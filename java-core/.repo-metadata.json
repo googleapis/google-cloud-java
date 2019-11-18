@@ -5,5 +5,5 @@
     "language": "java",
     "repo": "googleapis/java-core",
     "repo_short": "java-core",
-    "distribution_name": "google-cloud-java"
+    "distribution_name": "com.google.cloud:google-cloud-core"
 }
