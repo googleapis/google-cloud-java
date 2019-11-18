@@ -14,7 +14,7 @@ This library supports the following Google Cloud Platform services with clients 
 -  [BigQuery](google-cloud-clients/google-cloud-bigquery) (GA)
 -  [Cloud Bigtable](google-cloud-clients/google-cloud-bigtable) (GA)
 -  [Cloud Datastore](google-cloud-clients/google-cloud-datastore) (GA)
--  [Cloud Firestore](google-cloud-clients/google-cloud-firestore) (GA)
+-  [Cloud Firestore](https://github.com/googleapis/java-firestore/google-cloud-firestore) (GA)
 -  [Cloud KMS](google-cloud-clients/google-cloud-kms) (GA)
 -  [Cloud Natural Language](google-cloud-clients/google-cloud-language) (GA)
 -  [Cloud Pub/Sub](google-cloud-clients/google-cloud-pubsub) (GA)
