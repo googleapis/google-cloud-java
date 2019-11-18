@@ -74,8 +74,11 @@ public final class RouterNatLogConfig implements ApiMessage {
   }
 
   /**
-   * Specifies the desired filtering of logs on this NAT. If unspecified, logs are exported for all
-   * connections handled by this NAT.
+   * Specify the desired filtering of logs on this NAT. If unspecified, logs are exported for all
+   * connections handled by this NAT. This option can take one of the following values: -
+   * ERRORS_ONLY: Export logs only for connection failures. - TRANSLATIONS_ONLY: Export logs only
+   * for successful connections. - ALL: Export logs for all connections, successful and
+   * unsuccessful.
    */
   public String getFilter() {
     return filter;
@@ -137,16 +140,22 @@ public final class RouterNatLogConfig implements ApiMessage {
     }
 
     /**
-     * Specifies the desired filtering of logs on this NAT. If unspecified, logs are exported for
-     * all connections handled by this NAT.
+     * Specify the desired filtering of logs on this NAT. If unspecified, logs are exported for all
+     * connections handled by this NAT. This option can take one of the following values: -
+     * ERRORS_ONLY: Export logs only for connection failures. - TRANSLATIONS_ONLY: Export logs only
+     * for successful connections. - ALL: Export logs for all connections, successful and
+     * unsuccessful.
      */
     public String getFilter() {
       return filter;
     }
 
     /**
-     * Specifies the desired filtering of logs on this NAT. If unspecified, logs are exported for
-     * all connections handled by this NAT.
+     * Specify the desired filtering of logs on this NAT. If unspecified, logs are exported for all
+     * connections handled by this NAT. This option can take one of the following values: -
+     * ERRORS_ONLY: Export logs only for connection failures. - TRANSLATIONS_ONLY: Export logs only
+     * for successful connections. - ALL: Export logs for all connections, successful and
+     * unsuccessful.
      */
     public Builder setFilter(String filter) {
       this.filter = filter;

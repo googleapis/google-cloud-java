@@ -150,7 +150,12 @@ public final class InsertNetworkEndpointGroupHttpRequest implements ApiMessage {
     return key;
   }
 
-  /** Represents a collection of network endpoints. */
+  /**
+   * Represents a collection of network endpoints.
+   *
+   * <p>For more information read Setting up network endpoint groups in load balancing. (==
+   * resource_for v1.networkEndpointGroups ==) (== resource_for beta.networkEndpointGroups ==)
+   */
   public NetworkEndpointGroup getNetworkEndpointGroupResource() {
     return networkEndpointGroupResource;
   }
@@ -327,12 +332,22 @@ public final class InsertNetworkEndpointGroupHttpRequest implements ApiMessage {
       return this;
     }
 
-    /** Represents a collection of network endpoints. */
+    /**
+     * Represents a collection of network endpoints.
+     *
+     * <p>For more information read Setting up network endpoint groups in load balancing. (==
+     * resource_for v1.networkEndpointGroups ==) (== resource_for beta.networkEndpointGroups ==)
+     */
     public NetworkEndpointGroup getNetworkEndpointGroupResource() {
       return networkEndpointGroupResource;
     }
 
-    /** Represents a collection of network endpoints. */
+    /**
+     * Represents a collection of network endpoints.
+     *
+     * <p>For more information read Setting up network endpoint groups in load balancing. (==
+     * resource_for v1.networkEndpointGroups ==) (== resource_for beta.networkEndpointGroups ==)
+     */
     public Builder setNetworkEndpointGroupResource(
         NetworkEndpointGroup networkEndpointGroupResource) {
       this.networkEndpointGroupResource = networkEndpointGroupResource;

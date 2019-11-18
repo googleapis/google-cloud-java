@@ -848,7 +848,7 @@ public class NodeGroupClient implements BackgroundResource {
    *     for your specific project. Use sole-tenant nodes to keep your instances physically
    *     separated from instances in other projects, or to group your instances together on the same
    *     host hardware. For more information, read Sole-tenant nodes. (== resource_for
-   *     beta.nodeGroups ==) (== resource_for v1.nodeGroups ==) NextID: 15
+   *     beta.nodeGroups ==) (== resource_for v1.nodeGroups ==) NextID: 16
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
@@ -887,7 +887,7 @@ public class NodeGroupClient implements BackgroundResource {
    *     for your specific project. Use sole-tenant nodes to keep your instances physically
    *     separated from instances in other projects, or to group your instances together on the same
    *     host hardware. For more information, read Sole-tenant nodes. (== resource_for
-   *     beta.nodeGroups ==) (== resource_for v1.nodeGroups ==) NextID: 15
+   *     beta.nodeGroups ==) (== resource_for v1.nodeGroups ==) NextID: 16
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi

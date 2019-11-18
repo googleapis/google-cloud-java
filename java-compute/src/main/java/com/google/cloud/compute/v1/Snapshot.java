@@ -224,7 +224,7 @@ public final class Snapshot implements ApiMessage {
     return description;
   }
 
-  /** [Output Only] Size of the snapshot, specified in GB. */
+  /** [Output Only] Size of the source disk, specified in GB. */
   public String getDiskSizeGb() {
     return diskSizeGb;
   }
@@ -540,12 +540,12 @@ public final class Snapshot implements ApiMessage {
       return this;
     }
 
-    /** [Output Only] Size of the snapshot, specified in GB. */
+    /** [Output Only] Size of the source disk, specified in GB. */
     public String getDiskSizeGb() {
       return diskSizeGb;
     }
 
-    /** [Output Only] Size of the snapshot, specified in GB. */
+    /** [Output Only] Size of the source disk, specified in GB. */
     public Builder setDiskSizeGb(String diskSizeGb) {
       this.diskSizeGb = diskSizeGb;
       return this;

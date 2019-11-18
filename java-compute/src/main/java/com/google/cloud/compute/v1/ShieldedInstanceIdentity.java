@@ -77,7 +77,9 @@ public final class ShieldedInstanceIdentity implements ApiMessage {
     return null;
   }
 
-  /** An Endorsement Key (EK) issued to the Shielded Instance's vTPM. */
+  /**
+   * An Endorsement Key (EK) made by the RSA 2048 algorithm issued to the Shielded Instance's vTPM.
+   */
   public ShieldedInstanceIdentityEntry getEncryptionKey() {
     return encryptionKey;
   }
@@ -90,7 +92,9 @@ public final class ShieldedInstanceIdentity implements ApiMessage {
     return kind;
   }
 
-  /** An Attestation Key (AK) issued to the Shielded Instance's vTPM. */
+  /**
+   * An Attestation Key (AK) made by the RSA 2048 algorithm issued to the Shielded Instance's vTPM.
+   */
   public ShieldedInstanceIdentityEntry getSigningKey() {
     return signingKey;
   }
@@ -144,12 +148,18 @@ public final class ShieldedInstanceIdentity implements ApiMessage {
       this.signingKey = source.signingKey;
     }
 
-    /** An Endorsement Key (EK) issued to the Shielded Instance's vTPM. */
+    /**
+     * An Endorsement Key (EK) made by the RSA 2048 algorithm issued to the Shielded Instance's
+     * vTPM.
+     */
     public ShieldedInstanceIdentityEntry getEncryptionKey() {
       return encryptionKey;
     }
 
-    /** An Endorsement Key (EK) issued to the Shielded Instance's vTPM. */
+    /**
+     * An Endorsement Key (EK) made by the RSA 2048 algorithm issued to the Shielded Instance's
+     * vTPM.
+     */
     public Builder setEncryptionKey(ShieldedInstanceIdentityEntry encryptionKey) {
       this.encryptionKey = encryptionKey;
       return this;
@@ -172,12 +182,18 @@ public final class ShieldedInstanceIdentity implements ApiMessage {
       return this;
     }
 
-    /** An Attestation Key (AK) issued to the Shielded Instance's vTPM. */
+    /**
+     * An Attestation Key (AK) made by the RSA 2048 algorithm issued to the Shielded Instance's
+     * vTPM.
+     */
     public ShieldedInstanceIdentityEntry getSigningKey() {
       return signingKey;
     }
 
-    /** An Attestation Key (AK) issued to the Shielded Instance's vTPM. */
+    /**
+     * An Attestation Key (AK) made by the RSA 2048 algorithm issued to the Shielded Instance's
+     * vTPM.
+     */
     public Builder setSigningKey(ShieldedInstanceIdentityEntry signingKey) {
       this.signingKey = signingKey;
       return this;

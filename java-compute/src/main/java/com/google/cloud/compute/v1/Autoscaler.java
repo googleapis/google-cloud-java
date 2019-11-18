@@ -213,7 +213,14 @@ public final class Autoscaler implements ApiMessage {
     return selfLink;
   }
 
-  /** [Output Only] The status of the autoscaler configuration. */
+  /**
+   * [Output Only] The status of the autoscaler configuration. Current set of possible values:
+   * PENDING: Autoscaler backend hasn't read new/updated configuration DELETING: Configuration is
+   * being deleted ACTIVE: Configuration is acknowledged to be effective. Some warnings might or
+   * might not be present in the status_details field. ERROR: Configuration has errors. Actionable
+   * for users. Details are present in the status_details field. New values might be added in the
+   * future.
+   */
   public String getStatus() {
     return status;
   }
@@ -464,12 +471,26 @@ public final class Autoscaler implements ApiMessage {
       return this;
     }
 
-    /** [Output Only] The status of the autoscaler configuration. */
+    /**
+     * [Output Only] The status of the autoscaler configuration. Current set of possible values:
+     * PENDING: Autoscaler backend hasn't read new/updated configuration DELETING: Configuration is
+     * being deleted ACTIVE: Configuration is acknowledged to be effective. Some warnings might or
+     * might not be present in the status_details field. ERROR: Configuration has errors. Actionable
+     * for users. Details are present in the status_details field. New values might be added in the
+     * future.
+     */
     public String getStatus() {
       return status;
     }
 
-    /** [Output Only] The status of the autoscaler configuration. */
+    /**
+     * [Output Only] The status of the autoscaler configuration. Current set of possible values:
+     * PENDING: Autoscaler backend hasn't read new/updated configuration DELETING: Configuration is
+     * being deleted ACTIVE: Configuration is acknowledged to be effective. Some warnings might or
+     * might not be present in the status_details field. ERROR: Configuration has errors. Actionable
+     * for users. Details are present in the status_details field. New values might be added in the
+     * future.
+     */
     public Builder setStatus(String status) {
       this.status = status;
       return this;

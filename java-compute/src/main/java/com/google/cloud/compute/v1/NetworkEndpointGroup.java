@@ -24,7 +24,12 @@ import javax.annotation.Nullable;
 
 @Generated("by GAPIC")
 @BetaApi
-/** Represents a collection of network endpoints. */
+/**
+ * Represents a collection of network endpoints.
+ *
+ * <p>For more information read Setting up network endpoint groups in load balancing. (==
+ * resource_for v1.networkEndpointGroups ==) (== resource_for beta.networkEndpointGroups ==)
+ */
 public final class NetworkEndpointGroup implements ApiMessage {
   private final String creationTimestamp;
   private final Integer defaultPort;

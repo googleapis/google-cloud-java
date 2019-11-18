@@ -82,7 +82,7 @@ public final class AllocationSpecificSKUReservation implements ApiMessage {
     return count;
   }
 
-  /** [OutputOnly] Indicates how many instances are in use. */
+  /** [Output Only] Indicates how many instances are in use. */
   public String getInUseCount() {
     return inUseCount;
   }
@@ -152,12 +152,12 @@ public final class AllocationSpecificSKUReservation implements ApiMessage {
       return this;
     }
 
-    /** [OutputOnly] Indicates how many instances are in use. */
+    /** [Output Only] Indicates how many instances are in use. */
     public String getInUseCount() {
       return inUseCount;
     }
 
-    /** [OutputOnly] Indicates how many instances are in use. */
+    /** [Output Only] Indicates how many instances are in use. */
     public Builder setInUseCount(String inUseCount) {
       this.inUseCount = inUseCount;
       return this;

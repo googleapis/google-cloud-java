@@ -798,6 +798,8 @@ public class NetworkEndpointGroupClient implements BackgroundResource {
    * @param zone The name of the zone where you want to create the network endpoint group. It should
    *     comply with RFC1035.
    * @param networkEndpointGroupResource Represents a collection of network endpoints.
+   *     <p>For more information read Setting up network endpoint groups in load balancing. (==
+   *     resource_for v1.networkEndpointGroups ==) (== resource_for beta.networkEndpointGroups ==)
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
@@ -830,6 +832,8 @@ public class NetworkEndpointGroupClient implements BackgroundResource {
    * @param zone The name of the zone where you want to create the network endpoint group. It should
    *     comply with RFC1035.
    * @param networkEndpointGroupResource Represents a collection of network endpoints.
+   *     <p>For more information read Setting up network endpoint groups in load balancing. (==
+   *     resource_for v1.networkEndpointGroups ==) (== resource_for beta.networkEndpointGroups ==)
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi

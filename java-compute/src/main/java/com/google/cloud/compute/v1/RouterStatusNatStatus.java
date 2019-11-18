@@ -120,7 +120,7 @@ public final class RouterStatusNatStatus implements ApiMessage {
 
   /**
    * A list of IPs auto-allocated for NAT that are in drain mode. Example: ["1.1.1.1",
-   * ?179.12.26.133?].
+   * "179.12.26.133"].
    */
   public List<String> getDrainAutoAllocatedNatIpsList() {
     return drainAutoAllocatedNatIps;
@@ -128,7 +128,7 @@ public final class RouterStatusNatStatus implements ApiMessage {
 
   /**
    * A list of IPs user-allocated for NAT that are in drain mode. Example: ["1.1.1.1",
-   * ?179.12.26.133?].
+   * "179.12.26.133"].
    */
   public List<String> getDrainUserAllocatedNatIpsList() {
     return drainUserAllocatedNatIps;
@@ -262,7 +262,7 @@ public final class RouterStatusNatStatus implements ApiMessage {
 
     /**
      * A list of IPs auto-allocated for NAT that are in drain mode. Example: ["1.1.1.1",
-     * ?179.12.26.133?].
+     * "179.12.26.133"].
      */
     public List<String> getDrainAutoAllocatedNatIpsList() {
       return drainAutoAllocatedNatIps;
@@ -270,7 +270,7 @@ public final class RouterStatusNatStatus implements ApiMessage {
 
     /**
      * A list of IPs auto-allocated for NAT that are in drain mode. Example: ["1.1.1.1",
-     * ?179.12.26.133?].
+     * "179.12.26.133"].
      */
     public Builder addAllDrainAutoAllocatedNatIps(List<String> drainAutoAllocatedNatIps) {
       if (this.drainAutoAllocatedNatIps == null) {
@@ -282,7 +282,7 @@ public final class RouterStatusNatStatus implements ApiMessage {
 
     /**
      * A list of IPs auto-allocated for NAT that are in drain mode. Example: ["1.1.1.1",
-     * ?179.12.26.133?].
+     * "179.12.26.133"].
      */
     public Builder addDrainAutoAllocatedNatIps(String drainAutoAllocatedNatIps) {
       if (this.drainAutoAllocatedNatIps == null) {
@@ -294,7 +294,7 @@ public final class RouterStatusNatStatus implements ApiMessage {
 
     /**
      * A list of IPs user-allocated for NAT that are in drain mode. Example: ["1.1.1.1",
-     * ?179.12.26.133?].
+     * "179.12.26.133"].
      */
     public List<String> getDrainUserAllocatedNatIpsList() {
       return drainUserAllocatedNatIps;
@@ -302,7 +302,7 @@ public final class RouterStatusNatStatus implements ApiMessage {
 
     /**
      * A list of IPs user-allocated for NAT that are in drain mode. Example: ["1.1.1.1",
-     * ?179.12.26.133?].
+     * "179.12.26.133"].
      */
     public Builder addAllDrainUserAllocatedNatIps(List<String> drainUserAllocatedNatIps) {
       if (this.drainUserAllocatedNatIps == null) {
@@ -314,7 +314,7 @@ public final class RouterStatusNatStatus implements ApiMessage {
 
     /**
      * A list of IPs user-allocated for NAT that are in drain mode. Example: ["1.1.1.1",
-     * ?179.12.26.133?].
+     * "179.12.26.133"].
      */
     public Builder addDrainUserAllocatedNatIps(String drainUserAllocatedNatIps) {
       if (this.drainUserAllocatedNatIps == null) {

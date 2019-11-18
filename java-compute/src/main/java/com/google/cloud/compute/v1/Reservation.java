@@ -138,7 +138,7 @@ public final class Reservation implements ApiMessage {
   }
 
   /**
-   * [OutputOnly] Full or partial URL to a parent commitment. This field displays for reservations
+   * [Output Only] Full or partial URL to a parent commitment. This field displays for reservations
    * that are tied to a commitment.
    */
   public String getCommitment() {
@@ -302,16 +302,16 @@ public final class Reservation implements ApiMessage {
     }
 
     /**
-     * [OutputOnly] Full or partial URL to a parent commitment. This field displays for reservations
-     * that are tied to a commitment.
+     * [Output Only] Full or partial URL to a parent commitment. This field displays for
+     * reservations that are tied to a commitment.
      */
     public String getCommitment() {
       return commitment;
     }
 
     /**
-     * [OutputOnly] Full or partial URL to a parent commitment. This field displays for reservations
-     * that are tied to a commitment.
+     * [Output Only] Full or partial URL to a parent commitment. This field displays for
+     * reservations that are tied to a commitment.
      */
     public Builder setCommitment(String commitment) {
       this.commitment = commitment;
