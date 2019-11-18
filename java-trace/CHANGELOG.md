@@ -1,5 +1,12 @@
 # Changelog
 
+### [0.109.2](https://www.github.com/googleapis/java-trace/compare/v0.109.1...v0.109.2) (2019-11-18)
+
+
+### Documentation
+
+* regenerate generated javadoc ([#43](https://www.github.com/googleapis/java-trace/issues/43)) ([1589f08](https://www.github.com/googleapis/java-trace/commit/1589f08e28b248874663b41cce2ba74e60e4cfba))
+
 ### [0.109.1](https://www.github.com/googleapis/java-trace/compare/v0.109.0...v0.109.1) (2019-11-11)
 
 
