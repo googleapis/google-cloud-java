@@ -166,7 +166,6 @@
     <oauth-client.version>1.30.4</oauth-client.version>
     <protobuf.version>3.10.0</protobuf.version>
     <!-- make sure to keep opencensus version in sync with grpc -->
-    <!-- make sure to update the opencensus version in google-cloud-clients/google-cloud-bigtable/README -->
     <opencensus.version>0.24.0</opencensus.version>
     <!-- test dependency versions -->
     <easymock.version>3.6</easymock.version>
@@ -394,7 +393,6 @@
   </dependencyManagement>
   <modules>
     <module>google-cloud-asset</module>
-    <module>google-cloud-bigtable</module>
     <module>google-cloud-bigquery</module>
     <module>google-cloud-bigquerydatatransfer</module>
     <module>google-cloud-bigquerystorage</module>
@@ -739,41 +737,6 @@
               <packages>com.google.cloud.compute.deprecated*</packages>
             </group>
           </groups>
-
-          <!-- TODO(chingor13): Remove this once we switch to per client javadoc sites -->
-          <sourceFileExcludes>
-            <!-- TODO(igorbernstein): use a custom doclet to exclude @InternalApi classes from javadoc -->
-            <!-- Bigtable: Hide @InternalApi classes -->
-            <exclude>com/google/cloud/bigtable/gaxx/**</exclude>
-
-            <!-- Bigtable: Hide @InternalApi classes for InstanceAdmin -->
-            <exclude>com/google/cloud/bigtable/admin/v2/internal/**</exclude>
-            <exclude>com/google/cloud/bigtable/admin/v2/BaseBigtableInstanceAdminClient.java</exclude>
-            <exclude>com/google/cloud/bigtable/admin/v2/BaseBigtableInstanceAdminSettings.java</exclude>
-            <exclude>com/google/cloud/bigtable/admin/v2/stub/GrpcBigtableInstanceAdminCallableFactory.java</exclude>
-            <exclude>com/google/cloud/bigtable/admin/v2/stub/GrpcBigtableInstanceAdminStub.java</exclude>
-            <exclude>com/google/cloud/bigtable/admin/v2/stub/BigtableInstanceAdminStub.java</exclude>
-
-            <!-- Bigtable: Hide @InternalApi classes for TableAdmin -->
-            <exclude>com/google/cloud/bigtable/admin/v2/BaseBigtableTableAdminClient.java</exclude>
-            <exclude>com/google/cloud/bigtable/admin/v2/BaseBigtableTableAdminSettings.java</exclude>
-            <exclude>com/google/cloud/bigtable/admin/v2/stub/GrpcBigtableTableAdminCallableFactory.java</exclude>
-            <exclude>com/google/cloud/bigtable/admin/v2/stub/GrpcBigtableTableAdminStub.java</exclude>
-            <exclude>com/google/cloud/bigtable/admin/v2/stub/BigtableTableAdminStub.java</exclude>
-            <exclude>com/google/cloud/bigtable/admin/v2/stub/EnhancedBigtableTableAdminStub.java</exclude>
-
-            <!-- Bigtable: Hide @InternalApi classes for Data -->
-            <exclude>com/google/cloud/bigtable/data/v2/internal/**</exclude>
-            <exclude>com/google/cloud/bigtable/data/v2/BaseBigtableDataClient.java</exclude>
-            <exclude>com/google/cloud/bigtable/data/v2/BaseBigtableDataSettings.java</exclude>
-            <exclude>com/google/cloud/bigtable/data/v2/stub/BigtableStub.java</exclude>
-            <exclude>com/google/cloud/bigtable/data/v2/stub/BigtableStubSettings.java</exclude>
-            <exclude>com/google/cloud/bigtable/data/v2/stub/GrpcBigtableStub.java</exclude>
-            <exclude>com/google/cloud/bigtable/data/v2/stub/GrpcBigtableCallableFactory.java</exclude>
-            <exclude>com/google/cloud/bigtable/data/v2/stub/EnhancedBigtableStub.java</exclude>
-            <exclude>com/google/cloud/bigtable/data/v2/stub/mutaterows/**</exclude>
-            <exclude>com/google/cloud/bigtable/data/v2/stub/readrows/**</exclude>
-          </sourceFileExcludes>
 
           <links>
             <link>https://grpc.io/grpc-java/javadoc/</link>
