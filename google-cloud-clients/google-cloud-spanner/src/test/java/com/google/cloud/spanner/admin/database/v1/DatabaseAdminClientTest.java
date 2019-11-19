@@ -55,6 +55,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Objects;
+import java.util.UUID;
 import java.util.concurrent.ExecutionException;
 import org.junit.After;
 import org.junit.AfterClass;
@@ -74,7 +75,8 @@ public class DatabaseAdminClientTest {
   public static void startStaticServer() {
     mockDatabaseAdmin = new MockDatabaseAdmin();
     serviceHelper =
-        new MockServiceHelper("in-process-1", Arrays.<MockGrpcService>asList(mockDatabaseAdmin));
+        new MockServiceHelper(
+            UUID.randomUUID().toString(), Arrays.<MockGrpcService>asList(mockDatabaseAdmin));
     serviceHelper.start();
   }
 
