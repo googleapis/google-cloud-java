@@ -70,6 +70,12 @@ public class VisionBatchAnnotateFiles {
    * import java.util.List;
    */
 
+  public static void sampleBatchAnnotateFiles() {
+    // TODO(developer): Replace these variables before running the sample.
+    String filePath = "resources/kafka.pdf";
+    sampleBatchAnnotateFiles(filePath);
+  }
+
   /**
    * Perform batch file annotation
    *
@@ -77,7 +83,6 @@ public class VisionBatchAnnotateFiles {
    */
   public static void sampleBatchAnnotateFiles(String filePath) {
     try (ImageAnnotatorClient imageAnnotatorClient = ImageAnnotatorClient.create()) {
-      // filePath = "resources/kafka.pdf";
 
       // Supported mime_type: application/pdf, image/tiff, image/gif
       String mimeType = "application/pdf";

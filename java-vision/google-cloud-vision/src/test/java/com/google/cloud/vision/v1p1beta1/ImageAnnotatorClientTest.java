@@ -29,6 +29,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.UUID;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Assert;
@@ -47,7 +48,8 @@ public class ImageAnnotatorClientTest {
   public static void startStaticServer() {
     mockImageAnnotator = new MockImageAnnotator();
     serviceHelper =
-        new MockServiceHelper("in-process-1", Arrays.<MockGrpcService>asList(mockImageAnnotator));
+        new MockServiceHelper(
+            UUID.randomUUID().toString(), Arrays.<MockGrpcService>asList(mockImageAnnotator));
     serviceHelper.start();
   }
 

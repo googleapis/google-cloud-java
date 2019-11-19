@@ -64,6 +64,12 @@ public class VisionBatchAnnotateFilesGcs {
    * import java.util.List;
    */
 
+  public static void sampleBatchAnnotateFiles() {
+    // TODO(developer): Replace these variables before running the sample.
+    String storageUri = "gs://cloud-samples-data/vision/document_understanding/kafka.pdf";
+    sampleBatchAnnotateFiles(storageUri);
+  }
+
   /**
    * Perform batch file annotation
    *
@@ -71,7 +77,6 @@ public class VisionBatchAnnotateFilesGcs {
    */
   public static void sampleBatchAnnotateFiles(String storageUri) {
     try (ImageAnnotatorClient imageAnnotatorClient = ImageAnnotatorClient.create()) {
-      // storageUri = "gs://cloud-samples-data/vision/document_understanding/kafka.pdf";
       GcsSource gcsSource = GcsSource.newBuilder().setUri(storageUri).build();
       InputConfig inputConfig = InputConfig.newBuilder().setGcsSource(gcsSource).build();
       Feature.Type type = Feature.Type.DOCUMENT_TEXT_DETECTION;

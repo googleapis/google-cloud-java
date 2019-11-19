@@ -63,11 +63,16 @@ public class VisionAsyncBatchAnnotateImages {
    * import java.util.List;
    */
 
+  public static void sampleAsyncBatchAnnotateImages() {
+    // TODO(developer): Replace these variables before running the sample.
+    String inputImageUri = "gs://cloud-samples-data/vision/label/wakeupcat.jpg";
+    String outputUri = "gs://your-bucket/prefix/";
+    sampleAsyncBatchAnnotateImages(inputImageUri, outputUri);
+  }
+
   /** Perform async batch image annotation */
   public static void sampleAsyncBatchAnnotateImages(String inputImageUri, String outputUri) {
     try (ImageAnnotatorClient imageAnnotatorClient = ImageAnnotatorClient.create()) {
-      // inputImageUri = "gs://cloud-samples-data/vision/label/wakeupcat.jpg";
-      // outputUri = "gs://your-bucket/prefix/";
       ImageSource source = ImageSource.newBuilder().setImageUri(inputImageUri).build();
       Image image = Image.newBuilder().setSource(source).build();
       Feature.Type type = Feature.Type.LABEL_DETECTION;
