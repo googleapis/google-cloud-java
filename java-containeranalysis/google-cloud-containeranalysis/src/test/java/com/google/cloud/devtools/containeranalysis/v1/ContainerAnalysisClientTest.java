@@ -38,6 +38,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Objects;
+import java.util.UUID;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Assert;
@@ -57,7 +58,7 @@ public class ContainerAnalysisClientTest {
     mockContainerAnalysis = new MockContainerAnalysis();
     serviceHelper =
         new MockServiceHelper(
-            "in-process-1", Arrays.<MockGrpcService>asList(mockContainerAnalysis));
+            UUID.randomUUID().toString(), Arrays.<MockGrpcService>asList(mockContainerAnalysis));
     serviceHelper.start();
   }
 
