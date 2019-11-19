@@ -63,7 +63,7 @@
     <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
     <github.global.server>github</github.global.server>
     <site.installationModule>google-cloud-logging-parent</site.installationModule>
-    <google.core.version>1.91.1</google.core.version>
+    <google.core.version>1.91.3</google.core.version>
     <google.api-common.version>1.8.1</google.api-common.version>
     <google.common-protos.version>1.17.0</google.common-protos.version>
     <gax.version>1.50.1</gax.version>
@@ -76,7 +76,6 @@
     <animal-sniffer.version>1.18</animal-sniffer.version>
     <google.auth.version>0.18.0</google.auth.version>
     <http-client-bom.version>1.33.0</http-client-bom.version>
-    <google.cloud-core.version>1.91.2</google.cloud-core.version>
   </properties>
 
   <dependencyManagement>
@@ -132,6 +131,13 @@
         <type>pom</type>
         <scope>import</scope>
       </dependency>
+      <dependency>
+        <groupId>com.google.cloud</groupId>
+        <artifactId>google-cloud-core-bom</artifactId>
+        <version>${google.core.version}</version>
+        <type>pom</type>
+        <scope>import</scope>
+      </dependency>
 
       <dependency>
         <groupId>com.google.protobuf</groupId>
@@ -153,30 +159,15 @@
         <artifactId>threetenbp</artifactId>
         <version>${threeten.version}</version>
       </dependency>
-<!--      <dependency>-->
-<!--        <groupId>javax.annotation</groupId>-->
-<!--        <artifactId>javax.annotation-api</artifactId>-->
-<!--        <version>${javax.annotations.version}</version>-->
-<!--      </dependency>-->
       <dependency>
         <groupId>org.codehaus.mojo</groupId>
         <artifactId>animal-sniffer-annotations</artifactId>
         <version>${animal-sniffer.version}</version>
       </dependency>
       <dependency>
-        <groupId>com.google.cloud</groupId>
-        <artifactId>google-cloud-core-grpc</artifactId>
-        <version>1.91.2</version>
-      </dependency>
-      <dependency>
         <groupId>com.google.code.gson</groupId>
         <artifactId>gson</artifactId>
         <version>2.8.6</version>
-      </dependency>
-      <dependency>
-        <groupId>com.google.cloud</groupId>
-        <artifactId>google-cloud-core</artifactId>
-        <version>${google.cloud-core.version}</version>
       </dependency>
 
       <dependency>
@@ -218,7 +209,7 @@
       <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-core</artifactId>
-        <version>1.91.2</version>
+        <version>${google.core.version}</version>
         <type>test-jar</type>
         <scope>test</scope>
       </dependency>
@@ -243,7 +234,7 @@
     <module>proto-google-cloud-logging-v2</module>
     <module>grpc-google-cloud-logging-v2</module>
     <module>google-cloud-logging</module>
-  <module>google-cloud-logging-bom</module>
+    <module>google-cloud-logging-bom</module>
   </modules>
 
   <reporting>
