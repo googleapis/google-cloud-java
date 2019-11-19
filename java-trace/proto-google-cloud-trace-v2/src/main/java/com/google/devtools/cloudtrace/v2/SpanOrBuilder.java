@@ -35,7 +35,7 @@ public interface SpanOrBuilder
    * is a 16-character hexadecimal encoding of an 8-byte array.
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   java.lang.String getName();
   /**
@@ -50,7 +50,7 @@ public interface SpanOrBuilder
    * is a 16-character hexadecimal encoding of an 8-byte array.
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   com.google.protobuf.ByteString getNameBytes();
 
@@ -61,7 +61,7 @@ public interface SpanOrBuilder
    * The [SPAN_ID] portion of the span's resource name.
    * </pre>
    *
-   * <code>string span_id = 2;</code>
+   * <code>string span_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   java.lang.String getSpanId();
   /**
@@ -71,7 +71,7 @@ public interface SpanOrBuilder
    * The [SPAN_ID] portion of the span's resource name.
    * </pre>
    *
-   * <code>string span_id = 2;</code>
+   * <code>string span_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   com.google.protobuf.ByteString getSpanIdBytes();
 
@@ -111,7 +111,9 @@ public interface SpanOrBuilder
    * This makes it easier to correlate spans in different traces.
    * </pre>
    *
-   * <code>.google.devtools.cloudtrace.v2.TruncatableString display_name = 4;</code>
+   * <code>
+   * .google.devtools.cloudtrace.v2.TruncatableString display_name = 4 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   boolean hasDisplayName();
   /**
@@ -127,7 +129,9 @@ public interface SpanOrBuilder
    * This makes it easier to correlate spans in different traces.
    * </pre>
    *
-   * <code>.google.devtools.cloudtrace.v2.TruncatableString display_name = 4;</code>
+   * <code>
+   * .google.devtools.cloudtrace.v2.TruncatableString display_name = 4 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   com.google.devtools.cloudtrace.v2.TruncatableString getDisplayName();
   /**
@@ -143,7 +147,9 @@ public interface SpanOrBuilder
    * This makes it easier to correlate spans in different traces.
    * </pre>
    *
-   * <code>.google.devtools.cloudtrace.v2.TruncatableString display_name = 4;</code>
+   * <code>
+   * .google.devtools.cloudtrace.v2.TruncatableString display_name = 4 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   com.google.devtools.cloudtrace.v2.TruncatableStringOrBuilder getDisplayNameOrBuilder();
 
@@ -156,7 +162,8 @@ public interface SpanOrBuilder
    * is the time when the server's application handler starts running.
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp start_time = 5;</code>
+   * <code>.google.protobuf.Timestamp start_time = 5 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   boolean hasStartTime();
   /**
@@ -168,7 +175,8 @@ public interface SpanOrBuilder
    * is the time when the server's application handler starts running.
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp start_time = 5;</code>
+   * <code>.google.protobuf.Timestamp start_time = 5 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   com.google.protobuf.Timestamp getStartTime();
   /**
@@ -180,7 +188,8 @@ public interface SpanOrBuilder
    * is the time when the server's application handler starts running.
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp start_time = 5;</code>
+   * <code>.google.protobuf.Timestamp start_time = 5 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   com.google.protobuf.TimestampOrBuilder getStartTimeOrBuilder();
 
@@ -193,7 +202,7 @@ public interface SpanOrBuilder
    * is the time when the server application handler stops running.
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp end_time = 6;</code>
+   * <code>.google.protobuf.Timestamp end_time = 6 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   boolean hasEndTime();
   /**
@@ -205,7 +214,7 @@ public interface SpanOrBuilder
    * is the time when the server application handler stops running.
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp end_time = 6;</code>
+   * <code>.google.protobuf.Timestamp end_time = 6 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   com.google.protobuf.Timestamp getEndTime();
   /**
@@ -217,7 +226,7 @@ public interface SpanOrBuilder
    * is the time when the server application handler stops running.
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp end_time = 6;</code>
+   * <code>.google.protobuf.Timestamp end_time = 6 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   com.google.protobuf.TimestampOrBuilder getEndTimeOrBuilder();
 

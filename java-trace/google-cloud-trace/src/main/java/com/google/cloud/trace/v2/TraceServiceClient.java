@@ -266,13 +266,13 @@ public class TraceServiceClient implements BackgroundResource {
    *
    * <pre><code>
    * try (TraceServiceClient traceServiceClient = TraceServiceClient.create()) {
-   *   SpanName name = SpanName.of("[PROJECT]", "[TRACE]", "[SPAN]");
+   *   String name = "";
    *   String spanId = "";
    *   TruncatableString displayName = TruncatableString.newBuilder().build();
    *   Timestamp startTime = Timestamp.newBuilder().build();
    *   Timestamp endTime = Timestamp.newBuilder().build();
    *   Span request = Span.newBuilder()
-   *     .setName(name.toString())
+   *     .setName(name)
    *     .setSpanId(spanId)
    *     .setDisplayName(displayName)
    *     .setStartTime(startTime)
@@ -297,13 +297,13 @@ public class TraceServiceClient implements BackgroundResource {
    *
    * <pre><code>
    * try (TraceServiceClient traceServiceClient = TraceServiceClient.create()) {
-   *   SpanName name = SpanName.of("[PROJECT]", "[TRACE]", "[SPAN]");
+   *   String name = "";
    *   String spanId = "";
    *   TruncatableString displayName = TruncatableString.newBuilder().build();
    *   Timestamp startTime = Timestamp.newBuilder().build();
    *   Timestamp endTime = Timestamp.newBuilder().build();
    *   Span request = Span.newBuilder()
-   *     .setName(name.toString())
+   *     .setName(name)
    *     .setSpanId(spanId)
    *     .setDisplayName(displayName)
    *     .setStartTime(startTime)

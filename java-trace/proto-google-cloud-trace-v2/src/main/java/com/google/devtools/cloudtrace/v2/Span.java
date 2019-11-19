@@ -8667,7 +8667,7 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
    * is a 16-character hexadecimal encoding of an 8-byte array.
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   public java.lang.String getName() {
     java.lang.Object ref = name_;
@@ -8692,7 +8692,7 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
    * is a 16-character hexadecimal encoding of an 8-byte array.
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   public com.google.protobuf.ByteString getNameBytes() {
     java.lang.Object ref = name_;
@@ -8715,7 +8715,7 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
    * The [SPAN_ID] portion of the span's resource name.
    * </pre>
    *
-   * <code>string span_id = 2;</code>
+   * <code>string span_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   public java.lang.String getSpanId() {
     java.lang.Object ref = spanId_;
@@ -8735,7 +8735,7 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
    * The [SPAN_ID] portion of the span's resource name.
    * </pre>
    *
-   * <code>string span_id = 2;</code>
+   * <code>string span_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   public com.google.protobuf.ByteString getSpanIdBytes() {
     java.lang.Object ref = spanId_;
@@ -8809,7 +8809,9 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
    * This makes it easier to correlate spans in different traces.
    * </pre>
    *
-   * <code>.google.devtools.cloudtrace.v2.TruncatableString display_name = 4;</code>
+   * <code>
+   * .google.devtools.cloudtrace.v2.TruncatableString display_name = 4 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   public boolean hasDisplayName() {
     return displayName_ != null;
@@ -8827,7 +8829,9 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
    * This makes it easier to correlate spans in different traces.
    * </pre>
    *
-   * <code>.google.devtools.cloudtrace.v2.TruncatableString display_name = 4;</code>
+   * <code>
+   * .google.devtools.cloudtrace.v2.TruncatableString display_name = 4 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   public com.google.devtools.cloudtrace.v2.TruncatableString getDisplayName() {
     return displayName_ == null
@@ -8847,7 +8851,9 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
    * This makes it easier to correlate spans in different traces.
    * </pre>
    *
-   * <code>.google.devtools.cloudtrace.v2.TruncatableString display_name = 4;</code>
+   * <code>
+   * .google.devtools.cloudtrace.v2.TruncatableString display_name = 4 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   public com.google.devtools.cloudtrace.v2.TruncatableStringOrBuilder getDisplayNameOrBuilder() {
     return getDisplayName();
@@ -8864,7 +8870,8 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
    * is the time when the server's application handler starts running.
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp start_time = 5;</code>
+   * <code>.google.protobuf.Timestamp start_time = 5 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   public boolean hasStartTime() {
     return startTime_ != null;
@@ -8878,7 +8885,8 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
    * is the time when the server's application handler starts running.
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp start_time = 5;</code>
+   * <code>.google.protobuf.Timestamp start_time = 5 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   public com.google.protobuf.Timestamp getStartTime() {
     return startTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : startTime_;
@@ -8892,7 +8900,8 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
    * is the time when the server's application handler starts running.
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp start_time = 5;</code>
+   * <code>.google.protobuf.Timestamp start_time = 5 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   public com.google.protobuf.TimestampOrBuilder getStartTimeOrBuilder() {
     return getStartTime();
@@ -8909,7 +8918,7 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
    * is the time when the server application handler stops running.
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp end_time = 6;</code>
+   * <code>.google.protobuf.Timestamp end_time = 6 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   public boolean hasEndTime() {
     return endTime_ != null;
@@ -8923,7 +8932,7 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
    * is the time when the server application handler stops running.
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp end_time = 6;</code>
+   * <code>.google.protobuf.Timestamp end_time = 6 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   public com.google.protobuf.Timestamp getEndTime() {
     return endTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : endTime_;
@@ -8937,7 +8946,7 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
    * is the time when the server application handler stops running.
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp end_time = 6;</code>
+   * <code>.google.protobuf.Timestamp end_time = 6 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   public com.google.protobuf.TimestampOrBuilder getEndTimeOrBuilder() {
     return getEndTime();
@@ -9905,7 +9914,7 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
      * is a 16-character hexadecimal encoding of an 8-byte array.
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public java.lang.String getName() {
       java.lang.Object ref = name_;
@@ -9930,7 +9939,7 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
      * is a 16-character hexadecimal encoding of an 8-byte array.
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public com.google.protobuf.ByteString getNameBytes() {
       java.lang.Object ref = name_;
@@ -9955,7 +9964,7 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
      * is a 16-character hexadecimal encoding of an 8-byte array.
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder setName(java.lang.String value) {
       if (value == null) {
@@ -9978,7 +9987,7 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
      * is a 16-character hexadecimal encoding of an 8-byte array.
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder clearName() {
 
@@ -9998,7 +10007,7 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
      * is a 16-character hexadecimal encoding of an 8-byte array.
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder setNameBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -10019,7 +10028,7 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
      * The [SPAN_ID] portion of the span's resource name.
      * </pre>
      *
-     * <code>string span_id = 2;</code>
+     * <code>string span_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public java.lang.String getSpanId() {
       java.lang.Object ref = spanId_;
@@ -10039,7 +10048,7 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
      * The [SPAN_ID] portion of the span's resource name.
      * </pre>
      *
-     * <code>string span_id = 2;</code>
+     * <code>string span_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public com.google.protobuf.ByteString getSpanIdBytes() {
       java.lang.Object ref = spanId_;
@@ -10059,7 +10068,7 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
      * The [SPAN_ID] portion of the span's resource name.
      * </pre>
      *
-     * <code>string span_id = 2;</code>
+     * <code>string span_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder setSpanId(java.lang.String value) {
       if (value == null) {
@@ -10077,7 +10086,7 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
      * The [SPAN_ID] portion of the span's resource name.
      * </pre>
      *
-     * <code>string span_id = 2;</code>
+     * <code>string span_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder clearSpanId() {
 
@@ -10092,7 +10101,7 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
      * The [SPAN_ID] portion of the span's resource name.
      * </pre>
      *
-     * <code>string span_id = 2;</code>
+     * <code>string span_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder setSpanIdBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -10223,7 +10232,9 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
      * This makes it easier to correlate spans in different traces.
      * </pre>
      *
-     * <code>.google.devtools.cloudtrace.v2.TruncatableString display_name = 4;</code>
+     * <code>
+     * .google.devtools.cloudtrace.v2.TruncatableString display_name = 4 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public boolean hasDisplayName() {
       return displayNameBuilder_ != null || displayName_ != null;
@@ -10241,7 +10252,9 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
      * This makes it easier to correlate spans in different traces.
      * </pre>
      *
-     * <code>.google.devtools.cloudtrace.v2.TruncatableString display_name = 4;</code>
+     * <code>
+     * .google.devtools.cloudtrace.v2.TruncatableString display_name = 4 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public com.google.devtools.cloudtrace.v2.TruncatableString getDisplayName() {
       if (displayNameBuilder_ == null) {
@@ -10265,7 +10278,9 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
      * This makes it easier to correlate spans in different traces.
      * </pre>
      *
-     * <code>.google.devtools.cloudtrace.v2.TruncatableString display_name = 4;</code>
+     * <code>
+     * .google.devtools.cloudtrace.v2.TruncatableString display_name = 4 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder setDisplayName(com.google.devtools.cloudtrace.v2.TruncatableString value) {
       if (displayNameBuilder_ == null) {
@@ -10293,7 +10308,9 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
      * This makes it easier to correlate spans in different traces.
      * </pre>
      *
-     * <code>.google.devtools.cloudtrace.v2.TruncatableString display_name = 4;</code>
+     * <code>
+     * .google.devtools.cloudtrace.v2.TruncatableString display_name = 4 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder setDisplayName(
         com.google.devtools.cloudtrace.v2.TruncatableString.Builder builderForValue) {
@@ -10319,7 +10336,9 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
      * This makes it easier to correlate spans in different traces.
      * </pre>
      *
-     * <code>.google.devtools.cloudtrace.v2.TruncatableString display_name = 4;</code>
+     * <code>
+     * .google.devtools.cloudtrace.v2.TruncatableString display_name = 4 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder mergeDisplayName(com.google.devtools.cloudtrace.v2.TruncatableString value) {
       if (displayNameBuilder_ == null) {
@@ -10351,7 +10370,9 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
      * This makes it easier to correlate spans in different traces.
      * </pre>
      *
-     * <code>.google.devtools.cloudtrace.v2.TruncatableString display_name = 4;</code>
+     * <code>
+     * .google.devtools.cloudtrace.v2.TruncatableString display_name = 4 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder clearDisplayName() {
       if (displayNameBuilder_ == null) {
@@ -10377,7 +10398,9 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
      * This makes it easier to correlate spans in different traces.
      * </pre>
      *
-     * <code>.google.devtools.cloudtrace.v2.TruncatableString display_name = 4;</code>
+     * <code>
+     * .google.devtools.cloudtrace.v2.TruncatableString display_name = 4 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public com.google.devtools.cloudtrace.v2.TruncatableString.Builder getDisplayNameBuilder() {
 
@@ -10397,7 +10420,9 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
      * This makes it easier to correlate spans in different traces.
      * </pre>
      *
-     * <code>.google.devtools.cloudtrace.v2.TruncatableString display_name = 4;</code>
+     * <code>
+     * .google.devtools.cloudtrace.v2.TruncatableString display_name = 4 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public com.google.devtools.cloudtrace.v2.TruncatableStringOrBuilder getDisplayNameOrBuilder() {
       if (displayNameBuilder_ != null) {
@@ -10421,7 +10446,9 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
      * This makes it easier to correlate spans in different traces.
      * </pre>
      *
-     * <code>.google.devtools.cloudtrace.v2.TruncatableString display_name = 4;</code>
+     * <code>
+     * .google.devtools.cloudtrace.v2.TruncatableString display_name = 4 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.devtools.cloudtrace.v2.TruncatableString,
@@ -10455,7 +10482,8 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
      * is the time when the server's application handler starts running.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp start_time = 5;</code>
+     * <code>.google.protobuf.Timestamp start_time = 5 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public boolean hasStartTime() {
       return startTimeBuilder_ != null || startTime_ != null;
@@ -10469,7 +10497,8 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
      * is the time when the server's application handler starts running.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp start_time = 5;</code>
+     * <code>.google.protobuf.Timestamp start_time = 5 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public com.google.protobuf.Timestamp getStartTime() {
       if (startTimeBuilder_ == null) {
@@ -10487,7 +10516,8 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
      * is the time when the server's application handler starts running.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp start_time = 5;</code>
+     * <code>.google.protobuf.Timestamp start_time = 5 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder setStartTime(com.google.protobuf.Timestamp value) {
       if (startTimeBuilder_ == null) {
@@ -10511,7 +10541,8 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
      * is the time when the server's application handler starts running.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp start_time = 5;</code>
+     * <code>.google.protobuf.Timestamp start_time = 5 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder setStartTime(com.google.protobuf.Timestamp.Builder builderForValue) {
       if (startTimeBuilder_ == null) {
@@ -10532,7 +10563,8 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
      * is the time when the server's application handler starts running.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp start_time = 5;</code>
+     * <code>.google.protobuf.Timestamp start_time = 5 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder mergeStartTime(com.google.protobuf.Timestamp value) {
       if (startTimeBuilder_ == null) {
@@ -10558,7 +10590,8 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
      * is the time when the server's application handler starts running.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp start_time = 5;</code>
+     * <code>.google.protobuf.Timestamp start_time = 5 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder clearStartTime() {
       if (startTimeBuilder_ == null) {
@@ -10580,7 +10613,8 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
      * is the time when the server's application handler starts running.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp start_time = 5;</code>
+     * <code>.google.protobuf.Timestamp start_time = 5 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public com.google.protobuf.Timestamp.Builder getStartTimeBuilder() {
 
@@ -10596,7 +10630,8 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
      * is the time when the server's application handler starts running.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp start_time = 5;</code>
+     * <code>.google.protobuf.Timestamp start_time = 5 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public com.google.protobuf.TimestampOrBuilder getStartTimeOrBuilder() {
       if (startTimeBuilder_ != null) {
@@ -10614,7 +10649,8 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
      * is the time when the server's application handler starts running.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp start_time = 5;</code>
+     * <code>.google.protobuf.Timestamp start_time = 5 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.protobuf.Timestamp,
@@ -10648,7 +10684,8 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
      * is the time when the server application handler stops running.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp end_time = 6;</code>
+     * <code>.google.protobuf.Timestamp end_time = 6 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public boolean hasEndTime() {
       return endTimeBuilder_ != null || endTime_ != null;
@@ -10662,7 +10699,8 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
      * is the time when the server application handler stops running.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp end_time = 6;</code>
+     * <code>.google.protobuf.Timestamp end_time = 6 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public com.google.protobuf.Timestamp getEndTime() {
       if (endTimeBuilder_ == null) {
@@ -10680,7 +10718,8 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
      * is the time when the server application handler stops running.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp end_time = 6;</code>
+     * <code>.google.protobuf.Timestamp end_time = 6 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder setEndTime(com.google.protobuf.Timestamp value) {
       if (endTimeBuilder_ == null) {
@@ -10704,7 +10743,8 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
      * is the time when the server application handler stops running.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp end_time = 6;</code>
+     * <code>.google.protobuf.Timestamp end_time = 6 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder setEndTime(com.google.protobuf.Timestamp.Builder builderForValue) {
       if (endTimeBuilder_ == null) {
@@ -10725,7 +10765,8 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
      * is the time when the server application handler stops running.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp end_time = 6;</code>
+     * <code>.google.protobuf.Timestamp end_time = 6 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder mergeEndTime(com.google.protobuf.Timestamp value) {
       if (endTimeBuilder_ == null) {
@@ -10751,7 +10792,8 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
      * is the time when the server application handler stops running.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp end_time = 6;</code>
+     * <code>.google.protobuf.Timestamp end_time = 6 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder clearEndTime() {
       if (endTimeBuilder_ == null) {
@@ -10773,7 +10815,8 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
      * is the time when the server application handler stops running.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp end_time = 6;</code>
+     * <code>.google.protobuf.Timestamp end_time = 6 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public com.google.protobuf.Timestamp.Builder getEndTimeBuilder() {
 
@@ -10789,7 +10832,8 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
      * is the time when the server application handler stops running.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp end_time = 6;</code>
+     * <code>.google.protobuf.Timestamp end_time = 6 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public com.google.protobuf.TimestampOrBuilder getEndTimeOrBuilder() {
       if (endTimeBuilder_ != null) {
@@ -10807,7 +10851,8 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
      * is the time when the server application handler stops running.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp end_time = 6;</code>
+     * <code>.google.protobuf.Timestamp end_time = 6 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.protobuf.Timestamp,
