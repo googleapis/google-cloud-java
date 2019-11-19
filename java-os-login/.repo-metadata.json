@@ -8,6 +8,6 @@
   "language": "java",
   "repo": "googleapis/java-os-login",
   "repo_short": "java-os-login",
-  "distribution_name": "com.google.cloud:google-cloud-oslogin",
+  "distribution_name": "com.google.cloud:google-cloud-os-login",
   "api_id": "oslogin.googleapis.com"
 }
