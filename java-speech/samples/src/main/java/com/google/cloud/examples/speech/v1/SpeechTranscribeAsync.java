@@ -59,6 +59,12 @@ public class SpeechTranscribeAsync {
    * import java.nio.file.Paths;
    */
 
+  public static void sampleLongRunningRecognize() {
+    // TODO(developer): Replace these variables before running the sample.
+    String localFilePath = "resources/brooklyn_bridge.raw";
+    sampleLongRunningRecognize(localFilePath);
+  }
+
   /**
    * Transcribe a long audio file using asynchronous speech recognition
    *
@@ -66,7 +72,6 @@ public class SpeechTranscribeAsync {
    */
   public static void sampleLongRunningRecognize(String localFilePath) {
     try (SpeechClient speechClient = SpeechClient.create()) {
-      // localFilePath = "resources/brooklyn_bridge.raw";
 
       // The language of the supplied audio
       String languageCode = "en-US";

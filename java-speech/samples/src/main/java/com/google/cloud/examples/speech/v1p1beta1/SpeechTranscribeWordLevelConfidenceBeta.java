@@ -57,6 +57,12 @@ public class SpeechTranscribeWordLevelConfidenceBeta {
    * import java.nio.file.Paths;
    */
 
+  public static void sampleRecognize() {
+    // TODO(developer): Replace these variables before running the sample.
+    String localFilePath = "resources/brooklyn_bridge.flac";
+    sampleRecognize(localFilePath);
+  }
+
   /**
    * Print confidence level for individual words in a transcription of a short audio file.
    *
@@ -64,7 +70,6 @@ public class SpeechTranscribeWordLevelConfidenceBeta {
    */
   public static void sampleRecognize(String localFilePath) {
     try (SpeechClient speechClient = SpeechClient.create()) {
-      // localFilePath = "resources/brooklyn_bridge.flac";
 
       // When enabled, the first result returned by the API will include a list
       // of words and the confidence level for each of those words.

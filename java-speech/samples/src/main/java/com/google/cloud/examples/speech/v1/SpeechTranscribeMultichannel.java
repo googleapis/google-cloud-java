@@ -55,6 +55,12 @@ public class SpeechTranscribeMultichannel {
    * import java.nio.file.Paths;
    */
 
+  public static void sampleRecognize() {
+    // TODO(developer): Replace these variables before running the sample.
+    String localFilePath = "resources/multi.wav";
+    sampleRecognize(localFilePath);
+  }
+
   /**
    * Transcribe a short audio file with multiple channels
    *
@@ -62,7 +68,6 @@ public class SpeechTranscribeMultichannel {
    */
   public static void sampleRecognize(String localFilePath) {
     try (SpeechClient speechClient = SpeechClient.create()) {
-      // localFilePath = "resources/multi.wav";
 
       // The number of channels in the input audio file (optional)
       int audioChannelCount = 2;

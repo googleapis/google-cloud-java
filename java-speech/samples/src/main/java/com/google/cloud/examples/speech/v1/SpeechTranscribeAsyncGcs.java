@@ -51,6 +51,12 @@ public class SpeechTranscribeAsyncGcs {
    * import com.google.cloud.speech.v1.SpeechRecognitionResult;
    */
 
+  public static void sampleLongRunningRecognize() {
+    // TODO(developer): Replace these variables before running the sample.
+    String storageUri = "gs://cloud-samples-data/speech/brooklyn_bridge.raw";
+    sampleLongRunningRecognize(storageUri);
+  }
+
   /**
    * Transcribe long audio file from Cloud Storage using asynchronous speech recognition
    *
@@ -58,7 +64,6 @@ public class SpeechTranscribeAsyncGcs {
    */
   public static void sampleLongRunningRecognize(String storageUri) {
     try (SpeechClient speechClient = SpeechClient.create()) {
-      // storageUri = "gs://cloud-samples-data/speech/brooklyn_bridge.raw";
 
       // Sample rate in Hertz of the audio data sent
       int sampleRateHertz = 16000;

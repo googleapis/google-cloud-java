@@ -47,6 +47,12 @@ public class SpeechQuickstartBeta {
    * import com.google.cloud.speech.v1p1beta1.SpeechRecognitionResult;
    */
 
+  public static void sampleRecognize() {
+    // TODO(developer): Replace these variables before running the sample.
+    String storageUri = "gs://cloud-samples-data/speech/brooklyn_bridge.mp3";
+    sampleRecognize(storageUri);
+  }
+
   /**
    * Performs synchronous speech recognition on an audio file
    *
@@ -54,7 +60,6 @@ public class SpeechQuickstartBeta {
    */
   public static void sampleRecognize(String storageUri) {
     try (SpeechClient speechClient = SpeechClient.create()) {
-      // storageUri = "gs://cloud-samples-data/speech/brooklyn_bridge.mp3";
 
       // The language of the supplied audio
       String languageCode = "en-US";

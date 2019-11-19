@@ -62,6 +62,12 @@ public class SpeechTranscribeDiarizationBeta {
    * import java.nio.file.Paths;
    */
 
+  public static void sampleLongRunningRecognize() {
+    // TODO(developer): Replace these variables before running the sample.
+    String localFilePath = "resources/commercial_mono.wav";
+    sampleLongRunningRecognize(localFilePath);
+  }
+
   /**
    * Print confidence level for individual words in a transcription of a short audio file Separating
    * different speakers in an audio file recording
@@ -70,7 +76,6 @@ public class SpeechTranscribeDiarizationBeta {
    */
   public static void sampleLongRunningRecognize(String localFilePath) {
     try (SpeechClient speechClient = SpeechClient.create()) {
-      // localFilePath = "resources/commercial_mono.wav";
 
       // If enabled, each word in the first alternative of each result will be
       // tagged with a speaker tag to identify the speaker.

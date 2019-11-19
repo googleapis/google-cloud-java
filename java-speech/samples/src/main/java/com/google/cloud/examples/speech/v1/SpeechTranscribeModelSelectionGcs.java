@@ -47,6 +47,13 @@ public class SpeechTranscribeModelSelectionGcs {
    * import com.google.cloud.speech.v1.SpeechRecognitionResult;
    */
 
+  public static void sampleRecognize() {
+    // TODO(developer): Replace these variables before running the sample.
+    String storageUri = "gs://cloud-samples-data/speech/hello.wav";
+    String model = "phone_call";
+    sampleRecognize(storageUri, model);
+  }
+
   /**
    * Transcribe a short audio file from Cloud Storage using a specified transcription model
    *
@@ -57,8 +64,6 @@ public class SpeechTranscribeModelSelectionGcs {
    */
   public static void sampleRecognize(String storageUri, String model) {
     try (SpeechClient speechClient = SpeechClient.create()) {
-      // storageUri = "gs://cloud-samples-data/speech/hello.wav";
-      // model = "phone_call";
 
       // The language of the supplied audio
       String languageCode = "en-US";

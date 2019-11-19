@@ -55,6 +55,12 @@ public class SpeechTranscribeAutoPunctuationBeta {
    * import java.nio.file.Paths;
    */
 
+  public static void sampleRecognize() {
+    // TODO(developer): Replace these variables before running the sample.
+    String localFilePath = "resources/commercial_mono.wav";
+    sampleRecognize(localFilePath);
+  }
+
   /**
    * Transcribe a short audio file with punctuation
    *
@@ -62,7 +68,6 @@ public class SpeechTranscribeAutoPunctuationBeta {
    */
   public static void sampleRecognize(String localFilePath) {
     try (SpeechClient speechClient = SpeechClient.create()) {
-      // localFilePath = "resources/commercial_mono.wav";
 
       // When enabled, trascription results may include punctuation
       // (available for select languages).

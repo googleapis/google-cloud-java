@@ -55,6 +55,13 @@ public class SpeechTranscribeModelSelection {
    * import java.nio.file.Paths;
    */
 
+  public static void sampleRecognize() {
+    // TODO(developer): Replace these variables before running the sample.
+    String localFilePath = "resources/hello.wav";
+    String model = "phone_call";
+    sampleRecognize(localFilePath, model);
+  }
+
   /**
    * Transcribe a short audio file using a specified transcription model
    *
@@ -65,8 +72,6 @@ public class SpeechTranscribeModelSelection {
    */
   public static void sampleRecognize(String localFilePath, String model) {
     try (SpeechClient speechClient = SpeechClient.create()) {
-      // localFilePath = "resources/hello.wav";
-      // model = "phone_call";
 
       // The language of the supplied audio
       String languageCode = "en-US";

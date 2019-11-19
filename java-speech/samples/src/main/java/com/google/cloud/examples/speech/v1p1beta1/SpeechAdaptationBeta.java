@@ -53,6 +53,13 @@ public class SpeechAdaptationBeta {
    * import java.util.List;
    */
 
+  public static void sampleRecognize() {
+    // TODO(developer): Replace these variables before running the sample.
+    String storageUri = "gs://cloud-samples-data/speech/brooklyn_bridge.mp3";
+    String phrase = "Brooklyn Bridge";
+    sampleRecognize(storageUri, phrase);
+  }
+
   /**
    * Transcribe a short audio file with speech adaptation.
    *
@@ -61,8 +68,6 @@ public class SpeechAdaptationBeta {
    */
   public static void sampleRecognize(String storageUri, String phrase) {
     try (SpeechClient speechClient = SpeechClient.create()) {
-      // storageUri = "gs://cloud-samples-data/speech/brooklyn_bridge.mp3";
-      // phrase = "Brooklyn Bridge";
       List<String> phrases = Arrays.asList(phrase);
 
       // Hint Boost. This value increases the probability that a specific

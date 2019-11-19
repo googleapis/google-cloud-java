@@ -53,6 +53,13 @@ public class SpeechContextsClassesBeta {
    * import java.util.List;
    */
 
+  public static void sampleRecognize() {
+    // TODO(developer): Replace these variables before running the sample.
+    String storageUri = "gs://cloud-samples-data/speech/time.mp3";
+    String phrase = "$TIME";
+    sampleRecognize(storageUri, phrase);
+  }
+
   /**
    * Transcribe a short audio file with static context classes.
    *
@@ -63,8 +70,6 @@ public class SpeechContextsClassesBeta {
    */
   public static void sampleRecognize(String storageUri, String phrase) {
     try (SpeechClient speechClient = SpeechClient.create()) {
-      // storageUri = "gs://cloud-samples-data/speech/time.mp3";
-      // phrase = "$TIME";
       List<String> phrases = Arrays.asList(phrase);
       SpeechContext speechContextsElement =
           SpeechContext.newBuilder().addAllPhrases(phrases).build();

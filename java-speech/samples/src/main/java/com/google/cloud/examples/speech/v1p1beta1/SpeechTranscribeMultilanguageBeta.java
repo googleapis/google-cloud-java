@@ -59,6 +59,12 @@ public class SpeechTranscribeMultilanguageBeta {
    * import java.util.List;
    */
 
+  public static void sampleRecognize() {
+    // TODO(developer): Replace these variables before running the sample.
+    String localFilePath = "resources/brooklyn_bridge.flac";
+    sampleRecognize(localFilePath);
+  }
+
   /**
    * Transcribe a short audio file with language detected from a list of possible languages
    *
@@ -66,7 +72,6 @@ public class SpeechTranscribeMultilanguageBeta {
    */
   public static void sampleRecognize(String localFilePath) {
     try (SpeechClient speechClient = SpeechClient.create()) {
-      // localFilePath = "resources/brooklyn_bridge.flac";
 
       // The language of the supplied audio. Even though additional languages are
       // provided by alternative_language_codes, a primary language is still required.

@@ -47,6 +47,12 @@ public class SpeechTranscribeMultichannelGcs {
    * import com.google.cloud.speech.v1.SpeechRecognitionResult;
    */
 
+  public static void sampleRecognize() {
+    // TODO(developer): Replace these variables before running the sample.
+    String storageUri = "gs://cloud-samples-data/speech/multi.wav";
+    sampleRecognize(storageUri);
+  }
+
   /**
    * Transcribe a short audio file from Cloud Storage with multiple channels
    *
@@ -54,7 +60,6 @@ public class SpeechTranscribeMultichannelGcs {
    */
   public static void sampleRecognize(String storageUri) {
     try (SpeechClient speechClient = SpeechClient.create()) {
-      // storageUri = "gs://cloud-samples-data/speech/multi.wav";
 
       // The number of channels in the input audio file (optional)
       int audioChannelCount = 2;

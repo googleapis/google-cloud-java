@@ -57,6 +57,12 @@ public class SpeechTranscribeRecognitionMetadataBeta {
    * import java.nio.file.Paths;
    */
 
+  public static void sampleRecognize() {
+    // TODO(developer): Replace these variables before running the sample.
+    String localFilePath = "resources/commercial_mono.wav";
+    sampleRecognize(localFilePath);
+  }
+
   /**
    * Adds additional details short audio file included in this recognition request
    *
@@ -64,7 +70,6 @@ public class SpeechTranscribeRecognitionMetadataBeta {
    */
   public static void sampleRecognize(String localFilePath) {
     try (SpeechClient speechClient = SpeechClient.create()) {
-      // localFilePath = "resources/commercial_mono.wav";
 
       // The use case of the audio, e.g. PHONE_CALL, DISCUSSION, PRESENTATION, et al.
       RecognitionMetadata.InteractionType interactionType =

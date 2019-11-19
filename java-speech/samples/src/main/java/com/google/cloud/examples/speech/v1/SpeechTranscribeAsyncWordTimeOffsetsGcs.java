@@ -53,6 +53,12 @@ public class SpeechTranscribeAsyncWordTimeOffsetsGcs {
    * import com.google.cloud.speech.v1.WordInfo;
    */
 
+  public static void sampleLongRunningRecognize() {
+    // TODO(developer): Replace these variables before running the sample.
+    String storageUri = "gs://cloud-samples-data/speech/brooklyn_bridge.flac";
+    sampleLongRunningRecognize(storageUri);
+  }
+
   /**
    * Print start and end time of each word spoken in audio file from Cloud Storage
    *
@@ -60,7 +66,6 @@ public class SpeechTranscribeAsyncWordTimeOffsetsGcs {
    */
   public static void sampleLongRunningRecognize(String storageUri) {
     try (SpeechClient speechClient = SpeechClient.create()) {
-      // storageUri = "gs://cloud-samples-data/speech/brooklyn_bridge.flac";
 
       // When enabled, the first result returned by the API will include a list
       // of words and the start and end time offsets (timestamps) for those words.

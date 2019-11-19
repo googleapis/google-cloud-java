@@ -55,6 +55,12 @@ public class SpeechTranscribeEnhancedModel {
    * import java.nio.file.Paths;
    */
 
+  public static void sampleRecognize() {
+    // TODO(developer): Replace these variables before running the sample.
+    String localFilePath = "resources/hello.wav";
+    sampleRecognize(localFilePath);
+  }
+
   /**
    * Transcribe a short audio file using an enhanced model
    *
@@ -62,7 +68,6 @@ public class SpeechTranscribeEnhancedModel {
    */
   public static void sampleRecognize(String localFilePath) {
     try (SpeechClient speechClient = SpeechClient.create()) {
-      // localFilePath = "resources/hello.wav";
 
       // The enhanced model to use, e.g. phone_call
       // Currently phone_call is the only model available as an enhanced model.

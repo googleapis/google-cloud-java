@@ -55,6 +55,12 @@ public class SpeechTranscribeSync {
    * import java.nio.file.Paths;
    */
 
+  public static void sampleRecognize() {
+    // TODO(developer): Replace these variables before running the sample.
+    String localFilePath = "resources/brooklyn_bridge.raw";
+    sampleRecognize(localFilePath);
+  }
+
   /**
    * Transcribe a short audio file using synchronous speech recognition
    *
@@ -62,7 +68,6 @@ public class SpeechTranscribeSync {
    */
   public static void sampleRecognize(String localFilePath) {
     try (SpeechClient speechClient = SpeechClient.create()) {
-      // localFilePath = "resources/brooklyn_bridge.raw";
 
       // The language of the supplied audio
       String languageCode = "en-US";
