@@ -168,8 +168,9 @@ public final class PullRequest extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The maximum number of messages returned for this request. The Pub/Sub
-   * system may return fewer than the number specified.
+   * The maximum number of messages to return for this request. Must be a
+   * positive integer. The Pub/Sub system may return fewer than the number
+   * specified.
    * </pre>
    *
    * <code>int32 max_messages = 3;</code>
@@ -678,8 +679,9 @@ public final class PullRequest extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The maximum number of messages returned for this request. The Pub/Sub
-     * system may return fewer than the number specified.
+     * The maximum number of messages to return for this request. Must be a
+     * positive integer. The Pub/Sub system may return fewer than the number
+     * specified.
      * </pre>
      *
      * <code>int32 max_messages = 3;</code>
@@ -691,8 +693,9 @@ public final class PullRequest extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The maximum number of messages returned for this request. The Pub/Sub
-     * system may return fewer than the number specified.
+     * The maximum number of messages to return for this request. Must be a
+     * positive integer. The Pub/Sub system may return fewer than the number
+     * specified.
      * </pre>
      *
      * <code>int32 max_messages = 3;</code>
@@ -707,8 +710,9 @@ public final class PullRequest extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The maximum number of messages returned for this request. The Pub/Sub
-     * system may return fewer than the number specified.
+     * The maximum number of messages to return for this request. Must be a
+     * positive integer. The Pub/Sub system may return fewer than the number
+     * specified.
      * </pre>
      *
      * <code>int32 max_messages = 3;</code>
