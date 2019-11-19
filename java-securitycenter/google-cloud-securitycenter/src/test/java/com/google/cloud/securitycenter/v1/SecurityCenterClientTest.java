@@ -44,6 +44,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Objects;
+import java.util.UUID;
 import java.util.concurrent.ExecutionException;
 import org.junit.After;
 import org.junit.AfterClass;
@@ -63,7 +64,8 @@ public class SecurityCenterClientTest {
   public static void startStaticServer() {
     mockSecurityCenter = new MockSecurityCenter();
     serviceHelper =
-        new MockServiceHelper("in-process-1", Arrays.<MockGrpcService>asList(mockSecurityCenter));
+        new MockServiceHelper(
+            UUID.randomUUID().toString(), Arrays.<MockGrpcService>asList(mockSecurityCenter));
     serviceHelper.start();
   }
 
