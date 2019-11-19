@@ -29,6 +29,7 @@ import io.grpc.StatusRuntimeException;
 import java.io.IOException;
 import java.util.Arrays;
 import java.util.List;
+import java.util.UUID;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Assert;
@@ -47,7 +48,8 @@ public class AssetServiceClientTest {
   public static void startStaticServer() {
     mockAssetService = new MockAssetService();
     serviceHelper =
-        new MockServiceHelper("in-process-1", Arrays.<MockGrpcService>asList(mockAssetService));
+        new MockServiceHelper(
+            UUID.randomUUID().toString(), Arrays.<MockGrpcService>asList(mockAssetService));
     serviceHelper.start();
   }
 
