@@ -78,6 +78,12 @@ public class VideoDetectLogoBeta {
    * import java.util.List;
    */
 
+  public static void sampleAnnotateVideo() {
+    // TODO(developer): Replace these variables before running the sample.
+    String localFilePath = "resources/googlework_short.mp4";
+    sampleAnnotateVideo(localFilePath);
+  }
+
   /**
    * Performs asynchronous video annotation for logo recognition from inline video content.
    *
@@ -86,7 +92,6 @@ public class VideoDetectLogoBeta {
   public static void sampleAnnotateVideo(String localFilePath) {
     try (VideoIntelligenceServiceClient videoIntelligenceServiceClient =
         VideoIntelligenceServiceClient.create()) {
-      // localFilePath = "resources/googlework_short.mp4";
       Path path = Paths.get(localFilePath);
       byte[] data = Files.readAllBytes(path);
       ByteString inputContent = ByteString.copyFrom(data);
