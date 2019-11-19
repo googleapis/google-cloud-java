@@ -53,7 +53,7 @@ public enum OutputAudioEncoding implements com.google.protobuf.ProtocolMessageEn
    *
    *
    * <pre>
-   * MP3 audio.
+   * MP3 audio at 32kbps.
    * </pre>
    *
    * <code>OUTPUT_AUDIO_ENCODING_MP3 = 2;</code>
@@ -100,7 +100,7 @@ public enum OutputAudioEncoding implements com.google.protobuf.ProtocolMessageEn
    *
    *
    * <pre>
-   * MP3 audio.
+   * MP3 audio at 32kbps.
    * </pre>
    *
    * <code>OUTPUT_AUDIO_ENCODING_MP3 = 2;</code>
