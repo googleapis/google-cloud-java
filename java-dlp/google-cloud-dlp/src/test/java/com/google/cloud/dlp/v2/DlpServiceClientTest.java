@@ -21,6 +21,7 @@ import com.google.api.gax.grpc.testing.MockGrpcService;
 import com.google.api.gax.grpc.testing.MockServiceHelper;
 import java.io.IOException;
 import java.util.Arrays;
+import java.util.UUID;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
@@ -37,7 +38,8 @@ public class DlpServiceClientTest {
   public static void startStaticServer() {
     mockDlpService = new MockDlpService();
     serviceHelper =
-        new MockServiceHelper("in-process-1", Arrays.<MockGrpcService>asList(mockDlpService));
+        new MockServiceHelper(
+            UUID.randomUUID().toString(), Arrays.<MockGrpcService>asList(mockDlpService));
     serviceHelper.start();
   }
 
