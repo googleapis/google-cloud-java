@@ -37,6 +37,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.UUID;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Assert;
@@ -56,7 +57,8 @@ public class WebRiskServiceV1Beta1ClientTest {
     mockWebRiskServiceV1Beta1 = new MockWebRiskServiceV1Beta1();
     serviceHelper =
         new MockServiceHelper(
-            "in-process-1", Arrays.<MockGrpcService>asList(mockWebRiskServiceV1Beta1));
+            UUID.randomUUID().toString(),
+            Arrays.<MockGrpcService>asList(mockWebRiskServiceV1Beta1));
     serviceHelper.start();
   }
 
