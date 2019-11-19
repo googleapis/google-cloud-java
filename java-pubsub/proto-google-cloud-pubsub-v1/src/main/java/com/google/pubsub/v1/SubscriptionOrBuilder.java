@@ -314,4 +314,62 @@ public interface SubscriptionOrBuilder
    * <code>.google.pubsub.v1.ExpirationPolicy expiration_policy = 11;</code>
    */
   com.google.pubsub.v1.ExpirationPolicyOrBuilder getExpirationPolicyOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * A policy that specifies the conditions for dead lettering messages in
+   * this subscription. If dead_letter_policy is not set, dead lettering
+   * is disabled.
+   * The Cloud Pub/Sub service account associated with this subscriptions's
+   * parent project (i.e.,
+   * service-{project_number}&#64;gcp-sa-pubsub.iam.gserviceaccount.com) must have
+   * permission to Acknowledge() messages on this subscription.
+   * &lt;b&gt;EXPERIMENTAL:&lt;/b&gt; This feature is part of a closed alpha release. This
+   * API might be changed in backward-incompatible ways and is not recommended
+   * for production use. It is not subject to any SLA or deprecation policy.
+   * </pre>
+   *
+   * <code>.google.pubsub.v1.DeadLetterPolicy dead_letter_policy = 13;</code>
+   */
+  boolean hasDeadLetterPolicy();
+  /**
+   *
+   *
+   * <pre>
+   * A policy that specifies the conditions for dead lettering messages in
+   * this subscription. If dead_letter_policy is not set, dead lettering
+   * is disabled.
+   * The Cloud Pub/Sub service account associated with this subscriptions's
+   * parent project (i.e.,
+   * service-{project_number}&#64;gcp-sa-pubsub.iam.gserviceaccount.com) must have
+   * permission to Acknowledge() messages on this subscription.
+   * &lt;b&gt;EXPERIMENTAL:&lt;/b&gt; This feature is part of a closed alpha release. This
+   * API might be changed in backward-incompatible ways and is not recommended
+   * for production use. It is not subject to any SLA or deprecation policy.
+   * </pre>
+   *
+   * <code>.google.pubsub.v1.DeadLetterPolicy dead_letter_policy = 13;</code>
+   */
+  com.google.pubsub.v1.DeadLetterPolicy getDeadLetterPolicy();
+  /**
+   *
+   *
+   * <pre>
+   * A policy that specifies the conditions for dead lettering messages in
+   * this subscription. If dead_letter_policy is not set, dead lettering
+   * is disabled.
+   * The Cloud Pub/Sub service account associated with this subscriptions's
+   * parent project (i.e.,
+   * service-{project_number}&#64;gcp-sa-pubsub.iam.gserviceaccount.com) must have
+   * permission to Acknowledge() messages on this subscription.
+   * &lt;b&gt;EXPERIMENTAL:&lt;/b&gt; This feature is part of a closed alpha release. This
+   * API might be changed in backward-incompatible ways and is not recommended
+   * for production use. It is not subject to any SLA or deprecation policy.
+   * </pre>
+   *
+   * <code>.google.pubsub.v1.DeadLetterPolicy dead_letter_policy = 13;</code>
+   */
+  com.google.pubsub.v1.DeadLetterPolicyOrBuilder getDeadLetterPolicyOrBuilder();
 }

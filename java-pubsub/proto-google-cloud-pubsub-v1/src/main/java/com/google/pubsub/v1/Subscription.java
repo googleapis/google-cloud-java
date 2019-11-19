@@ -139,6 +139,22 @@ public final class Subscription extends com.google.protobuf.GeneratedMessageV3
 
               break;
             }
+          case 106:
+            {
+              com.google.pubsub.v1.DeadLetterPolicy.Builder subBuilder = null;
+              if (deadLetterPolicy_ != null) {
+                subBuilder = deadLetterPolicy_.toBuilder();
+              }
+              deadLetterPolicy_ =
+                  input.readMessage(
+                      com.google.pubsub.v1.DeadLetterPolicy.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(deadLetterPolicy_);
+                deadLetterPolicy_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
           default:
             {
               if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -614,6 +630,74 @@ public final class Subscription extends com.google.protobuf.GeneratedMessageV3
     return getExpirationPolicy();
   }
 
+  public static final int DEAD_LETTER_POLICY_FIELD_NUMBER = 13;
+  private com.google.pubsub.v1.DeadLetterPolicy deadLetterPolicy_;
+  /**
+   *
+   *
+   * <pre>
+   * A policy that specifies the conditions for dead lettering messages in
+   * this subscription. If dead_letter_policy is not set, dead lettering
+   * is disabled.
+   * The Cloud Pub/Sub service account associated with this subscriptions's
+   * parent project (i.e.,
+   * service-{project_number}&#64;gcp-sa-pubsub.iam.gserviceaccount.com) must have
+   * permission to Acknowledge() messages on this subscription.
+   * &lt;b&gt;EXPERIMENTAL:&lt;/b&gt; This feature is part of a closed alpha release. This
+   * API might be changed in backward-incompatible ways and is not recommended
+   * for production use. It is not subject to any SLA or deprecation policy.
+   * </pre>
+   *
+   * <code>.google.pubsub.v1.DeadLetterPolicy dead_letter_policy = 13;</code>
+   */
+  public boolean hasDeadLetterPolicy() {
+    return deadLetterPolicy_ != null;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * A policy that specifies the conditions for dead lettering messages in
+   * this subscription. If dead_letter_policy is not set, dead lettering
+   * is disabled.
+   * The Cloud Pub/Sub service account associated with this subscriptions's
+   * parent project (i.e.,
+   * service-{project_number}&#64;gcp-sa-pubsub.iam.gserviceaccount.com) must have
+   * permission to Acknowledge() messages on this subscription.
+   * &lt;b&gt;EXPERIMENTAL:&lt;/b&gt; This feature is part of a closed alpha release. This
+   * API might be changed in backward-incompatible ways and is not recommended
+   * for production use. It is not subject to any SLA or deprecation policy.
+   * </pre>
+   *
+   * <code>.google.pubsub.v1.DeadLetterPolicy dead_letter_policy = 13;</code>
+   */
+  public com.google.pubsub.v1.DeadLetterPolicy getDeadLetterPolicy() {
+    return deadLetterPolicy_ == null
+        ? com.google.pubsub.v1.DeadLetterPolicy.getDefaultInstance()
+        : deadLetterPolicy_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * A policy that specifies the conditions for dead lettering messages in
+   * this subscription. If dead_letter_policy is not set, dead lettering
+   * is disabled.
+   * The Cloud Pub/Sub service account associated with this subscriptions's
+   * parent project (i.e.,
+   * service-{project_number}&#64;gcp-sa-pubsub.iam.gserviceaccount.com) must have
+   * permission to Acknowledge() messages on this subscription.
+   * &lt;b&gt;EXPERIMENTAL:&lt;/b&gt; This feature is part of a closed alpha release. This
+   * API might be changed in backward-incompatible ways and is not recommended
+   * for production use. It is not subject to any SLA or deprecation policy.
+   * </pre>
+   *
+   * <code>.google.pubsub.v1.DeadLetterPolicy dead_letter_policy = 13;</code>
+   */
+  public com.google.pubsub.v1.DeadLetterPolicyOrBuilder getDeadLetterPolicyOrBuilder() {
+    return getDeadLetterPolicy();
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -653,6 +737,9 @@ public final class Subscription extends com.google.protobuf.GeneratedMessageV3
     }
     if (expirationPolicy_ != null) {
       output.writeMessage(11, getExpirationPolicy());
+    }
+    if (deadLetterPolicy_ != null) {
+      output.writeMessage(13, getDeadLetterPolicy());
     }
     unknownFields.writeTo(output);
   }
@@ -699,6 +786,9 @@ public final class Subscription extends com.google.protobuf.GeneratedMessageV3
     if (expirationPolicy_ != null) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(11, getExpirationPolicy());
     }
+    if (deadLetterPolicy_ != null) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(13, getDeadLetterPolicy());
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -731,6 +821,10 @@ public final class Subscription extends com.google.protobuf.GeneratedMessageV3
     if (hasExpirationPolicy() != other.hasExpirationPolicy()) return false;
     if (hasExpirationPolicy()) {
       if (!getExpirationPolicy().equals(other.getExpirationPolicy())) return false;
+    }
+    if (hasDeadLetterPolicy() != other.hasDeadLetterPolicy()) return false;
+    if (hasDeadLetterPolicy()) {
+      if (!getDeadLetterPolicy().equals(other.getDeadLetterPolicy())) return false;
     }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
@@ -768,6 +862,10 @@ public final class Subscription extends com.google.protobuf.GeneratedMessageV3
     if (hasExpirationPolicy()) {
       hash = (37 * hash) + EXPIRATION_POLICY_FIELD_NUMBER;
       hash = (53 * hash) + getExpirationPolicy().hashCode();
+    }
+    if (hasDeadLetterPolicy()) {
+      hash = (37 * hash) + DEAD_LETTER_POLICY_FIELD_NUMBER;
+      hash = (53 * hash) + getDeadLetterPolicy().hashCode();
     }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
@@ -962,6 +1060,12 @@ public final class Subscription extends com.google.protobuf.GeneratedMessageV3
         expirationPolicy_ = null;
         expirationPolicyBuilder_ = null;
       }
+      if (deadLetterPolicyBuilder_ == null) {
+        deadLetterPolicy_ = null;
+      } else {
+        deadLetterPolicy_ = null;
+        deadLetterPolicyBuilder_ = null;
+      }
       return this;
     }
 
@@ -1011,6 +1115,11 @@ public final class Subscription extends com.google.protobuf.GeneratedMessageV3
         result.expirationPolicy_ = expirationPolicy_;
       } else {
         result.expirationPolicy_ = expirationPolicyBuilder_.build();
+      }
+      if (deadLetterPolicyBuilder_ == null) {
+        result.deadLetterPolicy_ = deadLetterPolicy_;
+      } else {
+        result.deadLetterPolicy_ = deadLetterPolicyBuilder_.build();
       }
       result.bitField0_ = to_bitField0_;
       onBuilt();
@@ -1088,6 +1197,9 @@ public final class Subscription extends com.google.protobuf.GeneratedMessageV3
       }
       if (other.hasExpirationPolicy()) {
         mergeExpirationPolicy(other.getExpirationPolicy());
+      }
+      if (other.hasDeadLetterPolicy()) {
+        mergeDeadLetterPolicy(other.getDeadLetterPolicy());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -2374,6 +2486,269 @@ public final class Subscription extends com.google.protobuf.GeneratedMessageV3
         expirationPolicy_ = null;
       }
       return expirationPolicyBuilder_;
+    }
+
+    private com.google.pubsub.v1.DeadLetterPolicy deadLetterPolicy_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.pubsub.v1.DeadLetterPolicy,
+            com.google.pubsub.v1.DeadLetterPolicy.Builder,
+            com.google.pubsub.v1.DeadLetterPolicyOrBuilder>
+        deadLetterPolicyBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * A policy that specifies the conditions for dead lettering messages in
+     * this subscription. If dead_letter_policy is not set, dead lettering
+     * is disabled.
+     * The Cloud Pub/Sub service account associated with this subscriptions's
+     * parent project (i.e.,
+     * service-{project_number}&#64;gcp-sa-pubsub.iam.gserviceaccount.com) must have
+     * permission to Acknowledge() messages on this subscription.
+     * &lt;b&gt;EXPERIMENTAL:&lt;/b&gt; This feature is part of a closed alpha release. This
+     * API might be changed in backward-incompatible ways and is not recommended
+     * for production use. It is not subject to any SLA or deprecation policy.
+     * </pre>
+     *
+     * <code>.google.pubsub.v1.DeadLetterPolicy dead_letter_policy = 13;</code>
+     */
+    public boolean hasDeadLetterPolicy() {
+      return deadLetterPolicyBuilder_ != null || deadLetterPolicy_ != null;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A policy that specifies the conditions for dead lettering messages in
+     * this subscription. If dead_letter_policy is not set, dead lettering
+     * is disabled.
+     * The Cloud Pub/Sub service account associated with this subscriptions's
+     * parent project (i.e.,
+     * service-{project_number}&#64;gcp-sa-pubsub.iam.gserviceaccount.com) must have
+     * permission to Acknowledge() messages on this subscription.
+     * &lt;b&gt;EXPERIMENTAL:&lt;/b&gt; This feature is part of a closed alpha release. This
+     * API might be changed in backward-incompatible ways and is not recommended
+     * for production use. It is not subject to any SLA or deprecation policy.
+     * </pre>
+     *
+     * <code>.google.pubsub.v1.DeadLetterPolicy dead_letter_policy = 13;</code>
+     */
+    public com.google.pubsub.v1.DeadLetterPolicy getDeadLetterPolicy() {
+      if (deadLetterPolicyBuilder_ == null) {
+        return deadLetterPolicy_ == null
+            ? com.google.pubsub.v1.DeadLetterPolicy.getDefaultInstance()
+            : deadLetterPolicy_;
+      } else {
+        return deadLetterPolicyBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A policy that specifies the conditions for dead lettering messages in
+     * this subscription. If dead_letter_policy is not set, dead lettering
+     * is disabled.
+     * The Cloud Pub/Sub service account associated with this subscriptions's
+     * parent project (i.e.,
+     * service-{project_number}&#64;gcp-sa-pubsub.iam.gserviceaccount.com) must have
+     * permission to Acknowledge() messages on this subscription.
+     * &lt;b&gt;EXPERIMENTAL:&lt;/b&gt; This feature is part of a closed alpha release. This
+     * API might be changed in backward-incompatible ways and is not recommended
+     * for production use. It is not subject to any SLA or deprecation policy.
+     * </pre>
+     *
+     * <code>.google.pubsub.v1.DeadLetterPolicy dead_letter_policy = 13;</code>
+     */
+    public Builder setDeadLetterPolicy(com.google.pubsub.v1.DeadLetterPolicy value) {
+      if (deadLetterPolicyBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        deadLetterPolicy_ = value;
+        onChanged();
+      } else {
+        deadLetterPolicyBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A policy that specifies the conditions for dead lettering messages in
+     * this subscription. If dead_letter_policy is not set, dead lettering
+     * is disabled.
+     * The Cloud Pub/Sub service account associated with this subscriptions's
+     * parent project (i.e.,
+     * service-{project_number}&#64;gcp-sa-pubsub.iam.gserviceaccount.com) must have
+     * permission to Acknowledge() messages on this subscription.
+     * &lt;b&gt;EXPERIMENTAL:&lt;/b&gt; This feature is part of a closed alpha release. This
+     * API might be changed in backward-incompatible ways and is not recommended
+     * for production use. It is not subject to any SLA or deprecation policy.
+     * </pre>
+     *
+     * <code>.google.pubsub.v1.DeadLetterPolicy dead_letter_policy = 13;</code>
+     */
+    public Builder setDeadLetterPolicy(
+        com.google.pubsub.v1.DeadLetterPolicy.Builder builderForValue) {
+      if (deadLetterPolicyBuilder_ == null) {
+        deadLetterPolicy_ = builderForValue.build();
+        onChanged();
+      } else {
+        deadLetterPolicyBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A policy that specifies the conditions for dead lettering messages in
+     * this subscription. If dead_letter_policy is not set, dead lettering
+     * is disabled.
+     * The Cloud Pub/Sub service account associated with this subscriptions's
+     * parent project (i.e.,
+     * service-{project_number}&#64;gcp-sa-pubsub.iam.gserviceaccount.com) must have
+     * permission to Acknowledge() messages on this subscription.
+     * &lt;b&gt;EXPERIMENTAL:&lt;/b&gt; This feature is part of a closed alpha release. This
+     * API might be changed in backward-incompatible ways and is not recommended
+     * for production use. It is not subject to any SLA or deprecation policy.
+     * </pre>
+     *
+     * <code>.google.pubsub.v1.DeadLetterPolicy dead_letter_policy = 13;</code>
+     */
+    public Builder mergeDeadLetterPolicy(com.google.pubsub.v1.DeadLetterPolicy value) {
+      if (deadLetterPolicyBuilder_ == null) {
+        if (deadLetterPolicy_ != null) {
+          deadLetterPolicy_ =
+              com.google.pubsub.v1.DeadLetterPolicy.newBuilder(deadLetterPolicy_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          deadLetterPolicy_ = value;
+        }
+        onChanged();
+      } else {
+        deadLetterPolicyBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A policy that specifies the conditions for dead lettering messages in
+     * this subscription. If dead_letter_policy is not set, dead lettering
+     * is disabled.
+     * The Cloud Pub/Sub service account associated with this subscriptions's
+     * parent project (i.e.,
+     * service-{project_number}&#64;gcp-sa-pubsub.iam.gserviceaccount.com) must have
+     * permission to Acknowledge() messages on this subscription.
+     * &lt;b&gt;EXPERIMENTAL:&lt;/b&gt; This feature is part of a closed alpha release. This
+     * API might be changed in backward-incompatible ways and is not recommended
+     * for production use. It is not subject to any SLA or deprecation policy.
+     * </pre>
+     *
+     * <code>.google.pubsub.v1.DeadLetterPolicy dead_letter_policy = 13;</code>
+     */
+    public Builder clearDeadLetterPolicy() {
+      if (deadLetterPolicyBuilder_ == null) {
+        deadLetterPolicy_ = null;
+        onChanged();
+      } else {
+        deadLetterPolicy_ = null;
+        deadLetterPolicyBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A policy that specifies the conditions for dead lettering messages in
+     * this subscription. If dead_letter_policy is not set, dead lettering
+     * is disabled.
+     * The Cloud Pub/Sub service account associated with this subscriptions's
+     * parent project (i.e.,
+     * service-{project_number}&#64;gcp-sa-pubsub.iam.gserviceaccount.com) must have
+     * permission to Acknowledge() messages on this subscription.
+     * &lt;b&gt;EXPERIMENTAL:&lt;/b&gt; This feature is part of a closed alpha release. This
+     * API might be changed in backward-incompatible ways and is not recommended
+     * for production use. It is not subject to any SLA or deprecation policy.
+     * </pre>
+     *
+     * <code>.google.pubsub.v1.DeadLetterPolicy dead_letter_policy = 13;</code>
+     */
+    public com.google.pubsub.v1.DeadLetterPolicy.Builder getDeadLetterPolicyBuilder() {
+
+      onChanged();
+      return getDeadLetterPolicyFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A policy that specifies the conditions for dead lettering messages in
+     * this subscription. If dead_letter_policy is not set, dead lettering
+     * is disabled.
+     * The Cloud Pub/Sub service account associated with this subscriptions's
+     * parent project (i.e.,
+     * service-{project_number}&#64;gcp-sa-pubsub.iam.gserviceaccount.com) must have
+     * permission to Acknowledge() messages on this subscription.
+     * &lt;b&gt;EXPERIMENTAL:&lt;/b&gt; This feature is part of a closed alpha release. This
+     * API might be changed in backward-incompatible ways and is not recommended
+     * for production use. It is not subject to any SLA or deprecation policy.
+     * </pre>
+     *
+     * <code>.google.pubsub.v1.DeadLetterPolicy dead_letter_policy = 13;</code>
+     */
+    public com.google.pubsub.v1.DeadLetterPolicyOrBuilder getDeadLetterPolicyOrBuilder() {
+      if (deadLetterPolicyBuilder_ != null) {
+        return deadLetterPolicyBuilder_.getMessageOrBuilder();
+      } else {
+        return deadLetterPolicy_ == null
+            ? com.google.pubsub.v1.DeadLetterPolicy.getDefaultInstance()
+            : deadLetterPolicy_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A policy that specifies the conditions for dead lettering messages in
+     * this subscription. If dead_letter_policy is not set, dead lettering
+     * is disabled.
+     * The Cloud Pub/Sub service account associated with this subscriptions's
+     * parent project (i.e.,
+     * service-{project_number}&#64;gcp-sa-pubsub.iam.gserviceaccount.com) must have
+     * permission to Acknowledge() messages on this subscription.
+     * &lt;b&gt;EXPERIMENTAL:&lt;/b&gt; This feature is part of a closed alpha release. This
+     * API might be changed in backward-incompatible ways and is not recommended
+     * for production use. It is not subject to any SLA or deprecation policy.
+     * </pre>
+     *
+     * <code>.google.pubsub.v1.DeadLetterPolicy dead_letter_policy = 13;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.pubsub.v1.DeadLetterPolicy,
+            com.google.pubsub.v1.DeadLetterPolicy.Builder,
+            com.google.pubsub.v1.DeadLetterPolicyOrBuilder>
+        getDeadLetterPolicyFieldBuilder() {
+      if (deadLetterPolicyBuilder_ == null) {
+        deadLetterPolicyBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.pubsub.v1.DeadLetterPolicy,
+                com.google.pubsub.v1.DeadLetterPolicy.Builder,
+                com.google.pubsub.v1.DeadLetterPolicyOrBuilder>(
+                getDeadLetterPolicy(), getParentForChildren(), isClean());
+        deadLetterPolicy_ = null;
+      }
+      return deadLetterPolicyBuilder_;
     }
 
     @java.lang.Override

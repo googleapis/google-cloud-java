@@ -1085,8 +1085,8 @@ public class SubscriptionAdminClient implements BackgroundResource {
    *     it there are no messages available to return in the `Pull` response. Otherwise, the system
    *     may wait (for a bounded amount of time) until at least one message is available, rather
    *     than returning no messages.
-   * @param maxMessages The maximum number of messages returned for this request. The Pub/Sub system
-   *     may return fewer than the number specified.
+   * @param maxMessages The maximum number of messages to return for this request. Must be a
+   *     positive integer. The Pub/Sub system may return fewer than the number specified.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   /* package-private */ final PullResponse pull(
@@ -1123,8 +1123,8 @@ public class SubscriptionAdminClient implements BackgroundResource {
    *     it there are no messages available to return in the `Pull` response. Otherwise, the system
    *     may wait (for a bounded amount of time) until at least one message is available, rather
    *     than returning no messages.
-   * @param maxMessages The maximum number of messages returned for this request. The Pub/Sub system
-   *     may return fewer than the number specified.
+   * @param maxMessages The maximum number of messages to return for this request. Must be a
+   *     positive integer. The Pub/Sub system may return fewer than the number specified.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   /* package-private */ final PullResponse pull(
