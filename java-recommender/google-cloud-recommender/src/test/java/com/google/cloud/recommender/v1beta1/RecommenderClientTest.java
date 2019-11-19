@@ -31,6 +31,7 @@ import io.grpc.StatusRuntimeException;
 import java.io.IOException;
 import java.util.Arrays;
 import java.util.List;
+import java.util.UUID;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Assert;
@@ -49,7 +50,8 @@ public class RecommenderClientTest {
   public static void startStaticServer() {
     mockRecommender = new MockRecommender();
     serviceHelper =
-        new MockServiceHelper("in-process-1", Arrays.<MockGrpcService>asList(mockRecommender));
+        new MockServiceHelper(
+            UUID.randomUUID().toString(), Arrays.<MockGrpcService>asList(mockRecommender));
     serviceHelper.start();
   }
 
