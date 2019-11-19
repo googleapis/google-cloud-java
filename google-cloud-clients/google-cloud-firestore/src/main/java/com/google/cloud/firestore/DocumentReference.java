@@ -165,11 +165,12 @@ public class DocumentReference {
    * Overwrites the document referred to by this DocumentReference. If no document exists yet, it
    * will be created. If a document already exists, it will be overwritten.
    *
-   * @param fields A map of the fields and values for the document.
+   * @param fields The fields to write to the document (e.g. a Map or a POJO containing the desired
+   *     document contents).
    * @return An ApiFuture that will be resolved when the write finishes.
    */
   @Nonnull
-  public ApiFuture<WriteResult> set(@Nonnull Map<String, Object> fields) {
+  public ApiFuture<WriteResult> set(@Nonnull Object fields) {
     WriteBatch writeBatch = firestore.batch();
     return extractFirst(writeBatch.set(this, fields).commit());
   }
@@ -179,43 +180,15 @@ public class DocumentReference {
    * exist, it will be created. If you pass {@link SetOptions}, the provided data can be merged into
    * an existing document.
    *
-   * @param fields A map of the fields and values for the document.
+   * @param fields The fields to write to the document (e.g. a Map or a POJO containing the desired
+   *     document contents).
    * @param options An object to configure the set behavior.
    * @return An ApiFuture that will be resolved when the write finishes.
    */
   @Nonnull
-  public ApiFuture<WriteResult> set(
-      @Nonnull Map<String, Object> fields, @Nonnull SetOptions options) {
+  public ApiFuture<WriteResult> set(@Nonnull Object fields, @Nonnull SetOptions options) {
     WriteBatch writeBatch = firestore.batch();
     return extractFirst(writeBatch.set(this, fields, options).commit());
-  }
-
-  /**
-   * Overwrites the document referred to by this DocumentReference. If no document exists yet, it
-   * will be created. If a document already exists, it will be overwritten.
-   *
-   * @param pojo The POJO that will be used to populate the document contents.
-   * @return An ApiFuture that will be resolved when the write finishes.
-   */
-  @Nonnull
-  public ApiFuture<WriteResult> set(@Nonnull Object pojo) {
-    WriteBatch writeBatch = firestore.batch();
-    return extractFirst(writeBatch.set(this, pojo).commit());
-  }
-
-  /**
-   * Writes to the document referred to by this DocumentReference. If the document does not yet
-   * exist, it will be created. If you pass {@link SetOptions}, the provided data can be merged into
-   * an existing document.
-   *
-   * @param pojo The POJO that will be used to populate the document contents.
-   * @param options An object to configure the set behavior.
-   * @return An ApiFuture that will be resolved when the write finishes.
-   */
-  @Nonnull
-  public ApiFuture<WriteResult> set(@Nonnull Object pojo, @Nonnull SetOptions options) {
-    WriteBatch writeBatch = firestore.batch();
-    return extractFirst(writeBatch.set(this, pojo, options).commit());
   }
 
   /**

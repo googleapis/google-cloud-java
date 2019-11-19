@@ -263,6 +263,19 @@ public class DocumentSnapshot {
   }
 
   /**
+   * Returns the value at the field, converted to a POJO, or null if the field or document doesn't
+   * exist.
+   *
+   * @param field The path to the field
+   * @param valueType The Java class to convert the field value to.
+   * @return The value at the given field or null.
+   */
+  @Nullable
+  public <T> T get(@Nonnull String field, @Nonnull Class<T> valueType) {
+    return get(FieldPath.fromDotSeparatedString(field), valueType);
+  }
+
+  /**
    * Returns the value at the field or null if the field doesn't exist.
    *
    * @param fieldPath The path to the field.
@@ -278,6 +291,20 @@ public class DocumentSnapshot {
 
     Object decodedValue = decodeValue(value);
     return convertToDateIfNecessary(decodedValue);
+  }
+
+  /**
+   * Returns the value at the field, converted to a POJO, or null if the field or document doesn't
+   * exist.
+   *
+   * @param fieldPath The path to the field
+   * @param valueType The Java class to convert the field value to.
+   * @return The value at the given field or null.
+   */
+  @Nullable
+  public <T> T get(@Nonnull FieldPath fieldPath, Class<T> valueType) {
+    Object data = get(fieldPath);
+    return data == null ? null : CustomClassMapper.convertToCustomClass(data, valueType, docRef);
   }
 
   private Object convertToDateIfNecessary(Object decodedValue) {
