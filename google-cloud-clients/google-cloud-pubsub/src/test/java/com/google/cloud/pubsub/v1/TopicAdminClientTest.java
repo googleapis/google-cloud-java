@@ -53,6 +53,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.UUID;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Assert;
@@ -76,7 +77,7 @@ public class TopicAdminClientTest {
     mockSubscriber = new MockSubscriber();
     serviceHelper =
         new MockServiceHelper(
-            "in-process-1",
+            UUID.randomUUID().toString(),
             Arrays.<MockGrpcService>asList(mockPublisher, mockIAMPolicy, mockSubscriber));
     serviceHelper.start();
   }

@@ -72,6 +72,11 @@ public final class ReceivedMessage extends com.google.protobuf.GeneratedMessageV
 
               break;
             }
+          case 24:
+            {
+              deliveryAttempt_ = input.readInt32();
+              break;
+            }
           default:
             {
               if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -188,6 +193,33 @@ public final class ReceivedMessage extends com.google.protobuf.GeneratedMessageV
     return getMessage();
   }
 
+  public static final int DELIVERY_ATTEMPT_FIELD_NUMBER = 3;
+  private int deliveryAttempt_;
+  /**
+   *
+   *
+   * <pre>
+   * Delivery attempt counter is 1 + (the sum of number of NACKs and number of
+   * ack_deadline exceeds) for this message.
+   * A NACK is any call to ModifyAckDeadline with a 0 deadline. An ack_deadline
+   * exceeds event is whenever a message is not acknowledged within
+   * ack_deadline. Note that ack_deadline is initially
+   * Subscription.ackDeadlineSeconds, but may get extended automatically by
+   * the client library.
+   * The first delivery of a given message will have this value as 1. The value
+   * is calculated at best effort and is approximate.
+   * If a DeadLetterPolicy is not set on the subscription, this will be 0.
+   * &lt;b&gt;EXPERIMENTAL:&lt;/b&gt; This feature is part of a closed alpha release. This
+   * API might be changed in backward-incompatible ways and is not recommended
+   * for production use. It is not subject to any SLA or deprecation policy.
+   * </pre>
+   *
+   * <code>int32 delivery_attempt = 3;</code>
+   */
+  public int getDeliveryAttempt() {
+    return deliveryAttempt_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -208,6 +240,9 @@ public final class ReceivedMessage extends com.google.protobuf.GeneratedMessageV
     if (message_ != null) {
       output.writeMessage(2, getMessage());
     }
+    if (deliveryAttempt_ != 0) {
+      output.writeInt32(3, deliveryAttempt_);
+    }
     unknownFields.writeTo(output);
   }
 
@@ -222,6 +257,9 @@ public final class ReceivedMessage extends com.google.protobuf.GeneratedMessageV
     }
     if (message_ != null) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(2, getMessage());
+    }
+    if (deliveryAttempt_ != 0) {
+      size += com.google.protobuf.CodedOutputStream.computeInt32Size(3, deliveryAttempt_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -243,6 +281,7 @@ public final class ReceivedMessage extends com.google.protobuf.GeneratedMessageV
     if (hasMessage()) {
       if (!getMessage().equals(other.getMessage())) return false;
     }
+    if (getDeliveryAttempt() != other.getDeliveryAttempt()) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -260,6 +299,8 @@ public final class ReceivedMessage extends com.google.protobuf.GeneratedMessageV
       hash = (37 * hash) + MESSAGE_FIELD_NUMBER;
       hash = (53 * hash) + getMessage().hashCode();
     }
+    hash = (37 * hash) + DELIVERY_ATTEMPT_FIELD_NUMBER;
+    hash = (53 * hash) + getDeliveryAttempt();
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -412,6 +453,8 @@ public final class ReceivedMessage extends com.google.protobuf.GeneratedMessageV
         message_ = null;
         messageBuilder_ = null;
       }
+      deliveryAttempt_ = 0;
+
       return this;
     }
 
@@ -444,6 +487,7 @@ public final class ReceivedMessage extends com.google.protobuf.GeneratedMessageV
       } else {
         result.message_ = messageBuilder_.build();
       }
+      result.deliveryAttempt_ = deliveryAttempt_;
       onBuilt();
       return result;
     }
@@ -499,6 +543,9 @@ public final class ReceivedMessage extends com.google.protobuf.GeneratedMessageV
       }
       if (other.hasMessage()) {
         mergeMessage(other.getMessage());
+      }
+      if (other.getDeliveryAttempt() != 0) {
+        setDeliveryAttempt(other.getDeliveryAttempt());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -802,6 +849,86 @@ public final class ReceivedMessage extends com.google.protobuf.GeneratedMessageV
         message_ = null;
       }
       return messageBuilder_;
+    }
+
+    private int deliveryAttempt_;
+    /**
+     *
+     *
+     * <pre>
+     * Delivery attempt counter is 1 + (the sum of number of NACKs and number of
+     * ack_deadline exceeds) for this message.
+     * A NACK is any call to ModifyAckDeadline with a 0 deadline. An ack_deadline
+     * exceeds event is whenever a message is not acknowledged within
+     * ack_deadline. Note that ack_deadline is initially
+     * Subscription.ackDeadlineSeconds, but may get extended automatically by
+     * the client library.
+     * The first delivery of a given message will have this value as 1. The value
+     * is calculated at best effort and is approximate.
+     * If a DeadLetterPolicy is not set on the subscription, this will be 0.
+     * &lt;b&gt;EXPERIMENTAL:&lt;/b&gt; This feature is part of a closed alpha release. This
+     * API might be changed in backward-incompatible ways and is not recommended
+     * for production use. It is not subject to any SLA or deprecation policy.
+     * </pre>
+     *
+     * <code>int32 delivery_attempt = 3;</code>
+     */
+    public int getDeliveryAttempt() {
+      return deliveryAttempt_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Delivery attempt counter is 1 + (the sum of number of NACKs and number of
+     * ack_deadline exceeds) for this message.
+     * A NACK is any call to ModifyAckDeadline with a 0 deadline. An ack_deadline
+     * exceeds event is whenever a message is not acknowledged within
+     * ack_deadline. Note that ack_deadline is initially
+     * Subscription.ackDeadlineSeconds, but may get extended automatically by
+     * the client library.
+     * The first delivery of a given message will have this value as 1. The value
+     * is calculated at best effort and is approximate.
+     * If a DeadLetterPolicy is not set on the subscription, this will be 0.
+     * &lt;b&gt;EXPERIMENTAL:&lt;/b&gt; This feature is part of a closed alpha release. This
+     * API might be changed in backward-incompatible ways and is not recommended
+     * for production use. It is not subject to any SLA or deprecation policy.
+     * </pre>
+     *
+     * <code>int32 delivery_attempt = 3;</code>
+     */
+    public Builder setDeliveryAttempt(int value) {
+
+      deliveryAttempt_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Delivery attempt counter is 1 + (the sum of number of NACKs and number of
+     * ack_deadline exceeds) for this message.
+     * A NACK is any call to ModifyAckDeadline with a 0 deadline. An ack_deadline
+     * exceeds event is whenever a message is not acknowledged within
+     * ack_deadline. Note that ack_deadline is initially
+     * Subscription.ackDeadlineSeconds, but may get extended automatically by
+     * the client library.
+     * The first delivery of a given message will have this value as 1. The value
+     * is calculated at best effort and is approximate.
+     * If a DeadLetterPolicy is not set on the subscription, this will be 0.
+     * &lt;b&gt;EXPERIMENTAL:&lt;/b&gt; This feature is part of a closed alpha release. This
+     * API might be changed in backward-incompatible ways and is not recommended
+     * for production use. It is not subject to any SLA or deprecation policy.
+     * </pre>
+     *
+     * <code>int32 delivery_attempt = 3;</code>
+     */
+    public Builder clearDeliveryAttempt() {
+
+      deliveryAttempt_ = 0;
+      onChanged();
+      return this;
     }
 
     @java.lang.Override

@@ -521,10 +521,10 @@ public class PublisherStubSettings extends StubSettings<PublisherStubSettings> {
               .setInitialRetryDelay(Duration.ofMillis(100L))
               .setRetryDelayMultiplier(1.3)
               .setMaxRetryDelay(Duration.ofMillis(60000L))
-              .setInitialRpcTimeout(Duration.ofMillis(25000L))
-              .setRpcTimeoutMultiplier(1.0)
-              .setMaxRpcTimeout(Duration.ofMillis(30000L))
-              .setTotalTimeout(Duration.ofMillis(600000L))
+              .setInitialRpcTimeout(Duration.ofMillis(5000L))
+              .setRpcTimeoutMultiplier(1.3)
+              .setMaxRpcTimeout(Duration.ofMillis(60000L))
+              .setTotalTimeout(Duration.ofMillis(60000L))
               .build();
       definitions.put("messaging", settings);
       RETRY_PARAM_DEFINITIONS = definitions.build();
@@ -601,8 +601,8 @@ public class PublisherStubSettings extends StubSettings<PublisherStubSettings> {
           .publishSettings()
           .setBatchingSettings(
               BatchingSettings.newBuilder()
-                  .setElementCountThreshold(10L)
-                  .setRequestByteThreshold(1024L)
+                  .setElementCountThreshold(100L)
+                  .setRequestByteThreshold(1048576L)
                   .setDelayThreshold(Duration.ofMillis(10))
                   .setFlowControlSettings(
                       FlowControlSettings.newBuilder()
