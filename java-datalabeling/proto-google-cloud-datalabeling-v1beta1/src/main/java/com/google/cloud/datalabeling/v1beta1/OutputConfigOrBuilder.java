@@ -28,7 +28,7 @@ public interface OutputConfigOrBuilder
    *
    * <pre>
    * Output to a file in Cloud Storage. Should be used for labeling output
-   * other thanimage segmentation.
+   * other than image segmentation.
    * </pre>
    *
    * <code>.google.cloud.datalabeling.v1beta1.GcsDestination gcs_destination = 1;</code>
@@ -39,7 +39,7 @@ public interface OutputConfigOrBuilder
    *
    * <pre>
    * Output to a file in Cloud Storage. Should be used for labeling output
-   * other thanimage segmentation.
+   * other than image segmentation.
    * </pre>
    *
    * <code>.google.cloud.datalabeling.v1beta1.GcsDestination gcs_destination = 1;</code>
@@ -50,7 +50,7 @@ public interface OutputConfigOrBuilder
    *
    * <pre>
    * Output to a file in Cloud Storage. Should be used for labeling output
-   * other thanimage segmentation.
+   * other than image segmentation.
    * </pre>
    *
    * <code>.google.cloud.datalabeling.v1beta1.GcsDestination gcs_destination = 1;</code>

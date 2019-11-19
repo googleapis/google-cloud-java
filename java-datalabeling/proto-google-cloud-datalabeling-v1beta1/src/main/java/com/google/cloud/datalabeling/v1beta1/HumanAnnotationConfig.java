@@ -187,7 +187,7 @@ public final class HumanAnnotationConfig extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * Required except for LabelAudio case. Instruction resource name.
+   * Required. Instruction resource name.
    * </pre>
    *
    * <code>string instruction = 1;</code>
@@ -207,7 +207,7 @@ public final class HumanAnnotationConfig extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * Required except for LabelAudio case. Instruction resource name.
+   * Required. Instruction resource name.
    * </pre>
    *
    * <code>string instruction = 1;</code>
@@ -371,7 +371,7 @@ public final class HumanAnnotationConfig extends com.google.protobuf.GeneratedMe
    * [BCP-47](https://www.rfc-editor.org/rfc/bcp/bcp47.txt).
    * Default value is en-US.
    * Only need to set this when task is language related. For example, French
-   * text classification or Chinese audio transcription.
+   * text classification.
    * </pre>
    *
    * <code>string language_code = 5;</code>
@@ -395,7 +395,7 @@ public final class HumanAnnotationConfig extends com.google.protobuf.GeneratedMe
    * [BCP-47](https://www.rfc-editor.org/rfc/bcp/bcp47.txt).
    * Default value is en-US.
    * Only need to set this when task is language related. For example, French
-   * text classification or Chinese audio transcription.
+   * text classification.
    * </pre>
    *
    * <code>string language_code = 5;</code>
@@ -1075,7 +1075,7 @@ public final class HumanAnnotationConfig extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Required except for LabelAudio case. Instruction resource name.
+     * Required. Instruction resource name.
      * </pre>
      *
      * <code>string instruction = 1;</code>
@@ -1095,7 +1095,7 @@ public final class HumanAnnotationConfig extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Required except for LabelAudio case. Instruction resource name.
+     * Required. Instruction resource name.
      * </pre>
      *
      * <code>string instruction = 1;</code>
@@ -1115,7 +1115,7 @@ public final class HumanAnnotationConfig extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Required except for LabelAudio case. Instruction resource name.
+     * Required. Instruction resource name.
      * </pre>
      *
      * <code>string instruction = 1;</code>
@@ -1133,7 +1133,7 @@ public final class HumanAnnotationConfig extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Required except for LabelAudio case. Instruction resource name.
+     * Required. Instruction resource name.
      * </pre>
      *
      * <code>string instruction = 1;</code>
@@ -1148,7 +1148,7 @@ public final class HumanAnnotationConfig extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Required except for LabelAudio case. Instruction resource name.
+     * Required. Instruction resource name.
      * </pre>
      *
      * <code>string instruction = 1;</code>
@@ -1475,7 +1475,7 @@ public final class HumanAnnotationConfig extends com.google.protobuf.GeneratedMe
      * [BCP-47](https://www.rfc-editor.org/rfc/bcp/bcp47.txt).
      * Default value is en-US.
      * Only need to set this when task is language related. For example, French
-     * text classification or Chinese audio transcription.
+     * text classification.
      * </pre>
      *
      * <code>string language_code = 5;</code>
@@ -1499,7 +1499,7 @@ public final class HumanAnnotationConfig extends com.google.protobuf.GeneratedMe
      * [BCP-47](https://www.rfc-editor.org/rfc/bcp/bcp47.txt).
      * Default value is en-US.
      * Only need to set this when task is language related. For example, French
-     * text classification or Chinese audio transcription.
+     * text classification.
      * </pre>
      *
      * <code>string language_code = 5;</code>
@@ -1523,7 +1523,7 @@ public final class HumanAnnotationConfig extends com.google.protobuf.GeneratedMe
      * [BCP-47](https://www.rfc-editor.org/rfc/bcp/bcp47.txt).
      * Default value is en-US.
      * Only need to set this when task is language related. For example, French
-     * text classification or Chinese audio transcription.
+     * text classification.
      * </pre>
      *
      * <code>string language_code = 5;</code>
@@ -1545,7 +1545,7 @@ public final class HumanAnnotationConfig extends com.google.protobuf.GeneratedMe
      * [BCP-47](https://www.rfc-editor.org/rfc/bcp/bcp47.txt).
      * Default value is en-US.
      * Only need to set this when task is language related. For example, French
-     * text classification or Chinese audio transcription.
+     * text classification.
      * </pre>
      *
      * <code>string language_code = 5;</code>
@@ -1564,7 +1564,7 @@ public final class HumanAnnotationConfig extends com.google.protobuf.GeneratedMe
      * [BCP-47](https://www.rfc-editor.org/rfc/bcp/bcp47.txt).
      * Default value is en-US.
      * Only need to set this when task is language related. For example, French
-     * text classification or Chinese audio transcription.
+     * text classification.
      * </pre>
      *
      * <code>string language_code = 5;</code>
