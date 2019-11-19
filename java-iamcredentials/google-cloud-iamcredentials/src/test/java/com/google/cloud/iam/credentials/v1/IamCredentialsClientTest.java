@@ -31,6 +31,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.UUID;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Assert;
@@ -49,7 +50,8 @@ public class IamCredentialsClientTest {
   public static void startStaticServer() {
     mockIAMCredentials = new MockIAMCredentials();
     serviceHelper =
-        new MockServiceHelper("in-process-1", Arrays.<MockGrpcService>asList(mockIAMCredentials));
+        new MockServiceHelper(
+            UUID.randomUUID().toString(), Arrays.<MockGrpcService>asList(mockIAMCredentials));
     serviceHelper.start();
   }
 
