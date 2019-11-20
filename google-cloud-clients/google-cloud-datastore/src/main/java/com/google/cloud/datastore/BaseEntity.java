@@ -642,7 +642,7 @@ public abstract class BaseEntity<K extends IncompleteKey> implements Serializabl
 
   /** Returns the entity size. */
   public int getSerializedSize() {
-    return this.serializedSize;
+    return serializedSize;
   }
 
   final com.google.datastore.v1.Entity toPb() {

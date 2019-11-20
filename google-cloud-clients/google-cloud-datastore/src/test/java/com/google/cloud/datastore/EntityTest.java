@@ -58,6 +58,6 @@ public class EntityTest {
 
   @Test
   public void testEntitySize() throws Exception {
-    assertEquals(ENTITY.getSerializedSize(), ENTITY.toPb().getSerializedSize());
+    assertEquals(ENTITY.toPb().getSerializedSize(), ENTITY.getSerializedSize());
   }
 }
