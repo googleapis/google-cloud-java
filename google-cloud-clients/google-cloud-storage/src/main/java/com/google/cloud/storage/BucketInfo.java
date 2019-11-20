@@ -371,7 +371,6 @@ public class BucketInfo implements Serializable {
           .add("isLive", lifecycleCondition.getIsLive())
           .add("matchesStorageClass", lifecycleCondition.getMatchesStorageClass())
           .add("numberOfNewerVersions", lifecycleCondition.getNumberOfNewerVersions())
-          .toString();
     }
 
     @Override
