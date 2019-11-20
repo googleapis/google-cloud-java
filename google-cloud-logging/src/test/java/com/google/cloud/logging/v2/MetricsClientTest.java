@@ -45,6 +45,7 @@ import io.grpc.StatusRuntimeException;
 import java.io.IOException;
 import java.util.Arrays;
 import java.util.List;
+import java.util.UUID;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Assert;
@@ -68,7 +69,7 @@ public class MetricsClientTest {
     mockMetricsServiceV2 = new MockMetricsServiceV2();
     serviceHelper =
         new MockServiceHelper(
-            "in-process-1",
+            UUID.randomUUID().toString(),
             Arrays.<MockGrpcService>asList(
                 mockConfigServiceV2, mockLoggingServiceV2, mockMetricsServiceV2));
     serviceHelper.start();

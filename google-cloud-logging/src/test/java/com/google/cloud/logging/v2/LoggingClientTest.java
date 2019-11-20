@@ -51,6 +51,7 @@ import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.UUID;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Assert;
@@ -74,7 +75,7 @@ public class LoggingClientTest {
     mockMetricsServiceV2 = new MockMetricsServiceV2();
     serviceHelper =
         new MockServiceHelper(
-            "in-process-1",
+            UUID.randomUUID().toString(),
             Arrays.<MockGrpcService>asList(
                 mockConfigServiceV2, mockLoggingServiceV2, mockMetricsServiceV2));
     serviceHelper.start();

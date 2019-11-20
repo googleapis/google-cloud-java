@@ -17,8 +17,6 @@ nosetests.xml
 
 # Mr Developer
 .mr.developer.cfg
-
-.metadata
 .project
 .pydevproject
 *.iml
@@ -30,16 +28,5 @@ nosetests.xml
 # Built documentation
 docs/
 
-
-# Wheel directory used in Travis builds.
-gcloud-java-wheels/
-src/test/resources/gcd-head.zip
-src/test/resources/gcd-v1beta2-rev1-2.1.1.zip
-
-# API key file containing value of GOOGLE_API_KEY for integration tests
-api_key
-
 # Python utilities
 *.pyc
-artman-genfiles
-venv
