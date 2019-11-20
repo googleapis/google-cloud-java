@@ -363,6 +363,18 @@ public class BucketInfo implements Serializable {
     }
 
     @Override
+    public String toString() {
+      return MoreObjects.toStringHelper(this)
+              .add("action", lifecycleAction.getActionType())
+              .add("age", lifecycleCondition.getAge())
+              .add("createdBefore", lifecycleCondition.getCreatedBefore())
+              .add("isLive", lifecycleCondition.getIsLive())
+              .add("matchesStorageClass", lifecycleCondition.getMatchesStorageClass())
+              .add("numberOfNewerVersions", lifecycleCondition.getNumberOfNewerVersions())
+              .toString();
+    }
+
+    @Override
     public int hashCode() {
       return Objects.hash(lifecycleAction, lifecycleCondition);
     }
