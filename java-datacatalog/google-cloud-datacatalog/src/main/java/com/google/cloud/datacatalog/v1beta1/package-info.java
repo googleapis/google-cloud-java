@@ -36,6 +36,39 @@
  * }
  * </code>
  * </pre>
+ *
+ * ====================== PolicyTagManagerClient ======================
+ *
+ * <p>Service Description: Policy tag manager API service allows clients to manage their taxonomies
+ * and policy tags data.
+ *
+ * <p>Sample for PolicyTagManagerClient:
+ *
+ * <pre>
+ * <code>
+ * try (PolicyTagManagerClient policyTagManagerClient = PolicyTagManagerClient.create()) {
+ *   CreateTaxonomyRequest request = CreateTaxonomyRequest.newBuilder().build();
+ *   Taxonomy response = policyTagManagerClient.createTaxonomy(request);
+ * }
+ * </code>
+ * </pre>
+ *
+ * =================================== PolicyTagManagerSerializationClient
+ * ===================================
+ *
+ * <p>Service Description: Policy tag manager serialization API service allows clients to manipulate
+ * their taxonomies and policy tags data with serialized format.
+ *
+ * <p>Sample for PolicyTagManagerSerializationClient:
+ *
+ * <pre>
+ * <code>
+ * try (PolicyTagManagerSerializationClient policyTagManagerSerializationClient = PolicyTagManagerSerializationClient.create()) {
+ *   ImportTaxonomiesRequest request = ImportTaxonomiesRequest.newBuilder().build();
+ *   ImportTaxonomiesResponse response = policyTagManagerSerializationClient.importTaxonomies(request);
+ * }
+ * </code>
+ * </pre>
  */
 @Generated("by gapic-generator")
 package com.google.cloud.datacatalog.v1beta1;

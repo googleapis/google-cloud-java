@@ -26,35 +26,6 @@ import com.google.api.gax.paging.AbstractPagedListResponse;
 import com.google.api.gax.rpc.PageContext;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.api.pathtemplate.PathTemplate;
-import com.google.cloud.datacatalog.CreateEntryGroupRequest;
-import com.google.cloud.datacatalog.CreateEntryRequest;
-import com.google.cloud.datacatalog.CreateTagRequest;
-import com.google.cloud.datacatalog.CreateTagTemplateFieldRequest;
-import com.google.cloud.datacatalog.CreateTagTemplateRequest;
-import com.google.cloud.datacatalog.DeleteEntryGroupRequest;
-import com.google.cloud.datacatalog.DeleteEntryRequest;
-import com.google.cloud.datacatalog.DeleteTagRequest;
-import com.google.cloud.datacatalog.DeleteTagTemplateFieldRequest;
-import com.google.cloud.datacatalog.DeleteTagTemplateRequest;
-import com.google.cloud.datacatalog.Entry;
-import com.google.cloud.datacatalog.EntryGroup;
-import com.google.cloud.datacatalog.GetEntryGroupRequest;
-import com.google.cloud.datacatalog.GetEntryRequest;
-import com.google.cloud.datacatalog.GetTagTemplateRequest;
-import com.google.cloud.datacatalog.ListTagsRequest;
-import com.google.cloud.datacatalog.ListTagsResponse;
-import com.google.cloud.datacatalog.LookupEntryRequest;
-import com.google.cloud.datacatalog.RenameTagTemplateFieldRequest;
-import com.google.cloud.datacatalog.SearchCatalogRequest;
-import com.google.cloud.datacatalog.SearchCatalogResponse;
-import com.google.cloud.datacatalog.SearchCatalogResult;
-import com.google.cloud.datacatalog.Tag;
-import com.google.cloud.datacatalog.TagTemplate;
-import com.google.cloud.datacatalog.TagTemplateField;
-import com.google.cloud.datacatalog.UpdateEntryRequest;
-import com.google.cloud.datacatalog.UpdateTagRequest;
-import com.google.cloud.datacatalog.UpdateTagTemplateFieldRequest;
-import com.google.cloud.datacatalog.UpdateTagTemplateRequest;
 import com.google.cloud.datacatalog.v1beta1.stub.DataCatalogStub;
 import com.google.cloud.datacatalog.v1beta1.stub.DataCatalogStubSettings;
 import com.google.common.util.concurrent.MoreExecutors;
@@ -711,7 +682,9 @@ public class DataCatalogClient implements BackgroundResource {
    *     <p>&#42; projects/{project_id}/locations/{location}
    *     <p>Note that this EntryGroup and its child resources may not actually be stored in the
    *     location in this name.
-   * @param entryGroupId Required. The id of the entry group to create.
+   * @param entryGroupId Required. The id of the entry group to create. The id must begin with a
+   *     letter or underscore, contain only English letters, numbers and underscores, and be at most
+   *     64 characters.
    * @param entryGroup The entry group to create. Defaults to an empty entry group.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */

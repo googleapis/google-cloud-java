@@ -28,10 +28,10 @@ for version in versions:
   library = gapic.java_library(
     service=service,
     version=version,
-    config_path=f'artman_datacatalog_v1beta1.yaml',
+    config_path=f'v1beta1/artman_datacatalog_v1beta1.yaml',
     artman_output_name='')
 
-  package_name = f'com.google.cloud.{service}'
+  package_name = f'com.google.cloud.{service}.{version}'
   java.fix_proto_headers(library / f'proto-google-cloud-{service}-{version}')
   java.fix_grpc_headers(library / f'grpc-google-cloud-{service}-{version}', package_name)
 

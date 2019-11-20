@@ -25,34 +25,6 @@ import com.google.api.gax.grpc.testing.MockGrpcService;
 import com.google.api.gax.grpc.testing.MockServiceHelper;
 import com.google.api.gax.rpc.ApiClientHeaderProvider;
 import com.google.api.gax.rpc.InvalidArgumentException;
-import com.google.cloud.datacatalog.CreateEntryGroupRequest;
-import com.google.cloud.datacatalog.CreateEntryRequest;
-import com.google.cloud.datacatalog.CreateTagRequest;
-import com.google.cloud.datacatalog.CreateTagTemplateFieldRequest;
-import com.google.cloud.datacatalog.CreateTagTemplateRequest;
-import com.google.cloud.datacatalog.DeleteEntryGroupRequest;
-import com.google.cloud.datacatalog.DeleteEntryRequest;
-import com.google.cloud.datacatalog.DeleteTagRequest;
-import com.google.cloud.datacatalog.DeleteTagTemplateFieldRequest;
-import com.google.cloud.datacatalog.DeleteTagTemplateRequest;
-import com.google.cloud.datacatalog.Entry;
-import com.google.cloud.datacatalog.EntryGroup;
-import com.google.cloud.datacatalog.GetEntryGroupRequest;
-import com.google.cloud.datacatalog.GetEntryRequest;
-import com.google.cloud.datacatalog.GetTagTemplateRequest;
-import com.google.cloud.datacatalog.ListTagsRequest;
-import com.google.cloud.datacatalog.ListTagsResponse;
-import com.google.cloud.datacatalog.RenameTagTemplateFieldRequest;
-import com.google.cloud.datacatalog.SearchCatalogRequest;
-import com.google.cloud.datacatalog.SearchCatalogResponse;
-import com.google.cloud.datacatalog.SearchCatalogResult;
-import com.google.cloud.datacatalog.Tag;
-import com.google.cloud.datacatalog.TagTemplate;
-import com.google.cloud.datacatalog.TagTemplateField;
-import com.google.cloud.datacatalog.UpdateEntryRequest;
-import com.google.cloud.datacatalog.UpdateTagRequest;
-import com.google.cloud.datacatalog.UpdateTagTemplateFieldRequest;
-import com.google.cloud.datacatalog.UpdateTagTemplateRequest;
 import com.google.common.collect.Lists;
 import com.google.iam.v1.GetIamPolicyRequest;
 import com.google.iam.v1.Policy;
@@ -69,6 +41,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.UUID;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Assert;
@@ -79,6 +52,8 @@ import org.junit.Test;
 @javax.annotation.Generated("by GAPIC")
 public class DataCatalogClientTest {
   private static MockDataCatalog mockDataCatalog;
+  private static MockPolicyTagManager mockPolicyTagManager;
+  private static MockPolicyTagManagerSerialization mockPolicyTagManagerSerialization;
   private static MockServiceHelper serviceHelper;
   private DataCatalogClient client;
   private LocalChannelProvider channelProvider;
@@ -86,8 +61,13 @@ public class DataCatalogClientTest {
   @BeforeClass
   public static void startStaticServer() {
     mockDataCatalog = new MockDataCatalog();
+    mockPolicyTagManager = new MockPolicyTagManager();
+    mockPolicyTagManagerSerialization = new MockPolicyTagManagerSerialization();
     serviceHelper =
-        new MockServiceHelper("in-process-1", Arrays.<MockGrpcService>asList(mockDataCatalog));
+        new MockServiceHelper(
+            UUID.randomUUID().toString(),
+            Arrays.<MockGrpcService>asList(
+                mockDataCatalog, mockPolicyTagManager, mockPolicyTagManagerSerialization));
     serviceHelper.start();
   }
 
