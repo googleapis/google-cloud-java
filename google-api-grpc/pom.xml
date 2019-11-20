@@ -586,7 +586,7 @@
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>proto-google-cloud-translate-v3beta1</artifactId>
-        <version>0.76.0</version>
+        <version>0.77.0</version>
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
