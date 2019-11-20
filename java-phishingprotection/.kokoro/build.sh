@@ -27,6 +27,7 @@ echo ${JOB_TYPE}
 mvn install -B -V \
   -DskipTests=true \
   -Dclirr.skip=true \
+  -Denforcer.skip=true \
   -Dmaven.javadoc.skip=true \
   -Dgcloud.download.skip=true \
   -T 1C
@@ -38,7 +39,7 @@ fi
 
 case ${JOB_TYPE} in
 test)
-    mvn test -B -Dclirr.skip=true
+    mvn test -B -Dclirr.skip=true -Denforcer.skip=true
     bash ${KOKORO_GFILE_DIR}/codecov.sh
     bash .kokoro/coerce_logs.sh
     ;;

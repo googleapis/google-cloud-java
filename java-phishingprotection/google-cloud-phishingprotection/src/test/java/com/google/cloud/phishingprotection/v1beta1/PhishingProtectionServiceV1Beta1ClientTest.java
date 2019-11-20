@@ -31,6 +31,7 @@ import io.grpc.StatusRuntimeException;
 import java.io.IOException;
 import java.util.Arrays;
 import java.util.List;
+import java.util.UUID;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Assert;
@@ -50,7 +51,8 @@ public class PhishingProtectionServiceV1Beta1ClientTest {
     mockPhishingProtectionServiceV1Beta1 = new MockPhishingProtectionServiceV1Beta1();
     serviceHelper =
         new MockServiceHelper(
-            "in-process-1", Arrays.<MockGrpcService>asList(mockPhishingProtectionServiceV1Beta1));
+            UUID.randomUUID().toString(),
+            Arrays.<MockGrpcService>asList(mockPhishingProtectionServiceV1Beta1));
     serviceHelper.start();
   }
 
