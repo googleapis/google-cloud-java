@@ -50,11 +50,16 @@ javadoc)
     mvn javadoc:javadoc javadoc:test-javadoc
     ;;
 integration)
-    mvn -B ${INTEGRATION_TEST_ARGS} -DtrimStackTrace=false -Dclirr.skip=true -fae verify
+    mvn -B ${INTEGRATION_TEST_ARGS} \
+      -DtrimStackTrace=false \
+      -Dclirr.skip=true \
+      -Denforcer.skip=true \
+      -fae \
+      verify
     bash .kokoro/coerce_logs.sh
     ;;
 clirr)
-    mvn -B clirr:check
+    mvn -B -Denforcer.skip=true clirr:check
     ;;
 *)
     ;;
