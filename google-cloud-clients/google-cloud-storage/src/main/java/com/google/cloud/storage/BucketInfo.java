@@ -365,12 +365,8 @@ public class BucketInfo implements Serializable {
     @Override
     public String toString() {
       return MoreObjects.toStringHelper(this)
-          .add("action", lifecycleAction.getActionType())
-          .add("age", lifecycleCondition.getAge())
-          .add("createdBefore", lifecycleCondition.getCreatedBefore())
-          .add("isLive", lifecycleCondition.getIsLive())
-          .add("matchesStorageClass", lifecycleCondition.getMatchesStorageClass())
-          .add("numberOfNewerVersions", lifecycleCondition.getNumberOfNewerVersions())
+          .add("lifecycleAction", lifecycleAction)
+          .add("lifecycleCondition", lifecycleCondition)
           .toString();
     }
 
@@ -499,6 +495,17 @@ public class BucketInfo implements Serializable {
         return new Builder();
       }
 
+      @Override
+      public String toString() {
+        return MoreObjects.toStringHelper(this)
+            .add("age", age)
+            .add("createBefore", createdBefore)
+            .add("numberofNewerVersions", numberOfNewerVersions)
+            .add("isLive", isLive)
+            .add("matchesStorageClass", matchesStorageClass)
+            .toString();
+      }
+
       public Integer getAge() {
         return age;
       }
@@ -596,6 +603,11 @@ public class BucketInfo implements Serializable {
 
       public abstract String getActionType();
 
+      @Override
+      public String toString() {
+        return MoreObjects.toStringHelper(this).add("actionType", getActionType()).toString();
+      }
+
       /**
        * Creates a new {@code DeleteLifecycleAction}. Blobs that meet the Condition associated with
        * this action will be deleted.
@@ -641,6 +653,14 @@ public class BucketInfo implements Serializable {
       @Override
       public String getActionType() {
         return TYPE;
+      }
+
+      @Override
+      public String toString() {
+        return MoreObjects.toStringHelper(this)
+            .add("actionType", getActionType())
+            .add("storageClass", storageClass.name())
+            .toString();
       }
 
       StorageClass getStorageClass() {
