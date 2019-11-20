@@ -33,12 +33,7 @@ import com.google.common.base.MoreObjects;
 import com.google.common.collect.ImmutableSortedMap;
 import com.google.common.collect.Maps;
 import java.io.Serializable;
-import java.util.HashMap;
-import java.util.LinkedList;
-import java.util.List;
-import java.util.Map;
-import java.util.Objects;
-import java.util.Set;
+import java.util.*;
 
 /**
  * A base class for entities (key and properties). An entity is a Google Cloud Datastore persistent
@@ -54,10 +49,12 @@ public abstract class BaseEntity<K extends IncompleteKey> implements Serializabl
   private static final long serialVersionUID = -9070588108769487081L;
   private final ImmutableSortedMap<String, Value<?>> properties;
   private final K key;
+  private int serializedSize;
 
   public abstract static class Builder<K extends IncompleteKey, B extends Builder<K, B>> {
 
     private K key;
+    private int serializedSize;
     private final Map<String, Value<?>> properties = new HashMap<>();
 
     Builder() {}
@@ -73,6 +70,7 @@ public abstract class BaseEntity<K extends IncompleteKey> implements Serializabl
     Builder(K key, BaseEntity<?> entity) {
       setKey(key);
       setProperties(entity.properties);
+      setSerializedSize(entity.toPb().getSerializedSize());
     }
 
     protected K key() {
@@ -98,6 +96,7 @@ public abstract class BaseEntity<K extends IncompleteKey> implements Serializabl
       setProperties(copiedProperties);
       if (entityPb.hasKey()) {
         setKey((K) IncompleteKey.fromPb(entityPb.getKey()));
+        setSerializedSize(entityPb.getSerializedSize());
       }
       return self();
     }
@@ -113,6 +112,11 @@ public abstract class BaseEntity<K extends IncompleteKey> implements Serializabl
       return self();
     }
 
+    /** Sets the size for the entity. */
+    public B setSerializedSize(int serializedSize) {
+      this.serializedSize = serializedSize;
+      return self();
+    }
     /** Clears all the properties. */
     public B clear() {
       properties.clear();
@@ -446,11 +450,13 @@ public abstract class BaseEntity<K extends IncompleteKey> implements Serializabl
   BaseEntity(Builder<K, ?> builder) {
     this.key = builder.key;
     this.properties = ImmutableSortedMap.copyOf(builder.properties);
+    this.serializedSize = builder.serializedSize;
   }
 
   BaseEntity(BaseEntity<K> from) {
     this.key = from.getKey();
     this.properties = from.properties;
+    this.serializedSize = from.serializedSize;
   }
 
   @Override
@@ -458,6 +464,7 @@ public abstract class BaseEntity<K extends IncompleteKey> implements Serializabl
     return MoreObjects.toStringHelper(this)
         .add("key", key)
         .add("properties", properties)
+        .add("size", serializedSize)
         .toString();
   }
 
@@ -636,6 +643,11 @@ public abstract class BaseEntity<K extends IncompleteKey> implements Serializabl
     return properties;
   }
 
+  /** Returns the entity size. */
+  public int getSerializedSize() {
+    return serializedSize;
+  }
+
   final com.google.datastore.v1.Entity toPb() {
     com.google.datastore.v1.Entity.Builder entityPb = com.google.datastore.v1.Entity.newBuilder();
     for (Map.Entry<String, Value<?>> entry : properties.entrySet()) {
@@ -645,5 +657,9 @@ public abstract class BaseEntity<K extends IncompleteKey> implements Serializabl
       entityPb.setKey(key.toPb());
     }
     return entityPb.build();
+  }
+  /*set size of an entity*/
+  protected void setSerializedSize(int size) {
+    this.serializedSize = size;
   }
 }

@@ -54,7 +54,9 @@ public final class Entity extends FullEntity<Key> {
     @Override
     public Entity build() {
       Preconditions.checkState(key() != null);
-      return new Entity(this);
+      Entity entity = new Entity(this);
+      entity.setSerializedSize(entity.toPb().getSerializedSize());
+      return entity;
     }
   }
 
