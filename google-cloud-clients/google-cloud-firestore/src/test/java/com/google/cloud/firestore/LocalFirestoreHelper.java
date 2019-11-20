@@ -89,8 +89,10 @@ public final class LocalFirestoreHelper {
   public static final Map<String, Value> SINGLE_FIELD_PROTO;
   public static final DocumentSnapshot SINGLE_FIELD_SNAPSHOT;
   public static final Value SINGLE_FIELD_VALUE;
+  public static final SingleField UPDATE_SINGLE_FIELD_OBJECT;
   public static final Map<String, Object> UPDATED_FIELD_MAP;
   public static final Map<String, Value> UPDATED_FIELD_PROTO;
+  public static final Map<String, Value> UPDATED_SINGLE_FIELD_PROTO;
 
   public static final Map<String, Float> SINGLE_FLOAT_MAP;
   public static final Map<String, Value> SINGLE_FLOAT_PROTO;
@@ -731,10 +733,21 @@ public final class LocalFirestoreHelper {
     Value.Builder singleFieldValueBuilder = Value.newBuilder();
     singleFieldValueBuilder.getMapValueBuilder().putAllFields(SINGLE_FIELD_PROTO);
     SINGLE_FIELD_VALUE = singleFieldValueBuilder.build();
+    UPDATE_SINGLE_FIELD_OBJECT = new SingleField();
+    UPDATE_SINGLE_FIELD_OBJECT.foo = "foobar";
 
     UPDATED_FIELD_MAP = map("foo", (Object) "foobar");
     UPDATED_FIELD_PROTO = map("foo", Value.newBuilder().setStringValue("foobar").build());
-
+    UPDATED_SINGLE_FIELD_PROTO =
+        ImmutableMap.<String, Value>builder()
+            .put(
+                "foo",
+                Value.newBuilder()
+                    .setMapValue(
+                        MapValue.newBuilder()
+                            .putFields("foo", Value.newBuilder().setStringValue("foobar").build()))
+                    .build())
+            .build();
     SERVER_TIMESTAMP_MAP = new HashMap<>();
     SERVER_TIMESTAMP_MAP.put("foo", FieldValue.serverTimestamp());
     SERVER_TIMESTAMP_MAP.put("inner", new HashMap<String, Object>());

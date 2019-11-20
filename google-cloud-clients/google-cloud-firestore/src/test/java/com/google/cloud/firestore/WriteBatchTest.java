@@ -16,6 +16,8 @@
 
 package com.google.cloud.firestore;
 
+import static com.google.cloud.firestore.LocalFirestoreHelper.UPDATED_SINGLE_FIELD_PROTO;
+import static com.google.cloud.firestore.LocalFirestoreHelper.UPDATE_SINGLE_FIELD_OBJECT;
 import static com.google.cloud.firestore.LocalFirestoreHelper.commit;
 import static com.google.cloud.firestore.LocalFirestoreHelper.commitResponse;
 import static com.google.cloud.firestore.LocalFirestoreHelper.create;
@@ -107,6 +109,25 @@ public class WriteBatchTest {
 
     CommitRequest commitRequest = commitCapture.getValue();
     assertEquals(commit(writes.toArray(new Write[] {})), commitRequest);
+  }
+
+  @Test
+  public void updateDocumentWithPOJO() throws Exception {
+    doReturn(commitResponse(1, 0))
+        .when(firestoreMock)
+        .sendRequest(
+            commitCapture.capture(), Matchers.<UnaryCallable<CommitRequest, CommitResponse>>any());
+
+    batch.update(documentReference, "foo", UPDATE_SINGLE_FIELD_OBJECT);
+    assertEquals(1, batch.getMutationsSize());
+
+    List<WriteResult> writeResults = batch.commit().get();
+    assertEquals(1, writeResults.size());
+
+    CommitRequest actual = commitCapture.getValue();
+    CommitRequest expected =
+        commit(update(UPDATED_SINGLE_FIELD_PROTO, Collections.singletonList("foo")));
+    assertEquals(expected, actual);
   }
 
   @Test

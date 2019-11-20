@@ -109,9 +109,12 @@ public abstract class UpdateBuilder<T extends UpdateBuilder> {
    * @return The instance for chaining.
    */
   @Nonnull
-  public T create(
-      @Nonnull DocumentReference documentReference, @Nonnull Map<String, Object> fields) {
-    return performCreate(documentReference, fields);
+  public T create(@Nonnull DocumentReference documentReference, @Nonnull Object fields) {
+    Object data = CustomClassMapper.convertToPlainJavaTypes(fields);
+    if (!(data instanceof Map)) {
+      FirestoreException.invalidState("Can't set a document's data to an array or primitive");
+    }
+    return performCreate(documentReference, (Map<String, Object>) data);
   }
 
   private T performCreate(
@@ -144,23 +147,6 @@ public abstract class UpdateBuilder<T extends UpdateBuilder> {
     Mutation mutation = new Mutation();
     mutations.add(mutation);
     return mutation;
-  }
-
-  /**
-   * Creates a new Document at the DocumentReference location. It fails the write if the document
-   * exists.
-   *
-   * @param documentReference The DocumentReference to create.
-   * @param pojo A map of the fields and values for the document.
-   * @return The instance for chaining.
-   */
-  @Nonnull
-  public T create(@Nonnull DocumentReference documentReference, @Nonnull Object pojo) {
-    Object data = CustomClassMapper.convertToPlainJavaTypes(pojo);
-    if (!(data instanceof Map)) {
-      FirestoreException.invalidState("Can't set a document's data to an array or primitive");
-    }
-    return performCreate(documentReference, (Map<String, Object>) data);
   }
 
   /**
@@ -311,11 +297,14 @@ public abstract class UpdateBuilder<T extends UpdateBuilder> {
    * @return The instance for chaining.
    */
   @Nonnull
-  public T update(
-      @Nonnull DocumentReference documentReference, @Nonnull Map<String, Object> fields) {
+  public T update(@Nonnull DocumentReference documentReference, @Nonnull Object fields) {
+    Object data = CustomClassMapper.convertToPlainJavaTypes(fields);
+    if (!(data instanceof Map)) {
+      throw new IllegalArgumentException("Can't set a document's data to an array or primitive");
+    }
     return performUpdate(
         documentReference,
-        convertToFieldPaths(fields, /* splitOnDots= */ true),
+        convertToFieldPaths((Map<String, Object>) data, /* splitOnDots= */ true),
         Precondition.exists(true));
   }
 
@@ -330,13 +319,17 @@ public abstract class UpdateBuilder<T extends UpdateBuilder> {
    */
   @Nonnull
   public T update(
-      @Nonnull DocumentReference documentReference,
-      @Nonnull Map<String, Object> fields,
-      Precondition options) {
+      @Nonnull DocumentReference documentReference, @Nonnull Object fields, Precondition options) {
     Preconditions.checkArgument(
         !options.hasExists(), "Precondition 'exists' cannot be specified for update() calls.");
+    Object data = CustomClassMapper.convertToPlainJavaTypes(fields);
+    if (!(data instanceof Map)) {
+      throw new IllegalArgumentException("Can't set a document's data to an array or primitive");
+    }
     return performUpdate(
-        documentReference, convertToFieldPaths(fields, /* splitOnDots= */ true), options);
+        documentReference,
+        convertToFieldPaths((Map<String, Object>) data, /* splitOnDots= */ true),
+        options);
   }
 
   /**
@@ -440,8 +433,9 @@ public abstract class UpdateBuilder<T extends UpdateBuilder> {
       @Nonnull FieldPath fieldPath,
       @Nullable Object value,
       Object[] moreFieldsAndValues) {
+    Object data = CustomClassMapper.convertToPlainJavaTypes(value);
     Map<FieldPath, Object> fields = new HashMap<>();
-    fields.put(fieldPath, value);
+    fields.put(fieldPath, data);
 
     Preconditions.checkArgument(
         moreFieldsAndValues.length % 2 == 0, "moreFieldsAndValues must be key-value pairs.");
