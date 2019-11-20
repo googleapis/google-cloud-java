@@ -1,5 +1,22 @@
 # Changelog
 
+## [0.30.0](https://www.github.com/googleapis/java-datacatalog/compare/v0.29.0...v0.30.0) (2019-11-20)
+
+
+### ⚠ BREAKING CHANGES
+
+* resource classes such as `CreateEntryGroupRequest` have moved to the `com.google.cloud.datacatalog.v1beta1` package.
+
+### Features
+
+* add policy tag manager, move resource classes v1beta1 ([#32](https://www.github.com/googleapis/java-datacatalog/issues/32)) ([3c11307](https://www.github.com/googleapis/java-datacatalog/commit/3c11307c867a99ffdd960509fbcb06ba2361f0f7))
+
+
+### Documentation
+
+* regenerate javadocs ([#37](https://www.github.com/googleapis/java-datacatalog/issues/37)) ([d0b0677](https://www.github.com/googleapis/java-datacatalog/commit/d0b0677c54b459acef7d22725d30ff330a8186ec))
+* remove orderBy from doc samples ([#28](https://www.github.com/googleapis/java-datacatalog/issues/28)) ([a9c3485](https://www.github.com/googleapis/java-datacatalog/commit/a9c348510f3e47b4ec4cdd2de1b0a042a0f6af99))
+
 ## [0.29.0](https://www.github.com/googleapis/java-datacatalog/compare/0.28.0...v0.29.0) (2019-10-25)
 
 
