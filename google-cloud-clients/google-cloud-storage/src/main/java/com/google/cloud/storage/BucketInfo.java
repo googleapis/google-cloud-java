@@ -35,6 +35,7 @@ import com.google.api.services.storage.model.Bucket.Website;
 import com.google.cloud.storage.Acl.Entity;
 import com.google.common.base.Function;
 import com.google.common.base.Functions;
+import com.google.common.base.Joiner;
 import com.google.common.base.MoreObjects;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
@@ -43,6 +44,7 @@ import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.io.Serializable;
 import java.util.HashSet;
+import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
 import java.util.Objects;
@@ -379,6 +381,11 @@ public class BucketInfo implements Serializable {
       return Objects.equals(toPb(), other.toPb());
     }
 
+    @Override
+    public String toString() {
+      return lifecycleAction + " when " + lifecycleCondition;
+    }
+
     Rule toPb() {
       Rule rule = new Rule();
 
@@ -507,6 +514,36 @@ public class BucketInfo implements Serializable {
         return matchesStorageClass;
       }
 
+      @Override
+      public String toString() {
+        List<String> conditions = new LinkedList<>();
+        if (age != null) {
+          conditions.add("object is " + age + " days old");
+        }
+        if (createdBefore != null) {
+        conditions.add("object was created before " + createdBefore.toString());
+        }
+        if (numberOfNewerVersions != null) {
+          conditions.add("object has " + numberOfNewerVersions + " newer versions");
+        }
+        if (isLive != null) {
+          String live = isLive ? "live" : "not live";
+          conditions.add ("object is " + live);
+        }
+        if (matchesStorageClass != null && !matchesStorageClass.isEmpty()) {
+          List<String> storageClassesList = new LinkedList<>();
+          for(StorageClass storageClass : matchesStorageClass) {
+            storageClassesList.add(storageClass.name());
+          }
+          String storageClasses = Joiner.on(" or ").join(storageClassesList);
+          conditions.add("object is of storage class " + storageClasses);
+        }
+        if (conditions.isEmpty()) {
+          return "no condition specified";
+        }
+        return Joiner.on(" and ").join(conditions);
+      }
+
       /** Builder for {@code LifecycleCondition}. */
       public static class Builder {
         private Integer age;
@@ -602,6 +639,11 @@ public class BucketInfo implements Serializable {
           StorageClass storageClass) {
         return new SetStorageClassLifecycleAction(storageClass);
       }
+
+      @Override
+      public String toString() {
+        return getActionType();
+      }
     }
 
     public static class DeleteLifecycleAction extends LifecycleAction {
@@ -633,6 +675,11 @@ public class BucketInfo implements Serializable {
 
       StorageClass getStorageClass() {
         return storageClass;
+      }
+
+      @Override
+      public String toString() {
+        return "Set storage class to " + storageClass.name();
       }
     }
   }
