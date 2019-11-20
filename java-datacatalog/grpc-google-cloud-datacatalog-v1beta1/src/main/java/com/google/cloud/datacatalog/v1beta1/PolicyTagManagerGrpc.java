@@ -26,8 +26,8 @@ import static io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall;
  *
  *
  * <pre>
- * Policy tag manager API service allows clients to manage their taxonomies and
- * policy tags data.
+ * The policy tag manager API service allows clients to manage their taxonomies
+ * and policy tags.
  * </pre>
  */
 @javax.annotation.Generated(
@@ -794,8 +794,8 @@ public final class PolicyTagManagerGrpc {
    *
    *
    * <pre>
-   * Policy tag manager API service allows clients to manage their taxonomies and
-   * policy tags data.
+   * The policy tag manager API service allows clients to manage their taxonomies
+   * and policy tags.
    * </pre>
    */
   public abstract static class PolicyTagManagerImplBase implements io.grpc.BindableService {
@@ -804,7 +804,7 @@ public final class PolicyTagManagerGrpc {
      *
      *
      * <pre>
-     * Creates a new taxonomy in a given project.
+     * Creates a taxonomy in the specified project.
      * </pre>
      */
     public void createTaxonomy(
@@ -819,7 +819,7 @@ public final class PolicyTagManagerGrpc {
      *
      * <pre>
      * Deletes a taxonomy. This operation will also delete all
-     * policy tags in this taxonomy.
+     * policy tags in this taxonomy along with their associated policies.
      * </pre>
      */
     public void deleteTaxonomy(
@@ -846,7 +846,8 @@ public final class PolicyTagManagerGrpc {
      *
      *
      * <pre>
-     * Lists all taxonomies in a project in a particular location.
+     * Lists all taxonomies in a project in a particular location that the caller
+     * has permission to view.
      * </pre>
      */
     public void listTaxonomies(
@@ -874,7 +875,7 @@ public final class PolicyTagManagerGrpc {
      *
      *
      * <pre>
-     * Creates a policy tag in a taxonomy.
+     * Creates a policy tag in the specified taxonomy.
      * </pre>
      */
     public void createPolicyTag(
@@ -969,7 +970,8 @@ public final class PolicyTagManagerGrpc {
      *
      *
      * <pre>
-     * Returns permissions that a caller has on specified resources.
+     * Returns the permissions that a caller has on the specified taxonomy or
+     * policy tag.
      * </pre>
      */
     public void testIamPermissions(
@@ -1076,8 +1078,8 @@ public final class PolicyTagManagerGrpc {
    *
    *
    * <pre>
-   * Policy tag manager API service allows clients to manage their taxonomies and
-   * policy tags data.
+   * The policy tag manager API service allows clients to manage their taxonomies
+   * and policy tags.
    * </pre>
    */
   public static final class PolicyTagManagerStub
@@ -1099,7 +1101,7 @@ public final class PolicyTagManagerGrpc {
      *
      *
      * <pre>
-     * Creates a new taxonomy in a given project.
+     * Creates a taxonomy in the specified project.
      * </pre>
      */
     public void createTaxonomy(
@@ -1117,7 +1119,7 @@ public final class PolicyTagManagerGrpc {
      *
      * <pre>
      * Deletes a taxonomy. This operation will also delete all
-     * policy tags in this taxonomy.
+     * policy tags in this taxonomy along with their associated policies.
      * </pre>
      */
     public void deleteTaxonomy(
@@ -1150,7 +1152,8 @@ public final class PolicyTagManagerGrpc {
      *
      *
      * <pre>
-     * Lists all taxonomies in a project in a particular location.
+     * Lists all taxonomies in a project in a particular location that the caller
+     * has permission to view.
      * </pre>
      */
     public void listTaxonomies(
@@ -1184,7 +1187,7 @@ public final class PolicyTagManagerGrpc {
      *
      *
      * <pre>
-     * Creates a policy tag in a taxonomy.
+     * Creates a policy tag in the specified taxonomy.
      * </pre>
      */
     public void createPolicyTag(
@@ -1300,7 +1303,8 @@ public final class PolicyTagManagerGrpc {
      *
      *
      * <pre>
-     * Returns permissions that a caller has on specified resources.
+     * Returns the permissions that a caller has on the specified taxonomy or
+     * policy tag.
      * </pre>
      */
     public void testIamPermissions(
@@ -1318,8 +1322,8 @@ public final class PolicyTagManagerGrpc {
    *
    *
    * <pre>
-   * Policy tag manager API service allows clients to manage their taxonomies and
-   * policy tags data.
+   * The policy tag manager API service allows clients to manage their taxonomies
+   * and policy tags.
    * </pre>
    */
   public static final class PolicyTagManagerBlockingStub
@@ -1342,7 +1346,7 @@ public final class PolicyTagManagerGrpc {
      *
      *
      * <pre>
-     * Creates a new taxonomy in a given project.
+     * Creates a taxonomy in the specified project.
      * </pre>
      */
     public com.google.cloud.datacatalog.v1beta1.Taxonomy createTaxonomy(
@@ -1356,7 +1360,7 @@ public final class PolicyTagManagerGrpc {
      *
      * <pre>
      * Deletes a taxonomy. This operation will also delete all
-     * policy tags in this taxonomy.
+     * policy tags in this taxonomy along with their associated policies.
      * </pre>
      */
     public com.google.protobuf.Empty deleteTaxonomy(
@@ -1382,7 +1386,8 @@ public final class PolicyTagManagerGrpc {
      *
      *
      * <pre>
-     * Lists all taxonomies in a project in a particular location.
+     * Lists all taxonomies in a project in a particular location that the caller
+     * has permission to view.
      * </pre>
      */
     public com.google.cloud.datacatalog.v1beta1.ListTaxonomiesResponse listTaxonomies(
@@ -1408,7 +1413,7 @@ public final class PolicyTagManagerGrpc {
      *
      *
      * <pre>
-     * Creates a policy tag in a taxonomy.
+     * Creates a policy tag in the specified taxonomy.
      * </pre>
      */
     public com.google.cloud.datacatalog.v1beta1.PolicyTag createPolicyTag(
@@ -1497,7 +1502,8 @@ public final class PolicyTagManagerGrpc {
      *
      *
      * <pre>
-     * Returns permissions that a caller has on specified resources.
+     * Returns the permissions that a caller has on the specified taxonomy or
+     * policy tag.
      * </pre>
      */
     public com.google.iam.v1.TestIamPermissionsResponse testIamPermissions(
@@ -1511,8 +1517,8 @@ public final class PolicyTagManagerGrpc {
    *
    *
    * <pre>
-   * Policy tag manager API service allows clients to manage their taxonomies and
-   * policy tags data.
+   * The policy tag manager API service allows clients to manage their taxonomies
+   * and policy tags.
    * </pre>
    */
   public static final class PolicyTagManagerFutureStub
@@ -1535,7 +1541,7 @@ public final class PolicyTagManagerGrpc {
      *
      *
      * <pre>
-     * Creates a new taxonomy in a given project.
+     * Creates a taxonomy in the specified project.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<
@@ -1550,7 +1556,7 @@ public final class PolicyTagManagerGrpc {
      *
      * <pre>
      * Deletes a taxonomy. This operation will also delete all
-     * policy tags in this taxonomy.
+     * policy tags in this taxonomy along with their associated policies.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.protobuf.Empty>
@@ -1577,7 +1583,8 @@ public final class PolicyTagManagerGrpc {
      *
      *
      * <pre>
-     * Lists all taxonomies in a project in a particular location.
+     * Lists all taxonomies in a project in a particular location that the caller
+     * has permission to view.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<
@@ -1605,7 +1612,7 @@ public final class PolicyTagManagerGrpc {
      *
      *
      * <pre>
-     * Creates a policy tag in a taxonomy.
+     * Creates a policy tag in the specified taxonomy.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<
@@ -1700,7 +1707,8 @@ public final class PolicyTagManagerGrpc {
      *
      *
      * <pre>
-     * Returns permissions that a caller has on specified resources.
+     * Returns the permissions that a caller has on the specified taxonomy or
+     * policy tag.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<

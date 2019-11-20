@@ -32,8 +32,8 @@ import javax.annotation.Generated;
 
 // AUTO-GENERATED DOCUMENTATION AND SERVICE
 /**
- * Service Description: Policy tag manager API service allows clients to manage their taxonomies and
- * policy tags data.
+ * Service Description: The policy tag manager API service allows clients to manage their taxonomies
+ * and policy tags.
  *
  * <p>This class provides the ability to make remote calls to the backing service through method
  * calls that map to API methods. Sample code to get started:
@@ -154,7 +154,7 @@ public class PolicyTagManagerClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Creates a new taxonomy in a given project.
+   * Creates a taxonomy in the specified project.
    *
    * <p>Sample code:
    *
@@ -174,7 +174,7 @@ public class PolicyTagManagerClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Creates a new taxonomy in a given project.
+   * Creates a taxonomy in the specified project.
    *
    * <p>Sample code:
    *
@@ -193,7 +193,8 @@ public class PolicyTagManagerClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Deletes a taxonomy. This operation will also delete all policy tags in this taxonomy.
+   * Deletes a taxonomy. This operation will also delete all policy tags in this taxonomy along with
+   * their associated policies.
    *
    * <p>Sample code:
    *
@@ -213,7 +214,8 @@ public class PolicyTagManagerClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Deletes a taxonomy. This operation will also delete all policy tags in this taxonomy.
+   * Deletes a taxonomy. This operation will also delete all policy tags in this taxonomy along with
+   * their associated policies.
    *
    * <p>Sample code:
    *
@@ -271,7 +273,8 @@ public class PolicyTagManagerClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Lists all taxonomies in a project in a particular location.
+   * Lists all taxonomies in a project in a particular location that the caller has permission to
+   * view.
    *
    * <p>Sample code:
    *
@@ -291,7 +294,8 @@ public class PolicyTagManagerClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Lists all taxonomies in a project in a particular location.
+   * Lists all taxonomies in a project in a particular location that the caller has permission to
+   * view.
    *
    * <p>Sample code:
    *
@@ -350,7 +354,7 @@ public class PolicyTagManagerClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Creates a policy tag in a taxonomy.
+   * Creates a policy tag in the specified taxonomy.
    *
    * <p>Sample code:
    *
@@ -370,7 +374,7 @@ public class PolicyTagManagerClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Creates a policy tag in a taxonomy.
+   * Creates a policy tag in the specified taxonomy.
    *
    * <p>Sample code:
    *
@@ -624,7 +628,7 @@ public class PolicyTagManagerClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Returns permissions that a caller has on specified resources.
+   * Returns the permissions that a caller has on the specified taxonomy or policy tag.
    *
    * <p>Sample code:
    *
@@ -644,7 +648,7 @@ public class PolicyTagManagerClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Returns permissions that a caller has on specified resources.
+   * Returns the permissions that a caller has on the specified taxonomy or policy tag.
    *
    * <p>Sample code:
    *

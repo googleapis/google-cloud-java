@@ -159,7 +159,7 @@ public final class PolicyTag extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. Resource name of the policy tag, whose format is:
+   * Output only. Resource name of this policy tag, whose format is:
    * "projects/{project_number}/locations/{location_id}/taxonomies/{taxonomy_id}/policyTags/{id}".
    * </pre>
    *
@@ -180,7 +180,7 @@ public final class PolicyTag extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. Resource name of the policy tag, whose format is:
+   * Output only. Resource name of this policy tag, whose format is:
    * "projects/{project_number}/locations/{location_id}/taxonomies/{taxonomy_id}/policyTags/{id}".
    * </pre>
    *
@@ -204,7 +204,9 @@ public final class PolicyTag extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Required. Human readable name of this policy tag. Max 200 bytes when
+   * Required. User defined name of this policy tag. It must: be unique within the parent
+   * taxonomy; contain only unicode letters, numbers, underscores, dashes and
+   * spaces; not start or end with spaces; and be at most 200 bytes long when
    * encoded in UTF-8.
    * </pre>
    *
@@ -225,7 +227,9 @@ public final class PolicyTag extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Required. Human readable name of this policy tag. Max 200 bytes when
+   * Required. User defined name of this policy tag. It must: be unique within the parent
+   * taxonomy; contain only unicode letters, numbers, underscores, dashes and
+   * spaces; not start or end with spaces; and be at most 200 bytes long when
    * encoded in UTF-8.
    * </pre>
    *
@@ -249,9 +253,10 @@ public final class PolicyTag extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Description of the policy tag. The length of the description is limited to
-   * 2000 bytes when encoded in UTF-8. If not set, defaults to an empty
-   * description.
+   * Description of this policy tag. It must: contain only unicode characters,
+   * tabs, newlines, carriage returns and page breaks; and be at most 2000 bytes
+   * long when encoded in UTF-8. If not set, defaults to an empty description.
+   * If not set, defaults to an empty description.
    * </pre>
    *
    * <code>string description = 3;</code>
@@ -271,9 +276,10 @@ public final class PolicyTag extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Description of the policy tag. The length of the description is limited to
-   * 2000 bytes when encoded in UTF-8. If not set, defaults to an empty
-   * description.
+   * Description of this policy tag. It must: contain only unicode characters,
+   * tabs, newlines, carriage returns and page breaks; and be at most 2000 bytes
+   * long when encoded in UTF-8. If not set, defaults to an empty description.
+   * If not set, defaults to an empty description.
    * </pre>
    *
    * <code>string description = 3;</code>
@@ -296,11 +302,12 @@ public final class PolicyTag extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Resource name of the parent policy tag to this policy tag (e.g. for policy
-   * tag "LatLong" in the example above, this field contains the resource name
-   * of policy tag "Geolocation"). If empty, it means this policy tag is a top
-   * level policy tag (e.g. this field is empty for policy tag "Geolocation" in
-   * the example above). If not set, defaults to an empty string.
+   * Resource name of this policy tag's parent policy tag (e.g. for the
+   * "LatLong" policy tag in the example above, this field contains the
+   * resource name of the "Geolocation" policy tag). If empty, it means this
+   * policy tag is a top level policy tag (e.g. this field is empty for the
+   * "Geolocation" policy tag in the example above). If not set, defaults to an
+   * empty string.
    * </pre>
    *
    * <code>string parent_policy_tag = 4;</code>
@@ -320,11 +327,12 @@ public final class PolicyTag extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Resource name of the parent policy tag to this policy tag (e.g. for policy
-   * tag "LatLong" in the example above, this field contains the resource name
-   * of policy tag "Geolocation"). If empty, it means this policy tag is a top
-   * level policy tag (e.g. this field is empty for policy tag "Geolocation" in
-   * the example above). If not set, defaults to an empty string.
+   * Resource name of this policy tag's parent policy tag (e.g. for the
+   * "LatLong" policy tag in the example above, this field contains the
+   * resource name of the "Geolocation" policy tag). If empty, it means this
+   * policy tag is a top level policy tag (e.g. this field is empty for the
+   * "Geolocation" policy tag in the example above). If not set, defaults to an
+   * empty string.
    * </pre>
    *
    * <code>string parent_policy_tag = 4;</code>
@@ -811,7 +819,7 @@ public final class PolicyTag extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Resource name of the policy tag, whose format is:
+     * Output only. Resource name of this policy tag, whose format is:
      * "projects/{project_number}/locations/{location_id}/taxonomies/{taxonomy_id}/policyTags/{id}".
      * </pre>
      *
@@ -832,7 +840,7 @@ public final class PolicyTag extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Resource name of the policy tag, whose format is:
+     * Output only. Resource name of this policy tag, whose format is:
      * "projects/{project_number}/locations/{location_id}/taxonomies/{taxonomy_id}/policyTags/{id}".
      * </pre>
      *
@@ -853,7 +861,7 @@ public final class PolicyTag extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Resource name of the policy tag, whose format is:
+     * Output only. Resource name of this policy tag, whose format is:
      * "projects/{project_number}/locations/{location_id}/taxonomies/{taxonomy_id}/policyTags/{id}".
      * </pre>
      *
@@ -872,7 +880,7 @@ public final class PolicyTag extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Resource name of the policy tag, whose format is:
+     * Output only. Resource name of this policy tag, whose format is:
      * "projects/{project_number}/locations/{location_id}/taxonomies/{taxonomy_id}/policyTags/{id}".
      * </pre>
      *
@@ -888,7 +896,7 @@ public final class PolicyTag extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Resource name of the policy tag, whose format is:
+     * Output only. Resource name of this policy tag, whose format is:
      * "projects/{project_number}/locations/{location_id}/taxonomies/{taxonomy_id}/policyTags/{id}".
      * </pre>
      *
@@ -910,7 +918,9 @@ public final class PolicyTag extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Human readable name of this policy tag. Max 200 bytes when
+     * Required. User defined name of this policy tag. It must: be unique within the parent
+     * taxonomy; contain only unicode letters, numbers, underscores, dashes and
+     * spaces; not start or end with spaces; and be at most 200 bytes long when
      * encoded in UTF-8.
      * </pre>
      *
@@ -931,7 +941,9 @@ public final class PolicyTag extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Human readable name of this policy tag. Max 200 bytes when
+     * Required. User defined name of this policy tag. It must: be unique within the parent
+     * taxonomy; contain only unicode letters, numbers, underscores, dashes and
+     * spaces; not start or end with spaces; and be at most 200 bytes long when
      * encoded in UTF-8.
      * </pre>
      *
@@ -952,7 +964,9 @@ public final class PolicyTag extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Human readable name of this policy tag. Max 200 bytes when
+     * Required. User defined name of this policy tag. It must: be unique within the parent
+     * taxonomy; contain only unicode letters, numbers, underscores, dashes and
+     * spaces; not start or end with spaces; and be at most 200 bytes long when
      * encoded in UTF-8.
      * </pre>
      *
@@ -971,7 +985,9 @@ public final class PolicyTag extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Human readable name of this policy tag. Max 200 bytes when
+     * Required. User defined name of this policy tag. It must: be unique within the parent
+     * taxonomy; contain only unicode letters, numbers, underscores, dashes and
+     * spaces; not start or end with spaces; and be at most 200 bytes long when
      * encoded in UTF-8.
      * </pre>
      *
@@ -987,7 +1003,9 @@ public final class PolicyTag extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Human readable name of this policy tag. Max 200 bytes when
+     * Required. User defined name of this policy tag. It must: be unique within the parent
+     * taxonomy; contain only unicode letters, numbers, underscores, dashes and
+     * spaces; not start or end with spaces; and be at most 200 bytes long when
      * encoded in UTF-8.
      * </pre>
      *
@@ -1009,9 +1027,10 @@ public final class PolicyTag extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Description of the policy tag. The length of the description is limited to
-     * 2000 bytes when encoded in UTF-8. If not set, defaults to an empty
-     * description.
+     * Description of this policy tag. It must: contain only unicode characters,
+     * tabs, newlines, carriage returns and page breaks; and be at most 2000 bytes
+     * long when encoded in UTF-8. If not set, defaults to an empty description.
+     * If not set, defaults to an empty description.
      * </pre>
      *
      * <code>string description = 3;</code>
@@ -1031,9 +1050,10 @@ public final class PolicyTag extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Description of the policy tag. The length of the description is limited to
-     * 2000 bytes when encoded in UTF-8. If not set, defaults to an empty
-     * description.
+     * Description of this policy tag. It must: contain only unicode characters,
+     * tabs, newlines, carriage returns and page breaks; and be at most 2000 bytes
+     * long when encoded in UTF-8. If not set, defaults to an empty description.
+     * If not set, defaults to an empty description.
      * </pre>
      *
      * <code>string description = 3;</code>
@@ -1053,9 +1073,10 @@ public final class PolicyTag extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Description of the policy tag. The length of the description is limited to
-     * 2000 bytes when encoded in UTF-8. If not set, defaults to an empty
-     * description.
+     * Description of this policy tag. It must: contain only unicode characters,
+     * tabs, newlines, carriage returns and page breaks; and be at most 2000 bytes
+     * long when encoded in UTF-8. If not set, defaults to an empty description.
+     * If not set, defaults to an empty description.
      * </pre>
      *
      * <code>string description = 3;</code>
@@ -1073,9 +1094,10 @@ public final class PolicyTag extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Description of the policy tag. The length of the description is limited to
-     * 2000 bytes when encoded in UTF-8. If not set, defaults to an empty
-     * description.
+     * Description of this policy tag. It must: contain only unicode characters,
+     * tabs, newlines, carriage returns and page breaks; and be at most 2000 bytes
+     * long when encoded in UTF-8. If not set, defaults to an empty description.
+     * If not set, defaults to an empty description.
      * </pre>
      *
      * <code>string description = 3;</code>
@@ -1090,9 +1112,10 @@ public final class PolicyTag extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Description of the policy tag. The length of the description is limited to
-     * 2000 bytes when encoded in UTF-8. If not set, defaults to an empty
-     * description.
+     * Description of this policy tag. It must: contain only unicode characters,
+     * tabs, newlines, carriage returns and page breaks; and be at most 2000 bytes
+     * long when encoded in UTF-8. If not set, defaults to an empty description.
+     * If not set, defaults to an empty description.
      * </pre>
      *
      * <code>string description = 3;</code>
@@ -1113,11 +1136,12 @@ public final class PolicyTag extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Resource name of the parent policy tag to this policy tag (e.g. for policy
-     * tag "LatLong" in the example above, this field contains the resource name
-     * of policy tag "Geolocation"). If empty, it means this policy tag is a top
-     * level policy tag (e.g. this field is empty for policy tag "Geolocation" in
-     * the example above). If not set, defaults to an empty string.
+     * Resource name of this policy tag's parent policy tag (e.g. for the
+     * "LatLong" policy tag in the example above, this field contains the
+     * resource name of the "Geolocation" policy tag). If empty, it means this
+     * policy tag is a top level policy tag (e.g. this field is empty for the
+     * "Geolocation" policy tag in the example above). If not set, defaults to an
+     * empty string.
      * </pre>
      *
      * <code>string parent_policy_tag = 4;</code>
@@ -1137,11 +1161,12 @@ public final class PolicyTag extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Resource name of the parent policy tag to this policy tag (e.g. for policy
-     * tag "LatLong" in the example above, this field contains the resource name
-     * of policy tag "Geolocation"). If empty, it means this policy tag is a top
-     * level policy tag (e.g. this field is empty for policy tag "Geolocation" in
-     * the example above). If not set, defaults to an empty string.
+     * Resource name of this policy tag's parent policy tag (e.g. for the
+     * "LatLong" policy tag in the example above, this field contains the
+     * resource name of the "Geolocation" policy tag). If empty, it means this
+     * policy tag is a top level policy tag (e.g. this field is empty for the
+     * "Geolocation" policy tag in the example above). If not set, defaults to an
+     * empty string.
      * </pre>
      *
      * <code>string parent_policy_tag = 4;</code>
@@ -1161,11 +1186,12 @@ public final class PolicyTag extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Resource name of the parent policy tag to this policy tag (e.g. for policy
-     * tag "LatLong" in the example above, this field contains the resource name
-     * of policy tag "Geolocation"). If empty, it means this policy tag is a top
-     * level policy tag (e.g. this field is empty for policy tag "Geolocation" in
-     * the example above). If not set, defaults to an empty string.
+     * Resource name of this policy tag's parent policy tag (e.g. for the
+     * "LatLong" policy tag in the example above, this field contains the
+     * resource name of the "Geolocation" policy tag). If empty, it means this
+     * policy tag is a top level policy tag (e.g. this field is empty for the
+     * "Geolocation" policy tag in the example above). If not set, defaults to an
+     * empty string.
      * </pre>
      *
      * <code>string parent_policy_tag = 4;</code>
@@ -1183,11 +1209,12 @@ public final class PolicyTag extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Resource name of the parent policy tag to this policy tag (e.g. for policy
-     * tag "LatLong" in the example above, this field contains the resource name
-     * of policy tag "Geolocation"). If empty, it means this policy tag is a top
-     * level policy tag (e.g. this field is empty for policy tag "Geolocation" in
-     * the example above). If not set, defaults to an empty string.
+     * Resource name of this policy tag's parent policy tag (e.g. for the
+     * "LatLong" policy tag in the example above, this field contains the
+     * resource name of the "Geolocation" policy tag). If empty, it means this
+     * policy tag is a top level policy tag (e.g. this field is empty for the
+     * "Geolocation" policy tag in the example above). If not set, defaults to an
+     * empty string.
      * </pre>
      *
      * <code>string parent_policy_tag = 4;</code>
@@ -1202,11 +1229,12 @@ public final class PolicyTag extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Resource name of the parent policy tag to this policy tag (e.g. for policy
-     * tag "LatLong" in the example above, this field contains the resource name
-     * of policy tag "Geolocation"). If empty, it means this policy tag is a top
-     * level policy tag (e.g. this field is empty for policy tag "Geolocation" in
-     * the example above). If not set, defaults to an empty string.
+     * Resource name of this policy tag's parent policy tag (e.g. for the
+     * "LatLong" policy tag in the example above, this field contains the
+     * resource name of the "Geolocation" policy tag). If empty, it means this
+     * policy tag is a top level policy tag (e.g. this field is empty for the
+     * "Geolocation" policy tag in the example above). If not set, defaults to an
+     * empty string.
      * </pre>
      *
      * <code>string parent_policy_tag = 4;</code>

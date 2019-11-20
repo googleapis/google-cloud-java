@@ -135,9 +135,14 @@ public final class GcsFilesetSpec extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Required. Patterns to identify a set of files in Google Cloud Storage.
+   * Required. Patterns to identify a set of files in Google Cloud Storage. See [Cloud
+   * Storage documentation](storage/docs/gsutil/addlhelp/WildcardNames) for
+   * more information. Note that bucket wildcards are currently not supported.
    * Examples of valid file_patterns:
-   *  * `gs://bucket_name/&#42;`: matches all files in `bucket_name`
+   *  * `gs://bucket_name/dir/&#42;`: matches all files within `bucket_name/dir`
+   *                              directory.
+   *  * `gs://bucket_name/dir/&#42;*`: matches all files in `bucket_name/dir`
+   *                               spanning all subdirectories.
    *  * `gs://bucket_name/file*`: matches files prefixed by `file` in
    *                              `bucket_name`
    *  * `gs://bucket_name/a/&#42;&#47;b`: matches all files in `bucket_name` that match
@@ -154,9 +159,14 @@ public final class GcsFilesetSpec extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Required. Patterns to identify a set of files in Google Cloud Storage.
+   * Required. Patterns to identify a set of files in Google Cloud Storage. See [Cloud
+   * Storage documentation](storage/docs/gsutil/addlhelp/WildcardNames) for
+   * more information. Note that bucket wildcards are currently not supported.
    * Examples of valid file_patterns:
-   *  * `gs://bucket_name/&#42;`: matches all files in `bucket_name`
+   *  * `gs://bucket_name/dir/&#42;`: matches all files within `bucket_name/dir`
+   *                              directory.
+   *  * `gs://bucket_name/dir/&#42;*`: matches all files in `bucket_name/dir`
+   *                               spanning all subdirectories.
    *  * `gs://bucket_name/file*`: matches files prefixed by `file` in
    *                              `bucket_name`
    *  * `gs://bucket_name/a/&#42;&#47;b`: matches all files in `bucket_name` that match
@@ -173,9 +183,14 @@ public final class GcsFilesetSpec extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Required. Patterns to identify a set of files in Google Cloud Storage.
+   * Required. Patterns to identify a set of files in Google Cloud Storage. See [Cloud
+   * Storage documentation](storage/docs/gsutil/addlhelp/WildcardNames) for
+   * more information. Note that bucket wildcards are currently not supported.
    * Examples of valid file_patterns:
-   *  * `gs://bucket_name/&#42;`: matches all files in `bucket_name`
+   *  * `gs://bucket_name/dir/&#42;`: matches all files within `bucket_name/dir`
+   *                              directory.
+   *  * `gs://bucket_name/dir/&#42;*`: matches all files in `bucket_name/dir`
+   *                               spanning all subdirectories.
    *  * `gs://bucket_name/file*`: matches files prefixed by `file` in
    *                              `bucket_name`
    *  * `gs://bucket_name/a/&#42;&#47;b`: matches all files in `bucket_name` that match
@@ -192,9 +207,14 @@ public final class GcsFilesetSpec extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Required. Patterns to identify a set of files in Google Cloud Storage.
+   * Required. Patterns to identify a set of files in Google Cloud Storage. See [Cloud
+   * Storage documentation](storage/docs/gsutil/addlhelp/WildcardNames) for
+   * more information. Note that bucket wildcards are currently not supported.
    * Examples of valid file_patterns:
-   *  * `gs://bucket_name/&#42;`: matches all files in `bucket_name`
+   *  * `gs://bucket_name/dir/&#42;`: matches all files within `bucket_name/dir`
+   *                              directory.
+   *  * `gs://bucket_name/dir/&#42;*`: matches all files in `bucket_name/dir`
+   *                               spanning all subdirectories.
    *  * `gs://bucket_name/file*`: matches files prefixed by `file` in
    *                              `bucket_name`
    *  * `gs://bucket_name/a/&#42;&#47;b`: matches all files in `bucket_name` that match
@@ -214,8 +234,8 @@ public final class GcsFilesetSpec extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. Sample files contained in this fileset, not all files
-   * contained in this fileset are represented here.
+   * Output only. Sample files contained in this fileset, not all files contained in this
+   * fileset are represented here.
    * </pre>
    *
    * <code>
@@ -230,8 +250,8 @@ public final class GcsFilesetSpec extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. Sample files contained in this fileset, not all files
-   * contained in this fileset are represented here.
+   * Output only. Sample files contained in this fileset, not all files contained in this
+   * fileset are represented here.
    * </pre>
    *
    * <code>
@@ -246,8 +266,8 @@ public final class GcsFilesetSpec extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. Sample files contained in this fileset, not all files
-   * contained in this fileset are represented here.
+   * Output only. Sample files contained in this fileset, not all files contained in this
+   * fileset are represented here.
    * </pre>
    *
    * <code>
@@ -261,8 +281,8 @@ public final class GcsFilesetSpec extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. Sample files contained in this fileset, not all files
-   * contained in this fileset are represented here.
+   * Output only. Sample files contained in this fileset, not all files contained in this
+   * fileset are represented here.
    * </pre>
    *
    * <code>
@@ -276,8 +296,8 @@ public final class GcsFilesetSpec extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. Sample files contained in this fileset, not all files
-   * contained in this fileset are represented here.
+   * Output only. Sample files contained in this fileset, not all files contained in this
+   * fileset are represented here.
    * </pre>
    *
    * <code>
@@ -696,9 +716,14 @@ public final class GcsFilesetSpec extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Patterns to identify a set of files in Google Cloud Storage.
+     * Required. Patterns to identify a set of files in Google Cloud Storage. See [Cloud
+     * Storage documentation](storage/docs/gsutil/addlhelp/WildcardNames) for
+     * more information. Note that bucket wildcards are currently not supported.
      * Examples of valid file_patterns:
-     *  * `gs://bucket_name/&#42;`: matches all files in `bucket_name`
+     *  * `gs://bucket_name/dir/&#42;`: matches all files within `bucket_name/dir`
+     *                              directory.
+     *  * `gs://bucket_name/dir/&#42;*`: matches all files in `bucket_name/dir`
+     *                               spanning all subdirectories.
      *  * `gs://bucket_name/file*`: matches files prefixed by `file` in
      *                              `bucket_name`
      *  * `gs://bucket_name/a/&#42;&#47;b`: matches all files in `bucket_name` that match
@@ -715,9 +740,14 @@ public final class GcsFilesetSpec extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Patterns to identify a set of files in Google Cloud Storage.
+     * Required. Patterns to identify a set of files in Google Cloud Storage. See [Cloud
+     * Storage documentation](storage/docs/gsutil/addlhelp/WildcardNames) for
+     * more information. Note that bucket wildcards are currently not supported.
      * Examples of valid file_patterns:
-     *  * `gs://bucket_name/&#42;`: matches all files in `bucket_name`
+     *  * `gs://bucket_name/dir/&#42;`: matches all files within `bucket_name/dir`
+     *                              directory.
+     *  * `gs://bucket_name/dir/&#42;*`: matches all files in `bucket_name/dir`
+     *                               spanning all subdirectories.
      *  * `gs://bucket_name/file*`: matches files prefixed by `file` in
      *                              `bucket_name`
      *  * `gs://bucket_name/a/&#42;&#47;b`: matches all files in `bucket_name` that match
@@ -734,9 +764,14 @@ public final class GcsFilesetSpec extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Patterns to identify a set of files in Google Cloud Storage.
+     * Required. Patterns to identify a set of files in Google Cloud Storage. See [Cloud
+     * Storage documentation](storage/docs/gsutil/addlhelp/WildcardNames) for
+     * more information. Note that bucket wildcards are currently not supported.
      * Examples of valid file_patterns:
-     *  * `gs://bucket_name/&#42;`: matches all files in `bucket_name`
+     *  * `gs://bucket_name/dir/&#42;`: matches all files within `bucket_name/dir`
+     *                              directory.
+     *  * `gs://bucket_name/dir/&#42;*`: matches all files in `bucket_name/dir`
+     *                               spanning all subdirectories.
      *  * `gs://bucket_name/file*`: matches files prefixed by `file` in
      *                              `bucket_name`
      *  * `gs://bucket_name/a/&#42;&#47;b`: matches all files in `bucket_name` that match
@@ -753,9 +788,14 @@ public final class GcsFilesetSpec extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Patterns to identify a set of files in Google Cloud Storage.
+     * Required. Patterns to identify a set of files in Google Cloud Storage. See [Cloud
+     * Storage documentation](storage/docs/gsutil/addlhelp/WildcardNames) for
+     * more information. Note that bucket wildcards are currently not supported.
      * Examples of valid file_patterns:
-     *  * `gs://bucket_name/&#42;`: matches all files in `bucket_name`
+     *  * `gs://bucket_name/dir/&#42;`: matches all files within `bucket_name/dir`
+     *                              directory.
+     *  * `gs://bucket_name/dir/&#42;*`: matches all files in `bucket_name/dir`
+     *                               spanning all subdirectories.
      *  * `gs://bucket_name/file*`: matches files prefixed by `file` in
      *                              `bucket_name`
      *  * `gs://bucket_name/a/&#42;&#47;b`: matches all files in `bucket_name` that match
@@ -772,9 +812,14 @@ public final class GcsFilesetSpec extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Patterns to identify a set of files in Google Cloud Storage.
+     * Required. Patterns to identify a set of files in Google Cloud Storage. See [Cloud
+     * Storage documentation](storage/docs/gsutil/addlhelp/WildcardNames) for
+     * more information. Note that bucket wildcards are currently not supported.
      * Examples of valid file_patterns:
-     *  * `gs://bucket_name/&#42;`: matches all files in `bucket_name`
+     *  * `gs://bucket_name/dir/&#42;`: matches all files within `bucket_name/dir`
+     *                              directory.
+     *  * `gs://bucket_name/dir/&#42;*`: matches all files in `bucket_name/dir`
+     *                               spanning all subdirectories.
      *  * `gs://bucket_name/file*`: matches files prefixed by `file` in
      *                              `bucket_name`
      *  * `gs://bucket_name/a/&#42;&#47;b`: matches all files in `bucket_name` that match
@@ -797,9 +842,14 @@ public final class GcsFilesetSpec extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Patterns to identify a set of files in Google Cloud Storage.
+     * Required. Patterns to identify a set of files in Google Cloud Storage. See [Cloud
+     * Storage documentation](storage/docs/gsutil/addlhelp/WildcardNames) for
+     * more information. Note that bucket wildcards are currently not supported.
      * Examples of valid file_patterns:
-     *  * `gs://bucket_name/&#42;`: matches all files in `bucket_name`
+     *  * `gs://bucket_name/dir/&#42;`: matches all files within `bucket_name/dir`
+     *                              directory.
+     *  * `gs://bucket_name/dir/&#42;*`: matches all files in `bucket_name/dir`
+     *                               spanning all subdirectories.
      *  * `gs://bucket_name/file*`: matches files prefixed by `file` in
      *                              `bucket_name`
      *  * `gs://bucket_name/a/&#42;&#47;b`: matches all files in `bucket_name` that match
@@ -822,9 +872,14 @@ public final class GcsFilesetSpec extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Patterns to identify a set of files in Google Cloud Storage.
+     * Required. Patterns to identify a set of files in Google Cloud Storage. See [Cloud
+     * Storage documentation](storage/docs/gsutil/addlhelp/WildcardNames) for
+     * more information. Note that bucket wildcards are currently not supported.
      * Examples of valid file_patterns:
-     *  * `gs://bucket_name/&#42;`: matches all files in `bucket_name`
+     *  * `gs://bucket_name/dir/&#42;`: matches all files within `bucket_name/dir`
+     *                              directory.
+     *  * `gs://bucket_name/dir/&#42;*`: matches all files in `bucket_name/dir`
+     *                               spanning all subdirectories.
      *  * `gs://bucket_name/file*`: matches files prefixed by `file` in
      *                              `bucket_name`
      *  * `gs://bucket_name/a/&#42;&#47;b`: matches all files in `bucket_name` that match
@@ -844,9 +899,14 @@ public final class GcsFilesetSpec extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Patterns to identify a set of files in Google Cloud Storage.
+     * Required. Patterns to identify a set of files in Google Cloud Storage. See [Cloud
+     * Storage documentation](storage/docs/gsutil/addlhelp/WildcardNames) for
+     * more information. Note that bucket wildcards are currently not supported.
      * Examples of valid file_patterns:
-     *  * `gs://bucket_name/&#42;`: matches all files in `bucket_name`
+     *  * `gs://bucket_name/dir/&#42;`: matches all files within `bucket_name/dir`
+     *                              directory.
+     *  * `gs://bucket_name/dir/&#42;*`: matches all files in `bucket_name/dir`
+     *                               spanning all subdirectories.
      *  * `gs://bucket_name/file*`: matches files prefixed by `file` in
      *                              `bucket_name`
      *  * `gs://bucket_name/a/&#42;&#47;b`: matches all files in `bucket_name` that match
@@ -866,9 +926,14 @@ public final class GcsFilesetSpec extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Patterns to identify a set of files in Google Cloud Storage.
+     * Required. Patterns to identify a set of files in Google Cloud Storage. See [Cloud
+     * Storage documentation](storage/docs/gsutil/addlhelp/WildcardNames) for
+     * more information. Note that bucket wildcards are currently not supported.
      * Examples of valid file_patterns:
-     *  * `gs://bucket_name/&#42;`: matches all files in `bucket_name`
+     *  * `gs://bucket_name/dir/&#42;`: matches all files within `bucket_name/dir`
+     *                              directory.
+     *  * `gs://bucket_name/dir/&#42;*`: matches all files in `bucket_name/dir`
+     *                               spanning all subdirectories.
      *  * `gs://bucket_name/file*`: matches files prefixed by `file` in
      *                              `bucket_name`
      *  * `gs://bucket_name/a/&#42;&#47;b`: matches all files in `bucket_name` that match
@@ -911,8 +976,8 @@ public final class GcsFilesetSpec extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Sample files contained in this fileset, not all files
-     * contained in this fileset are represented here.
+     * Output only. Sample files contained in this fileset, not all files contained in this
+     * fileset are represented here.
      * </pre>
      *
      * <code>
@@ -931,8 +996,8 @@ public final class GcsFilesetSpec extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Sample files contained in this fileset, not all files
-     * contained in this fileset are represented here.
+     * Output only. Sample files contained in this fileset, not all files contained in this
+     * fileset are represented here.
      * </pre>
      *
      * <code>
@@ -950,8 +1015,8 @@ public final class GcsFilesetSpec extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Sample files contained in this fileset, not all files
-     * contained in this fileset are represented here.
+     * Output only. Sample files contained in this fileset, not all files contained in this
+     * fileset are represented here.
      * </pre>
      *
      * <code>
@@ -969,8 +1034,8 @@ public final class GcsFilesetSpec extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Sample files contained in this fileset, not all files
-     * contained in this fileset are represented here.
+     * Output only. Sample files contained in this fileset, not all files contained in this
+     * fileset are represented here.
      * </pre>
      *
      * <code>
@@ -995,8 +1060,8 @@ public final class GcsFilesetSpec extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Sample files contained in this fileset, not all files
-     * contained in this fileset are represented here.
+     * Output only. Sample files contained in this fileset, not all files contained in this
+     * fileset are represented here.
      * </pre>
      *
      * <code>
@@ -1018,8 +1083,8 @@ public final class GcsFilesetSpec extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Sample files contained in this fileset, not all files
-     * contained in this fileset are represented here.
+     * Output only. Sample files contained in this fileset, not all files contained in this
+     * fileset are represented here.
      * </pre>
      *
      * <code>
@@ -1043,8 +1108,8 @@ public final class GcsFilesetSpec extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Sample files contained in this fileset, not all files
-     * contained in this fileset are represented here.
+     * Output only. Sample files contained in this fileset, not all files contained in this
+     * fileset are represented here.
      * </pre>
      *
      * <code>
@@ -1069,8 +1134,8 @@ public final class GcsFilesetSpec extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Sample files contained in this fileset, not all files
-     * contained in this fileset are represented here.
+     * Output only. Sample files contained in this fileset, not all files contained in this
+     * fileset are represented here.
      * </pre>
      *
      * <code>
@@ -1092,8 +1157,8 @@ public final class GcsFilesetSpec extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Sample files contained in this fileset, not all files
-     * contained in this fileset are represented here.
+     * Output only. Sample files contained in this fileset, not all files contained in this
+     * fileset are represented here.
      * </pre>
      *
      * <code>
@@ -1115,8 +1180,8 @@ public final class GcsFilesetSpec extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Sample files contained in this fileset, not all files
-     * contained in this fileset are represented here.
+     * Output only. Sample files contained in this fileset, not all files contained in this
+     * fileset are represented here.
      * </pre>
      *
      * <code>
@@ -1138,8 +1203,8 @@ public final class GcsFilesetSpec extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Sample files contained in this fileset, not all files
-     * contained in this fileset are represented here.
+     * Output only. Sample files contained in this fileset, not all files contained in this
+     * fileset are represented here.
      * </pre>
      *
      * <code>
@@ -1160,8 +1225,8 @@ public final class GcsFilesetSpec extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Sample files contained in this fileset, not all files
-     * contained in this fileset are represented here.
+     * Output only. Sample files contained in this fileset, not all files contained in this
+     * fileset are represented here.
      * </pre>
      *
      * <code>
@@ -1182,8 +1247,8 @@ public final class GcsFilesetSpec extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Sample files contained in this fileset, not all files
-     * contained in this fileset are represented here.
+     * Output only. Sample files contained in this fileset, not all files contained in this
+     * fileset are represented here.
      * </pre>
      *
      * <code>
@@ -1198,8 +1263,8 @@ public final class GcsFilesetSpec extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Sample files contained in this fileset, not all files
-     * contained in this fileset are represented here.
+     * Output only. Sample files contained in this fileset, not all files contained in this
+     * fileset are represented here.
      * </pre>
      *
      * <code>
@@ -1218,8 +1283,8 @@ public final class GcsFilesetSpec extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Sample files contained in this fileset, not all files
-     * contained in this fileset are represented here.
+     * Output only. Sample files contained in this fileset, not all files contained in this
+     * fileset are represented here.
      * </pre>
      *
      * <code>
@@ -1238,8 +1303,8 @@ public final class GcsFilesetSpec extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Sample files contained in this fileset, not all files
-     * contained in this fileset are represented here.
+     * Output only. Sample files contained in this fileset, not all files contained in this
+     * fileset are represented here.
      * </pre>
      *
      * <code>
@@ -1254,8 +1319,8 @@ public final class GcsFilesetSpec extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Sample files contained in this fileset, not all files
-     * contained in this fileset are represented here.
+     * Output only. Sample files contained in this fileset, not all files contained in this
+     * fileset are represented here.
      * </pre>
      *
      * <code>
@@ -1271,8 +1336,8 @@ public final class GcsFilesetSpec extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Sample files contained in this fileset, not all files
-     * contained in this fileset are represented here.
+     * Output only. Sample files contained in this fileset, not all files contained in this
+     * fileset are represented here.
      * </pre>
      *
      * <code>

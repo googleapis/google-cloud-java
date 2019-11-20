@@ -27,7 +27,7 @@ public interface ListTaxonomiesRequestOrBuilder
    *
    *
    * <pre>
-   * Required. Resource name of a project to list the taxonomies of.
+   * Required. Resource name of the project to list the taxonomies of.
    * </pre>
    *
    * <code>
@@ -39,7 +39,7 @@ public interface ListTaxonomiesRequestOrBuilder
    *
    *
    * <pre>
-   * Required. Resource name of a project to list the taxonomies of.
+   * Required. Resource name of the project to list the taxonomies of.
    * </pre>
    *
    * <code>
@@ -52,7 +52,8 @@ public interface ListTaxonomiesRequestOrBuilder
    *
    *
    * <pre>
-   * The maximum number of items to return. If not set, defaults to 50.
+   * The maximum number of items to return. Must be a value between 1 and 1000.
+   * If not set, defaults to 50.
    * </pre>
    *
    * <code>int32 page_size = 2;</code>

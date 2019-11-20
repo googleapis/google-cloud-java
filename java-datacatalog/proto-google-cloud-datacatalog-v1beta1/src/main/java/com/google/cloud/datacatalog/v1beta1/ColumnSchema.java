@@ -284,9 +284,9 @@ public final class ColumnSchema extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. A column's mode indicates whether the values in this column are
-   * required, nullable, etc. Only `NULLABLE`, `REQUIRED` and `REPEATED` are
-   * supported. Default mode is `NULLABLE`.
+   * Optional. A column's mode indicates whether the values in this column are required,
+   * nullable, etc. Only `NULLABLE`, `REQUIRED` and `REPEATED` are supported.
+   * Default mode is `NULLABLE`.
    * </pre>
    *
    * <code>string mode = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -306,9 +306,9 @@ public final class ColumnSchema extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. A column's mode indicates whether the values in this column are
-   * required, nullable, etc. Only `NULLABLE`, `REQUIRED` and `REPEATED` are
-   * supported. Default mode is `NULLABLE`.
+   * Optional. A column's mode indicates whether the values in this column are required,
+   * nullable, etc. Only `NULLABLE`, `REQUIRED` and `REPEATED` are supported.
+   * Default mode is `NULLABLE`.
    * </pre>
    *
    * <code>string mode = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -331,8 +331,7 @@ public final class ColumnSchema extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. Schema of sub-columns. A column can have zero or more
-   * sub-columns.
+   * Optional. Schema of sub-columns. A column can have zero or more sub-columns.
    * </pre>
    *
    * <code>
@@ -346,8 +345,7 @@ public final class ColumnSchema extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. Schema of sub-columns. A column can have zero or more
-   * sub-columns.
+   * Optional. Schema of sub-columns. A column can have zero or more sub-columns.
    * </pre>
    *
    * <code>
@@ -362,8 +360,7 @@ public final class ColumnSchema extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. Schema of sub-columns. A column can have zero or more
-   * sub-columns.
+   * Optional. Schema of sub-columns. A column can have zero or more sub-columns.
    * </pre>
    *
    * <code>
@@ -377,8 +374,7 @@ public final class ColumnSchema extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. Schema of sub-columns. A column can have zero or more
-   * sub-columns.
+   * Optional. Schema of sub-columns. A column can have zero or more sub-columns.
    * </pre>
    *
    * <code>
@@ -392,8 +388,7 @@ public final class ColumnSchema extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. Schema of sub-columns. A column can have zero or more
-   * sub-columns.
+   * Optional. Schema of sub-columns. A column can have zero or more sub-columns.
    * </pre>
    *
    * <code>
@@ -1119,9 +1114,9 @@ public final class ColumnSchema extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. A column's mode indicates whether the values in this column are
-     * required, nullable, etc. Only `NULLABLE`, `REQUIRED` and `REPEATED` are
-     * supported. Default mode is `NULLABLE`.
+     * Optional. A column's mode indicates whether the values in this column are required,
+     * nullable, etc. Only `NULLABLE`, `REQUIRED` and `REPEATED` are supported.
+     * Default mode is `NULLABLE`.
      * </pre>
      *
      * <code>string mode = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1141,9 +1136,9 @@ public final class ColumnSchema extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. A column's mode indicates whether the values in this column are
-     * required, nullable, etc. Only `NULLABLE`, `REQUIRED` and `REPEATED` are
-     * supported. Default mode is `NULLABLE`.
+     * Optional. A column's mode indicates whether the values in this column are required,
+     * nullable, etc. Only `NULLABLE`, `REQUIRED` and `REPEATED` are supported.
+     * Default mode is `NULLABLE`.
      * </pre>
      *
      * <code>string mode = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1163,9 +1158,9 @@ public final class ColumnSchema extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. A column's mode indicates whether the values in this column are
-     * required, nullable, etc. Only `NULLABLE`, `REQUIRED` and `REPEATED` are
-     * supported. Default mode is `NULLABLE`.
+     * Optional. A column's mode indicates whether the values in this column are required,
+     * nullable, etc. Only `NULLABLE`, `REQUIRED` and `REPEATED` are supported.
+     * Default mode is `NULLABLE`.
      * </pre>
      *
      * <code>string mode = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1183,9 +1178,9 @@ public final class ColumnSchema extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. A column's mode indicates whether the values in this column are
-     * required, nullable, etc. Only `NULLABLE`, `REQUIRED` and `REPEATED` are
-     * supported. Default mode is `NULLABLE`.
+     * Optional. A column's mode indicates whether the values in this column are required,
+     * nullable, etc. Only `NULLABLE`, `REQUIRED` and `REPEATED` are supported.
+     * Default mode is `NULLABLE`.
      * </pre>
      *
      * <code>string mode = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1200,9 +1195,9 @@ public final class ColumnSchema extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. A column's mode indicates whether the values in this column are
-     * required, nullable, etc. Only `NULLABLE`, `REQUIRED` and `REPEATED` are
-     * supported. Default mode is `NULLABLE`.
+     * Optional. A column's mode indicates whether the values in this column are required,
+     * nullable, etc. Only `NULLABLE`, `REQUIRED` and `REPEATED` are supported.
+     * Default mode is `NULLABLE`.
      * </pre>
      *
      * <code>string mode = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1239,8 +1234,7 @@ public final class ColumnSchema extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Schema of sub-columns. A column can have zero or more
-     * sub-columns.
+     * Optional. Schema of sub-columns. A column can have zero or more sub-columns.
      * </pre>
      *
      * <code>
@@ -1258,8 +1252,7 @@ public final class ColumnSchema extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Schema of sub-columns. A column can have zero or more
-     * sub-columns.
+     * Optional. Schema of sub-columns. A column can have zero or more sub-columns.
      * </pre>
      *
      * <code>
@@ -1277,8 +1270,7 @@ public final class ColumnSchema extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Schema of sub-columns. A column can have zero or more
-     * sub-columns.
+     * Optional. Schema of sub-columns. A column can have zero or more sub-columns.
      * </pre>
      *
      * <code>
@@ -1296,8 +1288,7 @@ public final class ColumnSchema extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Schema of sub-columns. A column can have zero or more
-     * sub-columns.
+     * Optional. Schema of sub-columns. A column can have zero or more sub-columns.
      * </pre>
      *
      * <code>
@@ -1322,8 +1313,7 @@ public final class ColumnSchema extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Schema of sub-columns. A column can have zero or more
-     * sub-columns.
+     * Optional. Schema of sub-columns. A column can have zero or more sub-columns.
      * </pre>
      *
      * <code>
@@ -1345,8 +1335,7 @@ public final class ColumnSchema extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Schema of sub-columns. A column can have zero or more
-     * sub-columns.
+     * Optional. Schema of sub-columns. A column can have zero or more sub-columns.
      * </pre>
      *
      * <code>
@@ -1370,8 +1359,7 @@ public final class ColumnSchema extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Schema of sub-columns. A column can have zero or more
-     * sub-columns.
+     * Optional. Schema of sub-columns. A column can have zero or more sub-columns.
      * </pre>
      *
      * <code>
@@ -1396,8 +1384,7 @@ public final class ColumnSchema extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Schema of sub-columns. A column can have zero or more
-     * sub-columns.
+     * Optional. Schema of sub-columns. A column can have zero or more sub-columns.
      * </pre>
      *
      * <code>
@@ -1419,8 +1406,7 @@ public final class ColumnSchema extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Schema of sub-columns. A column can have zero or more
-     * sub-columns.
+     * Optional. Schema of sub-columns. A column can have zero or more sub-columns.
      * </pre>
      *
      * <code>
@@ -1442,8 +1428,7 @@ public final class ColumnSchema extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Schema of sub-columns. A column can have zero or more
-     * sub-columns.
+     * Optional. Schema of sub-columns. A column can have zero or more sub-columns.
      * </pre>
      *
      * <code>
@@ -1465,8 +1450,7 @@ public final class ColumnSchema extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Schema of sub-columns. A column can have zero or more
-     * sub-columns.
+     * Optional. Schema of sub-columns. A column can have zero or more sub-columns.
      * </pre>
      *
      * <code>
@@ -1487,8 +1471,7 @@ public final class ColumnSchema extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Schema of sub-columns. A column can have zero or more
-     * sub-columns.
+     * Optional. Schema of sub-columns. A column can have zero or more sub-columns.
      * </pre>
      *
      * <code>
@@ -1509,8 +1492,7 @@ public final class ColumnSchema extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Schema of sub-columns. A column can have zero or more
-     * sub-columns.
+     * Optional. Schema of sub-columns. A column can have zero or more sub-columns.
      * </pre>
      *
      * <code>
@@ -1525,8 +1507,7 @@ public final class ColumnSchema extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Schema of sub-columns. A column can have zero or more
-     * sub-columns.
+     * Optional. Schema of sub-columns. A column can have zero or more sub-columns.
      * </pre>
      *
      * <code>
@@ -1545,8 +1526,7 @@ public final class ColumnSchema extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Schema of sub-columns. A column can have zero or more
-     * sub-columns.
+     * Optional. Schema of sub-columns. A column can have zero or more sub-columns.
      * </pre>
      *
      * <code>
@@ -1565,8 +1545,7 @@ public final class ColumnSchema extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Schema of sub-columns. A column can have zero or more
-     * sub-columns.
+     * Optional. Schema of sub-columns. A column can have zero or more sub-columns.
      * </pre>
      *
      * <code>
@@ -1581,8 +1560,7 @@ public final class ColumnSchema extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Schema of sub-columns. A column can have zero or more
-     * sub-columns.
+     * Optional. Schema of sub-columns. A column can have zero or more sub-columns.
      * </pre>
      *
      * <code>
@@ -1599,8 +1577,7 @@ public final class ColumnSchema extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Schema of sub-columns. A column can have zero or more
-     * sub-columns.
+     * Optional. Schema of sub-columns. A column can have zero or more sub-columns.
      * </pre>
      *
      * <code>

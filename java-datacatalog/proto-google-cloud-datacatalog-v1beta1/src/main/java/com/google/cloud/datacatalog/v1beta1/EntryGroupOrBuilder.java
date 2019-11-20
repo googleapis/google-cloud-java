@@ -102,8 +102,7 @@ public interface EntryGroupOrBuilder
    *
    *
    * <pre>
-   * Output only. Timestamps about this EntryGroup. Default value is empty
-   * timestamps.
+   * Output only. Timestamps about this EntryGroup. Default value is empty timestamps.
    * </pre>
    *
    * <code>
@@ -115,8 +114,7 @@ public interface EntryGroupOrBuilder
    *
    *
    * <pre>
-   * Output only. Timestamps about this EntryGroup. Default value is empty
-   * timestamps.
+   * Output only. Timestamps about this EntryGroup. Default value is empty timestamps.
    * </pre>
    *
    * <code>
@@ -128,8 +126,7 @@ public interface EntryGroupOrBuilder
    *
    *
    * <pre>
-   * Output only. Timestamps about this EntryGroup. Default value is empty
-   * timestamps.
+   * Output only. Timestamps about this EntryGroup. Default value is empty timestamps.
    * </pre>
    *
    * <code>

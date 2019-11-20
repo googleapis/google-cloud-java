@@ -27,7 +27,7 @@ public interface TaxonomyOrBuilder
    *
    *
    * <pre>
-   * Output only. Resource name of the taxonomy, whose format is:
+   * Output only. Resource name of this taxonomy, whose format is:
    * "projects/{project_number}/locations/{location_id}/taxonomies/{id}".
    * </pre>
    *
@@ -38,7 +38,7 @@ public interface TaxonomyOrBuilder
    *
    *
    * <pre>
-   * Output only. Resource name of the taxonomy, whose format is:
+   * Output only. Resource name of this taxonomy, whose format is:
    * "projects/{project_number}/locations/{location_id}/taxonomies/{id}".
    * </pre>
    *
@@ -50,8 +50,9 @@ public interface TaxonomyOrBuilder
    *
    *
    * <pre>
-   * Required. Human readable name of this taxonomy. Max 200 bytes when encoded
-   * in UTF-8.
+   * Required. User defined name of this taxonomy. It must: contain only unicode letters,
+   * numbers, underscores, dashes and spaces; not start or end with spaces; and
+   * be at most 200 bytes long when encoded in UTF-8.
    * </pre>
    *
    * <code>string display_name = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -61,8 +62,9 @@ public interface TaxonomyOrBuilder
    *
    *
    * <pre>
-   * Required. Human readable name of this taxonomy. Max 200 bytes when encoded
-   * in UTF-8.
+   * Required. User defined name of this taxonomy. It must: contain only unicode letters,
+   * numbers, underscores, dashes and spaces; not start or end with spaces; and
+   * be at most 200 bytes long when encoded in UTF-8.
    * </pre>
    *
    * <code>string display_name = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -73,9 +75,9 @@ public interface TaxonomyOrBuilder
    *
    *
    * <pre>
-   * Optional. Description of the taxonomy. The length of the description is
-   * limited to 2000 bytes when encoded in UTF-8. If not set, defaults to an
-   * empty description.
+   * Optional. Description of this taxonomy. It must: contain only unicode characters,
+   * tabs, newlines, carriage returns and page breaks; and be at most 2000 bytes
+   * long when encoded in UTF-8. If not set, defaults to an empty description.
    * </pre>
    *
    * <code>string description = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -85,9 +87,9 @@ public interface TaxonomyOrBuilder
    *
    *
    * <pre>
-   * Optional. Description of the taxonomy. The length of the description is
-   * limited to 2000 bytes when encoded in UTF-8. If not set, defaults to an
-   * empty description.
+   * Optional. Description of this taxonomy. It must: contain only unicode characters,
+   * tabs, newlines, carriage returns and page breaks; and be at most 2000 bytes
+   * long when encoded in UTF-8. If not set, defaults to an empty description.
    * </pre>
    *
    * <code>string description = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -98,8 +100,8 @@ public interface TaxonomyOrBuilder
    *
    *
    * <pre>
-   * Optional. A list of policy types that are activated for the taxonomy. If
-   * not set, defaults to an empty list of activated policy types.
+   * Optional. A list of policy types that are activated for this taxonomy. If not set,
+   * defaults to an empty list.
    * </pre>
    *
    * <code>
@@ -112,8 +114,8 @@ public interface TaxonomyOrBuilder
    *
    *
    * <pre>
-   * Optional. A list of policy types that are activated for the taxonomy. If
-   * not set, defaults to an empty list of activated policy types.
+   * Optional. A list of policy types that are activated for this taxonomy. If not set,
+   * defaults to an empty list.
    * </pre>
    *
    * <code>
@@ -125,8 +127,8 @@ public interface TaxonomyOrBuilder
    *
    *
    * <pre>
-   * Optional. A list of policy types that are activated for the taxonomy. If
-   * not set, defaults to an empty list of activated policy types.
+   * Optional. A list of policy types that are activated for this taxonomy. If not set,
+   * defaults to an empty list.
    * </pre>
    *
    * <code>
@@ -138,8 +140,8 @@ public interface TaxonomyOrBuilder
    *
    *
    * <pre>
-   * Optional. A list of policy types that are activated for the taxonomy. If
-   * not set, defaults to an empty list of activated policy types.
+   * Optional. A list of policy types that are activated for this taxonomy. If not set,
+   * defaults to an empty list.
    * </pre>
    *
    * <code>
@@ -151,8 +153,8 @@ public interface TaxonomyOrBuilder
    *
    *
    * <pre>
-   * Optional. A list of policy types that are activated for the taxonomy. If
-   * not set, defaults to an empty list of activated policy types.
+   * Optional. A list of policy types that are activated for this taxonomy. If not set,
+   * defaults to an empty list.
    * </pre>
    *
    * <code>

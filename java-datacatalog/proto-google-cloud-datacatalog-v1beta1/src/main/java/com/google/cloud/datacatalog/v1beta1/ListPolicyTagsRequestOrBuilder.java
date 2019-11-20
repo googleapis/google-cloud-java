@@ -27,7 +27,7 @@ public interface ListPolicyTagsRequestOrBuilder
    *
    *
    * <pre>
-   * Required. Resource name of a taxonomy to list the policy tags of.
+   * Required. Resource name of the taxonomy to list the policy tags of.
    * </pre>
    *
    * <code>
@@ -39,7 +39,7 @@ public interface ListPolicyTagsRequestOrBuilder
    *
    *
    * <pre>
-   * Required. Resource name of a taxonomy to list the policy tags of.
+   * Required. Resource name of the taxonomy to list the policy tags of.
    * </pre>
    *
    * <code>
@@ -52,7 +52,8 @@ public interface ListPolicyTagsRequestOrBuilder
    *
    *
    * <pre>
-   * The maximum number of items to return. If not set, defaults to 50.
+   * The maximum number of items to return. Must be a value between 1 and 1000.
+   * If not set, defaults to 50.
    * </pre>
    *
    * <code>int32 page_size = 2;</code>

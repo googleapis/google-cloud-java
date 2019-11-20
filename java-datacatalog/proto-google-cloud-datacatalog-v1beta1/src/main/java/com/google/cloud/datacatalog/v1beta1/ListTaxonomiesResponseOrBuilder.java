@@ -79,7 +79,7 @@ public interface ListTaxonomiesResponseOrBuilder
    *
    *
    * <pre>
-   * Token to retrieve the next page of results, or empty if there are no
+   * Token used to retrieve the next page of results, or empty if there are no
    * more results in the list.
    * </pre>
    *
@@ -90,7 +90,7 @@ public interface ListTaxonomiesResponseOrBuilder
    *
    *
    * <pre>
-   * Token to retrieve the next page of results, or empty if there are no
+   * Token used to retrieve the next page of results, or empty if there are no
    * more results in the list.
    * </pre>
    *

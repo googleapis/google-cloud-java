@@ -39,8 +39,8 @@
  *
  * ====================== PolicyTagManagerClient ======================
  *
- * <p>Service Description: Policy tag manager API service allows clients to manage their taxonomies
- * and policy tags data.
+ * <p>Service Description: The policy tag manager API service allows clients to manage their
+ * taxonomies and policy tags.
  *
  * <p>Sample for PolicyTagManagerClient:
  *

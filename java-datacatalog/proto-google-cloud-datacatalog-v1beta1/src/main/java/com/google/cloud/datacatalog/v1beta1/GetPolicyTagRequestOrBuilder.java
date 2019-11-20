@@ -27,7 +27,7 @@ public interface GetPolicyTagRequestOrBuilder
    *
    *
    * <pre>
-   * Required. Resource name of the policy tag to be returned.
+   * Required. Resource name of the requested policy tag.
    * </pre>
    *
    * <code>
@@ -39,7 +39,7 @@ public interface GetPolicyTagRequestOrBuilder
    *
    *
    * <pre>
-   * Required. Resource name of the policy tag to be returned.
+   * Required. Resource name of the requested policy tag.
    * </pre>
    *
    * <code>

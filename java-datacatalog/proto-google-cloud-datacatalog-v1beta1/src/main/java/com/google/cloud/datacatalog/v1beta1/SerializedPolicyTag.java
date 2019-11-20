@@ -139,8 +139,7 @@ public final class SerializedPolicyTag extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * Required. Display name of the policy tag. Max 200 bytes when encoded in
-   * UTF-8.
+   * Required. Display name of the policy tag. Max 200 bytes when encoded in UTF-8.
    * </pre>
    *
    * <code>string display_name = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -160,8 +159,7 @@ public final class SerializedPolicyTag extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * Required. Display name of the policy tag. Max 200 bytes when encoded in
-   * UTF-8.
+   * Required. Display name of the policy tag. Max 200 bytes when encoded in UTF-8.
    * </pre>
    *
    * <code>string display_name = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -696,8 +694,7 @@ public final class SerializedPolicyTag extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Required. Display name of the policy tag. Max 200 bytes when encoded in
-     * UTF-8.
+     * Required. Display name of the policy tag. Max 200 bytes when encoded in UTF-8.
      * </pre>
      *
      * <code>string display_name = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -717,8 +714,7 @@ public final class SerializedPolicyTag extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Required. Display name of the policy tag. Max 200 bytes when encoded in
-     * UTF-8.
+     * Required. Display name of the policy tag. Max 200 bytes when encoded in UTF-8.
      * </pre>
      *
      * <code>string display_name = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -738,8 +734,7 @@ public final class SerializedPolicyTag extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Required. Display name of the policy tag. Max 200 bytes when encoded in
-     * UTF-8.
+     * Required. Display name of the policy tag. Max 200 bytes when encoded in UTF-8.
      * </pre>
      *
      * <code>string display_name = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -757,8 +752,7 @@ public final class SerializedPolicyTag extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Required. Display name of the policy tag. Max 200 bytes when encoded in
-     * UTF-8.
+     * Required. Display name of the policy tag. Max 200 bytes when encoded in UTF-8.
      * </pre>
      *
      * <code>string display_name = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -773,8 +767,7 @@ public final class SerializedPolicyTag extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Required. Display name of the policy tag. Max 200 bytes when encoded in
-     * UTF-8.
+     * Required. Display name of the policy tag. Max 200 bytes when encoded in UTF-8.
      * </pre>
      *
      * <code>string display_name = 2 [(.google.api.field_behavior) = REQUIRED];</code>

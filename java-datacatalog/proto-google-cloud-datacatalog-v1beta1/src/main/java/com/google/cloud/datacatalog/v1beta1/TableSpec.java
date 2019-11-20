@@ -112,9 +112,9 @@ public final class TableSpec extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. If the table is a dated shard, i.e., with name pattern
-   * `[prefix]YYYYMMDD`, `grouped_entry` is the Data Catalog resource name of
-   * the date sharded grouped entry, for example,
+   * Output only. If the table is a dated shard, i.e., with name pattern `[prefix]YYYYMMDD`,
+   * `grouped_entry` is the Data Catalog resource name of the date sharded
+   * grouped entry, for example,
    * `projects/{project_id}/locations/{location}/entrygroups/{entry_group_id}/entries/{entry_id}`.
    * Otherwise, `grouped_entry` is empty.
    * </pre>
@@ -138,9 +138,9 @@ public final class TableSpec extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. If the table is a dated shard, i.e., with name pattern
-   * `[prefix]YYYYMMDD`, `grouped_entry` is the Data Catalog resource name of
-   * the date sharded grouped entry, for example,
+   * Output only. If the table is a dated shard, i.e., with name pattern `[prefix]YYYYMMDD`,
+   * `grouped_entry` is the Data Catalog resource name of the date sharded
+   * grouped entry, for example,
    * `projects/{project_id}/locations/{location}/entrygroups/{entry_group_id}/entries/{entry_id}`.
    * Otherwise, `grouped_entry` is empty.
    * </pre>
@@ -482,9 +482,9 @@ public final class TableSpec extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. If the table is a dated shard, i.e., with name pattern
-     * `[prefix]YYYYMMDD`, `grouped_entry` is the Data Catalog resource name of
-     * the date sharded grouped entry, for example,
+     * Output only. If the table is a dated shard, i.e., with name pattern `[prefix]YYYYMMDD`,
+     * `grouped_entry` is the Data Catalog resource name of the date sharded
+     * grouped entry, for example,
      * `projects/{project_id}/locations/{location}/entrygroups/{entry_group_id}/entries/{entry_id}`.
      * Otherwise, `grouped_entry` is empty.
      * </pre>
@@ -508,9 +508,9 @@ public final class TableSpec extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. If the table is a dated shard, i.e., with name pattern
-     * `[prefix]YYYYMMDD`, `grouped_entry` is the Data Catalog resource name of
-     * the date sharded grouped entry, for example,
+     * Output only. If the table is a dated shard, i.e., with name pattern `[prefix]YYYYMMDD`,
+     * `grouped_entry` is the Data Catalog resource name of the date sharded
+     * grouped entry, for example,
      * `projects/{project_id}/locations/{location}/entrygroups/{entry_group_id}/entries/{entry_id}`.
      * Otherwise, `grouped_entry` is empty.
      * </pre>
@@ -534,9 +534,9 @@ public final class TableSpec extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. If the table is a dated shard, i.e., with name pattern
-     * `[prefix]YYYYMMDD`, `grouped_entry` is the Data Catalog resource name of
-     * the date sharded grouped entry, for example,
+     * Output only. If the table is a dated shard, i.e., with name pattern `[prefix]YYYYMMDD`,
+     * `grouped_entry` is the Data Catalog resource name of the date sharded
+     * grouped entry, for example,
      * `projects/{project_id}/locations/{location}/entrygroups/{entry_group_id}/entries/{entry_id}`.
      * Otherwise, `grouped_entry` is empty.
      * </pre>
@@ -558,9 +558,9 @@ public final class TableSpec extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. If the table is a dated shard, i.e., with name pattern
-     * `[prefix]YYYYMMDD`, `grouped_entry` is the Data Catalog resource name of
-     * the date sharded grouped entry, for example,
+     * Output only. If the table is a dated shard, i.e., with name pattern `[prefix]YYYYMMDD`,
+     * `grouped_entry` is the Data Catalog resource name of the date sharded
+     * grouped entry, for example,
      * `projects/{project_id}/locations/{location}/entrygroups/{entry_group_id}/entries/{entry_id}`.
      * Otherwise, `grouped_entry` is empty.
      * </pre>
@@ -579,9 +579,9 @@ public final class TableSpec extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. If the table is a dated shard, i.e., with name pattern
-     * `[prefix]YYYYMMDD`, `grouped_entry` is the Data Catalog resource name of
-     * the date sharded grouped entry, for example,
+     * Output only. If the table is a dated shard, i.e., with name pattern `[prefix]YYYYMMDD`,
+     * `grouped_entry` is the Data Catalog resource name of the date sharded
+     * grouped entry, for example,
      * `projects/{project_id}/locations/{location}/entrygroups/{entry_group_id}/entries/{entry_id}`.
      * Otherwise, `grouped_entry` is empty.
      * </pre>

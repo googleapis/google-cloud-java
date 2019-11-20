@@ -113,7 +113,7 @@ public final class GetTaxonomyRequest extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * Required. Resource name of the taxonomy to be returned.
+   * Required. Resource name of the requested taxonomy.
    * </pre>
    *
    * <code>
@@ -135,7 +135,7 @@ public final class GetTaxonomyRequest extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * Required. Resource name of the taxonomy to be returned.
+   * Required. Resource name of the requested taxonomy.
    * </pre>
    *
    * <code>
@@ -479,7 +479,7 @@ public final class GetTaxonomyRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Required. Resource name of the taxonomy to be returned.
+     * Required. Resource name of the requested taxonomy.
      * </pre>
      *
      * <code>
@@ -501,7 +501,7 @@ public final class GetTaxonomyRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Required. Resource name of the taxonomy to be returned.
+     * Required. Resource name of the requested taxonomy.
      * </pre>
      *
      * <code>
@@ -523,7 +523,7 @@ public final class GetTaxonomyRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Required. Resource name of the taxonomy to be returned.
+     * Required. Resource name of the requested taxonomy.
      * </pre>
      *
      * <code>
@@ -543,7 +543,7 @@ public final class GetTaxonomyRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Required. Resource name of the taxonomy to be returned.
+     * Required. Resource name of the requested taxonomy.
      * </pre>
      *
      * <code>
@@ -560,7 +560,7 @@ public final class GetTaxonomyRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Required. Resource name of the taxonomy to be returned.
+     * Required. Resource name of the requested taxonomy.
      * </pre>
      *
      * <code>

@@ -140,8 +140,7 @@ public final class SerializedTaxonomy extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * Required. Display name of the taxonomy. Max 200 bytes when encoded in
-   * UTF-8.
+   * Required. Display name of the taxonomy. Max 200 bytes when encoded in UTF-8.
    * </pre>
    *
    * <code>string display_name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -161,8 +160,7 @@ public final class SerializedTaxonomy extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * Required. Display name of the taxonomy. Max 200 bytes when encoded in
-   * UTF-8.
+   * Required. Display name of the taxonomy. Max 200 bytes when encoded in UTF-8.
    * </pre>
    *
    * <code>string display_name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -693,8 +691,7 @@ public final class SerializedTaxonomy extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Required. Display name of the taxonomy. Max 200 bytes when encoded in
-     * UTF-8.
+     * Required. Display name of the taxonomy. Max 200 bytes when encoded in UTF-8.
      * </pre>
      *
      * <code>string display_name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -714,8 +711,7 @@ public final class SerializedTaxonomy extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Required. Display name of the taxonomy. Max 200 bytes when encoded in
-     * UTF-8.
+     * Required. Display name of the taxonomy. Max 200 bytes when encoded in UTF-8.
      * </pre>
      *
      * <code>string display_name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -735,8 +731,7 @@ public final class SerializedTaxonomy extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Required. Display name of the taxonomy. Max 200 bytes when encoded in
-     * UTF-8.
+     * Required. Display name of the taxonomy. Max 200 bytes when encoded in UTF-8.
      * </pre>
      *
      * <code>string display_name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -754,8 +749,7 @@ public final class SerializedTaxonomy extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Required. Display name of the taxonomy. Max 200 bytes when encoded in
-     * UTF-8.
+     * Required. Display name of the taxonomy. Max 200 bytes when encoded in UTF-8.
      * </pre>
      *
      * <code>string display_name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -770,8 +764,7 @@ public final class SerializedTaxonomy extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Required. Display name of the taxonomy. Max 200 bytes when encoded in
-     * UTF-8.
+     * Required. Display name of the taxonomy. Max 200 bytes when encoded in UTF-8.
      * </pre>
      *
      * <code>string display_name = 1 [(.google.api.field_behavior) = REQUIRED];</code>

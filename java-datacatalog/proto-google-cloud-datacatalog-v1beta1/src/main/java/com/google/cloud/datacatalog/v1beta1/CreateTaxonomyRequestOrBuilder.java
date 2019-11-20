@@ -27,8 +27,7 @@ public interface CreateTaxonomyRequestOrBuilder
    *
    *
    * <pre>
-   * Required. Resource name of the project that the newly created taxonomy
-   * belongs to.
+   * Required. Resource name of the project that the taxonomy will belong to.
    * </pre>
    *
    * <code>
@@ -40,8 +39,7 @@ public interface CreateTaxonomyRequestOrBuilder
    *
    *
    * <pre>
-   * Required. Resource name of the project that the newly created taxonomy
-   * belongs to.
+   * Required. Resource name of the project that the taxonomy will belong to.
    * </pre>
    *
    * <code>
@@ -54,8 +52,7 @@ public interface CreateTaxonomyRequestOrBuilder
    *
    *
    * <pre>
-   * The taxonomy to be created. The name field must be left blank. The
-   * display_name field is mandatory.
+   * The taxonomy to be created.
    * </pre>
    *
    * <code>.google.cloud.datacatalog.v1beta1.Taxonomy taxonomy = 2;</code>
@@ -65,8 +62,7 @@ public interface CreateTaxonomyRequestOrBuilder
    *
    *
    * <pre>
-   * The taxonomy to be created. The name field must be left blank. The
-   * display_name field is mandatory.
+   * The taxonomy to be created.
    * </pre>
    *
    * <code>.google.cloud.datacatalog.v1beta1.Taxonomy taxonomy = 2;</code>
@@ -76,8 +72,7 @@ public interface CreateTaxonomyRequestOrBuilder
    *
    *
    * <pre>
-   * The taxonomy to be created. The name field must be left blank. The
-   * display_name field is mandatory.
+   * The taxonomy to be created.
    * </pre>
    *
    * <code>.google.cloud.datacatalog.v1beta1.Taxonomy taxonomy = 2;</code>

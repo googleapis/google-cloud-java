@@ -491,8 +491,7 @@ public final class FieldType extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Required. The display name of the enum value. Must not be an empty
-       * string.
+       * Required. The display name of the enum value. Must not be an empty string.
        * </pre>
        *
        * <code>string display_name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -502,8 +501,7 @@ public final class FieldType extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Required. The display name of the enum value. Must not be an empty
-       * string.
+       * Required. The display name of the enum value. Must not be an empty string.
        * </pre>
        *
        * <code>string display_name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -597,8 +595,7 @@ public final class FieldType extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Required. The display name of the enum value. Must not be an empty
-       * string.
+       * Required. The display name of the enum value. Must not be an empty string.
        * </pre>
        *
        * <code>string display_name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -618,8 +615,7 @@ public final class FieldType extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Required. The display name of the enum value. Must not be an empty
-       * string.
+       * Required. The display name of the enum value. Must not be an empty string.
        * </pre>
        *
        * <code>string display_name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -965,8 +961,7 @@ public final class FieldType extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * Required. The display name of the enum value. Must not be an empty
-         * string.
+         * Required. The display name of the enum value. Must not be an empty string.
          * </pre>
          *
          * <code>string display_name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -986,8 +981,7 @@ public final class FieldType extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * Required. The display name of the enum value. Must not be an empty
-         * string.
+         * Required. The display name of the enum value. Must not be an empty string.
          * </pre>
          *
          * <code>string display_name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -1007,8 +1001,7 @@ public final class FieldType extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * Required. The display name of the enum value. Must not be an empty
-         * string.
+         * Required. The display name of the enum value. Must not be an empty string.
          * </pre>
          *
          * <code>string display_name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -1026,8 +1019,7 @@ public final class FieldType extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * Required. The display name of the enum value. Must not be an empty
-         * string.
+         * Required. The display name of the enum value. Must not be an empty string.
          * </pre>
          *
          * <code>string display_name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -1042,8 +1034,7 @@ public final class FieldType extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * Required. The display name of the enum value. Must not be an empty
-         * string.
+         * Required. The display name of the enum value. Must not be an empty string.
          * </pre>
          *
          * <code>string display_name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
