@@ -175,16 +175,13 @@ public class SignatureInfo {
 
     // Add in the reserved auth-specific query params.
     queryParams.put(
-        "X-Goog-Algorithm",
-        UrlEscapers.urlFormParameterEscaper().escape(GOOG4_RSA_SHA256));
+        "X-Goog-Algorithm", UrlEscapers.urlFormParameterEscaper().escape(GOOG4_RSA_SHA256));
     queryParams.put(
         "X-Goog-Credential",
-        UrlEscapers.urlFormParameterEscaper()
-            .escape(accountEmail + "/" + yearMonthDay + SCOPE));
+        UrlEscapers.urlFormParameterEscaper().escape(accountEmail + "/" + yearMonthDay + SCOPE));
     queryParams.put("X-Goog-Date", UrlEscapers.urlFormParameterEscaper().escape(exactDate));
     queryParams.put(
-        "X-Goog-Expires",
-        UrlEscapers.urlFormParameterEscaper().escape(Long.toString(expiration)));
+        "X-Goog-Expires", UrlEscapers.urlFormParameterEscaper().escape(Long.toString(expiration)));
     StringBuilder signedHeadersBuilder =
         new CanonicalExtensionHeadersSerializer(Storage.SignUrlOption.SignatureVersion.V4)
             .serializeHeaderNames(canonicalizedExtensionHeaders);
