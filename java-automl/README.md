@@ -121,7 +121,7 @@ Java 11 | [![Kokoro CI][kokoro-badge-image-5]][kokoro-badge-link-5]
 
 [api-reference]: https://cloud.google.com/automl/
 [product-docs]: https://cloud.google.com/automl/docs/
-[javadocs]: https://googleapis.dev/java/java-automl/latest/index.html
+[javadocs]: https://googleapis.dev/java/google-cloud-automl/latest/index.html
 [kokoro-badge-image-1]: http://storage.googleapis.com/cloud-devrel-public/java/badges/java-automl/java7.svg
 [kokoro-badge-link-1]: http://storage.googleapis.com/cloud-devrel-public/java/badges/java-automl/java7.html
 [kokoro-badge-image-2]: http://storage.googleapis.com/cloud-devrel-public/java/badges/java-automl/java8.svg
