@@ -103,7 +103,7 @@ Java 11 | [![Kokoro CI][kokoro-badge-image-5]][kokoro-badge-link-5]
 
 [api-reference]: https://cloud.google.com/recommendations-ai/docs/apis
 [product-docs]: https://cloud.google.com/recommendations/docs
-[javadocs]: https://googleapis.dev/java/java-recommender/latest
+[javadocs]: https://googleapis.dev/java/google-cloud-recommender/latest
 [kokoro-badge-image-1]: http://storage.googleapis.com/cloud-devrel-public/java/badges/java-recommender/java7.svg
 [kokoro-badge-link-1]: http://storage.googleapis.com/cloud-devrel-public/java/badges/java-recommender/java7.html
 [kokoro-badge-image-2]: http://storage.googleapis.com/cloud-devrel-public/java/badges/java-recommender/java8.svg
