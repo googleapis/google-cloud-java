@@ -38,6 +38,8 @@ import com.google.common.base.Functions;
 import com.google.common.base.MoreObjects;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
+import com.google.common.collect.Maps;
+
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
@@ -1209,7 +1211,17 @@ public class BucketInfo implements Serializable {
 
     @Override
     public Builder setLabels(Map<String, String> labels) {
-      this.labels = labels != null ? ImmutableMap.copyOf(labels) : null;
+      if (labels != null) {
+        this.labels =
+            Maps.transformValues(
+                labels,
+                new Function<String, String>() {
+                  @Override
+                  public String apply(String input) {
+                    return input == null ? "" : input;
+                  }
+                });
+      }
       return this;
     }
 
