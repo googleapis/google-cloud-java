@@ -83,7 +83,5 @@ public class ModelApiIT {
     // Assert
     got = bout.toString();
     assertThat(got).contains("name:");
-
   }
 }
-

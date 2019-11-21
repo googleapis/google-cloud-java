@@ -57,35 +57,37 @@ public class ModelApi {
    * @param computeRegion the Region name.
    * @param dataSetId the Id of the dataset to which model is created.
    * @param modelName the Name of the model.
-   * @throws Exception on AutoML Client errors
    */
   public static void createModel(
-      String projectId, String computeRegion, String dataSetId, String modelName) throws Exception {
+      String projectId, String computeRegion, String dataSetId, String modelName)
+      throws IOException, InterruptedException, ExecutionException {
     // Instantiates a client
-    AutoMlClient client = AutoMlClient.create();
+    try (AutoMlClient client = AutoMlClient.create()) {
 
-    // A resource that represents Google Cloud Platform location.
-    LocationName projectLocation = LocationName.of(projectId, computeRegion);
+      // A resource that represents Google Cloud Platform location.
+      LocationName projectLocation = LocationName.of(projectId, computeRegion);
 
-    // Set model metadata.
-    TranslationModelMetadata translationModelMetadata =
-        TranslationModelMetadata.newBuilder().setBaseModel("").build();
+      // Set model metadata.
+      TranslationModelMetadata translationModelMetadata =
+          TranslationModelMetadata.newBuilder().setBaseModel("").build();
 
-    // Set model name, dataset and metadata.
-    Model myModel =
-        Model.newBuilder()
-            .setDisplayName(modelName)
-            .setDatasetId(dataSetId)
-            .setTranslationModelMetadata(translationModelMetadata)
-            .build();
+      // Set model name, dataset and metadata.
+      Model myModel =
+          Model.newBuilder()
+              .setDisplayName(modelName)
+              .setDatasetId(dataSetId)
+              .setTranslationModelMetadata(translationModelMetadata)
+              .build();
 
-    // Create a model with the model metadata in the region.
-    OperationFuture<Model, OperationMetadata> response =
-        client.createModelAsync(projectLocation, myModel);
+      // Create a model with the model metadata in the region.
+      OperationFuture<Model, OperationMetadata> response =
+          client.createModelAsync(projectLocation, myModel);
 
-    System.out.println(
-        String.format("Training operation name: %s", response.getInitialFuture().get().getName()));
-    System.out.println("Training started...");
+      System.out.println(
+          String.format(
+              "Training operation name: %s", response.getInitialFuture().get().getName()));
+      System.out.println("Training started...");
+    }
   }
   // [END automl_translate_create_model]
 
@@ -101,31 +103,32 @@ public class ModelApi {
   public static void listModels(String projectId, String computeRegion, String filter)
       throws IOException {
     // Instantiates a client
-    AutoMlClient client = AutoMlClient.create();
+    try (AutoMlClient client = AutoMlClient.create()) {
 
-    // A resource that represents Google Cloud Platform location.
-    LocationName projectLocation = LocationName.of(projectId, computeRegion);
+      // A resource that represents Google Cloud Platform location.
+      LocationName projectLocation = LocationName.of(projectId, computeRegion);
 
-    // Create list models request.
-    ListModelsRequest listModlesRequest =
-        ListModelsRequest.newBuilder()
-            .setParent(projectLocation.toString())
-            .setFilter(filter)
-            .build();
+      // Create list models request.
+      ListModelsRequest listModlesRequest =
+          ListModelsRequest.newBuilder()
+              .setParent(projectLocation.toString())
+              .setFilter(filter)
+              .build();
 
-    // List all the models available in the region by applying filter.
-    System.out.println("List of models:");
-    for (Model model : client.listModels(listModlesRequest).iterateAll()) {
-      // Display the model information.
-      System.out.println(String.format("Model name: %s", model.getName()));
-      System.out.println(
-          String.format(
-              "Model id: %s", model.getName().split("/")[model.getName().split("/").length - 1]));
-      System.out.println(String.format("Model display name: %s", model.getDisplayName()));
-      System.out.println("Model create time:");
-      System.out.println(String.format("\tseconds: %s", model.getCreateTime().getSeconds()));
-      System.out.println(String.format("\tnanos: %s", model.getCreateTime().getNanos()));
-      System.out.println(String.format("Model deployment state: %s", model.getDeploymentState()));
+      // List all the models available in the region by applying filter.
+      System.out.println("List of models:");
+      for (Model model : client.listModels(listModlesRequest).iterateAll()) {
+        // Display the model information.
+        System.out.println(String.format("Model name: %s", model.getName()));
+        System.out.println(
+            String.format(
+                "Model id: %s", model.getName().split("/")[model.getName().split("/").length - 1]));
+        System.out.println(String.format("Model display name: %s", model.getDisplayName()));
+        System.out.println("Model create time:");
+        System.out.println(String.format("\tseconds: %s", model.getCreateTime().getSeconds()));
+        System.out.println(String.format("\tnanos: %s", model.getCreateTime().getNanos()));
+        System.out.println(String.format("Model deployment state: %s", model.getDeploymentState()));
+      }
     }
   }
   // [END automl_translate_list_models]
@@ -142,24 +145,25 @@ public class ModelApi {
   public static void getModel(String projectId, String computeRegion, String modelId)
       throws IOException {
     // Instantiates a client
-    AutoMlClient client = AutoMlClient.create();
+    try (AutoMlClient client = AutoMlClient.create()) {
 
-    // Get the full path of the model.
-    ModelName modelFullId = ModelName.of(projectId, computeRegion, modelId);
+      // Get the full path of the model.
+      ModelName modelFullId = ModelName.of(projectId, computeRegion, modelId);
 
-    // Get complete detail of the model.
-    Model model = client.getModel(modelFullId);
+      // Get complete detail of the model.
+      Model model = client.getModel(modelFullId);
 
-    // Display the model information.
-    System.out.println(String.format("Model name: %s", model.getName()));
-    System.out.println(
-        String.format(
-            "Model id: %s", model.getName().split("/")[model.getName().split("/").length - 1]));
-    System.out.println(String.format("Model display name: %s", model.getDisplayName()));
-    System.out.println("Model create time:");
-    System.out.println(String.format("\tseconds: %s", model.getCreateTime().getSeconds()));
-    System.out.println(String.format("\tnanos: %s", model.getCreateTime().getNanos()));
-    System.out.println(String.format("Model deployment state: %s", model.getDeploymentState()));
+      // Display the model information.
+      System.out.println(String.format("Model name: %s", model.getName()));
+      System.out.println(
+          String.format(
+              "Model id: %s", model.getName().split("/")[model.getName().split("/").length - 1]));
+      System.out.println(String.format("Model display name: %s", model.getDisplayName()));
+      System.out.println("Model create time:");
+      System.out.println(String.format("\tseconds: %s", model.getCreateTime().getSeconds()));
+      System.out.println(String.format("\tnanos: %s", model.getCreateTime().getNanos()));
+      System.out.println(String.format("Model deployment state: %s", model.getDeploymentState()));
+    }
   }
   // [END automl_translate_get_model]
 
@@ -176,23 +180,24 @@ public class ModelApi {
   public static void listModelEvaluations(
       String projectId, String computeRegion, String modelId, String filter) throws IOException {
     // Instantiates a client
-    AutoMlClient client = AutoMlClient.create();
+    try (AutoMlClient client = AutoMlClient.create()) {
 
-    // Get the full path of the model.
-    ModelName modelFullId = ModelName.of(projectId, computeRegion, modelId);
+      // Get the full path of the model.
+      ModelName modelFullId = ModelName.of(projectId, computeRegion, modelId);
 
-    // Create list model evaluations request
-    ListModelEvaluationsRequest modelEvaluationsrequest =
-        ListModelEvaluationsRequest.newBuilder()
-            .setParent(modelFullId.toString())
-            .setFilter(filter)
-            .build();
+      // Create list model evaluations request
+      ListModelEvaluationsRequest modelEvaluationsrequest =
+          ListModelEvaluationsRequest.newBuilder()
+              .setParent(modelFullId.toString())
+              .setFilter(filter)
+              .build();
 
-    // List all the model evaluations in the model by applying filter.
-    System.out.println("List of model evaluations:");
-    for (ModelEvaluation element :
-        client.listModelEvaluations(modelEvaluationsrequest).iterateAll()) {
-      System.out.println(element);
+      // List all the model evaluations in the model by applying filter.
+      System.out.println("List of model evaluations:");
+      for (ModelEvaluation element :
+          client.listModelEvaluations(modelEvaluationsrequest).iterateAll()) {
+        System.out.println(element);
+      }
     }
   }
   // [END automl_translate_list_model_evaluations]
@@ -211,16 +216,17 @@ public class ModelApi {
       String projectId, String computeRegion, String modelId, String modelEvaluationId)
       throws IOException {
     // Instantiates a client
-    AutoMlClient client = AutoMlClient.create();
+    try (AutoMlClient client = AutoMlClient.create()) {
 
-    // Get the full path of the model evaluation.
-    ModelEvaluationName modelEvaluationFullId =
-        ModelEvaluationName.of(projectId, computeRegion, modelId, modelEvaluationId);
+      // Get the full path of the model evaluation.
+      ModelEvaluationName modelEvaluationFullId =
+          ModelEvaluationName.of(projectId, computeRegion, modelId, modelEvaluationId);
 
-    // Get complete detail of the model evaluation.
-    ModelEvaluation response = client.getModelEvaluation(modelEvaluationFullId);
+      // Get complete detail of the model evaluation.
+      ModelEvaluation response = client.getModelEvaluation(modelEvaluationFullId);
 
-    System.out.println(response);
+      System.out.println(response);
+    }
   }
   // [END automl_translate_get_model_evaluation]
 
@@ -236,15 +242,16 @@ public class ModelApi {
   public static void deleteModel(String projectId, String computeRegion, String modelId)
       throws InterruptedException, ExecutionException, IOException {
     // Instantiates a client
-    AutoMlClient client = AutoMlClient.create();
+    try (AutoMlClient client = AutoMlClient.create()) {
 
-    // Get the full path of the model.
-    ModelName modelFullId = ModelName.of(projectId, computeRegion, modelId);
+      // Get the full path of the model.
+      ModelName modelFullId = ModelName.of(projectId, computeRegion, modelId);
 
-    // Delete a model.
-    Empty response = client.deleteModelAsync(modelFullId).get();
+      // Delete a model.
+      Empty response = client.deleteModelAsync(modelFullId).get();
 
-    System.out.println("Model deletion started...");
+      System.out.println("Model deletion started...");
+    }
   }
   // [END automl_translate_delete_model]
 
@@ -258,12 +265,13 @@ public class ModelApi {
    */
   private static void getOperationStatus(String operationFullId) throws IOException {
     // Instantiates a client
-    AutoMlClient client = AutoMlClient.create();
+    try (AutoMlClient client = AutoMlClient.create()) {
 
-    // Get the latest state of a long-running operation.
-    Operation response = client.getOperationsClient().getOperation(operationFullId);
+      // Get the latest state of a long-running operation.
+      Operation response = client.getOperationsClient().getOperation(operationFullId);
 
-    System.out.println(String.format("Operation status: %s", response));
+      System.out.println(String.format("Operation status: %s", response));
+    }
   }
   // [END automl_translate_get_operation_status]
 
