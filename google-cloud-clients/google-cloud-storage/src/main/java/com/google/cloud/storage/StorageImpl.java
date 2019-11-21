@@ -60,6 +60,7 @@ import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.ImmutableSet;
 import com.google.common.collect.Iterables;
+import com.google.common.collect.ListMultimap;
 import com.google.common.collect.Lists;
 import com.google.common.collect.Maps;
 import com.google.common.hash.Hashing;
@@ -659,6 +660,9 @@ final class StorageImpl extends BaseService<StorageOptions> implements Storage {
                 TimeUnit.MILLISECONDS);
 
     checkArgument(
+        !(!isV4 && optionMap.containsKey(SignUrlOption.Option.QUERY_PARAMS)),
+        "The QUERY_PARAMS SignUrlOption can only be used with the V4 signing method.");
+    checkArgument(
         !(optionMap.containsKey(SignUrlOption.Option.VIRTUAL_HOSTED_STYLE)
             && optionMap.containsKey(SignUrlOption.Option.PATH_STYLE)),
         "Cannot specify both the VIRTUAL_HOSTED_STYLE and PATH_STYLE SignUrlOptions together.");
@@ -815,7 +819,8 @@ final class StorageImpl extends BaseService<StorageOptions> implements Storage {
 
     signatureInfoBuilder.setTimestamp(getOptions().getClock().millisTime());
 
-    ImmutableMap.Builder<String, String> extHeaders = new ImmutableMap.Builder<String, String>();
+    ImmutableMap.Builder<String, String> extHeadersBuilder =
+        new ImmutableMap.Builder<String, String>();
 
     boolean isV4 =
         SignUrlOption.SignatureVersion.V4.equals(
@@ -823,20 +828,29 @@ final class StorageImpl extends BaseService<StorageOptions> implements Storage {
     if (isV4) { // We don't sign the host header for V2 signed URLs; only do this for V4.
       // Add the host here first, allowing it to be overridden in the EXT_HEADERS option below.
       if (optionMap.containsKey(SignUrlOption.Option.VIRTUAL_HOSTED_STYLE)) {
-        extHeaders.put(
+        extHeadersBuilder.put(
             "host",
             slashlessBucketNameFromBlobInfo(blobInfo) + "." + getBaseStorageHostName(optionMap));
       } else if (optionMap.containsKey(SignUrlOption.Option.HOST_NAME)) {
-        extHeaders.put("host", getBaseStorageHostName(optionMap));
+        extHeadersBuilder.put("host", getBaseStorageHostName(optionMap));
       }
     }
 
     if (optionMap.containsKey(SignUrlOption.Option.EXT_HEADERS)) {
-      extHeaders.putAll((Map<String, String>) optionMap.get(SignUrlOption.Option.EXT_HEADERS));
+      extHeadersBuilder.putAll(
+          (Map<String, String>) optionMap.get(SignUrlOption.Option.EXT_HEADERS));
+    }
+
+    ImmutableMap.Builder<String, String> queryParamsBuilder =
+        new ImmutableMap.Builder<String, String>();
+    if (optionMap.containsKey(SignUrlOption.Option.QUERY_PARAMS)) {
+      queryParamsBuilder.putAll(
+          (Map<String, String>) optionMap.get(SignUrlOption.Option.QUERY_PARAMS));
     }
 
     return signatureInfoBuilder
-        .setCanonicalizedExtensionHeaders((Map<String, String>) extHeaders.build())
+        .setCanonicalizedExtensionHeaders((Map<String, String>) extHeadersBuilder.build())
+        .setCanonicalizedQueryParams((Map<String, String>) queryParamsBuilder.build())
         .build();
   }
 

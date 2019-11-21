@@ -1037,7 +1037,8 @@ public interface Storage extends Service<StorageOptions> {
       SIGNATURE_VERSION,
       HOST_NAME,
       PATH_STYLE,
-      VIRTUAL_HOSTED_STYLE
+      VIRTUAL_HOSTED_STYLE,
+      QUERY_PARAMS
     }
 
     enum SignatureVersion {
@@ -1157,6 +1158,23 @@ public interface Storage extends Service<StorageOptions> {
      */
     public static SignUrlOption withPathStyle() {
       return new SignUrlOption(Option.PATH_STYLE, "");
+    }
+
+    /**
+     * Use if the URL should contain additional query parameters.
+     *
+     * <p>Warning: For V2 Signed URLs, it is possible for query parameters to be altered after the
+     * URL has been signed, as the parameters are not used to compute the signature. The V4 signing
+     * method should be preferred when supplying additional query parameters, as the parameters
+     * cannot be added, removed, or otherwise altered after a V4 signature is generated.
+     *
+     * @see <a href="https://cloud.google.com/storage/docs/authentication/canonical-requests">
+     *     Canonical Requests</a>
+     * @see <a href="https://cloud.google.com/storage/docs/access-control/signed-urls-v2">V2 Signing
+     *     Process</a>
+     */
+    public static SignUrlOption withQueryParams(Map<String, String> queryParams) {
+      return new SignUrlOption(Option.QUERY_PARAMS, queryParams);
     }
   }
 
