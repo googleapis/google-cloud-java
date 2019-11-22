@@ -1,5 +1,12 @@
 # Changelog
 
+### [1.94.1](https://www.github.com/googleapis/java-translate/compare/v1.94.0...v1.94.1) (2019-11-22)
+
+
+### Dependencies
+
+* update gax.version to v1.50.1 ([#29](https://www.github.com/googleapis/java-translate/issues/29)) ([0264cf6](https://www.github.com/googleapis/java-translate/commit/0264cf6b5669bf1fea392fe27c3d5dfd31e44b0e))
+
 ## [1.94.0](https://www.github.com/googleapis/java-translate/compare/1.93.0...v1.94.0) (2019-10-23)
 
 
