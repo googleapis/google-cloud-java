@@ -84,18 +84,6 @@ public class BucketSnippets {
     return updatedBucket;
   }
 
-  /** Example of listing the blobs in the bucket. */
-  // [TARGET list(BlobListOption...)]
-  public Page<Blob> listBlobs() {
-    // [START listBlobs]
-    Page<Blob> blobs = bucket.list();
-    for (Blob blob : blobs.iterateAll()) {
-      // do something with the blob
-    }
-    // [END listBlobs]
-    return blobs;
-  }
-
   /**
    * Example of getting a blob in the bucket, only if its metageneration matches a value, otherwise
    * a {@link StorageException} is thrown.

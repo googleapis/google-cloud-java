@@ -29,13 +29,12 @@ public class RemoveBucketLabel {
     // String bucketName = "your-unique-bucket-name";
     // String labelKey = "label-key-to-remove";
     Map<String, String> labelsToRemove = new HashMap<>();
-    labelsToRemove.put(labelKey, "");
+    labelsToRemove.put(labelKey, null);
 
     Storage storage = StorageOptions.newBuilder().setProjectId(projectId).build().getService();
     Bucket bucket = storage.get(bucketName);
     Map<String, String> labels = new HashMap<>(bucket.getLabels());
     labels.putAll(labelsToRemove);
-    System.out.println(labels);
     bucket.toBuilder().setLabels(labels).build().update();
 
     System.out.println("Removed label " + labelKey + " from bucket " + bucketName + ".");

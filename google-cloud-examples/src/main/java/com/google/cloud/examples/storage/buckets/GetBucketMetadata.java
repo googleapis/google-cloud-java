@@ -61,7 +61,7 @@ public class GetBucketMetadata {
     if (bucket.getLifecycleRules() != null) {
         System.out.println ("\n\n\nLifecycle Rules:");
         for (BucketInfo.LifecycleRule rule : bucket.getLifecycleRules()) {
-            System.out.println(rule.getAction() + "," + rule.getCondition());
+            System.out.println(rule);
         }
     }
   }

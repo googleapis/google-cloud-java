@@ -246,22 +246,6 @@ public class StorageSnippets {
     return blob;
   }
 
-  /** Example of listing blobs in a provided directory. */
-  // [TARGET list(String, BlobListOption...)]
-  // [VARIABLE "my_unique_bucket"]
-  // [VARIABLE "my_directory/"]
-  public Page<Blob> listBlobsWithDirectoryAndPrefix(String bucketName, String directory) {
-    // [START listBlobsWithDirectoryAndPrefix]
-    Page<Blob> blobs =
-        storage.list(
-            bucketName, BlobListOption.currentDirectory(), BlobListOption.prefix(directory));
-    for (Blob blob : blobs.iterateAll()) {
-      // do something with the blob
-    }
-    // [END listBlobsWithDirectoryAndPrefix]
-    return blobs;
-  }
-
   /** Example of updating bucket information. */
   // [TARGET update(BucketInfo, BucketTargetOption...)]
   // [VARIABLE "my_unique_bucket"]
@@ -271,21 +255,6 @@ public class StorageSnippets {
     Bucket bucket = storage.update(bucketInfo);
     // [END updateBucket]
     return bucket;
-  }
-
-  /** Example of replacing blob's metadata. */
-  // [TARGET update(BlobInfo)]
-  // [VARIABLE "my_unique_bucket"]
-  // [VARIABLE "my_blob_name"]
-  public Blob updateBlob(String bucketName, String blobName) {
-    // [START updateBlob]
-    Map<String, String> newMetadata = new HashMap<>();
-    newMetadata.put("key", "value");
-    storage.update(BlobInfo.newBuilder(bucketName, blobName).setMetadata(null).build());
-    Blob blob =
-        storage.update(BlobInfo.newBuilder(bucketName, blobName).setMetadata(newMetadata).build());
-    // [END updateBlob]
-    return blob;
   }
 
   /**
@@ -445,26 +414,6 @@ public class StorageSnippets {
     return blob;
   }
 
-  /** Example of rotating the encryption key of a blob. */
-  // [TARGET copy(CopyRequest)]
-  // [VARIABLE "my_unique_bucket"]
-  // [VARIABLE "my_blob_name"]
-  // [VARIABLE "old_encryption_key"]
-  // [VARIABLE "new_encryption_key"]
-  public Blob rotateBlobEncryptionKey(
-      String bucketName, String blobName, String oldEncryptionKey, String newEncryptionKey) {
-    // [START storageRotateEncryptionKey]
-    BlobId blobId = BlobId.of(bucketName, blobName);
-    CopyRequest request =
-        CopyRequest.newBuilder()
-            .setSource(blobId)
-            .setSourceOptions(BlobSourceOption.decryptionKey(oldEncryptionKey))
-            .setTarget(blobId, BlobTargetOption.encryptionKey(newEncryptionKey))
-            .build();
-    Blob blob = storage.copy(request).getResult();
-    // [END storageRotateEncryptionKey]
-    return blob;
-  }
 
   /**
    * Example of reading all bytes of a blob, if generation matches a value, otherwise a {@link
@@ -1022,29 +971,6 @@ public class StorageSnippets {
     return bucket;
   }
 
-  /** Example of downloading a file. */
-  public void downloadFile(String bucketName, String srcFilename, Path destFilePath)
-      throws IOException {
-    // [START storage_download_file]
-    // The name of the bucket to access
-    // String bucketName = "my-bucket";
-
-    // The name of the remote file to download
-    // String srcFilename = "file.txt";
-
-    // The path to which the file should be downloaded
-    // Path destFilePath = Paths.get("/local/path/to/file.txt");
-
-    // Instantiate a Google Cloud Storage client
-    Storage storage = StorageOptions.getDefaultInstance().getService();
-
-    // Get specific file from specified bucket
-    Blob blob = storage.get(BlobId.of(bucketName, srcFilename));
-
-    // Download file to specified path
-    blob.downloadTo(destFilePath);
-    // [END storage_download_file]
-  }
 
   /** Example of downloading a file using Requester pay. */
   public void downloadFileUsingRequesterPays(
@@ -1098,61 +1024,7 @@ public class StorageSnippets {
     return bucket;
   }
 
-  /** Example of displaying Blob metadata */
-  public void getBlobMetadata(String bucketName, String blobName) throws StorageException {
-    // [START storage_get_metadata]
-    // Instantiate a Google Cloud Storage client
-    Storage storage = StorageOptions.getDefaultInstance().getService();
 
-    // The name of a bucket, e.g. "my-bucket"
-    // String bucketName = "my-bucket";
-
-    // The name of a blob, e.g. "my-blob"
-    // String blobName = "my-blob";
-
-    // Select all fields
-    // Fields can be selected individually e.g. Storage.BlobField.CACHE_CONTROL
-    Blob blob = storage.get(bucketName, blobName, BlobGetOption.fields(Storage.BlobField.values()));
-
-    // Print blob metadata
-    System.out.println("Bucket: " + blob.getBucket());
-    System.out.println("CacheControl: " + blob.getCacheControl());
-    System.out.println("ComponentCount: " + blob.getComponentCount());
-    System.out.println("ContentDisposition: " + blob.getContentDisposition());
-    System.out.println("ContentEncoding: " + blob.getContentEncoding());
-    System.out.println("ContentLanguage: " + blob.getContentLanguage());
-    System.out.println("ContentType: " + blob.getContentType());
-    System.out.println("Crc32c: " + blob.getCrc32c());
-    System.out.println("Crc32cHexString: " + blob.getCrc32cToHexString());
-    System.out.println("ETag: " + blob.getEtag());
-    System.out.println("Generation: " + blob.getGeneration());
-    System.out.println("Id: " + blob.getBlobId());
-    System.out.println("KmsKeyName: " + blob.getKmsKeyName());
-    System.out.println("Md5Hash: " + blob.getMd5());
-    System.out.println("Md5HexString: " + blob.getMd5ToHexString());
-    System.out.println("MediaLink: " + blob.getMediaLink());
-    System.out.println("Metageneration: " + blob.getMetageneration());
-    System.out.println("Name: " + blob.getName());
-    System.out.println("Size: " + blob.getSize());
-    System.out.println("StorageClass: " + blob.getStorageClass());
-    System.out.println("TimeCreated: " + new Date(blob.getCreateTime()));
-    System.out.println("Last Metadata Update: " + new Date(blob.getUpdateTime()));
-    Boolean temporaryHoldIsEnabled = (blob.getTemporaryHold() != null && blob.getTemporaryHold());
-    System.out.println("temporaryHold: " + (temporaryHoldIsEnabled ? "enabled" : "disabled"));
-    Boolean eventBasedHoldIsEnabled =
-        (blob.getEventBasedHold() != null && blob.getEventBasedHold());
-    System.out.println("eventBasedHold: " + (eventBasedHoldIsEnabled ? "enabled" : "disabled"));
-    if (blob.getRetentionExpirationTime() != null) {
-      System.out.println("retentionExpirationTime: " + new Date(blob.getRetentionExpirationTime()));
-    }
-    if (blob.getMetadata() != null) {
-      System.out.println("\n\n\nUser metadata:");
-      for (Map.Entry<String, String> userMetadata : blob.getMetadata().entrySet()) {
-        System.out.println(userMetadata.getKey() + "=" + userMetadata.getValue());
-      }
-    }
-    // [END storage_get_metadata]
-  }
 
   /** Example of setting a retention policy on a bucket */
   public Bucket setRetentionPolicy(String bucketName, Long retentionPeriod)
