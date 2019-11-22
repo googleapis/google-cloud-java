@@ -20,13 +20,13 @@ import static com.google.common.base.Preconditions.checkArgument;
 
 import com.google.common.collect.ArrayListMultimap;
 import com.google.common.collect.ImmutableMap;
-import com.google.common.collect.ImmutableSortedMultiset;
 import com.google.common.collect.Lists;
 import com.google.common.hash.Hashing;
 import com.google.common.net.UrlEscapers;
 import java.net.URI;
 import java.nio.charset.StandardCharsets;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Date;
 import java.util.HashMap;
@@ -168,32 +168,32 @@ public class SignatureInfo {
   }
 
   public String constructV4QueryString() {
-    ArrayListMultimap<String, String> queryParams = ArrayListMultimap.create();
+    ArrayListMultimap<String, String> paramMap = ArrayListMultimap.create();
 
     // TODO: Once we support supplying additional query params, we should remove any of the reserved
     // ones that users might have added.
 
     // Add in the reserved auth-specific query params.
-    queryParams.put(
+    paramMap.put(
         "X-Goog-Algorithm", UrlEscapers.urlFormParameterEscaper().escape(GOOG4_RSA_SHA256));
-    queryParams.put(
+    paramMap.put(
         "X-Goog-Credential",
         UrlEscapers.urlFormParameterEscaper().escape(accountEmail + "/" + yearMonthDay + SCOPE));
-    queryParams.put("X-Goog-Date", UrlEscapers.urlFormParameterEscaper().escape(exactDate));
-    queryParams.put(
+    paramMap.put("X-Goog-Date", UrlEscapers.urlFormParameterEscaper().escape(exactDate));
+    paramMap.put(
         "X-Goog-Expires", UrlEscapers.urlFormParameterEscaper().escape(Long.toString(expiration)));
     StringBuilder signedHeadersBuilder =
         new CanonicalExtensionHeadersSerializer(Storage.SignUrlOption.SignatureVersion.V4)
             .serializeHeaderNames(canonicalizedExtensionHeaders);
-    queryParams.put(
+    paramMap.put(
         "X-Goog-SignedHeaders",
         UrlEscapers.urlFormParameterEscaper().escape(signedHeadersBuilder.toString()));
 
     StringBuilder queryStringBuilder = new StringBuilder();
-    ImmutableSortedMultiset<String> sortedKeys =
-        ImmutableSortedMultiset.copyOf(queryParams.keySet());
-    for (String key : sortedKeys) {
-      List<String> valuesForCurrentKey = queryParams.get(key);
+    ArrayList<String> paramKeys = Lists.newArrayList(paramMap.keySet());
+    Collections.sort(paramKeys);
+    for (String key : paramKeys) {
+      List<String> valuesForCurrentKey = paramMap.get(key);
       if (valuesForCurrentKey.size() > 1) {
         // If there's more than 1 value for the given key, create a standalone list from the given
         // view collection and sort it; params with multiple values must be sorted by value.
