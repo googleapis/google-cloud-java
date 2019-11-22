@@ -54,7 +54,6 @@ public abstract class BaseEntity<K extends IncompleteKey> implements Serializabl
   private static final long serialVersionUID = -9070588108769487081L;
   private final ImmutableSortedMap<String, Value<?>> properties;
   private final K key;
-  private final int serializedSize;
 
   public abstract static class Builder<K extends IncompleteKey, B extends Builder<K, B>> {
 
@@ -447,13 +446,11 @@ public abstract class BaseEntity<K extends IncompleteKey> implements Serializabl
   BaseEntity(Builder<K, ?> builder) {
     this.key = builder.key;
     this.properties = ImmutableSortedMap.copyOf(builder.properties);
-    this.serializedSize = this.toPb().getSerializedSize();
   }
 
   BaseEntity(BaseEntity<K> from) {
     this.key = from.getKey();
     this.properties = from.properties;
-    this.serializedSize = from.serializedSize;
   }
 
   @Override
@@ -461,7 +458,6 @@ public abstract class BaseEntity<K extends IncompleteKey> implements Serializabl
     return MoreObjects.toStringHelper(this)
         .add("key", key)
         .add("properties", properties)
-        .add("size", serializedSize)
         .toString();
   }
 
@@ -638,11 +634,6 @@ public abstract class BaseEntity<K extends IncompleteKey> implements Serializabl
   /** Returns the properties. */
   public Map<String, Value<?>> getProperties() {
     return properties;
-  }
-
-  /** Returns the entity size. */
-  public int getSerializedSize() {
-    return serializedSize;
   }
 
   final com.google.datastore.v1.Entity toPb() {

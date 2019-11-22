@@ -89,4 +89,9 @@ public final class Entity extends FullEntity<Key> {
   public static Entity fromPb(com.google.datastore.v1.Entity entityPb) {
     return new Builder().fill(entityPb).build();
   }
+
+  public static int calculateSerializedSize(BaseEntity<? extends IncompleteKey> e) {
+    checkNotNull(e);
+    return e.toPb().getSerializedSize();
+  }
 }
