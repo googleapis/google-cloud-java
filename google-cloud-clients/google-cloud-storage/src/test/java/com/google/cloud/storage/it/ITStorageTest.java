@@ -146,6 +146,13 @@ public class ITStorageTest {
       BaseEncoding.base64()
           .decode("H4sIAAAAAAAAAPNIzcnJV3DPz0/PSVVwzskvTVEILskvSkxPVQQA/LySchsAAAA=");
   private static final Map<String, String> BUCKET_LABELS = ImmutableMap.of("label1", "value1");
+  private static final Map<String, String> REMOVE_BUCKET_LABELS;
+
+  static {
+    REMOVE_BUCKET_LABELS = new HashMap<>();
+    REMOVE_BUCKET_LABELS.put("label1", null);
+  }
+
   private static final Long RETENTION_PERIOD = 5L;
   private static final Long RETENTION_PERIOD_IN_MILLISECONDS = RETENTION_PERIOD * 1000;
   private static final String SERVICE_ACCOUNT_EMAIL_SUFFIX =
@@ -2331,6 +2338,8 @@ public class ITStorageTest {
     remoteBucket = remoteBucket.toBuilder().setLabels(BUCKET_LABELS).build();
     Bucket updatedBucket = storage.update(remoteBucket);
     assertEquals(BUCKET_LABELS, updatedBucket.getLabels());
+    remoteBucket.toBuilder().setLabels(REMOVE_BUCKET_LABELS).build().update();
+    assertNull(storage.get(BUCKET).getLabels());
   }
 
   @Test
