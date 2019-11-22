@@ -1,5 +1,12 @@
 # Changelog
 
+### [1.22.1](https://www.github.com/googleapis/java-speech/compare/v1.22.0...v1.22.1) (2019-11-21)
+
+
+### Bug Fixes
+
+* **regen:** speech recognize marked as an idempotent method for retry ([#48](https://www.github.com/googleapis/java-speech/issues/48)) ([7b621c8](https://www.github.com/googleapis/java-speech/commit/7b621c89fa8953bc35ecf72060053ad1c5f2a42d))
+
 ## [1.22.0](https://www.github.com/googleapis/java-speech/compare/v1.21.0...v1.22.0) (2019-11-12)
 
 
