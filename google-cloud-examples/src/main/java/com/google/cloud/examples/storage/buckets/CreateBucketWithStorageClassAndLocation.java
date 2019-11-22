@@ -35,7 +35,6 @@ public class CreateBucketWithStorageClassAndLocation {
                 // Possible values: http://g.co/cloud/storage/docs/bucket-locations#location-mr
                 .setLocation("asia")
                 .build());
-
     System.out.println(
         "Created bucket "
             + bucket.getName()
