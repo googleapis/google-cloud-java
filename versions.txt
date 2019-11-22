@@ -22,7 +22,6 @@ google-cloud-managedtest:0.119.0-alpha:0.119.1-alpha-SNAPSHOT
 google-cloud-nio:0.119.0-alpha:0.119.1-alpha-SNAPSHOT
 google-cloud-nio-examples:0.119.0-alpha:0.119.1-alpha-SNAPSHOT
 google-cloud-notification:0.119.0-beta:0.119.1-beta-SNAPSHOT
-google-cloud-pubsub:1.101.0:1.101.1-SNAPSHOT
 google-cloud-spanner:1.46.0:1.46.1-SNAPSHOT
 google-cloud-spanner-jdbc:1.11.0:1.11.1-SNAPSHOT
 google-cloud-storage:1.101.0:1.101.1-SNAPSHOT
@@ -34,7 +33,6 @@ grpc-google-cloud-bigquerystorage-v1beta1:0.84.0:0.84.1-SNAPSHOT
 grpc-google-cloud-firestore-admin-v1:1.31.0:1.31.1-SNAPSHOT
 grpc-google-cloud-firestore-v1:1.31.0:1.31.1-SNAPSHOT
 grpc-google-cloud-firestore-v1beta1:0.84.0:0.84.1-SNAPSHOT
-grpc-google-cloud-pubsub-v1:1.83.0:1.83.1-SNAPSHOT
 grpc-google-cloud-spanner-admin-database-v1:1.46.0:1.46.1-SNAPSHOT
 grpc-google-cloud-spanner-admin-instance-v1:1.46.0:1.46.1-SNAPSHOT
 grpc-google-cloud-spanner-v1:1.46.0:1.46.1-SNAPSHOT
@@ -44,7 +42,6 @@ proto-google-cloud-datastore-v1:0.84.0:0.84.1-SNAPSHOT
 proto-google-cloud-firestore-admin-v1:1.31.0:1.31.1-SNAPSHOT
 proto-google-cloud-firestore-v1:1.31.0:1.31.1-SNAPSHOT
 proto-google-cloud-firestore-v1beta1:0.84.0:0.84.1-SNAPSHOT
-proto-google-cloud-pubsub-v1:1.83.0:1.83.1-SNAPSHOT
 proto-google-cloud-spanner-admin-database-v1:1.46.0:1.46.1-SNAPSHOT
 proto-google-cloud-spanner-admin-instance-v1:1.46.0:1.46.1-SNAPSHOT
 proto-google-cloud-spanner-v1:1.46.0:1.46.1-SNAPSHOT

@@ -31,7 +31,7 @@ If you are using Maven with a BOM, add this to your pom.xml file.
   <artifactId>google-cloud-pubsub</artifactId>
 </dependency>
 ```
-[//]: # ({x-version-update-start:google-cloud-pubsub:released})
+
 If you are using Maven without a BOM, add this to your dependencies.
 ```xml
 <dependency>
@@ -48,7 +48,6 @@ If you are using SBT, add this to your dependencies
 ```Scala
 libraryDependencies += "com.google.cloud" % "google-cloud-pubsub" % "1.101.0"
 ```
-[//]: # ({x-version-update-end})
 
 Authentication
 --------------
