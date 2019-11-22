@@ -63,16 +63,6 @@ import javax.annotation.Generated;
 @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
 public class GrpcDatabaseAdminStub extends DatabaseAdminStub {
 
-  private static final MethodDescriptor<ListDatabasesRequest, ListDatabasesResponse>
-      listDatabasesMethodDescriptor =
-          MethodDescriptor.<ListDatabasesRequest, ListDatabasesResponse>newBuilder()
-              .setType(MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName("google.spanner.admin.database.v1.DatabaseAdmin/ListDatabases")
-              .setRequestMarshaller(
-                  ProtoUtils.marshaller(ListDatabasesRequest.getDefaultInstance()))
-              .setResponseMarshaller(
-                  ProtoUtils.marshaller(ListDatabasesResponse.getDefaultInstance()))
-              .build();
   private static final MethodDescriptor<CreateDatabaseRequest, Operation>
       createDatabaseMethodDescriptor =
           MethodDescriptor.<CreateDatabaseRequest, Operation>newBuilder()
@@ -140,13 +130,20 @@ public class GrpcDatabaseAdminStub extends DatabaseAdminStub {
               .setResponseMarshaller(
                   ProtoUtils.marshaller(TestIamPermissionsResponse.getDefaultInstance()))
               .build();
+  private static final MethodDescriptor<ListDatabasesRequest, ListDatabasesResponse>
+      listDatabasesMethodDescriptor =
+          MethodDescriptor.<ListDatabasesRequest, ListDatabasesResponse>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.spanner.admin.database.v1.DatabaseAdmin/ListDatabases")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(ListDatabasesRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(ListDatabasesResponse.getDefaultInstance()))
+              .build();
 
   private final BackgroundResource backgroundResources;
   private final GrpcOperationsStub operationsStub;
 
-  private final UnaryCallable<ListDatabasesRequest, ListDatabasesResponse> listDatabasesCallable;
-  private final UnaryCallable<ListDatabasesRequest, ListDatabasesPagedResponse>
-      listDatabasesPagedCallable;
   private final UnaryCallable<CreateDatabaseRequest, Operation> createDatabaseCallable;
   private final OperationCallable<CreateDatabaseRequest, Database, CreateDatabaseMetadata>
       createDatabaseOperationCallable;
@@ -160,6 +157,9 @@ public class GrpcDatabaseAdminStub extends DatabaseAdminStub {
   private final UnaryCallable<GetIamPolicyRequest, Policy> getIamPolicyCallable;
   private final UnaryCallable<TestIamPermissionsRequest, TestIamPermissionsResponse>
       testIamPermissionsCallable;
+  private final UnaryCallable<ListDatabasesRequest, ListDatabasesResponse> listDatabasesCallable;
+  private final UnaryCallable<ListDatabasesRequest, ListDatabasesPagedResponse>
+      listDatabasesPagedCallable;
 
   private final GrpcStubCallableFactory callableFactory;
 
@@ -201,19 +201,6 @@ public class GrpcDatabaseAdminStub extends DatabaseAdminStub {
     this.callableFactory = callableFactory;
     this.operationsStub = GrpcOperationsStub.create(clientContext, callableFactory);
 
-    GrpcCallSettings<ListDatabasesRequest, ListDatabasesResponse> listDatabasesTransportSettings =
-        GrpcCallSettings.<ListDatabasesRequest, ListDatabasesResponse>newBuilder()
-            .setMethodDescriptor(listDatabasesMethodDescriptor)
-            .setParamsExtractor(
-                new RequestParamsExtractor<ListDatabasesRequest>() {
-                  @Override
-                  public Map<String, String> extract(ListDatabasesRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("parent", String.valueOf(request.getParent()));
-                    return params.build();
-                  }
-                })
-            .build();
     GrpcCallSettings<CreateDatabaseRequest, Operation> createDatabaseTransportSettings =
         GrpcCallSettings.<CreateDatabaseRequest, Operation>newBuilder()
             .setMethodDescriptor(createDatabaseMethodDescriptor)
@@ -320,13 +307,20 @@ public class GrpcDatabaseAdminStub extends DatabaseAdminStub {
                       }
                     })
                 .build();
+    GrpcCallSettings<ListDatabasesRequest, ListDatabasesResponse> listDatabasesTransportSettings =
+        GrpcCallSettings.<ListDatabasesRequest, ListDatabasesResponse>newBuilder()
+            .setMethodDescriptor(listDatabasesMethodDescriptor)
+            .setParamsExtractor(
+                new RequestParamsExtractor<ListDatabasesRequest>() {
+                  @Override
+                  public Map<String, String> extract(ListDatabasesRequest request) {
+                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                    params.put("parent", String.valueOf(request.getParent()));
+                    return params.build();
+                  }
+                })
+            .build();
 
-    this.listDatabasesCallable =
-        callableFactory.createUnaryCallable(
-            listDatabasesTransportSettings, settings.listDatabasesSettings(), clientContext);
-    this.listDatabasesPagedCallable =
-        callableFactory.createPagedCallable(
-            listDatabasesTransportSettings, settings.listDatabasesSettings(), clientContext);
     this.createDatabaseCallable =
         callableFactory.createUnaryCallable(
             createDatabaseTransportSettings, settings.createDatabaseSettings(), clientContext);
@@ -367,6 +361,12 @@ public class GrpcDatabaseAdminStub extends DatabaseAdminStub {
             testIamPermissionsTransportSettings,
             settings.testIamPermissionsSettings(),
             clientContext);
+    this.listDatabasesCallable =
+        callableFactory.createUnaryCallable(
+            listDatabasesTransportSettings, settings.listDatabasesSettings(), clientContext);
+    this.listDatabasesPagedCallable =
+        callableFactory.createPagedCallable(
+            listDatabasesTransportSettings, settings.listDatabasesSettings(), clientContext);
 
     backgroundResources = new BackgroundResourceAggregation(clientContext.getBackgroundResources());
   }
@@ -374,15 +374,6 @@ public class GrpcDatabaseAdminStub extends DatabaseAdminStub {
   @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
   public GrpcOperationsStub getOperationsStub() {
     return operationsStub;
-  }
-
-  public UnaryCallable<ListDatabasesRequest, ListDatabasesPagedResponse>
-      listDatabasesPagedCallable() {
-    return listDatabasesPagedCallable;
-  }
-
-  public UnaryCallable<ListDatabasesRequest, ListDatabasesResponse> listDatabasesCallable() {
-    return listDatabasesCallable;
   }
 
   @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
@@ -428,6 +419,15 @@ public class GrpcDatabaseAdminStub extends DatabaseAdminStub {
   public UnaryCallable<TestIamPermissionsRequest, TestIamPermissionsResponse>
       testIamPermissionsCallable() {
     return testIamPermissionsCallable;
+  }
+
+  public UnaryCallable<ListDatabasesRequest, ListDatabasesPagedResponse>
+      listDatabasesPagedCallable() {
+    return listDatabasesPagedCallable;
+  }
+
+  public UnaryCallable<ListDatabasesRequest, ListDatabasesResponse> listDatabasesCallable() {
+    return listDatabasesCallable;
   }
 
   @Override

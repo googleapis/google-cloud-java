@@ -100,6 +100,9 @@ import com.google.spanner.v1.RollbackRequest;
 import com.google.spanner.v1.Session;
 import com.google.spanner.v1.Transaction;
 import io.grpc.Context;
+import java.io.UnsupportedEncodingException;
+import java.net.URLDecoder;
+import java.nio.charset.StandardCharsets;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
@@ -186,7 +189,14 @@ public class GapicSpannerRpc implements SpannerRpc {
 
   public GapicSpannerRpc(final SpannerOptions options) {
     this.projectId = options.getProjectId();
-    this.projectName = PROJECT_NAME_TEMPLATE.instantiate("project", this.projectId);
+    String projectNameStr = PROJECT_NAME_TEMPLATE.instantiate("project", this.projectId);
+    try {
+      // Fix use cases where projectName contains special charecters.
+      // This would happen when projects are under an organization.
+      projectNameStr = URLDecoder.decode(projectNameStr, StandardCharsets.UTF_8.toString());
+    } catch (UnsupportedEncodingException e) { // Ignored.
+    }
+    this.projectName = projectNameStr;
 
     // create a metadataProvider which combines both internal headers and
     // per-method-call extra headers for channelProvider to inject the headers

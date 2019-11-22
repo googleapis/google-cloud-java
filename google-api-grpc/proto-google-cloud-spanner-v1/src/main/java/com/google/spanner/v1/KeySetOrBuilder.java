@@ -78,8 +78,8 @@ public interface KeySetOrBuilder
    *
    *
    * <pre>
-   * A list of key ranges. See [KeyRange][google.spanner.v1.KeyRange] for more
-   * information about key range specifications.
+   * A list of key ranges. See [KeyRange][google.spanner.v1.KeyRange] for more information about
+   * key range specifications.
    * </pre>
    *
    * <code>repeated .google.spanner.v1.KeyRange ranges = 2;</code>
@@ -89,8 +89,8 @@ public interface KeySetOrBuilder
    *
    *
    * <pre>
-   * A list of key ranges. See [KeyRange][google.spanner.v1.KeyRange] for more
-   * information about key range specifications.
+   * A list of key ranges. See [KeyRange][google.spanner.v1.KeyRange] for more information about
+   * key range specifications.
    * </pre>
    *
    * <code>repeated .google.spanner.v1.KeyRange ranges = 2;</code>
@@ -100,8 +100,8 @@ public interface KeySetOrBuilder
    *
    *
    * <pre>
-   * A list of key ranges. See [KeyRange][google.spanner.v1.KeyRange] for more
-   * information about key range specifications.
+   * A list of key ranges. See [KeyRange][google.spanner.v1.KeyRange] for more information about
+   * key range specifications.
    * </pre>
    *
    * <code>repeated .google.spanner.v1.KeyRange ranges = 2;</code>
@@ -111,8 +111,8 @@ public interface KeySetOrBuilder
    *
    *
    * <pre>
-   * A list of key ranges. See [KeyRange][google.spanner.v1.KeyRange] for more
-   * information about key range specifications.
+   * A list of key ranges. See [KeyRange][google.spanner.v1.KeyRange] for more information about
+   * key range specifications.
    * </pre>
    *
    * <code>repeated .google.spanner.v1.KeyRange ranges = 2;</code>
@@ -122,8 +122,8 @@ public interface KeySetOrBuilder
    *
    *
    * <pre>
-   * A list of key ranges. See [KeyRange][google.spanner.v1.KeyRange] for more
-   * information about key range specifications.
+   * A list of key ranges. See [KeyRange][google.spanner.v1.KeyRange] for more information about
+   * key range specifications.
    * </pre>
    *
    * <code>repeated .google.spanner.v1.KeyRange ranges = 2;</code>

@@ -117,7 +117,9 @@ public final class BeginTransactionRequest extends com.google.protobuf.Generated
    * Required. The session in which the transaction runs.
    * </pre>
    *
-   * <code>string session = 1;</code>
+   * <code>
+   * string session = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    */
   public java.lang.String getSession() {
     java.lang.Object ref = session_;
@@ -137,7 +139,9 @@ public final class BeginTransactionRequest extends com.google.protobuf.Generated
    * Required. The session in which the transaction runs.
    * </pre>
    *
-   * <code>string session = 1;</code>
+   * <code>
+   * string session = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    */
   public com.google.protobuf.ByteString getSessionBytes() {
     java.lang.Object ref = session_;
@@ -160,7 +164,9 @@ public final class BeginTransactionRequest extends com.google.protobuf.Generated
    * Required. Options for the new transaction.
    * </pre>
    *
-   * <code>.google.spanner.v1.TransactionOptions options = 2;</code>
+   * <code>
+   * .google.spanner.v1.TransactionOptions options = 2 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   public boolean hasOptions() {
     return options_ != null;
@@ -172,7 +178,9 @@ public final class BeginTransactionRequest extends com.google.protobuf.Generated
    * Required. Options for the new transaction.
    * </pre>
    *
-   * <code>.google.spanner.v1.TransactionOptions options = 2;</code>
+   * <code>
+   * .google.spanner.v1.TransactionOptions options = 2 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   public com.google.spanner.v1.TransactionOptions getOptions() {
     return options_ == null
@@ -186,7 +194,9 @@ public final class BeginTransactionRequest extends com.google.protobuf.Generated
    * Required. Options for the new transaction.
    * </pre>
    *
-   * <code>.google.spanner.v1.TransactionOptions options = 2;</code>
+   * <code>
+   * .google.spanner.v1.TransactionOptions options = 2 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   public com.google.spanner.v1.TransactionOptionsOrBuilder getOptionsOrBuilder() {
     return getOptions();
@@ -545,7 +555,9 @@ public final class BeginTransactionRequest extends com.google.protobuf.Generated
      * Required. The session in which the transaction runs.
      * </pre>
      *
-     * <code>string session = 1;</code>
+     * <code>
+     * string session = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      */
     public java.lang.String getSession() {
       java.lang.Object ref = session_;
@@ -565,7 +577,9 @@ public final class BeginTransactionRequest extends com.google.protobuf.Generated
      * Required. The session in which the transaction runs.
      * </pre>
      *
-     * <code>string session = 1;</code>
+     * <code>
+     * string session = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      */
     public com.google.protobuf.ByteString getSessionBytes() {
       java.lang.Object ref = session_;
@@ -585,7 +599,9 @@ public final class BeginTransactionRequest extends com.google.protobuf.Generated
      * Required. The session in which the transaction runs.
      * </pre>
      *
-     * <code>string session = 1;</code>
+     * <code>
+     * string session = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      */
     public Builder setSession(java.lang.String value) {
       if (value == null) {
@@ -603,7 +619,9 @@ public final class BeginTransactionRequest extends com.google.protobuf.Generated
      * Required. The session in which the transaction runs.
      * </pre>
      *
-     * <code>string session = 1;</code>
+     * <code>
+     * string session = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      */
     public Builder clearSession() {
 
@@ -618,7 +636,9 @@ public final class BeginTransactionRequest extends com.google.protobuf.Generated
      * Required. The session in which the transaction runs.
      * </pre>
      *
-     * <code>string session = 1;</code>
+     * <code>
+     * string session = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      */
     public Builder setSessionBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -644,7 +664,9 @@ public final class BeginTransactionRequest extends com.google.protobuf.Generated
      * Required. Options for the new transaction.
      * </pre>
      *
-     * <code>.google.spanner.v1.TransactionOptions options = 2;</code>
+     * <code>
+     * .google.spanner.v1.TransactionOptions options = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public boolean hasOptions() {
       return optionsBuilder_ != null || options_ != null;
@@ -656,7 +678,9 @@ public final class BeginTransactionRequest extends com.google.protobuf.Generated
      * Required. Options for the new transaction.
      * </pre>
      *
-     * <code>.google.spanner.v1.TransactionOptions options = 2;</code>
+     * <code>
+     * .google.spanner.v1.TransactionOptions options = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public com.google.spanner.v1.TransactionOptions getOptions() {
       if (optionsBuilder_ == null) {
@@ -674,7 +698,9 @@ public final class BeginTransactionRequest extends com.google.protobuf.Generated
      * Required. Options for the new transaction.
      * </pre>
      *
-     * <code>.google.spanner.v1.TransactionOptions options = 2;</code>
+     * <code>
+     * .google.spanner.v1.TransactionOptions options = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder setOptions(com.google.spanner.v1.TransactionOptions value) {
       if (optionsBuilder_ == null) {
@@ -696,7 +722,9 @@ public final class BeginTransactionRequest extends com.google.protobuf.Generated
      * Required. Options for the new transaction.
      * </pre>
      *
-     * <code>.google.spanner.v1.TransactionOptions options = 2;</code>
+     * <code>
+     * .google.spanner.v1.TransactionOptions options = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder setOptions(com.google.spanner.v1.TransactionOptions.Builder builderForValue) {
       if (optionsBuilder_ == null) {
@@ -715,7 +743,9 @@ public final class BeginTransactionRequest extends com.google.protobuf.Generated
      * Required. Options for the new transaction.
      * </pre>
      *
-     * <code>.google.spanner.v1.TransactionOptions options = 2;</code>
+     * <code>
+     * .google.spanner.v1.TransactionOptions options = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder mergeOptions(com.google.spanner.v1.TransactionOptions value) {
       if (optionsBuilder_ == null) {
@@ -741,7 +771,9 @@ public final class BeginTransactionRequest extends com.google.protobuf.Generated
      * Required. Options for the new transaction.
      * </pre>
      *
-     * <code>.google.spanner.v1.TransactionOptions options = 2;</code>
+     * <code>
+     * .google.spanner.v1.TransactionOptions options = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder clearOptions() {
       if (optionsBuilder_ == null) {
@@ -761,7 +793,9 @@ public final class BeginTransactionRequest extends com.google.protobuf.Generated
      * Required. Options for the new transaction.
      * </pre>
      *
-     * <code>.google.spanner.v1.TransactionOptions options = 2;</code>
+     * <code>
+     * .google.spanner.v1.TransactionOptions options = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public com.google.spanner.v1.TransactionOptions.Builder getOptionsBuilder() {
 
@@ -775,7 +809,9 @@ public final class BeginTransactionRequest extends com.google.protobuf.Generated
      * Required. Options for the new transaction.
      * </pre>
      *
-     * <code>.google.spanner.v1.TransactionOptions options = 2;</code>
+     * <code>
+     * .google.spanner.v1.TransactionOptions options = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public com.google.spanner.v1.TransactionOptionsOrBuilder getOptionsOrBuilder() {
       if (optionsBuilder_ != null) {
@@ -793,7 +829,9 @@ public final class BeginTransactionRequest extends com.google.protobuf.Generated
      * Required. Options for the new transaction.
      * </pre>
      *
-     * <code>.google.spanner.v1.TransactionOptions options = 2;</code>
+     * <code>
+     * .google.spanner.v1.TransactionOptions options = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.spanner.v1.TransactionOptions,

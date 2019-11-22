@@ -15,7 +15,9 @@ public interface ReadRequestOrBuilder
    * Required. The session in which the read should be performed.
    * </pre>
    *
-   * <code>string session = 1;</code>
+   * <code>
+   * string session = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    */
   java.lang.String getSession();
   /**
@@ -25,7 +27,9 @@ public interface ReadRequestOrBuilder
    * Required. The session in which the read should be performed.
    * </pre>
    *
-   * <code>string session = 1;</code>
+   * <code>
+   * string session = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    */
   com.google.protobuf.ByteString getSessionBytes();
 
@@ -70,7 +74,7 @@ public interface ReadRequestOrBuilder
    * Required. The name of the table in the database to be read.
    * </pre>
    *
-   * <code>string table = 3;</code>
+   * <code>string table = 3 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   java.lang.String getTable();
   /**
@@ -80,7 +84,7 @@ public interface ReadRequestOrBuilder
    * Required. The name of the table in the database to be read.
    * </pre>
    *
-   * <code>string table = 3;</code>
+   * <code>string table = 3 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   com.google.protobuf.ByteString getTableBytes();
 
@@ -119,44 +123,44 @@ public interface ReadRequestOrBuilder
    *
    *
    * <pre>
-   * The columns of [table][google.spanner.v1.ReadRequest.table] to be returned
-   * for each row matching this request.
+   * Required. The columns of [table][google.spanner.v1.ReadRequest.table] to be
+   * returned for each row matching this request.
    * </pre>
    *
-   * <code>repeated string columns = 5;</code>
+   * <code>repeated string columns = 5 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   java.util.List<java.lang.String> getColumnsList();
   /**
    *
    *
    * <pre>
-   * The columns of [table][google.spanner.v1.ReadRequest.table] to be returned
-   * for each row matching this request.
+   * Required. The columns of [table][google.spanner.v1.ReadRequest.table] to be
+   * returned for each row matching this request.
    * </pre>
    *
-   * <code>repeated string columns = 5;</code>
+   * <code>repeated string columns = 5 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   int getColumnsCount();
   /**
    *
    *
    * <pre>
-   * The columns of [table][google.spanner.v1.ReadRequest.table] to be returned
-   * for each row matching this request.
+   * Required. The columns of [table][google.spanner.v1.ReadRequest.table] to be
+   * returned for each row matching this request.
    * </pre>
    *
-   * <code>repeated string columns = 5;</code>
+   * <code>repeated string columns = 5 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   java.lang.String getColumns(int index);
   /**
    *
    *
    * <pre>
-   * The columns of [table][google.spanner.v1.ReadRequest.table] to be returned
-   * for each row matching this request.
+   * Required. The columns of [table][google.spanner.v1.ReadRequest.table] to be
+   * returned for each row matching this request.
    * </pre>
    *
-   * <code>repeated string columns = 5;</code>
+   * <code>repeated string columns = 5 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   com.google.protobuf.ByteString getColumnsBytes(int index);
 
@@ -180,7 +184,7 @@ public interface ReadRequestOrBuilder
    * exist in the database. Read yields nothing for nonexistent rows.
    * </pre>
    *
-   * <code>.google.spanner.v1.KeySet key_set = 6;</code>
+   * <code>.google.spanner.v1.KeySet key_set = 6 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   boolean hasKeySet();
   /**
@@ -203,7 +207,7 @@ public interface ReadRequestOrBuilder
    * exist in the database. Read yields nothing for nonexistent rows.
    * </pre>
    *
-   * <code>.google.spanner.v1.KeySet key_set = 6;</code>
+   * <code>.google.spanner.v1.KeySet key_set = 6 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   com.google.spanner.v1.KeySet getKeySet();
   /**
@@ -226,7 +230,7 @@ public interface ReadRequestOrBuilder
    * exist in the database. Read yields nothing for nonexistent rows.
    * </pre>
    *
-   * <code>.google.spanner.v1.KeySet key_set = 6;</code>
+   * <code>.google.spanner.v1.KeySet key_set = 6 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   com.google.spanner.v1.KeySetOrBuilder getKeySetOrBuilder();
 

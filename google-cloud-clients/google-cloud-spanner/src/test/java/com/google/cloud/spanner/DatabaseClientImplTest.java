@@ -16,6 +16,7 @@
 
 package com.google.cloud.spanner;
 
+import static org.hamcrest.CoreMatchers.containsString;
 import static org.hamcrest.CoreMatchers.equalTo;
 import static org.hamcrest.CoreMatchers.is;
 import static org.junit.Assert.assertThat;
@@ -27,6 +28,7 @@ import com.google.cloud.NoCredentials;
 import com.google.cloud.spanner.MockSpannerServiceImpl.SimulatedExecutionTime;
 import com.google.cloud.spanner.MockSpannerServiceImpl.StatementResult;
 import com.google.cloud.spanner.TransactionRunner.TransactionCallable;
+import com.google.common.base.Stopwatch;
 import com.google.protobuf.ListValue;
 import com.google.spanner.v1.ResultSetMetadata;
 import com.google.spanner.v1.StructType;
@@ -37,6 +39,7 @@ import io.grpc.Status;
 import io.grpc.inprocess.InProcessServerBuilder;
 import java.io.IOException;
 import java.util.concurrent.ScheduledThreadPoolExecutor;
+import java.util.concurrent.TimeUnit;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
@@ -48,10 +51,11 @@ import org.threeten.bp.Duration;
 
 @RunWith(JUnit4.class)
 public class DatabaseClientImplTest {
+  private static final String DATABASE_DOES_NOT_EXIST_MSG =
+      "Database not found: projects/<project>/instances/<instance>/databases/<database> resource_type: \"type.googleapis.com/google.spanner.admin.database.v1.Database\" resource_name: \"projects/<project>/instances/<instance>/databases/<database>\" description: \"Database does not exist.\"";
   private static MockSpannerServiceImpl mockSpanner;
   private static Server server;
   private static LocalChannelProvider channelProvider;
-  private static Spanner spanner;
   private static final Statement UPDATE_STATEMENT =
       Statement.of("UPDATE FOO SET BAR=1 WHERE BAZ=2");
   private static final Statement INVALID_UPDATE_STATEMENT =
@@ -80,6 +84,7 @@ public class DatabaseClientImplTest {
                   .build())
           .setMetadata(SELECT1_METADATA)
           .build();
+  private Spanner spanner;
 
   @BeforeClass
   public static void startStaticServer() throws IOException {
@@ -111,8 +116,6 @@ public class DatabaseClientImplTest {
 
   @Before
   public void setUp() throws IOException {
-    mockSpanner.reset();
-    mockSpanner.removeAllExecutionTimes();
     spanner =
         SpannerOptions.newBuilder()
             .setProjectId("[PROJECT]")
@@ -125,6 +128,8 @@ public class DatabaseClientImplTest {
   @After
   public void tearDown() throws Exception {
     spanner.close();
+    mockSpanner.reset();
+    mockSpanner.removeAllExecutionTimes();
   }
 
   /**
@@ -256,5 +261,268 @@ public class DatabaseClientImplTest {
                   });
       assertThat(updateCount, is(equalTo(UPDATE_COUNT)));
     }
+  }
+
+  @Test
+  public void testDatabaseDoesNotExistOnPrepareSession() throws Exception {
+    mockSpanner.setBeginTransactionExecutionTime(
+        SimulatedExecutionTime.ofStickyException(
+            Status.NOT_FOUND.withDescription(DATABASE_DOES_NOT_EXIST_MSG).asRuntimeException()));
+    DatabaseClientImpl dbClient =
+        (DatabaseClientImpl)
+            spanner.getDatabaseClient(DatabaseId.of("[PROJECT]", "[INSTANCE]", "[DATABASE]"));
+    // Wait until all sessions have been created.
+    Stopwatch watch = Stopwatch.createStarted();
+    while (watch.elapsed(TimeUnit.SECONDS) < 5
+        && dbClient.pool.getNumberOfSessionsBeingCreated() > 0) {
+      Thread.sleep(1L);
+    }
+    // Ensure that no sessions could be prepared and that the session pool gives up trying to
+    // prepare sessions.
+    watch = watch.reset().start();
+    while (watch.elapsed(TimeUnit.SECONDS) < 5
+        && dbClient.pool.getNumberOfSessionsBeingPrepared() > 0) {
+      Thread.sleep(1L);
+    }
+    assertThat(dbClient.pool.getNumberOfSessionsBeingPrepared(), is(equalTo(0)));
+    assertThat(dbClient.pool.getNumberOfAvailableWritePreparedSessions(), is(equalTo(0)));
+    try {
+      dbClient
+          .readWriteTransaction()
+          .run(
+              new TransactionCallable<Void>() {
+                @Override
+                public Void run(TransactionContext transaction) throws Exception {
+                  return null;
+                }
+              });
+      fail("missing expected NOT_FOUND exception");
+    } catch (SpannerException e) {
+      assertThat(e.getErrorCode(), is(equalTo(ErrorCode.NOT_FOUND)));
+      assertThat(e.getMessage(), containsString("Database not found"));
+    }
+  }
+
+  @Test
+  public void testDatabaseDoesNotExistOnInitialization() throws Exception {
+    mockSpanner.setBatchCreateSessionsExecutionTime(
+        SimulatedExecutionTime.ofStickyException(
+            Status.NOT_FOUND.withDescription(DATABASE_DOES_NOT_EXIST_MSG).asRuntimeException()));
+    DatabaseClientImpl dbClient =
+        (DatabaseClientImpl)
+            spanner.getDatabaseClient(DatabaseId.of("[PROJECT]", "[INSTANCE]", "[DATABASE]"));
+    // Wait until session creation has finished.
+    Stopwatch watch = Stopwatch.createStarted();
+    while (watch.elapsed(TimeUnit.SECONDS) < 5
+        && dbClient.pool.getNumberOfSessionsBeingCreated() > 0) {
+      Thread.sleep(1L);
+    }
+    // All session creation should fail and stop trying.
+    assertThat(dbClient.pool.getNumberOfSessionsInPool(), is(equalTo(0)));
+    assertThat(dbClient.pool.getNumberOfSessionsBeingCreated(), is(equalTo(0)));
+  }
+
+  @Test
+  public void testDatabaseDoesNotExistOnCreate() throws Exception {
+    mockSpanner.setBatchCreateSessionsExecutionTime(
+        SimulatedExecutionTime.ofStickyException(
+            Status.NOT_FOUND.withDescription(DATABASE_DOES_NOT_EXIST_MSG).asRuntimeException()));
+    // Ensure there are no sessions in the pool by default.
+    try (Spanner spanner =
+        SpannerOptions.newBuilder()
+            .setProjectId("[PROJECT]")
+            .setChannelProvider(channelProvider)
+            .setCredentials(NoCredentials.getInstance())
+            .setSessionPoolOption(SessionPoolOptions.newBuilder().setMinSessions(0).build())
+            .build()
+            .getService()) {
+      DatabaseClientImpl dbClient =
+          (DatabaseClientImpl)
+              spanner.getDatabaseClient(DatabaseId.of("[PROJECT]", "[INSTANCE]", "[DATABASE]"));
+      // The create session failure should propagate to the client and not retry.
+      try (ResultSet rs = dbClient.singleUse().executeQuery(SELECT1)) {
+        fail("missing expected exception");
+      } catch (SpannerException e) {
+        assertThat(e.getErrorCode(), is(equalTo(ErrorCode.NOT_FOUND)));
+        assertThat(e.getMessage(), containsString(DATABASE_DOES_NOT_EXIST_MSG));
+      }
+      try {
+        dbClient.readWriteTransaction();
+        fail("missing expected exception");
+      } catch (SpannerException e) {
+        assertThat(e.getErrorCode(), is(equalTo(ErrorCode.NOT_FOUND)));
+        assertThat(e.getMessage(), containsString(DATABASE_DOES_NOT_EXIST_MSG));
+      }
+    }
+  }
+
+  @Test
+  public void testDatabaseDoesNotExistOnReplenish() throws Exception {
+    mockSpanner.setBatchCreateSessionsExecutionTime(
+        SimulatedExecutionTime.ofStickyException(
+            Status.NOT_FOUND.withDescription(DATABASE_DOES_NOT_EXIST_MSG).asRuntimeException()));
+    DatabaseClientImpl dbClient =
+        (DatabaseClientImpl)
+            spanner.getDatabaseClient(DatabaseId.of("[PROJECT]", "[INSTANCE]", "[DATABASE]"));
+    // Wait until session creation has finished.
+    Stopwatch watch = Stopwatch.createStarted();
+    while (watch.elapsed(TimeUnit.SECONDS) < 5
+        && dbClient.pool.getNumberOfSessionsBeingCreated() > 0) {
+      Thread.sleep(1L);
+    }
+    // All session creation should fail and stop trying.
+    assertThat(dbClient.pool.getNumberOfSessionsInPool(), is(equalTo(0)));
+    assertThat(dbClient.pool.getNumberOfSessionsBeingCreated(), is(equalTo(0)));
+    // Force a maintainer run. This should schedule new session creation.
+    dbClient.pool.poolMaintainer.maintainPool();
+    // Wait until the replenish has finished.
+    watch = watch.reset().start();
+    while (watch.elapsed(TimeUnit.SECONDS) < 5
+        && dbClient.pool.getNumberOfSessionsBeingCreated() > 0) {
+      Thread.sleep(1L);
+    }
+    // All session creation from replenishPool should fail and stop trying.
+    assertThat(dbClient.pool.getNumberOfSessionsInPool(), is(equalTo(0)));
+    assertThat(dbClient.pool.getNumberOfSessionsBeingCreated(), is(equalTo(0)));
+  }
+
+  @Test
+  public void testPermissionDeniedOnPrepareSession() throws Exception {
+    mockSpanner.setBeginTransactionExecutionTime(
+        SimulatedExecutionTime.ofStickyException(
+            Status.PERMISSION_DENIED
+                .withDescription(
+                    "Caller is missing IAM permission spanner.databases.beginOrRollbackReadWriteTransaction on resource")
+                .asRuntimeException()));
+    DatabaseClientImpl dbClient =
+        (DatabaseClientImpl)
+            spanner.getDatabaseClient(DatabaseId.of("[PROJECT]", "[INSTANCE]", "[DATABASE]"));
+    // Wait until all sessions have been created.
+    Stopwatch watch = Stopwatch.createStarted();
+    while (watch.elapsed(TimeUnit.SECONDS) < 5
+        && dbClient.pool.getNumberOfSessionsBeingCreated() > 0) {
+      Thread.sleep(1L);
+    }
+    // Ensure that no sessions could be prepared and that the session pool gives up trying to
+    // prepare sessions.
+    watch = watch.reset().start();
+    while (watch.elapsed(TimeUnit.SECONDS) < 5
+        && dbClient.pool.getNumberOfSessionsBeingPrepared() > 0) {
+      Thread.sleep(1L);
+    }
+    assertThat(dbClient.pool.getNumberOfSessionsBeingPrepared(), is(equalTo(0)));
+    assertThat(dbClient.pool.getNumberOfAvailableWritePreparedSessions(), is(equalTo(0)));
+    try {
+      dbClient
+          .readWriteTransaction()
+          .run(
+              new TransactionCallable<Void>() {
+                @Override
+                public Void run(TransactionContext transaction) throws Exception {
+                  return null;
+                }
+              });
+      fail("missing expected PERMISSION_DENIED exception");
+    } catch (SpannerException e) {
+      assertThat(e.getErrorCode(), is(equalTo(ErrorCode.PERMISSION_DENIED)));
+    }
+  }
+
+  @Test
+  public void testAllowNestedTransactions() throws InterruptedException {
+    final DatabaseClientImpl client =
+        (DatabaseClientImpl)
+            spanner.getDatabaseClient(DatabaseId.of("[PROJECT]", "[INSTANCE]", "[DATABASE]"));
+    // Wait until all sessions have been created.
+    final int minSessions = spanner.getOptions().getSessionPoolOptions().getMinSessions();
+    Stopwatch watch = Stopwatch.createStarted();
+    while (watch.elapsed(TimeUnit.SECONDS) < 5
+        && client.pool.getNumberOfSessionsInPool() < minSessions) {
+      Thread.sleep(1L);
+    }
+    assertThat(client.pool.getNumberOfSessionsInPool(), is(equalTo(minSessions)));
+    Long res =
+        client
+            .readWriteTransaction()
+            .allowNestedTransaction()
+            .run(
+                new TransactionCallable<Long>() {
+                  @Override
+                  public Long run(TransactionContext transaction) throws Exception {
+                    assertThat(
+                        client.pool.getNumberOfSessionsInPool(), is(equalTo(minSessions - 1)));
+                    return transaction.executeUpdate(UPDATE_STATEMENT);
+                  }
+                });
+    assertThat(res, is(equalTo(UPDATE_COUNT)));
+    assertThat(client.pool.getNumberOfSessionsInPool(), is(equalTo(minSessions)));
+  }
+
+  @Test
+  public void testNestedTransactionsUsingTwoDatabases() throws InterruptedException {
+    final DatabaseClientImpl client1 =
+        (DatabaseClientImpl)
+            spanner.getDatabaseClient(DatabaseId.of("[PROJECT]", "[INSTANCE]", "[DATABASE1]"));
+    final DatabaseClientImpl client2 =
+        (DatabaseClientImpl)
+            spanner.getDatabaseClient(DatabaseId.of("[PROJECT]", "[INSTANCE]", "[DATABASE2]"));
+    // Wait until all sessions have been created so we can actually check the number of sessions
+    // checked out of the pools.
+    final int minSessions = spanner.getOptions().getSessionPoolOptions().getMinSessions();
+    Stopwatch watch = Stopwatch.createStarted();
+    while (watch.elapsed(TimeUnit.SECONDS) < 5
+        && (client1.pool.getNumberOfSessionsInPool() < minSessions
+            || client2.pool.getNumberOfSessionsInPool() < minSessions)) {
+      Thread.sleep(1L);
+    }
+    assertThat(client1.pool.getNumberOfSessionsInPool(), is(equalTo(minSessions)));
+    assertThat(client2.pool.getNumberOfSessionsInPool(), is(equalTo(minSessions)));
+    Long res =
+        client1
+            .readWriteTransaction()
+            .allowNestedTransaction()
+            .run(
+                new TransactionCallable<Long>() {
+                  @Override
+                  public Long run(TransactionContext transaction) throws Exception {
+                    // Client1 should have 1 session checked out.
+                    // Client2 should have 0 sessions checked out.
+                    assertThat(
+                        client1.pool.getNumberOfSessionsInPool(), is(equalTo(minSessions - 1)));
+                    assertThat(client2.pool.getNumberOfSessionsInPool(), is(equalTo(minSessions)));
+                    Long add =
+                        client2
+                            .readWriteTransaction()
+                            .run(
+                                new TransactionCallable<Long>() {
+                                  @Override
+                                  public Long run(TransactionContext transaction) throws Exception {
+                                    // Both clients should now have 1 session checked out.
+                                    assertThat(
+                                        client1.pool.getNumberOfSessionsInPool(),
+                                        is(equalTo(minSessions - 1)));
+                                    assertThat(
+                                        client2.pool.getNumberOfSessionsInPool(),
+                                        is(equalTo(minSessions - 1)));
+                                    try (ResultSet rs = transaction.executeQuery(SELECT1)) {
+                                      if (rs.next()) {
+                                        return rs.getLong(0);
+                                      }
+                                      return 0L;
+                                    }
+                                  }
+                                });
+                    try (ResultSet rs = transaction.executeQuery(SELECT1)) {
+                      if (rs.next()) {
+                        return add + rs.getLong(0);
+                      }
+                      return add + 0L;
+                    }
+                  }
+                });
+    assertThat(res, is(equalTo(2L)));
+    // All sessions should now be checked back in to the pools.
+    assertThat(client1.pool.getNumberOfSessionsInPool(), is(equalTo(minSessions)));
+    assertThat(client2.pool.getNumberOfSessionsInPool(), is(equalTo(minSessions)));
   }
 }

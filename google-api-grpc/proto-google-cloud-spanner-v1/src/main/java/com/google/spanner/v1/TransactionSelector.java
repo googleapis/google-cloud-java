@@ -10,8 +10,7 @@ package com.google.spanner.v1;
  * This message is used to select the transaction in which a
  * [Read][google.spanner.v1.Spanner.Read] or
  * [ExecuteSql][google.spanner.v1.Spanner.ExecuteSql] call runs.
- * See [TransactionOptions][google.spanner.v1.TransactionOptions] for more
- * information about transactions.
+ * See [TransactionOptions][google.spanner.v1.TransactionOptions] for more information about transactions.
  * </pre>
  *
  * Protobuf type {@code google.spanner.v1.TransactionSelector}
@@ -241,8 +240,7 @@ public final class TransactionSelector extends com.google.protobuf.GeneratedMess
    * <pre>
    * Begin a new transaction and execute this read or SQL query in
    * it. The transaction ID of the new transaction is returned in
-   * [ResultSetMetadata.transaction][google.spanner.v1.ResultSetMetadata.transaction],
-   * which is a [Transaction][google.spanner.v1.Transaction].
+   * [ResultSetMetadata.transaction][google.spanner.v1.ResultSetMetadata.transaction], which is a [Transaction][google.spanner.v1.Transaction].
    * </pre>
    *
    * <code>.google.spanner.v1.TransactionOptions begin = 3;</code>
@@ -256,8 +254,7 @@ public final class TransactionSelector extends com.google.protobuf.GeneratedMess
    * <pre>
    * Begin a new transaction and execute this read or SQL query in
    * it. The transaction ID of the new transaction is returned in
-   * [ResultSetMetadata.transaction][google.spanner.v1.ResultSetMetadata.transaction],
-   * which is a [Transaction][google.spanner.v1.Transaction].
+   * [ResultSetMetadata.transaction][google.spanner.v1.ResultSetMetadata.transaction], which is a [Transaction][google.spanner.v1.Transaction].
    * </pre>
    *
    * <code>.google.spanner.v1.TransactionOptions begin = 3;</code>
@@ -274,8 +271,7 @@ public final class TransactionSelector extends com.google.protobuf.GeneratedMess
    * <pre>
    * Begin a new transaction and execute this read or SQL query in
    * it. The transaction ID of the new transaction is returned in
-   * [ResultSetMetadata.transaction][google.spanner.v1.ResultSetMetadata.transaction],
-   * which is a [Transaction][google.spanner.v1.Transaction].
+   * [ResultSetMetadata.transaction][google.spanner.v1.ResultSetMetadata.transaction], which is a [Transaction][google.spanner.v1.Transaction].
    * </pre>
    *
    * <code>.google.spanner.v1.TransactionOptions begin = 3;</code>
@@ -498,8 +494,7 @@ public final class TransactionSelector extends com.google.protobuf.GeneratedMess
    * This message is used to select the transaction in which a
    * [Read][google.spanner.v1.Spanner.Read] or
    * [ExecuteSql][google.spanner.v1.Spanner.ExecuteSql] call runs.
-   * See [TransactionOptions][google.spanner.v1.TransactionOptions] for more
-   * information about transactions.
+   * See [TransactionOptions][google.spanner.v1.TransactionOptions] for more information about transactions.
    * </pre>
    *
    * Protobuf type {@code google.spanner.v1.TransactionSelector}
@@ -981,8 +976,7 @@ public final class TransactionSelector extends com.google.protobuf.GeneratedMess
      * <pre>
      * Begin a new transaction and execute this read or SQL query in
      * it. The transaction ID of the new transaction is returned in
-     * [ResultSetMetadata.transaction][google.spanner.v1.ResultSetMetadata.transaction],
-     * which is a [Transaction][google.spanner.v1.Transaction].
+     * [ResultSetMetadata.transaction][google.spanner.v1.ResultSetMetadata.transaction], which is a [Transaction][google.spanner.v1.Transaction].
      * </pre>
      *
      * <code>.google.spanner.v1.TransactionOptions begin = 3;</code>
@@ -996,8 +990,7 @@ public final class TransactionSelector extends com.google.protobuf.GeneratedMess
      * <pre>
      * Begin a new transaction and execute this read or SQL query in
      * it. The transaction ID of the new transaction is returned in
-     * [ResultSetMetadata.transaction][google.spanner.v1.ResultSetMetadata.transaction],
-     * which is a [Transaction][google.spanner.v1.Transaction].
+     * [ResultSetMetadata.transaction][google.spanner.v1.ResultSetMetadata.transaction], which is a [Transaction][google.spanner.v1.Transaction].
      * </pre>
      *
      * <code>.google.spanner.v1.TransactionOptions begin = 3;</code>
@@ -1021,8 +1014,7 @@ public final class TransactionSelector extends com.google.protobuf.GeneratedMess
      * <pre>
      * Begin a new transaction and execute this read or SQL query in
      * it. The transaction ID of the new transaction is returned in
-     * [ResultSetMetadata.transaction][google.spanner.v1.ResultSetMetadata.transaction],
-     * which is a [Transaction][google.spanner.v1.Transaction].
+     * [ResultSetMetadata.transaction][google.spanner.v1.ResultSetMetadata.transaction], which is a [Transaction][google.spanner.v1.Transaction].
      * </pre>
      *
      * <code>.google.spanner.v1.TransactionOptions begin = 3;</code>
@@ -1046,8 +1038,7 @@ public final class TransactionSelector extends com.google.protobuf.GeneratedMess
      * <pre>
      * Begin a new transaction and execute this read or SQL query in
      * it. The transaction ID of the new transaction is returned in
-     * [ResultSetMetadata.transaction][google.spanner.v1.ResultSetMetadata.transaction],
-     * which is a [Transaction][google.spanner.v1.Transaction].
+     * [ResultSetMetadata.transaction][google.spanner.v1.ResultSetMetadata.transaction], which is a [Transaction][google.spanner.v1.Transaction].
      * </pre>
      *
      * <code>.google.spanner.v1.TransactionOptions begin = 3;</code>
@@ -1068,8 +1059,7 @@ public final class TransactionSelector extends com.google.protobuf.GeneratedMess
      * <pre>
      * Begin a new transaction and execute this read or SQL query in
      * it. The transaction ID of the new transaction is returned in
-     * [ResultSetMetadata.transaction][google.spanner.v1.ResultSetMetadata.transaction],
-     * which is a [Transaction][google.spanner.v1.Transaction].
+     * [ResultSetMetadata.transaction][google.spanner.v1.ResultSetMetadata.transaction], which is a [Transaction][google.spanner.v1.Transaction].
      * </pre>
      *
      * <code>.google.spanner.v1.TransactionOptions begin = 3;</code>
@@ -1102,8 +1092,7 @@ public final class TransactionSelector extends com.google.protobuf.GeneratedMess
      * <pre>
      * Begin a new transaction and execute this read or SQL query in
      * it. The transaction ID of the new transaction is returned in
-     * [ResultSetMetadata.transaction][google.spanner.v1.ResultSetMetadata.transaction],
-     * which is a [Transaction][google.spanner.v1.Transaction].
+     * [ResultSetMetadata.transaction][google.spanner.v1.ResultSetMetadata.transaction], which is a [Transaction][google.spanner.v1.Transaction].
      * </pre>
      *
      * <code>.google.spanner.v1.TransactionOptions begin = 3;</code>
@@ -1130,8 +1119,7 @@ public final class TransactionSelector extends com.google.protobuf.GeneratedMess
      * <pre>
      * Begin a new transaction and execute this read or SQL query in
      * it. The transaction ID of the new transaction is returned in
-     * [ResultSetMetadata.transaction][google.spanner.v1.ResultSetMetadata.transaction],
-     * which is a [Transaction][google.spanner.v1.Transaction].
+     * [ResultSetMetadata.transaction][google.spanner.v1.ResultSetMetadata.transaction], which is a [Transaction][google.spanner.v1.Transaction].
      * </pre>
      *
      * <code>.google.spanner.v1.TransactionOptions begin = 3;</code>
@@ -1145,8 +1133,7 @@ public final class TransactionSelector extends com.google.protobuf.GeneratedMess
      * <pre>
      * Begin a new transaction and execute this read or SQL query in
      * it. The transaction ID of the new transaction is returned in
-     * [ResultSetMetadata.transaction][google.spanner.v1.ResultSetMetadata.transaction],
-     * which is a [Transaction][google.spanner.v1.Transaction].
+     * [ResultSetMetadata.transaction][google.spanner.v1.ResultSetMetadata.transaction], which is a [Transaction][google.spanner.v1.Transaction].
      * </pre>
      *
      * <code>.google.spanner.v1.TransactionOptions begin = 3;</code>
@@ -1167,8 +1154,7 @@ public final class TransactionSelector extends com.google.protobuf.GeneratedMess
      * <pre>
      * Begin a new transaction and execute this read or SQL query in
      * it. The transaction ID of the new transaction is returned in
-     * [ResultSetMetadata.transaction][google.spanner.v1.ResultSetMetadata.transaction],
-     * which is a [Transaction][google.spanner.v1.Transaction].
+     * [ResultSetMetadata.transaction][google.spanner.v1.ResultSetMetadata.transaction], which is a [Transaction][google.spanner.v1.Transaction].
      * </pre>
      *
      * <code>.google.spanner.v1.TransactionOptions begin = 3;</code>
