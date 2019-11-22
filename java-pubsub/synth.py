@@ -25,22 +25,30 @@ versions = ['v1']
 config_pattern = '/google/pubsub/artman_pubsub.yaml'
 
 for version in versions:
-  library = gapic.java_library(
-      service=service,
-      version=version,
-      config_path=config_pattern.format(version=version),
-      artman_output_name='')
+    java.gapic_library(
+        service=service,
+        version=version,
+        config_pattern=config_pattern,
+        package_pattern='com.google.{service}.{version}',
+        gapic=gapic,
+    )
+    s.replace(
+        '**/stub/SubscriberStubSettings.java',
+        r'setMaxInboundMessageSize\(Integer.MAX_VALUE\)',
+        'setMaxInboundMessageSize(20 << 20)'
+    )
+    s.replace(
+        f"proto-google-cloud-{service}-{version}/src/**/*.java",
+        java.BAD_LICENSE,
+        java.GOOD_LICENSE,
+    )
 
-  s.copy(library / f'gapic-google-cloud-{service}-{version}/src', 'src')
-  s.copy(library / f'grpc-google-cloud-{service}-{version}/src', f'../../google-api-grpc/grpc-google-cloud-{service}-{version}/src')
-  s.copy(library / f'proto-google-cloud-{service}-{version}/src', f'../../google-api-grpc/proto-google-cloud-{service}-{version}/src')
+    java.format_code('google-cloud-pubsub/src')
+    java.format_code(f'grpc-google-cloud-{service}-{version}/src')
+    java.format_code(f'proto-google-cloud-{service}-{version}/src')
 
-  s.replace(
-      '**/stub/SubscriberStubSettings.java',
-      r'setMaxInboundMessageSize\(Integer.MAX_VALUE\)',
-      'setMaxInboundMessageSize(20 << 20)'
-  )
-
-  java.format_code('./src')
-  java.format_code(f'../../google-api-grpc/grpc-google-cloud-{service}-{version}/src')
-  java.format_code(f'../../google-api-grpc/proto-google-cloud-{service}-{version}/src')
+common_templates = gcp.CommonTemplates()
+templates = common_templates.java_library()
+s.copy(templates, excludes=[
+    'README.md'
+])

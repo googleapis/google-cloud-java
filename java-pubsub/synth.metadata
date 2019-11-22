@@ -1,0 +1,31 @@
+{
+  "updateTime": "2019-11-21T22:46:45.608871Z",
+  "sources": [
+    {
+      "generator": {
+        "name": "artman",
+        "version": "0.42.1",
+        "dockerImage": "googleapis/artman@sha256:c773192618c608a7a0415dd95282f841f8e6bcdef7dd760a988c93b77a64bd57"
+      }
+    },
+    {
+      "template": {
+        "name": "java_library",
+        "origin": "synthtool.gcp",
+        "version": "2019.10.17"
+      }
+    }
+  ],
+  "destinations": [
+    {
+      "client": {
+        "source": "googleapis",
+        "apiName": "pubsub",
+        "apiVersion": "v1",
+        "language": "java",
+        "generator": "gapic",
+        "config": "google/pubsub/artman_pubsub.yaml"
+      }
+    }
+  ]
+}

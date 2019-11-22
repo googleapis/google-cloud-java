@@ -1,0 +1,27 @@
+{
+  "extends": [
+    "config:base"
+  ],
+  "ignoreDeps": [],
+  "packageRules": [
+    {
+      "managers": ["maven"],
+      "packageNames": ["com.google.guava:guava*"],
+      "versionScheme": "docker"
+    },
+    {
+      "packagePatterns": ["^io.grpc:grpc-"],
+      "groupName": "gRPC packages"
+    },
+    {
+      "packagePatterns": ["^com.google.protobuf:protobuf-"],
+      "groupName": "Protobuf packages"
+    },
+    {
+      "packagePatterns": ["^io.opencensus:opencensus-"],
+      "groupName": "OpenCensus packages"
+    }
+  ],
+  "semanticCommits": true,
+  "semanticCommitType": "deps"
+}
