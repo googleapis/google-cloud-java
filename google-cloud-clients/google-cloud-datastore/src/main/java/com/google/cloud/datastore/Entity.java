@@ -90,8 +90,13 @@ public final class Entity extends FullEntity<Key> {
     return new Builder().fill(entityPb).build();
   }
 
-  public static int calculateSerializedSize(BaseEntity<? extends IncompleteKey> e) {
-    checkNotNull(e);
-    return e.toPb().getSerializedSize();
+  /**
+   * Returns the serialized protobuf size of provided entity object.
+   *
+   * @param entity entity object to calculate serialize size.
+   */
+  public static int calculateSerializedSize(BaseEntity<? extends IncompleteKey> entity) {
+    checkNotNull(entity);
+    return entity.toPb().getSerializedSize();
   }
 }
