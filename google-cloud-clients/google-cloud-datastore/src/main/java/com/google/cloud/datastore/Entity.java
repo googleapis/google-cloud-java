@@ -89,4 +89,14 @@ public final class Entity extends FullEntity<Key> {
   public static Entity fromPb(com.google.datastore.v1.Entity entityPb) {
     return new Builder().fill(entityPb).build();
   }
+
+  /**
+   * Returns the size in bytes of the protobuf form of the provided entity.
+   *
+   * @param entity object whose size is measured.
+   */
+  public static int calculateSerializedSize(BaseEntity<? extends IncompleteKey> entity) {
+    checkNotNull(entity);
+    return entity.toPb().getSerializedSize();
+  }
 }
