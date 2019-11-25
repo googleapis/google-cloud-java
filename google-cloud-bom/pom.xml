@@ -502,18 +502,10 @@
       </dependency>
       <dependency>
         <groupId>com.google.cloud</groupId>
-        <artifactId>google-cloud-os-login</artifactId>
-        <version>0.116.0-alpha</version>
-      </dependency>
-      <dependency>
-        <groupId>com.google.api.grpc</groupId>
-        <artifactId>proto-google-cloud-os-login-v1</artifactId>
-        <version>0.81.0</version>
-      </dependency>
-      <dependency>
-        <groupId>com.google.api.grpc</groupId>
-        <artifactId>grpc-google-cloud-os-login-v1</artifactId>
-        <version>0.81.0</version>
+        <artifactId>google-cloud-os-login-bom</artifactId>
+        <version>0.117.0-alpha</version>
+        <type>pom</type>
+        <scope>import</scope>
       </dependency>
       <dependency>
         <groupId>com.google.cloud</groupId>
