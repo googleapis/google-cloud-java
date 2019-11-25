@@ -830,8 +830,6 @@
     <module>grpc-google-cloud-firestore-v1</module>
     <module>grpc-google-cloud-firestore-v1beta1</module>
     <module>grpc-google-cloud-pubsub-v1</module>
-    <module>grpc-google-cloud-securitycenter-v1beta1</module>
-    <module>grpc-google-cloud-securitycenter-v1</module>
     <module>grpc-google-cloud-spanner-admin-database-v1</module>
     <module>grpc-google-cloud-spanner-admin-instance-v1</module>
     <module>grpc-google-cloud-spanner-v1</module>
@@ -854,8 +852,6 @@
     <module>proto-google-cloud-firestore-v1</module>
     <module>proto-google-cloud-firestore-v1beta1</module>
     <module>proto-google-cloud-pubsub-v1</module>
-    <module>proto-google-cloud-securitycenter-v1beta1</module>
-    <module>proto-google-cloud-securitycenter-v1</module>
     <module>proto-google-cloud-spanner-admin-database-v1</module>
     <module>proto-google-cloud-spanner-admin-instance-v1</module>
     <module>proto-google-cloud-spanner-v1</module>
