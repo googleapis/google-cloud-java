@@ -397,7 +397,6 @@
     <module>google-cloud-bigquery</module>
     <module>google-cloud-bigquerydatatransfer</module>
     <module>google-cloud-bigquerystorage</module>
-    <module>google-cloud-container</module>
     <module>google-cloud-containeranalysis</module>
     <module>google-cloud-contrib</module>
     <module>google-cloud-dataproc</module>

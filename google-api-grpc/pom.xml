@@ -822,14 +822,10 @@
   </dependencyManagement>
 
   <modules>
-    <module>grpc-google-cloud-asset-v1</module>
-    <module>grpc-google-cloud-asset-v1beta1</module>
-    <module>grpc-google-cloud-asset-v1p2beta1</module>
     <module>grpc-google-cloud-bigquerydatatransfer-v1</module>
     <module>grpc-google-cloud-bigquerystorage-v1beta1</module>
     <module>grpc-google-cloud-bigtable-admin-v2</module>
     <module>grpc-google-cloud-bigtable-v2</module>
-    <module>grpc-google-cloud-container-v1</module>
     <module>grpc-google-cloud-containeranalysis-v1</module>
     <module>grpc-google-cloud-containeranalysis-v1beta1</module>
     <module>grpc-google-cloud-datacatalog-v1beta1</module>
@@ -866,14 +862,10 @@
     <module>grpc-google-cloud-websecurityscanner-v1alpha</module>
     <module>grpc-google-cloud-websecurityscanner-v1beta</module>
 
-    <module>proto-google-cloud-asset-v1</module>
-    <module>proto-google-cloud-asset-v1beta1</module>
-    <module>proto-google-cloud-asset-v1p2beta1</module>
     <module>proto-google-cloud-bigquerydatatransfer-v1</module>
     <module>proto-google-cloud-bigquerystorage-v1beta1</module>
     <module>proto-google-cloud-bigtable-admin-v2</module>
     <module>proto-google-cloud-bigtable-v2</module>
-    <module>proto-google-cloud-container-v1</module>
     <module>proto-google-cloud-containeranalysis-v1</module>
     <module>proto-google-cloud-containeranalysis-v1beta1</module>
     <module>proto-google-cloud-datacatalog-v1beta1</module>
