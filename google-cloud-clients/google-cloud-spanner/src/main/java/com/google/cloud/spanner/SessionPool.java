@@ -573,7 +573,7 @@ final class SessionPool {
     @Override
     public TransactionRunner allowNestedTransaction() {
       runner.allowNestedTransaction();
-      return runner;
+      return this;
     }
   }
 

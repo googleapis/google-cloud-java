@@ -158,7 +158,7 @@
     <!-- make sure to keep gax version in sync with google-cloud-bom -->
     <gax.version>1.49.1</gax.version>
     <api.common.java.version>1.8.1</api.common.java.version>
-    <grpc.version>1.24.1</grpc.version>
+    <grpc.version>1.25.0</grpc.version>
     <google.auth.version>0.18.0</google.auth.version>
     <!-- We are currently using the *-android version to support JDK7. -->
     <guava.version>28.1-android</guava.version>
@@ -392,48 +392,14 @@
     </dependencies>
   </dependencyManagement>
   <modules>
-    <module>google-cloud-asset</module>
     <module>google-cloud-bigquery</module>
     <module>google-cloud-bigquerydatatransfer</module>
     <module>google-cloud-bigquerystorage</module>
-    <module>google-cloud-compute</module>
-    <module>google-cloud-container</module>
-    <module>google-cloud-containeranalysis</module>
     <module>google-cloud-contrib</module>
-    <module>google-cloud-dataproc</module>
-    <module>google-cloud-datacatalog</module>
-    <module>google-cloud-datalabeling</module>
     <module>google-cloud-datastore</module>
-    <module>google-cloud-dlp</module>
-    <module>google-cloud-dialogflow</module>
-    <module>google-cloud-dns</module>
-    <module>google-cloud-errorreporting</module>
-    <module>google-cloud-firestore</module>
-    <module>google-cloud-gameservices</module>
-    <module>google-cloud-iamcredentials</module>
-    <module>google-cloud-iot</module>
-    <module>google-cloud-kms</module>
-    <module>google-cloud-language</module>
-    <module>google-cloud-logging</module>
-    <module>google-cloud-monitoring</module>
-    <module>google-cloud-os-login</module>
-    <module>google-cloud-phishingprotection</module>
     <module>google-cloud-pubsub</module>
-    <module>google-cloud-recaptchaenterprise</module>
-    <module>google-cloud-redis</module>
-    <module>google-cloud-resourcemanager</module>
-    <module>google-cloud-scheduler</module>
-    <module>google-cloud-securitycenter</module>
     <module>google-cloud-spanner</module>
     <module>google-cloud-storage</module>
-    <module>google-cloud-talent</module>
-    <module>google-cloud-tasks</module>
-    <module>google-cloud-texttospeech</module>
-    <module>google-cloud-translate</module>
-    <module>google-cloud-vision</module>
-    <module>google-cloud-video-intelligence</module>
-    <module>google-cloud-webrisk</module>
-    <module>google-cloud-websecurityscanner</module>
     <module>grafeas</module>
   </modules>
   <pluginRepositories>
