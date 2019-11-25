@@ -484,16 +484,6 @@
         <scope>import</scope>
       </dependency>
       <dependency>
-        <groupId>com.google.api.grpc</groupId>
-        <artifactId>proto-google-cloud-monitoring-v3</artifactId>
-        <version>1.80.0</version>
-      </dependency>
-      <dependency>
-        <groupId>com.google.api.grpc</groupId>
-        <artifactId>grpc-google-cloud-monitoring-v3</artifactId>
-        <version>1.80.0</version>
-      </dependency>
-      <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-os-login-bom</artifactId>
         <version>0.117.0-alpha</version>
@@ -661,68 +651,10 @@
       </dependency>
       <dependency>
         <groupId>com.google.cloud</groupId>
-        <artifactId>google-cloud-video-intelligence</artifactId>
-        <version>0.115.0-beta</version>
-      </dependency>
-      <dependency>
-        <groupId>com.google.api.grpc</groupId>
-        <artifactId>proto-google-cloud-video-intelligence-v1beta1</artifactId>
-        <version>0.80.0</version>
-      </dependency>
-      <dependency>
-        <groupId>com.google.api.grpc</groupId>
-        <artifactId>grpc-google-cloud-video-intelligence-v1beta1</artifactId>
-        <version>0.80.0</version>
-      </dependency>
-      <dependency>
-        <groupId>com.google.api.grpc</groupId>
-        <artifactId>proto-google-cloud-video-intelligence-v1beta2</artifactId>
-        <version>0.80.0</version>
-      </dependency>
-      <dependency>
-        <groupId>com.google.api.grpc</groupId>
-        <artifactId>grpc-google-cloud-video-intelligence-v1beta2</artifactId>
-        <version>0.80.0</version>
-      </dependency>
-      <dependency>
-        <groupId>com.google.api.grpc</groupId>
-        <artifactId>proto-google-cloud-video-intelligence-v1</artifactId>
-        <version>0.80.0</version>
-      </dependency>
-      <dependency>
-        <groupId>com.google.api.grpc</groupId>
-        <artifactId>grpc-google-cloud-video-intelligence-v1</artifactId>
-        <version>0.80.0</version>
-      </dependency>
-      <dependency>
-        <groupId>com.google.api.grpc</groupId>
-        <artifactId>proto-google-cloud-video-intelligence-v1p1beta1</artifactId>
-        <version>0.80.0</version>
-      </dependency>
-      <dependency>
-        <groupId>com.google.api.grpc</groupId>
-        <artifactId>grpc-google-cloud-video-intelligence-v1p1beta1</artifactId>
-        <version>0.80.0</version>
-      </dependency>
-      <dependency>
-        <groupId>com.google.api.grpc</groupId>
-        <artifactId>proto-google-cloud-video-intelligence-v1p2beta1</artifactId>
-        <version>0.80.0</version>
-      </dependency>
-      <dependency>
-        <groupId>com.google.api.grpc</groupId>
-        <artifactId>grpc-google-cloud-video-intelligence-v1p2beta1</artifactId>
-        <version>0.80.0</version>
-      </dependency>
-      <dependency>
-        <groupId>com.google.api.grpc</groupId>
-        <artifactId>proto-google-cloud-video-intelligence-v1p3beta1</artifactId>
-        <version>0.80.0</version>
-      </dependency>
-      <dependency>
-        <groupId>com.google.api.grpc</groupId>
-        <artifactId>grpc-google-cloud-video-intelligence-v1p3beta1</artifactId>
-        <version>0.80.0</version>
+        <artifactId>google-cloud-video-intelligence-bom</artifactId>
+        <version>0.116.0-beta</version>
+        <type>pom</type>
+        <scope>import</scope>
       </dependency>
       <dependency>
         <groupId>com.google.cloud</groupId>
