@@ -105,13 +105,16 @@ public abstract class UpdateBuilder<T extends UpdateBuilder> {
    * exists.
    *
    * @param documentReference The DocumentReference to create.
-   * @param fields A map of the fields and values for the document.
+   * @param fields The Map or POJO that will be used to populate the document contents.
    * @return The instance for chaining.
    */
   @Nonnull
-  public T create(
-      @Nonnull DocumentReference documentReference, @Nonnull Map<String, Object> fields) {
-    return performCreate(documentReference, fields);
+  public T create(@Nonnull DocumentReference documentReference, @Nonnull Object fields) {
+    Object data = CustomClassMapper.convertToPlainJavaTypes(fields);
+    if (!(data instanceof Map)) {
+      FirestoreException.invalidState("Can't set a document's data to an array or primitive");
+    }
+    return performCreate(documentReference, (Map<String, Object>) data);
   }
 
   private T performCreate(
@@ -147,32 +150,15 @@ public abstract class UpdateBuilder<T extends UpdateBuilder> {
   }
 
   /**
-   * Creates a new Document at the DocumentReference location. It fails the write if the document
-   * exists.
-   *
-   * @param documentReference The DocumentReference to create.
-   * @param pojo A map of the fields and values for the document.
-   * @return The instance for chaining.
-   */
-  @Nonnull
-  public T create(@Nonnull DocumentReference documentReference, @Nonnull Object pojo) {
-    Object data = CustomClassMapper.convertToPlainJavaTypes(pojo);
-    if (!(data instanceof Map)) {
-      FirestoreException.invalidState("Can't set a document's data to an array or primitive");
-    }
-    return performCreate(documentReference, (Map<String, Object>) data);
-  }
-
-  /**
    * Overwrites the document referred to by this DocumentReference. If the document doesn't exist
    * yet, it will be created. If a document already exists, it will be overwritten.
    *
    * @param documentReference The DocumentReference to overwrite.
-   * @param fields A map of the field paths and values for the document.
+   * @param fields The Map or POJO that will be used to populate the document contents.
    * @return The instance for chaining.
    */
   @Nonnull
-  public T set(@Nonnull DocumentReference documentReference, @Nonnull Map<String, Object> fields) {
+  public T set(@Nonnull DocumentReference documentReference, @Nonnull Object fields) {
     return set(documentReference, fields, SetOptions.OVERWRITE);
   }
 
@@ -182,47 +168,16 @@ public abstract class UpdateBuilder<T extends UpdateBuilder> {
    * an existing document.
    *
    * @param documentReference The DocumentReference to overwrite.
-   * @param fields A map of the field paths and values for the document.
+   * @param fields The Map or POJO that will be used to populate the document contents.
    * @param options An object to configure the set behavior.
    * @return The instance for chaining.
    */
   @Nonnull
   public T set(
       @Nonnull DocumentReference documentReference,
-      @Nonnull Map<String, Object> fields,
+      @Nonnull Object fields,
       @Nonnull SetOptions options) {
-    return performSet(documentReference, fields, options);
-  }
-
-  /**
-   * Overwrites the document referred to by this DocumentReference. If the document doesn't exist
-   * yet, it will be created. If a document already exists, it will be overwritten.
-   *
-   * @param documentReference The DocumentReference to overwrite.
-   * @param pojo The POJO that will be used to populate the document contents.
-   * @return The instance for chaining.
-   */
-  @Nonnull
-  public T set(@Nonnull DocumentReference documentReference, @Nonnull Object pojo) {
-    return set(documentReference, pojo, SetOptions.OVERWRITE);
-  }
-
-  /**
-   * Overwrites the document referred to by this DocumentReference. If the document doesn't exist
-   * yet, it will be created. If you pass {@link SetOptions}, the provided data can be merged into
-   * an existing document.
-   *
-   * @param documentReference The DocumentReference to overwrite.
-   * @param pojo The POJO that will be used to populate the document contents.
-   * @param options An object to configure the set behavior.
-   * @return The instance for chaining.
-   */
-  @Nonnull
-  public T set(
-      @Nonnull DocumentReference documentReference,
-      @Nonnull Object pojo,
-      @Nonnull SetOptions options) {
-    Object data = CustomClassMapper.convertToPlainJavaTypes(pojo);
+    Object data = CustomClassMapper.convertToPlainJavaTypes(fields);
     if (!(data instanceof Map)) {
       throw new IllegalArgumentException("Can't set a document's data to an array or primitive");
     }
@@ -471,8 +426,9 @@ public abstract class UpdateBuilder<T extends UpdateBuilder> {
       @Nonnull FieldPath fieldPath,
       @Nullable Object value,
       Object[] moreFieldsAndValues) {
+    Object data = CustomClassMapper.convertToPlainJavaTypes(value);
     Map<FieldPath, Object> fields = new HashMap<>();
-    fields.put(fieldPath, value);
+    fields.put(fieldPath, data);
 
     Preconditions.checkArgument(
         moreFieldsAndValues.length % 2 == 0, "moreFieldsAndValues must be key-value pairs.");
