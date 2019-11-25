@@ -403,7 +403,6 @@
     <module>google-cloud-pubsub</module>
     <module>google-cloud-spanner</module>
     <module>google-cloud-storage</module>
-    <module>google-cloud-tasks</module>
     <module>google-cloud-texttospeech</module>
     <module>google-cloud-translate</module>
     <module>google-cloud-webrisk</module>

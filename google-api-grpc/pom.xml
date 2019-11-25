@@ -833,9 +833,6 @@
     <module>grpc-google-cloud-spanner-admin-database-v1</module>
     <module>grpc-google-cloud-spanner-admin-instance-v1</module>
     <module>grpc-google-cloud-spanner-v1</module>
-    <module>grpc-google-cloud-tasks-v2</module>
-    <module>grpc-google-cloud-tasks-v2beta2</module>
-    <module>grpc-google-cloud-tasks-v2beta3</module>
     <module>grpc-google-cloud-texttospeech-v1</module>
     <module>grpc-google-cloud-texttospeech-v1beta1</module>
     <module>grpc-google-cloud-translate-v3beta1</module>
@@ -855,9 +852,6 @@
     <module>proto-google-cloud-spanner-admin-database-v1</module>
     <module>proto-google-cloud-spanner-admin-instance-v1</module>
     <module>proto-google-cloud-spanner-v1</module>
-    <module>proto-google-cloud-tasks-v2</module>
-    <module>proto-google-cloud-tasks-v2beta2</module>
-    <module>proto-google-cloud-tasks-v2beta3</module>
     <module>proto-google-cloud-texttospeech-v1</module>
     <module>proto-google-cloud-texttospeech-v1beta1</module>
     <module>proto-google-cloud-translate-v3beta1</module>
