@@ -400,7 +400,6 @@
     <module>google-cloud-contrib</module>
     <module>google-cloud-datastore</module>
     <module>google-cloud-firestore</module>
-    <module>google-cloud-phishingprotection</module>
     <module>google-cloud-pubsub</module>
     <module>google-cloud-recaptchaenterprise</module>
     <module>google-cloud-redis</module>
