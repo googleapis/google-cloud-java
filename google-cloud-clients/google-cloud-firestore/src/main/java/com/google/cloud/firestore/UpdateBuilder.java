@@ -105,7 +105,7 @@ public abstract class UpdateBuilder<T extends UpdateBuilder> {
    * exists.
    *
    * @param documentReference The DocumentReference to create.
-   * @param fields A map of the fields and values for the document.
+   * @param fields The Map or POJO that will be used to populate the document contents.
    * @return The instance for chaining.
    */
   @Nonnull
@@ -154,7 +154,7 @@ public abstract class UpdateBuilder<T extends UpdateBuilder> {
    * yet, it will be created. If a document already exists, it will be overwritten.
    *
    * @param documentReference The DocumentReference to overwrite.
-   * @param fields The (Map or POJO) that will be used to populate the document contents.
+   * @param fields The Map or POJO that will be used to populate the document contents.
    * @return The instance for chaining.
    */
   @Nonnull
@@ -168,7 +168,7 @@ public abstract class UpdateBuilder<T extends UpdateBuilder> {
    * an existing document.
    *
    * @param documentReference The DocumentReference to overwrite.
-   * @param fields The (Map or POJO) that will be used to populate the document contents.
+   * @param fields The Map or POJO that will be used to populate the document contents.
    * @param options An object to configure the set behavior.
    * @return The instance for chaining.
    */
@@ -297,14 +297,11 @@ public abstract class UpdateBuilder<T extends UpdateBuilder> {
    * @return The instance for chaining.
    */
   @Nonnull
-  public T update(@Nonnull DocumentReference documentReference, @Nonnull Object fields) {
-    Object data = CustomClassMapper.convertToPlainJavaTypes(fields);
-    if (!(data instanceof Map)) {
-      throw new IllegalArgumentException("Can't set a document's data to an array or primitive");
-    }
+  public T update(
+      @Nonnull DocumentReference documentReference, @Nonnull Map<String, Object> fields) {
     return performUpdate(
         documentReference,
-        convertToFieldPaths((Map<String, Object>) data, /* splitOnDots= */ true),
+        convertToFieldPaths(fields, /* splitOnDots= */ true),
         Precondition.exists(true));
   }
 
@@ -319,17 +316,13 @@ public abstract class UpdateBuilder<T extends UpdateBuilder> {
    */
   @Nonnull
   public T update(
-      @Nonnull DocumentReference documentReference, @Nonnull Object fields, Precondition options) {
+      @Nonnull DocumentReference documentReference,
+      @Nonnull Map<String, Object> fields,
+      Precondition options) {
     Preconditions.checkArgument(
         !options.hasExists(), "Precondition 'exists' cannot be specified for update() calls.");
-    Object data = CustomClassMapper.convertToPlainJavaTypes(fields);
-    if (!(data instanceof Map)) {
-      throw new IllegalArgumentException("Can't set a document's data to an array or primitive");
-    }
     return performUpdate(
-        documentReference,
-        convertToFieldPaths((Map<String, Object>) data, /* splitOnDots= */ true),
-        options);
+        documentReference, convertToFieldPaths(fields, /* splitOnDots= */ true), options);
   }
 
   /**

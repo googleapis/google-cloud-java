@@ -170,7 +170,7 @@ public class CollectionReference extends Query {
    * Adds a new document to this collection with the specified data, assigning it a document ID
    * automatically.
    *
-   * @param fields A Map or a POJO containing the data for the new document.
+   * @param fields The Map or POJO containing the data for the new document.
    * @return An ApiFuture that will be resolved with the DocumentReference of the newly created
    *     document.
    * @see #document()

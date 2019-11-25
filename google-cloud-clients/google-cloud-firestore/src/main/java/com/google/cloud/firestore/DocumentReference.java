@@ -26,6 +26,7 @@ import com.google.common.util.concurrent.MoreExecutors;
 import com.google.firestore.v1.ListCollectionIdsRequest;
 import java.util.Iterator;
 import java.util.List;
+import java.util.Map;
 import java.util.Objects;
 import java.util.concurrent.Executor;
 import javax.annotation.Nonnull;
@@ -138,7 +139,7 @@ public class DocumentReference {
    * Creates a new Document at the DocumentReference location. It fails the write if the document
    * exists.
    *
-   * @param pojo A map of the fields and values for the document.
+   * @param pojo The Map or POJO that will be used to populate the document contents.
    * @return An ApiFuture that will be resolved when the write finishes.
    */
   @Nonnull
@@ -166,7 +167,7 @@ public class DocumentReference {
    * exist, it will be created. If you pass {@link SetOptions}, the provided data can be merged into
    * an existing document.
    *
-   * @param fields The fields to write to the document (e.g. a Map or a POJO containing the desired
+   * @param fields The fields to write on the document (e.g. a Map or a POJO containing the desired
    *     document contents).
    * @param options An object to configure the set behavior.
    * @return An ApiFuture that will be resolved when the write finishes.
@@ -185,7 +186,7 @@ public class DocumentReference {
    * @return An ApiFuture that will be resolved when the write finishes.
    */
   @Nonnull
-  public ApiFuture<WriteResult> update(@Nonnull Object fields) {
+  public ApiFuture<WriteResult> update(@Nonnull Map<String, Object> fields) {
     WriteBatch writeBatch = firestore.batch();
     return extractFirst(writeBatch.update(this, fields).commit());
   }
@@ -199,7 +200,7 @@ public class DocumentReference {
    * @return An ApiFuture that will be resolved when the write finishes.
    */
   @Nonnull
-  public ApiFuture<WriteResult> update(@Nonnull Object fields, Precondition options) {
+  public ApiFuture<WriteResult> update(@Nonnull Map<String, Object> fields, Precondition options) {
     WriteBatch writeBatch = firestore.batch();
     return extractFirst(writeBatch.update(this, fields, options).commit());
   }
