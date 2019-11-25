@@ -403,7 +403,6 @@
     <module>google-cloud-pubsub</module>
     <module>google-cloud-spanner</module>
     <module>google-cloud-storage</module>
-    <module>google-cloud-translate</module>
     <module>google-cloud-webrisk</module>
     <module>google-cloud-websecurityscanner</module>
     <module>grafeas</module>

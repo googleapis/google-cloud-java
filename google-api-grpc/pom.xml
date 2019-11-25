@@ -833,7 +833,6 @@
     <module>grpc-google-cloud-spanner-admin-database-v1</module>
     <module>grpc-google-cloud-spanner-admin-instance-v1</module>
     <module>grpc-google-cloud-spanner-v1</module>
-    <module>grpc-google-cloud-translate-v3beta1</module>
     <module>grpc-google-cloud-webrisk-v1beta1</module>
     <module>grpc-google-cloud-websecurityscanner-v1alpha</module>
     <module>grpc-google-cloud-websecurityscanner-v1beta</module>
@@ -850,7 +849,6 @@
     <module>proto-google-cloud-spanner-admin-database-v1</module>
     <module>proto-google-cloud-spanner-admin-instance-v1</module>
     <module>proto-google-cloud-spanner-v1</module>
-    <module>proto-google-cloud-translate-v3beta1</module>
     <module>proto-google-cloud-webrisk-v1beta1</module>
     <module>proto-google-cloud-websecurityscanner-v1alpha</module>
     <module>proto-google-cloud-websecurityscanner-v1beta</module>
