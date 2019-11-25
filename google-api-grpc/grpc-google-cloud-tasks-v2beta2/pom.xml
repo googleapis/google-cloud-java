@@ -9,7 +9,7 @@
   <parent>
     <groupId>com.google.api.grpc</groupId>
     <artifactId>google-api-grpc</artifactId>
-    <version>0.83.1-SNAPSHOT</version><!-- {x-version-update:google-api-grpc:current} -->
+    <version>0.84.1-SNAPSHOT</version><!-- {x-version-update:google-api-grpc:current} -->
   </parent>
   <dependencies>
     <dependency>

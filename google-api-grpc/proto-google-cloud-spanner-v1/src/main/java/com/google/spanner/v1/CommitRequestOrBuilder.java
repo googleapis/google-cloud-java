@@ -15,7 +15,9 @@ public interface CommitRequestOrBuilder
    * Required. The session in which the transaction to be committed is running.
    * </pre>
    *
-   * <code>string session = 1;</code>
+   * <code>
+   * string session = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    */
   java.lang.String getSession();
   /**
@@ -25,7 +27,9 @@ public interface CommitRequestOrBuilder
    * Required. The session in which the transaction to be committed is running.
    * </pre>
    *
-   * <code>string session = 1;</code>
+   * <code>
+   * string session = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    */
   com.google.protobuf.ByteString getSessionBytes();
 

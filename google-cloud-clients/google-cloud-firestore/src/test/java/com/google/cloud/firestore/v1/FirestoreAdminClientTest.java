@@ -51,6 +51,7 @@ import io.grpc.StatusRuntimeException;
 import java.io.IOException;
 import java.util.Arrays;
 import java.util.List;
+import java.util.UUID;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Assert;
@@ -69,7 +70,8 @@ public class FirestoreAdminClientTest {
   public static void startStaticServer() {
     mockFirestoreAdmin = new MockFirestoreAdmin();
     serviceHelper =
-        new MockServiceHelper("in-process-1", Arrays.<MockGrpcService>asList(mockFirestoreAdmin));
+        new MockServiceHelper(
+            UUID.randomUUID().toString(), Arrays.<MockGrpcService>asList(mockFirestoreAdmin));
     serviceHelper.start();
   }
 

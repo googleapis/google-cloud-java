@@ -7,8 +7,7 @@ package com.google.spanner.v1;
  *
  *
  * <pre>
- * Additional statistics about a [ResultSet][google.spanner.v1.ResultSet] or
- * [PartialResultSet][google.spanner.v1.PartialResultSet].
+ * Additional statistics about a [ResultSet][google.spanner.v1.ResultSet] or [PartialResultSet][google.spanner.v1.PartialResultSet].
  * </pre>
  *
  * Protobuf type {@code google.spanner.v1.ResultSetStats}
@@ -171,8 +170,7 @@ public final class ResultSetStats extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [QueryPlan][google.spanner.v1.QueryPlan] for the query associated with this
-   * result.
+   * [QueryPlan][google.spanner.v1.QueryPlan] for the query associated with this result.
    * </pre>
    *
    * <code>.google.spanner.v1.QueryPlan query_plan = 1;</code>
@@ -184,8 +182,7 @@ public final class ResultSetStats extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [QueryPlan][google.spanner.v1.QueryPlan] for the query associated with this
-   * result.
+   * [QueryPlan][google.spanner.v1.QueryPlan] for the query associated with this result.
    * </pre>
    *
    * <code>.google.spanner.v1.QueryPlan query_plan = 1;</code>
@@ -197,8 +194,7 @@ public final class ResultSetStats extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [QueryPlan][google.spanner.v1.QueryPlan] for the query associated with this
-   * result.
+   * [QueryPlan][google.spanner.v1.QueryPlan] for the query associated with this result.
    * </pre>
    *
    * <code>.google.spanner.v1.QueryPlan query_plan = 1;</code>
@@ -521,8 +517,7 @@ public final class ResultSetStats extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Additional statistics about a [ResultSet][google.spanner.v1.ResultSet] or
-   * [PartialResultSet][google.spanner.v1.PartialResultSet].
+   * Additional statistics about a [ResultSet][google.spanner.v1.ResultSet] or [PartialResultSet][google.spanner.v1.PartialResultSet].
    * </pre>
    *
    * Protobuf type {@code google.spanner.v1.ResultSetStats}
@@ -744,8 +739,7 @@ public final class ResultSetStats extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [QueryPlan][google.spanner.v1.QueryPlan] for the query associated with this
-     * result.
+     * [QueryPlan][google.spanner.v1.QueryPlan] for the query associated with this result.
      * </pre>
      *
      * <code>.google.spanner.v1.QueryPlan query_plan = 1;</code>
@@ -757,8 +751,7 @@ public final class ResultSetStats extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [QueryPlan][google.spanner.v1.QueryPlan] for the query associated with this
-     * result.
+     * [QueryPlan][google.spanner.v1.QueryPlan] for the query associated with this result.
      * </pre>
      *
      * <code>.google.spanner.v1.QueryPlan query_plan = 1;</code>
@@ -776,8 +769,7 @@ public final class ResultSetStats extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [QueryPlan][google.spanner.v1.QueryPlan] for the query associated with this
-     * result.
+     * [QueryPlan][google.spanner.v1.QueryPlan] for the query associated with this result.
      * </pre>
      *
      * <code>.google.spanner.v1.QueryPlan query_plan = 1;</code>
@@ -799,8 +791,7 @@ public final class ResultSetStats extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [QueryPlan][google.spanner.v1.QueryPlan] for the query associated with this
-     * result.
+     * [QueryPlan][google.spanner.v1.QueryPlan] for the query associated with this result.
      * </pre>
      *
      * <code>.google.spanner.v1.QueryPlan query_plan = 1;</code>
@@ -819,8 +810,7 @@ public final class ResultSetStats extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [QueryPlan][google.spanner.v1.QueryPlan] for the query associated with this
-     * result.
+     * [QueryPlan][google.spanner.v1.QueryPlan] for the query associated with this result.
      * </pre>
      *
      * <code>.google.spanner.v1.QueryPlan query_plan = 1;</code>
@@ -846,8 +836,7 @@ public final class ResultSetStats extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [QueryPlan][google.spanner.v1.QueryPlan] for the query associated with this
-     * result.
+     * [QueryPlan][google.spanner.v1.QueryPlan] for the query associated with this result.
      * </pre>
      *
      * <code>.google.spanner.v1.QueryPlan query_plan = 1;</code>
@@ -867,8 +856,7 @@ public final class ResultSetStats extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [QueryPlan][google.spanner.v1.QueryPlan] for the query associated with this
-     * result.
+     * [QueryPlan][google.spanner.v1.QueryPlan] for the query associated with this result.
      * </pre>
      *
      * <code>.google.spanner.v1.QueryPlan query_plan = 1;</code>
@@ -882,8 +870,7 @@ public final class ResultSetStats extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [QueryPlan][google.spanner.v1.QueryPlan] for the query associated with this
-     * result.
+     * [QueryPlan][google.spanner.v1.QueryPlan] for the query associated with this result.
      * </pre>
      *
      * <code>.google.spanner.v1.QueryPlan query_plan = 1;</code>
@@ -901,8 +888,7 @@ public final class ResultSetStats extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [QueryPlan][google.spanner.v1.QueryPlan] for the query associated with this
-     * result.
+     * [QueryPlan][google.spanner.v1.QueryPlan] for the query associated with this result.
      * </pre>
      *
      * <code>.google.spanner.v1.QueryPlan query_plan = 1;</code>

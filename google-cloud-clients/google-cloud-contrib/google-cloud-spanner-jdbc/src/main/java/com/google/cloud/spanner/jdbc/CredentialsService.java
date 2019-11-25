@@ -20,23 +20,17 @@ import com.google.auth.oauth2.GoogleCredentials;
 import com.google.cloud.spanner.ErrorCode;
 import com.google.cloud.spanner.SpannerException;
 import com.google.cloud.spanner.SpannerExceptionFactory;
-import com.google.cloud.storage.Blob;
-import com.google.cloud.storage.Storage;
-import com.google.cloud.storage.StorageOptions;
 import com.google.common.annotations.VisibleForTesting;
 import com.google.common.base.Preconditions;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
-import java.nio.channels.Channels;
 
-/** Service class for getting credentials from key files stored locally or on cloud storage. */
+/** Service class for getting credentials from key files. */
 class CredentialsService {
-  private static final String GOOGLE_CLOUD_STORAGE_PREFIX = "gs://";
-  private static final String INVALID_GCS_PREFIX_MSG =
-      String.format("Storage URL must start with %s", GOOGLE_CLOUD_STORAGE_PREFIX);
-
+  static final String GCS_NOT_SUPPORTED_MSG =
+      "Credentials that is stored on Google Cloud Storage is no longer supported. Download the credentials to a local file and reference the local file in the connection URL.";
   static final CredentialsService INSTANCE = new CredentialsService();
 
   CredentialsService() {}
@@ -75,8 +69,8 @@ class CredentialsService {
     Preconditions.checkNotNull(credentialsUrl);
     Preconditions.checkArgument(
         credentialsUrl.length() > 0, "credentialsUrl may not be an empty string");
-    if (credentialsUrl.startsWith(GOOGLE_CLOUD_STORAGE_PREFIX)) {
-      return getCredentialsFromCloudStorage(credentialsUrl);
+    if (credentialsUrl.startsWith("gs://")) {
+      throw new IOException(GCS_NOT_SUPPORTED_MSG);
     } else {
       return getCredentialsFromLocalFile(credentialsUrl);
     }
@@ -91,54 +85,5 @@ class CredentialsService {
     try (InputStream credentialsStream = new FileInputStream(credentialsFile)) {
       return GoogleCredentials.fromStream(credentialsStream);
     }
-  }
-
-  private GoogleCredentials getCredentialsFromCloudStorage(String credentialsUrl)
-      throws IOException {
-    Preconditions.checkArgument(credentialsUrl.startsWith(GOOGLE_CLOUD_STORAGE_PREFIX));
-    try {
-      Storage storage = internalCreateStorage();
-      String bucketName = internalGetBucket(credentialsUrl);
-      String blobName = internalGetBlob(credentialsUrl);
-      Blob blob = storage.get(bucketName, blobName);
-      return GoogleCredentials.fromStream(internalCreateInputStream(blob));
-    } catch (Exception e) {
-      throw new IOException(
-          String.format(
-              "Could not retrieve credentials from %s. "
-                  + "Credentials on Google Cloud Storage can only be used when the application is running "
-                  + "in an environment that already has default credentials to access Google Cloud Storage",
-              credentialsUrl),
-          e);
-    }
-  }
-
-  @VisibleForTesting
-  Storage internalCreateStorage() {
-    return StorageOptions.newBuilder().build().getService();
-  }
-
-  @VisibleForTesting
-  InputStream internalCreateInputStream(Blob blob) {
-    return Channels.newInputStream(blob.reader());
-  }
-
-  @VisibleForTesting
-  String internalGetBucket(String storageUrl) {
-    Preconditions.checkArgument(
-        storageUrl.startsWith(GOOGLE_CLOUD_STORAGE_PREFIX), INVALID_GCS_PREFIX_MSG);
-    Preconditions.checkArgument(
-        storageUrl.substring(5).contains("/"), "Storage URL must contain a blob name");
-    return storageUrl.substring(5, storageUrl.indexOf('/', 5));
-  }
-
-  @VisibleForTesting
-  String internalGetBlob(String storageUrl) {
-    Preconditions.checkArgument(
-        storageUrl.startsWith(GOOGLE_CLOUD_STORAGE_PREFIX),
-        String.format("Storage URL must start with %s", GOOGLE_CLOUD_STORAGE_PREFIX));
-    Preconditions.checkArgument(
-        storageUrl.substring(5).contains("/"), "Storage URL must contain a blob name");
-    return storageUrl.substring(storageUrl.indexOf('/', 5) + 1);
   }
 }

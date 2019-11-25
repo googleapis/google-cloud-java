@@ -12,14 +12,14 @@ public interface ExecuteBatchDmlResponseOrBuilder
    *
    *
    * <pre>
-   * ResultSets, one for each statement in the request that ran successfully, in
-   * the same order as the statements in the request. Each
-   * [ResultSet][google.spanner.v1.ResultSet] will not contain any rows. The
-   * [ResultSetStats][google.spanner.v1.ResultSetStats] in each
-   * [ResultSet][google.spanner.v1.ResultSet] will contain the number of rows
+   * One [ResultSet][google.spanner.v1.ResultSet] for each statement in the
+   * request that ran successfully, in the same order as the statements in the
+   * request. Each [ResultSet][google.spanner.v1.ResultSet] does not contain any
+   * rows. The [ResultSetStats][google.spanner.v1.ResultSetStats] in each
+   * [ResultSet][google.spanner.v1.ResultSet] contain the number of rows
    * modified by the statement.
-   * Only the first ResultSet in the response contains a valid
-   * [ResultSetMetadata][google.spanner.v1.ResultSetMetadata].
+   * Only the first [ResultSet][google.spanner.v1.ResultSet] in the response
+   * contains valid [ResultSetMetadata][google.spanner.v1.ResultSetMetadata].
    * </pre>
    *
    * <code>repeated .google.spanner.v1.ResultSet result_sets = 1;</code>
@@ -29,14 +29,14 @@ public interface ExecuteBatchDmlResponseOrBuilder
    *
    *
    * <pre>
-   * ResultSets, one for each statement in the request that ran successfully, in
-   * the same order as the statements in the request. Each
-   * [ResultSet][google.spanner.v1.ResultSet] will not contain any rows. The
-   * [ResultSetStats][google.spanner.v1.ResultSetStats] in each
-   * [ResultSet][google.spanner.v1.ResultSet] will contain the number of rows
+   * One [ResultSet][google.spanner.v1.ResultSet] for each statement in the
+   * request that ran successfully, in the same order as the statements in the
+   * request. Each [ResultSet][google.spanner.v1.ResultSet] does not contain any
+   * rows. The [ResultSetStats][google.spanner.v1.ResultSetStats] in each
+   * [ResultSet][google.spanner.v1.ResultSet] contain the number of rows
    * modified by the statement.
-   * Only the first ResultSet in the response contains a valid
-   * [ResultSetMetadata][google.spanner.v1.ResultSetMetadata].
+   * Only the first [ResultSet][google.spanner.v1.ResultSet] in the response
+   * contains valid [ResultSetMetadata][google.spanner.v1.ResultSetMetadata].
    * </pre>
    *
    * <code>repeated .google.spanner.v1.ResultSet result_sets = 1;</code>
@@ -46,14 +46,14 @@ public interface ExecuteBatchDmlResponseOrBuilder
    *
    *
    * <pre>
-   * ResultSets, one for each statement in the request that ran successfully, in
-   * the same order as the statements in the request. Each
-   * [ResultSet][google.spanner.v1.ResultSet] will not contain any rows. The
-   * [ResultSetStats][google.spanner.v1.ResultSetStats] in each
-   * [ResultSet][google.spanner.v1.ResultSet] will contain the number of rows
+   * One [ResultSet][google.spanner.v1.ResultSet] for each statement in the
+   * request that ran successfully, in the same order as the statements in the
+   * request. Each [ResultSet][google.spanner.v1.ResultSet] does not contain any
+   * rows. The [ResultSetStats][google.spanner.v1.ResultSetStats] in each
+   * [ResultSet][google.spanner.v1.ResultSet] contain the number of rows
    * modified by the statement.
-   * Only the first ResultSet in the response contains a valid
-   * [ResultSetMetadata][google.spanner.v1.ResultSetMetadata].
+   * Only the first [ResultSet][google.spanner.v1.ResultSet] in the response
+   * contains valid [ResultSetMetadata][google.spanner.v1.ResultSetMetadata].
    * </pre>
    *
    * <code>repeated .google.spanner.v1.ResultSet result_sets = 1;</code>
@@ -63,14 +63,14 @@ public interface ExecuteBatchDmlResponseOrBuilder
    *
    *
    * <pre>
-   * ResultSets, one for each statement in the request that ran successfully, in
-   * the same order as the statements in the request. Each
-   * [ResultSet][google.spanner.v1.ResultSet] will not contain any rows. The
-   * [ResultSetStats][google.spanner.v1.ResultSetStats] in each
-   * [ResultSet][google.spanner.v1.ResultSet] will contain the number of rows
+   * One [ResultSet][google.spanner.v1.ResultSet] for each statement in the
+   * request that ran successfully, in the same order as the statements in the
+   * request. Each [ResultSet][google.spanner.v1.ResultSet] does not contain any
+   * rows. The [ResultSetStats][google.spanner.v1.ResultSetStats] in each
+   * [ResultSet][google.spanner.v1.ResultSet] contain the number of rows
    * modified by the statement.
-   * Only the first ResultSet in the response contains a valid
-   * [ResultSetMetadata][google.spanner.v1.ResultSetMetadata].
+   * Only the first [ResultSet][google.spanner.v1.ResultSet] in the response
+   * contains valid [ResultSetMetadata][google.spanner.v1.ResultSetMetadata].
    * </pre>
    *
    * <code>repeated .google.spanner.v1.ResultSet result_sets = 1;</code>
@@ -80,14 +80,14 @@ public interface ExecuteBatchDmlResponseOrBuilder
    *
    *
    * <pre>
-   * ResultSets, one for each statement in the request that ran successfully, in
-   * the same order as the statements in the request. Each
-   * [ResultSet][google.spanner.v1.ResultSet] will not contain any rows. The
-   * [ResultSetStats][google.spanner.v1.ResultSetStats] in each
-   * [ResultSet][google.spanner.v1.ResultSet] will contain the number of rows
+   * One [ResultSet][google.spanner.v1.ResultSet] for each statement in the
+   * request that ran successfully, in the same order as the statements in the
+   * request. Each [ResultSet][google.spanner.v1.ResultSet] does not contain any
+   * rows. The [ResultSetStats][google.spanner.v1.ResultSetStats] in each
+   * [ResultSet][google.spanner.v1.ResultSet] contain the number of rows
    * modified by the statement.
-   * Only the first ResultSet in the response contains a valid
-   * [ResultSetMetadata][google.spanner.v1.ResultSetMetadata].
+   * Only the first [ResultSet][google.spanner.v1.ResultSet] in the response
+   * contains valid [ResultSetMetadata][google.spanner.v1.ResultSetMetadata].
    * </pre>
    *
    * <code>repeated .google.spanner.v1.ResultSet result_sets = 1;</code>
@@ -98,7 +98,7 @@ public interface ExecuteBatchDmlResponseOrBuilder
    *
    *
    * <pre>
-   * If all DML statements are executed successfully, status will be OK.
+   * If all DML statements are executed successfully, the status is `OK`.
    * Otherwise, the error status of the first failed statement.
    * </pre>
    *
@@ -109,7 +109,7 @@ public interface ExecuteBatchDmlResponseOrBuilder
    *
    *
    * <pre>
-   * If all DML statements are executed successfully, status will be OK.
+   * If all DML statements are executed successfully, the status is `OK`.
    * Otherwise, the error status of the first failed statement.
    * </pre>
    *
@@ -120,7 +120,7 @@ public interface ExecuteBatchDmlResponseOrBuilder
    *
    *
    * <pre>
-   * If all DML statements are executed successfully, status will be OK.
+   * If all DML statements are executed successfully, the status is `OK`.
    * Otherwise, the error status of the first failed statement.
    * </pre>
    *

@@ -16,7 +16,9 @@ public interface CreateInstanceRequestOrBuilder
    * are of the form `projects/&lt;project&gt;`.
    * </pre>
    *
-   * <code>string parent = 1;</code>
+   * <code>
+   * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    */
   java.lang.String getParent();
   /**
@@ -27,7 +29,9 @@ public interface CreateInstanceRequestOrBuilder
    * are of the form `projects/&lt;project&gt;`.
    * </pre>
    *
-   * <code>string parent = 1;</code>
+   * <code>
+   * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    */
   com.google.protobuf.ByteString getParentBytes();
 
@@ -36,11 +40,11 @@ public interface CreateInstanceRequestOrBuilder
    *
    * <pre>
    * Required. The ID of the instance to create.  Valid identifiers are of the
-   * form `[a-z][-a-z0-9]*[a-z0-9]` and must be between 6 and 30 characters in
+   * form `[a-z][-a-z0-9]*[a-z0-9]` and must be between 2 and 64 characters in
    * length.
    * </pre>
    *
-   * <code>string instance_id = 2;</code>
+   * <code>string instance_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   java.lang.String getInstanceId();
   /**
@@ -48,11 +52,11 @@ public interface CreateInstanceRequestOrBuilder
    *
    * <pre>
    * Required. The ID of the instance to create.  Valid identifiers are of the
-   * form `[a-z][-a-z0-9]*[a-z0-9]` and must be between 6 and 30 characters in
+   * form `[a-z][-a-z0-9]*[a-z0-9]` and must be between 2 and 64 characters in
    * length.
    * </pre>
    *
-   * <code>string instance_id = 2;</code>
+   * <code>string instance_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   com.google.protobuf.ByteString getInstanceIdBytes();
 
@@ -64,7 +68,9 @@ public interface CreateInstanceRequestOrBuilder
    * specified must be `&lt;parent&gt;/instances/&lt;instance_id&gt;`.
    * </pre>
    *
-   * <code>.google.spanner.admin.instance.v1.Instance instance = 3;</code>
+   * <code>
+   * .google.spanner.admin.instance.v1.Instance instance = 3 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   boolean hasInstance();
   /**
@@ -75,7 +81,9 @@ public interface CreateInstanceRequestOrBuilder
    * specified must be `&lt;parent&gt;/instances/&lt;instance_id&gt;`.
    * </pre>
    *
-   * <code>.google.spanner.admin.instance.v1.Instance instance = 3;</code>
+   * <code>
+   * .google.spanner.admin.instance.v1.Instance instance = 3 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   com.google.spanner.admin.instance.v1.Instance getInstance();
   /**
@@ -86,7 +94,9 @@ public interface CreateInstanceRequestOrBuilder
    * specified must be `&lt;parent&gt;/instances/&lt;instance_id&gt;`.
    * </pre>
    *
-   * <code>.google.spanner.admin.instance.v1.Instance instance = 3;</code>
+   * <code>
+   * .google.spanner.admin.instance.v1.Instance instance = 3 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   com.google.spanner.admin.instance.v1.InstanceOrBuilder getInstanceOrBuilder();
 }

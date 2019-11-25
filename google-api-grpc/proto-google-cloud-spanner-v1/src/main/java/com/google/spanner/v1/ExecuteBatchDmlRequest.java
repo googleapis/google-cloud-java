@@ -7,7 +7,7 @@ package com.google.spanner.v1;
  *
  *
  * <pre>
- * The request for [ExecuteBatchDml][google.spanner.v1.Spanner.ExecuteBatchDml]
+ * The request for [ExecuteBatchDml][google.spanner.v1.Spanner.ExecuteBatchDml].
  * </pre>
  *
  * Protobuf type {@code google.spanner.v1.ExecuteBatchDmlRequest}
@@ -160,17 +160,14 @@ public final class ExecuteBatchDmlRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * The DML string can contain parameter placeholders. A parameter
-     * placeholder consists of `'&#64;'` followed by the parameter
-     * name. Parameter names consist of any combination of letters,
-     * numbers, and underscores.
+     * Parameter names and values that bind to placeholders in the DML string.
+     * A parameter placeholder consists of the `&#64;` character followed by the
+     * parameter name (for example, `&#64;firstName`). Parameter names can contain
+     * letters, numbers, and underscores.
      * Parameters can appear anywhere that a literal value is expected.  The
      * same parameter name can be used more than once, for example:
-     *   `"WHERE id &gt; &#64;msg_id AND id &lt; &#64;msg_id + 100"`
-     * It is an error to execute an SQL statement with unbound parameters.
-     * Parameter values are specified using `params`, which is a JSON
-     * object whose keys are parameter names, and whose values are the
-     * corresponding parameter values.
+     * `"WHERE id &gt; &#64;msg_id AND id &lt; &#64;msg_id + 100"`
+     * It is an error to execute a SQL statement with unbound parameters.
      * </pre>
      *
      * <code>.google.protobuf.Struct params = 2;</code>
@@ -180,17 +177,14 @@ public final class ExecuteBatchDmlRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * The DML string can contain parameter placeholders. A parameter
-     * placeholder consists of `'&#64;'` followed by the parameter
-     * name. Parameter names consist of any combination of letters,
-     * numbers, and underscores.
+     * Parameter names and values that bind to placeholders in the DML string.
+     * A parameter placeholder consists of the `&#64;` character followed by the
+     * parameter name (for example, `&#64;firstName`). Parameter names can contain
+     * letters, numbers, and underscores.
      * Parameters can appear anywhere that a literal value is expected.  The
      * same parameter name can be used more than once, for example:
-     *   `"WHERE id &gt; &#64;msg_id AND id &lt; &#64;msg_id + 100"`
-     * It is an error to execute an SQL statement with unbound parameters.
-     * Parameter values are specified using `params`, which is a JSON
-     * object whose keys are parameter names, and whose values are the
-     * corresponding parameter values.
+     * `"WHERE id &gt; &#64;msg_id AND id &lt; &#64;msg_id + 100"`
+     * It is an error to execute a SQL statement with unbound parameters.
      * </pre>
      *
      * <code>.google.protobuf.Struct params = 2;</code>
@@ -200,17 +194,14 @@ public final class ExecuteBatchDmlRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * The DML string can contain parameter placeholders. A parameter
-     * placeholder consists of `'&#64;'` followed by the parameter
-     * name. Parameter names consist of any combination of letters,
-     * numbers, and underscores.
+     * Parameter names and values that bind to placeholders in the DML string.
+     * A parameter placeholder consists of the `&#64;` character followed by the
+     * parameter name (for example, `&#64;firstName`). Parameter names can contain
+     * letters, numbers, and underscores.
      * Parameters can appear anywhere that a literal value is expected.  The
      * same parameter name can be used more than once, for example:
-     *   `"WHERE id &gt; &#64;msg_id AND id &lt; &#64;msg_id + 100"`
-     * It is an error to execute an SQL statement with unbound parameters.
-     * Parameter values are specified using `params`, which is a JSON
-     * object whose keys are parameter names, and whose values are the
-     * corresponding parameter values.
+     * `"WHERE id &gt; &#64;msg_id AND id &lt; &#64;msg_id + 100"`
+     * It is an error to execute a SQL statement with unbound parameters.
      * </pre>
      *
      * <code>.google.protobuf.Struct params = 2;</code>
@@ -491,17 +482,14 @@ public final class ExecuteBatchDmlRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * The DML string can contain parameter placeholders. A parameter
-     * placeholder consists of `'&#64;'` followed by the parameter
-     * name. Parameter names consist of any combination of letters,
-     * numbers, and underscores.
+     * Parameter names and values that bind to placeholders in the DML string.
+     * A parameter placeholder consists of the `&#64;` character followed by the
+     * parameter name (for example, `&#64;firstName`). Parameter names can contain
+     * letters, numbers, and underscores.
      * Parameters can appear anywhere that a literal value is expected.  The
      * same parameter name can be used more than once, for example:
-     *   `"WHERE id &gt; &#64;msg_id AND id &lt; &#64;msg_id + 100"`
-     * It is an error to execute an SQL statement with unbound parameters.
-     * Parameter values are specified using `params`, which is a JSON
-     * object whose keys are parameter names, and whose values are the
-     * corresponding parameter values.
+     * `"WHERE id &gt; &#64;msg_id AND id &lt; &#64;msg_id + 100"`
+     * It is an error to execute a SQL statement with unbound parameters.
      * </pre>
      *
      * <code>.google.protobuf.Struct params = 2;</code>
@@ -513,17 +501,14 @@ public final class ExecuteBatchDmlRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * The DML string can contain parameter placeholders. A parameter
-     * placeholder consists of `'&#64;'` followed by the parameter
-     * name. Parameter names consist of any combination of letters,
-     * numbers, and underscores.
+     * Parameter names and values that bind to placeholders in the DML string.
+     * A parameter placeholder consists of the `&#64;` character followed by the
+     * parameter name (for example, `&#64;firstName`). Parameter names can contain
+     * letters, numbers, and underscores.
      * Parameters can appear anywhere that a literal value is expected.  The
      * same parameter name can be used more than once, for example:
-     *   `"WHERE id &gt; &#64;msg_id AND id &lt; &#64;msg_id + 100"`
-     * It is an error to execute an SQL statement with unbound parameters.
-     * Parameter values are specified using `params`, which is a JSON
-     * object whose keys are parameter names, and whose values are the
-     * corresponding parameter values.
+     * `"WHERE id &gt; &#64;msg_id AND id &lt; &#64;msg_id + 100"`
+     * It is an error to execute a SQL statement with unbound parameters.
      * </pre>
      *
      * <code>.google.protobuf.Struct params = 2;</code>
@@ -535,17 +520,14 @@ public final class ExecuteBatchDmlRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * The DML string can contain parameter placeholders. A parameter
-     * placeholder consists of `'&#64;'` followed by the parameter
-     * name. Parameter names consist of any combination of letters,
-     * numbers, and underscores.
+     * Parameter names and values that bind to placeholders in the DML string.
+     * A parameter placeholder consists of the `&#64;` character followed by the
+     * parameter name (for example, `&#64;firstName`). Parameter names can contain
+     * letters, numbers, and underscores.
      * Parameters can appear anywhere that a literal value is expected.  The
      * same parameter name can be used more than once, for example:
-     *   `"WHERE id &gt; &#64;msg_id AND id &lt; &#64;msg_id + 100"`
-     * It is an error to execute an SQL statement with unbound parameters.
-     * Parameter values are specified using `params`, which is a JSON
-     * object whose keys are parameter names, and whose values are the
-     * corresponding parameter values.
+     * `"WHERE id &gt; &#64;msg_id AND id &lt; &#64;msg_id + 100"`
+     * It is an error to execute a SQL statement with unbound parameters.
      * </pre>
      *
      * <code>.google.protobuf.Struct params = 2;</code>
@@ -1187,17 +1169,14 @@ public final class ExecuteBatchDmlRequest extends com.google.protobuf.GeneratedM
        *
        *
        * <pre>
-       * The DML string can contain parameter placeholders. A parameter
-       * placeholder consists of `'&#64;'` followed by the parameter
-       * name. Parameter names consist of any combination of letters,
-       * numbers, and underscores.
+       * Parameter names and values that bind to placeholders in the DML string.
+       * A parameter placeholder consists of the `&#64;` character followed by the
+       * parameter name (for example, `&#64;firstName`). Parameter names can contain
+       * letters, numbers, and underscores.
        * Parameters can appear anywhere that a literal value is expected.  The
        * same parameter name can be used more than once, for example:
-       *   `"WHERE id &gt; &#64;msg_id AND id &lt; &#64;msg_id + 100"`
-       * It is an error to execute an SQL statement with unbound parameters.
-       * Parameter values are specified using `params`, which is a JSON
-       * object whose keys are parameter names, and whose values are the
-       * corresponding parameter values.
+       * `"WHERE id &gt; &#64;msg_id AND id &lt; &#64;msg_id + 100"`
+       * It is an error to execute a SQL statement with unbound parameters.
        * </pre>
        *
        * <code>.google.protobuf.Struct params = 2;</code>
@@ -1209,17 +1188,14 @@ public final class ExecuteBatchDmlRequest extends com.google.protobuf.GeneratedM
        *
        *
        * <pre>
-       * The DML string can contain parameter placeholders. A parameter
-       * placeholder consists of `'&#64;'` followed by the parameter
-       * name. Parameter names consist of any combination of letters,
-       * numbers, and underscores.
+       * Parameter names and values that bind to placeholders in the DML string.
+       * A parameter placeholder consists of the `&#64;` character followed by the
+       * parameter name (for example, `&#64;firstName`). Parameter names can contain
+       * letters, numbers, and underscores.
        * Parameters can appear anywhere that a literal value is expected.  The
        * same parameter name can be used more than once, for example:
-       *   `"WHERE id &gt; &#64;msg_id AND id &lt; &#64;msg_id + 100"`
-       * It is an error to execute an SQL statement with unbound parameters.
-       * Parameter values are specified using `params`, which is a JSON
-       * object whose keys are parameter names, and whose values are the
-       * corresponding parameter values.
+       * `"WHERE id &gt; &#64;msg_id AND id &lt; &#64;msg_id + 100"`
+       * It is an error to execute a SQL statement with unbound parameters.
        * </pre>
        *
        * <code>.google.protobuf.Struct params = 2;</code>
@@ -1235,17 +1211,14 @@ public final class ExecuteBatchDmlRequest extends com.google.protobuf.GeneratedM
        *
        *
        * <pre>
-       * The DML string can contain parameter placeholders. A parameter
-       * placeholder consists of `'&#64;'` followed by the parameter
-       * name. Parameter names consist of any combination of letters,
-       * numbers, and underscores.
+       * Parameter names and values that bind to placeholders in the DML string.
+       * A parameter placeholder consists of the `&#64;` character followed by the
+       * parameter name (for example, `&#64;firstName`). Parameter names can contain
+       * letters, numbers, and underscores.
        * Parameters can appear anywhere that a literal value is expected.  The
        * same parameter name can be used more than once, for example:
-       *   `"WHERE id &gt; &#64;msg_id AND id &lt; &#64;msg_id + 100"`
-       * It is an error to execute an SQL statement with unbound parameters.
-       * Parameter values are specified using `params`, which is a JSON
-       * object whose keys are parameter names, and whose values are the
-       * corresponding parameter values.
+       * `"WHERE id &gt; &#64;msg_id AND id &lt; &#64;msg_id + 100"`
+       * It is an error to execute a SQL statement with unbound parameters.
        * </pre>
        *
        * <code>.google.protobuf.Struct params = 2;</code>
@@ -1267,17 +1240,14 @@ public final class ExecuteBatchDmlRequest extends com.google.protobuf.GeneratedM
        *
        *
        * <pre>
-       * The DML string can contain parameter placeholders. A parameter
-       * placeholder consists of `'&#64;'` followed by the parameter
-       * name. Parameter names consist of any combination of letters,
-       * numbers, and underscores.
+       * Parameter names and values that bind to placeholders in the DML string.
+       * A parameter placeholder consists of the `&#64;` character followed by the
+       * parameter name (for example, `&#64;firstName`). Parameter names can contain
+       * letters, numbers, and underscores.
        * Parameters can appear anywhere that a literal value is expected.  The
        * same parameter name can be used more than once, for example:
-       *   `"WHERE id &gt; &#64;msg_id AND id &lt; &#64;msg_id + 100"`
-       * It is an error to execute an SQL statement with unbound parameters.
-       * Parameter values are specified using `params`, which is a JSON
-       * object whose keys are parameter names, and whose values are the
-       * corresponding parameter values.
+       * `"WHERE id &gt; &#64;msg_id AND id &lt; &#64;msg_id + 100"`
+       * It is an error to execute a SQL statement with unbound parameters.
        * </pre>
        *
        * <code>.google.protobuf.Struct params = 2;</code>
@@ -1296,17 +1266,14 @@ public final class ExecuteBatchDmlRequest extends com.google.protobuf.GeneratedM
        *
        *
        * <pre>
-       * The DML string can contain parameter placeholders. A parameter
-       * placeholder consists of `'&#64;'` followed by the parameter
-       * name. Parameter names consist of any combination of letters,
-       * numbers, and underscores.
+       * Parameter names and values that bind to placeholders in the DML string.
+       * A parameter placeholder consists of the `&#64;` character followed by the
+       * parameter name (for example, `&#64;firstName`). Parameter names can contain
+       * letters, numbers, and underscores.
        * Parameters can appear anywhere that a literal value is expected.  The
        * same parameter name can be used more than once, for example:
-       *   `"WHERE id &gt; &#64;msg_id AND id &lt; &#64;msg_id + 100"`
-       * It is an error to execute an SQL statement with unbound parameters.
-       * Parameter values are specified using `params`, which is a JSON
-       * object whose keys are parameter names, and whose values are the
-       * corresponding parameter values.
+       * `"WHERE id &gt; &#64;msg_id AND id &lt; &#64;msg_id + 100"`
+       * It is an error to execute a SQL statement with unbound parameters.
        * </pre>
        *
        * <code>.google.protobuf.Struct params = 2;</code>
@@ -1330,17 +1297,14 @@ public final class ExecuteBatchDmlRequest extends com.google.protobuf.GeneratedM
        *
        *
        * <pre>
-       * The DML string can contain parameter placeholders. A parameter
-       * placeholder consists of `'&#64;'` followed by the parameter
-       * name. Parameter names consist of any combination of letters,
-       * numbers, and underscores.
+       * Parameter names and values that bind to placeholders in the DML string.
+       * A parameter placeholder consists of the `&#64;` character followed by the
+       * parameter name (for example, `&#64;firstName`). Parameter names can contain
+       * letters, numbers, and underscores.
        * Parameters can appear anywhere that a literal value is expected.  The
        * same parameter name can be used more than once, for example:
-       *   `"WHERE id &gt; &#64;msg_id AND id &lt; &#64;msg_id + 100"`
-       * It is an error to execute an SQL statement with unbound parameters.
-       * Parameter values are specified using `params`, which is a JSON
-       * object whose keys are parameter names, and whose values are the
-       * corresponding parameter values.
+       * `"WHERE id &gt; &#64;msg_id AND id &lt; &#64;msg_id + 100"`
+       * It is an error to execute a SQL statement with unbound parameters.
        * </pre>
        *
        * <code>.google.protobuf.Struct params = 2;</code>
@@ -1360,17 +1324,14 @@ public final class ExecuteBatchDmlRequest extends com.google.protobuf.GeneratedM
        *
        *
        * <pre>
-       * The DML string can contain parameter placeholders. A parameter
-       * placeholder consists of `'&#64;'` followed by the parameter
-       * name. Parameter names consist of any combination of letters,
-       * numbers, and underscores.
+       * Parameter names and values that bind to placeholders in the DML string.
+       * A parameter placeholder consists of the `&#64;` character followed by the
+       * parameter name (for example, `&#64;firstName`). Parameter names can contain
+       * letters, numbers, and underscores.
        * Parameters can appear anywhere that a literal value is expected.  The
        * same parameter name can be used more than once, for example:
-       *   `"WHERE id &gt; &#64;msg_id AND id &lt; &#64;msg_id + 100"`
-       * It is an error to execute an SQL statement with unbound parameters.
-       * Parameter values are specified using `params`, which is a JSON
-       * object whose keys are parameter names, and whose values are the
-       * corresponding parameter values.
+       * `"WHERE id &gt; &#64;msg_id AND id &lt; &#64;msg_id + 100"`
+       * It is an error to execute a SQL statement with unbound parameters.
        * </pre>
        *
        * <code>.google.protobuf.Struct params = 2;</code>
@@ -1384,17 +1345,14 @@ public final class ExecuteBatchDmlRequest extends com.google.protobuf.GeneratedM
        *
        *
        * <pre>
-       * The DML string can contain parameter placeholders. A parameter
-       * placeholder consists of `'&#64;'` followed by the parameter
-       * name. Parameter names consist of any combination of letters,
-       * numbers, and underscores.
+       * Parameter names and values that bind to placeholders in the DML string.
+       * A parameter placeholder consists of the `&#64;` character followed by the
+       * parameter name (for example, `&#64;firstName`). Parameter names can contain
+       * letters, numbers, and underscores.
        * Parameters can appear anywhere that a literal value is expected.  The
        * same parameter name can be used more than once, for example:
-       *   `"WHERE id &gt; &#64;msg_id AND id &lt; &#64;msg_id + 100"`
-       * It is an error to execute an SQL statement with unbound parameters.
-       * Parameter values are specified using `params`, which is a JSON
-       * object whose keys are parameter names, and whose values are the
-       * corresponding parameter values.
+       * `"WHERE id &gt; &#64;msg_id AND id &lt; &#64;msg_id + 100"`
+       * It is an error to execute a SQL statement with unbound parameters.
        * </pre>
        *
        * <code>.google.protobuf.Struct params = 2;</code>
@@ -1410,17 +1368,14 @@ public final class ExecuteBatchDmlRequest extends com.google.protobuf.GeneratedM
        *
        *
        * <pre>
-       * The DML string can contain parameter placeholders. A parameter
-       * placeholder consists of `'&#64;'` followed by the parameter
-       * name. Parameter names consist of any combination of letters,
-       * numbers, and underscores.
+       * Parameter names and values that bind to placeholders in the DML string.
+       * A parameter placeholder consists of the `&#64;` character followed by the
+       * parameter name (for example, `&#64;firstName`). Parameter names can contain
+       * letters, numbers, and underscores.
        * Parameters can appear anywhere that a literal value is expected.  The
        * same parameter name can be used more than once, for example:
-       *   `"WHERE id &gt; &#64;msg_id AND id &lt; &#64;msg_id + 100"`
-       * It is an error to execute an SQL statement with unbound parameters.
-       * Parameter values are specified using `params`, which is a JSON
-       * object whose keys are parameter names, and whose values are the
-       * corresponding parameter values.
+       * `"WHERE id &gt; &#64;msg_id AND id &lt; &#64;msg_id + 100"`
+       * It is an error to execute a SQL statement with unbound parameters.
        * </pre>
        *
        * <code>.google.protobuf.Struct params = 2;</code>
@@ -1719,7 +1674,9 @@ public final class ExecuteBatchDmlRequest extends com.google.protobuf.GeneratedM
    * Required. The session in which the DML statements should be performed.
    * </pre>
    *
-   * <code>string session = 1;</code>
+   * <code>
+   * string session = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    */
   public java.lang.String getSession() {
     java.lang.Object ref = session_;
@@ -1739,7 +1696,9 @@ public final class ExecuteBatchDmlRequest extends com.google.protobuf.GeneratedM
    * Required. The session in which the DML statements should be performed.
    * </pre>
    *
-   * <code>string session = 1;</code>
+   * <code>
+   * string session = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    */
   public com.google.protobuf.ByteString getSessionBytes() {
     java.lang.Object ref = session_;
@@ -1759,12 +1718,15 @@ public final class ExecuteBatchDmlRequest extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * The transaction to use. A ReadWrite transaction is required. Single-use
-   * transactions are not supported (to avoid replay).  The caller must either
-   * supply an existing transaction ID or begin a new transaction.
+   * Required. The transaction to use. Must be a read-write transaction.
+   * To protect against replays, single-use transactions are not supported. The
+   * caller must either supply an existing transaction ID or begin a new
+   * transaction.
    * </pre>
    *
-   * <code>.google.spanner.v1.TransactionSelector transaction = 2;</code>
+   * <code>
+   * .google.spanner.v1.TransactionSelector transaction = 2 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   public boolean hasTransaction() {
     return transaction_ != null;
@@ -1773,12 +1735,15 @@ public final class ExecuteBatchDmlRequest extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * The transaction to use. A ReadWrite transaction is required. Single-use
-   * transactions are not supported (to avoid replay).  The caller must either
-   * supply an existing transaction ID or begin a new transaction.
+   * Required. The transaction to use. Must be a read-write transaction.
+   * To protect against replays, single-use transactions are not supported. The
+   * caller must either supply an existing transaction ID or begin a new
+   * transaction.
    * </pre>
    *
-   * <code>.google.spanner.v1.TransactionSelector transaction = 2;</code>
+   * <code>
+   * .google.spanner.v1.TransactionSelector transaction = 2 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   public com.google.spanner.v1.TransactionSelector getTransaction() {
     return transaction_ == null
@@ -1789,12 +1754,15 @@ public final class ExecuteBatchDmlRequest extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * The transaction to use. A ReadWrite transaction is required. Single-use
-   * transactions are not supported (to avoid replay).  The caller must either
-   * supply an existing transaction ID or begin a new transaction.
+   * Required. The transaction to use. Must be a read-write transaction.
+   * To protect against replays, single-use transactions are not supported. The
+   * caller must either supply an existing transaction ID or begin a new
+   * transaction.
    * </pre>
    *
-   * <code>.google.spanner.v1.TransactionSelector transaction = 2;</code>
+   * <code>
+   * .google.spanner.v1.TransactionSelector transaction = 2 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   public com.google.spanner.v1.TransactionSelectorOrBuilder getTransactionOrBuilder() {
     return getTransaction();
@@ -1806,14 +1774,16 @@ public final class ExecuteBatchDmlRequest extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * The list of statements to execute in this batch. Statements are executed
-   * serially, such that the effects of statement i are visible to statement
-   * i+1. Each statement must be a DML statement. Execution will stop at the
-   * first failed statement; the remaining statements will not run.
-   * REQUIRES: statements_size() &gt; 0.
+   * Required. The list of statements to execute in this batch. Statements are
+   * executed serially, such that the effects of statement `i` are visible to
+   * statement `i+1`. Each statement must be a DML statement. Execution stops at
+   * the first failed statement; the remaining statements are not executed.
+   * Callers must provide at least one statement.
    * </pre>
    *
-   * <code>repeated .google.spanner.v1.ExecuteBatchDmlRequest.Statement statements = 3;</code>
+   * <code>
+   * repeated .google.spanner.v1.ExecuteBatchDmlRequest.Statement statements = 3 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   public java.util.List<com.google.spanner.v1.ExecuteBatchDmlRequest.Statement>
       getStatementsList() {
@@ -1823,14 +1793,16 @@ public final class ExecuteBatchDmlRequest extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * The list of statements to execute in this batch. Statements are executed
-   * serially, such that the effects of statement i are visible to statement
-   * i+1. Each statement must be a DML statement. Execution will stop at the
-   * first failed statement; the remaining statements will not run.
-   * REQUIRES: statements_size() &gt; 0.
+   * Required. The list of statements to execute in this batch. Statements are
+   * executed serially, such that the effects of statement `i` are visible to
+   * statement `i+1`. Each statement must be a DML statement. Execution stops at
+   * the first failed statement; the remaining statements are not executed.
+   * Callers must provide at least one statement.
    * </pre>
    *
-   * <code>repeated .google.spanner.v1.ExecuteBatchDmlRequest.Statement statements = 3;</code>
+   * <code>
+   * repeated .google.spanner.v1.ExecuteBatchDmlRequest.Statement statements = 3 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   public java.util.List<? extends com.google.spanner.v1.ExecuteBatchDmlRequest.StatementOrBuilder>
       getStatementsOrBuilderList() {
@@ -1840,14 +1812,16 @@ public final class ExecuteBatchDmlRequest extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * The list of statements to execute in this batch. Statements are executed
-   * serially, such that the effects of statement i are visible to statement
-   * i+1. Each statement must be a DML statement. Execution will stop at the
-   * first failed statement; the remaining statements will not run.
-   * REQUIRES: statements_size() &gt; 0.
+   * Required. The list of statements to execute in this batch. Statements are
+   * executed serially, such that the effects of statement `i` are visible to
+   * statement `i+1`. Each statement must be a DML statement. Execution stops at
+   * the first failed statement; the remaining statements are not executed.
+   * Callers must provide at least one statement.
    * </pre>
    *
-   * <code>repeated .google.spanner.v1.ExecuteBatchDmlRequest.Statement statements = 3;</code>
+   * <code>
+   * repeated .google.spanner.v1.ExecuteBatchDmlRequest.Statement statements = 3 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   public int getStatementsCount() {
     return statements_.size();
@@ -1856,14 +1830,16 @@ public final class ExecuteBatchDmlRequest extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * The list of statements to execute in this batch. Statements are executed
-   * serially, such that the effects of statement i are visible to statement
-   * i+1. Each statement must be a DML statement. Execution will stop at the
-   * first failed statement; the remaining statements will not run.
-   * REQUIRES: statements_size() &gt; 0.
+   * Required. The list of statements to execute in this batch. Statements are
+   * executed serially, such that the effects of statement `i` are visible to
+   * statement `i+1`. Each statement must be a DML statement. Execution stops at
+   * the first failed statement; the remaining statements are not executed.
+   * Callers must provide at least one statement.
    * </pre>
    *
-   * <code>repeated .google.spanner.v1.ExecuteBatchDmlRequest.Statement statements = 3;</code>
+   * <code>
+   * repeated .google.spanner.v1.ExecuteBatchDmlRequest.Statement statements = 3 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   public com.google.spanner.v1.ExecuteBatchDmlRequest.Statement getStatements(int index) {
     return statements_.get(index);
@@ -1872,14 +1848,16 @@ public final class ExecuteBatchDmlRequest extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * The list of statements to execute in this batch. Statements are executed
-   * serially, such that the effects of statement i are visible to statement
-   * i+1. Each statement must be a DML statement. Execution will stop at the
-   * first failed statement; the remaining statements will not run.
-   * REQUIRES: statements_size() &gt; 0.
+   * Required. The list of statements to execute in this batch. Statements are
+   * executed serially, such that the effects of statement `i` are visible to
+   * statement `i+1`. Each statement must be a DML statement. Execution stops at
+   * the first failed statement; the remaining statements are not executed.
+   * Callers must provide at least one statement.
    * </pre>
    *
-   * <code>repeated .google.spanner.v1.ExecuteBatchDmlRequest.Statement statements = 3;</code>
+   * <code>
+   * repeated .google.spanner.v1.ExecuteBatchDmlRequest.Statement statements = 3 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   public com.google.spanner.v1.ExecuteBatchDmlRequest.StatementOrBuilder getStatementsOrBuilder(
       int index) {
@@ -1892,13 +1870,16 @@ public final class ExecuteBatchDmlRequest extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * A per-transaction sequence number used to identify this request. This is
-   * used in the same space as the seqno in
-   * [ExecuteSqlRequest][Spanner.ExecuteSqlRequest]. See more details
-   * in [ExecuteSqlRequest][Spanner.ExecuteSqlRequest].
+   * Required. A per-transaction sequence number used to identify this request.
+   * This field makes each request idempotent such that if the request is
+   * received multiple times, at most one will succeed.
+   * The sequence number must be monotonically increasing within the
+   * transaction. If a request arrives for the first time with an out-of-order
+   * sequence number, the transaction may be aborted. Replays of previously
+   * handled requests will yield the same response as the first execution.
    * </pre>
    *
-   * <code>int64 seqno = 4;</code>
+   * <code>int64 seqno = 4 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   public long getSeqno() {
     return seqno_;
@@ -2101,7 +2082,7 @@ public final class ExecuteBatchDmlRequest extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * The request for [ExecuteBatchDml][google.spanner.v1.Spanner.ExecuteBatchDml]
+   * The request for [ExecuteBatchDml][google.spanner.v1.Spanner.ExecuteBatchDml].
    * </pre>
    *
    * Protobuf type {@code google.spanner.v1.ExecuteBatchDmlRequest}
@@ -2331,7 +2312,9 @@ public final class ExecuteBatchDmlRequest extends com.google.protobuf.GeneratedM
      * Required. The session in which the DML statements should be performed.
      * </pre>
      *
-     * <code>string session = 1;</code>
+     * <code>
+     * string session = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      */
     public java.lang.String getSession() {
       java.lang.Object ref = session_;
@@ -2351,7 +2334,9 @@ public final class ExecuteBatchDmlRequest extends com.google.protobuf.GeneratedM
      * Required. The session in which the DML statements should be performed.
      * </pre>
      *
-     * <code>string session = 1;</code>
+     * <code>
+     * string session = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      */
     public com.google.protobuf.ByteString getSessionBytes() {
       java.lang.Object ref = session_;
@@ -2371,7 +2356,9 @@ public final class ExecuteBatchDmlRequest extends com.google.protobuf.GeneratedM
      * Required. The session in which the DML statements should be performed.
      * </pre>
      *
-     * <code>string session = 1;</code>
+     * <code>
+     * string session = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      */
     public Builder setSession(java.lang.String value) {
       if (value == null) {
@@ -2389,7 +2376,9 @@ public final class ExecuteBatchDmlRequest extends com.google.protobuf.GeneratedM
      * Required. The session in which the DML statements should be performed.
      * </pre>
      *
-     * <code>string session = 1;</code>
+     * <code>
+     * string session = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      */
     public Builder clearSession() {
 
@@ -2404,7 +2393,9 @@ public final class ExecuteBatchDmlRequest extends com.google.protobuf.GeneratedM
      * Required. The session in which the DML statements should be performed.
      * </pre>
      *
-     * <code>string session = 1;</code>
+     * <code>
+     * string session = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      */
     public Builder setSessionBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -2427,12 +2418,15 @@ public final class ExecuteBatchDmlRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * The transaction to use. A ReadWrite transaction is required. Single-use
-     * transactions are not supported (to avoid replay).  The caller must either
-     * supply an existing transaction ID or begin a new transaction.
+     * Required. The transaction to use. Must be a read-write transaction.
+     * To protect against replays, single-use transactions are not supported. The
+     * caller must either supply an existing transaction ID or begin a new
+     * transaction.
      * </pre>
      *
-     * <code>.google.spanner.v1.TransactionSelector transaction = 2;</code>
+     * <code>
+     * .google.spanner.v1.TransactionSelector transaction = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public boolean hasTransaction() {
       return transactionBuilder_ != null || transaction_ != null;
@@ -2441,12 +2435,15 @@ public final class ExecuteBatchDmlRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * The transaction to use. A ReadWrite transaction is required. Single-use
-     * transactions are not supported (to avoid replay).  The caller must either
-     * supply an existing transaction ID or begin a new transaction.
+     * Required. The transaction to use. Must be a read-write transaction.
+     * To protect against replays, single-use transactions are not supported. The
+     * caller must either supply an existing transaction ID or begin a new
+     * transaction.
      * </pre>
      *
-     * <code>.google.spanner.v1.TransactionSelector transaction = 2;</code>
+     * <code>
+     * .google.spanner.v1.TransactionSelector transaction = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public com.google.spanner.v1.TransactionSelector getTransaction() {
       if (transactionBuilder_ == null) {
@@ -2461,12 +2458,15 @@ public final class ExecuteBatchDmlRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * The transaction to use. A ReadWrite transaction is required. Single-use
-     * transactions are not supported (to avoid replay).  The caller must either
-     * supply an existing transaction ID or begin a new transaction.
+     * Required. The transaction to use. Must be a read-write transaction.
+     * To protect against replays, single-use transactions are not supported. The
+     * caller must either supply an existing transaction ID or begin a new
+     * transaction.
      * </pre>
      *
-     * <code>.google.spanner.v1.TransactionSelector transaction = 2;</code>
+     * <code>
+     * .google.spanner.v1.TransactionSelector transaction = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder setTransaction(com.google.spanner.v1.TransactionSelector value) {
       if (transactionBuilder_ == null) {
@@ -2485,12 +2485,15 @@ public final class ExecuteBatchDmlRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * The transaction to use. A ReadWrite transaction is required. Single-use
-     * transactions are not supported (to avoid replay).  The caller must either
-     * supply an existing transaction ID or begin a new transaction.
+     * Required. The transaction to use. Must be a read-write transaction.
+     * To protect against replays, single-use transactions are not supported. The
+     * caller must either supply an existing transaction ID or begin a new
+     * transaction.
      * </pre>
      *
-     * <code>.google.spanner.v1.TransactionSelector transaction = 2;</code>
+     * <code>
+     * .google.spanner.v1.TransactionSelector transaction = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder setTransaction(
         com.google.spanner.v1.TransactionSelector.Builder builderForValue) {
@@ -2507,12 +2510,15 @@ public final class ExecuteBatchDmlRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * The transaction to use. A ReadWrite transaction is required. Single-use
-     * transactions are not supported (to avoid replay).  The caller must either
-     * supply an existing transaction ID or begin a new transaction.
+     * Required. The transaction to use. Must be a read-write transaction.
+     * To protect against replays, single-use transactions are not supported. The
+     * caller must either supply an existing transaction ID or begin a new
+     * transaction.
      * </pre>
      *
-     * <code>.google.spanner.v1.TransactionSelector transaction = 2;</code>
+     * <code>
+     * .google.spanner.v1.TransactionSelector transaction = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder mergeTransaction(com.google.spanner.v1.TransactionSelector value) {
       if (transactionBuilder_ == null) {
@@ -2535,12 +2541,15 @@ public final class ExecuteBatchDmlRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * The transaction to use. A ReadWrite transaction is required. Single-use
-     * transactions are not supported (to avoid replay).  The caller must either
-     * supply an existing transaction ID or begin a new transaction.
+     * Required. The transaction to use. Must be a read-write transaction.
+     * To protect against replays, single-use transactions are not supported. The
+     * caller must either supply an existing transaction ID or begin a new
+     * transaction.
      * </pre>
      *
-     * <code>.google.spanner.v1.TransactionSelector transaction = 2;</code>
+     * <code>
+     * .google.spanner.v1.TransactionSelector transaction = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder clearTransaction() {
       if (transactionBuilder_ == null) {
@@ -2557,12 +2566,15 @@ public final class ExecuteBatchDmlRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * The transaction to use. A ReadWrite transaction is required. Single-use
-     * transactions are not supported (to avoid replay).  The caller must either
-     * supply an existing transaction ID or begin a new transaction.
+     * Required. The transaction to use. Must be a read-write transaction.
+     * To protect against replays, single-use transactions are not supported. The
+     * caller must either supply an existing transaction ID or begin a new
+     * transaction.
      * </pre>
      *
-     * <code>.google.spanner.v1.TransactionSelector transaction = 2;</code>
+     * <code>
+     * .google.spanner.v1.TransactionSelector transaction = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public com.google.spanner.v1.TransactionSelector.Builder getTransactionBuilder() {
 
@@ -2573,12 +2585,15 @@ public final class ExecuteBatchDmlRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * The transaction to use. A ReadWrite transaction is required. Single-use
-     * transactions are not supported (to avoid replay).  The caller must either
-     * supply an existing transaction ID or begin a new transaction.
+     * Required. The transaction to use. Must be a read-write transaction.
+     * To protect against replays, single-use transactions are not supported. The
+     * caller must either supply an existing transaction ID or begin a new
+     * transaction.
      * </pre>
      *
-     * <code>.google.spanner.v1.TransactionSelector transaction = 2;</code>
+     * <code>
+     * .google.spanner.v1.TransactionSelector transaction = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public com.google.spanner.v1.TransactionSelectorOrBuilder getTransactionOrBuilder() {
       if (transactionBuilder_ != null) {
@@ -2593,12 +2608,15 @@ public final class ExecuteBatchDmlRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * The transaction to use. A ReadWrite transaction is required. Single-use
-     * transactions are not supported (to avoid replay).  The caller must either
-     * supply an existing transaction ID or begin a new transaction.
+     * Required. The transaction to use. Must be a read-write transaction.
+     * To protect against replays, single-use transactions are not supported. The
+     * caller must either supply an existing transaction ID or begin a new
+     * transaction.
      * </pre>
      *
-     * <code>.google.spanner.v1.TransactionSelector transaction = 2;</code>
+     * <code>
+     * .google.spanner.v1.TransactionSelector transaction = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.spanner.v1.TransactionSelector,
@@ -2639,14 +2657,16 @@ public final class ExecuteBatchDmlRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * The list of statements to execute in this batch. Statements are executed
-     * serially, such that the effects of statement i are visible to statement
-     * i+1. Each statement must be a DML statement. Execution will stop at the
-     * first failed statement; the remaining statements will not run.
-     * REQUIRES: statements_size() &gt; 0.
+     * Required. The list of statements to execute in this batch. Statements are
+     * executed serially, such that the effects of statement `i` are visible to
+     * statement `i+1`. Each statement must be a DML statement. Execution stops at
+     * the first failed statement; the remaining statements are not executed.
+     * Callers must provide at least one statement.
      * </pre>
      *
-     * <code>repeated .google.spanner.v1.ExecuteBatchDmlRequest.Statement statements = 3;</code>
+     * <code>
+     * repeated .google.spanner.v1.ExecuteBatchDmlRequest.Statement statements = 3 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public java.util.List<com.google.spanner.v1.ExecuteBatchDmlRequest.Statement>
         getStatementsList() {
@@ -2660,14 +2680,16 @@ public final class ExecuteBatchDmlRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * The list of statements to execute in this batch. Statements are executed
-     * serially, such that the effects of statement i are visible to statement
-     * i+1. Each statement must be a DML statement. Execution will stop at the
-     * first failed statement; the remaining statements will not run.
-     * REQUIRES: statements_size() &gt; 0.
+     * Required. The list of statements to execute in this batch. Statements are
+     * executed serially, such that the effects of statement `i` are visible to
+     * statement `i+1`. Each statement must be a DML statement. Execution stops at
+     * the first failed statement; the remaining statements are not executed.
+     * Callers must provide at least one statement.
      * </pre>
      *
-     * <code>repeated .google.spanner.v1.ExecuteBatchDmlRequest.Statement statements = 3;</code>
+     * <code>
+     * repeated .google.spanner.v1.ExecuteBatchDmlRequest.Statement statements = 3 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public int getStatementsCount() {
       if (statementsBuilder_ == null) {
@@ -2680,14 +2702,16 @@ public final class ExecuteBatchDmlRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * The list of statements to execute in this batch. Statements are executed
-     * serially, such that the effects of statement i are visible to statement
-     * i+1. Each statement must be a DML statement. Execution will stop at the
-     * first failed statement; the remaining statements will not run.
-     * REQUIRES: statements_size() &gt; 0.
+     * Required. The list of statements to execute in this batch. Statements are
+     * executed serially, such that the effects of statement `i` are visible to
+     * statement `i+1`. Each statement must be a DML statement. Execution stops at
+     * the first failed statement; the remaining statements are not executed.
+     * Callers must provide at least one statement.
      * </pre>
      *
-     * <code>repeated .google.spanner.v1.ExecuteBatchDmlRequest.Statement statements = 3;</code>
+     * <code>
+     * repeated .google.spanner.v1.ExecuteBatchDmlRequest.Statement statements = 3 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public com.google.spanner.v1.ExecuteBatchDmlRequest.Statement getStatements(int index) {
       if (statementsBuilder_ == null) {
@@ -2700,14 +2724,16 @@ public final class ExecuteBatchDmlRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * The list of statements to execute in this batch. Statements are executed
-     * serially, such that the effects of statement i are visible to statement
-     * i+1. Each statement must be a DML statement. Execution will stop at the
-     * first failed statement; the remaining statements will not run.
-     * REQUIRES: statements_size() &gt; 0.
+     * Required. The list of statements to execute in this batch. Statements are
+     * executed serially, such that the effects of statement `i` are visible to
+     * statement `i+1`. Each statement must be a DML statement. Execution stops at
+     * the first failed statement; the remaining statements are not executed.
+     * Callers must provide at least one statement.
      * </pre>
      *
-     * <code>repeated .google.spanner.v1.ExecuteBatchDmlRequest.Statement statements = 3;</code>
+     * <code>
+     * repeated .google.spanner.v1.ExecuteBatchDmlRequest.Statement statements = 3 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder setStatements(
         int index, com.google.spanner.v1.ExecuteBatchDmlRequest.Statement value) {
@@ -2727,14 +2753,16 @@ public final class ExecuteBatchDmlRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * The list of statements to execute in this batch. Statements are executed
-     * serially, such that the effects of statement i are visible to statement
-     * i+1. Each statement must be a DML statement. Execution will stop at the
-     * first failed statement; the remaining statements will not run.
-     * REQUIRES: statements_size() &gt; 0.
+     * Required. The list of statements to execute in this batch. Statements are
+     * executed serially, such that the effects of statement `i` are visible to
+     * statement `i+1`. Each statement must be a DML statement. Execution stops at
+     * the first failed statement; the remaining statements are not executed.
+     * Callers must provide at least one statement.
      * </pre>
      *
-     * <code>repeated .google.spanner.v1.ExecuteBatchDmlRequest.Statement statements = 3;</code>
+     * <code>
+     * repeated .google.spanner.v1.ExecuteBatchDmlRequest.Statement statements = 3 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder setStatements(
         int index, com.google.spanner.v1.ExecuteBatchDmlRequest.Statement.Builder builderForValue) {
@@ -2751,14 +2779,16 @@ public final class ExecuteBatchDmlRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * The list of statements to execute in this batch. Statements are executed
-     * serially, such that the effects of statement i are visible to statement
-     * i+1. Each statement must be a DML statement. Execution will stop at the
-     * first failed statement; the remaining statements will not run.
-     * REQUIRES: statements_size() &gt; 0.
+     * Required. The list of statements to execute in this batch. Statements are
+     * executed serially, such that the effects of statement `i` are visible to
+     * statement `i+1`. Each statement must be a DML statement. Execution stops at
+     * the first failed statement; the remaining statements are not executed.
+     * Callers must provide at least one statement.
      * </pre>
      *
-     * <code>repeated .google.spanner.v1.ExecuteBatchDmlRequest.Statement statements = 3;</code>
+     * <code>
+     * repeated .google.spanner.v1.ExecuteBatchDmlRequest.Statement statements = 3 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder addStatements(com.google.spanner.v1.ExecuteBatchDmlRequest.Statement value) {
       if (statementsBuilder_ == null) {
@@ -2777,14 +2807,16 @@ public final class ExecuteBatchDmlRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * The list of statements to execute in this batch. Statements are executed
-     * serially, such that the effects of statement i are visible to statement
-     * i+1. Each statement must be a DML statement. Execution will stop at the
-     * first failed statement; the remaining statements will not run.
-     * REQUIRES: statements_size() &gt; 0.
+     * Required. The list of statements to execute in this batch. Statements are
+     * executed serially, such that the effects of statement `i` are visible to
+     * statement `i+1`. Each statement must be a DML statement. Execution stops at
+     * the first failed statement; the remaining statements are not executed.
+     * Callers must provide at least one statement.
      * </pre>
      *
-     * <code>repeated .google.spanner.v1.ExecuteBatchDmlRequest.Statement statements = 3;</code>
+     * <code>
+     * repeated .google.spanner.v1.ExecuteBatchDmlRequest.Statement statements = 3 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder addStatements(
         int index, com.google.spanner.v1.ExecuteBatchDmlRequest.Statement value) {
@@ -2804,14 +2836,16 @@ public final class ExecuteBatchDmlRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * The list of statements to execute in this batch. Statements are executed
-     * serially, such that the effects of statement i are visible to statement
-     * i+1. Each statement must be a DML statement. Execution will stop at the
-     * first failed statement; the remaining statements will not run.
-     * REQUIRES: statements_size() &gt; 0.
+     * Required. The list of statements to execute in this batch. Statements are
+     * executed serially, such that the effects of statement `i` are visible to
+     * statement `i+1`. Each statement must be a DML statement. Execution stops at
+     * the first failed statement; the remaining statements are not executed.
+     * Callers must provide at least one statement.
      * </pre>
      *
-     * <code>repeated .google.spanner.v1.ExecuteBatchDmlRequest.Statement statements = 3;</code>
+     * <code>
+     * repeated .google.spanner.v1.ExecuteBatchDmlRequest.Statement statements = 3 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder addStatements(
         com.google.spanner.v1.ExecuteBatchDmlRequest.Statement.Builder builderForValue) {
@@ -2828,14 +2862,16 @@ public final class ExecuteBatchDmlRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * The list of statements to execute in this batch. Statements are executed
-     * serially, such that the effects of statement i are visible to statement
-     * i+1. Each statement must be a DML statement. Execution will stop at the
-     * first failed statement; the remaining statements will not run.
-     * REQUIRES: statements_size() &gt; 0.
+     * Required. The list of statements to execute in this batch. Statements are
+     * executed serially, such that the effects of statement `i` are visible to
+     * statement `i+1`. Each statement must be a DML statement. Execution stops at
+     * the first failed statement; the remaining statements are not executed.
+     * Callers must provide at least one statement.
      * </pre>
      *
-     * <code>repeated .google.spanner.v1.ExecuteBatchDmlRequest.Statement statements = 3;</code>
+     * <code>
+     * repeated .google.spanner.v1.ExecuteBatchDmlRequest.Statement statements = 3 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder addStatements(
         int index, com.google.spanner.v1.ExecuteBatchDmlRequest.Statement.Builder builderForValue) {
@@ -2852,14 +2888,16 @@ public final class ExecuteBatchDmlRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * The list of statements to execute in this batch. Statements are executed
-     * serially, such that the effects of statement i are visible to statement
-     * i+1. Each statement must be a DML statement. Execution will stop at the
-     * first failed statement; the remaining statements will not run.
-     * REQUIRES: statements_size() &gt; 0.
+     * Required. The list of statements to execute in this batch. Statements are
+     * executed serially, such that the effects of statement `i` are visible to
+     * statement `i+1`. Each statement must be a DML statement. Execution stops at
+     * the first failed statement; the remaining statements are not executed.
+     * Callers must provide at least one statement.
      * </pre>
      *
-     * <code>repeated .google.spanner.v1.ExecuteBatchDmlRequest.Statement statements = 3;</code>
+     * <code>
+     * repeated .google.spanner.v1.ExecuteBatchDmlRequest.Statement statements = 3 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder addAllStatements(
         java.lang.Iterable<? extends com.google.spanner.v1.ExecuteBatchDmlRequest.Statement>
@@ -2877,14 +2915,16 @@ public final class ExecuteBatchDmlRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * The list of statements to execute in this batch. Statements are executed
-     * serially, such that the effects of statement i are visible to statement
-     * i+1. Each statement must be a DML statement. Execution will stop at the
-     * first failed statement; the remaining statements will not run.
-     * REQUIRES: statements_size() &gt; 0.
+     * Required. The list of statements to execute in this batch. Statements are
+     * executed serially, such that the effects of statement `i` are visible to
+     * statement `i+1`. Each statement must be a DML statement. Execution stops at
+     * the first failed statement; the remaining statements are not executed.
+     * Callers must provide at least one statement.
      * </pre>
      *
-     * <code>repeated .google.spanner.v1.ExecuteBatchDmlRequest.Statement statements = 3;</code>
+     * <code>
+     * repeated .google.spanner.v1.ExecuteBatchDmlRequest.Statement statements = 3 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder clearStatements() {
       if (statementsBuilder_ == null) {
@@ -2900,14 +2940,16 @@ public final class ExecuteBatchDmlRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * The list of statements to execute in this batch. Statements are executed
-     * serially, such that the effects of statement i are visible to statement
-     * i+1. Each statement must be a DML statement. Execution will stop at the
-     * first failed statement; the remaining statements will not run.
-     * REQUIRES: statements_size() &gt; 0.
+     * Required. The list of statements to execute in this batch. Statements are
+     * executed serially, such that the effects of statement `i` are visible to
+     * statement `i+1`. Each statement must be a DML statement. Execution stops at
+     * the first failed statement; the remaining statements are not executed.
+     * Callers must provide at least one statement.
      * </pre>
      *
-     * <code>repeated .google.spanner.v1.ExecuteBatchDmlRequest.Statement statements = 3;</code>
+     * <code>
+     * repeated .google.spanner.v1.ExecuteBatchDmlRequest.Statement statements = 3 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder removeStatements(int index) {
       if (statementsBuilder_ == null) {
@@ -2923,14 +2965,16 @@ public final class ExecuteBatchDmlRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * The list of statements to execute in this batch. Statements are executed
-     * serially, such that the effects of statement i are visible to statement
-     * i+1. Each statement must be a DML statement. Execution will stop at the
-     * first failed statement; the remaining statements will not run.
-     * REQUIRES: statements_size() &gt; 0.
+     * Required. The list of statements to execute in this batch. Statements are
+     * executed serially, such that the effects of statement `i` are visible to
+     * statement `i+1`. Each statement must be a DML statement. Execution stops at
+     * the first failed statement; the remaining statements are not executed.
+     * Callers must provide at least one statement.
      * </pre>
      *
-     * <code>repeated .google.spanner.v1.ExecuteBatchDmlRequest.Statement statements = 3;</code>
+     * <code>
+     * repeated .google.spanner.v1.ExecuteBatchDmlRequest.Statement statements = 3 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public com.google.spanner.v1.ExecuteBatchDmlRequest.Statement.Builder getStatementsBuilder(
         int index) {
@@ -2940,14 +2984,16 @@ public final class ExecuteBatchDmlRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * The list of statements to execute in this batch. Statements are executed
-     * serially, such that the effects of statement i are visible to statement
-     * i+1. Each statement must be a DML statement. Execution will stop at the
-     * first failed statement; the remaining statements will not run.
-     * REQUIRES: statements_size() &gt; 0.
+     * Required. The list of statements to execute in this batch. Statements are
+     * executed serially, such that the effects of statement `i` are visible to
+     * statement `i+1`. Each statement must be a DML statement. Execution stops at
+     * the first failed statement; the remaining statements are not executed.
+     * Callers must provide at least one statement.
      * </pre>
      *
-     * <code>repeated .google.spanner.v1.ExecuteBatchDmlRequest.Statement statements = 3;</code>
+     * <code>
+     * repeated .google.spanner.v1.ExecuteBatchDmlRequest.Statement statements = 3 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public com.google.spanner.v1.ExecuteBatchDmlRequest.StatementOrBuilder getStatementsOrBuilder(
         int index) {
@@ -2961,14 +3007,16 @@ public final class ExecuteBatchDmlRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * The list of statements to execute in this batch. Statements are executed
-     * serially, such that the effects of statement i are visible to statement
-     * i+1. Each statement must be a DML statement. Execution will stop at the
-     * first failed statement; the remaining statements will not run.
-     * REQUIRES: statements_size() &gt; 0.
+     * Required. The list of statements to execute in this batch. Statements are
+     * executed serially, such that the effects of statement `i` are visible to
+     * statement `i+1`. Each statement must be a DML statement. Execution stops at
+     * the first failed statement; the remaining statements are not executed.
+     * Callers must provide at least one statement.
      * </pre>
      *
-     * <code>repeated .google.spanner.v1.ExecuteBatchDmlRequest.Statement statements = 3;</code>
+     * <code>
+     * repeated .google.spanner.v1.ExecuteBatchDmlRequest.Statement statements = 3 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public java.util.List<? extends com.google.spanner.v1.ExecuteBatchDmlRequest.StatementOrBuilder>
         getStatementsOrBuilderList() {
@@ -2982,14 +3030,16 @@ public final class ExecuteBatchDmlRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * The list of statements to execute in this batch. Statements are executed
-     * serially, such that the effects of statement i are visible to statement
-     * i+1. Each statement must be a DML statement. Execution will stop at the
-     * first failed statement; the remaining statements will not run.
-     * REQUIRES: statements_size() &gt; 0.
+     * Required. The list of statements to execute in this batch. Statements are
+     * executed serially, such that the effects of statement `i` are visible to
+     * statement `i+1`. Each statement must be a DML statement. Execution stops at
+     * the first failed statement; the remaining statements are not executed.
+     * Callers must provide at least one statement.
      * </pre>
      *
-     * <code>repeated .google.spanner.v1.ExecuteBatchDmlRequest.Statement statements = 3;</code>
+     * <code>
+     * repeated .google.spanner.v1.ExecuteBatchDmlRequest.Statement statements = 3 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public com.google.spanner.v1.ExecuteBatchDmlRequest.Statement.Builder addStatementsBuilder() {
       return getStatementsFieldBuilder()
@@ -2999,14 +3049,16 @@ public final class ExecuteBatchDmlRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * The list of statements to execute in this batch. Statements are executed
-     * serially, such that the effects of statement i are visible to statement
-     * i+1. Each statement must be a DML statement. Execution will stop at the
-     * first failed statement; the remaining statements will not run.
-     * REQUIRES: statements_size() &gt; 0.
+     * Required. The list of statements to execute in this batch. Statements are
+     * executed serially, such that the effects of statement `i` are visible to
+     * statement `i+1`. Each statement must be a DML statement. Execution stops at
+     * the first failed statement; the remaining statements are not executed.
+     * Callers must provide at least one statement.
      * </pre>
      *
-     * <code>repeated .google.spanner.v1.ExecuteBatchDmlRequest.Statement statements = 3;</code>
+     * <code>
+     * repeated .google.spanner.v1.ExecuteBatchDmlRequest.Statement statements = 3 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public com.google.spanner.v1.ExecuteBatchDmlRequest.Statement.Builder addStatementsBuilder(
         int index) {
@@ -3018,14 +3070,16 @@ public final class ExecuteBatchDmlRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * The list of statements to execute in this batch. Statements are executed
-     * serially, such that the effects of statement i are visible to statement
-     * i+1. Each statement must be a DML statement. Execution will stop at the
-     * first failed statement; the remaining statements will not run.
-     * REQUIRES: statements_size() &gt; 0.
+     * Required. The list of statements to execute in this batch. Statements are
+     * executed serially, such that the effects of statement `i` are visible to
+     * statement `i+1`. Each statement must be a DML statement. Execution stops at
+     * the first failed statement; the remaining statements are not executed.
+     * Callers must provide at least one statement.
      * </pre>
      *
-     * <code>repeated .google.spanner.v1.ExecuteBatchDmlRequest.Statement statements = 3;</code>
+     * <code>
+     * repeated .google.spanner.v1.ExecuteBatchDmlRequest.Statement statements = 3 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public java.util.List<com.google.spanner.v1.ExecuteBatchDmlRequest.Statement.Builder>
         getStatementsBuilderList() {
@@ -3054,13 +3108,16 @@ public final class ExecuteBatchDmlRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * A per-transaction sequence number used to identify this request. This is
-     * used in the same space as the seqno in
-     * [ExecuteSqlRequest][Spanner.ExecuteSqlRequest]. See more details
-     * in [ExecuteSqlRequest][Spanner.ExecuteSqlRequest].
+     * Required. A per-transaction sequence number used to identify this request.
+     * This field makes each request idempotent such that if the request is
+     * received multiple times, at most one will succeed.
+     * The sequence number must be monotonically increasing within the
+     * transaction. If a request arrives for the first time with an out-of-order
+     * sequence number, the transaction may be aborted. Replays of previously
+     * handled requests will yield the same response as the first execution.
      * </pre>
      *
-     * <code>int64 seqno = 4;</code>
+     * <code>int64 seqno = 4 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public long getSeqno() {
       return seqno_;
@@ -3069,13 +3126,16 @@ public final class ExecuteBatchDmlRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * A per-transaction sequence number used to identify this request. This is
-     * used in the same space as the seqno in
-     * [ExecuteSqlRequest][Spanner.ExecuteSqlRequest]. See more details
-     * in [ExecuteSqlRequest][Spanner.ExecuteSqlRequest].
+     * Required. A per-transaction sequence number used to identify this request.
+     * This field makes each request idempotent such that if the request is
+     * received multiple times, at most one will succeed.
+     * The sequence number must be monotonically increasing within the
+     * transaction. If a request arrives for the first time with an out-of-order
+     * sequence number, the transaction may be aborted. Replays of previously
+     * handled requests will yield the same response as the first execution.
      * </pre>
      *
-     * <code>int64 seqno = 4;</code>
+     * <code>int64 seqno = 4 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder setSeqno(long value) {
 
@@ -3087,13 +3147,16 @@ public final class ExecuteBatchDmlRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * A per-transaction sequence number used to identify this request. This is
-     * used in the same space as the seqno in
-     * [ExecuteSqlRequest][Spanner.ExecuteSqlRequest]. See more details
-     * in [ExecuteSqlRequest][Spanner.ExecuteSqlRequest].
+     * Required. A per-transaction sequence number used to identify this request.
+     * This field makes each request idempotent such that if the request is
+     * received multiple times, at most one will succeed.
+     * The sequence number must be monotonically increasing within the
+     * transaction. If a request arrives for the first time with an out-of-order
+     * sequence number, the transaction may be aborted. Replays of previously
+     * handled requests will yield the same response as the first execution.
      * </pre>
      *
-     * <code>int64 seqno = 4;</code>
+     * <code>int64 seqno = 4 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder clearSeqno() {
 

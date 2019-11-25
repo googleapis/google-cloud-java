@@ -15,9 +15,9 @@ public interface StructTypeOrBuilder
    * The list of fields that make up this struct. Order is
    * significant, because values of this struct type are represented as
    * lists, where the order of field values matches the order of
-   * fields in the [StructType][google.spanner.v1.StructType]. In turn, the
-   * order of fields matches the order of columns in a read request, or the
-   * order of fields in the `SELECT` clause of a query.
+   * fields in the [StructType][google.spanner.v1.StructType]. In turn, the order of fields
+   * matches the order of columns in a read request, or the order of
+   * fields in the `SELECT` clause of a query.
    * </pre>
    *
    * <code>repeated .google.spanner.v1.StructType.Field fields = 1;</code>
@@ -30,9 +30,9 @@ public interface StructTypeOrBuilder
    * The list of fields that make up this struct. Order is
    * significant, because values of this struct type are represented as
    * lists, where the order of field values matches the order of
-   * fields in the [StructType][google.spanner.v1.StructType]. In turn, the
-   * order of fields matches the order of columns in a read request, or the
-   * order of fields in the `SELECT` clause of a query.
+   * fields in the [StructType][google.spanner.v1.StructType]. In turn, the order of fields
+   * matches the order of columns in a read request, or the order of
+   * fields in the `SELECT` clause of a query.
    * </pre>
    *
    * <code>repeated .google.spanner.v1.StructType.Field fields = 1;</code>
@@ -45,9 +45,9 @@ public interface StructTypeOrBuilder
    * The list of fields that make up this struct. Order is
    * significant, because values of this struct type are represented as
    * lists, where the order of field values matches the order of
-   * fields in the [StructType][google.spanner.v1.StructType]. In turn, the
-   * order of fields matches the order of columns in a read request, or the
-   * order of fields in the `SELECT` clause of a query.
+   * fields in the [StructType][google.spanner.v1.StructType]. In turn, the order of fields
+   * matches the order of columns in a read request, or the order of
+   * fields in the `SELECT` clause of a query.
    * </pre>
    *
    * <code>repeated .google.spanner.v1.StructType.Field fields = 1;</code>
@@ -60,9 +60,9 @@ public interface StructTypeOrBuilder
    * The list of fields that make up this struct. Order is
    * significant, because values of this struct type are represented as
    * lists, where the order of field values matches the order of
-   * fields in the [StructType][google.spanner.v1.StructType]. In turn, the
-   * order of fields matches the order of columns in a read request, or the
-   * order of fields in the `SELECT` clause of a query.
+   * fields in the [StructType][google.spanner.v1.StructType]. In turn, the order of fields
+   * matches the order of columns in a read request, or the order of
+   * fields in the `SELECT` clause of a query.
    * </pre>
    *
    * <code>repeated .google.spanner.v1.StructType.Field fields = 1;</code>
@@ -76,9 +76,9 @@ public interface StructTypeOrBuilder
    * The list of fields that make up this struct. Order is
    * significant, because values of this struct type are represented as
    * lists, where the order of field values matches the order of
-   * fields in the [StructType][google.spanner.v1.StructType]. In turn, the
-   * order of fields matches the order of columns in a read request, or the
-   * order of fields in the `SELECT` clause of a query.
+   * fields in the [StructType][google.spanner.v1.StructType]. In turn, the order of fields
+   * matches the order of columns in a read request, or the order of
+   * fields in the `SELECT` clause of a query.
    * </pre>
    *
    * <code>repeated .google.spanner.v1.StructType.Field fields = 1;</code>

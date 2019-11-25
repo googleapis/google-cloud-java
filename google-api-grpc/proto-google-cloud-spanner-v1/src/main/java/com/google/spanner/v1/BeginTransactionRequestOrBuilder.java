@@ -15,7 +15,9 @@ public interface BeginTransactionRequestOrBuilder
    * Required. The session in which the transaction runs.
    * </pre>
    *
-   * <code>string session = 1;</code>
+   * <code>
+   * string session = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    */
   java.lang.String getSession();
   /**
@@ -25,7 +27,9 @@ public interface BeginTransactionRequestOrBuilder
    * Required. The session in which the transaction runs.
    * </pre>
    *
-   * <code>string session = 1;</code>
+   * <code>
+   * string session = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    */
   com.google.protobuf.ByteString getSessionBytes();
 
@@ -36,7 +40,9 @@ public interface BeginTransactionRequestOrBuilder
    * Required. Options for the new transaction.
    * </pre>
    *
-   * <code>.google.spanner.v1.TransactionOptions options = 2;</code>
+   * <code>
+   * .google.spanner.v1.TransactionOptions options = 2 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   boolean hasOptions();
   /**
@@ -46,7 +52,9 @@ public interface BeginTransactionRequestOrBuilder
    * Required. Options for the new transaction.
    * </pre>
    *
-   * <code>.google.spanner.v1.TransactionOptions options = 2;</code>
+   * <code>
+   * .google.spanner.v1.TransactionOptions options = 2 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   com.google.spanner.v1.TransactionOptions getOptions();
   /**
@@ -56,7 +64,9 @@ public interface BeginTransactionRequestOrBuilder
    * Required. Options for the new transaction.
    * </pre>
    *
-   * <code>.google.spanner.v1.TransactionOptions options = 2;</code>
+   * <code>
+   * .google.spanner.v1.TransactionOptions options = 2 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   com.google.spanner.v1.TransactionOptionsOrBuilder getOptionsOrBuilder();
 }

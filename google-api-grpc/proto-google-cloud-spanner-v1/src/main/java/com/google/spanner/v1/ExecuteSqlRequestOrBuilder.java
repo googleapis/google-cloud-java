@@ -15,7 +15,9 @@ public interface ExecuteSqlRequestOrBuilder
    * Required. The session in which the SQL query should be performed.
    * </pre>
    *
-   * <code>string session = 1;</code>
+   * <code>
+   * string session = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    */
   java.lang.String getSession();
   /**
@@ -25,7 +27,9 @@ public interface ExecuteSqlRequestOrBuilder
    * Required. The session in which the SQL query should be performed.
    * </pre>
    *
-   * <code>string session = 1;</code>
+   * <code>
+   * string session = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    */
   com.google.protobuf.ByteString getSessionBytes();
 
@@ -36,10 +40,10 @@ public interface ExecuteSqlRequestOrBuilder
    * The transaction to use.
    * For queries, if none is provided, the default is a temporary read-only
    * transaction with strong concurrency.
-   * Standard DML statements require a ReadWrite transaction. Single-use
-   * transactions are not supported (to avoid replay).  The caller must
-   * either supply an existing transaction ID or begin a new transaction.
-   * Partitioned DML requires an existing PartitionedDml transaction ID.
+   * Standard DML statements require a read-write transaction. To protect
+   * against replays, single-use transactions are not supported.  The caller
+   * must either supply an existing transaction ID or begin a new transaction.
+   * Partitioned DML requires an existing Partitioned DML transaction ID.
    * </pre>
    *
    * <code>.google.spanner.v1.TransactionSelector transaction = 2;</code>
@@ -52,10 +56,10 @@ public interface ExecuteSqlRequestOrBuilder
    * The transaction to use.
    * For queries, if none is provided, the default is a temporary read-only
    * transaction with strong concurrency.
-   * Standard DML statements require a ReadWrite transaction. Single-use
-   * transactions are not supported (to avoid replay).  The caller must
-   * either supply an existing transaction ID or begin a new transaction.
-   * Partitioned DML requires an existing PartitionedDml transaction ID.
+   * Standard DML statements require a read-write transaction. To protect
+   * against replays, single-use transactions are not supported.  The caller
+   * must either supply an existing transaction ID or begin a new transaction.
+   * Partitioned DML requires an existing Partitioned DML transaction ID.
    * </pre>
    *
    * <code>.google.spanner.v1.TransactionSelector transaction = 2;</code>
@@ -68,10 +72,10 @@ public interface ExecuteSqlRequestOrBuilder
    * The transaction to use.
    * For queries, if none is provided, the default is a temporary read-only
    * transaction with strong concurrency.
-   * Standard DML statements require a ReadWrite transaction. Single-use
-   * transactions are not supported (to avoid replay).  The caller must
-   * either supply an existing transaction ID or begin a new transaction.
-   * Partitioned DML requires an existing PartitionedDml transaction ID.
+   * Standard DML statements require a read-write transaction. To protect
+   * against replays, single-use transactions are not supported.  The caller
+   * must either supply an existing transaction ID or begin a new transaction.
+   * Partitioned DML requires an existing Partitioned DML transaction ID.
    * </pre>
    *
    * <code>.google.spanner.v1.TransactionSelector transaction = 2;</code>
@@ -85,7 +89,7 @@ public interface ExecuteSqlRequestOrBuilder
    * Required. The SQL string.
    * </pre>
    *
-   * <code>string sql = 3;</code>
+   * <code>string sql = 3 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   java.lang.String getSql();
   /**
@@ -95,7 +99,7 @@ public interface ExecuteSqlRequestOrBuilder
    * Required. The SQL string.
    * </pre>
    *
-   * <code>string sql = 3;</code>
+   * <code>string sql = 3 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   com.google.protobuf.ByteString getSqlBytes();
 
@@ -103,17 +107,14 @@ public interface ExecuteSqlRequestOrBuilder
    *
    *
    * <pre>
-   * The SQL string can contain parameter placeholders. A parameter
-   * placeholder consists of `'&#64;'` followed by the parameter
-   * name. Parameter names consist of any combination of letters,
-   * numbers, and underscores.
+   * Parameter names and values that bind to placeholders in the SQL string.
+   * A parameter placeholder consists of the `&#64;` character followed by the
+   * parameter name (for example, `&#64;firstName`). Parameter names can contain
+   * letters, numbers, and underscores.
    * Parameters can appear anywhere that a literal value is expected.  The same
    * parameter name can be used more than once, for example:
-   *   `"WHERE id &gt; &#64;msg_id AND id &lt; &#64;msg_id + 100"`
-   * It is an error to execute an SQL statement with unbound parameters.
-   * Parameter values are specified using `params`, which is a JSON
-   * object whose keys are parameter names, and whose values are the
-   * corresponding parameter values.
+   * `"WHERE id &gt; &#64;msg_id AND id &lt; &#64;msg_id + 100"`
+   * It is an error to execute a SQL statement with unbound parameters.
    * </pre>
    *
    * <code>.google.protobuf.Struct params = 4;</code>
@@ -123,17 +124,14 @@ public interface ExecuteSqlRequestOrBuilder
    *
    *
    * <pre>
-   * The SQL string can contain parameter placeholders. A parameter
-   * placeholder consists of `'&#64;'` followed by the parameter
-   * name. Parameter names consist of any combination of letters,
-   * numbers, and underscores.
+   * Parameter names and values that bind to placeholders in the SQL string.
+   * A parameter placeholder consists of the `&#64;` character followed by the
+   * parameter name (for example, `&#64;firstName`). Parameter names can contain
+   * letters, numbers, and underscores.
    * Parameters can appear anywhere that a literal value is expected.  The same
    * parameter name can be used more than once, for example:
-   *   `"WHERE id &gt; &#64;msg_id AND id &lt; &#64;msg_id + 100"`
-   * It is an error to execute an SQL statement with unbound parameters.
-   * Parameter values are specified using `params`, which is a JSON
-   * object whose keys are parameter names, and whose values are the
-   * corresponding parameter values.
+   * `"WHERE id &gt; &#64;msg_id AND id &lt; &#64;msg_id + 100"`
+   * It is an error to execute a SQL statement with unbound parameters.
    * </pre>
    *
    * <code>.google.protobuf.Struct params = 4;</code>
@@ -143,17 +141,14 @@ public interface ExecuteSqlRequestOrBuilder
    *
    *
    * <pre>
-   * The SQL string can contain parameter placeholders. A parameter
-   * placeholder consists of `'&#64;'` followed by the parameter
-   * name. Parameter names consist of any combination of letters,
-   * numbers, and underscores.
+   * Parameter names and values that bind to placeholders in the SQL string.
+   * A parameter placeholder consists of the `&#64;` character followed by the
+   * parameter name (for example, `&#64;firstName`). Parameter names can contain
+   * letters, numbers, and underscores.
    * Parameters can appear anywhere that a literal value is expected.  The same
    * parameter name can be used more than once, for example:
-   *   `"WHERE id &gt; &#64;msg_id AND id &lt; &#64;msg_id + 100"`
-   * It is an error to execute an SQL statement with unbound parameters.
-   * Parameter values are specified using `params`, which is a JSON
-   * object whose keys are parameter names, and whose values are the
-   * corresponding parameter values.
+   * `"WHERE id &gt; &#64;msg_id AND id &lt; &#64;msg_id + 100"`
+   * It is an error to execute a SQL statement with unbound parameters.
    * </pre>
    *
    * <code>.google.protobuf.Struct params = 4;</code>
@@ -315,7 +310,7 @@ public interface ExecuteSqlRequestOrBuilder
    *
    *
    * <pre>
-   * A per-transaction sequence number used to identify this request. This
+   * A per-transaction sequence number used to identify this request. This field
    * makes each request idempotent such that if the request is received multiple
    * times, at most one will succeed.
    * The sequence number must be monotonically increasing within the

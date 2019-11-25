@@ -46,9 +46,9 @@ public final class TransactionProto {
   static {
     java.lang.String[] descriptorData = {
       "\n#google/spanner/v1/transaction.proto\022\021g"
-          + "oogle.spanner.v1\032\034google/api/annotations"
-          + ".proto\032\036google/protobuf/duration.proto\032\037"
-          + "google/protobuf/timestamp.proto\"\303\004\n\022Tran"
+          + "oogle.spanner.v1\032\036google/protobuf/durati"
+          + "on.proto\032\037google/protobuf/timestamp.prot"
+          + "o\032\034google/api/annotations.proto\"\303\004\n\022Tran"
           + "sactionOptions\022E\n\nread_write\030\001 \001(\0132/.goo"
           + "gle.spanner.v1.TransactionOptions.ReadWr"
           + "iteH\000\022O\n\017partitioned_dml\030\003 \001(\01324.google."
@@ -86,9 +86,9 @@ public final class TransactionProto {
     com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
         descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
-          com.google.api.AnnotationsProto.getDescriptor(),
           com.google.protobuf.DurationProto.getDescriptor(),
           com.google.protobuf.TimestampProto.getDescriptor(),
+          com.google.api.AnnotationsProto.getDescriptor(),
         },
         assigner);
     internal_static_google_spanner_v1_TransactionOptions_descriptor =
@@ -141,9 +141,9 @@ public final class TransactionProto {
             new java.lang.String[] {
               "SingleUse", "Id", "Begin", "Selector",
             });
-    com.google.api.AnnotationsProto.getDescriptor();
     com.google.protobuf.DurationProto.getDescriptor();
     com.google.protobuf.TimestampProto.getDescriptor();
+    com.google.api.AnnotationsProto.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)
