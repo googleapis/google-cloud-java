@@ -335,36 +335,6 @@
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
-        <artifactId>proto-google-cloud-firestore-admin-v1</artifactId>
-        <version>1.31.1-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-firestore-admin-v1:current} -->
-      </dependency>
-      <dependency>
-        <groupId>com.google.api.grpc</groupId>
-        <artifactId>proto-google-cloud-firestore-v1</artifactId>
-        <version>1.31.1-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-firestore-v1:current} -->
-      </dependency>
-      <dependency>
-        <groupId>com.google.api.grpc</groupId>
-        <artifactId>proto-google-cloud-firestore-v1beta1</artifactId>
-        <version>0.84.1-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-firestore-v1beta1:current} -->
-      </dependency>
-      <dependency>
-        <groupId>com.google.api.grpc</groupId>
-        <artifactId>grpc-google-cloud-firestore-admin-v1</artifactId>
-        <version>1.31.1-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-firestore-admin-v1:current} -->
-      </dependency>
-      <dependency>
-        <groupId>com.google.api.grpc</groupId>
-        <artifactId>grpc-google-cloud-firestore-v1</artifactId>
-        <version>1.31.1-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-firestore-v1:current} -->
-      </dependency>
-      <dependency>
-        <groupId>com.google.api.grpc</groupId>
-        <artifactId>grpc-google-cloud-firestore-v1beta1</artifactId>
-        <version>0.84.1-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-firestore-v1beta1:current} -->
-      </dependency>
-      <dependency>
-        <groupId>com.google.api.grpc</groupId>
         <artifactId>proto-google-cloud-kms-v1</artifactId>
         <version>0.81.0</version>
       </dependency>
@@ -837,9 +807,6 @@
     <module>grpc-google-cloud-dataproc-v1</module>
     <module>grpc-google-cloud-dataproc-v1beta2</module>
     <module>grpc-google-cloud-error-reporting-v1beta1</module>
-    <module>grpc-google-cloud-firestore-admin-v1</module>
-    <module>grpc-google-cloud-firestore-v1</module>
-    <module>grpc-google-cloud-firestore-v1beta1</module>
     <module>grpc-google-cloud-gameservices-v1alpha</module>
     <module>grpc-google-cloud-iamcredentials-v1</module>
     <module>grpc-google-cloud-iot-v1</module>
@@ -881,9 +848,6 @@
     <module>proto-google-cloud-dataproc-v1</module>
     <module>proto-google-cloud-dataproc-v1beta2</module>
     <module>proto-google-cloud-datastore-v1</module>
-    <module>proto-google-cloud-firestore-admin-v1</module>
-    <module>proto-google-cloud-firestore-v1</module>
-    <module>proto-google-cloud-firestore-v1beta1</module>
     <module>proto-google-cloud-gameservices-v1alpha</module>
     <module>proto-google-cloud-iamcredentials-v1</module>
     <module>proto-google-cloud-iot-v1</module>

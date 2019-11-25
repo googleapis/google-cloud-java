@@ -405,7 +405,6 @@
     <module>google-cloud-datacatalog</module>
     <module>google-cloud-datalabeling</module>
     <module>google-cloud-datastore</module>
-    <module>google-cloud-firestore</module>
     <module>google-cloud-gameservices</module>
     <module>google-cloud-iamcredentials</module>
     <module>google-cloud-iot</module>
