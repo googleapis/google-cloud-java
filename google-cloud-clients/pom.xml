@@ -401,7 +401,6 @@
     <module>google-cloud-datastore</module>
     <module>google-cloud-firestore</module>
     <module>google-cloud-pubsub</module>
-    <module>google-cloud-redis</module>
     <module>google-cloud-scheduler</module>
     <module>google-cloud-securitycenter</module>
     <module>google-cloud-spanner</module>
