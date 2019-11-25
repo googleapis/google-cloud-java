@@ -155,7 +155,7 @@ public class OsLoginServiceClientTest {
     String name2 = "name2-1052831874";
     boolean suspended = false;
     LoginProfile expectedResponse =
-        LoginProfile.newBuilder().setName(name2).setSuspended(suspended).build();
+        LoginProfile.newBuilder().setName(name2).build();
     mockOsLoginService.addResponse(expectedResponse);
 
     UserName name = UserName.of("[USER]");
