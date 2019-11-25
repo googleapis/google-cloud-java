@@ -707,19 +707,11 @@
         <scope>import</scope>
       </dependency>
       <dependency>
-        <groupId>com.google.api.grpc</groupId>
-        <artifactId>proto-google-cloud-recaptchaenterprise-v1beta1</artifactId>
-        <version>0.27.0</version>
-      </dependency>
-      <dependency>
-        <groupId>com.google.api.grpc</groupId>
-        <artifactId>grpc-google-cloud-recaptchaenterprise-v1beta1</artifactId>
-        <version>0.27.0</version>
-      </dependency>
-      <dependency>
         <groupId>com.google.cloud</groupId>
-        <artifactId>google-cloud-recaptchaenterprise</artifactId>
-        <version>0.27.0</version>
+        <artifactId>google-cloud-recaptchaenterprise-bom</artifactId>
+        <version>0.28.0</version>
+        <type>pom</type>
+        <scope>import</scope>
       </dependency>
       <dependency>
         <groupId>io.grafeas</groupId>
