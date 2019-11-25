@@ -484,11 +484,12 @@
         <artifactId>google-cloud-logging-logback</artifactId>
         <version>0.116.0-alpha</version>
       </dependency>
-
       <dependency>
         <groupId>com.google.cloud</groupId>
-        <artifactId>google-cloud-monitoring</artifactId>
-        <version>1.98.0</version>
+        <artifactId>google-cloud-monitoring-bom</artifactId>
+        <version>1.99.0</version>
+        <type>pom</type>
+        <scope>import</scope>
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
