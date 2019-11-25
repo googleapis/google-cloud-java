@@ -826,8 +826,6 @@
     <module>grpc-google-cloud-bigquerystorage-v1beta1</module>
     <module>grpc-google-cloud-bigtable-admin-v2</module>
     <module>grpc-google-cloud-bigtable-v2</module>
-    <module>grpc-google-cloud-containeranalysis-v1</module>
-    <module>grpc-google-cloud-containeranalysis-v1beta1</module>
     <module>grpc-google-cloud-datacatalog-v1beta1</module>
     <module>grpc-google-cloud-datalabeling-v1beta1</module>
     <module>grpc-google-cloud-dataproc-v1</module>
@@ -866,8 +864,6 @@
     <module>proto-google-cloud-bigquerystorage-v1beta1</module>
     <module>proto-google-cloud-bigtable-admin-v2</module>
     <module>proto-google-cloud-bigtable-v2</module>
-    <module>proto-google-cloud-containeranalysis-v1</module>
-    <module>proto-google-cloud-containeranalysis-v1beta1</module>
     <module>proto-google-cloud-datacatalog-v1beta1</module>
     <module>proto-google-cloud-datalabeling-v1beta1</module>
     <module>proto-google-cloud-dataproc-v1</module>
