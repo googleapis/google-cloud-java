@@ -393,36 +393,15 @@
     </dependencies>
   </dependencyManagement>
   <modules>
-    <module>google-cloud-asset</module>
     <module>google-cloud-bigtable</module>
     <module>google-cloud-bigquery</module>
     <module>google-cloud-bigquerydatatransfer</module>
     <module>google-cloud-bigquerystorage</module>
-    <module>google-cloud-container</module>
-    <module>google-cloud-containeranalysis</module>
     <module>google-cloud-contrib</module>
-    <module>google-cloud-dataproc</module>
-    <module>google-cloud-datacatalog</module>
-    <module>google-cloud-datalabeling</module>
     <module>google-cloud-datastore</module>
-    <module>google-cloud-firestore</module>
-    <module>google-cloud-gameservices</module>
-    <module>google-cloud-iamcredentials</module>
-    <module>google-cloud-iot</module>
-    <module>google-cloud-os-login</module>
-    <module>google-cloud-phishingprotection</module>
     <module>google-cloud-pubsub</module>
-    <module>google-cloud-recaptchaenterprise</module>
-    <module>google-cloud-redis</module>
-    <module>google-cloud-scheduler</module>
-    <module>google-cloud-securitycenter</module>
     <module>google-cloud-spanner</module>
     <module>google-cloud-storage</module>
-    <module>google-cloud-tasks</module>
-    <module>google-cloud-texttospeech</module>
-    <module>google-cloud-translate</module>
-    <module>google-cloud-webrisk</module>
-    <module>google-cloud-websecurityscanner</module>
     <module>grafeas</module>
   </modules>
   <pluginRepositories>
