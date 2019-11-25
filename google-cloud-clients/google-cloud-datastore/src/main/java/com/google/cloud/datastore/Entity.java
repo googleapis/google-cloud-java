@@ -91,9 +91,9 @@ public final class Entity extends FullEntity<Key> {
   }
 
   /**
-   * Returns the serialized protobuf size of provided entity object.
+   * Returns the size in bytes of the protobuf form of the provided entity.
    *
-   * @param entity entity object to calculate serialize size.
+   * @param entity object whose size is measured.
    */
   public static int calculateSerializedSize(BaseEntity<? extends IncompleteKey> entity) {
     checkNotNull(entity);
