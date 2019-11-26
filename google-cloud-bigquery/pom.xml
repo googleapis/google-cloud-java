@@ -19,11 +19,11 @@
   </properties>
   <dependencies>
     <dependency>
-      <groupId>${project.groupId}</groupId>
+      <groupId>com.google.cloud</groupId>
       <artifactId>google-cloud-core</artifactId>
     </dependency>
     <dependency>
-      <groupId>${project.groupId}</groupId>
+      <groupId>com.google.cloud</groupId>
       <artifactId>google-cloud-core-http</artifactId>
     </dependency>
     <dependency>
@@ -32,19 +32,20 @@
       <scope>provided</scope>
     </dependency>
     <dependency>
-      <groupId>${project.groupId}</groupId>
+      <groupId>com.google.cloud</groupId>
       <artifactId>google-cloud-storage</artifactId>
+      <version>1.101.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-storage:current} -->
       <scope>test</scope>
     </dependency>
     <dependency>
       <groupId>com.google.apis</groupId>
       <artifactId>google-api-services-bigquery</artifactId>
-      <scope>compile</scope>
+      <version>v2-rev20190917-1.30.3</version>
     </dependency>
 
     <!-- Test dependencies -->
     <dependency>
-      <groupId>${project.groupId}</groupId>
+      <groupId>com.google.cloud</groupId>
       <artifactId>google-cloud-core</artifactId>
       <type>test-jar</type>
       <scope>test</scope>
