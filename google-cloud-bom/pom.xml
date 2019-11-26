@@ -862,7 +862,7 @@
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>grpc-google-cloud-recaptchaenterprise-v1beta1</artifactId>
-        <version>0.27.0</version>
+        <version>0.28.0</version>
       </dependency>
       <dependency>
         <groupId>com.google.cloud</groupId>
