@@ -19,8 +19,9 @@
   </properties>
   <dependencies>
     <dependency>
-      <groupId>${project.groupId}</groupId>
+      <groupId>com.google.cloud</groupId>
       <artifactId>google-cloud-storage</artifactId>
+      <version>1.101.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-storage:current} -->
     </dependency>
     <dependency>
       <groupId>javax.inject</groupId>

@@ -153,10 +153,9 @@
     <project.javadoc.protobufBaseURL>https://googleapis.dev/java/google-api-grpc/latest</project.javadoc.protobufBaseURL>
     <github.global.server>github</github.global.server>
     <site.installationModule>google-cloud-clients</site.installationModule>
-    <bom.version>0.119.1-alpha-SNAPSHOT</bom.version><!-- {x-version-update:google-cloud-bom:current} -->
     <api-client.version>1.30.5</api-client.version>
     <!-- make sure to keep gax version in sync with google-cloud-bom -->
-    <gax.version>1.49.1</gax.version>
+    <gax.version>1.50.1</gax.version>
     <api.common.java.version>1.8.1</api.common.java.version>
     <grpc.version>1.25.0</grpc.version>
     <google.auth.version>0.18.0</google.auth.version>
@@ -175,13 +174,6 @@
   <!-- All non-test dependency versions should be added to google-cloud-bom/pom.xml -->
   <dependencyManagement>
     <dependencies>
-      <dependency>
-        <groupId>com.google.cloud</groupId>
-        <artifactId>google-cloud-bom</artifactId>
-        <version>${bom.version}</version>
-        <type>pom</type>
-        <scope>import</scope>
-      </dependency>
       <dependency>
         <groupId>com.google.http-client</groupId>
         <artifactId>google-http-client-bom</artifactId>
@@ -224,16 +216,40 @@
         <type>pom</type>
         <scope>import</scope>
       </dependency>
-
       <dependency>
-        <groupId>com.google.apis</groupId>
-        <artifactId>google-api-services-bigquery</artifactId>
-        <version>v2-rev20190917-1.30.3</version>
+        <groupId>com.google.cloud</groupId>
+        <artifactId>google-cloud-core-bom</artifactId>
+        <version>1.91.3</version>
+        <type>pom</type>
+        <scope>import</scope>
       </dependency>
       <dependency>
-        <groupId>com.google.cloud.datastore</groupId>
-        <artifactId>datastore-v1-proto-client</artifactId>
-        <version>1.6.3</version>
+        <groupId>com.google.api</groupId>
+        <artifactId>gax-bom</artifactId>
+        <version>${gax.version}</version>
+        <type>pom</type>
+        <scope>import</scope>
+      </dependency>
+
+      <dependency>
+        <groupId>com.google.api.grpc</groupId>
+        <artifactId>proto-google-iam-v1</artifactId>
+        <version>0.13.0</version>
+      </dependency>
+      <dependency>
+        <groupId>com.google.api.grpc</groupId>
+        <artifactId>grpc-google-iam-v1</artifactId>
+        <version>0.13.0</version>
+      </dependency>
+      <dependency>
+        <groupId>com.google.api.grpc</groupId>
+        <artifactId>proto-google-common-protos</artifactId>
+        <version>1.17.0</version>
+      </dependency>
+      <dependency>
+        <groupId>com.google.api.grpc</groupId>
+        <artifactId>grpc-google-common-protos</artifactId>
+        <version>1.17.0</version>
       </dependency>
 
       <!-- TODO(chingor): Remove this when http-client and guava converge -->

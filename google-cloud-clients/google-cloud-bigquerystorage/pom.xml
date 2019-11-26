@@ -21,16 +21,19 @@
         <dependency>
             <groupId>com.google.api.grpc</groupId>
             <artifactId>proto-google-cloud-bigquerystorage-v1beta1</artifactId>
+            <version>0.84.1-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-bigquerystorage-v1beta1:current} -->
         </dependency>
         <dependency>
             <groupId>com.google.api.grpc</groupId>
             <artifactId>grpc-google-cloud-bigquerystorage-v1beta1</artifactId>
+            <version>0.84.1-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-bigquerystorage-v1beta1:current} -->
         </dependency>
 
         <!-- Test dependencies -->
         <dependency>
             <groupId>com.google.cloud</groupId>
             <artifactId>google-cloud-bigquery</artifactId>
+            <version>1.101.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-bigquery:current} -->
             <scope>test</scope>
         </dependency>
         <dependency>
