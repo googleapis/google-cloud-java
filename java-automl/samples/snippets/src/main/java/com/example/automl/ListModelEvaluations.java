@@ -32,7 +32,7 @@ import java.io.IOException;
 
 class ListModelEvaluations {
 
-  static void listModelEvaluations() throws IOException {
+  public static void main(String[] args) throws IOException {
     // TODO(developer): Replace these variables before running the sample.
     String projectId = "YOUR_PROJECT_ID";
     String modelId = "YOUR_MODEL_ID";
@@ -48,12 +48,12 @@ class ListModelEvaluations {
       // Get the full path of the model.
       ModelName modelFullId = ModelName.of(projectId, "us-central1", modelId);
       ListModelEvaluationsRequest modelEvaluationsrequest =
-              ListModelEvaluationsRequest.newBuilder().setParent(modelFullId.toString()).build();
+          ListModelEvaluationsRequest.newBuilder().setParent(modelFullId.toString()).build();
 
       // List all the model evaluations in the model by applying filter.
       System.out.println("List of model evaluations:");
       for (ModelEvaluation modelEvaluation :
-              client.listModelEvaluations(modelEvaluationsrequest).iterateAll()) {
+          client.listModelEvaluations(modelEvaluationsrequest).iterateAll()) {
 
         System.out.format("Model Evaluation Name: %s\n", modelEvaluation.getName());
         System.out.format("Model Annotation Spec Id: %s", modelEvaluation.getAnnotationSpecId());
@@ -61,38 +61,41 @@ class ListModelEvaluations {
         System.out.format("\tseconds: %s\n", modelEvaluation.getCreateTime().getSeconds());
         System.out.format("\tnanos: %s", modelEvaluation.getCreateTime().getNanos() / 1e9);
         System.out.format(
-                "Evalution Example Count: %d\n", modelEvaluation.getEvaluatedExampleCount());
+            "Evalution Example Count: %d\n", modelEvaluation.getEvaluatedExampleCount());
         // [END automl_language_sentiment_analysis_list_model_evaluations]
         // [END automl_language_text_classification_list_model_evaluations]
         // [END automl_translate_list_model_evaluations]
         // [END automl_vision_classification_list_model_evaluations]
         // [END automl_vision_object_detection_list_model_evaluations]
-        System.out.format("Entity Extraction Model Evaluation Metrics: %s\n",
-                modelEvaluation.getTextExtractionEvaluationMetrics());
+        System.out.format(
+            "Entity Extraction Model Evaluation Metrics: %s\n",
+            modelEvaluation.getTextExtractionEvaluationMetrics());
         // [END automl_language_entity_extraction_list_model_evaluations]
 
         // [START automl_language_sentiment_analysis_list_model_evaluations]
-        System.out.format("Sentiment Analysis Model Evaluation Metrics: %s\n",
-                modelEvaluation.getTextSentimentEvaluationMetrics());
+        System.out.format(
+            "Sentiment Analysis Model Evaluation Metrics: %s\n",
+            modelEvaluation.getTextSentimentEvaluationMetrics());
         // [END automl_language_sentiment_analysis_list_model_evaluations]
 
         // [START automl_language_text_classification_list_model_evaluations]
         // [START automl_vision_classification_list_model_evaluations]
-        System.out.format("Classification Model Evaluation Metrics: %s\n",
-                modelEvaluation.getClassificationEvaluationMetrics());
+        System.out.format(
+            "Classification Model Evaluation Metrics: %s\n",
+            modelEvaluation.getClassificationEvaluationMetrics());
         // [END automl_language_text_classification_list_model_evaluations]
         // [END automl_vision_classification_list_model_evaluations]
 
         // [START automl_translate_list_model_evaluations]
         System.out.format(
-                "Translate Model Evaluation Metrics: %s\n",
-                modelEvaluation.getTranslationEvaluationMetrics());
+            "Translate Model Evaluation Metrics: %s\n",
+            modelEvaluation.getTranslationEvaluationMetrics());
         // [END automl_translate_list_model_evaluations]
 
-
         // [START automl_vision_object_detection_list_model_evaluations]
-        System.out.format("Object Detection Model Evaluation Metrics: %s\n",
-                modelEvaluation.getImageObjectDetectionEvaluationMetrics());
+        System.out.format(
+            "Object Detection Model Evaluation Metrics: %s\n",
+            modelEvaluation.getImageObjectDetectionEvaluationMetrics());
         // [START automl_language_entity_extraction_list_model_evaluations]
         // [START automl_language_sentiment_analysis_list_model_evaluations]
         // [START automl_language_text_classification_list_model_evaluations]

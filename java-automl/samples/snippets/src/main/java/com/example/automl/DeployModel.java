@@ -29,7 +29,8 @@ import java.util.concurrent.ExecutionException;
 
 class DeployModel {
 
-  static void deployModel() throws IOException, ExecutionException, InterruptedException {
+  public static void main(String[] args)
+      throws IOException, ExecutionException, InterruptedException {
     // TODO(developer): Replace these variables before running the sample.
     String projectId = "YOUR_PROJECT_ID";
     String modelId = "YOUR_MODEL_ID";

@@ -29,7 +29,7 @@ import java.io.IOException;
 
 class LanguageTextClassificationPredict {
 
-  static void predict() throws IOException {
+  public static void main(String[] args) throws IOException {
     // TODO(developer): Replace these variables before running the sample.
     String projectId = "YOUR_PROJECT_ID";
     String modelId = "YOUR_MODEL_ID";

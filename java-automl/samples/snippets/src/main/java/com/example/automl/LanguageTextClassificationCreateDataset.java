@@ -30,7 +30,8 @@ import java.util.concurrent.ExecutionException;
 
 class LanguageTextClassificationCreateDataset {
 
-  static void createDataset() throws IOException, ExecutionException, InterruptedException {
+  public static void main(String[] args)
+      throws IOException, ExecutionException, InterruptedException {
     // TODO(developer): Replace these variables before running the sample.
     String projectId = "YOUR_PROJECT_ID";
     String displayName = "YOUR_DATASET_NAME";

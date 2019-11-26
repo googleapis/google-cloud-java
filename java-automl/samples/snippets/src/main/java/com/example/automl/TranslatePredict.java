@@ -30,7 +30,7 @@ import java.nio.file.Paths;
 
 class TranslatePredict {
 
-  static void predict() throws IOException {
+  public static void main(String[] args) throws IOException {
     // TODO(developer): Replace these variables before running the sample.
     String projectId = "YOUR_PROJECT_ID";
     String modelId = "YOUR_MODEL_ID";
