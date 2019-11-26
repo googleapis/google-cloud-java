@@ -772,7 +772,7 @@
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>grpc-google-cloud-video-intelligence-v1</artifactId>
-        <version>0.80.0</version>
+        <version>0.81.0</version>
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
