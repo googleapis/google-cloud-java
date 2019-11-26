@@ -1,3 +1,3 @@
-# Google Cloud Java Client for Text-To-Speech
+# Google Cloud Java Client for Translation
 
-This client has moved to https://github.com/googleapis/java-texttospeech
+This client has moved to https://github.com/googleapis/java-translate
