@@ -116,11 +116,6 @@
         <artifactId>proto-google-cloud-video-intelligence-v1p2beta1</artifactId>
         <version>0.81.1-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-video-intelligence-v1p2beta1:current} -->
       </dependency>
-      <dependency>
-        <groupId>com.google.cloud</groupId>
-        <artifactId>google-cloud-video-intelligence-bom</artifactId>
-        <version>0.116.1-beta-SNAPSHOT</version><!-- {x-version-update:google-cloud-video-intelligence-bom:current} -->
-      </dependency>
     </dependencies>
   </dependencyManagement>
 
