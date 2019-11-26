@@ -371,6 +371,25 @@ public class Publisher {
     }
   }
 
+  /**
+   * Publish any outstanding batches if non-empty and there are no other batches in flight for
+   * orderingKey. This method sends buffered messages, but does not wait for the send operations to
+   * complete. To wait for messages to send, call {@code get} on the futures returned from {@code
+   * publish}.
+   */
+  private void publishAllWithoutInflightForKey(final String orderingKey) {
+    messagesBatchLock.lock();
+    try {
+      MessagesBatch batch = messagesBatches.get(orderingKey);
+      if (batch != null && !sequentialExecutor.hasTasksInflight(orderingKey)) {
+        publishOutstandingBatch(batch.popOutstandingBatch());
+        messagesBatches.remove(orderingKey);
+      }
+    } finally {
+      messagesBatchLock.unlock();
+    }
+  }
+
   private ApiFuture<PublishResponse> publishCall(OutstandingBatch outstandingBatch) {
     return publisherStub
         .publishCallable()
@@ -397,6 +416,11 @@ public class Publisher {
                             result.getMessageIdsCount(), outstandingBatch.size())));
               } else {
                 outstandingBatch.onSuccess(result.getMessageIdsList());
+                if (!activeAlarm.get()
+                    && outstandingBatch.orderingKey != null
+                    && !outstandingBatch.orderingKey.isEmpty()) {
+                  publishAllWithoutInflightForKey(outstandingBatch.orderingKey);
+                }
               }
             } finally {
               messagesWaiter.incrementPendingMessages(-outstandingBatch.size());

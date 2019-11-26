@@ -308,6 +308,8 @@ public class PublisherImplTest {
             .setEnableMessageOrdering(true)
             .build();
     testPublisherServiceImpl.setAutoPublishResponse(true);
+    testPublisherServiceImpl.setExecutor(fakeExecutor);
+    testPublisherServiceImpl.setPublishResponseDelay(Duration.ofSeconds(300));
 
     // Publish two messages with ordering key, "OrderA", and other two messages with "OrderB".
     ApiFuture<String> publishFuture1 = sendTestMessageWithOrderingKey(publisher, "m1", "OrderA");
@@ -325,9 +327,22 @@ public class PublisherImplTest {
     // The timeout expires.
     fakeExecutor.advanceTime(Duration.ofSeconds(100));
 
+    // Publish one more message on "OrderA" while publishes are outstanding.
+    testPublisherServiceImpl.setPublishResponseDelay(Duration.ZERO);
+    ApiFuture<String> publishFuture5 = sendTestMessageWithOrderingKey(publisher, "m5", "OrderA");
+
+    // The second timeout expires.
+    fakeExecutor.advanceTime(Duration.ofSeconds(100));
+
+    // Publishing completes on the first four messages.
+    fakeExecutor.advanceTime(Duration.ofSeconds(200));
+
     // Verify that they were delivered in order per ordering key.
     assertTrue(Integer.parseInt(publishFuture1.get()) < Integer.parseInt(publishFuture3.get()));
     assertTrue(Integer.parseInt(publishFuture2.get()) < Integer.parseInt(publishFuture4.get()));
+
+    // Verify that they were delivered in order per ordering key.
+    assertTrue(Integer.parseInt(publishFuture3.get()) < Integer.parseInt(publishFuture5.get()));
 
     // Verify that every message within the same batch has the same ordering key.
     List<PublishRequest> requests = testPublisherServiceImpl.getCapturedRequests();

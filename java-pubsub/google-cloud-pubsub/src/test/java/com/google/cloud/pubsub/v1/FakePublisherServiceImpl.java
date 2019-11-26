@@ -24,7 +24,10 @@ import io.grpc.stub.StreamObserver;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.LinkedBlockingQueue;
+import java.util.concurrent.ScheduledExecutorService;
+import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicInteger;
+import org.threeten.bp.Duration;
 
 /**
  * A fake implementation of {@link PublisherImplBase}, that can be used to test clients of a Cloud
@@ -36,6 +39,8 @@ class FakePublisherServiceImpl extends PublisherImplBase {
   private final LinkedBlockingQueue<Response> publishResponses = new LinkedBlockingQueue<>();
   private final AtomicInteger nextMessageId = new AtomicInteger(1);
   private boolean autoPublishResponse;
+  private ScheduledExecutorService executor = null;
+  private Duration responseDelay = Duration.ZERO;
 
   /** Class used to save the state of a possible response. */
   private static class Response {
@@ -74,7 +79,8 @@ class FakePublisherServiceImpl extends PublisherImplBase {
   }
 
   @Override
-  public void publish(PublishRequest request, StreamObserver<PublishResponse> responseObserver) {
+  public void publish(
+      PublishRequest request, final StreamObserver<PublishResponse> responseObserver) {
     requests.add(request);
     Response response;
     try {
@@ -90,6 +96,23 @@ class FakePublisherServiceImpl extends PublisherImplBase {
     } catch (InterruptedException e) {
       throw new IllegalArgumentException(e);
     }
+    if (responseDelay == Duration.ZERO) {
+      sendResponse(response, responseObserver);
+    } else {
+      final Response responseToSend = response;
+      executor.schedule(
+          new Runnable() {
+            @Override
+            public void run() {
+              sendResponse(responseToSend, responseObserver);
+            }
+          },
+          responseDelay.toMillis(),
+          TimeUnit.MILLISECONDS);
+    }
+  }
+
+  private void sendResponse(Response response, StreamObserver<PublishResponse> responseObserver) {
     if (response.isError()) {
       responseObserver.onError(response.getError());
     } else {
@@ -104,6 +127,18 @@ class FakePublisherServiceImpl extends PublisherImplBase {
    */
   public FakePublisherServiceImpl setAutoPublishResponse(boolean autoPublishResponse) {
     this.autoPublishResponse = autoPublishResponse;
+    return this;
+  }
+
+  /** Set an executor to use to delay publish responses. */
+  public FakePublisherServiceImpl setExecutor(ScheduledExecutorService executor) {
+    this.executor = executor;
+    return this;
+  }
+
+  /** Set an amount of time by which to delay publish responses. */
+  public FakePublisherServiceImpl setPublishResponseDelay(Duration responseDelay) {
+    this.responseDelay = responseDelay;
     return this;
   }
 

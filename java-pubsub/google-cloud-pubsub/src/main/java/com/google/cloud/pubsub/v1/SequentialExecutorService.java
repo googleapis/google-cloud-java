@@ -216,8 +216,8 @@ final class SequentialExecutorService {
                       // Step 5.1: on success
                       @Override
                       public void onSuccess(T msg) {
-                        future.set(msg);
                         callNextTaskAsync(key);
+                        future.set(msg);
                       }
 
                       // Step 5.2: on failure
