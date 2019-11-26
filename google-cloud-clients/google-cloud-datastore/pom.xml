@@ -19,21 +19,22 @@
   </properties>
   <dependencies>
     <dependency>
-      <groupId>${project.groupId}</groupId>
+      <groupId>com.google.cloud</groupId>
       <artifactId>google-cloud-core-http</artifactId>
     </dependency>
     <dependency>
       <groupId>com.google.api.grpc</groupId>
       <artifactId>proto-google-cloud-datastore-v1</artifactId>
+      <version>0.84.1-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-datastore-v1:current} -->
     </dependency>
     <dependency>
       <groupId>com.google.cloud.datastore</groupId>
       <artifactId>datastore-v1-proto-client</artifactId>
+      <version>1.6.3</version>
       <exclusions>
-        <!-- TODO: remove this once datastore-v1-proto-client updates dependencies -->
         <exclusion>
-          <groupId>com.google.oauth-client</groupId>
-          <artifactId>google-oauth-client</artifactId>
+          <groupId>com.google.api.grpc</groupId>
+          <artifactId>proto-google-cloud-datastore-v1</artifactId>
         </exclusion>
       </exclusions>
     </dependency>
