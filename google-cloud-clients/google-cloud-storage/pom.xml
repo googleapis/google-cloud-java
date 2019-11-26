@@ -25,7 +25,7 @@
     <dependency>
       <groupId>com.google.apis</groupId>
       <artifactId>google-api-services-storage</artifactId>
-      <scope>compile</scope>
+      <version>v1-rev20190910-1.30.3</version>
     </dependency>
 
     <!-- Test dependencies -->
