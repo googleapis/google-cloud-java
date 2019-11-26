@@ -519,7 +519,7 @@
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>proto-google-cloud-logging-v2</artifactId>
-        <version>0.81.0</version>
+        <version>0.82.0</version>
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
