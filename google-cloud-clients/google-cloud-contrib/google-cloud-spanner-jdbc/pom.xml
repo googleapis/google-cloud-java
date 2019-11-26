@@ -21,11 +21,12 @@
   </properties>
   <dependencies>
     <dependency>
-      <groupId>${project.groupId}</groupId>
+      <groupId>com.google.cloud</groupId>
       <artifactId>google-cloud-spanner</artifactId>
+      <version>1.46.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-spanner:current} -->
     </dependency>
     <dependency>
-      <groupId>${project.groupId}</groupId>
+      <groupId>com.google.cloud</groupId>
       <artifactId>google-cloud-spanner</artifactId>
       <version>1.46.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-spanner:current} -->
       <type>test-jar</type>

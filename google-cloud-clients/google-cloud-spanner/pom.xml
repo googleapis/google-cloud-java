@@ -80,38 +80,46 @@
       </plugin>
     </plugins>
   </build>
+
   <dependencies>
     <dependency>
-      <groupId>${project.groupId}</groupId>
+      <groupId>com.google.cloud</groupId>
       <artifactId>google-cloud-core-grpc</artifactId>
     </dependency>
     <dependency>
       <groupId>com.google.api.grpc</groupId>
       <artifactId>proto-google-cloud-spanner-v1</artifactId>
+      <version>1.46.1-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-spanner-v1:current} -->
     </dependency>
     <dependency>
       <groupId>com.google.api.grpc</groupId>
       <artifactId>proto-google-cloud-spanner-admin-database-v1</artifactId>
+      <version>1.46.1-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-spanner-admin-database-v1:current} -->
     </dependency>
     <dependency>
       <groupId>com.google.api.grpc</groupId>
       <artifactId>proto-google-cloud-spanner-admin-instance-v1</artifactId>
+      <version>1.46.1-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-spanner-admin-instance-v1:current} -->
     </dependency>
     <dependency>
       <groupId>com.google.api.grpc</groupId>
       <artifactId>grpc-google-cloud-spanner-v1</artifactId>
+      <version>1.46.1-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-spanner-v1:current} -->
     </dependency>
     <dependency>
       <groupId>com.google.api.grpc</groupId>
       <artifactId>grpc-google-cloud-spanner-admin-database-v1</artifactId>
+      <version>1.46.1-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-spanner-admin-database-v1:current} -->
     </dependency>
     <dependency>
       <groupId>com.google.api.grpc</groupId>
       <artifactId>grpc-google-cloud-spanner-admin-instance-v1</artifactId>
+      <version>1.46.1-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-spanner-admin-instance-v1:current} -->
     </dependency>
     <dependency>
       <groupId>com.google.api.grpc</groupId>
       <artifactId>grpc-google-common-protos</artifactId>
+      <version>1.17.0</version>
     </dependency>
     
     <!-- Test dependencies -->

@@ -22,16 +22,19 @@
   </properties>
   <dependencies>
     <dependency>
-      <groupId>${project.groupId}</groupId>
+      <groupId>com.google.cloud</groupId>
       <artifactId>google-cloud-storage</artifactId>
+      <version>1.101.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-storage:current} -->
     </dependency>
     <dependency>
-      <groupId>${project.groupId}</groupId>
+      <groupId>com.google.cloud</groupId>
       <artifactId>google-cloud-pubsub</artifactId>
+      <version>1.101.0</version>
     </dependency>
     <dependency>
       <groupId>com.google.api.grpc</groupId>
       <artifactId>proto-google-cloud-pubsub-v1</artifactId>
+      <version>1.83.0</version>
     </dependency>
 
     <!-- Test dependencies -->
