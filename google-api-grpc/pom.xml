@@ -151,7 +151,7 @@
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>proto-google-cloud-bigtable-admin-v2</artifactId>
-        <version>0.81.0</version>
+        <version>1.7.1</version>
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
