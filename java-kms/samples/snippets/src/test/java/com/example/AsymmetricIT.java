@@ -46,7 +46,7 @@ import org.junit.runners.JUnit4;
  */
 
 @RunWith(JUnit4.class)
-@SuppressWarnings("checkstyle:abbreviationaswordinname")
+//CHECKSTYLE OFF: AbbreviationAsWordInName
 public class AsymmetricIT {
   private static final String PROJECT_ID = System.getenv("GOOGLE_CLOUD_PROJECT");
   private static final String LOCATION = "global";
@@ -163,3 +163,5 @@ public class AsymmetricIT {
     assertFalse("EC verification failed. Invalid message accepted", verifiedInvalid);
   }
 }
+//CHECKSTYLE ON: AbbreviationAsWordInName
+

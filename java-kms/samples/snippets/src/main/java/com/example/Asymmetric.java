@@ -42,7 +42,7 @@ import javax.crypto.Cipher;
 import javax.crypto.spec.OAEPParameterSpec;
 import javax.crypto.spec.PSource;
 
-@SuppressWarnings("checkstyle:abbreviationaswordinname")
+//CHECKSTYLE OFF: AbbreviationAsWordInName
 public class Asymmetric {
 
   // [START kms_create_asymmetric_key]
@@ -257,4 +257,5 @@ public class Asymmetric {
   }
   // [END kms_verify_signature_ec]
 }
+//CHECKSTYLE ON: AbbreviationAsWordInName
 
