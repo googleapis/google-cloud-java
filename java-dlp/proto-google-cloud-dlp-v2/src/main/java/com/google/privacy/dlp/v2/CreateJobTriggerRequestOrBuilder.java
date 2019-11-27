@@ -105,4 +105,27 @@ public interface CreateJobTriggerRequestOrBuilder
    * <code>string trigger_id = 3;</code>
    */
   com.google.protobuf.ByteString getTriggerIdBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * The geographic location to store the job trigger. Reserved for
+   * future extensions.
+   * </pre>
+   *
+   * <code>string location_id = 4;</code>
+   */
+  java.lang.String getLocationId();
+  /**
+   *
+   *
+   * <pre>
+   * The geographic location to store the job trigger. Reserved for
+   * future extensions.
+   * </pre>
+   *
+   * <code>string location_id = 4;</code>
+   */
+  com.google.protobuf.ByteString getLocationIdBytes();
 }

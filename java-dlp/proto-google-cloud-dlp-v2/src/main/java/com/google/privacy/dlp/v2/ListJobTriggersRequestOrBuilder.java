@@ -183,4 +183,27 @@ public interface ListJobTriggersRequestOrBuilder
    * <code>string filter = 5;</code>
    */
   com.google.protobuf.ByteString getFilterBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * The geographic location where job triggers will be retrieved from.
+   * Use `-` for all locations. Reserved for future extensions.
+   * </pre>
+   *
+   * <code>string location_id = 7;</code>
+   */
+  java.lang.String getLocationId();
+  /**
+   *
+   *
+   * <pre>
+   * The geographic location where job triggers will be retrieved from.
+   * Use `-` for all locations. Reserved for future extensions.
+   * </pre>
+   *
+   * <code>string location_id = 7;</code>
+   */
+  com.google.protobuf.ByteString getLocationIdBytes();
 }

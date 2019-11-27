@@ -137,4 +137,27 @@ public interface InspectContentRequestOrBuilder
    * <code>string inspect_template_name = 4;</code>
    */
   com.google.protobuf.ByteString getInspectTemplateNameBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * The geographic location to process content inspection. Reserved for future
+   * extensions.
+   * </pre>
+   *
+   * <code>string location_id = 5;</code>
+   */
+  java.lang.String getLocationId();
+  /**
+   *
+   *
+   * <pre>
+   * The geographic location to process content inspection. Reserved for future
+   * extensions.
+   * </pre>
+   *
+   * <code>string location_id = 5;</code>
+   */
+  com.google.protobuf.ByteString getLocationIdBytes();
 }

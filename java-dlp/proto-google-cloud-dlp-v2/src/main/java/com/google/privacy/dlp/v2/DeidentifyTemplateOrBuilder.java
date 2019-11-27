@@ -96,7 +96,7 @@ public interface DeidentifyTemplateOrBuilder
    *
    *
    * <pre>
-   * The creation timestamp of a inspectTemplate, output only field.
+   * The creation timestamp of an inspectTemplate, output only field.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp create_time = 4;</code>
@@ -106,7 +106,7 @@ public interface DeidentifyTemplateOrBuilder
    *
    *
    * <pre>
-   * The creation timestamp of a inspectTemplate, output only field.
+   * The creation timestamp of an inspectTemplate, output only field.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp create_time = 4;</code>
@@ -116,7 +116,7 @@ public interface DeidentifyTemplateOrBuilder
    *
    *
    * <pre>
-   * The creation timestamp of a inspectTemplate, output only field.
+   * The creation timestamp of an inspectTemplate, output only field.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp create_time = 4;</code>
@@ -127,7 +127,7 @@ public interface DeidentifyTemplateOrBuilder
    *
    *
    * <pre>
-   * The last update timestamp of a inspectTemplate, output only field.
+   * The last update timestamp of an inspectTemplate, output only field.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp update_time = 5;</code>
@@ -137,7 +137,7 @@ public interface DeidentifyTemplateOrBuilder
    *
    *
    * <pre>
-   * The last update timestamp of a inspectTemplate, output only field.
+   * The last update timestamp of an inspectTemplate, output only field.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp update_time = 5;</code>
@@ -147,7 +147,7 @@ public interface DeidentifyTemplateOrBuilder
    *
    *
    * <pre>
-   * The last update timestamp of a inspectTemplate, output only field.
+   * The last update timestamp of an inspectTemplate, output only field.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp update_time = 5;</code>

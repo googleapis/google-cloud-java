@@ -107,4 +107,27 @@ public interface CreateInspectTemplateRequestOrBuilder
    * <code>string template_id = 3;</code>
    */
   com.google.protobuf.ByteString getTemplateIdBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * The geographic location to store the inspection template. Reserved for
+   * future extensions.
+   * </pre>
+   *
+   * <code>string location_id = 4;</code>
+   */
+  java.lang.String getLocationId();
+  /**
+   *
+   *
+   * <pre>
+   * The geographic location to store the inspection template. Reserved for
+   * future extensions.
+   * </pre>
+   *
+   * <code>string location_id = 4;</code>
+   */
+  com.google.protobuf.ByteString getLocationIdBytes();
 }

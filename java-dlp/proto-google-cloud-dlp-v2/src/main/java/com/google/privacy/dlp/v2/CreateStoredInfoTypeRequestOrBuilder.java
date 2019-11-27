@@ -107,4 +107,27 @@ public interface CreateStoredInfoTypeRequestOrBuilder
    * <code>string stored_info_type_id = 3;</code>
    */
   com.google.protobuf.ByteString getStoredInfoTypeIdBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * The geographic location to store the stored infoType. Reserved for
+   * future extensions.
+   * </pre>
+   *
+   * <code>string location_id = 4;</code>
+   */
+  java.lang.String getLocationId();
+  /**
+   *
+   *
+   * <pre>
+   * The geographic location to store the stored infoType. Reserved for
+   * future extensions.
+   * </pre>
+   *
+   * <code>string location_id = 4;</code>
+   */
+  com.google.protobuf.ByteString getLocationIdBytes();
 }

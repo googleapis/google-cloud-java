@@ -219,7 +219,7 @@ public final class DateShiftConfig extends com.google.protobuf.GeneratedMessageV
    *
    * <pre>
    * Points to the field that contains the context, for example, an entity id.
-   * If set, must also set method. If set, shift will be consistent for the
+   * If set, must also set cryptoKey. If set, shift will be consistent for the
    * given context.
    * </pre>
    *
@@ -233,7 +233,7 @@ public final class DateShiftConfig extends com.google.protobuf.GeneratedMessageV
    *
    * <pre>
    * Points to the field that contains the context, for example, an entity id.
-   * If set, must also set method. If set, shift will be consistent for the
+   * If set, must also set cryptoKey. If set, shift will be consistent for the
    * given context.
    * </pre>
    *
@@ -247,7 +247,7 @@ public final class DateShiftConfig extends com.google.protobuf.GeneratedMessageV
    *
    * <pre>
    * Points to the field that contains the context, for example, an entity id.
-   * If set, must also set method. If set, shift will be consistent for the
+   * If set, must also set cryptoKey. If set, shift will be consistent for the
    * given context.
    * </pre>
    *
@@ -263,7 +263,8 @@ public final class DateShiftConfig extends com.google.protobuf.GeneratedMessageV
    *
    * <pre>
    * Causes the shift to be computed based on this key and the context. This
-   * results in the same shift for the same context and crypto_key.
+   * results in the same shift for the same context and crypto_key. If
+   * set, must also set context. Can only be applied to table items.
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.CryptoKey crypto_key = 4;</code>
@@ -276,7 +277,8 @@ public final class DateShiftConfig extends com.google.protobuf.GeneratedMessageV
    *
    * <pre>
    * Causes the shift to be computed based on this key and the context. This
-   * results in the same shift for the same context and crypto_key.
+   * results in the same shift for the same context and crypto_key. If
+   * set, must also set context. Can only be applied to table items.
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.CryptoKey crypto_key = 4;</code>
@@ -292,7 +294,8 @@ public final class DateShiftConfig extends com.google.protobuf.GeneratedMessageV
    *
    * <pre>
    * Causes the shift to be computed based on this key and the context. This
-   * results in the same shift for the same context and crypto_key.
+   * results in the same shift for the same context and crypto_key. If
+   * set, must also set context. Can only be applied to table items.
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.CryptoKey crypto_key = 4;</code>
@@ -837,7 +840,7 @@ public final class DateShiftConfig extends com.google.protobuf.GeneratedMessageV
      *
      * <pre>
      * Points to the field that contains the context, for example, an entity id.
-     * If set, must also set method. If set, shift will be consistent for the
+     * If set, must also set cryptoKey. If set, shift will be consistent for the
      * given context.
      * </pre>
      *
@@ -851,7 +854,7 @@ public final class DateShiftConfig extends com.google.protobuf.GeneratedMessageV
      *
      * <pre>
      * Points to the field that contains the context, for example, an entity id.
-     * If set, must also set method. If set, shift will be consistent for the
+     * If set, must also set cryptoKey. If set, shift will be consistent for the
      * given context.
      * </pre>
      *
@@ -869,7 +872,7 @@ public final class DateShiftConfig extends com.google.protobuf.GeneratedMessageV
      *
      * <pre>
      * Points to the field that contains the context, for example, an entity id.
-     * If set, must also set method. If set, shift will be consistent for the
+     * If set, must also set cryptoKey. If set, shift will be consistent for the
      * given context.
      * </pre>
      *
@@ -893,7 +896,7 @@ public final class DateShiftConfig extends com.google.protobuf.GeneratedMessageV
      *
      * <pre>
      * Points to the field that contains the context, for example, an entity id.
-     * If set, must also set method. If set, shift will be consistent for the
+     * If set, must also set cryptoKey. If set, shift will be consistent for the
      * given context.
      * </pre>
      *
@@ -914,7 +917,7 @@ public final class DateShiftConfig extends com.google.protobuf.GeneratedMessageV
      *
      * <pre>
      * Points to the field that contains the context, for example, an entity id.
-     * If set, must also set method. If set, shift will be consistent for the
+     * If set, must also set cryptoKey. If set, shift will be consistent for the
      * given context.
      * </pre>
      *
@@ -942,7 +945,7 @@ public final class DateShiftConfig extends com.google.protobuf.GeneratedMessageV
      *
      * <pre>
      * Points to the field that contains the context, for example, an entity id.
-     * If set, must also set method. If set, shift will be consistent for the
+     * If set, must also set cryptoKey. If set, shift will be consistent for the
      * given context.
      * </pre>
      *
@@ -964,7 +967,7 @@ public final class DateShiftConfig extends com.google.protobuf.GeneratedMessageV
      *
      * <pre>
      * Points to the field that contains the context, for example, an entity id.
-     * If set, must also set method. If set, shift will be consistent for the
+     * If set, must also set cryptoKey. If set, shift will be consistent for the
      * given context.
      * </pre>
      *
@@ -980,7 +983,7 @@ public final class DateShiftConfig extends com.google.protobuf.GeneratedMessageV
      *
      * <pre>
      * Points to the field that contains the context, for example, an entity id.
-     * If set, must also set method. If set, shift will be consistent for the
+     * If set, must also set cryptoKey. If set, shift will be consistent for the
      * given context.
      * </pre>
      *
@@ -998,7 +1001,7 @@ public final class DateShiftConfig extends com.google.protobuf.GeneratedMessageV
      *
      * <pre>
      * Points to the field that contains the context, for example, an entity id.
-     * If set, must also set method. If set, shift will be consistent for the
+     * If set, must also set cryptoKey. If set, shift will be consistent for the
      * given context.
      * </pre>
      *
@@ -1031,7 +1034,8 @@ public final class DateShiftConfig extends com.google.protobuf.GeneratedMessageV
      *
      * <pre>
      * Causes the shift to be computed based on this key and the context. This
-     * results in the same shift for the same context and crypto_key.
+     * results in the same shift for the same context and crypto_key. If
+     * set, must also set context. Can only be applied to table items.
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.CryptoKey crypto_key = 4;</code>
@@ -1044,7 +1048,8 @@ public final class DateShiftConfig extends com.google.protobuf.GeneratedMessageV
      *
      * <pre>
      * Causes the shift to be computed based on this key and the context. This
-     * results in the same shift for the same context and crypto_key.
+     * results in the same shift for the same context and crypto_key. If
+     * set, must also set context. Can only be applied to table items.
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.CryptoKey crypto_key = 4;</code>
@@ -1067,7 +1072,8 @@ public final class DateShiftConfig extends com.google.protobuf.GeneratedMessageV
      *
      * <pre>
      * Causes the shift to be computed based on this key and the context. This
-     * results in the same shift for the same context and crypto_key.
+     * results in the same shift for the same context and crypto_key. If
+     * set, must also set context. Can only be applied to table items.
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.CryptoKey crypto_key = 4;</code>
@@ -1090,7 +1096,8 @@ public final class DateShiftConfig extends com.google.protobuf.GeneratedMessageV
      *
      * <pre>
      * Causes the shift to be computed based on this key and the context. This
-     * results in the same shift for the same context and crypto_key.
+     * results in the same shift for the same context and crypto_key. If
+     * set, must also set context. Can only be applied to table items.
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.CryptoKey crypto_key = 4;</code>
@@ -1110,7 +1117,8 @@ public final class DateShiftConfig extends com.google.protobuf.GeneratedMessageV
      *
      * <pre>
      * Causes the shift to be computed based on this key and the context. This
-     * results in the same shift for the same context and crypto_key.
+     * results in the same shift for the same context and crypto_key. If
+     * set, must also set context. Can only be applied to table items.
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.CryptoKey crypto_key = 4;</code>
@@ -1142,7 +1150,8 @@ public final class DateShiftConfig extends com.google.protobuf.GeneratedMessageV
      *
      * <pre>
      * Causes the shift to be computed based on this key and the context. This
-     * results in the same shift for the same context and crypto_key.
+     * results in the same shift for the same context and crypto_key. If
+     * set, must also set context. Can only be applied to table items.
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.CryptoKey crypto_key = 4;</code>
@@ -1168,7 +1177,8 @@ public final class DateShiftConfig extends com.google.protobuf.GeneratedMessageV
      *
      * <pre>
      * Causes the shift to be computed based on this key and the context. This
-     * results in the same shift for the same context and crypto_key.
+     * results in the same shift for the same context and crypto_key. If
+     * set, must also set context. Can only be applied to table items.
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.CryptoKey crypto_key = 4;</code>
@@ -1181,7 +1191,8 @@ public final class DateShiftConfig extends com.google.protobuf.GeneratedMessageV
      *
      * <pre>
      * Causes the shift to be computed based on this key and the context. This
-     * results in the same shift for the same context and crypto_key.
+     * results in the same shift for the same context and crypto_key. If
+     * set, must also set context. Can only be applied to table items.
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.CryptoKey crypto_key = 4;</code>
@@ -1201,7 +1212,8 @@ public final class DateShiftConfig extends com.google.protobuf.GeneratedMessageV
      *
      * <pre>
      * Causes the shift to be computed based on this key and the context. This
-     * results in the same shift for the same context and crypto_key.
+     * results in the same shift for the same context and crypto_key. If
+     * set, must also set context. Can only be applied to table items.
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.CryptoKey crypto_key = 4;</code>

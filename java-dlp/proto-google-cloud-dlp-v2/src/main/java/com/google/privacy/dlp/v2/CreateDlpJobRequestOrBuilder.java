@@ -89,5 +89,28 @@ public interface CreateDlpJobRequestOrBuilder
    */
   com.google.protobuf.ByteString getJobIdBytes();
 
+  /**
+   *
+   *
+   * <pre>
+   * The geographic location to store and process the job. Reserved for
+   * future extensions.
+   * </pre>
+   *
+   * <code>string location_id = 5;</code>
+   */
+  java.lang.String getLocationId();
+  /**
+   *
+   *
+   * <pre>
+   * The geographic location to store and process the job. Reserved for
+   * future extensions.
+   * </pre>
+   *
+   * <code>string location_id = 5;</code>
+   */
+  com.google.protobuf.ByteString getLocationIdBytes();
+
   public com.google.privacy.dlp.v2.CreateDlpJobRequest.JobCase getJobCase();
 }

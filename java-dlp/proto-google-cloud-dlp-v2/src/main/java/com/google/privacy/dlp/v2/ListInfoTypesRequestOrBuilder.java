@@ -70,4 +70,27 @@ public interface ListInfoTypesRequestOrBuilder
    * <code>string filter = 2;</code>
    */
   com.google.protobuf.ByteString getFilterBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * The geographic location to list info types. Reserved for future
+   * extensions.
+   * </pre>
+   *
+   * <code>string location_id = 3;</code>
+   */
+  java.lang.String getLocationId();
+  /**
+   *
+   *
+   * <pre>
+   * The geographic location to list info types. Reserved for future
+   * extensions.
+   * </pre>
+   *
+   * <code>string location_id = 3;</code>
+   */
+  com.google.protobuf.ByteString getLocationIdBytes();
 }

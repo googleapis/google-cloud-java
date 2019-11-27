@@ -40,6 +40,7 @@ public final class CreateJobTriggerRequest extends com.google.protobuf.Generated
   private CreateJobTriggerRequest() {
     parent_ = "";
     triggerId_ = "";
+    locationId_ = "";
   }
 
   @java.lang.Override
@@ -94,6 +95,13 @@ public final class CreateJobTriggerRequest extends com.google.protobuf.Generated
               java.lang.String s = input.readStringRequireUtf8();
 
               triggerId_ = s;
+              break;
+            }
+          case 34:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              locationId_ = s;
               break;
             }
           default:
@@ -267,6 +275,51 @@ public final class CreateJobTriggerRequest extends com.google.protobuf.Generated
     }
   }
 
+  public static final int LOCATION_ID_FIELD_NUMBER = 4;
+  private volatile java.lang.Object locationId_;
+  /**
+   *
+   *
+   * <pre>
+   * The geographic location to store the job trigger. Reserved for
+   * future extensions.
+   * </pre>
+   *
+   * <code>string location_id = 4;</code>
+   */
+  public java.lang.String getLocationId() {
+    java.lang.Object ref = locationId_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      locationId_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The geographic location to store the job trigger. Reserved for
+   * future extensions.
+   * </pre>
+   *
+   * <code>string location_id = 4;</code>
+   */
+  public com.google.protobuf.ByteString getLocationIdBytes() {
+    java.lang.Object ref = locationId_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      locationId_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -290,6 +343,9 @@ public final class CreateJobTriggerRequest extends com.google.protobuf.Generated
     if (!getTriggerIdBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3, triggerId_);
     }
+    if (!getLocationIdBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 4, locationId_);
+    }
     unknownFields.writeTo(output);
   }
 
@@ -307,6 +363,9 @@ public final class CreateJobTriggerRequest extends com.google.protobuf.Generated
     }
     if (!getTriggerIdBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, triggerId_);
+    }
+    if (!getLocationIdBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, locationId_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -330,6 +389,7 @@ public final class CreateJobTriggerRequest extends com.google.protobuf.Generated
       if (!getJobTrigger().equals(other.getJobTrigger())) return false;
     }
     if (!getTriggerId().equals(other.getTriggerId())) return false;
+    if (!getLocationId().equals(other.getLocationId())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -349,6 +409,8 @@ public final class CreateJobTriggerRequest extends com.google.protobuf.Generated
     }
     hash = (37 * hash) + TRIGGER_ID_FIELD_NUMBER;
     hash = (53 * hash) + getTriggerId().hashCode();
+    hash = (37 * hash) + LOCATION_ID_FIELD_NUMBER;
+    hash = (53 * hash) + getLocationId().hashCode();
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -504,6 +566,8 @@ public final class CreateJobTriggerRequest extends com.google.protobuf.Generated
       }
       triggerId_ = "";
 
+      locationId_ = "";
+
       return this;
     }
 
@@ -538,6 +602,7 @@ public final class CreateJobTriggerRequest extends com.google.protobuf.Generated
         result.jobTrigger_ = jobTriggerBuilder_.build();
       }
       result.triggerId_ = triggerId_;
+      result.locationId_ = locationId_;
       onBuilt();
       return result;
     }
@@ -597,6 +662,10 @@ public final class CreateJobTriggerRequest extends com.google.protobuf.Generated
       }
       if (!other.getTriggerId().isEmpty()) {
         triggerId_ = other.triggerId_;
+        onChanged();
+      }
+      if (!other.getLocationId().isEmpty()) {
+        locationId_ = other.locationId_;
         onChanged();
       }
       this.mergeUnknownFields(other.unknownFields);
@@ -1019,6 +1088,105 @@ public final class CreateJobTriggerRequest extends com.google.protobuf.Generated
       checkByteStringIsUtf8(value);
 
       triggerId_ = value;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object locationId_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * The geographic location to store the job trigger. Reserved for
+     * future extensions.
+     * </pre>
+     *
+     * <code>string location_id = 4;</code>
+     */
+    public java.lang.String getLocationId() {
+      java.lang.Object ref = locationId_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        locationId_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The geographic location to store the job trigger. Reserved for
+     * future extensions.
+     * </pre>
+     *
+     * <code>string location_id = 4;</code>
+     */
+    public com.google.protobuf.ByteString getLocationIdBytes() {
+      java.lang.Object ref = locationId_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        locationId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The geographic location to store the job trigger. Reserved for
+     * future extensions.
+     * </pre>
+     *
+     * <code>string location_id = 4;</code>
+     */
+    public Builder setLocationId(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+
+      locationId_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The geographic location to store the job trigger. Reserved for
+     * future extensions.
+     * </pre>
+     *
+     * <code>string location_id = 4;</code>
+     */
+    public Builder clearLocationId() {
+
+      locationId_ = getDefaultInstance().getLocationId();
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The geographic location to store the job trigger. Reserved for
+     * future extensions.
+     * </pre>
+     *
+     * <code>string location_id = 4;</code>
+     */
+    public Builder setLocationIdBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
+      locationId_ = value;
       onChanged();
       return this;
     }

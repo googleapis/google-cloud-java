@@ -41,6 +41,7 @@ public final class ListInspectTemplatesRequest extends com.google.protobuf.Gener
     parent_ = "";
     pageToken_ = "";
     orderBy_ = "";
+    locationId_ = "";
   }
 
   @java.lang.Override
@@ -91,6 +92,13 @@ public final class ListInspectTemplatesRequest extends com.google.protobuf.Gener
               java.lang.String s = input.readStringRequireUtf8();
 
               orderBy_ = s;
+              break;
+            }
+          case 42:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              locationId_ = s;
               break;
             }
           default:
@@ -298,6 +306,51 @@ public final class ListInspectTemplatesRequest extends com.google.protobuf.Gener
     }
   }
 
+  public static final int LOCATION_ID_FIELD_NUMBER = 5;
+  private volatile java.lang.Object locationId_;
+  /**
+   *
+   *
+   * <pre>
+   * The geographic location where inspection templates will be retrieved from.
+   * Use `-` for all locations. Reserved for future extensions.
+   * </pre>
+   *
+   * <code>string location_id = 5;</code>
+   */
+  public java.lang.String getLocationId() {
+    java.lang.Object ref = locationId_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      locationId_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The geographic location where inspection templates will be retrieved from.
+   * Use `-` for all locations. Reserved for future extensions.
+   * </pre>
+   *
+   * <code>string location_id = 5;</code>
+   */
+  public com.google.protobuf.ByteString getLocationIdBytes() {
+    java.lang.Object ref = locationId_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      locationId_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -324,6 +377,9 @@ public final class ListInspectTemplatesRequest extends com.google.protobuf.Gener
     if (!getOrderByBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 4, orderBy_);
     }
+    if (!getLocationIdBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 5, locationId_);
+    }
     unknownFields.writeTo(output);
   }
 
@@ -345,6 +401,9 @@ public final class ListInspectTemplatesRequest extends com.google.protobuf.Gener
     if (!getOrderByBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, orderBy_);
     }
+    if (!getLocationIdBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, locationId_);
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -365,6 +424,7 @@ public final class ListInspectTemplatesRequest extends com.google.protobuf.Gener
     if (!getPageToken().equals(other.getPageToken())) return false;
     if (getPageSize() != other.getPageSize()) return false;
     if (!getOrderBy().equals(other.getOrderBy())) return false;
+    if (!getLocationId().equals(other.getLocationId())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -384,6 +444,8 @@ public final class ListInspectTemplatesRequest extends com.google.protobuf.Gener
     hash = (53 * hash) + getPageSize();
     hash = (37 * hash) + ORDER_BY_FIELD_NUMBER;
     hash = (53 * hash) + getOrderBy().hashCode();
+    hash = (37 * hash) + LOCATION_ID_FIELD_NUMBER;
+    hash = (53 * hash) + getLocationId().hashCode();
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -538,6 +600,8 @@ public final class ListInspectTemplatesRequest extends com.google.protobuf.Gener
 
       orderBy_ = "";
 
+      locationId_ = "";
+
       return this;
     }
 
@@ -569,6 +633,7 @@ public final class ListInspectTemplatesRequest extends com.google.protobuf.Gener
       result.pageToken_ = pageToken_;
       result.pageSize_ = pageSize_;
       result.orderBy_ = orderBy_;
+      result.locationId_ = locationId_;
       onBuilt();
       return result;
     }
@@ -632,6 +697,10 @@ public final class ListInspectTemplatesRequest extends com.google.protobuf.Gener
       }
       if (!other.getOrderBy().isEmpty()) {
         orderBy_ = other.orderBy_;
+        onChanged();
+      }
+      if (!other.getLocationId().isEmpty()) {
+        locationId_ = other.locationId_;
         onChanged();
       }
       this.mergeUnknownFields(other.unknownFields);
@@ -1054,6 +1123,105 @@ public final class ListInspectTemplatesRequest extends com.google.protobuf.Gener
       checkByteStringIsUtf8(value);
 
       orderBy_ = value;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object locationId_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * The geographic location where inspection templates will be retrieved from.
+     * Use `-` for all locations. Reserved for future extensions.
+     * </pre>
+     *
+     * <code>string location_id = 5;</code>
+     */
+    public java.lang.String getLocationId() {
+      java.lang.Object ref = locationId_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        locationId_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The geographic location where inspection templates will be retrieved from.
+     * Use `-` for all locations. Reserved for future extensions.
+     * </pre>
+     *
+     * <code>string location_id = 5;</code>
+     */
+    public com.google.protobuf.ByteString getLocationIdBytes() {
+      java.lang.Object ref = locationId_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        locationId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The geographic location where inspection templates will be retrieved from.
+     * Use `-` for all locations. Reserved for future extensions.
+     * </pre>
+     *
+     * <code>string location_id = 5;</code>
+     */
+    public Builder setLocationId(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+
+      locationId_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The geographic location where inspection templates will be retrieved from.
+     * Use `-` for all locations. Reserved for future extensions.
+     * </pre>
+     *
+     * <code>string location_id = 5;</code>
+     */
+    public Builder clearLocationId() {
+
+      locationId_ = getDefaultInstance().getLocationId();
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The geographic location where inspection templates will be retrieved from.
+     * Use `-` for all locations. Reserved for future extensions.
+     * </pre>
+     *
+     * <code>string location_id = 5;</code>
+     */
+    public Builder setLocationIdBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
+      locationId_ = value;
       onChanged();
       return this;
     }

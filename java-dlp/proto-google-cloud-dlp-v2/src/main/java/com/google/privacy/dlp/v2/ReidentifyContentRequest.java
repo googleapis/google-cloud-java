@@ -41,6 +41,7 @@ public final class ReidentifyContentRequest extends com.google.protobuf.Generate
     parent_ = "";
     inspectTemplateName_ = "";
     reidentifyTemplateName_ = "";
+    locationId_ = "";
   }
 
   @java.lang.Override
@@ -134,6 +135,13 @@ public final class ReidentifyContentRequest extends com.google.protobuf.Generate
               java.lang.String s = input.readStringRequireUtf8();
 
               reidentifyTemplateName_ = s;
+              break;
+            }
+          case 58:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              locationId_ = s;
               break;
             }
           default:
@@ -466,6 +474,51 @@ public final class ReidentifyContentRequest extends com.google.protobuf.Generate
     }
   }
 
+  public static final int LOCATION_ID_FIELD_NUMBER = 7;
+  private volatile java.lang.Object locationId_;
+  /**
+   *
+   *
+   * <pre>
+   * The geographic location to process content reidentification.  Reserved for
+   * future extensions.
+   * </pre>
+   *
+   * <code>string location_id = 7;</code>
+   */
+  public java.lang.String getLocationId() {
+    java.lang.Object ref = locationId_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      locationId_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The geographic location to process content reidentification.  Reserved for
+   * future extensions.
+   * </pre>
+   *
+   * <code>string location_id = 7;</code>
+   */
+  public com.google.protobuf.ByteString getLocationIdBytes() {
+    java.lang.Object ref = locationId_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      locationId_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -498,6 +551,9 @@ public final class ReidentifyContentRequest extends com.google.protobuf.Generate
     if (!getReidentifyTemplateNameBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 6, reidentifyTemplateName_);
     }
+    if (!getLocationIdBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 7, locationId_);
+    }
     unknownFields.writeTo(output);
   }
 
@@ -524,6 +580,9 @@ public final class ReidentifyContentRequest extends com.google.protobuf.Generate
     }
     if (!getReidentifyTemplateNameBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, reidentifyTemplateName_);
+    }
+    if (!getLocationIdBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(7, locationId_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -556,6 +615,7 @@ public final class ReidentifyContentRequest extends com.google.protobuf.Generate
     }
     if (!getInspectTemplateName().equals(other.getInspectTemplateName())) return false;
     if (!getReidentifyTemplateName().equals(other.getReidentifyTemplateName())) return false;
+    if (!getLocationId().equals(other.getLocationId())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -585,6 +645,8 @@ public final class ReidentifyContentRequest extends com.google.protobuf.Generate
     hash = (53 * hash) + getInspectTemplateName().hashCode();
     hash = (37 * hash) + REIDENTIFY_TEMPLATE_NAME_FIELD_NUMBER;
     hash = (53 * hash) + getReidentifyTemplateName().hashCode();
+    hash = (37 * hash) + LOCATION_ID_FIELD_NUMBER;
+    hash = (53 * hash) + getLocationId().hashCode();
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -754,6 +816,8 @@ public final class ReidentifyContentRequest extends com.google.protobuf.Generate
 
       reidentifyTemplateName_ = "";
 
+      locationId_ = "";
+
       return this;
     }
 
@@ -799,6 +863,7 @@ public final class ReidentifyContentRequest extends com.google.protobuf.Generate
       }
       result.inspectTemplateName_ = inspectTemplateName_;
       result.reidentifyTemplateName_ = reidentifyTemplateName_;
+      result.locationId_ = locationId_;
       onBuilt();
       return result;
     }
@@ -868,6 +933,10 @@ public final class ReidentifyContentRequest extends com.google.protobuf.Generate
       }
       if (!other.getReidentifyTemplateName().isEmpty()) {
         reidentifyTemplateName_ = other.reidentifyTemplateName_;
+        onChanged();
+      }
+      if (!other.getLocationId().isEmpty()) {
+        locationId_ = other.locationId_;
         onChanged();
       }
       this.mergeUnknownFields(other.unknownFields);
@@ -1846,6 +1915,105 @@ public final class ReidentifyContentRequest extends com.google.protobuf.Generate
       checkByteStringIsUtf8(value);
 
       reidentifyTemplateName_ = value;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object locationId_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * The geographic location to process content reidentification.  Reserved for
+     * future extensions.
+     * </pre>
+     *
+     * <code>string location_id = 7;</code>
+     */
+    public java.lang.String getLocationId() {
+      java.lang.Object ref = locationId_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        locationId_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The geographic location to process content reidentification.  Reserved for
+     * future extensions.
+     * </pre>
+     *
+     * <code>string location_id = 7;</code>
+     */
+    public com.google.protobuf.ByteString getLocationIdBytes() {
+      java.lang.Object ref = locationId_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        locationId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The geographic location to process content reidentification.  Reserved for
+     * future extensions.
+     * </pre>
+     *
+     * <code>string location_id = 7;</code>
+     */
+    public Builder setLocationId(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+
+      locationId_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The geographic location to process content reidentification.  Reserved for
+     * future extensions.
+     * </pre>
+     *
+     * <code>string location_id = 7;</code>
+     */
+    public Builder clearLocationId() {
+
+      locationId_ = getDefaultInstance().getLocationId();
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The geographic location to process content reidentification.  Reserved for
+     * future extensions.
+     * </pre>
+     *
+     * <code>string location_id = 7;</code>
+     */
+    public Builder setLocationIdBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
+      locationId_ = value;
       onChanged();
       return this;
     }
