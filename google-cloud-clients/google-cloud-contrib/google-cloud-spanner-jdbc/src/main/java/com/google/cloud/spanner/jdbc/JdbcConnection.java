@@ -56,7 +56,7 @@ class JdbcConnection extends AbstractJdbcConnection {
   }
 
   @Override
-  public PreparedStatement prepareStatement(String sql) throws SQLException {
+  public JdbcPreparedStatement prepareStatement(String sql) throws SQLException {
     checkClosed();
     return new JdbcPreparedStatement(this, sql);
   }

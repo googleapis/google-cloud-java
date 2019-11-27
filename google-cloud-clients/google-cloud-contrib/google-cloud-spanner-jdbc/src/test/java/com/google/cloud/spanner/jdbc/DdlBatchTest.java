@@ -32,12 +32,16 @@ import static org.mockito.Mockito.when;
 import com.google.api.core.ApiFuture;
 import com.google.api.core.ApiFutures;
 import com.google.api.gax.longrunning.OperationFuture;
+import com.google.cloud.spanner.DatabaseClient;
 import com.google.cloud.spanner.ErrorCode;
 import com.google.cloud.spanner.Mutation;
+import com.google.cloud.spanner.ReadContext;
+import com.google.cloud.spanner.ResultSet;
 import com.google.cloud.spanner.SpannerBatchUpdateException;
 import com.google.cloud.spanner.SpannerException;
 import com.google.cloud.spanner.SpannerExceptionFactory;
 import com.google.cloud.spanner.Statement;
+import com.google.cloud.spanner.jdbc.ConnectionImpl.InternalMetadataQuery;
 import com.google.cloud.spanner.jdbc.StatementParser.ParsedStatement;
 import com.google.cloud.spanner.jdbc.StatementParser.StatementType;
 import com.google.cloud.spanner.jdbc.UnitOfWork.UnitOfWorkState;
@@ -121,8 +125,13 @@ public class DdlBatchTest {
   }
 
   private DdlBatch createSubject(DdlClient ddlClient) {
+    return createSubject(ddlClient, mock(DatabaseClient.class));
+  }
+
+  private DdlBatch createSubject(DdlClient ddlClient, DatabaseClient dbClient) {
     return DdlBatch.newBuilder()
         .setDdlClient(ddlClient)
+        .setDatabaseClient(dbClient)
         .withStatementExecutor(new StatementExecutor())
         .build();
   }
@@ -132,6 +141,25 @@ public class DdlBatchTest {
     DdlBatch batch = createSubject();
     exception.expect(SpannerExceptionMatcher.matchCode(ErrorCode.FAILED_PRECONDITION));
     batch.executeQuery(mock(ParsedStatement.class), AnalyzeMode.NONE);
+  }
+
+  @Test
+  public void testExecuteMetadataQuery() {
+    Statement statement = Statement.of("SELECT * FROM INFORMATION_SCHEMA.TABLES");
+    ParsedStatement parsedStatement = mock(ParsedStatement.class);
+    when(parsedStatement.isQuery()).thenReturn(true);
+    when(parsedStatement.getStatement()).thenReturn(statement);
+    DatabaseClient dbClient = mock(DatabaseClient.class);
+    ReadContext singleUse = mock(ReadContext.class);
+    ResultSet resultSet = mock(ResultSet.class);
+    when(singleUse.executeQuery(statement)).thenReturn(resultSet);
+    when(dbClient.singleUse()).thenReturn(singleUse);
+    DdlBatch batch = createSubject(createDefaultMockDdlClient(), dbClient);
+    assertThat(
+        batch
+            .executeQuery(parsedStatement, AnalyzeMode.NONE, InternalMetadataQuery.INSTANCE)
+            .hashCode(),
+        is(equalTo(resultSet.hashCode())));
   }
 
   @Test
@@ -331,6 +359,7 @@ public class DdlBatchTest {
         DdlBatch.newBuilder()
             .withStatementExecutor(new StatementExecutor())
             .setDdlClient(client)
+            .setDatabaseClient(mock(DatabaseClient.class))
             .build();
     batch.executeDdl(StatementParser.INSTANCE.parse(Statement.of("CREATE TABLE FOO")));
     batch.executeDdl(StatementParser.INSTANCE.parse(Statement.of("CREATE TABLE BAR")));
@@ -362,6 +391,7 @@ public class DdlBatchTest {
         DdlBatch.newBuilder()
             .withStatementExecutor(new StatementExecutor())
             .setDdlClient(client)
+            .setDatabaseClient(mock(DatabaseClient.class))
             .build();
     batch.executeDdl(StatementParser.INSTANCE.parse(Statement.of("CREATE TABLE FOO")));
     batch.executeDdl(StatementParser.INSTANCE.parse(Statement.of("CREATE TABLE INVALID_TABLE")));
