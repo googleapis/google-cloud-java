@@ -327,11 +327,11 @@ public final class EntityResult extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * The version of the entity, a strictly positive number that monotonically
    * increases with changes to the entity.
-   * This field is set for
-   * [`FULL`][google.datastore.v1.EntityResult.ResultType.FULL] entity results.
-   * For [missing][google.datastore.v1.LookupResponse.missing] entities in
-   * `LookupResponse`, this is the version of the snapshot that was used to look
-   * up the entity, and it is always set except for eventually consistent reads.
+   * This field is set for [`FULL`][google.datastore.v1.EntityResult.ResultType.FULL] entity
+   * results.
+   * For [missing][google.datastore.v1.LookupResponse.missing] entities in `LookupResponse`, this
+   * is the version of the snapshot that was used to look up the entity, and it
+   * is always set except for eventually consistent reads.
    * </pre>
    *
    * <code>int64 version = 4;</code>
@@ -893,11 +893,11 @@ public final class EntityResult extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * The version of the entity, a strictly positive number that monotonically
      * increases with changes to the entity.
-     * This field is set for
-     * [`FULL`][google.datastore.v1.EntityResult.ResultType.FULL] entity results.
-     * For [missing][google.datastore.v1.LookupResponse.missing] entities in
-     * `LookupResponse`, this is the version of the snapshot that was used to look
-     * up the entity, and it is always set except for eventually consistent reads.
+     * This field is set for [`FULL`][google.datastore.v1.EntityResult.ResultType.FULL] entity
+     * results.
+     * For [missing][google.datastore.v1.LookupResponse.missing] entities in `LookupResponse`, this
+     * is the version of the snapshot that was used to look up the entity, and it
+     * is always set except for eventually consistent reads.
      * </pre>
      *
      * <code>int64 version = 4;</code>
@@ -911,11 +911,11 @@ public final class EntityResult extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * The version of the entity, a strictly positive number that monotonically
      * increases with changes to the entity.
-     * This field is set for
-     * [`FULL`][google.datastore.v1.EntityResult.ResultType.FULL] entity results.
-     * For [missing][google.datastore.v1.LookupResponse.missing] entities in
-     * `LookupResponse`, this is the version of the snapshot that was used to look
-     * up the entity, and it is always set except for eventually consistent reads.
+     * This field is set for [`FULL`][google.datastore.v1.EntityResult.ResultType.FULL] entity
+     * results.
+     * For [missing][google.datastore.v1.LookupResponse.missing] entities in `LookupResponse`, this
+     * is the version of the snapshot that was used to look up the entity, and it
+     * is always set except for eventually consistent reads.
      * </pre>
      *
      * <code>int64 version = 4;</code>
@@ -932,11 +932,11 @@ public final class EntityResult extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * The version of the entity, a strictly positive number that monotonically
      * increases with changes to the entity.
-     * This field is set for
-     * [`FULL`][google.datastore.v1.EntityResult.ResultType.FULL] entity results.
-     * For [missing][google.datastore.v1.LookupResponse.missing] entities in
-     * `LookupResponse`, this is the version of the snapshot that was used to look
-     * up the entity, and it is always set except for eventually consistent reads.
+     * This field is set for [`FULL`][google.datastore.v1.EntityResult.ResultType.FULL] entity
+     * results.
+     * For [missing][google.datastore.v1.LookupResponse.missing] entities in `LookupResponse`, this
+     * is the version of the snapshot that was used to look up the entity, and it
+     * is always set except for eventually consistent reads.
      * </pre>
      *
      * <code>int64 version = 4;</code>

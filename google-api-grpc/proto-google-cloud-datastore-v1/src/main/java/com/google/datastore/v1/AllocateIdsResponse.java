@@ -7,8 +7,7 @@ package com.google.datastore.v1;
  *
  *
  * <pre>
- * The response for
- * [Datastore.AllocateIds][google.datastore.v1.Datastore.AllocateIds].
+ * The response for [Datastore.AllocateIds][google.datastore.v1.Datastore.AllocateIds].
  * </pre>
  *
  * Protobuf type {@code google.datastore.v1.AllocateIdsResponse}
@@ -330,8 +329,7 @@ public final class AllocateIdsResponse extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * The response for
-   * [Datastore.AllocateIds][google.datastore.v1.Datastore.AllocateIds].
+   * The response for [Datastore.AllocateIds][google.datastore.v1.Datastore.AllocateIds].
    * </pre>
    *
    * Protobuf type {@code google.datastore.v1.AllocateIdsResponse}

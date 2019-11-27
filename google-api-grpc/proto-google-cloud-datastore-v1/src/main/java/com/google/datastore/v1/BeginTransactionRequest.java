@@ -7,8 +7,7 @@ package com.google.datastore.v1;
  *
  *
  * <pre>
- * The request for
- * [Datastore.BeginTransaction][google.datastore.v1.Datastore.BeginTransaction].
+ * The request for [Datastore.BeginTransaction][google.datastore.v1.Datastore.BeginTransaction].
  * </pre>
  *
  * Protobuf type {@code google.datastore.v1.BeginTransactionRequest}
@@ -114,10 +113,10 @@ public final class BeginTransactionRequest extends com.google.protobuf.Generated
    *
    *
    * <pre>
-   * The ID of the project against which to make the request.
+   * Required. The ID of the project against which to make the request.
    * </pre>
    *
-   * <code>string project_id = 8;</code>
+   * <code>string project_id = 8 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   public java.lang.String getProjectId() {
     java.lang.Object ref = projectId_;
@@ -134,10 +133,10 @@ public final class BeginTransactionRequest extends com.google.protobuf.Generated
    *
    *
    * <pre>
-   * The ID of the project against which to make the request.
+   * Required. The ID of the project against which to make the request.
    * </pre>
    *
-   * <code>string project_id = 8;</code>
+   * <code>string project_id = 8 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   public com.google.protobuf.ByteString getProjectIdBytes() {
     java.lang.Object ref = projectId_;
@@ -369,8 +368,7 @@ public final class BeginTransactionRequest extends com.google.protobuf.Generated
    *
    *
    * <pre>
-   * The request for
-   * [Datastore.BeginTransaction][google.datastore.v1.Datastore.BeginTransaction].
+   * The request for [Datastore.BeginTransaction][google.datastore.v1.Datastore.BeginTransaction].
    * </pre>
    *
    * Protobuf type {@code google.datastore.v1.BeginTransactionRequest}
@@ -543,10 +541,10 @@ public final class BeginTransactionRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * The ID of the project against which to make the request.
+     * Required. The ID of the project against which to make the request.
      * </pre>
      *
-     * <code>string project_id = 8;</code>
+     * <code>string project_id = 8 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public java.lang.String getProjectId() {
       java.lang.Object ref = projectId_;
@@ -563,10 +561,10 @@ public final class BeginTransactionRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * The ID of the project against which to make the request.
+     * Required. The ID of the project against which to make the request.
      * </pre>
      *
-     * <code>string project_id = 8;</code>
+     * <code>string project_id = 8 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public com.google.protobuf.ByteString getProjectIdBytes() {
       java.lang.Object ref = projectId_;
@@ -583,10 +581,10 @@ public final class BeginTransactionRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * The ID of the project against which to make the request.
+     * Required. The ID of the project against which to make the request.
      * </pre>
      *
-     * <code>string project_id = 8;</code>
+     * <code>string project_id = 8 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder setProjectId(java.lang.String value) {
       if (value == null) {
@@ -601,10 +599,10 @@ public final class BeginTransactionRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * The ID of the project against which to make the request.
+     * Required. The ID of the project against which to make the request.
      * </pre>
      *
-     * <code>string project_id = 8;</code>
+     * <code>string project_id = 8 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder clearProjectId() {
 
@@ -616,10 +614,10 @@ public final class BeginTransactionRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * The ID of the project against which to make the request.
+     * Required. The ID of the project against which to make the request.
      * </pre>
      *
-     * <code>string project_id = 8;</code>
+     * <code>string project_id = 8 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder setProjectIdBytes(com.google.protobuf.ByteString value) {
       if (value == null) {

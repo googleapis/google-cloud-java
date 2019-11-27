@@ -12,20 +12,20 @@ public interface RunQueryRequestOrBuilder
    *
    *
    * <pre>
-   * The ID of the project against which to make the request.
+   * Required. The ID of the project against which to make the request.
    * </pre>
    *
-   * <code>string project_id = 8;</code>
+   * <code>string project_id = 8 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   java.lang.String getProjectId();
   /**
    *
    *
    * <pre>
-   * The ID of the project against which to make the request.
+   * Required. The ID of the project against which to make the request.
    * </pre>
    *
-   * <code>string project_id = 8;</code>
+   * <code>string project_id = 8 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   com.google.protobuf.ByteString getProjectIdBytes();
 

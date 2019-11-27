@@ -12,20 +12,20 @@ public interface ReserveIdsRequestOrBuilder
    *
    *
    * <pre>
-   * The ID of the project against which to make the request.
+   * Required. The ID of the project against which to make the request.
    * </pre>
    *
-   * <code>string project_id = 8;</code>
+   * <code>string project_id = 8 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   java.lang.String getProjectId();
   /**
    *
    *
    * <pre>
-   * The ID of the project against which to make the request.
+   * Required. The ID of the project against which to make the request.
    * </pre>
    *
-   * <code>string project_id = 8;</code>
+   * <code>string project_id = 8 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   com.google.protobuf.ByteString getProjectIdBytes();
 
@@ -54,55 +54,60 @@ public interface ReserveIdsRequestOrBuilder
    *
    *
    * <pre>
-   * A list of keys with complete key paths whose numeric IDs should not be
+   * Required. A list of keys with complete key paths whose numeric IDs should not be
    * auto-allocated.
    * </pre>
    *
-   * <code>repeated .google.datastore.v1.Key keys = 1;</code>
+   * <code>repeated .google.datastore.v1.Key keys = 1 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   java.util.List<com.google.datastore.v1.Key> getKeysList();
   /**
    *
    *
    * <pre>
-   * A list of keys with complete key paths whose numeric IDs should not be
+   * Required. A list of keys with complete key paths whose numeric IDs should not be
    * auto-allocated.
    * </pre>
    *
-   * <code>repeated .google.datastore.v1.Key keys = 1;</code>
+   * <code>repeated .google.datastore.v1.Key keys = 1 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   com.google.datastore.v1.Key getKeys(int index);
   /**
    *
    *
    * <pre>
-   * A list of keys with complete key paths whose numeric IDs should not be
+   * Required. A list of keys with complete key paths whose numeric IDs should not be
    * auto-allocated.
    * </pre>
    *
-   * <code>repeated .google.datastore.v1.Key keys = 1;</code>
+   * <code>repeated .google.datastore.v1.Key keys = 1 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   int getKeysCount();
   /**
    *
    *
    * <pre>
-   * A list of keys with complete key paths whose numeric IDs should not be
+   * Required. A list of keys with complete key paths whose numeric IDs should not be
    * auto-allocated.
    * </pre>
    *
-   * <code>repeated .google.datastore.v1.Key keys = 1;</code>
+   * <code>repeated .google.datastore.v1.Key keys = 1 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   java.util.List<? extends com.google.datastore.v1.KeyOrBuilder> getKeysOrBuilderList();
   /**
    *
    *
    * <pre>
-   * A list of keys with complete key paths whose numeric IDs should not be
+   * Required. A list of keys with complete key paths whose numeric IDs should not be
    * auto-allocated.
    * </pre>
    *
-   * <code>repeated .google.datastore.v1.Key keys = 1;</code>
+   * <code>repeated .google.datastore.v1.Key keys = 1 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   com.google.datastore.v1.KeyOrBuilder getKeysOrBuilder(int index);
 }

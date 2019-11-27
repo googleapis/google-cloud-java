@@ -9,10 +9,8 @@ package com.google.datastore.v1;
  * <pre>
  * Options for beginning a new transaction.
  * Transactions can be created explicitly with calls to
- * [Datastore.BeginTransaction][google.datastore.v1.Datastore.BeginTransaction]
- * or implicitly by setting
- * [ReadOptions.new_transaction][google.datastore.v1.ReadOptions.new_transaction]
- * in read requests.
+ * [Datastore.BeginTransaction][google.datastore.v1.Datastore.BeginTransaction] or implicitly by setting
+ * [ReadOptions.new_transaction][google.datastore.v1.ReadOptions.new_transaction] in read requests.
  * </pre>
  *
  * Protobuf type {@code google.datastore.v1.TransactionOptions}
@@ -1426,10 +1424,8 @@ public final class TransactionOptions extends com.google.protobuf.GeneratedMessa
    * <pre>
    * Options for beginning a new transaction.
    * Transactions can be created explicitly with calls to
-   * [Datastore.BeginTransaction][google.datastore.v1.Datastore.BeginTransaction]
-   * or implicitly by setting
-   * [ReadOptions.new_transaction][google.datastore.v1.ReadOptions.new_transaction]
-   * in read requests.
+   * [Datastore.BeginTransaction][google.datastore.v1.Datastore.BeginTransaction] or implicitly by setting
+   * [ReadOptions.new_transaction][google.datastore.v1.ReadOptions.new_transaction] in read requests.
    * </pre>
    *
    * Protobuf type {@code google.datastore.v1.TransactionOptions}
