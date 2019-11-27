@@ -163,7 +163,7 @@
     <guava.version>28.1-android</guava.version>
     <http-client-bom.version>1.33.0</http-client-bom.version>
     <oauth-client.version>1.30.4</oauth-client.version>
-    <protobuf.version>3.10.0</protobuf.version>
+    <protobuf.version>3.11.0</protobuf.version>
     <!-- make sure to keep opencensus version in sync with grpc -->
     <opencensus.version>0.24.0</opencensus.version>
     <!-- test dependency versions -->
