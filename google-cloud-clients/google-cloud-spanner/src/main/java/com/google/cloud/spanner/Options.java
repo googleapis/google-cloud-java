@@ -233,7 +233,9 @@ public final class Options implements Serializable {
   static Options fromReadOptions(ReadOption... options) {
     Options readOptions = new Options();
     for (ReadOption option : options) {
-      ((InternalOption) option).appendToOptions(readOptions);
+      if(option instanceof InternalOption) {
+        ((InternalOption) option).appendToOptions(readOptions);
+      }
     }
     return readOptions;
   }
@@ -241,7 +243,9 @@ public final class Options implements Serializable {
   static Options fromQueryOptions(QueryOption... options) {
     Options readOptions = new Options();
     for (QueryOption option : options) {
-      ((InternalOption) option).appendToOptions(readOptions);
+      if(option instanceof InternalOption) {
+        ((InternalOption) option).appendToOptions(readOptions);
+      }
     }
     return readOptions;
   }
@@ -249,7 +253,9 @@ public final class Options implements Serializable {
   static Options fromListOptions(ListOption... options) {
     Options listOptions = new Options();
     for (ListOption option : options) {
-      ((InternalOption) option).appendToOptions(listOptions);
+      if(option instanceof InternalOption) {
+        ((InternalOption) option).appendToOptions(listOptions);
+      }
     }
     return listOptions;
   }
