@@ -27,6 +27,7 @@ import static org.junit.Assert.assertSame;
 import static org.junit.Assert.assertTrue;
 
 import com.google.api.client.googleapis.json.GoogleJsonError;
+import com.google.api.client.util.Base64;
 import com.google.api.core.ApiClock;
 import com.google.api.gax.paging.Page;
 import com.google.api.services.storage.model.Policy.Bindings;
@@ -56,6 +57,7 @@ import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.Iterables;
 import com.google.common.io.BaseEncoding;
 import com.google.common.net.UrlEscapers;
+import com.google.gson.Gson;
 import java.io.ByteArrayInputStream;
 import java.io.IOException;
 import java.io.UnsupportedEncodingException;
@@ -75,9 +77,7 @@ import java.security.spec.EncodedKeySpec;
 import java.security.spec.InvalidKeySpecException;
 import java.security.spec.PKCS8EncodedKeySpec;
 import java.security.spec.X509EncodedKeySpec;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 import java.util.concurrent.TimeUnit;
 import javax.crypto.spec.SecretKeySpec;
 import org.easymock.Capture;
@@ -88,6 +88,9 @@ import org.junit.BeforeClass;
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.ExpectedException;
+import org.threeten.bp.LocalDateTime;
+import org.threeten.bp.Month;
+import org.threeten.bp.format.DateTimeFormatter;
 
 public class StorageImplTest {
 
@@ -111,6 +114,7 @@ public class StorageImplTest {
       "projects/gcloud-devel/locations/us/keyRings/gcs_kms_key_ring_us/cryptoKeys/key";
   private static final Long RETENTION_PERIOD = 10L;
   private static final String USER_PROJECT = "test-project";
+  private static final DateTimeFormatter FORMATTER = DateTimeFormatter.ISO_DATE_TIME;
 
   // BucketInfo objects
   private static final BucketInfo BUCKET_INFO1 =
@@ -2848,5 +2852,35 @@ public class StorageImplTest {
     WriteChannel writer = new BlobWriteChannel(options, new URL(SIGNED_URL));
     assertNotNull(writer);
     assertTrue(writer.isOpen());
+  }
+
+  @Test
+  public void testCreateUploadPolicy() {
+    EasyMock.replay(storageRpcMock);
+    ServiceAccountCredentials credentials =
+        ServiceAccountCredentials.newBuilder()
+            .setClientEmail(ACCOUNT)
+            .setPrivateKey(privateKey)
+            .build();
+
+    storage = options.toBuilder().setCredentials(credentials).build().getService();
+    Map<String, String> bucket = ImmutableMap.of("bucket", BUCKET_NAME1);
+    List<Object> conditions = new ArrayList<>();
+    conditions.add(Arrays.asList("starts-with", "$key", ""));
+    conditions.add(bucket);
+
+    LocalDateTime expiration = LocalDateTime.of(2020, Month.JULY, 29, 19, 30, 40);
+    Map<String, Object> policyFields =
+        storage.createUploadPolicy(BUCKET_NAME1, conditions, expiration);
+    Map<String, Object> policyDocumentMap =
+        ImmutableMap.of("expiration", expiration.format(FORMATTER), "conditions", conditions);
+
+    Gson gson = new Gson();
+    String policy = Base64.encodeBase64String(gson.toJson(policyDocumentMap).getBytes());
+    String signature = Base64.encodeBase64String(credentials.sign(policy.getBytes()));
+    assertEquals(policyFields.get("bucket"), BUCKET_NAME1);
+    assertEquals(policyFields.get("GoogleAccessId"), ACCOUNT);
+    assertEquals(policyFields.get("policy"), policy);
+    assertEquals(policyFields.get("signature"), signature);
   }
 }

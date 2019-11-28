@@ -19,34 +19,22 @@ package com.google.cloud.storage;
 import static com.google.cloud.RetryHelper.runWithRetries;
 import static com.google.cloud.storage.PolicyHelper.convertFromApiPolicy;
 import static com.google.cloud.storage.PolicyHelper.convertToApiPolicy;
-import static com.google.cloud.storage.spi.v1.StorageRpc.Option.DELIMITER;
-import static com.google.cloud.storage.spi.v1.StorageRpc.Option.IF_GENERATION_MATCH;
-import static com.google.cloud.storage.spi.v1.StorageRpc.Option.IF_GENERATION_NOT_MATCH;
-import static com.google.cloud.storage.spi.v1.StorageRpc.Option.IF_METAGENERATION_MATCH;
-import static com.google.cloud.storage.spi.v1.StorageRpc.Option.IF_METAGENERATION_NOT_MATCH;
-import static com.google.cloud.storage.spi.v1.StorageRpc.Option.IF_SOURCE_GENERATION_MATCH;
-import static com.google.cloud.storage.spi.v1.StorageRpc.Option.IF_SOURCE_GENERATION_NOT_MATCH;
-import static com.google.cloud.storage.spi.v1.StorageRpc.Option.IF_SOURCE_METAGENERATION_MATCH;
-import static com.google.cloud.storage.spi.v1.StorageRpc.Option.IF_SOURCE_METAGENERATION_NOT_MATCH;
+import static com.google.cloud.storage.spi.v1.StorageRpc.Option.*;
 import static com.google.common.base.MoreObjects.firstNonNull;
 import static com.google.common.base.Preconditions.checkArgument;
 import static com.google.common.base.Preconditions.checkState;
 import static java.nio.charset.StandardCharsets.UTF_8;
 
+import com.google.api.client.util.Base64;
 import com.google.api.gax.paging.Page;
 import com.google.api.services.storage.model.BucketAccessControl;
 import com.google.api.services.storage.model.ObjectAccessControl;
 import com.google.api.services.storage.model.StorageObject;
 import com.google.api.services.storage.model.TestIamPermissionsResponse;
 import com.google.auth.ServiceAccountSigner;
-import com.google.cloud.BaseService;
-import com.google.cloud.BatchResult;
-import com.google.cloud.PageImpl;
+import com.google.cloud.*;
 import com.google.cloud.PageImpl.NextPageFetcher;
-import com.google.cloud.Policy;
-import com.google.cloud.ReadChannel;
 import com.google.cloud.RetryHelper.RetryHelperException;
-import com.google.cloud.Tuple;
 import com.google.cloud.storage.Acl.Entity;
 import com.google.cloud.storage.HmacKey.HmacKeyMetadata;
 import com.google.cloud.storage.spi.v1.StorageRpc;
@@ -55,16 +43,12 @@ import com.google.common.base.CharMatcher;
 import com.google.common.base.Function;
 import com.google.common.base.Preconditions;
 import com.google.common.base.Strings;
-import com.google.common.collect.ImmutableList;
-import com.google.common.collect.ImmutableMap;
-import com.google.common.collect.ImmutableSet;
-import com.google.common.collect.Iterables;
-import com.google.common.collect.Lists;
-import com.google.common.collect.Maps;
+import com.google.common.collect.*;
 import com.google.common.hash.Hashing;
 import com.google.common.io.BaseEncoding;
 import com.google.common.net.UrlEscapers;
 import com.google.common.primitives.Ints;
+import com.google.gson.Gson;
 import java.io.ByteArrayInputStream;
 import java.io.InputStream;
 import java.io.UnsupportedEncodingException;
@@ -72,14 +56,11 @@ import java.net.MalformedURLException;
 import java.net.URI;
 import java.net.URL;
 import java.net.URLEncoder;
-import java.util.Arrays;
-import java.util.Collections;
-import java.util.EnumMap;
-import java.util.List;
-import java.util.Map;
-import java.util.Set;
+import java.util.*;
 import java.util.concurrent.Callable;
 import java.util.concurrent.TimeUnit;
+import org.threeten.bp.LocalDateTime;
+import org.threeten.bp.format.DateTimeFormatter;
 
 final class StorageImpl extends BaseService<StorageOptions> implements Storage {
 
@@ -91,7 +72,7 @@ final class StorageImpl extends BaseService<StorageOptions> implements Storage {
   private static final String STORAGE_XML_URI_SCHEME = "https";
 
   private static final String STORAGE_XML_URI_HOST_NAME = "storage.googleapis.com";
-
+  private static final DateTimeFormatter FORMATTER = DateTimeFormatter.ISO_DATE_TIME;
   private static final Function<Tuple<Storage, Boolean>, Boolean> DELETE_FUNCTION =
       new Function<Tuple<Storage, Boolean>, Boolean>() {
         @Override
@@ -127,6 +108,45 @@ final class StorageImpl extends BaseService<StorageOptions> implements Storage {
     } catch (RetryHelperException e) {
       throw StorageException.translateAndThrow(e);
     }
+  }
+
+  @Override
+  public Map<String, Object> createUploadPolicy(
+      String bucket,
+      List<Object> conditions,
+      LocalDateTime expiration,
+      PolicyDocumentOption... options) {
+
+    EnumMap<PolicyDocumentOption.Option, Object> optionMap =
+        Maps.newEnumMap(PolicyDocumentOption.Option.class);
+    for (PolicyDocumentOption option : options) {
+      optionMap.put(option.getOption(), option.getValue());
+    }
+    ServiceAccountSigner credentials =
+        (ServiceAccountSigner) optionMap.get(PolicyDocumentOption.Option.SERVICE_ACCOUNT_CRED);
+    if (credentials == null) {
+      checkState(
+          this.getOptions().getCredentials() instanceof ServiceAccountSigner,
+          "Signing key was not provided and could not be derived");
+      credentials = (ServiceAccountSigner) this.getOptions().getCredentials();
+    }
+    Map<String, String> bucketMap = ImmutableMap.of("bucket", bucket);
+    conditions.add(bucketMap);
+    if (expiration == null) {
+      expiration = LocalDateTime.now().plusHours(1);
+    }
+    Map<String, Object> policyDocMap =
+        ImmutableMap.of("expiration", expiration.format(FORMATTER), "conditions", conditions);
+    Gson gson = new Gson();
+    String encodedPolicyDoc = Base64.encodeBase64String(gson.toJson(policyDocMap).getBytes());
+    String signature = Base64.encodeBase64String(credentials.sign(encodedPolicyDoc.getBytes()));
+    Map<String, Object> fields =
+        ImmutableMap.<String, Object>of(
+            "bucket", bucket,
+            "GoogleAccessId", credentials.getAccount(),
+            "policy", encodedPolicyDoc,
+            "signature", signature);
+    return fields;
   }
 
   @Override

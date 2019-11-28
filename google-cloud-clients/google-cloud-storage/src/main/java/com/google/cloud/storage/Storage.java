@@ -40,15 +40,9 @@ import java.io.InputStream;
 import java.io.Serializable;
 import java.net.URL;
 import java.security.Key;
-import java.util.Arrays;
-import java.util.Collections;
-import java.util.LinkedHashSet;
-import java.util.LinkedList;
-import java.util.List;
-import java.util.Map;
-import java.util.Objects;
-import java.util.Set;
+import java.util.*;
 import java.util.concurrent.TimeUnit;
+import org.threeten.bp.LocalDateTime;
 
 /**
  * An interface for Google Cloud Storage.
@@ -1160,6 +1154,41 @@ public interface Storage extends Service<StorageOptions> {
     }
   }
 
+  /** Class for specifying policy document options. */
+  class PolicyDocumentOption implements Serializable {
+
+    private static final long serialVersionUID = -7385681353748590911L;
+
+    private final Option option;
+    private final Object value;
+
+    enum Option {
+      SERVICE_ACCOUNT_CRED,
+      POLICY_DOCUMENT
+    }
+
+    public PolicyDocumentOption(Option option, Object value) {
+      this.option = option;
+      this.value = value;
+    }
+
+    PolicyDocumentOption.Option getOption() {
+      return option;
+    }
+
+    Object getValue() {
+      return value;
+    }
+
+    public static PolicyDocumentOption signWith(ServiceAccountSigner signer) {
+      return new PolicyDocumentOption(Option.SERVICE_ACCOUNT_CRED, signer);
+    }
+
+    public static PolicyDocumentOption withPolicyDocument() {
+      return new PolicyDocumentOption(Option.POLICY_DOCUMENT, "");
+    }
+  }
+
   /**
    * A class to contain all information needed for a Google Cloud Storage Compose operation.
    *
@@ -1609,6 +1638,22 @@ public interface Storage extends Service<StorageOptions> {
   Bucket create(BucketInfo bucketInfo, BucketTargetOption... options);
 
   /**
+   * Create a signed upload policy for uploading objects.This method generates and signs a policy
+   * document. You can use `policy documents`_ to allow visitors to a website to upload files to
+   * Google Cloud Storage without giving them direct write access.
+   *
+   * @param bucket
+   * @param conditions
+   * @param expiration
+   * @param options
+   * @return
+   */
+  Map<String, Object> createUploadPolicy(
+      String bucket,
+      List<Object> conditions,
+      LocalDateTime expiration,
+      PolicyDocumentOption... options);
+  /**
    * Creates a new blob with no content.
    *
    * <p>Example of creating a blob with no content.
@@ -1799,6 +1844,7 @@ public interface Storage extends Service<StorageOptions> {
    * only if supplied Decrpytion Key decrypts the blob successfully, otherwise a {@link
    * StorageException} is thrown. For more information review
    *
+   * @throws StorageException upon failure
    * @see <a
    *     href="https://cloud.google.com/storage/docs/encryption/customer-supplied-keys#encrypted-elements">Encrypted
    *     Elements</a>
@@ -1809,8 +1855,6 @@ public interface Storage extends Service<StorageOptions> {
    * BlobId blobId = BlobId.of(bucketName, blobName);
    * Blob blob = storage.get(blobId, BlobGetOption.decryptionKey(blobEncryptionKey));
    * }</pre>
-   *
-   * @throws StorageException upon failure
    */
   Blob get(BlobId blob, BlobGetOption... options);
 
@@ -3038,6 +3082,7 @@ public interface Storage extends Service<StorageOptions> {
       final HmacKeyMetadata hmacKeyMetadata,
       final HmacKey.HmacKeyState state,
       UpdateHmacKeyOption... options);
+
   /**
    * Gets the IAM policy for the provided bucket.
    *
