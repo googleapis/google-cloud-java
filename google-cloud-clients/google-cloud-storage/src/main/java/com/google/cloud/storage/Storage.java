@@ -1653,7 +1653,8 @@ public interface Storage extends Service<StorageOptions> {
    * @param conditions
    * @param expiration
    * @param options
-   * @return
+   * @return A dictionary of (form field name, form field value) of form fields that should be added
+   *     to your HTML upload form in order to attach the signature.
    */
   Map<String, Object> createUploadPolicy(
       String bucket,

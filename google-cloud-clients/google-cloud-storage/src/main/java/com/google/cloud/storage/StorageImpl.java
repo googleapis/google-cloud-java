@@ -153,8 +153,7 @@ final class StorageImpl extends BaseService<StorageOptions> implements Storage {
           "Signing key was not provided and could not be derived");
       credentials = (ServiceAccountSigner) this.getOptions().getCredentials();
     }
-    Map<String, String> bucketMap = ImmutableMap.of("bucket", bucket);
-    conditions.add(bucketMap);
+    conditions.add(ImmutableMap.of("bucket", bucket));
     if (expiration == null) {
       expiration = LocalDateTime.now().plusHours(1);
     }
@@ -163,13 +162,12 @@ final class StorageImpl extends BaseService<StorageOptions> implements Storage {
     Gson gson = new Gson();
     String encodedPolicyDoc = Base64.encodeBase64String(gson.toJson(policyDocMap).getBytes());
     String signature = Base64.encodeBase64String(credentials.sign(encodedPolicyDoc.getBytes()));
-    Map<String, Object> fields =
-        ImmutableMap.<String, Object>of(
-            "bucket", bucket,
-            "GoogleAccessId", credentials.getAccount(),
-            "policy", encodedPolicyDoc,
-            "signature", signature);
-    return fields;
+
+    return ImmutableMap.<String, Object>of(
+        "bucket", bucket,
+        "GoogleAccessId", credentials.getAccount(),
+        "policy", encodedPolicyDoc,
+        "signature", signature);
   }
 
   @Override
