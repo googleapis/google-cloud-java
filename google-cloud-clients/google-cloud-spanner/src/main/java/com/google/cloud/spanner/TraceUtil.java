@@ -20,13 +20,9 @@ import com.google.cloud.Timestamp;
 import com.google.common.collect.ImmutableMap;
 import com.google.spanner.v1.Transaction;
 import io.opencensus.contrib.grpc.util.StatusConverter;
-import io.opencensus.trace.AttributeValue;
-import io.opencensus.trace.Span;
-import io.opencensus.trace.Status;
-import io.opencensus.trace.Tracing;
-import io.opencensus.trace.export.SampledSpanStore;
-import java.util.Arrays;
+import io.opencensus.trace.*;
 import java.util.Map;
+import jdk.internal.jline.internal.Preconditions;
 
 /** Utility methods for tracing. */
 class TraceUtil {
@@ -69,10 +65,19 @@ class TraceUtil {
     span.end();
   }
 
+  /**
+   * Appends the list of span names for sample collection.
+   *
+   * <p>If called multiple times the library keeps the list of unique span names from all the calls.
+   *
+   * @param spans list of span names.
+   */
   static void exportSpans(String... spans) {
-    SampledSpanStore store = Tracing.getExportComponent().getSampledSpanStore();
-    if (store != null) {
-      store.registerSpanNamesForCollection(Arrays.asList(spans));
+    Preconditions.checkNotNull(spans);
+    Tracer tracer = Tracing.getTracer();
+    for (String spanName : spans) {
+      Span span = tracer.spanBuilder(spanName).setRecordEvents(true).startSpan();
+      span.end(EndSpanOptions.builder().setSampleToLocalSpanStore(true).build());
     }
   }
 }
