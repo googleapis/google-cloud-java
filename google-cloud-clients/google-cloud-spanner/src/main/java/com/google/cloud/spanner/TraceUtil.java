@@ -17,6 +17,7 @@
 package com.google.cloud.spanner;
 
 import com.google.cloud.Timestamp;
+import com.google.common.base.Preconditions;
 import com.google.common.collect.ImmutableMap;
 import com.google.spanner.v1.Transaction;
 import io.opencensus.contrib.grpc.util.StatusConverter;
@@ -27,7 +28,6 @@ import io.opencensus.trace.Status;
 import io.opencensus.trace.Tracer;
 import io.opencensus.trace.Tracing;
 import java.util.Map;
-import jdk.internal.jline.internal.Preconditions;
 
 /** Utility methods for tracing. */
 class TraceUtil {
@@ -80,8 +80,9 @@ class TraceUtil {
   static void exportSpans(String... spans) {
     Preconditions.checkNotNull(spans);
     Tracer tracer = Tracing.getTracer();
+    Span span = null;
     for (String spanName : spans) {
-      Span span = tracer.spanBuilder(spanName).setRecordEvents(true).startSpan();
+      span = tracer.spanBuilder(spanName).setRecordEvents(true).startSpan();
       span.end(EndSpanOptions.builder().setSampleToLocalSpanStore(true).build());
     }
   }
