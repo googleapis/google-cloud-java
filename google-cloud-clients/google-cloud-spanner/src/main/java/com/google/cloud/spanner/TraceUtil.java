@@ -20,7 +20,12 @@ import com.google.cloud.Timestamp;
 import com.google.common.collect.ImmutableMap;
 import com.google.spanner.v1.Transaction;
 import io.opencensus.contrib.grpc.util.StatusConverter;
-import io.opencensus.trace.*;
+import io.opencensus.trace.AttributeValue;
+import io.opencensus.trace.EndSpanOptions;
+import io.opencensus.trace.Span;
+import io.opencensus.trace.Status;
+import io.opencensus.trace.Tracer;
+import io.opencensus.trace.Tracing;
 import java.util.Map;
 import jdk.internal.jline.internal.Preconditions;
 
