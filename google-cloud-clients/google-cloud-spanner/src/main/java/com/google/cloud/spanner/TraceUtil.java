@@ -80,9 +80,8 @@ class TraceUtil {
   static void exportSpans(String... spans) {
     Preconditions.checkNotNull(spans);
     Tracer tracer = Tracing.getTracer();
-    Span span = null;
     for (String spanName : spans) {
-      span = tracer.spanBuilder(spanName).setRecordEvents(true).startSpan();
+      Span  span = tracer.spanBuilder(spanName).setRecordEvents(true).startSpan();
       span.end(EndSpanOptions.builder().setSampleToLocalSpanStore(true).build());
     }
   }
