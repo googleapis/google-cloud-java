@@ -166,6 +166,17 @@
                       <resource>com.google.cloud.spanner.jdbc</resource>
                       <file>*.sql</file>
                     </transformer>
+                    <transformer implementation="org.apache.maven.plugins.shade.resource.DontIncludeResourceTransformer">
+                      <resources>
+                        <resource>META-INF/SIGNINGC.RSA</resource>
+                        <resource>META-INF/SIGNINGC.SF</resource>
+                        <resource>META-INF/DEPENDENCIES</resource>
+                        <resource>META-INF/LICENSE</resource>
+                        <resource>META-INF/LICENSE.txt</resource>
+                        <resource>META-INF/NOTICE</resource>
+                        <resource>META-INF/NOTICE.txt</resource>
+                      </resources>
+                    </transformer>
                   </transformers>
                 </configuration>
               </execution>
