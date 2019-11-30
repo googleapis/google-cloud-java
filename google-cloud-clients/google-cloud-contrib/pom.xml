@@ -23,6 +23,7 @@
     <module>google-cloud-logging-logback</module>
     <module>google-cloud-notification</module>
     <module>google-cloud-spanner-jdbc</module>
+    <module>google-cloud-spanner-jdbc-shaded-jar-tester</module>
   </modules>
   <dependencies>
   </dependencies>
