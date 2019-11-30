@@ -82,6 +82,64 @@
           </execution>
         </executions>
       </plugin>
+          <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-shade-plugin</artifactId>
+            <version>3.2.1</version>
+            <executions>
+              <execution>
+                <goals>
+                  <goal>shade</goal>
+                </goals>
+                <configuration>
+                  <createSourcesJar>true</createSourcesJar>
+                  <shadeSourcesContent>true</shadeSourcesContent>
+                  <shadedArtifactAttached>true</shadedArtifactAttached>
+                  <shadedClassifierName>single-jar-with-dependencies</shadedClassifierName>
+                  <createDependencyReducedPom>false</createDependencyReducedPom>
+                  <artifactSet>
+                    <includes>
+                      <include>*:*</include>
+                    </includes>
+                    <excludes>
+                      <exclude>java:*</exclude>
+                      <exclude>junit:*</exclude>
+                    </excludes>
+                  </artifactSet>
+                  <transformers>
+                    <transformer
+                      implementation="org.apache.maven.plugins.shade.resource.ServicesResourceTransformer" />
+                    <transformer
+                      implementation="org.apache.maven.plugins.shade.resource.IncludeResourceTransformer">
+                      <resource>META-INF/services</resource>
+                      <file>java.sql.Driver</file>
+                    </transformer>
+                    <transformer
+                      implementation="org.apache.maven.plugins.shade.resource.IncludeResourceTransformer">
+                      <resource>com.google.cloud.spanner.jdbc</resource>
+                      <file>ClientSideStatements.json</file>
+                    </transformer>
+                    <transformer
+                      implementation="org.apache.maven.plugins.shade.resource.IncludeResourceTransformer">
+                      <resource>com.google.cloud.spanner.jdbc</resource>
+                      <file>*.sql</file>
+                    </transformer>
+                    <transformer implementation="org.apache.maven.plugins.shade.resource.DontIncludeResourceTransformer">
+                      <resources>
+                        <resource>META-INF/SIGNINGC.RSA</resource>
+                        <resource>META-INF/SIGNINGC.SF</resource>
+                        <resource>META-INF/DEPENDENCIES</resource>
+                        <resource>META-INF/LICENSE</resource>
+                        <resource>META-INF/LICENSE.txt</resource>
+                        <resource>META-INF/NOTICE</resource>
+                        <resource>META-INF/NOTICE.txt</resource>
+                      </resources>
+                    </transformer>
+                  </transformers>
+                </configuration>
+              </execution>
+            </executions>
+          </plugin>
     </plugins>
   </build>
   <profiles>
@@ -111,62 +169,6 @@
                   </systemProperties>
                   <classpathScope>test</classpathScope>
                   <skip>false</skip>
-                </configuration>
-              </execution>
-            </executions>
-          </plugin>
-        </plugins>
-      </build>
-    </profile>
-    <profile>
-      <!-- Profile for building a jar containing all dependencies and the 
-        JDBC driver. This jar can then be used with third-party tools that support 
-        generic JDBC drivers to connect to Cloud Spanner databases. -->
-      <id>build-jdbc-driver</id>
-      <build>
-        <plugins>
-          <plugin>
-            <groupId>org.apache.maven.plugins</groupId>
-            <artifactId>maven-shade-plugin</artifactId>
-            <version>3.2.1</version>
-            <executions>
-              <execution>
-                <goals>
-                  <goal>shade</goal>
-                </goals>
-                <configuration>
-                  <createSourcesJar>true</createSourcesJar>
-                  <shadeSourcesContent>true</shadeSourcesContent>
-                  <shadedArtifactAttached>false</shadedArtifactAttached>
-                  <createDependencyReducedPom>false</createDependencyReducedPom>
-                  <artifactSet>
-                    <includes>
-                      <include>*:*</include>
-                    </includes>
-                    <excludes>
-                      <exclude>java:*</exclude>
-                      <exclude>junit:*</exclude>
-                    </excludes>
-                  </artifactSet>
-                  <transformers>
-                    <transformer
-                      implementation="org.apache.maven.plugins.shade.resource.ServicesResourceTransformer" />
-                    <transformer
-                      implementation="org.apache.maven.plugins.shade.resource.IncludeResourceTransformer">
-                      <resource>META-INF/services</resource>
-                      <file>java.sql.Driver</file>
-                    </transformer>
-                    <transformer
-                      implementation="org.apache.maven.plugins.shade.resource.IncludeResourceTransformer">
-                      <resource>com.google.cloud.spanner.jdbc</resource>
-                      <file>ClientSideStatements.json</file>
-                    </transformer>
-                    <transformer
-                      implementation="org.apache.maven.plugins.shade.resource.IncludeResourceTransformer">
-                      <resource>com.google.cloud.spanner.jdbc</resource>
-                      <file>*.sql</file>
-                    </transformer>
-                  </transformers>
                 </configuration>
               </execution>
             </executions>
