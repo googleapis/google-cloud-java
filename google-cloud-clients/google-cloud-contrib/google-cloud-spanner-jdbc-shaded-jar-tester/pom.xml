@@ -5,6 +5,7 @@
   <version>0.0.0</version>
   <packaging>jar</packaging>
   <groupId>com.google.cloud</groupId>
+  <description>Test project for Spanner JDBC driver shaded jar</description>
   
   <build>
     <plugins>
@@ -35,14 +36,9 @@
       </exclusions>
     </dependency>
     <dependency>
-      <groupId>com.google.api.grpc</groupId>
-      <artifactId>grpc-google-cloud-spanner-v1</artifactId>
-      <version>1.46.1-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-spanner-v1:current} -->
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+      <version>4.12</version>
     </dependency>
-      <dependency>
-        <groupId>junit</groupId>
-        <artifactId>junit</artifactId>
-        <version>4.12</version>
-      </dependency>
   </dependencies>
 </project>
