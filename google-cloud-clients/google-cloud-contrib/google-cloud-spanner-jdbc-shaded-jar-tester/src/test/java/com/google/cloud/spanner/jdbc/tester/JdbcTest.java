@@ -23,6 +23,7 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import org.junit.Ignore;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
@@ -31,6 +32,7 @@ import org.junit.runners.JUnit4;
 @RunWith(JUnit4.class)
 public class JdbcTest {
 
+  @Ignore("enable when single jar is available in repository")
   @Test
   public void testConnect() throws IOException, SQLException, InterruptedException {
     // Start an in-mem mock Spanner server.
