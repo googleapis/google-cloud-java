@@ -91,7 +91,7 @@ in your pom.xml:
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-enforcer-plugin</artifactId>
-        <version>3.0.0-M2</version>
+        <version>3.0.0-M3</version>
         <dependencies>
           <dependency>
             <groupId>com.google.cloud.tools</groupId>
@@ -130,7 +130,7 @@ There are different strategies to resolve conflicts, but you must understand the
   least hackish approach but it is a lot of work that can require multiple releases
    of multiple libraries to sync everything up. 
 - If you can't modify and push new versions of your dependencies, import
-  `com.google.cloud:libraries-bom:2.5.0` (or a more recent version) and use that to
+  `com.google.cloud:libraries-bom:3.0.0` (or a more recent version) and use that to
   select consistent dependency version. This is the easiest route. 
   For example, this is how you can depend on consistent versions of Guava and 
   `com.google.cloud:google-cloud-storage` without explicitly setting the version of either one:
@@ -142,7 +142,7 @@ There are different strategies to resolve conflicts, but you must understand the
       <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>libraries-bom</artifactId>
-        <version>2.9.0</version>
+        <version>3.0.0</version>
         <type>pom</type>
         <scope>import</scope>
        </dependency>
