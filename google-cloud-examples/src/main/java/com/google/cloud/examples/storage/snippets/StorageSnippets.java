@@ -656,6 +656,9 @@ public class StorageSnippets {
     List<Object> conditions = new ArrayList<>();
     conditions.add(Arrays.asList("starts-with", "$key", ""));
     conditions.add(ImmutableMap.of("acl", "public-read"));
+
+    // Instantiate a Google Cloud Storage client
+    Storage storage = StorageOptions.getDefaultInstance().getService();
     LocalDateTime expiration = LocalDateTime.now();
     Map<String, Object> policy = storage.createUploadPolicy(bucket, conditions, expiration);
     StringBuilder policyBuilder = new StringBuilder();

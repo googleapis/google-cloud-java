@@ -2868,10 +2868,9 @@ public class StorageImplTest {
             .build();
 
     storage = options.toBuilder().setCredentials(credentials).build().getService();
-    Map<String, String> bucket = ImmutableMap.of("bucket", BUCKET_NAME1);
     List<Object> conditions = new ArrayList<>();
     conditions.add(Arrays.asList("starts-with", "$key", ""));
-    conditions.add(bucket);
+    conditions.add(ImmutableMap.of("bucket", BUCKET_NAME1));
 
     LocalDateTime expiration = LocalDateTime.of(2020, Month.JULY, 29, 19, 30, 40);
     Map<String, Object> policyFields =
