@@ -652,11 +652,10 @@ public class StorageSnippets {
   /** Example of create a signed upload policy for uploading objects */
   // [VARIABLE "my_unique_bucket"]
   public void createUploadPolicy(String bucket) {
-    // [START policy_document]
-    Map<String, Object> permissions = ImmutableMap.<String, Object>of("acl", "public-read");
+    // [START createUploadPolicy]
     List<Object> conditions = new ArrayList<>();
     conditions.add(Arrays.asList("starts-with", "$key", ""));
-    conditions.add(permissions);
+    conditions.add(ImmutableMap.of("acl", "public-read"));
     LocalDateTime expiration = LocalDateTime.now();
     Map<String, Object> policy = storage.createUploadPolicy(bucket, conditions, expiration);
     StringBuilder policyBuilder = new StringBuilder();
@@ -682,7 +681,7 @@ public class StorageSnippets {
         .append(policyBuilder.toString())
         .append("</form>");
     System.out.println(uploadForm.toString());
-    // [END policy_document]
+    // [END createUploadPolicy]
   }
 
   /**
