@@ -185,16 +185,6 @@
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
-        <artifactId>proto-google-cloud-pubsub-v1</artifactId>
-        <version>1.83.0</version>
-      </dependency>
-      <dependency>
-        <groupId>com.google.api.grpc</groupId>
-        <artifactId>grpc-google-cloud-pubsub-v1</artifactId>
-        <version>1.83.0</version>
-      </dependency>
-      <dependency>
-        <groupId>com.google.api.grpc</groupId>
         <artifactId>proto-google-cloud-spanner-v1</artifactId>
         <version>1.46.1-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-spanner-v1:current} -->
       </dependency>
@@ -229,7 +219,6 @@
   <modules>
     <module>grpc-google-cloud-bigquerydatatransfer-v1</module>
     <module>grpc-google-cloud-bigquerystorage-v1beta1</module>
-    <module>grpc-google-cloud-pubsub-v1</module>
     <module>grpc-google-cloud-spanner-admin-database-v1</module>
     <module>grpc-google-cloud-spanner-admin-instance-v1</module>
     <module>grpc-google-cloud-spanner-v1</module>
@@ -237,7 +226,6 @@
     <module>proto-google-cloud-bigquerydatatransfer-v1</module>
     <module>proto-google-cloud-bigquerystorage-v1beta1</module>
     <module>proto-google-cloud-datastore-v1</module>
-    <module>proto-google-cloud-pubsub-v1</module>
     <module>proto-google-cloud-spanner-admin-database-v1</module>
     <module>proto-google-cloud-spanner-admin-instance-v1</module>
     <module>proto-google-cloud-spanner-v1</module>
