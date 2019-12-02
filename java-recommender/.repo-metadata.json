@@ -7,5 +7,5 @@
   "language": "java",
   "repo": "googleapis/java-recommender",
   "repo_short": "java-recommender",
-  "distribution_name": "google-cloud-recommender"
+  "distribution_name": "com.google.cloud:google-cloud-recommender"
 }
