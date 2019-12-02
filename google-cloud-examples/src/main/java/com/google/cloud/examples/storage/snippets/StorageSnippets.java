@@ -70,6 +70,7 @@ import java.io.InputStream;
 import java.net.URL;
 import java.nio.ByteBuffer;
 import java.nio.file.Path;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Date;
 import java.util.HashMap;
@@ -650,20 +651,17 @@ public class StorageSnippets {
 
   /** Example of create a signed upload policy for uploading objects */
   // [VARIABLE "my_unique_bucket"]
-  // [VARIABLE "my_conditions"]
-  // [VARIABLE "my_expiration_datetime"]
-  public void createUploadPolicy(String bucket, List<Object> conditions, LocalDateTime expiration) {
-
+  public void createUploadPolicy(String bucket) {
     // [START policy_document]
     Map<String, Object> permissions = ImmutableMap.<String, Object>of("acl", "public-read");
+    List<Object> conditions = new ArrayList<>();
     conditions.add(Arrays.asList("starts-with", "$key", ""));
     conditions.add(permissions);
-
+    LocalDateTime expiration = LocalDateTime.now();
     Map<String, Object> policy = storage.createUploadPolicy(bucket, conditions, expiration);
-
-    StringBuilder policyFields = new StringBuilder();
+    StringBuilder policyBuilder = new StringBuilder();
     for (Map.Entry value : policy.entrySet()) {
-      policyFields.append(
+      policyBuilder.append(
           "<input type=\"hidden\" name=\""
               + value.getKey()
               + "\" value=\""
@@ -681,9 +679,8 @@ public class StorageSnippets {
         .append("<input type=\"hidden\" name=\"acl\" value=\"public-read\">")
         .append("<input type=\"file\" name=\"file\">")
         .append("<input type=\"submit\" value=\"Upload\">")
-        .append(policyFields.toString())
+        .append(policyBuilder.toString())
         .append("</form>");
-
     System.out.println(uploadForm.toString());
     // [END policy_document]
   }
