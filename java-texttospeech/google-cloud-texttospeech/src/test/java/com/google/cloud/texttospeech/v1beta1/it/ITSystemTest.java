@@ -14,12 +14,23 @@
  * limitations under the License.
  */
 
-package com.google.cloud.texttospeech.v1beta1;
+package com.google.cloud.texttospeech.v1beta1.it;
 
+import static org.junit.Assert.assertTrue;
+
+import com.google.cloud.texttospeech.v1beta1.AudioConfig;
+import com.google.cloud.texttospeech.v1beta1.AudioEncoding;
+import com.google.cloud.texttospeech.v1beta1.ListVoicesRequest;
+import com.google.cloud.texttospeech.v1beta1.ListVoicesResponse;
+import com.google.cloud.texttospeech.v1beta1.SsmlVoiceGender;
+import com.google.cloud.texttospeech.v1beta1.SynthesisInput;
+import com.google.cloud.texttospeech.v1beta1.SynthesizeSpeechResponse;
+import com.google.cloud.texttospeech.v1beta1.TextToSpeechClient;
+import com.google.cloud.texttospeech.v1beta1.Voice;
+import com.google.cloud.texttospeech.v1beta1.VoiceSelectionParams;
 import com.google.protobuf.ByteString;
 import java.io.IOException;
 import java.util.List;
-import org.junit.Assert;
 import org.junit.Test;
 
 public class ITSystemTest {
@@ -43,7 +54,7 @@ public class ITSystemTest {
 
       ByteString audioContents = response.getAudioContent();
 
-      Assert.assertTrue(!audioContents.isEmpty());
+      assertTrue(!audioContents.isEmpty());
     }
   }
 
@@ -55,7 +66,7 @@ public class ITSystemTest {
       ListVoicesResponse response = textToSpeechClient.listVoices(request);
       List<Voice> voices = response.getVoicesList();
 
-      Assert.assertTrue(!voices.isEmpty());
+      assertTrue(!voices.isEmpty());
     }
   }
 }
