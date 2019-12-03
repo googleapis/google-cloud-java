@@ -34,9 +34,9 @@ public class WriteIncrement {
     try (BigtableDataClient dataClient = BigtableDataClient.create(projectId, instanceId)) {
       // Get an existing row that has a cell with an incrementable value. A value can be incremented
       // if it is encoded as a 64-bit big-endian signed integer.
-      String rowKey = "phone#4c410523#20190501";
+      String rowkey = "phone#4c410523#20190501";
       ReadModifyWriteRow mutation =
-          ReadModifyWriteRow.create(tableId, rowKey)
+          ReadModifyWriteRow.create(tableId, rowkey)
               .increment(COLUMN_FAMILY_NAME, "connected_cell", -1);
       Row success = dataClient.readModifyWriteRow(mutation);
 

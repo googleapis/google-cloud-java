@@ -36,7 +36,7 @@ public class WriteConditionally {
     try (BigtableDataClient dataClient = BigtableDataClient.create(projectId, instanceId)) {
       long timestamp = System.currentTimeMillis() * 1000;
 
-      String rowKey = "phone#4c410523#20190501";
+      String rowkey = "phone#4c410523#20190501";
 
       Mutation mutation =
           Mutation.create().setCell(COLUMN_FAMILY_NAME, "os_name", timestamp, "android");
@@ -49,7 +49,7 @@ public class WriteConditionally {
               .filter(FILTERS.value().regex("PQ2A\\..*"));
 
       ConditionalRowMutation conditionalRowMutation =
-          ConditionalRowMutation.create(tableId, rowKey).condition(filter).then(mutation);
+          ConditionalRowMutation.create(tableId, rowkey).condition(filter).then(mutation);
 
       boolean success = dataClient.checkAndMutateRow(conditionalRowMutation);
 

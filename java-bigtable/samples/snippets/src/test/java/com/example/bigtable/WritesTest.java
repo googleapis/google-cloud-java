@@ -43,12 +43,10 @@ public class WritesTest {
   private static String projectId;
   private static String instanceId;
   private ByteArrayOutputStream bout;
-
   private static String requireEnv(String varName) {
-    assertNotNull(
-        System.getenv(varName),
-        "Environment variable '%s' is required to perform these tests.".format(varName));
-    return System.getenv(varName);
+    String value = System.getenv(varName);
+    assertNotNull(String.format("Environment variable '%s' is required to perform these tests.", varName), value);
+    return value;
   }
 
   @BeforeClass
