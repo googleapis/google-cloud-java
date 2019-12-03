@@ -25,6 +25,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.SQLWarning;
 import java.sql.Statement;
+import java.util.Arrays;
 import java.util.concurrent.TimeUnit;
 
 /** Base class for Cloud Spanner JDBC {@link Statement}s */
@@ -46,11 +47,13 @@ abstract class AbstractJdbcStatement extends AbstractJdbcWrapper implements Stat
     return connection;
   }
 
-  private Options.QueryOption[] getQueryOptions() throws SQLException {
+  private Options.QueryOption[] getQueryOptions(QueryOption... options) throws SQLException {
+    QueryOption[] res = options == null ? new QueryOption[0] : options;
     if (getFetchSize() > 0) {
-      return new Options.ReadAndQueryOption[] {Options.prefetchChunks(getFetchSize())};
+      res = Arrays.copyOf(res, res.length + 1);
+      res[res.length - 1] = Options.prefetchChunks(getFetchSize());
     }
-    return new QueryOption[0];
+    return res;
   }
 
   /** The {@link TimeUnit}s that are supported for timeout and staleness durations */
@@ -147,14 +150,17 @@ abstract class AbstractJdbcStatement extends AbstractJdbcWrapper implements Stat
    * Executes a SQL statement on the connection of this {@link Statement} as a query.
    *
    * @param statement The SQL statement to executed.
+   * @param options {@link QueryOption}s that should be applied to the query.
    * @return the result of the SQL statement as a {@link ResultSet}.
    * @throws SQLException if a database error occurs.
    */
-  ResultSet executeQuery(com.google.cloud.spanner.Statement statement) throws SQLException {
+  ResultSet executeQuery(com.google.cloud.spanner.Statement statement, QueryOption... options)
+      throws SQLException {
     StatementTimeout originalTimeout = setTemporaryStatementTimeout();
     try {
       return JdbcResultSet.of(
-          this, connection.getSpannerConnection().executeQuery(statement, getQueryOptions()));
+          this,
+          connection.getSpannerConnection().executeQuery(statement, getQueryOptions(options)));
     } catch (SpannerException e) {
       throw JdbcSqlExceptionFactory.of(e);
     } finally {
