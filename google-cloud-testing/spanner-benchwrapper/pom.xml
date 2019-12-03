@@ -7,8 +7,8 @@
   <groupId>com.google.cloud</groupId>
 
   <properties>
-    <grpcVersion>1.24.1</grpcVersion>
-    <protobufVersion>3.10.0</protobufVersion>
+    <grpcVersion>1.25.0</grpcVersion>
+    <protobufVersion>3.11.0</protobufVersion>
   </properties>
 
   <build>
@@ -71,19 +71,29 @@
     </plugins>
   </build>
 
+  <dependencyManagement>
+    <dependencies>
+      <dependency>
+        <groupId>com.google.cloud</groupId>
+        <artifactId>libraries-bom</artifactId>
+        <version>3.0.0</version>
+        <type>pom</type>
+        <scope>import</scope>
+       </dependency>
+     </dependencies>
+  </dependencyManagement>
+
   <dependencies>
     <!-- spanner -->
     <dependency>
       <groupId>com.google.cloud</groupId>
       <artifactId>google-cloud-spanner</artifactId>
-      <version>1.46.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-spanner:current} -->
     </dependency>
 
     <!-- grpc -->
     <dependency>
       <groupId>io.grpc</groupId>
       <artifactId>grpc-netty</artifactId>
-      <version>1.23.0</version>
     </dependency>
 
     <!-- Generated classes are generated with a @javax.annotation.Generated
