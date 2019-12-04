@@ -1644,8 +1644,10 @@ public class InstanceAdminClient implements BackgroundResource {
    * <pre><code>
    * try (InstanceAdminClient instanceAdminClient = InstanceAdminClient.create()) {
    *   ResourceName resource = InstanceName.of("[PROJECT]", "[INSTANCE]");
+   *   List&lt;String&gt; permissions = new ArrayList&lt;&gt;();
    *   TestIamPermissionsRequest request = TestIamPermissionsRequest.newBuilder()
    *     .setResource(resource.toString())
+   *     .addAllPermissions(permissions)
    *     .build();
    *   TestIamPermissionsResponse response = instanceAdminClient.testIamPermissions(request);
    * }
@@ -1671,8 +1673,10 @@ public class InstanceAdminClient implements BackgroundResource {
    * <pre><code>
    * try (InstanceAdminClient instanceAdminClient = InstanceAdminClient.create()) {
    *   ResourceName resource = InstanceName.of("[PROJECT]", "[INSTANCE]");
+   *   List&lt;String&gt; permissions = new ArrayList&lt;&gt;();
    *   TestIamPermissionsRequest request = TestIamPermissionsRequest.newBuilder()
    *     .setResource(resource.toString())
+   *     .addAllPermissions(permissions)
    *     .build();
    *   ApiFuture&lt;TestIamPermissionsResponse&gt; future = instanceAdminClient.testIamPermissionsCallable().futureCall(request);
    *   // Do something

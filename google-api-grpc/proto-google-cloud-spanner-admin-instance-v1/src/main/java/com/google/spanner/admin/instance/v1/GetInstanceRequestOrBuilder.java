@@ -34,4 +34,41 @@ public interface GetInstanceRequestOrBuilder
    * </code>
    */
   com.google.protobuf.ByteString getNameBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * If field_mask is present, specifies the subset of [][Instance] fields that
+   * should be returned.
+   * If absent, all [][Instance] fields are returned.
+   * </pre>
+   *
+   * <code>.google.protobuf.FieldMask field_mask = 2;</code>
+   */
+  boolean hasFieldMask();
+  /**
+   *
+   *
+   * <pre>
+   * If field_mask is present, specifies the subset of [][Instance] fields that
+   * should be returned.
+   * If absent, all [][Instance] fields are returned.
+   * </pre>
+   *
+   * <code>.google.protobuf.FieldMask field_mask = 2;</code>
+   */
+  com.google.protobuf.FieldMask getFieldMask();
+  /**
+   *
+   *
+   * <pre>
+   * If field_mask is present, specifies the subset of [][Instance] fields that
+   * should be returned.
+   * If absent, all [][Instance] fields are returned.
+   * </pre>
+   *
+   * <code>.google.protobuf.FieldMask field_mask = 2;</code>
+   */
+  com.google.protobuf.FieldMaskOrBuilder getFieldMaskOrBuilder();
 }

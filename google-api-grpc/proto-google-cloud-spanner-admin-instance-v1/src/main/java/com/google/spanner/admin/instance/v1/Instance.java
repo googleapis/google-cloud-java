@@ -27,6 +27,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
     config_ = "";
     displayName_ = "";
     state_ = 0;
+    endpointUris_ = com.google.protobuf.LazyStringArrayList.EMPTY;
   }
 
   @java.lang.Override
@@ -99,6 +100,16 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
               labels_.getMutableMap().put(labels__.getKey(), labels__.getValue());
               break;
             }
+          case 66:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+              if (!((mutable_bitField0_ & 0x00000040) != 0)) {
+                endpointUris_ = new com.google.protobuf.LazyStringArrayList();
+                mutable_bitField0_ |= 0x00000040;
+              }
+              endpointUris_.add(s);
+              break;
+            }
           default:
             {
               if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -113,6 +124,9 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
+      if (((mutable_bitField0_ & 0x00000040) != 0)) {
+        endpointUris_ = endpointUris_.getUnmodifiableView();
+      }
       this.unknownFields = unknownFields.build();
       makeExtensionsImmutable();
     }
@@ -659,6 +673,85 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
     return map.get(key);
   }
 
+  public static final int ENDPOINT_URIS_FIELD_NUMBER = 8;
+  private com.google.protobuf.LazyStringList endpointUris_;
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The endpoint URIs based on the instance config.
+   * For example, instances located in a specific cloud region (or multi region)
+   * such as nam3, would have a nam3 specific endpoint URI.
+   * This URI is to be used implictly by SDK clients, with fallback to default
+   * URI. These endpoints are intended to optimize the network routing between
+   * the client and the instance's serving resources.
+   * If multiple endpoints are present, client may establish connections using
+   * any of the given URIs.
+   * </pre>
+   *
+   * <code>repeated string endpoint_uris = 8;</code>
+   */
+  public com.google.protobuf.ProtocolStringList getEndpointUrisList() {
+    return endpointUris_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The endpoint URIs based on the instance config.
+   * For example, instances located in a specific cloud region (or multi region)
+   * such as nam3, would have a nam3 specific endpoint URI.
+   * This URI is to be used implictly by SDK clients, with fallback to default
+   * URI. These endpoints are intended to optimize the network routing between
+   * the client and the instance's serving resources.
+   * If multiple endpoints are present, client may establish connections using
+   * any of the given URIs.
+   * </pre>
+   *
+   * <code>repeated string endpoint_uris = 8;</code>
+   */
+  public int getEndpointUrisCount() {
+    return endpointUris_.size();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The endpoint URIs based on the instance config.
+   * For example, instances located in a specific cloud region (or multi region)
+   * such as nam3, would have a nam3 specific endpoint URI.
+   * This URI is to be used implictly by SDK clients, with fallback to default
+   * URI. These endpoints are intended to optimize the network routing between
+   * the client and the instance's serving resources.
+   * If multiple endpoints are present, client may establish connections using
+   * any of the given URIs.
+   * </pre>
+   *
+   * <code>repeated string endpoint_uris = 8;</code>
+   */
+  public java.lang.String getEndpointUris(int index) {
+    return endpointUris_.get(index);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The endpoint URIs based on the instance config.
+   * For example, instances located in a specific cloud region (or multi region)
+   * such as nam3, would have a nam3 specific endpoint URI.
+   * This URI is to be used implictly by SDK clients, with fallback to default
+   * URI. These endpoints are intended to optimize the network routing between
+   * the client and the instance's serving resources.
+   * If multiple endpoints are present, client may establish connections using
+   * any of the given URIs.
+   * </pre>
+   *
+   * <code>repeated string endpoint_uris = 8;</code>
+   */
+  public com.google.protobuf.ByteString getEndpointUrisBytes(int index) {
+    return endpointUris_.getByteString(index);
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -691,6 +784,9 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
     }
     com.google.protobuf.GeneratedMessageV3.serializeStringMapTo(
         output, internalGetLabels(), LabelsDefaultEntryHolder.defaultEntry, 7);
+    for (int i = 0; i < endpointUris_.size(); i++) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 8, endpointUris_.getRaw(i));
+    }
     unknownFields.writeTo(output);
   }
 
@@ -726,6 +822,14 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
               .build();
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(7, labels__);
     }
+    {
+      int dataSize = 0;
+      for (int i = 0; i < endpointUris_.size(); i++) {
+        dataSize += computeStringSizeNoTag(endpointUris_.getRaw(i));
+      }
+      size += dataSize;
+      size += 1 * getEndpointUrisList().size();
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -748,6 +852,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
     if (getNodeCount() != other.getNodeCount()) return false;
     if (state_ != other.state_) return false;
     if (!internalGetLabels().equals(other.internalGetLabels())) return false;
+    if (!getEndpointUrisList().equals(other.getEndpointUrisList())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -772,6 +877,10 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
     if (!internalGetLabels().getMap().isEmpty()) {
       hash = (37 * hash) + LABELS_FIELD_NUMBER;
       hash = (53 * hash) + internalGetLabels().hashCode();
+    }
+    if (getEndpointUrisCount() > 0) {
+      hash = (37 * hash) + ENDPOINT_URIS_FIELD_NUMBER;
+      hash = (53 * hash) + getEndpointUrisList().hashCode();
     }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
@@ -949,6 +1058,8 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
       state_ = 0;
 
       internalGetMutableLabels().clear();
+      endpointUris_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      bitField0_ = (bitField0_ & ~0x00000040);
       return this;
     }
 
@@ -985,6 +1096,11 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
       result.state_ = state_;
       result.labels_ = internalGetLabels();
       result.labels_.makeImmutable();
+      if (((bitField0_ & 0x00000040) != 0)) {
+        endpointUris_ = endpointUris_.getUnmodifiableView();
+        bitField0_ = (bitField0_ & ~0x00000040);
+      }
+      result.endpointUris_ = endpointUris_;
       result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
@@ -1054,6 +1170,16 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
         setStateValue(other.getStateValue());
       }
       internalGetMutableLabels().mergeFrom(other.internalGetLabels());
+      if (!other.endpointUris_.isEmpty()) {
+        if (endpointUris_.isEmpty()) {
+          endpointUris_ = other.endpointUris_;
+          bitField0_ = (bitField0_ & ~0x00000040);
+        } else {
+          ensureEndpointUrisIsMutable();
+          endpointUris_.addAll(other.endpointUris_);
+        }
+        onChanged();
+      }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
       return this;
@@ -1824,6 +1950,212 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder putAllLabels(java.util.Map<java.lang.String, java.lang.String> values) {
       internalGetMutableLabels().getMutableMap().putAll(values);
+      return this;
+    }
+
+    private com.google.protobuf.LazyStringList endpointUris_ =
+        com.google.protobuf.LazyStringArrayList.EMPTY;
+
+    private void ensureEndpointUrisIsMutable() {
+      if (!((bitField0_ & 0x00000040) != 0)) {
+        endpointUris_ = new com.google.protobuf.LazyStringArrayList(endpointUris_);
+        bitField0_ |= 0x00000040;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The endpoint URIs based on the instance config.
+     * For example, instances located in a specific cloud region (or multi region)
+     * such as nam3, would have a nam3 specific endpoint URI.
+     * This URI is to be used implictly by SDK clients, with fallback to default
+     * URI. These endpoints are intended to optimize the network routing between
+     * the client and the instance's serving resources.
+     * If multiple endpoints are present, client may establish connections using
+     * any of the given URIs.
+     * </pre>
+     *
+     * <code>repeated string endpoint_uris = 8;</code>
+     */
+    public com.google.protobuf.ProtocolStringList getEndpointUrisList() {
+      return endpointUris_.getUnmodifiableView();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The endpoint URIs based on the instance config.
+     * For example, instances located in a specific cloud region (or multi region)
+     * such as nam3, would have a nam3 specific endpoint URI.
+     * This URI is to be used implictly by SDK clients, with fallback to default
+     * URI. These endpoints are intended to optimize the network routing between
+     * the client and the instance's serving resources.
+     * If multiple endpoints are present, client may establish connections using
+     * any of the given URIs.
+     * </pre>
+     *
+     * <code>repeated string endpoint_uris = 8;</code>
+     */
+    public int getEndpointUrisCount() {
+      return endpointUris_.size();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The endpoint URIs based on the instance config.
+     * For example, instances located in a specific cloud region (or multi region)
+     * such as nam3, would have a nam3 specific endpoint URI.
+     * This URI is to be used implictly by SDK clients, with fallback to default
+     * URI. These endpoints are intended to optimize the network routing between
+     * the client and the instance's serving resources.
+     * If multiple endpoints are present, client may establish connections using
+     * any of the given URIs.
+     * </pre>
+     *
+     * <code>repeated string endpoint_uris = 8;</code>
+     */
+    public java.lang.String getEndpointUris(int index) {
+      return endpointUris_.get(index);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The endpoint URIs based on the instance config.
+     * For example, instances located in a specific cloud region (or multi region)
+     * such as nam3, would have a nam3 specific endpoint URI.
+     * This URI is to be used implictly by SDK clients, with fallback to default
+     * URI. These endpoints are intended to optimize the network routing between
+     * the client and the instance's serving resources.
+     * If multiple endpoints are present, client may establish connections using
+     * any of the given URIs.
+     * </pre>
+     *
+     * <code>repeated string endpoint_uris = 8;</code>
+     */
+    public com.google.protobuf.ByteString getEndpointUrisBytes(int index) {
+      return endpointUris_.getByteString(index);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The endpoint URIs based on the instance config.
+     * For example, instances located in a specific cloud region (or multi region)
+     * such as nam3, would have a nam3 specific endpoint URI.
+     * This URI is to be used implictly by SDK clients, with fallback to default
+     * URI. These endpoints are intended to optimize the network routing between
+     * the client and the instance's serving resources.
+     * If multiple endpoints are present, client may establish connections using
+     * any of the given URIs.
+     * </pre>
+     *
+     * <code>repeated string endpoint_uris = 8;</code>
+     */
+    public Builder setEndpointUris(int index, java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      ensureEndpointUrisIsMutable();
+      endpointUris_.set(index, value);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The endpoint URIs based on the instance config.
+     * For example, instances located in a specific cloud region (or multi region)
+     * such as nam3, would have a nam3 specific endpoint URI.
+     * This URI is to be used implictly by SDK clients, with fallback to default
+     * URI. These endpoints are intended to optimize the network routing between
+     * the client and the instance's serving resources.
+     * If multiple endpoints are present, client may establish connections using
+     * any of the given URIs.
+     * </pre>
+     *
+     * <code>repeated string endpoint_uris = 8;</code>
+     */
+    public Builder addEndpointUris(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      ensureEndpointUrisIsMutable();
+      endpointUris_.add(value);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The endpoint URIs based on the instance config.
+     * For example, instances located in a specific cloud region (or multi region)
+     * such as nam3, would have a nam3 specific endpoint URI.
+     * This URI is to be used implictly by SDK clients, with fallback to default
+     * URI. These endpoints are intended to optimize the network routing between
+     * the client and the instance's serving resources.
+     * If multiple endpoints are present, client may establish connections using
+     * any of the given URIs.
+     * </pre>
+     *
+     * <code>repeated string endpoint_uris = 8;</code>
+     */
+    public Builder addAllEndpointUris(java.lang.Iterable<java.lang.String> values) {
+      ensureEndpointUrisIsMutable();
+      com.google.protobuf.AbstractMessageLite.Builder.addAll(values, endpointUris_);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The endpoint URIs based on the instance config.
+     * For example, instances located in a specific cloud region (or multi region)
+     * such as nam3, would have a nam3 specific endpoint URI.
+     * This URI is to be used implictly by SDK clients, with fallback to default
+     * URI. These endpoints are intended to optimize the network routing between
+     * the client and the instance's serving resources.
+     * If multiple endpoints are present, client may establish connections using
+     * any of the given URIs.
+     * </pre>
+     *
+     * <code>repeated string endpoint_uris = 8;</code>
+     */
+    public Builder clearEndpointUris() {
+      endpointUris_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      bitField0_ = (bitField0_ & ~0x00000040);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The endpoint URIs based on the instance config.
+     * For example, instances located in a specific cloud region (or multi region)
+     * such as nam3, would have a nam3 specific endpoint URI.
+     * This URI is to be used implictly by SDK clients, with fallback to default
+     * URI. These endpoints are intended to optimize the network routing between
+     * the client and the instance's serving resources.
+     * If multiple endpoints are present, client may establish connections using
+     * any of the given URIs.
+     * </pre>
+     *
+     * <code>repeated string endpoint_uris = 8;</code>
+     */
+    public Builder addEndpointUrisBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      ensureEndpointUrisIsMutable();
+      endpointUris_.add(value);
+      onChanged();
       return this;
     }
 
