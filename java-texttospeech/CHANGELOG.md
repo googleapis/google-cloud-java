@@ -1,5 +1,13 @@
 # Changelog
 
+### [0.117.1](https://www.github.com/googleapis/java-texttospeech/compare/v0.117.0...v0.117.1) (2019-12-03)
+
+
+### Dependencies
+
+* update dependency com.google.protobuf:protobuf-java to v3.11.1 ([#21](https://www.github.com/googleapis/java-texttospeech/issues/21)) ([4ed1fa7](https://www.github.com/googleapis/java-texttospeech/commit/4ed1fa7db36b2ef77691fc43cddbf2ed5009293e))
+* update gax.version to v1.50.1 ([#12](https://www.github.com/googleapis/java-texttospeech/issues/12)) ([e0f041d](https://www.github.com/googleapis/java-texttospeech/commit/e0f041d188ba620c60e168af7099fd94c68d94b3))
+
 ## [0.117.0](https://www.github.com/googleapis/java-texttospeech/compare/v0.116.0...v0.117.0) (2019-10-25)
 
 
