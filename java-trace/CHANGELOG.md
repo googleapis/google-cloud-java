@@ -1,5 +1,18 @@
 # Changelog
 
+### [0.109.3](https://www.github.com/googleapis/java-trace/compare/v0.109.2...v0.109.3) (2019-12-03)
+
+
+### Bug Fixes
+
+* **regen:** updates retry settings, common templates ([#48](https://www.github.com/googleapis/java-trace/issues/48)) ([19725a9](https://www.github.com/googleapis/java-trace/commit/19725a98aa438b41461d4a0dc0794a1516f9b512))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-core to v1.91.3 ([#54](https://www.github.com/googleapis/java-trace/issues/54)) ([a1b7665](https://www.github.com/googleapis/java-trace/commit/a1b766521e2ff44395087aef8ec107216beb3d49))
+* update dependency com.google.protobuf:protobuf-java to v3.11.1 ([#52](https://www.github.com/googleapis/java-trace/issues/52)) ([66d64c6](https://www.github.com/googleapis/java-trace/commit/66d64c62630febd64a2d387c90a26740a18c9a54))
+
 ### [0.109.2](https://www.github.com/googleapis/java-trace/compare/v0.109.1...v0.109.2) (2019-11-18)
 
 
