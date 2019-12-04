@@ -16,9 +16,9 @@
 
 package com.google.cloud.benchwrapper;
 
-import java.util.Properties;
 import io.grpc.Server;
 import io.grpc.netty.NettyServerBuilder;
+import java.util.Properties;
 
 class Main {
   public static void main(String[] args) throws Exception {
@@ -41,23 +41,24 @@ class Main {
     System.out.println("Server starting up...");
 
     int portInt = Integer.parseInt(port);
-    final Server server = NettyServerBuilder
-      .forPort(portInt)
-      .addService(new SpannerBenchWrapperImpl(spannerEmulatorHost))
-      .build()
-      .start();
+    final Server server =
+        NettyServerBuilder.forPort(portInt)
+            .addService(new SpannerBenchWrapperImpl(spannerEmulatorHost))
+            .build()
+            .start();
 
     System.out.println("Server starting up... done. Listening on " + port);
-    Runtime.getRuntime().addShutdownHook(new Thread() {
-      @Override
-      public void run() {
-        // Use stderr here since the logger may have been reset by its JVM shutdown hook.
-        System.err.println("Shutting down gRPC server since JVM is shutting down");
-        server.shutdown();
-      }
-    });
+    Runtime.getRuntime()
+        .addShutdownHook(
+            new Thread() {
+              @Override
+              public void run() {
+                // Use stderr here since the logger may have been reset by its JVM shutdown hook.
+                System.err.println("Shutting down gRPC server since JVM is shutting down");
+                server.shutdown();
+              }
+            });
 
     server.awaitTermination();
   }
 }
-

@@ -29,9 +29,9 @@ protoc \
 Note that you'll need to delete these, or uncomment the plugin, since multiple
 definitions of the same class are not allowed.
 
-Note that these should not be committed into git.
+These should not be committed into git.
 
-Note that you can also `mvn compile -DskipTests=true` and see sources in
+You can also `mvn compile -DskipTests=true` and see sources in
 `target/generated-sources/`.
 
 ## Debugging HTTP requests
