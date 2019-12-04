@@ -143,17 +143,17 @@ public final class GcpManagedChannelTest {
     assertEquals(2, gcpChannel.affinityKeyToChannelRef.size());
 
     // Unbind the affinity key.
-    gcpChannel.unbind("key1");
+    gcpChannel.unbind(Arrays.asList("key1"));
     assertEquals(2, gcpChannel.affinityKeyToChannelRef.size());
-    gcpChannel.unbind("key1");
-    gcpChannel.unbind("key2");
+    gcpChannel.unbind(Arrays.asList("key1"));
+    gcpChannel.unbind(Arrays.asList("key2"));
     assertEquals(0, gcpChannel.affinityKeyToChannelRef.size());
     assertEquals(0, gcpChannel.channelRefs.get(1).getAffinityCount());
     assertEquals(0, gcpChannel.channelRefs.get(2).getAffinityCount());
   }
 
   @Test
-  public void testGetKeyFromRequest() throws Exception {
+  public void testGetKeysFromRequest() throws Exception {
     String expected = "thisisaname";
     TransactionSelector selector = TransactionSelector.getDefaultInstance();
     PartitionReadRequest req =
@@ -163,9 +163,9 @@ public final class GcpManagedChannelTest {
             .setTransaction(selector)
             .addColumns("users")
             .build();
-    List<String> result = gcpChannel.getKeyFromMessage(req, "session");
+    List<String> result = gcpChannel.getKeysFromMessage(req, "session");
     assertEquals(expected, result.get(0));
-    result = gcpChannel.getKeyFromMessage(req, "fakesession");
+    result = gcpChannel.getKeysFromMessage(req, "fakesession");
     assertEquals(0, result.size());
   }
 

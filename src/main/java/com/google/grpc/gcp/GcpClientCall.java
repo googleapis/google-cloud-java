@@ -109,7 +109,7 @@ public class GcpClientCall<ReqT, RespT> extends ClientCall<ReqT, RespT> {
       if (!started) {
         // Check if the current channelRef is bound with the key and change it if necessary.
         // If no channel is bound with the key, use the least busy one.
-        keys = delegateChannel.checkKey(message, true, methodDescriptor);
+        keys = delegateChannel.checkKeys(message, true, methodDescriptor);
         String key = null;
         if (keys != null
             && keys.size() == 1
@@ -186,7 +186,7 @@ public class GcpClientCall<ReqT, RespT> extends ClientCall<ReqT, RespT> {
         // If the operation completed successfully, bind/unbind the affinity key.
         if (keys != null && status.getCode() == Status.Code.OK) {
           if (affinity.getCommand() == AffinityConfig.Command.UNBIND) {
-            delegateChannel.unbind(keys.get(0));
+            delegateChannel.unbind(keys);
           } else if (affinity.getCommand() == AffinityConfig.Command.BIND) {
             delegateChannel.bind(delegateChannelRef, keys);
           }
@@ -201,7 +201,7 @@ public class GcpClientCall<ReqT, RespT> extends ClientCall<ReqT, RespT> {
         if (!received) {
           received = true;
           if (keys == null) {
-            keys = delegateChannel.checkKey(message, false, methodDescriptor);
+            keys = delegateChannel.checkKeys(message, false, methodDescriptor);
           }
         }
         responseListener.onMessage(message);
