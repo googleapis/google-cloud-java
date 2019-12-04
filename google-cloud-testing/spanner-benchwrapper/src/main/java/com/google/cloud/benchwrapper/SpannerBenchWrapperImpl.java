@@ -39,10 +39,9 @@ class SpannerBenchWrapperImpl extends SpannerBenchWrapperImplBase {
   private Spanner spanner;
   private DatabaseClient dbClient;
 
-  public SpannerBenchWrapperImpl(String spannerEmulatorHost) {
+  public SpannerBenchWrapperImpl() {
     SpannerOptions.Builder builder =
         SpannerOptions.newBuilder()
-            .setHost("http://" + spannerEmulatorHost)
             .setProjectId("test-project-id")
             // Channels are secure by default (via SSL/TLS). For the example we disable TLS to avoid
             // needing certificates.

@@ -31,9 +31,6 @@ class Main {
 
     String spannerEmulatorHost = System.getenv("SPANNER_EMULATOR_HOST");
     if (spannerEmulatorHost == null || spannerEmulatorHost.equals("")) {
-      // We could use system properties here too, but every other language uses
-      // an environment variable called SPANNER_EMULATOR_HOST, so the
-      // consistency is nice to maintain.
       System.err.println("Please set SPANNER_EMULATOR_HOST=localhost:8080");
       System.exit(1);
     }
@@ -43,7 +40,7 @@ class Main {
     int portInt = Integer.parseInt(port);
     final Server server =
         NettyServerBuilder.forPort(portInt)
-            .addService(new SpannerBenchWrapperImpl(spannerEmulatorHost))
+            .addService(new SpannerBenchWrapperImpl())
             .build()
             .start();
 
