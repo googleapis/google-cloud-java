@@ -2688,7 +2688,13 @@ public class ITStorageTest {
 
       BucketInfo.IamConfiguration bpoEnabledIamConfiguration =
           BucketInfo.IamConfiguration.newBuilder().setIsBucketPolicyOnlyEnabled(true).build();
-      bucket.toBuilder().setIamConfiguration(bpoEnabledIamConfiguration).build().update();
+      bucket
+              .toBuilder()
+              .setAcl(null)
+              .setDefaultAcl(null)
+              .setIamConfiguration(bpoEnabledIamConfiguration)
+              .build()
+              .update();
 
       Bucket remoteBucket =
           storage.get(bpoBucket, Storage.BucketGetOption.fields(BucketField.IAMCONFIGURATION));
@@ -2738,6 +2744,8 @@ public class ITStorageTest {
 
       bucket
           .toBuilder()
+          .setAcl(null)
+          .setDefaultAcl(null)
           .setIamConfiguration(
               ublaDisabledIamConfiguration
                   .toBuilder()
