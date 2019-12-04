@@ -4,13 +4,13 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.google.api.grpc</groupId>
   <artifactId>proto-google-cloud-redis-v1</artifactId>
-  <version>0.81.1-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-redis-v1:current} -->
+  <version>0.82.0</version><!-- {x-version-update:proto-google-cloud-redis-v1:current} -->
   <name>proto-google-cloud-redis-v1</name>
   <description>PROTO library for proto-google-cloud-redis-v1</description>
   <parent>
     <groupId>com.google.cloud</groupId>
     <artifactId>google-cloud-redis-parent</artifactId>
-    <version>0.116.1-alpha-SNAPSHOT</version><!-- {x-version-update:google-cloud-redis:current} -->
+    <version>0.117.0-alpha</version><!-- {x-version-update:google-cloud-redis:current} -->
   </parent>
   <dependencies>
     <dependency>

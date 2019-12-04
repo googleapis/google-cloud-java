@@ -3,7 +3,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-redis</artifactId>
-  <version>0.116.1-alpha-SNAPSHOT</version><!-- {x-version-update:google-cloud-redis:current} -->
+  <version>0.117.0-alpha</version><!-- {x-version-update:google-cloud-redis:current} -->
   <packaging>jar</packaging>
   <name>Google Cloud Redis</name>
   <url>https://github.com/googleapis/java-redis</url>
@@ -11,7 +11,7 @@
   <parent>
     <groupId>com.google.cloud</groupId>
     <artifactId>google-cloud-redis-parent</artifactId>
-    <version>0.116.1-alpha-SNAPSHOT</version><!-- {x-version-update:google-cloud-redis:current} -->
+    <version>0.117.0-alpha</version><!-- {x-version-update:google-cloud-redis:current} -->
   </parent>
   <properties>
     <site.installationModule>google-cloud-redis</site.installationModule>
