@@ -372,6 +372,14 @@ public class SpannerOptions extends ServiceOptions<Spanner, SpannerOptions> {
 
     @Override
     public SpannerOptions build() {
+      // Set host option if SPANNER_EMULATOR_HOST has been set.
+      String emulatorHost = System.getenv("SPANNER_EMULATOR_HOST");
+      if (emulatorHost != null) {
+        if (!emulatorHost.startsWith("http")) {
+          emulatorHost = "http://" + emulatorHost;
+        }
+        this.setHost(emulatorHost);
+      }
       return new SpannerOptions(this);
     }
   }

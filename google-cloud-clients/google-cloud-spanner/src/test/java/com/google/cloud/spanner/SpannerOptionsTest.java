@@ -35,6 +35,7 @@ import java.util.List;
 import java.util.Map;
 import org.junit.Rule;
 import org.junit.Test;
+import org.junit.contrib.java.lang.system.EnvironmentVariables;
 import org.junit.rules.ExpectedException;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
@@ -46,6 +47,7 @@ import org.threeten.bp.Duration;
 public class SpannerOptionsTest {
 
   @Rule public ExpectedException thrown = ExpectedException.none();
+  @Rule public final EnvironmentVariables environmentVariables = new EnvironmentVariables();
 
   @Test
   public void defaultBuilder() {
@@ -401,5 +403,20 @@ public class SpannerOptionsTest {
   @Test(expected = IllegalArgumentException.class)
   public void testSetInvalidClientLibToken() {
     SpannerOptions.newBuilder().setClientLibToken("foo");
+  }
+
+  @Test
+  public void testSetEmulatorHostEnv() {
+    environmentVariables.set("SPANNER_EMULATOR_HOST", "localhost:1234");
+    SpannerOptions options = SpannerOptions.newBuilder().setProjectId("[PROJECT]").build();
+    assertThat(options.getHost()).isEqualTo("http://localhost:1234");
+    assertThat(options.getEndpoint()).isEqualTo("localhost:1234");
+
+    environmentVariables.set("SPANNER_EMULATOR_HOST", "http://localhost:1234");
+    options = SpannerOptions.newBuilder().setProjectId("[PROJECT]").build();
+    assertThat(options.getHost()).isEqualTo("http://localhost:1234");
+    assertThat(options.getEndpoint()).isEqualTo("localhost:1234");
+
+    environmentVariables.clear("SPANNER_EMULATOR_HOST");
   }
 }
