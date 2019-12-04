@@ -154,7 +154,7 @@
         <project.javadoc.protobufBaseURL>https://googleapis.dev/java/google-api-grpc/latest</project.javadoc.protobufBaseURL>
 
         <autovalue.version>1.7</autovalue.version>
-        <gax.version>1.50.1</gax.version>
+        <gax.version>1.51.0</gax.version>
         <google.api-common.version>1.8.1</google.api-common.version>
         <google.common-protos.version>1.17.0</google.common-protos.version>
         <google.core.version>1.91.3</google.core.version>
