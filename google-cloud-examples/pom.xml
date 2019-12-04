@@ -85,6 +85,7 @@
       <groupId>com.google.cloud</groupId>
       <artifactId>google-cloud-vision</artifactId>
     </dependency>
+
     <!-- Test dependencies -->
     <dependency>
       <groupId>junit</groupId>

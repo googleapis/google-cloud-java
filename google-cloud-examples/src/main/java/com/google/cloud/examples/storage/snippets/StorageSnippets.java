@@ -62,7 +62,6 @@ import com.google.cloud.storage.StorageBatchResult;
 import com.google.cloud.storage.StorageClass;
 import com.google.cloud.storage.StorageException;
 import com.google.cloud.storage.StorageOptions;
-import com.google.common.collect.ImmutableMap;
 import java.io.ByteArrayInputStream;
 import java.io.FileInputStream;
 import java.io.IOException;
@@ -70,15 +69,12 @@ import java.io.InputStream;
 import java.net.URL;
 import java.nio.ByteBuffer;
 import java.nio.file.Path;
-import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
 import java.util.concurrent.TimeUnit;
-import org.threeten.bp.LocalDateTime;
 
 /** This class contains a number of snippets for the {@link Storage} interface. */
 public class StorageSnippets {
@@ -647,44 +643,6 @@ public class StorageSnippets {
         storage.signUrl(BlobInfo.newBuilder(bucketName, blobName).build(), 14, TimeUnit.DAYS);
     // [END signUrl]
     return signedUrl;
-  }
-
-  /** Example of create a signed upload policy for uploading objects */
-  // [VARIABLE "my_unique_bucket"]
-  public void createUploadPolicy(String bucket) {
-    // [START createUploadPolicy]
-    List<Object> conditions = new ArrayList<>();
-    conditions.add(Arrays.asList("starts-with", "$key", ""));
-    conditions.add(ImmutableMap.of("acl", "public-read"));
-
-    // Instantiate a Google Cloud Storage client
-    Storage storage = StorageOptions.getDefaultInstance().getService();
-    LocalDateTime expiration = LocalDateTime.now();
-    Map<String, Object> policy = storage.createUploadPolicy(bucket, conditions, expiration);
-    StringBuilder policyBuilder = new StringBuilder();
-    for (Map.Entry value : policy.entrySet()) {
-      policyBuilder.append(
-          "<input type=\"hidden\" name=\""
-              + value.getKey()
-              + "\" value=\""
-              + value.getValue()
-              + "\">");
-    }
-    StringBuilder uploadForm = new StringBuilder();
-    uploadForm
-        .append(
-            "<form action=\"http://"
-                + bucket
-                + ".storage.googleapis.com\" method=\"post\" enctype=\"multipart/form-data\">")
-        .append("<input type=\"text\" name=\"key\" value=\"my-test-key\">")
-        .append("<input type=\"hidden\" name=\"bucket\" value=\"" + bucket + "\">")
-        .append("<input type=\"hidden\" name=\"acl\" value=\"public-read\">")
-        .append("<input type=\"file\" name=\"file\">")
-        .append("<input type=\"submit\" value=\"Upload\">")
-        .append(policyBuilder.toString())
-        .append("</form>");
-    System.out.println(uploadForm.toString());
-    // [END createUploadPolicy]
   }
 
   /**
