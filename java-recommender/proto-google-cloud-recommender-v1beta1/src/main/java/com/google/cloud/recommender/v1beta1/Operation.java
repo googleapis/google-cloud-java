@@ -22,8 +22,8 @@ package com.google.cloud.recommender.v1beta1;
  *
  *
  * <pre>
- * Contains an operation for a resource inspired by the JSON-PATCH format with
- * support for:
+ * Contains an operation for a resource loosely based on the JSON-PATCH format
+ * with support for:
  * * Custom filters for describing partial array patch.
  * * Extended path values for describing nested arrays.
  * * Custom fields for describing the resource for which the operation is being
@@ -122,24 +122,24 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
           case 58:
             {
               com.google.protobuf.Value.Builder subBuilder = null;
-              if (value_ != null) {
-                subBuilder = value_.toBuilder();
+              if (pathValueCase_ == 7) {
+                subBuilder = ((com.google.protobuf.Value) pathValue_).toBuilder();
               }
-              value_ = input.readMessage(com.google.protobuf.Value.parser(), extensionRegistry);
+              pathValue_ = input.readMessage(com.google.protobuf.Value.parser(), extensionRegistry);
               if (subBuilder != null) {
-                subBuilder.mergeFrom(value_);
-                value_ = subBuilder.buildPartial();
+                subBuilder.mergeFrom((com.google.protobuf.Value) pathValue_);
+                pathValue_ = subBuilder.buildPartial();
               }
-
+              pathValueCase_ = 7;
               break;
             }
           case 66:
             {
-              if (!((mutable_bitField0_ & 0x00000080) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000100) != 0)) {
                 pathFilters_ =
                     com.google.protobuf.MapField.newMapField(
                         PathFiltersDefaultEntryHolder.defaultEntry);
-                mutable_bitField0_ |= 0x00000080;
+                mutable_bitField0_ |= 0x00000100;
               }
               com.google.protobuf.MapEntry<java.lang.String, com.google.protobuf.Value>
                   pathFilters__ =
@@ -147,6 +147,44 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
                           PathFiltersDefaultEntryHolder.defaultEntry.getParserForType(),
                           extensionRegistry);
               pathFilters_.getMutableMap().put(pathFilters__.getKey(), pathFilters__.getValue());
+              break;
+            }
+          case 82:
+            {
+              com.google.cloud.recommender.v1beta1.ValueMatcher.Builder subBuilder = null;
+              if (pathValueCase_ == 10) {
+                subBuilder =
+                    ((com.google.cloud.recommender.v1beta1.ValueMatcher) pathValue_).toBuilder();
+              }
+              pathValue_ =
+                  input.readMessage(
+                      com.google.cloud.recommender.v1beta1.ValueMatcher.parser(),
+                      extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(
+                    (com.google.cloud.recommender.v1beta1.ValueMatcher) pathValue_);
+                pathValue_ = subBuilder.buildPartial();
+              }
+              pathValueCase_ = 10;
+              break;
+            }
+          case 90:
+            {
+              if (!((mutable_bitField0_ & 0x00000200) != 0)) {
+                pathValueMatchers_ =
+                    com.google.protobuf.MapField.newMapField(
+                        PathValueMatchersDefaultEntryHolder.defaultEntry);
+                mutable_bitField0_ |= 0x00000200;
+              }
+              com.google.protobuf.MapEntry<
+                      java.lang.String, com.google.cloud.recommender.v1beta1.ValueMatcher>
+                  pathValueMatchers__ =
+                      input.readMessage(
+                          PathValueMatchersDefaultEntryHolder.defaultEntry.getParserForType(),
+                          extensionRegistry);
+              pathValueMatchers_
+                  .getMutableMap()
+                  .put(pathValueMatchers__.getKey(), pathValueMatchers__.getValue());
               break;
             }
           default:
@@ -179,6 +217,8 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
     switch (number) {
       case 8:
         return internalGetPathFilters();
+      case 11:
+        return internalGetPathValueMatchers();
       default:
         throw new RuntimeException("Invalid map field number: " + number);
     }
@@ -195,6 +235,46 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
   }
 
   private int bitField0_;
+  private int pathValueCase_ = 0;
+  private java.lang.Object pathValue_;
+
+  public enum PathValueCase implements com.google.protobuf.Internal.EnumLite {
+    VALUE(7),
+    VALUE_MATCHER(10),
+    PATHVALUE_NOT_SET(0);
+    private final int value;
+
+    private PathValueCase(int value) {
+      this.value = value;
+    }
+    /** @deprecated Use {@link #forNumber(int)} instead. */
+    @java.lang.Deprecated
+    public static PathValueCase valueOf(int value) {
+      return forNumber(value);
+    }
+
+    public static PathValueCase forNumber(int value) {
+      switch (value) {
+        case 7:
+          return VALUE;
+        case 10:
+          return VALUE_MATCHER;
+        case 0:
+          return PATHVALUE_NOT_SET;
+        default:
+          return null;
+      }
+    }
+
+    public int getNumber() {
+      return this.value;
+    }
+  };
+
+  public PathValueCase getPathValueCase() {
+    return PathValueCase.forNumber(pathValueCase_);
+  }
+
   public static final int ACTION_FIELD_NUMBER = 1;
   private volatile java.lang.Object action_;
   /**
@@ -202,7 +282,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Type of this operation. Contains one of 'and', 'remove', 'replace', 'move',
-   * 'copy', 'test' and custom operations. This field is case-insensitive and
+   * 'copy', 'test' and 'custom' operations. This field is case-insensitive and
    * always populated.
    * </pre>
    *
@@ -224,7 +304,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Type of this operation. Contains one of 'and', 'remove', 'replace', 'move',
-   * 'copy', 'test' and custom operations. This field is case-insensitive and
+   * 'copy', 'test' and 'custom' operations. This field is case-insensitive and
    * always populated.
    * </pre>
    *
@@ -476,42 +556,100 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int VALUE_FIELD_NUMBER = 7;
-  private com.google.protobuf.Value value_;
   /**
    *
    *
    * <pre>
-   * Value for the `path` field. Set if action is 'add'/'replace'/'test'.
+   * Value for the `path` field. Will be set for actions:'add'/'replace'.
+   * Maybe set for action: 'test'. Either this or `value_matcher` will be set
+   * for 'test' operation. An exact match must be performed.
    * </pre>
    *
    * <code>.google.protobuf.Value value = 7;</code>
    */
   public boolean hasValue() {
-    return value_ != null;
+    return pathValueCase_ == 7;
   }
   /**
    *
    *
    * <pre>
-   * Value for the `path` field. Set if action is 'add'/'replace'/'test'.
+   * Value for the `path` field. Will be set for actions:'add'/'replace'.
+   * Maybe set for action: 'test'. Either this or `value_matcher` will be set
+   * for 'test' operation. An exact match must be performed.
    * </pre>
    *
    * <code>.google.protobuf.Value value = 7;</code>
    */
   public com.google.protobuf.Value getValue() {
-    return value_ == null ? com.google.protobuf.Value.getDefaultInstance() : value_;
+    if (pathValueCase_ == 7) {
+      return (com.google.protobuf.Value) pathValue_;
+    }
+    return com.google.protobuf.Value.getDefaultInstance();
   }
   /**
    *
    *
    * <pre>
-   * Value for the `path` field. Set if action is 'add'/'replace'/'test'.
+   * Value for the `path` field. Will be set for actions:'add'/'replace'.
+   * Maybe set for action: 'test'. Either this or `value_matcher` will be set
+   * for 'test' operation. An exact match must be performed.
    * </pre>
    *
    * <code>.google.protobuf.Value value = 7;</code>
    */
   public com.google.protobuf.ValueOrBuilder getValueOrBuilder() {
-    return getValue();
+    if (pathValueCase_ == 7) {
+      return (com.google.protobuf.Value) pathValue_;
+    }
+    return com.google.protobuf.Value.getDefaultInstance();
+  }
+
+  public static final int VALUE_MATCHER_FIELD_NUMBER = 10;
+  /**
+   *
+   *
+   * <pre>
+   * Can be set for action 'test' for advanced matching for the value of
+   * 'path' field. Either this or `value` will be set for 'test' operation.
+   * </pre>
+   *
+   * <code>.google.cloud.recommender.v1beta1.ValueMatcher value_matcher = 10;</code>
+   */
+  public boolean hasValueMatcher() {
+    return pathValueCase_ == 10;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Can be set for action 'test' for advanced matching for the value of
+   * 'path' field. Either this or `value` will be set for 'test' operation.
+   * </pre>
+   *
+   * <code>.google.cloud.recommender.v1beta1.ValueMatcher value_matcher = 10;</code>
+   */
+  public com.google.cloud.recommender.v1beta1.ValueMatcher getValueMatcher() {
+    if (pathValueCase_ == 10) {
+      return (com.google.cloud.recommender.v1beta1.ValueMatcher) pathValue_;
+    }
+    return com.google.cloud.recommender.v1beta1.ValueMatcher.getDefaultInstance();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Can be set for action 'test' for advanced matching for the value of
+   * 'path' field. Either this or `value` will be set for 'test' operation.
+   * </pre>
+   *
+   * <code>.google.cloud.recommender.v1beta1.ValueMatcher value_matcher = 10;</code>
+   */
+  public com.google.cloud.recommender.v1beta1.ValueMatcherOrBuilder getValueMatcherOrBuilder() {
+    if (pathValueCase_ == 10) {
+      return (com.google.cloud.recommender.v1beta1.ValueMatcher) pathValue_;
+    }
+    return com.google.cloud.recommender.v1beta1.ValueMatcher.getDefaultInstance();
   }
 
   public static final int PATH_FILTERS_FIELD_NUMBER = 8;
@@ -549,19 +687,22 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
    * Set of filters to apply if `path` refers to array elements or nested array
    * elements in order to narrow down to a single unique element that is being
    * tested/modified.
-   * Note that this is intended to be an exact match per filter.
-   * Example: {
+   * This is intended to be an exact match per filter. To perform advanced
+   * matching, use path_value_matchers.
+   * * Example: {
    *   "/versions/&#42;&#47;name" : "it-123"
    *   "/versions/&#42;&#47;targetSize/percent": 20
-   * }
-   * Example: {
+   *   }
+   * * Example: {
    *   "/bindings/&#42;&#47;role": "roles/admin"
    *   "/bindings/&#42;&#47;condition" : null
-   * }
-   * Example: {
+   *   }
+   * * Example: {
    *   "/bindings/&#42;&#47;role": "roles/admin"
    *   "/bindings/&#42;&#47;members/&#42;" : ["x&#64;google.com", "y&#64;google.com"]
-   * }
+   *   }
+   * When both path_filters and path_value_matchers are set, an implicit AND
+   * must be performed.
    * </pre>
    *
    * <code>map&lt;string, .google.protobuf.Value&gt; path_filters = 8;</code>
@@ -584,19 +725,22 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
    * Set of filters to apply if `path` refers to array elements or nested array
    * elements in order to narrow down to a single unique element that is being
    * tested/modified.
-   * Note that this is intended to be an exact match per filter.
-   * Example: {
+   * This is intended to be an exact match per filter. To perform advanced
+   * matching, use path_value_matchers.
+   * * Example: {
    *   "/versions/&#42;&#47;name" : "it-123"
    *   "/versions/&#42;&#47;targetSize/percent": 20
-   * }
-   * Example: {
+   *   }
+   * * Example: {
    *   "/bindings/&#42;&#47;role": "roles/admin"
    *   "/bindings/&#42;&#47;condition" : null
-   * }
-   * Example: {
+   *   }
+   * * Example: {
    *   "/bindings/&#42;&#47;role": "roles/admin"
    *   "/bindings/&#42;&#47;members/&#42;" : ["x&#64;google.com", "y&#64;google.com"]
-   * }
+   *   }
+   * When both path_filters and path_value_matchers are set, an implicit AND
+   * must be performed.
    * </pre>
    *
    * <code>map&lt;string, .google.protobuf.Value&gt; path_filters = 8;</code>
@@ -611,19 +755,22 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
    * Set of filters to apply if `path` refers to array elements or nested array
    * elements in order to narrow down to a single unique element that is being
    * tested/modified.
-   * Note that this is intended to be an exact match per filter.
-   * Example: {
+   * This is intended to be an exact match per filter. To perform advanced
+   * matching, use path_value_matchers.
+   * * Example: {
    *   "/versions/&#42;&#47;name" : "it-123"
    *   "/versions/&#42;&#47;targetSize/percent": 20
-   * }
-   * Example: {
+   *   }
+   * * Example: {
    *   "/bindings/&#42;&#47;role": "roles/admin"
    *   "/bindings/&#42;&#47;condition" : null
-   * }
-   * Example: {
+   *   }
+   * * Example: {
    *   "/bindings/&#42;&#47;role": "roles/admin"
    *   "/bindings/&#42;&#47;members/&#42;" : ["x&#64;google.com", "y&#64;google.com"]
-   * }
+   *   }
+   * When both path_filters and path_value_matchers are set, an implicit AND
+   * must be performed.
    * </pre>
    *
    * <code>map&lt;string, .google.protobuf.Value&gt; path_filters = 8;</code>
@@ -644,19 +791,22 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
    * Set of filters to apply if `path` refers to array elements or nested array
    * elements in order to narrow down to a single unique element that is being
    * tested/modified.
-   * Note that this is intended to be an exact match per filter.
-   * Example: {
+   * This is intended to be an exact match per filter. To perform advanced
+   * matching, use path_value_matchers.
+   * * Example: {
    *   "/versions/&#42;&#47;name" : "it-123"
    *   "/versions/&#42;&#47;targetSize/percent": 20
-   * }
-   * Example: {
+   *   }
+   * * Example: {
    *   "/bindings/&#42;&#47;role": "roles/admin"
    *   "/bindings/&#42;&#47;condition" : null
-   * }
-   * Example: {
+   *   }
+   * * Example: {
    *   "/bindings/&#42;&#47;role": "roles/admin"
    *   "/bindings/&#42;&#47;members/&#42;" : ["x&#64;google.com", "y&#64;google.com"]
-   * }
+   *   }
+   * When both path_filters and path_value_matchers are set, an implicit AND
+   * must be performed.
    * </pre>
    *
    * <code>map&lt;string, .google.protobuf.Value&gt; path_filters = 8;</code>
@@ -667,6 +817,138 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
     }
     java.util.Map<java.lang.String, com.google.protobuf.Value> map =
         internalGetPathFilters().getMap();
+    if (!map.containsKey(key)) {
+      throw new java.lang.IllegalArgumentException();
+    }
+    return map.get(key);
+  }
+
+  public static final int PATH_VALUE_MATCHERS_FIELD_NUMBER = 11;
+
+  private static final class PathValueMatchersDefaultEntryHolder {
+    static final com.google.protobuf.MapEntry<
+            java.lang.String, com.google.cloud.recommender.v1beta1.ValueMatcher>
+        defaultEntry =
+            com.google.protobuf.MapEntry
+                .<java.lang.String, com.google.cloud.recommender.v1beta1.ValueMatcher>
+                    newDefaultInstance(
+                        com.google.cloud.recommender.v1beta1.RecommendationOuterClass
+                            .internal_static_google_cloud_recommender_v1beta1_Operation_PathValueMatchersEntry_descriptor,
+                        com.google.protobuf.WireFormat.FieldType.STRING,
+                        "",
+                        com.google.protobuf.WireFormat.FieldType.MESSAGE,
+                        com.google.cloud.recommender.v1beta1.ValueMatcher.getDefaultInstance());
+  }
+
+  private com.google.protobuf.MapField<
+          java.lang.String, com.google.cloud.recommender.v1beta1.ValueMatcher>
+      pathValueMatchers_;
+
+  private com.google.protobuf.MapField<
+          java.lang.String, com.google.cloud.recommender.v1beta1.ValueMatcher>
+      internalGetPathValueMatchers() {
+    if (pathValueMatchers_ == null) {
+      return com.google.protobuf.MapField.emptyMapField(
+          PathValueMatchersDefaultEntryHolder.defaultEntry);
+    }
+    return pathValueMatchers_;
+  }
+
+  public int getPathValueMatchersCount() {
+    return internalGetPathValueMatchers().getMap().size();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Similar to path_filters, this contains set of filters to apply if `path`
+   * field referes to array elements. This is meant to support value matching
+   * beyond exact match. To perform exact match, use path_filters.
+   * When both path_filters and path_value_matchers are set, an implicit AND
+   * must be performed.
+   * </pre>
+   *
+   * <code>
+   * map&lt;string, .google.cloud.recommender.v1beta1.ValueMatcher&gt; path_value_matchers = 11;
+   * </code>
+   */
+  public boolean containsPathValueMatchers(java.lang.String key) {
+    if (key == null) {
+      throw new java.lang.NullPointerException();
+    }
+    return internalGetPathValueMatchers().getMap().containsKey(key);
+  }
+  /** Use {@link #getPathValueMatchersMap()} instead. */
+  @java.lang.Deprecated
+  public java.util.Map<java.lang.String, com.google.cloud.recommender.v1beta1.ValueMatcher>
+      getPathValueMatchers() {
+    return getPathValueMatchersMap();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Similar to path_filters, this contains set of filters to apply if `path`
+   * field referes to array elements. This is meant to support value matching
+   * beyond exact match. To perform exact match, use path_filters.
+   * When both path_filters and path_value_matchers are set, an implicit AND
+   * must be performed.
+   * </pre>
+   *
+   * <code>
+   * map&lt;string, .google.cloud.recommender.v1beta1.ValueMatcher&gt; path_value_matchers = 11;
+   * </code>
+   */
+  public java.util.Map<java.lang.String, com.google.cloud.recommender.v1beta1.ValueMatcher>
+      getPathValueMatchersMap() {
+    return internalGetPathValueMatchers().getMap();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Similar to path_filters, this contains set of filters to apply if `path`
+   * field referes to array elements. This is meant to support value matching
+   * beyond exact match. To perform exact match, use path_filters.
+   * When both path_filters and path_value_matchers are set, an implicit AND
+   * must be performed.
+   * </pre>
+   *
+   * <code>
+   * map&lt;string, .google.cloud.recommender.v1beta1.ValueMatcher&gt; path_value_matchers = 11;
+   * </code>
+   */
+  public com.google.cloud.recommender.v1beta1.ValueMatcher getPathValueMatchersOrDefault(
+      java.lang.String key, com.google.cloud.recommender.v1beta1.ValueMatcher defaultValue) {
+    if (key == null) {
+      throw new java.lang.NullPointerException();
+    }
+    java.util.Map<java.lang.String, com.google.cloud.recommender.v1beta1.ValueMatcher> map =
+        internalGetPathValueMatchers().getMap();
+    return map.containsKey(key) ? map.get(key) : defaultValue;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Similar to path_filters, this contains set of filters to apply if `path`
+   * field referes to array elements. This is meant to support value matching
+   * beyond exact match. To perform exact match, use path_filters.
+   * When both path_filters and path_value_matchers are set, an implicit AND
+   * must be performed.
+   * </pre>
+   *
+   * <code>
+   * map&lt;string, .google.cloud.recommender.v1beta1.ValueMatcher&gt; path_value_matchers = 11;
+   * </code>
+   */
+  public com.google.cloud.recommender.v1beta1.ValueMatcher getPathValueMatchersOrThrow(
+      java.lang.String key) {
+    if (key == null) {
+      throw new java.lang.NullPointerException();
+    }
+    java.util.Map<java.lang.String, com.google.cloud.recommender.v1beta1.ValueMatcher> map =
+        internalGetPathValueMatchers().getMap();
     if (!map.containsKey(key)) {
       throw new java.lang.IllegalArgumentException();
     }
@@ -705,11 +987,19 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
     if (!getSourcePathBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 6, sourcePath_);
     }
-    if (value_ != null) {
-      output.writeMessage(7, getValue());
+    if (pathValueCase_ == 7) {
+      output.writeMessage(7, (com.google.protobuf.Value) pathValue_);
     }
     com.google.protobuf.GeneratedMessageV3.serializeStringMapTo(
         output, internalGetPathFilters(), PathFiltersDefaultEntryHolder.defaultEntry, 8);
+    if (pathValueCase_ == 10) {
+      output.writeMessage(10, (com.google.cloud.recommender.v1beta1.ValueMatcher) pathValue_);
+    }
+    com.google.protobuf.GeneratedMessageV3.serializeStringMapTo(
+        output,
+        internalGetPathValueMatchers(),
+        PathValueMatchersDefaultEntryHolder.defaultEntry,
+        11);
     unknownFields.writeTo(output);
   }
 
@@ -737,8 +1027,10 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
     if (!getSourcePathBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, sourcePath_);
     }
-    if (value_ != null) {
-      size += com.google.protobuf.CodedOutputStream.computeMessageSize(7, getValue());
+    if (pathValueCase_ == 7) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              7, (com.google.protobuf.Value) pathValue_);
     }
     for (java.util.Map.Entry<java.lang.String, com.google.protobuf.Value> entry :
         internalGetPathFilters().getMap().entrySet()) {
@@ -749,6 +1041,23 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
               .setValue(entry.getValue())
               .build();
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(8, pathFilters__);
+    }
+    if (pathValueCase_ == 10) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              10, (com.google.cloud.recommender.v1beta1.ValueMatcher) pathValue_);
+    }
+    for (java.util.Map.Entry<java.lang.String, com.google.cloud.recommender.v1beta1.ValueMatcher>
+        entry : internalGetPathValueMatchers().getMap().entrySet()) {
+      com.google.protobuf.MapEntry<
+              java.lang.String, com.google.cloud.recommender.v1beta1.ValueMatcher>
+          pathValueMatchers__ =
+              PathValueMatchersDefaultEntryHolder.defaultEntry
+                  .newBuilderForType()
+                  .setKey(entry.getKey())
+                  .setValue(entry.getValue())
+                  .build();
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(11, pathValueMatchers__);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -772,11 +1081,19 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
     if (!getPath().equals(other.getPath())) return false;
     if (!getSourceResource().equals(other.getSourceResource())) return false;
     if (!getSourcePath().equals(other.getSourcePath())) return false;
-    if (hasValue() != other.hasValue()) return false;
-    if (hasValue()) {
-      if (!getValue().equals(other.getValue())) return false;
-    }
     if (!internalGetPathFilters().equals(other.internalGetPathFilters())) return false;
+    if (!internalGetPathValueMatchers().equals(other.internalGetPathValueMatchers())) return false;
+    if (!getPathValueCase().equals(other.getPathValueCase())) return false;
+    switch (pathValueCase_) {
+      case 7:
+        if (!getValue().equals(other.getValue())) return false;
+        break;
+      case 10:
+        if (!getValueMatcher().equals(other.getValueMatcher())) return false;
+        break;
+      case 0:
+      default:
+    }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -800,13 +1117,25 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
     hash = (53 * hash) + getSourceResource().hashCode();
     hash = (37 * hash) + SOURCE_PATH_FIELD_NUMBER;
     hash = (53 * hash) + getSourcePath().hashCode();
-    if (hasValue()) {
-      hash = (37 * hash) + VALUE_FIELD_NUMBER;
-      hash = (53 * hash) + getValue().hashCode();
-    }
     if (!internalGetPathFilters().getMap().isEmpty()) {
       hash = (37 * hash) + PATH_FILTERS_FIELD_NUMBER;
       hash = (53 * hash) + internalGetPathFilters().hashCode();
+    }
+    if (!internalGetPathValueMatchers().getMap().isEmpty()) {
+      hash = (37 * hash) + PATH_VALUE_MATCHERS_FIELD_NUMBER;
+      hash = (53 * hash) + internalGetPathValueMatchers().hashCode();
+    }
+    switch (pathValueCase_) {
+      case 7:
+        hash = (37 * hash) + VALUE_FIELD_NUMBER;
+        hash = (53 * hash) + getValue().hashCode();
+        break;
+      case 10:
+        hash = (37 * hash) + VALUE_MATCHER_FIELD_NUMBER;
+        hash = (53 * hash) + getValueMatcher().hashCode();
+        break;
+      case 0:
+      default:
     }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
@@ -912,8 +1241,8 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Contains an operation for a resource inspired by the JSON-PATCH format with
-   * support for:
+   * Contains an operation for a resource loosely based on the JSON-PATCH format
+   * with support for:
    * * Custom filters for describing partial array patch.
    * * Extended path values for describing nested arrays.
    * * Custom fields for describing the resource for which the operation is being
@@ -938,6 +1267,8 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
       switch (number) {
         case 8:
           return internalGetPathFilters();
+        case 11:
+          return internalGetPathValueMatchers();
         default:
           throw new RuntimeException("Invalid map field number: " + number);
       }
@@ -948,6 +1279,8 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
       switch (number) {
         case 8:
           return internalGetMutablePathFilters();
+        case 11:
+          return internalGetMutablePathValueMatchers();
         default:
           throw new RuntimeException("Invalid map field number: " + number);
       }
@@ -992,13 +1325,10 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
 
       sourcePath_ = "";
 
-      if (valueBuilder_ == null) {
-        value_ = null;
-      } else {
-        value_ = null;
-        valueBuilder_ = null;
-      }
       internalGetMutablePathFilters().clear();
+      internalGetMutablePathValueMatchers().clear();
+      pathValueCase_ = 0;
+      pathValue_ = null;
       return this;
     }
 
@@ -1034,14 +1364,26 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
       result.path_ = path_;
       result.sourceResource_ = sourceResource_;
       result.sourcePath_ = sourcePath_;
-      if (valueBuilder_ == null) {
-        result.value_ = value_;
-      } else {
-        result.value_ = valueBuilder_.build();
+      if (pathValueCase_ == 7) {
+        if (valueBuilder_ == null) {
+          result.pathValue_ = pathValue_;
+        } else {
+          result.pathValue_ = valueBuilder_.build();
+        }
+      }
+      if (pathValueCase_ == 10) {
+        if (valueMatcherBuilder_ == null) {
+          result.pathValue_ = pathValue_;
+        } else {
+          result.pathValue_ = valueMatcherBuilder_.build();
+        }
       }
       result.pathFilters_ = internalGetPathFilters();
       result.pathFilters_.makeImmutable();
+      result.pathValueMatchers_ = internalGetPathValueMatchers();
+      result.pathValueMatchers_.makeImmutable();
       result.bitField0_ = to_bitField0_;
+      result.pathValueCase_ = pathValueCase_;
       onBuilt();
       return result;
     }
@@ -1115,10 +1457,24 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
         sourcePath_ = other.sourcePath_;
         onChanged();
       }
-      if (other.hasValue()) {
-        mergeValue(other.getValue());
-      }
       internalGetMutablePathFilters().mergeFrom(other.internalGetPathFilters());
+      internalGetMutablePathValueMatchers().mergeFrom(other.internalGetPathValueMatchers());
+      switch (other.getPathValueCase()) {
+        case VALUE:
+          {
+            mergeValue(other.getValue());
+            break;
+          }
+        case VALUE_MATCHER:
+          {
+            mergeValueMatcher(other.getValueMatcher());
+            break;
+          }
+        case PATHVALUE_NOT_SET:
+          {
+            break;
+          }
+      }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
       return this;
@@ -1148,6 +1504,20 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
+    private int pathValueCase_ = 0;
+    private java.lang.Object pathValue_;
+
+    public PathValueCase getPathValueCase() {
+      return PathValueCase.forNumber(pathValueCase_);
+    }
+
+    public Builder clearPathValue() {
+      pathValueCase_ = 0;
+      pathValue_ = null;
+      onChanged();
+      return this;
+    }
+
     private int bitField0_;
 
     private java.lang.Object action_ = "";
@@ -1156,7 +1526,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Type of this operation. Contains one of 'and', 'remove', 'replace', 'move',
-     * 'copy', 'test' and custom operations. This field is case-insensitive and
+     * 'copy', 'test' and 'custom' operations. This field is case-insensitive and
      * always populated.
      * </pre>
      *
@@ -1178,7 +1548,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Type of this operation. Contains one of 'and', 'remove', 'replace', 'move',
-     * 'copy', 'test' and custom operations. This field is case-insensitive and
+     * 'copy', 'test' and 'custom' operations. This field is case-insensitive and
      * always populated.
      * </pre>
      *
@@ -1200,7 +1570,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Type of this operation. Contains one of 'and', 'remove', 'replace', 'move',
-     * 'copy', 'test' and custom operations. This field is case-insensitive and
+     * 'copy', 'test' and 'custom' operations. This field is case-insensitive and
      * always populated.
      * </pre>
      *
@@ -1220,7 +1590,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Type of this operation. Contains one of 'and', 'remove', 'replace', 'move',
-     * 'copy', 'test' and custom operations. This field is case-insensitive and
+     * 'copy', 'test' and 'custom' operations. This field is case-insensitive and
      * always populated.
      * </pre>
      *
@@ -1237,7 +1607,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Type of this operation. Contains one of 'and', 'remove', 'replace', 'move',
-     * 'copy', 'test' and custom operations. This field is case-insensitive and
+     * 'copy', 'test' and 'custom' operations. This field is case-insensitive and
      * always populated.
      * </pre>
      *
@@ -1769,7 +2139,6 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
-    private com.google.protobuf.Value value_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.protobuf.Value,
             com.google.protobuf.Value.Builder,
@@ -1779,35 +2148,47 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Value for the `path` field. Set if action is 'add'/'replace'/'test'.
+     * Value for the `path` field. Will be set for actions:'add'/'replace'.
+     * Maybe set for action: 'test'. Either this or `value_matcher` will be set
+     * for 'test' operation. An exact match must be performed.
      * </pre>
      *
      * <code>.google.protobuf.Value value = 7;</code>
      */
     public boolean hasValue() {
-      return valueBuilder_ != null || value_ != null;
+      return pathValueCase_ == 7;
     }
     /**
      *
      *
      * <pre>
-     * Value for the `path` field. Set if action is 'add'/'replace'/'test'.
+     * Value for the `path` field. Will be set for actions:'add'/'replace'.
+     * Maybe set for action: 'test'. Either this or `value_matcher` will be set
+     * for 'test' operation. An exact match must be performed.
      * </pre>
      *
      * <code>.google.protobuf.Value value = 7;</code>
      */
     public com.google.protobuf.Value getValue() {
       if (valueBuilder_ == null) {
-        return value_ == null ? com.google.protobuf.Value.getDefaultInstance() : value_;
+        if (pathValueCase_ == 7) {
+          return (com.google.protobuf.Value) pathValue_;
+        }
+        return com.google.protobuf.Value.getDefaultInstance();
       } else {
-        return valueBuilder_.getMessage();
+        if (pathValueCase_ == 7) {
+          return valueBuilder_.getMessage();
+        }
+        return com.google.protobuf.Value.getDefaultInstance();
       }
     }
     /**
      *
      *
      * <pre>
-     * Value for the `path` field. Set if action is 'add'/'replace'/'test'.
+     * Value for the `path` field. Will be set for actions:'add'/'replace'.
+     * Maybe set for action: 'test'. Either this or `value_matcher` will be set
+     * for 'test' operation. An exact match must be performed.
      * </pre>
      *
      * <code>.google.protobuf.Value value = 7;</code>
@@ -1817,111 +2198,135 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
         if (value == null) {
           throw new NullPointerException();
         }
-        value_ = value;
+        pathValue_ = value;
         onChanged();
       } else {
         valueBuilder_.setMessage(value);
       }
-
+      pathValueCase_ = 7;
       return this;
     }
     /**
      *
      *
      * <pre>
-     * Value for the `path` field. Set if action is 'add'/'replace'/'test'.
+     * Value for the `path` field. Will be set for actions:'add'/'replace'.
+     * Maybe set for action: 'test'. Either this or `value_matcher` will be set
+     * for 'test' operation. An exact match must be performed.
      * </pre>
      *
      * <code>.google.protobuf.Value value = 7;</code>
      */
     public Builder setValue(com.google.protobuf.Value.Builder builderForValue) {
       if (valueBuilder_ == null) {
-        value_ = builderForValue.build();
+        pathValue_ = builderForValue.build();
         onChanged();
       } else {
         valueBuilder_.setMessage(builderForValue.build());
       }
-
+      pathValueCase_ = 7;
       return this;
     }
     /**
      *
      *
      * <pre>
-     * Value for the `path` field. Set if action is 'add'/'replace'/'test'.
+     * Value for the `path` field. Will be set for actions:'add'/'replace'.
+     * Maybe set for action: 'test'. Either this or `value_matcher` will be set
+     * for 'test' operation. An exact match must be performed.
      * </pre>
      *
      * <code>.google.protobuf.Value value = 7;</code>
      */
     public Builder mergeValue(com.google.protobuf.Value value) {
       if (valueBuilder_ == null) {
-        if (value_ != null) {
-          value_ = com.google.protobuf.Value.newBuilder(value_).mergeFrom(value).buildPartial();
+        if (pathValueCase_ == 7 && pathValue_ != com.google.protobuf.Value.getDefaultInstance()) {
+          pathValue_ =
+              com.google.protobuf.Value.newBuilder((com.google.protobuf.Value) pathValue_)
+                  .mergeFrom(value)
+                  .buildPartial();
         } else {
-          value_ = value;
+          pathValue_ = value;
         }
         onChanged();
       } else {
-        valueBuilder_.mergeFrom(value);
+        if (pathValueCase_ == 7) {
+          valueBuilder_.mergeFrom(value);
+        }
+        valueBuilder_.setMessage(value);
       }
-
+      pathValueCase_ = 7;
       return this;
     }
     /**
      *
      *
      * <pre>
-     * Value for the `path` field. Set if action is 'add'/'replace'/'test'.
+     * Value for the `path` field. Will be set for actions:'add'/'replace'.
+     * Maybe set for action: 'test'. Either this or `value_matcher` will be set
+     * for 'test' operation. An exact match must be performed.
      * </pre>
      *
      * <code>.google.protobuf.Value value = 7;</code>
      */
     public Builder clearValue() {
       if (valueBuilder_ == null) {
-        value_ = null;
-        onChanged();
+        if (pathValueCase_ == 7) {
+          pathValueCase_ = 0;
+          pathValue_ = null;
+          onChanged();
+        }
       } else {
-        value_ = null;
-        valueBuilder_ = null;
+        if (pathValueCase_ == 7) {
+          pathValueCase_ = 0;
+          pathValue_ = null;
+        }
+        valueBuilder_.clear();
       }
-
       return this;
     }
     /**
      *
      *
      * <pre>
-     * Value for the `path` field. Set if action is 'add'/'replace'/'test'.
+     * Value for the `path` field. Will be set for actions:'add'/'replace'.
+     * Maybe set for action: 'test'. Either this or `value_matcher` will be set
+     * for 'test' operation. An exact match must be performed.
      * </pre>
      *
      * <code>.google.protobuf.Value value = 7;</code>
      */
     public com.google.protobuf.Value.Builder getValueBuilder() {
-
-      onChanged();
       return getValueFieldBuilder().getBuilder();
     }
     /**
      *
      *
      * <pre>
-     * Value for the `path` field. Set if action is 'add'/'replace'/'test'.
+     * Value for the `path` field. Will be set for actions:'add'/'replace'.
+     * Maybe set for action: 'test'. Either this or `value_matcher` will be set
+     * for 'test' operation. An exact match must be performed.
      * </pre>
      *
      * <code>.google.protobuf.Value value = 7;</code>
      */
     public com.google.protobuf.ValueOrBuilder getValueOrBuilder() {
-      if (valueBuilder_ != null) {
+      if ((pathValueCase_ == 7) && (valueBuilder_ != null)) {
         return valueBuilder_.getMessageOrBuilder();
       } else {
-        return value_ == null ? com.google.protobuf.Value.getDefaultInstance() : value_;
+        if (pathValueCase_ == 7) {
+          return (com.google.protobuf.Value) pathValue_;
+        }
+        return com.google.protobuf.Value.getDefaultInstance();
       }
     }
     /**
      *
      *
      * <pre>
-     * Value for the `path` field. Set if action is 'add'/'replace'/'test'.
+     * Value for the `path` field. Will be set for actions:'add'/'replace'.
+     * Maybe set for action: 'test'. Either this or `value_matcher` will be set
+     * for 'test' operation. An exact match must be performed.
      * </pre>
      *
      * <code>.google.protobuf.Value value = 7;</code>
@@ -1932,14 +2337,233 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.ValueOrBuilder>
         getValueFieldBuilder() {
       if (valueBuilder_ == null) {
+        if (!(pathValueCase_ == 7)) {
+          pathValue_ = com.google.protobuf.Value.getDefaultInstance();
+        }
         valueBuilder_ =
             new com.google.protobuf.SingleFieldBuilderV3<
                 com.google.protobuf.Value,
                 com.google.protobuf.Value.Builder,
-                com.google.protobuf.ValueOrBuilder>(getValue(), getParentForChildren(), isClean());
-        value_ = null;
+                com.google.protobuf.ValueOrBuilder>(
+                (com.google.protobuf.Value) pathValue_, getParentForChildren(), isClean());
+        pathValue_ = null;
       }
+      pathValueCase_ = 7;
+      onChanged();
+      ;
       return valueBuilder_;
+    }
+
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.recommender.v1beta1.ValueMatcher,
+            com.google.cloud.recommender.v1beta1.ValueMatcher.Builder,
+            com.google.cloud.recommender.v1beta1.ValueMatcherOrBuilder>
+        valueMatcherBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Can be set for action 'test' for advanced matching for the value of
+     * 'path' field. Either this or `value` will be set for 'test' operation.
+     * </pre>
+     *
+     * <code>.google.cloud.recommender.v1beta1.ValueMatcher value_matcher = 10;</code>
+     */
+    public boolean hasValueMatcher() {
+      return pathValueCase_ == 10;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Can be set for action 'test' for advanced matching for the value of
+     * 'path' field. Either this or `value` will be set for 'test' operation.
+     * </pre>
+     *
+     * <code>.google.cloud.recommender.v1beta1.ValueMatcher value_matcher = 10;</code>
+     */
+    public com.google.cloud.recommender.v1beta1.ValueMatcher getValueMatcher() {
+      if (valueMatcherBuilder_ == null) {
+        if (pathValueCase_ == 10) {
+          return (com.google.cloud.recommender.v1beta1.ValueMatcher) pathValue_;
+        }
+        return com.google.cloud.recommender.v1beta1.ValueMatcher.getDefaultInstance();
+      } else {
+        if (pathValueCase_ == 10) {
+          return valueMatcherBuilder_.getMessage();
+        }
+        return com.google.cloud.recommender.v1beta1.ValueMatcher.getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Can be set for action 'test' for advanced matching for the value of
+     * 'path' field. Either this or `value` will be set for 'test' operation.
+     * </pre>
+     *
+     * <code>.google.cloud.recommender.v1beta1.ValueMatcher value_matcher = 10;</code>
+     */
+    public Builder setValueMatcher(com.google.cloud.recommender.v1beta1.ValueMatcher value) {
+      if (valueMatcherBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        pathValue_ = value;
+        onChanged();
+      } else {
+        valueMatcherBuilder_.setMessage(value);
+      }
+      pathValueCase_ = 10;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Can be set for action 'test' for advanced matching for the value of
+     * 'path' field. Either this or `value` will be set for 'test' operation.
+     * </pre>
+     *
+     * <code>.google.cloud.recommender.v1beta1.ValueMatcher value_matcher = 10;</code>
+     */
+    public Builder setValueMatcher(
+        com.google.cloud.recommender.v1beta1.ValueMatcher.Builder builderForValue) {
+      if (valueMatcherBuilder_ == null) {
+        pathValue_ = builderForValue.build();
+        onChanged();
+      } else {
+        valueMatcherBuilder_.setMessage(builderForValue.build());
+      }
+      pathValueCase_ = 10;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Can be set for action 'test' for advanced matching for the value of
+     * 'path' field. Either this or `value` will be set for 'test' operation.
+     * </pre>
+     *
+     * <code>.google.cloud.recommender.v1beta1.ValueMatcher value_matcher = 10;</code>
+     */
+    public Builder mergeValueMatcher(com.google.cloud.recommender.v1beta1.ValueMatcher value) {
+      if (valueMatcherBuilder_ == null) {
+        if (pathValueCase_ == 10
+            && pathValue_
+                != com.google.cloud.recommender.v1beta1.ValueMatcher.getDefaultInstance()) {
+          pathValue_ =
+              com.google.cloud.recommender.v1beta1.ValueMatcher.newBuilder(
+                      (com.google.cloud.recommender.v1beta1.ValueMatcher) pathValue_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          pathValue_ = value;
+        }
+        onChanged();
+      } else {
+        if (pathValueCase_ == 10) {
+          valueMatcherBuilder_.mergeFrom(value);
+        }
+        valueMatcherBuilder_.setMessage(value);
+      }
+      pathValueCase_ = 10;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Can be set for action 'test' for advanced matching for the value of
+     * 'path' field. Either this or `value` will be set for 'test' operation.
+     * </pre>
+     *
+     * <code>.google.cloud.recommender.v1beta1.ValueMatcher value_matcher = 10;</code>
+     */
+    public Builder clearValueMatcher() {
+      if (valueMatcherBuilder_ == null) {
+        if (pathValueCase_ == 10) {
+          pathValueCase_ = 0;
+          pathValue_ = null;
+          onChanged();
+        }
+      } else {
+        if (pathValueCase_ == 10) {
+          pathValueCase_ = 0;
+          pathValue_ = null;
+        }
+        valueMatcherBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Can be set for action 'test' for advanced matching for the value of
+     * 'path' field. Either this or `value` will be set for 'test' operation.
+     * </pre>
+     *
+     * <code>.google.cloud.recommender.v1beta1.ValueMatcher value_matcher = 10;</code>
+     */
+    public com.google.cloud.recommender.v1beta1.ValueMatcher.Builder getValueMatcherBuilder() {
+      return getValueMatcherFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Can be set for action 'test' for advanced matching for the value of
+     * 'path' field. Either this or `value` will be set for 'test' operation.
+     * </pre>
+     *
+     * <code>.google.cloud.recommender.v1beta1.ValueMatcher value_matcher = 10;</code>
+     */
+    public com.google.cloud.recommender.v1beta1.ValueMatcherOrBuilder getValueMatcherOrBuilder() {
+      if ((pathValueCase_ == 10) && (valueMatcherBuilder_ != null)) {
+        return valueMatcherBuilder_.getMessageOrBuilder();
+      } else {
+        if (pathValueCase_ == 10) {
+          return (com.google.cloud.recommender.v1beta1.ValueMatcher) pathValue_;
+        }
+        return com.google.cloud.recommender.v1beta1.ValueMatcher.getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Can be set for action 'test' for advanced matching for the value of
+     * 'path' field. Either this or `value` will be set for 'test' operation.
+     * </pre>
+     *
+     * <code>.google.cloud.recommender.v1beta1.ValueMatcher value_matcher = 10;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.recommender.v1beta1.ValueMatcher,
+            com.google.cloud.recommender.v1beta1.ValueMatcher.Builder,
+            com.google.cloud.recommender.v1beta1.ValueMatcherOrBuilder>
+        getValueMatcherFieldBuilder() {
+      if (valueMatcherBuilder_ == null) {
+        if (!(pathValueCase_ == 10)) {
+          pathValue_ = com.google.cloud.recommender.v1beta1.ValueMatcher.getDefaultInstance();
+        }
+        valueMatcherBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.recommender.v1beta1.ValueMatcher,
+                com.google.cloud.recommender.v1beta1.ValueMatcher.Builder,
+                com.google.cloud.recommender.v1beta1.ValueMatcherOrBuilder>(
+                (com.google.cloud.recommender.v1beta1.ValueMatcher) pathValue_,
+                getParentForChildren(),
+                isClean());
+        pathValue_ = null;
+      }
+      pathValueCase_ = 10;
+      onChanged();
+      ;
+      return valueMatcherBuilder_;
     }
 
     private com.google.protobuf.MapField<java.lang.String, com.google.protobuf.Value> pathFilters_;
@@ -1977,19 +2601,22 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      * Set of filters to apply if `path` refers to array elements or nested array
      * elements in order to narrow down to a single unique element that is being
      * tested/modified.
-     * Note that this is intended to be an exact match per filter.
-     * Example: {
+     * This is intended to be an exact match per filter. To perform advanced
+     * matching, use path_value_matchers.
+     * * Example: {
      *   "/versions/&#42;&#47;name" : "it-123"
      *   "/versions/&#42;&#47;targetSize/percent": 20
-     * }
-     * Example: {
+     *   }
+     * * Example: {
      *   "/bindings/&#42;&#47;role": "roles/admin"
      *   "/bindings/&#42;&#47;condition" : null
-     * }
-     * Example: {
+     *   }
+     * * Example: {
      *   "/bindings/&#42;&#47;role": "roles/admin"
      *   "/bindings/&#42;&#47;members/&#42;" : ["x&#64;google.com", "y&#64;google.com"]
-     * }
+     *   }
+     * When both path_filters and path_value_matchers are set, an implicit AND
+     * must be performed.
      * </pre>
      *
      * <code>map&lt;string, .google.protobuf.Value&gt; path_filters = 8;</code>
@@ -2012,19 +2639,22 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      * Set of filters to apply if `path` refers to array elements or nested array
      * elements in order to narrow down to a single unique element that is being
      * tested/modified.
-     * Note that this is intended to be an exact match per filter.
-     * Example: {
+     * This is intended to be an exact match per filter. To perform advanced
+     * matching, use path_value_matchers.
+     * * Example: {
      *   "/versions/&#42;&#47;name" : "it-123"
      *   "/versions/&#42;&#47;targetSize/percent": 20
-     * }
-     * Example: {
+     *   }
+     * * Example: {
      *   "/bindings/&#42;&#47;role": "roles/admin"
      *   "/bindings/&#42;&#47;condition" : null
-     * }
-     * Example: {
+     *   }
+     * * Example: {
      *   "/bindings/&#42;&#47;role": "roles/admin"
      *   "/bindings/&#42;&#47;members/&#42;" : ["x&#64;google.com", "y&#64;google.com"]
-     * }
+     *   }
+     * When both path_filters and path_value_matchers are set, an implicit AND
+     * must be performed.
      * </pre>
      *
      * <code>map&lt;string, .google.protobuf.Value&gt; path_filters = 8;</code>
@@ -2039,19 +2669,22 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      * Set of filters to apply if `path` refers to array elements or nested array
      * elements in order to narrow down to a single unique element that is being
      * tested/modified.
-     * Note that this is intended to be an exact match per filter.
-     * Example: {
+     * This is intended to be an exact match per filter. To perform advanced
+     * matching, use path_value_matchers.
+     * * Example: {
      *   "/versions/&#42;&#47;name" : "it-123"
      *   "/versions/&#42;&#47;targetSize/percent": 20
-     * }
-     * Example: {
+     *   }
+     * * Example: {
      *   "/bindings/&#42;&#47;role": "roles/admin"
      *   "/bindings/&#42;&#47;condition" : null
-     * }
-     * Example: {
+     *   }
+     * * Example: {
      *   "/bindings/&#42;&#47;role": "roles/admin"
      *   "/bindings/&#42;&#47;members/&#42;" : ["x&#64;google.com", "y&#64;google.com"]
-     * }
+     *   }
+     * When both path_filters and path_value_matchers are set, an implicit AND
+     * must be performed.
      * </pre>
      *
      * <code>map&lt;string, .google.protobuf.Value&gt; path_filters = 8;</code>
@@ -2072,19 +2705,22 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      * Set of filters to apply if `path` refers to array elements or nested array
      * elements in order to narrow down to a single unique element that is being
      * tested/modified.
-     * Note that this is intended to be an exact match per filter.
-     * Example: {
+     * This is intended to be an exact match per filter. To perform advanced
+     * matching, use path_value_matchers.
+     * * Example: {
      *   "/versions/&#42;&#47;name" : "it-123"
      *   "/versions/&#42;&#47;targetSize/percent": 20
-     * }
-     * Example: {
+     *   }
+     * * Example: {
      *   "/bindings/&#42;&#47;role": "roles/admin"
      *   "/bindings/&#42;&#47;condition" : null
-     * }
-     * Example: {
+     *   }
+     * * Example: {
      *   "/bindings/&#42;&#47;role": "roles/admin"
      *   "/bindings/&#42;&#47;members/&#42;" : ["x&#64;google.com", "y&#64;google.com"]
-     * }
+     *   }
+     * When both path_filters and path_value_matchers are set, an implicit AND
+     * must be performed.
      * </pre>
      *
      * <code>map&lt;string, .google.protobuf.Value&gt; path_filters = 8;</code>
@@ -2112,19 +2748,22 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      * Set of filters to apply if `path` refers to array elements or nested array
      * elements in order to narrow down to a single unique element that is being
      * tested/modified.
-     * Note that this is intended to be an exact match per filter.
-     * Example: {
+     * This is intended to be an exact match per filter. To perform advanced
+     * matching, use path_value_matchers.
+     * * Example: {
      *   "/versions/&#42;&#47;name" : "it-123"
      *   "/versions/&#42;&#47;targetSize/percent": 20
-     * }
-     * Example: {
+     *   }
+     * * Example: {
      *   "/bindings/&#42;&#47;role": "roles/admin"
      *   "/bindings/&#42;&#47;condition" : null
-     * }
-     * Example: {
+     *   }
+     * * Example: {
      *   "/bindings/&#42;&#47;role": "roles/admin"
      *   "/bindings/&#42;&#47;members/&#42;" : ["x&#64;google.com", "y&#64;google.com"]
-     * }
+     *   }
+     * When both path_filters and path_value_matchers are set, an implicit AND
+     * must be performed.
      * </pre>
      *
      * <code>map&lt;string, .google.protobuf.Value&gt; path_filters = 8;</code>
@@ -2148,19 +2787,22 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      * Set of filters to apply if `path` refers to array elements or nested array
      * elements in order to narrow down to a single unique element that is being
      * tested/modified.
-     * Note that this is intended to be an exact match per filter.
-     * Example: {
+     * This is intended to be an exact match per filter. To perform advanced
+     * matching, use path_value_matchers.
+     * * Example: {
      *   "/versions/&#42;&#47;name" : "it-123"
      *   "/versions/&#42;&#47;targetSize/percent": 20
-     * }
-     * Example: {
+     *   }
+     * * Example: {
      *   "/bindings/&#42;&#47;role": "roles/admin"
      *   "/bindings/&#42;&#47;condition" : null
-     * }
-     * Example: {
+     *   }
+     * * Example: {
      *   "/bindings/&#42;&#47;role": "roles/admin"
      *   "/bindings/&#42;&#47;members/&#42;" : ["x&#64;google.com", "y&#64;google.com"]
-     * }
+     *   }
+     * When both path_filters and path_value_matchers are set, an implicit AND
+     * must be performed.
      * </pre>
      *
      * <code>map&lt;string, .google.protobuf.Value&gt; path_filters = 8;</code>
@@ -2182,19 +2824,22 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      * Set of filters to apply if `path` refers to array elements or nested array
      * elements in order to narrow down to a single unique element that is being
      * tested/modified.
-     * Note that this is intended to be an exact match per filter.
-     * Example: {
+     * This is intended to be an exact match per filter. To perform advanced
+     * matching, use path_value_matchers.
+     * * Example: {
      *   "/versions/&#42;&#47;name" : "it-123"
      *   "/versions/&#42;&#47;targetSize/percent": 20
-     * }
-     * Example: {
+     *   }
+     * * Example: {
      *   "/bindings/&#42;&#47;role": "roles/admin"
      *   "/bindings/&#42;&#47;condition" : null
-     * }
-     * Example: {
+     *   }
+     * * Example: {
      *   "/bindings/&#42;&#47;role": "roles/admin"
      *   "/bindings/&#42;&#47;members/&#42;" : ["x&#64;google.com", "y&#64;google.com"]
-     * }
+     *   }
+     * When both path_filters and path_value_matchers are set, an implicit AND
+     * must be performed.
      * </pre>
      *
      * <code>map&lt;string, .google.protobuf.Value&gt; path_filters = 8;</code>
@@ -2202,6 +2847,216 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
     public Builder putAllPathFilters(
         java.util.Map<java.lang.String, com.google.protobuf.Value> values) {
       internalGetMutablePathFilters().getMutableMap().putAll(values);
+      return this;
+    }
+
+    private com.google.protobuf.MapField<
+            java.lang.String, com.google.cloud.recommender.v1beta1.ValueMatcher>
+        pathValueMatchers_;
+
+    private com.google.protobuf.MapField<
+            java.lang.String, com.google.cloud.recommender.v1beta1.ValueMatcher>
+        internalGetPathValueMatchers() {
+      if (pathValueMatchers_ == null) {
+        return com.google.protobuf.MapField.emptyMapField(
+            PathValueMatchersDefaultEntryHolder.defaultEntry);
+      }
+      return pathValueMatchers_;
+    }
+
+    private com.google.protobuf.MapField<
+            java.lang.String, com.google.cloud.recommender.v1beta1.ValueMatcher>
+        internalGetMutablePathValueMatchers() {
+      onChanged();
+      ;
+      if (pathValueMatchers_ == null) {
+        pathValueMatchers_ =
+            com.google.protobuf.MapField.newMapField(
+                PathValueMatchersDefaultEntryHolder.defaultEntry);
+      }
+      if (!pathValueMatchers_.isMutable()) {
+        pathValueMatchers_ = pathValueMatchers_.copy();
+      }
+      return pathValueMatchers_;
+    }
+
+    public int getPathValueMatchersCount() {
+      return internalGetPathValueMatchers().getMap().size();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Similar to path_filters, this contains set of filters to apply if `path`
+     * field referes to array elements. This is meant to support value matching
+     * beyond exact match. To perform exact match, use path_filters.
+     * When both path_filters and path_value_matchers are set, an implicit AND
+     * must be performed.
+     * </pre>
+     *
+     * <code>
+     * map&lt;string, .google.cloud.recommender.v1beta1.ValueMatcher&gt; path_value_matchers = 11;
+     * </code>
+     */
+    public boolean containsPathValueMatchers(java.lang.String key) {
+      if (key == null) {
+        throw new java.lang.NullPointerException();
+      }
+      return internalGetPathValueMatchers().getMap().containsKey(key);
+    }
+    /** Use {@link #getPathValueMatchersMap()} instead. */
+    @java.lang.Deprecated
+    public java.util.Map<java.lang.String, com.google.cloud.recommender.v1beta1.ValueMatcher>
+        getPathValueMatchers() {
+      return getPathValueMatchersMap();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Similar to path_filters, this contains set of filters to apply if `path`
+     * field referes to array elements. This is meant to support value matching
+     * beyond exact match. To perform exact match, use path_filters.
+     * When both path_filters and path_value_matchers are set, an implicit AND
+     * must be performed.
+     * </pre>
+     *
+     * <code>
+     * map&lt;string, .google.cloud.recommender.v1beta1.ValueMatcher&gt; path_value_matchers = 11;
+     * </code>
+     */
+    public java.util.Map<java.lang.String, com.google.cloud.recommender.v1beta1.ValueMatcher>
+        getPathValueMatchersMap() {
+      return internalGetPathValueMatchers().getMap();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Similar to path_filters, this contains set of filters to apply if `path`
+     * field referes to array elements. This is meant to support value matching
+     * beyond exact match. To perform exact match, use path_filters.
+     * When both path_filters and path_value_matchers are set, an implicit AND
+     * must be performed.
+     * </pre>
+     *
+     * <code>
+     * map&lt;string, .google.cloud.recommender.v1beta1.ValueMatcher&gt; path_value_matchers = 11;
+     * </code>
+     */
+    public com.google.cloud.recommender.v1beta1.ValueMatcher getPathValueMatchersOrDefault(
+        java.lang.String key, com.google.cloud.recommender.v1beta1.ValueMatcher defaultValue) {
+      if (key == null) {
+        throw new java.lang.NullPointerException();
+      }
+      java.util.Map<java.lang.String, com.google.cloud.recommender.v1beta1.ValueMatcher> map =
+          internalGetPathValueMatchers().getMap();
+      return map.containsKey(key) ? map.get(key) : defaultValue;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Similar to path_filters, this contains set of filters to apply if `path`
+     * field referes to array elements. This is meant to support value matching
+     * beyond exact match. To perform exact match, use path_filters.
+     * When both path_filters and path_value_matchers are set, an implicit AND
+     * must be performed.
+     * </pre>
+     *
+     * <code>
+     * map&lt;string, .google.cloud.recommender.v1beta1.ValueMatcher&gt; path_value_matchers = 11;
+     * </code>
+     */
+    public com.google.cloud.recommender.v1beta1.ValueMatcher getPathValueMatchersOrThrow(
+        java.lang.String key) {
+      if (key == null) {
+        throw new java.lang.NullPointerException();
+      }
+      java.util.Map<java.lang.String, com.google.cloud.recommender.v1beta1.ValueMatcher> map =
+          internalGetPathValueMatchers().getMap();
+      if (!map.containsKey(key)) {
+        throw new java.lang.IllegalArgumentException();
+      }
+      return map.get(key);
+    }
+
+    public Builder clearPathValueMatchers() {
+      internalGetMutablePathValueMatchers().getMutableMap().clear();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Similar to path_filters, this contains set of filters to apply if `path`
+     * field referes to array elements. This is meant to support value matching
+     * beyond exact match. To perform exact match, use path_filters.
+     * When both path_filters and path_value_matchers are set, an implicit AND
+     * must be performed.
+     * </pre>
+     *
+     * <code>
+     * map&lt;string, .google.cloud.recommender.v1beta1.ValueMatcher&gt; path_value_matchers = 11;
+     * </code>
+     */
+    public Builder removePathValueMatchers(java.lang.String key) {
+      if (key == null) {
+        throw new java.lang.NullPointerException();
+      }
+      internalGetMutablePathValueMatchers().getMutableMap().remove(key);
+      return this;
+    }
+    /** Use alternate mutation accessors instead. */
+    @java.lang.Deprecated
+    public java.util.Map<java.lang.String, com.google.cloud.recommender.v1beta1.ValueMatcher>
+        getMutablePathValueMatchers() {
+      return internalGetMutablePathValueMatchers().getMutableMap();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Similar to path_filters, this contains set of filters to apply if `path`
+     * field referes to array elements. This is meant to support value matching
+     * beyond exact match. To perform exact match, use path_filters.
+     * When both path_filters and path_value_matchers are set, an implicit AND
+     * must be performed.
+     * </pre>
+     *
+     * <code>
+     * map&lt;string, .google.cloud.recommender.v1beta1.ValueMatcher&gt; path_value_matchers = 11;
+     * </code>
+     */
+    public Builder putPathValueMatchers(
+        java.lang.String key, com.google.cloud.recommender.v1beta1.ValueMatcher value) {
+      if (key == null) {
+        throw new java.lang.NullPointerException();
+      }
+      if (value == null) {
+        throw new java.lang.NullPointerException();
+      }
+      internalGetMutablePathValueMatchers().getMutableMap().put(key, value);
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Similar to path_filters, this contains set of filters to apply if `path`
+     * field referes to array elements. This is meant to support value matching
+     * beyond exact match. To perform exact match, use path_filters.
+     * When both path_filters and path_value_matchers are set, an implicit AND
+     * must be performed.
+     * </pre>
+     *
+     * <code>
+     * map&lt;string, .google.cloud.recommender.v1beta1.ValueMatcher&gt; path_value_matchers = 11;
+     * </code>
+     */
+    public Builder putAllPathValueMatchers(
+        java.util.Map<java.lang.String, com.google.cloud.recommender.v1beta1.ValueMatcher> values) {
+      internalGetMutablePathValueMatchers().getMutableMap().putAll(values);
       return this;
     }
 

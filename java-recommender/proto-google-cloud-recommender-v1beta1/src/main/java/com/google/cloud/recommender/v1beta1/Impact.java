@@ -175,6 +175,16 @@ public final class Impact extends com.google.protobuf.GeneratedMessageV3
      * <code>PERFORMANCE = 3;</code>
      */
     PERFORMANCE(3),
+    /**
+     *
+     *
+     * <pre>
+     * Indicates a potential increase or decrease in manageability.
+     * </pre>
+     *
+     * <code>MANAGEABILITY = 4;</code>
+     */
+    MANAGEABILITY(4),
     UNRECOGNIZED(-1),
     ;
 
@@ -218,6 +228,16 @@ public final class Impact extends com.google.protobuf.GeneratedMessageV3
      * <code>PERFORMANCE = 3;</code>
      */
     public static final int PERFORMANCE_VALUE = 3;
+    /**
+     *
+     *
+     * <pre>
+     * Indicates a potential increase or decrease in manageability.
+     * </pre>
+     *
+     * <code>MANAGEABILITY = 4;</code>
+     */
+    public static final int MANAGEABILITY_VALUE = 4;
 
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
@@ -243,6 +263,8 @@ public final class Impact extends com.google.protobuf.GeneratedMessageV3
           return SECURITY;
         case 3:
           return PERFORMANCE;
+        case 4:
+          return MANAGEABILITY;
         default:
           return null;
       }

@@ -31,15 +31,16 @@ import com.google.cloud.recommender.v1beta1.stub.RecommenderStubSettings;
 import com.google.common.util.concurrent.MoreExecutors;
 import java.io.IOException;
 import java.util.List;
+import java.util.Map;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 
 // AUTO-GENERATED DOCUMENTATION AND SERVICE
 /**
- * Service Description: Provides recommendations for cloud customers for various categories like
- * performance optimization, cost savings, reliability, feature discovery, etc. These
- * recommendations are generated automatically based on analysis of user resources, configuration
- * and monitoring metrics.
+ * Service Description: Provides insights and recommendations for cloud customers for various
+ * categories like performance optimization, cost savings, reliability, feature discovery, etc.
+ * Insights and recommendations are generated automatically based on analysis of user resources,
+ * configuration and monitoring metrics.
  *
  * <p>This class provides the ability to make remote calls to the backing service through method
  * calls that map to API methods. Sample code to get started:
@@ -279,7 +280,8 @@ public class RecommenderClient implements BackgroundResource {
    * <pre><code>
    * try (RecommenderClient recommenderClient = RecommenderClient.create()) {
    *   String formattedParent = RecommenderClient.formatRecommenderName("[PROJECT]", "[LOCATION]", "[RECOMMENDER]");
-   *   for (Recommendation element : recommenderClient.listRecommendations(formattedParent).iterateAll()) {
+   *   String filter = "";
+   *   for (Recommendation element : recommenderClient.listRecommendations(formattedParent, filter).iterateAll()) {
    *     // doThingsWith(element);
    *   }
    * }
@@ -289,12 +291,14 @@ public class RecommenderClient implements BackgroundResource {
    *     formats:
    *     <p>1. "projects/[PROJECT_NUMBER]/locations/[LOCATION]/recommenders/[RECOMMENDER_ID]",
    *     <p>LOCATION here refers to GCP Locations: https://cloud.google.com/about/locations/
+   * @param filter Filter expression to restrict the recommendations returned. Supported filter
+   *     fields: state_info.state Eg: `state_info.state:"DISMISSED" or state_info.state:"FAILED"
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListRecommendationsPagedResponse listRecommendations(String parent) {
+  public final ListRecommendationsPagedResponse listRecommendations(String parent, String filter) {
     RECOMMENDER_PATH_TEMPLATE.validate(parent, "listRecommendations");
     ListRecommendationsRequest request =
-        ListRecommendationsRequest.newBuilder().setParent(parent).build();
+        ListRecommendationsRequest.newBuilder().setParent(parent).setFilter(filter).build();
     return listRecommendations(request);
   }
 
@@ -456,12 +460,12 @@ public class RecommenderClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Mark the Recommendation State as Claimed. Users can use this method to indicate to the
+   * Marks the Recommendation State as Claimed. Users can use this method to indicate to the
    * Recommender API that they are starting to apply the recommendation themselves. This stops the
-   * recommendation content from being updated.
+   * recommendation content from being updated. Associated insights are frozen and placed in the
+   * ACCEPTED state.
    *
-   * <p>MarkRecommendationClaimed can be applied to recommendations in CLAIMED, SUCCEEDED, FAILED,
-   * or ACTIVE state.
+   * <p>MarkRecommendationClaimed can be applied to recommendations in CLAIMED or ACTIVE state.
    *
    * <p>Requires the recommender.&#42;.update IAM permission for the specified recommender.
    *
@@ -470,30 +474,38 @@ public class RecommenderClient implements BackgroundResource {
    * <pre><code>
    * try (RecommenderClient recommenderClient = RecommenderClient.create()) {
    *   String formattedName = RecommenderClient.formatRecommendationName("[PROJECT]", "[LOCATION]", "[RECOMMENDER]", "[RECOMMENDATION]");
+   *   Map&lt;String, String&gt; stateMetadata = new HashMap&lt;&gt;();
    *   String etag = "";
-   *   Recommendation response = recommenderClient.markRecommendationClaimed(formattedName, etag);
+   *   Recommendation response = recommenderClient.markRecommendationClaimed(formattedName, stateMetadata, etag);
    * }
    * </code></pre>
    *
    * @param name Name of the recommendation.
+   * @param stateMetadata State properties to include with this state. Overwrites any existing
+   *     `state_metadata`.
    * @param etag Fingerprint of the Recommendation. Provides optimistic locking.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Recommendation markRecommendationClaimed(String name, String etag) {
+  public final Recommendation markRecommendationClaimed(
+      String name, Map<String, String> stateMetadata, String etag) {
     RECOMMENDATION_PATH_TEMPLATE.validate(name, "markRecommendationClaimed");
     MarkRecommendationClaimedRequest request =
-        MarkRecommendationClaimedRequest.newBuilder().setName(name).setEtag(etag).build();
+        MarkRecommendationClaimedRequest.newBuilder()
+            .setName(name)
+            .putAllStateMetadata(stateMetadata)
+            .setEtag(etag)
+            .build();
     return markRecommendationClaimed(request);
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Mark the Recommendation State as Claimed. Users can use this method to indicate to the
+   * Marks the Recommendation State as Claimed. Users can use this method to indicate to the
    * Recommender API that they are starting to apply the recommendation themselves. This stops the
-   * recommendation content from being updated.
+   * recommendation content from being updated. Associated insights are frozen and placed in the
+   * ACCEPTED state.
    *
-   * <p>MarkRecommendationClaimed can be applied to recommendations in CLAIMED, SUCCEEDED, FAILED,
-   * or ACTIVE state.
+   * <p>MarkRecommendationClaimed can be applied to recommendations in CLAIMED or ACTIVE state.
    *
    * <p>Requires the recommender.&#42;.update IAM permission for the specified recommender.
    *
@@ -520,12 +532,12 @@ public class RecommenderClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Mark the Recommendation State as Claimed. Users can use this method to indicate to the
+   * Marks the Recommendation State as Claimed. Users can use this method to indicate to the
    * Recommender API that they are starting to apply the recommendation themselves. This stops the
-   * recommendation content from being updated.
+   * recommendation content from being updated. Associated insights are frozen and placed in the
+   * ACCEPTED state.
    *
-   * <p>MarkRecommendationClaimed can be applied to recommendations in CLAIMED, SUCCEEDED, FAILED,
-   * or ACTIVE state.
+   * <p>MarkRecommendationClaimed can be applied to recommendations in CLAIMED or ACTIVE state.
    *
    * <p>Requires the recommender.&#42;.update IAM permission for the specified recommender.
    *
@@ -552,9 +564,10 @@ public class RecommenderClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Mark the Recommendation State as Succeeded. Users can use this method to indicate to the
+   * Marks the Recommendation State as Succeeded. Users can use this method to indicate to the
    * Recommender API that they have applied the recommendation themselves, and the operation was
-   * successful. This stops the recommendation content from being updated.
+   * successful. This stops the recommendation content from being updated. Associated insights are
+   * frozen and placed in the ACCEPTED state.
    *
    * <p>MarkRecommendationSucceeded can be applied to recommendations in ACTIVE, CLAIMED, SUCCEEDED,
    * or FAILED state.
@@ -566,27 +579,36 @@ public class RecommenderClient implements BackgroundResource {
    * <pre><code>
    * try (RecommenderClient recommenderClient = RecommenderClient.create()) {
    *   String formattedName = RecommenderClient.formatRecommendationName("[PROJECT]", "[LOCATION]", "[RECOMMENDER]", "[RECOMMENDATION]");
+   *   Map&lt;String, String&gt; stateMetadata = new HashMap&lt;&gt;();
    *   String etag = "";
-   *   Recommendation response = recommenderClient.markRecommendationSucceeded(formattedName, etag);
+   *   Recommendation response = recommenderClient.markRecommendationSucceeded(formattedName, stateMetadata, etag);
    * }
    * </code></pre>
    *
    * @param name Name of the recommendation.
+   * @param stateMetadata State properties to include with this state. Overwrites any existing
+   *     `state_metadata`.
    * @param etag Fingerprint of the Recommendation. Provides optimistic locking.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Recommendation markRecommendationSucceeded(String name, String etag) {
+  public final Recommendation markRecommendationSucceeded(
+      String name, Map<String, String> stateMetadata, String etag) {
     RECOMMENDATION_PATH_TEMPLATE.validate(name, "markRecommendationSucceeded");
     MarkRecommendationSucceededRequest request =
-        MarkRecommendationSucceededRequest.newBuilder().setName(name).setEtag(etag).build();
+        MarkRecommendationSucceededRequest.newBuilder()
+            .setName(name)
+            .putAllStateMetadata(stateMetadata)
+            .setEtag(etag)
+            .build();
     return markRecommendationSucceeded(request);
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Mark the Recommendation State as Succeeded. Users can use this method to indicate to the
+   * Marks the Recommendation State as Succeeded. Users can use this method to indicate to the
    * Recommender API that they have applied the recommendation themselves, and the operation was
-   * successful. This stops the recommendation content from being updated.
+   * successful. This stops the recommendation content from being updated. Associated insights are
+   * frozen and placed in the ACCEPTED state.
    *
    * <p>MarkRecommendationSucceeded can be applied to recommendations in ACTIVE, CLAIMED, SUCCEEDED,
    * or FAILED state.
@@ -617,9 +639,10 @@ public class RecommenderClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Mark the Recommendation State as Succeeded. Users can use this method to indicate to the
+   * Marks the Recommendation State as Succeeded. Users can use this method to indicate to the
    * Recommender API that they have applied the recommendation themselves, and the operation was
-   * successful. This stops the recommendation content from being updated.
+   * successful. This stops the recommendation content from being updated. Associated insights are
+   * frozen and placed in the ACCEPTED state.
    *
    * <p>MarkRecommendationSucceeded can be applied to recommendations in ACTIVE, CLAIMED, SUCCEEDED,
    * or FAILED state.
@@ -649,9 +672,10 @@ public class RecommenderClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Mark the Recommendation State as Failed. Users can use this method to indicate to the
+   * Marks the Recommendation State as Failed. Users can use this method to indicate to the
    * Recommender API that they have applied the recommendation themselves, and the operation failed.
-   * This stops the recommendation content from being updated.
+   * This stops the recommendation content from being updated. Associated insights are frozen and
+   * placed in the ACCEPTED state.
    *
    * <p>MarkRecommendationFailed can be applied to recommendations in ACTIVE, CLAIMED, SUCCEEDED, or
    * FAILED state.
@@ -663,27 +687,36 @@ public class RecommenderClient implements BackgroundResource {
    * <pre><code>
    * try (RecommenderClient recommenderClient = RecommenderClient.create()) {
    *   String formattedName = RecommenderClient.formatRecommendationName("[PROJECT]", "[LOCATION]", "[RECOMMENDER]", "[RECOMMENDATION]");
+   *   Map&lt;String, String&gt; stateMetadata = new HashMap&lt;&gt;();
    *   String etag = "";
-   *   Recommendation response = recommenderClient.markRecommendationFailed(formattedName, etag);
+   *   Recommendation response = recommenderClient.markRecommendationFailed(formattedName, stateMetadata, etag);
    * }
    * </code></pre>
    *
    * @param name Name of the recommendation.
+   * @param stateMetadata State properties to include with this state. Overwrites any existing
+   *     `state_metadata`.
    * @param etag Fingerprint of the Recommendation. Provides optimistic locking.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Recommendation markRecommendationFailed(String name, String etag) {
+  public final Recommendation markRecommendationFailed(
+      String name, Map<String, String> stateMetadata, String etag) {
     RECOMMENDATION_PATH_TEMPLATE.validate(name, "markRecommendationFailed");
     MarkRecommendationFailedRequest request =
-        MarkRecommendationFailedRequest.newBuilder().setName(name).setEtag(etag).build();
+        MarkRecommendationFailedRequest.newBuilder()
+            .setName(name)
+            .putAllStateMetadata(stateMetadata)
+            .setEtag(etag)
+            .build();
     return markRecommendationFailed(request);
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Mark the Recommendation State as Failed. Users can use this method to indicate to the
+   * Marks the Recommendation State as Failed. Users can use this method to indicate to the
    * Recommender API that they have applied the recommendation themselves, and the operation failed.
-   * This stops the recommendation content from being updated.
+   * This stops the recommendation content from being updated. Associated insights are frozen and
+   * placed in the ACCEPTED state.
    *
    * <p>MarkRecommendationFailed can be applied to recommendations in ACTIVE, CLAIMED, SUCCEEDED, or
    * FAILED state.
@@ -713,9 +746,10 @@ public class RecommenderClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Mark the Recommendation State as Failed. Users can use this method to indicate to the
+   * Marks the Recommendation State as Failed. Users can use this method to indicate to the
    * Recommender API that they have applied the recommendation themselves, and the operation failed.
-   * This stops the recommendation content from being updated.
+   * This stops the recommendation content from being updated. Associated insights are frozen and
+   * placed in the ACCEPTED state.
    *
    * <p>MarkRecommendationFailed can be applied to recommendations in ACTIVE, CLAIMED, SUCCEEDED, or
    * FAILED state.

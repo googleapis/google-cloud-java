@@ -48,6 +48,14 @@ public final class RecommendationOuterClass {
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_recommender_v1beta1_Operation_PathFiltersEntry_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_recommender_v1beta1_Operation_PathValueMatchersEntry_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_recommender_v1beta1_Operation_PathValueMatchersEntry_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_recommender_v1beta1_ValueMatcher_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_recommender_v1beta1_ValueMatcher_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_cloud_recommender_v1beta1_CostProjection_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_recommender_v1beta1_CostProjection_fieldAccessorTable;
@@ -92,38 +100,47 @@ public final class RecommendationOuterClass {
           + "eration_groups\030\002 \003(\01320.google.cloud.reco"
           + "mmender.v1beta1.OperationGroup\"Q\n\016Operat"
           + "ionGroup\022?\n\noperations\030\001 \003(\0132+.google.cl"
-          + "oud.recommender.v1beta1.Operation\"\307\002\n\tOp"
+          + "oud.recommender.v1beta1.Operation\"\353\004\n\tOp"
           + "eration\022\016\n\006action\030\001 \001(\t\022\025\n\rresource_type"
           + "\030\002 \001(\t\022\020\n\010resource\030\003 \001(\t\022\014\n\004path\030\004 \001(\t\022\027"
           + "\n\017source_resource\030\005 \001(\t\022\023\n\013source_path\030\006"
-          + " \001(\t\022%\n\005value\030\007 \001(\0132\026.google.protobuf.Va"
-          + "lue\022R\n\014path_filters\030\010 \003(\0132<.google.cloud"
-          + ".recommender.v1beta1.Operation.PathFilte"
-          + "rsEntry\032J\n\020PathFiltersEntry\022\013\n\003key\030\001 \001(\t"
-          + "\022%\n\005value\030\002 \001(\0132\026.google.protobuf.Value:"
-          + "\0028\001\"_\n\016CostProjection\022 \n\004cost\030\001 \001(\0132\022.go"
-          + "ogle.type.Money\022+\n\010duration\030\002 \001(\0132\031.goog"
-          + "le.protobuf.Duration\"\367\001\n\006Impact\022C\n\010categ"
-          + "ory\030\001 \001(\01621.google.cloud.recommender.v1b"
-          + "eta1.Impact.Category\022K\n\017cost_projection\030"
-          + "d \001(\01320.google.cloud.recommender.v1beta1"
-          + ".CostProjectionH\000\"M\n\010Category\022\030\n\024CATEGOR"
-          + "Y_UNSPECIFIED\020\000\022\010\n\004COST\020\001\022\014\n\010SECURITY\020\002\022"
-          + "\017\n\013PERFORMANCE\020\003B\014\n\nprojection\"\350\002\n\027Recom"
-          + "mendationStateInfo\022N\n\005state\030\001 \001(\0162?.goog"
-          + "le.cloud.recommender.v1beta1.Recommendat"
-          + "ionStateInfo.State\022d\n\016state_metadata\030\002 \003"
-          + "(\0132L.google.cloud.recommender.v1beta1.Re"
-          + "commendationStateInfo.StateMetadataEntry"
-          + "\0324\n\022StateMetadataEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005v"
-          + "alue\030\002 \001(\t:\0028\001\"a\n\005State\022\025\n\021STATE_UNSPECI"
-          + "FIED\020\000\022\n\n\006ACTIVE\020\001\022\013\n\007CLAIMED\020\006\022\r\n\tSUCCE"
-          + "EDED\020\003\022\n\n\006FAILED\020\004\022\r\n\tDISMISSED\020\005B\237\001\n$co"
-          + "m.google.cloud.recommender.v1beta1P\001ZKgo"
-          + "ogle.golang.org/genproto/googleapis/clou"
-          + "d/recommender/v1beta1;recommender\242\002\004CREC"
-          + "\252\002 Google.Cloud.Recommender.V1Beta1b\006pro"
-          + "to3"
+          + " \001(\t\022\'\n\005value\030\007 \001(\0132\026.google.protobuf.Va"
+          + "lueH\000\022G\n\rvalue_matcher\030\n \001(\0132..google.cl"
+          + "oud.recommender.v1beta1.ValueMatcherH\000\022R"
+          + "\n\014path_filters\030\010 \003(\0132<.google.cloud.reco"
+          + "mmender.v1beta1.Operation.PathFiltersEnt"
+          + "ry\022_\n\023path_value_matchers\030\013 \003(\0132B.google"
+          + ".cloud.recommender.v1beta1.Operation.Pat"
+          + "hValueMatchersEntry\032J\n\020PathFiltersEntry\022"
+          + "\013\n\003key\030\001 \001(\t\022%\n\005value\030\002 \001(\0132\026.google.pro"
+          + "tobuf.Value:\0028\001\032h\n\026PathValueMatchersEntr"
+          + "y\022\013\n\003key\030\001 \001(\t\022=\n\005value\030\002 \001(\0132..google.c"
+          + "loud.recommender.v1beta1.ValueMatcher:\0028"
+          + "\001B\014\n\npath_value\":\n\014ValueMatcher\022\031\n\017match"
+          + "es_pattern\030\001 \001(\tH\000B\017\n\rmatch_variant\"_\n\016C"
+          + "ostProjection\022 \n\004cost\030\001 \001(\0132\022.google.typ"
+          + "e.Money\022+\n\010duration\030\002 \001(\0132\031.google.proto"
+          + "buf.Duration\"\212\002\n\006Impact\022C\n\010category\030\001 \001("
+          + "\01621.google.cloud.recommender.v1beta1.Imp"
+          + "act.Category\022K\n\017cost_projection\030d \001(\01320."
+          + "google.cloud.recommender.v1beta1.CostPro"
+          + "jectionH\000\"`\n\010Category\022\030\n\024CATEGORY_UNSPEC"
+          + "IFIED\020\000\022\010\n\004COST\020\001\022\014\n\010SECURITY\020\002\022\017\n\013PERFO"
+          + "RMANCE\020\003\022\021\n\rMANAGEABILITY\020\004B\014\n\nprojectio"
+          + "n\"\350\002\n\027RecommendationStateInfo\022N\n\005state\030\001"
+          + " \001(\0162?.google.cloud.recommender.v1beta1."
+          + "RecommendationStateInfo.State\022d\n\016state_m"
+          + "etadata\030\002 \003(\0132L.google.cloud.recommender"
+          + ".v1beta1.RecommendationStateInfo.StateMe"
+          + "tadataEntry\0324\n\022StateMetadataEntry\022\013\n\003key"
+          + "\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\"a\n\005State\022\025\n\021ST"
+          + "ATE_UNSPECIFIED\020\000\022\n\n\006ACTIVE\020\001\022\013\n\007CLAIMED"
+          + "\020\006\022\r\n\tSUCCEEDED\020\003\022\n\n\006FAILED\020\004\022\r\n\tDISMISS"
+          + "ED\020\005B\237\001\n$com.google.cloud.recommender.v1"
+          + "beta1P\001ZKgoogle.golang.org/genproto/goog"
+          + "leapis/cloud/recommender/v1beta1;recomme"
+          + "nder\242\002\004CREC\252\002 Google.Cloud.Recommender.V"
+          + "1Beta1b\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner() {
@@ -187,7 +204,10 @@ public final class RecommendationOuterClass {
               "SourceResource",
               "SourcePath",
               "Value",
+              "ValueMatcher",
               "PathFilters",
+              "PathValueMatchers",
+              "PathValue",
             });
     internal_static_google_cloud_recommender_v1beta1_Operation_PathFiltersEntry_descriptor =
         internal_static_google_cloud_recommender_v1beta1_Operation_descriptor
@@ -199,8 +219,26 @@ public final class RecommendationOuterClass {
             new java.lang.String[] {
               "Key", "Value",
             });
-    internal_static_google_cloud_recommender_v1beta1_CostProjection_descriptor =
+    internal_static_google_cloud_recommender_v1beta1_Operation_PathValueMatchersEntry_descriptor =
+        internal_static_google_cloud_recommender_v1beta1_Operation_descriptor
+            .getNestedTypes()
+            .get(1);
+    internal_static_google_cloud_recommender_v1beta1_Operation_PathValueMatchersEntry_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_recommender_v1beta1_Operation_PathValueMatchersEntry_descriptor,
+            new java.lang.String[] {
+              "Key", "Value",
+            });
+    internal_static_google_cloud_recommender_v1beta1_ValueMatcher_descriptor =
         getDescriptor().getMessageTypes().get(4);
+    internal_static_google_cloud_recommender_v1beta1_ValueMatcher_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_recommender_v1beta1_ValueMatcher_descriptor,
+            new java.lang.String[] {
+              "MatchesPattern", "MatchVariant",
+            });
+    internal_static_google_cloud_recommender_v1beta1_CostProjection_descriptor =
+        getDescriptor().getMessageTypes().get(5);
     internal_static_google_cloud_recommender_v1beta1_CostProjection_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_recommender_v1beta1_CostProjection_descriptor,
@@ -208,7 +246,7 @@ public final class RecommendationOuterClass {
               "Cost", "Duration",
             });
     internal_static_google_cloud_recommender_v1beta1_Impact_descriptor =
-        getDescriptor().getMessageTypes().get(5);
+        getDescriptor().getMessageTypes().get(6);
     internal_static_google_cloud_recommender_v1beta1_Impact_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_recommender_v1beta1_Impact_descriptor,
@@ -216,7 +254,7 @@ public final class RecommendationOuterClass {
               "Category", "CostProjection", "Projection",
             });
     internal_static_google_cloud_recommender_v1beta1_RecommendationStateInfo_descriptor =
-        getDescriptor().getMessageTypes().get(6);
+        getDescriptor().getMessageTypes().get(7);
     internal_static_google_cloud_recommender_v1beta1_RecommendationStateInfo_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_recommender_v1beta1_RecommendationStateInfo_descriptor,

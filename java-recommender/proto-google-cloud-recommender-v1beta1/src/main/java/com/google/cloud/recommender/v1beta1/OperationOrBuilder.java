@@ -28,7 +28,7 @@ public interface OperationOrBuilder
    *
    * <pre>
    * Type of this operation. Contains one of 'and', 'remove', 'replace', 'move',
-   * 'copy', 'test' and custom operations. This field is case-insensitive and
+   * 'copy', 'test' and 'custom' operations. This field is case-insensitive and
    * always populated.
    * </pre>
    *
@@ -40,7 +40,7 @@ public interface OperationOrBuilder
    *
    * <pre>
    * Type of this operation. Contains one of 'and', 'remove', 'replace', 'move',
-   * 'copy', 'test' and custom operations. This field is case-insensitive and
+   * 'copy', 'test' and 'custom' operations. This field is case-insensitive and
    * always populated.
    * </pre>
    *
@@ -175,7 +175,9 @@ public interface OperationOrBuilder
    *
    *
    * <pre>
-   * Value for the `path` field. Set if action is 'add'/'replace'/'test'.
+   * Value for the `path` field. Will be set for actions:'add'/'replace'.
+   * Maybe set for action: 'test'. Either this or `value_matcher` will be set
+   * for 'test' operation. An exact match must be performed.
    * </pre>
    *
    * <code>.google.protobuf.Value value = 7;</code>
@@ -185,7 +187,9 @@ public interface OperationOrBuilder
    *
    *
    * <pre>
-   * Value for the `path` field. Set if action is 'add'/'replace'/'test'.
+   * Value for the `path` field. Will be set for actions:'add'/'replace'.
+   * Maybe set for action: 'test'. Either this or `value_matcher` will be set
+   * for 'test' operation. An exact match must be performed.
    * </pre>
    *
    * <code>.google.protobuf.Value value = 7;</code>
@@ -195,7 +199,9 @@ public interface OperationOrBuilder
    *
    *
    * <pre>
-   * Value for the `path` field. Set if action is 'add'/'replace'/'test'.
+   * Value for the `path` field. Will be set for actions:'add'/'replace'.
+   * Maybe set for action: 'test'. Either this or `value_matcher` will be set
+   * for 'test' operation. An exact match must be performed.
    * </pre>
    *
    * <code>.google.protobuf.Value value = 7;</code>
@@ -206,22 +212,59 @@ public interface OperationOrBuilder
    *
    *
    * <pre>
+   * Can be set for action 'test' for advanced matching for the value of
+   * 'path' field. Either this or `value` will be set for 'test' operation.
+   * </pre>
+   *
+   * <code>.google.cloud.recommender.v1beta1.ValueMatcher value_matcher = 10;</code>
+   */
+  boolean hasValueMatcher();
+  /**
+   *
+   *
+   * <pre>
+   * Can be set for action 'test' for advanced matching for the value of
+   * 'path' field. Either this or `value` will be set for 'test' operation.
+   * </pre>
+   *
+   * <code>.google.cloud.recommender.v1beta1.ValueMatcher value_matcher = 10;</code>
+   */
+  com.google.cloud.recommender.v1beta1.ValueMatcher getValueMatcher();
+  /**
+   *
+   *
+   * <pre>
+   * Can be set for action 'test' for advanced matching for the value of
+   * 'path' field. Either this or `value` will be set for 'test' operation.
+   * </pre>
+   *
+   * <code>.google.cloud.recommender.v1beta1.ValueMatcher value_matcher = 10;</code>
+   */
+  com.google.cloud.recommender.v1beta1.ValueMatcherOrBuilder getValueMatcherOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * Set of filters to apply if `path` refers to array elements or nested array
    * elements in order to narrow down to a single unique element that is being
    * tested/modified.
-   * Note that this is intended to be an exact match per filter.
-   * Example: {
+   * This is intended to be an exact match per filter. To perform advanced
+   * matching, use path_value_matchers.
+   * * Example: {
    *   "/versions/&#42;&#47;name" : "it-123"
    *   "/versions/&#42;&#47;targetSize/percent": 20
-   * }
-   * Example: {
+   *   }
+   * * Example: {
    *   "/bindings/&#42;&#47;role": "roles/admin"
    *   "/bindings/&#42;&#47;condition" : null
-   * }
-   * Example: {
+   *   }
+   * * Example: {
    *   "/bindings/&#42;&#47;role": "roles/admin"
    *   "/bindings/&#42;&#47;members/&#42;" : ["x&#64;google.com", "y&#64;google.com"]
-   * }
+   *   }
+   * When both path_filters and path_value_matchers are set, an implicit AND
+   * must be performed.
    * </pre>
    *
    * <code>map&lt;string, .google.protobuf.Value&gt; path_filters = 8;</code>
@@ -234,19 +277,22 @@ public interface OperationOrBuilder
    * Set of filters to apply if `path` refers to array elements or nested array
    * elements in order to narrow down to a single unique element that is being
    * tested/modified.
-   * Note that this is intended to be an exact match per filter.
-   * Example: {
+   * This is intended to be an exact match per filter. To perform advanced
+   * matching, use path_value_matchers.
+   * * Example: {
    *   "/versions/&#42;&#47;name" : "it-123"
    *   "/versions/&#42;&#47;targetSize/percent": 20
-   * }
-   * Example: {
+   *   }
+   * * Example: {
    *   "/bindings/&#42;&#47;role": "roles/admin"
    *   "/bindings/&#42;&#47;condition" : null
-   * }
-   * Example: {
+   *   }
+   * * Example: {
    *   "/bindings/&#42;&#47;role": "roles/admin"
    *   "/bindings/&#42;&#47;members/&#42;" : ["x&#64;google.com", "y&#64;google.com"]
-   * }
+   *   }
+   * When both path_filters and path_value_matchers are set, an implicit AND
+   * must be performed.
    * </pre>
    *
    * <code>map&lt;string, .google.protobuf.Value&gt; path_filters = 8;</code>
@@ -262,19 +308,22 @@ public interface OperationOrBuilder
    * Set of filters to apply if `path` refers to array elements or nested array
    * elements in order to narrow down to a single unique element that is being
    * tested/modified.
-   * Note that this is intended to be an exact match per filter.
-   * Example: {
+   * This is intended to be an exact match per filter. To perform advanced
+   * matching, use path_value_matchers.
+   * * Example: {
    *   "/versions/&#42;&#47;name" : "it-123"
    *   "/versions/&#42;&#47;targetSize/percent": 20
-   * }
-   * Example: {
+   *   }
+   * * Example: {
    *   "/bindings/&#42;&#47;role": "roles/admin"
    *   "/bindings/&#42;&#47;condition" : null
-   * }
-   * Example: {
+   *   }
+   * * Example: {
    *   "/bindings/&#42;&#47;role": "roles/admin"
    *   "/bindings/&#42;&#47;members/&#42;" : ["x&#64;google.com", "y&#64;google.com"]
-   * }
+   *   }
+   * When both path_filters and path_value_matchers are set, an implicit AND
+   * must be performed.
    * </pre>
    *
    * <code>map&lt;string, .google.protobuf.Value&gt; path_filters = 8;</code>
@@ -287,19 +336,22 @@ public interface OperationOrBuilder
    * Set of filters to apply if `path` refers to array elements or nested array
    * elements in order to narrow down to a single unique element that is being
    * tested/modified.
-   * Note that this is intended to be an exact match per filter.
-   * Example: {
+   * This is intended to be an exact match per filter. To perform advanced
+   * matching, use path_value_matchers.
+   * * Example: {
    *   "/versions/&#42;&#47;name" : "it-123"
    *   "/versions/&#42;&#47;targetSize/percent": 20
-   * }
-   * Example: {
+   *   }
+   * * Example: {
    *   "/bindings/&#42;&#47;role": "roles/admin"
    *   "/bindings/&#42;&#47;condition" : null
-   * }
-   * Example: {
+   *   }
+   * * Example: {
    *   "/bindings/&#42;&#47;role": "roles/admin"
    *   "/bindings/&#42;&#47;members/&#42;" : ["x&#64;google.com", "y&#64;google.com"]
-   * }
+   *   }
+   * When both path_filters and path_value_matchers are set, an implicit AND
+   * must be performed.
    * </pre>
    *
    * <code>map&lt;string, .google.protobuf.Value&gt; path_filters = 8;</code>
@@ -313,22 +365,115 @@ public interface OperationOrBuilder
    * Set of filters to apply if `path` refers to array elements or nested array
    * elements in order to narrow down to a single unique element that is being
    * tested/modified.
-   * Note that this is intended to be an exact match per filter.
-   * Example: {
+   * This is intended to be an exact match per filter. To perform advanced
+   * matching, use path_value_matchers.
+   * * Example: {
    *   "/versions/&#42;&#47;name" : "it-123"
    *   "/versions/&#42;&#47;targetSize/percent": 20
-   * }
-   * Example: {
+   *   }
+   * * Example: {
    *   "/bindings/&#42;&#47;role": "roles/admin"
    *   "/bindings/&#42;&#47;condition" : null
-   * }
-   * Example: {
+   *   }
+   * * Example: {
    *   "/bindings/&#42;&#47;role": "roles/admin"
    *   "/bindings/&#42;&#47;members/&#42;" : ["x&#64;google.com", "y&#64;google.com"]
-   * }
+   *   }
+   * When both path_filters and path_value_matchers are set, an implicit AND
+   * must be performed.
    * </pre>
    *
    * <code>map&lt;string, .google.protobuf.Value&gt; path_filters = 8;</code>
    */
   com.google.protobuf.Value getPathFiltersOrThrow(java.lang.String key);
+
+  /**
+   *
+   *
+   * <pre>
+   * Similar to path_filters, this contains set of filters to apply if `path`
+   * field referes to array elements. This is meant to support value matching
+   * beyond exact match. To perform exact match, use path_filters.
+   * When both path_filters and path_value_matchers are set, an implicit AND
+   * must be performed.
+   * </pre>
+   *
+   * <code>
+   * map&lt;string, .google.cloud.recommender.v1beta1.ValueMatcher&gt; path_value_matchers = 11;
+   * </code>
+   */
+  int getPathValueMatchersCount();
+  /**
+   *
+   *
+   * <pre>
+   * Similar to path_filters, this contains set of filters to apply if `path`
+   * field referes to array elements. This is meant to support value matching
+   * beyond exact match. To perform exact match, use path_filters.
+   * When both path_filters and path_value_matchers are set, an implicit AND
+   * must be performed.
+   * </pre>
+   *
+   * <code>
+   * map&lt;string, .google.cloud.recommender.v1beta1.ValueMatcher&gt; path_value_matchers = 11;
+   * </code>
+   */
+  boolean containsPathValueMatchers(java.lang.String key);
+  /** Use {@link #getPathValueMatchersMap()} instead. */
+  @java.lang.Deprecated
+  java.util.Map<java.lang.String, com.google.cloud.recommender.v1beta1.ValueMatcher>
+      getPathValueMatchers();
+  /**
+   *
+   *
+   * <pre>
+   * Similar to path_filters, this contains set of filters to apply if `path`
+   * field referes to array elements. This is meant to support value matching
+   * beyond exact match. To perform exact match, use path_filters.
+   * When both path_filters and path_value_matchers are set, an implicit AND
+   * must be performed.
+   * </pre>
+   *
+   * <code>
+   * map&lt;string, .google.cloud.recommender.v1beta1.ValueMatcher&gt; path_value_matchers = 11;
+   * </code>
+   */
+  java.util.Map<java.lang.String, com.google.cloud.recommender.v1beta1.ValueMatcher>
+      getPathValueMatchersMap();
+  /**
+   *
+   *
+   * <pre>
+   * Similar to path_filters, this contains set of filters to apply if `path`
+   * field referes to array elements. This is meant to support value matching
+   * beyond exact match. To perform exact match, use path_filters.
+   * When both path_filters and path_value_matchers are set, an implicit AND
+   * must be performed.
+   * </pre>
+   *
+   * <code>
+   * map&lt;string, .google.cloud.recommender.v1beta1.ValueMatcher&gt; path_value_matchers = 11;
+   * </code>
+   */
+  com.google.cloud.recommender.v1beta1.ValueMatcher getPathValueMatchersOrDefault(
+      java.lang.String key, com.google.cloud.recommender.v1beta1.ValueMatcher defaultValue);
+  /**
+   *
+   *
+   * <pre>
+   * Similar to path_filters, this contains set of filters to apply if `path`
+   * field referes to array elements. This is meant to support value matching
+   * beyond exact match. To perform exact match, use path_filters.
+   * When both path_filters and path_value_matchers are set, an implicit AND
+   * must be performed.
+   * </pre>
+   *
+   * <code>
+   * map&lt;string, .google.cloud.recommender.v1beta1.ValueMatcher&gt; path_value_matchers = 11;
+   * </code>
+   */
+  com.google.cloud.recommender.v1beta1.ValueMatcher getPathValueMatchersOrThrow(
+      java.lang.String key);
+
+  public com.google.cloud.recommender.v1beta1.Operation.PathValueCase getPathValueCase();
 }

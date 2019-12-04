@@ -30,7 +30,9 @@ import io.grpc.Status;
 import io.grpc.StatusRuntimeException;
 import java.io.IOException;
 import java.util.Arrays;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.UUID;
 import org.junit.After;
 import org.junit.AfterClass;
@@ -92,9 +94,10 @@ public class RecommenderClientTest {
 
     String formattedParent =
         RecommenderClient.formatRecommenderName("[PROJECT]", "[LOCATION]", "[RECOMMENDER]");
+    String filter = "filter-1274492040";
 
     ListRecommendationsPagedResponse pagedListResponse =
-        client.listRecommendations(formattedParent);
+        client.listRecommendations(formattedParent, filter);
 
     List<Recommendation> resources = Lists.newArrayList(pagedListResponse.iterateAll());
     Assert.assertEquals(1, resources.size());
@@ -105,6 +108,7 @@ public class RecommenderClientTest {
     ListRecommendationsRequest actualRequest = (ListRecommendationsRequest) actualRequests.get(0);
 
     Assert.assertEquals(formattedParent, actualRequest.getParent());
+    Assert.assertEquals(filter, actualRequest.getFilter());
     Assert.assertTrue(
         channelProvider.isHeaderSent(
             ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
@@ -120,8 +124,9 @@ public class RecommenderClientTest {
     try {
       String formattedParent =
           RecommenderClient.formatRecommenderName("[PROJECT]", "[LOCATION]", "[RECOMMENDER]");
+      String filter = "filter-1274492040";
 
-      client.listRecommendations(formattedParent);
+      client.listRecommendations(formattedParent, filter);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception
@@ -199,9 +204,11 @@ public class RecommenderClientTest {
     String formattedName =
         RecommenderClient.formatRecommendationName(
             "[PROJECT]", "[LOCATION]", "[RECOMMENDER]", "[RECOMMENDATION]");
+    Map<String, String> stateMetadata = new HashMap<>();
     String etag = "etag3123477";
 
-    Recommendation actualResponse = client.markRecommendationClaimed(formattedName, etag);
+    Recommendation actualResponse =
+        client.markRecommendationClaimed(formattedName, stateMetadata, etag);
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<AbstractMessage> actualRequests = mockRecommender.getRequests();
@@ -210,6 +217,7 @@ public class RecommenderClientTest {
         (MarkRecommendationClaimedRequest) actualRequests.get(0);
 
     Assert.assertEquals(formattedName, actualRequest.getName());
+    Assert.assertEquals(stateMetadata, actualRequest.getStateMetadataMap());
     Assert.assertEquals(etag, actualRequest.getEtag());
     Assert.assertTrue(
         channelProvider.isHeaderSent(
@@ -227,9 +235,10 @@ public class RecommenderClientTest {
       String formattedName =
           RecommenderClient.formatRecommendationName(
               "[PROJECT]", "[LOCATION]", "[RECOMMENDER]", "[RECOMMENDATION]");
+      Map<String, String> stateMetadata = new HashMap<>();
       String etag = "etag3123477";
 
-      client.markRecommendationClaimed(formattedName, etag);
+      client.markRecommendationClaimed(formattedName, stateMetadata, etag);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception
@@ -255,9 +264,11 @@ public class RecommenderClientTest {
     String formattedName =
         RecommenderClient.formatRecommendationName(
             "[PROJECT]", "[LOCATION]", "[RECOMMENDER]", "[RECOMMENDATION]");
+    Map<String, String> stateMetadata = new HashMap<>();
     String etag = "etag3123477";
 
-    Recommendation actualResponse = client.markRecommendationSucceeded(formattedName, etag);
+    Recommendation actualResponse =
+        client.markRecommendationSucceeded(formattedName, stateMetadata, etag);
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<AbstractMessage> actualRequests = mockRecommender.getRequests();
@@ -266,6 +277,7 @@ public class RecommenderClientTest {
         (MarkRecommendationSucceededRequest) actualRequests.get(0);
 
     Assert.assertEquals(formattedName, actualRequest.getName());
+    Assert.assertEquals(stateMetadata, actualRequest.getStateMetadataMap());
     Assert.assertEquals(etag, actualRequest.getEtag());
     Assert.assertTrue(
         channelProvider.isHeaderSent(
@@ -283,9 +295,10 @@ public class RecommenderClientTest {
       String formattedName =
           RecommenderClient.formatRecommendationName(
               "[PROJECT]", "[LOCATION]", "[RECOMMENDER]", "[RECOMMENDATION]");
+      Map<String, String> stateMetadata = new HashMap<>();
       String etag = "etag3123477";
 
-      client.markRecommendationSucceeded(formattedName, etag);
+      client.markRecommendationSucceeded(formattedName, stateMetadata, etag);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception
@@ -311,9 +324,11 @@ public class RecommenderClientTest {
     String formattedName =
         RecommenderClient.formatRecommendationName(
             "[PROJECT]", "[LOCATION]", "[RECOMMENDER]", "[RECOMMENDATION]");
+    Map<String, String> stateMetadata = new HashMap<>();
     String etag = "etag3123477";
 
-    Recommendation actualResponse = client.markRecommendationFailed(formattedName, etag);
+    Recommendation actualResponse =
+        client.markRecommendationFailed(formattedName, stateMetadata, etag);
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<AbstractMessage> actualRequests = mockRecommender.getRequests();
@@ -322,6 +337,7 @@ public class RecommenderClientTest {
         (MarkRecommendationFailedRequest) actualRequests.get(0);
 
     Assert.assertEquals(formattedName, actualRequest.getName());
+    Assert.assertEquals(stateMetadata, actualRequest.getStateMetadataMap());
     Assert.assertEquals(etag, actualRequest.getEtag());
     Assert.assertTrue(
         channelProvider.isHeaderSent(
@@ -339,9 +355,10 @@ public class RecommenderClientTest {
       String formattedName =
           RecommenderClient.formatRecommendationName(
               "[PROJECT]", "[LOCATION]", "[RECOMMENDER]", "[RECOMMENDATION]");
+      Map<String, String> stateMetadata = new HashMap<>();
       String etag = "etag3123477";
 
-      client.markRecommendationFailed(formattedName, etag);
+      client.markRecommendationFailed(formattedName, stateMetadata, etag);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception

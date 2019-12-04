@@ -138,7 +138,7 @@ public final class RecommendationStateInfo extends com.google.protobuf.Generated
    *
    *
    * <pre>
-   * Represents Recommendation State
+   * Represents Recommendation State.
    * </pre>
    *
    * Protobuf enum {@code google.cloud.recommender.v1beta1.RecommendationStateInfo.State}

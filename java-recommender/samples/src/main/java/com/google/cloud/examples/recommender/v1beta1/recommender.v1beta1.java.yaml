@@ -1,0 +1,15 @@
+---
+type: manifest/samples
+schema_version: 3
+java: &java
+  environment: "java"
+  bin: "mvn exec:java"
+  base_path: "samples/src/main/java/com/google/cloud/examples/recommender/v1beta1"
+  package: "com.google.cloud.examples.recommender.v1beta1"
+  invocation: "{bin} -Dexec.mainClass={class} -Dexec.args='@args'"
+samples:
+- <<: *java
+  sample: "sample_list_recommendations"
+  path: "{base_path}/SampleListRecommendations.java"
+  class: "{package}.SampleListRecommendations"
+  region_tag: ""

@@ -26,10 +26,10 @@ import static io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall;
  *
  *
  * <pre>
- * Provides recommendations for cloud customers for various categories like
- * performance optimization, cost savings, reliability, feature discovery, etc.
- * These recommendations are generated automatically based on analysis of user
- * resources, configuration and monitoring metrics.
+ * Provides insights and recommendations for cloud customers for various
+ * categories like performance optimization, cost savings, reliability, feature
+ * discovery, etc. Insights and recommendations are generated automatically
+ * based on analysis of user resources, configuration and monitoring metrics.
  * </pre>
  */
 @javax.annotation.Generated(
@@ -371,10 +371,10 @@ public final class RecommenderGrpc {
    *
    *
    * <pre>
-   * Provides recommendations for cloud customers for various categories like
-   * performance optimization, cost savings, reliability, feature discovery, etc.
-   * These recommendations are generated automatically based on analysis of user
-   * resources, configuration and monitoring metrics.
+   * Provides insights and recommendations for cloud customers for various
+   * categories like performance optimization, cost savings, reliability, feature
+   * discovery, etc. Insights and recommendations are generated automatically
+   * based on analysis of user resources, configuration and monitoring metrics.
    * </pre>
    */
   public abstract static class RecommenderImplBase implements io.grpc.BindableService {
@@ -414,12 +414,12 @@ public final class RecommenderGrpc {
      *
      *
      * <pre>
-     * Mark the Recommendation State as Claimed. Users can use this method to
+     * Marks the Recommendation State as Claimed. Users can use this method to
      * indicate to the Recommender API that they are starting to apply the
      * recommendation themselves. This stops the recommendation content from being
-     * updated.
-     * MarkRecommendationClaimed can be applied to recommendations in CLAIMED,
-     * SUCCEEDED, FAILED, or ACTIVE state.
+     * updated. Associated insights are frozen and placed in the ACCEPTED state.
+     * MarkRecommendationClaimed can be applied to recommendations in CLAIMED or
+     * ACTIVE state.
      * Requires the recommender.*.update IAM permission for the specified
      * recommender.
      * </pre>
@@ -435,10 +435,11 @@ public final class RecommenderGrpc {
      *
      *
      * <pre>
-     * Mark the Recommendation State as Succeeded. Users can use this method to
+     * Marks the Recommendation State as Succeeded. Users can use this method to
      * indicate to the Recommender API that they have applied the recommendation
      * themselves, and the operation was successful. This stops the recommendation
-     * content from being updated.
+     * content from being updated. Associated insights are frozen and placed in
+     * the ACCEPTED state.
      * MarkRecommendationSucceeded can be applied to recommendations in ACTIVE,
      * CLAIMED, SUCCEEDED, or FAILED state.
      * Requires the recommender.*.update IAM permission for the specified
@@ -456,10 +457,11 @@ public final class RecommenderGrpc {
      *
      *
      * <pre>
-     * Mark the Recommendation State as Failed. Users can use this method to
+     * Marks the Recommendation State as Failed. Users can use this method to
      * indicate to the Recommender API that they have applied the recommendation
      * themselves, and the operation failed. This stops the recommendation content
-     * from being updated.
+     * from being updated. Associated insights are frozen and placed in the
+     * ACCEPTED state.
      * MarkRecommendationFailed can be applied to recommendations in ACTIVE,
      * CLAIMED, SUCCEEDED, or FAILED state.
      * Requires the recommender.*.update IAM permission for the specified
@@ -519,10 +521,10 @@ public final class RecommenderGrpc {
    *
    *
    * <pre>
-   * Provides recommendations for cloud customers for various categories like
-   * performance optimization, cost savings, reliability, feature discovery, etc.
-   * These recommendations are generated automatically based on analysis of user
-   * resources, configuration and monitoring metrics.
+   * Provides insights and recommendations for cloud customers for various
+   * categories like performance optimization, cost savings, reliability, feature
+   * discovery, etc. Insights and recommendations are generated automatically
+   * based on analysis of user resources, configuration and monitoring metrics.
    * </pre>
    */
   public static final class RecommenderStub extends io.grpc.stub.AbstractStub<RecommenderStub> {
@@ -580,12 +582,12 @@ public final class RecommenderGrpc {
      *
      *
      * <pre>
-     * Mark the Recommendation State as Claimed. Users can use this method to
+     * Marks the Recommendation State as Claimed. Users can use this method to
      * indicate to the Recommender API that they are starting to apply the
      * recommendation themselves. This stops the recommendation content from being
-     * updated.
-     * MarkRecommendationClaimed can be applied to recommendations in CLAIMED,
-     * SUCCEEDED, FAILED, or ACTIVE state.
+     * updated. Associated insights are frozen and placed in the ACCEPTED state.
+     * MarkRecommendationClaimed can be applied to recommendations in CLAIMED or
+     * ACTIVE state.
      * Requires the recommender.*.update IAM permission for the specified
      * recommender.
      * </pre>
@@ -604,10 +606,11 @@ public final class RecommenderGrpc {
      *
      *
      * <pre>
-     * Mark the Recommendation State as Succeeded. Users can use this method to
+     * Marks the Recommendation State as Succeeded. Users can use this method to
      * indicate to the Recommender API that they have applied the recommendation
      * themselves, and the operation was successful. This stops the recommendation
-     * content from being updated.
+     * content from being updated. Associated insights are frozen and placed in
+     * the ACCEPTED state.
      * MarkRecommendationSucceeded can be applied to recommendations in ACTIVE,
      * CLAIMED, SUCCEEDED, or FAILED state.
      * Requires the recommender.*.update IAM permission for the specified
@@ -628,10 +631,11 @@ public final class RecommenderGrpc {
      *
      *
      * <pre>
-     * Mark the Recommendation State as Failed. Users can use this method to
+     * Marks the Recommendation State as Failed. Users can use this method to
      * indicate to the Recommender API that they have applied the recommendation
      * themselves, and the operation failed. This stops the recommendation content
-     * from being updated.
+     * from being updated. Associated insights are frozen and placed in the
+     * ACCEPTED state.
      * MarkRecommendationFailed can be applied to recommendations in ACTIVE,
      * CLAIMED, SUCCEEDED, or FAILED state.
      * Requires the recommender.*.update IAM permission for the specified
@@ -653,10 +657,10 @@ public final class RecommenderGrpc {
    *
    *
    * <pre>
-   * Provides recommendations for cloud customers for various categories like
-   * performance optimization, cost savings, reliability, feature discovery, etc.
-   * These recommendations are generated automatically based on analysis of user
-   * resources, configuration and monitoring metrics.
+   * Provides insights and recommendations for cloud customers for various
+   * categories like performance optimization, cost savings, reliability, feature
+   * discovery, etc. Insights and recommendations are generated automatically
+   * based on analysis of user resources, configuration and monitoring metrics.
    * </pre>
    */
   public static final class RecommenderBlockingStub
@@ -707,12 +711,12 @@ public final class RecommenderGrpc {
      *
      *
      * <pre>
-     * Mark the Recommendation State as Claimed. Users can use this method to
+     * Marks the Recommendation State as Claimed. Users can use this method to
      * indicate to the Recommender API that they are starting to apply the
      * recommendation themselves. This stops the recommendation content from being
-     * updated.
-     * MarkRecommendationClaimed can be applied to recommendations in CLAIMED,
-     * SUCCEEDED, FAILED, or ACTIVE state.
+     * updated. Associated insights are frozen and placed in the ACCEPTED state.
+     * MarkRecommendationClaimed can be applied to recommendations in CLAIMED or
+     * ACTIVE state.
      * Requires the recommender.*.update IAM permission for the specified
      * recommender.
      * </pre>
@@ -727,10 +731,11 @@ public final class RecommenderGrpc {
      *
      *
      * <pre>
-     * Mark the Recommendation State as Succeeded. Users can use this method to
+     * Marks the Recommendation State as Succeeded. Users can use this method to
      * indicate to the Recommender API that they have applied the recommendation
      * themselves, and the operation was successful. This stops the recommendation
-     * content from being updated.
+     * content from being updated. Associated insights are frozen and placed in
+     * the ACCEPTED state.
      * MarkRecommendationSucceeded can be applied to recommendations in ACTIVE,
      * CLAIMED, SUCCEEDED, or FAILED state.
      * Requires the recommender.*.update IAM permission for the specified
@@ -747,10 +752,11 @@ public final class RecommenderGrpc {
      *
      *
      * <pre>
-     * Mark the Recommendation State as Failed. Users can use this method to
+     * Marks the Recommendation State as Failed. Users can use this method to
      * indicate to the Recommender API that they have applied the recommendation
      * themselves, and the operation failed. This stops the recommendation content
-     * from being updated.
+     * from being updated. Associated insights are frozen and placed in the
+     * ACCEPTED state.
      * MarkRecommendationFailed can be applied to recommendations in ACTIVE,
      * CLAIMED, SUCCEEDED, or FAILED state.
      * Requires the recommender.*.update IAM permission for the specified
@@ -768,10 +774,10 @@ public final class RecommenderGrpc {
    *
    *
    * <pre>
-   * Provides recommendations for cloud customers for various categories like
-   * performance optimization, cost savings, reliability, feature discovery, etc.
-   * These recommendations are generated automatically based on analysis of user
-   * resources, configuration and monitoring metrics.
+   * Provides insights and recommendations for cloud customers for various
+   * categories like performance optimization, cost savings, reliability, feature
+   * discovery, etc. Insights and recommendations are generated automatically
+   * based on analysis of user resources, configuration and monitoring metrics.
    * </pre>
    */
   public static final class RecommenderFutureStub
@@ -825,12 +831,12 @@ public final class RecommenderGrpc {
      *
      *
      * <pre>
-     * Mark the Recommendation State as Claimed. Users can use this method to
+     * Marks the Recommendation State as Claimed. Users can use this method to
      * indicate to the Recommender API that they are starting to apply the
      * recommendation themselves. This stops the recommendation content from being
-     * updated.
-     * MarkRecommendationClaimed can be applied to recommendations in CLAIMED,
-     * SUCCEEDED, FAILED, or ACTIVE state.
+     * updated. Associated insights are frozen and placed in the ACCEPTED state.
+     * MarkRecommendationClaimed can be applied to recommendations in CLAIMED or
+     * ACTIVE state.
      * Requires the recommender.*.update IAM permission for the specified
      * recommender.
      * </pre>
@@ -848,10 +854,11 @@ public final class RecommenderGrpc {
      *
      *
      * <pre>
-     * Mark the Recommendation State as Succeeded. Users can use this method to
+     * Marks the Recommendation State as Succeeded. Users can use this method to
      * indicate to the Recommender API that they have applied the recommendation
      * themselves, and the operation was successful. This stops the recommendation
-     * content from being updated.
+     * content from being updated. Associated insights are frozen and placed in
+     * the ACCEPTED state.
      * MarkRecommendationSucceeded can be applied to recommendations in ACTIVE,
      * CLAIMED, SUCCEEDED, or FAILED state.
      * Requires the recommender.*.update IAM permission for the specified
@@ -871,10 +878,11 @@ public final class RecommenderGrpc {
      *
      *
      * <pre>
-     * Mark the Recommendation State as Failed. Users can use this method to
+     * Marks the Recommendation State as Failed. Users can use this method to
      * indicate to the Recommender API that they have applied the recommendation
      * themselves, and the operation failed. This stops the recommendation content
-     * from being updated.
+     * from being updated. Associated insights are frozen and placed in the
+     * ACCEPTED state.
      * MarkRecommendationFailed can be applied to recommendations in ACTIVE,
      * CLAIMED, SUCCEEDED, or FAILED state.
      * Requires the recommender.*.update IAM permission for the specified

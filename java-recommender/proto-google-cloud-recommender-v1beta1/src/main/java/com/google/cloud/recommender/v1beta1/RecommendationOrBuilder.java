@@ -77,10 +77,11 @@ public interface RecommendationOrBuilder
    * <pre>
    * Contains an identifier for a subtype of recommendations produced for the
    * same recommender. Subtype is a function of content and impact, meaning a
-   * new subtype will be added when either content or primary impact category
-   * changes.
+   * new subtype might be added when significant changes to `content` or
+   * `primary_impact.category` are introduced. See the Recommenders section
+   * to see a list of subtypes for a given Recommender.
    * Examples:
-   *   For recommender = "google.iam.policy.RoleRecommender",
+   *   For recommender = "google.iam.policy.Recommender",
    *   recommender_subtype can be one of "REMOVE_ROLE"/"REPLACE_ROLE"
    * </pre>
    *
@@ -93,10 +94,11 @@ public interface RecommendationOrBuilder
    * <pre>
    * Contains an identifier for a subtype of recommendations produced for the
    * same recommender. Subtype is a function of content and impact, meaning a
-   * new subtype will be added when either content or primary impact category
-   * changes.
+   * new subtype might be added when significant changes to `content` or
+   * `primary_impact.category` are introduced. See the Recommenders section
+   * to see a list of subtypes for a given Recommender.
    * Examples:
-   *   For recommender = "google.iam.policy.RoleRecommender",
+   *   For recommender = "google.iam.policy.Recommender",
    *   recommender_subtype can be one of "REMOVE_ROLE"/"REPLACE_ROLE"
    * </pre>
    *
