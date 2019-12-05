@@ -93,11 +93,11 @@ If you are using Maven, add this to your pom.xml file
 [//]: # ({x-version-update-start:google-cloud-storage:released})
 If you are using Gradle, add this to your dependencies
 ```Groovy
-compile 'com.google.cloud:google-cloud-storage:1.101.0'
+compile 'com.google.cloud:google-cloud-storage:1.102.0'
 ```
 If you are using SBT, add this to your dependencies
 ```Scala
-libraryDependencies += "com.google.cloud" % "google-cloud-storage" % "1.101.0"
+libraryDependencies += "com.google.cloud" % "google-cloud-storage" % "1.102.0"
 ```
 [//]: # ({x-version-update-end})
 
