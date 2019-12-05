@@ -379,6 +379,15 @@ public class SpannerOptions extends ServiceOptions<Spanner, SpannerOptions> {
           emulatorHost = "http://" + emulatorHost;
         }
         this.setHost(emulatorHost);
+        // Channels are secure by default (via SSL/TLS). For the example we disable TLS to avoid
+        // needing certificates.
+        this.setChannelConfigurator(
+            new ApiFunction<ManagedChannelBuilder, ManagedChannelBuilder>() {
+              @Override
+              public ManagedChannelBuilder apply(ManagedChannelBuilder builder) {
+                return builder.usePlaintext();
+              }
+            });
       }
       return new SpannerOptions(this);
     }

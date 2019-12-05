@@ -40,20 +40,7 @@ class SpannerBenchWrapperImpl extends SpannerBenchWrapperImplBase {
   private DatabaseClient dbClient;
 
   public SpannerBenchWrapperImpl() {
-    SpannerOptions.Builder builder =
-        SpannerOptions.newBuilder()
-            .setProjectId("test-project-id")
-            // Channels are secure by default (via SSL/TLS). For the example we disable TLS to avoid
-            // needing certificates.
-            .setChannelConfigurator(
-                new ApiFunction<ManagedChannelBuilder, ManagedChannelBuilder>() {
-                  @Override
-                  public ManagedChannelBuilder apply(ManagedChannelBuilder builder) {
-                    return builder.usePlaintext();
-                  }
-                });
-
-    SpannerOptions options = builder.build();
+    SpannerOptions options = SpannerOptions.newBuilder().setProjectId("test-project-id").build();
     spanner = options.getService();
 
     dbClient =
