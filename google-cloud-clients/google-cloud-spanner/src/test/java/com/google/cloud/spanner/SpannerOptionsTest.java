@@ -405,7 +405,7 @@ public class SpannerOptionsTest {
 
   @Test
   public void testSetEmulatorHostWithoutProtocol() {
-    // If the host has not protocol as prefix, it will automatically prefix it with "http://".
+    // If the host doesn't have a protocol as a prefix, it will automatically be prefixed with "http://".
     SpannerOptions options = SpannerOptions.newBuilder()
         .setProjectId("[PROJECT]")
         .setEmulatorHost("localhost:1234")
