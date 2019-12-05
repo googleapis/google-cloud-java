@@ -180,6 +180,7 @@
     <module>proto-google-cloud-recommender-v1beta1</module>
     <module>grpc-google-cloud-recommender-v1beta1</module>
     <module>google-cloud-recommender</module>
+    <module>google-cloud-recommender-bom</module>
   </modules>
 
   <reporting>
