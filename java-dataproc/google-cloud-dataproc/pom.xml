@@ -11,7 +11,7 @@
   <parent>
     <groupId>com.google.cloud</groupId>
     <artifactId>google-cloud-dataproc-parent</artifactId>
-    <version>0.117.0</version><!-- {x-version-update:google-cloud-dataproc:current} -->
+    <version>0.117.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-dataproc:current} -->
   </parent>
   <properties>
     <site.installationModule>google-cloud-dataproc</site.installationModule>
