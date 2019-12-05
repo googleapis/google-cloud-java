@@ -30,7 +30,7 @@ This library supports the following Google Cloud Platform services with clients 
 
 This library supports the following Google Cloud Platform services with clients at a [Beta](#versioning) quality level:
 
--  [BigQuery Data Transfer](google-cloud-clients/google-cloud-bigquerydatatransfer) (Beta)
+-  [BigQuery Data Transfer](https://github.com/googleapis/java-bigquerydatatransfer) (Beta)
 -  [Cloud Asset](https://github.com/googleapis/java-asset) (Beta)
 -  [Cloud AutoML](https://github.com/googleapis/java-automl) (Beta)
 -  [Cloud Container Analysis](ghttps://github.com/googleapis/java-containeranalysis) (Beta)
