@@ -22,8 +22,7 @@ import java.util.Properties;
 
 class Main {
   public static void main(String[] args) throws Exception {
-    Properties properties = new Properties(System.getProperties());
-    String port = properties.getProperty("port");
+    String port = System.getProperty("port");
     if (port == null || port.equals("")) {
       System.err.println("Usage: mvn clean install exec:java -DskipTests=true -Dport=8081");
       System.exit(1);
