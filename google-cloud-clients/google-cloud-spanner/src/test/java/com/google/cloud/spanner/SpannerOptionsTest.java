@@ -35,7 +35,6 @@ import java.util.List;
 import java.util.Map;
 import org.junit.Rule;
 import org.junit.Test;
-import org.junit.contrib.java.lang.system.EnvironmentVariables;
 import org.junit.rules.ExpectedException;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
@@ -47,7 +46,6 @@ import org.threeten.bp.Duration;
 public class SpannerOptionsTest {
 
   @Rule public ExpectedException thrown = ExpectedException.none();
-  @Rule public final EnvironmentVariables environmentVariables = new EnvironmentVariables();
 
   @Test
   public void defaultBuilder() {
@@ -408,20 +406,22 @@ public class SpannerOptionsTest {
   @Test
   public void testSetEmulatorHostWithoutProtocol() {
     // If the host has not protocol as prefix, it will automatically prefix it with "http://".
-    environmentVariables.set("SPANNER_EMULATOR_HOST", "localhost:1234");
-    SpannerOptions options = SpannerOptions.newBuilder().setProjectId("[PROJECT]").build();
+    SpannerOptions options = SpannerOptions.newBuilder()
+        .setProjectId("[PROJECT]")
+        .setEmulatorHost("localhost:1234")
+        .build();
     assertThat(options.getHost()).isEqualTo("http://localhost:1234");
     assertThat(options.getEndpoint()).isEqualTo("localhost:1234");
-    environmentVariables.clear("SPANNER_EMULATOR_HOST");
   }
 
   @Test
   public void testSetEmulatorHostWithProtocol() {
     // If the host has a protocol, it should not be modified.
-    environmentVariables.set("SPANNER_EMULATOR_HOST", "http://localhost:1234");
-    SpannerOptions options = SpannerOptions.newBuilder().setProjectId("[PROJECT]").build();
+    SpannerOptions options = SpannerOptions.newBuilder()
+        .setProjectId("[PROJECT]")
+        .setEmulatorHost("http://localhost:1234")
+        .build();
     assertThat(options.getHost()).isEqualTo("http://localhost:1234");
     assertThat(options.getEndpoint()).isEqualTo("localhost:1234");
-    environmentVariables.clear("SPANNER_EMULATOR_HOST");
   }
 }
