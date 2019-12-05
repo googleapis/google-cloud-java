@@ -10,7 +10,7 @@
   <parent>
     <groupId>com.google.cloud</groupId>
     <artifactId>google-cloud-container-parent</artifactId>
-    <version>0.117.0-beta</version><!-- {x-version-update:google-cloud-container:current} -->
+    <version>0.117.1-beta-SNAPSHOT</version><!-- {x-version-update:google-cloud-container:current} -->
   </parent>
   <dependencies>
     <dependency>
