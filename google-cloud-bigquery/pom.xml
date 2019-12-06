@@ -1,18 +1,17 @@
 <?xml version="1.0"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
+  <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-bigquery</artifactId>
   <version>1.102.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-bigquery:current} -->
   <packaging>jar</packaging>
-  <name>Google Cloud BigQuery</name>
-  <url>https://github.com/googleapis/google-cloud-java/tree/master/google-cloud-clients/google-cloud-bigquery</url>
-  <description>
-    Java idiomatic client for Google Cloud BigQuery.
-  </description>
+  <name>BigQuery</name>
+  <url>https://github.com/googleapis/java-bigquery</url>
+  <description>BigQuery</description>
   <parent>
     <groupId>com.google.cloud</groupId>
-    <artifactId>google-cloud-clients</artifactId>
-    <version>0.120.1-alpha-SNAPSHOT</version><!-- {x-version-update:google-cloud-clients:current} -->
+    <artifactId>google-cloud-bigquery-parent</artifactId>
+    <version>1.102.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-bigquery:current} -->
   </parent>
   <properties>
     <site.installationModule>google-cloud-bigquery</site.installationModule>
@@ -21,35 +20,71 @@
     <dependency>
       <groupId>com.google.cloud</groupId>
       <artifactId>google-cloud-core</artifactId>
+      <version>${google.core.version}</version>
     </dependency>
     <dependency>
       <groupId>com.google.cloud</groupId>
       <artifactId>google-cloud-core-http</artifactId>
-    </dependency>
-    <dependency>
-      <groupId>com.google.auto.value</groupId>
-      <artifactId>auto-value</artifactId>
-      <scope>provided</scope>
+      <version>${google.core.version}</version>
     </dependency>
     <dependency>
       <groupId>com.google.cloud</groupId>
       <artifactId>google-cloud-storage</artifactId>
-      <version>1.102.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-storage:current} -->
-      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>com.google.http-client</groupId>
+      <artifactId>google-http-client-jackson2</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>com.google.auto.value</groupId>
+      <artifactId>auto-value-annotations</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>com.google.http-client</groupId>
+      <artifactId>google-http-client</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>org.checkerframework</groupId>
+      <artifactId>checker-compat-qual</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>com.google.auth</groupId>
+      <artifactId>google-auth-library-oauth2-http</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>com.google.code.findbugs</groupId>
+      <artifactId>jsr305</artifactId>
     </dependency>
     <dependency>
       <groupId>com.google.apis</groupId>
       <artifactId>google-api-services-bigquery</artifactId>
-      <version>v2-rev20190917-1.30.3</version>
     </dependency>
-
-    <!-- Test dependencies -->
     <dependency>
       <groupId>com.google.cloud</groupId>
       <artifactId>google-cloud-core</artifactId>
-      <type>test-jar</type>
+      <version>${google.core.version}</version>
+      <classifier>tests</classifier>
       <scope>test</scope>
     </dependency>
+    <dependency>
+      <groupId>com.google.api</groupId>
+      <artifactId>api-common</artifactId>
+    </dependency>
+
+    <dependency>
+      <groupId>com.google.guava</groupId>
+      <artifactId>guava</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>com.google.api</groupId>
+      <artifactId>gax</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>org.threeten</groupId>
+      <artifactId>threetenbp</artifactId>
+    </dependency>
+
+    <!-- Test dependencies -->
     <dependency>
       <groupId>junit</groupId>
       <artifactId>junit</artifactId>
@@ -58,19 +93,17 @@
     <dependency>
       <groupId>com.google.truth</groupId>
       <artifactId>truth</artifactId>
-      <scope>test</scope>
     </dependency>
     <dependency>
       <groupId>org.easymock</groupId>
       <artifactId>easymock</artifactId>
-      <scope>test</scope>
     </dependency>
     <dependency>
       <groupId>org.objenesis</groupId>
       <artifactId>objenesis</artifactId>
-      <scope>test</scope>
     </dependency>
   </dependencies>
+
   <build>
     <plugins>
       <plugin>
@@ -103,4 +136,19 @@
       </plugin>
     </plugins>
   </build>
+
+  <profiles>
+    <profile>
+      <id>java9</id>
+      <activation>
+        <jdk>[9,)</jdk>
+      </activation>
+      <dependencies>
+        <dependency>
+          <groupId>javax.annotation</groupId>
+          <artifactId>javax.annotation-api</artifactId>
+        </dependency>
+      </dependencies>
+    </profile>
+  </profiles>
 </project>
