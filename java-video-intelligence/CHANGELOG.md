@@ -1,5 +1,12 @@
 # Changelog
 
+### [0.116.1](https://www.github.com/googleapis/java-video-intelligence/compare/v0.116.0...v0.116.1) (2019-11-26)
+
+
+### Bug Fixes
+
+* bom should not reference itself ([#28](https://www.github.com/googleapis/java-video-intelligence/issues/28)) ([59fc67b](https://www.github.com/googleapis/java-video-intelligence/commit/59fc67b0fda9154cdc3ace066c503bb632bbb4b0)), closes [#27](https://www.github.com/googleapis/java-video-intelligence/issues/27)
+
 ## [0.116.0](https://www.github.com/googleapis/java-video-intelligence/compare/0.115.0...v0.116.0) (2019-11-15)
 
 
