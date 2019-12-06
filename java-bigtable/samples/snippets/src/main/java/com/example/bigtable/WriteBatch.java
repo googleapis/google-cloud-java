@@ -33,7 +33,6 @@ public class WriteBatch {
 
     try (BigtableDataClient dataClient = BigtableDataClient.create(projectId, instanceId)) {
       long timestamp = System.currentTimeMillis() * 1000;
-      ByteString one = ByteString.copyFrom(new byte[] {0, 0, 0, 0, 0, 0, 0, 1});
 
       BulkMutation bulkMutation =
           BulkMutation.create(tableId)
@@ -44,7 +43,7 @@ public class WriteBatch {
                           COLUMN_FAMILY_NAME,
                           ByteString.copyFrom("connected_wifi".getBytes()),
                           timestamp,
-                          one)
+                          1)
                       .setCell(COLUMN_FAMILY_NAME, "os_build", timestamp, "12155.0.0-rc1"))
               .add(
                   "tablet#a0b81f74#20190502",
@@ -53,7 +52,7 @@ public class WriteBatch {
                           COLUMN_FAMILY_NAME,
                           ByteString.copyFrom("connected_wifi".getBytes()),
                           timestamp,
-                          one)
+                          1)
                       .setCell(COLUMN_FAMILY_NAME, "os_build", timestamp, "12155.0.0-rc6"));
 
       dataClient.bulkMutateRows(bulkMutation);

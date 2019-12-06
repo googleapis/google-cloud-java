@@ -34,7 +34,6 @@ public class WriteSimple {
       long timestamp = System.currentTimeMillis() * 1000;
 
       String rowkey = "phone#4c410523#20190501";
-      ByteString one = ByteString.copyFrom(new byte[] {0, 0, 0, 0, 0, 0, 0, 1});
 
       RowMutation rowMutation =
           RowMutation.create(tableId, rowkey)
@@ -42,12 +41,12 @@ public class WriteSimple {
                   COLUMN_FAMILY_NAME,
                   ByteString.copyFrom("connected_cell".getBytes()),
                   timestamp,
-                  one)
+                  1)
               .setCell(
                   COLUMN_FAMILY_NAME,
                   ByteString.copyFrom("connected_wifi".getBytes()),
                   timestamp,
-                  one)
+                  1)
               .setCell(COLUMN_FAMILY_NAME, "os_build", timestamp, "PQ2A.190405.003");
 
       dataClient.mutateRow(rowMutation);
