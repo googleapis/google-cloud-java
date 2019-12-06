@@ -139,7 +139,8 @@ public interface TransferRunOrBuilder
    * Parameter ignored by server for input requests.
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp start_time = 4;</code>
+   * <code>.google.protobuf.Timestamp start_time = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    */
   boolean hasStartTime();
   /**
@@ -150,7 +151,8 @@ public interface TransferRunOrBuilder
    * Parameter ignored by server for input requests.
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp start_time = 4;</code>
+   * <code>.google.protobuf.Timestamp start_time = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    */
   com.google.protobuf.Timestamp getStartTime();
   /**
@@ -161,7 +163,8 @@ public interface TransferRunOrBuilder
    * Parameter ignored by server for input requests.
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp start_time = 4;</code>
+   * <code>.google.protobuf.Timestamp start_time = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    */
   com.google.protobuf.TimestampOrBuilder getStartTimeOrBuilder();
 
@@ -173,7 +176,8 @@ public interface TransferRunOrBuilder
    * Parameter ignored by server for input requests.
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp end_time = 5;</code>
+   * <code>.google.protobuf.Timestamp end_time = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    */
   boolean hasEndTime();
   /**
@@ -184,7 +188,8 @@ public interface TransferRunOrBuilder
    * Parameter ignored by server for input requests.
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp end_time = 5;</code>
+   * <code>.google.protobuf.Timestamp end_time = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    */
   com.google.protobuf.Timestamp getEndTime();
   /**
@@ -195,7 +200,8 @@ public interface TransferRunOrBuilder
    * Parameter ignored by server for input requests.
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp end_time = 5;</code>
+   * <code>.google.protobuf.Timestamp end_time = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    */
   com.google.protobuf.TimestampOrBuilder getEndTimeOrBuilder();
 
@@ -206,7 +212,8 @@ public interface TransferRunOrBuilder
    * Output only. Last time the data transfer run state was updated.
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp update_time = 6;</code>
+   * <code>.google.protobuf.Timestamp update_time = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    */
   boolean hasUpdateTime();
   /**
@@ -216,7 +223,8 @@ public interface TransferRunOrBuilder
    * Output only. Last time the data transfer run state was updated.
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp update_time = 6;</code>
+   * <code>.google.protobuf.Timestamp update_time = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    */
   com.google.protobuf.Timestamp getUpdateTime();
   /**
@@ -226,7 +234,8 @@ public interface TransferRunOrBuilder
    * Output only. Last time the data transfer run state was updated.
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp update_time = 6;</code>
+   * <code>.google.protobuf.Timestamp update_time = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    */
   com.google.protobuf.TimestampOrBuilder getUpdateTimeOrBuilder();
 
@@ -237,7 +246,7 @@ public interface TransferRunOrBuilder
    * Output only. Data transfer specific parameters.
    * </pre>
    *
-   * <code>.google.protobuf.Struct params = 9;</code>
+   * <code>.google.protobuf.Struct params = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    */
   boolean hasParams();
   /**
@@ -247,7 +256,7 @@ public interface TransferRunOrBuilder
    * Output only. Data transfer specific parameters.
    * </pre>
    *
-   * <code>.google.protobuf.Struct params = 9;</code>
+   * <code>.google.protobuf.Struct params = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    */
   com.google.protobuf.Struct getParams();
   /**
@@ -257,7 +266,7 @@ public interface TransferRunOrBuilder
    * Output only. Data transfer specific parameters.
    * </pre>
    *
-   * <code>.google.protobuf.Struct params = 9;</code>
+   * <code>.google.protobuf.Struct params = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    */
   com.google.protobuf.StructOrBuilder getParamsOrBuilder();
 
@@ -268,7 +277,7 @@ public interface TransferRunOrBuilder
    * Output only. The BigQuery target dataset id.
    * </pre>
    *
-   * <code>string destination_dataset_id = 2;</code>
+   * <code>string destination_dataset_id = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    */
   java.lang.String getDestinationDatasetId();
   /**
@@ -278,7 +287,7 @@ public interface TransferRunOrBuilder
    * Output only. The BigQuery target dataset id.
    * </pre>
    *
-   * <code>string destination_dataset_id = 2;</code>
+   * <code>string destination_dataset_id = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    */
   com.google.protobuf.ByteString getDestinationDatasetIdBytes();
 
@@ -289,7 +298,7 @@ public interface TransferRunOrBuilder
    * Output only. Data source id.
    * </pre>
    *
-   * <code>string data_source_id = 7;</code>
+   * <code>string data_source_id = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    */
   java.lang.String getDataSourceId();
   /**
@@ -299,7 +308,7 @@ public interface TransferRunOrBuilder
    * Output only. Data source id.
    * </pre>
    *
-   * <code>string data_source_id = 7;</code>
+   * <code>string data_source_id = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    */
   com.google.protobuf.ByteString getDataSourceIdBytes();
 
@@ -346,7 +355,7 @@ public interface TransferRunOrBuilder
    * current load, so `schedule_time` doesn't always match this.
    * </pre>
    *
-   * <code>string schedule = 12;</code>
+   * <code>string schedule = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    */
   java.lang.String getSchedule();
   /**
@@ -360,7 +369,9 @@ public interface TransferRunOrBuilder
    * current load, so `schedule_time` doesn't always match this.
    * </pre>
    *
-   * <code>string schedule = 12;</code>
+   * <code>string schedule = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    */
   com.google.protobuf.ByteString getScheduleBytes();
+
+  public com.google.cloud.bigquery.datatransfer.v1.TransferRun.DestinationCase getDestinationCase();
 }

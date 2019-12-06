@@ -4,17 +4,17 @@
     xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
   <artifactId>google-cloud-appengineflexcompat</artifactId>
-  <version>0.111.1-alpha-SNAPSHOT</version><!-- {x-version-update:google-cloud-appengineflexcompat:current} -->
+  <version>0.120.1-alpha-SNAPSHOT</version><!-- {x-version-update:google-cloud-appengineflexcompat:current} -->
   <packaging>war</packaging>
 
   <parent>
     <artifactId>google-cloud-testing</artifactId>
     <groupId>com.google.cloud</groupId>
-    <version>0.111.1-alpha-SNAPSHOT</version><!-- {x-version-update:google-cloud-testing:current} -->
+    <version>0.120.1-alpha-SNAPSHOT</version><!-- {x-version-update:google-cloud-testing:current} -->
   </parent>
 
   <properties>
-    <appengine.maven.plugin>2.1.0</appengine.maven.plugin>
+    <appengine.maven.plugin>2.2.0</appengine.maven.plugin>
     <jetty.maven.plugin>9.3.8.v20160314</jetty.maven.plugin>
     <java.source.version>1.7</java.source.version>
   </properties>

@@ -15,7 +15,9 @@ public interface BatchCreateSessionsRequestOrBuilder
    * Required. The database in which the new sessions are created.
    * </pre>
    *
-   * <code>string database = 1;</code>
+   * <code>
+   * string database = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    */
   java.lang.String getDatabase();
   /**
@@ -25,7 +27,9 @@ public interface BatchCreateSessionsRequestOrBuilder
    * Required. The database in which the new sessions are created.
    * </pre>
    *
-   * <code>string database = 1;</code>
+   * <code>
+   * string database = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    */
   com.google.protobuf.ByteString getDatabaseBytes();
 
@@ -72,7 +76,7 @@ public interface BatchCreateSessionsRequestOrBuilder
    * as necessary).
    * </pre>
    *
-   * <code>int32 session_count = 3;</code>
+   * <code>int32 session_count = 3 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   int getSessionCount();
 }

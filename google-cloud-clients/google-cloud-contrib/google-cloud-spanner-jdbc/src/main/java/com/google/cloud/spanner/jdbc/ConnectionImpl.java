@@ -110,6 +110,17 @@ class ConnectionImpl implements Connection {
     DML;
   }
 
+  /**
+   * This query option is used internally to indicate that a query is executed by the library itself
+   * to fetch metadata. These queries are specifically allowed to be executed even when a DDL batch
+   * is active.
+   */
+  static final class InternalMetadataQuery implements QueryOption {
+    static final InternalMetadataQuery INSTANCE = new InternalMetadataQuery();
+
+    private InternalMetadataQuery() {}
+  }
+
   /** The combination of all transaction modes and batch modes. */
   enum UnitOfWorkType {
     READ_ONLY_TRANSACTION {
@@ -678,7 +689,7 @@ class ConnectionImpl implements Connection {
               .execute(connectionStatementExecutor, parsedStatement.getSqlWithoutComments())
               .getResultSet();
         case QUERY:
-          return internalExecuteQuery(parsedStatement, analyzeMode);
+          return internalExecuteQuery(parsedStatement, analyzeMode, options);
         case UPDATE:
         case DDL:
         case UNKNOWN:
@@ -845,6 +856,7 @@ class ConnectionImpl implements Connection {
         case DDL_BATCH:
           return DdlBatch.newBuilder()
               .setDdlClient(ddlClient)
+              .setDatabaseClient(dbClient)
               .setStatementTimeout(statementTimeout)
               .withStatementExecutor(statementExecutor)
               .build();

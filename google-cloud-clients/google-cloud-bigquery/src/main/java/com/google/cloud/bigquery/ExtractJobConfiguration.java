@@ -25,6 +25,7 @@ import com.google.common.base.MoreObjects.ToStringHelper;
 import com.google.common.base.Strings;
 import com.google.common.collect.ImmutableList;
 import java.util.List;
+import java.util.Map;
 import java.util.Objects;
 
 /**
@@ -43,6 +44,8 @@ public final class ExtractJobConfiguration extends JobConfiguration {
   private final String format;
   private final String compression;
   private final Boolean useAvroLogicalTypes;
+  private final Map<String, String> labels;
+  private final Long jobTimeoutMs;
 
   public static final class Builder
       extends JobConfiguration.Builder<ExtractJobConfiguration, Builder> {
@@ -54,6 +57,8 @@ public final class ExtractJobConfiguration extends JobConfiguration {
     private String format;
     private String compression;
     private Boolean useAvroLogicalTypes;
+    private Map<String, String> labels;
+    private Long jobTimeoutMs;
 
     private Builder() {
       super(Type.EXTRACT);
@@ -68,6 +73,8 @@ public final class ExtractJobConfiguration extends JobConfiguration {
       this.format = jobInfo.format;
       this.compression = jobInfo.compression;
       this.useAvroLogicalTypes = jobInfo.useAvroLogicalTypes;
+      this.labels = jobInfo.labels;
+      this.jobTimeoutMs = jobInfo.jobTimeoutMs;
     }
 
     private Builder(com.google.api.services.bigquery.model.JobConfiguration configurationPb) {
@@ -80,6 +87,12 @@ public final class ExtractJobConfiguration extends JobConfiguration {
       this.format = extractConfigurationPb.getDestinationFormat();
       this.compression = extractConfigurationPb.getCompression();
       this.useAvroLogicalTypes = extractConfigurationPb.getUseAvroLogicalTypes();
+      if (configurationPb.getLabels() != null) {
+        this.labels = configurationPb.getLabels();
+      }
+      if (configurationPb.getJobTimeoutMs() != null) {
+        this.jobTimeoutMs = configurationPb.getJobTimeoutMs();
+      }
     }
 
     /** Sets the table to export. */
@@ -146,6 +159,31 @@ public final class ExtractJobConfiguration extends JobConfiguration {
       return this;
     }
 
+    /**
+     * The labels associated with this job. You can use these to organize and group your jobs. Label
+     * keys and values can be no longer than 63 characters, can only contain lowercase letters,
+     * numeric characters, underscores and dashes. International characters are allowed. Label
+     * values are optional. Label keys must start with a letter and each label in the list must have
+     * a different key.
+     *
+     * @param labels labels or {@code null} for none
+     */
+    public Builder setLabels(Map<String, String> labels) {
+      this.labels = labels;
+      return this;
+    }
+
+    /**
+     * [Optional] Job timeout in milliseconds. If this time limit is exceeded, BigQuery may attempt
+     * to terminate the job.
+     *
+     * @param jobTimeoutMs jobTimeoutMs or {@code null} for none
+     */
+    public Builder setJobTimeoutMs(Long jobTimeoutMs) {
+      this.jobTimeoutMs = jobTimeoutMs;
+      return this;
+    }
+
     public ExtractJobConfiguration build() {
       return new ExtractJobConfiguration(this);
     }
@@ -160,6 +198,8 @@ public final class ExtractJobConfiguration extends JobConfiguration {
     this.format = builder.format;
     this.compression = builder.compression;
     this.useAvroLogicalTypes = builder.useAvroLogicalTypes;
+    this.labels = builder.labels;
+    this.jobTimeoutMs = builder.jobTimeoutMs;
   }
 
   /** Returns the table to export. */
@@ -204,6 +244,16 @@ public final class ExtractJobConfiguration extends JobConfiguration {
     return useAvroLogicalTypes;
   }
 
+  /** Returns the labels associated with this job */
+  public Map<String, String> getLabels() {
+    return labels;
+  }
+
+  /** Returns the timeout associated with this job */
+  public Long getJobTimeoutMs() {
+    return jobTimeoutMs;
+  }
+
   @Override
   public Builder toBuilder() {
     return new Builder(this);
@@ -218,7 +268,9 @@ public final class ExtractJobConfiguration extends JobConfiguration {
         .add("printHeader", printHeader)
         .add("fieldDelimiter", fieldDelimiter)
         .add("compression", compression)
-        .add("useAvroLogicalTypes", useAvroLogicalTypes);
+        .add("useAvroLogicalTypes", useAvroLogicalTypes)
+        .add("labels", labels)
+        .add("jobTimeoutMs", jobTimeoutMs);
   }
 
   @Override
@@ -237,7 +289,9 @@ public final class ExtractJobConfiguration extends JobConfiguration {
         fieldDelimiter,
         format,
         compression,
-        useAvroLogicalTypes);
+        useAvroLogicalTypes,
+        labels,
+        jobTimeoutMs);
   }
 
   @Override
@@ -251,6 +305,8 @@ public final class ExtractJobConfiguration extends JobConfiguration {
   @Override
   com.google.api.services.bigquery.model.JobConfiguration toPb() {
     JobConfigurationExtract extractConfigurationPb = new JobConfigurationExtract();
+    com.google.api.services.bigquery.model.JobConfiguration jobConfiguration =
+        new com.google.api.services.bigquery.model.JobConfiguration();
     extractConfigurationPb.setDestinationUris(destinationUris);
     extractConfigurationPb.setSourceTable(sourceTable.toPb());
     extractConfigurationPb.setPrintHeader(printHeader);
@@ -258,8 +314,14 @@ public final class ExtractJobConfiguration extends JobConfiguration {
     extractConfigurationPb.setDestinationFormat(format);
     extractConfigurationPb.setCompression(compression);
     extractConfigurationPb.setUseAvroLogicalTypes(useAvroLogicalTypes);
-    return new com.google.api.services.bigquery.model.JobConfiguration()
-        .setExtract(extractConfigurationPb);
+    if (labels != null) {
+      jobConfiguration.setLabels(labels);
+    }
+    if (jobTimeoutMs != null) {
+      jobConfiguration.setJobTimeoutMs(jobTimeoutMs);
+    }
+    jobConfiguration.setExtract(extractConfigurationPb);
+    return jobConfiguration;
   }
 
   /**

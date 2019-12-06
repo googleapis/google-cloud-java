@@ -55,4 +55,9 @@ public class EntityTest {
     assertNotEquals(INCOMPLETE_ENTITY, entity);
     assertEquals(INCOMPLETE_ENTITY.getProperties(), entity.getProperties());
   }
+
+  @Test
+  public void testEntitySize() {
+    assertEquals(ENTITY.toPb().getSerializedSize(), Entity.calculateSerializedSize(ENTITY));
+  }
 }

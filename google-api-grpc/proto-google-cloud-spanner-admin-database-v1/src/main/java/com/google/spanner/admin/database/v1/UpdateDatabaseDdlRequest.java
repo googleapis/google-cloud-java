@@ -137,7 +137,9 @@ public final class UpdateDatabaseDdlRequest extends com.google.protobuf.Generate
    * Required. The database to update.
    * </pre>
    *
-   * <code>string database = 1;</code>
+   * <code>
+   * string database = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    */
   public java.lang.String getDatabase() {
     java.lang.Object ref = database_;
@@ -157,7 +159,9 @@ public final class UpdateDatabaseDdlRequest extends com.google.protobuf.Generate
    * Required. The database to update.
    * </pre>
    *
-   * <code>string database = 1;</code>
+   * <code>
+   * string database = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    */
   public com.google.protobuf.ByteString getDatabaseBytes() {
     java.lang.Object ref = database_;
@@ -177,10 +181,10 @@ public final class UpdateDatabaseDdlRequest extends com.google.protobuf.Generate
    *
    *
    * <pre>
-   * DDL statements to be applied to the database.
+   * Required. DDL statements to be applied to the database.
    * </pre>
    *
-   * <code>repeated string statements = 2;</code>
+   * <code>repeated string statements = 2 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   public com.google.protobuf.ProtocolStringList getStatementsList() {
     return statements_;
@@ -189,10 +193,10 @@ public final class UpdateDatabaseDdlRequest extends com.google.protobuf.Generate
    *
    *
    * <pre>
-   * DDL statements to be applied to the database.
+   * Required. DDL statements to be applied to the database.
    * </pre>
    *
-   * <code>repeated string statements = 2;</code>
+   * <code>repeated string statements = 2 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   public int getStatementsCount() {
     return statements_.size();
@@ -201,10 +205,10 @@ public final class UpdateDatabaseDdlRequest extends com.google.protobuf.Generate
    *
    *
    * <pre>
-   * DDL statements to be applied to the database.
+   * Required. DDL statements to be applied to the database.
    * </pre>
    *
-   * <code>repeated string statements = 2;</code>
+   * <code>repeated string statements = 2 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   public java.lang.String getStatements(int index) {
     return statements_.get(index);
@@ -213,10 +217,10 @@ public final class UpdateDatabaseDdlRequest extends com.google.protobuf.Generate
    *
    *
    * <pre>
-   * DDL statements to be applied to the database.
+   * Required. DDL statements to be applied to the database.
    * </pre>
    *
-   * <code>repeated string statements = 2;</code>
+   * <code>repeated string statements = 2 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   public com.google.protobuf.ByteString getStatementsBytes(int index) {
     return statements_.getByteString(index);
@@ -699,7 +703,9 @@ public final class UpdateDatabaseDdlRequest extends com.google.protobuf.Generate
      * Required. The database to update.
      * </pre>
      *
-     * <code>string database = 1;</code>
+     * <code>
+     * string database = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      */
     public java.lang.String getDatabase() {
       java.lang.Object ref = database_;
@@ -719,7 +725,9 @@ public final class UpdateDatabaseDdlRequest extends com.google.protobuf.Generate
      * Required. The database to update.
      * </pre>
      *
-     * <code>string database = 1;</code>
+     * <code>
+     * string database = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      */
     public com.google.protobuf.ByteString getDatabaseBytes() {
       java.lang.Object ref = database_;
@@ -739,7 +747,9 @@ public final class UpdateDatabaseDdlRequest extends com.google.protobuf.Generate
      * Required. The database to update.
      * </pre>
      *
-     * <code>string database = 1;</code>
+     * <code>
+     * string database = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      */
     public Builder setDatabase(java.lang.String value) {
       if (value == null) {
@@ -757,7 +767,9 @@ public final class UpdateDatabaseDdlRequest extends com.google.protobuf.Generate
      * Required. The database to update.
      * </pre>
      *
-     * <code>string database = 1;</code>
+     * <code>
+     * string database = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      */
     public Builder clearDatabase() {
 
@@ -772,7 +784,9 @@ public final class UpdateDatabaseDdlRequest extends com.google.protobuf.Generate
      * Required. The database to update.
      * </pre>
      *
-     * <code>string database = 1;</code>
+     * <code>
+     * string database = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      */
     public Builder setDatabaseBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -798,10 +812,10 @@ public final class UpdateDatabaseDdlRequest extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * DDL statements to be applied to the database.
+     * Required. DDL statements to be applied to the database.
      * </pre>
      *
-     * <code>repeated string statements = 2;</code>
+     * <code>repeated string statements = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public com.google.protobuf.ProtocolStringList getStatementsList() {
       return statements_.getUnmodifiableView();
@@ -810,10 +824,10 @@ public final class UpdateDatabaseDdlRequest extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * DDL statements to be applied to the database.
+     * Required. DDL statements to be applied to the database.
      * </pre>
      *
-     * <code>repeated string statements = 2;</code>
+     * <code>repeated string statements = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public int getStatementsCount() {
       return statements_.size();
@@ -822,10 +836,10 @@ public final class UpdateDatabaseDdlRequest extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * DDL statements to be applied to the database.
+     * Required. DDL statements to be applied to the database.
      * </pre>
      *
-     * <code>repeated string statements = 2;</code>
+     * <code>repeated string statements = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public java.lang.String getStatements(int index) {
       return statements_.get(index);
@@ -834,10 +848,10 @@ public final class UpdateDatabaseDdlRequest extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * DDL statements to be applied to the database.
+     * Required. DDL statements to be applied to the database.
      * </pre>
      *
-     * <code>repeated string statements = 2;</code>
+     * <code>repeated string statements = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public com.google.protobuf.ByteString getStatementsBytes(int index) {
       return statements_.getByteString(index);
@@ -846,10 +860,10 @@ public final class UpdateDatabaseDdlRequest extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * DDL statements to be applied to the database.
+     * Required. DDL statements to be applied to the database.
      * </pre>
      *
-     * <code>repeated string statements = 2;</code>
+     * <code>repeated string statements = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder setStatements(int index, java.lang.String value) {
       if (value == null) {
@@ -864,10 +878,10 @@ public final class UpdateDatabaseDdlRequest extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * DDL statements to be applied to the database.
+     * Required. DDL statements to be applied to the database.
      * </pre>
      *
-     * <code>repeated string statements = 2;</code>
+     * <code>repeated string statements = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder addStatements(java.lang.String value) {
       if (value == null) {
@@ -882,10 +896,10 @@ public final class UpdateDatabaseDdlRequest extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * DDL statements to be applied to the database.
+     * Required. DDL statements to be applied to the database.
      * </pre>
      *
-     * <code>repeated string statements = 2;</code>
+     * <code>repeated string statements = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder addAllStatements(java.lang.Iterable<java.lang.String> values) {
       ensureStatementsIsMutable();
@@ -897,10 +911,10 @@ public final class UpdateDatabaseDdlRequest extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * DDL statements to be applied to the database.
+     * Required. DDL statements to be applied to the database.
      * </pre>
      *
-     * <code>repeated string statements = 2;</code>
+     * <code>repeated string statements = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder clearStatements() {
       statements_ = com.google.protobuf.LazyStringArrayList.EMPTY;
@@ -912,10 +926,10 @@ public final class UpdateDatabaseDdlRequest extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * DDL statements to be applied to the database.
+     * Required. DDL statements to be applied to the database.
      * </pre>
      *
-     * <code>repeated string statements = 2;</code>
+     * <code>repeated string statements = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder addStatementsBytes(com.google.protobuf.ByteString value) {
       if (value == null) {

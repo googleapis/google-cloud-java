@@ -12,54 +12,54 @@ Java idiomatic client for [Google Cloud Platform][cloud-platform] services.
 
 This library supports the following Google Cloud Platform services with clients at a [GA](#versioning) quality level:
 -  [BigQuery](google-cloud-clients/google-cloud-bigquery) (GA)
--  [Cloud Bigtable](google-cloud-clients/google-cloud-bigtable) (GA)
+-  [Cloud Bigtable](https://github.com/googleapis/java-bigtable) (GA)
 -  [Cloud Datastore](google-cloud-clients/google-cloud-datastore) (GA)
--  [Cloud Firestore](google-cloud-clients/google-cloud-firestore) (GA)
--  [Cloud KMS](google-cloud-clients/google-cloud-kms) (GA)
--  [Cloud Natural Language](google-cloud-clients/google-cloud-language) (GA)
--  [Cloud Pub/Sub](google-cloud-clients/google-cloud-pubsub) (GA)
--  [Cloud Scheduler](google-cloud-clients/google-cloud-scheduler) (GA)
+-  [Cloud Firestore](https://github.com/googleapis/java-firestore/google-cloud-firestore) (GA)
+-  [Cloud KMS](https://github.com/googleapis/java-kms) (GA)
+-  [Cloud Natural Language](https://github.com/googleapis/java-language) (GA)
+-  [Cloud Pub/Sub](https://github.com/googleapis/java-pubsub) (GA)
+-  [Cloud Scheduler](https://github.com/googleapis/java-scheduler) (GA)
 -  [Cloud Spanner](google-cloud-clients/google-cloud-spanner) (GA)
--  [Cloud Speech](google-cloud-clients/google-cloud-speech) (GA)
+-  [Cloud Speech](https://github.com/googleapis/java-speech) (GA)
 -  [Cloud Storage](google-cloud-clients/google-cloud-storage) (GA)
--  [Cloud Translation](google-cloud-clients/google-cloud-translate) (GA)
--  [Cloud Tasks](google-cloud-clients/google-cloud-tasks) (GA)
--  [Cloud Vision](google-cloud-clients/google-cloud-vision) (GA)
--  [Stackdriver Logging](google-cloud-clients/google-cloud-logging) (GA)
--  [Stackdriver Monitoring](google-cloud-clients/google-cloud-monitoring) (GA)
+-  [Cloud Translation](https://github.com/googleapis/java-translate) (GA)
+-  [Cloud Tasks](https://github.com/googleapis/java-tasks) (GA)
+-  [Cloud Vision](https://github.com/googleapis/java-vision) (GA)
+-  [Stackdriver Logging](https://github.com/googleapis/java-logging) (GA)
+-  [Stackdriver Monitoring](https://github.com/googleapis/java-monitoring) (GA)
 
 This library supports the following Google Cloud Platform services with clients at a [Beta](#versioning) quality level:
 
 -  [BigQuery Data Transfer](google-cloud-clients/google-cloud-bigquerydatatransfer) (Beta)
--  [Cloud Asset](google-cloud-clients/google-cloud-asset) (Beta)
--  [Cloud AutoML](google-cloud-clients/google-cloud-automl) (Beta)
--  [Cloud Container Analysis](google-cloud-clients/google-cloud-containeranalysis) (Beta)
--  [Cloud Dataproc](google-cloud-clients/google-cloud-dataproc) (Beta)
--  [Cloud Data Loss Prevention](google-cloud-clients/google-cloud-dlp) (Beta)
--  [Cloud IoT Core](google-cloud-clients/google-cloud-iot) (Beta)
--  [Cloud Phishing Protection](google-cloud-clients/google-cloud-phishingprotection) (Beta)
--  [Cloud Security Scanner](google-cloud-clients/google-cloud-websecurityscanner) (Beta)
--  [Cloud Talent Solution](google-cloud-clients/google-cloud-talent) (Beta)
--  [Cloud Text-to-Speech](google-cloud-clients/google-cloud-texttospeech) (Beta)
--  [Cloud Video Intelligence](google-cloud-clients/google-cloud-video-intelligence) (Beta)
--  [Kubernetes Engine](google-cloud-clients/google-cloud-container) (Beta)
--  [reCAPTCHA Enterprise](google-cloud-clients/google-cloud-recaptchaenterprise) (Beta)
--  [Stackdriver Error Reporting](google-cloud-clients/google-cloud-errorreporting) (Beta)
--  [Stackdriver Trace](google-cloud-clients/google-cloud-trace) (Beta)
+-  [Cloud Asset](https://github.com/googleapis/java-asset) (Beta)
+-  [Cloud AutoML](https://github.com/googleapis/java-automl) (Beta)
+-  [Cloud Container Analysis](ghttps://github.com/googleapis/java-containeranalysis) (Beta)
+-  [Cloud Dataproc](https://github.com/googleapis/java-dataproc) (Beta)
+-  [Cloud Data Loss Prevention](https://github.com/googleapis/java-dlp) (Beta)
+-  [Cloud IoT Core](https://github.com/googleapis/java-iot) (Beta)
+-  [Cloud Phishing Protection](https://github.com/googleapis/java-phishingprotection) (Beta)
+-  [Cloud Security Scanner](https://github.com/googleapis/java-websecurityscanner) (Beta)
+-  [Cloud Talent Solution](https://github.com/googleapis/java-talent) (Beta)
+-  [Cloud Text-to-Speech](https://github.com/googleapis/java-texttospeech) (Beta)
+-  [Cloud Video Intelligence](https://github.com/googleapis/java-video-intelligence) (Beta)
+-  [Kubernetes Engine](https://github.com/googleapis/java-container) (Beta)
+-  [reCAPTCHA Enterprise](https://github.com/googleapis/java-recaptchaenterprise) (Beta)
+-  [Stackdriver Error Reporting](https://github.com/googleapis/java-errorreporting) (Beta)
+-  [Stackdriver Trace](https://github.com/googleapis/java-trace) (Beta)
 
 This library supports the following Google Cloud Platform services with clients at an [Alpha](#versioning) quality level:
 
 -  [BigQuery Storage](google-cloud-clients/google-cloud-bigquerystorage) (Alpha)
--  [Cloud Compute](google-cloud-clients/google-cloud-compute) (Alpha)
--  [Cloud Data Catalog](google-cloud-clients/google-cloud-datacatalog) (Alpha)
--  [Cloud Data Labeling](google-cloud-clients/google-cloud-datalabeling) (Alpha)
--  [Cloud DNS](google-cloud-clients/google-cloud-dns) (Alpha)
--  [Cloud IAM Service Account Credentials API](google-cloud-clients/google-cloud-iamcredentials) (Alpha)
--  [Cloud OS Login](google-cloud-clients/google-cloud-os-login) (Alpha)
--  [Cloud Memorystore for Redis](google-cloud-clients/google-cloud-redis) (Alpha)
--  [Cloud Resource Manager](google-cloud-clients/google-cloud-resourcemanager) (Alpha)
--  [Cloud Web Risk](google-cloud-clients/google-cloud-webrisk) (Alpha)
--  [Dialogflow](google-cloud-clients/google-cloud-dialogflow) (Alpha)
+-  [Cloud Compute](https://github.com/googleapis/java-compute) (Alpha)
+-  [Cloud Data Catalog](https://github.com/googleapis/java-datacatalog) (Alpha)
+-  [Cloud Data Labeling](https://github.com/googleapis/java-datalabeling) (Alpha)
+-  [Cloud DNS](https://github.com/googleapis/java-dns) (Alpha)
+-  [Cloud IAM Service Account Credentials API](https://github.com/googleapis/java-iamcredentials) (Alpha)
+-  [Cloud OS Login](https://github.com/googleapis/java-os-login) (Alpha)
+-  [Cloud Memorystore for Redis](https://github.com/googleapis/java-redis) (Alpha)
+-  [Cloud Resource Manager](https://github.com/googleapis/java-resourcemanager) (Alpha)
+-  [Cloud Web Risk](https://github.com/googleapis/java-webrisk) (Alpha)
+-  [Dialogflow](https://github.com/googleapis/java-dialogflow) (Alpha)
 
 Quickstart
 ----------
@@ -68,15 +68,14 @@ To call any of the supported Google Cloud Services simply add a corresponding cl
 artifact as a dependency to your project. The following instructions use `google-cloud-storage` 
 as an example (specific instructions can be found in the README of each client).
 
-[//]: # ({x-version-update-start:google-cloud-bom:released})
 If you are using Maven, add this to your pom.xml file
 ```xml
   <dependencyManagement>
     <dependencies>
       <dependency>
         <groupId>com.google.cloud</groupId>
-        <artifactId>google-cloud-bom</artifactId>
-        <version>0.111.0-alpha</version>
+        <artifactId>libraries-bom</artifactId>
+        <version>3.0.0</version>
         <type>pom</type>
         <scope>import</scope>
        </dependency>
@@ -90,16 +89,15 @@ If you are using Maven, add this to your pom.xml file
     </dependency>
     ...
 ```
-[//]: # ({x-version-update-end})
 
 [//]: # ({x-version-update-start:google-cloud-storage:released})
 If you are using Gradle, add this to your dependencies
 ```Groovy
-compile 'com.google.cloud:google-cloud-storage:1.93.0'
+compile 'com.google.cloud:google-cloud-storage:1.102.0'
 ```
 If you are using SBT, add this to your dependencies
 ```Scala
-libraryDependencies += "com.google.cloud" % "google-cloud-storage" % "1.93.0"
+libraryDependencies += "com.google.cloud" % "google-cloud-storage" % "1.102.0"
 ```
 [//]: # ({x-version-update-end})
 
@@ -110,26 +108,6 @@ If you're using IntelliJ or Eclipse, you can add client libraries to your projec
 Besides adding client libraries, the plugins provide additional functionality, such as service account key management. Refer to the documentation for each plugin for more details.
 
 These client libraries can be used on App Engine standard for Java 8 runtime and App Engine flexible (including the Compat runtime).  Most of the libraries do not work on the App Engine standard for Java 7 runtime. However, Datastore, Storage, and Bigquery should work.
-
-If you are running into problems with version conflicts, the easiest way to solve the conflicts is to use google-cloud's BOM. In Maven, add the following to your POM:
-
-[//]: # ({x-version-update-start:google-cloud-bom:released})
-```xml
-  <dependencyManagement>
-    <dependencies>
-      <dependency>
-        <groupId>com.google.cloud</groupId>
-        <artifactId>google-cloud-bom</artifactId>
-        <version>0.111.0-alpha</version>
-        <type>pom</type>
-        <scope>import</scope>
-      </dependency>
-    </dependencies>
-  </dependencyManagement>
-```
-[//]: # ({x-version-update-end})
-
-Note that the BOM is only available starting at version 0.32.0-alpha. For prior versions, refer to [Old Version Combinations](#old-version-combinations) to make sure that your versions are compatible.
 
 Specifying a Project ID
 -----------------------
@@ -293,7 +271,7 @@ See [TESTING] to read more about using our testing helpers.
 Versioning
 ----------
 
-This library follows [Semantic Versioning](http://semver.org/), but with some
+This library follows [Semantic Versioning](http://semver.org/), with some
 additional qualifications:
 
 1. Components marked with `@BetaApi` are considered to be "0.x" features inside
@@ -310,8 +288,8 @@ additional qualifications:
    with each other. For this reason, gax-java should not be used
    independently of google-cloud-java.
 
-1. Components marked with `@InternalApi` are technically public, but are only
-   public for technical reasons, because of the limitations of Java's access
+1. Components marked with `@InternalApi` are technically public, but only
+   because of the limitations of Java's access
    modifiers. For the purposes of semver, they should be considered private.
 
 Please note it is currently under active development. Any release versioned 0.x.y is

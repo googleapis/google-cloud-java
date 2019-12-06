@@ -86,6 +86,7 @@ public class SessionPoolTest extends BaseSessionPoolTest {
   @Parameter public int minSessions;
 
   @Mock SpannerImpl client;
+  @Mock SessionClient sessionClient;
   @Mock SpannerOptions spannerOptions;
   DatabaseId db = DatabaseId.of("projects/p/instances/i/databases/unused");
   SessionPool pool;
@@ -97,17 +98,19 @@ public class SessionPoolTest extends BaseSessionPoolTest {
   }
 
   private SessionPool createPool() {
-    return SessionPool.createPool(options, new TestExecutorFactory(), db, client);
+    return SessionPool.createPool(options, new TestExecutorFactory(), client.getSessionClient(db));
   }
 
   private SessionPool createPool(Clock clock) {
-    return SessionPool.createPool(options, new TestExecutorFactory(), db, client, clock);
+    return SessionPool.createPool(
+        options, new TestExecutorFactory(), client.getSessionClient(db), clock);
   }
 
   @Before
   public void setUp() throws Exception {
     initMocks(this);
     when(client.getOptions()).thenReturn(spannerOptions);
+    when(client.getSessionClient(db)).thenReturn(sessionClient);
     when(spannerOptions.getNumChannels()).thenReturn(4);
     options =
         SessionPoolOptions.newBuilder()
@@ -126,9 +129,9 @@ public class SessionPoolTest extends BaseSessionPoolTest {
                     new Runnable() {
                       @Override
                       public void run() {
-                        int sessionCount = invocation.getArgumentAt(1, Integer.class);
+                        int sessionCount = invocation.getArgumentAt(0, Integer.class);
                         SessionConsumerImpl consumer =
-                            invocation.getArgumentAt(2, SessionConsumerImpl.class);
+                            invocation.getArgumentAt(1, SessionConsumerImpl.class);
                         for (int i = 0; i < sessionCount; i++) {
                           consumer.onSessionReady(mockSession());
                         }
@@ -137,8 +140,8 @@ public class SessionPoolTest extends BaseSessionPoolTest {
                 return null;
               }
             })
-        .when(client)
-        .asyncBatchCreateSessions(Mockito.eq(db), Mockito.anyInt(), any(SessionConsumer.class));
+        .when(sessionClient)
+        .asyncBatchCreateSessions(Mockito.anyInt(), any(SessionConsumer.class));
   }
 
   @Test
@@ -179,7 +182,7 @@ public class SessionPoolTest extends BaseSessionPoolTest {
   public void poolClosure() throws Exception {
     setupMockSessionCreation();
     pool = createPool();
-    pool.closeAsync().get();
+    pool.closeAsync().get(5L, TimeUnit.SECONDS);
   }
 
   @Test
@@ -197,15 +200,15 @@ public class SessionPoolTest extends BaseSessionPoolTest {
                       @Override
                       public void run() {
                         SessionConsumerImpl consumer =
-                            invocation.getArgumentAt(2, SessionConsumerImpl.class);
+                            invocation.getArgumentAt(1, SessionConsumerImpl.class);
                         consumer.onSessionReady(sessions.pop());
                       }
                     });
                 return null;
               }
             })
-        .when(client)
-        .asyncBatchCreateSessions(Mockito.eq(db), Mockito.eq(1), any(SessionConsumer.class));
+        .when(sessionClient)
+        .asyncBatchCreateSessions(Mockito.eq(1), any(SessionConsumer.class));
     pool = createPool();
     Session session1 = pool.getReadSession();
     // Leaked sessions
@@ -213,7 +216,7 @@ public class SessionPoolTest extends BaseSessionPoolTest {
     // Clear the leaked exception to suppress logging of expected exceptions.
     leakedSession.clearLeakedException();
     session1.close();
-    pool.closeAsync().get();
+    pool.closeAsync().get(5L, TimeUnit.SECONDS);
     verify(mockSession1).close();
     verify(mockSession2).close();
   }
@@ -236,7 +239,7 @@ public class SessionPoolTest extends BaseSessionPoolTest {
               }
             })
         .start();
-    pool.closeAsync().get();
+    pool.closeAsync().get(5L, TimeUnit.SECONDS);
     stop.set(true);
   }
 
@@ -255,7 +258,7 @@ public class SessionPoolTest extends BaseSessionPoolTest {
                       @Override
                       public void run() {
                         SessionConsumerImpl consumer =
-                            invocation.getArgumentAt(2, SessionConsumerImpl.class);
+                            invocation.getArgumentAt(1, SessionConsumerImpl.class);
                         consumer.onSessionReady(session1);
                       }
                     });
@@ -273,7 +276,7 @@ public class SessionPoolTest extends BaseSessionPoolTest {
                         insideCreation.countDown();
                         releaseCreation.await();
                         SessionConsumerImpl consumer =
-                            invocation.getArgumentAt(2, SessionConsumerImpl.class);
+                            invocation.getArgumentAt(1, SessionConsumerImpl.class);
                         consumer.onSessionReady(session2);
                         return null;
                       }
@@ -281,8 +284,8 @@ public class SessionPoolTest extends BaseSessionPoolTest {
                 return null;
               }
             })
-        .when(client)
-        .asyncBatchCreateSessions(Mockito.eq(db), Mockito.eq(1), any(SessionConsumer.class));
+        .when(sessionClient)
+        .asyncBatchCreateSessions(Mockito.eq(1), any(SessionConsumer.class));
 
     pool = createPool();
     PooledSession leakedSession = pool.getReadSession();
@@ -313,7 +316,7 @@ public class SessionPoolTest extends BaseSessionPoolTest {
                       @Override
                       public void run() {
                         SessionConsumerImpl consumer =
-                            invocation.getArgumentAt(2, SessionConsumerImpl.class);
+                            invocation.getArgumentAt(1, SessionConsumerImpl.class);
                         consumer.onSessionReady(session1);
                       }
                     });
@@ -331,7 +334,7 @@ public class SessionPoolTest extends BaseSessionPoolTest {
                         insideCreation.countDown();
                         releaseCreation.await();
                         SessionConsumerImpl consumer =
-                            invocation.getArgumentAt(2, SessionConsumerImpl.class);
+                            invocation.getArgumentAt(1, SessionConsumerImpl.class);
                         consumer.onSessionReady(session2);
                         return null;
                       }
@@ -339,8 +342,8 @@ public class SessionPoolTest extends BaseSessionPoolTest {
                 return null;
               }
             })
-        .when(client)
-        .asyncBatchCreateSessions(Mockito.eq(db), Mockito.eq(1), any(SessionConsumer.class));
+        .when(sessionClient)
+        .asyncBatchCreateSessions(Mockito.eq(1), any(SessionConsumer.class));
 
     pool = createPool();
     PooledSession leakedSession = pool.getReadSession();
@@ -371,7 +374,7 @@ public class SessionPoolTest extends BaseSessionPoolTest {
                         insideCreation.countDown();
                         releaseCreation.await();
                         SessionConsumerImpl consumer =
-                            invocation.getArgumentAt(2, SessionConsumerImpl.class);
+                            invocation.getArgumentAt(1, SessionConsumerImpl.class);
                         consumer.onSessionCreateFailure(
                             SpannerExceptionFactory.newSpannerException(new RuntimeException()), 1);
                         return null;
@@ -380,8 +383,8 @@ public class SessionPoolTest extends BaseSessionPoolTest {
                 return null;
               }
             })
-        .when(client)
-        .asyncBatchCreateSessions(Mockito.eq(db), Mockito.eq(1), any(SessionConsumer.class));
+        .when(sessionClient)
+        .asyncBatchCreateSessions(Mockito.eq(1), any(SessionConsumer.class));
     pool = createPool();
     AtomicBoolean failed = new AtomicBoolean(false);
     CountDownLatch latch = new CountDownLatch(1);
@@ -405,15 +408,15 @@ public class SessionPoolTest extends BaseSessionPoolTest {
                       @Override
                       public void run() {
                         SessionConsumerImpl consumer =
-                            invocation.getArgumentAt(2, SessionConsumerImpl.class);
+                            invocation.getArgumentAt(1, SessionConsumerImpl.class);
                         consumer.onSessionReady(session);
                       }
                     });
                 return null;
               }
             })
-        .when(client)
-        .asyncBatchCreateSessions(Mockito.eq(db), Mockito.eq(1), any(SessionConsumer.class));
+        .when(sessionClient)
+        .asyncBatchCreateSessions(Mockito.eq(1), any(SessionConsumer.class));
     final CountDownLatch insidePrepare = new CountDownLatch(1);
     final CountDownLatch releasePrepare = new CountDownLatch(1);
     doAnswer(
@@ -450,15 +453,15 @@ public class SessionPoolTest extends BaseSessionPoolTest {
                       @Override
                       public void run() {
                         SessionConsumerImpl consumer =
-                            invocation.getArgumentAt(2, SessionConsumerImpl.class);
+                            invocation.getArgumentAt(1, SessionConsumerImpl.class);
                         consumer.onSessionReady(session);
                       }
                     });
                 return null;
               }
             })
-        .when(client)
-        .asyncBatchCreateSessions(Mockito.eq(db), Mockito.eq(1), any(SessionConsumer.class));
+        .when(sessionClient)
+        .asyncBatchCreateSessions(Mockito.eq(1), any(SessionConsumer.class));
     pool = createPool();
     PooledSession leakedSession = pool.getReadSession();
     // Suppress expected leakedSession warning.
@@ -479,8 +482,8 @@ public class SessionPoolTest extends BaseSessionPoolTest {
       getSessionAsync(latch, failed);
     }
     Uninterruptibles.awaitUninterruptibly(latch);
-    verify(client, atMost(options.getMaxSessions()))
-        .asyncBatchCreateSessions(eq(db), eq(1), any(SessionConsumer.class));
+    verify(sessionClient, atMost(options.getMaxSessions()))
+        .asyncBatchCreateSessions(eq(1), any(SessionConsumer.class));
     assertThat(failed.get()).isFalse();
   }
 
@@ -495,7 +498,7 @@ public class SessionPoolTest extends BaseSessionPoolTest {
                       @Override
                       public Void call() throws Exception {
                         SessionConsumerImpl consumer =
-                            invocation.getArgumentAt(2, SessionConsumerImpl.class);
+                            invocation.getArgumentAt(1, SessionConsumerImpl.class);
                         consumer.onSessionCreateFailure(
                             SpannerExceptionFactory.newSpannerException(ErrorCode.INTERNAL, ""), 1);
                         return null;
@@ -504,8 +507,8 @@ public class SessionPoolTest extends BaseSessionPoolTest {
                 return null;
               }
             })
-        .when(client)
-        .asyncBatchCreateSessions(Mockito.eq(db), Mockito.eq(1), any(SessionConsumer.class));
+        .when(sessionClient)
+        .asyncBatchCreateSessions(Mockito.eq(1), any(SessionConsumer.class));
     pool = createPool();
     expectedException.expect(isSpannerException(ErrorCode.INTERNAL));
     pool.getReadSession();
@@ -522,7 +525,7 @@ public class SessionPoolTest extends BaseSessionPoolTest {
                       @Override
                       public Void call() throws Exception {
                         SessionConsumerImpl consumer =
-                            invocation.getArgumentAt(2, SessionConsumerImpl.class);
+                            invocation.getArgumentAt(1, SessionConsumerImpl.class);
                         consumer.onSessionCreateFailure(
                             SpannerExceptionFactory.newSpannerException(ErrorCode.INTERNAL, ""), 1);
                         return null;
@@ -531,8 +534,8 @@ public class SessionPoolTest extends BaseSessionPoolTest {
                 return null;
               }
             })
-        .when(client)
-        .asyncBatchCreateSessions(Mockito.eq(db), Mockito.eq(1), any(SessionConsumer.class));
+        .when(sessionClient)
+        .asyncBatchCreateSessions(Mockito.eq(1), any(SessionConsumer.class));
     pool = createPool();
     expectedException.expect(isSpannerException(ErrorCode.INTERNAL));
     pool.getReadWriteSession();
@@ -550,15 +553,15 @@ public class SessionPoolTest extends BaseSessionPoolTest {
                       @Override
                       public void run() {
                         SessionConsumerImpl consumer =
-                            invocation.getArgumentAt(2, SessionConsumerImpl.class);
+                            invocation.getArgumentAt(1, SessionConsumerImpl.class);
                         consumer.onSessionReady(session);
                       }
                     });
                 return null;
               }
             })
-        .when(client)
-        .asyncBatchCreateSessions(Mockito.eq(db), Mockito.eq(1), any(SessionConsumer.class));
+        .when(sessionClient)
+        .asyncBatchCreateSessions(Mockito.eq(1), any(SessionConsumer.class));
     doThrow(SpannerExceptionFactory.newSpannerException(ErrorCode.INTERNAL, ""))
         .when(session)
         .prepareReadWriteTransaction();
@@ -579,15 +582,15 @@ public class SessionPoolTest extends BaseSessionPoolTest {
                       @Override
                       public void run() {
                         SessionConsumerImpl consumer =
-                            invocation.getArgumentAt(2, SessionConsumerImpl.class);
+                            invocation.getArgumentAt(1, SessionConsumerImpl.class);
                         consumer.onSessionReady(mockSession);
                       }
                     });
                 return null;
               }
             })
-        .when(client)
-        .asyncBatchCreateSessions(Mockito.eq(db), Mockito.eq(1), any(SessionConsumer.class));
+        .when(sessionClient)
+        .asyncBatchCreateSessions(Mockito.eq(1), any(SessionConsumer.class));
     pool = createPool();
     try (Session session = pool.getReadWriteSession()) {
       assertThat(session).isNotNull();
@@ -610,15 +613,15 @@ public class SessionPoolTest extends BaseSessionPoolTest {
                       @Override
                       public void run() {
                         SessionConsumerImpl consumer =
-                            invocation.getArgumentAt(2, SessionConsumerImpl.class);
+                            invocation.getArgumentAt(1, SessionConsumerImpl.class);
                         consumer.onSessionReady(sessions.pop());
                       }
                     });
                 return null;
               }
             })
-        .when(client)
-        .asyncBatchCreateSessions(Mockito.eq(db), Mockito.eq(1), any(SessionConsumer.class));
+        .when(sessionClient)
+        .asyncBatchCreateSessions(Mockito.eq(1), any(SessionConsumer.class));
     pool = createPool();
     Session session1 = pool.getReadWriteSession();
     Session session2 = pool.getReadWriteSession();
@@ -641,15 +644,15 @@ public class SessionPoolTest extends BaseSessionPoolTest {
                       @Override
                       public void run() {
                         SessionConsumerImpl consumer =
-                            invocation.getArgumentAt(2, SessionConsumerImpl.class);
+                            invocation.getArgumentAt(1, SessionConsumerImpl.class);
                         consumer.onSessionReady(session);
                       }
                     });
                 return null;
               }
             })
-        .when(client)
-        .asyncBatchCreateSessions(Mockito.eq(db), Mockito.eq(1), any(SessionConsumer.class));
+        .when(sessionClient)
+        .asyncBatchCreateSessions(Mockito.eq(1), any(SessionConsumer.class));
 
     pool = createPool();
     int numSessions = 5;
@@ -696,7 +699,7 @@ public class SessionPoolTest extends BaseSessionPoolTest {
                       @Override
                       public void run() {
                         SessionConsumerImpl consumer =
-                            invocation.getArgumentAt(2, SessionConsumerImpl.class);
+                            invocation.getArgumentAt(1, SessionConsumerImpl.class);
                         consumer.onSessionReady(mockSession1);
                         consumer.onSessionReady(mockSession2);
                       }
@@ -704,8 +707,8 @@ public class SessionPoolTest extends BaseSessionPoolTest {
                 return null;
               }
             })
-        .when(client)
-        .asyncBatchCreateSessions(Mockito.eq(db), Mockito.eq(2), any(SessionConsumer.class));
+        .when(sessionClient)
+        .asyncBatchCreateSessions(Mockito.eq(2), any(SessionConsumer.class));
 
     options =
         SessionPoolOptions.newBuilder()
@@ -747,15 +750,15 @@ public class SessionPoolTest extends BaseSessionPoolTest {
                       @Override
                       public void run() {
                         SessionConsumerImpl consumer =
-                            invocation.getArgumentAt(2, SessionConsumerImpl.class);
+                            invocation.getArgumentAt(1, SessionConsumerImpl.class);
                         consumer.onSessionReady(mockSession1);
                       }
                     });
                 return null;
               }
             })
-        .when(client)
-        .asyncBatchCreateSessions(Mockito.eq(db), Mockito.eq(1), any(SessionConsumer.class));
+        .when(sessionClient)
+        .asyncBatchCreateSessions(Mockito.eq(1), any(SessionConsumer.class));
     options =
         SessionPoolOptions.newBuilder()
             .setMinSessions(minSessions)
@@ -787,15 +790,15 @@ public class SessionPoolTest extends BaseSessionPoolTest {
                       @Override
                       public void run() {
                         SessionConsumerImpl consumer =
-                            invocation.getArgumentAt(2, SessionConsumerImpl.class);
+                            invocation.getArgumentAt(1, SessionConsumerImpl.class);
                         consumer.onSessionReady(mockSession());
                       }
                     });
                 return null;
               }
             })
-        .when(client)
-        .asyncBatchCreateSessions(Mockito.eq(db), Mockito.eq(1), any(SessionConsumer.class));
+        .when(sessionClient)
+        .asyncBatchCreateSessions(Mockito.eq(1), any(SessionConsumer.class));
     pool = createPool();
     Session session1 = pool.getReadSession();
     expectedException.expect(isSpannerException(ErrorCode.RESOURCE_EXHAUSTED));
@@ -824,15 +827,15 @@ public class SessionPoolTest extends BaseSessionPoolTest {
                       @Override
                       public void run() {
                         SessionConsumerImpl consumer =
-                            invocation.getArgumentAt(2, SessionConsumerImpl.class);
+                            invocation.getArgumentAt(1, SessionConsumerImpl.class);
                         consumer.onSessionReady(sessions.pop());
                       }
                     });
                 return null;
               }
             })
-        .when(client)
-        .asyncBatchCreateSessions(Mockito.eq(db), Mockito.eq(1), any(SessionConsumer.class));
+        .when(sessionClient)
+        .asyncBatchCreateSessions(Mockito.eq(1), any(SessionConsumer.class));
     pool = createPool();
     assertThat(pool.getReadWriteSession().delegate).isEqualTo(mockSession2);
   }
@@ -860,15 +863,15 @@ public class SessionPoolTest extends BaseSessionPoolTest {
                       @Override
                       public void run() {
                         SessionConsumerImpl consumer =
-                            invocation.getArgumentAt(2, SessionConsumerImpl.class);
+                            invocation.getArgumentAt(1, SessionConsumerImpl.class);
                         consumer.onSessionReady(sessions.pop());
                       }
                     });
                 return null;
               }
             })
-        .when(client)
-        .asyncBatchCreateSessions(Mockito.eq(db), Mockito.eq(1), any(SessionConsumer.class));
+        .when(sessionClient)
+        .asyncBatchCreateSessions(Mockito.eq(1), any(SessionConsumer.class));
     for (Session session : new Session[] {session1, session2, session3}) {
       doAnswer(
               new Answer<Void>() {
@@ -907,7 +910,7 @@ public class SessionPoolTest extends BaseSessionPoolTest {
     runMaintainanceLoop(clock, pool, pool.poolMaintainer.numClosureCycles);
     // We will still close 2 sessions since at any point in time only 1 session was in use.
     assertThat(numSessionClosed.get()).isEqualTo(2);
-    pool.closeAsync().get();
+    pool.closeAsync().get(5L, TimeUnit.SECONDS);
   }
 
   @Test
@@ -925,9 +928,9 @@ public class SessionPoolTest extends BaseSessionPoolTest {
                     new Runnable() {
                       @Override
                       public void run() {
-                        int sessionCount = invocation.getArgumentAt(1, Integer.class);
+                        int sessionCount = invocation.getArgumentAt(0, Integer.class);
                         SessionConsumerImpl consumer =
-                            invocation.getArgumentAt(2, SessionConsumerImpl.class);
+                            invocation.getArgumentAt(1, SessionConsumerImpl.class);
                         for (int i = 0; i < sessionCount; i++) {
                           consumer.onSessionReady(session);
                         }
@@ -936,8 +939,8 @@ public class SessionPoolTest extends BaseSessionPoolTest {
                 return null;
               }
             })
-        .when(client)
-        .asyncBatchCreateSessions(Mockito.eq(db), anyInt(), any(SessionConsumer.class));
+        .when(sessionClient)
+        .asyncBatchCreateSessions(anyInt(), any(SessionConsumer.class));
     FakeClock clock = new FakeClock();
     clock.currentTimeMillis = System.currentTimeMillis();
     pool = createPool(clock);
@@ -955,7 +958,7 @@ public class SessionPoolTest extends BaseSessionPoolTest {
     session1.close();
     runMaintainanceLoop(clock, pool, pool.poolMaintainer.numKeepAliveCycles);
     verify(session, times(3)).singleUse(any(TimestampBound.class));
-    pool.closeAsync().get();
+    pool.closeAsync().get(5L, TimeUnit.SECONDS);
   }
 
   @Test
@@ -1044,7 +1047,7 @@ public class SessionPoolTest extends BaseSessionPoolTest {
                       @Override
                       public void run() {
                         SessionConsumerImpl consumer =
-                            invocation.getArgumentAt(2, SessionConsumerImpl.class);
+                            invocation.getArgumentAt(1, SessionConsumerImpl.class);
                         consumer.onSessionReady(closedSession);
                       }
                     });
@@ -1060,15 +1063,15 @@ public class SessionPoolTest extends BaseSessionPoolTest {
                       @Override
                       public void run() {
                         SessionConsumerImpl consumer =
-                            invocation.getArgumentAt(2, SessionConsumerImpl.class);
+                            invocation.getArgumentAt(1, SessionConsumerImpl.class);
                         consumer.onSessionReady(openSession);
                       }
                     });
                 return null;
               }
             })
-        .when(client)
-        .asyncBatchCreateSessions(Mockito.eq(db), Mockito.eq(1), any(SessionConsumer.class));
+        .when(sessionClient)
+        .asyncBatchCreateSessions(Mockito.eq(1), any(SessionConsumer.class));
     FakeClock clock = new FakeClock();
     clock.currentTimeMillis = System.currentTimeMillis();
     pool = createPool(clock);
@@ -1101,7 +1104,7 @@ public class SessionPoolTest extends BaseSessionPoolTest {
                       @Override
                       public void run() {
                         SessionConsumerImpl consumer =
-                            invocation.getArgumentAt(2, SessionConsumerImpl.class);
+                            invocation.getArgumentAt(1, SessionConsumerImpl.class);
                         consumer.onSessionReady(closedSession);
                       }
                     });
@@ -1117,15 +1120,15 @@ public class SessionPoolTest extends BaseSessionPoolTest {
                       @Override
                       public void run() {
                         SessionConsumerImpl consumer =
-                            invocation.getArgumentAt(2, SessionConsumerImpl.class);
+                            invocation.getArgumentAt(1, SessionConsumerImpl.class);
                         consumer.onSessionReady(openSession);
                       }
                     });
                 return null;
               }
             })
-        .when(client)
-        .asyncBatchCreateSessions(Mockito.eq(db), Mockito.eq(1), any(SessionConsumer.class));
+        .when(sessionClient)
+        .asyncBatchCreateSessions(Mockito.eq(1), any(SessionConsumer.class));
     FakeClock clock = new FakeClock();
     clock.currentTimeMillis = System.currentTimeMillis();
     pool = createPool(clock);
@@ -1201,6 +1204,8 @@ public class SessionPoolTest extends BaseSessionPoolTest {
         when(openTransactionContext.batchUpdate(Arrays.asList(updateStatement, updateStatement)))
             .thenReturn(new long[] {1L, 1L});
         SpannerImpl spanner = mock(SpannerImpl.class);
+        SessionClient sessionClient = mock(SessionClient.class);
+        when(spanner.getSessionClient(db)).thenReturn(sessionClient);
 
         doAnswer(
                 new Answer<Void>() {
@@ -1211,7 +1216,7 @@ public class SessionPoolTest extends BaseSessionPoolTest {
                           @Override
                           public void run() {
                             SessionConsumerImpl consumer =
-                                invocation.getArgumentAt(2, SessionConsumerImpl.class);
+                                invocation.getArgumentAt(1, SessionConsumerImpl.class);
                             consumer.onSessionReady(closedSession);
                           }
                         });
@@ -1227,15 +1232,15 @@ public class SessionPoolTest extends BaseSessionPoolTest {
                           @Override
                           public void run() {
                             SessionConsumerImpl consumer =
-                                invocation.getArgumentAt(2, SessionConsumerImpl.class);
+                                invocation.getArgumentAt(1, SessionConsumerImpl.class);
                             consumer.onSessionReady(openSession);
                           }
                         });
                     return null;
                   }
                 })
-            .when(spanner)
-            .asyncBatchCreateSessions(Mockito.eq(db), Mockito.eq(1), any(SessionConsumer.class));
+            .when(sessionClient)
+            .asyncBatchCreateSessions(Mockito.eq(1), any(SessionConsumer.class));
         SessionPoolOptions options =
             SessionPoolOptions.newBuilder()
                 .setMinSessions(0) // The pool should not auto-create any sessions
@@ -1246,7 +1251,9 @@ public class SessionPoolTest extends BaseSessionPoolTest {
         when(spannerOptions.getSessionPoolOptions()).thenReturn(options);
         when(spannerOptions.getNumChannels()).thenReturn(4);
         when(spanner.getOptions()).thenReturn(spannerOptions);
-        SessionPool pool = SessionPool.createPool(options, new TestExecutorFactory(), db, spanner);
+        SessionPool pool =
+            SessionPool.createPool(
+                options, new TestExecutorFactory(), spanner.getSessionClient(db));
         try (PooledSession readWriteSession = pool.getReadWriteSession()) {
           TransactionRunner runner = readWriteSession.readWriteTransaction();
           try {
@@ -1343,7 +1350,7 @@ public class SessionPoolTest extends BaseSessionPoolTest {
                       @Override
                       public void run() {
                         SessionConsumerImpl consumer =
-                            invocation.getArgumentAt(2, SessionConsumerImpl.class);
+                            invocation.getArgumentAt(1, SessionConsumerImpl.class);
                         consumer.onSessionReady(closedSession);
                       }
                     });
@@ -1359,15 +1366,15 @@ public class SessionPoolTest extends BaseSessionPoolTest {
                       @Override
                       public void run() {
                         SessionConsumerImpl consumer =
-                            invocation.getArgumentAt(2, SessionConsumerImpl.class);
+                            invocation.getArgumentAt(1, SessionConsumerImpl.class);
                         consumer.onSessionReady(openSession);
                       }
                     });
                 return null;
               }
             })
-        .when(client)
-        .asyncBatchCreateSessions(Mockito.eq(db), Mockito.eq(1), any(SessionConsumer.class));
+        .when(sessionClient)
+        .asyncBatchCreateSessions(Mockito.eq(1), any(SessionConsumer.class));
     FakeClock clock = new FakeClock();
     clock.currentTimeMillis = System.currentTimeMillis();
     pool = createPool(clock);
@@ -1394,7 +1401,7 @@ public class SessionPoolTest extends BaseSessionPoolTest {
                       @Override
                       public void run() {
                         SessionConsumerImpl consumer =
-                            invocation.getArgumentAt(2, SessionConsumerImpl.class);
+                            invocation.getArgumentAt(1, SessionConsumerImpl.class);
                         consumer.onSessionReady(closedSession);
                       }
                     });
@@ -1410,15 +1417,15 @@ public class SessionPoolTest extends BaseSessionPoolTest {
                       @Override
                       public void run() {
                         SessionConsumerImpl consumer =
-                            invocation.getArgumentAt(2, SessionConsumerImpl.class);
+                            invocation.getArgumentAt(1, SessionConsumerImpl.class);
                         consumer.onSessionReady(openSession);
                       }
                     });
                 return null;
               }
             })
-        .when(client)
-        .asyncBatchCreateSessions(Mockito.eq(db), Mockito.eq(1), any(SessionConsumer.class));
+        .when(sessionClient)
+        .asyncBatchCreateSessions(Mockito.eq(1), any(SessionConsumer.class));
 
     FakeClock clock = new FakeClock();
     clock.currentTimeMillis = System.currentTimeMillis();
@@ -1446,7 +1453,7 @@ public class SessionPoolTest extends BaseSessionPoolTest {
                       @Override
                       public void run() {
                         SessionConsumerImpl consumer =
-                            invocation.getArgumentAt(2, SessionConsumerImpl.class);
+                            invocation.getArgumentAt(1, SessionConsumerImpl.class);
                         consumer.onSessionReady(closedSession);
                       }
                     });
@@ -1462,15 +1469,15 @@ public class SessionPoolTest extends BaseSessionPoolTest {
                       @Override
                       public void run() {
                         SessionConsumerImpl consumer =
-                            invocation.getArgumentAt(2, SessionConsumerImpl.class);
+                            invocation.getArgumentAt(1, SessionConsumerImpl.class);
                         consumer.onSessionReady(openSession);
                       }
                     });
                 return null;
               }
             })
-        .when(client)
-        .asyncBatchCreateSessions(Mockito.eq(db), Mockito.eq(1), any(SessionConsumer.class));
+        .when(sessionClient)
+        .asyncBatchCreateSessions(Mockito.eq(1), any(SessionConsumer.class));
     FakeClock clock = new FakeClock();
     clock.currentTimeMillis = System.currentTimeMillis();
     pool = createPool(clock);
@@ -1497,7 +1504,7 @@ public class SessionPoolTest extends BaseSessionPoolTest {
                       @Override
                       public void run() {
                         SessionConsumerImpl consumer =
-                            invocation.getArgumentAt(2, SessionConsumerImpl.class);
+                            invocation.getArgumentAt(1, SessionConsumerImpl.class);
                         consumer.onSessionReady(closedSession);
                       }
                     });
@@ -1513,15 +1520,15 @@ public class SessionPoolTest extends BaseSessionPoolTest {
                       @Override
                       public void run() {
                         SessionConsumerImpl consumer =
-                            invocation.getArgumentAt(2, SessionConsumerImpl.class);
+                            invocation.getArgumentAt(1, SessionConsumerImpl.class);
                         consumer.onSessionReady(openSession);
                       }
                     });
                 return null;
               }
             })
-        .when(client)
-        .asyncBatchCreateSessions(Mockito.eq(db), Mockito.eq(1), any(SessionConsumer.class));
+        .when(sessionClient)
+        .asyncBatchCreateSessions(Mockito.eq(1), any(SessionConsumer.class));
     FakeClock clock = new FakeClock();
     clock.currentTimeMillis = System.currentTimeMillis();
     pool = createPool(clock);

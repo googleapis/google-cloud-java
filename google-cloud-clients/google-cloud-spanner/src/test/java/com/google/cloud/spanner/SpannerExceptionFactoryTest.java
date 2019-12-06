@@ -18,11 +18,14 @@ package com.google.cloud.spanner;
 
 import static com.google.common.truth.Truth.assertThat;
 
+import com.google.api.gax.grpc.GrpcStatusCode;
+import com.google.api.gax.rpc.ApiExceptionFactory;
 import com.google.protobuf.Duration;
 import com.google.rpc.RetryInfo;
 import io.grpc.Context;
 import io.grpc.Metadata;
 import io.grpc.Status;
+import io.grpc.Status.Code;
 import io.grpc.StatusRuntimeException;
 import io.grpc.protobuf.ProtoUtils;
 import org.junit.Test;
@@ -126,5 +129,28 @@ public class SpannerExceptionFactoryTest {
     SpannerException spannerException =
         SpannerExceptionFactory.newSpannerExceptionForCancellation(context, null);
     assertThat(spannerException.getMessage()).isEqualTo("CANCELLED: Current context was cancelled");
+  }
+
+  @Test
+  public void statusRuntimeExceptionSessionNotFound() {
+    SpannerException spannerException =
+        SpannerExceptionFactory.newSpannerException(
+            Status.NOT_FOUND
+                .withDescription(
+                    "NOT_FOUND: Session not found: projects/<project>/instances/<instance>/databases/<database>/sessions/<session id>")
+                .asRuntimeException());
+    assertThat(spannerException).isInstanceOf(SessionNotFoundException.class);
+  }
+
+  @Test
+  public void apiExceptionSessionNotFound() {
+    SpannerException spannerException =
+        SpannerExceptionFactory.newSpannerException(
+            ApiExceptionFactory.createException(
+                "NOT_FOUND: Session not found: projects/<project>/instances/<instance>/databases/<database>/sessions/<session id>",
+                null,
+                GrpcStatusCode.of(Code.NOT_FOUND),
+                false));
+    assertThat(spannerException).isInstanceOf(SessionNotFoundException.class);
   }
 }

@@ -138,10 +138,12 @@ public final class UpdateTransferConfigRequest extends com.google.protobuf.Gener
    *
    *
    * <pre>
-   * Data transfer configuration to create.
+   * Required. Data transfer configuration to create.
    * </pre>
    *
-   * <code>.google.cloud.bigquery.datatransfer.v1.TransferConfig transfer_config = 1;</code>
+   * <code>
+   * .google.cloud.bigquery.datatransfer.v1.TransferConfig transfer_config = 1 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   public boolean hasTransferConfig() {
     return transferConfig_ != null;
@@ -150,10 +152,12 @@ public final class UpdateTransferConfigRequest extends com.google.protobuf.Gener
    *
    *
    * <pre>
-   * Data transfer configuration to create.
+   * Required. Data transfer configuration to create.
    * </pre>
    *
-   * <code>.google.cloud.bigquery.datatransfer.v1.TransferConfig transfer_config = 1;</code>
+   * <code>
+   * .google.cloud.bigquery.datatransfer.v1.TransferConfig transfer_config = 1 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   public com.google.cloud.bigquery.datatransfer.v1.TransferConfig getTransferConfig() {
     return transferConfig_ == null
@@ -164,10 +168,12 @@ public final class UpdateTransferConfigRequest extends com.google.protobuf.Gener
    *
    *
    * <pre>
-   * Data transfer configuration to create.
+   * Required. Data transfer configuration to create.
    * </pre>
    *
-   * <code>.google.cloud.bigquery.datatransfer.v1.TransferConfig transfer_config = 1;</code>
+   * <code>
+   * .google.cloud.bigquery.datatransfer.v1.TransferConfig transfer_config = 1 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   public com.google.cloud.bigquery.datatransfer.v1.TransferConfigOrBuilder
       getTransferConfigOrBuilder() {
@@ -251,10 +257,11 @@ public final class UpdateTransferConfigRequest extends com.google.protobuf.Gener
    *
    *
    * <pre>
-   * Required list of fields to be updated in this request.
+   * Required. Required list of fields to be updated in this request.
    * </pre>
    *
-   * <code>.google.protobuf.FieldMask update_mask = 4;</code>
+   * <code>.google.protobuf.FieldMask update_mask = 4 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   public boolean hasUpdateMask() {
     return updateMask_ != null;
@@ -263,10 +270,11 @@ public final class UpdateTransferConfigRequest extends com.google.protobuf.Gener
    *
    *
    * <pre>
-   * Required list of fields to be updated in this request.
+   * Required. Required list of fields to be updated in this request.
    * </pre>
    *
-   * <code>.google.protobuf.FieldMask update_mask = 4;</code>
+   * <code>.google.protobuf.FieldMask update_mask = 4 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   public com.google.protobuf.FieldMask getUpdateMask() {
     return updateMask_ == null ? com.google.protobuf.FieldMask.getDefaultInstance() : updateMask_;
@@ -275,10 +283,11 @@ public final class UpdateTransferConfigRequest extends com.google.protobuf.Gener
    *
    *
    * <pre>
-   * Required list of fields to be updated in this request.
+   * Required. Required list of fields to be updated in this request.
    * </pre>
    *
-   * <code>.google.protobuf.FieldMask update_mask = 4;</code>
+   * <code>.google.protobuf.FieldMask update_mask = 4 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   public com.google.protobuf.FieldMaskOrBuilder getUpdateMaskOrBuilder() {
     return getUpdateMask();
@@ -747,10 +756,12 @@ public final class UpdateTransferConfigRequest extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * Data transfer configuration to create.
+     * Required. Data transfer configuration to create.
      * </pre>
      *
-     * <code>.google.cloud.bigquery.datatransfer.v1.TransferConfig transfer_config = 1;</code>
+     * <code>
+     * .google.cloud.bigquery.datatransfer.v1.TransferConfig transfer_config = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public boolean hasTransferConfig() {
       return transferConfigBuilder_ != null || transferConfig_ != null;
@@ -759,10 +770,12 @@ public final class UpdateTransferConfigRequest extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * Data transfer configuration to create.
+     * Required. Data transfer configuration to create.
      * </pre>
      *
-     * <code>.google.cloud.bigquery.datatransfer.v1.TransferConfig transfer_config = 1;</code>
+     * <code>
+     * .google.cloud.bigquery.datatransfer.v1.TransferConfig transfer_config = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public com.google.cloud.bigquery.datatransfer.v1.TransferConfig getTransferConfig() {
       if (transferConfigBuilder_ == null) {
@@ -777,10 +790,12 @@ public final class UpdateTransferConfigRequest extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * Data transfer configuration to create.
+     * Required. Data transfer configuration to create.
      * </pre>
      *
-     * <code>.google.cloud.bigquery.datatransfer.v1.TransferConfig transfer_config = 1;</code>
+     * <code>
+     * .google.cloud.bigquery.datatransfer.v1.TransferConfig transfer_config = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder setTransferConfig(
         com.google.cloud.bigquery.datatransfer.v1.TransferConfig value) {
@@ -800,10 +815,12 @@ public final class UpdateTransferConfigRequest extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * Data transfer configuration to create.
+     * Required. Data transfer configuration to create.
      * </pre>
      *
-     * <code>.google.cloud.bigquery.datatransfer.v1.TransferConfig transfer_config = 1;</code>
+     * <code>
+     * .google.cloud.bigquery.datatransfer.v1.TransferConfig transfer_config = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder setTransferConfig(
         com.google.cloud.bigquery.datatransfer.v1.TransferConfig.Builder builderForValue) {
@@ -820,10 +837,12 @@ public final class UpdateTransferConfigRequest extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * Data transfer configuration to create.
+     * Required. Data transfer configuration to create.
      * </pre>
      *
-     * <code>.google.cloud.bigquery.datatransfer.v1.TransferConfig transfer_config = 1;</code>
+     * <code>
+     * .google.cloud.bigquery.datatransfer.v1.TransferConfig transfer_config = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder mergeTransferConfig(
         com.google.cloud.bigquery.datatransfer.v1.TransferConfig value) {
@@ -847,10 +866,12 @@ public final class UpdateTransferConfigRequest extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * Data transfer configuration to create.
+     * Required. Data transfer configuration to create.
      * </pre>
      *
-     * <code>.google.cloud.bigquery.datatransfer.v1.TransferConfig transfer_config = 1;</code>
+     * <code>
+     * .google.cloud.bigquery.datatransfer.v1.TransferConfig transfer_config = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder clearTransferConfig() {
       if (transferConfigBuilder_ == null) {
@@ -867,10 +888,12 @@ public final class UpdateTransferConfigRequest extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * Data transfer configuration to create.
+     * Required. Data transfer configuration to create.
      * </pre>
      *
-     * <code>.google.cloud.bigquery.datatransfer.v1.TransferConfig transfer_config = 1;</code>
+     * <code>
+     * .google.cloud.bigquery.datatransfer.v1.TransferConfig transfer_config = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public com.google.cloud.bigquery.datatransfer.v1.TransferConfig.Builder
         getTransferConfigBuilder() {
@@ -882,10 +905,12 @@ public final class UpdateTransferConfigRequest extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * Data transfer configuration to create.
+     * Required. Data transfer configuration to create.
      * </pre>
      *
-     * <code>.google.cloud.bigquery.datatransfer.v1.TransferConfig transfer_config = 1;</code>
+     * <code>
+     * .google.cloud.bigquery.datatransfer.v1.TransferConfig transfer_config = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public com.google.cloud.bigquery.datatransfer.v1.TransferConfigOrBuilder
         getTransferConfigOrBuilder() {
@@ -901,10 +926,12 @@ public final class UpdateTransferConfigRequest extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * Data transfer configuration to create.
+     * Required. Data transfer configuration to create.
      * </pre>
      *
-     * <code>.google.cloud.bigquery.datatransfer.v1.TransferConfig transfer_config = 1;</code>
+     * <code>
+     * .google.cloud.bigquery.datatransfer.v1.TransferConfig transfer_config = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.bigquery.datatransfer.v1.TransferConfig,
@@ -1097,10 +1124,11 @@ public final class UpdateTransferConfigRequest extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * Required list of fields to be updated in this request.
+     * Required. Required list of fields to be updated in this request.
      * </pre>
      *
-     * <code>.google.protobuf.FieldMask update_mask = 4;</code>
+     * <code>.google.protobuf.FieldMask update_mask = 4 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public boolean hasUpdateMask() {
       return updateMaskBuilder_ != null || updateMask_ != null;
@@ -1109,10 +1137,11 @@ public final class UpdateTransferConfigRequest extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * Required list of fields to be updated in this request.
+     * Required. Required list of fields to be updated in this request.
      * </pre>
      *
-     * <code>.google.protobuf.FieldMask update_mask = 4;</code>
+     * <code>.google.protobuf.FieldMask update_mask = 4 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public com.google.protobuf.FieldMask getUpdateMask() {
       if (updateMaskBuilder_ == null) {
@@ -1127,10 +1156,11 @@ public final class UpdateTransferConfigRequest extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * Required list of fields to be updated in this request.
+     * Required. Required list of fields to be updated in this request.
      * </pre>
      *
-     * <code>.google.protobuf.FieldMask update_mask = 4;</code>
+     * <code>.google.protobuf.FieldMask update_mask = 4 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder setUpdateMask(com.google.protobuf.FieldMask value) {
       if (updateMaskBuilder_ == null) {
@@ -1149,10 +1179,11 @@ public final class UpdateTransferConfigRequest extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * Required list of fields to be updated in this request.
+     * Required. Required list of fields to be updated in this request.
      * </pre>
      *
-     * <code>.google.protobuf.FieldMask update_mask = 4;</code>
+     * <code>.google.protobuf.FieldMask update_mask = 4 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder setUpdateMask(com.google.protobuf.FieldMask.Builder builderForValue) {
       if (updateMaskBuilder_ == null) {
@@ -1168,10 +1199,11 @@ public final class UpdateTransferConfigRequest extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * Required list of fields to be updated in this request.
+     * Required. Required list of fields to be updated in this request.
      * </pre>
      *
-     * <code>.google.protobuf.FieldMask update_mask = 4;</code>
+     * <code>.google.protobuf.FieldMask update_mask = 4 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder mergeUpdateMask(com.google.protobuf.FieldMask value) {
       if (updateMaskBuilder_ == null) {
@@ -1192,10 +1224,11 @@ public final class UpdateTransferConfigRequest extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * Required list of fields to be updated in this request.
+     * Required. Required list of fields to be updated in this request.
      * </pre>
      *
-     * <code>.google.protobuf.FieldMask update_mask = 4;</code>
+     * <code>.google.protobuf.FieldMask update_mask = 4 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder clearUpdateMask() {
       if (updateMaskBuilder_ == null) {
@@ -1212,10 +1245,11 @@ public final class UpdateTransferConfigRequest extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * Required list of fields to be updated in this request.
+     * Required. Required list of fields to be updated in this request.
      * </pre>
      *
-     * <code>.google.protobuf.FieldMask update_mask = 4;</code>
+     * <code>.google.protobuf.FieldMask update_mask = 4 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public com.google.protobuf.FieldMask.Builder getUpdateMaskBuilder() {
 
@@ -1226,10 +1260,11 @@ public final class UpdateTransferConfigRequest extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * Required list of fields to be updated in this request.
+     * Required. Required list of fields to be updated in this request.
      * </pre>
      *
-     * <code>.google.protobuf.FieldMask update_mask = 4;</code>
+     * <code>.google.protobuf.FieldMask update_mask = 4 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public com.google.protobuf.FieldMaskOrBuilder getUpdateMaskOrBuilder() {
       if (updateMaskBuilder_ != null) {
@@ -1244,10 +1279,11 @@ public final class UpdateTransferConfigRequest extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * Required list of fields to be updated in this request.
+     * Required. Required list of fields to be updated in this request.
      * </pre>
      *
-     * <code>.google.protobuf.FieldMask update_mask = 4;</code>
+     * <code>.google.protobuf.FieldMask update_mask = 4 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.protobuf.FieldMask,

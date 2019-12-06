@@ -573,7 +573,7 @@ final class SessionPool {
     @Override
     public TransactionRunner allowNestedTransaction() {
       runner.allowNestedTransaction();
-      return runner;
+      return this;
     }
   }
 
@@ -796,10 +796,12 @@ final class SessionPool {
 
     private void keepAlive() {
       markUsed();
-      delegate
-          .singleUse(TimestampBound.ofMaxStaleness(60, TimeUnit.SECONDS))
-          .executeQuery(Statement.newBuilder("SELECT 1").build())
-          .next();
+      try (ResultSet resultSet =
+          delegate
+              .singleUse(TimestampBound.ofMaxStaleness(60, TimeUnit.SECONDS))
+              .executeQuery(Statement.newBuilder("SELECT 1").build())) {
+        resultSet.next();
+      }
     }
 
     private void markUsed() {
@@ -1040,8 +1042,7 @@ final class SessionPool {
   }
 
   private final SessionPoolOptions options;
-  private final DatabaseId db;
-  private final SpannerImpl spanner;
+  private final SessionClient sessionClient;
   private final ScheduledExecutorService executor;
   private final ExecutorFactory<ScheduledExecutorService> executorFactory;
   final PoolMaintainer poolMaintainer;
@@ -1092,30 +1093,27 @@ final class SessionPool {
    * Return pool is immediately ready for use, though getting a session might block for sessions to
    * be created.
    */
-  static SessionPool createPool(SpannerOptions spannerOptions, DatabaseId db, SpannerImpl spanner) {
+  static SessionPool createPool(SpannerOptions spannerOptions, SessionClient sessionClient) {
     return createPool(
         spannerOptions.getSessionPoolOptions(),
         ((GrpcTransportOptions) spannerOptions.getTransportOptions()).getExecutorFactory(),
-        db,
-        spanner);
+        sessionClient);
   }
 
   static SessionPool createPool(
       SessionPoolOptions poolOptions,
       ExecutorFactory<ScheduledExecutorService> executorFactory,
-      DatabaseId db,
-      SpannerImpl spanner) {
-    return createPool(poolOptions, executorFactory, db, spanner, new Clock());
+      SessionClient sessionClient) {
+    return createPool(poolOptions, executorFactory, sessionClient, new Clock());
   }
 
   static SessionPool createPool(
       SessionPoolOptions poolOptions,
       ExecutorFactory<ScheduledExecutorService> executorFactory,
-      DatabaseId db,
-      SpannerImpl spanner,
+      SessionClient sessionClient,
       Clock clock) {
     SessionPool pool =
-        new SessionPool(poolOptions, executorFactory, executorFactory.get(), db, spanner, clock);
+        new SessionPool(poolOptions, executorFactory, executorFactory.get(), sessionClient, clock);
     pool.initPool();
     return pool;
   }
@@ -1124,14 +1122,12 @@ final class SessionPool {
       SessionPoolOptions options,
       ExecutorFactory<ScheduledExecutorService> executorFactory,
       ScheduledExecutorService executor,
-      DatabaseId db,
-      SpannerImpl spanner,
+      SessionClient sessionClient,
       Clock clock) {
     this.options = options;
     this.executorFactory = executorFactory;
     this.executor = executor;
-    this.db = db;
-    this.spanner = spanner;
+    this.sessionClient = sessionClient;
     this.clock = clock;
     this.poolMaintainer = new PoolMaintainer();
   }
@@ -1154,6 +1150,13 @@ final class SessionPool {
   int getNumberOfSessionsBeingCreated() {
     synchronized (lock) {
       return numSessionsBeingCreated;
+    }
+  }
+
+  @VisibleForTesting
+  int getNumberOfSessionsBeingPrepared() {
+    synchronized (lock) {
+      return numSessionsBeingPrepared;
     }
   }
 
@@ -1187,6 +1190,14 @@ final class SessionPool {
 
   private boolean isSessionNotFound(SpannerException e) {
     return e.getErrorCode() == ErrorCode.NOT_FOUND && e.getMessage().contains("Session not found");
+  }
+
+  private boolean isDatabaseNotFound(SpannerException e) {
+    return e.getErrorCode() == ErrorCode.NOT_FOUND && e.getMessage().contains("Database not found");
+  }
+
+  private boolean isPermissionDenied(SpannerException e) {
+    return e.getErrorCode() == ErrorCode.PERMISSION_DENIED;
   }
 
   private void invalidateSession(PooledSession session) {
@@ -1444,6 +1455,21 @@ final class SessionPool {
     synchronized (lock) {
       if (isSessionNotFound(e)) {
         invalidateSession(session);
+      } else if (isDatabaseNotFound(e) || isPermissionDenied(e)) {
+        // Database has been deleted or the user has no permission to write to this database. We
+        // should stop trying to prepare any transactions. Also propagate the error to all waiters,
+        // as any further waiting is pointless.
+        while (readWriteWaiters.size() > 0) {
+          readWriteWaiters.poll().put(e);
+        }
+        while (readWaiters.size() > 0) {
+          readWaiters.poll().put(e);
+        }
+        // Remove the session from the pool.
+        allSessions.remove(session);
+        if (isClosed()) {
+          decrementPendingClosures(1);
+        }
       } else if (readWriteWaiters.size() > 0) {
         releaseSession(session, Position.FIRST);
         readWriteWaiters.poll().put(e);
@@ -1635,7 +1661,7 @@ final class SessionPool {
         // calls and the session consumer consumes the returned sessions as they become available.
         // The batchCreateSessions method automatically spreads the sessions evenly over all
         // available channels.
-        spanner.asyncBatchCreateSessions(db, sessionCount, sessionConsumer);
+        sessionClient.asyncBatchCreateSessions(sessionCount, sessionConsumer);
         logger.log(Level.FINE, "Sessions created");
       } catch (Throwable t) {
         // Expose this to customer via a metric.

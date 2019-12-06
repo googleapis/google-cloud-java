@@ -7,8 +7,7 @@ package com.google.spanner.admin.instance.v1;
  *
  *
  * <pre>
- * The response for
- * [ListInstanceConfigs][google.spanner.admin.instance.v1.InstanceAdmin.ListInstanceConfigs].
+ * The response for [ListInstanceConfigs][google.spanner.admin.instance.v1.InstanceAdmin.ListInstanceConfigs].
  * </pre>
  *
  * Protobuf type {@code google.spanner.admin.instance.v1.ListInstanceConfigsResponse}
@@ -183,8 +182,8 @@ public final class ListInstanceConfigsResponse extends com.google.protobuf.Gener
    *
    * <pre>
    * `next_page_token` can be sent in a subsequent
-   * [ListInstanceConfigs][google.spanner.admin.instance.v1.InstanceAdmin.ListInstanceConfigs]
-   * call to fetch more of the matching instance configurations.
+   * [ListInstanceConfigs][google.spanner.admin.instance.v1.InstanceAdmin.ListInstanceConfigs] call to
+   * fetch more of the matching instance configurations.
    * </pre>
    *
    * <code>string next_page_token = 2;</code>
@@ -205,8 +204,8 @@ public final class ListInstanceConfigsResponse extends com.google.protobuf.Gener
    *
    * <pre>
    * `next_page_token` can be sent in a subsequent
-   * [ListInstanceConfigs][google.spanner.admin.instance.v1.InstanceAdmin.ListInstanceConfigs]
-   * call to fetch more of the matching instance configurations.
+   * [ListInstanceConfigs][google.spanner.admin.instance.v1.InstanceAdmin.ListInstanceConfigs] call to
+   * fetch more of the matching instance configurations.
    * </pre>
    *
    * <code>string next_page_token = 2;</code>
@@ -398,8 +397,7 @@ public final class ListInstanceConfigsResponse extends com.google.protobuf.Gener
    *
    *
    * <pre>
-   * The response for
-   * [ListInstanceConfigs][google.spanner.admin.instance.v1.InstanceAdmin.ListInstanceConfigs].
+   * The response for [ListInstanceConfigs][google.spanner.admin.instance.v1.InstanceAdmin.ListInstanceConfigs].
    * </pre>
    *
    * Protobuf type {@code google.spanner.admin.instance.v1.ListInstanceConfigsResponse}
@@ -975,8 +973,8 @@ public final class ListInstanceConfigsResponse extends com.google.protobuf.Gener
      *
      * <pre>
      * `next_page_token` can be sent in a subsequent
-     * [ListInstanceConfigs][google.spanner.admin.instance.v1.InstanceAdmin.ListInstanceConfigs]
-     * call to fetch more of the matching instance configurations.
+     * [ListInstanceConfigs][google.spanner.admin.instance.v1.InstanceAdmin.ListInstanceConfigs] call to
+     * fetch more of the matching instance configurations.
      * </pre>
      *
      * <code>string next_page_token = 2;</code>
@@ -997,8 +995,8 @@ public final class ListInstanceConfigsResponse extends com.google.protobuf.Gener
      *
      * <pre>
      * `next_page_token` can be sent in a subsequent
-     * [ListInstanceConfigs][google.spanner.admin.instance.v1.InstanceAdmin.ListInstanceConfigs]
-     * call to fetch more of the matching instance configurations.
+     * [ListInstanceConfigs][google.spanner.admin.instance.v1.InstanceAdmin.ListInstanceConfigs] call to
+     * fetch more of the matching instance configurations.
      * </pre>
      *
      * <code>string next_page_token = 2;</code>
@@ -1019,8 +1017,8 @@ public final class ListInstanceConfigsResponse extends com.google.protobuf.Gener
      *
      * <pre>
      * `next_page_token` can be sent in a subsequent
-     * [ListInstanceConfigs][google.spanner.admin.instance.v1.InstanceAdmin.ListInstanceConfigs]
-     * call to fetch more of the matching instance configurations.
+     * [ListInstanceConfigs][google.spanner.admin.instance.v1.InstanceAdmin.ListInstanceConfigs] call to
+     * fetch more of the matching instance configurations.
      * </pre>
      *
      * <code>string next_page_token = 2;</code>
@@ -1039,8 +1037,8 @@ public final class ListInstanceConfigsResponse extends com.google.protobuf.Gener
      *
      * <pre>
      * `next_page_token` can be sent in a subsequent
-     * [ListInstanceConfigs][google.spanner.admin.instance.v1.InstanceAdmin.ListInstanceConfigs]
-     * call to fetch more of the matching instance configurations.
+     * [ListInstanceConfigs][google.spanner.admin.instance.v1.InstanceAdmin.ListInstanceConfigs] call to
+     * fetch more of the matching instance configurations.
      * </pre>
      *
      * <code>string next_page_token = 2;</code>
@@ -1056,8 +1054,8 @@ public final class ListInstanceConfigsResponse extends com.google.protobuf.Gener
      *
      * <pre>
      * `next_page_token` can be sent in a subsequent
-     * [ListInstanceConfigs][google.spanner.admin.instance.v1.InstanceAdmin.ListInstanceConfigs]
-     * call to fetch more of the matching instance configurations.
+     * [ListInstanceConfigs][google.spanner.admin.instance.v1.InstanceAdmin.ListInstanceConfigs] call to
+     * fetch more of the matching instance configurations.
      * </pre>
      *
      * <code>string next_page_token = 2;</code>

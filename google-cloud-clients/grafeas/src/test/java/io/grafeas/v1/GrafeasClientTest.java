@@ -38,6 +38,7 @@ import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.UUID;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Assert;
@@ -56,7 +57,8 @@ public class GrafeasClientTest {
   public static void startStaticServer() {
     mockGrafeas = new MockGrafeas();
     serviceHelper =
-        new MockServiceHelper("in-process-1", Arrays.<MockGrpcService>asList(mockGrafeas));
+        new MockServiceHelper(
+            UUID.randomUUID().toString(), Arrays.<MockGrpcService>asList(mockGrafeas));
     serviceHelper.start();
   }
 

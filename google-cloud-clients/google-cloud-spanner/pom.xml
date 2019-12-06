@@ -4,7 +4,7 @@
                               http://maven.apache.org/maven-v4_0_0.xsd">
   <modelVersion>4.0.0</modelVersion>
   <artifactId>google-cloud-spanner</artifactId>
-  <version>1.38.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-spanner:current} -->
+  <version>1.47.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-spanner:current} -->
   <packaging>jar</packaging>
   <name>Google Cloud Spanner</name>
   <url>https://github.com/googleapis/google-cloud-java/tree/master/google-cloud-clients/google-cloud-spanner</url>
@@ -14,7 +14,7 @@
   <parent>
     <groupId>com.google.cloud</groupId>
     <artifactId>google-cloud-clients</artifactId>
-    <version>0.111.1-alpha-SNAPSHOT</version><!-- {x-version-update:google-cloud-clients:current} -->
+    <version>0.120.1-alpha-SNAPSHOT</version><!-- {x-version-update:google-cloud-clients:current} -->
   </parent>
   <properties>
     <site.installationModule>google-cloud-spanner</site.installationModule>
@@ -44,7 +44,7 @@
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-surefire-plugin</artifactId>
-        <version>3.0.0-M3</version>
+        <version>3.0.0-M4</version>
         <configuration>
           <excludedGroups>com.google.cloud.spanner.IntegrationTest</excludedGroups>
           <reportNameSuffix>sponge_log</reportNameSuffix>
@@ -67,7 +67,7 @@
           <dependency>
             <groupId>org.apache.maven.surefire</groupId>
             <artifactId>surefire-junit47</artifactId>
-            <version>3.0.0-M3</version>
+            <version>3.0.0-M4</version>
           </dependency>
         </dependencies>
         <executions>
@@ -80,36 +80,48 @@
       </plugin>
     </plugins>
   </build>
+
   <dependencies>
     <dependency>
-      <groupId>${project.groupId}</groupId>
+      <groupId>com.google.cloud</groupId>
       <artifactId>google-cloud-core-grpc</artifactId>
     </dependency>
     <dependency>
       <groupId>com.google.api.grpc</groupId>
       <artifactId>proto-google-cloud-spanner-v1</artifactId>
+      <version>1.47.1-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-spanner-v1:current} -->
     </dependency>
     <dependency>
       <groupId>com.google.api.grpc</groupId>
       <artifactId>proto-google-cloud-spanner-admin-database-v1</artifactId>
+      <version>1.47.1-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-spanner-admin-database-v1:current} -->
     </dependency>
     <dependency>
       <groupId>com.google.api.grpc</groupId>
       <artifactId>proto-google-cloud-spanner-admin-instance-v1</artifactId>
+      <version>1.47.1-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-spanner-admin-instance-v1:current} -->
     </dependency>
     <dependency>
       <groupId>com.google.api.grpc</groupId>
       <artifactId>grpc-google-cloud-spanner-v1</artifactId>
+      <version>1.47.1-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-spanner-v1:current} -->
     </dependency>
     <dependency>
       <groupId>com.google.api.grpc</groupId>
       <artifactId>grpc-google-cloud-spanner-admin-database-v1</artifactId>
+      <version>1.47.1-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-spanner-admin-database-v1:current} -->
     </dependency>
     <dependency>
       <groupId>com.google.api.grpc</groupId>
       <artifactId>grpc-google-cloud-spanner-admin-instance-v1</artifactId>
+      <version>1.47.1-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-spanner-admin-instance-v1:current} -->
     </dependency>
-
+    <dependency>
+      <groupId>com.google.api.grpc</groupId>
+      <artifactId>grpc-google-common-protos</artifactId>
+      <version>1.17.0</version>
+    </dependency>
+    
     <!-- Test dependencies -->
     <dependency>
       <groupId>junit</groupId>

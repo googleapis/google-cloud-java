@@ -49,6 +49,11 @@ import com.google.cloud.spanner.v1.stub.SpannerStub;
 import com.google.common.base.MoreObjects;
 import com.google.common.base.Preconditions;
 import com.google.common.util.concurrent.ThreadFactoryBuilder;
+import com.google.iam.v1.GetIamPolicyRequest;
+import com.google.iam.v1.Policy;
+import com.google.iam.v1.SetIamPolicyRequest;
+import com.google.iam.v1.TestIamPermissionsRequest;
+import com.google.iam.v1.TestIamPermissionsResponse;
 import com.google.longrunning.GetOperationRequest;
 import com.google.longrunning.Operation;
 import com.google.protobuf.Empty;
@@ -95,6 +100,9 @@ import com.google.spanner.v1.RollbackRequest;
 import com.google.spanner.v1.Session;
 import com.google.spanner.v1.Transaction;
 import io.grpc.Context;
+import java.io.UnsupportedEncodingException;
+import java.net.URLDecoder;
+import java.nio.charset.StandardCharsets;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
@@ -181,7 +189,14 @@ public class GapicSpannerRpc implements SpannerRpc {
 
   public GapicSpannerRpc(final SpannerOptions options) {
     this.projectId = options.getProjectId();
-    this.projectName = PROJECT_NAME_TEMPLATE.instantiate("project", this.projectId);
+    String projectNameStr = PROJECT_NAME_TEMPLATE.instantiate("project", this.projectId);
+    try {
+      // Fix use cases where projectName contains special charecters.
+      // This would happen when projects are under an organization.
+      projectNameStr = URLDecoder.decode(projectNameStr, StandardCharsets.UTF_8.toString());
+    } catch (UnsupportedEncodingException e) { // Ignored.
+    }
+    this.projectName = projectNameStr;
 
     // create a metadataProvider which combines both internal headers and
     // per-method-call extra headers for channelProvider to inject the headers
@@ -601,6 +616,76 @@ public class GapicSpannerRpc implements SpannerRpc {
       PartitionReadRequest request, @Nullable Map<Option, ?> options) throws SpannerException {
     GrpcCallContext context = newCallContext(options, request.getSession());
     return get(spannerStub.partitionReadCallable().futureCall(request, context));
+  }
+
+  @Override
+  public Policy getDatabaseAdminIAMPolicy(String resource) {
+    GrpcCallContext context = newCallContext(null, resource);
+    return get(
+        databaseAdminStub
+            .getIamPolicyCallable()
+            .futureCall(GetIamPolicyRequest.newBuilder().setResource(resource).build(), context));
+  }
+
+  @Override
+  public Policy setDatabaseAdminIAMPolicy(String resource, Policy policy) {
+    GrpcCallContext context = newCallContext(null, resource);
+    return get(
+        databaseAdminStub
+            .setIamPolicyCallable()
+            .futureCall(
+                SetIamPolicyRequest.newBuilder().setResource(resource).setPolicy(policy).build(),
+                context));
+  }
+
+  @Override
+  public TestIamPermissionsResponse testDatabaseAdminIAMPermissions(
+      String resource, Iterable<String> permissions) {
+    GrpcCallContext context = newCallContext(null, resource);
+    return get(
+        databaseAdminStub
+            .testIamPermissionsCallable()
+            .futureCall(
+                TestIamPermissionsRequest.newBuilder()
+                    .setResource(resource)
+                    .addAllPermissions(permissions)
+                    .build(),
+                context));
+  }
+
+  @Override
+  public Policy getInstanceAdminIAMPolicy(String resource) {
+    GrpcCallContext context = newCallContext(null, resource);
+    return get(
+        instanceAdminStub
+            .getIamPolicyCallable()
+            .futureCall(GetIamPolicyRequest.newBuilder().setResource(resource).build(), context));
+  }
+
+  @Override
+  public Policy setInstanceAdminIAMPolicy(String resource, Policy policy) {
+    GrpcCallContext context = newCallContext(null, resource);
+    return get(
+        instanceAdminStub
+            .setIamPolicyCallable()
+            .futureCall(
+                SetIamPolicyRequest.newBuilder().setResource(resource).setPolicy(policy).build(),
+                context));
+  }
+
+  @Override
+  public TestIamPermissionsResponse testInstanceAdminIAMPermissions(
+      String resource, Iterable<String> permissions) {
+    GrpcCallContext context = newCallContext(null, resource);
+    return get(
+        instanceAdminStub
+            .testIamPermissionsCallable()
+            .futureCall(
+                TestIamPermissionsRequest.newBuilder()
+                    .setResource(resource)
+                    .addAllPermissions(permissions)
+                    .build(),
+                context));
   }
 
   /** Gets the result of an async RPC call, handling any exceptions encountered. */

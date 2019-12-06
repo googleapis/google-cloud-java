@@ -177,7 +177,9 @@ public final class CommitRequest extends com.google.protobuf.GeneratedMessageV3
    * Required. The session in which the transaction to be committed is running.
    * </pre>
    *
-   * <code>string session = 1;</code>
+   * <code>
+   * string session = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    */
   public java.lang.String getSession() {
     java.lang.Object ref = session_;
@@ -197,7 +199,9 @@ public final class CommitRequest extends com.google.protobuf.GeneratedMessageV3
    * Required. The session in which the transaction to be committed is running.
    * </pre>
    *
-   * <code>string session = 1;</code>
+   * <code>
+   * string session = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    */
   public com.google.protobuf.ByteString getSessionBytes() {
     java.lang.Object ref = session_;
@@ -833,7 +837,9 @@ public final class CommitRequest extends com.google.protobuf.GeneratedMessageV3
      * Required. The session in which the transaction to be committed is running.
      * </pre>
      *
-     * <code>string session = 1;</code>
+     * <code>
+     * string session = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      */
     public java.lang.String getSession() {
       java.lang.Object ref = session_;
@@ -853,7 +859,9 @@ public final class CommitRequest extends com.google.protobuf.GeneratedMessageV3
      * Required. The session in which the transaction to be committed is running.
      * </pre>
      *
-     * <code>string session = 1;</code>
+     * <code>
+     * string session = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      */
     public com.google.protobuf.ByteString getSessionBytes() {
       java.lang.Object ref = session_;
@@ -873,7 +881,9 @@ public final class CommitRequest extends com.google.protobuf.GeneratedMessageV3
      * Required. The session in which the transaction to be committed is running.
      * </pre>
      *
-     * <code>string session = 1;</code>
+     * <code>
+     * string session = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      */
     public Builder setSession(java.lang.String value) {
       if (value == null) {
@@ -891,7 +901,9 @@ public final class CommitRequest extends com.google.protobuf.GeneratedMessageV3
      * Required. The session in which the transaction to be committed is running.
      * </pre>
      *
-     * <code>string session = 1;</code>
+     * <code>
+     * string session = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      */
     public Builder clearSession() {
 
@@ -906,7 +918,9 @@ public final class CommitRequest extends com.google.protobuf.GeneratedMessageV3
      * Required. The session in which the transaction to be committed is running.
      * </pre>
      *
-     * <code>string session = 1;</code>
+     * <code>
+     * string session = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      */
     public Builder setSessionBytes(com.google.protobuf.ByteString value) {
       if (value == null) {

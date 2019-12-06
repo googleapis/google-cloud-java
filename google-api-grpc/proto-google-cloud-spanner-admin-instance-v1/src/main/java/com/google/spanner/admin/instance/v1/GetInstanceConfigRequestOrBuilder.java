@@ -16,7 +16,9 @@ public interface GetInstanceConfigRequestOrBuilder
    * the form `projects/&lt;project&gt;/instanceConfigs/&lt;config&gt;`.
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>
+   * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    */
   java.lang.String getName();
   /**
@@ -27,7 +29,9 @@ public interface GetInstanceConfigRequestOrBuilder
    * the form `projects/&lt;project&gt;/instanceConfigs/&lt;config&gt;`.
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>
+   * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    */
   com.google.protobuf.ByteString getNameBytes();
 }

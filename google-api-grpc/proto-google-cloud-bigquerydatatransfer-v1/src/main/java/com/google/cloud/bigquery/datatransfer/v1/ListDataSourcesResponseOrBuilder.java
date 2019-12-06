@@ -70,7 +70,7 @@ public interface ListDataSourcesResponseOrBuilder
    * to request the next page of list results.
    * </pre>
    *
-   * <code>string next_page_token = 2;</code>
+   * <code>string next_page_token = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    */
   java.lang.String getNextPageToken();
   /**
@@ -83,7 +83,7 @@ public interface ListDataSourcesResponseOrBuilder
    * to request the next page of list results.
    * </pre>
    *
-   * <code>string next_page_token = 2;</code>
+   * <code>string next_page_token = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    */
   com.google.protobuf.ByteString getNextPageTokenBytes();
 }

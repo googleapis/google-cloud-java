@@ -106,7 +106,9 @@ public final class RollbackRequest extends com.google.protobuf.GeneratedMessageV
    * Required. The session in which the transaction to roll back is running.
    * </pre>
    *
-   * <code>string session = 1;</code>
+   * <code>
+   * string session = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    */
   public java.lang.String getSession() {
     java.lang.Object ref = session_;
@@ -126,7 +128,9 @@ public final class RollbackRequest extends com.google.protobuf.GeneratedMessageV
    * Required. The session in which the transaction to roll back is running.
    * </pre>
    *
-   * <code>string session = 1;</code>
+   * <code>
+   * string session = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    */
   public com.google.protobuf.ByteString getSessionBytes() {
     java.lang.Object ref = session_;
@@ -149,7 +153,7 @@ public final class RollbackRequest extends com.google.protobuf.GeneratedMessageV
    * Required. The transaction to roll back.
    * </pre>
    *
-   * <code>bytes transaction_id = 2;</code>
+   * <code>bytes transaction_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   public com.google.protobuf.ByteString getTransactionId() {
     return transactionId_;
@@ -492,7 +496,9 @@ public final class RollbackRequest extends com.google.protobuf.GeneratedMessageV
      * Required. The session in which the transaction to roll back is running.
      * </pre>
      *
-     * <code>string session = 1;</code>
+     * <code>
+     * string session = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      */
     public java.lang.String getSession() {
       java.lang.Object ref = session_;
@@ -512,7 +518,9 @@ public final class RollbackRequest extends com.google.protobuf.GeneratedMessageV
      * Required. The session in which the transaction to roll back is running.
      * </pre>
      *
-     * <code>string session = 1;</code>
+     * <code>
+     * string session = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      */
     public com.google.protobuf.ByteString getSessionBytes() {
       java.lang.Object ref = session_;
@@ -532,7 +540,9 @@ public final class RollbackRequest extends com.google.protobuf.GeneratedMessageV
      * Required. The session in which the transaction to roll back is running.
      * </pre>
      *
-     * <code>string session = 1;</code>
+     * <code>
+     * string session = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      */
     public Builder setSession(java.lang.String value) {
       if (value == null) {
@@ -550,7 +560,9 @@ public final class RollbackRequest extends com.google.protobuf.GeneratedMessageV
      * Required. The session in which the transaction to roll back is running.
      * </pre>
      *
-     * <code>string session = 1;</code>
+     * <code>
+     * string session = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      */
     public Builder clearSession() {
 
@@ -565,7 +577,9 @@ public final class RollbackRequest extends com.google.protobuf.GeneratedMessageV
      * Required. The session in which the transaction to roll back is running.
      * </pre>
      *
-     * <code>string session = 1;</code>
+     * <code>
+     * string session = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      */
     public Builder setSessionBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -586,7 +600,7 @@ public final class RollbackRequest extends com.google.protobuf.GeneratedMessageV
      * Required. The transaction to roll back.
      * </pre>
      *
-     * <code>bytes transaction_id = 2;</code>
+     * <code>bytes transaction_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public com.google.protobuf.ByteString getTransactionId() {
       return transactionId_;
@@ -598,7 +612,7 @@ public final class RollbackRequest extends com.google.protobuf.GeneratedMessageV
      * Required. The transaction to roll back.
      * </pre>
      *
-     * <code>bytes transaction_id = 2;</code>
+     * <code>bytes transaction_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder setTransactionId(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -616,7 +630,7 @@ public final class RollbackRequest extends com.google.protobuf.GeneratedMessageV
      * Required. The transaction to roll back.
      * </pre>
      *
-     * <code>bytes transaction_id = 2;</code>
+     * <code>bytes transaction_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder clearTransactionId() {
 

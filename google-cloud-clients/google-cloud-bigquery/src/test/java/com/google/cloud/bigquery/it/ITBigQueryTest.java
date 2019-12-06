@@ -67,6 +67,7 @@ import com.google.cloud.bigquery.ModelId;
 import com.google.cloud.bigquery.ModelInfo;
 import com.google.cloud.bigquery.QueryJobConfiguration;
 import com.google.cloud.bigquery.QueryParameterValue;
+import com.google.cloud.bigquery.RangePartitioning;
 import com.google.cloud.bigquery.Routine;
 import com.google.cloud.bigquery.RoutineArgument;
 import com.google.cloud.bigquery.RoutineId;
@@ -215,6 +216,10 @@ public class ITBigQueryTest {
           Field.newBuilder("BooleanField", LegacySQLTypeName.BOOLEAN)
               .setMode(Field.Mode.NULLABLE)
               .build());
+  private static final RangePartitioning.Range RANGE =
+      RangePartitioning.Range.newBuilder().setStart(1L).setInterval(2L).setEnd(20L).build();
+  private static final RangePartitioning RANGE_PARTITIONING =
+      RangePartitioning.newBuilder().setField("IntegerField").setRange(RANGE).build();
   private static final String LOAD_FILE = "load.csv";
   private static final String JSON_LOAD_FILE = "load.json";
   private static final String EXTRACT_FILE = "extract.csv";
@@ -279,6 +284,7 @@ public class ITBigQueryTest {
   public static void beforeClass() throws InterruptedException, TimeoutException {
     RemoteBigQueryHelper bigqueryHelper = RemoteBigQueryHelper.create();
     RemoteStorageHelper storageHelper = RemoteStorageHelper.create();
+    Map<String, String> labels = ImmutableMap.of("test-job-name", "test-load-job");
     bigquery = bigqueryHelper.getOptions().getService();
     storage = storageHelper.getOptions().getService();
     storage.create(BucketInfo.of(BUCKET));
@@ -302,10 +308,13 @@ public class ITBigQueryTest {
                 TABLE_ID, "gs://" + BUCKET + "/" + JSON_LOAD_FILE, FormatOptions.json())
             .setCreateDisposition(JobInfo.CreateDisposition.CREATE_IF_NEEDED)
             .setSchema(TABLE_SCHEMA)
+            .setLabels(labels)
             .build();
     Job job = bigquery.create(JobInfo.of(configuration));
     job = job.waitFor();
     assertNull(job.getStatus().getError());
+    LoadJobConfiguration loadJobConfiguration = job.getConfiguration();
+    assertEquals(labels, loadJobConfiguration.getLabels());
   }
 
   @AfterClass
@@ -447,6 +456,30 @@ public class ITBigQueryTest {
   @Test
   public void testGetNonExistingTable() {
     assertNull(bigquery.getTable(DATASET, "test_get_non_existing_table"));
+  }
+
+  @Test
+  public void testCreateTableWithRangePartitioning() {
+    String tableName = "test_create_table_rangepartitioning";
+    TableId tableId = TableId.of(DATASET, tableName);
+    try {
+      StandardTableDefinition tableDefinition =
+          StandardTableDefinition.newBuilder()
+              .setSchema(TABLE_SCHEMA)
+              .setRangePartitioning(RANGE_PARTITIONING)
+              .build();
+      Table createdTable = bigquery.create(TableInfo.of(tableId, tableDefinition));
+      assertNotNull(createdTable);
+      Table remoteTable = bigquery.getTable(DATASET, tableName);
+      assertEquals(
+          RANGE,
+          remoteTable.<StandardTableDefinition>getDefinition().getRangePartitioning().getRange());
+      assertEquals(
+          RANGE_PARTITIONING,
+          remoteTable.<StandardTableDefinition>getDefinition().getRangePartitioning());
+    } finally {
+      bigquery.delete(tableId);
+    }
   }
 
   @Test
@@ -1237,6 +1270,62 @@ public class ITBigQueryTest {
   }
 
   @Test
+  public void testScriptStatistics() throws InterruptedException {
+    long currentTime = System.currentTimeMillis();
+    String script =
+        "-- Declare a variable to hold names as an array.\n"
+            + "DECLARE top_names ARRAY<STRING>;\n"
+            + "-- Build an array of the top 100 names from the year 2017.\n"
+            + "SET top_names = (\n"
+            + "  SELECT ARRAY_AGG(name ORDER BY number DESC LIMIT 100)\n"
+            + "  FROM `bigquery-public-data`.usa_names.usa_1910_current\n"
+            + "  WHERE year = 2017\n"
+            + ");\n"
+            + "-- Which names appear as words in Shakespeare's plays?\n"
+            + "SELECT\n"
+            + "  name AS shakespeare_name\n"
+            + "FROM UNNEST(top_names) AS name\n"
+            + "WHERE name IN (\n"
+            + "  SELECT word\n"
+            + "  FROM `bigquery-public-data`.samples.shakespeare\n"
+            + ");";
+    QueryJobConfiguration config = QueryJobConfiguration.of(script);
+    Job remoteJob = bigquery.create(JobInfo.of(config));
+    JobInfo info = remoteJob.waitFor();
+    JobStatistics jobStatistics = info.getStatistics();
+    String parentJobId = info.getJobId().getJob();
+    assertEquals(2, jobStatistics.getNumChildJobs().longValue());
+    Page<Job> page =
+        bigquery.listJobs(
+            JobListOption.parentJobId(parentJobId), JobListOption.minCreationTime(currentTime));
+    for (Job job : page.iterateAll()) {
+      JobStatistics.ScriptStatistics scriptStatistics = job.getStatistics().getScriptStatistics();
+      if (scriptStatistics != null) {
+        if (scriptStatistics.getEvaluationKind().equals("STATEMENT")) {
+          assertEquals("STATEMENT", scriptStatistics.getEvaluationKind());
+          for (JobStatistics.ScriptStatistics.ScriptStackFrame stackFrame :
+              scriptStatistics.getStackFrames()) {
+            assertEquals(2, stackFrame.getEndColumn().intValue());
+            assertEquals(16, stackFrame.getEndLine().intValue());
+            assertEquals(1, stackFrame.getStartColumn().intValue());
+            assertEquals(10, stackFrame.getStartLine().intValue());
+          }
+
+        } else {
+          assertEquals("EXPRESSION", scriptStatistics.getEvaluationKind());
+          for (JobStatistics.ScriptStatistics.ScriptStackFrame stackFrame :
+              scriptStatistics.getStackFrames()) {
+            assertEquals(2, stackFrame.getEndColumn().intValue());
+            assertEquals(8, stackFrame.getEndLine().intValue());
+            assertEquals(17, stackFrame.getStartColumn().intValue());
+            assertEquals(4, stackFrame.getStartLine().intValue());
+          }
+        }
+      }
+    }
+  }
+
+  @Test
   public void testPositionalQueryParameters() throws InterruptedException {
     String query =
         "SELECT TimestampField, StringField, BooleanField FROM "
@@ -1477,6 +1566,30 @@ public class ITBigQueryTest {
   }
 
   @Test
+  public void testCopyJobWithLabels() throws InterruptedException {
+    String sourceTableName = "test_copy_job_source_table_label";
+    String destinationTableName = "test_copy_job_destination_table_label";
+    Map<String, String> labels = ImmutableMap.of("test_job_name", "test_copy_job");
+    TableId sourceTable = TableId.of(DATASET, sourceTableName);
+    StandardTableDefinition tableDefinition = StandardTableDefinition.of(TABLE_SCHEMA);
+    TableInfo tableInfo = TableInfo.of(sourceTable, tableDefinition);
+    Table createdTable = bigquery.create(tableInfo);
+    assertNotNull(createdTable);
+    TableId destinationTable = TableId.of(DATASET, destinationTableName);
+    CopyJobConfiguration configuration =
+        CopyJobConfiguration.newBuilder(destinationTable, sourceTable).setLabels(labels).build();
+    Job remoteJob = bigquery.create(JobInfo.of(configuration));
+    remoteJob = remoteJob.waitFor();
+    assertNull(remoteJob.getStatus().getError());
+    CopyJobConfiguration copyJobConfiguration = remoteJob.getConfiguration();
+    assertEquals(labels, copyJobConfiguration.getLabels());
+    Table remoteTable = bigquery.getTable(DATASET, destinationTableName);
+    assertNotNull(remoteTable);
+    assertTrue(createdTable.delete());
+    assertTrue(remoteTable.delete());
+  }
+
+  @Test
   public void testQueryJob() throws InterruptedException, TimeoutException {
     String tableName = "test_query_job_table";
     String query = "SELECT TimestampField, StringField, BooleanField FROM " + TABLE_ID.getTable();
@@ -1513,6 +1626,78 @@ public class ITBigQueryTest {
   }
 
   @Test
+  public void testQueryJobWithLabels() throws InterruptedException, TimeoutException {
+    String tableName = "test_query_job_table";
+    String query = "SELECT TimestampField, StringField, BooleanField FROM " + TABLE_ID.getTable();
+    Map<String, String> labels = ImmutableMap.of("test-job-name", "test-query-job");
+    TableId destinationTable = TableId.of(DATASET, tableName);
+    try {
+      QueryJobConfiguration configuration =
+          QueryJobConfiguration.newBuilder(query)
+              .setDefaultDataset(DatasetId.of(DATASET))
+              .setDestinationTable(destinationTable)
+              .setLabels(labels)
+              .build();
+      Job remoteJob = bigquery.create(JobInfo.of(configuration));
+      remoteJob = remoteJob.waitFor();
+      assertNull(remoteJob.getStatus().getError());
+      QueryJobConfiguration queryJobConfiguration = remoteJob.getConfiguration();
+      assertEquals(labels, queryJobConfiguration.getLabels());
+    } finally {
+      bigquery.delete(destinationTable);
+    }
+  }
+
+  @Test
+  public void testQueryJobWithRangePartitioning() throws InterruptedException {
+    String tableName = "test_query_job_table_rangepartitioning";
+    String query =
+        "SELECT IntegerField, TimestampField, StringField, BooleanField FROM "
+            + TABLE_ID.getTable();
+    TableId destinationTable = TableId.of(DATASET, tableName);
+    try {
+      QueryJobConfiguration configuration =
+          QueryJobConfiguration.newBuilder(query)
+              .setDefaultDataset(DatasetId.of(DATASET))
+              .setDestinationTable(destinationTable)
+              .setRangePartitioning(RANGE_PARTITIONING)
+              .build();
+      Job remoteJob = bigquery.create(JobInfo.of(configuration));
+      remoteJob = remoteJob.waitFor();
+      assertNull(remoteJob.getStatus().getError());
+      QueryJobConfiguration queryJobConfiguration = remoteJob.getConfiguration();
+      assertEquals(RANGE, queryJobConfiguration.getRangePartitioning().getRange());
+      assertEquals(RANGE_PARTITIONING, queryJobConfiguration.getRangePartitioning());
+    } finally {
+      bigquery.delete(destinationTable);
+    }
+  }
+
+  @Test
+  public void testLoadJobWithRangePartitioning() throws InterruptedException {
+    String tableName = "test_load_job_table_rangepartitioning";
+    TableId destinationTable = TableId.of(DATASET, tableName);
+    try {
+      LoadJobConfiguration configuration =
+          LoadJobConfiguration.newBuilder(
+                  TABLE_ID, "gs://" + BUCKET + "/" + JSON_LOAD_FILE, FormatOptions.json())
+              .setCreateDisposition(JobInfo.CreateDisposition.CREATE_IF_NEEDED)
+              .setSchema(TABLE_SCHEMA)
+              .setRangePartitioning(RANGE_PARTITIONING)
+              .setDestinationTable(destinationTable)
+              .build();
+      Job job = bigquery.create(JobInfo.of(configuration));
+      job = job.waitFor();
+      assertNull(job.getStatus().getError());
+      LoadJobConfiguration loadJobConfiguration = job.getConfiguration();
+      assertEquals(RANGE, loadJobConfiguration.getRangePartitioning().getRange());
+      assertEquals(RANGE_PARTITIONING, loadJobConfiguration.getRangePartitioning());
+    } finally {
+      bigquery.delete(destinationTable);
+    }
+  }
+
+  @Test
   public void testQueryJobWithDryRun() throws InterruptedException, TimeoutException {
     String tableName = "test_query_job_table";
     String query = "SELECT TimestampField, StringField, BooleanField FROM " + TABLE_ID.getTable();
@@ -1533,13 +1718,17 @@ public class ITBigQueryTest {
   public void testExtractJob() throws InterruptedException, TimeoutException {
     String tableName = "test_export_job_table";
     TableId destinationTable = TableId.of(DATASET, tableName);
+    Map<String, String> labels = ImmutableMap.of("test-job-name", "test-load-extract-job");
     LoadJobConfiguration configuration =
         LoadJobConfiguration.newBuilder(destinationTable, "gs://" + BUCKET + "/" + LOAD_FILE)
             .setSchema(SIMPLE_SCHEMA)
+            .setLabels(labels)
             .build();
     Job remoteLoadJob = bigquery.create(JobInfo.of(configuration));
     remoteLoadJob = remoteLoadJob.waitFor();
     assertNull(remoteLoadJob.getStatus().getError());
+    LoadJobConfiguration loadJobConfiguration = remoteLoadJob.getConfiguration();
+    assertEquals(labels, loadJobConfiguration.getLabels());
 
     ExtractJobConfiguration extractConfiguration =
         ExtractJobConfiguration.newBuilder(destinationTable, "gs://" + BUCKET + "/" + EXTRACT_FILE)
@@ -1553,6 +1742,32 @@ public class ITBigQueryTest {
         new String(storage.readAllBytes(BUCKET, EXTRACT_FILE), StandardCharsets.UTF_8);
     assertEquals(
         Sets.newHashSet(CSV_CONTENT.split("\n")), Sets.newHashSet(extractedCsv.split("\n")));
+    assertTrue(bigquery.delete(destinationTable));
+  }
+
+  @Test
+  public void testExtractJobWithLabels() throws InterruptedException, TimeoutException {
+    String tableName = "test_export_job_table_label";
+    Map<String, String> labels = ImmutableMap.of("test_job_name", "test_export_job");
+    TableId destinationTable = TableId.of(DATASET, tableName);
+    LoadJobConfiguration configuration =
+        LoadJobConfiguration.newBuilder(destinationTable, "gs://" + BUCKET + "/" + LOAD_FILE)
+            .setSchema(SIMPLE_SCHEMA)
+            .build();
+    Job remoteLoadJob = bigquery.create(JobInfo.of(configuration));
+    remoteLoadJob = remoteLoadJob.waitFor();
+    assertNull(remoteLoadJob.getStatus().getError());
+
+    ExtractJobConfiguration extractConfiguration =
+        ExtractJobConfiguration.newBuilder(destinationTable, "gs://" + BUCKET + "/" + EXTRACT_FILE)
+            .setLabels(labels)
+            .setPrintHeader(false)
+            .build();
+    Job remoteExtractJob = bigquery.create(JobInfo.of(extractConfiguration));
+    remoteExtractJob = remoteExtractJob.waitFor();
+    assertNull(remoteExtractJob.getStatus().getError());
+    ExtractJobConfiguration extractJobConfiguration = remoteExtractJob.getConfiguration();
+    assertEquals(labels, extractJobConfiguration.getLabels());
     assertTrue(bigquery.delete(destinationTable));
   }
 

@@ -42,6 +42,7 @@ public class DatasetInfoTest {
           "example-label2", "example-value2");
   private static final Long CREATION_TIME = System.currentTimeMillis();
   private static final Long DEFAULT_TABLE_EXPIRATION = CREATION_TIME + 100;
+  private static final Long DEFAULT_PARTITION__EXPIRATION = CREATION_TIME + 86400;
   private static final String DESCRIPTION = "description";
   private static final String ETAG = "0xFF00";
   private static final String FRIENDLY_NAME = "friendlyDataset";
@@ -67,6 +68,7 @@ public class DatasetInfoTest {
           .setSelfLink(SELF_LINK)
           .setLabels(LABELS)
           .setDefaultEncryptionConfiguration(DATASET_ENCRYPTION_CONFIGURATION)
+          .setDefaultPartitionExpirationMs(DEFAULT_PARTITION__EXPIRATION)
           .build();
   private static final DatasetInfo DATASET_INFO_COMPLETE =
       DATASET_INFO
@@ -113,6 +115,7 @@ public class DatasetInfoTest {
     assertEquals(SELF_LINK, DATASET_INFO.getSelfLink());
     assertEquals(
         DATASET_ENCRYPTION_CONFIGURATION, DATASET_INFO.getDefaultEncryptionConfiguration());
+    assertEquals(DEFAULT_PARTITION__EXPIRATION, DATASET_INFO.getDefaultPartitionExpirationMs());
     assertEquals(DATASET_ID_COMPLETE, DATASET_INFO_COMPLETE.getDatasetId());
     assertEquals(ACCESS_RULES_COMPLETE, DATASET_INFO_COMPLETE.getAcl());
     assertEquals(CREATION_TIME, DATASET_INFO_COMPLETE.getCreationTime());
@@ -142,6 +145,7 @@ public class DatasetInfoTest {
     assertNull(datasetInfo.getLocation());
     assertNull(datasetInfo.getSelfLink());
     assertNull(datasetInfo.getDefaultEncryptionConfiguration());
+    assertNull(datasetInfo.getDefaultPartitionExpirationMs());
     assertTrue(datasetInfo.getLabels().isEmpty());
 
     datasetInfo = DatasetInfo.of(DATASET_ID);
@@ -157,6 +161,7 @@ public class DatasetInfoTest {
     assertNull(datasetInfo.getLocation());
     assertNull(datasetInfo.getSelfLink());
     assertNull(datasetInfo.getDefaultEncryptionConfiguration());
+    assertNull(datasetInfo.getDefaultPartitionExpirationMs());
     assertTrue(datasetInfo.getLabels().isEmpty());
   }
 
@@ -188,5 +193,7 @@ public class DatasetInfoTest {
     assertEquals(expected.getLabels(), value.getLabels());
     assertEquals(
         expected.getDefaultEncryptionConfiguration(), value.getDefaultEncryptionConfiguration());
+    assertEquals(
+        expected.getDefaultPartitionExpirationMs(), value.getDefaultPartitionExpirationMs());
   }
 }

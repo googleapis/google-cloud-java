@@ -125,7 +125,9 @@ public final class CreateDatabaseRequest extends com.google.protobuf.GeneratedMe
    * Values are of the form `projects/&lt;project&gt;/instances/&lt;instance&gt;`.
    * </pre>
    *
-   * <code>string parent = 1;</code>
+   * <code>
+   * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    */
   public java.lang.String getParent() {
     java.lang.Object ref = parent_;
@@ -146,7 +148,9 @@ public final class CreateDatabaseRequest extends com.google.protobuf.GeneratedMe
    * Values are of the form `projects/&lt;project&gt;/instances/&lt;instance&gt;`.
    * </pre>
    *
-   * <code>string parent = 1;</code>
+   * <code>
+   * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    */
   public com.google.protobuf.ByteString getParentBytes() {
     java.lang.Object ref = parent_;
@@ -173,7 +177,7 @@ public final class CreateDatabaseRequest extends com.google.protobuf.GeneratedMe
    * database ID must be enclosed in backticks (`` ` ``).
    * </pre>
    *
-   * <code>string create_statement = 2;</code>
+   * <code>string create_statement = 2 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   public java.lang.String getCreateStatement() {
     java.lang.Object ref = createStatement_;
@@ -197,7 +201,7 @@ public final class CreateDatabaseRequest extends com.google.protobuf.GeneratedMe
    * database ID must be enclosed in backticks (`` ` ``).
    * </pre>
    *
-   * <code>string create_statement = 2;</code>
+   * <code>string create_statement = 2 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   public com.google.protobuf.ByteString getCreateStatementBytes() {
     java.lang.Object ref = createStatement_;
@@ -657,7 +661,9 @@ public final class CreateDatabaseRequest extends com.google.protobuf.GeneratedMe
      * Values are of the form `projects/&lt;project&gt;/instances/&lt;instance&gt;`.
      * </pre>
      *
-     * <code>string parent = 1;</code>
+     * <code>
+     * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      */
     public java.lang.String getParent() {
       java.lang.Object ref = parent_;
@@ -678,7 +684,9 @@ public final class CreateDatabaseRequest extends com.google.protobuf.GeneratedMe
      * Values are of the form `projects/&lt;project&gt;/instances/&lt;instance&gt;`.
      * </pre>
      *
-     * <code>string parent = 1;</code>
+     * <code>
+     * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      */
     public com.google.protobuf.ByteString getParentBytes() {
       java.lang.Object ref = parent_;
@@ -699,7 +707,9 @@ public final class CreateDatabaseRequest extends com.google.protobuf.GeneratedMe
      * Values are of the form `projects/&lt;project&gt;/instances/&lt;instance&gt;`.
      * </pre>
      *
-     * <code>string parent = 1;</code>
+     * <code>
+     * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      */
     public Builder setParent(java.lang.String value) {
       if (value == null) {
@@ -718,7 +728,9 @@ public final class CreateDatabaseRequest extends com.google.protobuf.GeneratedMe
      * Values are of the form `projects/&lt;project&gt;/instances/&lt;instance&gt;`.
      * </pre>
      *
-     * <code>string parent = 1;</code>
+     * <code>
+     * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      */
     public Builder clearParent() {
 
@@ -734,7 +746,9 @@ public final class CreateDatabaseRequest extends com.google.protobuf.GeneratedMe
      * Values are of the form `projects/&lt;project&gt;/instances/&lt;instance&gt;`.
      * </pre>
      *
-     * <code>string parent = 1;</code>
+     * <code>
+     * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      */
     public Builder setParentBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -759,7 +773,7 @@ public final class CreateDatabaseRequest extends com.google.protobuf.GeneratedMe
      * database ID must be enclosed in backticks (`` ` ``).
      * </pre>
      *
-     * <code>string create_statement = 2;</code>
+     * <code>string create_statement = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public java.lang.String getCreateStatement() {
       java.lang.Object ref = createStatement_;
@@ -783,7 +797,7 @@ public final class CreateDatabaseRequest extends com.google.protobuf.GeneratedMe
      * database ID must be enclosed in backticks (`` ` ``).
      * </pre>
      *
-     * <code>string create_statement = 2;</code>
+     * <code>string create_statement = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public com.google.protobuf.ByteString getCreateStatementBytes() {
       java.lang.Object ref = createStatement_;
@@ -807,7 +821,7 @@ public final class CreateDatabaseRequest extends com.google.protobuf.GeneratedMe
      * database ID must be enclosed in backticks (`` ` ``).
      * </pre>
      *
-     * <code>string create_statement = 2;</code>
+     * <code>string create_statement = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder setCreateStatement(java.lang.String value) {
       if (value == null) {
@@ -829,7 +843,7 @@ public final class CreateDatabaseRequest extends com.google.protobuf.GeneratedMe
      * database ID must be enclosed in backticks (`` ` ``).
      * </pre>
      *
-     * <code>string create_statement = 2;</code>
+     * <code>string create_statement = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder clearCreateStatement() {
 
@@ -848,7 +862,7 @@ public final class CreateDatabaseRequest extends com.google.protobuf.GeneratedMe
      * database ID must be enclosed in backticks (`` ` ``).
      * </pre>
      *
-     * <code>string create_statement = 2;</code>
+     * <code>string create_statement = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder setCreateStatementBytes(com.google.protobuf.ByteString value) {
       if (value == null) {

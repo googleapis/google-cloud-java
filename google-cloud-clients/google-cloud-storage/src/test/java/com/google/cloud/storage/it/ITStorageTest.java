@@ -146,6 +146,13 @@ public class ITStorageTest {
       BaseEncoding.base64()
           .decode("H4sIAAAAAAAAAPNIzcnJV3DPz0/PSVVwzskvTVEILskvSkxPVQQA/LySchsAAAA=");
   private static final Map<String, String> BUCKET_LABELS = ImmutableMap.of("label1", "value1");
+  private static final Map<String, String> REMOVE_BUCKET_LABELS;
+
+  static {
+    REMOVE_BUCKET_LABELS = new HashMap<>();
+    REMOVE_BUCKET_LABELS.put("label1", null);
+  }
+
   private static final Long RETENTION_PERIOD = 5L;
   private static final Long RETENTION_PERIOD_IN_MILLISECONDS = RETENTION_PERIOD * 1000;
   private static final String SERVICE_ACCOUNT_EMAIL_SUFFIX =
@@ -1819,17 +1826,21 @@ public class ITStorageTest {
     if (storage.getOptions().getCredentials() != null) {
       assumeTrue(storage.getOptions().getCredentials() instanceof ServiceAccountSigner);
     }
-
     String blobName = "test-get-signed-url-blob/with/slashes/and?special=!#$&'()*+,:;=?@[]";
     BlobInfo blob = BlobInfo.newBuilder(BUCKET, blobName).build();
     Blob remoteBlob = storage.create(blob, BLOB_BYTE_CONTENT);
     assertNotNull(remoteBlob);
-    URL url = storage.signUrl(blob, 1, TimeUnit.HOURS);
-    URLConnection connection = url.openConnection();
-    byte[] readBytes = new byte[BLOB_BYTE_CONTENT.length];
-    try (InputStream responseStream = connection.getInputStream()) {
-      assertEquals(BLOB_BYTE_CONTENT.length, responseStream.read(readBytes));
-      assertArrayEquals(BLOB_BYTE_CONTENT, readBytes);
+    for (Storage.SignUrlOption urlStyle :
+        Arrays.asList(
+            Storage.SignUrlOption.withPathStyle(),
+            Storage.SignUrlOption.withVirtualHostedStyle())) {
+      URL url = storage.signUrl(blob, 1, TimeUnit.HOURS, urlStyle);
+      URLConnection connection = url.openConnection();
+      byte[] readBytes = new byte[BLOB_BYTE_CONTENT.length];
+      try (InputStream responseStream = connection.getInputStream()) {
+        assertEquals(BLOB_BYTE_CONTENT.length, responseStream.read(readBytes));
+        assertArrayEquals(BLOB_BYTE_CONTENT, readBytes);
+      }
     }
   }
 
@@ -1841,15 +1852,22 @@ public class ITStorageTest {
     String blobName = "test-post-signed-url-blob";
     BlobInfo blob = BlobInfo.newBuilder(BUCKET, blobName).build();
     assertNotNull(storage.create(blob));
-    URL url =
-        storage.signUrl(blob, 1, TimeUnit.HOURS, Storage.SignUrlOption.httpMethod(HttpMethod.POST));
-    URLConnection connection = url.openConnection();
-    connection.setDoOutput(true);
-    connection.connect();
-    Blob remoteBlob = storage.get(BUCKET, blobName);
-    assertNotNull(remoteBlob);
-    assertEquals(blob.getBucket(), remoteBlob.getBucket());
-    assertEquals(blob.getName(), remoteBlob.getName());
+    for (Storage.SignUrlOption urlStyle :
+        Arrays.asList(
+            Storage.SignUrlOption.withPathStyle(),
+            Storage.SignUrlOption.withVirtualHostedStyle())) {
+
+      URL url =
+          storage.signUrl(
+              blob, 1, TimeUnit.HOURS, Storage.SignUrlOption.httpMethod(HttpMethod.POST), urlStyle);
+      URLConnection connection = url.openConnection();
+      connection.setDoOutput(true);
+      connection.connect();
+      Blob remoteBlob = storage.get(BUCKET, blobName);
+      assertNotNull(remoteBlob);
+      assertEquals(blob.getBucket(), remoteBlob.getBucket());
+      assertEquals(blob.getName(), remoteBlob.getName());
+    }
   }
 
   @Test
@@ -1862,12 +1880,20 @@ public class ITStorageTest {
     BlobInfo blob = BlobInfo.newBuilder(BUCKET, blobName).build();
     Blob remoteBlob = storage.create(blob, BLOB_BYTE_CONTENT);
     assertNotNull(remoteBlob);
-    URL url = storage.signUrl(blob, 1, TimeUnit.HOURS, Storage.SignUrlOption.withV4Signature());
-    URLConnection connection = url.openConnection();
-    byte[] readBytes = new byte[BLOB_BYTE_CONTENT.length];
-    try (InputStream responseStream = connection.getInputStream()) {
-      assertEquals(BLOB_BYTE_CONTENT.length, responseStream.read(readBytes));
-      assertArrayEquals(BLOB_BYTE_CONTENT, readBytes);
+    for (Storage.SignUrlOption urlStyle :
+        Arrays.asList(
+            Storage.SignUrlOption.withPathStyle(),
+            Storage.SignUrlOption.withVirtualHostedStyle())) {
+
+      URL url =
+          storage.signUrl(
+              blob, 1, TimeUnit.HOURS, Storage.SignUrlOption.withV4Signature(), urlStyle);
+      URLConnection connection = url.openConnection();
+      byte[] readBytes = new byte[BLOB_BYTE_CONTENT.length];
+      try (InputStream responseStream = connection.getInputStream()) {
+        assertEquals(BLOB_BYTE_CONTENT.length, responseStream.read(readBytes));
+        assertArrayEquals(BLOB_BYTE_CONTENT, readBytes);
+      }
     }
   }
 
@@ -2312,6 +2338,8 @@ public class ITStorageTest {
     remoteBucket = remoteBucket.toBuilder().setLabels(BUCKET_LABELS).build();
     Bucket updatedBucket = storage.update(remoteBucket);
     assertEquals(BUCKET_LABELS, updatedBucket.getLabels());
+    remoteBucket.toBuilder().setLabels(REMOVE_BUCKET_LABELS).build().update();
+    assertNull(storage.get(BUCKET).getLabels());
   }
 
   @Test
@@ -2578,10 +2606,10 @@ public class ITStorageTest {
 
   @Test
   public void testBucketWithBucketPolicyOnlyEnabled() throws Exception {
-    String bpoBucket = RemoteStorageHelper.generateBucketName();
+    String bucket = RemoteStorageHelper.generateBucketName();
     try {
       storage.create(
-          Bucket.newBuilder(bpoBucket)
+          Bucket.newBuilder(bucket)
               .setIamConfiguration(
                   BucketInfo.IamConfiguration.newBuilder()
                       .setIsBucketPolicyOnlyEnabled(true)
@@ -2589,9 +2617,44 @@ public class ITStorageTest {
               .build());
 
       Bucket remoteBucket =
-          storage.get(bpoBucket, Storage.BucketGetOption.fields(BucketField.IAMCONFIGURATION));
+          storage.get(bucket, Storage.BucketGetOption.fields(BucketField.IAMCONFIGURATION));
 
       assertTrue(remoteBucket.getIamConfiguration().isBucketPolicyOnlyEnabled());
+      assertNotNull(remoteBucket.getIamConfiguration().getBucketPolicyOnlyLockedTime());
+
+      try {
+        remoteBucket.listAcls();
+        fail("StorageException was expected.");
+      } catch (StorageException e) {
+        // Expected: Listing legacy ACLs should fail on a BPO enabled bucket
+      }
+      try {
+        remoteBucket.listDefaultAcls();
+        fail("StorageException was expected");
+      } catch (StorageException e) {
+        // Expected: Listing legacy ACLs should fail on a BPO enabled bucket
+      }
+    } finally {
+      RemoteStorageHelper.forceDelete(storage, bucket, 1, TimeUnit.MINUTES);
+    }
+  }
+
+  @Test
+  public void testBucketWithUniformBucketLevelAccessEnabled() throws Exception {
+    String bucket = RemoteStorageHelper.generateBucketName();
+    try {
+      storage.create(
+          Bucket.newBuilder(bucket)
+              .setIamConfiguration(
+                  BucketInfo.IamConfiguration.newBuilder()
+                      .setIsUniformBucketLevelAccessEnabled(true)
+                      .build())
+              .build());
+
+      Bucket remoteBucket =
+          storage.get(bucket, Storage.BucketGetOption.fields(BucketField.IAMCONFIGURATION));
+
+      assertTrue(remoteBucket.getIamConfiguration().isUniformBucketLevelAccessEnabled());
       assertNotNull(remoteBucket.getIamConfiguration().getBucketPolicyOnlyLockedTime());
       try {
         remoteBucket.listAcls();
@@ -2606,7 +2669,7 @@ public class ITStorageTest {
         // Expected: Listing legacy ACLs should fail on a BPO enabled bucket
       }
     } finally {
-      RemoteStorageHelper.forceDelete(storage, bpoBucket, 1, TimeUnit.MINUTES);
+      RemoteStorageHelper.forceDelete(storage, bucket, 1, TimeUnit.MINUTES);
     }
   }
 
@@ -2625,7 +2688,13 @@ public class ITStorageTest {
 
       BucketInfo.IamConfiguration bpoEnabledIamConfiguration =
           BucketInfo.IamConfiguration.newBuilder().setIsBucketPolicyOnlyEnabled(true).build();
-      bucket.toBuilder().setIamConfiguration(bpoEnabledIamConfiguration).build().update();
+      bucket
+          .toBuilder()
+          .setAcl(null)
+          .setDefaultAcl(null)
+          .setIamConfiguration(bpoEnabledIamConfiguration)
+          .build()
+          .update();
 
       Bucket remoteBucket =
           storage.get(bpoBucket, Storage.BucketGetOption.fields(BucketField.IAMCONFIGURATION));
@@ -2633,7 +2702,7 @@ public class ITStorageTest {
       assertTrue(remoteBucket.getIamConfiguration().isBucketPolicyOnlyEnabled());
       assertNotNull(remoteBucket.getIamConfiguration().getBucketPolicyOnlyLockedTime());
 
-      bucket
+      remoteBucket
           .toBuilder()
           .setIamConfiguration(
               bpoEnabledIamConfiguration.toBuilder().setIsBucketPolicyOnlyEnabled(false).build())
@@ -2657,27 +2726,86 @@ public class ITStorageTest {
   }
 
   @Test
+  public void testEnableAndDisableUniformBucketLevelAccessOnExistingBucket() throws Exception {
+    String bpoBucket = RemoteStorageHelper.generateBucketName();
+    try {
+      BucketInfo.IamConfiguration ublaDisabledIamConfiguration =
+          BucketInfo.IamConfiguration.newBuilder()
+              .setIsUniformBucketLevelAccessEnabled(false)
+              .build();
+      Bucket bucket =
+          storage.create(
+              Bucket.newBuilder(bpoBucket)
+                  .setIamConfiguration(ublaDisabledIamConfiguration)
+                  .setAcl(ImmutableList.of(Acl.of(User.ofAllAuthenticatedUsers(), Role.READER)))
+                  .setDefaultAcl(
+                      ImmutableList.of(Acl.of(User.ofAllAuthenticatedUsers(), Role.READER)))
+                  .build());
+
+      bucket
+          .toBuilder()
+          .setAcl(null)
+          .setDefaultAcl(null)
+          .setIamConfiguration(
+              ublaDisabledIamConfiguration
+                  .toBuilder()
+                  .setIsUniformBucketLevelAccessEnabled(true)
+                  .build())
+          .build()
+          .update();
+
+      Bucket remoteBucket =
+          storage.get(bpoBucket, Storage.BucketGetOption.fields(BucketField.IAMCONFIGURATION));
+
+      assertTrue(remoteBucket.getIamConfiguration().isUniformBucketLevelAccessEnabled());
+      assertNotNull(remoteBucket.getIamConfiguration().getUniformBucketLevelAccessLockedTime());
+
+      remoteBucket.toBuilder().setIamConfiguration(ublaDisabledIamConfiguration).build().update();
+
+      remoteBucket =
+          storage.get(
+              bpoBucket,
+              Storage.BucketGetOption.fields(
+                  BucketField.IAMCONFIGURATION, BucketField.ACL, BucketField.DEFAULT_OBJECT_ACL));
+
+      assertFalse(remoteBucket.getIamConfiguration().isUniformBucketLevelAccessEnabled());
+      assertEquals(User.ofAllAuthenticatedUsers(), remoteBucket.getDefaultAcl().get(0).getEntity());
+      assertEquals(Role.READER, remoteBucket.getDefaultAcl().get(0).getRole());
+      assertEquals(User.ofAllAuthenticatedUsers(), remoteBucket.getAcl().get(0).getEntity());
+      assertEquals(Role.READER, remoteBucket.getAcl().get(0).getRole());
+    } finally {
+      RemoteStorageHelper.forceDelete(storage, bpoBucket, 1, TimeUnit.MINUTES);
+    }
+  }
+
+  @Test
   public void testUploadUsingSignedURL() throws Exception {
     String blobName = "test-signed-url-upload";
     BlobInfo blob = BlobInfo.newBuilder(BUCKET, blobName).build();
     assertNotNull(storage.create(blob));
-    URL signUrl =
-        storage.signUrl(blob, 1, TimeUnit.HOURS, Storage.SignUrlOption.httpMethod(HttpMethod.POST));
-    byte[] bytesArrayToUpload = BLOB_STRING_CONTENT.getBytes();
-    try (WriteChannel writer = storage.writer(signUrl)) {
-      writer.write(ByteBuffer.wrap(bytesArrayToUpload, 0, bytesArrayToUpload.length));
-    }
+    for (Storage.SignUrlOption urlStyle :
+        Arrays.asList(
+            Storage.SignUrlOption.withPathStyle(),
+            Storage.SignUrlOption.withVirtualHostedStyle())) {
+      URL signUrl =
+          storage.signUrl(
+              blob, 1, TimeUnit.HOURS, Storage.SignUrlOption.httpMethod(HttpMethod.POST), urlStyle);
+      byte[] bytesArrayToUpload = BLOB_STRING_CONTENT.getBytes();
+      try (WriteChannel writer = storage.writer(signUrl)) {
+        writer.write(ByteBuffer.wrap(bytesArrayToUpload, 0, bytesArrayToUpload.length));
+      }
 
-    int lengthOfDownLoadBytes = -1;
-    BlobId blobId = BlobId.of(BUCKET, blobName);
-    Blob blobToRead = storage.get(blobId);
-    try (ReadChannel reader = blobToRead.reader()) {
-      ByteBuffer bytes = ByteBuffer.allocate(64 * 1024);
-      lengthOfDownLoadBytes = reader.read(bytes);
-    }
+      int lengthOfDownLoadBytes = -1;
+      BlobId blobId = BlobId.of(BUCKET, blobName);
+      Blob blobToRead = storage.get(blobId);
+      try (ReadChannel reader = blobToRead.reader()) {
+        ByteBuffer bytes = ByteBuffer.allocate(64 * 1024);
+        lengthOfDownLoadBytes = reader.read(bytes);
+      }
 
-    assertEquals(bytesArrayToUpload.length, lengthOfDownLoadBytes);
-    assertTrue(storage.delete(BUCKET, blobName));
+      assertEquals(bytesArrayToUpload.length, lengthOfDownLoadBytes);
+      assertTrue(storage.delete(BUCKET, blobName));
+    }
   }
 
   @Test
@@ -2713,5 +2841,35 @@ public class ITStorageTest {
       assertTrue(LOCATION_TYPES.contains(remoteBucket.getLocationType()));
     }
     RemoteStorageHelper.forceDelete(storage, bucketName, 5, TimeUnit.SECONDS);
+  }
+
+  @Test
+  public void testBucketLogging() throws ExecutionException, InterruptedException {
+    String logsBucket = RemoteStorageHelper.generateBucketName();
+    String loggingBucket = RemoteStorageHelper.generateBucketName();
+    try {
+      assertNotNull(storage.create(BucketInfo.newBuilder(logsBucket).setLocation("us").build()));
+      Policy policy = storage.getIamPolicy(logsBucket);
+      assertNotNull(
+          storage.setIamPolicy(
+              logsBucket,
+              policy
+                  .toBuilder()
+                  .addIdentity(StorageRoles.legacyBucketWriter(), Identity.allAuthenticatedUsers())
+                  .build()));
+      BucketInfo.Logging logging =
+          BucketInfo.Logging.newBuilder()
+              .setLogBucket(logsBucket)
+              .setLogObjectPrefix("test-logs")
+              .build();
+      Bucket bucket =
+          storage.create(
+              BucketInfo.newBuilder(loggingBucket).setLocation("us").setLogging(logging).build());
+      assertEquals(logsBucket, bucket.getLogging().getLogBucket());
+      assertEquals("test-logs", bucket.getLogging().getLogObjectPrefix());
+    } finally {
+      RemoteStorageHelper.forceDelete(storage, logsBucket, 5, TimeUnit.SECONDS);
+      RemoteStorageHelper.forceDelete(storage, loggingBucket, 5, TimeUnit.SECONDS);
+    }
   }
 }

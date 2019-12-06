@@ -7,8 +7,7 @@ package com.google.spanner.v1;
  *
  *
  * <pre>
- * Node information for nodes appearing in a
- * [QueryPlan.plan_nodes][google.spanner.v1.QueryPlan.plan_nodes].
+ * Node information for nodes appearing in a [QueryPlan.plan_nodes][google.spanner.v1.QueryPlan.plan_nodes].
  * </pre>
  *
  * Protobuf type {@code google.spanner.v1.PlanNode}
@@ -169,8 +168,8 @@ public final class PlanNode extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The kind of [PlanNode][google.spanner.v1.PlanNode]. Distinguishes between
-   * the two different kinds of nodes that can appear in a query plan.
+   * The kind of [PlanNode][google.spanner.v1.PlanNode]. Distinguishes between the two different kinds of
+   * nodes that can appear in a query plan.
    * </pre>
    *
    * Protobuf enum {@code google.spanner.v1.PlanNode.Kind}
@@ -368,14 +367,14 @@ public final class PlanNode extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Only present if the child node is
-     * [SCALAR][google.spanner.v1.PlanNode.Kind.SCALAR] and corresponds to an
-     * output variable of the parent node. The field carries the name of the
-     * output variable. For example, a `TableScan` operator that reads rows from
-     * a table will have child links to the `SCALAR` nodes representing the
-     * output variables created for each column that is read by the operator.
-     * The corresponding `variable` fields will be set to the variable names
-     * assigned to the columns.
+     * Only present if the child node is [SCALAR][google.spanner.v1.PlanNode.Kind.SCALAR] and corresponds
+     * to an output variable of the parent node. The field carries the name of
+     * the output variable.
+     * For example, a `TableScan` operator that reads rows from a table will
+     * have child links to the `SCALAR` nodes representing the output variables
+     * created for each column that is read by the operator. The corresponding
+     * `variable` fields will be set to the variable names assigned to the
+     * columns.
      * </pre>
      *
      * <code>string variable = 3;</code>
@@ -385,14 +384,14 @@ public final class PlanNode extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Only present if the child node is
-     * [SCALAR][google.spanner.v1.PlanNode.Kind.SCALAR] and corresponds to an
-     * output variable of the parent node. The field carries the name of the
-     * output variable. For example, a `TableScan` operator that reads rows from
-     * a table will have child links to the `SCALAR` nodes representing the
-     * output variables created for each column that is read by the operator.
-     * The corresponding `variable` fields will be set to the variable names
-     * assigned to the columns.
+     * Only present if the child node is [SCALAR][google.spanner.v1.PlanNode.Kind.SCALAR] and corresponds
+     * to an output variable of the parent node. The field carries the name of
+     * the output variable.
+     * For example, a `TableScan` operator that reads rows from a table will
+     * have child links to the `SCALAR` nodes representing the output variables
+     * created for each column that is read by the operator. The corresponding
+     * `variable` fields will be set to the variable names assigned to the
+     * columns.
      * </pre>
      *
      * <code>string variable = 3;</code>
@@ -571,14 +570,14 @@ public final class PlanNode extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Only present if the child node is
-     * [SCALAR][google.spanner.v1.PlanNode.Kind.SCALAR] and corresponds to an
-     * output variable of the parent node. The field carries the name of the
-     * output variable. For example, a `TableScan` operator that reads rows from
-     * a table will have child links to the `SCALAR` nodes representing the
-     * output variables created for each column that is read by the operator.
-     * The corresponding `variable` fields will be set to the variable names
-     * assigned to the columns.
+     * Only present if the child node is [SCALAR][google.spanner.v1.PlanNode.Kind.SCALAR] and corresponds
+     * to an output variable of the parent node. The field carries the name of
+     * the output variable.
+     * For example, a `TableScan` operator that reads rows from a table will
+     * have child links to the `SCALAR` nodes representing the output variables
+     * created for each column that is read by the operator. The corresponding
+     * `variable` fields will be set to the variable names assigned to the
+     * columns.
      * </pre>
      *
      * <code>string variable = 3;</code>
@@ -598,14 +597,14 @@ public final class PlanNode extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Only present if the child node is
-     * [SCALAR][google.spanner.v1.PlanNode.Kind.SCALAR] and corresponds to an
-     * output variable of the parent node. The field carries the name of the
-     * output variable. For example, a `TableScan` operator that reads rows from
-     * a table will have child links to the `SCALAR` nodes representing the
-     * output variables created for each column that is read by the operator.
-     * The corresponding `variable` fields will be set to the variable names
-     * assigned to the columns.
+     * Only present if the child node is [SCALAR][google.spanner.v1.PlanNode.Kind.SCALAR] and corresponds
+     * to an output variable of the parent node. The field carries the name of
+     * the output variable.
+     * For example, a `TableScan` operator that reads rows from a table will
+     * have child links to the `SCALAR` nodes representing the output variables
+     * created for each column that is read by the operator. The corresponding
+     * `variable` fields will be set to the variable names assigned to the
+     * columns.
      * </pre>
      *
      * <code>string variable = 3;</code>
@@ -1132,14 +1131,14 @@ public final class PlanNode extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Only present if the child node is
-       * [SCALAR][google.spanner.v1.PlanNode.Kind.SCALAR] and corresponds to an
-       * output variable of the parent node. The field carries the name of the
-       * output variable. For example, a `TableScan` operator that reads rows from
-       * a table will have child links to the `SCALAR` nodes representing the
-       * output variables created for each column that is read by the operator.
-       * The corresponding `variable` fields will be set to the variable names
-       * assigned to the columns.
+       * Only present if the child node is [SCALAR][google.spanner.v1.PlanNode.Kind.SCALAR] and corresponds
+       * to an output variable of the parent node. The field carries the name of
+       * the output variable.
+       * For example, a `TableScan` operator that reads rows from a table will
+       * have child links to the `SCALAR` nodes representing the output variables
+       * created for each column that is read by the operator. The corresponding
+       * `variable` fields will be set to the variable names assigned to the
+       * columns.
        * </pre>
        *
        * <code>string variable = 3;</code>
@@ -1159,14 +1158,14 @@ public final class PlanNode extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Only present if the child node is
-       * [SCALAR][google.spanner.v1.PlanNode.Kind.SCALAR] and corresponds to an
-       * output variable of the parent node. The field carries the name of the
-       * output variable. For example, a `TableScan` operator that reads rows from
-       * a table will have child links to the `SCALAR` nodes representing the
-       * output variables created for each column that is read by the operator.
-       * The corresponding `variable` fields will be set to the variable names
-       * assigned to the columns.
+       * Only present if the child node is [SCALAR][google.spanner.v1.PlanNode.Kind.SCALAR] and corresponds
+       * to an output variable of the parent node. The field carries the name of
+       * the output variable.
+       * For example, a `TableScan` operator that reads rows from a table will
+       * have child links to the `SCALAR` nodes representing the output variables
+       * created for each column that is read by the operator. The corresponding
+       * `variable` fields will be set to the variable names assigned to the
+       * columns.
        * </pre>
        *
        * <code>string variable = 3;</code>
@@ -1186,14 +1185,14 @@ public final class PlanNode extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Only present if the child node is
-       * [SCALAR][google.spanner.v1.PlanNode.Kind.SCALAR] and corresponds to an
-       * output variable of the parent node. The field carries the name of the
-       * output variable. For example, a `TableScan` operator that reads rows from
-       * a table will have child links to the `SCALAR` nodes representing the
-       * output variables created for each column that is read by the operator.
-       * The corresponding `variable` fields will be set to the variable names
-       * assigned to the columns.
+       * Only present if the child node is [SCALAR][google.spanner.v1.PlanNode.Kind.SCALAR] and corresponds
+       * to an output variable of the parent node. The field carries the name of
+       * the output variable.
+       * For example, a `TableScan` operator that reads rows from a table will
+       * have child links to the `SCALAR` nodes representing the output variables
+       * created for each column that is read by the operator. The corresponding
+       * `variable` fields will be set to the variable names assigned to the
+       * columns.
        * </pre>
        *
        * <code>string variable = 3;</code>
@@ -1211,14 +1210,14 @@ public final class PlanNode extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Only present if the child node is
-       * [SCALAR][google.spanner.v1.PlanNode.Kind.SCALAR] and corresponds to an
-       * output variable of the parent node. The field carries the name of the
-       * output variable. For example, a `TableScan` operator that reads rows from
-       * a table will have child links to the `SCALAR` nodes representing the
-       * output variables created for each column that is read by the operator.
-       * The corresponding `variable` fields will be set to the variable names
-       * assigned to the columns.
+       * Only present if the child node is [SCALAR][google.spanner.v1.PlanNode.Kind.SCALAR] and corresponds
+       * to an output variable of the parent node. The field carries the name of
+       * the output variable.
+       * For example, a `TableScan` operator that reads rows from a table will
+       * have child links to the `SCALAR` nodes representing the output variables
+       * created for each column that is read by the operator. The corresponding
+       * `variable` fields will be set to the variable names assigned to the
+       * columns.
        * </pre>
        *
        * <code>string variable = 3;</code>
@@ -1233,14 +1232,14 @@ public final class PlanNode extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Only present if the child node is
-       * [SCALAR][google.spanner.v1.PlanNode.Kind.SCALAR] and corresponds to an
-       * output variable of the parent node. The field carries the name of the
-       * output variable. For example, a `TableScan` operator that reads rows from
-       * a table will have child links to the `SCALAR` nodes representing the
-       * output variables created for each column that is read by the operator.
-       * The corresponding `variable` fields will be set to the variable names
-       * assigned to the columns.
+       * Only present if the child node is [SCALAR][google.spanner.v1.PlanNode.Kind.SCALAR] and corresponds
+       * to an output variable of the parent node. The field carries the name of
+       * the output variable.
+       * For example, a `TableScan` operator that reads rows from a table will
+       * have child links to the `SCALAR` nodes representing the output variables
+       * created for each column that is read by the operator. The corresponding
+       * `variable` fields will be set to the variable names assigned to the
+       * columns.
        * </pre>
        *
        * <code>string variable = 3;</code>
@@ -2380,8 +2379,7 @@ public final class PlanNode extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The `PlanNode`'s index in [node
-   * list][google.spanner.v1.QueryPlan.plan_nodes].
+   * The `PlanNode`'s index in [node list][google.spanner.v1.QueryPlan.plan_nodes].
    * </pre>
    *
    * <code>int32 index = 1;</code>
@@ -2398,9 +2396,9 @@ public final class PlanNode extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Used to determine the type of node. May be needed for visualizing
    * different kinds of nodes differently. For example, If the node is a
-   * [SCALAR][google.spanner.v1.PlanNode.Kind.SCALAR] node, it will have a
-   * condensed representation which can be used to directly embed a description
-   * of the node in its parent.
+   * [SCALAR][google.spanner.v1.PlanNode.Kind.SCALAR] node, it will have a condensed representation
+   * which can be used to directly embed a description of the node in its
+   * parent.
    * </pre>
    *
    * <code>.google.spanner.v1.PlanNode.Kind kind = 2;</code>
@@ -2414,9 +2412,9 @@ public final class PlanNode extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Used to determine the type of node. May be needed for visualizing
    * different kinds of nodes differently. For example, If the node is a
-   * [SCALAR][google.spanner.v1.PlanNode.Kind.SCALAR] node, it will have a
-   * condensed representation which can be used to directly embed a description
-   * of the node in its parent.
+   * [SCALAR][google.spanner.v1.PlanNode.Kind.SCALAR] node, it will have a condensed representation
+   * which can be used to directly embed a description of the node in its
+   * parent.
    * </pre>
    *
    * <code>.google.spanner.v1.PlanNode.Kind kind = 2;</code>
@@ -2540,8 +2538,7 @@ public final class PlanNode extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Condensed representation for
-   * [SCALAR][google.spanner.v1.PlanNode.Kind.SCALAR] nodes.
+   * Condensed representation for [SCALAR][google.spanner.v1.PlanNode.Kind.SCALAR] nodes.
    * </pre>
    *
    * <code>.google.spanner.v1.PlanNode.ShortRepresentation short_representation = 5;</code>
@@ -2553,8 +2550,7 @@ public final class PlanNode extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Condensed representation for
-   * [SCALAR][google.spanner.v1.PlanNode.Kind.SCALAR] nodes.
+   * Condensed representation for [SCALAR][google.spanner.v1.PlanNode.Kind.SCALAR] nodes.
    * </pre>
    *
    * <code>.google.spanner.v1.PlanNode.ShortRepresentation short_representation = 5;</code>
@@ -2568,8 +2564,7 @@ public final class PlanNode extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Condensed representation for
-   * [SCALAR][google.spanner.v1.PlanNode.Kind.SCALAR] nodes.
+   * Condensed representation for [SCALAR][google.spanner.v1.PlanNode.Kind.SCALAR] nodes.
    * </pre>
    *
    * <code>.google.spanner.v1.PlanNode.ShortRepresentation short_representation = 5;</code>
@@ -2918,8 +2913,7 @@ public final class PlanNode extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Node information for nodes appearing in a
-   * [QueryPlan.plan_nodes][google.spanner.v1.QueryPlan.plan_nodes].
+   * Node information for nodes appearing in a [QueryPlan.plan_nodes][google.spanner.v1.QueryPlan.plan_nodes].
    * </pre>
    *
    * Protobuf type {@code google.spanner.v1.PlanNode}
@@ -3178,8 +3172,7 @@ public final class PlanNode extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The `PlanNode`'s index in [node
-     * list][google.spanner.v1.QueryPlan.plan_nodes].
+     * The `PlanNode`'s index in [node list][google.spanner.v1.QueryPlan.plan_nodes].
      * </pre>
      *
      * <code>int32 index = 1;</code>
@@ -3191,8 +3184,7 @@ public final class PlanNode extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The `PlanNode`'s index in [node
-     * list][google.spanner.v1.QueryPlan.plan_nodes].
+     * The `PlanNode`'s index in [node list][google.spanner.v1.QueryPlan.plan_nodes].
      * </pre>
      *
      * <code>int32 index = 1;</code>
@@ -3207,8 +3199,7 @@ public final class PlanNode extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The `PlanNode`'s index in [node
-     * list][google.spanner.v1.QueryPlan.plan_nodes].
+     * The `PlanNode`'s index in [node list][google.spanner.v1.QueryPlan.plan_nodes].
      * </pre>
      *
      * <code>int32 index = 1;</code>
@@ -3227,9 +3218,9 @@ public final class PlanNode extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Used to determine the type of node. May be needed for visualizing
      * different kinds of nodes differently. For example, If the node is a
-     * [SCALAR][google.spanner.v1.PlanNode.Kind.SCALAR] node, it will have a
-     * condensed representation which can be used to directly embed a description
-     * of the node in its parent.
+     * [SCALAR][google.spanner.v1.PlanNode.Kind.SCALAR] node, it will have a condensed representation
+     * which can be used to directly embed a description of the node in its
+     * parent.
      * </pre>
      *
      * <code>.google.spanner.v1.PlanNode.Kind kind = 2;</code>
@@ -3243,9 +3234,9 @@ public final class PlanNode extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Used to determine the type of node. May be needed for visualizing
      * different kinds of nodes differently. For example, If the node is a
-     * [SCALAR][google.spanner.v1.PlanNode.Kind.SCALAR] node, it will have a
-     * condensed representation which can be used to directly embed a description
-     * of the node in its parent.
+     * [SCALAR][google.spanner.v1.PlanNode.Kind.SCALAR] node, it will have a condensed representation
+     * which can be used to directly embed a description of the node in its
+     * parent.
      * </pre>
      *
      * <code>.google.spanner.v1.PlanNode.Kind kind = 2;</code>
@@ -3261,9 +3252,9 @@ public final class PlanNode extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Used to determine the type of node. May be needed for visualizing
      * different kinds of nodes differently. For example, If the node is a
-     * [SCALAR][google.spanner.v1.PlanNode.Kind.SCALAR] node, it will have a
-     * condensed representation which can be used to directly embed a description
-     * of the node in its parent.
+     * [SCALAR][google.spanner.v1.PlanNode.Kind.SCALAR] node, it will have a condensed representation
+     * which can be used to directly embed a description of the node in its
+     * parent.
      * </pre>
      *
      * <code>.google.spanner.v1.PlanNode.Kind kind = 2;</code>
@@ -3280,9 +3271,9 @@ public final class PlanNode extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Used to determine the type of node. May be needed for visualizing
      * different kinds of nodes differently. For example, If the node is a
-     * [SCALAR][google.spanner.v1.PlanNode.Kind.SCALAR] node, it will have a
-     * condensed representation which can be used to directly embed a description
-     * of the node in its parent.
+     * [SCALAR][google.spanner.v1.PlanNode.Kind.SCALAR] node, it will have a condensed representation
+     * which can be used to directly embed a description of the node in its
+     * parent.
      * </pre>
      *
      * <code>.google.spanner.v1.PlanNode.Kind kind = 2;</code>
@@ -3302,9 +3293,9 @@ public final class PlanNode extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Used to determine the type of node. May be needed for visualizing
      * different kinds of nodes differently. For example, If the node is a
-     * [SCALAR][google.spanner.v1.PlanNode.Kind.SCALAR] node, it will have a
-     * condensed representation which can be used to directly embed a description
-     * of the node in its parent.
+     * [SCALAR][google.spanner.v1.PlanNode.Kind.SCALAR] node, it will have a condensed representation
+     * which can be used to directly embed a description of the node in its
+     * parent.
      * </pre>
      *
      * <code>.google.spanner.v1.PlanNode.Kind kind = 2;</code>
@@ -3770,8 +3761,7 @@ public final class PlanNode extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Condensed representation for
-     * [SCALAR][google.spanner.v1.PlanNode.Kind.SCALAR] nodes.
+     * Condensed representation for [SCALAR][google.spanner.v1.PlanNode.Kind.SCALAR] nodes.
      * </pre>
      *
      * <code>.google.spanner.v1.PlanNode.ShortRepresentation short_representation = 5;</code>
@@ -3783,8 +3773,7 @@ public final class PlanNode extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Condensed representation for
-     * [SCALAR][google.spanner.v1.PlanNode.Kind.SCALAR] nodes.
+     * Condensed representation for [SCALAR][google.spanner.v1.PlanNode.Kind.SCALAR] nodes.
      * </pre>
      *
      * <code>.google.spanner.v1.PlanNode.ShortRepresentation short_representation = 5;</code>
@@ -3802,8 +3791,7 @@ public final class PlanNode extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Condensed representation for
-     * [SCALAR][google.spanner.v1.PlanNode.Kind.SCALAR] nodes.
+     * Condensed representation for [SCALAR][google.spanner.v1.PlanNode.Kind.SCALAR] nodes.
      * </pre>
      *
      * <code>.google.spanner.v1.PlanNode.ShortRepresentation short_representation = 5;</code>
@@ -3826,8 +3814,7 @@ public final class PlanNode extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Condensed representation for
-     * [SCALAR][google.spanner.v1.PlanNode.Kind.SCALAR] nodes.
+     * Condensed representation for [SCALAR][google.spanner.v1.PlanNode.Kind.SCALAR] nodes.
      * </pre>
      *
      * <code>.google.spanner.v1.PlanNode.ShortRepresentation short_representation = 5;</code>
@@ -3847,8 +3834,7 @@ public final class PlanNode extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Condensed representation for
-     * [SCALAR][google.spanner.v1.PlanNode.Kind.SCALAR] nodes.
+     * Condensed representation for [SCALAR][google.spanner.v1.PlanNode.Kind.SCALAR] nodes.
      * </pre>
      *
      * <code>.google.spanner.v1.PlanNode.ShortRepresentation short_representation = 5;</code>
@@ -3875,8 +3861,7 @@ public final class PlanNode extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Condensed representation for
-     * [SCALAR][google.spanner.v1.PlanNode.Kind.SCALAR] nodes.
+     * Condensed representation for [SCALAR][google.spanner.v1.PlanNode.Kind.SCALAR] nodes.
      * </pre>
      *
      * <code>.google.spanner.v1.PlanNode.ShortRepresentation short_representation = 5;</code>
@@ -3896,8 +3881,7 @@ public final class PlanNode extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Condensed representation for
-     * [SCALAR][google.spanner.v1.PlanNode.Kind.SCALAR] nodes.
+     * Condensed representation for [SCALAR][google.spanner.v1.PlanNode.Kind.SCALAR] nodes.
      * </pre>
      *
      * <code>.google.spanner.v1.PlanNode.ShortRepresentation short_representation = 5;</code>
@@ -3912,8 +3896,7 @@ public final class PlanNode extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Condensed representation for
-     * [SCALAR][google.spanner.v1.PlanNode.Kind.SCALAR] nodes.
+     * Condensed representation for [SCALAR][google.spanner.v1.PlanNode.Kind.SCALAR] nodes.
      * </pre>
      *
      * <code>.google.spanner.v1.PlanNode.ShortRepresentation short_representation = 5;</code>
@@ -3932,8 +3915,7 @@ public final class PlanNode extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Condensed representation for
-     * [SCALAR][google.spanner.v1.PlanNode.Kind.SCALAR] nodes.
+     * Condensed representation for [SCALAR][google.spanner.v1.PlanNode.Kind.SCALAR] nodes.
      * </pre>
      *
      * <code>.google.spanner.v1.PlanNode.ShortRepresentation short_representation = 5;</code>

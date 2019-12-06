@@ -15,7 +15,9 @@ public interface PartitionReadRequestOrBuilder
    * Required. The session used to create the partitions.
    * </pre>
    *
-   * <code>string session = 1;</code>
+   * <code>
+   * string session = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    */
   java.lang.String getSession();
   /**
@@ -25,7 +27,9 @@ public interface PartitionReadRequestOrBuilder
    * Required. The session used to create the partitions.
    * </pre>
    *
-   * <code>string session = 1;</code>
+   * <code>
+   * string session = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    */
   com.google.protobuf.ByteString getSessionBytes();
 
@@ -70,7 +74,7 @@ public interface PartitionReadRequestOrBuilder
    * Required. The name of the table in the database to be read.
    * </pre>
    *
-   * <code>string table = 3;</code>
+   * <code>string table = 3 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   java.lang.String getTable();
   /**
@@ -80,7 +84,7 @@ public interface PartitionReadRequestOrBuilder
    * Required. The name of the table in the database to be read.
    * </pre>
    *
-   * <code>string table = 3;</code>
+   * <code>string table = 3 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   com.google.protobuf.ByteString getTableBytes();
 
@@ -175,7 +179,7 @@ public interface PartitionReadRequestOrBuilder
    * exist in the database. Read yields nothing for nonexistent rows.
    * </pre>
    *
-   * <code>.google.spanner.v1.KeySet key_set = 6;</code>
+   * <code>.google.spanner.v1.KeySet key_set = 6 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   boolean hasKeySet();
   /**
@@ -193,7 +197,7 @@ public interface PartitionReadRequestOrBuilder
    * exist in the database. Read yields nothing for nonexistent rows.
    * </pre>
    *
-   * <code>.google.spanner.v1.KeySet key_set = 6;</code>
+   * <code>.google.spanner.v1.KeySet key_set = 6 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   com.google.spanner.v1.KeySet getKeySet();
   /**
@@ -211,7 +215,7 @@ public interface PartitionReadRequestOrBuilder
    * exist in the database. Read yields nothing for nonexistent rows.
    * </pre>
    *
-   * <code>.google.spanner.v1.KeySet key_set = 6;</code>
+   * <code>.google.spanner.v1.KeySet key_set = 6 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   com.google.spanner.v1.KeySetOrBuilder getKeySetOrBuilder();
 

@@ -34,6 +34,7 @@ import com.google.protobuf.util.Timestamps;
 import com.google.spanner.v1.BeginTransactionRequest;
 import com.google.spanner.v1.Session;
 import com.google.spanner.v1.Transaction;
+import java.util.Collections;
 import java.util.Map;
 import org.junit.Before;
 import org.junit.Test;
@@ -70,11 +71,13 @@ public final class BatchClientImplTest {
     when(spannerOptions.getRetrySettings()).thenReturn(RetrySettings.newBuilder().build());
     when(spannerOptions.getClock()).thenReturn(NanoClock.getDefaultClock());
     when(spannerOptions.getSpannerRpcV1()).thenReturn(gapicRpc);
+    when(spannerOptions.getSessionLabels()).thenReturn(Collections.<String, String>emptyMap());
     GrpcTransportOptions transportOptions = mock(GrpcTransportOptions.class);
     when(transportOptions.getExecutorFactory()).thenReturn(mock(ExecutorFactory.class));
     when(spannerOptions.getTransportOptions()).thenReturn(transportOptions);
+    @SuppressWarnings("resource")
     SpannerImpl spanner = new SpannerImpl(gapicRpc, spannerOptions);
-    client = new BatchClientImpl(db, spanner);
+    client = new BatchClientImpl(spanner.getSessionClient(db));
   }
 
   @SuppressWarnings("unchecked")

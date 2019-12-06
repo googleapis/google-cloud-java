@@ -16,7 +16,9 @@ public interface GetInstanceRequestOrBuilder
    * `projects/&lt;project&gt;/instances/&lt;instance&gt;`.
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>
+   * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    */
   java.lang.String getName();
   /**
@@ -27,7 +29,46 @@ public interface GetInstanceRequestOrBuilder
    * `projects/&lt;project&gt;/instances/&lt;instance&gt;`.
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>
+   * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    */
   com.google.protobuf.ByteString getNameBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * If field_mask is present, specifies the subset of [][Instance] fields that
+   * should be returned.
+   * If absent, all [][Instance] fields are returned.
+   * </pre>
+   *
+   * <code>.google.protobuf.FieldMask field_mask = 2;</code>
+   */
+  boolean hasFieldMask();
+  /**
+   *
+   *
+   * <pre>
+   * If field_mask is present, specifies the subset of [][Instance] fields that
+   * should be returned.
+   * If absent, all [][Instance] fields are returned.
+   * </pre>
+   *
+   * <code>.google.protobuf.FieldMask field_mask = 2;</code>
+   */
+  com.google.protobuf.FieldMask getFieldMask();
+  /**
+   *
+   *
+   * <pre>
+   * If field_mask is present, specifies the subset of [][Instance] fields that
+   * should be returned.
+   * If absent, all [][Instance] fields are returned.
+   * </pre>
+   *
+   * <code>.google.protobuf.FieldMask field_mask = 2;</code>
+   */
+  com.google.protobuf.FieldMaskOrBuilder getFieldMaskOrBuilder();
 }

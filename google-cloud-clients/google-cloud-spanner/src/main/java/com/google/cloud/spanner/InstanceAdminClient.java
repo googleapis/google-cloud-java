@@ -18,6 +18,7 @@ package com.google.cloud.spanner;
 
 import com.google.api.gax.longrunning.OperationFuture;
 import com.google.api.gax.paging.Page;
+import com.google.cloud.Policy;
 import com.google.cloud.spanner.Options.ListOption;
 import com.google.spanner.admin.instance.v1.CreateInstanceMetadata;
 import com.google.spanner.admin.instance.v1.UpdateInstanceMetadata;
@@ -192,6 +193,27 @@ public interface InstanceAdminClient {
    */
   OperationFuture<Instance, UpdateInstanceMetadata> updateInstance(
       InstanceInfo instance, InstanceInfo.InstanceField... fieldsToUpdate);
+
+  /** Returns the IAM policy for the given instance. */
+  Policy getInstanceIAMPolicy(String instanceId);
+
+  /**
+   * Updates the IAM policy for the given instance and returns the resulting policy. It is highly
+   * recommended to first get the current policy and base the updated policy on the returned policy.
+   * See {@link Policy.Builder#setEtag(String)} for information on the recommended read-modify-write
+   * cycle.
+   */
+  Policy setInstanceIAMPolicy(String instanceId, Policy policy);
+
+  /**
+   * Tests for the given permissions on the specified instance for the caller.
+   *
+   * @param instanceId the id of the instance to test.
+   * @param permissions the permissions to test for. Permissions with wildcards (such as '*',
+   *     'spanner.*', 'spanner.instances.*') are not allowed.
+   * @return the subset of the tested permissions that the caller is allowed.
+   */
+  Iterable<String> testInstanceIAMPermissions(String instanceId, Iterable<String> permissions);
 
   /** Returns a builder for {@code Instance} object with the given id. */
   Instance.Builder newInstanceBuilder(InstanceId id);

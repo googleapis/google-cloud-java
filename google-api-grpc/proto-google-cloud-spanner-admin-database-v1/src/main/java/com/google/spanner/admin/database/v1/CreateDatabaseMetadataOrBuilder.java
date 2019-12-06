@@ -15,7 +15,7 @@ public interface CreateDatabaseMetadataOrBuilder
    * The database being created.
    * </pre>
    *
-   * <code>string database = 1;</code>
+   * <code>string database = 1 [(.google.api.resource_reference) = { ... }</code>
    */
   java.lang.String getDatabase();
   /**
@@ -25,7 +25,7 @@ public interface CreateDatabaseMetadataOrBuilder
    * The database being created.
    * </pre>
    *
-   * <code>string database = 1;</code>
+   * <code>string database = 1 [(.google.api.resource_reference) = { ... }</code>
    */
   com.google.protobuf.ByteString getDatabaseBytes();
 }

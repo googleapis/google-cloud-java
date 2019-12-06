@@ -173,7 +173,7 @@ public class JdbcAbortedTransactionTest {
     // These retries are not picked up by the transaction retry listener, as that is only done for
     // actual JDBC transactions that are retried.
     try (java.sql.Connection connection = createConnection()) {
-      mockSpanner.abortNextTransaction();
+      mockSpanner.abortNextStatement();
       int updateCount = connection.createStatement().executeUpdate(UPDATE_STATEMENT.getSql());
       assertThat(updateCount, is(equalTo(UPDATE_COUNT)));
     }
@@ -188,7 +188,7 @@ public class JdbcAbortedTransactionTest {
     }
     try (java.sql.Connection connection = createConnection()) {
       connection.setAutoCommit(false);
-      mockSpanner.abortNextTransaction();
+      mockSpanner.abortNextStatement();
       int updateCount = connection.createStatement().executeUpdate(UPDATE_STATEMENT.getSql());
       assertThat(updateCount, is(equalTo(UPDATE_COUNT)));
       assertThat(getRetryCount(connection), is(equalTo(1)));
@@ -198,7 +198,7 @@ public class JdbcAbortedTransactionTest {
   @Test
   public void testAutocommitBatchUpdateAborted() throws SQLException {
     try (java.sql.Connection connection = createConnection()) {
-      mockSpanner.abortNextTransaction();
+      mockSpanner.abortNextStatement();
       try (java.sql.Statement statement = connection.createStatement()) {
         statement.addBatch(UPDATE_STATEMENT.getSql());
         statement.addBatch(UPDATE_STATEMENT.getSql());
@@ -215,7 +215,7 @@ public class JdbcAbortedTransactionTest {
     }
     try (java.sql.Connection connection = createConnection()) {
       connection.setAutoCommit(false);
-      mockSpanner.abortNextTransaction();
+      mockSpanner.abortNextStatement();
       try (java.sql.Statement statement = connection.createStatement()) {
         statement.addBatch(UPDATE_STATEMENT.getSql());
         statement.addBatch(UPDATE_STATEMENT.getSql());
@@ -230,7 +230,7 @@ public class JdbcAbortedTransactionTest {
   public void testAutocommitSelectAborted() throws SQLException {
     // Selects in autocommit are executed using a singleUse read-only transaction and cannot abort.
     try (java.sql.Connection connection = createConnection()) {
-      mockSpanner.abortNextTransaction();
+      mockSpanner.abortNextStatement();
       try (ResultSet rs = connection.createStatement().executeQuery(SELECT1.getSql())) {
         while (rs.next()) {
           assertThat(rs.getLong(1), is(equalTo(1L)));
@@ -246,7 +246,7 @@ public class JdbcAbortedTransactionTest {
     }
     try (java.sql.Connection connection = createConnection()) {
       connection.setAutoCommit(false);
-      mockSpanner.abortNextTransaction();
+      mockSpanner.abortNextStatement();
       try (ResultSet rs = connection.createStatement().executeQuery(SELECT1.getSql())) {
         while (rs.next()) {
           assertThat(rs.getLong(1), is(equalTo(1L)));
@@ -277,7 +277,7 @@ public class JdbcAbortedTransactionTest {
       mockSpanner.putStatementResult(
           StatementResult.query(SELECT_RANDOM, new RandomResultSetGenerator(25).generate()));
       // Abort all transactions (including the current one).
-      mockSpanner.abortAllTransactions();
+      mockSpanner.abortNextStatement();
       // This will abort and start an internal retry.
       connection.createStatement().executeUpdate(UPDATE_STATEMENT.getSql());
       fail("missing expected aborted exception");
@@ -307,7 +307,7 @@ public class JdbcAbortedTransactionTest {
       } catch (SQLException e) {
         // ignore
       }
-      mockSpanner.abortAllTransactions();
+      mockSpanner.abortNextStatement();
       connection.commit();
     }
   }
@@ -331,7 +331,7 @@ public class JdbcAbortedTransactionTest {
           StatementResult.exception(
               Statement.of(sql),
               Status.INVALID_ARGUMENT.withDescription("test").asRuntimeException()));
-      mockSpanner.abortAllTransactions();
+      mockSpanner.abortNextStatement();
       connection.commit();
       fail("missing expected aborted exception");
     } catch (JdbcAbortedDueToConcurrentModificationException e) {
@@ -369,7 +369,7 @@ public class JdbcAbortedTransactionTest {
       }
       // Set the update statement to return a result next time (i.e. during retry).
       mockSpanner.putStatementResult(StatementResult.update(Statement.of(sql), 1L));
-      mockSpanner.abortAllTransactions();
+      mockSpanner.abortNextStatement();
       connection.commit();
       fail("missing expected aborted exception");
     } catch (JdbcAbortedDueToConcurrentModificationException e) {

@@ -21,14 +21,17 @@ import com.google.api.services.bigquery.model.JobConfiguration;
 import com.google.api.services.bigquery.model.JobStatistics2;
 import com.google.api.services.bigquery.model.JobStatistics3;
 import com.google.api.services.bigquery.model.JobStatistics4;
+import com.google.api.services.bigquery.model.ScriptStackFrame;
 import com.google.cloud.StringEnumType;
 import com.google.cloud.StringEnumValue;
+import com.google.common.base.Function;
 import com.google.common.base.MoreObjects;
 import com.google.common.base.MoreObjects.ToStringHelper;
 import com.google.common.collect.Lists;
 import java.io.Serializable;
 import java.util.List;
 import java.util.Objects;
+import org.checkerframework.checker.nullness.compatqual.NullableDecl;
 
 /** A Google BigQuery Job statistics. */
 public abstract class JobStatistics implements Serializable {
@@ -38,6 +41,9 @@ public abstract class JobStatistics implements Serializable {
   private final Long creationTime;
   private final Long endTime;
   private final Long startTime;
+  private final Long numChildJobs;
+  private final String parentJobId;
+  private final ScriptStatistics scriptStatistics;
 
   /** A Google BigQuery Copy Job statistics. */
   public static class CopyStatistics extends JobStatistics {
@@ -754,11 +760,302 @@ public abstract class JobStatistics implements Serializable {
     }
   }
 
+  /** A Google BigQuery Script statistics. */
+  public static class ScriptStatistics {
+
+    private static final long serialVersionUID = 1328768324537448161L;
+
+    private final String evaluationKind;
+    private final List<ScriptStackFrame> stackFrames;
+
+    public static class ScriptStackFrame {
+
+      static final Function<
+              com.google.api.services.bigquery.model.ScriptStackFrame, ScriptStackFrame>
+          FROM_PB_FUNCTION =
+              new Function<
+                  com.google.api.services.bigquery.model.ScriptStackFrame, ScriptStackFrame>() {
+                @NullableDecl
+                @Override
+                public ScriptStackFrame apply(
+                    @NullableDecl
+                        com.google.api.services.bigquery.model.ScriptStackFrame stackFrame) {
+                  return ScriptStackFrame.fromPb(stackFrame);
+                }
+              };
+
+      static final Function<
+              ScriptStackFrame, com.google.api.services.bigquery.model.ScriptStackFrame>
+          TO_PB_FUNCTION =
+              new Function<
+                  ScriptStackFrame, com.google.api.services.bigquery.model.ScriptStackFrame>() {
+                @NullableDecl
+                @Override
+                public com.google.api.services.bigquery.model.ScriptStackFrame apply(
+                    @NullableDecl ScriptStackFrame scriptStackFrame) {
+                  return scriptStackFrame.toPb();
+                }
+              };
+
+      private final Integer endColumn;
+      private final Integer endLine;
+      private final String procedureId;
+      private final Integer startColumn;
+      private final Integer startLine;
+      private final String text;
+
+      private ScriptStackFrame(Builder builder) {
+        this.endColumn = builder.endColumn;
+        this.endLine = builder.endLine;
+        this.procedureId = builder.procedureId;
+        this.startColumn = builder.startColumn;
+        this.startLine = builder.startLine;
+        this.text = builder.text;
+      }
+
+      static class Builder {
+
+        private Integer endColumn;
+        private Integer endLine;
+        private String procedureId;
+        private Integer startColumn;
+        private Integer startLine;
+        private String text;
+
+        Builder setEndColumn(Integer endColumn) {
+          this.endColumn = endColumn;
+          return this;
+        }
+
+        Builder setEndLine(Integer endLine) {
+          this.endLine = endLine;
+          return this;
+        }
+
+        Builder setProcedureId(String procedureId) {
+          this.procedureId = procedureId;
+          return this;
+        }
+
+        Builder setStartColumn(Integer startColumn) {
+          this.startColumn = startColumn;
+          return this;
+        }
+
+        Builder setStartLine(Integer startLine) {
+          this.startLine = startLine;
+          return this;
+        }
+
+        Builder setText(String text) {
+          this.text = text;
+          return this;
+        }
+
+        ScriptStackFrame build() {
+          return new ScriptStackFrame(this);
+        }
+      }
+
+      /** Returns the end column. */
+      public Integer getEndColumn() {
+        return endColumn;
+      }
+
+      /** Returns the end line. */
+      public Integer getEndLine() {
+        return endLine;
+      }
+
+      /** Returns Name of the active procedure, empty if in a top-level script. */
+      public String getProcedureId() {
+        return procedureId;
+      }
+
+      /** Returns the start column */
+      public Integer getStartColumn() {
+        return startColumn;
+      }
+
+      /** Returns the start line. */
+      public Integer getStartLine() {
+        return startLine;
+      }
+
+      /** Returns Text of the current statement/expression. */
+      public String getText() {
+        return text;
+      }
+
+      ToStringHelper toStringHelper() {
+        return MoreObjects.toStringHelper(this)
+            .add("endColumn", endColumn)
+            .add("endLine", endLine)
+            .add("procedureId", procedureId)
+            .add("startColumn", startColumn)
+            .add("startLine", startLine)
+            .add("text", text);
+      }
+
+      @Override
+      public String toString() {
+        return toStringHelper().toString();
+      }
+
+      @Override
+      public boolean equals(Object obj) {
+        return obj == this
+            || obj != null
+                && obj.getClass().equals(ScriptStackFrame.class)
+                && Objects.equals(toPb(), ((ScriptStackFrame) obj).toPb());
+      }
+
+      @Override
+      public int hashCode() {
+        return Objects.hash(endColumn, endLine, procedureId, startColumn, startLine, text);
+      }
+
+      com.google.api.services.bigquery.model.ScriptStackFrame toPb() {
+        com.google.api.services.bigquery.model.ScriptStackFrame stackFrame =
+            new com.google.api.services.bigquery.model.ScriptStackFrame();
+        stackFrame.setEndColumn(endColumn);
+        stackFrame.setEndLine(endLine);
+        stackFrame.setProcedureId(procedureId);
+        stackFrame.setStartColumn(startColumn);
+        stackFrame.setStartLine(startLine);
+        stackFrame.setText(text);
+        return stackFrame;
+      }
+
+      static Builder newBuilder() {
+        return new Builder();
+      }
+
+      static ScriptStackFrame fromPb(
+          com.google.api.services.bigquery.model.ScriptStackFrame stackFrame) {
+        Builder builder = newBuilder();
+        if (stackFrame.getEndColumn() != null) {
+          builder.setEndColumn(stackFrame.getEndColumn());
+        }
+        if (stackFrame.getEndLine() != null) {
+          builder.setEndLine(stackFrame.getEndLine());
+        }
+        if (stackFrame.getProcedureId() != null) {
+          builder.setProcedureId(stackFrame.getProcedureId());
+        }
+        if (stackFrame.getStartColumn() != null) {
+          builder.setStartColumn(stackFrame.getStartColumn());
+        }
+        if (stackFrame.getStartLine() != null) {
+          builder.setStartLine(stackFrame.getStartLine());
+        }
+        if (stackFrame.getText() != null) {
+          builder.setText(stackFrame.getText());
+        }
+        return builder.build();
+      }
+    }
+
+    private ScriptStatistics(Builder builder) {
+      this.evaluationKind = builder.evaluationKind;
+      this.stackFrames = builder.stackFrames;
+    }
+
+    static class Builder {
+
+      private String evaluationKind;
+      private List<ScriptStackFrame> stackFrames;
+
+      private Builder() {}
+
+      Builder setEvaluationKind(String evaluationKind) {
+        this.evaluationKind = evaluationKind;
+        return this;
+      }
+
+      Builder setStackFrames(List<ScriptStackFrame> stackFrames) {
+        this.stackFrames = stackFrames;
+        return this;
+      }
+
+      ScriptStatistics build() {
+        return new ScriptStatistics(this);
+      }
+    }
+
+    static Builder newBuilder() {
+      return new Builder();
+    }
+
+    /** Returns child job was a statement or expression */
+    public String getEvaluationKind() {
+      return evaluationKind;
+    }
+
+    /**
+     * Stack trace showing the line/column/procedure name of each frame on the stack at the point
+     * where the current evaluation happened. The leaf frame is first, the primary script is last.
+     * Never empty.
+     */
+    public List<ScriptStackFrame> getStackFrames() {
+      return stackFrames;
+    }
+
+    ToStringHelper toStringHelper() {
+      return MoreObjects.toStringHelper(this)
+          .add("evaluationKind", evaluationKind)
+          .add("stackFrames", stackFrames);
+    }
+
+    @Override
+    public String toString() {
+      return toStringHelper().toString();
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+      return obj == this
+          || obj != null
+              && obj.getClass().equals(ScriptStatistics.class)
+              && Objects.equals(toPb(), ((ScriptStatistics) obj).toPb());
+    }
+
+    @Override
+    public int hashCode() {
+      return Objects.hash(evaluationKind, stackFrames);
+    }
+
+    com.google.api.services.bigquery.model.ScriptStatistics toPb() {
+      com.google.api.services.bigquery.model.ScriptStatistics scriptStatistics =
+          new com.google.api.services.bigquery.model.ScriptStatistics();
+      scriptStatistics.setEvaluationKind(evaluationKind);
+      scriptStatistics.setStackFrames(
+          Lists.transform(stackFrames, ScriptStackFrame.TO_PB_FUNCTION));
+      return scriptStatistics;
+    }
+
+    static ScriptStatistics fromPb(
+        com.google.api.services.bigquery.model.ScriptStatistics scriptStatistics) {
+      Builder builder = newBuilder();
+      if (scriptStatistics.getEvaluationKind() != null) {
+        builder.setEvaluationKind(scriptStatistics.getEvaluationKind());
+      }
+      if (scriptStatistics.getStackFrames() != null) {
+        builder.setStackFrames(
+            Lists.transform(scriptStatistics.getStackFrames(), ScriptStackFrame.FROM_PB_FUNCTION));
+      }
+      return builder.build();
+    }
+  }
+
   abstract static class Builder<T extends JobStatistics, B extends Builder<T, B>> {
 
     private Long creationTime;
     private Long endTime;
     private Long startTime;
+    private Long numChildJobs;
+    private String parentJobId;
+    private ScriptStatistics scriptStatistics;
 
     protected Builder() {}
 
@@ -766,6 +1063,11 @@ public abstract class JobStatistics implements Serializable {
       this.creationTime = statisticsPb.getCreationTime();
       this.endTime = statisticsPb.getEndTime();
       this.startTime = statisticsPb.getStartTime();
+      this.numChildJobs = statisticsPb.getNumChildJobs();
+      this.parentJobId = statisticsPb.getParentJobId();
+      if (statisticsPb.getScriptStatistics() != null) {
+        this.scriptStatistics = ScriptStatistics.fromPb(statisticsPb.getScriptStatistics());
+      }
     }
 
     @SuppressWarnings("unchecked")
@@ -795,6 +1097,9 @@ public abstract class JobStatistics implements Serializable {
     this.creationTime = builder.creationTime;
     this.endTime = builder.endTime;
     this.startTime = builder.startTime;
+    this.numChildJobs = builder.numChildJobs;
+    this.parentJobId = builder.parentJobId;
+    this.scriptStatistics = builder.scriptStatistics;
   }
 
   /** Returns the creation time of the job in milliseconds since epoch. */
@@ -818,11 +1123,29 @@ public abstract class JobStatistics implements Serializable {
     return startTime;
   }
 
+  /** Returns the number of child job executed. */
+  public Long getNumChildJobs() {
+    return numChildJobs;
+  }
+
+  /** Returns the parent job id of child job. */
+  public String getParentJobId() {
+    return parentJobId;
+  }
+
+  /** Returns the statistics for a child job of a script. */
+  public ScriptStatistics getScriptStatistics() {
+    return scriptStatistics;
+  }
+
   ToStringHelper toStringHelper() {
     return MoreObjects.toStringHelper(this)
         .add("creationTime", creationTime)
         .add("endTime", endTime)
-        .add("startTime", startTime);
+        .add("startTime", startTime)
+        .add("numChildJobs", numChildJobs)
+        .add("parentJobId", parentJobId)
+        .add("scriptStatistics", scriptStatistics);
   }
 
   @Override
@@ -831,7 +1154,8 @@ public abstract class JobStatistics implements Serializable {
   }
 
   final int baseHashCode() {
-    return Objects.hash(creationTime, endTime, startTime);
+    return Objects.hash(
+        creationTime, endTime, startTime, numChildJobs, parentJobId, scriptStatistics);
   }
 
   final boolean baseEquals(JobStatistics jobStatistics) {
@@ -844,6 +1168,11 @@ public abstract class JobStatistics implements Serializable {
     statistics.setCreationTime(creationTime);
     statistics.setEndTime(endTime);
     statistics.setStartTime(startTime);
+    statistics.setNumChildJobs(numChildJobs);
+    statistics.setParentJobId(parentJobId);
+    if (scriptStatistics != null) {
+      statistics.setScriptStatistics(scriptStatistics.toPb());
+    }
     return statistics;
   }
 
