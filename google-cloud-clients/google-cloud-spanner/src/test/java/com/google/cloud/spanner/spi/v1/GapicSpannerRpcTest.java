@@ -135,11 +135,11 @@ public class GapicSpannerRpcTest {
       mockInstanceAdmin.addResponse(Instance.newBuilder().
               setName(InstanceName.format("[PROJECT]", "[INSTANCE]")).
               setConfig(InstanceConfigName.format("[PROJECT]", "[TEST-CONFIG]")).
-              addEndpointUrls("http://" + address.getHostString() + ":" + server.getPort()).build());
+              addEndpointUris("http://" + address.getHostString() + ":" + server.getPort()).build());
       mockInstanceAdmin.addResponse(Instance.newBuilder().
               setName(InstanceName.format("[PROJECT]", "[INSTANCE]")).
               setConfig(InstanceConfigName.format("[PROJECT]", "[TEST-CONFIG]")).
-              addEndpointUrls("http://" + address.getHostString() + ":" + server.getPort()).build());
+              addEndpointUris("http://" + address.getHostString() + ":" + server.getPort()).build());
       // Get a database client and do a query. This should initiate threads for the Spanner service.
       DatabaseClient client =
               spanner.getDatabaseClient(DatabaseId.of("[PROJECT]", "[INSTANCE]", "[DATABASE]"));

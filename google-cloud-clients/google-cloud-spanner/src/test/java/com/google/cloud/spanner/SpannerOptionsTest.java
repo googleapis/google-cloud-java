@@ -80,27 +80,27 @@ public class SpannerOptionsTest {
   public void testSpannerDefaultRetrySettings() {
     RetrySettings defaultRetrySettings =
             RetrySettings.newBuilder()
-                    .setInitialRetryDelay(Duration.ofSeconds(1L))
+                    .setInitialRetryDelay(Duration.ofMillis(250L))
                     .setRetryDelayMultiplier(1.3)
                     .setMaxRetryDelay(Duration.ofMillis(32000L))
-                    .setInitialRpcTimeout(Duration.ofMillis(60000L))
+                    .setInitialRpcTimeout(Duration.ofMillis(3600000L))
                     .setRpcTimeoutMultiplier(1.0)
-                    .setMaxRpcTimeout(Duration.ofMillis(60000L))
-                    .setTotalTimeout(Duration.ofMillis(600000L))
+                    .setMaxRpcTimeout(Duration.ofMillis(3600000L))
+                    .setTotalTimeout(Duration.ofMillis(3600000L))
                     .build();
     RetrySettings streamingRetrySettings =
             RetrySettings.newBuilder()
-                    .setInitialRetryDelay(Duration.ofSeconds(1L))
+                    .setInitialRetryDelay(Duration.ofMillis(250L))
                     .setRetryDelayMultiplier(1.3)
                     .setMaxRetryDelay(Duration.ofMillis(32000L))
-                    .setInitialRpcTimeout(Duration.ofMillis(120000L))
+                    .setInitialRpcTimeout(Duration.ofMillis(3600000L))
                     .setRpcTimeoutMultiplier(1.0)
-                    .setMaxRpcTimeout(Duration.ofMillis(120000L))
-                    .setTotalTimeout(Duration.ofMillis(1200000L))
+                    .setMaxRpcTimeout(Duration.ofMillis(3600000L))
+                    .setTotalTimeout(Duration.ofMillis(3600000L))
                     .build();
     RetrySettings longRunningRetrySettings =
             RetrySettings.newBuilder()
-                    .setInitialRetryDelay(Duration.ofSeconds(1L))
+                    .setInitialRetryDelay(Duration.ofMillis(250L))
                     .setRetryDelayMultiplier(1.3)
                     .setMaxRetryDelay(Duration.ofMillis(32000L))
                     .setInitialRpcTimeout(Duration.ofMillis(3600000L))

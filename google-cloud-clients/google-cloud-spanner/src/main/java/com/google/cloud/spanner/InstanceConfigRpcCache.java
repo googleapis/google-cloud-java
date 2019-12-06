@@ -51,8 +51,8 @@ public class InstanceConfigRpcCache {
         SpannerOptions.Builder optionsBuilder = projectClient.getOptions().toBuilder();
         try {
           Instance instance = projectClient.getInstance(request);
-          if (instance.getEndpointUrlsCount() > 0) {
-            optionsBuilder.setHost(instance.getEndpointUrls(0));
+          if (instance.getEndpointUrisCount() > 0) {
+            optionsBuilder.setHost(instance.getEndpointUris(0));
           } else {
             return projectClient;
           }
