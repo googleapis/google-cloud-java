@@ -1,5 +1,17 @@
 # Changelog
 
+### [1.35.1](https://www.github.com/googleapis/java-kms/compare/v1.35.0...v1.35.1) (2019-11-26)
+
+
+### Bug Fixes
+
+* google-cloud-kms-bom should not include itself ([#22](https://www.github.com/googleapis/java-kms/issues/22)) ([fa4c58a](https://www.github.com/googleapis/java-kms/commit/fa4c58a30830c285e773a97f5d261b1787c0851b))
+
+
+### Documentation
+
+* reference libraries-bom in docs ([#12](https://www.github.com/googleapis/java-kms/issues/12)) ([ca07570](https://www.github.com/googleapis/java-kms/commit/ca07570e3b9e7059e1fdd4aa81b4b93512f4fd3a))
+
 ## [1.35.0](https://www.github.com/googleapis/java-kms/compare/1.34.0...v1.35.0) (2019-11-08)
 
 

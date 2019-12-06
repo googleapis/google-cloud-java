@@ -37,16 +37,16 @@ If you are using Maven without a BOM, add this to your dependencies.
 <dependency>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-kms</artifactId>
-  <version>1.35.0</version>
+  <version>1.35.1</version>
 </dependency>
 ```
 If you are using Gradle, add this to your dependencies
 ```Groovy
-compile 'com.google.cloud:google-cloud-kms:1.35.0'
+compile 'com.google.cloud:google-cloud-kms:1.35.1'
 ```
 If you are using SBT, add this to your dependencies
 ```Scala
-libraryDependencies += "com.google.cloud" % "google-cloud-kms" % "1.35.0"
+libraryDependencies += "com.google.cloud" % "google-cloud-kms" % "1.35.1"
 ```
 [//]: # ({x-version-update-end})
 
