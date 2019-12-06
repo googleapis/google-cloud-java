@@ -1,5 +1,12 @@
 # Changelog
 
+### [0.118.1](https://www.github.com/googleapis/java-errorreporting/compare/v0.118.0...v0.118.1) (2019-12-06)
+
+
+### Bug Fixes
+
+* correct groupIds for com.google.api.grpc artifacts ([#23](https://www.github.com/googleapis/java-errorreporting/issues/23)) ([8b6e0cc](https://www.github.com/googleapis/java-errorreporting/commit/8b6e0ccc1df8d08be18d8d87ddd3376ca69cfba6))
+
 ## [0.118.0](https://www.github.com/googleapis/java-errorreporting/compare/0.117.0...v0.118.0) (2019-12-04)
 
 
