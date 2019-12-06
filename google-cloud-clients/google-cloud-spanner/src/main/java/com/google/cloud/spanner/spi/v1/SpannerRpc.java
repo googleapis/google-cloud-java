@@ -20,10 +20,10 @@ import com.google.api.gax.longrunning.OperationFuture;
 import com.google.cloud.ServiceRpc;
 import com.google.cloud.spanner.SpannerException;
 import com.google.cloud.spanner.SpannerOptions;
-import com.google.cloud.spanner.spi.v1.SpannerRpc.Option;
-import com.google.cloud.spanner.v1.stub.SpannerStub;
 import com.google.cloud.spanner.admin.database.v1.stub.DatabaseAdminStub;
 import com.google.cloud.spanner.admin.instance.v1.stub.InstanceAdminStub;
+import com.google.cloud.spanner.spi.v1.SpannerRpc.Option;
+import com.google.cloud.spanner.v1.stub.SpannerStub;
 import com.google.common.annotations.VisibleForTesting;
 import com.google.common.collect.ImmutableList;
 import com.google.iam.v1.Policy;
@@ -31,7 +31,6 @@ import com.google.iam.v1.TestIamPermissionsResponse;
 import com.google.longrunning.Operation;
 import com.google.protobuf.Empty;
 import com.google.protobuf.FieldMask;
-import com.google.protobuf.MessageLite;
 import com.google.spanner.admin.database.v1.CreateDatabaseMetadata;
 import com.google.spanner.admin.database.v1.Database;
 import com.google.spanner.admin.database.v1.UpdateDatabaseDdlMetadata;
@@ -39,7 +38,6 @@ import com.google.spanner.admin.instance.v1.CreateInstanceMetadata;
 import com.google.spanner.admin.instance.v1.GetInstanceRequest;
 import com.google.spanner.admin.instance.v1.Instance;
 import com.google.spanner.admin.instance.v1.InstanceConfig;
-import com.google.spanner.admin.instance.v1.ProjectName;
 import com.google.spanner.admin.instance.v1.UpdateInstanceMetadata;
 import com.google.spanner.v1.BeginTransactionRequest;
 import com.google.spanner.v1.CommitRequest;
@@ -125,7 +123,7 @@ public interface SpannerRpc extends ServiceRpc {
       // empty list.  Implicitly convert to an empty list to minimize the risk of NPEs.
       this.results = (results == null) ? ImmutableList.<T>of() : results;
       this.nextPageToken =
-              (nextPageToken == null || nextPageToken.isEmpty()) ? null : nextPageToken;
+          (nextPageToken == null || nextPageToken.isEmpty()) ? null : nextPageToken;
     }
 
     /**
@@ -177,18 +175,18 @@ public interface SpannerRpc extends ServiceRpc {
 
   // Instance admin APIs.
   Paginated<InstanceConfig> listInstanceConfigs(int pageSize, @Nullable String pageToken)
-          throws SpannerException;
+      throws SpannerException;
 
   InstanceConfig getInstanceConfig(String instanceConfigName) throws SpannerException;
 
   Paginated<Instance> listInstances(
-          int pageSize, @Nullable String pageToken, @Nullable String filter) throws SpannerException;
+      int pageSize, @Nullable String pageToken, @Nullable String filter) throws SpannerException;
 
   OperationFuture<Instance, CreateInstanceMetadata> createInstance(
-          String parent, String instanceId, Instance instance) throws SpannerException;
+      String parent, String instanceId, Instance instance) throws SpannerException;
 
   OperationFuture<Instance, UpdateInstanceMetadata> updateInstance(
-          Instance instance, FieldMask fieldMask) throws SpannerException;
+      Instance instance, FieldMask fieldMask) throws SpannerException;
 
   Instance getInstance(String instanceName) throws SpannerException;
 
@@ -198,15 +196,15 @@ public interface SpannerRpc extends ServiceRpc {
 
   // Database admin APIs.
   Paginated<Database> listDatabases(String instanceName, int pageSize, @Nullable String pageToken)
-          throws SpannerException;
+      throws SpannerException;
 
   OperationFuture<Database, CreateDatabaseMetadata> createDatabase(
-          String instanceName, String createDatabaseStatement, Iterable<String> additionalStatements)
-          throws SpannerException;
+      String instanceName, String createDatabaseStatement, Iterable<String> additionalStatements)
+      throws SpannerException;
 
   OperationFuture<Empty, UpdateDatabaseDdlMetadata> updateDatabaseDdl(
-          String databaseName, Iterable<String> updateDatabaseStatements, @Nullable String updateId)
-          throws SpannerException;
+      String databaseName, Iterable<String> updateDatabaseStatements, @Nullable String updateId)
+      throws SpannerException;
 
   void dropDatabase(String databaseName) throws SpannerException;
 
@@ -218,44 +216,44 @@ public interface SpannerRpc extends ServiceRpc {
   Operation getOperation(String name) throws SpannerException;
 
   List<Session> batchCreateSessions(
-          String databaseName,
-          int sessionCount,
-          @Nullable Map<String, String> labels,
-          @Nullable Map<Option, ?> options)
-          throws SpannerException;
+      String databaseName,
+      int sessionCount,
+      @Nullable Map<String, String> labels,
+      @Nullable Map<Option, ?> options)
+      throws SpannerException;
 
   Session createSession(
-          String databaseName, @Nullable Map<String, String> labels, @Nullable Map<Option, ?> options)
-          throws SpannerException;
+      String databaseName, @Nullable Map<String, String> labels, @Nullable Map<Option, ?> options)
+      throws SpannerException;
 
   void deleteSession(String sessionName, @Nullable Map<Option, ?> options) throws SpannerException;
 
   StreamingCall read(
-          ReadRequest request, ResultStreamConsumer consumer, @Nullable Map<Option, ?> options);
+      ReadRequest request, ResultStreamConsumer consumer, @Nullable Map<Option, ?> options);
 
   ResultSet executeQuery(ExecuteSqlRequest request, @Nullable Map<Option, ?> options);
 
   ResultSet executePartitionedDml(
-          ExecuteSqlRequest request, @Nullable Map<Option, ?> options, Duration timeout);
+      ExecuteSqlRequest request, @Nullable Map<Option, ?> options, Duration timeout);
 
   StreamingCall executeQuery(
-          ExecuteSqlRequest request, ResultStreamConsumer consumer, @Nullable Map<Option, ?> options);
+      ExecuteSqlRequest request, ResultStreamConsumer consumer, @Nullable Map<Option, ?> options);
 
   ExecuteBatchDmlResponse executeBatchDml(ExecuteBatchDmlRequest build, Map<Option, ?> options);
 
   Transaction beginTransaction(BeginTransactionRequest request, @Nullable Map<Option, ?> options)
-          throws SpannerException;
+      throws SpannerException;
 
   CommitResponse commit(CommitRequest commitRequest, @Nullable Map<Option, ?> options)
-          throws SpannerException;
+      throws SpannerException;
 
   void rollback(RollbackRequest request, @Nullable Map<Option, ?> options) throws SpannerException;
 
   PartitionResponse partitionQuery(PartitionQueryRequest request, @Nullable Map<Option, ?> options)
-          throws SpannerException;
+      throws SpannerException;
 
   PartitionResponse partitionRead(PartitionReadRequest request, @Nullable Map<Option, ?> options)
-          throws SpannerException;
+      throws SpannerException;
 
   /** Gets the IAM policy for the given resource using the {@link DatabaseAdminStub}. */
   Policy getDatabaseAdminIAMPolicy(String resource);
@@ -270,7 +268,7 @@ public interface SpannerRpc extends ServiceRpc {
 
   /** Tests the IAM permissions for the given resource using the {@link DatabaseAdminStub}. */
   TestIamPermissionsResponse testDatabaseAdminIAMPermissions(
-          String resource, Iterable<String> permissions);
+      String resource, Iterable<String> permissions);
 
   /** Gets the IAM policy for the given resource using the {@link InstanceAdminStub}. */
   Policy getInstanceAdminIAMPolicy(String resource);
@@ -285,7 +283,7 @@ public interface SpannerRpc extends ServiceRpc {
 
   /** Tests the IAM permissions for the given resource using the {@link InstanceAdminStub}. */
   TestIamPermissionsResponse testInstanceAdminIAMPermissions(
-          String resource, Iterable<String> permissions);
+      String resource, Iterable<String> permissions);
 
   public void shutdown();
 

@@ -16,6 +16,9 @@
 
 package com.google.cloud.spanner;
 
+import static com.google.cloud.spanner.SpannerExceptionFactory.newSpannerException;
+import static com.google.cloud.spanner.SpannerExceptionFactory.newSpannerExceptionForCancellation;
+
 import com.google.api.client.util.BackOff;
 import com.google.api.client.util.ExponentialBackOff;
 import com.google.api.gax.paging.Page;
@@ -24,7 +27,6 @@ import com.google.cloud.PageImpl;
 import com.google.cloud.PageImpl.NextPageFetcher;
 import com.google.cloud.grpc.GrpcTransportOptions;
 import com.google.cloud.spanner.SessionClient.SessionId;
-import com.google.cloud.spanner.spi.v1.GapicSpannerRpc;
 import com.google.cloud.spanner.spi.v1.SpannerRpc;
 import com.google.cloud.spanner.spi.v1.SpannerRpc.Paginated;
 import com.google.common.annotations.VisibleForTesting;
@@ -33,17 +35,12 @@ import com.google.common.base.Strings;
 import com.google.common.collect.ImmutableMap;
 import com.google.common.util.concurrent.Futures;
 import com.google.common.util.concurrent.ListenableFuture;
-import com.google.spanner.admin.instance.v1.InstanceName;
-import com.google.spanner.admin.instance.v1.ProjectName;
 import com.google.spanner.v1.DatabaseName;
 import com.google.spanner.v1.SessionName;
 import io.grpc.Context;
 import io.opencensus.trace.AttributeValue;
 import io.opencensus.trace.Tracer;
 import io.opencensus.trace.Tracing;
-
-import javax.annotation.Nullable;
-import javax.annotation.concurrent.GuardedBy;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -53,15 +50,11 @@ import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.Executor;
 import java.util.concurrent.TimeUnit;
-import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.annotation.Nullable;
+import javax.annotation.concurrent.GuardedBy;
 
-import static com.google.cloud.spanner.SpannerExceptionFactory.newSpannerException;
-import static com.google.cloud.spanner.SpannerExceptionFactory.newSpannerExceptionForCancellation;
-
-/**
- * Default implementation of the Cloud Spanner interface.
- */
+/** Default implementation of the Cloud Spanner interface. */
 class SpannerImpl extends BaseService<SpannerOptions> implements Spanner {
   private static final int MIN_BACKOFF_MS = 1000;
   private static final int MAX_BACKOFF_MS = 32000;
@@ -72,7 +65,7 @@ class SpannerImpl extends BaseService<SpannerOptions> implements Spanner {
   static final String CREATE_SESSION = "CloudSpannerOperation.CreateSession";
   static final String BATCH_CREATE_SESSIONS = "CloudSpannerOperation.BatchCreateSessions";
   static final String BATCH_CREATE_SESSIONS_REQUEST =
-          "CloudSpannerOperation.BatchCreateSessionsRequest";
+      "CloudSpannerOperation.BatchCreateSessionsRequest";
   static final String DELETE_SESSION = "CloudSpannerOperation.DeleteSession";
   static final String BEGIN_TRANSACTION = "CloudSpannerOperation.BeginTransaction";
   static final String COMMIT = "CloudSpannerOperation.Commit";
@@ -81,14 +74,14 @@ class SpannerImpl extends BaseService<SpannerOptions> implements Spanner {
 
   static {
     TraceUtil.exportSpans(
-            BATCH_CREATE_SESSIONS,
-            BATCH_CREATE_SESSIONS_REQUEST,
-            CREATE_SESSION,
-            DELETE_SESSION,
-            BEGIN_TRANSACTION,
-            COMMIT,
-            QUERY,
-            READ);
+        BATCH_CREATE_SESSIONS,
+        BATCH_CREATE_SESSIONS_REQUEST,
+        CREATE_SESSION,
+        DELETE_SESSION,
+        BEGIN_TRANSACTION,
+        COMMIT,
+        QUERY,
+        READ);
   }
 
   private final SpannerRpc spannerRpc;
@@ -111,7 +104,7 @@ class SpannerImpl extends BaseService<SpannerOptions> implements Spanner {
     this.spannerRpc = gapicRpc;
     this.dbAdminClient = new DatabaseAdminClientImpl(options.getProjectId(), gapicRpc);
     this.instanceClient =
-            new InstanceAdminClientImpl(options.getProjectId(), gapicRpc, dbAdminClient);
+        new InstanceAdminClientImpl(options.getProjectId(), gapicRpc, dbAdminClient);
   }
 
   SpannerImpl(SpannerOptions options) {
@@ -120,10 +113,10 @@ class SpannerImpl extends BaseService<SpannerOptions> implements Spanner {
 
   static ExponentialBackOff newBackOff() {
     return new ExponentialBackOff.Builder()
-            .setInitialIntervalMillis(MIN_BACKOFF_MS)
-            .setMaxIntervalMillis(MAX_BACKOFF_MS)
-            .setMaxElapsedTimeMillis(Integer.MAX_VALUE) // Prevent Backoff.STOP from getting returned.
-            .build();
+        .setInitialIntervalMillis(MIN_BACKOFF_MS)
+        .setMaxIntervalMillis(MAX_BACKOFF_MS)
+        .setMaxElapsedTimeMillis(Integer.MAX_VALUE) // Prevent Backoff.STOP from getting returned.
+        .build();
   }
 
   static void backoffSleep(Context context, BackOff backoff) throws SpannerException {
@@ -140,19 +133,19 @@ class SpannerImpl extends BaseService<SpannerOptions> implements Spanner {
 
   static void backoffSleep(Context context, long backoffMillis) throws SpannerException {
     tracer
-            .getCurrentSpan()
-            .addAnnotation(
-                    "Backing off",
-                    ImmutableMap.of("Delay", AttributeValue.longAttributeValue(backoffMillis)));
+        .getCurrentSpan()
+        .addAnnotation(
+            "Backing off",
+            ImmutableMap.of("Delay", AttributeValue.longAttributeValue(backoffMillis)));
     final CountDownLatch latch = new CountDownLatch(1);
     final Context.CancellationListener listener =
-            new Context.CancellationListener() {
-              @Override
-              public void cancelled(Context context) {
-                // Wakeup on cancellation / DEADLINE_EXCEEDED.
-                latch.countDown();
-              }
-            };
+        new Context.CancellationListener() {
+          @Override
+          public void cancelled(Context context) {
+            // Wakeup on cancellation / DEADLINE_EXCEEDED.
+            latch.countDown();
+          }
+        };
 
     context.addListener(listener, DirectExecutor.INSTANCE);
     try {
@@ -171,23 +164,17 @@ class SpannerImpl extends BaseService<SpannerOptions> implements Spanner {
     }
   }
 
-  /**
-   * Returns the {@link SpannerRpc} of this {@link SpannerImpl} instance.
-   */
+  /** Returns the {@link SpannerRpc} of this {@link SpannerImpl} instance. */
   SpannerRpc getRpc(SessionName sessionName) {
     return spannerRpc.getRpc(sessionName);
   }
 
-  /**
-   * Returns the {@link SpannerRpc} of this {@link SpannerImpl} instance.
-   */
+  /** Returns the {@link SpannerRpc} of this {@link SpannerImpl} instance. */
   SpannerRpc getRpc(DatabaseName databaseName) {
     return spannerRpc.getRpc(databaseName);
   }
 
-  /**
-   * Returns the default setting for prefetchChunks of this {@link SpannerImpl} instance.
-   */
+  /** Returns the default setting for prefetchChunks of this {@link SpannerImpl} instance. */
   int getDefaultPrefetchChunks() {
     return getOptions().getPrefetchChunks();
   }
@@ -205,10 +192,10 @@ class SpannerImpl extends BaseService<SpannerOptions> implements Spanner {
         return sessionClients.get(db);
       } else {
         SessionClient client =
-                new SessionClient(
-                        this,
-                        db,
-                        ((GrpcTransportOptions) getOptions().getTransportOptions()).getExecutorFactory());
+            new SessionClient(
+                this,
+                db,
+                ((GrpcTransportOptions) getOptions().getTransportOptions()).getExecutorFactory());
         sessionClients.put(db, client);
         return client;
       }
@@ -233,7 +220,7 @@ class SpannerImpl extends BaseService<SpannerOptions> implements Spanner {
         return dbClients.get(db);
       } else {
         SessionPool pool =
-                SessionPool.createPool(getOptions(), SpannerImpl.this.getSessionClient(db));
+            SessionPool.createPool(getOptions(), SpannerImpl.this.getSessionClient(db));
         DatabaseClientImpl dbClient = createDatabaseClient(pool);
         dbClients.put(db, dbClient);
         return dbClient;
@@ -280,9 +267,7 @@ class SpannerImpl extends BaseService<SpannerOptions> implements Spanner {
     return spannerIsClosed;
   }
 
-  /**
-   * Helper class for gRPC calls that can return paginated results.
-   */
+  /** Helper class for gRPC calls that can return paginated results. */
   abstract static class PageFetcher<S, T> implements NextPageFetcher<S> {
     private String nextPageToken;
 

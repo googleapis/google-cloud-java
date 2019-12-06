@@ -64,33 +64,33 @@ import org.junit.runners.JUnit4;
 @RunWith(JUnit4.class)
 public class GapicSpannerRpcTest {
   private static final Statement SELECT1AND2 =
-          Statement.of("SELECT 1 AS COL1 UNION ALL SELECT 2 AS COL1");
+      Statement.of("SELECT 1 AS COL1 UNION ALL SELECT 2 AS COL1");
   private static final ResultSetMetadata SELECT1AND2_METADATA =
-          ResultSetMetadata.newBuilder()
-                  .setRowType(
-                          StructType.newBuilder()
-                                  .addFields(
-                                          Field.newBuilder()
-                                                  .setName("COL1")
-                                                  .setType(
-                                                          com.google.spanner.v1.Type.newBuilder()
-                                                                  .setCode(TypeCode.INT64)
-                                                                  .build())
-                                                  .build())
+      ResultSetMetadata.newBuilder()
+          .setRowType(
+              StructType.newBuilder()
+                  .addFields(
+                      Field.newBuilder()
+                          .setName("COL1")
+                          .setType(
+                              com.google.spanner.v1.Type.newBuilder()
+                                  .setCode(TypeCode.INT64)
                                   .build())
-                  .build();
+                          .build())
+                  .build())
+          .build();
   private static final com.google.spanner.v1.ResultSet SELECT1_RESULTSET =
-          com.google.spanner.v1.ResultSet.newBuilder()
-                  .addRows(
-                          ListValue.newBuilder()
-                                  .addValues(com.google.protobuf.Value.newBuilder().setStringValue("1").build())
-                                  .build())
-                  .addRows(
-                          ListValue.newBuilder()
-                                  .addValues(com.google.protobuf.Value.newBuilder().setStringValue("2").build())
-                                  .build())
-                  .setMetadata(SELECT1AND2_METADATA)
-                  .build();
+      com.google.spanner.v1.ResultSet.newBuilder()
+          .addRows(
+              ListValue.newBuilder()
+                  .addValues(com.google.protobuf.Value.newBuilder().setStringValue("1").build())
+                  .build())
+          .addRows(
+              ListValue.newBuilder()
+                  .addValues(com.google.protobuf.Value.newBuilder().setStringValue("2").build())
+                  .build())
+          .setMetadata(SELECT1AND2_METADATA)
+          .build();
   private MockSpannerServiceImpl mockSpanner;
   private MockInstanceAdminImpl mockInstanceAdmin;
   private MockDatabaseAdminImpl mockDatabaseAdmin;
@@ -107,12 +107,12 @@ public class GapicSpannerRpcTest {
     mockDatabaseAdmin = new MockDatabaseAdminImpl();
     address = new InetSocketAddress("localhost", 0);
     server =
-            NettyServerBuilder.forAddress(address)
-                    .addService(mockSpanner)
-                    .addService(mockInstanceAdmin)
-                    .addService(mockDatabaseAdmin)
-                    .build()
-                    .start();
+        NettyServerBuilder.forAddress(address)
+            .addService(mockSpanner)
+            .addService(mockInstanceAdmin)
+            .addService(mockDatabaseAdmin)
+            .build()
+            .start();
   }
 
   @After
@@ -132,17 +132,21 @@ public class GapicSpannerRpcTest {
       // Create Spanner instance.
       SpannerOptions options = createSpannerOptions();
       Spanner spanner = options.getService();
-      mockInstanceAdmin.addResponse(Instance.newBuilder().
-              setName(InstanceName.format("[PROJECT]", "[INSTANCE]")).
-              setConfig(InstanceConfigName.format("[PROJECT]", "[TEST-CONFIG]")).
-              addEndpointUris("http://" + address.getHostString() + ":" + server.getPort()).build());
-      mockInstanceAdmin.addResponse(Instance.newBuilder().
-              setName(InstanceName.format("[PROJECT]", "[INSTANCE]")).
-              setConfig(InstanceConfigName.format("[PROJECT]", "[TEST-CONFIG]")).
-              addEndpointUris("http://" + address.getHostString() + ":" + server.getPort()).build());
+      mockInstanceAdmin.addResponse(
+          Instance.newBuilder()
+              .setName(InstanceName.format("[PROJECT]", "[INSTANCE]"))
+              .setConfig(InstanceConfigName.format("[PROJECT]", "[TEST-CONFIG]"))
+              .addEndpointUris("http://" + address.getHostString() + ":" + server.getPort())
+              .build());
+      mockInstanceAdmin.addResponse(
+          Instance.newBuilder()
+              .setName(InstanceName.format("[PROJECT]", "[INSTANCE]"))
+              .setConfig(InstanceConfigName.format("[PROJECT]", "[TEST-CONFIG]"))
+              .addEndpointUris("http://" + address.getHostString() + ":" + server.getPort())
+              .build());
       // Get a database client and do a query. This should initiate threads for the Spanner service.
       DatabaseClient client =
-              spanner.getDatabaseClient(DatabaseId.of("[PROJECT]", "[INSTANCE]", "[DATABASE]"));
+          spanner.getDatabaseClient(DatabaseId.of("[PROJECT]", "[INSTANCE]", "[DATABASE]"));
       List<ResultSet> resultSets = new ArrayList<>();
       // SpannerStub affiliates a channel with a session, so we need to use multiple sessions
       // to ensure we also hit multiple channels.
@@ -156,7 +160,7 @@ public class GapicSpannerRpcTest {
         resultSets.add(rs);
         // Check whether the number of expected threads has been reached.
         if (getNumberOfThreadsWithName(SPANNER_THREAD_NAME, false)
-                == options.getNumChannels() * NUM_THREADS_PER_CHANNEL) {
+            == options.getNumChannels() * NUM_THREADS_PER_CHANNEL) {
           break;
         }
       }
@@ -182,7 +186,7 @@ public class GapicSpannerRpcTest {
       // Wait for up to two seconds to allow the threads to actually shutdown.
       Stopwatch watch = Stopwatch.createStarted();
       while (getNumberOfThreadsWithName(SPANNER_THREAD_NAME, false) > 0
-              && watch.elapsed(TimeUnit.SECONDS) < 2) {
+          && watch.elapsed(TimeUnit.SECONDS) < 2) {
         Thread.sleep(10L);
       }
       assertThat(getNumberOfThreadsWithName(SPANNER_THREAD_NAME, true), is(equalTo(0)));
@@ -205,15 +209,15 @@ public class GapicSpannerRpcTest {
       spanners.add(spanner);
       // Get a database client and do a query. This should initiate threads for the Spanner service.
       DatabaseClient client =
-              spanner.getDatabaseClient(DatabaseId.of("[PROJECT]", "[INSTANCE]", "[DATABASE]"));
+          spanner.getDatabaseClient(DatabaseId.of("[PROJECT]", "[INSTANCE]", "[DATABASE]"));
       List<ResultSet> resultSets = new ArrayList<>();
       // SpannerStub affiliates a channel with a session, so we need to use multiple sessions
       // to ensure we also hit multiple channels.
       for (int sessionCount = 0;
-           sessionCount < options.getSessionPoolOptions().getMaxSessions()
-                   && getNumberOfThreadsWithName(SPANNER_THREAD_NAME, false)
-                   < options.getNumChannels() * NUM_THREADS_PER_CHANNEL * openSpanners;
-           sessionCount++) {
+          sessionCount < options.getSessionPoolOptions().getMaxSessions()
+              && getNumberOfThreadsWithName(SPANNER_THREAD_NAME, false)
+                  < options.getNumChannels() * NUM_THREADS_PER_CHANNEL * openSpanners;
+          sessionCount++) {
         ResultSet rs = client.singleUse().executeQuery(SELECT1AND2);
         // Execute ResultSet#next() to send the query to Spanner.
         rs.next();
@@ -232,7 +236,7 @@ public class GapicSpannerRpcTest {
     // Wait a little to allow the threads to actually shutdown.
     Stopwatch watch = Stopwatch.createStarted();
     while (getNumberOfThreadsWithName(SPANNER_THREAD_NAME, false) > 0
-            && watch.elapsed(TimeUnit.SECONDS) < 2) {
+        && watch.elapsed(TimeUnit.SECONDS) < 2) {
       Thread.sleep(10L);
     }
     assertThat(getNumberOfThreadsWithName(SPANNER_THREAD_NAME, true), is(equalTo(0)));
@@ -242,19 +246,19 @@ public class GapicSpannerRpcTest {
   private SpannerOptions createSpannerOptions() {
     String endpoint = address.getHostString() + ":" + server.getPort();
     return SpannerOptions.newBuilder()
-            .setProjectId("[PROJECT]")
-            // Set a custom channel configurator to allow http instead of https.
-            .setChannelConfigurator(
-                    new ApiFunction<ManagedChannelBuilder, ManagedChannelBuilder>() {
-                      @Override
-                      public ManagedChannelBuilder apply(ManagedChannelBuilder input) {
-                        input.usePlaintext();
-                        return input;
-                      }
-                    })
-            .setHost("http://" + endpoint)
-            .setCredentials(NoCredentials.getInstance())
-            .build();
+        .setProjectId("[PROJECT]")
+        // Set a custom channel configurator to allow http instead of https.
+        .setChannelConfigurator(
+            new ApiFunction<ManagedChannelBuilder, ManagedChannelBuilder>() {
+              @Override
+              public ManagedChannelBuilder apply(ManagedChannelBuilder input) {
+                input.usePlaintext();
+                return input;
+              }
+            })
+        .setHost("http://" + endpoint)
+        .setCredentials(NoCredentials.getInstance())
+        .build();
   }
 
   private int getNumberOfThreadsWithName(String serviceName, boolean dumpStack) {
@@ -300,12 +304,12 @@ public class GapicSpannerRpcTest {
     String displayName = "displayName1615086568";
     int nodeCount = 1539922066;
     Instance expectedResponse =
-            Instance.newBuilder()
-                    .setName(name2.toString())
-                    .setConfig(config.toString())
-                    .setDisplayName(displayName)
-                    .setNodeCount(nodeCount)
-                    .build();
+        Instance.newBuilder()
+            .setName(name2.toString())
+            .setConfig(config.toString())
+            .setDisplayName(displayName)
+            .setNodeCount(nodeCount)
+            .build();
     mockInstanceAdmin.addResponse(expectedResponse);
   }
 

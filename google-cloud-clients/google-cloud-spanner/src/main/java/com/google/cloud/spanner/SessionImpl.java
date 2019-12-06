@@ -16,6 +16,9 @@
 
 package com.google.cloud.spanner;
 
+import static com.google.cloud.spanner.SpannerExceptionFactory.newSpannerException;
+import static com.google.common.base.Preconditions.checkNotNull;
+
 import com.google.cloud.Timestamp;
 import com.google.cloud.spanner.AbstractReadContext.MultiUseReadOnlyTransaction;
 import com.google.cloud.spanner.AbstractReadContext.SingleReadContext;
@@ -34,15 +37,11 @@ import io.opencensus.common.Scope;
 import io.opencensus.trace.Span;
 import io.opencensus.trace.Tracer;
 import io.opencensus.trace.Tracing;
-
-import javax.annotation.Nullable;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
 import java.util.Map;
-
-import static com.google.cloud.spanner.SpannerExceptionFactory.newSpannerException;
-import static com.google.common.base.Preconditions.checkNotNull;
+import javax.annotation.Nullable;
 
 /**
  * Implementation of {@link Session}. Sessions are managed internally by the client library, and
@@ -53,12 +52,12 @@ class SessionImpl implements Session {
 
   /** Keep track of running transactions on this session per thread. */
   static final ThreadLocal<Boolean> hasPendingTransaction =
-          new ThreadLocal<Boolean>() {
-            @Override
-            protected Boolean initialValue() {
-              return false;
-            }
-          };
+      new ThreadLocal<Boolean>() {
+        @Override
+        protected Boolean initialValue() {
+          return false;
+        }
+      };
 
   static void throwIfTransactionsPending() {
     if (hasPendingTransaction.get() == Boolean.TRUE) {
@@ -103,7 +102,8 @@ class SessionImpl implements Session {
   @Override
   public long executePartitionedUpdate(Statement stmt) {
     setActive(null);
-    PartitionedDMLTransaction txn = new PartitionedDMLTransaction(this, spanner.getRpc(sessionName));
+    PartitionedDMLTransaction txn =
+        new PartitionedDMLTransaction(this, spanner.getRpc(sessionName));
     return txn.executePartitionedUpdate(stmt, spanner.getOptions().getPartitionedDmlTimeout());
   }
 
@@ -111,17 +111,17 @@ class SessionImpl implements Session {
   public Timestamp write(Iterable<Mutation> mutations) throws SpannerException {
     TransactionRunner runner = readWriteTransaction();
     final Collection<Mutation> finalMutations =
-            mutations instanceof java.util.Collection<?>
-                    ? (Collection<Mutation>) mutations
-                    : Lists.newArrayList(mutations);
+        mutations instanceof java.util.Collection<?>
+            ? (Collection<Mutation>) mutations
+            : Lists.newArrayList(mutations);
     runner.run(
-            new TransactionRunner.TransactionCallable<Void>() {
-              @Override
-              public Void run(TransactionContext ctx) {
-                ctx.buffer(finalMutations);
-                return null;
-              }
-            });
+        new TransactionRunner.TransactionCallable<Void>() {
+          @Override
+          public Void run(TransactionContext ctx) {
+            ctx.buffer(finalMutations);
+            return null;
+          }
+        });
     return runner.getCommitTimestamp();
   }
 
@@ -131,13 +131,13 @@ class SessionImpl implements Session {
     List<com.google.spanner.v1.Mutation> mutationsProto = new ArrayList<>();
     Mutation.toProto(mutations, mutationsProto);
     final CommitRequest request =
-            CommitRequest.newBuilder()
-                    .setSession(name)
-                    .addAllMutations(mutationsProto)
-                    .setSingleUseTransaction(
-                            TransactionOptions.newBuilder()
-                                    .setReadWrite(TransactionOptions.ReadWrite.getDefaultInstance()))
-                    .build();
+        CommitRequest.newBuilder()
+            .setSession(name)
+            .addAllMutations(mutationsProto)
+            .setSingleUseTransaction(
+                TransactionOptions.newBuilder()
+                    .setReadWrite(TransactionOptions.ReadWrite.getDefaultInstance()))
+            .build();
     Span span = tracer.spanBuilder(SpannerImpl.COMMIT).startSpan();
     try (Scope s = tracer.withSpan(span)) {
       CommitResponse response = spanner.getRpc(sessionName).commit(request, options);
@@ -161,7 +161,8 @@ class SessionImpl implements Session {
   @Override
   public ReadContext singleUse(TimestampBound bound) {
     return setActive(
-            new SingleReadContext(this, bound, spanner.getRpc(sessionName), spanner.getDefaultPrefetchChunks()));
+        new SingleReadContext(
+            this, bound, spanner.getRpc(sessionName), spanner.getDefaultPrefetchChunks()));
   }
 
   @Override
@@ -172,8 +173,8 @@ class SessionImpl implements Session {
   @Override
   public ReadOnlyTransaction singleUseReadOnlyTransaction(TimestampBound bound) {
     return setActive(
-            new SingleUseReadOnlyTransaction(
-                    this, bound, spanner.getRpc(sessionName), spanner.getDefaultPrefetchChunks()));
+        new SingleUseReadOnlyTransaction(
+            this, bound, spanner.getRpc(sessionName), spanner.getDefaultPrefetchChunks()));
   }
 
   @Override
@@ -184,14 +185,15 @@ class SessionImpl implements Session {
   @Override
   public ReadOnlyTransaction readOnlyTransaction(TimestampBound bound) {
     return setActive(
-            new MultiUseReadOnlyTransaction(
-                    this, bound, spanner.getRpc(sessionName), spanner.getDefaultPrefetchChunks()));
+        new MultiUseReadOnlyTransaction(
+            this, bound, spanner.getRpc(sessionName), spanner.getDefaultPrefetchChunks()));
   }
 
   @Override
   public TransactionRunner readWriteTransaction() {
     return setActive(
-            new TransactionRunnerImpl(this, spanner.getRpc(sessionName), spanner.getDefaultPrefetchChunks()));
+        new TransactionRunnerImpl(
+            this, spanner.getRpc(sessionName), spanner.getDefaultPrefetchChunks()));
   }
 
   @Override
@@ -216,12 +218,12 @@ class SessionImpl implements Session {
     Span span = tracer.spanBuilder(SpannerImpl.BEGIN_TRANSACTION).startSpan();
     try (Scope s = tracer.withSpan(span)) {
       final BeginTransactionRequest request =
-              BeginTransactionRequest.newBuilder()
-                      .setSession(name)
-                      .setOptions(
-                              TransactionOptions.newBuilder()
-                                      .setReadWrite(TransactionOptions.ReadWrite.getDefaultInstance()))
-                      .build();
+          BeginTransactionRequest.newBuilder()
+              .setSession(name)
+              .setOptions(
+                  TransactionOptions.newBuilder()
+                      .setReadWrite(TransactionOptions.ReadWrite.getDefaultInstance()))
+              .build();
       Transaction txn = spanner.getRpc(sessionName).beginTransaction(request, options);
       if (txn.getId().isEmpty()) {
         throw newSpannerException(ErrorCode.INTERNAL, "Missing id in transaction\n" + getName());
@@ -236,8 +238,11 @@ class SessionImpl implements Session {
 
   TransactionContextImpl newTransaction() {
     TransactionContextImpl txn =
-            new TransactionContextImpl(
-                    this, readyTransactionId, spanner.getRpc(sessionName), spanner.getDefaultPrefetchChunks());
+        new TransactionContextImpl(
+            this,
+            readyTransactionId,
+            spanner.getRpc(sessionName),
+            spanner.getDefaultPrefetchChunks());
     return txn;
   }
 

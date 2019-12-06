@@ -64,12 +64,12 @@ public class SpannerOptionsTest {
     Map<String, String> labels = new HashMap<>();
     labels.put("env", "dev");
     SpannerOptions options =
-            SpannerOptions.newBuilder()
-                    .setHost(host)
-                    .setProjectId(projectId)
-                    .setPrefetchChunks(2)
-                    .setSessionLabels(labels)
-                    .build();
+        SpannerOptions.newBuilder()
+            .setHost(host)
+            .setProjectId(projectId)
+            .setPrefetchChunks(2)
+            .setSessionLabels(labels)
+            .build();
     assertThat(options.getHost()).isEqualTo(host);
     assertThat(options.getProjectId()).isEqualTo(projectId);
     assertThat(options.getPrefetchChunks()).isEqualTo(2);
@@ -79,55 +79,55 @@ public class SpannerOptionsTest {
   @Test
   public void testSpannerDefaultRetrySettings() {
     RetrySettings defaultRetrySettings =
-            RetrySettings.newBuilder()
-                    .setInitialRetryDelay(Duration.ofMillis(250L))
-                    .setRetryDelayMultiplier(1.3)
-                    .setMaxRetryDelay(Duration.ofMillis(32000L))
-                    .setInitialRpcTimeout(Duration.ofMillis(3600000L))
-                    .setRpcTimeoutMultiplier(1.0)
-                    .setMaxRpcTimeout(Duration.ofMillis(3600000L))
-                    .setTotalTimeout(Duration.ofMillis(3600000L))
-                    .build();
+        RetrySettings.newBuilder()
+            .setInitialRetryDelay(Duration.ofMillis(250L))
+            .setRetryDelayMultiplier(1.3)
+            .setMaxRetryDelay(Duration.ofMillis(32000L))
+            .setInitialRpcTimeout(Duration.ofMillis(3600000L))
+            .setRpcTimeoutMultiplier(1.0)
+            .setMaxRpcTimeout(Duration.ofMillis(3600000L))
+            .setTotalTimeout(Duration.ofMillis(3600000L))
+            .build();
     RetrySettings streamingRetrySettings =
-            RetrySettings.newBuilder()
-                    .setInitialRetryDelay(Duration.ofMillis(250L))
-                    .setRetryDelayMultiplier(1.3)
-                    .setMaxRetryDelay(Duration.ofMillis(32000L))
-                    .setInitialRpcTimeout(Duration.ofMillis(3600000L))
-                    .setRpcTimeoutMultiplier(1.0)
-                    .setMaxRpcTimeout(Duration.ofMillis(3600000L))
-                    .setTotalTimeout(Duration.ofMillis(3600000L))
-                    .build();
+        RetrySettings.newBuilder()
+            .setInitialRetryDelay(Duration.ofMillis(250L))
+            .setRetryDelayMultiplier(1.3)
+            .setMaxRetryDelay(Duration.ofMillis(32000L))
+            .setInitialRpcTimeout(Duration.ofMillis(3600000L))
+            .setRpcTimeoutMultiplier(1.0)
+            .setMaxRpcTimeout(Duration.ofMillis(3600000L))
+            .setTotalTimeout(Duration.ofMillis(3600000L))
+            .build();
     RetrySettings longRunningRetrySettings =
-            RetrySettings.newBuilder()
-                    .setInitialRetryDelay(Duration.ofMillis(250L))
-                    .setRetryDelayMultiplier(1.3)
-                    .setMaxRetryDelay(Duration.ofMillis(32000L))
-                    .setInitialRpcTimeout(Duration.ofMillis(3600000L))
-                    .setRpcTimeoutMultiplier(1.0)
-                    .setMaxRpcTimeout(Duration.ofMillis(3600000L))
-                    .setTotalTimeout(Duration.ofMillis(3600000L))
-                    .build();
+        RetrySettings.newBuilder()
+            .setInitialRetryDelay(Duration.ofMillis(250L))
+            .setRetryDelayMultiplier(1.3)
+            .setMaxRetryDelay(Duration.ofMillis(32000L))
+            .setInitialRpcTimeout(Duration.ofMillis(3600000L))
+            .setRpcTimeoutMultiplier(1.0)
+            .setMaxRpcTimeout(Duration.ofMillis(3600000L))
+            .setTotalTimeout(Duration.ofMillis(3600000L))
+            .build();
     SpannerOptions options = SpannerOptions.newBuilder().setProjectId("test-project").build();
     SpannerStubSettings stubSettings = options.getSpannerStubSettings();
     List<? extends UnaryCallSettings<?, ?>> callsWithDefaultSettings =
-            Arrays.asList(
-                    stubSettings.beginTransactionSettings(),
-                    stubSettings.createSessionSettings(),
-                    stubSettings.deleteSessionSettings(),
-                    stubSettings.executeBatchDmlSettings(),
-                    stubSettings.executeSqlSettings(),
-                    stubSettings.getSessionSettings(),
-                    stubSettings.listSessionsSettings(),
-                    stubSettings.partitionQuerySettings(),
-                    stubSettings.partitionReadSettings(),
-                    stubSettings.readSettings(),
-                    stubSettings.rollbackSettings());
+        Arrays.asList(
+            stubSettings.beginTransactionSettings(),
+            stubSettings.createSessionSettings(),
+            stubSettings.deleteSessionSettings(),
+            stubSettings.executeBatchDmlSettings(),
+            stubSettings.executeSqlSettings(),
+            stubSettings.getSessionSettings(),
+            stubSettings.listSessionsSettings(),
+            stubSettings.partitionQuerySettings(),
+            stubSettings.partitionReadSettings(),
+            stubSettings.readSettings(),
+            stubSettings.rollbackSettings());
     List<? extends ServerStreamingCallSettings<?, ?>> callsWithStreamingSettings =
-            Arrays.asList(
-                    stubSettings.executeStreamingSqlSettings(), stubSettings.streamingReadSettings());
+        Arrays.asList(
+            stubSettings.executeStreamingSqlSettings(), stubSettings.streamingReadSettings());
     List<? extends UnaryCallSettings<?, ?>> callsWithLongRunningSettings =
-            Arrays.asList(stubSettings.commitSettings());
+        Arrays.asList(stubSettings.commitSettings());
 
     for (UnaryCallSettings<?, ?> callSettings : callsWithDefaultSettings) {
       assertThat(callSettings.getRetrySettings()).isEqualTo(defaultRetrySettings);
@@ -143,62 +143,62 @@ public class SpannerOptionsTest {
   @Test
   public void testSpannerCustomRetrySettings() {
     RetrySettings retrySettings =
-            RetrySettings.newBuilder()
-                    .setInitialRetryDelay(Duration.ofSeconds(9999L))
-                    .setRetryDelayMultiplier(9999.99D)
-                    .setMaxRetryDelay(Duration.ofSeconds(9999L))
-                    .setInitialRpcTimeout(Duration.ofSeconds(9999L))
-                    .setRpcTimeoutMultiplier(9999.99D)
-                    .setMaxRpcTimeout(Duration.ofSeconds(9999L))
-                    .setTotalTimeout(Duration.ofSeconds(9999L))
-                    .build();
+        RetrySettings.newBuilder()
+            .setInitialRetryDelay(Duration.ofSeconds(9999L))
+            .setRetryDelayMultiplier(9999.99D)
+            .setMaxRetryDelay(Duration.ofSeconds(9999L))
+            .setInitialRpcTimeout(Duration.ofSeconds(9999L))
+            .setRpcTimeoutMultiplier(9999.99D)
+            .setMaxRpcTimeout(Duration.ofSeconds(9999L))
+            .setTotalTimeout(Duration.ofSeconds(9999L))
+            .build();
     SpannerOptions.Builder builder = SpannerOptions.newBuilder().setProjectId("test-project");
     SpannerStubSettings.Builder stubSettingsBuilder = builder.getSpannerStubSettingsBuilder();
     List<? extends UnaryCallSettings.Builder<?, ?>> unaryCallSettingsBuilders =
-            Arrays.asList(
-                    stubSettingsBuilder.beginTransactionSettings(),
-                    stubSettingsBuilder.createSessionSettings(),
-                    stubSettingsBuilder.deleteSessionSettings(),
-                    stubSettingsBuilder.executeBatchDmlSettings(),
-                    stubSettingsBuilder.executeSqlSettings(),
-                    stubSettingsBuilder.getSessionSettings(),
-                    stubSettingsBuilder.listSessionsSettings(),
-                    stubSettingsBuilder.partitionQuerySettings(),
-                    stubSettingsBuilder.partitionReadSettings(),
-                    stubSettingsBuilder.readSettings(),
-                    stubSettingsBuilder.rollbackSettings(),
-                    stubSettingsBuilder.commitSettings());
+        Arrays.asList(
+            stubSettingsBuilder.beginTransactionSettings(),
+            stubSettingsBuilder.createSessionSettings(),
+            stubSettingsBuilder.deleteSessionSettings(),
+            stubSettingsBuilder.executeBatchDmlSettings(),
+            stubSettingsBuilder.executeSqlSettings(),
+            stubSettingsBuilder.getSessionSettings(),
+            stubSettingsBuilder.listSessionsSettings(),
+            stubSettingsBuilder.partitionQuerySettings(),
+            stubSettingsBuilder.partitionReadSettings(),
+            stubSettingsBuilder.readSettings(),
+            stubSettingsBuilder.rollbackSettings(),
+            stubSettingsBuilder.commitSettings());
     for (UnaryCallSettings.Builder<?, ?> callSettingsBuilder : unaryCallSettingsBuilders) {
       callSettingsBuilder.setRetrySettings(retrySettings);
     }
     List<? extends ServerStreamingCallSettings.Builder<?, ?>> streamingCallSettingsBuilders =
-            Arrays.asList(
-                    stubSettingsBuilder.executeStreamingSqlSettings(),
-                    stubSettingsBuilder.streamingReadSettings());
+        Arrays.asList(
+            stubSettingsBuilder.executeStreamingSqlSettings(),
+            stubSettingsBuilder.streamingReadSettings());
     for (ServerStreamingCallSettings.Builder<?, ?> callSettingsBuilder :
-            streamingCallSettingsBuilders) {
+        streamingCallSettingsBuilders) {
       callSettingsBuilder.setRetrySettings(retrySettings);
     }
 
     SpannerOptions options = builder.build();
     SpannerStubSettings stubSettings = options.getSpannerStubSettings();
     List<? extends UnaryCallSettings<?, ?>> callsWithDefaultSettings =
-            Arrays.asList(
-                    stubSettings.beginTransactionSettings(),
-                    stubSettings.createSessionSettings(),
-                    stubSettings.deleteSessionSettings(),
-                    stubSettings.executeBatchDmlSettings(),
-                    stubSettings.executeSqlSettings(),
-                    stubSettings.getSessionSettings(),
-                    stubSettings.listSessionsSettings(),
-                    stubSettings.partitionQuerySettings(),
-                    stubSettings.partitionReadSettings(),
-                    stubSettings.readSettings(),
-                    stubSettings.rollbackSettings(),
-                    stubSettings.commitSettings());
+        Arrays.asList(
+            stubSettings.beginTransactionSettings(),
+            stubSettings.createSessionSettings(),
+            stubSettings.deleteSessionSettings(),
+            stubSettings.executeBatchDmlSettings(),
+            stubSettings.executeSqlSettings(),
+            stubSettings.getSessionSettings(),
+            stubSettings.listSessionsSettings(),
+            stubSettings.partitionQuerySettings(),
+            stubSettings.partitionReadSettings(),
+            stubSettings.readSettings(),
+            stubSettings.rollbackSettings(),
+            stubSettings.commitSettings());
     List<? extends ServerStreamingCallSettings<?, ?>> callsWithStreamingSettings =
-            Arrays.asList(
-                    stubSettings.executeStreamingSqlSettings(), stubSettings.streamingReadSettings());
+        Arrays.asList(
+            stubSettings.executeStreamingSqlSettings(), stubSettings.streamingReadSettings());
 
     for (UnaryCallSettings<?, ?> callSettings : callsWithDefaultSettings) {
       assertThat(callSettings.getRetrySettings()).isEqualTo(retrySettings);
@@ -211,22 +211,22 @@ public class SpannerOptionsTest {
   @Test
   public void testDatabaseAdminDefaultRetrySettings() {
     RetrySettings defaultRetrySettings =
-            RetrySettings.newBuilder()
-                    .setInitialRetryDelay(Duration.ofMillis(1000L))
-                    .setRetryDelayMultiplier(1.3)
-                    .setMaxRetryDelay(Duration.ofMillis(32000L))
-                    .setInitialRpcTimeout(Duration.ofMillis(60000L))
-                    .setRpcTimeoutMultiplier(1.0)
-                    .setMaxRpcTimeout(Duration.ofMillis(60000L))
-                    .setTotalTimeout(Duration.ofMillis(600000L))
-                    .build();
+        RetrySettings.newBuilder()
+            .setInitialRetryDelay(Duration.ofMillis(1000L))
+            .setRetryDelayMultiplier(1.3)
+            .setMaxRetryDelay(Duration.ofMillis(32000L))
+            .setInitialRpcTimeout(Duration.ofMillis(60000L))
+            .setRpcTimeoutMultiplier(1.0)
+            .setMaxRpcTimeout(Duration.ofMillis(60000L))
+            .setTotalTimeout(Duration.ofMillis(600000L))
+            .build();
     SpannerOptions options = SpannerOptions.newBuilder().setProjectId("test-project").build();
     DatabaseAdminStubSettings stubSettings = options.getDatabaseAdminStubSettings();
     List<? extends UnaryCallSettings<?, ?>> callsWithDefaultSettings =
-            Arrays.asList(
-                    stubSettings.dropDatabaseSettings(),
-                    stubSettings.getDatabaseDdlSettings(),
-                    stubSettings.getDatabaseSettings());
+        Arrays.asList(
+            stubSettings.dropDatabaseSettings(),
+            stubSettings.getDatabaseDdlSettings(),
+            stubSettings.getDatabaseSettings());
 
     for (UnaryCallSettings<?, ?> callSettings : callsWithDefaultSettings) {
       assertThat(callSettings.getRetrySettings()).isEqualTo(defaultRetrySettings);
@@ -236,23 +236,23 @@ public class SpannerOptionsTest {
   @Test
   public void testDatabaseAdminCustomRetrySettings() {
     RetrySettings retrySettings =
-            RetrySettings.newBuilder()
-                    .setInitialRetryDelay(Duration.ofSeconds(9999L))
-                    .setRetryDelayMultiplier(9999.99D)
-                    .setMaxRetryDelay(Duration.ofSeconds(9999L))
-                    .setInitialRpcTimeout(Duration.ofSeconds(9999L))
-                    .setRpcTimeoutMultiplier(9999.99D)
-                    .setMaxRpcTimeout(Duration.ofSeconds(9999L))
-                    .setTotalTimeout(Duration.ofSeconds(9999L))
-                    .build();
+        RetrySettings.newBuilder()
+            .setInitialRetryDelay(Duration.ofSeconds(9999L))
+            .setRetryDelayMultiplier(9999.99D)
+            .setMaxRetryDelay(Duration.ofSeconds(9999L))
+            .setInitialRpcTimeout(Duration.ofSeconds(9999L))
+            .setRpcTimeoutMultiplier(9999.99D)
+            .setMaxRpcTimeout(Duration.ofSeconds(9999L))
+            .setTotalTimeout(Duration.ofSeconds(9999L))
+            .build();
     SpannerOptions.Builder builder = SpannerOptions.newBuilder().setProjectId("test-project");
     DatabaseAdminStubSettings.Builder stubSettingsBuilder =
-            builder.getDatabaseAdminStubSettingsBuilder();
+        builder.getDatabaseAdminStubSettingsBuilder();
     List<? extends UnaryCallSettings.Builder<?, ?>> unaryCallSettingsBuilders =
-            Arrays.asList(
-                    stubSettingsBuilder.dropDatabaseSettings(),
-                    stubSettingsBuilder.getDatabaseDdlSettings(),
-                    stubSettingsBuilder.getDatabaseSettings());
+        Arrays.asList(
+            stubSettingsBuilder.dropDatabaseSettings(),
+            stubSettingsBuilder.getDatabaseDdlSettings(),
+            stubSettingsBuilder.getDatabaseSettings());
     for (UnaryCallSettings.Builder<?, ?> callSettingsBuilder : unaryCallSettingsBuilders) {
       callSettingsBuilder.setRetrySettings(retrySettings);
     }
@@ -260,10 +260,10 @@ public class SpannerOptionsTest {
     SpannerOptions options = builder.build();
     DatabaseAdminStubSettings stubSettings = options.getDatabaseAdminStubSettings();
     List<? extends UnaryCallSettings<?, ?>> callsWithDefaultSettings =
-            Arrays.asList(
-                    stubSettings.dropDatabaseSettings(),
-                    stubSettings.getDatabaseDdlSettings(),
-                    stubSettings.getDatabaseSettings());
+        Arrays.asList(
+            stubSettings.dropDatabaseSettings(),
+            stubSettings.getDatabaseDdlSettings(),
+            stubSettings.getDatabaseSettings());
 
     for (UnaryCallSettings<?, ?> callSettings : callsWithDefaultSettings) {
       assertThat(callSettings.getRetrySettings()).isEqualTo(retrySettings);
@@ -273,24 +273,24 @@ public class SpannerOptionsTest {
   @Test
   public void testInstanceAdminDefaultRetrySettings() {
     RetrySettings defaultRetrySettings =
-            RetrySettings.newBuilder()
-                    .setInitialRetryDelay(Duration.ofMillis(1000L))
-                    .setRetryDelayMultiplier(1.3)
-                    .setMaxRetryDelay(Duration.ofMillis(32000L))
-                    .setInitialRpcTimeout(Duration.ofMillis(60000L))
-                    .setRpcTimeoutMultiplier(1.0)
-                    .setMaxRpcTimeout(Duration.ofMillis(60000L))
-                    .setTotalTimeout(Duration.ofMillis(600000L))
-                    .build();
+        RetrySettings.newBuilder()
+            .setInitialRetryDelay(Duration.ofMillis(1000L))
+            .setRetryDelayMultiplier(1.3)
+            .setMaxRetryDelay(Duration.ofMillis(32000L))
+            .setInitialRpcTimeout(Duration.ofMillis(60000L))
+            .setRpcTimeoutMultiplier(1.0)
+            .setMaxRpcTimeout(Duration.ofMillis(60000L))
+            .setTotalTimeout(Duration.ofMillis(600000L))
+            .build();
     SpannerOptions options = SpannerOptions.newBuilder().setProjectId("test-project").build();
     InstanceAdminStubSettings stubSettings = options.getInstanceAdminStubSettings();
     List<? extends UnaryCallSettings<?, ?>> callsWithDefaultSettings =
-            Arrays.asList(
-                    stubSettings.getInstanceConfigSettings(),
-                    stubSettings.listInstanceConfigsSettings(),
-                    stubSettings.deleteInstanceSettings(),
-                    stubSettings.getInstanceSettings(),
-                    stubSettings.listInstancesSettings());
+        Arrays.asList(
+            stubSettings.getInstanceConfigSettings(),
+            stubSettings.listInstanceConfigsSettings(),
+            stubSettings.deleteInstanceSettings(),
+            stubSettings.getInstanceSettings(),
+            stubSettings.listInstancesSettings());
 
     for (UnaryCallSettings<?, ?> callSettings : callsWithDefaultSettings) {
       assertThat(callSettings.getRetrySettings()).isEqualTo(defaultRetrySettings);
@@ -300,25 +300,25 @@ public class SpannerOptionsTest {
   @Test
   public void testInstanceAdminCustomRetrySettings() {
     RetrySettings retrySettings =
-            RetrySettings.newBuilder()
-                    .setInitialRetryDelay(Duration.ofSeconds(9999L))
-                    .setRetryDelayMultiplier(9999.99D)
-                    .setMaxRetryDelay(Duration.ofSeconds(9999L))
-                    .setInitialRpcTimeout(Duration.ofSeconds(9999L))
-                    .setRpcTimeoutMultiplier(9999.99D)
-                    .setMaxRpcTimeout(Duration.ofSeconds(9999L))
-                    .setTotalTimeout(Duration.ofSeconds(9999L))
-                    .build();
+        RetrySettings.newBuilder()
+            .setInitialRetryDelay(Duration.ofSeconds(9999L))
+            .setRetryDelayMultiplier(9999.99D)
+            .setMaxRetryDelay(Duration.ofSeconds(9999L))
+            .setInitialRpcTimeout(Duration.ofSeconds(9999L))
+            .setRpcTimeoutMultiplier(9999.99D)
+            .setMaxRpcTimeout(Duration.ofSeconds(9999L))
+            .setTotalTimeout(Duration.ofSeconds(9999L))
+            .build();
     SpannerOptions.Builder builder = SpannerOptions.newBuilder().setProjectId("test-project");
     InstanceAdminStubSettings.Builder stubSettingsBuilder =
-            builder.getInstanceAdminStubSettingsBuilder();
+        builder.getInstanceAdminStubSettingsBuilder();
     List<? extends UnaryCallSettings.Builder<?, ?>> unaryCallSettingsBuilders =
-            Arrays.asList(
-                    stubSettingsBuilder.deleteInstanceSettings(),
-                    stubSettingsBuilder.getInstanceConfigSettings(),
-                    stubSettingsBuilder.getInstanceSettings(),
-                    stubSettingsBuilder.listInstanceConfigsSettings(),
-                    stubSettingsBuilder.listInstancesSettings());
+        Arrays.asList(
+            stubSettingsBuilder.deleteInstanceSettings(),
+            stubSettingsBuilder.getInstanceConfigSettings(),
+            stubSettingsBuilder.getInstanceSettings(),
+            stubSettingsBuilder.listInstanceConfigsSettings(),
+            stubSettingsBuilder.listInstancesSettings());
     for (UnaryCallSettings.Builder<?, ?> callSettingsBuilder : unaryCallSettingsBuilders) {
       callSettingsBuilder.setRetrySettings(retrySettings);
     }
@@ -326,12 +326,12 @@ public class SpannerOptionsTest {
     SpannerOptions options = builder.build();
     InstanceAdminStubSettings stubSettings = options.getInstanceAdminStubSettings();
     List<? extends UnaryCallSettings<?, ?>> callsWithDefaultSettings =
-            Arrays.asList(
-                    stubSettings.getInstanceConfigSettings(),
-                    stubSettings.listInstanceConfigsSettings(),
-                    stubSettings.deleteInstanceSettings(),
-                    stubSettings.getInstanceSettings(),
-                    stubSettings.listInstancesSettings());
+        Arrays.asList(
+            stubSettings.getInstanceConfigSettings(),
+            stubSettings.listInstanceConfigsSettings(),
+            stubSettings.deleteInstanceSettings(),
+            stubSettings.getInstanceSettings(),
+            stubSettings.listInstancesSettings());
 
     for (UnaryCallSettings<?, ?> callSettings : callsWithDefaultSettings) {
       assertThat(callSettings.getRetrySettings()).isEqualTo(retrySettings);
@@ -361,10 +361,10 @@ public class SpannerOptionsTest {
   @Test
   public void testDoNotCacheClosedSpannerInstance() {
     SpannerOptions options =
-            SpannerOptions.newBuilder()
-                    .setProjectId("[PROJECT]")
-                    .setCredentials(NoCredentials.getInstance())
-                    .build();
+        SpannerOptions.newBuilder()
+            .setProjectId("[PROJECT]")
+            .setCredentials(NoCredentials.getInstance())
+            .build();
     // Getting a service twice should give the same instance.
     Spanner service1 = options.getService();
     Spanner service2 = options.getService();
@@ -388,10 +388,15 @@ public class SpannerOptionsTest {
   public void testSetClientLibToken() {
     final String jdbcToken = "sp-jdbc";
     final String hibernateToken = "sp-hib";
-    SpannerOptions options = SpannerOptions.newBuilder().setProjectId("[PROJECT]").setClientLibToken(jdbcToken).build();
+    SpannerOptions options =
+        SpannerOptions.newBuilder().setProjectId("[PROJECT]").setClientLibToken(jdbcToken).build();
     assertThat(options.getClientLibToken()).isEqualTo(jdbcToken);
 
-    options = SpannerOptions.newBuilder().setProjectId("[PROJECT]").setClientLibToken(hibernateToken).build();
+    options =
+        SpannerOptions.newBuilder()
+            .setProjectId("[PROJECT]")
+            .setClientLibToken(hibernateToken)
+            .build();
     assertThat(options.getClientLibToken()).isEqualTo(hibernateToken);
 
     options = SpannerOptions.newBuilder().setProjectId("[PROJECT]").build();

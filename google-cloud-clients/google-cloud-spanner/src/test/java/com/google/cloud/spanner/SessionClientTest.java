@@ -16,6 +16,11 @@
 
 package com.google.cloud.spanner;
 
+import static com.google.common.truth.Truth.assertThat;
+import static org.mockito.Matchers.any;
+import static org.mockito.Mockito.mock;
+import static org.mockito.Mockito.when;
+
 import com.google.api.core.NanoClock;
 import com.google.api.gax.retrying.RetrySettings;
 import com.google.cloud.grpc.GrpcTransportOptions;
@@ -24,6 +29,18 @@ import com.google.cloud.spanner.SessionClient.SessionConsumer;
 import com.google.cloud.spanner.spi.v1.SpannerRpc;
 import com.google.spanner.v1.DatabaseName;
 import com.google.spanner.v1.SessionName;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collection;
+import java.util.Collections;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+import java.util.concurrent.Executors;
+import java.util.concurrent.ScheduledExecutorService;
+import java.util.concurrent.ScheduledThreadPoolExecutor;
+import java.util.concurrent.TimeUnit;
+import java.util.concurrent.atomic.AtomicInteger;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -37,24 +54,6 @@ import org.mockito.Mockito;
 import org.mockito.MockitoAnnotations;
 import org.mockito.invocation.InvocationOnMock;
 import org.mockito.stubbing.Answer;
-
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collection;
-import java.util.Collections;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-import java.util.concurrent.Executors;
-import java.util.concurrent.ScheduledExecutorService;
-import java.util.concurrent.ScheduledThreadPoolExecutor;
-import java.util.concurrent.TimeUnit;
-import java.util.concurrent.atomic.AtomicInteger;
-
-import static com.google.common.truth.Truth.assertThat;
-import static org.mockito.Matchers.any;
-import static org.mockito.Mockito.mock;
-import static org.mockito.Mockito.when;
 
 @RunWith(Parameterized.class)
 public class SessionClientTest {
@@ -93,18 +92,18 @@ public class SessionClientTest {
     MockitoAnnotations.initMocks(this);
     GrpcTransportOptions transportOptions = mock(GrpcTransportOptions.class);
     when(transportOptions.getExecutorFactory())
-            .thenReturn(
-                    new ExecutorFactory<ScheduledExecutorService>() {
-                      @Override
-                      public void release(ScheduledExecutorService executor) {
-                        executor.shutdown();
-                      }
+        .thenReturn(
+            new ExecutorFactory<ScheduledExecutorService>() {
+              @Override
+              public void release(ScheduledExecutorService executor) {
+                executor.shutdown();
+              }
 
-                      @Override
-                      public ScheduledExecutorService get() {
-                        return new ScheduledThreadPoolExecutor(2);
-                      }
-                    });
+              @Override
+              public ScheduledExecutorService get() {
+                return new ScheduledThreadPoolExecutor(2);
+              }
+            });
     when(spannerOptions.getTransportOptions()).thenReturn(transportOptions);
     when(spannerOptions.getNumChannels()).thenReturn(numChannels);
     when(spannerOptions.getPrefetchChunks()).thenReturn(1);
@@ -123,12 +122,12 @@ public class SessionClientTest {
     labels.put("env", "dev");
     when(spannerOptions.getSessionLabels()).thenReturn(labels);
     com.google.spanner.v1.Session sessionProto =
-            com.google.spanner.v1.Session.newBuilder()
-                    .setName(sessionName)
-                    .putAllLabels(labels)
-                    .build();
+        com.google.spanner.v1.Session.newBuilder()
+            .setName(sessionName)
+            .putAllLabels(labels)
+            .build();
     when(rpc.createSession(Mockito.eq(dbName), Mockito.eq(labels), options.capture()))
-            .thenReturn(sessionProto);
+        .thenReturn(sessionProto);
 
     try (SessionClient client = new SessionClient(spanner, db, new TestExecutorFactory())) {
       Session session = client.createSession();
@@ -151,40 +150,40 @@ public class SessionClientTest {
     final List<Long> usedChannels = Collections.synchronizedList(new ArrayList<Long>());
     when(rpc.batchCreateSessions(
             Mockito.eq(dbName), Mockito.anyInt(), Mockito.eq(labels), Mockito.anyMap()))
-            .then(
-                    new Answer<List<com.google.spanner.v1.Session>>() {
-                      @Override
-                      public List<com.google.spanner.v1.Session> answer(InvocationOnMock invocation)
-                              throws Throwable {
-                        Map<SpannerRpc.Option, Object> options = invocation.getArgumentAt(3, Map.class);
-                        Long channelHint = (Long) options.get(SpannerRpc.Option.CHANNEL_HINT);
-                        usedChannels.add(channelHint);
-                        int sessionCount = invocation.getArgumentAt(1, Integer.class);
-                        List<com.google.spanner.v1.Session> res = new ArrayList<>();
-                        for (int i = 1; i <= sessionCount; i++) {
-                          res.add(
-                                  com.google.spanner.v1.Session.newBuilder()
-                                          .setName(String.format(sessionName, i))
-                                          .putAllLabels(labels)
-                                          .build());
-                        }
-                        return res;
-                      }
-                    });
+        .then(
+            new Answer<List<com.google.spanner.v1.Session>>() {
+              @Override
+              public List<com.google.spanner.v1.Session> answer(InvocationOnMock invocation)
+                  throws Throwable {
+                Map<SpannerRpc.Option, Object> options = invocation.getArgumentAt(3, Map.class);
+                Long channelHint = (Long) options.get(SpannerRpc.Option.CHANNEL_HINT);
+                usedChannels.add(channelHint);
+                int sessionCount = invocation.getArgumentAt(1, Integer.class);
+                List<com.google.spanner.v1.Session> res = new ArrayList<>();
+                for (int i = 1; i <= sessionCount; i++) {
+                  res.add(
+                      com.google.spanner.v1.Session.newBuilder()
+                          .setName(String.format(sessionName, i))
+                          .putAllLabels(labels)
+                          .build());
+                }
+                return res;
+              }
+            });
 
     final AtomicInteger returnedSessionCount = new AtomicInteger();
     SessionConsumer consumer =
-            new SessionConsumer() {
-              @Override
-              public void onSessionReady(SessionImpl session) {
-                assertThat(session.getName()).startsWith(dbName + "/sessions/s");
-                returnedSessionCount.incrementAndGet();
-                session.close();
-              }
+        new SessionConsumer() {
+          @Override
+          public void onSessionReady(SessionImpl session) {
+            assertThat(session.getName()).startsWith(dbName + "/sessions/s");
+            returnedSessionCount.incrementAndGet();
+            session.close();
+          }
 
-              @Override
-              public void onSessionCreateFailure(Throwable t, int createFailureForSessionCount) {}
-            };
+          @Override
+          public void onSessionCreateFailure(Throwable t, int createFailureForSessionCount) {}
+        };
     final int numSessions = 10;
     try (SessionClient client = new SessionClient(spanner, db, new TestExecutorFactory())) {
       client.asyncBatchCreateSessions(numSessions, consumer);
@@ -215,8 +214,8 @@ public class SessionClientTest {
         }
       }
       for (int errorOnChannel = 0;
-           errorOnChannel < spannerOptions.getNumChannels();
-           errorOnChannel++) {
+          errorOnChannel < spannerOptions.getNumChannels();
+          errorOnChannel++) {
         switch (behavior) {
           case SET:
             errorOnChannels.clear();
@@ -233,61 +232,61 @@ public class SessionClientTest {
         final String sessionName = dbName + "/sessions/s%d";
         when(rpc.batchCreateSessions(
                 Mockito.eq(dbName), Mockito.anyInt(), Mockito.anyMap(), Mockito.anyMap()))
-                .then(
-                        new Answer<List<com.google.spanner.v1.Session>>() {
-                          @Override
-                          public List<com.google.spanner.v1.Session> answer(InvocationOnMock invocation)
-                                  throws Throwable {
-                            Map<SpannerRpc.Option, Object> options = invocation.getArgumentAt(3, Map.class);
-                            Long channelHint = (Long) options.get(SpannerRpc.Option.CHANNEL_HINT);
-                            if (errorOnChannels.contains(channelHint)) {
-                              throw SpannerExceptionFactory.newSpannerException(
-                                      ErrorCode.RESOURCE_EXHAUSTED, "could not create any more sessions");
-                            } else {
-                              int sessionCount = invocation.getArgumentAt(1, Integer.class);
-                              List<com.google.spanner.v1.Session> res = new ArrayList<>();
-                              for (int i = 1; i <= sessionCount; i++) {
-                                res.add(
-                                        com.google.spanner.v1.Session.newBuilder()
-                                                .setName(String.format(sessionName, i))
-                                                .build());
-                              }
-                              return res;
-                            }
-                          }
-                        });
+            .then(
+                new Answer<List<com.google.spanner.v1.Session>>() {
+                  @Override
+                  public List<com.google.spanner.v1.Session> answer(InvocationOnMock invocation)
+                      throws Throwable {
+                    Map<SpannerRpc.Option, Object> options = invocation.getArgumentAt(3, Map.class);
+                    Long channelHint = (Long) options.get(SpannerRpc.Option.CHANNEL_HINT);
+                    if (errorOnChannels.contains(channelHint)) {
+                      throw SpannerExceptionFactory.newSpannerException(
+                          ErrorCode.RESOURCE_EXHAUSTED, "could not create any more sessions");
+                    } else {
+                      int sessionCount = invocation.getArgumentAt(1, Integer.class);
+                      List<com.google.spanner.v1.Session> res = new ArrayList<>();
+                      for (int i = 1; i <= sessionCount; i++) {
+                        res.add(
+                            com.google.spanner.v1.Session.newBuilder()
+                                .setName(String.format(sessionName, i))
+                                .build());
+                      }
+                      return res;
+                    }
+                  }
+                });
 
         final AtomicInteger errorForSessionsCount = new AtomicInteger();
         final AtomicInteger errorCount = new AtomicInteger();
         final AtomicInteger returnedSessionCount = new AtomicInteger();
         SessionConsumer consumer =
-                new SessionConsumer() {
-                  @Override
-                  public void onSessionReady(SessionImpl session) {
-                    assertThat(session.getName()).startsWith(dbName + "/sessions/s");
-                    returnedSessionCount.incrementAndGet();
-                    session.close();
-                  }
+            new SessionConsumer() {
+              @Override
+              public void onSessionReady(SessionImpl session) {
+                assertThat(session.getName()).startsWith(dbName + "/sessions/s");
+                returnedSessionCount.incrementAndGet();
+                session.close();
+              }
 
-                  @Override
-                  public void onSessionCreateFailure(Throwable t, int createFailureForSessionCount) {
-                    assertThat(t).isInstanceOf(SpannerException.class);
-                    SpannerException e = (SpannerException) t;
-                    assertThat(e.getErrorCode()).isEqualTo(ErrorCode.RESOURCE_EXHAUSTED);
-                    errorCount.incrementAndGet();
-                    errorForSessionsCount.addAndGet(createFailureForSessionCount);
-                  }
-                };
+              @Override
+              public void onSessionCreateFailure(Throwable t, int createFailureForSessionCount) {
+                assertThat(t).isInstanceOf(SpannerException.class);
+                SpannerException e = (SpannerException) t;
+                assertThat(e.getErrorCode()).isEqualTo(ErrorCode.RESOURCE_EXHAUSTED);
+                errorCount.incrementAndGet();
+                errorForSessionsCount.addAndGet(createFailureForSessionCount);
+              }
+            };
         final int numSessions = 10;
         try (SessionClient client = new SessionClient(spanner, db, new TestExecutorFactory())) {
           client.asyncBatchCreateSessions(numSessions, consumer);
         }
         assertThat(errorCount.get()).isEqualTo(errorOnChannels.size());
         assertThat(returnedSessionCount.get())
-                .isAtLeast(
-                        numSessions
-                                - ((numSessions / spannerOptions.getNumChannels()) * errorOnChannels.size()
-                                + numSessions % spannerOptions.getNumChannels()));
+            .isAtLeast(
+                numSessions
+                    - ((numSessions / spannerOptions.getNumChannels()) * errorOnChannels.size()
+                        + numSessions % spannerOptions.getNumChannels()));
         assertThat(returnedSessionCount.get() + errorForSessionsCount.get()).isEqualTo(numSessions);
       }
     }
@@ -301,36 +300,36 @@ public class SessionClientTest {
     final String sessionName = dbName + "/sessions/s%d";
     when(rpc.batchCreateSessions(
             Mockito.eq(dbName), Mockito.anyInt(), Mockito.anyMap(), Mockito.anyMap()))
-            .then(
-                    new Answer<List<com.google.spanner.v1.Session>>() {
-                      @Override
-                      public List<com.google.spanner.v1.Session> answer(InvocationOnMock invocation)
-                              throws Throwable {
-                        int sessionCount = invocation.getArgumentAt(1, Integer.class);
-                        List<com.google.spanner.v1.Session> res = new ArrayList<>();
-                        for (int i = 1; i <= Math.min(MAX_SESSIONS_PER_BATCH, sessionCount); i++) {
-                          res.add(
-                                  com.google.spanner.v1.Session.newBuilder()
-                                          .setName(String.format(sessionName, i))
-                                          .build());
-                        }
-                        return res;
-                      }
-                    });
+        .then(
+            new Answer<List<com.google.spanner.v1.Session>>() {
+              @Override
+              public List<com.google.spanner.v1.Session> answer(InvocationOnMock invocation)
+                  throws Throwable {
+                int sessionCount = invocation.getArgumentAt(1, Integer.class);
+                List<com.google.spanner.v1.Session> res = new ArrayList<>();
+                for (int i = 1; i <= Math.min(MAX_SESSIONS_PER_BATCH, sessionCount); i++) {
+                  res.add(
+                      com.google.spanner.v1.Session.newBuilder()
+                          .setName(String.format(sessionName, i))
+                          .build());
+                }
+                return res;
+              }
+            });
 
     final AtomicInteger returnedSessionCount = new AtomicInteger();
     SessionConsumer consumer =
-            new SessionConsumer() {
-              @Override
-              public void onSessionReady(SessionImpl session) {
-                assertThat(session.getName()).startsWith(dbName + "/sessions/s");
-                returnedSessionCount.incrementAndGet();
-                session.close();
-              }
+        new SessionConsumer() {
+          @Override
+          public void onSessionReady(SessionImpl session) {
+            assertThat(session.getName()).startsWith(dbName + "/sessions/s");
+            returnedSessionCount.incrementAndGet();
+            session.close();
+          }
 
-              @Override
-              public void onSessionCreateFailure(Throwable t, int createFailureForSessionCount) {}
-            };
+          @Override
+          public void onSessionCreateFailure(Throwable t, int createFailureForSessionCount) {}
+        };
     // We want 100 sessions, but each rpc will only return 5. The consumer should still get 100
     // sessions.
     final int numSessions = 100;
