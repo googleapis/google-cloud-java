@@ -16,16 +16,12 @@
 
 package com.google.cloud.spanner;
 
-import static org.hamcrest.CoreMatchers.equalTo;
-import static org.hamcrest.CoreMatchers.is;
-import static org.junit.Assert.assertThat;
-import static org.junit.Assert.fail;
-
 import com.google.api.gax.grpc.testing.LocalChannelProvider;
 import com.google.cloud.NoCredentials;
 import com.google.cloud.spanner.MockSpannerServiceImpl.SimulatedExecutionTime;
 import com.google.cloud.spanner.MockSpannerServiceImpl.StatementResult;
 import com.google.cloud.spanner.TransactionRunner.TransactionCallable;
+import com.google.cloud.spanner.spi.v1.SpannerRpc;
 import com.google.common.base.Stopwatch;
 import com.google.protobuf.ListValue;
 import com.google.spanner.v1.ResultSetMetadata;
@@ -35,49 +31,59 @@ import com.google.spanner.v1.TypeCode;
 import io.grpc.Server;
 import io.grpc.Status;
 import io.grpc.inprocess.InProcessServerBuilder;
-import java.io.IOException;
-import java.util.concurrent.TimeUnit;
 import org.junit.AfterClass;
 import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
+import org.mockito.Mock;
+import org.mockito.MockitoAnnotations;
+
+import java.io.IOException;
+import java.util.concurrent.TimeUnit;
+
+import static org.hamcrest.CoreMatchers.equalTo;
+import static org.hamcrest.CoreMatchers.is;
+import static org.junit.Assert.assertThat;
+import static org.junit.Assert.fail;
 
 @RunWith(JUnit4.class)
 public class BatchCreateSessionsTest {
   private static final Statement SELECT1AND2 =
-      Statement.of("SELECT 1 AS COL1 UNION ALL SELECT 2 AS COL1");
+          Statement.of("SELECT 1 AS COL1 UNION ALL SELECT 2 AS COL1");
   private static final ResultSetMetadata SELECT1AND2_METADATA =
-      ResultSetMetadata.newBuilder()
-          .setRowType(
-              StructType.newBuilder()
-                  .addFields(
-                      Field.newBuilder()
-                          .setName("COL1")
-                          .setType(
-                              com.google.spanner.v1.Type.newBuilder()
-                                  .setCode(TypeCode.INT64)
+          ResultSetMetadata.newBuilder()
+                  .setRowType(
+                          StructType.newBuilder()
+                                  .addFields(
+                                          Field.newBuilder()
+                                                  .setName("COL1")
+                                                  .setType(
+                                                          com.google.spanner.v1.Type.newBuilder()
+                                                                  .setCode(TypeCode.INT64)
+                                                                  .build())
+                                                  .build())
                                   .build())
-                          .build())
-                  .build())
-          .build();
+                  .build();
   private static final com.google.spanner.v1.ResultSet SELECT1_RESULTSET =
-      com.google.spanner.v1.ResultSet.newBuilder()
-          .addRows(
-              ListValue.newBuilder()
-                  .addValues(com.google.protobuf.Value.newBuilder().setStringValue("1").build())
-                  .build())
-          .addRows(
-              ListValue.newBuilder()
-                  .addValues(com.google.protobuf.Value.newBuilder().setStringValue("2").build())
-                  .build())
-          .setMetadata(SELECT1AND2_METADATA)
-          .build();
+          com.google.spanner.v1.ResultSet.newBuilder()
+                  .addRows(
+                          ListValue.newBuilder()
+                                  .addValues(com.google.protobuf.Value.newBuilder().setStringValue("1").build())
+                                  .build())
+                  .addRows(
+                          ListValue.newBuilder()
+                                  .addValues(com.google.protobuf.Value.newBuilder().setStringValue("2").build())
+                                  .build())
+                  .setMetadata(SELECT1AND2_METADATA)
+                  .build();
 
   private static MockSpannerServiceImpl mockSpanner;
   private static Server server;
   private static LocalChannelProvider channelProvider;
+  @Mock
+  private SpannerRpc gapicRpc;
 
   @BeforeClass
   public static void startStaticServer() throws IOException {
@@ -87,11 +93,11 @@ public class BatchCreateSessionsTest {
 
     String uniqueName = InProcessServerBuilder.generateName();
     server =
-        InProcessServerBuilder.forName(uniqueName)
-            .directExecutor()
-            .addService(mockSpanner)
-            .build()
-            .start();
+            InProcessServerBuilder.forName(uniqueName)
+                    .directExecutor()
+                    .addService(mockSpanner)
+                    .build()
+                    .start();
     channelProvider = LocalChannelProvider.create(uniqueName);
   }
 
@@ -103,22 +109,23 @@ public class BatchCreateSessionsTest {
 
   @Before
   public void setUp() throws IOException {
+    MockitoAnnotations.initMocks(this);
     mockSpanner.reset();
   }
 
   private Spanner createSpanner(int minSessions, int maxSessions) {
     SessionPoolOptions sessionPoolOptions =
-        SessionPoolOptions.newBuilder()
-            .setMinSessions(minSessions)
-            .setMaxSessions(maxSessions)
+            SessionPoolOptions.newBuilder()
+                    .setMinSessions(minSessions)
+                    .setMaxSessions(maxSessions)
+                    .build();
+    SpannerOptions options = SpannerOptions.newBuilder()
+            .setProjectId("[PROJECT]")
+            .setChannelProvider(channelProvider)
+            .setSessionPoolOption(sessionPoolOptions)
+            .setCredentials(NoCredentials.getInstance())
             .build();
-    return SpannerOptions.newBuilder()
-        .setProjectId("[PROJECT]")
-        .setChannelProvider(channelProvider)
-        .setSessionPoolOption(sessionPoolOptions)
-        .setCredentials(NoCredentials.getInstance())
-        .build()
-        .getService();
+    return options.getService();
   }
 
   @Test
@@ -127,8 +134,8 @@ public class BatchCreateSessionsTest {
     int maxSessions = 4000;
     try (Spanner spanner = createSpanner(minSessions, maxSessions)) {
       DatabaseClientImpl client =
-          (DatabaseClientImpl)
-              spanner.getDatabaseClient(DatabaseId.of("[PROJECT]", "[INSTANCE]", "[DATABASE]"));
+              (DatabaseClientImpl)
+                      spanner.getDatabaseClient(DatabaseId.of("[PROJECT]", "[INSTANCE]", "[DATABASE]"));
       Stopwatch watch = Stopwatch.createStarted();
       while (client.pool.totalSessions() < minSessions && watch.elapsed(TimeUnit.SECONDS) < 10) {
         Thread.sleep(10L);
@@ -148,11 +155,11 @@ public class BatchCreateSessionsTest {
       // Create a database client which will create a session pool.
       // No sessions will be created at the moment as the server is frozen.
       client =
-          (DatabaseClientImpl)
-              spanner.getDatabaseClient(DatabaseId.of("[PROJECT]", "[INSTANCE]", "[DATABASE]"));
+              (DatabaseClientImpl)
+                      spanner.getDatabaseClient(DatabaseId.of("[PROJECT]", "[INSTANCE]", "[DATABASE]"));
       // Make sure session creation takes a little time to avoid all sessions being created at once.
       mockSpanner.setBatchCreateSessionsExecutionTime(
-          SimulatedExecutionTime.ofMinimumAndRandomTime(10, 0));
+              SimulatedExecutionTime.ofMinimumAndRandomTime(10, 0));
       // Unfreeze the server to allow session creation to start.
       mockSpanner.unfreeze();
       // Wait until at least one batch of sessions has been created.
@@ -169,7 +176,7 @@ public class BatchCreateSessionsTest {
 
   @Test
   public void testSpannerReturnsAllAvailableSessionsAndThenNoSessions()
-      throws InterruptedException {
+          throws InterruptedException {
     int minSessions = 1000;
     int maxSessions = 1000;
     // Set a maximum number of sessions that will be created by the server.
@@ -181,11 +188,11 @@ public class BatchCreateSessionsTest {
     try (Spanner spanner = createSpanner(minSessions, maxSessions)) {
       // Create a database client which will create a session pool.
       client =
-          (DatabaseClientImpl)
-              spanner.getDatabaseClient(DatabaseId.of("[PROJECT]", "[INSTANCE]", "[DATABASE]"));
+              (DatabaseClientImpl)
+                      spanner.getDatabaseClient(DatabaseId.of("[PROJECT]", "[INSTANCE]", "[DATABASE]"));
       Stopwatch watch = Stopwatch.createStarted();
       while (client.pool.totalSessions() < maxServerSessions
-          && watch.elapsed(TimeUnit.SECONDS) < 10) {
+              && watch.elapsed(TimeUnit.SECONDS) < 10) {
         Thread.sleep(10L);
       }
       assertThat(client.pool.totalSessions(), is(equalTo(maxServerSessions)));
@@ -193,7 +200,7 @@ public class BatchCreateSessionsTest {
       watch = watch.reset();
       watch.start();
       while (client.pool.getNumberOfSessionsBeingCreated() > 0
-          && watch.elapsed(TimeUnit.SECONDS) < 10) {
+              && watch.elapsed(TimeUnit.SECONDS) < 10) {
         Thread.sleep(10L);
       }
       // Remove the max server sessions limit.
@@ -218,14 +225,14 @@ public class BatchCreateSessionsTest {
     try (Spanner spanner = createSpanner(minSessions, maxSessions)) {
       // Create a database client which will create a session pool.
       client =
-          (DatabaseClientImpl)
-              spanner.getDatabaseClient(DatabaseId.of("[PROJECT]", "[INSTANCE]", "[DATABASE]"));
+              (DatabaseClientImpl)
+                      spanner.getDatabaseClient(DatabaseId.of("[PROJECT]", "[INSTANCE]", "[DATABASE]"));
       // Wait for the pool to be initialized.
       // The first session creation request will fail.
       expectedSessions = minSessions - minSessions / spanner.getOptions().getNumChannels();
       Stopwatch watch = Stopwatch.createStarted();
       while (client.pool.totalSessions() < expectedSessions
-          && watch.elapsed(TimeUnit.SECONDS) < 10) {
+              && watch.elapsed(TimeUnit.SECONDS) < 10) {
         Thread.sleep(10L);
       }
       // Wait a little to allow any additional session creation to finish.
@@ -245,20 +252,20 @@ public class BatchCreateSessionsTest {
     int maxSessions = 1000;
     DatabaseClientImpl client = null;
     mockSpanner.setBeginTransactionExecutionTime(
-        SimulatedExecutionTime.ofException(
-            Status.ABORTED.withDescription("BeginTransaction failed").asRuntimeException()));
+            SimulatedExecutionTime.ofException(
+                    Status.ABORTED.withDescription("BeginTransaction failed").asRuntimeException()));
     try (Spanner spanner = createSpanner(minSessions, maxSessions)) {
       client =
-          (DatabaseClientImpl)
-              spanner.getDatabaseClient(DatabaseId.of("[PROJECT]", "[INSTANCE]", "[DATABASE]"));
+              (DatabaseClientImpl)
+                      spanner.getDatabaseClient(DatabaseId.of("[PROJECT]", "[INSTANCE]", "[DATABASE]"));
       TransactionRunner runner = client.readWriteTransaction();
       runner.run(
-          new TransactionCallable<Void>() {
-            @Override
-            public Void run(TransactionContext transaction) throws Exception {
-              return null;
-            }
-          });
+              new TransactionCallable<Void>() {
+                @Override
+                public Void run(TransactionContext transaction) throws Exception {
+                  return null;
+                }
+              });
       fail("missing expected exception");
     } catch (SpannerException e) {
       assertThat(e.getErrorCode(), is(equalTo(ErrorCode.ABORTED)));
@@ -276,17 +283,17 @@ public class BatchCreateSessionsTest {
     // The first prepare should fail.
     // The prepare will then be retried and should succeed.
     mockSpanner.setBeginTransactionExecutionTime(
-        SimulatedExecutionTime.ofException(
-            Status.ABORTED.withDescription("BeginTransaction failed").asRuntimeException()));
+            SimulatedExecutionTime.ofException(
+                    Status.ABORTED.withDescription("BeginTransaction failed").asRuntimeException()));
     try (Spanner spanner = createSpanner(minSessions, maxSessions)) {
       client =
-          (DatabaseClientImpl)
-              spanner.getDatabaseClient(DatabaseId.of("[PROJECT]", "[INSTANCE]", "[DATABASE]"));
+              (DatabaseClientImpl)
+                      spanner.getDatabaseClient(DatabaseId.of("[PROJECT]", "[INSTANCE]", "[DATABASE]"));
       // Wait until the session pool has initialized and a session has been prepared.
       Stopwatch watch = Stopwatch.createStarted();
       while ((client.pool.totalSessions() < minSessions
               || client.pool.getNumberOfAvailableWritePreparedSessions() != 1)
-          && watch.elapsed(TimeUnit.SECONDS) < 10) {
+              && watch.elapsed(TimeUnit.SECONDS) < 10) {
         Thread.sleep(10L);
       }
 
@@ -294,12 +301,12 @@ public class BatchCreateSessionsTest {
       assertThat(client.pool.getNumberOfAvailableWritePreparedSessions(), is(equalTo(1)));
       TransactionRunner runner = client.readWriteTransaction();
       runner.run(
-          new TransactionCallable<Void>() {
-            @Override
-            public Void run(TransactionContext transaction) throws Exception {
-              return null;
-            }
-          });
+              new TransactionCallable<Void>() {
+                @Override
+                public Void run(TransactionContext transaction) throws Exception {
+                  return null;
+                }
+              });
     }
   }
 }

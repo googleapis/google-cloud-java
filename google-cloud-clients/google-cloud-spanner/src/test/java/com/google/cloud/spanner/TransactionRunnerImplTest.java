@@ -16,14 +16,6 @@
 
 package com.google.cloud.spanner;
 
-import static com.google.common.truth.Truth.assertThat;
-import static org.junit.Assert.fail;
-import static org.mockito.Mockito.doThrow;
-import static org.mockito.Mockito.mock;
-import static org.mockito.Mockito.times;
-import static org.mockito.Mockito.verify;
-import static org.mockito.Mockito.when;
-
 import com.google.cloud.grpc.GrpcTransportOptions;
 import com.google.cloud.grpc.GrpcTransportOptions.ExecutorFactory;
 import com.google.cloud.spanner.TransactionRunner.TransactionCallable;
@@ -35,25 +27,21 @@ import com.google.protobuf.Duration;
 import com.google.protobuf.Timestamp;
 import com.google.rpc.Code;
 import com.google.rpc.RetryInfo;
+import com.google.spanner.admin.instance.v1.ProjectName;
 import com.google.spanner.v1.BeginTransactionRequest;
 import com.google.spanner.v1.CommitRequest;
 import com.google.spanner.v1.CommitResponse;
+import com.google.spanner.v1.DatabaseName;
 import com.google.spanner.v1.ExecuteBatchDmlRequest;
 import com.google.spanner.v1.ExecuteBatchDmlResponse;
 import com.google.spanner.v1.ResultSet;
 import com.google.spanner.v1.ResultSetStats;
+import com.google.spanner.v1.SessionName;
 import com.google.spanner.v1.Transaction;
 import io.grpc.Metadata;
 import io.grpc.Status;
 import io.grpc.StatusRuntimeException;
 import io.grpc.protobuf.ProtoUtils;
-import java.util.Arrays;
-import java.util.Collections;
-import java.util.List;
-import java.util.UUID;
-import java.util.concurrent.Executors;
-import java.util.concurrent.ScheduledExecutorService;
-import java.util.concurrent.atomic.AtomicInteger;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -64,11 +52,28 @@ import org.mockito.MockitoAnnotations;
 import org.mockito.invocation.InvocationOnMock;
 import org.mockito.stubbing.Answer;
 
-/** Unit test for {@link com.google.cloud.spanner.SpannerImpl.TransactionRunnerImpl} */
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.List;
+import java.util.UUID;
+import java.util.concurrent.Executors;
+import java.util.concurrent.ScheduledExecutorService;
+import java.util.concurrent.atomic.AtomicInteger;
+
+import static com.google.common.truth.Truth.assertThat;
+import static org.junit.Assert.fail;
+import static org.mockito.Matchers.any;
+import static org.mockito.Mockito.doThrow;
+import static org.mockito.Mockito.mock;
+import static org.mockito.Mockito.times;
+import static org.mockito.Mockito.verify;
+import static org.mockito.Mockito.when;
+
+/** Unit test for {@link com.google.cloud.spanner.TransactionRunnerImpl} */
 @RunWith(JUnit4.class)
 public class TransactionRunnerImplTest {
   private static final class TestExecutorFactory
-      implements ExecutorFactory<ScheduledExecutorService> {
+          implements ExecutorFactory<ScheduledExecutorService> {
     @Override
     public ScheduledExecutorService get() {
       return Executors.newSingleThreadScheduledExecutor();
@@ -103,60 +108,67 @@ public class TransactionRunnerImplTest {
     when(transportOptions.getExecutorFactory()).thenReturn(new TestExecutorFactory());
     when(options.getTransportOptions()).thenReturn(transportOptions);
     SessionPoolOptions sessionPoolOptions =
-        SessionPoolOptions.newBuilder().setMinSessions(0).build();
+            SessionPoolOptions.newBuilder().setMinSessions(0).build();
     when(options.getSessionPoolOptions()).thenReturn(sessionPoolOptions);
+    when(options.getProjectId()).thenReturn(ProjectName.of("test").toString());
     when(options.getSessionLabels()).thenReturn(Collections.<String, String>emptyMap());
     SpannerRpc rpc = mock(SpannerRpc.class);
+    when(rpc.getOptions()).thenReturn(options);
     when(rpc.batchCreateSessions(
             Mockito.anyString(), Mockito.eq(1), Mockito.anyMap(), Mockito.anyMap()))
-        .thenAnswer(
-            new Answer<List<com.google.spanner.v1.Session>>() {
-              @Override
-              public List<com.google.spanner.v1.Session> answer(InvocationOnMock invocation)
-                  throws Throwable {
-                return Arrays.asList(
-                    com.google.spanner.v1.Session.newBuilder()
-                        .setName((String) invocation.getArguments()[0])
-                        .setCreateTime(
-                            Timestamp.newBuilder().setSeconds(System.currentTimeMillis() * 1000))
-                        .build());
-              }
-            });
+            .thenAnswer(
+                    new Answer<List<com.google.spanner.v1.Session>>() {
+                      @Override
+                      public List<com.google.spanner.v1.Session> answer(InvocationOnMock invocation)
+                              throws Throwable {
+                        DatabaseName databaseName = DatabaseName.parse((String) invocation.getArguments()[0]);
+                        String sessionName = SessionName.of(databaseName.getProject(), databaseName.getInstance(),
+                                databaseName.getDatabase(), UUID.randomUUID().toString()).toString();
+                        return Arrays.asList(
+                                com.google.spanner.v1.Session.newBuilder()
+                                        .setName(sessionName)
+                                        .setCreateTime(
+                                                Timestamp.newBuilder().setSeconds(System.currentTimeMillis() * 1000))
+                                        .build());
+                      }
+                    });
     when(rpc.beginTransaction(Mockito.any(BeginTransactionRequest.class), Mockito.anyMap()))
-        .thenAnswer(
-            new Answer<Transaction>() {
-              @Override
-              public Transaction answer(InvocationOnMock invocation) throws Throwable {
-                return Transaction.newBuilder()
-                    .setId(ByteString.copyFromUtf8(UUID.randomUUID().toString()))
-                    .build();
-              }
-            });
+            .thenAnswer(
+                    new Answer<Transaction>() {
+                      @Override
+                      public Transaction answer(InvocationOnMock invocation) throws Throwable {
+                        return Transaction.newBuilder()
+                                .setId(ByteString.copyFromUtf8(UUID.randomUUID().toString()))
+                                .build();
+                      }
+                    });
     when(rpc.commit(Mockito.any(CommitRequest.class), Mockito.anyMap()))
-        .thenAnswer(
-            new Answer<CommitResponse>() {
-              @Override
-              public CommitResponse answer(InvocationOnMock invocation) throws Throwable {
-                return CommitResponse.newBuilder()
-                    .setCommitTimestamp(
-                        Timestamp.newBuilder().setSeconds(System.currentTimeMillis() * 1000))
-                    .build();
-              }
-            });
+            .thenAnswer(
+                    new Answer<CommitResponse>() {
+                      @Override
+                      public CommitResponse answer(InvocationOnMock invocation) throws Throwable {
+                        return CommitResponse.newBuilder()
+                                .setCommitTimestamp(
+                                        Timestamp.newBuilder().setSeconds(System.currentTimeMillis() * 1000))
+                                .build();
+                      }
+                    });
+    when(rpc.getRpc(any(DatabaseName.class))).thenReturn(rpc);
+    when(rpc.getRpc(any(SessionName.class))).thenReturn(rpc);
     DatabaseId db = DatabaseId.of("test", "test", "test");
     try (SpannerImpl spanner = new SpannerImpl(rpc, options)) {
       DatabaseClient client = spanner.getDatabaseClient(db);
       client
-          .readWriteTransaction()
-          .run(
-              new TransactionCallable<Void>() {
-                @Override
-                public Void run(TransactionContext transaction) throws Exception {
-                  return null;
-                }
-              });
+              .readWriteTransaction()
+              .run(
+                      new TransactionCallable<Void>() {
+                        @Override
+                        public Void run(TransactionContext transaction) throws Exception {
+                          return null;
+                        }
+                      });
       verify(rpc, times(1))
-          .beginTransaction(Mockito.any(BeginTransactionRequest.class), Mockito.anyMap());
+              .beginTransaction(Mockito.any(BeginTransactionRequest.class), Mockito.anyMap());
     }
   }
 
@@ -164,13 +176,13 @@ public class TransactionRunnerImplTest {
   public void commitSucceeds() {
     final AtomicInteger numCalls = new AtomicInteger(0);
     transactionRunner.run(
-        new TransactionCallable<Void>() {
-          @Override
-          public Void run(TransactionContext transaction) throws Exception {
-            numCalls.incrementAndGet();
-            return null;
-          }
-        });
+            new TransactionCallable<Void>() {
+              @Override
+              public Void run(TransactionContext transaction) throws Exception {
+                numCalls.incrementAndGet();
+                return null;
+              }
+            });
     assertThat(numCalls.get()).isEqualTo(1);
     verify(txn).ensureTxn();
     verify(txn).commit();
@@ -186,17 +198,17 @@ public class TransactionRunnerImplTest {
   @Test
   public void commitAbort() {
     final SpannerException error =
-        SpannerExceptionFactory.newSpannerException(abortedWithRetryInfo());
+            SpannerExceptionFactory.newSpannerException(abortedWithRetryInfo());
     doThrow(error).doNothing().when(txn).commit();
     final AtomicInteger numCalls = new AtomicInteger(0);
     transactionRunner.run(
-        new TransactionCallable<Void>() {
-          @Override
-          public Void run(TransactionContext transaction) throws Exception {
-            numCalls.incrementAndGet();
-            return null;
-          }
-        });
+            new TransactionCallable<Void>() {
+              @Override
+              public Void run(TransactionContext transaction) throws Exception {
+                numCalls.incrementAndGet();
+                return null;
+              }
+            });
     assertThat(numCalls.get()).isEqualTo(2);
     verify(txn, times(2)).ensureTxn();
   }
@@ -204,19 +216,19 @@ public class TransactionRunnerImplTest {
   @Test
   public void commitFailsWithNonAbort() {
     final SpannerException error =
-        SpannerExceptionFactory.newSpannerException(
-            SpannerExceptionFactory.newSpannerException(ErrorCode.UNKNOWN, ""));
+            SpannerExceptionFactory.newSpannerException(
+                    SpannerExceptionFactory.newSpannerException(ErrorCode.UNKNOWN, ""));
     doThrow(error).when(txn).commit();
     final AtomicInteger numCalls = new AtomicInteger(0);
     try {
       transactionRunner.run(
-          new TransactionCallable<Void>() {
-            @Override
-            public Void run(TransactionContext transaction) throws Exception {
-              numCalls.incrementAndGet();
-              return null;
-            }
-          });
+              new TransactionCallable<Void>() {
+                @Override
+                public Void run(TransactionContext transaction) throws Exception {
+                  numCalls.incrementAndGet();
+                  return null;
+                }
+              });
       fail("Expected exception");
     } catch (SpannerException e) {
       assertThat(e.getErrorCode()).isEqualTo(ErrorCode.UNKNOWN);
@@ -230,7 +242,7 @@ public class TransactionRunnerImplTest {
   public void runResourceExhaustedNoRetry() throws Exception {
     try {
       runTransaction(
-          new StatusRuntimeException(Status.fromCodeValue(Status.Code.RESOURCE_EXHAUSTED.value())));
+              new StatusRuntimeException(Status.fromCodeValue(Status.Code.RESOURCE_EXHAUSTED.value())));
       fail("Expected exception");
     } catch (SpannerException e) {
       // expected.
@@ -262,49 +274,49 @@ public class TransactionRunnerImplTest {
   private long[] batchDmlException(int status) {
     Preconditions.checkArgument(status != Code.OK_VALUE);
     TransactionContextImpl transaction =
-        new TransactionContextImpl(
-            session, ByteString.copyFromUtf8(UUID.randomUUID().toString()), rpc, 10);
+            new TransactionContextImpl(
+                    session, ByteString.copyFromUtf8(UUID.randomUUID().toString()), rpc, 10);
     when(session.newTransaction()).thenReturn(transaction);
     when(session.beginTransaction())
-        .thenReturn(ByteString.copyFromUtf8(UUID.randomUUID().toString()));
+            .thenReturn(ByteString.copyFromUtf8(UUID.randomUUID().toString()));
     when(session.getName()).thenReturn("test");
     TransactionRunnerImpl runner = new TransactionRunnerImpl(session, rpc, 10);
     ExecuteBatchDmlResponse response1 =
-        ExecuteBatchDmlResponse.newBuilder()
-            .addResultSets(
-                ResultSet.newBuilder()
-                    .setStats(ResultSetStats.newBuilder().setRowCountExact(1L))
-                    .build())
-            .setStatus(com.google.rpc.Status.newBuilder().setCode(status).build())
-            .build();
+            ExecuteBatchDmlResponse.newBuilder()
+                    .addResultSets(
+                            ResultSet.newBuilder()
+                                    .setStats(ResultSetStats.newBuilder().setRowCountExact(1L))
+                                    .build())
+                    .setStatus(com.google.rpc.Status.newBuilder().setCode(status).build())
+                    .build();
     ExecuteBatchDmlResponse response2 =
-        ExecuteBatchDmlResponse.newBuilder()
-            .addResultSets(
-                ResultSet.newBuilder()
-                    .setStats(ResultSetStats.newBuilder().setRowCountExact(1L))
-                    .build())
-            .addResultSets(
-                ResultSet.newBuilder()
-                    .setStats(ResultSetStats.newBuilder().setRowCountExact(1L))
-                    .build())
-            .setStatus(com.google.rpc.Status.newBuilder().setCode(Code.OK_VALUE).build())
-            .build();
+            ExecuteBatchDmlResponse.newBuilder()
+                    .addResultSets(
+                            ResultSet.newBuilder()
+                                    .setStats(ResultSetStats.newBuilder().setRowCountExact(1L))
+                                    .build())
+                    .addResultSets(
+                            ResultSet.newBuilder()
+                                    .setStats(ResultSetStats.newBuilder().setRowCountExact(1L))
+                                    .build())
+                    .setStatus(com.google.rpc.Status.newBuilder().setCode(Code.OK_VALUE).build())
+                    .build();
     when(rpc.executeBatchDml(Mockito.any(ExecuteBatchDmlRequest.class), Mockito.anyMap()))
-        .thenReturn(response1, response2);
+            .thenReturn(response1, response2);
     CommitResponse commitResponse =
-        CommitResponse.newBuilder().setCommitTimestamp(Timestamp.getDefaultInstance()).build();
+            CommitResponse.newBuilder().setCommitTimestamp(Timestamp.getDefaultInstance()).build();
     when(rpc.commit(Mockito.any(CommitRequest.class), Mockito.anyMap())).thenReturn(commitResponse);
     final Statement statement = Statement.of("UPDATE FOO SET BAR=1");
     final AtomicInteger numCalls = new AtomicInteger(0);
     long updateCount[] =
-        runner.run(
-            new TransactionCallable<long[]>() {
-              @Override
-              public long[] run(TransactionContext transaction) throws Exception {
-                numCalls.incrementAndGet();
-                return transaction.batchUpdate(Arrays.asList(statement, statement));
-              }
-            });
+            runner.run(
+                    new TransactionCallable<long[]>() {
+                      @Override
+                      public long[] run(TransactionContext transaction) throws Exception {
+                        numCalls.incrementAndGet();
+                        return transaction.batchUpdate(Arrays.asList(statement, statement));
+                      }
+                    });
     if (status == Code.ABORTED_VALUE) {
       // Assert that the method ran twice because the first response aborted.
       assertThat(numCalls.get()).isEqualTo(2);
@@ -314,31 +326,31 @@ public class TransactionRunnerImplTest {
 
   private void runTransaction(final Exception exception) {
     transactionRunner.run(
-        new TransactionCallable<Void>() {
-          @Override
-          public Void run(TransactionContext transaction) throws Exception {
-            if (firstRun) {
-              firstRun = false;
-              throw SpannerExceptionFactory.newSpannerException(exception);
-            }
-            return null;
-          }
-        });
+            new TransactionCallable<Void>() {
+              @Override
+              public Void run(TransactionContext transaction) throws Exception {
+                if (firstRun) {
+                  firstRun = false;
+                  throw SpannerExceptionFactory.newSpannerException(exception);
+                }
+                return null;
+              }
+            });
   }
 
   private SpannerException abortedWithRetryInfo() {
     Status status = Status.fromCodeValue(Status.Code.ABORTED.value());
     return SpannerExceptionFactory.newSpannerException(
-        ErrorCode.ABORTED, "test", new StatusRuntimeException(status, createRetryTrailers()));
+            ErrorCode.ABORTED, "test", new StatusRuntimeException(status, createRetryTrailers()));
   }
 
   private Metadata createRetryTrailers() {
     Metadata.Key<RetryInfo> key = ProtoUtils.keyForProto(RetryInfo.getDefaultInstance());
     Metadata trailers = new Metadata();
     RetryInfo retryInfo =
-        RetryInfo.newBuilder()
-            .setRetryDelay(Duration.newBuilder().setNanos(0).setSeconds(0L))
-            .build();
+            RetryInfo.newBuilder()
+                    .setRetryDelay(Duration.newBuilder().setNanos(0).setSeconds(0L))
+                    .build();
     trailers.put(key, retryInfo);
     return trailers;
   }

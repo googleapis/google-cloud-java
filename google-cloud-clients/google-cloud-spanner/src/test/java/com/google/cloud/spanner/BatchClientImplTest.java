@@ -16,13 +16,6 @@
 
 package com.google.cloud.spanner;
 
-import static com.google.common.truth.Truth.assertThat;
-import static org.mockito.Mockito.anyMap;
-import static org.mockito.Mockito.eq;
-import static org.mockito.Mockito.mock;
-import static org.mockito.Mockito.when;
-import static org.mockito.MockitoAnnotations.initMocks;
-
 import com.google.api.core.NanoClock;
 import com.google.api.gax.retrying.RetrySettings;
 import com.google.cloud.Timestamp;
@@ -32,10 +25,10 @@ import com.google.cloud.spanner.spi.v1.SpannerRpc;
 import com.google.protobuf.ByteString;
 import com.google.protobuf.util.Timestamps;
 import com.google.spanner.v1.BeginTransactionRequest;
+import com.google.spanner.v1.DatabaseName;
 import com.google.spanner.v1.Session;
+import com.google.spanner.v1.SessionName;
 import com.google.spanner.v1.Transaction;
-import java.util.Collections;
-import java.util.Map;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -44,6 +37,17 @@ import org.mockito.ArgumentCaptor;
 import org.mockito.Captor;
 import org.mockito.Mock;
 import org.mockito.Mockito;
+
+import java.util.Collections;
+import java.util.Map;
+
+import static com.google.common.truth.Truth.assertThat;
+import static org.mockito.Matchers.any;
+import static org.mockito.Mockito.anyMap;
+import static org.mockito.Mockito.eq;
+import static org.mockito.Mockito.mock;
+import static org.mockito.Mockito.when;
+import static org.mockito.MockitoAnnotations.initMocks;
 
 /** Unit tests for {@link com.google.cloud.spanner.BatchClientImpl}. */
 @RunWith(JUnit4.class)
@@ -75,9 +79,14 @@ public final class BatchClientImplTest {
     GrpcTransportOptions transportOptions = mock(GrpcTransportOptions.class);
     when(transportOptions.getExecutorFactory()).thenReturn(mock(ExecutorFactory.class));
     when(spannerOptions.getTransportOptions()).thenReturn(transportOptions);
+    when(spannerOptions.getProjectId()).thenReturn("my-project");
+    when(gapicRpc.getOptions()).thenReturn(spannerOptions);
+
     @SuppressWarnings("resource")
     SpannerImpl spanner = new SpannerImpl(gapicRpc, spannerOptions);
     client = new BatchClientImpl(spanner.getSessionClient(db));
+    when(gapicRpc.getRpc(any(DatabaseName.class))).thenReturn(gapicRpc);
+    when(gapicRpc.getRpc(any(SessionName.class))).thenReturn(gapicRpc);
   }
 
   @SuppressWarnings("unchecked")
@@ -85,12 +94,12 @@ public final class BatchClientImplTest {
   public void testBatchReadOnlyTxnWithBound() throws Exception {
     Session sessionProto = Session.newBuilder().setName(SESSION_NAME).build();
     when(gapicRpc.createSession(eq(DB_NAME), anyMap(), optionsCaptor.capture()))
-        .thenReturn(sessionProto);
+            .thenReturn(sessionProto);
     com.google.protobuf.Timestamp timestamp = Timestamps.parse(TIMESTAMP);
     Transaction txnMetadata =
-        Transaction.newBuilder().setId(TXN_ID).setReadTimestamp(timestamp).build();
+            Transaction.newBuilder().setId(TXN_ID).setReadTimestamp(timestamp).build();
     when(gapicRpc.beginTransaction(Mockito.<BeginTransactionRequest>any(), optionsCaptor.capture()))
-        .thenReturn(txnMetadata);
+            .thenReturn(txnMetadata);
 
     BatchReadOnlyTransaction batchTxn = client.batchReadOnlyTransaction(TimestampBound.strong());
     assertThat(batchTxn.getBatchTransactionId().getSessionId()).isEqualTo(SESSION_NAME);
@@ -98,7 +107,7 @@ public final class BatchClientImplTest {
     Timestamp t = Timestamp.parseTimestamp(TIMESTAMP);
     assertThat(batchTxn.getReadTimestamp()).isEqualTo(t);
     assertThat(batchTxn.getReadTimestamp())
-        .isEqualTo(batchTxn.getBatchTransactionId().getTimestamp());
+            .isEqualTo(batchTxn.getBatchTransactionId().getTimestamp());
   }
 
   @Test
@@ -113,6 +122,6 @@ public final class BatchClientImplTest {
     assertThat(batchTxn.getBatchTransactionId().getTransactionId()).isEqualTo(TXN_ID);
     assertThat(batchTxn.getReadTimestamp()).isEqualTo(t);
     assertThat(batchTxn.getReadTimestamp())
-        .isEqualTo(batchTxn.getBatchTransactionId().getTimestamp());
+            .isEqualTo(batchTxn.getBatchTransactionId().getTimestamp());
   }
 }

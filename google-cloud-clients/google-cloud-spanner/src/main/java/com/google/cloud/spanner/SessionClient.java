@@ -16,30 +16,34 @@
 
 package com.google.cloud.spanner;
 
-import static com.google.common.base.Preconditions.checkArgument;
-import static com.google.common.base.Preconditions.checkNotNull;
-
 import com.google.api.pathtemplate.PathTemplate;
 import com.google.cloud.grpc.GrpcTransportOptions.ExecutorFactory;
 import com.google.cloud.spanner.spi.v1.SpannerRpc;
 import com.google.common.base.Preconditions;
 import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.Maps;
+import com.google.spanner.v1.DatabaseName;
 import io.opencensus.common.Scope;
 import io.opencensus.trace.Span;
+
+import javax.annotation.concurrent.GuardedBy;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 import java.util.Map;
 import java.util.concurrent.ScheduledExecutorService;
-import javax.annotation.concurrent.GuardedBy;
 
-/** Client for creating single sessions and batches of sessions. */
+import static com.google.common.base.Preconditions.checkArgument;
+import static com.google.common.base.Preconditions.checkNotNull;
+
+/**
+ * Client for creating single sessions and batches of sessions.
+ */
 class SessionClient implements AutoCloseable {
   static class SessionId {
     private static final PathTemplate NAME_TEMPLATE =
-        PathTemplate.create(
-            "projects/{project}/instances/{instance}/databases/{database}/sessions/{session}");
+            PathTemplate.create(
+                    "projects/{project}/instances/{instance}/databases/{database}/sessions/{session}");
     private final DatabaseId db;
     private final String name;
 
@@ -51,12 +55,14 @@ class SessionClient implements AutoCloseable {
     static SessionId of(String name) {
       Map<String, String> parts = NAME_TEMPLATE.match(name);
       Preconditions.checkArgument(
-          parts != null, "Name should conform to pattern %s: %s", NAME_TEMPLATE, name);
+              parts != null, "Name should conform to pattern %s: %s", NAME_TEMPLATE, name);
       return of(
-          parts.get("project"), parts.get("instance"), parts.get("database"), parts.get("session"));
+              parts.get("project"), parts.get("instance"), parts.get("database"), parts.get("session"));
     }
 
-    /** Creates a {@code SessionId} given project, instance, database and session IDs. */
+    /**
+     * Creates a {@code SessionId} given project, instance, database and session IDs.
+     */
     static SessionId of(String project, String instance, String database, String session) {
       return new SessionId(new DatabaseId(new InstanceId(project, instance), database), session);
     }
@@ -114,7 +120,7 @@ class SessionClient implements AutoCloseable {
     private final SessionConsumer consumer;
 
     private BatchCreateSessionsRunnable(
-        int sessionCount, long channelHint, SessionConsumer consumer) {
+            int sessionCount, long channelHint, SessionConsumer consumer) {
       Preconditions.checkNotNull(consumer);
       Preconditions.checkArgument(sessionCount > 0, "sessionCount must be > 0");
       this.channelHint = channelHint;
@@ -127,10 +133,10 @@ class SessionClient implements AutoCloseable {
       List<SessionImpl> sessions = null;
       int remainingSessionsToCreate = sessionCount;
       try (Scope scope =
-          SpannerImpl.tracer.spanBuilder(SpannerImpl.BATCH_CREATE_SESSIONS).startScopedSpan()) {
+                   SpannerImpl.tracer.spanBuilder(SpannerImpl.BATCH_CREATE_SESSIONS).startScopedSpan()) {
         SpannerImpl.tracer
-            .getCurrentSpan()
-            .addAnnotation(String.format("Creating %d sessions", sessionCount));
+                .getCurrentSpan()
+                .addAnnotation(String.format("Creating %d sessions", sessionCount));
         while (remainingSessionsToCreate > 0) {
           try {
             sessions = internalBatchCreateSessions(remainingSessionsToCreate, channelHint);
@@ -153,7 +159,9 @@ class SessionClient implements AutoCloseable {
    * session creation fails, one of the callback methods will be called.
    */
   static interface SessionConsumer {
-    /** Called when a session has been created and is ready for use. */
+    /**
+     * Called when a session has been created and is ready for use.
+     */
     void onSessionReady(SessionImpl session);
 
     /**
@@ -173,9 +181,9 @@ class SessionClient implements AutoCloseable {
   private volatile long sessionChannelCounter;
 
   SessionClient(
-      SpannerImpl spanner,
-      DatabaseId db,
-      ExecutorFactory<ScheduledExecutorService> executorFactory) {
+          SpannerImpl spanner,
+          DatabaseId db,
+          ExecutorFactory<ScheduledExecutorService> executorFactory) {
     this.spanner = spanner;
     this.db = db;
     this.executorFactory = executorFactory;
@@ -191,7 +199,9 @@ class SessionClient implements AutoCloseable {
     return spanner;
   }
 
-  /** Create a single session. */
+  /**
+   * Create a single session.
+   */
   SessionImpl createSession() {
     // The sessionChannelCounter could overflow, but that will just flip it to Integer.MIN_VALUE,
     // which is also a valid channel hint.
@@ -201,9 +211,8 @@ class SessionClient implements AutoCloseable {
     }
     Span span = SpannerImpl.tracer.spanBuilder(SpannerImpl.CREATE_SESSION).startSpan();
     try (Scope s = SpannerImpl.tracer.withSpan(span)) {
-      com.google.spanner.v1.Session session =
-          spanner
-              .getRpc()
+      SpannerRpc spannerRpc = spanner.getRpc(DatabaseName.parse(db.getName()));
+      com.google.spanner.v1.Session session = spannerRpc
               .createSession(db.getName(), spanner.getOptions().getSessionLabels(), options);
       span.end();
       return new SessionImpl(spanner, session.getName(), options);
@@ -224,7 +233,7 @@ class SessionClient implements AutoCloseable {
    * sessions that could not be created.
    *
    * @param sessionCount The number of sessions to create.
-   * @param consumer The {@link SessionConsumer} to use for callbacks when sessions are available.
+   * @param consumer     The {@link SessionConsumer} to use for callbacks when sessions are available.
    */
   void asyncBatchCreateSessions(final int sessionCount, SessionConsumer consumer) {
     // We spread the session creation evenly over all available channels.
@@ -233,8 +242,8 @@ class SessionClient implements AutoCloseable {
     int numBeingCreated = 0;
     synchronized (this) {
       for (int channelIndex = 0;
-          channelIndex < spanner.getOptions().getNumChannels();
-          channelIndex++) {
+           channelIndex < spanner.getOptions().getNumChannels();
+           channelIndex++) {
         int createCountForChannel = sessionCountPerChannel;
         // Add the remainder of the division to the creation count of the first channel to make sure
         // we are creating the requested number of sessions. This will cause a slightly less
@@ -248,8 +257,8 @@ class SessionClient implements AutoCloseable {
         if (createCountForChannel > 0) {
           try {
             executor.submit(
-                new BatchCreateSessionsRunnable(
-                    createCountForChannel, sessionChannelCounter++, consumer));
+                    new BatchCreateSessionsRunnable(
+                            createCountForChannel, sessionChannelCounter++, consumer));
             numBeingCreated += createCountForChannel;
           } catch (Throwable t) {
             consumer.onSessionCreateFailure(t, sessionCount - numBeingCreated);
@@ -267,23 +276,22 @@ class SessionClient implements AutoCloseable {
    * that are distributed over multiple channels.
    */
   private List<SessionImpl> internalBatchCreateSessions(
-      final int sessionCount, final long channelHint) throws SpannerException {
+          final int sessionCount, final long channelHint) throws SpannerException {
     final Map<SpannerRpc.Option, ?> options = optionMap(SessionOption.channelHint(channelHint));
     Span parent = SpannerImpl.tracer.getCurrentSpan();
     Span span =
-        SpannerImpl.tracer
-            .spanBuilderWithExplicitParent(SpannerImpl.BATCH_CREATE_SESSIONS_REQUEST, parent)
-            .startSpan();
+            SpannerImpl.tracer
+                    .spanBuilderWithExplicitParent(SpannerImpl.BATCH_CREATE_SESSIONS_REQUEST, parent)
+                    .startSpan();
     span.addAnnotation(String.format("Requesting %d sessions", sessionCount));
     try (Scope s = SpannerImpl.tracer.withSpan(span)) {
       List<com.google.spanner.v1.Session> sessions =
-          spanner
-              .getRpc()
-              .batchCreateSessions(
-                  db.getName(), sessionCount, spanner.getOptions().getSessionLabels(), options);
+              spanner.getRpc(DatabaseName.parse(db.getName()))
+                      .batchCreateSessions(
+                              db.getName(), sessionCount, spanner.getOptions().getSessionLabels(), options);
       span.addAnnotation(
-          String.format(
-              "Request for %d sessions returned %d sessions", sessionCount, sessions.size()));
+              String.format(
+                      "Request for %d sessions returned %d sessions", sessionCount, sessions.size()));
       span.end();
       List<SessionImpl> res = new ArrayList<>(sessionCount);
       for (com.google.spanner.v1.Session session : sessions) {
@@ -296,7 +304,9 @@ class SessionClient implements AutoCloseable {
     }
   }
 
-  /** Returns a {@link SessionImpl} that references the existing session with the given name. */
+  /**
+   * Returns a {@link SessionImpl} that references the existing session with the given name.
+   */
   SessionImpl sessionWithId(String name) {
     final Map<SpannerRpc.Option, ?> options;
     synchronized (this) {

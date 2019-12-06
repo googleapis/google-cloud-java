@@ -16,11 +16,6 @@
 
 package com.google.cloud.spanner;
 
-import static com.google.common.truth.Truth.assertThat;
-import static org.junit.Assert.fail;
-import static org.mockito.Mockito.mock;
-import static org.mockito.Mockito.when;
-
 import com.google.api.core.NanoClock;
 import com.google.api.gax.retrying.RetrySettings;
 import com.google.cloud.Timestamp;
@@ -34,21 +29,14 @@ import com.google.protobuf.util.Timestamps;
 import com.google.spanner.v1.BeginTransactionRequest;
 import com.google.spanner.v1.CommitRequest;
 import com.google.spanner.v1.CommitResponse;
+import com.google.spanner.v1.DatabaseName;
 import com.google.spanner.v1.Mutation.Write;
 import com.google.spanner.v1.PartialResultSet;
 import com.google.spanner.v1.ReadRequest;
 import com.google.spanner.v1.ResultSetMetadata;
 import com.google.spanner.v1.Session;
+import com.google.spanner.v1.SessionName;
 import com.google.spanner.v1.Transaction;
-import java.text.ParseException;
-import java.util.Arrays;
-import java.util.Calendar;
-import java.util.Collections;
-import java.util.GregorianCalendar;
-import java.util.Map;
-import java.util.TimeZone;
-import java.util.concurrent.TimeUnit;
-import javax.annotation.Nullable;
 import org.junit.Before;
 import org.junit.Rule;
 import org.junit.Test;
@@ -63,7 +51,23 @@ import org.mockito.MockitoAnnotations;
 import org.mockito.invocation.InvocationOnMock;
 import org.mockito.stubbing.Answer;
 
-/** Unit tests for {@link com.google.cloud.spanner.SpannerImpl.SessionImpl}. */
+import javax.annotation.Nullable;
+import java.text.ParseException;
+import java.util.Arrays;
+import java.util.Calendar;
+import java.util.Collections;
+import java.util.GregorianCalendar;
+import java.util.Map;
+import java.util.TimeZone;
+import java.util.concurrent.TimeUnit;
+
+import static com.google.common.truth.Truth.assertThat;
+import static org.junit.Assert.fail;
+import static org.mockito.Matchers.any;
+import static org.mockito.Mockito.mock;
+import static org.mockito.Mockito.when;
+
+/** Unit tests for {@link com.google.cloud.spanner.SessionImpl}. */
 @RunWith(JUnit4.class)
 public class SessionImplTest {
   @Rule public ExpectedException expectedException = ExpectedException.none();
@@ -86,6 +90,9 @@ public class SessionImplTest {
     GrpcTransportOptions transportOptions = mock(GrpcTransportOptions.class);
     when(transportOptions.getExecutorFactory()).thenReturn(mock(ExecutorFactory.class));
     when(spannerOptions.getTransportOptions()).thenReturn(transportOptions);
+    when(spannerOptions.getProjectId()).thenReturn("p1");
+    when(spannerOptions.toBuilder()).thenReturn(SpannerOptions.newBuilder().setProjectId("p1"));
+    when(rpc.getOptions()).thenReturn(spannerOptions);
     @SuppressWarnings("resource")
     SpannerImpl spanner = new SpannerImpl(rpc, spannerOptions);
     String dbName = "projects/p1/instances/i1/databases/d1";
@@ -95,21 +102,23 @@ public class SessionImplTest {
     Session sessionProto = Session.newBuilder().setName(sessionName).build();
     Mockito.when(
             rpc.createSession(
-                Mockito.eq(dbName),
-                Mockito.anyMapOf(String.class, String.class),
-                optionsCaptor.capture()))
-        .thenReturn(sessionProto);
+                    Mockito.eq(dbName),
+                    Mockito.anyMapOf(String.class, String.class),
+                    optionsCaptor.capture()))
+            .thenReturn(sessionProto);
     Transaction txn = Transaction.newBuilder().setId(ByteString.copyFromUtf8("TEST")).build();
     Mockito.when(
             rpc.beginTransaction(
-                Mockito.any(BeginTransactionRequest.class), Mockito.any(Map.class)))
-        .thenReturn(txn);
+                    Mockito.any(BeginTransactionRequest.class), Mockito.any(Map.class)))
+            .thenReturn(txn);
     CommitResponse commitResponse =
-        CommitResponse.newBuilder()
-            .setCommitTimestamp(com.google.protobuf.Timestamp.getDefaultInstance())
-            .build();
+            CommitResponse.newBuilder()
+                    .setCommitTimestamp(com.google.protobuf.Timestamp.getDefaultInstance())
+                    .build();
     Mockito.when(rpc.commit(Mockito.any(CommitRequest.class), Mockito.any(Map.class)))
-        .thenReturn(commitResponse);
+            .thenReturn(commitResponse);
+    Mockito.when(rpc.getRpc(any(DatabaseName.class))).thenReturn(rpc);
+    Mockito.when(rpc.getRpc(any(SessionName.class))).thenReturn(rpc);
     session = spanner.getSessionClient(db).createSession();
     // We expect the same options, "options", on all calls on "session".
     options = optionsCaptor.getValue();
@@ -117,24 +126,24 @@ public class SessionImplTest {
 
   private void doNestedRwTransaction() {
     session
-        .readWriteTransaction()
-        .run(
-            new TransactionCallable<Void>() {
-              @Override
-              public Void run(TransactionContext transaction) throws SpannerException {
-                session
-                    .readWriteTransaction()
-                    .run(
-                        new TransactionCallable<Void>() {
-                          @Override
-                          public Void run(TransactionContext transaction) throws Exception {
-                            return null;
-                          }
-                        });
+            .readWriteTransaction()
+            .run(
+                    new TransactionCallable<Void>() {
+                      @Override
+                      public Void run(TransactionContext transaction) throws SpannerException {
+                        session
+                                .readWriteTransaction()
+                                .run(
+                                        new TransactionCallable<Void>() {
+                                          @Override
+                                          public Void run(TransactionContext transaction) throws Exception {
+                                            return null;
+                                          }
+                                        });
 
-                return null;
-              }
-            });
+                        return null;
+                      }
+                    });
   }
 
   @Test
@@ -152,16 +161,16 @@ public class SessionImplTest {
   public void nestedReadOnlyTxnThrows() {
     try {
       session
-          .readWriteTransaction()
-          .run(
-              new TransactionCallable<Void>() {
-                @Override
-                public Void run(TransactionContext transaction) throws SpannerException {
-                  session.readOnlyTransaction().getReadTimestamp();
+              .readWriteTransaction()
+              .run(
+                      new TransactionCallable<Void>() {
+                        @Override
+                        public Void run(TransactionContext transaction) throws SpannerException {
+                          session.readOnlyTransaction().getReadTimestamp();
 
-                  return null;
-                }
-              });
+                          return null;
+                        }
+                      });
       fail("Expected exception");
     } catch (SpannerException e) {
       assertThat(e.getErrorCode()).isEqualTo(ErrorCode.INTERNAL);
@@ -173,15 +182,15 @@ public class SessionImplTest {
   public void nestedSingleUseReadTxnThrows() {
     try {
       session
-          .readWriteTransaction()
-          .run(
-              new TransactionCallable<Void>() {
-                @Override
-                public Void run(TransactionContext transaction) throws SpannerException {
-                  session.singleUseReadOnlyTransaction();
-                  return null;
-                }
-              });
+              .readWriteTransaction()
+              .run(
+                      new TransactionCallable<Void>() {
+                        @Override
+                        public Void run(TransactionContext transaction) throws SpannerException {
+                          session.singleUseReadOnlyTransaction();
+                          return null;
+                        }
+                      });
       fail("Expected exception");
     } catch (SpannerException e) {
       assertThat(e.getErrorCode()).isEqualTo(ErrorCode.INTERNAL);
@@ -192,16 +201,16 @@ public class SessionImplTest {
   @Test
   public void nestedTxnSucceedsWhenAllowed() {
     session
-        .readWriteTransaction()
-        .allowNestedTransaction()
-        .run(
-            new TransactionCallable<Void>() {
-              @Override
-              public Void run(TransactionContext transaction) throws SpannerException {
-                session.singleUseReadOnlyTransaction();
-                return null;
-              }
-            });
+            .readWriteTransaction()
+            .allowNestedTransaction()
+            .run(
+                    new TransactionCallable<Void>() {
+                      @Override
+                      public Void run(TransactionContext transaction) throws SpannerException {
+                        session.singleUseReadOnlyTransaction();
+                        return null;
+                      }
+                    });
   }
 
   @Test
@@ -209,29 +218,29 @@ public class SessionImplTest {
     String timestampString = "2015-10-01T10:54:20.021Z";
     ArgumentCaptor<CommitRequest> commit = ArgumentCaptor.forClass(CommitRequest.class);
     CommitResponse response =
-        CommitResponse.newBuilder().setCommitTimestamp(Timestamps.parse(timestampString)).build();
+            CommitResponse.newBuilder().setCommitTimestamp(Timestamps.parse(timestampString)).build();
     Mockito.when(rpc.commit(commit.capture(), Mockito.eq(options))).thenReturn(response);
 
     Timestamp timestamp =
-        session.writeAtLeastOnce(
-            Arrays.asList(Mutation.newInsertBuilder("T").set("C").to("x").build()));
+            session.writeAtLeastOnce(
+                    Arrays.asList(Mutation.newInsertBuilder("T").set("C").to("x").build()));
     assertThat(timestamp.getSeconds())
-        .isEqualTo(utcTimeSeconds(2015, Calendar.OCTOBER, 1, 10, 54, 20));
+            .isEqualTo(utcTimeSeconds(2015, Calendar.OCTOBER, 1, 10, 54, 20));
     assertThat(timestamp.getNanos()).isEqualTo(TimeUnit.MILLISECONDS.toNanos(21));
 
     CommitRequest request = commit.getValue();
     assertThat(request.getSingleUseTransaction()).isNotNull();
     assertThat(request.getSingleUseTransaction().getReadWrite()).isNotNull();
     com.google.spanner.v1.Mutation mutation =
-        com.google.spanner.v1.Mutation.newBuilder()
-            .setInsert(
-                Write.newBuilder()
-                    .setTable("T")
-                    .addColumns("C")
-                    .addValues(
-                        ListValue.newBuilder()
-                            .addValues(com.google.protobuf.Value.newBuilder().setStringValue("x"))))
-            .build();
+            com.google.spanner.v1.Mutation.newBuilder()
+                    .setInsert(
+                            Write.newBuilder()
+                                    .setTable("T")
+                                    .addColumns("C")
+                                    .addValues(
+                                            ListValue.newBuilder()
+                                                    .addValues(com.google.protobuf.Value.newBuilder().setStringValue("x"))))
+                    .build();
     assertThat(request.getMutationsList()).containsExactly(mutation);
   }
 
@@ -296,10 +305,10 @@ public class SessionImplTest {
     ReadContext ctx = session.singleUse(TimestampBound.strong());
 
     Mockito.when(rpc.commit(Mockito.<CommitRequest>any(), Mockito.eq(options)))
-        .thenReturn(
-            CommitResponse.newBuilder()
-                .setCommitTimestamp(Timestamps.parse("2015-10-01T10:54:20.021Z"))
-                .build());
+            .thenReturn(
+                    CommitResponse.newBuilder()
+                            .setCommitTimestamp(Timestamps.parse("2015-10-01T10:54:20.021Z"))
+                            .build());
     session.writeAtLeastOnce(Arrays.<Mutation>asList());
 
     expectedException.expect(IllegalStateException.class);
@@ -328,14 +337,14 @@ public class SessionImplTest {
     expectedException.expect(IllegalStateException.class);
     expectedException.expectMessage("invalidated");
     runner.run(
-        new TransactionRunner.TransactionCallable<Void>() {
-          @Nullable
-          @Override
-          public Void run(TransactionContext transaction) throws SpannerException {
-            fail("Unexpected call to transaction body");
-            return null;
-          }
-        });
+            new TransactionRunner.TransactionCallable<Void>() {
+              @Nullable
+              @Override
+              public Void run(TransactionContext transaction) throws SpannerException {
+                fail("Unexpected call to transaction body");
+                return null;
+              }
+            });
   }
 
   @Test
@@ -343,7 +352,7 @@ public class SessionImplTest {
     ReadContext ctx = session.singleUse(TimestampBound.strong());
 
     Mockito.when(rpc.beginTransaction(Mockito.<BeginTransactionRequest>any(), Mockito.eq(options)))
-        .thenReturn(Transaction.newBuilder().setId(ByteString.copyFromUtf8("t1")).build());
+            .thenReturn(Transaction.newBuilder().setId(ByteString.copyFromUtf8("t1")).build());
     session.prepareReadWriteTransaction();
 
     expectedException.expect(IllegalStateException.class);
@@ -358,9 +367,9 @@ public class SessionImplTest {
   @Test
   public void singleUseReadOnlyTransactionDoesntReturnTransactionMetadata() {
     PartialResultSet resultSet =
-        PartialResultSet.newBuilder()
-            .setMetadata(newMetadata(Type.struct(Type.StructField.of("C", Type.string()))))
-            .build();
+            PartialResultSet.newBuilder()
+                    .setMetadata(newMetadata(Type.struct(Type.StructField.of("C", Type.string()))))
+                    .build();
     mockRead(resultSet);
 
     ReadOnlyTransaction txn = session.singleUseReadOnlyTransaction(TimestampBound.strong());
@@ -377,12 +386,12 @@ public class SessionImplTest {
   @Test
   public void singleUseReadOnlyTransactionReturnsEmptyTransactionMetadata() {
     PartialResultSet resultSet =
-        PartialResultSet.newBuilder()
-            .setMetadata(
-                newMetadata(Type.struct(Type.StructField.of("C", Type.string())))
-                    .toBuilder()
-                    .setTransaction(Transaction.getDefaultInstance()))
-            .build();
+            PartialResultSet.newBuilder()
+                    .setMetadata(
+                            newMetadata(Type.struct(Type.StructField.of("C", Type.string())))
+                                    .toBuilder()
+                                    .setTransaction(Transaction.getDefaultInstance()))
+                    .build();
     mockRead(resultSet);
 
     ReadOnlyTransaction txn = session.singleUseReadOnlyTransaction(TimestampBound.strong());
@@ -401,28 +410,28 @@ public class SessionImplTest {
 
   private void mockRead(final PartialResultSet myResultSet) {
     final ArgumentCaptor<SpannerRpc.ResultStreamConsumer> consumer =
-        ArgumentCaptor.forClass(SpannerRpc.ResultStreamConsumer.class);
+            ArgumentCaptor.forClass(SpannerRpc.ResultStreamConsumer.class);
     Mockito.when(rpc.read(Mockito.<ReadRequest>any(), consumer.capture(), Mockito.eq(options)))
-        .then(
-            new Answer<SpannerRpc.StreamingCall>() {
-              @Override
-              public SpannerRpc.StreamingCall answer(InvocationOnMock invocation) throws Throwable {
-                consumer.getValue().onPartialResultSet(myResultSet);
-                consumer.getValue().onCompleted();
-                return new NoOpStreamingCall();
-              }
-            });
+            .then(
+                    new Answer<SpannerRpc.StreamingCall>() {
+                      @Override
+                      public SpannerRpc.StreamingCall answer(InvocationOnMock invocation) throws Throwable {
+                        consumer.getValue().onPartialResultSet(myResultSet);
+                        consumer.getValue().onCompleted();
+                        return new NoOpStreamingCall();
+                      }
+                    });
   }
 
   @Test
   public void multiUseReadOnlyTransactionReturnsEmptyTransactionMetadata() {
     Transaction txnMetadata = Transaction.newBuilder().setId(ByteString.copyFromUtf8("x")).build();
     PartialResultSet resultSet =
-        PartialResultSet.newBuilder()
-            .setMetadata(newMetadata(Type.struct(Type.StructField.of("C", Type.string()))))
-            .build();
+            PartialResultSet.newBuilder()
+                    .setMetadata(newMetadata(Type.struct(Type.StructField.of("C", Type.string()))))
+                    .build();
     Mockito.when(rpc.beginTransaction(Mockito.<BeginTransactionRequest>any(), Mockito.eq(options)))
-        .thenReturn(txnMetadata);
+            .thenReturn(txnMetadata);
     mockRead(resultSet);
 
     ReadOnlyTransaction txn = session.readOnlyTransaction(TimestampBound.strong());
@@ -435,11 +444,11 @@ public class SessionImplTest {
   public void multiUseReadOnlyTransactionReturnsMissingTimestamp() {
     Transaction txnMetadata = Transaction.newBuilder().setId(ByteString.copyFromUtf8("x")).build();
     PartialResultSet resultSet =
-        PartialResultSet.newBuilder()
-            .setMetadata(newMetadata(Type.struct(Type.StructField.of("C", Type.string()))))
-            .build();
+            PartialResultSet.newBuilder()
+                    .setMetadata(newMetadata(Type.struct(Type.StructField.of("C", Type.string()))))
+                    .build();
     Mockito.when(rpc.beginTransaction(Mockito.<BeginTransactionRequest>any(), Mockito.eq(options)))
-        .thenReturn(txnMetadata);
+            .thenReturn(txnMetadata);
     mockRead(resultSet);
 
     ReadOnlyTransaction txn = session.readOnlyTransaction(TimestampBound.strong());
@@ -453,11 +462,11 @@ public class SessionImplTest {
     com.google.protobuf.Timestamp t = Timestamps.parse("2015-10-01T10:54:20.021Z");
     Transaction txnMetadata = Transaction.newBuilder().setReadTimestamp(t).build();
     PartialResultSet resultSet =
-        PartialResultSet.newBuilder()
-            .setMetadata(newMetadata(Type.struct(Type.StructField.of("C", Type.string()))))
-            .build();
+            PartialResultSet.newBuilder()
+                    .setMetadata(newMetadata(Type.struct(Type.StructField.of("C", Type.string()))))
+                    .build();
     Mockito.when(rpc.beginTransaction(Mockito.<BeginTransactionRequest>any(), Mockito.eq(options)))
-        .thenReturn(txnMetadata);
+            .thenReturn(txnMetadata);
     mockRead(resultSet);
 
     ReadOnlyTransaction txn = session.readOnlyTransaction(TimestampBound.strong());

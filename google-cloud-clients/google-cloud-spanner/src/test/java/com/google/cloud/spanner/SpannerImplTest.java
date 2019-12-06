@@ -16,21 +16,13 @@
 
 package com.google.cloud.spanner;
 
-import static com.google.common.truth.Truth.assertThat;
-import static org.hamcrest.CoreMatchers.is;
-import static org.junit.Assert.assertThat;
-import static org.junit.Assert.fail;
-import static org.mockito.Mockito.when;
-
 import com.google.api.core.NanoClock;
 import com.google.api.gax.retrying.RetrySettings;
 import com.google.cloud.NoCredentials;
 import com.google.cloud.ServiceRpc;
 import com.google.cloud.grpc.GrpcTransportOptions;
 import com.google.cloud.spanner.spi.v1.SpannerRpc;
-import java.util.Collections;
-import java.util.HashMap;
-import java.util.Map;
+import com.google.spanner.admin.instance.v1.ProjectName;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
@@ -41,6 +33,16 @@ import org.mockito.Captor;
 import org.mockito.Mock;
 import org.mockito.Mockito;
 import org.mockito.MockitoAnnotations;
+
+import java.util.Collections;
+import java.util.HashMap;
+import java.util.Map;
+
+import static com.google.common.truth.Truth.assertThat;
+import static org.hamcrest.CoreMatchers.is;
+import static org.junit.Assert.assertThat;
+import static org.junit.Assert.fail;
+import static org.mockito.Mockito.when;
 
 /** Unit tests for {@link SpannerImpl}. */
 @RunWith(JUnit4.class)
@@ -58,6 +60,8 @@ public class SpannerImplTest {
     when(spannerOptions.getPrefetchChunks()).thenReturn(1);
     when(spannerOptions.getRetrySettings()).thenReturn(RetrySettings.newBuilder().build());
     when(spannerOptions.getClock()).thenReturn(NanoClock.getDefaultClock());
+    when(spannerOptions.getProjectId()).thenReturn(ProjectName.of("[PROJECT]").toString());
+    when(rpc.getOptions()).thenReturn(spannerOptions);
     when(spannerOptions.getSessionLabels()).thenReturn(Collections.<String, String>emptyMap());
     impl = new SpannerImpl(rpc, spannerOptions);
   }
@@ -76,9 +80,9 @@ public class SpannerImplTest {
     DatabaseId db = DatabaseId.of(dbName);
 
     Mockito.when(spannerOptions.getTransportOptions())
-        .thenReturn(GrpcTransportOptions.newBuilder().build());
+            .thenReturn(GrpcTransportOptions.newBuilder().build());
     Mockito.when(spannerOptions.getSessionPoolOptions())
-        .thenReturn(SessionPoolOptions.newBuilder().setMinSessions(0).build());
+            .thenReturn(SessionPoolOptions.newBuilder().setMinSessions(0).build());
 
     DatabaseClient databaseClient = impl.getDatabaseClient(db);
 
@@ -98,9 +102,9 @@ public class SpannerImplTest {
     DatabaseId db = DatabaseId.of(dbName);
 
     Mockito.when(spannerOptions.getTransportOptions())
-        .thenReturn(GrpcTransportOptions.newBuilder().build());
+            .thenReturn(GrpcTransportOptions.newBuilder().build());
     Mockito.when(spannerOptions.getSessionPoolOptions())
-        .thenReturn(SessionPoolOptions.newBuilder().build());
+            .thenReturn(SessionPoolOptions.newBuilder().build());
 
     imp.close();
 
@@ -145,8 +149,8 @@ public class SpannerImplTest {
 
   private SpannerOptions createSpannerOptions() {
     return SpannerOptions.newBuilder()
-        .setProjectId("[PROJECT]")
-        .setCredentials(NoCredentials.getInstance())
-        .build();
+            .setProjectId("[PROJECT]")
+            .setCredentials(NoCredentials.getInstance())
+            .build();
   }
 }
