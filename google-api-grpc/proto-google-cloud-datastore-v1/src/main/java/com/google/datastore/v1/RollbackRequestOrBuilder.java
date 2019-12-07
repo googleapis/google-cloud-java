@@ -12,20 +12,20 @@ public interface RollbackRequestOrBuilder
    *
    *
    * <pre>
-   * The ID of the project against which to make the request.
+   * Required. The ID of the project against which to make the request.
    * </pre>
    *
-   * <code>string project_id = 8;</code>
+   * <code>string project_id = 8 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   java.lang.String getProjectId();
   /**
    *
    *
    * <pre>
-   * The ID of the project against which to make the request.
+   * Required. The ID of the project against which to make the request.
    * </pre>
    *
-   * <code>string project_id = 8;</code>
+   * <code>string project_id = 8 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   com.google.protobuf.ByteString getProjectIdBytes();
 
@@ -33,11 +33,11 @@ public interface RollbackRequestOrBuilder
    *
    *
    * <pre>
-   * The transaction identifier, returned by a call to
+   * Required. The transaction identifier, returned by a call to
    * [Datastore.BeginTransaction][google.datastore.v1.Datastore.BeginTransaction].
    * </pre>
    *
-   * <code>bytes transaction = 1;</code>
+   * <code>bytes transaction = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   com.google.protobuf.ByteString getTransaction();
 }

@@ -104,8 +104,8 @@ public final class ArrayValue extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Values in the array.
-   * The order of this array may not be preserved if it contains a mix of
-   * indexed and unindexed values.
+   * The order of values in an array is preserved as long as all values have
+   * identical settings for 'exclude_from_indexes'.
    * </pre>
    *
    * <code>repeated .google.datastore.v1.Value values = 1;</code>
@@ -118,8 +118,8 @@ public final class ArrayValue extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Values in the array.
-   * The order of this array may not be preserved if it contains a mix of
-   * indexed and unindexed values.
+   * The order of values in an array is preserved as long as all values have
+   * identical settings for 'exclude_from_indexes'.
    * </pre>
    *
    * <code>repeated .google.datastore.v1.Value values = 1;</code>
@@ -132,8 +132,8 @@ public final class ArrayValue extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Values in the array.
-   * The order of this array may not be preserved if it contains a mix of
-   * indexed and unindexed values.
+   * The order of values in an array is preserved as long as all values have
+   * identical settings for 'exclude_from_indexes'.
    * </pre>
    *
    * <code>repeated .google.datastore.v1.Value values = 1;</code>
@@ -146,8 +146,8 @@ public final class ArrayValue extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Values in the array.
-   * The order of this array may not be preserved if it contains a mix of
-   * indexed and unindexed values.
+   * The order of values in an array is preserved as long as all values have
+   * identical settings for 'exclude_from_indexes'.
    * </pre>
    *
    * <code>repeated .google.datastore.v1.Value values = 1;</code>
@@ -160,8 +160,8 @@ public final class ArrayValue extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Values in the array.
-   * The order of this array may not be preserved if it contains a mix of
-   * indexed and unindexed values.
+   * The order of values in an array is preserved as long as all values have
+   * identical settings for 'exclude_from_indexes'.
    * </pre>
    *
    * <code>repeated .google.datastore.v1.Value values = 1;</code>
@@ -546,8 +546,8 @@ public final class ArrayValue extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Values in the array.
-     * The order of this array may not be preserved if it contains a mix of
-     * indexed and unindexed values.
+     * The order of values in an array is preserved as long as all values have
+     * identical settings for 'exclude_from_indexes'.
      * </pre>
      *
      * <code>repeated .google.datastore.v1.Value values = 1;</code>
@@ -564,8 +564,8 @@ public final class ArrayValue extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Values in the array.
-     * The order of this array may not be preserved if it contains a mix of
-     * indexed and unindexed values.
+     * The order of values in an array is preserved as long as all values have
+     * identical settings for 'exclude_from_indexes'.
      * </pre>
      *
      * <code>repeated .google.datastore.v1.Value values = 1;</code>
@@ -582,8 +582,8 @@ public final class ArrayValue extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Values in the array.
-     * The order of this array may not be preserved if it contains a mix of
-     * indexed and unindexed values.
+     * The order of values in an array is preserved as long as all values have
+     * identical settings for 'exclude_from_indexes'.
      * </pre>
      *
      * <code>repeated .google.datastore.v1.Value values = 1;</code>
@@ -600,8 +600,8 @@ public final class ArrayValue extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Values in the array.
-     * The order of this array may not be preserved if it contains a mix of
-     * indexed and unindexed values.
+     * The order of values in an array is preserved as long as all values have
+     * identical settings for 'exclude_from_indexes'.
      * </pre>
      *
      * <code>repeated .google.datastore.v1.Value values = 1;</code>
@@ -624,8 +624,8 @@ public final class ArrayValue extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Values in the array.
-     * The order of this array may not be preserved if it contains a mix of
-     * indexed and unindexed values.
+     * The order of values in an array is preserved as long as all values have
+     * identical settings for 'exclude_from_indexes'.
      * </pre>
      *
      * <code>repeated .google.datastore.v1.Value values = 1;</code>
@@ -645,8 +645,8 @@ public final class ArrayValue extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Values in the array.
-     * The order of this array may not be preserved if it contains a mix of
-     * indexed and unindexed values.
+     * The order of values in an array is preserved as long as all values have
+     * identical settings for 'exclude_from_indexes'.
      * </pre>
      *
      * <code>repeated .google.datastore.v1.Value values = 1;</code>
@@ -669,8 +669,8 @@ public final class ArrayValue extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Values in the array.
-     * The order of this array may not be preserved if it contains a mix of
-     * indexed and unindexed values.
+     * The order of values in an array is preserved as long as all values have
+     * identical settings for 'exclude_from_indexes'.
      * </pre>
      *
      * <code>repeated .google.datastore.v1.Value values = 1;</code>
@@ -693,8 +693,8 @@ public final class ArrayValue extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Values in the array.
-     * The order of this array may not be preserved if it contains a mix of
-     * indexed and unindexed values.
+     * The order of values in an array is preserved as long as all values have
+     * identical settings for 'exclude_from_indexes'.
      * </pre>
      *
      * <code>repeated .google.datastore.v1.Value values = 1;</code>
@@ -714,8 +714,8 @@ public final class ArrayValue extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Values in the array.
-     * The order of this array may not be preserved if it contains a mix of
-     * indexed and unindexed values.
+     * The order of values in an array is preserved as long as all values have
+     * identical settings for 'exclude_from_indexes'.
      * </pre>
      *
      * <code>repeated .google.datastore.v1.Value values = 1;</code>
@@ -735,8 +735,8 @@ public final class ArrayValue extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Values in the array.
-     * The order of this array may not be preserved if it contains a mix of
-     * indexed and unindexed values.
+     * The order of values in an array is preserved as long as all values have
+     * identical settings for 'exclude_from_indexes'.
      * </pre>
      *
      * <code>repeated .google.datastore.v1.Value values = 1;</code>
@@ -757,8 +757,8 @@ public final class ArrayValue extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Values in the array.
-     * The order of this array may not be preserved if it contains a mix of
-     * indexed and unindexed values.
+     * The order of values in an array is preserved as long as all values have
+     * identical settings for 'exclude_from_indexes'.
      * </pre>
      *
      * <code>repeated .google.datastore.v1.Value values = 1;</code>
@@ -778,8 +778,8 @@ public final class ArrayValue extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Values in the array.
-     * The order of this array may not be preserved if it contains a mix of
-     * indexed and unindexed values.
+     * The order of values in an array is preserved as long as all values have
+     * identical settings for 'exclude_from_indexes'.
      * </pre>
      *
      * <code>repeated .google.datastore.v1.Value values = 1;</code>
@@ -799,8 +799,8 @@ public final class ArrayValue extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Values in the array.
-     * The order of this array may not be preserved if it contains a mix of
-     * indexed and unindexed values.
+     * The order of values in an array is preserved as long as all values have
+     * identical settings for 'exclude_from_indexes'.
      * </pre>
      *
      * <code>repeated .google.datastore.v1.Value values = 1;</code>
@@ -813,8 +813,8 @@ public final class ArrayValue extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Values in the array.
-     * The order of this array may not be preserved if it contains a mix of
-     * indexed and unindexed values.
+     * The order of values in an array is preserved as long as all values have
+     * identical settings for 'exclude_from_indexes'.
      * </pre>
      *
      * <code>repeated .google.datastore.v1.Value values = 1;</code>
@@ -831,8 +831,8 @@ public final class ArrayValue extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Values in the array.
-     * The order of this array may not be preserved if it contains a mix of
-     * indexed and unindexed values.
+     * The order of values in an array is preserved as long as all values have
+     * identical settings for 'exclude_from_indexes'.
      * </pre>
      *
      * <code>repeated .google.datastore.v1.Value values = 1;</code>
@@ -850,8 +850,8 @@ public final class ArrayValue extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Values in the array.
-     * The order of this array may not be preserved if it contains a mix of
-     * indexed and unindexed values.
+     * The order of values in an array is preserved as long as all values have
+     * identical settings for 'exclude_from_indexes'.
      * </pre>
      *
      * <code>repeated .google.datastore.v1.Value values = 1;</code>
@@ -864,8 +864,8 @@ public final class ArrayValue extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Values in the array.
-     * The order of this array may not be preserved if it contains a mix of
-     * indexed and unindexed values.
+     * The order of values in an array is preserved as long as all values have
+     * identical settings for 'exclude_from_indexes'.
      * </pre>
      *
      * <code>repeated .google.datastore.v1.Value values = 1;</code>
@@ -879,8 +879,8 @@ public final class ArrayValue extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Values in the array.
-     * The order of this array may not be preserved if it contains a mix of
-     * indexed and unindexed values.
+     * The order of values in an array is preserved as long as all values have
+     * identical settings for 'exclude_from_indexes'.
      * </pre>
      *
      * <code>repeated .google.datastore.v1.Value values = 1;</code>
