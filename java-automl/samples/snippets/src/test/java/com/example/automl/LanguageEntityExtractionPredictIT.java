@@ -86,7 +86,7 @@ public class LanguageEntityExtractionPredictIT {
     String inputUri = String.format("gs://%s/entity_extraction/input.jsonl", BUCKET_ID);
     String outputUri = String.format("gs://%s/TEST_BATCH_PREDICT/", BUCKET_ID);
     // Act
-    LanguageBatchPredict.batchPredict(PROJECT_ID, modelId, inputUri, outputUri);
+    BatchPredict.batchPredict(PROJECT_ID, modelId, inputUri, outputUri);
 
     // Assert
     String got = bout.toString();

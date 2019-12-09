@@ -86,7 +86,7 @@ public class VisionClassificationPredictIT {
     String inputUri = String.format("gs://%s/batch_predict_test.csv", BUCKET_ID);
     String outputUri = String.format("gs://%s/TEST_BATCH_PREDICT/", BUCKET_ID);
     // Act
-    VisionBatchPredict.batchPredict(PROJECT_ID, modelId, inputUri, outputUri);
+    BatchPredict.batchPredict(PROJECT_ID, modelId, inputUri, outputUri);
 
     // Assert
     String got = bout.toString();
