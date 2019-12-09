@@ -15,14 +15,12 @@
  */
 
 // DO NOT MODIFY! THIS FILE IS AUTO-GENERATED.
-// This file is auto-generated on 12 Nov 19 21:41 UTC.
+// This file is auto-generated on 03 Dec 19 00:46 UTC.
 
 package com.google.cloud.monitoring.v3;
 
-import com.google.api.*;
 import com.google.api.gax.rpc.PermissionDeniedException;
 import com.google.monitoring.v3.*;
-import com.google.protobuf.*;
 import java.util.ArrayList;
 import java.util.concurrent.Callable;
 import java.util.logging.Level;
@@ -944,6 +942,354 @@ public class ITVPCServiceControlTest {
                 UpdateNotificationChannelRequest.newBuilder()
                     .setNotificationChannel(
                         NotificationChannel.newBuilder().setName(nameOutside.toString()).build())
+                    .build());
+            return null;
+          }
+        };
+    try {
+      doTest(delayedInside, delayedOutside);
+    } finally {
+      client.close();
+    }
+  }
+
+  @Test
+  @SuppressWarnings("all")
+  public void createServiceTest() throws Exception {
+    final ServiceMonitoringServiceClient client = ServiceMonitoringServiceClient.create();
+    Callable<Object> delayedInside =
+        new Callable() {
+          public Object call() throws Exception {
+            ProjectName nameInside = ProjectName.of(PROJECT_INSIDE);
+            logger.log(Level.INFO, "createServiceTest: requesting {0}", nameInside);
+            client.createService(
+                CreateServiceRequest.newBuilder().setParent(nameInside.toString()).build());
+            return null;
+          }
+        };
+    Callable<Object> delayedOutside =
+        new Callable() {
+          public Object call() throws Exception {
+            ProjectName nameOutside = ProjectName.of(PROJECT_OUTSIDE);
+            logger.log(Level.INFO, "createServiceTest: requesting {0}", nameOutside);
+            client.createService(
+                CreateServiceRequest.newBuilder().setParent(nameOutside.toString()).build());
+            return null;
+          }
+        };
+    try {
+      doTest(delayedInside, delayedOutside);
+    } finally {
+      client.close();
+    }
+  }
+
+  @Test
+  @SuppressWarnings("all")
+  public void createServiceLevelObjectiveTest() throws Exception {
+    final ServiceMonitoringServiceClient client = ServiceMonitoringServiceClient.create();
+    Callable<Object> delayedInside =
+        new Callable() {
+          public Object call() throws Exception {
+            ServiceName nameInside = ServiceName.of(PROJECT_INSIDE, "MockService");
+            logger.log(Level.INFO, "createServiceLevelObjectiveTest: requesting {0}", nameInside);
+            client.createServiceLevelObjective(
+                CreateServiceLevelObjectiveRequest.newBuilder()
+                    .setParent(nameInside.toString())
+                    .build());
+            return null;
+          }
+        };
+    Callable<Object> delayedOutside =
+        new Callable() {
+          public Object call() throws Exception {
+            ServiceName nameOutside = ServiceName.of(PROJECT_OUTSIDE, "MockService");
+            logger.log(Level.INFO, "createServiceLevelObjectiveTest: requesting {0}", nameOutside);
+            client.createServiceLevelObjective(
+                CreateServiceLevelObjectiveRequest.newBuilder()
+                    .setParent(nameOutside.toString())
+                    .build());
+            return null;
+          }
+        };
+    try {
+      doTest(delayedInside, delayedOutside);
+    } finally {
+      client.close();
+    }
+  }
+
+  @Test
+  @SuppressWarnings("all")
+  public void deleteServiceTest() throws Exception {
+    final ServiceMonitoringServiceClient client = ServiceMonitoringServiceClient.create();
+    Callable<Object> delayedInside =
+        new Callable() {
+          public Object call() throws Exception {
+            ServiceName nameInside = ServiceName.of(PROJECT_INSIDE, "MockService");
+            logger.log(Level.INFO, "deleteServiceTest: requesting {0}", nameInside);
+            client.deleteService(
+                DeleteServiceRequest.newBuilder().setName(nameInside.toString()).build());
+            return null;
+          }
+        };
+    Callable<Object> delayedOutside =
+        new Callable() {
+          public Object call() throws Exception {
+            ServiceName nameOutside = ServiceName.of(PROJECT_OUTSIDE, "MockService");
+            logger.log(Level.INFO, "deleteServiceTest: requesting {0}", nameOutside);
+            client.deleteService(
+                DeleteServiceRequest.newBuilder().setName(nameOutside.toString()).build());
+            return null;
+          }
+        };
+    try {
+      doTest(delayedInside, delayedOutside);
+    } finally {
+      client.close();
+    }
+  }
+
+  @Test
+  @SuppressWarnings("all")
+  public void deleteServiceLevelObjectiveTest() throws Exception {
+    final ServiceMonitoringServiceClient client = ServiceMonitoringServiceClient.create();
+    Callable<Object> delayedInside =
+        new Callable() {
+          public Object call() throws Exception {
+            ServiceLevelObjectiveName nameInside =
+                ServiceLevelObjectiveName.of(
+                    PROJECT_INSIDE, "MockService", "MockServiceLevelObjective");
+            logger.log(Level.INFO, "deleteServiceLevelObjectiveTest: requesting {0}", nameInside);
+            client.deleteServiceLevelObjective(
+                DeleteServiceLevelObjectiveRequest.newBuilder()
+                    .setName(nameInside.toString())
+                    .build());
+            return null;
+          }
+        };
+    Callable<Object> delayedOutside =
+        new Callable() {
+          public Object call() throws Exception {
+            ServiceLevelObjectiveName nameOutside =
+                ServiceLevelObjectiveName.of(
+                    PROJECT_OUTSIDE, "MockService", "MockServiceLevelObjective");
+            logger.log(Level.INFO, "deleteServiceLevelObjectiveTest: requesting {0}", nameOutside);
+            client.deleteServiceLevelObjective(
+                DeleteServiceLevelObjectiveRequest.newBuilder()
+                    .setName(nameOutside.toString())
+                    .build());
+            return null;
+          }
+        };
+    try {
+      doTest(delayedInside, delayedOutside);
+    } finally {
+      client.close();
+    }
+  }
+
+  @Test
+  @SuppressWarnings("all")
+  public void getServiceTest() throws Exception {
+    final ServiceMonitoringServiceClient client = ServiceMonitoringServiceClient.create();
+    Callable<Object> delayedInside =
+        new Callable() {
+          public Object call() throws Exception {
+            ServiceName nameInside = ServiceName.of(PROJECT_INSIDE, "MockService");
+            logger.log(Level.INFO, "getServiceTest: requesting {0}", nameInside);
+            client.getService(
+                GetServiceRequest.newBuilder().setName(nameInside.toString()).build());
+            return null;
+          }
+        };
+    Callable<Object> delayedOutside =
+        new Callable() {
+          public Object call() throws Exception {
+            ServiceName nameOutside = ServiceName.of(PROJECT_OUTSIDE, "MockService");
+            logger.log(Level.INFO, "getServiceTest: requesting {0}", nameOutside);
+            client.getService(
+                GetServiceRequest.newBuilder().setName(nameOutside.toString()).build());
+            return null;
+          }
+        };
+    try {
+      doTest(delayedInside, delayedOutside);
+    } finally {
+      client.close();
+    }
+  }
+
+  @Test
+  @SuppressWarnings("all")
+  public void getServiceLevelObjectiveTest() throws Exception {
+    final ServiceMonitoringServiceClient client = ServiceMonitoringServiceClient.create();
+    Callable<Object> delayedInside =
+        new Callable() {
+          public Object call() throws Exception {
+            ServiceLevelObjectiveName nameInside =
+                ServiceLevelObjectiveName.of(
+                    PROJECT_INSIDE, "MockService", "MockServiceLevelObjective");
+            logger.log(Level.INFO, "getServiceLevelObjectiveTest: requesting {0}", nameInside);
+            client.getServiceLevelObjective(
+                GetServiceLevelObjectiveRequest.newBuilder()
+                    .setName(nameInside.toString())
+                    .build());
+            return null;
+          }
+        };
+    Callable<Object> delayedOutside =
+        new Callable() {
+          public Object call() throws Exception {
+            ServiceLevelObjectiveName nameOutside =
+                ServiceLevelObjectiveName.of(
+                    PROJECT_OUTSIDE, "MockService", "MockServiceLevelObjective");
+            logger.log(Level.INFO, "getServiceLevelObjectiveTest: requesting {0}", nameOutside);
+            client.getServiceLevelObjective(
+                GetServiceLevelObjectiveRequest.newBuilder()
+                    .setName(nameOutside.toString())
+                    .build());
+            return null;
+          }
+        };
+    try {
+      doTest(delayedInside, delayedOutside);
+    } finally {
+      client.close();
+    }
+  }
+
+  @Test
+  @SuppressWarnings("all")
+  public void listServiceLevelObjectivesTest() throws Exception {
+    final ServiceMonitoringServiceClient client = ServiceMonitoringServiceClient.create();
+    Callable<Object> delayedInside =
+        new Callable() {
+          public Object call() throws Exception {
+            ServiceName nameInside = ServiceName.of(PROJECT_INSIDE, "MockService");
+            logger.log(Level.INFO, "listServiceLevelObjectivesTest: requesting {0}", nameInside);
+            client.listServiceLevelObjectives(
+                ListServiceLevelObjectivesRequest.newBuilder()
+                    .setParent(nameInside.toString())
+                    .build());
+            return null;
+          }
+        };
+    Callable<Object> delayedOutside =
+        new Callable() {
+          public Object call() throws Exception {
+            ServiceName nameOutside = ServiceName.of(PROJECT_OUTSIDE, "MockService");
+            logger.log(Level.INFO, "listServiceLevelObjectivesTest: requesting {0}", nameOutside);
+            client.listServiceLevelObjectives(
+                ListServiceLevelObjectivesRequest.newBuilder()
+                    .setParent(nameOutside.toString())
+                    .build());
+            return null;
+          }
+        };
+    try {
+      doTest(delayedInside, delayedOutside);
+    } finally {
+      client.close();
+    }
+  }
+
+  @Test
+  @SuppressWarnings("all")
+  public void listServicesTest() throws Exception {
+    final ServiceMonitoringServiceClient client = ServiceMonitoringServiceClient.create();
+    Callable<Object> delayedInside =
+        new Callable() {
+          public Object call() throws Exception {
+            ProjectName nameInside = ProjectName.of(PROJECT_INSIDE);
+            logger.log(Level.INFO, "listServicesTest: requesting {0}", nameInside);
+            client.listServices(
+                ListServicesRequest.newBuilder().setParent(nameInside.toString()).build());
+            return null;
+          }
+        };
+    Callable<Object> delayedOutside =
+        new Callable() {
+          public Object call() throws Exception {
+            ProjectName nameOutside = ProjectName.of(PROJECT_OUTSIDE);
+            logger.log(Level.INFO, "listServicesTest: requesting {0}", nameOutside);
+            client.listServices(
+                ListServicesRequest.newBuilder().setParent(nameOutside.toString()).build());
+            return null;
+          }
+        };
+    try {
+      doTest(delayedInside, delayedOutside);
+    } finally {
+      client.close();
+    }
+  }
+
+  @Test
+  @SuppressWarnings("all")
+  public void updateServiceTest() throws Exception {
+    final ServiceMonitoringServiceClient client = ServiceMonitoringServiceClient.create();
+    Callable<Object> delayedInside =
+        new Callable() {
+          public Object call() throws Exception {
+            ServiceName nameInside = ServiceName.of(PROJECT_INSIDE, "MockService");
+            logger.log(Level.INFO, "updateServiceTest: requesting {0}", nameInside);
+            client.updateService(
+                UpdateServiceRequest.newBuilder()
+                    .setService(Service.newBuilder().setName(nameInside.toString()).build())
+                    .build());
+            return null;
+          }
+        };
+    Callable<Object> delayedOutside =
+        new Callable() {
+          public Object call() throws Exception {
+            ServiceName nameOutside = ServiceName.of(PROJECT_OUTSIDE, "MockService");
+            logger.log(Level.INFO, "updateServiceTest: requesting {0}", nameOutside);
+            client.updateService(
+                UpdateServiceRequest.newBuilder()
+                    .setService(Service.newBuilder().setName(nameOutside.toString()).build())
+                    .build());
+            return null;
+          }
+        };
+    try {
+      doTest(delayedInside, delayedOutside);
+    } finally {
+      client.close();
+    }
+  }
+
+  @Test
+  @SuppressWarnings("all")
+  public void updateServiceLevelObjectiveTest() throws Exception {
+    final ServiceMonitoringServiceClient client = ServiceMonitoringServiceClient.create();
+    Callable<Object> delayedInside =
+        new Callable() {
+          public Object call() throws Exception {
+            ServiceLevelObjectiveName nameInside =
+                ServiceLevelObjectiveName.of(
+                    PROJECT_INSIDE, "MockService", "MockServiceLevelObjective");
+            logger.log(Level.INFO, "updateServiceLevelObjectiveTest: requesting {0}", nameInside);
+            client.updateServiceLevelObjective(
+                UpdateServiceLevelObjectiveRequest.newBuilder()
+                    .setServiceLevelObjective(
+                        ServiceLevelObjective.newBuilder().setName(nameInside.toString()).build())
+                    .build());
+            return null;
+          }
+        };
+    Callable<Object> delayedOutside =
+        new Callable() {
+          public Object call() throws Exception {
+            ServiceLevelObjectiveName nameOutside =
+                ServiceLevelObjectiveName.of(
+                    PROJECT_OUTSIDE, "MockService", "MockServiceLevelObjective");
+            logger.log(Level.INFO, "updateServiceLevelObjectiveTest: requesting {0}", nameOutside);
+            client.updateServiceLevelObjective(
+                UpdateServiceLevelObjectiveRequest.newBuilder()
+                    .setServiceLevelObjective(
+                        ServiceLevelObjective.newBuilder().setName(nameOutside.toString()).build())
                     .build());
             return null;
           }
