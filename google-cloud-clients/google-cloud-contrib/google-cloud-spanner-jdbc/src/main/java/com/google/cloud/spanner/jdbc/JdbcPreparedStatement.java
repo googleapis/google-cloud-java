@@ -16,6 +16,7 @@
 
 package com.google.cloud.spanner.jdbc;
 
+import com.google.cloud.spanner.Options.QueryOption;
 import com.google.cloud.spanner.Statement;
 import com.google.cloud.spanner.jdbc.JdbcParameterStore.ParametersInfo;
 import java.sql.PreparedStatement;
@@ -53,6 +54,11 @@ class JdbcPreparedStatement extends AbstractJdbcPreparedStatement {
   public ResultSet executeQuery() throws SQLException {
     checkClosed();
     return executeQuery(createStatement());
+  }
+
+  ResultSet executeQueryWithOptions(QueryOption... options) throws SQLException {
+    checkClosed();
+    return executeQuery(createStatement(), options);
   }
 
   @Override

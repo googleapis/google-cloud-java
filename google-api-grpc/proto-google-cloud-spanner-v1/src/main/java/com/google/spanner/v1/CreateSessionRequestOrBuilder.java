@@ -15,7 +15,9 @@ public interface CreateSessionRequestOrBuilder
    * Required. The database in which the new session is created.
    * </pre>
    *
-   * <code>string database = 1;</code>
+   * <code>
+   * string database = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    */
   java.lang.String getDatabase();
   /**
@@ -25,7 +27,9 @@ public interface CreateSessionRequestOrBuilder
    * Required. The database in which the new session is created.
    * </pre>
    *
-   * <code>string database = 1;</code>
+   * <code>
+   * string database = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    */
   com.google.protobuf.ByteString getDatabaseBytes();
 

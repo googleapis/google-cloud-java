@@ -23,12 +23,13 @@ import com.google.cloud.spanner.ResultSets;
 import com.google.cloud.spanner.Struct;
 import com.google.cloud.spanner.Type;
 import com.google.cloud.spanner.Type.StructField;
+import com.google.cloud.spanner.jdbc.ConnectionImpl.InternalMetadataQuery;
+import com.google.common.annotations.VisibleForTesting;
 import java.io.BufferedReader;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.sql.Connection;
 import java.sql.DatabaseMetaData;
-import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.RowIdLifetime;
 import java.sql.SQLException;
@@ -45,8 +46,9 @@ class JdbcDatabaseMetaData extends AbstractJdbcWrapper implements DatabaseMetaDa
   private static final int DATABASE_MINOR_VERSION = 0;
   private static final String PRODUCT_NAME = "Google Cloud Spanner";
 
-  private String readSqlFromFile(String filename) {
-    InputStream in = getClass().getResourceAsStream(filename);
+  @VisibleForTesting
+  static String readSqlFromFile(String filename) {
+    InputStream in = JdbcDatabaseMetaData.class.getResourceAsStream(filename);
     BufferedReader reader = new BufferedReader(new InputStreamReader(in));
     StringBuilder builder = new StringBuilder();
     try (Scanner scanner = new Scanner(reader)) {
@@ -721,9 +723,9 @@ class JdbcDatabaseMetaData extends AbstractJdbcWrapper implements DatabaseMetaDa
             Collections.<Struct>emptyList()));
   }
 
-  private PreparedStatement prepareStatementReplaceNullWithAnyString(String sql, String... params)
-      throws SQLException {
-    PreparedStatement statement = connection.prepareStatement(sql);
+  private JdbcPreparedStatement prepareStatementReplaceNullWithAnyString(
+      String sql, String... params) throws SQLException {
+    JdbcPreparedStatement statement = connection.prepareStatement(sql);
     int paramIndex = 1;
     for (String param : params) {
       if (param == null) {
@@ -753,10 +755,10 @@ class JdbcDatabaseMetaData extends AbstractJdbcWrapper implements DatabaseMetaDa
       type1 = types[0];
       type2 = types[1];
     }
-    PreparedStatement statement =
+    JdbcPreparedStatement statement =
         prepareStatementReplaceNullWithAnyString(
             sql, catalog, schemaPattern, tableNamePattern, type1, type2);
-    return statement.executeQuery();
+    return statement.executeQueryWithOptions(InternalMetadataQuery.INSTANCE);
   }
 
   @Override
@@ -787,10 +789,10 @@ class JdbcDatabaseMetaData extends AbstractJdbcWrapper implements DatabaseMetaDa
       String catalog, String schemaPattern, String tableNamePattern, String columnNamePattern)
       throws SQLException {
     String sql = readSqlFromFile("DatabaseMetaData_GetColumns.sql");
-    PreparedStatement statement =
+    JdbcPreparedStatement statement =
         prepareStatementReplaceNullWithAnyString(
             sql, catalog, schemaPattern, tableNamePattern, columnNamePattern);
-    return statement.executeQuery();
+    return statement.executeQueryWithOptions(InternalMetadataQuery.INSTANCE);
   }
 
   @Override
@@ -865,9 +867,9 @@ class JdbcDatabaseMetaData extends AbstractJdbcWrapper implements DatabaseMetaDa
   public ResultSet getPrimaryKeys(String catalog, String schema, String table) throws SQLException {
     JdbcPreconditions.checkArgument(table != null, "table may not be null");
     String sql = readSqlFromFile("DatabaseMetaData_GetPrimaryKeys.sql");
-    PreparedStatement statement =
+    JdbcPreparedStatement statement =
         prepareStatementReplaceNullWithAnyString(sql, catalog, schema, table);
-    return statement.executeQuery();
+    return statement.executeQueryWithOptions(InternalMetadataQuery.INSTANCE);
   }
 
   @Override
@@ -875,9 +877,9 @@ class JdbcDatabaseMetaData extends AbstractJdbcWrapper implements DatabaseMetaDa
       throws SQLException {
     JdbcPreconditions.checkArgument(table != null, "table may not be null");
     String sql = readSqlFromFile("DatabaseMetaData_GetImportedKeys.sql");
-    PreparedStatement statement =
+    JdbcPreparedStatement statement =
         prepareStatementReplaceNullWithAnyString(sql, catalog, schema, table);
-    return statement.executeQuery();
+    return statement.executeQueryWithOptions(InternalMetadataQuery.INSTANCE);
   }
 
   @Override
@@ -885,9 +887,9 @@ class JdbcDatabaseMetaData extends AbstractJdbcWrapper implements DatabaseMetaDa
       throws SQLException {
     JdbcPreconditions.checkArgument(table != null, "table may not be null");
     String sql = readSqlFromFile("DatabaseMetaData_GetExportedKeys.sql");
-    PreparedStatement statement =
+    JdbcPreparedStatement statement =
         prepareStatementReplaceNullWithAnyString(sql, catalog, schema, table);
-    return statement.executeQuery();
+    return statement.executeQueryWithOptions(InternalMetadataQuery.INSTANCE);
   }
 
   @Override
@@ -900,7 +902,7 @@ class JdbcDatabaseMetaData extends AbstractJdbcWrapper implements DatabaseMetaDa
       String foreignTable)
       throws SQLException {
     String sql = readSqlFromFile("DatabaseMetaData_GetCrossReferences.sql");
-    PreparedStatement statement =
+    JdbcPreparedStatement statement =
         prepareStatementReplaceNullWithAnyString(
             sql,
             parentCatalog,
@@ -909,7 +911,7 @@ class JdbcDatabaseMetaData extends AbstractJdbcWrapper implements DatabaseMetaDa
             foreignCatalog,
             foreignSchema,
             foreignTable);
-    return statement.executeQuery();
+    return statement.executeQueryWithOptions(InternalMetadataQuery.INSTANCE);
   }
 
   @Override
@@ -1220,10 +1222,10 @@ class JdbcDatabaseMetaData extends AbstractJdbcWrapper implements DatabaseMetaDa
       String catalog, String schema, String table, String indexName, boolean unique)
       throws SQLException {
     String sql = readSqlFromFile("DatabaseMetaData_GetIndexInfo.sql");
-    PreparedStatement statement =
+    JdbcPreparedStatement statement =
         prepareStatementReplaceNullWithAnyString(
             sql, catalog, schema, table, indexName, unique ? "YES" : "%");
-    return statement.executeQuery();
+    return statement.executeQueryWithOptions(InternalMetadataQuery.INSTANCE);
   }
 
   @Override
@@ -1440,9 +1442,9 @@ class JdbcDatabaseMetaData extends AbstractJdbcWrapper implements DatabaseMetaDa
   @Override
   public ResultSet getSchemas(String catalog, String schemaPattern) throws SQLException {
     String sql = readSqlFromFile("DatabaseMetaData_GetSchemas.sql");
-    PreparedStatement statement =
+    JdbcPreparedStatement statement =
         prepareStatementReplaceNullWithAnyString(sql, catalog, schemaPattern);
-    return statement.executeQuery();
+    return statement.executeQueryWithOptions(InternalMetadataQuery.INSTANCE);
   }
 
   @Override

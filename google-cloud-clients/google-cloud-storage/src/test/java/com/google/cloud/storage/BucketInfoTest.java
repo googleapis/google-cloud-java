@@ -39,6 +39,7 @@ import com.google.cloud.storage.BucketInfo.RawDeleteRule;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
 import java.util.Collections;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import org.junit.Test;
@@ -68,8 +69,8 @@ public class BucketInfoTest {
   private static final String INDEX_PAGE = "index.html";
   private static final BucketInfo.IamConfiguration IAM_CONFIGURATION =
       BucketInfo.IamConfiguration.newBuilder()
-          .setIsBucketPolicyOnlyEnabled(true)
-          .setBucketPolicyOnlyLockedTime(System.currentTimeMillis())
+          .setIsUniformBucketLevelAccessEnabled(true)
+          .setUniformBucketLevelAccessLockedTime(System.currentTimeMillis())
           .build();
   private static final BucketInfo.Logging LOGGING =
       BucketInfo.Logging.newBuilder()
@@ -82,7 +83,16 @@ public class BucketInfoTest {
   private static final String DEFAULT_KMS_KEY_NAME =
       "projects/p/locations/kr-loc/keyRings/kr/cryptoKeys/key";
   private static final Boolean VERSIONING_ENABLED = true;
-  private static final Map<String, String> BUCKET_LABELS = ImmutableMap.of("label1", "value1");
+  private static final Map<String, String> BUCKET_LABELS;
+
+  static {
+    BUCKET_LABELS = new HashMap<>();
+    BUCKET_LABELS.put("label1", "value1");
+    BUCKET_LABELS.put("label2", null);
+  }
+
+  private static final Map<String, String> BUCKET_LABELS_TARGET =
+      ImmutableMap.of("label1", "value1", "label2", "");
   private static final Boolean REQUESTER_PAYS = true;
   private static final Boolean DEFAULT_EVENT_BASED_HOLD = true;
   private static final Long RETENTION_EFFECTIVE_TIME = 10L;
@@ -163,7 +173,7 @@ public class BucketInfoTest {
     assertEquals(STORAGE_CLASS, BUCKET_INFO.getStorageClass());
     assertEquals(DEFAULT_KMS_KEY_NAME, BUCKET_INFO.getDefaultKmsKeyName());
     assertEquals(VERSIONING_ENABLED, BUCKET_INFO.versioningEnabled());
-    assertEquals(BUCKET_LABELS, BUCKET_INFO.getLabels());
+    assertEquals(BUCKET_LABELS_TARGET, BUCKET_INFO.getLabels());
     assertEquals(REQUESTER_PAYS, BUCKET_INFO.requesterPays());
     assertEquals(DEFAULT_EVENT_BASED_HOLD, BUCKET_INFO.getDefaultEventBasedHold());
     assertEquals(RETENTION_EFFECTIVE_TIME, BUCKET_INFO.getRetentionEffectiveTime());
@@ -272,13 +282,13 @@ public class BucketInfoTest {
   public void testIamConfiguration() {
     Bucket.IamConfiguration iamConfiguration =
         BucketInfo.IamConfiguration.newBuilder()
-            .setIsBucketPolicyOnlyEnabled(true)
-            .setBucketPolicyOnlyLockedTime(System.currentTimeMillis())
+            .setIsUniformBucketLevelAccessEnabled(true)
+            .setUniformBucketLevelAccessLockedTime(System.currentTimeMillis())
             .build()
             .toPb();
 
-    assertEquals(Boolean.TRUE, iamConfiguration.getBucketPolicyOnly().getEnabled());
-    assertNotNull(iamConfiguration.getBucketPolicyOnly().getLockedTime());
+    assertEquals(Boolean.TRUE, iamConfiguration.getUniformBucketLevelAccess().getEnabled());
+    assertNotNull(iamConfiguration.getUniformBucketLevelAccess().getLockedTime());
   }
 
   @Test

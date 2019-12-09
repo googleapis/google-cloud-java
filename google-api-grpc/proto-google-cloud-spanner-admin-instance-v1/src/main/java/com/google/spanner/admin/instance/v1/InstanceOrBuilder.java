@@ -15,7 +15,7 @@ public interface InstanceOrBuilder
    * Required. A unique identifier for the instance, which cannot be changed
    * after the instance is created. Values are of the form
    * `projects/&lt;project&gt;/instances/[a-z][-a-z0-9]*[a-z0-9]`. The final
-   * segment of the name must be between 6 and 30 characters in length.
+   * segment of the name must be between 2 and 64 characters in length.
    * </pre>
    *
    * <code>string name = 1;</code>
@@ -28,7 +28,7 @@ public interface InstanceOrBuilder
    * Required. A unique identifier for the instance, which cannot be changed
    * after the instance is created. Values are of the form
    * `projects/&lt;project&gt;/instances/[a-z][-a-z0-9]*[a-z0-9]`. The final
-   * segment of the name must be between 6 and 30 characters in length.
+   * segment of the name must be between 2 and 64 characters in length.
    * </pre>
    *
    * <code>string name = 1;</code>
@@ -45,7 +45,7 @@ public interface InstanceOrBuilder
    * [ListInstanceConfigs][google.spanner.admin.instance.v1.InstanceAdmin.ListInstanceConfigs].
    * </pre>
    *
-   * <code>string config = 2;</code>
+   * <code>string config = 2 [(.google.api.resource_reference) = { ... }</code>
    */
   java.lang.String getConfig();
   /**
@@ -58,7 +58,7 @@ public interface InstanceOrBuilder
    * [ListInstanceConfigs][google.spanner.admin.instance.v1.InstanceAdmin.ListInstanceConfigs].
    * </pre>
    *
-   * <code>string config = 2;</code>
+   * <code>string config = 2 [(.google.api.resource_reference) = { ... }</code>
    */
   com.google.protobuf.ByteString getConfigBytes();
 
@@ -105,10 +105,10 @@ public interface InstanceOrBuilder
    *
    * <pre>
    * Output only. The current instance state. For
-   * [CreateInstance][google.spanner.admin.instance.v1.InstanceAdmin.CreateInstance],
-   * the state must be either omitted or set to `CREATING`. For
-   * [UpdateInstance][google.spanner.admin.instance.v1.InstanceAdmin.UpdateInstance],
-   * the state must be either omitted or set to `READY`.
+   * [CreateInstance][google.spanner.admin.instance.v1.InstanceAdmin.CreateInstance], the state must be
+   * either omitted or set to `CREATING`. For
+   * [UpdateInstance][google.spanner.admin.instance.v1.InstanceAdmin.UpdateInstance], the state must be
+   * either omitted or set to `READY`.
    * </pre>
    *
    * <code>.google.spanner.admin.instance.v1.Instance.State state = 6;</code>
@@ -119,10 +119,10 @@ public interface InstanceOrBuilder
    *
    * <pre>
    * Output only. The current instance state. For
-   * [CreateInstance][google.spanner.admin.instance.v1.InstanceAdmin.CreateInstance],
-   * the state must be either omitted or set to `CREATING`. For
-   * [UpdateInstance][google.spanner.admin.instance.v1.InstanceAdmin.UpdateInstance],
-   * the state must be either omitted or set to `READY`.
+   * [CreateInstance][google.spanner.admin.instance.v1.InstanceAdmin.CreateInstance], the state must be
+   * either omitted or set to `CREATING`. For
+   * [UpdateInstance][google.spanner.admin.instance.v1.InstanceAdmin.UpdateInstance], the state must be
+   * either omitted or set to `READY`.
    * </pre>
    *
    * <code>.google.spanner.admin.instance.v1.Instance.State state = 6;</code>
@@ -267,4 +267,73 @@ public interface InstanceOrBuilder
    * <code>map&lt;string, string&gt; labels = 7;</code>
    */
   java.lang.String getLabelsOrThrow(java.lang.String key);
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The endpoint URIs based on the instance config.
+   * For example, instances located in a specific cloud region (or multi region)
+   * such as nam3, would have a nam3 specific endpoint URI.
+   * This URI is to be used implictly by SDK clients, with fallback to default
+   * URI. These endpoints are intended to optimize the network routing between
+   * the client and the instance's serving resources.
+   * If multiple endpoints are present, client may establish connections using
+   * any of the given URIs.
+   * </pre>
+   *
+   * <code>repeated string endpoint_uris = 8;</code>
+   */
+  java.util.List<java.lang.String> getEndpointUrisList();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The endpoint URIs based on the instance config.
+   * For example, instances located in a specific cloud region (or multi region)
+   * such as nam3, would have a nam3 specific endpoint URI.
+   * This URI is to be used implictly by SDK clients, with fallback to default
+   * URI. These endpoints are intended to optimize the network routing between
+   * the client and the instance's serving resources.
+   * If multiple endpoints are present, client may establish connections using
+   * any of the given URIs.
+   * </pre>
+   *
+   * <code>repeated string endpoint_uris = 8;</code>
+   */
+  int getEndpointUrisCount();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The endpoint URIs based on the instance config.
+   * For example, instances located in a specific cloud region (or multi region)
+   * such as nam3, would have a nam3 specific endpoint URI.
+   * This URI is to be used implictly by SDK clients, with fallback to default
+   * URI. These endpoints are intended to optimize the network routing between
+   * the client and the instance's serving resources.
+   * If multiple endpoints are present, client may establish connections using
+   * any of the given URIs.
+   * </pre>
+   *
+   * <code>repeated string endpoint_uris = 8;</code>
+   */
+  java.lang.String getEndpointUris(int index);
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The endpoint URIs based on the instance config.
+   * For example, instances located in a specific cloud region (or multi region)
+   * such as nam3, would have a nam3 specific endpoint URI.
+   * This URI is to be used implictly by SDK clients, with fallback to default
+   * URI. These endpoints are intended to optimize the network routing between
+   * the client and the instance's serving resources.
+   * If multiple endpoints are present, client may establish connections using
+   * any of the given URIs.
+   * </pre>
+   *
+   * <code>repeated string endpoint_uris = 8;</code>
+   */
+  com.google.protobuf.ByteString getEndpointUrisBytes(int index);
 }

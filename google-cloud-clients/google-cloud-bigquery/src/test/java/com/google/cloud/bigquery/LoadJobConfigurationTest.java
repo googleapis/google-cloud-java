@@ -63,6 +63,10 @@ public class LoadJobConfigurationTest {
   private static final Map<String, String> LABELS =
       ImmutableMap.of("test-job-name", "test-load-job");
   private static final Long TIMEOUT = 10L;
+  private static final RangePartitioning.Range RANGE =
+      RangePartitioning.Range.newBuilder().setStart(1L).setInterval(2L).setEnd(10L).build();
+  private static final RangePartitioning RANGE_PARTITIONING =
+      RangePartitioning.newBuilder().setField("IntegerField").setRange(RANGE).build();
   private static final LoadJobConfiguration LOAD_CONFIGURATION_CSV =
       LoadJobConfiguration.newBuilder(TABLE_ID, SOURCE_URIS)
           .setCreateDisposition(CREATE_DISPOSITION)
@@ -78,7 +82,9 @@ public class LoadJobConfigurationTest {
           .setClustering(CLUSTERING)
           .setLabels(LABELS)
           .setJobTimeoutMs(TIMEOUT)
+          .setRangePartitioning(RANGE_PARTITIONING)
           .build();
+
   private static final DatastoreBackupOptions BACKUP_OPTIONS =
       DatastoreBackupOptions.newBuilder()
           .setProjectionFields(ImmutableList.of("field_1", "field_2"))
@@ -95,6 +101,7 @@ public class LoadJobConfigurationTest {
           .setAutodetect(AUTODETECT)
           .setLabels(LABELS)
           .setJobTimeoutMs(TIMEOUT)
+          .setRangePartitioning(RANGE_PARTITIONING)
           .build();
   private static final LoadJobConfiguration LOAD_CONFIGURATION_AVRO =
       LoadJobConfiguration.newBuilder(TABLE_ID, SOURCE_URIS)
@@ -112,6 +119,7 @@ public class LoadJobConfigurationTest {
           .setUseAvroLogicalTypes(USERAVROLOGICALTYPES)
           .setLabels(LABELS)
           .setJobTimeoutMs(TIMEOUT)
+          .setRangePartitioning(RANGE_PARTITIONING)
           .build();
 
   @Test
@@ -229,5 +237,6 @@ public class LoadJobConfigurationTest {
     assertEquals(expected.getUseAvroLogicalTypes(), value.getUseAvroLogicalTypes());
     assertEquals(expected.getLabels(), value.getLabels());
     assertEquals(expected.getJobTimeoutMs(), value.getJobTimeoutMs());
+    assertEquals(expected.getRangePartitioning(), value.getRangePartitioning());
   }
 }

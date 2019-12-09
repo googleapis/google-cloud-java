@@ -17,6 +17,10 @@
 package com.google.cloud.bigquery;
 
 import static com.google.common.truth.Truth.assertThat;
+import static org.threeten.bp.temporal.ChronoField.HOUR_OF_DAY;
+import static org.threeten.bp.temporal.ChronoField.MINUTE_OF_HOUR;
+import static org.threeten.bp.temporal.ChronoField.NANO_OF_SECOND;
+import static org.threeten.bp.temporal.ChronoField.SECOND_OF_MINUTE;
 
 import com.google.api.services.bigquery.model.QueryParameterType;
 import java.math.BigDecimal;
@@ -24,8 +28,32 @@ import java.text.ParseException;
 import java.util.Date;
 import java.util.List;
 import org.junit.Test;
+import org.threeten.bp.Instant;
+import org.threeten.bp.ZoneOffset;
+import org.threeten.bp.format.DateTimeFormatter;
+import org.threeten.bp.format.DateTimeFormatterBuilder;
+import org.threeten.bp.jdk8.Jdk8Methods;
 
 public class QueryParameterValueTest {
+
+  private static final DateTimeFormatter TIMESTAMPFORMATTER =
+      new DateTimeFormatterBuilder()
+          .parseLenient()
+          .append(DateTimeFormatter.ISO_LOCAL_DATE)
+          .appendLiteral(' ')
+          .appendValue(HOUR_OF_DAY, 2)
+          .appendLiteral(':')
+          .appendValue(MINUTE_OF_HOUR, 2)
+          .optionalStart()
+          .appendLiteral(':')
+          .appendValue(SECOND_OF_MINUTE, 2)
+          .optionalStart()
+          .appendFraction(NANO_OF_SECOND, 6, 9, true)
+          .optionalStart()
+          .appendOffset("+HHMM", "+00:00")
+          .optionalEnd()
+          .toFormatter()
+          .withZone(ZoneOffset.UTC);
 
   @Test
   public void testBool() {
@@ -180,6 +208,18 @@ public class QueryParameterValueTest {
     assertThat(value.getType()).isEqualTo(StandardSQLTypeName.TIMESTAMP);
     assertThat(value.getArrayType()).isNull();
     assertThat(value.getArrayValues()).isNull();
+  }
+
+  @Test
+  public void testTimestampWithFormatter() {
+    long timestampInMicroseconds = 1571068536842L * 1000 + 123;
+    long microseconds = 1_000_000;
+    long secs = Jdk8Methods.floorDiv(timestampInMicroseconds, microseconds);
+    int nano = (int) Jdk8Methods.floorMod(timestampInMicroseconds, microseconds) * 1000;
+    Instant instant = Instant.ofEpochSecond(secs, nano);
+    String expected = TIMESTAMPFORMATTER.format(instant);
+    assertThat(expected)
+        .isEqualTo(QueryParameterValue.timestamp(timestampInMicroseconds).getValue());
   }
 
   @Test

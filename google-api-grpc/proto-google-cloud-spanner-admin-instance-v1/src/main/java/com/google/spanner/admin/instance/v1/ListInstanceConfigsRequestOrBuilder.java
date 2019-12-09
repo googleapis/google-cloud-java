@@ -17,7 +17,9 @@ public interface ListInstanceConfigsRequestOrBuilder
    * `projects/&lt;project&gt;`.
    * </pre>
    *
-   * <code>string parent = 1;</code>
+   * <code>
+   * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    */
   java.lang.String getParent();
   /**
@@ -29,7 +31,9 @@ public interface ListInstanceConfigsRequestOrBuilder
    * `projects/&lt;project&gt;`.
    * </pre>
    *
-   * <code>string parent = 1;</code>
+   * <code>
+   * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    */
   com.google.protobuf.ByteString getParentBytes();
 
@@ -51,8 +55,7 @@ public interface ListInstanceConfigsRequestOrBuilder
    * <pre>
    * If non-empty, `page_token` should contain a
    * [next_page_token][google.spanner.admin.instance.v1.ListInstanceConfigsResponse.next_page_token]
-   * from a previous
-   * [ListInstanceConfigsResponse][google.spanner.admin.instance.v1.ListInstanceConfigsResponse].
+   * from a previous [ListInstanceConfigsResponse][google.spanner.admin.instance.v1.ListInstanceConfigsResponse].
    * </pre>
    *
    * <code>string page_token = 3;</code>
@@ -64,8 +67,7 @@ public interface ListInstanceConfigsRequestOrBuilder
    * <pre>
    * If non-empty, `page_token` should contain a
    * [next_page_token][google.spanner.admin.instance.v1.ListInstanceConfigsResponse.next_page_token]
-   * from a previous
-   * [ListInstanceConfigsResponse][google.spanner.admin.instance.v1.ListInstanceConfigsResponse].
+   * from a previous [ListInstanceConfigsResponse][google.spanner.admin.instance.v1.ListInstanceConfigsResponse].
    * </pre>
    *
    * <code>string page_token = 3;</code>

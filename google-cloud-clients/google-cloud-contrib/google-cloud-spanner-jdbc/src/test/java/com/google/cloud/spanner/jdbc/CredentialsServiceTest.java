@@ -19,19 +19,14 @@ package com.google.cloud.spanner.jdbc;
 import static org.hamcrest.CoreMatchers.equalTo;
 import static org.hamcrest.CoreMatchers.is;
 import static org.junit.Assert.assertThat;
-import static org.mockito.Mockito.mock;
-import static org.mockito.Mockito.when;
+import static org.junit.Assert.fail;
 
 import com.google.auth.oauth2.GoogleCredentials;
 import com.google.auth.oauth2.ServiceAccountCredentials;
+import com.google.cloud.spanner.ErrorCode;
 import com.google.cloud.spanner.SpannerException;
-import com.google.cloud.storage.Blob;
-import com.google.cloud.storage.Storage;
-import com.google.cloud.storage.StorageException;
-import com.google.rpc.Code;
 import java.io.FileInputStream;
 import java.io.IOException;
-import java.io.InputStream;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
@@ -43,35 +38,12 @@ public class CredentialsServiceTest {
       CredentialsServiceTest.class.getResource("test-key.json").getFile();
   private static final String APP_DEFAULT_FILE_TEST_PATH =
       CredentialsServiceTest.class.getResource("test-key-app-default.json").getFile();
-  private static final String CLOUD_FILE_TEST_PATH =
-      CredentialsServiceTest.class.getResource("test-key-cloud-storage.json").getFile();
-  private static final String GS_TEST_PATH = "gs://test-bucket/test-key-cloud-storage.json";
-  private static final String GS_INVALID_TEST_PATH = "gs://test-bucket/non-existing-key.json";
 
   private static final String TEST_PROJECT_ID = "test-project";
   private static final String APP_DEFAULT_PROJECT_ID = "app-default-test-project";
-  private static final String GS_PROJECT_ID = "gs-test-project";
 
   private final CredentialsService service =
       new CredentialsService() {
-        @Override
-        Storage internalCreateStorage() {
-          Storage storage = mock(Storage.class);
-          when(storage.get("test-bucket", "test-key-cloud-storage.json"))
-              .thenReturn(mock(Blob.class));
-          when(storage.get("test-bucket", "non-existing-key.json"))
-              .thenThrow(new StorageException(Code.NOT_FOUND_VALUE, "Unknown blob"));
-          return storage;
-        }
-
-        @Override
-        InputStream internalCreateInputStream(Blob blob) {
-          try {
-            return new FileInputStream(CLOUD_FILE_TEST_PATH);
-          } catch (IOException e) {
-            throw new RuntimeException(e);
-          }
-        }
 
         @Override
         GoogleCredentials internalGetApplicationDefault() throws IOException {
@@ -95,32 +67,19 @@ public class CredentialsServiceTest {
     assertThat(credentials.getProjectId(), is(equalTo(TEST_PROJECT_ID)));
   }
 
-  @Test
-  public void testCreateCredentialsCloudStorage() throws IOException {
-    ServiceAccountCredentials credentials =
-        (ServiceAccountCredentials) service.createCredentials(GS_TEST_PATH);
-    assertThat(credentials.getProjectId(), is(equalTo(GS_PROJECT_ID)));
-  }
-
   @Test(expected = SpannerException.class)
   public void testCreateCredentialsInvalidFile() {
     service.createCredentials("invalid_file_path.json");
   }
 
-  @Test(expected = SpannerException.class)
+  @Test
   public void testCreateCredentialsInvalidCloudStorage() {
-    service.createCredentials(GS_INVALID_TEST_PATH);
-  }
-
-  @Test
-  public void testGetBlob() {
-    assertThat(service.internalGetBlob("gs://test-bucket/test-blob"), is(equalTo("test-blob")));
-    assertThat(service.internalGetBlob("gs://test-bucket/blob-test"), is(equalTo("blob-test")));
-  }
-
-  @Test
-  public void testGetBucket() {
-    assertThat(service.internalGetBucket("gs://test-bucket/test-blob"), is(equalTo("test-bucket")));
-    assertThat(service.internalGetBucket("gs://bucket-test/blob-test"), is(equalTo("bucket-test")));
+    try {
+      service.createCredentials("gs://test-bucket/test-blob");
+      fail("missing expected exception");
+    } catch (SpannerException e) {
+      assertThat(e.getErrorCode(), is(equalTo(ErrorCode.INVALID_ARGUMENT)));
+      assertThat(e.getCause().getMessage(), is(equalTo(CredentialsService.GCS_NOT_SUPPORTED_MSG)));
+    }
   }
 }

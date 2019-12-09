@@ -23,6 +23,7 @@ import static org.threeten.bp.temporal.ChronoField.SECOND_OF_MINUTE;
 
 import com.google.api.services.bigquery.model.QueryParameterType;
 import com.google.auto.value.AutoValue;
+import com.google.cloud.Timestamp;
 import com.google.common.base.Function;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.Lists;
@@ -332,7 +333,9 @@ public abstract class QueryParameterValue implements Serializable {
         throw new IllegalArgumentException("Cannot convert ARRAY to String value");
       case TIMESTAMP:
         if (value instanceof Long) {
-          return timestampFormatter.format(Instant.ofEpochMilli(((Long) value) / 1000));
+          Timestamp timestamp = Timestamp.ofTimeMicroseconds((Long) value);
+          return timestampFormatter.format(
+              Instant.ofEpochSecond(timestamp.getSeconds(), timestamp.getNanos()));
         } else if (value instanceof String) {
           // verify that the String is in the right format
           checkFormat(value, timestampValidator);

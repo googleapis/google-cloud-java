@@ -15,8 +15,10 @@
  */
 package com.google.cloud.bigquery;
 
+import static com.google.common.base.MoreObjects.firstNonNull;
 import static com.google.common.base.Preconditions.checkNotNull;
 
+import com.google.api.client.util.Data;
 import com.google.api.services.bigquery.model.Routine;
 import com.google.common.base.Function;
 import com.google.common.base.MoreObjects;
@@ -59,6 +61,7 @@ public class RoutineInfo implements Serializable {
   private final String etag;
   private final String routineType;
   private final Long creationTime;
+  private final String description;
   private final Long lastModifiedTime;
   private final String language;
   private final List<RoutineArgument> argumentList;
@@ -80,6 +83,9 @@ public class RoutineInfo implements Serializable {
     public abstract Builder setRoutineType(String routineType);
 
     abstract Builder setCreationTime(Long creationMillis);
+
+    /** Sets the description for the routine. */
+    abstract Builder setDescription(String description);
 
     abstract Builder setLastModifiedTime(Long lastModifiedMillis);
 
@@ -140,6 +146,7 @@ public class RoutineInfo implements Serializable {
     private String etag;
     private String routineType;
     private Long creationTime;
+    private String description;
     private Long lastModifiedTime;
     private String language;
     private List<RoutineArgument> argumentList;
@@ -154,6 +161,7 @@ public class RoutineInfo implements Serializable {
       this.etag = routineInfo.etag;
       this.routineType = routineInfo.routineType;
       this.creationTime = routineInfo.creationTime;
+      this.description = routineInfo.description;
       this.lastModifiedTime = routineInfo.lastModifiedTime;
       this.language = routineInfo.language;
       this.argumentList = routineInfo.argumentList;
@@ -167,6 +175,7 @@ public class RoutineInfo implements Serializable {
       this.etag = routinePb.getEtag();
       this.routineType = routinePb.getRoutineType();
       this.creationTime = routinePb.getCreationTime();
+      this.description = routinePb.getDescription();
       this.lastModifiedTime = routinePb.getLastModifiedTime();
       this.language = routinePb.getLanguage();
       if (routinePb.getArguments() != null) {
@@ -205,6 +214,12 @@ public class RoutineInfo implements Serializable {
     @Override
     Builder setCreationTime(Long creationMillis) {
       this.creationTime = creationMillis;
+      return this;
+    }
+
+    @Override
+    public Builder setDescription(String description) {
+      this.description = firstNonNull(description, Data.<String>nullOf(String.class));
       return this;
     }
 
@@ -255,6 +270,7 @@ public class RoutineInfo implements Serializable {
     this.etag = builder.etag;
     this.routineType = builder.routineType;
     this.creationTime = builder.creationTime;
+    this.description = builder.description;
     this.lastModifiedTime = builder.lastModifiedTime;
     this.language = builder.language;
     this.argumentList = builder.argumentList;
@@ -281,6 +297,11 @@ public class RoutineInfo implements Serializable {
   /** Returns the creation time of the routine, represented as milliseconds since the epoch. */
   public Long getCreationTime() {
     return creationTime;
+  }
+
+  /** Returns the description of the routine. */
+  public String getDescription() {
+    return description;
   }
 
   /**
@@ -332,6 +353,7 @@ public class RoutineInfo implements Serializable {
         .add("etag", etag)
         .add("routineType", routineType)
         .add("creationTime", creationTime)
+        .add("description", description)
         .add("lastModifiedTime", lastModifiedTime)
         .add("language", language)
         .add("arguments", argumentList)
@@ -348,6 +370,7 @@ public class RoutineInfo implements Serializable {
         etag,
         routineType,
         creationTime,
+        description,
         lastModifiedTime,
         language,
         argumentList,
@@ -388,6 +411,7 @@ public class RoutineInfo implements Serializable {
             .setRoutineType(getRoutineType())
             .setDefinitionBody(getBody())
             .setCreationTime(getCreationTime())
+            .setDescription(getDescription())
             .setLastModifiedTime(getLastModifiedTime())
             .setLanguage(getLanguage());
     if (getRoutineId() != null) {

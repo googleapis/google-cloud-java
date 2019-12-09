@@ -150,6 +150,12 @@ public abstract class StandardTableDefinition extends TableDefinition {
     public abstract Builder setTimePartitioning(TimePartitioning timePartitioning);
 
     /**
+     * Sets the range partitioning configuration for the table. Only one of timePartitioning and
+     * rangePartitioning should be specified.
+     */
+    public abstract Builder setRangePartitioning(RangePartitioning rangePartitioning);
+
+    /**
      * Set the clustering configuration for the table. If not set, the table is not clustered.
      * Clustering is only available for partitioned tables.
      */
@@ -202,6 +208,13 @@ public abstract class StandardTableDefinition extends TableDefinition {
   public abstract TimePartitioning getTimePartitioning();
 
   /**
+   * Returns the range partitioning configuration for this table. If {@code null}, the table is not
+   * range-partitioned.
+   */
+  @Nullable
+  public abstract RangePartitioning getRangePartitioning();
+
+  /**
    * Returns the clustering configuration for this table. If {@code null}, the table is not
    * clustered.
    */
@@ -240,6 +253,9 @@ public abstract class StandardTableDefinition extends TableDefinition {
     if (getTimePartitioning() != null) {
       tablePb.setTimePartitioning(getTimePartitioning().toPb());
     }
+    if (getRangePartitioning() != null) {
+      tablePb.setRangePartitioning(getRangePartitioning().toPb());
+    }
     if (getClustering() != null) {
       tablePb.setClustering(getClustering().toPb());
     }
@@ -257,6 +273,9 @@ public abstract class StandardTableDefinition extends TableDefinition {
     }
     if (tablePb.getTimePartitioning() != null) {
       builder.setTimePartitioning(TimePartitioning.fromPb(tablePb.getTimePartitioning()));
+    }
+    if (tablePb.getRangePartitioning() != null) {
+      builder.setRangePartitioning(RangePartitioning.fromPb(tablePb.getRangePartitioning()));
     }
     if (tablePb.getClustering() != null) {
       builder.setClustering(Clustering.fromPb(tablePb.getClustering()));

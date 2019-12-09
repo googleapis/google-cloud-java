@@ -12,23 +12,41 @@ Java idiomatic client for [Google Cloud Storage][cloud-storage].
 
 Quickstart
 ----------
+If you are using Maven with Bom, Add this to your pom.xml file.
+```xml
+<dependencyManagement>
+ <dependencies>
+  <dependency>
+    <groupId>com.google.cloud</groupId>
+    <artifactId>libraries-bom</artifactId>
+    <version>3.0.0</version>
+    <type>pom</type>
+    <scope>import</scope>
+   </dependency>
+ </dependencies>
+</dependencyManagement>
 
+<dependency>
+  <groupId>com.google.cloud</groupId>
+  <artifactId>google-cloud-storage</artifactId>
+</dependency>
+```
 [//]: # ({x-version-update-start:google-cloud-storage:released})
-If you are using Maven, add this to your pom.xml file
+If you are using Maven without Bom, Add this to your dependencies.
 ```xml
 <dependency>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-storage</artifactId>
-  <version>1.98.0</version>
+  <version>1.102.0</version>
 </dependency>
 ```
 If you are using Gradle, add this to your dependencies
 ```Groovy
-compile 'com.google.cloud:google-cloud-storage:1.98.0'
+compile 'com.google.cloud:google-cloud-storage:1.102.0'
 ```
 If you are using SBT, add this to your dependencies
 ```Scala
-libraryDependencies += "com.google.cloud" % "google-cloud-storage" % "1.98.0"
+libraryDependencies += "com.google.cloud" % "google-cloud-storage" % "1.102.0"
 ```
 [//]: # ({x-version-update-end})
 

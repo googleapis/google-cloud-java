@@ -45,6 +45,7 @@ public interface BigQueryRpc extends ServiceRpc {
     MAX_CREATION_TIME("maxCreationTime"),
     MAX_RESULTS("maxResults"),
     PAGE_TOKEN("pageToken"),
+    PARENT_JOB_ID("parentJobId"),
     START_INDEX("startIndex"),
     STATE_FILTER("stateFilter"),
     TIMEOUT("timeoutMs");

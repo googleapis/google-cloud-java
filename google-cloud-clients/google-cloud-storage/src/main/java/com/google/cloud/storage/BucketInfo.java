@@ -37,7 +37,7 @@ import com.google.common.base.Function;
 import com.google.common.base.Functions;
 import com.google.common.base.MoreObjects;
 import com.google.common.collect.ImmutableList;
-import com.google.common.collect.ImmutableMap;
+import com.google.common.collect.Maps;
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
@@ -102,13 +102,14 @@ public class BucketInfo implements Serializable {
   /**
    * The Bucket's IAM Configuration.
    *
-   * @see <a href="https://cloud.google.com/storage/docs/bucket-policy-only">Bucket Policy Only</a>
+   * @see <a href="https://cloud.google.com/storage/docs/uniform-bucket-level-access">uniform
+   *     bucket-level access</a>
    */
   public static class IamConfiguration implements Serializable {
     private static final long serialVersionUID = -8671736104909424616L;
 
-    private Boolean isBucketPolicyOnlyEnabled;
-    private Long bucketPolicyOnlyLockedTime;
+    private Boolean isUniformBucketLevelAccessEnabled;
+    private Long uniformBucketLevelAccessLockedTime;
 
     @Override
     public boolean equals(Object o) {
@@ -122,12 +123,12 @@ public class BucketInfo implements Serializable {
 
     @Override
     public int hashCode() {
-      return Objects.hash(isBucketPolicyOnlyEnabled, bucketPolicyOnlyLockedTime);
+      return Objects.hash(isUniformBucketLevelAccessEnabled, uniformBucketLevelAccessLockedTime);
     }
 
     private IamConfiguration(Builder builder) {
-      this.isBucketPolicyOnlyEnabled = builder.isBucketPolicyOnlyEnabled;
-      this.bucketPolicyOnlyLockedTime = builder.bucketPolicyOnlyLockedTime;
+      this.isUniformBucketLevelAccessEnabled = builder.isUniformBucketLevelAccessEnabled;
+      this.uniformBucketLevelAccessLockedTime = builder.uniformBucketLevelAccessLockedTime;
     }
 
     public static Builder newBuilder() {
@@ -136,69 +137,99 @@ public class BucketInfo implements Serializable {
 
     public Builder toBuilder() {
       Builder builder = new Builder();
-      builder.isBucketPolicyOnlyEnabled = isBucketPolicyOnlyEnabled;
-      builder.bucketPolicyOnlyLockedTime = bucketPolicyOnlyLockedTime;
+      builder.isUniformBucketLevelAccessEnabled = isUniformBucketLevelAccessEnabled;
+      builder.uniformBucketLevelAccessLockedTime = uniformBucketLevelAccessLockedTime;
       return builder;
     }
 
+    /** Deprecated in favor of isUniformBucketLevelAccessEnabled(). */
+    @Deprecated
     public Boolean isBucketPolicyOnlyEnabled() {
-      return isBucketPolicyOnlyEnabled;
+      return isUniformBucketLevelAccessEnabled;
     }
 
+    /** Deprecated in favor of uniformBucketLevelAccessLockedTime(). */
+    @Deprecated
     public Long getBucketPolicyOnlyLockedTime() {
-      return bucketPolicyOnlyLockedTime;
+      return uniformBucketLevelAccessLockedTime;
+    }
+
+    public Boolean isUniformBucketLevelAccessEnabled() {
+      return isUniformBucketLevelAccessEnabled;
+    }
+
+    public Long getUniformBucketLevelAccessLockedTime() {
+      return uniformBucketLevelAccessLockedTime;
     }
 
     Bucket.IamConfiguration toPb() {
       Bucket.IamConfiguration iamConfiguration = new Bucket.IamConfiguration();
 
-      Bucket.IamConfiguration.BucketPolicyOnly bucketPolicyOnly =
-          new Bucket.IamConfiguration.BucketPolicyOnly();
-      bucketPolicyOnly.setEnabled(isBucketPolicyOnlyEnabled);
-      bucketPolicyOnly.setLockedTime(
-          bucketPolicyOnlyLockedTime == null ? null : new DateTime(bucketPolicyOnlyLockedTime));
+      Bucket.IamConfiguration.UniformBucketLevelAccess uniformBucketLevelAccess =
+          new Bucket.IamConfiguration.UniformBucketLevelAccess();
+      uniformBucketLevelAccess.setEnabled(isUniformBucketLevelAccessEnabled);
+      uniformBucketLevelAccess.setLockedTime(
+          uniformBucketLevelAccessLockedTime == null
+              ? null
+              : new DateTime(uniformBucketLevelAccessLockedTime));
 
-      iamConfiguration.setBucketPolicyOnly(bucketPolicyOnly);
+      iamConfiguration.setUniformBucketLevelAccess(uniformBucketLevelAccess);
+
       return iamConfiguration;
     }
 
     static IamConfiguration fromPb(Bucket.IamConfiguration iamConfiguration) {
-      Bucket.IamConfiguration.BucketPolicyOnly bucketPolicyOnly =
-          iamConfiguration.getBucketPolicyOnly();
-      DateTime lockedTime = bucketPolicyOnly.getLockedTime();
+      Bucket.IamConfiguration.UniformBucketLevelAccess uniformBucketLevelAccess =
+          iamConfiguration.getUniformBucketLevelAccess();
+      DateTime lockedTime = uniformBucketLevelAccess.getLockedTime();
 
       return newBuilder()
-          .setIsBucketPolicyOnlyEnabled(bucketPolicyOnly.getEnabled())
-          .setBucketPolicyOnlyLockedTime(lockedTime == null ? null : lockedTime.getValue())
+          .setIsUniformBucketLevelAccessEnabled(uniformBucketLevelAccess.getEnabled())
+          .setUniformBucketLevelAccessLockedTime(lockedTime == null ? null : lockedTime.getValue())
           .build();
     }
 
     /** Builder for {@code IamConfiguration} */
     public static class Builder {
-      private Boolean isBucketPolicyOnlyEnabled;
-      private Long bucketPolicyOnlyLockedTime;
+      private Boolean isUniformBucketLevelAccessEnabled;
+      private Long uniformBucketLevelAccessLockedTime;
 
-      /**
-       * Sets whether BucketPolicyOnly is enabled for this bucket. When this is enabled, access to
-       * the bucket will be configured through IAM, and legacy ACL policies will not work. When this
-       * is first enabled, {@code bucketPolicyOnly.lockedTime} will be set by the API automatically.
-       * This field can then be disabled until the time specified, after which it will become
-       * immutable and calls to change it will fail. If this is enabled, calls to access legacy ACL
-       * information will fail.
-       */
+      /** Deprecated in favor of setIsUniformBucketLevelAccessEnabled(). */
+      @Deprecated
       public Builder setIsBucketPolicyOnlyEnabled(Boolean isBucketPolicyOnlyEnabled) {
-        this.isBucketPolicyOnlyEnabled = isBucketPolicyOnlyEnabled;
+        this.isUniformBucketLevelAccessEnabled = isBucketPolicyOnlyEnabled;
+        return this;
+      }
+
+      /** Deprecated in favor of setUniformBucketLevelAccessLockedTime(). */
+      @Deprecated
+      Builder setBucketPolicyOnlyLockedTime(Long bucketPolicyOnlyLockedTime) {
+        this.uniformBucketLevelAccessLockedTime = bucketPolicyOnlyLockedTime;
         return this;
       }
 
       /**
-       * Sets the deadline for switching {@code bucketPolicyOnly.enabled} back to false. After this
-       * time passes, calls to do so will fail. This is package-private, since in general this field
-       * should never be set by a user--it's automatically set by the backend when {@code enabled}
-       * is set to true.
+       * Sets whether uniform bucket-level access is enabled for this bucket. When this is enabled,
+       * access to the bucket will be configured through IAM, and legacy ACL policies will not work.
+       * When this is first enabled, {@code uniformBucketLevelAccess.lockedTime} will be set by the
+       * API automatically. This field can then be disabled until the time specified, after which it
+       * will become immutable and calls to change it will fail. If this is enabled, calls to access
+       * legacy ACL information will fail.
        */
-      Builder setBucketPolicyOnlyLockedTime(Long bucketPolicyOnlyLockedTime) {
-        this.bucketPolicyOnlyLockedTime = bucketPolicyOnlyLockedTime;
+      public Builder setIsUniformBucketLevelAccessEnabled(
+          Boolean isUniformBucketLevelAccessEnabled) {
+        this.isUniformBucketLevelAccessEnabled = isUniformBucketLevelAccessEnabled;
+        return this;
+      }
+
+      /**
+       * Sets the deadline for switching {@code uniformBucketLevelAccess.enabled} back to false.
+       * After this time passes, calls to do so will fail. This is package-private, since in general
+       * this field should never be set by a user--it's automatically set by the backend when {@code
+       * enabled} is set to true.
+       */
+      Builder setUniformBucketLevelAccessLockedTime(Long uniformBucketLevelAccessLockedTime) {
+        this.uniformBucketLevelAccessLockedTime = uniformBucketLevelAccessLockedTime;
         return this;
       }
 
@@ -332,6 +363,14 @@ public class BucketInfo implements Serializable {
     }
 
     @Override
+    public String toString() {
+      return MoreObjects.toStringHelper(this)
+          .add("lifecycleAction", lifecycleAction)
+          .add("lifecycleCondition", lifecycleCondition)
+          .toString();
+    }
+
+    @Override
     public int hashCode() {
       return Objects.hash(lifecycleAction, lifecycleCondition);
     }
@@ -456,6 +495,17 @@ public class BucketInfo implements Serializable {
         return new Builder();
       }
 
+      @Override
+      public String toString() {
+        return MoreObjects.toStringHelper(this)
+            .add("age", age)
+            .add("createBefore", createdBefore)
+            .add("numberofNewerVersions", numberOfNewerVersions)
+            .add("isLive", isLive)
+            .add("matchesStorageClass", matchesStorageClass)
+            .toString();
+      }
+
       public Integer getAge() {
         return age;
       }
@@ -553,6 +603,11 @@ public class BucketInfo implements Serializable {
 
       public abstract String getActionType();
 
+      @Override
+      public String toString() {
+        return MoreObjects.toStringHelper(this).add("actionType", getActionType()).toString();
+      }
+
       /**
        * Creates a new {@code DeleteLifecycleAction}. Blobs that meet the Condition associated with
        * this action will be deleted.
@@ -598,6 +653,14 @@ public class BucketInfo implements Serializable {
       @Override
       public String getActionType() {
         return TYPE;
+      }
+
+      @Override
+      public String toString() {
+        return MoreObjects.toStringHelper(this)
+            .add("actionType", getActionType())
+            .add("storageClass", storageClass.name())
+            .toString();
       }
 
       StorageClass getStorageClass() {
@@ -1178,7 +1241,18 @@ public class BucketInfo implements Serializable {
 
     @Override
     public Builder setLabels(Map<String, String> labels) {
-      this.labels = labels != null ? ImmutableMap.copyOf(labels) : null;
+      if (labels != null) {
+        this.labels =
+            Maps.transformValues(
+                labels,
+                new Function<String, String>() {
+                  @Override
+                  public String apply(String input) {
+                    // replace null values with empty strings
+                    return input == null ? Data.<String>nullOf(String.class) : input;
+                  }
+                });
+      }
       return this;
     }
 

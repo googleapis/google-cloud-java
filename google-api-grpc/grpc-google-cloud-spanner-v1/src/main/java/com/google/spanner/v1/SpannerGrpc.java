@@ -824,8 +824,8 @@ public final class SpannerGrpc {
      * multiple sessions. Note that standalone reads and queries use a
      * transaction internally, and count toward the one transaction
      * limit.
-     * Cloud Spanner limits the number of sessions that can exist at any given
-     * time; thus, it is a good idea to delete idle and/or unneeded sessions.
+     * Active sessions use additional server resources, so it is a good idea to
+     * delete idle and unneeded sessions.
      * Aside from explicit deletes, Cloud Spanner can delete sessions for which no
      * operations are sent for more than an hour. If a session is deleted,
      * requests to it return `NOT_FOUND`.
@@ -945,20 +945,13 @@ public final class SpannerGrpc {
      * Executes a batch of SQL DML statements. This method allows many statements
      * to be run with lower latency than submitting them sequentially with
      * [ExecuteSql][google.spanner.v1.Spanner.ExecuteSql].
-     * Statements are executed in order, sequentially.
-     * [ExecuteBatchDmlResponse][Spanner.ExecuteBatchDmlResponse] will contain a
-     * [ResultSet][google.spanner.v1.ResultSet] for each DML statement that has
-     * successfully executed. If a statement fails, its error status will be
-     * returned as part of the
-     * [ExecuteBatchDmlResponse][Spanner.ExecuteBatchDmlResponse]. Execution will
-     * stop at the first failed statement; the remaining statements will not run.
-     * ExecuteBatchDml is expected to return an OK status with a response even if
-     * there was an error while processing one of the DML statements. Clients must
-     * inspect response.status to determine if there were any errors while
-     * processing the request.
-     * See more details in
-     * [ExecuteBatchDmlRequest][Spanner.ExecuteBatchDmlRequest] and
-     * [ExecuteBatchDmlResponse][Spanner.ExecuteBatchDmlResponse].
+     * Statements are executed in sequential order. A request can succeed even if
+     * a statement fails. The
+     * [ExecuteBatchDmlResponse.status][google.spanner.v1.ExecuteBatchDmlResponse.status]
+     * field in the response provides information about the statement that failed.
+     * Clients must inspect this field to determine whether an error occurred.
+     * Execution stops after the first failed statement; the remaining statements
+     * are not executed.
      * </pre>
      */
     public void executeBatchDml(
@@ -1249,8 +1242,8 @@ public final class SpannerGrpc {
      * multiple sessions. Note that standalone reads and queries use a
      * transaction internally, and count toward the one transaction
      * limit.
-     * Cloud Spanner limits the number of sessions that can exist at any given
-     * time; thus, it is a good idea to delete idle and/or unneeded sessions.
+     * Active sessions use additional server resources, so it is a good idea to
+     * delete idle and unneeded sessions.
      * Aside from explicit deletes, Cloud Spanner can delete sessions for which no
      * operations are sent for more than an hour. If a session is deleted,
      * requests to it return `NOT_FOUND`.
@@ -1391,20 +1384,13 @@ public final class SpannerGrpc {
      * Executes a batch of SQL DML statements. This method allows many statements
      * to be run with lower latency than submitting them sequentially with
      * [ExecuteSql][google.spanner.v1.Spanner.ExecuteSql].
-     * Statements are executed in order, sequentially.
-     * [ExecuteBatchDmlResponse][Spanner.ExecuteBatchDmlResponse] will contain a
-     * [ResultSet][google.spanner.v1.ResultSet] for each DML statement that has
-     * successfully executed. If a statement fails, its error status will be
-     * returned as part of the
-     * [ExecuteBatchDmlResponse][Spanner.ExecuteBatchDmlResponse]. Execution will
-     * stop at the first failed statement; the remaining statements will not run.
-     * ExecuteBatchDml is expected to return an OK status with a response even if
-     * there was an error while processing one of the DML statements. Clients must
-     * inspect response.status to determine if there were any errors while
-     * processing the request.
-     * See more details in
-     * [ExecuteBatchDmlRequest][Spanner.ExecuteBatchDmlRequest] and
-     * [ExecuteBatchDmlResponse][Spanner.ExecuteBatchDmlResponse].
+     * Statements are executed in sequential order. A request can succeed even if
+     * a statement fails. The
+     * [ExecuteBatchDmlResponse.status][google.spanner.v1.ExecuteBatchDmlResponse.status]
+     * field in the response provides information about the statement that failed.
+     * Clients must inspect this field to determine whether an error occurred.
+     * Execution stops after the first failed statement; the remaining statements
+     * are not executed.
      * </pre>
      */
     public void executeBatchDml(
@@ -1619,8 +1605,8 @@ public final class SpannerGrpc {
      * multiple sessions. Note that standalone reads and queries use a
      * transaction internally, and count toward the one transaction
      * limit.
-     * Cloud Spanner limits the number of sessions that can exist at any given
-     * time; thus, it is a good idea to delete idle and/or unneeded sessions.
+     * Active sessions use additional server resources, so it is a good idea to
+     * delete idle and unneeded sessions.
      * Aside from explicit deletes, Cloud Spanner can delete sessions for which no
      * operations are sent for more than an hour. If a session is deleted,
      * requests to it return `NOT_FOUND`.
@@ -1739,20 +1725,13 @@ public final class SpannerGrpc {
      * Executes a batch of SQL DML statements. This method allows many statements
      * to be run with lower latency than submitting them sequentially with
      * [ExecuteSql][google.spanner.v1.Spanner.ExecuteSql].
-     * Statements are executed in order, sequentially.
-     * [ExecuteBatchDmlResponse][Spanner.ExecuteBatchDmlResponse] will contain a
-     * [ResultSet][google.spanner.v1.ResultSet] for each DML statement that has
-     * successfully executed. If a statement fails, its error status will be
-     * returned as part of the
-     * [ExecuteBatchDmlResponse][Spanner.ExecuteBatchDmlResponse]. Execution will
-     * stop at the first failed statement; the remaining statements will not run.
-     * ExecuteBatchDml is expected to return an OK status with a response even if
-     * there was an error while processing one of the DML statements. Clients must
-     * inspect response.status to determine if there were any errors while
-     * processing the request.
-     * See more details in
-     * [ExecuteBatchDmlRequest][Spanner.ExecuteBatchDmlRequest] and
-     * [ExecuteBatchDmlResponse][Spanner.ExecuteBatchDmlResponse].
+     * Statements are executed in sequential order. A request can succeed even if
+     * a statement fails. The
+     * [ExecuteBatchDmlResponse.status][google.spanner.v1.ExecuteBatchDmlResponse.status]
+     * field in the response provides information about the statement that failed.
+     * Clients must inspect this field to determine whether an error occurred.
+     * Execution stops after the first failed statement; the remaining statements
+     * are not executed.
      * </pre>
      */
     public com.google.spanner.v1.ExecuteBatchDmlResponse executeBatchDml(
@@ -1938,8 +1917,8 @@ public final class SpannerGrpc {
      * multiple sessions. Note that standalone reads and queries use a
      * transaction internally, and count toward the one transaction
      * limit.
-     * Cloud Spanner limits the number of sessions that can exist at any given
-     * time; thus, it is a good idea to delete idle and/or unneeded sessions.
+     * Active sessions use additional server resources, so it is a good idea to
+     * delete idle and unneeded sessions.
      * Aside from explicit deletes, Cloud Spanner can delete sessions for which no
      * operations are sent for more than an hour. If a session is deleted,
      * requests to it return `NOT_FOUND`.
@@ -2043,20 +2022,13 @@ public final class SpannerGrpc {
      * Executes a batch of SQL DML statements. This method allows many statements
      * to be run with lower latency than submitting them sequentially with
      * [ExecuteSql][google.spanner.v1.Spanner.ExecuteSql].
-     * Statements are executed in order, sequentially.
-     * [ExecuteBatchDmlResponse][Spanner.ExecuteBatchDmlResponse] will contain a
-     * [ResultSet][google.spanner.v1.ResultSet] for each DML statement that has
-     * successfully executed. If a statement fails, its error status will be
-     * returned as part of the
-     * [ExecuteBatchDmlResponse][Spanner.ExecuteBatchDmlResponse]. Execution will
-     * stop at the first failed statement; the remaining statements will not run.
-     * ExecuteBatchDml is expected to return an OK status with a response even if
-     * there was an error while processing one of the DML statements. Clients must
-     * inspect response.status to determine if there were any errors while
-     * processing the request.
-     * See more details in
-     * [ExecuteBatchDmlRequest][Spanner.ExecuteBatchDmlRequest] and
-     * [ExecuteBatchDmlResponse][Spanner.ExecuteBatchDmlResponse].
+     * Statements are executed in sequential order. A request can succeed even if
+     * a statement fails. The
+     * [ExecuteBatchDmlResponse.status][google.spanner.v1.ExecuteBatchDmlResponse.status]
+     * field in the response provides information about the statement that failed.
+     * Clients must inspect this field to determine whether an error occurred.
+     * Execution stops after the first failed statement; the remaining statements
+     * are not executed.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<

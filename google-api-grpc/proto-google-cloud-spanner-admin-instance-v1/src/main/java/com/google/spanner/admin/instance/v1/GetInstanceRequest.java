@@ -7,8 +7,7 @@ package com.google.spanner.admin.instance.v1;
  *
  *
  * <pre>
- * The request for
- * [GetInstance][google.spanner.admin.instance.v1.InstanceAdmin.GetInstance].
+ * The request for [GetInstance][google.spanner.admin.instance.v1.InstanceAdmin.GetInstance].
  * </pre>
  *
  * Protobuf type {@code google.spanner.admin.instance.v1.GetInstanceRequest}
@@ -58,6 +57,21 @@ public final class GetInstanceRequest extends com.google.protobuf.GeneratedMessa
               name_ = s;
               break;
             }
+          case 18:
+            {
+              com.google.protobuf.FieldMask.Builder subBuilder = null;
+              if (fieldMask_ != null) {
+                subBuilder = fieldMask_.toBuilder();
+              }
+              fieldMask_ =
+                  input.readMessage(com.google.protobuf.FieldMask.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(fieldMask_);
+                fieldMask_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
           default:
             {
               if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -102,7 +116,9 @@ public final class GetInstanceRequest extends com.google.protobuf.GeneratedMessa
    * `projects/&lt;project&gt;/instances/&lt;instance&gt;`.
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>
+   * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    */
   public java.lang.String getName() {
     java.lang.Object ref = name_;
@@ -123,7 +139,9 @@ public final class GetInstanceRequest extends com.google.protobuf.GeneratedMessa
    * `projects/&lt;project&gt;/instances/&lt;instance&gt;`.
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>
+   * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    */
   public com.google.protobuf.ByteString getNameBytes() {
     java.lang.Object ref = name_;
@@ -135,6 +153,51 @@ public final class GetInstanceRequest extends com.google.protobuf.GeneratedMessa
     } else {
       return (com.google.protobuf.ByteString) ref;
     }
+  }
+
+  public static final int FIELD_MASK_FIELD_NUMBER = 2;
+  private com.google.protobuf.FieldMask fieldMask_;
+  /**
+   *
+   *
+   * <pre>
+   * If field_mask is present, specifies the subset of [][Instance] fields that
+   * should be returned.
+   * If absent, all [][Instance] fields are returned.
+   * </pre>
+   *
+   * <code>.google.protobuf.FieldMask field_mask = 2;</code>
+   */
+  public boolean hasFieldMask() {
+    return fieldMask_ != null;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * If field_mask is present, specifies the subset of [][Instance] fields that
+   * should be returned.
+   * If absent, all [][Instance] fields are returned.
+   * </pre>
+   *
+   * <code>.google.protobuf.FieldMask field_mask = 2;</code>
+   */
+  public com.google.protobuf.FieldMask getFieldMask() {
+    return fieldMask_ == null ? com.google.protobuf.FieldMask.getDefaultInstance() : fieldMask_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * If field_mask is present, specifies the subset of [][Instance] fields that
+   * should be returned.
+   * If absent, all [][Instance] fields are returned.
+   * </pre>
+   *
+   * <code>.google.protobuf.FieldMask field_mask = 2;</code>
+   */
+  public com.google.protobuf.FieldMaskOrBuilder getFieldMaskOrBuilder() {
+    return getFieldMask();
   }
 
   private byte memoizedIsInitialized = -1;
@@ -154,6 +217,9 @@ public final class GetInstanceRequest extends com.google.protobuf.GeneratedMessa
     if (!getNameBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, name_);
     }
+    if (fieldMask_ != null) {
+      output.writeMessage(2, getFieldMask());
+    }
     unknownFields.writeTo(output);
   }
 
@@ -165,6 +231,9 @@ public final class GetInstanceRequest extends com.google.protobuf.GeneratedMessa
     size = 0;
     if (!getNameBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, name_);
+    }
+    if (fieldMask_ != null) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(2, getFieldMask());
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -183,6 +252,10 @@ public final class GetInstanceRequest extends com.google.protobuf.GeneratedMessa
         (com.google.spanner.admin.instance.v1.GetInstanceRequest) obj;
 
     if (!getName().equals(other.getName())) return false;
+    if (hasFieldMask() != other.hasFieldMask()) return false;
+    if (hasFieldMask()) {
+      if (!getFieldMask().equals(other.getFieldMask())) return false;
+    }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -196,6 +269,10 @@ public final class GetInstanceRequest extends com.google.protobuf.GeneratedMessa
     hash = (19 * hash) + getDescriptor().hashCode();
     hash = (37 * hash) + NAME_FIELD_NUMBER;
     hash = (53 * hash) + getName().hashCode();
+    if (hasFieldMask()) {
+      hash = (37 * hash) + FIELD_MASK_FIELD_NUMBER;
+      hash = (53 * hash) + getFieldMask().hashCode();
+    }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -301,8 +378,7 @@ public final class GetInstanceRequest extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * The request for
-   * [GetInstance][google.spanner.admin.instance.v1.InstanceAdmin.GetInstance].
+   * The request for [GetInstance][google.spanner.admin.instance.v1.InstanceAdmin.GetInstance].
    * </pre>
    *
    * Protobuf type {@code google.spanner.admin.instance.v1.GetInstanceRequest}
@@ -345,6 +421,12 @@ public final class GetInstanceRequest extends com.google.protobuf.GeneratedMessa
       super.clear();
       name_ = "";
 
+      if (fieldMaskBuilder_ == null) {
+        fieldMask_ = null;
+      } else {
+        fieldMask_ = null;
+        fieldMaskBuilder_ = null;
+      }
       return this;
     }
 
@@ -373,6 +455,11 @@ public final class GetInstanceRequest extends com.google.protobuf.GeneratedMessa
       com.google.spanner.admin.instance.v1.GetInstanceRequest result =
           new com.google.spanner.admin.instance.v1.GetInstanceRequest(this);
       result.name_ = name_;
+      if (fieldMaskBuilder_ == null) {
+        result.fieldMask_ = fieldMask_;
+      } else {
+        result.fieldMask_ = fieldMaskBuilder_.build();
+      }
       onBuilt();
       return result;
     }
@@ -427,6 +514,9 @@ public final class GetInstanceRequest extends com.google.protobuf.GeneratedMessa
         name_ = other.name_;
         onChanged();
       }
+      if (other.hasFieldMask()) {
+        mergeFieldMask(other.getFieldMask());
+      }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
       return this;
@@ -466,7 +556,9 @@ public final class GetInstanceRequest extends com.google.protobuf.GeneratedMessa
      * `projects/&lt;project&gt;/instances/&lt;instance&gt;`.
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>
+     * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      */
     public java.lang.String getName() {
       java.lang.Object ref = name_;
@@ -487,7 +579,9 @@ public final class GetInstanceRequest extends com.google.protobuf.GeneratedMessa
      * `projects/&lt;project&gt;/instances/&lt;instance&gt;`.
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>
+     * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      */
     public com.google.protobuf.ByteString getNameBytes() {
       java.lang.Object ref = name_;
@@ -508,7 +602,9 @@ public final class GetInstanceRequest extends com.google.protobuf.GeneratedMessa
      * `projects/&lt;project&gt;/instances/&lt;instance&gt;`.
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>
+     * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      */
     public Builder setName(java.lang.String value) {
       if (value == null) {
@@ -527,7 +623,9 @@ public final class GetInstanceRequest extends com.google.protobuf.GeneratedMessa
      * `projects/&lt;project&gt;/instances/&lt;instance&gt;`.
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>
+     * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      */
     public Builder clearName() {
 
@@ -543,7 +641,9 @@ public final class GetInstanceRequest extends com.google.protobuf.GeneratedMessa
      * `projects/&lt;project&gt;/instances/&lt;instance&gt;`.
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>
+     * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      */
     public Builder setNameBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -554,6 +654,199 @@ public final class GetInstanceRequest extends com.google.protobuf.GeneratedMessa
       name_ = value;
       onChanged();
       return this;
+    }
+
+    private com.google.protobuf.FieldMask fieldMask_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.protobuf.FieldMask,
+            com.google.protobuf.FieldMask.Builder,
+            com.google.protobuf.FieldMaskOrBuilder>
+        fieldMaskBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * If field_mask is present, specifies the subset of [][Instance] fields that
+     * should be returned.
+     * If absent, all [][Instance] fields are returned.
+     * </pre>
+     *
+     * <code>.google.protobuf.FieldMask field_mask = 2;</code>
+     */
+    public boolean hasFieldMask() {
+      return fieldMaskBuilder_ != null || fieldMask_ != null;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * If field_mask is present, specifies the subset of [][Instance] fields that
+     * should be returned.
+     * If absent, all [][Instance] fields are returned.
+     * </pre>
+     *
+     * <code>.google.protobuf.FieldMask field_mask = 2;</code>
+     */
+    public com.google.protobuf.FieldMask getFieldMask() {
+      if (fieldMaskBuilder_ == null) {
+        return fieldMask_ == null ? com.google.protobuf.FieldMask.getDefaultInstance() : fieldMask_;
+      } else {
+        return fieldMaskBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * If field_mask is present, specifies the subset of [][Instance] fields that
+     * should be returned.
+     * If absent, all [][Instance] fields are returned.
+     * </pre>
+     *
+     * <code>.google.protobuf.FieldMask field_mask = 2;</code>
+     */
+    public Builder setFieldMask(com.google.protobuf.FieldMask value) {
+      if (fieldMaskBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        fieldMask_ = value;
+        onChanged();
+      } else {
+        fieldMaskBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * If field_mask is present, specifies the subset of [][Instance] fields that
+     * should be returned.
+     * If absent, all [][Instance] fields are returned.
+     * </pre>
+     *
+     * <code>.google.protobuf.FieldMask field_mask = 2;</code>
+     */
+    public Builder setFieldMask(com.google.protobuf.FieldMask.Builder builderForValue) {
+      if (fieldMaskBuilder_ == null) {
+        fieldMask_ = builderForValue.build();
+        onChanged();
+      } else {
+        fieldMaskBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * If field_mask is present, specifies the subset of [][Instance] fields that
+     * should be returned.
+     * If absent, all [][Instance] fields are returned.
+     * </pre>
+     *
+     * <code>.google.protobuf.FieldMask field_mask = 2;</code>
+     */
+    public Builder mergeFieldMask(com.google.protobuf.FieldMask value) {
+      if (fieldMaskBuilder_ == null) {
+        if (fieldMask_ != null) {
+          fieldMask_ =
+              com.google.protobuf.FieldMask.newBuilder(fieldMask_).mergeFrom(value).buildPartial();
+        } else {
+          fieldMask_ = value;
+        }
+        onChanged();
+      } else {
+        fieldMaskBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * If field_mask is present, specifies the subset of [][Instance] fields that
+     * should be returned.
+     * If absent, all [][Instance] fields are returned.
+     * </pre>
+     *
+     * <code>.google.protobuf.FieldMask field_mask = 2;</code>
+     */
+    public Builder clearFieldMask() {
+      if (fieldMaskBuilder_ == null) {
+        fieldMask_ = null;
+        onChanged();
+      } else {
+        fieldMask_ = null;
+        fieldMaskBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * If field_mask is present, specifies the subset of [][Instance] fields that
+     * should be returned.
+     * If absent, all [][Instance] fields are returned.
+     * </pre>
+     *
+     * <code>.google.protobuf.FieldMask field_mask = 2;</code>
+     */
+    public com.google.protobuf.FieldMask.Builder getFieldMaskBuilder() {
+
+      onChanged();
+      return getFieldMaskFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * If field_mask is present, specifies the subset of [][Instance] fields that
+     * should be returned.
+     * If absent, all [][Instance] fields are returned.
+     * </pre>
+     *
+     * <code>.google.protobuf.FieldMask field_mask = 2;</code>
+     */
+    public com.google.protobuf.FieldMaskOrBuilder getFieldMaskOrBuilder() {
+      if (fieldMaskBuilder_ != null) {
+        return fieldMaskBuilder_.getMessageOrBuilder();
+      } else {
+        return fieldMask_ == null ? com.google.protobuf.FieldMask.getDefaultInstance() : fieldMask_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * If field_mask is present, specifies the subset of [][Instance] fields that
+     * should be returned.
+     * If absent, all [][Instance] fields are returned.
+     * </pre>
+     *
+     * <code>.google.protobuf.FieldMask field_mask = 2;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.protobuf.FieldMask,
+            com.google.protobuf.FieldMask.Builder,
+            com.google.protobuf.FieldMaskOrBuilder>
+        getFieldMaskFieldBuilder() {
+      if (fieldMaskBuilder_ == null) {
+        fieldMaskBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.protobuf.FieldMask,
+                com.google.protobuf.FieldMask.Builder,
+                com.google.protobuf.FieldMaskOrBuilder>(
+                getFieldMask(), getParentForChildren(), isClean());
+        fieldMask_ = null;
+      }
+      return fieldMaskBuilder_;
     }
 
     @java.lang.Override

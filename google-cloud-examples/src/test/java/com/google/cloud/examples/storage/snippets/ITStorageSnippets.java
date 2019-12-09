@@ -611,18 +611,18 @@ public class ITStorageSnippets {
   }
 
   @Test
-  public void testBucketPolicyOnly() {
+  public void testUniformBucketLevelAccess() {
     String tempBucket = RemoteStorageHelper.generateBucketName();
     Bucket bucket = storageSnippets.createBucket(tempBucket);
     assertNotNull(bucket);
-    bucket = storageSnippets.enableBucketPolicyOnly(tempBucket);
-    assertTrue(bucket.getIamConfiguration().isBucketPolicyOnlyEnabled());
-    assertNotNull(bucket.getIamConfiguration().getBucketPolicyOnlyLockedTime());
-    bucket = storageSnippets.getBucketPolicyOnly(tempBucket);
-    assertTrue(bucket.getIamConfiguration().isBucketPolicyOnlyEnabled());
-    assertNotNull(bucket.getIamConfiguration().getBucketPolicyOnlyLockedTime());
-    bucket = storageSnippets.disableBucketPolicyOnly(tempBucket);
-    assertFalse(bucket.getIamConfiguration().isBucketPolicyOnlyEnabled());
+    bucket = storageSnippets.enableUniformBucketLevelAccess(tempBucket);
+    assertTrue(bucket.getIamConfiguration().isUniformBucketLevelAccessEnabled());
+    assertNotNull(bucket.getIamConfiguration().getUniformBucketLevelAccessLockedTime());
+    bucket = storageSnippets.getUniformBucketLevelAccess(tempBucket);
+    assertTrue(bucket.getIamConfiguration().isUniformBucketLevelAccessEnabled());
+    assertNotNull(bucket.getIamConfiguration().getUniformBucketLevelAccessLockedTime());
+    bucket = storageSnippets.disableUniformBucketLevelAccess(tempBucket);
+    assertFalse(bucket.getIamConfiguration().isUniformBucketLevelAccessEnabled());
   }
 
   @Test

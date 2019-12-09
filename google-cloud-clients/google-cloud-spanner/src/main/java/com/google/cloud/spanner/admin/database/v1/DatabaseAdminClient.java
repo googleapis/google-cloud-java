@@ -27,6 +27,7 @@ import com.google.api.gax.paging.AbstractPagedListResponse;
 import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.PageContext;
 import com.google.api.gax.rpc.UnaryCallable;
+import com.google.api.resourcenames.ResourceName;
 import com.google.cloud.spanner.admin.database.v1.stub.DatabaseAdminStub;
 import com.google.cloud.spanner.admin.database.v1.stub.DatabaseAdminStubSettings;
 import com.google.common.util.concurrent.MoreExecutors;
@@ -190,138 +191,6 @@ public class DatabaseAdminClient implements BackgroundResource {
       "The surface for long-running operations is not stable yet and may change in the future.")
   public final OperationsClient getOperationsClient() {
     return operationsClient;
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Lists Cloud Spanner databases.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (DatabaseAdminClient databaseAdminClient = DatabaseAdminClient.create()) {
-   *   InstanceName parent = InstanceName.of("[PROJECT]", "[INSTANCE]");
-   *   for (Database element : databaseAdminClient.listDatabases(parent).iterateAll()) {
-   *     // doThingsWith(element);
-   *   }
-   * }
-   * </code></pre>
-   *
-   * @param parent Required. The instance whose databases should be listed. Values are of the form
-   *     `projects/&lt;project&gt;/instances/&lt;instance&gt;`.
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  public final ListDatabasesPagedResponse listDatabases(InstanceName parent) {
-    ListDatabasesRequest request =
-        ListDatabasesRequest.newBuilder()
-            .setParent(parent == null ? null : parent.toString())
-            .build();
-    return listDatabases(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Lists Cloud Spanner databases.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (DatabaseAdminClient databaseAdminClient = DatabaseAdminClient.create()) {
-   *   InstanceName parent = InstanceName.of("[PROJECT]", "[INSTANCE]");
-   *   for (Database element : databaseAdminClient.listDatabases(parent.toString()).iterateAll()) {
-   *     // doThingsWith(element);
-   *   }
-   * }
-   * </code></pre>
-   *
-   * @param parent Required. The instance whose databases should be listed. Values are of the form
-   *     `projects/&lt;project&gt;/instances/&lt;instance&gt;`.
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  public final ListDatabasesPagedResponse listDatabases(String parent) {
-    ListDatabasesRequest request = ListDatabasesRequest.newBuilder().setParent(parent).build();
-    return listDatabases(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Lists Cloud Spanner databases.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (DatabaseAdminClient databaseAdminClient = DatabaseAdminClient.create()) {
-   *   InstanceName parent = InstanceName.of("[PROJECT]", "[INSTANCE]");
-   *   ListDatabasesRequest request = ListDatabasesRequest.newBuilder()
-   *     .setParent(parent.toString())
-   *     .build();
-   *   for (Database element : databaseAdminClient.listDatabases(request).iterateAll()) {
-   *     // doThingsWith(element);
-   *   }
-   * }
-   * </code></pre>
-   *
-   * @param request The request object containing all of the parameters for the API call.
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  public final ListDatabasesPagedResponse listDatabases(ListDatabasesRequest request) {
-    return listDatabasesPagedCallable().call(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Lists Cloud Spanner databases.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (DatabaseAdminClient databaseAdminClient = DatabaseAdminClient.create()) {
-   *   InstanceName parent = InstanceName.of("[PROJECT]", "[INSTANCE]");
-   *   ListDatabasesRequest request = ListDatabasesRequest.newBuilder()
-   *     .setParent(parent.toString())
-   *     .build();
-   *   ApiFuture&lt;ListDatabasesPagedResponse&gt; future = databaseAdminClient.listDatabasesPagedCallable().futureCall(request);
-   *   // Do something
-   *   for (Database element : future.get().iterateAll()) {
-   *     // doThingsWith(element);
-   *   }
-   * }
-   * </code></pre>
-   */
-  public final UnaryCallable<ListDatabasesRequest, ListDatabasesPagedResponse>
-      listDatabasesPagedCallable() {
-    return stub.listDatabasesPagedCallable();
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Lists Cloud Spanner databases.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (DatabaseAdminClient databaseAdminClient = DatabaseAdminClient.create()) {
-   *   InstanceName parent = InstanceName.of("[PROJECT]", "[INSTANCE]");
-   *   ListDatabasesRequest request = ListDatabasesRequest.newBuilder()
-   *     .setParent(parent.toString())
-   *     .build();
-   *   while (true) {
-   *     ListDatabasesResponse response = databaseAdminClient.listDatabasesCallable().call(request);
-   *     for (Database element : response.getDatabasesList()) {
-   *       // doThingsWith(element);
-   *     }
-   *     String nextPageToken = response.getNextPageToken();
-   *     if (!Strings.isNullOrEmpty(nextPageToken)) {
-   *       request = request.toBuilder().setPageToken(nextPageToken).build();
-   *     } else {
-   *       break;
-   *     }
-   *   }
-   * }
-   * </code></pre>
-   */
-  public final UnaryCallable<ListDatabasesRequest, ListDatabasesResponse> listDatabasesCallable() {
-    return stub.listDatabasesCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
@@ -617,7 +486,7 @@ public class DatabaseAdminClient implements BackgroundResource {
    * </code></pre>
    *
    * @param database Required. The database to update.
-   * @param statements DDL statements to be applied to the database.
+   * @param statements Required. DDL statements to be applied to the database.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi(
@@ -654,7 +523,7 @@ public class DatabaseAdminClient implements BackgroundResource {
    * </code></pre>
    *
    * @param database Required. The database to update.
-   * @param statements DDL statements to be applied to the database.
+   * @param statements Required. DDL statements to be applied to the database.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi(
@@ -971,9 +840,43 @@ public class DatabaseAdminClient implements BackgroundResource {
    *
    * <pre><code>
    * try (DatabaseAdminClient databaseAdminClient = DatabaseAdminClient.create()) {
-   *   String formattedResource = DatabaseName.format("[PROJECT]", "[INSTANCE]", "[DATABASE]");
+   *   ResourceName resource = DatabaseName.of("[PROJECT]", "[INSTANCE]", "[DATABASE]");
    *   Policy policy = Policy.newBuilder().build();
-   *   Policy response = databaseAdminClient.setIamPolicy(formattedResource, policy);
+   *   Policy response = databaseAdminClient.setIamPolicy(resource, policy);
+   * }
+   * </code></pre>
+   *
+   * @param resource REQUIRED: The resource for which the policy is being specified. See the
+   *     operation documentation for the appropriate value for this field.
+   * @param policy REQUIRED: The complete policy to be applied to the `resource`. The size of the
+   *     policy is limited to a few 10s of KB. An empty policy is a valid policy but certain Cloud
+   *     Platform services (such as Projects) might reject them.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final Policy setIamPolicy(ResourceName resource, Policy policy) {
+
+    SetIamPolicyRequest request =
+        SetIamPolicyRequest.newBuilder()
+            .setResource(resource == null ? null : resource.toString())
+            .setPolicy(policy)
+            .build();
+    return setIamPolicy(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Sets the access control policy on a database resource. Replaces any existing policy.
+   *
+   * <p>Authorization requires `spanner.databases.setIamPolicy` permission on
+   * [resource][google.iam.v1.SetIamPolicyRequest.resource].
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (DatabaseAdminClient databaseAdminClient = DatabaseAdminClient.create()) {
+   *   ResourceName resource = DatabaseName.of("[PROJECT]", "[INSTANCE]", "[DATABASE]");
+   *   Policy policy = Policy.newBuilder().build();
+   *   Policy response = databaseAdminClient.setIamPolicy(resource.toString(), policy);
    * }
    * </code></pre>
    *
@@ -1002,10 +905,10 @@ public class DatabaseAdminClient implements BackgroundResource {
    *
    * <pre><code>
    * try (DatabaseAdminClient databaseAdminClient = DatabaseAdminClient.create()) {
-   *   String formattedResource = DatabaseName.format("[PROJECT]", "[INSTANCE]", "[DATABASE]");
+   *   ResourceName resource = DatabaseName.of("[PROJECT]", "[INSTANCE]", "[DATABASE]");
    *   Policy policy = Policy.newBuilder().build();
    *   SetIamPolicyRequest request = SetIamPolicyRequest.newBuilder()
-   *     .setResource(formattedResource)
+   *     .setResource(resource.toString())
    *     .setPolicy(policy)
    *     .build();
    *   Policy response = databaseAdminClient.setIamPolicy(request);
@@ -1030,10 +933,10 @@ public class DatabaseAdminClient implements BackgroundResource {
    *
    * <pre><code>
    * try (DatabaseAdminClient databaseAdminClient = DatabaseAdminClient.create()) {
-   *   String formattedResource = DatabaseName.format("[PROJECT]", "[INSTANCE]", "[DATABASE]");
+   *   ResourceName resource = DatabaseName.of("[PROJECT]", "[INSTANCE]", "[DATABASE]");
    *   Policy policy = Policy.newBuilder().build();
    *   SetIamPolicyRequest request = SetIamPolicyRequest.newBuilder()
-   *     .setResource(formattedResource)
+   *     .setResource(resource.toString())
    *     .setPolicy(policy)
    *     .build();
    *   ApiFuture&lt;Policy&gt; future = databaseAdminClient.setIamPolicyCallable().futureCall(request);
@@ -1058,8 +961,38 @@ public class DatabaseAdminClient implements BackgroundResource {
    *
    * <pre><code>
    * try (DatabaseAdminClient databaseAdminClient = DatabaseAdminClient.create()) {
-   *   String formattedResource = DatabaseName.format("[PROJECT]", "[INSTANCE]", "[DATABASE]");
-   *   Policy response = databaseAdminClient.getIamPolicy(formattedResource);
+   *   ResourceName resource = DatabaseName.of("[PROJECT]", "[INSTANCE]", "[DATABASE]");
+   *   Policy response = databaseAdminClient.getIamPolicy(resource);
+   * }
+   * </code></pre>
+   *
+   * @param resource REQUIRED: The resource for which the policy is being requested. See the
+   *     operation documentation for the appropriate value for this field.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final Policy getIamPolicy(ResourceName resource) {
+
+    GetIamPolicyRequest request =
+        GetIamPolicyRequest.newBuilder()
+            .setResource(resource == null ? null : resource.toString())
+            .build();
+    return getIamPolicy(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Gets the access control policy for a database resource. Returns an empty policy if a database
+   * exists but does not have a policy set.
+   *
+   * <p>Authorization requires `spanner.databases.getIamPolicy` permission on
+   * [resource][google.iam.v1.GetIamPolicyRequest.resource].
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (DatabaseAdminClient databaseAdminClient = DatabaseAdminClient.create()) {
+   *   ResourceName resource = DatabaseName.of("[PROJECT]", "[INSTANCE]", "[DATABASE]");
+   *   Policy response = databaseAdminClient.getIamPolicy(resource.toString());
    * }
    * </code></pre>
    *
@@ -1085,9 +1018,9 @@ public class DatabaseAdminClient implements BackgroundResource {
    *
    * <pre><code>
    * try (DatabaseAdminClient databaseAdminClient = DatabaseAdminClient.create()) {
-   *   String formattedResource = DatabaseName.format("[PROJECT]", "[INSTANCE]", "[DATABASE]");
+   *   ResourceName resource = DatabaseName.of("[PROJECT]", "[INSTANCE]", "[DATABASE]");
    *   GetIamPolicyRequest request = GetIamPolicyRequest.newBuilder()
-   *     .setResource(formattedResource)
+   *     .setResource(resource.toString())
    *     .build();
    *   Policy response = databaseAdminClient.getIamPolicy(request);
    * }
@@ -1112,9 +1045,9 @@ public class DatabaseAdminClient implements BackgroundResource {
    *
    * <pre><code>
    * try (DatabaseAdminClient databaseAdminClient = DatabaseAdminClient.create()) {
-   *   String formattedResource = DatabaseName.format("[PROJECT]", "[INSTANCE]", "[DATABASE]");
+   *   ResourceName resource = DatabaseName.of("[PROJECT]", "[INSTANCE]", "[DATABASE]");
    *   GetIamPolicyRequest request = GetIamPolicyRequest.newBuilder()
-   *     .setResource(formattedResource)
+   *     .setResource(resource.toString())
    *     .build();
    *   ApiFuture&lt;Policy&gt; future = databaseAdminClient.getIamPolicyCallable().futureCall(request);
    *   // Do something
@@ -1138,9 +1071,45 @@ public class DatabaseAdminClient implements BackgroundResource {
    *
    * <pre><code>
    * try (DatabaseAdminClient databaseAdminClient = DatabaseAdminClient.create()) {
-   *   String formattedResource = DatabaseName.format("[PROJECT]", "[INSTANCE]", "[DATABASE]");
+   *   ResourceName resource = DatabaseName.of("[PROJECT]", "[INSTANCE]", "[DATABASE]");
    *   List&lt;String&gt; permissions = new ArrayList&lt;&gt;();
-   *   TestIamPermissionsResponse response = databaseAdminClient.testIamPermissions(formattedResource, permissions);
+   *   TestIamPermissionsResponse response = databaseAdminClient.testIamPermissions(resource, permissions);
+   * }
+   * </code></pre>
+   *
+   * @param resource REQUIRED: The resource for which the policy detail is being requested. See the
+   *     operation documentation for the appropriate value for this field.
+   * @param permissions The set of permissions to check for the `resource`. Permissions with
+   *     wildcards (such as '&#42;' or 'storage.&#42;') are not allowed. For more information see
+   *     [IAM Overview](https://cloud.google.com/iam/docs/overview#permissions).
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final TestIamPermissionsResponse testIamPermissions(
+      ResourceName resource, List<String> permissions) {
+
+    TestIamPermissionsRequest request =
+        TestIamPermissionsRequest.newBuilder()
+            .setResource(resource == null ? null : resource.toString())
+            .addAllPermissions(permissions)
+            .build();
+    return testIamPermissions(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Returns permissions that the caller has on the specified database resource.
+   *
+   * <p>Attempting this RPC on a non-existent Cloud Spanner database will result in a NOT_FOUND
+   * error if the user has `spanner.databases.list` permission on the containing Cloud Spanner
+   * instance. Otherwise returns an empty set of permissions.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (DatabaseAdminClient databaseAdminClient = DatabaseAdminClient.create()) {
+   *   ResourceName resource = DatabaseName.of("[PROJECT]", "[INSTANCE]", "[DATABASE]");
+   *   List&lt;String&gt; permissions = new ArrayList&lt;&gt;();
+   *   TestIamPermissionsResponse response = databaseAdminClient.testIamPermissions(resource.toString(), permissions);
    * }
    * </code></pre>
    *
@@ -1174,10 +1143,10 @@ public class DatabaseAdminClient implements BackgroundResource {
    *
    * <pre><code>
    * try (DatabaseAdminClient databaseAdminClient = DatabaseAdminClient.create()) {
-   *   String formattedResource = DatabaseName.format("[PROJECT]", "[INSTANCE]", "[DATABASE]");
+   *   ResourceName resource = DatabaseName.of("[PROJECT]", "[INSTANCE]", "[DATABASE]");
    *   List&lt;String&gt; permissions = new ArrayList&lt;&gt;();
    *   TestIamPermissionsRequest request = TestIamPermissionsRequest.newBuilder()
-   *     .setResource(formattedResource)
+   *     .setResource(resource.toString())
    *     .addAllPermissions(permissions)
    *     .build();
    *   TestIamPermissionsResponse response = databaseAdminClient.testIamPermissions(request);
@@ -1203,10 +1172,10 @@ public class DatabaseAdminClient implements BackgroundResource {
    *
    * <pre><code>
    * try (DatabaseAdminClient databaseAdminClient = DatabaseAdminClient.create()) {
-   *   String formattedResource = DatabaseName.format("[PROJECT]", "[INSTANCE]", "[DATABASE]");
+   *   ResourceName resource = DatabaseName.of("[PROJECT]", "[INSTANCE]", "[DATABASE]");
    *   List&lt;String&gt; permissions = new ArrayList&lt;&gt;();
    *   TestIamPermissionsRequest request = TestIamPermissionsRequest.newBuilder()
-   *     .setResource(formattedResource)
+   *     .setResource(resource.toString())
    *     .addAllPermissions(permissions)
    *     .build();
    *   ApiFuture&lt;TestIamPermissionsResponse&gt; future = databaseAdminClient.testIamPermissionsCallable().futureCall(request);
@@ -1218,6 +1187,138 @@ public class DatabaseAdminClient implements BackgroundResource {
   public final UnaryCallable<TestIamPermissionsRequest, TestIamPermissionsResponse>
       testIamPermissionsCallable() {
     return stub.testIamPermissionsCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Lists Cloud Spanner databases.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (DatabaseAdminClient databaseAdminClient = DatabaseAdminClient.create()) {
+   *   InstanceName parent = InstanceName.of("[PROJECT]", "[INSTANCE]");
+   *   for (Database element : databaseAdminClient.listDatabases(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * </code></pre>
+   *
+   * @param parent Required. The instance whose databases should be listed. Values are of the form
+   *     `projects/&lt;project&gt;/instances/&lt;instance&gt;`.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListDatabasesPagedResponse listDatabases(InstanceName parent) {
+    ListDatabasesRequest request =
+        ListDatabasesRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .build();
+    return listDatabases(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Lists Cloud Spanner databases.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (DatabaseAdminClient databaseAdminClient = DatabaseAdminClient.create()) {
+   *   InstanceName parent = InstanceName.of("[PROJECT]", "[INSTANCE]");
+   *   for (Database element : databaseAdminClient.listDatabases(parent.toString()).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * </code></pre>
+   *
+   * @param parent Required. The instance whose databases should be listed. Values are of the form
+   *     `projects/&lt;project&gt;/instances/&lt;instance&gt;`.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListDatabasesPagedResponse listDatabases(String parent) {
+    ListDatabasesRequest request = ListDatabasesRequest.newBuilder().setParent(parent).build();
+    return listDatabases(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Lists Cloud Spanner databases.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (DatabaseAdminClient databaseAdminClient = DatabaseAdminClient.create()) {
+   *   InstanceName parent = InstanceName.of("[PROJECT]", "[INSTANCE]");
+   *   ListDatabasesRequest request = ListDatabasesRequest.newBuilder()
+   *     .setParent(parent.toString())
+   *     .build();
+   *   for (Database element : databaseAdminClient.listDatabases(request).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * </code></pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListDatabasesPagedResponse listDatabases(ListDatabasesRequest request) {
+    return listDatabasesPagedCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Lists Cloud Spanner databases.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (DatabaseAdminClient databaseAdminClient = DatabaseAdminClient.create()) {
+   *   InstanceName parent = InstanceName.of("[PROJECT]", "[INSTANCE]");
+   *   ListDatabasesRequest request = ListDatabasesRequest.newBuilder()
+   *     .setParent(parent.toString())
+   *     .build();
+   *   ApiFuture&lt;ListDatabasesPagedResponse&gt; future = databaseAdminClient.listDatabasesPagedCallable().futureCall(request);
+   *   // Do something
+   *   for (Database element : future.get().iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * </code></pre>
+   */
+  public final UnaryCallable<ListDatabasesRequest, ListDatabasesPagedResponse>
+      listDatabasesPagedCallable() {
+    return stub.listDatabasesPagedCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Lists Cloud Spanner databases.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (DatabaseAdminClient databaseAdminClient = DatabaseAdminClient.create()) {
+   *   InstanceName parent = InstanceName.of("[PROJECT]", "[INSTANCE]");
+   *   ListDatabasesRequest request = ListDatabasesRequest.newBuilder()
+   *     .setParent(parent.toString())
+   *     .build();
+   *   while (true) {
+   *     ListDatabasesResponse response = databaseAdminClient.listDatabasesCallable().call(request);
+   *     for (Database element : response.getDatabasesList()) {
+   *       // doThingsWith(element);
+   *     }
+   *     String nextPageToken = response.getNextPageToken();
+   *     if (!Strings.isNullOrEmpty(nextPageToken)) {
+   *       request = request.toBuilder().setPageToken(nextPageToken).build();
+   *     } else {
+   *       break;
+   *     }
+   *   }
+   * }
+   * </code></pre>
+   */
+  public final UnaryCallable<ListDatabasesRequest, ListDatabasesResponse> listDatabasesCallable() {
+    return stub.listDatabasesCallable();
   }
 
   @Override
