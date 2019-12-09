@@ -997,7 +997,7 @@ public class StorageSnippets {
 
     Page<Bucket> buckets = storage.list();
     for (Bucket bucket : buckets.iterateAll()) {
-      // do something with the info
+      System.out.println(bucket.getName());
     }
     // [END auth_cloud_implicit]
     return buckets;
@@ -1010,7 +1010,7 @@ public class StorageSnippets {
 
     Page<Bucket> buckets = storage.list();
     for (Bucket bucket : buckets.iterateAll()) {
-      // do something with the info
+      System.out.println(bucket.getName());
     }
     // [END storage_list_buckets]
     return buckets;
