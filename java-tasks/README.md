@@ -3,9 +3,8 @@ Google Cloud Java Client for Cloud Tasks
 
 Java idiomatic client for [Cloud Tasks][cloud-tasks].
 
-[![Kokoro CI](http://storage.googleapis.com/cloud-devrel-public/java/badges/google-cloud-java/master.svg)](http://storage.googleapis.com/cloud-devrel-public/java/badges/google-cloud-java/master.html)
 [![Maven](https://img.shields.io/maven-central/v/com.google.cloud/google-cloud-tasks.svg)](https://img.shields.io/maven-central/v/com.google.cloud/google-cloud-tasks.svg)
-[![Codacy Badge](https://api.codacy.com/project/badge/grade/9da006ad7c3a4fe1abd142e77c003917)](https://www.codacy.com/app/mziccard/google-cloud-java)
+![Stability][stability-image]
 
 - [Product Documentation][tasks]
 - [Client Library Documentation][tasks-client-lib-docs]
@@ -22,7 +21,7 @@ If you are using Maven with Bom, Add this to your pom.xml file.
   <dependency>
     <groupId>com.google.cloud</groupId>
     <artifactId>libraries-bom</artifactId>
-    <version>2.8.0</version>
+    <version>3.1.0</version>
     <type>pom</type>
     <scope>import</scope>
    </dependency>
@@ -108,11 +107,31 @@ License
 
 Apache 2.0 - See [LICENSE] for more information.
 
+## CI Status
 
-[CONTRIBUTING]:https://github.com/googleapis/java-tasks/blob/master/CONTRIBUTING.md
-[code-of-conduct]:https://github.com/googleapis/java-tasks/blob/master/CODE_OF_CONDUCT.md#contributor-code-of-conduct
+Java Version | Status
+------------ | ------
+Java 7 | [![Kokoro CI][kokoro-badge-image-1]][kokoro-badge-link-1]
+Java 8 | [![Kokoro CI][kokoro-badge-image-2]][kokoro-badge-link-2]
+Java 8 OSX | [![Kokoro CI][kokoro-badge-image-3]][kokoro-badge-link-3]
+Java 8 Windows | [![Kokoro CI][kokoro-badge-image-4]][kokoro-badge-link-4]
+Java 11 | [![Kokoro CI][kokoro-badge-image-5]][kokoro-badge-link-5]
+
+[kokoro-badge-image-1]: http://storage.googleapis.com/cloud-devrel-public/java/badges/java-tasks/java7.svg
+[kokoro-badge-link-1]: http://storage.googleapis.com/cloud-devrel-public/java/badges/java-tasks/java7.html
+[kokoro-badge-image-2]: http://storage.googleapis.com/cloud-devrel-public/java/badges/java-tasks/java8.svg
+[kokoro-badge-link-2]: http://storage.googleapis.com/cloud-devrel-public/java/badges/java-tasks/java8.html
+[kokoro-badge-image-3]: http://storage.googleapis.com/cloud-devrel-public/java/badges/java-tasks/java8-osx.svg
+[kokoro-badge-link-3]: http://storage.googleapis.com/cloud-devrel-public/java/badges/java-tasks/java8-osx.html
+[kokoro-badge-image-4]: http://storage.googleapis.com/cloud-devrel-public/java/badges/java-tasks/java8-win.svg
+[kokoro-badge-link-4]: http://storage.googleapis.com/cloud-devrel-public/java/badges/java-tasks/java8-win.html
+[kokoro-badge-image-5]: http://storage.googleapis.com/cloud-devrel-public/java/badges/java-tasks/java11.svg
+[kokoro-badge-link-5]: http://storage.googleapis.com/cloud-devrel-public/java/badges/java-tasks/java11.html
+[stability-image]: https://img.shields.io/badge/stability-ga-green
+[CONTRIBUTING]: https://github.com/googleapis/java-tasks/blob/master/CONTRIBUTING.md
+[code-of-conduct]: https://github.com/googleapis/java-tasks/blob/master/CODE_OF_CONDUCT.md#contributor-code-of-conduct
 [LICENSE]: https://github.com/googleapis/java-tasks/blob/master/LICENSE
 [cloud-platform]: https://cloud.google.com/
 [cloud-tasks]: https://cloud.google.com/tasks
 [tasks]: https://cloud.google.com/tasks/docs
-[tasks-client-lib-docs]: https://googleapis.dev/java/google-cloud-clients/latest/index.html?com/google/cloud/tasks/v2/package-summary.html
+[tasks-client-lib-docs]: https://googleapis.dev/java/google-cloud-tasks/latest/index.html
