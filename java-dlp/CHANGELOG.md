@@ -1,5 +1,19 @@
 # Changelog
 
+## [0.118.0](https://www.github.com/googleapis/java-dlp/compare/v0.117.0...v0.118.0) (2019-12-09)
+
+
+### Features
+
+* add location_id in preparation for regionalization ([#30](https://www.github.com/googleapis/java-dlp/issues/30)) ([2fdfe30](https://www.github.com/googleapis/java-dlp/commit/2fdfe30a2b6b60e61fa380a5a14d2c4618c9546b))
+
+
+### Dependencies
+
+* update dependency com.google.protobuf:protobuf-java to v3.11.0 ([#29](https://www.github.com/googleapis/java-dlp/issues/29)) ([b7d2322](https://www.github.com/googleapis/java-dlp/commit/b7d2322d57f8e77fcda109b2cdcf4234f88b2906))
+* update dependency com.google.protobuf:protobuf-java to v3.11.1 ([#32](https://www.github.com/googleapis/java-dlp/issues/32)) ([796e0c7](https://www.github.com/googleapis/java-dlp/commit/796e0c74188e9c158dfd3dc192b890c0280d3ea3))
+* update gax.version to v1.51.0 ([#33](https://www.github.com/googleapis/java-dlp/issues/33)) ([2ff3c3e](https://www.github.com/googleapis/java-dlp/commit/2ff3c3e5e4b46863be9e27b83cf06013796481e8))
+
 ## [0.117.0](https://www.github.com/googleapis/java-dlp/compare/v0.116.0...v0.117.0) (2019-11-12)
 
 
