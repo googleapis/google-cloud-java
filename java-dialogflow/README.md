@@ -1,11 +1,9 @@
-Google Cloud Java Client for Dialogflow
-======================================
+# Google Cloud Java Client for Dialogflow
 
 Java idiomatic client for [Dialogflow][dialogflow].
 
-[![Kokoro CI](http://storage.googleapis.com/cloud-devrel-public/java/badges/google-cloud-java/master.svg)](http://storage.googleapis.com/cloud-devrel-public/java/badges/google-cloud-java/master.html)
-[![Maven](https://img.shields.io/maven-central/v/com.google.cloud/google-cloud-dialogflow.svg)](https://img.shields.io/maven-central/v/com.google.cloud/google-cloud-dialogflow.svg)
-[![Codacy Badge](https://api.codacy.com/project/badge/grade/9da006ad7c3a4fe1abd142e77c003917)](https://www.codacy.com/app/mziccard/google-cloud-java)
+[![Maven][maven-version-image]][maven-version-link]
+![Stability][stability-image]
 
 - [Dialogflow Standard Edition Documentation][dialogflow-standard-product-docs]
 - [Dialogflow Enterprise Edition Documentation][dialogflow-enterprise-product-docs]
@@ -23,7 +21,7 @@ If you are using Maven with a BOM, add this to your pom.xml file.
   <dependency>
     <groupId>com.google.cloud</groupId>
     <artifactId>libraries-bom</artifactId>
-    <version>2.8.0</version>
+    <version>3.1.0</version>
     <type>pom</type>
     <scope>import</scope>
    </dependency>
@@ -110,7 +108,9 @@ License
 
 Apache 2.0 - See [LICENSE] for more information.
 
-
+[stability-image]: https://img.shields.io/badge/stability-beta-yellow
+[maven-version-image]: https://img.shields.io/maven-central/v/com.google.cloud/google-cloud-dialogflow.svg
+[maven-version-link]: https://search.maven.org/search?q=g:com.google.cloud%20AND%20a:google-cloud-dialogflow&core=gav
 [CONTRIBUTING]:https://github.com/googleapis/google-cloud-java/blob/master/CONTRIBUTING.md
 [code-of-conduct]:https://github.com/googleapis/google-cloud-java/blob/master/CODE_OF_CONDUCT.md#contributor-code-of-conduct
 [LICENSE]: https://github.com/googleapis/google-cloud-java/blob/master/LICENSE

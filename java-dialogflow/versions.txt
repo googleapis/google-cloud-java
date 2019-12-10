@@ -5,4 +5,4 @@ proto-google-cloud-dialogflow-v2:0.83.0:0.83.0
 proto-google-cloud-dialogflow-v2beta1:0.83.0:0.83.0
 grpc-google-cloud-dialogflow-v2beta1:0.83.0:0.83.0
 grpc-google-cloud-dialogflow-v2:0.83.0:0.83.0
-google-cloud-dialogflow:0.118.0-alpha:0.118.0-alpha
+google-cloud-dialogflow:0.118.0:0.118.0
