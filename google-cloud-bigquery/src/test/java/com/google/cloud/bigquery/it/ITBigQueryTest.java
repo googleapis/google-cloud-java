@@ -1271,7 +1271,6 @@ public class ITBigQueryTest {
 
   @Test
   public void testScriptStatistics() throws InterruptedException {
-    long currentTime = System.currentTimeMillis();
     String script =
         "-- Declare a variable to hold names as an array.\n"
             + "DECLARE top_names ARRAY<STRING>;\n"
@@ -1295,9 +1294,7 @@ public class ITBigQueryTest {
     JobStatistics jobStatistics = info.getStatistics();
     String parentJobId = info.getJobId().getJob();
     assertEquals(2, jobStatistics.getNumChildJobs().longValue());
-    Page<Job> page =
-        bigquery.listJobs(
-            JobListOption.parentJobId(parentJobId), JobListOption.minCreationTime(currentTime));
+    Page<Job> page = bigquery.listJobs(JobListOption.parentJobId(parentJobId));
     for (Job job : page.iterateAll()) {
       JobStatistics.ScriptStatistics scriptStatistics = job.getStatistics().getScriptStatistics();
       if (scriptStatistics != null) {

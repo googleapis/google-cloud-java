@@ -510,7 +510,8 @@ public class HttpBigQueryRpc implements BigQueryRpc {
               .setStateFilter(Option.STATE_FILTER.<List<String>>get(options))
               .setMaxResults(Option.MAX_RESULTS.getLong(options))
               .setPageToken(Option.PAGE_TOKEN.getString(options))
-              .setProjection(DEFAULT_PROJECTION);
+              .setProjection(DEFAULT_PROJECTION)
+              .setParentJobId(Option.PARENT_JOB_ID.getString(options));
       if (Option.MIN_CREATION_TIME.getLong(options) != null) {
         request.setMinCreationTime(BigInteger.valueOf(Option.MIN_CREATION_TIME.getLong(options)));
       }
