@@ -441,7 +441,7 @@ public class ITStorageSnippets {
 
   @Test
   public void testAuthListBuckets() {
-    final ByteArrayOutputStream snippetOutputCapture = new ByteArrayOutputStream();
+    ByteArrayOutputStream snippetOutputCapture = new ByteArrayOutputStream();
     System.setOut(new PrintStream(snippetOutputCapture));
     storageSnippets.authListBuckets();
     String snippetOutput = snippetOutputCapture.toString();
@@ -451,7 +451,7 @@ public class ITStorageSnippets {
 
   @Test
   public void testListBuckets() {
-    final ByteArrayOutputStream snippetOutputCapture = new ByteArrayOutputStream();
+    ByteArrayOutputStream snippetOutputCapture = new ByteArrayOutputStream();
     System.setOut(new PrintStream(snippetOutputCapture));
     storageSnippets.listBuckets();
     String snippetOutput = snippetOutputCapture.toString();
