@@ -16,6 +16,7 @@
 
 package com.google.cloud.storage;
 
+import static com.google.cloud.storage.SignedUrlEncodingHelper.Rfc3986UriEncode;
 import static com.google.cloud.storage.testing.ApiPolicyMatcher.eqApiPolicy;
 import static java.nio.charset.StandardCharsets.UTF_8;
 import static org.junit.Assert.assertArrayEquals;
@@ -55,7 +56,6 @@ import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.Iterables;
 import com.google.common.io.BaseEncoding;
-import com.google.common.net.UrlEscapers;
 import java.io.ByteArrayInputStream;
 import java.io.IOException;
 import java.io.UnsupportedEncodingException;
@@ -335,6 +335,29 @@ public class StorageImplTest {
           return 42_000L;
         }
       };
+
+  // List of chars under test were taken from
+  // https://en.wikipedia.org/wiki/Percent-encoding#Percent-encoding_reserved_characters
+  private static final Map<Character, String> URI_ENCODING_MAP =
+      ImmutableMap.<Character, String>builder()
+          .put('!', "%21")
+          .put('#', "%23")
+          .put('$', "%24")
+          .put('&', "%26")
+          .put('\'', "%27")
+          .put('(', "%28")
+          .put(')', "%29")
+          .put('*', "%2A")
+          .put('+', "%2B")
+          .put(',', "%2C")
+          .put(':', "%3A")
+          .put(';', "%3B")
+          .put('=', "%3D")
+          .put('?', "%3F")
+          .put('@', "%40")
+          .put('[', "%5B")
+          .put(']', "%5D")
+          .build();
 
   private static final String ACCOUNT = "account";
   private static PrivateKey privateKey;
@@ -1767,12 +1790,12 @@ public class StorageImplTest {
     storage = options.toBuilder().setCredentials(credentials).build().getService();
     URL url =
         storage.signUrl(BlobInfo.newBuilder(BUCKET_NAME1, blobName).build(), 14, TimeUnit.DAYS);
-    String escapedBlobName = UrlEscapers.urlFragmentEscaper().escape(blobName);
+    String expectedResourcePath = "/b1";
     String stringUrl = url.toString();
     String expectedUrl =
         new StringBuilder("https://storage.googleapis.com/")
             .append(BUCKET_NAME1)
-            .append(escapedBlobName)
+            .append(expectedResourcePath)
             .append("?GoogleAccessId=")
             .append(ACCOUNT)
             .append("&Expires=")
@@ -1789,7 +1812,7 @@ public class StorageImplTest {
         .append(42L + 1209600)
         .append("\n/")
         .append(BUCKET_NAME1)
-        .append(escapedBlobName);
+        .append(expectedResourcePath);
 
     Signature signer = Signature.getInstance("SHA256withRSA");
     signer.initVerify(publicKey);
@@ -1816,7 +1839,7 @@ public class StorageImplTest {
             14,
             TimeUnit.DAYS,
             Storage.SignUrlOption.withHostName("https://example.com"));
-    String escapedBlobName = UrlEscapers.urlFragmentEscaper().escape(blobName);
+    String escapedBlobName = Rfc3986UriEncode(blobName, false);
     String stringUrl = url.toString();
     String expectedUrl =
         new StringBuilder("https://example.com/")
@@ -1962,12 +1985,6 @@ public class StorageImplTest {
   public void testSignUrlForBlobWithSpecialChars()
       throws NoSuchAlgorithmException, InvalidKeyException, SignatureException,
           UnsupportedEncodingException {
-    // List of chars under test were taken from
-    // https://en.wikipedia.org/wiki/Percent-encoding#Percent-encoding_reserved_characters
-    char[] specialChars =
-        new char[] {
-          '!', '#', '$', '&', '\'', '(', ')', '*', '+', ',', ':', ';', '=', '?', '@', '[', ']'
-        };
     EasyMock.replay(storageRpcMock);
     ServiceAccountCredentials credentials =
         ServiceAccountCredentials.newBuilder()
@@ -1976,17 +1993,16 @@ public class StorageImplTest {
             .build();
     storage = options.toBuilder().setCredentials(credentials).build().getService();
 
-    for (char specialChar : specialChars) {
-      String blobName = "/a" + specialChar + "b";
+    for (Map.Entry<Character, String> entry : URI_ENCODING_MAP.entrySet()) {
+      String blobName = "/a" + entry.getKey() + "b";
       URL url =
           storage.signUrl(BlobInfo.newBuilder(BUCKET_NAME1, blobName).build(), 14, TimeUnit.DAYS);
-      String escapedBlobName =
-          UrlEscapers.urlFragmentEscaper().escape(blobName).replace("?", "%3F").replace(";", "%3B");
+      String expectedBlobName = "/a" + entry.getValue() + "b";
       String stringUrl = url.toString();
       String expectedUrl =
           new StringBuilder("https://storage.googleapis.com/")
               .append(BUCKET_NAME1)
-              .append(escapedBlobName)
+              .append(expectedBlobName)
               .append("?GoogleAccessId=")
               .append(ACCOUNT)
               .append("&Expires=")
@@ -2003,7 +2019,7 @@ public class StorageImplTest {
           .append(42L + 1209600)
           .append("\n/")
           .append(BUCKET_NAME1)
-          .append(escapedBlobName);
+          .append(expectedBlobName);
 
       Signature signer = Signature.getInstance("SHA256withRSA");
       signer.initVerify(publicKey);
@@ -2017,12 +2033,6 @@ public class StorageImplTest {
   public void testSignUrlForBlobWithSpecialCharsAndHostName()
       throws NoSuchAlgorithmException, InvalidKeyException, SignatureException,
           UnsupportedEncodingException {
-    // List of chars under test were taken from
-    // https://en.wikipedia.org/wiki/Percent-encoding#Percent-encoding_reserved_characters
-    char[] specialChars =
-        new char[] {
-          '!', '#', '$', '&', '\'', '(', ')', '*', '+', ',', ':', ';', '=', '?', '@', '[', ']'
-        };
     EasyMock.replay(storageRpcMock);
     ServiceAccountCredentials credentials =
         ServiceAccountCredentials.newBuilder()
@@ -2031,21 +2041,20 @@ public class StorageImplTest {
             .build();
     storage = options.toBuilder().setCredentials(credentials).build().getService();
 
-    for (char specialChar : specialChars) {
-      String blobName = "/a" + specialChar + "b";
+    for (Map.Entry<Character, String> entry : URI_ENCODING_MAP.entrySet()) {
+      String blobName = "/a" + entry.getKey() + "b";
       URL url =
           storage.signUrl(
               BlobInfo.newBuilder(BUCKET_NAME1, blobName).build(),
               14,
               TimeUnit.DAYS,
               Storage.SignUrlOption.withHostName("https://example.com"));
-      String escapedBlobName =
-          UrlEscapers.urlFragmentEscaper().escape(blobName).replace("?", "%3F").replace(";", "%3B");
+      String expectedBlobName = "/a" + entry.getValue() + "b";
       String stringUrl = url.toString();
       String expectedUrl =
           new StringBuilder("https://example.com/")
               .append(BUCKET_NAME1)
-              .append(escapedBlobName)
+              .append(expectedBlobName)
               .append("?GoogleAccessId=")
               .append(ACCOUNT)
               .append("&Expires=")
@@ -2062,7 +2071,7 @@ public class StorageImplTest {
           .append(42L + 1209600)
           .append("\n/")
           .append(BUCKET_NAME1)
-          .append(escapedBlobName);
+          .append(expectedBlobName);
 
       Signature signer = Signature.getInstance("SHA256withRSA");
       signer.initVerify(publicKey);
@@ -2208,7 +2217,7 @@ public class StorageImplTest {
     String blobName = "/foo/bar/baz #%20other cool stuff.txt";
     URL url =
         storage.signUrl(BlobInfo.newBuilder(BUCKET_NAME1, blobName).build(), 14, TimeUnit.DAYS);
-    String escapedBlobName = UrlEscapers.urlFragmentEscaper().escape(blobName);
+    String escapedBlobName = Rfc3986UriEncode(blobName, false);
     String stringUrl = url.toString();
     String expectedUrl =
         new StringBuilder("https://storage.googleapis.com/")
@@ -2258,7 +2267,7 @@ public class StorageImplTest {
             14,
             TimeUnit.DAYS,
             Storage.SignUrlOption.withHostName("https://example.com"));
-    String escapedBlobName = UrlEscapers.urlFragmentEscaper().escape(blobName);
+    String escapedBlobName = Rfc3986UriEncode(blobName, false);
     String stringUrl = url.toString();
     String expectedUrl =
         new StringBuilder("https://example.com/")
