@@ -149,8 +149,8 @@ public class DefaultRowAdapter implements RowAdapter<Row> {
         sortedCells = currentFamilyCells.build();
       } else {
         // Normal path: concatenate the cells order by family.
-        ImmutableList.Builder<RowCell> sortedCellsBuilder =
-            ImmutableList.builderWithExpectedSize(totalCellCount);
+        // TODO: use builderWithExpectedSize(totalCellCount) when it stabilizes
+        ImmutableList.Builder<RowCell> sortedCellsBuilder = ImmutableList.builder();
 
         for (ImmutableList.Builder<RowCell> familyCells : cellsByFamily.values()) {
           sortedCellsBuilder.addAll(familyCells.build());
