@@ -54,7 +54,7 @@ public class CreateFilesetEntry {
               .setDisplayName("My Fileset")
               .setDescription("This fileset consists of ....")
               .setGcsFilesetSpec(
-                  GcsFilesetSpec.newBuilder().addFilePatterns("gs://my_bucket/*").build())
+                  GcsFilesetSpec.newBuilder().addFilePatterns("gs://cloud-samples-data/*").build())
               .setSchema(
                   Schema.newBuilder()
                       .addColumns(
