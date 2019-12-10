@@ -150,6 +150,7 @@ public class SpannerOptions extends ServiceOptions<Spanner, SpannerOptions> {
     private DatabaseAdminStubSettings.Builder databaseAdminStubSettingsBuilder =
         DatabaseAdminStubSettings.newBuilder();
     private Duration partitionedDmlTimeout = Duration.ofHours(2L);
+    private String emulatorHost = System.getenv("SPANNER_EMULATOR_HOST");
 
     private Builder() {}
 
@@ -370,8 +371,33 @@ public class SpannerOptions extends ServiceOptions<Spanner, SpannerOptions> {
       return this;
     }
 
+    /**
+     * Sets the host of an emulator to use. By default the value is read from an environment
+     * variable. If the environment variable is not set, this will be <code>null</code>.
+     */
+    public Builder setEmulatorHost(String emulatorHost) {
+      this.emulatorHost = emulatorHost;
+      return this;
+    }
+
     @Override
     public SpannerOptions build() {
+      // Set the host of emulator has been set.
+      if (emulatorHost != null) {
+        if (!emulatorHost.startsWith("http")) {
+          emulatorHost = "http://" + emulatorHost;
+        }
+        this.setHost(emulatorHost);
+        // Channels are secure by default (via SSL/TLS). For the example we disable TLS to avoid
+        // needing certificates.
+        this.setChannelConfigurator(
+            new ApiFunction<ManagedChannelBuilder, ManagedChannelBuilder>() {
+              @Override
+              public ManagedChannelBuilder apply(ManagedChannelBuilder builder) {
+                return builder.usePlaintext();
+              }
+            });
+      }
       return new SpannerOptions(this);
     }
   }
