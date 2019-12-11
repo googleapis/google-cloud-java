@@ -404,9 +404,6 @@ public class ITStorageSnippets {
     assertNotNull(userAcl);
     assertEquals(USER_EMAIL, ((User) userAcl.getEntity()).getEmail());
 
-    updatedAcl = storageSnippets.blobToPublicRead(BUCKET, blobName, createdBlob.getGeneration());
-    assertEquals(Acl.Role.READER, updatedAcl.getRole());
-    assertEquals(User.ofAllUsers(), updatedAcl.getEntity());
     acls =
         Sets.newHashSet(
             storageSnippets.listBlobAcls(BUCKET, blobName, createdBlob.getGeneration()));
