@@ -25,6 +25,8 @@ import static org.junit.Assert.assertNull;
 import static org.junit.Assert.assertTrue;
 import static org.junit.Assert.fail;
 
+import com.google.cloud.examples.storage.objects.GenerateV4GetObjectSignedUrl;
+import com.google.cloud.examples.storage.objects.GenerateV4PutObjectSignedUrl;
 import com.google.cloud.storage.Acl;
 import com.google.cloud.storage.Blob;
 import com.google.cloud.storage.BlobId;
@@ -36,8 +38,12 @@ import com.google.cloud.storage.StorageException;
 import com.google.cloud.storage.testing.RemoteStorageHelper;
 import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.Sets;
+
+import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
+import java.io.OutputStream;
+import java.io.PrintStream;
 import java.net.URL;
 import java.net.URLConnection;
 import java.util.Iterator;
@@ -54,6 +60,8 @@ import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.ExpectedException;
 
+import javax.net.ssl.HttpsURLConnection;
+
 public class ITBlobSnippets {
 
   private static final Logger log = Logger.getLogger(ITBlobSnippets.class.getName());
@@ -61,6 +69,8 @@ public class ITBlobSnippets {
   private static final String BLOB = "blob";
   private static final byte[] EMPTY_CONTENT = new byte[0];
   private static final byte[] CONTENT = "Hello, World!".getBytes(UTF_8);
+
+  private static final String PROJECT_ID = System.getProperty("GOOGLE_CLOUD_PROJECT");
 
   private static Storage storage;
   private static Blob blob;
@@ -165,5 +175,37 @@ public class ITBlobSnippets {
 
     // Assert that the old blob doesn't exist
     assertFalse(blobs.hasNext());
+  }
+
+  @Test
+  public void testV4SignedURLs() throws IOException {
+    String tempObject = "test-upload-signed-url-object";
+    PrintStream standardOut = System.out;
+    final ByteArrayOutputStream snippetOutputCapture = new ByteArrayOutputStream();
+    System.setOut(new PrintStream(snippetOutputCapture));
+    GenerateV4PutObjectSignedUrl.generateV4GPutObjectSignedUrl(PROJECT_ID, BUCKET, tempObject);
+    String snippetOutput = snippetOutputCapture.toString();
+    String url = snippetOutput.split("\n")[1];
+    URL uploadUrl = new URL(url);
+    HttpsURLConnection connection = (HttpsURLConnection) uploadUrl.openConnection();
+    connection.setRequestMethod("PUT");
+    connection.setDoOutput(true);
+    connection.setRequestProperty("Content-Type", "application/octet-stream");
+    try (OutputStream out = connection.getOutputStream()) {
+      out.write(CONTENT);
+      assertEquals(connection.getResponseCode(), 200);
+    }
+    GenerateV4GetObjectSignedUrl.generateV4GetObjectSignedUrl(PROJECT_ID, BUCKET, tempObject);
+    snippetOutput = snippetOutputCapture.toString();
+    url = snippetOutput.split("\n")[5];
+    URL downloadUrl = new URL(url);
+    System.setOut(standardOut);
+    System.out.println(snippetOutput);
+    connection = (HttpsURLConnection) downloadUrl.openConnection();
+    byte[] readBytes = new byte[CONTENT.length];
+    try (InputStream responseStream = connection.getInputStream()) {
+      assertEquals(CONTENT.length, responseStream.read(readBytes));
+      assertArrayEquals(CONTENT, readBytes);
+    }
   }
 }
