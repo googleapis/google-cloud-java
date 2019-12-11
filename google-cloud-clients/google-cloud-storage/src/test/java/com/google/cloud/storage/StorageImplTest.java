@@ -338,7 +338,7 @@ public class StorageImplTest {
 
   // List of chars under test were taken from
   // https://en.wikipedia.org/wiki/Percent-encoding#Percent-encoding_reserved_characters
-  private static final Map<Character, String> URI_ENCODING_MAP =
+  private static final Map<Character, String> RFC3986_URI_ENCODING_MAP =
       ImmutableMap.<Character, String>builder()
           .put('!', "%21")
           .put('#', "%23")
@@ -350,6 +350,11 @@ public class StorageImplTest {
           .put('*', "%2A")
           .put('+', "%2B")
           .put(',', "%2C")
+          // NOTE: Whether the forward slash character should be encoded depends on the URI segment
+          // being encoded. The path segment should not encode forward slashes, but others (e.g.
+          // query parameter keys and values) should encode them. Tests verifying encoding behavior
+          // in path segments should make a copy of this map and replace the mapping for '/' to "/".
+          .put('/', "%2F")
           .put(':', "%3A")
           .put(';', "%3B")
           .put('=', "%3D")
@@ -357,6 +362,11 @@ public class StorageImplTest {
           .put('@', "%40")
           .put('[', "%5B")
           .put(']', "%5D")
+          // In addition to [a-zA-Z0-9], these chars should not be URI-encoded:
+          .put('-', "-")
+          .put('_', "_")
+          .put('.', ".")
+          .put('~', "~")
           .build();
 
   private static final String ACCOUNT = "account";
@@ -1993,7 +2003,11 @@ public class StorageImplTest {
             .build();
     storage = options.toBuilder().setCredentials(credentials).build().getService();
 
-    for (Map.Entry<Character, String> entry : URI_ENCODING_MAP.entrySet()) {
+    Map<Character, String> encodingCharsToTest =
+        new HashMap<Character, String>(RFC3986_URI_ENCODING_MAP);
+    // Signed URL specs say that '/' is not encoded in the resource name (path segment of the URI).
+    encodingCharsToTest.put('/', "/");
+    for (Map.Entry<Character, String> entry : encodingCharsToTest.entrySet()) {
       String blobName = "/a" + entry.getKey() + "b";
       URL url =
           storage.signUrl(BlobInfo.newBuilder(BUCKET_NAME1, blobName).build(), 14, TimeUnit.DAYS);
@@ -2041,7 +2055,11 @@ public class StorageImplTest {
             .build();
     storage = options.toBuilder().setCredentials(credentials).build().getService();
 
-    for (Map.Entry<Character, String> entry : URI_ENCODING_MAP.entrySet()) {
+    Map<Character, String> encodingCharsToTest =
+        new HashMap<Character, String>(RFC3986_URI_ENCODING_MAP);
+    // Signed URL specs say that '/' is not encoded in the resource name (path segment of the URI).
+    encodingCharsToTest.put('/', "/");
+    for (Map.Entry<Character, String> entry : encodingCharsToTest.entrySet()) {
       String blobName = "/a" + entry.getKey() + "b";
       URL url =
           storage.signUrl(
