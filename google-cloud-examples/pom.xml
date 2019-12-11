@@ -186,7 +186,7 @@
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-failsafe-plugin</artifactId>
-        <version>3.0.0-M3</version>
+        <version>3.0.0-M4</version>
         <configuration>
           <excludes>
             <exclude>**/IT*.java</exclude>
@@ -220,7 +220,7 @@
           <plugin>
             <groupId>org.apache.maven.plugins</groupId>
             <artifactId>maven-failsafe-plugin</artifactId>
-            <version>3.0.0-M3</version>
+            <version>3.0.0-M4</version>
             <configuration>
               <excludes combine.self="override"></excludes>
           </configuration>
