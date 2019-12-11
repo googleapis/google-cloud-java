@@ -41,9 +41,11 @@ import io.opencensus.trace.Span;
 import io.opencensus.trace.Status;
 import io.opencensus.trace.Tracer;
 import io.opencensus.trace.Tracing;
+import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.Iterator;
 import java.util.LinkedList;
+import java.util.List;
 import java.util.Queue;
 import java.util.Random;
 import java.util.Set;
@@ -587,6 +589,67 @@ final class SessionPool {
     }
   }
 
+  /**
+   * {@link SessionPoolExhaustedException} is thrown when a session is requested by the client and
+   * the maximum number of sessions in the pool has been reached. The exception is only thrown if
+   * {@link SessionPoolOptions#isFailIfPoolExhausted()} or {@link
+   * SessionPoolOptions#isBlockWithTimeoutIfPoolExhausted()} returns true. In the latter case, the
+   * exception will only be thrown after waiting for {@link
+   * SessionPoolOptions#getBlockOnExhaustionTimeout()}. The exception contains all stack traces of
+   * the threads that hold a checked out session. This information can be used to track down
+   * potential session leaks.
+   */
+  public static class SessionPoolExhaustedException extends SpannerException {
+    private final List<LeakedSessionException> checkedOutSessions;
+
+    private static SessionPoolExhaustedException exhausted(
+        List<LeakedSessionException> checkedOutSessions) {
+      return new SessionPoolExhaustedException(
+          "No session available in the pool.", checkedOutSessions);
+    }
+
+    private static SessionPoolExhaustedException timeout(
+        List<LeakedSessionException> checkedOutSessions) {
+      return new SessionPoolExhaustedException(
+          "No session available in the pool and blocking for one to become available timed out.",
+          checkedOutSessions);
+    }
+
+    private SessionPoolExhaustedException(
+        String baseMsg, List<LeakedSessionException> checkedOutSessions) {
+      super(
+          DoNotConstructDirectly.ALLOWED,
+          ErrorCode.RESOURCE_EXHAUSTED,
+          false,
+          String.format(
+              "%s Maximum number of sessions in the pool can be"
+                  + " overridden by invoking SessionPoolOptions#Builder#setMaxSessions. Client can be made to block"
+                  + " rather than fail by setting SessionPoolOptions#Builder#setBlockIfPoolExhausted.",
+              baseMsg),
+          null);
+      this.checkedOutSessions = checkedOutSessions;
+    }
+
+    /** @return A list with the stack traces of the currently checked out sessions. */
+    public List<LeakedSessionException> getCheckedOutSessions() {
+      return checkedOutSessions;
+    }
+
+    @Override
+    public String toString() {
+      StringBuilder res = new StringBuilder(super.toString());
+      res.append(
+          "\n\nThe sessions that are currently checked out of the pool were checked out by:\n\n");
+      for (LeakedSessionException e : checkedOutSessions) {
+        for (StackTraceElement element : e.getStackTrace()) {
+          res.append(element.toString()).append("\n");
+        }
+        res.append("\n\n");
+      }
+      return res.toString();
+    }
+  }
+
   private enum SessionState {
     AVAILABLE,
     BUSY,
@@ -829,9 +892,42 @@ final class SessionPool {
     }
   }
 
+  private void handleSessionPoolBlockTimeout(final Waiter waiter) {
+    executor.submit(
+        new Runnable() {
+          @Override
+          public void run() {
+            synchronized (lock) {
+              if (readWaiters.remove(waiter) || readWriteWaiters.remove(waiter)) {
+                waiter.put(
+                    SessionPoolExhaustedException.timeout(getCheckedOutSessionStackTraces()));
+              }
+            }
+          }
+        });
+  }
+
+  private static Duration least(Duration d1, Duration d2) {
+    return d1.compareTo(d2) < 0 ? d1 : d2;
+  }
+
+  private static final Duration MAX_GET_SESSION_TRACE_TIMEOUT = Duration.ofMillis(240_000L);
+
   private final class Waiter {
-    private static final long MAX_SESSION_WAIT_TIMEOUT = 240_000L;
     private final SynchronousQueue<SessionOrError> waiter = new SynchronousQueue<>();
+    private final boolean exhausted;
+
+    /**
+     * Creates a waiter to wait for a session to become available.
+     *
+     * @param exhausted indicates whether this waiter is created because the session pool is
+     *     currently exhausted and no new sessions can be created. If true, the take method will
+     *     throw a {@link SessionPoolExhaustedException} after waiting for {@link
+     *     SessionPoolOptions#getBlockOnExhaustionTimeout()}.
+     */
+    private Waiter(boolean exhausted) {
+      this.exhausted = exhausted;
+    }
 
     private void put(PooledSession session) {
       Uninterruptibles.putUninterruptibly(waiter, new SessionOrError(session));
@@ -842,18 +938,62 @@ final class SessionPool {
     }
 
     private PooledSession take() throws SpannerException {
-      long currentTimeout = options.getInitialWaitForSessionTimeoutMillis();
+      // Keep track of the total time we have been waiting for a session to know when to throw a
+      // SessionPoolExhaustedException.
+      Duration totalWaitTime = Duration.ZERO;
+      Duration exhaustionTimeout =
+          options.isBlockWithTimeoutIfPoolExhausted()
+              ? options.getBlockOnExhaustionTimeout()
+              : Duration.ofSeconds(Long.MAX_VALUE);
+      // currentTraceTimeout is the timeout value that is used to determine when to trace a timeout.
+      Duration currentTraceTimeout =
+          least(exhaustionTimeout, options.getInitialGetSessionTraceTimeout());
       while (true) {
         try (Scope waitScope = tracer.spanBuilder(WAIT_FOR_SESSION).startScopedSpan()) {
-          SessionOrError s = pollUninterruptiblyWithTimeout(currentTimeout);
+          SessionOrError s = pollUninterruptiblyWithTimeout(currentTraceTimeout.toMillis());
           if (s == null) {
-            // Set the status to DEADLINE_EXCEEDED and retry.
+            // Set the status of the Span to DEADLINE_EXCEEDED and retry.
             numWaiterTimeouts.incrementAndGet();
+            totalWaitTime = totalWaitTime.plus(currentTraceTimeout);
             tracer.getCurrentSpan().setStatus(Status.DEADLINE_EXCEEDED);
-            currentTimeout = Math.min(currentTimeout * 2, MAX_SESSION_WAIT_TIMEOUT);
+            // Double the wait time.
+            currentTraceTimeout = currentTraceTimeout.plus(currentTraceTimeout);
+            currentTraceTimeout = least(currentTraceTimeout, MAX_GET_SESSION_TRACE_TIMEOUT);
+            // Only check whether we should throw a SessionPoolExhaustedException if the pool was
+            // actually exhausted when this waiter was created. In all other cases, we should wait
+            // for the RPC that was started to return a session or an error.
+            if (exhausted) {
+              // Check whether we have exceeded the total wait time for blocking while waiting for a
+              // session to be returned to the pool.
+              if (totalWaitTime.compareTo(exhaustionTimeout) >= 0) {
+                // No session has been returned to the pool within the configured timeout. Throw an
+                // exception that contains the stack traces of the threads that checked out the
+                // sessions. This makes it easier for a client to search for code errors that cause
+                // session leaks.
+
+                // This handle method will return the error to this waiter asynchronously through
+                // the same queue as where an RPC error would be returned. We do this because we
+                // cannot take SessionPool.lock in the waiter, as it could cause a deadlock with a
+                // session or error that is returned from an RPC. Assume the following situation:
+                // 1. A session or error is returned by an RPC and the releaseSession method takes
+                // the SessionPool.lock to return the session or error to this waiter.
+                // 2. The releaseSession method tries to put the session in the wait queue of this
+                // waiter. That call will block until this waiter calls queue.poll().
+                // 3. This waiter also tries to acquire SessionPool.lock. This will block
+                // indefinitely as the releaseSession call already holds the lock.
+                handleSessionPoolBlockTimeout(this);
+              } else {
+                // Make sure the poll timeout does not exceed the remaining wait time before we
+                // should
+                // throw an exception.
+                Duration remainingBeforeExhaustionTimeout = exhaustionTimeout.minus(totalWaitTime);
+                currentTraceTimeout = least(currentTraceTimeout, remainingBeforeExhaustionTimeout);
+              }
+            }
           } else {
+            // Got a session or an error. Return it to the user.
             if (s.e != null) {
-              throw newSpannerException(s.e);
+              throw s.e;
             }
             return s.session;
           }
@@ -1246,6 +1386,7 @@ final class SessionPool {
     span.addAnnotation("Acquiring session");
     Waiter waiter = null;
     PooledSession sess = null;
+    boolean creatingSession = false;
     synchronized (lock) {
       if (closureFuture != null) {
         span.addAnnotation("Pool has been closed");
@@ -1256,8 +1397,8 @@ final class SessionPool {
         sess = writePreparedSessions.poll();
         if (sess == null) {
           span.addAnnotation("No session available");
-          maybeCreateSession();
-          waiter = new Waiter();
+          creatingSession = maybeCreateSession();
+          waiter = new Waiter(!creatingSession);
           readWaiters.add(waiter);
         } else {
           span.addAnnotation("Acquired read write session");
@@ -1302,6 +1443,7 @@ final class SessionPool {
     span.addAnnotation("Acquiring read write session");
     Waiter waiter = null;
     PooledSession sess = null;
+    boolean creatingOrPreparingSession = false;
     synchronized (lock) {
       if (closureFuture != null) {
         throw new IllegalStateException("Pool has been closed");
@@ -1313,12 +1455,13 @@ final class SessionPool {
           if (readSession != null) {
             span.addAnnotation("Acquired read only session. Preparing for read write transaction");
             prepareSession(readSession);
+            creatingOrPreparingSession = true;
           } else {
             span.addAnnotation("No session available");
-            maybeCreateSession();
+            creatingOrPreparingSession = maybeCreateSession();
           }
         }
-        waiter = new Waiter();
+        waiter = new Waiter(!creatingOrPreparingSession);
         readWriteWaiters.add(waiter);
       } else {
         span.addAnnotation("Acquired read write session");
@@ -1373,24 +1516,27 @@ final class SessionPool {
     }
   }
 
-  private void maybeCreateSession() {
+  /**
+   * Creates a session if allowed.
+   *
+   * @return true if at least one session was created.
+   */
+  private boolean maybeCreateSession() {
     Span span = Tracing.getTracer().getCurrentSpan();
     synchronized (lock) {
       if (numWaiters() >= numSessionsBeingCreated) {
         if (canCreateSession()) {
           span.addAnnotation("Creating sessions");
           createSessions(getAllowedCreateSessions(numWaiters() - numSessionsBeingCreated + 1));
+          return true;
         } else if (options.isFailIfPoolExhausted()) {
           span.addAnnotation("Pool exhausted. Failing");
           // throw specific exception
-          throw newSpannerException(
-              ErrorCode.RESOURCE_EXHAUSTED,
-              "No session available in the pool. Maximum number of sessions in the pool can be"
-                  + " overridden by invoking SessionPoolOptions#Builder#setMaxSessions. Client can be made to block"
-                  + " rather than fail by setting SessionPoolOptions#Builder#setBlockIfPoolExhausted.");
+          throw SessionPoolExhaustedException.exhausted(getCheckedOutSessionStackTraces());
         }
       }
     }
+    return false;
   }
   /**
    * Releases a session back to the pool. This might cause one of the waiters to be unblocked.
@@ -1534,6 +1680,17 @@ final class SessionPool {
         },
         MoreExecutors.directExecutor());
     return retFuture;
+  }
+
+  @GuardedBy("lock")
+  private List<LeakedSessionException> getCheckedOutSessionStackTraces() {
+    final List<LeakedSessionException> res = new ArrayList<>(allSessions.size());
+    for (final PooledSession session : ImmutableList.copyOf(allSessions)) {
+      if (session.leakedException != null) {
+        res.add(session.leakedException);
+      }
+    }
+    return res;
   }
 
   private boolean shouldUnblockReader() {

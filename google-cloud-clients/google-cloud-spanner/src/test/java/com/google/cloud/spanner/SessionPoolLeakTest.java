@@ -16,14 +16,13 @@
 
 package com.google.cloud.spanner;
 
-import static org.hamcrest.CoreMatchers.equalTo;
-import static org.hamcrest.CoreMatchers.is;
-import static org.junit.Assert.assertThat;
+import static com.google.common.truth.Truth.assertThat;
 import static org.junit.Assert.fail;
 
 import com.google.api.gax.grpc.testing.LocalChannelProvider;
 import com.google.cloud.NoCredentials;
 import com.google.cloud.spanner.MockSpannerServiceImpl.SimulatedExecutionTime;
+import com.google.cloud.spanner.SessionPool.SessionPoolExhaustedException;
 import com.google.cloud.spanner.TransactionRunner.TransactionCallable;
 import io.grpc.Server;
 import io.grpc.StatusRuntimeException;
@@ -36,6 +35,7 @@ import org.junit.BeforeClass;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
+import org.threeten.bp.Duration;
 
 @RunWith(JUnit4.class)
 public class SessionPoolLeakTest {
@@ -74,12 +74,15 @@ public class SessionPoolLeakTest {
             .setChannelProvider(channelProvider)
             .setCredentials(NoCredentials.getInstance());
     // Make sure the session pool is empty by default, does not contain any write-prepared sessions,
-    // and contains at most 2 sessions.
+    // and contains at most 2 sessions. The block timeout of 1ms will cause it to throw a
+    // SessionPoolExhaustedException almost immediately if no session is available in the pool and
+    // no more sessions may be created.
     builder.setSessionPoolOption(
         SessionPoolOptions.newBuilder()
             .setMinSessions(0)
             .setMaxSessions(2)
             .setWriteSessionsFraction(0.0f)
+            .setBlockWithTimeoutIfPoolExhausted(Duration.ofMillis(1L))
             .build());
     spanner = builder.build().getService();
     client = spanner.getDatabaseClient(DatabaseId.of("[PROJECT]", "[INSTANCE]", "[DATABASE]"));
@@ -119,7 +122,7 @@ public class SessionPoolLeakTest {
 
   private void readWriteTransactionTest(
       Runnable setup, int expectedNumberOfSessionsAfterExecution) {
-    assertThat(pool.getNumberOfSessionsInPool(), is(equalTo(0)));
+    assertThat(pool.getNumberOfSessionsInPool()).isEqualTo(0);
     setup.run();
     try {
       client
@@ -133,10 +136,9 @@ public class SessionPoolLeakTest {
               });
       fail("missing FAILED_PRECONDITION exception");
     } catch (SpannerException e) {
-      assertThat(e.getErrorCode(), is(equalTo(ErrorCode.FAILED_PRECONDITION)));
+      assertThat(e.getErrorCode()).isEqualTo(ErrorCode.FAILED_PRECONDITION);
     }
-    assertThat(
-        pool.getNumberOfSessionsInPool(), is(equalTo(expectedNumberOfSessionsAfterExecution)));
+    assertThat(pool.getNumberOfSessionsInPool()).isEqualTo(expectedNumberOfSessionsAfterExecution);
   }
 
   @Test
@@ -166,15 +168,44 @@ public class SessionPoolLeakTest {
   }
 
   private void transactionManagerTest(Runnable setup, int expectedNumberOfSessionsAfterExecution) {
-    assertThat(pool.getNumberOfSessionsInPool(), is(equalTo(0)));
+    assertThat(pool.getNumberOfSessionsInPool()).isEqualTo(0);
     setup.run();
     try (TransactionManager txManager = client.transactionManager()) {
       txManager.begin();
       fail("missing FAILED_PRECONDITION exception");
     } catch (SpannerException e) {
-      assertThat(e.getErrorCode(), is(equalTo(ErrorCode.FAILED_PRECONDITION)));
+      assertThat(e.getErrorCode()).isEqualTo(ErrorCode.FAILED_PRECONDITION);
     }
-    assertThat(
-        pool.getNumberOfSessionsInPool(), is(equalTo(expectedNumberOfSessionsAfterExecution)));
+    assertThat(pool.getNumberOfSessionsInPool()).isEqualTo(expectedNumberOfSessionsAfterExecution);
+  }
+
+  @Test
+  public void testBlockTimeoutReadSession() {
+    try (ReadOnlyTransaction tx1 = client.readOnlyTransaction()) {
+      try (ReadOnlyTransaction tx2 = client.readOnlyTransaction()) {
+        // Max 2 sessions in the pool means that this will block and then timeout.
+        try (ReadOnlyTransaction tx3 = client.readOnlyTransaction()) {
+          fail("missing expected exception");
+        } catch (SessionPoolExhaustedException e) {
+          assertThat(e.getCheckedOutSessions().size()).isEqualTo(2);
+          assertThat(e.toString()).contains(SessionPoolLeakTest.class.getName());
+        }
+      }
+    }
+  }
+
+  @Test
+  public void testBlockTimeoutWriteSession() {
+    try (TransactionManager tx1 = client.transactionManager()) {
+      try (TransactionManager tx2 = client.transactionManager()) {
+        // Max 2 sessions in the pool means that this will block and then timeout.
+        try (TransactionManager tx3 = client.transactionManager()) {
+          fail("missing expected exception");
+        } catch (SessionPoolExhaustedException e) {
+          assertThat(e.getCheckedOutSessions().size()).isEqualTo(2);
+          assertThat(e.toString()).contains(SessionPoolLeakTest.class.getName());
+        }
+      }
+    }
   }
 }

@@ -76,6 +76,7 @@ import org.mockito.Mock;
 import org.mockito.Mockito;
 import org.mockito.invocation.InvocationOnMock;
 import org.mockito.stubbing.Answer;
+import org.threeten.bp.Duration;
 
 /** Tests for SessionPool that mock out the underlying stub. */
 @RunWith(Parameterized.class)
@@ -970,7 +971,7 @@ public class SessionPoolTest extends BaseSessionPoolTest {
           SessionPoolOptions.newBuilder()
               .setMinSessions(minSessions)
               .setMaxSessions(1)
-              .setInitialWaitForSessionTimeoutMillis(20L)
+              .setInitialGetSessionTraceTimeout(Duration.ofMillis(20L))
               .build();
       setupMockSessionCreation();
       pool = createPool();

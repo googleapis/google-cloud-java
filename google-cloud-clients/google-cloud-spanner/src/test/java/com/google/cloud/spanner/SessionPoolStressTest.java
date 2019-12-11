@@ -46,6 +46,7 @@ import org.junit.runners.Parameterized.Parameters;
 import org.mockito.Mockito;
 import org.mockito.invocation.InvocationOnMock;
 import org.mockito.stubbing.Answer;
+import org.threeten.bp.Duration;
 
 /**
  * Stress test for {@code SessionPool} which does multiple operations on the pool, making some of
@@ -53,13 +54,19 @@ import org.mockito.stubbing.Answer;
  */
 @RunWith(Parameterized.class)
 public class SessionPoolStressTest extends BaseSessionPoolTest {
+  private static enum ActionOnExhaustion {
+    BLOCK,
+    BLOCK_WITH_TIMEOUT,
+    FAIL,
+  }
+
   @Rule public ExpectedException expectedException = ExpectedException.none();
 
   @Parameter(0)
   public double writeSessionsFraction;
 
   @Parameter(1)
-  public boolean shouldBlock;
+  public ActionOnExhaustion shouldBlock;
 
   DatabaseId db = DatabaseId.of("projects/p/instances/i/databases/unused");
   SessionPool pool;
@@ -82,8 +89,9 @@ public class SessionPoolStressTest extends BaseSessionPoolTest {
   public static Collection<Object[]> data() {
     List<Object[]> params = new ArrayList<>();
     for (double writeFraction = 0; writeFraction <= 1; writeFraction += 0.5) {
-      params.add(new Object[] {writeFraction, true});
-      params.add(new Object[] {writeFraction, false});
+      params.add(new Object[] {writeFraction, ActionOnExhaustion.BLOCK});
+      params.add(new Object[] {writeFraction, ActionOnExhaustion.BLOCK_WITH_TIMEOUT});
+      params.add(new Object[] {writeFraction, ActionOnExhaustion.FAIL});
     }
     return params;
   }
@@ -237,7 +245,7 @@ public class SessionPoolStressTest extends BaseSessionPoolTest {
   @Test
   public void stressTest() throws Exception {
     int concurrentThreads = 10;
-    final int numOperationsPerThread = 1000;
+    final int numOperationsPerThread = 500;
     final CountDownLatch releaseThreads = new CountDownLatch(1);
     final CountDownLatch threadsDone = new CountDownLatch(concurrentThreads);
     final int writeOperationFraction = 5;
@@ -250,10 +258,16 @@ public class SessionPoolStressTest extends BaseSessionPoolTest {
             .setMinSessions(minSessions)
             .setMaxSessions(maxSessions)
             .setWriteSessionsFraction(writeSessionsFraction);
-    if (shouldBlock) {
-      builder.setBlockIfPoolExhausted();
-    } else {
-      builder.setFailIfPoolExhausted();
+    switch (shouldBlock) {
+      case BLOCK:
+        builder.setBlockIfPoolExhausted();
+        break;
+      case BLOCK_WITH_TIMEOUT:
+        builder.setBlockWithTimeoutIfPoolExhausted(Duration.ofNanos(1L));
+        break;
+      case FAIL:
+        builder.setFailIfPoolExhausted();
+        break;
     }
     pool =
         SessionPool.createPool(
@@ -279,7 +293,8 @@ public class SessionPoolStressTest extends BaseSessionPoolTest {
                       resetTransaction(session);
                       session.close();
                     } catch (SpannerException e) {
-                      if (e.getErrorCode() != ErrorCode.RESOURCE_EXHAUSTED || shouldBlock) {
+                      if (e.getErrorCode() != ErrorCode.RESOURCE_EXHAUSTED
+                          || shouldBlock == ActionOnExhaustion.BLOCK) {
                         setFailed(e);
                       }
                     } catch (Exception e) {

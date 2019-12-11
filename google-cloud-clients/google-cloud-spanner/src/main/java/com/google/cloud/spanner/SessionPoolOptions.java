@@ -16,8 +16,12 @@
 
 package com.google.cloud.spanner;
 
+import com.google.cloud.spanner.SessionPool.SessionPoolExhaustedException;
 import com.google.common.annotations.VisibleForTesting;
 import com.google.common.base.Preconditions;
+import io.opencensus.trace.Span;
+import io.opencensus.trace.Status;
+import org.threeten.bp.Duration;
 
 /** Options for the session pool used by {@code DatabaseClient}. */
 public class SessionPoolOptions {
@@ -32,7 +36,14 @@ public class SessionPoolOptions {
   private final ActionOnExhaustion actionOnExhaustion;
   private final int keepAliveIntervalMinutes;
   private final ActionOnSessionNotFound actionOnSessionNotFound;
-  private final long initialWaitForSessionTimeoutMillis;
+  private final Duration blockOnExhaustionTimeout;
+
+  /**
+   * The session pool traces the time that is spent while waiting for a session. The status of that
+   * {@link Span} is set to {@link Status#DEADLINE_EXCEEDED} after {@link
+   * #initialGetSessionTraceTimeout}. This setting is not exposed to the user.
+   */
+  private final Duration initialGetSessionTraceTimeout;
 
   private SessionPoolOptions(Builder builder) {
     // minSessions > maxSessions is only possible if the user has only set a value for maxSessions.
@@ -44,7 +55,8 @@ public class SessionPoolOptions {
     this.writeSessionsFraction = builder.writeSessionsFraction;
     this.actionOnExhaustion = builder.actionOnExhaustion;
     this.actionOnSessionNotFound = builder.actionOnSessionNotFound;
-    this.initialWaitForSessionTimeoutMillis = builder.initialWaitForSessionTimeoutMillis;
+    this.blockOnExhaustionTimeout = builder.blockOnExhaustionTimeout;
+    this.initialGetSessionTraceTimeout = builder.initialGetSessionTraceTimeout;
     this.keepAliveIntervalMinutes = builder.keepAliveIntervalMinutes;
   }
 
@@ -76,9 +88,17 @@ public class SessionPoolOptions {
     return actionOnExhaustion == ActionOnExhaustion.BLOCK;
   }
 
+  public boolean isBlockWithTimeoutIfPoolExhausted() {
+    return actionOnExhaustion == ActionOnExhaustion.BLOCK_WITH_TIMEOUT;
+  }
+
+  public Duration getBlockOnExhaustionTimeout() {
+    return blockOnExhaustionTimeout;
+  }
+
   @VisibleForTesting
-  long getInitialWaitForSessionTimeoutMillis() {
-    return initialWaitForSessionTimeoutMillis;
+  Duration getInitialGetSessionTraceTimeout() {
+    return initialGetSessionTraceTimeout;
   }
 
   @VisibleForTesting
@@ -92,6 +112,7 @@ public class SessionPoolOptions {
 
   private static enum ActionOnExhaustion {
     BLOCK,
+    BLOCK_WITH_TIMEOUT,
     FAIL,
   }
 
@@ -108,7 +129,9 @@ public class SessionPoolOptions {
     private int maxIdleSessions;
     private float writeSessionsFraction = 0.2f;
     private ActionOnExhaustion actionOnExhaustion = DEFAULT_ACTION;
-    private long initialWaitForSessionTimeoutMillis = 30_000L;
+    private Duration blockOnExhaustionTimeout =
+        null; // Only used if actionOnExhaustion=BLOCK_WITH_TIMEOUT.
+    private Duration initialGetSessionTraceTimeout = Duration.ofMillis(30_000L);
     private ActionOnSessionNotFound actionOnSessionNotFound = ActionOnSessionNotFound.RETRY;
     private int keepAliveIntervalMinutes = 30;
 
@@ -164,6 +187,7 @@ public class SessionPoolOptions {
      */
     public Builder setFailIfPoolExhausted() {
       this.actionOnExhaustion = ActionOnExhaustion.FAIL;
+      this.blockOnExhaustionTimeout = null;
       return this;
     }
 
@@ -173,17 +197,40 @@ public class SessionPoolOptions {
      */
     public Builder setBlockIfPoolExhausted() {
       this.actionOnExhaustion = ActionOnExhaustion.BLOCK;
+      this.blockOnExhaustionTimeout = null;
       return this;
     }
 
     /**
-     * The initial number of milliseconds to wait for a session to become available when one is
-     * requested. The session pool will keep retrying to get a session, and the timeout will be
-     * doubled for each new attempt. The default is 30 seconds.
+     * If all sessions are in use and there is no more room for creating new sessions, block for a
+     * session to become available for the given timeout duration. Default behavior is to block
+     * indefinitely.
+     *
+     * @param timeout The maximum duration to wait for a session to become available. After this
+     *     timeout the session pool will throw a {@link SessionPoolExhaustedException}. This
+     *     exception contains the stack trace of each thread that currently holds a checked out
+     *     session from the pool.
+     */
+    public Builder setBlockWithTimeoutIfPoolExhausted(Duration timeout) {
+      Preconditions.checkNotNull(timeout);
+      Preconditions.checkArgument(
+          !timeout.isNegative() && !timeout.isZero(),
+          "Zero or negative timeout value is not allowed");
+      this.actionOnExhaustion = ActionOnExhaustion.BLOCK_WITH_TIMEOUT;
+      this.blockOnExhaustionTimeout = timeout;
+      return this;
+    }
+
+    /**
+     * The initial {@link Duration} to wait for a session to become available before setting the
+     * status of the {@link Span} to {@link Status#DEADLINE_EXCEEDED}. The session pool will keep
+     * retrying to get a session, and the timeout will be doubled for each new attempt. The default
+     * is 30 seconds. This timeout will not be propagated to the user and is only used to set the
+     * status of the {@link Span}.
      */
     @VisibleForTesting
-    Builder setInitialWaitForSessionTimeoutMillis(long timeout) {
-      this.initialWaitForSessionTimeoutMillis = timeout;
+    Builder setInitialGetSessionTraceTimeout(Duration timeout) {
+      this.initialGetSessionTraceTimeout = timeout;
       return this;
     }
 
