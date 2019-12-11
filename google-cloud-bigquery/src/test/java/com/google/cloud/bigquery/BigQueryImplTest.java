@@ -478,7 +478,9 @@ public class BigQueryImplTest {
     EasyMock.expect(bigqueryRpcMock.create(datasetInfo.toPb(), EMPTY_RPC_OPTIONS))
         .andReturn(datasetInfo.toPb());
     EasyMock.replay(bigqueryRpcMock);
-    bigquery = options.getService();
+    BigQueryOptions bigQueryOptions =
+        createBigQueryOptionsForProject(OTHER_PROJECT, rpcFactoryMock);
+    bigquery = bigQueryOptions.getService();
     Dataset dataset = bigquery.create(datasetInfo);
     assertEquals(new Dataset(bigquery, new DatasetInfo.BuilderImpl(datasetInfo)), dataset);
   }

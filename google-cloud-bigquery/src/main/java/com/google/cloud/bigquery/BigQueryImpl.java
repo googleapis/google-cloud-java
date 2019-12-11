@@ -202,7 +202,12 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
   @Override
   public Dataset create(DatasetInfo datasetInfo, DatasetOption... options) {
     final com.google.api.services.bigquery.model.Dataset datasetPb =
-        datasetInfo.setProjectId(getOptions().getProjectId()).toPb();
+        datasetInfo
+            .setProjectId(
+                Strings.isNullOrEmpty(datasetInfo.getDatasetId().getProject())
+                    ? getOptions().getProjectId()
+                    : datasetInfo.getDatasetId().getProject())
+            .toPb();
     final Map<BigQueryRpc.Option, ?> optionsMap = optionMap(options);
     try {
       return Dataset.fromPb(
