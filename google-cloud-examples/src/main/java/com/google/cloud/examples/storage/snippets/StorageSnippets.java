@@ -987,20 +987,17 @@ public class StorageSnippets {
     return acls;
   }
 
-  /** Example of default auth */
-  public Page<Bucket> authListBuckets() {
-    // [START auth_cloud_implicit]
-    // If you don't specify credentials when constructing the client, the
-    // client library will look for credentials in the environment.
-
+  /** Example of a simple listBuckets() */
+  public void listBuckets() {
+    // [START storage_list_buckets]
     Storage storage = StorageOptions.getDefaultInstance().getService();
 
     Page<Bucket> buckets = storage.list();
+    System.out.println("Buckets:");
     for (Bucket bucket : buckets.iterateAll()) {
-      // do something with the info
+      System.out.println(bucket.getName());
     }
-    // [END auth_cloud_implicit]
-    return buckets;
+    // [END storage_list_buckets]
   }
 
   /** Example of enabling Requester pays on a bucket. */

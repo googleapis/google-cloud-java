@@ -440,9 +440,13 @@ public class ITStorageSnippets {
   }
 
   @Test
-  public void testAuthListBuckets() {
-    Page<Bucket> bucket = storageSnippets.authListBuckets();
-    assertNotNull(bucket);
+  public void testListBuckets() {
+    ByteArrayOutputStream snippetOutputCapture = new ByteArrayOutputStream();
+    System.setOut(new PrintStream(snippetOutputCapture));
+    storageSnippets.listBuckets();
+    String snippetOutput = snippetOutputCapture.toString();
+    System.setOut(System.out);
+    assertTrue(snippetOutput.contains("Buckets:"));
   }
 
   @Test
