@@ -921,8 +921,9 @@ final class SessionPool {
      * Creates a waiter to wait for a session to become available.
      *
      * @param exhausted indicates whether this waiter is created because the session pool is
-     *     currently exhausted and no new sessions can be created. If true, the take method will
-     *     throw a {@link SessionPoolExhaustedException} after waiting for {@link
+     *     currently exhausted and no new sessions can be created. If this argument is true and
+     *     {@link SessionPoolOptions#isBlockWithTimeoutIfPoolExhausted()} returns true, the take
+     *     method will throw a {@link SessionPoolExhaustedException} after waiting for {@link
      *     SessionPoolOptions#getBlockOnExhaustionTimeout()}.
      */
     private Waiter(boolean exhausted) {
@@ -938,13 +939,13 @@ final class SessionPool {
     }
 
     private PooledSession take() throws SpannerException {
-      // Keep track of the total time we have been waiting for a session to know when to throw a
-      // SessionPoolExhaustedException.
+      // Keep track of the total time we have been blocked while waiting for a session to know when
+      // to throw a SessionPoolExhaustedException.
       Duration totalWaitTime = Duration.ZERO;
       Duration exhaustionTimeout =
           options.isBlockWithTimeoutIfPoolExhausted()
               ? options.getBlockOnExhaustionTimeout()
-              : Duration.ofSeconds(Long.MAX_VALUE);
+              : Duration.ofSeconds(Long.MAX_VALUE); // Effectively no timeout.
       // currentTraceTimeout is the timeout value that is used to determine when to trace a timeout.
       Duration currentTraceTimeout =
           least(exhaustionTimeout, options.getInitialGetSessionTraceTimeout());
@@ -961,7 +962,7 @@ final class SessionPool {
             currentTraceTimeout = least(currentTraceTimeout, MAX_GET_SESSION_TRACE_TIMEOUT);
             // Only check whether we should throw a SessionPoolExhaustedException if the pool was
             // actually exhausted when this waiter was created. In all other cases, we should wait
-            // for the RPC that was started to return a session or an error.
+            // for the RPC that was initiated to return a session or an error.
             if (exhausted) {
               // Check whether we have exceeded the total wait time for blocking while waiting for a
               // session to be returned to the pool.
@@ -984,8 +985,7 @@ final class SessionPool {
                 handleSessionPoolBlockTimeout(this);
               } else {
                 // Make sure the poll timeout does not exceed the remaining wait time before we
-                // should
-                // throw an exception.
+                // should throw an exception.
                 Duration remainingBeforeExhaustionTimeout = exhaustionTimeout.minus(totalWaitTime);
                 currentTraceTimeout = least(currentTraceTimeout, remainingBeforeExhaustionTimeout);
               }
