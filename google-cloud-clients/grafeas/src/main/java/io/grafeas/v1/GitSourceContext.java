@@ -45,6 +45,12 @@ public final class GitSourceContext extends com.google.protobuf.GeneratedMessage
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new GitSourceContext();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -57,7 +63,6 @@ public final class GitSourceContext extends com.google.protobuf.GeneratedMessage
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -123,6 +128,8 @@ public final class GitSourceContext extends com.google.protobuf.GeneratedMessage
    * </pre>
    *
    * <code>string url = 1;</code>
+   *
+   * @return The url.
    */
   public java.lang.String getUrl() {
     java.lang.Object ref = url_;
@@ -143,6 +150,8 @@ public final class GitSourceContext extends com.google.protobuf.GeneratedMessage
    * </pre>
    *
    * <code>string url = 1;</code>
+   *
+   * @return The bytes for url.
    */
   public com.google.protobuf.ByteString getUrlBytes() {
     java.lang.Object ref = url_;
@@ -166,6 +175,8 @@ public final class GitSourceContext extends com.google.protobuf.GeneratedMessage
    * </pre>
    *
    * <code>string revision_id = 2;</code>
+   *
+   * @return The revisionId.
    */
   public java.lang.String getRevisionId() {
     java.lang.Object ref = revisionId_;
@@ -186,6 +197,8 @@ public final class GitSourceContext extends com.google.protobuf.GeneratedMessage
    * </pre>
    *
    * <code>string revision_id = 2;</code>
+   *
+   * @return The bytes for revisionId.
    */
   public com.google.protobuf.ByteString getRevisionIdBytes() {
     java.lang.Object ref = revisionId_;
@@ -534,6 +547,8 @@ public final class GitSourceContext extends com.google.protobuf.GeneratedMessage
      * </pre>
      *
      * <code>string url = 1;</code>
+     *
+     * @return The url.
      */
     public java.lang.String getUrl() {
       java.lang.Object ref = url_;
@@ -554,6 +569,8 @@ public final class GitSourceContext extends com.google.protobuf.GeneratedMessage
      * </pre>
      *
      * <code>string url = 1;</code>
+     *
+     * @return The bytes for url.
      */
     public com.google.protobuf.ByteString getUrlBytes() {
       java.lang.Object ref = url_;
@@ -574,6 +591,9 @@ public final class GitSourceContext extends com.google.protobuf.GeneratedMessage
      * </pre>
      *
      * <code>string url = 1;</code>
+     *
+     * @param value The url to set.
+     * @return This builder for chaining.
      */
     public Builder setUrl(java.lang.String value) {
       if (value == null) {
@@ -592,6 +612,8 @@ public final class GitSourceContext extends com.google.protobuf.GeneratedMessage
      * </pre>
      *
      * <code>string url = 1;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearUrl() {
 
@@ -607,6 +629,9 @@ public final class GitSourceContext extends com.google.protobuf.GeneratedMessage
      * </pre>
      *
      * <code>string url = 1;</code>
+     *
+     * @param value The bytes for url to set.
+     * @return This builder for chaining.
      */
     public Builder setUrlBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -628,6 +653,8 @@ public final class GitSourceContext extends com.google.protobuf.GeneratedMessage
      * </pre>
      *
      * <code>string revision_id = 2;</code>
+     *
+     * @return The revisionId.
      */
     public java.lang.String getRevisionId() {
       java.lang.Object ref = revisionId_;
@@ -648,6 +675,8 @@ public final class GitSourceContext extends com.google.protobuf.GeneratedMessage
      * </pre>
      *
      * <code>string revision_id = 2;</code>
+     *
+     * @return The bytes for revisionId.
      */
     public com.google.protobuf.ByteString getRevisionIdBytes() {
       java.lang.Object ref = revisionId_;
@@ -668,6 +697,9 @@ public final class GitSourceContext extends com.google.protobuf.GeneratedMessage
      * </pre>
      *
      * <code>string revision_id = 2;</code>
+     *
+     * @param value The revisionId to set.
+     * @return This builder for chaining.
      */
     public Builder setRevisionId(java.lang.String value) {
       if (value == null) {
@@ -686,6 +718,8 @@ public final class GitSourceContext extends com.google.protobuf.GeneratedMessage
      * </pre>
      *
      * <code>string revision_id = 2;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearRevisionId() {
 
@@ -701,6 +735,9 @@ public final class GitSourceContext extends com.google.protobuf.GeneratedMessage
      * </pre>
      *
      * <code>string revision_id = 2;</code>
+     *
+     * @param value The bytes for revisionId to set.
+     * @return This builder for chaining.
      */
     public Builder setRevisionIdBytes(com.google.protobuf.ByteString value) {
       if (value == null) {

@@ -51,6 +51,12 @@ public final class CVSSv3 extends com.google.protobuf.GeneratedMessageV3
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new CVSSv3();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -63,7 +69,6 @@ public final class CVSSv3 extends com.google.protobuf.GeneratedMessageV3
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -210,12 +215,20 @@ public final class CVSSv3 extends com.google.protobuf.GeneratedMessageV3
       return value;
     }
 
-    /** @deprecated Use {@link #forNumber(int)} instead. */
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
     @java.lang.Deprecated
     public static AttackVector valueOf(int value) {
       return forNumber(value);
     }
 
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
     public static AttackVector forNumber(int value) {
       switch (value) {
         case 0:
@@ -303,12 +316,20 @@ public final class CVSSv3 extends com.google.protobuf.GeneratedMessageV3
       return value;
     }
 
-    /** @deprecated Use {@link #forNumber(int)} instead. */
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
     @java.lang.Deprecated
     public static AttackComplexity valueOf(int value) {
       return forNumber(value);
     }
 
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
     public static AttackComplexity forNumber(int value) {
       switch (value) {
         case 0:
@@ -398,12 +419,20 @@ public final class CVSSv3 extends com.google.protobuf.GeneratedMessageV3
       return value;
     }
 
-    /** @deprecated Use {@link #forNumber(int)} instead. */
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
     @java.lang.Deprecated
     public static PrivilegesRequired valueOf(int value) {
       return forNumber(value);
     }
 
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
     public static PrivilegesRequired forNumber(int value) {
       switch (value) {
         case 0:
@@ -492,12 +521,20 @@ public final class CVSSv3 extends com.google.protobuf.GeneratedMessageV3
       return value;
     }
 
-    /** @deprecated Use {@link #forNumber(int)} instead. */
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
     @java.lang.Deprecated
     public static UserInteraction valueOf(int value) {
       return forNumber(value);
     }
 
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
     public static UserInteraction forNumber(int value) {
       switch (value) {
         case 0:
@@ -583,12 +620,20 @@ public final class CVSSv3 extends com.google.protobuf.GeneratedMessageV3
       return value;
     }
 
-    /** @deprecated Use {@link #forNumber(int)} instead. */
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
     @java.lang.Deprecated
     public static Scope valueOf(int value) {
       return forNumber(value);
     }
 
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
     public static Scope forNumber(int value) {
       switch (value) {
         case 0:
@@ -676,12 +721,20 @@ public final class CVSSv3 extends com.google.protobuf.GeneratedMessageV3
       return value;
     }
 
-    /** @deprecated Use {@link #forNumber(int)} instead. */
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
     @java.lang.Deprecated
     public static Impact valueOf(int value) {
       return forNumber(value);
     }
 
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
     public static Impact forNumber(int value) {
       switch (value) {
         case 0:
@@ -751,6 +804,8 @@ public final class CVSSv3 extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>float base_score = 1;</code>
+   *
+   * @return The baseScore.
    */
   public float getBaseScore() {
     return baseScore_;
@@ -758,14 +813,22 @@ public final class CVSSv3 extends com.google.protobuf.GeneratedMessageV3
 
   public static final int EXPLOITABILITY_SCORE_FIELD_NUMBER = 2;
   private float exploitabilityScore_;
-  /** <code>float exploitability_score = 2;</code> */
+  /**
+   * <code>float exploitability_score = 2;</code>
+   *
+   * @return The exploitabilityScore.
+   */
   public float getExploitabilityScore() {
     return exploitabilityScore_;
   }
 
   public static final int IMPACT_SCORE_FIELD_NUMBER = 3;
   private float impactScore_;
-  /** <code>float impact_score = 3;</code> */
+  /**
+   * <code>float impact_score = 3;</code>
+   *
+   * @return The impactScore.
+   */
   public float getImpactScore() {
     return impactScore_;
   }
@@ -782,6 +845,8 @@ public final class CVSSv3 extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.grafeas.v1.CVSSv3.AttackVector attack_vector = 5;</code>
+   *
+   * @return The enum numeric value on the wire for attackVector.
    */
   public int getAttackVectorValue() {
     return attackVector_;
@@ -796,6 +861,8 @@ public final class CVSSv3 extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.grafeas.v1.CVSSv3.AttackVector attack_vector = 5;</code>
+   *
+   * @return The attackVector.
    */
   public io.grafeas.v1.CVSSv3.AttackVector getAttackVector() {
     @SuppressWarnings("deprecation")
@@ -806,11 +873,19 @@ public final class CVSSv3 extends com.google.protobuf.GeneratedMessageV3
 
   public static final int ATTACK_COMPLEXITY_FIELD_NUMBER = 6;
   private int attackComplexity_;
-  /** <code>.grafeas.v1.CVSSv3.AttackComplexity attack_complexity = 6;</code> */
+  /**
+   * <code>.grafeas.v1.CVSSv3.AttackComplexity attack_complexity = 6;</code>
+   *
+   * @return The enum numeric value on the wire for attackComplexity.
+   */
   public int getAttackComplexityValue() {
     return attackComplexity_;
   }
-  /** <code>.grafeas.v1.CVSSv3.AttackComplexity attack_complexity = 6;</code> */
+  /**
+   * <code>.grafeas.v1.CVSSv3.AttackComplexity attack_complexity = 6;</code>
+   *
+   * @return The attackComplexity.
+   */
   public io.grafeas.v1.CVSSv3.AttackComplexity getAttackComplexity() {
     @SuppressWarnings("deprecation")
     io.grafeas.v1.CVSSv3.AttackComplexity result =
@@ -820,11 +895,19 @@ public final class CVSSv3 extends com.google.protobuf.GeneratedMessageV3
 
   public static final int PRIVILEGES_REQUIRED_FIELD_NUMBER = 7;
   private int privilegesRequired_;
-  /** <code>.grafeas.v1.CVSSv3.PrivilegesRequired privileges_required = 7;</code> */
+  /**
+   * <code>.grafeas.v1.CVSSv3.PrivilegesRequired privileges_required = 7;</code>
+   *
+   * @return The enum numeric value on the wire for privilegesRequired.
+   */
   public int getPrivilegesRequiredValue() {
     return privilegesRequired_;
   }
-  /** <code>.grafeas.v1.CVSSv3.PrivilegesRequired privileges_required = 7;</code> */
+  /**
+   * <code>.grafeas.v1.CVSSv3.PrivilegesRequired privileges_required = 7;</code>
+   *
+   * @return The privilegesRequired.
+   */
   public io.grafeas.v1.CVSSv3.PrivilegesRequired getPrivilegesRequired() {
     @SuppressWarnings("deprecation")
     io.grafeas.v1.CVSSv3.PrivilegesRequired result =
@@ -834,11 +917,19 @@ public final class CVSSv3 extends com.google.protobuf.GeneratedMessageV3
 
   public static final int USER_INTERACTION_FIELD_NUMBER = 8;
   private int userInteraction_;
-  /** <code>.grafeas.v1.CVSSv3.UserInteraction user_interaction = 8;</code> */
+  /**
+   * <code>.grafeas.v1.CVSSv3.UserInteraction user_interaction = 8;</code>
+   *
+   * @return The enum numeric value on the wire for userInteraction.
+   */
   public int getUserInteractionValue() {
     return userInteraction_;
   }
-  /** <code>.grafeas.v1.CVSSv3.UserInteraction user_interaction = 8;</code> */
+  /**
+   * <code>.grafeas.v1.CVSSv3.UserInteraction user_interaction = 8;</code>
+   *
+   * @return The userInteraction.
+   */
   public io.grafeas.v1.CVSSv3.UserInteraction getUserInteraction() {
     @SuppressWarnings("deprecation")
     io.grafeas.v1.CVSSv3.UserInteraction result =
@@ -848,11 +939,19 @@ public final class CVSSv3 extends com.google.protobuf.GeneratedMessageV3
 
   public static final int SCOPE_FIELD_NUMBER = 9;
   private int scope_;
-  /** <code>.grafeas.v1.CVSSv3.Scope scope = 9;</code> */
+  /**
+   * <code>.grafeas.v1.CVSSv3.Scope scope = 9;</code>
+   *
+   * @return The enum numeric value on the wire for scope.
+   */
   public int getScopeValue() {
     return scope_;
   }
-  /** <code>.grafeas.v1.CVSSv3.Scope scope = 9;</code> */
+  /**
+   * <code>.grafeas.v1.CVSSv3.Scope scope = 9;</code>
+   *
+   * @return The scope.
+   */
   public io.grafeas.v1.CVSSv3.Scope getScope() {
     @SuppressWarnings("deprecation")
     io.grafeas.v1.CVSSv3.Scope result = io.grafeas.v1.CVSSv3.Scope.valueOf(scope_);
@@ -861,11 +960,19 @@ public final class CVSSv3 extends com.google.protobuf.GeneratedMessageV3
 
   public static final int CONFIDENTIALITY_IMPACT_FIELD_NUMBER = 10;
   private int confidentialityImpact_;
-  /** <code>.grafeas.v1.CVSSv3.Impact confidentiality_impact = 10;</code> */
+  /**
+   * <code>.grafeas.v1.CVSSv3.Impact confidentiality_impact = 10;</code>
+   *
+   * @return The enum numeric value on the wire for confidentialityImpact.
+   */
   public int getConfidentialityImpactValue() {
     return confidentialityImpact_;
   }
-  /** <code>.grafeas.v1.CVSSv3.Impact confidentiality_impact = 10;</code> */
+  /**
+   * <code>.grafeas.v1.CVSSv3.Impact confidentiality_impact = 10;</code>
+   *
+   * @return The confidentialityImpact.
+   */
   public io.grafeas.v1.CVSSv3.Impact getConfidentialityImpact() {
     @SuppressWarnings("deprecation")
     io.grafeas.v1.CVSSv3.Impact result =
@@ -875,11 +982,19 @@ public final class CVSSv3 extends com.google.protobuf.GeneratedMessageV3
 
   public static final int INTEGRITY_IMPACT_FIELD_NUMBER = 11;
   private int integrityImpact_;
-  /** <code>.grafeas.v1.CVSSv3.Impact integrity_impact = 11;</code> */
+  /**
+   * <code>.grafeas.v1.CVSSv3.Impact integrity_impact = 11;</code>
+   *
+   * @return The enum numeric value on the wire for integrityImpact.
+   */
   public int getIntegrityImpactValue() {
     return integrityImpact_;
   }
-  /** <code>.grafeas.v1.CVSSv3.Impact integrity_impact = 11;</code> */
+  /**
+   * <code>.grafeas.v1.CVSSv3.Impact integrity_impact = 11;</code>
+   *
+   * @return The integrityImpact.
+   */
   public io.grafeas.v1.CVSSv3.Impact getIntegrityImpact() {
     @SuppressWarnings("deprecation")
     io.grafeas.v1.CVSSv3.Impact result = io.grafeas.v1.CVSSv3.Impact.valueOf(integrityImpact_);
@@ -888,11 +1003,19 @@ public final class CVSSv3 extends com.google.protobuf.GeneratedMessageV3
 
   public static final int AVAILABILITY_IMPACT_FIELD_NUMBER = 12;
   private int availabilityImpact_;
-  /** <code>.grafeas.v1.CVSSv3.Impact availability_impact = 12;</code> */
+  /**
+   * <code>.grafeas.v1.CVSSv3.Impact availability_impact = 12;</code>
+   *
+   * @return The enum numeric value on the wire for availabilityImpact.
+   */
   public int getAvailabilityImpactValue() {
     return availabilityImpact_;
   }
-  /** <code>.grafeas.v1.CVSSv3.Impact availability_impact = 12;</code> */
+  /**
+   * <code>.grafeas.v1.CVSSv3.Impact availability_impact = 12;</code>
+   *
+   * @return The availabilityImpact.
+   */
   public io.grafeas.v1.CVSSv3.Impact getAvailabilityImpact() {
     @SuppressWarnings("deprecation")
     io.grafeas.v1.CVSSv3.Impact result = io.grafeas.v1.CVSSv3.Impact.valueOf(availabilityImpact_);
@@ -1376,6 +1499,8 @@ public final class CVSSv3 extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>float base_score = 1;</code>
+     *
+     * @return The baseScore.
      */
     public float getBaseScore() {
       return baseScore_;
@@ -1388,6 +1513,9 @@ public final class CVSSv3 extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>float base_score = 1;</code>
+     *
+     * @param value The baseScore to set.
+     * @return This builder for chaining.
      */
     public Builder setBaseScore(float value) {
 
@@ -1403,6 +1531,8 @@ public final class CVSSv3 extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>float base_score = 1;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearBaseScore() {
 
@@ -1412,18 +1542,31 @@ public final class CVSSv3 extends com.google.protobuf.GeneratedMessageV3
     }
 
     private float exploitabilityScore_;
-    /** <code>float exploitability_score = 2;</code> */
+    /**
+     * <code>float exploitability_score = 2;</code>
+     *
+     * @return The exploitabilityScore.
+     */
     public float getExploitabilityScore() {
       return exploitabilityScore_;
     }
-    /** <code>float exploitability_score = 2;</code> */
+    /**
+     * <code>float exploitability_score = 2;</code>
+     *
+     * @param value The exploitabilityScore to set.
+     * @return This builder for chaining.
+     */
     public Builder setExploitabilityScore(float value) {
 
       exploitabilityScore_ = value;
       onChanged();
       return this;
     }
-    /** <code>float exploitability_score = 2;</code> */
+    /**
+     * <code>float exploitability_score = 2;</code>
+     *
+     * @return This builder for chaining.
+     */
     public Builder clearExploitabilityScore() {
 
       exploitabilityScore_ = 0F;
@@ -1432,18 +1575,31 @@ public final class CVSSv3 extends com.google.protobuf.GeneratedMessageV3
     }
 
     private float impactScore_;
-    /** <code>float impact_score = 3;</code> */
+    /**
+     * <code>float impact_score = 3;</code>
+     *
+     * @return The impactScore.
+     */
     public float getImpactScore() {
       return impactScore_;
     }
-    /** <code>float impact_score = 3;</code> */
+    /**
+     * <code>float impact_score = 3;</code>
+     *
+     * @param value The impactScore to set.
+     * @return This builder for chaining.
+     */
     public Builder setImpactScore(float value) {
 
       impactScore_ = value;
       onChanged();
       return this;
     }
-    /** <code>float impact_score = 3;</code> */
+    /**
+     * <code>float impact_score = 3;</code>
+     *
+     * @return This builder for chaining.
+     */
     public Builder clearImpactScore() {
 
       impactScore_ = 0F;
@@ -1462,6 +1618,8 @@ public final class CVSSv3 extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.grafeas.v1.CVSSv3.AttackVector attack_vector = 5;</code>
+     *
+     * @return The enum numeric value on the wire for attackVector.
      */
     public int getAttackVectorValue() {
       return attackVector_;
@@ -1476,6 +1634,9 @@ public final class CVSSv3 extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.grafeas.v1.CVSSv3.AttackVector attack_vector = 5;</code>
+     *
+     * @param value The enum numeric value on the wire for attackVector to set.
+     * @return This builder for chaining.
      */
     public Builder setAttackVectorValue(int value) {
       attackVector_ = value;
@@ -1492,6 +1653,8 @@ public final class CVSSv3 extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.grafeas.v1.CVSSv3.AttackVector attack_vector = 5;</code>
+     *
+     * @return The attackVector.
      */
     public io.grafeas.v1.CVSSv3.AttackVector getAttackVector() {
       @SuppressWarnings("deprecation")
@@ -1509,6 +1672,9 @@ public final class CVSSv3 extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.grafeas.v1.CVSSv3.AttackVector attack_vector = 5;</code>
+     *
+     * @param value The attackVector to set.
+     * @return This builder for chaining.
      */
     public Builder setAttackVector(io.grafeas.v1.CVSSv3.AttackVector value) {
       if (value == null) {
@@ -1529,6 +1695,8 @@ public final class CVSSv3 extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.grafeas.v1.CVSSv3.AttackVector attack_vector = 5;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearAttackVector() {
 
@@ -1538,24 +1706,42 @@ public final class CVSSv3 extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int attackComplexity_ = 0;
-    /** <code>.grafeas.v1.CVSSv3.AttackComplexity attack_complexity = 6;</code> */
+    /**
+     * <code>.grafeas.v1.CVSSv3.AttackComplexity attack_complexity = 6;</code>
+     *
+     * @return The enum numeric value on the wire for attackComplexity.
+     */
     public int getAttackComplexityValue() {
       return attackComplexity_;
     }
-    /** <code>.grafeas.v1.CVSSv3.AttackComplexity attack_complexity = 6;</code> */
+    /**
+     * <code>.grafeas.v1.CVSSv3.AttackComplexity attack_complexity = 6;</code>
+     *
+     * @param value The enum numeric value on the wire for attackComplexity to set.
+     * @return This builder for chaining.
+     */
     public Builder setAttackComplexityValue(int value) {
       attackComplexity_ = value;
       onChanged();
       return this;
     }
-    /** <code>.grafeas.v1.CVSSv3.AttackComplexity attack_complexity = 6;</code> */
+    /**
+     * <code>.grafeas.v1.CVSSv3.AttackComplexity attack_complexity = 6;</code>
+     *
+     * @return The attackComplexity.
+     */
     public io.grafeas.v1.CVSSv3.AttackComplexity getAttackComplexity() {
       @SuppressWarnings("deprecation")
       io.grafeas.v1.CVSSv3.AttackComplexity result =
           io.grafeas.v1.CVSSv3.AttackComplexity.valueOf(attackComplexity_);
       return result == null ? io.grafeas.v1.CVSSv3.AttackComplexity.UNRECOGNIZED : result;
     }
-    /** <code>.grafeas.v1.CVSSv3.AttackComplexity attack_complexity = 6;</code> */
+    /**
+     * <code>.grafeas.v1.CVSSv3.AttackComplexity attack_complexity = 6;</code>
+     *
+     * @param value The attackComplexity to set.
+     * @return This builder for chaining.
+     */
     public Builder setAttackComplexity(io.grafeas.v1.CVSSv3.AttackComplexity value) {
       if (value == null) {
         throw new NullPointerException();
@@ -1565,7 +1751,11 @@ public final class CVSSv3 extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-    /** <code>.grafeas.v1.CVSSv3.AttackComplexity attack_complexity = 6;</code> */
+    /**
+     * <code>.grafeas.v1.CVSSv3.AttackComplexity attack_complexity = 6;</code>
+     *
+     * @return This builder for chaining.
+     */
     public Builder clearAttackComplexity() {
 
       attackComplexity_ = 0;
@@ -1574,24 +1764,42 @@ public final class CVSSv3 extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int privilegesRequired_ = 0;
-    /** <code>.grafeas.v1.CVSSv3.PrivilegesRequired privileges_required = 7;</code> */
+    /**
+     * <code>.grafeas.v1.CVSSv3.PrivilegesRequired privileges_required = 7;</code>
+     *
+     * @return The enum numeric value on the wire for privilegesRequired.
+     */
     public int getPrivilegesRequiredValue() {
       return privilegesRequired_;
     }
-    /** <code>.grafeas.v1.CVSSv3.PrivilegesRequired privileges_required = 7;</code> */
+    /**
+     * <code>.grafeas.v1.CVSSv3.PrivilegesRequired privileges_required = 7;</code>
+     *
+     * @param value The enum numeric value on the wire for privilegesRequired to set.
+     * @return This builder for chaining.
+     */
     public Builder setPrivilegesRequiredValue(int value) {
       privilegesRequired_ = value;
       onChanged();
       return this;
     }
-    /** <code>.grafeas.v1.CVSSv3.PrivilegesRequired privileges_required = 7;</code> */
+    /**
+     * <code>.grafeas.v1.CVSSv3.PrivilegesRequired privileges_required = 7;</code>
+     *
+     * @return The privilegesRequired.
+     */
     public io.grafeas.v1.CVSSv3.PrivilegesRequired getPrivilegesRequired() {
       @SuppressWarnings("deprecation")
       io.grafeas.v1.CVSSv3.PrivilegesRequired result =
           io.grafeas.v1.CVSSv3.PrivilegesRequired.valueOf(privilegesRequired_);
       return result == null ? io.grafeas.v1.CVSSv3.PrivilegesRequired.UNRECOGNIZED : result;
     }
-    /** <code>.grafeas.v1.CVSSv3.PrivilegesRequired privileges_required = 7;</code> */
+    /**
+     * <code>.grafeas.v1.CVSSv3.PrivilegesRequired privileges_required = 7;</code>
+     *
+     * @param value The privilegesRequired to set.
+     * @return This builder for chaining.
+     */
     public Builder setPrivilegesRequired(io.grafeas.v1.CVSSv3.PrivilegesRequired value) {
       if (value == null) {
         throw new NullPointerException();
@@ -1601,7 +1809,11 @@ public final class CVSSv3 extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-    /** <code>.grafeas.v1.CVSSv3.PrivilegesRequired privileges_required = 7;</code> */
+    /**
+     * <code>.grafeas.v1.CVSSv3.PrivilegesRequired privileges_required = 7;</code>
+     *
+     * @return This builder for chaining.
+     */
     public Builder clearPrivilegesRequired() {
 
       privilegesRequired_ = 0;
@@ -1610,24 +1822,42 @@ public final class CVSSv3 extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int userInteraction_ = 0;
-    /** <code>.grafeas.v1.CVSSv3.UserInteraction user_interaction = 8;</code> */
+    /**
+     * <code>.grafeas.v1.CVSSv3.UserInteraction user_interaction = 8;</code>
+     *
+     * @return The enum numeric value on the wire for userInteraction.
+     */
     public int getUserInteractionValue() {
       return userInteraction_;
     }
-    /** <code>.grafeas.v1.CVSSv3.UserInteraction user_interaction = 8;</code> */
+    /**
+     * <code>.grafeas.v1.CVSSv3.UserInteraction user_interaction = 8;</code>
+     *
+     * @param value The enum numeric value on the wire for userInteraction to set.
+     * @return This builder for chaining.
+     */
     public Builder setUserInteractionValue(int value) {
       userInteraction_ = value;
       onChanged();
       return this;
     }
-    /** <code>.grafeas.v1.CVSSv3.UserInteraction user_interaction = 8;</code> */
+    /**
+     * <code>.grafeas.v1.CVSSv3.UserInteraction user_interaction = 8;</code>
+     *
+     * @return The userInteraction.
+     */
     public io.grafeas.v1.CVSSv3.UserInteraction getUserInteraction() {
       @SuppressWarnings("deprecation")
       io.grafeas.v1.CVSSv3.UserInteraction result =
           io.grafeas.v1.CVSSv3.UserInteraction.valueOf(userInteraction_);
       return result == null ? io.grafeas.v1.CVSSv3.UserInteraction.UNRECOGNIZED : result;
     }
-    /** <code>.grafeas.v1.CVSSv3.UserInteraction user_interaction = 8;</code> */
+    /**
+     * <code>.grafeas.v1.CVSSv3.UserInteraction user_interaction = 8;</code>
+     *
+     * @param value The userInteraction to set.
+     * @return This builder for chaining.
+     */
     public Builder setUserInteraction(io.grafeas.v1.CVSSv3.UserInteraction value) {
       if (value == null) {
         throw new NullPointerException();
@@ -1637,7 +1867,11 @@ public final class CVSSv3 extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-    /** <code>.grafeas.v1.CVSSv3.UserInteraction user_interaction = 8;</code> */
+    /**
+     * <code>.grafeas.v1.CVSSv3.UserInteraction user_interaction = 8;</code>
+     *
+     * @return This builder for chaining.
+     */
     public Builder clearUserInteraction() {
 
       userInteraction_ = 0;
@@ -1646,23 +1880,41 @@ public final class CVSSv3 extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int scope_ = 0;
-    /** <code>.grafeas.v1.CVSSv3.Scope scope = 9;</code> */
+    /**
+     * <code>.grafeas.v1.CVSSv3.Scope scope = 9;</code>
+     *
+     * @return The enum numeric value on the wire for scope.
+     */
     public int getScopeValue() {
       return scope_;
     }
-    /** <code>.grafeas.v1.CVSSv3.Scope scope = 9;</code> */
+    /**
+     * <code>.grafeas.v1.CVSSv3.Scope scope = 9;</code>
+     *
+     * @param value The enum numeric value on the wire for scope to set.
+     * @return This builder for chaining.
+     */
     public Builder setScopeValue(int value) {
       scope_ = value;
       onChanged();
       return this;
     }
-    /** <code>.grafeas.v1.CVSSv3.Scope scope = 9;</code> */
+    /**
+     * <code>.grafeas.v1.CVSSv3.Scope scope = 9;</code>
+     *
+     * @return The scope.
+     */
     public io.grafeas.v1.CVSSv3.Scope getScope() {
       @SuppressWarnings("deprecation")
       io.grafeas.v1.CVSSv3.Scope result = io.grafeas.v1.CVSSv3.Scope.valueOf(scope_);
       return result == null ? io.grafeas.v1.CVSSv3.Scope.UNRECOGNIZED : result;
     }
-    /** <code>.grafeas.v1.CVSSv3.Scope scope = 9;</code> */
+    /**
+     * <code>.grafeas.v1.CVSSv3.Scope scope = 9;</code>
+     *
+     * @param value The scope to set.
+     * @return This builder for chaining.
+     */
     public Builder setScope(io.grafeas.v1.CVSSv3.Scope value) {
       if (value == null) {
         throw new NullPointerException();
@@ -1672,7 +1924,11 @@ public final class CVSSv3 extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-    /** <code>.grafeas.v1.CVSSv3.Scope scope = 9;</code> */
+    /**
+     * <code>.grafeas.v1.CVSSv3.Scope scope = 9;</code>
+     *
+     * @return This builder for chaining.
+     */
     public Builder clearScope() {
 
       scope_ = 0;
@@ -1681,24 +1937,42 @@ public final class CVSSv3 extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int confidentialityImpact_ = 0;
-    /** <code>.grafeas.v1.CVSSv3.Impact confidentiality_impact = 10;</code> */
+    /**
+     * <code>.grafeas.v1.CVSSv3.Impact confidentiality_impact = 10;</code>
+     *
+     * @return The enum numeric value on the wire for confidentialityImpact.
+     */
     public int getConfidentialityImpactValue() {
       return confidentialityImpact_;
     }
-    /** <code>.grafeas.v1.CVSSv3.Impact confidentiality_impact = 10;</code> */
+    /**
+     * <code>.grafeas.v1.CVSSv3.Impact confidentiality_impact = 10;</code>
+     *
+     * @param value The enum numeric value on the wire for confidentialityImpact to set.
+     * @return This builder for chaining.
+     */
     public Builder setConfidentialityImpactValue(int value) {
       confidentialityImpact_ = value;
       onChanged();
       return this;
     }
-    /** <code>.grafeas.v1.CVSSv3.Impact confidentiality_impact = 10;</code> */
+    /**
+     * <code>.grafeas.v1.CVSSv3.Impact confidentiality_impact = 10;</code>
+     *
+     * @return The confidentialityImpact.
+     */
     public io.grafeas.v1.CVSSv3.Impact getConfidentialityImpact() {
       @SuppressWarnings("deprecation")
       io.grafeas.v1.CVSSv3.Impact result =
           io.grafeas.v1.CVSSv3.Impact.valueOf(confidentialityImpact_);
       return result == null ? io.grafeas.v1.CVSSv3.Impact.UNRECOGNIZED : result;
     }
-    /** <code>.grafeas.v1.CVSSv3.Impact confidentiality_impact = 10;</code> */
+    /**
+     * <code>.grafeas.v1.CVSSv3.Impact confidentiality_impact = 10;</code>
+     *
+     * @param value The confidentialityImpact to set.
+     * @return This builder for chaining.
+     */
     public Builder setConfidentialityImpact(io.grafeas.v1.CVSSv3.Impact value) {
       if (value == null) {
         throw new NullPointerException();
@@ -1708,7 +1982,11 @@ public final class CVSSv3 extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-    /** <code>.grafeas.v1.CVSSv3.Impact confidentiality_impact = 10;</code> */
+    /**
+     * <code>.grafeas.v1.CVSSv3.Impact confidentiality_impact = 10;</code>
+     *
+     * @return This builder for chaining.
+     */
     public Builder clearConfidentialityImpact() {
 
       confidentialityImpact_ = 0;
@@ -1717,23 +1995,41 @@ public final class CVSSv3 extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int integrityImpact_ = 0;
-    /** <code>.grafeas.v1.CVSSv3.Impact integrity_impact = 11;</code> */
+    /**
+     * <code>.grafeas.v1.CVSSv3.Impact integrity_impact = 11;</code>
+     *
+     * @return The enum numeric value on the wire for integrityImpact.
+     */
     public int getIntegrityImpactValue() {
       return integrityImpact_;
     }
-    /** <code>.grafeas.v1.CVSSv3.Impact integrity_impact = 11;</code> */
+    /**
+     * <code>.grafeas.v1.CVSSv3.Impact integrity_impact = 11;</code>
+     *
+     * @param value The enum numeric value on the wire for integrityImpact to set.
+     * @return This builder for chaining.
+     */
     public Builder setIntegrityImpactValue(int value) {
       integrityImpact_ = value;
       onChanged();
       return this;
     }
-    /** <code>.grafeas.v1.CVSSv3.Impact integrity_impact = 11;</code> */
+    /**
+     * <code>.grafeas.v1.CVSSv3.Impact integrity_impact = 11;</code>
+     *
+     * @return The integrityImpact.
+     */
     public io.grafeas.v1.CVSSv3.Impact getIntegrityImpact() {
       @SuppressWarnings("deprecation")
       io.grafeas.v1.CVSSv3.Impact result = io.grafeas.v1.CVSSv3.Impact.valueOf(integrityImpact_);
       return result == null ? io.grafeas.v1.CVSSv3.Impact.UNRECOGNIZED : result;
     }
-    /** <code>.grafeas.v1.CVSSv3.Impact integrity_impact = 11;</code> */
+    /**
+     * <code>.grafeas.v1.CVSSv3.Impact integrity_impact = 11;</code>
+     *
+     * @param value The integrityImpact to set.
+     * @return This builder for chaining.
+     */
     public Builder setIntegrityImpact(io.grafeas.v1.CVSSv3.Impact value) {
       if (value == null) {
         throw new NullPointerException();
@@ -1743,7 +2039,11 @@ public final class CVSSv3 extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-    /** <code>.grafeas.v1.CVSSv3.Impact integrity_impact = 11;</code> */
+    /**
+     * <code>.grafeas.v1.CVSSv3.Impact integrity_impact = 11;</code>
+     *
+     * @return This builder for chaining.
+     */
     public Builder clearIntegrityImpact() {
 
       integrityImpact_ = 0;
@@ -1752,23 +2052,41 @@ public final class CVSSv3 extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int availabilityImpact_ = 0;
-    /** <code>.grafeas.v1.CVSSv3.Impact availability_impact = 12;</code> */
+    /**
+     * <code>.grafeas.v1.CVSSv3.Impact availability_impact = 12;</code>
+     *
+     * @return The enum numeric value on the wire for availabilityImpact.
+     */
     public int getAvailabilityImpactValue() {
       return availabilityImpact_;
     }
-    /** <code>.grafeas.v1.CVSSv3.Impact availability_impact = 12;</code> */
+    /**
+     * <code>.grafeas.v1.CVSSv3.Impact availability_impact = 12;</code>
+     *
+     * @param value The enum numeric value on the wire for availabilityImpact to set.
+     * @return This builder for chaining.
+     */
     public Builder setAvailabilityImpactValue(int value) {
       availabilityImpact_ = value;
       onChanged();
       return this;
     }
-    /** <code>.grafeas.v1.CVSSv3.Impact availability_impact = 12;</code> */
+    /**
+     * <code>.grafeas.v1.CVSSv3.Impact availability_impact = 12;</code>
+     *
+     * @return The availabilityImpact.
+     */
     public io.grafeas.v1.CVSSv3.Impact getAvailabilityImpact() {
       @SuppressWarnings("deprecation")
       io.grafeas.v1.CVSSv3.Impact result = io.grafeas.v1.CVSSv3.Impact.valueOf(availabilityImpact_);
       return result == null ? io.grafeas.v1.CVSSv3.Impact.UNRECOGNIZED : result;
     }
-    /** <code>.grafeas.v1.CVSSv3.Impact availability_impact = 12;</code> */
+    /**
+     * <code>.grafeas.v1.CVSSv3.Impact availability_impact = 12;</code>
+     *
+     * @param value The availabilityImpact to set.
+     * @return This builder for chaining.
+     */
     public Builder setAvailabilityImpact(io.grafeas.v1.CVSSv3.Impact value) {
       if (value == null) {
         throw new NullPointerException();
@@ -1778,7 +2096,11 @@ public final class CVSSv3 extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-    /** <code>.grafeas.v1.CVSSv3.Impact availability_impact = 12;</code> */
+    /**
+     * <code>.grafeas.v1.CVSSv3.Impact availability_impact = 12;</code>
+     *
+     * @return This builder for chaining.
+     */
     public Builder clearAvailabilityImpact() {
 
       availabilityImpact_ = 0;

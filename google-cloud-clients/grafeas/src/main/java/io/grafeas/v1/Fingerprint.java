@@ -45,6 +45,12 @@ public final class Fingerprint extends com.google.protobuf.GeneratedMessageV3
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new Fingerprint();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -78,9 +84,9 @@ public final class Fingerprint extends com.google.protobuf.GeneratedMessageV3
           case 18:
             {
               java.lang.String s = input.readStringRequireUtf8();
-              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 v2Blob_ = new com.google.protobuf.LazyStringArrayList();
-                mutable_bitField0_ |= 0x00000002;
+                mutable_bitField0_ |= 0x00000001;
               }
               v2Blob_.add(s);
               break;
@@ -106,7 +112,7 @@ public final class Fingerprint extends com.google.protobuf.GeneratedMessageV3
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
-      if (((mutable_bitField0_ & 0x00000002) != 0)) {
+      if (((mutable_bitField0_ & 0x00000001) != 0)) {
         v2Blob_ = v2Blob_.getUnmodifiableView();
       }
       this.unknownFields = unknownFields.build();
@@ -126,7 +132,6 @@ public final class Fingerprint extends com.google.protobuf.GeneratedMessageV3
             io.grafeas.v1.Fingerprint.class, io.grafeas.v1.Fingerprint.Builder.class);
   }
 
-  private int bitField0_;
   public static final int V1_NAME_FIELD_NUMBER = 1;
   private volatile java.lang.Object v1Name_;
   /**
@@ -138,6 +143,8 @@ public final class Fingerprint extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string v1_name = 1;</code>
+   *
+   * @return The v1Name.
    */
   public java.lang.String getV1Name() {
     java.lang.Object ref = v1Name_;
@@ -159,6 +166,8 @@ public final class Fingerprint extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string v1_name = 1;</code>
+   *
+   * @return The bytes for v1Name.
    */
   public com.google.protobuf.ByteString getV1NameBytes() {
     java.lang.Object ref = v1Name_;
@@ -182,6 +191,8 @@ public final class Fingerprint extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>repeated string v2_blob = 2;</code>
+   *
+   * @return A list containing the v2Blob.
    */
   public com.google.protobuf.ProtocolStringList getV2BlobList() {
     return v2Blob_;
@@ -194,6 +205,8 @@ public final class Fingerprint extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>repeated string v2_blob = 2;</code>
+   *
+   * @return The count of v2Blob.
    */
   public int getV2BlobCount() {
     return v2Blob_.size();
@@ -206,6 +219,9 @@ public final class Fingerprint extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>repeated string v2_blob = 2;</code>
+   *
+   * @param index The index of the element to return.
+   * @return The v2Blob at the given index.
    */
   public java.lang.String getV2Blob(int index) {
     return v2Blob_.get(index);
@@ -218,6 +234,9 @@ public final class Fingerprint extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>repeated string v2_blob = 2;</code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the v2Blob at the given index.
    */
   public com.google.protobuf.ByteString getV2BlobBytes(int index) {
     return v2Blob_.getByteString(index);
@@ -236,6 +255,8 @@ public final class Fingerprint extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string v2_name = 3;</code>
+   *
+   * @return The v2Name.
    */
   public java.lang.String getV2Name() {
     java.lang.Object ref = v2Name_;
@@ -259,6 +280,8 @@ public final class Fingerprint extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string v2_name = 3;</code>
+   *
+   * @return The bytes for v2Name.
    */
   public com.google.protobuf.ByteString getV2NameBytes() {
     java.lang.Object ref = v2Name_;
@@ -499,7 +522,7 @@ public final class Fingerprint extends com.google.protobuf.GeneratedMessageV3
       v1Name_ = "";
 
       v2Blob_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000002);
+      bitField0_ = (bitField0_ & ~0x00000001);
       v2Name_ = "";
 
       return this;
@@ -528,15 +551,13 @@ public final class Fingerprint extends com.google.protobuf.GeneratedMessageV3
     public io.grafeas.v1.Fingerprint buildPartial() {
       io.grafeas.v1.Fingerprint result = new io.grafeas.v1.Fingerprint(this);
       int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
       result.v1Name_ = v1Name_;
-      if (((bitField0_ & 0x00000002) != 0)) {
+      if (((bitField0_ & 0x00000001) != 0)) {
         v2Blob_ = v2Blob_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000002);
+        bitField0_ = (bitField0_ & ~0x00000001);
       }
       result.v2Blob_ = v2Blob_;
       result.v2Name_ = v2Name_;
-      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -593,7 +614,7 @@ public final class Fingerprint extends com.google.protobuf.GeneratedMessageV3
       if (!other.v2Blob_.isEmpty()) {
         if (v2Blob_.isEmpty()) {
           v2Blob_ = other.v2Blob_;
-          bitField0_ = (bitField0_ & ~0x00000002);
+          bitField0_ = (bitField0_ & ~0x00000001);
         } else {
           ensureV2BlobIsMutable();
           v2Blob_.addAll(other.v2Blob_);
@@ -645,6 +666,8 @@ public final class Fingerprint extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string v1_name = 1;</code>
+     *
+     * @return The v1Name.
      */
     public java.lang.String getV1Name() {
       java.lang.Object ref = v1Name_;
@@ -666,6 +689,8 @@ public final class Fingerprint extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string v1_name = 1;</code>
+     *
+     * @return The bytes for v1Name.
      */
     public com.google.protobuf.ByteString getV1NameBytes() {
       java.lang.Object ref = v1Name_;
@@ -687,6 +712,9 @@ public final class Fingerprint extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string v1_name = 1;</code>
+     *
+     * @param value The v1Name to set.
+     * @return This builder for chaining.
      */
     public Builder setV1Name(java.lang.String value) {
       if (value == null) {
@@ -706,6 +734,8 @@ public final class Fingerprint extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string v1_name = 1;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearV1Name() {
 
@@ -722,6 +752,9 @@ public final class Fingerprint extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string v1_name = 1;</code>
+     *
+     * @param value The bytes for v1Name to set.
+     * @return This builder for chaining.
      */
     public Builder setV1NameBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -738,9 +771,9 @@ public final class Fingerprint extends com.google.protobuf.GeneratedMessageV3
         com.google.protobuf.LazyStringArrayList.EMPTY;
 
     private void ensureV2BlobIsMutable() {
-      if (!((bitField0_ & 0x00000002) != 0)) {
+      if (!((bitField0_ & 0x00000001) != 0)) {
         v2Blob_ = new com.google.protobuf.LazyStringArrayList(v2Blob_);
-        bitField0_ |= 0x00000002;
+        bitField0_ |= 0x00000001;
       }
     }
     /**
@@ -751,6 +784,8 @@ public final class Fingerprint extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string v2_blob = 2;</code>
+     *
+     * @return A list containing the v2Blob.
      */
     public com.google.protobuf.ProtocolStringList getV2BlobList() {
       return v2Blob_.getUnmodifiableView();
@@ -763,6 +798,8 @@ public final class Fingerprint extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string v2_blob = 2;</code>
+     *
+     * @return The count of v2Blob.
      */
     public int getV2BlobCount() {
       return v2Blob_.size();
@@ -775,6 +812,9 @@ public final class Fingerprint extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string v2_blob = 2;</code>
+     *
+     * @param index The index of the element to return.
+     * @return The v2Blob at the given index.
      */
     public java.lang.String getV2Blob(int index) {
       return v2Blob_.get(index);
@@ -787,6 +827,9 @@ public final class Fingerprint extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string v2_blob = 2;</code>
+     *
+     * @param index The index of the value to return.
+     * @return The bytes of the v2Blob at the given index.
      */
     public com.google.protobuf.ByteString getV2BlobBytes(int index) {
       return v2Blob_.getByteString(index);
@@ -799,6 +842,10 @@ public final class Fingerprint extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string v2_blob = 2;</code>
+     *
+     * @param index The index to set the value at.
+     * @param value The v2Blob to set.
+     * @return This builder for chaining.
      */
     public Builder setV2Blob(int index, java.lang.String value) {
       if (value == null) {
@@ -817,6 +864,9 @@ public final class Fingerprint extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string v2_blob = 2;</code>
+     *
+     * @param value The v2Blob to add.
+     * @return This builder for chaining.
      */
     public Builder addV2Blob(java.lang.String value) {
       if (value == null) {
@@ -835,6 +885,9 @@ public final class Fingerprint extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string v2_blob = 2;</code>
+     *
+     * @param values The v2Blob to add.
+     * @return This builder for chaining.
      */
     public Builder addAllV2Blob(java.lang.Iterable<java.lang.String> values) {
       ensureV2BlobIsMutable();
@@ -850,10 +903,12 @@ public final class Fingerprint extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string v2_blob = 2;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearV2Blob() {
       v2Blob_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000002);
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -865,6 +920,9 @@ public final class Fingerprint extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>repeated string v2_blob = 2;</code>
+     *
+     * @param value The bytes of the v2Blob to add.
+     * @return This builder for chaining.
      */
     public Builder addV2BlobBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -889,6 +947,8 @@ public final class Fingerprint extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string v2_name = 3;</code>
+     *
+     * @return The v2Name.
      */
     public java.lang.String getV2Name() {
       java.lang.Object ref = v2Name_;
@@ -912,6 +972,8 @@ public final class Fingerprint extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string v2_name = 3;</code>
+     *
+     * @return The bytes for v2Name.
      */
     public com.google.protobuf.ByteString getV2NameBytes() {
       java.lang.Object ref = v2Name_;
@@ -935,6 +997,9 @@ public final class Fingerprint extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string v2_name = 3;</code>
+     *
+     * @param value The v2Name to set.
+     * @return This builder for chaining.
      */
     public Builder setV2Name(java.lang.String value) {
       if (value == null) {
@@ -956,6 +1021,8 @@ public final class Fingerprint extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string v2_name = 3;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearV2Name() {
 
@@ -974,6 +1041,9 @@ public final class Fingerprint extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string v2_name = 3;</code>
+     *
+     * @param value The bytes for v2Name to set.
+     * @return This builder for chaining.
      */
     public Builder setV2NameBytes(com.google.protobuf.ByteString value) {
       if (value == null) {

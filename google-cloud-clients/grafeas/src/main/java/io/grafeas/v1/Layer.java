@@ -44,6 +44,12 @@ public final class Layer extends com.google.protobuf.GeneratedMessageV3
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new Layer();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -56,7 +62,6 @@ public final class Layer extends com.google.protobuf.GeneratedMessageV3
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -123,6 +128,8 @@ public final class Layer extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string directive = 1;</code>
+   *
+   * @return The directive.
    */
   public java.lang.String getDirective() {
     java.lang.Object ref = directive_;
@@ -144,6 +151,8 @@ public final class Layer extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string directive = 1;</code>
+   *
+   * @return The bytes for directive.
    */
   public com.google.protobuf.ByteString getDirectiveBytes() {
     java.lang.Object ref = directive_;
@@ -167,6 +176,8 @@ public final class Layer extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string arguments = 2;</code>
+   *
+   * @return The arguments.
    */
   public java.lang.String getArguments() {
     java.lang.Object ref = arguments_;
@@ -187,6 +198,8 @@ public final class Layer extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string arguments = 2;</code>
+   *
+   * @return The bytes for arguments.
    */
   public com.google.protobuf.ByteString getArgumentsBytes() {
     java.lang.Object ref = arguments_;
@@ -535,6 +548,8 @@ public final class Layer extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string directive = 1;</code>
+     *
+     * @return The directive.
      */
     public java.lang.String getDirective() {
       java.lang.Object ref = directive_;
@@ -556,6 +571,8 @@ public final class Layer extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string directive = 1;</code>
+     *
+     * @return The bytes for directive.
      */
     public com.google.protobuf.ByteString getDirectiveBytes() {
       java.lang.Object ref = directive_;
@@ -577,6 +594,9 @@ public final class Layer extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string directive = 1;</code>
+     *
+     * @param value The directive to set.
+     * @return This builder for chaining.
      */
     public Builder setDirective(java.lang.String value) {
       if (value == null) {
@@ -596,6 +616,8 @@ public final class Layer extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string directive = 1;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearDirective() {
 
@@ -612,6 +634,9 @@ public final class Layer extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string directive = 1;</code>
+     *
+     * @param value The bytes for directive to set.
+     * @return This builder for chaining.
      */
     public Builder setDirectiveBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -633,6 +658,8 @@ public final class Layer extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string arguments = 2;</code>
+     *
+     * @return The arguments.
      */
     public java.lang.String getArguments() {
       java.lang.Object ref = arguments_;
@@ -653,6 +680,8 @@ public final class Layer extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string arguments = 2;</code>
+     *
+     * @return The bytes for arguments.
      */
     public com.google.protobuf.ByteString getArgumentsBytes() {
       java.lang.Object ref = arguments_;
@@ -673,6 +702,9 @@ public final class Layer extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string arguments = 2;</code>
+     *
+     * @param value The arguments to set.
+     * @return This builder for chaining.
      */
     public Builder setArguments(java.lang.String value) {
       if (value == null) {
@@ -691,6 +723,8 @@ public final class Layer extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string arguments = 2;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearArguments() {
 
@@ -706,6 +740,9 @@ public final class Layer extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string arguments = 2;</code>
+     *
+     * @param value The bytes for arguments to set.
+     * @return This builder for chaining.
      */
     public Builder setArgumentsBytes(com.google.protobuf.ByteString value) {
       if (value == null) {

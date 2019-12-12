@@ -33,6 +33,8 @@ public interface NoteOrBuilder
    * </pre>
    *
    * <code>string name = 1;</code>
+   *
+   * @return The name.
    */
   java.lang.String getName();
   /**
@@ -44,6 +46,8 @@ public interface NoteOrBuilder
    * </pre>
    *
    * <code>string name = 1;</code>
+   *
+   * @return The bytes for name.
    */
   com.google.protobuf.ByteString getNameBytes();
 
@@ -55,6 +59,8 @@ public interface NoteOrBuilder
    * </pre>
    *
    * <code>string short_description = 2;</code>
+   *
+   * @return The shortDescription.
    */
   java.lang.String getShortDescription();
   /**
@@ -65,6 +71,8 @@ public interface NoteOrBuilder
    * </pre>
    *
    * <code>string short_description = 2;</code>
+   *
+   * @return The bytes for shortDescription.
    */
   com.google.protobuf.ByteString getShortDescriptionBytes();
 
@@ -76,6 +84,8 @@ public interface NoteOrBuilder
    * </pre>
    *
    * <code>string long_description = 3;</code>
+   *
+   * @return The longDescription.
    */
   java.lang.String getLongDescription();
   /**
@@ -86,6 +96,8 @@ public interface NoteOrBuilder
    * </pre>
    *
    * <code>string long_description = 3;</code>
+   *
+   * @return The bytes for longDescription.
    */
   com.google.protobuf.ByteString getLongDescriptionBytes();
 
@@ -98,6 +110,8 @@ public interface NoteOrBuilder
    * </pre>
    *
    * <code>.grafeas.v1.NoteKind kind = 4;</code>
+   *
+   * @return The enum numeric value on the wire for kind.
    */
   int getKindValue();
   /**
@@ -109,6 +123,8 @@ public interface NoteOrBuilder
    * </pre>
    *
    * <code>.grafeas.v1.NoteKind kind = 4;</code>
+   *
+   * @return The kind.
    */
   io.grafeas.v1.NoteKind getKind();
 
@@ -171,6 +187,8 @@ public interface NoteOrBuilder
    * </pre>
    *
    * <code>.google.protobuf.Timestamp expiration_time = 6;</code>
+   *
+   * @return Whether the expirationTime field is set.
    */
   boolean hasExpirationTime();
   /**
@@ -181,6 +199,8 @@ public interface NoteOrBuilder
    * </pre>
    *
    * <code>.google.protobuf.Timestamp expiration_time = 6;</code>
+   *
+   * @return The expirationTime.
    */
   com.google.protobuf.Timestamp getExpirationTime();
   /**
@@ -203,6 +223,8 @@ public interface NoteOrBuilder
    * </pre>
    *
    * <code>.google.protobuf.Timestamp create_time = 7;</code>
+   *
+   * @return Whether the createTime field is set.
    */
   boolean hasCreateTime();
   /**
@@ -214,6 +236,8 @@ public interface NoteOrBuilder
    * </pre>
    *
    * <code>.google.protobuf.Timestamp create_time = 7;</code>
+   *
+   * @return The createTime.
    */
   com.google.protobuf.Timestamp getCreateTime();
   /**
@@ -237,6 +261,8 @@ public interface NoteOrBuilder
    * </pre>
    *
    * <code>.google.protobuf.Timestamp update_time = 8;</code>
+   *
+   * @return Whether the updateTime field is set.
    */
   boolean hasUpdateTime();
   /**
@@ -248,6 +274,8 @@ public interface NoteOrBuilder
    * </pre>
    *
    * <code>.google.protobuf.Timestamp update_time = 8;</code>
+   *
+   * @return The updateTime.
    */
   com.google.protobuf.Timestamp getUpdateTime();
   /**
@@ -270,6 +298,8 @@ public interface NoteOrBuilder
    * </pre>
    *
    * <code>repeated string related_note_names = 9;</code>
+   *
+   * @return A list containing the relatedNoteNames.
    */
   java.util.List<java.lang.String> getRelatedNoteNamesList();
   /**
@@ -280,6 +310,8 @@ public interface NoteOrBuilder
    * </pre>
    *
    * <code>repeated string related_note_names = 9;</code>
+   *
+   * @return The count of relatedNoteNames.
    */
   int getRelatedNoteNamesCount();
   /**
@@ -290,6 +322,9 @@ public interface NoteOrBuilder
    * </pre>
    *
    * <code>repeated string related_note_names = 9;</code>
+   *
+   * @param index The index of the element to return.
+   * @return The relatedNoteNames at the given index.
    */
   java.lang.String getRelatedNoteNames(int index);
   /**
@@ -300,6 +335,9 @@ public interface NoteOrBuilder
    * </pre>
    *
    * <code>repeated string related_note_names = 9;</code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the relatedNoteNames at the given index.
    */
   com.google.protobuf.ByteString getRelatedNoteNamesBytes(int index);
 
@@ -311,6 +349,8 @@ public interface NoteOrBuilder
    * </pre>
    *
    * <code>.grafeas.v1.VulnerabilityNote vulnerability = 10;</code>
+   *
+   * @return Whether the vulnerability field is set.
    */
   boolean hasVulnerability();
   /**
@@ -321,6 +361,8 @@ public interface NoteOrBuilder
    * </pre>
    *
    * <code>.grafeas.v1.VulnerabilityNote vulnerability = 10;</code>
+   *
+   * @return The vulnerability.
    */
   io.grafeas.v1.VulnerabilityNote getVulnerability();
   /**
@@ -342,6 +384,8 @@ public interface NoteOrBuilder
    * </pre>
    *
    * <code>.grafeas.v1.BuildNote build = 11;</code>
+   *
+   * @return Whether the build field is set.
    */
   boolean hasBuild();
   /**
@@ -352,6 +396,8 @@ public interface NoteOrBuilder
    * </pre>
    *
    * <code>.grafeas.v1.BuildNote build = 11;</code>
+   *
+   * @return The build.
    */
   io.grafeas.v1.BuildNote getBuild();
   /**
@@ -373,6 +419,8 @@ public interface NoteOrBuilder
    * </pre>
    *
    * <code>.grafeas.v1.ImageNote image = 12;</code>
+   *
+   * @return Whether the image field is set.
    */
   boolean hasImage();
   /**
@@ -383,6 +431,8 @@ public interface NoteOrBuilder
    * </pre>
    *
    * <code>.grafeas.v1.ImageNote image = 12;</code>
+   *
+   * @return The image.
    */
   io.grafeas.v1.ImageNote getImage();
   /**
@@ -404,6 +454,8 @@ public interface NoteOrBuilder
    * </pre>
    *
    * <code>.grafeas.v1.PackageNote package = 13;</code>
+   *
+   * @return Whether the package field is set.
    */
   boolean hasPackage();
   /**
@@ -414,6 +466,8 @@ public interface NoteOrBuilder
    * </pre>
    *
    * <code>.grafeas.v1.PackageNote package = 13;</code>
+   *
+   * @return The package.
    */
   io.grafeas.v1.PackageNote getPackage();
   /**
@@ -435,6 +489,8 @@ public interface NoteOrBuilder
    * </pre>
    *
    * <code>.grafeas.v1.DeploymentNote deployment = 14;</code>
+   *
+   * @return Whether the deployment field is set.
    */
   boolean hasDeployment();
   /**
@@ -445,6 +501,8 @@ public interface NoteOrBuilder
    * </pre>
    *
    * <code>.grafeas.v1.DeploymentNote deployment = 14;</code>
+   *
+   * @return The deployment.
    */
   io.grafeas.v1.DeploymentNote getDeployment();
   /**
@@ -466,6 +524,8 @@ public interface NoteOrBuilder
    * </pre>
    *
    * <code>.grafeas.v1.DiscoveryNote discovery = 15;</code>
+   *
+   * @return Whether the discovery field is set.
    */
   boolean hasDiscovery();
   /**
@@ -476,6 +536,8 @@ public interface NoteOrBuilder
    * </pre>
    *
    * <code>.grafeas.v1.DiscoveryNote discovery = 15;</code>
+   *
+   * @return The discovery.
    */
   io.grafeas.v1.DiscoveryNote getDiscovery();
   /**
@@ -497,6 +559,8 @@ public interface NoteOrBuilder
    * </pre>
    *
    * <code>.grafeas.v1.AttestationNote attestation = 16;</code>
+   *
+   * @return Whether the attestation field is set.
    */
   boolean hasAttestation();
   /**
@@ -507,6 +571,8 @@ public interface NoteOrBuilder
    * </pre>
    *
    * <code>.grafeas.v1.AttestationNote attestation = 16;</code>
+   *
+   * @return The attestation.
    */
   io.grafeas.v1.AttestationNote getAttestation();
   /**

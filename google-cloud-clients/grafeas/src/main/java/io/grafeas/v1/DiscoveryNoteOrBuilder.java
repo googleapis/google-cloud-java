@@ -33,6 +33,8 @@ public interface DiscoveryNoteOrBuilder
    * </pre>
    *
    * <code>.grafeas.v1.NoteKind analysis_kind = 1;</code>
+   *
+   * @return The enum numeric value on the wire for analysisKind.
    */
   int getAnalysisKindValue();
   /**
@@ -44,6 +46,8 @@ public interface DiscoveryNoteOrBuilder
    * </pre>
    *
    * <code>.grafeas.v1.NoteKind analysis_kind = 1;</code>
+   *
+   * @return The analysisKind.
    */
   io.grafeas.v1.NoteKind getAnalysisKind();
 }

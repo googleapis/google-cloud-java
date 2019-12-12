@@ -22,7 +22,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
-// AUTO-GENERATED DOCUMENTATION AND CLASS
+/** AUTO-GENERATED DOCUMENTATION AND CLASS */
 @javax.annotation.Generated("by GAPIC protoc plugin")
 public class OccurrenceName implements ResourceName {
 

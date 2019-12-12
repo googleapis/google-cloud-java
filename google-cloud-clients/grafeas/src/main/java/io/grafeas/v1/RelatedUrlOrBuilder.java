@@ -32,6 +32,8 @@ public interface RelatedUrlOrBuilder
    * </pre>
    *
    * <code>string url = 1;</code>
+   *
+   * @return The url.
    */
   java.lang.String getUrl();
   /**
@@ -42,6 +44,8 @@ public interface RelatedUrlOrBuilder
    * </pre>
    *
    * <code>string url = 1;</code>
+   *
+   * @return The bytes for url.
    */
   com.google.protobuf.ByteString getUrlBytes();
 
@@ -53,6 +57,8 @@ public interface RelatedUrlOrBuilder
    * </pre>
    *
    * <code>string label = 2;</code>
+   *
+   * @return The label.
    */
   java.lang.String getLabel();
   /**
@@ -63,6 +69,8 @@ public interface RelatedUrlOrBuilder
    * </pre>
    *
    * <code>string label = 2;</code>
+   *
+   * @return The bytes for label.
    */
   com.google.protobuf.ByteString getLabelBytes();
 }

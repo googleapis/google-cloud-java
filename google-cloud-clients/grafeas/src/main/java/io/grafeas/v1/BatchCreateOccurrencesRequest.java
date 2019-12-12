@@ -44,6 +44,12 @@ public final class BatchCreateOccurrencesRequest extends com.google.protobuf.Gen
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    return new BatchCreateOccurrencesRequest();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
@@ -76,9 +82,9 @@ public final class BatchCreateOccurrencesRequest extends com.google.protobuf.Gen
             }
           case 18:
             {
-              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 occurrences_ = new java.util.ArrayList<io.grafeas.v1.Occurrence>();
-                mutable_bitField0_ |= 0x00000002;
+                mutable_bitField0_ |= 0x00000001;
               }
               occurrences_.add(
                   input.readMessage(io.grafeas.v1.Occurrence.parser(), extensionRegistry));
@@ -98,7 +104,7 @@ public final class BatchCreateOccurrencesRequest extends com.google.protobuf.Gen
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
-      if (((mutable_bitField0_ & 0x00000002) != 0)) {
+      if (((mutable_bitField0_ & 0x00000001) != 0)) {
         occurrences_ = java.util.Collections.unmodifiableList(occurrences_);
       }
       this.unknownFields = unknownFields.build();
@@ -121,7 +127,6 @@ public final class BatchCreateOccurrencesRequest extends com.google.protobuf.Gen
             io.grafeas.v1.BatchCreateOccurrencesRequest.Builder.class);
   }
 
-  private int bitField0_;
   public static final int PARENT_FIELD_NUMBER = 1;
   private volatile java.lang.Object parent_;
   /**
@@ -133,6 +138,8 @@ public final class BatchCreateOccurrencesRequest extends com.google.protobuf.Gen
    * </pre>
    *
    * <code>string parent = 1;</code>
+   *
+   * @return The parent.
    */
   public java.lang.String getParent() {
     java.lang.Object ref = parent_;
@@ -154,6 +161,8 @@ public final class BatchCreateOccurrencesRequest extends com.google.protobuf.Gen
    * </pre>
    *
    * <code>string parent = 1;</code>
+   *
+   * @return The bytes for parent.
    */
   public com.google.protobuf.ByteString getParentBytes() {
     java.lang.Object ref = parent_;
@@ -451,7 +460,7 @@ public final class BatchCreateOccurrencesRequest extends com.google.protobuf.Gen
 
       if (occurrencesBuilder_ == null) {
         occurrences_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000002);
+        bitField0_ = (bitField0_ & ~0x00000001);
       } else {
         occurrencesBuilder_.clear();
       }
@@ -483,18 +492,16 @@ public final class BatchCreateOccurrencesRequest extends com.google.protobuf.Gen
       io.grafeas.v1.BatchCreateOccurrencesRequest result =
           new io.grafeas.v1.BatchCreateOccurrencesRequest(this);
       int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
       result.parent_ = parent_;
       if (occurrencesBuilder_ == null) {
-        if (((bitField0_ & 0x00000002) != 0)) {
+        if (((bitField0_ & 0x00000001) != 0)) {
           occurrences_ = java.util.Collections.unmodifiableList(occurrences_);
-          bitField0_ = (bitField0_ & ~0x00000002);
+          bitField0_ = (bitField0_ & ~0x00000001);
         }
         result.occurrences_ = occurrences_;
       } else {
         result.occurrences_ = occurrencesBuilder_.build();
       }
-      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -552,7 +559,7 @@ public final class BatchCreateOccurrencesRequest extends com.google.protobuf.Gen
         if (!other.occurrences_.isEmpty()) {
           if (occurrences_.isEmpty()) {
             occurrences_ = other.occurrences_;
-            bitField0_ = (bitField0_ & ~0x00000002);
+            bitField0_ = (bitField0_ & ~0x00000001);
           } else {
             ensureOccurrencesIsMutable();
             occurrences_.addAll(other.occurrences_);
@@ -565,7 +572,7 @@ public final class BatchCreateOccurrencesRequest extends com.google.protobuf.Gen
             occurrencesBuilder_.dispose();
             occurrencesBuilder_ = null;
             occurrences_ = other.occurrences_;
-            bitField0_ = (bitField0_ & ~0x00000002);
+            bitField0_ = (bitField0_ & ~0x00000001);
             occurrencesBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getOccurrencesFieldBuilder()
@@ -616,6 +623,8 @@ public final class BatchCreateOccurrencesRequest extends com.google.protobuf.Gen
      * </pre>
      *
      * <code>string parent = 1;</code>
+     *
+     * @return The parent.
      */
     public java.lang.String getParent() {
       java.lang.Object ref = parent_;
@@ -637,6 +646,8 @@ public final class BatchCreateOccurrencesRequest extends com.google.protobuf.Gen
      * </pre>
      *
      * <code>string parent = 1;</code>
+     *
+     * @return The bytes for parent.
      */
     public com.google.protobuf.ByteString getParentBytes() {
       java.lang.Object ref = parent_;
@@ -658,6 +669,9 @@ public final class BatchCreateOccurrencesRequest extends com.google.protobuf.Gen
      * </pre>
      *
      * <code>string parent = 1;</code>
+     *
+     * @param value The parent to set.
+     * @return This builder for chaining.
      */
     public Builder setParent(java.lang.String value) {
       if (value == null) {
@@ -677,6 +691,8 @@ public final class BatchCreateOccurrencesRequest extends com.google.protobuf.Gen
      * </pre>
      *
      * <code>string parent = 1;</code>
+     *
+     * @return This builder for chaining.
      */
     public Builder clearParent() {
 
@@ -693,6 +709,9 @@ public final class BatchCreateOccurrencesRequest extends com.google.protobuf.Gen
      * </pre>
      *
      * <code>string parent = 1;</code>
+     *
+     * @param value The bytes for parent to set.
+     * @return This builder for chaining.
      */
     public Builder setParentBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -709,9 +728,9 @@ public final class BatchCreateOccurrencesRequest extends com.google.protobuf.Gen
         java.util.Collections.emptyList();
 
     private void ensureOccurrencesIsMutable() {
-      if (!((bitField0_ & 0x00000002) != 0)) {
+      if (!((bitField0_ & 0x00000001) != 0)) {
         occurrences_ = new java.util.ArrayList<io.grafeas.v1.Occurrence>(occurrences_);
-        bitField0_ |= 0x00000002;
+        bitField0_ |= 0x00000001;
       }
     }
 
@@ -924,7 +943,7 @@ public final class BatchCreateOccurrencesRequest extends com.google.protobuf.Gen
     public Builder clearOccurrences() {
       if (occurrencesBuilder_ == null) {
         occurrences_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000002);
+        bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
       } else {
         occurrencesBuilder_.clear();
@@ -1044,7 +1063,7 @@ public final class BatchCreateOccurrencesRequest extends com.google.protobuf.Gen
                 io.grafeas.v1.Occurrence,
                 io.grafeas.v1.Occurrence.Builder,
                 io.grafeas.v1.OccurrenceOrBuilder>(
-                occurrences_, ((bitField0_ & 0x00000002) != 0), getParentForChildren(), isClean());
+                occurrences_, ((bitField0_ & 0x00000001) != 0), getParentForChildren(), isClean());
         occurrences_ = null;
       }
       return occurrencesBuilder_;
