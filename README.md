@@ -33,7 +33,7 @@ This library supports the following Google Cloud Platform services with clients 
 -  [BigQuery Data Transfer](https://github.com/googleapis/java-bigquerydatatransfer) (Beta)
 -  [Cloud Asset](https://github.com/googleapis/java-asset) (Beta)
 -  [Cloud AutoML](https://github.com/googleapis/java-automl) (Beta)
--  [Cloud Container Analysis](ghttps://github.com/googleapis/java-containeranalysis) (Beta)
+-  [Cloud Container Analysis](https://github.com/googleapis/java-containeranalysis) (Beta)
 -  [Cloud Dataproc](https://github.com/googleapis/java-dataproc) (Beta)
 -  [Cloud Data Loss Prevention](https://github.com/googleapis/java-dlp) (Beta)
 -  [Cloud IoT Core](https://github.com/googleapis/java-iot) (Beta)
