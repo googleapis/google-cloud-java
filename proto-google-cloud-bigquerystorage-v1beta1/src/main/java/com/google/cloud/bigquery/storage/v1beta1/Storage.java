@@ -94,12 +94,20 @@ public final class Storage {
       return value;
     }
 
-    /** @deprecated Use {@link #forNumber(int)} instead. */
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
     @java.lang.Deprecated
     public static DataFormat valueOf(int value) {
       return forNumber(value);
     }
 
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
     public static DataFormat forNumber(int value) {
       switch (value) {
         case 0:
@@ -257,12 +265,20 @@ public final class Storage {
       return value;
     }
 
-    /** @deprecated Use {@link #forNumber(int)} instead. */
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
     @java.lang.Deprecated
     public static ShardingStrategy valueOf(int value) {
       return forNumber(value);
     }
 
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
     public static ShardingStrategy forNumber(int value) {
       switch (value) {
         case 0:
@@ -338,6 +354,8 @@ public final class Storage {
      * </pre>
      *
      * <code>string name = 1;</code>
+     *
+     * @return The name.
      */
     java.lang.String getName();
     /**
@@ -349,6 +367,8 @@ public final class Storage {
      * </pre>
      *
      * <code>string name = 1;</code>
+     *
+     * @return The bytes for name.
      */
     com.google.protobuf.ByteString getNameBytes();
   }
@@ -376,6 +396,12 @@ public final class Storage {
     }
 
     @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new Stream();
+    }
+
+    @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
       return this.unknownFields;
     }
@@ -388,7 +414,6 @@ public final class Storage {
       if (extensionRegistry == null) {
         throw new java.lang.NullPointerException();
       }
-      int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
@@ -451,6 +476,8 @@ public final class Storage {
      * </pre>
      *
      * <code>string name = 1;</code>
+     *
+     * @return The name.
      */
     public java.lang.String getName() {
       java.lang.Object ref = name_;
@@ -472,6 +499,8 @@ public final class Storage {
      * </pre>
      *
      * <code>string name = 1;</code>
+     *
+     * @return The bytes for name.
      */
     public com.google.protobuf.ByteString getNameBytes() {
       java.lang.Object ref = name_;
@@ -818,6 +847,8 @@ public final class Storage {
        * </pre>
        *
        * <code>string name = 1;</code>
+       *
+       * @return The name.
        */
       public java.lang.String getName() {
         java.lang.Object ref = name_;
@@ -839,6 +870,8 @@ public final class Storage {
        * </pre>
        *
        * <code>string name = 1;</code>
+       *
+       * @return The bytes for name.
        */
       public com.google.protobuf.ByteString getNameBytes() {
         java.lang.Object ref = name_;
@@ -860,6 +893,9 @@ public final class Storage {
        * </pre>
        *
        * <code>string name = 1;</code>
+       *
+       * @param value The name to set.
+       * @return This builder for chaining.
        */
       public Builder setName(java.lang.String value) {
         if (value == null) {
@@ -879,6 +915,8 @@ public final class Storage {
        * </pre>
        *
        * <code>string name = 1;</code>
+       *
+       * @return This builder for chaining.
        */
       public Builder clearName() {
 
@@ -895,6 +933,9 @@ public final class Storage {
        * </pre>
        *
        * <code>string name = 1;</code>
+       *
+       * @param value The bytes for name to set.
+       * @return This builder for chaining.
        */
       public Builder setNameBytes(com.google.protobuf.ByteString value) {
         if (value == null) {
@@ -972,6 +1013,8 @@ public final class Storage {
      * </pre>
      *
      * <code>.google.cloud.bigquery.storage.v1beta1.Stream stream = 1;</code>
+     *
+     * @return Whether the stream field is set.
      */
     boolean hasStream();
     /**
@@ -982,6 +1025,8 @@ public final class Storage {
      * </pre>
      *
      * <code>.google.cloud.bigquery.storage.v1beta1.Stream stream = 1;</code>
+     *
+     * @return The stream.
      */
     com.google.cloud.bigquery.storage.v1beta1.Storage.Stream getStream();
     /**
@@ -1003,6 +1048,8 @@ public final class Storage {
      * </pre>
      *
      * <code>int64 offset = 2;</code>
+     *
+     * @return The offset.
      */
     long getOffset();
   }
@@ -1028,6 +1075,12 @@ public final class Storage {
     private StreamPosition() {}
 
     @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new StreamPosition();
+    }
+
+    @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
       return this.unknownFields;
     }
@@ -1040,7 +1093,6 @@ public final class Storage {
       if (extensionRegistry == null) {
         throw new java.lang.NullPointerException();
       }
-      int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
@@ -1117,6 +1169,8 @@ public final class Storage {
      * </pre>
      *
      * <code>.google.cloud.bigquery.storage.v1beta1.Stream stream = 1;</code>
+     *
+     * @return Whether the stream field is set.
      */
     public boolean hasStream() {
       return stream_ != null;
@@ -1129,6 +1183,8 @@ public final class Storage {
      * </pre>
      *
      * <code>.google.cloud.bigquery.storage.v1beta1.Stream stream = 1;</code>
+     *
+     * @return The stream.
      */
     public com.google.cloud.bigquery.storage.v1beta1.Storage.Stream getStream() {
       return stream_ == null
@@ -1158,6 +1214,8 @@ public final class Storage {
      * </pre>
      *
      * <code>int64 offset = 2;</code>
+     *
+     * @return The offset.
      */
     public long getOffset() {
       return offset_;
@@ -1535,6 +1593,8 @@ public final class Storage {
        * </pre>
        *
        * <code>.google.cloud.bigquery.storage.v1beta1.Stream stream = 1;</code>
+       *
+       * @return Whether the stream field is set.
        */
       public boolean hasStream() {
         return streamBuilder_ != null || stream_ != null;
@@ -1547,6 +1607,8 @@ public final class Storage {
        * </pre>
        *
        * <code>.google.cloud.bigquery.storage.v1beta1.Stream stream = 1;</code>
+       *
+       * @return The stream.
        */
       public com.google.cloud.bigquery.storage.v1beta1.Storage.Stream getStream() {
         if (streamBuilder_ == null) {
@@ -1713,6 +1775,8 @@ public final class Storage {
        * </pre>
        *
        * <code>int64 offset = 2;</code>
+       *
+       * @return The offset.
        */
       public long getOffset() {
         return offset_;
@@ -1725,6 +1789,9 @@ public final class Storage {
        * </pre>
        *
        * <code>int64 offset = 2;</code>
+       *
+       * @param value The offset to set.
+       * @return This builder for chaining.
        */
       public Builder setOffset(long value) {
 
@@ -1740,6 +1807,8 @@ public final class Storage {
        * </pre>
        *
        * <code>int64 offset = 2;</code>
+       *
+       * @return This builder for chaining.
        */
       public Builder clearOffset() {
 
@@ -1817,6 +1886,8 @@ public final class Storage {
      * </pre>
      *
      * <code>string name = 1;</code>
+     *
+     * @return The name.
      */
     java.lang.String getName();
     /**
@@ -1828,6 +1899,8 @@ public final class Storage {
      * </pre>
      *
      * <code>string name = 1;</code>
+     *
+     * @return The bytes for name.
      */
     com.google.protobuf.ByteString getNameBytes();
 
@@ -1840,6 +1913,8 @@ public final class Storage {
      * </pre>
      *
      * <code>.google.protobuf.Timestamp expire_time = 2;</code>
+     *
+     * @return Whether the expireTime field is set.
      */
     boolean hasExpireTime();
     /**
@@ -1851,6 +1926,8 @@ public final class Storage {
      * </pre>
      *
      * <code>.google.protobuf.Timestamp expire_time = 2;</code>
+     *
+     * @return The expireTime.
      */
     com.google.protobuf.Timestamp getExpireTime();
     /**
@@ -1873,6 +1950,8 @@ public final class Storage {
      * </pre>
      *
      * <code>.google.cloud.bigquery.storage.v1beta1.AvroSchema avro_schema = 5;</code>
+     *
+     * @return Whether the avroSchema field is set.
      */
     boolean hasAvroSchema();
     /**
@@ -1883,6 +1962,8 @@ public final class Storage {
      * </pre>
      *
      * <code>.google.cloud.bigquery.storage.v1beta1.AvroSchema avro_schema = 5;</code>
+     *
+     * @return The avroSchema.
      */
     com.google.cloud.bigquery.storage.v1beta1.AvroProto.AvroSchema getAvroSchema();
     /**
@@ -1905,6 +1986,8 @@ public final class Storage {
      * </pre>
      *
      * <code>.google.cloud.bigquery.storage.v1beta1.ArrowSchema arrow_schema = 6;</code>
+     *
+     * @return Whether the arrowSchema field is set.
      */
     boolean hasArrowSchema();
     /**
@@ -1915,6 +1998,8 @@ public final class Storage {
      * </pre>
      *
      * <code>.google.cloud.bigquery.storage.v1beta1.ArrowSchema arrow_schema = 6;</code>
+     *
+     * @return The arrowSchema.
      */
     com.google.cloud.bigquery.storage.v1beta1.ArrowProto.ArrowSchema getArrowSchema();
     /**
@@ -1990,6 +2075,8 @@ public final class Storage {
      * </pre>
      *
      * <code>.google.cloud.bigquery.storage.v1beta1.TableReference table_reference = 7;</code>
+     *
+     * @return Whether the tableReference field is set.
      */
     boolean hasTableReference();
     /**
@@ -2000,6 +2087,8 @@ public final class Storage {
      * </pre>
      *
      * <code>.google.cloud.bigquery.storage.v1beta1.TableReference table_reference = 7;</code>
+     *
+     * @return The tableReference.
      */
     com.google.cloud.bigquery.storage.v1beta1.TableReferenceProto.TableReference
         getTableReference();
@@ -2023,6 +2112,8 @@ public final class Storage {
      * </pre>
      *
      * <code>.google.cloud.bigquery.storage.v1beta1.TableModifiers table_modifiers = 8;</code>
+     *
+     * @return Whether the tableModifiers field is set.
      */
     boolean hasTableModifiers();
     /**
@@ -2033,6 +2124,8 @@ public final class Storage {
      * </pre>
      *
      * <code>.google.cloud.bigquery.storage.v1beta1.TableModifiers table_modifiers = 8;</code>
+     *
+     * @return The tableModifiers.
      */
     com.google.cloud.bigquery.storage.v1beta1.TableReferenceProto.TableModifiers
         getTableModifiers();
@@ -2056,6 +2149,8 @@ public final class Storage {
      * </pre>
      *
      * <code>.google.cloud.bigquery.storage.v1beta1.ShardingStrategy sharding_strategy = 9;</code>
+     *
+     * @return The enum numeric value on the wire for shardingStrategy.
      */
     int getShardingStrategyValue();
     /**
@@ -2066,6 +2161,8 @@ public final class Storage {
      * </pre>
      *
      * <code>.google.cloud.bigquery.storage.v1beta1.ShardingStrategy sharding_strategy = 9;</code>
+     *
+     * @return The shardingStrategy.
      */
     com.google.cloud.bigquery.storage.v1beta1.Storage.ShardingStrategy getShardingStrategy();
 
@@ -2094,6 +2191,12 @@ public final class Storage {
       name_ = "";
       streams_ = java.util.Collections.emptyList();
       shardingStrategy_ = 0;
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new ReadSession();
     }
 
     @java.lang.Override
@@ -2144,11 +2247,11 @@ public final class Storage {
               }
             case 34:
               {
-                if (!((mutable_bitField0_ & 0x00000010) != 0)) {
+                if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                   streams_ =
                       new java.util.ArrayList<
                           com.google.cloud.bigquery.storage.v1beta1.Storage.Stream>();
-                  mutable_bitField0_ |= 0x00000010;
+                  mutable_bitField0_ |= 0x00000001;
                 }
                 streams_.add(
                     input.readMessage(
@@ -2257,7 +2360,7 @@ public final class Storage {
       } catch (java.io.IOException e) {
         throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
       } finally {
-        if (((mutable_bitField0_ & 0x00000010) != 0)) {
+        if (((mutable_bitField0_ & 0x00000001) != 0)) {
           streams_ = java.util.Collections.unmodifiableList(streams_);
         }
         this.unknownFields = unknownFields.build();
@@ -2280,11 +2383,13 @@ public final class Storage {
               com.google.cloud.bigquery.storage.v1beta1.Storage.ReadSession.Builder.class);
     }
 
-    private int bitField0_;
     private int schemaCase_ = 0;
     private java.lang.Object schema_;
 
-    public enum SchemaCase implements com.google.protobuf.Internal.EnumLite {
+    public enum SchemaCase
+        implements
+            com.google.protobuf.Internal.EnumLite,
+            com.google.protobuf.AbstractMessage.InternalOneOfEnum {
       AVRO_SCHEMA(5),
       ARROW_SCHEMA(6),
       SCHEMA_NOT_SET(0);
@@ -2293,7 +2398,11 @@ public final class Storage {
       private SchemaCase(int value) {
         this.value = value;
       }
-      /** @deprecated Use {@link #forNumber(int)} instead. */
+      /**
+       * @param value The number of the enum to look for.
+       * @return The enum associated with the given number.
+       * @deprecated Use {@link #forNumber(int)} instead.
+       */
       @java.lang.Deprecated
       public static SchemaCase valueOf(int value) {
         return forNumber(value);
@@ -2332,6 +2441,8 @@ public final class Storage {
      * </pre>
      *
      * <code>string name = 1;</code>
+     *
+     * @return The name.
      */
     public java.lang.String getName() {
       java.lang.Object ref = name_;
@@ -2353,6 +2464,8 @@ public final class Storage {
      * </pre>
      *
      * <code>string name = 1;</code>
+     *
+     * @return The bytes for name.
      */
     public com.google.protobuf.ByteString getNameBytes() {
       java.lang.Object ref = name_;
@@ -2377,6 +2490,8 @@ public final class Storage {
      * </pre>
      *
      * <code>.google.protobuf.Timestamp expire_time = 2;</code>
+     *
+     * @return Whether the expireTime field is set.
      */
     public boolean hasExpireTime() {
       return expireTime_ != null;
@@ -2390,6 +2505,8 @@ public final class Storage {
      * </pre>
      *
      * <code>.google.protobuf.Timestamp expire_time = 2;</code>
+     *
+     * @return The expireTime.
      */
     public com.google.protobuf.Timestamp getExpireTime() {
       return expireTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : expireTime_;
@@ -2417,6 +2534,8 @@ public final class Storage {
      * </pre>
      *
      * <code>.google.cloud.bigquery.storage.v1beta1.AvroSchema avro_schema = 5;</code>
+     *
+     * @return Whether the avroSchema field is set.
      */
     public boolean hasAvroSchema() {
       return schemaCase_ == 5;
@@ -2429,6 +2548,8 @@ public final class Storage {
      * </pre>
      *
      * <code>.google.cloud.bigquery.storage.v1beta1.AvroSchema avro_schema = 5;</code>
+     *
+     * @return The avroSchema.
      */
     public com.google.cloud.bigquery.storage.v1beta1.AvroProto.AvroSchema getAvroSchema() {
       if (schemaCase_ == 5) {
@@ -2462,6 +2583,8 @@ public final class Storage {
      * </pre>
      *
      * <code>.google.cloud.bigquery.storage.v1beta1.ArrowSchema arrow_schema = 6;</code>
+     *
+     * @return Whether the arrowSchema field is set.
      */
     public boolean hasArrowSchema() {
       return schemaCase_ == 6;
@@ -2474,6 +2597,8 @@ public final class Storage {
      * </pre>
      *
      * <code>.google.cloud.bigquery.storage.v1beta1.ArrowSchema arrow_schema = 6;</code>
+     *
+     * @return The arrowSchema.
      */
     public com.google.cloud.bigquery.storage.v1beta1.ArrowProto.ArrowSchema getArrowSchema() {
       if (schemaCase_ == 6) {
@@ -2576,6 +2701,8 @@ public final class Storage {
      * </pre>
      *
      * <code>.google.cloud.bigquery.storage.v1beta1.TableReference table_reference = 7;</code>
+     *
+     * @return Whether the tableReference field is set.
      */
     public boolean hasTableReference() {
       return tableReference_ != null;
@@ -2588,6 +2715,8 @@ public final class Storage {
      * </pre>
      *
      * <code>.google.cloud.bigquery.storage.v1beta1.TableReference table_reference = 7;</code>
+     *
+     * @return The tableReference.
      */
     public com.google.cloud.bigquery.storage.v1beta1.TableReferenceProto.TableReference
         getTableReference() {
@@ -2621,6 +2750,8 @@ public final class Storage {
      * </pre>
      *
      * <code>.google.cloud.bigquery.storage.v1beta1.TableModifiers table_modifiers = 8;</code>
+     *
+     * @return Whether the tableModifiers field is set.
      */
     public boolean hasTableModifiers() {
       return tableModifiers_ != null;
@@ -2633,6 +2764,8 @@ public final class Storage {
      * </pre>
      *
      * <code>.google.cloud.bigquery.storage.v1beta1.TableModifiers table_modifiers = 8;</code>
+     *
+     * @return The tableModifiers.
      */
     public com.google.cloud.bigquery.storage.v1beta1.TableReferenceProto.TableModifiers
         getTableModifiers() {
@@ -2665,6 +2798,8 @@ public final class Storage {
      * </pre>
      *
      * <code>.google.cloud.bigquery.storage.v1beta1.ShardingStrategy sharding_strategy = 9;</code>
+     *
+     * @return The enum numeric value on the wire for shardingStrategy.
      */
     public int getShardingStrategyValue() {
       return shardingStrategy_;
@@ -2677,6 +2812,8 @@ public final class Storage {
      * </pre>
      *
      * <code>.google.cloud.bigquery.storage.v1beta1.ShardingStrategy sharding_strategy = 9;</code>
+     *
+     * @return The shardingStrategy.
      */
     public com.google.cloud.bigquery.storage.v1beta1.Storage.ShardingStrategy
         getShardingStrategy() {
@@ -3017,7 +3154,7 @@ public final class Storage {
         }
         if (streamsBuilder_ == null) {
           streams_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000010);
+          bitField0_ = (bitField0_ & ~0x00000001);
         } else {
           streamsBuilder_.clear();
         }
@@ -3066,7 +3203,6 @@ public final class Storage {
         com.google.cloud.bigquery.storage.v1beta1.Storage.ReadSession result =
             new com.google.cloud.bigquery.storage.v1beta1.Storage.ReadSession(this);
         int from_bitField0_ = bitField0_;
-        int to_bitField0_ = 0;
         result.name_ = name_;
         if (expireTimeBuilder_ == null) {
           result.expireTime_ = expireTime_;
@@ -3088,9 +3224,9 @@ public final class Storage {
           }
         }
         if (streamsBuilder_ == null) {
-          if (((bitField0_ & 0x00000010) != 0)) {
+          if (((bitField0_ & 0x00000001) != 0)) {
             streams_ = java.util.Collections.unmodifiableList(streams_);
-            bitField0_ = (bitField0_ & ~0x00000010);
+            bitField0_ = (bitField0_ & ~0x00000001);
           }
           result.streams_ = streams_;
         } else {
@@ -3107,7 +3243,6 @@ public final class Storage {
           result.tableModifiers_ = tableModifiersBuilder_.build();
         }
         result.shardingStrategy_ = shardingStrategy_;
-        result.bitField0_ = to_bitField0_;
         result.schemaCase_ = schemaCase_;
         onBuilt();
         return result;
@@ -3174,7 +3309,7 @@ public final class Storage {
           if (!other.streams_.isEmpty()) {
             if (streams_.isEmpty()) {
               streams_ = other.streams_;
-              bitField0_ = (bitField0_ & ~0x00000010);
+              bitField0_ = (bitField0_ & ~0x00000001);
             } else {
               ensureStreamsIsMutable();
               streams_.addAll(other.streams_);
@@ -3187,7 +3322,7 @@ public final class Storage {
               streamsBuilder_.dispose();
               streamsBuilder_ = null;
               streams_ = other.streams_;
-              bitField0_ = (bitField0_ & ~0x00000010);
+              bitField0_ = (bitField0_ & ~0x00000001);
               streamsBuilder_ =
                   com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                       ? getStreamsFieldBuilder()
@@ -3279,6 +3414,8 @@ public final class Storage {
        * </pre>
        *
        * <code>string name = 1;</code>
+       *
+       * @return The name.
        */
       public java.lang.String getName() {
         java.lang.Object ref = name_;
@@ -3300,6 +3437,8 @@ public final class Storage {
        * </pre>
        *
        * <code>string name = 1;</code>
+       *
+       * @return The bytes for name.
        */
       public com.google.protobuf.ByteString getNameBytes() {
         java.lang.Object ref = name_;
@@ -3321,6 +3460,9 @@ public final class Storage {
        * </pre>
        *
        * <code>string name = 1;</code>
+       *
+       * @param value The name to set.
+       * @return This builder for chaining.
        */
       public Builder setName(java.lang.String value) {
         if (value == null) {
@@ -3340,6 +3482,8 @@ public final class Storage {
        * </pre>
        *
        * <code>string name = 1;</code>
+       *
+       * @return This builder for chaining.
        */
       public Builder clearName() {
 
@@ -3356,6 +3500,9 @@ public final class Storage {
        * </pre>
        *
        * <code>string name = 1;</code>
+       *
+       * @param value The bytes for name to set.
+       * @return This builder for chaining.
        */
       public Builder setNameBytes(com.google.protobuf.ByteString value) {
         if (value == null) {
@@ -3383,6 +3530,8 @@ public final class Storage {
        * </pre>
        *
        * <code>.google.protobuf.Timestamp expire_time = 2;</code>
+       *
+       * @return Whether the expireTime field is set.
        */
       public boolean hasExpireTime() {
         return expireTimeBuilder_ != null || expireTime_ != null;
@@ -3396,6 +3545,8 @@ public final class Storage {
        * </pre>
        *
        * <code>.google.protobuf.Timestamp expire_time = 2;</code>
+       *
+       * @return The expireTime.
        */
       public com.google.protobuf.Timestamp getExpireTime() {
         if (expireTimeBuilder_ == null) {
@@ -3571,6 +3722,8 @@ public final class Storage {
        * </pre>
        *
        * <code>.google.cloud.bigquery.storage.v1beta1.AvroSchema avro_schema = 5;</code>
+       *
+       * @return Whether the avroSchema field is set.
        */
       public boolean hasAvroSchema() {
         return schemaCase_ == 5;
@@ -3583,6 +3736,8 @@ public final class Storage {
        * </pre>
        *
        * <code>.google.cloud.bigquery.storage.v1beta1.AvroSchema avro_schema = 5;</code>
+       *
+       * @return The avroSchema.
        */
       public com.google.cloud.bigquery.storage.v1beta1.AvroProto.AvroSchema getAvroSchema() {
         if (avroSchemaBuilder_ == null) {
@@ -3783,6 +3938,8 @@ public final class Storage {
        * </pre>
        *
        * <code>.google.cloud.bigquery.storage.v1beta1.ArrowSchema arrow_schema = 6;</code>
+       *
+       * @return Whether the arrowSchema field is set.
        */
       public boolean hasArrowSchema() {
         return schemaCase_ == 6;
@@ -3795,6 +3952,8 @@ public final class Storage {
        * </pre>
        *
        * <code>.google.cloud.bigquery.storage.v1beta1.ArrowSchema arrow_schema = 6;</code>
+       *
+       * @return The arrowSchema.
        */
       public com.google.cloud.bigquery.storage.v1beta1.ArrowProto.ArrowSchema getArrowSchema() {
         if (arrowSchemaBuilder_ == null) {
@@ -3988,11 +4147,11 @@ public final class Storage {
           java.util.Collections.emptyList();
 
       private void ensureStreamsIsMutable() {
-        if (!((bitField0_ & 0x00000010) != 0)) {
+        if (!((bitField0_ & 0x00000001) != 0)) {
           streams_ =
               new java.util.ArrayList<com.google.cloud.bigquery.storage.v1beta1.Storage.Stream>(
                   streams_);
-          bitField0_ |= 0x00000010;
+          bitField0_ |= 0x00000001;
         }
       }
 
@@ -4214,7 +4373,7 @@ public final class Storage {
       public Builder clearStreams() {
         if (streamsBuilder_ == null) {
           streams_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000010);
+          bitField0_ = (bitField0_ & ~0x00000001);
           onChanged();
         } else {
           streamsBuilder_.clear();
@@ -4343,7 +4502,7 @@ public final class Storage {
                   com.google.cloud.bigquery.storage.v1beta1.Storage.Stream,
                   com.google.cloud.bigquery.storage.v1beta1.Storage.Stream.Builder,
                   com.google.cloud.bigquery.storage.v1beta1.Storage.StreamOrBuilder>(
-                  streams_, ((bitField0_ & 0x00000010) != 0), getParentForChildren(), isClean());
+                  streams_, ((bitField0_ & 0x00000001) != 0), getParentForChildren(), isClean());
           streams_ = null;
         }
         return streamsBuilder_;
@@ -4364,6 +4523,8 @@ public final class Storage {
        * </pre>
        *
        * <code>.google.cloud.bigquery.storage.v1beta1.TableReference table_reference = 7;</code>
+       *
+       * @return Whether the tableReference field is set.
        */
       public boolean hasTableReference() {
         return tableReferenceBuilder_ != null || tableReference_ != null;
@@ -4376,6 +4537,8 @@ public final class Storage {
        * </pre>
        *
        * <code>.google.cloud.bigquery.storage.v1beta1.TableReference table_reference = 7;</code>
+       *
+       * @return The tableReference.
        */
       public com.google.cloud.bigquery.storage.v1beta1.TableReferenceProto.TableReference
           getTableReference() {
@@ -4558,6 +4721,8 @@ public final class Storage {
        * </pre>
        *
        * <code>.google.cloud.bigquery.storage.v1beta1.TableModifiers table_modifiers = 8;</code>
+       *
+       * @return Whether the tableModifiers field is set.
        */
       public boolean hasTableModifiers() {
         return tableModifiersBuilder_ != null || tableModifiers_ != null;
@@ -4570,6 +4735,8 @@ public final class Storage {
        * </pre>
        *
        * <code>.google.cloud.bigquery.storage.v1beta1.TableModifiers table_modifiers = 8;</code>
+       *
+       * @return The tableModifiers.
        */
       public com.google.cloud.bigquery.storage.v1beta1.TableReferenceProto.TableModifiers
           getTableModifiers() {
@@ -4746,6 +4913,8 @@ public final class Storage {
        * </pre>
        *
        * <code>.google.cloud.bigquery.storage.v1beta1.ShardingStrategy sharding_strategy = 9;</code>
+       *
+       * @return The enum numeric value on the wire for shardingStrategy.
        */
       public int getShardingStrategyValue() {
         return shardingStrategy_;
@@ -4758,6 +4927,9 @@ public final class Storage {
        * </pre>
        *
        * <code>.google.cloud.bigquery.storage.v1beta1.ShardingStrategy sharding_strategy = 9;</code>
+       *
+       * @param value The enum numeric value on the wire for shardingStrategy to set.
+       * @return This builder for chaining.
        */
       public Builder setShardingStrategyValue(int value) {
         shardingStrategy_ = value;
@@ -4772,6 +4944,8 @@ public final class Storage {
        * </pre>
        *
        * <code>.google.cloud.bigquery.storage.v1beta1.ShardingStrategy sharding_strategy = 9;</code>
+       *
+       * @return The shardingStrategy.
        */
       public com.google.cloud.bigquery.storage.v1beta1.Storage.ShardingStrategy
           getShardingStrategy() {
@@ -4791,6 +4965,9 @@ public final class Storage {
        * </pre>
        *
        * <code>.google.cloud.bigquery.storage.v1beta1.ShardingStrategy sharding_strategy = 9;</code>
+       *
+       * @param value The shardingStrategy to set.
+       * @return This builder for chaining.
        */
       public Builder setShardingStrategy(
           com.google.cloud.bigquery.storage.v1beta1.Storage.ShardingStrategy value) {
@@ -4810,6 +4987,8 @@ public final class Storage {
        * </pre>
        *
        * <code>.google.cloud.bigquery.storage.v1beta1.ShardingStrategy sharding_strategy = 9;</code>
+       *
+       * @return This builder for chaining.
        */
       public Builder clearShardingStrategy() {
 
@@ -4888,6 +5067,8 @@ public final class Storage {
      * <code>
      * .google.cloud.bigquery.storage.v1beta1.TableReference table_reference = 1 [(.google.api.field_behavior) = REQUIRED];
      * </code>
+     *
+     * @return Whether the tableReference field is set.
      */
     boolean hasTableReference();
     /**
@@ -4900,6 +5081,8 @@ public final class Storage {
      * <code>
      * .google.cloud.bigquery.storage.v1beta1.TableReference table_reference = 1 [(.google.api.field_behavior) = REQUIRED];
      * </code>
+     *
+     * @return The tableReference.
      */
     com.google.cloud.bigquery.storage.v1beta1.TableReferenceProto.TableReference
         getTableReference();
@@ -4927,6 +5110,8 @@ public final class Storage {
      * </pre>
      *
      * <code>string parent = 6 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return The parent.
      */
     java.lang.String getParent();
     /**
@@ -4939,6 +5124,8 @@ public final class Storage {
      * </pre>
      *
      * <code>string parent = 6 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return The bytes for parent.
      */
     com.google.protobuf.ByteString getParentBytes();
 
@@ -4950,6 +5137,8 @@ public final class Storage {
      * </pre>
      *
      * <code>.google.cloud.bigquery.storage.v1beta1.TableModifiers table_modifiers = 2;</code>
+     *
+     * @return Whether the tableModifiers field is set.
      */
     boolean hasTableModifiers();
     /**
@@ -4960,6 +5149,8 @@ public final class Storage {
      * </pre>
      *
      * <code>.google.cloud.bigquery.storage.v1beta1.TableModifiers table_modifiers = 2;</code>
+     *
+     * @return The tableModifiers.
      */
     com.google.cloud.bigquery.storage.v1beta1.TableReferenceProto.TableModifiers
         getTableModifiers();
@@ -4988,6 +5179,8 @@ public final class Storage {
      * </pre>
      *
      * <code>int32 requested_streams = 3;</code>
+     *
+     * @return The requestedStreams.
      */
     int getRequestedStreams();
 
@@ -4999,6 +5192,8 @@ public final class Storage {
      * </pre>
      *
      * <code>.google.cloud.bigquery.storage.v1beta1.TableReadOptions read_options = 4;</code>
+     *
+     * @return Whether the readOptions field is set.
      */
     boolean hasReadOptions();
     /**
@@ -5009,6 +5204,8 @@ public final class Storage {
      * </pre>
      *
      * <code>.google.cloud.bigquery.storage.v1beta1.TableReadOptions read_options = 4;</code>
+     *
+     * @return The readOptions.
      */
     com.google.cloud.bigquery.storage.v1beta1.ReadOptions.TableReadOptions getReadOptions();
     /**
@@ -5031,6 +5228,8 @@ public final class Storage {
      * </pre>
      *
      * <code>.google.cloud.bigquery.storage.v1beta1.DataFormat format = 5;</code>
+     *
+     * @return The enum numeric value on the wire for format.
      */
     int getFormatValue();
     /**
@@ -5041,6 +5240,8 @@ public final class Storage {
      * </pre>
      *
      * <code>.google.cloud.bigquery.storage.v1beta1.DataFormat format = 5;</code>
+     *
+     * @return The format.
      */
     com.google.cloud.bigquery.storage.v1beta1.Storage.DataFormat getFormat();
 
@@ -5053,6 +5254,8 @@ public final class Storage {
      * </pre>
      *
      * <code>.google.cloud.bigquery.storage.v1beta1.ShardingStrategy sharding_strategy = 7;</code>
+     *
+     * @return The enum numeric value on the wire for shardingStrategy.
      */
     int getShardingStrategyValue();
     /**
@@ -5064,6 +5267,8 @@ public final class Storage {
      * </pre>
      *
      * <code>.google.cloud.bigquery.storage.v1beta1.ShardingStrategy sharding_strategy = 7;</code>
+     *
+     * @return The shardingStrategy.
      */
     com.google.cloud.bigquery.storage.v1beta1.Storage.ShardingStrategy getShardingStrategy();
   }
@@ -5094,6 +5299,12 @@ public final class Storage {
     }
 
     @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new CreateReadSessionRequest();
+    }
+
+    @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
       return this.unknownFields;
     }
@@ -5106,7 +5317,6 @@ public final class Storage {
       if (extensionRegistry == null) {
         throw new java.lang.NullPointerException();
       }
-      int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
@@ -5248,6 +5458,8 @@ public final class Storage {
      * <code>
      * .google.cloud.bigquery.storage.v1beta1.TableReference table_reference = 1 [(.google.api.field_behavior) = REQUIRED];
      * </code>
+     *
+     * @return Whether the tableReference field is set.
      */
     public boolean hasTableReference() {
       return tableReference_ != null;
@@ -5262,6 +5474,8 @@ public final class Storage {
      * <code>
      * .google.cloud.bigquery.storage.v1beta1.TableReference table_reference = 1 [(.google.api.field_behavior) = REQUIRED];
      * </code>
+     *
+     * @return The tableReference.
      */
     public com.google.cloud.bigquery.storage.v1beta1.TableReferenceProto.TableReference
         getTableReference() {
@@ -5298,6 +5512,8 @@ public final class Storage {
      * </pre>
      *
      * <code>string parent = 6 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return The parent.
      */
     public java.lang.String getParent() {
       java.lang.Object ref = parent_;
@@ -5320,6 +5536,8 @@ public final class Storage {
      * </pre>
      *
      * <code>string parent = 6 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return The bytes for parent.
      */
     public com.google.protobuf.ByteString getParentBytes() {
       java.lang.Object ref = parent_;
@@ -5344,6 +5562,8 @@ public final class Storage {
      * </pre>
      *
      * <code>.google.cloud.bigquery.storage.v1beta1.TableModifiers table_modifiers = 2;</code>
+     *
+     * @return Whether the tableModifiers field is set.
      */
     public boolean hasTableModifiers() {
       return tableModifiers_ != null;
@@ -5356,6 +5576,8 @@ public final class Storage {
      * </pre>
      *
      * <code>.google.cloud.bigquery.storage.v1beta1.TableModifiers table_modifiers = 2;</code>
+     *
+     * @return The tableModifiers.
      */
     public com.google.cloud.bigquery.storage.v1beta1.TableReferenceProto.TableModifiers
         getTableModifiers() {
@@ -5393,6 +5615,8 @@ public final class Storage {
      * </pre>
      *
      * <code>int32 requested_streams = 3;</code>
+     *
+     * @return The requestedStreams.
      */
     public int getRequestedStreams() {
       return requestedStreams_;
@@ -5408,6 +5632,8 @@ public final class Storage {
      * </pre>
      *
      * <code>.google.cloud.bigquery.storage.v1beta1.TableReadOptions read_options = 4;</code>
+     *
+     * @return Whether the readOptions field is set.
      */
     public boolean hasReadOptions() {
       return readOptions_ != null;
@@ -5420,6 +5646,8 @@ public final class Storage {
      * </pre>
      *
      * <code>.google.cloud.bigquery.storage.v1beta1.TableReadOptions read_options = 4;</code>
+     *
+     * @return The readOptions.
      */
     public com.google.cloud.bigquery.storage.v1beta1.ReadOptions.TableReadOptions getReadOptions() {
       return readOptions_ == null
@@ -5451,6 +5679,8 @@ public final class Storage {
      * </pre>
      *
      * <code>.google.cloud.bigquery.storage.v1beta1.DataFormat format = 5;</code>
+     *
+     * @return The enum numeric value on the wire for format.
      */
     public int getFormatValue() {
       return format_;
@@ -5463,6 +5693,8 @@ public final class Storage {
      * </pre>
      *
      * <code>.google.cloud.bigquery.storage.v1beta1.DataFormat format = 5;</code>
+     *
+     * @return The format.
      */
     public com.google.cloud.bigquery.storage.v1beta1.Storage.DataFormat getFormat() {
       @SuppressWarnings("deprecation")
@@ -5484,6 +5716,8 @@ public final class Storage {
      * </pre>
      *
      * <code>.google.cloud.bigquery.storage.v1beta1.ShardingStrategy sharding_strategy = 7;</code>
+     *
+     * @return The enum numeric value on the wire for shardingStrategy.
      */
     public int getShardingStrategyValue() {
       return shardingStrategy_;
@@ -5497,6 +5731,8 @@ public final class Storage {
      * </pre>
      *
      * <code>.google.cloud.bigquery.storage.v1beta1.ShardingStrategy sharding_strategy = 7;</code>
+     *
+     * @return The shardingStrategy.
      */
     public com.google.cloud.bigquery.storage.v1beta1.Storage.ShardingStrategy
         getShardingStrategy() {
@@ -6008,6 +6244,8 @@ public final class Storage {
        * <code>
        * .google.cloud.bigquery.storage.v1beta1.TableReference table_reference = 1 [(.google.api.field_behavior) = REQUIRED];
        * </code>
+       *
+       * @return Whether the tableReference field is set.
        */
       public boolean hasTableReference() {
         return tableReferenceBuilder_ != null || tableReference_ != null;
@@ -6022,6 +6260,8 @@ public final class Storage {
        * <code>
        * .google.cloud.bigquery.storage.v1beta1.TableReference table_reference = 1 [(.google.api.field_behavior) = REQUIRED];
        * </code>
+       *
+       * @return The tableReference.
        */
       public com.google.cloud.bigquery.storage.v1beta1.TableReferenceProto.TableReference
           getTableReference() {
@@ -6214,6 +6454,8 @@ public final class Storage {
        * </pre>
        *
        * <code>string parent = 6 [(.google.api.field_behavior) = REQUIRED];</code>
+       *
+       * @return The parent.
        */
       public java.lang.String getParent() {
         java.lang.Object ref = parent_;
@@ -6236,6 +6478,8 @@ public final class Storage {
        * </pre>
        *
        * <code>string parent = 6 [(.google.api.field_behavior) = REQUIRED];</code>
+       *
+       * @return The bytes for parent.
        */
       public com.google.protobuf.ByteString getParentBytes() {
         java.lang.Object ref = parent_;
@@ -6258,6 +6502,9 @@ public final class Storage {
        * </pre>
        *
        * <code>string parent = 6 [(.google.api.field_behavior) = REQUIRED];</code>
+       *
+       * @param value The parent to set.
+       * @return This builder for chaining.
        */
       public Builder setParent(java.lang.String value) {
         if (value == null) {
@@ -6278,6 +6525,8 @@ public final class Storage {
        * </pre>
        *
        * <code>string parent = 6 [(.google.api.field_behavior) = REQUIRED];</code>
+       *
+       * @return This builder for chaining.
        */
       public Builder clearParent() {
 
@@ -6295,6 +6544,9 @@ public final class Storage {
        * </pre>
        *
        * <code>string parent = 6 [(.google.api.field_behavior) = REQUIRED];</code>
+       *
+       * @param value The bytes for parent to set.
+       * @return This builder for chaining.
        */
       public Builder setParentBytes(com.google.protobuf.ByteString value) {
         if (value == null) {
@@ -6322,6 +6574,8 @@ public final class Storage {
        * </pre>
        *
        * <code>.google.cloud.bigquery.storage.v1beta1.TableModifiers table_modifiers = 2;</code>
+       *
+       * @return Whether the tableModifiers field is set.
        */
       public boolean hasTableModifiers() {
         return tableModifiersBuilder_ != null || tableModifiers_ != null;
@@ -6334,6 +6588,8 @@ public final class Storage {
        * </pre>
        *
        * <code>.google.cloud.bigquery.storage.v1beta1.TableModifiers table_modifiers = 2;</code>
+       *
+       * @return The tableModifiers.
        */
       public com.google.cloud.bigquery.storage.v1beta1.TableReferenceProto.TableModifiers
           getTableModifiers() {
@@ -6515,6 +6771,8 @@ public final class Storage {
        * </pre>
        *
        * <code>int32 requested_streams = 3;</code>
+       *
+       * @return The requestedStreams.
        */
       public int getRequestedStreams() {
         return requestedStreams_;
@@ -6532,6 +6790,9 @@ public final class Storage {
        * </pre>
        *
        * <code>int32 requested_streams = 3;</code>
+       *
+       * @param value The requestedStreams to set.
+       * @return This builder for chaining.
        */
       public Builder setRequestedStreams(int value) {
 
@@ -6552,6 +6813,8 @@ public final class Storage {
        * </pre>
        *
        * <code>int32 requested_streams = 3;</code>
+       *
+       * @return This builder for chaining.
        */
       public Builder clearRequestedStreams() {
 
@@ -6574,6 +6837,8 @@ public final class Storage {
        * </pre>
        *
        * <code>.google.cloud.bigquery.storage.v1beta1.TableReadOptions read_options = 4;</code>
+       *
+       * @return Whether the readOptions field is set.
        */
       public boolean hasReadOptions() {
         return readOptionsBuilder_ != null || readOptions_ != null;
@@ -6586,6 +6851,8 @@ public final class Storage {
        * </pre>
        *
        * <code>.google.cloud.bigquery.storage.v1beta1.TableReadOptions read_options = 4;</code>
+       *
+       * @return The readOptions.
        */
       public com.google.cloud.bigquery.storage.v1beta1.ReadOptions.TableReadOptions
           getReadOptions() {
@@ -6760,6 +7027,8 @@ public final class Storage {
        * </pre>
        *
        * <code>.google.cloud.bigquery.storage.v1beta1.DataFormat format = 5;</code>
+       *
+       * @return The enum numeric value on the wire for format.
        */
       public int getFormatValue() {
         return format_;
@@ -6772,6 +7041,9 @@ public final class Storage {
        * </pre>
        *
        * <code>.google.cloud.bigquery.storage.v1beta1.DataFormat format = 5;</code>
+       *
+       * @param value The enum numeric value on the wire for format to set.
+       * @return This builder for chaining.
        */
       public Builder setFormatValue(int value) {
         format_ = value;
@@ -6786,6 +7058,8 @@ public final class Storage {
        * </pre>
        *
        * <code>.google.cloud.bigquery.storage.v1beta1.DataFormat format = 5;</code>
+       *
+       * @return The format.
        */
       public com.google.cloud.bigquery.storage.v1beta1.Storage.DataFormat getFormat() {
         @SuppressWarnings("deprecation")
@@ -6803,6 +7077,9 @@ public final class Storage {
        * </pre>
        *
        * <code>.google.cloud.bigquery.storage.v1beta1.DataFormat format = 5;</code>
+       *
+       * @param value The format to set.
+       * @return This builder for chaining.
        */
       public Builder setFormat(com.google.cloud.bigquery.storage.v1beta1.Storage.DataFormat value) {
         if (value == null) {
@@ -6821,6 +7098,8 @@ public final class Storage {
        * </pre>
        *
        * <code>.google.cloud.bigquery.storage.v1beta1.DataFormat format = 5;</code>
+       *
+       * @return This builder for chaining.
        */
       public Builder clearFormat() {
 
@@ -6839,6 +7118,8 @@ public final class Storage {
        * </pre>
        *
        * <code>.google.cloud.bigquery.storage.v1beta1.ShardingStrategy sharding_strategy = 7;</code>
+       *
+       * @return The enum numeric value on the wire for shardingStrategy.
        */
       public int getShardingStrategyValue() {
         return shardingStrategy_;
@@ -6852,6 +7133,9 @@ public final class Storage {
        * </pre>
        *
        * <code>.google.cloud.bigquery.storage.v1beta1.ShardingStrategy sharding_strategy = 7;</code>
+       *
+       * @param value The enum numeric value on the wire for shardingStrategy to set.
+       * @return This builder for chaining.
        */
       public Builder setShardingStrategyValue(int value) {
         shardingStrategy_ = value;
@@ -6867,6 +7151,8 @@ public final class Storage {
        * </pre>
        *
        * <code>.google.cloud.bigquery.storage.v1beta1.ShardingStrategy sharding_strategy = 7;</code>
+       *
+       * @return The shardingStrategy.
        */
       public com.google.cloud.bigquery.storage.v1beta1.Storage.ShardingStrategy
           getShardingStrategy() {
@@ -6887,6 +7173,9 @@ public final class Storage {
        * </pre>
        *
        * <code>.google.cloud.bigquery.storage.v1beta1.ShardingStrategy sharding_strategy = 7;</code>
+       *
+       * @param value The shardingStrategy to set.
+       * @return This builder for chaining.
        */
       public Builder setShardingStrategy(
           com.google.cloud.bigquery.storage.v1beta1.Storage.ShardingStrategy value) {
@@ -6907,6 +7196,8 @@ public final class Storage {
        * </pre>
        *
        * <code>.google.cloud.bigquery.storage.v1beta1.ShardingStrategy sharding_strategy = 7;</code>
+       *
+       * @return This builder for chaining.
        */
       public Builder clearShardingStrategy() {
 
@@ -6988,6 +7279,8 @@ public final class Storage {
      * <code>
      * .google.cloud.bigquery.storage.v1beta1.StreamPosition read_position = 1 [(.google.api.field_behavior) = REQUIRED];
      * </code>
+     *
+     * @return Whether the readPosition field is set.
      */
     boolean hasReadPosition();
     /**
@@ -7002,6 +7295,8 @@ public final class Storage {
      * <code>
      * .google.cloud.bigquery.storage.v1beta1.StreamPosition read_position = 1 [(.google.api.field_behavior) = REQUIRED];
      * </code>
+     *
+     * @return The readPosition.
      */
     com.google.cloud.bigquery.storage.v1beta1.Storage.StreamPosition getReadPosition();
     /**
@@ -7042,6 +7337,12 @@ public final class Storage {
     private ReadRowsRequest() {}
 
     @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new ReadRowsRequest();
+    }
+
+    @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
       return this.unknownFields;
     }
@@ -7054,7 +7355,6 @@ public final class Storage {
       if (extensionRegistry == null) {
         throw new java.lang.NullPointerException();
       }
-      int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
@@ -7131,6 +7431,8 @@ public final class Storage {
      * <code>
      * .google.cloud.bigquery.storage.v1beta1.StreamPosition read_position = 1 [(.google.api.field_behavior) = REQUIRED];
      * </code>
+     *
+     * @return Whether the readPosition field is set.
      */
     public boolean hasReadPosition() {
       return readPosition_ != null;
@@ -7147,6 +7449,8 @@ public final class Storage {
      * <code>
      * .google.cloud.bigquery.storage.v1beta1.StreamPosition read_position = 1 [(.google.api.field_behavior) = REQUIRED];
      * </code>
+     *
+     * @return The readPosition.
      */
     public com.google.cloud.bigquery.storage.v1beta1.Storage.StreamPosition getReadPosition() {
       return readPosition_ == null
@@ -7532,6 +7836,8 @@ public final class Storage {
        * <code>
        * .google.cloud.bigquery.storage.v1beta1.StreamPosition read_position = 1 [(.google.api.field_behavior) = REQUIRED];
        * </code>
+       *
+       * @return Whether the readPosition field is set.
        */
       public boolean hasReadPosition() {
         return readPositionBuilder_ != null || readPosition_ != null;
@@ -7548,6 +7854,8 @@ public final class Storage {
        * <code>
        * .google.cloud.bigquery.storage.v1beta1.StreamPosition read_position = 1 [(.google.api.field_behavior) = REQUIRED];
        * </code>
+       *
+       * @return The readPosition.
        */
       public com.google.cloud.bigquery.storage.v1beta1.Storage.StreamPosition getReadPosition() {
         if (readPositionBuilder_ == null) {
@@ -7810,6 +8118,8 @@ public final class Storage {
      * </pre>
      *
      * <code>int64 estimated_row_count = 1;</code>
+     *
+     * @return The estimatedRowCount.
      */
     long getEstimatedRowCount();
 
@@ -7826,6 +8136,8 @@ public final class Storage {
      * </pre>
      *
      * <code>float fraction_consumed = 2;</code>
+     *
+     * @return The fractionConsumed.
      */
     float getFractionConsumed();
 
@@ -7839,6 +8151,8 @@ public final class Storage {
      * </pre>
      *
      * <code>.google.cloud.bigquery.storage.v1beta1.Progress progress = 4;</code>
+     *
+     * @return Whether the progress field is set.
      */
     boolean hasProgress();
     /**
@@ -7851,6 +8165,8 @@ public final class Storage {
      * </pre>
      *
      * <code>.google.cloud.bigquery.storage.v1beta1.Progress progress = 4;</code>
+     *
+     * @return The progress.
      */
     com.google.cloud.bigquery.storage.v1beta1.Storage.Progress getProgress();
     /**
@@ -7878,6 +8194,8 @@ public final class Storage {
      * </pre>
      *
      * <code>bool is_splittable = 3;</code>
+     *
+     * @return The isSplittable.
      */
     boolean getIsSplittable();
   }
@@ -7903,6 +8221,12 @@ public final class Storage {
     private StreamStatus() {}
 
     @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new StreamStatus();
+    }
+
+    @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
       return this.unknownFields;
     }
@@ -7915,7 +8239,6 @@ public final class Storage {
       if (extensionRegistry == null) {
         throw new java.lang.NullPointerException();
       }
-      int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
@@ -8005,6 +8328,8 @@ public final class Storage {
      * </pre>
      *
      * <code>int64 estimated_row_count = 1;</code>
+     *
+     * @return The estimatedRowCount.
      */
     public long getEstimatedRowCount() {
       return estimatedRowCount_;
@@ -8025,6 +8350,8 @@ public final class Storage {
      * </pre>
      *
      * <code>float fraction_consumed = 2;</code>
+     *
+     * @return The fractionConsumed.
      */
     public float getFractionConsumed() {
       return fractionConsumed_;
@@ -8042,6 +8369,8 @@ public final class Storage {
      * </pre>
      *
      * <code>.google.cloud.bigquery.storage.v1beta1.Progress progress = 4;</code>
+     *
+     * @return Whether the progress field is set.
      */
     public boolean hasProgress() {
       return progress_ != null;
@@ -8056,6 +8385,8 @@ public final class Storage {
      * </pre>
      *
      * <code>.google.cloud.bigquery.storage.v1beta1.Progress progress = 4;</code>
+     *
+     * @return The progress.
      */
     public com.google.cloud.bigquery.storage.v1beta1.Storage.Progress getProgress() {
       return progress_ == null
@@ -8092,6 +8423,8 @@ public final class Storage {
      * </pre>
      *
      * <code>bool is_splittable = 3;</code>
+     *
+     * @return The isSplittable.
      */
     public boolean getIsSplittable() {
       return isSplittable_;
@@ -8493,6 +8826,8 @@ public final class Storage {
        * </pre>
        *
        * <code>int64 estimated_row_count = 1;</code>
+       *
+       * @return The estimatedRowCount.
        */
       public long getEstimatedRowCount() {
         return estimatedRowCount_;
@@ -8507,6 +8842,9 @@ public final class Storage {
        * </pre>
        *
        * <code>int64 estimated_row_count = 1;</code>
+       *
+       * @param value The estimatedRowCount to set.
+       * @return This builder for chaining.
        */
       public Builder setEstimatedRowCount(long value) {
 
@@ -8524,6 +8862,8 @@ public final class Storage {
        * </pre>
        *
        * <code>int64 estimated_row_count = 1;</code>
+       *
+       * @return This builder for chaining.
        */
       public Builder clearEstimatedRowCount() {
 
@@ -8546,6 +8886,8 @@ public final class Storage {
        * </pre>
        *
        * <code>float fraction_consumed = 2;</code>
+       *
+       * @return The fractionConsumed.
        */
       public float getFractionConsumed() {
         return fractionConsumed_;
@@ -8563,6 +8905,9 @@ public final class Storage {
        * </pre>
        *
        * <code>float fraction_consumed = 2;</code>
+       *
+       * @param value The fractionConsumed to set.
+       * @return This builder for chaining.
        */
       public Builder setFractionConsumed(float value) {
 
@@ -8583,6 +8928,8 @@ public final class Storage {
        * </pre>
        *
        * <code>float fraction_consumed = 2;</code>
+       *
+       * @return This builder for chaining.
        */
       public Builder clearFractionConsumed() {
 
@@ -8607,6 +8954,8 @@ public final class Storage {
        * </pre>
        *
        * <code>.google.cloud.bigquery.storage.v1beta1.Progress progress = 4;</code>
+       *
+       * @return Whether the progress field is set.
        */
       public boolean hasProgress() {
         return progressBuilder_ != null || progress_ != null;
@@ -8621,6 +8970,8 @@ public final class Storage {
        * </pre>
        *
        * <code>.google.cloud.bigquery.storage.v1beta1.Progress progress = 4;</code>
+       *
+       * @return The progress.
        */
       public com.google.cloud.bigquery.storage.v1beta1.Storage.Progress getProgress() {
         if (progressBuilder_ == null) {
@@ -8807,6 +9158,8 @@ public final class Storage {
        * </pre>
        *
        * <code>bool is_splittable = 3;</code>
+       *
+       * @return The isSplittable.
        */
       public boolean getIsSplittable() {
         return isSplittable_;
@@ -8823,6 +9176,9 @@ public final class Storage {
        * </pre>
        *
        * <code>bool is_splittable = 3;</code>
+       *
+       * @param value The isSplittable to set.
+       * @return This builder for chaining.
        */
       public Builder setIsSplittable(boolean value) {
 
@@ -8842,6 +9198,8 @@ public final class Storage {
        * </pre>
        *
        * <code>bool is_splittable = 3;</code>
+       *
+       * @return This builder for chaining.
        */
       public Builder clearIsSplittable() {
 
@@ -8926,6 +9284,8 @@ public final class Storage {
      * </pre>
      *
      * <code>float at_response_start = 1;</code>
+     *
+     * @return The atResponseStart.
      */
     float getAtResponseStart();
 
@@ -8938,6 +9298,8 @@ public final class Storage {
      * </pre>
      *
      * <code>float at_response_end = 2;</code>
+     *
+     * @return The atResponseEnd.
      */
     float getAtResponseEnd();
   }
@@ -8955,6 +9317,12 @@ public final class Storage {
     private Progress() {}
 
     @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new Progress();
+    }
+
+    @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
       return this.unknownFields;
     }
@@ -8967,7 +9335,6 @@ public final class Storage {
       if (extensionRegistry == null) {
         throw new java.lang.NullPointerException();
       }
-      int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
@@ -9040,6 +9407,8 @@ public final class Storage {
      * </pre>
      *
      * <code>float at_response_start = 1;</code>
+     *
+     * @return The atResponseStart.
      */
     public float getAtResponseStart() {
       return atResponseStart_;
@@ -9056,6 +9425,8 @@ public final class Storage {
      * </pre>
      *
      * <code>float at_response_end = 2;</code>
+     *
+     * @return The atResponseEnd.
      */
     public float getAtResponseEnd() {
       return atResponseEnd_;
@@ -9411,6 +9782,8 @@ public final class Storage {
        * </pre>
        *
        * <code>float at_response_start = 1;</code>
+       *
+       * @return The atResponseStart.
        */
       public float getAtResponseStart() {
         return atResponseStart_;
@@ -9431,6 +9804,9 @@ public final class Storage {
        * </pre>
        *
        * <code>float at_response_start = 1;</code>
+       *
+       * @param value The atResponseStart to set.
+       * @return This builder for chaining.
        */
       public Builder setAtResponseStart(float value) {
 
@@ -9454,6 +9830,8 @@ public final class Storage {
        * </pre>
        *
        * <code>float at_response_start = 1;</code>
+       *
+       * @return This builder for chaining.
        */
       public Builder clearAtResponseStart() {
 
@@ -9472,6 +9850,8 @@ public final class Storage {
        * </pre>
        *
        * <code>float at_response_end = 2;</code>
+       *
+       * @return The atResponseEnd.
        */
       public float getAtResponseEnd() {
         return atResponseEnd_;
@@ -9485,6 +9865,9 @@ public final class Storage {
        * </pre>
        *
        * <code>float at_response_end = 2;</code>
+       *
+       * @param value The atResponseEnd to set.
+       * @return This builder for chaining.
        */
       public Builder setAtResponseEnd(float value) {
 
@@ -9501,6 +9884,8 @@ public final class Storage {
        * </pre>
        *
        * <code>float at_response_end = 2;</code>
+       *
+       * @return This builder for chaining.
        */
       public Builder clearAtResponseEnd() {
 
@@ -9576,6 +9961,8 @@ public final class Storage {
      * </pre>
      *
      * <code>int32 throttle_percent = 1;</code>
+     *
+     * @return The throttlePercent.
      */
     int getThrottlePercent();
   }
@@ -9601,6 +9988,12 @@ public final class Storage {
     private ThrottleStatus() {}
 
     @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new ThrottleStatus();
+    }
+
+    @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
       return this.unknownFields;
     }
@@ -9613,7 +10006,6 @@ public final class Storage {
       if (extensionRegistry == null) {
         throw new java.lang.NullPointerException();
       }
-      int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
@@ -9674,6 +10066,8 @@ public final class Storage {
      * </pre>
      *
      * <code>int32 throttle_percent = 1;</code>
+     *
+     * @return The throttlePercent.
      */
     public int getThrottlePercent() {
       return throttlePercent_;
@@ -10019,6 +10413,8 @@ public final class Storage {
        * </pre>
        *
        * <code>int32 throttle_percent = 1;</code>
+       *
+       * @return The throttlePercent.
        */
       public int getThrottlePercent() {
         return throttlePercent_;
@@ -10032,6 +10428,9 @@ public final class Storage {
        * </pre>
        *
        * <code>int32 throttle_percent = 1;</code>
+       *
+       * @param value The throttlePercent to set.
+       * @return This builder for chaining.
        */
       public Builder setThrottlePercent(int value) {
 
@@ -10048,6 +10447,8 @@ public final class Storage {
        * </pre>
        *
        * <code>int32 throttle_percent = 1;</code>
+       *
+       * @return This builder for chaining.
        */
       public Builder clearThrottlePercent() {
 
@@ -10124,6 +10525,8 @@ public final class Storage {
      * </pre>
      *
      * <code>.google.cloud.bigquery.storage.v1beta1.AvroRows avro_rows = 3;</code>
+     *
+     * @return Whether the avroRows field is set.
      */
     boolean hasAvroRows();
     /**
@@ -10134,6 +10537,8 @@ public final class Storage {
      * </pre>
      *
      * <code>.google.cloud.bigquery.storage.v1beta1.AvroRows avro_rows = 3;</code>
+     *
+     * @return The avroRows.
      */
     com.google.cloud.bigquery.storage.v1beta1.AvroProto.AvroRows getAvroRows();
     /**
@@ -10155,6 +10560,8 @@ public final class Storage {
      * </pre>
      *
      * <code>.google.cloud.bigquery.storage.v1beta1.ArrowRecordBatch arrow_record_batch = 4;</code>
+     *
+     * @return Whether the arrowRecordBatch field is set.
      */
     boolean hasArrowRecordBatch();
     /**
@@ -10165,6 +10572,8 @@ public final class Storage {
      * </pre>
      *
      * <code>.google.cloud.bigquery.storage.v1beta1.ArrowRecordBatch arrow_record_batch = 4;</code>
+     *
+     * @return The arrowRecordBatch.
      */
     com.google.cloud.bigquery.storage.v1beta1.ArrowProto.ArrowRecordBatch getArrowRecordBatch();
     /**
@@ -10190,6 +10599,8 @@ public final class Storage {
      * </pre>
      *
      * <code>int64 row_count = 6;</code>
+     *
+     * @return The rowCount.
      */
     long getRowCount();
 
@@ -10201,6 +10612,8 @@ public final class Storage {
      * </pre>
      *
      * <code>.google.cloud.bigquery.storage.v1beta1.StreamStatus status = 2;</code>
+     *
+     * @return Whether the status field is set.
      */
     boolean hasStatus();
     /**
@@ -10211,6 +10624,8 @@ public final class Storage {
      * </pre>
      *
      * <code>.google.cloud.bigquery.storage.v1beta1.StreamStatus status = 2;</code>
+     *
+     * @return The status.
      */
     com.google.cloud.bigquery.storage.v1beta1.Storage.StreamStatus getStatus();
     /**
@@ -10233,6 +10648,8 @@ public final class Storage {
      * </pre>
      *
      * <code>.google.cloud.bigquery.storage.v1beta1.ThrottleStatus throttle_status = 5;</code>
+     *
+     * @return Whether the throttleStatus field is set.
      */
     boolean hasThrottleStatus();
     /**
@@ -10244,6 +10661,8 @@ public final class Storage {
      * </pre>
      *
      * <code>.google.cloud.bigquery.storage.v1beta1.ThrottleStatus throttle_status = 5;</code>
+     *
+     * @return The throttleStatus.
      */
     com.google.cloud.bigquery.storage.v1beta1.Storage.ThrottleStatus getThrottleStatus();
     /**
@@ -10285,6 +10704,12 @@ public final class Storage {
     private ReadRowsResponse() {}
 
     @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new ReadRowsResponse();
+    }
+
+    @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
       return this.unknownFields;
     }
@@ -10297,7 +10722,6 @@ public final class Storage {
       if (extensionRegistry == null) {
         throw new java.lang.NullPointerException();
       }
-      int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
@@ -10431,7 +10855,10 @@ public final class Storage {
     private int rowsCase_ = 0;
     private java.lang.Object rows_;
 
-    public enum RowsCase implements com.google.protobuf.Internal.EnumLite {
+    public enum RowsCase
+        implements
+            com.google.protobuf.Internal.EnumLite,
+            com.google.protobuf.AbstractMessage.InternalOneOfEnum {
       AVRO_ROWS(3),
       ARROW_RECORD_BATCH(4),
       ROWS_NOT_SET(0);
@@ -10440,7 +10867,11 @@ public final class Storage {
       private RowsCase(int value) {
         this.value = value;
       }
-      /** @deprecated Use {@link #forNumber(int)} instead. */
+      /**
+       * @param value The number of the enum to look for.
+       * @return The enum associated with the given number.
+       * @deprecated Use {@link #forNumber(int)} instead.
+       */
       @java.lang.Deprecated
       public static RowsCase valueOf(int value) {
         return forNumber(value);
@@ -10477,6 +10908,8 @@ public final class Storage {
      * </pre>
      *
      * <code>.google.cloud.bigquery.storage.v1beta1.AvroRows avro_rows = 3;</code>
+     *
+     * @return Whether the avroRows field is set.
      */
     public boolean hasAvroRows() {
       return rowsCase_ == 3;
@@ -10489,6 +10922,8 @@ public final class Storage {
      * </pre>
      *
      * <code>.google.cloud.bigquery.storage.v1beta1.AvroRows avro_rows = 3;</code>
+     *
+     * @return The avroRows.
      */
     public com.google.cloud.bigquery.storage.v1beta1.AvroProto.AvroRows getAvroRows() {
       if (rowsCase_ == 3) {
@@ -10522,6 +10957,8 @@ public final class Storage {
      * </pre>
      *
      * <code>.google.cloud.bigquery.storage.v1beta1.ArrowRecordBatch arrow_record_batch = 4;</code>
+     *
+     * @return Whether the arrowRecordBatch field is set.
      */
     public boolean hasArrowRecordBatch() {
       return rowsCase_ == 4;
@@ -10534,6 +10971,8 @@ public final class Storage {
      * </pre>
      *
      * <code>.google.cloud.bigquery.storage.v1beta1.ArrowRecordBatch arrow_record_batch = 4;</code>
+     *
+     * @return The arrowRecordBatch.
      */
     public com.google.cloud.bigquery.storage.v1beta1.ArrowProto.ArrowRecordBatch
         getArrowRecordBatch() {
@@ -10574,6 +11013,8 @@ public final class Storage {
      * </pre>
      *
      * <code>int64 row_count = 6;</code>
+     *
+     * @return The rowCount.
      */
     public long getRowCount() {
       return rowCount_;
@@ -10589,6 +11030,8 @@ public final class Storage {
      * </pre>
      *
      * <code>.google.cloud.bigquery.storage.v1beta1.StreamStatus status = 2;</code>
+     *
+     * @return Whether the status field is set.
      */
     public boolean hasStatus() {
       return status_ != null;
@@ -10601,6 +11044,8 @@ public final class Storage {
      * </pre>
      *
      * <code>.google.cloud.bigquery.storage.v1beta1.StreamStatus status = 2;</code>
+     *
+     * @return The status.
      */
     public com.google.cloud.bigquery.storage.v1beta1.Storage.StreamStatus getStatus() {
       return status_ == null
@@ -10632,6 +11077,8 @@ public final class Storage {
      * </pre>
      *
      * <code>.google.cloud.bigquery.storage.v1beta1.ThrottleStatus throttle_status = 5;</code>
+     *
+     * @return Whether the throttleStatus field is set.
      */
     public boolean hasThrottleStatus() {
       return throttleStatus_ != null;
@@ -10645,6 +11092,8 @@ public final class Storage {
      * </pre>
      *
      * <code>.google.cloud.bigquery.storage.v1beta1.ThrottleStatus throttle_status = 5;</code>
+     *
+     * @return The throttleStatus.
      */
     public com.google.cloud.bigquery.storage.v1beta1.Storage.ThrottleStatus getThrottleStatus() {
       return throttleStatus_ == null
@@ -11154,6 +11603,8 @@ public final class Storage {
        * </pre>
        *
        * <code>.google.cloud.bigquery.storage.v1beta1.AvroRows avro_rows = 3;</code>
+       *
+       * @return Whether the avroRows field is set.
        */
       public boolean hasAvroRows() {
         return rowsCase_ == 3;
@@ -11166,6 +11617,8 @@ public final class Storage {
        * </pre>
        *
        * <code>.google.cloud.bigquery.storage.v1beta1.AvroRows avro_rows = 3;</code>
+       *
+       * @return The avroRows.
        */
       public com.google.cloud.bigquery.storage.v1beta1.AvroProto.AvroRows getAvroRows() {
         if (avroRowsBuilder_ == null) {
@@ -11364,6 +11817,8 @@ public final class Storage {
        *
        * <code>.google.cloud.bigquery.storage.v1beta1.ArrowRecordBatch arrow_record_batch = 4;
        * </code>
+       *
+       * @return Whether the arrowRecordBatch field is set.
        */
       public boolean hasArrowRecordBatch() {
         return rowsCase_ == 4;
@@ -11377,6 +11832,8 @@ public final class Storage {
        *
        * <code>.google.cloud.bigquery.storage.v1beta1.ArrowRecordBatch arrow_record_batch = 4;
        * </code>
+       *
+       * @return The arrowRecordBatch.
        */
       public com.google.cloud.bigquery.storage.v1beta1.ArrowProto.ArrowRecordBatch
           getArrowRecordBatch() {
@@ -11587,6 +12044,8 @@ public final class Storage {
        * </pre>
        *
        * <code>int64 row_count = 6;</code>
+       *
+       * @return The rowCount.
        */
       public long getRowCount() {
         return rowCount_;
@@ -11602,6 +12061,9 @@ public final class Storage {
        * </pre>
        *
        * <code>int64 row_count = 6;</code>
+       *
+       * @param value The rowCount to set.
+       * @return This builder for chaining.
        */
       public Builder setRowCount(long value) {
 
@@ -11620,6 +12082,8 @@ public final class Storage {
        * </pre>
        *
        * <code>int64 row_count = 6;</code>
+       *
+       * @return This builder for chaining.
        */
       public Builder clearRowCount() {
 
@@ -11642,6 +12106,8 @@ public final class Storage {
        * </pre>
        *
        * <code>.google.cloud.bigquery.storage.v1beta1.StreamStatus status = 2;</code>
+       *
+       * @return Whether the status field is set.
        */
       public boolean hasStatus() {
         return statusBuilder_ != null || status_ != null;
@@ -11654,6 +12120,8 @@ public final class Storage {
        * </pre>
        *
        * <code>.google.cloud.bigquery.storage.v1beta1.StreamStatus status = 2;</code>
+       *
+       * @return The status.
        */
       public com.google.cloud.bigquery.storage.v1beta1.Storage.StreamStatus getStatus() {
         if (statusBuilder_ == null) {
@@ -11829,6 +12297,8 @@ public final class Storage {
        * </pre>
        *
        * <code>.google.cloud.bigquery.storage.v1beta1.ThrottleStatus throttle_status = 5;</code>
+       *
+       * @return Whether the throttleStatus field is set.
        */
       public boolean hasThrottleStatus() {
         return throttleStatusBuilder_ != null || throttleStatus_ != null;
@@ -11842,6 +12312,8 @@ public final class Storage {
        * </pre>
        *
        * <code>.google.cloud.bigquery.storage.v1beta1.ThrottleStatus throttle_status = 5;</code>
+       *
+       * @return The throttleStatus.
        */
       public com.google.cloud.bigquery.storage.v1beta1.Storage.ThrottleStatus getThrottleStatus() {
         if (throttleStatusBuilder_ == null) {
@@ -12084,6 +12556,8 @@ public final class Storage {
      * <code>
      * .google.cloud.bigquery.storage.v1beta1.ReadSession session = 1 [(.google.api.field_behavior) = REQUIRED];
      * </code>
+     *
+     * @return Whether the session field is set.
      */
     boolean hasSession();
     /**
@@ -12097,6 +12571,8 @@ public final class Storage {
      * <code>
      * .google.cloud.bigquery.storage.v1beta1.ReadSession session = 1 [(.google.api.field_behavior) = REQUIRED];
      * </code>
+     *
+     * @return The session.
      */
     com.google.cloud.bigquery.storage.v1beta1.Storage.ReadSession getSession();
     /**
@@ -12123,6 +12599,8 @@ public final class Storage {
      * </pre>
      *
      * <code>int32 requested_streams = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return The requestedStreams.
      */
     int getRequestedStreams();
   }
@@ -12152,6 +12630,12 @@ public final class Storage {
     private BatchCreateReadSessionStreamsRequest() {}
 
     @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new BatchCreateReadSessionStreamsRequest();
+    }
+
+    @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
       return this.unknownFields;
     }
@@ -12164,7 +12648,6 @@ public final class Storage {
       if (extensionRegistry == null) {
         throw new java.lang.NullPointerException();
       }
-      int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
@@ -12247,6 +12730,8 @@ public final class Storage {
      * <code>
      * .google.cloud.bigquery.storage.v1beta1.ReadSession session = 1 [(.google.api.field_behavior) = REQUIRED];
      * </code>
+     *
+     * @return Whether the session field is set.
      */
     public boolean hasSession() {
       return session_ != null;
@@ -12262,6 +12747,8 @@ public final class Storage {
      * <code>
      * .google.cloud.bigquery.storage.v1beta1.ReadSession session = 1 [(.google.api.field_behavior) = REQUIRED];
      * </code>
+     *
+     * @return The session.
      */
     public com.google.cloud.bigquery.storage.v1beta1.Storage.ReadSession getSession() {
       return session_ == null
@@ -12297,6 +12784,8 @@ public final class Storage {
      * </pre>
      *
      * <code>int32 requested_streams = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return The requestedStreams.
      */
     public int getRequestedStreams() {
       return requestedStreams_;
@@ -12716,6 +13205,8 @@ public final class Storage {
        * <code>
        * .google.cloud.bigquery.storage.v1beta1.ReadSession session = 1 [(.google.api.field_behavior) = REQUIRED];
        * </code>
+       *
+       * @return Whether the session field is set.
        */
       public boolean hasSession() {
         return sessionBuilder_ != null || session_ != null;
@@ -12731,6 +13222,8 @@ public final class Storage {
        * <code>
        * .google.cloud.bigquery.storage.v1beta1.ReadSession session = 1 [(.google.api.field_behavior) = REQUIRED];
        * </code>
+       *
+       * @return The session.
        */
       public com.google.cloud.bigquery.storage.v1beta1.Storage.ReadSession getSession() {
         if (sessionBuilder_ == null) {
@@ -12923,6 +13416,8 @@ public final class Storage {
        * </pre>
        *
        * <code>int32 requested_streams = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+       *
+       * @return The requestedStreams.
        */
       public int getRequestedStreams() {
         return requestedStreams_;
@@ -12937,6 +13432,9 @@ public final class Storage {
        * </pre>
        *
        * <code>int32 requested_streams = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+       *
+       * @param value The requestedStreams to set.
+       * @return This builder for chaining.
        */
       public Builder setRequestedStreams(int value) {
 
@@ -12954,6 +13452,8 @@ public final class Storage {
        * </pre>
        *
        * <code>int32 requested_streams = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+       *
+       * @return This builder for chaining.
        */
       public Builder clearRequestedStreams() {
 
@@ -13104,6 +13604,12 @@ public final class Storage {
 
     private BatchCreateReadSessionStreamsResponse() {
       streams_ = java.util.Collections.emptyList();
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new BatchCreateReadSessionStreamsResponse();
     }
 
     @java.lang.Override
@@ -14102,6 +14608,8 @@ public final class Storage {
      * </pre>
      *
      * <code>.google.cloud.bigquery.storage.v1beta1.Stream stream = 2;</code>
+     *
+     * @return Whether the stream field is set.
      */
     boolean hasStream();
     /**
@@ -14112,6 +14620,8 @@ public final class Storage {
      * </pre>
      *
      * <code>.google.cloud.bigquery.storage.v1beta1.Stream stream = 2;</code>
+     *
+     * @return The stream.
      */
     com.google.cloud.bigquery.storage.v1beta1.Storage.Stream getStream();
     /**
@@ -14147,6 +14657,12 @@ public final class Storage {
     private FinalizeStreamRequest() {}
 
     @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new FinalizeStreamRequest();
+    }
+
+    @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
       return this.unknownFields;
     }
@@ -14159,7 +14675,6 @@ public final class Storage {
       if (extensionRegistry == null) {
         throw new java.lang.NullPointerException();
       }
-      int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
@@ -14232,6 +14747,8 @@ public final class Storage {
      * </pre>
      *
      * <code>.google.cloud.bigquery.storage.v1beta1.Stream stream = 2;</code>
+     *
+     * @return Whether the stream field is set.
      */
     public boolean hasStream() {
       return stream_ != null;
@@ -14244,6 +14761,8 @@ public final class Storage {
      * </pre>
      *
      * <code>.google.cloud.bigquery.storage.v1beta1.Stream stream = 2;</code>
+     *
+     * @return The stream.
      */
     public com.google.cloud.bigquery.storage.v1beta1.Storage.Stream getStream() {
       return stream_ == null
@@ -14626,6 +15145,8 @@ public final class Storage {
        * </pre>
        *
        * <code>.google.cloud.bigquery.storage.v1beta1.Stream stream = 2;</code>
+       *
+       * @return Whether the stream field is set.
        */
       public boolean hasStream() {
         return streamBuilder_ != null || stream_ != null;
@@ -14638,6 +15159,8 @@ public final class Storage {
        * </pre>
        *
        * <code>.google.cloud.bigquery.storage.v1beta1.Stream stream = 2;</code>
+       *
+       * @return The stream.
        */
       public com.google.cloud.bigquery.storage.v1beta1.Storage.Stream getStream() {
         if (streamBuilder_ == null) {
@@ -14864,6 +15387,8 @@ public final class Storage {
      * </pre>
      *
      * <code>.google.cloud.bigquery.storage.v1beta1.Stream original_stream = 1;</code>
+     *
+     * @return Whether the originalStream field is set.
      */
     boolean hasOriginalStream();
     /**
@@ -14874,6 +15399,8 @@ public final class Storage {
      * </pre>
      *
      * <code>.google.cloud.bigquery.storage.v1beta1.Stream original_stream = 1;</code>
+     *
+     * @return The originalStream.
      */
     com.google.cloud.bigquery.storage.v1beta1.Storage.Stream getOriginalStream();
     /**
@@ -14901,6 +15428,8 @@ public final class Storage {
      * </pre>
      *
      * <code>float fraction = 2;</code>
+     *
+     * @return The fraction.
      */
     float getFraction();
   }
@@ -14926,6 +15455,12 @@ public final class Storage {
     private SplitReadStreamRequest() {}
 
     @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new SplitReadStreamRequest();
+    }
+
+    @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
       return this.unknownFields;
     }
@@ -14938,7 +15473,6 @@ public final class Storage {
       if (extensionRegistry == null) {
         throw new java.lang.NullPointerException();
       }
-      int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
@@ -15016,6 +15550,8 @@ public final class Storage {
      * </pre>
      *
      * <code>.google.cloud.bigquery.storage.v1beta1.Stream original_stream = 1;</code>
+     *
+     * @return Whether the originalStream field is set.
      */
     public boolean hasOriginalStream() {
       return originalStream_ != null;
@@ -15028,6 +15564,8 @@ public final class Storage {
      * </pre>
      *
      * <code>.google.cloud.bigquery.storage.v1beta1.Stream original_stream = 1;</code>
+     *
+     * @return The originalStream.
      */
     public com.google.cloud.bigquery.storage.v1beta1.Storage.Stream getOriginalStream() {
       return originalStream_ == null
@@ -15064,6 +15602,8 @@ public final class Storage {
      * </pre>
      *
      * <code>float fraction = 2;</code>
+     *
+     * @return The fraction.
      */
     public float getFraction() {
       return fraction_;
@@ -15453,6 +15993,8 @@ public final class Storage {
        * </pre>
        *
        * <code>.google.cloud.bigquery.storage.v1beta1.Stream original_stream = 1;</code>
+       *
+       * @return Whether the originalStream field is set.
        */
       public boolean hasOriginalStream() {
         return originalStreamBuilder_ != null || originalStream_ != null;
@@ -15465,6 +16007,8 @@ public final class Storage {
        * </pre>
        *
        * <code>.google.cloud.bigquery.storage.v1beta1.Stream original_stream = 1;</code>
+       *
+       * @return The originalStream.
        */
       public com.google.cloud.bigquery.storage.v1beta1.Storage.Stream getOriginalStream() {
         if (originalStreamBuilder_ == null) {
@@ -15640,6 +16184,8 @@ public final class Storage {
        * </pre>
        *
        * <code>float fraction = 2;</code>
+       *
+       * @return The fraction.
        */
       public float getFraction() {
         return fraction_;
@@ -15658,6 +16204,9 @@ public final class Storage {
        * </pre>
        *
        * <code>float fraction = 2;</code>
+       *
+       * @param value The fraction to set.
+       * @return This builder for chaining.
        */
       public Builder setFraction(float value) {
 
@@ -15679,6 +16228,8 @@ public final class Storage {
        * </pre>
        *
        * <code>float fraction = 2;</code>
+       *
+       * @return This builder for chaining.
        */
       public Builder clearFraction() {
 
@@ -15758,6 +16309,8 @@ public final class Storage {
      * </pre>
      *
      * <code>.google.cloud.bigquery.storage.v1beta1.Stream primary_stream = 1;</code>
+     *
+     * @return Whether the primaryStream field is set.
      */
     boolean hasPrimaryStream();
     /**
@@ -15770,6 +16323,8 @@ public final class Storage {
      * </pre>
      *
      * <code>.google.cloud.bigquery.storage.v1beta1.Stream primary_stream = 1;</code>
+     *
+     * @return The primaryStream.
      */
     com.google.cloud.bigquery.storage.v1beta1.Storage.Stream getPrimaryStream();
     /**
@@ -15794,6 +16349,8 @@ public final class Storage {
      * </pre>
      *
      * <code>.google.cloud.bigquery.storage.v1beta1.Stream remainder_stream = 2;</code>
+     *
+     * @return Whether the remainderStream field is set.
      */
     boolean hasRemainderStream();
     /**
@@ -15805,6 +16362,8 @@ public final class Storage {
      * </pre>
      *
      * <code>.google.cloud.bigquery.storage.v1beta1.Stream remainder_stream = 2;</code>
+     *
+     * @return The remainderStream.
      */
     com.google.cloud.bigquery.storage.v1beta1.Storage.Stream getRemainderStream();
     /**
@@ -15841,6 +16400,12 @@ public final class Storage {
     private SplitReadStreamResponse() {}
 
     @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new SplitReadStreamResponse();
+    }
+
+    @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
       return this.unknownFields;
     }
@@ -15853,7 +16418,6 @@ public final class Storage {
       if (extensionRegistry == null) {
         throw new java.lang.NullPointerException();
       }
-      int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
@@ -15945,6 +16509,8 @@ public final class Storage {
      * </pre>
      *
      * <code>.google.cloud.bigquery.storage.v1beta1.Stream primary_stream = 1;</code>
+     *
+     * @return Whether the primaryStream field is set.
      */
     public boolean hasPrimaryStream() {
       return primaryStream_ != null;
@@ -15959,6 +16525,8 @@ public final class Storage {
      * </pre>
      *
      * <code>.google.cloud.bigquery.storage.v1beta1.Stream primary_stream = 1;</code>
+     *
+     * @return The primaryStream.
      */
     public com.google.cloud.bigquery.storage.v1beta1.Storage.Stream getPrimaryStream() {
       return primaryStream_ == null
@@ -15992,6 +16560,8 @@ public final class Storage {
      * </pre>
      *
      * <code>.google.cloud.bigquery.storage.v1beta1.Stream remainder_stream = 2;</code>
+     *
+     * @return Whether the remainderStream field is set.
      */
     public boolean hasRemainderStream() {
       return remainderStream_ != null;
@@ -16005,6 +16575,8 @@ public final class Storage {
      * </pre>
      *
      * <code>.google.cloud.bigquery.storage.v1beta1.Stream remainder_stream = 2;</code>
+     *
+     * @return The remainderStream.
      */
     public com.google.cloud.bigquery.storage.v1beta1.Storage.Stream getRemainderStream() {
       return remainderStream_ == null
@@ -16424,6 +16996,8 @@ public final class Storage {
        * </pre>
        *
        * <code>.google.cloud.bigquery.storage.v1beta1.Stream primary_stream = 1;</code>
+       *
+       * @return Whether the primaryStream field is set.
        */
       public boolean hasPrimaryStream() {
         return primaryStreamBuilder_ != null || primaryStream_ != null;
@@ -16438,6 +17012,8 @@ public final class Storage {
        * </pre>
        *
        * <code>.google.cloud.bigquery.storage.v1beta1.Stream primary_stream = 1;</code>
+       *
+       * @return The primaryStream.
        */
       public com.google.cloud.bigquery.storage.v1beta1.Storage.Stream getPrimaryStream() {
         if (primaryStreamBuilder_ == null) {
@@ -16627,6 +17203,8 @@ public final class Storage {
        * </pre>
        *
        * <code>.google.cloud.bigquery.storage.v1beta1.Stream remainder_stream = 2;</code>
+       *
+       * @return Whether the remainderStream field is set.
        */
       public boolean hasRemainderStream() {
         return remainderStreamBuilder_ != null || remainderStream_ != null;
@@ -16640,6 +17218,8 @@ public final class Storage {
        * </pre>
        *
        * <code>.google.cloud.bigquery.storage.v1beta1.Stream remainder_stream = 2;</code>
+       *
+       * @return The remainderStream.
        */
       public com.google.cloud.bigquery.storage.v1beta1.Storage.Stream getRemainderStream() {
         if (remainderStreamBuilder_ == null) {
@@ -17052,29 +17632,21 @@ public final class Storage {
           + "oto/googleapis/cloud/bigquery/storage/v1"
           + "beta1;storageb\006proto3"
     };
-    com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
-        new com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner() {
-          public com.google.protobuf.ExtensionRegistry assignDescriptors(
-              com.google.protobuf.Descriptors.FileDescriptor root) {
-            descriptor = root;
-            return null;
-          }
-        };
-    com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
-        descriptorData,
-        new com.google.protobuf.Descriptors.FileDescriptor[] {
-          com.google.api.AnnotationsProto.getDescriptor(),
-          com.google.api.ClientProto.getDescriptor(),
-          com.google.api.FieldBehaviorProto.getDescriptor(),
-          com.google.api.ResourceProto.getDescriptor(),
-          com.google.cloud.bigquery.storage.v1beta1.ArrowProto.getDescriptor(),
-          com.google.cloud.bigquery.storage.v1beta1.AvroProto.getDescriptor(),
-          com.google.cloud.bigquery.storage.v1beta1.ReadOptions.getDescriptor(),
-          com.google.cloud.bigquery.storage.v1beta1.TableReferenceProto.getDescriptor(),
-          com.google.protobuf.EmptyProto.getDescriptor(),
-          com.google.protobuf.TimestampProto.getDescriptor(),
-        },
-        assigner);
+    descriptor =
+        com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
+            descriptorData,
+            new com.google.protobuf.Descriptors.FileDescriptor[] {
+              com.google.api.AnnotationsProto.getDescriptor(),
+              com.google.api.ClientProto.getDescriptor(),
+              com.google.api.FieldBehaviorProto.getDescriptor(),
+              com.google.api.ResourceProto.getDescriptor(),
+              com.google.cloud.bigquery.storage.v1beta1.ArrowProto.getDescriptor(),
+              com.google.cloud.bigquery.storage.v1beta1.AvroProto.getDescriptor(),
+              com.google.cloud.bigquery.storage.v1beta1.ReadOptions.getDescriptor(),
+              com.google.cloud.bigquery.storage.v1beta1.TableReferenceProto.getDescriptor(),
+              com.google.protobuf.EmptyProto.getDescriptor(),
+              com.google.protobuf.TimestampProto.getDescriptor(),
+            });
     internal_static_google_cloud_bigquery_storage_v1beta1_Stream_descriptor =
         getDescriptor().getMessageTypes().get(0);
     internal_static_google_cloud_bigquery_storage_v1beta1_Stream_fieldAccessorTable =

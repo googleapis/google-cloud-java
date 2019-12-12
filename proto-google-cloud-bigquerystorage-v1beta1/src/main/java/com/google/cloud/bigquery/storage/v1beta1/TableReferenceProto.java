@@ -40,6 +40,8 @@ public final class TableReferenceProto {
      * </pre>
      *
      * <code>string project_id = 1;</code>
+     *
+     * @return The projectId.
      */
     java.lang.String getProjectId();
     /**
@@ -50,6 +52,8 @@ public final class TableReferenceProto {
      * </pre>
      *
      * <code>string project_id = 1;</code>
+     *
+     * @return The bytes for projectId.
      */
     com.google.protobuf.ByteString getProjectIdBytes();
 
@@ -61,6 +65,8 @@ public final class TableReferenceProto {
      * </pre>
      *
      * <code>string dataset_id = 2;</code>
+     *
+     * @return The datasetId.
      */
     java.lang.String getDatasetId();
     /**
@@ -71,6 +77,8 @@ public final class TableReferenceProto {
      * </pre>
      *
      * <code>string dataset_id = 2;</code>
+     *
+     * @return The bytes for datasetId.
      */
     com.google.protobuf.ByteString getDatasetIdBytes();
 
@@ -82,6 +90,8 @@ public final class TableReferenceProto {
      * </pre>
      *
      * <code>string table_id = 3;</code>
+     *
+     * @return The tableId.
      */
     java.lang.String getTableId();
     /**
@@ -92,6 +102,8 @@ public final class TableReferenceProto {
      * </pre>
      *
      * <code>string table_id = 3;</code>
+     *
+     * @return The bytes for tableId.
      */
     com.google.protobuf.ByteString getTableIdBytes();
   }
@@ -121,6 +133,12 @@ public final class TableReferenceProto {
     }
 
     @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new TableReference();
+    }
+
+    @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
       return this.unknownFields;
     }
@@ -133,7 +151,6 @@ public final class TableReferenceProto {
       if (extensionRegistry == null) {
         throw new java.lang.NullPointerException();
       }
-      int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
@@ -210,6 +227,8 @@ public final class TableReferenceProto {
      * </pre>
      *
      * <code>string project_id = 1;</code>
+     *
+     * @return The projectId.
      */
     public java.lang.String getProjectId() {
       java.lang.Object ref = projectId_;
@@ -230,6 +249,8 @@ public final class TableReferenceProto {
      * </pre>
      *
      * <code>string project_id = 1;</code>
+     *
+     * @return The bytes for projectId.
      */
     public com.google.protobuf.ByteString getProjectIdBytes() {
       java.lang.Object ref = projectId_;
@@ -253,6 +274,8 @@ public final class TableReferenceProto {
      * </pre>
      *
      * <code>string dataset_id = 2;</code>
+     *
+     * @return The datasetId.
      */
     public java.lang.String getDatasetId() {
       java.lang.Object ref = datasetId_;
@@ -273,6 +296,8 @@ public final class TableReferenceProto {
      * </pre>
      *
      * <code>string dataset_id = 2;</code>
+     *
+     * @return The bytes for datasetId.
      */
     public com.google.protobuf.ByteString getDatasetIdBytes() {
       java.lang.Object ref = datasetId_;
@@ -296,6 +321,8 @@ public final class TableReferenceProto {
      * </pre>
      *
      * <code>string table_id = 3;</code>
+     *
+     * @return The tableId.
      */
     public java.lang.String getTableId() {
       java.lang.Object ref = tableId_;
@@ -316,6 +343,8 @@ public final class TableReferenceProto {
      * </pre>
      *
      * <code>string table_id = 3;</code>
+     *
+     * @return The bytes for tableId.
      */
     public com.google.protobuf.ByteString getTableIdBytes() {
       java.lang.Object ref = tableId_;
@@ -714,6 +743,8 @@ public final class TableReferenceProto {
        * </pre>
        *
        * <code>string project_id = 1;</code>
+       *
+       * @return The projectId.
        */
       public java.lang.String getProjectId() {
         java.lang.Object ref = projectId_;
@@ -734,6 +765,8 @@ public final class TableReferenceProto {
        * </pre>
        *
        * <code>string project_id = 1;</code>
+       *
+       * @return The bytes for projectId.
        */
       public com.google.protobuf.ByteString getProjectIdBytes() {
         java.lang.Object ref = projectId_;
@@ -754,6 +787,9 @@ public final class TableReferenceProto {
        * </pre>
        *
        * <code>string project_id = 1;</code>
+       *
+       * @param value The projectId to set.
+       * @return This builder for chaining.
        */
       public Builder setProjectId(java.lang.String value) {
         if (value == null) {
@@ -772,6 +808,8 @@ public final class TableReferenceProto {
        * </pre>
        *
        * <code>string project_id = 1;</code>
+       *
+       * @return This builder for chaining.
        */
       public Builder clearProjectId() {
 
@@ -787,6 +825,9 @@ public final class TableReferenceProto {
        * </pre>
        *
        * <code>string project_id = 1;</code>
+       *
+       * @param value The bytes for projectId to set.
+       * @return This builder for chaining.
        */
       public Builder setProjectIdBytes(com.google.protobuf.ByteString value) {
         if (value == null) {
@@ -808,6 +849,8 @@ public final class TableReferenceProto {
        * </pre>
        *
        * <code>string dataset_id = 2;</code>
+       *
+       * @return The datasetId.
        */
       public java.lang.String getDatasetId() {
         java.lang.Object ref = datasetId_;
@@ -828,6 +871,8 @@ public final class TableReferenceProto {
        * </pre>
        *
        * <code>string dataset_id = 2;</code>
+       *
+       * @return The bytes for datasetId.
        */
       public com.google.protobuf.ByteString getDatasetIdBytes() {
         java.lang.Object ref = datasetId_;
@@ -848,6 +893,9 @@ public final class TableReferenceProto {
        * </pre>
        *
        * <code>string dataset_id = 2;</code>
+       *
+       * @param value The datasetId to set.
+       * @return This builder for chaining.
        */
       public Builder setDatasetId(java.lang.String value) {
         if (value == null) {
@@ -866,6 +914,8 @@ public final class TableReferenceProto {
        * </pre>
        *
        * <code>string dataset_id = 2;</code>
+       *
+       * @return This builder for chaining.
        */
       public Builder clearDatasetId() {
 
@@ -881,6 +931,9 @@ public final class TableReferenceProto {
        * </pre>
        *
        * <code>string dataset_id = 2;</code>
+       *
+       * @param value The bytes for datasetId to set.
+       * @return This builder for chaining.
        */
       public Builder setDatasetIdBytes(com.google.protobuf.ByteString value) {
         if (value == null) {
@@ -902,6 +955,8 @@ public final class TableReferenceProto {
        * </pre>
        *
        * <code>string table_id = 3;</code>
+       *
+       * @return The tableId.
        */
       public java.lang.String getTableId() {
         java.lang.Object ref = tableId_;
@@ -922,6 +977,8 @@ public final class TableReferenceProto {
        * </pre>
        *
        * <code>string table_id = 3;</code>
+       *
+       * @return The bytes for tableId.
        */
       public com.google.protobuf.ByteString getTableIdBytes() {
         java.lang.Object ref = tableId_;
@@ -942,6 +999,9 @@ public final class TableReferenceProto {
        * </pre>
        *
        * <code>string table_id = 3;</code>
+       *
+       * @param value The tableId to set.
+       * @return This builder for chaining.
        */
       public Builder setTableId(java.lang.String value) {
         if (value == null) {
@@ -960,6 +1020,8 @@ public final class TableReferenceProto {
        * </pre>
        *
        * <code>string table_id = 3;</code>
+       *
+       * @return This builder for chaining.
        */
       public Builder clearTableId() {
 
@@ -975,6 +1037,9 @@ public final class TableReferenceProto {
        * </pre>
        *
        * <code>string table_id = 3;</code>
+       *
+       * @param value The bytes for tableId to set.
+       * @return This builder for chaining.
        */
       public Builder setTableIdBytes(com.google.protobuf.ByteString value) {
         if (value == null) {
@@ -1057,6 +1122,8 @@ public final class TableReferenceProto {
      * </pre>
      *
      * <code>.google.protobuf.Timestamp snapshot_time = 1;</code>
+     *
+     * @return Whether the snapshotTime field is set.
      */
     boolean hasSnapshotTime();
     /**
@@ -1067,6 +1134,8 @@ public final class TableReferenceProto {
      * </pre>
      *
      * <code>.google.protobuf.Timestamp snapshot_time = 1;</code>
+     *
+     * @return The snapshotTime.
      */
     com.google.protobuf.Timestamp getSnapshotTime();
     /**
@@ -1102,6 +1171,12 @@ public final class TableReferenceProto {
     private TableModifiers() {}
 
     @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new TableModifiers();
+    }
+
+    @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
       return this.unknownFields;
     }
@@ -1114,7 +1189,6 @@ public final class TableReferenceProto {
       if (extensionRegistry == null) {
         throw new java.lang.NullPointerException();
       }
-      int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
@@ -1185,6 +1259,8 @@ public final class TableReferenceProto {
      * </pre>
      *
      * <code>.google.protobuf.Timestamp snapshot_time = 1;</code>
+     *
+     * @return Whether the snapshotTime field is set.
      */
     public boolean hasSnapshotTime() {
       return snapshotTime_ != null;
@@ -1197,6 +1273,8 @@ public final class TableReferenceProto {
      * </pre>
      *
      * <code>.google.protobuf.Timestamp snapshot_time = 1;</code>
+     *
+     * @return The snapshotTime.
      */
     public com.google.protobuf.Timestamp getSnapshotTime() {
       return snapshotTime_ == null
@@ -1586,6 +1664,8 @@ public final class TableReferenceProto {
        * </pre>
        *
        * <code>.google.protobuf.Timestamp snapshot_time = 1;</code>
+       *
+       * @return Whether the snapshotTime field is set.
        */
       public boolean hasSnapshotTime() {
         return snapshotTimeBuilder_ != null || snapshotTime_ != null;
@@ -1598,6 +1678,8 @@ public final class TableReferenceProto {
        * </pre>
        *
        * <code>.google.protobuf.Timestamp snapshot_time = 1;</code>
+       *
+       * @return The snapshotTime.
        */
       public com.google.protobuf.Timestamp getSnapshotTime() {
         if (snapshotTimeBuilder_ == null) {
@@ -1840,21 +1922,13 @@ public final class TableReferenceProto {
           + "/googleapis/cloud/bigquery/storage/v1bet"
           + "a1;storageb\006proto3"
     };
-    com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
-        new com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner() {
-          public com.google.protobuf.ExtensionRegistry assignDescriptors(
-              com.google.protobuf.Descriptors.FileDescriptor root) {
-            descriptor = root;
-            return null;
-          }
-        };
-    com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
-        descriptorData,
-        new com.google.protobuf.Descriptors.FileDescriptor[] {
-          com.google.api.ResourceProto.getDescriptor(),
-          com.google.protobuf.TimestampProto.getDescriptor(),
-        },
-        assigner);
+    descriptor =
+        com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
+            descriptorData,
+            new com.google.protobuf.Descriptors.FileDescriptor[] {
+              com.google.api.ResourceProto.getDescriptor(),
+              com.google.protobuf.TimestampProto.getDescriptor(),
+            });
     internal_static_google_cloud_bigquery_storage_v1beta1_TableReference_descriptor =
         getDescriptor().getMessageTypes().get(0);
     internal_static_google_cloud_bigquery_storage_v1beta1_TableReference_fieldAccessorTable =

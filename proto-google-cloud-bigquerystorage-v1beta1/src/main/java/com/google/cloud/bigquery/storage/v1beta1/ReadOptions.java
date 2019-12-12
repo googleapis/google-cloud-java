@@ -43,6 +43,8 @@ public final class ReadOptions {
      * </pre>
      *
      * <code>repeated string selected_fields = 1;</code>
+     *
+     * @return A list containing the selectedFields.
      */
     java.util.List<java.lang.String> getSelectedFieldsList();
     /**
@@ -56,6 +58,8 @@ public final class ReadOptions {
      * </pre>
      *
      * <code>repeated string selected_fields = 1;</code>
+     *
+     * @return The count of selectedFields.
      */
     int getSelectedFieldsCount();
     /**
@@ -69,6 +73,9 @@ public final class ReadOptions {
      * </pre>
      *
      * <code>repeated string selected_fields = 1;</code>
+     *
+     * @param index The index of the element to return.
+     * @return The selectedFields at the given index.
      */
     java.lang.String getSelectedFields(int index);
     /**
@@ -82,6 +89,9 @@ public final class ReadOptions {
      * </pre>
      *
      * <code>repeated string selected_fields = 1;</code>
+     *
+     * @param index The index of the value to return.
+     * @return The bytes of the selectedFields at the given index.
      */
     com.google.protobuf.ByteString getSelectedFieldsBytes(int index);
 
@@ -100,6 +110,8 @@ public final class ReadOptions {
      * </pre>
      *
      * <code>string row_restriction = 2;</code>
+     *
+     * @return The rowRestriction.
      */
     java.lang.String getRowRestriction();
     /**
@@ -117,6 +129,8 @@ public final class ReadOptions {
      * </pre>
      *
      * <code>string row_restriction = 2;</code>
+     *
+     * @return The bytes for rowRestriction.
      */
     com.google.protobuf.ByteString getRowRestrictionBytes();
   }
@@ -142,6 +156,12 @@ public final class ReadOptions {
     private TableReadOptions() {
       selectedFields_ = com.google.protobuf.LazyStringArrayList.EMPTY;
       rowRestriction_ = "";
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new TableReadOptions();
     }
 
     @java.lang.Override
@@ -222,7 +242,6 @@ public final class ReadOptions {
               com.google.cloud.bigquery.storage.v1beta1.ReadOptions.TableReadOptions.Builder.class);
     }
 
-    private int bitField0_;
     public static final int SELECTED_FIELDS_FIELD_NUMBER = 1;
     private com.google.protobuf.LazyStringList selectedFields_;
     /**
@@ -236,6 +255,8 @@ public final class ReadOptions {
      * </pre>
      *
      * <code>repeated string selected_fields = 1;</code>
+     *
+     * @return A list containing the selectedFields.
      */
     public com.google.protobuf.ProtocolStringList getSelectedFieldsList() {
       return selectedFields_;
@@ -251,6 +272,8 @@ public final class ReadOptions {
      * </pre>
      *
      * <code>repeated string selected_fields = 1;</code>
+     *
+     * @return The count of selectedFields.
      */
     public int getSelectedFieldsCount() {
       return selectedFields_.size();
@@ -266,6 +289,9 @@ public final class ReadOptions {
      * </pre>
      *
      * <code>repeated string selected_fields = 1;</code>
+     *
+     * @param index The index of the element to return.
+     * @return The selectedFields at the given index.
      */
     public java.lang.String getSelectedFields(int index) {
       return selectedFields_.get(index);
@@ -281,6 +307,9 @@ public final class ReadOptions {
      * </pre>
      *
      * <code>repeated string selected_fields = 1;</code>
+     *
+     * @param index The index of the value to return.
+     * @return The bytes of the selectedFields at the given index.
      */
     public com.google.protobuf.ByteString getSelectedFieldsBytes(int index) {
       return selectedFields_.getByteString(index);
@@ -303,6 +332,8 @@ public final class ReadOptions {
      * </pre>
      *
      * <code>string row_restriction = 2;</code>
+     *
+     * @return The rowRestriction.
      */
     public java.lang.String getRowRestriction() {
       java.lang.Object ref = rowRestriction_;
@@ -330,6 +361,8 @@ public final class ReadOptions {
      * </pre>
      *
      * <code>string row_restriction = 2;</code>
+     *
+     * @return The bytes for rowRestriction.
      */
     public com.google.protobuf.ByteString getRowRestrictionBytes() {
       java.lang.Object ref = rowRestriction_;
@@ -605,14 +638,12 @@ public final class ReadOptions {
         com.google.cloud.bigquery.storage.v1beta1.ReadOptions.TableReadOptions result =
             new com.google.cloud.bigquery.storage.v1beta1.ReadOptions.TableReadOptions(this);
         int from_bitField0_ = bitField0_;
-        int to_bitField0_ = 0;
         if (((bitField0_ & 0x00000001) != 0)) {
           selectedFields_ = selectedFields_.getUnmodifiableView();
           bitField0_ = (bitField0_ & ~0x00000001);
         }
         result.selectedFields_ = selectedFields_;
         result.rowRestriction_ = rowRestriction_;
-        result.bitField0_ = to_bitField0_;
         onBuilt();
         return result;
       }
@@ -736,6 +767,8 @@ public final class ReadOptions {
        * </pre>
        *
        * <code>repeated string selected_fields = 1;</code>
+       *
+       * @return A list containing the selectedFields.
        */
       public com.google.protobuf.ProtocolStringList getSelectedFieldsList() {
         return selectedFields_.getUnmodifiableView();
@@ -751,6 +784,8 @@ public final class ReadOptions {
        * </pre>
        *
        * <code>repeated string selected_fields = 1;</code>
+       *
+       * @return The count of selectedFields.
        */
       public int getSelectedFieldsCount() {
         return selectedFields_.size();
@@ -766,6 +801,9 @@ public final class ReadOptions {
        * </pre>
        *
        * <code>repeated string selected_fields = 1;</code>
+       *
+       * @param index The index of the element to return.
+       * @return The selectedFields at the given index.
        */
       public java.lang.String getSelectedFields(int index) {
         return selectedFields_.get(index);
@@ -781,6 +819,9 @@ public final class ReadOptions {
        * </pre>
        *
        * <code>repeated string selected_fields = 1;</code>
+       *
+       * @param index The index of the value to return.
+       * @return The bytes of the selectedFields at the given index.
        */
       public com.google.protobuf.ByteString getSelectedFieldsBytes(int index) {
         return selectedFields_.getByteString(index);
@@ -796,6 +837,10 @@ public final class ReadOptions {
        * </pre>
        *
        * <code>repeated string selected_fields = 1;</code>
+       *
+       * @param index The index to set the value at.
+       * @param value The selectedFields to set.
+       * @return This builder for chaining.
        */
       public Builder setSelectedFields(int index, java.lang.String value) {
         if (value == null) {
@@ -817,6 +862,9 @@ public final class ReadOptions {
        * </pre>
        *
        * <code>repeated string selected_fields = 1;</code>
+       *
+       * @param value The selectedFields to add.
+       * @return This builder for chaining.
        */
       public Builder addSelectedFields(java.lang.String value) {
         if (value == null) {
@@ -838,6 +886,9 @@ public final class ReadOptions {
        * </pre>
        *
        * <code>repeated string selected_fields = 1;</code>
+       *
+       * @param values The selectedFields to add.
+       * @return This builder for chaining.
        */
       public Builder addAllSelectedFields(java.lang.Iterable<java.lang.String> values) {
         ensureSelectedFieldsIsMutable();
@@ -856,6 +907,8 @@ public final class ReadOptions {
        * </pre>
        *
        * <code>repeated string selected_fields = 1;</code>
+       *
+       * @return This builder for chaining.
        */
       public Builder clearSelectedFields() {
         selectedFields_ = com.google.protobuf.LazyStringArrayList.EMPTY;
@@ -874,6 +927,9 @@ public final class ReadOptions {
        * </pre>
        *
        * <code>repeated string selected_fields = 1;</code>
+       *
+       * @param value The bytes of the selectedFields to add.
+       * @return This builder for chaining.
        */
       public Builder addSelectedFieldsBytes(com.google.protobuf.ByteString value) {
         if (value == null) {
@@ -902,6 +958,8 @@ public final class ReadOptions {
        * </pre>
        *
        * <code>string row_restriction = 2;</code>
+       *
+       * @return The rowRestriction.
        */
       public java.lang.String getRowRestriction() {
         java.lang.Object ref = rowRestriction_;
@@ -929,6 +987,8 @@ public final class ReadOptions {
        * </pre>
        *
        * <code>string row_restriction = 2;</code>
+       *
+       * @return The bytes for rowRestriction.
        */
       public com.google.protobuf.ByteString getRowRestrictionBytes() {
         java.lang.Object ref = rowRestriction_;
@@ -956,6 +1016,9 @@ public final class ReadOptions {
        * </pre>
        *
        * <code>string row_restriction = 2;</code>
+       *
+       * @param value The rowRestriction to set.
+       * @return This builder for chaining.
        */
       public Builder setRowRestriction(java.lang.String value) {
         if (value == null) {
@@ -981,6 +1044,8 @@ public final class ReadOptions {
        * </pre>
        *
        * <code>string row_restriction = 2;</code>
+       *
+       * @return This builder for chaining.
        */
       public Builder clearRowRestriction() {
 
@@ -1003,6 +1068,9 @@ public final class ReadOptions {
        * </pre>
        *
        * <code>string row_restriction = 2;</code>
+       *
+       * @param value The bytes for rowRestriction to set.
+       * @return This builder for chaining.
        */
       public Builder setRowRestrictionBytes(com.google.protobuf.ByteString value) {
         if (value == null) {
@@ -1093,16 +1161,9 @@ public final class ReadOptions {
           + "/googleapis/cloud/bigquery/storage/v1bet"
           + "a1;storageb\006proto3"
     };
-    com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
-        new com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner() {
-          public com.google.protobuf.ExtensionRegistry assignDescriptors(
-              com.google.protobuf.Descriptors.FileDescriptor root) {
-            descriptor = root;
-            return null;
-          }
-        };
-    com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
-        descriptorData, new com.google.protobuf.Descriptors.FileDescriptor[] {}, assigner);
+    descriptor =
+        com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
+            descriptorData, new com.google.protobuf.Descriptors.FileDescriptor[] {});
     internal_static_google_cloud_bigquery_storage_v1beta1_TableReadOptions_descriptor =
         getDescriptor().getMessageTypes().get(0);
     internal_static_google_cloud_bigquery_storage_v1beta1_TableReadOptions_fieldAccessorTable =

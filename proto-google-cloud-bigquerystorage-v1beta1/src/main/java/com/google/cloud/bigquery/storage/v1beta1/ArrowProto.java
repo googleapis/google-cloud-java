@@ -40,6 +40,8 @@ public final class ArrowProto {
      * </pre>
      *
      * <code>bytes serialized_schema = 1;</code>
+     *
+     * @return The serializedSchema.
      */
     com.google.protobuf.ByteString getSerializedSchema();
   }
@@ -67,6 +69,12 @@ public final class ArrowProto {
     }
 
     @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new ArrowSchema();
+    }
+
+    @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
       return this.unknownFields;
     }
@@ -79,7 +87,6 @@ public final class ArrowProto {
       if (extensionRegistry == null) {
         throw new java.lang.NullPointerException();
       }
-      int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
@@ -139,6 +146,8 @@ public final class ArrowProto {
      * </pre>
      *
      * <code>bytes serialized_schema = 1;</code>
+     *
+     * @return The serializedSchema.
      */
     public com.google.protobuf.ByteString getSerializedSchema() {
       return serializedSchema_;
@@ -484,6 +493,8 @@ public final class ArrowProto {
        * </pre>
        *
        * <code>bytes serialized_schema = 1;</code>
+       *
+       * @return The serializedSchema.
        */
       public com.google.protobuf.ByteString getSerializedSchema() {
         return serializedSchema_;
@@ -496,6 +507,9 @@ public final class ArrowProto {
        * </pre>
        *
        * <code>bytes serialized_schema = 1;</code>
+       *
+       * @param value The serializedSchema to set.
+       * @return This builder for chaining.
        */
       public Builder setSerializedSchema(com.google.protobuf.ByteString value) {
         if (value == null) {
@@ -514,6 +528,8 @@ public final class ArrowProto {
        * </pre>
        *
        * <code>bytes serialized_schema = 1;</code>
+       *
+       * @return This builder for chaining.
        */
       public Builder clearSerializedSchema() {
 
@@ -590,6 +606,8 @@ public final class ArrowProto {
      * </pre>
      *
      * <code>bytes serialized_record_batch = 1;</code>
+     *
+     * @return The serializedRecordBatch.
      */
     com.google.protobuf.ByteString getSerializedRecordBatch();
 
@@ -601,6 +619,8 @@ public final class ArrowProto {
      * </pre>
      *
      * <code>int64 row_count = 2;</code>
+     *
+     * @return The rowCount.
      */
     long getRowCount();
   }
@@ -628,6 +648,12 @@ public final class ArrowProto {
     }
 
     @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new ArrowRecordBatch();
+    }
+
+    @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
       return this.unknownFields;
     }
@@ -640,7 +666,6 @@ public final class ArrowProto {
       if (extensionRegistry == null) {
         throw new java.lang.NullPointerException();
       }
-      int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
@@ -705,6 +730,8 @@ public final class ArrowProto {
      * </pre>
      *
      * <code>bytes serialized_record_batch = 1;</code>
+     *
+     * @return The serializedRecordBatch.
      */
     public com.google.protobuf.ByteString getSerializedRecordBatch() {
       return serializedRecordBatch_;
@@ -720,6 +747,8 @@ public final class ArrowProto {
      * </pre>
      *
      * <code>int64 row_count = 2;</code>
+     *
+     * @return The rowCount.
      */
     public long getRowCount() {
       return rowCount_;
@@ -1083,6 +1112,8 @@ public final class ArrowProto {
        * </pre>
        *
        * <code>bytes serialized_record_batch = 1;</code>
+       *
+       * @return The serializedRecordBatch.
        */
       public com.google.protobuf.ByteString getSerializedRecordBatch() {
         return serializedRecordBatch_;
@@ -1095,6 +1126,9 @@ public final class ArrowProto {
        * </pre>
        *
        * <code>bytes serialized_record_batch = 1;</code>
+       *
+       * @param value The serializedRecordBatch to set.
+       * @return This builder for chaining.
        */
       public Builder setSerializedRecordBatch(com.google.protobuf.ByteString value) {
         if (value == null) {
@@ -1113,6 +1147,8 @@ public final class ArrowProto {
        * </pre>
        *
        * <code>bytes serialized_record_batch = 1;</code>
+       *
+       * @return This builder for chaining.
        */
       public Builder clearSerializedRecordBatch() {
 
@@ -1130,6 +1166,8 @@ public final class ArrowProto {
        * </pre>
        *
        * <code>int64 row_count = 2;</code>
+       *
+       * @return The rowCount.
        */
       public long getRowCount() {
         return rowCount_;
@@ -1142,6 +1180,9 @@ public final class ArrowProto {
        * </pre>
        *
        * <code>int64 row_count = 2;</code>
+       *
+       * @param value The rowCount to set.
+       * @return This builder for chaining.
        */
       public Builder setRowCount(long value) {
 
@@ -1157,6 +1198,8 @@ public final class ArrowProto {
        * </pre>
        *
        * <code>int64 row_count = 2;</code>
+       *
+       * @return This builder for chaining.
        */
       public Builder clearRowCount() {
 
@@ -1248,16 +1291,9 @@ public final class ArrowProto {
           + "g/genproto/googleapis/cloud/bigquery/sto"
           + "rage/v1beta1;storageb\006proto3"
     };
-    com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
-        new com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner() {
-          public com.google.protobuf.ExtensionRegistry assignDescriptors(
-              com.google.protobuf.Descriptors.FileDescriptor root) {
-            descriptor = root;
-            return null;
-          }
-        };
-    com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
-        descriptorData, new com.google.protobuf.Descriptors.FileDescriptor[] {}, assigner);
+    descriptor =
+        com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
+            descriptorData, new com.google.protobuf.Descriptors.FileDescriptor[] {});
     internal_static_google_cloud_bigquery_storage_v1beta1_ArrowSchema_descriptor =
         getDescriptor().getMessageTypes().get(0);
     internal_static_google_cloud_bigquery_storage_v1beta1_ArrowSchema_fieldAccessorTable =

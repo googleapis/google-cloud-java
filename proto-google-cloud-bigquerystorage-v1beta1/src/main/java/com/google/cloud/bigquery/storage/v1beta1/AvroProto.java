@@ -41,6 +41,8 @@ public final class AvroProto {
      * </pre>
      *
      * <code>string schema = 1;</code>
+     *
+     * @return The schema.
      */
     java.lang.String getSchema();
     /**
@@ -52,6 +54,8 @@ public final class AvroProto {
      * </pre>
      *
      * <code>string schema = 1;</code>
+     *
+     * @return The bytes for schema.
      */
     com.google.protobuf.ByteString getSchemaBytes();
   }
@@ -79,6 +83,12 @@ public final class AvroProto {
     }
 
     @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new AvroSchema();
+    }
+
+    @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
       return this.unknownFields;
     }
@@ -91,7 +101,6 @@ public final class AvroProto {
       if (extensionRegistry == null) {
         throw new java.lang.NullPointerException();
       }
-      int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
@@ -154,6 +163,8 @@ public final class AvroProto {
      * </pre>
      *
      * <code>string schema = 1;</code>
+     *
+     * @return The schema.
      */
     public java.lang.String getSchema() {
       java.lang.Object ref = schema_;
@@ -175,6 +186,8 @@ public final class AvroProto {
      * </pre>
      *
      * <code>string schema = 1;</code>
+     *
+     * @return The bytes for schema.
      */
     public com.google.protobuf.ByteString getSchemaBytes() {
       java.lang.Object ref = schema_;
@@ -525,6 +538,8 @@ public final class AvroProto {
        * </pre>
        *
        * <code>string schema = 1;</code>
+       *
+       * @return The schema.
        */
       public java.lang.String getSchema() {
         java.lang.Object ref = schema_;
@@ -546,6 +561,8 @@ public final class AvroProto {
        * </pre>
        *
        * <code>string schema = 1;</code>
+       *
+       * @return The bytes for schema.
        */
       public com.google.protobuf.ByteString getSchemaBytes() {
         java.lang.Object ref = schema_;
@@ -567,6 +584,9 @@ public final class AvroProto {
        * </pre>
        *
        * <code>string schema = 1;</code>
+       *
+       * @param value The schema to set.
+       * @return This builder for chaining.
        */
       public Builder setSchema(java.lang.String value) {
         if (value == null) {
@@ -586,6 +606,8 @@ public final class AvroProto {
        * </pre>
        *
        * <code>string schema = 1;</code>
+       *
+       * @return This builder for chaining.
        */
       public Builder clearSchema() {
 
@@ -602,6 +624,9 @@ public final class AvroProto {
        * </pre>
        *
        * <code>string schema = 1;</code>
+       *
+       * @param value The bytes for schema to set.
+       * @return This builder for chaining.
        */
       public Builder setSchemaBytes(com.google.protobuf.ByteString value) {
         if (value == null) {
@@ -682,6 +707,8 @@ public final class AvroProto {
      * </pre>
      *
      * <code>bytes serialized_binary_rows = 1;</code>
+     *
+     * @return The serializedBinaryRows.
      */
     com.google.protobuf.ByteString getSerializedBinaryRows();
 
@@ -693,6 +720,8 @@ public final class AvroProto {
      * </pre>
      *
      * <code>int64 row_count = 2;</code>
+     *
+     * @return The rowCount.
      */
     long getRowCount();
   }
@@ -720,6 +749,12 @@ public final class AvroProto {
     }
 
     @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new AvroRows();
+    }
+
+    @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
       return this.unknownFields;
     }
@@ -732,7 +767,6 @@ public final class AvroProto {
       if (extensionRegistry == null) {
         throw new java.lang.NullPointerException();
       }
-      int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
@@ -797,6 +831,8 @@ public final class AvroProto {
      * </pre>
      *
      * <code>bytes serialized_binary_rows = 1;</code>
+     *
+     * @return The serializedBinaryRows.
      */
     public com.google.protobuf.ByteString getSerializedBinaryRows() {
       return serializedBinaryRows_;
@@ -812,6 +848,8 @@ public final class AvroProto {
      * </pre>
      *
      * <code>int64 row_count = 2;</code>
+     *
+     * @return The rowCount.
      */
     public long getRowCount() {
       return rowCount_;
@@ -1167,6 +1205,8 @@ public final class AvroProto {
        * </pre>
        *
        * <code>bytes serialized_binary_rows = 1;</code>
+       *
+       * @return The serializedBinaryRows.
        */
       public com.google.protobuf.ByteString getSerializedBinaryRows() {
         return serializedBinaryRows_;
@@ -1179,6 +1219,9 @@ public final class AvroProto {
        * </pre>
        *
        * <code>bytes serialized_binary_rows = 1;</code>
+       *
+       * @param value The serializedBinaryRows to set.
+       * @return This builder for chaining.
        */
       public Builder setSerializedBinaryRows(com.google.protobuf.ByteString value) {
         if (value == null) {
@@ -1197,6 +1240,8 @@ public final class AvroProto {
        * </pre>
        *
        * <code>bytes serialized_binary_rows = 1;</code>
+       *
+       * @return This builder for chaining.
        */
       public Builder clearSerializedBinaryRows() {
 
@@ -1214,6 +1259,8 @@ public final class AvroProto {
        * </pre>
        *
        * <code>int64 row_count = 2;</code>
+       *
+       * @return The rowCount.
        */
       public long getRowCount() {
         return rowCount_;
@@ -1226,6 +1273,9 @@ public final class AvroProto {
        * </pre>
        *
        * <code>int64 row_count = 2;</code>
+       *
+       * @param value The rowCount to set.
+       * @return This builder for chaining.
        */
       public Builder setRowCount(long value) {
 
@@ -1241,6 +1291,8 @@ public final class AvroProto {
        * </pre>
        *
        * <code>int64 row_count = 2;</code>
+       *
+       * @return This builder for chaining.
        */
       public Builder clearRowCount() {
 
@@ -1331,16 +1383,9 @@ public final class AvroProto {
           + "loud/bigquery/storage/v1beta1;storageb\006p"
           + "roto3"
     };
-    com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
-        new com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner() {
-          public com.google.protobuf.ExtensionRegistry assignDescriptors(
-              com.google.protobuf.Descriptors.FileDescriptor root) {
-            descriptor = root;
-            return null;
-          }
-        };
-    com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
-        descriptorData, new com.google.protobuf.Descriptors.FileDescriptor[] {}, assigner);
+    descriptor =
+        com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
+            descriptorData, new com.google.protobuf.Descriptors.FileDescriptor[] {});
     internal_static_google_cloud_bigquery_storage_v1beta1_AvroSchema_descriptor =
         getDescriptor().getMessageTypes().get(0);
     internal_static_google_cloud_bigquery_storage_v1beta1_AvroSchema_fieldAccessorTable =
