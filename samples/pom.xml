@@ -27,6 +27,7 @@
     <groupId>com.google.cloud.samples</groupId>
     <artifactId>shared-configuration</artifactId>
     <version>1.0.11</version>
+    <relativePath></relativePath>
   </parent>
 
   <properties>
@@ -40,13 +41,13 @@
     <dependency>
       <groupId>com.google.cloud</groupId>
       <artifactId>google-cloud-bigquery</artifactId>
-      <version>1.100.0</version>
+      <version>1.102.0</version>
     </dependency>
     <!-- [END bigquery_java_dependencies] -->
     <dependency>
       <groupId>com.google.api</groupId>
       <artifactId>gax</artifactId>
-      <version>1.49.1</version>
+      <version>1.51.0</version>
     </dependency>
     <dependency>
       <groupId>com.google.cloud</groupId>
@@ -63,7 +64,7 @@
     <dependency>
       <groupId>junit</groupId>
       <artifactId>junit</artifactId>
-      <version>4.13-beta-3</version>
+      <version>4.12</version>
       <scope>test</scope>
     </dependency>
     <dependency>
